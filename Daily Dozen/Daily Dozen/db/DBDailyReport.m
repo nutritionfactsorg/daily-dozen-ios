@@ -32,7 +32,13 @@
 		dailyReport = [DBDailyReport initializeDailyReportForDate:date inContext:context error:error];
 	}
 	
-	
+	//todo
+	/*
+	for (DBConsumption *consumption in [dailyReport consumptions]) {
+		consumption.foodType = nil; //todo
+	}
+	*/
+	return dailyReport;
 }
 
 + (DBDailyReport *)initializeDailyReportForDate:(NSDate *)date inContext:(NSManagedObjectContext *)context error:(NSError *__autoreleasing *)error {

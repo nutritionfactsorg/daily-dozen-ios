@@ -7,6 +7,7 @@
 //
 
 #import "DataManager.h"
+#import "DatabaseManager.h"
 #import "DBDailyReport.h"
 
 @implementation DataManager
@@ -28,6 +29,18 @@ static DataManager *sharedInstance;
 
 - (DBDailyReport *)getReportForToday {
 	
+	NSError *error = nil;
+	
+	NSDateComponents *components = [[NSCalendar currentCalendar]
+									components:(NSCalendarUnitYear|NSCalendarUnitMonth|NSCalendarUnitDay)
+									fromDate:[NSDate date]];
+	
+	NSDate *startDate = [[NSCalendar currentCalendar]
+						 dateFromComponents:components];
+	
+	return [DBDailyReport getDailyReportForDate:startDate
+									inContext:[[DatabaseManager sharedInstance] defaultUserContext]
+										  error:&error];
 }
 
 @end

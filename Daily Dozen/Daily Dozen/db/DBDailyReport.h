@@ -16,6 +16,7 @@ NS_ASSUME_NONNULL_BEGIN
 @interface DBDailyReport : NSManagedObject
 
 // Insert code here to declare functionality of your managed object subclass
++ (DBDailyReport *)getDailyReportForDate:(NSDate *)date inContext:(NSManagedObjectContext *)context error:(NSError *__autoreleasing *)error;
 
 @end
 
