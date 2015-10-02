@@ -15,6 +15,13 @@
 
 @implementation DailyReportViewController
 
+- (id)init {
+	if ((self = [super init])) {
+		
+	}
+	
+	return self;
+}
 
 - (void)viewDidLoad {
     [super viewDidLoad];
