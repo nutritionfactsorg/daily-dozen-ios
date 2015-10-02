@@ -19,7 +19,7 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
 	
-	self.navigationBar.barTintColor = kColorNavBar;
+	self.navigationController.navigationBar.barTintColor = kColorNavBar;
     // Do any additional setup after loading the view.
 }
 

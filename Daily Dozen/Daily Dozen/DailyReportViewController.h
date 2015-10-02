@@ -8,6 +8,6 @@
 
 #import <UIKit/UIKit.h>
 
-@interface DailyReportViewController : UINavigationController
+@interface DailyReportViewController : UIViewController
 
 @end

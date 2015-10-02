@@ -7,6 +7,7 @@
 //
 
 #import "AppDelegate.h"
+#import "DailyReportViewController.h"
 
 @interface AppDelegate ()
 
@@ -16,7 +17,16 @@
 
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
-	// Override point for customization after application launch.
+
+	DailyReportViewController *vController = [[DailyReportViewController alloc] init];
+	UINavigationController *nController = [[UINavigationController alloc] initWithRootViewController:vController];
+	
+	self.window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
+	self.window.rootViewController = nController;
+	
+	[self.window makeKeyAndVisible];
+	return YES;
+	
 	return YES;
 }
 
