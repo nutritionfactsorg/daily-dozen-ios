@@ -9,11 +9,19 @@
 /* Begin PBXBuildFile section */
 		774FBC7F1BBF0BA100BF048C /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 774FBC7E1BBF0BA100BF048C /* main.m */; };
 		774FBC821BBF0BA100BF048C /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 774FBC811BBF0BA100BF048C /* AppDelegate.m */; };
-		774FBC8B1BBF0BA100BF048C /* Daily_Dozen.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 774FBC891BBF0BA100BF048C /* Daily_Dozen.xcdatamodeld */; };
 		774FBC8D1BBF0BA100BF048C /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 774FBC8C1BBF0BA100BF048C /* Assets.xcassets */; };
 		774FBC901BBF0BA100BF048C /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 774FBC8E1BBF0BA100BF048C /* LaunchScreen.storyboard */; };
 		774FBC9D1BBF1C4400BF048C /* DailyReportViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 774FBC9C1BBF1C4400BF048C /* DailyReportViewController.m */; settings = {ASSET_TAGS = (); }; };
 		774FBCA01BBF1E2B00BF048C /* ColorManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 774FBC9F1BBF1E2B00BF048C /* ColorManager.m */; settings = {ASSET_TAGS = (); }; };
+		774FBCAA1BBF355B00BF048C /* DatabaseManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 774FBCA91BBF355B00BF048C /* DatabaseManager.m */; settings = {ASSET_TAGS = (); }; };
+		774FBCAD1BBF366800BF048C /* Daily_Dozen.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 774FBCAB1BBF366800BF048C /* Daily_Dozen.xcdatamodeld */; settings = {ASSET_TAGS = (); }; };
+		774FBCCC1BBF38AD00BF048C /* DBConsumption.m in Sources */ = {isa = PBXBuildFile; fileRef = 774FBCC11BBF38AD00BF048C /* DBConsumption.m */; settings = {ASSET_TAGS = (); }; };
+		774FBCCD1BBF38AD00BF048C /* DBConsumption+CoreDataProperties.m in Sources */ = {isa = PBXBuildFile; fileRef = 774FBCC31BBF38AD00BF048C /* DBConsumption+CoreDataProperties.m */; settings = {ASSET_TAGS = (); }; };
+		774FBCCE1BBF38AD00BF048C /* DBDailyReport.m in Sources */ = {isa = PBXBuildFile; fileRef = 774FBCC51BBF38AD00BF048C /* DBDailyReport.m */; settings = {ASSET_TAGS = (); }; };
+		774FBCCF1BBF38AD00BF048C /* DBDailyReport+CoreDataProperties.m in Sources */ = {isa = PBXBuildFile; fileRef = 774FBCC71BBF38AD00BF048C /* DBDailyReport+CoreDataProperties.m */; settings = {ASSET_TAGS = (); }; };
+		774FBCD01BBF38AD00BF048C /* DBUser.m in Sources */ = {isa = PBXBuildFile; fileRef = 774FBCC91BBF38AD00BF048C /* DBUser.m */; settings = {ASSET_TAGS = (); }; };
+		774FBCD11BBF38AD00BF048C /* DBUser+CoreDataProperties.m in Sources */ = {isa = PBXBuildFile; fileRef = 774FBCCB1BBF38AD00BF048C /* DBUser+CoreDataProperties.m */; settings = {ASSET_TAGS = (); }; };
+		774FBCD51BBF3A0F00BF048C /* NSManagedObject+Additions.m in Sources */ = {isa = PBXBuildFile; fileRef = 774FBCD41BBF3A0F00BF048C /* NSManagedObject+Additions.m */; settings = {ASSET_TAGS = (); }; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -21,7 +29,6 @@
 		774FBC7E1BBF0BA100BF048C /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		774FBC801BBF0BA100BF048C /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		774FBC811BBF0BA100BF048C /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
-		774FBC8A1BBF0BA100BF048C /* Daily_Dozen.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Daily_Dozen.xcdatamodel; sourceTree = "<group>"; };
 		774FBC8C1BBF0BA100BF048C /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		774FBC8F1BBF0BA100BF048C /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		774FBC911BBF0BA100BF048C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -30,6 +37,24 @@
 		774FBC9E1BBF1E2B00BF048C /* ColorManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ColorManager.h; path = util/ColorManager.h; sourceTree = "<group>"; };
 		774FBC9F1BBF1E2B00BF048C /* ColorManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ColorManager.m; path = util/ColorManager.m; sourceTree = "<group>"; };
 		774FBCA31BBF1FDC00BF048C /* ColorConstants.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = ColorConstants.h; path = constants/ColorConstants.h; sourceTree = "<group>"; };
+		774FBCA81BBF355B00BF048C /* DatabaseManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = DatabaseManager.h; path = db/managers/DatabaseManager.h; sourceTree = "<group>"; };
+		774FBCA91BBF355B00BF048C /* DatabaseManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = DatabaseManager.m; path = db/managers/DatabaseManager.m; sourceTree = "<group>"; };
+		774FBCAC1BBF366800BF048C /* Daily_Dozen.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Daily_Dozen.xcdatamodel; sourceTree = "<group>"; };
+		774FBCC01BBF38AD00BF048C /* DBConsumption.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = DBConsumption.h; path = db/DBConsumption.h; sourceTree = "<group>"; };
+		774FBCC11BBF38AD00BF048C /* DBConsumption.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = DBConsumption.m; path = db/DBConsumption.m; sourceTree = "<group>"; };
+		774FBCC21BBF38AD00BF048C /* DBConsumption+CoreDataProperties.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "DBConsumption+CoreDataProperties.h"; path = "db/DBConsumption+CoreDataProperties.h"; sourceTree = "<group>"; };
+		774FBCC31BBF38AD00BF048C /* DBConsumption+CoreDataProperties.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "DBConsumption+CoreDataProperties.m"; path = "db/DBConsumption+CoreDataProperties.m"; sourceTree = "<group>"; };
+		774FBCC41BBF38AD00BF048C /* DBDailyReport.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = DBDailyReport.h; path = db/DBDailyReport.h; sourceTree = "<group>"; };
+		774FBCC51BBF38AD00BF048C /* DBDailyReport.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = DBDailyReport.m; path = db/DBDailyReport.m; sourceTree = "<group>"; };
+		774FBCC61BBF38AD00BF048C /* DBDailyReport+CoreDataProperties.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "DBDailyReport+CoreDataProperties.h"; path = "db/DBDailyReport+CoreDataProperties.h"; sourceTree = "<group>"; };
+		774FBCC71BBF38AD00BF048C /* DBDailyReport+CoreDataProperties.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "DBDailyReport+CoreDataProperties.m"; path = "db/DBDailyReport+CoreDataProperties.m"; sourceTree = "<group>"; };
+		774FBCC81BBF38AD00BF048C /* DBUser.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = DBUser.h; path = db/DBUser.h; sourceTree = "<group>"; };
+		774FBCC91BBF38AD00BF048C /* DBUser.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = DBUser.m; path = db/DBUser.m; sourceTree = "<group>"; };
+		774FBCCA1BBF38AD00BF048C /* DBUser+CoreDataProperties.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "DBUser+CoreDataProperties.h"; path = "db/DBUser+CoreDataProperties.h"; sourceTree = "<group>"; };
+		774FBCCB1BBF38AD00BF048C /* DBUser+CoreDataProperties.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "DBUser+CoreDataProperties.m"; path = "db/DBUser+CoreDataProperties.m"; sourceTree = "<group>"; };
+		774FBCD31BBF3A0F00BF048C /* NSManagedObject+Additions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "NSManagedObject+Additions.h"; path = "db/categories/NSManagedObject+Additions.h"; sourceTree = "<group>"; };
+		774FBCD41BBF3A0F00BF048C /* NSManagedObject+Additions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "NSManagedObject+Additions.m"; path = "db/categories/NSManagedObject+Additions.m"; sourceTree = "<group>"; };
+		774FBCD91BBF3DFC00BF048C /* DailyDozen-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "DailyDozen-Prefix.pch"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -62,6 +87,7 @@
 		774FBC7C1BBF0BA100BF048C /* Daily Dozen */ = {
 			isa = PBXGroup;
 			children = (
+				774FBCA61BBF352300BF048C /* db */,
 				774FBCA21BBF1FC600BF048C /* constants */,
 				774FBCA11BBF1E3300BF048C /* util */,
 				774FBC971BBF1A7300BF048C /* View Controllers */,
@@ -70,7 +96,6 @@
 				774FBC8C1BBF0BA100BF048C /* Assets.xcassets */,
 				774FBC8E1BBF0BA100BF048C /* LaunchScreen.storyboard */,
 				774FBC911BBF0BA100BF048C /* Info.plist */,
-				774FBC891BBF0BA100BF048C /* Daily_Dozen.xcdatamodeld */,
 				774FBC7D1BBF0BA100BF048C /* Supporting Files */,
 			);
 			path = "Daily Dozen";
@@ -80,6 +105,7 @@
 			isa = PBXGroup;
 			children = (
 				774FBC7E1BBF0BA100BF048C /* main.m */,
+				774FBCD91BBF3DFC00BF048C /* DailyDozen-Prefix.pch */,
 			);
 			name = "Supporting Files";
 			sourceTree = "<group>";
@@ -108,6 +134,46 @@
 				774FBCA31BBF1FDC00BF048C /* ColorConstants.h */,
 			);
 			name = constants;
+			sourceTree = "<group>";
+		};
+		774FBCA61BBF352300BF048C /* db */ = {
+			isa = PBXGroup;
+			children = (
+				774FBCD21BBF39A400BF048C /* categories */,
+				774FBCAB1BBF366800BF048C /* Daily_Dozen.xcdatamodeld */,
+				774FBCC01BBF38AD00BF048C /* DBConsumption.h */,
+				774FBCC11BBF38AD00BF048C /* DBConsumption.m */,
+				774FBCC21BBF38AD00BF048C /* DBConsumption+CoreDataProperties.h */,
+				774FBCC31BBF38AD00BF048C /* DBConsumption+CoreDataProperties.m */,
+				774FBCC41BBF38AD00BF048C /* DBDailyReport.h */,
+				774FBCC51BBF38AD00BF048C /* DBDailyReport.m */,
+				774FBCC61BBF38AD00BF048C /* DBDailyReport+CoreDataProperties.h */,
+				774FBCC71BBF38AD00BF048C /* DBDailyReport+CoreDataProperties.m */,
+				774FBCC81BBF38AD00BF048C /* DBUser.h */,
+				774FBCC91BBF38AD00BF048C /* DBUser.m */,
+				774FBCCA1BBF38AD00BF048C /* DBUser+CoreDataProperties.h */,
+				774FBCCB1BBF38AD00BF048C /* DBUser+CoreDataProperties.m */,
+				774FBCA71BBF353F00BF048C /* managers */,
+			);
+			name = db;
+			sourceTree = "<group>";
+		};
+		774FBCA71BBF353F00BF048C /* managers */ = {
+			isa = PBXGroup;
+			children = (
+				774FBCA81BBF355B00BF048C /* DatabaseManager.h */,
+				774FBCA91BBF355B00BF048C /* DatabaseManager.m */,
+			);
+			name = managers;
+			sourceTree = "<group>";
+		};
+		774FBCD21BBF39A400BF048C /* categories */ = {
+			isa = PBXGroup;
+			children = (
+				774FBCD31BBF3A0F00BF048C /* NSManagedObject+Additions.h */,
+				774FBCD41BBF3A0F00BF048C /* NSManagedObject+Additions.m */,
+			);
+			name = categories;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -180,9 +246,17 @@
 			buildActionMask = 2147483647;
 			files = (
 				774FBC821BBF0BA100BF048C /* AppDelegate.m in Sources */,
-				774FBC8B1BBF0BA100BF048C /* Daily_Dozen.xcdatamodeld in Sources */,
+				774FBCCD1BBF38AD00BF048C /* DBConsumption+CoreDataProperties.m in Sources */,
+				774FBCCC1BBF38AD00BF048C /* DBConsumption.m in Sources */,
+				774FBCD51BBF3A0F00BF048C /* NSManagedObject+Additions.m in Sources */,
 				774FBCA01BBF1E2B00BF048C /* ColorManager.m in Sources */,
+				774FBCAD1BBF366800BF048C /* Daily_Dozen.xcdatamodeld in Sources */,
+				774FBCCF1BBF38AD00BF048C /* DBDailyReport+CoreDataProperties.m in Sources */,
+				774FBCCE1BBF38AD00BF048C /* DBDailyReport.m in Sources */,
 				774FBC7F1BBF0BA100BF048C /* main.m in Sources */,
+				774FBCAA1BBF355B00BF048C /* DatabaseManager.m in Sources */,
+				774FBCD01BBF38AD00BF048C /* DBUser.m in Sources */,
+				774FBCD11BBF38AD00BF048C /* DBUser+CoreDataProperties.m in Sources */,
 				774FBC9D1BBF1C4400BF048C /* DailyReportViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -285,6 +359,8 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "Daily Dozen/DailyDozen-Prefix.pch";
 				INFOPLIST_FILE = "Daily Dozen/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
@@ -297,6 +373,8 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "Daily Dozen/DailyDozen-Prefix.pch";
 				INFOPLIST_FILE = "Daily Dozen/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
@@ -329,13 +407,14 @@
 /* End XCConfigurationList section */
 
 /* Begin XCVersionGroup section */
-		774FBC891BBF0BA100BF048C /* Daily_Dozen.xcdatamodeld */ = {
+		774FBCAB1BBF366800BF048C /* Daily_Dozen.xcdatamodeld */ = {
 			isa = XCVersionGroup;
 			children = (
-				774FBC8A1BBF0BA100BF048C /* Daily_Dozen.xcdatamodel */,
+				774FBCAC1BBF366800BF048C /* Daily_Dozen.xcdatamodel */,
 			);
-			currentVersion = 774FBC8A1BBF0BA100BF048C /* Daily_Dozen.xcdatamodel */;
-			path = Daily_Dozen.xcdatamodeld;
+			currentVersion = 774FBCAC1BBF366800BF048C /* Daily_Dozen.xcdatamodel */;
+			name = Daily_Dozen.xcdatamodeld;
+			path = db/Daily_Dozen.xcdatamodeld;
 			sourceTree = "<group>";
 			versionGroupType = wrapper.xcdatamodel;
 		};

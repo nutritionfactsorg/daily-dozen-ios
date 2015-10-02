@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<model userDefinedModelVersionIdentifier="" type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="8195" systemVersion="15A284" minimumToolsVersion="Automatic">
+    <entity name="DBConsumption" representedClassName="DBConsumption" syncable="YES">
+        <attribute name="consumedServingCount" optional="YES" attributeType="Double" defaultValueString="0.0" syncable="YES"/>
+        <attribute name="foodTypeIdentifier" optional="YES" attributeType="String" syncable="YES"/>
+        <relationship name="dailyReport" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="DBDailyReport" inverseName="consumptions" inverseEntity="DBDailyReport" syncable="YES"/>
+    </entity>
+    <entity name="DBDailyReport" representedClassName="DBDailyReport" syncable="YES">
+        <attribute name="date" optional="YES" attributeType="Date" syncable="YES"/>
+        <relationship name="consumptions" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="DBConsumption" inverseName="dailyReport" inverseEntity="DBConsumption" syncable="YES"/>
+        <relationship name="user" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="DBUser" inverseName="dailyReports" inverseEntity="DBUser" syncable="YES"/>
+    </entity>
+    <entity name="DBUser" representedClassName="DBUser" syncable="YES">
+        <attribute name="identifier" optional="YES" attributeType="Integer 64" defaultValueString="0" syncable="YES"/>
+        <attribute name="usageCount" optional="YES" attributeType="Integer 64" defaultValueString="0" syncable="YES"/>
+        <relationship name="dailyReports" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="DBDailyReport" inverseName="user" inverseEntity="DBDailyReport" syncable="YES"/>
+    </entity>
+    <elements>
+        <element name="DBUser" positionX="-63" positionY="-18" width="128" height="90"/>
+        <element name="DBDailyReport" positionX="-54" positionY="-9" width="128" height="90"/>
+        <element name="DBConsumption" positionX="-36" positionY="9" width="128" height="90"/>
+    </elements>
+</model>
