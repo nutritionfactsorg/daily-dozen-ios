@@ -9,11 +9,12 @@
 /* Begin PBXBuildFile section */
 		774FBC7F1BBF0BA100BF048C /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 774FBC7E1BBF0BA100BF048C /* main.m */; };
 		774FBC821BBF0BA100BF048C /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 774FBC811BBF0BA100BF048C /* AppDelegate.m */; };
-		774FBC851BBF0BA100BF048C /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 774FBC841BBF0BA100BF048C /* ViewController.m */; };
 		774FBC881BBF0BA100BF048C /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 774FBC861BBF0BA100BF048C /* Main.storyboard */; };
 		774FBC8B1BBF0BA100BF048C /* Daily_Dozen.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 774FBC891BBF0BA100BF048C /* Daily_Dozen.xcdatamodeld */; };
 		774FBC8D1BBF0BA100BF048C /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 774FBC8C1BBF0BA100BF048C /* Assets.xcassets */; };
 		774FBC901BBF0BA100BF048C /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 774FBC8E1BBF0BA100BF048C /* LaunchScreen.storyboard */; };
+		774FBC9D1BBF1C4400BF048C /* DailyReportViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 774FBC9C1BBF1C4400BF048C /* DailyReportViewController.m */; settings = {ASSET_TAGS = (); }; };
+		774FBCA01BBF1E2B00BF048C /* ColorManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 774FBC9F1BBF1E2B00BF048C /* ColorManager.m */; settings = {ASSET_TAGS = (); }; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -21,13 +22,16 @@
 		774FBC7E1BBF0BA100BF048C /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		774FBC801BBF0BA100BF048C /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		774FBC811BBF0BA100BF048C /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
-		774FBC831BBF0BA100BF048C /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
-		774FBC841BBF0BA100BF048C /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
 		774FBC871BBF0BA100BF048C /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		774FBC8A1BBF0BA100BF048C /* Daily_Dozen.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Daily_Dozen.xcdatamodel; sourceTree = "<group>"; };
 		774FBC8C1BBF0BA100BF048C /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		774FBC8F1BBF0BA100BF048C /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		774FBC911BBF0BA100BF048C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		774FBC9B1BBF1C4400BF048C /* DailyReportViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DailyReportViewController.h; sourceTree = "<group>"; };
+		774FBC9C1BBF1C4400BF048C /* DailyReportViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DailyReportViewController.m; sourceTree = "<group>"; };
+		774FBC9E1BBF1E2B00BF048C /* ColorManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ColorManager.h; path = util/ColorManager.h; sourceTree = "<group>"; };
+		774FBC9F1BBF1E2B00BF048C /* ColorManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ColorManager.m; path = util/ColorManager.m; sourceTree = "<group>"; };
+		774FBCA31BBF1FDC00BF048C /* ColorConstants.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = ColorConstants.h; path = constants/ColorConstants.h; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -60,10 +64,11 @@
 		774FBC7C1BBF0BA100BF048C /* Daily Dozen */ = {
 			isa = PBXGroup;
 			children = (
+				774FBCA21BBF1FC600BF048C /* constants */,
+				774FBCA11BBF1E3300BF048C /* util */,
+				774FBC971BBF1A7300BF048C /* View Controllers */,
 				774FBC801BBF0BA100BF048C /* AppDelegate.h */,
 				774FBC811BBF0BA100BF048C /* AppDelegate.m */,
-				774FBC831BBF0BA100BF048C /* ViewController.h */,
-				774FBC841BBF0BA100BF048C /* ViewController.m */,
 				774FBC861BBF0BA100BF048C /* Main.storyboard */,
 				774FBC8C1BBF0BA100BF048C /* Assets.xcassets */,
 				774FBC8E1BBF0BA100BF048C /* LaunchScreen.storyboard */,
@@ -80,6 +85,32 @@
 				774FBC7E1BBF0BA100BF048C /* main.m */,
 			);
 			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		774FBC971BBF1A7300BF048C /* View Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				774FBC9B1BBF1C4400BF048C /* DailyReportViewController.h */,
+				774FBC9C1BBF1C4400BF048C /* DailyReportViewController.m */,
+			);
+			name = "View Controllers";
+			sourceTree = "<group>";
+		};
+		774FBCA11BBF1E3300BF048C /* util */ = {
+			isa = PBXGroup;
+			children = (
+				774FBC9E1BBF1E2B00BF048C /* ColorManager.h */,
+				774FBC9F1BBF1E2B00BF048C /* ColorManager.m */,
+			);
+			name = util;
+			sourceTree = "<group>";
+		};
+		774FBCA21BBF1FC600BF048C /* constants */ = {
+			isa = PBXGroup;
+			children = (
+				774FBCA31BBF1FDC00BF048C /* ColorConstants.h */,
+			);
+			name = constants;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -152,10 +183,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				774FBC851BBF0BA100BF048C /* ViewController.m in Sources */,
 				774FBC821BBF0BA100BF048C /* AppDelegate.m in Sources */,
 				774FBC8B1BBF0BA100BF048C /* Daily_Dozen.xcdatamodeld in Sources */,
+				774FBCA01BBF1E2B00BF048C /* ColorManager.m in Sources */,
 				774FBC7F1BBF0BA100BF048C /* main.m in Sources */,
+				774FBC9D1BBF1C4400BF048C /* DailyReportViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -266,6 +298,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				INFOPLIST_FILE = "Daily Dozen/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "NutritionFacts.Daily-Dozen";
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -277,6 +310,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				INFOPLIST_FILE = "Daily Dozen/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "NutritionFacts.Daily-Dozen";
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -302,6 +336,7 @@
 				774FBC961BBF0BA100BF048C /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 
