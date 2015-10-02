@@ -1,0 +1,322 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		774FBC7F1BBF0BA100BF048C /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 774FBC7E1BBF0BA100BF048C /* main.m */; };
+		774FBC821BBF0BA100BF048C /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 774FBC811BBF0BA100BF048C /* AppDelegate.m */; };
+		774FBC851BBF0BA100BF048C /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 774FBC841BBF0BA100BF048C /* ViewController.m */; };
+		774FBC881BBF0BA100BF048C /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 774FBC861BBF0BA100BF048C /* Main.storyboard */; };
+		774FBC8B1BBF0BA100BF048C /* Daily_Dozen.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 774FBC891BBF0BA100BF048C /* Daily_Dozen.xcdatamodeld */; };
+		774FBC8D1BBF0BA100BF048C /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 774FBC8C1BBF0BA100BF048C /* Assets.xcassets */; };
+		774FBC901BBF0BA100BF048C /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 774FBC8E1BBF0BA100BF048C /* LaunchScreen.storyboard */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		774FBC7A1BBF0BA100BF048C /* Daily Dozen.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Daily Dozen.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		774FBC7E1BBF0BA100BF048C /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		774FBC801BBF0BA100BF048C /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
+		774FBC811BBF0BA100BF048C /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
+		774FBC831BBF0BA100BF048C /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
+		774FBC841BBF0BA100BF048C /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
+		774FBC871BBF0BA100BF048C /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		774FBC8A1BBF0BA100BF048C /* Daily_Dozen.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Daily_Dozen.xcdatamodel; sourceTree = "<group>"; };
+		774FBC8C1BBF0BA100BF048C /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		774FBC8F1BBF0BA100BF048C /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		774FBC911BBF0BA100BF048C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		774FBC771BBF0BA100BF048C /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		774FBC711BBF0BA100BF048C = {
+			isa = PBXGroup;
+			children = (
+				774FBC7C1BBF0BA100BF048C /* Daily Dozen */,
+				774FBC7B1BBF0BA100BF048C /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		774FBC7B1BBF0BA100BF048C /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				774FBC7A1BBF0BA100BF048C /* Daily Dozen.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		774FBC7C1BBF0BA100BF048C /* Daily Dozen */ = {
+			isa = PBXGroup;
+			children = (
+				774FBC801BBF0BA100BF048C /* AppDelegate.h */,
+				774FBC811BBF0BA100BF048C /* AppDelegate.m */,
+				774FBC831BBF0BA100BF048C /* ViewController.h */,
+				774FBC841BBF0BA100BF048C /* ViewController.m */,
+				774FBC861BBF0BA100BF048C /* Main.storyboard */,
+				774FBC8C1BBF0BA100BF048C /* Assets.xcassets */,
+				774FBC8E1BBF0BA100BF048C /* LaunchScreen.storyboard */,
+				774FBC911BBF0BA100BF048C /* Info.plist */,
+				774FBC891BBF0BA100BF048C /* Daily_Dozen.xcdatamodeld */,
+				774FBC7D1BBF0BA100BF048C /* Supporting Files */,
+			);
+			path = "Daily Dozen";
+			sourceTree = "<group>";
+		};
+		774FBC7D1BBF0BA100BF048C /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				774FBC7E1BBF0BA100BF048C /* main.m */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		774FBC791BBF0BA100BF048C /* Daily Dozen */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 774FBC941BBF0BA100BF048C /* Build configuration list for PBXNativeTarget "Daily Dozen" */;
+			buildPhases = (
+				774FBC761BBF0BA100BF048C /* Sources */,
+				774FBC771BBF0BA100BF048C /* Frameworks */,
+				774FBC781BBF0BA100BF048C /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "Daily Dozen";
+			productName = "Daily Dozen";
+			productReference = 774FBC7A1BBF0BA100BF048C /* Daily Dozen.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		774FBC721BBF0BA100BF048C /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 0700;
+				ORGANIZATIONNAME = NutritionFacts.org;
+				TargetAttributes = {
+					774FBC791BBF0BA100BF048C = {
+						CreatedOnToolsVersion = 7.0.1;
+					};
+				};
+			};
+			buildConfigurationList = 774FBC751BBF0BA100BF048C /* Build configuration list for PBXProject "Daily Dozen" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 774FBC711BBF0BA100BF048C;
+			productRefGroup = 774FBC7B1BBF0BA100BF048C /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				774FBC791BBF0BA100BF048C /* Daily Dozen */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		774FBC781BBF0BA100BF048C /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				774FBC901BBF0BA100BF048C /* LaunchScreen.storyboard in Resources */,
+				774FBC8D1BBF0BA100BF048C /* Assets.xcassets in Resources */,
+				774FBC881BBF0BA100BF048C /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		774FBC761BBF0BA100BF048C /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				774FBC851BBF0BA100BF048C /* ViewController.m in Sources */,
+				774FBC821BBF0BA100BF048C /* AppDelegate.m in Sources */,
+				774FBC8B1BBF0BA100BF048C /* Daily_Dozen.xcdatamodeld in Sources */,
+				774FBC7F1BBF0BA100BF048C /* main.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXVariantGroup section */
+		774FBC861BBF0BA100BF048C /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				774FBC871BBF0BA100BF048C /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		774FBC8E1BBF0BA100BF048C /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				774FBC8F1BBF0BA100BF048C /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		774FBC921BBF0BA100BF048C /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+			};
+			name = Debug;
+		};
+		774FBC931BBF0BA100BF048C /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = iphoneos;
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		774FBC951BBF0BA100BF048C /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				INFOPLIST_FILE = "Daily Dozen/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "NutritionFacts.Daily-Dozen";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Debug;
+		};
+		774FBC961BBF0BA100BF048C /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				INFOPLIST_FILE = "Daily Dozen/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "NutritionFacts.Daily-Dozen";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		774FBC751BBF0BA100BF048C /* Build configuration list for PBXProject "Daily Dozen" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				774FBC921BBF0BA100BF048C /* Debug */,
+				774FBC931BBF0BA100BF048C /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		774FBC941BBF0BA100BF048C /* Build configuration list for PBXNativeTarget "Daily Dozen" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				774FBC951BBF0BA100BF048C /* Debug */,
+				774FBC961BBF0BA100BF048C /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+/* End XCConfigurationList section */
+
+/* Begin XCVersionGroup section */
+		774FBC891BBF0BA100BF048C /* Daily_Dozen.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				774FBC8A1BBF0BA100BF048C /* Daily_Dozen.xcdatamodel */,
+			);
+			currentVersion = 774FBC8A1BBF0BA100BF048C /* Daily_Dozen.xcdatamodel */;
+			path = Daily_Dozen.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+/* End XCVersionGroup section */
+	};
+	rootObject = 774FBC721BBF0BA100BF048C /* Project object */;
+}
