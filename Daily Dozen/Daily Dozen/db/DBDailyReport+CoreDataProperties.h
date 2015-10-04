@@ -2,7 +2,7 @@
 //  DBDailyReport+CoreDataProperties.h
 //  Daily Dozen
 //
-//  Created by Chan Kruse on 2015-10-02.
+//  Created by Chan Kruse on 2015-10-04.
 //  Copyright © 2015 NutritionFacts.org. All rights reserved.
 //
 //  Choose "Create NSManagedObject Subclass…" from the Core Data editor menu
@@ -16,17 +16,23 @@ NS_ASSUME_NONNULL_BEGIN
 @interface DBDailyReport (CoreDataProperties)
 
 @property (nullable, nonatomic, retain) NSDate *date;
+@property (nullable, nonatomic, retain) NSOrderedSet<DBConsumption *> *consumptions;
 @property (nullable, nonatomic, retain) DBUser *user;
-@property (nullable, nonatomic, retain) NSSet<DBConsumption *> *consumptions;
 
 @end
 
 @interface DBDailyReport (CoreDataGeneratedAccessors)
 
+- (void)insertObject:(DBConsumption *)value inConsumptionsAtIndex:(NSUInteger)idx;
+- (void)removeObjectFromConsumptionsAtIndex:(NSUInteger)idx;
+- (void)insertConsumptions:(NSArray<DBConsumption *> *)value atIndexes:(NSIndexSet *)indexes;
+- (void)removeConsumptionsAtIndexes:(NSIndexSet *)indexes;
+- (void)replaceObjectInConsumptionsAtIndex:(NSUInteger)idx withObject:(DBConsumption *)value;
+- (void)replaceConsumptionsAtIndexes:(NSIndexSet *)indexes withConsumptions:(NSArray<DBConsumption *> *)values;
 - (void)addConsumptionsObject:(DBConsumption *)value;
 - (void)removeConsumptionsObject:(DBConsumption *)value;
-- (void)addConsumptions:(NSSet<DBConsumption *> *)values;
-- (void)removeConsumptions:(NSSet<DBConsumption *> *)values;
+- (void)addConsumptions:(NSOrderedSet<DBConsumption *> *)values;
+- (void)removeConsumptions:(NSOrderedSet<DBConsumption *> *)values;
 
 @end
 

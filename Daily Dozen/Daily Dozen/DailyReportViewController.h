@@ -8,6 +8,6 @@
 
 #import <UIKit/UIKit.h>
 
-@interface DailyReportViewController : UIViewController
+@interface DailyReportViewController : UIViewController <UITableViewDelegate, UITableViewDataSource>
 
 @end

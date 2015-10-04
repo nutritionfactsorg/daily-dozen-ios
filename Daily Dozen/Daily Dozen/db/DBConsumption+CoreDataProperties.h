@@ -11,6 +11,8 @@
 
 #import "DBConsumption.h"
 
+@class DBDailyReport;
+
 NS_ASSUME_NONNULL_BEGIN
 
 @interface DBConsumption (CoreDataProperties)

@@ -8,7 +8,7 @@
     </entity>
     <entity name="DBDailyReport" representedClassName="DBDailyReport" syncable="YES">
         <attribute name="date" optional="YES" attributeType="Date" syncable="YES"/>
-        <relationship name="consumptions" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="DBConsumption" inverseName="dailyReport" inverseEntity="DBConsumption" syncable="YES"/>
+        <relationship name="consumptions" optional="YES" toMany="YES" deletionRule="Nullify" ordered="YES" destinationEntity="DBConsumption" inverseName="dailyReport" inverseEntity="DBConsumption" syncable="YES"/>
         <relationship name="user" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="DBUser" inverseName="dailyReports" inverseEntity="DBUser" syncable="YES"/>
     </entity>
     <entity name="DBUser" representedClassName="DBUser" syncable="YES">
@@ -17,8 +17,8 @@
         <relationship name="dailyReports" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="DBDailyReport" inverseName="user" inverseEntity="DBDailyReport" syncable="YES"/>
     </entity>
     <elements>
-        <element name="DBUser" positionX="-63" positionY="-18" width="128" height="90"/>
-        <element name="DBDailyReport" positionX="-54" positionY="-9" width="128" height="90"/>
         <element name="DBConsumption" positionX="-36" positionY="9" width="128" height="105"/>
+        <element name="DBDailyReport" positionX="-54" positionY="-9" width="128" height="90"/>
+        <element name="DBUser" positionX="-63" positionY="-18" width="128" height="90"/>
     </elements>
 </model>

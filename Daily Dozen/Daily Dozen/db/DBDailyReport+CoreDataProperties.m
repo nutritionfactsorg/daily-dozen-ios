@@ -2,7 +2,7 @@
 //  DBDailyReport+CoreDataProperties.m
 //  Daily Dozen
 //
-//  Created by Chan Kruse on 2015-10-02.
+//  Created by Chan Kruse on 2015-10-04.
 //  Copyright © 2015 NutritionFacts.org. All rights reserved.
 //
 //  Choose "Create NSManagedObject Subclass…" from the Core Data editor menu
@@ -14,7 +14,7 @@
 @implementation DBDailyReport (CoreDataProperties)
 
 @dynamic date;
-@dynamic user;
 @dynamic consumptions;
+@dynamic user;
 
 @end

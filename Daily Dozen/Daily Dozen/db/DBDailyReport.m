@@ -2,7 +2,7 @@
 //  DBDailyReport.m
 //  Daily Dozen
 //
-//  Created by Chan Kruse on 2015-10-02.
+//  Created by Chan Kruse on 2015-10-04.
 //  Copyright © 2015 NutritionFacts.org. All rights reserved.
 //
 
@@ -12,6 +12,7 @@
 #import "NSManagedObject+Additions.h"
 #import "FoodType.h"
 #import "FoodHelper.h"
+
 
 @implementation DBDailyReport
 
@@ -133,7 +134,7 @@
 	[exercises setConsumedServingCount:@(0.0)];
 	[consumptions addObject:exercises];
 	
-	[dailyReport setConsumptions:[NSSet setWithArray:consumptions]];
+	[dailyReport setConsumptions:[NSOrderedSet orderedSetWithArray:consumptions]];
 	
 	[context save:error];
 	

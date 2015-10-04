@@ -7,8 +7,11 @@
 //
 
 #import "DBConsumption.h"
+#import "FoodType.h"
 
 @implementation DBConsumption
+
+@synthesize foodType;
 
 // Insert code here to add functionality to your managed object subclass
 
