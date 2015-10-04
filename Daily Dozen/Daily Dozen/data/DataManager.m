@@ -9,6 +9,7 @@
 #import "DataManager.h"
 #import "DatabaseManager.h"
 #import "DBDailyReport.h"
+#import "DBConsumption.h"
 
 @implementation DataManager
 
@@ -41,6 +42,19 @@ static DataManager *sharedInstance;
 	return [DBDailyReport getDailyReportForDate:startDate
 									inContext:[[DatabaseManager sharedInstance] defaultUserContext]
 										  error:&error];
+}
+
+- (void)setServingCount:(double)servingCount forDBConsumption:(DBConsumption *)consumption {
+	
+	NSError *error = nil;
+	
+	[consumption setConsumedServingCount:@(servingCount)];
+	
+	[[[DatabaseManager sharedInstance] defaultDataContext] save:&error];
+}
+
+- (DBConsumption *)getConsumption:(NSManagedObjectID *)objectId {
+	return [[[DatabaseManager sharedInstance] defaultDataContext] objectWithID:objectId];
 }
 
 @end

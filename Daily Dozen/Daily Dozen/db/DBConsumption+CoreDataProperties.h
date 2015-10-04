@@ -17,7 +17,8 @@ NS_ASSUME_NONNULL_BEGIN
 
 @property (nullable, nonatomic, retain) NSNumber *consumedServingCount;
 @property (nullable, nonatomic, retain) NSString *foodTypeIdentifier;
-@property (nullable, nonatomic, retain) NSManagedObject *dailyReport;
+@property (nullable, nonatomic, retain) NSString *identifier;
+@property (nullable, nonatomic, retain) DBDailyReport *dailyReport;
 
 @end
 

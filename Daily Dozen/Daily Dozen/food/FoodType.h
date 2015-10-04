@@ -6,6 +6,7 @@
 //  Copyright © 2015 NutritionFacts.org. All rights reserved.
 //
 
+#import <UIKit/UIKit.h>
 #import <Foundation/Foundation.h>
 
 extern NSString *const K_IDENTIFIER_BEANS;
@@ -23,6 +24,12 @@ extern NSString *const K_IDENTIFIER_EXERCISES;
 
 @interface FoodType : NSObject
 
+@property (nonatomic, strong) NSString *iconImageName;
 @property (nonatomic, strong) NSString *name;
+@property (nonatomic, strong) NSString *overviewImageName;
+@property (nonatomic, assign) CGFloat recommendedServingCount;
+@property (nonatomic, strong) NSString *servingExample;
+@property (nonatomic, strong) NSMutableArray *exampleTitles;
+@property (nonatomic, strong) NSMutableArray *exampleBodies;
 
 @end

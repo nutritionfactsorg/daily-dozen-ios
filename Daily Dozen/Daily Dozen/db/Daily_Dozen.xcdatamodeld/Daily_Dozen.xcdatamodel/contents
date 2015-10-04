@@ -3,6 +3,7 @@
     <entity name="DBConsumption" representedClassName="DBConsumption" syncable="YES">
         <attribute name="consumedServingCount" optional="YES" attributeType="Double" defaultValueString="0.0" syncable="YES"/>
         <attribute name="foodTypeIdentifier" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="identifier" optional="YES" attributeType="String" syncable="YES"/>
         <relationship name="dailyReport" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="DBDailyReport" inverseName="consumptions" inverseEntity="DBDailyReport" syncable="YES"/>
     </entity>
     <entity name="DBDailyReport" representedClassName="DBDailyReport" syncable="YES">
@@ -18,6 +19,6 @@
     <elements>
         <element name="DBUser" positionX="-63" positionY="-18" width="128" height="90"/>
         <element name="DBDailyReport" positionX="-54" positionY="-9" width="128" height="90"/>
-        <element name="DBConsumption" positionX="-36" positionY="9" width="128" height="90"/>
+        <element name="DBConsumption" positionX="-36" positionY="9" width="128" height="105"/>
     </elements>
 </model>

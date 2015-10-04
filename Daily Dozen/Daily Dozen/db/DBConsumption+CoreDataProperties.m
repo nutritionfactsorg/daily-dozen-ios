@@ -15,6 +15,7 @@
 
 @dynamic consumedServingCount;
 @dynamic foodTypeIdentifier;
+@dynamic identifier;
 @dynamic dailyReport;
 
 @end

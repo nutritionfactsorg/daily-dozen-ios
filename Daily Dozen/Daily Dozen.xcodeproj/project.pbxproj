@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		7707E45C1BC19B8100C8BCFE /* FoodHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = 7707E45B1BC19B8100C8BCFE /* FoodHelper.m */; settings = {ASSET_TAGS = (); }; };
 		774FBC7F1BBF0BA100BF048C /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 774FBC7E1BBF0BA100BF048C /* main.m */; };
 		774FBC821BBF0BA100BF048C /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 774FBC811BBF0BA100BF048C /* AppDelegate.m */; };
 		774FBC8D1BBF0BA100BF048C /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 774FBC8C1BBF0BA100BF048C /* Assets.xcassets */; };
@@ -28,6 +29,8 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		7707E45A1BC19B8100C8BCFE /* FoodHelper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = FoodHelper.h; path = food/FoodHelper.h; sourceTree = "<group>"; };
+		7707E45B1BC19B8100C8BCFE /* FoodHelper.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = FoodHelper.m; path = food/FoodHelper.m; sourceTree = "<group>"; };
 		774FBC7A1BBF0BA100BF048C /* Daily Dozen.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Daily Dozen.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		774FBC7E1BBF0BA100BF048C /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		774FBC801BBF0BA100BF048C /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
@@ -211,6 +214,8 @@
 			children = (
 				774FBCE31BBF4ADE00BF048C /* FoodType.h */,
 				774FBCE41BBF4ADE00BF048C /* FoodType.m */,
+				7707E45A1BC19B8100C8BCFE /* FoodHelper.h */,
+				7707E45B1BC19B8100C8BCFE /* FoodHelper.m */,
 			);
 			name = food;
 			sourceTree = "<group>";
@@ -294,6 +299,7 @@
 				774FBCCF1BBF38AD00BF048C /* DBDailyReport+CoreDataProperties.m in Sources */,
 				774FBCCE1BBF38AD00BF048C /* DBDailyReport.m in Sources */,
 				774FBCDD1BBF45C800BF048C /* UserManager.m in Sources */,
+				7707E45C1BC19B8100C8BCFE /* FoodHelper.m in Sources */,
 				774FBC7F1BBF0BA100BF048C /* main.m in Sources */,
 				774FBCAA1BBF355B00BF048C /* DatabaseManager.m in Sources */,
 				774FBCD01BBF38AD00BF048C /* DBUser.m in Sources */,
