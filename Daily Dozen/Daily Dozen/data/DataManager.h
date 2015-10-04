@@ -8,8 +8,11 @@
 
 #import <Foundation/Foundation.h>
 
+@class DBDailyReport;
+
 @interface DataManager : NSObject
 
 + (DataManager *)getInstance;
+- (DBDailyReport *)getReportForToday;
 
 @end

@@ -11,6 +11,7 @@
 #import "DBUser.h"
 #import "NSManagedObject+Additions.h"
 #import "FoodType.h"
+#import "FoodHelper.h"
 
 @implementation DBDailyReport
 
@@ -32,12 +33,10 @@
 		dailyReport = [DBDailyReport initializeDailyReportForDate:date inContext:context error:error];
 	}
 	
-	//todo
-	/*
 	for (DBConsumption *consumption in [dailyReport consumptions]) {
-		consumption.foodType = nil; //todo
+		consumption.foodType = [[FoodHelper getInstance] getFoodTypeForFoodIdentifier:[consumption foodTypeIdentifier]];
 	}
-	*/
+	
 	return dailyReport;
 }
 

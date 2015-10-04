@@ -8,8 +8,11 @@
 
 #import <Foundation/Foundation.h>
 
+@class FoodType;
+
 @interface FoodHelper : NSObject
 
 + (FoodHelper *)getInstance;
+- (FoodType *)getFoodTypeForFoodIdentifier:(NSString *)identifier;
 
 @end

@@ -8,8 +8,12 @@
 
 #import "DailyReportViewController.h"
 #import "ColorConstants.h"
+#import "DBDailyReport.h"
+#import "DataManager.h"
 
 @interface DailyReportViewController ()
+
+@property (nonatomic, strong) DBDailyReport *dailyReport;
 
 @end
 
@@ -17,7 +21,7 @@
 
 - (id)init {
 	if ((self = [super init])) {
-		
+		self.dailyReport = [[DataManager getInstance] getReportForToday];
 	}
 	
 	return self;
