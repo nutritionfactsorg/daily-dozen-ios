@@ -20,7 +20,7 @@
 @property (nonatomic, strong) UIImageView *checkMarkImageView4;
 @property (nonatomic, strong) UIImageView *checkMarkImageView5;
 
-- (id)initWithTableView:(UITableView *)tableView identifier:(NSString *)identifier;
+- (id)initWithTableView:(UITableView *)tableView maxCheckmarkCount:(NSInteger)maxCheckmarkCount identifier:(NSString *)identifier;
 + (CGFloat)calculateRequiredHeightForConsumption:(DBConsumption *)consumption forTableView:(UITableView *)tableView;
 
 @end

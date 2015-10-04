@@ -107,7 +107,12 @@
 
 - (UITableViewCell *)tableviewCellWithReuseIdentifier:(NSString *)identifier AtIndex:(NSIndexPath *)indexPath {
 	
-	UITableViewCell *cell = [[ConsumptionTableViewCell alloc] initWithTableView:self.tableView identifier:identifier];
+	DBConsumption *consumption = ((DBConsumption *)(self.dailyReport.consumptions[indexPath.row]));
+	FoodType *foodType = consumption.foodType;
+	
+	UITableViewCell *cell = [[ConsumptionTableViewCell alloc] initWithTableView:self.tableView
+															  maxCheckmarkCount:ceilf(foodType.recommendedServingCount)
+																	 identifier:[NSString stringWithFormat:@"maxServingCount%f", foodType.recommendedServingCount]];
 	
 	return cell;
 }
@@ -115,10 +120,54 @@
 - (void)configureCell:(UITableViewCell *)cell forIndexPath:(NSIndexPath *)indexPath {
 	
 	ConsumptionTableViewCell *consumptionCell = (ConsumptionTableViewCell *)cell;
-	FoodType *foodType = ((DBConsumption *)(self.dailyReport.consumptions[indexPath.row])).foodType;
+	
+	DBConsumption *consumption = ((DBConsumption *)(self.dailyReport.consumptions[indexPath.row]));
+	FoodType *foodType = consumption.foodType;
 	
 	consumptionCell.iconImageView.image = [UIImage imageNamed:foodType.iconImageName];
 	consumptionCell.label.text = foodType.name;
+	
+	int consumedCount = (int)consumption.consumedServingCount.integerValue;
+	
+	if (consumptionCell.checkMarkImageView1) {
+		if (consumedCount >= 1) {
+			consumptionCell.checkMarkImageView1.image = [UIImage imageNamed:@"checkmark_filled.png"];
+		} else {
+			consumptionCell.checkMarkImageView1.image = [UIImage imageNamed:@"checkmark_unfilled.png"];
+		}
+	}
+	
+	if (consumptionCell.checkMarkImageView2) {
+		if (consumedCount >= 2) {
+			consumptionCell.checkMarkImageView2.image = [UIImage imageNamed:@"checkmark_filled.png"];
+		} else {
+			consumptionCell.checkMarkImageView2.image = [UIImage imageNamed:@"checkmark_unfilled.png"];
+		}
+	}
+	
+	if (consumptionCell.checkMarkImageView3) {
+		if (consumedCount >= 3) {
+			consumptionCell.checkMarkImageView3.image = [UIImage imageNamed:@"checkmark_filled.png"];
+		} else {
+			consumptionCell.checkMarkImageView3.image = [UIImage imageNamed:@"checkmark_unfilled.png"];
+		}
+	}
+	
+	if (consumptionCell.checkMarkImageView4) {
+		if (consumedCount >= 4) {
+			consumptionCell.checkMarkImageView4.image = [UIImage imageNamed:@"checkmark_filled.png"];
+		} else {
+			consumptionCell.checkMarkImageView4.image = [UIImage imageNamed:@"checkmark_unfilled.png"];
+		}
+	}
+	
+	if (consumptionCell.checkMarkImageView5) {
+		if (consumedCount >= 5) {
+			consumptionCell.checkMarkImageView5.image = [UIImage imageNamed:@"checkmark_filled.png"];
+		} else {
+			consumptionCell.checkMarkImageView5.image = [UIImage imageNamed:@"checkmark_unfilled.png"];
+		}
+	}
 }
 
 - (void)tableView:(UITableView *)tableView willDisplayCell:(UITableViewCell *)cell forRowAtIndexPath:(NSIndexPath *)indexPath {
