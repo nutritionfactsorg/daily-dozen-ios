@@ -24,7 +24,7 @@ extern NSString *const K_IDENTIFIER_EXERCISES;
 
 @interface FoodType : NSObject
 
-@property (nonatomic, strong) NSString *iconImageName;
+@property (nonatomic, strong) UIImage *iconImageName;
 @property (nonatomic, strong) NSString *name;
 @property (nonatomic, strong) NSString *overviewImageName;
 @property (nonatomic, assign) CGFloat recommendedServingCount;

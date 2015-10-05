@@ -14,19 +14,23 @@
 #import "DatabaseManager.h"
 #import "ConsumptionTableViewCell.h"
 #import "FoodType.h"
+#import "FoodTypeDetailsViewController.h"
 
 @interface DailyReportViewController ()
 
 @property (nonatomic, strong) UITableView *tableView;
 @property (nonatomic, strong) DBDailyReport *dailyReport;
 @property (nonatomic, strong) NSMutableArray *rowHeights;
-
+@property (nonatomic, strong) UIImage *checkedImage;
+@property (nonatomic, strong) UIImage *uncheckedImage;
 @end
 
 @implementation DailyReportViewController
 
 - (id)init {
 	if ((self = [super init])) {
+		self.title = @"Dr. Gregor's Daily Dozen";
+		
 		NSError *error = nil;
 		
 		[[DatabaseManager sharedInstance] loadStoreForUserID:@(0) error:&error];
@@ -34,6 +38,9 @@
 		self.dailyReport = [[DataManager getInstance] getReportForToday];
 		
 		self.rowHeights = [NSMutableArray array];
+		
+		self.checkedImage = [UIImage imageNamed:@"checkmark_filled.png"];
+		self.uncheckedImage = [UIImage imageNamed:@"checkmark_unfilled.png"];
 	}
 	
 	return self;
@@ -92,7 +99,10 @@
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath  {
 	
-	NSString *cellID = @"default";
+	DBConsumption *consumption = ((DBConsumption *)(self.dailyReport.consumptions[indexPath.row]));
+	FoodType *foodType = consumption.foodType;
+	
+	NSString *cellID = [NSString stringWithFormat:@"maxServingCount%f", foodType.recommendedServingCount];
 	
 	UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:cellID];
 	
@@ -112,7 +122,7 @@
 	
 	UITableViewCell *cell = [[ConsumptionTableViewCell alloc] initWithTableView:self.tableView
 															  maxCheckmarkCount:ceilf(foodType.recommendedServingCount)
-																	 identifier:[NSString stringWithFormat:@"maxServingCount%f", foodType.recommendedServingCount]];
+																	 identifier:identifier];
 	
 	return cell;
 }
@@ -124,48 +134,48 @@
 	DBConsumption *consumption = ((DBConsumption *)(self.dailyReport.consumptions[indexPath.row]));
 	FoodType *foodType = consumption.foodType;
 	
-	consumptionCell.iconImageView.image = [UIImage imageNamed:foodType.iconImageName];
+	consumptionCell.iconImageView.image = foodType.iconImageName;
 	consumptionCell.label.text = foodType.name;
 	
 	int consumedCount = (int)consumption.consumedServingCount.integerValue;
 	
 	if (consumptionCell.checkMarkImageView1) {
 		if (consumedCount >= 1) {
-			consumptionCell.checkMarkImageView1.image = [UIImage imageNamed:@"checkmark_filled.png"];
+			consumptionCell.checkMarkImageView1.image = self.checkedImage;
 		} else {
-			consumptionCell.checkMarkImageView1.image = [UIImage imageNamed:@"checkmark_unfilled.png"];
+			consumptionCell.checkMarkImageView1.image = self.uncheckedImage;
 		}
 	}
 	
 	if (consumptionCell.checkMarkImageView2) {
 		if (consumedCount >= 2) {
-			consumptionCell.checkMarkImageView2.image = [UIImage imageNamed:@"checkmark_filled.png"];
+			consumptionCell.checkMarkImageView2.image = self.checkedImage;
 		} else {
-			consumptionCell.checkMarkImageView2.image = [UIImage imageNamed:@"checkmark_unfilled.png"];
+			consumptionCell.checkMarkImageView2.image = self.uncheckedImage;
 		}
 	}
 	
 	if (consumptionCell.checkMarkImageView3) {
 		if (consumedCount >= 3) {
-			consumptionCell.checkMarkImageView3.image = [UIImage imageNamed:@"checkmark_filled.png"];
+			consumptionCell.checkMarkImageView3.image = self.checkedImage;
 		} else {
-			consumptionCell.checkMarkImageView3.image = [UIImage imageNamed:@"checkmark_unfilled.png"];
+			consumptionCell.checkMarkImageView3.image = self.uncheckedImage;
 		}
 	}
 	
 	if (consumptionCell.checkMarkImageView4) {
 		if (consumedCount >= 4) {
-			consumptionCell.checkMarkImageView4.image = [UIImage imageNamed:@"checkmark_filled.png"];
+			consumptionCell.checkMarkImageView4.image = self.checkedImage;
 		} else {
-			consumptionCell.checkMarkImageView4.image = [UIImage imageNamed:@"checkmark_unfilled.png"];
+			consumptionCell.checkMarkImageView4.image = self.uncheckedImage;
 		}
 	}
 	
 	if (consumptionCell.checkMarkImageView5) {
 		if (consumedCount >= 5) {
-			consumptionCell.checkMarkImageView5.image = [UIImage imageNamed:@"checkmark_filled.png"];
+			consumptionCell.checkMarkImageView5.image = self.checkedImage;
 		} else {
-			consumptionCell.checkMarkImageView5.image = [UIImage imageNamed:@"checkmark_unfilled.png"];
+			consumptionCell.checkMarkImageView5.image = self.uncheckedImage;
 		}
 	}
 }
@@ -175,6 +185,10 @@
 }
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
+	[tableView deselectRowAtIndexPath:indexPath animated:YES];
 	
+	FoodTypeDetailsViewController *vController = [[FoodTypeDetailsViewController alloc] init];
+	[self.navigationController pushViewController:vController animated:YES];
 }
+
 @end

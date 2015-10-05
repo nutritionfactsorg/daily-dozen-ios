@@ -31,7 +31,7 @@ static FoodHelper *sharedInstance;
 	FoodType *foodType = [[FoodType alloc] init];
 	
 	if ([identifier compare:K_IDENTIFIER_BEANS] == NSOrderedSame) {
-		foodType.iconImageName = @"ic_beans";
+		foodType.iconImageName = [UIImage imageNamed:@"ic_beans"];
 		foodType.overviewImageName = @"bkg_test";
 		foodType.name = @"Beans";
 		foodType.recommendedServingCount = 3.0;
@@ -40,7 +40,7 @@ static FoodHelper *sharedInstance;
 		[foodType.exampleBodies addObject:@"Black beans, black-eyed peas, butter beans, cannellini beans, chickpeas (also known as garbanzo beans), edamame, english peas, great northern beans, kidney beans, lentils (beluga, french, and red varieties), miso, navy beans, pinto beans, small red beans, split peas (yellow or green), and tempeh"];
 		
 	} else if ([identifier compare:K_IDENTIFIER_BERRIES] == NSOrderedSame) {
-		foodType.iconImageName = @"ic_berries";
+		foodType.iconImageName = [UIImage imageNamed:@"ic_berries"];
 		foodType.overviewImageName = @"bkg_test";
 		foodType.name = @"Berries";
 		foodType.recommendedServingCount = 1.0;
@@ -49,7 +49,7 @@ static FoodHelper *sharedInstance;
 		[foodType.exampleBodies addObject:@"Açai berries, barberries, blackberries, blueberries, cherries (sweet or tart), concord grapes, cranberries, goji berries, kumquats, mulberries, raspberries (black or red), and strawberries"];
 		
 	} else if ([identifier compare:K_IDENTIFIER_OTHER_FRUIT] == NSOrderedSame) {
-		foodType.iconImageName = @"ic_apple";
+		foodType.iconImageName = [UIImage imageNamed:@"ic_apple"];
 		foodType.overviewImageName = @"bkg_test";
 		foodType.name = @"Other Fruit";
 		foodType.recommendedServingCount = 3.0;
@@ -58,7 +58,7 @@ static FoodHelper *sharedInstance;
 		[foodType.exampleBodies addObject:@"Apples, dried apricots, avocados, bananas, cantaloupe, clementines, dates, dried figs, grapefruit, honeydew, kiwifruit, lemons, limes, lychees, mangos, nectarines, oranges, papaya, passion fruit, peaches, pears, pineapple, pomegranates, plums (especially black plums), pluots, prunes, tangerines, and watermelon"];
 		
 	} else if ([identifier compare:K_IDENTIFIER_CRUCIFEROUS] == NSOrderedSame) {
-		foodType.iconImageName = @"ic_cruciferous";
+		foodType.iconImageName = [UIImage imageNamed:@"ic_cruciferous"];
 		foodType.overviewImageName = @"bkg_test";
 		foodType.name = @"Cruciferous Vegetables";
 		foodType.recommendedServingCount = 1.0;
@@ -67,7 +67,7 @@ static FoodHelper *sharedInstance;
 		[foodType.exampleBodies addObject:@"Arugula, bok choy, broccoli, brussels sprouts, cabbage, cauliflower, collard greens, horseradish, kale (black, green, and red), mustard greens, radish, turnip greens, and watercress"];
 		
 	} else if ([identifier compare:K_IDENTIFIER_GREENS] == NSOrderedSame) {
-		foodType.iconImageName = @"ic_greens";
+		foodType.iconImageName = [UIImage imageNamed:@"ic_greens"];
 		foodType.overviewImageName = @"bkg_test";
 		foodType.name = @"Greens";
 		foodType.recommendedServingCount = 2.0;
@@ -76,7 +76,7 @@ static FoodHelper *sharedInstance;
 		[foodType.exampleBodies addObject:@"Arugula, beet greens, collard greens, kale (black, green, and red), mesclun mix (assorted young salad greens), mustard greens, sorrel, spinach, swiss chard, and turnip greens"];
 		
 	} else if ([identifier compare:K_IDENTIFIER_OTHER_VEG] == NSOrderedSame) {
-		foodType.iconImageName = @"ic_other_veg";
+		foodType.iconImageName = [UIImage imageNamed:@"ic_other_veg"];
 		foodType.overviewImageName = @"bkg_test";
 		foodType.name = @"Other Vegetable";
 		foodType.recommendedServingCount = 2.0;
@@ -85,14 +85,14 @@ static FoodHelper *sharedInstance;
 		[foodType.exampleBodies addObject:@"Artichokes, asparagus, beets, bell peppers, carrots, corn, garlic, mushrooms (button, oyster, portobello, and shiitake), okra, onions, purple potatoes, pumpkin, sea vegetables (arame, dulse, and nori), snap peas, squash (delicata, summer, and spaghetti squash varieties), sweet potatoes/yams, tomatoes, and zucchini"];
 		
 	} else if ([identifier compare:K_IDENTIFIER_FLAX] == NSOrderedSame) {
-		foodType.iconImageName = @"ic_flax";
+		foodType.iconImageName = [UIImage imageNamed:@"ic_flax"];
 		foodType.overviewImageName = @"bkg_test";
 		foodType.name = @"Flaxseeds";
 		foodType.recommendedServingCount = 1.0;
 		foodType.servingExample = @"1 tablespoon ground";
 		
 	} else if ([identifier compare:K_IDENTIFIER_NUTS] == NSOrderedSame) {
-		foodType.iconImageName = @"ic_nuts";
+		foodType.iconImageName = [UIImage imageNamed:@"ic_nuts"];
 		foodType.overviewImageName = @"bkg_test";
 		foodType.name = @"Nuts";
 		foodType.recommendedServingCount = 1.0;
@@ -101,7 +101,7 @@ static FoodHelper *sharedInstance;
 		[foodType.exampleBodies addObject:@"Almonds, brazil nuts, cashews, chia seeds, hazelnuts/filberts, hemp seeds, macadamia nuts, pecans, pistachios, pumpkin seeds, sesame seeds, sunflower seeds, and walnuts"];
 		
 	} else if ([identifier compare:K_IDENTIFIER_SPICES] == NSOrderedSame) {
-		foodType.iconImageName = @"ic_spices";
+		foodType.iconImageName = [UIImage imageNamed:@"ic_spices"];
 		foodType.overviewImageName = @"bkg_test";
 		foodType.name = @"Spices";
 		foodType.recommendedServingCount = -1.0;
@@ -109,7 +109,7 @@ static FoodHelper *sharedInstance;
 		[foodType.exampleBodies addObject:@"Allspice, barberries, basil, bay leaves, cardamom, chili powder, cilantro, cinnamon, cloves, coriander, cumin, curry powder, dill, fenugreek, garlic, ginger, horseradish, lemongrass, marjoram, mustard powder, nutmeg, oregano, smoked paprika, parsley, pepper, peppermint, rosemary, saffron, sage, thyme, turmeric, and vanilla"];
 		
 	} else if ([identifier compare:K_IDENTIFIER_WHOLE_GRAINS] == NSOrderedSame) {
-		foodType.iconImageName = @"ic_whole_grains";
+		foodType.iconImageName = [UIImage imageNamed:@"ic_whole_grains"];
 		foodType.overviewImageName = @"bkg_test";
 		foodType.name = @"Whole Grains";
 		foodType.recommendedServingCount = 3.0;
@@ -118,7 +118,7 @@ static FoodHelper *sharedInstance;
 		[foodType.exampleBodies addObject:@"Barley, brown rice, buckwheat, millet, oats, popcorn, quinoa, rye, teff, whole-wheat pasta, and wild rice"];
 		
 	} else if ([identifier compare:K_IDENTIFIER_BEVERAGES] == NSOrderedSame) {
-		foodType.iconImageName = @"ic_beverages";
+		foodType.iconImageName = [UIImage imageNamed:@"ic_beverages"];
 		foodType.overviewImageName = @"bkg_test";
 		foodType.name = @"Beverages";
 		foodType.recommendedServingCount = 5.0;
@@ -127,7 +127,7 @@ static FoodHelper *sharedInstance;
 		[foodType.exampleBodies addObject:@"Black tea, chai tea, vanilla chamomile tea, coffee, earl grey tea, green tea, hibiscus tea, hot chocolate, jasmine tea, lemon balm tea, matcha tea, almond blossom oolong tea, peppermint tea, rooibos tea, water, and white tea"];
 		
 	} else if ([identifier compare:K_IDENTIFIER_EXERCISES] == NSOrderedSame) {
-		foodType.iconImageName = @"ic_exercise";
+		foodType.iconImageName = [UIImage imageNamed:@"ic_exercise"];
 		foodType.overviewImageName = @"bkg_test";
 		foodType.name = @"Exercise";
 		foodType.recommendedServingCount = 1.0;

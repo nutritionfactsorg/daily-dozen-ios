@@ -37,11 +37,12 @@
 		7707E4B81BC1F10E00C8BCFE /* checkmark_filled@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 7707E4B41BC1F10E00C8BCFE /* checkmark_filled@2x.png */; settings = {ASSET_TAGS = (); }; };
 		7707E4B91BC1F10E00C8BCFE /* checkmark_unfilled.png in Resources */ = {isa = PBXBuildFile; fileRef = 7707E4B51BC1F10E00C8BCFE /* checkmark_unfilled.png */; settings = {ASSET_TAGS = (); }; };
 		7707E4BA1BC1F10E00C8BCFE /* checkmark_unfilled@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 7707E4B61BC1F10E00C8BCFE /* checkmark_unfilled@2x.png */; settings = {ASSET_TAGS = (); }; };
+		7707E4BD1BC2208400C8BCFE /* FoodTypeDetailsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7707E4BC1BC2208400C8BCFE /* FoodTypeDetailsViewController.m */; settings = {ASSET_TAGS = (); }; };
+		7707E4C01BC220A000C8BCFE /* DailyReportViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7707E4BF1BC220A000C8BCFE /* DailyReportViewController.m */; settings = {ASSET_TAGS = (); }; };
 		774FBC7F1BBF0BA100BF048C /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 774FBC7E1BBF0BA100BF048C /* main.m */; };
 		774FBC821BBF0BA100BF048C /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 774FBC811BBF0BA100BF048C /* AppDelegate.m */; };
 		774FBC8D1BBF0BA100BF048C /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 774FBC8C1BBF0BA100BF048C /* Assets.xcassets */; };
 		774FBC901BBF0BA100BF048C /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 774FBC8E1BBF0BA100BF048C /* LaunchScreen.storyboard */; };
-		774FBC9D1BBF1C4400BF048C /* DailyReportViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 774FBC9C1BBF1C4400BF048C /* DailyReportViewController.m */; settings = {ASSET_TAGS = (); }; };
 		774FBCA01BBF1E2B00BF048C /* ColorManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 774FBC9F1BBF1E2B00BF048C /* ColorManager.m */; settings = {ASSET_TAGS = (); }; };
 		774FBCAA1BBF355B00BF048C /* DatabaseManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 774FBCA91BBF355B00BF048C /* DatabaseManager.m */; settings = {ASSET_TAGS = (); }; };
 		774FBCAD1BBF366800BF048C /* Daily_Dozen.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 774FBCAB1BBF366800BF048C /* Daily_Dozen.xcdatamodeld */; settings = {ASSET_TAGS = (); }; };
@@ -91,6 +92,10 @@
 		7707E4B41BC1F10E00C8BCFE /* checkmark_filled@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "checkmark_filled@2x.png"; sourceTree = "<group>"; };
 		7707E4B51BC1F10E00C8BCFE /* checkmark_unfilled.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = checkmark_unfilled.png; sourceTree = "<group>"; };
 		7707E4B61BC1F10E00C8BCFE /* checkmark_unfilled@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "checkmark_unfilled@2x.png"; sourceTree = "<group>"; };
+		7707E4BB1BC2208400C8BCFE /* FoodTypeDetailsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = FoodTypeDetailsViewController.h; path = "View Controllers/FoodTypeDetailsViewController.h"; sourceTree = "<group>"; };
+		7707E4BC1BC2208400C8BCFE /* FoodTypeDetailsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = FoodTypeDetailsViewController.m; path = "View Controllers/FoodTypeDetailsViewController.m"; sourceTree = "<group>"; };
+		7707E4BE1BC220A000C8BCFE /* DailyReportViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = DailyReportViewController.h; path = "View Controllers/DailyReportViewController.h"; sourceTree = "<group>"; };
+		7707E4BF1BC220A000C8BCFE /* DailyReportViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = DailyReportViewController.m; path = "View Controllers/DailyReportViewController.m"; sourceTree = "<group>"; };
 		774FBC7A1BBF0BA100BF048C /* Daily Dozen.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Daily Dozen.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		774FBC7E1BBF0BA100BF048C /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		774FBC801BBF0BA100BF048C /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
@@ -98,8 +103,6 @@
 		774FBC8C1BBF0BA100BF048C /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		774FBC8F1BBF0BA100BF048C /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		774FBC911BBF0BA100BF048C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		774FBC9B1BBF1C4400BF048C /* DailyReportViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DailyReportViewController.h; sourceTree = "<group>"; };
-		774FBC9C1BBF1C4400BF048C /* DailyReportViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DailyReportViewController.m; sourceTree = "<group>"; };
 		774FBC9E1BBF1E2B00BF048C /* ColorManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ColorManager.h; path = util/ColorManager.h; sourceTree = "<group>"; };
 		774FBC9F1BBF1E2B00BF048C /* ColorManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ColorManager.m; path = util/ColorManager.m; sourceTree = "<group>"; };
 		774FBCA31BBF1FDC00BF048C /* ColorConstants.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = ColorConstants.h; path = constants/ColorConstants.h; sourceTree = "<group>"; };
@@ -234,8 +237,10 @@
 		774FBC971BBF1A7300BF048C /* View Controllers */ = {
 			isa = PBXGroup;
 			children = (
-				774FBC9B1BBF1C4400BF048C /* DailyReportViewController.h */,
-				774FBC9C1BBF1C4400BF048C /* DailyReportViewController.m */,
+				7707E4BE1BC220A000C8BCFE /* DailyReportViewController.h */,
+				7707E4BF1BC220A000C8BCFE /* DailyReportViewController.m */,
+				7707E4BB1BC2208400C8BCFE /* FoodTypeDetailsViewController.h */,
+				7707E4BC1BC2208400C8BCFE /* FoodTypeDetailsViewController.m */,
 			);
 			name = "View Controllers";
 			sourceTree = "<group>";
@@ -358,6 +363,7 @@
 				TargetAttributes = {
 					774FBC791BBF0BA100BF048C = {
 						CreatedOnToolsVersion = 7.0.1;
+						DevelopmentTeam = 62U6UF32FT;
 					};
 				};
 			};
@@ -425,10 +431,12 @@
 			buildActionMask = 2147483647;
 			files = (
 				774FBC821BBF0BA100BF048C /* AppDelegate.m in Sources */,
+				7707E4BD1BC2208400C8BCFE /* FoodTypeDetailsViewController.m in Sources */,
 				774FBCE11BBF463800BF048C /* DataManager.m in Sources */,
 				774FBCCD1BBF38AD00BF048C /* DBConsumption+CoreDataProperties.m in Sources */,
 				774FBCCC1BBF38AD00BF048C /* DBConsumption.m in Sources */,
 				774FBCD51BBF3A0F00BF048C /* NSManagedObject+Additions.m in Sources */,
+				7707E4C01BC220A000C8BCFE /* DailyReportViewController.m in Sources */,
 				774FBCA01BBF1E2B00BF048C /* ColorManager.m in Sources */,
 				774FBCAD1BBF366800BF048C /* Daily_Dozen.xcdatamodeld in Sources */,
 				774FBCCF1BBF38AD00BF048C /* DBDailyReport+CoreDataProperties.m in Sources */,
@@ -439,7 +447,6 @@
 				774FBCAA1BBF355B00BF048C /* DatabaseManager.m in Sources */,
 				774FBCD01BBF38AD00BF048C /* DBUser.m in Sources */,
 				774FBCD11BBF38AD00BF048C /* DBUser+CoreDataProperties.m in Sources */,
-				774FBC9D1BBF1C4400BF048C /* DailyReportViewController.m in Sources */,
 				774FBCE51BBF4ADE00BF048C /* FoodType.m in Sources */,
 				7707E4601BC1AE8400C8BCFE /* ConsumptionTableViewCell.m in Sources */,
 			);
@@ -543,6 +550,8 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "Daily Dozen/DailyDozen-Prefix.pch";
 				INFOPLIST_FILE = "Daily Dozen/Info.plist";
@@ -550,6 +559,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "NutritionFacts.Daily-Dozen";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "";
 			};
 			name = Debug;
 		};
@@ -557,6 +567,8 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "Daily Dozen/DailyDozen-Prefix.pch";
 				INFOPLIST_FILE = "Daily Dozen/Info.plist";
@@ -564,6 +576,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "NutritionFacts.Daily-Dozen";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "";
 			};
 			name = Release;
 		};
