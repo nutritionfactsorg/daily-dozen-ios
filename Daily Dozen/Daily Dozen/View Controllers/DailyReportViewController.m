@@ -187,7 +187,9 @@
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
 	[tableView deselectRowAtIndexPath:indexPath animated:YES];
 	
-	FoodTypeDetailsViewController *vController = [[FoodTypeDetailsViewController alloc] init];
+	DBConsumption *consumption = ((DBConsumption *)(self.dailyReport.consumptions[indexPath.row]));
+	
+	FoodTypeDetailsViewController *vController = [[FoodTypeDetailsViewController alloc] initWithDBConsumption:consumption];
 	[self.navigationController pushViewController:vController animated:YES];
 }
 

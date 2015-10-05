@@ -18,13 +18,23 @@
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
 
+	
+	NSString *recommendationString = [NSString stringWithFormat:@"<b>Recommendation:</b>"];
+	
+	NSAttributedString *recommendationText = [[NSAttributedString alloc] initWithData:[recommendationString dataUsingEncoding:NSUTF8StringEncoding]
+																			  options:@{NSDocumentTypeDocumentAttribute: NSHTMLTextDocumentType,
+																						NSCharacterEncodingDocumentAttribute: @(NSUTF8StringEncoding)}
+																   documentAttributes:nil
+																				error:nil];
+	
 	[[UINavigationBar appearance] setBarStyle:UIBarStyleBlack];
 	[[UINavigationBar appearance] setTintColor:[UIColor whiteColor]];
 	[[UINavigationBar appearance] setTitleTextAttributes:@{NSForegroundColorAttributeName : [UIColor whiteColor]}];
 	
 	DailyReportViewController *vController = [[DailyReportViewController alloc] init];
 	UINavigationController *nController = [[UINavigationController alloc] initWithRootViewController:vController];
-
+	nController.navigationBar.translucent = NO;
+	
 	self.window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
 	self.window.rootViewController = nController;
 	

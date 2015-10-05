@@ -8,6 +8,10 @@
 
 #import <UIKit/UIKit.h>
 
+@class DBConsumption;
+
 @interface FoodTypeDetailsViewController : UIViewController
+
+- (id)initWithDBConsumption:(DBConsumption *)consumption;
 
 @end
