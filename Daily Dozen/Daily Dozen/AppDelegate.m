@@ -8,6 +8,7 @@
 
 #import "AppDelegate.h"
 #import "DailyReportViewController.h"
+#import "ColorConstants.h"
 
 @interface AppDelegate ()
 
@@ -27,6 +28,7 @@
 																   documentAttributes:nil
 																				error:nil];
 	
+	[[UINavigationBar appearance] setBarTintColor:kColorNavBar];
 	[[UINavigationBar appearance] setBarStyle:UIBarStyleBlack];
 	[[UINavigationBar appearance] setTintColor:[UIColor whiteColor]];
 	[[UINavigationBar appearance] setTitleTextAttributes:@{NSForegroundColorAttributeName : [UIColor whiteColor]}];

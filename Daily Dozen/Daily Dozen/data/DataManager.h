@@ -8,11 +8,12 @@
 
 #import <Foundation/Foundation.h>
 
-@class DBDailyReport;
+@class DBDailyReport, DBConsumption;
 
 @interface DataManager : NSObject
 
 + (DataManager *)getInstance;
 - (DBDailyReport *)getReportForToday;
+- (void)setServingCount:(double)servingCount forDBConsumption:(DBConsumption *)consumption;
 
 @end

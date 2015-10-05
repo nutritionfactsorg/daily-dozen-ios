@@ -15,6 +15,8 @@
 #import "ConsumptionTableViewCell.h"
 #import "FoodType.h"
 #import "FoodTypeDetailsViewController.h"
+#import "MoreInfoViewController.h"
+#import "DimenConstants.h"
 
 @interface DailyReportViewController ()
 
@@ -23,6 +25,9 @@
 @property (nonatomic, strong) NSMutableArray *rowHeights;
 @property (nonatomic, strong) UIImage *checkedImage;
 @property (nonatomic, strong) UIImage *uncheckedImage;
+@property (nonatomic, strong) UIProgressView *progressView;
+@property (nonatomic, strong) UILabel *progressLabel;
+
 @end
 
 @implementation DailyReportViewController
@@ -46,20 +51,100 @@
 	return self;
 }
 
+- (void)settingsPressed {
+	MoreInfoViewController *vController = [[MoreInfoViewController alloc] init];
+	
+	UINavigationController *nController = [[UINavigationController alloc] initWithRootViewController:vController];
+	
+	[self presentViewController:nController animated:YES completion:NULL];
+}
+
 - (void)loadView {
-	UIView *view = [[UIView alloc] init];
+	
+	self.navigationItem.rightBarButtonItem = [[UIBarButtonItem alloc] initWithImage:[UIImage imageNamed:@"ic_settings.png"]
+																			  style:UIBarButtonItemStylePlain
+																			 target:self
+																			 action:@selector(settingsPressed)];
+	
+	CGRect screenRect = [[UIScreen mainScreen] bounds];
+	
+	UIView *view = [[UIView alloc] initWithFrame:CGRectMake(0.f, self.navigationController.navigationBar.frame.size.height, screenRect.size.width, screenRect.size.height - self.navigationController.navigationBar.frame.size.height - [UIApplication sharedApplication].statusBarFrame.size.height)];
 	view.backgroundColor = [UIColor whiteColor];
-	view.autoresizingMask = UIViewAutoresizingFlexibleHeight | UIViewAutoresizingFlexibleWidth;
 	self.view = view;
 	
-	UITableView *tableView = [[UITableView alloc] initWithFrame:self.view.bounds style:UITableViewStylePlain];
-	tableView.autoresizingMask = UIViewAutoresizingFlexibleWidth | UIViewAutoresizingFlexibleHeight;
+	CGFloat verticalSpacer = 20.f;
+	CGFloat progressContainerHeight = verticalSpacer;
+	
+	UIView *progressContainer = [[UIView alloc] init];
+	progressContainer.backgroundColor = [UIColor whiteColor];
+	
+	UIFont *font = [UIFont fontWithName:@"HelveticaNeue-Light" size:16.f];
+	
+	NSString *title = @"Daily Progress";
+	
+	CGRect rect = [title boundingRectWithSize:CGSizeMake(screenRect.size.width, 1000000)
+									  options:NSStringDrawingUsesLineFragmentOrigin|NSStringDrawingUsesFontLeading
+								   attributes:@{NSFontAttributeName: font}
+									  context:nil];
+	
+	UILabel *label = [[UILabel alloc] initWithFrame:CGRectMake(kDimenCellLeftSpacer, verticalSpacer, ceilf(rect.size.width), ceilf(rect.size.height))];
+	label.font = font;
+	label.text = title;
+	
+	progressContainerHeight += label.frame.size.height;
+	
+	[progressContainer addSubview:label];
+	
+	title = @"100 %";
+	
+	rect = [title boundingRectWithSize:CGSizeMake(screenRect.size.width, 1000000)
+									  options:NSStringDrawingUsesLineFragmentOrigin|NSStringDrawingUsesFontLeading
+								   attributes:@{NSFontAttributeName: font}
+									  context:nil];
+	
+	label = [[UILabel alloc] initWithFrame:CGRectMake(screenRect.size.width - kDimenCellRightSpacer - ceilf(rect.size.width), verticalSpacer, ceilf(rect.size.width), ceilf(rect.size.height))];
+	label.font = font;
+	label.text = @"100 %";
+	label.textAlignment = NSTextAlignmentRight;
+	label.numberOfLines = 0;
+	
+	[progressContainer addSubview:label];
+	self.progressLabel = label;
+	
+	
+	UIProgressView *progressView = [[UIProgressView alloc] initWithProgressViewStyle:UIProgressViewStyleDefault];
+	progressView.frame = CGRectMake(kDimenCellLeftSpacer, label.frame.origin.y + label.frame.size.height + 5.f, screenRect.size.width - kDimenCellRightSpacer - kDimenCellLeftSpacer, progressView.frame.size.height);
+	progressView.tintColor = kColorAccent;
+	[progressContainer addSubview:progressView];
+	self.progressView = progressView;
+	
+	progressContainerHeight += progressView.frame.size.height + 5.f;
+	
+	progressContainerHeight += verticalSpacer;
+	
+	DLog(@"container height %f", progressContainerHeight);
+	progressContainer.frame = CGRectMake(0.f, 0.f, screenRect.size.width, progressContainerHeight);
+	
+	[self.view addSubview:progressContainer];
+	
+	UIView *sepView = [[UIView alloc] initWithFrame:CGRectMake(0.f, progressContainerHeight, screenRect.size.width, 1.f)];
+	sepView.backgroundColor = [UIColor colorWithWhite:0.f alpha:0.2f];
+	[self.view addSubview:sepView];
+	
+	UITableView *tableView = [[UITableView alloc] initWithFrame:CGRectMake(0.f,
+																		   progressContainerHeight + 1.f,
+																		   screenRect.size.width,
+																		   self.view.frame.size.height - progressContainerHeight - 1.f)
+														  style:UITableViewStylePlain];
+	//tableView.autoresizingMask =UIViewAutoresizingFlexibleHeight;
+	tableView.translatesAutoresizingMaskIntoConstraints = NO;
 	tableView.delegate = self;
 	tableView.dataSource = self;
 	[self.view addSubview:tableView];
 	self.tableView = tableView;
 	
 	self.tableView.separatorInset = UIEdgeInsetsMake(0, 0, 0, 0);
+	
 }
 
 - (void)viewWillAppear:(BOOL)animated {
@@ -71,8 +156,29 @@
 																							forTableView:self.tableView])];
 		}
 	}
+	
+	[self.tableView reloadData];
+	
+	[self updateProgress];
 }
 
+- (void)updateProgress {
+	double totalServings = 0.0;
+	double consumedServings = 0.0;
+	
+	for (DBConsumption *consumption in self.dailyReport.consumptions) {
+		
+		if (consumption.foodType.recommendedServingCount >= 0.0) {
+			totalServings += consumption.foodType.recommendedServingCount;
+			consumedServings += MIN(consumption.consumedServingCount.doubleValue, consumption.foodType.recommendedServingCount);
+		}
+	}
+	
+	CGFloat percentProgress = consumedServings/totalServings;
+	self.progressView.progress = percentProgress;
+	
+	self.progressLabel.text = [NSString stringWithFormat:@"%i %%", (int)roundf(percentProgress * 100.f)];
+}
 - (void)viewDidLoad {
 	[super viewDidLoad];
 	

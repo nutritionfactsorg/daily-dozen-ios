@@ -24,6 +24,7 @@
 	request.returnsObjectsAsFaults = NO;
 	NSArray *existingDailyReports = [context executeFetchRequest:request error:error];
 	
+	DLog(@"existingReportsCount %i", existingDailyReports.count);
 	DBDailyReport *dailyReport = nil;
 	
 	if (existingDailyReports.count) {
@@ -45,6 +46,7 @@
 	
 	NSEntityDescription *entity = [DBDailyReport entityDescriptionInManagedObjectContext:context];
 	DBDailyReport *dailyReport = [[DBDailyReport alloc] initWithEntity:entity insertIntoManagedObjectContext:context];
+	dailyReport.date = date;
 	
 	NSMutableArray *consumptions = [NSMutableArray array];
 	

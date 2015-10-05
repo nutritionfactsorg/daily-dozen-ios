@@ -50,7 +50,7 @@ static DataManager *sharedInstance;
 	
 	[consumption setConsumedServingCount:@(servingCount)];
 	
-	[[[DatabaseManager sharedInstance] defaultDataContext] save:&error];
+	[[[DatabaseManager sharedInstance] defaultUserContext] save:&error];
 }
 
 - (DBConsumption *)getConsumption:(NSManagedObjectID *)objectId {

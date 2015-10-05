@@ -10,11 +10,14 @@
 #import "DBConsumption.h"
 #import "FoodType.h"
 #import "UIImage+Scaled.h"
+#import "NSMutableAttributedString+FromHtml.h"
+#import "DataManager.h"
 
 @interface FoodTypeDetailsViewController()
 
 @property (nonatomic, strong) DBConsumption *consumption;
 @property (nonatomic, strong) UIScrollView *scrollView;
+@property (nonatomic, strong) UILabel *servingsLabel;
 
 @end
 
@@ -59,16 +62,66 @@
 	CGFloat yOffset = imageView.frame.size.height;
 	CGFloat textWidth = screenRect.size.width - 2.f*horizontalIndent;
 	
+	yOffset += verticalSpacer;
+	
 	CGRect viewFrame = self.view.frame;
 	
-	UIView *todaysServingContainer = [[UIView alloc] initWithFrame:CGRectMake(0.f, yOffset, viewFrame.size.width, 60.f)];
-	todaysServingContainer.backgroundColor = [UIColor whiteColor];
-	todaysServingContainer.autoresizingMask = UIViewAutoresizingFlexibleWidth;
+	CGFloat todaysServingsContainerHeight = 60.f;
+	
+	UIView *todaysServingContainer = [[UIView alloc] initWithFrame:CGRectMake(0.f, yOffset, screenRect.size.width, todaysServingsContainerHeight)];
 	[scrollView addSubview:todaysServingContainer];
+	
+	CGFloat buttonXoffset;
+	CGFloat buttonYoffset;
+	
+	UIImage *buttonImage = [UIImage imageNamed:@"btn_plus.png"];
+	UIButton *button = [UIButton buttonWithType:UIButtonTypeCustom];
+	[button setImage:buttonImage forState:UIControlStateNormal];
+	[button addTarget:self action:@selector(increaseServingCount) forControlEvents:UIControlEventTouchUpInside];
+
+	buttonXoffset = todaysServingContainer.bounds.size.width - horizontalIndent - buttonImage.size.width;
+	buttonYoffset = ceilf((todaysServingsContainerHeight - buttonImage.size.height)/2.f);
+	
+	button.frame = CGRectMake(buttonXoffset, buttonYoffset, buttonImage.size.width, buttonImage.size.height);
+	[todaysServingContainer addSubview:button];
+
+	buttonXoffset -= 40.f;
+	
+	UILabel *servingCountLabel = [[UILabel alloc] initWithFrame:CGRectMake(buttonXoffset, buttonYoffset, 40.f, buttonImage.size.height)];
+	servingCountLabel.backgroundColor = [UIColor colorWithWhite:0.f alpha:0.05f];//[UIColor colorWithRed:237.f/255.f green:247.f/255.f blue:255.f/255.f alpha:1.f];
+	servingCountLabel.font = [UIFont boldSystemFontOfSize:24.f];
+	servingCountLabel.text = [NSString stringWithFormat:@"%i", (int)[self.consumption consumedServingCount].integerValue];
+	servingCountLabel.textAlignment = NSTextAlignmentCenter;
+	[todaysServingContainer addSubview:servingCountLabel];
+	self.servingsLabel = servingCountLabel;
+	
+	buttonImage = [UIImage imageNamed:@"btn_minus.png"];
+	button = [UIButton buttonWithType:UIButtonTypeCustom];
+	[button setImage:buttonImage forState:UIControlStateNormal];
+	[button addTarget:self action:@selector(decreaseServingCount) forControlEvents:UIControlEventTouchUpInside];
+	
+	buttonXoffset -= buttonImage.size.width;
+	
+	button.frame = CGRectMake(buttonXoffset, buttonYoffset, buttonImage.size.width, buttonImage.size.height);
+	[todaysServingContainer addSubview:button];
+	
+	CGFloat fontSize = 18.f;
+	
+	UILabel *servingsTitleLabel = [[UILabel alloc] initWithFrame:CGRectMake(horizontalIndent, buttonYoffset, buttonXoffset - 2.f *horizontalIndent, buttonImage.size.height)];
+	servingsTitleLabel.text = @"Today's Servings";
+	servingsTitleLabel.font = [UIFont fontWithName:@"HelveticaNeue-Medium" size:fontSize];
+	[todaysServingContainer addSubview:servingsTitleLabel];
 	
 	yOffset += todaysServingContainer.frame.size.height;
 	
-	CGFloat fontSize = 18.f;
+	yOffset += verticalSpacer;
+	
+	UIView *sepView = [[UIView alloc] initWithFrame:CGRectMake(1*horizontalIndent, yOffset, screenRect.size.width - 2*horizontalIndent, 1.f)];
+	sepView.backgroundColor = [UIColor colorWithWhite:0.f alpha:0.05f];
+	[scrollView addSubview:sepView];
+	
+	yOffset += verticalSpacer;
+	
 	
 	if (foodType.recommendedServingCount > 0.f) {
 		
@@ -82,25 +135,7 @@
 		//<p style=\"color:#666666\">
 		NSString *recommendationString = [NSString stringWithFormat:@"<b>Recommendation:</b> %i %@ a day", (int)foodType.recommendedServingCount, servingsString];
 		
-		NSMutableAttributedString *recommendationText = [[NSMutableAttributedString alloc] initWithData:[recommendationString dataUsingEncoding:NSUTF8StringEncoding]
-																								options:@{NSDocumentTypeDocumentAttribute: NSHTMLTextDocumentType,
-																										  NSCharacterEncodingDocumentAttribute: @(NSUTF8StringEncoding)}
-																					 documentAttributes:nil
-																								  error:nil];
-		
-		NSRange range = (NSRange){0,[recommendationText length]};
-		[recommendationText enumerateAttribute:NSFontAttributeName inRange:range options:NSAttributedStringEnumerationLongestEffectiveRangeNotRequired usingBlock:^(id value, NSRange range, BOOL *stop) {
-			UIFont *currentFont = value;
-			UIFont *replacementFont = nil;
-			
-			if ([currentFont.fontName rangeOfString:@"bold" options:NSCaseInsensitiveSearch].location != NSNotFound) {
-				replacementFont = [UIFont fontWithName:@"HelveticaNeue-Bold" size:fontSize];
-			} else {
-				replacementFont = [UIFont fontWithName:@"HelveticaNeue-Light" size:fontSize];
-			}
-			
-			[recommendationText addAttribute:NSFontAttributeName value:replacementFont range:range];
-		}];
+		NSMutableAttributedString *recommendationText = [NSMutableAttributedString fromHtml:recommendationString fontSize:fontSize];
 		
 		CGFloat requiredHeight = [recommendationText boundingRectWithSize:CGSizeMake(textWidth, 1000000)
 																  options:NSStringDrawingUsesLineFragmentOrigin|NSStringDrawingUsesFontLeading
@@ -120,25 +155,7 @@
 		
 		NSString *recommendationString = [NSString stringWithFormat:@"<b>1 Serving:</b>\n%@", foodType.servingExample];
 		
-		NSMutableAttributedString *recommendationText = [[NSMutableAttributedString alloc] initWithData:[recommendationString dataUsingEncoding:NSUTF8StringEncoding]
-																								options:@{NSDocumentTypeDocumentAttribute: NSHTMLTextDocumentType,
-																										  NSCharacterEncodingDocumentAttribute: @(NSUTF8StringEncoding)}
-																					 documentAttributes:nil
-																								  error:nil];
-		
-		NSRange range = (NSRange){0,[recommendationText length]};
-		[recommendationText enumerateAttribute:NSFontAttributeName inRange:range options:NSAttributedStringEnumerationLongestEffectiveRangeNotRequired usingBlock:^(id value, NSRange range, BOOL *stop) {
-			UIFont *currentFont = value;
-			UIFont *replacementFont = nil;
-			
-			if ([currentFont.fontName rangeOfString:@"bold" options:NSCaseInsensitiveSearch].location != NSNotFound) {
-				replacementFont = [UIFont fontWithName:@"HelveticaNeue-Bold" size:fontSize];
-			} else {
-				replacementFont = [UIFont fontWithName:@"HelveticaNeue-Light" size:fontSize];
-			}
-			
-			[recommendationText addAttribute:NSFontAttributeName value:replacementFont range:range];
-		}];
+		NSMutableAttributedString *recommendationText = [NSMutableAttributedString fromHtml:recommendationString fontSize:fontSize];
 		
 		CGFloat requiredHeight = [recommendationText boundingRectWithSize:CGSizeMake(textWidth, 1000000)
 																  options:NSStringDrawingUsesLineFragmentOrigin|NSStringDrawingUsesFontLeading
@@ -158,25 +175,7 @@
 		
 		NSString *exampleString = [NSString stringWithFormat:@"<b>%@</b> %@", foodType.exampleTitles[i], foodType.exampleBodies[i]];
 		
-		NSMutableAttributedString *exampleText = [[NSMutableAttributedString alloc] initWithData:[exampleString dataUsingEncoding:NSUTF8StringEncoding]
-																								options:@{NSDocumentTypeDocumentAttribute: NSHTMLTextDocumentType,
-																										  NSCharacterEncodingDocumentAttribute: @(NSUTF8StringEncoding)}
-																					 documentAttributes:nil
-																								  error:nil];
-		
-		NSRange range = (NSRange){0,[exampleText length]};
-		[exampleText enumerateAttribute:NSFontAttributeName inRange:range options:NSAttributedStringEnumerationLongestEffectiveRangeNotRequired usingBlock:^(id value, NSRange range, BOOL *stop) {
-			UIFont *currentFont = value;
-			UIFont *replacementFont = nil;
-			
-			if ([currentFont.fontName rangeOfString:@"bold" options:NSCaseInsensitiveSearch].location != NSNotFound) {
-				replacementFont = [UIFont fontWithName:@"HelveticaNeue-Bold" size:fontSize];
-			} else {
-				replacementFont = [UIFont fontWithName:@"HelveticaNeue-Light" size:fontSize];
-			}
-			
-			[exampleText addAttribute:NSFontAttributeName value:replacementFont range:range];
-		}];
+		NSMutableAttributedString *exampleText = [NSMutableAttributedString fromHtml:exampleString fontSize:fontSize];
 		
 		CGFloat requiredHeight = [exampleText boundingRectWithSize:CGSizeMake(textWidth, 1000000)
 																  options:NSStringDrawingUsesLineFragmentOrigin|NSStringDrawingUsesFontLeading
@@ -191,6 +190,24 @@
 		
 		yOffset += verticalSpacer;
 		
+	}
+}
+
+- (void)increaseServingCount {
+	double currentServing = self.consumption.consumedServingCount.doubleValue;
+	
+	[[DataManager getInstance] setServingCount:(currentServing + 1) forDBConsumption:self.consumption];
+	
+	self.servingsLabel.text = [NSString stringWithFormat:@"%i", (int)self.consumption.consumedServingCount.integerValue];
+}
+
+- (void)decreaseServingCount {
+	double currentServing = self.consumption.consumedServingCount.doubleValue;
+	
+	if (currentServing > 0.0) {
+		[[DataManager getInstance] setServingCount:(currentServing - 1) forDBConsumption:self.consumption];
+		
+		self.servingsLabel.text = [NSString stringWithFormat:@"%i", (int)self.consumption.consumedServingCount.integerValue];
 	}
 }
 

@@ -41,6 +41,14 @@
 		7707E4C01BC220A000C8BCFE /* DailyReportViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7707E4BF1BC220A000C8BCFE /* DailyReportViewController.m */; settings = {ASSET_TAGS = (); }; };
 		7707E4C21BC22B1B00C8BCFE /* bkg_test.png in Resources */ = {isa = PBXBuildFile; fileRef = 7707E4C11BC22B1B00C8BCFE /* bkg_test.png */; settings = {ASSET_TAGS = (); }; };
 		7707E4C61BC22E9C00C8BCFE /* UIImage+Scaled.m in Sources */ = {isa = PBXBuildFile; fileRef = 7707E4C51BC22E9C00C8BCFE /* UIImage+Scaled.m */; settings = {ASSET_TAGS = (); }; };
+		7707E4CB1BC30A9400C8BCFE /* btn_minus.png in Resources */ = {isa = PBXBuildFile; fileRef = 7707E4C71BC30A9400C8BCFE /* btn_minus.png */; settings = {ASSET_TAGS = (); }; };
+		7707E4CC1BC30A9400C8BCFE /* btn_minus@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 7707E4C81BC30A9400C8BCFE /* btn_minus@2x.png */; settings = {ASSET_TAGS = (); }; };
+		7707E4CD1BC30A9400C8BCFE /* btn_plus.png in Resources */ = {isa = PBXBuildFile; fileRef = 7707E4C91BC30A9400C8BCFE /* btn_plus.png */; settings = {ASSET_TAGS = (); }; };
+		7707E4CE1BC30A9400C8BCFE /* btn_plus@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 7707E4CA1BC30A9400C8BCFE /* btn_plus@2x.png */; settings = {ASSET_TAGS = (); }; };
+		7707E4D11BC30F5A00C8BCFE /* NSMutableAttributedString+FromHtml.m in Sources */ = {isa = PBXBuildFile; fileRef = 7707E4D01BC30F5A00C8BCFE /* NSMutableAttributedString+FromHtml.m */; settings = {ASSET_TAGS = (); }; };
+		7707E4D31BC317AD00C8BCFE /* ic_settings@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 7707E4D21BC317AD00C8BCFE /* ic_settings@2x.png */; settings = {ASSET_TAGS = (); }; };
+		7707E4D61BC31A2F00C8BCFE /* MoreInfoViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7707E4D51BC31A2F00C8BCFE /* MoreInfoViewController.m */; settings = {ASSET_TAGS = (); }; };
+		7707E4D91BC31E0C00C8BCFE /* WebViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7707E4D81BC31E0C00C8BCFE /* WebViewController.m */; settings = {ASSET_TAGS = (); }; };
 		774FBC7F1BBF0BA100BF048C /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 774FBC7E1BBF0BA100BF048C /* main.m */; };
 		774FBC821BBF0BA100BF048C /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 774FBC811BBF0BA100BF048C /* AppDelegate.m */; };
 		774FBC8D1BBF0BA100BF048C /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 774FBC8C1BBF0BA100BF048C /* Assets.xcassets */; };
@@ -101,6 +109,17 @@
 		7707E4C11BC22B1B00C8BCFE /* bkg_test.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = bkg_test.png; sourceTree = "<group>"; };
 		7707E4C41BC22E9B00C8BCFE /* UIImage+Scaled.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "UIImage+Scaled.h"; path = "categories/UIImage+Scaled.h"; sourceTree = "<group>"; };
 		7707E4C51BC22E9C00C8BCFE /* UIImage+Scaled.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "UIImage+Scaled.m"; path = "categories/UIImage+Scaled.m"; sourceTree = "<group>"; };
+		7707E4C71BC30A9400C8BCFE /* btn_minus.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = btn_minus.png; sourceTree = "<group>"; };
+		7707E4C81BC30A9400C8BCFE /* btn_minus@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "btn_minus@2x.png"; sourceTree = "<group>"; };
+		7707E4C91BC30A9400C8BCFE /* btn_plus.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = btn_plus.png; sourceTree = "<group>"; };
+		7707E4CA1BC30A9400C8BCFE /* btn_plus@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "btn_plus@2x.png"; sourceTree = "<group>"; };
+		7707E4CF1BC30F5A00C8BCFE /* NSMutableAttributedString+FromHtml.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "NSMutableAttributedString+FromHtml.h"; path = "categories/NSMutableAttributedString+FromHtml.h"; sourceTree = "<group>"; };
+		7707E4D01BC30F5A00C8BCFE /* NSMutableAttributedString+FromHtml.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "NSMutableAttributedString+FromHtml.m"; path = "categories/NSMutableAttributedString+FromHtml.m"; sourceTree = "<group>"; };
+		7707E4D21BC317AD00C8BCFE /* ic_settings@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "ic_settings@2x.png"; sourceTree = "<group>"; };
+		7707E4D41BC31A2F00C8BCFE /* MoreInfoViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = MoreInfoViewController.h; path = "View Controllers/MoreInfoViewController.h"; sourceTree = "<group>"; };
+		7707E4D51BC31A2F00C8BCFE /* MoreInfoViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = MoreInfoViewController.m; path = "View Controllers/MoreInfoViewController.m"; sourceTree = "<group>"; };
+		7707E4D71BC31E0C00C8BCFE /* WebViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = WebViewController.h; path = "View Controllers/WebViewController.h"; sourceTree = "<group>"; };
+		7707E4D81BC31E0C00C8BCFE /* WebViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = WebViewController.m; path = "View Controllers/WebViewController.m"; sourceTree = "<group>"; };
 		774FBC7A1BBF0BA100BF048C /* Daily Dozen.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Daily Dozen.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		774FBC7E1BBF0BA100BF048C /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		774FBC801BBF0BA100BF048C /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
@@ -160,6 +179,11 @@
 		7707E46A1BC1EC2000C8BCFE /* images */ = {
 			isa = PBXGroup;
 			children = (
+				7707E4D21BC317AD00C8BCFE /* ic_settings@2x.png */,
+				7707E4C71BC30A9400C8BCFE /* btn_minus.png */,
+				7707E4C81BC30A9400C8BCFE /* btn_minus@2x.png */,
+				7707E4C91BC30A9400C8BCFE /* btn_plus.png */,
+				7707E4CA1BC30A9400C8BCFE /* btn_plus@2x.png */,
 				7707E4C11BC22B1B00C8BCFE /* bkg_test.png */,
 				7707E4B31BC1F10E00C8BCFE /* checkmark_filled.png */,
 				7707E4B41BC1F10E00C8BCFE /* checkmark_filled@2x.png */,
@@ -198,6 +222,8 @@
 			children = (
 				7707E4C41BC22E9B00C8BCFE /* UIImage+Scaled.h */,
 				7707E4C51BC22E9C00C8BCFE /* UIImage+Scaled.m */,
+				7707E4CF1BC30F5A00C8BCFE /* NSMutableAttributedString+FromHtml.h */,
+				7707E4D01BC30F5A00C8BCFE /* NSMutableAttributedString+FromHtml.m */,
 			);
 			name = categories;
 			sourceTree = "<group>";
@@ -257,6 +283,10 @@
 				7707E4BF1BC220A000C8BCFE /* DailyReportViewController.m */,
 				7707E4BB1BC2208400C8BCFE /* FoodTypeDetailsViewController.h */,
 				7707E4BC1BC2208400C8BCFE /* FoodTypeDetailsViewController.m */,
+				7707E4D41BC31A2F00C8BCFE /* MoreInfoViewController.h */,
+				7707E4D51BC31A2F00C8BCFE /* MoreInfoViewController.m */,
+				7707E4D71BC31E0C00C8BCFE /* WebViewController.h */,
+				7707E4D81BC31E0C00C8BCFE /* WebViewController.m */,
 			);
 			name = "View Controllers";
 			sourceTree = "<group>";
@@ -420,7 +450,10 @@
 				7707E49C1BC1ECED00C8BCFE /* ic_apple@2x.png in Resources */,
 				7707E4AE1BC1ECED00C8BCFE /* ic_other_veg@2x.png in Resources */,
 				7707E4B81BC1F10E00C8BCFE /* checkmark_filled@2x.png in Resources */,
+				7707E4CD1BC30A9400C8BCFE /* btn_plus.png in Resources */,
 				7707E4AC1BC1ECED00C8BCFE /* ic_nuts@2x.png in Resources */,
+				7707E4CE1BC30A9400C8BCFE /* btn_plus@2x.png in Resources */,
+				7707E4CB1BC30A9400C8BCFE /* btn_minus.png in Resources */,
 				7707E4A11BC1ECED00C8BCFE /* ic_beverages.png in Resources */,
 				7707E4AD1BC1ECED00C8BCFE /* ic_other_veg.png in Resources */,
 				7707E4AA1BC1ECED00C8BCFE /* ic_greens@2x.png in Resources */,
@@ -429,10 +462,12 @@
 				7707E49B1BC1ECED00C8BCFE /* ic_apple.png in Resources */,
 				7707E4A31BC1ECED00C8BCFE /* ic_cruciferous.png in Resources */,
 				7707E4A01BC1ECED00C8BCFE /* ic_berries@2x.png in Resources */,
+				7707E4CC1BC30A9400C8BCFE /* btn_minus@2x.png in Resources */,
 				7707E4BA1BC1F10E00C8BCFE /* checkmark_unfilled@2x.png in Resources */,
 				7707E4C21BC22B1B00C8BCFE /* bkg_test.png in Resources */,
 				7707E4A71BC1ECED00C8BCFE /* ic_flax.png in Resources */,
 				7707E49D1BC1ECED00C8BCFE /* ic_beans.png in Resources */,
+				7707E4D31BC317AD00C8BCFE /* ic_settings@2x.png in Resources */,
 				7707E4B21BC1ECED00C8BCFE /* ic_whole_grains@2x.png in Resources */,
 				774FBC8D1BBF0BA100BF048C /* Assets.xcassets in Resources */,
 				7707E4A41BC1ECED00C8BCFE /* ic_cruciferous@2x.png in Resources */,
@@ -448,11 +483,13 @@
 			buildActionMask = 2147483647;
 			files = (
 				774FBC821BBF0BA100BF048C /* AppDelegate.m in Sources */,
+				7707E4D61BC31A2F00C8BCFE /* MoreInfoViewController.m in Sources */,
 				7707E4BD1BC2208400C8BCFE /* FoodTypeDetailsViewController.m in Sources */,
 				774FBCE11BBF463800BF048C /* DataManager.m in Sources */,
 				774FBCCD1BBF38AD00BF048C /* DBConsumption+CoreDataProperties.m in Sources */,
 				774FBCCC1BBF38AD00BF048C /* DBConsumption.m in Sources */,
 				774FBCD51BBF3A0F00BF048C /* NSManagedObject+Additions.m in Sources */,
+				7707E4D11BC30F5A00C8BCFE /* NSMutableAttributedString+FromHtml.m in Sources */,
 				7707E4C01BC220A000C8BCFE /* DailyReportViewController.m in Sources */,
 				774FBCA01BBF1E2B00BF048C /* ColorManager.m in Sources */,
 				774FBCAD1BBF366800BF048C /* Daily_Dozen.xcdatamodeld in Sources */,
@@ -464,6 +501,7 @@
 				774FBC7F1BBF0BA100BF048C /* main.m in Sources */,
 				774FBCAA1BBF355B00BF048C /* DatabaseManager.m in Sources */,
 				774FBCD01BBF38AD00BF048C /* DBUser.m in Sources */,
+				7707E4D91BC31E0C00C8BCFE /* WebViewController.m in Sources */,
 				774FBCD11BBF38AD00BF048C /* DBUser+CoreDataProperties.m in Sources */,
 				774FBCE51BBF4ADE00BF048C /* FoodType.m in Sources */,
 				7707E4601BC1AE8400C8BCFE /* ConsumptionTableViewCell.m in Sources */,
