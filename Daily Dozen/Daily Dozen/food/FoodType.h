@@ -28,6 +28,7 @@ extern NSString *const K_IDENTIFIER_EXERCISES;
 @property (nonatomic, strong) NSString *name;
 @property (nonatomic, strong) NSString *overviewImageName;
 @property (nonatomic, assign) CGFloat recommendedServingCount;
+@property (nonatomic, strong) NSString *customRecommendation;
 @property (nonatomic, strong) NSString *servingExample;
 @property (nonatomic, strong) NSMutableArray *exampleTitles;
 @property (nonatomic, strong) NSMutableArray *exampleBodies;

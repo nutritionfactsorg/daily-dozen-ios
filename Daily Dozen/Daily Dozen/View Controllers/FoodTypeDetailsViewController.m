@@ -62,78 +62,82 @@
 	CGFloat yOffset = imageView.frame.size.height;
 	CGFloat textWidth = screenRect.size.width - 2.f*horizontalIndent;
 	
-	yOffset += verticalSpacer;
-	
-	CGRect viewFrame = self.view.frame;
-	
-	CGFloat todaysServingsContainerHeight = 60.f;
-	
-	UIView *todaysServingContainer = [[UIView alloc] initWithFrame:CGRectMake(0.f, yOffset, screenRect.size.width, todaysServingsContainerHeight)];
-	[scrollView addSubview:todaysServingContainer];
-	
-	CGFloat buttonXoffset;
-	CGFloat buttonYoffset;
-	
-	UIImage *buttonImage = [UIImage imageNamed:@"btn_plus.png"];
-	UIButton *button = [UIButton buttonWithType:UIButtonTypeCustom];
-	[button setImage:buttonImage forState:UIControlStateNormal];
-	[button addTarget:self action:@selector(increaseServingCount) forControlEvents:UIControlEventTouchUpInside];
-
-	buttonXoffset = todaysServingContainer.bounds.size.width - horizontalIndent - buttonImage.size.width;
-	buttonYoffset = ceilf((todaysServingsContainerHeight - buttonImage.size.height)/2.f);
-	
-	button.frame = CGRectMake(buttonXoffset, buttonYoffset, buttonImage.size.width, buttonImage.size.height);
-	[todaysServingContainer addSubview:button];
-
-	buttonXoffset -= 40.f;
-	
-	UILabel *servingCountLabel = [[UILabel alloc] initWithFrame:CGRectMake(buttonXoffset, buttonYoffset, 40.f, buttonImage.size.height)];
-	servingCountLabel.backgroundColor = [UIColor colorWithWhite:0.f alpha:0.05f];//[UIColor colorWithRed:237.f/255.f green:247.f/255.f blue:255.f/255.f alpha:1.f];
-	servingCountLabel.font = [UIFont boldSystemFontOfSize:24.f];
-	servingCountLabel.text = [NSString stringWithFormat:@"%i", (int)[self.consumption consumedServingCount].integerValue];
-	servingCountLabel.textAlignment = NSTextAlignmentCenter;
-	[todaysServingContainer addSubview:servingCountLabel];
-	self.servingsLabel = servingCountLabel;
-	
-	buttonImage = [UIImage imageNamed:@"btn_minus.png"];
-	button = [UIButton buttonWithType:UIButtonTypeCustom];
-	[button setImage:buttonImage forState:UIControlStateNormal];
-	[button addTarget:self action:@selector(decreaseServingCount) forControlEvents:UIControlEventTouchUpInside];
-	
-	buttonXoffset -= buttonImage.size.width;
-	
-	button.frame = CGRectMake(buttonXoffset, buttonYoffset, buttonImage.size.width, buttonImage.size.height);
-	[todaysServingContainer addSubview:button];
-	
 	CGFloat fontSize = 17.f;
 	
-	UILabel *servingsTitleLabel = [[UILabel alloc] initWithFrame:CGRectMake(horizontalIndent, buttonYoffset, buttonXoffset - 2.f *horizontalIndent, buttonImage.size.height)];
-	servingsTitleLabel.text = @"Today's Servings";
-	servingsTitleLabel.font = [UIFont fontWithName:@"HelveticaNeue-Medium" size:fontSize];
-	[todaysServingContainer addSubview:servingsTitleLabel];
-	
-	yOffset += todaysServingContainer.frame.size.height;
-	
 	yOffset += verticalSpacer;
-	
-	UIView *sepView = [[UIView alloc] initWithFrame:CGRectMake(1*horizontalIndent, yOffset, screenRect.size.width - 2*horizontalIndent, 1.f)];
-	sepView.backgroundColor = [UIColor colorWithWhite:0.f alpha:0.05f];
-	[scrollView addSubview:sepView];
-	
-	yOffset += verticalSpacer;
-	
 	
 	if (foodType.recommendedServingCount > 0.f) {
+		CGFloat todaysServingsContainerHeight = 60.f;
 		
+		UIView *todaysServingContainer = [[UIView alloc] initWithFrame:CGRectMake(0.f, yOffset, screenRect.size.width, todaysServingsContainerHeight)];
+		[scrollView addSubview:todaysServingContainer];
+		
+		CGFloat buttonXoffset;
+		CGFloat buttonYoffset;
+		
+		UIImage *buttonImage = [UIImage imageNamed:@"btn_plus.png"];
+		UIButton *button = [UIButton buttonWithType:UIButtonTypeCustom];
+		[button setImage:buttonImage forState:UIControlStateNormal];
+		[button addTarget:self action:@selector(increaseServingCount) forControlEvents:UIControlEventTouchUpInside];
+		
+		buttonXoffset = todaysServingContainer.bounds.size.width - horizontalIndent - buttonImage.size.width;
+		buttonYoffset = ceilf((todaysServingsContainerHeight - buttonImage.size.height)/2.f);
+		
+		button.frame = CGRectMake(buttonXoffset, buttonYoffset, buttonImage.size.width, buttonImage.size.height);
+		[todaysServingContainer addSubview:button];
+		
+		buttonXoffset -= 40.f;
+		
+		UILabel *servingCountLabel = [[UILabel alloc] initWithFrame:CGRectMake(buttonXoffset, buttonYoffset, 40.f, buttonImage.size.height)];
+		servingCountLabel.backgroundColor = [UIColor colorWithWhite:0.f alpha:0.05f];//[UIColor colorWithRed:237.f/255.f green:247.f/255.f blue:255.f/255.f alpha:1.f];
+		servingCountLabel.font = [UIFont boldSystemFontOfSize:24.f];
+		servingCountLabel.text = [NSString stringWithFormat:@"%i", (int)[self.consumption consumedServingCount].integerValue];
+		servingCountLabel.textAlignment = NSTextAlignmentCenter;
+		[todaysServingContainer addSubview:servingCountLabel];
+		self.servingsLabel = servingCountLabel;
+		
+		buttonImage = [UIImage imageNamed:@"btn_minus.png"];
+		button = [UIButton buttonWithType:UIButtonTypeCustom];
+		[button setImage:buttonImage forState:UIControlStateNormal];
+		[button addTarget:self action:@selector(decreaseServingCount) forControlEvents:UIControlEventTouchUpInside];
+		
+		buttonXoffset -= buttonImage.size.width;
+		
+		button.frame = CGRectMake(buttonXoffset, buttonYoffset, buttonImage.size.width, buttonImage.size.height);
+		[todaysServingContainer addSubview:button];
+		
+		UILabel *servingsTitleLabel = [[UILabel alloc] initWithFrame:CGRectMake(horizontalIndent, buttonYoffset, buttonXoffset - 2.f *horizontalIndent, buttonImage.size.height)];
+		servingsTitleLabel.text = @"Today's Servings";
+		servingsTitleLabel.font = [UIFont fontWithName:@"HelveticaNeue-Medium" size:fontSize];
+		[todaysServingContainer addSubview:servingsTitleLabel];
+		
+		yOffset += todaysServingContainer.frame.size.height;
+		
+		yOffset += verticalSpacer;
+		
+		UIView *sepView = [[UIView alloc] initWithFrame:CGRectMake(1*horizontalIndent, yOffset, screenRect.size.width - 2*horizontalIndent, 1.f)];
+		sepView.backgroundColor = [UIColor colorWithWhite:0.f alpha:0.05f];
+		[scrollView addSubview:sepView];
+		
+		yOffset += verticalSpacer;
+	}
+	
+	if (foodType.recommendedServingCount > 0.f || foodType.customRecommendation) {
+		
+		NSString *recommendationString;
 		NSString *servingsString;
 		
-		if (foodType.recommendedServingCount > 1) {
-			servingsString = @"servings";
+		if (foodType.recommendedServingCount > 0.f) {
+			if (foodType.recommendedServingCount > 1) {
+				servingsString = @"servings";
+			} else {
+				servingsString = @"serving";
+			}
+			//<p style=\"color:#666666\">
+			recommendationString = [NSString stringWithFormat:@"<b>Recommendation:</b> %i %@ a day", (int)foodType.recommendedServingCount, servingsString];
 		} else {
-			servingsString = @"serving";
+			recommendationString = [NSString stringWithFormat:@"<b>Recommendation:</b> %@", foodType.customRecommendation];
 		}
-		//<p style=\"color:#666666\">
-		NSString *recommendationString = [NSString stringWithFormat:@"<b>Recommendation:</b> %i %@ a day", (int)foodType.recommendedServingCount, servingsString];
 		
 		NSMutableAttributedString *recommendationText = [NSMutableAttributedString fromHtml:recommendationString fontSize:fontSize];
 		
@@ -178,8 +182,8 @@
 		NSMutableAttributedString *exampleText = [NSMutableAttributedString fromHtml:exampleString fontSize:fontSize];
 		
 		CGFloat requiredHeight = [exampleText boundingRectWithSize:CGSizeMake(textWidth, 1000000)
-																  options:NSStringDrawingUsesLineFragmentOrigin|NSStringDrawingUsesFontLeading
-																  context:nil].size.height;
+														   options:NSStringDrawingUsesLineFragmentOrigin|NSStringDrawingUsesFontLeading
+														   context:nil].size.height;
 		UILabel *recommendationLabel = [[UILabel alloc] initWithFrame:CGRectMake(horizontalIndent, yOffset, textWidth, requiredHeight)];
 		recommendationLabel.attributedText = exampleText;
 		recommendationLabel.numberOfLines = 0;

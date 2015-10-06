@@ -41,7 +41,7 @@
 		
 		NSError *error = nil;
 		
-		self.showWelcomeScreen = YES;
+		self.showWelcomeScreen = [[DataManager getInstance] isFirstRun];
 		
 		[[DatabaseManager sharedInstance] loadStoreForUserID:@(0) error:&error];
 		

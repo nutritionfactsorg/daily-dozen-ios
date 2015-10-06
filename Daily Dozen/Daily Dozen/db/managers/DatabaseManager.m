@@ -20,7 +20,6 @@ static NSString * const MODEL_EXTENSION = @"momd";
 
 - (DBUser *)user:(NSError *__autoreleasing *)error;
 - (NSURL *)storeURLForUserID:(NSNumber *)userID;
-- (NSOperation *)performBackgroundChanges:(void (^)(NSManagedObjectContext *context))changeBlock foregroundContext:(NSManagedObjectContext *)foregroundContext completion:(void (^)(NSManagedObjectContext *context))completion;
 
 @end
 
@@ -47,11 +46,7 @@ static DatabaseManager *_sharedInstance;
 		
 		// Create the persisten store coordinators from the model
 		_userCoordinator = [[NSPersistentStoreCoordinator alloc] initWithManagedObjectModel:_model];
-		_dataCoordinator = [[NSPersistentStoreCoordinator alloc] initWithManagedObjectModel:_model];
-		
-		// Load the data store
-		[self loadDataStore:nil];
-		
+				
 		_operationQueue = [[NSOperationQueue alloc] init];
 		
 		// Register for receiving notifications when contexts change
@@ -62,31 +57,6 @@ static DatabaseManager *_sharedInstance;
 }
 
 #pragma mark Managing local stores
-
-- (BOOL)loadDataStore:(NSError *__autoreleasing *)error {
-	NSDictionary *options = @{NSMigratePersistentStoresAutomaticallyOption : @(YES), NSInferMappingModelAutomaticallyOption : @(YES)};
-	_dataStore = [_dataCoordinator addPersistentStoreWithType:NSInMemoryStoreType configuration:nil URL:nil options:options error:error];
-	
-	if(!_dataStore || (error && *error)) return NO;
-	
-	// Create a new context to manage changes to store
-	_dataContext = [[NSManagedObjectContext alloc] init];
-	_dataContext.persistentStoreCoordinator = _dataCoordinator;
-	_dataContext.mergePolicy = NSMergeByPropertyStoreTrumpMergePolicy;
-	
-	return YES;
-}
-
-- (BOOL)resetDataStore:(NSError *__autoreleasing *)error {
-	if(_dataStore) [_dataCoordinator removePersistentStore:_dataStore error:error];
-	if(error && *error) return NO;
-	
-	return [self loadDataStore:error];
-}
-
-- (BOOL)isDataStoreLoaded {
-	return _dataStore ? YES : NO;
-}
 
 - (BOOL)isDatabaseUpdateRequiredForUserID:(NSNumber *)identifier error:(NSError *__autoreleasing *)error {
 	
@@ -114,10 +84,17 @@ static DatabaseManager *_sharedInstance;
 	return !currentStoreCompatibile;
 }
 
-- (BOOL)loadStoreForUserID:(NSNumber *)identifier error:(NSError *__autoreleasing *)error {
+- (BOOL)doesStoreExistForUserID:(NSNumber *)identifier {
 	NSFileManager *fileManager = [NSFileManager defaultManager];
 	NSURL *storeURL = [self storeURLForUserID:identifier];
 	NSString *storePath = [storeURL path];
+	
+	return [fileManager fileExistsAtPath:storePath];
+}
+
+- (BOOL)loadStoreForUserID:(NSNumber *)identifier error:(NSError *__autoreleasing *)error {
+	
+	NSURL *storeURL = [self storeURLForUserID:identifier];
 	
 	// Unload the existing store
 	BOOL success = [self unloadCurrentUserStore:error];
@@ -190,98 +167,8 @@ static DatabaseManager *_sharedInstance;
 
 #pragma mark Obtaining contexts
 
-- (NSManagedObjectContext *)defaultDataContext {
-	return _dataContext;
-}
-
-- (NSManagedObjectContext *)temporaryDataContext {
-	if(!_dataStore) return nil;
-	
-	NSManagedObjectContext *context = [[NSManagedObjectContext alloc] init];
-	context.persistentStoreCoordinator = _dataCoordinator;
-	context.undoManager = nil;
-	context.mergePolicy = NSMergeByPropertyObjectTrumpMergePolicy;
-	
-	return context;
-}
-
 - (NSManagedObjectContext *)defaultUserContext {
 	return _userContext;
-}
-
-- (NSManagedObjectContext *)temporaryUserContext {
-	if(!_userStore) return nil;
-	
-	NSManagedObjectContext *context = [[NSManagedObjectContext alloc] init];
-	context.persistentStoreCoordinator = _userCoordinator;
-	context.undoManager = nil;
-	context.mergePolicy = NSMergeByPropertyObjectTrumpMergePolicy;
-	
-	return context;
-}
-
-#pragma mark Performing changes in the background
-
-- (NSOperation *)performBackgroundDataChanges:(void (^)(NSManagedObjectContext *))changeBlock completion:(void (^)(NSManagedObjectContext *))completion {
-	return [self performBackgroundChanges:changeBlock foregroundContext:_dataContext completion:completion];
-}
-
-- (NSOperation *)performBackgroundUserChanges:(void (^)(NSManagedObjectContext *))changeBlock completion:(void (^)(NSManagedObjectContext *))completion {
-	return [self performBackgroundChanges:changeBlock foregroundContext:_userContext completion:completion];
-}
-
-- (NSOperation *)performBackgroundChanges:(void (^)(NSManagedObjectContext *))changeBlock foregroundContext:(NSManagedObjectContext *)foregroundContext completion:(void (^)(NSManagedObjectContext *))completion {
-	__block UIBackgroundTaskIdentifier backgroundTask;
-	UIApplication *application = [UIApplication sharedApplication];
-	
-	backgroundTask = [application beginBackgroundTaskWithExpirationHandler:^{
-		[application endBackgroundTask:backgroundTask];
-		backgroundTask = UIBackgroundTaskInvalid;
-	}];
-	
-	__block NSOperation *operation = [NSBlockOperation blockOperationWithBlock:^{
-		NSManagedObjectContext *backgroundContext = nil;
-		
-		if(foregroundContext == _userContext) backgroundContext = [self temporaryUserContext];
-		else if(foregroundContext == _dataContext) backgroundContext = [self temporaryDataContext];
-		else [operation cancel];
-		
-		if(operation.isCancelled) {
-			[application endBackgroundTask:backgroundTask];
-			backgroundTask = UIBackgroundTaskInvalid;
-			return;
-		}
-		
-		changeBlock(backgroundContext);
-		
-		if(operation.isCancelled) {
-			[application endBackgroundTask:backgroundTask];
-			backgroundTask = UIBackgroundTaskInvalid;
-			return;
-		}
-		
-		dispatch_sync(dispatch_get_main_queue(), ^{
-			completion(foregroundContext);
-		});
-		
-		[application endBackgroundTask:backgroundTask];
-		backgroundTask = UIBackgroundTaskInvalid;
-	}];
-	
-	[_operationQueue addOperation:operation];
-	
-	return operation;
-}
-
-- (void)cancelBackgroundChanges {
-	[_operationQueue cancelAllOperations];
-	[_operationQueue waitUntilAllOperationsAreFinished];
-	DLog(@"All background operations successfully cancelled");
-}
-
-- (void)waitUntilBackgroundChangesAreFinished {
-	[_operationQueue waitUntilAllOperationsAreFinished];
-	DLog(@"All background operations are finished");
 }
 
 #pragma mark Propagating changes from background contexts
@@ -289,7 +176,7 @@ static DatabaseManager *_sharedInstance;
 - (void)contextChanged:(NSNotification *)notification {
 	NSManagedObjectContext *notificationContext = [notification object];
 	
-	if(notificationContext == _userContext || notificationContext == _dataContext) return;
+	if(notificationContext == _userContext) return;
 	
 	if(![NSThread isMainThread]) {
 		[self performSelectorOnMainThread:@selector(contextChanged:) withObject:notification waitUntilDone:YES];
@@ -298,8 +185,6 @@ static DatabaseManager *_sharedInstance;
 	
 	if(notificationContext.persistentStoreCoordinator == _userCoordinator) {
 		[_userContext mergeChangesFromContextDidSaveNotification:notification];
-	} else if(notificationContext.persistentStoreCoordinator == _dataCoordinator) {
-		[_dataContext mergeChangesFromContextDidSaveNotification:notification];
 	}
 }
 

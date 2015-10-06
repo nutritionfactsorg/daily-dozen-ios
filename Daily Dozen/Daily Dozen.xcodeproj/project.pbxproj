@@ -66,7 +66,6 @@
 		774FBCD01BBF38AD00BF048C /* DBUser.m in Sources */ = {isa = PBXBuildFile; fileRef = 774FBCC91BBF38AD00BF048C /* DBUser.m */; settings = {ASSET_TAGS = (); }; };
 		774FBCD11BBF38AD00BF048C /* DBUser+CoreDataProperties.m in Sources */ = {isa = PBXBuildFile; fileRef = 774FBCCB1BBF38AD00BF048C /* DBUser+CoreDataProperties.m */; settings = {ASSET_TAGS = (); }; };
 		774FBCD51BBF3A0F00BF048C /* NSManagedObject+Additions.m in Sources */ = {isa = PBXBuildFile; fileRef = 774FBCD41BBF3A0F00BF048C /* NSManagedObject+Additions.m */; settings = {ASSET_TAGS = (); }; };
-		774FBCDD1BBF45C800BF048C /* UserManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 774FBCDC1BBF45C800BF048C /* UserManager.m */; settings = {ASSET_TAGS = (); }; };
 		774FBCE11BBF463800BF048C /* DataManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 774FBCE01BBF463800BF048C /* DataManager.m */; settings = {ASSET_TAGS = (); }; };
 		774FBCE51BBF4ADE00BF048C /* FoodType.m in Sources */ = {isa = PBXBuildFile; fileRef = 774FBCE41BBF4ADE00BF048C /* FoodType.m */; settings = {ASSET_TAGS = (); }; };
 /* End PBXBuildFile section */
@@ -155,8 +154,6 @@
 		774FBCD31BBF3A0F00BF048C /* NSManagedObject+Additions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "NSManagedObject+Additions.h"; path = "db/categories/NSManagedObject+Additions.h"; sourceTree = "<group>"; };
 		774FBCD41BBF3A0F00BF048C /* NSManagedObject+Additions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "NSManagedObject+Additions.m"; path = "db/categories/NSManagedObject+Additions.m"; sourceTree = "<group>"; };
 		774FBCD91BBF3DFC00BF048C /* DailyDozen-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "DailyDozen-Prefix.pch"; sourceTree = "<group>"; };
-		774FBCDB1BBF45C800BF048C /* UserManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = UserManager.h; path = user/UserManager.h; sourceTree = "<group>"; };
-		774FBCDC1BBF45C800BF048C /* UserManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = UserManager.m; path = user/UserManager.m; sourceTree = "<group>"; };
 		774FBCDF1BBF463800BF048C /* DataManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = DataManager.h; path = data/DataManager.h; sourceTree = "<group>"; };
 		774FBCE01BBF463800BF048C /* DataManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = DataManager.m; path = data/DataManager.m; sourceTree = "<group>"; };
 		774FBCE31BBF4ADE00BF048C /* FoodType.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = FoodType.h; path = food/FoodType.h; sourceTree = "<group>"; };
@@ -261,7 +258,6 @@
 				7707E45D1BC1AE5B00C8BCFE /* views */,
 				774FBCE21BBF4ACD00BF048C /* food */,
 				774FBCDE1BBF462900BF048C /* data */,
-				774FBCDA1BBF45AB00BF048C /* user */,
 				774FBCA61BBF352300BF048C /* db */,
 				774FBCA21BBF1FC600BF048C /* constants */,
 				774FBCA11BBF1E3300BF048C /* util */,
@@ -358,15 +354,6 @@
 				774FBCD41BBF3A0F00BF048C /* NSManagedObject+Additions.m */,
 			);
 			name = categories;
-			sourceTree = "<group>";
-		};
-		774FBCDA1BBF45AB00BF048C /* user */ = {
-			isa = PBXGroup;
-			children = (
-				774FBCDB1BBF45C800BF048C /* UserManager.h */,
-				774FBCDC1BBF45C800BF048C /* UserManager.m */,
-			);
-			name = user;
 			sourceTree = "<group>";
 		};
 		774FBCDE1BBF462900BF048C /* data */ = {
@@ -510,7 +497,6 @@
 				774FBCCF1BBF38AD00BF048C /* DBDailyReport+CoreDataProperties.m in Sources */,
 				774FBCCE1BBF38AD00BF048C /* DBDailyReport.m in Sources */,
 				7707E4C61BC22E9C00C8BCFE /* UIImage+Scaled.m in Sources */,
-				774FBCDD1BBF45C800BF048C /* UserManager.m in Sources */,
 				7707E45C1BC19B8100C8BCFE /* FoodHelper.m in Sources */,
 				774FBC7F1BBF0BA100BF048C /* main.m in Sources */,
 				774FBCAA1BBF355B00BF048C /* DatabaseManager.m in Sources */,

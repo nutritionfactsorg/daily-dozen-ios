@@ -28,6 +28,10 @@ static DataManager *sharedInstance;
 	return sharedInstance;
 }
 
+- (BOOL)isFirstRun {
+	return ![[DatabaseManager sharedInstance] doesStoreExistForUserID:@(0)];
+}
+
 - (NSDate *)getCurrentDate {
 	
 	NSDateComponents *components = [[NSCalendar currentCalendar]
@@ -60,10 +64,6 @@ static DataManager *sharedInstance;
 	[consumption setConsumedServingCount:@(servingCount)];
 	
 	[[[DatabaseManager sharedInstance] defaultUserContext] save:&error];
-}
-
-- (DBConsumption *)getConsumption:(NSManagedObjectID *)objectId {
-	return [[[DatabaseManager sharedInstance] defaultDataContext] objectWithID:objectId];
 }
 
 @end
