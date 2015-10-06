@@ -10,4 +10,6 @@
 
 @interface DailyReportViewController : UIViewController <UITableViewDelegate, UITableViewDataSource>
 
+- (void)appForegrounded;
+
 @end

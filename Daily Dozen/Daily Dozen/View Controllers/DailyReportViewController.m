@@ -42,7 +42,7 @@
 		NSError *error = nil;
 		
 		self.showWelcomeScreen = [[DataManager getInstance] isFirstRun];
-		
+
 		[[DatabaseManager sharedInstance] loadStoreForUserID:@(0) error:&error];
 		
 		self.checkedImage = [UIImage imageNamed:@"checkmark_filled.png"];
@@ -77,7 +77,7 @@
 	CGFloat progressContainerHeight = verticalSpacer;
 	
 	UIView *progressContainer = [[UIView alloc] init];
-	progressContainer.backgroundColor = [UIColor whiteColor];
+	progressContainer.backgroundColor = [UIColor colorWithWhite:0.93f alpha:1.f];
 	
 	UIFont *font = [UIFont fontWithName:@"HelveticaNeue-Light" size:16.f];
 	
@@ -148,9 +148,23 @@
 	
 }
 
+- (void)appForegrounded {
+	if ([self isViewLoaded] && self.view.window) {
+		
+		NSDate *date = [[DataManager getInstance] getCurrentDate];
+		
+		if (!self.currentDate || [self.currentDate compare:date] != NSOrderedSame) {
+			
+			self.currentDate = date;
+			self.dailyReport = [[DataManager getInstance] getReportForToday];
+			
+			self.rowHeights = [NSMutableArray array];
+		}
+	}
+}
+
 - (void)viewWillAppear:(BOOL)animated {
 	[super viewWillAppear:animated];
-	
 	NSDate *date = [[DataManager getInstance] getCurrentDate];
 	
 	if (!self.currentDate || [self.currentDate compare:date] != NSOrderedSame) {

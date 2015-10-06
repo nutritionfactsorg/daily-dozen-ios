@@ -68,6 +68,9 @@
 		774FBCD51BBF3A0F00BF048C /* NSManagedObject+Additions.m in Sources */ = {isa = PBXBuildFile; fileRef = 774FBCD41BBF3A0F00BF048C /* NSManagedObject+Additions.m */; settings = {ASSET_TAGS = (); }; };
 		774FBCE11BBF463800BF048C /* DataManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 774FBCE01BBF463800BF048C /* DataManager.m */; settings = {ASSET_TAGS = (); }; };
 		774FBCE51BBF4ADE00BF048C /* FoodType.m in Sources */ = {isa = PBXBuildFile; fileRef = 774FBCE41BBF4ADE00BF048C /* FoodType.m */; settings = {ASSET_TAGS = (); }; };
+		77504BC21BC484AD0064E5EC /* Icon@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 77504BBE1BC484AD0064E5EC /* Icon@2x.png */; settings = {ASSET_TAGS = (); }; };
+		77504BC31BC484AD0064E5EC /* Icon@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = 77504BBF1BC484AD0064E5EC /* Icon@3x.png */; settings = {ASSET_TAGS = (); }; };
+		77504BC41BC484AD0064E5EC /* IconSm@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 77504BC01BC484AD0064E5EC /* IconSm@2x.png */; settings = {ASSET_TAGS = (); }; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -158,6 +161,9 @@
 		774FBCE01BBF463800BF048C /* DataManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = DataManager.m; path = data/DataManager.m; sourceTree = "<group>"; };
 		774FBCE31BBF4ADE00BF048C /* FoodType.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = FoodType.h; path = food/FoodType.h; sourceTree = "<group>"; };
 		774FBCE41BBF4ADE00BF048C /* FoodType.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = FoodType.m; path = food/FoodType.m; sourceTree = "<group>"; };
+		77504BBE1BC484AD0064E5EC /* Icon@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Icon@2x.png"; sourceTree = "<group>"; };
+		77504BBF1BC484AD0064E5EC /* Icon@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Icon@3x.png"; sourceTree = "<group>"; };
+		77504BC01BC484AD0064E5EC /* IconSm@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "IconSm@2x.png"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -183,6 +189,7 @@
 		7707E46A1BC1EC2000C8BCFE /* images */ = {
 			isa = PBXGroup;
 			children = (
+				77504BBC1BC484AD0064E5EC /* icons */,
 				7707E4E01BC4290A00C8BCFE /* nutrition_facts_logo.png */,
 				7707E4DE1BC4290100C8BCFE /* dr_greger.png */,
 				7707E4D21BC317AD00C8BCFE /* ic_settings@2x.png */,
@@ -376,6 +383,16 @@
 			name = food;
 			sourceTree = "<group>";
 		};
+		77504BBC1BC484AD0064E5EC /* icons */ = {
+			isa = PBXGroup;
+			children = (
+				77504BBE1BC484AD0064E5EC /* Icon@2x.png */,
+				77504BBF1BC484AD0064E5EC /* Icon@3x.png */,
+				77504BC01BC484AD0064E5EC /* IconSm@2x.png */,
+			);
+			path = icons;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -443,6 +460,7 @@
 				7707E49F1BC1ECED00C8BCFE /* ic_berries.png in Resources */,
 				7707E4AF1BC1ECED00C8BCFE /* ic_spices.png in Resources */,
 				774FBC901BBF0BA100BF048C /* LaunchScreen.storyboard in Resources */,
+				77504BC21BC484AD0064E5EC /* Icon@2x.png in Resources */,
 				7707E4B11BC1ECED00C8BCFE /* ic_whole_grains.png in Resources */,
 				7707E4A21BC1ECED00C8BCFE /* ic_beverages@2x.png in Resources */,
 				7707E49C1BC1ECED00C8BCFE /* ic_apple@2x.png in Resources */,
@@ -460,12 +478,14 @@
 				7707E4A51BC1ECED00C8BCFE /* ic_exercise.png in Resources */,
 				7707E49B1BC1ECED00C8BCFE /* ic_apple.png in Resources */,
 				7707E4A31BC1ECED00C8BCFE /* ic_cruciferous.png in Resources */,
+				77504BC31BC484AD0064E5EC /* Icon@3x.png in Resources */,
 				7707E4A01BC1ECED00C8BCFE /* ic_berries@2x.png in Resources */,
 				7707E4DF1BC4290100C8BCFE /* dr_greger.png in Resources */,
 				7707E4CC1BC30A9400C8BCFE /* btn_minus@2x.png in Resources */,
 				7707E4BA1BC1F10E00C8BCFE /* checkmark_unfilled@2x.png in Resources */,
 				7707E4C21BC22B1B00C8BCFE /* bkg_test.png in Resources */,
 				7707E4A71BC1ECED00C8BCFE /* ic_flax.png in Resources */,
+				77504BC41BC484AD0064E5EC /* IconSm@2x.png in Resources */,
 				7707E49D1BC1ECED00C8BCFE /* ic_beans.png in Resources */,
 				7707E4D31BC317AD00C8BCFE /* ic_settings@2x.png in Resources */,
 				7707E4B21BC1ECED00C8BCFE /* ic_whole_grains@2x.png in Resources */,

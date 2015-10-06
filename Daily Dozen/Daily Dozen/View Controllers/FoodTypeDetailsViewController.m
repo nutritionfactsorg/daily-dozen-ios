@@ -47,7 +47,7 @@
 	
 	UIScrollView *scrollView = [[UIScrollView alloc] init];
 	scrollView.autoresizingMask = UIViewAutoresizingFlexibleHeight | UIViewAutoresizingFlexibleWidth;
-	scrollView.backgroundColor = [UIColor whiteColor];
+	scrollView.backgroundColor = [UIColor colorWithWhite:0.93f alpha:1.f];
 	[self.view addSubview:scrollView];
 	self.scrollView = scrollView;
 	
@@ -64,13 +64,12 @@
 	
 	CGFloat fontSize = 17.f;
 	
-	yOffset += verticalSpacer;
-	
 	if (foodType.recommendedServingCount > 0.f) {
-		CGFloat todaysServingsContainerHeight = 60.f;
+		CGFloat todaysServingsContainerHeight = 80.f;
 		
 		UIView *todaysServingContainer = [[UIView alloc] initWithFrame:CGRectMake(0.f, yOffset, screenRect.size.width, todaysServingsContainerHeight)];
 		[scrollView addSubview:todaysServingContainer];
+		todaysServingContainer.backgroundColor = [UIColor whiteColor];
 		
 		CGFloat buttonXoffset;
 		CGFloat buttonYoffset;
@@ -113,14 +112,9 @@
 		
 		yOffset += todaysServingContainer.frame.size.height;
 		
-		yOffset += verticalSpacer;
-		
-		UIView *sepView = [[UIView alloc] initWithFrame:CGRectMake(1*horizontalIndent, yOffset, screenRect.size.width - 2*horizontalIndent, 1.f)];
-		sepView.backgroundColor = [UIColor colorWithWhite:0.f alpha:0.05f];
-		[scrollView addSubview:sepView];
-		
-		yOffset += verticalSpacer;
 	}
+	
+	yOffset += verticalSpacer;
 	
 	if (foodType.recommendedServingCount > 0.f || foodType.customRecommendation) {
 		

@@ -51,6 +51,12 @@
 	CGFloat horizontalIndent = 20.f;
 	CGFloat textWidth = scrollView.frame.size.width - 2.f*horizontalIndent;
 	
+	CGFloat greyViewHeight;
+	
+	UIView *greyView = [[UIView alloc] init];
+	greyView.backgroundColor = [UIColor colorWithWhite:0.93f alpha:1.f];
+	[self.scrollView addSubview:greyView];
+	
 	UIImage *image = [UIImage imageNamed:@"nutrition_facts_logo.png"];
 	image = [image imageScaledToWidth:scrollView.frame.size.width - 50.f];
 	
@@ -69,6 +75,10 @@
 	[self.scrollView addSubview:imageView];
 	
 	yOffset += imageView.frame.size.height;
+	greyViewHeight = yOffset;
+	
+	greyView.frame = CGRectMake(0.f, 0.f, self.scrollView.frame.size.width, greyViewHeight);
+	
 	yOffset += 20.f;
 	
 	CGFloat fontSize = 16.f;
