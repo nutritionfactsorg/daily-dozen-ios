@@ -17,6 +17,7 @@
 #import "FoodTypeDetailsViewController.h"
 #import "MoreInfoViewController.h"
 #import "DimenConstants.h"
+#import "WelcomeViewController.h"
 
 @interface DailyReportViewController ()
 
@@ -27,6 +28,8 @@
 @property (nonatomic, strong) UIImage *uncheckedImage;
 @property (nonatomic, strong) UIProgressView *progressView;
 @property (nonatomic, strong) UILabel *progressLabel;
+@property (nonatomic, strong) NSDate *currentDate;
+@property (nonatomic, assign) BOOL showWelcomeScreen;
 
 @end
 
@@ -38,11 +41,9 @@
 		
 		NSError *error = nil;
 		
+		self.showWelcomeScreen = YES;
+		
 		[[DatabaseManager sharedInstance] loadStoreForUserID:@(0) error:&error];
-		
-		self.dailyReport = [[DataManager getInstance] getReportForToday];
-		
-		self.rowHeights = [NSMutableArray array];
 		
 		self.checkedImage = [UIImage imageNamed:@"checkmark_filled.png"];
 		self.uncheckedImage = [UIImage imageNamed:@"checkmark_unfilled.png"];
@@ -150,6 +151,16 @@
 - (void)viewWillAppear:(BOOL)animated {
 	[super viewWillAppear:animated];
 	
+	NSDate *date = [[DataManager getInstance] getCurrentDate];
+	
+	if (!self.currentDate || [self.currentDate compare:date] != NSOrderedSame) {
+		
+		self.currentDate = date;
+		self.dailyReport = [[DataManager getInstance] getReportForToday];
+		
+		self.rowHeights = [NSMutableArray array];
+	}
+	
 	if (!self.rowHeights.count) {
 		for (DBConsumption *consumption in self.dailyReport.consumptions) {
 			[self.rowHeights addObject:@([ConsumptionTableViewCell calculateRequiredHeightForConsumption:consumption
@@ -160,6 +171,17 @@
 	[self.tableView reloadData];
 	
 	[self updateProgress];
+}
+
+- (void)viewDidAppear:(BOOL)animated {
+	[super viewDidAppear:animated];
+	
+	if (self.showWelcomeScreen) {
+		self.showWelcomeScreen = NO;
+		
+		WelcomeViewController *vController = [[WelcomeViewController alloc] init];
+		[self presentViewController:vController animated:YES completion:NULL];
+	}
 }
 
 - (void)updateProgress {

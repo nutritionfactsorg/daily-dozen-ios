@@ -13,6 +13,7 @@
 @interface DataManager : NSObject
 
 + (DataManager *)getInstance;
+- (NSDate *)getCurrentDate;
 - (DBDailyReport *)getReportForToday;
 - (void)setServingCount:(double)servingCount forDBConsumption:(DBConsumption *)consumption;
 

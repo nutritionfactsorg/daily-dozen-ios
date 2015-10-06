@@ -105,7 +105,7 @@
 	button.frame = CGRectMake(buttonXoffset, buttonYoffset, buttonImage.size.width, buttonImage.size.height);
 	[todaysServingContainer addSubview:button];
 	
-	CGFloat fontSize = 18.f;
+	CGFloat fontSize = 17.f;
 	
 	UILabel *servingsTitleLabel = [[UILabel alloc] initWithFrame:CGRectMake(horizontalIndent, buttonYoffset, buttonXoffset - 2.f *horizontalIndent, buttonImage.size.height)];
 	servingsTitleLabel.text = @"Today's Servings";

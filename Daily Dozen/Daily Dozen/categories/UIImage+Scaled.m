@@ -10,7 +10,6 @@
 
 @implementation UIImage (Scaled)
 
-// src: http://stackoverflow.com/questions/7645454/resize-uiimage-by-keeping-aspect-ratio-and-width
 - (UIImage *)imageScaledToWidth:(float)i_width {
 	
 	float oldWidth = self.size.width;
@@ -19,7 +18,7 @@
 	float newHeight = self.size.height * scaleFactor;
 	float newWidth = oldWidth * scaleFactor;
 	
-	UIGraphicsBeginImageContext(CGSizeMake(newWidth, newHeight));
+	UIGraphicsBeginImageContextWithOptions(CGSizeMake(newWidth, newHeight), NO, 0);
 	[self drawInRect:CGRectMake(0, 0, newWidth, newHeight)];
 	UIImage *newImage = UIGraphicsGetImageFromCurrentImageContext();
 	UIGraphicsEndImageContext();

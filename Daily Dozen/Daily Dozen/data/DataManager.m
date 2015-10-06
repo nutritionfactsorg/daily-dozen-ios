@@ -28,6 +28,16 @@ static DataManager *sharedInstance;
 	return sharedInstance;
 }
 
+- (NSDate *)getCurrentDate {
+	
+	NSDateComponents *components = [[NSCalendar currentCalendar]
+									components:(NSCalendarUnitYear|NSCalendarUnitMonth|NSCalendarUnitDay)
+									fromDate:[NSDate date]];
+	
+	return [[NSCalendar currentCalendar]
+			dateFromComponents:components];
+}
+
 - (DBDailyReport *)getReportForToday {
 	
 	NSError *error = nil;
@@ -36,10 +46,9 @@ static DataManager *sharedInstance;
 									components:(NSCalendarUnitYear|NSCalendarUnitMonth|NSCalendarUnitDay)
 									fromDate:[NSDate date]];
 	
-	NSDate *startDate = [[NSCalendar currentCalendar]
-						 dateFromComponents:components];
+	NSDate *date = [self getCurrentDate];
 	
-	return [DBDailyReport getDailyReportForDate:startDate
+	return [DBDailyReport getDailyReportForDate:date
 									inContext:[[DatabaseManager sharedInstance] defaultUserContext]
 										  error:&error];
 }

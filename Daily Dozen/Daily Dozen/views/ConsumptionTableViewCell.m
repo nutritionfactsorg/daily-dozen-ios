@@ -112,7 +112,7 @@
 }
 
 + (UIFont *)labelFont {
-	return [UIFont systemFontOfSize:18.f];
+	return [UIFont systemFontOfSize:17.f];
 }
 
 + (CGFloat)calculateRequiredHeightForConsumption:(DBConsumption *)consumption forTableView:(UITableView *)tableView {
