@@ -96,7 +96,7 @@
 	} else {
 		
 		UIAlertView *aiView = [[UIAlertView alloc] initWithTitle:@"Ackowledgements"
-														 message:@"Application designed by Allan Portera\n\nDeveloped by Chan Kruse\n\nPhotos by xxx"
+														 message:@"Designed by Allan Portera at DigitalBoro.com\n\nDeveloped by Chan Kruse\n\nPhotos by xxx"
 														delegate:nil
 											   cancelButtonTitle:@"Dismiss"
 											   otherButtonTitles:nil];
