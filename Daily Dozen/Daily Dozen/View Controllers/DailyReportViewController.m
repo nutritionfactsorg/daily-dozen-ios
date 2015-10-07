@@ -159,6 +159,15 @@
 			self.dailyReport = [[DataManager getInstance] getReportForToday];
 			
 			self.rowHeights = [NSMutableArray array];
+			
+			for (DBConsumption *consumption in self.dailyReport.consumptions) {
+				[self.rowHeights addObject:@([ConsumptionTableViewCell calculateRequiredHeightForConsumption:consumption
+																								forTableView:self.tableView])];
+			}
+			
+			[self.tableView reloadData];
+			
+			[self updateProgress];
 		}
 	}
 }

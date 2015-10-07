@@ -19,7 +19,7 @@
 
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
-
+	[UIApplication sharedApplication].statusBarStyle = UIStatusBarStyleLightContent;
 	
 	NSString *recommendationString = [NSString stringWithFormat:@"<b>Recommendation:</b>"];
 	
@@ -30,7 +30,7 @@
 																				error:nil];
 	
 	[[UINavigationBar appearance] setBarTintColor:kColorNavBar];
-	[[UINavigationBar appearance] setBarStyle:UIBarStyleBlack];
+//	[[UINavigationBar appearance] setBarStyle:UIBarStyleBlack];
 	[[UINavigationBar appearance] setTintColor:[UIColor whiteColor]];
 	[[UINavigationBar appearance] setTitleTextAttributes:@{NSForegroundColorAttributeName : [UIColor whiteColor]}];
 	
