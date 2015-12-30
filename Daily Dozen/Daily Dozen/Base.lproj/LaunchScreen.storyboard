@@ -5,10 +5,10 @@
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="8154"/>
     </dependencies>
     <scenes>
-        <!--Dr. Gregor's Daily Dozen-->
+        <!--Dr. Greger's Daily Dozen-->
         <scene sceneID="6oS-e3-zaW">
             <objects>
-                <tableViewController title="Dr. Gregor's Daily Dozen" id="bi5-Ii-JUA" sceneMemberID="viewController">
+                <tableViewController title="Dr. Greger's Daily Dozen" id="bi5-Ii-JUA" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="60" sectionHeaderHeight="28" sectionFooterHeight="28" id="Shr-KC-Pat">
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -31,7 +31,7 @@
                             <outlet property="delegate" destination="bi5-Ii-JUA" id="5b0-q1-f6S"/>
                         </connections>
                     </tableView>
-                    <navigationItem key="navigationItem" title="Dr. Gregor's Daily Dozen" id="J60-3G-IXl"/>
+                    <navigationItem key="navigationItem" title="Dr. Greger's Daily Dozen" id="J60-3G-IXl"/>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dzc-Rg-uAj" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>

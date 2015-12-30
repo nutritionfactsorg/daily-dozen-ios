@@ -37,7 +37,7 @@
 
 - (id)init {
 	if ((self = [super init])) {
-		self.title = @"Dr. Gregor's Daily Dozen";
+		self.title = @"Dr. Greger's Daily Dozen";
 		
 		NSError *error = nil;
 		
