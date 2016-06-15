@@ -14,12 +14,12 @@ Dr. Greger’s Daily Dozen details the healthiest foods and how many servings of
 Daily Dozen on the App Store
 ----------------------------
 
-<a href="https://play.google.com/store/apps/details?id=org.nutritionfacts.dailydozen" alt="Download from the App Store" target="_blank"><img src="https://s3.amazonaws.com/nutritionfactsorg/github/app-store.png?v=1" width="200"></a>
+<a href="https://itunes.apple.com/us/app/dr.-gregers-daily-dozen/id1060700802?mt=8" alt="Download from the App Store" target="_blank"><img src="https://s3.amazonaws.com/nutritionfactsorg/github/app-store.png?v=1" width="200"></a>
 
 Contribute
 ----------
 
-We would love for you to contribute to our source code and to help make the Daily Dozen for Android even better!
+We would love for you to contribute to our source code and to help make the Daily Dozen for iOS even better!
 
 Check out our [Contribution Guidelines][contribute] for details on how to get started and our suggested best practices.
 
@@ -48,10 +48,7 @@ Contributors
 Updates
 -------
 
-###1.0.1 - 1.0.2 (Google Play)
-- Misspelling fix
-
-###1.0.0 (Google Play)
+###1.0.0 (App Store)
 - Initial Release
 
 [nutritionfacts.org]: http://nutritionfacts.org "NutritionFacts.org - The Latest in Nutrition Research"
