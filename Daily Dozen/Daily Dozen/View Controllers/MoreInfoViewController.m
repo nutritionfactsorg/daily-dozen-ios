@@ -24,8 +24,8 @@
 
 - (void)loadView {
 	
-	self.rowTitles = @[@"Latest Video", @"Donate", @"Book", @"Subscribe", @"Acknowledgements"];
-	self.rowUrls = @[@"http://nutritionfacts.org/", @"https://nutritionfacts.org/donate/", @"http://www.nutritionfacts.org/book", @"http://nutritionfacts.org/subscribe/", @"Acknowledgements"];
+	self.rowTitles = @[@"Latest Video", @"Donate", @"Book", @"Subscribe", @"Open Source", @"Acknowledgements"];
+	self.rowUrls = @[@"http://nutritionfacts.org/", @"https://nutritionfacts.org/donate/", @"http://www.nutritionfacts.org/book", @"http://nutritionfacts.org/subscribe/", @"http://nutritionfacts.org/open-source/", @"Acknowledgements"];
 	
 	self.navigationItem.leftBarButtonItem = [[UIBarButtonItem alloc] initWithTitle:@"Back"
 																			  style:UIBarButtonItemStylePlain
@@ -89,7 +89,7 @@
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
 	[tableView deselectRowAtIndexPath:indexPath animated:YES];
 	
-	if (indexPath.row < 4) {
+	if (indexPath.row < 5) {
 		NSURL *url = [NSURL URLWithString:self.rowUrls[indexPath.row]];
 		
 		[[UIApplication sharedApplication] openURL:url];
