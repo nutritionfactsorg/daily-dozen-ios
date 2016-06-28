@@ -104,7 +104,7 @@ static FoodHelper *sharedInstance;
 		foodType.iconImageName = [UIImage imageNamed:@"ic_spices"];
 		foodType.overviewImageName = @"bkg_test";
 		foodType.name = @"Spices";
-		foodType.recommendedServingCount = -1.0;
+		foodType.recommendedServingCount = 1.0;
 		foodType.customRecommendation = @"1⁄4 teaspoon of turmeric, along with any other (salt-free) herbs and spices you enjoy";
 		[foodType.exampleTitles addObject:@"Some of my favorites:"];
 		[foodType.exampleBodies addObject:@"Allspice, barberries, basil, bay leaves, cardamom, chili powder, cilantro, cinnamon, cloves, coriander, cumin, curry powder, dill, fenugreek, garlic, ginger, horseradish, lemongrass, marjoram, mustard powder, nutmeg, oregano, smoked paprika, parsley, pepper, peppermint, rosemary, saffron, sage, thyme, turmeric, and vanilla"];
