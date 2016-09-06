@@ -37,12 +37,14 @@ class ViewController: UIViewController, UITableViewDataSource {
         let servingDateButton = cell.contentView.viewWithTag(9) as! UIButton
     
         servingImage.image = UIImage(named: "images/" + servingImages[indexPath.row])
-        servingImage.contentMode = .Center
+        servingImage.contentMode = .ScaleToFill
         servingText.text = servingNames[indexPath.row]
         for checkboxIndex in 0...4 {
             
             servingCheckboxes[checkboxIndex].hidden = !(checkboxIndex < servingSizes[indexPath.row])
         }
+        servingDateButton.setImage(UIImage(named: "images/ic_calendar"), forState: .Normal)
+        servingDateButton.contentMode = .ScaleToFill
         
         return cell
     }
@@ -53,11 +55,6 @@ class ViewController: UIViewController, UITableViewDataSource {
         // Do any additional setup after loading the view, typically from a nib.
         
         servingTableView.dataSource = self
-    }
-    
-    override func viewDidAppear(animated: Bool) {
-        
-        self.title = "Daily Dozen"
     }
 
     override func didReceiveMemoryWarning() {

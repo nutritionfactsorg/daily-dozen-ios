@@ -14,18 +14,23 @@ class CheckboxButton: UIButton {
     let uncheckedImage = UIImage(named: "images/checkmark_unfilled")
     
     var checked: Bool = false {
+        
         didSet {
+            
             setImage(checked ? checkedImage : uncheckedImage, forState: .Normal)
         }
     }
     
     override func awakeFromNib() {
+        
         addTarget(self, action: #selector(CheckboxButton.onClick(_:)), forControlEvents: UIControlEvents.TouchUpInside)
         checked = false
     }
     
     func onClick(sender: UIButton) {
+        
         if(sender == self) {
+            
             checked = !checked
         }
     }
