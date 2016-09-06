@@ -33,11 +33,11 @@
                                     </items>
                                 </navigationBar>
                                 <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="center" selectionStyle="none" indentationWidth="10" reuseIdentifier="ServingCell" rowHeight="176" id="Mzb-0k-pSs">
-                                        <rect key="frame" x="0.0" y="72" width="768" height="176"/>
+                                    <tableViewCell clipsSubviews="YES" contentMode="center" selectionStyle="none" indentationWidth="10" reuseIdentifier="ServingCell" rowHeight="54" id="Mzb-0k-pSs">
+                                        <rect key="frame" x="0.0" y="72" width="768" height="54"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="Mzb-0k-pSs" id="jLM-hl-Gb0">
-                                            <rect key="frame" x="0.0" y="0.0" width="768" height="176"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="768" height="54"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <button opaque="NO" tag="9" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="pQy-2x-hDR">
@@ -101,6 +101,7 @@
                                                 </stackView>
                                                 <button opaque="NO" tag="3" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="infoDark" showsTouchWhenHighlighted="YES" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="oEb-lP-6qD">
                                                     <rect key="frame" x="116" y="10" width="22" height="22"/>
+                                                    <color key="tintColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
                                                 </button>
                                             </subviews>
                                             <constraints>
