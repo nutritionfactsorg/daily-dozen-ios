@@ -18,6 +18,7 @@ class CheckboxButton: UIButton {
         didSet {
             
             setImage(checked ? checkedImage : uncheckedImage, forState: .Normal)
+            tintColor = checked ? UIColor(red: 0xff/255.0, green: 0x52/255.0, blue: 0x52/255.0, alpha: 1.0) : UIColor.blackColor()
         }
     }
     

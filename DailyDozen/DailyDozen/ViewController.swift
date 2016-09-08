@@ -15,6 +15,8 @@ class ViewController: UIViewController, UITableViewDataSource {
     let servingSizes = [3, 1, 3, 1, 2, 2, 1, 1, 1, 3, 5, 1]
 
     @IBOutlet weak var servingTableView: UITableView!
+    @IBOutlet weak var dateTabBar: UITabBar!
+    @IBOutlet weak var titleNavigationBar: UINavigationBar!
     
     func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
     
