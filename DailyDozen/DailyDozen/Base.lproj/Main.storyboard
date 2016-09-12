@@ -121,8 +121,13 @@
                             <tabBar contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="C1A-Ki-kL9">
                                 <rect key="frame" x="0.0" y="687" width="414" height="49"/>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
-                                <items/>
-                                <color key="tintColor" red="1" green="0.32156862745098036" blue="0.32156862745098036" alpha="1" colorSpace="calibratedRGB"/>
+                                <items>
+                                    <tabBarItem tag="1" title="Previous" id="eJU-eC-I4z"/>
+                                    <tabBarItem tag="2" title="Date" id="bpg-O3-0ef"/>
+                                    <tabBarItem tag="3" title="Next" id="rkZ-dC-qT9"/>
+                                    <tabBarItem title="Today" id="VAM-JB-E5Q"/>
+                                </items>
+                                <color key="tintColor" red="0.21960784310000001" green="0.5568627451" blue="0.23529411759999999" alpha="1" colorSpace="calibratedRGB"/>
                                 <color key="barTintColor" red="0.29803921570000003" green="0.68627450980000004" blue="0.31372549020000001" alpha="1" colorSpace="calibratedRGB"/>
                                 <color key="selectedImageTintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                             </tabBar>
