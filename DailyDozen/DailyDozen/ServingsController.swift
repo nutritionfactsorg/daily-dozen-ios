@@ -8,7 +8,7 @@
 
 import UIKit
 
-class ViewController: UIViewController, UITableViewDataSource {
+class ServingsController: UIViewController, UITableViewDataSource {
     
     let servingNames = ["Beans", "Berries", "Other Fruits", "Cruciferous Vegetables", "Greens", "Other Vegetables", "Flaxseeds", "Nuts", "Spices", "Whole Grains", "Beverages", "Exercise"]
     let servingImages = ["ic_beans", "ic_berries", "ic_other_fruits", "ic_cruciferous", "ic_greens", "ic_other_veg", "ic_flax", "ic_nuts", "ic_spices", "ic_whole_grains", "ic_beverages", "ic_exercise"]

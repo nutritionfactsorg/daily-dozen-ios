@@ -9,12 +9,14 @@
 /* Begin PBXBuildFile section */
 		D74DCE2A1D7CB1B200CA6B2B /* CheckboxButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = D74DCE291D7CB1B200CA6B2B /* CheckboxButton.swift */; };
 		D7644DF21D78F37D0088F246 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D7644DF11D78F37D0088F246 /* AppDelegate.swift */; };
-		D7644DF41D78F37D0088F246 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D7644DF31D78F37D0088F246 /* ViewController.swift */; };
+		D7644DF41D78F37D0088F246 /* ServingsController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D7644DF31D78F37D0088F246 /* ServingsController.swift */; };
 		D7644DF71D78F37D0088F246 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D7644DF51D78F37D0088F246 /* Main.storyboard */; };
 		D7644DF91D78F37D0088F246 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D7644DF81D78F37D0088F246 /* Assets.xcassets */; };
 		D7644DFC1D78F37D0088F246 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D7644DFA1D78F37D0088F246 /* LaunchScreen.storyboard */; };
 		D7644E071D78F37D0088F246 /* DailyDozenTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D7644E061D78F37D0088F246 /* DailyDozenTests.swift */; };
 		D7644E121D78F37D0088F246 /* DailyDozenUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D7644E111D78F37D0088F246 /* DailyDozenUITests.swift */; };
+		D773D2521D87044900B13909 /* ParentController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D773D2511D87044900B13909 /* ParentController.swift */; };
+		D773D2541D87635A00B13909 /* SlideOutMenuController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D773D2531D87635A00B13909 /* SlideOutMenuController.swift */; };
 		D79A52981D7A06BE00BBF5F6 /* images in Resources */ = {isa = PBXBuildFile; fileRef = D79A52971D7A06BE00BBF5F6 /* images */; };
 /* End PBXBuildFile section */
 
@@ -39,7 +41,7 @@
 		D74DCE291D7CB1B200CA6B2B /* CheckboxButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CheckboxButton.swift; sourceTree = "<group>"; };
 		D7644DEE1D78F37D0088F246 /* DailyDozen.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = DailyDozen.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		D7644DF11D78F37D0088F246 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		D7644DF31D78F37D0088F246 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		D7644DF31D78F37D0088F246 /* ServingsController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ServingsController.swift; sourceTree = "<group>"; };
 		D7644DF61D78F37D0088F246 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		D7644DF81D78F37D0088F246 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		D7644DFB1D78F37D0088F246 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -50,6 +52,8 @@
 		D7644E0D1D78F37D0088F246 /* DailyDozenUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = DailyDozenUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		D7644E111D78F37D0088F246 /* DailyDozenUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DailyDozenUITests.swift; sourceTree = "<group>"; };
 		D7644E131D78F37D0088F246 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		D773D2511D87044900B13909 /* ParentController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ParentController.swift; sourceTree = "<group>"; };
+		D773D2531D87635A00B13909 /* SlideOutMenuController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SlideOutMenuController.swift; sourceTree = "<group>"; };
 		D79A52971D7A06BE00BBF5F6 /* images */ = {isa = PBXFileReference; lastKnownFileType = folder; path = images; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -103,12 +107,14 @@
 			children = (
 				D79A52971D7A06BE00BBF5F6 /* images */,
 				D7644DF11D78F37D0088F246 /* AppDelegate.swift */,
-				D7644DF31D78F37D0088F246 /* ViewController.swift */,
+				D7644DF31D78F37D0088F246 /* ServingsController.swift */,
 				D7644DF51D78F37D0088F246 /* Main.storyboard */,
 				D7644DF81D78F37D0088F246 /* Assets.xcassets */,
 				D7644DFA1D78F37D0088F246 /* LaunchScreen.storyboard */,
 				D7644DFD1D78F37D0088F246 /* Info.plist */,
 				D74DCE291D7CB1B200CA6B2B /* CheckboxButton.swift */,
+				D773D2511D87044900B13909 /* ParentController.swift */,
+				D773D2531D87635A00B13909 /* SlideOutMenuController.swift */,
 			);
 			path = DailyDozen;
 			sourceTree = "<group>";
@@ -263,8 +269,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				D7644DF41D78F37D0088F246 /* ViewController.swift in Sources */,
+				D7644DF41D78F37D0088F246 /* ServingsController.swift in Sources */,
+				D773D2541D87635A00B13909 /* SlideOutMenuController.swift in Sources */,
 				D74DCE2A1D7CB1B200CA6B2B /* CheckboxButton.swift in Sources */,
+				D773D2521D87044900B13909 /* ParentController.swift in Sources */,
 				D7644DF21D78F37D0088F246 /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
