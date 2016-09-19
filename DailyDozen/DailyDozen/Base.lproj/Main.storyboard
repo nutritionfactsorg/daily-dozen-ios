@@ -9,7 +9,7 @@
         <!--Slide-Out Menu Table View Controller-->
         <scene sceneID="nF8-e2-m8L">
             <objects>
-                <tableViewController title="Slide Out Menu View Controller" id="ToS-wh-9p7" userLabel="Slide-Out Menu Table View Controller" sceneMemberID="viewController">
+                <tableViewController title="Slide Out Menu View Controller" id="ToS-wh-9p7" userLabel="Slide-Out Menu Table View Controller" customClass="SlideOutMenuController" customModule="DailyDozen" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" allowsSelection="NO" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" id="Kxi-B4-ysn" userLabel="Menu Table View">
                         <rect key="frame" x="0.0" y="0.0" width="260" height="736"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -19,29 +19,26 @@
                         <color key="sectionIndexBackgroundColor" red="0.29803921570000003" green="0.68627450980000004" blue="0.31372549020000001" alpha="1" colorSpace="calibratedRGB"/>
                         <color key="sectionIndexTrackingBackgroundColor" red="0.29803921570000003" green="0.68627450980000004" blue="0.31372549020000001" alpha="1" colorSpace="calibratedRGB"/>
                         <prototypes>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" id="M4g-9S-qhB">
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="MenuItemCell" id="M4g-9S-qhB">
                                 <rect key="frame" x="0.0" y="28" width="260" height="44"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" tag="1" contentMode="center" tableViewCell="M4g-9S-qhB" id="caL-vK-Vj5">
                                     <rect key="frame" x="0.0" y="0.0" width="260" height="44"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
-                                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="kmK-zx-2rT" userLabel="Menu Image">
-                                            <rect key="frame" x="8" y="5" width="34" height="34"/>
-                                        </imageView>
                                         <label opaque="NO" userInteractionEnabled="NO" tag="2" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" misplaced="YES" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="VmQ-fJ-zZ9" userLabel="Menu Text">
                                             <rect key="frame" x="50" y="11" width="42" height="21"/>
                                             <fontDescription key="fontDescription" name="HelveticaNeue-Bold" family="Helvetica Neue" pointSize="17"/>
                                             <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                             <nil key="highlightedColor"/>
                                         </label>
+                                        <imageView userInteractionEnabled="NO" tag="3" contentMode="center" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="0ws-U4-56k" userLabel="Menu Image">
+                                            <rect key="frame" x="8" y="5" width="34" height="34"/>
+                                        </imageView>
                                     </subviews>
                                     <color key="backgroundColor" red="0.29803921570000003" green="0.68627450980000004" blue="0.31372549020000001" alpha="1" colorSpace="calibratedRGB"/>
                                     <constraints>
                                         <constraint firstItem="VmQ-fJ-zZ9" firstAttribute="centerY" secondItem="caL-vK-Vj5" secondAttribute="centerY" id="0bg-Xy-qDx"/>
-                                        <constraint firstItem="kmK-zx-2rT" firstAttribute="leading" secondItem="caL-vK-Vj5" secondAttribute="leadingMargin" id="g2V-dC-eAF"/>
-                                        <constraint firstItem="VmQ-fJ-zZ9" firstAttribute="leading" secondItem="kmK-zx-2rT" secondAttribute="trailing" constant="8" id="krm-59-XoM"/>
-                                        <constraint firstItem="kmK-zx-2rT" firstAttribute="centerY" secondItem="caL-vK-Vj5" secondAttribute="centerY" id="wzX-FN-lFw"/>
                                     </constraints>
                                 </tableViewCellContentView>
                                 <color key="backgroundColor" red="0.29803921570000003" green="0.68627450980000004" blue="0.31372549020000001" alpha="1" colorSpace="calibratedRGB"/>
@@ -55,6 +52,9 @@
                     </tableView>
                     <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
                     <size key="freeformSize" width="260" height="736"/>
+                    <connections>
+                        <outlet property="menuTableView" destination="Kxi-B4-ysn" id="WGY-yV-cmP"/>
+                    </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="sri-Wr-QSM" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -188,16 +188,16 @@
                                                     <rect key="frame" x="186" y="12" width="30" height="30"/>
                                                     <color key="tintColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
                                                 </button>
-                                                <imageView userInteractionEnabled="NO" tag="1" contentMode="center" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="ic_beans.png" translatesAutoresizingMaskIntoConstraints="NO" id="jPk-oh-Hxd" userLabel="Food Image">
+                                                <imageView userInteractionEnabled="NO" tag="1" contentMode="center" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="jPk-oh-Hxd" userLabel="Food Image">
                                                     <rect key="frame" x="18" y="5" width="44" height="44"/>
                                                     <constraints>
                                                         <constraint firstAttribute="width" constant="44" id="cTb-8Z-O14"/>
                                                     </constraints>
                                                 </imageView>
-                                                <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="2RN-2k-07B">
+                                                <stackView opaque="NO" contentMode="scaleToFill" misplaced="YES" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="2RN-2k-07B">
                                                     <rect key="frame" x="70" y="16" width="48" height="21"/>
                                                     <subviews>
-                                                        <label opaque="NO" userInteractionEnabled="NO" tag="2" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Beans" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="r68-dk-D6N" userLabel="Food Text">
+                                                        <label opaque="NO" userInteractionEnabled="NO" tag="2" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Beans" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="r68-dk-D6N" userLabel="Food Text">
                                                             <rect key="frame" x="0.0" y="0.0" width="48" height="21"/>
                                                             <accessibility key="accessibilityConfiguration">
                                                                 <accessibilityTraits key="traits" staticText="YES" notEnabled="YES"/>
@@ -208,7 +208,7 @@
                                                         </label>
                                                     </subviews>
                                                 </stackView>
-                                                <button opaque="NO" tag="3" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="infoDark" showsTouchWhenHighlighted="YES" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="oEb-lP-6qD" userLabel="Info button">
+                                                <button opaque="NO" tag="3" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="infoDark" showsTouchWhenHighlighted="YES" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="oEb-lP-6qD" userLabel="Info button">
                                                     <rect key="frame" x="121" y="16" width="22" height="22"/>
                                                     <color key="tintColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
                                                 </button>
@@ -290,7 +290,4 @@
             <point key="canvasLocation" x="1319.5" y="-451"/>
         </scene>
     </scenes>
-    <resources>
-        <image name="ic_beans.png" width="30" height="30"/>
-    </resources>
 </document>
