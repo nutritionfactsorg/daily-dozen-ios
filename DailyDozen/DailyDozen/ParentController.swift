@@ -21,6 +21,13 @@ class ParentController: UIViewController {
             
             self.closeMenu(false)
         }
+        
+        // Tab bar controller's child pages have a top-left button toggles the menu
+        NSNotificationCenter.defaultCenter().addObserver(self, selector: #selector(ParentController.toggleMenu), name: "toggleMenu", object: nil)
+        NSNotificationCenter.defaultCenter().addObserver(self, selector: #selector(ParentController.closeMenuViaNotification), name: "closeMenuViaNotification", object: nil)
+        
+        // Close the menu when the device rotates
+        NSNotificationCenter.defaultCenter().addObserver(self, selector: #selector(ParentController.rotated), name: UIDeviceOrientationDidChangeNotification, object: nil)
     }
     
     func openMenu() {

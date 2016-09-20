@@ -10,9 +10,9 @@ import UIKit
 
 class SlideOutMenuController: UITableViewController {
     
-    let menuItemNames = ["Latest Videos", "How Not To Die", "Donate", "Subscribe", "Open Source", "Daily Reminders", "Backup", "About"]
-    let menuItemImages = ["ic_latest_videos", "ic_book", "ic_donate", "ic_subscribe", "ic_open_source", "ic_reminders", "ic_backup", "ic_about"]
-    let menuItemLinks = ["videos", "book", "donate", "subscribe", "open-source", "", "", ""]
+    let menuItemNames = ["", "Latest Videos", "How Not To Die", "Donate", "Subscribe", "Open Source", "Daily Reminders", "Backup", "About"]
+    let menuItemImages = ["", "ic_latest_videos", "ic_book", "ic_donate", "ic_subscribe", "ic_open_source", "ic_reminders", "ic_backup", "ic_about"]
+    let menuItemLinks = ["", "videos", "book", "donate", "subscribe", "open-source", "", "", ""]
     
     @IBOutlet var menuTableView: UITableView!
     

@@ -17,6 +17,7 @@ class ServingsController: UIViewController, UITableViewDataSource {
     @IBOutlet weak var servingTableView: UITableView!
     @IBOutlet weak var dateTabBar: UITabBar!
     @IBOutlet weak var titleNavigationBar: UINavigationBar!
+    @IBOutlet weak var menuButtonBarItem: UIBarButtonItem!
     
     func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
     
@@ -49,6 +50,11 @@ class ServingsController: UIViewController, UITableViewDataSource {
         servingDateButton.contentMode = .Center
         
         return cell
+    }
+    
+    @IBAction func toggleMenu(sender: AnyObject) {
+        
+        NSNotificationCenter.defaultCenter().postNotificationName("toggleMenu", object: nil)
     }
     
     override func viewDidLoad() {
