@@ -36,7 +36,8 @@ The Daily Dozen iOS App is licensed under the GPLv3
 Contributors
 ------------
 
-* [Christi Richards][christirichards] (Maintainer)
+* [Will Webb][innerfish89] (Maintainer)
+* [Christi Richards][christirichards]
 * [Lauren Hacker][laurenhacker]
 
 **Special thanks to the volunteer efforts of the original creators of the app:**
@@ -48,10 +49,10 @@ Contributors
 Updates
 -------
 
-###1.0.1 - 1.0.2 (Google Play)
+###1.0.1 - 1.0.2 (App Store)
 - Misspelling fix
 
-###1.0.0 (Google Play)
+###1.0.0 (App Store)
 - Initial Release
 
 [nutritionfacts.org]: http://nutritionfacts.org "NutritionFacts.org - The Latest in Nutrition Research"
