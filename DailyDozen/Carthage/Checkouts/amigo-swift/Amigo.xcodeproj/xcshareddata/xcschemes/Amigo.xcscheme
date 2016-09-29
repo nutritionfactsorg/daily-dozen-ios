@@ -1,0 +1,143 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Scheme
+   LastUpgradeVersion = "0700"
+   version = "1.3">
+   <BuildAction
+      parallelizeBuildables = "YES"
+      buildImplicitDependencies = "YES">
+      <BuildActionEntries>
+         <BuildActionEntry
+            buildForTesting = "YES"
+            buildForRunning = "YES"
+            buildForProfiling = "YES"
+            buildForArchiving = "YES"
+            buildForAnalyzing = "YES">
+            <BuildableReference
+               BuildableIdentifier = "primary"
+               BlueprintIdentifier = "23B8F26C1B41978C00153865"
+               BuildableName = "Amigo.framework"
+               BlueprintName = "Amigo"
+               ReferencedContainer = "container:Amigo.xcodeproj">
+            </BuildableReference>
+         </BuildActionEntry>
+      </BuildActionEntries>
+   </BuildAction>
+   <TestAction
+      buildConfiguration = "Debug"
+      selectedDebuggerIdentifier = "Xcode.DebuggerFoundation.Debugger.LLDB"
+      selectedLauncherIdentifier = "Xcode.DebuggerFoundation.Launcher.LLDB"
+      shouldUseLaunchSchemeArgsEnv = "YES">
+      <Testables>
+         <TestableReference
+            skipped = "NO">
+            <BuildableReference
+               BuildableIdentifier = "primary"
+               BlueprintIdentifier = "23B8F2761B41978C00153865"
+               BuildableName = "AmigoTests.xctest"
+               BlueprintName = "AmigoTests"
+               ReferencedContainer = "container:Amigo.xcodeproj">
+            </BuildableReference>
+            <SkippedTests>
+               <Test
+                  Identifier = "AmigoQuerySetTests/testManyToManyThroughModelAddRejected()">
+               </Test>
+               <Test
+                  Identifier = "AmigoSessionTests/testManyToManyThroughModelAddRejected()">
+               </Test>
+               <Test
+                  Identifier = "AmigoTestBase">
+               </Test>
+               <Test
+                  Identifier = "PerfTests">
+               </Test>
+               <Test
+                  Identifier = "SQLiteCompilerTests/testComparisionPredicateColumns()">
+               </Test>
+               <Test
+                  Identifier = "SQLiteCompilerTests/testComparisionPredicateEqual()">
+               </Test>
+               <Test
+                  Identifier = "SQLiteCompilerTests/testComparisionPredicateForeignKey()">
+               </Test>
+               <Test
+                  Identifier = "SQLiteCompilerTests/testComparisionPredicateGreaterThan()">
+               </Test>
+               <Test
+                  Identifier = "SQLiteCompilerTests/testComparisionPredicateGreaterThanEqual()">
+               </Test>
+               <Test
+                  Identifier = "SQLiteCompilerTests/testComparisionPredicateLessThan()">
+               </Test>
+               <Test
+                  Identifier = "SQLiteCompilerTests/testComparisionPredicateLessThanEqual()">
+               </Test>
+               <Test
+                  Identifier = "SQLiteCompilerTests/testCompoundPredicate()">
+               </Test>
+            </SkippedTests>
+         </TestableReference>
+      </Testables>
+      <MacroExpansion>
+         <BuildableReference
+            BuildableIdentifier = "primary"
+            BlueprintIdentifier = "23B8F26C1B41978C00153865"
+            BuildableName = "Amigo.framework"
+            BlueprintName = "Amigo"
+            ReferencedContainer = "container:Amigo.xcodeproj">
+         </BuildableReference>
+      </MacroExpansion>
+      <AdditionalOptions>
+      </AdditionalOptions>
+   </TestAction>
+   <LaunchAction
+      buildConfiguration = "Debug"
+      selectedDebuggerIdentifier = "Xcode.DebuggerFoundation.Debugger.LLDB"
+      selectedLauncherIdentifier = "Xcode.DebuggerFoundation.Launcher.LLDB"
+      launchStyle = "0"
+      useCustomWorkingDirectory = "NO"
+      ignoresPersistentStateOnLaunch = "NO"
+      debugDocumentVersioning = "YES"
+      debugServiceExtension = "internal"
+      allowLocationSimulation = "YES">
+      <MacroExpansion>
+         <BuildableReference
+            BuildableIdentifier = "primary"
+            BlueprintIdentifier = "23B8F26C1B41978C00153865"
+            BuildableName = "Amigo.framework"
+            BlueprintName = "Amigo"
+            ReferencedContainer = "container:Amigo.xcodeproj">
+         </BuildableReference>
+      </MacroExpansion>
+      <CommandLineArguments>
+         <CommandLineArgument
+            argument = "-com.apple.CoreData.SQLDebug 1"
+            isEnabled = "YES">
+         </CommandLineArgument>
+      </CommandLineArguments>
+      <AdditionalOptions>
+      </AdditionalOptions>
+   </LaunchAction>
+   <ProfileAction
+      buildConfiguration = "Release"
+      shouldUseLaunchSchemeArgsEnv = "YES"
+      savedToolIdentifier = ""
+      useCustomWorkingDirectory = "NO"
+      debugDocumentVersioning = "YES">
+      <MacroExpansion>
+         <BuildableReference
+            BuildableIdentifier = "primary"
+            BlueprintIdentifier = "23B8F26C1B41978C00153865"
+            BuildableName = "Amigo.framework"
+            BlueprintName = "Amigo"
+            ReferencedContainer = "container:Amigo.xcodeproj">
+         </BuildableReference>
+      </MacroExpansion>
+   </ProfileAction>
+   <AnalyzeAction
+      buildConfiguration = "Debug">
+   </AnalyzeAction>
+   <ArchiveAction
+      buildConfiguration = "Release"
+      revealArchiveInOrganizer = "YES">
+   </ArchiveAction>
+</Scheme>

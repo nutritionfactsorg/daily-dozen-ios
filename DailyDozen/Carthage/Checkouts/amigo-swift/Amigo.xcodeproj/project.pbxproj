@@ -1,0 +1,836 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		231C84DD1B553A5700AD6C06 /* NSManagedObjectModel+Sorted.swift in Sources */ = {isa = PBXBuildFile; fileRef = 231C84DC1B553A5700AD6C06 /* NSManagedObjectModel+Sorted.swift */; };
+		231C84DF1B55424A00AD6C06 /* MOMExtensionTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 231C84DE1B55424A00AD6C06 /* MOMExtensionTests.swift */; };
+		233118981B5FC11300943976 /* SQLiteEngine+Master.swift in Sources */ = {isa = PBXBuildFile; fileRef = 233118971B5FC11300943976 /* SQLiteEngine+Master.swift */; };
+		2331189E1B600BC100943976 /* EngineFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2331189D1B600BC100943976 /* EngineFactory.swift */; };
+		233118A01B600DF100943976 /* ThreadLocalEngineFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2331189F1B600DF100943976 /* ThreadLocalEngineFactory.swift */; };
+		233118A21B60105300943976 /* SQLiteEngineFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 233118A11B60105300943976 /* SQLiteEngineFactory.swift */; };
+		233118A81B619F6D00943976 /* AmigoSessionTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 233118A71B619F6D00943976 /* AmigoSessionTests.swift */; };
+		233118AA1B619FC300943976 /* AmigoTestBase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 233118A91B619FC300943976 /* AmigoTestBase.swift */; };
+		233118AC1B61B0BB00943976 /* Update.swift in Sources */ = {isa = PBXBuildFile; fileRef = 233118AB1B61B0BB00943976 /* Update.swift */; };
+		233118AE1B626C8200943976 /* AmigoQuerySetTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 233118AD1B626C8200943976 /* AmigoQuerySetTests.swift */; };
+		233118B01B62761C00943976 /* SQLiteEngine+QuerySet.swift in Sources */ = {isa = PBXBuildFile; fileRef = 233118AF1B62761C00943976 /* SQLiteEngine+QuerySet.swift */; };
+		23474CFC1B52F3D2004D05BE /* ORMModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23474CFB1B52F3D2004D05BE /* ORMModel.swift */; };
+		23474D021B52F7F8004D05BE /* Mapper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23474D011B52F7F8004D05BE /* Mapper.swift */; };
+		23474D031B52FC3F004D05BE /* AmigoTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23B8F27C1B41978C00153865 /* AmigoTests.swift */; };
+		23474D041B52FC5F004D05BE /* AmigoConfiguration.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23ED242B1B41B35900C2AF28 /* AmigoConfiguration.swift */; };
+		23474D051B52FCF8004D05BE /* Amigo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23B8F2871B4197A700153865 /* Amigo.swift */; };
+		23474D061B52FE8A004D05BE /* AmigoSession.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23ED24291B41B34400C2AF28 /* AmigoSession.swift */; };
+		23474D071B5303A1004D05BE /* QuerySet.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23ED242D1B41BD1F00C2AF28 /* QuerySet.swift */; };
+		237BC1071B6C22A200F07892 /* ModelMappingTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 237BC1061B6C22A200F07892 /* ModelMappingTests.swift */; };
+		237BC1131B6EC8C500F07892 /* typeToTableName.swift in Sources */ = {isa = PBXBuildFile; fileRef = 237BC1121B6EC8C500F07892 /* typeToTableName.swift */; };
+		238395E71C39BA2E00D5241F /* FMDB.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 238395E61C39BA2E00D5241F /* FMDB.framework */; };
+		238395E81C39BEA800D5241F /* FMDB.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 238395E61C39BA2E00D5241F /* FMDB.framework */; };
+		238395EB1C39F77100D5241F /* SpecializedColumnTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 238395EA1C39F77100D5241F /* SpecializedColumnTests.swift */; };
+		238395ED1C3A29E300D5241F /* Fields.swift in Sources */ = {isa = PBXBuildFile; fileRef = 238395EC1C3A29E300D5241F /* Fields.swift */; };
+		238395EE1C3B0FB300D5241F /* SQLiteCompilerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23B43B041B4C074400F90DFD /* SQLiteCompilerTests.swift */; };
+		2389FA9D1C4684AB00D9922B /* SQLParams.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2389FA9C1C4684AB00D9922B /* SQLParams.swift */; };
+		2389FAA01C46E14200D9922B /* libsqlite3.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = 233118A31B6107B600943976 /* libsqlite3.tbd */; };
+		23A5D0751B62E7C000915F24 /* Relationship.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23A5D0741B62E7C000915F24 /* Relationship.swift */; };
+		23B43AEF1B4AAA0000F90DFD /* MetaTableTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23B43AE61B49DA3400F90DFD /* MetaTableTests.swift */; };
+		23B43AF01B4B037100F90DFD /* Table.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23F3CFC11B46CEF200D8AD4C /* Table.swift */; };
+		23B43AF11B4B140800F90DFD /* MetaData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23B43AEB1B49E61900F90DFD /* MetaData.swift */; };
+		23B43AF31B4B16B700F90DFD /* MetaColumnTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23B43AF21B4B16B700F90DFD /* MetaColumnTests.swift */; };
+		23B43AF41B4B187000F90DFD /* Engine.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23F3CFB71B45DE3300D8AD4C /* Engine.swift */; };
+		23B43AF61B4B1A7500F90DFD /* SQLiteEngine+Schema.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23B43AF51B4B1A7500F90DFD /* SQLiteEngine+Schema.swift */; };
+		23B43AF71B4B1A8400F90DFD /* SQLiteEngine.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23F3CFB51B45DE0500D8AD4C /* SQLiteEngine.swift */; };
+		23B43AF81B4B72D000F90DFD /* SQLiteEngineTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23B43AE01B47489600F90DFD /* SQLiteEngineTests.swift */; };
+		23B43AFB1B4B770900F90DFD /* Expressions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23B43AFA1B4B770900F90DFD /* Expressions.swift */; };
+		23B43AFD1B4BFC1200F90DFD /* SQLiteCompiler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23B43AFC1B4BFC1200F90DFD /* SQLiteCompiler.swift */; };
+		23B43AFF1B4C00CF00F90DFD /* SQLiteTypeCompiler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23B43AFE1B4C00CF00F90DFD /* SQLiteTypeCompiler.swift */; };
+		23B43B011B4C011400F90DFD /* TypeCompiler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23B43B001B4C011400F90DFD /* TypeCompiler.swift */; };
+		23B43B031B4C06AE00F90DFD /* Compiler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23B43B021B4C06AE00F90DFD /* Compiler.swift */; };
+		23B43B071B4C13D200F90DFD /* Index.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23B43B061B4C13D200F90DFD /* Index.swift */; };
+		23B43B091B4C16F800F90DFD /* SchemaItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23B43B081B4C16F800F90DFD /* SchemaItem.swift */; };
+		23B43B0B1B4C741600F90DFD /* Select.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23B43B0A1B4C741600F90DFD /* Select.swift */; };
+		23B43B0D1B4C77E400F90DFD /* SelectTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23B43B0C1B4C77E400F90DFD /* SelectTests.swift */; };
+		23B43B101B4EA0E500F90DFD /* EntityDescriptionMapper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23B43B0F1B4EA0E500F90DFD /* EntityDescriptionMapper.swift */; };
+		23B43B121B4EA10F00F90DFD /* EntityDescriptionMapperTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23B43B111B4EA10F00F90DFD /* EntityDescriptionMapperTests.swift */; };
+		23B8F2711B41978C00153865 /* Amigo.h in Headers */ = {isa = PBXBuildFile; fileRef = 23B8F2701B41978C00153865 /* Amigo.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		23B8F2781B41978C00153865 /* Amigo.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 23B8F26D1B41978C00153865 /* Amigo.framework */; };
+		23B8F28A1B4198E200153865 /* CoreData.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 23B8F2891B4198E200153865 /* CoreData.framework */; };
+		23B8F28B1B41990C00153865 /* CoreData.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 23B8F2891B4198E200153865 /* CoreData.framework */; };
+		23C754A91B5C499F00584D1E /* SQLiteEngine+Transactions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23C754A81B5C499F00584D1E /* SQLiteEngine+Transactions.swift */; };
+		23C754AF1B5C4DB700584D1E /* Insert.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23C754AE1B5C4DB700584D1E /* Insert.swift */; };
+		23C754B31B5E6BC400584D1E /* Delete.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23C754B21B5E6BC400584D1E /* Delete.swift */; };
+		23C754B51B5E73B900584D1E /* AmigoEntityDescriptionMapper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23C754B41B5E73B800584D1E /* AmigoEntityDescriptionMapper.swift */; };
+		23C754B71B5E75B700584D1E /* DefaultMapper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23C754B61B5E75B700584D1E /* DefaultMapper.swift */; };
+		23C754B91B5EE5BB00584D1E /* Filterable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23C754B81B5EE5BB00584D1E /* Filterable.swift */; };
+		23CCC2171B67A74200BF64A6 /* PerfTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23CCC2161B67A74200BF64A6 /* PerfTests.swift */; };
+		23CCC21D1B67B48E00BF64A6 /* OrderBy.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23CCC21C1B67B48E00BF64A6 /* OrderBy.swift */; };
+		23E554F41B645250001BD64B /* MetaItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23E554F31B645250001BD64B /* MetaItem.swift */; };
+		23ED24281B41A83100C2AF28 /* App.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 23ED24261B41A83100C2AF28 /* App.xcdatamodeld */; };
+		23ED24491B41CB1100C2AF28 /* Models.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23ED24481B41CB1100C2AF28 /* Models.swift */; };
+		23F3CFBA1B45FF2400D8AD4C /* AmigoModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23F3CFB91B45FF2400D8AD4C /* AmigoModel.swift */; };
+		23F3CFC41B46CEFB00D8AD4C /* Column.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23F3CFC31B46CEFB00D8AD4C /* Column.swift */; };
+		23F3CFC61B46CF4500D8AD4C /* MetaModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23F3CFC51B46CF4500D8AD4C /* MetaModel.swift */; };
+		23F3CFC81B46E15E00D8AD4C /* ForeignKey.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23F3CFC71B46E15E00D8AD4C /* ForeignKey.swift */; };
+		23F9E8361C470D59004AF2B0 /* libsqlite3.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = 233118A31B6107B600943976 /* libsqlite3.tbd */; };
+		23F9E8641C47CA09004AF2B0 /* sqlite3.h in Headers */ = {isa = PBXBuildFile; fileRef = 23F9E8631C47CA09004AF2B0 /* sqlite3.h */; };
+		23F9E8661C47CAB4004AF2B0 /* SQLiteFormat.h in Headers */ = {isa = PBXBuildFile; fileRef = 23F9E8651C47CA3E004AF2B0 /* SQLiteFormat.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		23F9E8681C47CB51004AF2B0 /* SQLiteFormat.m in Sources */ = {isa = PBXBuildFile; fileRef = 23F9E8671C47CB51004AF2B0 /* SQLiteFormat.m */; };
+		23F9E86A1C47D27F004AF2B0 /* SQLiteFormatTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23F9E8691C47D27F004AF2B0 /* SQLiteFormatTests.swift */; };
+		23F9E86C1C482392004AF2B0 /* AmigoBatchOperation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23F9E86B1C482392004AF2B0 /* AmigoBatchOperation.swift */; };
+		23F9E86E1C48246A004AF2B0 /* SQLiteBatchOperation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23F9E86D1C48246A004AF2B0 /* SQLiteBatchOperation.swift */; };
+		23F9E8701C4B03C5004AF2B0 /* AmigoSessionAsyncTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23F9E86F1C4B03C5004AF2B0 /* AmigoSessionAsyncTests.swift */; };
+		23F9E8721C4B05FA004AF2B0 /* AmigoSessionAsyncAction.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23F9E8711C4B05FA004AF2B0 /* AmigoSessionAsyncAction.swift */; };
+		23F9E8741C4B0620004AF2B0 /* AmigoSessionModelAction.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23F9E8731C4B0620004AF2B0 /* AmigoSessionModelAction.swift */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		23B8F2791B41978C00153865 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 23B8F2641B41978C00153865 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 23B8F26C1B41978C00153865;
+			remoteInfo = Amigo;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		23C7890B1B471152002F4022 /* CopyFiles */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
+
+/* Begin PBXFileReference section */
+		231C84DC1B553A5700AD6C06 /* NSManagedObjectModel+Sorted.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "NSManagedObjectModel+Sorted.swift"; sourceTree = "<group>"; };
+		231C84DE1B55424A00AD6C06 /* MOMExtensionTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MOMExtensionTests.swift; sourceTree = "<group>"; };
+		233118971B5FC11300943976 /* SQLiteEngine+Master.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "SQLiteEngine+Master.swift"; sourceTree = "<group>"; };
+		2331189D1B600BC100943976 /* EngineFactory.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EngineFactory.swift; sourceTree = "<group>"; };
+		2331189F1B600DF100943976 /* ThreadLocalEngineFactory.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ThreadLocalEngineFactory.swift; sourceTree = "<group>"; };
+		233118A11B60105300943976 /* SQLiteEngineFactory.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SQLiteEngineFactory.swift; sourceTree = "<group>"; };
+		233118A31B6107B600943976 /* libsqlite3.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libsqlite3.tbd; path = usr/lib/libsqlite3.tbd; sourceTree = SDKROOT; };
+		233118A71B619F6D00943976 /* AmigoSessionTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AmigoSessionTests.swift; sourceTree = "<group>"; };
+		233118A91B619FC300943976 /* AmigoTestBase.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AmigoTestBase.swift; sourceTree = "<group>"; };
+		233118AB1B61B0BB00943976 /* Update.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Update.swift; sourceTree = "<group>"; };
+		233118AD1B626C8200943976 /* AmigoQuerySetTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AmigoQuerySetTests.swift; sourceTree = "<group>"; };
+		233118AF1B62761C00943976 /* SQLiteEngine+QuerySet.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "SQLiteEngine+QuerySet.swift"; sourceTree = "<group>"; };
+		23474CFB1B52F3D2004D05BE /* ORMModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ORMModel.swift; sourceTree = "<group>"; };
+		23474D011B52F7F8004D05BE /* Mapper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Mapper.swift; sourceTree = "<group>"; };
+		237BC1061B6C22A200F07892 /* ModelMappingTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ModelMappingTests.swift; sourceTree = "<group>"; };
+		237BC1121B6EC8C500F07892 /* typeToTableName.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = typeToTableName.swift; sourceTree = "<group>"; };
+		238395E61C39BA2E00D5241F /* FMDB.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = FMDB.framework; path = Carthage/Build/iOS/FMDB.framework; sourceTree = "<group>"; };
+		238395EA1C39F77100D5241F /* SpecializedColumnTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SpecializedColumnTests.swift; sourceTree = "<group>"; };
+		238395EC1C3A29E300D5241F /* Fields.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Fields.swift; sourceTree = "<group>"; };
+		2389FA9C1C4684AB00D9922B /* SQLParams.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SQLParams.swift; sourceTree = "<group>"; };
+		23A5D0741B62E7C000915F24 /* Relationship.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Relationship.swift; sourceTree = "<group>"; };
+		23B43AE01B47489600F90DFD /* SQLiteEngineTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SQLiteEngineTests.swift; sourceTree = "<group>"; };
+		23B43AE61B49DA3400F90DFD /* MetaTableTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MetaTableTests.swift; sourceTree = "<group>"; };
+		23B43AEB1B49E61900F90DFD /* MetaData.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MetaData.swift; sourceTree = "<group>"; };
+		23B43AF21B4B16B700F90DFD /* MetaColumnTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MetaColumnTests.swift; sourceTree = "<group>"; };
+		23B43AF51B4B1A7500F90DFD /* SQLiteEngine+Schema.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "SQLiteEngine+Schema.swift"; sourceTree = "<group>"; };
+		23B43AFA1B4B770900F90DFD /* Expressions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Expressions.swift; sourceTree = "<group>"; };
+		23B43AFC1B4BFC1200F90DFD /* SQLiteCompiler.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SQLiteCompiler.swift; sourceTree = "<group>"; };
+		23B43AFE1B4C00CF00F90DFD /* SQLiteTypeCompiler.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SQLiteTypeCompiler.swift; sourceTree = "<group>"; };
+		23B43B001B4C011400F90DFD /* TypeCompiler.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TypeCompiler.swift; sourceTree = "<group>"; };
+		23B43B021B4C06AE00F90DFD /* Compiler.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Compiler.swift; sourceTree = "<group>"; };
+		23B43B041B4C074400F90DFD /* SQLiteCompilerTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SQLiteCompilerTests.swift; sourceTree = "<group>"; };
+		23B43B061B4C13D200F90DFD /* Index.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Index.swift; sourceTree = "<group>"; };
+		23B43B081B4C16F800F90DFD /* SchemaItem.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SchemaItem.swift; sourceTree = "<group>"; };
+		23B43B0A1B4C741600F90DFD /* Select.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Select.swift; sourceTree = "<group>"; };
+		23B43B0C1B4C77E400F90DFD /* SelectTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SelectTests.swift; sourceTree = "<group>"; };
+		23B43B0F1B4EA0E500F90DFD /* EntityDescriptionMapper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EntityDescriptionMapper.swift; sourceTree = "<group>"; };
+		23B43B111B4EA10F00F90DFD /* EntityDescriptionMapperTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EntityDescriptionMapperTests.swift; sourceTree = "<group>"; };
+		23B8F26D1B41978C00153865 /* Amigo.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Amigo.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		23B8F2701B41978C00153865 /* Amigo.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Amigo.h; sourceTree = "<group>"; };
+		23B8F2721B41978C00153865 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		23B8F2771B41978C00153865 /* AmigoTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = AmigoTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		23B8F27C1B41978C00153865 /* AmigoTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AmigoTests.swift; sourceTree = "<group>"; };
+		23B8F27E1B41978C00153865 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		23B8F2871B4197A700153865 /* Amigo.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Amigo.swift; sourceTree = "<group>"; };
+		23B8F2891B4198E200153865 /* CoreData.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreData.framework; path = System/Library/Frameworks/CoreData.framework; sourceTree = SDKROOT; };
+		23C525431B446FF800B98681 /* AmigoMeta.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AmigoMeta.swift; sourceTree = "<group>"; };
+		23C754A81B5C499F00584D1E /* SQLiteEngine+Transactions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "SQLiteEngine+Transactions.swift"; sourceTree = "<group>"; };
+		23C754AE1B5C4DB700584D1E /* Insert.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Insert.swift; sourceTree = "<group>"; };
+		23C754B21B5E6BC400584D1E /* Delete.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Delete.swift; sourceTree = "<group>"; };
+		23C754B41B5E73B800584D1E /* AmigoEntityDescriptionMapper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AmigoEntityDescriptionMapper.swift; sourceTree = "<group>"; };
+		23C754B61B5E75B700584D1E /* DefaultMapper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DefaultMapper.swift; sourceTree = "<group>"; };
+		23C754B81B5EE5BB00584D1E /* Filterable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Filterable.swift; sourceTree = "<group>"; };
+		23CCC2161B67A74200BF64A6 /* PerfTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PerfTests.swift; sourceTree = "<group>"; };
+		23CCC21C1B67B48E00BF64A6 /* OrderBy.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OrderBy.swift; sourceTree = "<group>"; };
+		23E554F31B645250001BD64B /* MetaItem.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MetaItem.swift; sourceTree = "<group>"; };
+		23ED24271B41A83100C2AF28 /* App.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = App.xcdatamodel; sourceTree = "<group>"; };
+		23ED24291B41B34400C2AF28 /* AmigoSession.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AmigoSession.swift; sourceTree = "<group>"; };
+		23ED242B1B41B35900C2AF28 /* AmigoConfiguration.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AmigoConfiguration.swift; sourceTree = "<group>"; };
+		23ED242D1B41BD1F00C2AF28 /* QuerySet.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = QuerySet.swift; sourceTree = "<group>"; };
+		23ED24481B41CB1100C2AF28 /* Models.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Models.swift; sourceTree = "<group>"; };
+		23F3CFB51B45DE0500D8AD4C /* SQLiteEngine.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SQLiteEngine.swift; sourceTree = "<group>"; };
+		23F3CFB71B45DE3300D8AD4C /* Engine.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Engine.swift; sourceTree = "<group>"; };
+		23F3CFB91B45FF2400D8AD4C /* AmigoModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AmigoModel.swift; sourceTree = "<group>"; };
+		23F3CFC11B46CEF200D8AD4C /* Table.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Table.swift; sourceTree = "<group>"; };
+		23F3CFC31B46CEFB00D8AD4C /* Column.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Column.swift; sourceTree = "<group>"; };
+		23F3CFC51B46CF4500D8AD4C /* MetaModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MetaModel.swift; sourceTree = "<group>"; };
+		23F3CFC71B46E15E00D8AD4C /* ForeignKey.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ForeignKey.swift; sourceTree = "<group>"; };
+		23F9E8631C47CA09004AF2B0 /* sqlite3.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = sqlite3.h; path = ../iPhoneOS.sdk/usr/include/sqlite3.h; sourceTree = SDKROOT; };
+		23F9E8651C47CA3E004AF2B0 /* SQLiteFormat.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SQLiteFormat.h; sourceTree = "<group>"; };
+		23F9E8671C47CB51004AF2B0 /* SQLiteFormat.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SQLiteFormat.m; sourceTree = "<group>"; };
+		23F9E8691C47D27F004AF2B0 /* SQLiteFormatTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SQLiteFormatTests.swift; sourceTree = "<group>"; };
+		23F9E86B1C482392004AF2B0 /* AmigoBatchOperation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AmigoBatchOperation.swift; sourceTree = "<group>"; };
+		23F9E86D1C48246A004AF2B0 /* SQLiteBatchOperation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SQLiteBatchOperation.swift; sourceTree = "<group>"; };
+		23F9E86F1C4B03C5004AF2B0 /* AmigoSessionAsyncTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AmigoSessionAsyncTests.swift; sourceTree = "<group>"; };
+		23F9E8711C4B05FA004AF2B0 /* AmigoSessionAsyncAction.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AmigoSessionAsyncAction.swift; sourceTree = "<group>"; };
+		23F9E8731C4B0620004AF2B0 /* AmigoSessionModelAction.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AmigoSessionModelAction.swift; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		23B8F2691B41978C00153865 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				2389FAA01C46E14200D9922B /* libsqlite3.tbd in Frameworks */,
+				238395E71C39BA2E00D5241F /* FMDB.framework in Frameworks */,
+				23B8F28A1B4198E200153865 /* CoreData.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		23B8F2741B41978C00153865 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				23F9E8361C470D59004AF2B0 /* libsqlite3.tbd in Frameworks */,
+				23B8F28B1B41990C00153865 /* CoreData.framework in Frameworks */,
+				23B8F2781B41978C00153865 /* Amigo.framework in Frameworks */,
+				238395E81C39BEA800D5241F /* FMDB.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		231C84D71B553A4200AD6C06 /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				231C84DC1B553A5700AD6C06 /* NSManagedObjectModel+Sorted.swift */,
+			);
+			name = Extensions;
+			sourceTree = "<group>";
+		};
+		237BC10D1B6EC8B400F07892 /* Utils */ = {
+			isa = PBXGroup;
+			children = (
+				237BC1121B6EC8C500F07892 /* typeToTableName.swift */,
+			);
+			name = Utils;
+			sourceTree = "<group>";
+		};
+		2389FA9B1C46849F00D9922B /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				2389FA9C1C4684AB00D9922B /* SQLParams.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		2389FAA11C46E1A500D9922B /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				238395E61C39BA2E00D5241F /* FMDB.framework */,
+				233118A31B6107B600943976 /* libsqlite3.tbd */,
+				23B8F2891B4198E200153865 /* CoreData.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		23B43AF91B4B76AF00F90DFD /* Expressions */ = {
+			isa = PBXGroup;
+			children = (
+				23B43AFA1B4B770900F90DFD /* Expressions.swift */,
+				23B43B0A1B4C741600F90DFD /* Select.swift */,
+				23C754AE1B5C4DB700584D1E /* Insert.swift */,
+				233118AB1B61B0BB00943976 /* Update.swift */,
+				23C754B21B5E6BC400584D1E /* Delete.swift */,
+				23C754B81B5EE5BB00584D1E /* Filterable.swift */,
+				23CCC21C1B67B48E00BF64A6 /* OrderBy.swift */,
+			);
+			name = Expressions;
+			sourceTree = "<group>";
+		};
+		23B43B0E1B4EA0C200F90DFD /* Mappers */ = {
+			isa = PBXGroup;
+			children = (
+				23474D011B52F7F8004D05BE /* Mapper.swift */,
+				23C754B41B5E73B800584D1E /* AmigoEntityDescriptionMapper.swift */,
+				23B43B0F1B4EA0E500F90DFD /* EntityDescriptionMapper.swift */,
+				23C754B61B5E75B700584D1E /* DefaultMapper.swift */,
+			);
+			name = Mappers;
+			sourceTree = "<group>";
+		};
+		23B8F2631B41978C00153865 = {
+			isa = PBXGroup;
+			children = (
+				2389FAA11C46E1A500D9922B /* Frameworks */,
+				23B8F26F1B41978C00153865 /* Amigo */,
+				23B8F27B1B41978C00153865 /* AmigoTests */,
+				23B8F26E1B41978C00153865 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		23B8F26E1B41978C00153865 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				23B8F26D1B41978C00153865 /* Amigo.framework */,
+				23B8F2771B41978C00153865 /* AmigoTests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		23B8F26F1B41978C00153865 /* Amigo */ = {
+			isa = PBXGroup;
+			children = (
+				2389FA9B1C46849F00D9922B /* Models */,
+				237BC10D1B6EC8B400F07892 /* Utils */,
+				231C84D71B553A4200AD6C06 /* Extensions */,
+				23B43B0E1B4EA0C200F90DFD /* Mappers */,
+				23B43AF91B4B76AF00F90DFD /* Expressions */,
+				23F3CFB41B45DDF000D8AD4C /* Engines */,
+				23F3CFC01B46CEE700D8AD4C /* Meta */,
+				23B8F2701B41978C00153865 /* Amigo.h */,
+				23B8F2721B41978C00153865 /* Info.plist */,
+				23B8F2871B4197A700153865 /* Amigo.swift */,
+				23ED242D1B41BD1F00C2AF28 /* QuerySet.swift */,
+				23474CFB1B52F3D2004D05BE /* ORMModel.swift */,
+				23ED24291B41B34400C2AF28 /* AmigoSession.swift */,
+				23F9E8711C4B05FA004AF2B0 /* AmigoSessionAsyncAction.swift */,
+				23F9E8731C4B0620004AF2B0 /* AmigoSessionModelAction.swift */,
+				23ED242B1B41B35900C2AF28 /* AmigoConfiguration.swift */,
+				23F3CFB91B45FF2400D8AD4C /* AmigoModel.swift */,
+			);
+			path = Amigo;
+			sourceTree = "<group>";
+		};
+		23B8F27B1B41978C00153865 /* AmigoTests */ = {
+			isa = PBXGroup;
+			children = (
+				23ED24471B41CB0700C2AF28 /* Models */,
+				233118A91B619FC300943976 /* AmigoTestBase.swift */,
+				237BC1061B6C22A200F07892 /* ModelMappingTests.swift */,
+				233118AD1B626C8200943976 /* AmigoQuerySetTests.swift */,
+				23B8F27C1B41978C00153865 /* AmigoTests.swift */,
+				233118A71B619F6D00943976 /* AmigoSessionTests.swift */,
+				23F9E86F1C4B03C5004AF2B0 /* AmigoSessionAsyncTests.swift */,
+				23C525431B446FF800B98681 /* AmigoMeta.swift */,
+				23B43B111B4EA10F00F90DFD /* EntityDescriptionMapperTests.swift */,
+				231C84DE1B55424A00AD6C06 /* MOMExtensionTests.swift */,
+				23B43B0C1B4C77E400F90DFD /* SelectTests.swift */,
+				23B43B041B4C074400F90DFD /* SQLiteCompilerTests.swift */,
+				23B43AE01B47489600F90DFD /* SQLiteEngineTests.swift */,
+				23F9E8691C47D27F004AF2B0 /* SQLiteFormatTests.swift */,
+				23B43AE61B49DA3400F90DFD /* MetaTableTests.swift */,
+				23B43AF21B4B16B700F90DFD /* MetaColumnTests.swift */,
+				23B8F27E1B41978C00153865 /* Info.plist */,
+				23CCC2161B67A74200BF64A6 /* PerfTests.swift */,
+				238395EA1C39F77100D5241F /* SpecializedColumnTests.swift */,
+			);
+			path = AmigoTests;
+			sourceTree = "<group>";
+		};
+		23ED24471B41CB0700C2AF28 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				23ED24261B41A83100C2AF28 /* App.xcdatamodeld */,
+				23ED24481B41CB1100C2AF28 /* Models.swift */,
+			);
+			name = Models;
+			sourceTree = "<group>";
+		};
+		23F3CFB41B45DDF000D8AD4C /* Engines */ = {
+			isa = PBXGroup;
+			children = (
+				23F3CFBB1B4608BE00D8AD4C /* SQLite */,
+				23F3CFB71B45DE3300D8AD4C /* Engine.swift */,
+				2331189D1B600BC100943976 /* EngineFactory.swift */,
+				23B43B001B4C011400F90DFD /* TypeCompiler.swift */,
+				23B43B021B4C06AE00F90DFD /* Compiler.swift */,
+				2331189F1B600DF100943976 /* ThreadLocalEngineFactory.swift */,
+				23F9E86B1C482392004AF2B0 /* AmigoBatchOperation.swift */,
+			);
+			name = Engines;
+			sourceTree = "<group>";
+		};
+		23F3CFBB1B4608BE00D8AD4C /* SQLite */ = {
+			isa = PBXGroup;
+			children = (
+				23F9E8631C47CA09004AF2B0 /* sqlite3.h */,
+				23F9E8651C47CA3E004AF2B0 /* SQLiteFormat.h */,
+				23F9E8671C47CB51004AF2B0 /* SQLiteFormat.m */,
+				233118A11B60105300943976 /* SQLiteEngineFactory.swift */,
+				23F3CFB51B45DE0500D8AD4C /* SQLiteEngine.swift */,
+				233118AF1B62761C00943976 /* SQLiteEngine+QuerySet.swift */,
+				233118971B5FC11300943976 /* SQLiteEngine+Master.swift */,
+				23B43AF51B4B1A7500F90DFD /* SQLiteEngine+Schema.swift */,
+				23B43AFC1B4BFC1200F90DFD /* SQLiteCompiler.swift */,
+				23B43AFE1B4C00CF00F90DFD /* SQLiteTypeCompiler.swift */,
+				23C754A81B5C499F00584D1E /* SQLiteEngine+Transactions.swift */,
+				23F9E86D1C48246A004AF2B0 /* SQLiteBatchOperation.swift */,
+			);
+			name = SQLite;
+			sourceTree = "<group>";
+		};
+		23F3CFC01B46CEE700D8AD4C /* Meta */ = {
+			isa = PBXGroup;
+			children = (
+				23E554F31B645250001BD64B /* MetaItem.swift */,
+				23B43B081B4C16F800F90DFD /* SchemaItem.swift */,
+				23F3CFC11B46CEF200D8AD4C /* Table.swift */,
+				23F3CFC31B46CEFB00D8AD4C /* Column.swift */,
+				238395EC1C3A29E300D5241F /* Fields.swift */,
+				23A5D0741B62E7C000915F24 /* Relationship.swift */,
+				23B43B061B4C13D200F90DFD /* Index.swift */,
+				23F3CFC51B46CF4500D8AD4C /* MetaModel.swift */,
+				23F3CFC71B46E15E00D8AD4C /* ForeignKey.swift */,
+				23B43AEB1B49E61900F90DFD /* MetaData.swift */,
+			);
+			name = Meta;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXHeadersBuildPhase section */
+		23B8F26A1B41978C00153865 /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				23F9E8641C47CA09004AF2B0 /* sqlite3.h in Headers */,
+				23F9E8661C47CAB4004AF2B0 /* SQLiteFormat.h in Headers */,
+				23B8F2711B41978C00153865 /* Amigo.h in Headers */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXHeadersBuildPhase section */
+
+/* Begin PBXNativeTarget section */
+		23B8F26C1B41978C00153865 /* Amigo */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 23B8F2811B41978C00153865 /* Build configuration list for PBXNativeTarget "Amigo" */;
+			buildPhases = (
+				23B8F2681B41978C00153865 /* Sources */,
+				23B8F2691B41978C00153865 /* Frameworks */,
+				23B8F26A1B41978C00153865 /* Headers */,
+				23B8F26B1B41978C00153865 /* Resources */,
+				23C7890B1B471152002F4022 /* CopyFiles */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = Amigo;
+			productName = Amigo;
+			productReference = 23B8F26D1B41978C00153865 /* Amigo.framework */;
+			productType = "com.apple.product-type.framework";
+		};
+		23B8F2761B41978C00153865 /* AmigoTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 23B8F2841B41978C00153865 /* Build configuration list for PBXNativeTarget "AmigoTests" */;
+			buildPhases = (
+				23B8F2731B41978C00153865 /* Sources */,
+				23B8F2741B41978C00153865 /* Frameworks */,
+				23B8F2751B41978C00153865 /* Resources */,
+				238395E91C39BF6200D5241F /* Copy Carthage Frameworks */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				23B8F27A1B41978C00153865 /* PBXTargetDependency */,
+			);
+			name = AmigoTests;
+			productName = AmigoTests;
+			productReference = 23B8F2771B41978C00153865 /* AmigoTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		23B8F2641B41978C00153865 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastSwiftUpdateCheck = 0720;
+				LastUpgradeCheck = 0700;
+				ORGANIZATIONNAME = BLITZ;
+				TargetAttributes = {
+					23B8F26C1B41978C00153865 = {
+						CreatedOnToolsVersion = 7.0;
+					};
+					23B8F2761B41978C00153865 = {
+						CreatedOnToolsVersion = 7.0;
+					};
+				};
+			};
+			buildConfigurationList = 23B8F2671B41978C00153865 /* Build configuration list for PBXProject "Amigo" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+			);
+			mainGroup = 23B8F2631B41978C00153865;
+			productRefGroup = 23B8F26E1B41978C00153865 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				23B8F26C1B41978C00153865 /* Amigo */,
+				23B8F2761B41978C00153865 /* AmigoTests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		23B8F26B1B41978C00153865 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		23B8F2751B41978C00153865 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		238395E91C39BF6200D5241F /* Copy Carthage Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"$(SRCROOT)/Carthage/Build/iOS/FMDB.framework",
+			);
+			name = "Copy Carthage Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "/usr/local/bin/carthage copy-frameworks";
+		};
+/* End PBXShellScriptBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		23B8F2681B41978C00153865 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				23B43AF01B4B037100F90DFD /* Table.swift in Sources */,
+				23F9E86E1C48246A004AF2B0 /* SQLiteBatchOperation.swift in Sources */,
+				23B43AF71B4B1A8400F90DFD /* SQLiteEngine.swift in Sources */,
+				23B43AFB1B4B770900F90DFD /* Expressions.swift in Sources */,
+				23474D071B5303A1004D05BE /* QuerySet.swift in Sources */,
+				237BC1131B6EC8C500F07892 /* typeToTableName.swift in Sources */,
+				23E554F41B645250001BD64B /* MetaItem.swift in Sources */,
+				23F3CFBA1B45FF2400D8AD4C /* AmigoModel.swift in Sources */,
+				23A5D0751B62E7C000915F24 /* Relationship.swift in Sources */,
+				23C754B91B5EE5BB00584D1E /* Filterable.swift in Sources */,
+				23474D021B52F7F8004D05BE /* Mapper.swift in Sources */,
+				23C754B31B5E6BC400584D1E /* Delete.swift in Sources */,
+				233118B01B62761C00943976 /* SQLiteEngine+QuerySet.swift in Sources */,
+				2331189E1B600BC100943976 /* EngineFactory.swift in Sources */,
+				23F3CFC41B46CEFB00D8AD4C /* Column.swift in Sources */,
+				23C754B71B5E75B700584D1E /* DefaultMapper.swift in Sources */,
+				23F9E86C1C482392004AF2B0 /* AmigoBatchOperation.swift in Sources */,
+				23F3CFC81B46E15E00D8AD4C /* ForeignKey.swift in Sources */,
+				233118A01B600DF100943976 /* ThreadLocalEngineFactory.swift in Sources */,
+				23B43B031B4C06AE00F90DFD /* Compiler.swift in Sources */,
+				238395ED1C3A29E300D5241F /* Fields.swift in Sources */,
+				23B43AF41B4B187000F90DFD /* Engine.swift in Sources */,
+				23C754A91B5C499F00584D1E /* SQLiteEngine+Transactions.swift in Sources */,
+				23B43AFD1B4BFC1200F90DFD /* SQLiteCompiler.swift in Sources */,
+				23F9E8741C4B0620004AF2B0 /* AmigoSessionModelAction.swift in Sources */,
+				23C754AF1B5C4DB700584D1E /* Insert.swift in Sources */,
+				23B43AFF1B4C00CF00F90DFD /* SQLiteTypeCompiler.swift in Sources */,
+				23B43AF61B4B1A7500F90DFD /* SQLiteEngine+Schema.swift in Sources */,
+				23F3CFC61B46CF4500D8AD4C /* MetaModel.swift in Sources */,
+				233118981B5FC11300943976 /* SQLiteEngine+Master.swift in Sources */,
+				23474D051B52FCF8004D05BE /* Amigo.swift in Sources */,
+				23474D041B52FC5F004D05BE /* AmigoConfiguration.swift in Sources */,
+				23B43B101B4EA0E500F90DFD /* EntityDescriptionMapper.swift in Sources */,
+				23C754B51B5E73B900584D1E /* AmigoEntityDescriptionMapper.swift in Sources */,
+				23B43B0B1B4C741600F90DFD /* Select.swift in Sources */,
+				23B43B011B4C011400F90DFD /* TypeCompiler.swift in Sources */,
+				23B43B091B4C16F800F90DFD /* SchemaItem.swift in Sources */,
+				23474D061B52FE8A004D05BE /* AmigoSession.swift in Sources */,
+				233118AC1B61B0BB00943976 /* Update.swift in Sources */,
+				23F9E8721C4B05FA004AF2B0 /* AmigoSessionAsyncAction.swift in Sources */,
+				231C84DD1B553A5700AD6C06 /* NSManagedObjectModel+Sorted.swift in Sources */,
+				23F9E8681C47CB51004AF2B0 /* SQLiteFormat.m in Sources */,
+				23B43B071B4C13D200F90DFD /* Index.swift in Sources */,
+				233118A21B60105300943976 /* SQLiteEngineFactory.swift in Sources */,
+				23B43AF11B4B140800F90DFD /* MetaData.swift in Sources */,
+				23474CFC1B52F3D2004D05BE /* ORMModel.swift in Sources */,
+				23CCC21D1B67B48E00BF64A6 /* OrderBy.swift in Sources */,
+				2389FA9D1C4684AB00D9922B /* SQLParams.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		23B8F2731B41978C00153865 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				238395EB1C39F77100D5241F /* SpecializedColumnTests.swift in Sources */,
+				237BC1071B6C22A200F07892 /* ModelMappingTests.swift in Sources */,
+				23474D031B52FC3F004D05BE /* AmigoTests.swift in Sources */,
+				23B43B0D1B4C77E400F90DFD /* SelectTests.swift in Sources */,
+				238395EE1C3B0FB300D5241F /* SQLiteCompilerTests.swift in Sources */,
+				23B43AF31B4B16B700F90DFD /* MetaColumnTests.swift in Sources */,
+				231C84DF1B55424A00AD6C06 /* MOMExtensionTests.swift in Sources */,
+				23ED24491B41CB1100C2AF28 /* Models.swift in Sources */,
+				233118AE1B626C8200943976 /* AmigoQuerySetTests.swift in Sources */,
+				23F9E86A1C47D27F004AF2B0 /* SQLiteFormatTests.swift in Sources */,
+				23B43AF81B4B72D000F90DFD /* SQLiteEngineTests.swift in Sources */,
+				233118A81B619F6D00943976 /* AmigoSessionTests.swift in Sources */,
+				23B43AEF1B4AAA0000F90DFD /* MetaTableTests.swift in Sources */,
+				23CCC2171B67A74200BF64A6 /* PerfTests.swift in Sources */,
+				233118AA1B619FC300943976 /* AmigoTestBase.swift in Sources */,
+				23F9E8701C4B03C5004AF2B0 /* AmigoSessionAsyncTests.swift in Sources */,
+				23B43B121B4EA10F00F90DFD /* EntityDescriptionMapperTests.swift in Sources */,
+				23ED24281B41A83100C2AF28 /* App.xcdatamodeld in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		23B8F27A1B41978C00153865 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 23B8F26C1B41978C00153865 /* Amigo */;
+			targetProxy = 23B8F2791B41978C00153865 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin XCBuildConfiguration section */
+		23B8F27F1B41978C00153865 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				CURRENT_PROJECT_VERSION = 1;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				FRAMEWORK_SEARCH_PATHS = "$(SRCROOT)/Carthage/Build/iOS";
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Debug;
+		};
+		23B8F2801B41978C00153865 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				CURRENT_PROJECT_VERSION = 1;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				FRAMEWORK_SEARCH_PATHS = "$(SRCROOT)/Carthage/Build/iOS";
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Release;
+		};
+		23B8F2821B41978C00153865 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				APPLICATION_EXTENSION_API_ONLY = YES;
+				CLANG_ALLOW_NON_MODULAR_INCLUDES_IN_FRAMEWORK_MODULES = NO;
+				CLANG_ENABLE_MODULES = YES;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Carthage/Build/iOS",
+				);
+				INFOPLIST_FILE = Amigo/Info.plist;
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.blitzagency.Amigo;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+				SWIFT_OBJC_BRIDGING_HEADER = "";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		23B8F2831B41978C00153865 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				APPLICATION_EXTENSION_API_ONLY = YES;
+				CLANG_ALLOW_NON_MODULAR_INCLUDES_IN_FRAMEWORK_MODULES = NO;
+				CLANG_ENABLE_MODULES = YES;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Carthage/Build/iOS",
+				);
+				INFOPLIST_FILE = Amigo/Info.plist;
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.blitzagency.Amigo;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+				SWIFT_OBJC_BRIDGING_HEADER = "";
+			};
+			name = Release;
+		};
+		23B8F2851B41978C00153865 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CLANG_ENABLE_MODULES = YES;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Carthage/Build/iOS",
+				);
+				INFOPLIST_FILE = AmigoTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.blitzagency.AmigoTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		23B8F2861B41978C00153865 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CLANG_ENABLE_MODULES = YES;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Carthage/Build/iOS",
+				);
+				INFOPLIST_FILE = AmigoTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.blitzagency.AmigoTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		23B8F2671B41978C00153865 /* Build configuration list for PBXProject "Amigo" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				23B8F27F1B41978C00153865 /* Debug */,
+				23B8F2801B41978C00153865 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		23B8F2811B41978C00153865 /* Build configuration list for PBXNativeTarget "Amigo" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				23B8F2821B41978C00153865 /* Debug */,
+				23B8F2831B41978C00153865 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		23B8F2841B41978C00153865 /* Build configuration list for PBXNativeTarget "AmigoTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				23B8F2851B41978C00153865 /* Debug */,
+				23B8F2861B41978C00153865 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+
+/* Begin XCVersionGroup section */
+		23ED24261B41A83100C2AF28 /* App.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				23ED24271B41A83100C2AF28 /* App.xcdatamodel */,
+			);
+			currentVersion = 23ED24271B41A83100C2AF28 /* App.xcdatamodel */;
+			path = App.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+/* End XCVersionGroup section */
+	};
+	rootObject = 23B8F2641B41978C00153865 /* Project object */;
+}
