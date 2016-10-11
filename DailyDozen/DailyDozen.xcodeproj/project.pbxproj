@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		D702B6D61D9CE07A00CC9C47 /* Amigo.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D702B6D41D9CE07A00CC9C47 /* Amigo.framework */; };
 		D702B6D71D9CE07A00CC9C47 /* FMDB.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D702B6D51D9CE07A00CC9C47 /* FMDB.framework */; };
+		D702B6DA1D9CED9300CC9C47 /* Servings.swift in Sources */ = {isa = PBXBuildFile; fileRef = D702B6D91D9CED9300CC9C47 /* Servings.swift */; };
 		D74DCE2A1D7CB1B200CA6B2B /* CheckboxButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = D74DCE291D7CB1B200CA6B2B /* CheckboxButton.swift */; };
 		D7644DF21D78F37D0088F246 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D7644DF11D78F37D0088F246 /* AppDelegate.swift */; };
 		D7644DF41D78F37D0088F246 /* ServingsController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D7644DF31D78F37D0088F246 /* ServingsController.swift */; };
@@ -19,6 +20,8 @@
 		D7644E121D78F37D0088F246 /* DailyDozenUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D7644E111D78F37D0088F246 /* DailyDozenUITests.swift */; };
 		D773D2521D87044900B13909 /* ParentController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D773D2511D87044900B13909 /* ParentController.swift */; };
 		D773D2541D87635A00B13909 /* SlideOutMenuController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D773D2531D87635A00B13909 /* SlideOutMenuController.swift */; };
+		D77AC6FF1DAD492700D3CD46 /* Amigo.framework in CopyFiles */ = {isa = PBXBuildFile; fileRef = D702B6D41D9CE07A00CC9C47 /* Amigo.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		D77AC7001DAD492D00D3CD46 /* FMDB.framework in CopyFiles */ = {isa = PBXBuildFile; fileRef = D702B6D51D9CE07A00CC9C47 /* FMDB.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		D79A52981D7A06BE00BBF5F6 /* images in Resources */ = {isa = PBXBuildFile; fileRef = D79A52971D7A06BE00BBF5F6 /* images */; };
 /* End PBXBuildFile section */
 
@@ -39,9 +42,24 @@
 		};
 /* End PBXContainerItemProxy section */
 
+/* Begin PBXCopyFilesBuildPhase section */
+		D77AC6FE1DAD48EA00D3CD46 /* CopyFiles */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
+				D77AC7001DAD492D00D3CD46 /* FMDB.framework in CopyFiles */,
+				D77AC6FF1DAD492700D3CD46 /* Amigo.framework in CopyFiles */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
+
 /* Begin PBXFileReference section */
 		D702B6D41D9CE07A00CC9C47 /* Amigo.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Amigo.framework; path = Carthage/Build/iOS/Amigo.framework; sourceTree = "<group>"; };
 		D702B6D51D9CE07A00CC9C47 /* FMDB.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = FMDB.framework; path = Carthage/Build/iOS/FMDB.framework; sourceTree = "<group>"; };
+		D702B6D91D9CED9300CC9C47 /* Servings.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Servings.swift; sourceTree = "<group>"; };
 		D74DCE291D7CB1B200CA6B2B /* CheckboxButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CheckboxButton.swift; sourceTree = "<group>"; };
 		D7644DEE1D78F37D0088F246 /* DailyDozen.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = DailyDozen.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		D7644DF11D78F37D0088F246 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -123,6 +141,7 @@
 				D74DCE291D7CB1B200CA6B2B /* CheckboxButton.swift */,
 				D773D2511D87044900B13909 /* ParentController.swift */,
 				D773D2531D87635A00B13909 /* SlideOutMenuController.swift */,
+				D702B6D91D9CED9300CC9C47 /* Servings.swift */,
 			);
 			path = DailyDozen;
 			sourceTree = "<group>";
@@ -156,6 +175,7 @@
 				D7644DEB1D78F37D0088F246 /* Frameworks */,
 				D7644DEC1D78F37D0088F246 /* Resources */,
 				D702B6D81D9CE15200CC9C47 /* ShellScript */,
+				D77AC6FE1DAD48EA00D3CD46 /* CopyFiles */,
 			);
 			buildRules = (
 			);
@@ -298,6 +318,7 @@
 			files = (
 				D7644DF41D78F37D0088F246 /* ServingsController.swift in Sources */,
 				D773D2541D87635A00B13909 /* SlideOutMenuController.swift in Sources */,
+				D702B6DA1D9CED9300CC9C47 /* Servings.swift in Sources */,
 				D74DCE2A1D7CB1B200CA6B2B /* CheckboxButton.swift in Sources */,
 				D773D2521D87044900B13909 /* ParentController.swift in Sources */,
 				D7644DF21D78F37D0088F246 /* AppDelegate.swift in Sources */,
