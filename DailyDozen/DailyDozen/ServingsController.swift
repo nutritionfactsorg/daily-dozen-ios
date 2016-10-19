@@ -69,19 +69,10 @@ class ServingsController: UIViewController, UITableViewDataSource {
         servingTableView.dataSource = self
         
         /// load the selected date into an array (if found in db) for viewing
-        let session = amigo.session
-        let dateFormatter = NSDateFormatter()
-        dateFormatter.dateFormat = "mm/dd/yyyy"
-        var servings : Servings? = session.query(Servings).filter("day = '" + dateFormatter.stringFromDate(displayDate!) + "'").get(1)
+        let filter = "day = " + String((displayDate!).timeIntervalSince1970)
+        var servings : Servings? = amigo.session.query(Servings).filter(filter).get(1)
         if servings != nil {
             displayServings = servings!
-        }
-        else {
-            //TEST
-            servings = session.query(Servings).get(1)
-            if servings != nil {
-                displayServings = servings!
-            }
         }
         
         //redraw?

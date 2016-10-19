@@ -13,7 +13,11 @@ class Servings: AmigoModel {
     static let ServingImages = ["ic_beans", "ic_berries", "ic_other_fruits", "ic_cruciferous", "ic_greens", "ic_other_veg", "ic_flax", "ic_nuts", "ic_spices", "ic_whole_grains", "ic_beverages", "ic_exercise"]
     static let ServingSizes = [3, 1, 3, 1, 2, 2, 1, 1, 1, 3, 5, 1]
     
-    dynamic var day = Servings.getDatabaseDate(NSDate())
+    var date: NSDate {
+        set { day = Servings.getDatabaseDate(newValue)!.timeIntervalSince1970 }
+        get { return NSDate.init(timeIntervalSince1970: day) }
+    }
+    dynamic var day: Double = (Servings.getDatabaseDate(NSDate())?.timeIntervalSince1970)!
     dynamic var beans = 0
     dynamic var berries = 0
     dynamic var other_fruits = 0
@@ -68,10 +72,8 @@ class Servings: AmigoModel {
             return -1
         }
         
-        let session = amigo.session
-        session.begin()
-        session.add(self, upsert: true)
-        session.commit()
+        amigo.session.add(self, upsert: true)
+        amigo.session.commit()
         
         return getServingByIndex(index)
     }
@@ -84,11 +86,22 @@ class Servings: AmigoModel {
 let amigo: Amigo = {
     let documentsFolder: NSString = NSSearchPathForDirectoriesInDomains(.DocumentDirectory, .UserDomainMask, true)[0] as String
     let databasePath = documentsFolder.stringByAppendingPathComponent("DailyDozen.sqlite")
-    let servings = ORMModel(Servings.self, DateTimeField("day", primaryKey: true), IntegerField("beans"), IntegerField("berries"), IntegerField("other_fruits"), IntegerField("cruciferous_vegetables"),
-                            IntegerField("greens"), IntegerField("other_vegetables"), IntegerField("flaxseeds"), IntegerField("nuts"), IntegerField("spices"), IntegerField("whole_grains"),
-                            IntegerField("beverages"), IntegerField("exercise"))
+    let servings = ORMModel(Servings.self,
+                            Column("day", type: Double.self, primaryKey: true),
+                            Column("beans", type: Int.self),
+                            Column("berries", type: Int.self),
+                            Column("other_fruits", type: Int.self),
+                            Column("cruciferous_vegetables", type: Int.self),
+                            Column("greens", type: Int.self),
+                            Column("other_vegetables", type: Int.self),
+                            Column("flaxseeds", type: Int.self),
+                            Column("nuts", type: Int.self),
+                            Column("spices", type: Int.self),
+                            Column("whole_grains", type: Int.self),
+                            Column("beverages", type: Int.self),
+                            Column("exercise", type: Int.self))
     
-    let engine = SQLiteEngineFactory(databasePath, echo: false)
+    let engine = SQLiteEngineFactory(databasePath, echo: true)
     let amigo = Amigo([servings], factory: engine)
     amigo.createAll()
     
