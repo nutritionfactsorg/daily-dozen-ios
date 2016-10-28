@@ -35,11 +35,38 @@ class Servings: AmigoModel {
     override init() {
         super.init()
         
-        indexedServings = [beans, berries, other_fruits, cruciferous_vegetables, greens, other_vegetables, flaxseeds, nuts, spices, whole_grains, beverages, exercise]
+        // construct here
     }
     
     func getServingByIndex(index: Int) -> Int {
-        return indexedServings[index] as! Int
+        switch index {
+        case 0:
+            return beans
+        case 1:
+            return berries
+        case 2:
+            return other_fruits
+        case 3:
+            return cruciferous_vegetables
+        case 4:
+            return greens
+        case 5:
+            return other_vegetables
+        case 6:
+            return flaxseeds
+        case 7:
+            return nuts
+        case 8:
+            return spices
+        case 9:
+            return whole_grains
+        case 10:
+            return beverages
+        case 11:
+            return exercise
+        default:
+            return -1
+        }
     }
     
     func addServingByIndex(index: Int, serving: Int) -> Int {
@@ -83,8 +110,7 @@ class Servings: AmigoModel {
     }
     
     static func getServingsByDate(date: NSDate) -> Servings {
-        let filter = "day = " + String(date.timeIntervalSince1970)
-        let servings : Servings? = amigo.session.query(Servings).filter(filter).get(1)
+        let servings : Servings? = amigo.session.query(Servings).get(date.timeIntervalSince1970)
         if servings != nil {
             return servings!
         }
