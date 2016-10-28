@@ -76,7 +76,7 @@ public class ServingsController: UIViewController, UITableViewDataSource, UITabB
     
     public func tabBar(tabBar: UITabBar, didSelectItem item: UITabBarItem) {
         if item == todayTabBarItem {
-            displayServings = Servings.getServingsByDate(NSDate())
+            displayServings = Servings.getServingsByDate(Servings.getDatabaseDate(NSDate())!)
         } else if item == previousTabBarItem {
             displayServings = Servings.getServingsByDate(displayServings.date.dateByAddingTimeInterval(-OneDay))
         } else if item == nextTabBarItem {
