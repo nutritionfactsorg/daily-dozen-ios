@@ -287,10 +287,14 @@
                         </constraints>
                     </view>
                     <connections>
+                        <outlet property="currentDateTabBarItem" destination="bpg-O3-0ef" id="9wP-ys-Vu6"/>
                         <outlet property="dateTabBar" destination="C1A-Ki-kL9" id="Rm7-zc-w3w"/>
                         <outlet property="menuButtonBarItem" destination="6rC-Uf-bPz" id="Nh9-v1-4b3"/>
+                        <outlet property="nextTabBarItem" destination="rkZ-dC-qT9" id="sHJ-KM-hlF"/>
+                        <outlet property="previousTabBarItem" destination="eJU-eC-I4z" id="xTZ-Cy-Y3F"/>
                         <outlet property="servingTableView" destination="SJ4-4c-HqL" id="KoC-Mh-Zbf"/>
                         <outlet property="titleNavigationBar" destination="Jza-Ym-uJA" id="yik-Q8-zKa"/>
+                        <outlet property="todayTabBarItem" destination="VAM-JB-E5Q" id="vQw-N6-Zs2"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>

@@ -11,21 +11,24 @@ import Amigo
 
 var displayServings: Servings = Servings()
 
-class ServingsController: UIViewController, UITableViewDataSource {
+public class ServingsController: UIViewController, UITableViewDataSource, UITabBarDelegate {
+    let OneDay : NSTimeInterval = 86400
     
-    var displayDate = Servings.getDatabaseDate(NSDate())
-
+    @IBOutlet weak var currentDateTabBarItem: UITabBarItem!
+    @IBOutlet weak var todayTabBarItem: UITabBarItem!
+    @IBOutlet weak var nextTabBarItem: UITabBarItem!
+    @IBOutlet weak var previousTabBarItem: UITabBarItem!
     @IBOutlet weak var servingTableView: UITableView!
     @IBOutlet weak var dateTabBar: UITabBar!
     @IBOutlet weak var titleNavigationBar: UINavigationBar!
     @IBOutlet weak var menuButtonBarItem: UIBarButtonItem!
     
-    func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+    public func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
     
         return Servings.ServingNames.count
     }
     
-    func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
+    public func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
     
         let cell: UITableViewCell = servingTableView.dequeueReusableCellWithIdentifier("ServingCell") as UITableViewCell!
         let servingImage = cell.contentView.viewWithTag(1) as! UIImageView
@@ -54,7 +57,38 @@ class ServingsController: UIViewController, UITableViewDataSource {
         servingDateButton.setImage(UIImage(named: "images/ic_calendar"), forState: .Normal)
         servingDateButton.contentMode = .Center
         
+        updateTabBarItems()
+        
         return cell
+    }
+    
+    func updateTabBarItems() {
+        todayTabBarItem.enabled = !displayServings.isToday()
+        let dateFormatter = NSDateFormatter()
+        dateFormatter.dateStyle = NSDateFormatterStyle.MediumStyle
+        currentDateTabBarItem.title = dateFormatter.stringFromDate(displayServings.date)
+        previousTabBarItem.title = dateFormatter.stringFromDate(displayServings.date.dateByAddingTimeInterval(-OneDay))
+        nextTabBarItem.title = todayTabBarItem.enabled ? dateFormatter.stringFromDate(displayServings.date.dateByAddingTimeInterval(OneDay)) : ""
+        nextTabBarItem.enabled = todayTabBarItem.enabled
+        
+        dateTabBar.selectedItem = currentDateTabBarItem
+    }
+    
+    public func tabBar(tabBar: UITabBar, didSelectItem item: UITabBarItem) {
+        if item == todayTabBarItem {
+            displayServings = Servings.getServingsByDate(NSDate())
+        } else if item == previousTabBarItem {
+            displayServings = Servings.getServingsByDate(displayServings.date.dateByAddingTimeInterval(-OneDay))
+        } else if item == nextTabBarItem {
+            if !displayServings.isToday() {
+                displayServings = Servings.getServingsByDate(displayServings.date.dateByAddingTimeInterval(OneDay))
+            }
+        }
+        
+        updateTabBarItems()
+        dispatch_async(dispatch_get_main_queue(), { () -> Void in
+            self.servingTableView.reloadData()
+        })
     }
     
     @IBAction func toggleMenu(sender: AnyObject) {
@@ -62,23 +96,18 @@ class ServingsController: UIViewController, UITableViewDataSource {
         NSNotificationCenter.defaultCenter().postNotificationName("toggleMenu", object: nil)
     }
     
-    override func viewDidLoad() {
+    override public func viewDidLoad() {
     
         super.viewDidLoad()
         
         servingTableView.dataSource = self
+        dateTabBar.delegate = self
         
         /// load the selected date into an array (if found in db) for viewing
-        let filter = "day = " + String((displayDate!).timeIntervalSince1970)
-        var servings : Servings? = amigo.session.query(Servings).filter(filter).get(1)
-        if servings != nil {
-            displayServings = servings!
-        }
-        
-        //redraw?
+        displayServings = Servings.getServingsByDate(displayServings.date)
     }
 
-    override func didReceiveMemoryWarning() {
+    override public func didReceiveMemoryWarning() {
     
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.

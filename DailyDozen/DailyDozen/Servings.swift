@@ -78,6 +78,22 @@ class Servings: AmigoModel {
         return getServingByIndex(index)
     }
     
+    func isToday() -> Bool {
+        return NSCalendar.currentCalendar().compareDate(NSDate(), toDate: date, toUnitGranularity: .Day) == .OrderedSame
+    }
+    
+    static func getServingsByDate(date: NSDate) -> Servings {
+        let filter = "day = " + String(date.timeIntervalSince1970)
+        let servings : Servings? = amigo.session.query(Servings).filter(filter).get(1)
+        if servings != nil {
+            return servings!
+        }
+        
+        let newServings = Servings()
+        newServings.date = date
+        return newServings
+    }
+    
     static func getDatabaseDate(date: NSDate) -> NSDate? {
         return NSCalendar(calendarIdentifier: NSCalendarIdentifierGregorian)!.dateFromComponents(NSCalendar(calendarIdentifier: NSCalendarIdentifierGregorian)!.components([.Day , .Month, .Year ], fromDate: date))
     }
