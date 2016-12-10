@@ -17,12 +17,10 @@ class SlideOutMenuController: UITableViewController {
     @IBOutlet var menuTableView: UITableView!
     
     override func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        
         return menuItemNames.count
     }
     
     override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
-
         let cell: UITableViewCell = menuTableView.dequeueReusableCellWithIdentifier("MenuItemCell") as UITableViewCell!
         let menuItemImage = cell.contentView.viewWithTag(3) as! UIImageView
         let menuItemText = cell.contentView.viewWithTag(2) as! UILabel
@@ -31,18 +29,31 @@ class SlideOutMenuController: UITableViewController {
         menuItemImage.contentMode = .Center
         menuItemText.text = menuItemNames[indexPath.row]
         
+        let backgroundView = UIView()
+        backgroundView.backgroundColor = UIColor(netHex: 0x4CAF50)
+        cell.selectedBackgroundView = backgroundView
+        
         return cell
     }
     
+    override func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
+        if menuItemLinks[indexPath.row].characters.count > 0 {
+            let url = NSURL(string: "https://nutritionfacts.org/" + menuItemLinks[indexPath.row] + "/")
+            UIApplication.sharedApplication().openURL(url!)
+        }
+        else {
+            //TODO: handle about, backup, daily reminders
+        }
+    }
+    
     override func viewDidLoad() {
-        
         super.viewDidLoad()
         
+        menuTableView.delegate = self
         menuTableView.dataSource = self
     }
     
     override func didReceiveMemoryWarning() {
-        
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
