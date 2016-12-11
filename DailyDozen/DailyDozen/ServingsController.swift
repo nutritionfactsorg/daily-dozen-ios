@@ -14,10 +14,10 @@ var displayServings: Servings = Servings()
 public class ServingsController: UIViewController, UITableViewDataSource, UITabBarDelegate {
     let OneDay : NSTimeInterval = 86400
     
-    @IBOutlet weak var currentDateTabBarItem: UITabBarItem!
-    @IBOutlet weak var todayTabBarItem: UITabBarItem!
-    @IBOutlet weak var nextTabBarItem: UITabBarItem!
     @IBOutlet weak var previousTabBarItem: UITabBarItem!
+    @IBOutlet weak var currentDateTabBarItem: UITabBarItem!
+    @IBOutlet weak var nextTabBarItem: UITabBarItem!
+    @IBOutlet weak var todayTabBarItem: UITabBarItem!
     @IBOutlet weak var servingTableView: UITableView!
     @IBOutlet weak var dateTabBar: UITabBar!
     @IBOutlet weak var titleNavigationBar: UINavigationBar!
@@ -46,6 +46,7 @@ public class ServingsController: UIViewController, UITableViewDataSource, UITabB
         servingImage.image = UIImage(named: "images/" + Servings.ServingImages[indexPath.row])
         servingImage.contentMode = .Center
         servingText.text = Servings.ServingNames[indexPath.row]
+        servingInfoButton.addTarget(self, action: #selector(ServingsController.foodInfoPressed(_:)), forControlEvents: .TouchUpInside)
         
         for checkboxIndex in 0...4 {
             servingCheckboxes[checkboxIndex].hidden = !(checkboxIndex < Servings.ServingSizes[indexPath.row])
@@ -60,6 +61,13 @@ public class ServingsController: UIViewController, UITableViewDataSource, UITabB
         updateTabBarItems()
         
         return cell
+    }
+    
+    @IBAction func foodInfoPressed(sender: UIButton!) {
+        let storyboard = UIStoryboard(name: "FoodInformation", bundle: nil)
+        let controller = storyboard.instantiateViewControllerWithIdentifier("InitialController") as UIViewController
+        
+        self.presentViewController(controller, animated: true, completion: nil)
     }
     
     func updateTabBarItems() {

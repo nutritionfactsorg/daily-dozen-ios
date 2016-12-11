@@ -11,6 +11,7 @@
 		D702B6D71D9CE07A00CC9C47 /* FMDB.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D702B6D51D9CE07A00CC9C47 /* FMDB.framework */; };
 		D702B6DA1D9CED9300CC9C47 /* Servings.swift in Sources */ = {isa = PBXBuildFile; fileRef = D702B6D91D9CED9300CC9C47 /* Servings.swift */; };
 		D74C723D1DFC9DC200F3DED5 /* UIColor.swift in Sources */ = {isa = PBXBuildFile; fileRef = D74C723C1DFC9DC200F3DED5 /* UIColor.swift */; };
+		D74C723F1DFCB59900F3DED5 /* FoodInformation.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D74C723E1DFCB59900F3DED5 /* FoodInformation.storyboard */; };
 		D74DCE2A1D7CB1B200CA6B2B /* CheckboxButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = D74DCE291D7CB1B200CA6B2B /* CheckboxButton.swift */; };
 		D7644DF21D78F37D0088F246 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D7644DF11D78F37D0088F246 /* AppDelegate.swift */; };
 		D7644DF41D78F37D0088F246 /* ServingsController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D7644DF31D78F37D0088F246 /* ServingsController.swift */; };
@@ -62,6 +63,7 @@
 		D702B6D51D9CE07A00CC9C47 /* FMDB.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = FMDB.framework; path = Carthage/Build/iOS/FMDB.framework; sourceTree = "<group>"; };
 		D702B6D91D9CED9300CC9C47 /* Servings.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Servings.swift; sourceTree = "<group>"; };
 		D74C723C1DFC9DC200F3DED5 /* UIColor.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIColor.swift; sourceTree = "<group>"; };
+		D74C723E1DFCB59900F3DED5 /* FoodInformation.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = FoodInformation.storyboard; sourceTree = "<group>"; };
 		D74DCE291D7CB1B200CA6B2B /* CheckboxButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CheckboxButton.swift; sourceTree = "<group>"; };
 		D7644DEE1D78F37D0088F246 /* DailyDozen.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = DailyDozen.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		D7644DF11D78F37D0088F246 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -145,6 +147,7 @@
 				D773D2531D87635A00B13909 /* SlideOutMenuController.swift */,
 				D702B6D91D9CED9300CC9C47 /* Servings.swift */,
 				D74C723C1DFC9DC200F3DED5 /* UIColor.swift */,
+				D74C723E1DFCB59900F3DED5 /* FoodInformation.storyboard */,
 			);
 			path = DailyDozen;
 			sourceTree = "<group>";
@@ -273,6 +276,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D74C723F1DFCB59900F3DED5 /* FoodInformation.storyboard in Resources */,
 				D79A52981D7A06BE00BBF5F6 /* images in Resources */,
 				D7644DFC1D78F37D0088F246 /* LaunchScreen.storyboard in Resources */,
 				D7644DF91D78F37D0088F246 /* Assets.xcassets in Resources */,
