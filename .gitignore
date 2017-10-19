@@ -63,6 +63,10 @@ Pods/
 fastlane/report.xml
 fastlane/Preview.html
 fastlane/screenshots
+<<<<<<< HEAD
 fastlane/test_output
 README.md
 DailyDozen/DailyDozen/App/Resources/Assets.xcassets/Contents.json
+=======
+fastlane/test_output
+>>>>>>> swift4

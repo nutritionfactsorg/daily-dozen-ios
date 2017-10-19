@@ -1,0 +1,82 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13196" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="PqV-hB-nOv">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13173"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Daily Dozen-->
+        <scene sceneID="X4S-Fq-7q8">
+            <objects>
+                <viewController title="Daily Dozen" id="PqV-hB-nOv" customClass="PagerViewController" customModule="DailyDozen" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="hKs-EM-5rn">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Isd-mn-KX9">
+                                <rect key="frame" x="0.0" y="70" width="375" height="597"/>
+                            </scrollView>
+                            <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="Reg-IY-9eZ" customClass="ButtonBarView" customModule="XLPagerTabStrip">
+                                <rect key="frame" x="0.0" y="20" width="375" height="50"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="50" id="POa-mA-zMX"/>
+                                </constraints>
+                                <collectionViewFlowLayout key="collectionViewLayout" scrollDirection="horizontal" minimumLineSpacing="10" minimumInteritemSpacing="10" id="sOQ-ci-x1w">
+                                    <size key="itemSize" width="50" height="30"/>
+                                    <size key="headerReferenceSize" width="0.0" height="0.0"/>
+                                    <size key="footerReferenceSize" width="0.0" height="0.0"/>
+                                    <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
+                                </collectionViewFlowLayout>
+                                <cells>
+                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" id="7yb-Rq-fVU">
+                                        <rect key="frame" x="0.0" y="10" width="50" height="30"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO">
+                                            <rect key="frame" x="0.0" y="0.0" width="50" height="30"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="wuS-Ta-J1Q">
+                                                    <rect key="frame" x="0.0" y="0.0" width="50" height="30"/>
+                                                    <state key="normal" title="Button"/>
+                                                </button>
+                                            </subviews>
+                                        </view>
+                                        <constraints>
+                                            <constraint firstItem="wuS-Ta-J1Q" firstAttribute="top" secondItem="7yb-Rq-fVU" secondAttribute="top" id="1oi-rk-BIv"/>
+                                            <constraint firstAttribute="trailing" secondItem="wuS-Ta-J1Q" secondAttribute="trailing" id="O2G-gu-pIC"/>
+                                            <constraint firstItem="wuS-Ta-J1Q" firstAttribute="leading" secondItem="7yb-Rq-fVU" secondAttribute="leading" id="nHD-YP-M7O"/>
+                                            <constraint firstAttribute="bottom" secondItem="wuS-Ta-J1Q" secondAttribute="bottom" id="s48-53-use"/>
+                                        </constraints>
+                                    </collectionViewCell>
+                                </cells>
+                            </collectionView>
+                        </subviews>
+                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="Pkm-92-pFp" firstAttribute="trailing" secondItem="Isd-mn-KX9" secondAttribute="trailing" id="A2p-QE-CVB"/>
+                            <constraint firstItem="Pkm-92-pFp" firstAttribute="bottom" secondItem="Isd-mn-KX9" secondAttribute="bottom" id="Dqr-8M-338"/>
+                            <constraint firstItem="Pkm-92-pFp" firstAttribute="trailing" secondItem="Reg-IY-9eZ" secondAttribute="trailing" id="J9a-px-3k6"/>
+                            <constraint firstItem="Reg-IY-9eZ" firstAttribute="leading" secondItem="Pkm-92-pFp" secondAttribute="leading" id="PtC-34-sCh"/>
+                            <constraint firstItem="Isd-mn-KX9" firstAttribute="top" secondItem="Reg-IY-9eZ" secondAttribute="bottom" id="YOz-1o-HPb"/>
+                            <constraint firstItem="Reg-IY-9eZ" firstAttribute="top" secondItem="Pkm-92-pFp" secondAttribute="top" id="eIj-7u-xG3"/>
+                            <constraint firstItem="Isd-mn-KX9" firstAttribute="leading" secondItem="Pkm-92-pFp" secondAttribute="leading" id="eef-SB-JMP"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="Pkm-92-pFp"/>
+                    </view>
+                    <connections>
+                        <outlet property="buttonBarView" destination="Reg-IY-9eZ" id="Njv-9A-vZK"/>
+                        <outlet property="containerView" destination="Isd-mn-KX9" id="Cjc-OH-n0B"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="662-Uj-3Mp" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-218.40000000000001" y="464.6176911544228"/>
+        </scene>
+    </scenes>
+</document>

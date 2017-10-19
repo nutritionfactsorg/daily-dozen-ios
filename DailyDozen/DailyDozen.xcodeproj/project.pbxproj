@@ -1,0 +1,536 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 48;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		BED5BB460CE3AEE8CF585899 /* Pods_DailyDozen.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F514690D725E67AD54735EB9 /* Pods_DailyDozen.framework */; };
+		CFC4A84D1F975A3900B5AC75 /* MenuViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CFC4A84C1F975A3900B5AC75 /* MenuViewController.swift */; };
+		CFC4A84F1F9761FF00B5AC75 /* PagerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CFC4A84E1F9761FF00B5AC75 /* PagerViewController.swift */; };
+		CFC4A8521F97630100B5AC75 /* PagerBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = CFC4A8511F97630100B5AC75 /* PagerBuilder.swift */; };
+		CFC4A8541F9776A500B5AC75 /* ServingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CFC4A8531F9776A500B5AC75 /* ServingsViewController.swift */; };
+		CFCE5FCB1F978007005C672B /* Servings.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CFCE5FCA1F978007005C672B /* Servings.storyboard */; };
+		CFE6983C1F974B9700CD7905 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CFE6983B1F974B9700CD7905 /* AppDelegate.swift */; };
+		CFE6983E1F974B9700CD7905 /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CFE6983D1F974B9700CD7905 /* MainViewController.swift */; };
+		CFE698411F974B9700CD7905 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CFE6983F1F974B9700CD7905 /* Main.storyboard */; };
+		CFE698431F974B9700CD7905 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = CFE698421F974B9700CD7905 /* Assets.xcassets */; };
+		CFE698461F974B9700CD7905 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CFE698441F974B9700CD7905 /* LaunchScreen.storyboard */; };
+		CFF117731F97530300BFE73A /* Menu.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CFF117721F97530300BFE73A /* Menu.storyboard */; };
+		CFF117771F97543000BFE73A /* Pager.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CFF117761F97543000BFE73A /* Pager.storyboard */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		7D4AA01331AD98C99ADB2BC0 /* Pods-DailyDozen.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-DailyDozen.release.xcconfig"; path = "Pods/Target Support Files/Pods-DailyDozen/Pods-DailyDozen.release.xcconfig"; sourceTree = "<group>"; };
+		CFC4A84C1F975A3900B5AC75 /* MenuViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuViewController.swift; sourceTree = "<group>"; };
+		CFC4A84E1F9761FF00B5AC75 /* PagerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PagerViewController.swift; sourceTree = "<group>"; };
+		CFC4A8511F97630100B5AC75 /* PagerBuilder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PagerBuilder.swift; sourceTree = "<group>"; };
+		CFC4A8531F9776A500B5AC75 /* ServingsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ServingsViewController.swift; sourceTree = "<group>"; };
+		CFCE5FCA1F978007005C672B /* Servings.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Servings.storyboard; sourceTree = "<group>"; };
+		CFE698381F974B9700CD7905 /* DailyDozen.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = DailyDozen.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		CFE6983B1F974B9700CD7905 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		CFE6983D1F974B9700CD7905 /* MainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
+		CFE698401F974B9700CD7905 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		CFE698421F974B9700CD7905 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		CFE698451F974B9700CD7905 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		CFE698471F974B9700CD7905 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		CFF117721F97530300BFE73A /* Menu.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Menu.storyboard; sourceTree = "<group>"; };
+		CFF117761F97543000BFE73A /* Pager.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Pager.storyboard; sourceTree = "<group>"; };
+		DA1790B64ED37B6DB70223BE /* Pods-DailyDozen.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-DailyDozen.debug.xcconfig"; path = "Pods/Target Support Files/Pods-DailyDozen/Pods-DailyDozen.debug.xcconfig"; sourceTree = "<group>"; };
+		F514690D725E67AD54735EB9 /* Pods_DailyDozen.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_DailyDozen.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		CFE698351F974B9700CD7905 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				BED5BB460CE3AEE8CF585899 /* Pods_DailyDozen.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		68646D18FC1A63146B00CB7C /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				F514690D725E67AD54735EB9 /* Pods_DailyDozen.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		CFC4A84B1F975A0C00B5AC75 /* Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				CFC4A84C1F975A3900B5AC75 /* MenuViewController.swift */,
+			);
+			path = Controllers;
+			sourceTree = "<group>";
+		};
+		CFC4A8501F97620400B5AC75 /* Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				CFC4A8511F97630100B5AC75 /* PagerBuilder.swift */,
+				CFC4A84E1F9761FF00B5AC75 /* PagerViewController.swift */,
+				CFC4A8531F9776A500B5AC75 /* ServingsViewController.swift */,
+			);
+			path = Controllers;
+			sourceTree = "<group>";
+		};
+		CFE6982F1F974B9700CD7905 = {
+			isa = PBXGroup;
+			children = (
+				CFE6983A1F974B9700CD7905 /* DailyDozen */,
+				CFE698391F974B9700CD7905 /* Products */,
+				D0E09D1F35AF7D3FF1EA14DC /* Pods */,
+				68646D18FC1A63146B00CB7C /* Frameworks */,
+			);
+			sourceTree = "<group>";
+		};
+		CFE698391F974B9700CD7905 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				CFE698381F974B9700CD7905 /* DailyDozen.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		CFE6983A1F974B9700CD7905 /* DailyDozen */ = {
+			isa = PBXGroup;
+			children = (
+				CFE6984F1F974EFF00CD7905 /* App */,
+				CFF117711F9752CA00BFE73A /* Menu */,
+				CFF117751F9753B700BFE73A /* Servings */,
+			);
+			path = DailyDozen;
+			sourceTree = "<group>";
+		};
+		CFE6984F1F974EFF00CD7905 /* App */ = {
+			isa = PBXGroup;
+			children = (
+				CFE698501F974F0F00CD7905 /* Controllers */,
+				CFE698531F974F6300CD7905 /* Storyboards */,
+				CFE698511F974F1800CD7905 /* SupportingFiles */,
+				CFE698521F974F4E00CD7905 /* Resources */,
+			);
+			path = App;
+			sourceTree = "<group>";
+		};
+		CFE698501F974F0F00CD7905 /* Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				CFE6983D1F974B9700CD7905 /* MainViewController.swift */,
+			);
+			path = Controllers;
+			sourceTree = "<group>";
+		};
+		CFE698511F974F1800CD7905 /* SupportingFiles */ = {
+			isa = PBXGroup;
+			children = (
+				CFE6983B1F974B9700CD7905 /* AppDelegate.swift */,
+				CFE698471F974B9700CD7905 /* Info.plist */,
+			);
+			path = SupportingFiles;
+			sourceTree = "<group>";
+		};
+		CFE698521F974F4E00CD7905 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				CFE698421F974B9700CD7905 /* Assets.xcassets */,
+			);
+			path = Resources;
+			sourceTree = "<group>";
+		};
+		CFE698531F974F6300CD7905 /* Storyboards */ = {
+			isa = PBXGroup;
+			children = (
+				CFE6983F1F974B9700CD7905 /* Main.storyboard */,
+				CFE698441F974B9700CD7905 /* LaunchScreen.storyboard */,
+			);
+			path = Storyboards;
+			sourceTree = "<group>";
+		};
+		CFF117711F9752CA00BFE73A /* Menu */ = {
+			isa = PBXGroup;
+			children = (
+				CFC4A84B1F975A0C00B5AC75 /* Controllers */,
+				CFF117741F97533F00BFE73A /* Storyboards */,
+			);
+			path = Menu;
+			sourceTree = "<group>";
+		};
+		CFF117741F97533F00BFE73A /* Storyboards */ = {
+			isa = PBXGroup;
+			children = (
+				CFF117721F97530300BFE73A /* Menu.storyboard */,
+			);
+			path = Storyboards;
+			sourceTree = "<group>";
+		};
+		CFF117751F9753B700BFE73A /* Servings */ = {
+			isa = PBXGroup;
+			children = (
+				CFC4A8501F97620400B5AC75 /* Controllers */,
+				CFF117781F97543900BFE73A /* Storyboards */,
+			);
+			path = Servings;
+			sourceTree = "<group>";
+		};
+		CFF117781F97543900BFE73A /* Storyboards */ = {
+			isa = PBXGroup;
+			children = (
+				CFF117761F97543000BFE73A /* Pager.storyboard */,
+				CFCE5FCA1F978007005C672B /* Servings.storyboard */,
+			);
+			path = Storyboards;
+			sourceTree = "<group>";
+		};
+		D0E09D1F35AF7D3FF1EA14DC /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				DA1790B64ED37B6DB70223BE /* Pods-DailyDozen.debug.xcconfig */,
+				7D4AA01331AD98C99ADB2BC0 /* Pods-DailyDozen.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		CFE698371F974B9700CD7905 /* DailyDozen */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = CFE6984A1F974B9700CD7905 /* Build configuration list for PBXNativeTarget "DailyDozen" */;
+			buildPhases = (
+				203F4C6C21B11760680A8B7B /* [CP] Check Pods Manifest.lock */,
+				CFE698341F974B9700CD7905 /* Sources */,
+				CFE698351F974B9700CD7905 /* Frameworks */,
+				CFE698361F974B9700CD7905 /* Resources */,
+				CFE6984E1F974CE400CD7905 /* ShellScript */,
+				B928040A54DABDDC50DB0D10 /* [CP] Embed Pods Frameworks */,
+				70F25E4D8F3A74B6E49D3041 /* [CP] Copy Pods Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = DailyDozen;
+			productName = DailyDozen;
+			productReference = CFE698381F974B9700CD7905 /* DailyDozen.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		CFE698301F974B9700CD7905 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastSwiftUpdateCheck = 0900;
+				LastUpgradeCheck = 0900;
+				ORGANIZATIONNAME = Nutritionfacts.org;
+				TargetAttributes = {
+					CFE698371F974B9700CD7905 = {
+						CreatedOnToolsVersion = 9.0;
+						ProvisioningStyle = Automatic;
+					};
+				};
+			};
+			buildConfigurationList = CFE698331F974B9700CD7905 /* Build configuration list for PBXProject "DailyDozen" */;
+			compatibilityVersion = "Xcode 8.0";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = CFE6982F1F974B9700CD7905;
+			productRefGroup = CFE698391F974B9700CD7905 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				CFE698371F974B9700CD7905 /* DailyDozen */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		CFE698361F974B9700CD7905 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				CFE698461F974B9700CD7905 /* LaunchScreen.storyboard in Resources */,
+				CFCE5FCB1F978007005C672B /* Servings.storyboard in Resources */,
+				CFE698431F974B9700CD7905 /* Assets.xcassets in Resources */,
+				CFE698411F974B9700CD7905 /* Main.storyboard in Resources */,
+				CFF117771F97543000BFE73A /* Pager.storyboard in Resources */,
+				CFF117731F97530300BFE73A /* Menu.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		203F4C6C21B11760680A8B7B /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+		70F25E4D8F3A74B6E49D3041 /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-DailyDozen/Pods-DailyDozen-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		B928040A54DABDDC50DB0D10 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-DailyDozen/Pods-DailyDozen-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		CFE6984E1F974CE400CD7905 /* ShellScript */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "if which swiftlint >/dev/null; then\nswiftlint\nelse\necho \"warning: SwiftLint not installed, download from https://github.com/realm/SwiftLint\"\nfi";
+		};
+/* End PBXShellScriptBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		CFE698341F974B9700CD7905 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				CFC4A8521F97630100B5AC75 /* PagerBuilder.swift in Sources */,
+				CFC4A8541F9776A500B5AC75 /* ServingsViewController.swift in Sources */,
+				CFE6983E1F974B9700CD7905 /* MainViewController.swift in Sources */,
+				CFC4A84D1F975A3900B5AC75 /* MenuViewController.swift in Sources */,
+				CFE6983C1F974B9700CD7905 /* AppDelegate.swift in Sources */,
+				CFC4A84F1F9761FF00B5AC75 /* PagerViewController.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXVariantGroup section */
+		CFE6983F1F974B9700CD7905 /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				CFE698401F974B9700CD7905 /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		CFE698441F974B9700CD7905 /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				CFE698451F974B9700CD7905 /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		CFE698481F974B9700CD7905 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		CFE698491F974B9700CD7905 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = iphoneos;
+				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		CFE6984B1F974B9700CD7905 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = DA1790B64ED37B6DB70223BE /* Pods-DailyDozen.debug.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = MMQCGLY2E8;
+				INFOPLIST_FILE = "$(SRCROOT)/DailyDozen/App/SupportingFiles/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = org.nutritionfacts.DailyDozen;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 4.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		CFE6984C1F974B9700CD7905 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 7D4AA01331AD98C99ADB2BC0 /* Pods-DailyDozen.release.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = MMQCGLY2E8;
+				INFOPLIST_FILE = "$(SRCROOT)/DailyDozen/App/SupportingFiles/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = org.nutritionfacts.DailyDozen;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 4.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		CFE698331F974B9700CD7905 /* Build configuration list for PBXProject "DailyDozen" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				CFE698481F974B9700CD7905 /* Debug */,
+				CFE698491F974B9700CD7905 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		CFE6984A1F974B9700CD7905 /* Build configuration list for PBXNativeTarget "DailyDozen" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				CFE6984B1F974B9700CD7905 /* Debug */,
+				CFE6984C1F974B9700CD7905 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = CFE698301F974B9700CD7905 /* Project object */;
+}
