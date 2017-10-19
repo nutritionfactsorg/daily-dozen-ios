@@ -16,7 +16,8 @@ class ServingsViewController: UIViewController, IndicatorInfoProvider {
         print("Servings")
     }
 
+    // MARK: - IndicatorInfoProvider
     func indicatorInfo(for pagerTabStripController: PagerTabStripViewController) -> IndicatorInfo {
-        return IndicatorInfo(title: "1")
+        return IndicatorInfo(title: title)
     }
 }

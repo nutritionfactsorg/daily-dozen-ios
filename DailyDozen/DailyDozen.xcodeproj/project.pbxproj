@@ -13,6 +13,7 @@
 		CFC4A8521F97630100B5AC75 /* PagerBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = CFC4A8511F97630100B5AC75 /* PagerBuilder.swift */; };
 		CFC4A8541F9776A500B5AC75 /* ServingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CFC4A8531F9776A500B5AC75 /* ServingsViewController.swift */; };
 		CFCE5FCB1F978007005C672B /* Servings.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CFCE5FCA1F978007005C672B /* Servings.storyboard */; };
+		CFE667251F98B7F30037D1A2 /* ServingsBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = CFE667241F98B7F30037D1A2 /* ServingsBuilder.swift */; };
 		CFE6983C1F974B9700CD7905 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CFE6983B1F974B9700CD7905 /* AppDelegate.swift */; };
 		CFE6983E1F974B9700CD7905 /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CFE6983D1F974B9700CD7905 /* MainViewController.swift */; };
 		CFE698411F974B9700CD7905 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CFE6983F1F974B9700CD7905 /* Main.storyboard */; };
@@ -29,6 +30,7 @@
 		CFC4A8511F97630100B5AC75 /* PagerBuilder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PagerBuilder.swift; sourceTree = "<group>"; };
 		CFC4A8531F9776A500B5AC75 /* ServingsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ServingsViewController.swift; sourceTree = "<group>"; };
 		CFCE5FCA1F978007005C672B /* Servings.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Servings.storyboard; sourceTree = "<group>"; };
+		CFE667241F98B7F30037D1A2 /* ServingsBuilder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ServingsBuilder.swift; sourceTree = "<group>"; };
 		CFE698381F974B9700CD7905 /* DailyDozen.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = DailyDozen.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		CFE6983B1F974B9700CD7905 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		CFE6983D1F974B9700CD7905 /* MainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
@@ -75,6 +77,7 @@
 			children = (
 				CFC4A8511F97630100B5AC75 /* PagerBuilder.swift */,
 				CFC4A84E1F9761FF00B5AC75 /* PagerViewController.swift */,
+				CFE667241F98B7F30037D1A2 /* ServingsBuilder.swift */,
 				CFC4A8531F9776A500B5AC75 /* ServingsViewController.swift */,
 			);
 			path = Controllers;
@@ -340,6 +343,7 @@
 				CFC4A8521F97630100B5AC75 /* PagerBuilder.swift in Sources */,
 				CFC4A8541F9776A500B5AC75 /* ServingsViewController.swift in Sources */,
 				CFE6983E1F974B9700CD7905 /* MainViewController.swift in Sources */,
+				CFE667251F98B7F30037D1A2 /* ServingsBuilder.swift in Sources */,
 				CFC4A84D1F975A3900B5AC75 /* MenuViewController.swift in Sources */,
 				CFE6983C1F974B9700CD7905 /* AppDelegate.swift in Sources */,
 				CFC4A84F1F9761FF00B5AC75 /* PagerViewController.swift in Sources */,
