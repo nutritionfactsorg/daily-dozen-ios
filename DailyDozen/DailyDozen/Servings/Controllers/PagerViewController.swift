@@ -7,47 +7,32 @@
 //
 
 import UIKit
-import XLPagerTabStrip
+import BmoViewPager
 
-class PagerViewController: ButtonBarPagerTabStripViewController {
+class PagerViewController: UIViewController, BmoViewPagerDataSource, BmoViewPagerDelegate {
 
-    let selectedColor = UIColor(red: 37/255.0, green: 111/255.0, blue: 206/255.0, alpha: 1.0)
-
+    @IBOutlet weak var pagerNavigation: BmoViewPagerNavigationBar!
+    @IBOutlet weak var viewPager: BmoViewPager!
+    
     override func viewDidLoad() {
-
-        // change selected bar color
-        settings.style.buttonBarBackgroundColor = .white
-        settings.style.buttonBarItemBackgroundColor = .white
-        settings.style.selectedBarBackgroundColor = selectedColor
-        settings.style.buttonBarItemFont = .boldSystemFont(ofSize: 14)
-        settings.style.selectedBarHeight = 2.0
-        settings.style.buttonBarMinimumLineSpacing = 0
-        settings.style.buttonBarItemTitleColor = .black
-        settings.style.buttonBarItemsShouldFillAvailableWidth = true
-        settings.style.buttonBarLeftContentInset = 0
-        settings.style.buttonBarRightContentInset = 0
-
-        changeCurrentIndexProgressive = { [weak self] (oldCell: ButtonBarViewCell?, newCell: ButtonBarViewCell?, progressPercentage: CGFloat, changeCurrentIndex: Bool, animated: Bool) -> Void in
-            guard changeCurrentIndex == true else { return }
-            oldCell?.label.textColor = .black
-            newCell?.label.textColor = self?.selectedColor
-        }
-
-        pagerBehaviour = .common(skipIntermediateViewControllers: true)
-
         super.viewDidLoad()
+        viewPager.dataSource = self
+        viewPager.delegate = self
+        viewPager.infinitScroll = true
+        viewPager.presentedPageIndex = 2
+        pagerNavigation.viewPager = viewPager
     }
 
-    // MARK: - PagerTabStripDataSource
-    override func viewControllers(
-        for pagerTabStripController: PagerTabStripViewController) -> [UIViewController] {
+    func bmoViewPagerDataSourceNumberOfPage(in viewPager: BmoViewPager) -> Int {
+        return 3
+    }
 
-        let controller1 = ServingsBuilder.instantiateController(with: "1")
-        let controller2 = ServingsBuilder.instantiateController(with: "2")
-        let controller3 = ServingsBuilder.instantiateController(with: "3")
+    func bmoViewPagerDataSource(_ viewPager: BmoViewPager, viewControllerForPageAt page: Int) -> UIViewController {
+        return ServingsBuilder.instantiateController(with: String(page))
+    }
 
-        let childViewControllers = [controller1, controller2, controller3]
-
-        return childViewControllers
+    func bmoViewPagerDataSourceNaviagtionBarItemTitle(_ viewPager: BmoViewPager, navigationBar: BmoViewPagerNavigationBar, forPageListAt page: Int) -> String? {
+        
+        return String(page)
     }
 }

@@ -7,17 +7,11 @@
 //
 
 import UIKit
-import XLPagerTabStrip
 
-class ServingsViewController: UIViewController, IndicatorInfoProvider {
+class ServingsViewController: UIViewController {
 
-    override func viewDidLoad() {
-        super.viewDidLoad()
-        print("Servings")
-    }
-
-    // MARK: - IndicatorInfoProvider
-    func indicatorInfo(for pagerTabStripController: PagerTabStripViewController) -> IndicatorInfo {
-        return IndicatorInfo(title: title)
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
+        print(title ?? "Servings")
     }
 }

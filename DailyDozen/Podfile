@@ -6,6 +6,6 @@ target 'DailyDozen' do
   use_frameworks!
 
   # Pods for DailyDozen
-  pod 'XLPagerTabStrip', '~> 8.0'
+  pod 'BmoViewPager', '~> 4.0'
 
 end
