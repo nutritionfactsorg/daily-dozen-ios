@@ -11,20 +11,22 @@ import BmoViewPager
 
 class PagerViewController: UIViewController, BmoViewPagerDataSource, BmoViewPagerDelegate {
 
+    // MARK: - Outlets
     @IBOutlet weak var pagerNavigation: BmoViewPagerNavigationBar!
     @IBOutlet weak var viewPager: BmoViewPager!
-    
+
+    // MARK: - UIViewController
     override func viewDidLoad() {
         super.viewDidLoad()
         viewPager.dataSource = self
         viewPager.delegate = self
         viewPager.infinitScroll = true
-        viewPager.presentedPageIndex = 2
         pagerNavigation.viewPager = viewPager
     }
 
+    // MARK: - BmoViewPagerDataSource
     func bmoViewPagerDataSourceNumberOfPage(in viewPager: BmoViewPager) -> Int {
-        return 3
+        return 1
     }
 
     func bmoViewPagerDataSource(_ viewPager: BmoViewPager, viewControllerForPageAt page: Int) -> UIViewController {
@@ -32,7 +34,7 @@ class PagerViewController: UIViewController, BmoViewPagerDataSource, BmoViewPage
     }
 
     func bmoViewPagerDataSourceNaviagtionBarItemTitle(_ viewPager: BmoViewPager, navigationBar: BmoViewPagerNavigationBar, forPageListAt page: Int) -> String? {
-        
+
         return String(page)
     }
 }

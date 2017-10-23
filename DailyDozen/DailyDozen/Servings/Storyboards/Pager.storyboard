@@ -24,7 +24,7 @@
                             </view>
                             <view contentMode="center" translatesAutoresizingMaskIntoConstraints="NO" id="BQF-ze-lmn" customClass="BmoViewPagerNavigationBar" customModule="BmoViewPager">
                                 <rect key="frame" x="0.0" y="20" width="375" height="40"/>
-                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <color key="backgroundColor" red="0.58431372550000005" green="0.88235294119999996" blue="0.74525697000000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="40" id="Wpa-SS-vTl"/>
                                 </constraints>
