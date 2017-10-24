@@ -25,14 +25,14 @@
                                         <rect key="frame" x="0.0" y="0.0" width="375" height="647"/>
                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                         <prototypes>
-                                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="Cell" rowHeight="100" id="mu0-2E-Dx4" customClass="ServingsCell" customModule="DailyDozen" customModuleProvider="target">
+                                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="none" indentationWidth="10" reuseIdentifier="Cell" rowHeight="100" id="mu0-2E-Dx4" customClass="ServingsCell" customModule="DailyDozen" customModuleProvider="target">
                                                 <rect key="frame" x="0.0" y="28" width="375" height="100"/>
                                                 <autoresizingMask key="autoresizingMask"/>
                                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="mu0-2E-Dx4" id="SqB-Ue-Rcd">
                                                     <rect key="frame" x="0.0" y="0.0" width="375" height="99.5"/>
                                                     <autoresizingMask key="autoresizingMask"/>
                                                     <subviews>
-                                                        <stackView opaque="NO" contentMode="scaleToFill" distribution="equalSpacing" alignment="center" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="cp3-dD-zAp">
+                                                        <stackView opaque="NO" contentMode="scaleToFill" alignment="center" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="cp3-dD-zAp">
                                                             <rect key="frame" x="8" y="0.0" width="359" height="99.5"/>
                                                             <subviews>
                                                                 <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="cereals" translatesAutoresizingMaskIntoConstraints="NO" id="IS4-2B-57z">
@@ -43,19 +43,19 @@
                                                                     </constraints>
                                                                 </imageView>
                                                                 <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" alignment="top" translatesAutoresizingMaskIntoConstraints="NO" id="Ru3-aS-vio">
-                                                                    <rect key="frame" x="72" y="0.0" width="87" height="99.5"/>
+                                                                    <rect key="frame" x="58" y="0.0" width="140" height="99.5"/>
                                                                     <subviews>
-                                                                        <stackView opaque="NO" contentMode="scaleToFill" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="qQc-5T-UVc">
-                                                                            <rect key="frame" x="0.0" y="0.0" width="87" height="50"/>
+                                                                        <stackView opaque="NO" contentMode="scaleToFill" distribution="equalSpacing" alignment="center" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="qQc-5T-UVc">
+                                                                            <rect key="frame" x="0.0" y="0.0" width="140" height="50"/>
                                                                             <subviews>
                                                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="qWl-8e-sO6">
-                                                                                    <rect key="frame" x="0.0" y="0.0" width="42" height="50"/>
+                                                                                    <rect key="frame" x="0.0" y="14.5" width="42" height="20.5"/>
                                                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                                                     <nil key="textColor"/>
                                                                                     <nil key="highlightedColor"/>
                                                                                 </label>
                                                                                 <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="music_info" translatesAutoresizingMaskIntoConstraints="NO" id="In2-L1-MMh">
-                                                                                    <rect key="frame" x="62" y="0.0" width="25" height="50"/>
+                                                                                    <rect key="frame" x="115" y="12.5" width="25" height="25"/>
                                                                                 </imageView>
                                                                             </subviews>
                                                                         </stackView>
@@ -64,15 +64,18 @@
                                                                             <state key="normal" image="calendar_icon"/>
                                                                         </button>
                                                                     </subviews>
+                                                                    <constraints>
+                                                                        <constraint firstItem="qQc-5T-UVc" firstAttribute="width" secondItem="Ru3-aS-vio" secondAttribute="width" id="s5O-7K-mkF"/>
+                                                                    </constraints>
                                                                 </stackView>
                                                                 <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="7" translatesAutoresizingMaskIntoConstraints="NO" id="8gb-UM-46E">
-                                                                    <rect key="frame" x="181" y="35" width="178" height="30"/>
+                                                                    <rect key="frame" x="206" y="37.5" width="153" height="25"/>
                                                                     <subviews>
                                                                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ger-fN-9bN" customClass="UICheckbox" customModule="UICheckbox_Swift">
-                                                                            <rect key="frame" x="0.0" y="0.0" width="30" height="30"/>
+                                                                            <rect key="frame" x="0.0" y="0.0" width="25" height="25"/>
                                                                             <constraints>
-                                                                                <constraint firstAttribute="width" constant="30" id="iQI-Em-laH"/>
-                                                                                <constraint firstAttribute="height" constant="30" id="sa8-Il-uIv"/>
+                                                                                <constraint firstAttribute="width" constant="25" id="iQI-Em-laH"/>
+                                                                                <constraint firstAttribute="height" constant="25" id="sa8-Il-uIv"/>
                                                                             </constraints>
                                                                             <state key="normal" title="Button"/>
                                                                             <userDefinedRuntimeAttributes>
@@ -88,10 +91,10 @@
                                                                             </userDefinedRuntimeAttributes>
                                                                         </button>
                                                                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="6iO-Zp-gTh" customClass="UICheckbox" customModule="UICheckbox_Swift">
-                                                                            <rect key="frame" x="37" y="0.0" width="30" height="30"/>
+                                                                            <rect key="frame" x="32" y="0.0" width="25" height="25"/>
                                                                             <constraints>
-                                                                                <constraint firstAttribute="height" constant="30" id="vz8-VB-0Fy"/>
-                                                                                <constraint firstAttribute="width" constant="30" id="yex-56-Xgf"/>
+                                                                                <constraint firstAttribute="height" constant="25" id="vz8-VB-0Fy"/>
+                                                                                <constraint firstAttribute="width" constant="25" id="yex-56-Xgf"/>
                                                                             </constraints>
                                                                             <state key="normal" title="Button"/>
                                                                             <userDefinedRuntimeAttributes>
@@ -107,10 +110,10 @@
                                                                             </userDefinedRuntimeAttributes>
                                                                         </button>
                                                                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="9ck-HF-Edl" customClass="UICheckbox" customModule="UICheckbox_Swift">
-                                                                            <rect key="frame" x="74" y="0.0" width="30" height="30"/>
+                                                                            <rect key="frame" x="64" y="0.0" width="25" height="25"/>
                                                                             <constraints>
-                                                                                <constraint firstAttribute="width" constant="30" id="C87-r0-WD0"/>
-                                                                                <constraint firstAttribute="height" constant="30" id="QYF-r7-vd1"/>
+                                                                                <constraint firstAttribute="width" constant="25" id="C87-r0-WD0"/>
+                                                                                <constraint firstAttribute="height" constant="25" id="QYF-r7-vd1"/>
                                                                             </constraints>
                                                                             <state key="normal" title="Button"/>
                                                                             <userDefinedRuntimeAttributes>
@@ -126,10 +129,10 @@
                                                                             </userDefinedRuntimeAttributes>
                                                                         </button>
                                                                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="pdv-xx-e9Q" customClass="UICheckbox" customModule="UICheckbox_Swift">
-                                                                            <rect key="frame" x="111" y="0.0" width="30" height="30"/>
+                                                                            <rect key="frame" x="96" y="0.0" width="25" height="25"/>
                                                                             <constraints>
-                                                                                <constraint firstAttribute="width" constant="30" id="Iu9-Qn-jbH"/>
-                                                                                <constraint firstAttribute="height" constant="30" id="QKy-Ai-UtQ"/>
+                                                                                <constraint firstAttribute="width" constant="25" id="Iu9-Qn-jbH"/>
+                                                                                <constraint firstAttribute="height" constant="25" id="QKy-Ai-UtQ"/>
                                                                             </constraints>
                                                                             <state key="normal" title="Button"/>
                                                                             <userDefinedRuntimeAttributes>
@@ -145,10 +148,10 @@
                                                                             </userDefinedRuntimeAttributes>
                                                                         </button>
                                                                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="nrB-tD-geP" customClass="UICheckbox" customModule="UICheckbox_Swift">
-                                                                            <rect key="frame" x="148" y="0.0" width="30" height="30"/>
+                                                                            <rect key="frame" x="128" y="0.0" width="25" height="25"/>
                                                                             <constraints>
-                                                                                <constraint firstAttribute="width" constant="30" id="kG4-5f-KWt"/>
-                                                                                <constraint firstAttribute="height" constant="30" id="sBE-c3-ldd"/>
+                                                                                <constraint firstAttribute="width" constant="25" id="kG4-5f-KWt"/>
+                                                                                <constraint firstAttribute="height" constant="25" id="sBE-c3-ldd"/>
                                                                             </constraints>
                                                                             <state key="normal" title="Button"/>
                                                                             <userDefinedRuntimeAttributes>
@@ -179,8 +182,8 @@
                                                     </constraints>
                                                 </tableViewCellContentView>
                                                 <connections>
-                                                    <outlet property="entityImage" destination="IS4-2B-57z" id="vlA-b4-uNb"/>
-                                                    <outlet property="entityLabel" destination="qWl-8e-sO6" id="oVh-98-LtU"/>
+                                                    <outlet property="itemImage" destination="IS4-2B-57z" id="vlA-b4-uNb"/>
+                                                    <outlet property="itemLabel" destination="qWl-8e-sO6" id="oVh-98-LtU"/>
                                                 </connections>
                                             </tableViewCell>
                                         </prototypes>

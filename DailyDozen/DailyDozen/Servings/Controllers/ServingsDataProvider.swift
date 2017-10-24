@@ -15,19 +15,22 @@ class ServingsDataProvider: NSObject, UITableViewDataSource {
         static let cellID = "Cell"
     }
 
+    var viewModel: DozeViewModel!
+
     // MARK: - UITableViewDataSource
     func numberOfSections(in tableView: UITableView) -> Int {
         return 1
     }
 
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 1
+        return viewModel.count
     }
 
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         guard let cell = tableView.dequeueReusableCell(withIdentifier: Keys.cellID) as? ServingsCell else {
             fatalError("There should be a cell")
         }
+        cell.configure(with: viewModel.itemName(for: indexPath.row))
         return cell
     }
 }

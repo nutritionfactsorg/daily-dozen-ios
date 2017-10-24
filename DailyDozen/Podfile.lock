@@ -1,15 +1,23 @@
 PODS:
   - BmoViewPager (4.0.0)
+  - Realm (3.0.0):
+    - Realm/Headers (= 3.0.0)
+  - Realm/Headers (3.0.0)
+  - RealmSwift (3.0.0):
+    - Realm (= 3.0.0)
   - UICheckbox.Swift (1.0.0)
 
 DEPENDENCIES:
   - BmoViewPager (~> 4.0)
+  - RealmSwift (~> 3.0)
   - UICheckbox.Swift (~> 1.0)
 
 SPEC CHECKSUMS:
   BmoViewPager: 6e05c7bd14c7459322d972e45348789649066f75
+  Realm: dec0de73be8c57506e39db72694d513c189493b3
+  RealmSwift: 44a7090b16d1b22a406c6bf129bdd602db1bbecc
   UICheckbox.Swift: 85715689206fac5bae38b308f19c2a3e00442c3b
 
-PODFILE CHECKSUM: 213d614e5990b98fa28fa8f929bfa9d18a2f2563
+PODFILE CHECKSUM: 8b32fa7910c606c700833fb4729042cf3aa1631a
 
 COCOAPODS: 1.2.0

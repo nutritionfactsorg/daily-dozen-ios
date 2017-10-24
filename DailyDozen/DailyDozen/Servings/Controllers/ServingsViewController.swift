@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import RealmSwift
 
 class ServingsViewController: UIViewController, UITableViewDelegate {
 
@@ -18,13 +19,16 @@ class ServingsViewController: UIViewController, UITableViewDelegate {
     override func viewDidLoad() {
         super.viewDidLoad()
 
+        guard let realm = try? Realm(configuration: RealmConfig.servings.configuration) else {
+            fatalError("There should be a realm")
+        }
+
+        let doze = realm.objects(Doze.self).first ?? RealmConfig.initialDoze
+
+        dataProvider.viewModel = DozeViewModel(doze: doze)
+
         tableView.dataSource = dataProvider
         tableView.delegate = self
-    }
-
-    override func viewDidAppear(_ animated: Bool) {
-        super.viewDidAppear(animated)
-        print(title ?? "Servings")
     }
 
     // MARK: - UITableViewDelegate
