@@ -40,7 +40,7 @@ enum RealmConfig {
         if let realm = try? Realm(configuration: RealmConfig.servings.configuration) {
             do {
                 try realm.write {
-                    realm.add(doze)
+                    realm.add(doze, update: true)
                 }
             } catch {
                 print(error.localizedDescription)

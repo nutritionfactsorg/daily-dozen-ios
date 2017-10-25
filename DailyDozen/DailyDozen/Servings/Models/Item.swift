@@ -12,11 +12,16 @@ import RealmSwift
 class Item: Object {
 
     @objc dynamic var name = ""
+    @objc dynamic var id = UUID().uuidString
     let states = List<Bool>()
 
     convenience init(name: String, states: [Bool]) {
         self.init()
         self.name = name
         self.states.append(objectsIn: states)
+    }
+
+    override static func primaryKey() -> String? {
+        return "id"
     }
 }

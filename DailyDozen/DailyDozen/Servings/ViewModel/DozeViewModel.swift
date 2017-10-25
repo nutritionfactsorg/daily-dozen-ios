@@ -52,4 +52,12 @@ class DozeViewModel {
     func itemStates(for index: Int) -> [Bool] {
         return Array(doze.items[index].states)
     }
+
+    /// Returns item ID in the doze for the current index.
+    ///
+    /// - Parameter index: The current index.
+    /// - Returns: The item id.
+    func itemID(for index: Int) -> String {
+        return doze.items[index].id
+    }
 }

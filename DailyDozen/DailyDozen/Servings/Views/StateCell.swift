@@ -9,7 +9,7 @@
 import UIKit
 import UICheckbox_Swift
 
-class DoseCell: UICollectionViewCell {
+class StateCell: UICollectionViewCell {
 
     // MARK: - Outlets
     @IBOutlet private weak var checkbox: UICheckbox!
