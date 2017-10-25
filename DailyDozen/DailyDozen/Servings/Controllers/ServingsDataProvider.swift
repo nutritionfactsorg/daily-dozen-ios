@@ -30,7 +30,8 @@ class ServingsDataProvider: NSObject, UITableViewDataSource {
         guard let cell = tableView.dequeueReusableCell(withIdentifier: Keys.cellID) as? ServingsCell else {
             fatalError("There should be a cell")
         }
-        cell.configure(with: viewModel.itemName(for: indexPath.row))
+        let index = indexPath.row
+        cell.configure(with: viewModel.itemName(for: index), doses: viewModel.itemDoses(for: index))
         return cell
     }
 }
