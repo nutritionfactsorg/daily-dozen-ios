@@ -46,7 +46,7 @@
                                                                 <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
                                                             </collectionViewFlowLayout>
                                                             <cells>
-                                                                <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="doseCell" id="gRx-MN-aZ3">
+                                                                <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="doseCell" id="gRx-MN-aZ3" customClass="DoseCell" customModule="DailyDozen" customModuleProvider="target">
                                                                     <rect key="frame" x="0.0" y="7.5" width="25" height="25"/>
                                                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                                     <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO">
@@ -76,6 +76,9 @@
                                                                         <constraint firstAttribute="trailing" secondItem="utq-hZ-ag5" secondAttribute="trailing" id="apq-yN-uwQ"/>
                                                                         <constraint firstItem="utq-hZ-ag5" firstAttribute="top" secondItem="gRx-MN-aZ3" secondAttribute="top" id="un9-ss-96L"/>
                                                                     </constraints>
+                                                                    <connections>
+                                                                        <outlet property="checkbox" destination="utq-hZ-ag5" id="XeS-gx-t6M"/>
+                                                                    </connections>
                                                                 </collectionViewCell>
                                                             </cells>
                                                         </collectionView>

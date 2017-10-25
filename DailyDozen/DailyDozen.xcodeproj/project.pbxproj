@@ -10,6 +10,7 @@
 		BED5BB460CE3AEE8CF585899 /* Pods_DailyDozen.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F514690D725E67AD54735EB9 /* Pods_DailyDozen.framework */; };
 		CF4DECF71F9DF2A500DA094B /* ServingsCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF4DECF61F9DF2A500DA094B /* ServingsCell.swift */; };
 		CF4DECF91F9DF82900DA094B /* ServingsDataProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF4DECF81F9DF82900DA094B /* ServingsDataProvider.swift */; };
+		CF5B28B11FA0A2C500D57A48 /* DoseCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF5B28B01FA0A2C500D57A48 /* DoseCell.swift */; };
 		CF987C281F9E157300D4893E /* Item.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF987C271F9E157300D4893E /* Item.swift */; };
 		CFAAB3721F9F3BC600B24748 /* Doze.swift in Sources */ = {isa = PBXBuildFile; fileRef = CFAAB3711F9F3BC600B24748 /* Doze.swift */; };
 		CFAAB3741F9F3E1200B24748 /* RealmConfig.swift in Sources */ = {isa = PBXBuildFile; fileRef = CFAAB3731F9F3E1200B24748 /* RealmConfig.swift */; };
@@ -34,6 +35,7 @@
 		7D4AA01331AD98C99ADB2BC0 /* Pods-DailyDozen.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-DailyDozen.release.xcconfig"; path = "Pods/Target Support Files/Pods-DailyDozen/Pods-DailyDozen.release.xcconfig"; sourceTree = "<group>"; };
 		CF4DECF61F9DF2A500DA094B /* ServingsCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ServingsCell.swift; sourceTree = "<group>"; };
 		CF4DECF81F9DF82900DA094B /* ServingsDataProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ServingsDataProvider.swift; sourceTree = "<group>"; };
+		CF5B28B01FA0A2C500D57A48 /* DoseCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DoseCell.swift; sourceTree = "<group>"; };
 		CF987C271F9E157300D4893E /* Item.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Item.swift; sourceTree = "<group>"; };
 		CFAAB3711F9F3BC600B24748 /* Doze.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Doze.swift; sourceTree = "<group>"; };
 		CFAAB3731F9F3E1200B24748 /* RealmConfig.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RealmConfig.swift; sourceTree = "<group>"; };
@@ -82,6 +84,7 @@
 			isa = PBXGroup;
 			children = (
 				CF4DECF61F9DF2A500DA094B /* ServingsCell.swift */,
+				CF5B28B01FA0A2C500D57A48 /* DoseCell.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -412,6 +415,7 @@
 				CF987C281F9E157300D4893E /* Item.swift in Sources */,
 				CF4DECF71F9DF2A500DA094B /* ServingsCell.swift in Sources */,
 				CFAAB37A1F9F4A8000B24748 /* DozeViewModel.swift in Sources */,
+				CF5B28B11FA0A2C500D57A48 /* DoseCell.swift in Sources */,
 				CFC4A84F1F9761FF00B5AC75 /* PagerViewController.swift in Sources */,
 				CF4DECF91F9DF82900DA094B /* ServingsDataProvider.swift in Sources */,
 				CFAAB3741F9F3E1200B24748 /* RealmConfig.swift in Sources */,

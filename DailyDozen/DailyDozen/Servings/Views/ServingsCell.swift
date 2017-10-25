@@ -34,7 +34,6 @@ class ServingsCell: UITableViewCell {
     /// - Parameter name: The current name.
     /// - Parameter doses: The doses array.
     func configure(with name: String, doses: [Bool]) {
-        print(name, doses.count)
         itemLabel.text = name
         self.doses.removeAll()
         self.doses.append(contentsOf: doses)
@@ -49,7 +48,13 @@ extension ServingsCell: UICollectionViewDataSource {
     }
 
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: Keys.cellID, for: indexPath)
+        guard
+            let cell = collectionView
+                .dequeueReusableCell(withReuseIdentifier: Keys.cellID, for: indexPath) as? DoseCell else {
+                    fatalError("There should be a cell")
+
+        }
+        cell.configure(with: doses[indexPath.row])
         return cell
     }
 }

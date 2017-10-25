@@ -20,7 +20,7 @@ enum RealmConfig {
     /// Provides an initial doze for the empty Servings.
     static var initialDoze: Doze {
         let items = [
-            Item(name: "Beans", doses: [false, false, false]),
+            Item(name: "Beans", doses: [true, false, false]),
             Item(name: "Berries", doses: [false]),
             Item(name: "Other fruits", doses: [false, false, false]),
             Item(name: "Cruciferous Vegetables", doses: [false]),
@@ -28,10 +28,10 @@ enum RealmConfig {
             Item(name: "Other Vegetables", doses: [false, false]),
             Item(name: "Flaxseeds", doses: [false]),
             Item(name: "Nuts", doses: [false]),
-            Item(name: "Spices", doses: [false]),
+            Item(name: "Spices", doses: [true]),
             Item(name: "Whole Grains", doses: [false, false, false]),
             Item(name: "Beverages", doses: [false, false, false, false, false]),
-            Item(name: "Exercise", doses: [false]),
+            Item(name: "Exercise", doses: [true]),
             Item(name: "Vitamin B12", doses: [false]),
             Item(name: "Vitamin D", doses: [false])
         ]
