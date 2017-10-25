@@ -21,7 +21,7 @@ class ServingsCell: UITableViewCell {
     @IBOutlet private weak var doseCollection: UICollectionView!
 
     // MARK: - Properties
-    private var doses = [Bool]()
+    private var states = [Bool]()
 
     override func awakeFromNib() {
         super.awakeFromNib()
@@ -29,14 +29,14 @@ class ServingsCell: UITableViewCell {
     }
 
     // MARK: - Methods
-    /// Sets the item label with the current name and doses.
+    /// Sets the item label with the current name and states.
     ///
     /// - Parameter name: The current name.
-    /// - Parameter doses: The doses array.
-    func configure(with name: String, doses: [Bool]) {
+    /// - Parameter states: The states array.
+    func configure(with name: String, states: [Bool]) {
         itemLabel.text = name
-        self.doses.removeAll()
-        self.doses.append(contentsOf: doses)
+        self.states.removeAll()
+        self.states.append(contentsOf: states)
         doseCollection.reloadData()
     }
 }
@@ -44,7 +44,7 @@ class ServingsCell: UITableViewCell {
 extension ServingsCell: UICollectionViewDataSource {
 
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return doses.count
+        return states.count
     }
 
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
@@ -54,7 +54,7 @@ extension ServingsCell: UICollectionViewDataSource {
                     fatalError("There should be a cell")
 
         }
-        cell.configure(with: doses[indexPath.row])
+        cell.configure(with: states[indexPath.row])
         return cell
     }
 }

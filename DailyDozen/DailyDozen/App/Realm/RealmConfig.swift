@@ -20,20 +20,20 @@ enum RealmConfig {
     /// Provides an initial doze for the empty Servings.
     static var initialDoze: Doze {
         let items = [
-            Item(name: "Beans", doses: [true, false, false]),
-            Item(name: "Berries", doses: [false]),
-            Item(name: "Other fruits", doses: [false, false, false]),
-            Item(name: "Cruciferous Vegetables", doses: [false]),
-            Item(name: "Greens", doses: [false, false]),
-            Item(name: "Other Vegetables", doses: [false, false]),
-            Item(name: "Flaxseeds", doses: [false]),
-            Item(name: "Nuts", doses: [false]),
-            Item(name: "Spices", doses: [true]),
-            Item(name: "Whole Grains", doses: [false, false, false]),
-            Item(name: "Beverages", doses: [false, false, false, false, false]),
-            Item(name: "Exercise", doses: [true]),
-            Item(name: "Vitamin B12", doses: [false]),
-            Item(name: "Vitamin D", doses: [false])
+            Item(name: "Beans", states: [false, false, false]),
+            Item(name: "Berries", states: [false]),
+            Item(name: "Other fruits", states: [false, false, false]),
+            Item(name: "Cruciferous Vegetables", states: [false]),
+            Item(name: "Greens", states: [false, false]),
+            Item(name: "Other Vegetables", states: [false, false]),
+            Item(name: "Flaxseeds", states: [false]),
+            Item(name: "Nuts", states: [false]),
+            Item(name: "Spices", states: [false]),
+            Item(name: "Whole Grains", states: [false, false, false]),
+            Item(name: "Beverages", states: [false, false, false, false, false]),
+            Item(name: "Exercise", states: [false]),
+            Item(name: "Vitamin B12", states: [false]),
+            Item(name: "Vitamin D", states: [false])
         ]
         let doze = Doze(date: Date(), items: items)
 

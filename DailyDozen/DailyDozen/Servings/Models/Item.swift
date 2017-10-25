@@ -12,11 +12,11 @@ import RealmSwift
 class Item: Object {
 
     @objc dynamic var name = ""
-    let doses = List<Bool>()
+    let states = List<Bool>()
 
-    convenience init(name: String, doses: [Bool]) {
+    convenience init(name: String, states: [Bool]) {
         self.init()
         self.name = name
-        self.doses.append(objectsIn: doses)
+        self.states.append(objectsIn: states)
     }
 }

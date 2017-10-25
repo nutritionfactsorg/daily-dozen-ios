@@ -45,11 +45,11 @@ class DozeViewModel {
         return doze.items[index].name
     }
 
-    /// Returns item doses in the doze for the current index.
+    /// Returns item states in the doze for the current index.
     ///
     /// - Parameter index: The current index.
-    /// - Returns: The doses array.
-    func itemDoses(for index: Int) -> [Bool] {
-        return Array(doze.items[index].doses)
+    /// - Returns: The states array.
+    func itemStates(for index: Int) -> [Bool] {
+        return Array(doze.items[index].states)
     }
 }
