@@ -9,7 +9,7 @@
 import UIKit
 import RealmSwift
 
-class ServingsViewController: UIViewController, UITableViewDelegate {
+class ServingsViewController: UIViewController, UITableViewDelegate, UICollectionViewDelegate {
 
     // MARK: - Outlets
     @IBOutlet private weak var dataProvider: ServingsDataProvider!
@@ -31,8 +31,35 @@ class ServingsViewController: UIViewController, UITableViewDelegate {
         tableView.delegate = self
     }
 
-    // MARK: - UITableViewDelegate
+    // MARK: - Servings UITableViewDelegate
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         return 100
+    }
+
+    func tableView(_ tableView: UITableView, willDisplay cell: UITableViewCell, forRowAt indexPath: IndexPath) {
+        guard let servingsCell = cell as? ServingsCell else { return }
+        servingsCell.stateCollection.delegate = self
+        servingsCell.stateCollection.dataSource = dataProvider
+        servingsCell.stateCollection.reloadData()
+    }
+
+    // MARK: - States UICollectionViewDelegate
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        var states = dataProvider.viewModel.itemStates(for: collectionView.tag)
+        states[indexPath.row] = !states[indexPath.row]
+        guard let cell = collectionView.cellForItem(at: indexPath) as? StateCell else {
+            fatalError("There should be a cell")
+        }
+        cell.configure(with: states[indexPath.row])
+        let id = dataProvider.viewModel.itemID(for: collectionView.tag)
+        if let realm = try? Realm(configuration: RealmConfig.servings.configuration) {
+            do {
+                try realm.write {
+                    realm.create(Item.self, value: ["id": id, "states": states], update: true)
+                }
+            } catch {
+                print(error.localizedDescription)
+            }
+        }
     }
 }

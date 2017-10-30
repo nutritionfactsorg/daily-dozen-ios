@@ -12,12 +12,13 @@ class ServingsDataProvider: NSObject, UITableViewDataSource {
 
     // MARK: - Nested
     private struct Keys {
-        static let cellID = "Cell"
+        static let servingsCell = "servingsCell"
+        static let doseCell = "doseCell"
     }
 
     var viewModel: DozeViewModel!
 
-    // MARK: - UITableViewDataSource
+    // MARK: - Servings UITableViewDataSource
     func numberOfSections(in tableView: UITableView) -> Int {
         return 1
     }
@@ -27,13 +28,30 @@ class ServingsDataProvider: NSObject, UITableViewDataSource {
     }
 
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        guard let cell = tableView.dequeueReusableCell(withIdentifier: Keys.cellID) as? ServingsCell else {
+        guard let cell = tableView.dequeueReusableCell(withIdentifier: Keys.servingsCell) as? ServingsCell else {
             fatalError("There should be a cell")
         }
         let index = indexPath.row
-        cell.configure(with: viewModel.itemName(for: index),
-                       id: viewModel.itemID(for: index),
-                       states: viewModel.itemStates(for: index))
+        cell.configure(with: viewModel.itemName(for: index), tag: index)
+        return cell
+    }
+}
+
+// MARK: - States UICollectionViewDataSource
+extension ServingsDataProvider: UICollectionViewDataSource {
+
+    func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
+        return viewModel.itemStates(for: collectionView.tag).count
+    }
+
+    func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
+        guard
+            let cell = collectionView
+                .dequeueReusableCell(withReuseIdentifier: Keys.doseCell, for: indexPath) as? StateCell else {
+                    fatalError("There should be a cell")
+
+        }
+        cell.configure(with: viewModel.itemStates(for: collectionView.tag)[indexPath.row])
         return cell
     }
 }
