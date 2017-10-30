@@ -7,7 +7,6 @@
 //
 
 import UIKit
-import RealmSwift
 
 class ServingsViewController: UIViewController, UITableViewDelegate, UICollectionViewDelegate {
 
@@ -15,17 +14,14 @@ class ServingsViewController: UIViewController, UITableViewDelegate, UICollectio
     @IBOutlet private weak var dataProvider: ServingsDataProvider!
     @IBOutlet private weak var tableView: UITableView!
 
+    // MARK: - Properties
+    let realm = RealmProvider()
+
     // MARK: - UIViewController
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        guard let realm = try? Realm(configuration: RealmConfig.servings.configuration) else {
-            fatalError("There should be a realm")
-        }
-
-        let doze = realm.objects(Doze.self).first ?? RealmConfig.initialDoze
-
-        dataProvider.viewModel = DozeViewModel(doze: doze)
+        dataProvider.viewModel = DozeViewModel(doze: realm.getDoze())
 
         tableView.dataSource = dataProvider
         tableView.delegate = self
@@ -52,14 +48,6 @@ class ServingsViewController: UIViewController, UITableViewDelegate, UICollectio
         }
         cell.configure(with: states[indexPath.row])
         let id = dataProvider.viewModel.itemID(for: collectionView.tag)
-        if let realm = try? Realm(configuration: RealmConfig.servings.configuration) {
-            do {
-                try realm.write {
-                    realm.create(Item.self, value: ["id": id, "states": states], update: true)
-                }
-            } catch {
-                print(error.localizedDescription)
-            }
-        }
+        realm.saveStates(states, with: id)
     }
 }

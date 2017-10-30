@@ -28,6 +28,7 @@
 		CFE698411F974B9700CD7905 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CFE6983F1F974B9700CD7905 /* Main.storyboard */; };
 		CFE698431F974B9700CD7905 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = CFE698421F974B9700CD7905 /* Assets.xcassets */; };
 		CFE698461F974B9700CD7905 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CFE698441F974B9700CD7905 /* LaunchScreen.storyboard */; };
+		CFE793571FA756E40084F075 /* RealmProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = CFE793561FA756E40084F075 /* RealmProvider.swift */; };
 		CFF117731F97530300BFE73A /* Menu.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CFF117721F97530300BFE73A /* Menu.storyboard */; };
 /* End PBXBuildFile section */
 
@@ -55,6 +56,7 @@
 		CFE698421F974B9700CD7905 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		CFE698451F974B9700CD7905 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		CFE698471F974B9700CD7905 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		CFE793561FA756E40084F075 /* RealmProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RealmProvider.swift; sourceTree = "<group>"; };
 		CFF117721F97530300BFE73A /* Menu.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Menu.storyboard; sourceTree = "<group>"; };
 		DA1790B64ED37B6DB70223BE /* Pods-DailyDozen.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-DailyDozen.debug.xcconfig"; path = "Pods/Target Support Files/Pods-DailyDozen/Pods-DailyDozen.debug.xcconfig"; sourceTree = "<group>"; };
 		F514690D725E67AD54735EB9 /* Pods_DailyDozen.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_DailyDozen.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -118,6 +120,7 @@
 			isa = PBXGroup;
 			children = (
 				CFAAB3731F9F3E1200B24748 /* RealmConfig.swift */,
+				CFE793561FA756E40084F075 /* RealmProvider.swift */,
 			);
 			path = Realm;
 			sourceTree = "<group>";
@@ -414,6 +417,7 @@
 				CFE6983C1F974B9700CD7905 /* AppDelegate.swift in Sources */,
 				CF987C281F9E157300D4893E /* Item.swift in Sources */,
 				CF4DECF71F9DF2A500DA094B /* ServingsCell.swift in Sources */,
+				CFE793571FA756E40084F075 /* RealmProvider.swift in Sources */,
 				CFAAB37A1F9F4A8000B24748 /* DozeViewModel.swift in Sources */,
 				CF5B28B11FA0A2C500D57A48 /* StateCell.swift in Sources */,
 				CFC4A84F1F9761FF00B5AC75 /* PagerViewController.swift in Sources */,
