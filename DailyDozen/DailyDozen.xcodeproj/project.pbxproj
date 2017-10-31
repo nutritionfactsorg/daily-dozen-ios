@@ -8,6 +8,9 @@
 
 /* Begin PBXBuildFile section */
 		BED5BB460CE3AEE8CF585899 /* Pods_DailyDozen.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F514690D725E67AD54735EB9 /* Pods_DailyDozen.framework */; };
+		CF22F07A1FA88D2200F25B70 /* DetailsDataProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF22F0791FA88D2200F25B70 /* DetailsDataProvider.swift */; };
+		CF2FA9941FA87B2E003508F8 /* Details.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CF2FA9931FA87B2E003508F8 /* Details.storyboard */; };
+		CF2FA9961FA87F0C003508F8 /* DetailsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF2FA9951FA87F0C003508F8 /* DetailsViewController.swift */; };
 		CF4DECF71F9DF2A500DA094B /* ServingsCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF4DECF61F9DF2A500DA094B /* ServingsCell.swift */; };
 		CF4DECF91F9DF82900DA094B /* ServingsDataProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF4DECF81F9DF82900DA094B /* ServingsDataProvider.swift */; };
 		CF5B28B11FA0A2C500D57A48 /* StateCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF5B28B01FA0A2C500D57A48 /* StateCell.swift */; };
@@ -34,6 +37,9 @@
 
 /* Begin PBXFileReference section */
 		7D4AA01331AD98C99ADB2BC0 /* Pods-DailyDozen.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-DailyDozen.release.xcconfig"; path = "Pods/Target Support Files/Pods-DailyDozen/Pods-DailyDozen.release.xcconfig"; sourceTree = "<group>"; };
+		CF22F0791FA88D2200F25B70 /* DetailsDataProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailsDataProvider.swift; sourceTree = "<group>"; };
+		CF2FA9931FA87B2E003508F8 /* Details.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Details.storyboard; sourceTree = "<group>"; };
+		CF2FA9951FA87F0C003508F8 /* DetailsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailsViewController.swift; sourceTree = "<group>"; };
 		CF4DECF61F9DF2A500DA094B /* ServingsCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ServingsCell.swift; sourceTree = "<group>"; };
 		CF4DECF81F9DF82900DA094B /* ServingsDataProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ServingsDataProvider.swift; sourceTree = "<group>"; };
 		CF5B28B01FA0A2C500D57A48 /* StateCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StateCell.swift; sourceTree = "<group>"; };
@@ -80,6 +86,32 @@
 				F514690D725E67AD54735EB9 /* Pods_DailyDozen.framework */,
 			);
 			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		CF2FA9911FA87AB5003508F8 /* Details */ = {
+			isa = PBXGroup;
+			children = (
+				CF2FA9971FA87F31003508F8 /* Controllers */,
+				CF2FA9921FA87AEC003508F8 /* Storyboards */,
+			);
+			path = Details;
+			sourceTree = "<group>";
+		};
+		CF2FA9921FA87AEC003508F8 /* Storyboards */ = {
+			isa = PBXGroup;
+			children = (
+				CF2FA9931FA87B2E003508F8 /* Details.storyboard */,
+			);
+			path = Storyboards;
+			sourceTree = "<group>";
+		};
+		CF2FA9971FA87F31003508F8 /* Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				CF2FA9951FA87F0C003508F8 /* DetailsViewController.swift */,
+				CF22F0791FA88D2200F25B70 /* DetailsDataProvider.swift */,
+			);
+			path = Controllers;
 			sourceTree = "<group>";
 		};
 		CF4DECF51F9DF27800DA094B /* Views */ = {
@@ -169,6 +201,7 @@
 				CFE6984F1F974EFF00CD7905 /* App */,
 				CFF117711F9752CA00BFE73A /* Menu */,
 				CFF117751F9753B700BFE73A /* Servings */,
+				CF2FA9911FA87AB5003508F8 /* Details */,
 			);
 			path = DailyDozen;
 			sourceTree = "<group>";
@@ -331,6 +364,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				CFE667291F98CF860037D1A2 /* Pager.storyboard in Resources */,
+				CF2FA9941FA87B2E003508F8 /* Details.storyboard in Resources */,
 				CFE698461F974B9700CD7905 /* LaunchScreen.storyboard in Resources */,
 				CFCE5FCB1F978007005C672B /* Servings.storyboard in Resources */,
 				CFE698431F974B9700CD7905 /* Assets.xcassets in Resources */,
@@ -410,12 +444,14 @@
 				CFC4A8521F97630100B5AC75 /* PagerBuilder.swift in Sources */,
 				CFC4A8541F9776A500B5AC75 /* ServingsViewController.swift in Sources */,
 				CFAAB3721F9F3BC600B24748 /* Doze.swift in Sources */,
+				CF22F07A1FA88D2200F25B70 /* DetailsDataProvider.swift in Sources */,
 				CFE6983E1F974B9700CD7905 /* MainViewController.swift in Sources */,
 				CFE667251F98B7F30037D1A2 /* ServingsBuilder.swift in Sources */,
 				CFAAB3771F9F3FDF00B24748 /* URL.swift in Sources */,
 				CFC4A84D1F975A3900B5AC75 /* MenuViewController.swift in Sources */,
 				CFE6983C1F974B9700CD7905 /* AppDelegate.swift in Sources */,
 				CF987C281F9E157300D4893E /* Item.swift in Sources */,
+				CF2FA9961FA87F0C003508F8 /* DetailsViewController.swift in Sources */,
 				CF4DECF71F9DF2A500DA094B /* ServingsCell.swift in Sources */,
 				CFE793571FA756E40084F075 /* RealmProvider.swift in Sources */,
 				CFAAB37A1F9F4A8000B24748 /* DozeViewModel.swift in Sources */,

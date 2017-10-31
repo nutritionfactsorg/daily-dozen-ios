@@ -20,14 +20,14 @@ class RealmProvider {
         self.realm = realm
     }
 
-    /// Returns Doze object stored in the Realm.
+    /// Returns a Doze object stored in the Realm.
     ///
     /// - Returns: The doze.
     func getDoze() -> Doze {
         return realm.objects(Doze.self).first ?? RealmConfig.initialDoze
     }
 
-    /// Updates an Item object with an ID for a new states .
+    /// Updates an Item object with an ID for new states .
     ///
     /// - Parameters:
     ///   - states: The new state.
