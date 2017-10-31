@@ -55,9 +55,13 @@
                                                                         <subviews>
                                                                             <button opaque="NO" userInteractionEnabled="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="utq-hZ-ag5" customClass="UICheckbox" customModule="UICheckbox_Swift">
                                                                                 <rect key="frame" x="0.0" y="0.0" width="25" height="25"/>
+                                                                                <color key="tintColor" red="0.95294117649999999" green="0.50588235290000005" blue="0.50588235290000005" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                                                <state key="normal">
+                                                                                    <color key="titleColor" red="0.95294117649999999" green="0.50588235290000005" blue="0.50588235290000005" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                                                </state>
                                                                                 <userDefinedRuntimeAttributes>
                                                                                     <userDefinedRuntimeAttribute type="color" keyPath="borderColor">
-                                                                                        <color key="value" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                                                        <color key="value" red="0.95294117649999999" green="0.50588235290000005" blue="0.50588235290000005" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                                                     </userDefinedRuntimeAttribute>
                                                                                     <userDefinedRuntimeAttribute type="number" keyPath="borderWidth">
                                                                                         <real key="value" value="5"/>
@@ -87,7 +91,7 @@
                                                                 <stackView opaque="NO" contentMode="scaleToFill" distribution="fillProportionally" spacing="5" translatesAutoresizingMaskIntoConstraints="NO" id="zeI-DC-dHC">
                                                                     <rect key="frame" x="5" y="5" width="187" height="85"/>
                                                                     <subviews>
-                                                                        <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="cereals" translatesAutoresizingMaskIntoConstraints="NO" id="IS4-2B-57z">
+                                                                        <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="ic_beans" translatesAutoresizingMaskIntoConstraints="NO" id="IS4-2B-57z">
                                                                             <rect key="frame" x="0.0" y="0.0" width="30" height="85"/>
                                                                             <constraints>
                                                                                 <constraint firstAttribute="width" constant="30" id="kFm-Cj-kAE"/>
@@ -185,7 +189,7 @@
     </scenes>
     <resources>
         <image name="calendar_icon" width="30" height="30"/>
-        <image name="cereals" width="128" height="128"/>
+        <image name="ic_beans" width="45" height="45"/>
         <image name="music_info" width="25" height="25"/>
     </resources>
 </document>

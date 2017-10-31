@@ -1,0 +1,95 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>Beans</key>
+	<dict>
+		<key>Sizes</key>
+		<dict>
+			<key>Metric</key>
+			<array>
+				<string>60 g of hummus or bean dip</string>
+				<string>130 g cooked beans, split peas, lentils, tofu, or tempeh</string>
+				<string>150 g of fresh peas or sprouted lentils</string>
+			</array>
+			<key>Imperial</key>
+			<array>
+				<string>¼ cup of hummus or bean dip</string>
+				<string>½ cup cooked beans, split peas, lentils, tofu, or tempeh</string>
+				<string>1 cup of fresh peas or sprouted lentils</string>
+			</array>
+		</dict>
+		<key>Types</key>
+		<array>
+			<dict>
+				<key>Black beans</key>
+				<string>black-beans</string>
+			</dict>
+			<dict>
+				<key>Black-eyed peas</key>
+				<string></string>
+			</dict>
+			<dict>
+				<key>Butter beans</key>
+				<string></string>
+			</dict>
+			<dict>
+				<key>Cannellini beans</key>
+				<string></string>
+			</dict>
+			<dict>
+				<key>Chickpeas</key>
+				<string>chickpeas</string>
+			</dict>
+			<dict>
+				<key>Edamame</key>
+				<string>edamame</string>
+			</dict>
+			<dict>
+				<key>English peas</key>
+				<string></string>
+			</dict>
+			<dict>
+				<key>Garbanzo beans</key>
+				<string>garbanzo-beans</string>
+			</dict>
+			<dict>
+				<key>Great northern beans</key>
+				<string></string>
+			</dict>
+			<dict>
+				<key>Kidney beans</key>
+				<string>kidney-beans</string>
+			</dict>
+			<dict>
+				<key>Lentils (beluga, french, and red varieties)</key>
+				<string>lentils</string>
+			</dict>	
+			<dict>
+				<key>Miso</key>
+				<string>miso</string>
+			</dict>	
+			<dict>
+				<key>Navy beans</key>
+				<string>navy-beans</string>
+			</dict>	
+			<dict>
+				<key>Pinto beans</key>
+				<string>pinto-beans</string>
+			</dict>	
+			<dict>
+				<key>Small red beans</key>
+				<string></string>
+			</dict>
+			<dict>
+				<key>Split peas (yellow or green)</key>
+				<string>split-peas</string>
+			</dict>	
+			<dict>
+        		<key>Tempeh</key>
+        		<string>tempeh</string>
+			</dict>	
+		</array>
+	</dict>
+</dict>
+</plist>

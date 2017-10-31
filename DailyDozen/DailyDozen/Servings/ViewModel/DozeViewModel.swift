@@ -59,4 +59,9 @@ class DozeViewModel {
     func itemID(for index: Int) -> String {
         return doze.items[index].id
     }
+
+    func imageName(for index: Int) -> String {
+        let name = "ic_\(itemName(for: index).lowercased().replacingOccurrences(of: " ", with: "_"))"
+        return name
+    }
 }

@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		BED5BB460CE3AEE8CF585899 /* Pods_DailyDozen.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F514690D725E67AD54735EB9 /* Pods_DailyDozen.framework */; };
 		CF22F07A1FA88D2200F25B70 /* DetailsDataProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF22F0791FA88D2200F25B70 /* DetailsDataProvider.swift */; };
+		CF22F07F1FA8ACE000F25B70 /* Details.plist in Resources */ = {isa = PBXBuildFile; fileRef = CF22F07E1FA8ACE000F25B70 /* Details.plist */; };
 		CF2FA9941FA87B2E003508F8 /* Details.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CF2FA9931FA87B2E003508F8 /* Details.storyboard */; };
 		CF2FA9961FA87F0C003508F8 /* DetailsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF2FA9951FA87F0C003508F8 /* DetailsViewController.swift */; };
 		CF4DECF71F9DF2A500DA094B /* ServingsCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF4DECF61F9DF2A500DA094B /* ServingsCell.swift */; };
@@ -38,6 +39,7 @@
 /* Begin PBXFileReference section */
 		7D4AA01331AD98C99ADB2BC0 /* Pods-DailyDozen.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-DailyDozen.release.xcconfig"; path = "Pods/Target Support Files/Pods-DailyDozen/Pods-DailyDozen.release.xcconfig"; sourceTree = "<group>"; };
 		CF22F0791FA88D2200F25B70 /* DetailsDataProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailsDataProvider.swift; sourceTree = "<group>"; };
+		CF22F07E1FA8ACE000F25B70 /* Details.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Details.plist; sourceTree = "<group>"; };
 		CF2FA9931FA87B2E003508F8 /* Details.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Details.storyboard; sourceTree = "<group>"; };
 		CF2FA9951FA87F0C003508F8 /* DetailsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailsViewController.swift; sourceTree = "<group>"; };
 		CF4DECF61F9DF2A500DA094B /* ServingsCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ServingsCell.swift; sourceTree = "<group>"; };
@@ -88,11 +90,20 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
+		CF22F07D1FA8ACC300F25B70 /* Texts */ = {
+			isa = PBXGroup;
+			children = (
+				CF22F07E1FA8ACE000F25B70 /* Details.plist */,
+			);
+			path = Texts;
+			sourceTree = "<group>";
+		};
 		CF2FA9911FA87AB5003508F8 /* Details */ = {
 			isa = PBXGroup;
 			children = (
 				CF2FA9971FA87F31003508F8 /* Controllers */,
 				CF2FA9921FA87AEC003508F8 /* Storyboards */,
+				CF22F07D1FA8ACC300F25B70 /* Texts */,
 			);
 			path = Details;
 			sourceTree = "<group>";
@@ -368,6 +379,7 @@
 				CFE698461F974B9700CD7905 /* LaunchScreen.storyboard in Resources */,
 				CFCE5FCB1F978007005C672B /* Servings.storyboard in Resources */,
 				CFE698431F974B9700CD7905 /* Assets.xcassets in Resources */,
+				CF22F07F1FA8ACE000F25B70 /* Details.plist in Resources */,
 				CFE698411F974B9700CD7905 /* Main.storyboard in Resources */,
 				CFF117731F97530300BFE73A /* Menu.storyboard in Resources */,
 			);

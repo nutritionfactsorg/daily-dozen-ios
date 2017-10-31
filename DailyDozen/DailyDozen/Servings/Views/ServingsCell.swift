@@ -20,8 +20,9 @@ class ServingsCell: UITableViewCell {
     ///
     /// - Parameter name: The current name.
     /// - Parameter tag: The current tag.
-    func configure(with name: String, tag: Int) {
+    func configure(with name: String, tag: Int, imageName: String) {
         itemLabel.text = name
         stateCollection.tag = tag
+        itemImage.image = UIImage(named: imageName)
     }
 }

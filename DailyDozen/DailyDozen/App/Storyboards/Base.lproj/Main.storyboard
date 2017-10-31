@@ -29,10 +29,10 @@
             </objects>
             <point key="canvasLocation" x="-275" y="23"/>
         </scene>
-        <!--Details-->
+        <!--Pager-->
         <scene sceneID="4O8-gM-CPh">
             <objects>
-                <viewControllerPlaceholder storyboardName="Details" id="9Vc-3k-Yok" sceneMemberID="viewController"/>
+                <viewControllerPlaceholder storyboardName="Pager" id="9Vc-3k-Yok" sceneMemberID="viewController"/>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="EFh-a3-GgD" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="-259" y="267"/>

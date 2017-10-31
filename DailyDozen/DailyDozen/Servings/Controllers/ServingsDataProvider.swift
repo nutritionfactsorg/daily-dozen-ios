@@ -32,7 +32,11 @@ class ServingsDataProvider: NSObject, UITableViewDataSource {
             fatalError("There should be a cell")
         }
         let index = indexPath.row
-        cell.configure(with: viewModel.itemName(for: index), tag: index)
+        cell.configure(
+            with: viewModel.itemName(for: index),
+            tag: index,
+            imageName: viewModel.imageName(for: index))
+
         return cell
     }
 }
