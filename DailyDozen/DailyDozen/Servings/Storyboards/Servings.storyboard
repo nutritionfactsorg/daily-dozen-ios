@@ -189,7 +189,7 @@
     </scenes>
     <resources>
         <image name="calendar_icon" width="30" height="30"/>
-        <image name="ic_beans" width="45" height="45"/>
+        <image name="ic_beans" width="120" height="120"/>
         <image name="music_info" width="25" height="25"/>
     </resources>
 </document>
