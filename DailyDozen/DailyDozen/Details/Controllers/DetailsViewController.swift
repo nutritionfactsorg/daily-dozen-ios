@@ -14,16 +14,29 @@ class DetailsViewController: UIViewController, UITableViewDelegate {
     @IBOutlet private weak var tableView: UITableView!
     @IBOutlet weak var dataProvider: DetailsDataProvider!
 
+    var itemName = "Beans"
+
     // MARK: - UIViewController
     override func viewDidLoad() {
         super.viewDidLoad()
 
         tableView.dataSource = dataProvider
         tableView.delegate = self
+        dataProvider.loadTexts(for: itemName)
     }
 
     // MARK: - UITableViewDelegate
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-        return indexPath.section == 0 ? 200 : tableView.rowHeight
+        guard let sectionType = SectionType(rawValue: indexPath.section) else {
+            fatalError("There should be a section type")
+        }
+        switch sectionType {
+        case .image:
+            return 200
+        case .sizes:
+            return 75
+        case .types:
+            return 75
+        }
     }
 }
