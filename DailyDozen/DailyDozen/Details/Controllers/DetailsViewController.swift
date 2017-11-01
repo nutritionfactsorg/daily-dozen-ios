@@ -30,13 +30,6 @@ class DetailsViewController: UIViewController, UITableViewDelegate {
         guard let sectionType = SectionType(rawValue: indexPath.section) else {
             fatalError("There should be a section type")
         }
-        switch sectionType {
-        case .image:
-            return 200
-        case .sizes:
-            return 75
-        case .types:
-            return 75
-        }
+        return sectionType.height
     }
 }

@@ -29,14 +29,7 @@ class DetailsDataProvider: NSObject, UITableViewDataSource {
         guard let sectionType = SectionType(rawValue: section) else {
             fatalError("There should be a section type")
         }
-        switch sectionType {
-        case .image:
-            return nil
-        case .sizes:
-            return "Serving Sizes"
-        case .types:
-            return "Types"
-        }
+        return sectionType.title
     }
 
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
