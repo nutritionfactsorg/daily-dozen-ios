@@ -14,7 +14,7 @@ class DetailsViewController: UIViewController, UITableViewDelegate {
     @IBOutlet private weak var tableView: UITableView!
     @IBOutlet weak var dataProvider: DetailsDataProvider!
 
-    var itemName = "Beans"
+    var itemName = "Exercise"
 
     // MARK: - UIViewController
     override func viewDidLoad() {
