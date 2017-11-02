@@ -101,25 +101,24 @@
                                                                             <rect key="frame" x="35" y="0.0" width="152" height="85"/>
                                                                             <subviews>
                                                                                 <stackView opaque="NO" contentMode="scaleToFill" distribution="fillProportionally" translatesAutoresizingMaskIntoConstraints="NO" id="4WH-X8-W8O">
-                                                                                    <rect key="frame" x="0.0" y="0.0" width="152" height="20.5"/>
+                                                                                    <rect key="frame" x="0.0" y="0.0" width="152" height="22"/>
                                                                                     <subviews>
                                                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="qWl-8e-sO6">
-                                                                                            <rect key="frame" x="0.0" y="0.0" width="132" height="20.5"/>
+                                                                                            <rect key="frame" x="0.0" y="0.0" width="100" height="22"/>
                                                                                             <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                                                             <nil key="textColor"/>
                                                                                             <nil key="highlightedColor"/>
                                                                                         </label>
-                                                                                        <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="music_info" translatesAutoresizingMaskIntoConstraints="NO" id="In2-L1-MMh">
-                                                                                            <rect key="frame" x="132" y="0.0" width="20" height="20.5"/>
-                                                                                            <constraints>
-                                                                                                <constraint firstAttribute="height" constant="20" id="3nA-ND-e44"/>
-                                                                                                <constraint firstAttribute="width" constant="20" id="JVr-Ix-d49"/>
-                                                                                            </constraints>
-                                                                                        </imageView>
+                                                                                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="infoLight" showsTouchWhenHighlighted="YES" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="YC8-Tt-A17">
+                                                                                            <rect key="frame" x="100" y="0.0" width="52" height="22"/>
+                                                                                            <connections>
+                                                                                                <action selector="infoPressed:" destination="M2f-B0-7nZ" eventType="touchUpInside" id="2uF-fr-cSU"/>
+                                                                                            </connections>
+                                                                                        </button>
                                                                                     </subviews>
                                                                                 </stackView>
                                                                                 <button opaque="NO" contentMode="scaleAspectFit" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="UX8-vv-mKp">
-                                                                                    <rect key="frame" x="0.0" y="20.5" width="29" height="64.5"/>
+                                                                                    <rect key="frame" x="0.0" y="22" width="29" height="63"/>
                                                                                     <state key="normal" image="ic_calendar"/>
                                                                                 </button>
                                                                             </subviews>
@@ -150,6 +149,7 @@
                                                     </constraints>
                                                 </tableViewCellContentView>
                                                 <connections>
+                                                    <outlet property="infoButton" destination="YC8-Tt-A17" id="dbr-pG-ndq"/>
                                                     <outlet property="itemImage" destination="IS4-2B-57z" id="vlA-b4-uNb"/>
                                                     <outlet property="itemLabel" destination="qWl-8e-sO6" id="oVh-98-LtU"/>
                                                     <outlet property="stateCollection" destination="WgI-63-9dY" id="BEP-II-uA7"/>
@@ -190,6 +190,5 @@
     <resources>
         <image name="ic_beans" width="120" height="120"/>
         <image name="ic_calendar" width="29" height="29"/>
-        <image name="music_info" width="25" height="25"/>
     </resources>
 </document>

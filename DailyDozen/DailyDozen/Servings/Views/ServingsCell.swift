@@ -14,6 +14,7 @@ class ServingsCell: UITableViewCell {
     @IBOutlet private weak var itemImage: UIImageView!
     @IBOutlet private weak var itemLabel: UILabel!
     @IBOutlet weak var stateCollection: UICollectionView!
+    @IBOutlet weak var infoButton: UIButton!
 
     // MARK: - Methods
     /// Sets the cell with the current name and tag.
@@ -23,6 +24,7 @@ class ServingsCell: UITableViewCell {
     func configure(with name: String, tag: Int, imageName: String) {
         itemLabel.text = name
         stateCollection.tag = tag
+        infoButton.tag = tag
         itemImage.image = UIImage(named: imageName)
     }
 }

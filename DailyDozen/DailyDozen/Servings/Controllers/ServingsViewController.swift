@@ -50,4 +50,16 @@ class ServingsViewController: UIViewController, UITableViewDelegate, UICollectio
         let id = dataProvider.viewModel.itemID(for: collectionView.tag)
         realm.saveStates(states, with: id)
     }
+
+    @IBAction func infoPressed(_ sender: UIButton) {
+        let itemName = dataProvider.viewModel.itemName(for: sender.tag)
+        let storyboard = UIStoryboard(name: "Details", bundle: nil)
+        guard
+            let viewController = storyboard
+                .instantiateInitialViewController() as? DetailsViewController
+            else { fatalError("There should be a controller") }
+        viewController.itemName = itemName
+        viewController.title = itemName
+        navigationController?.pushViewController(viewController, animated: true)
+    }
 }
