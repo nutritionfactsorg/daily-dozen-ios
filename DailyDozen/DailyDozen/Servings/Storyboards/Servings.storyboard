@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13196" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="M2f-B0-7nZ">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13529" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="M2f-B0-7nZ">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13174"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13527"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -119,8 +119,8 @@
                                                                                     </subviews>
                                                                                 </stackView>
                                                                                 <button opaque="NO" contentMode="scaleAspectFit" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="UX8-vv-mKp">
-                                                                                    <rect key="frame" x="0.0" y="20.5" width="30" height="64.5"/>
-                                                                                    <state key="normal" image="calendar_icon"/>
+                                                                                    <rect key="frame" x="0.0" y="20.5" width="29" height="64.5"/>
+                                                                                    <state key="normal" image="ic_calendar"/>
                                                                                 </button>
                                                                             </subviews>
                                                                             <constraints>
@@ -188,8 +188,8 @@
         </scene>
     </scenes>
     <resources>
-        <image name="calendar_icon" width="30" height="30"/>
         <image name="ic_beans" width="120" height="120"/>
+        <image name="ic_calendar" width="29" height="29"/>
         <image name="music_info" width="25" height="25"/>
     </resources>
 </document>
