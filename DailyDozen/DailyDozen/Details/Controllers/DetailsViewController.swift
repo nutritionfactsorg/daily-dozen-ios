@@ -12,9 +12,9 @@ class DetailsViewController: UIViewController, UITableViewDelegate {
 
     // MARK: - Outlets
     @IBOutlet private weak var tableView: UITableView!
-    @IBOutlet weak var dataProvider: DetailsDataProvider!
+    @IBOutlet private weak var dataProvider: DetailsDataProvider!
 
-    var itemName = "Exercise"
+    var itemName = ""
 
     // MARK: - UIViewController
     override func viewDidLoad() {
@@ -22,7 +22,8 @@ class DetailsViewController: UIViewController, UITableViewDelegate {
 
         tableView.dataSource = dataProvider
         tableView.delegate = self
-        dataProvider.loadTexts(for: itemName)
+        let textProvider = TextsProvider()
+        dataProvider.viewModel = textProvider.loadDetails(for: itemName)
     }
 
     // MARK: - UITableViewDelegate

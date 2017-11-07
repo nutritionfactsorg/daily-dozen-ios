@@ -104,13 +104,17 @@
                                                                                     <rect key="frame" x="0.0" y="0.0" width="152" height="22"/>
                                                                                     <subviews>
                                                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="qWl-8e-sO6">
-                                                                                            <rect key="frame" x="0.0" y="0.0" width="100" height="22"/>
-                                                                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                                                            <rect key="frame" x="0.0" y="0.0" width="130" height="22"/>
+                                                                                            <fontDescription key="fontDescription" type="system" pointSize="15"/>
                                                                                             <nil key="textColor"/>
                                                                                             <nil key="highlightedColor"/>
                                                                                         </label>
                                                                                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="infoLight" showsTouchWhenHighlighted="YES" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="YC8-Tt-A17">
-                                                                                            <rect key="frame" x="100" y="0.0" width="52" height="22"/>
+                                                                                            <rect key="frame" x="130" y="0.0" width="22" height="22"/>
+                                                                                            <constraints>
+                                                                                                <constraint firstAttribute="height" constant="22" id="9Bb-id-3vP"/>
+                                                                                                <constraint firstAttribute="width" constant="22" id="rva-nl-69z"/>
+                                                                                            </constraints>
                                                                                             <connections>
                                                                                                 <action selector="infoPressed:" destination="M2f-B0-7nZ" eventType="touchUpInside" id="2uF-fr-cSU"/>
                                                                                             </connections>

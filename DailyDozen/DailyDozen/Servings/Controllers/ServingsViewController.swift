@@ -53,13 +53,7 @@ class ServingsViewController: UIViewController, UITableViewDelegate, UICollectio
 
     @IBAction func infoPressed(_ sender: UIButton) {
         let itemName = dataProvider.viewModel.itemName(for: sender.tag)
-        let storyboard = UIStoryboard(name: "Details", bundle: nil)
-        guard
-            let viewController = storyboard
-                .instantiateInitialViewController() as? DetailsViewController
-            else { fatalError("There should be a controller") }
-        viewController.itemName = itemName
-        viewController.title = itemName
+        let viewController = DetailsBuilder.instantiateController(with: itemName)
         navigationController?.pushViewController(viewController, animated: true)
     }
 }

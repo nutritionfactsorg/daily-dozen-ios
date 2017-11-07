@@ -22,7 +22,7 @@ enum RealmConfig {
         let items = [
             Item(name: "Beans", states: [false, false, false]),
             Item(name: "Berries", states: [false]),
-            Item(name: "Other fruits", states: [false, false, false]),
+            Item(name: "Other Fruits", states: [false, false, false]),
             Item(name: "Cruciferous Vegetables", states: [false]),
             Item(name: "Greens", states: [false, false]),
             Item(name: "Other Vegetables", states: [false, false]),

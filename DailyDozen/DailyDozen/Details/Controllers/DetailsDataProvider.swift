@@ -17,8 +17,7 @@ class DetailsDataProvider: NSObject, UITableViewDataSource {
         static let typesID = "detailsTypesCell"
     }
 
-    var sizes: [String]!
-    var types: [(name: String, link: String)]!
+    var viewModel: DetailViewModel!
 
     // MARK: - UITableViewDataSource
     func numberOfSections(in tableView: UITableView) -> Int {
@@ -40,9 +39,9 @@ class DetailsDataProvider: NSObject, UITableViewDataSource {
         case .image:
             return 1
         case .sizes:
-            return sizes.count
+            return viewModel.sizesCount
         case .types:
-            return types.count
+            return viewModel.typesCount
         }
     }
 
@@ -52,42 +51,18 @@ class DetailsDataProvider: NSObject, UITableViewDataSource {
         }
         switch sectionType {
         case .image:
-            return tableView.dequeueReusableCell(withIdentifier: Keys.imageID, for: indexPath)
+            let cell = tableView.dequeueReusableCell(withIdentifier: Keys.imageID, for: indexPath)
+            cell.imageView?.image = viewModel.image
+            return cell
         case .sizes:
             let cell = tableView.dequeueReusableCell(withIdentifier: Keys.sizesID, for: indexPath)
-            cell.textLabel?.text = sizes[indexPath.row]
+            cell.textLabel?.text = viewModel.sizeDescription(for: indexPath.row)
             return cell
         case .types:
             let cell = tableView.dequeueReusableCell(withIdentifier: Keys.typesID, for: indexPath)
-            cell.textLabel?.text = types[indexPath.row].name
-            cell.detailTextLabel?.isHidden = types[indexPath.row].link == ""
+            cell.textLabel?.text = viewModel.typeData(for: indexPath.row).name
+            cell.detailTextLabel?.isHidden = viewModel.typeData(for: indexPath.row).link == ""
             return cell
         }
-    }
-
-    func loadTexts(for itemName: String) {
-        guard let path = Bundle.main.path(
-            forResource: "Details",
-            ofType: "plist") else {
-                fatalError("There should be a settings file")
-        }
-
-        guard
-            let dictionary = NSDictionary(contentsOfFile: path) as? [String : Any],
-            let item = dictionary[itemName] as? [String: Any]
-            else { fatalError("There should be an item") }
-
-        guard
-            let sizes = item["Sizes"] as? [String: Any],
-            let metric = sizes["Metric"] as? [String]
-            else { fatalError("There should be sizes") }
-
-        self.sizes = metric
-
-        guard
-            let types = item["Types"] as? [[String: String]]
-            else { fatalError("There should be types")  }
-
-        self.types = types.flatMap { $0.flatMap { $0 } }
     }
 }
