@@ -12,9 +12,7 @@ class DetailsViewController: UIViewController, UITableViewDelegate {
 
     // MARK: - Outlets
     @IBOutlet private weak var tableView: UITableView!
-    @IBOutlet private weak var dataProvider: DetailsDataProvider!
-
-    var itemName = ""
+    @IBOutlet weak var dataProvider: DetailsDataProvider!
 
     // MARK: - UIViewController
     override func viewDidLoad() {
@@ -22,8 +20,6 @@ class DetailsViewController: UIViewController, UITableViewDelegate {
 
         tableView.dataSource = dataProvider
         tableView.delegate = self
-        let textProvider = TextsProvider()
-        dataProvider.viewModel = textProvider.loadDetails(for: itemName)
     }
 
     // MARK: - UITableViewDelegate
@@ -32,5 +28,14 @@ class DetailsViewController: UIViewController, UITableViewDelegate {
             fatalError("There should be a section type")
         }
         return sectionType.height
+    }
+
+    // MARK: - Methods
+    /// Sets a view model for the current item.
+    ///
+    /// - Parameter item: The current item name.
+    func setViewModel(for item: String) {
+        let textProvider = TextsProvider()
+        dataProvider.viewModel = textProvider.loadDetail(for: item)
     }
 }

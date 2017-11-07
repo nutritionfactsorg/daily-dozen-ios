@@ -17,12 +17,13 @@ class TextsProvider {
         static let metric = "Metric"
         static let imperial = "Imperial"
         static let types = "Types"
+        static let plist = "plist"
     }
 
-    func loadDetails(for itemName: String) -> DetailViewModel {
+    func loadDetail(for itemName: String) -> DetailViewModel {
         guard
             let path = Bundle.main.path(
-            forResource: Keys.details, ofType: "plist")
+            forResource: Keys.details, ofType: Keys.plist)
             else {  fatalError("There should be a settings file") }
 
         guard

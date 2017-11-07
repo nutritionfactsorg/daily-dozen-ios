@@ -9,6 +9,7 @@
 import UIKit
 
 class DetailsBuilder {
+
     // MARK: - Nested
     struct Keys {
         static let storyboard = "Details"
@@ -26,7 +27,8 @@ class DetailsBuilder {
                 .instantiateInitialViewController() as? DetailsViewController
             else { fatalError("There should be a controller") }
 
-        viewController.itemName = item
+        viewController.title = item
+        viewController.setViewModel(for: item)
 
         return viewController
     }

@@ -27,7 +27,7 @@ class RealmProvider {
         return realm.objects(Doze.self).first ?? RealmConfig.initialDoze
     }
 
-    /// Updates an Item object with an ID for new states .
+    /// Updates an Item object with an ID for new states.
     ///
     /// - Parameters:
     ///   - states: The new state.

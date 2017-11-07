@@ -44,7 +44,6 @@ struct DetailViewModel {
         return detail.metricSizes[index]
     }
 
-
     /// Returns a tuple of the type name and type link for the current index.
     ///
     /// - Parameter index: The current index.
