@@ -20,11 +20,14 @@ class RealmProvider {
         self.realm = realm
     }
 
-    /// Returns a Doze object stored in the Realm.
+    /// Returns a Doze object for the current date.
     ///
     /// - Returns: The doze.
-    func getDoze() -> Doze {
-        return realm.objects(Doze.self).first ?? RealmConfig.initialDoze
+    func getDoze(for date: Date) -> Doze {
+        return realm
+            .objects(Doze.self)
+            .filter { $0.date.shortDescription == date.shortDescription }
+            .first ?? RealmConfig.initialDoze(for: date)
     }
 
     /// Updates an Item object with an ID for new states.

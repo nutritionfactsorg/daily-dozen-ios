@@ -21,8 +21,7 @@ class ServingsViewController: UIViewController, UITableViewDelegate, UICollectio
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        dataProvider.viewModel = DozeViewModel(doze: realm.getDoze())
-
+        setViewModel(for: Date())
         tableView.dataSource = dataProvider
         tableView.delegate = self
     }
@@ -56,5 +55,14 @@ class ServingsViewController: UIViewController, UITableViewDelegate, UICollectio
         let itemName = dataProvider.viewModel.itemName(for: sender.tag)
         let viewController = DetailsBuilder.instantiateController(with: itemName)
         navigationController?.pushViewController(viewController, animated: true)
+    }
+
+    // MARK: - Methods
+    /// Sets a view model for the current date.
+    ///
+    /// - Parameter item: The current date.
+    func setViewModel(for date: Date) {
+        dataProvider.viewModel = DozeViewModel(doze: realm.getDoze(for: date))
+        tableView.reloadData()
     }
 }

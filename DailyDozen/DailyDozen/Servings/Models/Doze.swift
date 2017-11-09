@@ -13,6 +13,7 @@ class Doze: Object {
 
     @objc dynamic var date = Date()
     @objc dynamic var id = UUID().uuidString
+
     let items = List<Item>()
 
     convenience init(date: Date, items: [Item]) {

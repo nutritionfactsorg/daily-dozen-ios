@@ -36,5 +36,8 @@ class PagerViewController: UIViewController {
         dateButton.setTitle(dateFormatter.string(from: datePicker.date), for: .normal)
         dateButton.isHidden = false
         datePicker.isHidden = true
+
+        guard let viewController = childViewControllers.first as? ServingsViewController else { return }
+        viewController.setViewModel(for: datePicker.date)
     }
 }

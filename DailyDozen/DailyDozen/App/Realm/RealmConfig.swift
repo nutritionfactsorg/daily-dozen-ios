@@ -17,8 +17,23 @@ enum RealmConfig {
 
     case servings
 
-    /// Provides an initial doze for the empty Servings.
-    static var initialDoze: Doze {
+    /// A private instance of a Realm for the Servings.
+    private static let servingsConfig = Realm.Configuration(
+        fileURL: URL.inDocuments(for: Keys.realm),
+        objectTypes: [Doze.self, Item.self])
+
+    /// A public configuration instance of a Realm.
+    var configuration: Realm.Configuration {
+        switch self {
+        case .servings:
+            return RealmConfig.servingsConfig
+        }
+    }
+
+    /// Returns an initial doze for the current date.
+    ///
+    /// - Parameter date: The current date.
+    static func initialDoze(for date: Date) -> Doze {
         let items = [
             Item(name: "Beans", states: [false, false, false]),
             Item(name: "Berries", states: [false]),
@@ -35,7 +50,8 @@ enum RealmConfig {
             Item(name: "Vitamin B12", states: [false]),
             Item(name: "Vitamin D", states: [false])
         ]
-        let doze = Doze(date: Date(), items: items)
+
+        let doze = Doze(date: date, items: items)
 
         if let realm = try? Realm(configuration: RealmConfig.servings.configuration) {
             do {
@@ -47,18 +63,5 @@ enum RealmConfig {
             }
         }
         return doze
-    }
-
-    /// A private instance of a Realm for the Servings.
-    private static let servingsConfig = Realm.Configuration(
-        fileURL: URL.inDocuments(for: Keys.realm),
-        objectTypes: [Doze.self, Item.self])
-
-    /// A public configuration instance of a Realm.
-    var configuration: Realm.Configuration {
-        switch self {
-        case .servings:
-            return RealmConfig.servingsConfig
-        }
     }
 }
