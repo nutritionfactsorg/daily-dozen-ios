@@ -14,13 +14,14 @@ class ServingsCell: UITableViewCell {
     @IBOutlet private weak var itemImage: UIImageView!
     @IBOutlet private weak var itemLabel: UILabel!
     @IBOutlet weak var stateCollection: UICollectionView!
-    @IBOutlet weak var infoButton: UIButton!
+    @IBOutlet private weak var infoButton: UIButton!
 
     // MARK: - Methods
-    /// Sets the cell with the current name and tag.
+    /// Sets the cell with the current name, image name and tag.
     ///
     /// - Parameter name: The current name.
     /// - Parameter tag: The current tag.
+    /// - Parameter tag: The image name tag.
     func configure(with name: String, tag: Int, imageName: String) {
         itemLabel.text = name
         stateCollection.tag = tag

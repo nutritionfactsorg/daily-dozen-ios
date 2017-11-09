@@ -12,7 +12,7 @@ class DetailsViewController: UIViewController, UITableViewDelegate {
 
     // MARK: - Outlets
     @IBOutlet private weak var tableView: UITableView!
-    @IBOutlet weak var dataProvider: DetailsDataProvider!
+    @IBOutlet private weak var dataProvider: DetailsDataProvider!
 
     // MARK: - UIViewController
     override func viewDidLoad() {

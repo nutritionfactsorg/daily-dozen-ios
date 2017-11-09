@@ -51,7 +51,8 @@ class ServingsViewController: UIViewController, UITableViewDelegate, UICollectio
         realm.saveStates(states, with: id)
     }
 
-    @IBAction func infoPressed(_ sender: UIButton) {
+    // MARK: - Actions
+    @IBAction private func infoPressed(_ sender: UIButton) {
         let itemName = dataProvider.viewModel.itemName(for: sender.tag)
         let viewController = DetailsBuilder.instantiateController(with: itemName)
         navigationController?.pushViewController(viewController, animated: true)

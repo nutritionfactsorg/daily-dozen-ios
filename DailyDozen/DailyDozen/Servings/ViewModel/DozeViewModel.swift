@@ -52,7 +52,7 @@ class DozeViewModel {
         return Array(doze.items[index].states)
     }
 
-    /// Returns item ID in the doze for the current index.
+    /// Returns an item ID in the doze for the current index.
     ///
     /// - Parameter index: The current index.
     /// - Returns: The item id.
@@ -60,6 +60,10 @@ class DozeViewModel {
         return doze.items[index].id
     }
 
+    /// Returns an image name for the current index.
+    ///
+    /// - Parameter index: The current index.
+    /// - Returns: The image name.
     func imageName(for index: Int) -> String {
         let name = "ic_\(itemName(for: index).lowercased().replacingOccurrences(of: " ", with: "_"))"
         return name

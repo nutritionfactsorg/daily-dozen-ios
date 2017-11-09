@@ -20,6 +20,10 @@ class TextsProvider {
         static let plist = "plist"
     }
 
+    /// Loads static texts for the current item.
+    ///
+    /// - Parameter itemName: The current item name.
+    /// - Returns: A detail view model for static texts.
     func loadDetail(for itemName: String) -> DetailViewModel {
         guard
             let path = Bundle.main.path(
