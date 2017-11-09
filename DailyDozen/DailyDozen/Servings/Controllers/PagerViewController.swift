@@ -7,34 +7,34 @@
 //
 
 import UIKit
-import BmoViewPager
 
-class PagerViewController: UIViewController, BmoViewPagerDataSource, BmoViewPagerDelegate {
+class PagerViewController: UIViewController {
 
     // MARK: - Outlets
-    @IBOutlet weak var pagerNavigation: BmoViewPagerNavigationBar!
-    @IBOutlet weak var viewPager: BmoViewPager!
-
-    // MARK: - UIViewController
-    override func viewDidLoad() {
-        super.viewDidLoad()
-        viewPager.dataSource = self
-        viewPager.delegate = self
-        viewPager.infinitScroll = true
-        pagerNavigation.viewPager = viewPager
+    @IBOutlet private weak var dateButton: UIButton!
+    @IBOutlet private weak var datePicker: UIDatePicker! {
+        didSet {
+            datePicker.maximumDate = Date()
+        }
     }
 
-    // MARK: - BmoViewPagerDataSource
-    func bmoViewPagerDataSourceNumberOfPage(in viewPager: BmoViewPager) -> Int {
-        return 1
+    // MARK: - Propeties
+    private lazy var dateFormatter: DateFormatter = {
+        let formatter = DateFormatter()
+        formatter.dateStyle = .long
+        formatter.locale = Locale.current
+        return formatter
+    }()
+
+    // MARK: - Actions
+    @IBAction private func dateButtonPressed(_ sender: UIButton) {
+        datePicker.isHidden = false
+        dateButton.isHidden = true
     }
 
-    func bmoViewPagerDataSource(_ viewPager: BmoViewPager, viewControllerForPageAt page: Int) -> UIViewController {
-        return ServingsBuilder.instantiateController(with: String(page))
-    }
-
-    func bmoViewPagerDataSourceNaviagtionBarItemTitle(_ viewPager: BmoViewPager, navigationBar: BmoViewPagerNavigationBar, forPageListAt page: Int) -> String? {
-
-        return String(page)
+    @IBAction private func dateChanged(_ sender: UIDatePicker) {
+        dateButton.setTitle(dateFormatter.string(from: datePicker.date), for: .normal)
+        dateButton.isHidden = false
+        datePicker.isHidden = true
     }
 }

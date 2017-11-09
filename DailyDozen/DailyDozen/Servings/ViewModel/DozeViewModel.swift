@@ -15,8 +15,8 @@ class DozeViewModel {
 
     private lazy var dateFormatter: DateFormatter = {
         let formatter = DateFormatter()
-        formatter.dateStyle = .medium
-        formatter.locale = Locale.current
+        formatter.dateStyle = .short
+        formatter.locale = Locale(identifier: "en_GB")
         return formatter
     }()
 

@@ -9,6 +9,7 @@
 import UIKit
 
 enum SectionType: Int {
+
     case image, sizes, types
 
     var height: CGFloat {

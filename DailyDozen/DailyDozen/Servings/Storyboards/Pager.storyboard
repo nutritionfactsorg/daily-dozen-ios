@@ -18,15 +18,55 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Liv-4f-27k" customClass="BmoViewPager" customModule="BmoViewPager">
-                                <rect key="frame" x="0.0" y="60" width="375" height="607"/>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Liv-4f-27k">
+                                <rect key="frame" x="0.0" y="70" width="375" height="597"/>
+                                <subviews>
+                                    <containerView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="KcS-Ss-A40">
+                                        <rect key="frame" x="0.0" y="0.0" width="375" height="597"/>
+                                        <connections>
+                                            <segue destination="0ra-CW-Eiv" kind="embed" id="Vlr-Vk-Tqc"/>
+                                        </connections>
+                                    </containerView>
+                                </subviews>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                            </view>
-                            <view contentMode="center" translatesAutoresizingMaskIntoConstraints="NO" id="BQF-ze-lmn" customClass="BmoViewPagerNavigationBar" customModule="BmoViewPager">
-                                <rect key="frame" x="0.0" y="20" width="375" height="40"/>
-                                <color key="backgroundColor" red="0.58431372550000005" green="0.88235294119999996" blue="0.74525697000000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="40" id="Wpa-SS-vTl"/>
+                                    <constraint firstItem="KcS-Ss-A40" firstAttribute="leading" secondItem="Liv-4f-27k" secondAttribute="leading" id="Dyk-cc-QS9"/>
+                                    <constraint firstItem="KcS-Ss-A40" firstAttribute="top" secondItem="Liv-4f-27k" secondAttribute="top" id="eLH-hb-Op9"/>
+                                    <constraint firstAttribute="bottom" secondItem="KcS-Ss-A40" secondAttribute="bottom" id="tHi-W8-Aay"/>
+                                    <constraint firstAttribute="trailing" secondItem="KcS-Ss-A40" secondAttribute="trailing" id="xPn-nj-e0Q"/>
+                                </constraints>
+                            </view>
+                            <view contentMode="center" translatesAutoresizingMaskIntoConstraints="NO" id="BQF-ze-lmn">
+                                <rect key="frame" x="0.0" y="20" width="375" height="50"/>
+                                <subviews>
+                                    <datePicker hidden="YES" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" datePickerMode="date" minuteInterval="1" translatesAutoresizingMaskIntoConstraints="NO" id="Y2o-Dk-Qso">
+                                        <rect key="frame" x="0.0" y="0.0" width="375" height="50"/>
+                                        <date key="date" timeIntervalSinceReferenceDate="531870647.73783201">
+                                            <!--2017-11-08 21:50:47 +0000-->
+                                        </date>
+                                        <connections>
+                                            <action selector="dateChanged:" destination="0HD-X6-u6e" eventType="valueChanged" id="4IK-tb-0fP"/>
+                                        </connections>
+                                    </datePicker>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="OC8-wt-JgC">
+                                        <rect key="frame" x="0.0" y="0.0" width="375" height="50"/>
+                                        <fontDescription key="fontDescription" type="boldSystem" pointSize="30"/>
+                                        <state key="normal" title="Today"/>
+                                        <connections>
+                                            <action selector="dateButtonPressed:" destination="0HD-X6-u6e" eventType="touchUpInside" id="pYb-t8-oWb"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                                <constraints>
+                                    <constraint firstAttribute="trailing" secondItem="OC8-wt-JgC" secondAttribute="trailing" id="7PN-f8-PCU"/>
+                                    <constraint firstItem="Y2o-Dk-Qso" firstAttribute="top" secondItem="BQF-ze-lmn" secondAttribute="top" id="7bW-Cj-GI0"/>
+                                    <constraint firstAttribute="bottom" secondItem="Y2o-Dk-Qso" secondAttribute="bottom" id="Bnm-ZX-r5e"/>
+                                    <constraint firstAttribute="trailing" secondItem="Y2o-Dk-Qso" secondAttribute="trailing" id="NR1-Qi-vlN"/>
+                                    <constraint firstAttribute="bottom" secondItem="OC8-wt-JgC" secondAttribute="bottom" id="NfV-ai-W3o"/>
+                                    <constraint firstAttribute="height" constant="50" id="Wpa-SS-vTl"/>
+                                    <constraint firstItem="OC8-wt-JgC" firstAttribute="top" secondItem="BQF-ze-lmn" secondAttribute="top" id="iM1-iW-Mtq"/>
+                                    <constraint firstItem="OC8-wt-JgC" firstAttribute="leading" secondItem="BQF-ze-lmn" secondAttribute="leading" id="zX4-Ir-21s"/>
+                                    <constraint firstItem="Y2o-Dk-Qso" firstAttribute="leading" secondItem="BQF-ze-lmn" secondAttribute="leading" id="zX8-S9-Ze5"/>
                                 </constraints>
                             </view>
                         </subviews>
@@ -43,13 +83,21 @@
                         <viewLayoutGuide key="safeArea" id="rUX-Nf-zTn"/>
                     </view>
                     <connections>
-                        <outlet property="pagerNavigation" destination="BQF-ze-lmn" id="xTw-Ja-hsP"/>
-                        <outlet property="viewPager" destination="Liv-4f-27k" id="Qir-aC-9d6"/>
+                        <outlet property="dateButton" destination="OC8-wt-JgC" id="Unk-CP-gAS"/>
+                        <outlet property="datePicker" destination="Y2o-Dk-Qso" id="e9x-SE-X0d"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="rba-Fd-AgX" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="437.60000000000002" y="464.6176911544228"/>
+        </scene>
+        <!--Servings-->
+        <scene sceneID="RI7-v4-ZcN">
+            <objects>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="ip6-Zc-t2J" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <viewControllerPlaceholder storyboardName="Servings" id="0ra-CW-Eiv" sceneMemberID="viewController"/>
+            </objects>
+            <point key="canvasLocation" x="1063" y="464"/>
         </scene>
     </scenes>
 </document>

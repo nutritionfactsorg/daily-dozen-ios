@@ -27,17 +27,8 @@ class ServingsBuilder {
                 .instantiateInitialViewController() as? ServingsViewController
             else { fatalError("There should be a controller") }
 
-        viewController.view.backgroundColor = generateRandomColor()
         viewController.title = title
 
         return viewController
-    }
-
-    static func generateRandomColor() -> UIColor {
-        let hue = CGFloat(arc4random() % 256) / 256 // use 256 to get full range from 0.0 to 1.0
-        let saturation = CGFloat(arc4random() % 128) / 256 + 0.5 // from 0.5 to 1.0 to stay away from white
-        let brightness = CGFloat(arc4random() % 128) / 256 + 0.5 // from 0.5 to 1.0 to stay away from black
-
-        return UIColor(hue: hue, saturation: saturation, brightness: brightness, alpha: 1)
     }
 }
