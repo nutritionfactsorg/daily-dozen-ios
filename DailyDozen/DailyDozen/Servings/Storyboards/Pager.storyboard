@@ -49,7 +49,7 @@
                                         </connections>
                                     </datePicker>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="OC8-wt-JgC">
-                                        <rect key="frame" x="0.0" y="0.0" width="375" height="50"/>
+                                        <rect key="frame" x="10" y="5" width="355" height="45"/>
                                         <fontDescription key="fontDescription" type="boldSystem" pointSize="30"/>
                                         <state key="normal" title="Today"/>
                                         <connections>
@@ -58,14 +58,14 @@
                                     </button>
                                 </subviews>
                                 <constraints>
-                                    <constraint firstAttribute="trailing" secondItem="OC8-wt-JgC" secondAttribute="trailing" id="7PN-f8-PCU"/>
+                                    <constraint firstAttribute="trailing" secondItem="OC8-wt-JgC" secondAttribute="trailing" constant="10" id="7PN-f8-PCU"/>
                                     <constraint firstItem="Y2o-Dk-Qso" firstAttribute="top" secondItem="BQF-ze-lmn" secondAttribute="top" id="7bW-Cj-GI0"/>
                                     <constraint firstAttribute="bottom" secondItem="Y2o-Dk-Qso" secondAttribute="bottom" id="Bnm-ZX-r5e"/>
                                     <constraint firstAttribute="trailing" secondItem="Y2o-Dk-Qso" secondAttribute="trailing" id="NR1-Qi-vlN"/>
                                     <constraint firstAttribute="bottom" secondItem="OC8-wt-JgC" secondAttribute="bottom" id="NfV-ai-W3o"/>
                                     <constraint firstAttribute="height" constant="50" id="Wpa-SS-vTl"/>
-                                    <constraint firstItem="OC8-wt-JgC" firstAttribute="top" secondItem="BQF-ze-lmn" secondAttribute="top" id="iM1-iW-Mtq"/>
-                                    <constraint firstItem="OC8-wt-JgC" firstAttribute="leading" secondItem="BQF-ze-lmn" secondAttribute="leading" id="zX4-Ir-21s"/>
+                                    <constraint firstItem="OC8-wt-JgC" firstAttribute="top" secondItem="BQF-ze-lmn" secondAttribute="top" constant="5" id="iM1-iW-Mtq"/>
+                                    <constraint firstItem="OC8-wt-JgC" firstAttribute="leading" secondItem="BQF-ze-lmn" secondAttribute="leading" constant="10" id="zX4-Ir-21s"/>
                                     <constraint firstItem="Y2o-Dk-Qso" firstAttribute="leading" secondItem="BQF-ze-lmn" secondAttribute="leading" id="zX8-S9-Ze5"/>
                                 </constraints>
                             </view>
@@ -94,8 +94,8 @@
         <!--Servings-->
         <scene sceneID="RI7-v4-ZcN">
             <objects>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="ip6-Zc-t2J" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <viewControllerPlaceholder storyboardName="Servings" id="0ra-CW-Eiv" sceneMemberID="viewController"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="ip6-Zc-t2J" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1063" y="464"/>
         </scene>

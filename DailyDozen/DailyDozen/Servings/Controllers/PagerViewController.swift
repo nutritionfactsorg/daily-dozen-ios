@@ -11,7 +11,13 @@ import UIKit
 class PagerViewController: UIViewController {
 
     // MARK: - Outlets
-    @IBOutlet private weak var dateButton: UIButton!
+    @IBOutlet private weak var dateButton: UIButton! {
+        didSet {
+            dateButton.layer.borderWidth = 1
+            dateButton.layer.borderColor = dateButton.titleColor(for: .normal)?.cgColor
+            dateButton.layer.cornerRadius = 5
+        }
+    }
     @IBOutlet private weak var datePicker: UIDatePicker! {
         didSet {
             datePicker.maximumDate = Date()
