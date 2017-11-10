@@ -24,13 +24,6 @@ class DetailsDataProvider: NSObject, UITableViewDataSource {
         return 3
     }
 
-    func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
-        guard let sectionType = SectionType(rawValue: section) else {
-            fatalError("There should be a section type")
-        }
-        return sectionType.title
-    }
-
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         guard let sectionType = SectionType(rawValue: section) else {
             fatalError("There should be a section type")

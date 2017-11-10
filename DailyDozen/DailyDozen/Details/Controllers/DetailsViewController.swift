@@ -27,7 +27,21 @@ class DetailsViewController: UIViewController, UITableViewDelegate {
         guard let sectionType = SectionType(rawValue: indexPath.section) else {
             fatalError("There should be a section type")
         }
-        return sectionType.height
+        return sectionType.rowHeight
+    }
+
+    func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
+        guard let sectionType = SectionType(rawValue: section) else {
+            fatalError("There should be a section type")
+        }
+        return sectionType.headerHeigh
+    }
+
+    func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
+        guard let sectionType = SectionType(rawValue: section) else {
+            fatalError("There should be a section type")
+        }
+        return sectionType.headerView
     }
 
     // MARK: - Methods
