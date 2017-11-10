@@ -43,18 +43,33 @@ class DetailsDataProvider: NSObject, UITableViewDataSource {
             fatalError("There should be a section type")
         }
         switch sectionType {
+
         case .image:
-            let cell = tableView.dequeueReusableCell(withIdentifier: Keys.imageID, for: indexPath)
-            cell.imageView?.image = viewModel.image
+            guard
+                let cell = tableView
+                    .dequeueReusableCell(withIdentifier: Keys.imageID) as? ImageCell
+                else { return UITableViewCell() }
+
+            cell.configure(image: viewModel.image)
             return cell
+
         case .sizes:
-            let cell = tableView.dequeueReusableCell(withIdentifier: Keys.sizesID, for: indexPath)
-            cell.textLabel?.text = viewModel.sizeDescription(for: indexPath.row)
+            guard
+                let cell = tableView
+                    .dequeueReusableCell(withIdentifier: Keys.sizesID) as? SizesCell
+                else { return UITableViewCell() }
+
+            cell.configure(title: viewModel.sizeDescription(for: indexPath.row))
             return cell
         case .types:
-            let cell = tableView.dequeueReusableCell(withIdentifier: Keys.typesID, for: indexPath)
-            cell.textLabel?.text = viewModel.typeData(for: indexPath.row).name
-            cell.detailTextLabel?.isHidden = viewModel.typeData(for: indexPath.row).link == ""
+            guard
+                let cell = tableView
+                    .dequeueReusableCell(withIdentifier: Keys.typesID) as? TypesCell
+                else { return UITableViewCell() }
+
+            cell
+                .configure(title: viewModel.typeData(for: indexPath.row).name,
+                           link: viewModel.typeData(for: indexPath.row).link)
             return cell
         }
     }
