@@ -12,6 +12,7 @@ import RealmSwift
 class RealmProvider {
 
     private let realm: Realm
+    private var unsavedDoze: Doze?
 
     init() {
         guard let realm = try? Realm(configuration: RealmConfig.servings.configuration) else {
@@ -24,10 +25,12 @@ class RealmProvider {
     ///
     /// - Returns: The doze.
     func getDoze(for date: Date) -> Doze {
-        return realm
+        let doze = realm
             .objects(Doze.self)
             .filter { $0.date.shortDescription == date.shortDescription }
             .first ?? RealmConfig.initialDoze(for: date)
+        unsavedDoze = doze
+        return doze
     }
 
     /// Updates an Item object with an ID for new states.
@@ -36,12 +39,27 @@ class RealmProvider {
     ///   - states: The new state.
     ///   - id: The ID.
     func saveStates(_ states: [Bool], with id: String) {
+        saveDoze()
         do {
             try realm.write {
                 realm.create(Item.self, value: ["id": id, "states": states], update: true)
             }
         } catch {
             print(error.localizedDescription)
+        }
+    }
+
+    /// Saves the unsaved doze.
+    private func saveDoze() {
+        if let doze = unsavedDoze {
+            do {
+                try realm.write {
+                    realm.add(doze, update: true)
+                    unsavedDoze = nil
+                }
+            } catch {
+                print(error.localizedDescription)
+            }
         }
     }
 }

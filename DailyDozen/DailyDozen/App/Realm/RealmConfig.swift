@@ -53,15 +53,15 @@ enum RealmConfig {
 
         let doze = Doze(date: date, items: items)
 
-        if let realm = try? Realm(configuration: RealmConfig.servings.configuration) {
-            do {
-                try realm.write {
-                    realm.add(doze, update: true)
-                }
-            } catch {
-                print(error.localizedDescription)
-            }
-        }
+//        if let realm = try? Realm(configuration: RealmConfig.servings.configuration) {
+//            do {
+//                try realm.write {
+//                    realm.add(doze, update: true)
+//                }
+//            } catch {
+//                print(error.localizedDescription)
+//            }
+//        }
         return doze
     }
 }
