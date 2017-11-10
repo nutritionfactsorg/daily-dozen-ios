@@ -50,18 +50,6 @@ enum RealmConfig {
             Item(name: "Vitamin B12", states: [false]),
             Item(name: "Vitamin D", states: [false])
         ]
-
-        let doze = Doze(date: date, items: items)
-
-//        if let realm = try? Realm(configuration: RealmConfig.servings.configuration) {
-//            do {
-//                try realm.write {
-//                    realm.add(doze, update: true)
-//                }
-//            } catch {
-//                print(error.localizedDescription)
-//            }
-//        }
-        return doze
+        return Doze(date: date, items: items)
     }
 }
