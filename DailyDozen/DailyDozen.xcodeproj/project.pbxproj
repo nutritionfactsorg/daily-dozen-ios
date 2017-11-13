@@ -45,6 +45,7 @@
 		CFE698461F974B9700CD7905 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CFE698441F974B9700CD7905 /* LaunchScreen.storyboard */; };
 		CFE793571FA756E40084F075 /* RealmProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = CFE793561FA756E40084F075 /* RealmProvider.swift */; };
 		CFF117731F97530300BFE73A /* Menu.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CFF117721F97530300BFE73A /* Menu.storyboard */; };
+		CFF72AFB1FB9A499001CC2E9 /* UnitsType.swift in Sources */ = {isa = PBXBuildFile; fileRef = CFF72AFA1FB9A499001CC2E9 /* UnitsType.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -88,6 +89,7 @@
 		CFE698471F974B9700CD7905 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		CFE793561FA756E40084F075 /* RealmProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RealmProvider.swift; sourceTree = "<group>"; };
 		CFF117721F97530300BFE73A /* Menu.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Menu.storyboard; sourceTree = "<group>"; };
+		CFF72AFA1FB9A499001CC2E9 /* UnitsType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UnitsType.swift; sourceTree = "<group>"; };
 		DA1790B64ED37B6DB70223BE /* Pods-DailyDozen.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-DailyDozen.debug.xcconfig"; path = "Pods/Target Support Files/Pods-DailyDozen/Pods-DailyDozen.debug.xcconfig"; sourceTree = "<group>"; };
 		F514690D725E67AD54735EB9 /* Pods_DailyDozen.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_DailyDozen.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
@@ -116,6 +118,7 @@
 			isa = PBXGroup;
 			children = (
 				CF17C8A61FAA019600367BF8 /* SectionType.swift */,
+				CFF72AFA1FB9A499001CC2E9 /* UnitsType.swift */,
 			);
 			path = SupportingFiles;
 			sourceTree = "<group>";
@@ -543,6 +546,7 @@
 				CFAAB37A1F9F4A8000B24748 /* DozeViewModel.swift in Sources */,
 				CF5B28B11FA0A2C500D57A48 /* StateCell.swift in Sources */,
 				CF2680021FB477AD004A6200 /* Date.swift in Sources */,
+				CFF72AFB1FB9A499001CC2E9 /* UnitsType.swift in Sources */,
 				CFC4A84F1F9761FF00B5AC75 /* PagerViewController.swift in Sources */,
 				CF4DECF91F9DF82900DA094B /* ServingsDataProvider.swift in Sources */,
 				CF17C8A71FAA019600367BF8 /* SectionType.swift in Sources */,

@@ -44,6 +44,25 @@ class DetailsViewController: UIViewController, UITableViewDelegate {
         return sectionType.headerView
     }
 
+    // MARK: - Actions
+    /// Updates the tableView for the current unit type.
+    ///
+    /// - Parameter sender: The button.
+    @IBAction func unitsChanged(_ sender: UIButton) {
+        let sectionIndex = SectionType.sizes.rawValue
+        guard
+            let text = sender.titleLabel?.text?.lowercased(),
+            let currentUnitsType = UnitsType(rawValue: text),
+            let indexPaths = tableView.indexPathsForRows(in: tableView.rect(forSection: sectionIndex))
+            else { return }
+
+        let newUnitsType = currentUnitsType.toggledType
+        let title = newUnitsType.title
+        sender.setTitle(title, for: .normal)
+        dataProvider.viewModel.unitsType = newUnitsType
+        tableView.reloadRows(at: indexPaths, with: .fade)
+    }
+
     // MARK: - Methods
     /// Sets a view model for the current item.
     ///

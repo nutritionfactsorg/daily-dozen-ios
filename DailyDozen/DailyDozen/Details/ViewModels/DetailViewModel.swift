@@ -14,6 +14,8 @@ struct DetailViewModel {
     private let detail: Detail
     private let itemName: String
 
+    var unitsType = UnitsType.metric
+
     /// Returns the number of items in the metric sizes.
     var sizesCount: Int {
         return detail.metricSizes.count
@@ -41,7 +43,7 @@ struct DetailViewModel {
     /// - Parameter index: The current index.
     /// - Returns: A description string.
     func sizeDescription(for index: Int) -> String {
-        return detail.metricSizes[index]
+        return unitsType == .metric ? detail.metricSizes[index] : detail.imperialSizes[index]
     }
 
     /// Returns a tuple of the type name and type link for the current index.

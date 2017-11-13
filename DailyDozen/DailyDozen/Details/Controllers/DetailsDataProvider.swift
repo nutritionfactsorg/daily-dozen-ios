@@ -59,8 +59,10 @@ class DetailsDataProvider: NSObject, UITableViewDataSource {
                     .dequeueReusableCell(withIdentifier: Keys.sizesID) as? SizesCell
                 else { return UITableViewCell() }
 
-            cell.configure(title: viewModel.sizeDescription(for: indexPath.row))
+            cell
+                .configure(title: viewModel.sizeDescription(for: indexPath.row))
             return cell
+
         case .types:
             guard
                 let cell = tableView
