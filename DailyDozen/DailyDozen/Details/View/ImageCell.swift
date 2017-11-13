@@ -10,8 +10,13 @@ import UIKit
 
 class ImageCell: UITableViewCell {
 
+    // MARK: - Outlets
     @IBOutlet private weak var itemImage: UIImageView!
 
+    // MARK: - Methods
+    /// Sets the new item image.
+    ///
+    /// - Parameter image: The new image.
     func configure(image: UIImage?) {
         itemImage.image = image
     }

@@ -15,11 +15,12 @@ struct DetailViewModel {
     private let itemName: String
     private let topic: String
 
+    var unitsType = UnitsType.metric
+
+    /// Returns the main topic url.
     var topicURL: URL {
         return LinksService.shared.link(for: topic)
     }
-
-    var unitsType = UnitsType.metric
 
     /// Returns the number of items in the metric sizes.
     var sizesCount: Int {
@@ -52,7 +53,7 @@ struct DetailViewModel {
         return unitsType == .metric ? detail.metricSizes[index] : detail.imperialSizes[index]
     }
 
-    /// Returns a tuple of the type name and type link for the current index.
+    /// Returns a tuple of the type name and type link state for the current index.
     ///
     /// - Parameter index: The current index.
     /// - Returns: A tuple of the type name and type link.
@@ -62,6 +63,10 @@ struct DetailViewModel {
         return (name, hasLink)
     }
 
+    /// Returns the type topic for the current index.
+    ///
+    /// - Parameter index: The current index.
+    /// - Returns: The type toipic url.
     func typeTopicURL(for index: Int) -> URL? {
         guard let topic = detail.types[index].values.first else { return nil }
         return LinksService.shared.link(for: topic)

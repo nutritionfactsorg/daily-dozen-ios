@@ -22,7 +22,7 @@ class LinksService {
     // MARK: - Properties
     private let baseURL: URL
 
-    /// Returns the shared NetworkClient object.
+    /// Returns the shared LinksService object.
     static let shared: LinksService = {
         guard let path = Bundle.main.path(
             forResource: "LinkSettings",
@@ -47,6 +47,10 @@ class LinksService {
         baseURL = url
     }
 
+    /// Returns a url for the current topic.
+    ///
+    /// - Parameter topic: The current topic.
+    /// - Returns: A url.
     func link(for topic: String) -> URL {
         return baseURL
             .appendingPathComponent(URLKeys.topics)

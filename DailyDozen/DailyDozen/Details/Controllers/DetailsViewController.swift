@@ -59,7 +59,7 @@ class DetailsViewController: UIViewController, UITableViewDelegate {
     /// Updates the tableView for the current unit type.
     ///
     /// - Parameter sender: The button.
-    @IBAction func unitsChanged(_ sender: UIButton) {
+    @IBAction private func unitsChanged(_ sender: UIButton) {
         let sectionIndex = SectionType.sizes.rawValue
         guard
             let text = sender.titleLabel?.text?.lowercased(),
@@ -74,7 +74,10 @@ class DetailsViewController: UIViewController, UITableViewDelegate {
         tableView.reloadRows(at: indexPaths, with: .fade)
     }
 
-    @IBAction func linkButtonPressed(_ sender: UIButton) {
+    /// Opens the type topic url in the browser.
+    ///
+    /// - Parameter sender: <#sender description#>
+    @IBAction private func linkButtonPressed(_ sender: UIButton) {
         guard let url = dataProvider.viewModel.typeTopicURL(for: sender.tag) else { return }
         UIApplication.shared.open(url, options: [:], completionHandler: nil)
     }
@@ -88,7 +91,8 @@ class DetailsViewController: UIViewController, UITableViewDelegate {
         dataProvider.viewModel = textProvider.loadDetail(for: item)
     }
 
-    @objc func barItemPressed() {
+    /// Opens the main topic url in the browser.
+    @objc private func barItemPressed() {
         UIApplication.shared
             .open(dataProvider.viewModel.topicURL,
                   options: [:],

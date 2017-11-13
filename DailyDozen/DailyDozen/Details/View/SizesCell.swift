@@ -10,8 +10,13 @@ import UIKit
 
 class SizesCell: UITableViewCell {
 
+    // MARK: - Outlets
     @IBOutlet private weak var titleLabel: UILabel!
 
+    // MARK: - Methods.
+    /// Sets the new title text.
+    ///
+    /// - Parameter title: The new title text.
     func configure(title: String) {
         titleLabel.text = title
     }
