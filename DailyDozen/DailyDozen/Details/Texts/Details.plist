@@ -90,6 +90,8 @@
 				<string>tempeh</string>
 			</dict>
 		</array>
+		<key>Topic</key>
+		<string>beans</string>
 	</dict>
 	<key>Berries</key>
 	<dict>
@@ -157,6 +159,8 @@
 				<string>strawberries</string>
 			</dict>
 		</array>
+		<key>Topic</key>
+		<string>berries</string>
 	</dict>
 	<key>Other Fruits</key>
 	<dict>
@@ -290,6 +294,8 @@
 				<string>watermelon</string>
 			</dict>
 		</array>
+		<key>Topic</key>
+		<string>fruit</string>
 	</dict>
 	<key>Cruciferous Vegetables</key>
 	<dict>
@@ -363,6 +369,8 @@
 				<string>watercress</string>
 			</dict>
 		</array>
+		<key>Topic</key>
+		<string>cruciferous-vegetables</string>
 	</dict>
 	<key>Greens</key>
 	<dict>
@@ -422,6 +430,8 @@
 				<string>turnips</string>
 			</dict>
 		</array>
+		<key>Topic</key>
+		<string>greens</string>
 	</dict>
 	<key>Other Vegetables</key>
 	<dict>
@@ -517,6 +527,8 @@
 				<string>zucchini</string>
 			</dict>
 		</array>
+		<key>Topic</key>
+		<string>vegetables</string>
 	</dict>
 	<key>Flaxseeds</key>
 	<dict>
@@ -542,6 +554,8 @@
 				<string></string>
 			</dict>
 		</array>
+		<key>Topic</key>
+		<string>flax-seeds</string>
 	</dict>
 	<key>Nuts</key>
 	<dict>
@@ -613,6 +627,8 @@
 				<string>walnuts</string>
 			</dict>
 		</array>
+		<key>Topic</key>
+		<string>nuts</string>
 	</dict>
 	<key>Spices</key>
 	<dict>
@@ -760,6 +776,8 @@
 				<string></string>
 			</dict>
 		</array>
+		<key>Topic</key>
+		<string>spices</string>
 	</dict>
 	<key>Whole Grains</key>
 	<dict>
@@ -829,6 +847,8 @@
 				<string>rice</string>
 			</dict>
 		</array>
+		<key>Topic</key>
+		<string>grains</string>
 	</dict>
 	<key>Beverages</key>
 	<dict>
@@ -910,6 +930,8 @@
 				<string>white-tea</string>
 			</dict>
 		</array>
+		<key>Topic</key>
+		<string>beverages</string>
 	</dict>
 	<key>Exercise</key>
 	<dict>
@@ -1145,6 +1167,8 @@
 				<string></string>
 			</dict>
 		</array>
+		<key>Topic</key>
+		<string>exercise</string>
 	</dict>
 	<key>Vitamin B12</key>
 	<dict>
@@ -1159,6 +1183,8 @@
 		<array>
 			<dict/>
 		</array>
+		<key>Topic</key>
+		<string>vitamin-b12</string>
 	</dict>
 	<key>Vitamin D</key>
 	<dict>
@@ -1173,6 +1199,8 @@
 		<array>
 			<dict/>
 		</array>
+		<key>Topic</key>
+		<string>vitamin-d-supplements</string>
 	</dict>
 </dict>
 </plist>

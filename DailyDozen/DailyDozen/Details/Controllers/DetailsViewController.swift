@@ -10,6 +10,11 @@ import UIKit
 
 class DetailsViewController: UIViewController, UITableViewDelegate {
 
+    // MARK: - Nested
+    private struct Keys {
+        static let videos = "VIDEOS"
+    }
+
     // MARK: - Outlets
     @IBOutlet private weak var tableView: UITableView!
     @IBOutlet private weak var dataProvider: DetailsDataProvider!
@@ -20,6 +25,12 @@ class DetailsViewController: UIViewController, UITableViewDelegate {
 
         tableView.dataSource = dataProvider
         tableView.delegate = self
+
+        navigationItem
+            .rightBarButtonItem = UIBarButtonItem(title: Keys.videos,
+                                                  style: .plain,
+                                                  target: self,
+                                                  action: #selector(barItemPressed))
     }
 
     // MARK: - UITableViewDelegate
@@ -64,7 +75,7 @@ class DetailsViewController: UIViewController, UITableViewDelegate {
     }
 
     @IBAction func linkButtonPressed(_ sender: UIButton) {
-        guard let url = dataProvider.viewModel.topicURL(for: sender.tag) else { return }
+        guard let url = dataProvider.viewModel.typeTopicURL(for: sender.tag) else { return }
         UIApplication.shared.open(url, options: [:], completionHandler: nil)
     }
 
@@ -75,5 +86,12 @@ class DetailsViewController: UIViewController, UITableViewDelegate {
     func setViewModel(for item: String) {
         let textProvider = TextsProvider()
         dataProvider.viewModel = textProvider.loadDetail(for: item)
+    }
+
+    @objc func barItemPressed() {
+        UIApplication.shared
+            .open(dataProvider.viewModel.topicURL,
+                  options: [:],
+                  completionHandler: nil)
     }
 }

@@ -17,6 +17,7 @@ class TextsProvider {
         static let metric = "Metric"
         static let imperial = "Imperial"
         static let types = "Types"
+        static let topic = "Topic"
         static let plist = "plist"
     }
 
@@ -43,8 +44,12 @@ class TextsProvider {
 
         guard
             let types = item[Keys.types] as? [[String: String]]
-            else { fatalError("There should be types")  }
+            else { fatalError("There should be types") }
 
-        return DetailViewModel(itemName: itemName, metricSizes: metric, imperialSizes: imperial, types: types)
+        guard
+            let topic = item[Keys.topic] as? String
+            else { fatalError("There should be types") }
+
+        return DetailViewModel(itemName: itemName, topic: topic, metricSizes: metric, imperialSizes: imperial, types: types)
     }
 }

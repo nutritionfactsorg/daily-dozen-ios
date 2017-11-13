@@ -13,6 +13,11 @@ struct DetailViewModel {
     // MARK: - Properties
     private let detail: Detail
     private let itemName: String
+    private let topic: String
+
+    var topicURL: URL {
+        return LinksService.shared.link(for: topic)
+    }
 
     var unitsType = UnitsType.metric
 
@@ -32,9 +37,10 @@ struct DetailViewModel {
     }
 
     // MARK: - Inits
-    init(itemName: String, metricSizes: [String], imperialSizes: [String], types: [[String: String]]) {
+    init(itemName: String, topic: String, metricSizes: [String], imperialSizes: [String], types: [[String: String]]) {
         detail = Detail(metricSizes: metricSizes, imperialSizes: imperialSizes, types: types)
         self.itemName = itemName
+        self.topic = topic
     }
 
     // MARK: - Methods
@@ -56,7 +62,7 @@ struct DetailViewModel {
         return (name, hasLink)
     }
 
-    func topicURL(for index: Int) -> URL? {
+    func typeTopicURL(for index: Int) -> URL? {
         guard let topic = detail.types[index].values.first else { return nil }
         return LinksService.shared.link(for: topic)
     }
