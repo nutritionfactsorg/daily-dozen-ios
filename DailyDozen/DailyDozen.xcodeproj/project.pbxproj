@@ -46,6 +46,8 @@
 		CFE793571FA756E40084F075 /* RealmProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = CFE793561FA756E40084F075 /* RealmProvider.swift */; };
 		CFF117731F97530300BFE73A /* Menu.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CFF117721F97530300BFE73A /* Menu.storyboard */; };
 		CFF72AFB1FB9A499001CC2E9 /* UnitsType.swift in Sources */ = {isa = PBXBuildFile; fileRef = CFF72AFA1FB9A499001CC2E9 /* UnitsType.swift */; };
+		CFF72AFE1FB9BAAA001CC2E9 /* LinkService.swift in Sources */ = {isa = PBXBuildFile; fileRef = CFF72AFD1FB9BAAA001CC2E9 /* LinkService.swift */; };
+		CFF72B001FB9BB70001CC2E9 /* LinkSettings.plist in Resources */ = {isa = PBXBuildFile; fileRef = CFF72AFF1FB9BB70001CC2E9 /* LinkSettings.plist */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -90,6 +92,8 @@
 		CFE793561FA756E40084F075 /* RealmProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RealmProvider.swift; sourceTree = "<group>"; };
 		CFF117721F97530300BFE73A /* Menu.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Menu.storyboard; sourceTree = "<group>"; };
 		CFF72AFA1FB9A499001CC2E9 /* UnitsType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UnitsType.swift; sourceTree = "<group>"; };
+		CFF72AFD1FB9BAAA001CC2E9 /* LinkService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LinkService.swift; sourceTree = "<group>"; };
+		CFF72AFF1FB9BB70001CC2E9 /* LinkSettings.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = LinkSettings.plist; sourceTree = "<group>"; };
 		DA1790B64ED37B6DB70223BE /* Pods-DailyDozen.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-DailyDozen.debug.xcconfig"; path = "Pods/Target Support Files/Pods-DailyDozen/Pods-DailyDozen.debug.xcconfig"; sourceTree = "<group>"; };
 		F514690D725E67AD54735EB9 /* Pods_DailyDozen.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_DailyDozen.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
@@ -290,6 +294,7 @@
 			children = (
 				CFE698501F974F0F00CD7905 /* Controllers */,
 				CFAAB37B1F9F4B0D00B24748 /* Realm */,
+				CFF72AFC1FB9BA4F001CC2E9 /* Services */,
 				CFAAB3751F9F3FCD00B24748 /* Extensions */,
 				CFE698531F974F6300CD7905 /* Storyboards */,
 				CFE698511F974F1800CD7905 /* SupportingFiles */,
@@ -368,6 +373,15 @@
 				CFCE5FCA1F978007005C672B /* Servings.storyboard */,
 			);
 			path = Storyboards;
+			sourceTree = "<group>";
+		};
+		CFF72AFC1FB9BA4F001CC2E9 /* Services */ = {
+			isa = PBXGroup;
+			children = (
+				CFF72AFD1FB9BAAA001CC2E9 /* LinkService.swift */,
+				CFF72AFF1FB9BB70001CC2E9 /* LinkSettings.plist */,
+			);
+			path = Services;
 			sourceTree = "<group>";
 		};
 		D0E09D1F35AF7D3FF1EA14DC /* Pods */ = {
@@ -451,6 +465,7 @@
 				CF64DF2C1FB5CD5100B4D124 /* TypesHeader.xib in Resources */,
 				CF64DF271FB5BAC400B4D124 /* SizesHeader.xib in Resources */,
 				CFE698411F974B9700CD7905 /* Main.storyboard in Resources */,
+				CFF72B001FB9BB70001CC2E9 /* LinkSettings.plist in Resources */,
 				CFF117731F97530300BFE73A /* Menu.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -524,6 +539,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				CF6E6D311FB1B26C00B177E7 /* DetailsBuilder.swift in Sources */,
+				CFF72AFE1FB9BAAA001CC2E9 /* LinkService.swift in Sources */,
 				CFC4A8521F97630100B5AC75 /* PagerBuilder.swift in Sources */,
 				CFC4A8541F9776A500B5AC75 /* ServingsViewController.swift in Sources */,
 				CFAAB3721F9F3BC600B24748 /* Doze.swift in Sources */,

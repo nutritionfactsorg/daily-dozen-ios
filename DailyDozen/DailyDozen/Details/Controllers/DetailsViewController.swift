@@ -63,6 +63,11 @@ class DetailsViewController: UIViewController, UITableViewDelegate {
         tableView.reloadRows(at: indexPaths, with: .fade)
     }
 
+    @IBAction func linkButtonPressed(_ sender: UIButton) {
+        guard let url = dataProvider.viewModel.topicURL(for: sender.tag) else { return }
+        UIApplication.shared.open(url, options: [:], completionHandler: nil)
+    }
+
     // MARK: - Methods
     /// Sets a view model for the current item.
     ///

@@ -71,7 +71,8 @@ class DetailsDataProvider: NSObject, UITableViewDataSource {
 
             cell
                 .configure(title: viewModel.typeData(for: indexPath.row).name,
-                           link: viewModel.typeData(for: indexPath.row).link)
+                           useLink: viewModel.typeData(for: indexPath.row).hasLink,
+                           tag: indexPath.row)
             return cell
         }
     }

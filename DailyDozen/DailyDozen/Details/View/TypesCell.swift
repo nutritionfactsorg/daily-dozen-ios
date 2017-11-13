@@ -13,8 +13,9 @@ class TypesCell: UITableViewCell {
     @IBOutlet private weak var titleLabel: UILabel!
     @IBOutlet private weak var linkButton: UIButton!
 
-    func configure(title: String, link: String) {
+    func configure(title: String, useLink: Bool, tag: Int) {
         titleLabel.text = title
-        linkButton.isHidden = link == ""
+        linkButton.isHidden = useLink
+        linkButton.tag = tag
     }
 }

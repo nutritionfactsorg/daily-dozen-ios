@@ -89,6 +89,9 @@
                                                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="xcg-0a-oqY">
                                                             <rect key="frame" x="291" y="0.0" width="54" height="53"/>
                                                             <state key="normal" title="VIDEOS"/>
+                                                            <connections>
+                                                                <action selector="linkButtonPressed:" destination="Hsh-Us-G4Y" eventType="touchUpInside" id="m5f-6J-yNo"/>
+                                                            </connections>
                                                         </button>
                                                     </subviews>
                                                 </stackView>
@@ -101,7 +104,7 @@
                                             </constraints>
                                         </tableViewCellContentView>
                                         <connections>
-                                            <outlet property="linkButton" destination="xcg-0a-oqY" id="LVH-rW-hY8"/>
+                                            <outlet property="linkButton" destination="xcg-0a-oqY" id="fqF-yu-7L3"/>
                                             <outlet property="titleLabel" destination="m5s-0r-St1" id="n6J-9g-0oB"/>
                                         </connections>
                                     </tableViewCell>

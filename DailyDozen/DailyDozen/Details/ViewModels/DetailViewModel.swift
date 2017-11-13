@@ -50,10 +50,14 @@ struct DetailViewModel {
     ///
     /// - Parameter index: The current index.
     /// - Returns: A tuple of the type name and type link.
-    func typeData(for index: Int) -> (name: String, link: String) {
+    func typeData(for index: Int) -> (name: String, hasLink: Bool) {
         let name = detail.types[index].keys.first ?? ""
-        let link = detail.types[index].values.first ?? ""
-        return (name, link)
+        let hasLink = detail.types[index].values.first == ""
+        return (name, hasLink)
     }
 
+    func topicURL(for index: Int) -> URL? {
+        guard let topic = detail.types[index].values.first else { return nil }
+        return LinksService.shared.link(for: topic)
+    }
 }
