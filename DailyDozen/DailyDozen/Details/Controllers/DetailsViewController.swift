@@ -76,7 +76,7 @@ class DetailsViewController: UIViewController, UITableViewDelegate {
 
     /// Opens the type topic url in the browser.
     ///
-    /// - Parameter sender: <#sender description#>
+    /// - Parameter sender: The button.
     @IBAction private func linkButtonPressed(_ sender: UIButton) {
         guard let url = dataProvider.viewModel.typeTopicURL(for: sender.tag) else { return }
         UIApplication.shared.open(url, options: [:], completionHandler: nil)

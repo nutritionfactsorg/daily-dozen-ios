@@ -20,18 +20,25 @@ class ServingsDataProvider: NSObject, UITableViewDataSource {
 
     // MARK: - Servings UITableViewDataSource
     func numberOfSections(in tableView: UITableView) -> Int {
-        return 1
+        return 2
     }
 
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return viewModel.count
+        guard section == 0 else {
+            return 2
+        }
+        return viewModel.count - 2
     }
 
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         guard let cell = tableView.dequeueReusableCell(withIdentifier: Keys.servingsCell) as? ServingsCell else {
             fatalError("There should be a cell")
         }
-        let index = indexPath.row
+        var index = indexPath.row
+        if indexPath.section == 1 {
+            index += tableView.numberOfRows(inSection: 0)
+        }
+
         cell.configure(
             with: viewModel.itemName(for: index),
             tag: index,

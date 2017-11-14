@@ -38,6 +38,15 @@ class ServingsViewController: UIViewController, UITableViewDelegate, UICollectio
         servingsCell.stateCollection.reloadData()
     }
 
+    func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
+        return section == 0 ? nil : Bundle.main
+            .loadNibNamed("VitaminsHeader", owner: nil)?.first as? UIView
+    }
+
+    func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
+        return section == 0 ? 0 : 50
+    }
+
     // MARK: - States UICollectionViewDelegate
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         var states = dataProvider.viewModel.itemStates(for: collectionView.tag)
