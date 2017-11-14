@@ -62,8 +62,28 @@ class ServingsViewController: UIViewController, UITableViewDelegate, UICollectio
     // MARK: - Actions
     @IBAction private func infoPressed(_ sender: UIButton) {
         let itemName = dataProvider.viewModel.itemName(for: sender.tag)
+        guard !itemName.contains("Vitamin") else {
+            let url = dataProvider.viewModel.topicURL(for: itemName)
+            UIApplication.shared
+                .open(url,
+                      options: [:],
+                      completionHandler: nil)
+            return
+        }
         let viewController = DetailsBuilder.instantiateController(with: itemName)
         navigationController?.pushViewController(viewController, animated: true)
+    }
+
+    @IBAction func vitaminHeaderPressed(_ sender: UIButton) {
+        let message =
+        """
+        Vitamin B12 and Vitamin D are essential for your health but do not count towards your daily servings.
+
+        They are included in this app to provide you with an easy way to track your intake.
+        """
+        let alertController = UIAlertController(title: "Vitamins", message: message, preferredStyle: .actionSheet)
+        alertController.addAction(UIAlertAction(title: "OK", style: .cancel, handler: nil))
+        present(alertController, animated: true, completion: nil)
     }
 
     // MARK: - Methods

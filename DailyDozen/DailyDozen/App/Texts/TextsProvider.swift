@@ -21,18 +21,32 @@ class TextsProvider {
         static let plist = "plist"
     }
 
+    /// Returns the shared TextsProvider object.
+    static let shared: TextsProvider = {
+        guard
+            let path = Bundle.main.path(
+                forResource: Keys.details, ofType: Keys.plist)
+            else {  fatalError("There should be a settings file") }
+
+        guard
+            let dictionary = NSDictionary(contentsOfFile: path) as? [String : Any]
+            else {  fatalError("There should be a dictionary") }
+
+        return TextsProvider(dictionary: dictionary)
+    }()
+
+    private let dictionary: [String : Any]
+
+    init(dictionary: [String : Any]) {
+        self.dictionary = dictionary
+    }
+
     /// Loads static texts for the current item.
     ///
     /// - Parameter itemName: The current item name.
     /// - Returns: A detail view model for static texts.
     func loadDetail(for itemName: String) -> DetailViewModel {
         guard
-            let path = Bundle.main.path(
-            forResource: Keys.details, ofType: Keys.plist)
-            else {  fatalError("There should be a settings file") }
-
-        guard
-            let dictionary = NSDictionary(contentsOfFile: path) as? [String : Any],
             let item = dictionary[itemName] as? [String: Any]
             else { fatalError("There should be an item") }
 
@@ -48,8 +62,20 @@ class TextsProvider {
 
         guard
             let topic = item[Keys.topic] as? String
-            else { fatalError("There should be types") }
+            else { fatalError("There should be a topic") }
 
         return DetailViewModel(itemName: itemName, topic: topic, metricSizes: metric, imperialSizes: imperial, types: types)
+    }
+
+    func getTopic(for itemName: String) -> String {
+        guard
+            let item = dictionary[itemName] as? [String: Any]
+            else { fatalError("There should be an item") }
+
+        guard
+            let topic = item[Keys.topic] as? String
+            else { fatalError("There should be a topic") }
+
+        return topic
     }
 }

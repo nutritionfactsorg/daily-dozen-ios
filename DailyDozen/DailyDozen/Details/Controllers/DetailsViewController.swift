@@ -87,8 +87,7 @@ class DetailsViewController: UIViewController, UITableViewDelegate {
     ///
     /// - Parameter item: The current item name.
     func setViewModel(for item: String) {
-        let textProvider = TextsProvider()
-        dataProvider.viewModel = textProvider.loadDetail(for: item)
+        dataProvider.viewModel = TextsProvider.shared.loadDetail(for: item)
     }
 
     /// Opens the main topic url in the browser.
