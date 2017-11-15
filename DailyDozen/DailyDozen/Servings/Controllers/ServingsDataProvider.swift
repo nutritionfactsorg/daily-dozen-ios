@@ -24,23 +24,26 @@ class ServingsDataProvider: NSObject, UITableViewDataSource {
     }
 
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        guard section == 0 else {
-            return 2
+        guard let servingsSection = ServingsSection(rawValue: section) else {
+            fatalError("There should be a section type")
         }
-        return viewModel.count - 2
+        return servingsSection.numberOfRowsInSection(with: viewModel.count)
     }
 
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        guard let cell = tableView.dequeueReusableCell(withIdentifier: Keys.servingsCell) as? ServingsCell else {
-            fatalError("There should be a cell")
+        guard
+            let cell = tableView
+                .dequeueReusableCell(withIdentifier: Keys.servingsCell) as? ServingsCell,
+            let servingsSection = ServingsSection(rawValue: indexPath.section) else {
+                fatalError("There should settings")
         }
         var index = indexPath.row
-        if indexPath.section == 1 {
+        if servingsSection == .vitamin {
             index += tableView.numberOfRows(inSection: 0)
         }
 
         cell.configure(
-            with: viewModel.itemName(for: index),
+            with: viewModel.itemInfo(for: index).name,
             tag: index,
             imageName: viewModel.imageName(for: index))
 

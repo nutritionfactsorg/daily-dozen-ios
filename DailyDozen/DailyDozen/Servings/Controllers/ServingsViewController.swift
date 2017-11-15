@@ -36,41 +36,19 @@ class ServingsViewController: UIViewController {
         tableView.reloadData()
     }
 
-    // MARK: - Actions
-    @IBAction private func infoPressed(_ sender: UIButton) {
-        let itemName = dataProvider.viewModel.itemName(for: sender.tag)
-        guard !itemName.contains("Vitamin") else {
-            let url = dataProvider.viewModel.topicURL(for: itemName)
-            UIApplication.shared
-                .open(url,
-                      options: [:],
-                      completionHandler: nil)
-            return
-        }
-        let viewController = DetailsBuilder.instantiateController(with: itemName)
-        navigationController?.pushViewController(viewController, animated: true)
-    }
-
-    @IBAction private func vitaminHeaderPressed(_ sender: UIButton) {
-        let viewController = VitaminsViewController(nibName: "VitaminsInfo", bundle: nil)
-        viewController.modalPresentationStyle = .overCurrentContext
-        viewController.tapDelegate = self
-
-        present(viewController, animated: true)
-        blurBackground()
-    }
-
+    /// Applies a blurring effect to the parent view layer.
     private func blurBackground() {
         guard let parent = parent else { return }
-        let blurEffect = UIBlurEffect(style: UIBlurEffectStyle.light)
+        let blurEffect = UIBlurEffect(style: UIBlurEffectStyle.dark)
         let blurEffectView = UIVisualEffectView(effect: blurEffect)
-        blurEffectView.alpha = 0.8
+        blurEffectView.alpha = 0.9
         blurEffectView.frame = parent.view.bounds
         blurEffectView.autoresizingMask = [.flexibleWidth, .flexibleHeight]
         blurEffectView.tag = 100
         parent.view.addSubview(blurEffectView)
     }
 
+    /// Removes a blurring effect from the parent view layer.
     private func unblurBackground() {
         guard let parent = parent else { return }
         for view in parent.view.subviews {
@@ -79,13 +57,37 @@ class ServingsViewController: UIViewController {
             }
         }
     }
+
+    // MARK: - Actions
+    @IBAction private func infoPressed(_ sender: UIButton) {
+        let itemInfo = dataProvider.viewModel.itemInfo(for: sender.tag)
+
+        guard !itemInfo.isVitamin else {
+            let url = dataProvider.viewModel.topicURL(for: itemInfo.name)
+            UIApplication.shared
+                .open(url,
+                      options: [:],
+                      completionHandler: nil)
+            return
+        }
+        let viewController = DetailsBuilder.instantiateController(with: itemInfo.name)
+        navigationController?.pushViewController(viewController, animated: true)
+    }
+
+    @IBAction private func vitaminHeaderPressed(_ sender: UIButton) {
+        let viewController = VitaminsBuilder.instantiateController()
+        viewController.tapDelegate = self
+
+        present(viewController, animated: true)
+        blurBackground()
+    }
 }
 
 // MARK: - Servings UITableViewDelegate
 extension ServingsViewController: UITableViewDelegate {
 
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-        return 100
+        return ServingsSection.main.rowHeight
     }
 
     func tableView(_ tableView: UITableView, willDisplay cell: UITableViewCell, forRowAt indexPath: IndexPath) {
@@ -95,13 +97,18 @@ extension ServingsViewController: UITableViewDelegate {
         servingsCell.stateCollection.reloadData()
     }
 
-    func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
-        return section == 0 ? nil : Bundle.main
-            .loadNibNamed("VitaminsHeader", owner: nil)?.first as? UIView
+    func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
+        guard let servingsSection = ServingsSection(rawValue: section) else {
+            fatalError("There should be a section type")
+        }
+        return servingsSection.headerHeight
     }
 
-    func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
-        return section == 0 ? 0 : 50
+    func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
+        guard let servingsSection = ServingsSection(rawValue: section) else {
+            fatalError("There should be a section type")
+        }
+        return servingsSection.headerView
     }
 }
 

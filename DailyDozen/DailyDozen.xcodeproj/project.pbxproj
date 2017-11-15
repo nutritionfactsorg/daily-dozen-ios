@@ -35,6 +35,7 @@
 		CFAAB37A1F9F4A8000B24748 /* DozeViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = CFAAB3791F9F4A8000B24748 /* DozeViewModel.swift */; };
 		CFC0608D1FBC4A3500A901A5 /* VitaminsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CFC0608C1FBC4A3500A901A5 /* VitaminsViewController.swift */; };
 		CFC0608F1FBC519F00A901A5 /* Interactable.swift in Sources */ = {isa = PBXBuildFile; fileRef = CFC0608E1FBC519F00A901A5 /* Interactable.swift */; };
+		CFC060931FBC57C800A901A5 /* ServingsSection.swift in Sources */ = {isa = PBXBuildFile; fileRef = CFC060921FBC57C800A901A5 /* ServingsSection.swift */; };
 		CFC4A84D1F975A3900B5AC75 /* MenuViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CFC4A84C1F975A3900B5AC75 /* MenuViewController.swift */; };
 		CFC4A84F1F9761FF00B5AC75 /* PagerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CFC4A84E1F9761FF00B5AC75 /* PagerViewController.swift */; };
 		CFC4A8521F97630100B5AC75 /* PagerBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = CFC4A8511F97630100B5AC75 /* PagerBuilder.swift */; };
@@ -82,6 +83,7 @@
 		CFAAB3791F9F4A8000B24748 /* DozeViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DozeViewModel.swift; sourceTree = "<group>"; };
 		CFC0608C1FBC4A3500A901A5 /* VitaminsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VitaminsViewController.swift; sourceTree = "<group>"; };
 		CFC0608E1FBC519F00A901A5 /* Interactable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Interactable.swift; sourceTree = "<group>"; };
+		CFC060921FBC57C800A901A5 /* ServingsSection.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ServingsSection.swift; sourceTree = "<group>"; };
 		CFC4A84C1F975A3900B5AC75 /* MenuViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuViewController.swift; sourceTree = "<group>"; };
 		CFC4A84E1F9761FF00B5AC75 /* PagerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PagerViewController.swift; sourceTree = "<group>"; };
 		CFC4A8511F97630100B5AC75 /* PagerBuilder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PagerBuilder.swift; sourceTree = "<group>"; };
@@ -253,6 +255,14 @@
 			path = Protocols;
 			sourceTree = "<group>";
 		};
+		CFC060911FBC579700A901A5 /* SupportingFiles */ = {
+			isa = PBXGroup;
+			children = (
+				CFC060921FBC57C800A901A5 /* ServingsSection.swift */,
+			);
+			path = SupportingFiles;
+			sourceTree = "<group>";
+		};
 		CFC4A84B1F975A0C00B5AC75 /* Controllers */ = {
 			isa = PBXGroup;
 			children = (
@@ -377,6 +387,7 @@
 				CFAAB3781F9F4A6000B24748 /* ViewModel */,
 				CFC4A8501F97620400B5AC75 /* Controllers */,
 				CFF117781F97543900BFE73A /* Storyboards */,
+				CFC060911FBC579700A901A5 /* SupportingFiles */,
 			);
 			path = Servings;
 			sourceTree = "<group>";
@@ -580,6 +591,7 @@
 				CF4DECF71F9DF2A500DA094B /* ServingsCell.swift in Sources */,
 				CFE793571FA756E40084F075 /* RealmProvider.swift in Sources */,
 				CFAAB37A1F9F4A8000B24748 /* DozeViewModel.swift in Sources */,
+				CFC060931FBC57C800A901A5 /* ServingsSection.swift in Sources */,
 				CF5B28B11FA0A2C500D57A48 /* StateCell.swift in Sources */,
 				CF2680021FB477AD004A6200 /* Date.swift in Sources */,
 				CFF72AFB1FB9A499001CC2E9 /* UnitsType.swift in Sources */,

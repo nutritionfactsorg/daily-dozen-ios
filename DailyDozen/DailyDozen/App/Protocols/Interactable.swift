@@ -8,6 +8,8 @@
 
 import Foundation
 
+/// Protocol allow the delegate to manage taps, selections, etc.
 protocol Interactable: class {
+    /// Tells the delegate that the view was selected.
     func viewDidTap()
 }

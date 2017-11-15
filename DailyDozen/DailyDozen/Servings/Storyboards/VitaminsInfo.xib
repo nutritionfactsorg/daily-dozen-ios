@@ -24,7 +24,7 @@
                     <rect key="frame" x="0.0" y="0.0" width="300" height="200"/>
                     <subviews>
                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Vitamins" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Pf1-H6-KLk">
-                            <rect key="frame" x="0.0" y="0.0" width="300" height="40"/>
+                            <rect key="frame" x="5" y="0.0" width="290" height="40"/>
                             <constraints>
                                 <constraint firstAttribute="height" constant="40" id="MhU-b9-AiY"/>
                             </constraints>
@@ -33,7 +33,7 @@
                             <nil key="highlightedColor"/>
                         </label>
                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="lY7-RA-UIE">
-                            <rect key="frame" x="0.0" y="40" width="300" height="160"/>
+                            <rect key="frame" x="5" y="40" width="290" height="160"/>
                             <string key="text">Vitamin B12 and Vitamin D are essential for your health but do not count towards your daily servings.   They are included in this app to provide you with an easy way to track your intake.</string>
                             <fontDescription key="fontDescription" type="system" pointSize="17"/>
                             <nil key="textColor"/>
@@ -46,11 +46,11 @@
                         <constraint firstAttribute="bottom" secondItem="lY7-RA-UIE" secondAttribute="bottom" id="2Nv-6P-7cR"/>
                         <constraint firstAttribute="width" constant="300" id="5FC-2C-mcv"/>
                         <constraint firstItem="Pf1-H6-KLk" firstAttribute="top" secondItem="ZDb-Xq-fbq" secondAttribute="top" id="D8k-Ji-zCm"/>
-                        <constraint firstItem="Pf1-H6-KLk" firstAttribute="leading" secondItem="ZDb-Xq-fbq" secondAttribute="leading" id="SKp-pl-cR2"/>
-                        <constraint firstAttribute="trailing" secondItem="Pf1-H6-KLk" secondAttribute="trailing" id="Wnx-vR-bdr"/>
+                        <constraint firstItem="Pf1-H6-KLk" firstAttribute="leading" secondItem="ZDb-Xq-fbq" secondAttribute="leading" constant="5" id="SKp-pl-cR2"/>
+                        <constraint firstAttribute="trailing" secondItem="Pf1-H6-KLk" secondAttribute="trailing" constant="5" id="Wnx-vR-bdr"/>
                         <constraint firstAttribute="height" constant="200" id="dNP-zk-Ls5"/>
-                        <constraint firstItem="lY7-RA-UIE" firstAttribute="leading" secondItem="ZDb-Xq-fbq" secondAttribute="leading" id="dbk-AG-bxt"/>
-                        <constraint firstAttribute="trailing" secondItem="lY7-RA-UIE" secondAttribute="trailing" id="pjS-e7-aL1"/>
+                        <constraint firstItem="lY7-RA-UIE" firstAttribute="leading" secondItem="ZDb-Xq-fbq" secondAttribute="leading" constant="5" id="dbk-AG-bxt"/>
+                        <constraint firstAttribute="trailing" secondItem="lY7-RA-UIE" secondAttribute="trailing" constant="5" id="pjS-e7-aL1"/>
                     </constraints>
                     <userDefinedRuntimeAttributes>
                         <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
