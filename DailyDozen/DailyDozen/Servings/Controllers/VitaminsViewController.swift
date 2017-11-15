@@ -8,6 +8,7 @@
 
 import UIKit
 
+// MARK: - Builder
 class VitaminsBuilder {
 
     // MARK: - Nested
@@ -27,6 +28,7 @@ class VitaminsBuilder {
     }
 }
 
+// MARK: - Controller
 class VitaminsViewController: UIViewController {
 
     weak var tapDelegate: Interactable?
