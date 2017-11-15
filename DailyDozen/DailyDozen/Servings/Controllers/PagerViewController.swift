@@ -71,4 +71,19 @@ class PagerViewController: UIViewController {
         guard let viewController = childViewControllers.first as? ServingsViewController else { return }
         viewController.setViewModel(for: datePicker.date)
     }
+
+    @IBAction func viewSwipped(_ sender: UISwipeGestureRecognizer) {
+        let timeInterval = sender
+            .direction == .left ? TimeInterval(floatLiteral: -86400)
+            : TimeInterval(floatLiteral: 86400)
+        let date = datePicker.date.addingTimeInterval(timeInterval)
+        guard dateFormatter.string(from: date) <= dateFormatter.string(from: Date()) else {
+            return
+        }
+        datePicker.setDate(date, animated: false)
+        dateButton.setTitle(dateFormatter.string(from: datePicker.date), for: .normal)
+
+        guard let viewController = childViewControllers.first as? ServingsViewController else { return }
+        viewController.setViewModel(for: datePicker.date)
+    }
 }

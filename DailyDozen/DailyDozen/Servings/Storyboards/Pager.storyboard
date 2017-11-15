@@ -29,12 +29,17 @@
                                     </containerView>
                                 </subviews>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <gestureRecognizers/>
                                 <constraints>
                                     <constraint firstItem="KcS-Ss-A40" firstAttribute="leading" secondItem="Liv-4f-27k" secondAttribute="leading" id="Dyk-cc-QS9"/>
                                     <constraint firstItem="KcS-Ss-A40" firstAttribute="top" secondItem="Liv-4f-27k" secondAttribute="top" id="eLH-hb-Op9"/>
                                     <constraint firstAttribute="bottom" secondItem="KcS-Ss-A40" secondAttribute="bottom" id="tHi-W8-Aay"/>
                                     <constraint firstAttribute="trailing" secondItem="KcS-Ss-A40" secondAttribute="trailing" id="xPn-nj-e0Q"/>
                                 </constraints>
+                                <connections>
+                                    <outletCollection property="gestureRecognizers" destination="RQM-JY-Khm" appends="YES" id="wqq-eb-vBY"/>
+                                    <outletCollection property="gestureRecognizers" destination="vyh-52-kiv" appends="YES" id="DBD-ig-SF1"/>
+                                </connections>
                             </view>
                             <view contentMode="center" translatesAutoresizingMaskIntoConstraints="NO" id="BQF-ze-lmn">
                                 <rect key="frame" x="0.0" y="20" width="375" height="50"/>
@@ -90,6 +95,16 @@
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="rba-Fd-AgX" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <swipeGestureRecognizer direction="left" id="RQM-JY-Khm">
+                    <connections>
+                        <action selector="viewSwipped:" destination="0HD-X6-u6e" id="IQ7-Yn-ZdM"/>
+                    </connections>
+                </swipeGestureRecognizer>
+                <swipeGestureRecognizer direction="right" id="vyh-52-kiv">
+                    <connections>
+                        <action selector="viewSwipped:" destination="0HD-X6-u6e" id="uqg-zt-hHd"/>
+                    </connections>
+                </swipeGestureRecognizer>
             </objects>
             <point key="canvasLocation" x="437.60000000000002" y="464.6176911544228"/>
         </scene>
