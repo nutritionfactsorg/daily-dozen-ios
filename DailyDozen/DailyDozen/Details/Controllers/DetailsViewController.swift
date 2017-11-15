@@ -8,7 +8,35 @@
 
 import UIKit
 
-class DetailsViewController: UIViewController, UITableViewDelegate {
+// MARK: - Builder
+class DetailsBuilder {
+
+    // MARK: - Nested
+    struct Keys {
+        static let storyboard = "Details"
+    }
+
+    // MARK: - Methods
+    /// Instantiates and returns the initial view controller for a storyboard.
+    ///
+    /// - Parameter item: An item name.
+    /// - Returns: The initial view controller in the storyboard.
+    static func instantiateController(with item: String) -> DetailsViewController {
+        let storyboard = UIStoryboard(name: Keys.storyboard, bundle: nil)
+        guard
+            let viewController = storyboard
+                .instantiateInitialViewController() as? DetailsViewController
+            else { fatalError("There should be a controller") }
+
+        viewController.title = item
+        viewController.setViewModel(for: item)
+
+        return viewController
+    }
+}
+
+// MARK: - Controller
+class DetailsViewController: UIViewController {
 
     // MARK: - Nested
     private struct Keys {
@@ -33,26 +61,20 @@ class DetailsViewController: UIViewController, UITableViewDelegate {
                                                   action: #selector(barItemPressed))
     }
 
-    // MARK: - UITableViewDelegate
-    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-        guard let sectionType = SectionType(rawValue: indexPath.section) else {
-            fatalError("There should be a section type")
-        }
-        return sectionType.rowHeight
+    // MARK: - Methods
+    /// Sets a view model for the current item.
+    ///
+    /// - Parameter item: The current item name.
+    func setViewModel(for item: String) {
+        dataProvider.viewModel = TextsProvider.shared.loadDetail(for: item)
     }
 
-    func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
-        guard let sectionType = SectionType(rawValue: section) else {
-            fatalError("There should be a section type")
-        }
-        return sectionType.headerHeigh
-    }
-
-    func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
-        guard let sectionType = SectionType(rawValue: section) else {
-            fatalError("There should be a section type")
-        }
-        return sectionType.headerView
+    /// Opens the main topic url in the browser.
+    @objc private func barItemPressed() {
+        UIApplication.shared
+            .open(dataProvider.viewModel.topicURL,
+                  options: [:],
+                  completionHandler: nil)
     }
 
     // MARK: - Actions
@@ -81,20 +103,29 @@ class DetailsViewController: UIViewController, UITableViewDelegate {
         guard let url = dataProvider.viewModel.typeTopicURL(for: sender.tag) else { return }
         UIApplication.shared.open(url, options: [:], completionHandler: nil)
     }
+}
 
-    // MARK: - Methods
-    /// Sets a view model for the current item.
-    ///
-    /// - Parameter item: The current item name.
-    func setViewModel(for item: String) {
-        dataProvider.viewModel = TextsProvider.shared.loadDetail(for: item)
+// MARK: - UITableViewDelegate
+extension DetailsViewController: UITableViewDelegate {
+
+    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+        guard let sectionType = SectionType(rawValue: indexPath.section) else {
+            fatalError("There should be a section type")
+        }
+        return sectionType.rowHeight
     }
 
-    /// Opens the main topic url in the browser.
-    @objc private func barItemPressed() {
-        UIApplication.shared
-            .open(dataProvider.viewModel.topicURL,
-                  options: [:],
-                  completionHandler: nil)
+    func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
+        guard let sectionType = SectionType(rawValue: section) else {
+            fatalError("There should be a section type")
+        }
+        return sectionType.headerHeigh
+    }
+
+    func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
+        guard let sectionType = SectionType(rawValue: section) else {
+            fatalError("There should be a section type")
+        }
+        return sectionType.headerView
     }
 }
