@@ -25,7 +25,7 @@ class DetailsDataProvider: NSObject, UITableViewDataSource {
     }
 
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        guard let sectionType = SectionType(rawValue: section) else {
+        guard let sectionType = DetailsSection(rawValue: section) else {
             fatalError("There should be a section type")
         }
         switch sectionType {
@@ -39,7 +39,7 @@ class DetailsDataProvider: NSObject, UITableViewDataSource {
     }
 
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        guard let sectionType = SectionType(rawValue: indexPath.section) else {
+        guard let sectionType = DetailsSection(rawValue: indexPath.section) else {
             fatalError("There should be a section type")
         }
         switch sectionType {

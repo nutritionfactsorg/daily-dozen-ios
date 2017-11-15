@@ -82,7 +82,7 @@ class DetailsViewController: UIViewController {
     ///
     /// - Parameter sender: The button.
     @IBAction private func unitsChanged(_ sender: UIButton) {
-        let sectionIndex = SectionType.sizes.rawValue
+        let sectionIndex = DetailsSection.sizes.rawValue
         guard
             let text = sender.titleLabel?.text?.lowercased(),
             let currentUnitsType = UnitsType(rawValue: text),
@@ -109,21 +109,21 @@ class DetailsViewController: UIViewController {
 extension DetailsViewController: UITableViewDelegate {
 
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-        guard let sectionType = SectionType(rawValue: indexPath.section) else {
+        guard let sectionType = DetailsSection(rawValue: indexPath.section) else {
             fatalError("There should be a section type")
         }
         return sectionType.rowHeight
     }
 
     func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
-        guard let sectionType = SectionType(rawValue: section) else {
+        guard let sectionType = DetailsSection(rawValue: section) else {
             fatalError("There should be a section type")
         }
         return sectionType.headerHeigh
     }
 
     func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
-        guard let sectionType = SectionType(rawValue: section) else {
+        guard let sectionType = DetailsSection(rawValue: section) else {
             fatalError("There should be a section type")
         }
         return sectionType.headerView

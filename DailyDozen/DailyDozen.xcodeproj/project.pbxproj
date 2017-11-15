@@ -8,7 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		BED5BB460CE3AEE8CF585899 /* Pods_DailyDozen.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F514690D725E67AD54735EB9 /* Pods_DailyDozen.framework */; };
-		CF17C8A71FAA019600367BF8 /* SectionType.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF17C8A61FAA019600367BF8 /* SectionType.swift */; };
+		CF17C8A71FAA019600367BF8 /* DetailsSection.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF17C8A61FAA019600367BF8 /* DetailsSection.swift */; };
 		CF22F07A1FA88D2200F25B70 /* DetailsDataProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF22F0791FA88D2200F25B70 /* DetailsDataProvider.swift */; };
 		CF22F07F1FA8ACE000F25B70 /* Details.plist in Resources */ = {isa = PBXBuildFile; fileRef = CF22F07E1FA8ACE000F25B70 /* Details.plist */; };
 		CF2680021FB477AD004A6200 /* Date.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF2680011FB477AD004A6200 /* Date.swift */; };
@@ -54,7 +54,7 @@
 
 /* Begin PBXFileReference section */
 		7D4AA01331AD98C99ADB2BC0 /* Pods-DailyDozen.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-DailyDozen.release.xcconfig"; path = "Pods/Target Support Files/Pods-DailyDozen/Pods-DailyDozen.release.xcconfig"; sourceTree = "<group>"; };
-		CF17C8A61FAA019600367BF8 /* SectionType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SectionType.swift; sourceTree = "<group>"; };
+		CF17C8A61FAA019600367BF8 /* DetailsSection.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailsSection.swift; sourceTree = "<group>"; };
 		CF22F0791FA88D2200F25B70 /* DetailsDataProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailsDataProvider.swift; sourceTree = "<group>"; };
 		CF22F07E1FA8ACE000F25B70 /* Details.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Details.plist; sourceTree = "<group>"; };
 		CF2680011FB477AD004A6200 /* Date.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Date.swift; sourceTree = "<group>"; };
@@ -125,7 +125,7 @@
 		CF17C8A51FAA016D00367BF8 /* SupportingFiles */ = {
 			isa = PBXGroup;
 			children = (
-				CF17C8A61FAA019600367BF8 /* SectionType.swift */,
+				CF17C8A61FAA019600367BF8 /* DetailsSection.swift */,
 				CFF72AFA1FB9A499001CC2E9 /* UnitsType.swift */,
 			);
 			path = SupportingFiles;
@@ -589,7 +589,7 @@
 				CFF72AFB1FB9A499001CC2E9 /* UnitsType.swift in Sources */,
 				CFC4A84F1F9761FF00B5AC75 /* PagerViewController.swift in Sources */,
 				CF4DECF91F9DF82900DA094B /* ServingsDataProvider.swift in Sources */,
-				CF17C8A71FAA019600367BF8 /* SectionType.swift in Sources */,
+				CF17C8A71FAA019600367BF8 /* DetailsSection.swift in Sources */,
 				CFAAB3741F9F3E1200B24748 /* RealmConfig.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

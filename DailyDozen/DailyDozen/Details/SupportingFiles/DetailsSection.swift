@@ -8,7 +8,7 @@
 
 import UIKit
 
-enum SectionType: Int {
+enum DetailsSection: Int {
 
     private struct Keys {
         static let sizesHeader = "SizesHeader"

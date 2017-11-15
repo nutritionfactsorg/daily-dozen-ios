@@ -67,7 +67,6 @@ class TextsProvider {
         return DetailViewModel(itemName: itemName, topic: topic, metricSizes: metric, imperialSizes: imperial, types: types)
     }
 
-
     /// Returns the topic for the current item name.
     ///
     /// - Parameter itemName: The current item name.
