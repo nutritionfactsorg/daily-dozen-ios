@@ -172,6 +172,7 @@
                             </view>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <gestureRecognizers/>
                         <constraints>
                             <constraint firstItem="FmG-ye-C7X" firstAttribute="bottom" secondItem="V0Q-gc-qoP" secondAttribute="bottom" id="1rN-h7-wx6"/>
                             <constraint firstItem="V0Q-gc-qoP" firstAttribute="top" secondItem="FmG-ye-C7X" secondAttribute="top" id="DxK-4Y-3LC"/>

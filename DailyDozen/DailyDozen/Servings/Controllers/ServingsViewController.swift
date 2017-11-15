@@ -8,25 +8,82 @@
 
 import UIKit
 
-class ServingsViewController: UIViewController, UITableViewDelegate, UICollectionViewDelegate {
+class ServingsViewController: UIViewController {
 
     // MARK: - Outlets
     @IBOutlet private weak var dataProvider: ServingsDataProvider!
     @IBOutlet private weak var tableView: UITableView!
 
     // MARK: - Properties
-    let realm = RealmProvider()
+    private let realm = RealmProvider()
 
     // MARK: - UIViewController
     override func viewDidLoad() {
         super.viewDidLoad()
 
         setViewModel(for: Date())
+
         tableView.dataSource = dataProvider
         tableView.delegate = self
     }
 
-    // MARK: - Servings UITableViewDelegate
+    // MARK: - Methods
+    /// Sets a view model for the current date.
+    ///
+    /// - Parameter item: The current date.
+    func setViewModel(for date: Date) {
+        dataProvider.viewModel = DozeViewModel(doze: realm.getDoze(for: date))
+        tableView.reloadData()
+    }
+
+    // MARK: - Actions
+    @IBAction private func infoPressed(_ sender: UIButton) {
+        let itemName = dataProvider.viewModel.itemName(for: sender.tag)
+        guard !itemName.contains("Vitamin") else {
+            let url = dataProvider.viewModel.topicURL(for: itemName)
+            UIApplication.shared
+                .open(url,
+                      options: [:],
+                      completionHandler: nil)
+            return
+        }
+        let viewController = DetailsBuilder.instantiateController(with: itemName)
+        navigationController?.pushViewController(viewController, animated: true)
+    }
+
+    @IBAction private func vitaminHeaderPressed(_ sender: UIButton) {
+        let viewController = VitaminsViewController(nibName: "VitaminsInfo", bundle: nil)
+        viewController.modalPresentationStyle = .overCurrentContext
+        viewController.tapDelegate = self
+
+        present(viewController, animated: true)
+        blurBackground()
+    }
+
+    private func blurBackground() {
+        guard let parent = parent else { return }
+        let blurEffect = UIBlurEffect(style: UIBlurEffectStyle.light)
+        let blurEffectView = UIVisualEffectView(effect: blurEffect)
+        blurEffectView.alpha = 0.8
+        blurEffectView.frame = parent.view.bounds
+        blurEffectView.autoresizingMask = [.flexibleWidth, .flexibleHeight]
+        blurEffectView.tag = 100
+        parent.view.addSubview(blurEffectView)
+    }
+
+    private func unblurBackground() {
+        guard let parent = parent else { return }
+        for view in parent.view.subviews {
+            if let blurView = view as? UIVisualEffectView, blurView.tag == 100 {
+                blurView.removeFromSuperview()
+            }
+        }
+    }
+}
+
+// MARK: - Servings UITableViewDelegate
+extension ServingsViewController: UITableViewDelegate {
+
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         return 100
     }
@@ -46,8 +103,11 @@ class ServingsViewController: UIViewController, UITableViewDelegate, UICollectio
     func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
         return section == 0 ? 0 : 50
     }
+}
 
-    // MARK: - States UICollectionViewDelegate
+// MARK: - States UICollectionViewDelegate
+extension ServingsViewController: UICollectionViewDelegate {
+
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         var states = dataProvider.viewModel.itemStates(for: collectionView.tag)
         states[indexPath.row] = !states[indexPath.row]
@@ -59,39 +119,12 @@ class ServingsViewController: UIViewController, UITableViewDelegate, UICollectio
         realm.saveStates(states, with: id)
     }
 
-    // MARK: - Actions
-    @IBAction private func infoPressed(_ sender: UIButton) {
-        let itemName = dataProvider.viewModel.itemName(for: sender.tag)
-        guard !itemName.contains("Vitamin") else {
-            let url = dataProvider.viewModel.topicURL(for: itemName)
-            UIApplication.shared
-                .open(url,
-                      options: [:],
-                      completionHandler: nil)
-            return
-        }
-        let viewController = DetailsBuilder.instantiateController(with: itemName)
-        navigationController?.pushViewController(viewController, animated: true)
-    }
+}
 
-    @IBAction func vitaminHeaderPressed(_ sender: UIButton) {
-        let message =
-        """
-        Vitamin B12 and Vitamin D are essential for your health but do not count towards your daily servings.
+// MARK: - Interactable
+extension ServingsViewController: Interactable {
 
-        They are included in this app to provide you with an easy way to track your intake.
-        """
-        let alertController = UIAlertController(title: "Vitamins", message: message, preferredStyle: .actionSheet)
-        alertController.addAction(UIAlertAction(title: "OK", style: .cancel, handler: nil))
-        present(alertController, animated: true, completion: nil)
-    }
-
-    // MARK: - Methods
-    /// Sets a view model for the current date.
-    ///
-    /// - Parameter item: The current date.
-    func setViewModel(for date: Date) {
-        dataProvider.viewModel = DozeViewModel(doze: realm.getDoze(for: date))
-        tableView.reloadData()
+    func viewDidTap() {
+        unblurBackground()
     }
 }
