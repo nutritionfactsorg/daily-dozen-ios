@@ -67,6 +67,11 @@ class TextsProvider {
         return DetailViewModel(itemName: itemName, topic: topic, metricSizes: metric, imperialSizes: imperial, types: types)
     }
 
+
+    /// Returns the topic for the current item name.
+    ///
+    /// - Parameter itemName: The current item name.
+    /// - Returns: The topic.
     func getTopic(for itemName: String) -> String {
         guard
             let item = dictionary[itemName] as? [String: Any]
