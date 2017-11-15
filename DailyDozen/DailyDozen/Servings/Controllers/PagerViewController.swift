@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import SimpleAnimation
 
 // MARK: - Builder
 class PagerBuilder {
@@ -69,6 +70,7 @@ class PagerViewController: UIViewController {
         datePicker.isHidden = true
 
         guard let viewController = childViewControllers.first as? ServingsViewController else { return }
+        viewController.view.fadeOut().fadeIn()
         viewController.setViewModel(for: datePicker.date)
     }
 
@@ -84,6 +86,13 @@ class PagerViewController: UIViewController {
         dateButton.setTitle(dateFormatter.string(from: datePicker.date), for: .normal)
 
         guard let viewController = childViewControllers.first as? ServingsViewController else { return }
+
+        if sender.direction == .left {
+            viewController.view.slideOut(x: -view.frame.width).slideIn(x: view.frame.width)
+        } else {
+            viewController.view.slideOut(x: view.frame.width).slideIn(x: -view.frame.width)
+        }
+
         viewController.setViewModel(for: datePicker.date)
     }
 }
