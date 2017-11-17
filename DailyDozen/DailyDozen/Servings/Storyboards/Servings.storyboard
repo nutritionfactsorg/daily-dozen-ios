@@ -124,6 +124,9 @@
                                                                                 <button opaque="NO" contentMode="scaleAspectFit" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="UX8-vv-mKp">
                                                                                     <rect key="frame" x="0.0" y="22" width="29" height="63"/>
                                                                                     <state key="normal" image="ic_calendar"/>
+                                                                                    <connections>
+                                                                                        <action selector="calendarPressed:" destination="M2f-B0-7nZ" eventType="touchUpInside" id="Qyo-qf-d8I"/>
+                                                                                    </connections>
                                                                                 </button>
                                                                             </subviews>
                                                                             <constraints>
@@ -153,6 +156,7 @@
                                                     </constraints>
                                                 </tableViewCellContentView>
                                                 <connections>
+                                                    <outlet property="calendarButton" destination="UX8-vv-mKp" id="Id6-rF-pb3"/>
                                                     <outlet property="infoButton" destination="YC8-Tt-A17" id="dbr-pG-ndq"/>
                                                     <outlet property="itemImage" destination="IS4-2B-57z" id="vlA-b4-uNb"/>
                                                     <outlet property="itemLabel" destination="qWl-8e-sO6" id="oVh-98-LtU"/>

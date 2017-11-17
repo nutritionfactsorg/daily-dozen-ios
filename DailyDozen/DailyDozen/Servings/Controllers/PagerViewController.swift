@@ -20,7 +20,6 @@ class PagerBuilder {
     // MARK: - Methods
     /// Instantiates and returns the initial view controller for a storyboard.
     ///
-    /// - Parameter storyboardName: A storyboard name.
     /// - Returns: The initial view controller in the storyboard.
     static func instantiateController() -> UIViewController {
         let storyboard = UIStoryboard(name: Keys.storyboard, bundle: nil)

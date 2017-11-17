@@ -15,6 +15,7 @@ class ServingsCell: UITableViewCell {
     @IBOutlet private weak var itemLabel: UILabel!
     @IBOutlet weak var stateCollection: UICollectionView!
     @IBOutlet private weak var infoButton: UIButton!
+    @IBOutlet private weak var calendarButton: UIButton!
 
     // MARK: - Methods
     /// Sets the cell with the current name, image name and tag.
@@ -26,6 +27,7 @@ class ServingsCell: UITableViewCell {
         itemLabel.text = name
         stateCollection.tag = tag
         infoButton.tag = tag
+        calendarButton.tag = tag
         itemImage.image = UIImage(named: imageName)
     }
 }

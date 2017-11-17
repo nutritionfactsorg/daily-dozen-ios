@@ -26,6 +26,8 @@
 		CF6E6D391FB1B8E300B177E7 /* TextsProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF6E6D381FB1B8E300B177E7 /* TextsProvider.swift */; };
 		CF6E6D3C1FB1BEC400B177E7 /* DetailViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF6E6D3B1FB1BEC400B177E7 /* DetailViewModel.swift */; };
 		CF987C281F9E157300D4893E /* Item.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF987C271F9E157300D4893E /* Item.swift */; };
+		CF9E03201FBD9FA80084BC88 /* ItemHistory.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CF9E031F1FBD9FA80084BC88 /* ItemHistory.storyboard */; };
+		CF9E03231FBD9FDE0084BC88 /* ItemHistoryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF9E03221FBD9FDE0084BC88 /* ItemHistoryViewController.swift */; };
 		CFA9CDF21FBAF653000468CA /* VitaminsHeader.xib in Resources */ = {isa = PBXBuildFile; fileRef = CFA9CDF11FBAF653000468CA /* VitaminsHeader.xib */; };
 		CFA9CDF51FBB10A3000468CA /* VitaminsInfo.xib in Resources */ = {isa = PBXBuildFile; fileRef = CFA9CDF41FBB10A3000468CA /* VitaminsInfo.xib */; };
 		CFAAB3721F9F3BC600B24748 /* Doze.swift in Sources */ = {isa = PBXBuildFile; fileRef = CFAAB3711F9F3BC600B24748 /* Doze.swift */; };
@@ -72,6 +74,8 @@
 		CF6E6D381FB1B8E300B177E7 /* TextsProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextsProvider.swift; sourceTree = "<group>"; };
 		CF6E6D3B1FB1BEC400B177E7 /* DetailViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailViewModel.swift; sourceTree = "<group>"; };
 		CF987C271F9E157300D4893E /* Item.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Item.swift; sourceTree = "<group>"; };
+		CF9E031F1FBD9FA80084BC88 /* ItemHistory.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = ItemHistory.storyboard; sourceTree = "<group>"; };
+		CF9E03221FBD9FDE0084BC88 /* ItemHistoryViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ItemHistoryViewController.swift; sourceTree = "<group>"; };
 		CFA9CDF11FBAF653000468CA /* VitaminsHeader.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = VitaminsHeader.xib; sourceTree = "<group>"; };
 		CFA9CDF41FBB10A3000468CA /* VitaminsInfo.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = VitaminsInfo.xib; sourceTree = "<group>"; };
 		CFAAB3711F9F3BC600B24748 /* Doze.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Doze.swift; sourceTree = "<group>"; };
@@ -216,6 +220,31 @@
 			path = Models;
 			sourceTree = "<group>";
 		};
+		CF9E031D1FBD9F540084BC88 /* ItemHistory */ = {
+			isa = PBXGroup;
+			children = (
+				CF9E03211FBD9FC50084BC88 /* Controllers */,
+				CF9E031E1FBD9F800084BC88 /* Storyboards */,
+			);
+			path = ItemHistory;
+			sourceTree = "<group>";
+		};
+		CF9E031E1FBD9F800084BC88 /* Storyboards */ = {
+			isa = PBXGroup;
+			children = (
+				CF9E031F1FBD9FA80084BC88 /* ItemHistory.storyboard */,
+			);
+			path = Storyboards;
+			sourceTree = "<group>";
+		};
+		CF9E03211FBD9FC50084BC88 /* Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				CF9E03221FBD9FDE0084BC88 /* ItemHistoryViewController.swift */,
+			);
+			path = Controllers;
+			sourceTree = "<group>";
+		};
 		CFAAB3751F9F3FCD00B24748 /* Extensions */ = {
 			isa = PBXGroup;
 			children = (
@@ -302,6 +331,7 @@
 				CFF117711F9752CA00BFE73A /* Menu */,
 				CFF117751F9753B700BFE73A /* Servings */,
 				CF2FA9911FA87AB5003508F8 /* Details */,
+				CF9E031D1FBD9F540084BC88 /* ItemHistory */,
 			);
 			path = DailyDozen;
 			sourceTree = "<group>";
@@ -480,6 +510,7 @@
 			files = (
 				CFE667291F98CF860037D1A2 /* Pager.storyboard in Resources */,
 				CF2FA9941FA87B2E003508F8 /* Details.storyboard in Resources */,
+				CF9E03201FBD9FA80084BC88 /* ItemHistory.storyboard in Resources */,
 				CFE698461F974B9700CD7905 /* LaunchScreen.storyboard in Resources */,
 				CFCE5FCB1F978007005C672B /* Servings.storyboard in Resources */,
 				CFA9CDF51FBB10A3000468CA /* VitaminsInfo.xib in Resources */,
@@ -537,6 +568,7 @@
 			);
 			inputPaths = (
 				"${SRCROOT}/Pods/Target Support Files/Pods-DailyDozen/Pods-DailyDozen-frameworks.sh",
+				"${BUILT_PRODUCTS_DIR}/FSCalendar/FSCalendar.framework",
 				"${BUILT_PRODUCTS_DIR}/Realm/Realm.framework",
 				"${BUILT_PRODUCTS_DIR}/RealmSwift/RealmSwift.framework",
 				"${BUILT_PRODUCTS_DIR}/SimpleAnimation/SimpleAnimation.framework",
@@ -544,6 +576,7 @@
 			);
 			name = "[CP] Embed Pods Frameworks";
 			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/FSCalendar.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Realm.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/RealmSwift.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SimpleAnimation.framework",
@@ -600,6 +633,7 @@
 				CF2680021FB477AD004A6200 /* Date.swift in Sources */,
 				CFF72AFB1FB9A499001CC2E9 /* UnitsType.swift in Sources */,
 				CFC4A84F1F9761FF00B5AC75 /* PagerViewController.swift in Sources */,
+				CF9E03231FBD9FDE0084BC88 /* ItemHistoryViewController.swift in Sources */,
 				CF4DECF91F9DF82900DA094B /* ServingsDataProvider.swift in Sources */,
 				CF17C8A71FAA019600367BF8 /* DetailsSection.swift in Sources */,
 				CFAAB3741F9F3E1200B24748 /* RealmConfig.swift in Sources */,

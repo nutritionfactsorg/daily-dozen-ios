@@ -74,6 +74,12 @@ class ServingsViewController: UIViewController {
         navigationController?.pushViewController(viewController, animated: true)
     }
 
+    @IBAction func calendarPressed(_ sender: UIButton) {
+        let name = dataProvider.viewModel.itemInfo(for: sender.tag).name
+        let viewController = ItemHistoryBuilder.instantiateController(with: name)
+        navigationController?.pushViewController(viewController, animated: true)
+    }
+
     @IBAction private func vitaminHeaderPressed(_ sender: UIButton) {
         let viewController = VitaminsBuilder.instantiateController()
         viewController.tapDelegate = self
