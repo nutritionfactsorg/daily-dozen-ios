@@ -74,9 +74,9 @@ class ServingsViewController: UIViewController {
         navigationController?.pushViewController(viewController, animated: true)
     }
 
-    @IBAction func calendarPressed(_ sender: UIButton) {
+    @IBAction private func calendarPressed(_ sender: UIButton) {
         let name = dataProvider.viewModel.itemInfo(for: sender.tag).name
-        let viewController = ItemHistoryBuilder.instantiateController(with: name)
+        let viewController = ItemHistoryBuilder.instantiateController(with: name, itemId: sender.tag)
         navigationController?.pushViewController(viewController, animated: true)
     }
 

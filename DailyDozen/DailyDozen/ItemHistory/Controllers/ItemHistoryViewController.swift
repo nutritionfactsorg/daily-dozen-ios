@@ -21,27 +21,30 @@ class ItemHistoryBuilder {
     ///
     /// - Parameter title: An item name.
     /// - Returns: The initial view controller in the storyboard.
-    static func instantiateController(with title: String) -> UIViewController {
+    static func instantiateController(with title: String, itemId: Int) -> UIViewController {
         let storyboard = UIStoryboard(name: Keys.storyboard, bundle: nil)
         guard
             let viewController = storyboard
-                .instantiateInitialViewController()
+                .instantiateInitialViewController() as? ItemHistoryViewController
             else { fatalError("There should be a controller") }
         viewController.title = title
+        viewController.itemId = itemId
 
         return viewController
     }
 }
 
 class ItemHistoryViewController: UIViewController {
-
-    override func viewDidLoad() {
-        super.viewDidLoad()
-    }
-}
-
-extension ItemHistoryViewController: FSCalendarDelegate {
+    private let realm = RealmProvider()
+    var itemId = 0
 }
 
 extension ItemHistoryViewController: FSCalendarDataSource {
+
+    func calendar(_ calendar: FSCalendar, numberOfEventsFor date: Date) -> Int {
+        let doze = realm.getDoze(for: date)
+        let item = doze.items[itemId]
+        let hasStates = item.states.filter { $0 }
+        return hasStates.count
+    }
 }
