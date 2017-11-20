@@ -36,28 +36,6 @@ class ServingsViewController: UIViewController {
         tableView.reloadData()
     }
 
-    /// Applies a blurring effect to the parent view layer.
-    private func blurBackground() {
-        guard let parent = parent else { return }
-        let blurEffect = UIBlurEffect(style: UIBlurEffectStyle.dark)
-        let blurEffectView = UIVisualEffectView(effect: blurEffect)
-        blurEffectView.alpha = 0.9
-        blurEffectView.frame = parent.view.bounds
-        blurEffectView.autoresizingMask = [.flexibleWidth, .flexibleHeight]
-        blurEffectView.tag = 100
-        parent.view.addSubview(blurEffectView)
-    }
-
-    /// Removes a blurring effect from the parent view layer.
-    private func unblurBackground() {
-        guard let parent = parent else { return }
-        for view in parent.view.subviews {
-            if let blurView = view as? UIVisualEffectView, blurView.tag == 100 {
-                blurView.removeFromSuperview()
-            }
-        }
-    }
-
     // MARK: - Actions
     @IBAction private func infoPressed(_ sender: UIButton) {
         let itemInfo = dataProvider.viewModel.itemInfo(for: sender.tag)
@@ -82,10 +60,7 @@ class ServingsViewController: UIViewController {
 
     @IBAction private func vitaminHeaderPressed(_ sender: UIButton) {
         let viewController = VitaminsBuilder.instantiateController()
-        viewController.tapDelegate = self
-
         present(viewController, animated: true)
-        blurBackground()
     }
 }
 
@@ -132,12 +107,4 @@ extension ServingsViewController: UICollectionViewDelegate {
         realm.saveStates(states, with: id)
     }
 
-}
-
-// MARK: - Interactable
-extension ServingsViewController: Interactable {
-
-    func viewDidTap() {
-        unblurBackground()
-    }
 }

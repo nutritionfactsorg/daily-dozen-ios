@@ -11,6 +11,7 @@
 		CF17C8A71FAA019600367BF8 /* DetailsSection.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF17C8A61FAA019600367BF8 /* DetailsSection.swift */; };
 		CF22F07A1FA88D2200F25B70 /* DetailsDataProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF22F0791FA88D2200F25B70 /* DetailsDataProvider.swift */; };
 		CF22F07F1FA8ACE000F25B70 /* Details.plist in Resources */ = {isa = PBXBuildFile; fileRef = CF22F07E1FA8ACE000F25B70 /* Details.plist */; };
+		CF2331801FC2DB540021C440 /* BlurableBackground.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF23317F1FC2DB540021C440 /* BlurableBackground.swift */; };
 		CF2680021FB477AD004A6200 /* Date.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF2680011FB477AD004A6200 /* Date.swift */; };
 		CF2FA9941FA87B2E003508F8 /* Details.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CF2FA9931FA87B2E003508F8 /* Details.storyboard */; };
 		CF2FA9961FA87F0C003508F8 /* DetailsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF2FA9951FA87F0C003508F8 /* DetailsViewController.swift */; };
@@ -35,7 +36,6 @@
 		CFAAB3771F9F3FDF00B24748 /* URL.swift in Sources */ = {isa = PBXBuildFile; fileRef = CFAAB3761F9F3FDF00B24748 /* URL.swift */; };
 		CFAAB37A1F9F4A8000B24748 /* DozeViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = CFAAB3791F9F4A8000B24748 /* DozeViewModel.swift */; };
 		CFC0608D1FBC4A3500A901A5 /* VitaminsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CFC0608C1FBC4A3500A901A5 /* VitaminsViewController.swift */; };
-		CFC0608F1FBC519F00A901A5 /* Interactable.swift in Sources */ = {isa = PBXBuildFile; fileRef = CFC0608E1FBC519F00A901A5 /* Interactable.swift */; };
 		CFC060931FBC57C800A901A5 /* ServingsSection.swift in Sources */ = {isa = PBXBuildFile; fileRef = CFC060921FBC57C800A901A5 /* ServingsSection.swift */; };
 		CFC4A84D1F975A3900B5AC75 /* MenuViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CFC4A84C1F975A3900B5AC75 /* MenuViewController.swift */; };
 		CFC4A84F1F9761FF00B5AC75 /* PagerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CFC4A84E1F9761FF00B5AC75 /* PagerViewController.swift */; };
@@ -59,6 +59,7 @@
 		CF17C8A61FAA019600367BF8 /* DetailsSection.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailsSection.swift; sourceTree = "<group>"; };
 		CF22F0791FA88D2200F25B70 /* DetailsDataProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailsDataProvider.swift; sourceTree = "<group>"; };
 		CF22F07E1FA8ACE000F25B70 /* Details.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Details.plist; sourceTree = "<group>"; };
+		CF23317F1FC2DB540021C440 /* BlurableBackground.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BlurableBackground.swift; sourceTree = "<group>"; };
 		CF2680011FB477AD004A6200 /* Date.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Date.swift; sourceTree = "<group>"; };
 		CF2FA9931FA87B2E003508F8 /* Details.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Details.storyboard; sourceTree = "<group>"; };
 		CF2FA9951FA87F0C003508F8 /* DetailsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailsViewController.swift; sourceTree = "<group>"; };
@@ -83,7 +84,6 @@
 		CFAAB3761F9F3FDF00B24748 /* URL.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = URL.swift; sourceTree = "<group>"; };
 		CFAAB3791F9F4A8000B24748 /* DozeViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DozeViewModel.swift; sourceTree = "<group>"; };
 		CFC0608C1FBC4A3500A901A5 /* VitaminsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VitaminsViewController.swift; sourceTree = "<group>"; };
-		CFC0608E1FBC519F00A901A5 /* Interactable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Interactable.swift; sourceTree = "<group>"; };
 		CFC060921FBC57C800A901A5 /* ServingsSection.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ServingsSection.swift; sourceTree = "<group>"; };
 		CFC4A84C1F975A3900B5AC75 /* MenuViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuViewController.swift; sourceTree = "<group>"; };
 		CFC4A84E1F9761FF00B5AC75 /* PagerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PagerViewController.swift; sourceTree = "<group>"; };
@@ -250,6 +250,7 @@
 			children = (
 				CFAAB3761F9F3FDF00B24748 /* URL.swift */,
 				CF2680011FB477AD004A6200 /* Date.swift */,
+				CF23317F1FC2DB540021C440 /* BlurableBackground.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -269,14 +270,6 @@
 				CFE793561FA756E40084F075 /* RealmProvider.swift */,
 			);
 			path = Realm;
-			sourceTree = "<group>";
-		};
-		CFC060901FBC51A600A901A5 /* Protocols */ = {
-			isa = PBXGroup;
-			children = (
-				CFC0608E1FBC519F00A901A5 /* Interactable.swift */,
-			);
-			path = Protocols;
 			sourceTree = "<group>";
 		};
 		CFC060911FBC579700A901A5 /* SupportingFiles */ = {
@@ -343,7 +336,6 @@
 				CFAAB37B1F9F4B0D00B24748 /* Realm */,
 				CFF72AFC1FB9BA4F001CC2E9 /* Services */,
 				CF22F07D1FA8ACC300F25B70 /* Texts */,
-				CFC060901FBC51A600A901A5 /* Protocols */,
 				CFAAB3751F9F3FCD00B24748 /* Extensions */,
 				CFE698531F974F6300CD7905 /* Storyboards */,
 				CFE698511F974F1800CD7905 /* SupportingFiles */,
@@ -609,12 +601,12 @@
 			files = (
 				CFF72AFE1FB9BAAA001CC2E9 /* LinkService.swift in Sources */,
 				CFC4A8541F9776A500B5AC75 /* ServingsViewController.swift in Sources */,
+				CF2331801FC2DB540021C440 /* BlurableBackground.swift in Sources */,
 				CFAAB3721F9F3BC600B24748 /* Doze.swift in Sources */,
 				CF22F07A1FA88D2200F25B70 /* DetailsDataProvider.swift in Sources */,
 				CFE6983E1F974B9700CD7905 /* MainViewController.swift in Sources */,
 				CF64DF331FB5E03C00B4D124 /* TypesCell.swift in Sources */,
 				CF64DF2F1FB5DCAD00B4D124 /* ImageCell.swift in Sources */,
-				CFC0608F1FBC519F00A901A5 /* Interactable.swift in Sources */,
 				CFAAB3771F9F3FDF00B24748 /* URL.swift in Sources */,
 				CF6E6D351FB1B4FE00B177E7 /* Detail.swift in Sources */,
 				CF6E6D391FB1B8E300B177E7 /* TextsProvider.swift in Sources */,

@@ -29,19 +29,17 @@ class VitaminsBuilder {
 }
 
 // MARK: - Controller
-class VitaminsViewController: UIViewController {
-
-    weak var tapDelegate: Interactable?
+class VitaminsViewController: UIViewController, BlurableBackground {
 
     override func viewDidLoad() {
         super.viewDidLoad()
 
         view.isOpaque = false
         view.backgroundColor = UIColor.clear
+        blurBackground()
     }
 
     @IBAction private func viewTapped(_ sender: UITapGestureRecognizer) {
         dismiss(animated: true)
-        tapDelegate?.viewDidTap()
     }
 }
