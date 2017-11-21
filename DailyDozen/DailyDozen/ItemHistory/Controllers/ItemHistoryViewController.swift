@@ -14,7 +14,6 @@ class ItemHistoryBuilder {
     // MARK: - Nested
     private struct Keys {
         static let storyboard = "ItemHistory"
-        static let cell = "DateCell"
     }
 
     // MARK: - Methods
@@ -52,6 +51,7 @@ class ItemHistoryViewController: UIViewController {
     }
 }
 
+// MARK: - FSCalendarDataSource
 extension ItemHistoryViewController: FSCalendarDataSource {
 
     func calendar(_ calendar: FSCalendar, cellFor date: Date, at position: FSCalendarMonthPosition) -> FSCalendarCell {
@@ -66,7 +66,7 @@ extension ItemHistoryViewController: FSCalendarDataSource {
         if selectedStates.count == states.count {
             cell.borderColor = UIColor.green
         } else if selectedStates.count > 0 {
-            cell.borderColor = UIColor.yellow.withAlphaComponent(0.7)
+            cell.borderColor = UIColor.green.withAlphaComponent(0.3)
         } else {
             cell.borderColor = UIColor.white
         }
@@ -75,5 +75,16 @@ extension ItemHistoryViewController: FSCalendarDataSource {
     }
 }
 
+// MARK: - FSCalendarDelegate
 extension ItemHistoryViewController: FSCalendarDelegate {
+
+    func calendar(_ calendar: FSCalendar, didSelect date: Date, at monthPosition: FSCalendarMonthPosition) {
+        guard
+            let viewController = navigationController?
+                .viewControllers[1] as? PagerViewController
+            else { return }
+
+        viewController.updateDate(date)
+        navigationController?.popViewController(animated: true)
+    }
 }

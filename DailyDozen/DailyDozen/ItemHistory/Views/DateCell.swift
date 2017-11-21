@@ -28,13 +28,16 @@ class DateCell: FSCalendarCell {
         super.init(frame: frame)
 
         let borderView = UIView()
+        contentView.insertSubview(borderView, at: 1)
 
-        contentView.insertSubview(borderView, at: 0)
         self.borderView = borderView
     }
 
     override func layoutSubviews() {
         super.layoutSubviews()
-        borderView.frame = eventIndicator.frame.insetBy(dx: 20, dy: 1)
+
+        let dx = (titleLabel.bounds.width - titleLabel.bounds.height) / 2
+        borderView.frame = titleLabel.bounds.insetBy(dx: dx + 2, dy: 2)
+        borderView.layer.cornerRadius = borderView.bounds.width / 2
     }
 }

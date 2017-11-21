@@ -57,6 +57,16 @@ class PagerViewController: UIViewController {
         return formatter
     }()
 
+    // MARK: - Methods
+    func updateDate(_ date: Date) {
+        dateButton.setTitle(dateFormatter.string(from: date), for: .normal)
+        datePicker.setDate(date, animated: false)
+
+        guard let viewController = childViewControllers.first as? ServingsViewController else { return }
+        viewController.view.fadeOut().fadeIn()
+        viewController.setViewModel(for: datePicker.date)
+    }
+
     // MARK: - Actions
     @IBAction private func dateButtonPressed(_ sender: UIButton) {
         datePicker.isHidden = false
@@ -64,9 +74,9 @@ class PagerViewController: UIViewController {
     }
 
     @IBAction private func dateChanged(_ sender: UIDatePicker) {
-        dateButton.setTitle(dateFormatter.string(from: datePicker.date), for: .normal)
         dateButton.isHidden = false
         datePicker.isHidden = true
+        dateButton.setTitle(dateFormatter.string(from: datePicker.date), for: .normal)
 
         guard let viewController = childViewControllers.first as? ServingsViewController else { return }
         viewController.view.fadeOut().fadeIn()

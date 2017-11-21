@@ -106,5 +106,4 @@ extension ServingsViewController: UICollectionViewDelegate {
         let id = dataProvider.viewModel.itemID(for: collectionView.tag)
         realm.saveStates(states, with: id)
     }
-
 }
