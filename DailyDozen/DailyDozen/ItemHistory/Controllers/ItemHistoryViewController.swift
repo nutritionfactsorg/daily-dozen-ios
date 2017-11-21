@@ -54,6 +54,10 @@ class ItemHistoryViewController: UIViewController {
 // MARK: - FSCalendarDataSource
 extension ItemHistoryViewController: FSCalendarDataSource {
 
+    func maximumDate(for calendar: FSCalendar) -> Date {
+        return Date()
+    }
+
     func calendar(_ calendar: FSCalendar, cellFor date: Date, at position: FSCalendarMonthPosition) -> FSCalendarCell {
         guard
             let cell = calendar
@@ -66,7 +70,7 @@ extension ItemHistoryViewController: FSCalendarDataSource {
         if selectedStates.count == states.count {
             cell.borderColor = UIColor.green
         } else if selectedStates.count > 0 {
-            cell.borderColor = UIColor.green.withAlphaComponent(0.3)
+            cell.borderColor = UIColor.yellow
         } else {
             cell.borderColor = UIColor.white
         }

@@ -34,9 +34,6 @@
                                     <userDefinedRuntimeAttribute type="color" keyPath="titleSelectionColor">
                                         <color key="value" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                     </userDefinedRuntimeAttribute>
-                                    <userDefinedRuntimeAttribute type="color" keyPath="borderSelectionColor">
-                                        <color key="value" red="0.1843137255" green="0.56862745100000001" blue="1" alpha="1" colorSpace="calibratedRGB"/>
-                                    </userDefinedRuntimeAttribute>
                                 </userDefinedRuntimeAttributes>
                                 <connections>
                                     <outlet property="dataSource" destination="57p-4N-fhh" id="lJ0-tZ-Hwy"/>
@@ -57,7 +54,7 @@
                                         <subviews>
                                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="0Xc-vt-da9">
                                                 <rect key="frame" x="0.0" y="5" width="10" height="10"/>
-                                                <color key="backgroundColor" red="0.0" green="0.97680455450000003" blue="0.0" alpha="0.29999999999999999" colorSpace="custom" customColorSpace="sRGB"/>
+                                                <color key="backgroundColor" red="0.99942404029999998" green="0.98555368190000003" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                 <constraints>
                                                     <constraint firstAttribute="width" constant="10" id="Mk0-8I-N3F"/>
                                                     <constraint firstAttribute="height" constant="10" id="Scq-fj-oLC"/>
