@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		BED5BB460CE3AEE8CF585899 /* Pods_DailyDozen.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F514690D725E67AD54735EB9 /* Pods_DailyDozen.framework */; };
+		CF12918F1FC42DD300D1C17E /* DateCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF12918E1FC42DD300D1C17E /* DateCell.swift */; };
 		CF17C8A71FAA019600367BF8 /* DetailsSection.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF17C8A61FAA019600367BF8 /* DetailsSection.swift */; };
 		CF22F07A1FA88D2200F25B70 /* DetailsDataProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF22F0791FA88D2200F25B70 /* DetailsDataProvider.swift */; };
 		CF22F07F1FA8ACE000F25B70 /* Details.plist in Resources */ = {isa = PBXBuildFile; fileRef = CF22F07E1FA8ACE000F25B70 /* Details.plist */; };
@@ -56,6 +57,7 @@
 
 /* Begin PBXFileReference section */
 		7D4AA01331AD98C99ADB2BC0 /* Pods-DailyDozen.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-DailyDozen.release.xcconfig"; path = "Pods/Target Support Files/Pods-DailyDozen/Pods-DailyDozen.release.xcconfig"; sourceTree = "<group>"; };
+		CF12918E1FC42DD300D1C17E /* DateCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DateCell.swift; sourceTree = "<group>"; };
 		CF17C8A61FAA019600367BF8 /* DetailsSection.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailsSection.swift; sourceTree = "<group>"; };
 		CF22F0791FA88D2200F25B70 /* DetailsDataProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailsDataProvider.swift; sourceTree = "<group>"; };
 		CF22F07E1FA8ACE000F25B70 /* Details.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Details.plist; sourceTree = "<group>"; };
@@ -124,6 +126,14 @@
 				F514690D725E67AD54735EB9 /* Pods_DailyDozen.framework */,
 			);
 			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		CF12918D1FC42DB000D1C17E /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				CF12918E1FC42DD300D1C17E /* DateCell.swift */,
+			);
+			path = Views;
 			sourceTree = "<group>";
 		};
 		CF17C8A51FAA016D00367BF8 /* SupportingFiles */ = {
@@ -223,6 +233,7 @@
 		CF9E031D1FBD9F540084BC88 /* ItemHistory */ = {
 			isa = PBXGroup;
 			children = (
+				CF12918D1FC42DB000D1C17E /* Views */,
 				CF9E03211FBD9FC50084BC88 /* Controllers */,
 				CF9E031E1FBD9F800084BC88 /* Storyboards */,
 			);
@@ -622,6 +633,7 @@
 				CFAAB37A1F9F4A8000B24748 /* DozeViewModel.swift in Sources */,
 				CFC060931FBC57C800A901A5 /* ServingsSection.swift in Sources */,
 				CF5B28B11FA0A2C500D57A48 /* StateCell.swift in Sources */,
+				CF12918F1FC42DD300D1C17E /* DateCell.swift in Sources */,
 				CF2680021FB477AD004A6200 /* Date.swift in Sources */,
 				CFF72AFB1FB9A499001CC2E9 /* UnitsType.swift in Sources */,
 				CFC4A84F1F9761FF00B5AC75 /* PagerViewController.swift in Sources */,

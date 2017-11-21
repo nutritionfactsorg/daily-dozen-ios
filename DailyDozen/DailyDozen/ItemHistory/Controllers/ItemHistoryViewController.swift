@@ -12,8 +12,9 @@ import FSCalendar
 class ItemHistoryBuilder {
 
     // MARK: - Nested
-    struct Keys {
+    private struct Keys {
         static let storyboard = "ItemHistory"
+        static let cell = "DateCell"
     }
 
     // MARK: - Methods
@@ -35,16 +36,44 @@ class ItemHistoryBuilder {
 }
 
 class ItemHistoryViewController: UIViewController {
+
+    private struct Keys {
+        static let cell = "DateCell"
+    }
+
     private let realm = RealmProvider()
     var itemId = 0
+
+    @IBOutlet weak var calendarView: FSCalendar!
+
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        calendarView.register(DateCell.self, forCellReuseIdentifier: Keys.cell)
+    }
 }
 
 extension ItemHistoryViewController: FSCalendarDataSource {
 
-    func calendar(_ calendar: FSCalendar, numberOfEventsFor date: Date) -> Int {
-        let doze = realm.getDoze(for: date)
-        let item = doze.items[itemId]
-        let hasStates = item.states.filter { $0 }
-        return hasStates.count
+    func calendar(_ calendar: FSCalendar, cellFor date: Date, at position: FSCalendarMonthPosition) -> FSCalendarCell {
+        guard
+            let cell = calendar
+                .dequeueReusableCell(withIdentifier: Keys.cell, for: date, at: .current) as? DateCell
+            else { fatalError() }
+
+        let states = realm.getDoze(for: date).items[itemId].states
+        let selectedStates = states.filter { $0 }
+
+        if selectedStates.count == states.count {
+            cell.borderColor = UIColor.green
+        } else if selectedStates.count > 0 {
+            cell.borderColor = UIColor.yellow.withAlphaComponent(0.7)
+        } else {
+            cell.borderColor = UIColor.white
+        }
+
+        return cell
     }
+}
+
+extension ItemHistoryViewController: FSCalendarDelegate {
 }
