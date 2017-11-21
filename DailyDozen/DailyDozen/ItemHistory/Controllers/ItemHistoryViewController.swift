@@ -62,18 +62,12 @@ extension ItemHistoryViewController: FSCalendarDataSource {
         guard
             let cell = calendar
                 .dequeueReusableCell(withIdentifier: Keys.cell, for: date, at: .current) as? DateCell
-            else { fatalError() }
+            else { fatalError("There should be a cell") }
 
         let states = realm.getDoze(for: date).items[itemId].states
         let selectedStates = states.filter { $0 }
 
-        if selectedStates.count == states.count {
-            cell.borderColor = UIColor.green
-        } else if selectedStates.count > 0 {
-            cell.borderColor = UIColor.yellow
-        } else {
-            cell.borderColor = UIColor.white
-        }
+        cell.configure(for: selectedStates.count, maximum: states.count)
 
         return cell
     }
