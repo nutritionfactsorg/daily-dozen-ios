@@ -11,5 +11,6 @@ target 'DailyDozen' do
   pod 'RealmSwift', '~> 3.0'
   pod 'SimpleAnimation', '~> 0.3'
   pod 'FSCalendar', '~> 2.7'
+  pod 'Charts', '~> 3.0'
 
 end

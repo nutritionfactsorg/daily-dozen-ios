@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import Charts
 
 class ServingsHistoryBuilder {
 
@@ -32,4 +33,99 @@ class ServingsHistoryBuilder {
 }
 
 class ServingsHistoryViewController: UIViewController {
+
+    // MARK: - Outlets
+    @IBOutlet private weak var chartView: CombinedChartView!
+
+    let months = ["Jan", "Feb", "Mar",
+                  "Apr", "May", "Jun",
+                  "Jul", "Aug", "Sep",
+                  "Oct", "Nov", "Dec"]
+
+    override func viewDidLoad() {
+        super.viewDidLoad()
+
+        chartView.chartDescription?.enabled = false
+        chartView.drawBarShadowEnabled = false
+        chartView.highlightFullBarEnabled = false
+
+        chartView.drawOrder = [DrawOrder.bar.rawValue,
+                               DrawOrder.line.rawValue]
+
+        let l = chartView.legend
+        l.wordWrapEnabled = true
+        l.horizontalAlignment = .center
+        l.verticalAlignment = .bottom
+        l.orientation = .horizontal
+        l.drawInside = false
+
+        let rightAxis = chartView.rightAxis
+        rightAxis.axisMinimum = 0
+
+        let leftAxis = chartView.leftAxis
+        leftAxis.axisMinimum = 0
+
+        let xAxis = chartView.xAxis
+        xAxis.labelPosition = .bothSided
+        xAxis.axisMinimum = 0
+        xAxis.granularity = 1
+        xAxis.valueFormatter = self
+
+        let data = CombinedChartData()
+        data.barData = generateBarData()
+        data.lineData = generateLineData()
+
+        chartView.xAxis.axisMaximum = data.xMax + 0.25
+
+        chartView.data = data
+    }
+
+    func generateBarData() -> BarChartData {
+        let barWidth = 0.9
+
+        let entries1 = (0 ..< 12).map { i in
+            return BarChartDataEntry(x: Double(i) + 0.5, y: Double(arc4random_uniform(25) + 25))
+        }
+
+        let set1 = BarChartDataSet(values: entries1, label: "Servings")
+        let green = UIColor(red: 60/255, green: 220/255, blue: 78/255, alpha: 1)
+        set1.setColor(green)
+        set1.valueTextColor = green
+        set1.valueFont = .systemFont(ofSize: 10)
+        set1.axisDependency = .left
+
+        let data = BarChartData(dataSets: [set1])
+        data.barWidth = barWidth
+
+        return data
+    }
+
+    func generateLineData() -> LineChartData {
+        let entries = (0..<12).map { (i) -> ChartDataEntry in
+            return ChartDataEntry(x: Double(i) + 0.5, y: Double(arc4random_uniform(15) + 5))
+        }
+
+        let set = LineChartDataSet(values: entries, label: "Moving Average")
+        set.setColor(UIColor.red)
+        set.lineWidth = 2.5
+        set.setCircleColor(UIColor.red)
+        set.circleRadius = 5
+        set.circleHoleRadius = 2.5
+        set.fillColor = UIColor.white
+        set.mode = .cubicBezier
+        set.drawValuesEnabled = true
+        set.valueFont = .systemFont(ofSize: 10)
+        set.valueTextColor = UIColor.red
+
+        set.axisDependency = .left
+
+        return LineChartData(dataSet: set)
+    }
+
+}
+
+extension ServingsHistoryViewController: IAxisValueFormatter {
+    func stringForValue(_ value: Double, axis: AxisBase?) -> String {
+        return months[Int(value) % months.count]
+    }
 }

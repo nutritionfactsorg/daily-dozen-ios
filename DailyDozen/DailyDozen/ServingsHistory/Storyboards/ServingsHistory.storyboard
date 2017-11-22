@@ -37,15 +37,28 @@
                                     </segmentedControl>
                                 </subviews>
                             </stackView>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="dpZ-0j-fti" customClass="CombinedChartView" customModule="Charts">
+                                <rect key="frame" x="8" y="187" width="359" height="400"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="400" id="wUp-9n-X40"/>
+                                </constraints>
+                            </view>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
                             <constraint firstItem="EBL-A5-fjR" firstAttribute="trailing" secondItem="WYO-q4-WKd" secondAttribute="trailing" constant="8" id="D3s-oM-ESM"/>
+                            <constraint firstItem="EBL-A5-fjR" firstAttribute="trailing" secondItem="dpZ-0j-fti" secondAttribute="trailing" constant="8" id="Da6-Sm-DfB"/>
                             <constraint firstItem="WYO-q4-WKd" firstAttribute="leading" secondItem="EBL-A5-fjR" secondAttribute="leading" constant="8" id="E4m-F4-YEk"/>
+                            <constraint firstItem="EBL-A5-fjR" firstAttribute="bottom" secondItem="dpZ-0j-fti" secondAttribute="bottom" constant="80" id="Hmi-IF-JIM"/>
+                            <constraint firstItem="dpZ-0j-fti" firstAttribute="leading" secondItem="EBL-A5-fjR" secondAttribute="leading" constant="8" id="fIw-A8-yPo"/>
                             <constraint firstItem="WYO-q4-WKd" firstAttribute="top" secondItem="EBL-A5-fjR" secondAttribute="top" constant="8" id="n6Y-Da-IFp"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="EBL-A5-fjR"/>
                     </view>
+                    <connections>
+                        <outlet property="chartView" destination="dpZ-0j-fti" id="W0U-IG-wec"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="4UO-oL-cGk" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
