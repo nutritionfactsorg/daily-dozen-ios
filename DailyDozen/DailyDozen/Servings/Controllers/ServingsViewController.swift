@@ -62,6 +62,12 @@ class ServingsViewController: UIViewController {
         let viewController = VitaminsBuilder.instantiateController()
         present(viewController, animated: true)
     }
+
+    @IBAction private func historyPressed(_ sender: UIButton) {
+        let viewController = ServingsHistoryBuilder.instantiateController()
+        navigationController?.pushViewController(viewController, animated: true)
+    }
+
 }
 
 // MARK: - Servings UITableViewDelegate

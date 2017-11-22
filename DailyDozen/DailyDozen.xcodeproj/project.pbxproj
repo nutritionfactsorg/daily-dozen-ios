@@ -30,6 +30,8 @@
 		CF987C281F9E157300D4893E /* Item.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF987C271F9E157300D4893E /* Item.swift */; };
 		CF9E03201FBD9FA80084BC88 /* ItemHistory.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CF9E031F1FBD9FA80084BC88 /* ItemHistory.storyboard */; };
 		CF9E03231FBD9FDE0084BC88 /* ItemHistoryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF9E03221FBD9FDE0084BC88 /* ItemHistoryViewController.swift */; };
+		CFA3E8F91FC58D460092199D /* ServingsHistory.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CFA3E8F81FC58D460092199D /* ServingsHistory.storyboard */; };
+		CFA3E8FC1FC58E6B0092199D /* ServingsHistoryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CFA3E8FB1FC58E6B0092199D /* ServingsHistoryViewController.swift */; };
 		CFA9CDF21FBAF653000468CA /* VitaminsHeader.xib in Resources */ = {isa = PBXBuildFile; fileRef = CFA9CDF11FBAF653000468CA /* VitaminsHeader.xib */; };
 		CFA9CDF51FBB10A3000468CA /* VitaminsInfo.xib in Resources */ = {isa = PBXBuildFile; fileRef = CFA9CDF41FBB10A3000468CA /* VitaminsInfo.xib */; };
 		CFAAB3721F9F3BC600B24748 /* Doze.swift in Sources */ = {isa = PBXBuildFile; fileRef = CFAAB3711F9F3BC600B24748 /* Doze.swift */; };
@@ -79,6 +81,8 @@
 		CF987C271F9E157300D4893E /* Item.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Item.swift; sourceTree = "<group>"; };
 		CF9E031F1FBD9FA80084BC88 /* ItemHistory.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = ItemHistory.storyboard; sourceTree = "<group>"; };
 		CF9E03221FBD9FDE0084BC88 /* ItemHistoryViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ItemHistoryViewController.swift; sourceTree = "<group>"; };
+		CFA3E8F81FC58D460092199D /* ServingsHistory.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = ServingsHistory.storyboard; sourceTree = "<group>"; };
+		CFA3E8FB1FC58E6B0092199D /* ServingsHistoryViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ServingsHistoryViewController.swift; sourceTree = "<group>"; };
 		CFA9CDF11FBAF653000468CA /* VitaminsHeader.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = VitaminsHeader.xib; sourceTree = "<group>"; };
 		CFA9CDF41FBB10A3000468CA /* VitaminsInfo.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = VitaminsInfo.xib; sourceTree = "<group>"; };
 		CFAAB3711F9F3BC600B24748 /* Doze.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Doze.swift; sourceTree = "<group>"; };
@@ -256,6 +260,31 @@
 			path = Controllers;
 			sourceTree = "<group>";
 		};
+		CFA3E8F61FC58CD90092199D /* ServingsHistory */ = {
+			isa = PBXGroup;
+			children = (
+				CFA3E8FA1FC58E4F0092199D /* Controllers */,
+				CFA3E8F71FC58D160092199D /* Storyboards */,
+			);
+			path = ServingsHistory;
+			sourceTree = "<group>";
+		};
+		CFA3E8F71FC58D160092199D /* Storyboards */ = {
+			isa = PBXGroup;
+			children = (
+				CFA3E8F81FC58D460092199D /* ServingsHistory.storyboard */,
+			);
+			path = Storyboards;
+			sourceTree = "<group>";
+		};
+		CFA3E8FA1FC58E4F0092199D /* Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				CFA3E8FB1FC58E6B0092199D /* ServingsHistoryViewController.swift */,
+			);
+			path = Controllers;
+			sourceTree = "<group>";
+		};
 		CFAAB3751F9F3FCD00B24748 /* Extensions */ = {
 			isa = PBXGroup;
 			children = (
@@ -336,6 +365,7 @@
 				CFF117751F9753B700BFE73A /* Servings */,
 				CF2FA9911FA87AB5003508F8 /* Details */,
 				CF9E031D1FBD9F540084BC88 /* ItemHistory */,
+				CFA3E8F61FC58CD90092199D /* ServingsHistory */,
 			);
 			path = DailyDozen;
 			sourceTree = "<group>";
@@ -521,6 +551,7 @@
 				CF22F07F1FA8ACE000F25B70 /* Details.plist in Resources */,
 				CF64DF2C1FB5CD5100B4D124 /* TypesHeader.xib in Resources */,
 				CFA9CDF21FBAF653000468CA /* VitaminsHeader.xib in Resources */,
+				CFA3E8F91FC58D460092199D /* ServingsHistory.storyboard in Resources */,
 				CF64DF271FB5BAC400B4D124 /* SizesHeader.xib in Resources */,
 				CFE698411F974B9700CD7905 /* Main.storyboard in Resources */,
 				CFF72B001FB9BB70001CC2E9 /* LinkSettings.plist in Resources */,
@@ -610,6 +641,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				CFA3E8FC1FC58E6B0092199D /* ServingsHistoryViewController.swift in Sources */,
 				CFF72AFE1FB9BAAA001CC2E9 /* LinkService.swift in Sources */,
 				CFC4A8541F9776A500B5AC75 /* ServingsViewController.swift in Sources */,
 				CF2331801FC2DB540021C440 /* BlurableBackground.swift in Sources */,
