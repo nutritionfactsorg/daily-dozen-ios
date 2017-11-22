@@ -10,7 +10,7 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--Data Source-->
+        <!--Item History View Controller-->
         <scene sceneID="YMA-89-cXD">
             <objects>
                 <viewController id="57p-4N-fhh" customClass="ItemHistoryViewController" customModule="DailyDozen" customModuleProvider="target" sceneMemberID="viewController">
@@ -35,10 +35,6 @@
                                         <color key="value" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                     </userDefinedRuntimeAttribute>
                                 </userDefinedRuntimeAttributes>
-                                <connections>
-                                    <outlet property="dataSource" destination="57p-4N-fhh" id="lJ0-tZ-Hwy"/>
-                                    <outlet property="delegate" destination="57p-4N-fhh" id="ysF-SM-keI"/>
-                                </connections>
                             </view>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="History" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="sLd-Kq-bLv">
                                 <rect key="frame" x="8" y="91" width="375" height="24"/>

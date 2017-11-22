@@ -36,17 +36,24 @@ class ItemHistoryBuilder {
 
 class ItemHistoryViewController: UIViewController {
 
+    // MARK: - Nested
     private struct Keys {
         static let cell = "DateCell"
     }
 
+    // MARK: - Properties
     private let realm = RealmProvider()
-    var itemId = 0
+    fileprivate var itemId = 0
 
-    @IBOutlet weak var calendarView: FSCalendar!
+    // MARK: - Outlets
+    @IBOutlet private weak var calendarView: FSCalendar!
 
+    // MARK: - UIViewController
     override func viewDidLoad() {
         super.viewDidLoad()
+
+        calendarView.delegate = self
+        calendarView.dataSource = self
         calendarView.register(DateCell.self, forCellReuseIdentifier: Keys.cell)
     }
 }
@@ -63,6 +70,8 @@ extension ItemHistoryViewController: FSCalendarDataSource {
             let cell = calendar
                 .dequeueReusableCell(withIdentifier: Keys.cell, for: date, at: .current) as? DateCell
             else { fatalError("There should be a cell") }
+
+        guard date < Date() else { return cell }
 
         let states = realm.getDoze(for: date).items[itemId].states
         let selectedStates = states.filter { $0 }

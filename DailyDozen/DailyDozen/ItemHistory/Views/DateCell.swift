@@ -11,8 +11,10 @@ import FSCalendar
 
 class DateCell: FSCalendarCell {
 
+    // MARK: - Properties
     private weak var borderView: UIView!
 
+    // MARK: - Inits
     required init!(coder aDecoder: NSCoder!) {
         fatalError("init(coder:) has not been implemented")
     }
@@ -34,6 +36,12 @@ class DateCell: FSCalendarCell {
         borderView.layer.cornerRadius = borderView.bounds.width / 2
     }
 
+    // MARK: - Methods
+    /// Sets the borderView color.
+    ///
+    /// - Parameters:
+    ///   - count: The current states count.
+    ///   - maximum: The maximum of states.
     func configure(for count: Int, maximum: Int) {
         if count == maximum {
             borderView.backgroundColor = UIColor.green
