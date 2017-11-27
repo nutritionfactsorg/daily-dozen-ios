@@ -42,17 +42,26 @@ class ServingsHistoryViewController: UIViewController {
                   "Jul", "Aug", "Sep",
                   "Oct", "Nov", "Dec"]
 
-    var result: [Doze]!
+    var dozes: [Doze]!
 
     override func viewDidLoad() {
         super.viewDidLoad()
 
         let realm = RealmProvider()
-        result = Array(realm.getDozes().filter { $0.date.isInCurrentMonthWith(Date()) })
+
+        let result = realm
+            .getDozes()
+            .sorted(byKeyPath: "date")
+            .filter { $0.date.isInCurrentMonthWith(Date()) }
+
+        dozes = Array(result)
 
         chartView.chartDescription?.enabled = false
         chartView.drawBarShadowEnabled = false
         chartView.highlightFullBarEnabled = false
+        chartView.setScaleEnabled(false)
+        chartView.dragXEnabled = true
+        chartView.dragYEnabled = false
 
         chartView.drawOrder = [DrawOrder.bar.rawValue,
                                DrawOrder.line.rawValue]
@@ -72,7 +81,6 @@ class ServingsHistoryViewController: UIViewController {
 
         let xAxis = chartView.xAxis
         xAxis.labelPosition = .bothSided
-        xAxis.axisMinimum = 0
         xAxis.granularity = 1
         xAxis.valueFormatter = self
 
@@ -80,10 +88,12 @@ class ServingsHistoryViewController: UIViewController {
         data.barData = generateBarData()
 //        data.lineData = generateLineData()
 
-        chartView.xAxis.axisMaximum = data.xMax + 0.5
-        chartView.xAxis.axisMinimum = data.xMin - 0.5
+        xAxis.axisMaximum = data.xMax + 0.5
+        xAxis.axisMinimum = data.xMin - 0.5
 
         chartView.data = data
+        chartView.setVisibleXRangeMaximum(5)
+        chartView.moveViewToX(Double(dozes.count))
     }
 
     func generateBarData() -> BarChartData {
@@ -91,7 +101,7 @@ class ServingsHistoryViewController: UIViewController {
 
         var entries = [BarChartDataEntry]()
 
-        for (index, doze) in result.enumerated() {
+        for (index, doze) in dozes.enumerated() {
             var statesCount = 0
             for item in doze.items {
                 let selectedStates = item.states.filter { $0 }
@@ -138,8 +148,9 @@ class ServingsHistoryViewController: UIViewController {
 }
 
 extension ServingsHistoryViewController: IAxisValueFormatter {
+
     func stringForValue(_ value: Double, axis: AxisBase?) -> String {
-        let date = result[Int(value)].date
-        return "\(date.day) (\(date.dayName))"
+        let date = dozes[Int(value)].date
+        return "\(date.day) \n (\(date.dayName))"
     }
 }
