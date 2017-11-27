@@ -13,21 +13,9 @@ class DozeViewModel {
     // MARK: - Properties
     private let doze: Doze
 
-    private lazy var dateFormatter: DateFormatter = {
-        let formatter = DateFormatter()
-        formatter.dateStyle = .short
-        formatter.locale = Locale(identifier: "en_GB")
-        return formatter
-    }()
-
     /// Returns the number of items in the doze.
     var count: Int {
         return doze.items.count
-    }
-
-    /// Returns the doze name from the doze date.
-    var name: String {
-        return dateFormatter.string(from: doze.date)
     }
 
     // MARK: - Inits

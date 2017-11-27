@@ -48,7 +48,7 @@ class ServingsHistoryViewController: UIViewController {
         super.viewDidLoad()
 
         let realm = RealmProvider()
-        result = Array(realm.getDozes().filter { $0.date >= Date().addingTimeInterval(-2629746) })
+        result = Array(realm.getDozes().filter { $0.date.isInCurrentMonthWith(Date()) })
 
         chartView.chartDescription?.enabled = false
         chartView.drawBarShadowEnabled = false

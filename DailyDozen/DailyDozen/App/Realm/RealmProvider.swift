@@ -27,7 +27,7 @@ class RealmProvider {
     func getDoze(for date: Date) -> Doze {
         let doze = realm
             .objects(Doze.self)
-            .filter { $0.date.shortDescription == date.shortDescription }
+            .filter { $0.date.isInCurrentDayWith(date) }
             .first ?? RealmConfig.initialDoze(for: date)
         unsavedDoze = doze
         return doze
