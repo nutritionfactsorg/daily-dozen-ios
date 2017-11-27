@@ -33,6 +33,10 @@ class RealmProvider {
         return doze
     }
 
+    func getDozes() -> Results<Doze> {
+        return realm.objects(Doze.self)
+    }
+
     /// Updates an Item object with an ID for new states.
     ///
     /// - Parameters:

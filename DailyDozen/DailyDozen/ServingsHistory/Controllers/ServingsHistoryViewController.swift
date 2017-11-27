@@ -42,8 +42,13 @@ class ServingsHistoryViewController: UIViewController {
                   "Jul", "Aug", "Sep",
                   "Oct", "Nov", "Dec"]
 
+    var result: [Doze]!
+
     override func viewDidLoad() {
         super.viewDidLoad()
+
+        let realm = RealmProvider()
+        result = Array(realm.getDozes().filter { $0.date >= Date().addingTimeInterval(-2629746) })
 
         chartView.chartDescription?.enabled = false
         chartView.drawBarShadowEnabled = false
@@ -52,12 +57,12 @@ class ServingsHistoryViewController: UIViewController {
         chartView.drawOrder = [DrawOrder.bar.rawValue,
                                DrawOrder.line.rawValue]
 
-        let l = chartView.legend
-        l.wordWrapEnabled = true
-        l.horizontalAlignment = .center
-        l.verticalAlignment = .bottom
-        l.orientation = .horizontal
-        l.drawInside = false
+        let legend = chartView.legend
+        legend.wordWrapEnabled = true
+        legend.horizontalAlignment = .center
+        legend.verticalAlignment = .bottom
+        legend.orientation = .horizontal
+        legend.drawInside = false
 
         let rightAxis = chartView.rightAxis
         rightAxis.axisMinimum = 0
@@ -73,9 +78,10 @@ class ServingsHistoryViewController: UIViewController {
 
         let data = CombinedChartData()
         data.barData = generateBarData()
-        data.lineData = generateLineData()
+//        data.lineData = generateLineData()
 
-        chartView.xAxis.axisMaximum = data.xMax + 0.25
+        chartView.xAxis.axisMaximum = data.xMax + 0.5
+        chartView.xAxis.axisMinimum = data.xMin - 0.5
 
         chartView.data = data
     }
@@ -83,18 +89,25 @@ class ServingsHistoryViewController: UIViewController {
     func generateBarData() -> BarChartData {
         let barWidth = 0.9
 
-        let entries1 = (0 ..< 12).map { i in
-            return BarChartDataEntry(x: Double(i) + 0.5, y: Double(arc4random_uniform(25) + 25))
+        var entries = [BarChartDataEntry]()
+
+        for (index, doze) in result.enumerated() {
+            var statesCount = 0
+            for item in doze.items {
+                let selectedStates = item.states.filter { $0 }
+                statesCount += selectedStates.count
+            }
+            entries.append(BarChartDataEntry(x: Double(index), y: Double(statesCount)))
         }
 
-        let set1 = BarChartDataSet(values: entries1, label: "Servings")
+        let set = BarChartDataSet(values: entries, label: "Servings")
         let green = UIColor(red: 60/255, green: 220/255, blue: 78/255, alpha: 1)
-        set1.setColor(green)
-        set1.valueTextColor = green
-        set1.valueFont = .systemFont(ofSize: 10)
-        set1.axisDependency = .left
+        set.setColor(green)
+        set.valueTextColor = green
+        set.valueFont = .systemFont(ofSize: 10)
+        set.axisDependency = .left
 
-        let data = BarChartData(dataSets: [set1])
+        let data = BarChartData(dataSets: [set])
         data.barWidth = barWidth
 
         return data
@@ -126,6 +139,7 @@ class ServingsHistoryViewController: UIViewController {
 
 extension ServingsHistoryViewController: IAxisValueFormatter {
     func stringForValue(_ value: Double, axis: AxisBase?) -> String {
-        return months[Int(value) % months.count]
+        let date = result[Int(value)].date
+        return "\(date.day) (\(date.dayName))"
     }
 }
