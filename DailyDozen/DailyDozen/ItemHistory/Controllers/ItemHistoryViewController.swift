@@ -71,8 +71,7 @@ extension ItemHistoryViewController: FSCalendarDataSource {
                 .dequeueReusableCell(withIdentifier: Keys.cell, for: date, at: .current) as? DateCell
             else { fatalError("There should be a cell") }
 
-        let today = Date()
-        guard date.isInCurrentMonthWith(today), date <= today else { return cell }
+        guard date < Date() else { return cell }
 
         let states = realm.getDoze(for: date).items[itemId].states
         let selectedStates = states.filter { $0 }
