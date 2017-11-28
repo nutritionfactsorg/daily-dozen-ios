@@ -22,6 +22,20 @@ extension Date {
         return Calendar.current.component(.day, from: self)
     }
 
+    var monthName: String {
+        let dateFormatter = DateFormatter()
+        dateFormatter.setLocalizedDateFormatFromTemplate("MMM")
+        return dateFormatter.string(from: self)
+    }
+
+    var month: Int {
+        return Calendar.current.component(.month, from: self)
+    }
+
+    var year: Int {
+        return Calendar.current.component(.year, from: self)
+    }
+
     /// Returns a date string from the date.
     ///
     /// - Parameter style: A dateFormatter style (default is .medium).

@@ -92,6 +92,9 @@
                                                 <real key="value" value="1"/>
                                             </userDefinedRuntimeAttribute>
                                         </userDefinedRuntimeAttributes>
+                                        <connections>
+                                            <action selector="previousButtonPressed:" destination="W8v-3t-yDA" eventType="touchUpInside" id="5fh-fh-SA4"/>
+                                        </connections>
                                     </button>
                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" alignment="center" spacing="5" translatesAutoresizingMaskIntoConstraints="NO" id="bSE-Rc-iZF">
                                         <rect key="frame" x="112" y="0.0" width="135" height="53"/>
@@ -130,6 +133,9 @@
                                                 <real key="value" value="1"/>
                                             </userDefinedRuntimeAttribute>
                                         </userDefinedRuntimeAttributes>
+                                        <connections>
+                                            <action selector="nextButtonPressed:" destination="W8v-3t-yDA" eventType="touchUpInside" id="gmu-Em-ia0"/>
+                                        </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleAspectFit" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="7qG-56-frM" customClass="RoundedButton" customModule="DailyDozen" customModuleProvider="target">
                                         <rect key="frame" x="323" y="8.5" width="36" height="36"/>
@@ -171,6 +177,7 @@
                     </view>
                     <connections>
                         <outlet property="chartView" destination="dpZ-0j-fti" id="W0U-IG-wec"/>
+                        <outlet property="monthLabel" destination="nRL-iG-Wnd" id="LKa-oF-5DL"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="4UO-oL-cGk" userLabel="First Responder" sceneMemberID="firstResponder"/>
