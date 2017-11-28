@@ -44,6 +44,7 @@
 		CFC4A84F1F9761FF00B5AC75 /* PagerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CFC4A84E1F9761FF00B5AC75 /* PagerViewController.swift */; };
 		CFC4A8541F9776A500B5AC75 /* ServingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CFC4A8531F9776A500B5AC75 /* ServingsViewController.swift */; };
 		CFCE5FCB1F978007005C672B /* Servings.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CFCE5FCA1F978007005C672B /* Servings.storyboard */; };
+		CFD1BA331FCD24920057F549 /* RoundedButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = CFD1BA321FCD24920057F549 /* RoundedButton.swift */; };
 		CFE667291F98CF860037D1A2 /* Pager.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CFE667281F98CF860037D1A2 /* Pager.storyboard */; };
 		CFE6983C1F974B9700CD7905 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CFE6983B1F974B9700CD7905 /* AppDelegate.swift */; };
 		CFE6983E1F974B9700CD7905 /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CFE6983D1F974B9700CD7905 /* MainViewController.swift */; };
@@ -95,6 +96,7 @@
 		CFC4A84E1F9761FF00B5AC75 /* PagerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PagerViewController.swift; sourceTree = "<group>"; };
 		CFC4A8531F9776A500B5AC75 /* ServingsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ServingsViewController.swift; sourceTree = "<group>"; };
 		CFCE5FCA1F978007005C672B /* Servings.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Servings.storyboard; sourceTree = "<group>"; };
+		CFD1BA321FCD24920057F549 /* RoundedButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoundedButton.swift; sourceTree = "<group>"; };
 		CFE667281F98CF860037D1A2 /* Pager.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Pager.storyboard; sourceTree = "<group>"; };
 		CFE698381F974B9700CD7905 /* DailyDozen.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = DailyDozen.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		CFE6983B1F974B9700CD7905 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -339,6 +341,14 @@
 			path = Controllers;
 			sourceTree = "<group>";
 		};
+		CFD1BA311FCD24220057F549 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				CFD1BA321FCD24920057F549 /* RoundedButton.swift */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
 		CFE6982F1F974B9700CD7905 = {
 			isa = PBXGroup;
 			children = (
@@ -373,6 +383,7 @@
 		CFE6984F1F974EFF00CD7905 /* App */ = {
 			isa = PBXGroup;
 			children = (
+				CFD1BA311FCD24220057F549 /* Views */,
 				CFE698501F974F0F00CD7905 /* Controllers */,
 				CFAAB37B1F9F4B0D00B24748 /* Realm */,
 				CFF72AFC1FB9BA4F001CC2E9 /* Services */,
@@ -671,6 +682,7 @@
 				CF2680021FB477AD004A6200 /* Date.swift in Sources */,
 				CFF72AFB1FB9A499001CC2E9 /* UnitsType.swift in Sources */,
 				CFC4A84F1F9761FF00B5AC75 /* PagerViewController.swift in Sources */,
+				CFD1BA331FCD24920057F549 /* RoundedButton.swift in Sources */,
 				CF9E03231FBD9FDE0084BC88 /* ItemHistoryViewController.swift in Sources */,
 				CF4DECF91F9DF82900DA094B /* ServingsDataProvider.swift in Sources */,
 				CF17C8A71FAA019600367BF8 /* DetailsSection.swift in Sources */,
