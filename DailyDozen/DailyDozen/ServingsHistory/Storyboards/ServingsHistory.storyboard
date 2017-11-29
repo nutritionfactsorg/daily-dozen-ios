@@ -71,6 +71,9 @@
                                                 <real key="value" value="1"/>
                                             </userDefinedRuntimeAttribute>
                                         </userDefinedRuntimeAttributes>
+                                        <connections>
+                                            <action selector="toFirstButtonPressed:" destination="W8v-3t-yDA" eventType="touchUpInside" id="lyR-l0-njI"/>
+                                        </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleAspectFit" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="56G-mx-NCB" customClass="RoundedButton" customModule="DailyDozen" customModuleProvider="target">
                                         <rect key="frame" x="56" y="8.5" width="36" height="36"/>
@@ -93,7 +96,7 @@
                                             </userDefinedRuntimeAttribute>
                                         </userDefinedRuntimeAttributes>
                                         <connections>
-                                            <action selector="previousButtonPressed:" destination="W8v-3t-yDA" eventType="touchUpInside" id="5fh-fh-SA4"/>
+                                            <action selector="toPreviousButtonPressed:" destination="W8v-3t-yDA" eventType="touchUpInside" id="5fh-fh-SA4"/>
                                         </connections>
                                     </button>
                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" alignment="center" spacing="5" translatesAutoresizingMaskIntoConstraints="NO" id="bSE-Rc-iZF">
@@ -134,7 +137,7 @@
                                             </userDefinedRuntimeAttribute>
                                         </userDefinedRuntimeAttributes>
                                         <connections>
-                                            <action selector="nextButtonPressed:" destination="W8v-3t-yDA" eventType="touchUpInside" id="gmu-Em-ia0"/>
+                                            <action selector="toNextButtonPressed:" destination="W8v-3t-yDA" eventType="touchUpInside" id="gmu-Em-ia0"/>
                                         </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleAspectFit" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="7qG-56-frM" customClass="RoundedButton" customModule="DailyDozen" customModuleProvider="target">
@@ -157,6 +160,9 @@
                                                 <real key="value" value="1"/>
                                             </userDefinedRuntimeAttribute>
                                         </userDefinedRuntimeAttributes>
+                                        <connections>
+                                            <action selector="toLastButtonPressed:" destination="W8v-3t-yDA" eventType="touchUpInside" id="cdq-yt-pHS"/>
+                                        </connections>
                                     </button>
                                 </subviews>
                             </stackView>
@@ -178,6 +184,10 @@
                     <connections>
                         <outlet property="chartView" destination="dpZ-0j-fti" id="W0U-IG-wec"/>
                         <outlet property="monthLabel" destination="nRL-iG-Wnd" id="LKa-oF-5DL"/>
+                        <outlet property="toFirstButton" destination="F52-SP-heS" id="stq-K2-Ca9"/>
+                        <outlet property="toLastButton" destination="7qG-56-frM" id="tqz-qP-e9K"/>
+                        <outlet property="toNextButton" destination="KLO-FN-X4F" id="IGR-tK-gzR"/>
+                        <outlet property="toPreviousButton" destination="56G-mx-NCB" id="qN0-8d-PvA"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="4UO-oL-cGk" userLabel="First Responder" sceneMemberID="firstResponder"/>

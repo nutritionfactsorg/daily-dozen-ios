@@ -42,12 +42,23 @@ class ServingsHistoryViewController: UIViewController {
         }
     }
 
+    @IBOutlet weak var toFirstButton: RoundedButton!
+    @IBOutlet weak var toPreviousButton: RoundedButton!
+    @IBOutlet weak var toNextButton: RoundedButton!
+    @IBOutlet weak var toLastButton: RoundedButton!
+
     // MARK: - Properties
     private var dozes = [String: [Doze]]()
+    private var months = [String]()
     private var currentDozes = [Doze]()
     private var currentDate = Date() {
         didSet {
             monthLabel.text = currentDate.monthName
+            guard let index = months.index(of: currentDate.monthName) else { return }
+            toFirstButton.isEnabled = index > 0
+            toPreviousButton.isEnabled = index > 0
+            toNextButton.isEnabled = index < months.count - 1
+            toLastButton.isEnabled = index < months.count - 1
         }
     }
 
@@ -64,6 +75,7 @@ class ServingsHistoryViewController: UIViewController {
         result.forEach { doze in
             if dozes[doze.date.monthName] == nil {
                 dozes.updateValue([], forKey: doze.date.monthName)
+                months.append(doze.date.monthName)
             }
             dozes[doze.date.monthName]?.append(doze)
         }
@@ -95,9 +107,12 @@ class ServingsHistoryViewController: UIViewController {
         xAxis.granularity = 1
         xAxis.valueFormatter = self
 
-        currentDate = Date().adding(.month, value: -1) ?? Date()
-        guard let newDozes = dozes[currentDate.monthName] else { return }
+        guard
+            let monthName = months.last,
+            let newDozes = dozes[monthName]
+            else { return }
         currentDozes = newDozes
+        currentDate = newDozes[0].date
         setChartData()
     }
 
@@ -105,18 +120,18 @@ class ServingsHistoryViewController: UIViewController {
         let data = CombinedChartData()
         data.barData = generateBarData(for: currentDozes)
 //        data.lineData = generateLineData()
-        print(data.xMax, data.xMin)
 
         chartView.xAxis.axisMaximum = data.xMax + 0.5
         chartView.xAxis.axisMinimum = data.xMin - 0.5
 
         chartView.data = data
 
-//        chartView.setVisibleXRangeMaximum(7)
-//        chartView.moveViewToX(Double(currentDozes.count))
+        chartView.setVisibleXRange(minXRange: 3, maxXRange: 7)
+        chartView.moveViewToX(Double(currentDozes.count))
 
         chartView.data?.notifyDataChanged()
         chartView.notifyDataSetChanged()
+        chartView.setNeedsDisplay()
     }
 
     // MARK: - Methods
@@ -168,7 +183,31 @@ class ServingsHistoryViewController: UIViewController {
     }
 
     // MARK: - Actions
-    @IBAction private func nextButtonPressed(_ sender: UIButton) {
+    @IBAction private func toFirstButtonPressed(_ sender: UIButton) {
+        guard
+            let firstMonth = months.first,
+            let newDozes = dozes[firstMonth]
+            else { return }
+        chartView.clear()
+        currentDozes.removeAll()
+        currentDozes = newDozes
+        currentDate = newDozes[0].date
+        setChartData()
+    }
+
+    @IBAction private func toPreviousButtonPressed(_ sender: UIButton) {
+        guard
+            let newDate = currentDate.adding(.month, value: -1),
+            let newDozes = dozes[newDate.monthName]
+            else { return }
+        chartView.clear()
+        currentDozes.removeAll()
+        currentDozes = newDozes
+        currentDate = newDate
+        setChartData()
+    }
+
+    @IBAction private func toNextButtonPressed(_ sender: UIButton) {
         guard
             let newDate = currentDate.adding(.month, value: 1),
             let newDozes = dozes[newDate.monthName]
@@ -180,17 +219,18 @@ class ServingsHistoryViewController: UIViewController {
         setChartData()
     }
 
-    @IBAction private func previousButtonPressed(_ sender: UIButton) {
+    @IBAction private func toLastButtonPressed(_ sender: UIButton) {
         guard
-            let newDate = currentDate.adding(.month, value: -1),
-            let newDozes = dozes[newDate.monthName]
+            let firstMonth = months.last,
+            let newDozes = dozes[firstMonth]
             else { return }
         chartView.clear()
         currentDozes.removeAll()
         currentDozes = newDozes
-        currentDate = newDate
+        currentDate = newDozes[newDozes.count - 1].date
         setChartData()
     }
+
 }
 
 // MARK: - IAxisValueFormatter
