@@ -119,7 +119,7 @@ class ServingsHistoryViewController: UIViewController {
     func setChartData() {
         let data = CombinedChartData()
         data.barData = generateBarData(for: currentDozes)
-//        data.lineData = generateLineData()
+        data.lineData = generateLineData(for: currentDozes)
 
         chartView.xAxis.axisMaximum = data.xMax + 0.5
         chartView.xAxis.axisMinimum = data.xMin - 0.5
@@ -160,9 +160,18 @@ class ServingsHistoryViewController: UIViewController {
         return data
     }
 
-    func generateLineData() -> LineChartData {
-        let entries = (0..<12).map { (i) -> ChartDataEntry in
-            return ChartDataEntry(x: Double(i) + 0.5, y: Double(arc4random_uniform(15) + 5))
+    func generateLineData(for dozes: [Doze]) -> LineChartData {
+
+        var entries = [ChartDataEntry]()
+
+        for (index, doze) in dozes.enumerated() {
+            var statesCount = 0
+            for item in doze.items {
+                let selectedStates = item.states.filter { $0 }
+                statesCount += selectedStates.count
+            }
+            let fakeY = Double(statesCount) / 3.0
+            entries.append(ChartDataEntry(x: Double(index), y: fakeY))
         }
 
         let set = LineChartDataSet(values: entries, label: "Moving Average")
