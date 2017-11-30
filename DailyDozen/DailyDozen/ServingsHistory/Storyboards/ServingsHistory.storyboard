@@ -35,6 +35,9 @@
                                             <segment title="Month"/>
                                             <segment title="Year"/>
                                         </segments>
+                                        <connections>
+                                            <action selector="timeScaleChanged:" destination="W8v-3t-yDA" eventType="valueChanged" id="qbO-e3-Cs9"/>
+                                        </connections>
                                     </segmentedControl>
                                 </subviews>
                                 <constraints>
