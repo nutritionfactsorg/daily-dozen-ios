@@ -91,6 +91,8 @@ class ServingsHistoryViewController: UIViewController {
             setChartData()
         }
     }
+    var currentDozesMap = [Int]()
+
     private var currentDate = Date() {
         didSet {
             monthLabel.text = currentDate.monthName
@@ -136,8 +138,13 @@ class ServingsHistoryViewController: UIViewController {
 
     private func setChartData() {
         let data = CombinedChartData()
-        data.barData = generateBarData(for: currentDozes)
-        data.lineData = generateLineData(for: currentDozes)
+
+        if currentTimeScale == .day {
+            data.barData = generateBarData(for: currentDozes)
+            data.lineData = generateLineData(for: currentDozes)
+        } else {
+            data.lineData = generateLineData(from: currentDozesMap)
+        }
 
         chartView.xAxis.axisMaximum = data.xMax + 0.5
         chartView.xAxis.axisMinimum = data.xMin - 0.5
@@ -208,6 +215,30 @@ class ServingsHistoryViewController: UIViewController {
         return LineChartData(dataSet: set)
     }
 
+    func generateLineData(from map: [Int]) -> LineChartData {
+        var entries = [ChartDataEntry]()
+
+        for (index, value) in map.enumerated() {
+            entries.append(ChartDataEntry(x: Double(index), y: Double(value)))
+        }
+
+        let set = LineChartDataSet(values: entries, label: "Moving Average")
+        set.setColor(UIColor.red)
+        set.lineWidth = 2.5
+        set.setCircleColor(UIColor.red)
+        set.circleRadius = 5
+        set.circleHoleRadius = 2.5
+        set.fillColor = UIColor.white
+        set.mode = .cubicBezier
+        set.drawValuesEnabled = true
+        set.valueFont = .systemFont(ofSize: 10)
+        set.valueTextColor = UIColor.red
+
+        set.axisDependency = .left
+
+        return LineChartData(dataSet: set)
+    }
+
     // MARK: - Actions
     @IBAction private func toFirstButtonPressed(_ sender: UIButton) {
         guard
@@ -246,13 +277,28 @@ class ServingsHistoryViewController: UIViewController {
         guard let timeScale = TimeScale(rawValue: sender.selectedSegmentIndex) else { return }
         currentTimeScale = timeScale
 
-        print(currentTimeScale)
-
         switch currentTimeScale {
         case .day:
-            break
+            guard
+                let monthName = months.last,
+                let newDozes = dozes[monthName]
+                else { return }
+            currentDozes = newDozes
         case .month:
-            break
+            chartView.clear()
+            currentDozesMap.removeAll()
+            for month in months {
+                guard let monthDozes = dozes[month] else { return }
+                var count = 0
+                for doze in monthDozes {
+                    for item in doze.items {
+                        let selectedStates = item.states.filter { $0 }
+                        count += selectedStates.count
+                    }
+                }
+                currentDozesMap.append(count)
+                setChartData()
+            }
         case .year:
             break
         }
@@ -263,10 +309,22 @@ class ServingsHistoryViewController: UIViewController {
 extension ServingsHistoryViewController: IAxisValueFormatter {
 
     func stringForValue(_ value: Double, axis: AxisBase?) -> String {
-        guard value < Double(currentDozes.count) else {
+        switch currentTimeScale {
+        case .day:
+            guard value < Double(currentDozes.count) else {
+                return ""
+            }
+            let date = currentDozes[Int(value)].date
+            return "\(date.day)\n(\(date.dayName))"
+        case .month:
+            guard value < Double(months.count) else {
+                return ""
+            }
+            let monthName = months[Int(value)]
+            return monthName
+        case .year:
             return ""
         }
-        let date = currentDozes[Int(value)].date
-        return "\(date.day)\n(\(date.dayName))"
+
     }
 }
