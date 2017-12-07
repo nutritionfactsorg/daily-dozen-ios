@@ -51,7 +51,7 @@
                                     <constraint firstAttribute="height" constant="400" id="wUp-9n-X40"/>
                                 </constraints>
                             </view>
-                            <stackView opaque="NO" contentMode="scaleToFill" alignment="center" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="AXc-qN-o5Q">
+                            <stackView opaque="NO" contentMode="scaleToFill" alignment="center" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="AXc-qN-o5Q" customClass="ControlPanel" customModule="DailyDozen" customModuleProvider="target">
                                 <rect key="frame" x="8" y="76" width="359" height="53"/>
                                 <subviews>
                                     <button opaque="NO" contentMode="scaleAspectFit" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="F52-SP-heS" customClass="RoundedButton" customModule="DailyDozen" customModuleProvider="target">
@@ -168,6 +168,13 @@
                                         </connections>
                                     </button>
                                 </subviews>
+                                <connections>
+                                    <outlet property="monthLabel" destination="nRL-iG-Wnd" id="CH2-9B-cZM"/>
+                                    <outlet property="toFirstButton" destination="F52-SP-heS" id="9cB-05-OpD"/>
+                                    <outlet property="toLastButton" destination="7qG-56-frM" id="r6h-fS-8AL"/>
+                                    <outlet property="toNextButton" destination="KLO-FN-X4F" id="kzg-mE-vZ9"/>
+                                    <outlet property="toPreviousButton" destination="56G-mx-NCB" id="Rib-He-ICo"/>
+                                </connections>
                             </stackView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -185,12 +192,8 @@
                         <viewLayoutGuide key="safeArea" id="EBL-A5-fjR"/>
                     </view>
                     <connections>
-                        <outlet property="chartView" destination="dpZ-0j-fti" id="W0U-IG-wec"/>
-                        <outlet property="monthLabel" destination="nRL-iG-Wnd" id="LKa-oF-5DL"/>
-                        <outlet property="toFirstButton" destination="F52-SP-heS" id="stq-K2-Ca9"/>
-                        <outlet property="toLastButton" destination="7qG-56-frM" id="tqz-qP-e9K"/>
-                        <outlet property="toNextButton" destination="KLO-FN-X4F" id="IGR-tK-gzR"/>
-                        <outlet property="toPreviousButton" destination="56G-mx-NCB" id="qN0-8d-PvA"/>
+                        <outlet property="chartView" destination="dpZ-0j-fti" id="zvb-Ft-pto"/>
+                        <outlet property="controlPanel" destination="AXc-qN-o5Q" id="vaM-tH-Uzf"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="4UO-oL-cGk" userLabel="First Responder" sceneMemberID="firstResponder"/>

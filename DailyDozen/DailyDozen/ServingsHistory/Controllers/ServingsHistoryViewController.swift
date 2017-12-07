@@ -41,35 +41,27 @@ class ServingsHistoryViewController: UIViewController {
 
     // MARK: - Outlets
     @IBOutlet private weak var chartView: ChartView!
-    @IBOutlet private weak var monthLabel: UILabel! {
-        didSet {
-            monthLabel.text = Date().monthName
-        }
-    }
-
-    @IBOutlet private weak var toFirstButton: RoundedButton!
-    @IBOutlet private weak var toPreviousButton: RoundedButton!
-    @IBOutlet private weak var toNextButton: RoundedButton!
-    @IBOutlet private weak var toLastButton: RoundedButton!
+    @IBOutlet private weak var controlPanel: ControlPanel!
 
     // MARK: - Properties
     private var report: Report!
+    private var currentTimeScale = TimeScale.day
 
     private var pageCodes: (year: Int, month: Int)! {
         didSet {
             chartView.clear()
 
-            toFirstButton.isEnabled = pageCodes.month > 0
-            toPreviousButton.isEnabled = pageCodes.month > 0
-            toNextButton.isEnabled = pageCodes.month < report.data.last!.months.count - 1
-            toLastButton.isEnabled = pageCodes.month < report.data.last!.months.count - 1
+            let canLeft = pageCodes.month > 0
+            let canRight = pageCodes.month < report.data.last!.months.count - 1
+            controlPanel.configure(canSwitch: (left: canLeft, right: canRight))
 
-            monthLabel.text = report.data[pageCodes.year].months[pageCodes.month].month
+            let month = report.data[pageCodes.year].months[pageCodes.month].month
+            controlPanel.setMonthLabel(text: month)
+
             let map = report.data[pageCodes.year].months[pageCodes.month].daily.map { $0.statesCount }
             chartView.configure(with: map, for: currentTimeScale)
         }
     }
-    private var currentTimeScale = TimeScale.day
 
     // MARK: - UIViewController
     override func viewDidLoad() {

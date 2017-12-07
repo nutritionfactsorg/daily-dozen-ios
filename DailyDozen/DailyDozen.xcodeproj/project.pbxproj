@@ -17,6 +17,7 @@
 		CF2FA9941FA87B2E003508F8 /* Details.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CF2FA9931FA87B2E003508F8 /* Details.storyboard */; };
 		CF2FA9961FA87F0C003508F8 /* DetailsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF2FA9951FA87F0C003508F8 /* DetailsViewController.swift */; };
 		CF4902951FD91412000EAB68 /* ChartView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF4902941FD91412000EAB68 /* ChartView.swift */; };
+		CF4902971FD917D4000EAB68 /* ControlPanel.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF4902961FD917D4000EAB68 /* ControlPanel.swift */; };
 		CF4DECF71F9DF2A500DA094B /* ServingsCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF4DECF61F9DF2A500DA094B /* ServingsCell.swift */; };
 		CF4DECF91F9DF82900DA094B /* ServingsDataProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF4DECF81F9DF82900DA094B /* ServingsDataProvider.swift */; };
 		CF5B28B11FA0A2C500D57A48 /* StateCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF5B28B01FA0A2C500D57A48 /* StateCell.swift */; };
@@ -71,6 +72,7 @@
 		CF2FA9931FA87B2E003508F8 /* Details.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Details.storyboard; sourceTree = "<group>"; };
 		CF2FA9951FA87F0C003508F8 /* DetailsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailsViewController.swift; sourceTree = "<group>"; };
 		CF4902941FD91412000EAB68 /* ChartView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChartView.swift; sourceTree = "<group>"; };
+		CF4902961FD917D4000EAB68 /* ControlPanel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ControlPanel.swift; sourceTree = "<group>"; };
 		CF4DECF61F9DF2A500DA094B /* ServingsCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ServingsCell.swift; sourceTree = "<group>"; };
 		CF4DECF81F9DF82900DA094B /* ServingsDataProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ServingsDataProvider.swift; sourceTree = "<group>"; };
 		CF5B28B01FA0A2C500D57A48 /* StateCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StateCell.swift; sourceTree = "<group>"; };
@@ -200,6 +202,7 @@
 			isa = PBXGroup;
 			children = (
 				CF4902941FD91412000EAB68 /* ChartView.swift */,
+				CF4902961FD917D4000EAB68 /* ControlPanel.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -700,6 +703,7 @@
 				CF4DECF71F9DF2A500DA094B /* ServingsCell.swift in Sources */,
 				CFE793571FA756E40084F075 /* RealmProvider.swift in Sources */,
 				CFAAB37A1F9F4A8000B24748 /* DozeViewModel.swift in Sources */,
+				CF4902971FD917D4000EAB68 /* ControlPanel.swift in Sources */,
 				CFC060931FBC57C800A901A5 /* ServingsSection.swift in Sources */,
 				CF5B28B11FA0A2C500D57A48 /* StateCell.swift in Sources */,
 				CF12918F1FC42DD300D1C17E /* DateCell.swift in Sources */,
