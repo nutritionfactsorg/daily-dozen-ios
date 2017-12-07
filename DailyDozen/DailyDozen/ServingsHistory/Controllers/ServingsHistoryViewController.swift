@@ -44,7 +44,7 @@ class ServingsHistoryViewController: UIViewController {
     @IBOutlet private weak var controlPanel: ControlPanel!
 
     // MARK: - Properties
-    private var report: Report!
+    private var viewModel: ServingsHistoryViewModel!
     private var currentTimeScale = TimeScale.day
 
     private var pageCodes: (year: Int, month: Int)! {
@@ -52,14 +52,14 @@ class ServingsHistoryViewController: UIViewController {
             chartView.clear()
 
             let canLeft = pageCodes.month > 0
-            let canRight = pageCodes.month < report.data.last!.months.count - 1
+            let canRight = pageCodes.month < viewModel.lastMonthIndex(for: viewModel.lastYearIndex)
             controlPanel.configure(canSwitch: (left: canLeft, right: canRight))
 
-            let month = report.data[pageCodes.year].months[pageCodes.month].month
-            controlPanel.setMonthLabel(text: month)
+            let monthData = viewModel.monthData(yearIndex: pageCodes.year, monthIndex: pageCodes.month)
 
-            let map = report.data[pageCodes.year].months[pageCodes.month].daily.map { $0.statesCount }
-            chartView.configure(with: map, for: currentTimeScale)
+            controlPanel.setMonthLabel(text: monthData.month)
+
+            chartView.configure(with: monthData.map, for: currentTimeScale)
         }
     }
 
@@ -68,19 +68,21 @@ class ServingsHistoryViewController: UIViewController {
         super.viewDidLoad()
 
         chartView.xAxis.valueFormatter = self
-        loadData()
+        setViewModel()
     }
 
     // MARK: - Methods
-    private func loadData() {
+    private func setViewModel() {
         let realm = RealmProvider()
 
-        let result = realm
+        let results = realm
             .getDozes()
             .sorted(byKeyPath: "date")
 
-        report = Report(Array(result))
-        pageCodes = (report.data.count - 1, report.data.last!.months.count - 1)
+        viewModel = ServingsHistoryViewModel(results)
+        let lastYearIndex = viewModel.lastYearIndex
+
+        pageCodes = (lastYearIndex, viewModel.lastMonthIndex(for: lastYearIndex))
     }
 
     // MARK: - Actions
@@ -94,13 +96,12 @@ class ServingsHistoryViewController: UIViewController {
     }
 
     @IBAction private func toNextButtonPressed(_ sender: UIButton) {
-        let count = report.data.last!.months.count
-        guard pageCodes.month < count - 1 else { return }
+        guard pageCodes.month < viewModel.lastMonthIndex(for: viewModel.lastYearIndex) else { return }
         pageCodes.month += 1
     }
 
     @IBAction private func toLastButtonPressed(_ sender: UIButton) {
-        pageCodes.month = report.data.last!.months.count - 1
+        pageCodes.month = viewModel.lastMonthIndex(for: viewModel.lastYearIndex)
     }
 
     @IBAction private func timeScaleChanged(_ sender: UISegmentedControl) {
@@ -122,9 +123,9 @@ class ServingsHistoryViewController: UIViewController {
 extension ServingsHistoryViewController: IAxisValueFormatter {
 
     func stringForValue(_ value: Double, axis: AxisBase?) -> String {
-        let days = report.data[pageCodes.year].months[pageCodes.month].daily.map { $0.date }
-        guard Int(value) < days.count else { return ""}
-        let day = days[Int(value)]
-        return "\(day.day) \n \(day.monthName)"
+        let labels = viewModel.datesLabels(yearIndex: pageCodes.year, monthIndex: pageCodes.month)
+        let index = Int(value)
+        guard index < labels.count else { return "" }
+        return labels[index]
     }
 }
