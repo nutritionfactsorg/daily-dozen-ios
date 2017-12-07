@@ -45,6 +45,16 @@ struct ServingsHistoryViewModel {
         return (year, map)
     }
 
+    func fullDataMap() -> [Int] {
+        return report
+            .data
+            .map { $0.statesCount }
+    }
+
+    func yearName(yearIndex: Int) -> String {
+        return String(report.yearlyReport(for: yearIndex).year)
+    }
+
     func datesLabels(yearIndex: Int, monthIndex: Int) -> [String] {
         return report
             .yearlyReport(for: yearIndex)
@@ -58,5 +68,11 @@ struct ServingsHistoryViewModel {
             .yearlyReport(for: yearIndex)
             .months
             .map { $0.month }
+    }
+
+    func fullDataLabels() -> [String] {
+        return report
+            .data
+            .map { String($0.year) }
     }
 }

@@ -61,13 +61,12 @@ struct Report {
         let dailyReports = results.map { DailyReport(doze: $0) }
         var monthReports = [MonthReport]()
 
-        guard var date = dailyReports.first?.date else { return }
-        var month = date.monthName
+        guard var month = dailyReports.first?.date.monthName else { return }
 
         var reportsInMonth = [DailyReport]()
 
         dailyReports.forEach { report in
-            if report.date.isInCurrentMonthWith(date) {
+            if report.date.monthName == month {
                 reportsInMonth.append(report)
                 month = report.date.monthName
             } else {
@@ -75,13 +74,27 @@ struct Report {
                 monthReports.append(monthReport)
                 reportsInMonth.removeAll()
                 reportsInMonth.append(report)
-                date = report.date
+                month = report.date.monthName
             }
         }
         monthReports.append(MonthReport(daily: reportsInMonth, month: month))
 
-        let yearlyReport = YearlyReport(months: monthReports, year: 2017)
-        data.append(yearlyReport)
+        guard var year = monthReports.first?.daily.first?.date.year else { return }
+
+        var reportsInYear = [MonthReport]()
+
+        monthReports.forEach { report in
+            if report.daily.first!.date.year == year {
+                reportsInYear.append(report)
+                year = report.daily.first!.date.year
+            } else {
+                let yearlyReport = YearlyReport(months: reportsInYear, year: year)
+                data.append(yearlyReport)
+                reportsInYear.removeAll()
+                year = report.daily.first!.date.year
+            }
+        }
+        data.append(YearlyReport(months: reportsInYear, year: year))
     }
 
     func yearlyReport(for index: Int) -> YearlyReport {
