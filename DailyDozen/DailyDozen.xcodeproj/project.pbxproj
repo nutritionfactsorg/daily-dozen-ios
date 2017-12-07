@@ -38,6 +38,7 @@
 		CFAAB3741F9F3E1200B24748 /* RealmConfig.swift in Sources */ = {isa = PBXBuildFile; fileRef = CFAAB3731F9F3E1200B24748 /* RealmConfig.swift */; };
 		CFAAB3771F9F3FDF00B24748 /* URL.swift in Sources */ = {isa = PBXBuildFile; fileRef = CFAAB3761F9F3FDF00B24748 /* URL.swift */; };
 		CFAAB37A1F9F4A8000B24748 /* DozeViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = CFAAB3791F9F4A8000B24748 /* DozeViewModel.swift */; };
+		CFB5568C1FD180C3003B5813 /* Report.swift in Sources */ = {isa = PBXBuildFile; fileRef = CFB5568B1FD180C3003B5813 /* Report.swift */; };
 		CFC0608D1FBC4A3500A901A5 /* VitaminsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CFC0608C1FBC4A3500A901A5 /* VitaminsViewController.swift */; };
 		CFC060931FBC57C800A901A5 /* ServingsSection.swift in Sources */ = {isa = PBXBuildFile; fileRef = CFC060921FBC57C800A901A5 /* ServingsSection.swift */; };
 		CFC4A84D1F975A3900B5AC75 /* MenuViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CFC4A84C1F975A3900B5AC75 /* MenuViewController.swift */; };
@@ -90,6 +91,7 @@
 		CFAAB3731F9F3E1200B24748 /* RealmConfig.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RealmConfig.swift; sourceTree = "<group>"; };
 		CFAAB3761F9F3FDF00B24748 /* URL.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = URL.swift; sourceTree = "<group>"; };
 		CFAAB3791F9F4A8000B24748 /* DozeViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DozeViewModel.swift; sourceTree = "<group>"; };
+		CFB5568B1FD180C3003B5813 /* Report.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Report.swift; sourceTree = "<group>"; };
 		CFC0608C1FBC4A3500A901A5 /* VitaminsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VitaminsViewController.swift; sourceTree = "<group>"; };
 		CFC060921FBC57C800A901A5 /* ServingsSection.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ServingsSection.swift; sourceTree = "<group>"; };
 		CFC4A84C1F975A3900B5AC75 /* MenuViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuViewController.swift; sourceTree = "<group>"; };
@@ -265,6 +267,7 @@
 		CFA3E8F61FC58CD90092199D /* ServingsHistory */ = {
 			isa = PBXGroup;
 			children = (
+				CFB5568A1FD18086003B5813 /* Models */,
 				CFA3E8FA1FC58E4F0092199D /* Controllers */,
 				CFA3E8F71FC58D160092199D /* Storyboards */,
 			);
@@ -312,6 +315,14 @@
 				CFE793561FA756E40084F075 /* RealmProvider.swift */,
 			);
 			path = Realm;
+			sourceTree = "<group>";
+		};
+		CFB5568A1FD18086003B5813 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				CFB5568B1FD180C3003B5813 /* Report.swift */,
+			);
+			path = Models;
 			sourceTree = "<group>";
 		};
 		CFC060911FBC579700A901A5 /* SupportingFiles */ = {
@@ -671,6 +682,7 @@
 				CF6E6D3C1FB1BEC400B177E7 /* DetailViewModel.swift in Sources */,
 				CFE6983C1F974B9700CD7905 /* AppDelegate.swift in Sources */,
 				CF64DF311FB5DFCF00B4D124 /* SizesCell.swift in Sources */,
+				CFB5568C1FD180C3003B5813 /* Report.swift in Sources */,
 				CF987C281F9E157300D4893E /* Item.swift in Sources */,
 				CF2FA9961FA87F0C003508F8 /* DetailsViewController.swift in Sources */,
 				CF4DECF71F9DF2A500DA094B /* ServingsCell.swift in Sources */,

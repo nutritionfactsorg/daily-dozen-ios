@@ -82,25 +82,19 @@ class ServingsHistoryViewController: UIViewController {
     @IBOutlet weak var toLastButton: RoundedButton!
 
     // MARK: - Properties
-    private var dozes = [String: [Doze]]()
-    private var months = [String]()
-    private var currentDozes = [Doze]() {
+    private var report: Report!
+
+    private var pageCodes: (year: Int, month: Int)! {
         didSet {
             chartView.clear()
-            currentDate = currentDozes[0].date
-            setChartData()
-        }
-    }
-    var currentDozesMap = [Int]()
 
-    private var currentDate = Date() {
-        didSet {
-            monthLabel.text = currentDate.monthName
-            guard let index = months.index(of: currentDate.monthName) else { return }
-            toFirstButton.isEnabled = index > 0
-            toPreviousButton.isEnabled = index > 0
-            toNextButton.isEnabled = index < months.count - 1
-            toLastButton.isEnabled = index < months.count - 1
+            toFirstButton.isEnabled = pageCodes.month > 0
+            toPreviousButton.isEnabled = pageCodes.month > 0
+            toNextButton.isEnabled = pageCodes.month < report.data.last!.months.count - 1
+            toLastButton.isEnabled = pageCodes.month < report.data.last!.months.count - 1
+
+            monthLabel.text = report.data[pageCodes.year].months[pageCodes.month].month
+            setChartData()
         }
     }
     private var currentTimeScale = TimeScale.day
@@ -109,41 +103,29 @@ class ServingsHistoryViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        loadDozes()
-
-        guard
-            let monthName = months.last,
-            let newDozes = dozes[monthName]
-            else { return }
-
-        currentDozes = newDozes
+        loadData()
     }
 
     // MARK: - Methods
-    private func loadDozes() {
+    private func loadData() {
         let realm = RealmProvider()
 
         let result = realm
             .getDozes()
             .sorted(byKeyPath: "date")
 
-        result.forEach { doze in
-            if dozes[doze.date.monthName] == nil {
-                dozes.updateValue([], forKey: doze.date.monthName)
-                months.append(doze.date.monthName)
-            }
-            dozes[doze.date.monthName]?.append(doze)
-        }
+        report = Report(Array(result))
+        pageCodes = (report.data.count - 1, report.data.last!.months.count - 1)
     }
 
     private func setChartData() {
         let data = CombinedChartData()
-
+        let map = report.data[pageCodes.year].months[pageCodes.month].daily.map { $0.statesCount }
         if currentTimeScale == .day {
-            data.barData = generateBarData(for: currentDozes)
-            data.lineData = generateLineData(for: currentDozes)
+            data.barData = generateBarData(for: map)
+            data.lineData = generateLineData(for: map)
         } else {
-            data.lineData = generateLineData(from: currentDozesMap)
+//            data.lineData = generateLineData(from: currentDozesMap)
         }
 
         chartView.xAxis.axisMaximum = data.xMax + 0.5
@@ -152,24 +134,19 @@ class ServingsHistoryViewController: UIViewController {
         chartView.data = data
 
         chartView.setVisibleXRange(minXRange: 3, maxXRange: 7)
-        chartView.moveViewToX(Double(currentDozes.count))
+        chartView.moveViewToX(Double(map.count))
 
         chartView.data?.notifyDataChanged()
         chartView.notifyDataSetChanged()
         chartView.setNeedsDisplay()
     }
 
-    private func generateBarData(for dozes: [Doze]) -> BarChartData {
+    private func generateBarData(for map: [Int]) -> BarChartData {
 
         var entries = [BarChartDataEntry]()
 
-        for (index, doze) in dozes.enumerated() {
-            var statesCount = 0
-            for item in doze.items {
-                let selectedStates = item.states.filter { $0 }
-                statesCount += selectedStates.count
-            }
-            entries.append(BarChartDataEntry(x: Double(index), y: Double(statesCount)))
+        for (index, value) in map.enumerated() {
+            entries.append(BarChartDataEntry(x: Double(index), y: Double(value)))
         }
 
         let set = BarChartDataSet(values: entries, label: "Servings")
@@ -184,42 +161,13 @@ class ServingsHistoryViewController: UIViewController {
         return data
     }
 
-    private func generateLineData(for dozes: [Doze]) -> LineChartData {
+    private func generateLineData(for map: [Int]) -> LineChartData {
 
-        var entries = [ChartDataEntry]()
-
-        for (index, doze) in dozes.enumerated() {
-            var statesCount = 0
-            for item in doze.items {
-                let selectedStates = item.states.filter { $0 }
-                statesCount += selectedStates.count
-            }
-            let fakeY = Double(statesCount) / 3.0
-            entries.append(ChartDataEntry(x: Double(index), y: fakeY))
-        }
-
-        let set = LineChartDataSet(values: entries, label: "Moving Average")
-        set.setColor(UIColor.red)
-        set.lineWidth = 2.5
-        set.setCircleColor(UIColor.red)
-        set.circleRadius = 5
-        set.circleHoleRadius = 2.5
-        set.fillColor = UIColor.white
-        set.mode = .cubicBezier
-        set.drawValuesEnabled = true
-        set.valueFont = .systemFont(ofSize: 10)
-        set.valueTextColor = UIColor.red
-
-        set.axisDependency = .left
-
-        return LineChartData(dataSet: set)
-    }
-
-    func generateLineData(from map: [Int]) -> LineChartData {
         var entries = [ChartDataEntry]()
 
         for (index, value) in map.enumerated() {
-            entries.append(ChartDataEntry(x: Double(index), y: Double(value)))
+            let fakeY = Double(value) / 3.0
+            entries.append(ChartDataEntry(x: Double(index), y: fakeY))
         }
 
         let set = LineChartDataSet(values: entries, label: "Moving Average")
@@ -241,36 +189,22 @@ class ServingsHistoryViewController: UIViewController {
 
     // MARK: - Actions
     @IBAction private func toFirstButtonPressed(_ sender: UIButton) {
-        guard
-            let firstMonth = months.first,
-            let newDozes = dozes[firstMonth]
-            else { return }
-
-        currentDozes = newDozes
+        pageCodes.month = 0
     }
 
     @IBAction private func toPreviousButtonPressed(_ sender: UIButton) {
-        guard
-            let newDate = currentDate.adding(.month, value: -1),
-            let newDozes = dozes[newDate.monthName]
-            else { return }
-        currentDozes = newDozes
+        guard pageCodes.month > 0 else { return }
+        pageCodes.month -= 1
     }
 
     @IBAction private func toNextButtonPressed(_ sender: UIButton) {
-        guard
-            let newDate = currentDate.adding(.month, value: 1),
-            let newDozes = dozes[newDate.monthName]
-            else { return }
-        currentDozes = newDozes
+        let count = report.data.last!.months.count
+        guard pageCodes.month < count - 1 else { return }
+        pageCodes.month += 1
     }
 
     @IBAction private func toLastButtonPressed(_ sender: UIButton) {
-        guard
-            let firstMonth = months.last,
-            let newDozes = dozes[firstMonth]
-            else { return }
-        currentDozes = newDozes
+        pageCodes.month = report.data.last!.months.count - 1
     }
 
     @IBAction private func timeScaleChanged(_ sender: UISegmentedControl) {
@@ -279,26 +213,9 @@ class ServingsHistoryViewController: UIViewController {
 
         switch currentTimeScale {
         case .day:
-            guard
-                let monthName = months.last,
-                let newDozes = dozes[monthName]
-                else { return }
-            currentDozes = newDozes
+            break
         case .month:
-            chartView.clear()
-            currentDozesMap.removeAll()
-            for month in months {
-                guard let monthDozes = dozes[month] else { return }
-                var count = 0
-                for doze in monthDozes {
-                    for item in doze.items {
-                        let selectedStates = item.states.filter { $0 }
-                        count += selectedStates.count
-                    }
-                }
-                currentDozesMap.append(count)
-                setChartData()
-            }
+            break
         case .year:
             break
         }
@@ -309,22 +226,9 @@ class ServingsHistoryViewController: UIViewController {
 extension ServingsHistoryViewController: IAxisValueFormatter {
 
     func stringForValue(_ value: Double, axis: AxisBase?) -> String {
-        switch currentTimeScale {
-        case .day:
-            guard value < Double(currentDozes.count) else {
-                return ""
-            }
-            let date = currentDozes[Int(value)].date
-            return "\(date.day)\n(\(date.dayName))"
-        case .month:
-            guard value < Double(months.count) else {
-                return ""
-            }
-            let monthName = months[Int(value)]
-            return monthName
-        case .year:
-            return ""
-        }
-
+        let days = report.data[pageCodes.year].months[pageCodes.month].daily.map { $0.date }
+        guard Int(value) < days.count else { return ""}
+        let day = days[Int(value)]
+        return "\(day.day) \n \(day.monthName)"
     }
 }
