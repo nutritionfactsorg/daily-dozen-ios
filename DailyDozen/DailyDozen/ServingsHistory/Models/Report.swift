@@ -32,6 +32,10 @@ struct MonthReport {
 struct YearlyReport {
     var months = [MonthReport]()
     var year: Int
+
+    func monthReport(for index: Int) -> MonthReport {
+        return months[index]
+    }
 }
 
 struct Report {
@@ -62,5 +66,9 @@ struct Report {
 
         let yearlyReport = YearlyReport(months: monthReports, year: 2017)
         data.append(yearlyReport)
+    }
+
+    func yearlyReport(for index: Int) -> YearlyReport {
+        return data[index]
     }
 }
