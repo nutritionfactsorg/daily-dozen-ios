@@ -18,7 +18,12 @@ class ControlPanel: UIStackView {
 
     @IBOutlet private weak var monthLabel: UILabel! {
         didSet {
-            monthLabel.text = Date().monthName
+            monthLabel.isHidden = monthLabel.text == nil
+        }
+    }
+    @IBOutlet private weak var yearLabel: UILabel! {
+        didSet {
+            yearLabel.isHidden = yearLabel.text == nil
         }
     }
 
@@ -30,8 +35,9 @@ class ControlPanel: UIStackView {
         toLastButton.isEnabled = canSwitch.right
     }
 
-    func setMonthLabel(text: String) {
-        monthLabel.text = text
+    func setLabels(month: String? = nil, year: String? = nil) {
+        monthLabel.text = month
+        yearLabel.text = year
     }
 
 }

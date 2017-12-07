@@ -27,14 +27,30 @@ struct DailyReport {
 struct MonthReport {
     var daily = [DailyReport]()
     var month: String
+    var statesCount = 0
+
+    init(daily: [DailyReport], month: String) {
+        self.daily = daily
+        self.month = month
+
+        statesCount = daily.reduce(0) { $0 + $1.statesCount }
+
+    }
 }
 
 struct YearlyReport {
     var months = [MonthReport]()
     var year: Int
+    var statesCount = 0
 
     func monthReport(for index: Int) -> MonthReport {
         return months[index]
+    }
+
+    init(months: [MonthReport], year: Int) {
+        self.months = months
+        self.year = year
+        statesCount = months.reduce(0) { $0 + $1.statesCount }
     }
 }
 

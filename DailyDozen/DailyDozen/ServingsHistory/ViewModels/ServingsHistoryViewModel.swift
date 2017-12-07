@@ -38,13 +38,25 @@ struct ServingsHistoryViewModel {
         return (month, map)
     }
 
+    func yearlyData(yearIndex: Int) -> (year: String, map: [Int]) {
+        let yearlyReport = report.yearlyReport(for: yearIndex)
+        let year = String(yearlyReport.year)
+        let map = yearlyReport.months.map { $0.statesCount }
+        return (year, map)
+    }
+
     func datesLabels(yearIndex: Int, monthIndex: Int) -> [String] {
-        let labels = report
+        return report
             .yearlyReport(for: yearIndex)
             .monthReport(for: monthIndex)
             .daily
             .map { "\($0.date.day) \n \($0.date.monthName)" }
+    }
 
-        return labels
+    func monthsLabels(yearIndex: Int) -> [String] {
+        return report
+            .yearlyReport(for: yearIndex)
+            .months
+            .map { $0.month }
     }
 }

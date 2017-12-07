@@ -41,9 +41,11 @@ class ChartView: CombinedChartView {
         let data = CombinedChartData()
         if scale == .day {
             data.barData = generateBarData(for: map)
-            data.lineData = generateLineData(for: map)
+            let lineMap = map.map { Double($0) / 3.0 }
+            data.lineData = generateLineData(for: lineMap)
         } else {
-            //            data.lineData = generateLineData(from: currentDozesMap)
+            let lineMap = map.map { Double($0) }
+            data.lineData = generateLineData(for: lineMap)
         }
 
         xAxis.axisMaximum = data.xMax + 0.5
@@ -79,13 +81,12 @@ class ChartView: CombinedChartView {
         return data
     }
 
-    private func generateLineData(for map: [Int]) -> LineChartData {
+    private func generateLineData(for map: [Double]) -> LineChartData {
 
         var entries = [ChartDataEntry]()
 
         for (index, value) in map.enumerated() {
-            let fakeY = Double(value) / 3.0
-            entries.append(ChartDataEntry(x: Double(index), y: fakeY))
+            entries.append(ChartDataEntry(x: Double(index), y: value))
         }
 
         let set = LineChartDataSet(values: entries, label: "Moving Average")
