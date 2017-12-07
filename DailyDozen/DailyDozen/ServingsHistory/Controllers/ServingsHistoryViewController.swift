@@ -9,6 +9,11 @@
 import UIKit
 import Charts
 
+// MARK: - Nested
+enum TimeScale: Int {
+    case day, month, year
+}
+
 class ServingsHistoryBuilder {
 
     // MARK: - Nested
@@ -34,52 +39,18 @@ class ServingsHistoryBuilder {
 
 class ServingsHistoryViewController: UIViewController {
 
-    // MARK: - Nested
-    private enum TimeScale: Int {
-        case day, month, year
-    }
-
     // MARK: - Outlets
-    @IBOutlet private weak var chartView: CombinedChartView! {
-        didSet {
-            chartView.chartDescription?.enabled = false
-            chartView.drawBarShadowEnabled = false
-            chartView.highlightFullBarEnabled = false
-            chartView.setScaleEnabled(false)
-            chartView.dragYEnabled = false
-
-            chartView.drawOrder = [DrawOrder.bar.rawValue,
-                                   DrawOrder.line.rawValue]
-
-            let legend = chartView.legend
-            legend.wordWrapEnabled = true
-            legend.horizontalAlignment = .center
-            legend.verticalAlignment = .bottom
-            legend.orientation = .horizontal
-            legend.drawInside = false
-
-            let rightAxis = chartView.rightAxis
-            rightAxis.axisMinimum = 0
-
-            let leftAxis = chartView.leftAxis
-            leftAxis.axisMinimum = 0
-
-            let xAxis = chartView.xAxis
-            xAxis.labelPosition = .bothSided
-            xAxis.granularity = 1
-            xAxis.valueFormatter = self
-        }
-    }
+    @IBOutlet private weak var chartView: ChartView!
     @IBOutlet private weak var monthLabel: UILabel! {
         didSet {
             monthLabel.text = Date().monthName
         }
     }
 
-    @IBOutlet weak var toFirstButton: RoundedButton!
-    @IBOutlet weak var toPreviousButton: RoundedButton!
-    @IBOutlet weak var toNextButton: RoundedButton!
-    @IBOutlet weak var toLastButton: RoundedButton!
+    @IBOutlet private weak var toFirstButton: RoundedButton!
+    @IBOutlet private weak var toPreviousButton: RoundedButton!
+    @IBOutlet private weak var toNextButton: RoundedButton!
+    @IBOutlet private weak var toLastButton: RoundedButton!
 
     // MARK: - Properties
     private var report: Report!
@@ -94,7 +65,8 @@ class ServingsHistoryViewController: UIViewController {
             toLastButton.isEnabled = pageCodes.month < report.data.last!.months.count - 1
 
             monthLabel.text = report.data[pageCodes.year].months[pageCodes.month].month
-            setChartData()
+            let map = report.data[pageCodes.year].months[pageCodes.month].daily.map { $0.statesCount }
+            chartView.configure(with: map, for: currentTimeScale)
         }
     }
     private var currentTimeScale = TimeScale.day
@@ -103,6 +75,7 @@ class ServingsHistoryViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
+        chartView.xAxis.valueFormatter = self
         loadData()
     }
 
@@ -116,75 +89,6 @@ class ServingsHistoryViewController: UIViewController {
 
         report = Report(Array(result))
         pageCodes = (report.data.count - 1, report.data.last!.months.count - 1)
-    }
-
-    private func setChartData() {
-        let data = CombinedChartData()
-        let map = report.data[pageCodes.year].months[pageCodes.month].daily.map { $0.statesCount }
-        if currentTimeScale == .day {
-            data.barData = generateBarData(for: map)
-            data.lineData = generateLineData(for: map)
-        } else {
-//            data.lineData = generateLineData(from: currentDozesMap)
-        }
-
-        chartView.xAxis.axisMaximum = data.xMax + 0.5
-        chartView.xAxis.axisMinimum = data.xMin - 0.5
-
-        chartView.data = data
-
-        chartView.setVisibleXRange(minXRange: 3, maxXRange: 7)
-        chartView.moveViewToX(Double(map.count))
-
-        chartView.data?.notifyDataChanged()
-        chartView.notifyDataSetChanged()
-        chartView.setNeedsDisplay()
-    }
-
-    private func generateBarData(for map: [Int]) -> BarChartData {
-
-        var entries = [BarChartDataEntry]()
-
-        for (index, value) in map.enumerated() {
-            entries.append(BarChartDataEntry(x: Double(index), y: Double(value)))
-        }
-
-        let set = BarChartDataSet(values: entries, label: "Servings")
-        let green = UIColor(red: 60/255, green: 220/255, blue: 78/255, alpha: 1)
-        set.setColor(green)
-        set.valueTextColor = green
-        set.valueFont = .systemFont(ofSize: 10)
-        set.axisDependency = .left
-
-        let data = BarChartData(dataSet: set)
-
-        return data
-    }
-
-    private func generateLineData(for map: [Int]) -> LineChartData {
-
-        var entries = [ChartDataEntry]()
-
-        for (index, value) in map.enumerated() {
-            let fakeY = Double(value) / 3.0
-            entries.append(ChartDataEntry(x: Double(index), y: fakeY))
-        }
-
-        let set = LineChartDataSet(values: entries, label: "Moving Average")
-        set.setColor(UIColor.red)
-        set.lineWidth = 2.5
-        set.setCircleColor(UIColor.red)
-        set.circleRadius = 5
-        set.circleHoleRadius = 2.5
-        set.fillColor = UIColor.white
-        set.mode = .cubicBezier
-        set.drawValuesEnabled = true
-        set.valueFont = .systemFont(ofSize: 10)
-        set.valueTextColor = UIColor.red
-
-        set.axisDependency = .left
-
-        return LineChartData(dataSet: set)
     }
 
     // MARK: - Actions
