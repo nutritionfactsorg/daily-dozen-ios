@@ -54,12 +54,19 @@ class ServingsHistoryViewController: UIViewController {
             if currentTimeScale == .day {
                 controlPanel.isHidden = false
 
-//                let canLeft = chartSettings.year >= 0 && chartSettings.month > 0
-//
-//                let canRight = chartSettings.year <= viewModel.lastYearIndex &&
-//                    chartSettings.month < viewModel.lastMonthIndex(for: viewModel.lastYearIndex)
-//
-//                controlPanel.configure(canSwitch: (left: canLeft, right: canRight))
+                var canLeft = true
+                if chartSettings.month == 0, chartSettings.year == 0 {
+                    canLeft = false
+                }
+
+                var canRight = true
+
+                if chartSettings.year == viewModel.lastYearIndex,
+                    chartSettings.month == viewModel.lastMonthIndex(for: viewModel.lastYearIndex) {
+                    canRight = false
+                }
+
+                controlPanel.configure(canSwitch: (left: canLeft, right: canRight))
 
                 let data = viewModel.monthData(yearIndex: chartSettings.year, monthIndex: chartSettings.month)
 
@@ -68,8 +75,9 @@ class ServingsHistoryViewController: UIViewController {
                 chartView.configure(with: data.map, for: currentTimeScale)
             } else if currentTimeScale == .month {
                 controlPanel.isHidden = false
-                let canLeft = true
-                let canRight = true
+
+                let canLeft = chartSettings.year != 0
+                let canRight = chartSettings.year != viewModel.lastYearIndex
                 controlPanel.configure(canSwitch: (left: canLeft, right: canRight))
 
                 let data = viewModel.yearlyData(yearIndex: chartSettings.year)
@@ -112,7 +120,7 @@ class ServingsHistoryViewController: UIViewController {
     }
 
     @IBAction private func toPreviousButtonPressed(_ sender: UIButton) {
-        if chartSettings.month > 0 {
+        if chartSettings.month > 0 && currentTimeScale == .day {
             chartSettings.month -= 1
         } else if chartSettings.year > 0 {
             let year = chartSettings.year - 1
@@ -122,7 +130,7 @@ class ServingsHistoryViewController: UIViewController {
     }
 
     @IBAction private func toNextButtonPressed(_ sender: UIButton) {
-        if chartSettings.month < viewModel.lastMonthIndex(for: chartSettings.year) {
+        if chartSettings.month < viewModel.lastMonthIndex(for: chartSettings.year) && currentTimeScale == .day {
             chartSettings.month += 1
         } else if chartSettings.year < viewModel.lastYearIndex {
             let year = chartSettings.year + 1
