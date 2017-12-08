@@ -47,28 +47,32 @@ class ServingsHistoryViewController: UIViewController {
     private var viewModel: ServingsHistoryViewModel!
     private var currentTimeScale = TimeScale.day
 
-    private var pageCodes: (year: Int, month: Int)! {
+    private var chartSettings: (year: Int, month: Int)! {
         didSet {
             chartView.clear()
 
             if currentTimeScale == .day {
                 controlPanel.isHidden = false
-                let canLeft = pageCodes.month > 0
-                let canRight = pageCodes.month < viewModel.lastMonthIndex(for: viewModel.lastYearIndex)
-                controlPanel.configure(canSwitch: (left: canLeft, right: canRight))
 
-                let data = viewModel.monthData(yearIndex: pageCodes.year, monthIndex: pageCodes.month)
+//                let canLeft = chartSettings.year >= 0 && chartSettings.month > 0
+//
+//                let canRight = chartSettings.year <= viewModel.lastYearIndex &&
+//                    chartSettings.month < viewModel.lastMonthIndex(for: viewModel.lastYearIndex)
+//
+//                controlPanel.configure(canSwitch: (left: canLeft, right: canRight))
 
-                controlPanel.setLabels(month: data.month, year: viewModel.yearName(yearIndex: pageCodes.year))
+                let data = viewModel.monthData(yearIndex: chartSettings.year, monthIndex: chartSettings.month)
+
+                controlPanel.setLabels(month: data.month, year: viewModel.yearName(yearIndex: chartSettings.year))
 
                 chartView.configure(with: data.map, for: currentTimeScale)
             } else if currentTimeScale == .month {
                 controlPanel.isHidden = false
-                let canLeft = false
-                let canRight = false
+                let canLeft = true
+                let canRight = true
                 controlPanel.configure(canSwitch: (left: canLeft, right: canRight))
 
-                let data = viewModel.yearlyData(yearIndex: pageCodes.year)
+                let data = viewModel.yearlyData(yearIndex: chartSettings.year)
 
                 controlPanel.setLabels(year: data.year)
 
@@ -99,26 +103,37 @@ class ServingsHistoryViewController: UIViewController {
         viewModel = ServingsHistoryViewModel(results)
         let lastYearIndex = viewModel.lastYearIndex
 
-        pageCodes = (lastYearIndex, viewModel.lastMonthIndex(for: lastYearIndex))
+        chartSettings = (lastYearIndex, viewModel.lastMonthIndex(for: lastYearIndex))
     }
 
     // MARK: - Actions
     @IBAction private func toFirstButtonPressed(_ sender: UIButton) {
-        pageCodes.month = 0
+        chartSettings = (0, 0)
     }
 
     @IBAction private func toPreviousButtonPressed(_ sender: UIButton) {
-        guard pageCodes.month > 0 else { return }
-        pageCodes.month -= 1
+        if chartSettings.month > 0 {
+            chartSettings.month -= 1
+        } else if chartSettings.year > 0 {
+            let year = chartSettings.year - 1
+            let month = viewModel.lastMonthIndex(for: year)
+            chartSettings = (year, month)
+        }
     }
 
     @IBAction private func toNextButtonPressed(_ sender: UIButton) {
-        pageCodes.month += 1
+        if chartSettings.month < viewModel.lastMonthIndex(for: chartSettings.year) {
+            chartSettings.month += 1
+        } else if chartSettings.year < viewModel.lastYearIndex {
+            let year = chartSettings.year + 1
+            let month = 0
+            chartSettings = (year, month)
+        }
     }
 
     @IBAction private func toLastButtonPressed(_ sender: UIButton) {
-        pageCodes.year = viewModel.lastYearIndex
-        pageCodes.month = viewModel.lastMonthIndex(for: viewModel.lastYearIndex)
+        let lastYearIndex = viewModel.lastYearIndex
+        chartSettings = (lastYearIndex, viewModel.lastMonthIndex(for: lastYearIndex))
     }
 
     @IBAction private func timeScaleChanged(_ sender: UISegmentedControl) {
@@ -128,14 +143,14 @@ class ServingsHistoryViewController: UIViewController {
         switch currentTimeScale {
         case .day:
             let lastYearIndex = viewModel.lastYearIndex
-            pageCodes = (lastYearIndex, viewModel.lastMonthIndex(for: lastYearIndex))
+            chartSettings = (lastYearIndex, viewModel.lastMonthIndex(for: lastYearIndex))
             break
         case .month:
             let lastYearIndex = viewModel.lastYearIndex
-            pageCodes = (lastYearIndex, 0)
+            chartSettings = (lastYearIndex, 0)
             break
         case .year:
-            pageCodes = (0, 0)
+            chartSettings = (0, 0)
             break
         }
     }
@@ -147,9 +162,9 @@ extension ServingsHistoryViewController: IAxisValueFormatter {
     func stringForValue(_ value: Double, axis: AxisBase?) -> String {
         let labels: [String]
         if currentTimeScale == .day {
-            labels = viewModel.datesLabels(yearIndex: pageCodes.year, monthIndex: pageCodes.month)
+            labels = viewModel.datesLabels(yearIndex: chartSettings.year, monthIndex: chartSettings.month)
         } else if currentTimeScale == .month {
-            labels = viewModel.monthsLabels(yearIndex: pageCodes.year)
+            labels = viewModel.monthsLabels(yearIndex: chartSettings.year)
         } else {
             labels = viewModel.fullDataLabels()
         }

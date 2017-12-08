@@ -91,6 +91,7 @@ struct Report {
                 let yearlyReport = YearlyReport(months: reportsInYear, year: year)
                 data.append(yearlyReport)
                 reportsInYear.removeAll()
+                reportsInYear.append(report)
                 year = report.daily.first!.date.year
             }
         }
