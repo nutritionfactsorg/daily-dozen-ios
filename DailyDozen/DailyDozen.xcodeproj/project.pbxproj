@@ -42,6 +42,8 @@
 		CFAAB3771F9F3FDF00B24748 /* URL.swift in Sources */ = {isa = PBXBuildFile; fileRef = CFAAB3761F9F3FDF00B24748 /* URL.swift */; };
 		CFAAB37A1F9F4A8000B24748 /* DozeViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = CFAAB3791F9F4A8000B24748 /* DozeViewModel.swift */; };
 		CFB5568C1FD180C3003B5813 /* Report.swift in Sources */ = {isa = PBXBuildFile; fileRef = CFB5568B1FD180C3003B5813 /* Report.swift */; };
+		CFBEE2301FDE8D1E005C0F45 /* About.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CFBEE22F1FDE8D1E005C0F45 /* About.storyboard */; };
+		CFBEE2321FDE963D005C0F45 /* AboutViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CFBEE2311FDE963D005C0F45 /* AboutViewController.swift */; };
 		CFC0608D1FBC4A3500A901A5 /* VitaminsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CFC0608C1FBC4A3500A901A5 /* VitaminsViewController.swift */; };
 		CFC060931FBC57C800A901A5 /* ServingsSection.swift in Sources */ = {isa = PBXBuildFile; fileRef = CFC060921FBC57C800A901A5 /* ServingsSection.swift */; };
 		CFC4A84D1F975A3900B5AC75 /* MenuViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CFC4A84C1F975A3900B5AC75 /* MenuViewController.swift */; };
@@ -98,6 +100,8 @@
 		CFAAB3761F9F3FDF00B24748 /* URL.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = URL.swift; sourceTree = "<group>"; };
 		CFAAB3791F9F4A8000B24748 /* DozeViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DozeViewModel.swift; sourceTree = "<group>"; };
 		CFB5568B1FD180C3003B5813 /* Report.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Report.swift; sourceTree = "<group>"; };
+		CFBEE22F1FDE8D1E005C0F45 /* About.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = About.storyboard; sourceTree = "<group>"; };
+		CFBEE2311FDE963D005C0F45 /* AboutViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AboutViewController.swift; sourceTree = "<group>"; };
 		CFC0608C1FBC4A3500A901A5 /* VitaminsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VitaminsViewController.swift; sourceTree = "<group>"; };
 		CFC060921FBC57C800A901A5 /* ServingsSection.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ServingsSection.swift; sourceTree = "<group>"; };
 		CFC4A84C1F975A3900B5AC75 /* MenuViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuViewController.swift; sourceTree = "<group>"; };
@@ -350,6 +354,31 @@
 			path = Models;
 			sourceTree = "<group>";
 		};
+		CFBEE22A1FDE8CBA005C0F45 /* About */ = {
+			isa = PBXGroup;
+			children = (
+				CFBEE22C1FDE8CE0005C0F45 /* Controllers */,
+				CFBEE22B1FDE8CD5005C0F45 /* Storyboards */,
+			);
+			path = About;
+			sourceTree = "<group>";
+		};
+		CFBEE22B1FDE8CD5005C0F45 /* Storyboards */ = {
+			isa = PBXGroup;
+			children = (
+				CFBEE22F1FDE8D1E005C0F45 /* About.storyboard */,
+			);
+			path = Storyboards;
+			sourceTree = "<group>";
+		};
+		CFBEE22C1FDE8CE0005C0F45 /* Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				CFBEE2311FDE963D005C0F45 /* AboutViewController.swift */,
+			);
+			path = Controllers;
+			sourceTree = "<group>";
+		};
 		CFC060911FBC579700A901A5 /* SupportingFiles */ = {
 			isa = PBXGroup;
 			children = (
@@ -412,6 +441,7 @@
 				CF2FA9911FA87AB5003508F8 /* Details */,
 				CF9E031D1FBD9F540084BC88 /* ItemHistory */,
 				CFA3E8F61FC58CD90092199D /* ServingsHistory */,
+				CFBEE22A1FDE8CBA005C0F45 /* About */,
 			);
 			path = DailyDozen;
 			sourceTree = "<group>";
@@ -590,6 +620,7 @@
 			files = (
 				CFE667291F98CF860037D1A2 /* Pager.storyboard in Resources */,
 				CF2FA9941FA87B2E003508F8 /* Details.storyboard in Resources */,
+				CFBEE2301FDE8D1E005C0F45 /* About.storyboard in Resources */,
 				CF9E03201FBD9FA80084BC88 /* ItemHistory.storyboard in Resources */,
 				CFE698461F974B9700CD7905 /* LaunchScreen.storyboard in Resources */,
 				CFCE5FCB1F978007005C672B /* Servings.storyboard in Resources */,
@@ -718,6 +749,7 @@
 				CF4902971FD917D4000EAB68 /* ControlPanel.swift in Sources */,
 				CFC060931FBC57C800A901A5 /* ServingsSection.swift in Sources */,
 				CF5B28B11FA0A2C500D57A48 /* StateCell.swift in Sources */,
+				CFBEE2321FDE963D005C0F45 /* AboutViewController.swift in Sources */,
 				CF12918F1FC42DD300D1C17E /* DateCell.swift in Sources */,
 				CF2680021FB477AD004A6200 /* Date.swift in Sources */,
 				CFF72AFB1FB9A499001CC2E9 /* UnitsType.swift in Sources */,

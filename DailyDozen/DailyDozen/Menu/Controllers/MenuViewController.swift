@@ -21,11 +21,11 @@ class MenuViewController: UITableViewController {
 
     private enum MenuItem: Int {
 
-        case servings, videos, book, donate, subscribe, source
+        case servings, videos, book, donate, subscribe, source, settings, backup, about
 
         var link: String? {
             switch self {
-            case .servings:
+            case .servings, .settings, .backup, .about:
                 return nil
             case .videos:
                 return Links.videos
@@ -44,7 +44,9 @@ class MenuViewController: UITableViewController {
             switch self {
             case .servings:
                 return PagerBuilder.instantiateController()
-            case .videos, .book, .donate, .subscribe, .source:
+            case .about:
+                return AboutBuilder.instantiateController()
+            case .videos, .book, .donate, .subscribe, .source, .settings, .backup:
                 return nil
             }
         }
