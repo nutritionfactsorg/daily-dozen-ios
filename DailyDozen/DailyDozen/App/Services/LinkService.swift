@@ -51,9 +51,18 @@ class LinksService {
     ///
     /// - Parameter topic: The current topic.
     /// - Returns: A url.
-    func link(for topic: String) -> URL {
+    func link(forTopic topic: String) -> URL {
         return baseURL
             .appendingPathComponent(URLKeys.topics)
             .appendingPathComponent(topic)
+    }
+
+    /// Returns a url for the current menu item.
+    ///
+    /// - Parameter menu: The current menu item.
+    /// - Returns: A url.
+    func link(forMenu menu: String) -> URL {
+        return baseURL
+            .appendingPathComponent(menu)
     }
 }

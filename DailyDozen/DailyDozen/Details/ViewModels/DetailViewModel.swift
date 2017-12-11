@@ -19,7 +19,7 @@ struct DetailViewModel {
 
     /// Returns the main topic url.
     var topicURL: URL {
-        return LinksService.shared.link(for: topic)
+        return LinksService.shared.link(forTopic: topic)
     }
 
     /// Returns the number of items in the metric sizes.
@@ -69,6 +69,6 @@ struct DetailViewModel {
     /// - Returns: The type toipic url.
     func typeTopicURL(for index: Int) -> URL? {
         guard let topic = detail.types[index].values.first else { return nil }
-        return LinksService.shared.link(for: topic)
+        return LinksService.shared.link(forTopic: topic)
     }
 }

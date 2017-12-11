@@ -39,7 +39,7 @@ class DozeViewModel {
     /// - Returns: A url.
     func topicURL(for itemName: String) -> URL {
         let topic = TextsProvider.shared.getTopic(for: itemName)
-        return LinksService.shared.link(for: topic)
+        return LinksService.shared.link(forTopic: topic)
     }
 
     /// Returns item states in the doze for the current index.
