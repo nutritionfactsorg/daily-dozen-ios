@@ -41,8 +41,6 @@ class ChartView: CombinedChartView {
         let data = CombinedChartData()
         if scale == .day {
             data.barData = generateBarData(for: map)
-            let lineMap = map.map { Double($0) / 3.0 }
-            data.lineData = generateLineData(for: lineMap)
         } else {
             let lineMap = map.map { Double($0) }
             data.lineData = generateLineData(for: lineMap)
