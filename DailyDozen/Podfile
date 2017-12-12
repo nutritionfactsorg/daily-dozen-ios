@@ -12,5 +12,6 @@ target 'DailyDozen' do
   pod 'SimpleAnimation', '~> 0.3'
   pod 'FSCalendar', '~> 2.7'
   pod 'Charts', '~> 3.0'
+  pod 'ActiveLabel', :git => 'https://github.com/optonaut/ActiveLabel.swift.git', :tag => '0.8.0'
 
 end

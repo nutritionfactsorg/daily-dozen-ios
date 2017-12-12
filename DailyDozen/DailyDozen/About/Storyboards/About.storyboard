@@ -57,10 +57,10 @@
                                                                     <nil key="textColor"/>
                                                                     <nil key="highlightedColor"/>
                                                                 </label>
-                                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="dwQ-CS-gz3">
-                                                                    <rect key="frame" x="0.0" y="366.5" width="319" height="148.5"/>
+                                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="dwQ-CS-gz3" customClass="ActiveLabel" customModule="ActiveLabel">
+                                                                    <rect key="frame" x="11" y="366.5" width="297" height="148.5"/>
                                                                     <string key="text">Use this app on a daily basis to keep track of the foods I recommend for optimal health and longevity in my book How Not to Die.</string>
-                                                                    <fontDescription key="fontDescription" type="system" pointSize="18"/>
+                                                                    <fontDescription key="fontDescription" name=".AppleSystemUIFont" family=".AppleSystemUIFont" pointSize="18"/>
                                                                     <nil key="textColor"/>
                                                                     <nil key="highlightedColor"/>
                                                                 </label>
@@ -125,33 +125,33 @@
                                                             <rect key="frame" x="8" y="8" width="319" height="63"/>
                                                             <subviews>
                                                                 <stackView opaque="NO" contentMode="scaleToFill" distribution="fillProportionally" alignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="gGl-9e-5uD">
-                                                                    <rect key="frame" x="0.0" y="0.0" width="319" height="24"/>
+                                                                    <rect key="frame" x="8" y="0.0" width="303" height="24"/>
                                                                     <subviews>
                                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Daily Dozen" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="DJR-bj-qUq">
-                                                                            <rect key="frame" x="0.0" y="0.0" width="195.5" height="24"/>
+                                                                            <rect key="frame" x="0.0" y="0.0" width="185.5" height="24"/>
                                                                             <fontDescription key="fontDescription" name="HelveticaNeue-Medium" family="Helvetica Neue" pointSize="20"/>
                                                                             <nil key="textColor"/>
                                                                             <nil key="highlightedColor"/>
                                                                         </label>
                                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="version 0" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gX5-vX-xBe">
-                                                                            <rect key="frame" x="195.5" y="2" width="123.5" height="20.5"/>
+                                                                            <rect key="frame" x="185.5" y="2" width="117.5" height="20.5"/>
                                                                             <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                                             <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                                             <nil key="highlightedColor"/>
                                                                         </label>
                                                                     </subviews>
                                                                 </stackView>
-                                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="This app was created by NutritionFacts." textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Zgt-w4-qQw">
-                                                                    <rect key="frame" x="0.0" y="39" width="319" height="24"/>
+                                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="This app was created by NutritionFacts." textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Zgt-w4-qQw" customClass="ActiveLabel" customModule="ActiveLabel">
+                                                                    <rect key="frame" x="8" y="39" width="303" height="24"/>
                                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                                     <nil key="textColor"/>
                                                                     <nil key="highlightedColor"/>
                                                                 </label>
                                                             </subviews>
                                                             <constraints>
-                                                                <constraint firstAttribute="trailing" secondItem="Zgt-w4-qQw" secondAttribute="trailing" id="6sY-qn-MrH"/>
-                                                                <constraint firstItem="Zgt-w4-qQw" firstAttribute="leading" secondItem="sPw-mc-JqX" secondAttribute="leading" id="JIb-xp-M71"/>
-                                                                <constraint firstItem="gGl-9e-5uD" firstAttribute="leading" secondItem="sPw-mc-JqX" secondAttribute="leading" id="szH-0S-cqM"/>
+                                                                <constraint firstAttribute="trailing" secondItem="Zgt-w4-qQw" secondAttribute="trailing" constant="8" id="6sY-qn-MrH"/>
+                                                                <constraint firstItem="Zgt-w4-qQw" firstAttribute="leading" secondItem="sPw-mc-JqX" secondAttribute="leading" constant="8" id="JIb-xp-M71"/>
+                                                                <constraint firstItem="gGl-9e-5uD" firstAttribute="leading" secondItem="sPw-mc-JqX" secondAttribute="leading" constant="8" id="szH-0S-cqM"/>
                                                             </constraints>
                                                         </stackView>
                                                     </subviews>
@@ -202,6 +202,10 @@
                             <outlet property="delegate" destination="l41-Hc-Y5G" id="gww-Zj-1JF"/>
                         </connections>
                     </tableView>
+                    <connections>
+                        <outlet property="infoLabel" destination="Zgt-w4-qQw" id="iRX-Ni-zUa"/>
+                        <outlet property="messageLabel" destination="dwQ-CS-gz3" id="nxY-XC-Wsx"/>
+                    </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="j1V-q5-z5s" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>

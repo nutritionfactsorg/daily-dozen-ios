@@ -17,10 +17,20 @@ class LinksService {
 
     private struct URLKeys {
         static let topics = "topics"
+        static let book = "book"
     }
 
     // MARK: - Properties
     private let baseURL: URL
+
+    var siteMain: URL {
+        return baseURL
+    }
+
+    var siteBook: URL {
+        return baseURL
+            .appendingPathComponent(URLKeys.book)
+    }
 
     /// Returns the shared LinksService object.
     static let shared: LinksService = {
