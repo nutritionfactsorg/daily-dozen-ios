@@ -9,6 +9,8 @@
 /* Begin PBXBuildFile section */
 		BED5BB460CE3AEE8CF585899 /* Pods_DailyDozen.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F514690D725E67AD54735EB9 /* Pods_DailyDozen.framework */; };
 		CF12918F1FC42DD300D1C17E /* DateCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF12918E1FC42DD300D1C17E /* DateCell.swift */; };
+		CF1393111FE0046800DD8679 /* Reminder.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CF1393101FE0046700DD8679 /* Reminder.storyboard */; };
+		CF1393151FE0080900DD8679 /* ReminderViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF1393141FE0080900DD8679 /* ReminderViewController.swift */; };
 		CF17C8A71FAA019600367BF8 /* DetailsSection.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF17C8A61FAA019600367BF8 /* DetailsSection.swift */; };
 		CF22F07A1FA88D2200F25B70 /* DetailsDataProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF22F0791FA88D2200F25B70 /* DetailsDataProvider.swift */; };
 		CF22F07F1FA8ACE000F25B70 /* Details.plist in Resources */ = {isa = PBXBuildFile; fileRef = CF22F07E1FA8ACE000F25B70 /* Details.plist */; };
@@ -68,6 +70,8 @@
 /* Begin PBXFileReference section */
 		7D4AA01331AD98C99ADB2BC0 /* Pods-DailyDozen.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-DailyDozen.release.xcconfig"; path = "Pods/Target Support Files/Pods-DailyDozen/Pods-DailyDozen.release.xcconfig"; sourceTree = "<group>"; };
 		CF12918E1FC42DD300D1C17E /* DateCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DateCell.swift; sourceTree = "<group>"; };
+		CF1393101FE0046700DD8679 /* Reminder.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Reminder.storyboard; sourceTree = "<group>"; };
+		CF1393141FE0080900DD8679 /* ReminderViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReminderViewController.swift; sourceTree = "<group>"; };
 		CF17C8A61FAA019600367BF8 /* DetailsSection.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailsSection.swift; sourceTree = "<group>"; };
 		CF22F0791FA88D2200F25B70 /* DetailsDataProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailsDataProvider.swift; sourceTree = "<group>"; };
 		CF22F07E1FA8ACE000F25B70 /* Details.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Details.plist; sourceTree = "<group>"; };
@@ -154,6 +158,31 @@
 				CF12918E1FC42DD300D1C17E /* DateCell.swift */,
 			);
 			path = Views;
+			sourceTree = "<group>";
+		};
+		CF13930F1FE0042800DD8679 /* Reminder */ = {
+			isa = PBXGroup;
+			children = (
+				CF1393131FE007E400DD8679 /* Controllers */,
+				CF1393121FE0046C00DD8679 /* Storyboards */,
+			);
+			path = Reminder;
+			sourceTree = "<group>";
+		};
+		CF1393121FE0046C00DD8679 /* Storyboards */ = {
+			isa = PBXGroup;
+			children = (
+				CF1393101FE0046700DD8679 /* Reminder.storyboard */,
+			);
+			path = Storyboards;
+			sourceTree = "<group>";
+		};
+		CF1393131FE007E400DD8679 /* Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				CF1393141FE0080900DD8679 /* ReminderViewController.swift */,
+			);
+			path = Controllers;
 			sourceTree = "<group>";
 		};
 		CF17C8A51FAA016D00367BF8 /* SupportingFiles */ = {
@@ -445,6 +474,7 @@
 				CF9E031D1FBD9F540084BC88 /* ItemHistory */,
 				CFA3E8F61FC58CD90092199D /* ServingsHistory */,
 				CFBEE22A1FDE8CBA005C0F45 /* About */,
+				CF13930F1FE0042800DD8679 /* Reminder */,
 			);
 			path = DailyDozen;
 			sourceTree = "<group>";
@@ -636,6 +666,7 @@
 				CF64DF271FB5BAC400B4D124 /* SizesHeader.xib in Resources */,
 				CFE698411F974B9700CD7905 /* Main.storyboard in Resources */,
 				CFF72B001FB9BB70001CC2E9 /* LinkSettings.plist in Resources */,
+				CF1393111FE0046800DD8679 /* Reminder.storyboard in Resources */,
 				CFF117731F97530300BFE73A /* Menu.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -738,6 +769,7 @@
 				CF64DF2F1FB5DCAD00B4D124 /* ImageCell.swift in Sources */,
 				CFAAB3771F9F3FDF00B24748 /* URL.swift in Sources */,
 				CF6E6D351FB1B4FE00B177E7 /* Detail.swift in Sources */,
+				CF1393151FE0080900DD8679 /* ReminderViewController.swift in Sources */,
 				CF6E6D391FB1B8E300B177E7 /* TextsProvider.swift in Sources */,
 				CFC0608D1FBC4A3500A901A5 /* VitaminsViewController.swift in Sources */,
 				CFC4A84D1F975A3900B5AC75 /* MenuViewController.swift in Sources */,

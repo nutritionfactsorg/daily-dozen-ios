@@ -1,0 +1,138 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13771" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="qs7-Q9-0o6">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13772"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Reminder View Controller-->
+        <scene sceneID="pKE-og-XbC">
+            <objects>
+                <viewController id="qs7-Q9-0o6" customClass="ReminderViewController" customModule="DailyDozen" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="wNs-92-yc1">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Enable Daily Reminder" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="9Ur-LB-Cpk">
+                                <rect key="frame" x="20" y="40" width="220.5" height="25.5"/>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="21"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" on="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Rdk-VX-K3e">
+                                <rect key="frame" x="306" y="37.5" width="51" height="31"/>
+                            </switch>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="JRo-i9-uZw" customClass="RoundedView" customModule="DailyDozen" customModuleProvider="target">
+                                <rect key="frame" x="16" y="91" width="343" height="80.5"/>
+                                <subviews>
+                                    <stackView opaque="NO" contentMode="scaleToFill" distribution="fillProportionally" alignment="top" spacing="19" translatesAutoresizingMaskIntoConstraints="NO" id="v6n-ve-R6A">
+                                        <rect key="frame" x="5" y="5" width="333" height="70.5"/>
+                                        <subviews>
+                                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="ecR-6n-34A">
+                                                <rect key="frame" x="0.0" y="0.0" width="152" height="70.5"/>
+                                                <subviews>
+                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Remind me at" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="rap-FR-a9t">
+                                                        <rect key="frame" x="23.5" y="0.0" width="105" height="20.5"/>
+                                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                        <nil key="textColor"/>
+                                                        <nil key="highlightedColor"/>
+                                                    </label>
+                                                    <datePicker contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" datePickerMode="time" minuteInterval="1" translatesAutoresizingMaskIntoConstraints="NO" id="Uo7-b9-8g4">
+                                                        <rect key="frame" x="1" y="20.5" width="150" height="50"/>
+                                                        <constraints>
+                                                            <constraint firstAttribute="height" constant="50" id="aP5-SB-aLy"/>
+                                                            <constraint firstAttribute="width" constant="150" id="hGf-dL-UYy"/>
+                                                        </constraints>
+                                                        <date key="date" timeIntervalSinceReferenceDate="534775164.82104802">
+                                                            <!--2017-12-12 12:39:24 +0000-->
+                                                        </date>
+                                                    </datePicker>
+                                                </subviews>
+                                            </stackView>
+                                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" spacing="7" translatesAutoresizingMaskIntoConstraints="NO" id="O7C-IM-4X4">
+                                                <rect key="frame" x="171" y="0.0" width="86.5" height="58.5"/>
+                                                <subviews>
+                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Play Sound" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Asn-xk-Jo0">
+                                                        <rect key="frame" x="0.5" y="0.0" width="85.5" height="20.5"/>
+                                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                        <nil key="textColor"/>
+                                                        <nil key="highlightedColor"/>
+                                                    </label>
+                                                    <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" on="YES" translatesAutoresizingMaskIntoConstraints="NO" id="wQY-iS-zv2">
+                                                        <rect key="frame" x="19" y="27.5" width="51" height="31"/>
+                                                    </switch>
+                                                </subviews>
+                                            </stackView>
+                                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" spacing="7" translatesAutoresizingMaskIntoConstraints="NO" id="hen-fQ-ysq">
+                                                <rect key="frame" x="276.5" y="0.0" width="56.5" height="58.5"/>
+                                                <subviews>
+                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Vibrate" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="GOz-bK-tPy">
+                                                        <rect key="frame" x="1" y="0.0" width="55" height="20.5"/>
+                                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                        <nil key="textColor"/>
+                                                        <nil key="highlightedColor"/>
+                                                    </label>
+                                                    <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" on="YES" translatesAutoresizingMaskIntoConstraints="NO" id="UaC-cy-FSb">
+                                                        <rect key="frame" x="4" y="27.5" width="51" height="31"/>
+                                                    </switch>
+                                                </subviews>
+                                            </stackView>
+                                        </subviews>
+                                    </stackView>
+                                </subviews>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstItem="v6n-ve-R6A" firstAttribute="leading" secondItem="JRo-i9-uZw" secondAttribute="leading" constant="5" id="7Ul-oK-BEC"/>
+                                    <constraint firstAttribute="trailing" secondItem="v6n-ve-R6A" secondAttribute="trailing" constant="5" id="9tz-0d-PvY"/>
+                                    <constraint firstItem="v6n-ve-R6A" firstAttribute="top" secondItem="JRo-i9-uZw" secondAttribute="top" constant="5" id="A5t-1C-ViK"/>
+                                    <constraint firstAttribute="bottom" secondItem="v6n-ve-R6A" secondAttribute="bottom" constant="5" id="Elc-eZ-h60"/>
+                                </constraints>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                        <real key="value" value="5"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="borderWidth">
+                                        <real key="value" value="1"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="color" keyPath="borderColor">
+                                        <color key="value" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="color" keyPath="shadowColor">
+                                        <color key="value" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="shadowRadius">
+                                        <real key="value" value="1"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="size" keyPath="shadowOffset">
+                                        <size key="value" width="0.0" height="0.0"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="shadowOpacity">
+                                        <real key="value" value="1"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                            </view>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="9Ur-LB-Cpk" firstAttribute="leading" secondItem="3Aa-ey-FQQ" secondAttribute="leading" constant="20" id="9a7-Nu-pZ9"/>
+                            <constraint firstItem="JRo-i9-uZw" firstAttribute="leading" secondItem="3Aa-ey-FQQ" secondAttribute="leading" constant="16" id="HEQ-7l-tQP"/>
+                            <constraint firstItem="Rdk-VX-K3e" firstAttribute="centerY" secondItem="9Ur-LB-Cpk" secondAttribute="centerY" id="QPQ-3Q-GlN"/>
+                            <constraint firstItem="3Aa-ey-FQQ" firstAttribute="trailing" secondItem="JRo-i9-uZw" secondAttribute="trailing" constant="16" id="bKF-jK-tF4"/>
+                            <constraint firstItem="9Ur-LB-Cpk" firstAttribute="top" secondItem="3Aa-ey-FQQ" secondAttribute="top" constant="20" id="j6i-jA-Jlu"/>
+                            <constraint firstItem="3Aa-ey-FQQ" firstAttribute="trailing" secondItem="Rdk-VX-K3e" secondAttribute="trailing" constant="20" id="nUb-0n-S5P"/>
+                            <constraint firstItem="JRo-i9-uZw" firstAttribute="top" secondItem="Rdk-VX-K3e" secondAttribute="bottom" constant="22.5" id="uRC-Ug-vIN"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="3Aa-ey-FQQ"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="2h5-s4-rLt" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="109.59999999999999" y="161.46926536731635"/>
+        </scene>
+    </scenes>
+</document>

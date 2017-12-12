@@ -46,7 +46,9 @@ class MenuViewController: UITableViewController {
                 return PagerBuilder.instantiateController()
             case .about:
                 return AboutBuilder.instantiateController()
-            case .videos, .book, .donate, .subscribe, .source, .settings, .backup:
+            case .settings:
+                return ReminderBuilder.instantiateController()
+            case .videos, .book, .donate, .subscribe, .source, .backup:
                 return nil
             }
         }

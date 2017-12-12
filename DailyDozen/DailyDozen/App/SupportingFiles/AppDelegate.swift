@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import UserNotifications
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
@@ -14,7 +15,21 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     var window: UIWindow?
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
-        // Override point for customization after application launch.
+
+        UNUserNotificationCenter.current().requestAuthorization(options: [.alert, .sound, .badge]) { (_, error) in
+            if let error = error {
+                print(error.localizedDescription)
+            }
+        }
+
+        let action = UNNotificationAction(identifier: "action", title: "REMINDER!", options: [.foreground])
+
+        let category = UNNotificationCategory(
+            identifier: "category", actions: [action],
+            intentIdentifiers: [], options: [])
+
+        UNUserNotificationCenter.current().setNotificationCategories([category])
+
         return true
     }
 }
