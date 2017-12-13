@@ -33,6 +33,10 @@ class MainViewController: UISplitViewController {
             UserDefaults.standard.set(0, forKey: "minute")
         }
 
+        if UserDefaults.standard.object(forKey: "sound") == nil {
+            UserDefaults.standard.set(true, forKey: "sound")
+        }
+
         guard UserDefaults.standard.bool(forKey: "canNotificate") else { return }
 
         let content = UNMutableNotificationContent()
@@ -40,7 +44,10 @@ class MainViewController: UISplitViewController {
         content.subtitle = "Do you remember about the app?"
         content.body = "Use this app on a daily basis!"
         content.badge = 1
-        content.sound = UNNotificationSound.default()
+
+        if UserDefaults.standard.bool(forKey: "sound") {
+            content.sound = UNNotificationSound.default()
+        }
 
         var dateComponents = DateComponents()
         dateComponents.hour = UserDefaults.standard.integer(forKey: "hour")

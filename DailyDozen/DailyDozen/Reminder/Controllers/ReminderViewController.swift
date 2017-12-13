@@ -39,6 +39,7 @@ class ReminderViewController: UIViewController {
     @IBOutlet private weak var settingsPanel: RoundedView!
     @IBOutlet private weak var datePicker: UIDatePicker!
     @IBOutlet private weak var reminderSwitch: UISwitch!
+    @IBOutlet private weak var soundSwitch: UISwitch!
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -49,6 +50,8 @@ class ReminderViewController: UIViewController {
 
         datePicker.date.hour = UserDefaults.standard.integer(forKey: "hour")
         datePicker.date.minute = UserDefaults.standard.integer(forKey: "minute")
+
+        soundSwitch.isOn = UserDefaults.standard.bool(forKey: "sound")
     }
 
     override func viewWillDisappear(_ animated: Bool) {
@@ -56,11 +59,13 @@ class ReminderViewController: UIViewController {
 
         guard reminderSwitch.isOn else { return }
 
+        UserDefaults.standard.set(soundSwitch.isOn, forKey: "sound")
+
         if UserDefaults.standard.integer(forKey: "hour") != datePicker.date.hour ||
             UserDefaults.standard.integer(forKey: "minute") != datePicker.date.minute {
-
             UserDefaults.standard.set(datePicker.date.hour, forKey: "hour")
             UserDefaults.standard.set(datePicker.date.minute, forKey: "minute")
+
             UNUserNotificationCenter.current().removeAllPendingNotificationRequests()
 
             let content = UNMutableNotificationContent()
@@ -68,7 +73,10 @@ class ReminderViewController: UIViewController {
             content.subtitle = "Do you remember about the app?"
             content.body = "Use this app on a daily basis!"
             content.badge = 1
-            content.sound = UNNotificationSound.default()
+
+            if soundSwitch.isOn {
+                content.sound = UNNotificationSound.default()
+            }
 
             var dateComponents = DateComponents()
             dateComponents.hour = UserDefaults.standard.integer(forKey: "hour")

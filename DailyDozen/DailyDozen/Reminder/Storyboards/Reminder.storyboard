@@ -37,16 +37,16 @@
                                         <rect key="frame" x="5" y="5" width="333" height="70.5"/>
                                         <subviews>
                                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="ecR-6n-34A">
-                                                <rect key="frame" x="0.0" y="0.0" width="152" height="70.5"/>
+                                                <rect key="frame" x="0.0" y="0.0" width="196.5" height="70.5"/>
                                                 <subviews>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Remind me at" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="rap-FR-a9t">
-                                                        <rect key="frame" x="23.5" y="0.0" width="105" height="20.5"/>
+                                                        <rect key="frame" x="45.5" y="0.0" width="105" height="20.5"/>
                                                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                         <nil key="textColor"/>
                                                         <nil key="highlightedColor"/>
                                                     </label>
                                                     <datePicker contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" datePickerMode="time" minuteInterval="1" useCurrentDate="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Uo7-b9-8g4">
-                                                        <rect key="frame" x="1" y="20.5" width="150" height="50"/>
+                                                        <rect key="frame" x="23" y="20.5" width="150" height="50"/>
                                                         <constraints>
                                                             <constraint firstAttribute="height" constant="50" id="aP5-SB-aLy"/>
                                                             <constraint firstAttribute="width" constant="150" id="hGf-dL-UYy"/>
@@ -58,30 +58,16 @@
                                                 </subviews>
                                             </stackView>
                                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" spacing="7" translatesAutoresizingMaskIntoConstraints="NO" id="O7C-IM-4X4">
-                                                <rect key="frame" x="171" y="0.0" width="86.5" height="58.5"/>
+                                                <rect key="frame" x="215.5" y="0.0" width="117.5" height="58.5"/>
                                                 <subviews>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Play Sound" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Asn-xk-Jo0">
-                                                        <rect key="frame" x="0.5" y="0.0" width="85.5" height="20.5"/>
+                                                        <rect key="frame" x="16" y="0.0" width="85.5" height="20.5"/>
                                                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                         <nil key="textColor"/>
                                                         <nil key="highlightedColor"/>
                                                     </label>
                                                     <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" on="YES" translatesAutoresizingMaskIntoConstraints="NO" id="wQY-iS-zv2">
-                                                        <rect key="frame" x="19" y="27.5" width="51" height="31"/>
-                                                    </switch>
-                                                </subviews>
-                                            </stackView>
-                                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" spacing="7" translatesAutoresizingMaskIntoConstraints="NO" id="hen-fQ-ysq">
-                                                <rect key="frame" x="276.5" y="0.0" width="56.5" height="58.5"/>
-                                                <subviews>
-                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Vibrate" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="GOz-bK-tPy">
-                                                        <rect key="frame" x="1" y="0.0" width="55" height="20.5"/>
-                                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                                        <nil key="textColor"/>
-                                                        <nil key="highlightedColor"/>
-                                                    </label>
-                                                    <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" on="YES" translatesAutoresizingMaskIntoConstraints="NO" id="UaC-cy-FSb">
-                                                        <rect key="frame" x="4" y="27.5" width="51" height="31"/>
+                                                        <rect key="frame" x="34" y="27.5" width="51" height="31"/>
                                                     </switch>
                                                 </subviews>
                                             </stackView>
@@ -136,6 +122,7 @@
                         <outlet property="datePicker" destination="Uo7-b9-8g4" id="X8t-hE-Vor"/>
                         <outlet property="reminderSwitch" destination="Rdk-VX-K3e" id="rQ8-8H-fKX"/>
                         <outlet property="settingsPanel" destination="JRo-i9-uZw" id="9kf-0b-kUM"/>
+                        <outlet property="soundSwitch" destination="wQY-iS-zv2" id="fgH-zt-jCb"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="2h5-s4-rLt" userLabel="First Responder" sceneMemberID="firstResponder"/>
