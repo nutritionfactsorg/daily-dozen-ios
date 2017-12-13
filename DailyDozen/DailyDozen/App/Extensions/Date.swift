@@ -36,6 +36,38 @@ extension Date {
         return Calendar.current.component(.year, from: self)
     }
 
+    var hour: Int {
+        get {
+            return Calendar.current.component(.hour, from: self)
+        }
+        set {
+            let allowedRange = Calendar.current.range(of: .hour, in: .day, for: self)!
+            guard allowedRange.contains(newValue) else { return }
+
+            let currentHour = Calendar.current.component(.hour, from: self)
+            let hoursToAdd = newValue - currentHour
+            if let date = Calendar.current.date(byAdding: .hour, value: hoursToAdd, to: self) {
+                self = date
+            }
+        }
+    }
+
+    public var minute: Int {
+        get {
+            return Calendar.current.component(.minute, from: self)
+        }
+        set {
+            let allowedRange = Calendar.current.range(of: .minute, in: .hour, for: self)!
+            guard allowedRange.contains(newValue) else { return }
+
+            let currentMinutes = Calendar.current.component(.minute, from: self)
+            let minutesToAdd = newValue - currentMinutes
+            if let date = Calendar.current.date(byAdding: .minute, value: minutesToAdd, to: self) {
+                self = date
+            }
+        }
+    }
+
     /// Returns a date string from the date.
     ///
     /// - Parameter style: A dateFormatter style (default is .medium).

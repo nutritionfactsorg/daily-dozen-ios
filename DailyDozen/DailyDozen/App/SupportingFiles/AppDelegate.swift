@@ -22,14 +22,10 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
             }
         }
 
-        let action = UNNotificationAction(identifier: "action", title: "REMINDER!", options: [.foreground])
-
-        let category = UNNotificationCategory(
-            identifier: "category", actions: [action],
-            intentIdentifiers: [], options: [])
-
-        UNUserNotificationCenter.current().setNotificationCategories([category])
-
         return true
+    }
+
+    func applicationDidBecomeActive(_ application: UIApplication) {
+        application.applicationIconBadgeNumber = 0
     }
 }

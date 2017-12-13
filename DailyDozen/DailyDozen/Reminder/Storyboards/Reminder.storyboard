@@ -26,6 +26,9 @@
                             </label>
                             <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" on="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Rdk-VX-K3e">
                                 <rect key="frame" x="306" y="37.5" width="51" height="31"/>
+                                <connections>
+                                    <action selector="reminderSwithed:" destination="qs7-Q9-0o6" eventType="valueChanged" id="lcX-LK-jtW"/>
+                                </connections>
                             </switch>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="JRo-i9-uZw" customClass="RoundedView" customModule="DailyDozen" customModuleProvider="target">
                                 <rect key="frame" x="16" y="91" width="343" height="80.5"/>
@@ -42,14 +45,14 @@
                                                         <nil key="textColor"/>
                                                         <nil key="highlightedColor"/>
                                                     </label>
-                                                    <datePicker contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" datePickerMode="time" minuteInterval="1" translatesAutoresizingMaskIntoConstraints="NO" id="Uo7-b9-8g4">
+                                                    <datePicker contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" datePickerMode="time" minuteInterval="1" useCurrentDate="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Uo7-b9-8g4">
                                                         <rect key="frame" x="1" y="20.5" width="150" height="50"/>
                                                         <constraints>
                                                             <constraint firstAttribute="height" constant="50" id="aP5-SB-aLy"/>
                                                             <constraint firstAttribute="width" constant="150" id="hGf-dL-UYy"/>
                                                         </constraints>
-                                                        <date key="date" timeIntervalSinceReferenceDate="534775164.82104802">
-                                                            <!--2017-12-12 12:39:24 +0000-->
+                                                        <date key="date" timeIntervalSinceReferenceDate="534744000.82104802">
+                                                            <!--2017-12-12 04:00:00 +0000-->
                                                         </date>
                                                     </datePicker>
                                                 </subviews>
@@ -129,6 +132,11 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="3Aa-ey-FQQ"/>
                     </view>
+                    <connections>
+                        <outlet property="datePicker" destination="Uo7-b9-8g4" id="X8t-hE-Vor"/>
+                        <outlet property="reminderSwitch" destination="Rdk-VX-K3e" id="rQ8-8H-fKX"/>
+                        <outlet property="settingsPanel" destination="JRo-i9-uZw" id="9kf-0b-kUM"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="2h5-s4-rLt" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
