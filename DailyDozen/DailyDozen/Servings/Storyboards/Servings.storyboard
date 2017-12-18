@@ -200,9 +200,18 @@
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
+                                    <imageView hidden="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="star" translatesAutoresizingMaskIntoConstraints="NO" id="UHf-fX-jsj">
+                                        <rect key="frame" x="172.5" y="5.5" width="30" height="30"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="30" id="bU9-ZN-DeE"/>
+                                            <constraint firstAttribute="width" constant="30" id="tbC-4f-Wvz"/>
+                                        </constraints>
+                                    </imageView>
                                 </subviews>
                                 <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
                                 <constraints>
+                                    <constraint firstItem="UHf-fX-jsj" firstAttribute="centerX" secondItem="HYx-b2-Phb" secondAttribute="centerX" id="9I8-iz-0tl"/>
+                                    <constraint firstItem="UHf-fX-jsj" firstAttribute="centerY" secondItem="HYx-b2-Phb" secondAttribute="centerY" id="CDT-3a-bf9"/>
                                     <constraint firstAttribute="height" constant="40" id="CkG-iO-j2k"/>
                                     <constraint firstAttribute="trailing" secondItem="C1m-C0-IqZ" secondAttribute="trailing" constant="8" id="Nfv-PO-DN1"/>
                                     <constraint firstItem="ERa-UT-Rni" firstAttribute="centerY" secondItem="HYx-b2-Phb" secondAttribute="centerY" id="OiW-XA-Ka0"/>
@@ -229,6 +238,7 @@
                     <connections>
                         <outlet property="countLabel" destination="ERa-UT-Rni" id="bLO-Yz-4zh"/>
                         <outlet property="dataProvider" destination="R1i-jB-i1L" id="5fV-pP-umQ"/>
+                        <outlet property="starImage" destination="UHf-fX-jsj" id="sDe-5r-5AW"/>
                         <outlet property="tableView" destination="9Z3-ZU-bjI" id="ZfV-GR-P7b"/>
                     </connections>
                 </viewController>
@@ -242,5 +252,6 @@
         <image name="ic_beans" width="120" height="120"/>
         <image name="ic_book" width="96" height="96"/>
         <image name="ic_calendar" width="29" height="29"/>
+        <image name="star" width="128" height="128"/>
     </resources>
 </document>

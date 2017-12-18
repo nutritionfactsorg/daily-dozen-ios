@@ -10,10 +10,16 @@ import UIKit
 
 class ServingsViewController: UIViewController {
 
+    // MARK: - Nested
+    private struct Keys {
+        static let countMaximum = 24
+    }
+
     // MARK: - Outlets
     @IBOutlet private weak var dataProvider: ServingsDataProvider!
     @IBOutlet private weak var tableView: UITableView!
     @IBOutlet private weak var countLabel: UILabel!
+    @IBOutlet private weak var starImage: UIImageView!
 
     // MARK: - Properties
     private let realm = RealmProvider()
@@ -21,10 +27,15 @@ class ServingsViewController: UIViewController {
     private var statesCount = 0 {
         didSet {
             countLabel.text = statesCountString
+            if statesCount == Keys.countMaximum {
+                starImage.popIn()
+            } else {
+                starImage.popOut()
+            }
         }
     }
     private var statesCountString: String {
-        return "\(statesCount) out of 24"
+        return "\(statesCount) out of \(Keys.countMaximum)"
     }
 
     // MARK: - UIViewController
