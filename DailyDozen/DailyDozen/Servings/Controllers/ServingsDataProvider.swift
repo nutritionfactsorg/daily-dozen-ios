@@ -55,7 +55,8 @@ class ServingsDataProvider: NSObject, UITableViewDataSource {
 extension ServingsDataProvider: UICollectionViewDataSource {
 
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return viewModel.itemStates(for: collectionView.tag).count
+        let states = viewModel.itemStates(for: collectionView.tag)
+        return states.count
     }
 
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {

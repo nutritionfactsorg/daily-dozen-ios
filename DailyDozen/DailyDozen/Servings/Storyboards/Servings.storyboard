@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13529" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="M2f-B0-7nZ">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13771" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="M2f-B0-7nZ">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13527"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13772"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -194,11 +194,19 @@
                                             <action selector="historyPressed:" destination="M2f-B0-7nZ" eventType="touchUpInside" id="tvZ-oV-t8o"/>
                                         </connections>
                                     </button>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="0 out of 24" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ERa-UT-Rni">
+                                        <rect key="frame" x="237" y="9.5" width="85" height="21"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
                                 </subviews>
                                 <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="40" id="CkG-iO-j2k"/>
                                     <constraint firstAttribute="trailing" secondItem="C1m-C0-IqZ" secondAttribute="trailing" constant="8" id="Nfv-PO-DN1"/>
+                                    <constraint firstItem="ERa-UT-Rni" firstAttribute="centerY" secondItem="HYx-b2-Phb" secondAttribute="centerY" id="OiW-XA-Ka0"/>
+                                    <constraint firstItem="C1m-C0-IqZ" firstAttribute="leading" secondItem="ERa-UT-Rni" secondAttribute="trailing" constant="15" id="SVx-ZD-a8L"/>
                                     <constraint firstItem="C1m-C0-IqZ" firstAttribute="centerY" secondItem="HYx-b2-Phb" secondAttribute="centerY" id="mE3-4E-ZoE"/>
                                     <constraint firstItem="1HM-mL-ZV9" firstAttribute="centerY" secondItem="HYx-b2-Phb" secondAttribute="centerY" id="pHN-XC-zQV"/>
                                     <constraint firstItem="1HM-mL-ZV9" firstAttribute="leading" secondItem="HYx-b2-Phb" secondAttribute="leading" constant="8" id="yIr-bT-WL2"/>
@@ -219,6 +227,7 @@
                         <viewLayoutGuide key="safeArea" id="FmG-ye-C7X"/>
                     </view>
                     <connections>
+                        <outlet property="countLabel" destination="ERa-UT-Rni" id="bLO-Yz-4zh"/>
                         <outlet property="dataProvider" destination="R1i-jB-i1L" id="5fV-pP-umQ"/>
                         <outlet property="tableView" destination="9Z3-ZU-bjI" id="ZfV-GR-P7b"/>
                     </connections>

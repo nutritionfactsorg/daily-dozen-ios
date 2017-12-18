@@ -13,9 +13,19 @@ class ServingsViewController: UIViewController {
     // MARK: - Outlets
     @IBOutlet private weak var dataProvider: ServingsDataProvider!
     @IBOutlet private weak var tableView: UITableView!
+    @IBOutlet private weak var countLabel: UILabel!
 
     // MARK: - Properties
     private let realm = RealmProvider()
+
+    private var statesCount = 0 {
+        didSet {
+            countLabel.text = statesCountString
+        }
+    }
+    private var statesCountString: String {
+        return "\(statesCount) out of 24"
+    }
 
     // MARK: - UIViewController
     override func viewDidLoad() {
@@ -33,6 +43,7 @@ class ServingsViewController: UIViewController {
     /// - Parameter item: The current date.
     func setViewModel(for date: Date) {
         dataProvider.viewModel = DozeViewModel(doze: realm.getDoze(for: date))
+        statesCount = 0
         tableView.reloadData()
     }
 
@@ -67,7 +78,6 @@ class ServingsViewController: UIViewController {
         let viewController = ServingsHistoryBuilder.instantiateController()
         navigationController?.pushViewController(viewController, animated: true)
     }
-
 }
 
 // MARK: - Servings UITableViewDelegate
@@ -81,6 +91,9 @@ extension ServingsViewController: UITableViewDelegate {
         guard let servingsCell = cell as? ServingsCell else { return }
         servingsCell.stateCollection.delegate = self
         servingsCell.stateCollection.dataSource = dataProvider
+        let states = dataProvider.viewModel.itemStates(for: indexPath.row)
+        let selectedStates = states.filter { $0 }
+        statesCount += selectedStates.count
         servingsCell.stateCollection.reloadData()
     }
 
@@ -104,7 +117,13 @@ extension ServingsViewController: UICollectionViewDelegate {
 
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         var states = dataProvider.viewModel.itemStates(for: collectionView.tag)
-        states[indexPath.row] = !states[indexPath.row]
+        let newState = !states[indexPath.row]
+        states[indexPath.row] = newState
+        if newState {
+            statesCount += 1
+        } else {
+            statesCount -= 1
+        }
         guard let cell = collectionView.cellForItem(at: indexPath) as? StateCell else {
             fatalError("There should be a cell")
         }
