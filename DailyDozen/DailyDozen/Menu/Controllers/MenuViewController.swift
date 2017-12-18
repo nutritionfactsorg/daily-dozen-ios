@@ -67,6 +67,14 @@ class MenuViewController: UITableViewController {
             dismiss(animated: false)
         } else if let controller = menuItem.controller {
             splitViewController?.showDetailViewController(controller, sender: nil)
+        } else {
+            share()
         }
+    }
+
+    private func share() {
+        let activityViewController = UIActivityViewController(activityItems: [URL.inDocuments(for: "main.realm")], applicationActivities: nil)
+        activityViewController.popoverPresentationController?.sourceView = view
+        present(activityViewController, animated: true, completion: nil)
     }
 }

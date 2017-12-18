@@ -9,6 +9,10 @@
 import UIKit
 import RealmSwift
 
+protocol RealmDelegate: AnyObject {
+    func didUpdateFile()
+}
+
 class RealmProvider {
 
     private let realm: Realm

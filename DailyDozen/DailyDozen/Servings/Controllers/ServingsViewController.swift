@@ -46,6 +46,9 @@ class ServingsViewController: UIViewController {
 
         tableView.dataSource = dataProvider
         tableView.delegate = self
+
+        guard let appDelegate = UIApplication.shared.delegate as? AppDelegate else { return }
+        appDelegate.realmDelegate = self
     }
 
     // MARK: - Methods
@@ -145,5 +148,12 @@ extension ServingsViewController: UICollectionViewDelegate {
         } else {
             statesCount -= 1
         }
+    }
+}
+
+extension ServingsViewController: RealmDelegate {
+
+    func didUpdateFile() {
+        setViewModel(for: Date())
     }
 }
