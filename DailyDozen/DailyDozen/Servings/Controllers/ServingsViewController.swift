@@ -44,6 +44,10 @@ class ServingsViewController: UIViewController {
     func setViewModel(for date: Date) {
         dataProvider.viewModel = DozeViewModel(doze: realm.getDoze(for: date))
         statesCount = 0
+        let selectedStates = (0 ... dataProvider.viewModel.count - 3)
+            .map { dataProvider.viewModel.itemStates(for: $0) }
+            .map { $0.filter { $0 }.count }
+        statesCount = selectedStates.reduce(0) { $0 + $1 }
         tableView.reloadData()
     }
 
@@ -91,9 +95,6 @@ extension ServingsViewController: UITableViewDelegate {
         guard let servingsCell = cell as? ServingsCell else { return }
         servingsCell.stateCollection.delegate = self
         servingsCell.stateCollection.dataSource = dataProvider
-        let states = dataProvider.viewModel.itemStates(for: indexPath.row)
-        let selectedStates = states.filter { $0 }
-        statesCount += selectedStates.count
         servingsCell.stateCollection.reloadData()
     }
 
@@ -119,16 +120,19 @@ extension ServingsViewController: UICollectionViewDelegate {
         var states = dataProvider.viewModel.itemStates(for: collectionView.tag)
         let newState = !states[indexPath.row]
         states[indexPath.row] = newState
-        if newState {
-            statesCount += 1
-        } else {
-            statesCount -= 1
-        }
         guard let cell = collectionView.cellForItem(at: indexPath) as? StateCell else {
             fatalError("There should be a cell")
         }
         cell.configure(with: states[indexPath.row])
         let id = dataProvider.viewModel.itemID(for: collectionView.tag)
         realm.saveStates(states, with: id)
+
+        guard !dataProvider.viewModel.itemInfo(for: collectionView.tag).isVitamin else { return }
+
+        if newState {
+            statesCount += 1
+        } else {
+            statesCount -= 1
+        }
     }
 }
