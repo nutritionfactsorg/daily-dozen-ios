@@ -40,6 +40,7 @@ class VitaminsViewController: UIViewController, BlurableBackground {
     }
 
     @IBAction private func viewTapped(_ sender: UITapGestureRecognizer) {
+        unblurBackground()
         dismiss(animated: true)
     }
 }
