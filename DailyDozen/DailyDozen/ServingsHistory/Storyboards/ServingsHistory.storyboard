@@ -195,6 +195,7 @@
                     <connections>
                         <outlet property="chartView" destination="dpZ-0j-fti" id="zvb-Ft-pto"/>
                         <outlet property="controlPanel" destination="AXc-qN-o5Q" id="vaM-tH-Uzf"/>
+                        <outlet property="scaleControl" destination="sM6-A9-KeP" id="KOn-Q6-a9s"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="4UO-oL-cGk" userLabel="First Responder" sceneMemberID="firstResponder"/>

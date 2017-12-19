@@ -42,6 +42,7 @@ class ServingsHistoryViewController: UIViewController {
     // MARK: - Outlets
     @IBOutlet private weak var chartView: ChartView!
     @IBOutlet private weak var controlPanel: ControlPanel!
+    @IBOutlet private weak var scaleControl: UISegmentedControl!
 
     // MARK: - Properties
     private var viewModel: ServingsHistoryViewModel!
@@ -107,6 +108,11 @@ class ServingsHistoryViewController: UIViewController {
         let results = realm
             .getDozes()
             .sorted(byKeyPath: "date")
+        guard results.count > 0 else {
+            controlPanel.isHidden = true
+            scaleControl.isEnabled = false
+            return
+        }
 
         viewModel = ServingsHistoryViewModel(results)
         let lastYearIndex = viewModel.lastYearIndex
