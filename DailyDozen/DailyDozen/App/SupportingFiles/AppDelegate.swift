@@ -33,7 +33,6 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
                 print(error.localizedDescription)
             }
         }
-
         return true
     }
 

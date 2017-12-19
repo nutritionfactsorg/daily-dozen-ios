@@ -154,6 +154,6 @@ extension ServingsViewController: UICollectionViewDelegate {
 extension ServingsViewController: RealmDelegate {
 
     func didUpdateFile() {
-        setViewModel(for: Date())
+        navigationController?.popViewController(animated: false)
     }
 }
