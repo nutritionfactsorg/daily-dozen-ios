@@ -119,6 +119,10 @@ extension ServingsViewController: UITableViewDelegate {
         return servingsSection.headerHeight
     }
 
+    func tableView(_ tableView: UITableView, heightForFooterInSection section: Int) -> CGFloat {
+        return ServingsSection.main.footerHeight
+    }
+
     func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
         guard let servingsSection = ServingsSection(rawValue: section) else {
             fatalError("There should be a section type")

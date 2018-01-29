@@ -21,16 +21,19 @@ enum ServingsSection: Int {
     }
 
     var rowHeight: CGFloat {
-        return 100
+        return 120
     }
 
     var headerHeight: CGFloat {
         switch self {
         case .main:
-            return 0
+            return 0.1
         case .vitamin:
             return 50
         }
+    }
+    var footerHeight: CGFloat {
+        return 0.1
     }
 
     var headerView: UIView? {
