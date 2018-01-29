@@ -61,6 +61,7 @@
 		CFE698431F974B9700CD7905 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = CFE698421F974B9700CD7905 /* Assets.xcassets */; };
 		CFE698461F974B9700CD7905 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CFE698441F974B9700CD7905 /* LaunchScreen.storyboard */; };
 		CFE793571FA756E40084F075 /* RealmProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = CFE793561FA756E40084F075 /* RealmProvider.swift */; };
+		CFECDFF8201EF7C1003E8572 /* Colors.swift in Sources */ = {isa = PBXBuildFile; fileRef = CFECDFF7201EF7C1003E8572 /* Colors.swift */; };
 		CFF117731F97530300BFE73A /* Menu.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CFF117721F97530300BFE73A /* Menu.storyboard */; };
 		CFF72AFB1FB9A499001CC2E9 /* UnitsType.swift in Sources */ = {isa = PBXBuildFile; fileRef = CFF72AFA1FB9A499001CC2E9 /* UnitsType.swift */; };
 		CFF72AFE1FB9BAAA001CC2E9 /* LinkService.swift in Sources */ = {isa = PBXBuildFile; fileRef = CFF72AFD1FB9BAAA001CC2E9 /* LinkService.swift */; };
@@ -124,6 +125,7 @@
 		CFE698451F974B9700CD7905 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		CFE698471F974B9700CD7905 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		CFE793561FA756E40084F075 /* RealmProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RealmProvider.swift; sourceTree = "<group>"; };
+		CFECDFF7201EF7C1003E8572 /* Colors.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Colors.swift; sourceTree = "<group>"; };
 		CFF117721F97530300BFE73A /* Menu.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Menu.storyboard; sourceTree = "<group>"; };
 		CFF72AFA1FB9A499001CC2E9 /* UnitsType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UnitsType.swift; sourceTree = "<group>"; };
 		CFF72AFD1FB9BAAA001CC2E9 /* LinkService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LinkService.swift; sourceTree = "<group>"; };
@@ -356,6 +358,7 @@
 				CFAAB3761F9F3FDF00B24748 /* URL.swift */,
 				CF2680011FB477AD004A6200 /* Date.swift */,
 				CF23317F1FC2DB540021C440 /* BlurableBackground.swift */,
+				CFECDFF7201EF7C1003E8572 /* Colors.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -781,6 +784,7 @@
 				CFBEE2341FDE9A57005C0F45 /* RoundedView.swift in Sources */,
 				CF49029B1FD91F01000EAB68 /* ServingsHistoryViewModel.swift in Sources */,
 				CF2FA9961FA87F0C003508F8 /* DetailsViewController.swift in Sources */,
+				CFECDFF8201EF7C1003E8572 /* Colors.swift in Sources */,
 				CF4DECF71F9DF2A500DA094B /* ServingsCell.swift in Sources */,
 				CFE793571FA756E40084F075 /* RealmProvider.swift in Sources */,
 				CFAAB37A1F9F4A8000B24748 /* DozeViewModel.swift in Sources */,

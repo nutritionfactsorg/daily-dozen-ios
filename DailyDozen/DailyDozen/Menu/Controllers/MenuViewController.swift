@@ -8,6 +8,7 @@
 
 import UIKit
 
+// MARK: - UITableViewController
 class MenuViewController: UITableViewController {
 
     // MARK: - Nested
@@ -17,6 +18,10 @@ class MenuViewController: UITableViewController {
         static let donate = "donate"
         static let subscribe = "subscribe"
         static let source = "open-source"
+    }
+
+    private struct Strings {
+        static let menu = "Menu"
     }
 
     private enum MenuItem: Int {
@@ -54,7 +59,27 @@ class MenuViewController: UITableViewController {
         }
     }
 
-    // MARK: - UITableViewDelegate
+    /// Presents share services.
+    private func share() {
+        let activityViewController = UIActivityViewController(activityItems: [URL.inDocuments(for: "main.realm")], applicationActivities: nil)
+        activityViewController.popoverPresentationController?.sourceView = view
+        present(activityViewController, animated: true, completion: nil)
+    }
+
+    override func viewDidLoad() {
+        super.viewDidLoad()
+
+        navigationController?.navigationBar.barTintColor = UIColor.greenColor
+
+        let barItem = UIBarButtonItem(title: Strings.menu, style: .done, target: nil, action: nil)
+        barItem.tintColor = UIColor.white
+        navigationItem.setLeftBarButton(barItem, animated: false)
+    }
+}
+
+// MARK: - UITableViewDelegate
+extension MenuViewController {
+
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
 
         guard let menuItem = MenuItem(rawValue: indexPath.row) else { return }
@@ -72,9 +97,15 @@ class MenuViewController: UITableViewController {
         }
     }
 
-    private func share() {
-        let activityViewController = UIActivityViewController(activityItems: [URL.inDocuments(for: "main.realm")], applicationActivities: nil)
-        activityViewController.popoverPresentationController?.sourceView = view
-        present(activityViewController, animated: true, completion: nil)
+    override func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
+        super.tableView(tableView, heightForHeaderInSection: section)
+
+        return 0.1
+    }
+
+    override func tableView(_ tableView: UITableView, heightForFooterInSection section: Int) -> CGFloat {
+        super.tableView(tableView, heightForFooterInSection: section)
+
+        return 0.1
     }
 }
