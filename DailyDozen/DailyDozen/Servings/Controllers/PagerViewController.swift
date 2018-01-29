@@ -49,6 +49,19 @@ class PagerViewController: UIViewController {
         }
     }
 
+    // MARK: - UIViewController
+    override func viewDidLoad() {
+        super.viewDidLoad()
+
+        title = "Servings"
+    }
+
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
+
+        navigationController?.navigationBar.titleTextAttributes = [NSAttributedStringKey.foregroundColor: UIColor.white]
+    }
+
     // MARK: - Methods
     func updateDate(_ date: Date) {
         dateButton.setTitle(date.dateString(for: .long), for: .normal)

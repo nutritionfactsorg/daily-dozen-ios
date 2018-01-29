@@ -67,7 +67,10 @@ class MenuViewController: UITableViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
+        title = ""
+
         navigationController?.navigationBar.barTintColor = UIColor.greenColor
+        navigationController?.navigationBar.tintColor = UIColor.white
 
         let barItem = UIBarButtonItem(title: Strings.menu, style: .done, target: nil, action: nil)
         barItem.tintColor = UIColor.white

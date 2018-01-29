@@ -9,6 +9,11 @@
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
+    <customFonts key="customFonts">
+        <array key="Helvetica.ttc">
+            <string>Helvetica</string>
+        </array>
+    </customFonts>
     <scenes>
         <!--Servings View Controller-->
         <scene sceneID="dfs-XX-7fX">
@@ -34,7 +39,7 @@
                                                     <subviews>
                                                         <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" semanticContentAttribute="forceRightToLeft" bounces="NO" scrollEnabled="NO" pagingEnabled="YES" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" bouncesZoom="NO" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="WgI-63-9dY">
                                                             <rect key="frame" x="192" y="30" width="175" height="40"/>
-                                                            <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                            <color key="backgroundColor" red="0.95294117649999999" green="0.95294117649999999" blue="0.95294117649999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                             <constraints>
                                                                 <constraint firstAttribute="width" constant="175" id="b4F-ac-RQS"/>
                                                                 <constraint firstAttribute="height" constant="40" id="xxu-yz-FWn"/>
@@ -138,7 +143,6 @@
                                                                     </constraints>
                                                                 </stackView>
                                                             </subviews>
-                                                            <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                             <constraints>
                                                                 <constraint firstAttribute="trailing" secondItem="Ki5-6E-pN9" secondAttribute="trailing" id="53A-fI-Lad"/>
                                                                 <constraint firstItem="Ki5-6E-pN9" firstAttribute="top" secondItem="R9R-81-ZKw" secondAttribute="top" id="7fb-kP-3JT"/>
@@ -156,6 +160,7 @@
                                                         <constraint firstItem="R9R-81-ZKw" firstAttribute="leading" secondItem="SqB-Ue-Rcd" secondAttribute="leading" id="yN3-0v-Lk6"/>
                                                     </constraints>
                                                 </tableViewCellContentView>
+                                                <color key="backgroundColor" red="0.95294117649999999" green="0.95294117649999999" blue="0.95294117649999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                 <connections>
                                                     <outlet property="calendarButton" destination="UX8-vv-mKp" id="Id6-rF-pb3"/>
                                                     <outlet property="infoButton" destination="YC8-Tt-A17" id="dbr-pG-ndq"/>
@@ -179,9 +184,9 @@
                                 <rect key="frame" x="0.0" y="0.0" width="375" height="40"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Servings" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="1HM-mL-ZV9">
-                                        <rect key="frame" x="8" y="9.5" width="67" height="21"/>
-                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                        <nil key="textColor"/>
+                                        <rect key="frame" x="8" y="10" width="67" height="20"/>
+                                        <fontDescription key="fontDescription" name="Helvetica" family="Helvetica" pointSize="17"/>
+                                        <color key="textColor" red="0.45098039220000002" green="0.78039215689999997" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="C1m-C0-IqZ">
@@ -190,15 +195,15 @@
                                             <constraint firstAttribute="height" constant="30" id="KiR-jJ-Hmu"/>
                                             <constraint firstAttribute="width" constant="30" id="lDP-jQ-6UY"/>
                                         </constraints>
-                                        <state key="normal" image="ic_book"/>
+                                        <state key="normal" image="ic_stat"/>
                                         <connections>
                                             <action selector="historyPressed:" destination="M2f-B0-7nZ" eventType="touchUpInside" id="tvZ-oV-t8o"/>
                                         </connections>
                                     </button>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="0 out of 24" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ERa-UT-Rni">
-                                        <rect key="frame" x="237" y="9.5" width="85" height="21"/>
-                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                        <nil key="textColor"/>
+                                        <rect key="frame" x="241.5" y="10" width="81" height="20"/>
+                                        <fontDescription key="fontDescription" name="Helvetica" family="Helvetica" pointSize="17"/>
+                                        <color key="textColor" red="0.45098039220000002" green="0.78039215689999997" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <imageView hidden="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="star" translatesAutoresizingMaskIntoConstraints="NO" id="UHf-fX-jsj">
@@ -209,7 +214,7 @@
                                         </constraints>
                                     </imageView>
                                 </subviews>
-                                <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <constraints>
                                     <constraint firstItem="UHf-fX-jsj" firstAttribute="centerX" secondItem="HYx-b2-Phb" secondAttribute="centerX" id="9I8-iz-0tl"/>
                                     <constraint firstItem="UHf-fX-jsj" firstAttribute="centerY" secondItem="HYx-b2-Phb" secondAttribute="centerY" id="CDT-3a-bf9"/>
@@ -251,8 +256,8 @@
     </scenes>
     <resources>
         <image name="ic_beans" width="120" height="120"/>
-        <image name="ic_book" width="96" height="96"/>
         <image name="ic_calendar" width="29" height="29"/>
+        <image name="ic_stat" width="28" height="28"/>
         <image name="star" width="128" height="128"/>
     </resources>
 </document>
