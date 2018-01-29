@@ -50,10 +50,10 @@
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="9xw-eT-LNb" customClass="RoundedView" customModule="DailyDozen" customModuleProvider="target">
-                                                    <rect key="frame" x="2" y="2" width="371" height="61"/>
+                                                    <rect key="frame" x="4" y="1" width="367" height="63"/>
                                                     <subviews>
                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Servings" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="0NH-K0-4CH">
-                                                            <rect key="frame" x="8" y="20" width="66" height="20"/>
+                                                            <rect key="frame" x="8" y="21" width="66" height="20"/>
                                                             <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="17"/>
                                                             <color key="textColor" red="0.23437002300000001" green="0.25768834350000003" blue="0.3199615777" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                             <nil key="highlightedColor"/>
@@ -87,10 +87,10 @@
                                                 </view>
                                             </subviews>
                                             <constraints>
-                                                <constraint firstAttribute="bottom" secondItem="9xw-eT-LNb" secondAttribute="bottom" constant="2" id="Lcf-Bu-yGx"/>
-                                                <constraint firstAttribute="trailing" secondItem="9xw-eT-LNb" secondAttribute="trailing" constant="2" id="T5Z-5l-uFd"/>
-                                                <constraint firstItem="9xw-eT-LNb" firstAttribute="top" secondItem="E6c-Vt-Xwp" secondAttribute="top" constant="2" id="TJH-9C-7wA"/>
-                                                <constraint firstItem="9xw-eT-LNb" firstAttribute="leading" secondItem="E6c-Vt-Xwp" secondAttribute="leading" constant="2" id="XQY-1D-HET"/>
+                                                <constraint firstAttribute="bottom" secondItem="9xw-eT-LNb" secondAttribute="bottom" constant="1" id="Lcf-Bu-yGx"/>
+                                                <constraint firstAttribute="trailing" secondItem="9xw-eT-LNb" secondAttribute="trailing" constant="4" id="T5Z-5l-uFd"/>
+                                                <constraint firstItem="9xw-eT-LNb" firstAttribute="top" secondItem="E6c-Vt-Xwp" secondAttribute="top" constant="1" id="TJH-9C-7wA"/>
+                                                <constraint firstItem="9xw-eT-LNb" firstAttribute="leading" secondItem="E6c-Vt-Xwp" secondAttribute="leading" constant="4" id="XQY-1D-HET"/>
                                             </constraints>
                                         </tableViewCellContentView>
                                         <color key="backgroundColor" red="0.95294117647058818" green="0.95294117647058818" blue="0.95294117647058818" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -103,10 +103,10 @@
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="bMk-PT-3gU" customClass="RoundedView" customModule="DailyDozen" customModuleProvider="target">
-                                                    <rect key="frame" x="2" y="2" width="371" height="61"/>
+                                                    <rect key="frame" x="4" y="1" width="367" height="63"/>
                                                     <subviews>
                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Latest Videos" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="uxH-8I-ydF">
-                                                            <rect key="frame" x="8" y="20" width="103" height="20"/>
+                                                            <rect key="frame" x="8" y="21" width="103" height="20"/>
                                                             <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="17"/>
                                                             <color key="textColor" red="0.23437002300000001" green="0.25768834350000003" blue="0.3199615777" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                             <nil key="highlightedColor"/>
@@ -140,10 +140,10 @@
                                                 </view>
                                             </subviews>
                                             <constraints>
-                                                <constraint firstItem="bMk-PT-3gU" firstAttribute="leading" secondItem="UUr-y5-L9M" secondAttribute="leading" constant="2" id="0ac-F9-bvh"/>
-                                                <constraint firstItem="bMk-PT-3gU" firstAttribute="top" secondItem="UUr-y5-L9M" secondAttribute="top" constant="2" id="7KK-3c-3Vq"/>
-                                                <constraint firstAttribute="trailing" secondItem="bMk-PT-3gU" secondAttribute="trailing" constant="2" id="QQK-yK-HgB"/>
-                                                <constraint firstAttribute="bottom" secondItem="bMk-PT-3gU" secondAttribute="bottom" constant="2" id="nLe-2C-8x1"/>
+                                                <constraint firstItem="bMk-PT-3gU" firstAttribute="leading" secondItem="UUr-y5-L9M" secondAttribute="leading" constant="4" id="0ac-F9-bvh"/>
+                                                <constraint firstItem="bMk-PT-3gU" firstAttribute="top" secondItem="UUr-y5-L9M" secondAttribute="top" constant="1" id="7KK-3c-3Vq"/>
+                                                <constraint firstAttribute="trailing" secondItem="bMk-PT-3gU" secondAttribute="trailing" constant="4" id="QQK-yK-HgB"/>
+                                                <constraint firstAttribute="bottom" secondItem="bMk-PT-3gU" secondAttribute="bottom" constant="1" id="nLe-2C-8x1"/>
                                             </constraints>
                                         </tableViewCellContentView>
                                         <color key="backgroundColor" red="0.95294117649999999" green="0.95294117649999999" blue="0.95294117649999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -156,10 +156,10 @@
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="OrO-rQ-VYP" customClass="RoundedView" customModule="DailyDozen" customModuleProvider="target">
-                                                    <rect key="frame" x="2" y="2" width="371" height="61"/>
+                                                    <rect key="frame" x="4" y="1" width="367" height="63"/>
                                                     <subviews>
                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="How Not to Die" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="zQy-Dn-WXM">
-                                                            <rect key="frame" x="8" y="20" width="116.5" height="20"/>
+                                                            <rect key="frame" x="8" y="21" width="116.5" height="20"/>
                                                             <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="17"/>
                                                             <color key="textColor" red="0.23437002300000001" green="0.25768834350000003" blue="0.3199615777" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                             <nil key="highlightedColor"/>
@@ -193,10 +193,10 @@
                                                 </view>
                                             </subviews>
                                             <constraints>
-                                                <constraint firstItem="OrO-rQ-VYP" firstAttribute="top" secondItem="snV-vm-9wv" secondAttribute="top" constant="2" id="4fr-In-KI4"/>
-                                                <constraint firstItem="OrO-rQ-VYP" firstAttribute="leading" secondItem="snV-vm-9wv" secondAttribute="leading" constant="2" id="YuT-9W-8XG"/>
-                                                <constraint firstAttribute="trailing" secondItem="OrO-rQ-VYP" secondAttribute="trailing" constant="2" id="ohv-XC-l7g"/>
-                                                <constraint firstAttribute="bottom" secondItem="OrO-rQ-VYP" secondAttribute="bottom" constant="2" id="wbk-NS-Eyy"/>
+                                                <constraint firstItem="OrO-rQ-VYP" firstAttribute="top" secondItem="snV-vm-9wv" secondAttribute="top" constant="1" id="4fr-In-KI4"/>
+                                                <constraint firstItem="OrO-rQ-VYP" firstAttribute="leading" secondItem="snV-vm-9wv" secondAttribute="leading" constant="4" id="YuT-9W-8XG"/>
+                                                <constraint firstAttribute="trailing" secondItem="OrO-rQ-VYP" secondAttribute="trailing" constant="4" id="ohv-XC-l7g"/>
+                                                <constraint firstAttribute="bottom" secondItem="OrO-rQ-VYP" secondAttribute="bottom" constant="1" id="wbk-NS-Eyy"/>
                                             </constraints>
                                         </tableViewCellContentView>
                                         <color key="backgroundColor" red="0.95294117649999999" green="0.95294117649999999" blue="0.95294117649999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -209,10 +209,10 @@
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="q5n-TX-kIF" customClass="RoundedView" customModule="DailyDozen" customModuleProvider="target">
-                                                    <rect key="frame" x="2" y="2" width="371" height="61"/>
+                                                    <rect key="frame" x="4" y="1" width="367" height="63"/>
                                                     <subviews>
                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Donate" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="mqA-Vp-LZ7">
-                                                            <rect key="frame" x="8" y="20" width="55" height="20"/>
+                                                            <rect key="frame" x="8" y="21" width="55" height="20"/>
                                                             <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="17"/>
                                                             <color key="textColor" red="0.23437002300000001" green="0.25768834350000003" blue="0.3199615777" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                             <nil key="highlightedColor"/>
@@ -246,10 +246,10 @@
                                                 </view>
                                             </subviews>
                                             <constraints>
-                                                <constraint firstItem="q5n-TX-kIF" firstAttribute="top" secondItem="Bpx-Z1-0zG" secondAttribute="top" constant="2" id="Kom-bI-KSH"/>
-                                                <constraint firstAttribute="bottom" secondItem="q5n-TX-kIF" secondAttribute="bottom" constant="2" id="Y4Z-kb-ljZ"/>
-                                                <constraint firstItem="q5n-TX-kIF" firstAttribute="leading" secondItem="Bpx-Z1-0zG" secondAttribute="leading" constant="2" id="wbs-PN-Z1x"/>
-                                                <constraint firstAttribute="trailing" secondItem="q5n-TX-kIF" secondAttribute="trailing" constant="2" id="zbM-nQ-EKd"/>
+                                                <constraint firstItem="q5n-TX-kIF" firstAttribute="top" secondItem="Bpx-Z1-0zG" secondAttribute="top" constant="1" id="Kom-bI-KSH"/>
+                                                <constraint firstAttribute="bottom" secondItem="q5n-TX-kIF" secondAttribute="bottom" constant="1" id="Y4Z-kb-ljZ"/>
+                                                <constraint firstItem="q5n-TX-kIF" firstAttribute="leading" secondItem="Bpx-Z1-0zG" secondAttribute="leading" constant="4" id="wbs-PN-Z1x"/>
+                                                <constraint firstAttribute="trailing" secondItem="q5n-TX-kIF" secondAttribute="trailing" constant="4" id="zbM-nQ-EKd"/>
                                             </constraints>
                                         </tableViewCellContentView>
                                         <color key="backgroundColor" red="0.95294117649999999" green="0.95294117649999999" blue="0.95294117649999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -262,10 +262,10 @@
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="J6y-mv-iMA" customClass="RoundedView" customModule="DailyDozen" customModuleProvider="target">
-                                                    <rect key="frame" x="2" y="2" width="371" height="61"/>
+                                                    <rect key="frame" x="4" y="1" width="367" height="63"/>
                                                     <subviews>
                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Subscribe" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="dRO-1W-3EK">
-                                                            <rect key="frame" x="8" y="20" width="77" height="20"/>
+                                                            <rect key="frame" x="8" y="21" width="77" height="20"/>
                                                             <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="17"/>
                                                             <color key="textColor" red="0.23437002300000001" green="0.25768834350000003" blue="0.3199615777" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                             <nil key="highlightedColor"/>
@@ -299,10 +299,10 @@
                                                 </view>
                                             </subviews>
                                             <constraints>
-                                                <constraint firstAttribute="trailing" secondItem="J6y-mv-iMA" secondAttribute="trailing" constant="2" id="67c-iC-Tit"/>
-                                                <constraint firstAttribute="bottom" secondItem="J6y-mv-iMA" secondAttribute="bottom" constant="2" id="Kid-hq-kAf"/>
-                                                <constraint firstItem="J6y-mv-iMA" firstAttribute="top" secondItem="Vpv-Ul-w2b" secondAttribute="top" constant="2" id="hwa-ea-Nlc"/>
-                                                <constraint firstItem="J6y-mv-iMA" firstAttribute="leading" secondItem="Vpv-Ul-w2b" secondAttribute="leading" constant="2" id="rJu-qQ-laK"/>
+                                                <constraint firstAttribute="trailing" secondItem="J6y-mv-iMA" secondAttribute="trailing" constant="4" id="67c-iC-Tit"/>
+                                                <constraint firstAttribute="bottom" secondItem="J6y-mv-iMA" secondAttribute="bottom" constant="1" id="Kid-hq-kAf"/>
+                                                <constraint firstItem="J6y-mv-iMA" firstAttribute="top" secondItem="Vpv-Ul-w2b" secondAttribute="top" constant="1" id="hwa-ea-Nlc"/>
+                                                <constraint firstItem="J6y-mv-iMA" firstAttribute="leading" secondItem="Vpv-Ul-w2b" secondAttribute="leading" constant="4" id="rJu-qQ-laK"/>
                                             </constraints>
                                         </tableViewCellContentView>
                                         <color key="backgroundColor" red="0.95294117649999999" green="0.95294117649999999" blue="0.95294117649999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -315,10 +315,10 @@
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="tuc-fz-6eV" customClass="RoundedView" customModule="DailyDozen" customModuleProvider="target">
-                                                    <rect key="frame" x="2" y="2" width="371" height="61"/>
+                                                    <rect key="frame" x="4" y="1" width="367" height="63"/>
                                                     <subviews>
                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Open Source" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="qVR-SQ-jmS">
-                                                            <rect key="frame" x="8" y="20" width="101" height="20"/>
+                                                            <rect key="frame" x="8" y="21" width="101" height="20"/>
                                                             <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="17"/>
                                                             <color key="textColor" red="0.23437002300000001" green="0.25768834350000003" blue="0.3199615777" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                             <nil key="highlightedColor"/>
@@ -352,10 +352,10 @@
                                                 </view>
                                             </subviews>
                                             <constraints>
-                                                <constraint firstAttribute="bottom" secondItem="tuc-fz-6eV" secondAttribute="bottom" constant="2" id="DzD-KW-vUn"/>
-                                                <constraint firstItem="tuc-fz-6eV" firstAttribute="top" secondItem="XUL-OR-LvQ" secondAttribute="top" constant="2" id="fQl-sq-3kx"/>
-                                                <constraint firstItem="tuc-fz-6eV" firstAttribute="leading" secondItem="XUL-OR-LvQ" secondAttribute="leading" constant="2" id="hzn-SW-f8A"/>
-                                                <constraint firstAttribute="trailing" secondItem="tuc-fz-6eV" secondAttribute="trailing" constant="2" id="toR-YO-p26"/>
+                                                <constraint firstAttribute="bottom" secondItem="tuc-fz-6eV" secondAttribute="bottom" constant="1" id="DzD-KW-vUn"/>
+                                                <constraint firstItem="tuc-fz-6eV" firstAttribute="top" secondItem="XUL-OR-LvQ" secondAttribute="top" constant="1" id="fQl-sq-3kx"/>
+                                                <constraint firstItem="tuc-fz-6eV" firstAttribute="leading" secondItem="XUL-OR-LvQ" secondAttribute="leading" constant="4" id="hzn-SW-f8A"/>
+                                                <constraint firstAttribute="trailing" secondItem="tuc-fz-6eV" secondAttribute="trailing" constant="4" id="toR-YO-p26"/>
                                             </constraints>
                                         </tableViewCellContentView>
                                         <color key="backgroundColor" red="0.95294117649999999" green="0.95294117649999999" blue="0.95294117649999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -368,10 +368,10 @@
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="cR7-TB-8HR" customClass="RoundedView" customModule="DailyDozen" customModuleProvider="target">
-                                                    <rect key="frame" x="2" y="2" width="371" height="61"/>
+                                                    <rect key="frame" x="4" y="1" width="367" height="63"/>
                                                     <subviews>
                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Daily Reminder Settings" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="5jU-En-y4m">
-                                                            <rect key="frame" x="8" y="20" width="183" height="20"/>
+                                                            <rect key="frame" x="8" y="21" width="183" height="20"/>
                                                             <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="17"/>
                                                             <color key="textColor" red="0.23437002300000001" green="0.25768834350000003" blue="0.3199615777" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                             <nil key="highlightedColor"/>
@@ -405,10 +405,10 @@
                                                 </view>
                                             </subviews>
                                             <constraints>
-                                                <constraint firstAttribute="bottom" secondItem="cR7-TB-8HR" secondAttribute="bottom" constant="2" id="6qo-Y3-Trl"/>
-                                                <constraint firstItem="cR7-TB-8HR" firstAttribute="leading" secondItem="GAn-9E-Zh6" secondAttribute="leading" constant="2" id="cUZ-fY-asx"/>
-                                                <constraint firstItem="cR7-TB-8HR" firstAttribute="top" secondItem="GAn-9E-Zh6" secondAttribute="top" constant="2" id="e1f-ff-qyu"/>
-                                                <constraint firstAttribute="trailing" secondItem="cR7-TB-8HR" secondAttribute="trailing" constant="2" id="sIs-5W-NWl"/>
+                                                <constraint firstAttribute="bottom" secondItem="cR7-TB-8HR" secondAttribute="bottom" constant="1" id="6qo-Y3-Trl"/>
+                                                <constraint firstItem="cR7-TB-8HR" firstAttribute="leading" secondItem="GAn-9E-Zh6" secondAttribute="leading" constant="4" id="cUZ-fY-asx"/>
+                                                <constraint firstItem="cR7-TB-8HR" firstAttribute="top" secondItem="GAn-9E-Zh6" secondAttribute="top" constant="1" id="e1f-ff-qyu"/>
+                                                <constraint firstAttribute="trailing" secondItem="cR7-TB-8HR" secondAttribute="trailing" constant="4" id="sIs-5W-NWl"/>
                                             </constraints>
                                         </tableViewCellContentView>
                                         <color key="backgroundColor" red="0.95294117649999999" green="0.95294117649999999" blue="0.95294117649999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -421,10 +421,10 @@
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="lJD-Tt-EFz" customClass="RoundedView" customModule="DailyDozen" customModuleProvider="target">
-                                                    <rect key="frame" x="2" y="2" width="371" height="61"/>
+                                                    <rect key="frame" x="4" y="1" width="367" height="63"/>
                                                     <subviews>
                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Backup" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="rNa-N9-ws5">
-                                                            <rect key="frame" x="8" y="20" width="59" height="20"/>
+                                                            <rect key="frame" x="8" y="21" width="59" height="20"/>
                                                             <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="17"/>
                                                             <color key="textColor" red="0.23437002300000001" green="0.25768834350000003" blue="0.3199615777" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                             <nil key="highlightedColor"/>
@@ -458,10 +458,10 @@
                                                 </view>
                                             </subviews>
                                             <constraints>
-                                                <constraint firstItem="lJD-Tt-EFz" firstAttribute="leading" secondItem="6lj-Sa-aaA" secondAttribute="leading" constant="2" id="Lw5-ut-8Ns"/>
-                                                <constraint firstItem="lJD-Tt-EFz" firstAttribute="top" secondItem="6lj-Sa-aaA" secondAttribute="top" constant="2" id="SWg-S0-hZf"/>
-                                                <constraint firstAttribute="trailing" secondItem="lJD-Tt-EFz" secondAttribute="trailing" constant="2" id="gtI-YX-R6C"/>
-                                                <constraint firstAttribute="bottom" secondItem="lJD-Tt-EFz" secondAttribute="bottom" constant="2" id="wbH-DE-AaW"/>
+                                                <constraint firstItem="lJD-Tt-EFz" firstAttribute="leading" secondItem="6lj-Sa-aaA" secondAttribute="leading" constant="4" id="Lw5-ut-8Ns"/>
+                                                <constraint firstItem="lJD-Tt-EFz" firstAttribute="top" secondItem="6lj-Sa-aaA" secondAttribute="top" constant="1" id="SWg-S0-hZf"/>
+                                                <constraint firstAttribute="trailing" secondItem="lJD-Tt-EFz" secondAttribute="trailing" constant="4" id="gtI-YX-R6C"/>
+                                                <constraint firstAttribute="bottom" secondItem="lJD-Tt-EFz" secondAttribute="bottom" constant="1" id="wbH-DE-AaW"/>
                                             </constraints>
                                         </tableViewCellContentView>
                                         <color key="backgroundColor" red="0.95294117649999999" green="0.95294117649999999" blue="0.95294117649999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -474,10 +474,10 @@
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="PFL-9u-kb7" customClass="RoundedView" customModule="DailyDozen" customModuleProvider="target">
-                                                    <rect key="frame" x="2" y="2" width="371" height="61"/>
+                                                    <rect key="frame" x="4" y="1" width="367" height="63"/>
                                                     <subviews>
                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="About" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="qGY-wh-1gB">
-                                                            <rect key="frame" x="8" y="20" width="46" height="20"/>
+                                                            <rect key="frame" x="8" y="21" width="46" height="20"/>
                                                             <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="17"/>
                                                             <color key="textColor" red="0.23437002300000001" green="0.25768834350000003" blue="0.3199615777" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                             <nil key="highlightedColor"/>
@@ -511,10 +511,10 @@
                                                 </view>
                                             </subviews>
                                             <constraints>
-                                                <constraint firstItem="PFL-9u-kb7" firstAttribute="leading" secondItem="lhP-ks-sX1" secondAttribute="leading" constant="2" id="aCo-No-mwy"/>
-                                                <constraint firstAttribute="trailing" secondItem="PFL-9u-kb7" secondAttribute="trailing" constant="2" id="ijN-eg-48n"/>
-                                                <constraint firstItem="PFL-9u-kb7" firstAttribute="top" secondItem="lhP-ks-sX1" secondAttribute="top" constant="2" id="rG0-c4-Msx"/>
-                                                <constraint firstAttribute="bottom" secondItem="PFL-9u-kb7" secondAttribute="bottom" constant="2" id="xqw-zf-RHM"/>
+                                                <constraint firstItem="PFL-9u-kb7" firstAttribute="leading" secondItem="lhP-ks-sX1" secondAttribute="leading" constant="4" id="aCo-No-mwy"/>
+                                                <constraint firstAttribute="trailing" secondItem="PFL-9u-kb7" secondAttribute="trailing" constant="4" id="ijN-eg-48n"/>
+                                                <constraint firstItem="PFL-9u-kb7" firstAttribute="top" secondItem="lhP-ks-sX1" secondAttribute="top" constant="1" id="rG0-c4-Msx"/>
+                                                <constraint firstAttribute="bottom" secondItem="PFL-9u-kb7" secondAttribute="bottom" constant="1" id="xqw-zf-RHM"/>
                                             </constraints>
                                         </tableViewCellContentView>
                                         <color key="backgroundColor" red="0.95294117649999999" green="0.95294117649999999" blue="0.95294117649999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
