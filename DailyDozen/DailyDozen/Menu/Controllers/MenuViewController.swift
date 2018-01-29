@@ -24,6 +24,10 @@ class MenuViewController: UITableViewController {
         static let menu = "Menu"
     }
 
+    private struct Keys {
+        static let realm = "main.realm"
+    }
+
     private enum MenuItem: Int {
 
         case servings, videos, book, donate, subscribe, source, settings, backup, about
@@ -59,13 +63,7 @@ class MenuViewController: UITableViewController {
         }
     }
 
-    /// Presents share services.
-    private func share() {
-        let activityViewController = UIActivityViewController(activityItems: [URL.inDocuments(for: "main.realm")], applicationActivities: nil)
-        activityViewController.popoverPresentationController?.sourceView = view
-        present(activityViewController, animated: true, completion: nil)
-    }
-
+    // MARK: - UITableViewController
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -75,13 +73,19 @@ class MenuViewController: UITableViewController {
         barItem.tintColor = UIColor.white
         navigationItem.setLeftBarButton(barItem, animated: false)
     }
+
+    /// Presents share services.
+    private func share() {
+        let activityViewController = UIActivityViewController(activityItems: [URL.inDocuments(for: Keys.realm)], applicationActivities: nil)
+        activityViewController.popoverPresentationController?.sourceView = view
+        present(activityViewController, animated: true, completion: nil)
+    }
 }
 
 // MARK: - UITableViewDelegate
 extension MenuViewController {
 
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-
         guard let menuItem = MenuItem(rawValue: indexPath.row) else { return }
 
         if let link = menuItem.link {
@@ -95,6 +99,7 @@ extension MenuViewController {
         } else {
             share()
         }
+        tableView.selectRow(at: nil, animated: false, scrollPosition: .none)
     }
 
     override func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
