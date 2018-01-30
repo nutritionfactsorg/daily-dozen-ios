@@ -50,21 +50,21 @@
                                                                     </constraints>
                                                                 </imageView>
                                                                 <stackView opaque="NO" contentMode="scaleToFill" distribution="equalSpacing" alignment="center" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="zL5-Vp-jCr">
-                                                                    <rect key="frame" x="61" y="12" width="78" height="22"/>
+                                                                    <rect key="frame" x="61" y="12" width="76" height="21.5"/>
                                                                     <subviews>
                                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="qWl-8e-sO6">
-                                                                            <rect key="frame" x="0.0" y="0.5" width="46" height="21.5"/>
+                                                                            <rect key="frame" x="0.0" y="0.0" width="46" height="21.5"/>
                                                                             <fontDescription key="fontDescription" name="HelveticaNeue-Medium" family="Helvetica Neue" pointSize="18"/>
                                                                             <color key="textColor" red="0.23437002300000001" green="0.25768834350000003" blue="0.3199615777" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                                             <nil key="highlightedColor"/>
                                                                         </label>
-                                                                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="YC8-Tt-A17">
-                                                                            <rect key="frame" x="56" y="0.0" width="22" height="22"/>
+                                                                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="infoDark" showsTouchWhenHighlighted="YES" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="YC8-Tt-A17">
+                                                                            <rect key="frame" x="56" y="1" width="20" height="20"/>
                                                                             <constraints>
-                                                                                <constraint firstAttribute="height" constant="22" id="99z-hR-6V2"/>
-                                                                                <constraint firstAttribute="width" constant="22" id="r7C-qs-SdF"/>
+                                                                                <constraint firstAttribute="height" constant="20" id="99z-hR-6V2"/>
+                                                                                <constraint firstAttribute="width" constant="20" id="r7C-qs-SdF"/>
                                                                             </constraints>
-                                                                            <state key="normal" image="music_info"/>
+                                                                            <color key="tintColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                                             <connections>
                                                                                 <action selector="infoPressed:" destination="M2f-B0-7nZ" eventType="touchUpInside" id="2uF-fr-cSU"/>
                                                                             </connections>
@@ -268,7 +268,6 @@
         <image name="ic_beans" width="120" height="120"/>
         <image name="ic_calendar" width="28" height="28"/>
         <image name="ic_stat" width="28" height="28"/>
-        <image name="music_info" width="25" height="25"/>
         <image name="star" width="128" height="128"/>
     </resources>
 </document>
