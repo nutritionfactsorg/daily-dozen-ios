@@ -32,7 +32,7 @@
                                 <subviews>
                                     <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" allowsSelection="NO" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="9Z3-ZU-bjI">
                                         <rect key="frame" x="0.0" y="0.0" width="375" height="627"/>
-                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <color key="backgroundColor" red="0.95294117649999999" green="0.95294117649999999" blue="0.95294117649999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <prototypes>
                                             <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="none" indentationWidth="10" reuseIdentifier="servingsCell" rowHeight="120" id="mu0-2E-Dx4" customClass="ServingsCell" customModule="DailyDozen" customModuleProvider="target">
                                                 <rect key="frame" x="0.0" y="28" width="375" height="120"/>
@@ -153,7 +153,7 @@
                                                                     <color key="value" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                                 </userDefinedRuntimeAttribute>
                                                                 <userDefinedRuntimeAttribute type="number" keyPath="shadowRadius">
-                                                                    <real key="value" value="1"/>
+                                                                    <real key="value" value="5"/>
                                                                 </userDefinedRuntimeAttribute>
                                                                 <userDefinedRuntimeAttribute type="size" keyPath="shadowOffset">
                                                                     <size key="value" width="0.0" height="2"/>

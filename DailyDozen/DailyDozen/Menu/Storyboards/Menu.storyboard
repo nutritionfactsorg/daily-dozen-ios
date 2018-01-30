@@ -74,7 +74,7 @@
                                                             <color key="value" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                         </userDefinedRuntimeAttribute>
                                                         <userDefinedRuntimeAttribute type="number" keyPath="shadowRadius">
-                                                            <real key="value" value="1"/>
+                                                            <real key="value" value="5"/>
                                                         </userDefinedRuntimeAttribute>
                                                         <userDefinedRuntimeAttribute type="size" keyPath="shadowOffset">
                                                             <size key="value" width="0.0" height="2"/>
