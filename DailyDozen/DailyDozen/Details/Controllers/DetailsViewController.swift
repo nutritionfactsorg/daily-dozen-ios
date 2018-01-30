@@ -57,7 +57,7 @@ class DetailsViewController: UIViewController {
 
         navigationItem
             .rightBarButtonItem = UIBarButtonItem(title: Keys.videos,
-                                                  style: .plain,
+                                                  style: .done,
                                                   target: self,
                                                   action: #selector(barItemPressed))
 
