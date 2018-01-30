@@ -10,17 +10,20 @@ import UIKit
 
 enum DetailsSection: Int {
 
-    private struct Keys {
+    private struct Nibs {
         static let sizesHeader = "SizesHeader"
         static let typesHeader = "TypesHeader"
     }
 
-    case image, sizes, types
+    private struct Strings {
+        static let sizesHeader = "Serving Sizes"
+        static let typesHeader = "Types"
+    }
+
+    case sizes, types
 
     var rowHeight: CGFloat {
         switch self {
-        case .image:
-            return 200
         case .sizes, .types:
             return 75
         }
@@ -28,8 +31,6 @@ enum DetailsSection: Int {
 
     var headerHeigh: CGFloat {
         switch self {
-        case .image:
-            return 1
         case .sizes:
             return 75
         case .types:
@@ -39,25 +40,21 @@ enum DetailsSection: Int {
 
     var headerView: UIView? {
         switch self {
-        case .image:
-            return nil
         case .sizes:
             return Bundle.main
-                .loadNibNamed(Keys.sizesHeader, owner: nil)?.first as? UIView
+                .loadNibNamed(Nibs.sizesHeader, owner: nil)?.first as? UIView
         case .types:
             return Bundle.main
-                .loadNibNamed(Keys.typesHeader, owner: nil)?.first as? UIView
+                .loadNibNamed(Nibs.typesHeader, owner: nil)?.first as? UIView
         }
     }
 
     var title: String? {
         switch self {
-        case .image:
-            return nil
         case .sizes:
-            return "Serving Sizes"
+            return Strings.sizesHeader
         case .types:
-            return "Types"
+            return Strings.typesHeader
         }
     }
 

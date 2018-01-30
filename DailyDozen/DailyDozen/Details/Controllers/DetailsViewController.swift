@@ -28,7 +28,6 @@ class DetailsBuilder {
                 .instantiateInitialViewController() as? DetailsViewController
             else { fatalError("There should be a controller") }
 
-        viewController.title = item
         viewController.setViewModel(for: item)
 
         return viewController
@@ -46,6 +45,8 @@ class DetailsViewController: UIViewController {
     // MARK: - Outlets
     @IBOutlet private weak var tableView: UITableView!
     @IBOutlet private weak var dataProvider: DetailsDataProvider!
+    @IBOutlet private weak var titleLabel: UILabel!
+    @IBOutlet private weak var imageView: UIImageView!
 
     // MARK: - UIViewController
     override func viewDidLoad() {
@@ -59,6 +60,9 @@ class DetailsViewController: UIViewController {
                                                   style: .plain,
                                                   target: self,
                                                   action: #selector(barItemPressed))
+
+        imageView.image = dataProvider.viewModel.image
+        titleLabel.text = dataProvider.viewModel.itemTitle
     }
 
     // MARK: - Methods

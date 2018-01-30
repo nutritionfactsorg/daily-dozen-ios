@@ -12,7 +12,6 @@ class DetailsDataProvider: NSObject, UITableViewDataSource {
 
     // MARK: - Nested
     private struct Keys {
-        static let imageID = "detailsImageCell"
         static let sizesID = "detailsSizesCell"
         static let typesID = "detailsTypesCell"
     }
@@ -21,7 +20,7 @@ class DetailsDataProvider: NSObject, UITableViewDataSource {
 
     // MARK: - UITableViewDataSource
     func numberOfSections(in tableView: UITableView) -> Int {
-        return 3
+        return 2
     }
 
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
@@ -29,8 +28,6 @@ class DetailsDataProvider: NSObject, UITableViewDataSource {
             fatalError("There should be a section type")
         }
         switch sectionType {
-        case .image:
-            return 1
         case .sizes:
             return viewModel.sizesCount
         case .types:
@@ -43,15 +40,6 @@ class DetailsDataProvider: NSObject, UITableViewDataSource {
             fatalError("There should be a section type")
         }
         switch sectionType {
-
-        case .image:
-            guard
-                let cell = tableView
-                    .dequeueReusableCell(withIdentifier: Keys.imageID) as? ImageCell
-                else { return UITableViewCell() }
-
-            cell.configure(image: viewModel.image)
-            return cell
 
         case .sizes:
             guard

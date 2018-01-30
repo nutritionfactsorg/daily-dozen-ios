@@ -31,6 +31,10 @@ struct DetailViewModel {
     var typesCount: Int {
         return detail.types.count
     }
+    /// Returns the item name.
+    var itemTitle: String {
+        return itemName
+    }
 
     /// Returns an image of the item.
     var image: UIImage? {
