@@ -23,6 +23,7 @@
 		CF49029B1FD91F01000EAB68 /* ServingsHistoryViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF49029A1FD91F01000EAB68 /* ServingsHistoryViewModel.swift */; };
 		CF4DECF71F9DF2A500DA094B /* ServingsCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF4DECF61F9DF2A500DA094B /* ServingsCell.swift */; };
 		CF4DECF91F9DF82900DA094B /* ServingsDataProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF4DECF81F9DF82900DA094B /* ServingsDataProvider.swift */; };
+		CF55BC4F2020450D00003D0D /* AlertBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF55BC4E2020450D00003D0D /* AlertBuilder.swift */; };
 		CF5B28B11FA0A2C500D57A48 /* StateCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF5B28B01FA0A2C500D57A48 /* StateCell.swift */; };
 		CF64DF271FB5BAC400B4D124 /* SizesHeader.xib in Resources */ = {isa = PBXBuildFile; fileRef = CF64DF261FB5BAC400B4D124 /* SizesHeader.xib */; };
 		CF64DF2C1FB5CD5100B4D124 /* TypesHeader.xib in Resources */ = {isa = PBXBuildFile; fileRef = CF64DF2B1FB5CD5100B4D124 /* TypesHeader.xib */; };
@@ -83,6 +84,7 @@
 		CF49029A1FD91F01000EAB68 /* ServingsHistoryViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ServingsHistoryViewModel.swift; sourceTree = "<group>"; };
 		CF4DECF61F9DF2A500DA094B /* ServingsCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ServingsCell.swift; sourceTree = "<group>"; };
 		CF4DECF81F9DF82900DA094B /* ServingsDataProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ServingsDataProvider.swift; sourceTree = "<group>"; };
+		CF55BC4E2020450D00003D0D /* AlertBuilder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlertBuilder.swift; sourceTree = "<group>"; };
 		CF5B28B01FA0A2C500D57A48 /* StateCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StateCell.swift; sourceTree = "<group>"; };
 		CF64DF261FB5BAC400B4D124 /* SizesHeader.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SizesHeader.xib; sourceTree = "<group>"; };
 		CF64DF2B1FB5CD5100B4D124 /* TypesHeader.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = TypesHeader.xib; sourceTree = "<group>"; };
@@ -497,6 +499,7 @@
 			isa = PBXGroup;
 			children = (
 				CFE6983D1F974B9700CD7905 /* MainViewController.swift */,
+				CF55BC4E2020450D00003D0D /* AlertBuilder.swift */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -792,6 +795,7 @@
 				CF9E03231FBD9FDE0084BC88 /* ItemHistoryViewController.swift in Sources */,
 				CF4DECF91F9DF82900DA094B /* ServingsDataProvider.swift in Sources */,
 				CF17C8A71FAA019600367BF8 /* DetailsSection.swift in Sources */,
+				CF55BC4F2020450D00003D0D /* AlertBuilder.swift in Sources */,
 				CFAAB3741F9F3E1200B24748 /* RealmConfig.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
