@@ -88,8 +88,39 @@ class ServingsViewController: UIViewController {
     }
 
     @IBAction private func vitaminHeaderPressed(_ sender: UIButton) {
-        let viewController = VitaminsBuilder.instantiateController()
-        present(viewController, animated: true)
+        let title = "VITAMINS"
+        let message =
+        """
+        Vitamin B12 and Vitamin D are essential for your health but do not count towards your daily servings.
+
+        They are included in this app to provide you with an easy way to track your intake.
+        """
+
+        let alert = UIAlertController(title: title, message: message, preferredStyle: .actionSheet)
+
+        alert.setValue(
+            NSAttributedString(
+                string: title,
+                attributes: [
+                    NSAttributedStringKey.font:
+                        UIFont(name: "Helvetica-Bold", size: 22) ?? UIFont.systemFont(ofSize: 22),
+                    NSAttributedStringKey.foregroundColor: UIColor.greenColor]),
+            forKey: "attributedTitle")
+
+        alert.setValue(
+            NSAttributedString(
+                string: message,
+                attributes: [
+                    NSAttributedStringKey.font:
+                        UIFont(name: "Helvetica", size: 17) ?? UIFont.systemFont(ofSize: 17),
+                    NSAttributedStringKey.foregroundColor: UIColor.lightGray]),
+            forKey: "attributedMessage")
+
+        let action = UIAlertAction(title: "OK", style: .cancel, handler: nil)
+        action.setValue(UIColor.greenColor, forKey: "titleTextColor")
+        alert.addAction(action)
+
+        present(alert, animated: true, completion: nil)
     }
 
     @IBAction private func historyPressed(_ sender: UIButton) {

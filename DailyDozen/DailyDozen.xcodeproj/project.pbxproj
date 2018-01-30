@@ -38,7 +38,6 @@
 		CFA3E8F91FC58D460092199D /* ServingsHistory.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CFA3E8F81FC58D460092199D /* ServingsHistory.storyboard */; };
 		CFA3E8FC1FC58E6B0092199D /* ServingsHistoryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CFA3E8FB1FC58E6B0092199D /* ServingsHistoryViewController.swift */; };
 		CFA9CDF21FBAF653000468CA /* VitaminsHeader.xib in Resources */ = {isa = PBXBuildFile; fileRef = CFA9CDF11FBAF653000468CA /* VitaminsHeader.xib */; };
-		CFA9CDF51FBB10A3000468CA /* VitaminsInfo.xib in Resources */ = {isa = PBXBuildFile; fileRef = CFA9CDF41FBB10A3000468CA /* VitaminsInfo.xib */; };
 		CFAAB3721F9F3BC600B24748 /* Doze.swift in Sources */ = {isa = PBXBuildFile; fileRef = CFAAB3711F9F3BC600B24748 /* Doze.swift */; };
 		CFAAB3741F9F3E1200B24748 /* RealmConfig.swift in Sources */ = {isa = PBXBuildFile; fileRef = CFAAB3731F9F3E1200B24748 /* RealmConfig.swift */; };
 		CFAAB3771F9F3FDF00B24748 /* URL.swift in Sources */ = {isa = PBXBuildFile; fileRef = CFAAB3761F9F3FDF00B24748 /* URL.swift */; };
@@ -47,7 +46,6 @@
 		CFBEE2301FDE8D1E005C0F45 /* About.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CFBEE22F1FDE8D1E005C0F45 /* About.storyboard */; };
 		CFBEE2321FDE963D005C0F45 /* AboutViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CFBEE2311FDE963D005C0F45 /* AboutViewController.swift */; };
 		CFBEE2341FDE9A57005C0F45 /* RoundedView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CFBEE2331FDE9A57005C0F45 /* RoundedView.swift */; };
-		CFC0608D1FBC4A3500A901A5 /* VitaminsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CFC0608C1FBC4A3500A901A5 /* VitaminsViewController.swift */; };
 		CFC060931FBC57C800A901A5 /* ServingsSection.swift in Sources */ = {isa = PBXBuildFile; fileRef = CFC060921FBC57C800A901A5 /* ServingsSection.swift */; };
 		CFC4A84D1F975A3900B5AC75 /* MenuViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CFC4A84C1F975A3900B5AC75 /* MenuViewController.swift */; };
 		CFC4A84F1F9761FF00B5AC75 /* PagerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CFC4A84E1F9761FF00B5AC75 /* PagerViewController.swift */; };
@@ -100,7 +98,6 @@
 		CFA3E8F81FC58D460092199D /* ServingsHistory.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = ServingsHistory.storyboard; sourceTree = "<group>"; };
 		CFA3E8FB1FC58E6B0092199D /* ServingsHistoryViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ServingsHistoryViewController.swift; sourceTree = "<group>"; };
 		CFA9CDF11FBAF653000468CA /* VitaminsHeader.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = VitaminsHeader.xib; sourceTree = "<group>"; };
-		CFA9CDF41FBB10A3000468CA /* VitaminsInfo.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = VitaminsInfo.xib; sourceTree = "<group>"; };
 		CFAAB3711F9F3BC600B24748 /* Doze.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Doze.swift; sourceTree = "<group>"; };
 		CFAAB3731F9F3E1200B24748 /* RealmConfig.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RealmConfig.swift; sourceTree = "<group>"; };
 		CFAAB3761F9F3FDF00B24748 /* URL.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = URL.swift; sourceTree = "<group>"; };
@@ -109,7 +106,6 @@
 		CFBEE22F1FDE8D1E005C0F45 /* About.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = About.storyboard; sourceTree = "<group>"; };
 		CFBEE2311FDE963D005C0F45 /* AboutViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AboutViewController.swift; sourceTree = "<group>"; };
 		CFBEE2331FDE9A57005C0F45 /* RoundedView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoundedView.swift; sourceTree = "<group>"; };
-		CFC0608C1FBC4A3500A901A5 /* VitaminsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VitaminsViewController.swift; sourceTree = "<group>"; };
 		CFC060921FBC57C800A901A5 /* ServingsSection.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ServingsSection.swift; sourceTree = "<group>"; };
 		CFC4A84C1F975A3900B5AC75 /* MenuViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuViewController.swift; sourceTree = "<group>"; };
 		CFC4A84E1F9761FF00B5AC75 /* PagerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PagerViewController.swift; sourceTree = "<group>"; };
@@ -435,7 +431,6 @@
 				CFC4A84E1F9761FF00B5AC75 /* PagerViewController.swift */,
 				CFC4A8531F9776A500B5AC75 /* ServingsViewController.swift */,
 				CF4DECF81F9DF82900DA094B /* ServingsDataProvider.swift */,
-				CFC0608C1FBC4A3500A901A5 /* VitaminsViewController.swift */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -568,7 +563,6 @@
 				CFE667281F98CF860037D1A2 /* Pager.storyboard */,
 				CFCE5FCA1F978007005C672B /* Servings.storyboard */,
 				CFA9CDF11FBAF653000468CA /* VitaminsHeader.xib */,
-				CFA9CDF41FBB10A3000468CA /* VitaminsInfo.xib */,
 			);
 			path = Storyboards;
 			sourceTree = "<group>";
@@ -660,7 +654,6 @@
 				CF9E03201FBD9FA80084BC88 /* ItemHistory.storyboard in Resources */,
 				CFE698461F974B9700CD7905 /* LaunchScreen.storyboard in Resources */,
 				CFCE5FCB1F978007005C672B /* Servings.storyboard in Resources */,
-				CFA9CDF51FBB10A3000468CA /* VitaminsInfo.xib in Resources */,
 				CFE698431F974B9700CD7905 /* Assets.xcassets in Resources */,
 				CF22F07F1FA8ACE000F25B70 /* Details.plist in Resources */,
 				CF64DF2C1FB5CD5100B4D124 /* TypesHeader.xib in Resources */,
@@ -774,7 +767,6 @@
 				CF6E6D351FB1B4FE00B177E7 /* Detail.swift in Sources */,
 				CF1393151FE0080900DD8679 /* ReminderViewController.swift in Sources */,
 				CF6E6D391FB1B8E300B177E7 /* TextsProvider.swift in Sources */,
-				CFC0608D1FBC4A3500A901A5 /* VitaminsViewController.swift in Sources */,
 				CFC4A84D1F975A3900B5AC75 /* MenuViewController.swift in Sources */,
 				CF6E6D3C1FB1BEC400B177E7 /* DetailViewModel.swift in Sources */,
 				CFE6983C1F974B9700CD7905 /* AppDelegate.swift in Sources */,
