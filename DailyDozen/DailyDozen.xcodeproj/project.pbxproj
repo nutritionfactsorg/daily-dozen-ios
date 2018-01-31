@@ -36,6 +36,7 @@
 		CF9E03201FBD9FA80084BC88 /* ItemHistory.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CF9E031F1FBD9FA80084BC88 /* ItemHistory.storyboard */; };
 		CF9E03231FBD9FDE0084BC88 /* ItemHistoryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF9E03221FBD9FDE0084BC88 /* ItemHistoryViewController.swift */; };
 		CF9EC1C0202196B100C7B3CA /* Fonts.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF9EC1BF202196B100C7B3CA /* Fonts.swift */; };
+		CF9EC1C32021D37000C7B3CA /* MenuItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF9EC1C22021D37000C7B3CA /* MenuItem.swift */; };
 		CFA3E8F91FC58D460092199D /* ServingsHistory.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CFA3E8F81FC58D460092199D /* ServingsHistory.storyboard */; };
 		CFA3E8FC1FC58E6B0092199D /* ServingsHistoryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CFA3E8FB1FC58E6B0092199D /* ServingsHistoryViewController.swift */; };
 		CFA9CDF21FBAF653000468CA /* VitaminsHeader.xib in Resources */ = {isa = PBXBuildFile; fileRef = CFA9CDF11FBAF653000468CA /* VitaminsHeader.xib */; };
@@ -97,6 +98,7 @@
 		CF9E031F1FBD9FA80084BC88 /* ItemHistory.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = ItemHistory.storyboard; sourceTree = "<group>"; };
 		CF9E03221FBD9FDE0084BC88 /* ItemHistoryViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ItemHistoryViewController.swift; sourceTree = "<group>"; };
 		CF9EC1BF202196B100C7B3CA /* Fonts.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Fonts.swift; sourceTree = "<group>"; };
+		CF9EC1C22021D37000C7B3CA /* MenuItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuItem.swift; sourceTree = "<group>"; };
 		CFA3E8F81FC58D460092199D /* ServingsHistory.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = ServingsHistory.storyboard; sourceTree = "<group>"; };
 		CFA3E8FB1FC58E6B0092199D /* ServingsHistoryViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ServingsHistoryViewController.swift; sourceTree = "<group>"; };
 		CFA9CDF11FBAF653000468CA /* VitaminsHeader.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = VitaminsHeader.xib; sourceTree = "<group>"; };
@@ -321,6 +323,14 @@
 			path = Controllers;
 			sourceTree = "<group>";
 		};
+		CF9EC1C12021D30800C7B3CA /* SupportingFiles */ = {
+			isa = PBXGroup;
+			children = (
+				CF9EC1C22021D37000C7B3CA /* MenuItem.swift */,
+			);
+			path = SupportingFiles;
+			sourceTree = "<group>";
+		};
 		CFA3E8F61FC58CD90092199D /* ServingsHistory */ = {
 			isa = PBXGroup;
 			children = (
@@ -535,6 +545,7 @@
 			children = (
 				CFC4A84B1F975A0C00B5AC75 /* Controllers */,
 				CFF117741F97533F00BFE73A /* Storyboards */,
+				CF9EC1C12021D30800C7B3CA /* SupportingFiles */,
 			);
 			path = Menu;
 			sourceTree = "<group>";
@@ -777,6 +788,7 @@
 				CF987C281F9E157300D4893E /* Item.swift in Sources */,
 				CF9EC1C0202196B100C7B3CA /* Fonts.swift in Sources */,
 				CFBEE2341FDE9A57005C0F45 /* RoundedView.swift in Sources */,
+				CF9EC1C32021D37000C7B3CA /* MenuItem.swift in Sources */,
 				CF49029B1FD91F01000EAB68 /* ServingsHistoryViewModel.swift in Sources */,
 				CF2FA9961FA87F0C003508F8 /* DetailsViewController.swift in Sources */,
 				CFECDFF8201EF7C1003E8572 /* Colors.swift in Sources */,
