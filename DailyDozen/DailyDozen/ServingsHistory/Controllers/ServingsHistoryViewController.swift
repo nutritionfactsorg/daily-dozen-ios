@@ -54,6 +54,7 @@ class ServingsHistoryViewController: UIViewController {
 
             if currentTimeScale == .day {
                 controlPanel.isHidden = false
+                controlPanel.superview?.isHidden = false
 
                 var canLeft = true
                 if chartSettings.month == 0, chartSettings.year == 0 {
@@ -76,6 +77,7 @@ class ServingsHistoryViewController: UIViewController {
                 chartView.configure(with: data.map, for: currentTimeScale)
             } else if currentTimeScale == .month {
                 controlPanel.isHidden = false
+                controlPanel.superview?.isHidden = false
 
                 let canLeft = chartSettings.year != 0
                 let canRight = chartSettings.year != viewModel.lastYearIndex
@@ -88,6 +90,7 @@ class ServingsHistoryViewController: UIViewController {
                 chartView.configure(with: data.map, for: currentTimeScale)
             } else {
                 controlPanel.isHidden = true
+                controlPanel.superview?.isHidden = true
                 chartView.configure(with: viewModel.fullDataMap(), for: currentTimeScale)
             }
         }
