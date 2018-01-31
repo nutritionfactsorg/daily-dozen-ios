@@ -60,7 +60,7 @@ struct ServingsHistoryViewModel {
             .yearlyReport(for: yearIndex)
             .monthReport(for: monthIndex)
             .daily
-            .map { "\($0.date.day) \n \($0.date.monthName)" }
+            .map { "\($0.date.day)" }
     }
 
     func monthsLabels(yearIndex: Int) -> [String] {

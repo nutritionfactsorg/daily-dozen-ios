@@ -22,16 +22,9 @@ class AlertBuilder {
     }
 
     private struct Keys {
-        static let helveticaBold = "Helvetica-Bold"
-        static let helvetica = "Helvetica"
         static let title = "attributedTitle"
         static let message = "attributedMessage"
         static let textColor = "titleTextColor"
-    }
-
-    private struct Sizes {
-        static let titleFontSize: CGFloat = 22
-        static let messageFontSize: CGFloat = 17
     }
 
     enum AlertContent {
@@ -51,42 +44,24 @@ class AlertBuilder {
                 return Strings.message
             }
         }
-
-        var titleFontSize: CGFloat {
-            switch self {
-            case .vitamin:
-                return Sizes.titleFontSize
-            }
-        }
-
-        var messageFontSize: CGFloat {
-            switch self {
-            case .vitamin:
-                return Sizes.messageFontSize
-            }
-        }
     }
 
     static func instantiateController(for content: AlertContent) -> UIAlertController {
         let alert = UIAlertController(title: content.title, message: content.title, preferredStyle: .actionSheet)
 
-        let titleSize = Sizes.titleFontSize
         alert.setValue(
             NSAttributedString(
                 string: content.title,
                 attributes: [
-                    NSAttributedStringKey.font:
-                        UIFont(name: Keys.helveticaBold, size: titleSize) ?? UIFont.systemFont(ofSize: titleSize),
+                    NSAttributedStringKey.font: UIFont.helveticaBold,
                     NSAttributedStringKey.foregroundColor: UIColor.greenColor]),
             forKey: Keys.title)
 
-        let messageSize = Sizes.messageFontSize
         alert.setValue(
             NSAttributedString(
                 string: content.message,
                 attributes: [
-                    NSAttributedStringKey.font:
-                        UIFont(name: Keys.helvetica, size: messageSize) ?? UIFont.systemFont(ofSize: messageSize),
+                    NSAttributedStringKey.font: UIFont.helevetica,
                     NSAttributedStringKey.foregroundColor: UIColor.lightGray]),
             forKey: Keys.message)
 

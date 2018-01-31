@@ -35,6 +35,7 @@
 		CF987C281F9E157300D4893E /* Item.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF987C271F9E157300D4893E /* Item.swift */; };
 		CF9E03201FBD9FA80084BC88 /* ItemHistory.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CF9E031F1FBD9FA80084BC88 /* ItemHistory.storyboard */; };
 		CF9E03231FBD9FDE0084BC88 /* ItemHistoryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF9E03221FBD9FDE0084BC88 /* ItemHistoryViewController.swift */; };
+		CF9EC1C0202196B100C7B3CA /* Fonts.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF9EC1BF202196B100C7B3CA /* Fonts.swift */; };
 		CFA3E8F91FC58D460092199D /* ServingsHistory.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CFA3E8F81FC58D460092199D /* ServingsHistory.storyboard */; };
 		CFA3E8FC1FC58E6B0092199D /* ServingsHistoryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CFA3E8FB1FC58E6B0092199D /* ServingsHistoryViewController.swift */; };
 		CFA9CDF21FBAF653000468CA /* VitaminsHeader.xib in Resources */ = {isa = PBXBuildFile; fileRef = CFA9CDF11FBAF653000468CA /* VitaminsHeader.xib */; };
@@ -95,6 +96,7 @@
 		CF987C271F9E157300D4893E /* Item.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Item.swift; sourceTree = "<group>"; };
 		CF9E031F1FBD9FA80084BC88 /* ItemHistory.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = ItemHistory.storyboard; sourceTree = "<group>"; };
 		CF9E03221FBD9FDE0084BC88 /* ItemHistoryViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ItemHistoryViewController.swift; sourceTree = "<group>"; };
+		CF9EC1BF202196B100C7B3CA /* Fonts.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Fonts.swift; sourceTree = "<group>"; };
 		CFA3E8F81FC58D460092199D /* ServingsHistory.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = ServingsHistory.storyboard; sourceTree = "<group>"; };
 		CFA3E8FB1FC58E6B0092199D /* ServingsHistoryViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ServingsHistoryViewController.swift; sourceTree = "<group>"; };
 		CFA9CDF11FBAF653000468CA /* VitaminsHeader.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = VitaminsHeader.xib; sourceTree = "<group>"; };
@@ -354,6 +356,7 @@
 				CF2680011FB477AD004A6200 /* Date.swift */,
 				CF23317F1FC2DB540021C440 /* BlurableBackground.swift */,
 				CFECDFF7201EF7C1003E8572 /* Colors.swift */,
+				CF9EC1BF202196B100C7B3CA /* Fonts.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -772,6 +775,7 @@
 				CF64DF311FB5DFCF00B4D124 /* SizesCell.swift in Sources */,
 				CFB5568C1FD180C3003B5813 /* Report.swift in Sources */,
 				CF987C281F9E157300D4893E /* Item.swift in Sources */,
+				CF9EC1C0202196B100C7B3CA /* Fonts.swift in Sources */,
 				CFBEE2341FDE9A57005C0F45 /* RoundedView.swift in Sources */,
 				CF49029B1FD91F01000EAB68 /* ServingsHistoryViewModel.swift in Sources */,
 				CF2FA9961FA87F0C003508F8 /* DetailsViewController.swift in Sources */,

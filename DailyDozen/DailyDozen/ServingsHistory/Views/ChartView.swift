@@ -30,11 +30,17 @@ class ChartView: CombinedChartView {
         legend.drawInside = false
 
         rightAxis.axisMinimum = 0
+        rightAxis.labelTextColor = UIColor.darkBlueColor
+        rightAxis.labelFont = UIFont.helevetica.withSize(12)
 
         leftAxis.axisMinimum = 0
+        leftAxis.labelTextColor = UIColor.darkBlueColor
+        leftAxis.labelFont = UIFont.helevetica.withSize(12)
 
         xAxis.labelPosition = .bothSided
         xAxis.granularity = 1
+        xAxis.labelTextColor = .darkBlueColor
+        xAxis.labelFont = UIFont.helevetica.withSize(12)
     }
 
     func configure(with map: [Int], for scale: TimeScale) {
@@ -68,10 +74,9 @@ class ChartView: CombinedChartView {
         }
 
         let set = BarChartDataSet(values: entries, label: "Servings")
-        let green = UIColor(red: 60/255, green: 220/255, blue: 78/255, alpha: 1)
-        set.setColor(green)
-        set.valueTextColor = green
-        set.valueFont = .systemFont(ofSize: 10)
+        set.setColor(UIColor.greenColor)
+        set.valueTextColor = UIColor.greenColor
+        set.valueFont = UIFont.helveticaBold.withSize(12)
         set.axisDependency = .left
 
         let data = BarChartData(dataSet: set)
@@ -87,18 +92,17 @@ class ChartView: CombinedChartView {
             entries.append(ChartDataEntry(x: Double(index), y: value))
         }
 
-        let set = LineChartDataSet(values: entries, label: "Moving Average")
-        set.setColor(UIColor.red)
+        let set = LineChartDataSet(values: entries, label: "Servings")
+        set.setColor(UIColor.greenColor)
         set.lineWidth = 2.5
-        set.setCircleColor(UIColor.red)
+        set.setCircleColor(UIColor.greenColor)
         set.circleRadius = 5
         set.circleHoleRadius = 2.5
         set.fillColor = UIColor.white
         set.mode = .cubicBezier
         set.drawValuesEnabled = true
-        set.valueFont = .systemFont(ofSize: 10)
-        set.valueTextColor = UIColor.red
-
+        set.valueFont = UIFont.helveticaBold.withSize(12)
+        set.valueTextColor = UIColor.greenColor
         set.axisDependency = .left
 
         return LineChartData(dataSet: set)
