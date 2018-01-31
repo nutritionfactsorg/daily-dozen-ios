@@ -21,11 +21,11 @@ class AboutBuilder {
     /// Instantiates and returns the initial view controller for a storyboard.
     ///
     /// - Returns: The initial view controller in the storyboard.
-    static func instantiateController() -> AboutViewController {
+    static func instantiateController() -> UIViewController {
         let storyboard = UIStoryboard(name: Keys.storyboard, bundle: nil)
         guard
             let viewController = storyboard
-                .instantiateInitialViewController() as? AboutViewController
+                .instantiateInitialViewController()
             else { fatalError("There should be a controller") }
         viewController.title = "About this app"
 
