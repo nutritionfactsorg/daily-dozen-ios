@@ -39,7 +39,9 @@ class AboutViewController: UITableViewController {
     // MARK: - Nested
     private struct Regex {
         static let book = "\\sHow Not to Die\\b"
-        static let site = "\\sNutritionFacts\\b"
+        static let site = "\\sNutritionFacts.org\\b"
+        static let christi = "\\sChristi Richards\\b"
+        static let const = "\\sKonstantin Khokhlov\\b"
     }
 
     // MARK: - Outlets
@@ -70,9 +72,39 @@ class AboutViewController: UITableViewController {
             label.customColor[siteType] = label.mentionColor
             label.handleCustomTap(for: siteType) { _ in
                 UIApplication.shared
-                    .open(LinksService.shared.siteMain,
+                    .open(LinksService.shared.team,
                           options: [:],
                           completionHandler: nil)
+            }
+        }
+
+        let authorChristi = ActiveType.custom(pattern: Regex.christi)
+        infoLabel.enabledTypes.append(authorChristi)
+
+        if let christiLink = LinksService.shared.authorChristi {
+            infoLabel.customize { label in
+                label.customColor[authorChristi] = label.mentionColor
+                label.handleCustomTap(for: authorChristi) { _ in
+                    UIApplication.shared
+                        .open(christiLink,
+                              options: [:],
+                              completionHandler: nil)
+                }
+            }
+        }
+
+        let authorConst = ActiveType.custom(pattern: Regex.const)
+        infoLabel.enabledTypes.append(authorConst)
+
+        if let constLink = LinksService.shared.authorConst {
+            infoLabel.customize { label in
+                label.customColor[authorConst] = label.mentionColor
+                label.handleCustomTap(for: authorConst) { _ in
+                    UIApplication.shared
+                        .open(constLink,
+                              options: [:],
+                              completionHandler: nil)
+                }
             }
         }
     }

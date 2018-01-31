@@ -18,6 +18,12 @@ class LinksService {
     private struct URLKeys {
         static let topics = "topics"
         static let book = "book"
+        static let team = "team"
+    }
+
+    private struct Authors {
+        static let christi = "https://github.com/christirichards"
+        static let const = "https://github.com/justaninja"
     }
 
     // MARK: - Properties
@@ -30,6 +36,19 @@ class LinksService {
     var siteBook: URL {
         return baseURL
             .appendingPathComponent(URLKeys.book)
+    }
+
+    var team: URL {
+        return baseURL
+            .appendingPathComponent(URLKeys.team)
+    }
+
+    var authorChristi: URL? {
+        return URL(string: Authors.christi)
+    }
+
+    var authorConst: URL? {
+        return URL(string: Authors.const)
     }
 
     /// Returns the shared LinksService object.
