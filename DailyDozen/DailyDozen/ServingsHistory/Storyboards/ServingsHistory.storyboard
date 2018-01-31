@@ -24,177 +24,253 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <stackView opaque="NO" contentMode="scaleToFill" distribution="fillProportionally" translatesAutoresizingMaskIntoConstraints="NO" id="WYO-q4-WKd">
-                                <rect key="frame" x="8" y="28" width="359" height="28"/>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="K39-Mb-1UQ" customClass="RoundedView" customModule="DailyDozen" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="20" width="375" height="80"/>
                                 <subviews>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Time Scale" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="27q-rq-qbu">
-                                        <rect key="frame" x="0.0" y="0.0" width="126" height="28"/>
-                                        <fontDescription key="fontDescription" name="HelveticaNeue-Medium" family="Helvetica Neue" pointSize="17"/>
-                                        <color key="textColor" red="0.23437002300000001" green="0.25768834350000003" blue="0.3199615777" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                        <nil key="highlightedColor"/>
-                                    </label>
-                                    <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="sM6-A9-KeP">
-                                        <rect key="frame" x="126" y="0.0" width="233" height="29"/>
-                                        <segments>
-                                            <segment title="Day"/>
-                                            <segment title="Month"/>
-                                            <segment title="Year"/>
-                                        </segments>
-                                        <color key="tintColor" red="0.45098039220000002" green="0.78039215689999997" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                        <connections>
-                                            <action selector="timeScaleChanged:" destination="W8v-3t-yDA" eventType="valueChanged" id="qbO-e3-Cs9"/>
-                                        </connections>
-                                    </segmentedControl>
-                                </subviews>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="28" id="ww4-rz-FVs"/>
-                                </constraints>
-                            </stackView>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="dpZ-0j-fti" customClass="ChartView" customModule="DailyDozen" customModuleProvider="target">
-                                <rect key="frame" x="8" y="187" width="359" height="400"/>
-                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="400" id="wUp-9n-X40"/>
-                                </constraints>
-                            </view>
-                            <stackView opaque="NO" contentMode="scaleToFill" alignment="center" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="AXc-qN-o5Q" customClass="ControlPanel" customModule="DailyDozen" customModuleProvider="target">
-                                <rect key="frame" x="8" y="76" width="359" height="53"/>
-                                <subviews>
-                                    <button opaque="NO" contentMode="scaleAspectFit" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="F52-SP-heS" customClass="RoundedButton" customModule="DailyDozen" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="8.5" width="36" height="36"/>
-                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                        <constraints>
-                                            <constraint firstAttribute="width" secondItem="F52-SP-heS" secondAttribute="height" multiplier="1:1" id="bua-pW-dPV"/>
-                                            <constraint firstAttribute="width" constant="36" id="zdK-KM-Rxk"/>
-                                        </constraints>
-                                        <inset key="imageEdgeInsets" minX="5" minY="5" maxX="5" maxY="5"/>
-                                        <state key="normal" image="ic_left_double"/>
-                                        <userDefinedRuntimeAttributes>
-                                            <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
-                                                <real key="value" value="5"/>
-                                            </userDefinedRuntimeAttribute>
-                                            <userDefinedRuntimeAttribute type="color" keyPath="borderColor">
-                                                <color key="value" red="0.45098039220000002" green="0.78039215689999997" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                            </userDefinedRuntimeAttribute>
-                                            <userDefinedRuntimeAttribute type="number" keyPath="borderWidth">
-                                                <real key="value" value="1"/>
-                                            </userDefinedRuntimeAttribute>
-                                        </userDefinedRuntimeAttributes>
-                                        <connections>
-                                            <action selector="toFirstButtonPressed:" destination="W8v-3t-yDA" eventType="touchUpInside" id="lyR-l0-njI"/>
-                                        </connections>
-                                    </button>
-                                    <button opaque="NO" contentMode="scaleAspectFit" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="56G-mx-NCB" customClass="RoundedButton" customModule="DailyDozen" customModuleProvider="target">
-                                        <rect key="frame" x="56" y="8.5" width="36" height="36"/>
-                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                        <constraints>
-                                            <constraint firstAttribute="width" secondItem="56G-mx-NCB" secondAttribute="height" multiplier="1:1" id="h8d-lr-F3n"/>
-                                            <constraint firstAttribute="width" constant="36" id="yH7-RV-xKz"/>
-                                        </constraints>
-                                        <inset key="imageEdgeInsets" minX="5" minY="5" maxX="5" maxY="5"/>
-                                        <state key="normal" image="ic_left"/>
-                                        <userDefinedRuntimeAttributes>
-                                            <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
-                                                <real key="value" value="5"/>
-                                            </userDefinedRuntimeAttribute>
-                                            <userDefinedRuntimeAttribute type="color" keyPath="borderColor">
-                                                <color key="value" red="0.45098039220000002" green="0.78039215689999997" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                            </userDefinedRuntimeAttribute>
-                                            <userDefinedRuntimeAttribute type="number" keyPath="borderWidth">
-                                                <real key="value" value="1"/>
-                                            </userDefinedRuntimeAttribute>
-                                        </userDefinedRuntimeAttributes>
-                                        <connections>
-                                            <action selector="toPreviousButtonPressed:" destination="W8v-3t-yDA" eventType="touchUpInside" id="5fh-fh-SA4"/>
-                                        </connections>
-                                    </button>
-                                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" alignment="center" spacing="5" translatesAutoresizingMaskIntoConstraints="NO" id="bSE-Rc-iZF">
-                                        <rect key="frame" x="112" y="0.0" width="135" height="53"/>
+                                    <stackView opaque="NO" contentMode="scaleToFill" distribution="fillProportionally" translatesAutoresizingMaskIntoConstraints="NO" id="WYO-q4-WKd">
+                                        <rect key="frame" x="8" y="26" width="359" height="28"/>
                                         <subviews>
-                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="2017" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="dld-jq-Etq">
-                                                <rect key="frame" x="45.5" y="0.0" width="44.5" height="24"/>
-                                                <fontDescription key="fontDescription" name="HelveticaNeue-Medium" family="Helvetica Neue" pointSize="20"/>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Time Scale" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="27q-rq-qbu">
+                                                <rect key="frame" x="0.0" y="0.0" width="126" height="28"/>
+                                                <fontDescription key="fontDescription" name="HelveticaNeue-Medium" family="Helvetica Neue" pointSize="17"/>
                                                 <color key="textColor" red="0.23437002300000001" green="0.25768834350000003" blue="0.3199615777" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
-                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Month" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="nRL-iG-Wnd">
-                                                <rect key="frame" x="38" y="29" width="59.5" height="24"/>
-                                                <fontDescription key="fontDescription" name="HelveticaNeue-Medium" family="Helvetica Neue" pointSize="20"/>
-                                                <color key="textColor" red="0.23437002300000001" green="0.25768834350000003" blue="0.3199615777" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                                <nil key="highlightedColor"/>
-                                            </label>
+                                            <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="sM6-A9-KeP">
+                                                <rect key="frame" x="126" y="0.0" width="233" height="29"/>
+                                                <segments>
+                                                    <segment title="Day"/>
+                                                    <segment title="Month"/>
+                                                    <segment title="Year"/>
+                                                </segments>
+                                                <color key="tintColor" red="0.45098039220000002" green="0.78039215689999997" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                <connections>
+                                                    <action selector="timeScaleChanged:" destination="W8v-3t-yDA" eventType="valueChanged" id="qbO-e3-Cs9"/>
+                                                </connections>
+                                            </segmentedControl>
                                         </subviews>
                                     </stackView>
-                                    <button opaque="NO" contentMode="scaleAspectFit" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="KLO-FN-X4F" customClass="RoundedButton" customModule="DailyDozen" customModuleProvider="target">
-                                        <rect key="frame" x="267" y="8.5" width="36" height="36"/>
-                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                        <constraints>
-                                            <constraint firstAttribute="width" secondItem="KLO-FN-X4F" secondAttribute="height" multiplier="1:1" id="1dk-9I-mox"/>
-                                            <constraint firstAttribute="width" constant="36" id="lMT-n5-f1a"/>
-                                        </constraints>
-                                        <inset key="imageEdgeInsets" minX="5" minY="5" maxX="5" maxY="5"/>
-                                        <state key="normal" image="ic_right"/>
-                                        <userDefinedRuntimeAttributes>
-                                            <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
-                                                <real key="value" value="5"/>
-                                            </userDefinedRuntimeAttribute>
-                                            <userDefinedRuntimeAttribute type="color" keyPath="borderColor">
-                                                <color key="value" red="0.45098039220000002" green="0.78039215689999997" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                            </userDefinedRuntimeAttribute>
-                                            <userDefinedRuntimeAttribute type="number" keyPath="borderWidth">
-                                                <real key="value" value="1"/>
-                                            </userDefinedRuntimeAttribute>
-                                        </userDefinedRuntimeAttributes>
-                                        <connections>
-                                            <action selector="toNextButtonPressed:" destination="W8v-3t-yDA" eventType="touchUpInside" id="gmu-Em-ia0"/>
-                                        </connections>
-                                    </button>
-                                    <button opaque="NO" contentMode="scaleAspectFit" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="7qG-56-frM" customClass="RoundedButton" customModule="DailyDozen" customModuleProvider="target">
-                                        <rect key="frame" x="323" y="8.5" width="36" height="36"/>
-                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                        <constraints>
-                                            <constraint firstAttribute="width" constant="36" id="Yx8-RH-M4S"/>
-                                            <constraint firstAttribute="width" secondItem="7qG-56-frM" secondAttribute="height" multiplier="1:1" id="soJ-NX-hTb"/>
-                                        </constraints>
-                                        <inset key="imageEdgeInsets" minX="5" minY="5" maxX="5" maxY="5"/>
-                                        <state key="normal" image="ic_right_double"/>
-                                        <userDefinedRuntimeAttributes>
-                                            <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
-                                                <real key="value" value="5"/>
-                                            </userDefinedRuntimeAttribute>
-                                            <userDefinedRuntimeAttribute type="color" keyPath="borderColor">
-                                                <color key="value" red="0.45098039220000002" green="0.78039215689999997" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                            </userDefinedRuntimeAttribute>
-                                            <userDefinedRuntimeAttribute type="number" keyPath="borderWidth">
-                                                <real key="value" value="1"/>
-                                            </userDefinedRuntimeAttribute>
-                                        </userDefinedRuntimeAttributes>
-                                        <connections>
-                                            <action selector="toLastButtonPressed:" destination="W8v-3t-yDA" eventType="touchUpInside" id="cdq-yt-pHS"/>
-                                        </connections>
-                                    </button>
                                 </subviews>
-                                <connections>
-                                    <outlet property="monthLabel" destination="nRL-iG-Wnd" id="CH2-9B-cZM"/>
-                                    <outlet property="toFirstButton" destination="F52-SP-heS" id="9cB-05-OpD"/>
-                                    <outlet property="toLastButton" destination="7qG-56-frM" id="r6h-fS-8AL"/>
-                                    <outlet property="toNextButton" destination="KLO-FN-X4F" id="kzg-mE-vZ9"/>
-                                    <outlet property="toPreviousButton" destination="56G-mx-NCB" id="Rib-He-ICo"/>
-                                    <outlet property="yearLabel" destination="dld-jq-Etq" id="Hbl-7c-0GF"/>
-                                </connections>
-                            </stackView>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="80" id="23A-BL-JQo"/>
+                                    <constraint firstItem="WYO-q4-WKd" firstAttribute="leading" secondItem="K39-Mb-1UQ" secondAttribute="leading" constant="8" id="EIC-qo-3Vb"/>
+                                    <constraint firstAttribute="trailing" secondItem="WYO-q4-WKd" secondAttribute="trailing" constant="8" id="MMh-Kx-VMh"/>
+                                    <constraint firstItem="WYO-q4-WKd" firstAttribute="centerY" secondItem="K39-Mb-1UQ" secondAttribute="centerY" id="sU0-3d-Mix"/>
+                                </constraints>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="color" keyPath="shadowColor">
+                                        <color key="value" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="size" keyPath="shadowOffset">
+                                        <size key="value" width="0.0" height="1"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="shadowOpacity">
+                                        <real key="value" value="1"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                            </view>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="JJS-vR-ger" customClass="RoundedView" customModule="DailyDozen" customModuleProvider="target">
+                                <rect key="frame" x="8" y="108" width="359" height="73"/>
+                                <subviews>
+                                    <stackView opaque="NO" contentMode="scaleToFill" alignment="center" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="AXc-qN-o5Q" customClass="ControlPanel" customModule="DailyDozen" customModuleProvider="target">
+                                        <rect key="frame" x="8" y="10" width="343" height="53"/>
+                                        <subviews>
+                                            <button opaque="NO" contentMode="scaleAspectFit" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="F52-SP-heS" customClass="RoundedButton" customModule="DailyDozen" customModuleProvider="target">
+                                                <rect key="frame" x="0.0" y="8.5" width="36" height="36"/>
+                                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="width" secondItem="F52-SP-heS" secondAttribute="height" multiplier="1:1" id="bua-pW-dPV"/>
+                                                    <constraint firstAttribute="width" constant="36" id="zdK-KM-Rxk"/>
+                                                </constraints>
+                                                <inset key="imageEdgeInsets" minX="5" minY="5" maxX="5" maxY="5"/>
+                                                <state key="normal" image="ic_left_double"/>
+                                                <userDefinedRuntimeAttributes>
+                                                    <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                                        <real key="value" value="5"/>
+                                                    </userDefinedRuntimeAttribute>
+                                                    <userDefinedRuntimeAttribute type="color" keyPath="borderColor">
+                                                        <color key="value" red="0.45098039220000002" green="0.78039215689999997" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                    </userDefinedRuntimeAttribute>
+                                                    <userDefinedRuntimeAttribute type="number" keyPath="borderWidth">
+                                                        <real key="value" value="1"/>
+                                                    </userDefinedRuntimeAttribute>
+                                                </userDefinedRuntimeAttributes>
+                                                <connections>
+                                                    <action selector="toFirstButtonPressed:" destination="W8v-3t-yDA" eventType="touchUpInside" id="lyR-l0-njI"/>
+                                                </connections>
+                                            </button>
+                                            <button opaque="NO" contentMode="scaleAspectFit" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="56G-mx-NCB" customClass="RoundedButton" customModule="DailyDozen" customModuleProvider="target">
+                                                <rect key="frame" x="56" y="8.5" width="36" height="36"/>
+                                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="width" secondItem="56G-mx-NCB" secondAttribute="height" multiplier="1:1" id="h8d-lr-F3n"/>
+                                                    <constraint firstAttribute="width" constant="36" id="yH7-RV-xKz"/>
+                                                </constraints>
+                                                <inset key="imageEdgeInsets" minX="5" minY="5" maxX="5" maxY="5"/>
+                                                <state key="normal" image="ic_left"/>
+                                                <userDefinedRuntimeAttributes>
+                                                    <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                                        <real key="value" value="5"/>
+                                                    </userDefinedRuntimeAttribute>
+                                                    <userDefinedRuntimeAttribute type="color" keyPath="borderColor">
+                                                        <color key="value" red="0.45098039220000002" green="0.78039215689999997" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                    </userDefinedRuntimeAttribute>
+                                                    <userDefinedRuntimeAttribute type="number" keyPath="borderWidth">
+                                                        <real key="value" value="1"/>
+                                                    </userDefinedRuntimeAttribute>
+                                                </userDefinedRuntimeAttributes>
+                                                <connections>
+                                                    <action selector="toPreviousButtonPressed:" destination="W8v-3t-yDA" eventType="touchUpInside" id="5fh-fh-SA4"/>
+                                                </connections>
+                                            </button>
+                                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" alignment="center" spacing="5" translatesAutoresizingMaskIntoConstraints="NO" id="bSE-Rc-iZF">
+                                                <rect key="frame" x="112" y="0.0" width="119" height="53"/>
+                                                <subviews>
+                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="2017" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="dld-jq-Etq">
+                                                        <rect key="frame" x="37.5" y="0.0" width="44.5" height="24"/>
+                                                        <fontDescription key="fontDescription" name="HelveticaNeue-Medium" family="Helvetica Neue" pointSize="20"/>
+                                                        <color key="textColor" red="0.23437002300000001" green="0.25768834350000003" blue="0.3199615777" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                        <nil key="highlightedColor"/>
+                                                    </label>
+                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Month" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="nRL-iG-Wnd">
+                                                        <rect key="frame" x="30" y="29" width="59.5" height="24"/>
+                                                        <fontDescription key="fontDescription" name="HelveticaNeue-Medium" family="Helvetica Neue" pointSize="20"/>
+                                                        <color key="textColor" red="0.23437002300000001" green="0.25768834350000003" blue="0.3199615777" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                        <nil key="highlightedColor"/>
+                                                    </label>
+                                                </subviews>
+                                            </stackView>
+                                            <button opaque="NO" contentMode="scaleAspectFit" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="KLO-FN-X4F" customClass="RoundedButton" customModule="DailyDozen" customModuleProvider="target">
+                                                <rect key="frame" x="251" y="8.5" width="36" height="36"/>
+                                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="width" secondItem="KLO-FN-X4F" secondAttribute="height" multiplier="1:1" id="1dk-9I-mox"/>
+                                                    <constraint firstAttribute="width" constant="36" id="lMT-n5-f1a"/>
+                                                </constraints>
+                                                <inset key="imageEdgeInsets" minX="5" minY="5" maxX="5" maxY="5"/>
+                                                <state key="normal" image="ic_right"/>
+                                                <userDefinedRuntimeAttributes>
+                                                    <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                                        <real key="value" value="5"/>
+                                                    </userDefinedRuntimeAttribute>
+                                                    <userDefinedRuntimeAttribute type="color" keyPath="borderColor">
+                                                        <color key="value" red="0.45098039220000002" green="0.78039215689999997" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                    </userDefinedRuntimeAttribute>
+                                                    <userDefinedRuntimeAttribute type="number" keyPath="borderWidth">
+                                                        <real key="value" value="1"/>
+                                                    </userDefinedRuntimeAttribute>
+                                                </userDefinedRuntimeAttributes>
+                                                <connections>
+                                                    <action selector="toNextButtonPressed:" destination="W8v-3t-yDA" eventType="touchUpInside" id="gmu-Em-ia0"/>
+                                                </connections>
+                                            </button>
+                                            <button opaque="NO" contentMode="scaleAspectFit" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="7qG-56-frM" customClass="RoundedButton" customModule="DailyDozen" customModuleProvider="target">
+                                                <rect key="frame" x="307" y="8.5" width="36" height="36"/>
+                                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="width" constant="36" id="Yx8-RH-M4S"/>
+                                                    <constraint firstAttribute="width" secondItem="7qG-56-frM" secondAttribute="height" multiplier="1:1" id="soJ-NX-hTb"/>
+                                                </constraints>
+                                                <inset key="imageEdgeInsets" minX="5" minY="5" maxX="5" maxY="5"/>
+                                                <state key="normal" image="ic_right_double"/>
+                                                <userDefinedRuntimeAttributes>
+                                                    <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                                        <real key="value" value="5"/>
+                                                    </userDefinedRuntimeAttribute>
+                                                    <userDefinedRuntimeAttribute type="color" keyPath="borderColor">
+                                                        <color key="value" red="0.45098039220000002" green="0.78039215689999997" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                    </userDefinedRuntimeAttribute>
+                                                    <userDefinedRuntimeAttribute type="number" keyPath="borderWidth">
+                                                        <real key="value" value="1"/>
+                                                    </userDefinedRuntimeAttribute>
+                                                </userDefinedRuntimeAttributes>
+                                                <connections>
+                                                    <action selector="toLastButtonPressed:" destination="W8v-3t-yDA" eventType="touchUpInside" id="cdq-yt-pHS"/>
+                                                </connections>
+                                            </button>
+                                        </subviews>
+                                        <connections>
+                                            <outlet property="monthLabel" destination="nRL-iG-Wnd" id="CH2-9B-cZM"/>
+                                            <outlet property="toFirstButton" destination="F52-SP-heS" id="9cB-05-OpD"/>
+                                            <outlet property="toLastButton" destination="7qG-56-frM" id="r6h-fS-8AL"/>
+                                            <outlet property="toNextButton" destination="KLO-FN-X4F" id="kzg-mE-vZ9"/>
+                                            <outlet property="toPreviousButton" destination="56G-mx-NCB" id="Rib-He-ICo"/>
+                                            <outlet property="yearLabel" destination="dld-jq-Etq" id="Hbl-7c-0GF"/>
+                                        </connections>
+                                    </stackView>
+                                </subviews>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstItem="AXc-qN-o5Q" firstAttribute="top" secondItem="JJS-vR-ger" secondAttribute="top" constant="10" id="34x-wn-AI4"/>
+                                    <constraint firstAttribute="trailing" secondItem="AXc-qN-o5Q" secondAttribute="trailing" constant="8" id="TM3-ze-pak"/>
+                                    <constraint firstItem="AXc-qN-o5Q" firstAttribute="leading" secondItem="JJS-vR-ger" secondAttribute="leading" constant="8" id="U5U-dG-JmN"/>
+                                    <constraint firstAttribute="bottom" secondItem="AXc-qN-o5Q" secondAttribute="bottom" constant="10" id="lRm-4u-1i9"/>
+                                </constraints>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                        <real key="value" value="5"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="color" keyPath="shadowColor">
+                                        <color key="value" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="shadowRadius">
+                                        <real key="value" value="5"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="size" keyPath="shadowOffset">
+                                        <size key="value" width="0.0" height="2"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="shadowOpacity">
+                                        <real key="value" value="1"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                            </view>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="OHj-hv-bLR" customClass="RoundedView" customModule="DailyDozen" customModuleProvider="target">
+                                <rect key="frame" x="8" y="189" width="359" height="468"/>
+                                <subviews>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="dpZ-0j-fti" customClass="ChartView" customModule="DailyDozen" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="8" width="359" height="452"/>
+                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                    </view>
+                                </subviews>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstAttribute="bottom" secondItem="dpZ-0j-fti" secondAttribute="bottom" constant="8" id="0dx-cR-SdV"/>
+                                    <constraint firstItem="dpZ-0j-fti" firstAttribute="leading" secondItem="OHj-hv-bLR" secondAttribute="leading" id="AN1-Xa-Pmp"/>
+                                    <constraint firstAttribute="trailing" secondItem="dpZ-0j-fti" secondAttribute="trailing" id="kG6-Qr-kKF"/>
+                                    <constraint firstItem="dpZ-0j-fti" firstAttribute="top" secondItem="OHj-hv-bLR" secondAttribute="top" constant="8" id="pBw-oh-TIv"/>
+                                </constraints>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                        <real key="value" value="5"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="color" keyPath="shadowColor">
+                                        <color key="value" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="shadowRadius">
+                                        <real key="value" value="5"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="size" keyPath="shadowOffset">
+                                        <size key="value" width="0.0" height="2"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="shadowOpacity">
+                                        <real key="value" value="1"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                            </view>
                         </subviews>
                         <color key="backgroundColor" red="0.95294117649999999" green="0.95294117649999999" blue="0.95294117649999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
-                            <constraint firstItem="AXc-qN-o5Q" firstAttribute="leading" secondItem="EBL-A5-fjR" secondAttribute="leading" constant="8" id="25G-QY-YQL"/>
-                            <constraint firstItem="EBL-A5-fjR" firstAttribute="trailing" secondItem="WYO-q4-WKd" secondAttribute="trailing" constant="8" id="D3s-oM-ESM"/>
-                            <constraint firstItem="EBL-A5-fjR" firstAttribute="trailing" secondItem="dpZ-0j-fti" secondAttribute="trailing" constant="8" id="Da6-Sm-DfB"/>
-                            <constraint firstItem="WYO-q4-WKd" firstAttribute="leading" secondItem="EBL-A5-fjR" secondAttribute="leading" constant="8" id="E4m-F4-YEk"/>
-                            <constraint firstItem="EBL-A5-fjR" firstAttribute="bottom" secondItem="dpZ-0j-fti" secondAttribute="bottom" constant="80" id="Hmi-IF-JIM"/>
-                            <constraint firstAttribute="trailing" secondItem="AXc-qN-o5Q" secondAttribute="trailing" constant="8" id="ONg-x0-iDQ"/>
-                            <constraint firstItem="dpZ-0j-fti" firstAttribute="leading" secondItem="EBL-A5-fjR" secondAttribute="leading" constant="8" id="fIw-A8-yPo"/>
-                            <constraint firstItem="AXc-qN-o5Q" firstAttribute="top" secondItem="WYO-q4-WKd" secondAttribute="bottom" constant="20" id="jtn-8P-NuA"/>
-                            <constraint firstItem="WYO-q4-WKd" firstAttribute="top" secondItem="EBL-A5-fjR" secondAttribute="top" constant="8" id="n6Y-Da-IFp"/>
+                            <constraint firstItem="OHj-hv-bLR" firstAttribute="top" secondItem="JJS-vR-ger" secondAttribute="bottom" constant="8" id="5b8-hU-QlO"/>
+                            <constraint firstItem="K39-Mb-1UQ" firstAttribute="trailing" secondItem="EBL-A5-fjR" secondAttribute="trailing" id="8Tx-yu-1r7"/>
+                            <constraint firstItem="EBL-A5-fjR" firstAttribute="trailing" secondItem="JJS-vR-ger" secondAttribute="trailing" constant="8" id="Cn2-xw-xJS"/>
+                            <constraint firstItem="JJS-vR-ger" firstAttribute="top" secondItem="K39-Mb-1UQ" secondAttribute="bottom" constant="8" id="LWz-e2-J7t"/>
+                            <constraint firstItem="OHj-hv-bLR" firstAttribute="leading" secondItem="EBL-A5-fjR" secondAttribute="leading" constant="8" id="SJt-mt-XfG"/>
+                            <constraint firstItem="EBL-A5-fjR" firstAttribute="bottom" secondItem="OHj-hv-bLR" secondAttribute="bottom" constant="10" id="Z4V-8D-4LQ"/>
+                            <constraint firstItem="EBL-A5-fjR" firstAttribute="trailing" secondItem="OHj-hv-bLR" secondAttribute="trailing" constant="8" id="fbE-CI-gin"/>
+                            <constraint firstItem="K39-Mb-1UQ" firstAttribute="leading" secondItem="EBL-A5-fjR" secondAttribute="leading" id="s8d-LX-Lhp"/>
+                            <constraint firstItem="K39-Mb-1UQ" firstAttribute="top" secondItem="EBL-A5-fjR" secondAttribute="top" id="sYp-R6-NZQ"/>
+                            <constraint firstItem="JJS-vR-ger" firstAttribute="leading" secondItem="EBL-A5-fjR" secondAttribute="leading" constant="8" id="vbr-ge-Mf9"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="EBL-A5-fjR"/>
                     </view>
