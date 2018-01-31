@@ -42,11 +42,13 @@ class AboutViewController: UITableViewController {
         static let site = "\\sNutritionFacts.org\\b"
         static let christi = "\\sChristi Richards\\b"
         static let const = "\\sKonstantin Khokhlov\\b"
+        static let elements = "\\sSketch Elements\\b"
     }
 
     // MARK: - Outlets
     @IBOutlet private weak var messageLabel: ActiveLabel!
     @IBOutlet private weak var infoLabel: ActiveLabel!
+    @IBOutlet private weak var designLabel: ActiveLabel!
 
     // MARK: - UITableViewController
     override func viewDidLoad() {
@@ -56,7 +58,7 @@ class AboutViewController: UITableViewController {
         messageLabel.enabledTypes.append(bookType)
 
         messageLabel.customize { label in
-            label.customColor[bookType] = label.mentionColor
+            label.customColor[bookType] = UIColor.greenColor
             label.handleCustomTap(for: bookType) { _ in
                 UIApplication.shared
                     .open(LinksService.shared.siteBook,
@@ -69,7 +71,7 @@ class AboutViewController: UITableViewController {
         infoLabel.enabledTypes.append(siteType)
 
         infoLabel.customize { label in
-            label.customColor[siteType] = label.mentionColor
+            label.customColor[siteType] = UIColor.greenColor
             label.handleCustomTap(for: siteType) { _ in
                 UIApplication.shared
                     .open(LinksService.shared.team,
@@ -78,13 +80,13 @@ class AboutViewController: UITableViewController {
             }
         }
 
-        let authorChristi = ActiveType.custom(pattern: Regex.christi)
-        infoLabel.enabledTypes.append(authorChristi)
+        let aboutChristi = ActiveType.custom(pattern: Regex.christi)
+        infoLabel.enabledTypes.append(aboutChristi)
 
-        if let christiLink = LinksService.shared.authorChristi {
+        if let christiLink = LinksService.shared.aboutChristi {
             infoLabel.customize { label in
-                label.customColor[authorChristi] = label.mentionColor
-                label.handleCustomTap(for: authorChristi) { _ in
+                label.customColor[aboutChristi] = UIColor.greenColor
+                label.handleCustomTap(for: aboutChristi) { _ in
                     UIApplication.shared
                         .open(christiLink,
                               options: [:],
@@ -93,15 +95,30 @@ class AboutViewController: UITableViewController {
             }
         }
 
-        let authorConst = ActiveType.custom(pattern: Regex.const)
-        infoLabel.enabledTypes.append(authorConst)
+        let aboutConst = ActiveType.custom(pattern: Regex.const)
+        infoLabel.enabledTypes.append(aboutConst)
 
-        if let constLink = LinksService.shared.authorConst {
+        if let constLink = LinksService.shared.aboutConst {
             infoLabel.customize { label in
-                label.customColor[authorConst] = label.mentionColor
-                label.handleCustomTap(for: authorConst) { _ in
+                label.customColor[aboutConst] = UIColor.greenColor
+                label.handleCustomTap(for: aboutConst) { _ in
                     UIApplication.shared
                         .open(constLink,
+                              options: [:],
+                              completionHandler: nil)
+                }
+            }
+        }
+
+        let aboutElements = ActiveType.custom(pattern: Regex.elements)
+        designLabel.enabledTypes.append(aboutElements)
+
+        if let elementsLink = LinksService.shared.aboutElements {
+            designLabel.customize { label in
+                label.customColor[aboutElements] = UIColor.greenColor
+                label.handleCustomTap(for: aboutElements) { _ in
+                    UIApplication.shared
+                        .open(elementsLink,
                               options: [:],
                               completionHandler: nil)
                 }

@@ -21,9 +21,10 @@ class LinksService {
         static let team = "team"
     }
 
-    private struct Authors {
+    private struct About {
         static let christi = "https://github.com/christirichards"
         static let const = "https://github.com/justaninja"
+        static let elements = "https://sketchapp.com/elements"
     }
 
     // MARK: - Properties
@@ -43,12 +44,16 @@ class LinksService {
             .appendingPathComponent(URLKeys.team)
     }
 
-    var authorChristi: URL? {
-        return URL(string: Authors.christi)
+    var aboutChristi: URL? {
+        return URL(string: About.christi)
     }
 
-    var authorConst: URL? {
-        return URL(string: Authors.const)
+    var aboutConst: URL? {
+        return URL(string: About.const)
+    }
+
+    var aboutElements: URL? {
+        return URL(string: About.elements)
     }
 
     /// Returns the shared LinksService object.

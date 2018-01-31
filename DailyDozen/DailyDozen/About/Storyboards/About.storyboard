@@ -13,7 +13,7 @@
     <customFonts key="customFonts">
         <array key="HelveticaNeue.ttc">
             <string>HelveticaNeue</string>
-            <string>HelveticaNeue-Medium</string>
+            <string>HelveticaNeue-Bold</string>
         </array>
     </customFonts>
     <scenes>
@@ -107,16 +107,16 @@
                                                                     </constraints>
                                                                 </imageView>
                                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Welcome to my Daily Dozen!" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="19L-gq-W5M">
-                                                                    <rect key="frame" x="14" y="223.5" width="291" height="30"/>
+                                                                    <rect key="frame" x="10.5" y="223.5" width="298.5" height="30"/>
                                                                     <constraints>
                                                                         <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="30" id="0LH-YA-fkv"/>
                                                                     </constraints>
-                                                                    <fontDescription key="fontDescription" name="HelveticaNeue-Medium" family="Helvetica Neue" pointSize="22"/>
+                                                                    <fontDescription key="fontDescription" name="HelveticaNeue-Bold" family="Helvetica Neue" pointSize="22"/>
                                                                     <color key="textColor" red="0.45098039220000002" green="0.78039215689999997" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                                     <nil key="highlightedColor"/>
                                                                 </label>
                                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="dwQ-CS-gz3" customClass="ActiveLabel" customModule="ActiveLabel">
-                                                                    <rect key="frame" x="0.0" y="258.5" width="319" height="141.5"/>
+                                                                    <rect key="frame" x="7" y="258.5" width="305" height="141.5"/>
                                                                     <string key="text">Use this app on a daily basis to keep track of the foods I recommend for optimal health and longevity in my book How Not to Die.</string>
                                                                     <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="17"/>
                                                                     <color key="textColor" red="0.28520548340000001" green="0.31244885919999998" blue="0.38303160670000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -167,38 +167,57 @@
                                         </tableViewCellContentView>
                                         <color key="backgroundColor" red="0.95294117649999999" green="0.95294117649999999" blue="0.95294117649999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                     </tableViewCell>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" rowHeight="200" id="X1b-RA-DhD">
-                                        <rect key="frame" x="0.0" y="420" width="375" height="200"/>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" rowHeight="400" id="X1b-RA-DhD">
+                                        <rect key="frame" x="0.0" y="420" width="375" height="400"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="X1b-RA-DhD" id="3aM-Fj-W7q">
-                                            <rect key="frame" x="0.0" y="0.0" width="375" height="200"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="375" height="400"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="i3e-FJ-rCi" customClass="RoundedView" customModule="DailyDozen" customModuleProvider="target">
-                                                    <rect key="frame" x="20" y="10" width="335" height="180"/>
+                                                    <rect key="frame" x="20" y="10" width="335" height="380"/>
                                                     <subviews>
-                                                        <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" alignment="center" spacing="15" translatesAutoresizingMaskIntoConstraints="NO" id="sPw-mc-JqX">
-                                                            <rect key="frame" x="8" y="8" width="319" height="137"/>
+                                                        <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillProportionally" alignment="center" spacing="15" translatesAutoresizingMaskIntoConstraints="NO" id="sPw-mc-JqX">
+                                                            <rect key="frame" x="8" y="8" width="319" height="345"/>
                                                             <subviews>
                                                                 <stackView opaque="NO" contentMode="scaleToFill" distribution="fillProportionally" alignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="gGl-9e-5uD">
-                                                                    <rect key="frame" x="8" y="0.0" width="303" height="61"/>
+                                                                    <rect key="frame" x="8" y="0.0" width="303" height="24"/>
                                                                     <subviews>
                                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Daily Dozen" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="DJR-bj-qUq">
-                                                                            <rect key="frame" x="0.0" y="18.5" width="186.5" height="24"/>
-                                                                            <fontDescription key="fontDescription" name="HelveticaNeue-Medium" family="Helvetica Neue" pointSize="20"/>
+                                                                            <rect key="frame" x="0.0" y="0.0" width="174.5" height="24"/>
+                                                                            <fontDescription key="fontDescription" name="HelveticaNeue-Bold" family="Helvetica Neue" pointSize="20"/>
                                                                             <color key="textColor" red="0.45098039220000002" green="0.78039215689999997" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                                             <nil key="highlightedColor"/>
                                                                         </label>
-                                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="version 0" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gX5-vX-xBe">
-                                                                            <rect key="frame" x="186.5" y="20.5" width="116.5" height="20"/>
+                                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="version 0.1" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gX5-vX-xBe">
+                                                                            <rect key="frame" x="174.5" y="2" width="128.5" height="20"/>
                                                                             <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="17"/>
                                                                             <color key="textColor" red="0.23437002300000001" green="0.25768834350000003" blue="0.3199615777" alpha="0.599609375" colorSpace="custom" customColorSpace="sRGB"/>
                                                                             <nil key="highlightedColor"/>
                                                                         </label>
                                                                     </subviews>
                                                                 </stackView>
-                                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="This app was created by NutritionFacts.org, Christi Richards, Konstantin Khokhlov." textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Zgt-w4-qQw" customClass="ActiveLabel" customModule="ActiveLabel">
-                                                                    <rect key="frame" x="8" y="76" width="303" height="61"/>
+                                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="This app was created by: - NutritionFacts.org - Christi Richards - Konstantin Khokhlov" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Zgt-w4-qQw" customClass="ActiveLabel" customModule="ActiveLabel">
+                                                                    <rect key="frame" x="8" y="39" width="303" height="82"/>
+                                                                    <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="17"/>
+                                                                    <color key="textColor" red="0.23437002300000001" green="0.25768834350000003" blue="0.3199615777" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                                    <nil key="highlightedColor"/>
+                                                                </label>
+                                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="pUm-f4-zm1" customClass="ActiveLabel" customModule="ActiveLabel">
+                                                                    <rect key="frame" x="8" y="136" width="303" height="99.5"/>
+                                                                    <string key="text">The following open source libraries are used: RealmSwift, Charts, FSCalendar, SimpleAnimation, UICheckbox.Swift and ActiveLabel.</string>
+                                                                    <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="17"/>
+                                                                    <color key="textColor" red="0.23437002300000001" green="0.25768834350000003" blue="0.3199615777" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                                    <nil key="highlightedColor"/>
+                                                                </label>
+                                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Special thanks to the volunteer efforts of the creators of the previous app: Will Webb and Lauren Hacker." textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="DHv-ib-VpI" customClass="ActiveLabel" customModule="ActiveLabel">
+                                                                    <rect key="frame" x="8" y="250.5" width="303" height="59.5"/>
+                                                                    <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="17"/>
+                                                                    <color key="textColor" red="0.23437002300000001" green="0.25768834350000003" blue="0.3199615777" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                                    <nil key="highlightedColor"/>
+                                                                </label>
+                                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Designed by Sketch Elements." textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="wzG-Xf-IRb" customClass="ActiveLabel" customModule="ActiveLabel">
+                                                                    <rect key="frame" x="8" y="325" width="303" height="20"/>
                                                                     <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="17"/>
                                                                     <color key="textColor" red="0.23437002300000001" green="0.25768834350000003" blue="0.3199615777" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                                     <nil key="highlightedColor"/>
@@ -206,8 +225,15 @@
                                                             </subviews>
                                                             <constraints>
                                                                 <constraint firstAttribute="trailing" secondItem="Zgt-w4-qQw" secondAttribute="trailing" constant="8" id="6sY-qn-MrH"/>
+                                                                <constraint firstAttribute="trailing" secondItem="wzG-Xf-IRb" secondAttribute="trailing" constant="8" id="IAd-vL-oig"/>
                                                                 <constraint firstItem="Zgt-w4-qQw" firstAttribute="leading" secondItem="sPw-mc-JqX" secondAttribute="leading" constant="8" id="JIb-xp-M71"/>
+                                                                <constraint firstAttribute="trailing" secondItem="gGl-9e-5uD" secondAttribute="trailing" constant="8" id="MNw-Z2-AIf"/>
+                                                                <constraint firstItem="DHv-ib-VpI" firstAttribute="leading" secondItem="sPw-mc-JqX" secondAttribute="leading" constant="8" id="Sfa-NY-gbh"/>
+                                                                <constraint firstAttribute="trailing" secondItem="DHv-ib-VpI" secondAttribute="trailing" constant="8" id="T35-ab-bGj"/>
+                                                                <constraint firstItem="pUm-f4-zm1" firstAttribute="leading" secondItem="sPw-mc-JqX" secondAttribute="leading" constant="8" id="emi-Uy-8b4"/>
+                                                                <constraint firstItem="wzG-Xf-IRb" firstAttribute="leading" secondItem="sPw-mc-JqX" secondAttribute="leading" constant="8" id="slE-FZ-WpA"/>
                                                                 <constraint firstItem="gGl-9e-5uD" firstAttribute="leading" secondItem="sPw-mc-JqX" secondAttribute="leading" constant="8" id="szH-0S-cqM"/>
+                                                                <constraint firstAttribute="trailing" secondItem="pUm-f4-zm1" secondAttribute="trailing" constant="8" id="yqt-dg-zx3"/>
                                                             </constraints>
                                                         </stackView>
                                                     </subviews>
@@ -257,6 +283,7 @@
                         </connections>
                     </tableView>
                     <connections>
+                        <outlet property="designLabel" destination="wzG-Xf-IRb" id="XwE-98-UAw"/>
                         <outlet property="infoLabel" destination="Zgt-w4-qQw" id="iRX-Ni-zUa"/>
                         <outlet property="messageLabel" destination="dwQ-CS-gz3" id="nxY-XC-Wsx"/>
                     </connections>
