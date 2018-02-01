@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import StoreKit
 
 class ServingsViewController: UIViewController {
 
@@ -29,6 +30,7 @@ class ServingsViewController: UIViewController {
             countLabel.text = statesCountString
             if statesCount == Keys.countMaximum {
                 starImage.popIn()
+                SKStoreReviewController.requestReview()
             } else {
                 starImage.popOut()
             }
