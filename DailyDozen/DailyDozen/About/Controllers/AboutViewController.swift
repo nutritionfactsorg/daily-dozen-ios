@@ -73,7 +73,6 @@ class AboutViewController: UITableViewController {
         provide(link: LinksService.shared.aboutElements, for: Regex.elements, in: designLabel)
     }
 
-
     /// Provides a link for the current regex in the label.
     ///
     /// - Parameters:

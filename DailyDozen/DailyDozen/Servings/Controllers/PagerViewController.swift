@@ -49,6 +49,8 @@ class PagerViewController: UIViewController {
         }
     }
 
+    @IBOutlet private weak var backButton: UIButton!
+
     // MARK: - UIViewController
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -63,6 +65,9 @@ class PagerViewController: UIViewController {
     }
 
     // MARK: - Methods
+    /// Updates UI for the current date.
+    ///
+    /// - Parameter date: The current date.
     func updateDate(_ date: Date) {
         dateButton.setTitle(date.dateString(for: .long), for: .normal)
         datePicker.setDate(date, animated: false)
@@ -81,7 +86,14 @@ class PagerViewController: UIViewController {
     @IBAction private func dateChanged(_ sender: UIDatePicker) {
         dateButton.isHidden = false
         datePicker.isHidden = true
-        dateButton.setTitle(datePicker.date.dateString(for: .long), for: .normal)
+
+        if datePicker.date.isInCurrentDayWith(Date()) {
+            backButton.superview?.isHidden = true
+            dateButton.setTitle("Today", for: .normal)
+        } else {
+            backButton.superview?.isHidden = false
+            dateButton.setTitle(datePicker.date.dateString(for: .long), for: .normal)
+        }
 
         guard let viewController = childViewControllers.first as? ServingsViewController else { return }
         viewController.view.fadeOut().fadeIn()
@@ -97,7 +109,14 @@ class PagerViewController: UIViewController {
         guard let date = currentDate, date <= today else { return }
 
         datePicker.setDate(date, animated: false)
-        dateButton.setTitle(datePicker.date.dateString(for: .long), for: .normal)
+
+        if datePicker.date.isInCurrentDayWith(today) {
+            backButton.superview?.isHidden = true
+            dateButton.setTitle("Today", for: .normal)
+        } else {
+            backButton.superview?.isHidden = false
+            dateButton.setTitle(datePicker.date.dateString(for: .long), for: .normal)
+        }
 
         guard let viewController = childViewControllers.first as? ServingsViewController else { return }
 
@@ -108,5 +127,11 @@ class PagerViewController: UIViewController {
         }
 
         viewController.setViewModel(for: datePicker.date)
+    }
+
+    @IBAction private func backButtonPressed(_ sender: UIButton) {
+        updateDate(Date())
+        backButton.superview?.isHidden = true
+        dateButton.setTitle("Today", for: .normal)
     }
 }
