@@ -67,58 +67,29 @@ class AboutViewController: UITableViewController {
             }
         }
 
-        let siteType = ActiveType.custom(pattern: Regex.site)
-        infoLabel.enabledTypes.append(siteType)
+        provide(link: LinksService.shared.team, for: Regex.site, in: infoLabel)
+        provide(link: LinksService.shared.aboutChristi, for: Regex.christi, in: infoLabel)
+        provide(link: LinksService.shared.aboutConst, for: Regex.const, in: infoLabel)
+        provide(link: LinksService.shared.aboutElements, for: Regex.elements, in: designLabel)
+    }
 
-        infoLabel.customize { label in
-            label.customColor[siteType] = UIColor.greenColor
-            label.handleCustomTap(for: siteType) { _ in
-                UIApplication.shared
-                    .open(LinksService.shared.team,
-                          options: [:],
-                          completionHandler: nil)
-            }
-        }
 
-        let aboutChristi = ActiveType.custom(pattern: Regex.christi)
-        infoLabel.enabledTypes.append(aboutChristi)
+    /// Provides a link for the current regex in the label.
+    ///
+    /// - Parameters:
+    ///   - link: The link.
+    ///   - pattern: The regex.
+    ///   - label: The label.
+    private func provide(link: URL?, for pattern: String, in label: ActiveLabel) {
+        let about = ActiveType.custom(pattern: pattern)
+        label.enabledTypes.append(about)
 
-        if let christiLink = LinksService.shared.aboutChristi {
-            infoLabel.customize { label in
-                label.customColor[aboutChristi] = UIColor.greenColor
-                label.handleCustomTap(for: aboutChristi) { _ in
+        if let aboutLink = link {
+            label.customize { label in
+                label.customColor[about] = UIColor.greenColor
+                label.handleCustomTap(for: about) { _ in
                     UIApplication.shared
-                        .open(christiLink,
-                              options: [:],
-                              completionHandler: nil)
-                }
-            }
-        }
-
-        let aboutConst = ActiveType.custom(pattern: Regex.const)
-        infoLabel.enabledTypes.append(aboutConst)
-
-        if let constLink = LinksService.shared.aboutConst {
-            infoLabel.customize { label in
-                label.customColor[aboutConst] = UIColor.greenColor
-                label.handleCustomTap(for: aboutConst) { _ in
-                    UIApplication.shared
-                        .open(constLink,
-                              options: [:],
-                              completionHandler: nil)
-                }
-            }
-        }
-
-        let aboutElements = ActiveType.custom(pattern: Regex.elements)
-        designLabel.enabledTypes.append(aboutElements)
-
-        if let elementsLink = LinksService.shared.aboutElements {
-            designLabel.customize { label in
-                label.customColor[aboutElements] = UIColor.greenColor
-                label.handleCustomTap(for: aboutElements) { _ in
-                    UIApplication.shared
-                        .open(elementsLink,
+                        .open(aboutLink,
                               options: [:],
                               completionHandler: nil)
                 }
