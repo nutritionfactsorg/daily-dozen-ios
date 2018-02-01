@@ -31,6 +31,7 @@
 		CF6E6D351FB1B4FE00B177E7 /* Detail.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF6E6D341FB1B4FE00B177E7 /* Detail.swift */; };
 		CF6E6D391FB1B8E300B177E7 /* TextsProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF6E6D381FB1B8E300B177E7 /* TextsProvider.swift */; };
 		CF6E6D3C1FB1BEC400B177E7 /* DetailViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF6E6D3B1FB1BEC400B177E7 /* DetailViewModel.swift */; };
+		CF9051512022F71B00F4C1F2 /* dr_greger.png in Resources */ = {isa = PBXBuildFile; fileRef = CF9051502022F71B00F4C1F2 /* dr_greger.png */; };
 		CF987C281F9E157300D4893E /* Item.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF987C271F9E157300D4893E /* Item.swift */; };
 		CF9E03201FBD9FA80084BC88 /* ItemHistory.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CF9E031F1FBD9FA80084BC88 /* ItemHistory.storyboard */; };
 		CF9E03231FBD9FDE0084BC88 /* ItemHistoryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF9E03221FBD9FDE0084BC88 /* ItemHistoryViewController.swift */; };
@@ -92,6 +93,7 @@
 		CF6E6D341FB1B4FE00B177E7 /* Detail.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Detail.swift; sourceTree = "<group>"; };
 		CF6E6D381FB1B8E300B177E7 /* TextsProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextsProvider.swift; sourceTree = "<group>"; };
 		CF6E6D3B1FB1BEC400B177E7 /* DetailViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailViewModel.swift; sourceTree = "<group>"; };
+		CF9051502022F71B00F4C1F2 /* dr_greger.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = dr_greger.png; path = DailyDozen/App/Resources/Assets.xcassets/Images/dr_greger.imageset/dr_greger.png; sourceTree = SOURCE_ROOT; };
 		CF987C271F9E157300D4893E /* Item.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Item.swift; sourceTree = "<group>"; };
 		CF9E031F1FBD9FA80084BC88 /* ItemHistory.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = ItemHistory.storyboard; sourceTree = "<group>"; };
 		CF9E03221FBD9FDE0084BC88 /* ItemHistoryViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ItemHistoryViewController.swift; sourceTree = "<group>"; };
@@ -284,6 +286,14 @@
 				CF6E6D3B1FB1BEC400B177E7 /* DetailViewModel.swift */,
 			);
 			path = ViewModels;
+			sourceTree = "<group>";
+		};
+		CF90514F2022F01A00F4C1F2 /* Attachments */ = {
+			isa = PBXGroup;
+			children = (
+				CF9051502022F71B00F4C1F2 /* dr_greger.png */,
+			);
+			path = Attachments;
 			sourceTree = "<group>";
 		};
 		CF987C261F9E149000D4893E /* Models */ = {
@@ -514,6 +524,7 @@
 		CFE698511F974F1800CD7905 /* SupportingFiles */ = {
 			isa = PBXGroup;
 			children = (
+				CF90514F2022F01A00F4C1F2 /* Attachments */,
 				CFE6983B1F974B9700CD7905 /* AppDelegate.swift */,
 				CFE698471F974B9700CD7905 /* Info.plist */,
 			);
@@ -668,6 +679,7 @@
 				CFE698431F974B9700CD7905 /* Assets.xcassets in Resources */,
 				CF22F07F1FA8ACE000F25B70 /* Details.plist in Resources */,
 				CF64DF2C1FB5CD5100B4D124 /* TypesHeader.xib in Resources */,
+				CF9051512022F71B00F4C1F2 /* dr_greger.png in Resources */,
 				CFA9CDF21FBAF653000468CA /* VitaminsHeader.xib in Resources */,
 				CFA3E8F91FC58D460092199D /* ServingsHistory.storyboard in Resources */,
 				CF64DF271FB5BAC400B4D124 /* SizesHeader.xib in Resources */,
