@@ -108,6 +108,13 @@
                                                                         <constraint firstAttribute="width" constant="45" id="7Oe-pm-jgc"/>
                                                                     </constraints>
                                                                 </imageView>
+                                                                <button opaque="NO" contentMode="scaleAspectFit" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="UX8-vv-mKp">
+                                                                    <rect key="frame" x="61" y="64" width="28" height="28"/>
+                                                                    <state key="normal" image="ic_calendar"/>
+                                                                    <connections>
+                                                                        <action selector="calendarPressed:" destination="M2f-B0-7nZ" eventType="touchUpInside" id="Qyo-qf-d8I"/>
+                                                                    </connections>
+                                                                </button>
                                                                 <stackView opaque="NO" contentMode="scaleToFill" distribution="equalSpacing" alignment="center" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="zL5-Vp-jCr">
                                                                     <rect key="frame" x="61" y="12" width="76" height="21.5"/>
                                                                     <subviews>
@@ -131,7 +138,7 @@
                                                                     </subviews>
                                                                 </stackView>
                                                                 <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" semanticContentAttribute="forceRightToLeft" bounces="NO" scrollEnabled="NO" pagingEnabled="YES" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" bouncesZoom="NO" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="WgI-63-9dY">
-                                                                    <rect key="frame" x="176" y="56" width="175" height="40"/>
+                                                                    <rect key="frame" x="176" y="58" width="175" height="40"/>
                                                                     <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                                     <constraints>
                                                                         <constraint firstAttribute="width" constant="175" id="b4F-ac-RQS"/>
@@ -183,13 +190,31 @@
                                                                         </collectionViewCell>
                                                                     </cells>
                                                                 </collectionView>
-                                                                <button opaque="NO" contentMode="scaleAspectFit" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="UX8-vv-mKp">
-                                                                    <rect key="frame" x="61" y="64" width="28" height="28"/>
-                                                                    <state key="normal" image="ic_calendar"/>
-                                                                    <connections>
-                                                                        <action selector="calendarPressed:" destination="M2f-B0-7nZ" eventType="touchUpInside" id="Qyo-qf-d8I"/>
-                                                                    </connections>
-                                                                </button>
+                                                                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="bRk-oe-WWO" customClass="RoundedView" customModule="DailyDozen" customModuleProvider="target">
+                                                                    <rect key="frame" x="104" y="68" width="40" height="20"/>
+                                                                    <subviews>
+                                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="cW5-dD-Zy0">
+                                                                            <rect key="frame" x="0.0" y="0.0" width="40" height="20"/>
+                                                                            <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="15"/>
+                                                                            <color key="textColor" red="0.99999600649999998" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                                            <nil key="highlightedColor"/>
+                                                                        </label>
+                                                                    </subviews>
+                                                                    <color key="backgroundColor" red="0.45098039220000002" green="0.78039215689999997" blue="0.0" alpha="0.6309663955479452" colorSpace="custom" customColorSpace="sRGB"/>
+                                                                    <constraints>
+                                                                        <constraint firstAttribute="trailing" secondItem="cW5-dD-Zy0" secondAttribute="trailing" id="CF2-Np-Qix"/>
+                                                                        <constraint firstItem="cW5-dD-Zy0" firstAttribute="top" secondItem="bRk-oe-WWO" secondAttribute="top" id="GLg-yz-rCB"/>
+                                                                        <constraint firstItem="cW5-dD-Zy0" firstAttribute="leading" secondItem="bRk-oe-WWO" secondAttribute="leading" id="NOb-tx-l0c"/>
+                                                                        <constraint firstAttribute="bottom" secondItem="cW5-dD-Zy0" secondAttribute="bottom" id="Pkq-OM-hBI"/>
+                                                                        <constraint firstAttribute="height" constant="20" id="fYs-wI-Ojq"/>
+                                                                        <constraint firstAttribute="width" constant="40" id="xYI-kv-gE6"/>
+                                                                    </constraints>
+                                                                    <userDefinedRuntimeAttributes>
+                                                                        <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                                                            <real key="value" value="3"/>
+                                                                        </userDefinedRuntimeAttribute>
+                                                                    </userDefinedRuntimeAttributes>
+                                                                </view>
                                                             </subviews>
                                                             <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                             <constraints>
@@ -197,11 +222,13 @@
                                                                 <constraint firstItem="zL5-Vp-jCr" firstAttribute="leading" secondItem="IS4-2B-57z" secondAttribute="trailing" constant="8" id="FlL-MS-Apl"/>
                                                                 <constraint firstAttribute="bottom" secondItem="UX8-vv-mKp" secondAttribute="bottom" constant="12" id="OwT-XJ-sVp"/>
                                                                 <constraint firstAttribute="trailing" secondItem="WgI-63-9dY" secondAttribute="trailing" constant="8" id="SOR-dY-t7E"/>
+                                                                <constraint firstItem="bRk-oe-WWO" firstAttribute="centerY" secondItem="UX8-vv-mKp" secondAttribute="centerY" id="VC5-Ds-gLz"/>
                                                                 <constraint firstItem="IS4-2B-57z" firstAttribute="top" secondItem="xJ4-yh-UEP" secondAttribute="top" constant="8" id="Vtb-Sn-ylS"/>
-                                                                <constraint firstAttribute="bottom" secondItem="WgI-63-9dY" secondAttribute="bottom" constant="8" id="Ydf-mT-p5Q"/>
+                                                                <constraint firstItem="WgI-63-9dY" firstAttribute="centerY" secondItem="UX8-vv-mKp" secondAttribute="centerY" id="ae4-ND-LPc"/>
                                                                 <constraint firstItem="zL5-Vp-jCr" firstAttribute="top" secondItem="xJ4-yh-UEP" secondAttribute="top" constant="12" id="n3E-r7-eC9"/>
                                                                 <constraint firstItem="IS4-2B-57z" firstAttribute="leading" secondItem="xJ4-yh-UEP" secondAttribute="leading" constant="8" id="pZW-Db-KOy"/>
                                                                 <constraint firstItem="UX8-vv-mKp" firstAttribute="leading" secondItem="IS4-2B-57z" secondAttribute="trailing" constant="8" id="y1h-Nw-RHc"/>
+                                                                <constraint firstItem="bRk-oe-WWO" firstAttribute="leading" secondItem="UX8-vv-mKp" secondAttribute="trailing" constant="15" id="zcD-Lf-EMm"/>
                                                             </constraints>
                                                             <userDefinedRuntimeAttributes>
                                                                 <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
@@ -236,6 +263,7 @@
                                                     <outlet property="itemImage" destination="IS4-2B-57z" id="vlA-b4-uNb"/>
                                                     <outlet property="itemLabel" destination="qWl-8e-sO6" id="oVh-98-LtU"/>
                                                     <outlet property="stateCollection" destination="WgI-63-9dY" id="BEP-II-uA7"/>
+                                                    <outlet property="streakLabel" destination="cW5-dD-Zy0" id="Uk1-u7-y36"/>
                                                 </connections>
                                             </tableViewCell>
                                         </prototypes>
