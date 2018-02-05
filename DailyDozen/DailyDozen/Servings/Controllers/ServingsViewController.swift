@@ -157,6 +157,8 @@ extension ServingsViewController: UICollectionViewDelegate {
 
         realm.updateStreak(streak, with: id)
 
+        tableView.reloadData()
+
         guard !dataProvider.viewModel.itemInfo(for: collectionView.tag).isVitamin else { return }
 
         if newState {
