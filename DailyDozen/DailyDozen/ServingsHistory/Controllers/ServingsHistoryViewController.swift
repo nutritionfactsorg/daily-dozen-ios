@@ -114,6 +114,7 @@ class ServingsHistoryViewController: UIViewController {
         guard results.count > 0 else {
             controlPanel.isHidden = true
             scaleControl.isEnabled = false
+            controlPanel.superview?.isHidden = true
             return
         }
 
