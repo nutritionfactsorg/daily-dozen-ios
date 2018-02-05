@@ -13,11 +13,13 @@ class Item: Object {
 
     @objc dynamic var name = ""
     @objc dynamic var id = UUID().uuidString
+    @objc dynamic var streak = 0
     let states = List<Bool>()
 
-    convenience init(name: String, states: [Bool]) {
+    convenience init(name: String, states: [Bool], streak: Int = 0) {
         self.init()
         self.name = name
+        self.streak = streak
         self.states.append(objectsIn: states)
     }
 

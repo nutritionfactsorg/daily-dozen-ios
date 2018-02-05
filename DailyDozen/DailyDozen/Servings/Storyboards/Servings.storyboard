@@ -191,10 +191,10 @@
                                                                     </cells>
                                                                 </collectionView>
                                                                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="bRk-oe-WWO" customClass="RoundedView" customModule="DailyDozen" customModuleProvider="target">
-                                                                    <rect key="frame" x="104" y="68" width="40" height="20"/>
+                                                                    <rect key="frame" x="104" y="68" width="61.5" height="20"/>
                                                                     <subviews>
-                                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="cW5-dD-Zy0">
-                                                                            <rect key="frame" x="0.0" y="0.0" width="40" height="20"/>
+                                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="100 days" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="cW5-dD-Zy0">
+                                                                            <rect key="frame" x="0.0" y="0.0" width="61.5" height="20"/>
                                                                             <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="15"/>
                                                                             <color key="textColor" red="0.99999600649999998" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                                             <nil key="highlightedColor"/>
@@ -202,12 +202,11 @@
                                                                     </subviews>
                                                                     <color key="backgroundColor" red="0.45098039220000002" green="0.78039215689999997" blue="0.0" alpha="0.6309663955479452" colorSpace="custom" customColorSpace="sRGB"/>
                                                                     <constraints>
-                                                                        <constraint firstAttribute="trailing" secondItem="cW5-dD-Zy0" secondAttribute="trailing" id="CF2-Np-Qix"/>
-                                                                        <constraint firstItem="cW5-dD-Zy0" firstAttribute="top" secondItem="bRk-oe-WWO" secondAttribute="top" id="GLg-yz-rCB"/>
-                                                                        <constraint firstItem="cW5-dD-Zy0" firstAttribute="leading" secondItem="bRk-oe-WWO" secondAttribute="leading" id="NOb-tx-l0c"/>
-                                                                        <constraint firstAttribute="bottom" secondItem="cW5-dD-Zy0" secondAttribute="bottom" id="Pkq-OM-hBI"/>
+                                                                        <constraint firstItem="cW5-dD-Zy0" firstAttribute="top" secondItem="bRk-oe-WWO" secondAttribute="top" id="byt-Rw-zCX"/>
+                                                                        <constraint firstAttribute="trailing" secondItem="cW5-dD-Zy0" secondAttribute="trailing" id="czz-cY-Jnq"/>
                                                                         <constraint firstAttribute="height" constant="20" id="fYs-wI-Ojq"/>
-                                                                        <constraint firstAttribute="width" constant="40" id="xYI-kv-gE6"/>
+                                                                        <constraint firstAttribute="bottom" secondItem="cW5-dD-Zy0" secondAttribute="bottom" id="kLN-0h-ks4"/>
+                                                                        <constraint firstItem="cW5-dD-Zy0" firstAttribute="leading" secondItem="bRk-oe-WWO" secondAttribute="leading" id="u6s-yY-if7"/>
                                                                     </constraints>
                                                                     <userDefinedRuntimeAttributes>
                                                                         <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">

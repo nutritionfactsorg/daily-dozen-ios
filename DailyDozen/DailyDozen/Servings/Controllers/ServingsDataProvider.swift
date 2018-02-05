@@ -45,7 +45,8 @@ class ServingsDataProvider: NSObject, UITableViewDataSource {
         cell.configure(
             with: viewModel.itemInfo(for: index).name,
             tag: index,
-            imageName: viewModel.imageName(for: index))
+            imageName: viewModel.imageName(for: index),
+            streak: viewModel.itemStreak(for: index))
 
         return cell
     }

@@ -18,6 +18,11 @@ class DozeViewModel {
         return doze.items.count
     }
 
+    /// Returns a doze date.
+    var dozeDate: Date {
+        return doze.date
+    }
+
     // MARK: - Inits
     init(doze: Doze) {
         self.doze = doze
@@ -31,6 +36,14 @@ class DozeViewModel {
     func itemInfo(for index: Int) -> (name: String, isVitamin: Bool) {
         let name = doze.items[index].name
         return (name, name.contains("Vitamin"))
+    }
+
+    /// Returns an item streak count for the current index.
+    ///
+    /// - Parameter index: The current index.
+    /// - Returns: The streak count.
+    func itemStreak(for index: Int) -> Int {
+        return doze.items[index].streak
     }
 
     /// Returns a url for the current item name.

@@ -57,6 +57,17 @@ class RealmProvider {
         }
     }
 
+    func updateStreak(_ streak: Int, with id: String) {
+        saveDoze()
+        do {
+            try realm.write {
+                realm.create(Item.self, value: ["id": id, "streak": streak], update: true)
+            }
+        } catch {
+            print(error.localizedDescription)
+        }
+    }
+
     /// Saves the unsaved doze.
     private func saveDoze() {
         if let doze = unsavedDoze {

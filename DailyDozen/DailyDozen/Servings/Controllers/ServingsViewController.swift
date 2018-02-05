@@ -147,6 +147,16 @@ extension ServingsViewController: UICollectionViewDelegate {
         let id = dataProvider.viewModel.itemID(for: collectionView.tag)
         realm.saveStates(states, with: id)
 
+        var streak = states.count == states.filter { $0 }.count ? 1 : 0
+
+        if streak > 0 {
+            streak += realm
+                .getDoze(for: dataProvider.viewModel.dozeDate.adding(.day, value: -1)!)
+                .items[collectionView.tag].streak
+        }
+
+        realm.updateStreak(streak, with: id)
+
         guard !dataProvider.viewModel.itemInfo(for: collectionView.tag).isVitamin else { return }
 
         if newState {
