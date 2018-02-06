@@ -34,17 +34,17 @@
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="eeZ-HA-3u6" customClass="RoundedView" customModule="DailyDozen" customModuleProvider="target">
                                 <rect key="frame" x="0.0" y="20" width="375" height="80"/>
                                 <subviews>
-                                    <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="nutrition_facts_logo" translatesAutoresizingMaskIntoConstraints="NO" id="8Vz-y6-jKk">
-                                        <rect key="frame" x="20" y="10" width="335" height="60"/>
+                                    <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="logo" translatesAutoresizingMaskIntoConstraints="NO" id="8Vz-y6-jKk">
+                                        <rect key="frame" x="0.0" y="0.0" width="375" height="80"/>
                                     </imageView>
                                 </subviews>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="80" id="KMv-az-ssi"/>
-                                    <constraint firstAttribute="bottom" secondItem="8Vz-y6-jKk" secondAttribute="bottom" constant="10" id="LCi-Pa-cmR"/>
-                                    <constraint firstAttribute="trailing" secondItem="8Vz-y6-jKk" secondAttribute="trailing" constant="20" id="dX5-tM-iso"/>
-                                    <constraint firstItem="8Vz-y6-jKk" firstAttribute="top" secondItem="eeZ-HA-3u6" secondAttribute="top" constant="10" id="mGA-Os-bni"/>
-                                    <constraint firstItem="8Vz-y6-jKk" firstAttribute="leading" secondItem="eeZ-HA-3u6" secondAttribute="leading" constant="20" id="mVL-7U-j0k"/>
+                                    <constraint firstAttribute="bottom" secondItem="8Vz-y6-jKk" secondAttribute="bottom" id="LCi-Pa-cmR"/>
+                                    <constraint firstAttribute="trailing" secondItem="8Vz-y6-jKk" secondAttribute="trailing" id="dX5-tM-iso"/>
+                                    <constraint firstItem="8Vz-y6-jKk" firstAttribute="top" secondItem="eeZ-HA-3u6" secondAttribute="top" id="mGA-Os-bni"/>
+                                    <constraint firstItem="8Vz-y6-jKk" firstAttribute="leading" secondItem="eeZ-HA-3u6" secondAttribute="leading" id="mVL-7U-j0k"/>
                                 </constraints>
                                 <userDefinedRuntimeAttributes>
                                     <userDefinedRuntimeAttribute type="color" keyPath="shadowColor">
@@ -300,6 +300,6 @@
     </scenes>
     <resources>
         <image name="dr_greger" width="500" height="500"/>
-        <image name="nutrition_facts_logo" width="930" height="156"/>
+        <image name="logo" width="2666" height="695"/>
     </resources>
 </document>
