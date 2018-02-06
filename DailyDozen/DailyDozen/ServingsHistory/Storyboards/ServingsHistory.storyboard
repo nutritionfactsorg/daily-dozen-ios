@@ -49,7 +49,7 @@
                                                                     <segment title="Month"/>
                                                                     <segment title="Year"/>
                                                                 </segments>
-                                                                <color key="tintColor" red="0.45098039220000002" green="0.78039215689999997" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                                <color key="tintColor" red="0.49803921569999998" green="0.75294117650000003" blue="0.29803921570000003" alpha="1" colorSpace="calibratedRGB"/>
                                                                 <connections>
                                                                     <action selector="timeScaleChanged:" destination="W8v-3t-yDA" eventType="valueChanged" id="qbO-e3-Cs9"/>
                                                                 </connections>
