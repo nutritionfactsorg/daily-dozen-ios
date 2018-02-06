@@ -39,7 +39,7 @@
                                                 <size key="shadowOffset" width="0.0" height="1"/>
                                             </label>
                                         </subviews>
-                                        <color key="backgroundColor" red="0.45098039220000002" green="0.78039215689999997" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <color key="backgroundColor" red="0.49803921569999998" green="0.75294117650000003" blue="0.29803921570000003" alpha="1" colorSpace="calibratedRGB"/>
                                         <constraints>
                                             <constraint firstItem="sLd-Kq-bLv" firstAttribute="leading" secondItem="eLp-p5-Aq7" secondAttribute="leading" constant="8" id="3Xd-dh-5lh"/>
                                             <constraint firstItem="sLd-Kq-bLv" firstAttribute="centerY" secondItem="eLp-p5-Aq7" secondAttribute="centerY" id="GSR-mq-Eor"/>
@@ -62,10 +62,10 @@
                                                 <integer key="value" value="0"/>
                                             </userDefinedRuntimeAttribute>
                                             <userDefinedRuntimeAttribute type="color" keyPath="weekdayTextColor">
-                                                <color key="value" red="0.45098039220000002" green="0.78039215689999997" blue="0.0" alpha="0.69512521404109584" colorSpace="custom" customColorSpace="sRGB"/>
+                                                <color key="value" red="0.61308070106486101" green="0.84998680099012891" blue="0.40801264397466824" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                             </userDefinedRuntimeAttribute>
                                             <userDefinedRuntimeAttribute type="color" keyPath="headerTitleColor">
-                                                <color key="value" red="0.45098039220000002" green="0.78039215689999997" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                <color key="value" red="0.49803921569999998" green="0.75294117650000003" blue="0.29803921570000003" alpha="1" colorSpace="calibratedRGB"/>
                                             </userDefinedRuntimeAttribute>
                                             <userDefinedRuntimeAttribute type="color" keyPath="titleDefaultColor">
                                                 <color key="value" red="0.23437002300000001" green="0.25768834350000003" blue="0.3199615777" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -135,7 +135,7 @@
                                                 </subviews>
                                             </stackView>
                                         </subviews>
-                                        <color key="backgroundColor" red="0.45098039220000002" green="0.78039215689999997" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <color key="backgroundColor" red="0.49803921569999998" green="0.75294117650000003" blue="0.29803921570000003" alpha="1" colorSpace="calibratedRGB"/>
                                         <constraints>
                                             <constraint firstItem="LB0-BD-YL6" firstAttribute="centerX" secondItem="adv-QC-FQb" secondAttribute="centerX" id="ADI-5g-fSS"/>
                                             <constraint firstItem="LB0-BD-YL6" firstAttribute="centerY" secondItem="adv-QC-FQb" secondAttribute="centerY" id="jqO-NI-9w2"/>
