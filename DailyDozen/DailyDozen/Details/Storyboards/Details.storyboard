@@ -101,7 +101,7 @@
                                                             </constraints>
                                                             <fontDescription key="fontDescription" name="HelveticaNeue-Medium" family="Helvetica Neue" pointSize="17"/>
                                                             <state key="normal" title="VIDEOS">
-                                                                <color key="titleColor" red="0.45098039220000002" green="0.78039215689999997" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                                <color key="titleColor" red="0.49803921569999998" green="0.75294117650000003" blue="0.29803921570000003" alpha="1" colorSpace="calibratedRGB"/>
                                                             </state>
                                                             <connections>
                                                                 <action selector="linkButtonPressed:" destination="Hsh-Us-G4Y" eventType="touchUpInside" id="m5f-6J-yNo"/>

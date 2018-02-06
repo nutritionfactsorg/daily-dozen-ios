@@ -28,7 +28,7 @@
                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Serving Sizes" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="YVI-sV-TDX">
                             <rect key="frame" x="0.0" y="0.0" width="128.5" height="32.5"/>
                             <fontDescription key="fontDescription" name="HelveticaNeue-Bold" family="Helvetica Neue" pointSize="20"/>
-                            <color key="textColor" red="0.45098039220000002" green="0.78039215689999997" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            <color key="textColor" red="0.49803921569999998" green="0.75294117650000003" blue="0.29803921570000003" alpha="1" colorSpace="calibratedRGB"/>
                             <nil key="highlightedColor"/>
                         </label>
                         <stackView opaque="NO" contentMode="scaleToFill" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="QeT-HX-yAV">
@@ -42,7 +42,7 @@
                                 </label>
                                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="M75-CQ-NVP">
                                     <rect key="frame" x="54.5" y="0.0" width="80" height="32.5"/>
-                                    <color key="backgroundColor" red="0.45098039220000002" green="0.78039215689999997" blue="0.0" alpha="0.5" colorSpace="custom" customColorSpace="sRGB"/>
+                                    <color key="backgroundColor" red="0.68235294120000001" green="0.84313725490000002" blue="0.5568627451" alpha="1" colorSpace="calibratedRGB"/>
                                     <constraints>
                                         <constraint firstAttribute="width" constant="80" id="IEc-AP-IlJ"/>
                                     </constraints>
