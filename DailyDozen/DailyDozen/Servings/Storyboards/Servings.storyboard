@@ -11,7 +11,7 @@
     </dependencies>
     <customFonts key="customFonts">
         <array key="Helvetica.ttc">
-            <string>Helvetica</string>
+            <string>Helvetica-Bold</string>
         </array>
         <array key="HelveticaNeue.ttc">
             <string>HelveticaNeue</string>
@@ -31,9 +31,9 @@
                                 <rect key="frame" x="0.0" y="0.0" width="375" height="40"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Servings" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="1HM-mL-ZV9">
-                                        <rect key="frame" x="8" y="10" width="67" height="20"/>
-                                        <fontDescription key="fontDescription" name="Helvetica" family="Helvetica" pointSize="17"/>
-                                        <color key="textColor" red="0.49803921569999998" green="0.75294117650000003" blue="0.29803921570000003" alpha="1" colorSpace="calibratedRGB"/>
+                                        <rect key="frame" x="8" y="10" width="72" height="20"/>
+                                        <fontDescription key="fontDescription" name="Helvetica-Bold" family="Helvetica" pointSize="17"/>
+                                        <color key="textColor" red="0.078431372550000003" green="0.078431372550000003" blue="0.078431372550000003" alpha="1" colorSpace="calibratedRGB"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="C1m-C0-IqZ">
@@ -50,7 +50,7 @@
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="0 out of 24" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ERa-UT-Rni">
                                         <rect key="frame" x="240.5" y="10" width="82" height="20"/>
                                         <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="17"/>
-                                        <color key="textColor" red="0.49803921569999998" green="0.75294117650000003" blue="0.29803921570000003" alpha="1" colorSpace="calibratedRGB"/>
+                                        <color key="textColor" red="0.30196078431372547" green="0.30196078431372547" blue="0.30196078431372547" alpha="1" colorSpace="calibratedRGB"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <imageView hidden="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="ic_star" translatesAutoresizingMaskIntoConstraints="NO" id="UHf-fX-jsj">
@@ -121,7 +121,7 @@
                                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="qWl-8e-sO6">
                                                                             <rect key="frame" x="0.0" y="0.0" width="46" height="21.5"/>
                                                                             <fontDescription key="fontDescription" name="HelveticaNeue-Medium" family="Helvetica Neue" pointSize="18"/>
-                                                                            <color key="textColor" red="0.23437002300000001" green="0.25768834350000003" blue="0.3199615777" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                                            <color key="textColor" white="0.15913340779999999" alpha="1" colorSpace="calibratedWhite"/>
                                                                             <nil key="highlightedColor"/>
                                                                         </label>
                                                                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="infoDark" showsTouchWhenHighlighted="YES" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="YC8-Tt-A17">
@@ -200,7 +200,7 @@
                                                                             <nil key="highlightedColor"/>
                                                                         </label>
                                                                     </subviews>
-                                                                    <color key="backgroundColor" red="0.68235294117647061" green="0.84313725490196079" blue="0.55686274509803924" alpha="1" colorSpace="calibratedRGB"/>
+                                                                    <color key="backgroundColor" red="0.46045607328414917" green="0.40152227878570557" blue="0.27918004989624023" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                                     <constraints>
                                                                         <constraint firstItem="cW5-dD-Zy0" firstAttribute="top" secondItem="bRk-oe-WWO" secondAttribute="top" id="byt-Rw-zCX"/>
                                                                         <constraint firstAttribute="trailing" secondItem="cW5-dD-Zy0" secondAttribute="trailing" constant="2" id="czz-cY-Jnq"/>
