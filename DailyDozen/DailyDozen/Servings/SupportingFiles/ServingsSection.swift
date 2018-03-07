@@ -32,6 +32,7 @@ enum ServingsSection: Int {
             return 50
         }
     }
+
     var footerHeight: CGFloat {
         return 0.1
     }

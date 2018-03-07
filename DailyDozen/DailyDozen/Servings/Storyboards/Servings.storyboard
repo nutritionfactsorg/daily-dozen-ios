@@ -138,10 +138,10 @@
                                                                     </subviews>
                                                                 </stackView>
                                                                 <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" semanticContentAttribute="forceRightToLeft" bounces="NO" scrollEnabled="NO" pagingEnabled="YES" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" bouncesZoom="NO" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="WgI-63-9dY">
-                                                                    <rect key="frame" x="176" y="38" width="175" height="40"/>
+                                                                    <rect key="frame" x="186" y="38" width="165" height="40"/>
                                                                     <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                                     <constraints>
-                                                                        <constraint firstAttribute="width" constant="175" id="b4F-ac-RQS"/>
+                                                                        <constraint firstAttribute="width" constant="165" id="b4F-ac-RQS"/>
                                                                         <constraint firstAttribute="height" constant="40" id="xxu-yz-FWn"/>
                                                                     </constraints>
                                                                     <collectionViewFlowLayout key="collectionViewLayout" scrollDirection="horizontal" minimumLineSpacing="10" minimumInteritemSpacing="10" id="Mcj-WB-DlH">
@@ -191,10 +191,10 @@
                                                                     </cells>
                                                                 </collectionView>
                                                                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="bRk-oe-WWO" customClass="RoundedView" customModule="DailyDozen" customModuleProvider="target">
-                                                                    <rect key="frame" x="104" y="48" width="65.5" height="20"/>
+                                                                    <rect key="frame" x="104" y="45.5" width="77.5" height="25"/>
                                                                     <subviews>
                                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="100 days" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="cW5-dD-Zy0">
-                                                                            <rect key="frame" x="2" y="0.0" width="61.5" height="20"/>
+                                                                            <rect key="frame" x="8" y="4" width="61.5" height="17"/>
                                                                             <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="15"/>
                                                                             <color key="textColor" red="0.99999600649999998" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                                             <nil key="highlightedColor"/>
@@ -202,11 +202,11 @@
                                                                     </subviews>
                                                                     <color key="backgroundColor" red="0.46045607328414917" green="0.40152227878570557" blue="0.27918004989624023" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                                     <constraints>
-                                                                        <constraint firstItem="cW5-dD-Zy0" firstAttribute="top" secondItem="bRk-oe-WWO" secondAttribute="top" id="byt-Rw-zCX"/>
-                                                                        <constraint firstAttribute="trailing" secondItem="cW5-dD-Zy0" secondAttribute="trailing" constant="2" id="czz-cY-Jnq"/>
-                                                                        <constraint firstAttribute="height" constant="20" id="fYs-wI-Ojq"/>
-                                                                        <constraint firstAttribute="bottom" secondItem="cW5-dD-Zy0" secondAttribute="bottom" id="kLN-0h-ks4"/>
-                                                                        <constraint firstItem="cW5-dD-Zy0" firstAttribute="leading" secondItem="bRk-oe-WWO" secondAttribute="leading" constant="2" id="u6s-yY-if7"/>
+                                                                        <constraint firstItem="cW5-dD-Zy0" firstAttribute="top" secondItem="bRk-oe-WWO" secondAttribute="top" constant="4" id="byt-Rw-zCX"/>
+                                                                        <constraint firstAttribute="trailing" secondItem="cW5-dD-Zy0" secondAttribute="trailing" constant="8" id="czz-cY-Jnq"/>
+                                                                        <constraint firstAttribute="height" constant="25" id="fYs-wI-Ojq"/>
+                                                                        <constraint firstAttribute="bottom" secondItem="cW5-dD-Zy0" secondAttribute="bottom" constant="4" id="kLN-0h-ks4"/>
+                                                                        <constraint firstItem="cW5-dD-Zy0" firstAttribute="leading" secondItem="bRk-oe-WWO" secondAttribute="leading" constant="8" id="u6s-yY-if7"/>
                                                                     </constraints>
                                                                     <userDefinedRuntimeAttributes>
                                                                         <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
