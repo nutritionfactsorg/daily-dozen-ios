@@ -21,7 +21,7 @@ enum ServingsSection: Int {
     }
 
     var rowHeight: CGFloat {
-        return 120
+        return 100
     }
 
     var headerHeight: CGFloat {
