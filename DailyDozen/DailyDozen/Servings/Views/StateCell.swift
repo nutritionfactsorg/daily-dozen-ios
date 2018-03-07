@@ -20,6 +20,6 @@ class StateCell: UICollectionViewCell {
     /// - Parameter state: The current state.
     func configure(with state: Bool) {
         checkbox.isSelected = state
-        checkbox.layer.borderColor = state ? UIColor.greenColor.cgColor : UIColor.lightGreenColor.cgColor
+        checkbox.layer.borderColor = state ? UIColor.greenColor.cgColor : UIColor.lightGrayColor.cgColor
     }
 }

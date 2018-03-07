@@ -166,7 +166,7 @@
                                                                                         </state>
                                                                                         <userDefinedRuntimeAttributes>
                                                                                             <userDefinedRuntimeAttribute type="color" keyPath="borderColor">
-                                                                                                <color key="value" red="0.68235294120000001" green="0.84313725490000002" blue="0.5568627451" alpha="1" colorSpace="calibratedRGB"/>
+                                                                                                <color key="value" white="0.8684082031" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                                                             </userDefinedRuntimeAttribute>
                                                                                             <userDefinedRuntimeAttribute type="number" keyPath="borderWidth">
                                                                                                 <real key="value" value="5"/>
