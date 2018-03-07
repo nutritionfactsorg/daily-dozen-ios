@@ -63,6 +63,10 @@ class MainViewController: UISplitViewController {
             }
         }
     }
+
+    override var preferredStatusBarStyle: UIStatusBarStyle {
+        return UIStatusBarStyle.lightContent
+    }
 }
 
 extension MainViewController: UNUserNotificationCenterDelegate {
