@@ -62,13 +62,16 @@
                                                 <integer key="value" value="0"/>
                                             </userDefinedRuntimeAttribute>
                                             <userDefinedRuntimeAttribute type="color" keyPath="weekdayTextColor">
-                                                <color key="value" red="0.61308070106486101" green="0.84998680099012891" blue="0.40801264397466824" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                <color key="value" white="0.15913340779999999" alpha="1" colorSpace="calibratedWhite"/>
                                             </userDefinedRuntimeAttribute>
                                             <userDefinedRuntimeAttribute type="color" keyPath="headerTitleColor">
-                                                <color key="value" red="0.49803921569999998" green="0.75294117650000003" blue="0.29803921570000003" alpha="1" colorSpace="calibratedRGB"/>
+                                                <color key="value" white="0.15913340779999999" alpha="1" colorSpace="calibratedWhite"/>
                                             </userDefinedRuntimeAttribute>
                                             <userDefinedRuntimeAttribute type="color" keyPath="titleDefaultColor">
                                                 <color key="value" red="0.23437002300000001" green="0.25768834350000003" blue="0.3199615777" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                            </userDefinedRuntimeAttribute>
+                                            <userDefinedRuntimeAttribute type="color" keyPath="todayColor">
+                                                <color key="value" red="0.77647058823529413" green="0.42352941176470588" blue="0.42352941176470588" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                             </userDefinedRuntimeAttribute>
                                         </userDefinedRuntimeAttributes>
                                     </view>
@@ -110,7 +113,7 @@
                                                         <subviews>
                                                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="ojq-88-gmN">
                                                                 <rect key="frame" x="0.0" y="5" width="10" height="10"/>
-                                                                <color key="backgroundColor" red="0.0" green="0.97680455450000003" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                                <color key="backgroundColor" red="0.92156862745098034" green="0.75686274509803919" blue="0.25098039215686274" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                                 <constraints>
                                                                     <constraint firstAttribute="height" constant="10" id="mEh-3z-9Y0"/>
                                                                     <constraint firstAttribute="width" constant="10" id="xW3-Z1-ZnH"/>

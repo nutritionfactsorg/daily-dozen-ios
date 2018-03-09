@@ -44,7 +44,7 @@ class DateCell: FSCalendarCell {
     ///   - maximum: The maximum of states.
     func configure(for count: Int, maximum: Int) {
         if count == maximum {
-            borderView.backgroundColor = UIColor.green
+            borderView.backgroundColor = UIColor.yellowColor
         } else if count > 0 {
             borderView.backgroundColor = UIColor.yellow
         } else {
