@@ -30,11 +30,13 @@
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Enable Daily Reminder" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="9Ur-LB-Cpk">
                                         <rect key="frame" x="20" y="23" width="216" height="24"/>
                                         <fontDescription key="fontDescription" name="HelveticaNeue-Bold" family="Helvetica Neue" pointSize="20"/>
-                                        <color key="textColor" red="0.49803921569999998" green="0.75294117650000003" blue="0.29803921570000003" alpha="1" colorSpace="calibratedRGB"/>
+                                        <color key="textColor" white="0.15913340779999999" alpha="1" colorSpace="calibratedWhite"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" on="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Rdk-VX-K3e">
                                         <rect key="frame" x="306" y="20" width="51" height="31"/>
+                                        <color key="onTintColor" white="0.15913340779999999" alpha="1" colorSpace="calibratedWhite"/>
+                                        <color key="thumbTintColor" white="0.8684082031" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <connections>
                                             <action selector="reminderSwithed:" destination="qs7-Q9-0o6" eventType="valueChanged" id="lcX-LK-jtW"/>
                                         </connections>
@@ -98,6 +100,8 @@
                                                     </label>
                                                     <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" on="YES" translatesAutoresizingMaskIntoConstraints="NO" id="wQY-iS-zv2">
                                                         <rect key="frame" x="37" y="27" width="51" height="31"/>
+                                                        <color key="onTintColor" white="0.15913340779999999" alpha="1" colorSpace="calibratedWhite"/>
+                                                        <color key="thumbTintColor" white="0.8684082031" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                     </switch>
                                                 </subviews>
                                             </stackView>

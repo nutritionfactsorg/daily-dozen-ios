@@ -33,6 +33,4 @@ extension UIColor {
     static var darkBlueColor: UIColor {
         return UIColor(red: 60/255, green: 66/255, blue: 82/255, alpha: 1)
     }
-
-
 }
