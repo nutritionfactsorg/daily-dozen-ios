@@ -14,7 +14,7 @@ Dr. Greger’s Daily Dozen details the healthiest foods and how many servings of
 Daily Dozen on the App Store
 ----------------------------
 
-<a href="https://play.google.com/store/apps/details?id=org.nutritionfacts.dailydozen" alt="Download from the App Store" target="_blank"><img src="https://s3.amazonaws.com/nutritionfactsorg/github/app-store.png?v=1" width="200"></a>
+<a href="https://itunes.apple.com/us/app/dr.-gregers-daily-dozen/id1060700802" alt="Download from the App Store" target="_blank"><img src="https://s3.amazonaws.com/nutritionfactsorg/github/app-store.png?v=1" width="200"></a>
 
 Contribute
 ----------
@@ -35,8 +35,8 @@ The Daily Dozen iOS App is licensed under the GPLv3
 
 Contributors
 ------------
-
-* [Will Webb][innerfish] (Maintainer)
+* [Konstantin Khokhlov] [justaninja]
+* [Will Webb][innerfish]
 * [Christi Richards][christirichards]
 * [Lauren Hacker][laurenhacker]
 
@@ -48,6 +48,15 @@ Contributors
 
 Updates
 -------
+
+###2.0.0 (App Store)
+- Brand new design
+- Daily Dozen tracking now persists over multiple days
+- Visualize your progress over time with our new Charts integration
+- Enable a daily reminder with a custom time setting in the Daily Reminder Settings
+- Backup your data to your files
+- Added additional links in the main menu including The Daily Dozen Cookbook
+- Updated About information in the main menu
 
 ###1.0.1 - 1.0.2 (App Store)
 - Misspelling fix
@@ -61,3 +70,4 @@ Updates
 [book]: http://nutritionfacts.org/book "How Not to Die"
 [christirichards]: http://github.com/christirichards "Christi Richards on GitHub"
 [laurenhacker]: http://github.com/lahacker "Lauren Hacker on Github"
+[justaninja]: https://github.com/justaninja "Konstantin Khokhlov on Github"
