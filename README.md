@@ -35,7 +35,7 @@ The Daily Dozen iOS App is licensed under the GPLv3
 
 Contributors
 ------------
-* [Konstantin Khokhlov] [justaninja]
+* [Konstantin Khokhlov][justaninja]
 * [Will Webb][innerfish]
 * [Christi Richards][christirichards]
 * [Lauren Hacker][laurenhacker]
