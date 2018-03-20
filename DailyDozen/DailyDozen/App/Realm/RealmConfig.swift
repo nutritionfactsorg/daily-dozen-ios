@@ -46,7 +46,7 @@ enum RealmConfig {
             Item(name: "Spices", states: [false]),
             Item(name: "Whole Grains", states: [false, false, false]),
             Item(name: "Beverages", states: [false, false, false, false, false]),
-            Item(name: "Exercise", states: [false]),
+            Item(name: "Exercise", states: [false, false, false]),
             Item(name: "Vitamin B12", states: [false]),
             Item(name: "Vitamin D", states: [false])
         ]
