@@ -939,13 +939,13 @@
 		<dict>
 			<key>Metric</key>
 			<array>
-				<string>90 minutes of moderate-intensity activity</string>
-				<string>40 minutes of vigorous-intensity activity</string>
+				<string>30 minutes of moderate-intensity activity</string>
+				<string>15 minutes of vigorous-intensity activity</string>
 			</array>
 			<key>Imperial</key>
 			<array>
-				<string>90 minutes of moderate-intensity activity</string>
-				<string>40 minutes of vigorous-intensity activity</string>
+				<string>30 minutes of moderate-intensity activity</string>
+				<string>15 minutes of vigorous-intensity activity</string>
 			</array>
 		</dict>
 		<key>Types</key>
