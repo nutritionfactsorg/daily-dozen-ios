@@ -28,6 +28,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
 
+        configureAppearances()
+
         UNUserNotificationCenter.current().requestAuthorization(options: [.alert, .sound, .badge]) { (_, error) in
             if let error = error {
                 print(error.localizedDescription)
@@ -58,5 +60,10 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
         window?.rootViewController?.show(importAlert, sender: nil)
         return true
+    }
+
+    private func configureAppearances() {
+        UINavigationBar.appearance().configureStyle()
+        UITabBar.appearance().tintColor = .greenColor
     }
 }

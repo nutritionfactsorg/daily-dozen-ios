@@ -1,43 +1,45 @@
 //
-//  MenuViewController.swift
+//  SettingsViewController.swift
 //  DailyDozen
 //
-//  Created by Konstantin Khokhlov on 18.10.17.
-//  Copyright © 2017 Nutritionfacts.org. All rights reserved.
+//  Created by Lammert Westerhoff on 21/05/2018.
+//  Copyright © 2018 Nutritionfacts.org. All rights reserved.
 //
 
 import UIKit
 
 // MARK: - UITableViewController
-class MenuViewController: UITableViewController {
+class SettingsViewController: UITableViewController {
 
-    // MARK: - Nested
-    private struct Strings {
-        static let menu = "Menu"
+    private struct Keys {
+        static let realm = "main.realm"
     }
 
     // MARK: - UITableViewController
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        title = "More"
+        title = "Settings"
+    }
+
+    /// Presents share services.
+    private func share() {
+        let activityViewController = UIActivityViewController(activityItems: [URL.inDocuments(for: Keys.realm)], applicationActivities: nil)
+        activityViewController.popoverPresentationController?.sourceView = view
+        present(activityViewController, animated: true, completion: nil)
     }
 }
 
 // MARK: - UITableViewDelegate
-extension MenuViewController {
+extension SettingsViewController {
 
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        guard let menuItem = MenuItem(rawValue: indexPath.row) else { return }
+        guard let settingsItem = SettingsItem(rawValue: indexPath.row) else { return }
 
-        if let link = menuItem.link {
-            UIApplication.shared
-                .open(LinksService.shared.link(forMenu: link),
-                      options: [:],
-                      completionHandler: nil)
-            dismiss(animated: false)
-        } else if let controller = menuItem.controller {
+        if let controller = settingsItem.controller {
             navigationController?.pushViewController(controller, animated: true)
+        } else {
+            share()
         }
         tableView.selectRow(at: nil, animated: false, scrollPosition: .none)
     }

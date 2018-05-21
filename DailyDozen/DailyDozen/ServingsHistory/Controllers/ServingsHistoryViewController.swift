@@ -31,7 +31,6 @@ class ServingsHistoryBuilder {
             let viewController = storyboard
                 .instantiateInitialViewController() as? ServingsHistoryViewController
             else { fatalError("There should be a controller") }
-        viewController.title = "Servings History"
 
         return viewController
     }
@@ -99,6 +98,8 @@ class ServingsHistoryViewController: UIViewController {
     // MARK: - UIViewController
     override func viewDidLoad() {
         super.viewDidLoad()
+
+        title = "Servings History"
 
         chartView.xAxis.valueFormatter = self
         setViewModel()

@@ -9,7 +9,7 @@
 import UIKit
 import UserNotifications
 
-class MainViewController: UISplitViewController {
+class MainViewController: UITabBarController {
 
     override func viewDidLoad() {
         super.viewDidLoad()

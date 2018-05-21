@@ -20,11 +20,11 @@ enum MenuItem: Int {
         static let source = "open-source"
     }
 
-    case servings, videos, book, cookbook, donate, subscribe, source, settings, backup, about
+    case videos, book, cookbook, donate, subscribe, source, about
 
     var link: String? {
         switch self {
-        case .servings, .settings, .backup, .about:
+        case .about:
             return nil
         case .videos:
             return Links.videos
@@ -43,13 +43,9 @@ enum MenuItem: Int {
 
     var controller: UIViewController? {
         switch self {
-        case .servings:
-            return PagerBuilder.instantiateController()
         case .about:
             return AboutBuilder.instantiateController()
-        case .settings:
-            return ReminderBuilder.instantiateController()
-        case .videos, .book, .cookbook, .donate, .subscribe, .source, .backup:
+        case .videos, .book, .cookbook, .donate, .subscribe, .source:
             return nil
         }
     }

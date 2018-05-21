@@ -1,24 +1,16 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13771" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="0HD-X6-u6e">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14109" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="0HD-X6-u6e">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13772"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14088"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
-    <customFonts key="customFonts">
-        <array key="Helvetica.ttc">
-            <string>Helvetica</string>
-        </array>
-        <array key="HelveticaNeue.ttc">
-            <string>HelveticaNeue</string>
-        </array>
-    </customFonts>
     <scenes>
-        <!--Pager View Controller-->
+        <!--Servings-->
         <scene sceneID="2Lb-y8-Mb3">
             <objects>
                 <viewController id="0HD-X6-u6e" customClass="PagerViewController" customModule="DailyDozen" customModuleProvider="target" sceneMemberID="viewController">
@@ -84,13 +76,13 @@
                                 </constraints>
                             </view>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="L1U-z7-hZy">
-                                <rect key="frame" x="0.0" y="70" width="375" height="597"/>
+                                <rect key="frame" x="0.0" y="70" width="375" height="548"/>
                                 <subviews>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Liv-4f-27k">
-                                        <rect key="frame" x="0.0" y="0.0" width="375" height="597"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="375" height="548"/>
                                         <subviews>
                                             <containerView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="KcS-Ss-A40">
-                                                <rect key="frame" x="0.0" y="0.0" width="375" height="597"/>
+                                                <rect key="frame" x="0.0" y="0.0" width="375" height="548"/>
                                                 <color key="backgroundColor" red="0.95294117649999999" green="0.95294117649999999" blue="0.95294117649999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                 <connections>
                                                     <segue destination="0ra-CW-Eiv" kind="embed" id="Vlr-Vk-Tqc"/>
@@ -111,7 +103,7 @@
                                         </connections>
                                     </view>
                                     <view hidden="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="aJT-dy-You" customClass="RoundedView" customModule="DailyDozen" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="567" width="375" height="30"/>
+                                        <rect key="frame" x="0.0" y="518" width="375" height="30"/>
                                         <subviews>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Qfe-bW-SP4">
                                                 <rect key="frame" x="133.5" y="-1" width="107" height="32"/>
@@ -160,6 +152,8 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="rUX-Nf-zTn"/>
                     </view>
+                    <tabBarItem key="tabBarItem" title="Servings" image="icnTabServings" id="Xg9-0L-N6g"/>
+                    <simulatedTabBarMetrics key="simulatedBottomBarMetrics"/>
                     <connections>
                         <outlet property="backButton" destination="Qfe-bW-SP4" id="Xic-hZ-fGN"/>
                         <outlet property="dateButton" destination="OC8-wt-JgC" id="Unk-CP-gAS"/>
@@ -189,4 +183,7 @@
             <point key="canvasLocation" x="1063" y="464"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="icnTabServings" width="23" height="23"/>
+    </resources>
 </document>
