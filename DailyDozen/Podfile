@@ -8,7 +8,7 @@ target 'DailyDozen' do
 
   # Pods for DailyDozen
   pod 'UICheckbox.Swift', '~> 1.0'
-  pod 'RealmSwift', '~> 3.0'
+  pod 'RealmSwift', '~> 3.13'
   pod 'SimpleAnimation', '~> 0.3'
   pod 'FSCalendar', '~> 2.7'
   pod 'Charts', '~> 3.0'
