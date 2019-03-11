@@ -19,7 +19,7 @@ Daily Dozen on the App Store
 Contribute
 ----------
 
-We would love for you to contribute to our source code and to help make the Daily Dozen for Android even better!
+We would love for you to contribute to our source code and help to make the Daily Dozen for iOS even better!
 
 Check out our [Contribution Guidelines][contribute] for details on how to get started and our suggested best practices.
 
@@ -36,7 +36,7 @@ The Daily Dozen iOS App is licensed under the GPLv3
 Contributors
 ------------
 
-* [Will Webb][innerfish] (Maintainer)
+* [Will Webb](https://github.com/innerfish)
 * [Christi Richards][christirichards]
 * [Lauren Hacker][laurenhacker]
 
@@ -49,10 +49,10 @@ Contributors
 Updates
 -------
 
-###1.0.1 - 1.0.2 (App Store)
+### 1.0.1 - 1.0.2 (App Store)
 - Misspelling fix
 
-###1.0.0 (App Store)
+### 1.0.0 (App Store)
 - Initial Release
 
 [nutritionfacts.org]: http://nutritionfacts.org "NutritionFacts.org - The Latest in Nutrition Research"
