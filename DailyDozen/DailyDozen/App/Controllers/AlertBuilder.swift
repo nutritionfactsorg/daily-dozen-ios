@@ -53,16 +53,16 @@ class AlertBuilder {
             NSAttributedString(
                 string: content.title,
                 attributes: [
-                    NSAttributedStringKey.font: UIFont.helveticaBold,
-                    NSAttributedStringKey.foregroundColor: UIColor.greenColor]),
+                    NSAttributedString.Key.font: UIFont.helveticaBold,
+                    NSAttributedString.Key.foregroundColor: UIColor.greenColor]),
             forKey: Keys.title)
 
         alert.setValue(
             NSAttributedString(
                 string: content.message,
                 attributes: [
-                    NSAttributedStringKey.font: UIFont.helevetica,
-                    NSAttributedStringKey.foregroundColor: UIColor.lightGray]),
+                    NSAttributedString.Key.font: UIFont.helevetica,
+                    NSAttributedString.Key.foregroundColor: UIColor.lightGray]),
             forKey: Keys.message)
 
         let action = UIAlertAction(title: Strings.confirm, style: .cancel, handler: nil)

@@ -74,7 +74,7 @@ class PagerViewController: UIViewController {
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
 
-        navigationController?.navigationBar.titleTextAttributes = [NSAttributedStringKey.foregroundColor: UIColor.white]
+        navigationController?.navigationBar.titleTextAttributes = [NSAttributedString.Key.foregroundColor: UIColor.white]
     }
 
     // MARK: - Methods
@@ -85,7 +85,7 @@ class PagerViewController: UIViewController {
         currentDate = date
         datePicker.setDate(date, animated: false)
 
-        guard let viewController = childViewControllers.first as? ServingsViewController else { return }
+        guard let viewController = children.first as? ServingsViewController else { return }
         viewController.view.fadeOut().fadeIn()
         viewController.setViewModel(for: currentDate)
     }
@@ -101,7 +101,7 @@ class PagerViewController: UIViewController {
         datePicker.isHidden = true
         currentDate = datePicker.date
 
-        guard let viewController = childViewControllers.first as? ServingsViewController else { return }
+        guard let viewController = children.first as? ServingsViewController else { return }
         viewController.view.fadeOut().fadeIn()
         viewController.setViewModel(for: datePicker.date)
     }
@@ -118,7 +118,7 @@ class PagerViewController: UIViewController {
 
         self.currentDate = datePicker.date
 
-        guard let viewController = childViewControllers.first as? ServingsViewController else { return }
+        guard let viewController = children.first as? ServingsViewController else { return }
 
         if sender.direction == .left {
             viewController.view.slideOut(x: -view.frame.width).slideIn(x: view.frame.width)

@@ -73,7 +73,7 @@ class ChartView: CombinedChartView {
             entries.append(BarChartDataEntry(x: Double(index), y: Double(value)))
         }
 
-        let set = BarChartDataSet(values: entries, label: "Servings")
+        let set = BarChartDataSet(entries: entries, label: "Servings")
         set.setColor(UIColor.greenColor)
         set.valueTextColor = UIColor.greenColor
         set.valueFont = UIFont.helveticaBold.withSize(12)
@@ -92,7 +92,7 @@ class ChartView: CombinedChartView {
             entries.append(ChartDataEntry(x: Double(index), y: value))
         }
 
-        let set = LineChartDataSet(values: entries, label: "Servings")
+        let set = LineChartDataSet(entries: entries, label: "Servings")
         set.setColor(UIColor.greenColor)
         set.lineWidth = 2.5
         set.setCircleColor(UIColor.greenColor)

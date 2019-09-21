@@ -75,7 +75,7 @@ class ServingsViewController: UIViewController {
             let url = dataProvider.viewModel.topicURL(for: itemInfo.name)
             UIApplication.shared
                 .open(url,
-                      options: [:],
+                      options: convertToUIApplicationOpenExternalURLOptionsKeyDictionary([:]),
                       completionHandler: nil)
             return
         }
@@ -174,4 +174,9 @@ extension ServingsViewController: RealmDelegate {
     func didUpdateFile() {
         navigationController?.popViewController(animated: false)
     }
+}
+
+// Helper function inserted by Swift 4.2 migrator.
+fileprivate func convertToUIApplicationOpenExternalURLOptionsKeyDictionary(_ input: [String: Any]) -> [UIApplication.OpenExternalURLOptionsKey: Any] {
+	return Dictionary(uniqueKeysWithValues: input.map { key, value in (UIApplication.OpenExternalURLOptionsKey(rawValue: key), value)})
 }

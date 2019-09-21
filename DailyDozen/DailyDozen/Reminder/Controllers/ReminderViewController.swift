@@ -99,7 +99,7 @@ class ReminderViewController: UIViewController {
 
             content.attachments.append(attachment)
 
-            if soundSwitch.isOn { content.sound = UNNotificationSound.default() }
+            if soundSwitch.isOn { content.sound = UNNotificationSound.default }
 
             var dateComponents = DateComponents()
             dateComponents.hour = UserDefaults.standard.integer(forKey: Keys.hour)

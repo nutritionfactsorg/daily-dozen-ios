@@ -46,7 +46,7 @@ class MainViewController: UISplitViewController {
         content.badge = 1
 
         if UserDefaults.standard.bool(forKey: "sound") {
-            content.sound = UNNotificationSound.default()
+            content.sound = UNNotificationSound.default
         }
 
         var dateComponents = DateComponents()

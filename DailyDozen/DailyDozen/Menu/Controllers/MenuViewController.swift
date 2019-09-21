@@ -51,7 +51,7 @@ extension MenuViewController {
         if let link = menuItem.link {
             UIApplication.shared
                 .open(LinksService.shared.link(forMenu: link),
-                      options: [:],
+                      options: convertToUIApplicationOpenExternalURLOptionsKeyDictionary([:]),
                       completionHandler: nil)
             dismiss(animated: false)
         } else if let controller = menuItem.controller {
@@ -73,4 +73,9 @@ extension MenuViewController {
 
         return 0.1
     }
+}
+
+// Helper function inserted by Swift 4.2 migrator.
+fileprivate func convertToUIApplicationOpenExternalURLOptionsKeyDictionary(_ input: [String: Any]) -> [UIApplication.OpenExternalURLOptionsKey: Any] {
+	return Dictionary(uniqueKeysWithValues: input.map { key, value in (UIApplication.OpenExternalURLOptionsKey(rawValue: key), value)})
 }

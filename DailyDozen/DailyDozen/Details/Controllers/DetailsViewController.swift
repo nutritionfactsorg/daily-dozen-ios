@@ -77,7 +77,7 @@ class DetailsViewController: UIViewController {
     @objc private func barItemPressed() {
         UIApplication.shared
             .open(dataProvider.viewModel.topicURL,
-                  options: [:],
+                  options: convertToUIApplicationOpenExternalURLOptionsKeyDictionary([:]),
                   completionHandler: nil)
     }
 
@@ -105,7 +105,7 @@ class DetailsViewController: UIViewController {
     /// - Parameter sender: The button.
     @IBAction private func linkButtonPressed(_ sender: UIButton) {
         guard let url = dataProvider.viewModel.typeTopicURL(for: sender.tag) else { return }
-        UIApplication.shared.open(url, options: [:], completionHandler: nil)
+        UIApplication.shared.open(url, options: convertToUIApplicationOpenExternalURLOptionsKeyDictionary([:]), completionHandler: nil)
     }
 }
 
@@ -132,4 +132,9 @@ extension DetailsViewController: UITableViewDelegate {
         }
         return sectionType.headerView
     }
+}
+
+// Helper function inserted by Swift 4.2 migrator.
+fileprivate func convertToUIApplicationOpenExternalURLOptionsKeyDictionary(_ input: [String: Any]) -> [UIApplication.OpenExternalURLOptionsKey: Any] {
+	return Dictionary(uniqueKeysWithValues: input.map { key, value in (UIApplication.OpenExternalURLOptionsKey(rawValue: key), value)})
 }

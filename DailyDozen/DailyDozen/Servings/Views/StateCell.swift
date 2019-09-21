@@ -7,7 +7,7 @@
 //
 
 import UIKit
-import UICheckbox_Swift
+//import UICheckbox_Swift
 
 class StateCell: UICollectionViewCell {
 

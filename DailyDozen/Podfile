@@ -1,17 +1,52 @@
 # Uncomment the next line to define a global platform for your project
- platform :ios, '10.0'
+platform :ios, '12.0'
 
 target 'DailyDozen' do
   # Comment the next line if you're not using Swift and don't want to use dynamic frameworks
   use_frameworks!
   inhibit_all_warnings!
 
-  # Pods for DailyDozen
-  pod 'UICheckbox.Swift', '~> 1.0'
-  pod 'RealmSwift', '~> 3.0'
-  pod 'SimpleAnimation', '~> 0.3'
-  pod 'FSCalendar', '~> 2.7'
-  pod 'Charts', '~> 3.0'
-  pod 'ActiveLabel', :git => 'https://github.com/optonaut/ActiveLabel.swift.git', :tag => '0.8.0'
+  ###########################
+  ### Pods for DailyDozen ###
+  ###########################
+   
+  ## https://cocoapods.org/pods/ActiveLabel 
+  ## https://github.com/optonaut/ActiveLabel.swift
+  ## Swift: 5.0, 4.2    :APPEARS_OK:
+  ## Swift Package Manager: 4.2
+  #pod 'ActiveLabel', :git => 'https://github.com/optonaut/ActiveLabel.swift.git', :tag => '0.8.0'
+  pod 'ActiveLabel', '~> 1.1.0'
 
+  ## https://cocoapods.org/pods/Charts
+  ## https://github.com/danielgindi/Charts
+  ## Swift: v5 ... code mostly Objective-C
+  ## Swift Package Manager: 5.1
+  pod 'Charts', '~> 3.3.0'
+
+  ## https://cocoapods.org/pods/FSCalendar
+  ## https://github.com/WenchaoD/FSCalendar
+  ## Swift:   ... code mostly Objective-C
+  ##          ... issues piling up
+  ## Swift Package Manager: not supported
+  pod 'FSCalendar', '~> 2.8.0'
+
+  ## https://cocoapods.org/pods/RealmSwift
+  ## https://github.com/realm/realm-cocoa
+  ## Swift: looks like 5
+  ## C++: cxx14
+  ## Swift Package Manager: 5.0
+  pod 'RealmSwift', '~> 3.18.0'
+
+  ## https://cocoapods.org/pods/SimpleAnimation  
+  ## https://github.com/keithito/SimpleAnimation
+  ## Swift: 4.0 ... maybe ok at 4.2
+  ## Swift Package Manager: unspecified
+  pod 'SimpleAnimation', '~> 0.4.2'
+
+  ## https://cocoapods.org/pods/UICheckbox.Swift
+  ## https://github.com/polok/UICheckbox.Swift
+  ## Swift: 3.0    :OBSOLETE:2016.12 
+  ## Swift Package Manager:  unsupported
+  #pod 'UICheckbox.Swift', '~> 1.0.0'
+    
 end

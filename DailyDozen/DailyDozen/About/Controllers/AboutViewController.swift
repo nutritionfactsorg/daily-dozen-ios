@@ -62,7 +62,7 @@ class AboutViewController: UITableViewController {
             label.handleCustomTap(for: bookType) { _ in
                 UIApplication.shared
                     .open(LinksService.shared.siteBook,
-                          options: [:],
+                          options: convertToUIApplicationOpenExternalURLOptionsKeyDictionary([:]),
                           completionHandler: nil)
             }
         }
@@ -89,10 +89,15 @@ class AboutViewController: UITableViewController {
                 label.handleCustomTap(for: about) { _ in
                     UIApplication.shared
                         .open(aboutLink,
-                              options: [:],
+                              options: convertToUIApplicationOpenExternalURLOptionsKeyDictionary([:]),
                               completionHandler: nil)
                 }
             }
         }
     }
+}
+
+// Helper function inserted by Swift 4.2 migrator.
+fileprivate func convertToUIApplicationOpenExternalURLOptionsKeyDictionary(_ input: [String: Any]) -> [UIApplication.OpenExternalURLOptionsKey: Any] {
+	return Dictionary(uniqueKeysWithValues: input.map { key, value in (UIApplication.OpenExternalURLOptionsKey(rawValue: key), value)})
 }
