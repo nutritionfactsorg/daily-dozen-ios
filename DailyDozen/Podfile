@@ -42,11 +42,5 @@ target 'DailyDozen' do
   ## Swift: 4.0 ... maybe ok at 4.2
   ## Swift Package Manager: unspecified
   pod 'SimpleAnimation', '~> 0.4.2'
-
-  ## https://cocoapods.org/pods/UICheckbox.Swift
-  ## https://github.com/polok/UICheckbox.Swift
-  ## Swift: 3.0    :OBSOLETE:2016.12 
-  ## Swift Package Manager:  unsupported
-  #pod 'UICheckbox.Swift', '~> 1.0.0'
     
 end

@@ -12,7 +12,7 @@ import UIKit
 class StateCell: UICollectionViewCell {
 
     // MARK: - Outlets
-    @IBOutlet private weak var checkbox: UICheckbox!
+    @IBOutlet private weak var checkbox: UIButtonCheckbox!
 
     // MARK: - Methods
     /// Sets the checkbox with the current state.
