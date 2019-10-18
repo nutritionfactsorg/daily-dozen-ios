@@ -61,7 +61,9 @@ struct Report {
         let dailyReports = results.map { DailyReport(doze: $0) }
         var monthReports = [MonthReport]()
 
-        guard var month = dailyReports.first?.date.monthName else { return }
+        guard var month = dailyReports.first?.date.monthName else { 
+            return
+        }
 
         var reportsInMonth = [DailyReport]()
 
@@ -79,7 +81,9 @@ struct Report {
         }
         monthReports.append(MonthReport(daily: reportsInMonth, month: month))
 
-        guard var year = monthReports.first?.daily.first?.date.year else { return }
+        guard var year = monthReports.first?.daily.first?.date.year else {
+            return
+        }
 
         var reportsInYear = [MonthReport]()
 

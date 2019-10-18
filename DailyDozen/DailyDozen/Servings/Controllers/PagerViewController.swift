@@ -10,6 +10,7 @@ import UIKit
 import SimpleAnimation
 
 // MARK: - Builder
+
 class PagerBuilder {
 
     // MARK: - Nested

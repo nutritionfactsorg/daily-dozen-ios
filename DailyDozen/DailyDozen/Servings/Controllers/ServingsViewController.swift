@@ -10,25 +10,21 @@ import UIKit
 import StoreKit
 
 class ServingsViewController: UIViewController {
-
-    // MARK: - Nested
-    private struct Keys {
-        static let countMaximum = 24
-    }
-
+    
     // MARK: - Outlets
     @IBOutlet private weak var dataProvider: ServingsDataProvider!
     @IBOutlet private weak var tableView: UITableView!
     @IBOutlet private weak var countLabel: UILabel!
     @IBOutlet private weak var starImage: UIImageView!
-
+    
     // MARK: - Properties
     private let realm = RealmProvider()
-
-    private var statesCount = 0 {
+    private let servingsStateCountMaximum = 24
+    
+    private var servingsStateCount = 0 {
         didSet {
             countLabel.text = statesCountString
-            if statesCount == Keys.countMaximum {
+            if servingsStateCount == servingsStateCountMaximum {
                 starImage.popIn()
                 SKStoreReviewController.requestReview()
             } else {
@@ -37,41 +33,46 @@ class ServingsViewController: UIViewController {
         }
     }
     private var statesCountString: String {
-        return "\(statesCount) out of \(Keys.countMaximum)"
+        return "\(servingsStateCount) out of \(servingsStateCountMaximum)"
     }
-
+    
     // MARK: - UIViewController
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        
         setViewModel(for: Date())
-
+        
         tableView.dataSource = dataProvider
         tableView.delegate = self
-
-        guard let appDelegate = UIApplication.shared.delegate as? AppDelegate else { return }
+        
+        guard let appDelegate = UIApplication.shared.delegate as? AppDelegate else {
+            return 
+        }
         appDelegate.realmDelegate = self
     }
-
+    
     // MARK: - Methods
     /// Sets a view model for the current date.
     ///
     /// - Parameter item: The current date.
     func setViewModel(for date: Date) {
         dataProvider.viewModel = DozeViewModel(doze: realm.getDoze(for: date))
-        statesCount = 0
-        let selectedStates = (0 ... dataProvider.viewModel.count - 3)
-            .map { dataProvider.viewModel.itemStates(for: $0) }
-            .map { $0.filter { $0 }.count }
-        statesCount = selectedStates.reduce(0) { $0 + $1 }
+        servingsStateCount = 0
+        let mainItemCount = dataProvider.viewModel.count - ServingsSection.supplementsCount
+        for i in 0 ..< mainItemCount {
+            let itemStates: [Bool] = dataProvider.viewModel.itemStates(index: i)
+            for state in itemStates where state {
+                servingsStateCount += 1 
+            }
+        }
         tableView.reloadData()
     }
-
+    
     // MARK: - Actions
     @IBAction private func infoPressed(_ sender: UIButton) {
         let itemInfo = dataProvider.viewModel.itemInfo(for: sender.tag)
-
-        guard !itemInfo.isVitamin else {
+        
+        guard !itemInfo.isSupplemental else {
             let url = dataProvider.viewModel.topicURL(for: itemInfo.name)
             UIApplication.shared
                 .open(url,
@@ -82,18 +83,18 @@ class ServingsViewController: UIViewController {
         let viewController = DetailsBuilder.instantiateController(with: itemInfo.name)
         navigationController?.pushViewController(viewController, animated: true)
     }
-
+    
     @IBAction private func calendarPressed(_ sender: UIButton) {
         let name = dataProvider.viewModel.itemInfo(for: sender.tag).name
         let viewController = ItemHistoryBuilder.instantiateController(with: name, itemId: sender.tag)
         navigationController?.pushViewController(viewController, animated: true)
     }
-
-    @IBAction private func vitaminHeaderPressed(_ sender: UIButton) {
-        let alert = AlertBuilder.instantiateController(for: .vitamin)
+    
+    @IBAction private func supplementsHeaderInfoBtnPressed(_ sender: UIButton) {
+        let alert = AlertBuilder.instantiateController(for: .dietarySupplement)
         present(alert, animated: true, completion: nil)
     }
-
+    
     @IBAction private func historyPressed(_ sender: UIButton) {
         let viewController = ServingsHistoryBuilder.instantiateController()
         navigationController?.pushViewController(viewController, animated: true)
@@ -101,30 +102,31 @@ class ServingsViewController: UIViewController {
 }
 
 // MARK: - Servings UITableViewDelegate
-extension ServingsViewController: UITableViewDelegate {
 
+extension ServingsViewController: UITableViewDelegate {
+    
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         return ServingsSection.main.rowHeight
     }
-
+    
     func tableView(_ tableView: UITableView, willDisplay cell: UITableViewCell, forRowAt indexPath: IndexPath) {
         guard let servingsCell = cell as? ServingsCell else { return }
         servingsCell.stateCollection.delegate = self
         servingsCell.stateCollection.dataSource = dataProvider
         servingsCell.stateCollection.reloadData()
     }
-
+    
     func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
         guard let servingsSection = ServingsSection(rawValue: section) else {
             fatalError("There should be a section type")
         }
         return servingsSection.headerHeight
     }
-
+    
     func tableView(_ tableView: UITableView, heightForFooterInSection section: Int) -> CGFloat {
         return ServingsSection.main.footerHeight
     }
-
+    
     func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
         guard let servingsSection = ServingsSection(rawValue: section) else {
             fatalError("There should be a section type")
@@ -135,48 +137,66 @@ extension ServingsViewController: UITableViewDelegate {
 
 // MARK: - States UICollectionViewDelegate
 extension ServingsViewController: UICollectionViewDelegate {
-
+    
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-        var states = dataProvider.viewModel.itemStates(for: collectionView.tag)
-        let newState = !states[indexPath.row]
-        states[indexPath.row] = newState
+        let itemCheckboxIndex = indexPath.row
+        let itemIndex = collectionView.tag
+        var itemStates = dataProvider.viewModel.itemStates(index: itemIndex)
+        
+        var stateTrueCounterOld = 0
+        for state in itemStates where state { 
+            stateTrueCounterOld += 1 
+        }
+        
+        let stateNew = !itemStates[itemCheckboxIndex] // toggle state
+        itemStates[itemCheckboxIndex] = stateNew
+        // 0 is the rightmost item checkbox
+        // fill true to the right. 
+        for index in 0 ..< itemCheckboxIndex {
+            itemStates[index] = true
+        }
+        // fill false to the left.
+        for index in itemCheckboxIndex+1 ..< itemStates.count {
+            itemStates[index] = false
+        }
+                
         guard let cell = collectionView.cellForItem(at: indexPath) as? StateCell else {
             fatalError("There should be a cell")
         }
-        cell.configure(with: states[indexPath.row])
-        let id = dataProvider.viewModel.itemID(for: collectionView.tag)
-        realm.saveStates(states, with: id)
-
-        var streak = states.count == states.filter { $0 }.count ? 1 : 0
-
+        cell.configure(with: itemStates[indexPath.row])
+        let id = dataProvider.viewModel.itemID(for: itemIndex)
+        realm.saveStates(itemStates, with: id)
+        
+        var streak = itemStates.count == itemStates.filter { $0 }.count ? 1 : 0
+        
         if streak > 0 {
             streak += realm
                 .getDoze(for: dataProvider.viewModel.dozeDate.adding(.day, value: -1)!)
-                .items[collectionView.tag].streak
+                .items[itemIndex].streak
         }
-
+        
         realm.updateStreak(streak, with: id)
-
+        
         tableView.reloadData()
-
-        guard !dataProvider.viewModel.itemInfo(for: collectionView.tag).isVitamin else { return }
-
-        if newState {
-            statesCount += 1
-        } else {
-            statesCount -= 1
+        
+        guard !dataProvider.viewModel.itemInfo(for: itemIndex).isSupplemental else {
+            return
         }
+        
+        let stateTrueCounterNew = stateNew ? itemCheckboxIndex+1 : itemCheckboxIndex
+
+        servingsStateCount += stateTrueCounterNew - stateTrueCounterOld
     }
 }
 
 extension ServingsViewController: RealmDelegate {
-
+    
     func didUpdateFile() {
         navigationController?.popViewController(animated: false)
     }
 }
 
 // Helper function inserted by Swift 4.2 migrator.
-fileprivate func convertToUIApplicationOpenExternalURLOptionsKeyDictionary(_ input: [String: Any]) -> [UIApplication.OpenExternalURLOptionsKey: Any] {
-	return Dictionary(uniqueKeysWithValues: input.map { key, value in (UIApplication.OpenExternalURLOptionsKey(rawValue: key), value)})
+private func convertToUIApplicationOpenExternalURLOptionsKeyDictionary(_ input: [String: Any]) -> [UIApplication.OpenExternalURLOptionsKey: Any] {
+    return Dictionary(uniqueKeysWithValues: input.map { key, value in (UIApplication.OpenExternalURLOptionsKey(rawValue: key), value)})
 }

@@ -9,8 +9,8 @@
 			<key>Metric</key>
 			<array>
 				<string>60 g of hummus or bean dip</string>
-				<string>130 g cooked beans, split peas, lentils, tofu, or tempeh</string>
-				<string>150 g of fresh peas or sprouted lentils</string>
+				<string>75 g cooked beans, split peas, lentils, tofu, or tempeh</string>
+				<string>63 g of fresh peas or 77g sprouted lentils</string>
 			</array>
 			<key>Imperial</key>
 			<array>
@@ -169,7 +169,7 @@
 			<key>Metric</key>
 			<array>
 				<string>1 medium-sized fruit</string>
-				<string>120 g cut-up fruit</string>
+				<string>150 g cut-up fruit</string>
 				<string>40 g dried fruit</string>
 			</array>
 			<key>Imperial</key>
@@ -440,7 +440,7 @@
 			<key>Metric</key>
 			<array>
 				<string>60 g raw leafy vegetables</string>
-				<string>50 g raw or cooked nonleafy vegetables</string>
+				<string>75 g raw or cooked nonleafy vegetables</string>
 				<string>125 ml vegetable juice</string>
 				<string>7 g</string>
 			</array>
@@ -557,7 +557,7 @@
 		<key>Topic</key>
 		<string>flax-seeds</string>
 	</dict>
-	<key>Nuts</key>
+	<key>Nuts and Seeds</key>
 	<dict>
 		<key>Sizes</key>
 		<dict>
@@ -630,7 +630,7 @@
 		<key>Topic</key>
 		<string>nuts</string>
 	</dict>
-	<key>Spices</key>
+	<key>Herbs and Spices</key>
 	<dict>
 		<key>Sizes</key>
 		<dict>
@@ -1186,7 +1186,7 @@
 		<key>Topic</key>
 		<string>vitamin-b12</string>
 	</dict>
-	<key>Vitamin D</key>
+	<key>Plant-based Omega 3s</key>
 	<dict>
 		<key>Sizes</key>
 		<dict>
@@ -1200,7 +1200,7 @@
 			<dict/>
 		</array>
 		<key>Topic</key>
-		<string>vitamin-d-supplements</string>
+		<string>omega-3-fatty-acids</string>
 	</dict>
 </dict>
 </plist>

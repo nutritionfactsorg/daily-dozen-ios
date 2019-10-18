@@ -10,18 +10,18 @@ import Foundation
 import RealmSwift
 
 enum RealmConfig {
-
+    
     private struct Keys {
         static let realm = "main.realm"
     }
-
+    
     case servings
-
+    
     /// A private instance of a Realm for the Servings.
     private static let servingsConfig = Realm.Configuration(
         fileURL: URL.inDocuments(for: Keys.realm),
         objectTypes: [Doze.self, Item.self])
-
+    
     /// A public configuration instance of a Realm.
     var configuration: Realm.Configuration {
         switch self {
@@ -29,8 +29,23 @@ enum RealmConfig {
             return RealmConfig.servingsConfig
         }
     }
-
+    
     /// Returns an initial doze for the current date.
+    ///
+    /// **Important: Item name keys** 
+    /// 
+    /// The "`Item(name:`" property here is used: 
+    /// 
+    /// 1. by `DozeViewModel` `imageName(…)` method
+    /// to derive the associated servings image filename. 
+    /// 2. by `DozeViewModel` `itemInfo(…)` method
+    /// to determine `isSupplemental` display handling 
+    /// 3. by `TextsProvider` for `getTopic(…)` lookup of "details.plist" strings.
+    ///
+    /// This `items` array order sets the Servings display order.
+    /// 
+    /// The numerical split between main items and supplements items 
+    /// is set by `supplementsCount` in `ServingsSection`.
     ///
     /// - Parameter date: The current date.
     static func initialDoze(for date: Date) -> Doze {
@@ -42,13 +57,13 @@ enum RealmConfig {
             Item(name: "Greens", states: [false, false]),
             Item(name: "Other Vegetables", states: [false, false]),
             Item(name: "Flaxseeds", states: [false]),
-            Item(name: "Nuts", states: [false]),
-            Item(name: "Spices", states: [false]),
+            Item(name: "Nuts and Seeds", states: [false]),
+            Item(name: "Herbs and Spices", states: [false]),
             Item(name: "Whole Grains", states: [false, false, false]),
             Item(name: "Beverages", states: [false, false, false, false, false]),
             Item(name: "Exercise", states: [false]),
             Item(name: "Vitamin B12", states: [false]),
-            Item(name: "Vitamin D", states: [false])
+            //Item(name: "Plant-based Omega 3s", states: [false])
         ]
         return Doze(date: date, items: items)
     }

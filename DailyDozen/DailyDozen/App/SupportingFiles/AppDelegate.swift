@@ -28,6 +28,17 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
 
+        #if DEBUG
+        // print("::::: DEBUG :::::")
+        #endif
+        
+        #if targetEnvironment(simulator)
+            print("::::: SIMULATOR :::::")
+            if let documentsPath = FileManager.default.urls(for: .documentDirectory, in: .userDomainMask).first?.path {
+                print("App Documents Directory:\n\(documentsPath)\n")
+            }
+        #endif
+        
         UNUserNotificationCenter.current().requestAuthorization(options: [.alert, .sound, .badge]) { (_, error) in
             if let error = error {
                 print(error.localizedDescription)
@@ -40,7 +51,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         application.applicationIconBadgeNumber = 0
     }
 
-    func application(_ app: UIApplication, open url: URL, options: [UIApplication.OpenURLOptionsKey : Any] = [:]) -> Bool {
+    func application(_ app: UIApplication, open url: URL, options: [UIApplication.OpenURLOptionsKey: Any] = [:]) -> Bool {
         guard url.pathExtension == Keys.extens else { return false }
 
         let importAlert = UIAlertController(title: Keys.title,

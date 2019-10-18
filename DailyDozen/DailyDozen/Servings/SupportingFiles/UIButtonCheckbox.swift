@@ -13,7 +13,7 @@ import UIKit
 // MARK: - Parameters
     
     /// Checkbox border color
-    @IBInspectable var borderColor: UIColor = UIColor.lightGreenColor {
+    @IBInspectable var borderColor: UIColor = UIColor.greenLightColor {
         didSet {
             layer.borderColor = borderColor.cgColor
         }
@@ -96,7 +96,9 @@ public extension UIButtonCheckbox {
     }
 
     fileprivate func setCheckboxImage() {
-        let image = UIImage(named: "ic_checkmark_a")
+        // Image background color must match StateCell border color 
+        // See StateCell configure(…) for details.
+        let image = UIImage(named: "ic_checkmark_white_green")
         imageView?.contentMode = .scaleAspectFit
         self.checkboxImage = image
     }

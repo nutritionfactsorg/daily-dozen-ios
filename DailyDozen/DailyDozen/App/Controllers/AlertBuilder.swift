@@ -12,11 +12,11 @@ class AlertBuilder {
 
     // MARK: - Nested
     private struct Strings {
-        static let vitamins = "VITAMINS"
+        static let titleSupplements = "Supplements"
         static let message = """
-        Vitamin B12 and Vitamin D are essential for your health but do not count towards your daily servings.
+        Vitamin B12 is essential for your health but does not count towards your daily servings.
 
-        They are included in this app to provide you with an easy way to track your intake.
+        Vitamin B12 are included in this app to provide you with an easy way to track your intake.
         """
         static let confirm = "OK"
     }
@@ -29,18 +29,18 @@ class AlertBuilder {
 
     enum AlertContent {
 
-        case vitamin
+        case dietarySupplement
 
         var title: String {
             switch self {
-            case .vitamin:
-                return Strings.vitamins
+            case .dietarySupplement:
+                return Strings.titleSupplements
             }
         }
 
         var message: String {
             switch self {
-            case .vitamin:
+            case .dietarySupplement:
                 return Strings.message
             }
         }

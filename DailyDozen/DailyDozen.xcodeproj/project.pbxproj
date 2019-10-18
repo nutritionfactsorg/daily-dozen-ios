@@ -40,7 +40,7 @@
 		CF9EC1C32021D37000C7B3CA /* MenuItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF9EC1C22021D37000C7B3CA /* MenuItem.swift */; };
 		CFA3E8F91FC58D460092199D /* ServingsHistory.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CFA3E8F81FC58D460092199D /* ServingsHistory.storyboard */; };
 		CFA3E8FC1FC58E6B0092199D /* ServingsHistoryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CFA3E8FB1FC58E6B0092199D /* ServingsHistoryViewController.swift */; };
-		CFA9CDF21FBAF653000468CA /* VitaminsHeader.xib in Resources */ = {isa = PBXBuildFile; fileRef = CFA9CDF11FBAF653000468CA /* VitaminsHeader.xib */; };
+		CFA9CDF21FBAF653000468CA /* SupplementsHeader.xib in Resources */ = {isa = PBXBuildFile; fileRef = CFA9CDF11FBAF653000468CA /* SupplementsHeader.xib */; };
 		CFAAB3721F9F3BC600B24748 /* Doze.swift in Sources */ = {isa = PBXBuildFile; fileRef = CFAAB3711F9F3BC600B24748 /* Doze.swift */; };
 		CFAAB3741F9F3E1200B24748 /* RealmConfig.swift in Sources */ = {isa = PBXBuildFile; fileRef = CFAAB3731F9F3E1200B24748 /* RealmConfig.swift */; };
 		CFAAB3771F9F3FDF00B24748 /* URL.swift in Sources */ = {isa = PBXBuildFile; fileRef = CFAAB3761F9F3FDF00B24748 /* URL.swift */; };
@@ -103,7 +103,7 @@
 		CF9EC1C22021D37000C7B3CA /* MenuItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuItem.swift; sourceTree = "<group>"; };
 		CFA3E8F81FC58D460092199D /* ServingsHistory.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = ServingsHistory.storyboard; sourceTree = "<group>"; };
 		CFA3E8FB1FC58E6B0092199D /* ServingsHistoryViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ServingsHistoryViewController.swift; sourceTree = "<group>"; };
-		CFA9CDF11FBAF653000468CA /* VitaminsHeader.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = VitaminsHeader.xib; sourceTree = "<group>"; };
+		CFA9CDF11FBAF653000468CA /* SupplementsHeader.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SupplementsHeader.xib; sourceTree = "<group>"; };
 		CFAAB3711F9F3BC600B24748 /* Doze.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Doze.swift; sourceTree = "<group>"; };
 		CFAAB3731F9F3E1200B24748 /* RealmConfig.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RealmConfig.swift; sourceTree = "<group>"; };
 		CFAAB3761F9F3FDF00B24748 /* URL.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = URL.swift; sourceTree = "<group>"; };
@@ -587,7 +587,7 @@
 			children = (
 				CFE667281F98CF860037D1A2 /* Pager.storyboard */,
 				CFCE5FCA1F978007005C672B /* Servings.storyboard */,
-				CFA9CDF11FBAF653000468CA /* VitaminsHeader.xib */,
+				CFA9CDF11FBAF653000468CA /* SupplementsHeader.xib */,
 			);
 			path = Storyboards;
 			sourceTree = "<group>";
@@ -683,7 +683,7 @@
 				CF22F07F1FA8ACE000F25B70 /* Details.plist in Resources */,
 				CF64DF2C1FB5CD5100B4D124 /* TypesHeader.xib in Resources */,
 				CF9051512022F71B00F4C1F2 /* dr_greger.png in Resources */,
-				CFA9CDF21FBAF653000468CA /* VitaminsHeader.xib in Resources */,
+				CFA9CDF21FBAF653000468CA /* SupplementsHeader.xib in Resources */,
 				CFA3E8F91FC58D460092199D /* ServingsHistory.storyboard in Resources */,
 				CF64DF271FB5BAC400B4D124 /* SizesHeader.xib in Resources */,
 				CFE698411F974B9700CD7905 /* Main.storyboard in Resources */,

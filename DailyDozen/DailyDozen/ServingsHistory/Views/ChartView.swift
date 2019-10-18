@@ -30,16 +30,16 @@ class ChartView: CombinedChartView {
         legend.drawInside = false
 
         rightAxis.axisMinimum = 0
-        rightAxis.labelTextColor = UIColor.darkBlueColor
+        rightAxis.labelTextColor = UIColor.blueDarkColor
         rightAxis.labelFont = UIFont.helevetica.withSize(12)
 
         leftAxis.axisMinimum = 0
-        leftAxis.labelTextColor = UIColor.darkBlueColor
+        leftAxis.labelTextColor = UIColor.blueDarkColor
         leftAxis.labelFont = UIFont.helevetica.withSize(12)
 
         xAxis.labelPosition = .bothSided
         xAxis.granularity = 1
-        xAxis.labelTextColor = .darkBlueColor
+        xAxis.labelTextColor = .blueDarkColor
         xAxis.labelFont = UIFont.helevetica.withSize(12)
     }
 

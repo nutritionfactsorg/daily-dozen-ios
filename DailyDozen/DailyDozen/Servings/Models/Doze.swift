@@ -10,18 +10,25 @@ import Foundation
 import RealmSwift
 
 class Doze: Object {
-
-    @objc dynamic var date = Date()
+    
+    // MARK: - RealmDB Persisted Properties
+    
     @objc dynamic var id = UUID().uuidString
-
+    @objc dynamic var date = Date()
     let items = List<Item>()
+    
+    // MARK: - Non-Persisted Properties
 
+    // MARK: - Init
+    
     convenience init(date: Date, items: [Item]) {
         self.init()
         self.date = date
         self.items.append(objectsIn: items)
     }
-
+    
+    // MARK: - RealmDB Meta
+    
     override static func primaryKey() -> String? {
         return "id"
     }

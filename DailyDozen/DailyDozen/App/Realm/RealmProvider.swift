@@ -14,19 +14,21 @@ protocol RealmDelegate: AnyObject {
 }
 
 class RealmProvider {
-
+    
     private let realm: Realm
     private var unsavedDoze: Doze?
-
+    
     init() {
-        guard let realm = try? Realm(configuration: RealmConfig.servings.configuration) else {
-            fatalError("There should be a realm")
+        let config = RealmConfig.servings.configuration
+        guard let realm = try? Realm(configuration: config) 
+            else {
+                fatalError("There should be a realm")
         }
         self.realm = realm
     }
-
+    
     /// Returns a Doze object for the current date.
-    ///
+    /// 
     /// - Returns: The doze.
     func getDoze(for date: Date) -> Doze {
         let doze = realm
@@ -36,11 +38,11 @@ class RealmProvider {
         unsavedDoze = doze
         return doze
     }
-
+    
     func getDozes() -> Results<Doze> {
         return realm.objects(Doze.self)
     }
-
+    
     /// Updates an Item object with an ID for new states.
     ///
     /// - Parameters:
@@ -50,30 +52,30 @@ class RealmProvider {
         saveDoze()
         do {
             try realm.write {
-                realm.create(Item.self, value: ["id": id, "states": states], update: true)
+                realm.create(Item.self, value: ["id": id, "states": states], update: Realm.UpdatePolicy.all)
             }
         } catch {
             print(error.localizedDescription)
         }
     }
-
+    
     func updateStreak(_ streak: Int, with id: String) {
         saveDoze()
         do {
             try realm.write {
-                realm.create(Item.self, value: ["id": id, "streak": streak], update: true)
+                realm.create(Item.self, value: ["id": id, "streak": streak], update: Realm.UpdatePolicy.all)
             }
         } catch {
             print(error.localizedDescription)
         }
     }
-
+    
     /// Saves the unsaved doze.
     private func saveDoze() {
         if let doze = unsavedDoze {
             do {
                 try realm.write {
-                    realm.add(doze, update: true)
+                    realm.add(doze, update: Realm.UpdatePolicy.all)
                     unsavedDoze = nil
                 }
             } catch {

@@ -39,11 +39,11 @@ class ServingsDataProvider: NSObject, UITableViewDataSource {
                 fatalError("There should settings")
         }
         var index = indexPath.row
-        if servingsSection == .vitamin {
+        if servingsSection == .supplements {
             index += tableView.numberOfRows(inSection: 0)
         }
 
-        var streak = viewModel.itemStates(for: index).count == viewModel.itemStates(for: index).filter { $0 }.count ? 1 : 0
+        var streak = viewModel.itemStates(index: index).count == viewModel.itemStates(index: index).filter { $0 }.count ? 1 : 0
 
         if streak > 0 {
             streak += realm
@@ -68,7 +68,7 @@ class ServingsDataProvider: NSObject, UITableViewDataSource {
 extension ServingsDataProvider: UICollectionViewDataSource {
 
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        let states = viewModel.itemStates(for: collectionView.tag)
+        let states = viewModel.itemStates(index: collectionView.tag)
         return states.count
     }
 
@@ -79,7 +79,7 @@ extension ServingsDataProvider: UICollectionViewDataSource {
                     fatalError("There should be a cell")
 
         }
-        cell.configure(with: viewModel.itemStates(for: collectionView.tag)[indexPath.row])
+        cell.configure(with: viewModel.itemStates(index: collectionView.tag)[indexPath.row])
         return cell
     }
 }

@@ -1,12 +1,31 @@
+disabled_rules:
+  - line_length
+  - trailing_comma
+  - trailing_whitespace
+
+  # - file_length
+  # - function_body_length
+  # - todo
+  # - type_body_length
+
+excluded: # files and directories 
+  - Pods
+
+included: # files and directories
+
+opt_in_rules:
+  # - conditional_returns_on_newline
+
+############################
+### Rule Detail Settings ###
+############################
+
 identifier_name:
   min_length: # not possible to disable this partial rule, so set it to zero
     warning: 0
     error: 0
-disabled_rules:
-  - file_length
-  - line_length
-  - function_body_length
-  - todo
-  - type_body_length
-excluded: 
-  - Pods
+  # examples: id, dx
+  
+# line_length: # default 120 characters
+#   warning: 120
+#   error: 133

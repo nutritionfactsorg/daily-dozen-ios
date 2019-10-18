@@ -8,6 +8,7 @@
 
 import UIKit
 import Charts
+import RealmSwift
 
 // MARK: - Nested
 enum TimeScale: Int {
@@ -108,7 +109,7 @@ class ServingsHistoryViewController: UIViewController {
     private func setViewModel() {
         let realm = RealmProvider()
 
-        let results = realm
+        let results: Results<Doze> = realm
             .getDozes()
             .sorted(byKeyPath: "date")
         guard results.count > 0 else {
@@ -162,14 +163,11 @@ class ServingsHistoryViewController: UIViewController {
         case .day:
             let lastYearIndex = viewModel.lastYearIndex
             chartSettings = (lastYearIndex, viewModel.lastMonthIndex(for: lastYearIndex))
-            break
         case .month:
             let lastYearIndex = viewModel.lastYearIndex
             chartSettings = (lastYearIndex, 0)
-            break
         case .year:
             chartSettings = (0, 0)
-            break
         }
     }
 }
