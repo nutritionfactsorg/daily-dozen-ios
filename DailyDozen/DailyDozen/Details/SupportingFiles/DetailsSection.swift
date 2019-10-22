@@ -11,13 +11,13 @@ import UIKit
 enum DetailsSection: Int {
 
     private struct Nibs {
-        static let sizesHeader = "SizesHeader"
-        static let typesHeader = "TypesHeader"
+        static let sizesHeaderNib = "SizesHeader"
+        static let typesHeaderNib = "TypesHeader"
     }
 
     private struct Strings {
-        static let sizesHeader = "Serving Sizes"
-        static let typesHeader = "Types"
+        static let sizesHeaderTitle = "Serving Sizes"
+        static let typesHeaderTitle = "Types"
     }
 
     case sizes, types
@@ -41,20 +41,40 @@ enum DetailsSection: Int {
     var headerView: UIView? {
         switch self {
         case .sizes:
-            return Bundle.main
-                .loadNibNamed(Nibs.sizesHeader, owner: nil)?.first as? UIView
+            // Handle imperial vs. metric units
+            if let unitsTypePrefStr = UserDefaults.standard.string(forKey: SettingsKeys.unitsTypePref),
+                let currentUnitsType = UnitsType(rawValue: unitsTypePrefStr),
+                let uiView: UIView = Bundle.main
+                    .loadNibNamed(Nibs.sizesHeaderNib, owner: nil)?
+                    .first as? UIView {
+                for subview1 in uiView.subviews {
+                    if let stackView1 = subview1 as? UIStackView {
+                        for subview2 in stackView1.subviews {
+                            if let stackView2 = subview2 as? UIStackView {
+                                for subview3 in stackView2.subviews {
+                                    if let button = subview3 as? UIButton {
+                                        button.setTitle(currentUnitsType.title, for: .normal)
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+                return uiView
+            }
+            return nil
         case .types:
             return Bundle.main
-                .loadNibNamed(Nibs.typesHeader, owner: nil)?.first as? UIView
+                .loadNibNamed(Nibs.typesHeaderNib, owner: nil)?.first as? UIView
         }
     }
 
     var title: String? {
         switch self {
         case .sizes:
-            return Strings.sizesHeader
+            return Strings.sizesHeaderTitle
         case .types:
-            return Strings.typesHeader
+            return Strings.typesHeaderTitle
         }
     }
 

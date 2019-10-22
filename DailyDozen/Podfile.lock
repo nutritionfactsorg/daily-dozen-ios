@@ -19,7 +19,7 @@ DEPENDENCIES:
   - SimpleAnimation (~> 0.4.2)
 
 SPEC REPOS:
-  https://github.com/cocoapods/specs.git:
+  trunk:
     - ActiveLabel
     - Charts
     - FSCalendar
@@ -35,6 +35,6 @@ SPEC CHECKSUMS:
   RealmSwift: c817b5f374668cf08f649afb05f55d92a787649c
   SimpleAnimation: 5430010b9548f392e7459290acce01c9ceba7171
 
-PODFILE CHECKSUM: ad9817216cede9c0fd94df0282bf735d34b31736
+PODFILE CHECKSUM: d4d9b92022ddc45d1696664df5c098d83b30f48d
 
-COCOAPODS: 1.7.5
+COCOAPODS: 1.8.4

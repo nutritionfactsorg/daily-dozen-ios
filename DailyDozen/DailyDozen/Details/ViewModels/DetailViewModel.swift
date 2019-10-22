@@ -15,7 +15,7 @@ struct DetailViewModel {
     private let itemName: String
     private let topic: String
 
-    var unitsType = UnitsType.metric
+    var unitsType: UnitsType
 
     /// Returns the main topic url.
     var topicURL: URL {
@@ -46,6 +46,16 @@ struct DetailViewModel {
         detail = Detail(metricSizes: metricSizes, imperialSizes: imperialSizes, types: types)
         self.itemName = itemName
         self.topic = topic
+        
+        if let unitsTypePrefStr = UserDefaults.standard.string(forKey: SettingsKeys.unitsTypePref),
+            let unitsTypePref = UnitsType(rawValue: unitsTypePrefStr) {
+            self.unitsType = unitsTypePref
+        } else {
+            // :NYI:ToBeLocalized: set initial default based on device language
+            self.unitsType = UnitsType.imperial
+            UserDefaults.standard.set(self.unitsType.rawValue, forKey: SettingsKeys.unitsTypePref)
+        }
+        
     }
 
     // MARK: - Methods

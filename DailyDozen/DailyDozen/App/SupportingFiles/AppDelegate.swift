@@ -16,10 +16,10 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     private struct Keys {
         static let extens = "realm"
         static let main = "main.realm"
-        static let title = "Restore Backup"
-        static let message = "Any existing data will be deleted before restoring from backup. Do you wish to continue?"
-        static let confirm = "OK"
-        static let decline = "NO"
+        static let title = "Restore Backup" // :NYI:ToBeLocalized:
+        static let message = "Any existing data will be deleted before restoring from backup. Do you wish to continue?" // :NYI:ToBeLocalized:
+        static let confirm = "OK" // :NYI:ToBeLocalized:
+        static let decline = "NO" // :NYI:ToBeLocalized:
     }
 
     weak var realmDelegate: RealmDelegate?

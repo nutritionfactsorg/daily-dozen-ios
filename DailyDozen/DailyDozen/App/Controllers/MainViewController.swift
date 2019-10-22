@@ -18,40 +18,45 @@ class MainViewController: UISplitViewController {
 
         UNUserNotificationCenter.current().removeAllPendingNotificationRequests()
 
-        if UserDefaults.standard.object(forKey: "canNotificate") == nil {
+        if UserDefaults.standard.object(forKey: SettingsKeys.unitsTypePref) == nil {
+            // :NYI:ToBeLocalized: set initial default based on device language
+            UserDefaults.standard.set(UnitsType.imperial.rawValue, forKey: SettingsKeys.unitsTypePref)
+        }
+        
+        if UserDefaults.standard.object(forKey: SettingsKeys.reminderCanNotify) == nil {
 
             UNUserNotificationCenter.current().getNotificationSettings { settings in
-                UserDefaults.standard.set(settings.authorizationStatus == .authorized, forKey: "canNotificate")
+                UserDefaults.standard.set(settings.authorizationStatus == .authorized, forKey: SettingsKeys.reminderCanNotify)
             }
         }
 
-        if UserDefaults.standard.object(forKey: "hour") == nil {
-            UserDefaults.standard.set(8, forKey: "hour")
+        if UserDefaults.standard.object(forKey: SettingsKeys.reminderHourPref) == nil {
+            UserDefaults.standard.set(8, forKey: SettingsKeys.reminderHourPref)
         }
 
-        if UserDefaults.standard.object(forKey: "minute") == nil {
-            UserDefaults.standard.set(0, forKey: "minute")
+        if UserDefaults.standard.object(forKey: SettingsKeys.reminderMinutePref) == nil {
+            UserDefaults.standard.set(0, forKey: SettingsKeys.reminderMinutePref)
         }
 
-        if UserDefaults.standard.object(forKey: "sound") == nil {
-            UserDefaults.standard.set(true, forKey: "sound")
+        if UserDefaults.standard.object(forKey: SettingsKeys.reminderSoundPref) == nil {
+            UserDefaults.standard.set(true, forKey: SettingsKeys.reminderSoundPref)
         }
 
-        guard UserDefaults.standard.bool(forKey: "canNotificate") else { return }
+        guard UserDefaults.standard.bool(forKey: SettingsKeys.reminderCanNotify) else { return }
 
         let content = UNMutableNotificationContent()
-        content.title = "DailyDozen app."
-        content.subtitle = "Do you remember about the app?"
-        content.body = "Use this app on a daily basis!"
+        content.title = "DailyDozen app." // :NYI:ToBeLocalized:
+        content.subtitle = "Do you remember about the app?" // :NYI:ToBeLocalized:
+        content.body = "Use this app on a daily basis!" // :NYI:ToBeLocalized:
         content.badge = 1
 
-        if UserDefaults.standard.bool(forKey: "sound") {
+        if UserDefaults.standard.bool(forKey: SettingsKeys.reminderSoundPref) {
             content.sound = UNNotificationSound.default
         }
 
         var dateComponents = DateComponents()
-        dateComponents.hour = UserDefaults.standard.integer(forKey: "hour")
-        dateComponents.minute = UserDefaults.standard.integer(forKey: "minute")
+        dateComponents.hour = UserDefaults.standard.integer(forKey: SettingsKeys.reminderHourPref)
+        dateComponents.minute = UserDefaults.standard.integer(forKey: SettingsKeys.reminderMinutePref)
 
         let dateTrigget = UNCalendarNotificationTrigger(dateMatching: dateComponents, repeats: true)
 

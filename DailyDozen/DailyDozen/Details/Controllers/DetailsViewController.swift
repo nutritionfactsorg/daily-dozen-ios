@@ -56,11 +56,13 @@ class DetailsViewController: UIViewController {
         tableView.delegate = self
 
         navigationItem
-            .rightBarButtonItem = UIBarButtonItem(title: Keys.videos,
-                                                  style: .done,
-                                                  target: self,
-                                                  action: #selector(barItemPressed))
-
+            .rightBarButtonItem = UIBarButtonItem(
+                title: Keys.videos,
+                style: .done,
+                target: self,
+                action: #selector(barItemPressed)
+        )
+        
         imageView.image = dataProvider.viewModel.image
         titleLabel.text = dataProvider.viewModel.itemTitle
     }
@@ -80,7 +82,7 @@ class DetailsViewController: UIViewController {
                   options: convertToUIApplicationOpenExternalURLOptionsKeyDictionary([:]),
                   completionHandler: nil)
     }
-
+    
     // MARK: - Actions
     /// Updates the tableView for the current unit type.
     ///
@@ -88,12 +90,13 @@ class DetailsViewController: UIViewController {
     @IBAction private func unitsChanged(_ sender: UIButton) {
         let sectionIndex = DetailsSection.sizes.rawValue
         guard
-            let text = sender.titleLabel?.text?.lowercased(),
-            let currentUnitsType = UnitsType(rawValue: text),
+            let unitsTypePrefStr = UserDefaults.standard.string(forKey: SettingsKeys.unitsTypePref),
+            let currentUnitsType = UnitsType(rawValue: unitsTypePrefStr),
             let indexPaths = tableView.indexPathsForRows(in: tableView.rect(forSection: sectionIndex))
             else { return }
-
-        let newUnitsType = currentUnitsType.toggledType
+        
+        let newUnitsType: UnitsType = currentUnitsType.toggledType
+        UserDefaults.standard.set(newUnitsType.rawValue, forKey: SettingsKeys.unitsTypePref)
         let title = newUnitsType.title
         sender.setTitle(title, for: .normal)
         dataProvider.viewModel.unitsType = newUnitsType

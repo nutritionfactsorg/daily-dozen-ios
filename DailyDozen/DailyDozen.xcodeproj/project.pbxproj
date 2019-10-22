@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		493A8B9A235E93DA00A5009A /* SettingsKeys.swift in Sources */ = {isa = PBXBuildFile; fileRef = 493A8B99235E93DA00A5009A /* SettingsKeys.swift */; };
 		49F0377B233AD9B600FFD2EE /* UIButtonCheckbox.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49F0377A233AD9B600FFD2EE /* UIButtonCheckbox.swift */; };
 		BED5BB460CE3AEE8CF585899 /* Pods_DailyDozen.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F514690D725E67AD54735EB9 /* Pods_DailyDozen.framework */; };
 		CF12918F1FC42DD300D1C17E /* DateCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF12918E1FC42DD300D1C17E /* DateCell.swift */; };
@@ -70,6 +71,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		493A8B99235E93DA00A5009A /* SettingsKeys.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsKeys.swift; sourceTree = "<group>"; };
 		49F0377A233AD9B600FFD2EE /* UIButtonCheckbox.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIButtonCheckbox.swift; sourceTree = "<group>"; };
 		7D4AA01331AD98C99ADB2BC0 /* Pods-DailyDozen.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-DailyDozen.release.xcconfig"; path = "Pods/Target Support Files/Pods-DailyDozen/Pods-DailyDozen.release.xcconfig"; sourceTree = "<group>"; };
 		CF12918E1FC42DD300D1C17E /* DateCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DateCell.swift; sourceTree = "<group>"; };
@@ -167,6 +169,7 @@
 		CF13930F1FE0042800DD8679 /* Reminder */ = {
 			isa = PBXGroup;
 			children = (
+				493A8B99235E93DA00A5009A /* SettingsKeys.swift */,
 				CF1393131FE007E400DD8679 /* Controllers */,
 				CF1393121FE0046C00DD8679 /* Storyboards */,
 			);
@@ -797,6 +800,7 @@
 				CF12918F1FC42DD300D1C17E /* DateCell.swift in Sources */,
 				CF2680021FB477AD004A6200 /* Date.swift in Sources */,
 				CFF72AFB1FB9A499001CC2E9 /* UnitsType.swift in Sources */,
+				493A8B9A235E93DA00A5009A /* SettingsKeys.swift in Sources */,
 				CFC4A84F1F9761FF00B5AC75 /* PagerViewController.swift in Sources */,
 				CFD1BA331FCD24920057F549 /* RoundedButton.swift in Sources */,
 				CF9E03231FBD9FDE0084BC88 /* ItemHistoryViewController.swift in Sources */,

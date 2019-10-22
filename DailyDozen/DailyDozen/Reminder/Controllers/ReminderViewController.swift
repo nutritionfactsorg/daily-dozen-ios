@@ -27,7 +27,7 @@ class ReminderBuilder {
             let viewController = storyboard
                 .instantiateInitialViewController() as? ReminderViewController
             else { fatalError("There should be a controller") }
-        viewController.title = "Daily Reminder Settings"
+        viewController.title = "Settings"
 
         return viewController
     }
@@ -35,16 +35,6 @@ class ReminderBuilder {
 
 // MARK: - Controller
 class ReminderViewController: UIViewController {
-
-    // MARK: - Nested
-    private struct Keys {
-        static let canNotificate = "canNotificate"
-        static let hour = "hour"
-        static let minute = "minute"
-        static let sound = "sound"
-        static let imgID = "imgID"
-        static let requestID = "requestID"
-    }
 
     private struct Content {
         static let title = "DailyDozen app."
@@ -62,14 +52,14 @@ class ReminderViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        let canNotificate = UserDefaults.standard.bool(forKey: Keys.canNotificate)
+        let canNotificate = UserDefaults.standard.bool(forKey: SettingsKeys.reminderCanNotify)
         reminderSwitch.isOn = canNotificate
         settingsPanel.isHidden = !canNotificate
 
-        datePicker.date.hour = UserDefaults.standard.integer(forKey: Keys.hour)
-        datePicker.date.minute = UserDefaults.standard.integer(forKey: Keys.minute)
+        datePicker.date.hour = UserDefaults.standard.integer(forKey: SettingsKeys.reminderHourPref)
+        datePicker.date.minute = UserDefaults.standard.integer(forKey: SettingsKeys.reminderMinutePref)
 
-        soundSwitch.isOn = UserDefaults.standard.bool(forKey: Keys.sound)
+        soundSwitch.isOn = UserDefaults.standard.bool(forKey: SettingsKeys.reminderSoundPref)
     }
 
     override func viewWillDisappear(_ animated: Bool) {
@@ -77,12 +67,12 @@ class ReminderViewController: UIViewController {
 
         guard reminderSwitch.isOn else { return }
 
-        UserDefaults.standard.set(soundSwitch.isOn, forKey: Keys.sound)
+        UserDefaults.standard.set(soundSwitch.isOn, forKey: SettingsKeys.reminderSoundPref)
 
-        if UserDefaults.standard.integer(forKey: Keys.hour) != datePicker.date.hour ||
-            UserDefaults.standard.integer(forKey: Keys.minute) != datePicker.date.minute {
-            UserDefaults.standard.set(datePicker.date.hour, forKey: Keys.hour)
-            UserDefaults.standard.set(datePicker.date.minute, forKey: Keys.minute)
+        if UserDefaults.standard.integer(forKey: SettingsKeys.reminderHourPref) != datePicker.date.hour ||
+            UserDefaults.standard.integer(forKey: SettingsKeys.reminderMinutePref) != datePicker.date.minute {
+            UserDefaults.standard.set(datePicker.date.hour, forKey: SettingsKeys.reminderHourPref)
+            UserDefaults.standard.set(datePicker.date.minute, forKey: SettingsKeys.reminderMinutePref)
 
             UNUserNotificationCenter.current().removeAllPendingNotificationRequests()
 
@@ -94,7 +84,7 @@ class ReminderViewController: UIViewController {
 
             guard
                 let url = Bundle.main.url(forResource: Content.img, withExtension: Content.png),
-                let attachment = try? UNNotificationAttachment(identifier: Keys.imgID, url: url, options: nil)
+                let attachment = try? UNNotificationAttachment(identifier: SettingsKeys.imgID, url: url, options: nil)
                 else { return }
 
             content.attachments.append(attachment)
@@ -102,12 +92,12 @@ class ReminderViewController: UIViewController {
             if soundSwitch.isOn { content.sound = UNNotificationSound.default }
 
             var dateComponents = DateComponents()
-            dateComponents.hour = UserDefaults.standard.integer(forKey: Keys.hour)
-            dateComponents.minute = UserDefaults.standard.integer(forKey: Keys.minute)
+            dateComponents.hour = UserDefaults.standard.integer(forKey: SettingsKeys.reminderHourPref)
+            dateComponents.minute = UserDefaults.standard.integer(forKey: SettingsKeys.reminderMinutePref)
 
             let dateTrigget = UNCalendarNotificationTrigger(dateMatching: dateComponents, repeats: true)
 
-            let request = UNNotificationRequest(identifier: Keys.requestID, content: content, trigger: dateTrigget)
+            let request = UNNotificationRequest(identifier: SettingsKeys.requestID, content: content, trigger: dateTrigget)
 
             UNUserNotificationCenter.current().add(request) { (error) in
                 if let error = error {
@@ -117,9 +107,9 @@ class ReminderViewController: UIViewController {
         }
     }
 
-    @IBAction private func reminderSwithed(_ sender: UISwitch) {
+    @IBAction private func reminderSwitched(_ sender: UISwitch) {
         settingsPanel.isHidden = !sender.isOn
-        UserDefaults.standard.set(sender.isOn, forKey: Keys.canNotificate)
+        UserDefaults.standard.set(sender.isOn, forKey: SettingsKeys.reminderCanNotify)
         UNUserNotificationCenter.current().removeAllPendingNotificationRequests()
     }
 
