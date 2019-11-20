@@ -10,6 +10,26 @@ import Foundation
 
 extension Date {
 
+    /// Return yyyyMMdd based on the current locale.
+    var datestampKey: String {
+        let dateFormatter = DateFormatter()
+        dateFormatter.dateFormat = "yyyyMMdd"
+        return dateFormatter.string(from: self)
+    }
+
+    var datestampHHmm: String {
+        let dateFormatter = DateFormatter()
+        dateFormatter.dateFormat = "HH:mm"
+        return dateFormatter.string(from: self)
+    }
+    
+    init?(datestampKey: String) {
+        let dateFormatter = DateFormatter()
+        dateFormatter.dateFormat = "yyyyMMdd"
+        let date = dateFormatter.date(from: datestampKey)!
+        self = date
+    }
+    
     /// Returns a day name from the date.
     var dayName: String {
         let dateFormatter = DateFormatter()

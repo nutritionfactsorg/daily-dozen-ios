@@ -27,7 +27,7 @@ class PagerBuilder {
         guard
             let viewController = storyboard
                 .instantiateInitialViewController()
-            else { fatalError("There should be a controller") }
+            else { fatalError("Did not instantiate `Pager` controller") }
 
         return viewController
     }

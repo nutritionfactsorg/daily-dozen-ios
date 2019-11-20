@@ -14,8 +14,9 @@ extension URL {
     ///
     /// - Parameter file: A file name.
     /// - Returns: A file URL in the documents directory.
-    static func inDocuments(for file: String) -> URL {
-        let path = FileManager.default.urls(for: .documentDirectory, in: .userDomainMask)
-        return path[0].appendingPathComponent(file)
+    static func inDocuments(for filename: String) -> URL {
+        let fm = FileManager.default
+        let urlList = fm.urls(for: .documentDirectory, in: .userDomainMask)
+        return urlList[0].appendingPathComponent(filename)
     }
 }

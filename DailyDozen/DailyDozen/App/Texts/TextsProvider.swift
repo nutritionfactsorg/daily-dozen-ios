@@ -24,7 +24,7 @@ class TextsProvider {
     /// Returns the shared TextsProvider object.
     static let shared: TextsProvider = {
         guard
-            // See RealmConfig initialDoze(…) for keynames in Details.plist
+            // See RealmConfigVersion02 initialDoze(…) for keynames in Details.plist
             let path = Bundle.main.path(
                 forResource: Keys.details, ofType: Keys.plist)
             else {  fatalError("There should be a settings file") }

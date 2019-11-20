@@ -1,5 +1,5 @@
 //
-//  Entity.swift
+//  Item.swift
 //  DailyDozen
 //
 //  Created by Konstantin Khokhlov on 23.10.17.

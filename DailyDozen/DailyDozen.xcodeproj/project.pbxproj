@@ -8,11 +8,27 @@
 
 /* Begin PBXBuildFile section */
 		493A8B9A235E93DA00A5009A /* SettingsKeys.swift in Sources */ = {isa = PBXBuildFile; fileRef = 493A8B99235E93DA00A5009A /* SettingsKeys.swift */; };
+		4941D72E237E13DC00ED84B5 /* RealmManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4941D726237E13DB00ED84B5 /* RealmManager.swift */; };
+		4941D72F237E13DC00ED84B5 /* DataCountRecord.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4941D728237E13DC00ED84B5 /* DataCountRecord.swift */; };
+		4941D730237E13DC00ED84B5 /* DataCountType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4941D729237E13DC00ED84B5 /* DataCountType.swift */; };
+		4941D731237E13DC00ED84B5 /* DataWeightRecord.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4941D72A237E13DC00ED84B5 /* DataWeightRecord.swift */; };
+		4941D732237E13DC00ED84B5 /* DataWeightType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4941D72B237E13DC00ED84B5 /* DataWeightType.swift */; };
+		4941D733237E13DC00ED84B5 /* RealmProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4941D72C237E13DC00ED84B5 /* RealmProvider.swift */; };
+		4941D735237E266300ED84B5 /* DataCountAttributes.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4941D734237E266300ED84B5 /* DataCountAttributes.swift */; };
+		4966D7FB237DE9D4004F3A20 /* Resources in Resources */ = {isa = PBXBuildFile; fileRef = 4966D7FA237DE9D3004F3A20 /* Resources */; };
+		496F605B23825D4F0085B6FA /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 496F605A23825D4E0085B6FA /* Localizable.strings */; };
+		496F605D23826B2A0085B6FA /* _Globals.swift in Sources */ = {isa = PBXBuildFile; fileRef = 496F605C23826B2A0085B6FA /* _Globals.swift */; };
+		49821BAA2383727D006F166E /* DailyTracker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49821BA92383727D006F166E /* DailyTracker.swift */; };
+		498A2279237CD81F007AF5FB /* DailyDozenTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 498A2278237CD81F007AF5FB /* DailyDozenTests.swift */; };
+		498A2287237CD88A007AF5FB /* DailyDozenUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 498A2286237CD88A007AF5FB /* DailyDozenUITests.swift */; };
+		498D76A423709F9D00B5DF06 /* DevelopTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 498D76A323709F9D00B5DF06 /* DevelopTableViewController.swift */; };
+		49C646CB236F4A46000DA8DC /* Develop.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 49C646CA236F4A46000DA8DC /* Develop.storyboard */; };
 		49F0377B233AD9B600FFD2EE /* UIButtonCheckbox.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49F0377A233AD9B600FFD2EE /* UIButtonCheckbox.swift */; };
+		BD68BC5B2FB6D632F16CE9CD /* Pods_DailyDozenTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 715D60F634E9BCD998C66B77 /* Pods_DailyDozenTests.framework */; };
 		BED5BB460CE3AEE8CF585899 /* Pods_DailyDozen.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F514690D725E67AD54735EB9 /* Pods_DailyDozen.framework */; };
 		CF12918F1FC42DD300D1C17E /* DateCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF12918E1FC42DD300D1C17E /* DateCell.swift */; };
-		CF1393111FE0046800DD8679 /* Reminder.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CF1393101FE0046700DD8679 /* Reminder.storyboard */; };
-		CF1393151FE0080900DD8679 /* ReminderViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF1393141FE0080900DD8679 /* ReminderViewController.swift */; };
+		CF1393111FE0046800DD8679 /* Settings.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CF1393101FE0046700DD8679 /* Settings.storyboard */; };
+		CF1393151FE0080900DD8679 /* SettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF1393141FE0080900DD8679 /* SettingsViewController.swift */; };
 		CF17C8A71FAA019600367BF8 /* DetailsSection.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF17C8A61FAA019600367BF8 /* DetailsSection.swift */; };
 		CF22F07A1FA88D2200F25B70 /* DetailsDataProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF22F0791FA88D2200F25B70 /* DetailsDataProvider.swift */; };
 		CF22F07F1FA8ACE000F25B70 /* Details.plist in Resources */ = {isa = PBXBuildFile; fileRef = CF22F07E1FA8ACE000F25B70 /* Details.plist */; };
@@ -43,26 +59,26 @@
 		CFA3E8FC1FC58E6B0092199D /* ServingsHistoryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CFA3E8FB1FC58E6B0092199D /* ServingsHistoryViewController.swift */; };
 		CFA9CDF21FBAF653000468CA /* SupplementsHeader.xib in Resources */ = {isa = PBXBuildFile; fileRef = CFA9CDF11FBAF653000468CA /* SupplementsHeader.xib */; };
 		CFAAB3721F9F3BC600B24748 /* Doze.swift in Sources */ = {isa = PBXBuildFile; fileRef = CFAAB3711F9F3BC600B24748 /* Doze.swift */; };
-		CFAAB3741F9F3E1200B24748 /* RealmConfig.swift in Sources */ = {isa = PBXBuildFile; fileRef = CFAAB3731F9F3E1200B24748 /* RealmConfig.swift */; };
+		CFAAB3741F9F3E1200B24748 /* RealmConfigVersion02.swift in Sources */ = {isa = PBXBuildFile; fileRef = CFAAB3731F9F3E1200B24748 /* RealmConfigVersion02.swift */; };
 		CFAAB3771F9F3FDF00B24748 /* URL.swift in Sources */ = {isa = PBXBuildFile; fileRef = CFAAB3761F9F3FDF00B24748 /* URL.swift */; };
 		CFAAB37A1F9F4A8000B24748 /* DozeViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = CFAAB3791F9F4A8000B24748 /* DozeViewModel.swift */; };
 		CFB5568C1FD180C3003B5813 /* Report.swift in Sources */ = {isa = PBXBuildFile; fileRef = CFB5568B1FD180C3003B5813 /* Report.swift */; };
 		CFBEE2301FDE8D1E005C0F45 /* About.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CFBEE22F1FDE8D1E005C0F45 /* About.storyboard */; };
-		CFBEE2321FDE963D005C0F45 /* AboutViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CFBEE2311FDE963D005C0F45 /* AboutViewController.swift */; };
+		CFBEE2321FDE963D005C0F45 /* AboutTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CFBEE2311FDE963D005C0F45 /* AboutTableViewController.swift */; };
 		CFBEE2341FDE9A57005C0F45 /* RoundedView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CFBEE2331FDE9A57005C0F45 /* RoundedView.swift */; };
 		CFC060931FBC57C800A901A5 /* ServingsSection.swift in Sources */ = {isa = PBXBuildFile; fileRef = CFC060921FBC57C800A901A5 /* ServingsSection.swift */; };
-		CFC4A84D1F975A3900B5AC75 /* MenuViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CFC4A84C1F975A3900B5AC75 /* MenuViewController.swift */; };
+		CFC4A84D1F975A3900B5AC75 /* MenuTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CFC4A84C1F975A3900B5AC75 /* MenuTableViewController.swift */; };
 		CFC4A84F1F9761FF00B5AC75 /* PagerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CFC4A84E1F9761FF00B5AC75 /* PagerViewController.swift */; };
 		CFC4A8541F9776A500B5AC75 /* ServingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CFC4A8531F9776A500B5AC75 /* ServingsViewController.swift */; };
 		CFCE5FCB1F978007005C672B /* Servings.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CFCE5FCA1F978007005C672B /* Servings.storyboard */; };
 		CFD1BA331FCD24920057F549 /* RoundedButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = CFD1BA321FCD24920057F549 /* RoundedButton.swift */; };
 		CFE667291F98CF860037D1A2 /* Pager.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CFE667281F98CF860037D1A2 /* Pager.storyboard */; };
 		CFE6983C1F974B9700CD7905 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CFE6983B1F974B9700CD7905 /* AppDelegate.swift */; };
-		CFE6983E1F974B9700CD7905 /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CFE6983D1F974B9700CD7905 /* MainViewController.swift */; };
+		CFE6983E1F974B9700CD7905 /* MainSplitViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CFE6983D1F974B9700CD7905 /* MainSplitViewController.swift */; };
 		CFE698411F974B9700CD7905 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CFE6983F1F974B9700CD7905 /* Main.storyboard */; };
 		CFE698431F974B9700CD7905 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = CFE698421F974B9700CD7905 /* Assets.xcassets */; };
 		CFE698461F974B9700CD7905 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CFE698441F974B9700CD7905 /* LaunchScreen.storyboard */; };
-		CFE793571FA756E40084F075 /* RealmProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = CFE793561FA756E40084F075 /* RealmProvider.swift */; };
+		CFE793571FA756E40084F075 /* RealmProviderVersion02.swift in Sources */ = {isa = PBXBuildFile; fileRef = CFE793561FA756E40084F075 /* RealmProviderVersion02.swift */; };
 		CFECDFF8201EF7C1003E8572 /* Colors.swift in Sources */ = {isa = PBXBuildFile; fileRef = CFECDFF7201EF7C1003E8572 /* Colors.swift */; };
 		CFF117731F97530300BFE73A /* Menu.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CFF117721F97530300BFE73A /* Menu.storyboard */; };
 		CFF72AFB1FB9A499001CC2E9 /* UnitsType.swift in Sources */ = {isa = PBXBuildFile; fileRef = CFF72AFA1FB9A499001CC2E9 /* UnitsType.swift */; };
@@ -70,13 +86,53 @@
 		CFF72B001FB9BB70001CC2E9 /* LinkSettings.plist in Resources */ = {isa = PBXBuildFile; fileRef = CFF72AFF1FB9BB70001CC2E9 /* LinkSettings.plist */; };
 /* End PBXBuildFile section */
 
+/* Begin PBXContainerItemProxy section */
+		498A227B237CD81F007AF5FB /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = CFE698301F974B9700CD7905 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = CFE698371F974B9700CD7905;
+			remoteInfo = DailyDozen;
+		};
+		498A2289237CD88A007AF5FB /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = CFE698301F974B9700CD7905 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = CFE698371F974B9700CD7905;
+			remoteInfo = DailyDozen;
+		};
+/* End PBXContainerItemProxy section */
+
 /* Begin PBXFileReference section */
+		2CB41DDE201AD844603D7163 /* Pods-DailyDozenTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-DailyDozenTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-DailyDozenTests/Pods-DailyDozenTests.debug.xcconfig"; sourceTree = "<group>"; };
 		493A8B99235E93DA00A5009A /* SettingsKeys.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsKeys.swift; sourceTree = "<group>"; };
+		4941D726237E13DB00ED84B5 /* RealmManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RealmManager.swift; sourceTree = "<group>"; };
+		4941D728237E13DC00ED84B5 /* DataCountRecord.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DataCountRecord.swift; sourceTree = "<group>"; };
+		4941D729237E13DC00ED84B5 /* DataCountType.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DataCountType.swift; sourceTree = "<group>"; };
+		4941D72A237E13DC00ED84B5 /* DataWeightRecord.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DataWeightRecord.swift; sourceTree = "<group>"; };
+		4941D72B237E13DC00ED84B5 /* DataWeightType.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DataWeightType.swift; sourceTree = "<group>"; };
+		4941D72C237E13DC00ED84B5 /* RealmProvider.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RealmProvider.swift; sourceTree = "<group>"; };
+		4941D734237E266300ED84B5 /* DataCountAttributes.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DataCountAttributes.swift; sourceTree = "<group>"; };
+		4966D7FA237DE9D3004F3A20 /* Resources */ = {isa = PBXFileReference; lastKnownFileType = folder; path = Resources; sourceTree = "<group>"; };
+		496F605A23825D4E0085B6FA /* Localizable.strings */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = Localizable.strings; path = DailyDozen/Localizable.strings; sourceTree = "<group>"; };
+		496F605C23826B2A0085B6FA /* _Globals.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = _Globals.swift; sourceTree = "<group>"; };
+		49821BA92383727D006F166E /* DailyTracker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DailyTracker.swift; sourceTree = "<group>"; };
+		498A2276237CD81F007AF5FB /* DailyDozenTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = DailyDozenTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		498A2278237CD81F007AF5FB /* DailyDozenTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DailyDozenTests.swift; sourceTree = "<group>"; };
+		498A227A237CD81F007AF5FB /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		498A2284237CD88A007AF5FB /* DailyDozenUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = DailyDozenUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		498A2286237CD88A007AF5FB /* DailyDozenUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DailyDozenUITests.swift; sourceTree = "<group>"; };
+		498A2288237CD88A007AF5FB /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		498D76A323709F9D00B5DF06 /* DevelopTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DevelopTableViewController.swift; sourceTree = "<group>"; };
+		49BB8C6A237373840047AFA4 /* DailyDozen.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = DailyDozen.entitlements; sourceTree = "<group>"; };
+		49C646CA236F4A46000DA8DC /* Develop.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Develop.storyboard; sourceTree = "<group>"; };
 		49F0377A233AD9B600FFD2EE /* UIButtonCheckbox.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIButtonCheckbox.swift; sourceTree = "<group>"; };
+		6ED3A55B48F7069CAE75156C /* Pods-DailyDozenTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-DailyDozenTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-DailyDozenTests/Pods-DailyDozenTests.release.xcconfig"; sourceTree = "<group>"; };
+		715D60F634E9BCD998C66B77 /* Pods_DailyDozenTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_DailyDozenTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		7D4AA01331AD98C99ADB2BC0 /* Pods-DailyDozen.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-DailyDozen.release.xcconfig"; path = "Pods/Target Support Files/Pods-DailyDozen/Pods-DailyDozen.release.xcconfig"; sourceTree = "<group>"; };
 		CF12918E1FC42DD300D1C17E /* DateCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DateCell.swift; sourceTree = "<group>"; };
-		CF1393101FE0046700DD8679 /* Reminder.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Reminder.storyboard; sourceTree = "<group>"; };
-		CF1393141FE0080900DD8679 /* ReminderViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReminderViewController.swift; sourceTree = "<group>"; };
+		CF1393101FE0046700DD8679 /* Settings.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Settings.storyboard; sourceTree = "<group>"; };
+		CF1393141FE0080900DD8679 /* SettingsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsViewController.swift; sourceTree = "<group>"; };
 		CF17C8A61FAA019600367BF8 /* DetailsSection.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailsSection.swift; sourceTree = "<group>"; };
 		CF22F0791FA88D2200F25B70 /* DetailsDataProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailsDataProvider.swift; sourceTree = "<group>"; };
 		CF22F07E1FA8ACE000F25B70 /* Details.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Details.plist; sourceTree = "<group>"; };
@@ -107,15 +163,15 @@
 		CFA3E8FB1FC58E6B0092199D /* ServingsHistoryViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ServingsHistoryViewController.swift; sourceTree = "<group>"; };
 		CFA9CDF11FBAF653000468CA /* SupplementsHeader.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SupplementsHeader.xib; sourceTree = "<group>"; };
 		CFAAB3711F9F3BC600B24748 /* Doze.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Doze.swift; sourceTree = "<group>"; };
-		CFAAB3731F9F3E1200B24748 /* RealmConfig.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RealmConfig.swift; sourceTree = "<group>"; };
+		CFAAB3731F9F3E1200B24748 /* RealmConfigVersion02.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RealmConfigVersion02.swift; sourceTree = "<group>"; };
 		CFAAB3761F9F3FDF00B24748 /* URL.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = URL.swift; sourceTree = "<group>"; };
 		CFAAB3791F9F4A8000B24748 /* DozeViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DozeViewModel.swift; sourceTree = "<group>"; };
 		CFB5568B1FD180C3003B5813 /* Report.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Report.swift; sourceTree = "<group>"; };
 		CFBEE22F1FDE8D1E005C0F45 /* About.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = About.storyboard; sourceTree = "<group>"; };
-		CFBEE2311FDE963D005C0F45 /* AboutViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AboutViewController.swift; sourceTree = "<group>"; };
+		CFBEE2311FDE963D005C0F45 /* AboutTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AboutTableViewController.swift; sourceTree = "<group>"; };
 		CFBEE2331FDE9A57005C0F45 /* RoundedView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoundedView.swift; sourceTree = "<group>"; };
 		CFC060921FBC57C800A901A5 /* ServingsSection.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ServingsSection.swift; sourceTree = "<group>"; };
-		CFC4A84C1F975A3900B5AC75 /* MenuViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuViewController.swift; sourceTree = "<group>"; };
+		CFC4A84C1F975A3900B5AC75 /* MenuTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuTableViewController.swift; sourceTree = "<group>"; };
 		CFC4A84E1F9761FF00B5AC75 /* PagerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PagerViewController.swift; sourceTree = "<group>"; };
 		CFC4A8531F9776A500B5AC75 /* ServingsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ServingsViewController.swift; sourceTree = "<group>"; };
 		CFCE5FCA1F978007005C672B /* Servings.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Servings.storyboard; sourceTree = "<group>"; };
@@ -123,12 +179,12 @@
 		CFE667281F98CF860037D1A2 /* Pager.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Pager.storyboard; sourceTree = "<group>"; };
 		CFE698381F974B9700CD7905 /* DailyDozen.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = DailyDozen.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		CFE6983B1F974B9700CD7905 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		CFE6983D1F974B9700CD7905 /* MainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
+		CFE6983D1F974B9700CD7905 /* MainSplitViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainSplitViewController.swift; sourceTree = "<group>"; };
 		CFE698401F974B9700CD7905 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		CFE698421F974B9700CD7905 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		CFE698451F974B9700CD7905 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		CFE698471F974B9700CD7905 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		CFE793561FA756E40084F075 /* RealmProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RealmProvider.swift; sourceTree = "<group>"; };
+		CFE793561FA756E40084F075 /* RealmProviderVersion02.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RealmProviderVersion02.swift; sourceTree = "<group>"; };
 		CFECDFF7201EF7C1003E8572 /* Colors.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Colors.swift; sourceTree = "<group>"; };
 		CFF117721F97530300BFE73A /* Menu.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Menu.storyboard; sourceTree = "<group>"; };
 		CFF72AFA1FB9A499001CC2E9 /* UnitsType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UnitsType.swift; sourceTree = "<group>"; };
@@ -139,6 +195,21 @@
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
+		498A2273237CD81F007AF5FB /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				BD68BC5B2FB6D632F16CE9CD /* Pods_DailyDozenTests.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		498A2281237CD88A007AF5FB /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		CFE698351F974B9700CD7905 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
@@ -150,46 +221,74 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		4941D724237E121E00ED84B5 /* Database */ = {
+			isa = PBXGroup;
+			children = (
+				4941D727237E13DC00ED84B5 /* DataRecords */,
+				4941D726237E13DB00ED84B5 /* RealmManager.swift */,
+				4941D72C237E13DC00ED84B5 /* RealmProvider.swift */,
+			);
+			path = Database;
+			sourceTree = "<group>";
+		};
+		4941D727237E13DC00ED84B5 /* DataRecords */ = {
+			isa = PBXGroup;
+			children = (
+				49821BA92383727D006F166E /* DailyTracker.swift */,
+				4941D728237E13DC00ED84B5 /* DataCountRecord.swift */,
+				4941D729237E13DC00ED84B5 /* DataCountType.swift */,
+				4941D734237E266300ED84B5 /* DataCountAttributes.swift */,
+				4941D72A237E13DC00ED84B5 /* DataWeightRecord.swift */,
+				4941D72B237E13DC00ED84B5 /* DataWeightType.swift */,
+			);
+			path = DataRecords;
+			sourceTree = "<group>";
+		};
+		498A2277237CD81F007AF5FB /* DailyDozenTests */ = {
+			isa = PBXGroup;
+			children = (
+				498A2278237CD81F007AF5FB /* DailyDozenTests.swift */,
+				498A227A237CD81F007AF5FB /* Info.plist */,
+				4966D7FA237DE9D3004F3A20 /* Resources */,
+			);
+			path = DailyDozenTests;
+			sourceTree = "<group>";
+		};
+		498A2285237CD88A007AF5FB /* DailyDozenUITests */ = {
+			isa = PBXGroup;
+			children = (
+				498A2286237CD88A007AF5FB /* DailyDozenUITests.swift */,
+				498A2288237CD88A007AF5FB /* Info.plist */,
+			);
+			path = DailyDozenUITests;
+			sourceTree = "<group>";
+		};
+		49C646C9236F4997000DA8DC /* Develop */ = {
+			isa = PBXGroup;
+			children = (
+				49C646CA236F4A46000DA8DC /* Develop.storyboard */,
+				498D76A323709F9D00B5DF06 /* DevelopTableViewController.swift */,
+			);
+			path = Develop;
+			sourceTree = "<group>";
+		};
 		68646D18FC1A63146B00CB7C /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
 				F514690D725E67AD54735EB9 /* Pods_DailyDozen.framework */,
+				715D60F634E9BCD998C66B77 /* Pods_DailyDozenTests.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
-		CF12918D1FC42DB000D1C17E /* Views */ = {
-			isa = PBXGroup;
-			children = (
-				CF12918E1FC42DD300D1C17E /* DateCell.swift */,
-			);
-			path = Views;
-			sourceTree = "<group>";
-		};
-		CF13930F1FE0042800DD8679 /* Reminder */ = {
+		CF13930F1FE0042800DD8679 /* Settings */ = {
 			isa = PBXGroup;
 			children = (
 				493A8B99235E93DA00A5009A /* SettingsKeys.swift */,
-				CF1393131FE007E400DD8679 /* Controllers */,
-				CF1393121FE0046C00DD8679 /* Storyboards */,
+				CF1393141FE0080900DD8679 /* SettingsViewController.swift */,
+				CF1393101FE0046700DD8679 /* Settings.storyboard */,
 			);
-			path = Reminder;
-			sourceTree = "<group>";
-		};
-		CF1393121FE0046C00DD8679 /* Storyboards */ = {
-			isa = PBXGroup;
-			children = (
-				CF1393101FE0046700DD8679 /* Reminder.storyboard */,
-			);
-			path = Storyboards;
-			sourceTree = "<group>";
-		};
-		CF1393131FE007E400DD8679 /* Controllers */ = {
-			isa = PBXGroup;
-			children = (
-				CF1393141FE0080900DD8679 /* ReminderViewController.swift */,
-			);
-			path = Controllers;
+			path = Settings;
 			sourceTree = "<group>";
 		};
 		CF17C8A51FAA016D00367BF8 /* SupportingFiles */ = {
@@ -313,35 +412,11 @@
 		CF9E031D1FBD9F540084BC88 /* ItemHistory */ = {
 			isa = PBXGroup;
 			children = (
-				CF12918D1FC42DB000D1C17E /* Views */,
-				CF9E03211FBD9FC50084BC88 /* Controllers */,
-				CF9E031E1FBD9F800084BC88 /* Storyboards */,
-			);
-			path = ItemHistory;
-			sourceTree = "<group>";
-		};
-		CF9E031E1FBD9F800084BC88 /* Storyboards */ = {
-			isa = PBXGroup;
-			children = (
+				CF12918E1FC42DD300D1C17E /* DateCell.swift */,
+				CF9E03221FBD9FDE0084BC88 /* ItemHistoryViewController.swift */,
 				CF9E031F1FBD9FA80084BC88 /* ItemHistory.storyboard */,
 			);
-			path = Storyboards;
-			sourceTree = "<group>";
-		};
-		CF9E03211FBD9FC50084BC88 /* Controllers */ = {
-			isa = PBXGroup;
-			children = (
-				CF9E03221FBD9FDE0084BC88 /* ItemHistoryViewController.swift */,
-			);
-			path = Controllers;
-			sourceTree = "<group>";
-		};
-		CF9EC1C12021D30800C7B3CA /* SupportingFiles */ = {
-			isa = PBXGroup;
-			children = (
-				CF9EC1C22021D37000C7B3CA /* MenuItem.swift */,
-			);
-			path = SupportingFiles;
+			path = ItemHistory;
 			sourceTree = "<group>";
 		};
 		CFA3E8F61FC58CD90092199D /* ServingsHistory */ = {
@@ -394,8 +469,8 @@
 		CFAAB37B1F9F4B0D00B24748 /* Realm */ = {
 			isa = PBXGroup;
 			children = (
-				CFAAB3731F9F3E1200B24748 /* RealmConfig.swift */,
-				CFE793561FA756E40084F075 /* RealmProvider.swift */,
+				CFAAB3731F9F3E1200B24748 /* RealmConfigVersion02.swift */,
+				CFE793561FA756E40084F075 /* RealmProviderVersion02.swift */,
 			);
 			path = Realm;
 			sourceTree = "<group>";
@@ -411,26 +486,10 @@
 		CFBEE22A1FDE8CBA005C0F45 /* About */ = {
 			isa = PBXGroup;
 			children = (
-				CFBEE22C1FDE8CE0005C0F45 /* Controllers */,
-				CFBEE22B1FDE8CD5005C0F45 /* Storyboards */,
-			);
-			path = About;
-			sourceTree = "<group>";
-		};
-		CFBEE22B1FDE8CD5005C0F45 /* Storyboards */ = {
-			isa = PBXGroup;
-			children = (
+				CFBEE2311FDE963D005C0F45 /* AboutTableViewController.swift */,
 				CFBEE22F1FDE8D1E005C0F45 /* About.storyboard */,
 			);
-			path = Storyboards;
-			sourceTree = "<group>";
-		};
-		CFBEE22C1FDE8CE0005C0F45 /* Controllers */ = {
-			isa = PBXGroup;
-			children = (
-				CFBEE2311FDE963D005C0F45 /* AboutViewController.swift */,
-			);
-			path = Controllers;
+			path = About;
 			sourceTree = "<group>";
 		};
 		CFC060911FBC579700A901A5 /* SupportingFiles */ = {
@@ -440,14 +499,6 @@
 				49F0377A233AD9B600FFD2EE /* UIButtonCheckbox.swift */,
 			);
 			path = SupportingFiles;
-			sourceTree = "<group>";
-		};
-		CFC4A84B1F975A0C00B5AC75 /* Controllers */ = {
-			isa = PBXGroup;
-			children = (
-				CFC4A84C1F975A3900B5AC75 /* MenuViewController.swift */,
-			);
-			path = Controllers;
 			sourceTree = "<group>";
 		};
 		CFC4A8501F97620400B5AC75 /* Controllers */ = {
@@ -472,7 +523,10 @@
 		CFE6982F1F974B9700CD7905 = {
 			isa = PBXGroup;
 			children = (
+				496F605A23825D4E0085B6FA /* Localizable.strings */,
 				CFE6983A1F974B9700CD7905 /* DailyDozen */,
+				498A2277237CD81F007AF5FB /* DailyDozenTests */,
+				498A2285237CD88A007AF5FB /* DailyDozenUITests */,
 				CFE698391F974B9700CD7905 /* Products */,
 				D0E09D1F35AF7D3FF1EA14DC /* Pods */,
 				68646D18FC1A63146B00CB7C /* Frameworks */,
@@ -483,6 +537,8 @@
 			isa = PBXGroup;
 			children = (
 				CFE698381F974B9700CD7905 /* DailyDozen.app */,
+				498A2276237CD81F007AF5FB /* DailyDozenTests.xctest */,
+				498A2284237CD88A007AF5FB /* DailyDozenUITests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -490,14 +546,17 @@
 		CFE6983A1F974B9700CD7905 /* DailyDozen */ = {
 			isa = PBXGroup;
 			children = (
+				49BB8C6A237373840047AFA4 /* DailyDozen.entitlements */,
 				CFE6984F1F974EFF00CD7905 /* App */,
 				CFF117711F9752CA00BFE73A /* Menu */,
 				CFF117751F9753B700BFE73A /* Servings */,
 				CF2FA9911FA87AB5003508F8 /* Details */,
+				49C646C9236F4997000DA8DC /* Develop */,
+				4941D724237E121E00ED84B5 /* Database */,
 				CF9E031D1FBD9F540084BC88 /* ItemHistory */,
 				CFA3E8F61FC58CD90092199D /* ServingsHistory */,
 				CFBEE22A1FDE8CBA005C0F45 /* About */,
-				CF13930F1FE0042800DD8679 /* Reminder */,
+				CF13930F1FE0042800DD8679 /* Settings */,
 			);
 			path = DailyDozen;
 			sourceTree = "<group>";
@@ -521,7 +580,7 @@
 		CFE698501F974F0F00CD7905 /* Controllers */ = {
 			isa = PBXGroup;
 			children = (
-				CFE6983D1F974B9700CD7905 /* MainViewController.swift */,
+				CFE6983D1F974B9700CD7905 /* MainSplitViewController.swift */,
 				CF55BC4E2020450D00003D0D /* AlertBuilder.swift */,
 			);
 			path = Controllers;
@@ -533,6 +592,7 @@
 				CF90514F2022F01A00F4C1F2 /* Attachments */,
 				CFE6983B1F974B9700CD7905 /* AppDelegate.swift */,
 				CFE698471F974B9700CD7905 /* Info.plist */,
+				496F605C23826B2A0085B6FA /* _Globals.swift */,
 			);
 			path = SupportingFiles;
 			sourceTree = "<group>";
@@ -557,19 +617,11 @@
 		CFF117711F9752CA00BFE73A /* Menu */ = {
 			isa = PBXGroup;
 			children = (
-				CFC4A84B1F975A0C00B5AC75 /* Controllers */,
-				CFF117741F97533F00BFE73A /* Storyboards */,
-				CF9EC1C12021D30800C7B3CA /* SupportingFiles */,
+				CFC4A84C1F975A3900B5AC75 /* MenuTableViewController.swift */,
+				CFF117721F97530300BFE73A /* Menu.storyboard */,
+				CF9EC1C22021D37000C7B3CA /* MenuItem.swift */,
 			);
 			path = Menu;
-			sourceTree = "<group>";
-		};
-		CFF117741F97533F00BFE73A /* Storyboards */ = {
-			isa = PBXGroup;
-			children = (
-				CFF117721F97530300BFE73A /* Menu.storyboard */,
-			);
-			path = Storyboards;
 			sourceTree = "<group>";
 		};
 		CFF117751F9753B700BFE73A /* Servings */ = {
@@ -609,6 +661,8 @@
 			children = (
 				DA1790B64ED37B6DB70223BE /* Pods-DailyDozen.debug.xcconfig */,
 				7D4AA01331AD98C99ADB2BC0 /* Pods-DailyDozen.release.xcconfig */,
+				2CB41DDE201AD844603D7163 /* Pods-DailyDozenTests.debug.xcconfig */,
+				6ED3A55B48F7069CAE75156C /* Pods-DailyDozenTests.release.xcconfig */,
 			);
 			name = Pods;
 			sourceTree = "<group>";
@@ -616,6 +670,44 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
+		498A2275237CD81F007AF5FB /* DailyDozenTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 498A227F237CD81F007AF5FB /* Build configuration list for PBXNativeTarget "DailyDozenTests" */;
+			buildPhases = (
+				F9148B5B6D2D32DAD583C1A4 /* [CP] Check Pods Manifest.lock */,
+				498A2272237CD81F007AF5FB /* Sources */,
+				498A2273237CD81F007AF5FB /* Frameworks */,
+				498A2274237CD81F007AF5FB /* Resources */,
+				F69A747D623F34AF81001F1E /* [CP] Embed Pods Frameworks */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				498A227C237CD81F007AF5FB /* PBXTargetDependency */,
+			);
+			name = DailyDozenTests;
+			productName = DailyDozenTests;
+			productReference = 498A2276237CD81F007AF5FB /* DailyDozenTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+		498A2283237CD88A007AF5FB /* DailyDozenUITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 498A228B237CD88A007AF5FB /* Build configuration list for PBXNativeTarget "DailyDozenUITests" */;
+			buildPhases = (
+				498A2280237CD88A007AF5FB /* Sources */,
+				498A2281237CD88A007AF5FB /* Frameworks */,
+				498A2282237CD88A007AF5FB /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				498A228A237CD88A007AF5FB /* PBXTargetDependency */,
+			);
+			name = DailyDozenUITests;
+			productName = DailyDozenUITests;
+			productReference = 498A2284237CD88A007AF5FB /* DailyDozenUITests.xctest */;
+			productType = "com.apple.product-type.bundle.ui-testing";
+		};
 		CFE698371F974B9700CD7905 /* DailyDozen */ = {
 			isa = PBXNativeTarget;
 			buildConfigurationList = CFE6984A1F974B9700CD7905 /* Build configuration list for PBXNativeTarget "DailyDozen" */;
@@ -642,10 +734,20 @@
 		CFE698301F974B9700CD7905 /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
-				LastSwiftUpdateCheck = 0900;
+				LastSwiftUpdateCheck = 1120;
 				LastUpgradeCheck = 1100;
 				ORGANIZATIONNAME = Nutritionfacts.org;
 				TargetAttributes = {
+					498A2275237CD81F007AF5FB = {
+						CreatedOnToolsVersion = 11.2;
+						ProvisioningStyle = Automatic;
+						TestTargetID = CFE698371F974B9700CD7905;
+					};
+					498A2283237CD88A007AF5FB = {
+						CreatedOnToolsVersion = 11.2;
+						ProvisioningStyle = Automatic;
+						TestTargetID = CFE698371F974B9700CD7905;
+					};
 					CFE698371F974B9700CD7905 = {
 						CreatedOnToolsVersion = 9.0;
 						LastSwiftMigration = 1100;
@@ -667,11 +769,28 @@
 			projectRoot = "";
 			targets = (
 				CFE698371F974B9700CD7905 /* DailyDozen */,
+				498A2275237CD81F007AF5FB /* DailyDozenTests */,
+				498A2283237CD88A007AF5FB /* DailyDozenUITests */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
+		498A2274237CD81F007AF5FB /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				4966D7FB237DE9D4004F3A20 /* Resources in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		498A2282237CD88A007AF5FB /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		CFE698361F974B9700CD7905 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -684,6 +803,7 @@
 				CFCE5FCB1F978007005C672B /* Servings.storyboard in Resources */,
 				CFE698431F974B9700CD7905 /* Assets.xcassets in Resources */,
 				CF22F07F1FA8ACE000F25B70 /* Details.plist in Resources */,
+				49C646CB236F4A46000DA8DC /* Develop.storyboard in Resources */,
 				CF64DF2C1FB5CD5100B4D124 /* TypesHeader.xib in Resources */,
 				CF9051512022F71B00F4C1F2 /* dr_greger.png in Resources */,
 				CFA9CDF21FBAF653000468CA /* SupplementsHeader.xib in Resources */,
@@ -691,7 +811,8 @@
 				CF64DF271FB5BAC400B4D124 /* SizesHeader.xib in Resources */,
 				CFE698411F974B9700CD7905 /* Main.storyboard in Resources */,
 				CFF72B001FB9BB70001CC2E9 /* LinkSettings.plist in Resources */,
-				CF1393111FE0046800DD8679 /* Reminder.storyboard in Resources */,
+				496F605B23825D4F0085B6FA /* Localizable.strings in Resources */,
+				CF1393111FE0046800DD8679 /* Settings.storyboard in Resources */,
 				CFF117731F97530300BFE73A /* Menu.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -758,9 +879,75 @@
 			shellPath = /bin/sh;
 			shellScript = "if which swiftlint >/dev/null; then\nswiftlint\nelse\necho \"warning: SwiftLint not installed, download from https://github.com/realm/SwiftLint\"\nfi\n";
 		};
+		F69A747D623F34AF81001F1E /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-DailyDozenTests/Pods-DailyDozenTests-frameworks.sh",
+				"${BUILT_PRODUCTS_DIR}/ActiveLabel/ActiveLabel.framework",
+				"${BUILT_PRODUCTS_DIR}/Charts/Charts.framework",
+				"${BUILT_PRODUCTS_DIR}/FSCalendar/FSCalendar.framework",
+				"${BUILT_PRODUCTS_DIR}/Realm/Realm.framework",
+				"${BUILT_PRODUCTS_DIR}/RealmSwift/RealmSwift.framework",
+				"${BUILT_PRODUCTS_DIR}/SimpleAnimation/SimpleAnimation.framework",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/ActiveLabel.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Charts.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/FSCalendar.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Realm.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/RealmSwift.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SimpleAnimation.framework",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-DailyDozenTests/Pods-DailyDozenTests-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		F9148B5B6D2D32DAD583C1A4 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-DailyDozenTests-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
 /* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
+		498A2272237CD81F007AF5FB /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				498A2279237CD81F007AF5FB /* DailyDozenTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		498A2280237CD88A007AF5FB /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				498A2287237CD88A007AF5FB /* DailyDozenUITests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		CFE698341F974B9700CD7905 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -768,20 +955,28 @@
 				CFA3E8FC1FC58E6B0092199D /* ServingsHistoryViewController.swift in Sources */,
 				CFF72AFE1FB9BAAA001CC2E9 /* LinkService.swift in Sources */,
 				CFC4A8541F9776A500B5AC75 /* ServingsViewController.swift in Sources */,
+				496F605D23826B2A0085B6FA /* _Globals.swift in Sources */,
 				CF4902951FD91412000EAB68 /* ChartView.swift in Sources */,
+				4941D733237E13DC00ED84B5 /* RealmProvider.swift in Sources */,
+				4941D72E237E13DC00ED84B5 /* RealmManager.swift in Sources */,
 				CFAAB3721F9F3BC600B24748 /* Doze.swift in Sources */,
 				CF22F07A1FA88D2200F25B70 /* DetailsDataProvider.swift in Sources */,
 				49F0377B233AD9B600FFD2EE /* UIButtonCheckbox.swift in Sources */,
-				CFE6983E1F974B9700CD7905 /* MainViewController.swift in Sources */,
+				CFE6983E1F974B9700CD7905 /* MainSplitViewController.swift in Sources */,
 				CF64DF331FB5E03C00B4D124 /* TypesCell.swift in Sources */,
 				CFAAB3771F9F3FDF00B24748 /* URL.swift in Sources */,
 				CF6E6D351FB1B4FE00B177E7 /* Detail.swift in Sources */,
-				CF1393151FE0080900DD8679 /* ReminderViewController.swift in Sources */,
+				4941D731237E13DC00ED84B5 /* DataWeightRecord.swift in Sources */,
+				CF1393151FE0080900DD8679 /* SettingsViewController.swift in Sources */,
+				49821BAA2383727D006F166E /* DailyTracker.swift in Sources */,
 				CF6E6D391FB1B8E300B177E7 /* TextsProvider.swift in Sources */,
-				CFC4A84D1F975A3900B5AC75 /* MenuViewController.swift in Sources */,
+				CFC4A84D1F975A3900B5AC75 /* MenuTableViewController.swift in Sources */,
 				CF6E6D3C1FB1BEC400B177E7 /* DetailViewModel.swift in Sources */,
 				CFE6983C1F974B9700CD7905 /* AppDelegate.swift in Sources */,
 				CF64DF311FB5DFCF00B4D124 /* SizesCell.swift in Sources */,
+				4941D730237E13DC00ED84B5 /* DataCountType.swift in Sources */,
+				4941D732237E13DC00ED84B5 /* DataWeightType.swift in Sources */,
+				4941D72F237E13DC00ED84B5 /* DataCountRecord.swift in Sources */,
 				CFB5568C1FD180C3003B5813 /* Report.swift in Sources */,
 				CF987C281F9E157300D4893E /* Item.swift in Sources */,
 				CF9EC1C0202196B100C7B3CA /* Fonts.swift in Sources */,
@@ -791,27 +986,42 @@
 				CF2FA9961FA87F0C003508F8 /* DetailsViewController.swift in Sources */,
 				CFECDFF8201EF7C1003E8572 /* Colors.swift in Sources */,
 				CF4DECF71F9DF2A500DA094B /* ServingsCell.swift in Sources */,
-				CFE793571FA756E40084F075 /* RealmProvider.swift in Sources */,
+				498D76A423709F9D00B5DF06 /* DevelopTableViewController.swift in Sources */,
+				CFE793571FA756E40084F075 /* RealmProviderVersion02.swift in Sources */,
 				CFAAB37A1F9F4A8000B24748 /* DozeViewModel.swift in Sources */,
 				CF4902971FD917D4000EAB68 /* ControlPanel.swift in Sources */,
 				CFC060931FBC57C800A901A5 /* ServingsSection.swift in Sources */,
 				CF5B28B11FA0A2C500D57A48 /* StateCell.swift in Sources */,
-				CFBEE2321FDE963D005C0F45 /* AboutViewController.swift in Sources */,
+				CFBEE2321FDE963D005C0F45 /* AboutTableViewController.swift in Sources */,
 				CF12918F1FC42DD300D1C17E /* DateCell.swift in Sources */,
 				CF2680021FB477AD004A6200 /* Date.swift in Sources */,
 				CFF72AFB1FB9A499001CC2E9 /* UnitsType.swift in Sources */,
 				493A8B9A235E93DA00A5009A /* SettingsKeys.swift in Sources */,
 				CFC4A84F1F9761FF00B5AC75 /* PagerViewController.swift in Sources */,
 				CFD1BA331FCD24920057F549 /* RoundedButton.swift in Sources */,
+				4941D735237E266300ED84B5 /* DataCountAttributes.swift in Sources */,
 				CF9E03231FBD9FDE0084BC88 /* ItemHistoryViewController.swift in Sources */,
 				CF4DECF91F9DF82900DA094B /* ServingsDataProvider.swift in Sources */,
 				CF17C8A71FAA019600367BF8 /* DetailsSection.swift in Sources */,
 				CF55BC4F2020450D00003D0D /* AlertBuilder.swift in Sources */,
-				CFAAB3741F9F3E1200B24748 /* RealmConfig.swift in Sources */,
+				CFAAB3741F9F3E1200B24748 /* RealmConfigVersion02.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		498A227C237CD81F007AF5FB /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = CFE698371F974B9700CD7905 /* DailyDozen */;
+			targetProxy = 498A227B237CD81F007AF5FB /* PBXContainerItemProxy */;
+		};
+		498A228A237CD88A007AF5FB /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = CFE698371F974B9700CD7905 /* DailyDozen */;
+			targetProxy = 498A2289237CD88A007AF5FB /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
 		CFE6983F1F974B9700CD7905 /* Main.storyboard */ = {
@@ -833,6 +1043,84 @@
 /* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
+		498A227D237CD81F007AF5FB /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 2CB41DDE201AD844603D7163 /* Pods-DailyDozenTests.debug.xcconfig */;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 2MG57YUZL5;
+				INFOPLIST_FILE = DailyDozenTests/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.4;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				PRODUCT_BUNDLE_IDENTIFIER = org.nutritionfacts.apple.DailyDozenTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/DailyDozen.app/DailyDozen";
+			};
+			name = Debug;
+		};
+		498A227E237CD81F007AF5FB /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 6ED3A55B48F7069CAE75156C /* Pods-DailyDozenTests.release.xcconfig */;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 2MG57YUZL5;
+				INFOPLIST_FILE = DailyDozenTests/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.4;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				MTL_FAST_MATH = YES;
+				PRODUCT_BUNDLE_IDENTIFIER = org.nutritionfacts.apple.DailyDozenTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/DailyDozen.app/DailyDozen";
+			};
+			name = Release;
+		};
+		498A228C237CD88A007AF5FB /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 2MG57YUZL5;
+				INFOPLIST_FILE = DailyDozenUITests/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.4;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				PRODUCT_BUNDLE_IDENTIFIER = org.nutritionfacts.apple.DailyDozenUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = DailyDozen;
+			};
+			name = Debug;
+		};
+		498A228D237CD88A007AF5FB /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 2MG57YUZL5;
+				INFOPLIST_FILE = DailyDozenUITests/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.4;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				MTL_FAST_MATH = YES;
+				PRODUCT_BUNDLE_IDENTIFIER = org.nutritionfacts.apple.DailyDozenUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = DailyDozen;
+			};
+			name = Release;
+		};
 		CFE698481F974B9700CD7905 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
@@ -883,7 +1171,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.4;
 				MTL_ENABLE_DEBUG_INFO = YES;
 				ONLY_ACTIVE_ARCH = YES;
 				SDKROOT = iphoneos;
@@ -936,7 +1224,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.4;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				SDKROOT = iphoneos;
 				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
@@ -949,10 +1237,11 @@
 			baseConfigurationReference = DA1790B64ED37B6DB70223BE /* Pods-DailyDozen.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = DailyDozen/DailyDozen.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 2MG57YUZL5;
 				INFOPLIST_FILE = "$(SRCROOT)/DailyDozen/App/SupportingFiles/Info.plist";
-				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.4;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				MARKETING_VERSION = 3.0;
 				PRODUCT_BUNDLE_IDENTIFIER = com.nutritionfacts.dailydozen;
@@ -967,10 +1256,11 @@
 			baseConfigurationReference = 7D4AA01331AD98C99ADB2BC0 /* Pods-DailyDozen.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = DailyDozen/DailyDozen.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 2MG57YUZL5;
 				INFOPLIST_FILE = "$(SRCROOT)/DailyDozen/App/SupportingFiles/Info.plist";
-				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.4;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				MARKETING_VERSION = 3.0;
 				PRODUCT_BUNDLE_IDENTIFIER = com.nutritionfacts.dailydozen;
@@ -983,6 +1273,24 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
+		498A227F237CD81F007AF5FB /* Build configuration list for PBXNativeTarget "DailyDozenTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				498A227D237CD81F007AF5FB /* Debug */,
+				498A227E237CD81F007AF5FB /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		498A228B237CD88A007AF5FB /* Build configuration list for PBXNativeTarget "DailyDozenUITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				498A228C237CD88A007AF5FB /* Debug */,
+				498A228D237CD88A007AF5FB /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
 		CFE698331F974B9700CD7905 /* Build configuration list for PBXProject "DailyDozen" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (

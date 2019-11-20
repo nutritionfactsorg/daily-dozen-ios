@@ -11,7 +11,7 @@ import UserNotifications
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
-
+    
     // MARK: - Nested
     private struct Keys {
         static let extens = "realm"
@@ -21,22 +21,37 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         static let confirm = "OK" // :NYI:ToBeLocalized:
         static let decline = "NO" // :NYI:ToBeLocalized:
     }
-
-    weak var realmDelegate: RealmDelegate?
-
+    
+    weak var realmDelegate: RealmDelegateVersion02?
+    
     var window: UIWindow?
-
+    
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
-
+        
         #if DEBUG
-        // print("::::: DEBUG :::::")
+        //print("::::: DEBUG :::::")
+        //print(":::::::::::::::::\n")
         #endif
         
         #if targetEnvironment(simulator)
-            print("::::: SIMULATOR :::::")
-            if let documentsPath = FileManager.default.urls(for: .documentDirectory, in: .userDomainMask).first?.path {
-                print("App Documents Directory:\n\(documentsPath)\n")
-            }
+        print("::::: SIMULATOR ENVIRONMENT :::::")
+        
+        let bundle = Bundle(for: type(of: self))
+        print("Bundle & Resources Path:\n\(bundle.bundlePath)\n")
+
+        if let documentsPath = FileManager.default.urls(for: .documentDirectory, in: .userDomainMask).first?.path {
+            print("App Documents (RealmDB) Directory:\n\(documentsPath)\n")
+        }
+        
+        // Preliminary integrity checks. :NYI: Built-In-Self-Test
+        
+        if let dozeBeans = DataCountAttributes.shared.dict[.dozeBeans],
+            let dozeBerries = DataCountAttributes.shared.dict[.dozeBerries] {
+            print("dozeBeans.title = \(dozeBeans.title)")
+            print("dozeBerries.title = \(dozeBerries.title)")
+        }
+        
+        print(":::::::::::::::::::::::::::::::::\n")
         #endif
         
         UNUserNotificationCenter.current().requestAuthorization(options: [.alert, .sound, .badge]) { (_, error) in
@@ -46,14 +61,14 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         }
         return true
     }
-
+    
     func applicationDidBecomeActive(_ application: UIApplication) {
         application.applicationIconBadgeNumber = 0
     }
-
+    
     func application(_ app: UIApplication, open url: URL, options: [UIApplication.OpenURLOptionsKey: Any] = [:]) -> Bool {
         guard url.pathExtension == Keys.extens else { return false }
-
+        
         let importAlert = UIAlertController(title: Keys.title,
                                             message: Keys.message,
                                             preferredStyle: .alert)
@@ -63,10 +78,10 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
             self?.realmDelegate?.didUpdateFile()
         }
         importAlert.addAction(confirm)
-
+        
         let decline = UIAlertAction(title: Keys.decline, style: .cancel, handler: nil)
         importAlert.addAction(decline)
-
+        
         window?.rootViewController?.show(importAlert, sender: nil)
         return true
     }

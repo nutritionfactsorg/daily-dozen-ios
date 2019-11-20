@@ -31,7 +31,7 @@ class ServingsHistoryBuilder {
         guard
             let viewController = storyboard
                 .instantiateInitialViewController() as? ServingsHistoryViewController
-            else { fatalError("There should be a controller") }
+            else { fatalError("Did not instantiate `ServingsHistory` controller") }
         viewController.title = "Servings History"
 
         return viewController
@@ -107,7 +107,7 @@ class ServingsHistoryViewController: UIViewController {
 
     // MARK: - Methods
     private func setViewModel() {
-        let realm = RealmProvider()
+        let realm = RealmProviderVersion02()
 
         let results: Results<Doze> = realm
             .getDozes()

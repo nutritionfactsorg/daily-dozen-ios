@@ -26,7 +26,7 @@ class DetailsBuilder {
         guard
             let viewController = storyboard
                 .instantiateInitialViewController() as? DetailsViewController
-            else { fatalError("There should be a controller") }
+            else { fatalError("Did not instantiate `Details` controller") }
 
         viewController.setViewModel(for: item)
 

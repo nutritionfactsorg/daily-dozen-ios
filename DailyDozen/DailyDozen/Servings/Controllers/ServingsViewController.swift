@@ -18,7 +18,7 @@ class ServingsViewController: UIViewController {
     @IBOutlet private weak var starImage: UIImageView!
     
     // MARK: - Properties
-    private let realm = RealmProvider()
+    private let realm = RealmProviderVersion02()
     private let servingsStateCountMaximum = 24
     
     private var servingsStateCount = 0 {
@@ -170,8 +170,9 @@ extension ServingsViewController: UICollectionViewDelegate {
         var streak = itemStates.count == itemStates.filter { $0 }.count ? 1 : 0
         
         if streak > 0 {
+            let date = dataProvider.viewModel.dozeDate.adding(.day, value: -1)!
             streak += realm
-                .getDoze(for: dataProvider.viewModel.dozeDate.adding(.day, value: -1)!)
+                .getDoze(for: date)
                 .items[itemIndex].streak
         }
         
@@ -189,7 +190,7 @@ extension ServingsViewController: UICollectionViewDelegate {
     }
 }
 
-extension ServingsViewController: RealmDelegate {
+extension ServingsViewController: RealmDelegateVersion02 {
     
     func didUpdateFile() {
         navigationController?.popViewController(animated: false)

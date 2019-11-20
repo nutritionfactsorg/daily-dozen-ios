@@ -10,8 +10,8 @@ import UIKit
 
 enum ServingsSection: Int {
 
-    /// Set supplementsCount based `RealmConfig` `initialDoze(…)` items.
-    /// See `RealmConfig` for details
+    /// Set supplementsCount based `RealmConfigLegacy` `initialDoze(…)` items.
+    /// See `RealmConfigLegacy` for details
     static let supplementsCount: Int = 1
     
     private struct Keys {

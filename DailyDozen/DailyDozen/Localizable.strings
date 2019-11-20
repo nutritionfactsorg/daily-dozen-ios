@@ -1,0 +1,48 @@
+/* 
+  Localizable.strings
+  DailyDozen
+
+  Copyright © 2019 Nutritionfacts.org. All rights reserved.
+*/
+
+"date.title"="Date";
+"streak.title"="Streak";
+/* ***** Daily Dozen ***** */
+"dozeBeans.title"="Beans";
+"dozeBerries.title"="Berries";
+"dozeFruitsOther"="Other Fruits";
+"dozeVegetablesCruciferous"="Cruciferous Vegetables";
+"dozeGreens"="Greens";
+"dozeVegetablesOther"="Other Vegetables";
+"dozeFlaxseeds"="Flaxseeds";
+"dozeNuts"="Nuts and Seeds";
+"dozeSpices"="Herbs and Spices";
+"dozeWholeGrains"="Whole Grains";
+"dozeBeverages"="Beverages";
+"dozeExercise"="Exercise";
+/* ***** Daily Dozen Other ***** */
+"otherVitaminB12"="Vitamin B12";
+"otherVitaminD"="Vitamin D";
+"otherOmega3"="Plant-based Omega 3s";
+/* ***** 21 Tweaks ***** */
+"tweakMealWater"="preload with water";
+"tweakMealNegCal"="preload with “negative calorie” foods";
+"tweakMealVinegar"="incorporate vinegar";
+"tweakMealUndistracted"="enjoy undistracted meals";
+"tweakMeal20Minutes"="follow the twenty-minute rule";
+"tweakDailyBlackCumin"="black cumin";
+"tweakDailyGarlic"="garlic powder";
+"tweakDailyGinger"="ground ginger or cayenne pepper";
+"tweakDailyNutriYeast"="nutritional yeast";
+"tweakDailyCumin"="cumin";
+"tweakDailyGreenTea"="green tea";
+"tweakDailyHydrate"="stay hydrated";
+"tweakDailyDeflourDiet"="deflour your diet";
+"tweakDailyFrontLoad"="front-load your calories";
+"tweakDailyTimeRestrict"="time-restrict your eating";
+"tweakExerciseTiming"="optimize exercising timing";
+"tweakWeightTwice"="weigh twice daily";
+"tweakCompleteIntentions"="complete implementation intentions";
+"tweakNightlyFast"="fast after 7:00 p.m.";
+"tweakNightlySleep"="get sufficient sleep";
+"tweakNightlyTrendelenbrug"="try mild trendelenburg";

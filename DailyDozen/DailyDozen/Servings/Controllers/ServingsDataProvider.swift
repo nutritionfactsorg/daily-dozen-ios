@@ -31,7 +31,7 @@ class ServingsDataProvider: NSObject, UITableViewDataSource {
     }
 
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let realm = RealmProvider()
+        let realm = RealmProviderVersion02()
         guard
             let cell = tableView
                 .dequeueReusableCell(withIdentifier: Keys.servingsCell) as? ServingsCell,
@@ -46,8 +46,8 @@ class ServingsDataProvider: NSObject, UITableViewDataSource {
         var streak = viewModel.itemStates(index: index).count == viewModel.itemStates(index: index).filter { $0 }.count ? 1 : 0
 
         if streak > 0 {
-            streak += realm
-                .getDoze(for: viewModel.dozeDate.adding(.day, value: -1)!)
+            let date = viewModel.dozeDate.adding(.day, value: -1)!
+            streak += realm.getDoze(for: date)
                 .items[index].streak
         }
 
