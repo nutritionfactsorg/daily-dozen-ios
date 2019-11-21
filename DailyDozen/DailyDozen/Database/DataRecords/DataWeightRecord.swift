@@ -12,19 +12,20 @@ class DataWeightRecord: Object {
     
     /// yyyyMMdd.typeKey e.g. 20190101.amKey
     @objc dynamic var id = "" 
-    /// "yyyyMMdd"
-    @objc dynamic var datestampKey = ""
-    /// "typeKey" am or pm to identify which weight goal
-    @objc dynamic var typeKey = ""
     // kilograms
     @objc dynamic var kg = 0.0     
     // time of day HH:mm 24-hour
     @objc dynamic var time = ""    
     
+    var keys: (datestamp: String, type: String) {
+        let parts = self.id.components(separatedBy: ".")
+        return (datestamp: parts[0], type: parts[1])
+    }
+    
     // MARK: Class Methods
     
     static func id(date: Date, type: DataCountType) -> String {
-        return "\(date.datestampKey).\(type.typeKey())"
+        return "\(date.datestampKey).\(type.typeKey)"
     }
     
     static func idKeys(id: String) -> (datestampKey: String, typeKey: String) {
@@ -42,20 +43,16 @@ class DataWeightRecord: Object {
         }
         
         self.init()
-        self.datestampKey = datestampKey
-        self.typeKey = typeKey
+        self.id = "\(datestampKey).\(typeKey)"
         self.kg = kg
         self.time = time // :NYI: unvalidated time.
-        self.id = "\(self.datestampKey).\(self.typeKey)"
     }
     
     convenience init(date: Date, type: DataWeightType, kg: Double) {
         self.init()
-        self.datestampKey = date.datestampKey
-        self.typeKey = type.typeKey()
+        self.id = "\(date.datestampKey).\(type.typeKey)"
         self.kg = kg
         self.time = date.datestampHHmm
-        self.id = "\(self.datestampKey).\(self.typeKey)"
     }
     
     // MARK: - Meta Information

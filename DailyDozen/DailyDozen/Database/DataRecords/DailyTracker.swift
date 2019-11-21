@@ -12,8 +12,6 @@ import Foundation
 struct DailyTracker {
     
     var date: Date
-    // items includes both DailyDozen and Tweaks
-    // :TBD: perhaps split DailyDozen and Tweaks
     var itemsDict: [DataCountType: DataCountRecord]
     // Weight
     //var weightAM: DataWeightRecord :NYI:
@@ -23,24 +21,10 @@ struct DailyTracker {
         self.date = date
         
         itemsDict = [DataCountType: DataCountRecord]()
-        // Daily Dozen
-        itemsDict[.dozeBeans] = DataCountRecord(date: date, type: .dozeBeans)
-        itemsDict[.dozeBerries] = DataCountRecord(date: date, type: .dozeBerries)
-        itemsDict[.dozeFruitsOther] = DataCountRecord(date: date, type: .dozeFruitsOther)
-        itemsDict[.dozeVegetablesCruciferous] = DataCountRecord(date: date, type: .dozeVegetablesCruciferous)
-        itemsDict[.dozeGreens] = DataCountRecord(date: date, type: .dozeGreens)
-        itemsDict[.dozeVegetablesOther] = DataCountRecord(date: date, type: .dozeVegetablesOther)
-        itemsDict[.dozeFlaxseeds] = DataCountRecord(date: date, type: .dozeFlaxseeds)
-        itemsDict[.dozeNuts] = DataCountRecord(date: date, type: .dozeNuts)
-        itemsDict[.dozeSpices] = DataCountRecord(date: date, type: .dozeSpices)
-        itemsDict[.dozeWholeGrains] = DataCountRecord(date: date, type: .dozeWholeGrains)
-        itemsDict[.dozeBeverages] = DataCountRecord(date: date, type: .dozeBeverages)
-        itemsDict[.dozeExercise] = DataCountRecord(date: date, type: .dozeExercise)
-        
-        // Daily Dozen Extra
-        itemsDict[.otherVitaminB12] = DataCountRecord(date: date, type: .otherVitaminB12)
+        for dataCountType in DataCountType.allCases {
+            itemsDict[dataCountType] = DataCountRecord(date: date, type: dataCountType)
+        }
     }
-    
 }
 
 extension DailyTracker: Equatable {

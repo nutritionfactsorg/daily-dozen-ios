@@ -14,14 +14,10 @@ enum DataWeightType: String {
     case pm
     
     init?(typeKey: String) {
-        if typeKey.hasSuffix("Key") {
-            self = DataWeightType(rawValue: String(typeKey.dropLast(3)))!
-        }
-        return nil
+        self = DataWeightType(rawValue: String(typeKey))!
     }
     
-    func typeKey() -> String {
-        return self.rawValue + "Key"
+    var typeKey: String {
+        return self.rawValue
     }
-
 }

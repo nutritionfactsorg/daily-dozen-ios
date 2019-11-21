@@ -40,16 +40,16 @@ class RealmProvider {
         
         var dailyTracker = DailyTracker(date: date)
         
-        for type in DataCountType.AllCases() {
-            let id = DataCountRecord.id(datestampKey: datestampKey, typeKey: type.typeKey())
+        for dataCountType in DataCountType.allCases {
+            let id = DataCountRecord.id(datestampKey: datestampKey, typeKey: dataCountType.typeKey)
             if let item = realm.object(ofType: DataCountRecord.self, forPrimaryKey: id) {
-                dailyTracker.itemsDict[type] = item
+                dailyTracker.itemsDict[dataCountType] = item
             } else {
-                // :!!!:NYI: create item if not present
-                // fatalError(":NYI: getDailyTracker()")
+                dailyTracker.itemsDict[dataCountType] = DataCountRecord(date: date, type: dataCountType)
             }
         }
 
+        unsavedDailyTracker = dailyTracker
         return dailyTracker
     }
     
@@ -70,7 +70,7 @@ class RealmProvider {
         do {
             try realm.write {
                 realm.create(
-                    Item.self, 
+                    DataCountRecord.self,
                     value: ["id": id, "datestampKey": keys.datestampKey, "typeKey": keys.typeKey, "count": count], 
                     update: Realm.UpdatePolicy.all)
             }
@@ -117,7 +117,7 @@ class RealmProvider {
                 let trackerDict = tracker.itemsDict
                 for key in trackerDict.keys {
                     realm.add(
-                        trackerDict[key]!, 
+                        trackerDict[key]!, // DataCountRecord
                         update: Realm.UpdatePolicy.all
                     )
                 }

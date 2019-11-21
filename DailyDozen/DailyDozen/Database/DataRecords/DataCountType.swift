@@ -8,7 +8,7 @@
 
 import Foundation
 
-enum DataCountType: String {
+enum DataCountType: String, CaseIterable {
     
     //case date
     //case streak
@@ -53,14 +53,11 @@ enum DataCountType: String {
     case tweakNightlyTrendelenbrug
     
     init?(typeKey: String) {
-        if typeKey.hasSuffix("Key") {
-            self = DataCountType(rawValue: String(typeKey.dropLast(3)))!
-        }
-        return nil
+        self = DataCountType(rawValue: String(typeKey))!
     }
     
-    func typeKey() -> String {
-        return self.rawValue + "Key"
+    var typeKey: String {
+        return self.rawValue
     }
     
     func title() -> String {
@@ -94,5 +91,3 @@ enum DataCountType: String {
     }
 
 }
-
-extension DataCountType: CaseIterable {}

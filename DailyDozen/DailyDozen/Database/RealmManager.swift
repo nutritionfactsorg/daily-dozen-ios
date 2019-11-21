@@ -68,7 +68,7 @@ class RealmManager {
             // 
             var counters = [DataCountRecord]()
             for j in 1..<valueStrings.count {
-                let dataCountTypeKey = headings[j].typeKey()
+                let dataCountTypeKey = headings[j].typeKey
                 guard let count = Int(valueStrings[0]) else { 
                     fatalError("RealmManager csvImport() invalid count string \(i):\(j)") // :!!!:NYI: proper error handling 
                 }

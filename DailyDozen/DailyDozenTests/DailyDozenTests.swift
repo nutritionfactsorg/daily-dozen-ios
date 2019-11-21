@@ -59,20 +59,20 @@ class DailyDozenTests: XCTestCase {
         let realmOld = RealmProviderVersion02()
         let dozeA = realmOld.getDoze(for: dateA)
         let dozeAItems: List<Item> = dozeA.items
-        realmOld.saveStates([true, false, true], with: dozeAItems[0].id)
+        realmOld.saveStates([true, true, true], with: dozeAItems[0].id)
         
         let realmNew = RealmProvider()
         let trackerA = realmNew.getDailyTracker(date: dateA)
-        //realmNew.saveCount(1, date: dateA, type: DataCountType.dozeBeans)
+        realmNew.saveCount(1, date: dateA, type: DataCountType.dozeBeans)
         
-        // :!!!:NYI: case where date is not present in database.
+        let trackerRead = realmNew.getDailyTracker(date: dateA)
+        XCTAssertEqual(trackerRead.itemsDict.count, DataCountType.allCases.count)
         
         print(":::::::::::::\n")
     }
     
     func testC() {
         print("\n::: testC :::")
-        
     }
     
     func testDatestamp() {
