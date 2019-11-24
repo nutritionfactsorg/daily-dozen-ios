@@ -18,7 +18,7 @@ enum TimeScale: Int {
 class ServingsHistoryBuilder {
 
     // MARK: - Nested
-    private struct Keys {
+    private struct Strings {
         static let storyboard = "ServingsHistory"
     }
 
@@ -27,7 +27,7 @@ class ServingsHistoryBuilder {
     ///
     /// - Returns: The initial view controller in the storyboard.
     static func instantiateController() -> ServingsHistoryViewController {
-        let storyboard = UIStoryboard(name: Keys.storyboard, bundle: nil)
+        let storyboard = UIStoryboard(name: Strings.storyboard, bundle: nil)
         guard
             let viewController = storyboard
                 .instantiateInitialViewController() as? ServingsHistoryViewController
@@ -107,7 +107,7 @@ class ServingsHistoryViewController: UIViewController {
 
     // MARK: - Methods
     private func setViewModel() {
-        let realm = RealmProviderVersion02()
+        let realm = RealmProviderLegacy()
 
         let results: Results<Doze> = realm
             .getDozes()

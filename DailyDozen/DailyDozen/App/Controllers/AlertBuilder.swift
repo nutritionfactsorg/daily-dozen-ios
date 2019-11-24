@@ -63,7 +63,7 @@ class AlertBuilder {
                 attributes: [
                     NSAttributedString.Key.font: UIFont.helevetica,
                     NSAttributedString.Key.foregroundColor: UIColor.lightGray]),
-            forKey: Keys.message)
+            forKey: Strings.message)
 
         let action = UIAlertAction(title: Strings.confirm, style: .cancel, handler: nil)
         action.setValue(UIColor.greenColor, forKey: Keys.textColor)

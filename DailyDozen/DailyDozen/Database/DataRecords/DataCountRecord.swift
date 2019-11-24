@@ -19,15 +19,24 @@ class DataCountRecord: Object {
     /// consecutive days-to-date with all servings completed
     @objc dynamic var streak = 0
     
-    var keys: (datestamp: String, type: String) {
-        let parts = self.id.components(separatedBy: ".")
-        return (datestamp: parts[0], type: parts[1])
+    var keys: (datestamp: Date, countType: DataCountType)? {
+        guard let date = Date.init(datestampKey: keyStrings.datestampKey),
+            let countType = DataCountType(typeKey: keyStrings.typeKey) else {
+                print(":ERROR: DataCountRecord has invalid datestamp or typeKey")
+                return nil
+        }
+        return (datestamp: date, countType: countType)
     }
-    
+
+    var keyStrings: (datestampKey: String, typeKey: String) {
+        let parts = self.id.components(separatedBy: ".")
+        return (datestampKey: parts[0], typeKey: parts[1])
+    }
+
     // MARK: Class Methods
     
-    static func id(date: Date, type: DataCountType) -> String {
-        return "\(date.datestampKey).\(type.typeKey)"
+    static func id(date: Date, countType: DataCountType) -> String {
+        return "\(date.datestampKey).\(countType.typeKey)"
     }
 
     static func id(datestampKey: String, typeKey: String) -> String {
@@ -43,7 +52,7 @@ class DataCountRecord: Object {
     
     /// CSV Initialer.
     convenience init?(datestampKey: String, typeKey: String, count: Int = 0, streak: Int = 0) {
-        guard let type = DataCountType(typeKey: typeKey),
+        guard let dataCountType = DataCountType(typeKey: typeKey),
             Date(datestampKey: datestampKey) != nil else {
             return nil
         }
@@ -52,21 +61,21 @@ class DataCountRecord: Object {
         self.id = "\(datestampKey).\(typeKey)"
 
         self.count = count
-        if self.count > type.maxServings() {
-            self.count = type.maxServings()
-            print(":LOG:ERROR: \(datestampKey) \(typeKey) \(count) exceeded max servings \(type.maxServings())")
+        if self.count > dataCountType.maxServings() {
+            self.count = dataCountType.maxServings()
+            print(":LOG:ERROR: \(datestampKey) \(typeKey) \(count) exceeded max servings \(dataCountType.maxServings())")
         }
         self.streak = streak
     }
     
-    convenience init(date: Date, type: DataCountType, count: Int = 0, streak: Int = 0) {
+    convenience init(date: Date, countType: DataCountType, count: Int = 0, streak: Int = 0) {
         self.init()
-        self.id = "\(date.datestampKey).\(type.typeKey)"
+        self.id = "\(date.datestampKey).\(countType.typeKey)"
 
         self.count = count
-        if self.count > type.maxServings() {
-            self.count = type.maxServings()
-            print(":LOG:ERROR: \(date.datestampKey) \(type.typeKey) \(count) exceeds max servings \(type.maxServings())")
+        if self.count > countType.maxServings() {
+            self.count = countType.maxServings()
+            print(":LOG:ERROR: \(date.datestampKey) \(countType.typeKey) \(count) exceeds max servings \(countType.maxServings())")
         }
         self.streak = streak
     }
@@ -85,10 +94,32 @@ class DataCountRecord: Object {
     // MARK: - Data Presentation Methods
     
     func title() -> String {
-        guard let tmp = DataCountType(rawValue: self.keys.type) else {
+        guard let tmp = DataCountType(rawValue: self.keyStrings.typeKey) else {
             return "Undefined Title (Error)" 
         }
         return tmp.title()
+    }
+    
+    // MARK: - Data Management Methods
+    
+    func setCount(text: String) {
+        if let value = Int(text) {
+            setCount(value)
+        } else {
+            print(":ERROR: setCount() not convertable to Int \(text)")
+        }
+    }
+    
+    func setCount(_ count: Int) {
+        self.count = count
+        if let countType = keys?.countType {
+            if self.count > countType.maxServings() {
+                self.count = countType.maxServings()
+                print(":ERROR: \(id) \(count) exceeds max servings")
+            }
+        } else {
+            print(":ERROR: \(id) \(count) could not range check servings")
+        }
     }
     
 }

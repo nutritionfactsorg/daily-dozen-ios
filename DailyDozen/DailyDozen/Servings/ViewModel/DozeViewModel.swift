@@ -76,7 +76,7 @@ class DozeViewModel {
     /// Returns an image name for the current index.
     ///
     /// - Note: A `Servings` image filename is derived from the
-    ///  `Item.name` property as defined in `RealmConfigVersion02`.
+    ///  `Item.name` property as defined in `RealmConfigLegacy`.
     ///
     /// - Parameter index: The current index.
     /// - Returns: The image name.

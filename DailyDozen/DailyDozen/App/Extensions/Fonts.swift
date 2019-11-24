@@ -11,16 +11,16 @@ import UIKit
 extension UIFont {
 
     // MARK: - Nested
-    private struct Keys {
+    private struct Strings {
         static let helveticaBold = "Helvetica-Bold"
         static let helvetica = "Helvetica"
     }
 
     static var helevetica: UIFont {
-        return UIFont(name: Keys.helvetica, size: 17) ?? UIFont.systemFont(ofSize: 17)
+        return UIFont(name: Strings.helvetica, size: 17) ?? UIFont.systemFont(ofSize: 17)
     }
 
     static var helveticaBold: UIFont {
-        return UIFont(name: Keys.helveticaBold, size: 22) ?? UIFont.boldSystemFont(ofSize: 22)
+        return UIFont(name: Strings.helveticaBold, size: 22) ?? UIFont.boldSystemFont(ofSize: 22)
     }
 }

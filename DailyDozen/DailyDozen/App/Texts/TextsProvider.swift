@@ -11,7 +11,7 @@ import Foundation
 class TextsProvider {
 
     // MARK: - Nested
-    private struct Keys {
+    private struct Strings {
         static let details = "Details"
         static let sizes = "Sizes"
         static let metric = "Metric"
@@ -24,9 +24,9 @@ class TextsProvider {
     /// Returns the shared TextsProvider object.
     static let shared: TextsProvider = {
         guard
-            // See RealmConfigVersion02 initialDoze(…) for keynames in Details.plist
+            // See RealmConfigLegacy initialDoze(…) for keynames in Details.plist
             let path = Bundle.main.path(
-                forResource: Keys.details, ofType: Keys.plist)
+                forResource: Strings.details, ofType: Strings.plist)
             else {  fatalError("There should be a settings file") }
 
         guard
@@ -52,17 +52,17 @@ class TextsProvider {
             else { fatalError("There should be an item") }
 
         guard
-            let sizes = item[Keys.sizes] as? [String: Any],
-            let metric = sizes[Keys.metric] as? [String],
-            let imperial = sizes[Keys.imperial] as? [String]
+            let sizes = item[Strings.sizes] as? [String: Any],
+            let metric = sizes[Strings.metric] as? [String],
+            let imperial = sizes[Strings.imperial] as? [String]
             else { fatalError("There should be sizes") }
 
         guard
-            let types = item[Keys.types] as? [[String: String]]
+            let types = item[Strings.types] as? [[String: String]]
             else { fatalError("There should be types") }
 
         guard
-            let topic = item[Keys.topic] as? String
+            let topic = item[Strings.topic] as? String
             else { fatalError("There should be a topic") }
 
         return DetailViewModel(itemName: itemName, topic: topic, metricSizes: metric, imperialSizes: imperial, types: types)
@@ -78,7 +78,7 @@ class TextsProvider {
             else { fatalError("There should be an item") }
 
         guard
-            let topic = item[Keys.topic] as? String
+            let topic = item[Strings.topic] as? String
             else { fatalError("There should be a topic") }
 
         return topic

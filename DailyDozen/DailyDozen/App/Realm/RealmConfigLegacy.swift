@@ -1,5 +1,5 @@
 //
-//  RealmConfigVersion02.swift
+//  RealmConfigLegacy.swift
 //  DailyDozen
 //
 //  Created by Konstantin Khokhlov on 24.10.17.
@@ -9,9 +9,9 @@
 import Foundation
 import RealmSwift
 
-enum RealmConfigVersion02 {
+enum RealmConfigLegacy {
     
-    private struct Keys {
+    private struct Strings {
         static let realmFilename = "main.realm"
     }
     
@@ -19,14 +19,14 @@ enum RealmConfigVersion02 {
     
     /// A private instance of a Realm for the Servings.
     private static let servingsConfig = Realm.Configuration(
-        fileURL: URL.inDocuments(for: Keys.realmFilename),
+        fileURL: URL.inDocuments(for: Strings.realmFilename),
         objectTypes: [Doze.self, Item.self])
     
     /// A public configuration instance of a Realm.
     var configuration: Realm.Configuration {
         switch self {
         case .servings:
-            return RealmConfigVersion02.servingsConfig
+            return RealmConfigLegacy.servingsConfig
         }
     }
     
@@ -57,13 +57,13 @@ enum RealmConfigVersion02 {
             Item(name: "Greens", states: [false, false]),
             Item(name: "Other Vegetables", states: [false, false]),
             Item(name: "Flaxseeds", states: [false]),
-            Item(name: "Nuts and Seeds", states: [false]),
-            Item(name: "Herbs and Spices", states: [false]),
+            Item(name: "Nuts", states: [false]),
+            Item(name: "Spices", states: [false]),
             Item(name: "Whole Grains", states: [false, false, false]),
             Item(name: "Beverages", states: [false, false, false, false, false]),
             Item(name: "Exercise", states: [false]),
             Item(name: "Vitamin B12", states: [false]),
-            //Item(name: "Plant-based Omega 3s", states: [false])
+            Item(name: "Vitamin D", states: [false])
         ]
         return Doze(date: date, items: items)
     }

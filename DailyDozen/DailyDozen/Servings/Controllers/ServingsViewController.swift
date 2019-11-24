@@ -18,7 +18,7 @@ class ServingsViewController: UIViewController {
     @IBOutlet private weak var starImage: UIImageView!
     
     // MARK: - Properties
-    private let realm = RealmProviderVersion02()
+    private let realm = RealmProviderLegacy()
     private let servingsStateCountMaximum = 24
     
     private var servingsStateCount = 0 {
@@ -190,7 +190,7 @@ extension ServingsViewController: UICollectionViewDelegate {
     }
 }
 
-extension ServingsViewController: RealmDelegateVersion02 {
+extension ServingsViewController: RealmDelegateLegacy {
     
     func didUpdateFile() {
         navigationController?.popViewController(animated: false)

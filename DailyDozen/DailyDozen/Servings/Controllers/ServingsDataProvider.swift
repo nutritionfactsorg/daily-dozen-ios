@@ -11,7 +11,7 @@ import UIKit
 class ServingsDataProvider: NSObject, UITableViewDataSource {
 
     // MARK: - Nested
-    private struct Keys {
+    private struct Strings {
         static let servingsCell = "servingsCell"
         static let doseCell = "doseCell"
     }
@@ -31,10 +31,10 @@ class ServingsDataProvider: NSObject, UITableViewDataSource {
     }
 
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let realm = RealmProviderVersion02()
+        let realm = RealmProviderLegacy()
         guard
             let cell = tableView
-                .dequeueReusableCell(withIdentifier: Keys.servingsCell) as? ServingsCell,
+                .dequeueReusableCell(withIdentifier: Strings.servingsCell) as? ServingsCell,
             let servingsSection = ServingsSection(rawValue: indexPath.section) else {
                 fatalError("There should settings")
         }
@@ -75,7 +75,7 @@ extension ServingsDataProvider: UICollectionViewDataSource {
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         guard
             let cell = collectionView
-                .dequeueReusableCell(withReuseIdentifier: Keys.doseCell, for: indexPath) as? StateCell else {
+                .dequeueReusableCell(withReuseIdentifier: Strings.doseCell, for: indexPath) as? StateCell else {
                     fatalError("There should be a cell")
 
         }

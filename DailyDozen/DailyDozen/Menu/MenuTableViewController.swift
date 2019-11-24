@@ -14,10 +14,7 @@ class MenuTableViewController: UITableViewController {
     // MARK: - Nested
     private struct Strings {
         static let menu = "Menu" // :NYI:ToBeLocalized:
-    }
-
-    private struct Keys {
-        static let realm = "main.realm"
+        static let realmFilename = "main.realm"
     }
 
     // MARK: - UITableViewController
@@ -36,7 +33,7 @@ class MenuTableViewController: UITableViewController {
 
     /// Presents share services.
     private func presentShareServices() {
-        let activityViewController = UIActivityViewController(activityItems: [URL.inDocuments(for: Keys.realm)], applicationActivities: nil)
+        let activityViewController = UIActivityViewController(activityItems: [URL.inDocuments(for: Strings.realmFilename)], applicationActivities: nil)
         activityViewController.popoverPresentationController?.sourceView = view
         present(activityViewController, animated: true, completion: nil)
     }

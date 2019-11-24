@@ -11,7 +11,7 @@ import UIKit
 class DetailsDataProvider: NSObject, UITableViewDataSource {
 
     // MARK: - Nested
-    private struct Keys {
+    private struct Strings {
         static let sizesID = "detailsSizesCell"
         static let typesID = "detailsTypesCell"
     }
@@ -44,7 +44,7 @@ class DetailsDataProvider: NSObject, UITableViewDataSource {
         case .sizes:
             guard
                 let cell = tableView
-                    .dequeueReusableCell(withIdentifier: Keys.sizesID) as? SizesCell
+                    .dequeueReusableCell(withIdentifier: Strings.sizesID) as? SizesCell
                 else { return UITableViewCell() }
 
             cell
@@ -54,7 +54,7 @@ class DetailsDataProvider: NSObject, UITableViewDataSource {
         case .types:
             guard
                 let cell = tableView
-                    .dequeueReusableCell(withIdentifier: Keys.typesID) as? TypesCell
+                    .dequeueReusableCell(withIdentifier: Strings.typesID) as? TypesCell
                 else { return UITableViewCell() }
 
             cell

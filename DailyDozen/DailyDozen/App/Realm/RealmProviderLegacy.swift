@@ -9,17 +9,17 @@
 import UIKit
 import RealmSwift
 
-protocol RealmDelegateVersion02: AnyObject {
+protocol RealmDelegateLegacy: AnyObject {
     func didUpdateFile()
 }
 
-class RealmProviderVersion02 {
+class RealmProviderLegacy {
     
     private let realm: Realm
     private var unsavedDoze: Doze?
     
     init() {
-        let config = RealmConfigVersion02.servings.configuration
+        let config = RealmConfigLegacy.servings.configuration
         guard let realm = try? Realm(configuration: config) 
             else {
                 fatalError("There should be a realm")
@@ -33,7 +33,7 @@ class RealmProviderVersion02 {
     func getDoze(for date: Date) -> Doze {
         let dozeResults: Results<Doze> = realm.objects(Doze.self)
         let dozeFiltered = dozeResults.filter { $0.date.isInCurrentDayWith(date) }
-        let doze = dozeFiltered.first ?? RealmConfigVersion02.initialDoze(for: date)
+        let doze = dozeFiltered.first ?? RealmConfigLegacy.initialDoze(for: date)
         unsavedDoze = doze
         return doze
     }
@@ -79,8 +79,19 @@ class RealmProviderVersion02 {
                     unsavedDoze = nil
                 }
             } catch {
-                print(error.localizedDescription)
+                print(":ERROR: saveDoze() failed dozr:\(doze) description:\(error.localizedDescription)")
             }
         }
     }
+    
+    func deleteAll() {
+        do {
+            try realm.write {
+                realm.deleteAll()
+            }
+        } catch {
+            print(":ERROR: deleteAll() failed description:\(error.localizedDescription)")
+        }
+    }
+    
 }

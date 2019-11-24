@@ -86,7 +86,7 @@ enum DataCountType: String, CaseIterable {
         return nil
     }
     
-    func csvHeading() -> String {
+    var csvHeading: String {
         return DataCountAttributes.shared.dict[self]!.csvHeading
     }
 

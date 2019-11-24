@@ -11,20 +11,40 @@ import Foundation
 // :REPLACES: `Doze`
 struct DailyTracker {
     
-    var date: Date
+    let date: Date
+        
     var itemsDict: [DataCountType: DataCountRecord]
     // Weight
-    //var weightAM: DataWeightRecord :NYI:
-    //var weightPM: DataWeightRecord :NYI:
+    var weightAM: DataWeightRecord
+    var weightPM: DataWeightRecord
     
-    init(date: Date = Date()) {
+    init(date: Date) {
         self.date = date
         
         itemsDict = [DataCountType: DataCountRecord]()
         for dataCountType in DataCountType.allCases {
-            itemsDict[dataCountType] = DataCountRecord(date: date, type: dataCountType)
+            itemsDict[dataCountType] = DataCountRecord(date: date, countType: dataCountType)
+        }
+        self.weightAM = DataWeightRecord(date: date, weightType: .am, kg: 0.0)
+        self.weightPM = DataWeightRecord(date: date, weightType: .pm, kg: 0.0)
+    }
+    
+    func setCount(typeKey: DataCountType, countText: String) {
+        if let value = Int(countText) {
+            setCount(typeKey: typeKey, count: value)
+        } else {
+            print(":ERROR: setCount() countText \(countText) not convertable")
         }
     }
+    
+    func setCount(typeKey: DataCountType, count: Int) {
+        if let dataCountRecord = itemsDict[typeKey] {
+            dataCountRecord.setCount(count)
+        } else {
+            print(":ERROR: setCount() type not found \(typeKey.typeKey)")
+        }
+    }
+    
 }
 
 extension DailyTracker: Equatable {

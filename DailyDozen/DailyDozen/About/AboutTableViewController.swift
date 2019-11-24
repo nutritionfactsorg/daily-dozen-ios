@@ -13,7 +13,7 @@ import ActiveLabel
 class AboutBuilder {
 
     // MARK: - Nested
-    private struct Keys {
+    private struct Strings {
         static let storyboard = "About"
     }
 
@@ -22,7 +22,7 @@ class AboutBuilder {
     ///
     /// - Returns: The initial view controller in the storyboard.
     static func instantiateController() -> UIViewController {
-        let storyboard = UIStoryboard(name: Keys.storyboard, bundle: nil)
+        let storyboard = UIStoryboard(name: Strings.storyboard, bundle: nil)
         guard
             let viewController = storyboard
                 .instantiateInitialViewController()

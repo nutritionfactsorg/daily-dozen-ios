@@ -11,7 +11,7 @@ import RealmSwift
 
 class RealmProvider {
     
-    private struct Keys {
+    private struct Strings {
         static let realmFilename = "NutritionFacts.realm"
     }
     
@@ -21,7 +21,7 @@ class RealmProvider {
     init() {
         let config = Realm.Configuration(
             // Local Realm file url
-            fileURL: URL.inDocuments(for: Keys.realmFilename),
+            fileURL: URL.inDocuments(for: Strings.realmFilename),
             objectTypes: [DataCountRecord.self, DataWeightRecord.self])
         guard let realm = try? Realm(configuration: config) else {
             fatalError("FAIL: could not instantiate RealmProvider.")
@@ -45,21 +45,68 @@ class RealmProvider {
             if let item = realm.object(ofType: DataCountRecord.self, forPrimaryKey: id) {
                 dailyTracker.itemsDict[dataCountType] = item
             } else {
-                dailyTracker.itemsDict[dataCountType] = DataCountRecord(date: date, type: dataCountType)
+                dailyTracker.itemsDict[dataCountType] = DataCountRecord(date: date, countType: dataCountType)
             }
         }
-
+        
         unsavedDailyTracker = dailyTracker
         return dailyTracker
     }
     
     /// :!!!:REPLACES: getDozes() -> Results<Doze>
+    /// Note: minimal checked. Expects stored database values to be valid. Exists on first data error.
     func getDailyTrackers() -> [DailyTracker] {
-        fatalError(":NYI: getDailyTrackers()")
+        var allTrackers = [DailyTracker]()
+        let counterResults = realm.objects(DataCountRecord.self)
+        let counterResultsById = counterResults.sorted(byKeyPath: "id")
+        guard counterResultsById.count > 0 else {
+            return allTrackers
+        }
+        
+        let weightResults = realm.objects(DataWeightRecord.self)
+        let weightResultsById = weightResults.sorted(byKeyPath: "id")
+        
+        let first = counterResultsById[0]
+        guard let firstDate = first.keys?.datestamp else {
+            return allTrackers
+        }
+        var tracker = DailyTracker(date: firstDate)
+        var weightIdx = 0
+        for dataCountRecord in counterResultsById {
+            let datestampKey = dataCountRecord.keyStrings.datestampKey
+            if dataCountRecord.keyStrings.datestampKey != datestampKey {
+                guard let nextDate = Date.init(datestampKey: datestampKey) else {
+                    return allTrackers
+                }
+                
+                // Process Weights: AM, PM
+                while weightIdx < weightResultsById.count &&
+                    weightResultsById[weightIdx].keyStrings.datestampKey == datestampKey {
+                        let weight = weightResultsById[weightIdx]
+                        if weight.keyStrings.typeKey == DataWeightType.am.typeKey {
+                            tracker.weightAM = weight
+                        } else {
+                            tracker.weightPM = weight
+                        }
+                        weightIdx += 1
+                }
+                
+                allTrackers.append(tracker)
+                tracker = DailyTracker(date: nextDate)
+            }
+            
+            guard let countType = dataCountRecord.keys?.countType else {
+                return allTrackers
+            }
+            tracker.itemsDict[countType] = dataCountRecord
+        }
+        allTrackers.append(tracker)
+        
+        return allTrackers
     }
-
-    func saveCount(_ count: Int, date: Date, type: DataCountType) {
-        let id = DataCountRecord.id(date: date, type: type)
+    
+    func saveCount(_ count: Int, date: Date, countType: DataCountType) {
+        let id = DataCountRecord.id(date: date, countType: countType)
         saveCount(count, id: id)
     }
     
@@ -81,11 +128,11 @@ class RealmProvider {
     
     /// :NYI saveWeight() 
     
-    func updateStreak(_ streak: Int, date: Date, type: DataCountType) {
-        let id = DataCountRecord.id(date: date, type: type)
+    func updateStreak(_ streak: Int, date: Date, countType: DataCountType) {
+        let id = DataCountRecord.id(date: date, countType: countType)
         updateStreak(streak, id: id)
     }
-
+    
     /// :!!!:REPLACES: updateStreak(Int, String)
     /// :!!!:NYI: updateStreak() needs to do more than a single value
     func updateStreak(_ streak: Int, id: String) {
@@ -104,14 +151,16 @@ class RealmProvider {
         }
     }
     
-    /// :!!!:REPLACES: saveDoze() 
+    /// :!!!:REPLACES: saveDoze()
     func saveDailyTracker() {
-        print("::: :DEBUG: saveDailyTracker() :::")
         guard let tracker = unsavedDailyTracker else {
-            print(":DEBUG: saveDailyTracker() unsavedDailyTracker is nil")
+            // print("saveDailyTracker() unsavedDailyTracker is nil")
             return
         }
-        
+        saveDailyTracker(tracker: tracker)
+    }
+    
+    func saveDailyTracker(tracker: DailyTracker) {
         do {
             try realm.write {
                 let trackerDict = tracker.itemsDict
@@ -124,7 +173,17 @@ class RealmProvider {
                 unsavedDailyTracker = nil
             }                
         } catch {
-            print(error.localizedDescription)
+            print(":ERROR: saveDailyTracker() failed tracker:\(tracker) description:\(error.localizedDescription)")
+        }
+    }
+    
+    func deleteAll() {
+        do {
+            try realm.write {
+                realm.deleteAll()
+            }
+        } catch {
+            print(":ERROR: deleteAll() failed description:\(error.localizedDescription)")
         }
     }
     

@@ -10,80 +10,218 @@ import Foundation
 class RealmManager {
     
     let realmDb: RealmProvider
-    let inputDirUrl: URL
-    let outputDirUrl: URL
+    let workingDirUrl: URL
     
-    init(inputDirUrl: URL, outputDirUrl: URL) {
+    init(workingDirUrl: URL) {
         realmDb = RealmProvider()
-        self.inputDirUrl = inputDirUrl
-        self.outputDirUrl = outputDirUrl
+        self.workingDirUrl = workingDirUrl
+    }
+    
+    func csvExport() -> String {
+        let filename = "\(Date.datestampNow())_export.csv"
+        csvExport(filename: filename)
+        return filename
     }
     
     func csvExport(filename: String) {
+        let outUrl = workingDirUrl.appendingPathComponent(filename)
+        var content = RealmManager.csvHeader
+
+        let allTrackers = realmDb.getDailyTrackers()
+        for tracker in allTrackers {
+            content.append(csvExportLine(tracker: tracker))
+        }
         
+        do {
+            try content.write(to: outUrl, atomically: true, encoding: .utf8)
+        } catch {
+            print(":ERROR: csvExport failed :!!!: \(error) path:'\(outUrl.path)'")
+        }
+    }
+    
+    private func csvExportLine(tracker: DailyTracker) -> String {
+        var str = ""
+        str.append("\(tracker.date.datestampKey)")
+        
+        for dataCountType in DataCountType.allCases {
+            if let dataCountRecord = tracker.itemsDict[dataCountType] {
+                str.append(",\(dataCountRecord.count)")
+            } else {
+                str.append(",0")
+            }
+        }
+        // Weight
+        str.append(",\(tracker.weightAM.time)")
+        str.append(",\(tracker.weightAM.kg)")
+        str.append(",\(tracker.weightPM.time)")
+        str.append(",\(tracker.weightPM.kg)")
+        str.append("\n")
+
+        return str
     }
     
     func csvImport(filename: String) {
-        let inUrl = inputDirUrl.appendingPathComponent(filename)
-        guard var csv = try? String(contentsOf: inUrl) else { 
-            fatalError("\(filename) not found") // :!!!:NYI: proper error handling
+        let inUrl = workingDirUrl.appendingPathComponent(filename)
+        guard let contents = try? String(contentsOf: inUrl)  else {
+            print(":ERROR:\(filename) not found")
+            return
         }
-        
-        csv = csv.replacingOccurrences(of: "\r", with: "")
-        let lines = csv.components(separatedBy: "\n")
-        //let lines = csv.split(separator: "\n")
-        
+        let lines = contents.components(separatedBy: .newlines)
         guard lines.count > 1 else {
-            fatalError("\(filename) less than 2 line") // :!!!:NYI: proper error handling
+            print(":ERROR: CSV has less that 2 lines")
+            return
         }
         
-        // Deterimine data column sequence from headings
-        let headingsStringList = lines[0].components(separatedBy: ",")
-        var headings = [DataCountType]()
-        for string in headingsStringList {
-            if let headingType = DataCountType(csvHeading: string) {
-                headings.append(headingType)                
-            } else {
-                fatalError("RealmManager csvImport() heading not found") // :!!!:NYI: proper error handling
+        if isValidCsvHeader(lines[0]) {
+            for i in 1..<lines.count {
+                if let dailyTracker = csvProcess(line: lines[i]) {
+                    realmDb.saveDailyTracker(tracker: dailyTracker)
+                }
             }
+        } else if isValidCsvHeaderLegacy(lines[0]) {
+            for i in 1..<lines.count {
+                if let dailyTracker = csvProcessLegacy(line: lines[i]) {
+                    realmDb.saveDailyTracker(tracker: dailyTracker)
+                }
+            }
+        } else {
+            print(":ERROR: CSV does not contain a valid header line")
+            return
         }
-        if headings.count < 2 {
-            fatalError("RealmManager csvImport() headings.count < 2") // :!!!:NYI: proper error handling
-        }
-        //if headings[0] != .date {
-        //    fatalError("RealmManager csvImport() date not found as the first column.") // :!!!:NYI: proper error handling
-        //}
+        
+    }
+
+    private func isValidCsvHeader(_ header: String) -> Bool {
+        let currentHeaderFiltered = header
+            .replacingOccurrences(of: " ", with: "")
+            .replacingOccurrences(of: "-", with: "")
+            .lowercased()
+            .appending("\n")
+
+        let legacyHeader = RealmManager.csvHeader
+            .replacingOccurrences(of: " ", with: "")
+            .replacingOccurrences(of: "-", with: "")
+            .lowercased()
+        
+        return currentHeaderFiltered == legacyHeader
+    }
+
+    private func isValidCsvHeaderLegacy(_ header: String) -> Bool {
+        let currentHeaderFiltered = header
+            .replacingOccurrences(of: " ", with: "")
+            .replacingOccurrences(of: "-", with: "")
+            .lowercased()
+            .appending("\n")
+        
+        let legacyHeader = RealmManagerLegacy.csvHeader
+            .replacingOccurrences(of: " ", with: "")
+            .replacingOccurrences(of: "-", with: "")
+            .lowercased()
+        
+        return currentHeaderFiltered == legacyHeader
+    }
     
-        // Process each line of data
-        for i in 1..<lines.count {
-            let valueStrings = lines[i].components(separatedBy: ",") 
-            if headings.count != valueStrings.count {
-                print("\(i-1) data lines imported") // :!!!:NYI: status number of lines completed
-                return
-            }
-            // Date
-            
-            let datestamp = valueStrings[0]
-            
-            // 
-            var counters = [DataCountRecord]()
-            for j in 1..<valueStrings.count {
-                let dataCountTypeKey = headings[j].typeKey
-                guard let count = Int(valueStrings[0]) else { 
-                    fatalError("RealmManager csvImport() invalid count string \(i):\(j)") // :!!!:NYI: proper error handling 
-                }
-                if let dataCountRecord = DataCountRecord(
-                    datestampKey: datestamp, 
-                    typeKey: dataCountTypeKey, 
-                    count: count) {
-                    counters.append(dataCountRecord)
-                } else {
-                    print(":DEBUG: unconvertable record \(i):\(i) \(datestamp) \(dataCountTypeKey) \(count)")
-                }
-            }
-            // Save successfully completed row of data.
-            // :!!!: realmDb.saveDataCounts(counters)
+    private func csvProcess(line: String) -> DailyTracker? {
+        let columns = line
+            .replacingOccurrences(of: " ", with: "")
+            .components(separatedBy: ",")
+        guard columns.count == 1 + DataCountType.allCases.count + 4 else {
+            return nil
         }
+        
+        let datastampKey = columns[0]
+        guard let date = Date.init(datestampKey: datastampKey) else {
+            return nil
+        }
+        var tracker = DailyTracker(date: date)
+        
+        var index = 1
+        for dataCountType in DataCountType.allCases {
+            if let value = Int(columns[index]) {
+                let dataCountRecord = DataCountRecord(
+                date: date,
+                countType: dataCountType,
+                count: value
+                )
+                tracker.itemsDict[dataCountType] = dataCountRecord
+            } else {
+                print(":ERROR: csvProcess \(index) in \(line)")
+            }
+            index += 1
+        }
+        
+        let weightIndexOffset = 1 + DataCountType.allCases.count
+        let weightAM = DataWeightRecord(
+            datestampKey: datastampKey,
+            typeKey: DataWeightType.am.typeKey,
+            kilograms: columns[weightIndexOffset],
+            timeHHmm: columns[weightIndexOffset+1]
+        )
+        if let weight = weightAM {
+            tracker.weightAM = weight
+        }
+        let weightPM = DataWeightRecord(
+            datestampKey: datastampKey,
+            typeKey: DataWeightType.pm.typeKey,
+            kilograms: columns[weightIndexOffset+2],
+            timeHHmm: columns[weightIndexOffset+3]
+        )
+        if let weight = weightPM {
+            tracker.weightPM = weight
+        }
+
+        return tracker
+    }
+    
+    private func csvProcessLegacy(line: String) -> DailyTracker? {
+        let columns = line
+            .replacingOccurrences(of: " ", with: "")
+            .components(separatedBy: ",")
+        // Expected count: 1x date plus 14x legacy fields
+        guard columns.count == 1 + 14 else {
+            if columns.count > 1 { //  line with at least one `,`
+                print(":WARNING: csvProcessLegacy incorrect column count (\(columns.count)) '\(line)'")
+            }
+            return nil
+        }
+        
+        let datastampKey = columns[0]
+        guard let date = Date.init(datestampKey: datastampKey) else {
+            return nil
+        }
+        let tracker = DailyTracker(date: date)
+
+        tracker.setCount(typeKey: .dozeBeans, countText: columns[1])
+        tracker.setCount(typeKey: .dozeBerries, countText: columns[2])
+        tracker.setCount(typeKey: .dozeFruitsOther, countText: columns[3])
+        tracker.setCount(typeKey: .dozeVegetablesCruciferous, countText: columns[4])
+        tracker.setCount(typeKey: .dozeGreens, countText: columns[5])
+        tracker.setCount(typeKey: .dozeVegetablesOther, countText: columns[6])
+        tracker.setCount(typeKey: .dozeFlaxseeds, countText: columns[7])
+        tracker.setCount(typeKey: .dozeNuts, countText: columns[8])
+        tracker.setCount(typeKey: .dozeSpices, countText: columns[9])
+        tracker.setCount(typeKey: .dozeWholeGrains, countText: columns[10])
+        tracker.setCount(typeKey: .dozeBeverages, countText: columns[11])
+        tracker.setCount(typeKey: .dozeExercise, countText: columns[12])
+        tracker.setCount(typeKey: .otherVitaminB12, countText: columns[13])
+        tracker.setCount(typeKey: .otherVitaminD, countText: columns[14])
+
+        return tracker
+    }
+    
+    private static var csvHeader: String {
+        var str = "Date"
+        for dataCountType in DataCountType.allCases {
+            str.append(",\(dataCountType.csvHeading)")
+        }
+        // Weight
+        str.append(",Weight AM Time")
+        str.append(",Weight AM Value")
+        str.append(",Weight PM Time")
+        str.append(",Weight PM Value")
+
+        str.append("\n")
+        return str
     }
     
 }

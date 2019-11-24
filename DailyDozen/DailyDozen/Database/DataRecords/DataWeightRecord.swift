@@ -17,15 +17,24 @@ class DataWeightRecord: Object {
     // time of day HH:mm 24-hour
     @objc dynamic var time = ""    
     
-    var keys: (datestamp: String, type: String) {
+    var keys: (datestamp: Date, weightType: DataCountType)? {
+        guard let date = Date.init(datestampKey: keyStrings.datestampKey),
+            let weightType = DataCountType(typeKey: keyStrings.typeKey) else {
+                print(":ERROR: DataWeightRecord has invalid datestamp or weightType")
+                return nil
+        }
+        return (datestamp: date, weightType: weightType)
+    }
+    
+    var keyStrings: (datestampKey: String, typeKey: String) {
         let parts = self.id.components(separatedBy: ".")
-        return (datestamp: parts[0], type: parts[1])
+        return (datestampKey: parts[0], typeKey: parts[1])
     }
     
     // MARK: Class Methods
     
-    static func id(date: Date, type: DataCountType) -> String {
-        return "\(date.datestampKey).\(type.typeKey)"
+    static func id(date: Date, weightType: DataWeightType) -> String {
+        return "\(date.datestampKey).\(weightType.typeKey)"
     }
     
     static func idKeys(id: String) -> (datestampKey: String, typeKey: String) {
@@ -36,21 +45,26 @@ class DataWeightRecord: Object {
     // MARK: - Init
     
     /// CSV Initialer.
-    convenience init?(datestampKey: String, typeKey: String, kg: Double, time: String) {
+    convenience init?(datestampKey: String, typeKey: String, kilograms: String, timeHHmm: String) {
         guard DataWeightType(typeKey: typeKey) != nil,
-            Date(datestampKey: datestampKey) != nil else {
+            Date(datestampKey: datestampKey) != nil,
+            let kg = Double(kilograms),
+            timeHHmm.contains(":"),
+            Int(timeHHmm.dropLast(3)) != nil,
+            Int(timeHHmm.dropFirst(3)) != nil
+            else {
                 return nil
         }
-        
+
         self.init()
         self.id = "\(datestampKey).\(typeKey)"
         self.kg = kg
-        self.time = time // :NYI: unvalidated time.
+        self.time = time
     }
     
-    convenience init(date: Date, type: DataWeightType, kg: Double) {
+    convenience init(date: Date, weightType: DataWeightType, kg: Double) {
         self.init()
-        self.id = "\(date.datestampKey).\(type.typeKey)"
+        self.id = "\(date.datestampKey).\(weightType.typeKey)"
         self.kg = kg
         self.time = date.datestampHHmm
     }

@@ -13,7 +13,7 @@ import UserNotifications
 class SettingsBuilder {
 
     // MARK: - Nested
-    private struct Keys {
+    private struct Strings {
         static let storyboard = "Settings"
     }
 
@@ -22,7 +22,7 @@ class SettingsBuilder {
     ///
     /// - Returns: The initial view controller in the storyboard.
     static func instantiateController() -> SettingsViewController {
-        let storyboard = UIStoryboard(name: Keys.storyboard, bundle: nil)
+        let storyboard = UIStoryboard(name: Strings.storyboard, bundle: nil)
         guard
             let viewController = storyboard
                 .instantiateInitialViewController() as? SettingsViewController

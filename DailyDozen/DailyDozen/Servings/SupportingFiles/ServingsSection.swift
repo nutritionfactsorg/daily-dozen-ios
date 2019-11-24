@@ -14,7 +14,7 @@ enum ServingsSection: Int {
     /// See `RealmConfigLegacy` for details
     static let supplementsCount: Int = 1
     
-    private struct Keys {
+    private struct Strings {
         static let supplementsHeader = "SupplementsHeader"
     }
 
@@ -43,7 +43,7 @@ enum ServingsSection: Int {
             return nil
         case .supplements:
             return Bundle.main
-                .loadNibNamed(Keys.supplementsHeader, owner: nil)?.first as? UIView
+                .loadNibNamed(Strings.supplementsHeader, owner: nil)?.first as? UIView
         }
     }
 

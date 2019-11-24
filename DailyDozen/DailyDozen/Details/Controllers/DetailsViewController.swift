@@ -12,7 +12,7 @@ import UIKit
 class DetailsBuilder {
 
     // MARK: - Nested
-    struct Keys {
+    struct Strings {
         static let storyboard = "Details"
     }
 
@@ -22,7 +22,7 @@ class DetailsBuilder {
     /// - Parameter item: An item name.
     /// - Returns: The initial view controller in the storyboard.
     static func instantiateController(with item: String) -> DetailsViewController {
-        let storyboard = UIStoryboard(name: Keys.storyboard, bundle: nil)
+        let storyboard = UIStoryboard(name: Strings.storyboard, bundle: nil)
         guard
             let viewController = storyboard
                 .instantiateInitialViewController() as? DetailsViewController

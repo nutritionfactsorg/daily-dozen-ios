@@ -12,7 +12,7 @@ import FSCalendar
 class ItemHistoryBuilder {
 
     // MARK: - Nested
-    private struct Keys {
+    private struct Strings {
         static let storyboard = "ItemHistory"
     }
 
@@ -22,7 +22,7 @@ class ItemHistoryBuilder {
     /// - Parameter title: An item name.
     /// - Returns: The initial view controller in the storyboard.
     static func instantiateController(with title: String, itemId: Int) -> UIViewController {
-        let storyboard = UIStoryboard(name: Keys.storyboard, bundle: nil)
+        let storyboard = UIStoryboard(name: Strings.storyboard, bundle: nil)
         guard
             let viewController = storyboard
                 .instantiateInitialViewController() as? ItemHistoryViewController
@@ -37,12 +37,12 @@ class ItemHistoryBuilder {
 class ItemHistoryViewController: UIViewController {
 
     // MARK: - Nested
-    private struct Keys {
+    private struct Strings {
         static let cell = "DateCell"
     }
 
     // MARK: - Properties
-    private let realm = RealmProviderVersion02()
+    private let realm = RealmProviderLegacy()
     fileprivate var itemId = 0
 
     // MARK: - Outlets
@@ -54,7 +54,7 @@ class ItemHistoryViewController: UIViewController {
 
         calendarView.delegate = self
         calendarView.dataSource = self
-        calendarView.register(DateCell.self, forCellReuseIdentifier: Keys.cell)
+        calendarView.register(DateCell.self, forCellReuseIdentifier: Strings.cell)
     }
 }
 
@@ -68,7 +68,7 @@ extension ItemHistoryViewController: FSCalendarDataSource {
     func calendar(_ calendar: FSCalendar, cellFor date: Date, at position: FSCalendarMonthPosition) -> FSCalendarCell {
         guard
             let cell = calendar
-                .dequeueReusableCell(withIdentifier: Keys.cell, for: date, at: .current) as? DateCell
+                .dequeueReusableCell(withIdentifier: Strings.cell, for: date, at: .current) as? DateCell
             else { fatalError("There should be a cell") }
 
         guard date < Date() else { return cell }

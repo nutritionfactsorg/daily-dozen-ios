@@ -11,7 +11,7 @@ import Foundation
 class LinksService {
 
     // MARK: - Nested
-    private struct Keys {
+    private struct Strings {
         static let baseURL = "base_url"
     }
 
@@ -68,7 +68,7 @@ class LinksService {
             fatalError("There should be a settings dictionary")
         }
 
-        guard let urlString = dictionary[Keys.baseURL] as? String,
+        guard let urlString = dictionary[Strings.baseURL] as? String,
             let url = URL(string: urlString) else {
                 fatalError("There should be a base URL")
         }

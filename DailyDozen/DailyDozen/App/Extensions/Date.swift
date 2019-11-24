@@ -23,6 +23,14 @@ extension Date {
         return dateFormatter.string(from: self)
     }
     
+    static func datestampNow() -> String {
+        let currentTime = Date()
+        let dateFormatter = DateFormatter()
+        // filename compatible format
+        dateFormatter.dateFormat = "yyyyMMdd_HHmmss"
+        return dateFormatter.string(from: currentTime)
+    }
+    
     init?(datestampKey: String) {
         let dateFormatter = DateFormatter()
         dateFormatter.dateFormat = "yyyyMMdd"

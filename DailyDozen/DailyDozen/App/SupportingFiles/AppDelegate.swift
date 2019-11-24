@@ -13,16 +13,16 @@ import UserNotifications
 class AppDelegate: UIResponder, UIApplicationDelegate {
     
     // MARK: - Nested
-    private struct Keys {
-        static let extens = "realm"
-        static let main = "main.realm"
+    private struct Strings {
+        static let realmExtension = "realm"
+        static let realmFilename = "main.realm"
         static let title = "Restore Backup" // :NYI:ToBeLocalized:
         static let message = "Any existing data will be deleted before restoring from backup. Do you wish to continue?" // :NYI:ToBeLocalized:
         static let confirm = "OK" // :NYI:ToBeLocalized:
         static let decline = "NO" // :NYI:ToBeLocalized:
     }
     
-    weak var realmDelegate: RealmDelegateVersion02?
+    weak var realmDelegate: RealmDelegateLegacy?
     
     var window: UIWindow?
     
@@ -67,19 +67,19 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     }
     
     func application(_ app: UIApplication, open url: URL, options: [UIApplication.OpenURLOptionsKey: Any] = [:]) -> Bool {
-        guard url.pathExtension == Keys.extens else { return false }
+        guard url.pathExtension == Strings.realmExtension else { return false }
         
-        let importAlert = UIAlertController(title: Keys.title,
-                                            message: Keys.message,
+        let importAlert = UIAlertController(title: Strings.title,
+                                            message: Strings.message,
                                             preferredStyle: .alert)
-        let confirm = UIAlertAction(title: Keys.confirm, style: .default) { [weak self] (_) in
-            try? FileManager.default.removeItem(at: URL.inDocuments(for: Keys.main))
-            try? FileManager.default.copyItem(at: url, to: URL.inDocuments(for: Keys.main))
+        let confirm = UIAlertAction(title: Strings.confirm, style: .default) { [weak self] (_) in
+            try? FileManager.default.removeItem(at: URL.inDocuments(for: Strings.realmFilename))
+            try? FileManager.default.copyItem(at: url, to: URL.inDocuments(for: Strings.realmFilename))
             self?.realmDelegate?.didUpdateFile()
         }
         importAlert.addAction(confirm)
         
-        let decline = UIAlertAction(title: Keys.decline, style: .cancel, handler: nil)
+        let decline = UIAlertAction(title: Strings.decline, style: .cancel, handler: nil)
         importAlert.addAction(decline)
         
         window?.rootViewController?.show(importAlert, sender: nil)
