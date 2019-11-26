@@ -56,7 +56,7 @@ class ServingsViewController: UIViewController {
     ///
     /// - Parameter item: The current date.
     func setViewModel(for date: Date) {
-        dataProvider.viewModel = DozeViewModel(doze: realm.getDoze(for: date))
+        dataProvider.viewModel = DozeViewModel(doze: realm.getDozeLegacy(for: date))
         servingsStateCount = 0
         let mainItemCount = dataProvider.viewModel.count - ServingsSection.supplementsCount
         for i in 0 ..< mainItemCount {
@@ -148,6 +148,7 @@ extension ServingsViewController: UICollectionViewDelegate {
             stateTrueCounterOld += 1 
         }
         
+        // Update States
         let stateNew = !itemStates[itemCheckboxIndex] // toggle state
         itemStates[itemCheckboxIndex] = stateNew
         // 0 is the rightmost item checkbox
@@ -165,18 +166,22 @@ extension ServingsViewController: UICollectionViewDelegate {
         }
         cell.configure(with: itemStates[indexPath.row])
         let id = dataProvider.viewModel.itemID(for: itemIndex)
-        realm.saveStates(itemStates, with: id)
+        realm.saveStatesLegacy(itemStates, id: id)
         
-        var streak = itemStates.count == itemStates.filter { $0 }.count ? 1 : 0
+        // Update Streak
+        let countMax = itemStates.count
+        let countNow = itemStates.filter { $0 }.count
+        var streak = countMax == countNow ? 1 : 0
         
         if streak > 0 {
-            let date = dataProvider.viewModel.dozeDate.adding(.day, value: -1)!
+            let datePrevious = dataProvider.viewModel.dozeDate.adding(.day, value: -1)!
+            // previous day's streak +1
             streak += realm
-                .getDoze(for: date)
+                .getDozeLegacy(for: datePrevious)
                 .items[itemIndex].streak
         }
         
-        realm.updateStreak(streak, with: id)
+        realm.updateStreakLegacy(streak, id: id)
         
         tableView.reloadData()
         

@@ -61,9 +61,9 @@ class DailyDozenTests: XCTestCase {
         let date = date2009Porridge
         
         let realmOld = RealmProviderLegacy()
-        let dozeA = realmOld.getDoze(for: date)
+        let dozeA = realmOld.getDozeLegacy(for: date)
         let dozeAItems: List<Item> = dozeA.items
-        realmOld.saveStates([true, true, true], with: dozeAItems[0].id)
+        realmOld.saveStatesLegacy([true, true, true], id: dozeAItems[0].id)
         
         let realmNew = RealmProvider()
         _ = realmNew.getDailyTracker(date: date)
@@ -88,14 +88,14 @@ class DailyDozenTests: XCTestCase {
 
         let realmMngrOld = RealmManagerLegacy(workingDirUrl: workingUrl)
         let realmDbOld = realmMngrOld.realmDb
-        realmDbOld.deleteAll()
+        realmDbOld.deleteAllLegacy()
         let realmMngrNew = RealmManager(workingDirUrl: workingUrl)
         let realmDbNew = realmMngrNew.realmDb
         realmDbNew.deleteAll()
 
         // Add known content to legacy
-        let dozeA = realmDbOld.getDoze(for: date00)
-        realmDbOld.saveStates([true, false, true], with: dozeA.items[0].id) // Beans
+        let dozeA = realmDbOld.getDozeLegacy(for: date00)
+        realmDbOld.saveStatesLegacy([true, false, true], id: dozeA.items[0].id) // Beans
         
         // 01: export legacy file, then import to new database
         let filename01 = realmMngrOld.csvExport()

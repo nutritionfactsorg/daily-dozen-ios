@@ -73,7 +73,7 @@ extension ItemHistoryViewController: FSCalendarDataSource {
 
         guard date < Date() else { return cell }
 
-        let states = realm.getDoze(for: date).items[itemId].states
+        let states = realm.getDozeLegacy(for: date).items[itemId].states
         let selectedStates = states.filter { $0 }
 
         cell.configure(for: selectedStates.count, maximum: states.count)

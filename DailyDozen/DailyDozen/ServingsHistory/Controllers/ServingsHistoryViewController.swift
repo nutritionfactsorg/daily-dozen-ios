@@ -110,7 +110,7 @@ class ServingsHistoryViewController: UIViewController {
         let realm = RealmProviderLegacy()
 
         let results: Results<Doze> = realm
-            .getDozes()
+            .getDozesLegacy()
             .sorted(byKeyPath: "date")
         guard results.count > 0 else {
             controlPanel.isHidden = true

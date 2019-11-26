@@ -28,7 +28,7 @@ class RealmManagerLegacy {
         let outUrl = workingDirUrl.appendingPathComponent(filename)
         var content = RealmManagerLegacy.csvHeader
         
-        let allDozes = realmDb.getDozes()
+        let allDozes = realmDb.getDozesLegacy()
         for doze in allDozes {
             content.append(csvExportLine(doze: doze))
         }

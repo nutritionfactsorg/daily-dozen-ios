@@ -34,7 +34,7 @@ class RealmProvider {
         return DailyTracker(date: date)
     }
     
-    /// :REPLACES: getDoze(Date)
+    /// :REPLACES: getDozeLegacy(Date)
     func getDailyTracker(date: Date) -> DailyTracker {
         let datestampKey = date.datestampKey
         
@@ -53,7 +53,7 @@ class RealmProvider {
         return dailyTracker
     }
     
-    /// :!!!:REPLACES: getDozes() -> Results<Doze>
+    /// :!!!:REPLACES: getDozesLegacy() -> Results<Doze>
     /// Note: minimal checked. Expects stored database values to be valid. Exists on first data error.
     func getDailyTrackers() -> [DailyTracker] {
         var allTrackers = [DailyTracker]()
@@ -151,7 +151,7 @@ class RealmProvider {
         }
     }
     
-    /// :!!!:REPLACES: saveDoze()
+    /// :!!!:REPLACES: saveDozeLegacy()
     func saveDailyTracker() {
         guard let tracker = unsavedDailyTracker else {
             // print("saveDailyTracker() unsavedDailyTracker is nil")

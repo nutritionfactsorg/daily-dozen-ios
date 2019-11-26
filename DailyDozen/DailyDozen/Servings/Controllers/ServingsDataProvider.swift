@@ -43,12 +43,14 @@ class ServingsDataProvider: NSObject, UITableViewDataSource {
             index += tableView.numberOfRows(inSection: 0)
         }
 
-        var streak = viewModel.itemStates(index: index).count == viewModel.itemStates(index: index).filter { $0 }.count ? 1 : 0
+        let countMax = viewModel.itemStates(index: index).count
+        let countNow = viewModel.itemStates(index: index).filter { $0 }.count
+        var streak = countMax == countNow ? 1 : 0
 
         if streak > 0 {
             let date = viewModel.dozeDate.adding(.day, value: -1)!
-            streak += realm.getDoze(for: date)
-                .items[index].streak
+            // previous streak +1
+            streak += realm.getDozeLegacy(for: date).items[index].streak
         }
 
         cell.configure(
@@ -58,7 +60,7 @@ class ServingsDataProvider: NSObject, UITableViewDataSource {
             streak: streak)
 
         let id = viewModel.itemID(for: index)
-        realm.updateStreak(streak, with: id)
+        realm.updateStreakLegacy(streak, id: id)
 
         return cell
     }

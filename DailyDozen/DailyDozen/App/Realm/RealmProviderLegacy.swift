@@ -30,7 +30,7 @@ class RealmProviderLegacy {
     /// Returns a Doze object for the current date.
     /// 
     /// - Returns: The doze.
-    func getDoze(for date: Date) -> Doze {
+    func getDozeLegacy(for date: Date) -> Doze {
         let dozeResults: Results<Doze> = realm.objects(Doze.self)
         let dozeFiltered = dozeResults.filter { $0.date.isInCurrentDayWith(date) }
         let doze = dozeFiltered.first ?? RealmConfigLegacy.initialDoze(for: date)
@@ -38,7 +38,7 @@ class RealmProviderLegacy {
         return doze
     }
     
-    func getDozes() -> Results<Doze> {
+    func getDozesLegacy() -> Results<Doze> {
         return realm.objects(Doze.self)
     }
     
@@ -47,8 +47,8 @@ class RealmProviderLegacy {
     /// - Parameters:
     ///   - states: The new state.
     ///   - id: The ID.
-    func saveStates(_ states: [Bool], with id: String) {
-        saveDoze()
+    func saveStatesLegacy(_ states: [Bool], id: String) {
+        saveDozeLegacy()
         do {
             try realm.write {
                 realm.create(Item.self, value: ["id": id, "states": states], update: Realm.UpdatePolicy.all)
@@ -58,8 +58,8 @@ class RealmProviderLegacy {
         }
     }
     
-    func updateStreak(_ streak: Int, with id: String) {
-        saveDoze()
+    func updateStreakLegacy(_ streak: Int, id: String) {
+        saveDozeLegacy()
         do {
             try realm.write {
                 // BUG: id+streak(0) only causing memory leak when called but not later used.
@@ -71,7 +71,7 @@ class RealmProviderLegacy {
     }
     
     /// Saves the unsaved doze.
-    private func saveDoze() {
+    private func saveDozeLegacy() {
         if let doze = unsavedDoze {
             do {
                 try realm.write {
@@ -79,12 +79,12 @@ class RealmProviderLegacy {
                     unsavedDoze = nil
                 }
             } catch {
-                print(":ERROR: saveDoze() failed dozr:\(doze) description:\(error.localizedDescription)")
+                print(":ERROR: saveDozeLegacy() failed dozr:\(doze) description:\(error.localizedDescription)")
             }
         }
     }
     
-    func deleteAll() {
+    func deleteAllLegacy() {
         do {
             try realm.write {
                 realm.deleteAll()
