@@ -24,6 +24,8 @@
 		498A2287237CD88A007AF5FB /* DailyDozenUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 498A2286237CD88A007AF5FB /* DailyDozenUITests.swift */; };
 		498D76A423709F9D00B5DF06 /* DevelopTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 498D76A323709F9D00B5DF06 /* DevelopTableViewController.swift */; };
 		49C646CB236F4A46000DA8DC /* Develop.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 49C646CA236F4A46000DA8DC /* Develop.storyboard */; };
+		49DB104D238E255D00E77E52 /* DailyDozenViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49DB104C238E255D00E77E52 /* DailyDozenViewModel.swift */; };
+		49DB104F238E257D00E77E52 /* DailyTweaksViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49DB104E238E257D00E77E52 /* DailyTweaksViewModel.swift */; };
 		49F0377B233AD9B600FFD2EE /* UIButtonCheckbox.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49F0377A233AD9B600FFD2EE /* UIButtonCheckbox.swift */; };
 		BD68BC5B2FB6D632F16CE9CD /* Pods_DailyDozenTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 715D60F634E9BCD998C66B77 /* Pods_DailyDozenTests.framework */; };
 		BED5BB460CE3AEE8CF585899 /* Pods_DailyDozen.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F514690D725E67AD54735EB9 /* Pods_DailyDozen.framework */; };
@@ -62,7 +64,6 @@
 		CFAAB3721F9F3BC600B24748 /* Doze.swift in Sources */ = {isa = PBXBuildFile; fileRef = CFAAB3711F9F3BC600B24748 /* Doze.swift */; };
 		CFAAB3741F9F3E1200B24748 /* RealmConfigLegacy.swift in Sources */ = {isa = PBXBuildFile; fileRef = CFAAB3731F9F3E1200B24748 /* RealmConfigLegacy.swift */; };
 		CFAAB3771F9F3FDF00B24748 /* URL.swift in Sources */ = {isa = PBXBuildFile; fileRef = CFAAB3761F9F3FDF00B24748 /* URL.swift */; };
-		CFAAB37A1F9F4A8000B24748 /* DozeViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = CFAAB3791F9F4A8000B24748 /* DozeViewModel.swift */; };
 		CFB5568C1FD180C3003B5813 /* Report.swift in Sources */ = {isa = PBXBuildFile; fileRef = CFB5568B1FD180C3003B5813 /* Report.swift */; };
 		CFBEE2301FDE8D1E005C0F45 /* About.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CFBEE22F1FDE8D1E005C0F45 /* About.storyboard */; };
 		CFBEE2321FDE963D005C0F45 /* AboutTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CFBEE2311FDE963D005C0F45 /* AboutTableViewController.swift */; };
@@ -128,6 +129,8 @@
 		498D76A323709F9D00B5DF06 /* DevelopTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DevelopTableViewController.swift; sourceTree = "<group>"; };
 		49BB8C6A237373840047AFA4 /* DailyDozen.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = DailyDozen.entitlements; sourceTree = "<group>"; };
 		49C646CA236F4A46000DA8DC /* Develop.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Develop.storyboard; sourceTree = "<group>"; };
+		49DB104C238E255D00E77E52 /* DailyDozenViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DailyDozenViewModel.swift; sourceTree = "<group>"; };
+		49DB104E238E257D00E77E52 /* DailyTweaksViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DailyTweaksViewModel.swift; sourceTree = "<group>"; };
 		49F0377A233AD9B600FFD2EE /* UIButtonCheckbox.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIButtonCheckbox.swift; sourceTree = "<group>"; };
 		6ED3A55B48F7069CAE75156C /* Pods-DailyDozenTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-DailyDozenTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-DailyDozenTests/Pods-DailyDozenTests.release.xcconfig"; sourceTree = "<group>"; };
 		715D60F634E9BCD998C66B77 /* Pods_DailyDozenTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_DailyDozenTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -167,7 +170,6 @@
 		CFAAB3711F9F3BC600B24748 /* Doze.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Doze.swift; sourceTree = "<group>"; };
 		CFAAB3731F9F3E1200B24748 /* RealmConfigLegacy.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RealmConfigLegacy.swift; sourceTree = "<group>"; };
 		CFAAB3761F9F3FDF00B24748 /* URL.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = URL.swift; sourceTree = "<group>"; };
-		CFAAB3791F9F4A8000B24748 /* DozeViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DozeViewModel.swift; sourceTree = "<group>"; };
 		CFB5568B1FD180C3003B5813 /* Report.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Report.swift; sourceTree = "<group>"; };
 		CFBEE22F1FDE8D1E005C0F45 /* About.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = About.storyboard; sourceTree = "<group>"; };
 		CFBEE2311FDE963D005C0F45 /* AboutTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AboutTableViewController.swift; sourceTree = "<group>"; };
@@ -463,19 +465,20 @@
 		CFAAB3781F9F4A6000B24748 /* ViewModel */ = {
 			isa = PBXGroup;
 			children = (
-				CFAAB3791F9F4A8000B24748 /* DozeViewModel.swift */,
+				49DB104C238E255D00E77E52 /* DailyDozenViewModel.swift */,
+				49DB104E238E257D00E77E52 /* DailyTweaksViewModel.swift */,
 			);
 			path = ViewModel;
 			sourceTree = "<group>";
 		};
-		CFAAB37B1F9F4B0D00B24748 /* Realm */ = {
+		CFAAB37B1F9F4B0D00B24748 /* DatabaseLegacy */ = {
 			isa = PBXGroup;
 			children = (
 				CFAAB3731F9F3E1200B24748 /* RealmConfigLegacy.swift */,
 				CFE793561FA756E40084F075 /* RealmProviderLegacy.swift */,
 				496917DC238716BD00A9A743 /* RealmManagerLegacy.swift */,
 			);
-			path = Realm;
+			path = DatabaseLegacy;
 			sourceTree = "<group>";
 		};
 		CFB5568A1FD18086003B5813 /* Models */ = {
@@ -556,6 +559,7 @@
 				CF2FA9911FA87AB5003508F8 /* Details */,
 				49C646C9236F4997000DA8DC /* Develop */,
 				4941D724237E121E00ED84B5 /* Database */,
+				CFAAB37B1F9F4B0D00B24748 /* DatabaseLegacy */,
 				CF9E031D1FBD9F540084BC88 /* ItemHistory */,
 				CFA3E8F61FC58CD90092199D /* ServingsHistory */,
 				CFBEE22A1FDE8CBA005C0F45 /* About */,
@@ -569,7 +573,6 @@
 			children = (
 				CFD1BA311FCD24220057F549 /* Views */,
 				CFE698501F974F0F00CD7905 /* Controllers */,
-				CFAAB37B1F9F4B0D00B24748 /* Realm */,
 				CFF72AFC1FB9BA4F001CC2E9 /* Services */,
 				CF22F07D1FA8ACC300F25B70 /* Texts */,
 				CFAAB3751F9F3FCD00B24748 /* Extensions */,
@@ -957,6 +960,7 @@
 			files = (
 				CFA3E8FC1FC58E6B0092199D /* ServingsHistoryViewController.swift in Sources */,
 				CFF72AFE1FB9BAAA001CC2E9 /* LinkService.swift in Sources */,
+				49DB104D238E255D00E77E52 /* DailyDozenViewModel.swift in Sources */,
 				496917DD238716BD00A9A743 /* RealmManagerLegacy.swift in Sources */,
 				CFC4A8541F9776A500B5AC75 /* ServingsViewController.swift in Sources */,
 				496F605D23826B2A0085B6FA /* _Globals.swift in Sources */,
@@ -992,7 +996,6 @@
 				CF4DECF71F9DF2A500DA094B /* ServingsCell.swift in Sources */,
 				498D76A423709F9D00B5DF06 /* DevelopTableViewController.swift in Sources */,
 				CFE793571FA756E40084F075 /* RealmProviderLegacy.swift in Sources */,
-				CFAAB37A1F9F4A8000B24748 /* DozeViewModel.swift in Sources */,
 				CF4902971FD917D4000EAB68 /* ControlPanel.swift in Sources */,
 				CFC060931FBC57C800A901A5 /* ServingsSection.swift in Sources */,
 				CF5B28B11FA0A2C500D57A48 /* StateCell.swift in Sources */,
@@ -1005,6 +1008,7 @@
 				CFD1BA331FCD24920057F549 /* RoundedButton.swift in Sources */,
 				4941D735237E266300ED84B5 /* DataCountAttributes.swift in Sources */,
 				CF9E03231FBD9FDE0084BC88 /* ItemHistoryViewController.swift in Sources */,
+				49DB104F238E257D00E77E52 /* DailyTweaksViewModel.swift in Sources */,
 				CF4DECF91F9DF82900DA094B /* ServingsDataProvider.swift in Sources */,
 				CF17C8A71FAA019600367BF8 /* DetailsSection.swift in Sources */,
 				CF55BC4F2020450D00003D0D /* AlertBuilder.swift in Sources */,

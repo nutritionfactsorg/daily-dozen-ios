@@ -19,16 +19,16 @@ class DetailsBuilder {
     // MARK: - Methods
     /// Instantiates and returns the initial view controller for a storyboard.
     ///
-    /// - Parameter item: An item name.
+    /// - Parameter itemTypeKey: An item type key string.
     /// - Returns: The initial view controller in the storyboard.
-    static func instantiateController(with item: String) -> DetailsViewController {
+    static func instantiateController(itemTypeKey: String) -> DetailsViewController {
         let storyboard = UIStoryboard(name: Strings.storyboard, bundle: nil)
         guard
             let viewController = storyboard
                 .instantiateInitialViewController() as? DetailsViewController
             else { fatalError("Did not instantiate `Details` controller") }
 
-        viewController.setViewModel(for: item)
+        viewController.setViewModel(itemTypeKey: itemTypeKey)
 
         return viewController
     }
@@ -71,8 +71,8 @@ class DetailsViewController: UIViewController {
     /// Sets a view model for the current item.
     ///
     /// - Parameter item: The current item name.
-    func setViewModel(for item: String) {
-        dataProvider.viewModel = TextsProvider.shared.loadDetail(for: item)
+    func setViewModel(itemTypeKey: String) {
+        dataProvider.viewModel = TextsProvider.shared.getDetails(itemTypeKey: itemTypeKey)
     }
 
     /// Opens the main topic url in the browser.

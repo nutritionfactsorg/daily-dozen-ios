@@ -91,7 +91,7 @@
                                                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="xJ4-yh-UEP" customClass="RoundedView" customModule="DailyDozen" customModuleProvider="target">
                                                             <rect key="frame" x="8" y="8" width="398" height="84"/>
                                                             <subviews>
-                                                                <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="ic_beans" translatesAutoresizingMaskIntoConstraints="NO" id="IS4-2B-57z">
+                                                                <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="ic_dozeBeans" translatesAutoresizingMaskIntoConstraints="NO" id="IS4-2B-57z">
                                                                     <rect key="frame" x="8" y="8" width="45" height="68"/>
                                                                     <constraints>
                                                                         <constraint firstAttribute="width" constant="45" id="7Oe-pm-jgc"/>
@@ -248,8 +248,8 @@
                                                 <connections>
                                                     <outlet property="calendarButton" destination="UX8-vv-mKp" id="Id6-rF-pb3"/>
                                                     <outlet property="infoButton" destination="YC8-Tt-A17" id="dbr-pG-ndq"/>
+                                                    <outlet property="itemHeadingLabel" destination="qWl-8e-sO6" id="oVh-98-LtU"/>
                                                     <outlet property="itemImage" destination="IS4-2B-57z" id="vlA-b4-uNb"/>
-                                                    <outlet property="itemLabel" destination="qWl-8e-sO6" id="oVh-98-LtU"/>
                                                     <outlet property="stateCollection" destination="WgI-63-9dY" id="BEP-II-uA7"/>
                                                     <outlet property="streakLabel" destination="cW5-dD-Zy0" id="Uk1-u7-y36"/>
                                                 </connections>
@@ -292,8 +292,8 @@
         </scene>
     </scenes>
     <resources>
-        <image name="ic_beans" width="183" height="183"/>
         <image name="ic_calendar" width="28" height="28"/>
+        <image name="ic_dozeBeans" width="183" height="183"/>
         <image name="ic_star" width="36" height="36"/>
         <image name="ic_stat" width="28" height="28"/>
     </resources>

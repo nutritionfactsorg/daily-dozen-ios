@@ -60,11 +60,11 @@ enum DataCountType: String, CaseIterable {
         return self.rawValue
     }
     
-    func title() -> String {
-        return DataCountAttributes.shared.dict[self]!.title
+    var headingDisplay: String {
+        return DataCountAttributes.shared.dict[self]!.headingDisplay
     }
     
-    func maxServings() -> Int {
+    var maxServings: Int {
         return DataCountAttributes.shared.dict[self]!.maxServings
     }
     
@@ -74,20 +74,24 @@ enum DataCountType: String, CaseIterable {
             .replacingOccurrences(of: "-", with: "")
             .lowercased()
         for key in DataCountAttributes.shared.dict.keys {
-            let csvHeading = DataCountAttributes.shared.dict[key]!
-                .csvHeading
+            let csvHeadingAttribute = DataCountAttributes.shared.dict[key]!
+                .headingCSV
                 .replacingOccurrences(of: " ", with: "")
                 .replacingOccurrences(of: "-", with: "")
                 .lowercased()
-            if csvHeadingIn == csvHeading {
+            if csvHeadingIn == csvHeadingAttribute {
                 self = key
             }
         }
         return nil
     }
     
-    var csvHeading: String {
-        return DataCountAttributes.shared.dict[self]!.csvHeading
+    var headingCSV: String {
+        return DataCountAttributes.shared.dict[self]!.headingCSV
+    }
+    
+    var imageName: String {
+        return "ic_\(self.typeKey)"
     }
 
 }

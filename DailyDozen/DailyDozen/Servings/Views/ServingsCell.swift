@@ -13,26 +13,26 @@ class ServingsCell: UITableViewCell {
     // MARK: - Outlets
     @IBOutlet private weak var itemImage: UIImageView!
     @IBOutlet private weak var streakLabel: UILabel!
-    @IBOutlet private weak var itemLabel: UILabel!
+    @IBOutlet private weak var itemHeadingLabel: UILabel!
     @IBOutlet weak var stateCollection: UICollectionView!
     @IBOutlet private weak var infoButton: UIButton!
     @IBOutlet private weak var calendarButton: UIButton!
 
     // MARK: - Methods
-    /// Sets the cell with the current name, image name and tag.
+    /// Sets the servings cell with the current heading, image name and row index tag.
     ///
-    /// - Parameter name: The current name.
-    /// - Parameter tag: The current tag.
-    /// - Parameter tag: The image name tag.
-    func configure(with name: String, tag: Int, imageName: String, streak: Int = 0) {
-        itemLabel.text = name
+    /// - Parameter heading: The current heading.
+    /// - Parameter tag: The current row index tag.
+    /// - Parameter imageName: The image filename tag.
+    func configure(heading: String, tag: Int, imageName: String, streak: Int = 0) {
+        itemHeadingLabel.text = heading
         stateCollection.tag = tag
         infoButton.tag = tag
         calendarButton.tag = tag
         itemImage.image = UIImage(named: imageName)
 
         if streak > 1 {
-            streakLabel.text = "\(streak) days"
+            streakLabel.text = "\(streak) days" // :NYI:ToBeLocalized:
             streakLabel.superview?.isHidden = false
         } else {
             streakLabel.superview?.isHidden = true

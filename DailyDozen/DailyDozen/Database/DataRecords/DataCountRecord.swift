@@ -13,38 +13,38 @@ class DataCountRecord: Object {
     // MARK: - RealmDB Persisted Properties
     
     /// yyyyMMdd.typeKey e.g. 20190101.beansKey
-    @objc dynamic var id = "" 
+    @objc dynamic var pid = ""
     /// daily servings completed
     @objc dynamic var count = 0
     /// consecutive days-to-date with all servings completed
     @objc dynamic var streak = 0
     
-    var keys: (datestamp: Date, countType: DataCountType)? {
-        guard let date = Date.init(datestampKey: keyStrings.datestampKey),
-            let countType = DataCountType(typeKey: keyStrings.typeKey) else {
+    var pidKeys: (datestampKey: String, typeKey: String) {
+        let parts = self.pid.components(separatedBy: ".")
+        return (datestampKey: parts[0], typeKey: parts[1])
+    }
+
+    var pidParts: (datestamp: Date, countType: DataCountType)? {
+        guard let date = Date.init(datestampKey: pidKeys.datestampKey),
+            let countType = DataCountType(typeKey: pidKeys.typeKey) else {
                 print(":ERROR: DataCountRecord has invalid datestamp or typeKey")
                 return nil
         }
         return (datestamp: date, countType: countType)
     }
 
-    var keyStrings: (datestampKey: String, typeKey: String) {
-        let parts = self.id.components(separatedBy: ".")
-        return (datestampKey: parts[0], typeKey: parts[1])
-    }
-
     // MARK: Class Methods
     
-    static func id(date: Date, countType: DataCountType) -> String {
+    static func pid(date: Date, countType: DataCountType) -> String {
         return "\(date.datestampKey).\(countType.typeKey)"
     }
 
-    static func id(datestampKey: String, typeKey: String) -> String {
+    static func pid(datestampKey: String, typeKey: String) -> String {
         return "\(datestampKey).\(typeKey)"
     }
 
-    static func idKeys(id: String) -> (datestampKey: String, typeKey: String) {
-        let parts = id.components(separatedBy: ".")
+    static func pidKeys(pid: String) -> (datestampKey: String, typeKey: String) {
+        let parts = pid.components(separatedBy: ".")
         return (datestampKey: parts[0], typeKey: parts[1])
     }
     
@@ -58,24 +58,24 @@ class DataCountRecord: Object {
         }
         
         self.init()
-        self.id = "\(datestampKey).\(typeKey)"
+        self.pid = "\(datestampKey).\(typeKey)"
 
         self.count = count
-        if self.count > dataCountType.maxServings() {
-            self.count = dataCountType.maxServings()
-            print(":LOG:ERROR: \(datestampKey) \(typeKey) \(count) exceeded max servings \(dataCountType.maxServings())")
+        if self.count > dataCountType.maxServings {
+            self.count = dataCountType.maxServings
+            print(":LOG:ERROR: \(datestampKey) \(typeKey) \(count) exceeded max servings \(dataCountType.maxServings)")
         }
         self.streak = streak
     }
     
     convenience init(date: Date, countType: DataCountType, count: Int = 0, streak: Int = 0) {
         self.init()
-        self.id = "\(date.datestampKey).\(countType.typeKey)"
+        self.pid = "\(date.datestampKey).\(countType.typeKey)"
 
         self.count = count
-        if self.count > countType.maxServings() {
-            self.count = countType.maxServings()
-            print(":LOG:ERROR: \(date.datestampKey) \(countType.typeKey) \(count) exceeds max servings \(countType.maxServings())")
+        if self.count > countType.maxServings {
+            self.count = countType.maxServings
+            print(":LOG:ERROR: \(date.datestampKey) \(countType.typeKey) \(count) exceeds max servings \(countType.maxServings)")
         }
         self.streak = streak
     }
@@ -83,21 +83,16 @@ class DataCountRecord: Object {
     // MARK: - Meta Information
     
     override static func primaryKey() -> String? {
-        return "id"
-    }
-    
-    /// properties to be indexed
-    override class func indexedProperties() -> [String] {
-        return ["datestampKey", "typeKey"]
+        return "pid"
     }
         
     // MARK: - Data Presentation Methods
     
     func title() -> String {
-        guard let tmp = DataCountType(rawValue: self.keyStrings.typeKey) else {
+        guard let tmp = DataCountType(rawValue: self.pidKeys.typeKey) else {
             return "Undefined Title (Error)" 
         }
-        return tmp.title()
+        return tmp.headingDisplay
     }
     
     // MARK: - Data Management Methods
@@ -112,13 +107,13 @@ class DataCountRecord: Object {
     
     func setCount(_ count: Int) {
         self.count = count
-        if let countType = keys?.countType {
-            if self.count > countType.maxServings() {
-                self.count = countType.maxServings()
-                print(":ERROR: \(id) \(count) exceeds max servings")
+        if let countType = pidParts?.countType {
+            if self.count > countType.maxServings {
+                self.count = countType.maxServings
+                print(":ERROR: \(pid) \(count) exceeds max servings")
             }
         } else {
-            print(":ERROR: \(id) \(count) could not range check servings")
+            print(":ERROR: \(pid) \(count) could not range check servings")
         }
     }
     

@@ -13,14 +13,15 @@ struct DailyReport {
     var statesCount = 0
     var date: Date
 
-    init(doze: Doze) {
+    init(tracker: DailyTracker) {
         var statesCount = 0
-        for item in doze.items {
-            let selectedStates = item.states.filter { $0 }
-            statesCount += selectedStates.count
+        for type in DailyDozenViewModel.rowTypeArray {
+            if let item = tracker.itemsDict[type] {
+                statesCount += item.count
+            }
         }
         self.statesCount = statesCount
-        date = doze.date
+        date = tracker.date
     }
 }
 
@@ -57,8 +58,8 @@ struct YearlyReport {
 struct Report {
     var data = [YearlyReport]()
 
-    init(_ results: [Doze]) {
-        let dailyReports = results.map { DailyReport(doze: $0) }
+    init(_ trackers: [DailyTracker]) {
+        let dailyReports = trackers.map { DailyReport(tracker: $0) }
         var monthReports = [MonthReport]()
 
         guard var month = dailyReports.first?.date.monthName else { 

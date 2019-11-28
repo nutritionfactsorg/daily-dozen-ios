@@ -212,7 +212,7 @@ class RealmManager {
     private static var csvHeader: String {
         var str = "Date"
         for dataCountType in DataCountType.allCases {
-            str.append(",\(dataCountType.csvHeading)")
+            str.append(",\(dataCountType.headingCSV)")
         }
         // Weight
         str.append(",Weight AM Time")

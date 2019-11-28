@@ -22,7 +22,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         static let decline = "NO" // :NYI:ToBeLocalized:
     }
     
-    weak var realmDelegate: RealmDelegateLegacy?
+    weak var realmDelegate: RealmDelegate?
     
     var window: UIWindow?
     
@@ -47,8 +47,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         
         if let dozeBeans = DataCountAttributes.shared.dict[.dozeBeans],
             let dozeBerries = DataCountAttributes.shared.dict[.dozeBerries] {
-            print("dozeBeans.title = \(dozeBeans.title)")
-            print("dozeBerries.title = \(dozeBerries.title)")
+            print("dozeBeans.heading = \(dozeBeans.headingDisplay)")
+            print("dozeBerries.heading = \(dozeBerries.headingDisplay)")
         }
         
         print(":::::::::::::::::::::::::::::::::\n")

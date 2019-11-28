@@ -35,6 +35,7 @@ class DetailsDataProvider: NSObject, UITableViewDataSource {
         }
     }
 
+    // Row Cell At Index
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         guard let sectionType = DetailsSection(rawValue: indexPath.section) else {
             fatalError("There should be a section type")

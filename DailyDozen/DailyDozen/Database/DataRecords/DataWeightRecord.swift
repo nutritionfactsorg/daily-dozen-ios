@@ -11,34 +11,34 @@ import RealmSwift
 class DataWeightRecord: Object {
     
     /// yyyyMMdd.typeKey e.g. 20190101.amKey
-    @objc dynamic var id = "" 
+    @objc dynamic var pid = "" 
     // kilograms
     @objc dynamic var kg = 0.0     
     // time of day HH:mm 24-hour
     @objc dynamic var time = ""    
     
-    var keys: (datestamp: Date, weightType: DataCountType)? {
-        guard let date = Date.init(datestampKey: keyStrings.datestampKey),
-            let weightType = DataCountType(typeKey: keyStrings.typeKey) else {
+    var pidKeys: (datestampKey: String, typeKey: String) {
+        let parts = self.pid.components(separatedBy: ".")
+        return (datestampKey: parts[0], typeKey: parts[1])
+    }
+    
+    var pidParts: (datestamp: Date, weightType: DataCountType)? {
+        guard let date = Date.init(datestampKey: pidKeys.datestampKey),
+            let weightType = DataCountType(typeKey: pidKeys.typeKey) else {
                 print(":ERROR: DataWeightRecord has invalid datestamp or weightType")
                 return nil
         }
         return (datestamp: date, weightType: weightType)
     }
     
-    var keyStrings: (datestampKey: String, typeKey: String) {
-        let parts = self.id.components(separatedBy: ".")
-        return (datestampKey: parts[0], typeKey: parts[1])
-    }
-    
     // MARK: Class Methods
     
-    static func id(date: Date, weightType: DataWeightType) -> String {
+    static func pid(date: Date, weightType: DataWeightType) -> String {
         return "\(date.datestampKey).\(weightType.typeKey)"
     }
     
-    static func idKeys(id: String) -> (datestampKey: String, typeKey: String) {
-        let parts = id.components(separatedBy: ".")
+    static func pidKeys(pid: String) -> (datestampKey: String, typeKey: String) {
+        let parts = pid.components(separatedBy: ".")
         return (datestampKey: parts[0], typeKey: parts[1])
     }
     
@@ -57,14 +57,14 @@ class DataWeightRecord: Object {
         }
 
         self.init()
-        self.id = "\(datestampKey).\(typeKey)"
+        self.pid = "\(datestampKey).\(typeKey)"
         self.kg = kg
         self.time = time
     }
     
     convenience init(date: Date, weightType: DataWeightType, kg: Double) {
         self.init()
-        self.id = "\(date.datestampKey).\(weightType.typeKey)"
+        self.pid = "\(date.datestampKey).\(weightType.typeKey)"
         self.kg = kg
         self.time = date.datestampHHmm
     }
@@ -72,12 +72,7 @@ class DataWeightRecord: Object {
     // MARK: - Meta Information
     
     override static func primaryKey() -> String? {
-        return "id"
-    }
-    
-    /// properties to be indexed
-    override class func indexedProperties() -> [String] {
-        return ["datestampKey", "typeKey"]
+        return "pid"
     }
     
     // MARK: - Data Presentation Methods

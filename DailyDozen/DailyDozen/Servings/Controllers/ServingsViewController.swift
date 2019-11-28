@@ -18,7 +18,7 @@ class ServingsViewController: UIViewController {
     @IBOutlet private weak var starImage: UIImageView!
     
     // MARK: - Properties
-    private let realm = RealmProviderLegacy()
+    private let realm = RealmProvider()
     private let servingsStateCountMaximum = 24
     
     private var servingsStateCount = 0 {
@@ -56,11 +56,11 @@ class ServingsViewController: UIViewController {
     ///
     /// - Parameter item: The current date.
     func setViewModel(for date: Date) {
-        dataProvider.viewModel = DozeViewModel(doze: realm.getDozeLegacy(for: date))
+        dataProvider.viewModel = DailyDozenViewModel(tracker: realm.getDailyTracker(date: date))
         servingsStateCount = 0
         let mainItemCount = dataProvider.viewModel.count - ServingsSection.supplementsCount
         for i in 0 ..< mainItemCount {
-            let itemStates: [Bool] = dataProvider.viewModel.itemStates(index: i)
+            let itemStates: [Bool] = dataProvider.viewModel.itemStates(rowIndex: i)
             for state in itemStates where state {
                 servingsStateCount += 1 
             }
@@ -69,24 +69,28 @@ class ServingsViewController: UIViewController {
     }
     
     // MARK: - Actions
+    
+    /// ServingsCell infoButton
     @IBAction private func infoPressed(_ sender: UIButton) {
-        let itemInfo = dataProvider.viewModel.itemInfo(for: sender.tag)
+        let itemInfo = dataProvider.viewModel.itemInfo(rowIndex: sender.tag)
         
         guard !itemInfo.isSupplemental else {
-            let url = dataProvider.viewModel.topicURL(for: itemInfo.name)
+            let url = dataProvider.viewModel.topicURL(itemTypeKey: itemInfo.itemType.typeKey)
             UIApplication.shared
                 .open(url,
                       options: convertToUIApplicationOpenExternalURLOptionsKeyDictionary([:]),
                       completionHandler: nil)
             return
         }
-        let viewController = DetailsBuilder.instantiateController(with: itemInfo.name)
+        let viewController = DetailsBuilder.instantiateController(itemTypeKey: itemInfo.itemType.typeKey)
         navigationController?.pushViewController(viewController, animated: true)
     }
     
+    /// ServingsCell calendarButton
     @IBAction private func calendarPressed(_ sender: UIButton) {
-        let name = dataProvider.viewModel.itemInfo(for: sender.tag).name
-        let viewController = ItemHistoryBuilder.instantiateController(with: name, itemId: sender.tag)
+        let heading = dataProvider.viewModel.itemInfo(rowIndex: sender.tag).itemType.headingDisplay
+        let itemType = dataProvider.viewModel.itemType(rowIndex: sender.tag)
+        let viewController = ItemHistoryBuilder.instantiateController(heading: heading, itemType: itemType)
         navigationController?.pushViewController(viewController, animated: true)
     }
     
@@ -139,63 +143,66 @@ extension ServingsViewController: UITableViewDelegate {
 extension ServingsViewController: UICollectionViewDelegate {
     
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-        let itemCheckboxIndex = indexPath.row
-        let itemIndex = collectionView.tag
-        var itemStates = dataProvider.viewModel.itemStates(index: itemIndex)
+        let rowIndex = collectionView.tag // which item
+        let checkmarkIndex = indexPath.row // which checkmark
+        var checkmarkStates = dataProvider.viewModel.itemStates(rowIndex: rowIndex)
+        let itemPid = dataProvider.viewModel.itemPid(rowIndex: rowIndex)
         
         var stateTrueCounterOld = 0
-        for state in itemStates where state { 
+        for state in checkmarkStates where state {
             stateTrueCounterOld += 1 
         }
         
         // Update States
-        let stateNew = !itemStates[itemCheckboxIndex] // toggle state
-        itemStates[itemCheckboxIndex] = stateNew
+        let stateNew = !checkmarkStates[checkmarkIndex] // toggle state
+        checkmarkStates[checkmarkIndex] = stateNew
         // 0 is the rightmost item checkbox
         // fill true to the right. 
-        for index in 0 ..< itemCheckboxIndex {
-            itemStates[index] = true
+        for index in 0 ..< checkmarkIndex {
+            checkmarkStates[index] = true
         }
         // fill false to the left.
-        for index in itemCheckboxIndex+1 ..< itemStates.count {
-            itemStates[index] = false
+        for index in checkmarkIndex+1 ..< checkmarkStates.count {
+            checkmarkStates[index] = false
         }
                 
         guard let cell = collectionView.cellForItem(at: indexPath) as? StateCell else {
             fatalError("There should be a cell")
         }
-        cell.configure(with: itemStates[indexPath.row])
-        let id = dataProvider.viewModel.itemID(for: itemIndex)
-        realm.saveStatesLegacy(itemStates, id: id)
+        cell.configure(with: checkmarkStates[indexPath.row])
+        let itemType = dataProvider.viewModel.itemType(rowIndex: rowIndex)
         
         // Update Streak
-        let countMax = itemStates.count
-        let countNow = itemStates.filter { $0 }.count
+        let countMax = checkmarkStates.count
+        let countNow = checkmarkStates.filter { $0 }.count
         var streak = countMax == countNow ? 1 : 0
-        
+        realm.saveCount(countNow, pid: itemPid)
+
+        // :!!!: streak needs to include more than today+yesterday
         if streak > 0 {
-            let datePrevious = dataProvider.viewModel.dozeDate.adding(.day, value: -1)!
+            let yesterday = dataProvider.viewModel.trackerDate.adding(.day, value: -1)!
             // previous day's streak +1
-            streak += realm
-                .getDozeLegacy(for: datePrevious)
-                .items[itemIndex].streak
+            let yesterdayTracker = realm.getDailyTracker(date: yesterday)
+            if let yesterdayStreak = yesterdayTracker.itemsDict[itemType]?.streak {
+                streak += yesterdayStreak
+            }
         }
         
-        realm.updateStreakLegacy(streak, id: id)
+        realm.updateStreak(streak, pid: itemPid)
         
         tableView.reloadData()
         
-        guard !dataProvider.viewModel.itemInfo(for: itemIndex).isSupplemental else {
+        guard !dataProvider.viewModel.itemInfo(rowIndex: rowIndex).isSupplemental else {
             return
         }
         
-        let stateTrueCounterNew = stateNew ? itemCheckboxIndex+1 : itemCheckboxIndex
+        let stateTrueCounterNew = stateNew ? checkmarkIndex+1 : checkmarkIndex
 
         servingsStateCount += stateTrueCounterNew - stateTrueCounterOld
     }
 }
 
-extension ServingsViewController: RealmDelegateLegacy {
+extension ServingsViewController: RealmDelegate {
     
     func didUpdateFile() {
         navigationController?.popViewController(animated: false)

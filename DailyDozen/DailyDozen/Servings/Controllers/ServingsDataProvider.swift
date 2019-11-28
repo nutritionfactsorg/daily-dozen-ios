@@ -9,79 +9,90 @@
 import UIKit
 
 class ServingsDataProvider: NSObject, UITableViewDataSource {
-
+    
     // MARK: - Nested
     private struct Strings {
         static let servingsCell = "servingsCell"
         static let doseCell = "doseCell"
     }
-
-    var viewModel: DozeViewModel!
-
+    
+    var viewModel: DailyDozenViewModel!
+    
     // MARK: - Servings UITableViewDataSource
     func numberOfSections(in tableView: UITableView) -> Int {
         return 2
     }
-
+    
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         guard let servingsSection = ServingsSection(rawValue: section) else {
             fatalError("There should be a section type")
         }
         return servingsSection.numberOfRowsInSection(with: viewModel.count)
     }
-
+    
+    // Row Cell At Index
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let realm = RealmProviderLegacy()
+        let realm = RealmProvider()
         guard
-            let cell = tableView
+            let servingsCell = tableView
                 .dequeueReusableCell(withIdentifier: Strings.servingsCell) as? ServingsCell,
             let servingsSection = ServingsSection(rawValue: indexPath.section) else {
                 fatalError("There should settings")
         }
-        var index = indexPath.row
+        var rowIndex = indexPath.row
         if servingsSection == .supplements {
-            index += tableView.numberOfRows(inSection: 0)
+            rowIndex += tableView.numberOfRows(inSection: 0)
         }
-
-        let countMax = viewModel.itemStates(index: index).count
-        let countNow = viewModel.itemStates(index: index).filter { $0 }.count
+        
+        let countMax = viewModel.itemStates(rowIndex: rowIndex).count
+        let countNow = viewModel.itemStates(rowIndex: rowIndex).filter { $0 }.count
         var streak = countMax == countNow ? 1 : 0
-
+        
         if streak > 0 {
-            let date = viewModel.dozeDate.adding(.day, value: -1)!
+            let yesterday = viewModel.trackerDate.adding(.day, value: -1)!
             // previous streak +1
-            streak += realm.getDozeLegacy(for: date).items[index].streak
+            let yesterdayItems = realm.getDailyTracker(date: yesterday).itemsDict
+            let itemType = viewModel.itemType(rowIndex: rowIndex)
+            if let yesterdayStreak = yesterdayItems[itemType]?.streak {
+                streak += yesterdayStreak
+            }
         }
-
-        cell.configure(
-            with: viewModel.itemInfo(for: index).name,
-            tag: index,
-            imageName: viewModel.imageName(for: index),
+        
+        let itemType = viewModel.itemInfo(rowIndex: rowIndex).itemType
+        servingsCell.configure(
+            heading: itemType.headingDisplay,
+            tag: rowIndex,
+            imageName: itemType.imageName,
             streak: streak)
-
-        let id = viewModel.itemID(for: index)
-        realm.updateStreakLegacy(streak, id: id)
-
-        return cell
+        
+        // viewModel: DailyDozenViewModel tracker
+        // tracker: DailyTracker getPid
+        
+        let itemPid = viewModel.itemPid(rowIndex: rowIndex)
+        realm.updateStreak(streak, pid: itemPid)
+        
+        return servingsCell
     }
 }
 
 // MARK: - States UICollectionViewDataSource
 extension ServingsDataProvider: UICollectionViewDataSource {
-
+    
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        let states = viewModel.itemStates(index: collectionView.tag)
+        let states = viewModel.itemStates(rowIndex: collectionView.tag)
         return states.count
     }
-
+    
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        guard
-            let cell = collectionView
-                .dequeueReusableCell(withReuseIdentifier: Strings.doseCell, for: indexPath) as? StateCell else {
-                    fatalError("There should be a cell")
-
+        let cell = collectionView.dequeueReusableCell(
+            withReuseIdentifier: Strings.doseCell,
+            for: indexPath)
+        guard let stateCell = cell as? StateCell else {
+            fatalError("There should be a cell")
         }
-        cell.configure(with: viewModel.itemStates(index: collectionView.tag)[indexPath.row])
-        return cell
+        
+        let states = viewModel.itemStates(rowIndex: collectionView.tag)
+        stateCell.configure(with: states[indexPath.row])
+        return stateCell // individual checkbox
     }
 }

@@ -8,7 +8,6 @@
 
 import Foundation
 
-// :REPLACES: `Doze`
 struct DailyTracker {
     
     let date: Date
@@ -45,8 +44,8 @@ struct DailyTracker {
         }
     }
     
-}
-
-extension DailyTracker: Equatable {
-    // :!!!: make DailyTracker Equatable for sorting
+    func getPid(typeKey: DataCountType) -> String {
+        return "\(date.datestampKey).\(typeKey.typeKey)"
+    }
+    
 }

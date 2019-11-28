@@ -12,7 +12,8 @@ struct DetailViewModel {
 
     // MARK: - Properties
     private let detail: Detail
-    private let itemName: String
+    private let itemHeading: String
+    private let itemTypeKey: String
     private let topic: String
 
     var unitsType: UnitsType
@@ -33,18 +34,19 @@ struct DetailViewModel {
     }
     /// Returns the item name.
     var itemTitle: String {
-        return itemName
+        return itemHeading
     }
 
     /// Returns an image of the item.
     var image: UIImage? {
-        return UIImage(named: itemName.lowercased().replacingOccurrences(of: " ", with: "_"))
+        return UIImage(named: "detail_\(itemTypeKey)")
     }
 
     // MARK: - Inits
-    init(itemName: String, topic: String, metricSizes: [String], imperialSizes: [String], types: [[String: String]]) {
+    init(itemHeading: String, itemTypeKey: String, topic: String, metricSizes: [String], imperialSizes: [String], types: [[String: String]]) {
         detail = Detail(metricSizes: metricSizes, imperialSizes: imperialSizes, types: types)
-        self.itemName = itemName
+        self.itemHeading = itemHeading
+        self.itemTypeKey = itemTypeKey
         self.topic = topic
         
         if let unitsTypePrefStr = UserDefaults.standard.string(forKey: SettingsKeys.unitsTypePref),

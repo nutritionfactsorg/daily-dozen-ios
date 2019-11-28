@@ -107,19 +107,17 @@ class ServingsHistoryViewController: UIViewController {
 
     // MARK: - Methods
     private func setViewModel() {
-        let realm = RealmProviderLegacy()
+        let realm = RealmProvider()
 
-        let results: Results<Doze> = realm
-            .getDozesLegacy()
-            .sorted(byKeyPath: "date")
-        guard results.count > 0 else {
+        let trackers: [DailyTracker] = realm.getDailyTrackers()
+        guard trackers.count > 0 else {
             controlPanel.isHidden = true
             scaleControl.isEnabled = false
             controlPanel.superview?.isHidden = true
             return
         }
 
-        viewModel = ServingsHistoryViewModel(results)
+        viewModel = ServingsHistoryViewModel(trackers)
         let lastYearIndex = viewModel.lastYearIndex
 
         chartSettings = (lastYearIndex, viewModel.lastMonthIndex(for: lastYearIndex))

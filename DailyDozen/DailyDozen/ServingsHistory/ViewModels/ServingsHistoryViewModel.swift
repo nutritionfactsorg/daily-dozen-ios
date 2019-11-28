@@ -19,8 +19,8 @@ struct ServingsHistoryViewModel {
     }
 
     // MARK: - Inits
-    init(_ results: Results<Doze>) {
-        report = Report(Array(results))
+    init(_ trackers: [DailyTracker]) {
+        report = Report(trackers)
     }
 
     // MARK: - Methods

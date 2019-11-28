@@ -19,16 +19,16 @@ class ItemHistoryBuilder {
     // MARK: - Methods
     /// Instantiates and returns the initial view controller for a storyboard.
     ///
-    /// - Parameter title: An item name.
-    /// - Returns: The initial view controller in the storyboard.
-    static func instantiateController(with title: String, itemId: Int) -> UIViewController {
+    /// - Parameter heading: An item display heading.
+    /// - Returns: The initial item histor view controller in the storyboard.
+    static func instantiateController(heading: String, itemType: DataCountType) -> UIViewController {
         let storyboard = UIStoryboard(name: Strings.storyboard, bundle: nil)
         guard
             let viewController = storyboard
                 .instantiateInitialViewController() as? ItemHistoryViewController
             else { fatalError("Did not instantiate `ItemHistory` controller") }
-        viewController.title = title
-        viewController.itemId = itemId
+        viewController.title = heading
+        viewController.itemType = itemType
 
         return viewController
     }
@@ -42,8 +42,8 @@ class ItemHistoryViewController: UIViewController {
     }
 
     // MARK: - Properties
-    private let realm = RealmProviderLegacy()
-    fileprivate var itemId = 0
+    private let realm = RealmProvider()
+    fileprivate var itemType: DataCountType!
 
     // MARK: - Outlets
     @IBOutlet private weak var calendarView: FSCalendar!
@@ -73,11 +73,13 @@ extension ItemHistoryViewController: FSCalendarDataSource {
 
         guard date < Date() else { return cell }
 
-        let states = realm.getDozeLegacy(for: date).items[itemId].states
-        let selectedStates = states.filter { $0 }
-
-        cell.configure(for: selectedStates.count, maximum: states.count)
-
+        let itemsDict = realm.getDailyTracker(date: date).itemsDict
+        if let statesCount = itemsDict[itemType]?.count {
+            cell.configure(for: statesCount, maximum: itemType.maxServings)
+        } else {
+            cell.configure(for: 0, maximum: itemType.maxServings)
+        }
+        
         return cell
     }
 }

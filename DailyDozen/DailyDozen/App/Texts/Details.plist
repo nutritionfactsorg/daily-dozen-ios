@@ -2,7 +2,7 @@
 <!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
 <plist version="1.0">
 <dict>
-	<key>Beans</key>
+	<key>dozeBeans</key>
 	<dict>
 		<key>Sizes</key>
 		<dict>
@@ -93,7 +93,7 @@
 		<key>Topic</key>
 		<string>beans</string>
 	</dict>
-	<key>Berries</key>
+	<key>dozeBerries</key>
 	<dict>
 		<key>Sizes</key>
 		<dict>
@@ -162,7 +162,7 @@
 		<key>Topic</key>
 		<string>berries</string>
 	</dict>
-	<key>Other Fruits</key>
+	<key>dozeFruitsOther</key>
 	<dict>
 		<key>Sizes</key>
 		<dict>
@@ -297,7 +297,7 @@
 		<key>Topic</key>
 		<string>fruit</string>
 	</dict>
-	<key>Cruciferous Vegetables</key>
+	<key>dozeVegetablesCruciferous</key>
 	<dict>
 		<key>Sizes</key>
 		<dict>
@@ -372,7 +372,7 @@
 		<key>Topic</key>
 		<string>cruciferous-vegetables</string>
 	</dict>
-	<key>Greens</key>
+	<key>dozeGreens</key>
 	<dict>
 		<key>Sizes</key>
 		<dict>
@@ -433,7 +433,7 @@
 		<key>Topic</key>
 		<string>greens</string>
 	</dict>
-	<key>Other Vegetables</key>
+	<key>dozeVegetablesOther</key>
 	<dict>
 		<key>Sizes</key>
 		<dict>
@@ -530,7 +530,7 @@
 		<key>Topic</key>
 		<string>vegetables</string>
 	</dict>
-	<key>Flaxseeds</key>
+	<key>dozeFlaxseeds</key>
 	<dict>
 		<key>Sizes</key>
 		<dict>
@@ -557,7 +557,7 @@
 		<key>Topic</key>
 		<string>flax-seeds</string>
 	</dict>
-	<key>Nuts and Seeds</key>
+	<key>dozeNuts</key>
 	<dict>
 		<key>Sizes</key>
 		<dict>
@@ -630,7 +630,7 @@
 		<key>Topic</key>
 		<string>nuts</string>
 	</dict>
-	<key>Herbs and Spices</key>
+	<key>dozeSpices</key>
 	<dict>
 		<key>Sizes</key>
 		<dict>
@@ -779,7 +779,7 @@
 		<key>Topic</key>
 		<string>spices</string>
 	</dict>
-	<key>Whole Grains</key>
+	<key>dozeWholeGrains</key>
 	<dict>
 		<key>Sizes</key>
 		<dict>
@@ -850,7 +850,7 @@
 		<key>Topic</key>
 		<string>grains</string>
 	</dict>
-	<key>Beverages</key>
+	<key>dozeBeverages</key>
 	<dict>
 		<key>Sizes</key>
 		<dict>
@@ -933,7 +933,7 @@
 		<key>Topic</key>
 		<string>beverages</string>
 	</dict>
-	<key>Exercise</key>
+	<key>dozeExercise</key>
 	<dict>
 		<key>Sizes</key>
 		<dict>
@@ -1170,7 +1170,7 @@
 		<key>Topic</key>
 		<string>exercise</string>
 	</dict>
-	<key>Vitamin B12</key>
+	<key>otherVitaminB12</key>
 	<dict>
 		<key>Sizes</key>
 		<dict>
@@ -1186,7 +1186,7 @@
 		<key>Topic</key>
 		<string>vitamin-b12</string>
 	</dict>
-	<key>Plant-based Omega 3s</key>
+	<key>otherOmega3</key>
 	<dict>
 		<key>Sizes</key>
 		<dict>
