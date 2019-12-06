@@ -1,5 +1,5 @@
 //
-//  SectionType.swift
+//  DetailsSection.swift
 //  DailyDozen
 //
 //  Created by Konstantin Khokhlov on 01.11.17.

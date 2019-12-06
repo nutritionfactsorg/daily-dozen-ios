@@ -37,7 +37,7 @@
                                                     <rect key="frame" x="4" y="4" width="367" height="67"/>
                                                     <subviews>
                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="OFE-S4-S9b">
-                                                            <rect key="frame" x="8" y="0.0" width="351" height="51"/>
+                                                            <rect key="frame" x="8" y="0.0" width="351" height="67"/>
                                                             <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="14"/>
                                                             <color key="textColor" white="0.15913340779999999" alpha="1" colorSpace="calibratedWhite"/>
                                                             <nil key="highlightedColor"/>
@@ -47,7 +47,7 @@
                                                     <constraints>
                                                         <constraint firstItem="OFE-S4-S9b" firstAttribute="leading" secondItem="wAF-Xn-6O5" secondAttribute="leadingMargin" id="bEe-4F-93Y"/>
                                                         <constraint firstItem="OFE-S4-S9b" firstAttribute="top" secondItem="wAF-Xn-6O5" secondAttribute="top" id="ldk-uk-Wee"/>
-                                                        <constraint firstAttribute="bottom" secondItem="OFE-S4-S9b" secondAttribute="bottom" constant="16" id="qTn-aI-5v1"/>
+                                                        <constraint firstAttribute="bottom" secondItem="OFE-S4-S9b" secondAttribute="bottom" id="qTn-aI-5v1"/>
                                                         <constraint firstItem="OFE-S4-S9b" firstAttribute="trailing" secondItem="wAF-Xn-6O5" secondAttribute="trailingMargin" id="uaL-AW-0Ag"/>
                                                     </constraints>
                                                     <userDefinedRuntimeAttributes>
@@ -91,21 +91,8 @@
                                                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="zMi-1o-Jxp" customClass="RoundedView" customModule="DailyDozen" customModuleProvider="target">
                                                     <rect key="frame" x="4" y="4" width="367" height="67"/>
                                                     <subviews>
-                                                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="2JD-CW-qg3">
-                                                            <rect key="frame" x="289" y="17" width="70" height="33"/>
-                                                            <constraints>
-                                                                <constraint firstAttribute="width" constant="70" id="Vy6-3j-bg3"/>
-                                                            </constraints>
-                                                            <fontDescription key="fontDescription" name="HelveticaNeue-Medium" family="Helvetica Neue" pointSize="17"/>
-                                                            <state key="normal" title="VIDEOS">
-                                                                <color key="titleColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
-                                                            </state>
-                                                            <connections>
-                                                                <action selector="linkButtonPressed:" destination="f0F-p1-a29" eventType="touchUpInside" id="mbV-pM-snT"/>
-                                                            </connections>
-                                                        </button>
                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="dxC-TB-3hz">
-                                                            <rect key="frame" x="8" y="25.5" width="273" height="16.5"/>
+                                                            <rect key="frame" x="8" y="25.5" width="351" height="16.5"/>
                                                             <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="14"/>
                                                             <color key="textColor" white="0.15913340779999999" alpha="1" colorSpace="calibratedWhite"/>
                                                             <nil key="highlightedColor"/>
@@ -113,11 +100,9 @@
                                                     </subviews>
                                                     <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                     <constraints>
-                                                        <constraint firstItem="2JD-CW-qg3" firstAttribute="leading" secondItem="dxC-TB-3hz" secondAttribute="trailing" constant="8" id="BDl-vx-340"/>
                                                         <constraint firstItem="dxC-TB-3hz" firstAttribute="centerY" secondItem="zMi-1o-Jxp" secondAttribute="centerY" id="WH1-lM-KOa"/>
                                                         <constraint firstItem="dxC-TB-3hz" firstAttribute="leading" secondItem="zMi-1o-Jxp" secondAttribute="leading" constant="8" id="bYn-o5-KML"/>
-                                                        <constraint firstItem="2JD-CW-qg3" firstAttribute="centerY" secondItem="zMi-1o-Jxp" secondAttribute="centerY" id="c7Y-V3-Bli"/>
-                                                        <constraint firstAttribute="trailing" secondItem="2JD-CW-qg3" secondAttribute="trailing" constant="8" id="gOZ-IS-qra"/>
+                                                        <constraint firstAttribute="trailing" secondItem="dxC-TB-3hz" secondAttribute="trailing" constant="8" id="zZ1-b8-wqj"/>
                                                     </constraints>
                                                     <userDefinedRuntimeAttributes>
                                                         <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
@@ -147,7 +132,6 @@
                                         </tableViewCellContentView>
                                         <color key="backgroundColor" red="0.95294117649999999" green="0.95294117649999999" blue="0.95294117649999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <connections>
-                                            <outlet property="linkButton" destination="2JD-CW-qg3" id="gR5-ci-ly0"/>
                                             <outlet property="titleLabel" destination="dxC-TB-3hz" id="mxY-Bq-TtM"/>
                                         </connections>
                                     </tableViewCell>

@@ -116,7 +116,7 @@ class DetailsViewController: UIViewController {
     ///
     /// - Parameter sender: The button.
     @IBAction private func linkButtonPressed(_ sender: UIButton) {
-        guard let url = dataProvider.viewModel.typeTopicURL(for: sender.tag) else { return }
+        guard let url = dataProvider.viewModel.typeTopicURL(index: sender.tag) else { return }
         UIApplication.shared.open(url, options: convertToUIApplicationOpenExternalURLOptionsKeyDictionary([:]), completionHandler: nil)
     }
 }
@@ -129,29 +129,31 @@ extension DetailsViewController: UITableViewDelegate {
             fatalError("There should be a section type")
         }
         
-        // :NOTE: workaround for 21 Tweak row heights.
-        // See also : enum DetailsSection: Int … var rowHeight: CGFloat
-        // var rowHeight: CGFloat {
-        //    switch sectionType {
-        //    case .sizes:
-        //      return 75
-        //    case .types:
-        //      return 150
-        //    }
-        //}
-        
-        if sectionType == .sizes {
-            return sectionType.rowHeight
+        if sectionType == .types &&
+            dataProvider.dataCountType.isTweak {
+            let x = CGFloat(0.0)
+            let y = CGFloat(0.0)
+            let height = CGFloat(0.0)
+            let width = tableView.contentSize.width * 0.70
+            let label = UILabel(frame: CGRect(x: x, y: y, width: width, height: height))
+            label.numberOfLines = 0 // allows label to have as many lines as needed
+            
+            label.lineBreakMode = NSLineBreakMode.byWordWrapping
+            let font = UIFont(name: "Helvetica Neue", size: 14.0)
+            label.font = font
+            
+            let typeKey = dataProvider.dataCountType.typeKey
+            let typeData = TextsProvider.shared
+                .getDetails(itemTypeKey: typeKey)
+                .typeData(index: indexPath.row)
+            
+            label.text  = "\(typeData.name)\n margin"
+            label.sizeToFit()
+            //print("indexPath: \(indexPath)")
+            //print("\(label.fs_width) w x \(label.fs_height) h")
+            return label.fs_height
         }
         
-        // :NOTE: DETAILS_ROW_HEIGHT
-        //let dict = DataCountAttributes.shared.dict
-        //if let dataCountType = dataProvider.dataCountType,
-        //    let dataAttributes = dict[dataCountType] {
-        //    return dataAttributes.detailTypeHeight
-        //}
-        
-        // return UITableView.automaticDimension // Note: height disappeared
         return sectionType.rowHeight
     }
     

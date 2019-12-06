@@ -17,7 +17,7 @@ class DetailsDataProvider: NSObject, UITableViewDataSource {
     }
     
     var viewModel: DetailViewModel!
-    var dataCountType: DataCountType?
+    var dataCountType: DataCountType!
     
     // MARK: - UITableViewDataSource
     func numberOfSections(in tableView: UITableView) -> Int {
@@ -49,7 +49,7 @@ class DetailsDataProvider: NSObject, UITableViewDataSource {
                 else { return UITableViewCell() }
             
             cell.configure(
-                title: viewModel.sizeDescription(for: indexPath.row)
+                title: viewModel.sizeDescription(index: indexPath.row)
             )
             return cell
             
@@ -57,12 +57,18 @@ class DetailsDataProvider: NSObject, UITableViewDataSource {
             guard let cell = tableView
                 .dequeueReusableCell(withIdentifier: Strings.typesID) as? TypesCell
                 else { return UITableViewCell() }
-            let typeData = viewModel.typeData(for: indexPath.row)
-            cell.configure(
-                title: typeData.name,
-                useLink: typeData.hasLink,
-                tag: indexPath.row
-            )
+            let typeData = viewModel.typeData(index: indexPath.row)
+            
+            if dataCountType.isTweak {
+                cell.configure(title: typeData.name)
+            } else {
+                cell.configure(
+                    title: typeData.name,
+                    useLink: typeData.hasLink,
+                    tag: indexPath.row
+                )
+            }
+            
             return cell
         }
     }

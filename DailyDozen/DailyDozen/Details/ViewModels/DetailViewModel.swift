@@ -73,7 +73,7 @@ struct DetailViewModel {
     ///
     /// - Parameter index: The current index.
     /// - Returns: A description string.
-    func sizeDescription(for index: Int) -> String {
+    func sizeDescription(index: Int) -> String {
         return unitsType == .metric ? details.metricSizes[index] : details.imperialSizes[index]
     }
     
@@ -81,7 +81,7 @@ struct DetailViewModel {
     ///
     /// - Parameter index: The current index.
     /// - Returns: A tuple of the type name and type link.
-    func typeData(for index: Int) -> (name: String, hasLink: Bool) {
+    func typeData(index: Int) -> (name: String, hasLink: Bool) {
         let name = details.types[index].keys.first ?? ""
         let hasLink = details.types[index].values.first == ""
         return (name, hasLink)
@@ -91,7 +91,7 @@ struct DetailViewModel {
     ///
     /// - Parameter index: The current index.
     /// - Returns: The type toipic url.
-    func typeTopicURL(for index: Int) -> URL? {
+    func typeTopicURL(index: Int) -> URL? {
         guard let topic = details.types[index].values.first else { return nil }
         return LinksService.shared.link(forTopic: topic)
     }

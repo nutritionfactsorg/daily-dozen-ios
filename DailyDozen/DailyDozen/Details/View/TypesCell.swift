@@ -23,8 +23,13 @@ class TypesCell: UITableViewCell {
     ///   - tag: The button tag.
     func configure(title: String, useLink: Bool, tag: Int) {
         titleLabel.text = title
-        //titleLabel.frame = 50.0  // :DEBUG: no effect. check frame height
         linkButton.isHidden = useLink
         linkButton.tag = tag
     }
+
+    // Use: 21 Tweaks
+    func configure(title: String) {
+        titleLabel.text = title
+    }
+
 }

@@ -93,5 +93,18 @@ enum DataCountType: String, CaseIterable {
     var imageName: String {
         return "ic_\(self.typeKey)"
     }
+    
+    /// does not include "other"
+    var isDailyDozen: Bool {
+        return self.typeKey.prefix(4) == "doze"
+    }
+
+    var isOther: Bool {
+        return self.typeKey.prefix(5) == "other"
+    }
+
+    var isTweak: Bool {
+        return self.typeKey.prefix(5) == "tweak"
+    }
 
 }
