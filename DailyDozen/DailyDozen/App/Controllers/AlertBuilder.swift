@@ -16,7 +16,7 @@ class AlertBuilder {
         static let message = """
         Vitamin B12 is essential for your health but does not count towards your daily servings.
 
-        Vitamin B12 are included in this app to provide you with an easy way to track your intake.
+        Vitamin B12 is included in this app to provide you with an easy way to track your intake.
         """
         static let confirm = "OK"
     }
@@ -57,13 +57,12 @@ class AlertBuilder {
                     NSAttributedString.Key.foregroundColor: UIColor.greenColor]),
             forKey: Keys.title)
 
-        alert.setValue(
-            NSAttributedString(
-                string: content.message,
-                attributes: [
-                    NSAttributedString.Key.font: UIFont.helevetica,
-                    NSAttributedString.Key.foregroundColor: UIColor.lightGray]),
-            forKey: Strings.message)
+        let message = NSAttributedString(
+            string: content.message,
+            attributes: [
+                NSAttributedString.Key.font: UIFont.helevetica,
+                NSAttributedString.Key.foregroundColor: UIColor.lightGray])
+        alert.setValue(message, forKey: Keys.message)
 
         let action = UIAlertAction(title: Strings.confirm, style: .cancel, handler: nil)
         action.setValue(UIColor.greenColor, forKey: Keys.textColor)

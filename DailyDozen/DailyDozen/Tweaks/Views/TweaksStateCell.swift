@@ -1,14 +1,13 @@
 //
-//  DoseCell.swift
+//  TweaksStateCell.swift
 //  DailyDozen
 //
-//  Created by Konstantin Khokhlov on 25.10.17.
-//  Copyright © 2017 Nutritionfacts.org. All rights reserved.
+//  Copyright © 2019 Nutritionfacts.org. All rights reserved.
 //
 
 import UIKit
 
-class StateCell: UICollectionViewCell {
+class TweaksStateCell: UICollectionViewCell {
     
     // MARK: - Outlets
     @IBOutlet private weak var checkbox: UIButtonCheckbox!

@@ -57,7 +57,6 @@ class RealmProvider {
         return dailyTracker
     }
     
-    /// :!!!:REPLACES: getDozesLegacy() -> Results<Doze>
     /// Note: minimal checked. Expects stored database values to be valid. Exists on first data error.
     func getDailyTrackers() -> [DailyTracker] {
         var allTrackers = [DailyTracker]()
@@ -114,7 +113,6 @@ class RealmProvider {
         saveCount(count, pid: id)
     }
     
-    /// :!!!:REPLACES: saveStates([Bool], String)
     func saveCount(_ count: Int, pid: String) {
         saveDailyTracker()
         let keys = DataCountRecord.pidKeys(pid: pid)
@@ -137,7 +135,6 @@ class RealmProvider {
         updateStreak(streak, pid: pid)
     }
     
-    /// :!!!:REPLACES: updateStreakLegacy(Int, String)
     /// :!!!:NYI: updateStreak() needs to do more than a single value
     func updateStreak(_ streak: Int, pid: String) {
         saveDailyTracker()
@@ -155,7 +152,6 @@ class RealmProvider {
         }
     }
     
-    /// :!!!:REPLACES: saveDozeLegacy()
     func saveDailyTracker() {
         guard let tracker = unsavedDailyTracker else {
             // print("saveDailyTracker() unsavedDailyTracker is nil")

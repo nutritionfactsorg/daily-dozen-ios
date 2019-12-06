@@ -1202,5 +1202,512 @@
 		<key>Topic</key>
 		<string>omega-3-fatty-acids</string>
 	</dict>
+	<key>tweakMealWater</key>
+	<dict>
+		<key>Sizes</key>
+		<dict>
+			<key>Metric</key>
+			<array>
+				<string>At Each Meal: 250 ml of cool or cold unflavored water before each meal</string>
+			</array>
+			<key>Imperial</key>
+			<array>
+				<string>At Each Meal: 2 cups cool or cold unflavored water before each meal</string>
+			</array>
+		</dict>
+		<key>Types</key>
+		<array>
+			<dict>
+				<key>Time your metabolism-boosting two cups of cool or cold unflavored water before each meal to also take advantage of its preload benefits.</key>
+				<string></string>
+			</dict>
+		</array>
+		<key>Topic</key>
+		<string></string>
+	</dict>
+	<key>tweakMealNegCal</key>
+	<dict>
+		<key>Sizes</key>
+		<dict>
+			<key>Metric</key>
+			<array>
+				<string>At Each Meal: Preload with "Negative Calorie" Foods</string>
+			</array>
+			<key>Imperial</key>
+			<array>
+				<string>At Each Meal: Preload with "Negative Calorie" Foods</string>
+			</array>
+		</dict>
+		<key>Types</key>
+		<array>
+			<dict>
+				<key>As the first course, start each meal with an apple or a Green Light soup or salad containing fewer than one hundred calories per cup.</key>
+				<string></string>
+			</dict>
+		</array>
+		<key>Topic</key>
+		<string>TOPIC_ITEM</string>
+	</dict>
+	<key>tweakMealVinegar</key>
+	<dict>
+		<key>Sizes</key>
+		<dict>
+			<key>Metric</key>
+			<array>
+				<string>At Each Meal: Incorporate 2 tsp Vinegar</string>
+			</array>
+			<key>Imperial</key>
+			<array>
+				<string>At Each Meal: Incorporate 2 tsp Vinegar</string>
+			</array>
+		</dict>
+		<key>Types</key>
+		<array>
+			<dict>
+				<key>Never drink vinegar straight. Instead, flavor meals or dress a side salad with any of the sweet and savory vinegars out there. If you want to drink it, make sure to mix it in a glass of water and, afterward, be sure to rinse your mouth out with water to protect your tooth enamel.</key>
+				<string></string>
+			</dict>
+		</array>
+		<key>Topic</key>
+		<string>TOPIC_ITEM</string>
+	</dict>
+	<key>tweakMealUndistracted</key>
+	<dict>
+		<key>Sizes</key>
+		<dict>
+			<key>Metric</key>
+			<array>
+				<string>At Each Meal: Enjoy Undistracted Meals</string>
+			</array>
+			<key>Imperial</key>
+			<array>
+				<string>At Each Meal: Enjoy Undistracted Meals</string>
+			</array>
+		</dict>
+		<key>Types</key>
+		<array>
+			<dict>
+				<key>Don't eat while watching TV or playing on your phone. Give yourself a check for each meal you're able to eat without distraction.</key>
+				<string></string>
+			</dict>
+		</array>
+		<key>Topic</key>
+		<string>TOPIC_ITEM</string>
+	</dict>
+	<key>tweakMeal20Minutes</key>
+	<dict>
+		<key>Sizes</key>
+		<dict>
+			<key>Metric</key>
+			<array>
+				<string>At Each Meal: Follow the Twenty-Minute Rule</string>
+			</array>
+			<key>Imperial</key>
+			<array>
+				<string>At Each Meal: Follow the Twenty-Minute Rule</string>
+			</array>
+		</dict>
+		<key>Types</key>
+		<array>
+			<dict>
+				<key>Whether through increasing viscosity or the number of chews, or decreasing bite size and eating rate, dozens of studies have demonstrated that no matter how we boost the amount of time food is in our mouths, it can result in lower caloric intake. So extend meal duration to at least twenty minutes to allow your natural satiety signals to take full effect. How? By choosing foods that take longer to eat and eating them in a way that prolongs the time they stay in your mouth. Think bulkier, harder, chewier foods in smaller, well-chewed bites.</key>
+				<string></string>
+			</dict>
+		</array>
+		<key>Topic</key>
+		<string>TOPIC_ITEM</string>
+	</dict>
+	<key>tweakDailyBlackCumin</key>
+	<dict>
+		<key>Sizes</key>
+		<dict>
+			<key>Metric</key>
+			<array>
+				<string>Every Day: Black Cumin (Nigella sativa) (¼ tsp)</string>
+			</array>
+			<key>Imperial</key>
+			<array>
+				<string>Every Day: Black Cumin (Nigella sativa) (¼ tsp)</string>
+			</array>
+		</dict>
+		<key>Types</key>
+		<array>
+			<dict>
+				<key>As noted in the Appetite Suppression section, a systematic review and meta-analysis of randomized, controlled weight-loss trials found that about a quarter teaspoon of black cumin powder every day appears to reduce body mass index within a span of a couple of months. Note that black cumin is different from regular cumin, for which the dosing is different.</key>
+				<string></string>
+			</dict>
+		</array>
+		<key>Topic</key>
+		<string>TOPIC_ITEM</string>
+	</dict>
+	<key>tweakDailyGarlic</key>
+	<dict>
+		<key>Sizes</key>
+		<dict>
+			<key>Metric</key>
+			<array>
+				<string>Every Day: Garlic Powder (¼ tsp)</string>
+			</array>
+			<key>Imperial</key>
+			<array>
+				<string>Every Day: Garlic Powder (¼ tsp)</string>
+			</array>
+		</dict>
+		<key>Types</key>
+		<array>
+			<dict>
+				<key>Randomized, double-blind, placebo-controlled studies have found that as little as a daily quarter teaspoon of garlic powder can reduce body fat at a cost of perhaps two cents a day.</key>
+				<string></string>
+			</dict>
+		</array>
+		<key>Topic</key>
+		<string>TOPIC_ITEM</string>
+	</dict>
+	<key>tweakDailyGinger</key>
+	<dict>
+		<key>Sizes</key>
+		<dict>
+			<key>Metric</key>
+			<array>
+				<string>Every Day: Ground Ginger (1 tsp) or Cayenne Pepper (½ tsp)</string>
+			</array>
+			<key>Imperial</key>
+			<array>
+				<string>Every Day: Ground Ginger (1 tsp) or Cayenne Pepper (½ tsp)</string>
+			</array>
+		</dict>
+		<key>Types</key>
+		<array>
+			<dict>
+				<key>Randomized controlled trials have found that ¼ teaspoon to 1½ teaspoons a day of ground ginger significantly decreased body weight for just pennies a day. It can be as easy as stirring the ground spice into a cup of hot water. Note: Ginger may work better in the morning than evening. Chai tea is a tasty way to combine the green tea and ginger tricks into a single beverage.</key>
+				<string></string>
+			</dict>
+			<dict>
+				<key>Alternately, for BAT activation, you can add one raw jalapeño pepper or a half teaspoon of red pepper powder (or, presumably, crushed red pepper flakes) into your daily diet. To help beat the heat, you can very thinly slice or finely chop the jalapeño to reduce its bite to little prickles, or mix the red pepper into soup or the whole-food vegetable smoothie I featured in one of my cooking videos on NutritionFacts.org.</key>
+				<string></string>
+			</dict>
+		</array>
+		<key>Topic</key>
+		<string>TOPIC_ITEM</string>
+	</dict>
+	<key>tweakDailyNutriYeast</key>
+	<dict>
+		<key>Sizes</key>
+		<dict>
+			<key>Metric</key>
+			<array>
+				<string>Every Day: Nutritional Yeast (2 tsp)</string>
+			</array>
+			<key>Imperial</key>
+			<array>
+				<string>Every Day: Nutritional Yeast (2 tsp)</string>
+			</array>
+		</dict>
+		<key>Types</key>
+		<array>
+			<dict>
+				<key>Two teaspoons of baker's, brewer's, or nutritional yeast contains roughly the amount of beta 1,3/1,6 glucans found in randomized, double-blind, placebo-controlled clinical trials to facilitate weight loss.</key>
+				<string></string>
+			</dict>
+		</array>
+		<key>Topic</key>
+		<string>TOPIC_ITEM</string>
+	</dict>
+	<key>tweakDailyCumin</key>
+	<dict>
+		<key>Sizes</key>
+		<dict>
+			<key>Metric</key>
+			<array>
+				<string>Every Day: Cumin (Cuminum cyminum) (½ tsp with lunch and dinner)</string>
+			</array>
+			<key>Imperial</key>
+			<array>
+				<string>Every Day: Cumin (Cuminum cyminum) (½ tsp with lunch and dinner)</string>
+			</array>
+		</dict>
+		<key>Types</key>
+		<array>
+			<dict>
+				<key>Overweight women randomized to add a half teaspoon of cumin to their lunches and dinners beat out the control group by four more pounds and an extra inch off their waists. There is also evidence to support the use of the spice saffron, but a pinch a day would cost a dollar, whereas a teaspoon of cumin costs less than ten cents.</key>
+				<string></string>
+			</dict>
+		</array>
+		<key>Topic</key>
+		<string>TOPIC_ITEM</string>
+	</dict>
+	<key>tweakDailyGreenTea</key>
+	<dict>
+		<key>Sizes</key>
+		<dict>
+			<key>Metric</key>
+			<array>
+				<string>Every Day: Green Tea (3 cups)</string>
+			</array>
+			<key>Imperial</key>
+			<array>
+				<string>Every Day: Green Tea (3 cups)</string>
+			</array>
+		</dict>
+		<key>Types</key>
+		<array>
+			<dict>
+				<key>Drink three cups a day between meals (waiting at least an hour after a meal so as to not interfere with iron absorption). During meals, drink water, black coffee, or hibiscus tea mixed 6:1 with lemon verbena, but never exceed three cups of fluid an hour (important given my water preloading advice).</key>
+				<string></string>
+			</dict>
+			<dict>
+				<key>Take advantage of the reinforcing effect of caffeine by drinking your green tea along with something healthy you wish you liked more, but don't consume large amounts of caffeine within six hours of bedtime. Taking your tea without sweetener is best, but if you typically sweeten your tea with honey or sugar, try yacon syrup instead.</key>
+				<string></string>
+			</dict>
+		</array>
+		<key>Topic</key>
+		<string>TOPIC_ITEM</string>
+	</dict>
+	<key>tweakDailyHydrate</key>
+	<dict>
+		<key>Sizes</key>
+		<dict>
+			<key>Metric</key>
+			<array>
+				<string>Every Day: Stay Hydrated</string>
+			</array>
+			<key>Imperial</key>
+			<array>
+				<string>Every Day: Stay Hydrated</string>
+			</array>
+		</dict>
+		<key>Types</key>
+		<array>
+			<dict>
+				<key>Check this box if your urine never appears darker than a pale yellow. Note that if you're eating riboflavin-fortified foods (such as nutritional yeast), then base this instead on getting nine cups of unsweetened beverages a day for women (which would be taken care of by the green tea and water preloading recommendations) or thirteen cups a day for men.</key>
+				<string></string>
+			</dict>
+			<dict>
+				<key>If you have heart or kidney issues, don't increase fluid intake at all without first talking with your physician. Remember, diet soda may be calorie-free, but it's not consequence-free, as we learned in the Low in Added Sugar section.</key>
+				<string></string>
+			</dict>
+		</array>
+		<key>Topic</key>
+		<string>TOPIC_ITEM</string>
+	</dict>
+	<key>tweakDailyDeflourDiet</key>
+	<dict>
+		<key>Sizes</key>
+		<dict>
+			<key>Metric</key>
+			<array>
+				<string>Every Day: Deflour Your Diet</string>
+			</array>
+			<key>Imperial</key>
+			<array>
+				<string>Every Day: Deflour Your Diet</string>
+			</array>
+		</dict>
+		<key>Types</key>
+		<array>
+			<dict>
+				<key>Check this box every day your whole grain servings are in the form of intact grains. The powdering of even 100 percent whole grains robs our microbiomes of the starch that would otherwise be ferried down to our colons enclosed in unbroken cell walls.</key>
+				<string></string>
+			</dict>
+		</array>
+		<key>Topic</key>
+		<string>TOPIC_ITEM</string>
+	</dict>
+	<key>tweakDailyFrontLoad</key>
+	<dict>
+		<key>Sizes</key>
+		<dict>
+			<key>Metric</key>
+			<array>
+				<string>Every Day: Front-Load Your Calories</string>
+			</array>
+			<key>Imperial</key>
+			<array>
+				<string>Every Day: Front-Load Your Calories</string>
+			</array>
+		</dict>
+		<key>Types</key>
+		<array>
+			<dict>
+				<key>There are metabolic benefits to distributing more calories to earlier in the day, so make breakfast (ideally) or lunch your largest meal of the day in true king/prince/pauper style.</key>
+				<string></string>
+			</dict>
+		</array>
+		<key>Topic</key>
+		<string>TOPIC_ITEM</string>
+	</dict>
+	<key>tweakDailyTimeRestrict</key>
+	<dict>
+		<key>Sizes</key>
+		<dict>
+			<key>Metric</key>
+			<array>
+				<string>Every Day: Time-Restrict Your Eating</string>
+			</array>
+			<key>Imperial</key>
+			<array>
+				<string>Every Day: Time-Restrict Your Eating</string>
+			</array>
+		</dict>
+		<key>Types</key>
+		<array>
+			<dict>
+				<key>Confine eating to a daily window of time of your choosing under twelve hours in length that you can stick to consistently, seven days a week. Given the circadian benefits of reducing evening food intake, the window should end before 7:00 p.m.</key>
+				<string></string>
+			</dict>
+		</array>
+		<key>Topic</key>
+		<string>TOPIC_ITEM</string>
+	</dict>
+	<key>tweakExerciseTiming</key>
+	<dict>
+		<key>Sizes</key>
+		<dict>
+			<key>Metric</key>
+			<array>
+				<string>Every Day: Optimize Exercise Timing</string>
+			</array>
+			<key>Imperial</key>
+			<array>
+				<string>Every Day: Optimize Exercise Timing</string>
+			</array>
+		</dict>
+		<key>Types</key>
+		<array>
+			<dict>
+				<key>The Daily Dozen's recommendation for optimum exercise duration for longevity is ninety minutes of moderately intense activity a day, which is also the optimum exercise duration for weight loss. Anytime is good, and the more, the better, but there may be an advantage to exercising in a fasted state, at least six hours after your last meal. Typically, this would mean before breakfast, but if you timed it right, you could exercise midday before a late lunch or, if lunch is eaten early enough, before dinner. This is the timing for nondiabetics.</key>
+				<string></string>
+			</dict>
+			<dict>
+				<key>Diabetics and prediabetics should instead start exercising thirty minutes after the start of a meal and ideally go for at least an hour to completely straddle the blood sugar peak. If you had to choose a single meal to exercise after, it would be dinner, due to the circadian rhythm of blood sugar control that wanes throughout the day. Ideally, though, breakfast would be the largest meal of the day, and you'd exercise after that—or, even better, after every meal.</key>
+				<string></string>
+			</dict>
+		</array>
+		<key>Topic</key>
+		<string>TOPIC_ITEM</string>
+	</dict>
+	<key>tweakWeightTwice</key>
+	<dict>
+		<key>Sizes</key>
+		<dict>
+			<key>Metric</key>
+			<array>
+				<string>Every Day: Weigh Yourself Twice a Day</string>
+			</array>
+			<key>Imperial</key>
+			<array>
+				<string>Every Day: Weigh Yourself Twice a Day</string>
+			</array>
+		</dict>
+		<key>Types</key>
+		<array>
+			<dict>
+				<key>Regular self-weighing is considered crucial for long-term weight control, but there is insufficient evidence to support a specific frequency of weighing. My recommendation is based on the one study that found that twice daily (upon waking and right before bed) appeared superior to once a day (about six versus two pounds of weight loss over twelve weeks).</key>
+				<string></string>
+			</dict>
+		</array>
+		<key>Topic</key>
+		<string>TOPIC_ITEM</string>
+	</dict>
+	<key>tweakCompleteIntentions</key>
+	<dict>
+		<key>Sizes</key>
+		<dict>
+			<key>Metric</key>
+			<array>
+				<string>Every Day: Complete Your Implementation Intentions</string>
+			</array>
+			<key>Imperial</key>
+			<array>
+				<string>Every Day: Complete Your Implementation Intentions</string>
+			</array>
+		</dict>
+		<key>Types</key>
+		<array>
+			<dict>
+				<key>Every two months, create three new implementation intentions—"if X, then Y" plans to perform a particular behavior in a specific context—and check each one of them off as you complete them every day.</key>
+				<string></string>
+			</dict>
+		</array>
+		<key>Topic</key>
+		<string>TOPIC_ITEM</string>
+	</dict>
+	<key>tweakNightlyFast</key>
+	<dict>
+		<key>Sizes</key>
+		<dict>
+			<key>Metric</key>
+			<array>
+				<string>Every Night: Fast After 7:00 p.m.</string>
+			</array>
+			<key>Imperial</key>
+			<array>
+				<string>Every Night: Fast After 7:00 p.m.</string>
+			</array>
+		</dict>
+		<key>Types</key>
+		<array>
+			<dict>
+				<key>Due to our circadian rhythms, food eaten at night is more fattening than the exact same food eaten earlier in the day, so fast every night for at least twelve hours starting before 7:00 p.m. The fewer calories after sundown, the better.</key>
+				<string></string>
+			</dict>
+		</array>
+		<key>Topic</key>
+		<string>TOPIC_ITEM</string>
+	</dict>
+	<key>tweakNightlySleep</key>
+	<dict>
+		<key>Sizes</key>
+		<dict>
+			<key>Metric</key>
+			<array>
+				<string>Every Night: Get Sufficient Sleep</string>
+			</array>
+			<key>Imperial</key>
+			<array>
+				<string>Every Night: Get Sufficient Sleep</string>
+			</array>
+		</dict>
+		<key>Types</key>
+		<array>
+			<dict>
+				<key>Check this box if you get at least seven hours of sleep at your regular bedtime.</key>
+				<string></string>
+			</dict>
+		</array>
+		<key>Topic</key>
+		<string>TOPIC_ITEM</string>
+	</dict>
+	<key>tweakNightlyTrendelenbrug</key>
+	<dict>
+		<key>Sizes</key>
+		<dict>
+			<key>Metric</key>
+			<array>
+				<string>Every Night: Experiment with Mild Trendelenburg</string>
+			</array>
+			<key>Imperial</key>
+			<array>
+				<string>Every Night: Experiment with Mild Trendelenburg</string>
+			</array>
+		</dict>
+		<key>Types</key>
+		<array>
+			<dict>
+				<key>Try spending at least four hours a night lying with your body tilted head-down six degrees by elevating the posts at the foot of your bed by eight inches (or by nine inches if you have a California king).</key>
+				<string></string>
+			</dict>
+			<dict>
+				<key>Be extremely careful when you get out of bed, as this causes orthostatic intolerance in most people, even if you're young and healthy—meaning if you get up too fast, you can feel dizzy, faint, or light-headed and could fall and hurt yourself. So get up slowly. Drinking two cups of cold water thirty minutes before rising may also help prevent this potentially hazardous side effect.</key>
+				<string></string>
+			</dict>
+			<dict>
+				<key>IMPORTANT: Do not try this at home at all if you have any heart or lung issues, acid reflux, or problems with your brain (like head trauma) or eyes (even a family history of glaucoma disqualifies you). Also do not try this until you ask your physician if they think it's safe for you to sleep in mild Trendelenburg.</key>
+				<string></string>
+			</dict>
+		</array>
+		<key>Topic</key>
+		<string>TOPIC_ITEM</string>
+	</dict>
 </dict>
 </plist>

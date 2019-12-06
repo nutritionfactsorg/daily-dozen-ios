@@ -1,5 +1,5 @@
 //
-//  DailyDozenViewModel.swift
+//  DailyTweaksViewModel.swift
 //  DailyDozen
 //
 //  Copyright © 2019 Nutritionfacts.org. All rights reserved.
@@ -7,30 +7,38 @@
 
 import Foundation
 
-class DailyDozenViewModel {
+class DailyTweaksViewModel {
     
     static let rowTypeArray: [DataCountType] = [
-        .dozeBeans,
-        .dozeBerries,
-        .dozeFruitsOther,
-        .dozeVegetablesCruciferous,
-        .dozeGreens,
-        .dozeVegetablesOther,
-        .dozeFlaxseeds,
-        .dozeNuts,
-        .dozeSpices,
-        .dozeWholeGrains,
-        .dozeBeverages,
-        .dozeExercise,
-        .otherVitaminB12
+        .tweakMealWater,
+        .tweakMealNegCal,
+        .tweakMealVinegar,
+        .tweakMealUndistracted,
+        .tweakMeal20Minutes,
+        .tweakDailyBlackCumin,
+        .tweakDailyGarlic,
+        .tweakDailyGinger,
+        .tweakDailyNutriYeast,
+        .tweakDailyCumin,
+        .tweakDailyGreenTea,
+        .tweakDailyHydrate,
+        .tweakDailyDeflourDiet,
+        .tweakDailyFrontLoad,
+        .tweakDailyTimeRestrict,
+        .tweakExerciseTiming,
+        .tweakWeightTwice,
+        .tweakCompleteIntentions,
+        .tweakNightlyFast,
+        .tweakNightlySleep,
+        .tweakNightlyTrendelenbrug
     ]
     
     // MARK: - Properties
     private let tracker: DailyTracker
     
-    /// Returns Daily Dozen item count.
+    /// Returns 21 Tweak item count.
     var count: Int {
-        return DailyDozenViewModel.rowTypeArray.count
+        return DailyTweaksViewModel.rowTypeArray.count
     }
     
     var trackerDate: Date {
@@ -48,7 +56,7 @@ class DailyDozenViewModel {
     /// - Parameter index: The current table row index.
     /// - Returns: A tuple with the item heading, image name and supplemental flag.
     func itemInfo(rowIndex: Int) -> (itemType: DataCountType, isSupplemental: Bool) {
-        let rowType: DataCountType = DailyDozenViewModel.rowTypeArray[rowIndex]
+        let rowType: DataCountType = DailyTweaksViewModel.rowTypeArray[rowIndex]
         let heading = rowType.headingDisplay
         let isSupplemental = heading.contains("Vitamin")
             || heading.contains("Omega")
@@ -61,7 +69,7 @@ class DailyDozenViewModel {
     /// - Parameter index: The current index.
     /// - Returns: The streak count.
     func itemStreak(rowIndex: Int) -> Int {
-        let itemType = DailyDozenViewModel.rowTypeArray[rowIndex]
+        let itemType = DailyTweaksViewModel.rowTypeArray[rowIndex]
         if let dataCountRecord = tracker.itemsDict[itemType] {
             return dataCountRecord.streak
         } else {
@@ -83,9 +91,8 @@ class DailyDozenViewModel {
     /// - Parameter index: The current row index.
     /// - Returns: The states booland array.
     func itemStates(rowIndex: Int) -> [Bool] {
-        let rowType = DailyDozenViewModel.rowTypeArray[rowIndex]
-        let maxServings = rowType.maxServings
-        var states = [Bool](repeating: false, count: maxServings)
+        let rowType = DailyTweaksViewModel.rowTypeArray[rowIndex]
+        var states = [Bool](repeating: false, count: rowType.maxServings)
         if let count = tracker.itemsDict[rowType]?.count {
             for i in 0..<count {
                 states[i] = true
@@ -99,7 +106,7 @@ class DailyDozenViewModel {
     /// - Parameter index: The current row index.
     /// - Returns: The item DataCountType.
     func itemType(rowIndex: Int) -> DataCountType {
-        return DailyDozenViewModel.rowTypeArray[rowIndex]
+        return DailyTweaksViewModel.rowTypeArray[rowIndex]
     }
     
     /// Returns an item type key in the tracker for the current index.
@@ -107,20 +114,20 @@ class DailyDozenViewModel {
     /// - Parameter index: The current row index.
     /// - Returns: The item type key string.
     func itemTypeKey(rowIndex: Int) -> String {
-        return DailyDozenViewModel.rowTypeArray[rowIndex].typeKey
+        return DailyTweaksViewModel.rowTypeArray[rowIndex].typeKey
     }
-    
+
     func itemPid(rowIndex: Int) -> String {
-        let itemType = DailyDozenViewModel.rowTypeArray[rowIndex]
+        let itemType = DailyTweaksViewModel.rowTypeArray[rowIndex]
         return tracker.getPid(typeKey: itemType)
     }
-    
+
     /// Returns an image name for the current index.
     ///
     /// - Parameter index: The current table row index.
     /// - Returns: The image name.
     func imageName(rowIndex: Int) -> String {
-        return DailyDozenViewModel.rowTypeArray[rowIndex].imageName
+        return DailyTweaksViewModel.rowTypeArray[rowIndex].imageName
     }
     
 }

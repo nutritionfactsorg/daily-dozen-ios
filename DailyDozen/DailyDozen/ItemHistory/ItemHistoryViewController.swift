@@ -90,7 +90,7 @@ extension ItemHistoryViewController: FSCalendarDelegate {
     func calendar(_ calendar: FSCalendar, didSelect date: Date, at monthPosition: FSCalendarMonthPosition) {
         guard
             let viewController = navigationController?
-                .viewControllers[1] as? PagerViewController
+                .viewControllers[1] as? ServingsPagerViewController
             else { return }
 
         viewController.updateDate(date)

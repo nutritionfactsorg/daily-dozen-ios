@@ -10,71 +10,80 @@ import UIKit
 
 // MARK: - Builder
 class DetailsBuilder {
-
+    
     // MARK: - Nested
     struct Strings {
         static let storyboard = "Details"
+        static let storyboardNoImage = "DetailsNoImage"
     }
-
+    
     // MARK: - Methods
     /// Instantiates and returns the initial view controller for a storyboard.
     ///
     /// - Parameter itemTypeKey: An item type key string.
     /// - Returns: The initial view controller in the storyboard.
     static func instantiateController(itemTypeKey: String) -> DetailsViewController {
-        let storyboard = UIStoryboard(name: Strings.storyboard, bundle: nil)
+        
+        let storyboard = itemTypeKey.prefix(4) == "doze" ?
+            UIStoryboard(name: Strings.storyboard, bundle: nil) :
+            UIStoryboard(name: Strings.storyboardNoImage, bundle: nil)
         guard
             let viewController = storyboard
                 .instantiateInitialViewController() as? DetailsViewController
             else { fatalError("Did not instantiate `Details` controller") }
-
+        
         viewController.setViewModel(itemTypeKey: itemTypeKey)
-
+        
         return viewController
     }
 }
 
 // MARK: - Controller
 class DetailsViewController: UIViewController {
-
+    
     // MARK: - Nested
     private struct Keys {
         static let videos = "VIDEOS"
     }
-
+    
     // MARK: - Outlets
     @IBOutlet private weak var tableView: UITableView!
     @IBOutlet private weak var dataProvider: DetailsDataProvider!
     @IBOutlet private weak var titleLabel: UILabel!
-    @IBOutlet private weak var imageView: UIImageView!
-
+    @IBOutlet private weak var detailsImageView: UIImageView!
+    
     // MARK: - UIViewController
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        
         tableView.dataSource = dataProvider
         tableView.delegate = self
-
-        navigationItem
-            .rightBarButtonItem = UIBarButtonItem(
-                title: Keys.videos,
-                style: .done,
-                target: self,
-                action: #selector(barItemPressed)
-        )
         
-        imageView.image = dataProvider.viewModel.image
+        if let dataCountType = dataProvider.dataCountType {
+            if dataCountType.typeKey.prefix(4) == "doze" {
+                // DetailsViewController VIDEOS
+                navigationItem.rightBarButtonItem = UIBarButtonItem(
+                    title: Keys.videos,
+                    style: .done,
+                    target: self,
+                    action: #selector(barItemPressed)
+                )
+            }
+        }
+        
+        detailsImageView.image = dataProvider.viewModel.detailsImage
         titleLabel.text = dataProvider.viewModel.itemTitle
     }
-
+    
     // MARK: - Methods
     /// Sets a view model for the current item.
     ///
     /// - Parameter item: The current item name.
     func setViewModel(itemTypeKey: String) {
         dataProvider.viewModel = TextsProvider.shared.getDetails(itemTypeKey: itemTypeKey)
+        dataProvider.dataCountType = DataCountType(typeKey: itemTypeKey)
     }
-
+    
     /// Opens the main topic url in the browser.
     @objc private func barItemPressed() {
         UIApplication.shared
@@ -102,7 +111,7 @@ class DetailsViewController: UIViewController {
         dataProvider.viewModel.unitsType = newUnitsType
         tableView.reloadRows(at: indexPaths, with: .fade)
     }
-
+    
     /// Opens the type topic url in the browser.
     ///
     /// - Parameter sender: The button.
@@ -114,24 +123,53 @@ class DetailsViewController: UIViewController {
 
 // MARK: - UITableViewDelegate
 extension DetailsViewController: UITableViewDelegate {
-
+    
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         guard let sectionType = DetailsSection(rawValue: indexPath.section) else {
             fatalError("There should be a section type")
         }
+        
+        // :NOTE: workaround for 21 Tweak row heights.
+        // See also : enum DetailsSection: Int … var rowHeight: CGFloat
+        // var rowHeight: CGFloat {
+        //    switch sectionType {
+        //    case .sizes:
+        //      return 75
+        //    case .types:
+        //      return 150
+        //    }
+        //}
+        
+        if sectionType == .sizes {
+            return sectionType.rowHeight
+        }
+        
+        // :NOTE: DETAILS_ROW_HEIGHT
+        //let dict = DataCountAttributes.shared.dict
+        //if let dataCountType = dataProvider.dataCountType,
+        //    let dataAttributes = dict[dataCountType] {
+        //    return dataAttributes.detailTypeHeight
+        //}
+        
+        // return UITableView.automaticDimension // Note: height disappeared
         return sectionType.rowHeight
     }
-
+    
     func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
         guard let sectionType = DetailsSection(rawValue: section) else {
             fatalError("There should be a section type")
         }
-        return sectionType.headerHeigh
+        return sectionType.headerHeight
     }
-
+    
     func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
         guard let sectionType = DetailsSection(rawValue: section) else {
             fatalError("There should be a section type")
+        }
+        if let dataCountType = dataProvider.dataCountType {
+            if dataCountType.typeKey.prefix(5) == "tweak" {
+                return sectionType.headerTweaksView
+            }
         }
         return sectionType.headerView
     }
@@ -139,5 +177,5 @@ extension DetailsViewController: UITableViewDelegate {
 
 // Helper function inserted by Swift 4.2 migrator.
 private func convertToUIApplicationOpenExternalURLOptionsKeyDictionary(_ input: [String: Any]) -> [UIApplication.OpenExternalURLOptionsKey: Any] {
-	return Dictionary(uniqueKeysWithValues: input.map { key, value in (UIApplication.OpenExternalURLOptionsKey(rawValue: key), value)})
+    return Dictionary(uniqueKeysWithValues: input.map { key, value in (UIApplication.OpenExternalURLOptionsKey(rawValue: key), value)})
 }

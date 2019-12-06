@@ -148,12 +148,12 @@
                                 </prototypes>
                                 <sections/>
                             </tableView>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="dozeBeans" translatesAutoresizingMaskIntoConstraints="NO" id="ltu-V9-P9K">
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="detail_dozeBeans" translatesAutoresizingMaskIntoConstraints="NO" id="ltu-V9-P9K">
                                 <rect key="frame" x="0.0" y="0.0" width="375" height="180"/>
                             </imageView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Beans" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="iJb-Vn-TS0">
-                                <rect key="frame" x="8" y="135" width="87.5" height="37"/>
-                                <fontDescription key="fontDescription" name="HelveticaNeue-Medium" family="Helvetica Neue" pointSize="30"/>
+                                <rect key="frame" x="8" y="142" width="70" height="30"/>
+                                <fontDescription key="fontDescription" name="HelveticaNeue-Medium" family="Helvetica Neue" pointSize="24"/>
                                 <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <nil key="highlightedColor"/>
                                 <color key="shadowColor" red="0.0" green="0.0" blue="0.0" alpha="0.5" colorSpace="calibratedRGB"/>
@@ -177,7 +177,7 @@
                     </view>
                     <connections>
                         <outlet property="dataProvider" destination="fRg-Xb-5fJ" id="ASK-Mu-OuA"/>
-                        <outlet property="imageView" destination="ltu-V9-P9K" id="jsS-te-vFG"/>
+                        <outlet property="detailsImageView" destination="ltu-V9-P9K" id="jsS-te-vFG"/>
                         <outlet property="tableView" destination="fvQ-f2-GlC" id="1QX-il-71Q"/>
                         <outlet property="titleLabel" destination="iJb-Vn-TS0" id="6xr-iR-aI5"/>
                     </connections>
@@ -189,6 +189,6 @@
         </scene>
     </scenes>
     <resources>
-        <image name="dozeBeans" width="1280" height="854"/>
+        <image name="detail_dozeBeans" width="1280" height="854"/>
     </resources>
 </document>

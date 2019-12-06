@@ -3,7 +3,7 @@
     <device id="retina4_7" orientation="portrait" appearance="light"/>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15509"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15510"/>
     </dependencies>
     <scenes>
         <!--Main Split View Controller-->
@@ -27,13 +27,13 @@
             </objects>
             <point key="canvasLocation" x="-275" y="23"/>
         </scene>
-        <!--Pager-->
+        <!--ServingsPager-->
         <scene sceneID="4O8-gM-CPh">
             <objects>
-                <viewControllerPlaceholder storyboardName="Pager" id="9Vc-3k-Yok" sceneMemberID="viewController"/>
+                <viewControllerPlaceholder storyboardName="ServingsPager" id="9Vc-3k-Yok" sceneMemberID="viewController"/>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="EFh-a3-GgD" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-259" y="267"/>
+            <point key="canvasLocation" x="-231" y="257"/>
         </scene>
     </scenes>
 </document>

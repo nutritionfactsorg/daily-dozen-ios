@@ -96,8 +96,8 @@ public extension UIButtonCheckbox {
     }
 
     fileprivate func setCheckboxImage() {
-        // Image background color must match StateCell border color 
-        // See StateCell configure(…) for details.
+        // Image background color must match `*StateCell` border color
+        // See `*StateCell` configure(…) for details.
         let image = UIImage(named: "ic_checkmark_white_green")
         imageView?.contentMode = .scaleAspectFit
         self.checkboxImage = image

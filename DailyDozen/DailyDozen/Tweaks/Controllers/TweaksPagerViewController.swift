@@ -1,5 +1,5 @@
 //
-//  PagerViewController.swift
+//  TweaksPagerViewController.swift
 //  DailyDozen
 //
 //  Created by Konstantin Khokhlov on 18.10.17.
@@ -11,11 +11,11 @@ import SimpleAnimation
 
 // MARK: - Builder
 
-class PagerBuilder {
+class TweaksPagerBuilder {
 
     // MARK: - Nested
     struct Keys {
-        static let storyboard = "Pager"
+        static let storyboard = "TweaksPager"
     }
 
     // MARK: - Methods
@@ -27,14 +27,14 @@ class PagerBuilder {
         guard
             let viewController = storyboard
                 .instantiateInitialViewController()
-            else { fatalError("Did not instantiate `Pager` controller") }
+            else { fatalError("Did not instantiate `TweaksPager` controller") }
 
         return viewController
     }
 }
 
 // MARK: - Controller
-class PagerViewController: UIViewController {
+class TweaksPagerViewController: UIViewController {
 
     // MARK: - Properties
     private var currentDate = Date() {
@@ -69,7 +69,7 @@ class PagerViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        title = "Servings"
+        title = "Tweaks"
     }
 
     override func viewDidAppear(_ animated: Bool) {
@@ -86,7 +86,7 @@ class PagerViewController: UIViewController {
         currentDate = date
         datePicker.setDate(date, animated: false)
 
-        guard let viewController = children.first as? ServingsViewController else { return }
+        guard let viewController = children.first as? TweaksViewController else { return }
         viewController.view.fadeOut().fadeIn()
         viewController.setViewModel(for: currentDate)
     }
@@ -102,7 +102,7 @@ class PagerViewController: UIViewController {
         datePicker.isHidden = true
         currentDate = datePicker.date
 
-        guard let viewController = children.first as? ServingsViewController else { return }
+        guard let viewController = children.first as? TweaksViewController else { return }
         viewController.view.fadeOut().fadeIn()
         viewController.setViewModel(for: datePicker.date)
     }
@@ -119,7 +119,7 @@ class PagerViewController: UIViewController {
 
         self.currentDate = datePicker.date
 
-        guard let viewController = children.first as? ServingsViewController else { return }
+        guard let viewController = children.first as? TweaksViewController else { return }
 
         if sender.direction == .left {
             viewController.view.slideOut(x: -view.frame.width).slideIn(x: view.frame.width)

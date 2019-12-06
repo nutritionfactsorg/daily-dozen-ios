@@ -1,30 +1,29 @@
 //
-//  ServingsViewController.swift
+//  TweaksViewController.swift
 //  DailyDozen
 //
-//  Created by Konstantin Khokhlov on 18.10.17.
-//  Copyright © 2017 Nutritionfacts.org. All rights reserved.
+//  Copyright © 2019 Nutritionfacts.org. All rights reserved.
 //
 
 import UIKit
 import StoreKit
 
-class ServingsViewController: UIViewController {
+class TweaksViewController: UIViewController {
     
     // MARK: - Outlets
-    @IBOutlet private weak var dataProvider: ServingsDataProvider!
+    @IBOutlet private weak var dataProvider: TweaksDataProvider!
     @IBOutlet private weak var tableView: UITableView!
     @IBOutlet private weak var countLabel: UILabel!
     @IBOutlet private weak var starImage: UIImageView!
     
     // MARK: - Properties
     private let realm = RealmProvider()
-    private let servingsStateCountMaximum = 24
+    private let tweaksStateCountMaximum = 37
     
-    private var servingsStateCount = 0 {
+    private var tweaksStateCount = 0 {
         didSet {
             countLabel.text = statesCountString
-            if servingsStateCount == servingsStateCountMaximum {
+            if tweaksStateCount == tweaksStateCountMaximum {
                 starImage.popIn()
                 SKStoreReviewController.requestReview()
             } else {
@@ -33,7 +32,7 @@ class ServingsViewController: UIViewController {
         }
     }
     private var statesCountString: String {
-        return "\(servingsStateCount) out of \(servingsStateCountMaximum)"
+        return "\(tweaksStateCount) out of \(tweaksStateCountMaximum)"
     }
     
     // MARK: - UIViewController
@@ -56,13 +55,13 @@ class ServingsViewController: UIViewController {
     ///
     /// - Parameter item: The current date.
     func setViewModel(for date: Date) {
-        dataProvider.viewModel = DailyDozenViewModel(tracker: realm.getDailyTracker(date: date))
-        servingsStateCount = 0
-        let mainItemCount = dataProvider.viewModel.count - ServingsSection.supplementsCount
+        dataProvider.viewModel = DailyTweaksViewModel(tracker: realm.getDailyTracker(date: date))
+        tweaksStateCount = 0
+        let mainItemCount = dataProvider.viewModel.count - TweaksSection.supplementsCount
         for i in 0 ..< mainItemCount {
             let itemStates: [Bool] = dataProvider.viewModel.itemStates(rowIndex: i)
             for state in itemStates where state {
-                servingsStateCount += 1 
+                tweaksStateCount += 1
             }
         }
         tableView.reloadData()
@@ -70,7 +69,7 @@ class ServingsViewController: UIViewController {
     
     // MARK: - Actions
     
-    /// ServingsCell infoButton
+    /// TweaksCell infoButton
     @IBAction private func infoPressed(_ sender: UIButton) {
         let itemInfo = dataProvider.viewModel.itemInfo(rowIndex: sender.tag)
         
@@ -86,7 +85,7 @@ class ServingsViewController: UIViewController {
         navigationController?.pushViewController(viewController, animated: true)
     }
     
-    /// ServingsCell calendarButton
+    /// TweaksCell calendarButton
     @IBAction private func calendarPressed(_ sender: UIButton) {
         let heading = dataProvider.viewModel.itemInfo(rowIndex: sender.tag).itemType.headingDisplay
         let itemType = dataProvider.viewModel.itemType(rowIndex: sender.tag)
@@ -100,47 +99,47 @@ class ServingsViewController: UIViewController {
     }
     
     @IBAction private func historyPressed(_ sender: UIButton) {
-        let viewController = ServingsHistoryBuilder.instantiateController()
+        let viewController = TweaksHistoryBuilder.instantiateController()
         navigationController?.pushViewController(viewController, animated: true)
     }
 }
 
-// MARK: - Servings UITableViewDelegate
+// MARK: - Tweaks UITableViewDelegate
 
-extension ServingsViewController: UITableViewDelegate {
+extension TweaksViewController: UITableViewDelegate {
     
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-        return ServingsSection.main.rowHeight
+        return TweaksSection.main.rowHeight
     }
     
     func tableView(_ tableView: UITableView, willDisplay cell: UITableViewCell, forRowAt indexPath: IndexPath) {
-        guard let servingsCell = cell as? ServingsCell else { return }
-        servingsCell.stateCollection.delegate = self
-        servingsCell.stateCollection.dataSource = dataProvider
-        servingsCell.stateCollection.reloadData()
+        guard let tweaksCell = cell as? TweaksCell else { return }
+        tweaksCell.stateCollection.delegate = self
+        tweaksCell.stateCollection.dataSource = dataProvider
+        tweaksCell.stateCollection.reloadData()
     }
     
     func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
-        guard let servingsSection = ServingsSection(rawValue: section) else {
+        guard let tweaksSection = TweaksSection(rawValue: section) else {
             fatalError("There should be a section type")
         }
-        return servingsSection.headerHeight
+        return tweaksSection.headerHeight
     }
     
     func tableView(_ tableView: UITableView, heightForFooterInSection section: Int) -> CGFloat {
-        return ServingsSection.main.footerHeight
+        return TweaksSection.main.footerHeight
     }
     
     func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
-        guard let servingsSection = ServingsSection(rawValue: section) else {
+        guard let tweaksSection = TweaksSection(rawValue: section) else {
             fatalError("There should be a section type")
         }
-        return servingsSection.headerView
+        return tweaksSection.headerView
     }
 }
 
 // MARK: - States UICollectionViewDelegate
-extension ServingsViewController: UICollectionViewDelegate {
+extension TweaksViewController: UICollectionViewDelegate {
     
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         let rowIndex = collectionView.tag // which item
@@ -166,7 +165,7 @@ extension ServingsViewController: UICollectionViewDelegate {
             checkmarkStates[index] = false
         }
                 
-        guard let cell = collectionView.cellForItem(at: indexPath) as? ServingsStateCell else {
+        guard let cell = collectionView.cellForItem(at: indexPath) as? TweaksStateCell else {
             fatalError("There should be a cell")
         }
         cell.configure(with: checkmarkStates[indexPath.row])
@@ -198,11 +197,11 @@ extension ServingsViewController: UICollectionViewDelegate {
         
         let stateTrueCounterNew = stateNew ? checkmarkIndex+1 : checkmarkIndex
 
-        servingsStateCount += stateTrueCounterNew - stateTrueCounterOld
+        tweaksStateCount += stateTrueCounterNew - stateTrueCounterOld
     }
 }
 
-extension ServingsViewController: RealmDelegate {
+extension TweaksViewController: RealmDelegate {
     
     func didUpdateFile() {
         navigationController?.popViewController(animated: false)

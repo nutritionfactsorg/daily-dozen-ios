@@ -7,6 +7,7 @@
 //
 
 import Foundation
+import UIKit // CGFloat
 
 struct DataCountAttributes {
     
@@ -81,7 +82,6 @@ struct DataCountAttributes {
             headingDisplay: NSLocalizedString("dozeExercise.heading", comment: "display heading"),
             headingCSV: "Exercise",
             maxServings: 1),
-        // Daily Dozen Other
         .otherVitaminB12: Attribute(
             countType: .otherVitaminB12,
             headingDisplay: NSLocalizedString("otherVitaminB12.heading", comment: "display heading"),
@@ -202,7 +202,7 @@ struct DataCountAttributes {
             countType: .tweakNightlyTrendelenbrug,
             headingDisplay: NSLocalizedString("tweakNightlyTrendelenbrug.heading", comment: "display heading"),
             headingCSV: "Nightly Trendelenbrug",
-            maxServings: 1),
+            maxServings: 1)
     ]
     
 }

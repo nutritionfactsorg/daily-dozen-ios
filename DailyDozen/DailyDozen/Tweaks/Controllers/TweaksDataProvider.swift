@@ -1,49 +1,48 @@
 //
-//  ServingsDataProvider.swift
+//  TweaksDataProvider.swift
 //  DailyDozen
 //
-//  Created by Konstantin Khokhlov on 23.10.17.
-//  Copyright © 2017 Nutritionfacts.org. All rights reserved.
+//  Copyright © 2019 Nutritionfacts.org. All rights reserved.
 //
 
 import UIKit
 
-class ServingsDataProvider: NSObject, UITableViewDataSource {
+class TweaksDataProvider: NSObject, UITableViewDataSource {
     
     // MARK: - Nested
     private struct Strings {
-        static let servingsCell = "servingsCell"
-        static let servingsStateCell = "servingsStateCell" // "WAS: doseCell
+        static let tweaksCell = "tweaksCell"
+        static let tweaksStateCell = "tweaksStateCell" // :WAS: doseCell
     }
     
-    var viewModel: DailyDozenViewModel!
+    var viewModel: DailyTweaksViewModel!
     
-    // MARK: - Servings UITableViewDataSource
+    // MARK: - Tweaks UITableViewDataSource
     func numberOfSections(in tableView: UITableView) -> Int {
-        return 2
+        return 1
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        guard let servingsSection = ServingsSection(rawValue: section) else {
+        guard let tweaksSection = TweaksSection(rawValue: section) else {
             fatalError("There should be a section type")
         }
-        return servingsSection.numberOfRowsInSection(with: viewModel.count)
+        return tweaksSection.numberOfRowsInSection(with: viewModel.count)
     }
     
     // Row Cell At Index
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let realm = RealmProvider()
         guard
-            let servingsCell = tableView
-                .dequeueReusableCell(withIdentifier: Strings.servingsCell) as? ServingsCell else {
-                fatalError("Expected `tweaksCell`")
+            let tweaksCell = tableView
+                .dequeueReusableCell(withIdentifier: Strings.tweaksCell) as? TweaksCell else {
+                fatalError("Expected `TweaksCell`")
         }
         guard
-            let servingsSection = ServingsSection(rawValue: indexPath.section) else {
-                fatalError("Expected `servingsSection`")
+            let tweaksSection = TweaksSection(rawValue: indexPath.section) else {
+                fatalError("Expected `TweaksSection`")
         }
         var rowIndex = indexPath.row
-        if servingsSection == .supplements {
+        if tweaksSection == .supplements {
             rowIndex += tableView.numberOfRows(inSection: 0)
         }
         
@@ -62,24 +61,24 @@ class ServingsDataProvider: NSObject, UITableViewDataSource {
         }
         
         let itemType = viewModel.itemInfo(rowIndex: rowIndex).itemType
-        servingsCell.configure(
+        tweaksCell.configure(
             heading: itemType.headingDisplay,
             tag: rowIndex,
             imageName: itemType.imageName,
             streak: streak)
         
-        // viewModel: DailyDozenViewModel tracker
+        // viewModel: DailyTweaksViewModel tracker
         // tracker: DailyTracker getPid
         
         let itemPid = viewModel.itemPid(rowIndex: rowIndex)
         realm.updateStreak(streak, pid: itemPid)
         
-        return servingsCell
+        return tweaksCell
     }
 }
 
 // MARK: - States UICollectionViewDataSource
-extension ServingsDataProvider: UICollectionViewDataSource {
+extension TweaksDataProvider: UICollectionViewDataSource {
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         let states = viewModel.itemStates(rowIndex: collectionView.tag)
@@ -88,9 +87,9 @@ extension ServingsDataProvider: UICollectionViewDataSource {
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(
-            withReuseIdentifier: Strings.servingsStateCell,
+            withReuseIdentifier: Strings.tweaksStateCell,
             for: indexPath)
-        guard let stateCell = cell as? ServingsStateCell else {
+        guard let stateCell = cell as? TweaksStateCell else {
             fatalError("There should be a cell")
         }
         
