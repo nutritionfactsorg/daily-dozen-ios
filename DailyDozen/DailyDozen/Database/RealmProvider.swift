@@ -69,15 +69,16 @@ class RealmProvider {
         let weightResults = realm.objects(DataWeightRecord.self)
         let weightResultsById = weightResults.sorted(byKeyPath: "pid")
         
-        let first = counterResultsById[0]
-        guard let firstDate = first.pidParts?.datestamp else {
+        let firstDataCountRecord = counterResultsById[0]
+        guard var currentDate = firstDataCountRecord.pidParts?.datestamp else {
             return allTrackers
         }
-        var tracker = DailyTracker(date: firstDate)
+        var currentDatestamp = currentDate.datestampKey
+        var tracker = DailyTracker(date: currentDate)
         var weightIdx = 0
         for dataCountRecord in counterResultsById {
             let datestampKey = dataCountRecord.pidKeys.datestampKey
-            if dataCountRecord.pidKeys.datestampKey != datestampKey {
+            if datestampKey != currentDatestamp {
                 guard let nextDate = Date.init(datestampKey: datestampKey) else {
                     return allTrackers
                 }
@@ -96,6 +97,8 @@ class RealmProvider {
                 
                 allTrackers.append(tracker)
                 tracker = DailyTracker(date: nextDate)
+                currentDate = nextDate
+                currentDatestamp = nextDate.datestampKey
             }
             
             guard let countType = dataCountRecord.pidParts?.countType else {

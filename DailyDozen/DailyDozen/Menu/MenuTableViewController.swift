@@ -14,7 +14,6 @@ class MenuTableViewController: UITableViewController {
     // MARK: - Nested
     private struct Strings {
         static let menu = "Menu" // :NYI:ToBeLocalized:
-        static let realmFilename = "main.realm"
     }
 
     // MARK: - UITableViewController
@@ -32,8 +31,16 @@ class MenuTableViewController: UITableViewController {
     }
 
     /// Presents share services.
-    private func presentShareServices() {
-        let activityViewController = UIActivityViewController(activityItems: [URL.inDocuments(for: Strings.realmFilename)], applicationActivities: nil)
+    private func presentShareServices() { // Backup
+        let fm = FileManager.default
+        let urlList = fm.urls(for: .documentDirectory, in: .userDomainMask)
+        let documentsUrl = urlList[0]
+        let realmMngr = RealmManager(workingDirUrl: documentsUrl)
+        let backupFilename = realmMngr.csvExport()
+        
+        let activityViewController = UIActivityViewController(
+            activityItems: [URL.inDocuments(for: backupFilename)],
+            applicationActivities: nil)
         activityViewController.popoverPresentationController?.sourceView = view
         present(activityViewController, animated: true, completion: nil)
     }
@@ -56,8 +63,7 @@ extension MenuTableViewController {
             // `AboutViewController`, `ServingsViewController`, `SettingsViewController`
             splitViewController?.showDetailViewController(controller, sender: nil)
         } else {
-            // Backup: iCloud, on device file, ... more
-            presentShareServices()
+            presentShareServices() // Backup: iCloud, on device file, ... more
         }
         tableView.selectRow(at: nil, animated: false, scrollPosition: .none)
     }
