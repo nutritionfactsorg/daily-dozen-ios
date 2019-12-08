@@ -88,8 +88,12 @@ class TweaksViewController: UIViewController {
     /// TweaksCell calendarButton
     @IBAction private func calendarPressed(_ sender: UIButton) {
         let heading = dataProvider.viewModel.itemInfo(rowIndex: sender.tag).itemType.headingDisplay
-        let itemType = dataProvider.viewModel.itemType(rowIndex: sender.tag)
-        let viewController = ItemHistoryBuilder.instantiateController(heading: heading, itemType: itemType)
+        let dataCountType = dataProvider.viewModel.itemType(rowIndex: sender.tag)
+        
+        var viewController = ItemHistoryBuilder.instantiateController(heading: heading, itemType: dataCountType)
+        if dataCountType == .tweakWeightTwice {
+            viewController = WeightHistoryBuilder.instantiateController()
+        }
         navigationController?.pushViewController(viewController, animated: true)
     }
     

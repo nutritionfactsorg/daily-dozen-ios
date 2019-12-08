@@ -7,6 +7,10 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		4904AF80239CB89500E271EC /* Weight.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4904AF7F239CB89500E271EC /* Weight.storyboard */; };
+		4904AF82239CB8A500E271EC /* WeightHistory.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4904AF81239CB8A500E271EC /* WeightHistory.storyboard */; };
+		4904AF84239CB99600E271EC /* WeightPagerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4904AF83239CB99600E271EC /* WeightPagerViewController.swift */; };
+		4904AF86239CCC3F00E271EC /* WeightPager.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4904AF85239CCC3F00E271EC /* WeightPager.storyboard */; };
 		490962712398238900FEEE21 /* TweaksHistory.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 490962702398238900FEEE21 /* TweaksHistory.storyboard */; };
 		490962732398C99E00FEEE21 /* DetailsNoImage.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 490962722398C99E00FEEE21 /* DetailsNoImage.storyboard */; };
 		493A8B9A235E93DA00A5009A /* SettingsKeys.swift in Sources */ = {isa = PBXBuildFile; fileRef = 493A8B99235E93DA00A5009A /* SettingsKeys.swift */; };
@@ -36,6 +40,9 @@
 		498A2279237CD81F007AF5FB /* DailyDozenTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 498A2278237CD81F007AF5FB /* DailyDozenTests.swift */; };
 		498A2287237CD88A007AF5FB /* DailyDozenUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 498A2286237CD88A007AF5FB /* DailyDozenUITests.swift */; };
 		498D76A423709F9D00B5DF06 /* DevelopTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 498D76A323709F9D00B5DF06 /* DevelopTableViewController.swift */; };
+		498F7244239D8B5C004E501B /* WeightHistoryViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 498F7243239D8B5C004E501B /* WeightHistoryViewModel.swift */; };
+		498F7246239D90E2004E501B /* WeightViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 498F7245239D90E2004E501B /* WeightViewController.swift */; };
+		499B82FB239CD4D300E4AD19 /* WeightHistoryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 499B82FA239CD4D300E4AD19 /* WeightHistoryViewController.swift */; };
 		49C646CB236F4A46000DA8DC /* Develop.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 49C646CA236F4A46000DA8DC /* Develop.storyboard */; };
 		49DB104D238E255D00E77E52 /* DailyDozenViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49DB104C238E255D00E77E52 /* DailyDozenViewModel.swift */; };
 		49DB104F238E257D00E77E52 /* DailyTweaksViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49DB104E238E257D00E77E52 /* DailyTweaksViewModel.swift */; };
@@ -121,6 +128,10 @@
 
 /* Begin PBXFileReference section */
 		2CB41DDE201AD844603D7163 /* Pods-DailyDozenTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-DailyDozenTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-DailyDozenTests/Pods-DailyDozenTests.debug.xcconfig"; sourceTree = "<group>"; };
+		4904AF7F239CB89500E271EC /* Weight.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Weight.storyboard; sourceTree = "<group>"; };
+		4904AF81239CB8A500E271EC /* WeightHistory.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = WeightHistory.storyboard; sourceTree = "<group>"; };
+		4904AF83239CB99600E271EC /* WeightPagerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeightPagerViewController.swift; sourceTree = "<group>"; };
+		4904AF85239CCC3F00E271EC /* WeightPager.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = WeightPager.storyboard; sourceTree = "<group>"; };
 		490962702398238900FEEE21 /* TweaksHistory.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = TweaksHistory.storyboard; sourceTree = "<group>"; };
 		490962722398C99E00FEEE21 /* DetailsNoImage.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = DetailsNoImage.storyboard; sourceTree = "<group>"; };
 		493A8B99235E93DA00A5009A /* SettingsKeys.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsKeys.swift; sourceTree = "<group>"; };
@@ -154,6 +165,9 @@
 		498A2286237CD88A007AF5FB /* DailyDozenUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DailyDozenUITests.swift; sourceTree = "<group>"; };
 		498A2288237CD88A007AF5FB /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		498D76A323709F9D00B5DF06 /* DevelopTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DevelopTableViewController.swift; sourceTree = "<group>"; };
+		498F7243239D8B5C004E501B /* WeightHistoryViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeightHistoryViewModel.swift; sourceTree = "<group>"; };
+		498F7245239D90E2004E501B /* WeightViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeightViewController.swift; sourceTree = "<group>"; };
+		499B82FA239CD4D300E4AD19 /* WeightHistoryViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeightHistoryViewController.swift; sourceTree = "<group>"; };
 		49BB8C6A237373840047AFA4 /* DailyDozen.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = DailyDozen.entitlements; sourceTree = "<group>"; };
 		49C646CA236F4A46000DA8DC /* Develop.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Develop.storyboard; sourceTree = "<group>"; };
 		49DB104C238E255D00E77E52 /* DailyDozenViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DailyDozenViewModel.swift; sourceTree = "<group>"; };
@@ -253,6 +267,17 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		4904AF7E239CB86400E271EC /* Weight */ = {
+			isa = PBXGroup;
+			children = (
+				4904AF7F239CB89500E271EC /* Weight.storyboard */,
+				4904AF85239CCC3F00E271EC /* WeightPager.storyboard */,
+				4904AF83239CB99600E271EC /* WeightPagerViewController.swift */,
+				498F7245239D90E2004E501B /* WeightViewController.swift */,
+			);
+			path = Weight;
+			sourceTree = "<group>";
+		};
 		4941D724237E121E00ED84B5 /* Database */ = {
 			isa = PBXGroup;
 			children = (
@@ -347,6 +372,16 @@
 				498A2288237CD88A007AF5FB /* Info.plist */,
 			);
 			path = DailyDozenUITests;
+			sourceTree = "<group>";
+		};
+		498F77C2239D7582003F970F /* WeightHistory */ = {
+			isa = PBXGroup;
+			children = (
+				4904AF81239CB8A500E271EC /* WeightHistory.storyboard */,
+				499B82FA239CD4D300E4AD19 /* WeightHistoryViewController.swift */,
+				498F7243239D8B5C004E501B /* WeightHistoryViewModel.swift */,
+			);
+			path = WeightHistory;
 			sourceTree = "<group>";
 		};
 		49C646C9236F4997000DA8DC /* Develop */ = {
@@ -648,6 +683,8 @@
 		CFE6983A1F974B9700CD7905 /* DailyDozen */ = {
 			isa = PBXGroup;
 			children = (
+				4904AF7E239CB86400E271EC /* Weight */,
+				498F77C2239D7582003F970F /* WeightHistory */,
 				49BB8C6A237373840047AFA4 /* DailyDozen.entitlements */,
 				CFE6984F1F974EFF00CD7905 /* App */,
 				CFF117711F9752CA00BFE73A /* Menu */,
@@ -914,12 +951,15 @@
 				CF22F07F1FA8ACE000F25B70 /* Details.plist in Resources */,
 				49C646CB236F4A46000DA8DC /* Develop.storyboard in Resources */,
 				CF64DF2C1FB5CD5100B4D124 /* TypesHeader.xib in Resources */,
+				4904AF82239CB8A500E271EC /* WeightHistory.storyboard in Resources */,
 				CF9051512022F71B00F4C1F2 /* dr_greger.png in Resources */,
 				CFA9CDF21FBAF653000468CA /* SupplementsHeader.xib in Resources */,
 				495020D52399CFB90092D6F5 /* SizesTweaksHeader.xib in Resources */,
 				CFA3E8F91FC58D460092199D /* ServingsHistory.storyboard in Resources */,
 				CF64DF271FB5BAC400B4D124 /* SizesHeader.xib in Resources */,
 				CFE698411F974B9700CD7905 /* Main.storyboard in Resources */,
+				4904AF80239CB89500E271EC /* Weight.storyboard in Resources */,
+				4904AF86239CCC3F00E271EC /* WeightPager.storyboard in Resources */,
 				CFF72B001FB9BB70001CC2E9 /* LinkSettings.plist in Resources */,
 				496F605B23825D4F0085B6FA /* Localizable.strings in Resources */,
 				CF1393111FE0046800DD8679 /* Settings.storyboard in Resources */,
@@ -1081,12 +1121,15 @@
 				CF6E6D351FB1B4FE00B177E7 /* Detail.swift in Sources */,
 				4981709B2391B85B0033882C /* TweaksHistoryViewController.swift in Sources */,
 				4941D731237E13DC00ED84B5 /* DataWeightRecord.swift in Sources */,
+				499B82FB239CD4D300E4AD19 /* WeightHistoryViewController.swift in Sources */,
 				498170A123920DD60033882C /* TweaksPagerViewController.swift in Sources */,
 				CF1393151FE0080900DD8679 /* SettingsViewController.swift in Sources */,
 				4981708F2391B1790033882C /* TweaksStateCell.swift in Sources */,
 				49821BAA2383727D006F166E /* DailyTracker.swift in Sources */,
+				4904AF84239CB99600E271EC /* WeightPagerViewController.swift in Sources */,
 				49F8D1DC23905B70003E139F /* TweaksViewController.swift in Sources */,
 				CF6E6D391FB1B8E300B177E7 /* TextsProvider.swift in Sources */,
+				498F7246239D90E2004E501B /* WeightViewController.swift in Sources */,
 				CFC4A84D1F975A3900B5AC75 /* MenuTableViewController.swift in Sources */,
 				CF6E6D3C1FB1BEC400B177E7 /* DetailViewModel.swift in Sources */,
 				CFE6983C1F974B9700CD7905 /* AppDelegate.swift in Sources */,
@@ -1099,6 +1142,7 @@
 				CF987C281F9E157300D4893E /* Item.swift in Sources */,
 				CF9EC1C0202196B100C7B3CA /* Fonts.swift in Sources */,
 				CFBEE2341FDE9A57005C0F45 /* RoundedView.swift in Sources */,
+				498F7244239D8B5C004E501B /* WeightHistoryViewModel.swift in Sources */,
 				CF9EC1C32021D37000C7B3CA /* MenuItem.swift in Sources */,
 				CF49029B1FD91F01000EAB68 /* ServingsHistoryViewModel.swift in Sources */,
 				CF2FA9961FA87F0C003508F8 /* DetailsViewController.swift in Sources */,

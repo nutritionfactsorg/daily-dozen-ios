@@ -18,7 +18,7 @@ def common_pods
   
   ## https://cocoapods.org/pods/Charts
   ## https://github.com/danielgindi/Charts
-  ## Swift: v5 ... code mostly Objective-C
+  ## Swift: v5 ... includes both Objective-C and Swift demo code 
   ## Swift Package Manager: 5.1
   pod 'Charts', '~> 3.3.0'
   
