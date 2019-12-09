@@ -15,7 +15,7 @@ class MenuTableViewController: UITableViewController {
     private struct Strings {
         static let menu = "Menu" // :NYI:ToBeLocalized:
     }
-
+    
     // MARK: - UITableViewController
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -28,6 +28,12 @@ class MenuTableViewController: UITableViewController {
         let barItem = UIBarButtonItem(title: Strings.menu, style: .done, target: nil, action: nil)
         barItem.tintColor = UIColor.white
         navigationItem.setLeftBarButton(barItem, animated: false)
+        
+        if !UserDefaults.standard.bool(forKey: "didCompleteFirstLaunch") {
+            UserDefaults.standard.set(true, forKey: "didCompleteFirstLaunch")
+            let viewController = FirstLaunchBuilder.instantiateController()
+            navigationController?.pushViewController(viewController, animated: true)
+        }
     }
 
     /// Presents share services.

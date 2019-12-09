@@ -42,6 +42,8 @@
 		498D76A423709F9D00B5DF06 /* DevelopTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 498D76A323709F9D00B5DF06 /* DevelopTableViewController.swift */; };
 		498F7244239D8B5C004E501B /* WeightHistoryViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 498F7243239D8B5C004E501B /* WeightHistoryViewModel.swift */; };
 		498F7246239D90E2004E501B /* WeightViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 498F7245239D90E2004E501B /* WeightViewController.swift */; };
+		498F724B239E013E004E501B /* FirstLaunch.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 498F7249239E013E004E501B /* FirstLaunch.storyboard */; };
+		498F724D239E08C0004E501B /* FirstLaunchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 498F724C239E08C0004E501B /* FirstLaunchViewController.swift */; };
 		499B82FB239CD4D300E4AD19 /* WeightHistoryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 499B82FA239CD4D300E4AD19 /* WeightHistoryViewController.swift */; };
 		49C646CB236F4A46000DA8DC /* Develop.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 49C646CA236F4A46000DA8DC /* Develop.storyboard */; };
 		49DB104D238E255D00E77E52 /* DailyDozenViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49DB104C238E255D00E77E52 /* DailyDozenViewModel.swift */; };
@@ -167,6 +169,8 @@
 		498D76A323709F9D00B5DF06 /* DevelopTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DevelopTableViewController.swift; sourceTree = "<group>"; };
 		498F7243239D8B5C004E501B /* WeightHistoryViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeightHistoryViewModel.swift; sourceTree = "<group>"; };
 		498F7245239D90E2004E501B /* WeightViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeightViewController.swift; sourceTree = "<group>"; };
+		498F724A239E013E004E501B /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/FirstLaunch.storyboard; sourceTree = "<group>"; };
+		498F724C239E08C0004E501B /* FirstLaunchViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FirstLaunchViewController.swift; sourceTree = "<group>"; };
 		499B82FA239CD4D300E4AD19 /* WeightHistoryViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeightHistoryViewController.swift; sourceTree = "<group>"; };
 		49BB8C6A237373840047AFA4 /* DailyDozen.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = DailyDozen.entitlements; sourceTree = "<group>"; };
 		49C646CA236F4A46000DA8DC /* Develop.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Develop.storyboard; sourceTree = "<group>"; };
@@ -721,6 +725,7 @@
 		CFE698501F974F0F00CD7905 /* Controllers */ = {
 			isa = PBXGroup;
 			children = (
+				498F724C239E08C0004E501B /* FirstLaunchViewController.swift */,
 				CFE6983D1F974B9700CD7905 /* MainSplitViewController.swift */,
 				CF55BC4E2020450D00003D0D /* AlertBuilder.swift */,
 			);
@@ -749,6 +754,7 @@
 		CFE698531F974F6300CD7905 /* Storyboards */ = {
 			isa = PBXGroup;
 			children = (
+				498F7249239E013E004E501B /* FirstLaunch.storyboard */,
 				495020D82399DC780092D6F5 /* LaunchScreen.storyboard */,
 				CFE6983F1F974B9700CD7905 /* Main.storyboard */,
 			);
@@ -964,6 +970,7 @@
 				496F605B23825D4F0085B6FA /* Localizable.strings in Resources */,
 				CF1393111FE0046800DD8679 /* Settings.storyboard in Resources */,
 				CFF117731F97530300BFE73A /* Menu.storyboard in Resources */,
+				498F724B239E013E004E501B /* FirstLaunch.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1110,6 +1117,7 @@
 				4981709D2391B89E0033882C /* TweaksHistoryViewModel.swift in Sources */,
 				496F605D23826B2A0085B6FA /* _Globals.swift in Sources */,
 				CF4902951FD91412000EAB68 /* ChartView.swift in Sources */,
+				498F724D239E08C0004E501B /* FirstLaunchViewController.swift in Sources */,
 				4941D733237E13DC00ED84B5 /* RealmProvider.swift in Sources */,
 				4941D72E237E13DC00ED84B5 /* RealmManager.swift in Sources */,
 				CFAAB3721F9F3BC600B24748 /* Doze.swift in Sources */,
@@ -1194,6 +1202,14 @@
 				495020D92399DC780092D6F5 /* Base */,
 			);
 			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+		498F7249239E013E004E501B /* FirstLaunch.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				498F724A239E013E004E501B /* Base */,
+			);
+			name = FirstLaunch.storyboard;
 			sourceTree = "<group>";
 		};
 		CFE6983F1F974B9700CD7905 /* Main.storyboard */ = {

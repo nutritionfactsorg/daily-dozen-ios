@@ -10,12 +10,12 @@ import Charts
 
 class WeightHistoryBuilder {
 
-    // MARK: - Nested
+    // MARK: Nested
     private struct Strings {
         static let storyboard = "WeightHistory"
     }
 
-    // MARK: - Methods
+    // MARK: Methods
     /// Instantiates and returns the initial view controller for a storyboard.
     ///
     /// - Returns: The initial view controller in the storyboard.
@@ -31,11 +31,13 @@ class WeightHistoryBuilder {
     }
 }
 
+// MARK: -
+
 class WeightHistoryViewController: UIViewController {
 
     @IBOutlet weak var lineChartView: LineChartView!
-    @IBOutlet private weak var controlPanel: ControlPanel!
-    @IBOutlet private weak var scaleControl: UISegmentedControl!
+    @IBOutlet private weak var controlPanel: ControlPanel! // Buttons: << < … > >>
+    @IBOutlet private weak var scaleControl: UISegmentedControl! // Day|Month|Year
     @IBOutlet weak var weightEditDataButton: UIButton!
     
     // MARK: - Properties
@@ -68,7 +70,9 @@ class WeightHistoryViewController: UIViewController {
 
                 controlPanel.setLabels(month: data.month, year: weightViewModel.yearName(yearIndex: chartSettings.year))
 
+                updateChart(from: Date(), to: Date()) // :!!!:
                 // :!!!: lineChartView.configure(with: data.map, for: currentTimeScale)
+                
             } else if currentTimeScale == .month {
                 controlPanel.isHidden = false
                 controlPanel.superview?.isHidden = false
@@ -81,23 +85,81 @@ class WeightHistoryViewController: UIViewController {
 
                 controlPanel.setLabels(year: data.year)
 
+                updateChart(from: Date(), to: Date()) // :!!!:
                 // :!!!: lineChartView.configure(with: data.map, for: currentTimeScale)
             } else {
                 controlPanel.isHidden = true
                 controlPanel.superview?.isHidden = true
+                
+                updateChart(from: Date(), to: Date()) // :!!!:
                 // :!!!: lineChartView.configure(with: weightViewModel.fullDataMap(), for: currentTimeScale)
             }
         }
     }
 
+    // MARK: - Methods
     override func viewDidLoad() {
         super.viewDidLoad()
 
         lineChartView.xAxis.valueFormatter = self
         setViewModel()
+        updateChart(from: Date(), to: Date()) // :!!!:
     }
+    
+    // -------------------------
+    
+    // IB action, then updateChartWithData
+    private func updateChartWithData(am: [ChartDataEntry], pm: [ChartDataEntry]) {
 
-    // MARK: - Methods
+        switch currentTimeScale {
+        case .day:
+            break
+        case .month:
+            break
+        case .year:
+            break
+        }
+        
+        let lineChartDataSetAM = LineChartDataSet(entries: am, label: "AM")
+        lineChartDataSetAM.colors = [UIColor.yellowSunglowColor]
+        lineChartDataSetAM.circleColors = [UIColor.yellowSunglowColor]
+        lineChartDataSetAM.circleHoleRadius = 0.0 // Default: 4.0
+        lineChartDataSetAM.circleRadius = 4.0 // Default: 8.0
+        lineChartDataSetAM.drawValuesEnabled = false
+        lineChartDataSetAM.lineWidth = 2.0 // Default: 1
+        lineChartDataSetAM.mode = .cubicBezier
+
+        let lineChartDataSetPM = LineChartDataSet(entries: pm, label: "PM")
+        lineChartDataSetPM.colors = [UIColor.redFlamePeaColor]
+        lineChartDataSetPM.circleColors = [UIColor.redFlamePeaColor]
+        lineChartDataSetPM.circleHoleRadius = 0.0 // Default: 4.0
+        lineChartDataSetPM.circleRadius = 4.0 // Default: 8.0
+        lineChartDataSetPM.drawValuesEnabled = false
+        lineChartDataSetAM.lineWidth = 2.0 // Default: 1
+        lineChartDataSetPM.mode = .cubicBezier
+
+        let lineChartData = LineChartData(dataSets: [lineChartDataSetAM, lineChartDataSetPM])
+        lineChartView.data = lineChartData
+        lineChartView.xAxis.drawLabelsEnabled = false
+    }
+    
+    func updateChart(from: Date, to: Date) {
+        var dataEntriesAM = [
+            ChartDataEntry(x: 1.0, y: 4.0),
+            ChartDataEntry(x: 3.0, y: 3.5),
+        ]
+        dataEntriesAM.append(ChartDataEntry(x: 4.0, y: 4.5))
+        
+        let dataEntriesPM = [
+            ChartDataEntry(x: 2.0, y: 5.5),
+            ChartDataEntry(x: 3.0, y: 6.0),
+            ChartDataEntry(x: 5.0, y: 7.0)
+        ]
+        updateChartWithData(am: dataEntriesAM, pm: dataEntriesPM)
+    }
+    
+    // -------------------------
+
     private func setViewModel() {
         let realm = RealmProvider()
 

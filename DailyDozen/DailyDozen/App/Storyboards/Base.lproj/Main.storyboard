@@ -12,7 +12,6 @@
                 <splitViewController id="z5g-os-ufT" customClass="MainSplitViewController" customModule="DailyDozen" customModuleProvider="target" sceneMemberID="viewController">
                     <connections>
                         <segue destination="QzC-7c-DE7" kind="relationship" relationship="masterViewController" id="brW-TV-Jx4"/>
-                        <segue destination="9Vc-3k-Yok" kind="relationship" relationship="detailViewController" id="EXC-Sf-yiR"/>
                     </connections>
                 </splitViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ryQ-60-4lS" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -26,14 +25,6 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="pXn-f0-XzE" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="-275" y="23"/>
-        </scene>
-        <!--ServingsPager-->
-        <scene sceneID="4O8-gM-CPh">
-            <objects>
-                <viewControllerPlaceholder storyboardName="ServingsPager" id="9Vc-3k-Yok" sceneMemberID="viewController"/>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="EFh-a3-GgD" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="-231" y="257"/>
         </scene>
     </scenes>
 </document>
