@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import HealthKit
 import StoreKit
 
 class TweaksViewController: UIViewController {
@@ -48,6 +49,17 @@ class TweaksViewController: UIViewController {
             return 
         }
         appDelegate.realmDelegate = self
+        
+        // :HealthKit:
+        if HKHealthStore.isHealthDataAvailable() {
+            // add code to use HealthKit here...
+            //print("Yes, HealthKit is Available")
+            let healthManager = HealthManager()
+            healthManager.requestPermissions()
+        } else {
+            //print("There is a problem accessing HealthKit")
+        }
+        
     }
     
     // MARK: - Methods
@@ -168,7 +180,7 @@ extension TweaksViewController: UICollectionViewDelegate {
         for index in checkmarkIndex+1 ..< checkmarkStates.count {
             checkmarkStates[index] = false
         }
-                
+        
         guard let cell = collectionView.cellForItem(at: indexPath) as? TweaksStateCell else {
             fatalError("There should be a cell")
         }
@@ -180,7 +192,7 @@ extension TweaksViewController: UICollectionViewDelegate {
         let countNow = checkmarkStates.filter { $0 }.count
         var streak = countMax == countNow ? 1 : 0
         realm.saveCount(countNow, pid: itemPid)
-
+        
         // :!!!: streak needs to include more than today+yesterday
         if streak > 0 {
             let yesterday = dataProvider.viewModel.trackerDate.adding(.day, value: -1)!
@@ -200,8 +212,17 @@ extension TweaksViewController: UICollectionViewDelegate {
         }
         
         let stateTrueCounterNew = stateNew ? checkmarkIndex+1 : checkmarkIndex
-
+        
         tweaksStateCount += stateTrueCounterNew - stateTrueCounterOld
+        
+        // If state was toggled on then go to weight editor
+        if stateNew && HealthManager.shared.isAuthorized() {
+            let dataCountType = dataProvider.viewModel.itemType(rowIndex: rowIndex)
+            if dataCountType == .tweakWeightTwice {
+                let viewController = WeightPagerBuilder.instantiateController()
+                navigationController?.pushViewController(viewController, animated: true)
+            }
+        }
     }
 }
 

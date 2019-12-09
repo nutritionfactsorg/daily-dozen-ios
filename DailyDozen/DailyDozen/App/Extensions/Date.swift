@@ -30,12 +30,27 @@ extension Date {
         dateFormatter.dateFormat = "yyyyMMdd_HHmmss"
         return dateFormatter.string(from: currentTime)
     }
+
+    init?(healthkit: String) {
+        let dateFormatter = DateFormatter()
+        dateFormatter.dateFormat = "yyyyMMdd hh:mm a"
+        if let date = dateFormatter.date(from: healthkit) {
+            self = date
+            return
+        } else {
+            return nil
+        }
+    }
     
     init?(datestampKey: String) {
         let dateFormatter = DateFormatter()
         dateFormatter.dateFormat = "yyyyMMdd"
-        let date = dateFormatter.date(from: datestampKey)!
-        self = date
+        if let date = dateFormatter.date(from: datestampKey) {
+            self = date
+            return
+        } else {
+            return nil
+        }
     }
     
     /// Returns a day name from the date.

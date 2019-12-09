@@ -145,15 +145,15 @@ class WeightHistoryViewController: UIViewController {
     
     func updateChart(from: Date, to: Date) {
         var dataEntriesAM = [
-            ChartDataEntry(x: 1.0, y: 4.0),
-            ChartDataEntry(x: 3.0, y: 3.5),
+            ChartDataEntry(x: 1.0, y: 144.3),
+            ChartDataEntry(x: 3.0, y: 143.5),
         ]
-        dataEntriesAM.append(ChartDataEntry(x: 4.0, y: 4.5))
+        dataEntriesAM.append(ChartDataEntry(x: 4.0, y: 144.5))
         
         let dataEntriesPM = [
-            ChartDataEntry(x: 2.0, y: 5.5),
-            ChartDataEntry(x: 3.0, y: 6.0),
-            ChartDataEntry(x: 5.0, y: 7.0)
+            ChartDataEntry(x: 2.0, y: 144.9),
+            ChartDataEntry(x: 3.0, y: 144.0),
+            ChartDataEntry(x: 5.0, y: 144.0)
         ]
         updateChartWithData(am: dataEntriesAM, pm: dataEntriesPM)
     }

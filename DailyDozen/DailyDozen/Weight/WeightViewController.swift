@@ -17,22 +17,52 @@ class WeightViewController: UIViewController {
     @IBOutlet weak var timePMInput: UITextField!
     @IBOutlet weak var weightAM: UITextField!
     @IBOutlet weak var weightPM: UITextField!
+
+    @IBOutlet weak var weightAMLabel: UILabel!
+    @IBOutlet weak var weightPMLabel: UILabel!
     
-    @IBOutlet weak var saveButtonPressed: UIButton!
-    @IBAction func cancelButtonPressed(_ sender: Any) {
+    @IBOutlet weak var saveWeightButton: UIButton!
+    @IBOutlet weak var clearWeightButton: UIButton!
+    
+    @IBAction func saveWeightButtonPressed(_ sender: Any) {
+        let datestampKey = currentViewDate.datestampKey
+        
+        // am
+        if
+            let amTimeText = timeAMInput.text,
+            let amDate = Date(healthkit: "\(datestampKey) \(amTimeText)"),
+            let amWeightText = weightAM.text,
+            let amWeight = Double(amWeightText) {
+            HealthManager.shared.submitWeight(weight: amWeight, forDate: amDate)
+        }
+        
+        // pm
+        if
+            let pmTimeText = timePMInput.text,
+            let pmDate = Date(healthkit: "\(datestampKey) \(pmTimeText)"),
+            let pmWeightText = weightAM.text,
+            let pmWeight = Double(pmWeightText) {
+            HealthManager.shared.submitWeight(weight: pmWeight, forDate: pmDate)
+        }
     }
+    
+    @IBAction func cancelWeightButtonPressed(_ sender: Any) {
+    }
+    
     // MARK: - Properties
     private let realm = RealmProvider()
     private let weightStateCountMaximum = 24
     private var timePickerAM: UIDatePicker?
     private var timePickerPM: UIDatePicker?
+    
+    private var currentViewDate = Date()
         
     // MARK: - UIViewController
     override func viewDidLoad() {
         super.viewDidLoad()
         weightPM.delegate = self
         weightAM.delegate = self
-        setViewModel(for: Date())
+        setViewModel(viewDate: Date())
         
         // :---:
         
@@ -54,6 +84,15 @@ class WeightViewController: UIViewController {
         timePickerPM?.addTarget(self, action: #selector(WeightViewController.timeChangedPM(timePicker:)), for: .valueChanged)
         timePMInput.inputView = timePickerPM
         
+        // Unit Type
+        if isImperial() {
+            weightAMLabel.text = "lbs."
+            weightPMLabel.text = "lbs."
+        } else {
+            weightAMLabel.text = "kg"
+            weightPMLabel.text = "kg"
+        }
+        
         //
         let tapGesture = UITapGestureRecognizer(target: self, action: #selector(WeightViewController.viewTapped(gestureRecognizer:)))
         view.addGestureRecognizer(tapGesture)
@@ -70,9 +109,9 @@ class WeightViewController: UIViewController {
     @objc func timeChangedAM(timePicker: UIDatePicker) {
         
         let dateFormatter = DateFormatter()
-        let min = dateFormatter.date(from: "12:00")      //createing min time
+        let min = dateFormatter.date(from: "12:00")      //creating min time
         let max = dateFormatter.date(from: "11:59")
-        dateFormatter.dateFormat = "HH:mm a"
+        dateFormatter.dateFormat = "hh:mm a"
        timePicker.minimumDate = min
         timePicker.maximumDate = max
         timeAMInput.text = dateFormatter.string(from: timePicker.date)
@@ -82,18 +121,36 @@ class WeightViewController: UIViewController {
     @objc func timeChangedPM(timePicker: UIDatePicker) {
         
         let dateFormatter = DateFormatter()
-        dateFormatter.dateFormat = "HH:mm a"
+        dateFormatter.dateFormat = "hh:mm a"
         timePMInput.text = dateFormatter.string(from: timePicker.date)
         view.endEditing(true)
     }
+    
+    /// Set the current date.
     ///
-    /// - Parameter item: The current date.
-    func setViewModel(for date: Date) {
-        
-        // :---: get the data for this date
+    /// Note: updated by pager.
+    ///
+    /// - Parameter item: sets the current date.
+    func setViewModel(viewDate: Date) {
+        self.currentViewDate = viewDate
+
+        // :---: update the stored data for this date
         
         // :---: short the data for this date
 
+    }
+    
+    private func isImperial() -> Bool {
+        guard
+            let unitsTypePrefStr = UserDefaults.standard.string(forKey: SettingsKeys.unitsTypePref),
+            let currentUnitsType = UnitsType(rawValue: unitsTypePrefStr)
+            else {
+                return true
+        }
+        if currentUnitsType == .imperial {
+            return true
+        }
+        return false
     }
     
     // MARK: - Actions
@@ -142,7 +199,6 @@ extension WeightViewController: UITextFieldDelegate {
         }
     }
     
-
 }
 
 extension WeightViewController: RealmDelegate {

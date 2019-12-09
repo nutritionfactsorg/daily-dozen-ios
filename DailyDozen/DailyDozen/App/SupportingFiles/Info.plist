@@ -82,6 +82,10 @@
 			</dict>
 		</dict>
 	</array>
+	<key>NSHealthShareUsageDescription</key>
+	<string>The 21 Tweaks feature accesses your HealthKit data to provide updates to your daily weight measurements. The Daily Dozen app does not transmit any HealthKit data off your device.</string>
+	<key>NSHealthUpdateUsageDescription</key>
+	<string>The 21 Tweaks feature can write weight data to HealthKit to help you keep track of your progress. The Daily Dozen app does not transmit any HealthKit data off your device.</string>
 	<key>UIUserInterfaceStyle</key>
 	<string>Light</string>
 </dict>

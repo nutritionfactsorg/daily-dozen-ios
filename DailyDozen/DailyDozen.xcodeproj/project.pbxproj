@@ -44,6 +44,8 @@
 		498F7246239D90E2004E501B /* WeightViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 498F7245239D90E2004E501B /* WeightViewController.swift */; };
 		498F724B239E013E004E501B /* FirstLaunch.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 498F7249239E013E004E501B /* FirstLaunch.storyboard */; };
 		498F724D239E08C0004E501B /* FirstLaunchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 498F724C239E08C0004E501B /* FirstLaunchViewController.swift */; };
+		498F724F239E2EA3004E501B /* HealthKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 498F724E239E2EA3004E501B /* HealthKit.framework */; };
+		498F7251239E3007004E501B /* HealthManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 498F7250239E3007004E501B /* HealthManager.swift */; };
 		499B82FB239CD4D300E4AD19 /* WeightHistoryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 499B82FA239CD4D300E4AD19 /* WeightHistoryViewController.swift */; };
 		49C646CB236F4A46000DA8DC /* Develop.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 49C646CA236F4A46000DA8DC /* Develop.storyboard */; };
 		49DB104D238E255D00E77E52 /* DailyDozenViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49DB104C238E255D00E77E52 /* DailyDozenViewModel.swift */; };
@@ -171,6 +173,8 @@
 		498F7245239D90E2004E501B /* WeightViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeightViewController.swift; sourceTree = "<group>"; };
 		498F724A239E013E004E501B /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/FirstLaunch.storyboard; sourceTree = "<group>"; };
 		498F724C239E08C0004E501B /* FirstLaunchViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FirstLaunchViewController.swift; sourceTree = "<group>"; };
+		498F724E239E2EA3004E501B /* HealthKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = HealthKit.framework; path = System/Library/Frameworks/HealthKit.framework; sourceTree = SDKROOT; };
+		498F7250239E3007004E501B /* HealthManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HealthManager.swift; sourceTree = "<group>"; };
 		499B82FA239CD4D300E4AD19 /* WeightHistoryViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeightHistoryViewController.swift; sourceTree = "<group>"; };
 		49BB8C6A237373840047AFA4 /* DailyDozen.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = DailyDozen.entitlements; sourceTree = "<group>"; };
 		49C646CA236F4A46000DA8DC /* Develop.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Develop.storyboard; sourceTree = "<group>"; };
@@ -265,6 +269,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				BED5BB460CE3AEE8CF585899 /* Pods_DailyDozen.framework in Frameworks */,
+				498F724F239E2EA3004E501B /* HealthKit.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -278,6 +283,7 @@
 				4904AF85239CCC3F00E271EC /* WeightPager.storyboard */,
 				4904AF83239CB99600E271EC /* WeightPagerViewController.swift */,
 				498F7245239D90E2004E501B /* WeightViewController.swift */,
+				498F7250239E3007004E501B /* HealthManager.swift */,
 			);
 			path = Weight;
 			sourceTree = "<group>";
@@ -412,6 +418,7 @@
 		68646D18FC1A63146B00CB7C /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				498F724E239E2EA3004E501B /* HealthKit.framework */,
 				F514690D725E67AD54735EB9 /* Pods_DailyDozen.framework */,
 				715D60F634E9BCD998C66B77 /* Pods_DailyDozenTests.framework */,
 			);
@@ -687,9 +694,9 @@
 		CFE6983A1F974B9700CD7905 /* DailyDozen */ = {
 			isa = PBXGroup;
 			children = (
+				49BB8C6A237373840047AFA4 /* DailyDozen.entitlements */,
 				4904AF7E239CB86400E271EC /* Weight */,
 				498F77C2239D7582003F970F /* WeightHistory */,
-				49BB8C6A237373840047AFA4 /* DailyDozen.entitlements */,
 				CFE6984F1F974EFF00CD7905 /* App */,
 				CFF117711F9752CA00BFE73A /* Menu */,
 				CFF117751F9753B700BFE73A /* Servings */,
@@ -1134,6 +1141,7 @@
 				CF1393151FE0080900DD8679 /* SettingsViewController.swift in Sources */,
 				4981708F2391B1790033882C /* TweaksStateCell.swift in Sources */,
 				49821BAA2383727D006F166E /* DailyTracker.swift in Sources */,
+				498F7251239E3007004E501B /* HealthManager.swift in Sources */,
 				4904AF84239CB99600E271EC /* WeightPagerViewController.swift in Sources */,
 				49F8D1DC23905B70003E139F /* TweaksViewController.swift in Sources */,
 				CF6E6D391FB1B8E300B177E7 /* TextsProvider.swift in Sources */,

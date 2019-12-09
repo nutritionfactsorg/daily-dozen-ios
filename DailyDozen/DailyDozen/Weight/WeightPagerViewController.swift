@@ -87,7 +87,7 @@ class WeightPagerViewController: UIViewController {
 
         guard let viewController = children.first as? WeightViewController else { return }
         viewController.view.fadeOut().fadeIn()
-        viewController.setViewModel(for: currentDate)
+        viewController.setViewModel(viewDate: currentDate)
     }
 
     // MARK: - Actions
@@ -103,7 +103,7 @@ class WeightPagerViewController: UIViewController {
 
         guard let viewController = children.first as? WeightViewController else { return }
         viewController.view.fadeOut().fadeIn()
-        viewController.setViewModel(for: datePicker.date)
+        viewController.setViewModel(viewDate: datePicker.date)
     }
 
     @IBAction private func viewSwipped(_ sender: UISwipeGestureRecognizer) {
@@ -126,7 +126,7 @@ class WeightPagerViewController: UIViewController {
             viewController.view.slideOut(x: view.frame.width).slideIn(x: -view.frame.width)
         }
 
-        viewController.setViewModel(for: datePicker.date)
+        viewController.setViewModel(viewDate: datePicker.date)
     }
 
     @IBAction private func backButtonPressed(_ sender: UIButton) {
