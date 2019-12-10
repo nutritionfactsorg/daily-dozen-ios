@@ -185,7 +185,7 @@ extension TweaksViewController: UICollectionViewDelegate {
             fatalError("There should be a cell")
         }
         cell.configure(with: checkmarkStates[indexPath.row])
-        let itemType = dataProvider.viewModel.itemType(rowIndex: rowIndex)
+        let dataCountType = dataProvider.viewModel.itemType(rowIndex: rowIndex)
         
         // Update Streak
         let countMax = checkmarkStates.count
@@ -198,7 +198,7 @@ extension TweaksViewController: UICollectionViewDelegate {
             let yesterday = dataProvider.viewModel.trackerDate.adding(.day, value: -1)!
             // previous day's streak +1
             let yesterdayTracker = realm.getDailyTracker(date: yesterday)
-            if let yesterdayStreak = yesterdayTracker.itemsDict[itemType]?.streak {
+            if let yesterdayStreak = yesterdayTracker.itemsDict[dataCountType]?.streak {
                 streak += yesterdayStreak
             }
         }

@@ -25,7 +25,7 @@ class FirstLaunchBuilder {
             let viewController = storyboard
                 .instantiateInitialViewController() as? FirstLaunchViewController
             else { fatalError("Did not instantiate `FirstLaunch` controller") }
-        viewController.title = "New Feature"
+        viewController.title = ""
 
         return viewController
     }

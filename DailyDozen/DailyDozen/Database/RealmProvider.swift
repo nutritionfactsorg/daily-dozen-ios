@@ -38,6 +38,17 @@ class RealmProvider {
         return DailyTracker(date: date)
     }
     
+    func getDailyWeight(date: Date) -> (am: DataWeightRecord?, pm: DataWeightRecord?) {
+        let datestampKey = date.datestampKey
+        let amPid = "\(datestampKey).am"
+        let pmPid = "\(datestampKey).pm"
+
+        let amWeightRecord = realm.object(ofType: DataWeightRecord.self, forPrimaryKey: amPid)
+        let pmWeightRecord = realm.object(ofType: DataWeightRecord.self, forPrimaryKey: pmPid)
+        
+        return (amWeightRecord, pmWeightRecord)
+    }
+    
     /// :REPLACES: getDozeLegacy(Date)
     func getDailyTracker(date: Date) -> DailyTracker {
         let datestampKey = date.datestampKey
@@ -45,8 +56,8 @@ class RealmProvider {
         var dailyTracker = DailyTracker(date: date)
         
         for dataCountType in DataCountType.allCases {
-            let id = DataCountRecord.pid(datestampKey: datestampKey, typeKey: dataCountType.typeKey)
-            if let item = realm.object(ofType: DataCountRecord.self, forPrimaryKey: id) {
+            let pid = DataCountRecord.pid(datestampKey: datestampKey, typeKey: dataCountType.typeKey)
+            if let item = realm.object(ofType: DataCountRecord.self, forPrimaryKey: pid) {
                 dailyTracker.itemsDict[dataCountType] = item
             } else {
                 dailyTracker.itemsDict[dataCountType] = DataCountRecord(date: date, countType: dataCountType)
@@ -118,12 +129,11 @@ class RealmProvider {
     
     func saveCount(_ count: Int, pid: String) {
         saveDailyTracker()
-        let keys = DataCountRecord.pidKeys(pid: pid)
         do {
             try realm.write {
                 realm.create(
                     DataCountRecord.self,
-                    value: ["pid": pid, "datestampKey": keys.datestampKey, "typeKey": keys.typeKey, "count": count], 
+                    value: ["pid": pid, "count": count],
                     update: Realm.UpdatePolicy.all)
             }
         } catch {
@@ -131,7 +141,28 @@ class RealmProvider {
         }
     }
     
-    /// :NYI saveWeight() 
+    func saveWeight(date: Date, weightType: DataWeightType, kg: Double) {
+        // DataWeightRecord(date: date, weightType: weightType, kg: kg)
+        guard kg > 0.0 else { return }
+        let pid = "\(date.datestampKey).\(weightType.typeKey)"
+        do {
+            try realm.write {
+                realm.create(
+                    DataWeightRecord.self,
+                    value: ["pid": pid, "kg": kg, "time": date.datestampHHmm],
+                    update: Realm.UpdatePolicy.all)
+            }
+        } catch {
+            print(error.localizedDescription)
+        }
+    }
+    
+    func deleteWeight(date: Date, weightType: DataWeightType) {
+        let pid = "\(date.datestampKey).\(weightType.typeKey)"
+        if let record = realm.object(ofType: DataWeightRecord.self, forPrimaryKey: pid) {
+            realm.delete(record)
+        }
+    }
     
     func updateStreak(_ streak: Int, date: Date, countType: DataCountType) {
         let pid = DataCountRecord.pid(date: date, countType: countType)
@@ -141,12 +172,11 @@ class RealmProvider {
     /// :!!!:NYI: updateStreak() needs to do more than a single value
     func updateStreak(_ streak: Int, pid: String) {
         saveDailyTracker()
-        let keys = DataCountRecord.pidKeys(pid: pid)
         do {
             try realm.write {
                 realm.create(
                     DataCountRecord.self, 
-                    value: ["pid": pid, "datestampKey": keys.datestampKey, "typeKey": keys.typeKey, "streak": streak],
+                    value: ["pid": pid, "streak": streak],
                     update: Realm.UpdatePolicy.all
                 )
             }

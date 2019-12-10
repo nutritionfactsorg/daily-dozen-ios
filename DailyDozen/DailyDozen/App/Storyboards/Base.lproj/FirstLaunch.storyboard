@@ -22,7 +22,7 @@
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="q5H-j1-zAV" userLabel="TopView">
                                         <rect key="frame" x="0.0" y="0.0" width="375" height="366"/>
                                         <subviews>
-                                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="125" verticalHuggingPriority="125" image="how-not-to-diet_title" translatesAutoresizingMaskIntoConstraints="NO" id="F3b-PQ-ea8">
+                                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="125" verticalHuggingPriority="125" image="dr_greger" translatesAutoresizingMaskIntoConstraints="NO" id="F3b-PQ-ea8">
                                                 <rect key="frame" x="0.0" y="0.0" width="375" height="366"/>
                                             </imageView>
                                         </subviews>
@@ -36,20 +36,9 @@
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="tp6-Ql-er7" userLabel="Middle View">
                                         <rect key="frame" x="0.0" y="368" width="375" height="366"/>
                                         <subviews>
-                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="21 Tweaks is a new feature section. 21 Tweaks can help you apply concepts from Dr. Greger's latest book &quot;How Not to Diet&quot;." textAlignment="center" lineBreakMode="wordWrap" numberOfLines="4" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="i7D-71-BRt" userLabel="NewFeature">
-                                                <rect key="frame" x="20" y="20" width="335" height="61"/>
-                                                <fontDescription key="fontDescription" type="italicSystem" pointSize="17"/>
-                                                <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                                <nil key="highlightedColor"/>
-                                            </label>
-                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="For health alone, just use the Daily Dozen section." textAlignment="center" lineBreakMode="wordWrap" numberOfLines="4" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="HVg-rk-1Ne" userLabel="ForHealth">
-                                                <rect key="frame" x="20" y="101" width="335" height="40.666666666666657"/>
-                                                <fontDescription key="fontDescription" type="italicSystem" pointSize="17"/>
-                                                <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                                <nil key="highlightedColor"/>
-                                            </label>
-                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="For health and weight loss, use both the Daily Dozen and 21 Tweaks sections." textAlignment="center" lineBreakMode="wordWrap" numberOfLines="4" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="O7u-2H-TcW" userLabel="ForWeight">
-                                                <rect key="frame" x="20" y="161.66666666666663" width="335" height="40.666666666666657"/>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="center" lineBreakMode="wordWrap" numberOfLines="4" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="i7D-71-BRt" userLabel="NewFeature">
+                                                <rect key="frame" x="20" y="20" width="335" height="81.333333333333329"/>
+                                                <string key="text">Use this app on a daily basis to keep track of the foods and advice I recommend for optimal health and longevity in my books How Not to Die and How Not to Diet.</string>
                                                 <fontDescription key="fontDescription" type="italicSystem" pointSize="17"/>
                                                 <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 <nil key="highlightedColor"/>
@@ -58,14 +47,8 @@
                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <constraints>
                                             <constraint firstItem="i7D-71-BRt" firstAttribute="leading" secondItem="tp6-Ql-er7" secondAttribute="leading" constant="20" id="79H-QU-1lO"/>
-                                            <constraint firstAttribute="trailing" secondItem="O7u-2H-TcW" secondAttribute="trailing" constant="20" id="Ehj-IG-jCS"/>
                                             <constraint firstItem="i7D-71-BRt" firstAttribute="top" secondItem="tp6-Ql-er7" secondAttribute="top" constant="20" id="Gqt-CU-Jyb"/>
-                                            <constraint firstAttribute="trailing" secondItem="HVg-rk-1Ne" secondAttribute="trailing" constant="20" id="TM8-Wm-Dti"/>
                                             <constraint firstAttribute="trailing" secondItem="i7D-71-BRt" secondAttribute="trailing" constant="20" id="VGY-3j-9ce"/>
-                                            <constraint firstItem="O7u-2H-TcW" firstAttribute="leading" secondItem="tp6-Ql-er7" secondAttribute="leading" constant="20" id="XhC-YH-lYm"/>
-                                            <constraint firstItem="HVg-rk-1Ne" firstAttribute="top" secondItem="i7D-71-BRt" secondAttribute="bottom" constant="20" id="jxk-Rj-3as"/>
-                                            <constraint firstItem="HVg-rk-1Ne" firstAttribute="leading" secondItem="tp6-Ql-er7" secondAttribute="leading" constant="20" id="ml9-dT-Ufb"/>
-                                            <constraint firstItem="O7u-2H-TcW" firstAttribute="top" secondItem="HVg-rk-1Ne" secondAttribute="bottom" constant="20" id="mrf-dz-HTu"/>
                                         </constraints>
                                     </view>
                                 </subviews>
@@ -88,6 +71,6 @@
         </scene>
     </scenes>
     <resources>
-        <image name="how-not-to-diet_title" width="658" height="658"/>
+        <image name="dr_greger" width="500" height="500"/>
     </resources>
 </document>

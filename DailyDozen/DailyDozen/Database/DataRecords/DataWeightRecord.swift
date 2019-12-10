@@ -17,6 +17,10 @@ class DataWeightRecord: Object {
     // time of day HH:mm 24-hour
     @objc dynamic var time = ""    
     
+    var lbs: Double {
+        return kg * 2.204623
+    }
+    
     var pidKeys: (datestampKey: String, typeKey: String) {
         let parts = self.pid.components(separatedBy: ".")
         return (datestampKey: parts[0], typeKey: parts[1])
