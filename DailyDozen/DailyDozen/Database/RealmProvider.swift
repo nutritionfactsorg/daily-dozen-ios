@@ -49,6 +49,30 @@ class RealmProvider {
         return (amWeightRecord, pmWeightRecord)
     }
     
+    func getDailyWeights(fromDate: Date, toDate: Date) -> (am: [DataWeightRecord], pm: [DataWeightRecord]) {
+        var amRecords = [DataWeightRecord]()
+        var pmRecords = [DataWeightRecord]()
+        let weightResults = realm.objects(DataWeightRecord.self)
+        let weightResultsById = weightResults.sorted(byKeyPath: "pid")
+        
+        let fromDateKey = fromDate.datestampKey
+        let toDateKey = toDate.datestampKey
+        
+        for dataWeightRecord in weightResultsById {
+            let pidKeys = dataWeightRecord.pidKeys
+            if pidKeys.datestampKey >= fromDateKey &&
+                pidKeys.datestampKey <= toDateKey {
+                if pidKeys.typeKey == "am" {
+                    amRecords.append(dataWeightRecord)
+                } else {
+                    pmRecords.append(dataWeightRecord)
+                }
+            }
+        }
+        
+        return (amRecords, pmRecords)
+    }
+    
     /// :REPLACES: getDozeLegacy(Date)
     func getDailyTracker(date: Date) -> DailyTracker {
         let datestampKey = date.datestampKey

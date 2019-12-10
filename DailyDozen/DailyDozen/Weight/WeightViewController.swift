@@ -147,9 +147,11 @@ class WeightViewController: UIViewController {
     // MARK: - UIViewController
     override func viewDidLoad() {
         super.viewDidLoad()
+
         weightPM.delegate = self
         weightAM.delegate = self
-        setViewModel(viewDate: Date())
+        timeAMInput.delegate = self
+        timePMInput.delegate = self
         
         guard let appDelegate = UIApplication.shared.delegate as? AppDelegate else {
             return
@@ -157,6 +159,7 @@ class WeightViewController: UIViewController {
         appDelegate.realmDelegate = self
         
         // AM Morning
+        // :===: timePickerAM = UIDatePicker() // may need contraints?
         timePickerAM = UIDatePicker(frame: CGRect())
         timePickerAM?.datePickerMode = .time
         timePickerAM?.addTarget(self, action: #selector(WeightViewController.timeChangedAM(timePicker:)), for: .valueChanged)
@@ -169,6 +172,8 @@ class WeightViewController: UIViewController {
         timePickerPM?.addTarget(self, action: #selector(WeightViewController.timeChangedPM(timePicker:)), for: .valueChanged)
         timePMInput.inputView = timePickerPM
         
+        setViewModel(viewDate: Date())
+
         // Unit Type
         if isImperial() {
             weightAMLabel.text = "lbs."
@@ -185,6 +190,7 @@ class WeightViewController: UIViewController {
     }
     
     override func viewWillDisappear(_ animated: Bool) {
+        super.viewWillDisappear(animated)
         // Update stored values
         saveWeightAM()
         saveWeightPM()
@@ -252,6 +258,7 @@ class WeightViewController: UIViewController {
         } else {
             timeAMInput.text = ""
             weightAM.text = ""
+            timePickerAM?.setDate(Date(), animated: false)
         }
         
         if let pmRecord = records.pm {
@@ -267,6 +274,7 @@ class WeightViewController: UIViewController {
         } else {
             timePMInput.text = ""
             weightPM.text = ""
+            timePickerPM?.setDate(Date(), animated: false)
         }
     }
     
@@ -312,6 +320,18 @@ extension WeightViewController: UITextFieldDelegate {
     // :1:
     func textFieldShouldBeginEditing(_ textField: UITextField) -> Bool {
         print("textFieldShouldBeginEditing")
+        
+        // :===: should solve initial picker registration
+        if textField.text == nil || textField.text!.isEmpty {
+            let dateFormatter = DateFormatter()
+            dateFormatter.dateFormat = "hh:mm a"
+            if textField == timeAMInput {
+                timeAMInput.text = dateFormatter.string(from: Date())
+            }
+            if textField == timePMInput {
+                timePMInput.text = dateFormatter.string(from: Date())
+            }
+        }
         return true // return NO to disallow editing.
     }
     // :2:

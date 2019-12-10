@@ -43,11 +43,12 @@ class WeightHistoryViewController: UIViewController {
     // MARK: - Properties
     private var weightViewModel: WeightHistoryViewModel! // :???:
     private var currentTimeScale = TimeScale.day
+    private let realm = RealmProvider()
 
     private var chartSettings: (year: Int, month: Int)! {
         didSet {
             lineChartView.clear()
-
+            
             if currentTimeScale == .day {
                 controlPanel.isHidden = false
                 controlPanel.superview?.isHidden = false
@@ -144,18 +145,51 @@ class WeightHistoryViewController: UIViewController {
     }
     
     func updateChart(from: Date, to: Date) {
-        var dataEntriesAM = [
-            ChartDataEntry(x: 1.0, y: 144.3),
-            ChartDataEntry(x: 3.0, y: 143.5),
-        ]
-        dataEntriesAM.append(ChartDataEntry(x: 4.0, y: 144.5))
+        //var dataEntriesAM = [
+        //    ChartDataEntry(x: 1.0, y: 144.3),
+        //    ChartDataEntry(x: 3.0, y: 143.5),
+        //]
+        //dataEntriesAM.append(ChartDataEntry(x: 4.0, y: 144.5))
+        var dataEntriesAM = [ChartDataEntry]()
+
+        //let dataEntriesPM = [
+        //    ChartDataEntry(x: 2.0, y: 144.9),
+        //    ChartDataEntry(x: 3.0, y: 144.0),
+        //    ChartDataEntry(x: 5.0, y: 144.0)
+        //]
+        var dataEntriesPM = [ChartDataEntry]()
+
+        let records = realm.getDailyWeights(fromDate: from, toDate: to)
         
-        let dataEntriesPM = [
-            ChartDataEntry(x: 2.0, y: 144.9),
-            ChartDataEntry(x: 3.0, y: 144.0),
-            ChartDataEntry(x: 5.0, y: 144.0)
-        ]
+        for item in records.am {
+            guard let datetime = item.datetime else { continue }
+            let x: TimeInterval = datetime.timeIntervalSince1970
+            var y = item.kg
+            if isImperial() {
+                y = item.lbs
+            }
+            let chartDataEntry = ChartDataEntry(x: x, y: y)
+            if item.pidKeys.typeKey == "am" {
+                dataEntriesAM.append(chartDataEntry)
+            } else {
+                dataEntriesPM.append(chartDataEntry)
+            }
+        }
+        
         updateChartWithData(am: dataEntriesAM, pm: dataEntriesPM)
+    }
+    
+    private func isImperial() -> Bool {
+        guard
+            let unitsTypePrefStr = UserDefaults.standard.string(forKey: SettingsKeys.unitsTypePref),
+            let currentUnitsType = UnitsType(rawValue: unitsTypePrefStr)
+            else {
+                return true
+        }
+        if currentUnitsType == .imperial {
+            return true
+        }
+        return false
     }
     
     // -------------------------
