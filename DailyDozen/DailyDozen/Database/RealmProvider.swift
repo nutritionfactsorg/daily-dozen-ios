@@ -160,7 +160,13 @@ class RealmProvider {
     func deleteWeight(date: Date, weightType: DataWeightType) {
         let pid = "\(date.datestampKey).\(weightType.typeKey)"
         if let record = realm.object(ofType: DataWeightRecord.self, forPrimaryKey: pid) {
-            realm.delete(record)
+            do {
+                try realm.write {
+                    realm.delete(record)                    
+                }
+            } catch {
+                print(error.localizedDescription)
+            }
         }
     }
     

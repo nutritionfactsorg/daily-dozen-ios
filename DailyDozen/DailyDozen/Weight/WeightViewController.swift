@@ -82,7 +82,7 @@ class WeightViewController: UIViewController {
             if isImperial() {
                 amWeight = amWeight / 2.2046 // kg = lbs * 2.2046
             }
-            realm.saveWeight(date: currentViewDateFindMe, weightType: .am, kg: amWeight)
+            realm.saveWeight(date: amDate, weightType: .am, kg: amWeight)
             // Update local counter
             updateWeightDataCount()
         }
@@ -113,7 +113,7 @@ class WeightViewController: UIViewController {
         if
             let pmTimeText = timePMInput.text,
             let pmDate = Date(healthkit: "\(datestampKey) \(pmTimeText)"),
-            let pmWeightText = weightAM.text,
+            let pmWeightText = weightPM.text,
             var pmWeight = Double(pmWeightText),
             pmWeight > 5.0 {
             
@@ -123,7 +123,7 @@ class WeightViewController: UIViewController {
             if isImperial() {
                 pmWeight = pmWeight / 2.2046 // kg = lbs * 2.2046
             }
-            realm.saveWeight(date: currentViewDateFindMe, weightType: .am, kg: pmWeight)
+            realm.saveWeight(date: pmDate, weightType: .pm, kg: pmWeight)
             // Update local counter
             updateWeightDataCount()
         }
@@ -150,15 +150,7 @@ class WeightViewController: UIViewController {
         weightPM.delegate = self
         weightAM.delegate = self
         setViewModel(viewDate: Date())
-        //if timeAMInput.text == "" {
-        //    timeAMInput.text = getTimeNow()
-        //}
-        //if timePMInput.text == "" {
-        //    timePMInput.text = getTimeNow()
-        //}
-        
-        // :---:
-        
+
         guard let appDelegate = UIApplication.shared.delegate as? AppDelegate else {
             return
         }
