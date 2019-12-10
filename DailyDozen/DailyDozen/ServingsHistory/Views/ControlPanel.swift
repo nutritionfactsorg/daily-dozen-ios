@@ -39,5 +39,23 @@ class ControlPanel: UIStackView {
         monthLabel.text = month
         yearLabel.text = year
     }
+    
+    var month: Int? {
+        if let monthText = monthLabel.text {
+            let dateFormatter = DateFormatter()
+            dateFormatter.setLocalizedDateFormatFromTemplate("MMM")
+            if let date = dateFormatter.date(from: monthText) {
+                return date.month
+            }
+        }
+        return nil
+    }
+    
+    var year: Int? {
+        if let yearText = yearLabel.text {
+            return Int(yearText)
+        }
+        return nil
+    }
 
 }

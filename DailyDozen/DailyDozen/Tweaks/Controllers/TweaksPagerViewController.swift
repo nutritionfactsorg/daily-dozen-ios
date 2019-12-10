@@ -108,7 +108,7 @@ class TweaksPagerViewController: UIViewController {
     }
 
     @IBAction private func viewSwipped(_ sender: UISwipeGestureRecognizer) {
-        let interval = sender.direction == .left ? -1 : 1
+        let interval = sender.direction == .right ? -1 : 1
         let currentDate = datePicker.date.adding(.day, value: interval)
 
         let today = Date()
@@ -121,7 +121,7 @@ class TweaksPagerViewController: UIViewController {
 
         guard let viewController = children.first as? TweaksViewController else { return }
 
-        if sender.direction == .left {
+        if sender.direction == .right {
             viewController.view.slideOut(x: -view.frame.width).slideIn(x: view.frame.width)
         } else {
             viewController.view.slideOut(x: view.frame.width).slideIn(x: -view.frame.width)

@@ -49,6 +49,17 @@ class WeightHistoryViewController: UIViewController {
         didSet {
             lineChartView.clear()
             
+            //
+            let now = Date()
+            let calendar = Calendar.current
+            if let then = calendar.date(byAdding: Calendar.Component.year, value: -3, to: now) {
+                let dateFormatter = DateFormatter()
+                dateFormatter.dateFormat = "LLLL"
+                let monthName = dateFormatter.string(from: then)
+                print("\(monthName)")
+                print("now: \(now) then: \(then)")
+            }
+            
             if currentTimeScale == .day {
                 controlPanel.isHidden = false
                 controlPanel.superview?.isHidden = false
@@ -71,8 +82,9 @@ class WeightHistoryViewController: UIViewController {
 
                 controlPanel.setLabels(month: data.month, year: weightViewModel.yearName(yearIndex: chartSettings.year))
 
-                updateChart(from: Date(), to: Date()) // :!!!:
-                // :!!!: lineChartView.configure(with: data.map, for: currentTimeScale)
+                print("year:\(controlPanel.year ?? -1) month:\(controlPanel.month ?? -1) @ .day")
+                updateChart(fromDate: Date(), toDate: Date()) // :!!!:
+                //lineChartView.configure(with: data.map, for: currentTimeScale)
                 
             } else if currentTimeScale == .month {
                 controlPanel.isHidden = false
@@ -86,13 +98,16 @@ class WeightHistoryViewController: UIViewController {
 
                 controlPanel.setLabels(year: data.year)
 
-                updateChart(from: Date(), to: Date()) // :!!!:
+                print("year:\(controlPanel.year ?? -1) month:\(controlPanel.month ?? -1) @ .month")
+                updateChart(fromDate: Date(), toDate: Date()) // :!!!:
                 // :!!!: lineChartView.configure(with: data.map, for: currentTimeScale)
             } else {
+                
                 controlPanel.isHidden = true
                 controlPanel.superview?.isHidden = true
                 
-                updateChart(from: Date(), to: Date()) // :!!!:
+                print("year:\(controlPanel.year ?? -1) month:\(controlPanel.month ?? -1) @ .year")
+                updateChart(fromDate: Date(), toDate: Date()) // :!!!:
                 // :!!!: lineChartView.configure(with: weightViewModel.fullDataMap(), for: currentTimeScale)
             }
         }
@@ -104,7 +119,7 @@ class WeightHistoryViewController: UIViewController {
 
         lineChartView.xAxis.valueFormatter = self
         setViewModel()
-        updateChart(from: Date(), to: Date()) // :!!!:
+        updateChart(fromDate: Date(), toDate: Date()) // :!!!:
     }
     
     // -------------------------
@@ -144,7 +159,7 @@ class WeightHistoryViewController: UIViewController {
         lineChartView.xAxis.drawLabelsEnabled = false
     }
     
-    func updateChart(from: Date, to: Date) {
+    func updateChart(fromDate: Date, toDate: Date) {
         //var dataEntriesAM = [
         //    ChartDataEntry(x: 1.0, y: 144.3),
         //    ChartDataEntry(x: 3.0, y: 143.5),
@@ -159,7 +174,7 @@ class WeightHistoryViewController: UIViewController {
         //]
         var dataEntriesPM = [ChartDataEntry]()
 
-        let records = realm.getDailyWeights(fromDate: from, toDate: to)
+        let records = realm.getDailyWeights(fromDate: fromDate, toDate: toDate)
         
         for item in records.am {
             guard let datetime = item.datetime else { continue }
@@ -169,13 +184,19 @@ class WeightHistoryViewController: UIViewController {
                 y = item.lbs
             }
             let chartDataEntry = ChartDataEntry(x: x, y: y)
-            if item.pidKeys.typeKey == "am" {
-                dataEntriesAM.append(chartDataEntry)
-            } else {
-                dataEntriesPM.append(chartDataEntry)
-            }
+            dataEntriesAM.append(chartDataEntry)
         }
-        
+        for item in records.pm {
+            guard let datetime = item.datetime else { continue }
+            let x: TimeInterval = datetime.timeIntervalSince1970
+            var y = item.kg
+            if isImperial() {
+                y = item.lbs
+            }
+            let chartDataEntry = ChartDataEntry(x: x, y: y)
+            dataEntriesPM.append(chartDataEntry)
+        }
+
         updateChartWithData(am: dataEntriesAM, pm: dataEntriesPM)
     }
     

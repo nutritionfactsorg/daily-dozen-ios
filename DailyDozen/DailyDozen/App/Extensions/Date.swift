@@ -53,6 +53,20 @@ extension Date {
         }
     }
     
+    init?(y: Int, m: Int, d: Int) {
+        let calendar = Calendar.current
+        var dateComponents: DateComponents = DateComponents()
+        dateComponents.year = y
+        dateComponents.month = m
+        dateComponents.day = d
+        if let date = calendar.date(from: dateComponents) {
+            self = date
+            return
+        } else {
+            return nil
+        }
+    }
+    
     /// Returns a day name from the date.
     var dayName: String {
         let dateFormatter = DateFormatter()
@@ -63,6 +77,21 @@ extension Date {
     /// Returns a day int for the date.
     var day: Int {
         return Calendar.current.component(.day, from: self)
+    }
+
+    var lastDayInMonth: Int {
+        let month = self.month
+        let year = self.year
+        return Date.lastDayInMonth(month: month, year: year)
+    }
+    
+    static func lastDayInMonth(month: Int, year: Int) -> Int {
+        let cal = Calendar.current
+        var comps = DateComponents(calendar: cal, year: year, month: month)
+        comps.setValue(month + 1, for: .month)
+        comps.setValue(0, for: .day)
+        let date = cal.date(from: comps)!
+        return cal.component(.day, from: date)
     }
 
     var monthName: String {
