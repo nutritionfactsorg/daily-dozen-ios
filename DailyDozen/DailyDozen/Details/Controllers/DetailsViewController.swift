@@ -147,7 +147,7 @@ extension DetailsViewController: UITableViewDelegate {
                 .getDetails(itemTypeKey: typeKey)
                 .typeData(index: indexPath.row)
             
-            label.text  = "\(typeData.name)\n margin"
+            label.text  = "\n\(typeData.name)\n margin\n"
             label.sizeToFit()
             //print("indexPath: \(indexPath)")
             //print("\(label.fs_width) w x \(label.fs_height) h")

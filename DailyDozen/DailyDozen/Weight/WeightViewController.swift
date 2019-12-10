@@ -21,12 +21,21 @@ class WeightViewController: UIViewController {
     @IBOutlet weak var weightAMLabel: UILabel!
     @IBOutlet weak var weightPMLabel: UILabel!
     
-    @IBOutlet weak var saveWeightButton: UIButton!
-    @IBOutlet weak var clearWeightButton: UIButton!
+    @IBOutlet weak var clearWeightAMButton: UIButton!
+    @IBOutlet weak var saveWeightAMButton: UIButton!
     
-    @IBAction func saveWeightButtonPressed(_ sender: Any) {
+     @IBOutlet weak var clearWeightPMButton: UIButton!
+     @IBOutlet weak var saveWeightPMButton: UIButton!
+    
+    @IBAction func clearWeightAMButtonPressed(_ sender: Any) {
+        view.endEditing(true)
+        timeAMInput.text = ""
+        weightAM.text = ""
+    }
+
+    @IBAction func saveWeightAMButtonPressed(_ sender: Any) {
+        view.endEditing(true)
         let datestampKey = currentViewDate.datestampKey
-        
         // am
         if
             let amTimeText = timeAMInput.text,
@@ -35,7 +44,17 @@ class WeightViewController: UIViewController {
             let amWeight = Double(amWeightText) {
             HealthManager.shared.submitWeight(weight: amWeight, forDate: amDate)
         }
+    }
         
+    @IBAction func clearWeightPMButtonPressed(_ sender: Any) {
+        view.endEditing(true)
+        timePMInput.text = ""
+        weightPM.text = ""
+    }
+
+    @IBAction func saveWeightPMButtonPressed(_ sender: Any) {
+        view.endEditing(true)
+        let datestampKey = currentViewDate.datestampKey
         // pm
         if
             let pmTimeText = timePMInput.text,
@@ -46,15 +65,11 @@ class WeightViewController: UIViewController {
         }
     }
     
-    @IBAction func cancelWeightButtonPressed(_ sender: Any) {
-    }
-    
     // MARK: - Properties
     private let realm = RealmProvider()
     private let weightStateCountMaximum = 24
     private var timePickerAM: UIDatePicker?
     private var timePickerPM: UIDatePicker?
-    
     private var currentViewDate = Date()
         
     // MARK: - UIViewController
@@ -63,6 +78,12 @@ class WeightViewController: UIViewController {
         weightPM.delegate = self
         weightAM.delegate = self
         setViewModel(viewDate: Date())
+        if timeAMInput.text == "" {
+            timeAMInput.text = getTimeNow()
+        }
+        if timePMInput.text == "" {
+            timePMInput.text = getTimeNow()
+        }
         
         // :---:
         
@@ -97,6 +118,13 @@ class WeightViewController: UIViewController {
         let tapGesture = UITapGestureRecognizer(target: self, action: #selector(WeightViewController.viewTapped(gestureRecognizer:)))
         view.addGestureRecognizer(tapGesture)
         
+    }
+    func getTimeNow() -> String {
+        let dateNow = Date()
+        let dateFormatter = DateFormatter()
+        dateFormatter.dateFormat = "hh:mm a"
+        let timeNow = dateFormatter.string(from: dateNow)
+        return timeNow
     }
     
     // MARK: - Methods

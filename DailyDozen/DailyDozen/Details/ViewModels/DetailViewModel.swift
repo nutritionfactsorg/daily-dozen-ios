@@ -39,9 +39,6 @@ struct DetailViewModel {
     
     /// Returns an image of the item.
     var detailsImage: UIImage? {
-        if itemTypeKey.prefix(5) == "tweak" {
-            return UIImage(named: "detail_bannerGray")
-        }
         return UIImage(named: "detail_\(itemTypeKey)")
     }
     
