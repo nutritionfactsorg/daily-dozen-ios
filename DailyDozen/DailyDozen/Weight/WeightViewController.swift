@@ -72,7 +72,8 @@ class WeightViewController: UIViewController {
             let amTimeText = timeAMInput.text,
             let amDate = Date(healthkit: "\(datestampKey) \(amTimeText)"),
             let amWeightText = weightAM.text,
-            var amWeight = Double(amWeightText) {
+            var amWeight = Double(amWeightText),
+            amWeight > 5.0 {
             
             // Update HealthKit
             HealthManager.shared.submitWeight(weight: amWeight, forDate: amDate)
@@ -113,7 +114,8 @@ class WeightViewController: UIViewController {
             let pmTimeText = timePMInput.text,
             let pmDate = Date(healthkit: "\(datestampKey) \(pmTimeText)"),
             let pmWeightText = weightAM.text,
-            var pmWeight = Double(pmWeightText) {
+            var pmWeight = Double(pmWeightText),
+            pmWeight > 5.0 {
             
             // Update HealthKit
             HealthManager.shared.submitWeight(weight: pmWeight, forDate: pmDate)
@@ -236,24 +238,30 @@ class WeightViewController: UIViewController {
         
         // Switch to new date
         self.currentViewDateFindMe = viewDate
-        
         let records = realm.getDailyWeight(date: currentViewDateFindMe)
         
         if let amRecord = records.am {
             timeAMInput.text = amRecord.time
             if isImperial() {
-                weightAM.text = String(amRecord.lbs)
+                weightAM.text = String(format: "%.1f", amRecord.lbs)
             } else {
-                weightAM.text = String(amRecord.kg)
+                weightAM.text = String(format: "%.1f", amRecord.kg)
             }
+        } else {
+            timeAMInput.text = ""
+            weightAM.text = ""
         }
+        
         if let pmRecord = records.pm {
             timePMInput.text = pmRecord.time
             if isImperial() {
-                weightPM.text = String(pmRecord.lbs)
+                weightPM.text = String(format: "%.1f", pmRecord.lbs)
             } else {
-                weightPM.text = String(pmRecord.kg)
+                weightPM.text = String(format: "%.1f", pmRecord.kg)
             }
+        } else {
+            timePMInput.text = ""
+            weightPM.text = ""
         }
     }
     
