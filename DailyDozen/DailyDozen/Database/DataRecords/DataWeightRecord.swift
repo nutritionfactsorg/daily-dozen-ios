@@ -21,6 +21,25 @@ class DataWeightRecord: Object {
         return kg * 2.204623
     }
     
+    var timeAmPm: String {
+        let fromDateFormatter = DateFormatter()
+        fromDateFormatter.dateFormat = "HH:mm"
+        if let fromDate = fromDateFormatter.date(from: time) {
+            let toDateFormatter = DateFormatter()
+            toDateFormatter.dateFormat = "hh:mm a"
+            let fromTime: String = toDateFormatter.string(from: fromDate)
+            return fromTime
+        }
+        return ""
+    }
+    
+    var datetime: Date? {
+        let datestring = "\(pid.prefix(8)) \(time)"
+        let dateFormatter = DateFormatter()
+        dateFormatter.dateFormat = "yyyyMMdd HH:mm"
+        return dateFormatter.date(from: datestring)
+    }
+    
     var pidKeys: (datestampKey: String, typeKey: String) {
         let parts = self.pid.components(separatedBy: ".")
         return (datestampKey: parts[0], typeKey: parts[1])

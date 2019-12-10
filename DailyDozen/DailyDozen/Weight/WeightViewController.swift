@@ -36,11 +36,11 @@ class WeightViewController: UIViewController {
     var pidAM: String {
         return "\(currentViewDateFindMe.datestampKey).am"
     }
-
+    
     var pidPM: String {
         return "\(currentViewDateFindMe.datestampKey).pm"
     }
-
+    
     var pidWeight: String {
         return "\(currentViewDateFindMe.datestampKey).tweakWeightTwice"
     }
@@ -84,8 +84,8 @@ class WeightViewController: UIViewController {
             }
             realm.saveWeight(date: amDate, weightType: .am, kg: amWeight)
             // Update local counter
-            updateWeightDataCount()
         }
+        updateWeightDataCount()
     }
     
     @IBAction func clearWeightPMButtonPressed(_ sender: Any) {
@@ -93,7 +93,7 @@ class WeightViewController: UIViewController {
         view.endEditing(true)
         clearWeightPM()
     }
-
+    
     func clearWeightPM() {
         timePMInput.text = ""
         weightPM.text = ""
@@ -101,7 +101,7 @@ class WeightViewController: UIViewController {
         realm.deleteWeight(date: currentViewDateFindMe, weightType: .pm)
         updateWeightDataCount()
     }
-
+    
     @IBAction func saveWeightPMButtonPressed(_ sender: Any) {
         view.endEditing(true)
         saveWeightPM()
@@ -125,8 +125,8 @@ class WeightViewController: UIViewController {
             }
             realm.saveWeight(date: pmDate, weightType: .pm, kg: pmWeight)
             // Update local counter
-            updateWeightDataCount()
         }
+        updateWeightDataCount()
     }
     
     private func updateWeightDataCount() {
@@ -141,7 +141,7 @@ class WeightViewController: UIViewController {
         
         realm.saveCount(count, date: currentViewDateFindMe, countType: .tweakWeightTwice)
     }
-        
+    
     // Note: call once upon entry from tweaks checklist or history
     //
     // MARK: - UIViewController
@@ -150,7 +150,7 @@ class WeightViewController: UIViewController {
         weightPM.delegate = self
         weightAM.delegate = self
         setViewModel(viewDate: Date())
-
+        
         guard let appDelegate = UIApplication.shared.delegate as? AppDelegate else {
             return
         }
@@ -183,6 +183,13 @@ class WeightViewController: UIViewController {
         view.addGestureRecognizer(tapGesture)
         
     }
+    
+    override func viewWillDisappear(_ animated: Bool) {
+        // Update stored values
+        saveWeightAM()
+        saveWeightPM()
+    }
+    
     func getTimeNow() -> String {
         let dateNow = Date()
         let dateFormatter = DateFormatter()
@@ -233,11 +240,14 @@ class WeightViewController: UIViewController {
         let records = realm.getDailyWeight(date: currentViewDateFindMe)
         
         if let amRecord = records.am {
-            timeAMInput.text = amRecord.time
+            timeAMInput.text = amRecord.timeAmPm
             if isImperial() {
                 weightAM.text = String(format: "%.1f", amRecord.lbs)
             } else {
                 weightAM.text = String(format: "%.1f", amRecord.kg)
+            }
+            if let date = amRecord.datetime {
+                timePickerAM?.setDate(date, animated: false)
             }
         } else {
             timeAMInput.text = ""
@@ -245,11 +255,14 @@ class WeightViewController: UIViewController {
         }
         
         if let pmRecord = records.pm {
-            timePMInput.text = pmRecord.time
+            timePMInput.text = pmRecord.timeAmPm
             if isImperial() {
                 weightPM.text = String(format: "%.1f", pmRecord.lbs)
             } else {
                 weightPM.text = String(format: "%.1f", pmRecord.kg)
+            }
+            if let date = pmRecord.datetime {
+                timePickerPM?.setDate(date, animated: false)
             }
         } else {
             timePMInput.text = ""
@@ -286,8 +299,28 @@ class WeightViewController: UIViewController {
     }
     
 }
+
+// MARK: - UITextFieldDelegate
+
+extension WeightViewController: UIPickerViewDelegate {
+    // pickerView
+}
+
+// MARK: - UITextFieldDelegate
+
 extension WeightViewController: UITextFieldDelegate {
+    // :1:
+    func textFieldShouldBeginEditing(_ textField: UITextField) -> Bool {
+        print("textFieldShouldBeginEditing")
+        return true // return NO to disallow editing.
+    }
+    // :2:
+    func textFieldDidBeginEditing(_ textField: UITextField) {
+        print("textFieldDidBeginEditing")
+    }
+    
     func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+        print("textFieldShouldReturn")
         //weightAM.endEditing(true)
         view.endEditing(true)
         
@@ -295,22 +328,28 @@ extension WeightViewController: UITextFieldDelegate {
         return true
     }
     
+    // :3:
     func textFieldShouldEndEditing(_ textField: UITextField) -> Bool {
+        print("textFieldShouldEndEditing")
         if textField.text != "" {
-            return true} else {
-            
+            return true
+        } else {
             return false
         }
     }
     
+    // :4:
     func textFieldDidEndEditing(_ textField: UITextField) {
         //this is where you might add other code
+        print("textFieldDidEndEditing")
         if let weight = weightAM.text {
             print(weight)
         }
     }
     
 }
+
+// MARK: - RealmDelegate
 
 extension WeightViewController: RealmDelegate {
     func didUpdateFile() {

@@ -63,18 +63,18 @@
                                     <constraint firstItem="Tgz-om-dEk" firstAttribute="width" secondItem="bbx-Qc-Tgp" secondAttribute="width" id="u9h-ap-Dek"/>
                                 </constraints>
                             </stackView>
-                            <stackView opaque="NO" contentMode="scaleToFill" spacing="41" translatesAutoresizingMaskIntoConstraints="NO" id="nDi-0z-LlH">
+                            <stackView opaque="NO" contentMode="scaleToFill" spacing="41" translatesAutoresizingMaskIntoConstraints="NO" id="nDi-0z-LlH" userLabel="AM Clear Save">
                                 <rect key="frame" x="10" y="119.5" width="355" height="30"/>
                                 <subviews>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="NRG-eE-YhG" userLabel="ClearAM">
-                                        <rect key="frame" x="0.0" y="0.0" width="157" height="30"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="355" height="30"/>
                                         <state key="normal" title="Clear"/>
                                         <connections>
                                             <action selector="clearWeightAMButtonPressed:" destination="tz1-ri-aeh" eventType="touchUpInside" id="MNu-JR-ro6"/>
                                         </connections>
                                     </button>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="IeK-uC-yhe" userLabel="SaveAM">
-                                        <rect key="frame" x="198" y="0.0" width="157" height="30"/>
+                                    <button hidden="YES" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="IeK-uC-yhe" userLabel="SaveAM">
+                                        <rect key="frame" x="0.0" y="0.0" width="355" height="30"/>
                                         <state key="normal" title="Save"/>
                                         <connections>
                                             <action selector="saveWeightAMButtonPressed:" destination="tz1-ri-aeh" eventType="touchUpInside" id="ZbX-cq-tue"/>
@@ -132,18 +132,18 @@
                                     <constraint firstItem="zV0-lA-zHj" firstAttribute="width" secondItem="EoK-qo-DeG" secondAttribute="width" id="yi3-xZ-Csx"/>
                                 </constraints>
                             </stackView>
-                            <stackView opaque="NO" contentMode="scaleToFill" spacing="60" translatesAutoresizingMaskIntoConstraints="NO" id="gUy-g3-0It">
+                            <stackView opaque="NO" contentMode="scaleToFill" spacing="60" translatesAutoresizingMaskIntoConstraints="NO" id="gUy-g3-0It" userLabel="PM Clear Save">
                                 <rect key="frame" x="10" y="274" width="355" height="30"/>
                                 <subviews>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="7l0-os-Oqt" userLabel="ClearPM">
-                                        <rect key="frame" x="0.0" y="0.0" width="147.5" height="30"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="355" height="30"/>
                                         <state key="normal" title="Clear"/>
                                         <connections>
                                             <action selector="clearWeightPMButtonPressed:" destination="tz1-ri-aeh" eventType="touchUpInside" id="dUd-vh-uDg"/>
                                         </connections>
                                     </button>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Eai-xa-KOK" userLabel="SavePM">
-                                        <rect key="frame" x="207.5" y="0.0" width="147.5" height="30"/>
+                                    <button hidden="YES" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Eai-xa-KOK" userLabel="SavePM">
+                                        <rect key="frame" x="0.0" y="0.0" width="355" height="30"/>
                                         <state key="normal" title="Save"/>
                                         <connections>
                                             <action selector="saveWeightPMButtonPressed:" destination="tz1-ri-aeh" eventType="touchUpInside" id="job-GE-0Zv"/>

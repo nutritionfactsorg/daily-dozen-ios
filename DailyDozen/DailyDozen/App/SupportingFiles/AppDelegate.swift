@@ -44,6 +44,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         let documentsPath = documentsUrl.path
         print("App Documents (RealmDB) Directory:\n\(documentsPath)\n")
         
+        /*
         // Preliminary integrity checks.
         let realmMngrOldCheck = RealmManagerLegacy(workingDirUrl: documentsUrl)
         let realmDbOldCheck = realmMngrOldCheck.realmDb
@@ -53,7 +54,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         let dozeCheck = realmDbOldCheck.getDozeLegacy(for: date1995Pasta)
         realmDbOldCheck.saveStatesLegacy([true, false, true], id: dozeCheck.items[0].id) // Beans
         realmDbOldCheck.saveStatesLegacy([false, true, false], id: dozeCheck.items[2].id) // Other Fruits
-        
+        */
+ 
         print(":::::::::::::::::::::::::::::::::\n")
         #endif
         
