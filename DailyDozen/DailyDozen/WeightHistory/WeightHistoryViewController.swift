@@ -148,7 +148,7 @@ class WeightHistoryViewController: UIViewController {
     // -------------------------
     
     // IB action, then updateChartWithData
-    private func updateChartWithData(am: [ChartDataEntry], pm: [ChartDataEntry]) {
+    private func updateChartWithData(am: [ChartDataEntry], pm: [ChartDataEntry], range: Double) {
 
         switch currentTimeScale {
         case .day:
@@ -180,6 +180,10 @@ class WeightHistoryViewController: UIViewController {
         let lineChartData = LineChartData(dataSets: [lineChartDataSetAM, lineChartDataSetPM])
         lineChartView.data = lineChartData
         lineChartView.xAxis.drawLabelsEnabled = false
+        //lineChartView.xAxis.axisRange = range
+        lineChartView.xAxis.axisMinimum = 0.0
+        lineChartView.xAxis.axisMaximum = range
+        lineChartView.xAxis.avoidFirstLastClippingEnabled = true
     }
     
     func updateChart(fromDate: Date, toDate: Date) {
@@ -188,11 +192,14 @@ class WeightHistoryViewController: UIViewController {
 
         // day scale = 60 seconds * 60 minutes * 24 hours
         var xScaleFactor = 60.0*60.0*24.0
+        var xAxisRange = 31.0 // 31 days
         if currentTimeScale == .month {
-            xScaleFactor *= 12.0
+            xScaleFactor = 60.0*60.0*24.0 * 12.0
+            xAxisRange = 52.0 // :???:
         } else if currentTimeScale == .year {
             // year scale is bi-monthly for now
-            xScaleFactor *= 12.0 * 2.0
+            xScaleFactor = 60.0*60.0*24.0 * 12.0 * 2.0
+            xAxisRange = 104.0 // :???:
         }
         
         //var dataEntriesAM = [
@@ -216,6 +223,7 @@ class WeightHistoryViewController: UIViewController {
             let xTimeInterval: TimeInterval = datetime.timeIntervalSince1970
             let x = (xTimeInterval - fromTimeInterval) / xScaleFactor
             var y = item.kg
+            print("AM \(item.pidKeys.datestampKey) \(x),\(y)")
             if isImperial() {
                 y = item.lbs
             }
@@ -227,6 +235,7 @@ class WeightHistoryViewController: UIViewController {
             let xTimeInterval: TimeInterval = datetime.timeIntervalSince1970
             let x = (xTimeInterval - fromTimeInterval) / xScaleFactor
             var y = item.kg
+            print("PM \(item.pidKeys.datestampKey) \(x),\(y)")
             if isImperial() {
                 y = item.lbs
             }
@@ -234,7 +243,7 @@ class WeightHistoryViewController: UIViewController {
             dataEntriesPM.append(chartDataEntry)
         }
 
-        updateChartWithData(am: dataEntriesAM, pm: dataEntriesPM)
+        updateChartWithData(am: dataEntriesAM, pm: dataEntriesPM, range: xAxisRange)
     }
     
     private func isImperial() -> Bool {
