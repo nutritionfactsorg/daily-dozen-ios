@@ -48,18 +48,7 @@ class WeightHistoryViewController: UIViewController {
     private var chartSettings: (year: Int, month: Int)! {
         didSet {
             lineChartView.clear()
-            
-            //
-            let now = Date()
-            let calendar = Calendar.current
-            if let then = calendar.date(byAdding: Calendar.Component.year, value: -3, to: now) {
-                let dateFormatter = DateFormatter()
-                dateFormatter.dateFormat = "LLLL"
-                let monthName = dateFormatter.string(from: then)
-                print("\(monthName)")
-                print("now: \(now) then: \(then)")
-            }
-            
+                        
             if currentTimeScale == .day {
                 controlPanel.isHidden = false
                 controlPanel.superview?.isHidden = false
@@ -83,7 +72,22 @@ class WeightHistoryViewController: UIViewController {
                 controlPanel.setLabels(month: data.month, year: weightViewModel.yearName(yearIndex: chartSettings.year))
 
                 print("year:\(controlPanel.year ?? -1) month:\(controlPanel.month ?? -1) @ .day")
-                updateChart(fromDate: Date(), toDate: Date()) // :!!!:
+                // Whole month
+                let fromYear = String(format: "%04d", controlPanel.year ?? 2109)
+                let fromMonth = String(format: "%02d", controlPanel.month ?? 12)
+                let fromDay = String(format: "%02d", 1)
+                let fromTimestampKey = "\(fromYear)\(fromMonth)\(fromDay)"
+                
+                let toYear = String(format: "%04d", controlPanel.year ?? 2109)
+                let toMonth = String(format: "%02d", controlPanel.month ?? 12)
+                let toDay = String(format: "%02d", Date.lastDayInMonth(month: controlPanel.month ?? 12, year: controlPanel.year ?? 2109))
+                let toTimestampKey = "\(toYear)\(toMonth)\(toDay)"
+                print("from:\(fromTimestampKey) to:\(toTimestampKey)")
+                
+                if let fromDate = Date(datestampKey: fromTimestampKey),
+                    let toDate = Date(datestampKey: toTimestampKey) {
+                    updateChart(fromDate: fromDate, toDate: toDate)
+                }
                 //lineChartView.configure(with: data.map, for: currentTimeScale)
                 
             } else if currentTimeScale == .month {
@@ -99,15 +103,34 @@ class WeightHistoryViewController: UIViewController {
                 controlPanel.setLabels(year: data.year)
 
                 print("year:\(controlPanel.year ?? -1) month:\(controlPanel.month ?? -1) @ .month")
-                updateChart(fromDate: Date(), toDate: Date()) // :!!!:
+                // Whole year
+                let fromYear = String(format: "%04d", controlPanel.year ?? 2109)
+                let fromMonth = String(format: "%02d", 1)
+                let fromDay = String(format: "%02d", 1)
+                let fromTimestampKey = "\(fromYear)\(fromMonth)\(fromDay)"
+                
+                let toYear = String(format: "%04d", controlPanel.year ?? 2109)
+                let toMonth = String(format: "%02d", 12)
+                let toDay = String(format: "%02d", 31)
+                let toTimestampKey = "\(toYear)\(toMonth)\(toDay)"
+                print("from:\(fromTimestampKey) to:\(toTimestampKey)")
+                
+                if let fromDate = Date(datestampKey: fromTimestampKey),
+                    let toDate = Date(datestampKey: toTimestampKey) {
+                    updateChart(fromDate: fromDate, toDate: toDate)
+                }
                 // :!!!: lineChartView.configure(with: data.map, for: currentTimeScale)
             } else {
-                
+                //
                 controlPanel.isHidden = true
                 controlPanel.superview?.isHidden = true
                 
                 print("year:\(controlPanel.year ?? -1) month:\(controlPanel.month ?? -1) @ .year")
-                updateChart(fromDate: Date(), toDate: Date()) // :!!!:
+                
+                // Multiple years
+                if let fromDate = Date(datestampKey: "20170101") {
+                    updateChart(fromDate: fromDate, toDate: Date())
+                }
                 // :!!!: lineChartView.configure(with: weightViewModel.fullDataMap(), for: currentTimeScale)
             }
         }
@@ -160,6 +183,18 @@ class WeightHistoryViewController: UIViewController {
     }
     
     func updateChart(fromDate: Date, toDate: Date) {
+        let fromTimeInterval = fromDate.timeIntervalSince1970
+        //let toTimeInterval = toDate.timeIntervalSince1970
+
+        // day scale = 60 seconds * 60 minutes * 24 hours
+        var xScaleFactor = 60.0*60.0*24.0
+        if currentTimeScale == .month {
+            xScaleFactor *= 12.0
+        } else if currentTimeScale == .year {
+            // year scale is bi-monthly for now
+            xScaleFactor *= 12.0 * 2.0
+        }
+        
         //var dataEntriesAM = [
         //    ChartDataEntry(x: 1.0, y: 144.3),
         //    ChartDataEntry(x: 3.0, y: 143.5),
@@ -178,7 +213,8 @@ class WeightHistoryViewController: UIViewController {
         
         for item in records.am {
             guard let datetime = item.datetime else { continue }
-            let x: TimeInterval = datetime.timeIntervalSince1970
+            let xTimeInterval: TimeInterval = datetime.timeIntervalSince1970
+            let x = (xTimeInterval - fromTimeInterval) / xScaleFactor
             var y = item.kg
             if isImperial() {
                 y = item.lbs
@@ -188,7 +224,8 @@ class WeightHistoryViewController: UIViewController {
         }
         for item in records.pm {
             guard let datetime = item.datetime else { continue }
-            let x: TimeInterval = datetime.timeIntervalSince1970
+            let xTimeInterval: TimeInterval = datetime.timeIntervalSince1970
+            let x = (xTimeInterval - fromTimeInterval) / xScaleFactor
             var y = item.kg
             if isImperial() {
                 y = item.lbs
