@@ -219,16 +219,7 @@ class WeightViewController: UIViewController {
             }
             weightAM.text = String(format: "%.2f", amWeight)
             return
-            // :!!!: get time of element and someElement
-            // :!!!: if someElement is earlier than exising element then
-            // element = someElemet // keep earliest
         }
-        
-        // :!!!: figure how to get text from HK
-        // :!!!: add isImperical() check  kg = 2.2 lbs
-        
-        //timeAMInput.text = "" // :!!!:
-        //weightAM.text = ""    // :!!!:
     }
 
     @objc func updateEveningHKData(notification: Notification) {
