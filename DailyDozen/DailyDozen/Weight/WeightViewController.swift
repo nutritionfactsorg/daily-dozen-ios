@@ -5,9 +5,10 @@
 //  Created by marc on 2019.12.08.
 //  Copyright © 2019 Nutritionfacts.org. All rights reserved.
 //
+// swiftlint:disable file_length
 
 import UIKit
-import StoreKit
+import HealthKit
 
 class WeightViewController: UIViewController {
     
@@ -143,7 +144,6 @@ class WeightViewController: UIViewController {
     }
     
     // Note: call once upon entry from tweaks checklist or history
-    //
     // MARK: - UIViewController
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -187,8 +187,45 @@ class WeightViewController: UIViewController {
         let tapGesture = UITapGestureRecognizer(target: self, action: #selector(WeightViewController.viewTapped(gestureRecognizer:)))
         view.addGestureRecognizer(tapGesture)
         
+        NotificationCenter.default.addObserver(
+            self,
+            selector: #selector(updateMorningHKData(notification:)),
+            name: NSNotification.Name(rawValue: "MorningBodyMassDataAvailable"),
+            object: nil)
+        
+        NotificationCenter.default.addObserver(
+            self,
+            selector: #selector(updateEveningHKData(notification:)),
+            name: NSNotification.Name(rawValue: "EveningBodyMassDataAvailable"),
+            object: nil)
     }
     
+    @objc func updateMorningHKData(notification: Notification) {
+        print(notification.object!)
+        
+        guard let weightArray = notification.object as? [HKQuantitySample],
+            weightArray.count > 0 else {
+                return
+        }
+        
+        //var element = weightArray[0]
+        //
+        //for someElement: HKQuantitySample in weightArray {
+        //    // :!!!: get time of element and someElement
+        //    // :!!!: if someElement is earlier than exising element then
+        //    // element = someElemet // keep earliest
+        //}
+        
+        // :!!!: figure how to get text from HK
+        // :!!!: add isImperical() check  kg = 2.2 lbs
+        
+        //timeAMInput.text = "" // :!!!:
+        //weightAM.text = ""    // :!!!:
+    }
+
+    @objc func updateEveningHKData(notification: Notification) {
+    }
+
     override func viewWillDisappear(_ animated: Bool) {
         super.viewWillDisappear(animated)
         // Update stored values
@@ -256,6 +293,10 @@ class WeightViewController: UIViewController {
                 timePickerAM?.setDate(date, animated: false)
             }
         } else {
+            let now = Date()
+            if viewDate.datestampKey == now.datestampKey {
+                HealthManager.shared.fetchWeightDataMorning()
+            }
             timeAMInput.text = ""
             weightAM.text = ""
             timePickerAM?.setDate(Date(), animated: false)
@@ -272,6 +313,10 @@ class WeightViewController: UIViewController {
                 timePickerPM?.setDate(date, animated: false)
             }
         } else {
+            let now = Date()
+            if viewDate.datestampKey == now.datestampKey {
+                HealthManager.shared.fetchWeightDataEvening()
+            }
             timePMInput.text = ""
             weightPM.text = ""
             timePickerPM?.setDate(Date(), animated: false)
@@ -366,7 +411,6 @@ extension WeightViewController: UITextFieldDelegate {
             print(weight)
         }
     }
-    
 }
 
 // MARK: - RealmDelegate

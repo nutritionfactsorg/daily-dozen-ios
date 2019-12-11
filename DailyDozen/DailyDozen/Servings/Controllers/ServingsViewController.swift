@@ -7,7 +7,7 @@
 //
 
 import UIKit
-import StoreKit
+import StoreKit // Used to request app store reivew by user.
 
 class ServingsViewController: UIViewController {
     

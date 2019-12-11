@@ -10,60 +10,73 @@ import Foundation
 struct WeightHistoryViewModel {
 
     // MARK: - Properties
-    private let report: Report
+    private let report: WeightReport
 
     var lastYearIndex: Int {
         return report.data.count - 1
     }
 
     // MARK: - Inits
-    init(_ trackers: [DailyTracker]) {
-        report = Report(trackers)
+    init(amRecords: [DataWeightRecord], pmRecords: [DataWeightRecord]) {
+        report = WeightReport(amRecords: amRecords, pmRecords: pmRecords)
     }
 
     // MARK: - Methods
     func lastMonthIndex(for yearIndex: Int) -> Int {
-        return report.yearlyReport(for: yearIndex).months.count - 1
+        return report.yearlyWeightReport(for: yearIndex).months.count - 1
     }
 
-    func monthData(yearIndex: Int, monthIndex: Int) -> (month: String, map: [Int]) {
-        let monthReport = report
-            .yearlyReport(for: yearIndex)
-            .monthReport(for: monthIndex)
+    func monthData(yearIndex: Int, monthIndex: Int) -> (month: String, points: [DailyWeightReport]) {
+        let monthReport: MonthWeightReport = report
+            .yearlyWeightReport(for: yearIndex)
+            .monthWeightReport(for: monthIndex)
 
         let month = monthReport.month
-        let map = monthReport.daily.map { $0.statesCount }
-        return (month, map)
+        
+        return (month, monthReport.daily)
     }
 
-    func yearlyData(yearIndex: Int) -> (year: String, map: [Int]) {
-        let yearlyReport = report.yearlyReport(for: yearIndex)
+    func yearlyData(yearIndex: Int) -> (year: String, points: [DailyWeightReport]) {
+        let yearlyReport = report.yearlyWeightReport(for: yearIndex)
         let year = String(yearlyReport.year)
-        let map = yearlyReport.months.map { $0.statesCount }
-        return (year, map)
+        
+        var points = [DailyWeightReport]()
+        for monthWeightReport in yearlyReport.months {
+            points.append(contentsOf: monthWeightReport.daily)
+        }
+        return (year, points)
     }
 
-    func fullDataMap() -> [Int] {
-        return report
-            .data
-            .map { $0.statesCount }
+    func fullDataMap() -> [DailyWeightReport] {
+        
+        var allDataPoints = [DailyWeightReport]()
+        for yearlyWeightReport in report.data {
+            for monthWeightReport in yearlyWeightReport.months {
+                allDataPoints.append(contentsOf: monthWeightReport.daily)
+            }
+        }
+        
+        return allDataPoints
     }
 
     func yearName(yearIndex: Int) -> String {
-        return String(report.yearlyReport(for: yearIndex).year)
+        return String(report.yearlyWeightReport(for: yearIndex).year)
     }
 
     func datesLabels(yearIndex: Int, monthIndex: Int) -> [String] {
-        return report
-            .yearlyReport(for: yearIndex)
-            .monthReport(for: monthIndex)
-            .daily
-            .map { "\($0.date.day)" }
+        var labels = [String]()
+        for day in report
+            .yearlyWeightReport(for: yearIndex)
+            .monthWeightReport(for: monthIndex)
+            .daily {
+                labels.append("\(day.anyDate.day)")
+        }
+        return labels
     }
 
     func monthsLabels(yearIndex: Int) -> [String] {
         return report
-            .yearlyReport(for: yearIndex)
+            .yearlyWeightReport(for: yearIndex)
             .months
             .map { $0.month }
     }

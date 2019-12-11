@@ -45,9 +45,9 @@ class DataWeightRecord: Object {
         return (datestampKey: parts[0], typeKey: parts[1])
     }
     
-    var pidParts: (datestamp: Date, weightType: DataCountType)? {
+    var pidParts: (datestamp: Date, weightType: DataWeightType)? {
         guard let date = Date.init(datestampKey: pidKeys.datestampKey),
-            let weightType = DataCountType(typeKey: pidKeys.typeKey) else {
+            let weightType = DataWeightType(typeKey: pidKeys.typeKey) else {
                 print(":ERROR: DataWeightRecord has invalid datestamp or weightType")
                 return nil
         }

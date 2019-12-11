@@ -24,6 +24,7 @@
 		495020D52399CFB90092D6F5 /* SizesTweaksHeader.xib in Resources */ = {isa = PBXBuildFile; fileRef = 495020D42399CFB90092D6F5 /* SizesTweaksHeader.xib */; };
 		495020D72399CFCD0092D6F5 /* TypesTweaksHeader.xib in Resources */ = {isa = PBXBuildFile; fileRef = 495020D62399CFCD0092D6F5 /* TypesTweaksHeader.xib */; };
 		495020DA2399DC780092D6F5 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 495020D82399DC780092D6F5 /* LaunchScreen.storyboard */; };
+		495DAAEB23A06C330036077C /* WeightReport.swift in Sources */ = {isa = PBXBuildFile; fileRef = 495DAAEA23A06C330036077C /* WeightReport.swift */; };
 		4966D7FB237DE9D4004F3A20 /* Resources in Resources */ = {isa = PBXBuildFile; fileRef = 4966D7FA237DE9D3004F3A20 /* Resources */; };
 		496917DD238716BD00A9A743 /* RealmManagerLegacy.swift in Sources */ = {isa = PBXBuildFile; fileRef = 496917DC238716BD00A9A743 /* RealmManagerLegacy.swift */; };
 		496F605B23825D4F0085B6FA /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 496F605A23825D4E0085B6FA /* Localizable.strings */; };
@@ -149,6 +150,7 @@
 		495020D42399CFB90092D6F5 /* SizesTweaksHeader.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = SizesTweaksHeader.xib; sourceTree = "<group>"; };
 		495020D62399CFCD0092D6F5 /* TypesTweaksHeader.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = TypesTweaksHeader.xib; sourceTree = "<group>"; };
 		495020D92399DC780092D6F5 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		495DAAEA23A06C330036077C /* WeightReport.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = WeightReport.swift; path = DailyDozen/WeightHistory/WeightReport.swift; sourceTree = SOURCE_ROOT; };
 		4966D7FA237DE9D3004F3A20 /* Resources */ = {isa = PBXFileReference; lastKnownFileType = folder; path = Resources; sourceTree = "<group>"; };
 		496917DC238716BD00A9A743 /* RealmManagerLegacy.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RealmManagerLegacy.swift; sourceTree = "<group>"; };
 		496F605A23825D4E0085B6FA /* Localizable.strings */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = Localizable.strings; path = DailyDozen/Localizable.strings; sourceTree = "<group>"; };
@@ -390,6 +392,7 @@
 				4904AF81239CB8A500E271EC /* WeightHistory.storyboard */,
 				499B82FA239CD4D300E4AD19 /* WeightHistoryViewController.swift */,
 				498F7243239D8B5C004E501B /* WeightHistoryViewModel.swift */,
+				495DAAEA23A06C330036077C /* WeightReport.swift */,
 			);
 			path = WeightHistory;
 			sourceTree = "<group>";
@@ -1175,6 +1178,7 @@
 				CFF72AFB1FB9A499001CC2E9 /* UnitsType.swift in Sources */,
 				493A8B9A235E93DA00A5009A /* SettingsKeys.swift in Sources */,
 				CFC4A84F1F9761FF00B5AC75 /* ServingsPagerViewController.swift in Sources */,
+				495DAAEB23A06C330036077C /* WeightReport.swift in Sources */,
 				CFD1BA331FCD24920057F549 /* RoundedButton.swift in Sources */,
 				49F8D1DE23906B29003E139F /* TweaksDataProvider.swift in Sources */,
 				498170912391B19E0033882C /* TweaksCell.swift in Sources */,
@@ -1427,7 +1431,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_ENTITLEMENTS = DailyDozen/DailyDozen.entitlements;
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 2;
+				CURRENT_PROJECT_VERSION = 3;
 				DEVELOPMENT_TEAM = 2MG57YUZL5;
 				INFOPLIST_FILE = "$(SRCROOT)/DailyDozen/App/SupportingFiles/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 12.4;
@@ -1447,7 +1451,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_ENTITLEMENTS = DailyDozen/DailyDozen.entitlements;
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 2;
+				CURRENT_PROJECT_VERSION = 3;
 				DEVELOPMENT_TEAM = 2MG57YUZL5;
 				INFOPLIST_FILE = "$(SRCROOT)/DailyDozen/App/SupportingFiles/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 12.4;

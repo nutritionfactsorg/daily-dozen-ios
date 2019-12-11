@@ -41,7 +41,7 @@ class WeightHistoryViewController: UIViewController {
     @IBOutlet weak var weightEditDataButton: UIButton!
     
     // MARK: - Properties
-    private var weightViewModel: WeightHistoryViewModel! // :???:
+    private var weightViewModel: WeightHistoryViewModel!
     private var currentTimeScale = TimeScale.day
     private let realm = RealmProvider()
 
@@ -70,26 +70,9 @@ class WeightHistoryViewController: UIViewController {
                 let data = weightViewModel.monthData(yearIndex: chartSettings.year, monthIndex: chartSettings.month)
 
                 controlPanel.setLabels(month: data.month, year: weightViewModel.yearName(yearIndex: chartSettings.year))
-
-                print("year:\(controlPanel.year ?? -1) month:\(controlPanel.month ?? -1) @ .day")
-                // Whole month
-                let fromYear = String(format: "%04d", controlPanel.year ?? 2109)
-                let fromMonth = String(format: "%02d", controlPanel.month ?? 12)
-                let fromDay = String(format: "%02d", 1)
-                let fromTimestampKey = "\(fromYear)\(fromMonth)\(fromDay)"
                 
-                let toYear = String(format: "%04d", controlPanel.year ?? 2109)
-                let toMonth = String(format: "%02d", controlPanel.month ?? 12)
-                let toDay = String(format: "%02d", Date.lastDayInMonth(month: controlPanel.month ?? 12, year: controlPanel.year ?? 2109))
-                let toTimestampKey = "\(toYear)\(toMonth)\(toDay)"
-                print("from:\(fromTimestampKey) to:\(toTimestampKey)")
-                
-                if let fromDate = Date(datestampKey: fromTimestampKey),
-                    let toDate = Date(datestampKey: toTimestampKey) {
-                    updateChart(fromDate: fromDate, toDate: toDate)
-                }
-                //lineChartView.configure(with: data.map, for: currentTimeScale)
-                
+                updateChart(points: data.points, scale: .day)
+                //chartView.configure(with: data.map, for: currentTimeScale)
             } else if currentTimeScale == .month {
                 controlPanel.isHidden = false
                 controlPanel.superview?.isHidden = false
@@ -102,36 +85,15 @@ class WeightHistoryViewController: UIViewController {
 
                 controlPanel.setLabels(year: data.year)
 
-                print("year:\(controlPanel.year ?? -1) month:\(controlPanel.month ?? -1) @ .month")
-                // Whole year
-                let fromYear = String(format: "%04d", controlPanel.year ?? 2109)
-                let fromMonth = String(format: "%02d", 1)
-                let fromDay = String(format: "%02d", 1)
-                let fromTimestampKey = "\(fromYear)\(fromMonth)\(fromDay)"
-                
-                let toYear = String(format: "%04d", controlPanel.year ?? 2109)
-                let toMonth = String(format: "%02d", 12)
-                let toDay = String(format: "%02d", 31)
-                let toTimestampKey = "\(toYear)\(toMonth)\(toDay)"
-                print("from:\(fromTimestampKey) to:\(toTimestampKey)")
-                
-                if let fromDate = Date(datestampKey: fromTimestampKey),
-                    let toDate = Date(datestampKey: toTimestampKey) {
-                    updateChart(fromDate: fromDate, toDate: toDate)
-                }
-                // :!!!: lineChartView.configure(with: data.map, for: currentTimeScale)
+                updateChart(points: data.points, scale: .month)
+                //chartView.configure(with: data.map, for: currentTimeScale)
             } else {
-                //
                 controlPanel.isHidden = true
                 controlPanel.superview?.isHidden = true
-                
-                print("year:\(controlPanel.year ?? -1) month:\(controlPanel.month ?? -1) @ .year")
-                
+                                
                 // Multiple years
-                if let fromDate = Date(datestampKey: "20170101") {
-                    updateChart(fromDate: fromDate, toDate: Date())
-                }
-                // :!!!: lineChartView.configure(with: weightViewModel.fullDataMap(), for: currentTimeScale)
+                updateChart(points: weightViewModel.fullDataMap(), scale: .year)
+                //chartView.configure(with: weightViewModel.fullDataMap(), for: currentTimeScale)
             }
         }
     }
@@ -142,14 +104,13 @@ class WeightHistoryViewController: UIViewController {
 
         lineChartView.xAxis.valueFormatter = self
         setViewModel()
-        updateChart(fromDate: Date(), toDate: Date()) // :!!!:
+        //updateChart(fromDate: Date(), toDate: Date()) // :!!!:
     }
     
     // -------------------------
     
     // IB action, then updateChartWithData
     private func updateChartWithData(am: [ChartDataEntry], pm: [ChartDataEntry], range: Double) {
-
         switch currentTimeScale {
         case .day:
             break
@@ -166,7 +127,7 @@ class WeightHistoryViewController: UIViewController {
         lineChartDataSetAM.circleRadius = 4.0 // Default: 8.0
         lineChartDataSetAM.drawValuesEnabled = false
         lineChartDataSetAM.lineWidth = 2.0 // Default: 1
-        lineChartDataSetAM.mode = .cubicBezier
+        lineChartDataSetAM.mode = .linear // .cubicBezier
 
         let lineChartDataSetPM = LineChartDataSet(entries: pm, label: "PM")
         lineChartDataSetPM.colors = [UIColor.redFlamePeaColor]
@@ -175,7 +136,7 @@ class WeightHistoryViewController: UIViewController {
         lineChartDataSetPM.circleRadius = 4.0 // Default: 8.0
         lineChartDataSetPM.drawValuesEnabled = false
         lineChartDataSetAM.lineWidth = 2.0 // Default: 1
-        lineChartDataSetPM.mode = .cubicBezier
+        lineChartDataSetPM.mode = .linear // .cubicBezier
 
         let lineChartData = LineChartData(dataSets: [lineChartDataSetAM, lineChartDataSetPM])
         lineChartView.data = lineChartData
@@ -186,14 +147,15 @@ class WeightHistoryViewController: UIViewController {
         lineChartView.xAxis.avoidFirstLastClippingEnabled = true
     }
     
-    func updateChart(fromDate: Date, toDate: Date) {
-        let fromTimeInterval = fromDate.timeIntervalSince1970
-        //let toTimeInterval = toDate.timeIntervalSince1970
-
+    func updateChart(points: [DailyWeightReport], scale: TimeScale) {
+        
+        guard let fromTimeInterval = points.first?.anyDate.timeIntervalSince1970
+            else { return }
+                
         // day scale = 60 seconds * 60 minutes * 24 hours
-        var xScaleFactor = 60.0*60.0*24.0
+        var xScaleFactor = 60.0*60.0*24.0 // default: .day
         var xAxisRange = 31.0 // 31 days
-        if currentTimeScale == .month {
+        if scale == .month {
             xScaleFactor = 60.0*60.0*24.0 * 12.0
             xAxisRange = 52.0 // :???:
         } else if currentTimeScale == .year {
@@ -202,45 +164,37 @@ class WeightHistoryViewController: UIViewController {
             xAxisRange = 104.0 // :???:
         }
         
-        //var dataEntriesAM = [
+        //var dataEntries = [
         //    ChartDataEntry(x: 1.0, y: 144.3),
         //    ChartDataEntry(x: 3.0, y: 143.5),
         //]
         //dataEntriesAM.append(ChartDataEntry(x: 4.0, y: 144.5))
         var dataEntriesAM = [ChartDataEntry]()
-
-        //let dataEntriesPM = [
-        //    ChartDataEntry(x: 2.0, y: 144.9),
-        //    ChartDataEntry(x: 3.0, y: 144.0),
-        //    ChartDataEntry(x: 5.0, y: 144.0)
-        //]
         var dataEntriesPM = [ChartDataEntry]()
-
-        let records = realm.getDailyWeights(fromDate: fromDate, toDate: toDate)
         
-        for item in records.am {
-            guard let datetime = item.datetime else { continue }
-            let xTimeInterval: TimeInterval = datetime.timeIntervalSince1970
-            let x = (xTimeInterval - fromTimeInterval) / xScaleFactor
-            var y = item.kg
-            print("AM \(item.pidKeys.datestampKey) \(x),\(y)")
-            if isImperial() {
-                y = item.lbs
+        for dailyWeightRecord in points {
+            if let dateAM = dailyWeightRecord.dateAM,
+                let kgAM = dailyWeightRecord.kgAM {
+                let xTimeInterval: TimeInterval = dateAM.timeIntervalSince1970
+                let x = (xTimeInterval - fromTimeInterval) / xScaleFactor
+                var y = kgAM
+                if isImperial() {
+                    y = kgAM * 2.204
+                }
+                let chartDataEntry = ChartDataEntry(x: x, y: y)
+                dataEntriesAM.append(chartDataEntry)
             }
-            let chartDataEntry = ChartDataEntry(x: x, y: y)
-            dataEntriesAM.append(chartDataEntry)
-        }
-        for item in records.pm {
-            guard let datetime = item.datetime else { continue }
-            let xTimeInterval: TimeInterval = datetime.timeIntervalSince1970
-            let x = (xTimeInterval - fromTimeInterval) / xScaleFactor
-            var y = item.kg
-            print("PM \(item.pidKeys.datestampKey) \(x),\(y)")
-            if isImperial() {
-                y = item.lbs
+            if let datePM = dailyWeightRecord.datePM,
+                let kgPM = dailyWeightRecord.kgPM {
+                let xTimeInterval: TimeInterval = datePM.timeIntervalSince1970
+                let x = (xTimeInterval - fromTimeInterval) / xScaleFactor
+                var y = kgPM
+                if isImperial() {
+                    y = kgPM * 2.204
+                }
+                let chartDataEntry = ChartDataEntry(x: x, y: y)
+                dataEntriesPM.append(chartDataEntry)
             }
-            let chartDataEntry = ChartDataEntry(x: x, y: y)
-            dataEntriesPM.append(chartDataEntry)
         }
 
         updateChartWithData(am: dataEntriesAM, pm: dataEntriesPM, range: xAxisRange)
@@ -263,18 +217,17 @@ class WeightHistoryViewController: UIViewController {
 
     private func setViewModel() {
         let realm = RealmProvider()
-
-        let trackers: [DailyTracker] = realm.getDailyTrackers()
-        guard trackers.count > 0 else {
+        
+        let weights = realm.getDailyWeights()
+        guard weights.am.count + weights.pm.count > 0 else {
             controlPanel.isHidden = true
             scaleControl.isEnabled = false
             controlPanel.superview?.isHidden = true
             return
         }
-
-        weightViewModel = WeightHistoryViewModel(trackers)
+        
+        weightViewModel = WeightHistoryViewModel(amRecords: weights.am, pmRecords: weights.pm)
         let lastYearIndex = weightViewModel.lastYearIndex
-
         chartSettings = (lastYearIndex, weightViewModel.lastMonthIndex(for: lastYearIndex))
     }
 

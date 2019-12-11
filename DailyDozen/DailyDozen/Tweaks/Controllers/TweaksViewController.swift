@@ -7,7 +7,7 @@
 
 import UIKit
 import HealthKit
-import StoreKit
+import StoreKit  // Used to request app store reivew by user.
 
 class TweaksViewController: UIViewController {
     

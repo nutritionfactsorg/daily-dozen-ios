@@ -35,7 +35,6 @@ struct MonthReport {
         self.month = month
 
         statesCount = daily.reduce(0) { $0 + $1.statesCount }
-
     }
 }
 
@@ -44,14 +43,14 @@ struct YearlyReport {
     var year: Int
     var statesCount = 0
 
-    func monthReport(for index: Int) -> MonthReport {
-        return months[index]
-    }
-
     init(months: [MonthReport], year: Int) {
         self.months = months
         self.year = year
         statesCount = months.reduce(0) { $0 + $1.statesCount }
+    }
+    
+    func monthReport(for index: Int) -> MonthReport {
+        return months[index]
     }
 }
 
@@ -66,8 +65,8 @@ struct Report {
             return
         }
 
+        // Segment days into months
         var reportsInMonth = [DailyReport]()
-
         dailyReports.forEach { report in
             if report.date.monthName == month {
                 reportsInMonth.append(report)
@@ -86,8 +85,8 @@ struct Report {
             return
         }
 
+        // Segment months into years
         var reportsInYear = [MonthReport]()
-
         monthReports.forEach { report in
             if report.daily.first!.date.year == year {
                 reportsInYear.append(report)
