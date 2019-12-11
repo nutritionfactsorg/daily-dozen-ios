@@ -79,10 +79,10 @@ class HealthManager {
             end: forDate)
         healthStore.save(bodyMass) { success, error in
             if error != nil {
-                print("Error: \(String(describing: error))")
+                //print("Error: \(String(describing: error))")
             }
             if success {
-                print("Saved: \(success)")
+                //print("Saved: \(success)")
             }
         }
     }
@@ -136,12 +136,12 @@ class HealthManager {
             withStart: earlier,
             end: now,
             options: .strictStartDate)
-        
+        let sortDescriptor = NSSortDescriptor(key: HKSampleSortIdentifierStartDate, ascending: true)
         let sampleQuery = HKSampleQuery.init(
             sampleType: quantityType.first!, // weight
             predicate: predicate,
             limit: HKObjectQueryNoLimit,
-            sortDescriptors: nil,
+            sortDescriptors: [sortDescriptor],
             resultsHandler: { (_: HKSampleQuery, hkSamples: [HKSample]?, _: Error?) in
                 if let hkQuantitySamples = hkSamples as? [HKQuantitySample] {
                     DispatchQueue.main.async(execute: {
@@ -169,12 +169,12 @@ class HealthManager {
             withStart: earlier,
             end: now,
             options: .strictStartDate)
-        
+        let sortDescriptor = NSSortDescriptor(key: HKSampleSortIdentifierStartDate, ascending: false)
         let sampleQuery = HKSampleQuery.init(
             sampleType: quantityType.first!, // weight
             predicate: predicate,
             limit: HKObjectQueryNoLimit,
-            sortDescriptors: nil,
+            sortDescriptors: [sortDescriptor],
             resultsHandler: { (_: HKSampleQuery, hkSamples: [HKSample]?, _: Error?) in
                 if let hkQuantitySamples = hkSamples as? [HKQuantitySample] {
                     DispatchQueue.main.async(execute: {

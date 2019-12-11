@@ -6,6 +6,7 @@
 //  Copyright © 2019 Nutritionfacts.org. All rights reserved.
 //
 // swiftlint:disable file_length
+// swiftlint:disable type_body_length
 
 import UIKit
 import HealthKit
@@ -201,20 +202,27 @@ class WeightViewController: UIViewController {
     }
     
     @objc func updateMorningHKData(notification: Notification) {
-        print(notification.object!)
         
         guard let weightArray = notification.object as? [HKQuantitySample],
             weightArray.count > 0 else {
                 return
         }
         
-        //var element = weightArray[0]
-        //
-        //for someElement: HKQuantitySample in weightArray {
-        //    // :!!!: get time of element and someElement
-        //    // :!!!: if someElement is earlier than exising element then
-        //    // element = someElemet // keep earliest
-        //}
+        for someElement: HKQuantitySample in weightArray {
+            let bodyMassKg = someElement.quantity.doubleValue(for: HKUnit.gramUnit(with: .kilo))
+            let dateFormatter = DateFormatter()
+            dateFormatter.dateFormat = "hh:mm a"
+            timeAMInput.text = dateFormatter.string(from: someElement.endDate)
+            var amWeight = Double(bodyMassKg)
+            if isImperial() {
+                amWeight = amWeight * 2.2046 // kg = lbs * 2.2046
+            }
+            weightAM.text = String(format: "%.2f", amWeight)
+            return
+            // :!!!: get time of element and someElement
+            // :!!!: if someElement is earlier than exising element then
+            // element = someElemet // keep earliest
+        }
         
         // :!!!: figure how to get text from HK
         // :!!!: add isImperical() check  kg = 2.2 lbs
@@ -224,6 +232,26 @@ class WeightViewController: UIViewController {
     }
 
     @objc func updateEveningHKData(notification: Notification) {
+        guard let weightArray = notification.object as? [HKQuantitySample],
+            weightArray.count > 0 else {
+                return
+        }
+        print(weightArray[0])
+        for someElement: HKQuantitySample in weightArray {
+            let bodyMassKg = someElement.quantity.doubleValue(for: HKUnit.gramUnit(with: .kilo))
+            let dateFormatter = DateFormatter()
+            dateFormatter.dateFormat = "hh:mm a"
+            timePMInput.text = dateFormatter.string(from: someElement.endDate)
+            
+           var pmWeight = Double(bodyMassKg)
+           if isImperial() {
+                pmWeight = pmWeight * 2.2046 // 1 kg =  2.2046 lb
+            }
+            
+            weightPM.text = String(format: "%.2f", pmWeight)
+            return
+        }
+        
     }
 
     override func viewWillDisappear(_ animated: Bool) {
@@ -364,7 +392,7 @@ extension WeightViewController: UIPickerViewDelegate {
 extension WeightViewController: UITextFieldDelegate {
     // :1:
     func textFieldShouldBeginEditing(_ textField: UITextField) -> Bool {
-        print("textFieldShouldBeginEditing")
+        //print("textFieldShouldBeginEditing")
         
         // :===: should solve initial picker registration
         if textField.text == nil || textField.text!.isEmpty {
@@ -381,11 +409,11 @@ extension WeightViewController: UITextFieldDelegate {
     }
     // :2:
     func textFieldDidBeginEditing(_ textField: UITextField) {
-        print("textFieldDidBeginEditing")
+        //print("textFieldDidBeginEditing")
     }
     
     func textFieldShouldReturn(_ textField: UITextField) -> Bool {
-        print("textFieldShouldReturn")
+        //print("textFieldShouldReturn")
         //weightAM.endEditing(true)
         view.endEditing(true)
         
@@ -395,7 +423,7 @@ extension WeightViewController: UITextFieldDelegate {
     
     // :3:
     func textFieldShouldEndEditing(_ textField: UITextField) -> Bool {
-        print("textFieldShouldEndEditing")
+        //print("textFieldShouldEndEditing")
         if textField.text != "" {
             return true
         } else {
@@ -406,7 +434,7 @@ extension WeightViewController: UITextFieldDelegate {
     // :4:
     func textFieldDidEndEditing(_ textField: UITextField) {
         //this is where you might add other code
-        print("textFieldDidEndEditing")
+        //print("textFieldDidEndEditing")
         if let weight = weightAM.text {
             print(weight)
         }
