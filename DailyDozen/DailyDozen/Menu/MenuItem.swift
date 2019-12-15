@@ -28,11 +28,11 @@ enum MenuItem: Int {
     }
 
     /// Defines item order for `MenuTableViewController`
-    case dailyServings, dailyTweaks, videos, book, cookbook, diet, challenge, donate, subscribe, source, settings, backup, about, develop
+    case videos, book, cookbook, diet, challenge, donate, subscribe, source, about
 
     var link: String? {
         switch self {
-        case .dailyServings, .dailyTweaks, .settings, .backup, .about, .develop:
+        case .about:
             return nil // not a URL link
         case .videos:
             return Links.videos
@@ -55,17 +55,11 @@ enum MenuItem: Int {
 
     var controller: UIViewController? {
         switch self {
-        case .dailyServings:
-            return ServingsPagerBuilder.instantiateController()
-        case .dailyTweaks:
-            return TweaksPagerBuilder.instantiateController()
         case .about:
             return AboutBuilder.instantiateController()
-        case .settings:
-            return SettingsBuilder.instantiateController()
-        case .develop:
-            return DevelopBuilder.instantiateController()
-        case .videos, .book, .cookbook, .diet, .challenge, .donate, .subscribe, .source, .backup:
+        //case .develop: :???:NYI: location of develop menu
+        //    return DevelopBuilder.instantiateController()
+        case .videos, .book, .cookbook, .diet, .challenge, .donate, .subscribe, .source:
             return nil // not a View Controller
         }
     }

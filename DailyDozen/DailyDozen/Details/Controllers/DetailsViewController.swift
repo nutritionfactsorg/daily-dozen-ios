@@ -75,6 +75,14 @@ class DetailsViewController: UIViewController {
         titleLabel.text = dataProvider.viewModel.itemTitle
     }
     
+//    func determineHideUnitToggle() {
+//        let unitMeasureTogglestr = UserDefaults.standard.bool(forKey: SettingsKeys.unitsTypeTogglePref)
+//        if !unitMeasureTogglestr {
+//            unitMeasurement.isHidden = true
+//            unitsLabel.isHidden = true
+//        }
+//    }
+    
     // MARK: - Methods
     /// Sets a view model for the current item.
     ///
@@ -154,7 +162,7 @@ extension DetailsViewController: UITableViewDelegate {
             return label.fs_height
         }
         
-        return sectionType.rowHeight
+        return sectionType.rowHeight // :!!!:UNITS_VISIBILITY:
     }
     
     func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {

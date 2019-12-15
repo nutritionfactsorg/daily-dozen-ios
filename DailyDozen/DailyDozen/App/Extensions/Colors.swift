@@ -38,7 +38,7 @@ extension UIColor {
         return UIColor(red: 213/255, green: 213/255, blue: 213/255, alpha: 1)
     }
     
-    /// rgb(127,192,76) `#7FC04C`
+    /// rgb(127,192,76) `#7FC04C` "BrandGreen"
     static var greenColor: UIColor {
         return UIColor(red: 127/255, green: 192/255, blue: 76/255, alpha: 1)
     }

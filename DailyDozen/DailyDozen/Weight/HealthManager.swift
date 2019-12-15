@@ -158,16 +158,46 @@ class HealthManager {
         self.healthStore .execute(sampleQuery)
     }
     
-    public func fetchWeightDataEvening() {
+    public func fetchWeightDataMorning(startDate: Date, endDate: Date) {
+       print("Fetching weight data morning")
+        let quantityType: Set = [HKObjectType.quantityType(forIdentifier: HKQuantityTypeIdentifier.bodyMass)!]
+        
+        let predicate = HKQuery.predicateForSamples(
+            withStart: startDate,
+            end: endDate,
+            options: .strictStartDate)
+        let sortDescriptor = NSSortDescriptor(key: HKSampleSortIdentifierStartDate, ascending: true)
+        let sampleQuery = HKSampleQuery.init(
+            sampleType: quantityType.first!, // weight
+            predicate: predicate,
+            limit: HKObjectQueryNoLimit,
+            sortDescriptors: [sortDescriptor],
+            resultsHandler: { (_: HKSampleQuery, hkSamples: [HKSample]?, _: Error?) in
+                if let hkQuantitySamples = hkSamples as? [HKQuantitySample] {
+                    DispatchQueue.main.async(execute: {
+                        if !(hkSamples?.isEmpty)! {
+                            NotificationCenter.default.post(
+                                name: NSNotification.Name(rawValue: "MorningBodyMassDataAvailable"),
+                                object: hkQuantitySamples,
+                                userInfo: nil)
+                        }
+                    })
+                }
+        })
+        
+        self.healthStore .execute(sampleQuery)
+    }
+    
+    public func fetchWeightDataEvening(startDate: Date, endDate: Date) {
         //print("Fetching weight data")
-        let now = Date()
-        let earlier = Date(datestampKey: now.datestampKey)
+//        let now = Date()
+//        let earlier = Date(datestampKey: now.datestampKey)
 
         let quantityType: Set = [HKObjectType.quantityType(forIdentifier: HKQuantityTypeIdentifier.bodyMass)!]
         
         let predicate = HKQuery.predicateForSamples(
-            withStart: earlier,
-            end: now,
+            withStart: startDate,
+            end: endDate,
             options: .strictStartDate)
         let sortDescriptor = NSSortDescriptor(key: HKSampleSortIdentifierStartDate, ascending: false)
         let sampleQuery = HKSampleQuery.init(

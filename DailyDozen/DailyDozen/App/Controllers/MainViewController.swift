@@ -2,9 +2,9 @@
 //  MainViewController.swift
 //  DailyDozen
 //
-//  Created by marc on 2019.12.14.
 //  Copyright © 2019 Nutritionfacts.org. All rights reserved.
 //
+// swiftlint:disable function_body_length
 
 import UIKit
 import UserNotifications
@@ -20,11 +20,24 @@ class MainViewController: UIViewController {
         setupUnitsType()
         setupReminders()
         setupTabNaviation()
+        
+        if !UserDefaults.standard.bool(forKey: SettingsKeys.hasSeenFirstLaunch) {
+            UserDefaults.standard.set(true, forKey: SettingsKeys.hasSeenFirstLaunch)
+            let viewController = FirstLaunchBuilder.instantiateController()
+            navigationController?.pushViewController(viewController, animated: true)
+        }
+        UserDefaults.standard.set(false, forKey: SettingsKeys.hasSeenFirstLaunch) // :!!!:DEBUG: default should be true
     }
     
     private func setupUnitsType() {
         // ----- Settings: Units Type -----
+        if UserDefaults.standard.bool(forKey: SettingsKeys.hasSeenFirstLaunch) == false {
+            // Show UnitsType toggle to be similar to current user's experience
+            UserDefaults.standard.set(true, forKey: SettingsKeys.unitsTypeTogglePref)
+        }
+        
         if UserDefaults.standard.object(forKey: SettingsKeys.unitsTypePref) == nil {
+            // Skip if user had already set a preferred imperial or metric choice
             // :NYI:ToBeLocalized: set initial default based on device language
             UserDefaults.standard.set(UnitsType.imperial.rawValue, forKey: SettingsKeys.unitsTypePref)
         }
@@ -83,14 +96,13 @@ class MainViewController: UIViewController {
     
     private func setupTabNaviation() {
         // ----- Tab Navigation Setup -----
-        if UserDefaults.standard.bool(forKey: "hasSeenFirstLaunch") == false {
-            UserDefaults.standard.set(false, forKey: "hasSeenFirstLaunch") // :!!!:DEBUG: default should be true
-            UserDefaults.standard.set(true, forKey: "showTweaksTab")
+        if !UserDefaults.standard.bool(forKey: SettingsKeys.hasSeenFirstLaunch) {
+            UserDefaults.standard.set(true, forKey: SettingsKeys.showTweaksTab)
         }
         
-        print("\n## viewDidLoad ##")
-        print("hasSeenFirstLaunch \(UserDefaults.standard.bool(forKey: "hasSeenFirstLaunch"))")
-        print("showTweaksTab \(UserDefaults.standard.bool(forKey: "showTweaksTab"))")
+        print("\n## viewDidLoad ##") // :!!!:
+        print("hasSeenFirstLaunch \(UserDefaults.standard.bool(forKey: SettingsKeys.hasSeenFirstLaunch))") // :!!!:
+        print("showTweaksTab \(UserDefaults.standard.bool(forKey: SettingsKeys.showTweaksTab))") // :!!!:
 
         mainTabBarController.tabBar.tintColor = UIColor.black
         updateTabBarController()
@@ -108,15 +120,14 @@ class MainViewController: UIViewController {
 
     // MARK: - Navigation
 
-    @objc
-    func updateTabBarController(notification: Notification) {
+    @objc func updateTabBarController(notification: Notification) {
         updateTabBarController()
     }
 
     func updateTabBarController() {
-        print("\n## updateTabBarController ##")
-        print("hasSeenFirstLaunch \(UserDefaults.standard.bool(forKey: "hasSeenFirstLaunch"))")
-        print("showTweaksTab \(UserDefaults.standard.bool(forKey: "showTweaksTab"))")
+        print("\n## updateTabBarController ##") // :!!!:
+        print("hasSeenFirstLaunch \(UserDefaults.standard.bool(forKey: SettingsKeys.hasSeenFirstLaunch))") // :!!!:
+        print("showTweaksTab \(UserDefaults.standard.bool(forKey: SettingsKeys.showTweaksTab))") // :!!!:
 
         var controllerArray = [UIViewController]()
         
@@ -128,7 +139,8 @@ class MainViewController: UIViewController {
             else { fatalError("Did not instantiate `ServingsPagerViewController`") }
 
         tabDailyDozenViewController.title = "Daily Dozen"
-        tabDailyDozenViewController.view.backgroundColor =  UIColor.red // :!!!:DEBUG: should be a different color
+        tabDailyDozenViewController.view.backgroundColor = UIColor.red // :!!!:DEBUG: should be a different color
+        //tabDailyDozenViewController.view.tintColor = UIColor.greenColor // :!!!:???:NOP:
         tabDailyDozenViewController.tabBarItem = UITabBarItem.init(
             title: "Daily Dozen",
             image: UIImage(named: "ic_tabapp_dailydozen"),
@@ -137,7 +149,7 @@ class MainViewController: UIViewController {
         controllerArray.append(tabDailyDozenViewController)
 
         // Tweaks Tab
-        if UserDefaults.standard.bool(forKey: "showTweaksTab") {
+        if UserDefaults.standard.bool(forKey: SettingsKeys.showTweaksTab) {
             let tab2ndStoryboard = UIStoryboard(name: "TweaksPager", bundle: nil)  // :!!!: hard coded storyboard
             guard
                 let tabTweaksViewController = tab2ndStoryboard

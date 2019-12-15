@@ -69,7 +69,7 @@ class TweaksPagerViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        title = "Tweaks"
+        title = "21 Tweaks"
     }
 
     override func viewDidAppear(_ animated: Bool) {

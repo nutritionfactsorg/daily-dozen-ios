@@ -36,7 +36,7 @@ enum DetailsSection: Int {
     var headerHeight: CGFloat {
         switch self {
         case .sizes:
-            return 75
+            return 50 // :!!!:UNITS_VISIBILITY:
         case .types:
             return 50
         }
@@ -55,11 +55,15 @@ enum DetailsSection: Int {
         switch self {
         case .sizes:
             // Handle imperial vs. metric units
+            //let shouldHideTypeToggle = UserDefaults.standard.bool(forKey: SettingsKeys.unitsTypeTogglePref)// :!!!:UNITS_VISIBILITY:
             if let unitsTypePrefStr = UserDefaults.standard.string(forKey: SettingsKeys.unitsTypePref),
                 let currentUnitsType = UnitsType(rawValue: unitsTypePrefStr),
                 let uiView: UIView = Bundle.main
                     .loadNibNamed(Nibs.sizesHeaderNib, owner: nil)?
                     .first as? UIView {
+                let shouldHideTypeToggle = !UserDefaults.standard.bool(forKey: SettingsKeys.unitsTypeTogglePref) // :!!!:UNITS_VISIBILITY:
+                //let shouldHideTypeToggle = true // :!!!:UNITS_VISIBILITY:DEBUG:
+                print(UserDefaults.standard.bool(forKey: SettingsKeys.unitsTypeTogglePref))
                 for subview1 in uiView.subviews {
                     if let stackView1 = subview1 as? UIStackView {
                         for subview2 in stackView1.subviews {
@@ -67,6 +71,10 @@ enum DetailsSection: Int {
                                 for subview3 in stackView2.subviews {
                                     if let button = subview3 as? UIButton {
                                         button.setTitle(currentUnitsType.title, for: .normal)
+                                        button.isHidden = shouldHideTypeToggle // :!!!:UNITS_VISIBILITY:
+                                    }
+                                    if let label = subview3 as? UILabel {
+                                        label.isHidden = shouldHideTypeToggle // :!!!:UNITS_VISIBILITY:
                                     }
                                 }
                             }
@@ -91,6 +99,7 @@ enum DetailsSection: Int {
                 let uiView: UIView = Bundle.main
                     .loadNibNamed(Nibs.sizesTweaksHeaderNib, owner: nil)?
                     .first as? UIView {
+                let shouldHideTypeToggle = !UserDefaults.standard.bool(forKey: SettingsKeys.unitsTypeTogglePref) // :!!!:UNITS_VISIBILITY:
                 for subview1 in uiView.subviews {
                     if let stackView1 = subview1 as? UIStackView {
                         for subview2 in stackView1.subviews {
@@ -98,6 +107,10 @@ enum DetailsSection: Int {
                                 for subview3 in stackView2.subviews {
                                     if let button = subview3 as? UIButton {
                                         button.setTitle(currentUnitsType.title, for: .normal)
+                                        button.isHidden = shouldHideTypeToggle // :!!!:UNITS_VISIBILITY:
+                                    }
+                                    if let label = subview3 as? UILabel {
+                                       label.isHidden = shouldHideTypeToggle // :!!!:UNITS_VISIBILITY:
                                     }
                                 }
                             }

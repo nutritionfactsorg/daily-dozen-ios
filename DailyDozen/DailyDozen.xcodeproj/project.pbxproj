@@ -31,6 +31,9 @@
 		496F605D23826B2A0085B6FA /* _Globals.swift in Sources */ = {isa = PBXBuildFile; fileRef = 496F605C23826B2A0085B6FA /* _Globals.swift */; };
 		497390A923A5941900492D92 /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 497390A823A5941900492D92 /* MainViewController.swift */; };
 		497390AC23A5956900492D92 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 497390AA23A5956900492D92 /* Main.storyboard */; };
+		497390B023A5D4F900492D92 /* SettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 497390AD23A5D4F800492D92 /* SettingsViewController.swift */; };
+		497390B123A5D4F900492D92 /* SettingsReminderViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 497390AE23A5D4F900492D92 /* SettingsReminderViewController.swift */; };
+		497390B223A5D4F900492D92 /* Settings.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 497390AF23A5D4F900492D92 /* Settings.storyboard */; };
 		4981708F2391B1790033882C /* TweaksStateCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4981708E2391B1790033882C /* TweaksStateCell.swift */; };
 		498170912391B19E0033882C /* TweaksCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 498170902391B19E0033882C /* TweaksCell.swift */; };
 		498170952391B6AB0033882C /* TweaksSection.swift in Sources */ = {isa = PBXBuildFile; fileRef = 498170942391B6AB0033882C /* TweaksSection.swift */; };
@@ -59,8 +62,6 @@
 		BD68BC5B2FB6D632F16CE9CD /* Pods_DailyDozenTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 715D60F634E9BCD998C66B77 /* Pods_DailyDozenTests.framework */; };
 		BED5BB460CE3AEE8CF585899 /* Pods_DailyDozen.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F514690D725E67AD54735EB9 /* Pods_DailyDozen.framework */; };
 		CF12918F1FC42DD300D1C17E /* DateCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF12918E1FC42DD300D1C17E /* DateCell.swift */; };
-		CF1393111FE0046800DD8679 /* Settings.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CF1393101FE0046700DD8679 /* Settings.storyboard */; };
-		CF1393151FE0080900DD8679 /* SettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF1393141FE0080900DD8679 /* SettingsViewController.swift */; };
 		CF17C8A71FAA019600367BF8 /* DetailsSection.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF17C8A61FAA019600367BF8 /* DetailsSection.swift */; };
 		CF22F07A1FA88D2200F25B70 /* DetailsDataProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF22F0791FA88D2200F25B70 /* DetailsDataProvider.swift */; };
 		CF22F07F1FA8ACE000F25B70 /* Details.plist in Resources */ = {isa = PBXBuildFile; fileRef = CF22F07E1FA8ACE000F25B70 /* Details.plist */; };
@@ -105,8 +106,6 @@
 		CFD1BA331FCD24920057F549 /* RoundedButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = CFD1BA321FCD24920057F549 /* RoundedButton.swift */; };
 		CFE667291F98CF860037D1A2 /* ServingsPager.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CFE667281F98CF860037D1A2 /* ServingsPager.storyboard */; };
 		CFE6983C1F974B9700CD7905 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CFE6983B1F974B9700CD7905 /* AppDelegate.swift */; };
-		CFE6983E1F974B9700CD7905 /* MainSplitViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CFE6983D1F974B9700CD7905 /* MainSplitViewController.swift */; };
-		CFE698411F974B9700CD7905 /* MainSplit.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CFE6983F1F974B9700CD7905 /* MainSplit.storyboard */; };
 		CFE698431F974B9700CD7905 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = CFE698421F974B9700CD7905 /* Assets.xcassets */; };
 		CFE793571FA756E40084F075 /* RealmProviderLegacy.swift in Sources */ = {isa = PBXBuildFile; fileRef = CFE793561FA756E40084F075 /* RealmProviderLegacy.swift */; };
 		CFECDFF8201EF7C1003E8572 /* Colors.swift in Sources */ = {isa = PBXBuildFile; fileRef = CFECDFF7201EF7C1003E8572 /* Colors.swift */; };
@@ -159,6 +158,9 @@
 		496F605C23826B2A0085B6FA /* _Globals.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = _Globals.swift; sourceTree = "<group>"; };
 		497390A823A5941900492D92 /* MainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
 		497390AB23A5956900492D92 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		497390AD23A5D4F800492D92 /* SettingsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SettingsViewController.swift; sourceTree = "<group>"; };
+		497390AE23A5D4F900492D92 /* SettingsReminderViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SettingsReminderViewController.swift; sourceTree = "<group>"; };
+		497390AF23A5D4F900492D92 /* Settings.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Settings.storyboard; sourceTree = "<group>"; };
 		4981708E2391B1790033882C /* TweaksStateCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = TweaksStateCell.swift; path = DailyDozen/Tweaks/Views/TweaksStateCell.swift; sourceTree = SOURCE_ROOT; };
 		498170902391B19E0033882C /* TweaksCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = TweaksCell.swift; path = DailyDozen/Tweaks/Views/TweaksCell.swift; sourceTree = SOURCE_ROOT; };
 		498170942391B6AB0033882C /* TweaksSection.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = TweaksSection.swift; path = DailyDozen/Tweaks/SupportingFiles/TweaksSection.swift; sourceTree = SOURCE_ROOT; };
@@ -193,8 +195,6 @@
 		715D60F634E9BCD998C66B77 /* Pods_DailyDozenTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_DailyDozenTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		7D4AA01331AD98C99ADB2BC0 /* Pods-DailyDozen.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-DailyDozen.release.xcconfig"; path = "Pods/Target Support Files/Pods-DailyDozen/Pods-DailyDozen.release.xcconfig"; sourceTree = "<group>"; };
 		CF12918E1FC42DD300D1C17E /* DateCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DateCell.swift; sourceTree = "<group>"; };
-		CF1393101FE0046700DD8679 /* Settings.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Settings.storyboard; sourceTree = "<group>"; };
-		CF1393141FE0080900DD8679 /* SettingsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsViewController.swift; sourceTree = "<group>"; };
 		CF17C8A61FAA019600367BF8 /* DetailsSection.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailsSection.swift; sourceTree = "<group>"; };
 		CF22F0791FA88D2200F25B70 /* DetailsDataProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailsDataProvider.swift; sourceTree = "<group>"; };
 		CF22F07E1FA8ACE000F25B70 /* Details.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Details.plist; sourceTree = "<group>"; };
@@ -240,8 +240,6 @@
 		CFE667281F98CF860037D1A2 /* ServingsPager.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = ServingsPager.storyboard; sourceTree = "<group>"; };
 		CFE698381F974B9700CD7905 /* DailyDozen.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = DailyDozen.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		CFE6983B1F974B9700CD7905 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		CFE6983D1F974B9700CD7905 /* MainSplitViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainSplitViewController.swift; sourceTree = "<group>"; };
-		CFE698401F974B9700CD7905 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/MainSplit.storyboard; sourceTree = "<group>"; };
 		CFE698421F974B9700CD7905 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		CFE698471F974B9700CD7905 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		CFE793561FA756E40084F075 /* RealmProviderLegacy.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RealmProviderLegacy.swift; sourceTree = "<group>"; };
@@ -436,8 +434,9 @@
 			isa = PBXGroup;
 			children = (
 				493A8B99235E93DA00A5009A /* SettingsKeys.swift */,
-				CF1393141FE0080900DD8679 /* SettingsViewController.swift */,
-				CF1393101FE0046700DD8679 /* Settings.storyboard */,
+				497390AE23A5D4F900492D92 /* SettingsReminderViewController.swift */,
+				497390AF23A5D4F900492D92 /* Settings.storyboard */,
+				497390AD23A5D4F800492D92 /* SettingsViewController.swift */,
 			);
 			path = Settings;
 			sourceTree = "<group>";
@@ -740,7 +739,6 @@
 			isa = PBXGroup;
 			children = (
 				498F724C239E08C0004E501B /* FirstLaunchViewController.swift */,
-				CFE6983D1F974B9700CD7905 /* MainSplitViewController.swift */,
 				CF55BC4E2020450D00003D0D /* AlertBuilder.swift */,
 				497390A823A5941900492D92 /* MainViewController.swift */,
 			);
@@ -771,7 +769,6 @@
 			children = (
 				498F7249239E013E004E501B /* FirstLaunch.storyboard */,
 				495020D82399DC780092D6F5 /* LaunchScreen.storyboard */,
-				CFE6983F1F974B9700CD7905 /* MainSplit.storyboard */,
 				497390AA23A5956900492D92 /* Main.storyboard */,
 			);
 			path = Storyboards;
@@ -959,6 +956,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				CFE667291F98CF860037D1A2 /* ServingsPager.storyboard in Resources */,
+				497390B223A5D4F900492D92 /* Settings.storyboard in Resources */,
 				CF2FA9941FA87B2E003508F8 /* Details.storyboard in Resources */,
 				CFBEE2301FDE8D1E005C0F45 /* About.storyboard in Resources */,
 				498170A5239215230033882C /* Tweaks.storyboard in Resources */,
@@ -980,12 +978,10 @@
 				CFA3E8F91FC58D460092199D /* ServingsHistory.storyboard in Resources */,
 				CF64DF271FB5BAC400B4D124 /* SizesHeader.xib in Resources */,
 				497390AC23A5956900492D92 /* Main.storyboard in Resources */,
-				CFE698411F974B9700CD7905 /* MainSplit.storyboard in Resources */,
 				4904AF80239CB89500E271EC /* Weight.storyboard in Resources */,
 				4904AF86239CCC3F00E271EC /* WeightPager.storyboard in Resources */,
 				CFF72B001FB9BB70001CC2E9 /* LinkSettings.plist in Resources */,
 				496F605B23825D4F0085B6FA /* Localizable.strings in Resources */,
-				CF1393111FE0046800DD8679 /* Settings.storyboard in Resources */,
 				CFF117731F97530300BFE73A /* Menu.storyboard in Resources */,
 				498F724B239E013E004E501B /* FirstLaunch.storyboard in Resources */,
 			);
@@ -1141,7 +1137,6 @@
 				CF22F07A1FA88D2200F25B70 /* DetailsDataProvider.swift in Sources */,
 				497390A923A5941900492D92 /* MainViewController.swift in Sources */,
 				49F0377B233AD9B600FFD2EE /* UIButtonCheckbox.swift in Sources */,
-				CFE6983E1F974B9700CD7905 /* MainSplitViewController.swift in Sources */,
 				CF64DF331FB5E03C00B4D124 /* TypesCell.swift in Sources */,
 				CFAAB3771F9F3FDF00B24748 /* URL.swift in Sources */,
 				CF6E6D351FB1B4FE00B177E7 /* Detail.swift in Sources */,
@@ -1149,7 +1144,6 @@
 				4941D731237E13DC00ED84B5 /* DataWeightRecord.swift in Sources */,
 				499B82FB239CD4D300E4AD19 /* WeightHistoryViewController.swift in Sources */,
 				498170A123920DD60033882C /* TweaksPagerViewController.swift in Sources */,
-				CF1393151FE0080900DD8679 /* SettingsViewController.swift in Sources */,
 				4981708F2391B1790033882C /* TweaksStateCell.swift in Sources */,
 				49821BAA2383727D006F166E /* DailyTracker.swift in Sources */,
 				498F7251239E3007004E501B /* HealthManager.swift in Sources */,
@@ -1170,10 +1164,12 @@
 				CF9EC1C0202196B100C7B3CA /* Fonts.swift in Sources */,
 				CFBEE2341FDE9A57005C0F45 /* RoundedView.swift in Sources */,
 				498F7244239D8B5C004E501B /* WeightHistoryViewModel.swift in Sources */,
+				497390B023A5D4F900492D92 /* SettingsViewController.swift in Sources */,
 				CF9EC1C32021D37000C7B3CA /* MenuItem.swift in Sources */,
 				CF49029B1FD91F01000EAB68 /* ServingsHistoryViewModel.swift in Sources */,
 				CF2FA9961FA87F0C003508F8 /* DetailsViewController.swift in Sources */,
 				CFECDFF8201EF7C1003E8572 /* Colors.swift in Sources */,
+				497390B123A5D4F900492D92 /* SettingsReminderViewController.swift in Sources */,
 				CF4DECF71F9DF2A500DA094B /* ServingsCell.swift in Sources */,
 				498D76A423709F9D00B5DF06 /* DevelopTableViewController.swift in Sources */,
 				CFE793571FA756E40084F075 /* RealmProviderLegacy.swift in Sources */,
@@ -1238,14 +1234,6 @@
 				498F724A239E013E004E501B /* Base */,
 			);
 			name = FirstLaunch.storyboard;
-			sourceTree = "<group>";
-		};
-		CFE6983F1F974B9700CD7905 /* MainSplit.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				CFE698401F974B9700CD7905 /* Base */,
-			);
-			name = MainSplit.storyboard;
 			sourceTree = "<group>";
 		};
 /* End PBXVariantGroup section */

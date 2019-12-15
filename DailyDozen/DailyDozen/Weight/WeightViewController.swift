@@ -7,6 +7,7 @@
 //
 // swiftlint:disable file_length
 // swiftlint:disable type_body_length
+// swiftlint:disable function_body_length
 
 import UIKit
 import HealthKit
@@ -314,7 +315,23 @@ class WeightViewController: UIViewController {
         } else {
             let now = Date()
             if viewDate.datestampKey == now.datestampKey {
-                HealthManager.shared.fetchWeightDataMorning()
+                let start = Calendar.current.startOfDay(for: viewDate)
+                var components = DateComponents()
+                components.day = 1
+                components.second = -1
+                let end = Calendar.current.date(byAdding: components, to: start)!
+                HealthManager.shared.fetchWeightDataMorning(startDate: start, endDate: end)
+                //HealthManager.shared.fetchWeightDataMorning()
+            } else {
+                print("setViewModel() viewDate:\n\(viewDate)")
+                let start = Calendar.current.startOfDay(for: viewDate)
+                print("setViewModel() start:\n\(start)")
+                var components = DateComponents()
+                components.day = 1
+                components.second = -1
+                let end = Calendar.current.date(byAdding: components, to: start)!
+                print("setViewModel() end:\n\(end))")
+                HealthManager.shared.fetchWeightDataMorning(startDate: start, endDate: end)
             }
             timeAMInput.text = ""
             weightAM.text = ""
@@ -332,10 +349,16 @@ class WeightViewController: UIViewController {
                 timePickerPM?.setDate(date, animated: false)
             }
         } else {
-            let now = Date()
-            if viewDate.datestampKey == now.datestampKey {
-                HealthManager.shared.fetchWeightDataEvening()
-            }
+            //let now = Date()
+//            if viewDate.datestampKey == now.datestampKey {
+//                HealthManager.shared.fetchWeightDataEvening()
+//            }
+           let start = Calendar.current.startOfDay(for: viewDate)
+            var components = DateComponents()
+            components.day = 1
+            components.second = -1
+            let end = Calendar.current.date(byAdding: components, to: start)!
+            HealthManager.shared.fetchWeightDataEvening(startDate: start, endDate: end)
             timePMInput.text = ""
             weightPM.text = ""
             timePickerPM?.setDate(Date(), animated: false)

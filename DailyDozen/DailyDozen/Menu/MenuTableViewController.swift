@@ -13,7 +13,7 @@ class MenuTableViewController: UITableViewController {
 
     // MARK: - Nested
     private struct Strings {
-        static let menu = "Menu" // :NYI:ToBeLocalized:
+        static let info = "Info" // :NYI:ToBeLocalized:
     }
     
     // MARK: - UITableViewController
@@ -25,15 +25,9 @@ class MenuTableViewController: UITableViewController {
         navigationController?.navigationBar.barTintColor = UIColor.greenColor
         navigationController?.navigationBar.tintColor = UIColor.white
 
-        let barItem = UIBarButtonItem(title: Strings.menu, style: .done, target: nil, action: nil)
+        let barItem = UIBarButtonItem(title: Strings.info, style: .done, target: nil, action: nil)
         barItem.tintColor = UIColor.white
         navigationItem.setLeftBarButton(barItem, animated: false)
-        
-        if !UserDefaults.standard.bool(forKey: "didCompleteFirstLaunch") {
-            UserDefaults.standard.set(true, forKey: "didCompleteFirstLaunch")
-            let viewController = FirstLaunchBuilder.instantiateController()
-            navigationController?.pushViewController(viewController, animated: true)
-        }
     }
 
     /// Presents share services.

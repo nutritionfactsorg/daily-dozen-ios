@@ -2,7 +2,6 @@
 //  FirstLaunchViewController.swift
 //  DailyDozen
 //
-//  Created by mc on 2019.12.05.
 //  Copyright © 2019 Nutritionfacts.org. All rights reserved.
 //
 
@@ -63,7 +62,7 @@ class FirstLaunchViewController: UIViewController {
 //                return true
 //            }
 //        })
-//        if let viewController = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "MainSplitViewController") as? MainSplitViewController {
+//        if let viewController = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "MainViewController") as? MainViewController {
 //
 //if let navigator = navigationController {
                  // navigator.pushViewController(mainVC, animated: true)

@@ -17,7 +17,12 @@ struct SettingsKeys {
     //
     static let imgID = "imgID"
     static let requestID = "requestID"
-    // Units Type: Imperial|Metric
+    // Units Type: imperial|metric
     static let unitsTypePref = "unitsTypePref"
-    // :NYI: UnitsTypeTogglePref: AlwaysImperial|AlwaysMetric|ToggleAbout
+    // UnitsTypeTogglePref: on|off
+    static let unitsTypeTogglePref = "unitsTypeTogglePref"
+    // Hide|Show 21 Tweaks
+    static let showTweaksTab = "showTweaksTab"
+    // Used for first launch
+    static let hasSeenFirstLaunch = "hasSeenFirstLaunch_v3.1.0+"
 }

@@ -69,7 +69,7 @@ class ServingsPagerViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        title = "Servings"
+        title = "Daily Dozen"
     }
 
     override func viewDidAppear(_ animated: Bool) {

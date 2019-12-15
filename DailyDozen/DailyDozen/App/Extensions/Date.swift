@@ -9,14 +9,14 @@
 import Foundation
 
 extension Date {
-
+    
     /// Return yyyyMMdd based on the current locale.
     var datestampKey: String {
         let dateFormatter = DateFormatter()
         dateFormatter.dateFormat = "yyyyMMdd"
         return dateFormatter.string(from: self)
     }
-
+    
     var datestampHHmm: String {
         let dateFormatter = DateFormatter()
         dateFormatter.dateFormat = "HH:mm"
@@ -30,7 +30,7 @@ extension Date {
         dateFormatter.dateFormat = "yyyyMMdd_HHmmss"
         return dateFormatter.string(from: currentTime)
     }
-
+    
     init?(healthkit: String) {
         let dateFormatter = DateFormatter()
         dateFormatter.dateFormat = "yyyyMMdd hh:mm a"
@@ -73,12 +73,12 @@ extension Date {
         dateFormatter.setLocalizedDateFormatFromTemplate("EEE")
         return dateFormatter.string(from: self)
     }
-
+    
     /// Returns a day int for the date.
     var day: Int {
         return Calendar.current.component(.day, from: self)
     }
-
+    
     var lastDayInMonth: Int {
         let month = self.month
         let year = self.year
@@ -93,21 +93,21 @@ extension Date {
         let date = cal.date(from: comps)!
         return cal.component(.day, from: date)
     }
-
+    
     var monthName: String {
         let dateFormatter = DateFormatter()
         dateFormatter.setLocalizedDateFormatFromTemplate("MMM")
         return dateFormatter.string(from: self)
     }
-
+    
     var month: Int {
         return Calendar.current.component(.month, from: self)
     }
-
+    
     var year: Int {
         return Calendar.current.component(.year, from: self)
     }
-
+    
     var hour: Int {
         get {
             return Calendar.current.component(.hour, from: self)
@@ -115,7 +115,7 @@ extension Date {
         set {
             let allowedRange = Calendar.current.range(of: .hour, in: .day, for: self)!
             guard allowedRange.contains(newValue) else { return }
-
+            
             let currentHour = Calendar.current.component(.hour, from: self)
             let hoursToAdd = newValue - currentHour
             if let date = Calendar.current.date(byAdding: .hour, value: hoursToAdd, to: self) {
@@ -123,7 +123,7 @@ extension Date {
             }
         }
     }
-
+    
     public var minute: Int {
         get {
             return Calendar.current.component(.minute, from: self)
@@ -131,7 +131,7 @@ extension Date {
         set {
             let allowedRange = Calendar.current.range(of: .minute, in: .hour, for: self)!
             guard allowedRange.contains(newValue) else { return }
-
+            
             let currentMinutes = Calendar.current.component(.minute, from: self)
             let minutesToAdd = newValue - currentMinutes
             if let date = Calendar.current.date(byAdding: .minute, value: minutesToAdd, to: self) {
@@ -139,7 +139,7 @@ extension Date {
             }
         }
     }
-
+    
     /// Returns a date string from the date.
     ///
     /// - Parameter style: A dateFormatter style (default is .medium).
@@ -151,7 +151,7 @@ extension Date {
         dateFormatter.locale = Locale.current
         return dateFormatter.string(from: self)
     }
-
+    
     /// Checks if a date is within the current date day.
     ///
     /// - Parameter date: The current date.
@@ -159,7 +159,7 @@ extension Date {
     func isInCurrentDayWith(_ date: Date) -> Bool {
         return Calendar.current.isDate(self, equalTo: date, toGranularity: .day)
     }
-
+    
     /// Checks if a date is within the current date month.
     ///
     /// - Parameter date: The current date.
@@ -167,7 +167,7 @@ extension Date {
     func isInCurrentMonthWith(_ date: Date) -> Bool {
         return Calendar.current.isDate(self, equalTo: date, toGranularity: .month)
     }
-
+    
     /// Returns a new date by adding the calendar component value.
     ///
     /// - Parameters:
@@ -177,4 +177,31 @@ extension Date {
     func adding(_ component: Calendar.Component, value: Int) -> Date? {
         return Calendar.current.date(byAdding: component, value: value, to: self)
     }
+    
+    // :???: candidate code to be either improved or deleted
+    //    var startOfDay: Date {
+    //        return Calendar.current.startOfDay(for: self)
+    //    }
+    //
+    //    var endOfDay: Date {
+    //    var components = DateComponents()
+    //    components.day = 1
+    //    components.second = -1
+    //    return Calendar.current.date(byAdding: components, to: startOfDay)!
+    //    }
+    
+    //    var startOfMonth: Date {
+    //        let components = Calendar.current.dateComponents([.year, .month], from: startOfDay)
+    //        return Calendar.current.date(from: components)!
+    //    }
+    //
+    //    var endOfMonth: Date {
+    //        var components = DateComponents()
+    //        components.month = 1
+    //        components.second = -1
+    //        return Calendar.current.date(byAdding: components, to: startOfMonth)!
+    //    }
+    // End of day = Start of tomorrow minus 1 second
+    // End of month = Start of next month minus 1 second
+    
 }
