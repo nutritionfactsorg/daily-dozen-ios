@@ -214,7 +214,7 @@ class SettingsViewController: UITableViewController {
             UserDefaults.standard.set(false, forKey: SettingsKeys.show21TweaksPref)
             NotificationCenter.default.post(
                 name: NSNotification.Name(rawValue: "NoticeUpdatedShowTweaksTab"),
-                object: 0,
+                object: 2, // Dozen, More, Settings
                 userInfo: nil)
         } else if tweaksVisibilityController.selectedSegmentIndex == 1
             && show21Tweaks == false {
@@ -222,7 +222,7 @@ class SettingsViewController: UITableViewController {
             UserDefaults.standard.set(true, forKey: SettingsKeys.show21TweaksPref)
             NotificationCenter.default.post(
                 name: NSNotification.Name(rawValue: "NoticeUpdatedShowTweaksTab"),
-                object: 1,
+                object: 3, // Dozen, Tweaks, More, Settings
                 userInfo: nil)
         }
     }
@@ -236,4 +236,30 @@ class SettingsViewController: UITableViewController {
      // Pass the selected object to the new view controller.
      }
      */
+    
+    // MARK: - Utilities
+    
+    @IBAction func doUtilityShowAdvancedBtn(_ sender: UIButton) {
+        let viewController = UtilityBuilder.instantiateController()
+        navigationController?.pushViewController(viewController, animated: true)
+    }
+    
+    @IBAction func doUtilityClearSettings(_ sender: UIButton) {
+    }
+    
+    @IBAction func doUtilityClearTestData(_ sender: UIButton) {
+    }
+    
+    @IBAction func doUtilityCreateTestData(_ sender: UIButton) {
+    }
+    
+    @IBAction func doUtilityCreateLegacyTestData(_ sender: UIButton) {
+    }
+    
+    @IBAction func doUtilityExportData(_ sender: UIButton) {
+    }
+    
+    @IBAction func doUtilityImportData(_ sender: UIButton) {
+    }
+    
 }

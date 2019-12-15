@@ -160,17 +160,17 @@ class MainViewController: UIViewController {
             controllerArray.append(tabTweaksViewController)
         }
         
-        // Info Tab
+        // More Tab
         let tabInfoStoryboard = UIStoryboard(name: "Menu", bundle: nil) // :!!!: hard coded storyboard
         guard
             let tabInfoViewController = tabInfoStoryboard
                 .instantiateInitialViewController() as? MenuTableViewController
-            else { fatalError("Did not instantiate Info `MenuTableViewController`") }
+            else { fatalError("Did not instantiate More `MenuTableViewController`") }
 
-        tabInfoViewController.title = "Info"
+        tabInfoViewController.title = "More"
         tabInfoViewController.tabBarItem = UITabBarItem.init(
-            title: "Info",
-            image: UIImage(named: "ic_tabapp_info"),
+            title: "More",
+            image: UIImage(named: "ic_tabapp_more"),
             tag: 0
         )
         controllerArray.append(tabInfoViewController)

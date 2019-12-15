@@ -1,5 +1,5 @@
 //
-//  DevelopTableViewController.swift
+//  UtilityTableViewController.swift
 //  DailyDozen
 //
 //  Created by marc on 2019.11.04.
@@ -9,26 +9,26 @@
 import UIKit
 
 // MARK: - Builder 
-class DevelopBuilder {
+class UtilityBuilder {
 
     // MARK: - Methods
     /// Instantiates and returns the initial view controller for a storyboard.
     ///
     /// - Returns: The initial view controller in the storyboard.
     static func instantiateController() -> UIViewController {
-        let storyboard = UIStoryboard(name: "Develop", bundle: nil)
+        let storyboard = UIStoryboard(name: "Utility", bundle: nil)
         guard
             let viewController = storyboard
                 .instantiateInitialViewController()
-            else { fatalError("Did not instantiate `Develop` controller") }
-        viewController.title = "Develop"
+            else { fatalError("Did not instantiate `Utility` controller") }
+        viewController.title = "Utility"
 
         return viewController
     }
 }
 
 // MARK: - Controller
-class DevelopTableViewController: UITableViewController {
+class UtilityTableViewController: UITableViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()

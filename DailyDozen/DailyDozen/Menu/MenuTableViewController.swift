@@ -13,7 +13,7 @@ class MenuTableViewController: UITableViewController {
 
     // MARK: - Nested
     private struct Strings {
-        static let info = "Info" // :NYI:ToBeLocalized:
+        static let info = "More" // :NYI:ToBeLocalized:
     }
     
     // MARK: - UITableViewController
@@ -57,14 +57,10 @@ extension MenuTableViewController {
                       completionHandler: nil)
             dismiss(animated: false)
         //else if let controller = menuItem.controller {
-        } else if menuItem.controller != nil {
-            // `AboutViewController`, `ServingsViewController`, `SettingsViewController`
-            //splitViewController?.showDetailViewController(controller, sender: nil)
-            
-            let aboutViewController = AboutBuilder.instantiateController()
-            aboutViewController.popoverPresentationController?.sourceView = view
-            self.present(aboutViewController, animated: true, completion: nil)
-           
+        } else if let viewController = menuItem.controller {
+            // `AboutViewController`
+            //let aboutViewController = AboutBuilder.instantiateController()
+            navigationController?.pushViewController(viewController, animated: true)
         } else {
             presentShareServices() // Backup: iCloud, on device file, ... more
         }
