@@ -79,6 +79,9 @@
                                                                         <real key="value" value="10"/>
                                                                     </userDefinedRuntimeAttribute>
                                                                 </userDefinedRuntimeAttributes>
+                                                                <connections>
+                                                                    <action selector="dailyDozenOnly:" destination="abI-xj-cFt" eventType="touchUpInside" id="2vY-Ms-iJd"/>
+                                                                </connections>
                                                             </button>
                                                         </subviews>
                                                     </stackView>
@@ -103,6 +106,9 @@
                                                                         <real key="value" value="10"/>
                                                                     </userDefinedRuntimeAttribute>
                                                                 </userDefinedRuntimeAttributes>
+                                                                <connections>
+                                                                    <action selector="dozenPlusTweaks:" destination="abI-xj-cFt" eventType="touchUpInside" id="BIu-rI-Kr3"/>
+                                                                </connections>
                                                             </button>
                                                         </subviews>
                                                     </stackView>

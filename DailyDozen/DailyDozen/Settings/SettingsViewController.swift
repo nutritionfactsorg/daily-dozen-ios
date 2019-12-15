@@ -51,12 +51,12 @@ class SettingsViewController: UITableViewController {
     }
     
     var reminderSwitch: Bool!
-    //var datePicked: Date!
-    //var soundSwitchOn: Bool!
     
     override func viewDidLoad() {
         super.viewDidLoad()
         navigationController?.navigationBar.titleTextAttributes = [NSAttributedString.Key.foregroundColor: UIColor.white]
+        navigationController?.navigationBar.barTintColor = UIColor.greenColor
+        navigationController?.navigationBar.tintColor = UIColor.white
         
         // Measurement Units
         setUnitsMeasureSegment()
@@ -96,7 +96,7 @@ class SettingsViewController: UITableViewController {
     //        //header.textLabel?.textAlignment = .center
     //    }
     
-    // :???: not needed with grouped attribute
+    // :???: likely not needed with grouped attribute
     //override func tableView(_ tableView: UITableView, willDisplayFooterView view: UIView, forSection section: Int) {
     //    guard let footer = view as? UITableViewHeaderFooterView else { return }
     //    //footer.textLabel?.font = footer.textLabel?.font.withSize(14)
@@ -214,14 +214,15 @@ class SettingsViewController: UITableViewController {
             UserDefaults.standard.set(false, forKey: SettingsKeys.show21TweaksPref)
             NotificationCenter.default.post(
                 name: NSNotification.Name(rawValue: "NoticeUpdatedShowTweaksTab"),
-                object: nil,
+                object: 0,
                 userInfo: nil)
-        } else if show21Tweaks == false {
+        } else if tweaksVisibilityController.selectedSegmentIndex == 1
+            && show21Tweaks == false {
             // Toggle to show 2nd tab
             UserDefaults.standard.set(true, forKey: SettingsKeys.show21TweaksPref)
             NotificationCenter.default.post(
                 name: NSNotification.Name(rawValue: "NoticeUpdatedShowTweaksTab"),
-                object: nil,
+                object: 1,
                 userInfo: nil)
         }
     }

@@ -20,14 +20,11 @@ class MenuTableViewController: UITableViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        title = ""
-
+        //title = "" // title set in Main right now
+        
         navigationController?.navigationBar.barTintColor = UIColor.greenColor
         navigationController?.navigationBar.tintColor = UIColor.white
-
-        let barItem = UIBarButtonItem(title: Strings.info, style: .done, target: nil, action: nil)
-        barItem.tintColor = UIColor.white
-        navigationItem.setLeftBarButton(barItem, animated: false)
+        navigationController?.navigationBar.titleTextAttributes = [NSAttributedString.Key.foregroundColor: UIColor.white]
     }
 
     /// Presents share services.
@@ -59,9 +56,15 @@ extension MenuTableViewController {
                       options: convertToUIApplicationOpenExternalURLOptionsKeyDictionary([:]),
                       completionHandler: nil)
             dismiss(animated: false)
-        } else if let controller = menuItem.controller {
+        //else if let controller = menuItem.controller {
+        } else if menuItem.controller != nil {
             // `AboutViewController`, `ServingsViewController`, `SettingsViewController`
-            splitViewController?.showDetailViewController(controller, sender: nil)
+            //splitViewController?.showDetailViewController(controller, sender: nil)
+            
+            let aboutViewController = AboutBuilder.instantiateController()
+            aboutViewController.popoverPresentationController?.sourceView = view
+            self.present(aboutViewController, animated: true, completion: nil)
+           
         } else {
             presentShareServices() // Backup: iCloud, on device file, ... more
         }

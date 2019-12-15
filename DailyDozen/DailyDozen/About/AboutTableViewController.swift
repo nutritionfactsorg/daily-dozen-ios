@@ -53,6 +53,13 @@ class AboutTableViewController: UITableViewController {
     // MARK: - UITableViewController
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        navigationController?.navigationBar.barTintColor = UIColor.greenColor
+        navigationController?.navigationBar.tintColor = UIColor.white
+        navigationController?.navigationBar.titleTextAttributes = [NSAttributedString.Key.foregroundColor: UIColor.white]
+        let barItem = UIBarButtonItem(title: "Done", style: .done, target: nil, action: nil)
+        barItem.tintColor = UIColor.white
+        navigationItem.setLeftBarButton(barItem, animated: false)
 
         let bookType = ActiveType.custom(pattern: Regex.book)
         messageLabel.enabledTypes.append(bookType)

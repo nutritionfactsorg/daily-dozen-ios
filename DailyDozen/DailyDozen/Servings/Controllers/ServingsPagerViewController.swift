@@ -74,10 +74,10 @@ class ServingsPagerViewController: UIViewController {
 
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
-
+        navigationController?.navigationBar.barTintColor = UIColor.greenColor
         navigationController?.navigationBar.titleTextAttributes = [NSAttributedString.Key.foregroundColor: UIColor.white]
         
-        if !UserDefaults.standard.bool(forKey: SettingsKeys.hasSeenFirstLaunch) == false {
+        if UserDefaults.standard.bool(forKey: SettingsKeys.hasSeenFirstLaunch) == false {
             UserDefaults.standard.set(true, forKey: SettingsKeys.hasSeenFirstLaunch)
             let viewController = FirstLaunchBuilder.instantiateController()
             navigationController?.pushViewController(viewController, animated: true)

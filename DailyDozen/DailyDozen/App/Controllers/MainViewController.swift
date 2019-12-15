@@ -15,13 +15,17 @@ class MainViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        navigationController?.navigationBar.tintColor = UIColor.greenColor
+        navigationController?.navigationBar.tintColor = UIColor.white
+        navigationController?.navigationBar.titleTextAttributes = [NSAttributedString.Key.foregroundColor: UIColor.white]
+        navigationController?.navigationBar.isTranslucent = false
 
         // Global App Settings
         setupUnitsType()
         setupReminders()
         setupTabNaviation()
         
-        UserDefaults.standard.set(false, forKey: SettingsKeys.hasSeenFirstLaunch) // :!!!:DEBUG: default should be true
+        //UserDefaults.standard.set(false, forKey: SettingsKeys.hasSeenFirstLaunch) // :!!!:DEBUG: default should be true
     }
     
     private func setupUnitsType() {
@@ -95,9 +99,9 @@ class MainViewController: UIViewController {
             UserDefaults.standard.set(true, forKey: SettingsKeys.show21TweaksPref)
         }
         
-        mainTabBarController.tabBar.tintColor = UIColor.white // tint active. otherwise gray
-        mainTabBarController.tabBar.backgroundColor = UIColor.black //
-        mainTabBarController.tabBar.barTintColor = UIColor.cyan // lower
+        mainTabBarController.tabBar.barTintColor = UIColor.white
+        mainTabBarController.tabBar.isTranslucent = false
+        mainTabBarController.tabBar.tintColor = UIColor.black
         updateTabBarController()
         
         NotificationCenter.default.addObserver(
@@ -114,10 +118,14 @@ class MainViewController: UIViewController {
     // MARK: - Navigation
 
     @objc func updateTabBarController(notification: Notification) {
-        updateTabBarController()
+        if let index = notification.object as? Int {
+            updateTabBarController(selectedIndex: index)
+        } else {
+            updateTabBarController()
+        }
     }
 
-    func updateTabBarController() {
+    func updateTabBarController(selectedIndex: Int? = nil) {
         var controllerArray = [UIViewController]()
         
         // Daily Dozen Tab
@@ -128,15 +136,11 @@ class MainViewController: UIViewController {
             else { fatalError("Did not instantiate `ServingsPagerViewController`") }
 
         tabDailyDozenViewController.title = "Daily Dozen"
-        tabDailyDozenViewController.view.backgroundColor = UIColor.red // :!!!:DEBUG: should be a different color
-        tabDailyDozenViewController.view.alpha = CGFloat(1.0) // :!!!:DEBUG: should be a different color
-        //tabDailyDozenViewController.view.tintColor = UIColor.greenColor // :!!!:???:NOP:
-        let uiTabBarItem = UITabBarItem.init(
+        tabDailyDozenViewController.tabBarItem = UITabBarItem.init(
             title: "Daily Dozen", // shows below tab bar item icon
             image: UIImage(named: "ic_tabapp_dailydozen"),
             tag: 0
         )
-        tabDailyDozenViewController.tabBarItem = uiTabBarItem
         controllerArray.append(tabDailyDozenViewController)
 
         // Tweaks Tab
@@ -148,7 +152,6 @@ class MainViewController: UIViewController {
                 else { fatalError("Did not instantiate `TweaksPagerViewController`") }
 
             tabTweaksViewController.title = "21 Tweaks"
-            tabTweaksViewController.view.backgroundColor =  UIColor.green
             tabTweaksViewController.tabBarItem = UITabBarItem.init(
                 title: "21 Tweaks",
                 image: UIImage(named: "ic_tabapp_21tweaks"),
@@ -165,7 +168,6 @@ class MainViewController: UIViewController {
             else { fatalError("Did not instantiate Info `MenuTableViewController`") }
 
         tabInfoViewController.title = "Info"
-        tabInfoViewController.view.backgroundColor =  UIColor.blue // :!!!:DEBUG: should be a different color
         tabInfoViewController.tabBarItem = UITabBarItem.init(
             title: "Info",
             image: UIImage(named: "ic_tabapp_info"),
@@ -181,7 +183,6 @@ class MainViewController: UIViewController {
             else { fatalError("Did not instantiate `SettingsViewController`") }
 
         tabSettingsViewController.title = "Settings"
-        tabSettingsViewController.view.backgroundColor =  UIColor.magenta // :!!!:DEBUG: should be a different color
         tabSettingsViewController.tabBarItem = UITabBarItem.init(
             title: "Settings",
             image: UIImage(named: "ic_tabapp_settings"),
@@ -197,6 +198,9 @@ class MainViewController: UIViewController {
         }
                 
         mainTabBarController.viewControllers = navControllerArray
+        if let selectedIndex = selectedIndex {
+            mainTabBarController.selectedIndex = selectedIndex
+        }
         self.view.addSubview(mainTabBarController.view)
     }
 

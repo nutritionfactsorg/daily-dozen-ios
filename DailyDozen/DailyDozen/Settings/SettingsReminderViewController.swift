@@ -31,13 +31,13 @@ class SettingsReminderViewController: UITableViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        let canNotificate = UserDefaults.standard.bool(forKey: SettingsKeys.reminderCanNotify)
-        reminderSwitch.isOn = canNotificate
-        if reminderSwitch.isOn {
             datePicker.datePickerMode = .time
             datePicker.date.hour = UserDefaults.standard.integer(forKey: SettingsKeys.reminderHourPref)
             datePicker.date.minute = UserDefaults.standard.integer(forKey: SettingsKeys.reminderMinutePref)
             
+        let canNotificate = UserDefaults.standard.bool(forKey: SettingsKeys.reminderCanNotify)
+        reminderSwitch.isOn = canNotificate
+        if reminderSwitch.isOn {
             soundSwitch.isOn = UserDefaults.standard.bool(forKey: SettingsKeys.reminderSoundPref)
         } else {
             datePicker.isEnabled = false

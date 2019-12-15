@@ -22,7 +22,7 @@ struct SettingsKeys {
     // UnitsTypeTogglePref: on|off
     static let unitsTypeTogglePref = "unitsTypeTogglePref"
     // Hide|Show 21 Tweaks
-    static let show21TweaksPref = "showTweaksTab"
+    static let show21TweaksPref = "show21TweaksPref"
     // Used for first launch
     static let hasSeenFirstLaunch = "hasSeenFirstLaunch_v3.1.0"
 }
