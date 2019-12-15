@@ -15,7 +15,6 @@ class MainSplitViewController: UISplitViewController {
         super.viewDidLoad()
 
         UNUserNotificationCenter.current().delegate = self
-
         UNUserNotificationCenter.current().removeAllPendingNotificationRequests()
 
         if UserDefaults.standard.object(forKey: SettingsKeys.unitsTypePref) == nil {
@@ -24,7 +23,6 @@ class MainSplitViewController: UISplitViewController {
         }
         
         if UserDefaults.standard.object(forKey: SettingsKeys.reminderCanNotify) == nil {
-
             UNUserNotificationCenter.current().getNotificationSettings { settings in
                 UserDefaults.standard.set(settings.authorizationStatus == .authorized, forKey: SettingsKeys.reminderCanNotify)
             }
