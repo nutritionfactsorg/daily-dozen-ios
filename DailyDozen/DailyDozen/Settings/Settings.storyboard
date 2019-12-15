@@ -11,21 +11,22 @@
         <scene sceneID="q0m-03-aXS">
             <objects>
                 <tableViewController storyboardIdentifier="Settings" id="mGU-tx-G19" customClass="SettingsViewController" customModule="DailyDozen" customModuleProvider="target" sceneMemberID="viewController">
-                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="static" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="60" sectionHeaderHeight="80" estimatedSectionHeaderHeight="80" sectionFooterHeight="-1" estimatedSectionFooterHeight="50" id="KZw-Ii-cAW">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="static" style="grouped" separatorStyle="default" rowHeight="-1" estimatedRowHeight="60" sectionHeaderHeight="18" estimatedSectionHeaderHeight="80" sectionFooterHeight="18" estimatedSectionFooterHeight="50" id="KZw-Ii-cAW">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <sections>
-                            <tableViewSection headerTitle="Units of Measure" footerTitle="Set to one unit or toggle use" id="IFs-g0-SPV">
+                            <tableViewSection headerTitle="Measurement Units" footerTitle="Set to always be one unit type or enable the 'Units:' toggle button." id="IFs-g0-SPV">
                                 <cells>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" id="YEo-GB-6uq">
-                                        <rect key="frame" x="0.0" y="28" width="320" height="43.5"/>
+                                        <rect key="frame" x="0.0" y="55.5" width="320" height="43.5"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="YEo-GB-6uq" id="IB8-po-j4u">
                                             <rect key="frame" x="0.0" y="0.0" width="320" height="43.5"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="RLb-GV-4hh">
-                                                    <rect key="frame" x="15" y="0.0" width="290" height="45"/>
+                                                    <rect key="frame" x="15" y="6.5" width="290" height="32"/>
                                                     <segments>
                                                         <segment title="Imperial"/>
                                                         <segment title="Metric"/>
@@ -37,7 +38,6 @@
                                                 </segmentedControl>
                                             </subviews>
                                             <constraints>
-                                                <constraint firstItem="RLb-GV-4hh" firstAttribute="top" secondItem="IB8-po-j4u" secondAttribute="topMargin" constant="-11" id="HCm-1s-aPc"/>
                                                 <constraint firstItem="RLb-GV-4hh" firstAttribute="centerY" secondItem="IB8-po-j4u" secondAttribute="centerY" id="jEW-Jo-NCq"/>
                                                 <constraint firstItem="RLb-GV-4hh" firstAttribute="centerX" secondItem="IB8-po-j4u" secondAttribute="centerX" id="sNP-4H-4C4"/>
                                             </constraints>
@@ -48,7 +48,7 @@
                             <tableViewSection headerTitle="Daily Reminder" id="GiY-ao-2ee">
                                 <cells>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" accessoryType="disclosureIndicator" indentationWidth="10" id="Rin-dX-o2L">
-                                        <rect key="frame" x="0.0" y="127.5" width="320" height="43.5"/>
+                                        <rect key="frame" x="0.0" y="183" width="320" height="43.5"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="Rin-dX-o2L" id="38M-Xa-tjI">
                                             <rect key="frame" x="0.0" y="0.0" width="293" height="43.5"/>
@@ -85,33 +85,29 @@
                                     </tableViewCell>
                                 </cells>
                             </tableViewSection>
-                            <tableViewSection headerTitle="21 Tweaks" footerTitle="Enable viewing of 21 Tweaks features" id="WdR-XV-IyP">
+                            <tableViewSection headerTitle="21 Tweaks Visibility" footerTitle="For health alone, use &quot;Daily Dozen Only&quot;. For health and weight loss use &quot;Daily Dozen + 21 Tweaks&quot;." id="WdR-XV-IyP">
                                 <cells>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" id="fqG-Hb-rcX">
-                                        <rect key="frame" x="0.0" y="227" width="320" height="43.5"/>
+                                        <rect key="frame" x="0.0" y="290" width="320" height="43.5"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="fqG-Hb-rcX" id="dWG-Py-aYY">
                                             <rect key="frame" x="0.0" y="0.0" width="320" height="43.5"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Daily Dozen + 21 Tweaks" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="KXJ-bF-voa">
-                                                    <rect key="frame" x="20" y="10.5" width="189" height="21"/>
-                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                                    <nil key="textColor"/>
-                                                    <nil key="highlightedColor"/>
-                                                </label>
-                                                <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" on="YES" translatesAutoresizingMaskIntoConstraints="NO" id="p09-J8-Jqb">
-                                                    <rect key="frame" x="263.5" y="5" width="53.5" height="34"/>
-                                                    <constraints>
-                                                        <constraint firstAttribute="width" secondItem="p09-J8-Jqb" secondAttribute="height" multiplier="47:31" id="X0u-4A-1hX"/>
-                                                    </constraints>
-                                                </switch>
+                                                <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" apportionsSegmentWidthsByContent="YES" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="OZO-Xa-v5G">
+                                                    <rect key="frame" x="12" y="6.5" width="296" height="32"/>
+                                                    <segments>
+                                                        <segment title="Daily Dozen Only"/>
+                                                        <segment title="Daily Dozen + 21 Tweaks"/>
+                                                    </segments>
+                                                    <connections>
+                                                        <action selector="doTweaksVisibilityChanged:" destination="mGU-tx-G19" eventType="valueChanged" id="AJw-tf-5Qo"/>
+                                                    </connections>
+                                                </segmentedControl>
                                             </subviews>
                                             <constraints>
-                                                <constraint firstAttribute="trailing" secondItem="p09-J8-Jqb" secondAttribute="trailing" constant="5" id="NwI-Z0-bUq"/>
-                                                <constraint firstItem="p09-J8-Jqb" firstAttribute="top" secondItem="dWG-Py-aYY" secondAttribute="top" constant="5" id="XRa-0N-73h"/>
-                                                <constraint firstAttribute="bottom" secondItem="p09-J8-Jqb" secondAttribute="bottom" constant="5" id="sv7-ye-hBl"/>
+                                                <constraint firstItem="OZO-Xa-v5G" firstAttribute="centerX" secondItem="dWG-Py-aYY" secondAttribute="centerX" id="U9E-Cg-iwu"/>
+                                                <constraint firstItem="OZO-Xa-v5G" firstAttribute="centerY" secondItem="dWG-Py-aYY" secondAttribute="centerY" id="XDz-QY-DC3"/>
                                             </constraints>
                                         </tableViewCellContentView>
                                     </tableViewCell>
@@ -128,13 +124,13 @@
                         <outlet property="datePicker" destination="bzd-el-hc4" id="Cch-at-5uP"/>
                         <outlet property="reminderIsOn" destination="XFw-2q-BdT" id="wAY-nx-7mR"/>
                         <outlet property="soundSwitch" destination="rNl-6C-9Kw" id="vko-LB-RCK"/>
-                        <outlet property="tweakToggle" destination="p09-J8-Jqb" id="0rk-pW-xyM"/>
+                        <outlet property="tweaksVisibilityController" destination="OZO-Xa-v5G" id="LAW-0U-SrN"/>
                         <outlet property="unitMeasureToggle" destination="RLb-GV-4hh" id="khw-vy-RXJ"/>
                     </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="FPM-gT-d4h" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="881" y="-37"/>
+            <point key="canvasLocation" x="879.375" y="-38.028169014084504"/>
         </scene>
         <!--Settings Reminder View Controller-->
         <scene sceneID="1kL-us-YpV">

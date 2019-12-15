@@ -21,11 +21,6 @@ class MainViewController: UIViewController {
         setupReminders()
         setupTabNaviation()
         
-        if !UserDefaults.standard.bool(forKey: SettingsKeys.hasSeenFirstLaunch) {
-            UserDefaults.standard.set(true, forKey: SettingsKeys.hasSeenFirstLaunch)
-            let viewController = FirstLaunchBuilder.instantiateController()
-            navigationController?.pushViewController(viewController, animated: true)
-        }
         UserDefaults.standard.set(false, forKey: SettingsKeys.hasSeenFirstLaunch) // :!!!:DEBUG: default should be true
     }
     
@@ -96,15 +91,13 @@ class MainViewController: UIViewController {
     
     private func setupTabNaviation() {
         // ----- Tab Navigation Setup -----
-        if !UserDefaults.standard.bool(forKey: SettingsKeys.hasSeenFirstLaunch) {
-            UserDefaults.standard.set(true, forKey: SettingsKeys.showTweaksTab)
+        if UserDefaults.standard.bool(forKey: SettingsKeys.hasSeenFirstLaunch) == false {
+            UserDefaults.standard.set(true, forKey: SettingsKeys.show21TweaksPref)
         }
         
-        print("\n## viewDidLoad ##") // :!!!:
-        print("hasSeenFirstLaunch \(UserDefaults.standard.bool(forKey: SettingsKeys.hasSeenFirstLaunch))") // :!!!:
-        print("showTweaksTab \(UserDefaults.standard.bool(forKey: SettingsKeys.showTweaksTab))") // :!!!:
-
-        mainTabBarController.tabBar.tintColor = UIColor.black
+        mainTabBarController.tabBar.tintColor = UIColor.white // tint active. otherwise gray
+        mainTabBarController.tabBar.backgroundColor = UIColor.black //
+        mainTabBarController.tabBar.barTintColor = UIColor.cyan // lower
         updateTabBarController()
         
         NotificationCenter.default.addObserver(
@@ -125,10 +118,6 @@ class MainViewController: UIViewController {
     }
 
     func updateTabBarController() {
-        print("\n## updateTabBarController ##") // :!!!:
-        print("hasSeenFirstLaunch \(UserDefaults.standard.bool(forKey: SettingsKeys.hasSeenFirstLaunch))") // :!!!:
-        print("showTweaksTab \(UserDefaults.standard.bool(forKey: SettingsKeys.showTweaksTab))") // :!!!:
-
         var controllerArray = [UIViewController]()
         
         // Daily Dozen Tab
@@ -140,16 +129,18 @@ class MainViewController: UIViewController {
 
         tabDailyDozenViewController.title = "Daily Dozen"
         tabDailyDozenViewController.view.backgroundColor = UIColor.red // :!!!:DEBUG: should be a different color
+        tabDailyDozenViewController.view.alpha = CGFloat(1.0) // :!!!:DEBUG: should be a different color
         //tabDailyDozenViewController.view.tintColor = UIColor.greenColor // :!!!:???:NOP:
-        tabDailyDozenViewController.tabBarItem = UITabBarItem.init(
-            title: "Daily Dozen",
+        let uiTabBarItem = UITabBarItem.init(
+            title: "Daily Dozen", // shows below tab bar item icon
             image: UIImage(named: "ic_tabapp_dailydozen"),
             tag: 0
         )
+        tabDailyDozenViewController.tabBarItem = uiTabBarItem
         controllerArray.append(tabDailyDozenViewController)
 
         // Tweaks Tab
-        if UserDefaults.standard.bool(forKey: SettingsKeys.showTweaksTab) {
+        if UserDefaults.standard.bool(forKey: SettingsKeys.show21TweaksPref) {
             let tab2ndStoryboard = UIStoryboard(name: "TweaksPager", bundle: nil)  // :!!!: hard coded storyboard
             guard
                 let tabTweaksViewController = tab2ndStoryboard

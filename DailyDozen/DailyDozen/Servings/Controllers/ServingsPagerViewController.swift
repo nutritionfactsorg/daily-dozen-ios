@@ -76,6 +76,13 @@ class ServingsPagerViewController: UIViewController {
         super.viewDidAppear(animated)
 
         navigationController?.navigationBar.titleTextAttributes = [NSAttributedString.Key.foregroundColor: UIColor.white]
+        
+        if !UserDefaults.standard.bool(forKey: SettingsKeys.hasSeenFirstLaunch) == false {
+            UserDefaults.standard.set(true, forKey: SettingsKeys.hasSeenFirstLaunch)
+            let viewController = FirstLaunchBuilder.instantiateController()
+            navigationController?.pushViewController(viewController, animated: true)
+        }
+
     }
 
     // MARK: - Methods
