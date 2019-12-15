@@ -59,6 +59,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         print(":::::::::::::::::::::::::::::::::\n")
         #endif
         
+        // ---- Global Setup -----
+        
         // Update legacy database if not already updated
         if !UserDefaults.standard.bool(forKey: "didUpdateLegacyDatabase") {
             let realmMngrOld = RealmManagerLegacy(workingDirUrl: documentsUrl)
@@ -68,6 +70,11 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
             realmMngrNew.csvImport(filename: legacyExportFilename)
             UserDefaults.standard.set(true, forKey: "didUpdateLegacyDatabase")
         }
+        
+        // ----- User Interface Setup -----
+        // Note: User Interface particulars would be in SceneDelegate for newer impementations.
+        
+        // ----- Notification Setup -----
         
         UNUserNotificationCenter.current().requestAuthorization(options: [.alert, .sound, .badge]) { (_, error) in
             if let error = error {
