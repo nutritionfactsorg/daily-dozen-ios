@@ -26,7 +26,7 @@
                         <stackView opaque="NO" contentMode="scaleToFill" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="QeT-HX-yAV">
                             <rect key="frame" x="182.5" y="0.0" width="182.5" height="28"/>
                             <subviews>
-                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Units:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="kho-9G-OWe">
+                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Units:" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="kho-9G-OWe">
                                     <rect key="frame" x="0.0" y="0.0" width="72.5" height="28"/>
                                     <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="17"/>
                                     <color key="textColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
@@ -48,6 +48,13 @@
                                     </connections>
                                 </button>
                             </subviews>
+                            <constraints>
+                                <constraint firstItem="kho-9G-OWe" firstAttribute="centerY" secondItem="QeT-HX-yAV" secondAttribute="centerY" id="6Td-bu-bPg"/>
+                                <constraint firstItem="kho-9G-OWe" firstAttribute="leading" secondItem="QeT-HX-yAV" secondAttribute="leading" id="Bd7-sk-5mO"/>
+                                <constraint firstItem="M75-CQ-NVP" firstAttribute="centerY" secondItem="QeT-HX-yAV" secondAttribute="centerY" id="D5Q-fc-74l"/>
+                                <constraint firstAttribute="trailing" secondItem="M75-CQ-NVP" secondAttribute="trailing" id="J0R-kJ-GWU"/>
+                                <constraint firstItem="M75-CQ-NVP" firstAttribute="leading" secondItem="kho-9G-OWe" secondAttribute="trailing" constant="10" id="bwc-VL-gPW"/>
+                            </constraints>
                         </stackView>
                     </subviews>
                 </stackView>

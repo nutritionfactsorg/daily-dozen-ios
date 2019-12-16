@@ -26,7 +26,7 @@
                         <stackView opaque="NO" contentMode="scaleToFill" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="g2g-EY-jHo">
                             <rect key="frame" x="182.5" y="0.0" width="182.5" height="28"/>
                             <subviews>
-                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Units:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="3bd-8h-kcX">
+                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Units:" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="3bd-8h-kcX">
                                     <rect key="frame" x="0.0" y="0.0" width="72.5" height="28"/>
                                     <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="17"/>
                                     <color key="textColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
@@ -48,6 +48,13 @@
                                     </connections>
                                 </button>
                             </subviews>
+                            <constraints>
+                                <constraint firstItem="1K3-d9-Hfb" firstAttribute="centerY" secondItem="g2g-EY-jHo" secondAttribute="centerY" id="4ww-Od-bQg"/>
+                                <constraint firstItem="1K3-d9-Hfb" firstAttribute="leading" secondItem="3bd-8h-kcX" secondAttribute="trailing" constant="10" id="Ksi-CL-OP8"/>
+                                <constraint firstAttribute="trailing" secondItem="1K3-d9-Hfb" secondAttribute="trailing" id="X9x-Xy-uRJ"/>
+                                <constraint firstItem="3bd-8h-kcX" firstAttribute="centerY" secondItem="g2g-EY-jHo" secondAttribute="centerY" id="cyM-Qk-bcn"/>
+                                <constraint firstItem="3bd-8h-kcX" firstAttribute="leading" secondItem="g2g-EY-jHo" secondAttribute="leading" id="dqH-c9-60J"/>
+                            </constraints>
                         </stackView>
                     </subviews>
                 </stackView>
