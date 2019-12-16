@@ -4,6 +4,7 @@
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15704"/>
+        <capability name="Named colors" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
@@ -32,6 +33,7 @@
                                                         <segment title="Metric"/>
                                                         <segment title="Toggle Units"/>
                                                     </segments>
+                                                    <color key="tintColor" name="IguanaGreen"/>
                                                     <connections>
                                                         <action selector="unitsTypePrefChanged:" destination="mGU-tx-G19" eventType="valueChanged" id="ycC-Y6-L0f"/>
                                                     </connections>
@@ -55,13 +57,13 @@
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" horizontalCompressionResistancePriority="751" text="On" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="XFw-2q-BdT">
-                                                    <rect key="frame" x="195" y="11.666666666666666" width="175" height="20.666666666666671"/>
+                                                    <rect key="frame" x="195" y="11.666666666666664" width="175" height="21"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Enable Reminders" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="itH-G7-Kal">
-                                                    <rect key="frame" x="20" y="11.999999999999998" width="165" height="20.333333333333329"/>
+                                                    <rect key="frame" x="20" y="12" width="165" height="20"/>
                                                     <constraints>
                                                         <constraint firstAttribute="width" constant="165" id="5qM-eN-osl"/>
                                                     </constraints>
@@ -99,6 +101,7 @@
                                                         <segment title="Daily Dozen Only"/>
                                                         <segment title="Daily Dozen + 21 Tweaks"/>
                                                     </segments>
+                                                    <color key="tintColor" name="IguanaGreen"/>
                                                     <connections>
                                                         <action selector="doTweaksVisibilityChanged:" destination="mGU-tx-G19" eventType="valueChanged" id="AJw-tf-5Qo"/>
                                                     </connections>
@@ -180,6 +183,7 @@
                                                     <constraints>
                                                         <constraint firstAttribute="width" secondItem="WSr-wG-uFV" secondAttribute="height" multiplier="47:31" id="yCq-I5-1gU"/>
                                                     </constraints>
+                                                    <color key="onTintColor" name="IguanaGreen"/>
                                                     <connections>
                                                         <action selector="reminderSwitched:" destination="TcI-bI-5iX" eventType="valueChanged" id="4hG-GP-lbH"/>
                                                     </connections>
@@ -244,6 +248,7 @@
                                                     <constraints>
                                                         <constraint firstAttribute="width" secondItem="rNl-6C-9Kw" secondAttribute="height" multiplier="47:31" id="RW1-wG-LXp"/>
                                                     </constraints>
+                                                    <color key="onTintColor" name="IguanaGreen"/>
                                                 </switch>
                                             </subviews>
                                             <constraints>
@@ -273,4 +278,9 @@
             <point key="canvasLocation" x="1689.375" y="-36.971830985915496"/>
         </scene>
     </scenes>
+    <resources>
+        <namedColor name="IguanaGreen">
+            <color red="0.42352941176470588" green="0.68235294117647061" blue="0.45882352941176469" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+    </resources>
 </document>
