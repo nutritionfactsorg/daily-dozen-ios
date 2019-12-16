@@ -149,7 +149,7 @@ class WeightViewController: UIViewController {
     // MARK: - UIViewController
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        
         weightPM.delegate = self
         weightAM.delegate = self
         timeAMInput.delegate = self
@@ -175,7 +175,7 @@ class WeightViewController: UIViewController {
         timePMInput.inputView = timePickerPM
         
         setViewModel(viewDate: Date())
-
+        
         // Unit Type
         if isImperial() {
             weightAMLabel.text = "lbs."
@@ -213,16 +213,19 @@ class WeightViewController: UIViewController {
             let bodyMassKg = someElement.quantity.doubleValue(for: HKUnit.gramUnit(with: .kilo))
             let dateFormatter = DateFormatter()
             dateFormatter.dateFormat = "hh:mm a"
-            timeAMInput.text = dateFormatter.string(from: someElement.endDate)
-            var amWeight = Double(bodyMassKg)
-            if isImperial() {
-                amWeight = amWeight * 2.2046 // kg = lbs * 2.2046
+            let dateStr = dateFormatter.string(from: someElement.endDate)
+            if dateStr.suffix(2).lowercased() == "am" {
+                timeAMInput.text = dateStr
+                var amWeight = Double(bodyMassKg)
+                if isImperial() {
+                    amWeight = amWeight * 2.2046 // kg = lbs * 2.2046
+                }
+                weightAM.text = String(format: "%.2f", amWeight)
             }
-            weightAM.text = String(format: "%.2f", amWeight)
             return
         }
     }
-
+    
     @objc func updateEveningHKData(notification: Notification) {
         guard let weightArray = notification.object as? [HKQuantitySample],
             weightArray.count > 0 else {
@@ -233,19 +236,20 @@ class WeightViewController: UIViewController {
             let bodyMassKg = someElement.quantity.doubleValue(for: HKUnit.gramUnit(with: .kilo))
             let dateFormatter = DateFormatter()
             dateFormatter.dateFormat = "hh:mm a"
-            timePMInput.text = dateFormatter.string(from: someElement.endDate)
-            
-           var pmWeight = Double(bodyMassKg)
-           if isImperial() {
-                pmWeight = pmWeight * 2.2046 // 1 kg =  2.2046 lb
+            let dateStr = dateFormatter.string(from: someElement.endDate)
+            if dateStr.suffix(2).lowercased() == "pm" {
+                timePMInput.text = dateStr
+                var pmWeight = Double(bodyMassKg)
+                if isImperial() {
+                    pmWeight = pmWeight * 2.2046 // 1 kg =  2.2046 lb
+                }
+                weightPM.text = String(format: "%.2f", pmWeight)
             }
-            
-            weightPM.text = String(format: "%.2f", pmWeight)
             return
         }
         
     }
-
+    
     override func viewWillDisappear(_ animated: Bool) {
         super.viewWillDisappear(animated)
         // Update stored values
@@ -350,10 +354,10 @@ class WeightViewController: UIViewController {
             }
         } else {
             //let now = Date()
-//            if viewDate.datestampKey == now.datestampKey {
-//                HealthManager.shared.fetchWeightDataEvening()
-//            }
-           let start = Calendar.current.startOfDay(for: viewDate)
+            //            if viewDate.datestampKey == now.datestampKey {
+            //                HealthManager.shared.fetchWeightDataEvening()
+            //            }
+            let start = Calendar.current.startOfDay(for: viewDate)
             var components = DateComponents()
             components.day = 1
             components.second = -1

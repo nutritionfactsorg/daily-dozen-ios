@@ -44,6 +44,9 @@ class SettingsViewController: UITableViewController {
     // 21 Tweaks Visibility
     @IBOutlet weak var tweaksVisibilityController: UISegmentedControl!
     
+    // Advance Utilities
+    @IBOutlet weak var advancedUtilitiesTableViewCell: UITableViewCell!
+    
     enum UnitsSegmentState: Int {
         case imperialState = 0
         case metricState = 1
@@ -76,6 +79,12 @@ class SettingsViewController: UITableViewController {
             tweaksVisibilityController.selectedSegmentIndex = 0
         }
         
+        #if targetEnvironment(simulator)
+        //print("::::: SIMULATOR ENVIRONMENT: SettingsViewController :::::")
+        //advancedUtilitiesTableViewCell.isHidden = true
+        //print(":::::::::::::::::::::::::::::::::::::::::::::::::::::::::\n")
+        #endif
+        advancedUtilitiesTableViewCell.isHidden = true
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -243,23 +252,5 @@ class SettingsViewController: UITableViewController {
         let viewController = UtilityBuilder.instantiateController()
         navigationController?.pushViewController(viewController, animated: true)
     }
-    
-    @IBAction func doUtilityClearSettings(_ sender: UIButton) {
-    }
-    
-    @IBAction func doUtilityClearTestData(_ sender: UIButton) {
-    }
-    
-    @IBAction func doUtilityCreateTestData(_ sender: UIButton) {
-    }
-    
-    @IBAction func doUtilityCreateLegacyTestData(_ sender: UIButton) {
-    }
-    
-    @IBAction func doUtilityExportData(_ sender: UIButton) {
-    }
-    
-    @IBAction func doUtilityImportData(_ sender: UIButton) {
-    }
-    
+        
 }

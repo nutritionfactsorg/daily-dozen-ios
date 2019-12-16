@@ -39,6 +39,7 @@ class WeightHistoryViewController: UIViewController {
     @IBOutlet private weak var controlPanel: ControlPanel! // Buttons: << < … > >>
     @IBOutlet private weak var scaleControl: UISegmentedControl! // Day|Month|Year
     @IBOutlet weak var weightEditDataButton: UIButton!
+    @IBOutlet weak var weightTitleUnits: UILabel!
     
     // MARK: - Properties
     private var weightViewModel: WeightHistoryViewModel!
@@ -48,7 +49,13 @@ class WeightHistoryViewController: UIViewController {
     private var chartSettings: (year: Int, month: Int)! {
         didSet {
             lineChartView.clear()
-                        
+            
+            if isImperial() {
+                weightTitleUnits.text = "Weight (lbs)"
+            } else {
+                weightTitleUnits.text = "Weight (kg)"
+            }
+            
             if currentTimeScale == .day {
                 controlPanel.isHidden = false
                 controlPanel.superview?.isHidden = false

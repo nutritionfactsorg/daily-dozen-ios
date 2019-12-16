@@ -38,7 +38,8 @@ class AboutTableViewController: UITableViewController {
 
     // MARK: - Nested
     private struct Regex {
-        static let book = "\\sHow Not to Die\\b"
+        static let bookHowNotToDie = "\\sHow Not to Die\\b"
+        static let bookHowNotToDiet = "\\sHow Not to Diet\\b"
         static let site = "\\sNutritionFacts.org\\b"
         static let christi = "\\sChristi Richards\\b"
         static let const = "\\sKonstantin Khokhlov\\b"
@@ -61,7 +62,7 @@ class AboutTableViewController: UITableViewController {
         barItem.tintColor = UIColor.white
         navigationItem.setLeftBarButton(barItem, animated: false)
 
-        let bookType = ActiveType.custom(pattern: Regex.book)
+        let bookType = ActiveType.custom(pattern: Regex.bookHowNotToDie)
         messageLabel.enabledTypes.append(bookType)
 
         messageLabel.customize { label in

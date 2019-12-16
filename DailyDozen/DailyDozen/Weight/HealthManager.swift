@@ -185,7 +185,7 @@ class HealthManager {
                 }
         })
         
-        self.healthStore .execute(sampleQuery)
+        self.healthStore.execute(sampleQuery)
     }
     
     public func fetchWeightDataEvening(startDate: Date, endDate: Date) {
@@ -218,7 +218,7 @@ class HealthManager {
                 }
         })
         
-        self.healthStore .execute(sampleQuery)
+        self.healthStore.execute(sampleQuery)
     }
 
 }
