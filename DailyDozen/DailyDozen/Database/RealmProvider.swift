@@ -5,6 +5,10 @@
 //  Created by marc on 2019.11.08.
 //  Copyright © 2019 NutritionFacts.org. All rights reserved.
 //
+// swiftlint:disable cyclomatic_complexity
+// swiftlint:disable function_body_length
+// swiftlint:disable type_body_length
+// swiftlint:disable file_length
 
 import Foundation
 import RealmSwift
@@ -42,7 +46,7 @@ class RealmProvider {
         let datestampKey = date.datestampKey
         let amPid = "\(datestampKey).am"
         let pmPid = "\(datestampKey).pm"
-
+        
         let amWeightRecord = realm.object(ofType: DataWeightRecord.self, forPrimaryKey: amPid)
         let pmWeightRecord = realm.object(ofType: DataWeightRecord.self, forPrimaryKey: pmPid)
         
@@ -111,53 +115,189 @@ class RealmProvider {
     }
     
     /// Note: minimal checked. Expects stored database values to be valid. Exists on first data error.
-    func getDailyTrackers() -> [DailyTracker] {
-        var allTrackers = [DailyTracker]()
+    func getDailyTrackers() -> [DailyTracker] {        
+        // Daily Dozen & Tweaks Counters
         let counterResults = realm.objects(DataCountRecord.self)
         let counterResultsById = counterResults.sorted(byKeyPath: "pid")
-        guard counterResultsById.count > 0 else {
-            return allTrackers
-        }
         
+        // Weight History
         let weightResults = realm.objects(DataWeightRecord.self)
         let weightResultsById = weightResults.sorted(byKeyPath: "pid")
         
-        let firstDataCountRecord = counterResultsById[0]
-        guard var currentDate = firstDataCountRecord.pidParts?.datestamp else {
-            return allTrackers
+        if counterResultsById.count > 0 && weightResultsById.count > 0 {
+            return getDailyTrackersAll(counterResults: counterResults, weightResults: weightResults)
+        } else if counterResultsById.count > 0 {
+            return getDailyTrackersCountersOnly(counterResults: counterResults)
+        } else if weightResultsById.count > 0 {
+            return getDailyTrackersWeightOnly(weightResults: weightResults)
+        } else {
+            return [DailyTracker]()
         }
-        var currentDatestamp = currentDate.datestampKey
-        var tracker = DailyTracker(date: currentDate)
-        var weightIdx = 0
-        for dataCountRecord in counterResultsById {
-            let datestampKey = dataCountRecord.pidKeys.datestampKey
-            if datestampKey != currentDatestamp {
-                guard let nextDate = Date.init(datestampKey: datestampKey) else {
-                    return allTrackers
-                }
-                
-                // Process Weights: AM, PM
-                while weightIdx < weightResultsById.count &&
-                    weightResultsById[weightIdx].pidKeys.datestampKey == datestampKey {
-                        let weight = weightResultsById[weightIdx]
-                        if weight.pidKeys.typeKey == DataWeightType.am.typeKey {
-                            tracker.weightAM = weight
-                        } else {
-                            tracker.weightPM = weight
-                        }
-                        weightIdx += 1
-                }
-                
-                allTrackers.append(tracker)
-                tracker = DailyTracker(date: nextDate)
-                currentDate = nextDate
-                currentDatestamp = nextDate.datestampKey
-            }
+    }
+    
+    private func getDailyTrackersAll(counterResults: Results<DataCountRecord>, weightResults: Results<DataWeightRecord>) -> [DailyTracker] {
+        var allTrackers = [DailyTracker]()
+        
+        var thisCounterRecord: DataCountRecord = counterResults[0]
+        var thisCounterDatestamp = thisCounterRecord.pidKeys.datestampKey
+        guard let thisCounterDate = Date(datestampKey: thisCounterDatestamp) else { return allTrackers }
+        
+        var thisWeightRecord: DataWeightRecord = weightResults[0]
+        var thisWeightDatestamp = thisWeightRecord.pidKeys.datestampKey
+        guard let thisWeightDate = Date(datestampKey: thisWeightDatestamp) else { return allTrackers }
+        
+        var counterIndex = 0
+        var weightIndex = 0
+        var lastDatestamp = thisCounterDatestamp 
+        var tracker = DailyTracker(date: thisCounterDate)
+        
+        if thisWeightDatestamp > thisCounterDatestamp {
+            lastDatestamp = thisWeightDatestamp
+            tracker = DailyTracker(date: thisWeightDate)
+        }
+        while counterIndex < counterResults.count && weightIndex < weightResults.count {
+            thisCounterRecord = counterResults[counterIndex]
+            thisCounterDatestamp = thisCounterRecord.pidKeys.datestampKey
+            thisWeightRecord = weightResults[weightIndex]
+            thisWeightDatestamp = thisWeightRecord.pidKeys.datestampKey
             
-            guard let countType = dataCountRecord.pidParts?.countType else {
-                return allTrackers
+            if thisCounterDatestamp == lastDatestamp {
+                guard let countType = thisCounterRecord.pidParts?.countType else { return allTrackers }
+                tracker.itemsDict[countType] = thisCounterRecord
+                counterIndex += 1
+            } else if thisWeightDatestamp == lastDatestamp {
+                if thisWeightRecord.pidKeys.typeKey == DataWeightType.am.typeKey {
+                    tracker.weightAM = thisWeightRecord
+                } else {
+                    tracker.weightPM = thisWeightRecord
+                }      
+                weightIndex += 1
+            } else {
+                allTrackers.append(tracker)
+                
+                if thisCounterDatestamp >= thisWeightDatestamp {
+                    lastDatestamp = thisCounterDatestamp 
+                    if let date = Date(datestampKey: thisCounterDatestamp) {
+                        tracker = DailyTracker(date: date)    
+                    } else { return allTrackers } // early fail if datestamp invalid
+                } else {
+                    lastDatestamp = thisWeightDatestamp 
+                    if let date = Date(datestampKey: thisWeightDatestamp) {
+                        tracker = DailyTracker(date: date)
+                    } else { return allTrackers } // early fail if datestamp invalid 
+                }
+                                
             }
-            tracker.itemsDict[countType] = dataCountRecord
+        }
+        allTrackers.append(tracker)
+        // Append remaining counters
+        if counterIndex < counterResults.count {
+            while counterIndex < counterResults.count {
+                thisCounterRecord = counterResults[counterIndex]
+                thisCounterDatestamp = thisCounterRecord.pidKeys.datestampKey
+                
+                if thisCounterDatestamp < lastDatestamp {
+                    allTrackers.append(tracker)
+                    if let date = Date(datestampKey: thisCounterDatestamp) {
+                        tracker = DailyTracker(date: date)    
+                    } else { return allTrackers } // early fail if datestamp invalid
+                }
+                guard let countType = thisCounterRecord.pidParts?.countType else { return allTrackers }
+                tracker.itemsDict[countType] = thisCounterRecord
+                
+                counterIndex += 1
+                lastDatestamp = thisCounterDatestamp
+            }
+            allTrackers.append(tracker)
+        }
+        // Append remaining weight records
+        if weightIndex < weightResults.count {
+            while weightIndex < weightResults.count {
+                thisWeightRecord = weightResults[weightIndex]
+                thisWeightDatestamp = thisWeightRecord.pidKeys.datestampKey
+                
+                if thisWeightDatestamp < lastDatestamp {
+                    allTrackers.append(tracker)
+                    if let date = Date(datestampKey: thisWeightDatestamp) {
+                        tracker = DailyTracker(date: date)    
+                    } else { return allTrackers } // early fail if datestamp invalid
+                }
+                if thisWeightRecord.pidKeys.typeKey == DataWeightType.am.typeKey {
+                    tracker.weightAM = thisWeightRecord
+                } else {
+                    tracker.weightPM = thisWeightRecord
+                }
+                
+                weightIndex += 1
+                lastDatestamp = thisWeightDatestamp
+            }
+            allTrackers.append(tracker)
+        }
+        
+        return allTrackers
+    }
+    
+    // requires descending date sort
+    private func getDailyTrackersCountersOnly(counterResults: Results<DataCountRecord>) -> [DailyTracker] {
+        var allTrackers = [DailyTracker]()
+        
+        var thisCounterRecord: DataCountRecord = counterResults[0]
+        var thisCounterDatestamp = thisCounterRecord.pidKeys.datestampKey
+        guard let thisDate = Date(datestampKey: thisCounterDatestamp) else { return allTrackers }
+        
+        var counterIndex = 0
+        var lastDatestamp = thisCounterDatestamp
+        var tracker = DailyTracker(date: thisDate)
+        while counterIndex < counterResults.count {
+            thisCounterRecord = counterResults[counterIndex]
+            thisCounterDatestamp = thisCounterRecord.pidKeys.datestampKey
+            
+            if thisCounterDatestamp < lastDatestamp {
+                allTrackers.append(tracker)
+                if let date = Date(datestampKey: thisCounterDatestamp) {
+                    tracker = DailyTracker(date: date)    
+                } else { return allTrackers } // early fail if datestamp invalid
+            }
+            guard let countType = thisCounterRecord.pidParts?.countType else { return allTrackers }
+            tracker.itemsDict[countType] = thisCounterRecord
+            
+            counterIndex += 1
+            lastDatestamp = thisCounterDatestamp
+        }
+        allTrackers.append(tracker)
+        
+        return allTrackers
+    }
+    
+    // requires descending date sort
+    private func getDailyTrackersWeightOnly(weightResults: Results<DataWeightRecord>) -> [DailyTracker] {
+        var allTrackers = [DailyTracker]()
+        
+        var thisWeightRecord: DataWeightRecord = weightResults[0]
+        var thisWeightDatestamp = thisWeightRecord.pidKeys.datestampKey
+        guard let thisDate = Date(datestampKey: thisWeightDatestamp) else { return allTrackers }
+        
+        var weightIndex = 0
+        var lastDatestamp = thisWeightDatestamp
+        var tracker = DailyTracker(date: thisDate)
+        while weightIndex < weightResults.count {
+            thisWeightRecord = weightResults[weightIndex]
+            thisWeightDatestamp = thisWeightRecord.pidKeys.datestampKey
+            
+            if thisWeightDatestamp < lastDatestamp {
+                allTrackers.append(tracker)
+                if let date = Date(datestampKey: thisWeightDatestamp) {
+                    tracker = DailyTracker(date: date)    
+                } else { return allTrackers } // early fail if datestamp invalid
+            }
+            if thisWeightRecord.pidKeys.typeKey == DataWeightType.am.typeKey {
+                tracker.weightAM = thisWeightRecord
+            } else {
+                tracker.weightPM = thisWeightRecord
+            }                
+            
+            weightIndex += 1
+            lastDatestamp = thisWeightDatestamp
         }
         allTrackers.append(tracker)
         
