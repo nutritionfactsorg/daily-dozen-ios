@@ -280,7 +280,7 @@
     </scenes>
     <resources>
         <namedColor name="IguanaGreen">
-            <color red="0.42352941176470588" green="0.68235294117647061" blue="0.45882352941176469" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <color red="0.42399999499320984" green="0.68199998140335083" blue="0.45899999141693115" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>
     </resources>
 </document>
