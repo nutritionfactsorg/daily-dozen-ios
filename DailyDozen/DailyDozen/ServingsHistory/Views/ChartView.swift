@@ -43,13 +43,13 @@ class ChartView: CombinedChartView {
         xAxis.labelFont = UIFont.helevetica.withSize(12)
     }
 
-    func configure(with map: [Int], for scale: TimeScale) {
+    func configure(with map: [Int], for scale: TimeScale, label: String) {
         let data = CombinedChartData()
         if scale == .day {
-            data.barData = generateBarData(for: map)
+            data.barData = generateBarData(for: map, label: label)
         } else {
             let lineMap = map.map { Double($0) }
-            data.lineData = generateLineData(for: lineMap)
+            data.lineData = generateLineData(for: lineMap, label: label)
         }
 
         xAxis.axisMaximum = data.xMax + 0.5
@@ -65,7 +65,7 @@ class ChartView: CombinedChartView {
         setNeedsDisplay()
     }
 
-    private func generateBarData(for map: [Int]) -> BarChartData {
+    private func generateBarData(for map: [Int], label: String) -> BarChartData {
 
         var entries = [BarChartDataEntry]()
 
@@ -73,7 +73,7 @@ class ChartView: CombinedChartView {
             entries.append(BarChartDataEntry(x: Double(index), y: Double(value)))
         }
 
-        let set = BarChartDataSet(entries: entries, label: "Servings")
+        let set = BarChartDataSet(entries: entries, label: label)
         set.setColor(UIColor.greenColor)
         set.valueTextColor = UIColor.greenColor
         set.valueFont = UIFont.helveticaBold.withSize(12)
@@ -84,7 +84,7 @@ class ChartView: CombinedChartView {
         return data
     }
 
-    private func generateLineData(for map: [Double]) -> LineChartData {
+    private func generateLineData(for map: [Double], label: String) -> LineChartData {
 
         var entries = [ChartDataEntry]()
 
@@ -92,7 +92,7 @@ class ChartView: CombinedChartView {
             entries.append(ChartDataEntry(x: Double(index), y: value))
         }
 
-        let set = LineChartDataSet(entries: entries, label: "Servings")
+        let set = LineChartDataSet(entries: entries, label: label)
         set.setColor(UIColor.greenColor)
         set.lineWidth = 2.5
         set.setCircleColor(UIColor.greenColor)

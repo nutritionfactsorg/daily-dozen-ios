@@ -20,7 +20,7 @@ struct ServingsHistoryViewModel {
 
     // MARK: - Inits
     init(_ trackers: [DailyTracker]) {
-        report = Report(trackers)
+        report = Report(trackers, isDailyDozen: true)
     }
 
     // MARK: - Methods

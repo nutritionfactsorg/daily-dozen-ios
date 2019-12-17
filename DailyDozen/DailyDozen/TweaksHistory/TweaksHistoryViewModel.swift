@@ -19,7 +19,7 @@ struct TweaksHistoryViewModel {
 
     // MARK: - Inits
     init(_ trackers: [DailyTracker]) {
-        report = Report(trackers)
+        report = Report(trackers, isDailyDozen: false)
     }
 
     // MARK: - Methods

@@ -74,7 +74,7 @@ class TweaksHistoryViewController: UIViewController {
 
                 controlPanel.setLabels(month: data.month, year: viewModel.yearName(yearIndex: chartSettings.year))
 
-                chartView.configure(with: data.map, for: currentTimeScale)
+                chartView.configure(with: data.map, for: currentTimeScale, label: "Tweaks")
             } else if currentTimeScale == .month {
                 controlPanel.isHidden = false
                 controlPanel.superview?.isHidden = false
@@ -87,11 +87,11 @@ class TweaksHistoryViewController: UIViewController {
 
                 controlPanel.setLabels(year: data.year)
 
-                chartView.configure(with: data.map, for: currentTimeScale)
+                chartView.configure(with: data.map, for: currentTimeScale, label: "Tweaks")
             } else {
                 controlPanel.isHidden = true
                 controlPanel.superview?.isHidden = true
-                chartView.configure(with: viewModel.fullDataMap(), for: currentTimeScale)
+                chartView.configure(with: viewModel.fullDataMap(), for: currentTimeScale, label: "Tweaks")
             }
         }
     }

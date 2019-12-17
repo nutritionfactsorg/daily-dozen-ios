@@ -150,7 +150,11 @@ class UtilityTableViewController: UITableViewController {
         print("baseWeigh \(weightBase) kg, \(weightBase * 2.2) lbs")
         let weightAmplitude = 2.0 // kg
         let weightCycleStep = (2 * Double.pi) / (30 * 2)
-        for i in 0..<(365*3) {
+        // 15
+        // 30 good case to check left-side case, 
+        // 300 --> 599?   
+        // 365*3
+        for i in 0..<(300) { 
             let stepByDay = DateComponents(day: -1)
             date = calendar.date(byAdding: stepByDay, to: date)!
 

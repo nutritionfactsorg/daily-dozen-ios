@@ -93,6 +93,10 @@ class FirstLaunchViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        //navigationController?.navigationBar.titleTextAttributes = [NSAttributedString.Key.foregroundColor: UIColor.white]
+        //navigationController?.navigationBar.barTintColor = UIColor.greenColor
+        //navigationController?.navigationBar.tintColor = UIColor.white
+
         // Do any additional setup after loading the view.
     }
     

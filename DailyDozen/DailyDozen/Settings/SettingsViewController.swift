@@ -81,10 +81,9 @@ class SettingsViewController: UITableViewController {
         
         #if targetEnvironment(simulator)
         //print("::::: SIMULATOR ENVIRONMENT: SettingsViewController :::::")
-        //advancedUtilitiesTableViewCell.isHidden = true
+        advancedUtilitiesTableViewCell.isHidden = false
         //print(":::::::::::::::::::::::::::::::::::::::::::::::::::::::::\n")
         #endif
-        advancedUtilitiesTableViewCell.isHidden = true
     }
     
     override func viewWillAppear(_ animated: Bool) {

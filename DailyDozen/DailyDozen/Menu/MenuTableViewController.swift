@@ -19,9 +19,6 @@ class MenuTableViewController: UITableViewController {
     // MARK: - UITableViewController
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        //title = "" // title set in Main right now
-        
         navigationController?.navigationBar.barTintColor = UIColor.greenColor
         navigationController?.navigationBar.tintColor = UIColor.white
         navigationController?.navigationBar.titleTextAttributes = [NSAttributedString.Key.foregroundColor: UIColor.white]

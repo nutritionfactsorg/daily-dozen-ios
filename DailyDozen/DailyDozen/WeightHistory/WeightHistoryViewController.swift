@@ -75,6 +75,18 @@ class WeightHistoryViewController: UIViewController {
                 controlPanel.configure(canSwitch: (left: canLeft, right: canRight))
 
                 let data = weightViewModel.monthData(yearIndex: chartSettings.year, monthIndex: chartSettings.month)
+                
+                print("Weight History: \(data.month)")
+                var i = 0
+                for point in data.points {
+                    let dataStr = """
+                    \(point.anyDate) • \
+                    \(point.dateAM?.datestampHHmm ?? "nil") \(String(format: "%.2f", point.kgAM ?? -1.0)) • \
+                    \(point.datePM?.datestampHHmm ?? "nil") \(String(format: "%.2f", point.kgPM ?? -1.0)) 
+                    """
+                    print(dataStr)
+                    i += 1
+                }
 
                 controlPanel.setLabels(month: data.month, year: weightViewModel.yearName(yearIndex: chartSettings.year))
                 
@@ -108,6 +120,9 @@ class WeightHistoryViewController: UIViewController {
     // MARK: - Methods
     override func viewDidLoad() {
         super.viewDidLoad()
+        navigationController?.navigationBar.titleTextAttributes = [NSAttributedString.Key.foregroundColor: UIColor.white]
+        navigationController?.navigationBar.barTintColor = UIColor.greenColor
+        navigationController?.navigationBar.tintColor = UIColor.white
 
         lineChartView.xAxis.valueFormatter = self
         setViewModel()

@@ -54,10 +54,10 @@ class AboutTableViewController: UITableViewController {
     // MARK: - UITableViewController
     override func viewDidLoad() {
         super.viewDidLoad()
-        
+        navigationController?.navigationBar.titleTextAttributes = [NSAttributedString.Key.foregroundColor: UIColor.white]
         navigationController?.navigationBar.barTintColor = UIColor.greenColor
         navigationController?.navigationBar.tintColor = UIColor.white
-        navigationController?.navigationBar.titleTextAttributes = [NSAttributedString.Key.foregroundColor: UIColor.white]
+
         let barItem = UIBarButtonItem(title: "Done", style: .done, target: nil, action: nil)
         barItem.tintColor = UIColor.white
         navigationItem.setLeftBarButton(barItem, animated: false)

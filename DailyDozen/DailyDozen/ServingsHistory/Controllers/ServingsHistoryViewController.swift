@@ -75,7 +75,7 @@ class ServingsHistoryViewController: UIViewController {
 
                 controlPanel.setLabels(month: data.month, year: viewModel.yearName(yearIndex: chartSettings.year))
 
-                chartView.configure(with: data.map, for: currentTimeScale)
+                chartView.configure(with: data.map, for: currentTimeScale, label: "Servings")
             } else if currentTimeScale == .month {
                 controlPanel.isHidden = false
                 controlPanel.superview?.isHidden = false
@@ -88,11 +88,11 @@ class ServingsHistoryViewController: UIViewController {
 
                 controlPanel.setLabels(year: data.year)
 
-                chartView.configure(with: data.map, for: currentTimeScale)
+                chartView.configure(with: data.map, for: currentTimeScale, label: "Servings")
             } else {
                 controlPanel.isHidden = true
                 controlPanel.superview?.isHidden = true
-                chartView.configure(with: viewModel.fullDataMap(), for: currentTimeScale)
+                chartView.configure(with: viewModel.fullDataMap(), for: currentTimeScale, label: "Servings")
             }
         }
     }
@@ -100,6 +100,9 @@ class ServingsHistoryViewController: UIViewController {
     // MARK: - UIViewController
     override func viewDidLoad() {
         super.viewDidLoad()
+        navigationController?.navigationBar.titleTextAttributes = [NSAttributedString.Key.foregroundColor: UIColor.white]
+        navigationController?.navigationBar.barTintColor = UIColor.greenColor
+        navigationController?.navigationBar.tintColor = UIColor.white
 
         chartView.xAxis.valueFormatter = self
         setViewModel()
