@@ -117,24 +117,25 @@ class RealmProvider {
     /// Note: minimal checked. Expects stored database values to be valid. Exists on first data error.
     func getDailyTrackers() -> [DailyTracker] {        
         // Daily Dozen & Tweaks Counters
-        let counterResults = realm.objects(DataCountRecord.self)
-        let counterResultsById = counterResults.sorted(byKeyPath: "pid")
+        let counterResultsById = realm.objects(DataCountRecord.self)
+            .sorted(byKeyPath: "pid")
         
         // Weight History
-        let weightResults = realm.objects(DataWeightRecord.self)
-        let weightResultsById = weightResults.sorted(byKeyPath: "pid")
+        let weightResultsById = realm.objects(DataWeightRecord.self)
+            .sorted(byKeyPath: "pid")
         
         if counterResultsById.count > 0 && weightResultsById.count > 0 {
-            return getDailyTrackersAll(counterResults: counterResults, weightResults: weightResults)
+            return getDailyTrackersAll(counterResults: counterResultsById, weightResults: weightResultsById)
         } else if counterResultsById.count > 0 {
-            return getDailyTrackersCountersOnly(counterResults: counterResults)
+            return getDailyTrackersCountersOnly(counterResults: counterResultsById)
         } else if weightResultsById.count > 0 {
-            return getDailyTrackersWeightOnly(weightResults: weightResults)
+            return getDailyTrackersWeightOnly(weightResults: weightResultsById)
         } else {
             return [DailyTracker]()
         }
     }
     
+    /// requires presort from lower to higher datestamps
     private func getDailyTrackersAll(counterResults: Results<DataCountRecord>, weightResults: Results<DataWeightRecord>) -> [DailyTracker] {
         var allTrackers = [DailyTracker]()
         
@@ -174,8 +175,8 @@ class RealmProvider {
                 weightIndex += 1
             } else {
                 allTrackers.append(tracker)
-                
-                if thisCounterDatestamp >= thisWeightDatestamp {
+                // take the lesser of CounterDatestamp or WeightDatestamp
+                if thisCounterDatestamp <= thisWeightDatestamp {
                     lastDatestamp = thisCounterDatestamp 
                     if let date = Date(datestampKey: thisCounterDatestamp) {
                         tracker = DailyTracker(date: date)    
@@ -189,14 +190,13 @@ class RealmProvider {
                                 
             }
         }
-        allTrackers.append(tracker)
         // Append remaining counters
         if counterIndex < counterResults.count {
             while counterIndex < counterResults.count {
                 thisCounterRecord = counterResults[counterIndex]
                 thisCounterDatestamp = thisCounterRecord.pidKeys.datestampKey
                 
-                if thisCounterDatestamp < lastDatestamp {
+                if thisCounterDatestamp > lastDatestamp {
                     allTrackers.append(tracker)
                     if let date = Date(datestampKey: thisCounterDatestamp) {
                         tracker = DailyTracker(date: date)    
@@ -208,15 +208,14 @@ class RealmProvider {
                 counterIndex += 1
                 lastDatestamp = thisCounterDatestamp
             }
-            allTrackers.append(tracker)
         }
         // Append remaining weight records
-        if weightIndex < weightResults.count {
+        else if weightIndex < weightResults.count {
             while weightIndex < weightResults.count {
                 thisWeightRecord = weightResults[weightIndex]
                 thisWeightDatestamp = thisWeightRecord.pidKeys.datestampKey
                 
-                if thisWeightDatestamp < lastDatestamp {
+                if thisWeightDatestamp > lastDatestamp {
                     allTrackers.append(tracker)
                     if let date = Date(datestampKey: thisWeightDatestamp) {
                         tracker = DailyTracker(date: date)    
@@ -231,13 +230,14 @@ class RealmProvider {
                 weightIndex += 1
                 lastDatestamp = thisWeightDatestamp
             }
-            allTrackers.append(tracker)
         }
+
+        allTrackers.append(tracker)
         
         return allTrackers
     }
     
-    // requires descending date sort
+    /// requires presort from lower to higher datestamps
     private func getDailyTrackersCountersOnly(counterResults: Results<DataCountRecord>) -> [DailyTracker] {
         var allTrackers = [DailyTracker]()
         
@@ -252,7 +252,7 @@ class RealmProvider {
             thisCounterRecord = counterResults[counterIndex]
             thisCounterDatestamp = thisCounterRecord.pidKeys.datestampKey
             
-            if thisCounterDatestamp < lastDatestamp {
+            if thisCounterDatestamp > lastDatestamp {
                 allTrackers.append(tracker)
                 if let date = Date(datestampKey: thisCounterDatestamp) {
                     tracker = DailyTracker(date: date)    
@@ -269,7 +269,7 @@ class RealmProvider {
         return allTrackers
     }
     
-    // requires descending date sort
+    /// requires presort from lower to higher datestamps
     private func getDailyTrackersWeightOnly(weightResults: Results<DataWeightRecord>) -> [DailyTracker] {
         var allTrackers = [DailyTracker]()
         
@@ -284,7 +284,7 @@ class RealmProvider {
             thisWeightRecord = weightResults[weightIndex]
             thisWeightDatestamp = thisWeightRecord.pidKeys.datestampKey
             
-            if thisWeightDatestamp < lastDatestamp {
+            if thisWeightDatestamp > lastDatestamp {
                 allTrackers.append(tracker)
                 if let date = Date(datestampKey: thisWeightDatestamp) {
                     tracker = DailyTracker(date: date)    

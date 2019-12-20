@@ -34,6 +34,16 @@ struct DailyWeightReport {
             kgPM = pm.kg
         }
     }
+    
+    func toString() -> String {
+        let str = """
+        \(dateAM?.datestampKey ?? "yyyyHHdd")\t\
+        \(dateAM?.datestampHHmm ?? "nil")\t\(String(format: "%.2f", kgAM ?? -0.1))\t\
+        \(datePM?.datestampKey ?? "yyyyHHdd")\t\
+        \(datePM?.datestampHHmm ?? "nil")\t\(String(format: "%.2f", kgPM ?? -0.1))
+        """
+        return str
+    }
 }
 
 struct MonthWeightReport {
@@ -47,6 +57,14 @@ struct MonthWeightReport {
         self.month = month
         // weightAverageMorningKg =
         // weightAverageEveningKg =
+    }
+    
+    func toString() -> String {
+        var str = "•• MONTH:\(month) ••\n"
+        for report in daily {
+            str.append("\(report.toString())\n")
+        }
+        return str
     }
 }
 
@@ -66,6 +84,15 @@ struct YearlyWeightReport {
     func monthWeightReport(for index: Int) -> MonthWeightReport {
         return months[index]
     }
+
+    func toString() -> String {
+        var str = "•• YEAR:\(year) ••\n"
+        for report in months {
+            str.append(report.toString())
+        }
+        return str
+    }
+
 }
 
 struct WeightReport {
@@ -188,5 +215,13 @@ struct WeightReport {
     
     func yearlyWeightReport(for index: Int) -> YearlyWeightReport {
         return data[index]
+    }
+    
+    func toString() -> String {
+        var str = "••• FULL WEIGHT REPORT •••\n"
+        for report in data {
+            str.append(report.toString())
+        }
+        return str
     }
 }

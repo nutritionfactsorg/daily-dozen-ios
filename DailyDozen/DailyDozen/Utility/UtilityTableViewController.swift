@@ -76,6 +76,24 @@ class UtilityTableViewController: UITableViewController {
     }
     
     @IBAction func doUtilityDBImportDataBtn(_ sender: UIButton) {
+        //PopupPickerView.show(
+        //    items: <#T##[String]#>, 
+        //    doneBottonCompletion: <#T##PopupPickerView.CompletionBlock?##PopupPickerView.CompletionBlock?##(String?, String?) -> Void#>, 
+        //    didSelectCompletion: <#T##PopupPickerView.CompletionBlock?##PopupPickerView.CompletionBlock?##(String?, String?) -> Void#>, 
+        //    cancelBottonCompletion: <#T##PopupPickerView.CompletionBlock?##PopupPickerView.CompletionBlock?##(String?, String?) -> Void#>
+        //)
+        
+        //PopupPickerView.show(
+        //    items: ["item1", "item2", "item3"],
+        //    itemIds: ["id1", "id2", "id3"],
+        //    selectedValue: "item3", 
+        //    doneBottonCompletion: { (item: String?, index: String?) in
+        //        print("done", item ?? "nil", index ?? "nil")}, 
+        //    didSelectCompletion: { (item: String?, index: String?) in
+        //        print("selection", item ?? "nil", index ?? "nil") },
+        //    cancelBottonCompletion: { (item: String?, index: String?) in
+        //        print("cancelled", item ?? "nil", index ?? "nil") }
+        //)
     }
     
     @IBAction func doUtilitySettingsClearBtn(_ sender: UIButton) {
@@ -127,11 +145,28 @@ class UtilityTableViewController: UITableViewController {
         print("... doUtlityTestClearAllData completed\n")
     }
     
+    /// Note: When writing a large number of data entries AND the database is open 
+    /// in the Realm browser is open, then some value(s) may not be written.  
+    /// Do not have the Realm browser open when writing data in simulator to
+    /// avoid this is situation. The root cause of this issue is unknown.
     @IBAction func doUtilityTestCreateDataBtn(_ sender: UIButton) {
-        doUtilityTestCreateData()
+        // half month
+        //doUtilityTestCreateData(numberOfDays: 15)
+        
+        // ~1 month
+        //doUtilityTestCreateData(numberOfDays: 30)
+        
+        // ~10 months
+        //doUtilityTestCreateData(numberOfDays: 300)
+
+        // ~2.7 years or ~33 months (1000 days, 2000 weight entries)
+        doUtilityTestCreateData(numberOfDays: 1000)
+        
+        // 3 years (1095 days, 2190 weight entries)
+        //doUtilityTestCreateData(numberOfDays: 365*3)
     }
     
-    func doUtilityTestCreateData() {
+    func doUtilityTestCreateData(numberOfDays: Int) {
         print("\ndoUtilityTestCreateData started ...")
         let realmMngrCheck = RealmManager(workingDirUrl: documentsUrl)
         let realmDbCheck = realmMngrCheck.realmDb
@@ -150,11 +185,7 @@ class UtilityTableViewController: UITableViewController {
         print("baseWeigh \(weightBase) kg, \(weightBase * 2.2) lbs")
         let weightAmplitude = 2.0 // kg
         let weightCycleStep = (2 * Double.pi) / (30 * 2)
-        // 15
-        // 30 good case to check left-side case, 
-        // 300 --> 599?   
-        // 365*3
-        for i in 0..<(300) { 
+        for i in 0..<numberOfDays { 
             let stepByDay = DateComponents(day: -1)
             date = calendar.date(byAdding: stepByDay, to: date)!
 

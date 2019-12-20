@@ -13,6 +13,17 @@ import RealmSwift
 // MARK: - Nested
 enum TimeScale: Int {
     case day, month, year
+    
+    func toString() -> String {
+        switch self {
+        case .day:
+            return "day"
+        case .month:
+            return "day"
+        case .year:
+            return "year"
+        }
+    }
 }
 
 class ServingsHistoryBuilder {

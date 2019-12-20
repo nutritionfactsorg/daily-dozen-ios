@@ -4,6 +4,9 @@
 //
 //  Copyright © 2019 Nutritionfacts.org. All rights reserved.
 //
+// swiftlint: disable cyclomatic_complexity
+// swiftlint: disable function_body_length
+// swiftlint: disable type_body_length
 
 import UIKit
 import Charts
@@ -76,17 +79,18 @@ class WeightHistoryViewController: UIViewController {
 
                 let data = weightViewModel.monthData(yearIndex: chartSettings.year, monthIndex: chartSettings.month)
                 
-                print("Weight History: \(data.month)")
-                var i = 0
-                for point in data.points {
-                    let dataStr = """
-                    \(point.anyDate) • \
-                    \(point.dateAM?.datestampHHmm ?? "nil") \(String(format: "%.2f", point.kgAM ?? -1.0)) • \
-                    \(point.datePM?.datestampHHmm ?? "nil") \(String(format: "%.2f", point.kgPM ?? -1.0)) 
-                    """
-                    print(dataStr)
-                    i += 1
-                }
+                // :DEBUG:LOG_VERBOSE:
+                //print("## Weight History: \(data.month) chartSettings(year:\(chartSettings.year), month:\(chartSettings.month)) ##") 
+                //var i = 0
+                //for point in data.points {
+                //    let dataStr = """
+                //    \(point.anyDate) • \
+                //    \(point.dateAM?.datestampHHmm ?? "nil") \(String(format: "%.2f", point.kgAM ?? -1.0)) • \
+                //    \(point.datePM?.datestampHHmm ?? "nil") \(String(format: "%.2f", point.kgPM ?? -1.0)) 
+                //    """
+                //    print(dataStr)
+                //    i += 1
+                //}
 
                 controlPanel.setLabels(month: data.month, year: weightViewModel.yearName(yearIndex: chartSettings.year))
                 
@@ -101,6 +105,19 @@ class WeightHistoryViewController: UIViewController {
                 controlPanel.configure(canSwitch: (left: canLeft, right: canRight))
 
                 let data = weightViewModel.yearlyData(yearIndex: chartSettings.year)
+
+                // :DEBUG:LOG_VERBOSE:
+                //print("## Weight History: \(data.year) chartSettings(year:\(chartSettings.year), month:\(chartSettings.month)) ##")
+                //var i = 0
+                //for point in data.points {
+                //    let dataStr = """
+                //    \(point.anyDate) • \
+                //    \(point.dateAM?.datestampHHmm ?? "nil") \(String(format: "%.2f", point.kgAM ?? -1.0)) • \
+                //    \(point.datePM?.datestampHHmm ?? "nil") \(String(format: "%.2f", point.kgPM ?? -1.0)) 
+                //    """
+                //    print(dataStr)
+                //    i += 1
+                //}
 
                 controlPanel.setLabels(year: data.year)
 
@@ -171,19 +188,24 @@ class WeightHistoryViewController: UIViewController {
     
     func updateChart(points: [DailyWeightReport], scale: TimeScale) {
         
-        guard let fromTimeInterval = points.first?.anyDate.timeIntervalSince1970
+        guard 
+            let firstDatestampKey = points.first?.anyDate.datestampKey,
+            let firstDayOfMonth = Date(datestampKey: "\(firstDatestampKey.prefix(6))01"),
+            let firstDayOfYear = Date(datestampKey: "\(firstDatestampKey.prefix(4))0101")
             else { return }
-                
+        
         // day scale = 60 seconds * 60 minutes * 24 hours
-        var xScaleFactor = 60.0*60.0*24.0 // default: .day
-        var xAxisRange = 31.0 // 31 days
+        var xScaleFactor = 60.0*60.0*24.0 // default: .day (seconds/day)
+        var xAxisRange = 31.0 // daily for 31 days
+        var fromTimeInterval = firstDayOfMonth.timeIntervalSince1970
         if scale == .month {
-            xScaleFactor = 60.0*60.0*24.0 * 12.0
-            xAxisRange = 52.0 // :???:
+            fromTimeInterval = firstDayOfYear.timeIntervalSince1970
+            xScaleFactor = 60.0*60.0*24.0 * 30.44 // .month (seconds/average_julian_month)
+            xAxisRange = 12.0 // monthly for year
         } else if currentTimeScale == .year {
-            // year scale is bi-monthly for now
-            xScaleFactor = 60.0*60.0*24.0 * 12.0 * 2.0
-            xAxisRange = 104.0 // :???:
+            fromTimeInterval = firstDayOfYear.timeIntervalSince1970
+            xScaleFactor = 60.0*60.0*24.0 * 365.25 // .year (seconds/average_julian_year)
+            xAxisRange = 3 // yearly for 3 years
         }
         
         //var dataEntries = [
@@ -219,6 +241,23 @@ class WeightHistoryViewController: UIViewController {
             }
         }
 
+        // :DEBUG:LOG_VERBOSE:
+        //print("\n•••••••••••••••••••••••••••••••••••••••••••••••••")
+        //print("••• WeightHistoryViewController updateChart() •••")
+        //print("••• INPUT: points @ scale:\(scale.toString()) •••")
+        //for dailyWeightReport in points {
+        //    print(dailyWeightReport.toString())
+        //}
+        //print("••• OUTPUT: dataEntries @ xAxisRange:\(xAxisRange) •••")
+        //print("••• AM (x,y)")
+        //for chartDataEntry: ChartDataEntry in dataEntriesAM {
+        //    print(chartDataEntry.toStringXY())
+        //}
+        //print("••• PM (x,y)")
+        //for chartDataEntry in dataEntriesPM {
+        //    print(chartDataEntry.toStringXY())
+        //}
+        
         updateChartWithData(am: dataEntriesAM, pm: dataEntriesPM, range: xAxisRange)
     }
     
