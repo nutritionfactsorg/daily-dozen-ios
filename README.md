@@ -42,6 +42,23 @@ The Daily Dozen iOS App is licensed under the GPLv3
 
 ## Updates
 
+**3.2.x (Work In Progress)**
+
+* Restructured to support international localization in general 
+* Adds Spanish
+
+**3.1 (App Store)**
+
+* Adds 21 Tweaks
+* Adds Weight Tracking with Health Kit Integration
+* Add Application Tab Controller bar
+
+Improvements:
+
+* Adds settings control to choice between using "Daily Dozen only" or "Daily Dozen + 21 Tweaks".
+
+* Adds settings control to select whether to use Imperial or Metric type units throughout the app.
+
 **2.0.0 (App Store)**
 
 * Brand new design
