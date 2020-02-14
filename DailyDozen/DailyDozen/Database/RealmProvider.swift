@@ -2,7 +2,6 @@
 //  RealmProvider.swift
 //  DatabaseMigration
 //
-//  Created by marc on 2019.11.08.
 //  Copyright © 2019 NutritionFacts.org. All rights reserved.
 //
 // swiftlint:disable cyclomatic_complexity
@@ -37,7 +36,6 @@ class RealmProvider {
         self.realm = realm
     }
     
-    /// :REPLACES: initialDoze(Date) :TBD: no longer needed? 
     func initialDailyTracker(date: Date) -> DailyTracker {
         return DailyTracker(date: date)
     }
@@ -95,7 +93,6 @@ class RealmProvider {
         return (amRecords, pmRecords)
     }
     
-    /// :REPLACES: getDozeLegacy(Date)
     func getDailyTracker(date: Date) -> DailyTracker {
         let datestampKey = date.datestampKey
         

@@ -2,7 +2,6 @@
 //  DataCountAttributes.swift
 //  DatabaseMigration
 //
-//  Created by marc on 2019.11.08.
 //  Copyright © 2019 NutritionFacts.org. All rights reserved.
 //
 

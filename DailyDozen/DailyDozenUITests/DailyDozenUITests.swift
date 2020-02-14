@@ -2,7 +2,6 @@
 //  DailyDozenUITests.swift
 //  DailyDozenUITests
 //
-//  Created by marc on 2019.11.13.
 //  Copyright © 2019 Nutritionfacts.org. All rights reserved.
 //
 

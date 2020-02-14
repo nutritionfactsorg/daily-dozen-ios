@@ -2,7 +2,6 @@
 //  DailyTracker.swift
 //  DailyDozen
 //
-//  Created by marc on 2019.11.18.
 //  Copyright © 2019 Nutritionfacts.org. All rights reserved.
 //
 

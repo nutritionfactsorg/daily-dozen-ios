@@ -3,7 +3,7 @@ PODS:
   - Charts (3.3.0):
     - Charts/Core (= 3.3.0)
   - Charts/Core (3.3.0)
-  - FSCalendar (2.8.0)
+  - FSCalendar (2.8.1)
   - Realm (3.18.0):
     - Realm/Headers (= 3.18.0)
   - Realm/Headers (3.18.0)
@@ -30,11 +30,11 @@ SPEC REPOS:
 SPEC CHECKSUMS:
   ActiveLabel: 5e3f4de79a1952d4604b845a0610d4776e4b82b3
   Charts: e0dd4cd8f257bccf98407b58183ddca8e8d5b578
-  FSCalendar: 3a5ed3636e2ba1b83ebebfcf0c2603105a6f5efe
+  FSCalendar: 5245140456fcbcac5824c203b98bd8068bdfee1a
   Realm: 7b3d04740facf45e958a514b466a32b04f1113d6
   RealmSwift: c817b5f374668cf08f649afb05f55d92a787649c
   SimpleAnimation: 5430010b9548f392e7459290acce01c9ceba7171
 
-PODFILE CHECKSUM: 468b5251d09a048122bbef8e471bb7137605b9a7
+PODFILE CHECKSUM: cb0b270bbb4b867dfd716b08fba9a3dcc286637d
 
 COCOAPODS: 1.8.4

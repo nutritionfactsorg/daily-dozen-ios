@@ -2,7 +2,6 @@
 //  UtilityTableViewController.swift
 //  DailyDozen
 //
-//  Created by marc on 2019.11.04.
 //  Copyright © 2019 Nutritionfacts.org. All rights reserved.
 //
 
@@ -151,7 +150,7 @@ class UtilityTableViewController: UITableViewController {
     /// avoid this is situation. The root cause of this issue is unknown.
     @IBAction func doUtilityTestCreateDataBtn(_ sender: UIButton) {
         // half month
-        //doUtilityTestCreateData(numberOfDays: 15)
+        doUtilityTestCreateData(numberOfDays: 15)
         
         // ~1 month
         //doUtilityTestCreateData(numberOfDays: 30)
@@ -160,7 +159,7 @@ class UtilityTableViewController: UITableViewController {
         //doUtilityTestCreateData(numberOfDays: 300)
 
         // ~2.7 years or ~33 months (1000 days, 2000 weight entries)
-        doUtilityTestCreateData(numberOfDays: 1000)
+        //doUtilityTestCreateData(numberOfDays: 1000)
         
         // 3 years (1095 days, 2190 weight entries)
         //doUtilityTestCreateData(numberOfDays: 365*3)

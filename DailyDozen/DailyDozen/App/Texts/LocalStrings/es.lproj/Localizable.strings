@@ -1,0 +1,108 @@
+/* display heading. */
+"dozeBeans.heading" = "Frijoles";
+
+/* display heading. */
+"dozeBerries.heading" = "Bayas";
+
+/* display heading */
+"dozeBeverages.heading" = "Bebidas";
+
+/* display heading */
+"dozeExercise.heading" = "Ejercicio";
+
+/* display heading */
+"dozeFlaxseeds.heading" = "Linaza";
+
+/* display heading */
+"dozeFruitsOther.heading" = "Otras Frutas";
+
+/* display heading */
+"dozeGreens.heading" = "Vegetales de Hoja Verde";
+
+/* display heading */
+"dozeNuts.heading" = "Nueces";
+
+/* display heading */
+"dozeSpices.heading" = "Especias";
+
+/* display heading */
+"dozeVegetablesCruciferous.heading" = "Vegetales Crucíferos";
+
+/* display heading */
+"dozeVegetablesOther.heading" = "Otros Vegetales";
+
+/* display heading */
+"dozeWholeGrains.heading" = "Granos Integrales";
+
+/* display heading */
+"otherOmega3.heading" = "Omega 3 de origen vegetal";
+
+/* display heading */
+"otherVitaminB12.heading" = "Vitamina B12";
+
+/* display heading */
+"otherVitaminD.heading" = "Vitamina D";
+
+/* display heading */
+"tweakCompleteIntentions.heading" = "Complete sus intenciones de implementación";
+
+/* display heading */
+"tweakDailyBlackCumin.heading" = "Comino negro (¼ cucharadita)";
+
+/* display heading */
+"tweakDailyCumin.heading" = "Comino (½ cucharadita con almuerzo y cena)";
+
+/* display heading */
+"tweakDailyDeflourDiet.heading" = "Granos Intactos";
+
+/* display heading */
+"tweakDailyFrontLoad.heading" = "Carga frontal tus calorías";
+
+/* display heading */
+"tweakDailyGarlic.heading" = "Ajo en polvo (¼ cucharadita)";
+
+/* display heading */
+"tweakDailyGinger.heading" = "Jengibre molido (1 cucharadita) o pimienta de cayena (½ cucharadita)";
+
+/* display heading */
+"tweakDailyGreenTea.heading" = "Té Verde (3 tazas)";
+
+/* display heading */
+"tweakDailyHydrate.heading" = "Mantente hidratado";
+
+/* display heading */
+"tweakDailyNutriYeast.heading" = "Levadura Nutricional (2 cucharaditas)";
+
+/* display heading */
+"tweakDailyTimeRestrict.heading" = "Restrinja su tiempo de comer";
+
+/* display heading */
+"tweakExerciseTiming.heading" = "Optimizar el tiempo de ejercicio";
+
+/* display heading */
+"tweakMeal20Minutes.heading" = "Siga la regla de veinte minutos";
+
+/* display heading */
+"tweakMealNegCal.heading" = "Precargar con alimentos de \"calorías negativas\"";
+
+/* display heading */
+"tweakMealUndistracted.heading" = "Disfruta de comidas sin distracciones";
+
+/* display heading */
+"tweakMealVinegar.heading" = "Incorporar vinagre (2 cucharaditas con cada comida)";
+
+/* display heading */
+"tweakMealWater.heading" = "Precargar con agua";
+
+/* display heading */
+"tweakNightlyFast.heading" = "Ayuno después de las 7:00 p.m.";
+
+/* display heading */
+"tweakNightlySleep.heading" = "Dormir lo suficiente";
+
+/* display heading */
+"tweakNightlyTrendelenbrug.heading" = "Experimente con Trendelenburg leve";
+
+/* display heading */
+"tweakWeightTwice.heading" = "Pésate dos veces al día";
+
