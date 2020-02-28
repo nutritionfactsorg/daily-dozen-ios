@@ -1,5 +1,5 @@
 //
-//  TweakDetailsViewController.swift
+//  TweakDetailViewController.swift
 //  DailyDozen
 //
 //  Copyright © 2017 Nutritionfacts.org. All rights reserved.
@@ -8,11 +8,11 @@
 import UIKit
 
 // MARK: - Builder
-class TweakDetailsBuilder {
+class TweakDetailBuilder {
     
     // MARK: - Nested
     struct Strings {
-        static let storyboardDetailsTweaks = "DetailsTweaks"
+        static let storyboardDetailsTweaks = "TweakDetailLayout"
     }
     
     // MARK: - Methods
@@ -20,13 +20,13 @@ class TweakDetailsBuilder {
     ///
     /// - Parameter itemTypeKey: An item type key string.
     /// - Returns: The initial view controller in the storyboard.
-    static func instantiateController(itemTypeKey: String) -> TweakDetailsViewController {
+    static func instantiateController(itemTypeKey: String) -> TweakDetailViewController {
         
         let storyboard = UIStoryboard(name: Strings.storyboardDetailsTweaks, bundle: nil)
         guard
             let viewController = storyboard
-                .instantiateInitialViewController() as? TweakDetailsViewController
-            else { fatalError("Did not instantiate `TweakDetails` controller") }
+                .instantiateInitialViewController() as? TweakDetailViewController
+            else { fatalError("Did not instantiate `TweakDetailData` controller") }
         
         viewController.setViewModel(itemTypeKey: itemTypeKey)
         
@@ -35,7 +35,7 @@ class TweakDetailsBuilder {
 }
 
 // MARK: - Controller
-class TweakDetailsViewController: UIViewController {
+class TweakDetailViewController: UIViewController {
     
     // MARK: - Nested
     private struct Keys {
@@ -44,7 +44,7 @@ class TweakDetailsViewController: UIViewController {
     
     // MARK: - Outlets
     @IBOutlet private weak var tableView: UITableView!
-    @IBOutlet private weak var dataProvider: TweakDetailsDataProvider!
+    @IBOutlet private weak var dataProvider: TweakDetailDataProvider!
     @IBOutlet private weak var titleLabel: UILabel!
     @IBOutlet private weak var detailsImageView: UIImageView!
     
@@ -60,7 +60,7 @@ class TweakDetailsViewController: UIViewController {
         
         if let dataCountType = dataProvider.dataCountType {
             if dataCountType.typeKey.prefix(4) == "doze" {
-                // TweakDetailsViewController VIDEOS
+                // TweakDetailViewController VIDEOS
                 navigationItem.rightBarButtonItem = UIBarButtonItem(
                     title: Keys.videos,
                     style: .done,
@@ -88,7 +88,7 @@ class TweakDetailsViewController: UIViewController {
     /// - Parameter item: The current item name.
     func setViewModel(itemTypeKey: String) {
         dataProvider.viewModel = TweakTextsProvider.shared.getDetails(itemTypeKey: itemTypeKey)
-        dataProvider.dataCountType = DataCountType(typeKey: itemTypeKey)
+        dataProvider.dataCountType = DataCountType(itemTypeKey: itemTypeKey)
     }
     
     /// Opens the main topic url in the browser.
@@ -104,7 +104,7 @@ class TweakDetailsViewController: UIViewController {
     ///
     /// - Parameter sender: The button.
     @IBAction private func unitsChanged(_ sender: UIButton) {
-        let sectionIndex = DetailsSection.sizes.rawValue
+        let sectionIndex = TweakDetailSection.activity.rawValue
         guard
             let unitsTypePrefStr = UserDefaults.standard.string(forKey: SettingsKeys.unitsTypePref),
             let currentUnitsType = UnitsType(rawValue: unitsTypePrefStr),
@@ -122,14 +122,14 @@ class TweakDetailsViewController: UIViewController {
 }
 
 // MARK: - UITableViewDelegate
-extension TweakDetailsViewController: UITableViewDelegate {
+extension TweakDetailViewController: UITableViewDelegate {
     
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-        guard let sectionType = DetailsSection(rawValue: indexPath.section) else {
+        guard let sectionType = TweakDetailSection(rawValue: indexPath.section) else {
             fatalError("There should be a section type")
         }
         
-        if sectionType == .types &&
+        if sectionType == .description &&
             dataProvider.dataCountType.isTweak {
             let x = CGFloat(0.0)
             let y = CGFloat(0.0)
@@ -158,22 +158,22 @@ extension TweakDetailsViewController: UITableViewDelegate {
     }
     
     func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
-        guard let sectionType = DetailsSection(rawValue: section) else {
+        guard let sectionType = TweakDetailSection(rawValue: section) else {
             fatalError("There should be a section type")
         }
         return sectionType.headerHeight
     }
     
     func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
-        guard let sectionType = DetailsSection(rawValue: section) else {
-            fatalError("There should be a section type")
+        guard let sectionType = TweakDetailSection(rawValue: section) else {
+            fatalError("There should be a tweak section type")
         }
         if let dataCountType = dataProvider.dataCountType {
             if dataCountType.typeKey.prefix(5) == "tweak" {
                 return sectionType.headerTweaksView
             }
         }
-        return sectionType.headerView
+        return sectionType.headerTweaksView
     }
 }
 

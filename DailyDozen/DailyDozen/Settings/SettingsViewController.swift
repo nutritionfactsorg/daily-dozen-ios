@@ -26,7 +26,7 @@ class SettingsBuilder {
             let viewController = storyboard
                 .instantiateInitialViewController() as? SettingsViewController
             else { fatalError("Did not instantiate `SettingsView` controller") }
-        viewController.title = "Settings"
+        viewController.title = NSLocalizedString("navtab.preferences", comment: "Preferences (aka Settings, Configuration) navigation tab. Choose word different from 'Tweaks' translation")
         
         return viewController
     }

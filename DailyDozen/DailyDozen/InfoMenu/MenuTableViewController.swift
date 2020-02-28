@@ -2,7 +2,7 @@
 //  MenuTableViewController.swift
 //  DailyDozen
 //
-//  Created by Konstantin Khokhlov on 18.10.17.
+//  Created by Konstantin Khokhlov on 18.10.2017.
 //  Copyright © 2017 Nutritionfacts.org. All rights reserved.
 //
 
@@ -11,11 +11,6 @@ import UIKit
 // MARK: - UITableViewController
 class MenuTableViewController: UITableViewController {
 
-    // MARK: - Nested
-    private struct Strings {
-        static let info = "More" // :NYI:ToBeLocalized:
-    }
-    
     // MARK: - UITableViewController
     override func viewDidLoad() {
         super.viewDidLoad()

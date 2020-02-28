@@ -1,5 +1,5 @@
 //
-//  TweakDetailViewModel.swift
+//  DozeDetailViewModel.swift
 //  DailyDozen
 //
 //  Copyright © 2020 Nutritionfacts.org. All rights reserved.
@@ -7,11 +7,11 @@
 
 import UIKit
 
-struct TweakDetailViewModel {
+struct DozeDetailViewModel {
     
     // MARK: - Properties
-    private let info: TweakDetailsInfo.Item
-    private let itemTypeKey: String
+    private let info: DozeDetailInfo.Item
+    private let detailItemTypeKey: String
     
     var unitsType: UnitsType
     
@@ -20,14 +20,14 @@ struct TweakDetailViewModel {
         return LinksService.shared.link(forTopic: info.topic)
     }
     
-    /// Returns the number of items in the metric sizes.
-    var activityCount: Int {
-        return 1
+    /// Returns the number of items in the metric amount (aka Serving Sizes).
+    var amountCount: Int {
+        return info.servings.count
     }
     
-    /// Returns the number of items in the types.
-    var descriptinParagraphCount: Int {
-        return info.description.count
+    /// Returns the number of items in the example (aka Serving Types).
+    var exampleCount: Int {
+        return info.varieties.count
     }
     /// Returns the item name.
     var itemTitle: String {
@@ -36,12 +36,12 @@ struct TweakDetailViewModel {
     
     /// Returns an image of the item.
     var detailsImage: UIImage? {
-        return UIImage(named: "detail_\(itemTypeKey)")
+        return UIImage(named: "detail_\(detailItemTypeKey)")
     }
     
     // MARK: - Inits
-    init(itemTypeKey: String, info: TweakDetailsInfo.Item) {
-        self.itemTypeKey = itemTypeKey
+    init(itemTypeKey: String, info: DozeDetailInfo.Item) {
+        self.detailItemTypeKey = itemTypeKey
         self.info = info
         
         if let unitsTypePrefStr = UserDefaults.standard.string(forKey: SettingsKeys.unitsTypePref),
@@ -59,11 +59,11 @@ struct TweakDetailViewModel {
     ///
     /// - Parameter index: The current index.
     /// - Returns: A description string.
-    func activity(index: Int) -> String {
+    func sizeDescription(index: Int) -> String {
         if unitsType == .metric {
-            return info.activity.metric
+            return info.servings[index].metric
         } else {
-            return info.activity.imperial
+            return info.servings[index].imperial
         }
     }
     
@@ -71,8 +71,22 @@ struct TweakDetailViewModel {
     ///
     /// - Parameter index: The current index.
     /// - Returns: A tuple of the type name and type link.
-    func descriptionParagraph(index: Int) -> String {
-        return info.description[index]
+    func typeData(index: Int) -> (name: String, hasLink: Bool) {
+        let name = info.varieties[index].text 
+        let hasLink = info.varieties[index].topic == "" // :???:!!!: correct logic?
+        return (name, hasLink)
     }
-
+    
+    /// Returns the type topic for the current index.
+    ///
+    /// - Parameter index: The current index.
+    /// - Returns: The type toipic url.
+    func typeTopicURL(index: Int) -> URL? {
+        if info.varieties[index].topic.isEmpty { // :???:!!!: review logic
+            return nil
+        }
+        let topic =  info.varieties[index].topic
+        return LinksService.shared.link(forTopic: topic)
+    }
+    
 }

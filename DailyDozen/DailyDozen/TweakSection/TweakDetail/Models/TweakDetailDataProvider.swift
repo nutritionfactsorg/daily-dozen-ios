@@ -1,18 +1,18 @@
 //
-//  TweakDetailsDataProvider.swift
+//  TweakDetailDataProvider.swift
 //  DailyDozen
 //
-//  Copyright © 2017 Nutritionfacts.org. All rights reserved.
+//  Copyright © 2020 Nutritionfacts.org. All rights reserved.
 //
 
 import UIKit
 
-class TweakDetailsDataProvider: NSObject, UITableViewDataSource {
+class TweakDetailDataProvider: NSObject, UITableViewDataSource {
     
     // MARK: - Nested
     private struct Strings {
-        static let sizesID = "detailsSizesCell"
-        static let typesID = "detailsTypesCell"
+        static let activityCellID = "tweakDetailActivityCell"
+        static let descriptionCellID = "tweakDetailDescriptionCell"
     }
     
     var viewModel: TweakDetailViewModel!
@@ -24,27 +24,27 @@ class TweakDetailsDataProvider: NSObject, UITableViewDataSource {
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        guard let sectionType = DetailsSection(rawValue: section) else {
+        guard let sectionType = TweakDetailSection(rawValue: section) else {
             fatalError("There should be a section type")
         }
         switch sectionType {
-        case .sizes:
+        case .activity:
             return viewModel.activityCount
-        case .types:
-            return viewModel.descriptinParagraphCount
+        case .description:
+            return viewModel.descriptionParagraphCount
         }
     }
     
     // Row Cell At Index
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        guard let sectionType = DetailsSection(rawValue: indexPath.section) else {
+        guard let sectionType = TweakDetailSection(rawValue: indexPath.section) else {
             fatalError("There should be a section type")
         }
         switch sectionType {
             
-        case .sizes:
+        case .activity:
             guard let cell = tableView
-                .dequeueReusableCell(withIdentifier: Strings.sizesID) as? SizesCell
+                .dequeueReusableCell(withIdentifier: Strings.activityCellID) as? TweakDetailActivityCell
                 else { return UITableViewCell() }
             
             cell.configure(
@@ -52,9 +52,9 @@ class TweakDetailsDataProvider: NSObject, UITableViewDataSource {
             )
             return cell
             
-        case .types:
+        case .description:
             guard let cell = tableView
-                .dequeueReusableCell(withIdentifier: Strings.typesID) as? TypesCell
+                .dequeueReusableCell(withIdentifier: Strings.descriptionCellID) as? TweakDetailDescriptionCell
                 else { return UITableViewCell() }
             let descriptionParagraph = viewModel.descriptionParagraph(index: indexPath.row)
             

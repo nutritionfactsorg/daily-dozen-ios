@@ -2,7 +2,7 @@
 //  ItemHistoryViewController.swift
 //  DailyDozen
 //
-//  Created by Konstantin Khokhlov on 16.11.17.
+//  Created by Konstantin Khokhlov on 16.11.2017.
 //  Copyright © 2017 Nutritionfacts.org. All rights reserved.
 //
 

@@ -12,19 +12,19 @@ class DozeTextsProvider {
     static let shared: DozeTextsProvider = {
         let decoder = JSONDecoder() 
         guard 
-            let path = Bundle.main.path(forResource: "DozeDetails", ofType: "json"),
+            let path = Bundle.main.path(forResource: "DozeDetailData", ofType: "json"),
             let jsonString = try? String(contentsOfFile: path),
             let jsonData = jsonString.data(using: .utf8),
-            let info = try? decoder.decode(DozeDetailsInfo.self, from: jsonData)
+            let info = try? decoder.decode(DozeDetailInfo.self, from: jsonData)
             else { 
-                fatalError("DozeTextsProvider failed to load 'DozeDetails.json'") 
+                fatalError("DozeTextsProvider failed to load 'DozeDetailData.json'") 
         }
         return  DozeTextsProvider(info: info)
     }()
     
-    private let info: DozeDetailsInfo
+    private let info: DozeDetailInfo
     
-    init(info: DozeDetailsInfo) {
+    init(info: DozeDetailInfo) {
         self.info = info
     }
     

@@ -81,7 +81,7 @@ class ServingsViewController: UIViewController {
                       completionHandler: nil)
             return
         }
-        let viewController = DozeDetailsBuilder.instantiateController(itemTypeKey: itemInfo.itemType.typeKey)
+        let viewController = DozeDetailBuilder.instantiateController(itemTypeKey: itemInfo.itemType.typeKey)
         navigationController?.pushViewController(viewController, animated: true)
     }
     

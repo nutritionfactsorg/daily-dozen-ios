@@ -71,7 +71,7 @@ class ServingsPagerViewController: UIViewController {
         navigationController?.navigationBar.barTintColor = UIColor.greenColor
         navigationController?.navigationBar.tintColor = UIColor.white
 
-        title = "Daily Dozen"
+        title = NSLocalizedString("navtab.doze", comment: "Daily Dozen (proper noun) navigation tab")
     }
 
     override func viewDidAppear(_ animated: Bool) {

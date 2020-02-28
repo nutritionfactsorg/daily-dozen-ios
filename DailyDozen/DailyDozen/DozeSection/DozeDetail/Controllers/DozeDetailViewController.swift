@@ -1,19 +1,18 @@
 //
-//  DozeDetailsViewController.swift
+//  DozeDetailViewController.swift
 //  DailyDozen
 //
-//  Created by Konstantin Khokhlov on 31.10.17.
-//  Copyright © 2017 Nutritionfacts.org. All rights reserved.
+//  Copyright © 2019 Nutritionfacts.org. All rights reserved.
 //
 
 import UIKit
 
 // MARK: - Builder
-class DozeDetailsBuilder {
+class DozeDetailBuilder {
     
     // MARK: - Nested
     struct Strings {
-        static let storyboardDetailsDoze = "DetailsDoze"
+        static let storyboardDetailsDoze = "DozeDetailLayout"
     }
     
     // MARK: - Methods
@@ -21,13 +20,13 @@ class DozeDetailsBuilder {
     ///
     /// - Parameter itemTypeKey: An item type key string.
     /// - Returns: The initial view controller in the storyboard.
-    static func instantiateController(itemTypeKey: String) -> DozeDetailsViewController {
+    static func instantiateController(itemTypeKey: String) -> DozeDetailViewController {
         
         let storyboard = UIStoryboard(name: Strings.storyboardDetailsDoze, bundle: nil)
         guard
             let viewController = storyboard
-                .instantiateInitialViewController() as? DozeDetailsViewController
-            else { fatalError("Did not instantiate `DozeDetails` controller") }
+                .instantiateInitialViewController() as? DozeDetailViewController
+            else { fatalError("Did not instantiate `DozeDetailData` controller") }
         
         viewController.setViewModel(itemTypeKey: itemTypeKey)
         
@@ -36,7 +35,7 @@ class DozeDetailsBuilder {
 }
 
 // MARK: - Controller
-class DozeDetailsViewController: UIViewController {
+class DozeDetailViewController: UIViewController {
     
     // MARK: - Nested
     private struct Keys {
@@ -45,7 +44,7 @@ class DozeDetailsViewController: UIViewController {
     
     // MARK: - Outlets
     @IBOutlet private weak var tableView: UITableView!
-    @IBOutlet private weak var dataProvider: DozeDetailsDataProvider!
+    @IBOutlet private weak var dataProvider: DozeDetailDataProvider!
     @IBOutlet private weak var titleLabel: UILabel!
     @IBOutlet private weak var detailsImageView: UIImageView!
     
@@ -61,7 +60,7 @@ class DozeDetailsViewController: UIViewController {
         
         if let dataCountType = dataProvider.dataCountType {
             if dataCountType.typeKey.prefix(4) == "doze" {
-                // DozeDetailsViewController VIDEOS
+                // DozeDetailViewController VIDEOS
                 navigationItem.rightBarButtonItem = UIBarButtonItem(
                     title: Keys.videos,
                     style: .done,
@@ -88,7 +87,7 @@ class DozeDetailsViewController: UIViewController {
     ///
     /// - Parameter item: The current item name.
     func setViewModel(itemTypeKey: String) {
-        dataProvider.dataCountType = DataCountType(typeKey: itemTypeKey)
+        dataProvider.dataCountType = DataCountType(itemTypeKey: itemTypeKey)
         dataProvider.viewModel = DozeTextsProvider.shared.getDetails(itemTypeKey: itemTypeKey)
     }
     
@@ -105,7 +104,7 @@ class DozeDetailsViewController: UIViewController {
     ///
     /// - Parameter sender: The button.
     @IBAction private func unitsChanged(_ sender: UIButton) {
-        let sectionIndex = DetailsSection.sizes.rawValue
+        let sectionIndex = DozeDetailSection.amount.rawValue
         guard
             let unitsTypePrefStr = UserDefaults.standard.string(forKey: SettingsKeys.unitsTypePref),
             let currentUnitsType = UnitsType(rawValue: unitsTypePrefStr),
@@ -130,14 +129,14 @@ class DozeDetailsViewController: UIViewController {
 }
 
 // MARK: - UITableViewDelegate
-extension DozeDetailsViewController: UITableViewDelegate {
+extension DozeDetailViewController: UITableViewDelegate {
     
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-        guard let sectionType = DetailsSection(rawValue: indexPath.section) else {
+        guard let sectionType = DozeDetailSection(rawValue: indexPath.section) else {
             fatalError("There should be a section type")
         }
         
-        if sectionType == .types &&
+        if sectionType == .example &&
             dataProvider.dataCountType.isTweak {
             let x = CGFloat(0.0)
             let y = CGFloat(0.0)
@@ -166,19 +165,19 @@ extension DozeDetailsViewController: UITableViewDelegate {
     }
     
     func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
-        guard let sectionType = DetailsSection(rawValue: section) else {
+        guard let sectionType = DozeDetailSection(rawValue: section) else {
             fatalError("There should be a section type")
         }
         return sectionType.headerHeight
     }
     
     func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
-        guard let sectionType = DetailsSection(rawValue: section) else {
-            fatalError("There should be a section type")
+        guard let sectionType = DozeDetailSection(rawValue: section) else {
+            fatalError("There should be a doze section type")
         }
         if let dataCountType = dataProvider.dataCountType {
             if dataCountType.typeKey.prefix(5) == "tweak" {
-                return sectionType.headerTweaksView
+                return sectionType.headerView
             }
         }
         return sectionType.headerView

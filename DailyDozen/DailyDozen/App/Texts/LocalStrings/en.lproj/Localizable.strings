@@ -5,6 +5,15 @@
   Copyright © 2019 Nutritionfacts.org. All rights reserved.
 */
 
+/* Daily Dozen (proper noun) navigation tab */
+"navtab.doze"="Daily Dozen";
+/* Twenty-One Tweaks (proper noun) navigation tab */
+"navtab.tweaks"="Twenty-One Tweaks";
+/* More Information navigation tab */
+"navtab.info"="Info";
+/* Preferences (aka Settings, Configuration) navigation tab. Choose word different from 'Tweaks' translation */
+"navtab.preferences"="Settings";
+
 /* ***** Daily Dozen ***** */
 "dozeBeans.heading"="Beans";
 "dozeBerries.heading"="Berries";

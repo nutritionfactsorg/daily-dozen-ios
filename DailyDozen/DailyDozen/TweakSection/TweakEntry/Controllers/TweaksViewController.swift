@@ -93,7 +93,7 @@ class TweaksViewController: UIViewController {
                       completionHandler: nil)
             return
         }
-        let viewController = TweakDetailsBuilder.instantiateController(itemTypeKey: itemInfo.itemType.typeKey)
+        let viewController = TweakDetailBuilder.instantiateController(itemTypeKey: itemInfo.itemType.typeKey)
         navigationController?.pushViewController(viewController, animated: true)
     }
     

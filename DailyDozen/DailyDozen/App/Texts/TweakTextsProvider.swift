@@ -12,19 +12,19 @@ class TweakTextsProvider {
     static let shared: TweakTextsProvider = {
         let decoder = JSONDecoder() 
         guard 
-            let path = Bundle.main.path(forResource: "TweakDetails", ofType: "json"),
+            let path = Bundle.main.path(forResource: "TweakDetailData", ofType: "json"),
             let jsonString = try? String(contentsOfFile: path),
             let jsonData = jsonString.data(using: .utf8),
-            let info = try? decoder.decode(TweakDetailsInfo.self, from: jsonData)
+            let info = try? decoder.decode(TweakDetailInfo.self, from: jsonData)
             else { 
-                fatalError("TweakTextsProvider failed to load 'TweakDetails.json'") 
+                fatalError("TweakTextsProvider failed to load 'TweakDetailData.json'") 
         }
         return  TweakTextsProvider(info: info)
     }()
     
-    private let info: TweakDetailsInfo
+    private let info: TweakDetailInfo
     
-    init(info: TweakDetailsInfo) {
+    init(info: TweakDetailInfo) {
         self.info = info
     }
     

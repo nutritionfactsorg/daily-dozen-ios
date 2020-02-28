@@ -26,7 +26,7 @@ class DataCountRecord: Object {
 
     var pidParts: (datestamp: Date, countType: DataCountType)? {
         guard let date = Date.init(datestampKey: pidKeys.datestampKey),
-            let countType = DataCountType(typeKey: pidKeys.typeKey) else {
+            let countType = DataCountType(itemTypeKey: pidKeys.typeKey) else {
                 print(":ERROR: DataCountRecord has invalid datestamp or typeKey")
                 return nil
         }
@@ -52,7 +52,7 @@ class DataCountRecord: Object {
     
     /// CSV Initialer.
     convenience init?(datestampKey: String, typeKey: String, count: Int = 0, streak: Int = 0) {
-        guard let dataCountType = DataCountType(typeKey: typeKey),
+        guard let dataCountType = DataCountType(itemTypeKey: typeKey),
             Date(datestampKey: datestampKey) != nil else {
             return nil
         }

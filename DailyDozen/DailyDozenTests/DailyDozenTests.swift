@@ -141,8 +141,8 @@ class DailyDozenTests: XCTestCase {
         XCTAssertEqual(date.datestampHHmm, "00:00")
     }
 
-    func testPerformanceExample() {
-        // This is an example of a performance test case.
+    func testPerformance() {
+        // Performance test case.
         measure {
             // Put the code you want to measure the time of here.
         }

@@ -51,8 +51,8 @@ enum DataCountType: String, CaseIterable {
     case tweakNightlySleep
     case tweakNightlyTrendelenbrug
     
-    init?(typeKey: String) {
-        self = DataCountType(rawValue: String(typeKey))!
+    init?(itemTypeKey: String) {
+        self = DataCountType(rawValue: String(itemTypeKey))!
     }
     
     var typeKey: String {

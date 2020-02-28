@@ -1,5 +1,5 @@
 //
-//  TweakDetailsInfo.swift
+//  DozeDetailInfo.swift
 //  DailyDozen
 //
 //  Copyright © 2020 Nutritionfacts.org. All rights reserved.
@@ -8,18 +8,23 @@
 
 import Foundation
 
-struct TweakDetailsInfo: Codable {
+struct DozeDetailInfo: Codable {
     
     struct Item: Codable {
                 
-        struct Activity: Codable { // Display Subheading
+        struct Serving: Codable { // Display Subheading: Size
             var imperial: String
             var metric: String
         }
         
+        struct Variety: Codable { // Display Subheading: Type
+            var text: String
+            var topic: String // URL path fragment
+        }
+        
         var heading: String
-        var activity: Activity // like doze size
-        var description: [String] // like doze type
+        var servings: [Serving] // AKA size
+        var varieties: [Variety] // AKA type
         var topic: String // item level URL path fragment
     }
     

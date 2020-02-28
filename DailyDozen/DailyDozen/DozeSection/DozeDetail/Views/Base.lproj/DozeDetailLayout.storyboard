@@ -8,10 +8,10 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--Doze Details View Controller-->
+        <!--Doze Detail View Controller-->
         <scene sceneID="wSU-BB-gnM">
             <objects>
-                <viewController id="Hsh-Us-G4Y" customClass="DozeDetailsViewController" customModule="DailyDozen" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="Hsh-Us-G4Y" customClass="DozeDetailViewController" customModule="DailyDozen" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="hkw-3T-mer">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -20,7 +20,7 @@
                                 <rect key="frame" x="0.0" y="180" width="375" height="487"/>
                                 <color key="backgroundColor" red="0.95294117649999999" green="0.95294117649999999" blue="0.95294117649999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="detailsSizesCell" rowHeight="75" id="ZQz-2Z-LTf" customClass="SizesCell" customModule="DailyDozen" customModuleProvider="target">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="dozeDetailSizeCell" rowHeight="75" id="ZQz-2Z-LTf" customClass="DozeDetailSizeCell" customModule="DailyDozen" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="28" width="375" height="75"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="ZQz-2Z-LTf" id="R1O-eC-rRW">
@@ -75,7 +75,7 @@
                                             <outlet property="titleLabel" destination="yct-Iw-M3s" id="Yll-Bv-iWP"/>
                                         </connections>
                                     </tableViewCell>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="detailsTypesCell" rowHeight="75" id="4by-sC-ujF" customClass="TypesCell" customModule="DailyDozen" customModuleProvider="target">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="dozeDetailTypeCell" rowHeight="75" id="4by-sC-ujF" customClass="DozeDetailTypeCell" customModule="DailyDozen" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="103" width="375" height="75"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="4by-sC-ujF" id="iU5-3t-3qP">
@@ -183,7 +183,7 @@
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="QPX-bs-f9Z" userLabel="First Responder" sceneMemberID="firstResponder"/>
-                <customObject id="fRg-Xb-5fJ" customClass="DozeDetailsDataProvider" customModule="DailyDozen" customModuleProvider="target"/>
+                <customObject id="fRg-Xb-5fJ" customClass="DozeDetailDataProvider" customModule="DailyDozen" customModuleProvider="target"/>
             </objects>
             <point key="canvasLocation" x="72.799999999999997" y="170.46476761619192"/>
         </scene>

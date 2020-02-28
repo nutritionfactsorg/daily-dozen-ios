@@ -10,23 +10,25 @@
 		4904AF84239CB99600E271EC /* WeightPagerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4904AF83239CB99600E271EC /* WeightPagerViewController.swift */; };
 		4916451423EE4C410077731D /* TweakDetailViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4916451323EE4C410077731D /* TweakDetailViewModel.swift */; };
 		4916451623EE4D360077731D /* TweakTextsProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4916451523EE4D360077731D /* TweakTextsProvider.swift */; };
-		4916451823EE4E440077731D /* TweakDetailsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4916451723EE4E440077731D /* TweakDetailsViewController.swift */; };
-		4916451A23EE51310077731D /* TweakDetailsDataProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4916451923EE51310077731D /* TweakDetailsDataProvider.swift */; };
-		4916451D23EE53610077731D /* TweakDetails.json in Resources */ = {isa = PBXBuildFile; fileRef = 4916451F23EE53610077731D /* TweakDetails.json */; };
+		4916451823EE4E440077731D /* TweakDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4916451723EE4E440077731D /* TweakDetailViewController.swift */; };
+		4916451A23EE51310077731D /* TweakDetailDataProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4916451923EE51310077731D /* TweakDetailDataProvider.swift */; };
+		4916451D23EE53610077731D /* TweakDetailData.json in Resources */ = {isa = PBXBuildFile; fileRef = 4916451F23EE53610077731D /* TweakDetailData.json */; };
 		492474A323DB677A00D7D918 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 492474A123DB677A00D7D918 /* InfoPlist.strings */; };
+		492A1E702409B3FA00F6C37C /* TweakDetailActivityCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 492A1E6F2409B3FA00F6C37C /* TweakDetailActivityCell.swift */; };
+		492A1E722409B41000F6C37C /* TweakDetailDescriptionCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 492A1E712409B41000F6C37C /* TweakDetailDescriptionCell.swift */; };
 		4933A74B23EE267600CE4631 /* DozeTextsProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4933A74A23EE267500CE4631 /* DozeTextsProvider.swift */; };
-		4933A74D23EE28C500CE4631 /* DozeDetailsInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4933A74C23EE28C500CE4631 /* DozeDetailsInfo.swift */; };
-		4933A75023EE2BC800CE4631 /* DozeDetails.json in Resources */ = {isa = PBXBuildFile; fileRef = 4933A75223EE2BC800CE4631 /* DozeDetails.json */; };
+		4933A74D23EE28C500CE4631 /* DozeDetailInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4933A74C23EE28C500CE4631 /* DozeDetailInfo.swift */; };
+		4933A75023EE2BC800CE4631 /* DozeDetailData.json in Resources */ = {isa = PBXBuildFile; fileRef = 4933A75223EE2BC800CE4631 /* DozeDetailData.json */; };
 		4933A75523EE39CC00CE4631 /* DozeDetailViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4933A75423EE39CC00CE4631 /* DozeDetailViewModel.swift */; };
-		4933A75723EE49BB00CE4631 /* TweakDetailsInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4933A75623EE49BB00CE4631 /* TweakDetailsInfo.swift */; };
+		4933A75723EE49BB00CE4631 /* TweakDetailInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4933A75623EE49BB00CE4631 /* TweakDetailInfo.swift */; };
 		493A8B9A235E93DA00A5009A /* SettingsKeys.swift in Sources */ = {isa = PBXBuildFile; fileRef = 493A8B99235E93DA00A5009A /* SettingsKeys.swift */; };
 		493A9BD323CE47A000F679BE /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 493A9BD523CE47A000F679BE /* Localizable.strings */; };
-		493A9BD723CE4EED00F679BE /* DetailsDoze.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 493A9BD923CE4EED00F679BE /* DetailsDoze.storyboard */; };
-		493A9BDA23CE4F0200F679BE /* DetailsTweaks.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 493A9BDC23CE4F0200F679BE /* DetailsTweaks.storyboard */; };
-		493A9BDD23CE4F1400F679BE /* SizesHeader.xib in Resources */ = {isa = PBXBuildFile; fileRef = 493A9BDF23CE4F1400F679BE /* SizesHeader.xib */; };
-		493A9BE023CE4F1C00F679BE /* SizesTweaksHeader.xib in Resources */ = {isa = PBXBuildFile; fileRef = 493A9BE223CE4F1C00F679BE /* SizesTweaksHeader.xib */; };
-		493A9BE323CE4F2D00F679BE /* TypesHeader.xib in Resources */ = {isa = PBXBuildFile; fileRef = 493A9BE523CE4F2D00F679BE /* TypesHeader.xib */; };
-		493A9BE623CE4F3700F679BE /* TypesTweaksHeader.xib in Resources */ = {isa = PBXBuildFile; fileRef = 493A9BE823CE4F3700F679BE /* TypesTweaksHeader.xib */; };
+		493A9BD723CE4EED00F679BE /* DozeDetailLayout.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 493A9BD923CE4EED00F679BE /* DozeDetailLayout.storyboard */; };
+		493A9BDA23CE4F0200F679BE /* TweakDetailLayout.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 493A9BDC23CE4F0200F679BE /* TweakDetailLayout.storyboard */; };
+		493A9BDD23CE4F1400F679BE /* DozeDetailSizeHeader.xib in Resources */ = {isa = PBXBuildFile; fileRef = 493A9BDF23CE4F1400F679BE /* DozeDetailSizeHeader.xib */; };
+		493A9BE023CE4F1C00F679BE /* TweakDetailActivityHeader.xib in Resources */ = {isa = PBXBuildFile; fileRef = 493A9BE223CE4F1C00F679BE /* TweakDetailActivityHeader.xib */; };
+		493A9BE323CE4F2D00F679BE /* DozeDetailTypeHeader.xib in Resources */ = {isa = PBXBuildFile; fileRef = 493A9BE523CE4F2D00F679BE /* DozeDetailTypeHeader.xib */; };
+		493A9BE623CE4F3700F679BE /* TweakDetailDescriptionHeader.xib in Resources */ = {isa = PBXBuildFile; fileRef = 493A9BE823CE4F3700F679BE /* TweakDetailDescriptionHeader.xib */; };
 		493A9BEC23CE612A00F679BE /* ItemHistory.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 493A9BEE23CE612A00F679BE /* ItemHistory.storyboard */; };
 		493A9BF023CE61BE00F679BE /* Menu.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 493A9BF223CE61BE00F679BE /* Menu.storyboard */; };
 		493A9BF323CE61E700F679BE /* ServingsPager.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 493A9BF523CE61E700F679BE /* ServingsPager.storyboard */; };
@@ -59,6 +61,7 @@
 		497390B023A5D4F900492D92 /* SettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 497390AD23A5D4F800492D92 /* SettingsViewController.swift */; };
 		497390B123A5D4F900492D92 /* SettingsReminderViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 497390AE23A5D4F900492D92 /* SettingsReminderViewController.swift */; };
 		497B137223CD72E600BC2488 /* About.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 497B137423CD72E600BC2488 /* About.storyboard */; };
+		497F91B2240990B600464E4E /* TweakDetailSection.swift in Sources */ = {isa = PBXBuildFile; fileRef = 497F91B1240990B600464E4E /* TweakDetailSection.swift */; };
 		4981708F2391B1790033882C /* TweaksStateCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4981708E2391B1790033882C /* TweaksStateCell.swift */; };
 		498170912391B19E0033882C /* TweaksCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 498170902391B19E0033882C /* TweaksCell.swift */; };
 		498170952391B6AB0033882C /* TweaksSection.swift in Sources */ = {isa = PBXBuildFile; fileRef = 498170942391B6AB0033882C /* TweaksSection.swift */; };
@@ -85,10 +88,10 @@
 		BD68BC5B2FB6D632F16CE9CD /* Pods_DailyDozenTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 715D60F634E9BCD998C66B77 /* Pods_DailyDozenTests.framework */; };
 		BED5BB460CE3AEE8CF585899 /* Pods_DailyDozen.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F514690D725E67AD54735EB9 /* Pods_DailyDozen.framework */; };
 		CF12918F1FC42DD300D1C17E /* DateCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF12918E1FC42DD300D1C17E /* DateCell.swift */; };
-		CF17C8A71FAA019600367BF8 /* DetailsSection.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF17C8A61FAA019600367BF8 /* DetailsSection.swift */; };
-		CF22F07A1FA88D2200F25B70 /* DozeDetailsDataProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF22F0791FA88D2200F25B70 /* DozeDetailsDataProvider.swift */; };
+		CF17C8A71FAA019600367BF8 /* DozeDetailSection.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF17C8A61FAA019600367BF8 /* DozeDetailSection.swift */; };
+		CF22F07A1FA88D2200F25B70 /* DozeDetailDataProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF22F0791FA88D2200F25B70 /* DozeDetailDataProvider.swift */; };
 		CF2680021FB477AD004A6200 /* Date.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF2680011FB477AD004A6200 /* Date.swift */; };
-		CF2FA9961FA87F0C003508F8 /* DozeDetailsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF2FA9951FA87F0C003508F8 /* DozeDetailsViewController.swift */; };
+		CF2FA9961FA87F0C003508F8 /* DozeDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF2FA9951FA87F0C003508F8 /* DozeDetailViewController.swift */; };
 		CF4902951FD91412000EAB68 /* ChartView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF4902941FD91412000EAB68 /* ChartView.swift */; };
 		CF4902971FD917D4000EAB68 /* ControlPanel.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF4902961FD917D4000EAB68 /* ControlPanel.swift */; };
 		CF49029B1FD91F01000EAB68 /* ServingsHistoryViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF49029A1FD91F01000EAB68 /* ServingsHistoryViewModel.swift */; };
@@ -96,8 +99,8 @@
 		CF4DECF91F9DF82900DA094B /* ServingsDataProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF4DECF81F9DF82900DA094B /* ServingsDataProvider.swift */; };
 		CF55BC4F2020450D00003D0D /* AlertBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF55BC4E2020450D00003D0D /* AlertBuilder.swift */; };
 		CF5B28B11FA0A2C500D57A48 /* ServingsStateCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF5B28B01FA0A2C500D57A48 /* ServingsStateCell.swift */; };
-		CF64DF311FB5DFCF00B4D124 /* SizesCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF64DF301FB5DFCF00B4D124 /* SizesCell.swift */; };
-		CF64DF331FB5E03C00B4D124 /* TypesCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF64DF321FB5E03C00B4D124 /* TypesCell.swift */; };
+		CF64DF311FB5DFCF00B4D124 /* DozeDetailSizeCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF64DF301FB5DFCF00B4D124 /* DozeDetailSizeCell.swift */; };
+		CF64DF331FB5E03C00B4D124 /* DozeDetailTypeCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF64DF321FB5E03C00B4D124 /* DozeDetailTypeCell.swift */; };
 		CF987C281F9E157300D4893E /* Item.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF987C271F9E157300D4893E /* Item.swift */; };
 		CF9E03231FBD9FDE0084BC88 /* ItemHistoryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF9E03221FBD9FDE0084BC88 /* ItemHistoryViewController.swift */; };
 		CF9EC1C0202196B100C7B3CA /* Fonts.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF9EC1BF202196B100C7B3CA /* Fonts.swift */; };
@@ -144,25 +147,27 @@
 		4904AF83239CB99600E271EC /* WeightPagerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeightPagerViewController.swift; sourceTree = "<group>"; };
 		4916451323EE4C410077731D /* TweakDetailViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TweakDetailViewModel.swift; sourceTree = "<group>"; };
 		4916451523EE4D360077731D /* TweakTextsProvider.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TweakTextsProvider.swift; sourceTree = "<group>"; };
-		4916451723EE4E440077731D /* TweakDetailsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TweakDetailsViewController.swift; sourceTree = "<group>"; };
-		4916451923EE51310077731D /* TweakDetailsDataProvider.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TweakDetailsDataProvider.swift; sourceTree = "<group>"; };
-		4916451E23EE53610077731D /* Base */ = {isa = PBXFileReference; lastKnownFileType = text.json; name = Base; path = Base.lproj/TweakDetails.json; sourceTree = "<group>"; };
-		4916452023EE53640077731D /* es */ = {isa = PBXFileReference; lastKnownFileType = text.json; name = es; path = es.lproj/TweakDetails.json; sourceTree = "<group>"; };
+		4916451723EE4E440077731D /* TweakDetailViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TweakDetailViewController.swift; sourceTree = "<group>"; };
+		4916451923EE51310077731D /* TweakDetailDataProvider.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TweakDetailDataProvider.swift; sourceTree = "<group>"; };
+		4916451E23EE53610077731D /* Base */ = {isa = PBXFileReference; lastKnownFileType = text.json; name = Base; path = Base.lproj/TweakDetailData.json; sourceTree = "<group>"; };
+		4916452023EE53640077731D /* es */ = {isa = PBXFileReference; lastKnownFileType = text.json; name = es; path = es.lproj/TweakDetailData.json; sourceTree = "<group>"; };
 		492474A223DB677A00D7D918 /* es */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = es; path = es.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		492A1E6F2409B3FA00F6C37C /* TweakDetailActivityCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TweakDetailActivityCell.swift; sourceTree = "<group>"; };
+		492A1E712409B41000F6C37C /* TweakDetailDescriptionCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TweakDetailDescriptionCell.swift; sourceTree = "<group>"; };
 		4933A74A23EE267500CE4631 /* DozeTextsProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DozeTextsProvider.swift; sourceTree = "<group>"; };
-		4933A74C23EE28C500CE4631 /* DozeDetailsInfo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DozeDetailsInfo.swift; sourceTree = "<group>"; };
-		4933A75123EE2BC800CE4631 /* Base */ = {isa = PBXFileReference; lastKnownFileType = text.json; name = Base; path = Base.lproj/DozeDetails.json; sourceTree = "<group>"; };
-		4933A75323EE2BCB00CE4631 /* es */ = {isa = PBXFileReference; lastKnownFileType = text.json; name = es; path = es.lproj/DozeDetails.json; sourceTree = "<group>"; };
+		4933A74C23EE28C500CE4631 /* DozeDetailInfo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DozeDetailInfo.swift; sourceTree = "<group>"; };
+		4933A75123EE2BC800CE4631 /* Base */ = {isa = PBXFileReference; lastKnownFileType = text.json; name = Base; path = Base.lproj/DozeDetailData.json; sourceTree = "<group>"; };
+		4933A75323EE2BCB00CE4631 /* es */ = {isa = PBXFileReference; lastKnownFileType = text.json; name = es; path = es.lproj/DozeDetailData.json; sourceTree = "<group>"; };
 		4933A75423EE39CC00CE4631 /* DozeDetailViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DozeDetailViewModel.swift; sourceTree = "<group>"; };
-		4933A75623EE49BB00CE4631 /* TweakDetailsInfo.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TweakDetailsInfo.swift; sourceTree = "<group>"; };
+		4933A75623EE49BB00CE4631 /* TweakDetailInfo.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TweakDetailInfo.swift; sourceTree = "<group>"; };
 		493A8B99235E93DA00A5009A /* SettingsKeys.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsKeys.swift; sourceTree = "<group>"; };
 		493A9BD423CE47A000F679BE /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
-		493A9BD823CE4EED00F679BE /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/DetailsDoze.storyboard; sourceTree = "<group>"; };
-		493A9BDB23CE4F0200F679BE /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/DetailsTweaks.storyboard; sourceTree = "<group>"; };
-		493A9BDE23CE4F1400F679BE /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/SizesHeader.xib; sourceTree = "<group>"; };
-		493A9BE123CE4F1C00F679BE /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/SizesTweaksHeader.xib; sourceTree = "<group>"; };
-		493A9BE423CE4F2D00F679BE /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/TypesHeader.xib; sourceTree = "<group>"; };
-		493A9BE723CE4F3700F679BE /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/TypesTweaksHeader.xib; sourceTree = "<group>"; };
+		493A9BD823CE4EED00F679BE /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/DozeDetailLayout.storyboard; sourceTree = "<group>"; };
+		493A9BDB23CE4F0200F679BE /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/TweakDetailLayout.storyboard; sourceTree = "<group>"; };
+		493A9BDE23CE4F1400F679BE /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/DozeDetailSizeHeader.xib; sourceTree = "<group>"; };
+		493A9BE123CE4F1C00F679BE /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/TweakDetailActivityHeader.xib; sourceTree = "<group>"; };
+		493A9BE423CE4F2D00F679BE /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/DozeDetailTypeHeader.xib; sourceTree = "<group>"; };
+		493A9BE723CE4F3700F679BE /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/TweakDetailDescriptionHeader.xib; sourceTree = "<group>"; };
 		493A9BED23CE612A00F679BE /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/ItemHistory.storyboard; sourceTree = "<group>"; };
 		493A9BF123CE61BE00F679BE /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Menu.storyboard; sourceTree = "<group>"; };
 		493A9BF423CE61E700F679BE /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/ServingsPager.storyboard; sourceTree = "<group>"; };
@@ -179,12 +184,12 @@
 		493A9C1C23CE6B7300F679BE /* es */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = es; path = es.lproj/About.strings; sourceTree = "<group>"; };
 		493A9C1D23CE6B7300F679BE /* es */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = es; path = es.lproj/FirstLaunch.strings; sourceTree = "<group>"; };
 		493A9C1E23CE6B7300F679BE /* es */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = es; path = es.lproj/Main.strings; sourceTree = "<group>"; };
-		493A9C1F23CE6B7300F679BE /* es */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = es; path = es.lproj/DetailsDoze.strings; sourceTree = "<group>"; };
-		493A9C2023CE6B7300F679BE /* es */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = es; path = es.lproj/DetailsTweaks.strings; sourceTree = "<group>"; };
-		493A9C2123CE6B7300F679BE /* es */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = es; path = es.lproj/SizesHeader.strings; sourceTree = "<group>"; };
-		493A9C2223CE6B7400F679BE /* es */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = es; path = es.lproj/SizesTweaksHeader.strings; sourceTree = "<group>"; };
-		493A9C2323CE6B7400F679BE /* es */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = es; path = es.lproj/TypesHeader.strings; sourceTree = "<group>"; };
-		493A9C2423CE6B7400F679BE /* es */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = es; path = es.lproj/TypesTweaksHeader.strings; sourceTree = "<group>"; };
+		493A9C1F23CE6B7300F679BE /* es */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = es; path = es.lproj/DozeDetailLayout.strings; sourceTree = "<group>"; };
+		493A9C2023CE6B7300F679BE /* es */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = es; path = es.lproj/TweakDetailLayout.strings; sourceTree = "<group>"; };
+		493A9C2123CE6B7300F679BE /* es */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = es; path = es.lproj/DozeDetailSizeHeader.strings; sourceTree = "<group>"; };
+		493A9C2223CE6B7400F679BE /* es */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = es; path = es.lproj/TweakDetailActivityHeader.strings; sourceTree = "<group>"; };
+		493A9C2323CE6B7400F679BE /* es */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = es; path = es.lproj/DozeDetailTypeHeader.strings; sourceTree = "<group>"; };
+		493A9C2423CE6B7400F679BE /* es */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = es; path = es.lproj/TweakDetailDescriptionHeader.strings; sourceTree = "<group>"; };
 		493A9C2523CE6B7400F679BE /* es */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = es; path = es.lproj/ItemHistory.strings; sourceTree = "<group>"; };
 		493A9C2623CE6B7400F679BE /* es */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = es; path = es.lproj/Menu.strings; sourceTree = "<group>"; };
 		493A9C2723CE6B7400F679BE /* es */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = es; path = es.lproj/ServingsPager.strings; sourceTree = "<group>"; };
@@ -218,6 +223,7 @@
 		497390AD23A5D4F800492D92 /* SettingsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SettingsViewController.swift; sourceTree = "<group>"; };
 		497390AE23A5D4F900492D92 /* SettingsReminderViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SettingsReminderViewController.swift; sourceTree = "<group>"; };
 		497B137323CD72E600BC2488 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/About.storyboard; sourceTree = "<group>"; };
+		497F91B1240990B600464E4E /* TweakDetailSection.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TweakDetailSection.swift; sourceTree = "<group>"; };
 		4981708E2391B1790033882C /* TweaksStateCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TweaksStateCell.swift; sourceTree = "<group>"; };
 		498170902391B19E0033882C /* TweaksCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TweaksCell.swift; sourceTree = "<group>"; };
 		498170942391B6AB0033882C /* TweaksSection.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TweaksSection.swift; sourceTree = "<group>"; };
@@ -250,10 +256,10 @@
 		715D60F634E9BCD998C66B77 /* Pods_DailyDozenTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_DailyDozenTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		7D4AA01331AD98C99ADB2BC0 /* Pods-DailyDozen.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-DailyDozen.release.xcconfig"; path = "Pods/Target Support Files/Pods-DailyDozen/Pods-DailyDozen.release.xcconfig"; sourceTree = "<group>"; };
 		CF12918E1FC42DD300D1C17E /* DateCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DateCell.swift; sourceTree = "<group>"; };
-		CF17C8A61FAA019600367BF8 /* DetailsSection.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailsSection.swift; sourceTree = "<group>"; };
-		CF22F0791FA88D2200F25B70 /* DozeDetailsDataProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DozeDetailsDataProvider.swift; sourceTree = "<group>"; };
+		CF17C8A61FAA019600367BF8 /* DozeDetailSection.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DozeDetailSection.swift; sourceTree = "<group>"; };
+		CF22F0791FA88D2200F25B70 /* DozeDetailDataProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DozeDetailDataProvider.swift; sourceTree = "<group>"; };
 		CF2680011FB477AD004A6200 /* Date.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Date.swift; sourceTree = "<group>"; };
-		CF2FA9951FA87F0C003508F8 /* DozeDetailsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DozeDetailsViewController.swift; sourceTree = "<group>"; };
+		CF2FA9951FA87F0C003508F8 /* DozeDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DozeDetailViewController.swift; sourceTree = "<group>"; };
 		CF4902941FD91412000EAB68 /* ChartView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChartView.swift; sourceTree = "<group>"; };
 		CF4902961FD917D4000EAB68 /* ControlPanel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ControlPanel.swift; sourceTree = "<group>"; };
 		CF49029A1FD91F01000EAB68 /* ServingsHistoryViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ServingsHistoryViewModel.swift; sourceTree = "<group>"; };
@@ -261,8 +267,8 @@
 		CF4DECF81F9DF82900DA094B /* ServingsDataProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ServingsDataProvider.swift; sourceTree = "<group>"; };
 		CF55BC4E2020450D00003D0D /* AlertBuilder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlertBuilder.swift; sourceTree = "<group>"; };
 		CF5B28B01FA0A2C500D57A48 /* ServingsStateCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ServingsStateCell.swift; sourceTree = "<group>"; };
-		CF64DF301FB5DFCF00B4D124 /* SizesCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SizesCell.swift; sourceTree = "<group>"; };
-		CF64DF321FB5E03C00B4D124 /* TypesCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TypesCell.swift; sourceTree = "<group>"; };
+		CF64DF301FB5DFCF00B4D124 /* DozeDetailSizeCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DozeDetailSizeCell.swift; sourceTree = "<group>"; };
+		CF64DF321FB5E03C00B4D124 /* DozeDetailTypeCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DozeDetailTypeCell.swift; sourceTree = "<group>"; };
 		CF987C271F9E157300D4893E /* Item.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Item.swift; sourceTree = "<group>"; };
 		CF9E03221FBD9FDE0084BC88 /* ItemHistoryViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ItemHistoryViewController.swift; sourceTree = "<group>"; };
 		CF9EC1BF202196B100C7B3CA /* Fonts.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Fonts.swift; sourceTree = "<group>"; };
@@ -328,20 +334,22 @@
 			path = WeightEntry;
 			sourceTree = "<group>";
 		};
-		492EDD0423F4EA40009DE0ED /* TweakDetails */ = {
+		492EDD0423F4EA40009DE0ED /* TweakDetail */ = {
 			isa = PBXGroup;
 			children = (
-				492EDD0623F4EAB4009DE0ED /* Models */,
 				492EDD0523F4EAAB009DE0ED /* Controllers */,
+				492EDD0623F4EAB4009DE0ED /* Models */,
 				492EDD0823F4EADB009DE0ED /* Views */,
 			);
-			path = TweakDetails;
+			path = TweakDetail;
 			sourceTree = "<group>";
 		};
 		492EDD0523F4EAAB009DE0ED /* Controllers */ = {
 			isa = PBXGroup;
 			children = (
-				4916451723EE4E440077731D /* TweakDetailsViewController.swift */,
+				4916451723EE4E440077731D /* TweakDetailViewController.swift */,
+				492A1E6F2409B3FA00F6C37C /* TweakDetailActivityCell.swift */,
+				492A1E712409B41000F6C37C /* TweakDetailDescriptionCell.swift */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -349,8 +357,8 @@
 		492EDD0623F4EAB4009DE0ED /* Models */ = {
 			isa = PBXGroup;
 			children = (
-				4916451923EE51310077731D /* TweakDetailsDataProvider.swift */,
-				4933A75623EE49BB00CE4631 /* TweakDetailsInfo.swift */,
+				4916451923EE51310077731D /* TweakDetailDataProvider.swift */,
+				4933A75623EE49BB00CE4631 /* TweakDetailInfo.swift */,
 				4916451323EE4C410077731D /* TweakDetailViewModel.swift */,
 			);
 			path = Models;
@@ -359,9 +367,10 @@
 		492EDD0823F4EADB009DE0ED /* Views */ = {
 			isa = PBXGroup;
 			children = (
-				493A9BDC23CE4F0200F679BE /* DetailsTweaks.storyboard */,
-				493A9BE223CE4F1C00F679BE /* SizesTweaksHeader.xib */,
-				493A9BE823CE4F3700F679BE /* TypesTweaksHeader.xib */,
+				493A9BDC23CE4F0200F679BE /* TweakDetailLayout.storyboard */,
+				493A9BE223CE4F1C00F679BE /* TweakDetailActivityHeader.xib */,
+				493A9BE823CE4F3700F679BE /* TweakDetailDescriptionHeader.xib */,
+				497F91B1240990B600464E4E /* TweakDetailSection.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -387,8 +396,8 @@
 			isa = PBXGroup;
 			children = (
 				493A9BD523CE47A000F679BE /* Localizable.strings */,
-				4933A75223EE2BC800CE4631 /* DozeDetails.json */,
-				4916451F23EE53610077731D /* TweakDetails.json */,
+				4933A75223EE2BC800CE4631 /* DozeDetailData.json */,
+				4916451F23EE53610077731D /* TweakDetailData.json */,
 			);
 			path = LocalStrings;
 			sourceTree = "<group>";
@@ -428,10 +437,10 @@
 		495D02DF23F6286A0006ABA5 /* Views */ = {
 			isa = PBXGroup;
 			children = (
-				493A9BD923CE4EED00F679BE /* DetailsDoze.storyboard */,
-				493A9BDF23CE4F1400F679BE /* SizesHeader.xib */,
-				493A9BE523CE4F2D00F679BE /* TypesHeader.xib */,
-				CF17C8A61FAA019600367BF8 /* DetailsSection.swift */,
+				493A9BD923CE4EED00F679BE /* DozeDetailLayout.storyboard */,
+				493A9BDF23CE4F1400F679BE /* DozeDetailSizeHeader.xib */,
+				493A9BE523CE4F2D00F679BE /* DozeDetailTypeHeader.xib */,
+				CF17C8A61FAA019600367BF8 /* DozeDetailSection.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -482,7 +491,7 @@
 		495D02E723F6321E0006ABA5 /* TweakSection */ = {
 			isa = PBXGroup;
 			children = (
-				492EDD0423F4EA40009DE0ED /* TweakDetails */,
+				492EDD0423F4EA40009DE0ED /* TweakDetail */,
 				498170992391B85B0033882C /* TweakHistory */,
 				49F8D1DA23905B2A003E139F /* TweakEntry */,
 			);
@@ -492,7 +501,7 @@
 		495D02E823F632350006ABA5 /* DozeSection */ = {
 			isa = PBXGroup;
 			children = (
-				CF2FA9911FA87AB5003508F8 /* DozeDetails */,
+				CF2FA9911FA87AB5003508F8 /* DozeDetail */,
 				CFF117751F9753B700BFE73A /* DozeEntry */,
 				CFA3E8F61FC58CD90092199D /* DozeHistory */,
 			);
@@ -629,22 +638,22 @@
 			path = Texts;
 			sourceTree = "<group>";
 		};
-		CF2FA9911FA87AB5003508F8 /* DozeDetails */ = {
+		CF2FA9911FA87AB5003508F8 /* DozeDetail */ = {
 			isa = PBXGroup;
 			children = (
 				CF64DF2D1FB5DC8300B4D124 /* Controllers */,
 				CF6E6D321FB1B4DD00B177E7 /* Models */,
 				495D02DF23F6286A0006ABA5 /* Views */,
 			);
-			path = DozeDetails;
+			path = DozeDetail;
 			sourceTree = "<group>";
 		};
 		CF64DF2D1FB5DC8300B4D124 /* Controllers */ = {
 			isa = PBXGroup;
 			children = (
-				CF2FA9951FA87F0C003508F8 /* DozeDetailsViewController.swift */,
-				CF64DF301FB5DFCF00B4D124 /* SizesCell.swift */,
-				CF64DF321FB5E03C00B4D124 /* TypesCell.swift */,
+				CF2FA9951FA87F0C003508F8 /* DozeDetailViewController.swift */,
+				CF64DF321FB5E03C00B4D124 /* DozeDetailTypeCell.swift */,
+				CF64DF301FB5DFCF00B4D124 /* DozeDetailSizeCell.swift */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -652,8 +661,8 @@
 		CF6E6D321FB1B4DD00B177E7 /* Models */ = {
 			isa = PBXGroup;
 			children = (
-				CF22F0791FA88D2200F25B70 /* DozeDetailsDataProvider.swift */,
-				4933A74C23EE28C500CE4631 /* DozeDetailsInfo.swift */,
+				CF22F0791FA88D2200F25B70 /* DozeDetailDataProvider.swift */,
+				4933A74C23EE28C500CE4631 /* DozeDetailInfo.swift */,
 				4933A75423EE39CC00CE4631 /* DozeDetailViewModel.swift */,
 			);
 			path = Models;
@@ -1012,33 +1021,33 @@
 			files = (
 				493A9BF323CE61E700F679BE /* ServingsPager.storyboard in Resources */,
 				493A9C0023CE627B00F679BE /* Settings.storyboard in Resources */,
-				493A9BD723CE4EED00F679BE /* DetailsDoze.storyboard in Resources */,
+				493A9BD723CE4EED00F679BE /* DozeDetailLayout.storyboard in Resources */,
 				497B137223CD72E600BC2488 /* About.storyboard in Resources */,
 				493A9C0623CE629900F679BE /* Tweaks.storyboard in Resources */,
 				493A9C0A23CE62BC00F679BE /* TweaksHistory.storyboard in Resources */,
-				493A9BE623CE4F3700F679BE /* TypesTweaksHeader.xib in Resources */,
+				493A9BE623CE4F3700F679BE /* TweakDetailDescriptionHeader.xib in Resources */,
 				493A9C0323CE629100F679BE /* TweaksPager.storyboard in Resources */,
 				493A9BEC23CE612A00F679BE /* ItemHistory.storyboard in Resources */,
 				495020DA2399DC780092D6F5 /* LaunchScreen.storyboard in Resources */,
-				493A9BDA23CE4F0200F679BE /* DetailsTweaks.storyboard in Resources */,
+				493A9BDA23CE4F0200F679BE /* TweakDetailLayout.storyboard in Resources */,
 				493A9BF623CE61F100F679BE /* Servings.storyboard in Resources */,
 				492474A323DB677A00D7D918 /* InfoPlist.strings in Resources */,
 				49C646CB236F4A46000DA8DC /* Utility.storyboard in Resources */,
-				493A9BE323CE4F2D00F679BE /* TypesHeader.xib in Resources */,
+				493A9BE323CE4F2D00F679BE /* DozeDetailTypeHeader.xib in Resources */,
 				493A9C1523CE634400F679BE /* WeightHistory.storyboard in Resources */,
 				493A9BF923CE61FD00F679BE /* SupplementsHeader.xib in Resources */,
 				4955013A23CD453200C72FB3 /* Assets.xcassets in Resources */,
-				493A9BE023CE4F1C00F679BE /* SizesTweaksHeader.xib in Resources */,
+				493A9BE023CE4F1C00F679BE /* TweakDetailActivityHeader.xib in Resources */,
 				493A9BFC23CE623700F679BE /* ServingsHistory.storyboard in Resources */,
-				4916451D23EE53610077731D /* TweakDetails.json in Resources */,
-				493A9BDD23CE4F1400F679BE /* SizesHeader.xib in Resources */,
+				4916451D23EE53610077731D /* TweakDetailData.json in Resources */,
+				493A9BDD23CE4F1400F679BE /* DozeDetailSizeHeader.xib in Resources */,
 				493A9BD323CE47A000F679BE /* Localizable.strings in Resources */,
 				497390AC23A5956900492D92 /* Main.storyboard in Resources */,
 				493A9C0E23CE631600F679BE /* Weight.storyboard in Resources */,
 				493A9C1123CE631F00F679BE /* WeightPager.storyboard in Resources */,
 				CFF72B001FB9BB70001CC2E9 /* LinkSettings.plist in Resources */,
 				493A9BF023CE61BE00F679BE /* Menu.storyboard in Resources */,
-				4933A75023EE2BC800CE4631 /* DozeDetails.json in Resources */,
+				4933A75023EE2BC800CE4631 /* DozeDetailData.json in Resources */,
 				498F724B239E013E004E501B /* FirstLaunch.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -1179,27 +1188,28 @@
 			buildActionMask = 2147483647;
 			files = (
 				CFA3E8FC1FC58E6B0092199D /* ServingsHistoryViewController.swift in Sources */,
-				4933A75723EE49BB00CE4631 /* TweakDetailsInfo.swift in Sources */,
+				4933A75723EE49BB00CE4631 /* TweakDetailInfo.swift in Sources */,
 				4933A75523EE39CC00CE4631 /* DozeDetailViewModel.swift in Sources */,
 				CFF72AFE1FB9BAAA001CC2E9 /* LinkService.swift in Sources */,
 				49DB104D238E255D00E77E52 /* DailyDozenViewModel.swift in Sources */,
+				492A1E722409B41000F6C37C /* TweakDetailDescriptionCell.swift in Sources */,
 				496917DD238716BD00A9A743 /* RealmManagerLegacy.swift in Sources */,
 				CFC4A8541F9776A500B5AC75 /* ServingsViewController.swift in Sources */,
 				4981709D2391B89E0033882C /* TweaksHistoryViewModel.swift in Sources */,
-				4916451823EE4E440077731D /* TweakDetailsViewController.swift in Sources */,
+				4916451823EE4E440077731D /* TweakDetailViewController.swift in Sources */,
 				CF4902951FD91412000EAB68 /* ChartView.swift in Sources */,
 				498F724D239E08C0004E501B /* FirstLaunchViewController.swift in Sources */,
 				4941D733237E13DC00ED84B5 /* RealmProvider.swift in Sources */,
 				4944B99223AD7A1A008DFA30 /* ChartDataEntryExtension.swift in Sources */,
 				4941D72E237E13DC00ED84B5 /* RealmManager.swift in Sources */,
 				CFAAB3721F9F3BC600B24748 /* Doze.swift in Sources */,
-				4933A74D23EE28C500CE4631 /* DozeDetailsInfo.swift in Sources */,
-				CF22F07A1FA88D2200F25B70 /* DozeDetailsDataProvider.swift in Sources */,
+				4933A74D23EE28C500CE4631 /* DozeDetailInfo.swift in Sources */,
+				CF22F07A1FA88D2200F25B70 /* DozeDetailDataProvider.swift in Sources */,
 				497390A923A5941900492D92 /* MainViewController.swift in Sources */,
 				49F0377B233AD9B600FFD2EE /* UIButtonCheckbox.swift in Sources */,
-				CF64DF331FB5E03C00B4D124 /* TypesCell.swift in Sources */,
+				CF64DF331FB5E03C00B4D124 /* DozeDetailTypeCell.swift in Sources */,
 				CFAAB3771F9F3FDF00B24748 /* URL.swift in Sources */,
-				4916451A23EE51310077731D /* TweakDetailsDataProvider.swift in Sources */,
+				4916451A23EE51310077731D /* TweakDetailDataProvider.swift in Sources */,
 				4981709B2391B85B0033882C /* TweaksHistoryViewController.swift in Sources */,
 				4941D731237E13DC00ED84B5 /* DataWeightRecord.swift in Sources */,
 				4916451423EE4C410077731D /* TweakDetailViewModel.swift in Sources */,
@@ -1213,7 +1223,7 @@
 				498F7246239D90E2004E501B /* WeightViewController.swift in Sources */,
 				CFC4A84D1F975A3900B5AC75 /* MenuTableViewController.swift in Sources */,
 				CFE6983C1F974B9700CD7905 /* AppDelegate.swift in Sources */,
-				CF64DF311FB5DFCF00B4D124 /* SizesCell.swift in Sources */,
+				CF64DF311FB5DFCF00B4D124 /* DozeDetailSizeCell.swift in Sources */,
 				4941D730237E13DC00ED84B5 /* DataCountType.swift in Sources */,
 				4941D732237E13DC00ED84B5 /* DataWeightType.swift in Sources */,
 				4941D72F237E13DC00ED84B5 /* DataCountRecord.swift in Sources */,
@@ -1228,8 +1238,9 @@
 				CF9EC1C32021D37000C7B3CA /* MenuItem.swift in Sources */,
 				CF49029B1FD91F01000EAB68 /* ServingsHistoryViewModel.swift in Sources */,
 				4933A74B23EE267600CE4631 /* DozeTextsProvider.swift in Sources */,
-				CF2FA9961FA87F0C003508F8 /* DozeDetailsViewController.swift in Sources */,
+				CF2FA9961FA87F0C003508F8 /* DozeDetailViewController.swift in Sources */,
 				CFECDFF8201EF7C1003E8572 /* Colors.swift in Sources */,
+				492A1E702409B3FA00F6C37C /* TweakDetailActivityCell.swift in Sources */,
 				497390B123A5D4F900492D92 /* SettingsReminderViewController.swift in Sources */,
 				CF4DECF71F9DF2A500DA094B /* ServingsCell.swift in Sources */,
 				498D76A423709F9D00B5DF06 /* UtilityTableViewController.swift in Sources */,
@@ -1249,9 +1260,10 @@
 				498170912391B19E0033882C /* TweaksCell.swift in Sources */,
 				4941D735237E266300ED84B5 /* DataCountAttributes.swift in Sources */,
 				CF9E03231FBD9FDE0084BC88 /* ItemHistoryViewController.swift in Sources */,
+				497F91B2240990B600464E4E /* TweakDetailSection.swift in Sources */,
 				49DB104F238E257D00E77E52 /* DailyTweaksViewModel.swift in Sources */,
 				CF4DECF91F9DF82900DA094B /* ServingsDataProvider.swift in Sources */,
-				CF17C8A71FAA019600367BF8 /* DetailsSection.swift in Sources */,
+				CF17C8A71FAA019600367BF8 /* DozeDetailSection.swift in Sources */,
 				CF55BC4F2020450D00003D0D /* AlertBuilder.swift in Sources */,
 				CFAAB3741F9F3E1200B24748 /* RealmConfigLegacy.swift in Sources */,
 				4916451623EE4D360077731D /* TweakTextsProvider.swift in Sources */,
@@ -1274,13 +1286,13 @@
 /* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
-		4916451F23EE53610077731D /* TweakDetails.json */ = {
+		4916451F23EE53610077731D /* TweakDetailData.json */ = {
 			isa = PBXVariantGroup;
 			children = (
 				4916451E23EE53610077731D /* Base */,
 				4916452023EE53640077731D /* es */,
 			);
-			name = TweakDetails.json;
+			name = TweakDetailData.json;
 			sourceTree = "<group>";
 		};
 		492474A123DB677A00D7D918 /* InfoPlist.strings */ = {
@@ -1291,13 +1303,13 @@
 			name = InfoPlist.strings;
 			sourceTree = "<group>";
 		};
-		4933A75223EE2BC800CE4631 /* DozeDetails.json */ = {
+		4933A75223EE2BC800CE4631 /* DozeDetailData.json */ = {
 			isa = PBXVariantGroup;
 			children = (
 				4933A75123EE2BC800CE4631 /* Base */,
 				4933A75323EE2BCB00CE4631 /* es */,
 			);
-			name = DozeDetails.json;
+			name = DozeDetailData.json;
 			sourceTree = "<group>";
 		};
 		493A9BD523CE47A000F679BE /* Localizable.strings */ = {
@@ -1309,58 +1321,58 @@
 			name = Localizable.strings;
 			sourceTree = "<group>";
 		};
-		493A9BD923CE4EED00F679BE /* DetailsDoze.storyboard */ = {
+		493A9BD923CE4EED00F679BE /* DozeDetailLayout.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
 				493A9BD823CE4EED00F679BE /* Base */,
 				493A9C1F23CE6B7300F679BE /* es */,
 			);
-			name = DetailsDoze.storyboard;
+			name = DozeDetailLayout.storyboard;
 			sourceTree = "<group>";
 		};
-		493A9BDC23CE4F0200F679BE /* DetailsTweaks.storyboard */ = {
+		493A9BDC23CE4F0200F679BE /* TweakDetailLayout.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
 				493A9BDB23CE4F0200F679BE /* Base */,
 				493A9C2023CE6B7300F679BE /* es */,
 			);
-			name = DetailsTweaks.storyboard;
+			name = TweakDetailLayout.storyboard;
 			sourceTree = "<group>";
 		};
-		493A9BDF23CE4F1400F679BE /* SizesHeader.xib */ = {
+		493A9BDF23CE4F1400F679BE /* DozeDetailSizeHeader.xib */ = {
 			isa = PBXVariantGroup;
 			children = (
 				493A9BDE23CE4F1400F679BE /* Base */,
 				493A9C2123CE6B7300F679BE /* es */,
 			);
-			name = SizesHeader.xib;
+			name = DozeDetailSizeHeader.xib;
 			sourceTree = "<group>";
 		};
-		493A9BE223CE4F1C00F679BE /* SizesTweaksHeader.xib */ = {
+		493A9BE223CE4F1C00F679BE /* TweakDetailActivityHeader.xib */ = {
 			isa = PBXVariantGroup;
 			children = (
 				493A9BE123CE4F1C00F679BE /* Base */,
 				493A9C2223CE6B7400F679BE /* es */,
 			);
-			name = SizesTweaksHeader.xib;
+			name = TweakDetailActivityHeader.xib;
 			sourceTree = "<group>";
 		};
-		493A9BE523CE4F2D00F679BE /* TypesHeader.xib */ = {
+		493A9BE523CE4F2D00F679BE /* DozeDetailTypeHeader.xib */ = {
 			isa = PBXVariantGroup;
 			children = (
 				493A9BE423CE4F2D00F679BE /* Base */,
 				493A9C2323CE6B7400F679BE /* es */,
 			);
-			name = TypesHeader.xib;
+			name = DozeDetailTypeHeader.xib;
 			sourceTree = "<group>";
 		};
-		493A9BE823CE4F3700F679BE /* TypesTweaksHeader.xib */ = {
+		493A9BE823CE4F3700F679BE /* TweakDetailDescriptionHeader.xib */ = {
 			isa = PBXVariantGroup;
 			children = (
 				493A9BE723CE4F3700F679BE /* Base */,
 				493A9C2423CE6B7400F679BE /* es */,
 			);
-			name = TypesTweaksHeader.xib;
+			name = TweakDetailDescriptionHeader.xib;
 			sourceTree = "<group>";
 		};
 		493A9BEE23CE612A00F679BE /* ItemHistory.storyboard */ = {

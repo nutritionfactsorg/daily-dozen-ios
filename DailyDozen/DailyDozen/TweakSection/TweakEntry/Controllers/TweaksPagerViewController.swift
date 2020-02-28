@@ -71,7 +71,7 @@ class TweaksPagerViewController: UIViewController {
         navigationController?.navigationBar.barTintColor = UIColor.greenColor
         navigationController?.navigationBar.tintColor = UIColor.white
 
-        title = "21 Tweaks"
+        title = NSLocalizedString("navtab.tweaks", comment: "Twenty-One Tweaks (proper noun) navigation tab")
     }
 
     override func viewDidAppear(_ animated: Bool) {

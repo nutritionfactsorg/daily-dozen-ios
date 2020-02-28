@@ -135,9 +135,10 @@ class MainViewController: UIViewController {
                 .instantiateInitialViewController() as? ServingsPagerViewController
             else { fatalError("Did not instantiate `ServingsPagerViewController`") }
 
-        tabDailyDozenViewController.title = "Daily Dozen"
+        let titleDoze = NSLocalizedString("navtab.doze", comment: "Daily Dozen (proper noun) navigation tab")
+        tabDailyDozenViewController.title = titleDoze
         tabDailyDozenViewController.tabBarItem = UITabBarItem.init(
-            title: "Daily Dozen", // shows below tab bar item icon
+            title: titleDoze, // shows below tab bar item icon
             image: UIImage(named: "ic_tabapp_dailydozen"),
             tag: 0
         )
@@ -151,9 +152,10 @@ class MainViewController: UIViewController {
                     .instantiateInitialViewController() as? TweaksPagerViewController
                 else { fatalError("Did not instantiate `TweaksPagerViewController`") }
 
-            tabTweaksViewController.title = "21 Tweaks"
+            let titleTweak = NSLocalizedString("navtab.tweaks", comment: "Twenty-One Tweaks (proper noun) navigation tab")
+            tabTweaksViewController.title = titleTweak
             tabTweaksViewController.tabBarItem = UITabBarItem.init(
-                title: "21 Tweaks",
+                title: titleTweak,
                 image: UIImage(named: "ic_tabapp_21tweaks"),
                 tag: 1
             )
@@ -167,9 +169,10 @@ class MainViewController: UIViewController {
                 .instantiateInitialViewController() as? MenuTableViewController
             else { fatalError("Did not instantiate More `MenuTableViewController`") }
 
-        tabInfoViewController.title = "More"
+        let titleInfo = NSLocalizedString("navtab.info", comment: "More Information navigation tab")
+        tabInfoViewController.title = titleInfo
         tabInfoViewController.tabBarItem = UITabBarItem.init(
-            title: "More",
+            title: titleInfo,
             image: UIImage(named: "ic_tabapp_more"),
             tag: 0
         )
@@ -182,9 +185,10 @@ class MainViewController: UIViewController {
                 .instantiateInitialViewController() as? SettingsViewController
             else { fatalError("Did not instantiate `SettingsViewController`") }
 
-        tabSettingsViewController.title = "Settings"
+        let titleSettings = NSLocalizedString("navtab.preferences", comment: "Preferences (aka Settings, Configuration) navigation tab. Choose word different from 'Tweaks' translation")
+        tabSettingsViewController.title = titleSettings
         tabSettingsViewController.tabBarItem = UITabBarItem.init(
-            title: "Settings",
+            title: titleSettings,
             image: UIImage(named: "ic_tabapp_settings"),
             tag: 0
         )

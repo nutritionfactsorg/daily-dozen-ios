@@ -1,19 +1,18 @@
 //
-//  DozeDetailsDataProvider.swift
+//  DozeDetailDataProvider.swift
 //  DailyDozen
 //
-//  Created by Konstantin Khokhlov on 31.10.17.
-//  Copyright © 2017 Nutritionfacts.org. All rights reserved.
+//  Copyright © 2020 Nutritionfacts.org. All rights reserved.
 //
 
 import UIKit
 
-class DozeDetailsDataProvider: NSObject, UITableViewDataSource {
+class DozeDetailDataProvider: NSObject, UITableViewDataSource {
     
     // MARK: - Nested
     private struct Strings {
-        static let sizesID = "detailsSizesCell"
-        static let typesID = "detailsTypesCell"
+        static let sizeCellID = "dozeDetailSizeCell"
+        static let typeCellID = "dozeDetailTypeCell"
     }
     
     var viewModel: DozeDetailViewModel!
@@ -25,27 +24,27 @@ class DozeDetailsDataProvider: NSObject, UITableViewDataSource {
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        guard let sectionType = DetailsSection(rawValue: section) else {
+        guard let sectionType = DozeDetailSection(rawValue: section) else {
             fatalError("There should be a section type")
         }
         switch sectionType {
-        case .sizes:
-            return viewModel.sizesCount
-        case .types:
-            return viewModel.typesCount
+        case .amount:
+            return viewModel.amountCount
+        case .example:
+            return viewModel.exampleCount
         }
     }
     
     // Row Cell At Index
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        guard let sectionType = DetailsSection(rawValue: indexPath.section) else {
+        guard let sectionType = DozeDetailSection(rawValue: indexPath.section) else {
             fatalError("There should be a section type")
         }
         switch sectionType {
             
-        case .sizes:
+        case .amount:
             guard let cell = tableView
-                .dequeueReusableCell(withIdentifier: Strings.sizesID) as? SizesCell
+                .dequeueReusableCell(withIdentifier: Strings.sizeCellID) as? DozeDetailSizeCell
                 else { return UITableViewCell() }
             
             cell.configure(
@@ -53,9 +52,9 @@ class DozeDetailsDataProvider: NSObject, UITableViewDataSource {
             )
             return cell
             
-        case .types:
+        case .example:
             guard let cell = tableView
-                .dequeueReusableCell(withIdentifier: Strings.typesID) as? TypesCell
+                .dequeueReusableCell(withIdentifier: Strings.typeCellID) as? DozeDetailTypeCell
                 else { return UITableViewCell() }
             let typeData = viewModel.typeData(index: indexPath.row)
             

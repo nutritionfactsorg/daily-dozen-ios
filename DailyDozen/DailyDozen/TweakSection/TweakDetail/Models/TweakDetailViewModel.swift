@@ -1,5 +1,5 @@
 //
-//  DozeDetailViewModel.swift
+//  TweakDetailViewModel.swift
 //  DailyDozen
 //
 //  Copyright © 2020 Nutritionfacts.org. All rights reserved.
@@ -7,11 +7,11 @@
 
 import UIKit
 
-struct DozeDetailViewModel {
+struct TweakDetailViewModel {
     
     // MARK: - Properties
-    private let info: DozeDetailsInfo.Item
-    private let itemTypeKey: String
+    private let info: TweakDetailInfo.Item
+    private let detailItemTypeKey: String
     
     var unitsType: UnitsType
     
@@ -20,14 +20,14 @@ struct DozeDetailViewModel {
         return LinksService.shared.link(forTopic: info.topic)
     }
     
-    /// Returns the number of items in the metric sizes.
-    var sizesCount: Int {
-        return info.servings.count
+    /// Returns the number of items in the metric units.
+    var activityCount: Int {
+        return 1
     }
     
-    /// Returns the number of items in the types.
-    var typesCount: Int {
-        return info.varieties.count
+    /// Returns the number of description paragraphs.
+    var descriptionParagraphCount: Int {
+        return info.description.count
     }
     /// Returns the item name.
     var itemTitle: String {
@@ -36,12 +36,12 @@ struct DozeDetailViewModel {
     
     /// Returns an image of the item.
     var detailsImage: UIImage? {
-        return UIImage(named: "detail_\(itemTypeKey)")
+        return UIImage(named: "detail_\(detailItemTypeKey)")
     }
     
     // MARK: - Inits
-    init(itemTypeKey: String, info: DozeDetailsInfo.Item) {
-        self.itemTypeKey = itemTypeKey
+    init(itemTypeKey: String, info: TweakDetailInfo.Item) {
+        self.detailItemTypeKey = itemTypeKey
         self.info = info
         
         if let unitsTypePrefStr = UserDefaults.standard.string(forKey: SettingsKeys.unitsTypePref),
@@ -59,11 +59,11 @@ struct DozeDetailViewModel {
     ///
     /// - Parameter index: The current index.
     /// - Returns: A description string.
-    func sizeDescription(index: Int) -> String {
+    func activity(index: Int) -> String {
         if unitsType == .metric {
-            return info.servings[index].metric
+            return info.activity.metric
         } else {
-            return info.servings[index].imperial
+            return info.activity.imperial
         }
     }
     
@@ -71,22 +71,8 @@ struct DozeDetailViewModel {
     ///
     /// - Parameter index: The current index.
     /// - Returns: A tuple of the type name and type link.
-    func typeData(index: Int) -> (name: String, hasLink: Bool) {
-        let name = info.varieties[index].text 
-        let hasLink = info.varieties[index].topic == "" // :???:!!!: correct logic?
-        return (name, hasLink)
+    func descriptionParagraph(index: Int) -> String {
+        return info.description[index]
     }
-    
-    /// Returns the type topic for the current index.
-    ///
-    /// - Parameter index: The current index.
-    /// - Returns: The type toipic url.
-    func typeTopicURL(index: Int) -> URL? {
-        if info.varieties[index].topic.isEmpty { // :???:!!!: review logic
-            return nil
-        }
-        let topic =  info.varieties[index].topic
-        return LinksService.shared.link(forTopic: topic)
-    }
-    
+
 }
