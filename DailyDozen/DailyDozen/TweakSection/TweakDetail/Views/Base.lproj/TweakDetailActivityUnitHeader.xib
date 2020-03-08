@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="15705" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina4_0" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15706"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="TweakDetailViewController" customModule="DailyDozen" customModuleProvider="target"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view contentMode="scaleToFill" id="iN0-l3-epB">
+            <rect key="frame" x="0.0" y="0.0" width="375" height="53"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" alignment="top" translatesAutoresizingMaskIntoConstraints="NO" id="ygi-1d-xdI" userLabel="VStackView">
+                    <rect key="frame" x="5" y="-1.5" width="365" height="56"/>
+                    <subviews>
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Activity" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="YVI-sV-TDA">
+                            <rect key="frame" x="0.0" y="0.0" width="70.5" height="28"/>
+                            <fontDescription key="fontDescription" name="HelveticaNeue-Bold" family="Helvetica Neue" pointSize="20"/>
+                            <color key="textColor" red="0.078431372550000003" green="0.078431372550000003" blue="0.078431372550000003" alpha="1" colorSpace="calibratedRGB"/>
+                            <nil key="highlightedColor"/>
+                        </label>
+                        <stackView opaque="NO" contentMode="scaleToFill" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="QeT-HX-yAV" userLabel="HStackView">
+                            <rect key="frame" x="0.0" y="28" width="154.5" height="28"/>
+                            <subviews>
+                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Units:" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="kho-9G-OWe">
+                                    <rect key="frame" x="0.0" y="0.0" width="44.5" height="28"/>
+                                    <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="17"/>
+                                    <color key="textColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                    <nil key="highlightedColor"/>
+                                </label>
+                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="M75-CQ-NVP">
+                                    <rect key="frame" x="54.5" y="0.0" width="100" height="28"/>
+                                    <color key="backgroundColor" white="0.75" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                    <constraints>
+                                        <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="100" id="IEc-AP-IlJ"/>
+                                    </constraints>
+                                    <fontDescription key="fontDescription" name="HelveticaNeue-Medium" family="Helvetica Neue" pointSize="15"/>
+                                    <inset key="contentEdgeInsets" minX="5" minY="5" maxX="5" maxY="5"/>
+                                    <state key="normal" title="METRIC">
+                                        <color key="titleColor" white="0.15913340779999999" alpha="1" colorSpace="calibratedWhite"/>
+                                    </state>
+                                    <connections>
+                                        <action selector="unitsChanged:" destination="-1" eventType="touchUpInside" id="IWX-pj-xx7"/>
+                                    </connections>
+                                </button>
+                            </subviews>
+                            <constraints>
+                                <constraint firstItem="kho-9G-OWe" firstAttribute="centerY" secondItem="QeT-HX-yAV" secondAttribute="centerY" id="6Td-bu-bPg"/>
+                                <constraint firstItem="kho-9G-OWe" firstAttribute="leading" secondItem="QeT-HX-yAV" secondAttribute="leading" id="Bd7-sk-5mO"/>
+                                <constraint firstItem="M75-CQ-NVP" firstAttribute="centerY" secondItem="QeT-HX-yAV" secondAttribute="centerY" id="D5Q-fc-74l"/>
+                                <constraint firstAttribute="trailing" secondItem="M75-CQ-NVP" secondAttribute="trailing" id="J0R-kJ-GWU"/>
+                                <constraint firstItem="M75-CQ-NVP" firstAttribute="leading" secondItem="kho-9G-OWe" secondAttribute="trailing" constant="10" id="bwc-VL-gPW"/>
+                            </constraints>
+                        </stackView>
+                    </subviews>
+                </stackView>
+            </subviews>
+            <color key="backgroundColor" red="0.95294117649999999" green="0.95294117649999999" blue="0.95294117649999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <constraints>
+                <constraint firstItem="vUN-kp-3ea" firstAttribute="trailing" secondItem="ygi-1d-xdI" secondAttribute="trailing" constant="5" id="JU3-oi-vrw"/>
+                <constraint firstItem="ygi-1d-xdI" firstAttribute="centerY" secondItem="iN0-l3-epB" secondAttribute="centerY" id="MGw-QF-83x"/>
+                <constraint firstItem="ygi-1d-xdI" firstAttribute="leading" secondItem="vUN-kp-3ea" secondAttribute="leading" constant="5" id="QXN-6r-BQ8"/>
+            </constraints>
+            <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+            <viewLayoutGuide key="safeArea" id="vUN-kp-3ea"/>
+            <point key="canvasLocation" x="145.3125" y="-345.95070422535213"/>
+        </view>
+    </objects>
+</document>

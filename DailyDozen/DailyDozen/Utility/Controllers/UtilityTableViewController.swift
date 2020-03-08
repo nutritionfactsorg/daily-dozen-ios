@@ -10,21 +10,15 @@ import UIKit
 // MARK: - Builder 
 class UtilityBuilder {
 
-    // MARK: - Nested
-    private struct Strings {
-        static let storyboard = "Utility"
-    }
-
     // MARK: - Methods
     /// Instantiates and returns the initial view controller for a storyboard.
     ///
     /// - Returns: The initial view controller in the storyboard.
     static func instantiateController() -> UIViewController {
-        let storyboard = UIStoryboard(name: Strings.storyboard, bundle: nil)
+        let storyboard = UIStoryboard(name: "UtilityLayout", bundle: nil)
         guard
-            let viewController = storyboard
-                .instantiateInitialViewController()
-            else { fatalError("Did not instantiate `Utility` controller") }
+            let viewController = storyboard.instantiateInitialViewController()
+            else { fatalError("Did not instantiate `UtilityTableViewController`") }
         viewController.title = "Utility"
 
         return viewController
@@ -110,23 +104,23 @@ class UtilityTableViewController: UITableViewController {
         defaults.set(nil, forKey: SettingsKeys.imgID)
         defaults.set(nil, forKey: SettingsKeys.requestID)
         defaults.set(nil, forKey: SettingsKeys.unitsTypePref)
-        defaults.set(nil, forKey: SettingsKeys.unitsTypeTogglePref)
+        defaults.set(nil, forKey: SettingsKeys.unitsTypeToggleShowPref)
         defaults.set(nil, forKey: SettingsKeys.show21TweaksPref)
         defaults.set(nil, forKey: SettingsKeys.hasSeenFirstLaunch)
     }
     
     func doUtilitySettingsPrint() {
         print("\n•• UserDefaults Values ••")
-        print("  reminderCanNotify \(UserDefaults.standard.object(forKey: SettingsKeys.reminderCanNotify) ?? "nil")")
-        print("   reminderHourPref \(UserDefaults.standard.object(forKey: SettingsKeys.reminderHourPref) ?? "nil")")
-        print(" reminderMinutePref \(UserDefaults.standard.object(forKey: SettingsKeys.reminderMinutePref) ?? "nil")")
-        print("  reminderSoundPref \(UserDefaults.standard.object(forKey: SettingsKeys.reminderSoundPref) ?? "nil")")
-        print("              imgID \(UserDefaults.standard.object(forKey: SettingsKeys.imgID) ?? "nil")")
-        print("          requestID \(UserDefaults.standard.object(forKey: SettingsKeys.requestID) ?? "nil")")
-        print("      unitsTypePref \(UserDefaults.standard.object(forKey: SettingsKeys.unitsTypePref) ?? "nil")")
-        print("unitsTypeTogglePref \(UserDefaults.standard.object(forKey: SettingsKeys.unitsTypeTogglePref) ?? "nil")")
-        print("   show21TweaksPref \(UserDefaults.standard.object(forKey: SettingsKeys.show21TweaksPref) ?? "nil")")
-        print(" hasSeenFirstLaunch \(UserDefaults.standard.object(forKey: SettingsKeys.hasSeenFirstLaunch) ?? "nil")")
+        print("      reminderCanNotify \(UserDefaults.standard.object(forKey: SettingsKeys.reminderCanNotify) ?? "nil")")
+        print("       reminderHourPref \(UserDefaults.standard.object(forKey: SettingsKeys.reminderHourPref) ?? "nil")")
+        print("     reminderMinutePref \(UserDefaults.standard.object(forKey: SettingsKeys.reminderMinutePref) ?? "nil")")
+        print("      reminderSoundPref \(UserDefaults.standard.object(forKey: SettingsKeys.reminderSoundPref) ?? "nil")")
+        print("                  imgID \(UserDefaults.standard.object(forKey: SettingsKeys.imgID) ?? "nil")")
+        print("              requestID \(UserDefaults.standard.object(forKey: SettingsKeys.requestID) ?? "nil")")
+        print("          unitsTypePref \(UserDefaults.standard.object(forKey: SettingsKeys.unitsTypePref) ?? "nil")")
+        print("unitsTypeToggleShowPref \(UserDefaults.standard.object(forKey: SettingsKeys.unitsTypeToggleShowPref) ?? "nil")")
+        print("       show21TweaksPref \(UserDefaults.standard.object(forKey: SettingsKeys.show21TweaksPref) ?? "nil")")
+        print("     hasSeenFirstLaunch \(UserDefaults.standard.object(forKey: SettingsKeys.hasSeenFirstLaunch) ?? "nil")")
     }
     
     @IBAction func doUtlityTestClearAllDataBtn(_ sender: UIButton) {

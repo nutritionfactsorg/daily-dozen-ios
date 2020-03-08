@@ -12,21 +12,15 @@ import SimpleAnimation
 
 class TweaksPagerBuilder {
 
-    // MARK: - Nested
-    struct Keys {
-        static let storyboard = "TweaksPager"
-    }
-
     // MARK: - Methods
     /// Instantiates and returns the initial view controller for a storyboard.
     ///
     /// - Returns: The initial view controller in the storyboard.
     static func instantiateController() -> UIViewController {
-        let storyboard = UIStoryboard(name: Keys.storyboard, bundle: nil)
+        let storyboard = UIStoryboard(name: "TweaksPagerLayout", bundle: nil)
         guard
-            let viewController = storyboard
-                .instantiateInitialViewController()
-            else { fatalError("Did not instantiate `TweaksPager` controller") }
+            let viewController = storyboard.instantiateInitialViewController()
+            else { fatalError("Did not instantiate `TweaksPagerViewController`") }
 
         return viewController
     }

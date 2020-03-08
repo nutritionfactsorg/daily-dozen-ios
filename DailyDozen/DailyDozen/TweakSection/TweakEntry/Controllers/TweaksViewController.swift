@@ -69,7 +69,7 @@ class TweaksViewController: UIViewController {
     func setViewModel(for date: Date) {
         dataProvider.viewModel = DailyTweaksViewModel(tracker: realm.getDailyTracker(date: date))
         tweaksStateCount = 0
-        let mainItemCount = dataProvider.viewModel.count - TweaksSection.supplementsCount
+        let mainItemCount = dataProvider.viewModel.count
         for i in 0 ..< mainItemCount {
             let itemStates: [Bool] = dataProvider.viewModel.itemStates(rowIndex: i)
             for state in itemStates where state {

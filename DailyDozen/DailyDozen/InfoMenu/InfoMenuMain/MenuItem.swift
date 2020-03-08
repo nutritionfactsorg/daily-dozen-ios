@@ -27,7 +27,7 @@ enum MenuItem: Int {
         static let source = "open-source"
     }
 
-    /// Defines item order for `MenuTableViewController`
+    /// Defines item order for `InfoMenuMainTableVC`
     case videos, book, cookbook, diet, challenge, donate, subscribe, source, about
 
     var link: String? {
@@ -56,7 +56,7 @@ enum MenuItem: Int {
     var controller: UIViewController? {
         switch self {
         case .about:
-            return AboutBuilder.instantiateController()
+            return InfoMenuAboutBuilder.instantiateController()
         //case .develop: :???:NYI: location of develop menu
         //    return UtilityBuilder.instantiateController()
         case .videos, .book, .cookbook, .diet, .challenge, .donate, .subscribe, .source:

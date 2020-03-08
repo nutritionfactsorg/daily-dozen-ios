@@ -2,24 +2,30 @@
 //  UnitsType.swift
 //  DailyDozen
 //
-//  Created by Konstantin Khokhlov on 13.11.17.
 //  Copyright © 2017 Nutritionfacts.org. All rights reserved.
 //
 
 import Foundation
 
+/// Units System Type: imperial or metric
+/// 
+/// Related Localization Files: 
+/// * DozeDetailSizeUnitHeader
+/// * Localizable.strings
+/// * SettingsLayout
+/// * TweakDetailActivityUnitHeader
 enum UnitsType: String {
 
     case imperial
     case metric
 
-    /// Returns an uppercase version of the rawValue for the current type.
+    /// Returns localized name for the unit system currently in use.
     var title: String {
         switch self {
         case .imperial:
-            return "IMPERIAL" // :NYI:ToBeLocalized:
+            return NSLocalizedString("UnitToggle.imperial", comment: "Units toggle button text: imperial measurement system")
         case .metric:
-            return "METRIC" // :NYI:ToBeLocalized:
+            return NSLocalizedString("UnitToggle.metric", comment: "Units toggle button text: metric measurement system")
         }
     }
     

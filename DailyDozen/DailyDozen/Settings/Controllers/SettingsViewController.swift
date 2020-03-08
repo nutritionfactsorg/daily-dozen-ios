@@ -11,21 +11,16 @@ import UserNotifications
 // MARK: - Builder
 class SettingsBuilder {
     
-    // MARK: - Nested
-    private struct Strings {
-        static let storyboard = "Settings"
-    }
-    
     // MARK: - Methods
     /// Instantiates and returns the initial view controller for a storyboard.
     ///
     /// - Returns: The initial view controller in the storyboard.
     static func instantiateController() -> SettingsViewController {
-        let storyboard = UIStoryboard(name: Strings.storyboard, bundle: nil)
+        let storyboard = UIStoryboard(name: "SettingsLayout", bundle: nil)
         guard
             let viewController = storyboard
                 .instantiateInitialViewController() as? SettingsViewController
-            else { fatalError("Did not instantiate `SettingsView` controller") }
+            else { fatalError("Did not instantiate `SettingsViewController`") }
         viewController.title = NSLocalizedString("navtab.preferences", comment: "Preferences (aka Settings, Configuration) navigation tab. Choose word different from 'Tweaks' translation")
         
         return viewController
@@ -114,11 +109,11 @@ class SettingsViewController: UITableViewController {
     //}
     
     func setUnitsMeasureSegment() {
-        let unitMeasureTogglestr = UserDefaults.standard.bool(forKey: SettingsKeys.unitsTypeTogglePref)
-        guard let unitTypeStr =  UserDefaults.standard.string(forKey: SettingsKeys.unitsTypePref),
-            let unitTypePref = UnitsType(rawValue: unitTypeStr)
+        let shouldShowUnitsToggle = UserDefaults.standard.bool(forKey: SettingsKeys.unitsTypeToggleShowPref)
+        guard let unitTypePrefStr =  UserDefaults.standard.string(forKey: SettingsKeys.unitsTypePref),
+            let unitTypePref = UnitsType(rawValue: unitTypePrefStr)
             else { return } // :!!!:MEC:review
-        if  unitMeasureTogglestr == true {
+        if  shouldShowUnitsToggle == true {
             unitMeasureToggle.selectedSegmentIndex = UnitsSegmentState.toggleUnitsState.rawValue
         } else {
             if unitTypePref == .imperial {
@@ -132,23 +127,28 @@ class SettingsViewController: UITableViewController {
     
     @IBAction func unitsTypePrefChanged(_ sender: UISegmentedControl) {
         // let unitsTypePrefStr = UserDefaults.standard.string(forKey: SettingsKeys.unitsTypePref),
-        var prefString = ""
-        var prefToggle = false
+        var prefUnitTypeString = ""
+        var prefShowToggle = false
         switch unitMeasureToggle.selectedSegmentIndex {
         case UnitsSegmentState.imperialState.rawValue:
-            prefString = UnitsType.imperial.rawValue // "imperial"
-            prefToggle = false
+            prefUnitTypeString = UnitsType.imperial.rawValue // "imperial"
+            prefShowToggle = false
             
         case UnitsSegmentState.metricState.rawValue:
-            prefString = UnitsType.metric.rawValue // "metric"
-            prefToggle = false
+            prefUnitTypeString = UnitsType.metric.rawValue // "metric"
+            prefShowToggle = false
         case UnitsSegmentState.toggleUnitsState.rawValue:
-            prefToggle = true
+            if let unitsTypePrefStr = UserDefaults.standard.string(forKey: SettingsKeys.unitsTypePref) {
+                prefUnitTypeString = unitsTypePrefStr
+            } else {
+                prefUnitTypeString = UnitsType.imperial.rawValue // "imperial"
+            }
+            prefShowToggle = true
         default:
             break
         }
-        UserDefaults.standard.set(prefToggle, forKey: SettingsKeys.unitsTypeTogglePref)
-        UserDefaults.standard.set(prefString, forKey: SettingsKeys.unitsTypePref)
+        UserDefaults.standard.set(prefShowToggle, forKey: SettingsKeys.unitsTypeToggleShowPref)
+        UserDefaults.standard.set(prefUnitTypeString, forKey: SettingsKeys.unitsTypePref)
     }
     
     //    func setDefaults() {

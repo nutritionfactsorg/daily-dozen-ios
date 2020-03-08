@@ -10,11 +10,6 @@ import UIKit
 // MARK: - Builder
 class TweakDetailBuilder {
     
-    // MARK: - Nested
-    struct Strings {
-        static let storyboardDetailsTweaks = "TweakDetailLayout"
-    }
-    
     // MARK: - Methods
     /// Instantiates and returns the initial view controller for a storyboard.
     ///
@@ -22,11 +17,11 @@ class TweakDetailBuilder {
     /// - Returns: The initial view controller in the storyboard.
     static func instantiateController(itemTypeKey: String) -> TweakDetailViewController {
         
-        let storyboard = UIStoryboard(name: Strings.storyboardDetailsTweaks, bundle: nil)
+        let storyboard = UIStoryboard(name: "TweakDetailLayout", bundle: nil)
         guard
             let viewController = storyboard
                 .instantiateInitialViewController() as? TweakDetailViewController
-            else { fatalError("Did not instantiate `TweakDetailData` controller") }
+            else { fatalError("Did not instantiate `TweakDetailViewController`") }
         
         viewController.setViewModel(itemTypeKey: itemTypeKey)
         
@@ -73,14 +68,6 @@ class TweakDetailViewController: UIViewController {
         detailsImageView.image = dataProvider.viewModel.detailsImage
         titleLabel.text = dataProvider.viewModel.itemTitle
     }
-    
-//    func determineHideUnitToggle() {
-//        let unitMeasureTogglestr = UserDefaults.standard.bool(forKey: SettingsKeys.unitsTypeTogglePref)
-//        if !unitMeasureTogglestr {
-//            unitMeasurement.isHidden = true
-//            unitsLabel.isHidden = true
-//        }
-//    }
     
     // MARK: - Methods
     /// Sets a view model for the current item.
@@ -158,22 +145,23 @@ extension TweakDetailViewController: UITableViewDelegate {
     }
     
     func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
-        guard let sectionType = TweakDetailSection(rawValue: section) else {
-            fatalError("There should be a section type")
+        guard 
+            let sectionType = TweakDetailSection(rawValue: section),
+            let dataCountType = dataProvider.dataCountType
+            else {
+                fatalError("There should be a tweak section header height")
         }
-        return sectionType.headerHeight
+        return sectionType.headerHeight(itemTypeKey: dataCountType.typeKey)
     }
     
     func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
-        guard let sectionType = TweakDetailSection(rawValue: section) else {
-            fatalError("There should be a tweak section type")
+        guard 
+            let sectionType = TweakDetailSection(rawValue: section),
+            let dataCountType = dataProvider.dataCountType 
+            else {
+                fatalError("There should be a tweak section type")
         }
-        if let dataCountType = dataProvider.dataCountType {
-            if dataCountType.typeKey.prefix(5) == "tweak" {
-                return sectionType.headerTweaksView
-            }
-        }
-        return sectionType.headerTweaksView
+        return sectionType.headerTweaksView(itemTypeKey: dataCountType.typeKey)
     }
 }
 

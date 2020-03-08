@@ -14,6 +14,11 @@
 /* Preferences (aka Settings, Configuration) navigation tab. Choose word different from 'Tweaks' translation */
 "navtab.preferences"="Settings";
 
+/* Units toggle button text: metric measurement system */
+"UnitToggle.metric"="METRIC";
+/* Units toggle button text: imperial measurement system */
+"UnitToggle.imperial"="IMPERIAL";
+
 /* ***** Daily Dozen ***** */
 "dozeBeans.heading"="Beans";
 "dozeBerries.heading"="Berries";

@@ -16,21 +16,16 @@ import RealmSwift
 
 class TweaksHistoryBuilder {
 
-    // MARK: - Nested
-    private struct Strings {
-        static let storyboard = "TweaksHistory"
-    }
-
     // MARK: - Methods
     /// Instantiates and returns the initial view controller for a storyboard.
     ///
     /// - Returns: The initial view controller in the storyboard.
     static func instantiateController() -> TweaksHistoryViewController {
-        let storyboard = UIStoryboard(name: Strings.storyboard, bundle: nil)
+        let storyboard = UIStoryboard(name: "TweaksHistoryLayout", bundle: nil)
         guard
             let viewController = storyboard
                 .instantiateInitialViewController() as? TweaksHistoryViewController
-            else { fatalError("Did not instantiate `TweaksHistory` controller") }
+            else { fatalError("Did not instantiate `TweaksHistoryViewController`") }
         viewController.title = "Tweaks History"
 
         return viewController

@@ -28,21 +28,16 @@ enum TimeScale: Int {
 
 class ServingsHistoryBuilder {
 
-    // MARK: - Nested
-    private struct Strings {
-        static let storyboard = "ServingsHistory"
-    }
-
     // MARK: - Methods
     /// Instantiates and returns the initial view controller for a storyboard.
     ///
     /// - Returns: The initial view controller in the storyboard.
     static func instantiateController() -> ServingsHistoryViewController {
-        let storyboard = UIStoryboard(name: Strings.storyboard, bundle: nil)
+        let storyboard = UIStoryboard(name: "ServingsHistoryLayout", bundle: nil)
         guard
             let viewController = storyboard
                 .instantiateInitialViewController() as? ServingsHistoryViewController
-            else { fatalError("Did not instantiate `ServingsHistory` controller") }
+            else { fatalError("Did not instantiate `ServingsHistoryViewController`") }
         viewController.title = "Servings History"
 
         return viewController

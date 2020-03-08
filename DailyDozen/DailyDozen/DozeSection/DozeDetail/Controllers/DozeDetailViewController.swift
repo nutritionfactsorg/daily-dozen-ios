@@ -10,11 +10,6 @@ import UIKit
 // MARK: - Builder
 class DozeDetailBuilder {
     
-    // MARK: - Nested
-    struct Strings {
-        static let storyboardDetailsDoze = "DozeDetailLayout"
-    }
-    
     // MARK: - Methods
     /// Instantiates and returns the initial view controller for a storyboard.
     ///
@@ -22,11 +17,11 @@ class DozeDetailBuilder {
     /// - Returns: The initial view controller in the storyboard.
     static func instantiateController(itemTypeKey: String) -> DozeDetailViewController {
         
-        let storyboard = UIStoryboard(name: Strings.storyboardDetailsDoze, bundle: nil)
+        let storyboard = UIStoryboard(name: "DozeDetailLayout", bundle: nil)
         guard
             let viewController = storyboard
                 .instantiateInitialViewController() as? DozeDetailViewController
-            else { fatalError("Did not instantiate `DozeDetailData` controller") }
+            else { fatalError("Did not instantiate `DozeDetailViewController`") }
         
         viewController.setViewModel(itemTypeKey: itemTypeKey)
         
@@ -73,14 +68,6 @@ class DozeDetailViewController: UIViewController {
         detailsImageView.image = dataProvider.viewModel.detailsImage
         titleLabel.text = dataProvider.viewModel.itemTitle
     }
-    
-//    func determineHideUnitToggle() {
-//        let unitMeasureTogglestr = UserDefaults.standard.bool(forKey: SettingsKeys.unitsTypeTogglePref)
-//        if !unitMeasureTogglestr {
-//            unitMeasurement.isHidden = true
-//            unitsLabel.isHidden = true
-//        }
-//    }
     
     // MARK: - Methods
     /// Sets a view model for the current item.

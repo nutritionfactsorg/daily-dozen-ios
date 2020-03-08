@@ -11,22 +11,17 @@ import FSCalendar
 
 class ItemHistoryBuilder {
 
-    // MARK: - Nested
-    private struct Strings {
-        static let storyboard = "ItemHistory"
-    }
-
     // MARK: - Methods
     /// Instantiates and returns the initial view controller for a storyboard.
     ///
     /// - Parameter heading: An item display heading.
     /// - Returns: The initial item histor view controller in the storyboard.
     static func instantiateController(heading: String, itemType: DataCountType) -> UIViewController {
-        let storyboard = UIStoryboard(name: Strings.storyboard, bundle: nil)
+        let storyboard = UIStoryboard(name: "ItemHistoryLayout", bundle: nil)
         guard
             let viewController = storyboard
                 .instantiateInitialViewController() as? ItemHistoryViewController
-            else { fatalError("Did not instantiate `ItemHistory` controller") }
+            else { fatalError("Did not instantiate `ItemHistoryViewController`") }
         viewController.title = heading
         viewController.itemType = itemType
 

@@ -31,8 +31,8 @@ class MainViewController: UIViewController {
     private func setupUnitsType() {
         // ----- Settings: Units Type -----
         if UserDefaults.standard.bool(forKey: SettingsKeys.hasSeenFirstLaunch) == false {
-            // Show UnitsType toggle to be similar to current user's experience
-            UserDefaults.standard.set(true, forKey: SettingsKeys.unitsTypeTogglePref)
+            // Set true to Show UnitsType Toggle to be similar to legacy user's experience
+            UserDefaults.standard.set(true, forKey: SettingsKeys.unitsTypeToggleShowPref)
         }
         
         if UserDefaults.standard.object(forKey: SettingsKeys.unitsTypePref) == nil {
@@ -129,7 +129,7 @@ class MainViewController: UIViewController {
         var controllerArray = [UIViewController]()
         
         // Daily Dozen Tab
-        let tabDailyDozenStoryboard = UIStoryboard(name: "ServingsPager", bundle: nil) // :!!!: hard coded storyboard
+        let tabDailyDozenStoryboard = UIStoryboard(name: "ServingsPagerLayout", bundle: nil)
         guard
             let tabDailyDozenViewController = tabDailyDozenStoryboard
                 .instantiateInitialViewController() as? ServingsPagerViewController
@@ -146,7 +146,7 @@ class MainViewController: UIViewController {
 
         // Tweaks Tab
         if UserDefaults.standard.bool(forKey: SettingsKeys.show21TweaksPref) {
-            let tab2ndStoryboard = UIStoryboard(name: "TweaksPager", bundle: nil)  // :!!!: hard coded storyboard
+            let tab2ndStoryboard = UIStoryboard(name: "TweaksPagerLayout", bundle: nil)
             guard
                 let tabTweaksViewController = tab2ndStoryboard
                     .instantiateInitialViewController() as? TweaksPagerViewController
@@ -163,11 +163,11 @@ class MainViewController: UIViewController {
         }
         
         // More Tab
-        let tabInfoStoryboard = UIStoryboard(name: "Menu", bundle: nil) // :!!!: hard coded storyboard
+        let tabInfoStoryboard = UIStoryboard(name: "InfoMenuMainLayout", bundle: nil)
         guard
             let tabInfoViewController = tabInfoStoryboard
-                .instantiateInitialViewController() as? MenuTableViewController
-            else { fatalError("Did not instantiate More `MenuTableViewController`") }
+                .instantiateInitialViewController() as? InfoMenuMainTableVC
+            else { fatalError("Did not instantiate More `InfoMenuMainTableVC`") }
 
         let titleInfo = NSLocalizedString("navtab.info", comment: "More Information navigation tab")
         tabInfoViewController.title = titleInfo
@@ -179,7 +179,7 @@ class MainViewController: UIViewController {
         controllerArray.append(tabInfoViewController)
 
         // Settings Tab
-        let tabSettingsStoryboard = UIStoryboard(name: "Settings", bundle: nil) // :!!!: hard coded storyboard
+        let tabSettingsStoryboard = UIStoryboard(name: "SettingsLayout", bundle: nil)
         guard
             let tabSettingsViewController = tabSettingsStoryboard
                 .instantiateInitialViewController() as? SettingsViewController

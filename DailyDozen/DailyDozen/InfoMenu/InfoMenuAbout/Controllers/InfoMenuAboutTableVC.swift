@@ -1,5 +1,5 @@
 //
-//  AboutTableViewController.swift
+//  InfoMenuAboutTableVC.swift
 //  DailyDozen
 //
 //  Created by Konstantin Khokhlov on 11.12.2017.
@@ -10,23 +10,17 @@ import UIKit
 import ActiveLabel
 
 // MARK: - Builder
-class AboutBuilder {
-
-    // MARK: - Nested
-    private struct Strings {
-        static let storyboard = "About"
-    }
+class InfoMenuAboutBuilder {
 
     // MARK: - Methods
     /// Instantiates and returns the initial view controller for a storyboard.
     ///
     /// - Returns: The initial view controller in the storyboard.
     static func instantiateController() -> UIViewController {
-        let storyboard = UIStoryboard(name: Strings.storyboard, bundle: nil)
+        let storyboard = UIStoryboard(name: "InfoMenuAboutLayout", bundle: nil)
         guard
-            let viewController = storyboard
-                .instantiateInitialViewController()
-            else { fatalError("Did not instantiate `About` controller") }
+            let viewController = storyboard.instantiateInitialViewController()
+            else { fatalError("Did not instantiate `InfoMenuAboutTableVC`") }
         viewController.title = "About this app"
 
         return viewController
@@ -34,7 +28,7 @@ class AboutBuilder {
 }
 
 // MARK: - Controller
-class AboutTableViewController: UITableViewController {
+class InfoMenuAboutTableVC: UITableViewController {
 
     // MARK: - Nested
     private struct Regex {
@@ -80,7 +74,7 @@ class AboutTableViewController: UITableViewController {
         provide(link: LinksService.shared.aboutChristi, for: Regex.christi, in: infoLabel)
         provide(link: LinksService.shared.aboutConst, for: Regex.const, in: infoLabel)
         provide(link: LinksService.shared.aboutMarc, for: Regex.marc, in: infoLabel)
-        provide(link: LinksService.shared.aboutElements, for: Regex.elements, in: designLabel)
+        //provide(link: LinksService.shared.aboutElements, for: Regex.elements, in: designLabel)
     }
 
     /// Provides a link for the current regex in the label.

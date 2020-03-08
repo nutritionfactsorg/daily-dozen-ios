@@ -12,21 +12,15 @@ import SimpleAnimation
 
 class WeightPagerBuilder {
 
-    // MARK: - Nested
-    struct Keys {
-        static let storyboard = "WeightPager"
-    }
-
     // MARK: - Methods
     /// Instantiates and returns the initial view controller for a storyboard.
     ///
     /// - Returns: The initial view controller in the storyboard.
     static func instantiateController() -> UIViewController {
-        let storyboard = UIStoryboard(name: Keys.storyboard, bundle: nil)
+        let storyboard = UIStoryboard(name: "WeightPagerLayout", bundle: nil)
         guard
-            let viewController = storyboard
-                .instantiateInitialViewController()
-            else { fatalError("Did not instantiate `WeightPager` controller") }
+            let viewController = storyboard.instantiateInitialViewController()
+            else { fatalError("Did not instantiate `WeightPagerViewController`") }
 
         return viewController
     }

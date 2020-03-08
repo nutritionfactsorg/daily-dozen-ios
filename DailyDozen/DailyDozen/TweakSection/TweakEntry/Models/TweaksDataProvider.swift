@@ -37,14 +37,8 @@ class TweaksDataProvider: NSObject, UITableViewDataSource {
                 .dequeueReusableCell(withIdentifier: Strings.tweaksCell) as? TweaksCell else {
                 fatalError("Expected `TweaksCell`")
         }
-        guard
-            let tweaksSection = TweaksSection(rawValue: indexPath.section) else {
-                fatalError("Expected `TweaksSection`")
-        }
-        var rowIndex = indexPath.row
-        if tweaksSection == .supplements {
-            rowIndex += tableView.numberOfRows(inSection: 0)
-        }
+
+        let rowIndex = indexPath.row
         
         let countMax = viewModel.itemStates(rowIndex: rowIndex).count
         let countNow = viewModel.itemStates(rowIndex: rowIndex).filter { $0 }.count

@@ -9,21 +9,16 @@ import UIKit
 
 class FirstLaunchBuilder {
     
-    // MARK: Nested
-    private struct Strings {
-        static let storyboard = "FirstLaunch"
-    }
-    
     // MARK: Methods
     /// Instantiates and returns the initial view controller for a storyboard.
     ///
     /// - Returns: The initial view controller in the storyboard.
     static func instantiateController() -> FirstLaunchViewController {
-        let storyboard = UIStoryboard(name: Strings.storyboard, bundle: nil)
+        let storyboard = UIStoryboard(name: "FirstLaunch", bundle: nil)
         guard
             let viewController = storyboard
                 .instantiateInitialViewController() as? FirstLaunchViewController
-            else { fatalError("Did not instantiate `FirstLaunch` controller") }
+            else { fatalError("Did not instantiate `FirstLaunchViewController`") }
         viewController.title = ""
         
         return viewController
@@ -39,9 +34,6 @@ class FirstLaunchViewController: UIViewController {
             name: NSNotification.Name(rawValue: "NoticeUpdatedShowTweaksTab"),
             object: 0,
             userInfo: nil)
-        
-        // self.performSegue(withIdentifier: "goToMain", sender: self)
-        //prepareNextViewController()
     }
     
     @IBAction func dozenPlusTweaks(_ sender: Any) {
@@ -53,9 +45,6 @@ class FirstLaunchViewController: UIViewController {
             name: NSNotification.Name(rawValue: "NoticeUpdatedShowTweaksTab"),
             object: 1,
             userInfo: nil)
-        
-        //self.performSegue(withIdentifier: "goToMain", sender: self)
-        //prepareNextViewController()
     }
     
     func prepareNextViewController() {
@@ -64,46 +53,12 @@ class FirstLaunchViewController: UIViewController {
         let mainVC = storyboard.instantiateViewController(withIdentifier: "mainVC")
         self.navigationController?.setViewControllers([mainVC], animated: true)
         mainVC.modalPresentationStyle = .fullScreen
-        //self.dismiss(animated: false, completion: nil)
         self.present(mainVC, animated: true, completion: nil)
-        //        navigationController?.viewControllers.removeAll(where: { (vc) -> Bool in
-        //            if vc.isKind(of: FirstLaunchViewController.self) {
-        //                return false
-        //            } else {
-        //                return true
-        //            }
-        //        })
-        //        if let viewController = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "MainViewController") as? MainViewController {
-        //
-        //if let navigator = navigationController {
-        // navigator.pushViewController(mainVC, animated: true)
-        //  }
-        //              }
     }
-    
-    //    func swapRootViewController(newController: UIViewController) {
-    //        if let window = self.window {
-    //            window.rootViewController?.dismissViewControllerAnimated(false, completion: nil)
-    //
-    //            UIView.transitionWithView(window, duration: 0.3, options: .TransitionCrossDissolve, animations: {
-    //                window.rootViewController = newController
-    //            }, completion: nil)
-    //        }
-    //    }
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        //navigationController?.navigationBar.titleTextAttributes = [NSAttributedString.Key.foregroundColor: UIColor.white]
-        //navigationController?.navigationBar.barTintColor = UIColor.greenColor
-        //navigationController?.navigationBar.tintColor = UIColor.white
-
         // Do any additional setup after loading the view.
     }
-    
-    // MARK: - Navigation
-    // override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-    // Get the new view controller using segue.destination.
-    // Pass the selected object to the new view controller.
-    //}
     
 }

@@ -12,21 +12,15 @@ import SimpleAnimation
 
 class ServingsPagerBuilder {
 
-    // MARK: - Nested
-    struct Keys {
-        static let storyboard = "ServingsPager"
-    }
-
     // MARK: - Methods
     /// Instantiates and returns the initial view controller for a storyboard.
     ///
     /// - Returns: The initial view controller in the storyboard.
     static func instantiateController() -> UIViewController {
-        let storyboard = UIStoryboard(name: Keys.storyboard, bundle: nil)
+        let storyboard = UIStoryboard(name: "ServingsPagerLayout", bundle: nil)
         guard
-            let viewController = storyboard
-                .instantiateInitialViewController()
-            else { fatalError("Did not instantiate `ServingsPager` controller") }
+            let viewController = storyboard.instantiateInitialViewController()
+            else { fatalError("Did not instantiate `ServingsPagerViewController`") }
 
         return viewController
     }

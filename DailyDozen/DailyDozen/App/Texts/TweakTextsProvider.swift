@@ -56,4 +56,11 @@ class TweakTextsProvider {
         return item.topic
     }
     
+    func isMetricEqualToImperial(itemTypeKey: String) -> Bool {
+        guard 
+            let item = info.itemsDict[itemTypeKey] 
+            else { fatalError("Tweak getTopic(\(itemTypeKey)) Item not found.") }
+        return item.activity.imperial == item.activity.metric
+    }
+    
 }

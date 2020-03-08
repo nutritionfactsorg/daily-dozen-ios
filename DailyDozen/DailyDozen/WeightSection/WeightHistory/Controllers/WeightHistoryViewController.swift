@@ -13,21 +13,16 @@ import Charts
 
 class WeightHistoryBuilder {
 
-    // MARK: Nested
-    private struct Strings {
-        static let storyboard = "WeightHistory"
-    }
-
     // MARK: Methods
     /// Instantiates and returns the initial view controller for a storyboard.
     ///
     /// - Returns: The initial view controller in the storyboard.
     static func instantiateController() -> WeightHistoryViewController {
-        let storyboard = UIStoryboard(name: Strings.storyboard, bundle: nil)
+        let storyboard = UIStoryboard(name: "WeightHistoryLayout", bundle: nil)
         guard
             let viewController = storyboard
                 .instantiateInitialViewController() as? WeightHistoryViewController
-            else { fatalError("Did not instantiate `WeightHistory` controller") }
+            else { fatalError("Did not instantiate `WeightHistoryViewController`") }
         viewController.title = "Weight History"
 
         return viewController

@@ -1,5 +1,5 @@
 //
-//  MenuTableViewController.swift
+//  InfoMenuMainTableVC.swift
 //  DailyDozen
 //
 //  Created by Konstantin Khokhlov on 18.10.2017.
@@ -9,7 +9,7 @@
 import UIKit
 
 // MARK: - UITableViewController
-class MenuTableViewController: UITableViewController {
+class InfoMenuMainTableVC: UITableViewController {
 
     // MARK: - UITableViewController
     override func viewDidLoad() {
@@ -36,7 +36,7 @@ class MenuTableViewController: UITableViewController {
 }
 
 // MARK: - UITableViewDelegate
-extension MenuTableViewController {
+extension InfoMenuMainTableVC {
 
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         guard let menuItem = MenuItem(rawValue: indexPath.row) else { return }
