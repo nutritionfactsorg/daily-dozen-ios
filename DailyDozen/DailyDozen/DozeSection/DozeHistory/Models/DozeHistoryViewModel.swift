@@ -1,5 +1,5 @@
 //
-//  ServingsHistoryViewModel.swift
+//  DozeHistoryViewModel.swift
 //  DailyDozen
 //
 //  Created by Konstantin Khokhlov on 07.12.2017.
@@ -9,7 +9,7 @@
 import Foundation
 import RealmSwift
 
-struct ServingsHistoryViewModel {
+struct DozeHistoryViewModel {
 
     // MARK: - Properties
     private let report: Report

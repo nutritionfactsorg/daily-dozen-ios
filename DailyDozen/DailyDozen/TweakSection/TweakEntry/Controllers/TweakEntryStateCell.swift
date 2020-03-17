@@ -1,5 +1,5 @@
 //
-//  TweaksStateCell.swift
+//  TweakEntryStateCell.swift
 //  DailyDozen
 //
 //  Copyright © 2019 Nutritionfacts.org. All rights reserved.
@@ -7,7 +7,7 @@
 
 import UIKit
 
-class TweaksStateCell: UICollectionViewCell {
+class TweakEntryStateCell: UICollectionViewCell {
     
     // MARK: - Outlets
     @IBOutlet private weak var checkbox: UIButtonCheckbox!

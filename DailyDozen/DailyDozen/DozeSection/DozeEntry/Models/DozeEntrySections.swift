@@ -1,5 +1,5 @@
 //
-//  ServingsSection.swift
+//  DozeEntrySections.swift
 //  DailyDozen
 //
 //  Copyright © 2017 Nutritionfacts.org. All rights reserved.
@@ -7,12 +7,12 @@
 
 import UIKit
 
-enum ServingsSection: Int {
+enum DozeEntrySections: Int {
 
     static let supplementsCount: Int = 1
     
     private struct Strings {
-        static let supplementsHeader = "SupplementsHeader"
+        static let supplementsHeader = "DozeEntryExtrasHeader"
     }
 
     case main, supplements
@@ -47,9 +47,9 @@ enum ServingsSection: Int {
     func numberOfRowsInSection(with count: Int) -> Int {
         switch self {
         case .main:
-            return count - ServingsSection.supplementsCount
+            return count - DozeEntrySections.supplementsCount
         case .supplements:
-            return ServingsSection.supplementsCount
+            return DozeEntrySections.supplementsCount
         }
     }
 }

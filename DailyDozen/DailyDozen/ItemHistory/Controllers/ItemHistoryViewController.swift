@@ -88,7 +88,7 @@ extension ItemHistoryViewController: FSCalendarDelegate {
     func calendar(_ calendar: FSCalendar, didSelect date: Date, at monthPosition: FSCalendarMonthPosition) {
         guard
             let viewController = navigationController?
-                .viewControllers[1] as? ServingsPagerViewController
+                .viewControllers[1] as? DozeEntryPagerViewController
             else { return }
 
         viewController.updateDate(date)

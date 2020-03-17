@@ -129,11 +129,11 @@ class MainViewController: UIViewController {
         var controllerArray = [UIViewController]()
         
         // Daily Dozen Tab
-        let tabDailyDozenStoryboard = UIStoryboard(name: "ServingsPagerLayout", bundle: nil)
+        let tabDailyDozenStoryboard = UIStoryboard(name: "DozeEntryPagerLayout", bundle: nil)
         guard
             let tabDailyDozenViewController = tabDailyDozenStoryboard
-                .instantiateInitialViewController() as? ServingsPagerViewController
-            else { fatalError("Did not instantiate `ServingsPagerViewController`") }
+                .instantiateInitialViewController() as? DozeEntryPagerViewController
+            else { fatalError("Did not instantiate `DozeEntryPagerViewController`") }
 
         let titleDoze = NSLocalizedString("navtab.doze", comment: "Daily Dozen (proper noun) navigation tab")
         tabDailyDozenViewController.title = titleDoze
@@ -146,11 +146,11 @@ class MainViewController: UIViewController {
 
         // Tweaks Tab
         if UserDefaults.standard.bool(forKey: SettingsKeys.show21TweaksPref) {
-            let tab2ndStoryboard = UIStoryboard(name: "TweaksPagerLayout", bundle: nil)
+            let tab2ndStoryboard = UIStoryboard(name: "TweakEntryPagerLayout", bundle: nil)
             guard
                 let tabTweaksViewController = tab2ndStoryboard
-                    .instantiateInitialViewController() as? TweaksPagerViewController
-                else { fatalError("Did not instantiate `TweaksPagerViewController`") }
+                    .instantiateInitialViewController() as? TweakEntryPagerViewController
+                else { fatalError("Did not instantiate `TweakEntryPagerViewController`") }
 
             let titleTweak = NSLocalizedString("navtab.tweaks", comment: "Twenty-One Tweaks (proper noun) navigation tab")
             tabTweaksViewController.title = titleTweak

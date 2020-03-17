@@ -1,5 +1,5 @@
 //
-//  TweaksHistoryViewModel.swift
+//  TweakHistoryViewModel.swift
 //  DailyDozen
 //
 //  Copyright © 2019 Nutritionfacts.org. All rights reserved.
@@ -8,7 +8,7 @@
 import Foundation
 import RealmSwift
 
-struct TweaksHistoryViewModel {
+struct TweakHistoryViewModel {
 
     // MARK: - Properties
     private let report: Report

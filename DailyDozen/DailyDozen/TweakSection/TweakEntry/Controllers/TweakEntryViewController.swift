@@ -1,5 +1,5 @@
 //
-//  TweaksViewController.swift
+//  TweakEntryViewController.swift
 //  DailyDozen
 //
 //  Copyright © 2019 Nutritionfacts.org. All rights reserved.
@@ -9,10 +9,10 @@ import UIKit
 import HealthKit
 import StoreKit  // Used to request app store reivew by user.
 
-class TweaksViewController: UIViewController {
+class TweakEntryViewController: UIViewController {
     
     // MARK: - Outlets
-    @IBOutlet private weak var dataProvider: TweaksDataProvider!
+    @IBOutlet private weak var dataProvider: TweakEntryDataProvider!
     @IBOutlet private weak var tableView: UITableView!
     @IBOutlet private weak var countLabel: UILabel!
     @IBOutlet private weak var starImage: UIImageView!
@@ -44,6 +44,8 @@ class TweaksViewController: UIViewController {
         
         tableView.dataSource = dataProvider
         tableView.delegate = self
+        tableView.estimatedRowHeight = TweakEntrySections.main.tweakEstimatedRowHeight
+        tableView.rowHeight = UITableView.automaticDimension
         
         guard let appDelegate = UIApplication.shared.delegate as? AppDelegate else {
             return 
@@ -67,7 +69,7 @@ class TweaksViewController: UIViewController {
     ///
     /// - Parameter item: The current date.
     func setViewModel(for date: Date) {
-        dataProvider.viewModel = DailyTweaksViewModel(tracker: realm.getDailyTracker(date: date))
+        dataProvider.viewModel = TweakEntryViewModel(tracker: realm.getDailyTracker(date: date))
         tweaksStateCount = 0
         let mainItemCount = dataProvider.viewModel.count
         for i in 0 ..< mainItemCount {
@@ -81,7 +83,7 @@ class TweaksViewController: UIViewController {
     
     // MARK: - Actions
     
-    /// TweaksCell infoButton
+    /// TweakEntryTableViewCell infoButton
     @IBAction private func infoPressed(_ sender: UIButton) {
         let itemInfo = dataProvider.viewModel.itemInfo(rowIndex: sender.tag)
         
@@ -97,7 +99,7 @@ class TweaksViewController: UIViewController {
         navigationController?.pushViewController(viewController, animated: true)
     }
     
-    /// TweaksCell calendarButton
+    /// TweakEntryTableViewCell calendarButton
     @IBAction private func calendarPressed(_ sender: UIButton) {
         let heading = dataProvider.viewModel.itemInfo(rowIndex: sender.tag).itemType.headingDisplay
         let dataCountType = dataProvider.viewModel.itemType(rowIndex: sender.tag)
@@ -115,39 +117,35 @@ class TweaksViewController: UIViewController {
     }
     
     @IBAction private func historyPressed(_ sender: UIButton) {
-        let viewController = TweaksHistoryBuilder.instantiateController()
+        let viewController = TweakHistoryBuilder.instantiateController()
         navigationController?.pushViewController(viewController, animated: true)
     }
 }
 
 // MARK: - Tweaks UITableViewDelegate
 
-extension TweaksViewController: UITableViewDelegate {
-    
-    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-        return TweaksSection.main.rowHeight
-    }
+extension TweakEntryViewController: UITableViewDelegate {
     
     func tableView(_ tableView: UITableView, willDisplay cell: UITableViewCell, forRowAt indexPath: IndexPath) {
-        guard let tweaksCell = cell as? TweaksCell else { return }
-        tweaksCell.stateCollection.delegate = self
-        tweaksCell.stateCollection.dataSource = dataProvider
-        tweaksCell.stateCollection.reloadData()
+        guard let tweaksTableViewCell = cell as? TweakEntryTableViewCell else { return }
+        tweaksTableViewCell.stateCollection.delegate = self
+        tweaksTableViewCell.stateCollection.dataSource = dataProvider
+        tweaksTableViewCell.stateCollection.reloadData()
     }
     
     func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
-        guard let tweaksSection = TweaksSection(rawValue: section) else {
+        guard let tweaksSection = TweakEntrySections(rawValue: section) else {
             fatalError("There should be a section type")
         }
         return tweaksSection.headerHeight
     }
     
     func tableView(_ tableView: UITableView, heightForFooterInSection section: Int) -> CGFloat {
-        return TweaksSection.main.footerHeight
+        return TweakEntrySections.main.footerHeight
     }
     
     func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
-        guard let tweaksSection = TweaksSection(rawValue: section) else {
+        guard let tweaksSection = TweakEntrySections(rawValue: section) else {
             fatalError("There should be a section type")
         }
         return tweaksSection.headerView
@@ -155,7 +153,7 @@ extension TweaksViewController: UITableViewDelegate {
 }
 
 // MARK: - States UICollectionViewDelegate
-extension TweaksViewController: UICollectionViewDelegate {
+extension TweakEntryViewController: UICollectionViewDelegate {
     
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         let rowIndex = collectionView.tag // which item
@@ -181,7 +179,7 @@ extension TweaksViewController: UICollectionViewDelegate {
             checkmarkStates[index] = false
         }
         
-        guard let cell = collectionView.cellForItem(at: indexPath) as? TweaksStateCell else {
+        guard let cell = collectionView.cellForItem(at: indexPath) as? TweakEntryStateCell else {
             fatalError("There should be a cell")
         }
         cell.configure(with: checkmarkStates[indexPath.row])
@@ -226,7 +224,7 @@ extension TweaksViewController: UICollectionViewDelegate {
     }
 }
 
-extension TweaksViewController: RealmDelegate {
+extension TweakEntryViewController: RealmDelegate {
     
     func didUpdateFile() {
         navigationController?.popViewController(animated: false)

@@ -1,5 +1,5 @@
 //
-//  DailyTweaksViewModel.swift
+//  DozeEntryViewModel.swift
 //  DailyDozen
 //
 //  Copyright © 2019 Nutritionfacts.org. All rights reserved.
@@ -7,38 +7,30 @@
 
 import Foundation
 
-class DailyTweaksViewModel {
+class DozeEntryViewModel {
     
     static let rowTypeArray: [DataCountType] = [
-        .tweakMealWater,
-        .tweakMealNegCal,
-        .tweakMealVinegar,
-        .tweakMealUndistracted,
-        .tweakMeal20Minutes,
-        .tweakDailyBlackCumin,
-        .tweakDailyGarlic,
-        .tweakDailyGinger,
-        .tweakDailyNutriYeast,
-        .tweakDailyCumin,
-        .tweakDailyGreenTea,
-        .tweakDailyHydrate,
-        .tweakDailyDeflourDiet,
-        .tweakDailyFrontLoad,
-        .tweakDailyTimeRestrict,
-        .tweakExerciseTiming,
-        .tweakWeightTwice,
-        .tweakCompleteIntentions,
-        .tweakNightlyFast,
-        .tweakNightlySleep,
-        .tweakNightlyTrendelenbrug
+        .dozeBeans,
+        .dozeBerries,
+        .dozeFruitsOther,
+        .dozeVegetablesCruciferous,
+        .dozeGreens,
+        .dozeVegetablesOther,
+        .dozeFlaxseeds,
+        .dozeNuts,
+        .dozeSpices,
+        .dozeWholeGrains,
+        .dozeBeverages,
+        .dozeExercise,
+        .otherVitaminB12
     ]
     
     // MARK: - Properties
     private let tracker: DailyTracker
     
-    /// Returns 21 Tweak item count.
+    /// Returns Daily Dozen item count.
     var count: Int {
-        return DailyTweaksViewModel.rowTypeArray.count
+        return DozeEntryViewModel.rowTypeArray.count
     }
     
     var trackerDate: Date {
@@ -56,7 +48,7 @@ class DailyTweaksViewModel {
     /// - Parameter index: The current table row index.
     /// - Returns: A tuple with the item heading, image name and supplemental flag.
     func itemInfo(rowIndex: Int) -> (itemType: DataCountType, isSupplemental: Bool) {
-        let rowType: DataCountType = DailyTweaksViewModel.rowTypeArray[rowIndex]
+        let rowType: DataCountType = DozeEntryViewModel.rowTypeArray[rowIndex]
         let heading = rowType.headingDisplay
         let isSupplemental = heading.contains("Vitamin")
             || heading.contains("Omega")
@@ -69,7 +61,7 @@ class DailyTweaksViewModel {
     /// - Parameter index: The current index.
     /// - Returns: The streak count.
     func itemStreak(rowIndex: Int) -> Int {
-        let itemType = DailyTweaksViewModel.rowTypeArray[rowIndex]
+        let itemType = DozeEntryViewModel.rowTypeArray[rowIndex]
         if let dataCountRecord = tracker.itemsDict[itemType] {
             return dataCountRecord.streak
         } else {
@@ -82,7 +74,7 @@ class DailyTweaksViewModel {
     /// - Parameter itemName: The item name.
     /// - Returns: A NutritionFacts topic url.
     func topicURL(itemTypeKey: String) -> URL {
-        let topic = TweakTextsProvider.shared.getTopic(itemTypeKey: itemTypeKey)
+        let topic = DozeTextsProvider.shared.getTopic(itemTypeKey: itemTypeKey)
         return LinksService.shared.link(forTopic: topic)
     }
     
@@ -91,8 +83,9 @@ class DailyTweaksViewModel {
     /// - Parameter index: The current row index.
     /// - Returns: The states booland array.
     func itemStates(rowIndex: Int) -> [Bool] {
-        let rowType = DailyTweaksViewModel.rowTypeArray[rowIndex]
-        var states = [Bool](repeating: false, count: rowType.maxServings)
+        let rowType = DozeEntryViewModel.rowTypeArray[rowIndex]
+        let maxServings = rowType.maxServings
+        var states = [Bool](repeating: false, count: maxServings)
         if let count = tracker.itemsDict[rowType]?.count {
             for i in 0..<count {
                 states[i] = true
@@ -106,7 +99,7 @@ class DailyTweaksViewModel {
     /// - Parameter index: The current row index.
     /// - Returns: The item DataCountType.
     func itemType(rowIndex: Int) -> DataCountType {
-        return DailyTweaksViewModel.rowTypeArray[rowIndex]
+        return DozeEntryViewModel.rowTypeArray[rowIndex]
     }
     
     /// Returns an item type key in the tracker for the current index.
@@ -114,20 +107,20 @@ class DailyTweaksViewModel {
     /// - Parameter index: The current row index.
     /// - Returns: The item type key string.
     func itemTypeKey(rowIndex: Int) -> String {
-        return DailyTweaksViewModel.rowTypeArray[rowIndex].typeKey
+        return DozeEntryViewModel.rowTypeArray[rowIndex].typeKey
     }
-
+    
     func itemPid(rowIndex: Int) -> String {
-        let itemType = DailyTweaksViewModel.rowTypeArray[rowIndex]
+        let itemType = DozeEntryViewModel.rowTypeArray[rowIndex]
         return tracker.getPid(typeKey: itemType)
     }
-
+    
     /// Returns an image name for the current index.
     ///
     /// - Parameter index: The current table row index.
     /// - Returns: The image name.
     func imageName(rowIndex: Int) -> String {
-        return DailyTweaksViewModel.rowTypeArray[rowIndex].imageName
+        return DozeEntryViewModel.rowTypeArray[rowIndex].imageName
     }
     
 }

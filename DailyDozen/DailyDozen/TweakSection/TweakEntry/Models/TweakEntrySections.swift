@@ -1,5 +1,5 @@
 //
-//  TweaksSection.swift
+//  TweakEntrySections.swift
 //  DailyDozen
 //
 //  Copyright © 2019 Nutritionfacts.org. All rights reserved.
@@ -7,11 +7,11 @@
 
 import UIKit
 
-enum TweaksSection: Int {
+enum TweakEntrySections: Int {
     
     case main
 
-    var rowHeight: CGFloat {
+    var tweakEstimatedRowHeight: CGFloat {
         return 100
     }
 

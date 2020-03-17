@@ -1,5 +1,5 @@
 //
-//  ServingsCell.swift
+//  DozeEntryTableViewCell.swift
 //  DailyDozen
 //
 //  Copyright © 2017 Nutritionfacts.org. All rights reserved.
@@ -7,7 +7,7 @@
 
 import UIKit
 
-class ServingsCell: UITableViewCell {
+class DozeEntryTableViewCell: UITableViewCell {
 
     // MARK: - Outlets
     @IBOutlet private weak var itemImage: UIImageView!

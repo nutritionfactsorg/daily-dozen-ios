@@ -1,5 +1,5 @@
 //
-//  DozeDetailSection.swift
+//  DozeDetailSections.swift
 //  DailyDozen
 //
 //  Copyright © 2019 Nutritionfacts.org. All rights reserved.
@@ -7,7 +7,7 @@
 
 import UIKit
 
-enum DozeDetailSection: Int {
+enum DozeDetailSections: Int {
     
     private struct Nibs {
         static let amountHeaderNib = "DozeDetailSizeHeader"

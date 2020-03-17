@@ -1,5 +1,5 @@
 //
-//  ServingsStateCell.swift
+//  DozeEntryStateCell.swift
 //  DailyDozen
 //
 //  Copyright © 2017 Nutritionfacts.org. All rights reserved.
@@ -7,7 +7,7 @@
 
 import UIKit
 
-class ServingsStateCell: UICollectionViewCell {
+class DozeEntryStateCell: UICollectionViewCell {
     
     // MARK: - Outlets
     @IBOutlet private weak var checkbox: UIButtonCheckbox!

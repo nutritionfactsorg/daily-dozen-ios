@@ -24,7 +24,7 @@ class TweakDetailDataProvider: NSObject, UITableViewDataSource {
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        guard let sectionType = TweakDetailSection(rawValue: section) else {
+        guard let sectionType = TweakDetailSections(rawValue: section) else {
             fatalError("There should be a section type")
         }
         switch sectionType {
@@ -37,7 +37,7 @@ class TweakDetailDataProvider: NSObject, UITableViewDataSource {
     
     // Row Cell At Index
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        guard let sectionType = TweakDetailSection(rawValue: indexPath.section) else {
+        guard let sectionType = TweakDetailSections(rawValue: indexPath.section) else {
             fatalError("There should be a section type")
         }
         switch sectionType {

@@ -91,7 +91,7 @@ class DozeDetailViewController: UIViewController {
     ///
     /// - Parameter sender: The button.
     @IBAction private func unitsChanged(_ sender: UIButton) {
-        let sectionIndex = DozeDetailSection.amount.rawValue
+        let sectionIndex = DozeDetailSections.amount.rawValue
         guard
             let unitsTypePrefStr = UserDefaults.standard.string(forKey: SettingsKeys.unitsTypePref),
             let currentUnitsType = UnitsType(rawValue: unitsTypePrefStr),
@@ -119,7 +119,7 @@ class DozeDetailViewController: UIViewController {
 extension DozeDetailViewController: UITableViewDelegate {
     
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-        guard let sectionType = DozeDetailSection(rawValue: indexPath.section) else {
+        guard let sectionType = DozeDetailSections(rawValue: indexPath.section) else {
             fatalError("There should be a section type")
         }
         
@@ -152,14 +152,14 @@ extension DozeDetailViewController: UITableViewDelegate {
     }
     
     func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
-        guard let sectionType = DozeDetailSection(rawValue: section) else {
+        guard let sectionType = DozeDetailSections(rawValue: section) else {
             fatalError("There should be a section type")
         }
         return sectionType.headerHeight
     }
     
     func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
-        guard let sectionType = DozeDetailSection(rawValue: section) else {
+        guard let sectionType = DozeDetailSections(rawValue: section) else {
             fatalError("There should be a doze section type")
         }
         if let dataCountType = dataProvider.dataCountType {

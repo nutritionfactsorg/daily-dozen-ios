@@ -24,7 +24,7 @@ class DozeDetailDataProvider: NSObject, UITableViewDataSource {
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        guard let sectionType = DozeDetailSection(rawValue: section) else {
+        guard let sectionType = DozeDetailSections(rawValue: section) else {
             fatalError("There should be a section type")
         }
         switch sectionType {
@@ -37,7 +37,7 @@ class DozeDetailDataProvider: NSObject, UITableViewDataSource {
     
     // Row Cell At Index
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        guard let sectionType = DozeDetailSection(rawValue: indexPath.section) else {
+        guard let sectionType = DozeDetailSections(rawValue: indexPath.section) else {
             fatalError("There should be a section type")
         }
         switch sectionType {

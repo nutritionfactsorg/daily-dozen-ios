@@ -1,5 +1,5 @@
 //
-//  ServingsDataProvider.swift
+//  DozeEntryDataProvider.swift
 //  DailyDozen
 //
 //  Copyright © 2017 Nutritionfacts.org. All rights reserved.
@@ -7,7 +7,7 @@
 
 import UIKit
 
-class ServingsDataProvider: NSObject, UITableViewDataSource {
+class DozeEntryDataProvider: NSObject, UITableViewDataSource {
     
     // MARK: - Nested
     private struct Strings {
@@ -15,7 +15,7 @@ class ServingsDataProvider: NSObject, UITableViewDataSource {
         static let servingsStateCell = "servingsStateCell" // "WAS: doseCell
     }
     
-    var viewModel: DailyDozenViewModel!
+    var viewModel: DozeEntryViewModel!
     
     // MARK: - Servings UITableViewDataSource
     func numberOfSections(in tableView: UITableView) -> Int {
@@ -23,7 +23,7 @@ class ServingsDataProvider: NSObject, UITableViewDataSource {
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        guard let servingsSection = ServingsSection(rawValue: section) else {
+        guard let servingsSection = DozeEntrySections(rawValue: section) else {
             fatalError("There should be a section type")
         }
         return servingsSection.numberOfRowsInSection(with: viewModel.count)
@@ -34,11 +34,11 @@ class ServingsDataProvider: NSObject, UITableViewDataSource {
         let realm = RealmProvider()
         guard
             let servingsCell = tableView
-                .dequeueReusableCell(withIdentifier: Strings.servingsCell) as? ServingsCell else {
-                fatalError("Expected `tweaksCell`")
+                .dequeueReusableCell(withIdentifier: Strings.servingsCell) as? DozeEntryTableViewCell else {
+                fatalError("Expected `tweaksTableViewCell`")
         }
         guard
-            let servingsSection = ServingsSection(rawValue: indexPath.section) else {
+            let servingsSection = DozeEntrySections(rawValue: indexPath.section) else {
                 fatalError("Expected `servingsSection`")
         }
         var rowIndex = indexPath.row
@@ -67,7 +67,7 @@ class ServingsDataProvider: NSObject, UITableViewDataSource {
             imageName: itemType.imageName,
             streak: streak)
         
-        // viewModel: DailyDozenViewModel tracker
+        // viewModel: DozeEntryViewModel tracker
         // tracker: DailyTracker getPid
         
         let itemPid = viewModel.itemPid(rowIndex: rowIndex)
@@ -78,7 +78,7 @@ class ServingsDataProvider: NSObject, UITableViewDataSource {
 }
 
 // MARK: - States UICollectionViewDataSource
-extension ServingsDataProvider: UICollectionViewDataSource {
+extension DozeEntryDataProvider: UICollectionViewDataSource {
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         let states = viewModel.itemStates(rowIndex: collectionView.tag)
@@ -89,7 +89,7 @@ extension ServingsDataProvider: UICollectionViewDataSource {
         let cell = collectionView.dequeueReusableCell(
             withReuseIdentifier: Strings.servingsStateCell,
             for: indexPath)
-        guard let stateCell = cell as? ServingsStateCell else {
+        guard let stateCell = cell as? DozeEntryStateCell else {
             fatalError("There should be a cell")
         }
         

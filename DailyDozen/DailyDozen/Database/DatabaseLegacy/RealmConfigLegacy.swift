@@ -45,7 +45,7 @@ enum RealmConfigLegacy {
     /// This `items` array order sets the Servings display order.
     /// 
     /// The numerical split between main items and supplements items 
-    /// is set by `supplementsCount` in `ServingsSection`.
+    /// is set by `supplementsCount` in `DozeEntrySections`.
     ///
     /// - Parameter date: The current date.
     static func initialDoze(for date: Date) -> Doze {

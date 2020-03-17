@@ -1,5 +1,5 @@
 //
-//  ServingsHistoryViewController.swift
+//  DozeHistoryViewController.swift
 //  DailyDozen
 //
 //  Created by Konstantin Khokhlov on 22.11.2017.
@@ -32,19 +32,19 @@ class ServingsHistoryBuilder {
     /// Instantiates and returns the initial view controller for a storyboard.
     ///
     /// - Returns: The initial view controller in the storyboard.
-    static func instantiateController() -> ServingsHistoryViewController {
-        let storyboard = UIStoryboard(name: "ServingsHistoryLayout", bundle: nil)
+    static func instantiateController() -> DozeHistoryViewController {
+        let storyboard = UIStoryboard(name: "DozeHistoryLayout", bundle: nil)
         guard
             let viewController = storyboard
-                .instantiateInitialViewController() as? ServingsHistoryViewController
-            else { fatalError("Did not instantiate `ServingsHistoryViewController`") }
+                .instantiateInitialViewController() as? DozeHistoryViewController
+            else { fatalError("Did not instantiate `DozeHistoryViewController`") }
         viewController.title = "Servings History"
 
         return viewController
     }
 }
 
-class ServingsHistoryViewController: UIViewController {
+class DozeHistoryViewController: UIViewController {
 
     // MARK: - Outlets
     @IBOutlet private weak var chartView: ChartView!
@@ -52,7 +52,7 @@ class ServingsHistoryViewController: UIViewController {
     @IBOutlet private weak var scaleControl: UISegmentedControl!
 
     // MARK: - Properties
-    private var viewModel: ServingsHistoryViewModel!
+    private var viewModel: DozeHistoryViewModel!
     private var currentTimeScale = TimeScale.day
 
     private var chartSettings: (year: Int, month: Int)! {
@@ -126,7 +126,7 @@ class ServingsHistoryViewController: UIViewController {
             return
         }
 
-        viewModel = ServingsHistoryViewModel(trackers)
+        viewModel = DozeHistoryViewModel(trackers)
         let lastYearIndex = viewModel.lastYearIndex
 
         chartSettings = (lastYearIndex, viewModel.lastMonthIndex(for: lastYearIndex))
@@ -180,7 +180,7 @@ class ServingsHistoryViewController: UIViewController {
 }
 
 // MARK: - IAxisValueFormatter
-extension ServingsHistoryViewController: IAxisValueFormatter {
+extension DozeHistoryViewController: IAxisValueFormatter {
 
     func stringForValue(_ value: Double, axis: AxisBase?) -> String {
         let labels: [String]

@@ -16,13 +16,13 @@ struct DailyReport {
     init(tracker: DailyTracker, isDailyDozen: Bool) {
         var statesCount = 0
         if isDailyDozen {
-            for type in DailyDozenViewModel.rowTypeArray {
+            for type in DozeEntryViewModel.rowTypeArray {
                 if let item = tracker.itemsDict[type] {
                     statesCount += item.count
                 }
             }
         } else {
-            for type in DailyTweaksViewModel.rowTypeArray {
+            for type in TweakEntryViewModel.rowTypeArray {
                 if let item = tracker.itemsDict[type] {
                     statesCount += item.count
                 }

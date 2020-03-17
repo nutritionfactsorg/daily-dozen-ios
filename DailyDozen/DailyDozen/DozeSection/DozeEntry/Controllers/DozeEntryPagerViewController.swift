@@ -1,5 +1,5 @@
 //
-//  TweaksPagerViewController.swift
+//  DozeEntryPagerViewController.swift
 //  DailyDozen
 //
 //  Copyright © 2017 Nutritionfacts.org. All rights reserved.
@@ -10,24 +10,24 @@ import SimpleAnimation
 
 // MARK: - Builder
 
-class TweaksPagerBuilder {
+class DozeEntryPagerBuilder {
 
     // MARK: - Methods
     /// Instantiates and returns the initial view controller for a storyboard.
     ///
     /// - Returns: The initial view controller in the storyboard.
     static func instantiateController() -> UIViewController {
-        let storyboard = UIStoryboard(name: "TweaksPagerLayout", bundle: nil)
+        let storyboard = UIStoryboard(name: "DozeEntryPagerLayout", bundle: nil)
         guard
             let viewController = storyboard.instantiateInitialViewController()
-            else { fatalError("Did not instantiate `TweaksPagerViewController`") }
+            else { fatalError("Did not instantiate `DozeEntryPagerViewController`") }
 
         return viewController
     }
 }
 
 // MARK: - Controller
-class TweaksPagerViewController: UIViewController {
+class DozeEntryPagerViewController: UIViewController {
 
     // MARK: - Properties
     private var currentDate = Date() {
@@ -65,14 +65,20 @@ class TweaksPagerViewController: UIViewController {
         navigationController?.navigationBar.barTintColor = UIColor.greenColor
         navigationController?.navigationBar.tintColor = UIColor.white
 
-        title = NSLocalizedString("navtab.tweaks", comment: "Twenty-One Tweaks (proper noun) navigation tab")
+        title = NSLocalizedString("navtab.doze", comment: "Daily Dozen (proper noun) navigation tab")
     }
 
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
-
         navigationController?.navigationBar.barTintColor = UIColor.greenColor
         navigationController?.navigationBar.titleTextAttributes = [NSAttributedString.Key.foregroundColor: UIColor.white]
+        
+        if UserDefaults.standard.bool(forKey: SettingsKeys.hasSeenFirstLaunch) == false {
+            UserDefaults.standard.set(true, forKey: SettingsKeys.hasSeenFirstLaunch)
+            let viewController = FirstLaunchBuilder.instantiateController()
+            navigationController?.pushViewController(viewController, animated: true)
+        }
+
     }
 
     // MARK: - Methods
@@ -83,7 +89,7 @@ class TweaksPagerViewController: UIViewController {
         currentDate = date
         datePicker.setDate(date, animated: false)
 
-        guard let viewController = children.first as? TweaksViewController else { return }
+        guard let viewController = children.first as? DozeEntryViewController else { return }
         viewController.view.fadeOut().fadeIn()
         viewController.setViewModel(for: currentDate)
     }
@@ -99,7 +105,7 @@ class TweaksPagerViewController: UIViewController {
         datePicker.isHidden = true
         currentDate = datePicker.date
 
-        guard let viewController = children.first as? TweaksViewController else { return }
+        guard let viewController = children.first as? DozeEntryViewController else { return }
         viewController.view.fadeOut().fadeIn()
         viewController.setViewModel(for: datePicker.date)
     }
@@ -116,7 +122,7 @@ class TweaksPagerViewController: UIViewController {
 
         self.currentDate = datePicker.date
 
-        guard let viewController = children.first as? TweaksViewController else { return }
+        guard let viewController = children.first as? DozeEntryViewController else { return }
 
         if sender.direction == .left {
             viewController.view.slideOut(x: -view.frame.width).slideIn(x: view.frame.width)

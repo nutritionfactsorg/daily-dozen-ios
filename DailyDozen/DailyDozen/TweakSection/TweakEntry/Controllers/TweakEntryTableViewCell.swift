@@ -1,5 +1,5 @@
 //
-//  TweaksCell.swift
+//  TweakEntryTableViewCell.swift
 //  DailyDozen
 //
 //  Copyright © 2019 Nutritionfacts.org. All rights reserved.
@@ -7,9 +7,10 @@
 
 import UIKit
 
-class TweaksCell: UITableViewCell {
+class TweakEntryTableViewCell: UITableViewCell {
 
     // MARK: - Outlets
+    
     @IBOutlet private weak var itemImage: UIImageView!
     @IBOutlet private weak var streakLabel: UILabel!
     @IBOutlet private weak var itemHeadingLabel: UILabel!
@@ -18,6 +19,7 @@ class TweaksCell: UITableViewCell {
     @IBOutlet private weak var calendarButton: UIButton!
 
     // MARK: - Methods
+    
     /// Sets the servings cell with the current heading, image name and row index tag.
     ///
     /// - Parameter heading: The current heading.

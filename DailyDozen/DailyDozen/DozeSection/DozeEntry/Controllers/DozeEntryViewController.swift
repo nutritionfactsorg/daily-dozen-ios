@@ -1,5 +1,5 @@
 //
-//  ServingsViewController.swift
+//  DozeEntryViewController.swift
 //  DailyDozen
 //
 //  Copyright © 2017 Nutritionfacts.org. All rights reserved.
@@ -8,10 +8,10 @@
 import UIKit
 import StoreKit // Used to request app store reivew by user.
 
-class ServingsViewController: UIViewController {
+class DozeEntryViewController: UIViewController {
     
     // MARK: - Outlets
-    @IBOutlet private weak var dataProvider: ServingsDataProvider!
+    @IBOutlet private weak var dataProvider: DozeEntryDataProvider!
     @IBOutlet private weak var tableView: UITableView!
     @IBOutlet private weak var countLabel: UILabel!
     @IBOutlet private weak var starImage: UIImageView!
@@ -55,9 +55,9 @@ class ServingsViewController: UIViewController {
     ///
     /// - Parameter item: The current date.
     func setViewModel(for date: Date) {
-        dataProvider.viewModel = DailyDozenViewModel(tracker: realm.getDailyTracker(date: date))
+        dataProvider.viewModel = DozeEntryViewModel(tracker: realm.getDailyTracker(date: date))
         servingsStateCount = 0
-        let mainItemCount = dataProvider.viewModel.count - ServingsSection.supplementsCount
+        let mainItemCount = dataProvider.viewModel.count - DozeEntrySections.supplementsCount
         for i in 0 ..< mainItemCount {
             let itemStates: [Bool] = dataProvider.viewModel.itemStates(rowIndex: i)
             for state in itemStates where state {
@@ -69,7 +69,7 @@ class ServingsViewController: UIViewController {
     
     // MARK: - Actions
     
-    /// ServingsCell infoButton
+    /// DozeEntryTableViewCell infoButton
     @IBAction private func infoPressed(_ sender: UIButton) {
         let itemInfo = dataProvider.viewModel.itemInfo(rowIndex: sender.tag)
         
@@ -85,7 +85,7 @@ class ServingsViewController: UIViewController {
         navigationController?.pushViewController(viewController, animated: true)
     }
     
-    /// ServingsCell calendarButton
+    /// DozeEntryTableViewCell calendarButton
     @IBAction private func calendarPressed(_ sender: UIButton) {
         let heading = dataProvider.viewModel.itemInfo(rowIndex: sender.tag).itemType.headingDisplay
         let itemType = dataProvider.viewModel.itemType(rowIndex: sender.tag)
@@ -106,32 +106,32 @@ class ServingsViewController: UIViewController {
 
 // MARK: - Servings UITableViewDelegate
 
-extension ServingsViewController: UITableViewDelegate {
+extension DozeEntryViewController: UITableViewDelegate {
     
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-        return ServingsSection.main.rowHeight
+        return DozeEntrySections.main.rowHeight
     }
     
     func tableView(_ tableView: UITableView, willDisplay cell: UITableViewCell, forRowAt indexPath: IndexPath) {
-        guard let servingsCell = cell as? ServingsCell else { return }
+        guard let servingsCell = cell as? DozeEntryTableViewCell else { return }
         servingsCell.stateCollection.delegate = self
         servingsCell.stateCollection.dataSource = dataProvider
         servingsCell.stateCollection.reloadData()
     }
     
     func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
-        guard let servingsSection = ServingsSection(rawValue: section) else {
+        guard let servingsSection = DozeEntrySections(rawValue: section) else {
             fatalError("There should be a section type")
         }
         return servingsSection.headerHeight
     }
     
     func tableView(_ tableView: UITableView, heightForFooterInSection section: Int) -> CGFloat {
-        return ServingsSection.main.footerHeight
+        return DozeEntrySections.main.footerHeight
     }
     
     func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
-        guard let servingsSection = ServingsSection(rawValue: section) else {
+        guard let servingsSection = DozeEntrySections(rawValue: section) else {
             fatalError("There should be a section type")
         }
         return servingsSection.headerView
@@ -139,7 +139,7 @@ extension ServingsViewController: UITableViewDelegate {
 }
 
 // MARK: - States UICollectionViewDelegate
-extension ServingsViewController: UICollectionViewDelegate {
+extension DozeEntryViewController: UICollectionViewDelegate {
     
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         let rowIndex = collectionView.tag // which item
@@ -165,7 +165,7 @@ extension ServingsViewController: UICollectionViewDelegate {
             checkmarkStates[index] = false
         }
                 
-        guard let cell = collectionView.cellForItem(at: indexPath) as? ServingsStateCell else {
+        guard let cell = collectionView.cellForItem(at: indexPath) as? DozeEntryStateCell else {
             fatalError("There should be a cell")
         }
         cell.configure(with: checkmarkStates[indexPath.row])
@@ -201,7 +201,7 @@ extension ServingsViewController: UICollectionViewDelegate {
     }
 }
 
-extension ServingsViewController: RealmDelegate {
+extension DozeEntryViewController: RealmDelegate {
     
     func didUpdateFile() {
         navigationController?.popViewController(animated: false)

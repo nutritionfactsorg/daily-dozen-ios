@@ -1,5 +1,5 @@
 //
-//  TweaksHistoryViewController.swift
+//  TweakHistoryViewController.swift
 //  DailyDozen
 //
 //  Copyright © 2019 Nutritionfacts.org. All rights reserved.
@@ -14,25 +14,25 @@ import RealmSwift
 //    case day, month, year
 //}
 
-class TweaksHistoryBuilder {
+class TweakHistoryBuilder {
 
     // MARK: - Methods
     /// Instantiates and returns the initial view controller for a storyboard.
     ///
     /// - Returns: The initial view controller in the storyboard.
-    static func instantiateController() -> TweaksHistoryViewController {
-        let storyboard = UIStoryboard(name: "TweaksHistoryLayout", bundle: nil)
+    static func instantiateController() -> TweakHistoryViewController {
+        let storyboard = UIStoryboard(name: "TweakHistoryLayout", bundle: nil)
         guard
             let viewController = storyboard
-                .instantiateInitialViewController() as? TweaksHistoryViewController
-            else { fatalError("Did not instantiate `TweaksHistoryViewController`") }
+                .instantiateInitialViewController() as? TweakHistoryViewController
+            else { fatalError("Did not instantiate `TweakHistoryViewController`") }
         viewController.title = "Tweaks History"
 
         return viewController
     }
 }
 
-class TweaksHistoryViewController: UIViewController {
+class TweakHistoryViewController: UIViewController {
 
     // MARK: - Outlets
     @IBOutlet private weak var chartView: ChartView!
@@ -40,7 +40,7 @@ class TweaksHistoryViewController: UIViewController {
     @IBOutlet private weak var scaleControl: UISegmentedControl!
 
     // MARK: - Properties
-    private var viewModel: TweaksHistoryViewModel!
+    private var viewModel: TweakHistoryViewModel!
     private var currentTimeScale = TimeScale.day
 
     private var chartSettings: (year: Int, month: Int)! {
@@ -111,7 +111,7 @@ class TweaksHistoryViewController: UIViewController {
             return
         }
 
-        viewModel = TweaksHistoryViewModel(trackers)
+        viewModel = TweakHistoryViewModel(trackers)
         let lastYearIndex = viewModel.lastYearIndex
 
         chartSettings = (lastYearIndex, viewModel.lastMonthIndex(for: lastYearIndex))
@@ -165,7 +165,7 @@ class TweaksHistoryViewController: UIViewController {
 }
 
 // MARK: - IAxisValueFormatter
-extension TweaksHistoryViewController: IAxisValueFormatter {
+extension TweakHistoryViewController: IAxisValueFormatter {
 
     func stringForValue(_ value: Double, axis: AxisBase?) -> String {
         let labels: [String]

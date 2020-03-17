@@ -1,5 +1,5 @@
 //
-//  TweaksDataProvider.swift
+//  TweakEntryDataProvider.swift
 //  DailyDozen
 //
 //  Copyright © 2019 Nutritionfacts.org. All rights reserved.
@@ -7,15 +7,15 @@
 
 import UIKit
 
-class TweaksDataProvider: NSObject, UITableViewDataSource {
+class TweakEntryDataProvider: NSObject, UITableViewDataSource {
     
     // MARK: - Nested
     private struct Strings {
-        static let tweaksCell = "tweaksCell"
-        static let tweaksStateCell = "tweaksStateCell" // :WAS: doseCell
+        static let tweaksTableViewCell = "tweaksTableViewCell"
+        static let tweaksStateCell = "tweaksStateCell"
     }
     
-    var viewModel: DailyTweaksViewModel!
+    var viewModel: TweakEntryViewModel!
     
     // MARK: - Tweaks UITableViewDataSource
     func numberOfSections(in tableView: UITableView) -> Int {
@@ -23,7 +23,7 @@ class TweaksDataProvider: NSObject, UITableViewDataSource {
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        guard let tweaksSection = TweaksSection(rawValue: section) else {
+        guard let tweaksSection = TweakEntrySections(rawValue: section) else {
             fatalError("There should be a section type")
         }
         return tweaksSection.numberOfRowsInSection(with: viewModel.count)
@@ -33,9 +33,9 @@ class TweaksDataProvider: NSObject, UITableViewDataSource {
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let realm = RealmProvider()
         guard
-            let tweaksCell = tableView
-                .dequeueReusableCell(withIdentifier: Strings.tweaksCell) as? TweaksCell else {
-                fatalError("Expected `TweaksCell`")
+            let tweaksTableViewCell = tableView
+                .dequeueReusableCell(withIdentifier: Strings.tweaksTableViewCell) as? TweakEntryTableViewCell else {
+                fatalError("Expected `TweakEntryTableViewCell`")
         }
 
         let rowIndex = indexPath.row
@@ -44,35 +44,31 @@ class TweaksDataProvider: NSObject, UITableViewDataSource {
         let countNow = viewModel.itemStates(rowIndex: rowIndex).filter { $0 }.count
         var streak = countMax == countNow ? 1 : 0
         
+        let itemType = viewModel.itemType(rowIndex: rowIndex)
         if streak > 0 {
             let yesterday = viewModel.trackerDate.adding(.day, value: -1)!
             // previous streak +1
             let yesterdayItems = realm.getDailyTracker(date: yesterday).itemsDict
-            let itemType = viewModel.itemType(rowIndex: rowIndex)
             if let yesterdayStreak = yesterdayItems[itemType]?.streak {
                 streak += yesterdayStreak
             }
         }
         
-        let itemType = viewModel.itemInfo(rowIndex: rowIndex).itemType
-        tweaksCell.configure(
+        tweaksTableViewCell.configure(
             heading: itemType.headingDisplay,
             tag: rowIndex,
             imageName: itemType.imageName,
             streak: streak)
         
-        // viewModel: DailyTweaksViewModel tracker
-        // tracker: DailyTracker getPid
-        
         let itemPid = viewModel.itemPid(rowIndex: rowIndex)
         realm.updateStreak(streak, pid: itemPid)
         
-        return tweaksCell
+        return tweaksTableViewCell
     }
 }
 
 // MARK: - States UICollectionViewDataSource
-extension TweaksDataProvider: UICollectionViewDataSource {
+extension TweakEntryDataProvider: UICollectionViewDataSource {
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         let states = viewModel.itemStates(rowIndex: collectionView.tag)
@@ -83,7 +79,7 @@ extension TweaksDataProvider: UICollectionViewDataSource {
         let cell = collectionView.dequeueReusableCell(
             withReuseIdentifier: Strings.tweaksStateCell,
             for: indexPath)
-        guard let stateCell = cell as? TweaksStateCell else {
+        guard let stateCell = cell as? TweakEntryStateCell else {
             fatalError("There should be a cell")
         }
         
