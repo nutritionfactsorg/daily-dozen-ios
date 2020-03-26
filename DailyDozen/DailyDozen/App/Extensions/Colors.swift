@@ -77,5 +77,22 @@ extension UIColor {
     static var yellowSunglowColor: UIColor {
         return UIColor(red: 253/255, green: 212/255, blue: 69/255, alpha: 1)
     }
+    
+    // ** see also: Android …/src/main/res/values/colors.xml **
+
+    /// use black text. rgb(255, 215, 0) `<color name="gold">#FFD700</color>`
+    static var streakGoldColor: UIColor {
+        return UIColor(red: 255/255, green: 215/255, blue: 0/255, alpha: 1)
+    }
+    /// use black text. rgb(192, 192, 192) `<color name="silver">#C0C0C0</color>`
+    static var streakSilverColor: UIColor {
+        return UIColor(red: 192/255, green: 192/255, blue: 192/255, alpha: 1)
+    }
+    /// use white text. rgb(140, 120, 83) `<color name="bronze">#8C7853</color>`
+    static var streakBronzeColor: UIColor {
+        return UIColor(red: 140/255, green: 120/255, blue: 83/255, alpha: 1)
+    }
+
+    //    <color name="brown">#A52A2A</color>
 
 }

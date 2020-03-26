@@ -67,7 +67,8 @@ class HealthManager {
     
     public func submitWeight(weight: Double, forDate: Date) {
         let quantityType = HKObjectType.quantityType(forIdentifier: HKQuantityTypeIdentifier.bodyMass)!
-        let hkUnit = isImperial() ? HKUnit.pound() : HKUnit.gram() // HKUnit.pound()
+        //let hkUnit = isImperial() ? HKUnit.pound() : HKUnit.gram()
+        let hkUnit = isImperial() ? HKUnit.pound() : HKUnit.gramUnit(with: .kilo) // :!!!:TEST: need to verify 
         //HKUnit.gramUnit(with: HKMetricPrefix.kilo)
         let hkQuantity = HKQuantity.init(
             unit: hkUnit,

@@ -26,12 +26,13 @@ class TweakHistoryBuilder {
             let viewController = storyboard
                 .instantiateInitialViewController() as? TweakHistoryViewController
             else { fatalError("Did not instantiate `TweakHistoryViewController`") }
-        viewController.title = "Tweaks History"
+        viewController.title = NSLocalizedString("historyRecordTweak.heading", comment: "Tweaks History")
 
         return viewController
     }
 }
 
+/// Historic record of daily checkbox tally.
 class TweakHistoryViewController: UIViewController {
 
     // MARK: - Outlets
@@ -47,6 +48,7 @@ class TweakHistoryViewController: UIViewController {
         didSet {
             chartView.clear()
 
+            let legendTweaksText = NSLocalizedString("historyRecordTweak.legend", comment: "Tweaks")
             if currentTimeScale == .day {
                 controlPanel.isHidden = false
                 controlPanel.superview?.isHidden = false
@@ -69,7 +71,7 @@ class TweakHistoryViewController: UIViewController {
 
                 controlPanel.setLabels(month: data.month, year: viewModel.yearName(yearIndex: chartSettings.year))
 
-                chartView.configure(with: data.map, for: currentTimeScale, label: "Tweaks")
+                chartView.configure(with: data.map, for: currentTimeScale, label: legendTweaksText)
             } else if currentTimeScale == .month {
                 controlPanel.isHidden = false
                 controlPanel.superview?.isHidden = false
@@ -82,11 +84,11 @@ class TweakHistoryViewController: UIViewController {
 
                 controlPanel.setLabels(year: data.year)
 
-                chartView.configure(with: data.map, for: currentTimeScale, label: "Tweaks")
+                chartView.configure(with: data.map, for: currentTimeScale, label: legendTweaksText)
             } else {
                 controlPanel.isHidden = true
                 controlPanel.superview?.isHidden = true
-                chartView.configure(with: viewModel.fullDataMap(), for: currentTimeScale, label: "Tweaks")
+                chartView.configure(with: viewModel.fullDataMap(), for: currentTimeScale, label: legendTweaksText)
             }
         }
     }

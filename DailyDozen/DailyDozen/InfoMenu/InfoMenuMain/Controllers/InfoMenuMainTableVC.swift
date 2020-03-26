@@ -44,7 +44,7 @@ extension InfoMenuMainTableVC {
         if let link = menuItem.link {
             // Web links
             UIApplication.shared
-                .open(LinksService.shared.link(forMenu: link),
+                .open(LinksService.shared.link(menu: link),
                       options: convertToUIApplicationOpenExternalURLOptionsKeyDictionary([:]),
                       completionHandler: nil)
             dismiss(animated: false)

@@ -73,6 +73,13 @@ class SettingsViewController: UITableViewController {
         } else {
             tweaksVisibilityController.selectedSegmentIndex = 0
         }
+//        for segment in tweaksVisibilityController.subviews {
+//            for label in segment.subviews {
+//                if let labels = label as? UILabel {
+//                    labels.numberOfLines = 2
+//                }
+//            }
+//        }  // :!!!:NOPE:
         
         #if targetEnvironment(simulator)
         //print("::::: SIMULATOR ENVIRONMENT: SettingsViewController :::::")

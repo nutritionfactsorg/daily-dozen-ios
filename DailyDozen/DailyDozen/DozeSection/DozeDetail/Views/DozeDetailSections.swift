@@ -32,7 +32,7 @@ enum DozeDetailSections: Int {
         }
     }
 
-    var rowHeight: CGFloat {
+    var estimatedRowHeight: CGFloat {
         switch self {
         case .amount:
             return 75

@@ -17,7 +17,7 @@ struct TweakDetailViewModel {
     
     /// Returns the main topic url.
     var topicURL: URL {
-        return LinksService.shared.link(forTopic: info.topic)
+        return LinksService.shared.link(topic: info.topic)
     }
     
     /// Returns the number of items in the metric units.

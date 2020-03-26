@@ -1,5 +1,5 @@
 //
-//  WeightViewController.swift
+//  WeightEntryViewController.swift
 //  DailyDozen
 //
 //  Copyright © 2019 Nutritionfacts.org. All rights reserved.
@@ -11,7 +11,7 @@
 import UIKit
 import HealthKit
 
-class WeightViewController: UIViewController {
+class WeightEntryViewController: UIViewController {
     
     // MARK: - Outlets
     // Text Edit
@@ -163,14 +163,14 @@ class WeightViewController: UIViewController {
         // :===: timePickerAM = UIDatePicker() // may need contraints?
         timePickerAM = UIDatePicker(frame: CGRect())
         timePickerAM?.datePickerMode = .time
-        timePickerAM?.addTarget(self, action: #selector(WeightViewController.timeChangedAM(timePicker:)), for: .valueChanged)
+        timePickerAM?.addTarget(self, action: #selector(WeightEntryViewController.timeChangedAM(timePicker:)), for: .valueChanged)
         
         timeAMInput.inputView = timePickerAM // assign initial value
         
         // PM Evening
         timePickerPM = UIDatePicker()
         timePickerPM?.datePickerMode = .time
-        timePickerPM?.addTarget(self, action: #selector(WeightViewController.timeChangedPM(timePicker:)), for: .valueChanged)
+        timePickerPM?.addTarget(self, action: #selector(WeightEntryViewController.timeChangedPM(timePicker:)), for: .valueChanged)
         timePMInput.inputView = timePickerPM
         
         setViewModel(viewDate: Date())
@@ -185,7 +185,7 @@ class WeightViewController: UIViewController {
         }
         
         //
-        let tapGesture = UITapGestureRecognizer(target: self, action: #selector(WeightViewController.viewTapped(gestureRecognizer:)))
+        let tapGesture = UITapGestureRecognizer(target: self, action: #selector(WeightEntryViewController.viewTapped(gestureRecognizer:)))
         view.addGestureRecognizer(tapGesture)
         
         NotificationCenter.default.addObserver(
@@ -400,13 +400,13 @@ class WeightViewController: UIViewController {
 
 // MARK: - UITextFieldDelegate
 
-extension WeightViewController: UIPickerViewDelegate {
+extension WeightEntryViewController: UIPickerViewDelegate {
     // pickerView
 }
 
 // MARK: - UITextFieldDelegate
 
-extension WeightViewController: UITextFieldDelegate {
+extension WeightEntryViewController: UITextFieldDelegate {
     // :1:
     func textFieldShouldBeginEditing(_ textField: UITextField) -> Bool {
         //print("textFieldShouldBeginEditing")
@@ -460,7 +460,7 @@ extension WeightViewController: UITextFieldDelegate {
 
 // MARK: - RealmDelegate
 
-extension WeightViewController: RealmDelegate {
+extension WeightEntryViewController: RealmDelegate {
     func didUpdateFile() {
         navigationController?.popViewController(animated: false)
     }

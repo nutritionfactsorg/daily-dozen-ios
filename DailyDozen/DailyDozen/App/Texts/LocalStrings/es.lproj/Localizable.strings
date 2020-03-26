@@ -1,4 +1,5 @@
 
+
 /* Daily Dozen (proper noun) navigation tab */
 "navtab.doze"="Docena Diaria";
 /* Twenty-One Tweaks (proper noun) navigation tab */
@@ -8,10 +9,40 @@
 /* Preferences (aka Settings, Configuration) navigation tab. Choose word different from 'Tweaks' translation */
 "navtab.preferences"="Configuración";
 
+/* Records: Daily Tally */
+"historyRecord.movingMean"="Media móvil";
+"historyRecordDoze.heading"="Historial de porciones";
+"historyRecordDoze.legend"="Porciones";
+"historyRecordTweak.heading"="Historial de ajustes";
+"historyRecordTweak.legend"="Ajustes";
+"historyRecordWeight.heading"="Historial de peso";
+"historyRecordWeight.titleImperial"="Peso (libras)";
+"historyRecordWeight.titleMetric"="Peso (kg)";
+"historyRecordWeight.legendMorning"="La mañana";
+"historyRecordWeight.legendEvening"="La tarde";
+
+/* URL path */
+"urlSegment.base"="https://nutritionfacts.org/";
+"urlSegment.lang"="es/";
+
+"urlSegmentInfoMenu.videos"="es/videos";
+"urlSegmentInfoMenu.book"="es/comer-para-no-morir";
+"urlSegmentInfoMenu.cookbook"="es/libro-de-recetas";
+"urlSegmentInfoMenu.diet"="es/";
+"urlSegmentInfoMenu.challenge"="es/objetivo-la-docena-diaria";
+"urlSegmentInfoMenu.donate"="es/dona-a-nutritionfacts-org";
+"urlSegmentInfoMenu.subscribe"="es/suscribete";
+"urlSegmentInfoMenu.source"="es/open-source";
+
+"urlSegmentInfoMenu.team"="es/equipo";
+
 /* Units toggle button text: metric measurement system */
-"UnitToggle.metric"="Métrico";
+"unitToggle.metric"="Métrico";
 /* Units toggle button text: imperial measurement system */
-"UnitToggle.imperial"="Imperial";
+"unitToggle.imperial"="Imperial";
+
+/* streak days format */
+"streakDaysFormat"="%d días";
 
 /* display heading. */
 "dozeBeans.heading" = "Frijoles";
@@ -29,10 +60,10 @@
 "dozeFlaxseeds.heading" = "Linaza";
 
 /* display heading */
-"dozeFruitsOther.heading" = "Otras Frutas";
+"dozeFruitsOther.heading" = "Otras frutas";
 
 /* display heading */
-"dozeGreens.heading" = "Vegetales de Hoja Verde";
+"dozeGreens.heading" = "Vegetales de hoja verde";
 
 /* display heading */
 "dozeNuts.heading" = "Nueces";
@@ -41,13 +72,13 @@
 "dozeSpices.heading" = "Especias";
 
 /* display heading */
-"dozeVegetablesCruciferous.heading" = "Vegetales Crucíferos";
+"dozeVegetablesCruciferous.heading" = "Vegetales crucíferos";
 
 /* display heading */
-"dozeVegetablesOther.heading" = "Otros Vegetales";
+"dozeVegetablesOther.heading" = "Otros vegetales";
 
 /* display heading */
-"dozeWholeGrains.heading" = "Granos Integrales";
+"dozeWholeGrains.heading" = "Granos integrales";
 
 /* display heading */
 "otherOmega3.heading" = "Omega 3 de origen vegetal";
@@ -57,6 +88,14 @@
 
 /* display heading */
 "otherVitaminD.heading" = "Vitamina D";
+
+/* doze other info tiltle */
+"dozeOtherInfo.title"="Suplementos";
+/* doze other info message */
+"dozeOtherInfo.message"="La vitamina B12 es esencial para su salud, pero no cuenta para sus porciones diarias.\n\nVitamina B12 se incluye en esta aplicación para proporcionarle una manera fácil de realizar un seguimiento de su ingesta.";
+/* doze other info confirm */
+"dozeOtherInfo.confirm"="OK";
+
 
 /* display heading */
 "tweakCompleteIntentions.heading" = "Complete sus intenciones de implementación";

@@ -18,6 +18,10 @@ class TweakEntryTableViewCell: UITableViewCell {
     @IBOutlet private weak var infoButton: UIButton!
     @IBOutlet private weak var calendarButton: UIButton!
 
+    private let oneDay = 1
+    private let oneWeek = 7
+    private let twoWeeks = 14
+    
     // MARK: - Methods
     
     /// Sets the servings cell with the current heading, image name and row index tag.
@@ -32,11 +36,26 @@ class TweakEntryTableViewCell: UITableViewCell {
         calendarButton.tag = tag
         itemImage.image = UIImage(named: imageName)
 
-        if streak > 1 {
-            streakLabel.text = "\(streak) days" // :NYI:ToBeLocalized:
-            streakLabel.superview?.isHidden = false
-        } else {
-            streakLabel.superview?.isHidden = true
+        if let superview = streakLabel.superview {
+            if streak > oneDay {
+                let streakFormat = NSLocalizedString("streakDaysFormat", comment: "streak days format")
+                streakLabel.text = String(format: streakFormat, streak)
+                superview.isHidden = false
+                
+                if streak < oneWeek {
+                    superview.backgroundColor = UIColor.streakBronzeColor
+                    streakLabel.textColor = UIColor.white
+                } else if streak < twoWeeks {
+                    superview.backgroundColor = UIColor.streakSilverColor
+                    streakLabel.textColor = UIColor.black
+                } else {
+                    superview.backgroundColor = UIColor.streakGoldColor
+                    streakLabel.textColor = UIColor.black
+                }
+                
+            } else {
+                superview.isHidden = true
+            }
         }
     }
 }

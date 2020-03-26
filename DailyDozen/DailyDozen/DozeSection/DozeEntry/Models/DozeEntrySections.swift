@@ -17,7 +17,7 @@ enum DozeEntrySections: Int {
 
     case main, supplements
 
-    var rowHeight: CGFloat {
+    var dozeEstimatedRowHeight: CGFloat {
         return 100
     }
 

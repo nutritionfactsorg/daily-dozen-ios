@@ -33,7 +33,7 @@ class TweakEntryViewController: UIViewController {
         }
     }
     private var statesCountString: String {
-        return "\(tweaksStateCount) out of \(tweaksStateCountMaximum)"
+        return "\(tweaksStateCount) / \(tweaksStateCountMaximum)"
     }
     
     // MARK: - UIViewController
@@ -45,7 +45,7 @@ class TweakEntryViewController: UIViewController {
         tableView.dataSource = dataProvider
         tableView.delegate = self
         tableView.estimatedRowHeight = TweakEntrySections.main.tweakEstimatedRowHeight
-        tableView.rowHeight = UITableView.automaticDimension
+        tableView.rowHeight = UITableView.automaticDimension // dynamic height
         
         guard let appDelegate = UIApplication.shared.delegate as? AppDelegate else {
             return 
@@ -217,7 +217,7 @@ extension TweakEntryViewController: UICollectionViewDelegate {
         if stateNew && HealthManager.shared.isAuthorized() {
             let dataCountType = dataProvider.viewModel.itemType(rowIndex: rowIndex)
             if dataCountType == .tweakWeightTwice {
-                let viewController = WeightPagerBuilder.instantiateController()
+                let viewController = WeightEntryPagerBuilder.instantiateController()
                 navigationController?.pushViewController(viewController, animated: true)
             }
         }

@@ -1,7 +1,7 @@
 {
   "itemsDict" : {
     "dozeBeans" : {
-      "heading" : "Beans",
+      "heading" : "Frijoles",
       "servings" : [
         {
           "imperial" : "¼ taza de hummus o dip de frijol",
@@ -16,7 +16,7 @@
           "metric" : "150 g de guisantes frescos o retoños de lentejas"
         }
       ],
-      "topic" : "beans",
+      "topic" : "es/topics/legumbres-es",
       "varieties" : [
         {
           "text" : "Frijoles negros",
@@ -89,7 +89,7 @@
       ]
     },
     "dozeBerries" : {
-      "heading" : "Berries",
+      "heading" : "Bayas",
       "servings" : [
         {
           "imperial" : "½ taza frescos o congelados",
@@ -100,7 +100,7 @@
           "metric" : "40 g secos"
         }
       ],
-      "topic" : "berries",
+      "topic" : "es/topics/bayas-es",
       "varieties" : [
         {
           "text" : "Bayas de Acai",
@@ -153,14 +153,14 @@
       ]
     },
     "dozeBeverages" : {
-      "heading" : "Beverages",
+      "heading" : "Bebidas",
       "servings" : [
         {
           "imperial" : "Un vaso (12 onzas)",
           "metric" : "Un vaso (350 ml)"
         }
       ],
-      "topic" : "beverages",
+      "topic" : "es/topics/bebidas",
       "varieties" : [
         {
           "text" : "Té negro",
@@ -229,7 +229,7 @@
       ]
     },
     "dozeExercise" : {
-      "heading" : "Exercise",
+      "heading" : "Ejercicio",
       "servings" : [
         {
           "imperial" : "90 minutos de actividad de moderada intensidad",
@@ -240,7 +240,7 @@
           "metric" : "40 minutos de actividad de vigorosa intensidad"
         }
       ],
-      "topic" : "exercise",
+      "topic" : "es/topics/ejercicio",
       "varieties" : [
         {
           "text" : "Bicicleta",
@@ -461,14 +461,14 @@
       ]
     },
     "dozeFlaxseeds" : {
-      "heading" : "Flaxseeds",
+      "heading" : "Linaza",
       "servings" : [
         {
           "imperial" : "1 cucharada molida",
           "metric" : "1 cucharada molida"
         }
       ],
-      "topic" : "flax-seeds",
+      "topic" : "es/topics/semillas-de-linaza",
       "varieties" : [
         {
           "text" : "Linaza café",
@@ -481,7 +481,7 @@
       ]
     },
     "dozeFruitsOther" : {
-      "heading" : "Other Fruits",
+      "heading" : "Otras Frutas",
       "servings" : [
         {
           "imperial" : "1 fruta de tamaño medio",
@@ -613,7 +613,7 @@
       ]
     },
     "dozeGreens" : {
-      "heading" : "Greens",
+      "heading" : "Vegetales de Hoja Verde",
       "servings" : [
         {
           "imperial" : "1 taza cruda",
@@ -624,7 +624,7 @@
           "metric" : "90 g cocida"
         }
       ],
-      "topic" : "greens",
+      "topic" : "es/topics/verduras",
       "varieties" : [
         {
           "text" : "Arugula",
@@ -669,7 +669,7 @@
       ]
     },
     "dozeNuts" : {
-      "heading" : "Nuts and Seeds",
+      "heading" : "Nueces",
       "servings" : [
         {
           "imperial" : "¼ taza de nueces o semillas",
@@ -680,7 +680,7 @@
           "metric" : "2 cucharadas de mantequilla de nueces o semillas"
         }
       ],
-      "topic" : "nuts",
+      "topic" : "es/topics/nueces",
       "varieties" : [
         {
           "text" : "Almendras",
@@ -737,7 +737,7 @@
       ]
     },
     "dozeSpices" : {
-      "heading" : "Herbs and Spices",
+      "heading" : "Especias",
       "servings" : [
         {
           "imperial" : "¼ cucharadita de cúrcuma",
@@ -748,7 +748,7 @@
           "metric" : "Cualquier otra especie (sin sal) que gustes"
         }
       ],
-      "topic" : "spices",
+      "topic" : "es/topics/especias",
       "varieties" : [
         {
           "text" : "Pimienta de Jamaica\/Inglesa",
@@ -881,7 +881,7 @@
       ]
     },
     "dozeVegetablesCruciferous" : {
-      "heading" : "Cruciferous Vegetables",
+      "heading" : "Vegetales Crucíferos",
       "servings" : [
         {
           "imperial" : "½ taza picado",
@@ -957,7 +957,7 @@
       ]
     },
     "dozeVegetablesOther" : {
-      "heading" : "Other Vegetables",
+      "heading" : "Otros Vegetales",
       "servings" : [
         {
           "imperial" : "1 taza de vegetales de hoja cruda",
@@ -1053,7 +1053,7 @@
       ]
     },
     "dozeWholeGrains" : {
-      "heading" : "Whole Grains",
+      "heading" : "Granos Integrales",
       "servings" : [
         {
           "imperial" : "½ taza de cereal caliente o granos, pasta o granos de maíz cocidos",
@@ -1076,7 +1076,7 @@
           "metric" : "30 g de palomitas de maíz reventadas"
         }
       ],
-      "topic" : "grains",
+      "topic" : "es/topics/granos",
       "varieties" : [
         {
           "text" : "Cebada",
@@ -1117,11 +1117,11 @@
       ]
     },
     "otherVitaminB12" : {
-      "heading" : "Vitamin B12",
+      "heading" : "Vitamina B12",
       "servings" : [
 
       ],
-      "topic" : "vitamin-b12",
+      "topic" : "es/topics/vitamin-b12",
       "varieties" : [
 
       ]

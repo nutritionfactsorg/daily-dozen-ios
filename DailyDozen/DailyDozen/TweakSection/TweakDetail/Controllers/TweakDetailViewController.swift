@@ -53,7 +53,7 @@ class TweakDetailViewController: UIViewController {
         tableView.dataSource = dataProvider
         tableView.delegate = self
         tableView.estimatedRowHeight = TweakDetailSections.activity.estimatedRowHeight
-        tableView.rowHeight = UITableView.automaticDimension
+        tableView.rowHeight = UITableView.automaticDimension // dynamic height
         
         if let dataCountType = dataProvider.dataCountType {
             if dataCountType.typeKey.prefix(4) == "doze" {
@@ -112,39 +112,6 @@ class TweakDetailViewController: UIViewController {
 
 // MARK: - UITableViewDelegate
 extension TweakDetailViewController: UITableViewDelegate {
-    
-//    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-//        guard let sectionType = TweakDetailSections(rawValue: indexPath.section) else {
-//            fatalError("There should be a section type")
-//        }
-//        
-//        if sectionType == .description &&
-//            dataProvider.dataCountType.isTweak {
-//            let x = CGFloat(0.0)
-//            let y = CGFloat(0.0)
-//            let height = CGFloat(0.0)
-//            let width = tableView.contentSize.width * 0.70
-//            let label = UILabel(frame: CGRect(x: x, y: y, width: width, height: height))
-//            label.numberOfLines = 0 // allows label to have as many lines as needed
-//            
-//            label.lineBreakMode = NSLineBreakMode.byWordWrapping
-//            let font = UIFont(name: "Helvetica Neue", size: 14.0)
-//            label.font = font
-//            
-//            let typeKey = dataProvider.dataCountType.typeKey
-//            let descriptionParagraph = TweakTextsProvider.shared
-//                .getDetails(itemTypeKey: typeKey)
-//                .descriptionParagraph(index: indexPath.row)
-//            
-//            label.text  = "\n\(descriptionParagraph)\n margin\n"
-//            label.sizeToFit()
-//            //print("indexPath: \(indexPath)")
-//            //print("\(label.fs_width) w x \(label.fs_height) h")
-//            return label.fs_height
-//        }
-//        
-//        return sectionType.rowHeight // :!!!:UNITS_VISIBILITY:
-//    }
     
     func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
         guard 

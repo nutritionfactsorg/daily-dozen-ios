@@ -41,8 +41,8 @@ class LinksService {
     }
 
     var team: URL {
-        return baseURL
-            .appendingPathComponent(URLKeys.team)
+        let urlSegment = NSLocalizedString("urlSegmentInfoMenu.team", comment: "team")
+        return baseURL.appendingPathComponent(urlSegment)
     }
 
     var aboutChristi: URL? {
@@ -90,18 +90,15 @@ class LinksService {
     ///
     /// - Parameter topic: The current topic.
     /// - Returns: A url.
-    func link(forTopic topic: String) -> URL {
-        return baseURL
-            .appendingPathComponent(URLKeys.topics)
-            .appendingPathComponent(topic)
+    func link(topic: String) -> URL {
+        return baseURL.appendingPathComponent(topic)
     }
 
     /// Returns a url for the current menu item.
     ///
     /// - Parameter menu: The current menu item.
     /// - Returns: A url.
-    func link(forMenu menu: String) -> URL {
-        return baseURL
-            .appendingPathComponent(menu)
+    func link(menu: String) -> URL {
+        return baseURL.appendingPathComponent(menu)
     }
 }

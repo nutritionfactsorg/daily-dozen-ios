@@ -11,8 +11,8 @@ class DozeEntryDataProvider: NSObject, UITableViewDataSource {
     
     // MARK: - Nested
     private struct Strings {
-        static let servingsCell = "servingsCell"
-        static let servingsStateCell = "servingsStateCell" // "WAS: doseCell
+        static let dozeTableViewCell = "dozeTableViewCell"
+        static let dozeStateCell = "dozeStateCell"
     }
     
     var viewModel: DozeEntryViewModel!
@@ -33,9 +33,9 @@ class DozeEntryDataProvider: NSObject, UITableViewDataSource {
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let realm = RealmProvider()
         guard
-            let servingsCell = tableView
-                .dequeueReusableCell(withIdentifier: Strings.servingsCell) as? DozeEntryTableViewCell else {
-                fatalError("Expected `tweaksTableViewCell`")
+            let dozeTableViewCell = tableView
+                .dequeueReusableCell(withIdentifier: Strings.dozeTableViewCell) as? DozeEntryTableViewCell else {
+                fatalError("Expected `DozeEntryTableViewCell`")
         }
         guard
             let servingsSection = DozeEntrySections(rawValue: indexPath.section) else {
@@ -61,7 +61,7 @@ class DozeEntryDataProvider: NSObject, UITableViewDataSource {
         }
         
         let itemType = viewModel.itemInfo(rowIndex: rowIndex).itemType
-        servingsCell.configure(
+        dozeTableViewCell.configure(
             heading: itemType.headingDisplay,
             tag: rowIndex,
             imageName: itemType.imageName,
@@ -73,7 +73,7 @@ class DozeEntryDataProvider: NSObject, UITableViewDataSource {
         let itemPid = viewModel.itemPid(rowIndex: rowIndex)
         realm.updateStreak(streak, pid: itemPid)
         
-        return servingsCell
+        return dozeTableViewCell
     }
 }
 
@@ -87,7 +87,7 @@ extension DozeEntryDataProvider: UICollectionViewDataSource {
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(
-            withReuseIdentifier: Strings.servingsStateCell,
+            withReuseIdentifier: Strings.dozeStateCell,
             for: indexPath)
         guard let stateCell = cell as? DozeEntryStateCell else {
             fatalError("There should be a cell")

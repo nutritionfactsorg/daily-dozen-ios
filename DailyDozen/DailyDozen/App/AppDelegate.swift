@@ -12,16 +12,6 @@ import UserNotifications
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
     
-    // MARK: - Nested
-    //private struct Strings {
-    //    static let realmExtension = "realm"
-    //    static let realmFilename = "main.realm"
-    //    static let title = "Restore Backup" // :NYI:ToBeLocalized:
-    //    static let message = "Any existing data will be deleted before restoring from backup. Do you wish to continue?" // :NYI:ToBeLocalized:
-    //    static let confirm = "OK" // :NYI:ToBeLocalized:
-    //    static let decline = "NO" // :NYI:ToBeLocalized:
-    //}
-    
     weak var realmDelegate: RealmDelegate?
     
     var window: UIWindow?
@@ -73,6 +63,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         
         // ----- User Interface Setup -----
         // Note: User Interface particulars would be in SceneDelegate for newer impementations.
+        UILabel.appearance(whenContainedInInstancesOf: [UISegmentedControl.self]).numberOfLines = 0 // :!!!:NOPE:
         
         // ----- Notification Setup -----
         

@@ -1,7 +1,7 @@
 /* Class = "UILabel"; text = "21 Tweaks"; ObjectID = "5po-De-kCi"; */
-"5po-De-kCi.text" = "21 ajustes";
+"5po-De-kCi.text" = "Veintiún Ajustes";
 
-/* Class = "UILabel"; text = "0 out of 37"; ObjectID = "NPC-if-gUf"; */
+/* Class = "UILabel"; text = "0 / 37"; ObjectID = "NPC-if-gUf"; */
 "NPC-if-gUf.text" = "0 de 37";
 
 /* Class = "UILabel"; text = "100 days"; ObjectID = "Vbn-R9-kuu"; */

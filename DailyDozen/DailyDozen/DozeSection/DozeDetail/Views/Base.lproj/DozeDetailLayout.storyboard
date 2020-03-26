@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="15705" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="Hsh-Us-G4Y">
-    <device id="retina4_7" orientation="portrait" appearance="light"/>
+    <device id="retina4_0" orientation="portrait" appearance="light"/>
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15706"/>
@@ -13,25 +13,25 @@
             <objects>
                 <viewController id="Hsh-Us-G4Y" customClass="DozeDetailViewController" customModule="DailyDozen" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="hkw-3T-mer">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" allowsSelection="NO" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="fvQ-f2-GlC">
-                                <rect key="frame" x="0.0" y="180" width="375" height="487"/>
+                                <rect key="frame" x="0.0" y="180" width="320" height="388"/>
                                 <color key="backgroundColor" red="0.95294117649999999" green="0.95294117649999999" blue="0.95294117649999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="dozeDetailSizeCell" rowHeight="75" id="ZQz-2Z-LTf" customClass="DozeDetailSizeCell" customModule="DailyDozen" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="28" width="375" height="75"/>
+                                        <rect key="frame" x="0.0" y="28" width="320" height="75"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="ZQz-2Z-LTf" id="R1O-eC-rRW">
-                                            <rect key="frame" x="0.0" y="0.0" width="375" height="75"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="320" height="75"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="k76-nF-Ry8" customClass="RoundedView" customModule="DailyDozen" customModuleProvider="target">
-                                                    <rect key="frame" x="4" y="4" width="367" height="67"/>
+                                                    <rect key="frame" x="4" y="4" width="312" height="67"/>
                                                     <subviews>
                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="yct-Iw-M3s">
-                                                            <rect key="frame" x="8" y="8" width="351" height="51"/>
+                                                            <rect key="frame" x="8" y="8" width="296" height="51"/>
                                                             <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="14"/>
                                                             <color key="textColor" white="0.15913340779999999" alpha="1" colorSpace="calibratedWhite"/>
                                                             <nil key="highlightedColor"/>
@@ -76,17 +76,17 @@
                                         </connections>
                                     </tableViewCell>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="dozeDetailTypeCell" rowHeight="75" id="4by-sC-ujF" customClass="DozeDetailTypeCell" customModule="DailyDozen" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="103" width="375" height="75"/>
+                                        <rect key="frame" x="0.0" y="103" width="320" height="75"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="4by-sC-ujF" id="iU5-3t-3qP">
-                                            <rect key="frame" x="0.0" y="0.0" width="375" height="75"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="320" height="75"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="m5v-Gq-VBf" customClass="RoundedView" customModule="DailyDozen" customModuleProvider="target">
-                                                    <rect key="frame" x="4" y="4" width="367" height="67"/>
+                                                    <rect key="frame" x="4" y="4" width="312" height="67"/>
                                                     <subviews>
                                                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="xcg-0a-oqY">
-                                                            <rect key="frame" x="289" y="17" width="70" height="33"/>
+                                                            <rect key="frame" x="234" y="17" width="70" height="33"/>
                                                             <constraints>
                                                                 <constraint firstAttribute="width" constant="70" id="ch2-el-scK"/>
                                                             </constraints>
@@ -99,7 +99,7 @@
                                                             </connections>
                                                         </button>
                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="m5s-0r-St1">
-                                                            <rect key="frame" x="8" y="25.5" width="273" height="16.5"/>
+                                                            <rect key="frame" x="8" y="8" width="218" height="51"/>
                                                             <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="14"/>
                                                             <color key="textColor" white="0.15913340779999999" alpha="1" colorSpace="calibratedWhite"/>
                                                             <nil key="highlightedColor"/>
@@ -107,6 +107,7 @@
                                                     </subviews>
                                                     <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                     <constraints>
+                                                        <constraint firstItem="m5s-0r-St1" firstAttribute="top" secondItem="m5v-Gq-VBf" secondAttribute="top" constant="8" id="Ihe-fi-oH5"/>
                                                         <constraint firstItem="m5s-0r-St1" firstAttribute="leading" secondItem="m5v-Gq-VBf" secondAttribute="leading" constant="8" id="S1W-KZ-Fom"/>
                                                         <constraint firstItem="xcg-0a-oqY" firstAttribute="leading" secondItem="m5s-0r-St1" secondAttribute="trailing" constant="8" id="WMn-xG-y2O"/>
                                                         <constraint firstItem="m5s-0r-St1" firstAttribute="centerY" secondItem="m5v-Gq-VBf" secondAttribute="centerY" id="bXn-fW-F6e"/>
@@ -149,7 +150,7 @@
                                 <sections/>
                             </tableView>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="detail_dozeBeans" translatesAutoresizingMaskIntoConstraints="NO" id="ltu-V9-P9K">
-                                <rect key="frame" x="0.0" y="0.0" width="375" height="180"/>
+                                <rect key="frame" x="0.0" y="0.0" width="320" height="180"/>
                             </imageView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Beans" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="iJb-Vn-TS0">
                                 <rect key="frame" x="8" y="142" width="70" height="30"/>

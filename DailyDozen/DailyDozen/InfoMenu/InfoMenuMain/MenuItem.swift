@@ -17,14 +17,30 @@ enum MenuItem: Int {
     /// EN: "https://nutritionfacts.org/donate/"
     /// ES: "https://nutritionfacts.org/es/dona-a-nutritionfacts-org/"
     private struct Links {
-        static let videos = "videos"
-        static let book = "book" // "How Not to Die"
-        static let cookbook = "cookbook" // "The How Not to Die Cookbook"
-        static let diet = "how-not-to-diet" // "How Not to Diet"
-        static let challenge = "daily-dozen-challenge" // "Daily Dozen Challenge"
-        static let donate = "donate"
-        static let subscribe = "subscribe"
-        static let source = "open-source"
+        static let videos = NSLocalizedString(
+            "urlSegmentInfoMenu.videos",
+            comment: "main info menu: videos")
+        static let book = NSLocalizedString(
+            "urlSegmentInfoMenu.book",
+            comment: "main info menu: book")
+        static let cookbook = NSLocalizedString(
+            "urlSegmentInfoMenu.cookbook",
+            comment: "main info menu: cookbook")
+        static let diet = NSLocalizedString(
+            "urlSegmentInfoMenu.diet",
+            comment: "main info menu: how-not-to-diet")
+        static let challenge = NSLocalizedString(
+            "urlSegmentInfoMenu.challenge",
+            comment: "main info menu: daily-dozen-challenge")
+        static let donate = NSLocalizedString(
+            "urlSegmentInfoMenu.donate",
+            comment: "main info menu: donate")
+        static let subscribe = NSLocalizedString(
+            "urlSegmentInfoMenu.subscribe",
+            comment: "main info menu: subscribe")
+        static let source = NSLocalizedString(
+            "urlSegmentInfoMenu.source",
+            comment: "main info menu: open-source")
     }
 
     /// Defines item order for `InfoMenuMainTableVC`

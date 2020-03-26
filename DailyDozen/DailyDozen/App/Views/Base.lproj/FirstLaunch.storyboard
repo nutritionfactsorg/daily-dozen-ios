@@ -24,19 +24,19 @@
                                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                                         <subviews>
                                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="12" translatesAutoresizingMaskIntoConstraints="NO" id="GRO-mm-rLg">
-                                                <rect key="frame" x="49" y="222.5" width="222.5" height="123"/>
+                                                <rect key="frame" x="34" y="222.5" width="252" height="123"/>
                                                 <subviews>
                                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="2" translatesAutoresizingMaskIntoConstraints="NO" id="lnb-zJ-IzP">
-                                                        <rect key="frame" x="0.0" y="0.0" width="222.5" height="55.5"/>
+                                                        <rect key="frame" x="0.0" y="0.0" width="252" height="55.5"/>
                                                         <subviews>
                                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="For Health Alone" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="atR-un-jgX">
-                                                                <rect key="frame" x="0.0" y="0.0" width="222.5" height="21.5"/>
+                                                                <rect key="frame" x="0.0" y="0.0" width="252" height="21.5"/>
                                                                 <fontDescription key="fontDescription" type="system" pointSize="18"/>
                                                                 <nil key="textColor"/>
                                                                 <nil key="highlightedColor"/>
                                                             </label>
                                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ReM-AP-Fpp" customClass="RoundedButton" customModule="DailyDozen" customModuleProvider="target">
-                                                                <rect key="frame" x="0.0" y="23.5" width="222.5" height="32"/>
+                                                                <rect key="frame" x="0.0" y="23.5" width="252" height="32"/>
                                                                 <color key="backgroundColor" name="BrandGreen"/>
                                                                 <fontDescription key="fontDescription" type="system" pointSize="16"/>
                                                                 <state key="normal" title="Daily Dozen Only">
@@ -54,19 +54,19 @@
                                                         </subviews>
                                                     </stackView>
                                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="2" translatesAutoresizingMaskIntoConstraints="NO" id="Pps-nD-1Rl">
-                                                        <rect key="frame" x="0.0" y="67.5" width="222.5" height="55.5"/>
+                                                        <rect key="frame" x="0.0" y="67.5" width="252" height="55.5"/>
                                                         <subviews>
                                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="For Health and Weight Loss" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="OdG-YQ-lT8">
-                                                                <rect key="frame" x="0.0" y="0.0" width="222.5" height="21.5"/>
+                                                                <rect key="frame" x="0.0" y="0.0" width="252" height="21.5"/>
                                                                 <fontDescription key="fontDescription" type="system" pointSize="18"/>
                                                                 <nil key="textColor"/>
                                                                 <nil key="highlightedColor"/>
                                                             </label>
                                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Lef-Iw-Ywr" customClass="RoundedButton" customModule="DailyDozen" customModuleProvider="target">
-                                                                <rect key="frame" x="0.0" y="23.5" width="222.5" height="32"/>
+                                                                <rect key="frame" x="0.0" y="23.5" width="252" height="32"/>
                                                                 <color key="backgroundColor" name="BrandGreen"/>
                                                                 <fontDescription key="fontDescription" type="system" pointSize="16"/>
-                                                                <state key="normal" title="Daily Dozen + 21 Tweaks">
+                                                                <state key="normal" title="Daily Dozen + Twenty-One Tweaks">
                                                                     <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                                 </state>
                                                                 <userDefinedRuntimeAttributes>

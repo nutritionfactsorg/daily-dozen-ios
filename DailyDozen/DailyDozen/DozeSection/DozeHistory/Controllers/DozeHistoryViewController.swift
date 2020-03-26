@@ -26,7 +26,7 @@ enum TimeScale: Int {
     }
 }
 
-class ServingsHistoryBuilder {
+class DozeHistoryBuilder {
 
     // MARK: - Methods
     /// Instantiates and returns the initial view controller for a storyboard.
@@ -38,12 +38,13 @@ class ServingsHistoryBuilder {
             let viewController = storyboard
                 .instantiateInitialViewController() as? DozeHistoryViewController
             else { fatalError("Did not instantiate `DozeHistoryViewController`") }
-        viewController.title = "Servings History"
+        viewController.title = NSLocalizedString("historyRecordDoze.heading", comment: "Servings History")
 
         return viewController
     }
 }
 
+/// Historic record of daily checkbox tally.
 class DozeHistoryViewController: UIViewController {
 
     // MARK: - Outlets
@@ -59,6 +60,7 @@ class DozeHistoryViewController: UIViewController {
         didSet {
             chartView.clear()
 
+            let legendServingsText = NSLocalizedString("historyRecordDoze.legend", comment: "Servings")
             if currentTimeScale == .day {
                 controlPanel.isHidden = false
                 controlPanel.superview?.isHidden = false
@@ -81,7 +83,7 @@ class DozeHistoryViewController: UIViewController {
 
                 controlPanel.setLabels(month: data.month, year: viewModel.yearName(yearIndex: chartSettings.year))
 
-                chartView.configure(with: data.map, for: currentTimeScale, label: "Servings")
+                chartView.configure(with: data.map, for: currentTimeScale, label: legendServingsText)
             } else if currentTimeScale == .month {
                 controlPanel.isHidden = false
                 controlPanel.superview?.isHidden = false
@@ -94,11 +96,11 @@ class DozeHistoryViewController: UIViewController {
 
                 controlPanel.setLabels(year: data.year)
 
-                chartView.configure(with: data.map, for: currentTimeScale, label: "Servings")
+                chartView.configure(with: data.map, for: currentTimeScale, label: legendServingsText)
             } else {
                 controlPanel.isHidden = true
                 controlPanel.superview?.isHidden = true
-                chartView.configure(with: viewModel.fullDataMap(), for: currentTimeScale, label: "Servings")
+                chartView.configure(with: viewModel.fullDataMap(), for: currentTimeScale, label: legendServingsText)
             }
         }
     }

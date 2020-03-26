@@ -23,9 +23,9 @@ enum UnitsType: String {
     var title: String {
         switch self {
         case .imperial:
-            return NSLocalizedString("UnitToggle.imperial", comment: "Units toggle button text: imperial measurement system")
+            return NSLocalizedString("unitToggle.imperial", comment: "Units toggle button text: imperial measurement system")
         case .metric:
-            return NSLocalizedString("UnitToggle.metric", comment: "Units toggle button text: metric measurement system")
+            return NSLocalizedString("unitToggle.metric", comment: "Units toggle button text: metric measurement system")
         }
     }
     

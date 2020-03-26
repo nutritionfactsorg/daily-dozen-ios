@@ -1,5 +1,5 @@
 //
-//  WeightPagerViewController.swift
+//  WeightEntryPagerViewController.swift
 //  DailyDozen
 //
 //  Copyright © 2019 Nutritionfacts.org. All rights reserved.
@@ -10,24 +10,24 @@ import SimpleAnimation
 
 // MARK: - Builder
 
-class WeightPagerBuilder {
+class WeightEntryPagerBuilder {
 
     // MARK: - Methods
     /// Instantiates and returns the initial view controller for a storyboard.
     ///
     /// - Returns: The initial view controller in the storyboard.
     static func instantiateController() -> UIViewController {
-        let storyboard = UIStoryboard(name: "WeightPagerLayout", bundle: nil)
+        let storyboard = UIStoryboard(name: "WeightEntryPagerLayout", bundle: nil)
         guard
             let viewController = storyboard.instantiateInitialViewController()
-            else { fatalError("Did not instantiate `WeightPagerViewController`") }
+            else { fatalError("Did not instantiate `WeightEntryPagerViewController`") }
 
         return viewController
     }
 }
 
 // MARK: - Controller
-class WeightPagerViewController: UIViewController {
+class WeightEntryPagerViewController: UIViewController {
 
     // MARK: - Properties
     private var currentDate = Date() {
@@ -82,7 +82,7 @@ class WeightPagerViewController: UIViewController {
         currentDate = date
         datePicker.setDate(date, animated: false)
 
-        guard let viewController = children.first as? WeightViewController else { return }
+        guard let viewController = children.first as? WeightEntryViewController else { return }
         viewController.view.fadeOut().fadeIn()
         viewController.setViewModel(viewDate: currentDate)
     }
@@ -98,7 +98,7 @@ class WeightPagerViewController: UIViewController {
         datePicker.isHidden = true
         currentDate = datePicker.date
 
-        guard let viewController = children.first as? WeightViewController else { return }
+        guard let viewController = children.first as? WeightEntryViewController else { return }
         viewController.view.fadeOut().fadeIn()
         viewController.setViewModel(viewDate: datePicker.date)
     }
@@ -115,7 +115,7 @@ class WeightPagerViewController: UIViewController {
 
         self.currentDate = datePicker.date
 
-        guard let viewController = children.first as? WeightViewController else { return }
+        guard let viewController = children.first as? WeightEntryViewController else { return }
 
         if sender.direction == .left {
             viewController.view.slideOut(x: -view.frame.width).slideIn(x: view.frame.width)

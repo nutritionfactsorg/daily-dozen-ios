@@ -17,7 +17,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="detail_tweakDailyBlackCumin" translatesAutoresizingMaskIntoConstraints="NO" id="dYc-f1-1er">
-                                <rect key="frame" x="0.0" y="0.0" width="320" height="200.00000000000045"/>
+                                <rect key="frame" x="0.0" y="0.0" width="320" height="200"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="200" id="IRS-mI-oZV"/>
                                 </constraints>
@@ -139,7 +139,7 @@
                                 </prototypes>
                                 <sections/>
                             </tableView>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Negative Calorie Load" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="6m3-hV-PBi">
+                            <label hidden="YES" opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Negative Calorie Load" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="6m3-hV-PBi">
                                 <rect key="frame" x="7" y="161" width="306" height="30"/>
                                 <fontDescription key="fontDescription" name="HelveticaNeue-Medium" family="Helvetica Neue" pointSize="24"/>
                                 <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>

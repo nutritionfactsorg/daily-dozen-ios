@@ -17,7 +17,7 @@ struct DozeDetailViewModel {
     
     /// Returns the main topic url.
     var topicURL: URL {
-        return LinksService.shared.link(forTopic: info.topic)
+        return LinksService.shared.link(topic: info.topic)
     }
     
     /// Returns the number of items in the metric amount (aka Serving Sizes).
@@ -86,7 +86,7 @@ struct DozeDetailViewModel {
             return nil
         }
         let topic =  info.varieties[index].topic
-        return LinksService.shared.link(forTopic: topic)
+        return LinksService.shared.link(topic: topic)
     }
     
 }

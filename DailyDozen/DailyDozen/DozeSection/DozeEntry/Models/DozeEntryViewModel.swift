@@ -75,7 +75,7 @@ class DozeEntryViewModel {
     /// - Returns: A NutritionFacts topic url.
     func topicURL(itemTypeKey: String) -> URL {
         let topic = DozeTextsProvider.shared.getTopic(itemTypeKey: itemTypeKey)
-        return LinksService.shared.link(forTopic: topic)
+        return LinksService.shared.link(topic: topic)
     }
     
     /// Returns item states in the doze for the current index.

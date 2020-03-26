@@ -12,13 +12,9 @@ class AlertBuilder {
 
     // MARK: - Nested
     private struct Strings {
-        static let titleSupplements = "Supplements"
-        static let message = """
-        Vitamin B12 is essential for your health but does not count towards your daily servings.
-
-        Vitamin B12 is included in this app to provide you with an easy way to track your intake.
-        """
-        static let confirm = "OK"
+        static let dozeOtherInfoTitle = NSLocalizedString("dozeOtherInfo.title", comment: "Daily Dozen other info title")
+        static let dozeOtherInfoMessage = NSLocalizedString("dozeOtherInfo.message", comment: "Daily Dozen other info message")
+        static let dozeOtherInfoConfirm = NSLocalizedString("dozeOtherInfo.confirm", comment: "Daily Dozen other info confirm")
     }
 
     private struct Keys {
@@ -34,14 +30,14 @@ class AlertBuilder {
         var title: String {
             switch self {
             case .dietarySupplement:
-                return Strings.titleSupplements
+                return Strings.dozeOtherInfoTitle
             }
         }
 
         var message: String {
             switch self {
             case .dietarySupplement:
-                return Strings.message
+                return Strings.dozeOtherInfoMessage
             }
         }
     }
@@ -64,7 +60,7 @@ class AlertBuilder {
                 NSAttributedString.Key.foregroundColor: UIColor.lightGray])
         alert.setValue(message, forKey: Keys.message)
 
-        let action = UIAlertAction(title: Strings.confirm, style: .cancel, handler: nil)
+        let action = UIAlertAction(title: Strings.dozeOtherInfoConfirm, style: .cancel, handler: nil)
         action.setValue(UIColor.greenColor, forKey: Keys.textColor)
         alert.addAction(action)
 

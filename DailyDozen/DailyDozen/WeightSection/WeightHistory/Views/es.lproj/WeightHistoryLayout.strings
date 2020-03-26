@@ -1,5 +1,5 @@
 /* Class = "UILabel"; text = "Weight (lbs)"; ObjectID = "8ed-5m-QMc"; */
-"8ed-5m-QMc.text" = "Pesa (libras)";
+"8ed-5m-QMc.text" = "Peso (lbs)";
 
 /* Class = "UISegmentedControl"; fcu-ZA-byN.segmentTitles[0] = "Day"; ObjectID = "fcu-ZA-byN"; */
 "fcu-ZA-byN.segmentTitles[0]" = "Día";

@@ -23,7 +23,7 @@ class WeightHistoryBuilder {
             let viewController = storyboard
                 .instantiateInitialViewController() as? WeightHistoryViewController
             else { fatalError("Did not instantiate `WeightHistoryViewController`") }
-        viewController.title = "Weight History"
+        viewController.title = NSLocalizedString("historyRecordWeight.heading", comment: "Weight History")
 
         return viewController
     }
@@ -31,6 +31,7 @@ class WeightHistoryBuilder {
 
 // MARK: -
 
+/// Historic record of daily checkbox tally.
 class WeightHistoryViewController: UIViewController {
 
     @IBOutlet weak var lineChartView: LineChartView!
@@ -49,9 +50,9 @@ class WeightHistoryViewController: UIViewController {
             lineChartView.clear()
             
             if isImperial() {
-                weightTitleUnits.text = "Weight (lbs)"
+                weightTitleUnits.text = NSLocalizedString("historyRecordWeight.titleImperial", comment: "Weight (lbs)")
             } else {
-                weightTitleUnits.text = "Weight (kg)"
+                weightTitleUnits.text = NSLocalizedString("historyRecordWeight.titleMetric", comment: "Weight (kg)")
             }
             
             if currentTimeScale == .day {
@@ -154,7 +155,8 @@ class WeightHistoryViewController: UIViewController {
             break
         }
         
-        let lineChartDataSetAM = LineChartDataSet(entries: am, label: "AM")
+        let legendMorningText = NSLocalizedString("historyRecordWeight.legendMorning", comment: "Morning")
+        let lineChartDataSetAM = LineChartDataSet(entries: am, label: legendMorningText)
         lineChartDataSetAM.colors = [UIColor.yellowSunglowColor]
         lineChartDataSetAM.circleColors = [UIColor.yellowSunglowColor]
         lineChartDataSetAM.circleHoleRadius = 0.0 // Default: 4.0
@@ -163,7 +165,8 @@ class WeightHistoryViewController: UIViewController {
         lineChartDataSetAM.lineWidth = 2.0 // Default: 1
         lineChartDataSetAM.mode = .linear // .cubicBezier
 
-        let lineChartDataSetPM = LineChartDataSet(entries: pm, label: "PM")
+        let legendEveningText = NSLocalizedString("historyRecordWeight.legendEvening", comment: "Evening")
+        let lineChartDataSetPM = LineChartDataSet(entries: pm, label: legendEveningText)
         lineChartDataSetPM.colors = [UIColor.redFlamePeaColor]
         lineChartDataSetPM.circleColors = [UIColor.redFlamePeaColor]
         lineChartDataSetPM.circleHoleRadius = 0.0 // Default: 4.0
@@ -290,7 +293,7 @@ class WeightHistoryViewController: UIViewController {
     // MARK: - Actions
     
     @IBAction func editDataButtonPressed(_ sender: UIButton) {
-        let viewController = WeightPagerBuilder.instantiateController()
+        let viewController = WeightEntryPagerBuilder.instantiateController()
         navigationController?.pushViewController(viewController, animated: true)
     }
     

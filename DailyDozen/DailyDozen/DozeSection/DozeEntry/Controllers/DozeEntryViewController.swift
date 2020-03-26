@@ -32,7 +32,7 @@ class DozeEntryViewController: UIViewController {
         }
     }
     private var statesCountString: String {
-        return "\(servingsStateCount) out of \(servingsStateCountMaximum)"
+        return "\(servingsStateCount) / \(servingsStateCountMaximum)"
     }
     
     // MARK: - UIViewController
@@ -43,6 +43,8 @@ class DozeEntryViewController: UIViewController {
         
         tableView.dataSource = dataProvider
         tableView.delegate = self
+        tableView.estimatedRowHeight = DozeEntrySections.main.dozeEstimatedRowHeight
+        tableView.rowHeight = UITableView.automaticDimension // dynamic height
         
         guard let appDelegate = UIApplication.shared.delegate as? AppDelegate else {
             return 
@@ -99,7 +101,7 @@ class DozeEntryViewController: UIViewController {
     }
     
     @IBAction private func historyPressed(_ sender: UIButton) {
-        let viewController = ServingsHistoryBuilder.instantiateController()
+        let viewController = DozeHistoryBuilder.instantiateController()
         navigationController?.pushViewController(viewController, animated: true)
     }
 }
@@ -108,15 +110,11 @@ class DozeEntryViewController: UIViewController {
 
 extension DozeEntryViewController: UITableViewDelegate {
     
-    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-        return DozeEntrySections.main.rowHeight
-    }
-    
     func tableView(_ tableView: UITableView, willDisplay cell: UITableViewCell, forRowAt indexPath: IndexPath) {
-        guard let servingsCell = cell as? DozeEntryTableViewCell else { return }
-        servingsCell.stateCollection.delegate = self
-        servingsCell.stateCollection.dataSource = dataProvider
-        servingsCell.stateCollection.reloadData()
+        guard let dozeTableViewCell = cell as? DozeEntryTableViewCell else { return }
+        dozeTableViewCell.stateCollection.delegate = self
+        dozeTableViewCell.stateCollection.dataSource = dataProvider
+        dozeTableViewCell.stateCollection.reloadData()
     }
     
     func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
