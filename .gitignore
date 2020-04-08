@@ -83,6 +83,5 @@ fastlane/test_output
 >>>>>>> swift4
 
 ## places for local-only notes.
-*__NOTES
-*__NOTES_files
+*__LOCAL
 

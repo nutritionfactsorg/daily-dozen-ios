@@ -19,12 +19,12 @@ class TweakEntryViewController: UIViewController {
     
     // MARK: - Properties
     private let realm = RealmProvider()
-    private let tweaksStateCountMaximum = 37
+    private let tweakStateCountMaximum = 37
     
-    private var tweaksStateCount = 0 {
+    private var tweakStateCount = 0 {
         didSet {
             countLabel.text = statesCountString
-            if tweaksStateCount == tweaksStateCountMaximum {
+            if tweakStateCount == tweakStateCountMaximum {
                 starImage.popIn()
                 SKStoreReviewController.requestReview()
             } else {
@@ -33,7 +33,7 @@ class TweakEntryViewController: UIViewController {
         }
     }
     private var statesCountString: String {
-        return "\(tweaksStateCount) / \(tweaksStateCountMaximum)"
+        return "\(tweakStateCount) / \(tweakStateCountMaximum)"
     }
     
     // MARK: - UIViewController
@@ -70,12 +70,12 @@ class TweakEntryViewController: UIViewController {
     /// - Parameter item: The current date.
     func setViewModel(for date: Date) {
         dataProvider.viewModel = TweakEntryViewModel(tracker: realm.getDailyTracker(date: date))
-        tweaksStateCount = 0
+        tweakStateCount = 0
         let mainItemCount = dataProvider.viewModel.count
         for i in 0 ..< mainItemCount {
             let itemStates: [Bool] = dataProvider.viewModel.itemStates(rowIndex: i)
             for state in itemStates where state {
-                tweaksStateCount += 1
+                tweakStateCount += 1
             }
         }
         tableView.reloadData()
@@ -84,7 +84,7 @@ class TweakEntryViewController: UIViewController {
     // MARK: - Actions
     
     /// TweakEntryTableViewCell infoButton
-    @IBAction private func infoPressed(_ sender: UIButton) {
+    @IBAction private func tweakInfoPressed(_ sender: UIButton) {
         let itemInfo = dataProvider.viewModel.itemInfo(rowIndex: sender.tag)
         
         guard !itemInfo.isSupplemental else {
@@ -100,7 +100,7 @@ class TweakEntryViewController: UIViewController {
     }
     
     /// TweakEntryTableViewCell calendarButton
-    @IBAction private func calendarPressed(_ sender: UIButton) {
+    @IBAction private func tweakCalendarPressed(_ sender: UIButton) {
         let heading = dataProvider.viewModel.itemInfo(rowIndex: sender.tag).itemType.headingDisplay
         let dataCountType = dataProvider.viewModel.itemType(rowIndex: sender.tag)
         
@@ -111,12 +111,7 @@ class TweakEntryViewController: UIViewController {
         navigationController?.pushViewController(viewController, animated: true)
     }
     
-    @IBAction private func supplementsHeaderInfoBtnPressed(_ sender: UIButton) {
-        let alert = AlertBuilder.instantiateController(for: .dietarySupplement)
-        present(alert, animated: true, completion: nil)
-    }
-    
-    @IBAction private func historyPressed(_ sender: UIButton) {
+    @IBAction private func tweakHistoryPressed(_ sender: UIButton) {
         let viewController = TweakHistoryBuilder.instantiateController()
         navigationController?.pushViewController(viewController, animated: true)
     }
@@ -127,17 +122,17 @@ class TweakEntryViewController: UIViewController {
 extension TweakEntryViewController: UITableViewDelegate {
     
     func tableView(_ tableView: UITableView, willDisplay cell: UITableViewCell, forRowAt indexPath: IndexPath) {
-        guard let tweaksTableViewCell = cell as? TweakEntryTableViewCell else { return }
-        tweaksTableViewCell.stateCollection.delegate = self
-        tweaksTableViewCell.stateCollection.dataSource = dataProvider
-        tweaksTableViewCell.stateCollection.reloadData()
+        guard let tweakTableViewCell = cell as? TweakEntryTableViewCell else { return }
+        tweakTableViewCell.stateCollection.delegate = self
+        tweakTableViewCell.stateCollection.dataSource = dataProvider
+        tweakTableViewCell.stateCollection.reloadData()
     }
     
     func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
-        guard let tweaksSection = TweakEntrySections(rawValue: section) else {
+        guard let tweakSection = TweakEntrySections(rawValue: section) else {
             fatalError("There should be a section type")
         }
-        return tweaksSection.headerHeight
+        return tweakSection.headerHeight
     }
     
     func tableView(_ tableView: UITableView, heightForFooterInSection section: Int) -> CGFloat {
@@ -145,10 +140,10 @@ extension TweakEntryViewController: UITableViewDelegate {
     }
     
     func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
-        guard let tweaksSection = TweakEntrySections(rawValue: section) else {
+        guard let tweakSection = TweakEntrySections(rawValue: section) else {
             fatalError("There should be a section type")
         }
-        return tweaksSection.headerView
+        return tweakSection.headerView
     }
 }
 
@@ -211,7 +206,7 @@ extension TweakEntryViewController: UICollectionViewDelegate {
         
         let stateTrueCounterNew = stateNew ? checkmarkIndex+1 : checkmarkIndex
         
-        tweaksStateCount += stateTrueCounterNew - stateTrueCounterOld
+        tweakStateCount += stateTrueCounterNew - stateTrueCounterOld
         
         // If state was toggled on then go to weight editor
         if stateNew && HealthManager.shared.isAuthorized() {

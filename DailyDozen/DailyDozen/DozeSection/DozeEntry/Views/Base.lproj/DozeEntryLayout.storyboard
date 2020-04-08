@@ -46,7 +46,7 @@
                                         </constraints>
                                         <state key="normal" image="ic_stat"/>
                                         <connections>
-                                            <action selector="historyPressed:" destination="M2f-B0-7nZ" eventType="touchUpInside" id="tvZ-oV-t8o"/>
+                                            <action selector="dozeHistoryPressed:" destination="M2f-B0-7nZ" eventType="touchUpInside" id="tvZ-oV-t8o"/>
                                         </connections>
                                     </button>
                                 </subviews>
@@ -113,14 +113,14 @@
                                                                     </constraints>
                                                                     <color key="tintColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                                     <connections>
-                                                                        <action selector="infoPressed:" destination="M2f-B0-7nZ" eventType="touchUpInside" id="2uF-fr-cSU"/>
+                                                                        <action selector="dozeInfoPressed:" destination="M2f-B0-7nZ" eventType="touchUpInside" id="2uF-fr-cSU"/>
                                                                     </connections>
                                                                 </button>
                                                                 <button opaque="NO" contentMode="scaleAspectFit" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="UX8-vv-mKp" userLabel="DozeItemCalendarButton">
                                                                     <rect key="frame" x="61" y="40" width="28" height="28"/>
                                                                     <state key="normal" image="ic_calendar"/>
                                                                     <connections>
-                                                                        <action selector="calendarPressed:" destination="M2f-B0-7nZ" eventType="touchUpInside" id="Qyo-qf-d8I"/>
+                                                                        <action selector="dozeCalendarPressed:" destination="M2f-B0-7nZ" eventType="touchUpInside" id="Qyo-qf-d8I"/>
                                                                     </connections>
                                                                 </button>
                                                                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="bRk-oe-WWO" userLabel="DozeStreakRoundedView" customClass="RoundedView" customModule="DailyDozen" customModuleProvider="target">

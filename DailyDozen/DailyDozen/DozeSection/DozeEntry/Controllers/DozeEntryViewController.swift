@@ -72,7 +72,7 @@ class DozeEntryViewController: UIViewController {
     // MARK: - Actions
     
     /// DozeEntryTableViewCell infoButton
-    @IBAction private func infoPressed(_ sender: UIButton) {
+    @IBAction private func dozeInfoPressed(_ sender: UIButton) {
         let itemInfo = dataProvider.viewModel.itemInfo(rowIndex: sender.tag)
         
         guard !itemInfo.isSupplemental else {
@@ -88,7 +88,7 @@ class DozeEntryViewController: UIViewController {
     }
     
     /// DozeEntryTableViewCell calendarButton
-    @IBAction private func calendarPressed(_ sender: UIButton) {
+    @IBAction private func dozeCalendarPressed(_ sender: UIButton) {
         let heading = dataProvider.viewModel.itemInfo(rowIndex: sender.tag).itemType.headingDisplay
         let itemType = dataProvider.viewModel.itemType(rowIndex: sender.tag)
         let viewController = ItemHistoryBuilder.instantiateController(heading: heading, itemType: itemType)
@@ -100,7 +100,7 @@ class DozeEntryViewController: UIViewController {
         present(alert, animated: true, completion: nil)
     }
     
-    @IBAction private func historyPressed(_ sender: UIButton) {
+    @IBAction private func dozeHistoryPressed(_ sender: UIButton) {
         let viewController = DozeHistoryBuilder.instantiateController()
         navigationController?.pushViewController(viewController, animated: true)
     }

@@ -37,7 +37,7 @@ class SettingsViewController: UITableViewController {
     // @IBOutlet weak var reminderSwitch: UISwitch!
     @IBOutlet weak var soundSwitch: UISwitch!
     // 21 Tweaks Visibility
-    @IBOutlet weak var tweaksVisibilityController: UISegmentedControl!
+    @IBOutlet weak var tweakVisibilityController: UISegmentedControl!
     
     // Advance Utilities
     @IBOutlet weak var advancedUtilitiesTableViewCell: UITableViewCell!
@@ -69,11 +69,11 @@ class SettingsViewController: UITableViewController {
         
         // 21 Tweaks Visibility
         if UserDefaults.standard.bool(forKey: SettingsKeys.show21TweaksPref) {
-            tweaksVisibilityController.selectedSegmentIndex = 1
+            tweakVisibilityController.selectedSegmentIndex = 1
         } else {
-            tweaksVisibilityController.selectedSegmentIndex = 0
+            tweakVisibilityController.selectedSegmentIndex = 0
         }
-//        for segment in tweaksVisibilityController.subviews {
+//        for segment in tweakVisibilityController.subviews {
 //            for label in segment.subviews {
 //                if let labels = label as? UILabel {
 //                    labels.numberOfLines = 2
@@ -86,6 +86,7 @@ class SettingsViewController: UITableViewController {
         advancedUtilitiesTableViewCell.isHidden = false
         //print(":::::::::::::::::::::::::::::::::::::::::::::::::::::::::\n")
         #endif
+        //advancedUtilitiesTableViewCell.isHidden = false // :!!!:!!!:
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -223,7 +224,7 @@ class SettingsViewController: UITableViewController {
     @IBAction func doTweaksVisibilityChanged(_ sender: UISegmentedControl) {
         //print("selectedSegmentIndex = \(segmentedControl.selectedSegmentIndex)")
         let show21Tweaks = UserDefaults.standard.bool(forKey: SettingsKeys.show21TweaksPref)
-        if tweaksVisibilityController.selectedSegmentIndex == 0
+        if tweakVisibilityController.selectedSegmentIndex == 0
             && show21Tweaks {
             // Toggle to hide 2nd tab
             UserDefaults.standard.set(false, forKey: SettingsKeys.show21TweaksPref)
@@ -231,7 +232,7 @@ class SettingsViewController: UITableViewController {
                 name: NSNotification.Name(rawValue: "NoticeUpdatedShowTweaksTab"),
                 object: 2, // Dozen, More, Settings
                 userInfo: nil)
-        } else if tweaksVisibilityController.selectedSegmentIndex == 1
+        } else if tweakVisibilityController.selectedSegmentIndex == 1
             && show21Tweaks == false {
             // Toggle to show 2nd tab
             UserDefaults.standard.set(true, forKey: SettingsKeys.show21TweaksPref)

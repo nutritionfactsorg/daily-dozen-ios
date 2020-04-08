@@ -33,8 +33,8 @@ class DozeDetailBuilder {
 class DozeDetailViewController: UIViewController {
     
     // MARK: - Nested
-    private struct Keys {
-        static let videos = "VIDEOS"
+    private struct Strings {
+        static let videos = "VIDEOS" // :NYI:NSLocalizedString:
     }
     
     // MARK: - Outlets
@@ -57,13 +57,17 @@ class DozeDetailViewController: UIViewController {
         
         if let dataCountType = dataProvider.dataCountType {
             if dataCountType.typeKey.prefix(4) == "doze" {
-                // DozeDetailViewController VIDEOS
-                navigationItem.rightBarButtonItem = UIBarButtonItem(
-                    title: Keys.videos,
-                    style: .done,
-                    target: self,
-                    action: #selector(barItemPressed)
-                )
+                let topicUrl = dataProvider.viewModel.topicURL
+                // "urlSegment.base"="https://nutritionfacts.org/";
+                if topicUrl.path != "/" {
+                    // DozeDetailViewController add "VIDEOS" navigation
+                    navigationItem.rightBarButtonItem = UIBarButtonItem(
+                        title: Strings.videos,
+                        style: .done,
+                        target: self,
+                        action: #selector(barItemPressed)
+                    )
+                }
             }
         }
         

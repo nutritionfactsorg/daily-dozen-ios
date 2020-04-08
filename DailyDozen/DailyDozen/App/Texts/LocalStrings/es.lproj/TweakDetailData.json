@@ -41,7 +41,7 @@
       "description" : [
         "Marque esta casilla todos los días sus porciones de granos enteros están en forma de granos intactos. La pulverización de incluso 100 por ciento de granos enteros priva a nuestros microbiomas del almidón que de otro modo sería transportado a nuestros dos puntos encerrados en paredes celulares intactas."
       ],
-      "heading" : "Deflour Your Diet",
+      "heading" : "Granos intactos",
       "topic" : ""
     },
     "tweakDailyFrontLoad" : {
@@ -85,7 +85,7 @@
       "description" : [
         "Beba tres tazas al día entre comidas (esperando al menos una hora después de una comida para no interferir con la absorción de hierro). Durante las comidas, beba agua, café negro o té de hibisco mezclado 6: 1 con verbena de limón, pero nunca exceda tres tazas de líquido por hora (importante dado mi consejo de precarga de agua). Aproveche el efecto reforzador de la cafeína bebiendo su té verde junto con algo saludable que desearía que le gustara más, pero no consuma grandes cantidades de cafeína dentro de las seis horas antes de acostarse. Lo mejor es tomar el té sin edulcorante, pero si normalmente endulzas tu té con miel o azúcar, prueba con jarabe de yacón."
       ],
-      "heading" : "Té Verde (3 tazas)",
+      "heading" : "Té verde (3 tazas)",
       "topic" : ""
     },
     "tweakDailyHydrate" : {
@@ -107,7 +107,7 @@
       "description" : [
         "Dos cucharaditas de levadura de panadería, de cerveza o nutricional contienen aproximadamente la cantidad de glucanos beta 1,3 \/ 1,6 encontrados en ensayos clínicos aleatorizados, doble ciego, controlados con placebo para facilitar la pérdida de peso."
       ],
-      "heading" : "Levadura Nutricional (2 cucharaditas)",
+      "heading" : "Levadura nutricional (2 cucharaditas)",
       "topic" : ""
     },
     "tweakDailyTimeRestrict" : {

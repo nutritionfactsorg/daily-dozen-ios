@@ -23,8 +23,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         let documentsUrl = urlList[0]
         
         #if DEBUG
-        //print("::::: DEBUG :::::")
-        //print(":::::::::::::::::\n")
+        print("::::: DEBUG :::::")
+        print(":::::::::::::::::\n")
         #endif
         
         #if targetEnvironment(simulator)
@@ -79,25 +79,37 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         application.applicationIconBadgeNumber = 0
     }
     
-    //func application(_ app: UIApplication,
-    //                 open url: URL,
-    //                 options: [UIApplication.OpenURLOptionsKey: Any] = [:]) -> Bool {
-    //    guard url.pathExtension == Strings.realmExtension else { return false }
-    //
-    //    let importAlert = UIAlertController(title: Strings.title,
-    //                                        message: Strings.message,
-    //                                        preferredStyle: .alert)
-    //    let confirm = UIAlertAction(title: Strings.confirm, style: .default) { [weak self] (_) in
-    //        try? FileManager.default.removeItem(at: URL.inDocuments(for: Strings.realmFilename))
-    //        try? FileManager.default.copyItem(at: url, to: URL.inDocuments(for: Strings.realmFilename))
-    //        self?.realmDelegate?.didUpdateFile()
-    //    }
-    //    importAlert.addAction(confirm)
-    //
-    //    let decline = UIAlertAction(title: Strings.decline, style: .cancel, handler: nil)
-    //    importAlert.addAction(decline)
-    //
-    //    window?.rootViewController?.show(importAlert, sender: nil)
-    //    return true
-    //}
+    // ==================================================================== //
+    
+//    private struct Strings {
+//        static let realmExtension = "realm"
+//        static let realmFilename = "main.realm"
+//        static let title = "Restore Backup"
+//        static let message = "Any existing data will be deleted before restoring from backup. Do you wish to continue?"
+//        static let confirm = "OK"
+//        static let decline = "NO"
+//    }
+//    
+//    func application(_ app: UIApplication,
+//                     open url: URL,
+//                     options: [UIApplication.OpenURLOptionsKey: Any] = [:]) -> Bool {
+//        guard url.pathExtension == Strings.realmExtension else { return false }
+//    
+//        let importAlert = UIAlertController(title: Strings.title,
+//                                            message: Strings.message,
+//                                            preferredStyle: .alert)
+//        let confirm = UIAlertAction(title: Strings.confirm, style: .default) { [weak self] (_) in
+//            try? FileManager.default.removeItem(at: URL.inDocuments(for: Strings.realmFilename))
+//            try? FileManager.default.copyItem(at: url, to: URL.inDocuments(for: Strings.realmFilename))
+//            self?.realmDelegate?.didUpdateFile()
+//        }
+//        importAlert.addAction(confirm)
+//    
+//        let decline = UIAlertAction(title: Strings.decline, style: .cancel, handler: nil)
+//        importAlert.addAction(decline)
+//    
+//        window?.rootViewController?.show(importAlert, sender: nil)
+//        return true
+//    }
+
 }

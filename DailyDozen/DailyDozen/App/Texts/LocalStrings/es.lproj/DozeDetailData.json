@@ -20,7 +20,7 @@
       "varieties" : [
         {
           "text" : "Frijoles negros",
-          "topic" : ""
+          "topic" : "es/topics/frijoles-negros"
         },
         {
           "text" : "Frijoles de ojo negro",
@@ -36,11 +36,11 @@
         },
         {
           "text" : "Garbanzos",
-          "topic" : ""
+          "topic" : "es/topics/garbanzos"
         },
         {
           "text" : "Edamame",
-          "topic" : ""
+          "topic" : "es/topics/edamame"
         },
         {
           "text" : "Guisante Ingles",
@@ -48,7 +48,7 @@
         },
         {
           "text" : "Frijoles garbanzos",
-          "topic" : ""
+          "topic" : "es/topics/garbanzo"
         },
         {
           "text" : "Frijoles grandes del norte",
@@ -56,23 +56,23 @@
         },
         {
           "text" : "Frijoles",
-          "topic" : ""
+          "topic" : "es/topics/frijoles-rojos"
         },
         {
           "text" : "Lentejas (beluga, Francesa, y de variedades rojas)",
-          "topic" : ""
+          "topic" : "/es/topics/lentejas"
         },
         {
           "text" : "Miso",
-          "topic" : ""
+          "topic" : "es/topics/miso-es"
         },
         {
           "text" : "Frijoles blancos",
-          "topic" : ""
+          "topic" : "es/topics/frijoles-blancos"
         },
         {
           "text" : "Frijoles pintos",
-          "topic" : ""
+          "topic" : "es/topics/frijoles-pintos"
         },
         {
           "text" : "Frijoles rojos pequeños",
@@ -80,11 +80,11 @@
         },
         {
           "text" : "Guisantes partidos (amarillos o verdes)",
-          "topic" : ""
+          "topic" : "es/topics/guisantes-partidos"
         },
         {
           "text" : "Tempeh",
-          "topic" : ""
+          "topic" : "es/topics/tempeh-es"
         }
       ]
     },
@@ -104,35 +104,35 @@
       "varieties" : [
         {
           "text" : "Bayas de Acai",
-          "topic" : ""
+          "topic" : "/es/topics/bayas-de-acai-es"
         },
         {
           "text" : "Agracejos",
-          "topic" : ""
+          "topic" : "es/topics/berberos-es"
         },
         {
           "text" : "Moras",
-          "topic" : ""
+          "topic" : "es/topics/moras"
         },
         {
           "text" : "Arándanos azules",
-          "topic" : ""
+          "topic" : "es/topics/arandanos-azules"
         },
         {
           "text" : "Cerezas (dulces o acidas)",
-          "topic" : ""
+          "topic" : "es/topics/cerezas"
         },
         {
           "text" : "Uvas concord",
-          "topic" : ""
+          "topic" : "es/topics/uvas-de-concordia-es"
         },
         {
           "text" : "Arándanos agrios",
-          "topic" : ""
+          "topic" : "es/topics/arandanos-es"
         },
         {
           "text" : "Bayas Goji",
-          "topic" : ""
+          "topic" : "es/topics/goji/"
         },
         {
           "text" : "Kumquats",
@@ -144,11 +144,11 @@
         },
         {
           "text" : "Frambuesas (negras o rojas)",
-          "topic" : ""
+          "topic" : "es/topics/frambuesas/"
         },
         {
           "text" : "Fresas",
-          "topic" : ""
+          "topic" : "es/topics/fresas/"
         }
       ]
     },
@@ -164,39 +164,39 @@
       "varieties" : [
         {
           "text" : "Té negro",
-          "topic" : ""
+          "topic" : "es/topics/te-negro/"
         },
         {
           "text" : "Té Chai",
-          "topic" : ""
+          "topic" : "es/topics/te-chai"
         },
         {
           "text" : "Té de vainilla y manzanilla",
-          "topic" : ""
+          "topic" : "es/topics/te-de-manzanilla"
         },
         {
           "text" : "Café",
-          "topic" : ""
+          "topic" : "es/topics/cafe"
         },
         {
-          "text" : "Té Earl grey",
-          "topic" : ""
+          "text" : "Té Earl Grey",
+          "topic" : "es/topics/te-earl-grey-es"
         },
         {
           "text" : "Té verde",
-          "topic" : ""
+          "topic" : "es/topics/te-verde"
         },
         {
-          "text" : "Té de Jamaica",
-          "topic" : ""
+          "text" : "Té de hibisco",
+          "topic" : "es/topics/hibiscus-tea-es"
         },
         {
           "text" : "Chocolate caliente",
           "topic" : ""
         },
         {
-          "text" : "Té de jazmín",
-          "topic" : ""
+          "text" : "Té de jasmín",
+          "topic" : "es/topics/te-de-jasmin"
         },
         {
           "text" : "Té de limón",
@@ -204,27 +204,27 @@
         },
         {
           "text" : "Té de matcha",
-          "topic" : ""
+          "topic" : "es/topics/matcha-es"
         },
         {
           "text" : "Té de retoño de almendra oolong",
-          "topic" : ""
+          "topic" : "es/topics/te-oolong-es"
         },
         {
           "text" : "Té de menta",
           "topic" : ""
         },
         {
-          "text" : "Té de Rooibos",
-          "topic" : ""
+          "text" : "Té de rooibos",
+          "topic" : "es/topics/te-rooibos-es"
         },
         {
           "text" : "Agua",
-          "topic" : ""
+          "topic" : "es/topics/agua"
         },
         {
           "text" : "Té blanco",
-          "topic" : ""
+          "topic" : "es/topics/te-blanco"
         }
       ]
     },
@@ -481,7 +481,7 @@
       ]
     },
     "dozeFruitsOther" : {
-      "heading" : "Otras Frutas",
+      "heading" : "Otras frutas",
       "servings" : [
         {
           "imperial" : "1 fruta de tamaño medio",
@@ -500,23 +500,23 @@
       "varieties" : [
         {
           "text" : "Manzanas",
-          "topic" : ""
+          "topic" : "es/topics/manzanas"
         },
         {
-          "text" : "Albaricoques secos",
-          "topic" : ""
+          "text" : "Albaricoques",
+          "topic" : "es/topics/albaricoques"
         },
         {
           "text" : "Aguacates",
-          "topic" : ""
+          "topic" : "es/topics/aguacates"
         },
         {
-          "text" : "Bananas",
-          "topic" : ""
+          "text" : "Bananos",
+          "topic" : "es/topics/bananos"
         },
         {
           "text" : "Melones naranja",
-          "topic" : ""
+          "topic" : "es/topics/melon"
         },
         {
           "text" : "Clementinas",
@@ -524,15 +524,15 @@
         },
         {
           "text" : "Dátiles",
-          "topic" : ""
+          "topic" : "es/topics/datiles"
         },
         {
-          "text" : "Higos secos",
-          "topic" : ""
+          "text" : "Higos",
+          "topic" : "es/topics/higos"
         },
         {
           "text" : "Toronja",
-          "topic" : ""
+          "topic" : "es/topics/toronja/"
         },
         {
           "text" : "Melones verdes",
@@ -540,15 +540,15 @@
         },
         {
           "text" : "Kiwis",
-          "topic" : ""
+          "topic" : "es/topics/kiwi"
         },
         {
           "text" : "Limones amarillos",
-          "topic" : ""
+          "topic" : "topics/lemons"
         },
         {
           "text" : "Limones verdes",
-          "topic" : ""
+          "topic" : "es/topics/limas"
         },
         {
           "text" : "Lychees",
@@ -556,7 +556,7 @@
         },
         {
           "text" : "Mangos",
-          "topic" : ""
+          "topic" : "es/topics/mango-es"
         },
         {
           "text" : "Nectarinas",
@@ -564,11 +564,11 @@
         },
         {
           "text" : "Naranjas",
-          "topic" : ""
+          "topic" : "es/topics/naranjas"
         },
         {
           "text" : "Papaya",
-          "topic" : ""
+          "topic" : "es/topics/papaya-es"
         },
         {
           "text" : "Maracuyá",
@@ -576,19 +576,19 @@
         },
         {
           "text" : "Duraznos",
-          "topic" : ""
+          "topic" : "es/topics/duraznos-es/"
         },
         {
           "text" : "Peras",
-          "topic" : ""
+          "topic" : "es/topics/peras-es/"
         },
         {
           "text" : "Piña",
-          "topic" : ""
+          "topic" : "/es/topics/pinas"
         },
         {
           "text" : "Ciruelas (en especial ciruelas negras)",
-          "topic" : ""
+          "topic" : "es/topics/ciruelas/"
         },
         {
           "text" : "Pluots",
@@ -596,11 +596,11 @@
         },
         {
           "text" : "Granadas",
-          "topic" : ""
+          "topic" : "es/topics/granadas"
         },
         {
           "text" : "Ciruelas pasas",
-          "topic" : ""
+          "topic" : "es/topics/ciruelas-pasas"
         },
         {
           "text" : "Mandarinas",
@@ -608,12 +608,12 @@
         },
         {
           "text" : "Sandía",
-          "topic" : ""
+          "topic" : "es/topics/sandia"
         }
       ]
     },
     "dozeGreens" : {
-      "heading" : "Vegetales de Hoja Verde",
+      "heading" : "Vegetales de hoja verde",
       "servings" : [
         {
           "imperial" : "1 taza cruda",
@@ -632,7 +632,7 @@
         },
         {
           "text" : "Hojas de remolacha",
-          "topic" : ""
+          "topic" : "hojas-de-remolacha-es"
         },
         {
           "text" : "Berza",
@@ -640,15 +640,15 @@
         },
         {
           "text" : "Col rizada (negra, verde, y roja)",
-          "topic" : ""
+          "topic" : "es/topics/col-rizada-es"
         },
         {
           "text" : "Mezcla Mesclun (hojas tiernas verdes variadas)",
-          "topic" : ""
+          "topic" : "es/topics/ensalada-mesclun-es"
         },
         {
           "text" : "Hojas de mostaza",
-          "topic" : ""
+          "topic" : "es/topics/hojas-de-mostaza"
         },
         {
           "text" : "Alazán",
@@ -656,15 +656,15 @@
         },
         {
           "text" : "Espinaca",
-          "topic" : ""
+          "topic" : "es/topics/espinaca"
         },
         {
           "text" : "Acelga",
-          "topic" : ""
+          "topic" : "es/topics/acelga-es"
         },
         {
           "text" : "Nabos verdes",
-          "topic" : ""
+          "topic" : "es/topics/nabos"
         }
       ]
     },
@@ -684,23 +684,23 @@
       "varieties" : [
         {
           "text" : "Almendras",
-          "topic" : ""
+          "topic" : "es/topics/almendras"
         },
         {
           "text" : "Nueces de Brasil",
-          "topic" : ""
+          "topic" : "es/topics/nueces-de-brasil-es"
         },
         {
           "text" : "Marañones",
-          "topic" : ""
+          "topic" : "es/topics/anacardos"
         },
         {
           "text" : "Semillas de chia",
-          "topic" : ""
+          "topic" : "es/topics/semillas-de-chia"
         },
         {
           "text" : "Avellanas",
-          "topic" : ""
+          "topic" : "es/topics/avellanas-es"
         },
         {
           "text" : "Semillas de Cáñamo",
@@ -708,31 +708,31 @@
         },
         {
           "text" : "Nueces de macadamia",
-          "topic" : ""
+          "topic" : "es/topics/nueces-de-macadamia"
         },
         {
           "text" : "Nueces pecanas",
-          "topic" : ""
+          "topic" : "es/topics/nuez-pecana"
         },
         {
           "text" : "Pistachos",
-          "topic" : ""
+          "topic" : "es/topics/pistachos"
         },
         {
           "text" : "Semillas de calabaza",
-          "topic" : ""
+          "topic" : "es/topics/semillas-de-calabaza"
         },
         {
           "text" : "Semillas de ajonjolí",
-          "topic" : ""
+          "topic" : "es/topics/ajonjoli"
         },
         {
           "text" : "Semillas de girasol",
-          "topic" : ""
+          "topic" : "es/topics/semillas-de-girasol"
         },
         {
           "text" : "Nueces",
-          "topic" : ""
+          "topic" : "es/topics/nueces-es"
         }
       ]
     },
@@ -755,12 +755,12 @@
           "topic" : ""
         },
         {
-          "text" : "Agracejo",
-          "topic" : ""
+          "text" : "Bérberos",
+          "topic" : "es/topics/berberos-es/"
         },
         {
           "text" : "Albahaca",
-          "topic" : ""
+          "topic" : "es/topics/albahaca/"
         },
         {
           "text" : "Hojas de laurel",
@@ -768,7 +768,7 @@
         },
         {
           "text" : "Cardamomo",
-          "topic" : ""
+          "topic" : "es/topics/cardamomo"
         },
         {
           "text" : "Chile en polvo",
@@ -776,27 +776,27 @@
         },
         {
           "text" : "Cilantro",
-          "topic" : ""
+          "topic" : "es/topics/cilantro-es/"
         },
         {
           "text" : "Canela",
-          "topic" : ""
+          "topic" : "es/topics/canela"
         },
         {
           "text" : "Clavos",
-          "topic" : ""
+          "topic" : "es/topics/clavos-de-olor"
         },
         {
           "text" : "Cilantro",
-          "topic" : ""
+          "topic" : "es/topics/cilantro-es-2"
         },
         {
           "text" : "Comino",
-          "topic" : ""
+          "topic" : "es/topics/comino"
         },
         {
           "text" : "Polvo de curry",
-          "topic" : ""
+          "topic" : "es/topics/curry-en-polvo"
         },
         {
           "text" : "Eneldo",
@@ -804,15 +804,15 @@
         },
         {
           "text" : "Fenogreco",
-          "topic" : ""
+          "topic" : "es/topics/fenogreco"
         },
         {
           "text" : "Ajo",
-          "topic" : ""
+          "topic" : "es/topics/ajo"
         },
         {
           "text" : "Gengibre",
-          "topic" : ""
+          "topic" : "es/topics/jengibre"
         },
         {
           "text" : "Rábano picante",
@@ -820,23 +820,23 @@
         },
         {
           "text" : "Citronela",
-          "topic" : ""
+          "topic" : "es/topics/limoncillo-es"
         },
         {
           "text" : "Mejorana",
-          "topic" : ""
+          "topic" : "es/topics/mejorana"
         },
         {
           "text" : "Polvo de mostaza",
-          "topic" : ""
+          "topic" : "es/topics/mostaza-en-polvo"
         },
         {
           "text" : "Nuez moscada",
-          "topic" : ""
+          "topic" : "es/topics/nuez-moscada"
         },
         {
           "text" : "Oregano",
-          "topic" : ""
+          "topic" : "es/topics/oregano-es"
         },
         {
           "text" : "Papríka ahumada",
@@ -844,23 +844,23 @@
         },
         {
           "text" : "Perejil",
-          "topic" : ""
+          "topic" : "es/topics/perejil"
         },
         {
           "text" : "Pimienta",
-          "topic" : ""
+          "topic" : "es/topics/pimienta"
         },
         {
           "text" : "Menta",
-          "topic" : ""
+          "topic" : "es/topics/menta-es"
         },
         {
           "text" : "Romero",
-          "topic" : ""
+          "topic" : "es/topics/romero"
         },
         {
           "text" : "Azafrán",
-          "topic" : ""
+          "topic" : "es/topics/azafran"
         },
         {
           "text" : "Salvia",
@@ -868,11 +868,11 @@
         },
         {
           "text" : "Tomillo",
-          "topic" : ""
+          "topic" : "es/topics/tomillo"
         },
         {
           "text" : "Cúrcuma",
-          "topic" : ""
+          "topic" : "es/topics/curcuma"
         },
         {
           "text" : "Vainilla",
@@ -881,7 +881,7 @@
       ]
     },
     "dozeVegetablesCruciferous" : {
-      "heading" : "Vegetales Crucíferos",
+      "heading" : "Vegetales crucíferos",
       "servings" : [
         {
           "imperial" : "½ taza picado",
@@ -904,27 +904,27 @@
         },
         {
           "text" : "Bok choy",
-          "topic" : ""
+          "topic" : "es/topics/bok-choy-es"
         },
         {
           "text" : "Brócoli (Romanesco)",
-          "topic" : ""
+          "topic" : "es/topics/brocoli"
         },
         {
           "text" : "Repollos de Bruselas",
-          "topic" : ""
+          "topic" : "es/topics/coles-bruselas"
         },
         {
           "text" : "Repollo (verde, rojo, de Saboya)",
-          "topic" : ""
+          "topic" : "es/topics/repollo"
         },
         {
           "text" : "Coliflor (blanco, verde, naranja, morado)",
-          "topic" : ""
+          "topic" : "es/topics/coliflor"
         },
         {
           "text" : "Berza",
-          "topic" : ""
+          "topic" : "es/topics/acelgas-es"
         },
         {
           "text" : "Rábano picante",
@@ -932,32 +932,32 @@
         },
         {
           "text" : "Col rizada (negra, verde, y roja)",
-          "topic" : ""
+          "topic" : "es/topics/col-rizada-es"
         },
         {
           "text" : "Colinabo (verde, morado)",
-          "topic" : ""
+          "topic" : "es/topics/colinabo"
         },
         {
           "text" : "Hojas de mostaza",
-          "topic" : ""
+          "topic" : "es/topics/hojas-de-mostaza"
         },
         {
           "text" : "Rábanos",
-          "topic" : ""
+          "topic" : "es/topics/rabanos"
         },
         {
           "text" : "Nabos verdes",
-          "topic" : ""
+          "topic" : "es/topics/nabos"
         },
         {
           "text" : "Berro",
-          "topic" : ""
+          "topic" : "es/topics/berros-es"
         }
       ]
     },
     "dozeVegetablesOther" : {
-      "heading" : "Otros Vegetales",
+      "heading" : "Otros vegetales",
       "servings" : [
         {
           "imperial" : "1 taza de vegetales de hoja cruda",
@@ -980,55 +980,55 @@
       "varieties" : [
         {
           "text" : "Alcachofas",
-          "topic" : ""
+          "topic" : "es/topics/alcachofas"
         },
         {
           "text" : "Espárragos",
-          "topic" : ""
+          "topic" : "es/topics/esparragos"
         },
         {
           "text" : "Remolachas",
-          "topic" : ""
+          "topic" : "es/topics/remolachas-es/"
         },
         {
           "text" : "Pimiento morrón",
-          "topic" : ""
+          "topic" : "es/topics/pimientos/"
         },
         {
           "text" : "Zanahorias",
-          "topic" : ""
+          "topic" : "es/topics/zanahorias"
         },
         {
           "text" : "Maíz",
-          "topic" : ""
+          "topic" : "es/topics/maiz"
         },
         {
           "text" : "Ajo",
-          "topic" : ""
+          "topic" : "es/topics/ajo"
         },
         {
           "text" : "Champiñones (botón, ostra, portobello, y shiitake)",
-          "topic" : ""
+          "topic" : "es/topics/champinones"
         },
         {
           "text" : "Okra",
-          "topic" : ""
+          "topic" : "es/topics/okra-es"
         },
         {
           "text" : "Cebollas",
-          "topic" : ""
+          "topic" : "es/topics/cebollas"
         },
         {
           "text" : "Patatas moradas",
-          "topic" : ""
+          "topic" : "es/topics/patatas-moradas"
         },
         {
           "text" : "Calabaza",
-          "topic" : ""
+          "topic" : "es/topics/calabaza"
         },
         {
           "text" : "Vegetales marinos (arame, dulse, y nori)",
-          "topic" : ""
+          "topic" : "es/topics/vegetales-marinos"
         },
         {
           "text" : "guisantes",
@@ -1036,24 +1036,24 @@
         },
         {
           "text" : "Calabacines (variedades de delicata, verano, y spaghetti)",
-          "topic" : ""
+          "topic" : "es/topics/calabaza-es"
         },
         {
           "text" : "Camotes",
-          "topic" : ""
+          "topic" : "es/topics/camotes"
         },
         {
           "text" : "Tomates",
-          "topic" : ""
+          "topic" : "es/topics/tomates"
         },
         {
           "text" : "Calabacitas zuchini",
-          "topic" : ""
+          "topic" : "es/topics/calabacin-es"
         }
       ]
     },
     "dozeWholeGrains" : {
-      "heading" : "Granos Integrales",
+      "heading" : "Granos integrales",
       "servings" : [
         {
           "imperial" : "½ taza de cereal caliente o granos, pasta o granos de maíz cocidos",
@@ -1080,39 +1080,39 @@
       "varieties" : [
         {
           "text" : "Cebada",
-          "topic" : ""
+          "topic" : "es/topics/cebada"
         },
         {
           "text" : "Alforfón",
-          "topic" : ""
+          "topic" : "es/topics/trigo-sarraceno"
         },
         {
           "text" : "Mijo",
-          "topic" : ""
+          "topic" : "es/topics/mijo"
         },
         {
           "text" : "Avena",
-          "topic" : ""
+          "topic" : "es/topics/avena-es"
         },
         {
           "text" : "Palomitas de maíz",
-          "topic" : ""
+          "topic" : "es/topics/palomitas-de-maiz"
         },
         {
           "text" : "Quinoa",
-          "topic" : ""
+          "topic" : "es/topics/quinoa-es"
         },
         {
           "text" : "Centeno",
-          "topic" : ""
+          "topic" : "es/topics/centeno"
         },
         {
           "text" : "Teff",
-          "topic" : ""
+          "topic" : "es/topics/teff-es"
         },
         {
           "text" : "Pasta integral",
-          "topic" : ""
+          "topic" : "es/topics/pasta-es"
         }
       ]
     },

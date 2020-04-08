@@ -11,8 +11,8 @@ class TweakEntryDataProvider: NSObject, UITableViewDataSource {
     
     // MARK: - Nested
     private struct Strings {
-        static let tweaksTableViewCell = "tweaksTableViewCell"
-        static let tweaksStateCell = "tweaksStateCell"
+        static let tweakTableViewCell = "tweakTableViewCell"
+        static let tweakStateCell = "tweakStateCell"
     }
     
     var viewModel: TweakEntryViewModel!
@@ -23,18 +23,18 @@ class TweakEntryDataProvider: NSObject, UITableViewDataSource {
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        guard let tweaksSection = TweakEntrySections(rawValue: section) else {
+        guard let tweakSection = TweakEntrySections(rawValue: section) else {
             fatalError("There should be a section type")
         }
-        return tweaksSection.numberOfRowsInSection(with: viewModel.count)
+        return tweakSection.numberOfRowsInSection(with: viewModel.count)
     }
     
     // Row Cell At Index
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let realm = RealmProvider()
         guard
-            let tweaksTableViewCell = tableView
-                .dequeueReusableCell(withIdentifier: Strings.tweaksTableViewCell) as? TweakEntryTableViewCell else {
+            let tweakTableViewCell = tableView
+                .dequeueReusableCell(withIdentifier: Strings.tweakTableViewCell) as? TweakEntryTableViewCell else {
                 fatalError("Expected `TweakEntryTableViewCell`")
         }
 
@@ -54,7 +54,7 @@ class TweakEntryDataProvider: NSObject, UITableViewDataSource {
             }
         }
         
-        tweaksTableViewCell.configure(
+        tweakTableViewCell.configure(
             heading: itemType.headingDisplay,
             tag: rowIndex,
             imageName: itemType.imageName,
@@ -63,7 +63,7 @@ class TweakEntryDataProvider: NSObject, UITableViewDataSource {
         let itemPid = viewModel.itemPid(rowIndex: rowIndex)
         realm.updateStreak(streak, pid: itemPid)
         
-        return tweaksTableViewCell
+        return tweakTableViewCell
     }
 }
 
@@ -77,7 +77,7 @@ extension TweakEntryDataProvider: UICollectionViewDataSource {
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(
-            withReuseIdentifier: Strings.tweaksStateCell,
+            withReuseIdentifier: Strings.tweakStateCell,
             for: indexPath)
         guard let stateCell = cell as? TweakEntryStateCell else {
             fatalError("There should be a cell")

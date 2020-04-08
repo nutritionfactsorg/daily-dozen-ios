@@ -48,7 +48,7 @@ class UtilityTableViewController: UITableViewController {
         let documentsUrl = urlList[0]
         return documentsUrl
     }
-    
+        
     @IBAction func doUtilityDBExportDataBtn(_ sender: UIButton) {
         doUtilityDBExportData()
     }
@@ -61,11 +61,18 @@ class UtilityTableViewController: UITableViewController {
         let realmMngr = RealmManager(workingDirUrl: documentsUrl)
         let backupFilename = realmMngr.csvExport()
         
-        let activityViewController = UIActivityViewController(
-            activityItems: [URL.inDocuments(for: backupFilename)],
-            applicationActivities: nil)
-        activityViewController.popoverPresentationController?.sourceView = view
-        present(activityViewController, animated: true, completion: nil)
+        let str = "\(Strings.utilityDbExportMsg): \"\(backupFilename)\"."
+        
+        let alert = UIAlertController(title: "", message: str, preferredStyle: .actionSheet)
+        let okAction = UIAlertAction(title: Strings.utilityConfirmOK, style: .default, handler: nil)
+        alert.addAction(okAction)
+        present(alert, animated: true, completion: nil)
+        
+        //let activityViewController = UIActivityViewController(
+        //    activityItems: [URL.inDocuments(for: backupFilename)],
+        //    applicationActivities: nil)
+        //activityViewController.popoverPresentationController?.sourceView = view
+        //present(activityViewController, animated: true, completion: nil)
     }
     
     @IBAction func doUtilityDBImportDataBtn(_ sender: UIButton) {
@@ -90,9 +97,14 @@ class UtilityTableViewController: UITableViewController {
     }
     
     @IBAction func doUtilitySettingsClearBtn(_ sender: UIButton) {
-        doUtilitySettingsPrint()
-        doUtilitySettingsClear()
-        doUtilitySettingsPrint()
+        let alert = UIAlertController(title: "", message: Strings.utilitySettingsClearMsg, preferredStyle: .actionSheet)
+        let cancelAction = UIAlertAction(title: Strings.utilityConfirmCancel, style: .cancel, handler: nil)
+        alert.addAction(cancelAction)
+        let clearAction = UIAlertAction(title: Strings.utilityConfirmClear, style: .destructive) { (_: UIAlertAction) -> Void in
+            self.doUtilitySettingsClear()
+        }
+        alert.addAction(clearAction)
+        present(alert, animated: true, completion: nil)
     }
     
     func doUtilitySettingsClear() {
@@ -109,25 +121,65 @@ class UtilityTableViewController: UITableViewController {
         defaults.set(nil, forKey: SettingsKeys.hasSeenFirstLaunch)
     }
     
-    func doUtilitySettingsPrint() {
+    @IBAction func doUtilitySettingsShowBtn(_ sender: UIButton) {
+        doUtilitySettingsShow()
+    }
+    
+    func doUtilitySettingsShow() {
+        var str = ""
+        str.append(contentsOf: "reminderCanNotify: ")
+        str.append(contentsOf: ": \(UserDefaults.standard.object(forKey: SettingsKeys.reminderCanNotify) ?? "nil")\n")
+
+        str.append(contentsOf: "reminderHourPref")
+        str.append(contentsOf: ": \(UserDefaults.standard.object(forKey: SettingsKeys.reminderHourPref) ?? "nil")\n")
+
+        str.append(contentsOf: "reminderMinutePref")
+        str.append(contentsOf: ": \(UserDefaults.standard.object(forKey: SettingsKeys.reminderMinutePref) ?? "nil")\n")
+
+        str.append(contentsOf: "reminderSoundPref")
+        str.append(contentsOf: ": \(UserDefaults.standard.object(forKey: SettingsKeys.reminderSoundPref) ?? "nil")\n")
+
+        //str.append(contentsOf: "imgID")
+        //str.append(contentsOf: ": \(UserDefaults.standard.object(forKey: SettingsKeys.imgID) ?? "nil")\n")
+
+        //str.append(contentsOf: "requestID")
+        //str.append(contentsOf: ": \(UserDefaults.standard.object(forKey: SettingsKeys.requestID) ?? "nil")\n")
+
+        str.append(contentsOf: "unitsTypePref")
+        str.append(contentsOf: ": \(UserDefaults.standard.object(forKey: SettingsKeys.unitsTypePref) ?? "nil")\n")
+
+        str.append(contentsOf: "unitsTypeToggleShowPref")
+        str.append(contentsOf: ": \(UserDefaults.standard.object(forKey: SettingsKeys.unitsTypeToggleShowPref) ?? "nil")\n")
+
+        str.append(contentsOf: "show21TweaksPref")
+        str.append(contentsOf: ": \(UserDefaults.standard.object(forKey: SettingsKeys.show21TweaksPref) ?? "nil")\n")
+        
+        str.append(contentsOf: "hasSeenFirstLaunch")
+        str.append(contentsOf: ": \(UserDefaults.standard.object(forKey: SettingsKeys.hasSeenFirstLaunch) ?? "nil")\n")
+        
+        #if DEBUG
         print("\n•• UserDefaults Values ••")
-        print("      reminderCanNotify \(UserDefaults.standard.object(forKey: SettingsKeys.reminderCanNotify) ?? "nil")")
-        print("       reminderHourPref \(UserDefaults.standard.object(forKey: SettingsKeys.reminderHourPref) ?? "nil")")
-        print("     reminderMinutePref \(UserDefaults.standard.object(forKey: SettingsKeys.reminderMinutePref) ?? "nil")")
-        print("      reminderSoundPref \(UserDefaults.standard.object(forKey: SettingsKeys.reminderSoundPref) ?? "nil")")
-        print("                  imgID \(UserDefaults.standard.object(forKey: SettingsKeys.imgID) ?? "nil")")
-        print("              requestID \(UserDefaults.standard.object(forKey: SettingsKeys.requestID) ?? "nil")")
-        print("          unitsTypePref \(UserDefaults.standard.object(forKey: SettingsKeys.unitsTypePref) ?? "nil")")
-        print("unitsTypeToggleShowPref \(UserDefaults.standard.object(forKey: SettingsKeys.unitsTypeToggleShowPref) ?? "nil")")
-        print("       show21TweaksPref \(UserDefaults.standard.object(forKey: SettingsKeys.show21TweaksPref) ?? "nil")")
-        print("     hasSeenFirstLaunch \(UserDefaults.standard.object(forKey: SettingsKeys.hasSeenFirstLaunch) ?? "nil")")
+        print(str)
+        #endif
+        
+        let alert = UIAlertController(title: "", message: str, preferredStyle: .actionSheet)
+        let okAction = UIAlertAction(title: Strings.utilityConfirmOK, style: .default, handler: nil)
+        alert.addAction(okAction)
+        present(alert, animated: true, completion: nil)
     }
     
-    @IBAction func doUtlityTestClearAllDataBtn(_ sender: UIButton) {
-        doUtlityTestClearAllData()
+    @IBAction func doUtilityTestClearHistoryBtn(_ sender: UIButton) {
+        let alert = UIAlertController(title: "", message: Strings.utilityTestHistoryClearMsg, preferredStyle: .actionSheet)
+        let cancelAction = UIAlertAction(title: Strings.utilityConfirmCancel, style: .cancel, handler: nil)
+        alert.addAction(cancelAction)
+        let clearAction = UIAlertAction(title: Strings.utilityConfirmClear, style: .destructive) { (_: UIAlertAction) -> Void in
+            self.doUtilityTestClearHistory()
+        }
+        alert.addAction(clearAction)
+        present(alert, animated: true, completion: nil)
     }
     
-    func doUtlityTestClearAllData() {
+    func doUtilityTestClearHistory() {
         print("\ndoUtlityTestClearAllData started ...")
         let realmMngrOld = RealmManagerLegacy(workingDirUrl: documentsUrl)
         let realmDbOld = realmMngrOld.realmDb
@@ -135,31 +187,31 @@ class UtilityTableViewController: UITableViewController {
         let realmMngrNew = RealmManager(workingDirUrl: documentsUrl)
         let realmDbNew = realmMngrNew.realmDb
         realmDbNew.deleteAll()
-        print("... doUtlityTestClearAllData completed\n")
+        print("... doUtilityTestClearHistory completed\n")
     }
     
     /// Note: When writing a large number of data entries AND the database is open 
     /// in the Realm browser is open, then some value(s) may not be written.  
     /// Do not have the Realm browser open when writing data in simulator to
     /// avoid this is situation. The root cause of this issue is unknown.
-    @IBAction func doUtilityTestCreateDataBtn(_ sender: UIButton) {
+    @IBAction func doUtilityTestGenerateHistoryBtn(_ sender: UIButton) {
         // half month
-        doUtilityTestCreateData(numberOfDays: 15)
+        doUtilityTestGenerateHistory(numberOfDays: 15)
         
         // ~1 month
-        //doUtilityTestCreateData(numberOfDays: 30)
+        //doUtilityTestGenerateHistory(numberOfDays: 30)
         
         // ~10 months
-        //doUtilityTestCreateData(numberOfDays: 300)
+        //doUtilityTestGenerateHistory(numberOfDays: 300)
 
         // ~2.7 years or ~33 months (1000 days, 2000 weight entries)
-        //doUtilityTestCreateData(numberOfDays: 1000)
+        //doUtilityTestGenerateHistory(numberOfDays: 1000)
         
         // 3 years (1095 days, 2190 weight entries)
-        //doUtilityTestCreateData(numberOfDays: 365*3)
+        //doUtilityTestGenerateHistory(numberOfDays: 365*3)
     }
     
-    func doUtilityTestCreateData(numberOfDays: Int) {
+    func doUtilityTestGenerateHistory(numberOfDays: Int) {
         print("\ndoUtilityTestCreateData started ...")
         let realmMngrCheck = RealmManager(workingDirUrl: documentsUrl)
         let realmDbCheck = realmMngrCheck.realmDb
@@ -212,14 +264,14 @@ class UtilityTableViewController: UITableViewController {
                 print("\(date) [AM] \(dateAm) \(weightAmStr) [PM] \(datePm) \(weightPmStr)")
             }
         }
-        print("... doUtilityTestCreateData completed\n")
+        print("... doUtilityTestGenerateHistory completed\n")
     }
     
-    @IBAction func doUtilityTestCreateLegacyBtn(_ sender: UIButton) {
-        doUtilityTestCreateLegacy()
+    @IBAction func doUtilityTestGenerateLegacyBtn(_ sender: UIButton) {
+        doUtilityTestGenerateLegacy()
     }
     
-    func doUtilityTestCreateLegacy() {
+    func doUtilityTestGenerateLegacy() {
         let realmMngrOldCheck = RealmManagerLegacy(workingDirUrl: documentsUrl)
         let realmDbOldCheck = realmMngrOldCheck.realmDb
         // World Pasta Day: Oct 25, 1995
@@ -229,9 +281,37 @@ class UtilityTableViewController: UITableViewController {
         realmDbOldCheck.saveStatesLegacy([true, false, true], id: dozeCheck.items[0].id) // Beans
         realmDbOldCheck.saveStatesLegacy([false, true, false], id: dozeCheck.items[2].id) // Other Fruit
     }
+
+    // MARK: - UI
     
-    @IBAction func doUtilityTestPrintDefaultsBtn(_ sender: UIButton) {
-        doUtilitySettingsPrint()
+    private struct Strings { // :NYI:LOCALIZE: localize utility strings
+        static let utilityConfirmCancel = "Cancel"
+        static let utilityConfirmClear = "Clear"
+        static let utilityConfirmOK = "OK"
+        static let utilityDbExportMsg = "Exported file named "
+        static let utilitySettingsClearMsg = "Clear (erase) all settings?\n\nThis cannot be undone."
+        static let utilityTestHistoryClearMsg = "Export the history data to create an importable backup file before clearing the history data. The clear action cannot be undone.\n\nClear (erase) all history data from the database?"
+    }
+        
+    private func alertTwoButton() {
+        let alertController = UIAlertController(title: "Default Style", message: "A standard alert.", preferredStyle: .alert)
+
+        let cancelAction = UIAlertAction(title: "Cancel", style: .cancel) { (action: UIAlertAction) -> Void in
+            print(":DEBUG: \(action)")            
+        }
+        alertController.addAction(cancelAction)
+
+        let okAction = UIAlertAction(title: "OK", style: .default) { (action: UIAlertAction) -> Void in
+            print(":DEBUG: \(action)")            
+        }
+        alertController.addAction(okAction)
+
+        let destroyAction = UIAlertAction(title: "Destroy", style: .destructive) { (action: UIAlertAction) -> Void in
+            print(":DEBUG: \(action)")            
+        }
+        alertController.addAction(destroyAction)
+        
+        self.present(alertController, animated: true, completion: nil) // (() -> Void)?
     }
     
     /*

@@ -33,8 +33,8 @@ class TweakDetailBuilder {
 class TweakDetailViewController: UIViewController {
     
     // MARK: - Nested
-    private struct Keys {
-        static let videos = "VIDEOS"
+    private struct Strings {
+        static let videos = "VIDEOS" // :NYI:NSLocalizedString:
     }
     
     // MARK: - Outlets
@@ -59,7 +59,7 @@ class TweakDetailViewController: UIViewController {
             if dataCountType.typeKey.prefix(4) == "doze" {
                 // TweakDetailViewController VIDEOS
                 navigationItem.rightBarButtonItem = UIBarButtonItem(
-                    title: Keys.videos,
+                    title: Strings.videos,
                     style: .done,
                     target: self,
                     action: #selector(barItemPressed)
