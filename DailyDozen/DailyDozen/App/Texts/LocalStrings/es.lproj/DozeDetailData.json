@@ -1,0 +1,1130 @@
+{
+  "itemsDict" : {
+    "dozeBeans" : {
+      "heading" : "Frijoles",
+      "servings" : [
+        {
+          "imperial" : "¼ taza de hummus o dip de frijol",
+          "metric" : "60 g de hummus o dip de frijol"
+        },
+        {
+          "imperial" : "½ taza de frijoles cocidos, arvejas partidas, lentejas, tofu o tempeh",
+          "metric" : "130 g de frijoles cocidos, arvejas partidas, lentejas, tofu o tempeh"
+        },
+        {
+          "imperial" : "1 taza de guisantes frescos o retoños de lentejas",
+          "metric" : "150 g de guisantes frescos o retoños de lentejas"
+        }
+      ],
+      "topic" : "es/topics/legumbres-es",
+      "varieties" : [
+        {
+          "text" : "Frijoles negros",
+          "topic" : "es/topics/frijoles-negros"
+        },
+        {
+          "text" : "Frijoles de ojo negro",
+          "topic" : ""
+        },
+        {
+          "text" : "Frijoles de mantequilla",
+          "topic" : ""
+        },
+        {
+          "text" : "Frijoles cannellini",
+          "topic" : ""
+        },
+        {
+          "text" : "Garbanzos",
+          "topic" : "es/topics/garbanzos"
+        },
+        {
+          "text" : "Edamame",
+          "topic" : "es/topics/edamame"
+        },
+        {
+          "text" : "Guisante Ingles",
+          "topic" : ""
+        },
+        {
+          "text" : "Frijoles garbanzos",
+          "topic" : "es/topics/garbanzo"
+        },
+        {
+          "text" : "Frijoles grandes del norte",
+          "topic" : ""
+        },
+        {
+          "text" : "Frijoles",
+          "topic" : "es/topics/frijoles-rojos"
+        },
+        {
+          "text" : "Lentejas (beluga, Francesa, y de variedades rojas)",
+          "topic" : "/es/topics/lentejas"
+        },
+        {
+          "text" : "Miso",
+          "topic" : "es/topics/miso-es"
+        },
+        {
+          "text" : "Frijoles blancos",
+          "topic" : "es/topics/frijoles-blancos"
+        },
+        {
+          "text" : "Frijoles pintos",
+          "topic" : "es/topics/frijoles-pintos"
+        },
+        {
+          "text" : "Frijoles rojos pequeños",
+          "topic" : ""
+        },
+        {
+          "text" : "Guisantes partidos (amarillos o verdes)",
+          "topic" : "es/topics/guisantes-partidos"
+        },
+        {
+          "text" : "Tempeh",
+          "topic" : "es/topics/tempeh-es"
+        }
+      ]
+    },
+    "dozeBerries" : {
+      "heading" : "Bayas",
+      "servings" : [
+        {
+          "imperial" : "½ taza frescos o congelados",
+          "metric" : "60 g frescos o congelados"
+        },
+        {
+          "imperial" : "¼ taza secos",
+          "metric" : "40 g secos"
+        }
+      ],
+      "topic" : "es/topics/bayas-es",
+      "varieties" : [
+        {
+          "text" : "Bayas de Acai",
+          "topic" : "/es/topics/bayas-de-acai-es"
+        },
+        {
+          "text" : "Agracejos",
+          "topic" : "es/topics/berberos-es"
+        },
+        {
+          "text" : "Moras",
+          "topic" : "es/topics/moras"
+        },
+        {
+          "text" : "Arándanos azules",
+          "topic" : "es/topics/arandanos-azules"
+        },
+        {
+          "text" : "Cerezas (dulces o acidas)",
+          "topic" : "es/topics/cerezas"
+        },
+        {
+          "text" : "Uvas concord",
+          "topic" : "es/topics/uvas-de-concordia-es"
+        },
+        {
+          "text" : "Arándanos agrios",
+          "topic" : "es/topics/arandanos-es"
+        },
+        {
+          "text" : "Bayas Goji",
+          "topic" : "es/topics/goji"
+        },
+        {
+          "text" : "Kumquats",
+          "topic" : ""
+        },
+        {
+          "text" : "Moras mulberry",
+          "topic" : ""
+        },
+        {
+          "text" : "Frambuesas (negras o rojas)",
+          "topic" : "es/topics/frambuesas"
+        },
+        {
+          "text" : "Fresas",
+          "topic" : "es/topics/fresas"
+        }
+      ]
+    },
+    "dozeBeverages" : {
+      "heading" : "Bebidas",
+      "servings" : [
+        {
+          "imperial" : "Un vaso (12 onzas)",
+          "metric" : "Un vaso (350 ml)"
+        }
+      ],
+      "topic" : "es/topics/bebidas",
+      "varieties" : [
+        {
+          "text" : "Té negro",
+          "topic" : "es/topics/te-negro"
+        },
+        {
+          "text" : "Té Chai",
+          "topic" : "es/topics/te-chai"
+        },
+        {
+          "text" : "Té de vainilla y manzanilla",
+          "topic" : "es/topics/te-de-manzanilla"
+        },
+        {
+          "text" : "Café",
+          "topic" : "es/topics/cafe"
+        },
+        {
+          "text" : "Té Earl Grey",
+          "topic" : "es/topics/te-earl-grey-es"
+        },
+        {
+          "text" : "Té verde",
+          "topic" : "es/topics/te-verde"
+        },
+        {
+          "text" : "Té de hibisco",
+          "topic" : "es/topics/hibiscus-tea-es"
+        },
+        {
+          "text" : "Chocolate caliente",
+          "topic" : ""
+        },
+        {
+          "text" : "Té de jasmín",
+          "topic" : "es/topics/te-de-jasmin"
+        },
+        {
+          "text" : "Té de limón",
+          "topic" : ""
+        },
+        {
+          "text" : "Té de matcha",
+          "topic" : "es/topics/matcha-es"
+        },
+        {
+          "text" : "Té de retoño de almendra oolong",
+          "topic" : "es/topics/te-oolong-es"
+        },
+        {
+          "text" : "Té de menta",
+          "topic" : ""
+        },
+        {
+          "text" : "Té de rooibos",
+          "topic" : "es/topics/te-rooibos-es"
+        },
+        {
+          "text" : "Agua",
+          "topic" : "es/topics/agua"
+        },
+        {
+          "text" : "Té blanco",
+          "topic" : "es/topics/te-blanco"
+        }
+      ]
+    },
+    "dozeExercise" : {
+      "heading" : "Ejercicio",
+      "servings" : [
+        {
+          "imperial" : "90 minutos de actividad de moderada intensidad",
+          "metric" : "90 minutos de actividad de moderada intensidad"
+        },
+        {
+          "imperial" : "40 minutos de actividad de vigorosa intensidad",
+          "metric" : "40 minutos de actividad de vigorosa intensidad"
+        }
+      ],
+      "topic" : "es/topics/ejercicio",
+      "varieties" : [
+        {
+          "text" : "Bicicleta",
+          "topic" : ""
+        },
+        {
+          "text" : "Canoa",
+          "topic" : ""
+        },
+        {
+          "text" : "Baile",
+          "topic" : ""
+        },
+        {
+          "text" : "Quemado\/Dodgeball",
+          "topic" : ""
+        },
+        {
+          "text" : "Esquí en descenso",
+          "topic" : ""
+        },
+        {
+          "text" : "Esgrima",
+          "topic" : ""
+        },
+        {
+          "text" : "Senderismo",
+          "topic" : ""
+        },
+        {
+          "text" : "Quehaceres domésticos",
+          "topic" : ""
+        },
+        {
+          "text" : "Patinaje en hielo",
+          "topic" : ""
+        },
+        {
+          "text" : "Patinaje en línea",
+          "topic" : ""
+        },
+        {
+          "text" : "Malabarismos",
+          "topic" : ""
+        },
+        {
+          "text" : "Saltar en trampolín",
+          "topic" : ""
+        },
+        {
+          "text" : "Remos",
+          "topic" : ""
+        },
+        {
+          "text" : "Jugar frisbee",
+          "topic" : ""
+        },
+        {
+          "text" : "Patinaje",
+          "topic" : ""
+        },
+        {
+          "text" : "Tirar canastas",
+          "topic" : ""
+        },
+        {
+          "text" : "Palear nieve ligera",
+          "topic" : ""
+        },
+        {
+          "text" : "Patineta",
+          "topic" : ""
+        },
+        {
+          "text" : "Snorkeling",
+          "topic" : ""
+        },
+        {
+          "text" : "Surfear",
+          "topic" : ""
+        },
+        {
+          "text" : "Nadar recreacionalmente",
+          "topic" : ""
+        },
+        {
+          "text" : "Tennis (dobles)",
+          "topic" : ""
+        },
+        {
+          "text" : "Mantenerse a flote",
+          "topic" : ""
+        },
+        {
+          "text" : "Caminata rápida (4 mph)",
+          "topic" : ""
+        },
+        {
+          "text" : "Aerobicos acuáticos",
+          "topic" : ""
+        },
+        {
+          "text" : "Esquí en agua",
+          "topic" : ""
+        },
+        {
+          "text" : "Jardinear",
+          "topic" : ""
+        },
+        {
+          "text" : "Yoga",
+          "topic" : ""
+        },
+        {
+          "text" : "Mochilear",
+          "topic" : ""
+        },
+        {
+          "text" : "Baloncesto",
+          "topic" : ""
+        },
+        {
+          "text" : "Bicicleta cuesta arriba",
+          "topic" : ""
+        },
+        {
+          "text" : "Circuito de entrenamiento con pesas",
+          "topic" : ""
+        },
+        {
+          "text" : "Esquí a campo traviesa",
+          "topic" : ""
+        },
+        {
+          "text" : "Football americano",
+          "topic" : ""
+        },
+        {
+          "text" : "Hockey",
+          "topic" : ""
+        },
+        {
+          "text" : "Trotar",
+          "topic" : ""
+        },
+        {
+          "text" : "Saltos de tijera",
+          "topic" : ""
+        },
+        {
+          "text" : "Salta cuerda",
+          "topic" : ""
+        },
+        {
+          "text" : "Lacrosse",
+          "topic" : ""
+        },
+        {
+          "text" : "Lagartijas",
+          "topic" : ""
+        },
+        {
+          "text" : "Dominadas",
+          "topic" : ""
+        },
+        {
+          "text" : "Racquetball",
+          "topic" : ""
+        },
+        {
+          "text" : "Escalar",
+          "topic" : ""
+        },
+        {
+          "text" : "Rugby",
+          "topic" : ""
+        },
+        {
+          "text" : "Correr",
+          "topic" : ""
+        },
+        {
+          "text" : "Buceo",
+          "topic" : ""
+        },
+        {
+          "text" : "Tennis (sencillos)",
+          "topic" : ""
+        },
+        {
+          "text" : "Fútbol",
+          "topic" : ""
+        },
+        {
+          "text" : "Patinaje de velocidad",
+          "topic" : ""
+        },
+        {
+          "text" : "Squash",
+          "topic" : ""
+        },
+        {
+          "text" : "Aerobicos step",
+          "topic" : ""
+        },
+        {
+          "text" : "Natación",
+          "topic" : ""
+        },
+        {
+          "text" : "Caminata rápida cuesta arriba",
+          "topic" : ""
+        },
+        {
+          "text" : "Trotar en agua",
+          "topic" : ""
+        }
+      ]
+    },
+    "dozeFlaxseeds" : {
+      "heading" : "Linaza",
+      "servings" : [
+        {
+          "imperial" : "1 cucharada molida",
+          "metric" : "1 cucharada molida"
+        }
+      ],
+      "topic" : "es/topics/semillas-de-linaza",
+      "varieties" : [
+        {
+          "text" : "Linaza café",
+          "topic" : ""
+        },
+        {
+          "text" : "Linaza dorada",
+          "topic" : ""
+        }
+      ]
+    },
+    "dozeFruitsOther" : {
+      "heading" : "Otras frutas",
+      "servings" : [
+        {
+          "imperial" : "1 fruta de tamaño medio",
+          "metric" : "1 fruta de tamaño medio"
+        },
+        {
+          "imperial" : "1 taza de fruta partida",
+          "metric" : "120 g de fruta partida"
+        },
+        {
+          "imperial" : "¼ taza de fruta seca",
+          "metric" : "40 g de fruta seca"
+        }
+      ],
+      "topic" : "",
+      "varieties" : [
+        {
+          "text" : "Manzanas",
+          "topic" : "es/topics/manzanas"
+        },
+        {
+          "text" : "Albaricoques",
+          "topic" : "es/topics/albaricoques"
+        },
+        {
+          "text" : "Aguacates",
+          "topic" : "es/topics/aguacates"
+        },
+        {
+          "text" : "Bananos",
+          "topic" : "es/topics/bananos"
+        },
+        {
+          "text" : "Melones naranja",
+          "topic" : "es/topics/melon"
+        },
+        {
+          "text" : "Clementinas",
+          "topic" : ""
+        },
+        {
+          "text" : "Dátiles",
+          "topic" : "es/topics/datiles"
+        },
+        {
+          "text" : "Higos",
+          "topic" : "es/topics/higos"
+        },
+        {
+          "text" : "Toronja",
+          "topic" : "es/topics/toronja"
+        },
+        {
+          "text" : "Melones verdes",
+          "topic" : ""
+        },
+        {
+          "text" : "Kiwis",
+          "topic" : "es/topics/kiwi"
+        },
+        {
+          "text" : "Limones amarillos",
+          "topic" : "topics/lemons"
+        },
+        {
+          "text" : "Limones verdes",
+          "topic" : "es/topics/limas"
+        },
+        {
+          "text" : "Lychees",
+          "topic" : ""
+        },
+        {
+          "text" : "Mangos",
+          "topic" : "es/topics/mango-es"
+        },
+        {
+          "text" : "Nectarinas",
+          "topic" : ""
+        },
+        {
+          "text" : "Naranjas",
+          "topic" : "es/topics/naranjas"
+        },
+        {
+          "text" : "Papaya",
+          "topic" : "es/topics/papaya-es"
+        },
+        {
+          "text" : "Maracuyá",
+          "topic" : ""
+        },
+        {
+          "text" : "Duraznos",
+          "topic" : "es/topics/duraznos-es"
+        },
+        {
+          "text" : "Peras",
+          "topic" : "es/topics/peras-es"
+        },
+        {
+          "text" : "Piña",
+          "topic" : "/es/topics/pinas"
+        },
+        {
+          "text" : "Ciruelas (en especial ciruelas negras)",
+          "topic" : "es/topics/ciruelas"
+        },
+        {
+          "text" : "Pluots",
+          "topic" : ""
+        },
+        {
+          "text" : "Granadas",
+          "topic" : "es/topics/granadas"
+        },
+        {
+          "text" : "Ciruelas pasas",
+          "topic" : "es/topics/ciruelas-pasas"
+        },
+        {
+          "text" : "Mandarinas",
+          "topic" : ""
+        },
+        {
+          "text" : "Sandía",
+          "topic" : "es/topics/sandia"
+        }
+      ]
+    },
+    "dozeGreens" : {
+      "heading" : "Vegetales de hoja verde",
+      "servings" : [
+        {
+          "imperial" : "1 taza cruda",
+          "metric" : "60 g cruda"
+        },
+        {
+          "imperial" : "½ taza cocida",
+          "metric" : "90 g cocida"
+        }
+      ],
+      "topic" : "es/topics/verduras",
+      "varieties" : [
+        {
+          "text" : "Arugula",
+          "topic" : ""
+        },
+        {
+          "text" : "Hojas de remolacha",
+          "topic" : "es/topics/hojas-de-remolacha-es"
+        },
+        {
+          "text" : "Berza",
+          "topic" : ""
+        },
+        {
+          "text" : "Col rizada (negra, verde, y roja)",
+          "topic" : "es/topics/col-rizada-es"
+        },
+        {
+          "text" : "Mezcla Mesclun (hojas tiernas verdes variadas)",
+          "topic" : "es/topics/ensalada-mesclun-es"
+        },
+        {
+          "text" : "Hojas de mostaza",
+          "topic" : "es/topics/hojas-de-mostaza"
+        },
+        {
+          "text" : "Alazán",
+          "topic" : ""
+        },
+        {
+          "text" : "Espinaca",
+          "topic" : "es/topics/espinaca"
+        },
+        {
+          "text" : "Acelga",
+          "topic" : "es/topics/acelga-es"
+        },
+        {
+          "text" : "Nabos verdes",
+          "topic" : "es/topics/nabos"
+        }
+      ]
+    },
+    "dozeNuts" : {
+      "heading" : "Nueces",
+      "servings" : [
+        {
+          "imperial" : "¼ taza de nueces o semillas",
+          "metric" : "30 g de nueces o semillas"
+        },
+        {
+          "imperial" : "2 cucharadas de mantequilla de nueces o semillas",
+          "metric" : "2 cucharadas de mantequilla de nueces o semillas"
+        }
+      ],
+      "topic" : "es/topics/nueces",
+      "varieties" : [
+        {
+          "text" : "Almendras",
+          "topic" : "es/topics/almendras"
+        },
+        {
+          "text" : "Nueces de Brasil",
+          "topic" : "es/topics/nueces-de-brasil-es"
+        },
+        {
+          "text" : "Marañones",
+          "topic" : "es/topics/anacardos"
+        },
+        {
+          "text" : "Semillas de chia",
+          "topic" : "es/topics/semillas-de-chia"
+        },
+        {
+          "text" : "Avellanas",
+          "topic" : "es/topics/avellanas-es"
+        },
+        {
+          "text" : "Semillas de Cáñamo",
+          "topic" : ""
+        },
+        {
+          "text" : "Nueces de macadamia",
+          "topic" : "es/topics/nueces-de-macadamia"
+        },
+        {
+          "text" : "Nueces pecanas",
+          "topic" : "es/topics/nuez-pecana"
+        },
+        {
+          "text" : "Pistachos",
+          "topic" : "es/topics/pistachos"
+        },
+        {
+          "text" : "Semillas de calabaza",
+          "topic" : "es/topics/semillas-de-calabaza"
+        },
+        {
+          "text" : "Semillas de ajonjolí",
+          "topic" : "es/topics/ajonjoli"
+        },
+        {
+          "text" : "Semillas de girasol",
+          "topic" : "es/topics/semillas-de-girasol"
+        },
+        {
+          "text" : "Nueces",
+          "topic" : "es/topics/nueces-es"
+        }
+      ]
+    },
+    "dozeSpices" : {
+      "heading" : "Especias",
+      "servings" : [
+        {
+          "imperial" : "¼ cucharadita de cúrcuma",
+          "metric" : "¼ cucharadita de cúrcuma"
+        },
+        {
+          "imperial" : "Cualquier otra especie (sin sal) que gustes",
+          "metric" : "Cualquier otra especie (sin sal) que gustes"
+        }
+      ],
+      "topic" : "es/topics/especias",
+      "varieties" : [
+        {
+          "text" : "Pimienta de Jamaica\/Inglesa",
+          "topic" : ""
+        },
+        {
+          "text" : "Bérberos",
+          "topic" : "es/topics/berberos-es"
+        },
+        {
+          "text" : "Albahaca",
+          "topic" : "es/topics/albahaca"
+        },
+        {
+          "text" : "Hojas de laurel",
+          "topic" : ""
+        },
+        {
+          "text" : "Cardamomo",
+          "topic" : "es/topics/cardamomo"
+        },
+        {
+          "text" : "Chile en polvo",
+          "topic" : ""
+        },
+        {
+          "text" : "Cilantro",
+          "topic" : "es/topics/cilantro-es"
+        },
+        {
+          "text" : "Canela",
+          "topic" : "es/topics/canela"
+        },
+        {
+          "text" : "Clavos",
+          "topic" : "es/topics/clavos-de-olor"
+        },
+        {
+          "text" : "Cilantro",
+          "topic" : "es/topics/cilantro-es-2"
+        },
+        {
+          "text" : "Comino",
+          "topic" : "es/topics/comino"
+        },
+        {
+          "text" : "Polvo de curry",
+          "topic" : "es/topics/curry-en-polvo"
+        },
+        {
+          "text" : "Eneldo",
+          "topic" : ""
+        },
+        {
+          "text" : "Fenogreco",
+          "topic" : "es/topics/fenogreco"
+        },
+        {
+          "text" : "Ajo",
+          "topic" : "es/topics/ajo"
+        },
+        {
+          "text" : "Jengibre",
+          "topic" : "es/topics/jengibre"
+        },
+        {
+          "text" : "Rábano picante",
+          "topic" : ""
+        },
+        {
+          "text" : "Limoncillo",
+          "topic" : "es/topics/limoncillo-es"
+        },
+        {
+          "text" : "Mejorana",
+          "topic" : "es/topics/mejorana"
+        },
+        {
+          "text" : "Polvo de mostaza",
+          "topic" : "es/topics/mostaza-en-polvo"
+        },
+        {
+          "text" : "Nuez moscada",
+          "topic" : "es/topics/nuez-moscada"
+        },
+        {
+          "text" : "Oregano",
+          "topic" : "es/topics/oregano-es"
+        },
+        {
+          "text" : "Papríka ahumada",
+          "topic" : ""
+        },
+        {
+          "text" : "Perejil",
+          "topic" : "es/topics/perejil"
+        },
+        {
+          "text" : "Pimienta",
+          "topic" : "es/topics/pimienta"
+        },
+        {
+          "text" : "Menta",
+          "topic" : "es/topics/menta-es"
+        },
+        {
+          "text" : "Romero",
+          "topic" : "es/topics/romero"
+        },
+        {
+          "text" : "Azafrán",
+          "topic" : "es/topics/azafran"
+        },
+        {
+          "text" : "Salvia",
+          "topic" : ""
+        },
+        {
+          "text" : "Tomillo",
+          "topic" : "es/topics/tomillo"
+        },
+        {
+          "text" : "Cúrcuma",
+          "topic" : "es/topics/curcuma"
+        },
+        {
+          "text" : "Vainilla",
+          "topic" : ""
+        }
+      ]
+    },
+    "dozeVegetablesCruciferous" : {
+      "heading" : "Vegetales crucíferos",
+      "servings" : [
+        {
+          "imperial" : "½ taza picado",
+          "metric" : "30–80 g picado"
+        },
+        {
+          "imperial" : "¼ taza de coles de Bruselas o retoños de brócoli",
+          "metric" : "12 g de coles de Bruselas o retoños de brócoli"
+        },
+        {
+          "imperial" : "1 cucharada de rábano picante",
+          "metric" : "1 cucharada de rábano picante"
+        }
+      ],
+      "topic" : "",
+      "varieties" : [
+        {
+          "text" : "Arugula",
+          "topic" : ""
+        },
+        {
+          "text" : "Bok choy",
+          "topic" : "es/topics/bok-choy-es"
+        },
+        {
+          "text" : "Brócoli (Romanesco)",
+          "topic" : "es/topics/brocoli"
+        },
+        {
+          "text" : "Repollos de Bruselas",
+          "topic" : "es/topics/coles-bruselas"
+        },
+        {
+          "text" : "Repollo (verde, rojo, de Saboya)",
+          "topic" : "es/topics/repollo"
+        },
+        {
+          "text" : "Coliflor (blanco, verde, naranja, morado)",
+          "topic" : "es/topics/coliflor"
+        },
+        {
+          "text" : "Berza",
+          "topic" : "es/topics/acelgas-es"
+        },
+        {
+          "text" : "Rábano picante",
+          "topic" : ""
+        },
+        {
+          "text" : "Col rizada (negra, verde, y roja)",
+          "topic" : "es/topics/col-rizada-es"
+        },
+        {
+          "text" : "Colinabo (verde, morado)",
+          "topic" : "es/topics/colinabo"
+        },
+        {
+          "text" : "Hojas de mostaza",
+          "topic" : "es/topics/hojas-de-mostaza"
+        },
+        {
+          "text" : "Rábanos",
+          "topic" : "es/topics/rabanos"
+        },
+        {
+          "text" : "Nabos verdes",
+          "topic" : "es/topics/nabos"
+        },
+        {
+          "text" : "Berro",
+          "topic" : "es/topics/berros-es"
+        }
+      ]
+    },
+    "dozeVegetablesOther" : {
+      "heading" : "Otros vegetales",
+      "servings" : [
+        {
+          "imperial" : "1 taza de vegetales de hoja cruda",
+          "metric" : "60 g de vegetales de hoja cruda"
+        },
+        {
+          "imperial" : "½ taza de vegetales sin hoja cruda o cocida",
+          "metric" : "50 g de vegetales sin hoja cruda o cocida"
+        },
+        {
+          "imperial" : "½ taza de jugo de vegetales",
+          "metric" : "125 ml de jugo de vegetales"
+        },
+        {
+          "imperial" : "¼ taza de champiñones secos",
+          "metric" : "7 g de champiñones secos"
+        }
+      ],
+      "topic" : "",
+      "varieties" : [
+        {
+          "text" : "Alcachofas",
+          "topic" : "es/topics/alcachofas"
+        },
+        {
+          "text" : "Espárragos",
+          "topic" : "es/topics/esparragos"
+        },
+        {
+          "text" : "Remolachas",
+          "topic" : "es/topics/remolachas-es"
+        },
+        {
+          "text" : "Pimiento morrón",
+          "topic" : "es/topics/pimientos"
+        },
+        {
+          "text" : "Zanahorias",
+          "topic" : "es/topics/zanahorias"
+        },
+        {
+          "text" : "Maíz",
+          "topic" : "es/topics/maiz"
+        },
+        {
+          "text" : "Ajo",
+          "topic" : "es/topics/ajo"
+        },
+        {
+          "text" : "Champiñones (botón, ostra, portobello, y shiitake)",
+          "topic" : "es/topics/champinones"
+        },
+        {
+          "text" : "Okra",
+          "topic" : "es/topics/okra-es"
+        },
+        {
+          "text" : "Cebollas",
+          "topic" : "es/topics/cebollas"
+        },
+        {
+          "text" : "Patatas moradas",
+          "topic" : "es/topics/patatas-moradas"
+        },
+        {
+          "text" : "Calabaza",
+          "topic" : "es/topics/calabaza"
+        },
+        {
+          "text" : "Vegetales marinos (arame, dulse, y nori)",
+          "topic" : "es/topics/vegetales-marinos"
+        },
+        {
+          "text" : "Guisantes",
+          "topic" : ""
+        },
+        {
+          "text" : "Calabacines (variedades de delicata, verano, y spaghetti)",
+          "topic" : "es/topics/calabaza-es"
+        },
+        {
+          "text" : "Camotes",
+          "topic" : "es/topics/camotes"
+        },
+        {
+          "text" : "Tomates",
+          "topic" : "es/topics/tomates"
+        },
+        {
+          "text" : "Calabacitas zuchini",
+          "topic" : "es/topics/calabacin-es"
+        }
+      ]
+    },
+    "dozeWholeGrains" : {
+      "heading" : "Granos integrales",
+      "servings" : [
+        {
+          "imperial" : "½ taza de cereal caliente o granos, pasta o granos de maíz cocidos",
+          "metric" : "100 g de cereal caliente o granos, pasta o granos de maíz cocidos"
+        },
+        {
+          "imperial" : "1 taza de cereal frío",
+          "metric" : "50 g de cereal frío"
+        },
+        {
+          "imperial" : "1 tortilla o rodaja de pan",
+          "metric" : "1 tortilla o rodaja de pan"
+        },
+        {
+          "imperial" : "½ de un bagel o english muffin",
+          "metric" : "½ de un bagel o english muffin"
+        },
+        {
+          "imperial" : "3 tazas de palomitas de maíz reventadas",
+          "metric" : "30 g de palomitas de maíz reventadas"
+        }
+      ],
+      "topic" : "es/topics/granos",
+      "varieties" : [
+        {
+          "text" : "Cebada",
+          "topic" : "es/topics/cebada"
+        },
+        {
+          "text" : "Alforfón",
+          "topic" : "es/topics/trigo-sarraceno"
+        },
+        {
+          "text" : "Mijo",
+          "topic" : "es/topics/mijo"
+        },
+        {
+          "text" : "Avena",
+          "topic" : "es/topics/avena-es"
+        },
+        {
+          "text" : "Palomitas de maíz",
+          "topic" : "es/topics/palomitas-de-maiz"
+        },
+        {
+          "text" : "Quinoa",
+          "topic" : "es/topics/quinoa-es"
+        },
+        {
+          "text" : "Centeno",
+          "topic" : "es/topics/centeno"
+        },
+        {
+          "text" : "Teff",
+          "topic" : "es/topics/teff-es"
+        },
+        {
+          "text" : "Pasta integral",
+          "topic" : "es/topics/pasta-es"
+        }
+      ]
+    },
+    "otherVitaminB12" : {
+      "heading" : "Vitamina B12",
+      "servings" : [
+
+      ],
+      "topic" : "es/topics/vitamin-b12",
+      "varieties" : [
+
+      ]
+    }
+  }
+}

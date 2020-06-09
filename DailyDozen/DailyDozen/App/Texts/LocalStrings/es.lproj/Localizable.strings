@@ -1,0 +1,162 @@
+
+
+/* Daily Dozen (proper noun) navigation tab */
+"navtab.doze"="Docena Diaria";
+/* 21 Tweaks (proper noun) navigation tab */
+"navtab.tweaks"="21 Ajustes";
+/* More Information navigation tab */
+"navtab.info"="Información";
+/* Preferences (aka Settings, Configuration) navigation tab. Choose word different from 'Tweaks' translation */
+"navtab.preferences"="Configuración";
+
+/* Records: Daily Tally */
+"historyRecord.movingMean"="Media móvil";
+"historyRecordDoze.heading"="Historial de porciones";
+"historyRecordDoze.legend"="Porciones";
+"historyRecordTweak.heading"="Historial de ajustes";
+"historyRecordTweak.legend"="Ajustes";
+"historyRecordWeight.heading"="Historial de peso";
+"historyRecordWeight.titleImperial"="Peso (libras)";
+"historyRecordWeight.titleMetric"="Peso (kg)";
+"historyRecordWeight.legendMorning"="La mañana";
+"historyRecordWeight.legendEvening"="La tarde";
+
+/* URL path */
+"urlSegment.base"="https://nutritionfacts.org/";
+"urlSegment.lang"="es/";
+
+"urlSegmentInfoMenu.videos"="es/videos";
+"urlSegmentInfoMenu.book"="es/comer-para-no-morir";
+"urlSegmentInfoMenu.cookbook"="es/libro-de-recetas";
+"urlSegmentInfoMenu.diet"="es/";
+"urlSegmentInfoMenu.challenge"="es/objetivo-la-docena-diaria";
+"urlSegmentInfoMenu.donate"="es/dona-a-nutritionfacts-org";
+"urlSegmentInfoMenu.subscribe"="es/suscribete";
+"urlSegmentInfoMenu.source"="es/open-source";
+
+"urlSegmentInfoMenu.team"="es/equipo";
+
+/* Units toggle button text: metric measurement system */
+"unitToggle.metric"="Métrico";
+/* Units toggle button text: imperial measurement system */
+"unitToggle.imperial"="Imperial";
+
+/* streak days format */
+"streakDaysFormat"="%d días";
+
+/* display heading. */
+"dozeBeans.heading" = "Frijoles";
+
+/* display heading. */
+"dozeBerries.heading" = "Bayas";
+
+/* display heading */
+"dozeBeverages.heading" = "Bebidas";
+
+/* display heading */
+"dozeExercise.heading" = "Ejercicio";
+
+/* display heading */
+"dozeFlaxseeds.heading" = "Linaza";
+
+/* display heading */
+"dozeFruitsOther.heading" = "Otras frutas";
+
+/* display heading */
+"dozeGreens.heading" = "Vegetales de hoja verde";
+
+/* display heading */
+"dozeNuts.heading" = "Nueces";
+
+/* display heading */
+"dozeSpices.heading" = "Especias";
+
+/* display heading */
+"dozeVegetablesCruciferous.heading" = "Vegetales crucíferos";
+
+/* display heading */
+"dozeVegetablesOther.heading" = "Otros vegetales";
+
+/* display heading */
+"dozeWholeGrains.heading" = "Granos integrales";
+
+/* display heading */
+"otherOmega3.heading" = "Omega 3 de origen vegetal";
+
+/* display heading */
+"otherVitaminB12.heading" = "Vitamina B12";
+
+/* display heading */
+"otherVitaminD.heading" = "Vitamina D";
+
+/* doze other info tiltle */
+"dozeOtherInfo.title"="Suplementos";
+/* doze other info message */
+"dozeOtherInfo.message"="La vitamina B12 es esencial para su salud, pero no cuenta para sus porciones diarias.\n\nVitamina B12 se incluye en esta aplicación para proporcionarle una manera fácil de realizar un seguimiento de su ingesta.";
+/* doze other info confirm */
+"dozeOtherInfo.confirm"="OK";
+
+
+/* display heading */
+"tweakCompleteIntentions.heading" = "Complete sus intenciones de implementación";
+
+/* display heading */
+"tweakDailyBlackCumin.heading" = "Comino negro (¼ cucharadita)";
+
+/* display heading */
+"tweakDailyCumin.heading" = "Comino (½ cucharadita con almuerzo y cena)";
+
+/* display heading */
+"tweakDailyDeflourDiet.heading" = "Granos intactos";
+
+/* display heading */
+"tweakDailyFrontLoad.heading" = "Carga frontal tus calorías";
+
+/* display heading */
+"tweakDailyGarlic.heading" = "Ajo en polvo (¼ cucharadita)";
+
+/* display heading */
+"tweakDailyGinger.heading" = "Jengibre molido (1 cucharadita) o pimienta de cayena (½ cucharadita)";
+
+/* display heading */
+"tweakDailyGreenTea.heading" = "Té verde (3 tazas)";
+
+/* display heading */
+"tweakDailyHydrate.heading" = "Mantente hidratado";
+
+/* display heading */
+"tweakDailyNutriYeast.heading" = "Levadura nutricional (2 cucharaditas)";
+
+/* display heading */
+"tweakDailyTimeRestrict.heading" = "Restrinja su tiempo de comer";
+
+/* display heading */
+"tweakExerciseTiming.heading" = "Optimizar el tiempo de ejercicio";
+
+/* display heading */
+"tweakMeal20Minutes.heading" = "Siga la regla de veinte minutos";
+
+/* display heading */
+"tweakMealNegCal.heading" = "Precargar con alimentos de \"calorías negativas\"";
+
+/* display heading */
+"tweakMealUndistracted.heading" = "Disfruta de comidas sin distracciones";
+
+/* display heading */
+"tweakMealVinegar.heading" = "Incorporar vinagre (2 cucharaditas con cada comida)";
+
+/* display heading */
+"tweakMealWater.heading" = "Precargar con agua";
+
+/* display heading */
+"tweakNightlyFast.heading" = "Ayuno después de las 7:00 p.m.";
+
+/* display heading */
+"tweakNightlySleep.heading" = "Dormir lo suficiente";
+
+/* display heading */
+"tweakNightlyTrendelenbrug.heading" = "Experimente con Trendelenburg leve";
+
+/* display heading */
+"tweakWeightTwice.heading" = "Pésate dos veces al día";
+

@@ -1,0 +1,117 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="16097" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="abI-xj-cFt">
+    <device id="retina4_0" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="16087"/>
+        <capability name="Named colors" minToolsVersion="9.0"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--First Launch View Controller-->
+        <scene sceneID="4uu-KM-4DM">
+            <objects>
+                <viewController storyboardIdentifier="FirstLaunchVC" id="abI-xj-cFt" customClass="FirstLaunchViewController" customModule="DailyDozen" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" tag="100" contentMode="scaleToFill" id="Zo1-Ka-4p2">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" spacing="2" translatesAutoresizingMaskIntoConstraints="NO" id="fTu-Az-3VJ">
+                                <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                                <subviews>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="2LJ-TF-t5N" userLabel="Bottom View">
+                                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                                        <subviews>
+                                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="12" translatesAutoresizingMaskIntoConstraints="NO" id="GRO-mm-rLg">
+                                                <rect key="frame" x="49" y="213" width="222.5" height="142"/>
+                                                <subviews>
+                                                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="2" translatesAutoresizingMaskIntoConstraints="NO" id="lnb-zJ-IzP">
+                                                        <rect key="frame" x="0.0" y="0.0" width="222.5" height="55.5"/>
+                                                        <subviews>
+                                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="For Health Alone" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="atR-un-jgX">
+                                                                <rect key="frame" x="0.0" y="0.0" width="222.5" height="21.5"/>
+                                                                <fontDescription key="fontDescription" type="system" pointSize="18"/>
+                                                                <nil key="textColor"/>
+                                                                <nil key="highlightedColor"/>
+                                                            </label>
+                                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ReM-AP-Fpp" customClass="RoundedButton" customModule="DailyDozen" customModuleProvider="target">
+                                                                <rect key="frame" x="0.0" y="23.5" width="222.5" height="32"/>
+                                                                <color key="backgroundColor" name="BrandGreen"/>
+                                                                <fontDescription key="fontDescription" type="system" pointSize="16"/>
+                                                                <state key="normal" title="Daily Dozen Only">
+                                                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                                </state>
+                                                                <userDefinedRuntimeAttributes>
+                                                                    <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                                                        <real key="value" value="10"/>
+                                                                    </userDefinedRuntimeAttribute>
+                                                                </userDefinedRuntimeAttributes>
+                                                                <connections>
+                                                                    <action selector="dailyDozenOnly:" destination="abI-xj-cFt" eventType="touchUpInside" id="2vY-Ms-iJd"/>
+                                                                </connections>
+                                                            </button>
+                                                        </subviews>
+                                                    </stackView>
+                                                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="2" translatesAutoresizingMaskIntoConstraints="NO" id="Pps-nD-1Rl">
+                                                        <rect key="frame" x="0.0" y="67.5" width="222.5" height="74.5"/>
+                                                        <subviews>
+                                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="For Health and Weight Loss" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="OdG-YQ-lT8">
+                                                                <rect key="frame" x="0.0" y="0.0" width="222.5" height="21.5"/>
+                                                                <fontDescription key="fontDescription" type="system" pointSize="18"/>
+                                                                <nil key="textColor"/>
+                                                                <nil key="highlightedColor"/>
+                                                            </label>
+                                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="wordWrap" translatesAutoresizingMaskIntoConstraints="NO" id="Lef-Iw-Ywr" customClass="RoundedButton" customModule="DailyDozen" customModuleProvider="target">
+                                                                <rect key="frame" x="0.0" y="23.5" width="222.5" height="51"/>
+                                                                <color key="backgroundColor" name="BrandGreen"/>
+                                                                <fontDescription key="fontDescription" type="system" pointSize="16"/>
+                                                                <state key="normal">
+                                                                    <string key="title">Daily Dozen +
+21 Tweaks</string>
+                                                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                                </state>
+                                                                <userDefinedRuntimeAttributes>
+                                                                    <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                                                        <real key="value" value="10"/>
+                                                                    </userDefinedRuntimeAttribute>
+                                                                </userDefinedRuntimeAttributes>
+                                                                <connections>
+                                                                    <action selector="dozenPlusTweaks:" destination="abI-xj-cFt" eventType="touchUpInside" id="BIu-rI-Kr3"/>
+                                                                </connections>
+                                                            </button>
+                                                        </subviews>
+                                                    </stackView>
+                                                </subviews>
+                                            </stackView>
+                                        </subviews>
+                                        <constraints>
+                                            <constraint firstItem="GRO-mm-rLg" firstAttribute="centerY" secondItem="2LJ-TF-t5N" secondAttribute="centerY" id="FTB-ly-UHn"/>
+                                            <constraint firstItem="GRO-mm-rLg" firstAttribute="centerX" secondItem="2LJ-TF-t5N" secondAttribute="centerX" id="ydI-Uk-pJS"/>
+                                        </constraints>
+                                    </view>
+                                </subviews>
+                            </stackView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="kPI-XE-mxp" firstAttribute="trailing" secondItem="fTu-Az-3VJ" secondAttribute="trailing" id="7uO-jj-Ulf"/>
+                            <constraint firstItem="fTu-Az-3VJ" firstAttribute="top" secondItem="kPI-XE-mxp" secondAttribute="top" id="cBk-aR-3tM"/>
+                            <constraint firstItem="kPI-XE-mxp" firstAttribute="bottom" secondItem="fTu-Az-3VJ" secondAttribute="bottom" id="kw9-MW-EcZ"/>
+                            <constraint firstItem="fTu-Az-3VJ" firstAttribute="leading" secondItem="kPI-XE-mxp" secondAttribute="leading" id="paB-eS-BjE"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="kPI-XE-mxp"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="eHn-kO-Mdo"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="1cw-ta-l7d" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-589.60000000000002" y="148.87556221889056"/>
+        </scene>
+    </scenes>
+    <resources>
+        <namedColor name="BrandGreen">
+            <color red="0.49799999594688416" green="0.75300002098083496" blue="0.29800000786781311" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+    </resources>
+</document>

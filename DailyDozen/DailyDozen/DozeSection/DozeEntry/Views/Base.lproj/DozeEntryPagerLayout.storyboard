@@ -1,0 +1,179 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="15705" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="0HD-X6-u6e">
+    <device id="retina4_7" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15706"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Doze Entry Pager View Controller-->
+        <scene sceneID="2Lb-y8-Mb3">
+            <objects>
+                <viewController id="0HD-X6-u6e" customClass="DozeEntryPagerViewController" customModule="DailyDozen" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="J3b-u7-bC7">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="center" translatesAutoresizingMaskIntoConstraints="NO" id="BQF-ze-lmn">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="50"/>
+                                <subviews>
+                                    <datePicker hidden="YES" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" datePickerMode="date" translatesAutoresizingMaskIntoConstraints="NO" id="Y2o-Dk-Qso">
+                                        <rect key="frame" x="0.0" y="0.0" width="375" height="50"/>
+                                        <connections>
+                                            <action selector="dateChanged:" destination="0HD-X6-u6e" eventType="valueChanged" id="4IK-tb-0fP"/>
+                                        </connections>
+                                    </datePicker>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="OC8-wt-JgC" customClass="RoundedButton" customModule="DailyDozen" customModuleProvider="target">
+                                        <rect key="frame" x="10" y="5" width="355" height="40"/>
+                                        <color key="backgroundColor" red="0.49803921569999998" green="0.75294117650000003" blue="0.29803921570000003" alpha="1" colorSpace="calibratedRGB"/>
+                                        <fontDescription key="fontDescription" name="Helvetica" family="Helvetica" pointSize="17"/>
+                                        <state key="normal" title="Today">
+                                            <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        </state>
+                                        <userDefinedRuntimeAttributes>
+                                            <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                                <real key="value" value="5"/>
+                                            </userDefinedRuntimeAttribute>
+                                            <userDefinedRuntimeAttribute type="number" keyPath="shadowRadius">
+                                                <real key="value" value="1"/>
+                                            </userDefinedRuntimeAttribute>
+                                            <userDefinedRuntimeAttribute type="size" keyPath="shadowOffset">
+                                                <size key="value" width="0.0" height="2"/>
+                                            </userDefinedRuntimeAttribute>
+                                            <userDefinedRuntimeAttribute type="number" keyPath="shadowOpacity">
+                                                <real key="value" value="1"/>
+                                            </userDefinedRuntimeAttribute>
+                                            <userDefinedRuntimeAttribute type="color" keyPath="shadowColor">
+                                                <color key="value" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                            </userDefinedRuntimeAttribute>
+                                            <userDefinedRuntimeAttribute type="number" keyPath="borderWidth">
+                                                <real key="value" value="0.0"/>
+                                            </userDefinedRuntimeAttribute>
+                                        </userDefinedRuntimeAttributes>
+                                        <connections>
+                                            <action selector="dateButtonPressed:" destination="0HD-X6-u6e" eventType="touchUpInside" id="pYb-t8-oWb"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstAttribute="trailing" secondItem="OC8-wt-JgC" secondAttribute="trailing" constant="10" id="7PN-f8-PCU"/>
+                                    <constraint firstItem="Y2o-Dk-Qso" firstAttribute="top" secondItem="BQF-ze-lmn" secondAttribute="top" id="7bW-Cj-GI0"/>
+                                    <constraint firstAttribute="bottom" secondItem="Y2o-Dk-Qso" secondAttribute="bottom" id="Bnm-ZX-r5e"/>
+                                    <constraint firstAttribute="trailing" secondItem="Y2o-Dk-Qso" secondAttribute="trailing" id="NR1-Qi-vlN"/>
+                                    <constraint firstAttribute="bottom" secondItem="OC8-wt-JgC" secondAttribute="bottom" constant="5" id="NfV-ai-W3o"/>
+                                    <constraint firstAttribute="height" constant="50" id="Wpa-SS-vTl"/>
+                                    <constraint firstItem="OC8-wt-JgC" firstAttribute="top" secondItem="BQF-ze-lmn" secondAttribute="top" constant="5" id="iM1-iW-Mtq"/>
+                                    <constraint firstItem="OC8-wt-JgC" firstAttribute="leading" secondItem="BQF-ze-lmn" secondAttribute="leading" constant="10" id="zX4-Ir-21s"/>
+                                    <constraint firstItem="Y2o-Dk-Qso" firstAttribute="leading" secondItem="BQF-ze-lmn" secondAttribute="leading" id="zX8-S9-Ze5"/>
+                                </constraints>
+                            </view>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="L1U-z7-hZy">
+                                <rect key="frame" x="0.0" y="50" width="375" height="617"/>
+                                <subviews>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Liv-4f-27k">
+                                        <rect key="frame" x="0.0" y="0.0" width="375" height="617"/>
+                                        <subviews>
+                                            <containerView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="KcS-Ss-A40">
+                                                <rect key="frame" x="0.0" y="0.0" width="375" height="617"/>
+                                                <color key="backgroundColor" red="0.95294117649999999" green="0.95294117649999999" blue="0.95294117649999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                <connections>
+                                                    <segue destination="0ra-CW-Eiv" kind="embed" id="Vlr-Vk-Tqc"/>
+                                                </connections>
+                                            </containerView>
+                                        </subviews>
+                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                        <gestureRecognizers/>
+                                        <constraints>
+                                            <constraint firstAttribute="bottom" secondItem="KcS-Ss-A40" secondAttribute="bottom" id="6HY-JW-8bD"/>
+                                            <constraint firstItem="KcS-Ss-A40" firstAttribute="leading" secondItem="Liv-4f-27k" secondAttribute="leading" id="Dyk-cc-QS9"/>
+                                            <constraint firstItem="KcS-Ss-A40" firstAttribute="top" secondItem="Liv-4f-27k" secondAttribute="top" id="eLH-hb-Op9"/>
+                                            <constraint firstAttribute="trailing" secondItem="KcS-Ss-A40" secondAttribute="trailing" id="xPn-nj-e0Q"/>
+                                        </constraints>
+                                        <connections>
+                                            <outletCollection property="gestureRecognizers" destination="RQM-JY-Khm" appends="YES" id="wqq-eb-vBY"/>
+                                            <outletCollection property="gestureRecognizers" destination="vyh-52-kiv" appends="YES" id="DBD-ig-SF1"/>
+                                        </connections>
+                                    </view>
+                                    <view hidden="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="aJT-dy-You" customClass="RoundedView" customModule="DailyDozen" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="587" width="375" height="30"/>
+                                        <subviews>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Qfe-bW-SP4">
+                                                <rect key="frame" x="134" y="-1" width="107" height="32"/>
+                                                <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="17"/>
+                                                <state key="normal" title="Back to today">
+                                                    <color key="titleColor" red="0.99989169840000003" green="1" blue="0.99988096950000005" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                </state>
+                                                <connections>
+                                                    <action selector="backButtonPressed:" destination="0HD-X6-u6e" eventType="touchUpInside" id="Nfe-cW-PEH"/>
+                                                </connections>
+                                            </button>
+                                        </subviews>
+                                        <color key="backgroundColor" red="0.49803921569999998" green="0.75294117650000003" blue="0.29803921570000003" alpha="1" colorSpace="calibratedRGB"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="30" id="R3o-nK-p0U"/>
+                                            <constraint firstItem="Qfe-bW-SP4" firstAttribute="centerX" secondItem="aJT-dy-You" secondAttribute="centerX" id="SwU-DD-GIQ"/>
+                                            <constraint firstItem="Qfe-bW-SP4" firstAttribute="centerY" secondItem="aJT-dy-You" secondAttribute="centerY" id="vFh-IS-fpv"/>
+                                        </constraints>
+                                        <userDefinedRuntimeAttributes>
+                                            <userDefinedRuntimeAttribute type="color" keyPath="shadowColor">
+                                                <color key="value" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                            </userDefinedRuntimeAttribute>
+                                            <userDefinedRuntimeAttribute type="size" keyPath="shadowOffset">
+                                                <size key="value" width="0.0" height="1"/>
+                                            </userDefinedRuntimeAttribute>
+                                            <userDefinedRuntimeAttribute type="number" keyPath="shadowOpacity">
+                                                <real key="value" value="1"/>
+                                            </userDefinedRuntimeAttribute>
+                                        </userDefinedRuntimeAttributes>
+                                    </view>
+                                </subviews>
+                                <constraints>
+                                    <constraint firstAttribute="bottom" secondItem="aJT-dy-You" secondAttribute="bottom" id="KAq-6X-f3D"/>
+                                </constraints>
+                            </stackView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="L1U-z7-hZy" firstAttribute="leading" secondItem="rUX-Nf-zTn" secondAttribute="leading" id="BQc-hx-ubb"/>
+                            <constraint firstItem="BQF-ze-lmn" firstAttribute="trailing" secondItem="rUX-Nf-zTn" secondAttribute="trailing" id="GUF-EB-jU8"/>
+                            <constraint firstItem="L1U-z7-hZy" firstAttribute="trailing" secondItem="rUX-Nf-zTn" secondAttribute="trailing" id="GnN-up-S0b"/>
+                            <constraint firstItem="BQF-ze-lmn" firstAttribute="leading" secondItem="rUX-Nf-zTn" secondAttribute="leading" id="bHZ-WQ-lbA"/>
+                            <constraint firstItem="L1U-z7-hZy" firstAttribute="top" secondItem="BQF-ze-lmn" secondAttribute="bottom" id="euF-OO-caW"/>
+                            <constraint firstItem="L1U-z7-hZy" firstAttribute="bottom" secondItem="rUX-Nf-zTn" secondAttribute="bottom" id="r89-KM-geL"/>
+                            <constraint firstItem="BQF-ze-lmn" firstAttribute="top" secondItem="rUX-Nf-zTn" secondAttribute="top" id="zCS-Gs-Mwf"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="rUX-Nf-zTn"/>
+                    </view>
+                    <connections>
+                        <outlet property="backButton" destination="Qfe-bW-SP4" id="Xic-hZ-fGN"/>
+                        <outlet property="dateButton" destination="OC8-wt-JgC" id="Unk-CP-gAS"/>
+                        <outlet property="datePicker" destination="Y2o-Dk-Qso" id="e9x-SE-X0d"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="rba-Fd-AgX" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <swipeGestureRecognizer direction="left" id="RQM-JY-Khm">
+                    <connections>
+                        <action selector="viewSwipped:" destination="0HD-X6-u6e" id="IQ7-Yn-ZdM"/>
+                    </connections>
+                </swipeGestureRecognizer>
+                <swipeGestureRecognizer direction="right" id="vyh-52-kiv">
+                    <connections>
+                        <action selector="viewSwipped:" destination="0HD-X6-u6e" id="uqg-zt-hHd"/>
+                    </connections>
+                </swipeGestureRecognizer>
+            </objects>
+            <point key="canvasLocation" x="437.60000000000002" y="464.6176911544228"/>
+        </scene>
+        <!--DozeEntryLayout-->
+        <scene sceneID="RI7-v4-ZcN">
+            <objects>
+                <viewControllerPlaceholder storyboardName="DozeEntryLayout" id="0ra-CW-Eiv" sceneMemberID="viewController"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="ip6-Zc-t2J" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1063" y="464"/>
+        </scene>
+    </scenes>
+</document>

@@ -1,0 +1,179 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="15705" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="3nE-WX-8lJ">
+    <device id="retina4_7" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15706"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Tweak Entry Pager View Controller-->
+        <scene sceneID="LKo-dw-djG">
+            <objects>
+                <viewController id="3nE-WX-8lJ" customClass="TweakEntryPagerViewController" customModule="DailyDozen" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="sYP-NB-7di">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="center" translatesAutoresizingMaskIntoConstraints="NO" id="1Yw-oW-S9L">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="50"/>
+                                <subviews>
+                                    <datePicker hidden="YES" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" datePickerMode="date" translatesAutoresizingMaskIntoConstraints="NO" id="0Tj-nT-if9">
+                                        <rect key="frame" x="0.0" y="0.0" width="375" height="50"/>
+                                        <connections>
+                                            <action selector="dateChanged:" destination="3nE-WX-8lJ" eventType="valueChanged" id="zBL-h2-ARP"/>
+                                        </connections>
+                                    </datePicker>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="iHh-5a-01X" customClass="RoundedButton" customModule="DailyDozen" customModuleProvider="target">
+                                        <rect key="frame" x="10" y="5" width="355" height="40"/>
+                                        <color key="backgroundColor" red="0.49803921569999998" green="0.75294117650000003" blue="0.29803921570000003" alpha="1" colorSpace="calibratedRGB"/>
+                                        <fontDescription key="fontDescription" name="Helvetica" family="Helvetica" pointSize="17"/>
+                                        <state key="normal" title="Today">
+                                            <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        </state>
+                                        <userDefinedRuntimeAttributes>
+                                            <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                                <real key="value" value="5"/>
+                                            </userDefinedRuntimeAttribute>
+                                            <userDefinedRuntimeAttribute type="number" keyPath="shadowRadius">
+                                                <real key="value" value="1"/>
+                                            </userDefinedRuntimeAttribute>
+                                            <userDefinedRuntimeAttribute type="size" keyPath="shadowOffset">
+                                                <size key="value" width="0.0" height="2"/>
+                                            </userDefinedRuntimeAttribute>
+                                            <userDefinedRuntimeAttribute type="number" keyPath="shadowOpacity">
+                                                <real key="value" value="1"/>
+                                            </userDefinedRuntimeAttribute>
+                                            <userDefinedRuntimeAttribute type="color" keyPath="shadowColor">
+                                                <color key="value" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                            </userDefinedRuntimeAttribute>
+                                            <userDefinedRuntimeAttribute type="number" keyPath="borderWidth">
+                                                <real key="value" value="0.0"/>
+                                            </userDefinedRuntimeAttribute>
+                                        </userDefinedRuntimeAttributes>
+                                        <connections>
+                                            <action selector="dateButtonPressed:" destination="3nE-WX-8lJ" eventType="touchUpInside" id="4l6-Nd-LQZ"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstAttribute="trailing" secondItem="0Tj-nT-if9" secondAttribute="trailing" id="3C0-AE-HMi"/>
+                                    <constraint firstAttribute="trailing" secondItem="iHh-5a-01X" secondAttribute="trailing" constant="10" id="RSs-Xg-fie"/>
+                                    <constraint firstAttribute="bottom" secondItem="iHh-5a-01X" secondAttribute="bottom" constant="5" id="U4n-JD-GaR"/>
+                                    <constraint firstItem="iHh-5a-01X" firstAttribute="top" secondItem="1Yw-oW-S9L" secondAttribute="top" constant="5" id="gus-8S-Bqf"/>
+                                    <constraint firstItem="0Tj-nT-if9" firstAttribute="leading" secondItem="1Yw-oW-S9L" secondAttribute="leading" id="hoh-aB-fjh"/>
+                                    <constraint firstAttribute="height" constant="50" id="i88-FA-qhB"/>
+                                    <constraint firstAttribute="bottom" secondItem="0Tj-nT-if9" secondAttribute="bottom" id="p7M-qM-4IY"/>
+                                    <constraint firstItem="iHh-5a-01X" firstAttribute="leading" secondItem="1Yw-oW-S9L" secondAttribute="leading" constant="10" id="prQ-7W-yD1"/>
+                                    <constraint firstItem="0Tj-nT-if9" firstAttribute="top" secondItem="1Yw-oW-S9L" secondAttribute="top" id="rYJ-a3-Tmd"/>
+                                </constraints>
+                            </view>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="Ipn-Mn-DqP">
+                                <rect key="frame" x="0.0" y="50" width="375" height="617"/>
+                                <subviews>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="KH0-2z-86o">
+                                        <rect key="frame" x="0.0" y="0.0" width="375" height="617"/>
+                                        <subviews>
+                                            <containerView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="sZ1-vw-Nkv">
+                                                <rect key="frame" x="0.0" y="0.0" width="375" height="617"/>
+                                                <color key="backgroundColor" red="0.95294117649999999" green="0.95294117649999999" blue="0.95294117649999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                <connections>
+                                                    <segue destination="KE5-tW-yVd" kind="embed" id="yUH-Gt-zCd"/>
+                                                </connections>
+                                            </containerView>
+                                        </subviews>
+                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                        <gestureRecognizers/>
+                                        <constraints>
+                                            <constraint firstItem="sZ1-vw-Nkv" firstAttribute="leading" secondItem="KH0-2z-86o" secondAttribute="leading" id="KMT-gI-wuu"/>
+                                            <constraint firstAttribute="bottom" secondItem="sZ1-vw-Nkv" secondAttribute="bottom" id="U4T-Bc-vce"/>
+                                            <constraint firstAttribute="trailing" secondItem="sZ1-vw-Nkv" secondAttribute="trailing" id="cNC-f9-AbD"/>
+                                            <constraint firstItem="sZ1-vw-Nkv" firstAttribute="top" secondItem="KH0-2z-86o" secondAttribute="top" id="psF-YY-8mr"/>
+                                        </constraints>
+                                        <connections>
+                                            <outletCollection property="gestureRecognizers" destination="R8w-hQ-cS7" appends="YES" id="had-Hh-6rA"/>
+                                            <outletCollection property="gestureRecognizers" destination="mjg-00-w54" appends="YES" id="dm3-AX-a2T"/>
+                                        </connections>
+                                    </view>
+                                    <view hidden="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="TMN-p4-wbe" customClass="RoundedView" customModule="DailyDozen" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="587" width="375" height="30"/>
+                                        <subviews>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="7XY-Lo-Hwf">
+                                                <rect key="frame" x="134" y="-1" width="107" height="32"/>
+                                                <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="17"/>
+                                                <state key="normal" title="Back to today">
+                                                    <color key="titleColor" red="0.99989169840000003" green="1" blue="0.99988096950000005" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                </state>
+                                                <connections>
+                                                    <action selector="backButtonPressed:" destination="3nE-WX-8lJ" eventType="touchUpInside" id="jsg-5n-Sjq"/>
+                                                </connections>
+                                            </button>
+                                        </subviews>
+                                        <color key="backgroundColor" red="0.49803921569999998" green="0.75294117650000003" blue="0.29803921570000003" alpha="1" colorSpace="calibratedRGB"/>
+                                        <constraints>
+                                            <constraint firstItem="7XY-Lo-Hwf" firstAttribute="centerY" secondItem="TMN-p4-wbe" secondAttribute="centerY" id="efy-u3-Cb3"/>
+                                            <constraint firstAttribute="height" constant="30" id="hE6-NQ-rXu"/>
+                                            <constraint firstItem="7XY-Lo-Hwf" firstAttribute="centerX" secondItem="TMN-p4-wbe" secondAttribute="centerX" id="pSi-fD-17R"/>
+                                        </constraints>
+                                        <userDefinedRuntimeAttributes>
+                                            <userDefinedRuntimeAttribute type="color" keyPath="shadowColor">
+                                                <color key="value" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                            </userDefinedRuntimeAttribute>
+                                            <userDefinedRuntimeAttribute type="size" keyPath="shadowOffset">
+                                                <size key="value" width="0.0" height="1"/>
+                                            </userDefinedRuntimeAttribute>
+                                            <userDefinedRuntimeAttribute type="number" keyPath="shadowOpacity">
+                                                <real key="value" value="1"/>
+                                            </userDefinedRuntimeAttribute>
+                                        </userDefinedRuntimeAttributes>
+                                    </view>
+                                </subviews>
+                                <constraints>
+                                    <constraint firstAttribute="bottom" secondItem="TMN-p4-wbe" secondAttribute="bottom" id="9gr-Qx-j1J"/>
+                                </constraints>
+                            </stackView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="1Yw-oW-S9L" firstAttribute="leading" secondItem="WJt-kw-4vc" secondAttribute="leading" id="8W5-te-1Eg"/>
+                            <constraint firstItem="Ipn-Mn-DqP" firstAttribute="bottom" secondItem="WJt-kw-4vc" secondAttribute="bottom" id="AGy-Ik-QdP"/>
+                            <constraint firstItem="1Yw-oW-S9L" firstAttribute="top" secondItem="WJt-kw-4vc" secondAttribute="top" id="J6A-9r-U9d"/>
+                            <constraint firstItem="Ipn-Mn-DqP" firstAttribute="trailing" secondItem="WJt-kw-4vc" secondAttribute="trailing" id="Lzs-uo-7UD"/>
+                            <constraint firstItem="1Yw-oW-S9L" firstAttribute="trailing" secondItem="WJt-kw-4vc" secondAttribute="trailing" id="MU4-Pa-VBP"/>
+                            <constraint firstItem="Ipn-Mn-DqP" firstAttribute="top" secondItem="1Yw-oW-S9L" secondAttribute="bottom" id="Mrt-bT-5IN"/>
+                            <constraint firstItem="Ipn-Mn-DqP" firstAttribute="leading" secondItem="WJt-kw-4vc" secondAttribute="leading" id="Z0q-Yj-mLW"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="WJt-kw-4vc"/>
+                    </view>
+                    <connections>
+                        <outlet property="backButton" destination="7XY-Lo-Hwf" id="6Lb-IQ-LYt"/>
+                        <outlet property="dateButton" destination="iHh-5a-01X" id="fy5-Rj-Qbv"/>
+                        <outlet property="datePicker" destination="0Tj-nT-if9" id="BUb-e9-79X"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="eWd-mL-HoF" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <swipeGestureRecognizer direction="left" id="R8w-hQ-cS7">
+                    <connections>
+                        <action selector="viewSwipped:" destination="3nE-WX-8lJ" id="ngK-NQ-Cvn"/>
+                    </connections>
+                </swipeGestureRecognizer>
+                <swipeGestureRecognizer direction="right" id="mjg-00-w54">
+                    <connections>
+                        <action selector="viewSwipped:" destination="3nE-WX-8lJ" id="tN6-gI-94I"/>
+                    </connections>
+                </swipeGestureRecognizer>
+            </objects>
+            <point key="canvasLocation" x="414" y="465"/>
+        </scene>
+        <!--TweakEntryLayout-->
+        <scene sceneID="Gjv-Qu-eyT">
+            <objects>
+                <viewControllerPlaceholder storyboardName="TweakEntryLayout" id="KE5-tW-yVd" sceneMemberID="viewController"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="fAA-Wh-5bH" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="986" y="464"/>
+        </scene>
+    </scenes>
+</document>

@@ -1,0 +1,94 @@
+/* 
+  Localizable.strings
+  DailyDozen
+
+  Copyright © 2019 Nutritionfacts.org. All rights reserved.
+*/
+
+/* Daily Dozen (proper noun) navigation tab */
+"navtab.doze"="Daily Dozen";
+/* 21 Tweaks (proper noun) navigation tab */
+"navtab.tweaks"="21 Tweaks";
+/* More Information navigation tab */
+"navtab.info"="Info";
+/* Preferences (aka Settings, Configuration) navigation tab. Choose word different from 'Tweaks' translation */
+"navtab.preferences"="Settings";
+
+/* Records: Daily Tally */
+"historyRecord.movingMean"="Moving Average";
+"historyRecordDoze.heading"="Servings History";
+"historyRecordDoze.legend"="Servings";
+"historyRecordTweak.heading"="Tweaks History";
+"historyRecordTweak.legend"="Tweaks";
+"historyRecordWeight.heading"="Weight History";
+"historyRecordWeight.titleImperial"="Weight (lbs)";
+"historyRecordWeight.titleMetric"="Weight (kg)";
+"historyRecordWeight.legendMorning"="Morning";
+"historyRecordWeight.legendEvening"="Evening";
+
+/* URL path */
+"urlSegment.base"="https://nutritionfacts.org/";
+"urlSegment.lang"="";
+
+"urlSegmentInfoMenu.videos"="videos";
+"urlSegmentInfoMenu.book"="book";
+"urlSegmentInfoMenu.cookbook"="cookbook";
+"urlSegmentInfoMenu.diet"="how-not-to-diet";
+"urlSegmentInfoMenu.challenge"="daily-dozen-challenge";
+"urlSegmentInfoMenu.donate"="donate";
+"urlSegmentInfoMenu.subscribe"="subscribe";
+"urlSegmentInfoMenu.source"="open-source";
+
+"urlSegmentInfoMenu.team"="team";
+
+/* Units toggle button text: metric measurement system */
+"unitToggle.metric"="METRIC";
+/* Units toggle button text: imperial measurement system */
+"unitToggle.imperial"="IMPERIAL";
+
+/* streak days format */
+"streakDaysFormat"="%d days";
+
+/* ***** Daily Dozen ***** */
+"dozeBeans.heading"="Beans";
+"dozeBerries.heading"="Berries";
+"dozeFruitsOther.heading"="Other Fruits";
+"dozeVegetablesCruciferous.heading"="Cruciferous Vegetables";
+"dozeGreens.heading"="Greens";
+"dozeVegetablesOther.heading"="Other Vegetables";
+"dozeFlaxseeds.heading"="Flaxseeds";
+"dozeNuts.heading"="Nuts and Seeds";
+"dozeSpices.heading"="Herbs and Spices";
+"dozeWholeGrains.heading"="Whole Grains";
+"dozeBeverages.heading"="Beverages";
+"dozeExercise.heading"="Exercise";
+/* ***** Daily Dozen Other ***** */
+"otherVitaminB12.heading"="Vitamin B12";
+"otherVitaminD.heading"="Vitamin D";
+"otherOmega3.heading"="Plant-based Omega 3s";
+/* ***** Daily Dozen Supplements ***** */
+"dozeOtherInfo.title"="Supplements";
+"dozeOtherInfo.message"="Vitamin B12 is essential for your health but does not count towards your daily servings.\n\nVitamin B12 is included in this app to provide you with an easy way to track your intake.";
+"dozeOtherInfo.confirm"="OK";
+/* ***** 21 Tweaks ***** */
+"tweakMealWater.heading"="Preload Water";
+"tweakMealNegCal.heading"="Negative Calorie Preload";
+"tweakMealVinegar.heading"="Incorporate Vinegar";
+"tweakMealUndistracted.heading"="Undistracted Meals";
+"tweakMeal20Minutes.heading"="Twenty-minute Rule";
+"tweakDailyBlackCumin.heading"="Black Cumin";
+"tweakDailyGarlic.heading"="Garlic Powder";
+"tweakDailyGinger.heading"="Ginger or Cayenne";
+"tweakDailyNutriYeast.heading"="Nutritional Yeast";
+"tweakDailyCumin.heading"="Cumin";
+"tweakDailyGreenTea.heading"="Green Tea";
+"tweakDailyHydrate.heading"="Stay Hydrated";
+"tweakDailyDeflourDiet.heading"="Deflour Diet";
+"tweakDailyFrontLoad.heading"="Front-load Calories";
+"tweakDailyTimeRestrict.heading"="Time-restrict Eating";
+"tweakExerciseTiming.heading"="Exercising Timing";
+"tweakWeightTwice.heading"="Weigh Twice Daily";
+"tweakCompleteIntentions.heading"="Complete Intentions";
+"tweakNightlyFast.heading"="Fast After 7:00 p.m.";
+"tweakNightlySleep.heading"="Sufficient Sleep";
+"tweakNightlyTrendelenbrug.heading"="Trendelenburg";

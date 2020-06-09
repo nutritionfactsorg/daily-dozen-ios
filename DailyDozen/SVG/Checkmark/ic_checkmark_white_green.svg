@@ -1,0 +1,6 @@
+<svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0" y="0" width="72" height="72" viewBox="0, 0, 72, 72">
+  <g id="Image">
+      <rect id="ic_checkmark_rectangle" stroke="none" fill="rgb(127, 192, 76)" x="0" y="0" width="72" height="72" />
+      <path id="ic_checkmark_bezier" stroke="none" fill="rgb(255, 255, 255)" d="M 27.06,57.4 L 10.06,40.28 14.31,35.9 27.06,48.4 58.81,16.59 63.5,20.9 27.06,57.4 Z M 27.06,57.4" />
+  </g>
+</svg>

@@ -1,0 +1,184 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="16096" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="tz1-ri-aeh">
+    <device id="retina4_0" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="16087"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Weight Entry View Controller-->
+        <scene sceneID="ts6-gv-hRb">
+            <objects>
+                <viewController id="tz1-ri-aeh" customClass="WeightEntryViewController" customModule="DailyDozen" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="d7q-BO-nhL">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Morning (upon waking)" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="xCp-N8-5Uc">
+                                <rect key="frame" x="10" y="10" width="300" height="21.5"/>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="18"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <stackView opaque="NO" contentMode="scaleToFill" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="gIb-kj-REZ" userLabel="AM Time Stack View">
+                                <rect key="frame" x="10" y="41.5" width="300" height="34"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Time" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="FBJ-Im-BZk" userLabel="TimeAMLabel">
+                                        <rect key="frame" x="0.0" y="0.0" width="145" height="34"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="right" minimumFontSize="14" translatesAutoresizingMaskIntoConstraints="NO" id="0Oz-JE-Xra">
+                                        <rect key="frame" x="155" y="0.0" width="145" height="34"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                        <textInputTraits key="textInputTraits"/>
+                                    </textField>
+                                </subviews>
+                                <constraints>
+                                    <constraint firstItem="FBJ-Im-BZk" firstAttribute="width" secondItem="0Oz-JE-Xra" secondAttribute="width" id="oqS-4V-Jhg"/>
+                                </constraints>
+                            </stackView>
+                            <stackView opaque="NO" contentMode="scaleToFill" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="E11-KB-6RL" userLabel="AM Weight Stack View">
+                                <rect key="frame" x="10" y="80.5" width="300" height="34"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" verticalCompressionResistancePriority="751" text="lbs." textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Tgz-om-dEk" userLabel="WeightAMLabel">
+                                        <rect key="frame" x="0.0" y="0.0" width="145" height="34"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="right" minimumFontSize="14" translatesAutoresizingMaskIntoConstraints="NO" id="bbx-Qc-Tgp">
+                                        <rect key="frame" x="155" y="0.0" width="145" height="34"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                        <textInputTraits key="textInputTraits" keyboardType="decimalPad"/>
+                                        <connections>
+                                            <action selector="weightAMField:" destination="1qj-Ki-C9F" eventType="editingDidEnd" id="SIQ-Vr-mN3"/>
+                                        </connections>
+                                    </textField>
+                                </subviews>
+                                <constraints>
+                                    <constraint firstItem="Tgz-om-dEk" firstAttribute="width" secondItem="bbx-Qc-Tgp" secondAttribute="width" id="u9h-ap-Dek"/>
+                                </constraints>
+                            </stackView>
+                            <stackView opaque="NO" contentMode="scaleToFill" spacing="41" translatesAutoresizingMaskIntoConstraints="NO" id="nDi-0z-LlH" userLabel="AM Clear Save">
+                                <rect key="frame" x="120" y="119.5" width="80" height="30"/>
+                                <subviews>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="NRG-eE-YhG" userLabel="ClearAM">
+                                        <rect key="frame" x="0.0" y="0.0" width="80" height="30"/>
+                                        <state key="normal" title="Clear"/>
+                                        <connections>
+                                            <action selector="clearWeightAMButtonPressed:" destination="tz1-ri-aeh" eventType="touchUpInside" id="MNu-JR-ro6"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                            </stackView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Evening (right before bed)" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="77g-xa-ali">
+                                <rect key="frame" x="10" y="164.5" width="300" height="21.5"/>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="18"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <stackView opaque="NO" contentMode="scaleToFill" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="E9m-JH-ZcT" userLabel="PM Time Stack View">
+                                <rect key="frame" x="10" y="196" width="300" height="34"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Time " textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="g3G-kp-d2S" userLabel="TimePMLabel">
+                                        <rect key="frame" x="0.0" y="0.0" width="145" height="34"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="right" minimumFontSize="14" translatesAutoresizingMaskIntoConstraints="NO" id="cVd-c3-qI1">
+                                        <rect key="frame" x="155" y="0.0" width="145" height="34"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                        <textInputTraits key="textInputTraits"/>
+                                    </textField>
+                                </subviews>
+                                <constraints>
+                                    <constraint firstItem="g3G-kp-d2S" firstAttribute="width" secondItem="cVd-c3-qI1" secondAttribute="width" id="rzd-tE-M4d"/>
+                                </constraints>
+                            </stackView>
+                            <stackView opaque="NO" contentMode="scaleToFill" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="eFn-rL-ZdX" userLabel="PM Weight Stack View">
+                                <rect key="frame" x="10" y="235" width="300" height="34"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="lbs." textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="zV0-lA-zHj" userLabel="WeightPMLabel">
+                                        <rect key="frame" x="0.0" y="0.0" width="145" height="34"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="right" minimumFontSize="14" translatesAutoresizingMaskIntoConstraints="NO" id="EoK-qo-DeG">
+                                        <rect key="frame" x="155" y="0.0" width="145" height="34"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                        <textInputTraits key="textInputTraits" keyboardType="decimalPad"/>
+                                        <connections>
+                                            <action selector="weightPMField:" destination="1qj-Ki-C9F" eventType="editingDidEnd" id="MbP-3e-KmR"/>
+                                        </connections>
+                                    </textField>
+                                </subviews>
+                                <constraints>
+                                    <constraint firstItem="zV0-lA-zHj" firstAttribute="width" secondItem="EoK-qo-DeG" secondAttribute="width" id="yi3-xZ-Csx"/>
+                                </constraints>
+                            </stackView>
+                            <stackView opaque="NO" contentMode="scaleToFill" spacing="60" translatesAutoresizingMaskIntoConstraints="NO" id="gUy-g3-0It" userLabel="PM Clear Save">
+                                <rect key="frame" x="120" y="274" width="80" height="30"/>
+                                <subviews>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="7l0-os-Oqt" userLabel="ClearPM">
+                                        <rect key="frame" x="0.0" y="0.0" width="80" height="30"/>
+                                        <state key="normal" title="Clear"/>
+                                        <connections>
+                                            <action selector="clearWeightPMButtonPressed:" destination="tz1-ri-aeh" eventType="touchUpInside" id="dUd-vh-uDg"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                            </stackView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="pki-17-wbB" firstAttribute="trailing" secondItem="gUy-g3-0It" secondAttribute="trailing" constant="120" id="3RE-xq-nBS"/>
+                            <constraint firstItem="pki-17-wbB" firstAttribute="trailing" secondItem="77g-xa-ali" secondAttribute="trailing" constant="10" id="42p-Ak-gvn"/>
+                            <constraint firstItem="E9m-JH-ZcT" firstAttribute="leading" secondItem="pki-17-wbB" secondAttribute="leading" constant="10" id="6lq-e8-YWS"/>
+                            <constraint firstItem="pki-17-wbB" firstAttribute="trailing" secondItem="gIb-kj-REZ" secondAttribute="trailing" constant="10" id="7o9-Jb-YGv"/>
+                            <constraint firstItem="gUy-g3-0It" firstAttribute="top" secondItem="eFn-rL-ZdX" secondAttribute="bottom" constant="5" id="8aL-sW-Idj"/>
+                            <constraint firstItem="pki-17-wbB" firstAttribute="trailing" secondItem="E9m-JH-ZcT" secondAttribute="trailing" constant="10" id="9tI-os-YA2"/>
+                            <constraint firstItem="pki-17-wbB" firstAttribute="trailing" secondItem="E11-KB-6RL" secondAttribute="trailing" constant="10" id="AsD-Cq-nmh"/>
+                            <constraint firstItem="eFn-rL-ZdX" firstAttribute="leading" secondItem="pki-17-wbB" secondAttribute="leading" constant="10" id="Cbo-hm-sEI"/>
+                            <constraint firstItem="pki-17-wbB" firstAttribute="trailing" secondItem="eFn-rL-ZdX" secondAttribute="trailing" constant="10" id="Etr-dh-whQ"/>
+                            <constraint firstItem="nDi-0z-LlH" firstAttribute="leading" secondItem="pki-17-wbB" secondAttribute="leading" constant="120" id="HTi-Od-RBl"/>
+                            <constraint firstItem="xCp-N8-5Uc" firstAttribute="top" secondItem="pki-17-wbB" secondAttribute="top" constant="10" id="IYa-O1-TnH"/>
+                            <constraint firstItem="gUy-g3-0It" firstAttribute="leading" secondItem="pki-17-wbB" secondAttribute="leading" constant="120" id="LCd-5W-o1s"/>
+                            <constraint firstItem="77g-xa-ali" firstAttribute="leading" secondItem="pki-17-wbB" secondAttribute="leading" constant="10" id="Py9-ui-9dO"/>
+                            <constraint firstItem="gIb-kj-REZ" firstAttribute="leading" secondItem="pki-17-wbB" secondAttribute="leading" constant="10" id="Yrk-T7-H2E"/>
+                            <constraint firstItem="eFn-rL-ZdX" firstAttribute="top" secondItem="E9m-JH-ZcT" secondAttribute="bottom" constant="5" id="ZaZ-c0-qck"/>
+                            <constraint firstItem="nDi-0z-LlH" firstAttribute="top" secondItem="E11-KB-6RL" secondAttribute="bottom" constant="5" id="ZuM-W4-uH4"/>
+                            <constraint firstItem="E11-KB-6RL" firstAttribute="leading" secondItem="pki-17-wbB" secondAttribute="leading" constant="10" id="aEV-0N-aeQ"/>
+                            <constraint firstItem="pki-17-wbB" firstAttribute="trailing" secondItem="nDi-0z-LlH" secondAttribute="trailing" constant="120" id="fsi-RC-iOz"/>
+                            <constraint firstItem="77g-xa-ali" firstAttribute="top" secondItem="nDi-0z-LlH" secondAttribute="bottom" constant="15" id="g5I-eg-u1j"/>
+                            <constraint firstItem="pki-17-wbB" firstAttribute="trailing" secondItem="xCp-N8-5Uc" secondAttribute="trailing" constant="10" id="lOx-IO-91e"/>
+                            <constraint firstItem="E11-KB-6RL" firstAttribute="top" secondItem="gIb-kj-REZ" secondAttribute="bottom" constant="5" id="mUt-4d-KPP"/>
+                            <constraint firstItem="xCp-N8-5Uc" firstAttribute="leading" secondItem="pki-17-wbB" secondAttribute="leading" constant="10" id="n5w-kJ-JEB"/>
+                            <constraint firstItem="gIb-kj-REZ" firstAttribute="top" secondItem="xCp-N8-5Uc" secondAttribute="bottom" constant="10" id="vEK-F7-mLa"/>
+                            <constraint firstItem="E9m-JH-ZcT" firstAttribute="top" secondItem="77g-xa-ali" secondAttribute="bottom" constant="10" id="xDe-Dm-9oj"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="pki-17-wbB"/>
+                    </view>
+                    <connections>
+                        <outlet property="clearWeightAMButton" destination="NRG-eE-YhG" id="V3E-30-e3b"/>
+                        <outlet property="clearWeightPMButton" destination="7l0-os-Oqt" id="LEX-WM-EYl"/>
+                        <outlet property="timeAMInput" destination="0Oz-JE-Xra" id="wFh-dW-0Hd"/>
+                        <outlet property="timePMInput" destination="cVd-c3-qI1" id="vCb-nG-JmQ"/>
+                        <outlet property="weightAM" destination="bbx-Qc-Tgp" id="BVp-bo-8sN"/>
+                        <outlet property="weightAMLabel" destination="Tgz-om-dEk" id="gAl-6x-Xgw"/>
+                        <outlet property="weightPM" destination="EoK-qo-DeG" id="1YS-Yo-CBl"/>
+                        <outlet property="weightPMLabel" destination="zV0-lA-zHj" id="eKZ-ml-bnp"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="IVl-jL-Zxa" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+                <exit id="1qj-Ki-C9F" userLabel="Exit" sceneMemberID="exit"/>
+            </objects>
+            <point key="canvasLocation" x="-191.25" y="105.63380281690141"/>
+        </scene>
+    </scenes>
+</document>

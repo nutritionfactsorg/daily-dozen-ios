@@ -12,13 +12,9 @@ class AlertBuilder {
 
     // MARK: - Nested
     private struct Strings {
-        static let vitamins = "VITAMINS"
-        static let message = """
-        Vitamin B12 and Vitamin D are essential for your health but do not count towards your daily servings.
-
-        They are included in this app to provide you with an easy way to track your intake.
-        """
-        static let confirm = "OK"
+        static let dozeOtherInfoTitle = NSLocalizedString("dozeOtherInfo.title", comment: "Daily Dozen other info title")
+        static let dozeOtherInfoMessage = NSLocalizedString("dozeOtherInfo.message", comment: "Daily Dozen other info message")
+        static let dozeOtherInfoConfirm = NSLocalizedString("dozeOtherInfo.confirm", comment: "Daily Dozen other info confirm")
     }
 
     private struct Keys {
@@ -29,43 +25,42 @@ class AlertBuilder {
 
     enum AlertContent {
 
-        case vitamin
+        case dietarySupplement
 
         var title: String {
             switch self {
-            case .vitamin:
-                return Strings.vitamins
+            case .dietarySupplement:
+                return Strings.dozeOtherInfoTitle
             }
         }
 
         var message: String {
             switch self {
-            case .vitamin:
-                return Strings.message
+            case .dietarySupplement:
+                return Strings.dozeOtherInfoMessage
             }
         }
     }
 
     static func instantiateController(for content: AlertContent) -> UIAlertController {
-        let alert = UIAlertController(title: content.title, message: content.title, preferredStyle: .actionSheet)
+        let alert = UIAlertController(title: content.title, message: content.message, preferredStyle: .actionSheet)
 
         alert.setValue(
             NSAttributedString(
                 string: content.title,
                 attributes: [
-                    NSAttributedStringKey.font: UIFont.helveticaBold,
-                    NSAttributedStringKey.foregroundColor: UIColor.greenColor]),
+                    NSAttributedString.Key.font: UIFont.helveticaBold,
+                    NSAttributedString.Key.foregroundColor: UIColor.greenColor]),
             forKey: Keys.title)
 
-        alert.setValue(
-            NSAttributedString(
-                string: content.message,
-                attributes: [
-                    NSAttributedStringKey.font: UIFont.helevetica,
-                    NSAttributedStringKey.foregroundColor: UIColor.lightGray]),
-            forKey: Keys.message)
+        let message = NSAttributedString(
+            string: content.message,
+            attributes: [
+                NSAttributedString.Key.font: UIFont.helevetica,
+                NSAttributedString.Key.foregroundColor: UIColor.lightGray])
+        alert.setValue(message, forKey: Keys.message)
 
-        let action = UIAlertAction(title: Strings.confirm, style: .cancel, handler: nil)
+        let action = UIAlertAction(title: Strings.dozeOtherInfoConfirm, style: .cancel, handler: nil)
         action.setValue(UIColor.greenColor, forKey: Keys.textColor)
         alert.addAction(action)
 
