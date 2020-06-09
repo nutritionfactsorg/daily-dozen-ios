@@ -31,7 +31,7 @@ class FirstLaunchViewController: UIViewController {
         UserDefaults.standard.set(true, forKey: SettingsKeys.hasSeenFirstLaunch)
         UserDefaults.standard.set(false, forKey: SettingsKeys.show21TweaksPref)
         NotificationCenter.default.post(
-            name: NSNotification.Name(rawValue: "NoticeUpdatedShowTweaksTab"),
+            name: Notification.Name(rawValue: "NoticeUpdatedShowTweaksTab"),
             object: 0,
             userInfo: nil)
     }
@@ -42,7 +42,7 @@ class FirstLaunchViewController: UIViewController {
         UserDefaults.standard.set(true, forKey: SettingsKeys.show21TweaksPref)
         
         NotificationCenter.default.post(
-            name: NSNotification.Name(rawValue: "NoticeUpdatedShowTweaksTab"),
+            name: Notification.Name(rawValue: "NoticeUpdatedShowTweaksTab"),
             object: 1,
             userInfo: nil)
     }

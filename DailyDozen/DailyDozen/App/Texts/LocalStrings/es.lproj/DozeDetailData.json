@@ -132,7 +132,7 @@
         },
         {
           "text" : "Bayas Goji",
-          "topic" : "es/topics/goji/"
+          "topic" : "es/topics/goji"
         },
         {
           "text" : "Kumquats",
@@ -144,11 +144,11 @@
         },
         {
           "text" : "Frambuesas (negras o rojas)",
-          "topic" : "es/topics/frambuesas/"
+          "topic" : "es/topics/frambuesas"
         },
         {
           "text" : "Fresas",
-          "topic" : "es/topics/fresas/"
+          "topic" : "es/topics/fresas"
         }
       ]
     },
@@ -164,7 +164,7 @@
       "varieties" : [
         {
           "text" : "Té negro",
-          "topic" : "es/topics/te-negro/"
+          "topic" : "es/topics/te-negro"
         },
         {
           "text" : "Té Chai",
@@ -532,7 +532,7 @@
         },
         {
           "text" : "Toronja",
-          "topic" : "es/topics/toronja/"
+          "topic" : "es/topics/toronja"
         },
         {
           "text" : "Melones verdes",
@@ -576,11 +576,11 @@
         },
         {
           "text" : "Duraznos",
-          "topic" : "es/topics/duraznos-es/"
+          "topic" : "es/topics/duraznos-es"
         },
         {
           "text" : "Peras",
-          "topic" : "es/topics/peras-es/"
+          "topic" : "es/topics/peras-es"
         },
         {
           "text" : "Piña",
@@ -588,7 +588,7 @@
         },
         {
           "text" : "Ciruelas (en especial ciruelas negras)",
-          "topic" : "es/topics/ciruelas/"
+          "topic" : "es/topics/ciruelas"
         },
         {
           "text" : "Pluots",
@@ -632,7 +632,7 @@
         },
         {
           "text" : "Hojas de remolacha",
-          "topic" : "hojas-de-remolacha-es"
+          "topic" : "es/topics/hojas-de-remolacha-es"
         },
         {
           "text" : "Berza",
@@ -756,11 +756,11 @@
         },
         {
           "text" : "Bérberos",
-          "topic" : "es/topics/berberos-es/"
+          "topic" : "es/topics/berberos-es"
         },
         {
           "text" : "Albahaca",
-          "topic" : "es/topics/albahaca/"
+          "topic" : "es/topics/albahaca"
         },
         {
           "text" : "Hojas de laurel",
@@ -776,7 +776,7 @@
         },
         {
           "text" : "Cilantro",
-          "topic" : "es/topics/cilantro-es/"
+          "topic" : "es/topics/cilantro-es"
         },
         {
           "text" : "Canela",
@@ -811,7 +811,7 @@
           "topic" : "es/topics/ajo"
         },
         {
-          "text" : "Gengibre",
+          "text" : "Jengibre",
           "topic" : "es/topics/jengibre"
         },
         {
@@ -819,7 +819,7 @@
           "topic" : ""
         },
         {
-          "text" : "Citronela",
+          "text" : "Limoncillo",
           "topic" : "es/topics/limoncillo-es"
         },
         {
@@ -988,11 +988,11 @@
         },
         {
           "text" : "Remolachas",
-          "topic" : "es/topics/remolachas-es/"
+          "topic" : "es/topics/remolachas-es"
         },
         {
           "text" : "Pimiento morrón",
-          "topic" : "es/topics/pimientos/"
+          "topic" : "es/topics/pimientos"
         },
         {
           "text" : "Zanahorias",
@@ -1031,7 +1031,7 @@
           "topic" : "es/topics/vegetales-marinos"
         },
         {
-          "text" : "guisantes",
+          "text" : "Guisantes",
           "topic" : ""
         },
         {

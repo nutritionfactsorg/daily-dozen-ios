@@ -17,7 +17,7 @@ class TweakTextsProvider {
             let jsonData = jsonString.data(using: .utf8),
             let info = try? decoder.decode(TweakDetailInfo.self, from: jsonData)
             else { 
-                fatalError("TweakTextsProvider failed to load 'TweakDetailData.json'") 
+                fatalError("FAIL TweakTextsProvider did not load 'TweakDetailData.json'") 
         }
         return  TweakTextsProvider(info: info)
     }()
@@ -56,7 +56,8 @@ class TweakTextsProvider {
         return item.topic
     }
     
-    func isMetricEqualToImperial(itemTypeKey: String) -> Bool {
+    /// Use: do not show toggle button if imperial and metric have the same text.
+    func isMetricTxtEqualToImperialTxt(itemTypeKey: String) -> Bool {
         guard 
             let item = info.itemsDict[itemTypeKey] 
             else { fatalError("Tweak getTopic(\(itemTypeKey)) Item not found.") }

@@ -65,7 +65,7 @@ class TweakEntryPagerViewController: UIViewController {
         navigationController?.navigationBar.barTintColor = UIColor.greenColor
         navigationController?.navigationBar.tintColor = UIColor.white
 
-        title = NSLocalizedString("navtab.tweaks", comment: "Twenty-One Tweaks (proper noun) navigation tab")
+        title = NSLocalizedString("navtab.tweaks", comment: "21 Tweaks (proper noun) navigation tab")
     }
 
     override func viewDidAppear(_ animated: Bool) {
@@ -85,7 +85,7 @@ class TweakEntryPagerViewController: UIViewController {
 
         guard let viewController = children.first as? TweakEntryViewController else { return }
         viewController.view.fadeOut().fadeIn()
-        viewController.setViewModel(for: currentDate)
+        viewController.setViewModel(date: currentDate)
     }
 
     // MARK: - Actions
@@ -101,7 +101,7 @@ class TweakEntryPagerViewController: UIViewController {
 
         guard let viewController = children.first as? TweakEntryViewController else { return }
         viewController.view.fadeOut().fadeIn()
-        viewController.setViewModel(for: datePicker.date)
+        viewController.setViewModel(date: datePicker.date)
     }
 
     @IBAction private func viewSwipped(_ sender: UISwipeGestureRecognizer) {
@@ -124,7 +124,7 @@ class TweakEntryPagerViewController: UIViewController {
             viewController.view.slideOut(x: view.frame.width).slideIn(x: -view.frame.width)
         }
 
-        viewController.setViewModel(for: datePicker.date)
+        viewController.setViewModel(date: datePicker.date)
     }
 
     @IBAction private func backButtonPressed(_ sender: UIButton) {

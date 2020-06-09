@@ -49,7 +49,7 @@ class WeightHistoryViewController: UIViewController {
         didSet {
             lineChartView.clear()
             
-            if isImperial() {
+            if SettingsManager.isImperial() {
                 weightTitleUnits.text = NSLocalizedString("historyRecordWeight.titleImperial", comment: "Weight (lbs)")
             } else {
                 weightTitleUnits.text = NSLocalizedString("historyRecordWeight.titleMetric", comment: "Weight (kg)")
@@ -76,7 +76,7 @@ class WeightHistoryViewController: UIViewController {
                 let data = weightViewModel.monthData(yearIndex: chartSettings.year, monthIndex: chartSettings.month)
                 
                 // :DEBUG:LOG_VERBOSE:
-                //print("## Weight History: \(data.month) chartSettings(year:\(chartSettings.year), month:\(chartSettings.month)) ##") 
+                //LogService.shared.verbose("## Weight History: \(data.month) chartSettings(year:\(chartSettings.year), month:\(chartSettings.month)) ##") 
                 //var i = 0
                 //for point in data.points {
                 //    let dataStr = """
@@ -84,7 +84,7 @@ class WeightHistoryViewController: UIViewController {
                 //    \(point.dateAM?.datestampHHmm ?? "nil") \(String(format: "%.2f", point.kgAM ?? -1.0)) • \
                 //    \(point.datePM?.datestampHHmm ?? "nil") \(String(format: "%.2f", point.kgPM ?? -1.0)) 
                 //    """
-                //    print(dataStr)
+                //    LogService.shared.verbose(dataStr)
                 //    i += 1
                 //}
 
@@ -103,7 +103,7 @@ class WeightHistoryViewController: UIViewController {
                 let data = weightViewModel.yearlyData(yearIndex: chartSettings.year)
 
                 // :DEBUG:LOG_VERBOSE:
-                //print("## Weight History: \(data.year) chartSettings(year:\(chartSettings.year), month:\(chartSettings.month)) ##")
+                //LogService.shared.verbose("## Weight History: \(data.year) chartSettings(year:\(chartSettings.year), month:\(chartSettings.month)) ##")
                 //var i = 0
                 //for point in data.points {
                 //    let dataStr = """
@@ -111,7 +111,7 @@ class WeightHistoryViewController: UIViewController {
                 //    \(point.dateAM?.datestampHHmm ?? "nil") \(String(format: "%.2f", point.kgAM ?? -1.0)) • \
                 //    \(point.datePM?.datestampHHmm ?? "nil") \(String(format: "%.2f", point.kgPM ?? -1.0)) 
                 //    """
-                //    print(dataStr)
+                //    LogService.shared.verbose(dataStr)
                 //    i += 1
                 //}
 
@@ -132,6 +132,7 @@ class WeightHistoryViewController: UIViewController {
 
     // MARK: - Methods
     override func viewDidLoad() {
+        LogService.shared.debug("•HK• WeightHistoryViewController viewDidLoad")
         super.viewDidLoad()
         navigationController?.navigationBar.titleTextAttributes = [NSAttributedString.Key.foregroundColor: UIColor.white]
         navigationController?.navigationBar.barTintColor = UIColor.greenColor
@@ -220,7 +221,7 @@ class WeightHistoryViewController: UIViewController {
                 let xTimeInterval: TimeInterval = dateAM.timeIntervalSince1970
                 let x = (xTimeInterval - fromTimeInterval) / xScaleFactor
                 var y = kgAM
-                if isImperial() {
+                if SettingsManager.isImperial() {
                     y = kgAM * 2.204
                 }
                 let chartDataEntry = ChartDataEntry(x: x, y: y)
@@ -231,7 +232,7 @@ class WeightHistoryViewController: UIViewController {
                 let xTimeInterval: TimeInterval = datePM.timeIntervalSince1970
                 let x = (xTimeInterval - fromTimeInterval) / xScaleFactor
                 var y = kgPM
-                if isImperial() {
+                if SettingsManager.isImperial() {
                     y = kgPM * 2.204
                 }
                 let chartDataEntry = ChartDataEntry(x: x, y: y)
@@ -240,36 +241,23 @@ class WeightHistoryViewController: UIViewController {
         }
 
         // :DEBUG:LOG_VERBOSE:
-        //print("\n•••••••••••••••••••••••••••••••••••••••••••••••••")
-        //print("••• WeightHistoryViewController updateChart() •••")
-        //print("••• INPUT: points @ scale:\(scale.toString()) •••")
+        //LogService.shared.verbose("\n•••••••••••••••••••••••••••••••••••••••••••••••••")
+        //LogService.shared.verbose("••• WeightHistoryViewController updateChart() •••")
+        //LogService.shared.verbose("••• INPUT: points @ scale:\(scale.toString()) •••")
         //for dailyWeightReport in points {
-        //    print(dailyWeightReport.toString())
+        //    LogService.shared.verbose(dailyWeightReport.toString())
         //}
-        //print("••• OUTPUT: dataEntries @ xAxisRange:\(xAxisRange) •••")
-        //print("••• AM (x,y)")
+        //LogService.shared.verbose("••• OUTPUT: dataEntries @ xAxisRange:\(xAxisRange) •••")
+        //LogService.shared.verbose("••• AM (x,y)")
         //for chartDataEntry: ChartDataEntry in dataEntriesAM {
-        //    print(chartDataEntry.toStringXY())
+        //    LogService.shared.verbose(chartDataEntry.toStringXY())
         //}
-        //print("••• PM (x,y)")
+        //LogService.shared.verbose("••• PM (x,y)")
         //for chartDataEntry in dataEntriesPM {
-        //    print(chartDataEntry.toStringXY())
+        //    LogService.shared.verbose(chartDataEntry.toStringXY())
         //}
         
         updateChartWithData(am: dataEntriesAM, pm: dataEntriesPM, range: xAxisRange)
-    }
-    
-    private func isImperial() -> Bool {
-        guard
-            let unitsTypePrefStr = UserDefaults.standard.string(forKey: SettingsKeys.unitsTypePref),
-            let currentUnitsType = UnitsType(rawValue: unitsTypePrefStr)
-            else {
-                return true
-        }
-        if currentUnitsType == .imperial {
-            return true
-        }
-        return false
     }
     
     // -------------------------

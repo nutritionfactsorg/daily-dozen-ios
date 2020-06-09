@@ -1,21 +1,21 @@
 //
-//  DataWeightRecord.swift
-//  DatabaseMigration
+//  DataWeightCopy.swift
+//  DailyDozen
 //
-//  Copyright © 2019 NutritionFacts.org. All rights reserved.
+//  Copyright © 2020 Nutritionfacts.org. All rights reserved.
 //
 
 import Foundation
-import RealmSwift
 
-class DataWeightRecord: Object {
+/// DataWeightCopy: DataWeightRecord without Realm Object inheritance
+class DataWeightCopy {
     
-    /// yyyyMMdd.typeKey e.g. 20190101.am
-    @objc dynamic var pid: String = ""
+    /// yyyyMMdd.typeKey e.g. 20190101.amKey
+    var pid: String = ""
     /// kilograms
-    @objc dynamic var kg: Double = 0.0
+    var kg: Double = 0.0
     /// time of day 24-hour "HH:mm" format
-    @objc dynamic var time: String = ""
+    var time: String = ""
     
     var kgStr: String {
         return String(format: "%.1f", kg)
@@ -94,7 +94,7 @@ class DataWeightRecord: Object {
         self.init()
         self.pid = "\(datestampKey).\(typeKey)"
         self.kg = kg
-        self.time = timeHHmm
+        self.time = time
     }
     
     convenience init(date: Date, weightType: DataWeightType, kg: Double) {
@@ -104,7 +104,7 @@ class DataWeightRecord: Object {
         self.time = date.datestampHHmm
     }
     
-    // MARK: - Realm Meta Information
+    // MARK: - Meta Information
     
     override static func primaryKey() -> String? {
         return "pid"

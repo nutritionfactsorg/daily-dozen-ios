@@ -73,18 +73,11 @@ class SettingsViewController: UITableViewController {
         } else {
             tweakVisibilityController.selectedSegmentIndex = 0
         }
-//        for segment in tweakVisibilityController.subviews {
-//            for label in segment.subviews {
-//                if let labels = label as? UILabel {
-//                    labels.numberOfLines = 2
-//                }
-//            }
-//        }  // :!!!:NOPE:
         
         #if targetEnvironment(simulator)
-        //print("::::: SIMULATOR ENVIRONMENT: SettingsViewController :::::")
+        //LogService.shared.debug("::::: SIMULATOR ENVIRONMENT: SettingsViewController :::::")
         advancedUtilitiesTableViewCell.isHidden = false
-        //print(":::::::::::::::::::::::::::::::::::::::::::::::::::::::::\n")
+        //LogService.shared.debug(":::::::::::::::::::::::::::::::::::::::::::::::::::::::::\n")
         #endif
         //advancedUtilitiesTableViewCell.isHidden = false // :!!!:!!!:
     }
@@ -137,18 +130,21 @@ class SettingsViewController: UITableViewController {
         // let unitsTypePrefStr = UserDefaults.standard.string(forKey: SettingsKeys.unitsTypePref),
         var prefUnitTypeString = ""
         var prefShowToggle = false
+        let isImperialInitialValue = SettingsManager.isImperial()
         switch unitMeasureToggle.selectedSegmentIndex {
         case UnitsSegmentState.imperialState.rawValue:
             prefUnitTypeString = UnitsType.imperial.rawValue // "imperial"
             prefShowToggle = false
-            
         case UnitsSegmentState.metricState.rawValue:
             prefUnitTypeString = UnitsType.metric.rawValue // "metric"
             prefShowToggle = false
         case UnitsSegmentState.toggleUnitsState.rawValue:
             if let unitsTypePrefStr = UserDefaults.standard.string(forKey: SettingsKeys.unitsTypePref) {
+                // Existing preference
                 prefUnitTypeString = unitsTypePrefStr
             } else {
+                // Unstated pref defaults to imperial. 
+                // :TBD:ToBeLocalized: set initial default based on device language
                 prefUnitTypeString = UnitsType.imperial.rawValue // "imperial"
             }
             prefShowToggle = true
@@ -157,6 +153,13 @@ class SettingsViewController: UITableViewController {
         }
         UserDefaults.standard.set(prefShowToggle, forKey: SettingsKeys.unitsTypeToggleShowPref)
         UserDefaults.standard.set(prefUnitTypeString, forKey: SettingsKeys.unitsTypePref)
+        let isImperialCurrentValue = SettingsManager.isImperial()
+        if isImperialInitialValue != isImperialCurrentValue {
+            NotificationCenter.default.post(
+                name: Notification.Name(rawValue: "NoticeChangedUnitsType"),
+                object: isImperialCurrentValue,
+                userInfo: nil)
+        }
     }
     
     //    func setDefaults() {
@@ -209,7 +212,7 @@ class SettingsViewController: UITableViewController {
         //
         //            UNUserNotificationCenter.current().add(request) { (error) in
         //                if let error = error {
-        //                    print(error.localizedDescription)
+        //                    LogService.shared.error(error.localizedDescription)
         //                }
         //            }
         //        }
@@ -222,14 +225,14 @@ class SettingsViewController: UITableViewController {
     //    }
     
     @IBAction func doTweaksVisibilityChanged(_ sender: UISegmentedControl) {
-        //print("selectedSegmentIndex = \(segmentedControl.selectedSegmentIndex)")
+        //LogService.shared.debug("selectedSegmentIndex = \(segmentedControl.selectedSegmentIndex)")
         let show21Tweaks = UserDefaults.standard.bool(forKey: SettingsKeys.show21TweaksPref)
         if tweakVisibilityController.selectedSegmentIndex == 0
             && show21Tweaks {
             // Toggle to hide 2nd tab
             UserDefaults.standard.set(false, forKey: SettingsKeys.show21TweaksPref)
             NotificationCenter.default.post(
-                name: NSNotification.Name(rawValue: "NoticeUpdatedShowTweaksTab"),
+                name: Notification.Name(rawValue: "NoticeUpdatedShowTweaksTab"),
                 object: 2, // Dozen, More, Settings
                 userInfo: nil)
         } else if tweakVisibilityController.selectedSegmentIndex == 1
@@ -237,7 +240,7 @@ class SettingsViewController: UITableViewController {
             // Toggle to show 2nd tab
             UserDefaults.standard.set(true, forKey: SettingsKeys.show21TweaksPref)
             NotificationCenter.default.post(
-                name: NSNotification.Name(rawValue: "NoticeUpdatedShowTweaksTab"),
+                name: Notification.Name(rawValue: "NoticeUpdatedShowTweaksTab"),
                 object: 3, // Dozen, Tweaks, More, Settings
                 userInfo: nil)
         }

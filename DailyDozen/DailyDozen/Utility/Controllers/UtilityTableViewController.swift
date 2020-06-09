@@ -41,13 +41,6 @@ class UtilityTableViewController: UITableViewController {
     // Simple static storyboard table
     
     // MARK: - Actions
-    
-    private var documentsUrl: URL {
-        let fm = FileManager.default
-        let urlList = fm.urls(for: .documentDirectory, in: .userDomainMask)
-        let documentsUrl = urlList[0]
-        return documentsUrl
-    }
         
     @IBAction func doUtilityDBExportDataBtn(_ sender: UIButton) {
         doUtilityDBExportData()
@@ -55,11 +48,12 @@ class UtilityTableViewController: UITableViewController {
     
     /// Presents share services.
     private func doUtilityDBExportData() { // see also presentShareServices() { // Backup
-        let fm = FileManager.default
-        let urlList = fm.urls(for: .documentDirectory, in: .userDomainMask)
-        let documentsUrl = urlList[0]
-        let realmMngr = RealmManager(workingDirUrl: documentsUrl)
-        let backupFilename = realmMngr.csvExport()
+        let realmMngr = RealmManager()
+        let backupFilename = realmMngr.csvExport(marker: "export_data")
+        #if DEBUG
+        _ = realmMngr.csvExportWeight(marker: "export_weight")
+        HealthSynchronizer.shared.syncWeightExport(marker: "export_weight_hk")
+        #endif
         
         let str = "\(Strings.utilityDbExportMsg): \"\(backupFilename)\"."
         
@@ -69,7 +63,7 @@ class UtilityTableViewController: UITableViewController {
         present(alert, animated: true, completion: nil)
         
         //let activityViewController = UIActivityViewController(
-        //    activityItems: [URL.inDocuments(for: backupFilename)],
+        //    activityItems: [URL.inDocuments(filename: backupFilename)],
         //    applicationActivities: nil)
         //activityViewController.popoverPresentationController?.sourceView = view
         //present(activityViewController, animated: true, completion: nil)
@@ -88,11 +82,11 @@ class UtilityTableViewController: UITableViewController {
         //    itemIds: ["id1", "id2", "id3"],
         //    selectedValue: "item3", 
         //    doneBottonCompletion: { (item: String?, index: String?) in
-        //        print("done", item ?? "nil", index ?? "nil")}, 
+        //        LogService.shared.debug("done", item ?? "nil", index ?? "nil")}, 
         //    didSelectCompletion: { (item: String?, index: String?) in
-        //        print("selection", item ?? "nil", index ?? "nil") },
+        //        LogService.shared.debug("selection", item ?? "nil", index ?? "nil") },
         //    cancelBottonCompletion: { (item: String?, index: String?) in
-        //        print("cancelled", item ?? "nil", index ?? "nil") }
+        //        LogService.shared.debug("cancelled", item ?? "nil", index ?? "nil") }
         //)
     }
     
@@ -158,8 +152,13 @@ class UtilityTableViewController: UITableViewController {
         str.append(contentsOf: ": \(UserDefaults.standard.object(forKey: SettingsKeys.hasSeenFirstLaunch) ?? "nil")\n")
         
         #if DEBUG
-        print("\n•• UserDefaults Values ••")
-        print(str)
+        LogService.shared.debug(
+            """
+            UtilityTableViewController doUtilitySettingsShow()…\n
+            ••• UserDefaults Values •••\n
+            \(str)
+            """
+        )
         #endif
         
         let alert = UIAlertController(title: "", message: str, preferredStyle: .actionSheet)
@@ -168,26 +167,18 @@ class UtilityTableViewController: UITableViewController {
         present(alert, animated: true, completion: nil)
     }
     
+    // MARK: - Test Database
+    
     @IBAction func doUtilityTestClearHistoryBtn(_ sender: UIButton) {
         let alert = UIAlertController(title: "", message: Strings.utilityTestHistoryClearMsg, preferredStyle: .actionSheet)
         let cancelAction = UIAlertAction(title: Strings.utilityConfirmCancel, style: .cancel, handler: nil)
         alert.addAction(cancelAction)
         let clearAction = UIAlertAction(title: Strings.utilityConfirmClear, style: .destructive) { (_: UIAlertAction) -> Void in
-            self.doUtilityTestClearHistory()
+            //self.doUtilityTestClearHistoryMigrationsChain()
+            DatabaseBuiltInTest.shared.doClearAllDataInMigrationChainBIT()
         }
         alert.addAction(clearAction)
         present(alert, animated: true, completion: nil)
-    }
-    
-    func doUtilityTestClearHistory() {
-        print("\ndoUtlityTestClearAllData started ...")
-        let realmMngrOld = RealmManagerLegacy(workingDirUrl: documentsUrl)
-        let realmDbOld = realmMngrOld.realmDb
-        realmDbOld.deleteAllLegacy()
-        let realmMngrNew = RealmManager(workingDirUrl: documentsUrl)
-        let realmDbNew = realmMngrNew.realmDb
-        realmDbNew.deleteAll()
-        print("... doUtilityTestClearHistory completed\n")
     }
     
     /// Note: When writing a large number of data entries AND the database is open 
@@ -196,92 +187,13 @@ class UtilityTableViewController: UITableViewController {
     /// avoid this is situation. The root cause of this issue is unknown.
     @IBAction func doUtilityTestGenerateHistoryBtn(_ sender: UIButton) {
         // half month
-        doUtilityTestGenerateHistory(numberOfDays: 15)
-        
-        // ~1 month
-        //doUtilityTestGenerateHistory(numberOfDays: 30)
-        
-        // ~10 months
-        //doUtilityTestGenerateHistory(numberOfDays: 300)
-
-        // ~2.7 years or ~33 months (1000 days, 2000 weight entries)
-        //doUtilityTestGenerateHistory(numberOfDays: 1000)
-        
-        // 3 years (1095 days, 2190 weight entries)
-        //doUtilityTestGenerateHistory(numberOfDays: 365*3)
-    }
-    
-    func doUtilityTestGenerateHistory(numberOfDays: Int) {
-        print("\ndoUtilityTestCreateData started ...")
-        let realmMngrCheck = RealmManager(workingDirUrl: documentsUrl)
-        let realmDbCheck = realmMngrCheck.realmDb
-        
-        let calendar = Calendar.current
-        let today = Date() // today
-
-        let dateComponents = DateComponents(
-            calendar: calendar,
-            year: today.year, month: today.month, day: today.day,
-            hour: 0, minute: 0, second: 0
-            )
-        var date = calendar.date(from: dateComponents)!
-        
-        let weightBase = 65.0 // kg
-        print("baseWeigh \(weightBase) kg, \(weightBase * 2.2) lbs")
-        let weightAmplitude = 2.0 // kg
-        let weightCycleStep = (2 * Double.pi) / (30 * 2)
-        for i in 0..<numberOfDays { 
-            let stepByDay = DateComponents(day: -1)
-            date = calendar.date(byAdding: stepByDay, to: date)!
-
-            // Add data counts
-            realmDbCheck.saveCount(3, date: date, countType: .dozeBeans) // 0-3
-            realmDbCheck.saveCount(Int.random(in: 0...3), date: date, countType: .dozeFruitsOther) // 0-3
-
-            let stepByAm = DateComponents(
-                hour: Int.random(in: 7...8),
-                minute: Int.random(in: 1...59)
-            )
-            let dateAm = calendar.date(byAdding: stepByAm, to: date)!
-
-            let stepByPm = DateComponents(
-                hour: Int.random(in: 21...23),
-                minute: Int.random(in: 1...59)
-            )
-            let datePm = calendar.date(byAdding: stepByPm, to: date)!
-            
-            //
-            let x = Double(i)
-            let weightAm = weightBase + weightAmplitude * sin(x * weightCycleStep)
-            let weightPm = weightBase - weightAmplitude * sin(x * weightCycleStep)
-
-            realmDbCheck.saveWeight(date: dateAm, weightType: .am, kg: weightAm)
-            realmDbCheck.saveWeight(date: datePm, weightType: .pm, kg: weightPm)
-            
-            if i < 5 {
-                let weightAmStr = String(format: "%.2f", weightAm)
-                let weightPmStr = String(format: "%.2f", weightAm)
-                print("\(date) [AM] \(dateAm) \(weightAmStr) [PM] \(datePm) \(weightPmStr)")
-            }
-        }
-        print("... doUtilityTestGenerateHistory completed\n")
+        DatabaseBuiltInTest.shared.doGenerateDBHistoryBIT(numberOfDays: 15, defaultDB: true)
     }
     
     @IBAction func doUtilityTestGenerateLegacyBtn(_ sender: UIButton) {
-        doUtilityTestGenerateLegacy()
+        DatabaseBuiltInTest.shared.doGenerateDBLegacyDataBIT()
     }
     
-    func doUtilityTestGenerateLegacy() {
-        let realmMngrOldCheck = RealmManagerLegacy(workingDirUrl: documentsUrl)
-        let realmDbOldCheck = realmMngrOldCheck.realmDb
-        // World Pasta Day: Oct 25, 1995
-        let date1995Pasta = Date.init(datestampKey: "19951025")!
-        // Add known content to legacy
-        let dozeCheck = realmDbOldCheck.getDozeLegacy(for: date1995Pasta)
-        realmDbOldCheck.saveStatesLegacy([true, false, true], id: dozeCheck.items[0].id) // Beans
-        realmDbOldCheck.saveStatesLegacy([false, true, false], id: dozeCheck.items[2].id) // Other Fruit
-    }
-
     // MARK: - UI
     
     private struct Strings { // :NYI:LOCALIZE: localize utility strings
@@ -297,17 +209,23 @@ class UtilityTableViewController: UITableViewController {
         let alertController = UIAlertController(title: "Default Style", message: "A standard alert.", preferredStyle: .alert)
 
         let cancelAction = UIAlertAction(title: "Cancel", style: .cancel) { (action: UIAlertAction) -> Void in
-            print(":DEBUG: \(action)")            
+            LogService.shared.debug(
+                "••CANCEL•• UtilityTableViewController alertTwoButton() \(action)"
+            )
         }
         alertController.addAction(cancelAction)
 
         let okAction = UIAlertAction(title: "OK", style: .default) { (action: UIAlertAction) -> Void in
-            print(":DEBUG: \(action)")            
+            LogService.shared.debug(
+                "••OK•• UtilityTableViewController alertTwoButton() \(action)"
+            )
         }
         alertController.addAction(okAction)
 
         let destroyAction = UIAlertAction(title: "Destroy", style: .destructive) { (action: UIAlertAction) -> Void in
-            print(":DEBUG: \(action)")            
+            LogService.shared.debug(
+                "••DESTROY•• UtilityTableViewController alertTwoButton() \(action)"
+            )
         }
         alertController.addAction(destroyAction)
         

@@ -46,8 +46,9 @@ class DozeEntryDataProvider: NSObject, UITableViewDataSource {
             rowIndex += tableView.numberOfRows(inSection: 0)
         }
         
-        let countMax = viewModel.itemStates(rowIndex: rowIndex).count
-        let countNow = viewModel.itemStates(rowIndex: rowIndex).filter { $0 }.count
+        let states = viewModel.dozeItemStates(rowIndex: rowIndex)
+        let countMax = states.count
+        let countNow = states.filter { $0 }.count
         var streak = countMax == countNow ? 1 : 0
         
         if streak > 0 {
@@ -81,8 +82,7 @@ class DozeEntryDataProvider: NSObject, UITableViewDataSource {
 extension DozeEntryDataProvider: UICollectionViewDataSource {
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        let states = viewModel.itemStates(rowIndex: collectionView.tag)
-        return states.count
+        return viewModel.itemInfo(rowIndex: collectionView.tag).itemType.maxServings
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
@@ -93,7 +93,7 @@ extension DozeEntryDataProvider: UICollectionViewDataSource {
             fatalError("There should be a cell")
         }
         
-        let states = viewModel.itemStates(rowIndex: collectionView.tag)
+        let states = viewModel.dozeItemStates(rowIndex: collectionView.tag)
         stateCell.configure(with: states[indexPath.row])
         return stateCell // individual checkbox
     }

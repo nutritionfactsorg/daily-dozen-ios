@@ -38,9 +38,11 @@
 	<key>LSSupportsOpeningDocumentsInPlace</key>
 	<false/>
 	<key>NSHealthShareUsageDescription</key>
-	<string>The Twenty-One Tweaks feature accesses your HealthKit data to provide updates to your daily weight measurements.</string>
+	<string>The 21 Tweaks feature accesses your HealthKit data to provide updates to your daily weight measurements.</string>
 	<key>NSHealthUpdateUsageDescription</key>
-	<string>The Twenty-One Tweaks feature can write weight data to HealthKit to help you keep track of your progress.</string>
+	<string>The 21 Tweaks feature can write weight data to HealthKit to help you keep track of your progress.</string>
+	<key>UIFileSharingEnabled</key>
+	<true/>
 	<key>UILaunchStoryboardName</key>
 	<string>LaunchScreen</string>
 	<key>UIMainStoryboardFile</key>

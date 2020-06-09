@@ -18,28 +18,30 @@ class DozeEntryViewController: UIViewController {
     
     // MARK: - Properties
     private let realm = RealmProvider()
-    private let servingsStateCountMaximum = 24
+    private let dozeDailyStateCountMaximum = 24
     
-    private var servingsStateCount = 0 {
+    /// Number of 'checked' states for the viewed date.
+    private var dozeDailyStateCount = 0 {
         didSet {
             countLabel.text = statesCountString
-            if servingsStateCount == servingsStateCountMaximum {
-                starImage.popIn()
+            if dozeDailyStateCount == dozeDailyStateCountMaximum {
+                starImage.popIn() // Show daily achievement star
+                // Ask the user for ratings and reviews in the App Store
                 SKStoreReviewController.requestReview()
             } else {
-                starImage.popOut()
+                starImage.popOut() // Hide daily achievement star
             }
         }
     }
     private var statesCountString: String {
-        return "\(servingsStateCount) / \(servingsStateCountMaximum)"
+        return "\(dozeDailyStateCount) / \(dozeDailyStateCountMaximum)"
     }
     
     // MARK: - UIViewController
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        setViewModel(for: Date())
+        setViewModel(date: Date())
         
         tableView.dataSource = dataProvider
         tableView.delegate = self
@@ -52,18 +54,25 @@ class DozeEntryViewController: UIViewController {
         appDelegate.realmDelegate = self
     }
     
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        setViewModel(date: dataProvider.viewModel.trackerDate)
+    }
+    
     // MARK: - Methods
     /// Sets a view model for the current date.
     ///
     /// - Parameter item: The current date.
-    func setViewModel(for date: Date) {
+    func setViewModel(date: Date) {
         dataProvider.viewModel = DozeEntryViewModel(tracker: realm.getDailyTracker(date: date))
-        servingsStateCount = 0
+        
+        // Update N/MAX daily checked items count
+        dozeDailyStateCount = 0
         let mainItemCount = dataProvider.viewModel.count - DozeEntrySections.supplementsCount
         for i in 0 ..< mainItemCount {
-            let itemStates: [Bool] = dataProvider.viewModel.itemStates(rowIndex: i)
+            let itemStates: [Bool] = dataProvider.viewModel.dozeItemStates(rowIndex: i)
             for state in itemStates where state {
-                servingsStateCount += 1 
+                dozeDailyStateCount += 1 
             }
         }
         tableView.reloadData()
@@ -142,7 +151,7 @@ extension DozeEntryViewController: UICollectionViewDelegate {
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         let rowIndex = collectionView.tag // which item
         let checkmarkIndex = indexPath.row // which checkmark
-        var checkmarkStates = dataProvider.viewModel.itemStates(rowIndex: rowIndex)
+        var checkmarkStates = dataProvider.viewModel.dozeItemStates(rowIndex: rowIndex)
         let itemPid = dataProvider.viewModel.itemPid(rowIndex: rowIndex)
         
         var stateTrueCounterOld = 0
@@ -195,7 +204,7 @@ extension DozeEntryViewController: UICollectionViewDelegate {
         
         let stateTrueCounterNew = stateNew ? checkmarkIndex+1 : checkmarkIndex
 
-        servingsStateCount += stateTrueCounterNew - stateTrueCounterOld
+        dozeDailyStateCount += stateTrueCounterNew - stateTrueCounterOld
     }
 }
 

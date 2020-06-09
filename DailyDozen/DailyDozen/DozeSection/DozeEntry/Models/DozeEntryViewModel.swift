@@ -82,7 +82,7 @@ class DozeEntryViewModel {
     ///
     /// - Parameter index: The current row index.
     /// - Returns: The states booland array.
-    func itemStates(rowIndex: Int) -> [Bool] {
+    func dozeItemStates(rowIndex: Int) -> [Bool] {
         let rowType = DozeEntryViewModel.rowTypeArray[rowIndex]
         let maxServings = rowType.maxServings
         var states = [Bool](repeating: false, count: maxServings)

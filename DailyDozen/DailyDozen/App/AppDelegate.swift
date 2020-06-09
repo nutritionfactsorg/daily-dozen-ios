@@ -17,59 +17,56 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     var window: UIWindow?
     
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
-        
-        let fm = FileManager.default
-        let urlList = fm.urls(for: .documentDirectory, in: .userDomainMask)
-        let documentsUrl = urlList[0]
+        let logger = LogService.shared
+        logger.logLevel = LogServiceLevel.off
         
         #if DEBUG
-        print("::::: DEBUG :::::")
-        print(":::::::::::::::::\n")
+        print(":DEBUG:WAYPOINT: AppDelegate didFinishLaunchingWithOptions\n\((URL.inDocuments().path))")
+        logger.logLevel = LogServiceLevel.verbose
+        logger.useLogFileDefault()
+        logger.debug("::::: DEBUG :::::")
+        logger.debug("AppDelegate didFinishLaunchingWithOptions DEBUG enabled")
+        
+        DatabaseBuiltInTest.shared.runSuite()
+        
+        logger.debug(":::::::::::::::::\n")
         #endif
         
         #if targetEnvironment(simulator)
-        print("::::: SIMULATOR ENVIRONMENT :::::")
+        logger.debug("::::: SIMULATOR ENVIRONMENT :::::")
         let bundle = Bundle(for: type(of: self))
-        print("Bundle & Resources Path:\n\(bundle.bundlePath)\n")
-        let documentsPath = documentsUrl.path
-        print("App Documents (RealmDB) Directory:\n\(documentsPath)\n")
+        logger.debug("Bundle & Resources Path:\n\(bundle.bundlePath)\n")
+        logger.debug("App Documents (RealmDB) Directory:\n\(URL.inDocuments().path)\n")
         
         /*
         // Preliminary integrity checks.
-        let realmMngrOldCheck = RealmManagerLegacy(workingDirUrl: documentsUrl)
+        let realmMngrOldCheck = RealmManagerLegacy(workingDirUrl: URL.inDocuments())
         let realmDbOldCheck = realmMngrOldCheck.realmDb
         // World Pasta Day: Oct 25, 1995
-        let date1995Pasta = Date.init(datestampKey: "19951025")!
+        let date1995Pasta = Date(datestampKey: "19951025")!
         // Add known content to legacy
         let dozeCheck = realmDbOldCheck.getDozeLegacy(for: date1995Pasta)
         realmDbOldCheck.saveStatesLegacy([true, false, true], id: dozeCheck.items[0].id) // Beans
         realmDbOldCheck.saveStatesLegacy([false, true, false], id: dozeCheck.items[2].id) // Other Fruits
         */
  
-        print(":::::::::::::::::::::::::::::::::\n")
+        logger.debug(":::::::::::::::::::::::::::::::::\n")
         #endif
         
-        // ---- Global Setup -----
+        // =====  Global Setup  =====
         
-        // Update legacy database if not already updated
-        if !UserDefaults.standard.bool(forKey: "didUpdateLegacyDatabase") {
-            let realmMngrOld = RealmManagerLegacy(workingDirUrl: documentsUrl)
-            let legacyExportFilename = realmMngrOld.csvExport()
-            
-            let realmMngrNew = RealmManager(workingDirUrl: documentsUrl)
-            realmMngrNew.csvImport(filename: legacyExportFilename)
-            UserDefaults.standard.set(true, forKey: "didUpdateLegacyDatabase")
-        }
+        // ----- Database Setup -----
+        DatabaseMaintainer.shared.doMigration()
         
         // ----- User Interface Setup -----
         // Note: User Interface particulars would be in SceneDelegate for newer impementations.
-        UILabel.appearance(whenContainedInInstancesOf: [UISegmentedControl.self]).numberOfLines = 0 // :!!!:NOPE:
+        UILabel.appearance(whenContainedInInstancesOf: [UISegmentedControl.self]).numberOfLines = 0 // :!!!:NOPE: needed for variable number of lines ???
         
         // ----- Notification Setup -----
         
         UNUserNotificationCenter.current().requestAuthorization(options: [.alert, .sound, .badge]) { (_, error) in
             if let error = error {
-                print(error.localizedDescription)
+                logger.debug("AppDelegate didFinishLaunchingWithOptions \(error.localizedDescription)")
             }
         }
         return true
@@ -79,37 +76,4 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         application.applicationIconBadgeNumber = 0
     }
     
-    // ==================================================================== //
-    
-//    private struct Strings {
-//        static let realmExtension = "realm"
-//        static let realmFilename = "main.realm"
-//        static let title = "Restore Backup"
-//        static let message = "Any existing data will be deleted before restoring from backup. Do you wish to continue?"
-//        static let confirm = "OK"
-//        static let decline = "NO"
-//    }
-//    
-//    func application(_ app: UIApplication,
-//                     open url: URL,
-//                     options: [UIApplication.OpenURLOptionsKey: Any] = [:]) -> Bool {
-//        guard url.pathExtension == Strings.realmExtension else { return false }
-//    
-//        let importAlert = UIAlertController(title: Strings.title,
-//                                            message: Strings.message,
-//                                            preferredStyle: .alert)
-//        let confirm = UIAlertAction(title: Strings.confirm, style: .default) { [weak self] (_) in
-//            try? FileManager.default.removeItem(at: URL.inDocuments(for: Strings.realmFilename))
-//            try? FileManager.default.copyItem(at: url, to: URL.inDocuments(for: Strings.realmFilename))
-//            self?.realmDelegate?.didUpdateFile()
-//        }
-//        importAlert.addAction(confirm)
-//    
-//        let decline = UIAlertAction(title: Strings.decline, style: .cancel, handler: nil)
-//        importAlert.addAction(decline)
-//    
-//        window?.rootViewController?.show(importAlert, sender: nil)
-//        return true
-//    }
-
 }

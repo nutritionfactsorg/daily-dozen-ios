@@ -20,7 +20,7 @@ struct TweakDetailViewModel {
         return LinksService.shared.link(topic: info.topic)
     }
     
-    /// Returns the number of items in the metric units.
+    /// Returns the number of activities.
     var activityCount: Int {
         return 1
     }

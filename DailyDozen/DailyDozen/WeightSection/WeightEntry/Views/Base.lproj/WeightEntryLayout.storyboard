@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="15705" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="tz1-ri-aeh">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="16096" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="tz1-ri-aeh">
     <device id="retina4_0" orientation="portrait" appearance="light"/>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15706"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="16087"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -73,17 +73,7 @@
                                             <action selector="clearWeightAMButtonPressed:" destination="tz1-ri-aeh" eventType="touchUpInside" id="MNu-JR-ro6"/>
                                         </connections>
                                     </button>
-                                    <button hidden="YES" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="IeK-uC-yhe" userLabel="SaveAM">
-                                        <rect key="frame" x="0.0" y="0.0" width="80" height="30"/>
-                                        <state key="normal" title="Save"/>
-                                        <connections>
-                                            <action selector="saveWeightAMButtonPressed:" destination="tz1-ri-aeh" eventType="touchUpInside" id="ZbX-cq-tue"/>
-                                        </connections>
-                                    </button>
                                 </subviews>
-                                <constraints>
-                                    <constraint firstItem="NRG-eE-YhG" firstAttribute="width" secondItem="IeK-uC-yhe" secondAttribute="width" id="pWr-k9-DsQ"/>
-                                </constraints>
                             </stackView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Evening (right before bed)" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="77g-xa-ali">
                                 <rect key="frame" x="10" y="164.5" width="300" height="21.5"/>
@@ -142,17 +132,7 @@
                                             <action selector="clearWeightPMButtonPressed:" destination="tz1-ri-aeh" eventType="touchUpInside" id="dUd-vh-uDg"/>
                                         </connections>
                                     </button>
-                                    <button hidden="YES" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Eai-xa-KOK" userLabel="SavePM">
-                                        <rect key="frame" x="0.0" y="0.0" width="80" height="30"/>
-                                        <state key="normal" title="Save"/>
-                                        <connections>
-                                            <action selector="saveWeightPMButtonPressed:" destination="tz1-ri-aeh" eventType="touchUpInside" id="job-GE-0Zv"/>
-                                        </connections>
-                                    </button>
                                 </subviews>
-                                <constraints>
-                                    <constraint firstItem="Eai-xa-KOK" firstAttribute="width" secondItem="7l0-os-Oqt" secondAttribute="width" id="DRB-IM-vqb"/>
-                                </constraints>
                             </stackView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -187,8 +167,6 @@
                     <connections>
                         <outlet property="clearWeightAMButton" destination="NRG-eE-YhG" id="V3E-30-e3b"/>
                         <outlet property="clearWeightPMButton" destination="7l0-os-Oqt" id="LEX-WM-EYl"/>
-                        <outlet property="saveWeightAMButton" destination="IeK-uC-yhe" id="dhP-ee-WCP"/>
-                        <outlet property="saveWeightPMButton" destination="Eai-xa-KOK" id="qTr-e7-WAz"/>
                         <outlet property="timeAMInput" destination="0Oz-JE-Xra" id="wFh-dW-0Hd"/>
                         <outlet property="timePMInput" destination="cVd-c3-qI1" id="vCb-nG-JmQ"/>
                         <outlet property="weightAM" destination="bbx-Qc-Tgp" id="BVp-bo-8sN"/>

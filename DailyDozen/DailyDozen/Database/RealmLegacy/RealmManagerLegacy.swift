@@ -10,11 +10,9 @@ import Foundation
 class RealmManagerLegacy {
     
     let realmDb: RealmProviderLegacy
-    let workingDirUrl: URL
     
-    init(workingDirUrl: URL) {
-        realmDb = RealmProviderLegacy()
-        self.workingDirUrl = workingDirUrl
+    init(fileUrl: URL) {
+        realmDb = RealmProviderLegacy(fileURL: fileUrl)
     }
     
     func csvExport() -> String {
@@ -24,7 +22,7 @@ class RealmManagerLegacy {
     }
     
     func csvExport(filename: String) {
-        let outUrl = workingDirUrl.appendingPathComponent(filename)
+        let outUrl = URL.inDocuments().appendingPathComponent(filename)
         var content = RealmManagerLegacy.csvHeader
         
         let allDozes = realmDb.getDozesLegacy()
@@ -35,7 +33,9 @@ class RealmManagerLegacy {
         do {
             try content.write(to: outUrl, atomically: true, encoding: .utf8)
         } catch {
-            print(":ERROR: csvExport failed :!!!: \(error) path:'\(outUrl.path)'")
+            LogService.shared.error(
+                "FAIL RealmManagerLegacy csvExport \(error) path:'\(outUrl.path)'"
+            )
         }
     }
     
@@ -59,11 +59,11 @@ class RealmManagerLegacy {
         var str = "\(doze.date.datestampKey)"
         
         for item in doze.items {
-            var servingsStateCount = 0
+            var stateCountPerItem = 0
             for state in item.states where state {
-                servingsStateCount += 1
+                stateCountPerItem += 1
             }
-            str.append(",\(servingsStateCount)")
+            str.append(",\(stateCountPerItem)")
         }
         str.append("\n")
         

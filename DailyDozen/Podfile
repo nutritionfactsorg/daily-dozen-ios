@@ -11,30 +11,31 @@ def common_pods
   
   ## https://cocoapods.org/pods/ActiveLabel
   ## https://github.com/optonaut/ActiveLabel.swift
-  ## Swift: 5.0, 4.2    :APPEARS_OK:
-  ## Swift Package Manager: 4.2
-  #pod 'ActiveLabel', :git => 'https://github.com/optonaut/ActiveLabel.swift.git', :tag => '0.8.0'
+  ## Swift: 5.0    
+  ## Swift Package Manager: 4.2 :APPEARS_OK:
   pod 'ActiveLabel', '~> 1.1.0'
   
   ## https://cocoapods.org/pods/Charts
   ## https://github.com/danielgindi/Charts
-  ## Swift: v5 ... includes both Objective-C and Swift demo code 
+  ## Swift: v5 ... 84% Swift, 15% ObjC, Swift demo code, ObjC demo code
   ## Swift Package Manager: 5.1
-  pod 'Charts', '~> 3.3.0'
+  pod 'Charts', '~> 3.5.0'
   
   ## https://cocoapods.org/pods/FSCalendar
   ## https://github.com/WenchaoD/FSCalendar
-  ## Swift:   ... code mostly Objective-C
+  ## Swift:   ... 88% ObjC
   ##          ... issues piling up
   ## Swift Package Manager: not supported
-  pod 'FSCalendar', '~> 2.8.0'
+  pod 'FSCalendar', '~> 2.8.1'
   
   ## https://cocoapods.org/pods/RealmSwift
   ## https://github.com/realm/realm-cocoa
   ## Swift: looks like 5
   ## C++: cxx14
   ## Swift Package Manager: 5.0
-  pod 'RealmSwift', '~> 3.18.0'
+  ## pod 'RealmSwift', '~> 3.18.0' ## Used in Daily Dozen release
+  ## pod 'RealmSwift', '~> 3.21.0' ## Skipped
+  pod 'RealmSwift', '~> 4.4.1'     ## 
   
   ## https://cocoapods.org/pods/SimpleAnimation
   ## https://github.com/keithito/SimpleAnimation

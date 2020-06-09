@@ -13,11 +13,11 @@ class DataCountRecord: Object {
     // MARK: - RealmDB Persisted Properties
     
     /// yyyyMMdd.typeKey e.g. 20190101.beansKey
-    @objc dynamic var pid = ""
+    @objc dynamic var pid: String = ""
     /// daily servings completed
-    @objc dynamic var count = 0
+    @objc dynamic var count: Int = 0
     /// consecutive days-to-date with all servings completed
-    @objc dynamic var streak = 0
+    @objc dynamic var streak: Int = 0
     
     var pidKeys: (datestampKey: String, typeKey: String) {
         let parts = self.pid.components(separatedBy: ".")
@@ -27,7 +27,9 @@ class DataCountRecord: Object {
     var pidParts: (datestamp: Date, countType: DataCountType)? {
         guard let date = Date.init(datestampKey: pidKeys.datestampKey),
             let countType = DataCountType(itemTypeKey: pidKeys.typeKey) else {
-                print(":ERROR: DataCountRecord has invalid datestamp or typeKey")
+                LogService.shared.error(
+                    "DataCountRecord pidParts has invalid datestamp or typeKey"
+                )
                 return nil
         }
         return (datestamp: date, countType: countType)
@@ -63,7 +65,10 @@ class DataCountRecord: Object {
         self.count = count
         if self.count > dataCountType.maxServings {
             self.count = dataCountType.maxServings
-            print(":LOG:ERROR: \(datestampKey) \(typeKey) \(count) exceeded max servings \(dataCountType.maxServings)")
+            LogService.shared.error(
+                "DataCountRecord init datestampKey:\(datestampKey) typekey:\(typeKey) count:\(count) exceeded max servings \(dataCountType.maxServings)"
+            )
+
         }
         self.streak = streak
     }
@@ -75,7 +80,9 @@ class DataCountRecord: Object {
         self.count = count
         if self.count > countType.maxServings {
             self.count = countType.maxServings
-            print(":LOG:ERROR: \(date.datestampKey) \(countType.typeKey) \(count) exceeds max servings \(countType.maxServings)")
+            LogService.shared.error(
+                "DataCountRecord init date:\(date.datestampKey) countType:\(countType.typeKey) count:\(count) exceeds max servings \(countType.maxServings)"
+            )
         }
         self.streak = streak
     }
@@ -101,7 +108,9 @@ class DataCountRecord: Object {
         if let value = Int(text) {
             setCount(value)
         } else {
-            print(":ERROR: setCount() not convertable to Int \(text)")
+            LogService.shared.error(
+                "DataCountRecord setCount() not convertable to Int \(text)"
+            )
         }
     }
     
@@ -110,10 +119,14 @@ class DataCountRecord: Object {
         if let countType = pidParts?.countType {
             if self.count > countType.maxServings {
                 self.count = countType.maxServings
-                print(":ERROR: \(pid) \(count) exceeds max servings")
+                LogService.shared.error(
+                    "DataCountRecord setCount \(pid) \(count) exceeds max servings"
+                )
             }
         } else {
-            print(":ERROR: \(pid) \(count) could not range check servings")
+            LogService.shared.error(
+                "DataCountRecord setCount \(pid) \(count) could not range check servings"
+            )
         }
     }
     

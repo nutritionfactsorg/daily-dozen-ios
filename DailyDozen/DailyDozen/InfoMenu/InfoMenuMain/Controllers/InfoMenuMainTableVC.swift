@@ -19,16 +19,13 @@ class InfoMenuMainTableVC: UITableViewController {
         navigationController?.navigationBar.titleTextAttributes = [NSAttributedString.Key.foregroundColor: UIColor.white]
     }
 
-    /// Presents share services.
+    /// Presents share services for CSV export backup file.
     private func presentShareServices() { // Backup
-        let fm = FileManager.default
-        let urlList = fm.urls(for: .documentDirectory, in: .userDomainMask)
-        let documentsUrl = urlList[0]
-        let realmMngr = RealmManager(workingDirUrl: documentsUrl)
-        let backupFilename = realmMngr.csvExport()
+        let realmMngr = RealmManager()
+        let backupFilename = realmMngr.csvExport(marker: "dailydozen_data")
         
         let activityViewController = UIActivityViewController(
-            activityItems: [URL.inDocuments(for: backupFilename)],
+            activityItems: [URL.inDocuments(filename: backupFilename)],
             applicationActivities: nil)
         activityViewController.popoverPresentationController?.sourceView = view
         present(activityViewController, animated: true, completion: nil)

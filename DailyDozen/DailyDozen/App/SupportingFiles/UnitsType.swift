@@ -31,6 +31,6 @@ enum UnitsType: String {
     
     /// Returns toggled type for the current type.
     var toggledType: UnitsType {
-        return self == .metric ? UnitsType.imperial : UnitsType.metric
+        return self == .imperial ? UnitsType.metric : UnitsType.imperial
     }
 }

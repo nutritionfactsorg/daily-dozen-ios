@@ -24,8 +24,6 @@ class MainViewController: UIViewController {
         setupUnitsType()
         setupReminders()
         setupTabNaviation()
-        
-        //UserDefaults.standard.set(false, forKey: SettingsKeys.hasSeenFirstLaunch) // :!!!:DEBUG: default should be true
     }
     
     private func setupUnitsType() {
@@ -37,7 +35,7 @@ class MainViewController: UIViewController {
         
         if UserDefaults.standard.object(forKey: SettingsKeys.unitsTypePref) == nil {
             // Skip if user had already set a preferred imperial or metric choice
-            // :NYI:ToBeLocalized: set initial default based on device language
+            // :TBD:ToBeLocalized: set initial default based on device language
             UserDefaults.standard.set(UnitsType.imperial.rawValue, forKey: SettingsKeys.unitsTypePref)
         }
     }
@@ -87,7 +85,8 @@ class MainViewController: UIViewController {
 
         UNUserNotificationCenter.current().add(request) { (error) in
             if let error = error {
-                print(error.localizedDescription)
+                let logger = LogService.shared
+                logger.warning("MainViewController setupReminders() \(error.localizedDescription)")
             }
         }
 
@@ -107,7 +106,7 @@ class MainViewController: UIViewController {
         NotificationCenter.default.addObserver(
             self,
             selector: #selector(updateTabBarController(notification:)),
-            name: NSNotification.Name(rawValue: "NoticeUpdatedShowTweaksTab"),
+            name: Notification.Name(rawValue: "NoticeUpdatedShowTweaksTab"),
             object: nil)
     }
 
@@ -137,7 +136,7 @@ class MainViewController: UIViewController {
 
         let titleDoze = NSLocalizedString("navtab.doze", comment: "Daily Dozen (proper noun) navigation tab")
         tabDailyDozenViewController.title = titleDoze
-        tabDailyDozenViewController.tabBarItem = UITabBarItem.init(
+        tabDailyDozenViewController.tabBarItem = UITabBarItem(
             title: titleDoze, // shows below tab bar item icon
             image: UIImage(named: "ic_tabapp_dailydozen"),
             tag: 0
@@ -152,9 +151,9 @@ class MainViewController: UIViewController {
                     .instantiateInitialViewController() as? TweakEntryPagerViewController
                 else { fatalError("Did not instantiate `TweakEntryPagerViewController`") }
 
-            let titleTweak = NSLocalizedString("navtab.tweaks", comment: "Twenty-One Tweaks (proper noun) navigation tab")
+            let titleTweak = NSLocalizedString("navtab.tweaks", comment: "21 Tweaks (proper noun) navigation tab")
             tabTweaksViewController.title = titleTweak
-            tabTweaksViewController.tabBarItem = UITabBarItem.init(
+            tabTweaksViewController.tabBarItem = UITabBarItem(
                 title: titleTweak,
                 image: UIImage(named: "ic_tabapp_21tweaks"),
                 tag: 1
@@ -171,7 +170,7 @@ class MainViewController: UIViewController {
 
         let titleInfo = NSLocalizedString("navtab.info", comment: "More Information navigation tab")
         tabInfoViewController.title = titleInfo
-        tabInfoViewController.tabBarItem = UITabBarItem.init(
+        tabInfoViewController.tabBarItem = UITabBarItem(
             title: titleInfo,
             image: UIImage(named: "ic_tabapp_more"),
             tag: 0
@@ -187,7 +186,7 @@ class MainViewController: UIViewController {
 
         let titleSettings = NSLocalizedString("navtab.preferences", comment: "Preferences (aka Settings, Configuration) navigation tab. Choose word different from 'Tweaks' translation")
         tabSettingsViewController.title = titleSettings
-        tabSettingsViewController.tabBarItem = UITabBarItem.init(
+        tabSettingsViewController.tabBarItem = UITabBarItem(
             title: titleSettings,
             image: UIImage(named: "ic_tabapp_settings"),
             tag: 0
@@ -197,7 +196,7 @@ class MainViewController: UIViewController {
         // Main Nav Bar Controller
         var navControllerArray = [UINavigationController]()
         for vc in controllerArray {
-            let navController = UINavigationController.init(rootViewController: vc)
+            let navController = UINavigationController(rootViewController: vc)
             navControllerArray.append(navController)
         }
                 

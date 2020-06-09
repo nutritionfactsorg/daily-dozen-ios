@@ -91,7 +91,7 @@ class DozeEntryPagerViewController: UIViewController {
 
         guard let viewController = children.first as? DozeEntryViewController else { return }
         viewController.view.fadeOut().fadeIn()
-        viewController.setViewModel(for: currentDate)
+        viewController.setViewModel(date: currentDate)
     }
 
     // MARK: - Actions
@@ -107,7 +107,7 @@ class DozeEntryPagerViewController: UIViewController {
 
         guard let viewController = children.first as? DozeEntryViewController else { return }
         viewController.view.fadeOut().fadeIn()
-        viewController.setViewModel(for: datePicker.date)
+        viewController.setViewModel(date: datePicker.date)
     }
 
     @IBAction private func viewSwipped(_ sender: UISwipeGestureRecognizer) {
@@ -130,7 +130,7 @@ class DozeEntryPagerViewController: UIViewController {
             viewController.view.slideOut(x: view.frame.width).slideIn(x: -view.frame.width)
         }
 
-        viewController.setViewModel(for: datePicker.date)
+        viewController.setViewModel(date: datePicker.date)
     }
 
     @IBAction private func backButtonPressed(_ sender: UIButton) {

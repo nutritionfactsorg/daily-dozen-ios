@@ -54,14 +54,9 @@ class TweakEntryViewModel {
     /// Returns an item name and type in the doze for the current index.
     ///
     /// - Parameter index: The current table row index.
-    /// - Returns: A tuple with the item heading, image name and supplemental flag.
-    func itemInfo(rowIndex: Int) -> (itemType: DataCountType, isSupplemental: Bool) {
-        let rowType: DataCountType = TweakEntryViewModel.rowTypeArray[rowIndex]
-        let heading = rowType.headingDisplay
-        let isSupplemental = heading.contains("Vitamin")
-            || heading.contains("Omega")
-        
-        return (rowType, isSupplemental)
+    /// - Returns: DataCountType
+    func itemInfo(rowIndex: Int) -> DataCountType {
+        return TweakEntryViewModel.rowTypeArray[rowIndex]
     }
     
     /// Returns an item streak count for the current index.
@@ -90,13 +85,18 @@ class TweakEntryViewModel {
     ///
     /// - Parameter index: The current row index.
     /// - Returns: The states booland array.
-    func itemStates(rowIndex: Int) -> [Bool] {
+    func tweakItemStates(rowIndex: Int) -> [Bool] {
         let rowType = TweakEntryViewModel.rowTypeArray[rowIndex]
         var states = [Bool](repeating: false, count: rowType.maxServings)
         if let count = tracker.itemsDict[rowType]?.count {
             for i in 0..<count {
                 states[i] = true
             }
+        }
+        if rowIndex == 16 {
+            LogService.shared.verbose(
+                "# TweakEntryViewModel itemStates \(rowIndex):\(itemPid(rowIndex: rowIndex)) \(states)"
+            )
         }
         return states
     }

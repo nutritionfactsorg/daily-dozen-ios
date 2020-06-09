@@ -7,8 +7,8 @@
 
 /* Daily Dozen (proper noun) navigation tab */
 "navtab.doze"="Daily Dozen";
-/* Twenty-One Tweaks (proper noun) navigation tab */
-"navtab.tweaks"="Twenty-One Tweaks";
+/* 21 Tweaks (proper noun) navigation tab */
+"navtab.tweaks"="21 Tweaks";
 /* More Information navigation tab */
 "navtab.info"="Info";
 /* Preferences (aka Settings, Configuration) navigation tab. Choose word different from 'Tweaks' translation */

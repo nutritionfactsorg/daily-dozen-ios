@@ -19,7 +19,9 @@ struct WeightHistoryViewModel {
     // MARK: - Inits
     init(amRecords: [DataWeightRecord], pmRecords: [DataWeightRecord]) {
         report = WeightReport(amRecords: amRecords, pmRecords: pmRecords)
-        //print(report.toString()) // :!!!:DEBUG:LOG_VERBOSE
+        LogService.shared.verbose(
+            "WeightHistoryViewModel init report:\n\(report.toString())"
+        )
     }
 
     // MARK: - Methods

@@ -19,28 +19,30 @@ class TweakEntryViewController: UIViewController {
     
     // MARK: - Properties
     private let realm = RealmProvider()
-    private let tweakStateCountMaximum = 37
+    private let tweakDailyStateCountMaximum = 37
     
-    private var tweakStateCount = 0 {
+    /// Number of 'checked' states for the viewed date.
+    private var tweakDailyStateCount = 0 {
         didSet {
             countLabel.text = statesCountString
-            if tweakStateCount == tweakStateCountMaximum {
-                starImage.popIn()
+            if tweakDailyStateCount == tweakDailyStateCountMaximum {
+                starImage.popIn() // Show show achievement star
+                // Ask the user for ratings and reviews in the App Store
                 SKStoreReviewController.requestReview()
             } else {
-                starImage.popOut()
+                starImage.popOut() // Hide daily achievement star
             }
         }
     }
     private var statesCountString: String {
-        return "\(tweakStateCount) / \(tweakStateCountMaximum)"
+        return "\(tweakDailyStateCount) / \(tweakDailyStateCountMaximum)"
     }
     
     // MARK: - UIViewController
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        setViewModel(for: Date())
+        setViewModel(date: Date())
         
         tableView.dataSource = dataProvider
         tableView.delegate = self
@@ -55,29 +57,54 @@ class TweakEntryViewController: UIViewController {
         // :HealthKit:
         if HKHealthStore.isHealthDataAvailable() {
             // add code to use HealthKit here...
-            //print("Yes, HealthKit is Available")
+            //LogService.shared.debug("Yes, HealthKit is Available")
             let healthManager = HealthManager()
             healthManager.requestPermissions()
         } else {
-            //print("There is a problem accessing HealthKit")
+            //LogService.shared.debug("There is a problem accessing HealthKit")
         }
         
+        NotificationCenter.default.addObserver(
+            self,
+            selector: #selector(changedWeight(notification:)),
+            name: Notification.Name(rawValue: "NoticeChangedWeight"),
+            object: nil)
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        LogService.shared.debug("TweakEntryViewController viewWillAppear")
+        super.viewWillAppear(animated)
+        setViewModel(date: dataProvider.viewModel.trackerDate)
     }
     
     // MARK: - Methods
+    
+    /// Updates the view model for the current date.
+    @objc func changedWeight(notification: Notification) {
+        guard let dateChanged = notification.object as? Date else { return }
+        let dateViewed = dataProvider.viewModel.trackerDate
+        if dateChanged.datestampKey == dateViewed.datestampKey {
+            setViewModel(date: dateViewed)            
+        }
+    }
+    
     /// Sets a view model for the current date.
     ///
     /// - Parameter item: The current date.
-    func setViewModel(for date: Date) {
+    func setViewModel(date: Date) {
+        LogService.shared.debug("TweakEntryViewController setViewModel \(date.datestampyyyyMMddHHmmss)")
         dataProvider.viewModel = TweakEntryViewModel(tracker: realm.getDailyTracker(date: date))
-        tweakStateCount = 0
+        
+        // Update N/MAX daily checked items count 
+        tweakDailyStateCount = 0
         let mainItemCount = dataProvider.viewModel.count
         for i in 0 ..< mainItemCount {
-            let itemStates: [Bool] = dataProvider.viewModel.itemStates(rowIndex: i)
+            let itemStates: [Bool] = dataProvider.viewModel.tweakItemStates(rowIndex: i)
             for state in itemStates where state {
-                tweakStateCount += 1
+                tweakDailyStateCount += 1
             }
         }
+        
         tableView.reloadData()
     }
     
@@ -87,21 +114,13 @@ class TweakEntryViewController: UIViewController {
     @IBAction private func tweakInfoPressed(_ sender: UIButton) {
         let itemInfo = dataProvider.viewModel.itemInfo(rowIndex: sender.tag)
         
-        guard !itemInfo.isSupplemental else {
-            let url = dataProvider.viewModel.topicURL(itemTypeKey: itemInfo.itemType.typeKey)
-            UIApplication.shared
-                .open(url,
-                      options: convertToUIApplicationOpenExternalURLOptionsKeyDictionary([:]),
-                      completionHandler: nil)
-            return
-        }
-        let viewController = TweakDetailBuilder.instantiateController(itemTypeKey: itemInfo.itemType.typeKey)
+        let viewController = TweakDetailBuilder.instantiateController(itemTypeKey: itemInfo.typeKey)
         navigationController?.pushViewController(viewController, animated: true)
     }
     
     /// TweakEntryTableViewCell calendarButton
     @IBAction private func tweakCalendarPressed(_ sender: UIButton) {
-        let heading = dataProvider.viewModel.itemInfo(rowIndex: sender.tag).itemType.headingDisplay
+        let heading = dataProvider.viewModel.itemInfo(rowIndex: sender.tag).headingDisplay
         let dataCountType = dataProvider.viewModel.itemType(rowIndex: sender.tag)
         
         var viewController = ItemHistoryBuilder.instantiateController(heading: heading, itemType: dataCountType)
@@ -153,7 +172,7 @@ extension TweakEntryViewController: UICollectionViewDelegate {
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         let rowIndex = collectionView.tag // which item
         let checkmarkIndex = indexPath.row // which checkmark
-        var checkmarkStates = dataProvider.viewModel.itemStates(rowIndex: rowIndex)
+        var checkmarkStates = dataProvider.viewModel.tweakItemStates(rowIndex: rowIndex)
         let itemPid = dataProvider.viewModel.itemPid(rowIndex: rowIndex)
         
         var stateTrueCounterOld = 0
@@ -200,13 +219,9 @@ extension TweakEntryViewController: UICollectionViewDelegate {
         
         tableView.reloadData()
         
-        guard !dataProvider.viewModel.itemInfo(rowIndex: rowIndex).isSupplemental else {
-            return
-        }
-        
         let stateTrueCounterNew = stateNew ? checkmarkIndex+1 : checkmarkIndex
         
-        tweakStateCount += stateTrueCounterNew - stateTrueCounterOld
+        tweakDailyStateCount += stateTrueCounterNew - stateTrueCounterOld
         
         // If state was toggled on then go to weight editor
         if stateNew && HealthManager.shared.isAuthorized() {

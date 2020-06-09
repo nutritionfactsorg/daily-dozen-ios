@@ -20,12 +20,12 @@ struct DozeDetailViewModel {
         return LinksService.shared.link(topic: info.topic)
     }
     
-    /// Returns the number of items in the metric amount (aka Serving Sizes).
+    /// Returns the number of items in the "amounts" (aka "serving size").
     var amountCount: Int {
         return info.servings.count
     }
     
-    /// Returns the number of items in the example (aka Serving Types).
+    /// Returns the number of items in the "examples" (aka "serving varieties" or "serving types").
     var exampleCount: Int {
         return info.varieties.count
     }

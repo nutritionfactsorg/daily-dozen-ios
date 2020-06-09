@@ -18,19 +18,25 @@ protocol RealmDelegate: AnyObject {
 
 class RealmProvider {
     
-    private struct Strings {
-        static let realmFilename = "NutritionFacts.realm"
-    }
+    public static let realmFilename = "NutritionFacts.realm"
     
     private let realm: Realm
     private var unsavedDailyTracker: DailyTracker?
     
-    init() {
+    /// Default current local Realm at Library/Database/defaultName
+    convenience init() {
+        let fileURL: URL = URL.inDatabase(filename: RealmProvider.realmFilename)
+        self.init(fileURL: fileURL)
+    }
+    
+    /// Prefer `init()` for default current local Realm.
+    /// Use `init(fileURL: URL)` to access a local Realm which _is not the current local default_.
+    init(fileURL: URL) {
         let config = Realm.Configuration(
-            // Local Realm file url
-            fileURL: URL.inDocuments(for: Strings.realmFilename),
+            fileURL: fileURL,   // local Realm file url
             objectTypes: [DataCountRecord.self, DataWeightRecord.self])
-        guard let realm = try? Realm(configuration: config) else {
+        Realm.Configuration.defaultConfiguration = config
+        guard let realm = try? Realm() else {
             fatalError("FAIL: could not instantiate RealmProvider.")
         }
         self.realm = realm
@@ -40,17 +46,21 @@ class RealmProvider {
         return DailyTracker(date: date)
     }
     
-    func getDailyWeight(date: Date) -> (am: DataWeightRecord?, pm: DataWeightRecord?) {
+    /// Use: weight entry
+    func getDBWeight(date: Date, ampm: DataWeightType) -> DataWeightRecord? {
         let datestampKey = date.datestampKey
-        let amPid = "\(datestampKey).am"
-        let pmPid = "\(datestampKey).pm"
+        let pid = ampm == .am ? "\(datestampKey).am" : "\(datestampKey).pm"
         
-        let amWeightRecord = realm.object(ofType: DataWeightRecord.self, forPrimaryKey: amPid)
-        let pmWeightRecord = realm.object(ofType: DataWeightRecord.self, forPrimaryKey: pmPid)
-        
-        return (amWeightRecord, pmWeightRecord)
+        let weightRecord = realm.object(ofType: DataWeightRecord.self, forPrimaryKey: pid)
+        return weightRecord
     }
     
+    // Use: datetime list to sync with HealthKit
+    func getDBWeightDatetimes() -> Results<DataWeightRecord> {
+        return realm.objects(DataWeightRecord.self)
+    }
+    
+    /// Use: TBD
     func getDailyWeights(fromDate: Date, toDate: Date) -> (am: [DataWeightRecord], pm: [DataWeightRecord]) {
         var amRecords = [DataWeightRecord]()
         var pmRecords = [DataWeightRecord]()
@@ -75,6 +85,7 @@ class RealmProvider {
         return (amRecords, pmRecords)
     }
     
+    /// Use: history view
     func getDailyWeights() -> (am: [DataWeightRecord], pm: [DataWeightRecord]) {
         var amRecords = [DataWeightRecord]()
         var pmRecords = [DataWeightRecord]()
@@ -91,6 +102,19 @@ class RealmProvider {
         }
         
         return (amRecords, pmRecords)
+    }
+    
+    /// Use: weight export
+    func getDailyWeightsArray() -> [DataWeightRecord] {
+        var records = [DataWeightRecord]()
+        let weightResults = realm.objects(DataWeightRecord.self)
+        let weightResultsById = weightResults.sorted(byKeyPath: "pid")
+        
+        for dataWeightRecord in weightResultsById {
+            records.append(dataWeightRecord)
+        }
+        
+        return records
     }
     
     func getDailyTracker(date: Date) -> DailyTracker {
@@ -184,7 +208,7 @@ class RealmProvider {
                         tracker = DailyTracker(date: date)
                     } else { return allTrackers } // early fail if datestamp invalid 
                 }
-                                
+                
             }
         }
         // Append remaining counters
@@ -206,7 +230,7 @@ class RealmProvider {
                 lastDatestamp = thisCounterDatestamp
             }
         }
-        // Append remaining weight records
+            // Append remaining weight records
         else if weightIndex < weightResults.count {
             while weightIndex < weightResults.count {
                 thisWeightRecord = weightResults[weightIndex]
@@ -228,7 +252,7 @@ class RealmProvider {
                 lastDatestamp = thisWeightDatestamp
             }
         }
-
+        
         allTrackers.append(tracker)
         
         return allTrackers
@@ -316,14 +340,16 @@ class RealmProvider {
                     update: Realm.UpdatePolicy.all)
             }
         } catch {
-            print(error.localizedDescription)
+            LogService.shared.error(
+                "RealmProvider saveCount \(error.localizedDescription)"
+            )
         }
     }
     
-    func saveWeight(date: Date, weightType: DataWeightType, kg: Double) {
+    func saveDBWeight(date: Date, ampm: DataWeightType, kg: Double) {
         // DataWeightRecord(date: date, weightType: weightType, kg: kg)
         guard kg > 0.0 else { return }
-        let pid = "\(date.datestampKey).\(weightType.typeKey)"
+        let pid = "\(date.datestampKey).\(ampm.typeKey)"
         do {
             try realm.write {
                 realm.create(
@@ -332,19 +358,23 @@ class RealmProvider {
                     update: Realm.UpdatePolicy.all)
             }
         } catch {
-            print(error.localizedDescription)
+            LogService.shared.error(
+                "RealmProvider saveDBWeight \(error.localizedDescription)"
+            )
         }
     }
     
-    func deleteWeight(date: Date, weightType: DataWeightType) {
-        let pid = "\(date.datestampKey).\(weightType.typeKey)"
+    func deleteDBWeight(date: Date, ampm: DataWeightType) {
+        let pid = "\(date.datestampKey).\(ampm.typeKey)"
         if let record = realm.object(ofType: DataWeightRecord.self, forPrimaryKey: pid) {
             do {
                 try realm.write {
-                    realm.delete(record)                    
+                    realm.delete(record)
                 }
             } catch {
-                print(error.localizedDescription)
+                LogService.shared.error(
+                    "RealmProvider deleteWeight \(error.localizedDescription)"
+                )
             }
         }
     }
@@ -366,13 +396,17 @@ class RealmProvider {
                 )
             }
         } catch {
-            print(error.localizedDescription)
+            LogService.shared.error(
+                "RealmProvider updateStreak \(error.localizedDescription)"
+            )
         }
     }
     
     func saveDailyTracker() {
         guard let tracker = unsavedDailyTracker else {
-            // print("saveDailyTracker() unsavedDailyTracker is nil")
+            //LogService.shared.debug(
+            //    "RealmProvider saveDailyTracker unsavedDailyTracker is nil"
+            //)
             return
         }
         saveDailyTracker(tracker: tracker)
@@ -391,17 +425,21 @@ class RealmProvider {
                 unsavedDailyTracker = nil
             }                
         } catch {
-            print(":ERROR: saveDailyTracker() failed tracker:\(tracker) description:\(error.localizedDescription)")
+            LogService.shared.error(
+                "FAIL RealmProvider saveDailyTracker() tracker:\(tracker) description:\(error.localizedDescription)"
+            )
         }
     }
     
-    func deleteAll() {
+    func deleteDBAll() {
         do {
             try realm.write {
                 realm.deleteAll()
             }
         } catch {
-            print(":ERROR: deleteAll() failed description:\(error.localizedDescription)")
+            LogService.shared.error(
+                "FAIL RealmProvider deleteDBAll() description:\(error.localizedDescription)"
+            )
         }
     }
     

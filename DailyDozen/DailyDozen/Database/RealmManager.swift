@@ -10,21 +10,24 @@ import Foundation
 class RealmManager {
     
     let realmDb: RealmProvider
-    let workingDirUrl: URL
     
-    init(workingDirUrl: URL) {
+    /// 
+    init() {
         realmDb = RealmProvider()
-        self.workingDirUrl = workingDirUrl
     }
     
-    func csvExport() -> String {
-        let filename = "\(Date.datestampNow())_dailydozen_data.csv"
+    init(fileURL: URL) {
+        realmDb = RealmProvider(fileURL: fileURL)
+    }
+    
+    func csvExport(marker: String) -> String {
+        let filename = "\(Date.datestampNow())_\(marker).csv"
         csvExport(filename: filename)
         return filename
     }
     
     func csvExport(filename: String) {
-        let outUrl = workingDirUrl.appendingPathComponent(filename)
+        let outUrl = URL.inDocuments().appendingPathComponent(filename)
         var content = RealmManager.csvHeader
 
         let allTrackers = realmDb.getDailyTrackers()
@@ -35,7 +38,9 @@ class RealmManager {
         do {
             try content.write(to: outUrl, atomically: true, encoding: .utf8)
         } catch {
-            print(":ERROR: csvExport failed :!!!: \(error) path:'\(outUrl.path)'")
+            LogService.shared.error(
+                "FAIL RealmManager csvExport \(error) path:'\(outUrl.path)'"
+            )
         }
     }
     
@@ -61,14 +66,18 @@ class RealmManager {
     }
     
     func csvImport(filename: String) {
-        let inUrl = workingDirUrl.appendingPathComponent(filename)
+        let inUrl = URL.inDocuments().appendingPathComponent(filename)
         guard let contents = try? String(contentsOf: inUrl)  else {
-            print(":ERROR:\(filename) not found")
+            LogService.shared.error(
+                "FAIL RealmManager csvImport file not found '\(filename)'"
+            )
             return
         }
         let lines = contents.components(separatedBy: .newlines)
         guard lines.count > 1 else {
-            print(":ERROR: CSV has less that 2 lines")
+            LogService.shared.error(
+                "FAIL RealmManager csvImport CSV has less that 2 lines"
+            )
             return
         }
         
@@ -85,7 +94,9 @@ class RealmManager {
                 }
             }
         } else {
-            print(":ERROR: CSV does not contain a valid header line")
+            LogService.shared.error(
+                "FAIL RealmManager csvImport CSV does not contain a valid header line"
+            )
             return
         }
         
@@ -130,7 +141,7 @@ class RealmManager {
         }
         
         let datastampKey = columns[0]
-        guard let date = Date.init(datestampKey: datastampKey) else {
+        guard let date = Date(datestampKey: datastampKey) else {
             return nil
         }
         var tracker = DailyTracker(date: date)
@@ -145,7 +156,9 @@ class RealmManager {
                 )
                 tracker.itemsDict[dataCountType] = dataCountRecord
             } else {
-                print(":ERROR: csvProcess \(index) in \(line)")
+                LogService.shared.error(
+                    "FAIL RealmManager csvProcess \(index) in \(line)"
+                )
             }
             index += 1
         }
@@ -180,13 +193,15 @@ class RealmManager {
         // Expected count: 1x date plus 14x legacy fields
         guard columns.count == 1 + 14 else {
             if columns.count > 1 { //  line with at least one `,`
-                print(":WARNING: csvProcessLegacy incorrect column count (\(columns.count)) '\(line)'")
+                LogService.shared.warning(
+                    "WARN RealmManager csvProcess  incorrect column count (\(columns.count)) '\(line)'"
+                )
             }
             return nil
         }
         
         let datastampKey = columns[0]
-        guard let date = Date.init(datestampKey: datastampKey) else {
+        guard let date = Date(datestampKey: datastampKey) else {
             return nil
         }
         let tracker = DailyTracker(date: date)
@@ -222,6 +237,32 @@ class RealmManager {
 
         str.append("\n")
         return str
+    }
+    
+    // MARK: - Weight Only
+    
+    func csvExportWeight(marker: String) -> String {
+        let filename = "\(Date.datestampNow())_\(marker).csv"
+        csvExportWeight(filename: filename)
+        return filename
+    }
+    
+    func csvExportWeight(filename: String) {
+        let outUrl = URL.inDocuments().appendingPathComponent(filename)
+        var content = "DB_PID,time,kg,lbs\n"
+
+        let allWeights = realmDb.getDailyWeightsArray()        
+        for record in allWeights {
+            content.append("\(record.pid),\(record.time),\(record.kgStr),\(record.lbsStr)\n")
+        }
+        
+        do {
+            try content.write(to: outUrl, atomically: true, encoding: .utf8)
+        } catch {
+            LogService.shared.error(
+                "FAIL RealmManager csvExport \(error) path:'\(outUrl.path)'"
+            )
+        }
     }
     
 }

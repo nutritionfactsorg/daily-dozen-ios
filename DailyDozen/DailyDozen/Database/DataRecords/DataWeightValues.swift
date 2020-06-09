@@ -1,21 +1,21 @@
 //
-//  DataWeightRecord.swift
-//  DatabaseMigration
+//  DataWeightValues.swift
+//  DailyDozen
 //
-//  Copyright © 2019 NutritionFacts.org. All rights reserved.
+//  Copyright © 2020 Nutritionfacts.org. All rights reserved.
 //
 
 import Foundation
-import RealmSwift
 
-class DataWeightRecord: Object {
+/// DataWeightValues: DataWeightRecord without Realm `Object` inheritance
+struct DataWeightValues {
     
     /// yyyyMMdd.typeKey e.g. 20190101.am
-    @objc dynamic var pid: String = ""
+    var pid: String = ""
     /// kilograms
-    @objc dynamic var kg: Double = 0.0
+    var kg: Double = 0.0
     /// time of day 24-hour "HH:mm" format
-    @objc dynamic var time: String = ""
+    var time: String = ""
     
     var kgStr: String {
         return String(format: "%.1f", kg)
@@ -56,7 +56,7 @@ class DataWeightRecord: Object {
     }
     
     var pidParts: (datestamp: Date, weightType: DataWeightType)? {
-        guard let date = Date.init(datestampKey: pidKeys.datestampKey),
+        guard let date = Date(datestampKey: pidKeys.datestampKey),
             let weightType = DataWeightType(typeKey: pidKeys.typeKey) else {
                 LogService.shared.error(
                     "DataWeightRecord pidParts has invalid datestamp or weightType"
@@ -80,7 +80,7 @@ class DataWeightRecord: Object {
     // MARK: - Init
     
     /// CSV Initialer.
-    convenience init?(datestampKey: String, typeKey: String, kilograms: String, timeHHmm: String) {
+    init?(datestampKey: String, typeKey: String, kilograms: String, timeHHmm: String) {
         guard DataWeightType(typeKey: typeKey) != nil,
             Date(datestampKey: datestampKey) != nil,
             let kg = Double(kilograms),
@@ -91,25 +91,21 @@ class DataWeightRecord: Object {
                 return nil
         }
 
-        self.init()
         self.pid = "\(datestampKey).\(typeKey)"
         self.kg = kg
         self.time = timeHHmm
     }
     
-    convenience init(date: Date, weightType: DataWeightType, kg: Double) {
-        self.init()
+    init(date: Date, weightType: DataWeightType, kg: Double) {
         self.pid = "\(date.datestampKey).\(weightType.typeKey)"
         self.kg = kg
         self.time = date.datestampHHmm
     }
     
-    // MARK: - Realm Meta Information
-    
-    override static func primaryKey() -> String? {
-        return "pid"
+    init(record: DataWeightRecord) {
+        self.pid = record.pid
+        self.kg = record.kg
+        self.time = record.time
     }
-    
-    // MARK: - Data Presentation Methods
-    
+
 }

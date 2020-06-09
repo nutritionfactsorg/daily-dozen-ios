@@ -110,6 +110,10 @@ class DozeDetailViewController: UIViewController {
         sender.setTitle(title, for: .normal)
         dataProvider.viewModel.unitsType = newUnitsType
         tableView.reloadRows(at: indexPaths, with: .fade)
+        NotificationCenter.default.post(
+            name: Notification.Name(rawValue: "NoticeChangedUnitsType"),
+            object: SettingsManager.isImperial(),
+            userInfo: nil)
     }
     
     /// Opens the type topic url in the browser.

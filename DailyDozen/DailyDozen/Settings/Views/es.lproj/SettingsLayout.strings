@@ -20,7 +20,7 @@
 "OZO-Xa-v5G.segmentTitles[0]" = "Docena Diaria\nsolamente";
 
 /* Class = "UISegmentedControl"; OZO-Xa-v5G.segmentTitles[1] = "Daily Dozen + 21 Tweaks"; ObjectID = "OZO-Xa-v5G"; */
-"OZO-Xa-v5G.segmentTitles[1]" = "Docena Diaria +\nVeintiún Ajustes";
+"OZO-Xa-v5G.segmentTitles[1]" = "Docena Diaria +\n21 Ajustes";
 
 /* Class = "UILabel"; text = "Enable Reminders"; ObjectID = "pjz-An-Ls5"; */
 "pjz-An-Ls5.text" = "Activa el Recordatorio Diario";
@@ -35,10 +35,10 @@
 "RLb-GV-4hh.segmentTitles[2]" = "Palanca";
 
 /* Class = "UITableViewSection"; footerTitle = "For health alone, use \"Daily Dozen Only\". For health and weight loss use \"Daily Dozen + 21 Tweaks\"."; ObjectID = "WdR-XV-IyP"; */
-"WdR-XV-IyP.footerTitle" = "Solo para la salud, use \"Docena Diaria solamente\". Para la salud y la pérdida de peso, use \"Docena Diaria Veintiún Ajustes\".";
+"WdR-XV-IyP.footerTitle" = "Solo para la salud, use \"Docena Diaria solamente\". Para la salud y la pérdida de peso, use \"Docena Diaria 21 Ajustes\".";
 
 /* Class = "UITableViewSection"; headerTitle = "21 Tweaks Visibility"; ObjectID = "WdR-XV-IyP"; */
-"WdR-XV-IyP.headerTitle" = "Visibilidad de Veintiún Ajustes";
+"WdR-XV-IyP.headerTitle" = "Visibilidad de 21 Ajustes";
 
 /* Class = "UILabel"; text = "On"; ObjectID = "XFw-2q-BdT"; */
 "XFw-2q-BdT.text" = "En";

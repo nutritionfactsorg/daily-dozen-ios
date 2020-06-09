@@ -4,9 +4,8 @@
 //
 //  Copyright © 2019 Nutritionfacts.org. All rights reserved.
 //
-// swiftlint:disable file_length
-// swiftlint:disable type_body_length
-// swiftlint:disable function_body_length
+// swiftlint :ENABLED: disable file_length
+// swiftlint :ENABLED: disable function_body_length
 
 import UIKit
 import HealthKit
@@ -25,123 +24,133 @@ class WeightEntryViewController: UIViewController {
     
     // Buttons
     @IBOutlet weak var clearWeightAMButton: UIButton!
-    @IBOutlet weak var saveWeightAMButton: UIButton!
     @IBOutlet weak var clearWeightPMButton: UIButton!
-    @IBOutlet weak var saveWeightPMButton: UIButton!
     
     // MARK: - Properties
     private let realm = RealmProvider()
-    private var currentViewDateFindMe = Date()
+    private var currentViewDateWeightEntry = Date()
     private var timePickerAM: UIDatePicker?
     private var timePickerPM: UIDatePicker?
     
     var pidAM: String {
-        return "\(currentViewDateFindMe.datestampKey).am"
+        return "\(currentViewDateWeightEntry.datestampKey).am"
     }
     
     var pidPM: String {
-        return "\(currentViewDateFindMe.datestampKey).pm"
+        return "\(currentViewDateWeightEntry.datestampKey).pm"
     }
     
     var pidWeight: String {
-        return "\(currentViewDateFindMe.datestampKey).tweakWeightTwice"
+        return "\(currentViewDateWeightEntry.datestampKey).tweakWeightTwice"
     }
     
-    // MARK: - Actions
+    // MARK: - Data Actions
+    
+    func clearIBWeight(ampm: DataWeightType) {
+        if ampm == .am {
+            timeAMInput.text = ""
+            weightAM.text = ""
+        } else {
+            timePMInput.text = ""
+            weightPM.text = ""
+        }
+        HealthSynchronizer.shared.syncWeightClear(date: currentViewDateWeightEntry, ampm: ampm)
+        updateWeightDataCount()
+    }
+    
+    /// Save weight values from InterfaceBuilder (IB) fields
+    func saveIBWeight(ampm: DataWeightType) {
+        let datestampKey = currentViewDateWeightEntry.datestampKey
+        
+        if
+            let timeText = ampm == .am ? timeAMInput.text : timePMInput.text,
+            let weightText = ampm == .am ? weightAM.text : weightPM.text,
+            let date = Date(healthkit: "\(datestampKey) \(timeText)"),
+            var weight = Double(weightText),
+            weight > 5.0 {
+                        
+            // Update local data
+            if SettingsManager.isImperial() {
+                weight = weight / 2.2046 // kg = lbs * 2.2046
+            }
+            HealthSynchronizer.shared.syncWeightPut(date: date, ampm: ampm, kg: weight)
+        }
+        // Update local counter
+        updateWeightDataCount()
+    }
+    
+    /// showIBWeight() when "BodyMassDataAvailable" notification occurs
+    @objc func showIBWeight(notification: Notification) {
+        LogService.shared.debug("•HK• WeightEntryViewController showIBWeight")
+        guard let healthRecord = notification.object as? HealthWeightRecord else {
+            return
+        }
+        
+        let weightToShow = healthRecord.getIBWeightToShow()
+        if healthRecord.ampm == .am {
+            timeAMInput.text = weightToShow.time
+            weightAM.text = weightToShow.weight
+        } else {
+            timePMInput.text = weightToShow.time
+            weightPM.text = weightToShow.weight
+        }
+    }
+    
+    /// Notification: "NoticeChangedUnitsType"
+    @objc func changedUnitsType(notification: Notification) {
+        guard let isImperial = notification.object as? Bool else {
+            return
+        }
+        
+        // Unit Type
+        if isImperial {
+            weightAMLabel.text = "lbs." // :TBD:ToBeLocalized:
+            weightPMLabel.text = "lbs." // :TBD:ToBeLocalized:
+            if let txt = weightAM.text {
+                weightAM.text = SettingsManager.convertKgToLbs(txt)
+            }
+            if let txt = weightPM.text {
+                weightPM.text = SettingsManager.convertKgToLbs(txt)
+            }
+        } else {
+            weightAMLabel.text = "kg" // :TBD:ToBeLocalized:
+            weightPMLabel.text = "kg" // :TBD:ToBeLocalized:
+            if let txt = weightAM.text {
+                weightAM.text = SettingsManager.convertLbsToKg(txt)
+            }
+            if let txt = weightPM.text {
+                weightPM.text = SettingsManager.convertLbsToKg(txt)
+            }
+        }
+    }
+    
+    // MARK: - UI Actions
     @IBAction func clearWeightAMButtonPressed(_ sender: Any) {
         // :NYI: confirm clear & delete
         view.endEditing(true)
-        clearWeightAM()
-    }
-    
-    func clearWeightAM() {
-        timeAMInput.text = ""
-        weightAM.text = ""
-        // :NYI: clear HealthKit value
-        realm.deleteWeight(date: currentViewDateFindMe, weightType: .am)
-        updateWeightDataCount()
-    }
-    
-    @IBAction func saveWeightAMButtonPressed(_ sender: Any) {
-        view.endEditing(true)
-        saveWeightAM()
-    }
-    
-    func saveWeightAM() {
-        let datestampKey = currentViewDateFindMe.datestampKey
-        // am
-        if
-            let amTimeText = timeAMInput.text,
-            let amDate = Date(healthkit: "\(datestampKey) \(amTimeText)"),
-            let amWeightText = weightAM.text,
-            var amWeight = Double(amWeightText),
-            amWeight > 5.0 {
-            
-            // Update HealthKit
-            HealthManager.shared.submitWeight(weight: amWeight, forDate: amDate)
-            
-            // Update local data
-            if isImperial() {
-                amWeight = amWeight / 2.2046 // kg = lbs * 2.2046
-            }
-            realm.saveWeight(date: amDate, weightType: .am, kg: amWeight)
-            // Update local counter
-        }
-        updateWeightDataCount()
+        clearIBWeight(ampm: .am)
     }
     
     @IBAction func clearWeightPMButtonPressed(_ sender: Any) {
         // :NYI: confirm clear & delete
         view.endEditing(true)
-        clearWeightPM()
+        clearIBWeight(ampm: .pm)
     }
     
-    func clearWeightPM() {
-        timePMInput.text = ""
-        weightPM.text = ""
-        // :NYI: clear HealthKit value
-        realm.deleteWeight(date: currentViewDateFindMe, weightType: .pm)
-        updateWeightDataCount()
-    }
-    
-    @IBAction func saveWeightPMButtonPressed(_ sender: Any) {
-        view.endEditing(true)
-        saveWeightPM()
-    }
-    
-    func saveWeightPM() {
-        let datestampKey = currentViewDateFindMe.datestampKey
-        // pm
-        if
-            let pmTimeText = timePMInput.text,
-            let pmDate = Date(healthkit: "\(datestampKey) \(pmTimeText)"),
-            let pmWeightText = weightPM.text,
-            var pmWeight = Double(pmWeightText),
-            pmWeight > 5.0 {
-            
-            // Update HealthKit
-            HealthManager.shared.submitWeight(weight: pmWeight, forDate: pmDate)
-            // Update local data
-            if isImperial() {
-                pmWeight = pmWeight / 2.2046 // kg = lbs * 2.2046
-            }
-            realm.saveWeight(date: pmDate, weightType: .pm, kg: pmWeight)
-            // Update local counter
-        }
-        updateWeightDataCount()
-    }
-    
+    /// Update "weight twice daily" tweak tracker 
+    /// for current date view using database values
     private func updateWeightDataCount() {
-        let records = realm.getDailyWeight(date: currentViewDateFindMe)
+        let recordAM = realm.getDBWeight(date: currentViewDateWeightEntry, ampm: .am)
+        let recordPM = realm.getDBWeight(date: currentViewDateWeightEntry, ampm: .pm)
         var count = 0
-        if records.am != nil {
+        if recordAM != nil {
             count += 1
         }
-        if records.pm != nil {
+        if recordPM != nil {
             count += 1
         }
         
-        realm.saveCount(count, date: currentViewDateFindMe, countType: .tweakWeightTwice)
+        realm.saveCount(count, date: currentViewDateWeightEntry, countType: .tweakWeightTwice)
     }
     
     // Note: call once upon entry from tweaks checklist or history
@@ -160,11 +169,10 @@ class WeightEntryViewController: UIViewController {
         appDelegate.realmDelegate = self
         
         // AM Morning
-        // :===: timePickerAM = UIDatePicker() // may need contraints?
-        timePickerAM = UIDatePicker(frame: CGRect())
+        // :TBD: timePickerAM = UIDatePicker() // may need min-max contraints?
+        timePickerAM = UIDatePicker()
         timePickerAM?.datePickerMode = .time
         timePickerAM?.addTarget(self, action: #selector(WeightEntryViewController.timeChangedAM(timePicker:)), for: .valueChanged)
-        
         timeAMInput.inputView = timePickerAM // assign initial value
         
         // PM Evening
@@ -173,87 +181,49 @@ class WeightEntryViewController: UIViewController {
         timePickerPM?.addTarget(self, action: #selector(WeightEntryViewController.timeChangedPM(timePicker:)), for: .valueChanged)
         timePMInput.inputView = timePickerPM
         
-        setViewModel(viewDate: Date())
+        setViewModel(viewDate: Date()) // today
         
         // Unit Type
-        if isImperial() {
-            weightAMLabel.text = "lbs."
-            weightPMLabel.text = "lbs."
+        if SettingsManager.isImperial() {
+            weightAMLabel.text = "lbs." // :TBD:ToBeLocalized:
+            weightPMLabel.text = "lbs." // :TBD:ToBeLocalized:
         } else {
-            weightAMLabel.text = "kg"
-            weightPMLabel.text = "kg"
+            weightAMLabel.text = "kg" // :TBD:ToBeLocalized:
+            weightPMLabel.text = "kg" // :TBD:ToBeLocalized:
         }
         
         //
-        let tapGesture = UITapGestureRecognizer(target: self, action: #selector(WeightEntryViewController.viewTapped(gestureRecognizer:)))
+        let tapGesture = UITapGestureRecognizer(
+            target: self, 
+            action: #selector(WeightEntryViewController.viewTapped(gestureRecognizer:)))
         view.addGestureRecognizer(tapGesture)
         
         NotificationCenter.default.addObserver(
             self,
-            selector: #selector(updateMorningHKData(notification:)),
-            name: NSNotification.Name(rawValue: "MorningBodyMassDataAvailable"),
+            selector: #selector(changedUnitsType(notification:)),
+            name: Notification.Name(rawValue: "NoticeChangedUnitsType"),
             object: nil)
         
         NotificationCenter.default.addObserver(
             self,
-            selector: #selector(updateEveningHKData(notification:)),
-            name: NSNotification.Name(rawValue: "EveningBodyMassDataAvailable"),
+            selector: #selector(showIBWeight(notification:)),
+            name: Notification.Name(rawValue: "BodyMassDataAvailable"),
             object: nil)
     }
-    
-    @objc func updateMorningHKData(notification: Notification) {
         
-        guard let weightArray = notification.object as? [HKQuantitySample],
-            weightArray.count > 0 else {
-                return
-        }
-        
-        for someElement: HKQuantitySample in weightArray {
-            let bodyMassKg = someElement.quantity.doubleValue(for: HKUnit.gramUnit(with: .kilo))
-            let dateFormatter = DateFormatter()
-            dateFormatter.dateFormat = "hh:mm a"
-            let dateStr = dateFormatter.string(from: someElement.endDate)
-            if dateStr.suffix(2).lowercased() == "am" {
-                timeAMInput.text = dateStr
-                var amWeight = Double(bodyMassKg)
-                if isImperial() {
-                    amWeight = amWeight * 2.2046 // kg = lbs * 2.2046
-                }
-                weightAM.text = String(format: "%.2f", amWeight)
-            }
-            return
-        }
+    override func viewWillAppear(_ animated: Bool) {
+        LogService.shared.debug("WeightEntryViewController viewWillAppear")
+        super.viewWillAppear(animated)
+        setViewModel(viewDate: self.currentViewDateWeightEntry)
     }
     
-    @objc func updateEveningHKData(notification: Notification) {
-        guard let weightArray = notification.object as? [HKQuantitySample],
-            weightArray.count > 0 else {
-                return
-        }
-        print(weightArray[0])
-        for someElement: HKQuantitySample in weightArray {
-            let bodyMassKg = someElement.quantity.doubleValue(for: HKUnit.gramUnit(with: .kilo))
-            let dateFormatter = DateFormatter()
-            dateFormatter.dateFormat = "hh:mm a"
-            let dateStr = dateFormatter.string(from: someElement.endDate)
-            if dateStr.suffix(2).lowercased() == "pm" {
-                timePMInput.text = dateStr
-                var pmWeight = Double(bodyMassKg)
-                if isImperial() {
-                    pmWeight = pmWeight * 2.2046 // 1 kg =  2.2046 lb
-                }
-                weightPM.text = String(format: "%.2f", pmWeight)
-            }
-            return
-        }
-        
-    }
-    
+    /// Return to previous screen. Not invoked by date pager.
     override func viewWillDisappear(_ animated: Bool) {
+        LogService.shared.debug("WeightEntryViewController viewWillDisappear")
         super.viewWillDisappear(animated)
         // Update stored values
-        saveWeightAM()
-        saveWeightPM()
+        saveIBWeight(ampm: .am)
+        saveIBWeight(ampm: .pm)
     }
     
     func getTimeNow() -> String {
@@ -297,88 +267,23 @@ class WeightEntryViewController: UIViewController {
     ///
     /// - Parameter item: sets the current date.
     func setViewModel(viewDate: Date) {
-        // Update stored values
-        saveWeightAM()
-        saveWeightPM()
+        LogService.shared.debug("•HK• WeightEntryViewController setViewModel \(viewDate.datestampKey)")
+        // Update or create stored values from the current view
+        saveIBWeight(ampm: .am)
+        saveIBWeight(ampm: .pm)
         
         // Switch to new date
-        self.currentViewDateFindMe = viewDate
-        let records = realm.getDailyWeight(date: currentViewDateFindMe)
+        self.currentViewDateWeightEntry = viewDate
         
-        if let amRecord = records.am {
-            timeAMInput.text = amRecord.timeAmPm
-            if isImperial() {
-                weightAM.text = String(format: "%.1f", amRecord.lbs)
-            } else {
-                weightAM.text = String(format: "%.1f", amRecord.kg)
-            }
-            if let date = amRecord.datetime {
-                timePickerAM?.setDate(date, animated: false)
-            }
-        } else {
-            let now = Date()
-            if viewDate.datestampKey == now.datestampKey {
-                let start = Calendar.current.startOfDay(for: viewDate)
-                var components = DateComponents()
-                components.day = 1
-                components.second = -1
-                let end = Calendar.current.date(byAdding: components, to: start)!
-                HealthManager.shared.fetchWeightDataMorning(startDate: start, endDate: end)
-                //HealthManager.shared.fetchWeightDataMorning()
-            } else {
-                print("setViewModel() viewDate:\n\(viewDate)")
-                let start = Calendar.current.startOfDay(for: viewDate)
-                print("setViewModel() start:\n\(start)")
-                var components = DateComponents()
-                components.day = 1
-                components.second = -1
-                let end = Calendar.current.date(byAdding: components, to: start)!
-                print("setViewModel() end:\n\(end))")
-                HealthManager.shared.fetchWeightDataMorning(startDate: start, endDate: end)
-            }
-            timeAMInput.text = ""
-            weightAM.text = ""
-            timePickerAM?.setDate(Date(), animated: false)
-        }
-        
-        if let pmRecord = records.pm {
-            timePMInput.text = pmRecord.timeAmPm
-            if isImperial() {
-                weightPM.text = String(format: "%.1f", pmRecord.lbs)
-            } else {
-                weightPM.text = String(format: "%.1f", pmRecord.kg)
-            }
-            if let date = pmRecord.datetime {
-                timePickerPM?.setDate(date, animated: false)
-            }
-        } else {
-            //let now = Date()
-            //            if viewDate.datestampKey == now.datestampKey {
-            //                HealthManager.shared.fetchWeightDataEvening()
-            //            }
-            let start = Calendar.current.startOfDay(for: viewDate)
-            var components = DateComponents()
-            components.day = 1
-            components.second = -1
-            let end = Calendar.current.date(byAdding: components, to: start)!
-            HealthManager.shared.fetchWeightDataEvening(startDate: start, endDate: end)
-            timePMInput.text = ""
-            weightPM.text = ""
-            timePickerPM?.setDate(Date(), animated: false)
-        }
-    }
-    
-    private func isImperial() -> Bool {
-        guard
-            let unitsTypePrefStr = UserDefaults.standard.string(forKey: SettingsKeys.unitsTypePref),
-            let currentUnitsType = UnitsType(rawValue: unitsTypePrefStr)
-            else {
-                return true
-        }
-        if currentUnitsType == .imperial {
-            return true
-        }
-        return false
+        let recordAM = HealthSynchronizer.shared.syncWeightToShow(date: viewDate, ampm: .am)
+        timeAMInput.text = recordAM.time
+        weightAM.text = recordAM.weight
+        timePickerAM?.setDate(viewDate, animated: false)
+                
+        let recordPM = HealthSynchronizer.shared.syncWeightToShow(date: viewDate, ampm: .pm)
+        timePMInput.text = recordPM.time
+        weightPM.text = recordPM.weight
+        timePickerPM?.setDate(viewDate, animated: false)
     }
     
     /*
@@ -409,7 +314,7 @@ extension WeightEntryViewController: UIPickerViewDelegate {
 extension WeightEntryViewController: UITextFieldDelegate {
     // :1:
     func textFieldShouldBeginEditing(_ textField: UITextField) -> Bool {
-        //print("textFieldShouldBeginEditing")
+        //LogService.shared.debug("textFieldShouldBeginEditing")
         
         // :===: should solve initial picker registration
         if textField.text == nil || textField.text!.isEmpty {
@@ -426,11 +331,11 @@ extension WeightEntryViewController: UITextFieldDelegate {
     }
     // :2:
     func textFieldDidBeginEditing(_ textField: UITextField) {
-        //print("textFieldDidBeginEditing")
+        //LogService.shared.debug("textFieldDidBeginEditing")
     }
     
     func textFieldShouldReturn(_ textField: UITextField) -> Bool {
-        //print("textFieldShouldReturn")
+        //LogService.shared.debug("textFieldShouldReturn")
         //weightAM.endEditing(true)
         view.endEditing(true)
         
@@ -440,7 +345,7 @@ extension WeightEntryViewController: UITextFieldDelegate {
     
     // :3:
     func textFieldShouldEndEditing(_ textField: UITextField) -> Bool {
-        //print("textFieldShouldEndEditing")
+        //LogService.shared.debug("textFieldShouldEndEditing")
         if textField.text != "" {
             return true
         } else {
@@ -451,9 +356,9 @@ extension WeightEntryViewController: UITextFieldDelegate {
     // :4:
     func textFieldDidEndEditing(_ textField: UITextField) {
         //this is where you might add other code
-        //print("textFieldDidEndEditing")
+        //LogService.shared.debug("textFieldDidEndEditing")
         if let weight = weightAM.text {
-            print(weight)
+            LogService.shared.debug("•HK• WeightEntryViewController textFieldDidEndEditing \(weight)")
         }
     }
 }

@@ -1,21 +1,21 @@
 PODS:
   - ActiveLabel (1.1.0)
-  - Charts (3.3.0):
-    - Charts/Core (= 3.3.0)
-  - Charts/Core (3.3.0)
+  - Charts (3.5.0):
+    - Charts/Core (= 3.5.0)
+  - Charts/Core (3.5.0)
   - FSCalendar (2.8.1)
-  - Realm (3.18.0):
-    - Realm/Headers (= 3.18.0)
-  - Realm/Headers (3.18.0)
-  - RealmSwift (3.18.0):
-    - Realm (= 3.18.0)
+  - Realm (4.4.1):
+    - Realm/Headers (= 4.4.1)
+  - Realm/Headers (4.4.1)
+  - RealmSwift (4.4.1):
+    - Realm (= 4.4.1)
   - SimpleAnimation (0.4.2)
 
 DEPENDENCIES:
   - ActiveLabel (~> 1.1.0)
-  - Charts (~> 3.3.0)
-  - FSCalendar (~> 2.8.0)
-  - RealmSwift (~> 3.18.0)
+  - Charts (~> 3.5.0)
+  - FSCalendar (~> 2.8.1)
+  - RealmSwift (~> 4.4.1)
   - SimpleAnimation (~> 0.4.2)
 
 SPEC REPOS:
@@ -29,12 +29,12 @@ SPEC REPOS:
 
 SPEC CHECKSUMS:
   ActiveLabel: 5e3f4de79a1952d4604b845a0610d4776e4b82b3
-  Charts: e0dd4cd8f257bccf98407b58183ddca8e8d5b578
+  Charts: 40a08591df1f8ad5c223ddedfb1a06da92f24f7c
   FSCalendar: 5245140456fcbcac5824c203b98bd8068bdfee1a
-  Realm: 7b3d04740facf45e958a514b466a32b04f1113d6
-  RealmSwift: c817b5f374668cf08f649afb05f55d92a787649c
+  Realm: 4eb04d7487bd43c0581256f40b424eafb711deff
+  RealmSwift: 3eb8924ff7100df5928c7602f71d0fec51e7c9c5
   SimpleAnimation: 5430010b9548f392e7459290acce01c9ceba7171
 
-PODFILE CHECKSUM: cb0b270bbb4b867dfd716b08fba9a3dcc286637d
+PODFILE CHECKSUM: 9117ef146b1e169eb6f2d748fd5e19ba0c73c80b
 
 COCOAPODS: 1.9.1

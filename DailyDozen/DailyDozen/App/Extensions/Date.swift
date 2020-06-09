@@ -10,6 +10,14 @@ import Foundation
 
 extension Date {
     
+    /// Return DataWeightType `.am` or `.pm` 
+    var ampm: DataWeightType {
+        if self.hour < 12 {
+            return .am
+        }
+        return .pm
+    }
+    
     /// Return yyyyMMdd based on the current locale.
     var datestampKey: String {
         let dateFormatter = DateFormatter()
@@ -20,6 +28,18 @@ extension Date {
     var datestampHHmm: String {
         let dateFormatter = DateFormatter()
         dateFormatter.dateFormat = "HH:mm"
+        return dateFormatter.string(from: self)
+    }
+    
+    var datestampyyyyMMddHHmmss: String {
+        let dateFormatter = DateFormatter()
+        dateFormatter.dateFormat = "yyyyMMdd_HHmmss"
+        return dateFormatter.string(from: self)
+    }
+    
+    var datestampyyyyMMddHHmmssSSS: String {
+        let dateFormatter = DateFormatter()
+        dateFormatter.dateFormat = "yyyyMMdd_HHmmss.SSS"
         return dateFormatter.string(from: self)
     }
     
@@ -46,6 +66,18 @@ extension Date {
         let dateFormatter = DateFormatter()
         dateFormatter.dateFormat = "yyyyMMdd"
         if let date = dateFormatter.date(from: datestampKey) {
+            self = date
+            return
+        } else {
+            return nil
+        }
+    }
+    
+    /// - parameter datastampLong: "yyyyMMdd_HHmmss.SSS" 24-hour millisecond format
+    init?(datastampLong: String) {
+        let dateFormatter = DateFormatter()
+        dateFormatter.dateFormat = "yyyyMMdd_HHmmss.SSS"
+        if let date = dateFormatter.date(from: datastampLong) {
             self = date
             return
         } else {

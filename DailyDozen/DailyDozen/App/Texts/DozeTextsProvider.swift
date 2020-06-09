@@ -17,7 +17,7 @@ class DozeTextsProvider {
             let jsonData = jsonString.data(using: .utf8),
             let info = try? decoder.decode(DozeDetailInfo.self, from: jsonData)
             else { 
-                fatalError("DozeTextsProvider failed to load 'DozeDetailData.json'") 
+                fatalError("FAIL DozeTextsProvider did not load 'DozeDetailData.json'") 
         }
         return  DozeTextsProvider(info: info)
     }()
