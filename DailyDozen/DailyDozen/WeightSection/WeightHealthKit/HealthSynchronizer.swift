@@ -42,13 +42,14 @@ struct HealthSynchronizer {
                     guard let datetime = values.datetime else { return }
                     let ampm = datetime.ampm
                     let kg = values.kg
-                    self.syncWeightDate(date: datetime, ampm: ampm, kg: kg)
+                    self.syncWeightDateHK(date: datetime, ampm: ampm, kg: kg)
                 }
             }
         }
     }
     
-    public func syncWeightDate(date: Date, ampm: DataWeightType, kg: Double) {
+    /// Only modifies HealthKit sample values
+    public func syncWeightDateHK(date: Date, ampm: DataWeightType, kg: Double) {
         let predicate = HealthManager.shared.buildPredicate(date: date, ampm: ampm)
         
         // AM: ascending order TRUE  so earliest AM time lists first.
@@ -62,18 +63,19 @@ struct HealthSynchronizer {
                 predicate: predicate, 
                 ascending: ascending, 
                 passthru: values,
-                handler: self.syncWeightDateResults)
+                handler: self.syncWeightDateResultsHK)
         }
     }
     
-    private func syncWeightDateResults(passthru: Any?, query: HKSampleQuery, samples: [HKSample]?, error: Error?) {
+    /// Only modifies HealthKit sample values
+    private func syncWeightDateResultsHK(passthru: Any?, query: HKSampleQuery, samples: [HKSample]?, error: Error?) {
         if let error = error {
-            LogService.shared.error("syncWeightDateResults \"\(error.localizedDescription)\"")
+            LogService.shared.error("syncWeightDateResultsHK \"\(error.localizedDescription)\"")
         }
         
         guard let values = passthru as? DataWeightValues,
             let datetime = values.datetime else {
-                LogService.shared.error("syncWeightDateResults expected an 'VALUES' DataWeightType")
+                LogService.shared.error("syncWeightDateResultsHK expected an 'VALUES' DataWeightType")
                 return
         }
         
@@ -141,6 +143,7 @@ struct HealthSynchronizer {
         }
     }
     
+    /// Updates both Realm and HealthKit values
     func syncWeightPut(date: Date, ampm: DataWeightType, kg: Double) {
         if let record = realm.getDBWeight(date: date, ampm: ampm) {
             if abs(record.kg - kg) < 0.1 {
@@ -153,7 +156,7 @@ struct HealthSynchronizer {
         NotificationCenter.default.post(name: Notification.Name(rawValue: "NoticeChangedWeight"), object: date, userInfo: nil)
         
         serialSyncQueue.async {
-            self.syncWeightDate(date: date, ampm: ampm, kg: kg)
+            self.syncWeightDateHK(date: date, ampm: ampm, kg: kg)
         }
     }
     

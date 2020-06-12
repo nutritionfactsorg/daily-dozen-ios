@@ -45,23 +45,22 @@ class DozeEntryDataProvider: NSObject, UITableViewDataSource {
         if servingsSection == .supplements {
             rowIndex += tableView.numberOfRows(inSection: 0)
         }
+        let itemType = viewModel.itemType(rowIndex: rowIndex)
         
+        // Determine Tracker Streak value for this itemType
         let states = viewModel.dozeItemStates(rowIndex: rowIndex)
-        let countMax = states.count
         let countNow = states.filter { $0 }.count
-        var streak = countMax == countNow ? 1 : 0
-        
+        var streak = states.count == countNow ? 1 : 0        
         if streak > 0 {
             let yesterday = viewModel.trackerDate.adding(.day, value: -1)!
             // previous streak +1
+            // :NYI: just read the streak for item from Realm given PID
             let yesterdayItems = realm.getDailyTracker(date: yesterday).itemsDict
-            let itemType = viewModel.itemType(rowIndex: rowIndex)
             if let yesterdayStreak = yesterdayItems[itemType]?.streak {
                 streak += yesterdayStreak
             }
         }
         
-        let itemType = viewModel.itemInfo(rowIndex: rowIndex).itemType
         dozeTableViewCell.configure(
             heading: itemType.headingDisplay,
             tag: rowIndex,

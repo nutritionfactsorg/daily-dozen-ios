@@ -32,6 +32,7 @@ class TweakEntryPagerViewController: UIViewController {
     // MARK: - Properties
     private var currentDate = Date() {
         didSet {
+            LogService.shared.debug("@DATE \(currentDate.datestampKey) TweakEntryPagerViewController")
             if currentDate.isInCurrentDayWith(Date()) {
                 backButton.superview?.isHidden = true
                 dateButton.setTitle("Today", for: .normal)

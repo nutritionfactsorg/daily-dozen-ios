@@ -49,10 +49,10 @@ class UtilityTableViewController: UITableViewController {
     /// Presents share services.
     private func doUtilityDBExportData() { // see also presentShareServices() { // Backup
         let realmMngr = RealmManager()
-        let backupFilename = realmMngr.csvExport(marker: "export_data")
+        let backupFilename = realmMngr.csvExport(marker: "db_export_data")
         #if DEBUG
-        _ = realmMngr.csvExportWeight(marker: "export_weight")
-        HealthSynchronizer.shared.syncWeightExport(marker: "export_weight_hk")
+        _ = realmMngr.csvExportWeight(marker: "db_export_weight")
+        HealthSynchronizer.shared.syncWeightExport(marker: "hk_export_weight")
         #endif
         
         let str = "\(Strings.utilityDbExportMsg): \"\(backupFilename)\"."
