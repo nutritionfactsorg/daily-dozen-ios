@@ -31,9 +31,7 @@ struct DailyTracker {
         if let value = Int(countText) {
             setCount(typeKey: typeKey, count: value)
         } else {
-            LogService.shared.error(
-                "DailyTracker setCount() countText \(countText) not convertable"
-            )
+            LogService.shared.error("DailyTracker setCount() countText \(countText) not convertable")
         }
     }
     
@@ -41,9 +39,7 @@ struct DailyTracker {
         if let dataCountRecord = itemsDict[typeKey] {
             dataCountRecord.setCount(count)
         } else {
-            LogService.shared.error(
-                "DailyTracker setCount() type not found \(typeKey.typeKey)"
-            )
+            LogService.shared.error("DailyTracker setCount() type not found \(typeKey.typeKey)")
         }
     }
     

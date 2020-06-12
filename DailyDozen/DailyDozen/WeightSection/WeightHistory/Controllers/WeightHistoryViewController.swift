@@ -281,7 +281,7 @@ class WeightHistoryViewController: UIViewController {
     // MARK: - Actions
     
     @IBAction func editDataButtonPressed(_ sender: UIButton) {
-        let viewController = WeightEntryPagerBuilder.instantiateController()
+        let viewController = WeightEntryPagerBuilder.instantiateController(date: Date())
         navigationController?.pushViewController(viewController, animated: true)
     }
     

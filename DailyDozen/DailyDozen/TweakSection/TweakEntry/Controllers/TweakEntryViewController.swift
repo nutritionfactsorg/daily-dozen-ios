@@ -92,7 +92,7 @@ class TweakEntryViewController: UIViewController {
     ///
     /// - Parameter item: The current date.
     func setViewModel(date: Date) {
-        LogService.shared.debug("TweakEntryViewController setViewModel \(date.datestampyyyyMMddHHmmss)")
+        LogService.shared.debug("@DATE \(date.datestampKey) TweakEntryViewController setViewModel")
         dataProvider.viewModel = TweakEntryViewModel(tracker: realm.getDailyTracker(date: date))
         
         // Update N/MAX daily checked items count 
@@ -199,22 +199,22 @@ extension TweakEntryViewController: UICollectionViewDelegate {
         cell.configure(with: checkmarkStates[indexPath.row])
         let dataCountType = dataProvider.viewModel.itemType(rowIndex: rowIndex)
         
-        // Update Streak
-        let countMax = checkmarkStates.count
+        // Update Tracker Count
         let countNow = checkmarkStates.filter { $0 }.count
-        var streak = countMax == countNow ? 1 : 0
         realm.saveCount(countNow, pid: itemPid)
         
-        // :!!!: streak needs to include more than today+yesterday
+        // Update Tracker Streak
+        // :NYI: streak needs to include more than today+yesterday
+        var streak = checkmarkStates.count == countNow ? 1 : 0        
         if streak > 0 {
             let yesterday = dataProvider.viewModel.trackerDate.adding(.day, value: -1)!
             // previous day's streak +1
+            // :NYI: just read the streak for item from Realm given PID
             let yesterdayTracker = realm.getDailyTracker(date: yesterday)
             if let yesterdayStreak = yesterdayTracker.itemsDict[dataCountType]?.streak {
                 streak += yesterdayStreak
             }
         }
-        
         realm.updateStreak(streak, pid: itemPid)
         
         tableView.reloadData()
@@ -223,13 +223,14 @@ extension TweakEntryViewController: UICollectionViewDelegate {
         
         tweakDailyStateCount += stateTrueCounterNew - stateTrueCounterOld
         
-        // If state was toggled on then go to weight editor
-        if stateNew && HealthManager.shared.isAuthorized() {
-            let dataCountType = dataProvider.viewModel.itemType(rowIndex: rowIndex)
-            if dataCountType == .tweakWeightTwice {
-                let viewController = WeightEntryPagerBuilder.instantiateController()
-                navigationController?.pushViewController(viewController, animated: true)
-            }
+        // Weight Editor
+        if dataCountType == .tweakWeightTwice { 
+            // Go to the weight editor
+            let date = dataProvider.viewModel.trackerDate
+            let viewController = WeightEntryPagerBuilder.instantiateController(date: date)
+            if let navigationController = navigationController {
+                navigationController.pushViewController(viewController, animated: true)
+            }                
         }
     }
 }

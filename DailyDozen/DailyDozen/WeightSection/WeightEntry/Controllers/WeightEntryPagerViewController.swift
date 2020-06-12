@@ -16,29 +16,27 @@ class WeightEntryPagerBuilder {
     /// Instantiates and returns the initial view controller for a storyboard.
     ///
     /// - Returns: The initial view controller in the storyboard.
-    static func instantiateController() -> UIViewController {
+    static func instantiateController(date: Date) -> WeightEntryPagerViewController {
         let storyboard = UIStoryboard(name: "WeightEntryPagerLayout", bundle: nil)
         guard
-            let viewController = storyboard.instantiateInitialViewController()
+            let viewController = storyboard.instantiateViewController(withIdentifier: "WeightEntryPagerLayoutID") as? WeightEntryPagerViewController
             else { fatalError("Did not instantiate `WeightEntryPagerViewController`") }
-
+        viewController.currentDate = date
         return viewController
     }
 }
 
 // MARK: - Controller
 class WeightEntryPagerViewController: UIViewController {
+    
+    @IBOutlet private weak var backButton: UIButton!
 
     // MARK: - Properties
-    private var currentDate = Date() {
+
+    /// 
+    fileprivate var currentDate = Date() {
         didSet {
-            if currentDate.isInCurrentDayWith(Date()) {
-                backButton.superview?.isHidden = true
-                dateButton.setTitle("Today", for: .normal)
-            } else {
-                backButton.superview?.isHidden = false
-                dateButton.setTitle(datePicker.date.dateString(for: .long), for: .normal)
-            }
+            LogService.shared.debug("@DATE \(currentDate.datestampKey) WeightEntryPagerViewController")
         }
     }
 
@@ -56,8 +54,6 @@ class WeightEntryPagerViewController: UIViewController {
         }
     }
 
-    @IBOutlet private weak var backButton: UIButton!
-
     // MARK: - UIViewController
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -66,6 +62,14 @@ class WeightEntryPagerViewController: UIViewController {
         navigationController?.navigationBar.tintColor = UIColor.white
 
         title = "Weight"
+        
+        if currentDate.isInCurrentDayWith(Date()) {
+            backButton.superview?.isHidden = true
+            dateButton.setTitle("Today", for: .normal)
+        } else {
+            backButton.superview?.isHidden = false
+            dateButton.setTitle(currentDate.dateString(for: .long), for: .normal)
+        }
     }
 
     override func viewDidAppear(_ animated: Bool) {
@@ -80,6 +84,14 @@ class WeightEntryPagerViewController: UIViewController {
     /// - Parameter date: The current date.
     func updateDate(_ date: Date) {
         currentDate = date
+        if currentDate.isInCurrentDayWith(Date()) {
+            backButton.superview?.isHidden = true
+            dateButton.setTitle("Today", for: .normal)
+        } else {
+            backButton.superview?.isHidden = false
+            dateButton.setTitle(datePicker.date.dateString(for: .long), for: .normal)
+        }
+        
         datePicker.setDate(date, animated: false)
 
         guard let viewController = children.first as? WeightEntryViewController else { return }
@@ -97,6 +109,13 @@ class WeightEntryPagerViewController: UIViewController {
         dateButton.isHidden = false
         datePicker.isHidden = true
         currentDate = datePicker.date
+        if currentDate.isInCurrentDayWith(Date()) {
+            backButton.superview?.isHidden = true
+            dateButton.setTitle("Today", for: .normal)
+        } else {
+            backButton.superview?.isHidden = false
+            dateButton.setTitle(datePicker.date.dateString(for: .long), for: .normal)
+        }
 
         guard let viewController = children.first as? WeightEntryViewController else { return }
         viewController.view.fadeOut().fadeIn()
@@ -105,15 +124,22 @@ class WeightEntryPagerViewController: UIViewController {
 
     @IBAction private func viewSwipped(_ sender: UISwipeGestureRecognizer) {
         let interval = sender.direction == .left ? -1 : 1
-        let currentDate = datePicker.date.adding(.day, value: interval)
+        let swippedDate = datePicker.date.adding(.day, value: interval)
 
         let today = Date()
-
-        guard let date = currentDate, date <= today else { return }
+        
+        guard let date = swippedDate, date <= today else { return }
 
         datePicker.setDate(date, animated: false)
 
         self.currentDate = datePicker.date
+        if self.currentDate.isInCurrentDayWith(Date()) {
+            backButton.superview?.isHidden = true
+            dateButton.setTitle("Today", for: .normal)
+        } else {
+            backButton.superview?.isHidden = false
+            dateButton.setTitle(datePicker.date.dateString(for: .long), for: .normal)
+        }
 
         guard let viewController = children.first as? WeightEntryViewController else { return }
 
@@ -130,14 +156,15 @@ class WeightEntryPagerViewController: UIViewController {
         updateDate(Date())
     }
 
-    /*
     // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
+    
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
+        if segue.identifier == "weightEditEmbedSegue" {
+            if let childVC = segue.destination as? WeightEntryViewController {
+                //Some property on ChildVC that needs to be set
+                childVC.currentViewDateWeightEntry = currentDate
+            }
+        }
     }
-    */
-
+    
 }

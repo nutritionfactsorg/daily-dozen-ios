@@ -178,22 +178,22 @@ extension DozeEntryViewController: UICollectionViewDelegate {
         cell.configure(with: checkmarkStates[indexPath.row])
         let itemType = dataProvider.viewModel.itemType(rowIndex: rowIndex)
         
-        // Update Streak
-        let countMax = checkmarkStates.count
+        // Update Tracker Count
         let countNow = checkmarkStates.filter { $0 }.count
-        var streak = countMax == countNow ? 1 : 0
         realm.saveCount(countNow, pid: itemPid)
-
-        // :!!!: streak needs to include more than today+yesterday
+        
+        // Update Tracker Streak
+        // :NYI: streak needs to include more than today+yesterday
+        var streak = checkmarkStates.count == countNow ? 1 : 0
         if streak > 0 {
             let yesterday = dataProvider.viewModel.trackerDate.adding(.day, value: -1)!
             // previous day's streak +1
+            // :NYI: just read the streak for item from Realm given PID
             let yesterdayTracker = realm.getDailyTracker(date: yesterday)
             if let yesterdayStreak = yesterdayTracker.itemsDict[itemType]?.streak {
                 streak += yesterdayStreak
             }
         }
-        
         realm.updateStreak(streak, pid: itemPid)
         
         tableView.reloadData()

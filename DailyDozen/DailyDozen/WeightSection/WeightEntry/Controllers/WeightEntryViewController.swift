@@ -28,7 +28,11 @@ class WeightEntryViewController: UIViewController {
     
     // MARK: - Properties
     private let realm = RealmProvider()
-    private var currentViewDateWeightEntry = Date()
+    public var currentViewDateWeightEntry = Date() {
+        didSet {
+            LogService.shared.debug("@DATE \(currentViewDateWeightEntry.datestampKey) WeightEntryViewController")
+        }
+    }
     private var timePickerAM: UIDatePicker?
     private var timePickerPM: UIDatePicker?
     
@@ -61,6 +65,7 @@ class WeightEntryViewController: UIViewController {
     /// Save weight values from InterfaceBuilder (IB) fields
     func saveIBWeight(ampm: DataWeightType) {
         let datestampKey = currentViewDateWeightEntry.datestampKey
+        LogService.shared.debug("•HK• WeightEntryViewController saveIBWeight \(datestampKey)")
         
         if
             let timeText = ampm == .am ? timeAMInput.text : timePMInput.text,
@@ -181,7 +186,7 @@ class WeightEntryViewController: UIViewController {
         timePickerPM?.addTarget(self, action: #selector(WeightEntryViewController.timeChangedPM(timePicker:)), for: .valueChanged)
         timePMInput.inputView = timePickerPM
         
-        setViewModel(viewDate: Date()) // today
+        setViewModel(viewDate: currentViewDateWeightEntry)
         
         // Unit Type
         if SettingsManager.isImperial() {
