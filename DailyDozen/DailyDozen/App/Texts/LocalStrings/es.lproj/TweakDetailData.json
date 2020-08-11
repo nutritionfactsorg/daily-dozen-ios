@@ -146,7 +146,7 @@
     "tweakMealNegCal" : {
       "activity" : {
         "imperial" : "Empezar con alimentos de calorías negativas",
-        "metric" : "Empezar con alimentos de calorías negativas""
+        "metric" : "Empezar con alimentos de calorías negativas"
       },
       "description" : [
         "Como entrante, puedes comerte una manzana, una sopa o una ensalada con alimentos de luz verde que contenga menos de cien calorías por taza."
