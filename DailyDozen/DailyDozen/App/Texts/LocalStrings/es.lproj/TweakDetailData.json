@@ -2,13 +2,13 @@
   "itemsDict" : {
     "tweakCompleteIntentions" : {
       "activity" : {
-        "imperial" : "Complete sus intenciones de implementación",
-        "metric" : "Complete sus intenciones de implementación"
+        "imperial" : "Completar tus metas",
+        "metric" : "Complete tus metas"
       },
       "description" : [
-        "Cada dos meses, cree tres nuevas intenciones de implementación: \"si es X, entonces Y\" planea realizar un comportamiento particular en un contexto específico, y marque cada una de ellas a medida que las completa todos los días."
+        "Cada dos meses, crea tres metas nuevas, al estilo de \"si X, entonces Y\", para comportarte de cierta manera en situaciones específicas. Intenta marcar las tres casillas todos los días."
       ],
-      "heading" : "Complete sus intenciones de implementación",
+      "heading" : "Completar tus metas",
       "topic" : ""
     },
     "tweakDailyBlackCumin" : {
@@ -17,7 +17,7 @@
         "metric" : "Comino negro (Nigella sativa) (¼ cucharadita)"
       },
       "description" : [
-        "Como se señaló en la sección Supresión del apetito, una revisión sistemática y un metanálisis de ensayos aleatorizados y controlados de pérdida de peso encontraron que aproximadamente un cuarto de cucharadita de comino negro en polvo al día parece reducir el índice de masa corporal en un lapso de un par de meses. Tenga en cuenta que el comino negro es diferente del comino normal, para el cual la dosificación es diferente."
+        "Como se indica en la sección del libro que habla de la supresión del apetito, una revisión sistemática y un metanálisis de ensayos aleatorizados con grupo de control sobre la pérdida de peso concluyó que aproximadamente un cuarto de cucharadita de comino negro en polvo al día parece reducir el índice de masa corporal en un lapso de un par de meses. No olvides que el comino negro es diferente al comino normal, cuya ingesta recomendada es diferente."
       ],
       "heading" : "Comino negro (¼ cucharadita)",
       "topic" : ""
@@ -28,31 +28,31 @@
         "metric" : "Comino (Cuminum cyminum) (½ cucharadita con almuerzo y cena)"
       },
       "description" : [
-        "Las mujeres con sobrepeso aleatorizadas para agregar media cucharadita de comino a sus almuerzos y cenas vencieron al grupo de control por cuatro libras más y una pulgada extra de sus cinturas. También hay evidencia para apoyar el uso del azafrán de especias, pero una pizca al día costaría un dólar, mientras que una cucharadita de comino cuesta menos de diez centavos."
+        "Las mujeres con sobrepeso aleatorizadas a echarle media cucharadita de comino a sus almuerzos y cenas superaron al grupo de control, ya que perdieron casi 2 kg más y 2.5 cm extra en la cintura. También existe evidencia para apoyar el uso del azafrán, pero una pizca al día costaría un dólar, mientras que una cucharadita de comino cuesta menos de diez centavos."
       ],
       "heading" : "Comino (½ cucharadita con almuerzo y cena)",
       "topic" : ""
     },
     "tweakDailyDeflourDiet" : {
       "activity" : {
-        "imperial" : "Deflour Your Diet",
-        "metric" : "Deflour Your Diet"
+        "imperial" : "Adiós a la harina",
+        "metric" : "Adiós a la harina"
       },
       "description" : [
-        "Marque esta casilla todos los días sus porciones de granos enteros están en forma de granos intactos. La pulverización de incluso 100 por ciento de granos enteros priva a nuestros microbiomas del almidón que de otro modo sería transportado a nuestros dos puntos encerrados en paredes celulares intactas."
+        "Puedes marcar esta casilla en los días en los que tus raciones de cereales integrales sean en forma de cereales intactos. La pulverización de los cereales, aunque sean cereales 100% integrales, priva a nuestro microbioma del almidón que, de otro modo, llegaría a nuestro colon rodeado de paredes celulares intactas."
       ],
-      "heading" : "Granos intactos",
+      "heading" : "Adiós a la harina",
       "topic" : ""
     },
     "tweakDailyFrontLoad" : {
       "activity" : {
-        "imperial" : "Carga frontal tus calorías",
-        "metric" : "Carga frontal tus calorías"
+        "imperial" : "Anticipar calorías",
+        "metric" : "Anticipar calorías"
       },
       "description" : [
-        "Hay beneficios metabólicos en la distribución de más calorías a más temprano en el día, así que haga que el desayuno (idealmente) o el almuerzo sea su comida más grande del día al verdadero estilo rey \/ príncipe \/ mendigo."
+        "Consumir más calorías al principio del día es mejor para el metabolismo, así que haz que tu desayuno (idealmente) o tu almuerzo sean la comida más grande del día."
       ],
-      "heading" : "Carga frontal tus calorías",
+      "heading" : "Anticipar calorías",
       "topic" : ""
     },
     "tweakDailyGarlic" : {
@@ -61,141 +61,141 @@
         "metric" : "Ajo en polvo (¼ cucharadita)"
       },
       "description" : [
-        "Estudios aleatorizados, doble ciego, controlados con placebo han encontrado que tan poco como un cuarto de cucharadita diaria de ajo en polvo puede reducir la grasa corporal a un costo de quizás dos centavos por día."
+        "Unos estudios aleatorizados, doble ciegos y controlados con placebo han encontrado que, con simplemente un cuarto de cucharadita diaria de ajo en polvo, se puede reducir la grasa corporal, a un costo de quizás dos centavos por día."
       ],
       "heading" : "Ajo en polvo (¼ cucharadita)",
       "topic" : ""
     },
     "tweakDailyGinger" : {
       "activity" : {
-        "imperial" : "Jengibre molido (1 cucharadita) o pimienta de cayena (½ cucharadita)",
-        "metric" : "Jengibre molido (1 cucharadita) o pimienta de cayena (½ cucharadita)"
+        "imperial" : "Jengibre en polvo (1 cucharadita) o cayena (½ cucharadita)",
+        "metric" : "Jengibre en polvo (1 cucharadita) o cayena (½ cucharadita)"
       },
       "description" : [
-        "Ensayos controlados aleatorios han encontrado que ¼ cucharadita a 1½ cucharaditas al día de jengibre molido disminuyeron significativamente el peso corporal por solo centavos al día. Puede ser tan fácil como remover la especia molida en una taza de agua caliente. Nota: el jengibre puede funcionar mejor por la mañana que por la tarde. El té Chai es una forma sabrosa de combinar los trucos de té verde y jengibre en una sola bebida. Alternativamente, para la activación de BAT, puede agregar un chile jalapeño crudo o media cucharadita de polvo de pimiento rojo (o, presumiblemente, hojuelas de pimiento rojo molido) en su dieta diaria. Para ayudar a combatir el calor, puedes cortar en rodajas muy finas o picar finamente el jalapeño para reducir su picadura a pequeños pinchazos, o mezclar el pimiento rojo en la sopa o el batido de verduras de alimentos integrales que presenté en uno de mis videos de cocina en NutritionFacts.org ."
+        "Unos ensayos aleatorizados y con grupo de control han descubierto que el consumo de ¼ a 1½ cucharadita al día de jengibre en polvo disminuye significativamente el peso corporal por solo unos centavos al día. Puede ser tan fácil como echar el jengibre en una taza de agua caliente. Nota: el jengibre podría funcionar mejor por la mañana que por la tarde. El chai es una forma estupenda de combinar los trucos del té verde y el jengibre en una sola bebida. Además, para activar el tejido adiposo pardo, también puedes añadir un jalapeño crudo o media cucharadita de chile en polvo a tu dieta diaria. Para ayudarte con el picante, puedes cortar el jalapeño en rodajas muy finas o picarlo muy bien. El chile en polvo lo podrías echar en las sopas y guisos o en el batido de verduras que hice en uno de mis videos de cocina en NutritionFacts.org."
       ],
-      "heading" : "Jengibre molido (1 cucharadita) o pimienta de cayena (½ cucharadita)",
+      "heading" : "Jengibre molido (1 cucharadita) o cayena (½ cucharadita)",
       "topic" : ""
     },
     "tweakDailyGreenTea" : {
       "activity" : {
-        "imperial" : "Té Verde (3 tazas)",
-        "metric" : "Té Verde (3 tazas)"
+        "imperial" : "Té verde (3 tazas)",
+        "metric" : "Té verde (3 tazas)"
       },
       "description" : [
-        "Beba tres tazas al día entre comidas (esperando al menos una hora después de una comida para no interferir con la absorción de hierro). Durante las comidas, beba agua, café negro o té de hibisco mezclado 6: 1 con verbena de limón, pero nunca exceda tres tazas de líquido por hora (importante dado mi consejo de precarga de agua). Aproveche el efecto reforzador de la cafeína bebiendo su té verde junto con algo saludable que desearía que le gustara más, pero no consuma grandes cantidades de cafeína dentro de las seis horas antes de acostarse. Lo mejor es tomar el té sin edulcorante, pero si normalmente endulzas tu té con miel o azúcar, prueba con jarabe de yacón."
+        "Bebe tres tazas al día entre comidas, esperando al menos una hora después de comer, para no interferir con la absorción de hierro. Durante las comidas, bebe agua, café solo o infusión de hibisco (mezclado 6:1 con hierba luisa), pero nunca excedas tres tazas de líquido por hora (tenlo en cuenta para mi sección sobra empezar con agua). Aprovecha los efectos de la cafeína y bebe el té verde mientras comes algo saludable que querrías que te gustase más, para crear una asociación positiva, pero ten ojo y no consumas mucha cafeína en las 6 horas antes de irte a dormir. Lo mejor es tomar el té sin ningún tipo de edulcorante, pero, si le sueles echar miel o azúcar, prueba el jarabe de yacón."
       ],
       "heading" : "Té verde (3 tazas)",
       "topic" : ""
     },
     "tweakDailyHydrate" : {
       "activity" : {
-        "imperial" : "Mantente hidratado",
-        "metric" : "Mantente hidratado"
+        "imperial" : "Hidratación",
+        "metric" : "Hidratación"
       },
       "description" : [
-        "Marque esta casilla si su orina nunca aparece más oscura que un amarillo pálido.\n\nTenga en cuenta que si está comiendo alimentos fortificados con riboflavina (como levadura nutricional), basar esto en obtener nueve tazas de bebidas sin azúcar al día para las mujeres (que se encargarían de las recomendaciones de precarga de té verde y agua) o trece tazas al día para hombres.\n\nSi tiene problemas cardíacos o renales, no aumente la ingesta de líquidos sin antes hablar con su médico.\n\nRecuerde, el refresco de dieta puede no tener calorías, pero no está libre de consecuencias, como aprendimos en la sección Bajo en azúcar agregada."
+        "Puedes marcar esta casilla si tu orina nunca pasa del amarillo pálido.\n\nTen en cuenta que, si consumes alimentos fortificados con riboflavina (como la levadura nutricional), no deberías seguir esta premisa del color y debes centrarte en obtener nueve tazas de líquido sin edulcorar al día para las mujeres (que podrían cubrir el consumo de té verde y agua) o trece tazas al día para hombres.\n\nSi tienes problemas cardiacos o renales, no aumentes la ingesta de líquidos sin antes hablar con tu médico.\n\nNo olvides que, aunque los refrescos light no tengan calorías, no son inocuos, como explico en la sección del libro sobre los azúcares añadidos."
       ],
-      "heading" : "Mantente hidratado",
+      "heading" : "Hidratación",
       "topic" : ""
     },
     "tweakDailyNutriYeast" : {
       "activity" : {
-        "imperial" : "Levadura Nutricional (2 cucharaditas)",
-        "metric" : "Levadura Nutricional (2 cucharaditas)"
+        "imperial" : "Levadura nutricional (2 cucharaditas)",
+        "metric" : "Levadura nutricional (2 cucharaditas)"
       },
       "description" : [
-        "Dos cucharaditas de levadura de panadería, de cerveza o nutricional contienen aproximadamente la cantidad de glucanos beta 1,3 \/ 1,6 encontrados en ensayos clínicos aleatorizados, doble ciego, controlados con placebo para facilitar la pérdida de peso."
+        "Dos cucharaditas de levadura de panadería, de cerveza o nutricional contienen aproximadamente la cantidad de glucanos beta 1,3 \/ 1,6 correcta que, en ensayos clínicos aleatorizados, doble ciegos y con grupo de control, ha demostrado facilitar la pérdida de peso."
       ],
       "heading" : "Levadura nutricional (2 cucharaditas)",
       "topic" : ""
     },
     "tweakDailyTimeRestrict" : {
       "activity" : {
-        "imperial" : "Restrinja su tiempo de comer",
-        "metric" : "Restrinja su tiempo de comer"
+        "imperial" : "Restricción del horario de comidas",
+        "metric" : "Restricción del horario de comidas"
       },
       "description" : [
-        "Limite la comida a un período diario de su elección de menos de doce horas de duración que pueda cumplir de manera constante, los siete días de la semana. Dados los beneficios circadianos de reducir la ingesta de alimentos por la noche, la ventana debe finalizar antes de las 7:00 p.m."
+        "Limita tu horario de comidas a un periodo diario de tu elección que no supere las doce horas y que puedas cumplir de manera habitual, es decir, los siete días de la semana. Dados los beneficios para el reloj circadiano de la reducción en la ingesta de alimentos por la noche, deberías dejar de comer antes de las 7 P.M."
       ],
-      "heading" : "Restrinja su tiempo de comer",
+      "heading" : "Restricción del horario de comidas",
       "topic" : ""
     },
     "tweakExerciseTiming" : {
       "activity" : {
-        "imperial" : "Optimizar el tiempo de ejercicio",
-        "metric" : "Optimizar el tiempo de ejercicio"
+        "imperial" : "Ejercicio a buena hora",
+        "metric" : "Ejercicio a buena hora"
       },
       "description" : [
-        "La recomendación de Daily Dozen para una duración óptima del ejercicio para la longevidad es de noventa minutos de actividad moderadamente intensa al día, que también es la duración óptima del ejercicio para perder peso. Cualquier momento es bueno, y cuanto más mejor, pero puede haber una ventaja de hacer ejercicio en ayunas, al menos seis horas después de su última comida. Por lo general, esto significaría antes del desayuno, pero si lo cronometró correctamente, podría hacer ejercicio al mediodía antes de un almuerzo tardío o, si el almuerzo se come lo suficientemente temprano, antes de la cena. Este es el momento para los no diabéticos. Los diabéticos y prediabéticos deberían comenzar a hacer ejercicio treinta minutos después del comienzo de una comida e idealmente durante al menos una hora para alcanzar por completo el pico de azúcar en la sangre. Si tuviera que elegir una sola comida para hacer ejercicio después, sería la cena, debido al ritmo circadiano del control del azúcar en la sangre que disminuye durante todo el día. Sin embargo, idealmente, el desayuno sería la comida más grande del día, y después de eso harías ejercicio, o mejor aún, después de cada comida."
+        "La recomendación de la Docena Diaria para una mayor longevidad son 90 minutos de actividad física moderada, que también resulta ser la duración óptima para perder peso. Cualquier momento es bueno y, cuanto más, mejor, pero podría ser mejor hacer ejercicio en ayunas, al menos seis horas después de tu última comida. En general, esto se traduce en antes del desayuno, pero, si lo planeas bien, podrías hacer ejercicio al mediodía antes de un almuerzo tardío o, si comes temprano, pues antes de la cena. Esto sería para los no diabéticos. Los diabéticos y prediabéticos deberían empezar a hacer ejercicio treinta minutos después del comienzo de una comida e idealmente durante por lo menos una hora, para alcanzar el pico de azúcar en sangre. Si tuvieras que elegir una sola comida para hacer ejercicio después esta, lo mejor sería la cena, debido a que el ritmo circadiano del control del azúcar en sangre va disminuyendo durante el día. Sin embargo, como lo mejor es que el desayuno sea la comida más grande del día, deberías hacer ejercicio después de desayunar; o, mejor aún, después de cada comida."
       ],
-      "heading" : "Optimizar el tiempo de ejercicio",
+      "heading" : "Ejercicio a buena hora",
       "topic" : ""
     },
     "tweakMeal20Minutes" : {
       "activity" : {
-        "imperial" : "Siga la regla de veinte minutos",
-        "metric" : "Siga la regla de veinte minutos"
+        "imperial" : "La regla de los veinte minutos",
+        "metric" : "La regla de los veinte minutos"
       },
       "description" : [
-        "Ya sea a través del aumento de la viscosidad o la cantidad de masticables, o la disminución del tamaño de la mordida y la tasa de alimentación, docenas de estudios han demostrado que, sin importar cómo aumentemos la cantidad de tiempo que los alimentos están en la boca, puede resultar en una menor ingesta calórica. Por lo tanto, extienda la duración de la comida al menos veinte minutos para permitir que sus señales de saciedad natural surtan efecto. ¿Cómo? Al elegir alimentos que tardan más en comer y comerlos de una manera que prolongue el tiempo que permanecen en la boca. Piense en alimentos más voluminosos, más resistentes y masticables en bocados más pequeños y bien masticados."
+        "Ya sea con el aumento de la viscosidad y el tiempo de masticado o con la disminución del tamaño de los bocados, existen docenas de estudios que han demostrado que aumentar la cantidad de tiempo que los alimentos se pasan en la boca puede resultar en una menor ingesta calórica. Por lo tanto, aumenta la duración de las comidas en al menos veinte minutos para que tus señales de saciedad naturales puedan surtir efecto. ¿Cómo puedes hacer esto? Podrías elegir alimentos que sean más difíciles de comer y comerlos de tal manera que se prolongue el tiempo que permanecen en la boca. Piensa en alimentos más voluminosos, más duros y que puedas masticar en bocados más pequeños."
       ],
-      "heading" : "Siga la regla de veinte minutos",
+      "heading" : "La regla de los veinte minutos",
       "topic" : ""
     },
     "tweakMealNegCal" : {
       "activity" : {
-        "imperial" : "Precargar con alimentos de \"calorías negativas\"",
-        "metric" : "Precargar con alimentos de \"calorías negativas\""
+        "imperial" : "Empezar con alimentos de calorías negativas",
+        "metric" : "Empezar con alimentos de calorías negativas"
       },
       "description" : [
-        "Como primer plato, comience cada comida con una manzana o una sopa o ensalada Green Light que contenga menos de cien calorías por taza."
+        "Como entrante, puedes comerte una manzana, una sopa o una ensalada con alimentos de luz verde que contenga menos de cien calorías por taza."
       ],
-      "heading" : "Precargar con alimentos de \"calorías negativas\"",
+      "heading" : "Empezar con alimentos de calorías negativas",
       "topic" : ""
     },
     "tweakMealUndistracted" : {
       "activity" : {
-        "imperial" : "Disfruta de comidas sin distracciones",
-        "metric" : "Disfruta de comidas sin distracciones"
+        "imperial" : "Comidas sin distracciones",
+        "metric" : "Comidas sin distracciones"
       },
       "description" : [
-        "No coma mientras mira televisión o juega en su teléfono. Date un cheque por cada comida que puedas comer sin distracciones."
+        "No comas mientras ves la televisión o juegas en tu smartphone. Puedes marcar una casilla por cada comida que pases sin distracciones."
       ],
-      "heading" : "Disfruta de comidas sin distracciones",
+      "heading" : "Comidas sin distracciones",
       "topic" : ""
     },
     "tweakMealVinegar" : {
       "activity" : {
-        "imperial" : "Incorporar vinagre (2 cucharaditas con cada comida)",
-        "metric" : "Incorporar vinagre (2 cucharaditas con cada comida)"
+        "imperial" : "Vinagre (2 cucharaditas con cada comida)",
+        "metric" : "Vinagre (2 cucharaditas con cada comida)"
       },
       "description" : [
-        "Nunca beba vinagre solo. En cambio, condimente las comidas o aderece una ensalada con cualquiera de los vinagres dulces y salados que hay. Si desea beberlo, asegúrese de mezclarlo en un vaso de agua y, luego, asegúrese de enjuagarse la boca con agua para proteger el esmalte dental."
+        "Nunca bebas vinagre solo. Puedes usarlo para condimentar las comidas o aderezar una ensalada. Puedes usar cualquier tipo de vinagre, dulce o salado. Si quieres beberlo, debes mezclarlo con un vaso de agua y enjuagarte la boca justo después para proteger el esmalte dental."
       ],
-      "heading" : "Incorporar vinagre (2 cucharaditas con cada comida)",
+      "heading" : "Vinagre (2 cucharaditas con cada comida)",
       "topic" : ""
     },
     "tweakMealWater" : {
       "activity" : {
-        "imperial" : "Precargar con agua",
-        "metric" : "Precargar con agua"
+        "imperial" : "Empezar con agua",
+        "metric" : "Empezar con agua"
       },
       "description" : [
-        "Mida dos tazas de agua sin sabor fría o fría antes de cada comida para aumentar su metabolismo y aprovechar sus beneficios de precarga."
+        "Toma dos tazas de agua sin sabor, fría o del tiempo, antes de cada comida para acelerar tu metabolismo y aprovechar sus beneficios."
       ],
-      "heading" : "Precargar con agua",
+      "heading" : "Empezar con agua",
       "topic" : ""
     },
     "tweakNightlyFast" : {
       "activity" : {
-        "imperial" : "Ayuno después de las 7:00 p.m.",
-        "metric" : "Ayuno después de las 7:00 p.m."
+        "imperial" : "Ayuno después de las 7 P.M.",
+        "metric" : "Ayuno después de las 7 P.M."
       },
       "description" : [
-        "Debido a nuestros ritmos circadianos, la comida que se come por la noche engorda más que la misma comida que se come más temprano en el día, tan rápido todas las noches durante al menos doce horas a partir de las 7:00 p.m. Cuantas menos calorías después de la puesta del sol, mejor."
+        "Debido a la influencia de los ritmos circadianos, lo que comes por la noche engorda más que si comieras eso mismo pero más temprano en el día, así que intenta ayunar todas las noches durante al menos doce horas a partir de las 7 P.M. Cuantas menos calorías consumas después de que se ponga el sol, mejor."
       ],
-      "heading" : "Ayuno después de las 7:00 p.m.",
+      "heading" : "Ayuno después de las 7 P.M.",
       "topic" : ""
     },
     "tweakNightlySleep" : {
@@ -204,31 +204,31 @@
         "metric" : "Dormir lo suficiente"
       },
       "description" : [
-        "Marque esta casilla si duerme al menos siete horas antes de acostarse."
+        "Puedes marcar esta casilla si has dormido al menos siete horas y te has ido a la cama a tu hora normal."
       ],
       "heading" : "Dormir lo suficiente",
       "topic" : ""
     },
     "tweakNightlyTrendelenbrug" : {
       "activity" : {
-        "imperial" : "Experimente con Trendelenburg leve",
-        "metric" : "Experimente con Trendelenburg leve"
+        "imperial" : "Experimenta con la Trendelenburg",
+        "metric" : "Experimenta con la Trendelenburg"
       },
       "description" : [
-        "Intenta pasar al menos cuatro horas por noche acostado con tu cuerpo inclinado hacia abajo seis grados elevando los postes al pie de tu cama por ocho pulgadas (o nueve pulgadas si tienes un rey de California). Tenga mucho cuidado cuando salga de la cama, ya que esto causa intolerancia ortostática en la mayoría de las personas, incluso si es joven y saludable, lo que significa que si se levanta demasiado rápido, puede sentirse mareado, desmayado o aturdido y podría caer y lastimarse. Así que levántate lentamente. Beber dos tazas de agua fría treinta minutos antes de levantarse también puede ayudar a prevenir este efecto secundario potencialmente peligroso.\n\nIMPORTANTE: no intente esto en casa si tiene problemas cardíacos o pulmonares, reflujo ácido o problemas con su cerebro (como traumatismo craneal) u ojos (incluso un historial familiar de glaucoma lo descalifica). Además, no intente esto hasta que le pregunte a su médico si cree que es seguro para usted dormir en Trendelenburg leve."
+        "Prueba a estar al menos cuatro horas cada noche con el cuerpo inclinado seis grados. Para conseguirlo, debes elevar los postes del pie de la cama unos 20 centímetros. Ten mucho cuidado al levantarte, ya que esta postura causa intolerancia ortostática para casi todo el mundo, aunque seas joven y estés saludable, así que, si te levantas demasiado rápido, puedes marearte, desmayarte o incluso caerte y hacerte daño. Por lo tanto, levántate lentamente. Beber dos tazas de agua fría treinta minutos antes de levantarte también podría ayudar a prevenir este efecto secundario potencialmente peligroso.\n\nIMPORTANTE: no intentes esto en casa si tienes problemas cardiacos o pulmonares, reflujo ácido, problemas cerebrales (como traumatismo craneal) u oculares (incluso un historial familiar de glaucoma lo descalifica). Si tienes cualquier duda, no lo intentes sin preguntarle a tu médico antes."
       ],
-      "heading" : "Experimente con Trendelenburg leve",
+      "heading" : "Trendelenburg",
       "topic" : ""
     },
     "tweakWeightTwice" : {
       "activity" : {
-        "imperial" : "Pésate dos veces al día",
-        "metric" : "Pésate dos veces al día"
+        "imperial" : "Pesarse dos veces al día",
+        "metric" : "Pesarse dos veces al día"
       },
       "description" : [
-        "El autopeso regular se considera crucial para el control del peso a largo plazo, pero no hay pruebas suficientes para respaldar una frecuencia específica de pesaje. Mi recomendación se basa en el único estudio que encontró que dos veces al día, al despertar y justo antes de acostarse, parecía superior a una vez al día (aproximadamente seis versus dos libras de pérdida de peso durante doce semanas)."
+        "Se suele pensar que pesarse de manera habitual es un método crucial para el control del peso a largo plazo, pero no existen suficientes pruebas para respaldar esta frecuencia. Mi recomendación se basa en un estudio que encontró que dos veces al día, al despertarte y justo antes de acostarte, parece ser mejor que una vez al día (con una diferencia de entre 1 y 3 kg en doce semanas)."
       ],
-      "heading" : "Pésate dos veces al día",
+      "heading" : "Pesarse dos veces al día",
       "topic" : ""
     }
   }
