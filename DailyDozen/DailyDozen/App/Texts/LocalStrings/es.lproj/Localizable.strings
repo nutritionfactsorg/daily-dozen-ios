@@ -3,23 +3,25 @@
 /* Daily Dozen (proper noun) navigation tab */
 "navtab.doze"="Docena Diaria";
 /* 21 Tweaks (proper noun) navigation tab */
-"navtab.tweaks"="21 potenciadores";
+"navtab.tweaks"="21 Ajustes";
 /* More Information navigation tab */
 "navtab.info"="Información";
 /* Preferences (aka Settings, Configuration) navigation tab. Choose word different from 'Tweaks' translation */
-"navtab.preferences"="Ajustes";
+"navtab.preferences"="Configuración";
 
 /* Records: Daily Tally */
+"dateButtonTitle.today"="Hoy";
 "historyRecord.movingMean"="Media móvil";
 "historyRecordDoze.heading"="Historial de porciones";
 "historyRecordDoze.legend"="Porciones";
-"historyRecordTweak.heading"="Historial de potenciadores";
-"historyRecordTweak.legend"="Potenciadores";
+"historyRecordTweak.heading"="Historial de ajustes";
+"historyRecordTweak.legend"="21 Ajustes";
 "historyRecordWeight.heading"="Historial de peso";
 "historyRecordWeight.titleImperial"="Peso (libras)";
 "historyRecordWeight.titleMetric"="Peso (kg)";
 "historyRecordWeight.legendMorning"="Mañana";
 "historyRecordWeight.legendEvening"="Noche";
+"weightEntry.heading"="Peso";
 
 /* URL path */
 "urlSegment.base"="https://nutritionfacts.org/";

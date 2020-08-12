@@ -1,5 +1,8 @@
 ### see: https://github.com/github/gitignore  # example templates
 
+## place for local-only notes.
+*__LOCAL
+
 #################
 ## Apple macOS ##
 #################
@@ -55,33 +58,4 @@ playground.xcworkspace
 Pods/
 !Podfile
 !Podfile.lock
-
-# Carthage
-#
-# Add this line if you want to avoid checking in source code from Carthage dependencies.
-# Carthage/Checkouts
-#!Cartfile
-#!Cartfile.private
-#!Cartfile.resolved
-
-# fastlane
-#
-# It is recommended to not store the screenshots in the git repo. Instead, use fastlane to re-generate the
-# screenshots whenever they are needed.
-# For more information about the recommended setup visit:
-# https://github.com/fastlane/fastlane/blob/master/fastlane/docs/Gitignore.md
-
-fastlane/report.xml
-fastlane/Preview.html
-fastlane/screenshots
-<<<<<<< HEAD
-fastlane/test_output
-README.md
-DailyDozen/DailyDozen/App/Resources/Assets.xcassets/Contents.json
-=======
-fastlane/test_output
->>>>>>> swift4
-
-## places for local-only notes.
-*__LOCAL
 

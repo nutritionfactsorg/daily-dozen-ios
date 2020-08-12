@@ -35,7 +35,7 @@
 "RLb-GV-4hh.segmentTitles[2]" = "Palanca";
 
 /* Class = "UITableViewSection"; footerTitle = "For health alone, use \"Daily Dozen Only\". For health and weight loss use \"Daily Dozen + 21 Tweaks\"."; ObjectID = "WdR-XV-IyP"; */
-"WdR-XV-IyP.footerTitle" = "Solo para la salud, use \"Docena Diaria solamente\". Para la salud y la pérdida de peso, use \"Docena Diaria 21 Ajustes\".";
+"WdR-XV-IyP.footerTitle" = "Solo para la salud, use \"Docena Diaria solamente\". Para la salud y la pérdida de peso, use \"Docena Diaria + 21 Ajustes\".";
 
 /* Class = "UITableViewSection"; headerTitle = "21 Tweaks Visibility"; ObjectID = "WdR-XV-IyP"; */
 "WdR-XV-IyP.headerTitle" = "Visibilidad de 21 Ajustes";

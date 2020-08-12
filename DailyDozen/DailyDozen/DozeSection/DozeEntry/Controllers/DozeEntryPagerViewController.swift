@@ -34,7 +34,7 @@ class DozeEntryPagerViewController: UIViewController {
         didSet {
             if currentDate.isInCurrentDayWith(Date()) {
                 backButton.superview?.isHidden = true
-                dateButton.setTitle("Today", for: .normal)
+                dateButton.setTitle(NSLocalizedString("dateButtonTitle.today", comment: "Date button 'Today' title"), for: .normal)
             } else {
                 backButton.superview?.isHidden = false
                 dateButton.setTitle(datePicker.date.dateString(for: .long), for: .normal)

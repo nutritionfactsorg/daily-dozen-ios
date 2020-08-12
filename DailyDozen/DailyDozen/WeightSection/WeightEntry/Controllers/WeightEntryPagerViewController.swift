@@ -61,11 +61,11 @@ class WeightEntryPagerViewController: UIViewController {
         navigationController?.navigationBar.barTintColor = UIColor.greenColor
         navigationController?.navigationBar.tintColor = UIColor.white
 
-        title = "Weight"
+        title = NSLocalizedString("weightEntry.heading", comment: "Weight entry heading")
         
         if currentDate.isInCurrentDayWith(Date()) {
             backButton.superview?.isHidden = true
-            dateButton.setTitle("Today", for: .normal)
+            dateButton.setTitle(NSLocalizedString("dateButtonTitle.today", comment: "Date button 'Today' title"), for: .normal)
         } else {
             backButton.superview?.isHidden = false
             dateButton.setTitle(currentDate.dateString(for: .long), for: .normal)
@@ -86,7 +86,7 @@ class WeightEntryPagerViewController: UIViewController {
         currentDate = date
         if currentDate.isInCurrentDayWith(Date()) {
             backButton.superview?.isHidden = true
-            dateButton.setTitle("Today", for: .normal)
+            dateButton.setTitle(NSLocalizedString("dateButtonTitle.today", comment: "Date button 'Today' title"), for: .normal)
         } else {
             backButton.superview?.isHidden = false
             dateButton.setTitle(datePicker.date.dateString(for: .long), for: .normal)
@@ -111,7 +111,7 @@ class WeightEntryPagerViewController: UIViewController {
         currentDate = datePicker.date
         if currentDate.isInCurrentDayWith(Date()) {
             backButton.superview?.isHidden = true
-            dateButton.setTitle("Today", for: .normal)
+            dateButton.setTitle(NSLocalizedString("dateButtonTitle.today", comment: "Date button 'Today' title"), for: .normal)
         } else {
             backButton.superview?.isHidden = false
             dateButton.setTitle(datePicker.date.dateString(for: .long), for: .normal)
@@ -135,7 +135,7 @@ class WeightEntryPagerViewController: UIViewController {
         self.currentDate = datePicker.date
         if self.currentDate.isInCurrentDayWith(Date()) {
             backButton.superview?.isHidden = true
-            dateButton.setTitle("Today", for: .normal)
+            dateButton.setTitle(NSLocalizedString("dateButtonTitle.today", comment: "Date button 'Today' title"), for: .normal)
         } else {
             backButton.superview?.isHidden = false
             dateButton.setTitle(datePicker.date.dateString(for: .long), for: .normal)
