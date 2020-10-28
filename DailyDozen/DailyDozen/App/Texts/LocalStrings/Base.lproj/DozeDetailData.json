@@ -35,7 +35,7 @@
           "topic" : ""
         },
         {
-          "text" : "Chickpeas",
+          "text" : "Chickpeas/Garbanzo Beans",
           "topic" : "topics/chickpeas"
         },
         {
@@ -45,10 +45,6 @@
         {
           "text" : "English peas",
           "topic" : ""
-        },
-        {
-          "text" : "Garbanzo beans",
-          "topic" : "topics/garbanzo-beans"
         },
         {
           "text" : "Great northern beans",
@@ -840,7 +836,7 @@
         },
         {
           "text" : "Smoked paprika",
-          "topic" : ""
+          "topic" : "topics/paprika"
         },
         {
           "text" : "Parsley",
