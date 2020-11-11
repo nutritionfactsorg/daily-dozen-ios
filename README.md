@@ -8,7 +8,6 @@ In the years of research required to create the more than a thousand evidence-ba
 
 Dr. Greger’s Daily Dozen details the healthiest foods and how many servings of each we should try to check off every day. He explains his rationale in his book [How Not to Die][book]. All his proceeds from his books, DVDs, and speaking engagements is all donated to charity.
 
-
 ## Daily Dozen on the App Store
 
 <a href="https://apps.apple.com/us/app/dr-gregers-daily-dozen/id1060700802" alt="Download from the App Store" target="%5fblank"><img src="README_files/app-store.png" width="200"></a>
@@ -42,12 +41,21 @@ The Daily Dozen iOS App is licensed under the GPLv3
 
 ## Updates
 
-**3.2.x (Work In Progress)**
+**3.2.3 (App Store: August 15, 2020)**
 
-* Restructured to support international localization in general 
+* Improved Spanish translation
+
+**3.2.1 (App Store: July 7, 2020)**
+
+* Restructured to support international localization in general
+    * Instances of static English `String` replaced with localizable `NSLocalizedString`
+    * Modified Storyboard UI layouts to adapt to string length variance of different languages. 
 * Adds Spanish
+* Improved data synchronization with HealthKit
+* Fixed update between Weight checkbox and Weight entry to match on the display
+* Fixed weight chart x-axis scaling
 
-**3.1 (App Store)**
+**3.1.0 (App Store: December 17, 2019)**
 
 * Adds 21 Tweaks
 * Adds Weight Tracking with Health Kit Integration
@@ -59,7 +67,7 @@ Improvements:
 
 * Adds settings control to select whether to use Imperial or Metric type units throughout the app.
 
-**2.0.0 (App Store)**
+**2.0.0 (App Store: March 9, 2018)**
 
 * Brand new design
 * Daily Dozen tracking now persists over multiple days
@@ -69,11 +77,11 @@ Improvements:
 * Added additional links in the main menu including The Daily Dozen Cookbook
 * Updated About information in the main menu
 
-**1.0.1 - 1.0.2 (App Store)**
+**1.0.2 (App Store: November 13, 2017)**
 
 * Misspelling fix
 
-**1.0.0 (App Store)**
+**1.0.0 (App Store: December 21, 2015)**
 
 * Initial Release
 
