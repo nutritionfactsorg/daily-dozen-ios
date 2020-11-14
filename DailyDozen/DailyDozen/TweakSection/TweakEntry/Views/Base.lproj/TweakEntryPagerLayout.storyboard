@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="15705" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="3nE-WX-8lJ">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="17506" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="3nE-WX-8lJ">
     <device id="retina4_7" orientation="portrait" appearance="light"/>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15706"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17505"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -25,7 +25,7 @@
                                             <action selector="dateChanged:" destination="3nE-WX-8lJ" eventType="valueChanged" id="zBL-h2-ARP"/>
                                         </connections>
                                     </datePicker>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="iHh-5a-01X" customClass="RoundedButton" customModule="DailyDozen" customModuleProvider="target">
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="iHh-5a-01X" customClass="RoundedButton" customModule="DailyDozen" customModuleProvider="target">
                                         <rect key="frame" x="10" y="5" width="355" height="40"/>
                                         <color key="backgroundColor" red="0.49803921569999998" green="0.75294117650000003" blue="0.29803921570000003" alpha="1" colorSpace="calibratedRGB"/>
                                         <fontDescription key="fontDescription" name="Helvetica" family="Helvetica" pointSize="17"/>
@@ -100,7 +100,7 @@
                                     <view hidden="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="TMN-p4-wbe" customClass="RoundedView" customModule="DailyDozen" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="587" width="375" height="30"/>
                                         <subviews>
-                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="7XY-Lo-Hwf">
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="7XY-Lo-Hwf">
                                                 <rect key="frame" x="134" y="-1" width="107" height="32"/>
                                                 <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="17"/>
                                                 <state key="normal" title="Back to today">
@@ -135,6 +135,7 @@
                                 </constraints>
                             </stackView>
                         </subviews>
+                        <viewLayoutGuide key="safeArea" id="WJt-kw-4vc"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstItem="1Yw-oW-S9L" firstAttribute="leading" secondItem="WJt-kw-4vc" secondAttribute="leading" id="8W5-te-1Eg"/>
@@ -145,7 +146,6 @@
                             <constraint firstItem="Ipn-Mn-DqP" firstAttribute="top" secondItem="1Yw-oW-S9L" secondAttribute="bottom" id="Mrt-bT-5IN"/>
                             <constraint firstItem="Ipn-Mn-DqP" firstAttribute="leading" secondItem="WJt-kw-4vc" secondAttribute="leading" id="Z0q-Yj-mLW"/>
                         </constraints>
-                        <viewLayoutGuide key="safeArea" id="WJt-kw-4vc"/>
                     </view>
                     <connections>
                         <outlet property="backButton" destination="7XY-Lo-Hwf" id="6Lb-IQ-LYt"/>
@@ -156,12 +156,12 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="eWd-mL-HoF" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <swipeGestureRecognizer direction="left" id="R8w-hQ-cS7">
                     <connections>
-                        <action selector="viewSwipped:" destination="3nE-WX-8lJ" id="ngK-NQ-Cvn"/>
+                        <action selector="viewSwiped:" destination="3nE-WX-8lJ" id="ngK-NQ-Cvn"/>
                     </connections>
                 </swipeGestureRecognizer>
                 <swipeGestureRecognizer direction="right" id="mjg-00-w54">
                     <connections>
-                        <action selector="viewSwipped:" destination="3nE-WX-8lJ" id="tN6-gI-94I"/>
+                        <action selector="viewSwiped:" destination="3nE-WX-8lJ" id="tN6-gI-94I"/>
                     </connections>
                 </swipeGestureRecognizer>
             </objects>

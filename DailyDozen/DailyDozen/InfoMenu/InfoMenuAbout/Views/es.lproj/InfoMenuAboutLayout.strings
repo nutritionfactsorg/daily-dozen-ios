@@ -7,8 +7,8 @@
 /* Class = "UILabel"; text = "Use this app on a daily basis to keep track of the foods and advice I recommend for optimal health and longevity in my books How Not to Die and How Not to Diet."; ObjectID = "dwQ-CS-gz3"; */
 "dwQ-CS-gz3.text" = "Utiliza esta app a diario para llevar un registro de los alimentos que recomiendo para salud óptima y longevidad en mi libro Como no Morir.";
 
-/* Class = "UILabel"; text = "version 3.2.3"; ObjectID = "gX5-vX-xBe"; */
-"gX5-vX-xBe.text" = "versión 3.2.3";
+/* Class = "UILabel"; text = "version 3.2.4"; ObjectID = "gX5-vX-xBe"; */
+"gX5-vX-xBe.text" = "versión 3.2.4";
 
 /* Class = "UILabel"; text = "The following open source libraries are used: RealmSwift, Charts, FSCalendar, SimpleAnimation and ActiveLabel."; ObjectID = "pUm-f4-zm1"; */
 "pUm-f4-zm1.text" = "Las siguientes open source libraries fueron utilizadas: RealmSwift, Charts, FSCalendar, SimpleAnimation and ActiveLabel.";

@@ -24,7 +24,7 @@ def common_pods
   ## https://cocoapods.org/pods/FSCalendar
   ## https://github.com/WenchaoD/FSCalendar
   ## Swift:   ... 88% ObjC
-  ##          ... issues piling up
+  ##          ... issues piling up (400+ open)
   ## Swift Package Manager: not supported
   pod 'FSCalendar', '~> 2.8.1'
   

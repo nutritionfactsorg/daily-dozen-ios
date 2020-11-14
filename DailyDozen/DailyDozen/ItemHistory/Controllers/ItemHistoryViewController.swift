@@ -86,12 +86,23 @@ extension ItemHistoryViewController: FSCalendarDataSource {
 extension ItemHistoryViewController: FSCalendarDelegate {
 
     func calendar(_ calendar: FSCalendar, didSelect date: Date, at monthPosition: FSCalendarMonthPosition) {
-        guard
-            let viewController = navigationController?
-                .viewControllers[1] as? DozeEntryPagerViewController
-            else { return }
+        //print(":DEBUG: selected date \(date)")
+        
+        if let vc = navigationController?.viewControllers[1] {  
+            // <Array<UIViewController>>
+            // [0] : DailyDozen.DozeEntryPagerViewController
+            // [1] : DailyDozen.ItemHistoryViewController
+            // :???: needs [0] to be *EntryPagerViewController.
 
-        viewController.updateDate(date)
-        navigationController?.popViewController(animated: true)
+            if let viewController = vc as? DozeEntryPagerViewController {
+                viewController.updateDate(date)
+                navigationController?.popViewController(animated: true)
+                // :???: if [0] does not return to calendar selected date
+            } else if let viewController = vc as? TweakEntryPagerViewController {
+                viewController.updateDate(date)
+                navigationController?.popViewController(animated: true) 
+            }
+            
+        }
     }
 }

@@ -50,7 +50,7 @@ class WeightEntryPagerViewController: UIViewController {
     }
     @IBOutlet private weak var datePicker: UIDatePicker! {
         didSet {
-            datePicker.maximumDate = Date()
+            datePicker.maximumDate = Date() // today
         }
     }
 
@@ -102,12 +102,14 @@ class WeightEntryPagerViewController: UIViewController {
     // MARK: - Actions
     @IBAction private func dateButtonPressed(_ sender: UIButton) {
         datePicker.isHidden = false
+        datePicker.maximumDate = Date() // today
         dateButton.isHidden = true
     }
 
     @IBAction private func dateChanged(_ sender: UIDatePicker) {
         dateButton.isHidden = false
         datePicker.isHidden = true
+        datePicker.maximumDate = Date() // today
         currentDate = datePicker.date
         if currentDate.isInCurrentDayWith(Date()) {
             backButton.superview?.isHidden = true
@@ -122,18 +124,18 @@ class WeightEntryPagerViewController: UIViewController {
         viewController.setViewModel(viewDate: datePicker.date)
     }
 
-    @IBAction private func viewSwipped(_ sender: UISwipeGestureRecognizer) {
-        let interval = sender.direction == .left ? -1 : 1
-        let swippedDate = datePicker.date.adding(.day, value: interval)
-
+    @IBAction private func viewSwiped(_ sender: UISwipeGestureRecognizer) {
         let today = Date()
-        
-        guard let date = swippedDate, date <= today else { return }
+        let interval = sender.direction == .left ? -1 : 1
+        guard let swipedDate = datePicker.date.adding(.day, value: interval), 
+              swipedDate <= today 
+        else { return }
 
-        datePicker.setDate(date, animated: false)
+        datePicker.setDate(swipedDate, animated: false)
+        datePicker.maximumDate = Date() // today
+        currentDate = datePicker.date
 
-        self.currentDate = datePicker.date
-        if self.currentDate.isInCurrentDayWith(Date()) {
+        if currentDate.isInCurrentDayWith(Date()) {
             backButton.superview?.isHidden = true
             dateButton.setTitle(NSLocalizedString("dateButtonTitle.today", comment: "Date button 'Today' title"), for: .normal)
         } else {

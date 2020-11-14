@@ -30,6 +30,8 @@ class DozeEntryPagerBuilder {
 class DozeEntryPagerViewController: UIViewController {
 
     // MARK: - Properties
+    
+    /// Current display date
     private var currentDate = Date() {
         didSet {
             if currentDate.isInCurrentDayWith(Date()) {
@@ -52,7 +54,7 @@ class DozeEntryPagerViewController: UIViewController {
     }
     @IBOutlet private weak var datePicker: UIDatePicker! {
         didSet {
-            datePicker.maximumDate = Date()
+            datePicker.maximumDate = Date() // today
         }
     }
 
@@ -97,12 +99,14 @@ class DozeEntryPagerViewController: UIViewController {
     // MARK: - Actions
     @IBAction private func dateButtonPressed(_ sender: UIButton) {
         datePicker.isHidden = false
+        datePicker.maximumDate = Date() // today
         dateButton.isHidden = true
     }
 
     @IBAction private func dateChanged(_ sender: UIDatePicker) {
         dateButton.isHidden = false
         datePicker.isHidden = true
+        datePicker.maximumDate = Date() // today
         currentDate = datePicker.date
 
         guard let viewController = children.first as? DozeEntryViewController else { return }
@@ -110,17 +114,16 @@ class DozeEntryPagerViewController: UIViewController {
         viewController.setViewModel(date: datePicker.date)
     }
 
-    @IBAction private func viewSwipped(_ sender: UISwipeGestureRecognizer) {
-        let interval = sender.direction == .left ? -1 : 1
-        let currentDate = datePicker.date.adding(.day, value: interval)
-
+    @IBAction private func viewSwiped(_ sender: UISwipeGestureRecognizer) {
         let today = Date()
+        let interval = sender.direction == .left ? -1 : 1
+        guard let swipedDate = datePicker.date.adding(.day, value: interval), 
+              swipedDate <= today 
+        else { return }
 
-        guard let date = currentDate, date <= today else { return }
-
-        datePicker.setDate(date, animated: false)
-
-        self.currentDate = datePicker.date
+        datePicker.setDate(swipedDate, animated: false)
+        datePicker.maximumDate = Date() // today
+        currentDate = datePicker.date
 
         guard let viewController = children.first as? DozeEntryViewController else { return }
 
