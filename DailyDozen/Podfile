@@ -4,6 +4,17 @@ platform :ios, '12.0'
 use_frameworks!
 inhibit_all_warnings!
 
+# :TDB: Review possible use of CocoaPods master spec repo;
+# however, it's like better to replace CocoaPods with Swift Package Manager
+# in a future SwiftUI version.
+#
+# CocoaPods Message:
+# This project does not explicitly specify the CocoaPods master specs repo. 
+# Since CDN is now used as the default, it can be safely remove from the repos directory
+# via `pod repo remove master`.
+install! 'cocoapods',
+    :warn_for_unused_master_specs_repo => false
+
 def common_pods
   ###########################
   ### Pods for DailyDozen ###

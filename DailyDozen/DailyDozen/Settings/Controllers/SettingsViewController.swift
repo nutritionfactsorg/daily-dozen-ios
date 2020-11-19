@@ -79,7 +79,10 @@ class SettingsViewController: UITableViewController {
         advancedUtilitiesTableViewCell.isHidden = false
         //LogService.shared.debug(":::::::::::::::::::::::::::::::::::::::::::::::::::::::::\n")
         #endif
-        //advancedUtilitiesTableViewCell.isHidden = false // :!!!:!!!:
+        #if DEBUG
+        advancedUtilitiesTableViewCell.isHidden = false
+        #endif
+        
     }
     
     override func viewWillAppear(_ animated: Bool) {
