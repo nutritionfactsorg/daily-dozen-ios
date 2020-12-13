@@ -8,15 +8,12 @@
 import UIKit
 import SimpleAnimation
 
-// MARK: - Builder
+class DozeEntryPagerViewController: UIViewController {
 
-class DozeEntryPagerBuilder {
-
-    // MARK: - Methods
     /// Instantiates and returns the initial view controller for a storyboard.
     ///
     /// - Returns: The initial view controller in the storyboard.
-    static func instantiateController() -> UIViewController {
+    static func newInstance() -> UIViewController {
         let storyboard = UIStoryboard(name: "DozeEntryPagerLayout", bundle: nil)
         guard
             let viewController = storyboard.instantiateInitialViewController()
@@ -24,41 +21,45 @@ class DozeEntryPagerBuilder {
 
         return viewController
     }
-}
-
-// MARK: - Controller
-class DozeEntryPagerViewController: UIViewController {
 
     // MARK: - Properties
     
     /// Current display date
-    private var currentDate = Date() {
+    private var currentDate = DateManager.currentDatetime() {
         didSet {
-            if currentDate.isInCurrentDayWith(Date()) {
-                backButton.superview?.isHidden = true
-                dateButton.setTitle(NSLocalizedString("dateButtonTitle.today", comment: "Date button 'Today' title"), for: .normal)
+            if currentDate.isInCurrentDayWith(DateManager.currentDatetime()) {
+                dozeBackButton.superview?.isHidden = true
+                dozeDateButton.setTitle(NSLocalizedString("dateButtonTitle.today", comment: "Date button 'Today' title"), for: .normal)
             } else {
-                backButton.superview?.isHidden = false
-                dateButton.setTitle(datePicker.date.dateString(for: .long), for: .normal)
+                dozeBackButton.superview?.isHidden = false
+                dozeDateButton.setTitle(dozeDatePicker.date.dateString(for: .long), for: .normal)
             }
         }
     }
 
     // MARK: - Outlets
-    @IBOutlet private weak var dateButton: UIButton! {
+    @IBOutlet private weak var dozeDateButton: UIButton! {
         didSet {
-            dateButton.layer.borderWidth = 1
-            dateButton.layer.borderColor = dateButton.titleColor(for: .normal)?.cgColor
-            dateButton.layer.cornerRadius = 5
+            dozeDateButton.layer.borderWidth = 1
+            dozeDateButton.layer.borderColor = dozeDateButton.titleColor(for: .normal)?.cgColor
+            dozeDateButton.layer.cornerRadius = 5
         }
     }
-    @IBOutlet private weak var datePicker: UIDatePicker! {
+    
+    private var dozeDatePicker: UIDatePicker! {
         didSet {
-            datePicker.maximumDate = Date() // today
+            dozeDatePicker.maximumDate = DateManager.currentDatetime() // today
+            
+            if #available(iOS 13.4, *) {
+                // Compact style with overlay
+                dozeDatePicker.preferredDatePickerStyle = .wheels
+                // After mode and style are set apply UIView sizeToFit().
+                dozeDatePicker.sizeToFit()
+            }
         }
     }
 
-    @IBOutlet private weak var backButton: UIButton!
+    @IBOutlet private weak var dozeBackButton: UIButton!
 
     // MARK: - UIViewController
     override func viewDidLoad() {
@@ -68,6 +69,19 @@ class DozeEntryPagerViewController: UIViewController {
         navigationController?.navigationBar.tintColor = UIColor.white
 
         title = NSLocalizedString("navtab.doze", comment: "Daily Dozen (proper noun) navigation tab")
+        
+        dozeDatePicker = UIDatePicker() // :TBD:???: add min-max contraints?
+        dozeDatePicker.datePickerMode = .date
+        if #available(iOS 13.4, *) {
+            // Expressly use inline wheel (UIPickerView) style.
+            dozeDatePicker.preferredDatePickerStyle = .wheels
+            dozeDatePicker.sizeToFit()
+        }
+        // :!!!:???: live change vs. change at dismiss
+        dozeDatePicker.addTarget(self, action: #selector(DozeEntryPagerViewController.dozeDateChanged(dozeDatePicker:)), for: .valueChanged)
+        
+        //timeAMInput.inputView = timePickerAM // assign initial value
+        //dozeDateButton.addAction(<#T##action: UIAction##UIAction#>, for: <#T##UIControl.Event#>)
     }
 
     override func viewDidAppear(_ animated: Bool) {
@@ -77,7 +91,7 @@ class DozeEntryPagerViewController: UIViewController {
         
         if UserDefaults.standard.bool(forKey: SettingsKeys.hasSeenFirstLaunch) == false {
             UserDefaults.standard.set(true, forKey: SettingsKeys.hasSeenFirstLaunch)
-            let viewController = FirstLaunchBuilder.instantiateController()
+            let viewController = FirstLaunchViewController.newInstance()
             navigationController?.pushViewController(viewController, animated: true)
         }
 
@@ -89,7 +103,7 @@ class DozeEntryPagerViewController: UIViewController {
     /// - Parameter date: The current date.
     func updateDate(_ date: Date) {
         currentDate = date
-        datePicker.setDate(date, animated: false)
+        dozeDatePicker.setDate(date, animated: false)
 
         guard let viewController = children.first as? DozeEntryViewController else { return }
         viewController.view.fadeOut().fadeIn()
@@ -97,33 +111,50 @@ class DozeEntryPagerViewController: UIViewController {
     }
 
     // MARK: - Actions
-    @IBAction private func dateButtonPressed(_ sender: UIButton) {
-        datePicker.isHidden = false
-        datePicker.maximumDate = Date() // today
-        dateButton.isHidden = true
+    @IBAction private func dozeDateButtonPressed(_ sender: UIButton) {
+        dozeDatePicker.isHidden = false
+        dozeDatePicker.maximumDate = DateManager.currentDatetime() // today
+        
+        // :!!!:???:
+
     }
 
-    @IBAction private func dateChanged(_ sender: UIDatePicker) {
-        dateButton.isHidden = false
-        datePicker.isHidden = true
-        datePicker.maximumDate = Date() // today
-        currentDate = datePicker.date
+    // :WIP:
+    
+    //var datePicker: UIDatePicker?
+    //func showDatePicker() {
+    //    datePicker = UIDatePicker()
+    //    datePicker?.date = Date()
+    //    datePicker?.locale = .current
+    //    if #available(iOS 13.4, *) {
+    //        datePicker?.preferredDatePickerStyle = .compact
+    //    } else {
+    //        // Fallback on earlier versions
+    //    }
+    //    datePicker?.addTarget(self, action: #selector(handleDateSelection), for: .valueChanged)
+    //}
+
+    @objc private func dozeDateChanged(dozeDatePicker: UIDatePicker) {
+        dozeDateButton.isHidden = false
+        dozeDatePicker.isHidden = true
+        dozeDatePicker.maximumDate = DateManager.currentDatetime() // today
+        currentDate = dozeDatePicker.date
 
         guard let viewController = children.first as? DozeEntryViewController else { return }
         viewController.view.fadeOut().fadeIn()
-        viewController.setViewModel(date: datePicker.date)
+        viewController.setViewModel(date: dozeDatePicker.date)
     }
 
     @IBAction private func viewSwiped(_ sender: UISwipeGestureRecognizer) {
-        let today = Date()
+        let today = DateManager.currentDatetime()
         let interval = sender.direction == .left ? -1 : 1
-        guard let swipedDate = datePicker.date.adding(.day, value: interval), 
+        guard let swipedDate = dozeDatePicker.date.adding(.day, value: interval), 
               swipedDate <= today 
         else { return }
 
-        datePicker.setDate(swipedDate, animated: false)
-        datePicker.maximumDate = Date() // today
-        currentDate = datePicker.date
+        dozeDatePicker.setDate(swipedDate, animated: false)
+        dozeDatePicker.maximumDate = DateManager.currentDatetime() // today
+        currentDate = dozeDatePicker.date
 
         guard let viewController = children.first as? DozeEntryViewController else { return }
 
@@ -133,10 +164,25 @@ class DozeEntryPagerViewController: UIViewController {
             viewController.view.slideOut(x: view.frame.width).slideIn(x: -view.frame.width)
         }
 
-        viewController.setViewModel(date: datePicker.date)
+        viewController.setViewModel(date: dozeDatePicker.date)
     }
 
-    @IBAction private func backButtonPressed(_ sender: UIButton) {
-        updateDate(Date())
+    @IBAction private func dozeBackButtonPressed(_ sender: UIButton) {
+        updateDate(DateManager.currentDatetime())
     }
+}
+
+extension DozeEntryPagerViewController: UIPickerViewDataSource {
+    func numberOfComponents(in pickerView: UIPickerView) -> Int {
+        return 1
+    }
+    
+    func pickerView(_ pickerView: UIPickerView, numberOfRowsInComponent component: Int) -> Int {
+        return 1
+    }
+    
+}
+
+extension DozeEntryPagerViewController: UIPickerViewDelegate {
+    
 }

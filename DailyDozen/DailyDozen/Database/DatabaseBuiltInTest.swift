@@ -99,7 +99,7 @@ public struct DatabaseBuiltInTest {
         let realmProvider = realmMngrCheck.realmDb
         
         let calendar = Calendar.current
-        let today = Date() // today
+        let today = DateManager.currentDatetime() // today
 
         let dateComponents = DateComponents(
             calendar: calendar,
@@ -156,7 +156,7 @@ public struct DatabaseBuiltInTest {
         let realmProviderLegacy = realmMngrCheckLegacy.realmDb
         
         let calendar = Calendar.current
-        let today = Date() // today
+        let today = DateManager.currentDatetime() // today
 
         let dateComponents = DateComponents(
             calendar: calendar,

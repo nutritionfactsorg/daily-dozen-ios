@@ -153,7 +153,7 @@ public class LogService {
     
     /// - parameter nameToken: string included in file name
     public func useLogFile(nameToken: String) {
-        let currentTime = Date()
+        let currentTime = DateManager.currentDatetime()
         let formatter = DateFormatter()
         formatter.dateFormat = "yyyyMMdd_HHmmss"
         //formatter.timeZone = NSTimeZone(abbreviation: "UTC")

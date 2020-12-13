@@ -13,6 +13,7 @@
 		4916451823EE4E440077731D /* TweakDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4916451723EE4E440077731D /* TweakDetailViewController.swift */; };
 		4916451A23EE51310077731D /* TweakDetailDataProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4916451923EE51310077731D /* TweakDetailDataProvider.swift */; };
 		4916451D23EE53610077731D /* TweakDetailData.json in Resources */ = {isa = PBXBuildFile; fileRef = 4916451F23EE53610077731D /* TweakDetailData.json */; };
+		49208ADC2585F16F00E994CA /* DateManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49208ADB2585F16F00E994CA /* DateManager.swift */; };
 		492474A323DB677A00D7D918 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 492474A123DB677A00D7D918 /* InfoPlist.strings */; };
 		492A1E702409B3FA00F6C37C /* TweakDetailActivityCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 492A1E6F2409B3FA00F6C37C /* TweakDetailActivityCell.swift */; };
 		492A1E722409B41000F6C37C /* TweakDetailDescriptionCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 492A1E712409B41000F6C37C /* TweakDetailDescriptionCell.swift */; };
@@ -160,6 +161,7 @@
 		4916451923EE51310077731D /* TweakDetailDataProvider.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TweakDetailDataProvider.swift; sourceTree = "<group>"; };
 		4916451E23EE53610077731D /* Base */ = {isa = PBXFileReference; lastKnownFileType = text.json; name = Base; path = Base.lproj/TweakDetailData.json; sourceTree = "<group>"; };
 		4916452023EE53640077731D /* es */ = {isa = PBXFileReference; lastKnownFileType = text.json; name = es; path = es.lproj/TweakDetailData.json; sourceTree = "<group>"; };
+		49208ADB2585F16F00E994CA /* DateManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DateManager.swift; sourceTree = "<group>"; };
 		492474A223DB677A00D7D918 /* es */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = es; path = es.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		492A1E6F2409B3FA00F6C37C /* TweakDetailActivityCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TweakDetailActivityCell.swift; sourceTree = "<group>"; };
 		492A1E712409B41000F6C37C /* TweakDetailDescriptionCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TweakDetailDescriptionCell.swift; sourceTree = "<group>"; };
@@ -863,6 +865,7 @@
 				4944B99123AD7A1A008DFA30 /* ChartDataEntryExtension.swift */,
 				CFECDFF7201EF7C1003E8572 /* Colors.swift */,
 				CF2680011FB477AD004A6200 /* Date.swift */,
+				49208ADB2585F16F00E994CA /* DateManager.swift */,
 				CF9EC1BF202196B100C7B3CA /* Fonts.swift */,
 				CFAAB3761F9F3FDF00B24748 /* URL.swift */,
 				49D9B07A240DCA1F000E9822 /* UIViewExtension.swift */,
@@ -1367,6 +1370,7 @@
 				497A8F0A24748E88001BEDCA /* SettingsManager.swift in Sources */,
 				4941D731237E13DC00ED84B5 /* DataWeightRecord.swift in Sources */,
 				4916451423EE4C410077731D /* TweakDetailViewModel.swift in Sources */,
+				49208ADC2585F16F00E994CA /* DateManager.swift in Sources */,
 				499B82FB239CD4D300E4AD19 /* WeightHistoryViewController.swift in Sources */,
 				498170A123920DD60033882C /* TweakEntryPagerViewController.swift in Sources */,
 				4981708F2391B1790033882C /* TweakEntryStateCell.swift in Sources */,

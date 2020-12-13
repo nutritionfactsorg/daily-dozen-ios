@@ -7,14 +7,12 @@
 
 import UIKit
 
-// MARK: - Builder 
-class UtilityBuilder {
+class UtilityTableViewController: UITableViewController {
 
-    // MARK: - Methods
     /// Instantiates and returns the initial view controller for a storyboard.
     ///
     /// - Returns: The initial view controller in the storyboard.
-    static func instantiateController() -> UIViewController {
+    static func newInstance() -> UIViewController {
         let storyboard = UIStoryboard(name: "UtilityLayout", bundle: nil)
         guard
             let viewController = storyboard.instantiateInitialViewController()
@@ -23,10 +21,6 @@ class UtilityBuilder {
 
         return viewController
     }
-}
-
-// MARK: - Controller
-class UtilityTableViewController: UITableViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -242,4 +236,8 @@ class UtilityTableViewController: UITableViewController {
     }
     */
 
+    @IBAction func doUtilityTestAddOneDayBtn(_ sender: UIButton) {
+        DateManager.incrementDay()
+    }
+    
 }

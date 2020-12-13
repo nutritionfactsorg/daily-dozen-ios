@@ -42,7 +42,7 @@ class TweakEntryViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        setViewModel(date: Date())
+        setViewModel(date: DateManager.currentDatetime())
         
         tableView.dataSource = dataProvider
         tableView.delegate = self
@@ -114,7 +114,7 @@ class TweakEntryViewController: UIViewController {
     @IBAction private func tweakInfoPressed(_ sender: UIButton) {
         let itemInfo = dataProvider.viewModel.itemInfo(rowIndex: sender.tag)
         
-        let viewController = TweakDetailBuilder.instantiateController(itemTypeKey: itemInfo.typeKey)
+        let viewController = TweakDetailViewController.newInstance(itemTypeKey: itemInfo.typeKey)
         navigationController?.pushViewController(viewController, animated: true)
     }
     
@@ -123,15 +123,15 @@ class TweakEntryViewController: UIViewController {
         let heading = dataProvider.viewModel.itemInfo(rowIndex: sender.tag).headingDisplay
         let dataCountType = dataProvider.viewModel.itemType(rowIndex: sender.tag)
         
-        var viewController = ItemHistoryBuilder.instantiateController(heading: heading, itemType: dataCountType)
+        var viewController = ItemHistoryViewController.newInstance(heading: heading, itemType: dataCountType)
         if dataCountType == .tweakWeightTwice {
-            viewController = WeightHistoryBuilder.instantiateController()
+            viewController = WeightHistoryViewController.newInstance()
         }
         navigationController?.pushViewController(viewController, animated: true)
     }
     
     @IBAction private func tweakHistoryPressed(_ sender: UIButton) {
-        let viewController = TweakHistoryBuilder.instantiateController()
+        let viewController = TweakHistoryViewController.newInstance()
         navigationController?.pushViewController(viewController, animated: true)
     }
 }
@@ -227,7 +227,7 @@ extension TweakEntryViewController: UICollectionViewDelegate {
         if dataCountType == .tweakWeightTwice { 
             // Go to the weight editor
             let date = dataProvider.viewModel.trackerDate
-            let viewController = WeightEntryPagerBuilder.instantiateController(date: date)
+            let viewController = WeightEntryPagerViewController.newInstance(date: date)
             if let navigationController = navigationController {
                 navigationController.pushViewController(viewController, animated: true)
             }                

@@ -53,7 +53,7 @@
                                             </userDefinedRuntimeAttribute>
                                         </userDefinedRuntimeAttributes>
                                         <connections>
-                                            <action selector="dateButtonPressed:" destination="2fR-Q8-dDQ" eventType="touchUpInside" id="uTT-1H-Jki"/>
+                                            <action selector="weightDateButtonPressed:" destination="2fR-Q8-dDQ" eventType="touchUpInside" id="uTT-1H-Jki"/>
                                         </connections>
                                     </button>
                                 </subviews>
@@ -148,9 +148,9 @@
                         </constraints>
                     </view>
                     <connections>
-                        <outlet property="backButton" destination="OIQ-oh-3QN" id="oJB-Bz-pFg"/>
-                        <outlet property="dateButton" destination="6FY-X2-BdZ" id="cVb-6n-XPv"/>
-                        <outlet property="datePicker" destination="LAz-Fd-cdL" id="cK3-Lh-F5G"/>
+                        <outlet property="weightBackButton" destination="OIQ-oh-3QN" id="oJB-Bz-pFg"/>
+                        <outlet property="weightDateButton" destination="6FY-X2-BdZ" id="cVb-6n-XPv"/>
+                        <outlet property="weightDatePicker" destination="LAz-Fd-cdL" id="cK3-Lh-F5G"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="z7S-gw-XaM" userLabel="First Responder" sceneMemberID="firstResponder"/>

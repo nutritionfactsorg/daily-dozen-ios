@@ -150,7 +150,6 @@
                     <navigationItem key="navigationItem" id="mZT-c1-awZ"/>
                     <connections>
                         <outlet property="advancedUtilitiesTableViewCell" destination="z0Z-Vi-TQY" id="OsV-iV-8HQ"/>
-                        <outlet property="datePicker" destination="bzd-el-hc4" id="Cch-at-5uP"/>
                         <outlet property="reminderIsOn" destination="XFw-2q-BdT" id="wAY-nx-7mR"/>
                         <outlet property="soundSwitch" destination="rNl-6C-9Kw" id="vko-LB-RCK"/>
                         <outlet property="tweakVisibilityController" destination="OZO-Xa-v5G" id="LAW-0U-SrN"/>
@@ -275,8 +274,8 @@
                     </tableView>
                     <navigationItem key="navigationItem" id="fGd-Wg-zlG"/>
                     <connections>
-                        <outlet property="datePicker" destination="bzd-el-hc4" id="yd8-By-Iej"/>
                         <outlet property="reminderSwitch" destination="WSr-wG-uFV" id="dui-Pl-YJG"/>
+                        <outlet property="settingsDatePicker" destination="bzd-el-hc4" id="yd8-By-Iej"/>
                         <outlet property="soundSwitch" destination="rNl-6C-9Kw" id="Fig-36-83J"/>
                     </connections>
                 </tableViewController>
@@ -289,5 +288,8 @@
         <namedColor name="IguanaGreen">
             <color red="0.42399999499320984" green="0.68199998140335083" blue="0.45899999141693115" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
     </resources>
 </document>

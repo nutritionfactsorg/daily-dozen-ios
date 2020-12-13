@@ -7,10 +7,6 @@
 
 import UIKit
 
-class SettingsReminderViewControllerBuilder {
-    
-}
-
 class SettingsReminderViewController: UITableViewController {
     
     private struct Content {
@@ -20,7 +16,7 @@ class SettingsReminderViewController: UITableViewController {
         static let img = "dr_greger"
         static let png = "png"
     }
-    @IBOutlet weak var datePicker: UIDatePicker!
+    @IBOutlet weak var settingsDatePicker: UIDatePicker!
     @IBOutlet weak var reminderSwitch: UISwitch!
     @IBOutlet weak var soundSwitch: UISwitch!
     //    var soundIsOn: Bool!
@@ -31,16 +27,16 @@ class SettingsReminderViewController: UITableViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-            datePicker.datePickerMode = .time
-            datePicker.date.hour = UserDefaults.standard.integer(forKey: SettingsKeys.reminderHourPref)
-            datePicker.date.minute = UserDefaults.standard.integer(forKey: SettingsKeys.reminderMinutePref)
+            settingsDatePicker.datePickerMode = .time
+            settingsDatePicker.date.hour = UserDefaults.standard.integer(forKey: SettingsKeys.reminderHourPref)
+            settingsDatePicker.date.minute = UserDefaults.standard.integer(forKey: SettingsKeys.reminderMinutePref)
             
         let canNotificate = UserDefaults.standard.bool(forKey: SettingsKeys.reminderCanNotify)
         reminderSwitch.isOn = canNotificate
         if reminderSwitch.isOn {
             soundSwitch.isOn = UserDefaults.standard.bool(forKey: SettingsKeys.reminderSoundPref)
         } else {
-            datePicker.isEnabled = false
+            settingsDatePicker.isEnabled = false
             soundSwitch.isEnabled = false
         }
         // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
@@ -54,10 +50,10 @@ class SettingsReminderViewController: UITableViewController {
         
         UserDefaults.standard.set(soundSwitch.isOn, forKey: SettingsKeys.reminderSoundPref)
         
-        if UserDefaults.standard.integer(forKey: SettingsKeys.reminderHourPref) != datePicker.date.hour ||
-            UserDefaults.standard.integer(forKey: SettingsKeys.reminderMinutePref) != datePicker.date.minute {
-            UserDefaults.standard.set(datePicker.date.hour, forKey: SettingsKeys.reminderHourPref)
-            UserDefaults.standard.set(datePicker.date.minute, forKey: SettingsKeys.reminderMinutePref)
+        if UserDefaults.standard.integer(forKey: SettingsKeys.reminderHourPref) != settingsDatePicker.date.hour ||
+            UserDefaults.standard.integer(forKey: SettingsKeys.reminderMinutePref) != settingsDatePicker.date.minute {
+            UserDefaults.standard.set(settingsDatePicker.date.hour, forKey: SettingsKeys.reminderHourPref)
+            UserDefaults.standard.set(settingsDatePicker.date.minute, forKey: SettingsKeys.reminderMinutePref)
             
             UNUserNotificationCenter.current().removeAllPendingNotificationRequests()
             
@@ -99,10 +95,10 @@ class SettingsReminderViewController: UITableViewController {
         UserDefaults.standard.set(sender.isOn, forKey: SettingsKeys.reminderCanNotify)
         UNUserNotificationCenter.current().removeAllPendingNotificationRequests()
         if reminderSwitch.isOn {
-            datePicker.isEnabled = true
+            settingsDatePicker.isEnabled = true
             soundSwitch.isEnabled = true
         } else {
-            datePicker.isEnabled = false
+            settingsDatePicker.isEnabled = false
             soundSwitch.isEnabled = false
         }
         

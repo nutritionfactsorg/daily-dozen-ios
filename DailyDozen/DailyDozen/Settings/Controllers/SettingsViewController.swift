@@ -8,14 +8,12 @@
 import UIKit
 import UserNotifications
 
-// MARK: - Builder
-class SettingsBuilder {
+class SettingsViewController: UITableViewController {
     
-    // MARK: - Methods
     /// Instantiates and returns the initial view controller for a storyboard.
     ///
     /// - Returns: The initial view controller in the storyboard.
-    static func instantiateController() -> SettingsViewController {
+    static func newInstance() -> SettingsViewController {
         let storyboard = UIStoryboard(name: "SettingsLayout", bundle: nil)
         guard
             let viewController = storyboard
@@ -25,15 +23,11 @@ class SettingsBuilder {
         
         return viewController
     }
-}
 
-class SettingsViewController: UITableViewController {
-    
     // Measurement Units
     @IBOutlet weak var unitMeasureToggle: UISegmentedControl!
     // Daily Reminder
     @IBOutlet weak var reminderIsOn: UILabel!
-    @IBOutlet weak var datePicker: UIDatePicker!
     // @IBOutlet weak var reminderSwitch: UISwitch!
     @IBOutlet weak var soundSwitch: UISwitch!
     // 21 Tweaks Visibility
@@ -165,60 +159,8 @@ class SettingsViewController: UITableViewController {
         }
     }
     
-    //    func setDefaults() {
-    //        let canNotificate = UserDefaults.standard.bool(forKey: SettingsKeys.reminderCanNotify)
-    //            reminderSwitch.isOn = canNotificate
-    //            //settingsPanel.isHidden = !canNotificate
-    //
-    //            datePicker.date.hour = UserDefaults.standard.integer(forKey: SettingsKeys.reminderHourPref)
-    //            datePicker.date.minute = UserDefaults.standard.integer(forKey: SettingsKeys.reminderMinutePref)
-    //
-    //            soundSwitch.isOn = UserDefaults.standard.bool(forKey: SettingsKeys.reminderSoundPref)
-    //        }
-    
     override func viewWillDisappear(_ animated: Bool) {
         super.viewWillDisappear(animated)
-        
-        //        guard reminderSwitch.isOn else { return }
-        //
-        //        UserDefaults.standard.set(soundSwitch.isOn, forKey: SettingsKeys.reminderSoundPref)
-        //
-        //        if UserDefaults.standard.integer(forKey: SettingsKeys.reminderHourPref) != datePicker.date.hour ||
-        //            UserDefaults.standard.integer(forKey: SettingsKeys.reminderMinutePref) != datePicker.date.minute {
-        //            UserDefaults.standard.set(datePicker.date.hour, forKey: SettingsKeys.reminderHourPref)
-        //            UserDefaults.standard.set(datePicker.date.minute, forKey: SettingsKeys.reminderMinutePref)
-        //
-        //            UNUserNotificationCenter.current().removeAllPendingNotificationRequests()
-        //
-        //            let content = UNMutableNotificationContent()
-        //            content.title = Content.title
-        //            content.subtitle = Content.subtitle
-        //            content.body = Content.body
-        //            content.badge = 1
-        //
-        //            guard
-        //                let url = Bundle.main.url(forResource: Content.img, withExtension: Content.png),
-        //                let attachment = try? UNNotificationAttachment(identifier: SettingsKeys.imgID, url: url, options: nil)
-        //                else { return }
-        //
-        //            content.attachments.append(attachment)
-        //
-        //            if soundSwitch.isOn { content.sound = UNNotificationSound.default }
-        //
-        //            var dateComponents = DateComponents()
-        //            dateComponents.hour = UserDefaults.standard.integer(forKey: SettingsKeys.reminderHourPref)
-        //            dateComponents.minute = UserDefaults.standard.integer(forKey: SettingsKeys.reminderMinutePref)
-        //
-        //            let dateTrigget = UNCalendarNotificationTrigger(dateMatching: dateComponents, repeats: true)
-        //
-        //            let request = UNNotificationRequest(identifier: SettingsKeys.requestID, content: content, trigger: dateTrigget)
-        //
-        //            UNUserNotificationCenter.current().add(request) { (error) in
-        //                if let error = error {
-        //                    LogService.shared.error(error.localizedDescription)
-        //                }
-        //            }
-        //        }
     }
     
     //    @IBAction private func reminderSwitched(_ sender: UISwitch) {
@@ -262,7 +204,7 @@ class SettingsViewController: UITableViewController {
     // MARK: - Utilities
     
     @IBAction func doUtilityShowAdvancedBtn(_ sender: UIButton) {
-        let viewController = UtilityBuilder.instantiateController()
+        let viewController = UtilityTableViewController.newInstance()
         navigationController?.pushViewController(viewController, animated: true)
     }
         

@@ -7,15 +7,13 @@
 
 import UIKit
 
-// MARK: - Builder
-class TweakDetailBuilder {
+class TweakDetailViewController: UIViewController {
     
-    // MARK: - Methods
     /// Instantiates and returns the initial view controller for a storyboard.
     ///
     /// - Parameter itemTypeKey: An item type key string.
     /// - Returns: The initial view controller in the storyboard.
-    static func instantiateController(itemTypeKey: String) -> TweakDetailViewController {
+    static func newInstance(itemTypeKey: String) -> TweakDetailViewController {
         
         let storyboard = UIStoryboard(name: "TweakDetailLayout", bundle: nil)
         guard
@@ -27,11 +25,7 @@ class TweakDetailBuilder {
         
         return viewController
     }
-}
 
-// MARK: - Controller
-class TweakDetailViewController: UIViewController {
-    
     // MARK: - Nested
     private struct Strings {
         static let videos = "VIDEOS" // :NYI:NSLocalizedString:

@@ -48,7 +48,7 @@ extension InfoMenuMainTableVC {
         //else if let controller = menuItem.controller {
         } else if let viewController = menuItem.controller {
             // `AboutViewController`
-            //let aboutViewController = AboutBuilder.instantiateController()
+            //let aboutViewController = AboutBuilder.newInstance()
             navigationController?.pushViewController(viewController, animated: true)
         } else {
             presentShareServices() // Backup: iCloud, on device file, ... more

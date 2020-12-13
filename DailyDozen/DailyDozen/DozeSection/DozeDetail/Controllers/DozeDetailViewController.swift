@@ -7,15 +7,13 @@
 
 import UIKit
 
-// MARK: - Builder
-class DozeDetailBuilder {
+class DozeDetailViewController: UIViewController {
     
-    // MARK: - Methods
     /// Instantiates and returns the initial view controller for a storyboard.
     ///
     /// - Parameter itemTypeKey: An item type key string.
     /// - Returns: The initial view controller in the storyboard.
-    static func instantiateController(itemTypeKey: String) -> DozeDetailViewController {
+    static func newInstance(itemTypeKey: String) -> DozeDetailViewController {
         
         let storyboard = UIStoryboard(name: "DozeDetailLayout", bundle: nil)
         guard
@@ -27,11 +25,7 @@ class DozeDetailBuilder {
         
         return viewController
     }
-}
 
-// MARK: - Controller
-class DozeDetailViewController: UIViewController {
-    
     // MARK: - Nested
     private struct Strings {
         static let videos = "VIDEOS" // :NYI:NSLocalizedString:

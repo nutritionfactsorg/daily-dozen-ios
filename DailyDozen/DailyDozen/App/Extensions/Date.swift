@@ -44,7 +44,7 @@ extension Date {
     }
     
     static func datestampNow() -> String {
-        let currentTime = Date()
+        let currentTime = DateManager.currentDatetime()
         let dateFormatter = DateFormatter()
         // filename compatible format
         dateFormatter.dateFormat = "yyyyMMdd_HHmmss"

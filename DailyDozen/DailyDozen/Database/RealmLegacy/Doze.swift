@@ -14,7 +14,7 @@ class Doze: Object {
     // MARK: - RealmDB Persisted Properties
     
     @objc dynamic var id = UUID().uuidString
-    @objc dynamic var date = Date()
+    @objc dynamic var date = DateManager.currentDatetime()
     let items = List<Item>()
     
     // MARK: - Non-Persisted Properties

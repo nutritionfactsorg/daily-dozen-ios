@@ -1,8 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="17506" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="0HD-X6-u6e">
-    <device id="retina4_7" orientation="portrait" appearance="light"/>
     <dependencies>
-        <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17505"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
@@ -13,20 +11,20 @@
             <objects>
                 <viewController id="0HD-X6-u6e" customClass="DozeEntryPagerViewController" customModule="DailyDozen" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="J3b-u7-bC7">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <view contentMode="center" translatesAutoresizingMaskIntoConstraints="NO" id="BQF-ze-lmn">
-                                <rect key="frame" x="0.0" y="0.0" width="375" height="50"/>
+                                <rect key="frame" x="0.0" y="0.0" width="600" height="50"/>
                                 <subviews>
                                     <datePicker hidden="YES" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" datePickerMode="date" translatesAutoresizingMaskIntoConstraints="NO" id="Y2o-Dk-Qso">
-                                        <rect key="frame" x="0.0" y="0.0" width="375" height="50"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="600" height="50"/>
                                         <connections>
                                             <action selector="dateChanged:" destination="0HD-X6-u6e" eventType="valueChanged" id="4IK-tb-0fP"/>
                                         </connections>
                                     </datePicker>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="OC8-wt-JgC" customClass="RoundedButton" customModule="DailyDozen" customModuleProvider="target">
-                                        <rect key="frame" x="10" y="5" width="355" height="40"/>
+                                        <rect key="frame" x="10" y="5" width="580" height="40"/>
                                         <color key="backgroundColor" red="0.49803921569999998" green="0.75294117650000003" blue="0.29803921570000003" alpha="1" colorSpace="calibratedRGB"/>
                                         <fontDescription key="fontDescription" name="Helvetica" family="Helvetica" pointSize="17"/>
                                         <state key="normal" title="Today">
@@ -71,13 +69,13 @@
                                 </constraints>
                             </view>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="L1U-z7-hZy">
-                                <rect key="frame" x="0.0" y="50" width="375" height="617"/>
+                                <rect key="frame" x="0.0" y="50" width="600" height="550"/>
                                 <subviews>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Liv-4f-27k">
-                                        <rect key="frame" x="0.0" y="0.0" width="375" height="617"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="600" height="550"/>
                                         <subviews>
                                             <containerView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="KcS-Ss-A40">
-                                                <rect key="frame" x="0.0" y="0.0" width="375" height="617"/>
+                                                <rect key="frame" x="0.0" y="0.0" width="600" height="550"/>
                                                 <color key="backgroundColor" red="0.95294117649999999" green="0.95294117649999999" blue="0.95294117649999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                 <connections>
                                                     <segue destination="0ra-CW-Eiv" kind="embed" id="Vlr-Vk-Tqc"/>
@@ -98,16 +96,16 @@
                                         </connections>
                                     </view>
                                     <view hidden="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="aJT-dy-You" customClass="RoundedView" customModule="DailyDozen" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="587" width="375" height="30"/>
+                                        <rect key="frame" x="0.0" y="520" width="600" height="30"/>
                                         <subviews>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Qfe-bW-SP4">
-                                                <rect key="frame" x="134" y="-1" width="107" height="32"/>
+                                                <rect key="frame" x="246.5" y="-1" width="107" height="32"/>
                                                 <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="17"/>
                                                 <state key="normal" title="Back to today">
                                                     <color key="titleColor" red="0.99989169840000003" green="1" blue="0.99988096950000005" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                 </state>
                                                 <connections>
-                                                    <action selector="backButtonPressed:" destination="0HD-X6-u6e" eventType="touchUpInside" id="Nfe-cW-PEH"/>
+                                                    <action selector="dozeBackButtonPressed:" destination="0HD-X6-u6e" eventType="touchUpInside" id="Nfe-cW-PEH"/>
                                                 </connections>
                                             </button>
                                         </subviews>
@@ -148,9 +146,9 @@
                         </constraints>
                     </view>
                     <connections>
-                        <outlet property="backButton" destination="Qfe-bW-SP4" id="Xic-hZ-fGN"/>
-                        <outlet property="dateButton" destination="OC8-wt-JgC" id="Unk-CP-gAS"/>
-                        <outlet property="datePicker" destination="Y2o-Dk-Qso" id="e9x-SE-X0d"/>
+                        <outlet property="dozeBackButton" destination="Qfe-bW-SP4" id="Xic-hZ-fGN"/>
+                        <outlet property="dozeDateButton" destination="OC8-wt-JgC" id="Unk-CP-gAS"/>
+                        <outlet property="dozeDatePicker" destination="Y2o-Dk-Qso" id="e9x-SE-X0d"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="rba-Fd-AgX" userLabel="First Responder" sceneMemberID="firstResponder"/>

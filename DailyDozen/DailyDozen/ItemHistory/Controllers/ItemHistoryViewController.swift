@@ -9,14 +9,13 @@
 import UIKit
 import FSCalendar
 
-class ItemHistoryBuilder {
+class ItemHistoryViewController: UIViewController {
 
-    // MARK: - Methods
     /// Instantiates and returns the initial view controller for a storyboard.
     ///
     /// - Parameter heading: An item display heading.
     /// - Returns: The initial item histor view controller in the storyboard.
-    static func instantiateController(heading: String, itemType: DataCountType) -> UIViewController {
+    static func newInstance(heading: String, itemType: DataCountType) -> UIViewController {
         let storyboard = UIStoryboard(name: "ItemHistoryLayout", bundle: nil)
         guard
             let viewController = storyboard
@@ -27,9 +26,6 @@ class ItemHistoryBuilder {
 
         return viewController
     }
-}
-
-class ItemHistoryViewController: UIViewController {
 
     // MARK: - Nested
     private struct Strings {
@@ -60,7 +56,7 @@ class ItemHistoryViewController: UIViewController {
 extension ItemHistoryViewController: FSCalendarDataSource {
 
     func maximumDate(for calendar: FSCalendar) -> Date {
-        return Date()
+        return DateManager.currentDatetime()
     }
 
     func calendar(_ calendar: FSCalendar, cellFor date: Date, at position: FSCalendarMonthPosition) -> FSCalendarCell {
@@ -69,7 +65,7 @@ extension ItemHistoryViewController: FSCalendarDataSource {
                 .dequeueReusableCell(withIdentifier: Strings.cell, for: date, at: .current) as? DateCell
             else { fatalError("There should be a cell") }
 
-        guard date < Date() else { return cell }
+        guard date < DateManager.currentDatetime() else { return cell }
 
         let itemsDict = realm.getDailyTracker(date: date).itemsDict
         if let statesCount = itemsDict[itemType]?.count {

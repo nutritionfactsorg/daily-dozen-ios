@@ -41,7 +41,7 @@ class DozeEntryViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        setViewModel(date: Date())
+        setViewModel(date: DateManager.currentDatetime())
         
         tableView.dataSource = dataProvider
         tableView.delegate = self
@@ -92,7 +92,7 @@ class DozeEntryViewController: UIViewController {
                       completionHandler: nil)
             return
         }
-        let viewController = DozeDetailBuilder.instantiateController(itemTypeKey: itemInfo.itemType.typeKey)
+        let viewController = DozeDetailViewController.newInstance(itemTypeKey: itemInfo.itemType.typeKey)
         navigationController?.pushViewController(viewController, animated: true)
     }
     
@@ -100,17 +100,17 @@ class DozeEntryViewController: UIViewController {
     @IBAction private func dozeCalendarPressed(_ sender: UIButton) {
         let heading = dataProvider.viewModel.itemInfo(rowIndex: sender.tag).itemType.headingDisplay
         let itemType = dataProvider.viewModel.itemType(rowIndex: sender.tag)
-        let viewController = ItemHistoryBuilder.instantiateController(heading: heading, itemType: itemType)
+        let viewController = ItemHistoryViewController.newInstance(heading: heading, itemType: itemType)
         navigationController?.pushViewController(viewController, animated: true)
     }
     
     @IBAction private func supplementsHeaderInfoBtnPressed(_ sender: UIButton) {
-        let alert = AlertBuilder.instantiateController(for: .dietarySupplement)
+        let alert = AlertBuilder.newInstance(for: .dietarySupplement)
         present(alert, animated: true, completion: nil)
     }
     
     @IBAction private func dozeHistoryPressed(_ sender: UIButton) {
-        let viewController = DozeHistoryBuilder.instantiateController()
+        let viewController = DozeHistoryViewController.newInstance()
         navigationController?.pushViewController(viewController, animated: true)
     }
 }

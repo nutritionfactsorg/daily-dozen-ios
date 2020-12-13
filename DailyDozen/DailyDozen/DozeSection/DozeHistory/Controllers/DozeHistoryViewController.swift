@@ -26,13 +26,13 @@ enum TimeScale: Int {
     }
 }
 
-class DozeHistoryBuilder {
+/// Historic record of daily checkbox tally.
+class DozeHistoryViewController: UIViewController {
 
-    // MARK: - Methods
     /// Instantiates and returns the initial view controller for a storyboard.
     ///
     /// - Returns: The initial view controller in the storyboard.
-    static func instantiateController() -> DozeHistoryViewController {
+    static func newInstance() -> DozeHistoryViewController {
         let storyboard = UIStoryboard(name: "DozeHistoryLayout", bundle: nil)
         guard
             let viewController = storyboard
@@ -42,10 +42,6 @@ class DozeHistoryBuilder {
 
         return viewController
     }
-}
-
-/// Historic record of daily checkbox tally.
-class DozeHistoryViewController: UIViewController {
 
     // MARK: - Outlets
     @IBOutlet private weak var chartView: ChartView!

@@ -14,13 +14,13 @@ import RealmSwift
 //    case day, month, year
 //}
 
-class TweakHistoryBuilder {
+/// Historic record of daily checkbox tally.
+class TweakHistoryViewController: UIViewController {
 
-    // MARK: - Methods
     /// Instantiates and returns the initial view controller for a storyboard.
     ///
     /// - Returns: The initial view controller in the storyboard.
-    static func instantiateController() -> TweakHistoryViewController {
+    static func newInstance() -> TweakHistoryViewController {
         let storyboard = UIStoryboard(name: "TweakHistoryLayout", bundle: nil)
         guard
             let viewController = storyboard
@@ -30,10 +30,6 @@ class TweakHistoryBuilder {
 
         return viewController
     }
-}
-
-/// Historic record of daily checkbox tally.
-class TweakHistoryViewController: UIViewController {
 
     // MARK: - Outlets
     @IBOutlet private weak var chartView: ChartView!

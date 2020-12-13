@@ -11,13 +11,13 @@
 import UIKit
 import Charts
 
-class WeightHistoryBuilder {
+/// Historic record of daily checkbox tally.
+class WeightHistoryViewController: UIViewController {
 
-    // MARK: Methods
     /// Instantiates and returns the initial view controller for a storyboard.
     ///
     /// - Returns: The initial view controller in the storyboard.
-    static func instantiateController() -> WeightHistoryViewController {
+    static func newInstance() -> WeightHistoryViewController {
         let storyboard = UIStoryboard(name: "WeightHistoryLayout", bundle: nil)
         guard
             let viewController = storyboard
@@ -27,12 +27,6 @@ class WeightHistoryBuilder {
 
         return viewController
     }
-}
-
-// MARK: -
-
-/// Historic record of daily checkbox tally.
-class WeightHistoryViewController: UIViewController {
 
     @IBOutlet weak var lineChartView: LineChartView!
     @IBOutlet private weak var controlPanel: ControlPanel! // Buttons: << < … > >>
@@ -140,7 +134,7 @@ class WeightHistoryViewController: UIViewController {
 
         lineChartView.xAxis.valueFormatter = self
         setViewModel()
-        //updateChart(fromDate: Date(), toDate: Date()) // :!!!:
+        //updateChart(fromDate: DateManager.currentDatetime(), toDate: DateManager.currentDatetime()) // :!!!:
     }
     
     // -------------------------
@@ -281,7 +275,7 @@ class WeightHistoryViewController: UIViewController {
     // MARK: - Actions
     
     @IBAction func editDataButtonPressed(_ sender: UIButton) {
-        let viewController = WeightEntryPagerBuilder.instantiateController(date: Date())
+        let viewController = WeightEntryPagerViewController.newInstance(date: DateManager.currentDatetime())
         navigationController?.pushViewController(viewController, animated: true)
     }
     

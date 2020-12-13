@@ -136,7 +136,7 @@ public struct DatabaseMaintainer {
 
         var backupUrl = URL.inBackup()
         // Add timestamp subdirectory
-        backupUrl.appendPathComponent(Date().datestampyyyyMMddHHmmss, isDirectory: true)
+        backupUrl.appendPathComponent(DateManager.currentDatetime().datestampyyyyMMddHHmmss, isDirectory: true)
         
         do {
             try fm.createDirectory(at: backupUrl, withIntermediateDirectories: true)

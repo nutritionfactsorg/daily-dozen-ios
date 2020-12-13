@@ -9,14 +9,12 @@
 import UIKit
 import ActiveLabel
 
-// MARK: - Builder
-class InfoMenuAboutBuilder {
+class InfoMenuAboutTableVC: UITableViewController {
 
-    // MARK: - Methods
     /// Instantiates and returns the initial view controller for a storyboard.
     ///
     /// - Returns: The initial view controller in the storyboard.
-    static func instantiateController() -> UIViewController {
+    static func newInstance() -> UIViewController {
         let storyboard = UIStoryboard(name: "InfoMenuAboutLayout", bundle: nil)
         guard
             let viewController = storyboard.instantiateInitialViewController()
@@ -25,10 +23,6 @@ class InfoMenuAboutBuilder {
 
         return viewController
     }
-}
-
-// MARK: - Controller
-class InfoMenuAboutTableVC: UITableViewController {
 
     // MARK: - Nested
     private struct Regex {

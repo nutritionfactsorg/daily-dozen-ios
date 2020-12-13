@@ -42,7 +42,7 @@ class AlertBuilder {
         }
     }
 
-    static func instantiateController(for content: AlertContent) -> UIAlertController {
+    static func newInstance(for content: AlertContent) -> UIAlertController {
         let alert = UIAlertController(title: content.title, message: content.message, preferredStyle: .actionSheet)
 
         alert.setValue(

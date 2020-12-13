@@ -7,13 +7,12 @@
 
 import UIKit
 
-class FirstLaunchBuilder {
+class FirstLaunchViewController: UIViewController {
     
-    // MARK: Methods
     /// Instantiates and returns the initial view controller for a storyboard.
     ///
     /// - Returns: The initial view controller in the storyboard.
-    static func instantiateController() -> FirstLaunchViewController {
+    static func newInstance() -> FirstLaunchViewController {
         let storyboard = UIStoryboard(name: "FirstLaunch", bundle: nil)
         guard
             let viewController = storyboard
@@ -23,10 +22,7 @@ class FirstLaunchBuilder {
         
         return viewController
     }
-}
 
-class FirstLaunchViewController: UIViewController {
-    
     @IBAction func dailyDozenOnly(_ sender: Any) {
         UserDefaults.standard.set(true, forKey: SettingsKeys.hasSeenFirstLaunch)
         UserDefaults.standard.set(false, forKey: SettingsKeys.show21TweaksPref)
