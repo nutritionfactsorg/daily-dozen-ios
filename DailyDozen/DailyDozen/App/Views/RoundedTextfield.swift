@@ -18,7 +18,7 @@ class RoundedTextfield: UITextField {
     }
 
     @IBInspectable
-    var borderWidth: CGFloat = 1 {
+    var borderWidth: CGFloat = 0 {
         didSet {
             layer.borderWidth = borderWidth
         }
@@ -32,21 +32,21 @@ class RoundedTextfield: UITextField {
     }
 
     @IBInspectable
-    var shadowColor: UIColor = UIColor.clear {
+    var shadowColor: UIColor = UIColor.lightGray {
         didSet {
             layer.shadowColor = shadowColor.cgColor
         }
     }
 
     @IBInspectable
-    var shadowRadius: CGFloat = 2 {
+    var shadowRadius: CGFloat = 1 {
         didSet {
-            layer.shadowRadius = 2
+            layer.shadowRadius = 1
         }
     }
 
     @IBInspectable
-    var shadowOffset: CGSize = CGSize.zero {
+    var shadowOffset: CGSize = CGSize(width: 0, height: 2) {
         didSet {
             layer.shadowOffset = shadowOffset
         }

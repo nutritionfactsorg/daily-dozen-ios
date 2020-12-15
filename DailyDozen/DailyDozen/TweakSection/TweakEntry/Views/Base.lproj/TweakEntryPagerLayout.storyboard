@@ -1,7 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="17506" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="3nE-WX-8lJ">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="17701" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="3nE-WX-8lJ">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17505"/>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17703"/>
+        <capability name="Named colors" minToolsVersion="9.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -11,71 +14,38 @@
             <objects>
                 <viewController id="3nE-WX-8lJ" customClass="TweakEntryPagerViewController" customModule="DailyDozen" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="sYP-NB-7di">
-                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <view contentMode="center" translatesAutoresizingMaskIntoConstraints="NO" id="1Yw-oW-S9L">
-                                <rect key="frame" x="0.0" y="0.0" width="600" height="50"/>
+                                <rect key="frame" x="0.0" y="44" width="414" height="50"/>
                                 <subviews>
-                                    <datePicker hidden="YES" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" datePickerMode="date" translatesAutoresizingMaskIntoConstraints="NO" id="0Tj-nT-if9">
-                                        <rect key="frame" x="0.0" y="0.0" width="600" height="50"/>
-                                        <connections>
-                                            <action selector="dateChanged:" destination="3nE-WX-8lJ" eventType="valueChanged" id="zBL-h2-ARP"/>
-                                        </connections>
-                                    </datePicker>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="iHh-5a-01X" customClass="RoundedButton" customModule="DailyDozen" customModuleProvider="target">
-                                        <rect key="frame" x="10" y="5" width="580" height="40"/>
-                                        <color key="backgroundColor" red="0.49803921569999998" green="0.75294117650000003" blue="0.29803921570000003" alpha="1" colorSpace="calibratedRGB"/>
+                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" text="Today" borderStyle="roundedRect" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="cna-BG-8aA" customClass="RoundedTextfield" customModule="DailyDozen" customModuleProvider="target">
+                                        <rect key="frame" x="10" y="5" width="394" height="40"/>
+                                        <color key="backgroundColor" name="BrandGreen"/>
+                                        <color key="tintColor" name="BrandGreen"/>
+                                        <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <fontDescription key="fontDescription" name="Helvetica" family="Helvetica" pointSize="17"/>
-                                        <state key="normal" title="Today">
-                                            <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                        </state>
-                                        <userDefinedRuntimeAttributes>
-                                            <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
-                                                <real key="value" value="5"/>
-                                            </userDefinedRuntimeAttribute>
-                                            <userDefinedRuntimeAttribute type="number" keyPath="shadowRadius">
-                                                <real key="value" value="1"/>
-                                            </userDefinedRuntimeAttribute>
-                                            <userDefinedRuntimeAttribute type="size" keyPath="shadowOffset">
-                                                <size key="value" width="0.0" height="2"/>
-                                            </userDefinedRuntimeAttribute>
-                                            <userDefinedRuntimeAttribute type="number" keyPath="shadowOpacity">
-                                                <real key="value" value="1"/>
-                                            </userDefinedRuntimeAttribute>
-                                            <userDefinedRuntimeAttribute type="color" keyPath="shadowColor">
-                                                <color key="value" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                            </userDefinedRuntimeAttribute>
-                                            <userDefinedRuntimeAttribute type="number" keyPath="borderWidth">
-                                                <real key="value" value="0.0"/>
-                                            </userDefinedRuntimeAttribute>
-                                        </userDefinedRuntimeAttributes>
-                                        <connections>
-                                            <action selector="tweakDateButtonPressed:" destination="3nE-WX-8lJ" eventType="touchUpInside" id="4l6-Nd-LQZ"/>
-                                        </connections>
-                                    </button>
+                                        <textInputTraits key="textInputTraits"/>
+                                    </textField>
                                 </subviews>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <constraints>
-                                    <constraint firstAttribute="trailing" secondItem="0Tj-nT-if9" secondAttribute="trailing" id="3C0-AE-HMi"/>
-                                    <constraint firstAttribute="trailing" secondItem="iHh-5a-01X" secondAttribute="trailing" constant="10" id="RSs-Xg-fie"/>
-                                    <constraint firstAttribute="bottom" secondItem="iHh-5a-01X" secondAttribute="bottom" constant="5" id="U4n-JD-GaR"/>
-                                    <constraint firstItem="iHh-5a-01X" firstAttribute="top" secondItem="1Yw-oW-S9L" secondAttribute="top" constant="5" id="gus-8S-Bqf"/>
-                                    <constraint firstItem="0Tj-nT-if9" firstAttribute="leading" secondItem="1Yw-oW-S9L" secondAttribute="leading" id="hoh-aB-fjh"/>
+                                    <constraint firstItem="cna-BG-8aA" firstAttribute="top" secondItem="1Yw-oW-S9L" secondAttribute="top" constant="5" id="X5s-nb-P9L"/>
                                     <constraint firstAttribute="height" constant="50" id="i88-FA-qhB"/>
-                                    <constraint firstAttribute="bottom" secondItem="0Tj-nT-if9" secondAttribute="bottom" id="p7M-qM-4IY"/>
-                                    <constraint firstItem="iHh-5a-01X" firstAttribute="leading" secondItem="1Yw-oW-S9L" secondAttribute="leading" constant="10" id="prQ-7W-yD1"/>
-                                    <constraint firstItem="0Tj-nT-if9" firstAttribute="top" secondItem="1Yw-oW-S9L" secondAttribute="top" id="rYJ-a3-Tmd"/>
+                                    <constraint firstAttribute="bottom" secondItem="cna-BG-8aA" secondAttribute="bottom" constant="5" id="kMs-sd-3ls"/>
+                                    <constraint firstAttribute="trailing" secondItem="cna-BG-8aA" secondAttribute="trailing" constant="10" id="kej-pc-yFK"/>
+                                    <constraint firstItem="cna-BG-8aA" firstAttribute="leading" secondItem="1Yw-oW-S9L" secondAttribute="leading" constant="10" id="n6I-uz-Dcz"/>
                                 </constraints>
                             </view>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="Ipn-Mn-DqP">
-                                <rect key="frame" x="0.0" y="50" width="600" height="550"/>
+                                <rect key="frame" x="0.0" y="94" width="414" height="768"/>
                                 <subviews>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="KH0-2z-86o">
-                                        <rect key="frame" x="0.0" y="0.0" width="600" height="550"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="414" height="768"/>
                                         <subviews>
                                             <containerView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="sZ1-vw-Nkv">
-                                                <rect key="frame" x="0.0" y="0.0" width="600" height="550"/>
+                                                <rect key="frame" x="0.0" y="0.0" width="414" height="768"/>
                                                 <color key="backgroundColor" red="0.95294117649999999" green="0.95294117649999999" blue="0.95294117649999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                 <connections>
                                                     <segue destination="KE5-tW-yVd" kind="embed" id="yUH-Gt-zCd"/>
@@ -96,10 +66,10 @@
                                         </connections>
                                     </view>
                                     <view hidden="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="TMN-p4-wbe" customClass="RoundedView" customModule="DailyDozen" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="520" width="600" height="30"/>
+                                        <rect key="frame" x="0.0" y="738" width="414" height="30"/>
                                         <subviews>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="7XY-Lo-Hwf">
-                                                <rect key="frame" x="246.5" y="-1" width="107" height="32"/>
+                                                <rect key="frame" x="153.5" y="-1" width="107" height="32"/>
                                                 <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="17"/>
                                                 <state key="normal" title="Back to today">
                                                     <color key="titleColor" red="0.99989169840000003" green="1" blue="0.99988096950000005" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -147,8 +117,7 @@
                     </view>
                     <connections>
                         <outlet property="tweakBackButton" destination="7XY-Lo-Hwf" id="6Lb-IQ-LYt"/>
-                        <outlet property="tweakDateButton" destination="iHh-5a-01X" id="fy5-Rj-Qbv"/>
-                        <outlet property="tweakDatePicker" destination="0Tj-nT-if9" id="BUb-e9-79X"/>
+                        <outlet property="tweakDateField" destination="cna-BG-8aA" id="SQn-HZ-PUj"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="eWd-mL-HoF" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -174,4 +143,9 @@
             <point key="canvasLocation" x="986" y="464"/>
         </scene>
     </scenes>
+    <resources>
+        <namedColor name="BrandGreen">
+            <color red="0.49799999594688416" green="0.75300002098083496" blue="0.29800000786781311" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+    </resources>
 </document>

@@ -93,7 +93,9 @@
 		49D9B07D240DD09F000E9822 /* TweakDetailActivityUnitHeader.xib in Resources */ = {isa = PBXBuildFile; fileRef = 492A1E7A240A05D600F6C37C /* TweakDetailActivityUnitHeader.xib */; };
 		49DB104D238E255D00E77E52 /* DozeEntryViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49DB104C238E255D00E77E52 /* DozeEntryViewModel.swift */; };
 		49DB104F238E257D00E77E52 /* TweakEntryViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49DB104E238E257D00E77E52 /* TweakEntryViewModel.swift */; };
+		49EF489F2586EA3500E89369 /* RoundedTextfield.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49EF489E2586EA3500E89369 /* RoundedTextfield.swift */; };
 		49F0377B233AD9B600FFD2EE /* UIButtonCheckbox.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49F0377A233AD9B600FFD2EE /* UIButtonCheckbox.swift */; };
+		49F66B792588752D00002DB2 /* UITextFieldExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49F66B782588752D00002DB2 /* UITextFieldExtension.swift */; };
 		49F8D1DC23905B70003E139F /* TweakEntryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49F8D1DB23905B70003E139F /* TweakEntryViewController.swift */; };
 		49F8D1DE23906B29003E139F /* TweakEntryDataProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49F8D1DD23906B29003E139F /* TweakEntryDataProvider.swift */; };
 		BD68BC5B2FB6D632F16CE9CD /* Pods_DailyDozenTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 715D60F634E9BCD998C66B77 /* Pods_DailyDozenTests.framework */; };
@@ -272,7 +274,9 @@
 		49D9B07A240DCA1F000E9822 /* UIViewExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIViewExtension.swift; sourceTree = "<group>"; };
 		49DB104C238E255D00E77E52 /* DozeEntryViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DozeEntryViewModel.swift; sourceTree = "<group>"; };
 		49DB104E238E257D00E77E52 /* TweakEntryViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TweakEntryViewModel.swift; sourceTree = "<group>"; };
+		49EF489E2586EA3500E89369 /* RoundedTextfield.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RoundedTextfield.swift; sourceTree = "<group>"; };
 		49F0377A233AD9B600FFD2EE /* UIButtonCheckbox.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIButtonCheckbox.swift; sourceTree = "<group>"; };
+		49F66B782588752D00002DB2 /* UITextFieldExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UITextFieldExtension.swift; sourceTree = "<group>"; };
 		49F8D1DB23905B70003E139F /* TweakEntryViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TweakEntryViewController.swift; sourceTree = "<group>"; };
 		49F8D1DD23906B29003E139F /* TweakEntryDataProvider.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TweakEntryDataProvider.swift; sourceTree = "<group>"; };
 		6ED3A55B48F7069CAE75156C /* Pods-DailyDozenTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-DailyDozenTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-DailyDozenTests/Pods-DailyDozenTests.release.xcconfig"; sourceTree = "<group>"; };
@@ -869,6 +873,7 @@
 				CF9EC1BF202196B100C7B3CA /* Fonts.swift */,
 				CFAAB3761F9F3FDF00B24748 /* URL.swift */,
 				49D9B07A240DCA1F000E9822 /* UIViewExtension.swift */,
+				49F66B782588752D00002DB2 /* UITextFieldExtension.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -921,6 +926,7 @@
 				497390AA23A5956900492D92 /* Main.storyboard */,
 				CFBEE2331FDE9A57005C0F45 /* RoundedView.swift */,
 				CFD1BA321FCD24920057F549 /* RoundedButton.swift */,
+				49EF489E2586EA3500E89369 /* RoundedTextfield.swift */,
 				49F0377A233AD9B600FFD2EE /* UIButtonCheckbox.swift */,
 			);
 			path = Views;
@@ -1373,6 +1379,7 @@
 				49208ADC2585F16F00E994CA /* DateManager.swift in Sources */,
 				499B82FB239CD4D300E4AD19 /* WeightHistoryViewController.swift in Sources */,
 				498170A123920DD60033882C /* TweakEntryPagerViewController.swift in Sources */,
+				49EF489F2586EA3500E89369 /* RoundedTextfield.swift in Sources */,
 				4981708F2391B1790033882C /* TweakEntryStateCell.swift in Sources */,
 				49821BAA2383727D006F166E /* DailyTracker.swift in Sources */,
 				498F7251239E3007004E501B /* HealthManager.swift in Sources */,
@@ -1395,6 +1402,7 @@
 				CFBEE2341FDE9A57005C0F45 /* RoundedView.swift in Sources */,
 				498F7244239D8B5C004E501B /* WeightHistoryViewModel.swift in Sources */,
 				497390B023A5D4F900492D92 /* SettingsViewController.swift in Sources */,
+				49F66B792588752D00002DB2 /* UITextFieldExtension.swift in Sources */,
 				CF9EC1C32021D37000C7B3CA /* MenuItem.swift in Sources */,
 				CF49029B1FD91F01000EAB68 /* DozeHistoryViewModel.swift in Sources */,
 				4933A74B23EE267600CE4631 /* DozeTextsProvider.swift in Sources */,

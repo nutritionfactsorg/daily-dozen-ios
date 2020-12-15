@@ -1,9 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="17506" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="2fR-Q8-dDQ">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="17701" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="2fR-Q8-dDQ">
     <device id="retina4_7" orientation="portrait" appearance="light"/>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17505"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17703"/>
+        <capability name="Named colors" minToolsVersion="9.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -19,54 +20,21 @@
                             <view contentMode="center" translatesAutoresizingMaskIntoConstraints="NO" id="lrL-Uh-qws">
                                 <rect key="frame" x="0.0" y="0.0" width="375" height="50"/>
                                 <subviews>
-                                    <datePicker hidden="YES" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" datePickerMode="date" translatesAutoresizingMaskIntoConstraints="NO" id="LAz-Fd-cdL">
-                                        <rect key="frame" x="0.0" y="0.0" width="375" height="50"/>
-                                        <connections>
-                                            <action selector="dateChanged:" destination="2fR-Q8-dDQ" eventType="valueChanged" id="Isj-hF-alx"/>
-                                        </connections>
-                                    </datePicker>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="6FY-X2-BdZ" customClass="RoundedButton" customModule="DailyDozen" customModuleProvider="target">
+                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" text="Today" borderStyle="roundedRect" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="v2k-fH-5A3" customClass="RoundedTextfield" customModule="DailyDozen" customModuleProvider="target">
                                         <rect key="frame" x="10" y="5" width="355" height="40"/>
-                                        <color key="backgroundColor" red="0.49803921569999998" green="0.75294117650000003" blue="0.29803921570000003" alpha="1" colorSpace="calibratedRGB"/>
+                                        <color key="backgroundColor" name="BrandGreen"/>
+                                        <color key="tintColor" name="BrandGreen"/>
+                                        <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <fontDescription key="fontDescription" name="Helvetica" family="Helvetica" pointSize="17"/>
-                                        <state key="normal" title="Today">
-                                            <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                        </state>
-                                        <userDefinedRuntimeAttributes>
-                                            <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
-                                                <real key="value" value="5"/>
-                                            </userDefinedRuntimeAttribute>
-                                            <userDefinedRuntimeAttribute type="number" keyPath="shadowRadius">
-                                                <real key="value" value="1"/>
-                                            </userDefinedRuntimeAttribute>
-                                            <userDefinedRuntimeAttribute type="size" keyPath="shadowOffset">
-                                                <size key="value" width="0.0" height="2"/>
-                                            </userDefinedRuntimeAttribute>
-                                            <userDefinedRuntimeAttribute type="number" keyPath="shadowOpacity">
-                                                <real key="value" value="1"/>
-                                            </userDefinedRuntimeAttribute>
-                                            <userDefinedRuntimeAttribute type="color" keyPath="shadowColor">
-                                                <color key="value" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                            </userDefinedRuntimeAttribute>
-                                            <userDefinedRuntimeAttribute type="number" keyPath="borderWidth">
-                                                <real key="value" value="0.0"/>
-                                            </userDefinedRuntimeAttribute>
-                                        </userDefinedRuntimeAttributes>
-                                        <connections>
-                                            <action selector="weightDateButtonPressed:" destination="2fR-Q8-dDQ" eventType="touchUpInside" id="uTT-1H-Jki"/>
-                                        </connections>
-                                    </button>
+                                        <textInputTraits key="textInputTraits"/>
+                                    </textField>
                                 </subviews>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <constraints>
-                                    <constraint firstItem="LAz-Fd-cdL" firstAttribute="leading" secondItem="lrL-Uh-qws" secondAttribute="leading" id="3QO-kr-qh3"/>
-                                    <constraint firstAttribute="bottom" secondItem="LAz-Fd-cdL" secondAttribute="bottom" id="8I6-91-iXZ"/>
-                                    <constraint firstItem="6FY-X2-BdZ" firstAttribute="leading" secondItem="lrL-Uh-qws" secondAttribute="leading" constant="10" id="DDt-BT-CG8"/>
-                                    <constraint firstAttribute="trailing" secondItem="LAz-Fd-cdL" secondAttribute="trailing" id="EAc-Mx-jUf"/>
-                                    <constraint firstItem="LAz-Fd-cdL" firstAttribute="top" secondItem="lrL-Uh-qws" secondAttribute="top" id="LeX-37-dES"/>
-                                    <constraint firstAttribute="trailing" secondItem="6FY-X2-BdZ" secondAttribute="trailing" constant="10" id="Miq-Jz-fp3"/>
-                                    <constraint firstAttribute="bottom" secondItem="6FY-X2-BdZ" secondAttribute="bottom" constant="5" id="O4d-Lt-npc"/>
-                                    <constraint firstItem="6FY-X2-BdZ" firstAttribute="top" secondItem="lrL-Uh-qws" secondAttribute="top" constant="5" id="YGO-L4-RLw"/>
+                                    <constraint firstAttribute="bottom" secondItem="v2k-fH-5A3" secondAttribute="bottom" constant="5" id="3cB-dq-Nan"/>
+                                    <constraint firstAttribute="trailing" secondItem="v2k-fH-5A3" secondAttribute="trailing" constant="10" id="FkN-P2-pUW"/>
+                                    <constraint firstItem="v2k-fH-5A3" firstAttribute="leading" secondItem="lrL-Uh-qws" secondAttribute="leading" constant="10" id="JFQ-IF-8m6"/>
+                                    <constraint firstItem="v2k-fH-5A3" firstAttribute="top" secondItem="lrL-Uh-qws" secondAttribute="top" constant="5" id="bQf-Dq-1sw"/>
                                     <constraint firstAttribute="height" constant="50" id="evP-zJ-zgD"/>
                                 </constraints>
                             </view>
@@ -149,8 +117,7 @@
                     </view>
                     <connections>
                         <outlet property="weightBackButton" destination="OIQ-oh-3QN" id="oJB-Bz-pFg"/>
-                        <outlet property="weightDateButton" destination="6FY-X2-BdZ" id="cVb-6n-XPv"/>
-                        <outlet property="weightDatePicker" destination="LAz-Fd-cdL" id="cK3-Lh-F5G"/>
+                        <outlet property="weightEntryTextField" destination="v2k-fH-5A3" id="yze-Dc-W0e"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="z7S-gw-XaM" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -176,4 +143,9 @@
             <point key="canvasLocation" x="1022" y="464"/>
         </scene>
     </scenes>
+    <resources>
+        <namedColor name="BrandGreen">
+            <color red="0.49799999594688416" green="0.75300002098083496" blue="0.29800000786781311" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+    </resources>
 </document>

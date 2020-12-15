@@ -37,14 +37,18 @@ class TweakEntryPagerViewController: UIViewController {
     }
 
     // MARK: - Outlets
-    @IBOutlet private weak var tweakDateButton: UIButton! {
+    
+    @IBOutlet weak var tweakDateField: RoundedTextfield!
+    
+    private var tweakDateButton: UIButton! {
         didSet {
             tweakDateButton.layer.borderWidth = 1
             tweakDateButton.layer.borderColor = tweakDateButton.titleColor(for: .normal)?.cgColor
             tweakDateButton.layer.cornerRadius = 5
         }
     }
-    @IBOutlet private weak var tweakDatePicker: UIDatePicker! {
+    
+    private var tweakDatePicker: UIDatePicker! {
         didSet {
             tweakDatePicker.maximumDate = DateManager.currentDatetime() // today
             

@@ -34,14 +34,18 @@ class WeightEntryPagerViewController: UIViewController {
     }
 
     // MARK: - Outlets
-    @IBOutlet private weak var weightDateButton: UIButton! {
+    
+    @IBOutlet weak var weightEntryTextField: RoundedTextfield!
+    
+    private var weightDateButton: UIButton! {
         didSet {
             weightDateButton.layer.borderWidth = 1
             weightDateButton.layer.borderColor = weightDateButton.titleColor(for: .normal)?.cgColor
             weightDateButton.layer.cornerRadius = 5
         }
     }
-    @IBOutlet private weak var weightDatePicker: UIDatePicker! {
+   
+    private var weightDatePicker: UIDatePicker! {
         didSet {
             weightDatePicker.maximumDate = DateManager.currentDatetime() // today
             

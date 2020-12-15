@@ -38,7 +38,10 @@ class DozeEntryPagerViewController: UIViewController {
     }
 
     // MARK: - Outlets
-    @IBOutlet private weak var dozeDateButton: UIButton! {
+    
+    @IBOutlet weak var dozeDateTextField: RoundedTextfield!
+    
+   private var dozeDateButton: UIButton! {
         didSet {
             dozeDateButton.layer.borderWidth = 1
             dozeDateButton.layer.borderColor = dozeDateButton.titleColor(for: .normal)?.cgColor
