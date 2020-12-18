@@ -108,7 +108,7 @@ class DailyDozenTests: XCTestCase {
         realmDBV01.saveCount(3, date: date00, countType: .dozeBeans)
         
         // 02: export new database format
-        let filename02 = realmMngrV01.csvExport()
+        let filename02 = realmMngrV01.csvExport(marker: "testC")
         realmMngrV01.realmDb.deleteDBAll()
         realmMngrV01.csvImport(filename: filename02)
 

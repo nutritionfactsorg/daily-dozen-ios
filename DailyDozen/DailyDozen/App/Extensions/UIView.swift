@@ -1,5 +1,5 @@
 //
-//  UIViewExtension.swift
+//  UIView.swift
 //  DailyDozen
 //
 //  Copyright © 2020 Nutritionfacts.org. All rights reserved.

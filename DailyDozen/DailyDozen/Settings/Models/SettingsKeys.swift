@@ -14,8 +14,7 @@ struct SettingsKeys {
     static let reminderMinutePref = "reminderMinutePref"
     static let reminderSoundPref = "reminderSoundPref"
     ///
-    static let imgID = "imgID"
-    static let requestID = "requestID"
+    static let reminderRequestID = "reminderRequestID"
     /// Units Type: imperial|metric
     static let unitsTypePref = "unitsTypePref"
     /// unitsTypeToggleShowPref: shows units type toggle button when true|"1"|"on"

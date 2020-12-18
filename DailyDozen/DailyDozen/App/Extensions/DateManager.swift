@@ -11,6 +11,7 @@ struct DateManager {
     
     static private var _currentDatetime = Date()
     
+    /// return "now" date and time
     static func currentDatetime() -> Date {
         var datetime = Date()
         #if DEBUG

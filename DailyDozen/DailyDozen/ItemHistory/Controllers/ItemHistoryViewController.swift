@@ -91,11 +91,11 @@ extension ItemHistoryViewController: FSCalendarDelegate {
             // :???: needs [0] to be *EntryPagerViewController.
 
             if let viewController = vc as? DozeEntryPagerViewController {
-                viewController.updateDate(date)
+                viewController.updatePageDate(date)
                 navigationController?.popViewController(animated: true)
                 // :???: if [0] does not return to calendar selected date
             } else if let viewController = vc as? TweakEntryPagerViewController {
-                viewController.updateDate(date)
+                viewController.updatePageDate(date)
                 navigationController?.popViewController(animated: true) 
             }
             

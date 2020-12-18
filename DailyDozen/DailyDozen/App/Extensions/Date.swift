@@ -8,6 +8,13 @@
 
 import Foundation
 
+// :TDB:???: review setLocalizedDateFormatFromTemplate() use 
+// let dateFormatter = DateFormatter()            
+// Template string is used only to specify which date format components should be included. 
+// Ordering and other text will not be preserved.
+// dateFormatter.setLocalizedDateFormatFromTemplate("MMMM dd, yyyy")
+// let dateString = dateFormatter.string(from: datePickerView.date)
+
 extension Date {
     
     /// Return DataWeightType `.am` or `.pm` 

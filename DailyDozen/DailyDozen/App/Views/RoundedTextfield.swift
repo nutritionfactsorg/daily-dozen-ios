@@ -10,6 +10,31 @@ import UIKit
 //@IBDesignable
 class RoundedTextfield: UITextField {
 
+    // MARK: - Actions
+    
+    @IBInspectable var isPasteEnabled: Bool = false
+    @IBInspectable var isSelectEnabled: Bool = false
+    @IBInspectable var isSelectAllEnabled: Bool = false
+    @IBInspectable var isCopyEnabled: Bool = false
+    @IBInspectable var isCutEnabled: Bool = false
+    @IBInspectable var isDeleteEnabled: Bool = false
+
+    override func canPerformAction(_ action: Selector, withSender sender: Any?) -> Bool {
+        switch action {
+        case #selector(UIResponderStandardEditActions.paste(_:)) where isPasteEnabled,
+             #selector(UIResponderStandardEditActions.select(_:)) where isSelectEnabled,
+             #selector(UIResponderStandardEditActions.selectAll(_:)) where isSelectAllEnabled,
+             #selector(UIResponderStandardEditActions.copy(_:)) where isCopyEnabled,
+             #selector(UIResponderStandardEditActions.cut(_:)) where isCutEnabled,
+             #selector(UIResponderStandardEditActions.delete(_:)) where isDeleteEnabled:
+            return super.canPerformAction(action, withSender: sender)
+        default:
+            return false
+        }
+    }
+    
+    // MARK: - Appearance
+    
     @IBInspectable
     var cornerRadius: CGFloat = 5 {
         didSet {
@@ -64,4 +89,5 @@ class RoundedTextfield: UITextField {
             layer.borderColor = isEnabled ? borderColor.cgColor : borderColor.withAlphaComponent(0.5).cgColor
         }
     }
+    
 }

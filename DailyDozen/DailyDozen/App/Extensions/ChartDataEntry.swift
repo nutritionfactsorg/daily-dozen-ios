@@ -1,5 +1,5 @@
 //
-//  ChartDataEntryExtension.swift
+//  ChartDataEntry.swift
 //  DailyDozen
 //
 //  Copyright © 2019 Nutritionfacts.org. All rights reserved.

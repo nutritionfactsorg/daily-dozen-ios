@@ -7,6 +7,7 @@
 
 import UIKit
 
+// MARK: - Controller
 class UtilityTableViewController: UITableViewController {
 
     /// Instantiates and returns the initial view controller for a storyboard.
@@ -101,8 +102,6 @@ class UtilityTableViewController: UITableViewController {
         defaults.set(nil, forKey: SettingsKeys.reminderHourPref)
         defaults.set(nil, forKey: SettingsKeys.reminderMinutePref)
         defaults.set(nil, forKey: SettingsKeys.reminderSoundPref)
-        defaults.set(nil, forKey: SettingsKeys.imgID)
-        defaults.set(nil, forKey: SettingsKeys.requestID)
         defaults.set(nil, forKey: SettingsKeys.unitsTypePref)
         defaults.set(nil, forKey: SettingsKeys.unitsTypeToggleShowPref)
         defaults.set(nil, forKey: SettingsKeys.show21TweaksPref)
@@ -126,12 +125,6 @@ class UtilityTableViewController: UITableViewController {
 
         str.append(contentsOf: "reminderSoundPref")
         str.append(contentsOf: ": \(UserDefaults.standard.object(forKey: SettingsKeys.reminderSoundPref) ?? "nil")\n")
-
-        //str.append(contentsOf: "imgID")
-        //str.append(contentsOf: ": \(UserDefaults.standard.object(forKey: SettingsKeys.imgID) ?? "nil")\n")
-
-        //str.append(contentsOf: "requestID")
-        //str.append(contentsOf: ": \(UserDefaults.standard.object(forKey: SettingsKeys.requestID) ?? "nil")\n")
 
         str.append(contentsOf: "unitsTypePref")
         str.append(contentsOf: ": \(UserDefaults.standard.object(forKey: SettingsKeys.unitsTypePref) ?? "nil")\n")

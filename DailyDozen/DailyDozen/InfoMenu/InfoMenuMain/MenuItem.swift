@@ -74,7 +74,7 @@ enum MenuItem: Int {
         case .about:
             return InfoMenuAboutTableVC.newInstance()
         //case .develop: :???:NYI: location of develop menu
-        //    return UtilityBuilder.newInstance()
+        //    return UtilityViewController.newInstance()
         case .videos, .book, .cookbook, .diet, .challenge, .donate, .subscribe, .source:
             return nil // not a View Controller
         }

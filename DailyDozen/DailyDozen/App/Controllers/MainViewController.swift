@@ -45,48 +45,58 @@ class MainViewController: UIViewController {
         UNUserNotificationCenter.current().delegate = self
         UNUserNotificationCenter.current().removeAllPendingNotificationRequests()
 
+        // Default Authorized Setting
         if UserDefaults.standard.object(forKey: SettingsKeys.reminderCanNotify) == nil {
             UNUserNotificationCenter.current().getNotificationSettings { settings in
                 UserDefaults.standard.set(settings.authorizationStatus == .authorized, forKey: SettingsKeys.reminderCanNotify)
             }
         }
 
+        // Default Hour Setting: 8
         if UserDefaults.standard.object(forKey: SettingsKeys.reminderHourPref) == nil {
             UserDefaults.standard.set(8, forKey: SettingsKeys.reminderHourPref)
         }
 
+        // Default Minute Setting: 0
         if UserDefaults.standard.object(forKey: SettingsKeys.reminderMinutePref) == nil {
             UserDefaults.standard.set(0, forKey: SettingsKeys.reminderMinutePref)
         }
 
+        // Default Sound Setting: ON
         if UserDefaults.standard.object(forKey: SettingsKeys.reminderSoundPref) == nil {
             UserDefaults.standard.set(true, forKey: SettingsKeys.reminderSoundPref)
         }
 
         guard UserDefaults.standard.bool(forKey: SettingsKeys.reminderCanNotify) else { return }
 
+        // Notification Content
         let content = UNMutableNotificationContent()
-        content.title = "DailyDozen app." // :NYI:ToBeLocalized:
-        content.subtitle = "Do you remember about the app?" // :NYI:ToBeLocalized:
-        content.body = "Use this app on a daily basis!" // :NYI:ToBeLocalized:
+        content.title = SettingsReminderContent.title
+        content.subtitle = SettingsReminderContent.subtitle
+        content.body = SettingsReminderContent.body
         content.badge = 1
-
         if UserDefaults.standard.bool(forKey: SettingsKeys.reminderSoundPref) {
             content.sound = UNNotificationSound.default
         }
+        // NOTE: URL requires at the image is outside the assets catalog
+        if let url = Bundle.main.url(forResource: SettingsReminderContent.img, withExtension: SettingsReminderContent.png),
+           let attachment = try? UNNotificationAttachment(identifier: "", url: url, options: nil) { 
+            content.attachments.append(attachment)
+        }
 
-        var dateComponents = DateComponents()
-        dateComponents.hour = UserDefaults.standard.integer(forKey: SettingsKeys.reminderHourPref)
-        dateComponents.minute = UserDefaults.standard.integer(forKey: SettingsKeys.reminderMinutePref)
+        // Notification Time Trigger
+        var timeComponents = DateComponents()
+        timeComponents.hour = UserDefaults.standard.integer(forKey: SettingsKeys.reminderHourPref)
+        timeComponents.minute = UserDefaults.standard.integer(forKey: SettingsKeys.reminderMinutePref)
+        let dateTrigger = UNCalendarNotificationTrigger(dateMatching: timeComponents, repeats: true)
 
-        let dateTrigget = UNCalendarNotificationTrigger(dateMatching: dateComponents, repeats: true)
-
-        let request = UNNotificationRequest(identifier: "request", content: content, trigger: dateTrigget)
-
+        // Post Notification Request
+        let request = UNNotificationRequest(identifier: SettingsKeys.reminderRequestID, content: content, trigger: dateTrigger)
         UNUserNotificationCenter.current().add(request) { (error) in
             if let error = error {
-                let logger = LogService.shared
-                logger.warning("MainViewController setupReminders() \(error.localizedDescription)")
+                LogService.shared.error(
+                    "MainViewController setupReminders() \(error.localizedDescription)"
+                )
             }
         }
 

@@ -89,23 +89,6 @@ class SettingsViewController: UITableViewController {
         }
     }
     
-    //    override func tableView(_ tableView: UITableView, willDisplayHeaderView view: UIView, forSection section: Int) {
-    //        guard let footer = view as? UITableViewHeaderFooterView else { return }
-    //       // header.textLabel?.textColor = UIColor.red
-    //        footer.textLabel?.font = UIFont.boldSystemFont(ofSize: 15)
-    //        //header.textLabel?.frame = header.frame
-    //        //header.textLabel?.textAlignment = .center
-    //    }
-    
-    // :???: likely not needed with grouped attribute
-    //override func tableView(_ tableView: UITableView, willDisplayFooterView view: UIView, forSection section: Int) {
-    //    guard let footer = view as? UITableViewHeaderFooterView else { return }
-    //    //footer.textLabel?.font = footer.textLabel?.font.withSize(14)
-    //    footer.textLabel?.font =  UIFont.systemFont(ofSize: 14, weight: UIFont.Weight.thin)
-    //    // :!!!:???: footer.textLabel?.attributedText
-    //
-    //}
-    
     func setUnitsMeasureSegment() {
         let shouldShowUnitsToggle = UserDefaults.standard.bool(forKey: SettingsKeys.unitsTypeToggleShowPref)
         guard let unitTypePrefStr =  UserDefaults.standard.string(forKey: SettingsKeys.unitsTypePref),
@@ -162,12 +145,6 @@ class SettingsViewController: UITableViewController {
     override func viewWillDisappear(_ animated: Bool) {
         super.viewWillDisappear(animated)
     }
-    
-    //    @IBAction private func reminderSwitched(_ sender: UISwitch) {
-    //        //settingsPanel.isHidden = !sender.isOn
-    //        UserDefaults.standard.set(sender.isOn, forKey: SettingsKeys.reminderCanNotify)
-    //        UNUserNotificationCenter.current().removeAllPendingNotificationRequests()
-    //    }
     
     @IBAction func doTweaksVisibilityChanged(_ sender: UISegmentedControl) {
         //LogService.shared.debug("selectedSegmentIndex = \(segmentedControl.selectedSegmentIndex)")

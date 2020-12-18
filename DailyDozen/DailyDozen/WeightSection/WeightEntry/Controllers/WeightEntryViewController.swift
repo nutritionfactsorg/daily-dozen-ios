@@ -195,7 +195,7 @@ class WeightEntryViewController: UIViewController {
         timePickerPM.addTarget(self, action: #selector(WeightEntryViewController.timeChangedPM(timePicker:)), for: .valueChanged)
         timePMInput.inputView = timePickerPM
         
-        setViewModel(viewDate: currentViewDateWeightEntry)
+        setViewModel(date: currentViewDateWeightEntry)
         
         // Unit Type
         if SettingsManager.isImperial() {
@@ -228,7 +228,7 @@ class WeightEntryViewController: UIViewController {
     override func viewWillAppear(_ animated: Bool) {
         LogService.shared.debug("WeightEntryViewController viewWillAppear")
         super.viewWillAppear(animated)
-        setViewModel(viewDate: self.currentViewDateWeightEntry)
+        setViewModel(date: self.currentViewDateWeightEntry)
     }
     
     /// Return to previous screen. Not invoked by date pager.
@@ -282,25 +282,25 @@ class WeightEntryViewController: UIViewController {
     /// Note: updated by pager.
     ///
     /// - Parameter item: sets the current date.
-    func setViewModel(viewDate: Date) {
-        LogService.shared.debug("•HK• WeightEntryViewController setViewModel \(viewDate.datestampKey)")
+    func setViewModel(date: Date) {
+        LogService.shared.debug("•HK• WeightEntryViewController setViewModel \(date.datestampKey)")
         // Update or create stored values from the current view
         saveIBWeight(ampm: .am)
         saveIBWeight(ampm: .pm)
         
         // Switch to new date
-        self.currentViewDateWeightEntry = viewDate
+        self.currentViewDateWeightEntry = date
         
-        let recordAM = HealthSynchronizer.shared.syncWeightToShow(date: viewDate, ampm: .am)
+        let recordAM = HealthSynchronizer.shared.syncWeightToShow(date: date, ampm: .am)
         timeAMInput.text = recordAM.time
         weightAM.text = recordAM.weight
-        timePickerAM.setDate(viewDate, animated: false)
+        timePickerAM.setDate(date, animated: false)
                 
-        let recordPM = HealthSynchronizer.shared.syncWeightToShow(date: viewDate, ampm: .pm)
+        let recordPM = HealthSynchronizer.shared.syncWeightToShow(date: date, ampm: .pm)
         timePMInput.text = recordPM.time
         weightPM.text = recordPM.weight
         if timePickerPM != nil {
-            timePickerPM.setDate(viewDate, animated: false)
+            timePickerPM.setDate(date, animated: false)
         }
     }
     
@@ -345,7 +345,7 @@ extension WeightEntryViewController: UITextFieldDelegate {
                 timePMInput.text = dateFormatter.string(from: DateManager.currentDatetime())
             }
         }
-        return true // return NO to disallow editing.
+        return true // return false to disallow editing.
     }
     // :2:
     func textFieldDidBeginEditing(_ textField: UITextField) {

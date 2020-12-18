@@ -26,16 +26,16 @@
                                         <color key="tintColor" name="BrandGreen"/>
                                         <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <fontDescription key="fontDescription" name="Helvetica" family="Helvetica" pointSize="17"/>
-                                        <textInputTraits key="textInputTraits"/>
+                                        <textInputTraits key="textInputTraits" autocorrectionType="no" spellCheckingType="no" smartDashesType="no" smartInsertDeleteType="no" smartQuotesType="no"/>
                                     </textField>
                                 </subviews>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <constraints>
-                                    <constraint firstItem="pYb-py-Qqh" firstAttribute="leading" secondItem="BQF-ze-lmn" secondAttribute="leading" constant="10" id="3KG-Lt-uMa"/>
-                                    <constraint firstAttribute="bottom" secondItem="pYb-py-Qqh" secondAttribute="bottom" constant="5" id="GgV-0b-uKl"/>
-                                    <constraint firstAttribute="trailing" secondItem="pYb-py-Qqh" secondAttribute="trailing" constant="10" id="Hgc-un-hk2"/>
-                                    <constraint firstItem="pYb-py-Qqh" firstAttribute="top" secondItem="BQF-ze-lmn" secondAttribute="top" constant="5" id="OTz-Lz-bUz"/>
+                                    <constraint firstItem="pYb-py-Qqh" firstAttribute="leading" secondItem="BQF-ze-lmn" secondAttribute="leading" constant="10" id="CFI-Um-g09"/>
+                                    <constraint firstAttribute="trailing" secondItem="pYb-py-Qqh" secondAttribute="trailing" constant="10" id="MdZ-Lr-crW"/>
                                     <constraint firstAttribute="height" constant="50" id="Wpa-SS-vTl"/>
+                                    <constraint firstItem="pYb-py-Qqh" firstAttribute="top" secondItem="BQF-ze-lmn" secondAttribute="top" constant="5" id="cxb-fp-pUd"/>
+                                    <constraint firstAttribute="bottom" secondItem="pYb-py-Qqh" secondAttribute="bottom" constant="5" id="yoM-ae-IMJ"/>
                                 </constraints>
                             </view>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="L1U-z7-hZy">
@@ -117,7 +117,7 @@
                     </view>
                     <connections>
                         <outlet property="dozeBackButton" destination="Qfe-bW-SP4" id="Xic-hZ-fGN"/>
-                        <outlet property="dozeDateTextField" destination="pYb-py-Qqh" id="bnL-oC-VWw"/>
+                        <outlet property="dozeDateBarField" destination="pYb-py-Qqh" id="WdA-qD-ATH"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="rba-Fd-AgX" userLabel="First Responder" sceneMemberID="firstResponder"/>

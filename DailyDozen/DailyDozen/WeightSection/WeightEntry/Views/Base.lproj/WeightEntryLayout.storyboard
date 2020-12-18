@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="16097" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="tz1-ri-aeh">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="17506" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="tz1-ri-aeh">
     <device id="retina4_0" orientation="portrait" appearance="light"/>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="16087"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17505"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -66,7 +66,7 @@
                             <stackView opaque="NO" contentMode="scaleToFill" spacing="41" translatesAutoresizingMaskIntoConstraints="NO" id="nDi-0z-LlH" userLabel="AM Clear Save">
                                 <rect key="frame" x="120" y="119.5" width="80" height="30"/>
                                 <subviews>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="NRG-eE-YhG" userLabel="ClearAM">
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="NRG-eE-YhG" userLabel="ClearAM">
                                         <rect key="frame" x="0.0" y="0.0" width="80" height="30"/>
                                         <state key="normal" title="Clear"/>
                                         <connections>
@@ -125,7 +125,7 @@
                             <stackView opaque="NO" contentMode="scaleToFill" spacing="60" translatesAutoresizingMaskIntoConstraints="NO" id="gUy-g3-0It" userLabel="PM Clear Save">
                                 <rect key="frame" x="120" y="274" width="80" height="30"/>
                                 <subviews>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="7l0-os-Oqt" userLabel="ClearPM">
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="7l0-os-Oqt" userLabel="ClearPM">
                                         <rect key="frame" x="0.0" y="0.0" width="80" height="30"/>
                                         <state key="normal" title="Clear"/>
                                         <connections>
@@ -135,6 +135,7 @@
                                 </subviews>
                             </stackView>
                         </subviews>
+                        <viewLayoutGuide key="safeArea" id="pki-17-wbB"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
                             <constraint firstItem="pki-17-wbB" firstAttribute="trailing" secondItem="gUy-g3-0It" secondAttribute="trailing" constant="120" id="3RE-xq-nBS"/>
@@ -162,7 +163,6 @@
                             <constraint firstItem="gIb-kj-REZ" firstAttribute="top" secondItem="xCp-N8-5Uc" secondAttribute="bottom" constant="10" id="vEK-F7-mLa"/>
                             <constraint firstItem="E9m-JH-ZcT" firstAttribute="top" secondItem="77g-xa-ali" secondAttribute="bottom" constant="10" id="xDe-Dm-9oj"/>
                         </constraints>
-                        <viewLayoutGuide key="safeArea" id="pki-17-wbB"/>
                     </view>
                     <connections>
                         <outlet property="clearWeightAMButton" destination="NRG-eE-YhG" id="V3E-30-e3b"/>

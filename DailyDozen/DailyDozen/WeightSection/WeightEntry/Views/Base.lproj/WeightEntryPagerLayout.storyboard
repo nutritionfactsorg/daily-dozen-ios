@@ -1,8 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="17701" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="2fR-Q8-dDQ">
-    <device id="retina4_7" orientation="portrait" appearance="light"/>
     <dependencies>
-        <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17703"/>
         <capability name="Named colors" minToolsVersion="9.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
@@ -14,14 +12,14 @@
             <objects>
                 <viewController storyboardIdentifier="WeightEntryPagerLayoutID" id="2fR-Q8-dDQ" customClass="WeightEntryPagerViewController" customModule="DailyDozen" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="mf7-Pl-beR">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <view contentMode="center" translatesAutoresizingMaskIntoConstraints="NO" id="lrL-Uh-qws">
-                                <rect key="frame" x="0.0" y="0.0" width="375" height="50"/>
+                                <rect key="frame" x="0.0" y="0.0" width="600" height="50"/>
                                 <subviews>
-                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" text="Today" borderStyle="roundedRect" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="v2k-fH-5A3" customClass="RoundedTextfield" customModule="DailyDozen" customModuleProvider="target">
-                                        <rect key="frame" x="10" y="5" width="355" height="40"/>
+                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" text="Today" borderStyle="roundedRect" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="pKR-lY-XXM" customClass="RoundedTextfield" customModule="DailyDozen" customModuleProvider="target">
+                                        <rect key="frame" x="10" y="5" width="580" height="40"/>
                                         <color key="backgroundColor" name="BrandGreen"/>
                                         <color key="tintColor" name="BrandGreen"/>
                                         <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -31,21 +29,21 @@
                                 </subviews>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <constraints>
-                                    <constraint firstAttribute="bottom" secondItem="v2k-fH-5A3" secondAttribute="bottom" constant="5" id="3cB-dq-Nan"/>
-                                    <constraint firstAttribute="trailing" secondItem="v2k-fH-5A3" secondAttribute="trailing" constant="10" id="FkN-P2-pUW"/>
-                                    <constraint firstItem="v2k-fH-5A3" firstAttribute="leading" secondItem="lrL-Uh-qws" secondAttribute="leading" constant="10" id="JFQ-IF-8m6"/>
-                                    <constraint firstItem="v2k-fH-5A3" firstAttribute="top" secondItem="lrL-Uh-qws" secondAttribute="top" constant="5" id="bQf-Dq-1sw"/>
+                                    <constraint firstItem="pKR-lY-XXM" firstAttribute="leading" secondItem="lrL-Uh-qws" secondAttribute="leading" constant="10" id="45E-BI-6Du"/>
+                                    <constraint firstItem="pKR-lY-XXM" firstAttribute="top" secondItem="lrL-Uh-qws" secondAttribute="top" constant="5" id="6Yl-e1-k44"/>
+                                    <constraint firstAttribute="trailing" secondItem="pKR-lY-XXM" secondAttribute="trailing" constant="10" id="Cnx-er-iyz"/>
+                                    <constraint firstAttribute="bottom" secondItem="pKR-lY-XXM" secondAttribute="bottom" constant="5" id="RwA-qr-7A0"/>
                                     <constraint firstAttribute="height" constant="50" id="evP-zJ-zgD"/>
                                 </constraints>
                             </view>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="jj2-be-ga7">
-                                <rect key="frame" x="0.0" y="50" width="375" height="617"/>
+                                <rect key="frame" x="0.0" y="50" width="600" height="550"/>
                                 <subviews>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="9T5-xG-psa">
-                                        <rect key="frame" x="0.0" y="0.0" width="375" height="617"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="600" height="550"/>
                                         <subviews>
                                             <containerView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Rtu-0P-UEO">
-                                                <rect key="frame" x="0.0" y="0.0" width="375" height="617"/>
+                                                <rect key="frame" x="0.0" y="0.0" width="600" height="550"/>
                                                 <color key="backgroundColor" red="0.95294117649999999" green="0.95294117649999999" blue="0.95294117649999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                 <connections>
                                                     <segue destination="Uni-Ik-Yxo" kind="embed" identifier="weightEditEmbedSegue" id="hkf-HP-L21"/>
@@ -66,16 +64,16 @@
                                         </connections>
                                     </view>
                                     <view hidden="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="tBd-SF-4r6" customClass="RoundedView" customModule="DailyDozen" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="587" width="375" height="30"/>
+                                        <rect key="frame" x="0.0" y="520" width="600" height="30"/>
                                         <subviews>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="OIQ-oh-3QN">
-                                                <rect key="frame" x="134" y="-1" width="107" height="32"/>
+                                                <rect key="frame" x="246.5" y="-1" width="107" height="32"/>
                                                 <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="17"/>
                                                 <state key="normal" title="Back to today">
                                                     <color key="titleColor" red="0.99989169840000003" green="1" blue="0.99988096950000005" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                 </state>
                                                 <connections>
-                                                    <action selector="backButtonPressed:" destination="2fR-Q8-dDQ" eventType="touchUpInside" id="MGy-MK-lRy"/>
+                                                    <action selector="weightBackButtonPressed:" destination="2fR-Q8-dDQ" eventType="touchUpInside" id="MGy-MK-lRy"/>
                                                 </connections>
                                             </button>
                                         </subviews>
@@ -117,7 +115,7 @@
                     </view>
                     <connections>
                         <outlet property="weightBackButton" destination="OIQ-oh-3QN" id="oJB-Bz-pFg"/>
-                        <outlet property="weightEntryTextField" destination="v2k-fH-5A3" id="yze-Dc-W0e"/>
+                        <outlet property="weightDateBarField" destination="pKR-lY-XXM" id="NxN-bO-IwX"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="z7S-gw-XaM" userLabel="First Responder" sceneMemberID="firstResponder"/>
