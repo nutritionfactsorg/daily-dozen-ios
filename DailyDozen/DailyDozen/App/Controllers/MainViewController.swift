@@ -72,7 +72,7 @@ class MainViewController: UIViewController {
         // Notification Content
         let content = UNMutableNotificationContent()
         content.title = SettingsReminderContent.title
-        content.subtitle = SettingsReminderContent.subtitle
+        //content.subtitle = SettingsReminderContent.subtitle // not used
         content.body = SettingsReminderContent.body
         content.badge = 1
         if UserDefaults.standard.bool(forKey: SettingsKeys.reminderSoundPref) {
