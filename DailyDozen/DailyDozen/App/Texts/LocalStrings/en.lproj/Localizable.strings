@@ -94,3 +94,14 @@
 "tweakNightlyFast.heading"="Fast After 7:00 p.m.";
 "tweakNightlySleep.heading"="Sufficient Sleep";
 "tweakNightlyTrendelenbrug.heading"="Trendelenburg";
+
+/* ***** Daily Reminder ***** */
+
+/* daily_reminder_settings */
+"dailyReminder.settings"="Daily Reminder Settings";
+/* daily_reminder_title */
+"dailyReminder.title"="Daily Dozen Reminder";
+/* daily_reminder_subtitle */
+/* "dailyReminder.subtitle"=""; not used */
+/* daily_reminder_text */
+"dailyReminder.text"="Update your servings for today";

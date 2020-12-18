@@ -8,12 +8,12 @@
 import UIKit
 
 struct SettingsReminderContent {
-    static let title = "DailyDozen app." // :NYI:ToBeLocalized:
-    static let subtitle = "Do you remember about the app?" // :NYI:ToBeLocalized:
-    static let body = "Update your servings for today!" // :NYI:ToBeLocalized:
-        static let img = "dr_greger"
-        static let png = "png"
-    }
+    static let title = NSLocalizedString("dailyReminder.title", comment: "Daily Dozen Reminder")
+    // static let subtitle =  NSLocalizedString("dailyReminder.subtitle", comment: "")
+    static let body = NSLocalizedString("dailyReminder.text", comment: "Update your servings today")
+    static let img = "dr_greger"
+    static let png = "png"
+}
 
 class SettingsReminderViewController: UITableViewController {
     
@@ -60,7 +60,7 @@ class SettingsReminderViewController: UITableViewController {
         // Notification Content
             let content = UNMutableNotificationContent()
         content.title = SettingsReminderContent.title
-        content.subtitle = SettingsReminderContent.subtitle
+        //content.subtitle = SettingsReminderContent.subtitle // not used
         content.body = SettingsReminderContent.body
             content.badge = 1
         if soundSwitch.isOn {
