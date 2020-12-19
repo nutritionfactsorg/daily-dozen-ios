@@ -97,7 +97,7 @@ class DozeEntryPagerViewController: UIViewController {
             dozeDateBarField.text = NSLocalizedString("dateButtonTitle.today", comment: "Date button 'Today' title")
         } else {
             dozeBackButton.superview?.isHidden = false
-            dozeDateBarField.text = dozeDateBarPicker.date.dateString(for: .long)
+            dozeDateBarField.text = dozeDateBarPicker.date.dateStringLocalized(for: .long)
         }
         
         if order != .orderedSame {
@@ -110,7 +110,7 @@ class DozeEntryPagerViewController: UIViewController {
     // MARK: - Actions
 
     @objc private func dateBarTouchDown(_ sender: UITextField) {
-        dozeDateBarField.text = dozeDateBarPicker.date.dateString(for: .long)
+        dozeDateBarField.text = dozeDateBarPicker.date.dateStringLocalized(for: .long)
         dozeDateBarPicker.maximumDate = DateManager.currentDatetime() // today
     }
 

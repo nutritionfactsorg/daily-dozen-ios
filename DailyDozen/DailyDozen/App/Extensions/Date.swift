@@ -133,7 +133,7 @@ extension Date {
         return cal.component(.day, from: date)
     }
     
-    var monthName: String {
+    var monthNameLocalized: String {
         let dateFormatter = DateFormatter()
         dateFormatter.setLocalizedDateFormatFromTemplate("MMM")
         return dateFormatter.string(from: self)
@@ -182,8 +182,8 @@ extension Date {
     /// Returns a date string from the date.
     ///
     /// - Parameter style: A dateFormatter style (default is .medium).
-    /// - Returns: A date string.
-    func dateString(for style: DateFormatter.Style = .medium) -> String {
+    /// - Returns: A localized date string.
+    func dateStringLocalized(for style: DateFormatter.Style = .medium) -> String {
         let dateFormatter = DateFormatter()
         dateFormatter.timeStyle = .none
         dateFormatter.dateStyle = style

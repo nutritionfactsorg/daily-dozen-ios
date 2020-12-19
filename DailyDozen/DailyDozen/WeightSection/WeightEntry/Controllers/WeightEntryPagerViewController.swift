@@ -91,7 +91,7 @@ class WeightEntryPagerViewController: UIViewController {
             weightDateBarField.text = NSLocalizedString("dateButtonTitle.today", comment: "Date button 'Today' title")
         } else {
             weightBackButton.superview?.isHidden = false
-            weightDateBarField.text = weightDateBarPicker.date.dateString(for: .long)
+            weightDateBarField.text = weightDateBarPicker.date.dateStringLocalized(for: .long)
         }
         
         if order != .orderedSame {
@@ -104,7 +104,7 @@ class WeightEntryPagerViewController: UIViewController {
     // MARK: - Actions
 
     @objc private func dateBarTouchDown(_ sender: UITextField) {
-        weightDateBarField.text = weightDateBarPicker.date.dateString(for: .long)
+        weightDateBarField.text = weightDateBarPicker.date.dateStringLocalized(for: .long)
         weightDateBarPicker.maximumDate = DateManager.currentDatetime() // today
     }
 

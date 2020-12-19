@@ -174,19 +174,19 @@ struct WeightReport {
 
         // Segment days into months
         var monthReports = [MonthWeightReport]()
-        guard var month = dailyReports.first?.anyDate.monthName else { return }
+        guard var month = dailyReports.first?.anyDate.monthNameLocalized else { return }
         
         var weightInMonth = [DailyWeightReport]()
         dailyReports.forEach { weightReport in
-            if weightReport.anyDate.monthName == month {
+            if weightReport.anyDate.monthNameLocalized == month {
                 weightInMonth.append(weightReport)
-                month = weightReport.anyDate.monthName
+                month = weightReport.anyDate.monthNameLocalized
             } else {
                 let monthWeightReport = MonthWeightReport(daily: weightInMonth, month: month)
                 monthReports.append(monthWeightReport)
                 weightInMonth.removeAll()
                 weightInMonth.append(weightReport)
-                month = weightReport.anyDate.monthName
+                month = weightReport.anyDate.monthNameLocalized
             }
         }
         monthReports.append(MonthWeightReport(daily: weightInMonth, month: month))

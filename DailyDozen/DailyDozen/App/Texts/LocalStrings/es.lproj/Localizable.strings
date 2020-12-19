@@ -165,10 +165,10 @@
 /* ***** Daily Reminder ***** */
 
 /* daily_reminder_settings */
-"dailyReminder.settings"="Daily Reminder Settings";
+"dailyReminder.settings"="Ajustes del recordatorio diario";
 /* daily_reminder_title */
-"dailyReminder.title"="Daily Dozen Reminder";
+"dailyReminder.title"="Recordatorio de la Docena Diaria";
 /* daily_reminder_subtitle */
 /* "dailyReminder.subtitle"=""; not used */
 /* daily_reminder_text */
-"dailyReminder.text"="Update your servings for today";
+"dailyReminder.text"="Actualiza las porciones de hoy";

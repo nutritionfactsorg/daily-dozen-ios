@@ -69,22 +69,22 @@ struct Report {
         let dailyReports = trackers.map { DailyReport(tracker: $0, isDailyDozen: isDailyDozen) }
         var monthReports = [MonthReport]()
 
-        guard var month = dailyReports.first?.date.monthName else { 
+        guard var month = dailyReports.first?.date.monthNameLocalized else { 
             return
         }
 
         // Segment days into months
         var reportsInMonth = [DailyReport]()
         dailyReports.forEach { report in
-            if report.date.monthName == month {
+            if report.date.monthNameLocalized == month {
                 reportsInMonth.append(report)
-                month = report.date.monthName
+                month = report.date.monthNameLocalized
             } else {
                 let monthReport = MonthReport(daily: reportsInMonth, month: month)
                 monthReports.append(monthReport)
                 reportsInMonth.removeAll()
                 reportsInMonth.append(report)
-                month = report.date.monthName
+                month = report.date.monthNameLocalized
             }
         }
         monthReports.append(MonthReport(daily: reportsInMonth, month: month))

@@ -93,7 +93,7 @@ class TweakEntryPagerViewController: UIViewController {
             tweakDateBarField.text = NSLocalizedString("dateButtonTitle.today", comment: "Date button 'Today' title")
         } else {
             tweakBackButton.superview?.isHidden = false
-            tweakDateBarField.text = tweakDateBarPicker.date.dateString(for: .long)
+            tweakDateBarField.text = tweakDateBarPicker.date.dateStringLocalized(for: .long)
         }
         
         if order != .orderedSame {
@@ -106,7 +106,7 @@ class TweakEntryPagerViewController: UIViewController {
     // MARK: - Actions
 
     @objc private func dateBarTouchDown(_ sender: UITextField) {
-        tweakDateBarField.text = tweakDateBarPicker.date.dateString(for: .long)
+        tweakDateBarField.text = tweakDateBarPicker.date.dateStringLocalized(for: .long)
         tweakDateBarPicker.maximumDate = DateManager.currentDatetime() // today
     }
 
