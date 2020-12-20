@@ -78,7 +78,7 @@ class MainViewController: UIViewController {
         if UserDefaults.standard.bool(forKey: SettingsKeys.reminderSoundPref) {
             content.sound = UNNotificationSound.default
         }
-        // NOTE: URL requires at the image is outside the assets catalog
+        // NOTE: URL requires an image is outside the assets catalog
         if let url = Bundle.main.url(forResource: SettingsReminderContent.img, withExtension: SettingsReminderContent.png),
            let attachment = try? UNNotificationAttachment(identifier: "", url: url, options: nil) { 
             content.attachments.append(attachment)

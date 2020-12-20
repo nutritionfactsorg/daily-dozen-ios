@@ -63,6 +63,7 @@ class WeightEntryViewController: UIViewController {
     }
     
     /// Save weight values from InterfaceBuilder (IB) fields
+    /// :TBD:???:ToBeLocalized: time*Input.text need to be local independent for synced put record
     func saveIBWeight(ampm: DataWeightType) {
         let datestampKey = currentViewDateWeightEntry.datestampKey
         LogService.shared.debug("•HK• WeightEntryViewController saveIBWeight \(datestampKey)")
@@ -244,6 +245,7 @@ class WeightEntryViewController: UIViewController {
         let dateNow = DateManager.currentDatetime()
         let dateFormatter = DateFormatter()
         dateFormatter.dateFormat = "hh:mm a"
+        // dateFormatter.setLocalizedDateFormatFromTemplate(<#T##dateFormatTemplate: String##String#>) :TBD:ToBeLocalized?
         let timeNow = dateFormatter.string(from: dateNow)
         return timeNow
     }
@@ -260,6 +262,7 @@ class WeightEntryViewController: UIViewController {
         let min = dateFormatter.date(from: "12:00")      //creating min time
         let max = dateFormatter.date(from: "11:59")
         dateFormatter.dateFormat = "hh:mm a"
+        // dateFormatter.setLocalizedDateFormatFromTemplate(<#T##dateFormatTemplate: String##String#>) :TBD:ToBeLocalized?
         timePicker.minimumDate = min
         timePicker.maximumDate = max
         timeAMInput.text = dateFormatter.string(from: timePicker.date)
@@ -271,6 +274,7 @@ class WeightEntryViewController: UIViewController {
         let min = dateFormatter.date(from: "12:00")      //creating min time
         let max = dateFormatter.date(from: "11:59")
         dateFormatter.dateFormat = "hh:mm a"
+        // dateFormatter.setLocalizedDateFormatFromTemplate(<#T##dateFormatTemplate: String##String#>) :TBD:ToBeLocalized?
         timePicker.minimumDate = min
         timePicker.maximumDate = max
         timePMInput.text = dateFormatter.string(from: timePicker.date)
@@ -338,6 +342,7 @@ extension WeightEntryViewController: UITextFieldDelegate {
         if textField.text == nil || textField.text!.isEmpty {
             let dateFormatter = DateFormatter()
             dateFormatter.dateFormat = "hh:mm a"
+            // dateFormatter.setLocalizedDateFormatFromTemplate(<#T##dateFormatTemplate: String##String#>) :TBD:ToBeLocalized?
             if textField == timeAMInput {
                 timeAMInput.text = dateFormatter.string(from: DateManager.currentDatetime())
             }
