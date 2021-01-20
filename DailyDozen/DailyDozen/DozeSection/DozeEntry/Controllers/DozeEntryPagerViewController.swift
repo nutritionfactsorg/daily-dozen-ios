@@ -97,6 +97,7 @@ class DozeEntryPagerViewController: UIViewController {
             dozeDateBarField.text = NSLocalizedString("dateButtonTitle.today", comment: "Date button 'Today' title")
         } else {
             dozeBackButton.superview?.isHidden = false
+            dozeBackButton.setTitle(NSLocalizedString("dateBackButtonTitle", comment: "Back to today"), for: UIControl.State.normal)
             dozeDateBarField.text = dozeDateBarPicker.date.dateStringLocalized(for: .long)
         }
         

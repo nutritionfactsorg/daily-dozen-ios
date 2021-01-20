@@ -16,6 +16,7 @@
 
 /* Records: Daily Tally */
 "dateButtonTitle.today"="Today";
+"dateBackButtonTitle"="Back to today";
 "historyRecord.movingMean"="Moving Average";
 "historyRecordDoze.heading"="Servings History";
 "historyRecordDoze.legend"="Servings";

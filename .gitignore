@@ -59,3 +59,8 @@ Pods/
 !Podfile
 !Podfile.lock
 
+#################
+## LibreOffice ##
+#################
+.~lock*
+
