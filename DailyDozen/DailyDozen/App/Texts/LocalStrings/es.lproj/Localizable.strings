@@ -162,13 +162,8 @@
 /* display heading */
 "tweakWeightTwice.heading" = "Pesarse dos veces al día";
 
-/* ***** Daily Reminder ***** */
+/* daily_reminder_text alert text */
+"reminder.alert.text"="Actualiza las porciones de hoy";
 
-/* daily_reminder_settings */
-"dailyReminder.settings"="Ajustes del recordatorio diario";
-/* daily_reminder_title */
-"dailyReminder.title"="Recordatorio de la Docena Diaria";
-/* daily_reminder_subtitle */
-/* "dailyReminder.subtitle"=""; not used */
-/* daily_reminder_text */
-"dailyReminder.text"="Actualiza las porciones de hoy";
+/* Alert title, Settings heading */
+"reminder.heading"="Recordatorio diario";

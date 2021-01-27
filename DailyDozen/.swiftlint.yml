@@ -3,6 +3,7 @@ disabled_rules:
   - trailing_comma
   - trailing_whitespace
   - closure_parameter_position
+  - comment_spacing
 
   # - file_length
   # - function_body_length

@@ -8,9 +8,8 @@
 import UIKit
 
 struct SettingsReminderContent {
-    static let title = NSLocalizedString("dailyReminder.title", comment: "Daily Dozen Reminder")
-    // static let subtitle =  NSLocalizedString("dailyReminder.subtitle", comment: "")
-    static let body = NSLocalizedString("dailyReminder.text", comment: "Update your servings today")
+    static let title = NSLocalizedString("reminder.heading", comment: "Daily Dozen Reminder")
+    static let body = NSLocalizedString("reminder.alert.text", comment: "Update your servings today")
     static let img = "dr_greger"
     static let png = "png"
 }
