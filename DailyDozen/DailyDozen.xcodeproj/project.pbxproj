@@ -224,6 +224,34 @@
 		493A9C3123CE6B7500F679BE /* es */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = es; path = es.lproj/WeightHistoryLayout.strings; sourceTree = "<group>"; };
 		493A9C3223CE6B7500F679BE /* es */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = es; path = es.lproj/Localizable.strings; sourceTree = "<group>"; };
 		493B0EB1258D0D7B00FEDA8E /* dr_greger.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = dr_greger.png; sourceTree = "<group>"; };
+		493CE64D25D727B400F95BF3 /* pl */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = pl; path = pl.lproj/FirstLaunch.strings; sourceTree = "<group>"; };
+		493CE64E25D727E300F95BF3 /* pl */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = pl; path = pl.lproj/LaunchScreen.strings; sourceTree = "<group>"; };
+		493CE64F25D727E300F95BF3 /* pl */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = pl; path = pl.lproj/Main.strings; sourceTree = "<group>"; };
+		493CE65025D727E300F95BF3 /* pl */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = pl; path = pl.lproj/DozeDetailLayout.strings; sourceTree = "<group>"; };
+		493CE65125D727E300F95BF3 /* pl */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = pl; path = pl.lproj/DozeDetailSizeHeader.strings; sourceTree = "<group>"; };
+		493CE65225D727E300F95BF3 /* pl */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = pl; path = pl.lproj/DozeDetailSizeUnitHeader.strings; sourceTree = "<group>"; };
+		493CE65325D727E300F95BF3 /* pl */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = pl; path = pl.lproj/DozeDetailTypeHeader.strings; sourceTree = "<group>"; };
+		493CE65425D727E300F95BF3 /* pl */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = pl; path = pl.lproj/DozeEntryPagerLayout.strings; sourceTree = "<group>"; };
+		493CE65525D727E300F95BF3 /* pl */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = pl; path = pl.lproj/DozeEntryExtrasHeader.strings; sourceTree = "<group>"; };
+		493CE65625D727E400F95BF3 /* pl */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = pl; path = pl.lproj/DozeEntryLayout.strings; sourceTree = "<group>"; };
+		493CE65725D727E400F95BF3 /* pl */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = pl; path = pl.lproj/DozeHistoryLayout.strings; sourceTree = "<group>"; };
+		493CE65825D727E400F95BF3 /* pl */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = pl; path = pl.lproj/ItemHistoryLayout.strings; sourceTree = "<group>"; };
+		493CE65925D727E400F95BF3 /* pl */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = pl; path = pl.lproj/InfoMenuMainLayout.strings; sourceTree = "<group>"; };
+		493CE65A25D727E400F95BF3 /* pl */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = pl; path = pl.lproj/InfoMenuAboutLayout.strings; sourceTree = "<group>"; };
+		493CE65B25D727E400F95BF3 /* pl */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = pl; path = pl.lproj/SettingsLayout.strings; sourceTree = "<group>"; };
+		493CE65C25D727E400F95BF3 /* pl */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = pl; path = pl.lproj/TweakDetailLayout.strings; sourceTree = "<group>"; };
+		493CE65D25D727E400F95BF3 /* pl */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = pl; path = pl.lproj/TweakDetailActivityHeader.strings; sourceTree = "<group>"; };
+		493CE65E25D727E400F95BF3 /* pl */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = pl; path = pl.lproj/TweakDetailActivityUnitHeader.strings; sourceTree = "<group>"; };
+		493CE65F25D727E400F95BF3 /* pl */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = pl; path = pl.lproj/TweakDetailDescriptionHeader.strings; sourceTree = "<group>"; };
+		493CE66025D727E400F95BF3 /* pl */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = pl; path = pl.lproj/TweakEntryPagerLayout.strings; sourceTree = "<group>"; };
+		493CE66125D727E400F95BF3 /* pl */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = pl; path = pl.lproj/TweakEntryLayout.strings; sourceTree = "<group>"; };
+		493CE66225D727E400F95BF3 /* pl */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = pl; path = pl.lproj/TweakHistoryLayout.strings; sourceTree = "<group>"; };
+		493CE66325D727E400F95BF3 /* pl */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = pl; path = pl.lproj/WeightEntryLayout.strings; sourceTree = "<group>"; };
+		493CE66425D727E500F95BF3 /* pl */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = pl; path = pl.lproj/WeightEntryPagerLayout.strings; sourceTree = "<group>"; };
+		493CE66525D727E500F95BF3 /* pl */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = pl; path = pl.lproj/WeightHistoryLayout.strings; sourceTree = "<group>"; };
+		493CE66625D727E500F95BF3 /* pl */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = pl; path = pl.lproj/Localizable.strings; sourceTree = "<group>"; };
+		493CE66725D727E500F95BF3 /* pl */ = {isa = PBXFileReference; lastKnownFileType = text.json; name = pl; path = pl.lproj/DozeDetailData.json; sourceTree = "<group>"; };
+		493CE66825D727E500F95BF3 /* pl */ = {isa = PBXFileReference; lastKnownFileType = text.json; name = pl; path = pl.lproj/TweakDetailData.json; sourceTree = "<group>"; };
 		4941D726237E13DB00ED84B5 /* RealmManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RealmManager.swift; sourceTree = "<group>"; };
 		4941D728237E13DC00ED84B5 /* DataCountRecord.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DataCountRecord.swift; sourceTree = "<group>"; };
 		4941D729237E13DC00ED84B5 /* DataCountType.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DataCountType.swift; sourceTree = "<group>"; };
@@ -1147,6 +1175,7 @@
 				en,
 				Base,
 				es,
+				pl,
 			);
 			mainGroup = CFE6982F1F974B9700CD7905;
 			productRefGroup = CFE698391F974B9700CD7905 /* Products */;
@@ -1465,6 +1494,7 @@
 			children = (
 				4916451E23EE53610077731D /* Base */,
 				4916452023EE53640077731D /* es */,
+				493CE66825D727E500F95BF3 /* pl */,
 			);
 			name = TweakDetailData.json;
 			sourceTree = "<group>";
@@ -1482,6 +1512,7 @@
 			children = (
 				492A1E74240A054C00F6C37C /* Base */,
 				492A1E77240A055700F6C37C /* es */,
+				493CE65225D727E300F95BF3 /* pl */,
 			);
 			name = DozeDetailSizeUnitHeader.xib;
 			sourceTree = "<group>";
@@ -1491,6 +1522,7 @@
 			children = (
 				492A1E79240A05D600F6C37C /* Base */,
 				492A1E7C240A05FA00F6C37C /* es */,
+				493CE65E25D727E400F95BF3 /* pl */,
 			);
 			name = TweakDetailActivityUnitHeader.xib;
 			sourceTree = "<group>";
@@ -1500,6 +1532,7 @@
 			children = (
 				4933A75123EE2BC800CE4631 /* Base */,
 				4933A75323EE2BCB00CE4631 /* es */,
+				493CE66725D727E500F95BF3 /* pl */,
 			);
 			name = DozeDetailData.json;
 			sourceTree = "<group>";
@@ -1509,6 +1542,7 @@
 			children = (
 				493A9BD423CE47A000F679BE /* en */,
 				493A9C3223CE6B7500F679BE /* es */,
+				493CE66625D727E500F95BF3 /* pl */,
 			);
 			name = Localizable.strings;
 			sourceTree = "<group>";
@@ -1518,6 +1552,7 @@
 			children = (
 				493A9BD823CE4EED00F679BE /* Base */,
 				493A9C1F23CE6B7300F679BE /* es */,
+				493CE65025D727E300F95BF3 /* pl */,
 			);
 			name = DozeDetailLayout.storyboard;
 			sourceTree = "<group>";
@@ -1527,6 +1562,7 @@
 			children = (
 				493A9BDB23CE4F0200F679BE /* Base */,
 				493A9C2023CE6B7300F679BE /* es */,
+				493CE65C25D727E400F95BF3 /* pl */,
 			);
 			name = TweakDetailLayout.storyboard;
 			sourceTree = "<group>";
@@ -1536,6 +1572,7 @@
 			children = (
 				493A9BDE23CE4F1400F679BE /* Base */,
 				493A9C2123CE6B7300F679BE /* es */,
+				493CE65125D727E300F95BF3 /* pl */,
 			);
 			name = DozeDetailSizeHeader.xib;
 			sourceTree = "<group>";
@@ -1545,6 +1582,7 @@
 			children = (
 				493A9BE123CE4F1C00F679BE /* Base */,
 				493A9C2223CE6B7400F679BE /* es */,
+				493CE65D25D727E400F95BF3 /* pl */,
 			);
 			name = TweakDetailActivityHeader.xib;
 			sourceTree = "<group>";
@@ -1554,6 +1592,7 @@
 			children = (
 				493A9BE423CE4F2D00F679BE /* Base */,
 				493A9C2323CE6B7400F679BE /* es */,
+				493CE65325D727E300F95BF3 /* pl */,
 			);
 			name = DozeDetailTypeHeader.xib;
 			sourceTree = "<group>";
@@ -1563,6 +1602,7 @@
 			children = (
 				493A9BE723CE4F3700F679BE /* Base */,
 				493A9C2423CE6B7400F679BE /* es */,
+				493CE65F25D727E400F95BF3 /* pl */,
 			);
 			name = TweakDetailDescriptionHeader.xib;
 			sourceTree = "<group>";
@@ -1572,6 +1612,7 @@
 			children = (
 				493A9BED23CE612A00F679BE /* Base */,
 				493A9C2523CE6B7400F679BE /* es */,
+				493CE65825D727E400F95BF3 /* pl */,
 			);
 			name = ItemHistoryLayout.storyboard;
 			sourceTree = "<group>";
@@ -1581,6 +1622,7 @@
 			children = (
 				493A9BF123CE61BE00F679BE /* Base */,
 				493A9C2623CE6B7400F679BE /* es */,
+				493CE65925D727E400F95BF3 /* pl */,
 			);
 			name = InfoMenuMainLayout.storyboard;
 			sourceTree = "<group>";
@@ -1590,6 +1632,7 @@
 			children = (
 				493A9BF423CE61E700F679BE /* Base */,
 				493A9C2723CE6B7400F679BE /* es */,
+				493CE65425D727E300F95BF3 /* pl */,
 			);
 			name = DozeEntryPagerLayout.storyboard;
 			sourceTree = "<group>";
@@ -1599,6 +1642,7 @@
 			children = (
 				493A9BF723CE61F100F679BE /* Base */,
 				493A9C2823CE6B7400F679BE /* es */,
+				493CE65625D727E400F95BF3 /* pl */,
 			);
 			name = DozeEntryLayout.storyboard;
 			sourceTree = "<group>";
@@ -1608,6 +1652,7 @@
 			children = (
 				493A9BFA23CE61FD00F679BE /* Base */,
 				493A9C2923CE6B7400F679BE /* es */,
+				493CE65525D727E300F95BF3 /* pl */,
 			);
 			name = DozeEntryExtrasHeader.xib;
 			sourceTree = "<group>";
@@ -1617,6 +1662,7 @@
 			children = (
 				493A9BFD23CE623700F679BE /* Base */,
 				493A9C2A23CE6B7500F679BE /* es */,
+				493CE65725D727E400F95BF3 /* pl */,
 			);
 			name = DozeHistoryLayout.storyboard;
 			sourceTree = "<group>";
@@ -1626,6 +1672,7 @@
 			children = (
 				493A9C0123CE627B00F679BE /* Base */,
 				493A9C2B23CE6B7500F679BE /* es */,
+				493CE65B25D727E400F95BF3 /* pl */,
 			);
 			name = SettingsLayout.storyboard;
 			sourceTree = "<group>";
@@ -1635,6 +1682,7 @@
 			children = (
 				493A9C0423CE629100F679BE /* Base */,
 				493A9C2C23CE6B7500F679BE /* es */,
+				493CE66025D727E400F95BF3 /* pl */,
 			);
 			name = TweakEntryPagerLayout.storyboard;
 			sourceTree = "<group>";
@@ -1644,6 +1692,7 @@
 			children = (
 				493A9C0723CE629900F679BE /* Base */,
 				493A9C2D23CE6B7500F679BE /* es */,
+				493CE66125D727E400F95BF3 /* pl */,
 			);
 			name = TweakEntryLayout.storyboard;
 			sourceTree = "<group>";
@@ -1653,6 +1702,7 @@
 			children = (
 				493A9C0B23CE62BC00F679BE /* Base */,
 				493A9C2E23CE6B7500F679BE /* es */,
+				493CE66225D727E400F95BF3 /* pl */,
 			);
 			name = TweakHistoryLayout.storyboard;
 			sourceTree = "<group>";
@@ -1662,6 +1712,7 @@
 			children = (
 				493A9C0F23CE631600F679BE /* Base */,
 				493A9C2F23CE6B7500F679BE /* es */,
+				493CE66325D727E400F95BF3 /* pl */,
 			);
 			name = WeightEntryLayout.storyboard;
 			sourceTree = "<group>";
@@ -1671,6 +1722,7 @@
 			children = (
 				493A9C1223CE631F00F679BE /* Base */,
 				493A9C3023CE6B7500F679BE /* es */,
+				493CE66425D727E500F95BF3 /* pl */,
 			);
 			name = WeightEntryPagerLayout.storyboard;
 			sourceTree = "<group>";
@@ -1680,6 +1732,7 @@
 			children = (
 				493A9C1623CE634400F679BE /* Base */,
 				493A9C3123CE6B7500F679BE /* es */,
+				493CE66525D727E500F95BF3 /* pl */,
 			);
 			name = WeightHistoryLayout.storyboard;
 			sourceTree = "<group>";
@@ -1688,6 +1741,7 @@
 			isa = PBXVariantGroup;
 			children = (
 				495020D92399DC780092D6F5 /* Base */,
+				493CE64E25D727E300F95BF3 /* pl */,
 			);
 			name = LaunchScreen.storyboard;
 			sourceTree = "<group>";
@@ -1697,6 +1751,7 @@
 			children = (
 				497390AB23A5956900492D92 /* Base */,
 				493A9C1E23CE6B7300F679BE /* es */,
+				493CE64F25D727E300F95BF3 /* pl */,
 			);
 			name = Main.storyboard;
 			sourceTree = "<group>";
@@ -1706,6 +1761,7 @@
 			children = (
 				497B137323CD72E600BC2488 /* Base */,
 				493A9C1C23CE6B7300F679BE /* es */,
+				493CE65A25D727E400F95BF3 /* pl */,
 			);
 			name = InfoMenuAboutLayout.storyboard;
 			sourceTree = "<group>";
@@ -1715,6 +1771,7 @@
 			children = (
 				498F724A239E013E004E501B /* Base */,
 				493A9C1D23CE6B7300F679BE /* es */,
+				493CE64D25D727B400F95BF3 /* pl */,
 			);
 			name = FirstLaunch.storyboard;
 			sourceTree = "<group>";

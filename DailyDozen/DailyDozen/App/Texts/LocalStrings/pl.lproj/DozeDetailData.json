@@ -1,0 +1,1126 @@
+{
+  "itemsDict" : {
+    "dozeBeans" : {
+      "heading" : "Beans",
+      "servings" : [
+        {
+          "imperial" : "¼ cup of hummus or bean dip",
+          "metric" : "60 g of hummus or bean dip"
+        },
+        {
+          "imperial" : "½ cup cooked beans, split peas, lentils, tofu, or tempeh",
+          "metric" : "130 g cooked beans, split peas, lentils, tofu, or tempeh"
+        },
+        {
+          "imperial" : "1 cup of fresh peas or sprouted lentils",
+          "metric" : "150 g of fresh peas or sprouted lentils"
+        }
+      ],
+      "topic" : "topics/beans",
+      "varieties" : [
+        {
+          "text" : "Black beans",
+          "topic" : "topics/black-beans"
+        },
+        {
+          "text" : "Black-eyed peas",
+          "topic" : ""
+        },
+        {
+          "text" : "Butter beans",
+          "topic" : ""
+        },
+        {
+          "text" : "Cannellini beans",
+          "topic" : ""
+        },
+        {
+          "text" : "Chickpeas/Garbanzo Beans",
+          "topic" : "topics/chickpeas"
+        },
+        {
+          "text" : "Edamame",
+          "topic" : "topics/edamame"
+        },
+        {
+          "text" : "English peas",
+          "topic" : ""
+        },
+        {
+          "text" : "Great northern beans",
+          "topic" : ""
+        },
+        {
+          "text" : "Kidney beans",
+          "topic" : "topics/kidney-beans"
+        },
+        {
+          "text" : "Lentils (beluga, french, and red varieties)",
+          "topic" : "topics/lentils"
+        },
+        {
+          "text" : "Miso",
+          "topic" : "topics/miso"
+        },
+        {
+          "text" : "Navy beans",
+          "topic" : "topics/navy-beans"
+        },
+        {
+          "text" : "Pinto beans",
+          "topic" : "topics/pinto-beans"
+        },
+        {
+          "text" : "Small red beans",
+          "topic" : ""
+        },
+        {
+          "text" : "Split peas (yellow or green)",
+          "topic" : "topics/split-peas"
+        },
+        {
+          "text" : "Tempeh",
+          "topic" : "topics/tempeh"
+        }
+      ]
+    },
+    "dozeBerries" : {
+      "heading" : "Berries",
+      "servings" : [
+        {
+          "imperial" : "½ cup fresh or frozen",
+          "metric" : "60 g fresh or frozen"
+        },
+        {
+          "imperial" : "¼ cup dried",
+          "metric" : "40 g dried"
+        }
+      ],
+      "topic" : "topics/berries",
+      "varieties" : [
+        {
+          "text" : "Acai berries",
+          "topic" : "topics/acai-berries"
+        },
+        {
+          "text" : "Barberries",
+          "topic" : "topics/barberries"
+        },
+        {
+          "text" : "Blackberries",
+          "topic" : "topics/blackberries"
+        },
+        {
+          "text" : "Blueberries",
+          "topic" : "topics/blueberries"
+        },
+        {
+          "text" : "Cherries (sweet or tart)",
+          "topic" : "topics/cherries"
+        },
+        {
+          "text" : "Concord grapes",
+          "topic" : "topics/concord-grapes"
+        },
+        {
+          "text" : "Cranberries",
+          "topic" : "topics/cranberries"
+        },
+        {
+          "text" : "Goji berries",
+          "topic" : "topics/goji-berries"
+        },
+        {
+          "text" : "Kumquats",
+          "topic" : ""
+        },
+        {
+          "text" : "Mulberries",
+          "topic" : ""
+        },
+        {
+          "text" : "Raspberries (black or red)",
+          "topic" : "topics/raspberries"
+        },
+        {
+          "text" : "Strawberries",
+          "topic" : "topics/strawberries"
+        }
+      ]
+    },
+    "dozeBeverages" : {
+      "heading" : "Beverages",
+      "servings" : [
+        {
+          "imperial" : "One glass (12 ounces)",
+          "metric" : "One glass (350 ml)"
+        }
+      ],
+      "topic" : "topics/beverages",
+      "varieties" : [
+        {
+          "text" : "Black tea",
+          "topic" : "topics/black-tea"
+        },
+        {
+          "text" : "Chai tea",
+          "topic" : "topics/chai-tea"
+        },
+        {
+          "text" : "Vanilla chamomile tea",
+          "topic" : "topics/chamomile-tea"
+        },
+        {
+          "text" : "Coffee",
+          "topic" : "topics/coffee"
+        },
+        {
+          "text" : "Earl grey tea",
+          "topic" : "topics/earl-grey-tea"
+        },
+        {
+          "text" : "Green tea",
+          "topic" : "topics/green-tea"
+        },
+        {
+          "text" : "Hibiscus tea",
+          "topic" : "topics/hibiscus-tea"
+        },
+        {
+          "text" : "Hot chocolate",
+          "topic" : ""
+        },
+        {
+          "text" : "Jasmine tea",
+          "topic" : "topics/jasmine-tea"
+        },
+        {
+          "text" : "Lemon balm tea",
+          "topic" : ""
+        },
+        {
+          "text" : "Matcha tea",
+          "topic" : "topics/matcha"
+        },
+        {
+          "text" : "Almond blossom oolong tea",
+          "topic" : "topics/oolong-tea"
+        },
+        {
+          "text" : "Peppermint tea",
+          "topic" : ""
+        },
+        {
+          "text" : "Rooibos tea",
+          "topic" : "topics/rooibos-tea"
+        },
+        {
+          "text" : "Water",
+          "topic" : "topics/water"
+        },
+        {
+          "text" : "White tea",
+          "topic" : "topics/white-tea"
+        }
+      ]
+    },
+    "dozeExercise" : {
+      "heading" : "Exercise",
+      "servings" : [
+        {
+          "imperial" : "90 minutes of moderate-intensity activity",
+          "metric" : "90 minutes of moderate-intensity activity"
+        },
+        {
+          "imperial" : "40 minutes of vigorous-intensity activity",
+          "metric" : "40 minutes of vigorous-intensity activity"
+        }
+      ],
+      "topic" : "topics/exercise",
+      "varieties" : [
+        {
+          "text" : "Bicycling",
+          "topic" : ""
+        },
+        {
+          "text" : "Canoeing",
+          "topic" : ""
+        },
+        {
+          "text" : "Dancing",
+          "topic" : ""
+        },
+        {
+          "text" : "Dodgeball",
+          "topic" : ""
+        },
+        {
+          "text" : "Downhill skiing",
+          "topic" : ""
+        },
+        {
+          "text" : "Fencing",
+          "topic" : ""
+        },
+        {
+          "text" : "Hiking",
+          "topic" : ""
+        },
+        {
+          "text" : "Housework",
+          "topic" : ""
+        },
+        {
+          "text" : "Ice-skating",
+          "topic" : ""
+        },
+        {
+          "text" : "Inline skating",
+          "topic" : ""
+        },
+        {
+          "text" : "Juggling",
+          "topic" : ""
+        },
+        {
+          "text" : "Jumping on a trampoline",
+          "topic" : ""
+        },
+        {
+          "text" : "Paddle boating",
+          "topic" : ""
+        },
+        {
+          "text" : "Playing frisbee",
+          "topic" : ""
+        },
+        {
+          "text" : "Roller-skating",
+          "topic" : ""
+        },
+        {
+          "text" : "Shooting baskets",
+          "topic" : ""
+        },
+        {
+          "text" : "Shoveling light snow",
+          "topic" : ""
+        },
+        {
+          "text" : "Skateboarding",
+          "topic" : ""
+        },
+        {
+          "text" : "Snorkeling",
+          "topic" : ""
+        },
+        {
+          "text" : "Surfing",
+          "topic" : ""
+        },
+        {
+          "text" : "Swimming recreationally",
+          "topic" : ""
+        },
+        {
+          "text" : "Tennis (doubles)",
+          "topic" : ""
+        },
+        {
+          "text" : "Treading water",
+          "topic" : ""
+        },
+        {
+          "text" : "Walking briskly (4 mph)",
+          "topic" : ""
+        },
+        {
+          "text" : "Water aerobics",
+          "topic" : ""
+        },
+        {
+          "text" : "Waterskiing",
+          "topic" : ""
+        },
+        {
+          "text" : "Yard work",
+          "topic" : ""
+        },
+        {
+          "text" : "Yoga",
+          "topic" : ""
+        },
+        {
+          "text" : "Backpacking",
+          "topic" : ""
+        },
+        {
+          "text" : "Basketball",
+          "topic" : ""
+        },
+        {
+          "text" : "Bicycling uphill",
+          "topic" : ""
+        },
+        {
+          "text" : "Circuit weight training",
+          "topic" : ""
+        },
+        {
+          "text" : "Cross-country skiing",
+          "topic" : ""
+        },
+        {
+          "text" : "Football",
+          "topic" : ""
+        },
+        {
+          "text" : "Hockey",
+          "topic" : ""
+        },
+        {
+          "text" : "Jogging",
+          "topic" : ""
+        },
+        {
+          "text" : "Jumping jacks",
+          "topic" : ""
+        },
+        {
+          "text" : "Jumping rope",
+          "topic" : ""
+        },
+        {
+          "text" : "Lacrosse",
+          "topic" : ""
+        },
+        {
+          "text" : "Push-ups",
+          "topic" : ""
+        },
+        {
+          "text" : "Pull-ups",
+          "topic" : ""
+        },
+        {
+          "text" : "Racquetball",
+          "topic" : ""
+        },
+        {
+          "text" : "Rock climbing",
+          "topic" : ""
+        },
+        {
+          "text" : "Rugby",
+          "topic" : ""
+        },
+        {
+          "text" : "Running",
+          "topic" : ""
+        },
+        {
+          "text" : "Scuba diving",
+          "topic" : ""
+        },
+        {
+          "text" : "Tennis (singles)",
+          "topic" : ""
+        },
+        {
+          "text" : "Soccer",
+          "topic" : ""
+        },
+        {
+          "text" : "Speed skating",
+          "topic" : ""
+        },
+        {
+          "text" : "Squash",
+          "topic" : ""
+        },
+        {
+          "text" : "Step aerobics",
+          "topic" : ""
+        },
+        {
+          "text" : "Swimming laps",
+          "topic" : ""
+        },
+        {
+          "text" : "Walking briskly uphill",
+          "topic" : ""
+        },
+        {
+          "text" : "Water jogging",
+          "topic" : ""
+        }
+      ]
+    },
+    "dozeFlaxseeds" : {
+      "heading" : "Flaxseeds",
+      "servings" : [
+        {
+          "imperial" : "1 tablespoon ground",
+          "metric" : "1 tablespoon ground"
+        }
+      ],
+      "topic" : "topics/flax-seeds",
+      "varieties" : [
+        {
+          "text" : "Brown flaxseeds",
+          "topic" : ""
+        },
+        {
+          "text" : "Golden flaxseeds",
+          "topic" : ""
+        }
+      ]
+    },
+    "dozeFruitsOther" : {
+      "heading" : "Other Fruits",
+      "servings" : [
+        {
+          "imperial" : "1 medium-sized fruit",
+          "metric" : "1 medium-sized fruit"
+        },
+        {
+          "imperial" : "1 cup cut-up fruit",
+          "metric" : "120 g cut-up fruit"
+        },
+        {
+          "imperial" : "¼ cup dried fruit",
+          "metric" : "40 g dried fruit"
+        }
+      ],
+      "topic" : "",
+      "varieties" : [
+        {
+          "text" : "Apples",
+          "topic" : "topics/apples"
+        },
+        {
+          "text" : "Apricots",
+          "topic" : "topics/apricots"
+        },
+        {
+          "text" : "Avocados",
+          "topic" : "topics/avocados"
+        },
+        {
+          "text" : "Bananas",
+          "topic" : "topics/bananas"
+        },
+        {
+          "text" : "Cantaloupe",
+          "topic" : "topics/cantaloupe"
+        },
+        {
+          "text" : "Clementines",
+          "topic" : ""
+        },
+        {
+          "text" : "Dates",
+          "topic" : "topics/dates"
+        },
+        {
+          "text" : "Figs",
+          "topic" : "topics/figs"
+        },
+        {
+          "text" : "Grapefruit",
+          "topic" : "topics/grapefruit"
+        },
+        {
+          "text" : "Honeydew",
+          "topic" : ""
+        },
+        {
+          "text" : "Kiwifruit",
+          "topic" : "topics/kiwifruit"
+        },
+        {
+          "text" : "Lemons",
+          "topic" : "topics/lemons"
+        },
+        {
+          "text" : "Limes",
+          "topic" : "topics/limes"
+        },
+        {
+          "text" : "Lychees",
+          "topic" : ""
+        },
+        {
+          "text" : "Mangos",
+          "topic" : "topics/mango"
+        },
+        {
+          "text" : "Nectarines",
+          "topic" : ""
+        },
+        {
+          "text" : "Oranges",
+          "topic" : "topics/oranges"
+        },
+        {
+          "text" : "Papaya",
+          "topic" : "topics/papaya"
+        },
+        {
+          "text" : "Passion fruit",
+          "topic" : ""
+        },
+        {
+          "text" : "Peaches",
+          "topic" : "topics/peaches"
+        },
+        {
+          "text" : "Pears",
+          "topic" : "topics/pears"
+        },
+        {
+          "text" : "Pineapple",
+          "topic" : "topics/pineapples"
+        },
+        {
+          "text" : "Plums (especially black plums)",
+          "topic" : "topics/plums"
+        },
+        {
+          "text" : "Pluots",
+          "topic" : ""
+        },
+        {
+          "text" : "Pomegranates",
+          "topic" : "topics/pomegranates"
+        },
+        {
+          "text" : "Prunes",
+          "topic" : "topics/prunes"
+        },
+        {
+          "text" : "Tangerines",
+          "topic" : ""
+        },
+        {
+          "text" : "Watermelon",
+          "topic" : "topics/watermelon"
+        }
+      ]
+    },
+    "dozeGreens" : {
+      "heading" : "Greens",
+      "servings" : [
+        {
+          "imperial" : "1 cup raw",
+          "metric" : "60 g raw"
+        },
+        {
+          "imperial" : "½ cup cooked",
+          "metric" : "90 g cooked"
+        }
+      ],
+      "topic" : "topics/greens",
+      "varieties" : [
+        {
+          "text" : "Arugula",
+          "topic" : ""
+        },
+        {
+          "text" : "Beet greens",
+          "topic" : "topics/beet-greens"
+        },
+        {
+          "text" : "Collard greens",
+          "topic" : "topics/collard-greens"
+        },
+        {
+          "text" : "Kale (black, green, and red)",
+          "topic" : "topics/kale"
+        },
+        {
+          "text" : "Mesclun mix (assorted young salad greens)",
+          "topic" : "topics/mesclun-mix"
+        },
+        {
+          "text" : "Mustard greens",
+          "topic" : "topics/mustard-greens"
+        },
+        {
+          "text" : "Sorrel",
+          "topic" : ""
+        },
+        {
+          "text" : "Spinach",
+          "topic" : "topics/spinach"
+        },
+        {
+          "text" : "Swiss chard",
+          "topic" : "topics/swiss-chard"
+        },
+        {
+          "text" : "Turnip greens",
+          "topic" : "topics/turnips"
+        }
+      ]
+    },
+    "dozeNuts" : {
+      "heading" : "Nuts and Seeds",
+      "servings" : [
+        {
+          "imperial" : "¼ cup nuts or seeds",
+          "metric" : "30 g nuts or seeds"
+        },
+        {
+          "imperial" : "2 tablespoons nut or seed butter",
+          "metric" : "2 tablespoons nut or seed butter"
+        }
+      ],
+      "topic" : "topics/nuts",
+      "varieties" : [
+        {
+          "text" : "Almonds",
+          "topic" : "topics/almonds"
+        },
+        {
+          "text" : "Brazil nuts",
+          "topic" : "topics/brazil-nuts"
+        },
+        {
+          "text" : "Cashews",
+          "topic" : "topics/cashews"
+        },
+        {
+          "text" : "Chia seeds",
+          "topic" : "topics/chia-seeds"
+        },
+        {
+          "text" : "Hazelnuts",
+          "topic" : "topics/hazelnuts"
+        },
+        {
+          "text" : "Hemp seeds",
+          "topic" : ""
+        },
+        {
+          "text" : "Macadamia nuts",
+          "topic" : "topics/macadamia-nuts"
+        },
+        {
+          "text" : "Pecans",
+          "topic" : "topics/pecans"
+        },
+        {
+          "text" : "Pistachios",
+          "topic" : "topics/pistachios"
+        },
+        {
+          "text" : "Pumpkin seeds",
+          "topic" : "topics/pumpkin-seeds"
+        },
+        {
+          "text" : "Sesame seeds",
+          "topic" : "topics/sesame-seeds"
+        },
+        {
+          "text" : "Sunflower seeds",
+          "topic" : "topics/sunflower-seeds"
+        },
+        {
+          "text" : "Walnuts",
+          "topic" : "topics/walnuts"
+        }
+      ]
+    },
+    "dozeSpices" : {
+      "heading" : "Herbs and Spices",
+      "servings" : [
+        {
+          "imperial" : "¼ teaspoon of turmeric",
+          "metric" : "¼ teaspoon of turmeric"
+        },
+        {
+          "imperial" : "Any other (salt-free) herbs and spices you enjoy",
+          "metric" : "Any other (salt-free) herbs and spices you enjoy"
+        }
+      ],
+      "topic" : "topics/spices",
+      "varieties" : [
+        {
+          "text" : "Allspice",
+          "topic" : "topics/allspice"
+        },
+        {
+          "text" : "Barberries",
+          "topic" : "topics/barberries"
+        },
+        {
+          "text" : "Basil",
+          "topic" : "topics/basil"
+        },
+        {
+          "text" : "Bay leaves",
+          "topic" : ""
+        },
+        {
+          "text" : "Cardamom",
+          "topic" : "topics/cardamom"
+        },
+        {
+          "text" : "Chili powder",
+          "topic" : ""
+        },
+        {
+          "text" : "Cilantro",
+          "topic" : "topics/cilantro"
+        },
+        {
+          "text" : "Cinnamon",
+          "topic" : "topics/cinnamon"
+        },
+        {
+          "text" : "Cloves",
+          "topic" : "topics/cloves"
+        },
+        {
+          "text" : "Coriander",
+          "topic" : "topics/coriander"
+        },
+        {
+          "text" : "Cumin",
+          "topic" : "topics/cumin"
+        },
+        {
+          "text" : "Curry powder",
+          "topic" : "topics/curry-powder"
+        },
+        {
+          "text" : "Dill",
+          "topic" : ""
+        },
+        {
+          "text" : "Fenugreek",
+          "topic" : "topics/fenugreek"
+        },
+        {
+          "text" : "Garlic",
+          "topic" : "topics/garlic"
+        },
+        {
+          "text" : "Ginger",
+          "topic" : "topics/ginger"
+        },
+        {
+          "text" : "Horseradish",
+          "topic" : ""
+        },
+        {
+          "text" : "Lemongrass",
+          "topic" : "topics/lemongrass"
+        },
+        {
+          "text" : "Marjoram",
+          "topic" : "topics/marjoram"
+        },
+        {
+          "text" : "Mustard powder",
+          "topic" : "topics/mustard-powder"
+        },
+        {
+          "text" : "Nutmeg",
+          "topic" : "topics/nutmeg"
+        },
+        {
+          "text" : "Oregano",
+          "topic" : "topics/oregano"
+        },
+        {
+          "text" : "Smoked paprika",
+          "topic" : "topics/paprika"
+        },
+        {
+          "text" : "Parsley",
+          "topic" : "topics/parsley"
+        },
+        {
+          "text" : "Pepper",
+          "topic" : "topics/pepper"
+        },
+        {
+          "text" : "Peppermint",
+          "topic" : "topics/peppermint"
+        },
+        {
+          "text" : "Rosemary",
+          "topic" : "topics/rosemary"
+        },
+        {
+          "text" : "Saffron",
+          "topic" : "topics/saffron"
+        },
+        {
+          "text" : "Sage",
+          "topic" : ""
+        },
+        {
+          "text" : "Thyme",
+          "topic" : "topics/thyme"
+        },
+        {
+          "text" : "Turmeric",
+          "topic" : "topics/turmeric"
+        },
+        {
+          "text" : "Vanilla",
+          "topic" : ""
+        }
+      ]
+    },
+    "dozeVegetablesCruciferous" : {
+      "heading" : "Cruciferous Vegetables",
+      "servings" : [
+        {
+          "imperial" : "½ cup chopped",
+          "metric" : "30–80 g chopped"
+        },
+        {
+          "imperial" : "¼ cup Brussels or broccoli sprouts",
+          "metric" : "12 g Brussels or broccoli sprouts"
+        },
+        {
+          "imperial" : "1 tablespoon horseradish",
+          "metric" : "1 tablespoon horseradish"
+        }
+      ],
+      "topic" : "",
+      "varieties" : [
+        {
+          "text" : "Arugula",
+          "topic" : ""
+        },
+        {
+          "text" : "Bok choy",
+          "topic" : "topics/bok-choy"
+        },
+        {
+          "text" : "Broccoli (incl. Romanesco)",
+          "topic" : "topics/broccoli"
+        },
+        {
+          "text" : "Brussels sprouts",
+          "topic" : "topics/brussels-sprouts"
+        },
+        {
+          "text" : "Cabbage (green, red and savoy)",
+          "topic" : "topics/cabbage"
+        },
+        {
+          "text" : "Cauliflower (white, green, orange and purple)",
+          "topic" : "topics/cauliflower"
+        },
+        {
+          "text" : "Collard greens",
+          "topic" : "topics/collard-greens"
+        },
+        {
+          "text" : "Horseradish",
+          "topic" : ""
+        },
+        {
+          "text" : "Kale (black, green, and red)",
+          "topic" : "topics/kale"
+        },
+        {
+          "text" : "Kohlrabi (green and purple)",
+          "topic" : "topics/kohlrabi"
+        },
+        {
+          "text" : "Mustard greens",
+          "topic" : "topics/mustard-greens"
+        },
+        {
+          "text" : "Radishes",
+          "topic" : "topics/radishes"
+        },
+        {
+          "text" : "Turnip greens",
+          "topic" : "topics/turnips"
+        },
+        {
+          "text" : "Watercress",
+          "topic" : "topics/watercress"
+        }
+      ]
+    },
+    "dozeVegetablesOther" : {
+      "heading" : "Other Vegetables",
+      "servings" : [
+        {
+          "imperial" : "1 cup raw leafy vegetables",
+          "metric" : "60 g raw leafy vegetables"
+        },
+        {
+          "imperial" : "½ cup raw or cooked nonleafy vegetables",
+          "metric" : "50 g raw or cooked nonleafy vegetables"
+        },
+        {
+          "imperial" : "½ cup vegetable juice",
+          "metric" : "125 ml vegetable juice"
+        },
+        {
+          "imperial" : "¼ cup dried mushrooms",
+          "metric" : "7 g dried mushrooms"
+        }
+      ],
+      "topic" : "",
+      "varieties" : [
+        {
+          "text" : "Artichokes",
+          "topic" : "topics/artichokes"
+        },
+        {
+          "text" : "Asparagus",
+          "topic" : "topics/asparagus"
+        },
+        {
+          "text" : "Beets",
+          "topic" : "topics/beets"
+        },
+        {
+          "text" : "Bell peppers",
+          "topic" : "topics/bell-peppers"
+        },
+        {
+          "text" : "Carrots",
+          "topic" : "topics/carrots"
+        },
+        {
+          "text" : "Corn",
+          "topic" : "topics/corn"
+        },
+        {
+          "text" : "Garlic",
+          "topic" : "topics/garlic"
+        },
+        {
+          "text" : "Mushrooms (button, oyster, portobello, and shiitake)",
+          "topic" : "topics/mushrooms"
+        },
+        {
+          "text" : "Okra",
+          "topic" : "topics/okra"
+        },
+        {
+          "text" : "Onions",
+          "topic" : "topics/onions"
+        },
+        {
+          "text" : "Purple potatoes",
+          "topic" : "topics/purple-potatoes"
+        },
+        {
+          "text" : "Pumpkin",
+          "topic" : "topics/pumpkin"
+        },
+        {
+          "text" : "Sea vegetables (arame, dulse, and nori)",
+          "topic" : "topics/sea-vegetables"
+        },
+        {
+          "text" : "Snap peas",
+          "topic" : ""
+        },
+        {
+          "text" : "Squash (delicata, summer, and spaghetti squash varieties)",
+          "topic" : "topics/squash"
+        },
+        {
+          "text" : "Sweet potatoes\/yams",
+          "topic" : "topics/sweet-potatoes"
+        },
+        {
+          "text" : "Tomatoes",
+          "topic" : "topics/tomatoes"
+        },
+        {
+          "text" : "Zucchini",
+          "topic" : "topics/zucchini"
+        }
+      ]
+    },
+    "dozeWholeGrains" : {
+      "heading" : "Whole Grains",
+      "servings" : [
+        {
+          "imperial" : "½ cup hot cereal or cooked grains, pasta, or corn kernels",
+          "metric" : "100 g hot cereal or cooked grains, pasta, or corn kernels"
+        },
+        {
+          "imperial" : "1 cup cold cereal",
+          "metric" : "50 g cold cereal"
+        },
+        {
+          "imperial" : "1 tortilla or slice of bread",
+          "metric" : "1 tortilla or slice of bread"
+        },
+        {
+          "imperial" : "½ a bagel or English muffin",
+          "metric" : "½ a bagel or English muffin"
+        },
+        {
+          "imperial" : "3 cups popped popcorn",
+          "metric" : "30 g popped popcorn"
+        }
+      ],
+      "topic" : "topics/grains",
+      "varieties" : [
+        {
+          "text" : "Barley",
+          "topic" : "topics/barley"
+        },
+        {
+          "text" : "Buckwheat",
+          "topic" : "topics/buckwheat"
+        },
+        {
+          "text" : "Millet",
+          "topic" : "topics/millet"
+        },
+        {
+          "text" : "Oats",
+          "topic" : "topics/oats"
+        },
+        {
+          "text" : "Popcorn",
+          "topic" : "topics/popcorn"
+        },
+        {
+          "text" : "Quinoa",
+          "topic" : "topics/quinoa"
+        },
+        {
+          "text" : "Rye",
+          "topic" : "topics/rye"
+        },
+        {
+          "text" : "Teff",
+          "topic" : "topics/teff"
+        },
+        {
+          "text" : "Whole-wheat pasta",
+          "topic" : "topics/pasta"
+        }
+      ]
+    },
+    "otherVitaminB12" : {
+      "heading" : "Vitamin B12",
+      "servings" : [
+
+      ],
+      "topic" : "topics/vitamin-b12",
+      "varieties" : [
+
+      ]
+    }
+  }
+}

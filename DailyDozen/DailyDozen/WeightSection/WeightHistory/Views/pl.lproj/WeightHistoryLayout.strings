@@ -1,0 +1,24 @@
+
+/* Class = "UILabel"; text = "Weight (lbs)"; ObjectID = "8ed-5m-QMc"; */
+"8ed-5m-QMc.text" = "Weight (lbs)";
+
+/* Class = "UILabel"; text = "2017"; ObjectID = "FTS-2y-Iil"; */
+"FTS-2y-Iil.text" = "2017";
+
+/* Class = "UIButton"; normalTitle = "Edit Data"; ObjectID = "XYD-fX-adn"; */
+"XYD-fX-adn.normalTitle" = "Edit Data";
+
+/* Class = "UISegmentedControl"; fcu-ZA-byN.segmentTitles[0] = "Day"; ObjectID = "fcu-ZA-byN"; */
+"fcu-ZA-byN.segmentTitles[0]" = "Day";
+
+/* Class = "UISegmentedControl"; fcu-ZA-byN.segmentTitles[1] = "Month"; ObjectID = "fcu-ZA-byN"; */
+"fcu-ZA-byN.segmentTitles[1]" = "Month";
+
+/* Class = "UISegmentedControl"; fcu-ZA-byN.segmentTitles[2] = "Year"; ObjectID = "fcu-ZA-byN"; */
+"fcu-ZA-byN.segmentTitles[2]" = "Year";
+
+/* Class = "UILabel"; text = "Month"; ObjectID = "lTR-i5-Tn0"; */
+"lTR-i5-Tn0.text" = "Month";
+
+/* Class = "UILabel"; text = "Time Scale"; ObjectID = "v2E-Ao-OVz"; */
+"v2E-Ao-OVz.text" = "Time Scale";

@@ -1,0 +1,24 @@
+
+/* Class = "UILabel"; text = "Evening (right before bed)"; ObjectID = "77g-xa-ali"; */
+"77g-xa-ali.text" = "Evening (right before bed)";
+
+/* Class = "UIButton"; normalTitle = "Clear"; ObjectID = "7l0-os-Oqt"; */
+"7l0-os-Oqt.normalTitle" = "Clear";
+
+/* Class = "UILabel"; text = "Time"; ObjectID = "FBJ-Im-BZk"; */
+"FBJ-Im-BZk.text" = "Time";
+
+/* Class = "UIButton"; normalTitle = "Clear"; ObjectID = "NRG-eE-YhG"; */
+"NRG-eE-YhG.normalTitle" = "Clear";
+
+/* Class = "UILabel"; text = "lbs."; ObjectID = "Tgz-om-dEk"; */
+"Tgz-om-dEk.text" = "lbs.";
+
+/* Class = "UILabel"; text = "Time "; ObjectID = "g3G-kp-d2S"; */
+"g3G-kp-d2S.text" = "Time ";
+
+/* Class = "UILabel"; text = "Morning (upon waking)"; ObjectID = "xCp-N8-5Uc"; */
+"xCp-N8-5Uc.text" = "Morning (upon waking)";
+
+/* Class = "UILabel"; text = "lbs."; ObjectID = "zV0-lA-zHj"; */
+"zV0-lA-zHj.text" = "lbs.";
