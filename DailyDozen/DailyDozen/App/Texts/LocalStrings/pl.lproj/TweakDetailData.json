@@ -2,233 +2,233 @@
   "itemsDict" : {
     "tweakCompleteIntentions" : {
       "activity" : {
-        "imperial" : "Complete Your Implementation Intentions",
-        "metric" : "Complete Your Implementation Intentions"
+        "imperial" : "Spełnij swoje intencje implementacyjne",
+        "metric" : "Spełnij swoje intencje implementacyjne"
       },
       "description" : [
-        "Every two months, create three new implementation intentions—\"if X, then Y\" plans to perform a particular behavior in a specific context—and check each one of them off as you complete them every day."
+        "Co dwa miesiące twórz trzy nowe intencje implementacyjne - plany „jeśli X, to Y”, aby spełnić pewne zachowanie w określonym kontekście - i odznaczaj każdą z nich, jak je wypełnisz."
       ],
-      "heading" : "Complete Your Implementation Intentions",
+      "heading" : "Spełnij swoje intencje implementacyjne",
       "topic" : ""
     },
     "tweakDailyBlackCumin" : {
       "activity" : {
-        "imperial" : "Black Cumin (Nigella sativa) (¼ tsp)",
-        "metric" : "Black Cumin (Nigella sativa) (¼ tsp)"
+        "imperial" : "Czarnuszka (Nigella sativa) (¼ łyżeczki)",
+        "metric" : "Czarnuszka (Nigella sativa) (¼ łyżeczki)"
       },
       "description" : [
-        "As noted in the Appetite Suppression section, a systematic review and meta-analysis of randomized, controlled weight-loss trials found that about a quarter teaspoon of black cumin powder every day appears to reduce body mass index within a span of a couple of months. Note that black cumin is different from regular cumin, for which the dosing is different."
+        "Jak zauważono w sekcji „Tłumienie apetytu”, systematyczny przegląd i metaanaliza randomizowanych, kontrolowanych badań na temat utraty wagi wykazały, że około ćwierć łyżeczki czarnuszki w proszku każdego dnia wydaje się obniżać wskaźnik masy ciała w ciągu kilku miesięcy."
       ],
-      "heading" : "Black Cumin (¼ tsp)",
+      "heading" : "Czarnuszka (¼ łyżeczki)",
       "topic" : ""
     },
     "tweakDailyCumin" : {
       "activity" : {
-        "imperial" : "Cumin (Cuminum cyminum) (½ tsp with lunch and dinner)",
-        "metric" : "Cumin (Cuminum cyminum) (½ tsp with lunch and dinner)"
+        "imperial" : "Kminek (½ łyżeczki do obiadu i kolacji)",
+        "metric" : "Kminek (½ łyżeczki do obiadu i kolacji)"
       },
       "description" : [
-        "Overweight women randomized to add a half teaspoon of cumin to their lunches and dinners beat out the control group by four more pounds and an extra inch off their waists. There is also evidence to support the use of the spice saffron, but a pinch a day would cost a dollar, whereas a teaspoon of cumin costs less than ten cents."
+        "W randomizowaych badaniach, kobiety z nadwagą, które dodawały pół łyżeczki kminku do swoich obiadów i kolacji pokonały grupę kontrolną o 1,8 kg i straciły 2,5 cm w talii. Istnieją również dowody na zalety stosowania szafranu przyprawowego, ale szczypta dziennie kosztowałaby dolara, podczas gdy łyżeczka kminku kosztuje mniej niż dziesięć centów."
       ],
-      "heading" : "Cumin (½ tsp with lunch and dinner)",
+      "heading" : "Kminek (½ łyżeczki do obiadu i kolacji)",
       "topic" : ""
     },
     "tweakDailyDeflourDiet" : {
       "activity" : {
-        "imperial" : "Deflour Your Diet",
-        "metric" : "Deflour Your Diet"
+        "imperial" : "Odmącz swoją dietę",
+        "metric" : "Odmącz swoją dietę"
       },
       "description" : [
-        "Check this box every day your whole grain servings are in the form of intact grains. The powdering of even 100 percent whole grains robs our microbiomes of the starch that would otherwise be ferried down to our colons enclosed in unbroken cell walls."
+        "Zaznacz to pole każdego dnia, kiedy Twoje porcje pełnoziarnistych zbóż są dostarczone w postaci całych ziaren. Sproszkowanie nawet stuprocentowo pełnoziarnistych zbóż pozbawia naszą mikrobiotę skrobi, która w innym przypadku byłaby przetransportowana do naszych okrężnic zamknięta w nienaruszonych ścianach komórkowych."
       ],
-      "heading" : "Deflour Your Diet",
+      "heading" : "Odmącz swoją dietę",
       "topic" : ""
     },
     "tweakDailyFrontLoad" : {
       "activity" : {
-        "imperial" : "Front-Load Your Calories",
-        "metric" : "Front-Load Your Calories"
+        "imperial" : "Więcej kalorii na początku dnia",
+        "metric" : "Więcej kalorii na początku dnia"
       },
       "description" : [
-        "There are metabolic benefits to distributing more calories to earlier in the day, so make breakfast (ideally) or lunch your largest meal of the day in true king\/prince\/pauper style."
+        "Spożycie większej ilości kalorii wcześniej w ciągu dnia przynosi korzyści metaboliczne, więc przygotuj (najlepiej) śniadanie lub obiad jako największy posiłek dnia - w stylu prawdziwego króla \/ księcia \/ żebraka."
       ],
-      "heading" : "Front-Load Your Calories",
+      "heading" : "Więcej kalorii na początku dnia",
       "topic" : ""
     },
     "tweakDailyGarlic" : {
       "activity" : {
-        "imperial" : "Garlic Powder (¼ tsp)",
-        "metric" : "Garlic Powder (¼ tsp)"
+        "imperial" : "Czosnek w proszku (¼ łyżeczki)",
+        "metric" : "Czosnek w proszku (¼ łyżeczki)"
       },
       "description" : [
-        "Randomized, double-blind, placebo-controlled studies have found that as little as a daily quarter teaspoon of garlic powder can reduce body fat at a cost of perhaps two cents a day."
+        "Randomizowane, podwójnie ślepe, badania kontrolowane placebo wykazały, że zaledwie ćwierć łyżeczki czosnku dziennie może zmniejszyć tkankę tłuszczową - za jedynie około dwa centy dziennie."
       ],
-      "heading" : "Garlic Powder (¼ tsp)",
+      "heading" : "Czosnek w proszku (¼ łyżeczki)",
       "topic" : ""
     },
     "tweakDailyGinger" : {
       "activity" : {
-        "imperial" : "Ground Ginger (1 tsp) or Cayenne Pepper (½ tsp)",
-        "metric" : "Ground Ginger (1 tsp) or Cayenne Pepper (½ tsp)"
+        "imperial" : "Mielony imbir (1 łyżeczka) lub pieprz Cayenne (½ łyżeczki)",
+        "metric" : "Mielony imbir (1 łyżeczka) lub pieprz Cayenne (½ łyżeczki)"
       },
       "description" : [
-        "Randomized controlled trials have found that ¼ teaspoon to 1½ teaspoons a day of ground ginger significantly decreased body weight for just pennies a day. It can be as easy as stirring the ground spice into a cup of hot water. Note: Ginger may work better in the morning than evening. Chai tea is a tasty way to combine the green tea and ginger tricks into a single beverage. Alternately, for BAT activation, you can add one raw jalapeño pepper or a half teaspoon of red pepper powder (or, presumably, crushed red pepper flakes) into your daily diet. To help beat the heat, you can very thinly slice or finely chop the jalapeño to reduce its bite to little prickles, or mix the red pepper into soup or the whole-food vegetable smoothie I featured in one of my cooking videos on NutritionFacts.org."
+        "Randomizowane badania z grupą kontrolną wykazały, że ¼ łyżeczki do 1,5 łyżeczki mielonego imbiru na dzień znacznie zmniejszyła masę ciała, za zaledwie grosze. Może to być tak proste, jak wymieszanie zmielonej przyprawy w filiżance gorącej wody. Uwaga: imbir może działać lepiej rano niż wieczorem. Herbata Chai to smaczny sposób na połączenie korzyści zielonej herbaty i imbiru w jednym napoju. Alternatywnie, aby aktywować gruczoły snu zimowego, możesz włączyć jedną surową papryczkę jalapeño lub pół łyżeczki sproszkowanej czerwonej papryki (lub, zakładam, pokruszonych płatków czerwonej papryki) do swojej codziennej diety. Aby zmniejszyć ostrość, możesz bardzo cienko pokroić lub drobno posiekać jalapeño, powinno mniej szczypać, lub wymieszać czerwoną paprykę z zupą lub ze smoothie z nieprzetworzonych warzyw, które przedstawiłem w jednym z moich filmów o gotowaniu na NutritionFacts.org."
       ],
-      "heading" : "Ground Ginger (1 tsp) or Cayenne Pepper (½ tsp)",
+      "heading" : "Mielony imbir (1 łyżeczka) lub pieprz Cayenne (½ łyżeczki)",
       "topic" : ""
     },
     "tweakDailyGreenTea" : {
       "activity" : {
-        "imperial" : "Green Tea (3 cups)",
-        "metric" : "Green Tea (3 cups)"
+        "imperial" : "Zielona herbata (3 szklanki)",
+        "metric" : "Zielona herbata (3 szklanki)"
       },
       "description" : [
-        "Drink three cups a day between meals (waiting at least an hour after a meal so as to not interfere with iron absorption). During meals, drink water, black coffee, or hibiscus tea mixed 6:1 with lemon verbena, but never exceed three cups of fluid an hour (important given my water preloading advice). Take advantage of the reinforcing effect of caffeine by drinking your green tea along with something healthy you wish you liked more, but don't consume large amounts of caffeine within six hours of bedtime. Taking your tea without sweetener is best, but if you typically sweeten your tea with honey or sugar, try yacon syrup instead."
+        "Pij trzy szklanki dziennie między posiłkami (odczekaj co najmniej godzinę po posiłku, aby nie zakłócać wchłaniania żelaza). Podczas posiłków pij wodę, czarną kawę lub herbatę z hibiskusa zmieszaną w stosunku 6:1 z werbeną cytrynową, ale nigdy nie przekraczaj trzech szklanek płynu na godzinę (ważne, biorąc pod uwagę moje zalecenia o piciu przed posiłkami). Skorzystaj ze wzmacniającego działania kofeiny, pijąc zieloną herbatę razem z czymś zdrowym, co chciałbyś\/-abyś lubić bardziej, ale nie spożywaj dużych ilości kofeiny w ciągu sześciu godzin przed snem. Najlepiej jest pić herbatę bez słodzika, ale jeśli zazwyczaj słodzisz herbatę miodem lub cukrem, spróbuj zamiast tego syropu Yacon."
       ],
-      "heading" : "Green Tea (3 cups)",
+      "heading" : "Zielona herbata (3 szklanki)",
       "topic" : ""
     },
     "tweakDailyHydrate" : {
       "activity" : {
-        "imperial" : "Stay Hydrated",
-        "metric" : "Stay Hydrated"
+        "imperial" : "Nawadniaj się",
+        "metric" : "Nawadniaj się"
       },
       "description" : [
-        "Check this box if your urine never appears darker than a pale yellow.\n\nNote that if you're eating riboflavin-fortified foods (such as nutritional yeast), then base this instead on getting nine cups of unsweetened beverages a day for women (which would be taken care of by the green tea and water preloading recommendations) or thirteen cups a day for men.\n\nIf you have heart or kidney issues, don't increase fluid intake at all without first talking with your physician.\n\nRemember, diet soda may be calorie-free, but it's not consequence-free, as we learned in the Low in Added Sugar section."
+        "Zaznacz to pole, jeśli Twój mocz nigdy nie jest ciemniejszy niż bladożółty. Zwróć uwagę, że jeśli jesz pokarmy wzbogacone ryboflawiną (takie jak odżywcze drożdże), to zamiast tego spożywaj dziennie dziewięć szklanek niesłodzonych napojów dla kobiet (tutaj wystarczy stosować zalecenia dotyczące zielonej herbaty i wody) lub trzynaście szklanek dziennie dla mężczyzn. Jeśli masz problemy z sercem lub nerkami, nie zwiększaj spożycia płynów bez uprzedniej konsultacji z lekarzem. Pamiętaj, że picie napojów dietetycznych może nie zwiększa spożycia kalorii, ale nie jest pozbawione konsekwencji, o czym dowiedzieliśmy się w sekcji „Niska zawartość dodanego cukru”."
       ],
-      "heading" : "Stay Hydrated",
+      "heading" : "Nawadniaj się",
       "topic" : ""
     },
     "tweakDailyNutriYeast" : {
       "activity" : {
-        "imperial" : "Nutritional Yeast (2 tsp)",
-        "metric" : "Nutritional Yeast (2 tsp)"
+        "imperial" : "Drożdże odżywcze (2 łyżeczki)",
+        "metric" : "Drożdże odżywcze (2 łyżeczki)"
       },
       "description" : [
-        "Two teaspoons of baker's, brewer's, or nutritional yeast contains roughly the amount of beta 1,3\/1,6 glucans found in randomized, double-blind, placebo-controlled clinical trials to facilitate weight loss."
+        "Dwie łyżeczki drożdży piekarskich, piwowarskich lub odżywczych zawierają z grubsza ilość beta 1,3\/1,6-glukanów znalezioną w randomizowanych, podwójnie ślepych, kontrolowanych placebo badaniach klinicznych, mających na celu ułatwienie utraty wagi."
       ],
-      "heading" : "Nutritional Yeast (2 tsp)",
+      "heading" : "Drożdże odżywcze (2 łyżeczki)",
       "topic" : ""
     },
     "tweakDailyTimeRestrict" : {
       "activity" : {
-        "imperial" : "Time-Restrict Your Eating",
-        "metric" : "Time-Restrict Your Eating"
+        "imperial" : "Ogranicz czasowo jedzenie",
+        "metric" : "Ogranicz czasowo jedzenie"
       },
       "description" : [
-        "Confine eating to a daily window of time of your choosing under twelve hours in length that you can stick to consistently, seven days a week. Given the circadian benefits of reducing evening food intake, the window should end before 7:00 p.m."
+        "Staraj się jeść w wybranym przez siebie dziennym przedziale czasowym poniżej dwunastu godzin, którego możesz przestrzegać konsekwentnie, siedem dni w tygodniu. Biorąc pod uwagę dobowe korzyści wynikające z ograniczenia wieczornego odżywiania się, okienko powinno kończyć się przed godziną 19:00."
       ],
-      "heading" : "Time-Restrict Your Eating",
+      "heading" : "Ogranicz czasowo jedzenie",
       "topic" : ""
     },
     "tweakExerciseTiming" : {
       "activity" : {
-        "imperial" : "Optimize Exercise Timing",
-        "metric" : "Optimize Exercise Timing"
+        "imperial" : "Zoptymalizuj czas ćwiczeń",
+        "metric" : "Zoptymalizuj czas ćwiczeń"
       },
       "description" : [
-        "The Daily Dozen's recommendation for optimum exercise duration for longevity is ninety minutes of moderately intense activity a day, which is also the optimum exercise duration for weight loss. Anytime is good, and the more, the better, but there may be an advantage to exercising in a fasted state, at least six hours after your last meal. Typically, this would mean before breakfast, but if you timed it right, you could exercise midday before a late lunch or, if lunch is eaten early enough, before dinner. This is the timing for nondiabetics. Diabetics and prediabetics should instead start exercising thirty minutes after the start of a meal and ideally go for at least an hour to completely straddle the blood sugar peak. If you had to choose a single meal to exercise after, it would be dinner, due to the circadian rhythm of blood sugar control that wanes throughout the day. Ideally, though, breakfast would be the largest meal of the day, and you'd exercise after that—or, even better, after every meal."
+        "Zalecenia Daily Dozen dotyczące optymalnego czasu trwania ćwiczeń na długowieczność to dziewięćdziesiąt minut umiarkowanie intensywnych ćwiczeń dziennie, co jest również optymalnym czasem trwania ćwiczeń dla utraty wagi. Każda pora jest dobra, a im więcej ćwiczeń, tym lepiej, ale ćwiczenia na czczo mogą być korzystne, przynajmniej sześć godzin po ostatnim posiłku. Zwykle oznacza to przed śniadaniem, ale jeśli dobrze to zaplanowałeś\/-łaś, możesz ćwiczyć w południe przed późnym obiadem lub, jeśli obiad jest spożywany wystarczająco wcześnie, przed kolacją. To jest czas odpowiedni dla osób bez cukrzycy. Diabetycy i osoby w stanie przedcukrzycowym powinny zamiast tego rozpocząć ćwiczenia 30 minut po rozpoczęciu posiłku i najlepiej przez co najmniej godzinę, aby całkowicie pokonać szczytowy poziom cukru we krwi. Gdybyś musiał\/-a wybrać pojedynczy posiłek do ćwiczeń, byłby to obiad ze względu na dobowy rytm kontroli poziomu cukru we krwi, który słabnie przez dzień. Lepiej byłoby jednak, gdyby śniadanie było największym posiłkiem w ciągu dnia, a ćwiczenia po nim - lub jeszcze lepiej, po każdym posiłku."
       ],
-      "heading" : "Optimize Exercise Timing",
+      "heading" : "Zoptymalizuj czas ćwiczeń",
       "topic" : ""
     },
     "tweakMeal20Minutes" : {
       "activity" : {
-        "imperial" : "Follow the Twenty-Minute Rule",
-        "metric" : "Follow the Twenty-Minute Rule"
+        "imperial" : "Przestrzegaj zasady dwudziestu minut",
+        "metric" : "Przestrzegaj zasady dwudziestu minut"
       },
       "description" : [
-        "Whether through increasing viscosity or the number of chews, or decreasing bite size and eating rate, dozens of studies have demonstrated that no matter how we boost the amount of time food is in our mouths, it can result in lower caloric intake. So extend meal duration to at least twenty minutes to allow your natural satiety signals to take full effect. How? By choosing foods that take longer to eat and eating them in a way that prolongs the time they stay in your mouth. Think bulkier, hardier, chewier foods in smaller, well-chewed bites."
+        "Niezależnie od tego, czy zwiększamy liczbę kęsów, czy też zmniejszamy rozmiar gryzów i tempo jedzenia, dziesiątki badań wykazały, że bez względu na to, jak wydłużamy czas przez jaki pokarm pozostaje w ustach, może to pomóc w mniejszym spożyciu kalorii. Dlatego wydłuż czas posiłku do co najmniej dwudziestu minut, aby naturalne sygnały sytości mogły się pojawić w pełni. Jak? Wybierając pokarmy, których spożycie zajmuje więcej czasu i jedząc je w sposób, który wydłuża ich czas pozostawania w ustach. Pomyśl o pokarmach większych, twardszych, o konsystencji wymagającej żucia i sprowadzeniu ich do mniejszych, dobrze przeżutych kęsów."
       ],
-      "heading" : "Follow the Twenty-Minute Rule",
+      "heading" : "Przestrzegaj zasady dwudziestu minut",
       "topic" : ""
     },
     "tweakMealNegCal" : {
       "activity" : {
-        "imperial" : "Preload with \"Negative Calorie\" Foods",
-        "metric" : "Preload with \"Negative Calorie\" Foods"
+        "imperial" : "Spożywaj pokarmy o „negatywnej kaloryczności”",
+        "metric" : "Spożywaj pokarmy o „negatywnej kaloryczności”"
       },
       "description" : [
-        "As the first course, start each meal with an apple or a Green Light soup or salad containing fewer than one hundred calories per cup."
+        "Każdy posiłek zaczynaj od jabłka lub zupy z grupy „Zielone światło”, czy sałatki zawierającej mniej niż sto kalorii na szklankę."
       ],
-      "heading" : "Preload with \"Negative Calorie\" Foods",
+      "heading" : "Spożywaj pokarmy o „negatywnej kaloryczności”",
       "topic" : ""
     },
     "tweakMealUndistracted" : {
       "activity" : {
-        "imperial" : "Enjoy Undistracted Meals",
-        "metric" : "Enjoy Undistracted Meals"
+        "imperial" : "Jedz bez rozpraszania uwagi",
+        "metric" : "Jedz bez rozpraszania uwagi"
       },
       "description" : [
-        "Don't eat while watching TV or playing on your phone. Give yourself a check for each meal you're able to eat without distraction."
+        "Nie jedz podczas oglądania telewizji lub grania na telefonie. Odhacz każdy posiłek, który możesz zjeść bez rozpraszania się."
       ],
-      "heading" : "Enjoy Undistracted Meals",
+      "heading" : "Jedz bez rozpraszania uwagi",
       "topic" : ""
     },
     "tweakMealVinegar" : {
       "activity" : {
-        "imperial" : "Incorporate Vinegar (2 tsp with each meal)",
-        "metric" : "Incorporate Vinegar (2 tsp with each meal)"
+        "imperial" : "Włącz ocet do diety (2 łyżeczki do każdego posiłku)",
+        "metric" : "Włącz ocet do diety (2 łyżeczki do każdego posiłku)"
       },
       "description" : [
-        "Never drink vinegar straight. Instead, flavor meals or dress a side salad with any of the sweet and savory vinegars out there. If you want to drink it, make sure to mix it in a glass of water and, afterward, be sure to rinse your mouth out with water to protect your tooth enamel."
+        "Nigdy nie pij octu bezpośrednio. Zamiast tego, doprawiaj nim posiłki lub dodaj dowolny słodki czy pikantny ocet do sałatki. Jeśli chcesz go wypić, wymieszaj go w szklance wody, a następnie przepłucz usta wodą, aby chronić szkliwo zębów."
       ],
-      "heading" : "Incorporate Vinegar (2 tsp with each meal)",
+      "heading" : "Włącz ocet do diety (2 łyżeczki do każdego posiłku)",
       "topic" : ""
     },
     "tweakMealWater" : {
       "activity" : {
-        "imperial" : "Preload with Water",
-        "metric" : "Preload with Water"
+        "imperial" : "Woda przed posiłkiem",
+        "metric" : "Woda przed posiłkiem"
       },
       "description" : [
-        "Time your metabolism-boosting two cups of cool or cold unflavored water before each meal to also take advantage of its preload benefits."
+        "Picie dwóch szklanek chłodnej lub zimnej wody (bez żadnych dodatków smakowych i środków aromatyzujących) przed każdym posiłkiem pobudzi metabolizm."
       ],
-      "heading" : "Preload with Water",
+      "heading" : "Woda przed posiłkiem",
       "topic" : ""
     },
     "tweakNightlyFast" : {
       "activity" : {
-        "imperial" : "Fast After 7:00 p.m.",
-        "metric" : "Fast After 7:00 p.m."
+        "imperial" : "Nie jedz po 19:00",
+        "metric" : "Nie jedz po 19:00"
       },
       "description" : [
-        "Due to our circadian rhythms, food eaten at night is more fattening than the exact same food eaten earlier in the day, so fast every night for at least twelve hours starting before 7:00 p.m. The fewer calories after sundown, the better."
+        "Ze względu na nasz rytm dobowy, jedzenie spożywane w nocy jest bardziej tuczące niż dokładnie to samo jedzenie spożywane wcześniej w ciągu dnia, więc pość co najmniej 12 godzin przed godziną 19:00. Im mniej kalorii po zachodzie słońca, tym lepiej."
       ],
-      "heading" : "Fast After 7:00 pm",
+      "heading" : "Nie jedz po 19:00",
       "topic" : ""
     },
     "tweakNightlySleep" : {
       "activity" : {
-        "imperial" : "Get Sufficient Sleep",
-        "metric" : "Get Sufficient Sleep"
+        "imperial" : "Śpij wystarczająco dużo",
+        "metric" : "Śpij wystarczająco dużo"
       },
       "description" : [
-        "Check this box if you get at least seven hours of sleep at your regular bedtime."
+        "Zaznacz to pole, jeśli śpisz przynajmniej siedem godzin w swojej zwykłej porze snu."
       ],
-      "heading" : "Get Sufficient Sleep",
+      "heading" : "Śpij wystarczająco dużo",
       "topic" : ""
     },
     "tweakNightlyTrendelenbrug" : {
       "activity" : {
-        "imperial" : "Experiment with Mild Trendelenburg",
-        "metric" : "Experiment with Mild Trendelenburg"
+        "imperial" : "Eksperyment z łagodną pozycją Trendelenburga",
+        "metric" : "Eksperyment z łagodną pozycją Trendelenburga"
       },
       "description" : [
-        "Try spending at least four hours a night lying with your body tilted head-down six degrees by elevating the posts at the foot of your bed by eight inches (or by nine inches if you have a California king). Be extremely careful when you get out of bed, as this causes orthostatic intolerance in most people, even if you're young and healthy—meaning if you get up too fast, you can feel dizzy, faint, or light-headed and could fall and hurt yourself. So get up slowly. Drinking two cups of cold water thirty minutes before rising may also help prevent this potentially hazardous side effect.\n\nIMPORTANT: Do not try this at home at all if you have any heart or lung issues, acid reflux, or problems with your brain (like head trauma) or eyes (even a family history of glaucoma disqualifies you). Also do not try this until you ask your physician if they think it's safe for you to sleep in mild Trendelenburg."
+        "Spróbuj spędzać co najmniej cztery godziny w nocy, leżąc nachylonym\/-ną pod kątem sześć stopni - głową w dół, poprzez podwyższenie dolnych nóg łóżka o 20 cm (lub o 23 cm, jeśli masz łóżko California king). Należy zachować szczególną ostrożność, gdy wstajesz z łóżka, ponieważ powoduje to ortostatyczną nietolerancję u większości ludzi, nawet jeśli jesteś młody\/-a i zdrowy\/-a - co oznacza, że jeśli wstaniesz zbyt szybko, możesz odczuć zawroty głowy, słabość lub oszołomienie i upaść i zranić się. Więc wstań powoli. Wypicie dwóch filiżanek zimnej wody na trzydzieści minut przed wstawaniem może również pomóc w zapobiegnięciu temu potencjalnie niebezpiecznemu efektowi ubocznemu. \\n*WAŻNE: nie próbuj tego w domu w ogóle, jeśli masz problemy z sercem lub płucami, refluks żołądkowy lub problemy z mózgiem (np. uraz głowy) lub oczu (nawet historia jaskry w rodzinie Cię dyskwalifikuje). Nie próbuj tego także, dopóki nie zapytasz swojego lekarza, czy uważa, że spanie w łagodnym Trendelenburgu jest bezpieczne."
       ],
-      "heading" : "Experiment with Mild Trendelenburg",
+      "heading" : "Eksperyment z łągodną pozycją Trendelenburga",
       "topic" : ""
     },
     "tweakWeightTwice" : {
       "activity" : {
-        "imperial" : "Weigh Yourself Twice a Day",
-        "metric" : "Weigh Yourself Twice a Day"
+        "imperial" : "Waż się dwa razy dziennie",
+        "metric" : "Waż się dwa razy dziennie"
       },
       "description" : [
-        "Regular self-weighing is considered crucial for long-term weight control, but there is insufficient evidence to support a specific frequency of weighing. My recommendation is based on the one study that found that twice daily—upon waking and right before bed—appeared superior to once a day (about six versus two pounds of weight loss over twelve weeks)."
+        "Uważa się, że regularne ważenie się ma kluczowe znaczenie dla długoterminowej kontroli masy ciała, choć nie ma wystarczających dowodów na poparcie określonej częstotliwości ważenia. Moje zalecenie opiera się na jednym badaniu, które wykazało, że ważenie się dwa razy dziennie - po przebudzeniu i tuż przed spaniem - wydawało się lepsze niż raz dziennie (około 2,70 kg w porównaniu do 0,90 kg utraty wagi w ciągu dwunastu tygodni)."
       ],
-      "heading" : "Weigh Yourself Twice a Day",
+      "heading" : "Waż się dwa razy dziennie",
       "topic" : ""
     }
   }

@@ -45,7 +45,7 @@ extension InfoMenuMainTableVC {
                       options: convertToUIApplicationOpenExternalURLOptionsKeyDictionary([:]),
                       completionHandler: nil)
             dismiss(animated: false)
-        //else if let controller = menuItem.controller {
+        // else if let controller = menuItem.controller {
         } else if let viewController = menuItem.controller {
             // `AboutViewController`
             //let aboutViewController = AboutBuilder.newInstance()

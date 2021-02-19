@@ -1,5 +1,3 @@
-
-
 /* Daily Dozen (proper noun) navigation tab */
 "navtab.doze"="Docena Diaria";
 /* 21 Tweaks (proper noun) navigation tab */
@@ -11,6 +9,7 @@
 
 /* Records: Daily Tally */
 "dateButtonTitle.today"="Hoy";
+"dateBackButtonTitle"="Back to today";
 "historyRecord.movingMean"="Media móvil";
 "historyRecordDoze.heading"="Historial de porciones";
 "historyRecordDoze.legend"="Porciones";
@@ -166,4 +165,25 @@
 "reminder.alert.text"="Actualiza las porciones de hoy";
 
 /* Alert title, Settings heading */
-"reminder.heading"="Recordatorio diario";
+"reminder.heading"="Daily Reminder";
+
+/* Enable Reminders */
+"reminder.settings.enable"="Enable Reminders";
+
+/* remind_me_at */
+"reminder.settings.time"="Remind me at";
+
+/* play_sound */
+"reminder.settings.sound"="Play Sound";
+
+/* 'On' as in 'On or Off' */
+"reminder.state.on"="On";
+
+/* 'Off' as in 'On or Off' */
+"reminder.state.off"="Off";
+
+/* Class = "UITableViewSection"; headerTitle = "Measurement Units"; ObjectID = "IFs-g0-SPV"; */
+"settings.units.header" = "Unidades de medida";
+
+/* Class = "UITableViewSection"; headerTitle = "21 Tweaks Visibility"; ObjectID = "WdR-XV-IyP"; */
+"settings.tweak.header" = "Visibilidad de 21 Ajustes";

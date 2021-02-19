@@ -1,104 +1,240 @@
-/* 
-  Localizable.strings
-  DailyDozen
-
-  Copyright © 2019 Nutritionfacts.org. All rights reserved.
-*/
-
-/* Daily Dozen (proper noun) navigation tab */
-"navtab.doze"="Daily Dozen";
-/* 21 Tweaks (proper noun) navigation tab */
-"navtab.tweaks"="21 Tweaks";
-/* More Information navigation tab */
-"navtab.info"="Info";
-/* Preferences (aka Settings, Configuration) navigation tab. Choose word different from 'Tweaks' translation */
-"navtab.preferences"="Settings";
+/* Back to today */
+"dateBackButtonTitle" = "Powrót do dzisiaj";
 
 /* Records: Daily Tally */
-"dateButtonTitle.today"="Today";
-"dateBackButtonTitle"="Back to today";
-"historyRecord.movingMean"="Moving Average";
-"historyRecordDoze.heading"="Servings History";
-"historyRecordDoze.legend"="Servings";
-"historyRecordTweak.heading"="Tweaks History";
-"historyRecordTweak.legend"="Tweaks";
-"historyRecordWeight.heading"="Weight History";
-"historyRecordWeight.titleImperial"="Weight (lbs)";
-"historyRecordWeight.titleMetric"="Weight (kg)";
-"historyRecordWeight.legendMorning"="Morning";
-"historyRecordWeight.legendEvening"="Evening";
-"weightEntry.heading"="Weight";
-
-/* URL path */
-"urlSegment.base"="https://nutritionfacts.org/";
-"urlSegment.lang"="";
-
-"urlSegmentInfoMenu.videos"="videos";
-"urlSegmentInfoMenu.book"="book";
-"urlSegmentInfoMenu.cookbook"="cookbook";
-"urlSegmentInfoMenu.diet"="how-not-to-diet";
-"urlSegmentInfoMenu.challenge"="daily-dozen-challenge";
-"urlSegmentInfoMenu.donate"="donate";
-"urlSegmentInfoMenu.subscribe"="subscribe";
-"urlSegmentInfoMenu.source"="open-source";
-
-"urlSegmentInfoMenu.team"="team";
-
-/* Units toggle button text: metric measurement system */
-"unitToggle.metric"="METRIC";
-/* Units toggle button text: imperial measurement system */
-"unitToggle.imperial"="IMPERIAL";
-
-/* streak days format */
-"streakDaysFormat"="%d days";
+"dateButtonTitle.today" = "Dzisiaj";
 
 /* ***** Daily Dozen ***** */
-"dozeBeans.heading"="Beans";
-"dozeBerries.heading"="Berries";
-"dozeFruitsOther.heading"="Other Fruits";
-"dozeVegetablesCruciferous.heading"="Cruciferous Vegetables";
-"dozeGreens.heading"="Greens";
-"dozeVegetablesOther.heading"="Other Vegetables";
-"dozeFlaxseeds.heading"="Flaxseeds";
-"dozeNuts.heading"="Nuts and Seeds";
-"dozeSpices.heading"="Herbs and Spices";
-"dozeWholeGrains.heading"="Whole Grains";
-"dozeBeverages.heading"="Beverages";
-"dozeExercise.heading"="Exercise";
-/* ***** Daily Dozen Other ***** */
-"otherVitaminB12.heading"="Vitamin B12";
-"otherVitaminD.heading"="Vitamin D";
-"otherOmega3.heading"="Plant-based Omega 3s";
-/* ***** Daily Dozen Supplements ***** */
-"dozeOtherInfo.title"="Supplements";
-"dozeOtherInfo.message"="Vitamin B12 is essential for your health but does not count towards your daily servings.\n\nVitamin B12 is included in this app to provide you with an easy way to track your intake.";
-"dozeOtherInfo.confirm"="OK";
-/* ***** 21 Tweaks ***** */
-"tweakMealWater.heading"="Preload Water";
-"tweakMealNegCal.heading"="Negative Calorie Preload";
-"tweakMealVinegar.heading"="Incorporate Vinegar";
-"tweakMealUndistracted.heading"="Undistracted Meals";
-"tweakMeal20Minutes.heading"="Twenty-minute Rule";
-"tweakDailyBlackCumin.heading"="Black Cumin";
-"tweakDailyGarlic.heading"="Garlic Powder";
-"tweakDailyGinger.heading"="Ginger or Cayenne";
-"tweakDailyNutriYeast.heading"="Nutritional Yeast";
-"tweakDailyCumin.heading"="Cumin";
-"tweakDailyGreenTea.heading"="Green Tea";
-"tweakDailyHydrate.heading"="Stay Hydrated";
-"tweakDailyDeflourDiet.heading"="Deflour Diet";
-"tweakDailyFrontLoad.heading"="Front-load Calories";
-"tweakDailyTimeRestrict.heading"="Time-restrict Eating";
-"tweakExerciseTiming.heading"="Exercising Timing";
-"tweakWeightTwice.heading"="Weigh Twice Daily";
-"tweakCompleteIntentions.heading"="Complete Intentions";
-"tweakNightlyFast.heading"="Fast After 7:00 p.m.";
-"tweakNightlySleep.heading"="Sufficient Sleep";
-"tweakNightlyTrendelenbrug.heading"="Trendelenburg";
+"dozeBeans.heading" = "Rośliny strączkowe";
 
-/* daily_reminder_text alert text */
-"reminder.alert.text"="Update your servings for today";
+/* display heading. */
+"dozeBerries.heading" = "Jagody";
+
+/* display heading */
+"dozeBeverages.heading" = "Napoje";
+
+/* display heading */
+"dozeExercise.heading" = "Ćwiczenia";
+
+/* display heading */
+"dozeFlaxseeds.heading" = "Siemię lniane";
+
+/* display heading */
+"dozeFruitsOther.heading" = "Inne owoce";
+
+/* display heading */
+"dozeGreens.heading" = "Warzywa liściaste";
+
+/* display heading */
+"dozeNuts.heading" = "Orzechy i nasiona";
+
+/* Daily Dozen other info confirm */
+"dozeOtherInfo.confirm" = "OK";
+
+/* Daily Dozen other info message */
+"dozeOtherInfo.message" = "Vitamin B12 is essential for your health but does not count towards your daily servings.\n\nVitamin B12 is included in this app to provide you with an easy way to track your intake.";
+
+/* ***** Daily Dozen Supplements ***** */
+"dozeOtherInfo.title" = "Supplements";
+
+/* display heading */
+"dozeSpices.heading" = "Zioła i przyprawy";
+
+/* display heading */
+"dozeVegetablesCruciferous.heading" = "Warzywa kapustne";
+
+/* display heading */
+"dozeVegetablesOther.heading" = "Inne warzywa";
+
+/* display heading */
+"dozeWholeGrains.heading" = "Pełnoziarniste zboża";
+
+/* (No Comment) */
+"historyRecord.movingMean" = "Moving Average";
+
+/* Servings History */
+"historyRecordDoze.heading" = "Servings History";
+
+/* Servings */
+"historyRecordDoze.legend" = "Servings";
+
+/* Tweaks History */
+"historyRecordTweak.heading" = "Tweaks History";
+
+/* Tweaks */
+"historyRecordTweak.legend" = "Tweaks";
+
+/* Weight History */
+"historyRecordWeight.heading" = "Weight History";
+
+/* Evening */
+"historyRecordWeight.legendEvening" = "Evening";
+
+/* Morning */
+"historyRecordWeight.legendMorning" = "Morning";
+
+/* Weight (lbs) */
+"historyRecordWeight.titleImperial" = "Weight (lbs)";
+
+/* Weight (kg) */
+"historyRecordWeight.titleMetric" = "Weight (kg)";
+
+/* Daily Dozen (proper noun) navigation tab */
+"navtab.doze" = "Daily Dozen";
+
+/* More Information navigation tab */
+"navtab.info" = "Info";
+
+/* Preferences (aka Settings, Configuration) navigation tab. Choose word different from 'Tweaks' translation */
+"navtab.preferences" = "Settings";
+
+/* 21 Tweaks (proper noun) navigation tab */
+"navtab.tweaks" = "21 adaptacji";
+
+/* display heading */
+"otherOmega3.heading" = "Plant-based Omega 3s";
+
+/* ***** Daily Dozen Other ***** */
+"otherVitaminB12.heading" = "Witamina B12";
+
+/* display heading */
+"otherVitaminD.heading" = "Vitamin D";
+
+/* daily_reminder_text alert text (english_note) */
+"reminder.alert.text" = "Zaktualizuj swoje dzisiejsze porcje";
 
 /* Alert title, Settings heading */
-"reminder.heading"="Daily Reminder";
+"reminder.heading" = "Codzienne przypomnienie";
+
+/* Enable Reminders */
+"reminder.settings.enable" = "Włącz przypomnienia";
+
+/* play_sound */
+"reminder.settings.sound" = "Włącz dźwięk";
+
+/* remind_me_at */
+"reminder.settings.time" = "Przypomnij o:";
+
+/* vibrate */
+"reminder.settings.vibrate" = "Wibracje";
+
+/* 'Off' as in 'On or Off' */
+"reminder.state.off" = "Wyłączone";
+
+/* 'On' as in 'On or Off' */
+"reminder.state.on" = "Włączone";
+
+/* Class = "UITableViewSection"; headerTitle = "21 Tweaks Visibility"; ObjectID = "WdR-XV-IyP"; */
+"settings.tweak.header" = "Widoczność 21 Adaptacji";
+
+/* Class = "UITableViewSection"; headerTitle = "Measurement Units"; ObjectID = "IFs-g0-SPV"; */
+"settings.units.header" = "Jednostki miary";
+
+/* streak days format */
+"streakDaysFormat" = "%d days";
+
+/* display heading */
+"tweakCompleteIntentions.heading" = "Spełnij swoje intencje implementacyjne";
+
+/* display heading */
+"tweakDailyBlackCumin.heading" = "Czarnuszka (¼ łyżeczki)";
+
+/* display heading */
+"tweakDailyCumin.heading" = "Kminek (½ łyżeczki do obiadu i kolacji)";
+
+/* display heading */
+"tweakDailyDeflourDiet.heading" = "Odmącz swoją dietę";
+
+/* display heading */
+"tweakDailyFrontLoad.heading" = "Więcej kalorii na początku dnia";
+
+/* display heading */
+"tweakDailyGarlic.heading" = "Czosnek w proszku (¼ łyżeczki)";
+
+/* display heading */
+"tweakDailyGinger.heading" = "Mielony imbir (1 łyżeczka) lub pieprz Cayenne (½ łyżeczki)";
+
+/* display heading */
+"tweakDailyGreenTea.heading" = "Zielona herbata (3 szklanki)";
+
+/* display heading */
+"tweakDailyHydrate.heading" = "Nawadniaj się";
+
+/* display heading */
+"tweakDailyNutriYeast.heading" = "Drożdże odżywcze (2 łyżeczki)";
+
+/* display heading */
+"tweakDailyTimeRestrict.heading" = "Ogranicz czasowo jedzenie";
+
+/* display heading */
+"tweakExerciseTiming.heading" = "Zoptymalizuj czas ćwiczeń";
+
+/* display heading */
+"tweakMeal20Minutes.heading" = "Przestrzegaj zasady dwudziestu minut";
+
+/* display heading */
+"tweakMealNegCal.heading" = "Spożywaj pokarmy o „negatywnej kaloryczności”";
+
+/* display heading */
+"tweakMealUndistracted.heading" = "Jedz bez rozpraszania uwagi";
+
+/* display heading */
+"tweakMealVinegar.heading" = "Włącz ocet do diety (2 łyżeczki do każdego posiłku)";
+
+/* ***** 21 Tweaks ***** */
+"tweakMealWater.heading" = "Woda przed posiłkiem";
+
+/* display heading */
+"tweakNightlyFast.heading" = "Nie jedz po 19:00";
+
+/* display heading */
+"tweakNightlySleep.heading" = "Śpij wystarczająco dużo";
+
+/* display heading */
+"tweakNightlyTrendelenbrug.heading" = "Eksperyment z łągodną pozycją Trendelenburga";
+
+/* display heading */
+"tweakWeightTwice.heading" = "Waż się dwa razy dziennie";
+
+/* Units toggle button text: imperial measurement system */
+"unitToggle.imperial" = "IMPERIAL";
+
+/* Units toggle button text: metric measurement system */
+"unitToggle.metric" = "METRIC";
+
+/* URL path */
+"urlSegment.base" = "https://nutritionfacts.org/";
+
+/* (No Comment) */
+"urlSegment.lang" = "";
+
+/* main info menu: book */
+"urlSegmentInfoMenu.book" = "book";
+
+/* main info menu: daily-dozen-challenge */
+"urlSegmentInfoMenu.challenge" = "daily-dozen-challenge";
+
+/* main info menu: cookbook */
+"urlSegmentInfoMenu.cookbook" = "cookbook";
+
+/* main info menu: how-not-to-diet */
+"urlSegmentInfoMenu.diet" = "how-not-to-diet";
+
+/* main info menu: donate */
+"urlSegmentInfoMenu.donate" = "donate";
+
+/* main info menu: open-source */
+"urlSegmentInfoMenu.source" = "open-source";
+
+/* main info menu: subscribe */
+"urlSegmentInfoMenu.subscribe" = "subscribe";
+
+/* team */
+"urlSegmentInfoMenu.team" = "team";
+
+/* main info menu: videos */
+"urlSegmentInfoMenu.videos" = "videos";
+
+/* Weight entry heading */
+"weightEntry.heading" = "Weight";
 

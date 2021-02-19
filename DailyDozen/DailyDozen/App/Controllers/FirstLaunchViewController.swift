@@ -33,7 +33,7 @@ class FirstLaunchViewController: UIViewController {
     }
     
     @IBAction func dozenPlusTweaks(_ sender: Any) {
-        //NYI: Insert Weight permisisons here
+        // NYI: Insert Weight permisisons here
         UserDefaults.standard.set(true, forKey: SettingsKeys.hasSeenFirstLaunch)
         UserDefaults.standard.set(true, forKey: SettingsKeys.show21TweaksPref)
         

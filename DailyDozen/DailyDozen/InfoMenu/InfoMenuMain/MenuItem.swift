@@ -73,7 +73,7 @@ enum MenuItem: Int {
         switch self {
         case .about:
             return InfoMenuAboutTableVC.newInstance()
-        //case .develop: :???:NYI: location of develop menu
+        // case .develop: :???:NYI: location of develop menu
         //    return UtilityViewController.newInstance()
         case .videos, .book, .cookbook, .diet, .challenge, .donate, .subscribe, .source:
             return nil // not a View Controller

@@ -24,13 +24,14 @@ class SettingsViewController: UITableViewController {
         return viewController
     }
 
-    // Measurement Units
+    /// Measurement Units
     @IBOutlet weak var unitMeasureToggle: UISegmentedControl!
-    // Daily Reminder
+    /// Daily Reminder
+    @IBOutlet weak var reminderLabel: UILabel!
     @IBOutlet weak var reminderIsOn: UILabel!
     // @IBOutlet weak var reminderSwitch: UISwitch!
     @IBOutlet weak var soundSwitch: UISwitch!
-    // 21 Tweaks Visibility
+    /// 21 Tweaks Visibility
     @IBOutlet weak var tweakVisibilityController: UISegmentedControl!
     
     // Advance Utilities
@@ -56,10 +57,11 @@ class SettingsViewController: UITableViewController {
         // Reminder
         let canNotificate = UserDefaults.standard.bool(forKey: SettingsKeys.reminderCanNotify)
         if canNotificate {
-            reminderIsOn.text = "On"
+            reminderIsOn.text = NSLocalizedString("reminder.state.on", comment: "'On' as in 'On or Off'")
         } else {
-            reminderIsOn.text = "Off"
+            reminderIsOn.text = NSLocalizedString("reminder.state.off", comment: "'Off' as in 'On or Off'")
         }
+        reminderLabel.text = NSLocalizedString("reminder.settings.enable", comment: "Enable Reminders")
         
         // 21 Tweaks Visibility
         if UserDefaults.standard.bool(forKey: SettingsKeys.show21TweaksPref) {
@@ -69,9 +71,9 @@ class SettingsViewController: UITableViewController {
         }
         
         #if targetEnvironment(simulator)
-        //LogService.shared.debug("::::: SIMULATOR ENVIRONMENT: SettingsViewController :::::")
+        // LogService.shared.debug("::::: SIMULATOR ENVIRONMENT: SettingsViewController :::::")
         advancedUtilitiesTableViewCell.isHidden = false
-        //LogService.shared.debug(":::::::::::::::::::::::::::::::::::::::::::::::::::::::::\n")
+        // LogService.shared.debug(":::::::::::::::::::::::::::::::::::::::::::::::::::::::::\n")
         #endif
         #if DEBUG
         advancedUtilitiesTableViewCell.isHidden = false
@@ -83,9 +85,9 @@ class SettingsViewController: UITableViewController {
         super.viewWillAppear(animated)
         let canNotificate = UserDefaults.standard.bool(forKey: SettingsKeys.reminderCanNotify)
         if canNotificate {
-            reminderIsOn.text = "On"
+            reminderIsOn.text = NSLocalizedString("reminder.state.on", comment: "'On' as in 'On or Off'")
         } else {
-            reminderIsOn.text = "Off"
+            reminderIsOn.text = NSLocalizedString("reminder.state.off", comment: "'Off' as in 'On or Off'")
         }
     }
     
@@ -147,7 +149,7 @@ class SettingsViewController: UITableViewController {
     }
     
     @IBAction func doTweaksVisibilityChanged(_ sender: UISegmentedControl) {
-        //LogService.shared.debug("selectedSegmentIndex = \(segmentedControl.selectedSegmentIndex)")
+        // LogService.shared.debug("selectedSegmentIndex = \(segmentedControl.selectedSegmentIndex)")
         let show21Tweaks = UserDefaults.standard.bool(forKey: SettingsKeys.show21TweaksPref)
         if tweakVisibilityController.selectedSegmentIndex == 0
             && show21Tweaks {
@@ -183,6 +185,25 @@ class SettingsViewController: UITableViewController {
     @IBAction func doUtilityShowAdvancedBtn(_ sender: UIButton) {
         let viewController = UtilityTableViewController.newInstance()
         navigationController?.pushViewController(viewController, animated: true)
+    }
+    
+    // MARK: - UITableViewDataSource
+    
+    override func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
+        let sectionName: String
+        switch section {
+        case 0: // IFs-g0-SPV.headerTitle
+            sectionName = NSLocalizedString("settings.units.header", comment: "Measurement Units")
+        case 1: // GiY-ao-2ee.headerTitle
+            sectionName = NSLocalizedString("reminder.heading", comment: "Daily Reminder")
+        case 2: // WdR-XV-IyP.headerTitle
+            sectionName = NSLocalizedString("settings.tweak.header", comment: "21 Tweaks Visibility")
+        case 3: // Bx8-EJ-3BK.headerTitle Developer Extras
+            sectionName = ""
+        default:
+            sectionName = ""
+        }
+        return sectionName
     }
         
 }

@@ -8,7 +8,7 @@
 import UIKit
 
 struct SettingsReminderContent {
-    static let title = NSLocalizedString("reminder.heading", comment: "Daily Dozen Reminder")
+    static let title = NSLocalizedString("reminder.heading", comment: "Daily Reminder")
     static let body = NSLocalizedString("reminder.alert.text", comment: "Update your servings today")
     static let img = "dr_greger"
     static let png = "png"
@@ -22,6 +22,10 @@ class SettingsReminderViewController: UITableViewController {
     //    var soundIsOn: Bool!
     var reminderSwitchPref: Bool!
     //    var time: Date!
+    // Labels
+    @IBOutlet weak var reminderSwitchLabel: UILabel!
+    @IBOutlet weak var remindMeAtLabel: UILabel!
+    @IBOutlet weak var soundSwitchLabel: UILabel!
     
     // MARK: - Methods
     
@@ -39,6 +43,9 @@ class SettingsReminderViewController: UITableViewController {
             settingsDatePicker.isEnabled = false
             soundSwitch.isEnabled = false
         }
+        reminderSwitchLabel.text = NSLocalizedString("reminder.settings.enable", comment: "Enable Reminders")
+        remindMeAtLabel.text = NSLocalizedString("reminder.settings.time", comment: "Remind me at")
+        soundSwitchLabel.text = NSLocalizedString("reminder.settings.sound", comment: "Play Sound")
         // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
         // self.navigationItem.rightBarButtonItem = self.editButtonItem
     }
@@ -59,7 +66,6 @@ class SettingsReminderViewController: UITableViewController {
         // Notification Content
             let content = UNMutableNotificationContent()
         content.title = SettingsReminderContent.title
-        //content.subtitle = SettingsReminderContent.subtitle // not used
         content.body = SettingsReminderContent.body
             content.badge = 1
         if soundSwitch.isOn {

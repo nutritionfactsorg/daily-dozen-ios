@@ -57,11 +57,11 @@ class TweakEntryViewController: UIViewController {
         // :HealthKit:
         if HKHealthStore.isHealthDataAvailable() {
             // add code to use HealthKit here...
-            //LogService.shared.debug("Yes, HealthKit is Available")
+            // LogService.shared.debug("Yes, HealthKit is Available")
             let healthManager = HealthManager()
             healthManager.requestPermissions()
         } else {
-            //LogService.shared.debug("There is a problem accessing HealthKit")
+            // LogService.shared.debug("There is a problem accessing HealthKit")
         }
         
         NotificationCenter.default.addObserver(

@@ -1,10 +1,3 @@
-/* 
-  Localizable.strings
-  DailyDozen
-
-  Copyright © 2019 Nutritionfacts.org. All rights reserved.
-*/
-
 /* Daily Dozen (proper noun) navigation tab */
 "navtab.doze"="Daily Dozen";
 /* 21 Tweaks (proper noun) navigation tab */
@@ -102,3 +95,26 @@
 /* Alert title, Settings heading */
 "reminder.heading"="Daily Reminder";
 
+/* Enable Reminders */
+"reminder.settings.enable"="Enable Reminders";
+
+/* remind_me_at */
+"reminder.settings.time"="Remind me at";
+
+/* play_sound */
+"reminder.settings.sound"="Play Sound";
+
+/* vibrate */
+"reminder.settings.vibrate"="Vibrate";
+
+/* 'On' as in 'On or Off' */
+"reminder.state.on"="On";
+
+/* 'Off' as in 'On or Off' */
+"reminder.state.off"="Off";
+
+/* Class = "UITableViewSection"; headerTitle = "Measurement Units"; ObjectID = "IFs-g0-SPV"; */
+"settings.units.header" = "Measurement Units";
+
+/* Class = "UITableViewSection"; headerTitle = "21 Tweaks Visibility"; ObjectID = "WdR-XV-IyP"; */
+"settings.tweak.header" = "21 Tweaks Visibility";

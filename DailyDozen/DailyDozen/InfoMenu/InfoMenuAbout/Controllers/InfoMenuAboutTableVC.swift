@@ -68,7 +68,7 @@ class InfoMenuAboutTableVC: UITableViewController {
         provide(link: LinksService.shared.aboutChristi, for: Regex.christi, in: infoLabel)
         provide(link: LinksService.shared.aboutConst, for: Regex.const, in: infoLabel)
         provide(link: LinksService.shared.aboutMarc, for: Regex.marc, in: infoLabel)
-        //provide(link: LinksService.shared.aboutElements, for: Regex.elements, in: designLabel)
+        // provide(link: LinksService.shared.aboutElements, for: Regex.elements, in: designLabel)
     }
 
     /// Provides a link for the current regex in the label.

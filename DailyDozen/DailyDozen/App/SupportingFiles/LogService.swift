@@ -35,8 +35,8 @@ public enum LogServiceLevel: Int, Comparable {
         case .warning: return "warning"
         case .error:   return "error"
         case .off:     return "off"
-        //default: assertionFailure("Invalid level")
-        //return "Null"
+        // default: assertionFailure("Invalid level")
+        // return "Null"
         }
     }
     
@@ -74,7 +74,7 @@ public class LogService {
     private let dateFormatter = DateFormatter()
     
     public init() {
-        dateFormatter.locale = Locale(identifier: "en_US_POSIX") //24H
+        dateFormatter.locale = Locale(identifier: "en_US_POSIX") // 24H
         dateFormatter.dateFormat = "yyyyMMdd_HHmmss.SSS"
         
         /// LogFunction used, `print` for DEBUG, file for Production.
@@ -156,7 +156,7 @@ public class LogService {
         let currentTime = DateManager.currentDatetime()
         let formatter = DateFormatter()
         formatter.dateFormat = "yyyyMMdd_HHmmss"
-        //formatter.timeZone = NSTimeZone(abbreviation: "UTC")
+        // formatter.timeZone = NSTimeZone(abbreviation: "UTC")
         let dateTimestamp = formatter.string(from: currentTime)
         
         let logfileName = "log-\(nameToken)-\(dateTimestamp).txt"

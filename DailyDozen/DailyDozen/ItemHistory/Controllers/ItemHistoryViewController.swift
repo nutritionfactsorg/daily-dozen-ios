@@ -82,7 +82,7 @@ extension ItemHistoryViewController: FSCalendarDataSource {
 extension ItemHistoryViewController: FSCalendarDelegate {
 
     func calendar(_ calendar: FSCalendar, didSelect date: Date, at monthPosition: FSCalendarMonthPosition) {
-        //print(":DEBUG: selected date \(date)")
+        // print(":DEBUG: selected date \(date)")
         
         if let vc = navigationController?.viewControllers[1] {  
             // <Array<UIViewController>>

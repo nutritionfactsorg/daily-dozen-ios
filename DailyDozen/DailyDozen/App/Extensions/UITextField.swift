@@ -26,7 +26,7 @@ extension UITextField {
             // .inline  => new style calendar quick select
             datePicker.preferredDatePickerStyle = .wheels
             datePicker.sizeToFit()
-            //datePicker.sizeThatFits(CGSize(width: 0, height: 216))
+            // datePicker.sizeThatFits(CGSize(width: 0, height: 216))
         }
         self.inputView = datePicker // UIView
         let color = UIColor(red: 0.0, green: 0.0, blue: 0.0, alpha: 0.0)
@@ -62,7 +62,7 @@ extension UITextField {
             // .inline  => new style calendar quick select
             datePicker.preferredDatePickerStyle = .wheels
             datePicker.sizeToFit()
-            //datePicker.sizeThatFits(CGSize(width: 0, height: 216))
+            // datePicker.sizeThatFits(CGSize(width: 0, height: 216))
         }
         self.inputView = datePicker // UIView
         
