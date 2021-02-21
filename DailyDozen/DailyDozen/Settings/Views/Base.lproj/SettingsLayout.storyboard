@@ -152,6 +152,7 @@
                     <connections>
                         <outlet property="advancedUtilitiesTableViewCell" destination="z0Z-Vi-TQY" id="OsV-iV-8HQ"/>
                         <outlet property="reminderIsOn" destination="XFw-2q-BdT" id="wAY-nx-7mR"/>
+                        <outlet property="reminderLabel" destination="itH-G7-Kal" id="YkI-t8-JhN"/>
                         <outlet property="soundSwitch" destination="rNl-6C-9Kw" id="vko-LB-RCK"/>
                         <outlet property="tweakVisibilityController" destination="OZO-Xa-v5G" id="LAW-0U-SrN"/>
                         <outlet property="unitMeasureToggle" destination="RLb-GV-4hh" id="khw-vy-RXJ"/>
@@ -275,9 +276,12 @@
                     </tableView>
                     <navigationItem key="navigationItem" id="fGd-Wg-zlG"/>
                     <connections>
+                        <outlet property="remindMeAtLabel" destination="kR3-Sa-Fpt" id="BMu-ZX-Xek"/>
                         <outlet property="reminderSwitch" destination="WSr-wG-uFV" id="dui-Pl-YJG"/>
+                        <outlet property="reminderSwitchLabel" destination="pjz-An-Ls5" id="eGm-R2-RHN"/>
                         <outlet property="settingsDatePicker" destination="bzd-el-hc4" id="yd8-By-Iej"/>
                         <outlet property="soundSwitch" destination="rNl-6C-9Kw" id="Fig-36-83J"/>
+                        <outlet property="soundSwitchLabel" destination="YP6-dP-Y62" id="JNa-kN-ZFQ"/>
                     </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="LbW-cc-40C" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>

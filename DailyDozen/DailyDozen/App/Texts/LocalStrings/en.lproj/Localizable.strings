@@ -92,10 +92,10 @@
 /* daily_reminder_text alert text */
 "reminder.alert.text"="Update your servings for today";
 
-/* Alert title, Settings heading */
+/* Daily Reminder (alert title, settings section heading) */
 "reminder.heading"="Daily Reminder";
 
-/* Enable Reminders */
+/* Enable Reminders (toggle switch label) */
 "reminder.settings.enable"="Enable Reminders";
 
 /* remind_me_at */

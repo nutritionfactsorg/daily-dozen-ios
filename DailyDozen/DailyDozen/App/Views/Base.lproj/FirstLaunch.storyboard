@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="16097" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="abI-xj-cFt">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="17701" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="abI-xj-cFt">
     <device id="retina4_0" orientation="portrait" appearance="light"/>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="16087"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17703"/>
         <capability name="Named colors" minToolsVersion="9.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
@@ -24,19 +24,19 @@
                                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                                         <subviews>
                                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="12" translatesAutoresizingMaskIntoConstraints="NO" id="GRO-mm-rLg">
-                                                <rect key="frame" x="49" y="213" width="222.5" height="142"/>
+                                                <rect key="frame" x="49.5" y="213" width="221" height="142"/>
                                                 <subviews>
                                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="2" translatesAutoresizingMaskIntoConstraints="NO" id="lnb-zJ-IzP">
-                                                        <rect key="frame" x="0.0" y="0.0" width="222.5" height="55.5"/>
+                                                        <rect key="frame" x="0.0" y="0.0" width="221" height="55.5"/>
                                                         <subviews>
                                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="For Health Alone" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="atR-un-jgX">
-                                                                <rect key="frame" x="0.0" y="0.0" width="222.5" height="21.5"/>
+                                                                <rect key="frame" x="0.0" y="0.0" width="221" height="21.5"/>
                                                                 <fontDescription key="fontDescription" type="system" pointSize="18"/>
                                                                 <nil key="textColor"/>
                                                                 <nil key="highlightedColor"/>
                                                             </label>
-                                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ReM-AP-Fpp" customClass="RoundedButton" customModule="DailyDozen" customModuleProvider="target">
-                                                                <rect key="frame" x="0.0" y="23.5" width="222.5" height="32"/>
+                                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ReM-AP-Fpp" customClass="RoundedButton" customModule="DailyDozen" customModuleProvider="target">
+                                                                <rect key="frame" x="0.0" y="23.5" width="221" height="32"/>
                                                                 <color key="backgroundColor" name="BrandGreen"/>
                                                                 <fontDescription key="fontDescription" type="system" pointSize="16"/>
                                                                 <state key="normal" title="Daily Dozen Only">
@@ -54,16 +54,16 @@
                                                         </subviews>
                                                     </stackView>
                                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="2" translatesAutoresizingMaskIntoConstraints="NO" id="Pps-nD-1Rl">
-                                                        <rect key="frame" x="0.0" y="67.5" width="222.5" height="74.5"/>
+                                                        <rect key="frame" x="0.0" y="67.5" width="221" height="74.5"/>
                                                         <subviews>
                                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="For Health and Weight Loss" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="OdG-YQ-lT8">
-                                                                <rect key="frame" x="0.0" y="0.0" width="222.5" height="21.5"/>
+                                                                <rect key="frame" x="0.0" y="0.0" width="221" height="21.5"/>
                                                                 <fontDescription key="fontDescription" type="system" pointSize="18"/>
                                                                 <nil key="textColor"/>
                                                                 <nil key="highlightedColor"/>
                                                             </label>
-                                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="wordWrap" translatesAutoresizingMaskIntoConstraints="NO" id="Lef-Iw-Ywr" customClass="RoundedButton" customModule="DailyDozen" customModuleProvider="target">
-                                                                <rect key="frame" x="0.0" y="23.5" width="222.5" height="51"/>
+                                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="wordWrap" translatesAutoresizingMaskIntoConstraints="NO" id="Lef-Iw-Ywr" customClass="RoundedButton" customModule="DailyDozen" customModuleProvider="target">
+                                                                <rect key="frame" x="0.0" y="23.5" width="221" height="51"/>
                                                                 <color key="backgroundColor" name="BrandGreen"/>
                                                                 <fontDescription key="fontDescription" type="system" pointSize="16"/>
                                                                 <state key="normal">
@@ -93,6 +93,7 @@
                                 </subviews>
                             </stackView>
                         </subviews>
+                        <viewLayoutGuide key="safeArea" id="kPI-XE-mxp"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
                             <constraint firstItem="kPI-XE-mxp" firstAttribute="trailing" secondItem="fTu-Az-3VJ" secondAttribute="trailing" id="7uO-jj-Ulf"/>
@@ -100,7 +101,6 @@
                             <constraint firstItem="kPI-XE-mxp" firstAttribute="bottom" secondItem="fTu-Az-3VJ" secondAttribute="bottom" id="kw9-MW-EcZ"/>
                             <constraint firstItem="fTu-Az-3VJ" firstAttribute="leading" secondItem="kPI-XE-mxp" secondAttribute="leading" id="paB-eS-BjE"/>
                         </constraints>
-                        <viewLayoutGuide key="safeArea" id="kPI-XE-mxp"/>
                     </view>
                     <navigationItem key="navigationItem" id="eHn-kO-Mdo"/>
                 </viewController>

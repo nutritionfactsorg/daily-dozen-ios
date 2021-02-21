@@ -103,10 +103,10 @@
 /* daily_reminder_text alert text (english_note) */
 "reminder.alert.text" = "Zaktualizuj swoje dzisiejsze porcje";
 
-/* Alert title, Settings heading */
+/* Daily Reminder (alert title, settings section heading) */
 "reminder.heading" = "Codzienne przypomnienie";
 
-/* Enable Reminders */
+/* Enable Reminders (toggle switch label) */
 "reminder.settings.enable" = "Włącz przypomnienia";
 
 /* play_sound */

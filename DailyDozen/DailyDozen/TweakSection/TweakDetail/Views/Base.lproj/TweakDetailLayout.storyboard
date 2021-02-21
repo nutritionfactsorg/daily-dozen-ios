@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="16096" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="f0F-p1-a29">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="17701" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="f0F-p1-a29">
     <device id="retina4_0" orientation="portrait" appearance="light"/>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="16086"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17703"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -148,6 +148,7 @@
                                 <size key="shadowOffset" width="0.0" height="1"/>
                             </label>
                         </subviews>
+                        <viewLayoutGuide key="safeArea" id="PGs-fE-m1C"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstItem="dYc-f1-1er" firstAttribute="top" secondItem="PGs-fE-m1C" secondAttribute="top" id="2lA-iy-TIO"/>
@@ -161,7 +162,6 @@
                             <constraint firstItem="6m3-hV-PBi" firstAttribute="leading" secondItem="PGs-fE-m1C" secondAttribute="leading" constant="7" id="kyP-8J-Pcg"/>
                             <constraint firstItem="bnF-tK-tPo" firstAttribute="top" secondItem="dYc-f1-1er" secondAttribute="bottom" constant="-1" id="up5-I6-rII"/>
                         </constraints>
-                        <viewLayoutGuide key="safeArea" id="PGs-fE-m1C"/>
                     </view>
                     <connections>
                         <outlet property="dataProvider" destination="7p6-hp-u7J" id="Sth-Uc-4xs"/>

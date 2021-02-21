@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="16097" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="u1e-GF-Z27">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="17701" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="u1e-GF-Z27">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="16087"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17703"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -167,7 +167,7 @@
                                                                                 <rect key="frame" x="0.0" y="0.0" width="25" height="25"/>
                                                                                 <autoresizingMask key="autoresizingMask"/>
                                                                                 <subviews>
-                                                                                    <button opaque="NO" userInteractionEnabled="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="7rJ-3p-ulg" customClass="UIButtonCheckbox" customModule="DailyDozen" customModuleProvider="target">
+                                                                                    <button opaque="NO" userInteractionEnabled="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="7rJ-3p-ulg" customClass="UIButtonCheckbox" customModule="DailyDozen" customModuleProvider="target">
                                                                                         <rect key="frame" x="0.0" y="0.0" width="25" height="25"/>
                                                                                         <color key="tintColor" red="0.52832656150000001" green="0.73248204210000001" blue="0.3516077359" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                                                         <state key="normal">
@@ -264,6 +264,7 @@
                                 </constraints>
                             </view>
                         </subviews>
+                        <viewLayoutGuide key="safeArea" id="1mw-pC-VaJ"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <gestureRecognizers/>
                         <constraints>
@@ -275,7 +276,6 @@
                             <constraint firstItem="1mw-pC-VaJ" firstAttribute="bottom" secondItem="tN9-3Q-5Vc" secondAttribute="bottom" id="hpE-Pi-lfp"/>
                             <constraint firstItem="tN9-3Q-5Vc" firstAttribute="leading" secondItem="1mw-pC-VaJ" secondAttribute="leading" id="zeI-qm-cI7"/>
                         </constraints>
-                        <viewLayoutGuide key="safeArea" id="1mw-pC-VaJ"/>
                     </view>
                     <connections>
                         <outlet property="countLabel" destination="NPC-if-gUf" id="5SI-Zl-GJk"/>
@@ -290,6 +290,11 @@
             <point key="canvasLocation" x="416.80000000000001" y="463.71814092953525"/>
         </scene>
     </scenes>
+    <designables>
+        <designable name="7rJ-3p-ulg">
+            <size key="intrinsicContentSize" width="30" height="30"/>
+        </designable>
+    </designables>
     <resources>
         <image name="ic_calendar" width="28" height="28"/>
         <image name="ic_star" width="36" height="36"/>

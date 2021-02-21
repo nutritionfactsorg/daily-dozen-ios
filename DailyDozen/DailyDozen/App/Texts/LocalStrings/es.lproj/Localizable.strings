@@ -9,7 +9,7 @@
 
 /* Records: Daily Tally */
 "dateButtonTitle.today"="Hoy";
-"dateBackButtonTitle"="Back to today";
+"dateBackButtonTitle"="Volver a hoy";
 "historyRecord.movingMean"="Media móvil";
 "historyRecordDoze.heading"="Historial de porciones";
 "historyRecordDoze.legend"="Porciones";
@@ -164,17 +164,17 @@
 /* daily_reminder_text alert text */
 "reminder.alert.text"="Actualiza las porciones de hoy";
 
-/* Alert title, Settings heading */
-"reminder.heading"="Daily Reminder";
+/* Daily Reminder (alert title, settings section heading) */
+"reminder.heading"="Recordatorio diario";
 
-/* Enable Reminders */
-"reminder.settings.enable"="Enable Reminders";
+/* Enable Reminders (toggle switch label) */
+"reminder.settings.enable"="Activar el recordatorio";
 
 /* remind_me_at */
-"reminder.settings.time"="Remind me at";
+"reminder.settings.time"="Recuerdame a las";
 
 /* play_sound */
-"reminder.settings.sound"="Play Sound";
+"reminder.settings.sound"="Sonido";
 
 /* 'On' as in 'On or Off' */
 "reminder.state.on"="On";

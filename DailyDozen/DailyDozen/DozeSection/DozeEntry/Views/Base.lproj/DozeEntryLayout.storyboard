@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="16096" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="M2f-B0-7nZ">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="17701" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="M2f-B0-7nZ">
     <device id="retina4_0" orientation="portrait" appearance="light"/>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="16086"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17703"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -167,7 +167,7 @@
                                                                                 <rect key="frame" x="0.0" y="0.0" width="25" height="25"/>
                                                                                 <autoresizingMask key="autoresizingMask"/>
                                                                                 <subviews>
-                                                                                    <button opaque="NO" userInteractionEnabled="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="utq-hZ-ag5" customClass="UIButtonCheckbox" customModule="DailyDozen" customModuleProvider="target">
+                                                                                    <button opaque="NO" userInteractionEnabled="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="utq-hZ-ag5" customClass="UIButtonCheckbox" customModule="DailyDozen" customModuleProvider="target">
                                                                                         <rect key="frame" x="0.0" y="0.0" width="25" height="25"/>
                                                                                         <color key="tintColor" red="0.52832656150565604" green="0.73248204210688017" blue="0.35160773592702321" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                                                         <state key="normal">
@@ -264,6 +264,7 @@
                                 </constraints>
                             </view>
                         </subviews>
+                        <viewLayoutGuide key="safeArea" id="FmG-ye-C7X"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <gestureRecognizers/>
                         <constraints>
@@ -275,7 +276,6 @@
                             <constraint firstItem="FmG-ye-C7X" firstAttribute="trailing" secondItem="V0Q-gc-qoP" secondAttribute="trailing" id="mSD-fo-Dam"/>
                             <constraint firstItem="HYx-b2-Phb" firstAttribute="trailing" secondItem="FmG-ye-C7X" secondAttribute="trailing" id="tgl-ZP-ty6"/>
                         </constraints>
-                        <viewLayoutGuide key="safeArea" id="FmG-ye-C7X"/>
                     </view>
                     <connections>
                         <outlet property="countLabel" destination="ERa-UT-Rni" id="bLO-Yz-4zh"/>
@@ -290,6 +290,11 @@
             <point key="canvasLocation" x="418" y="464"/>
         </scene>
     </scenes>
+    <designables>
+        <designable name="utq-hZ-ag5">
+            <size key="intrinsicContentSize" width="30" height="30"/>
+        </designable>
+    </designables>
     <resources>
         <image name="ic_calendar" width="28" height="28"/>
         <image name="ic_dozeBeans" width="183" height="183"/>
