@@ -12,3 +12,7 @@
 
 /* Class = "UISegmentedControl"; vXy-0q-Ind.segmentTitles[2] = "Year"; ObjectID = "vXy-0q-Ind"; */
 "vXy-0q-Ind.segmentTitles[2]" = "Rok";
+
+/* Class = "UILabel"; text = "Time Scale"; ObjectID = "XdW-g4-ZUO"; */
+"XdW-g4-ZUO.text" = "Okres czasu";
+

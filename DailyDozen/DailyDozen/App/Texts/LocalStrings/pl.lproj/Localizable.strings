@@ -100,7 +100,7 @@
 /* display heading */
 "otherVitaminD.heading" = "Vitamin D";
 
-/* daily_reminder_text alert text (english_note) */
+/* daily_reminder_text alert text */
 "reminder.alert.text" = "Zaktualizuj swoje dzisiejsze porcje";
 
 /* Daily Reminder (alert title, settings section heading) */
