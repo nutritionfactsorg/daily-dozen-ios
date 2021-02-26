@@ -79,7 +79,7 @@
                                                 </connections>
                                             </button>
                                         </subviews>
-                                        <color key="backgroundColor" red="0.49803921569999998" green="0.75294117650000003" blue="0.29803921570000003" alpha="1" colorSpace="calibratedRGB"/>
+                                        <color key="backgroundColor" name="BrandGreen"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="30" id="R3o-nK-p0U"/>
                                             <constraint firstItem="Qfe-bW-SP4" firstAttribute="centerX" secondItem="aJT-dy-You" secondAttribute="centerX" id="SwU-DD-GIQ"/>
@@ -145,7 +145,7 @@
     </scenes>
     <resources>
         <namedColor name="BrandGreen">
-            <color red="0.49799999594688416" green="0.75300002098083496" blue="0.29800000786781311" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <color red="0.49803921568627452" green="0.75294117647058822" blue="0.29803921568627451" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>
     </resources>
 </document>

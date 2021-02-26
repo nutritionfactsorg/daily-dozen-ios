@@ -20,8 +20,7 @@ class TweakEntryStateCell: UICollectionViewCell {
     func configure(with state: Bool) {
         checkbox.isSelected = state
         // Border color must match image background in UIButtonCheckbox setCheckboxImage()
-        // UIColor.greenColor        "ic_checkmark_white_green"
-        // UIColor.redCheckmarkColor "ic_checkmark_white_red"
+        // See "ic_checkmark_fill"
         checkbox.layer.borderColor = state ? UIColor.greenColor.cgColor : UIColor.grayLightColor.cgColor
     }
 }

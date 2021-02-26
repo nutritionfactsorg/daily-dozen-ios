@@ -1,9 +1,6 @@
 /* Bundle name */
 "CFBundleName" = "DailyDozen";
 
-/* (No Comment) */
-"DailyDozen" = "DailyDozen";
-
 /* Privacy - Health Share Usage Description */
 "NSHealthShareUsageDescription" = "La función 21 Ajustes accede a sus datos de HealthKit para proporcionar actualizaciones a sus mediciones diarias de peso.";
 

@@ -1,20 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13771" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="57p-4N-fhh">
-    <device id="retina4_7" orientation="portrait">
-        <adaptation id="fullscreen"/>
-    </device>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="17701" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="57p-4N-fhh">
+    <device id="retina4_7" orientation="portrait" appearance="light"/>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13772"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17703"/>
+        <capability name="Named colors" minToolsVersion="9.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
-    <customFonts key="customFonts">
-        <array key="HelveticaNeue.ttc">
-            <string>HelveticaNeue</string>
-            <string>HelveticaNeue-Medium</string>
-        </array>
-    </customFonts>
     <scenes>
         <!--Item History View Controller-->
         <scene sceneID="YMA-89-cXD">
@@ -28,10 +21,10 @@
                                 <rect key="frame" x="8" y="133.5" width="359" height="400"/>
                                 <subviews>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="eLp-p5-Aq7">
-                                        <rect key="frame" x="0.0" y="-0.5" width="359" height="50"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="359" height="50"/>
                                         <subviews>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="History" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="sLd-Kq-bLv">
-                                                <rect key="frame" x="8" y="12" width="69" height="26.5"/>
+                                                <rect key="frame" x="8" y="12" width="343" height="26.5"/>
                                                 <fontDescription key="fontDescription" name="HelveticaNeue-Medium" family="Helvetica Neue" pointSize="21"/>
                                                 <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 <nil key="highlightedColor"/>
@@ -39,10 +32,11 @@
                                                 <size key="shadowOffset" width="0.0" height="1"/>
                                             </label>
                                         </subviews>
-                                        <color key="backgroundColor" red="0.49803921569999998" green="0.75294117650000003" blue="0.29803921570000003" alpha="1" colorSpace="calibratedRGB"/>
+                                        <color key="backgroundColor" name="BrandGreen"/>
                                         <constraints>
                                             <constraint firstItem="sLd-Kq-bLv" firstAttribute="leading" secondItem="eLp-p5-Aq7" secondAttribute="leading" constant="8" id="3Xd-dh-5lh"/>
                                             <constraint firstItem="sLd-Kq-bLv" firstAttribute="centerY" secondItem="eLp-p5-Aq7" secondAttribute="centerY" id="GSR-mq-Eor"/>
+                                            <constraint firstAttribute="trailing" secondItem="sLd-Kq-bLv" secondAttribute="trailing" constant="8" id="QA2-d0-rCA"/>
                                         </constraints>
                                     </view>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="dfE-tr-lZf" customClass="FSCalendar">
@@ -103,7 +97,7 @@
                                                                     <constraint firstAttribute="height" constant="20" id="xNt-7b-c2z"/>
                                                                 </constraints>
                                                                 <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="17"/>
-                                                                <color key="textColor" red="0.23437002300000001" green="0.25768834350000003" blue="0.3199615777" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                                 <nil key="highlightedColor"/>
                                                             </label>
                                                         </subviews>
@@ -130,7 +124,7 @@
                                                                     <constraint firstAttribute="height" constant="20" id="PdT-dx-u5C"/>
                                                                 </constraints>
                                                                 <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="17"/>
-                                                                <color key="textColor" red="0.23437002300000001" green="0.25768834350000003" blue="0.3199615777" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                                 <nil key="highlightedColor"/>
                                                             </label>
                                                         </subviews>
@@ -138,7 +132,7 @@
                                                 </subviews>
                                             </stackView>
                                         </subviews>
-                                        <color key="backgroundColor" red="0.49803921569999998" green="0.75294117650000003" blue="0.29803921570000003" alpha="1" colorSpace="calibratedRGB"/>
+                                        <color key="backgroundColor" name="BrandGreen"/>
                                         <constraints>
                                             <constraint firstItem="LB0-BD-YL6" firstAttribute="centerX" secondItem="adv-QC-FQb" secondAttribute="centerX" id="ADI-5g-fSS"/>
                                             <constraint firstItem="LB0-BD-YL6" firstAttribute="centerY" secondItem="adv-QC-FQb" secondAttribute="centerY" id="jqO-NI-9w2"/>
@@ -180,6 +174,7 @@
                                 </userDefinedRuntimeAttributes>
                             </view>
                         </subviews>
+                        <viewLayoutGuide key="safeArea" id="z9z-9q-AgS"/>
                         <color key="backgroundColor" red="0.95294117649999999" green="0.95294117649999999" blue="0.95294117649999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
                             <constraint firstItem="kRO-NU-6tU" firstAttribute="centerX" secondItem="Ksy-J4-IVJ" secondAttribute="centerX" id="ETs-Rb-3py"/>
@@ -187,7 +182,6 @@
                             <constraint firstItem="z9z-9q-AgS" firstAttribute="trailing" secondItem="kRO-NU-6tU" secondAttribute="trailing" constant="8" id="TPj-7V-fry"/>
                             <constraint firstItem="kRO-NU-6tU" firstAttribute="centerY" secondItem="Ksy-J4-IVJ" secondAttribute="centerY" id="wU4-lL-1yW"/>
                         </constraints>
-                        <viewLayoutGuide key="safeArea" id="z9z-9q-AgS"/>
                     </view>
                     <connections>
                         <outlet property="calendarView" destination="dfE-tr-lZf" id="ia1-ng-PLk"/>
@@ -198,4 +192,9 @@
             <point key="canvasLocation" x="128.80000000000001" y="170.46476761619192"/>
         </scene>
     </scenes>
+    <resources>
+        <namedColor name="BrandGreen">
+            <color red="0.49803921568627452" green="0.75294117647058822" blue="0.29803921568627451" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+    </resources>
 </document>

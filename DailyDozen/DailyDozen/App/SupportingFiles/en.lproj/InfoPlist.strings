@@ -1,9 +1,6 @@
 /* Bundle name */
 "CFBundleName" = "DailyDozen";
 
-/* (No Comment) */
-"DailyDozen" = "DailyDozen";
-
 /* Privacy - Health Share Usage Description */
 "NSHealthShareUsageDescription" = "The 21 Tweaks feature accesses your HealthKit data to provide updates to your daily weight measurements.";
 

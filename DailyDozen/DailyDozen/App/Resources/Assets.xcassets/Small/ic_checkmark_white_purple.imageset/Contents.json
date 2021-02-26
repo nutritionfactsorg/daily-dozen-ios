@@ -1,0 +1,16 @@
+{
+  "images" : [
+    {
+      "filename" : "ic_checkmark_white_purple.pdf",
+      "idiom" : "universal",
+      "locale" : "NF"
+    }
+  ],
+  "info" : {
+    "author" : "xcode",
+    "version" : 1
+  },
+  "properties" : {
+    "preserves-vector-representation" : true
+  }
+}

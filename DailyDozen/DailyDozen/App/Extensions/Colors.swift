@@ -38,19 +38,22 @@ extension UIColor {
         return UIColor(red: 213/255, green: 213/255, blue: 213/255, alpha: 1)
     }
     
-    /// rgb(127,192,76) `#7FC04C` "BrandGreen"
+    /// rgb(127,192,76) `#7fc04c` "BrandGreen"
     static var greenColor: UIColor {
-        return UIColor(red: 127/255, green: 192/255, blue: 76/255, alpha: 1)
+        return UIColor(named: "BrandGreen") ??
+            UIColor(red: 127/255, green: 192/255, blue: 76/255, alpha: 1)
     }
     
-    /// rgb(174,215,142) `#AED78E`
+    /// rgb(174,215,142) `#aed78e`
     static var greenLightColor: UIColor {
-        return UIColor(red: 174/255, green: 215/255, blue: 142/255, alpha: 1)
+        return UIColor(named: "LightGreen") ??
+            UIColor(red: 174/255, green: 215/255, blue: 142/255, alpha: 1)
     }
     
-    /// rgb(108,174,117) `#6CAE75`
+    /// rgb(108,174,117) `#6cae75`
     static var greenIguanaColor: UIColor {
-        return UIColor(red: 108/255, green: 174/255, blue: 117/255, alpha: 1)
+        return UIColor(named: "IguanaGreen") ?? 
+            UIColor(red: 108/255, green: 174/255, blue: 117/255, alpha: 1)
     }
     
     /// rgb(255, 82, 82) `#FF5252`

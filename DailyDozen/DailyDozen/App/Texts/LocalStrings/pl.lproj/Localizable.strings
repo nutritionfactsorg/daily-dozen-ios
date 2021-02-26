@@ -131,7 +131,7 @@
 "settings.units.header" = "Jednostki miary";
 
 /* streak days format */
-"streakDaysFormat" = "%d days";
+"streakDaysFormat" = "%d dni";
 
 /* display heading */
 "tweakCompleteIntentions.heading" = "Spełnij swoje intencje implementacyjne";
@@ -236,5 +236,5 @@
 "urlSegmentInfoMenu.videos" = "videos";
 
 /* Weight entry heading */
-"weightEntry.heading" = "Weight";
+"weightEntry.heading" = "Waga";
 

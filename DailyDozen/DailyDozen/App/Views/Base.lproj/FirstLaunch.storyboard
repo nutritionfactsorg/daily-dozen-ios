@@ -24,7 +24,7 @@
                                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                                         <subviews>
                                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="12" translatesAutoresizingMaskIntoConstraints="NO" id="GRO-mm-rLg">
-                                                <rect key="frame" x="49.5" y="213" width="221" height="142"/>
+                                                <rect key="frame" x="49.5" y="222.5" width="221" height="123"/>
                                                 <subviews>
                                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="2" translatesAutoresizingMaskIntoConstraints="NO" id="lnb-zJ-IzP">
                                                         <rect key="frame" x="0.0" y="0.0" width="221" height="55.5"/>
@@ -54,7 +54,7 @@
                                                         </subviews>
                                                     </stackView>
                                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="2" translatesAutoresizingMaskIntoConstraints="NO" id="Pps-nD-1Rl">
-                                                        <rect key="frame" x="0.0" y="67.5" width="221" height="74.5"/>
+                                                        <rect key="frame" x="0.0" y="67.5" width="221" height="55.5"/>
                                                         <subviews>
                                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="For Health and Weight Loss" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="OdG-YQ-lT8">
                                                                 <rect key="frame" x="0.0" y="0.0" width="221" height="21.5"/>
@@ -63,12 +63,10 @@
                                                                 <nil key="highlightedColor"/>
                                                             </label>
                                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="wordWrap" translatesAutoresizingMaskIntoConstraints="NO" id="Lef-Iw-Ywr" customClass="RoundedButton" customModule="DailyDozen" customModuleProvider="target">
-                                                                <rect key="frame" x="0.0" y="23.5" width="221" height="51"/>
+                                                                <rect key="frame" x="0.0" y="23.5" width="221" height="32"/>
                                                                 <color key="backgroundColor" name="BrandGreen"/>
                                                                 <fontDescription key="fontDescription" type="system" pointSize="16"/>
-                                                                <state key="normal">
-                                                                    <string key="title">Daily Dozen +
-21 Tweaks</string>
+                                                                <state key="normal" title="Daily Dozen + 21 Tweaks">
                                                                     <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                                 </state>
                                                                 <userDefinedRuntimeAttributes>
@@ -111,7 +109,7 @@
     </scenes>
     <resources>
         <namedColor name="BrandGreen">
-            <color red="0.49799999594688416" green="0.75300002098083496" blue="0.29800000786781311" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <color red="0.49803921568627452" green="0.75294117647058822" blue="0.29803921568627451" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>
     </resources>
 </document>
