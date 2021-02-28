@@ -32,7 +32,7 @@
 "dozeOtherInfo.confirm" = "OK";
 
 /* Daily Dozen other info message */
-"dozeOtherInfo.message" = "Vitamin B12 is essential for your health but does not count towards your daily servings.\n\nVitamin B12 is included in this app to provide you with an easy way to track your intake.";
+"dozeOtherInfo.message" = "Vitamin B12 is essential for your health but does not count towards your daily servings.\\n\\nVitamin B12 is included in this app to provide you with an easy way to track your intake.";
 
 /* ***** Daily Dozen Supplements ***** */
 "dozeOtherInfo.title" = "Supplements";
@@ -53,43 +53,43 @@
 "historyRecord.movingMean" = "Moving Average";
 
 /* Servings History */
-"historyRecordDoze.heading" = "Servings History";
+"historyRecordDoze.heading" = "Historial de porciones";
 
 /* Servings */
-"historyRecordDoze.legend" = "Servings";
+"historyRecordDoze.legend" = "Porcje";
 
 /* Tweaks History */
-"historyRecordTweak.heading" = "Tweaks History";
+"historyRecordTweak.heading" = "Historia adaptacji";
 
 /* Tweaks */
-"historyRecordTweak.legend" = "Tweaks";
+"historyRecordTweak.legend" = "Adaptacje";
 
 /* Weight History */
-"historyRecordWeight.heading" = "Weight History";
+"historyRecordWeight.heading" = "Historia pomiarów wagi";
 
 /* Evening */
-"historyRecordWeight.legendEvening" = "Evening";
+"historyRecordWeight.legendEvening" = "Wieczór.";
 
 /* Morning */
-"historyRecordWeight.legendMorning" = "Morning";
+"historyRecordWeight.legendMorning" = "Ranek";
 
 /* Weight (lbs) */
-"historyRecordWeight.titleImperial" = "Weight (lbs)";
+"historyRecordWeight.titleImperial" = "Waga (funt)";
 
 /* Weight (kg) */
-"historyRecordWeight.titleMetric" = "Weight (kg)";
+"historyRecordWeight.titleMetric" = "Waga (kg)";
 
 /* Daily Dozen (proper noun) navigation tab */
-"navtab.doze" = "Daily Dozen";
+"navtab.doze" = "Codzienny Tuzin";
 
 /* More Information navigation tab */
-"navtab.info" = "Info";
+"navtab.info" = "Informacja";
 
 /* Preferences (aka Settings, Configuration) navigation tab. Choose word different from 'Tweaks' translation */
-"navtab.preferences" = "Settings";
+"navtab.preferences" = "Ustawienia";
 
 /* 21 Tweaks (proper noun) navigation tab */
-"navtab.tweaks" = "21 adaptacji";
+"navtab.tweaks" = "21 Adaptacji";
 
 /* display heading */
 "otherOmega3.heading" = "Plant-based Omega 3s";
@@ -197,10 +197,10 @@
 "tweakWeightTwice.heading" = "Waż się dwa razy dziennie";
 
 /* Units toggle button text: imperial measurement system */
-"unitToggle.imperial" = "IMPERIAL";
+"unitToggle.imperial" = "imperialne";
 
 /* Units toggle button text: metric measurement system */
-"unitToggle.metric" = "METRIC";
+"unitToggle.metric" = "metryczne";
 
 /* URL path */
 "urlSegment.base" = "https://nutritionfacts.org/";
@@ -237,4 +237,10 @@
 
 /* Weight entry heading */
 "weightEntry.heading" = "Waga";
+
+/* metric system kilograms */
+"weightEntry.text.kg" = "kg";
+
+/* imperial system pounds */
+"weightEntry.text.lbs" = "funt";
 

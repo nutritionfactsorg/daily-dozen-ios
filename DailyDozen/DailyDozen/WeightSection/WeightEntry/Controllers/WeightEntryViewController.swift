@@ -110,8 +110,8 @@ class WeightEntryViewController: UIViewController {
         
         // Unit Type
         if isImperial {
-            weightAMLabel.text = "lbs." // :TBD:ToBeLocalized:
-            weightPMLabel.text = "lbs." // :TBD:ToBeLocalized:
+            weightAMLabel.text = NSLocalizedString("weightEntry.text.lbs", comment: "imperial system pounds")
+            weightPMLabel.text = NSLocalizedString("weightEntry.text.lbs", comment: "imperial system pounds")
             if let txt = weightAM.text {
                 weightAM.text = SettingsManager.convertKgToLbs(txt)
             }
@@ -119,8 +119,8 @@ class WeightEntryViewController: UIViewController {
                 weightPM.text = SettingsManager.convertKgToLbs(txt)
             }
         } else {
-            weightAMLabel.text = "kg" // :TBD:ToBeLocalized:
-            weightPMLabel.text = "kg" // :TBD:ToBeLocalized:
+            weightAMLabel.text = NSLocalizedString("weightEntry.text.kg", comment: "metric system kilograms")
+            weightPMLabel.text = NSLocalizedString("weightEntry.text.kg", comment: "metric system kilograms")
             if let txt = weightAM.text {
                 weightAM.text = SettingsManager.convertLbsToKg(txt)
             }
@@ -200,11 +200,11 @@ class WeightEntryViewController: UIViewController {
         
         // Unit Type
         if SettingsManager.isImperial() {
-            weightAMLabel.text = "lbs." // :TBD:ToBeLocalized:
-            weightPMLabel.text = "lbs." // :TBD:ToBeLocalized:
+            weightAMLabel.text = NSLocalizedString("weightEntry.text.lbs", comment: "imperial system pounds")
+            weightPMLabel.text = NSLocalizedString("weightEntry.text.lbs", comment: "imperial system pounds")
         } else {
-            weightAMLabel.text = "kg" // :TBD:ToBeLocalized:
-            weightPMLabel.text = "kg" // :TBD:ToBeLocalized:
+            weightAMLabel.text = NSLocalizedString("weightEntry.text.kg", comment: "metric system kilograms")
+            weightPMLabel.text = NSLocalizedString("weightEntry.text.kg", comment: "metric system kilograms")
         }
         
         //

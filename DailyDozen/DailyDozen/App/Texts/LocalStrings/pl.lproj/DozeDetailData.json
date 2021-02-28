@@ -19,7 +19,7 @@
       "topic" : "topics\/beans",
       "varieties" : [
         {
-          "text" : "Fasola czarna",
+          "text" : "Fasola czana",
           "topic" : "topics\/black-beans"
         },
         {
@@ -43,7 +43,7 @@
           "topic" : "topics\/edamame"
         },
         {
-          "text" : "Groch zwyczajny",
+          "text" : "Groszek zwyczajny",
           "topic" : ""
         },
         {
@@ -55,7 +55,7 @@
           "topic" : "topics\/kidney-beans"
         },
         {
-          "text" : "Soczewica (beluga, french, and red varieties)",
+          "text" : "Soczewica (beluga, francuska du Puy i czerwone odmiany)",
           "topic" : "topics\/lentils"
         },
         {
@@ -75,7 +75,7 @@
           "topic" : ""
         },
         {
-          "text" : "Groszek (żółty lub zielony)",
+          "text" : "Groch (żółty lub zielony)",
           "topic" : "topics\/split-peas"
         },
         {
@@ -259,7 +259,7 @@
           "topic" : ""
         },
         {
-          "text" : "Szermierstwo",
+          "text" : "Szermierka",
           "topic" : ""
         },
         {
@@ -271,7 +271,7 @@
           "topic" : ""
         },
         {
-          "text" : "Łyżwiarstwo",
+          "text" : "Jazda na łyżwach",
           "topic" : ""
         },
         {
@@ -311,7 +311,7 @@
           "topic" : ""
         },
         {
-          "text" : "Snorkeling",
+          "text" : "Nurkowanie z rurką",
           "topic" : ""
         },
         {
@@ -331,7 +331,7 @@
           "topic" : ""
         },
         {
-          "text" : "Szybki marsz (4 m\/h)",
+          "text" : "Szybki marsz (6 m\/h)",
           "topic" : ""
         },
         {
@@ -339,7 +339,7 @@
           "topic" : ""
         },
         {
-          "text" : "Narciarstwo wodne",
+          "text" : "Narty wodne",
           "topic" : ""
         },
         {
@@ -351,7 +351,7 @@
           "topic" : ""
         },
         {
-          "text" : "Podróżować z plecakiem",
+          "text" : "Podróżowanie z plecakiem",
           "topic" : ""
         },
         {
@@ -359,7 +359,7 @@
           "topic" : ""
         },
         {
-          "text" : "Jazda rowerem pod górę",
+          "text" : "Kolarstwo górskie",
           "topic" : ""
         },
         {
@@ -407,7 +407,7 @@
           "topic" : ""
         },
         {
-          "text" : "Wspinaczka skałkowa",
+          "text" : "Wspinaczka",
           "topic" : ""
         },
         {
@@ -419,7 +419,7 @@
           "topic" : ""
         },
         {
-          "text" : "Nurkowanie",
+          "text" : "Nurkowanie z akwalungiem",
           "topic" : ""
         },
         {
@@ -451,7 +451,7 @@
           "topic" : ""
         },
         {
-          "text" : "Jogging wodny",
+          "text" : "Jogging w wodzie",
           "topic" : ""
         }
       ]
@@ -1003,7 +1003,7 @@
           "topic" : "topics\/garlic"
         },
         {
-          "text" : "Grzyby (młode pieczarki, boczniaki, pieczatki portobello, i shiitake)",
+          "text" : "Grzyby (młode pieczarki, boczniaki, pieczatki portobello, shiitake)",
           "topic" : "topics\/mushrooms"
         },
         {
@@ -1023,7 +1023,7 @@
           "topic" : "topics\/pumpkin"
         },
         {
-          "text" : "Warzywa morskie (arame, dulse, i nori)",
+          "text" : "Warzywa morskie (arame, dulse, nori)",
           "topic" : "topics\/sea-vegetables"
         },
         {

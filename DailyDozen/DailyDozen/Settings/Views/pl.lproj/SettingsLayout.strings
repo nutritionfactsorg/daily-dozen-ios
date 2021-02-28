@@ -5,10 +5,10 @@
 "IFs-g0-SPV.footerTitle" = "Ustaw jeden typ jednostek dla aplikacji lub aktywuj przełącznie przycisku w „Jednostki:”.";
 
 /* Class = "UISegmentedControl"; OZO-Xa-v5G.segmentTitles[0] = "Daily Dozen Only"; ObjectID = "OZO-Xa-v5G"; */
-"OZO-Xa-v5G.segmentTitles[0]" = "Tylko Daily Dozen";
+"OZO-Xa-v5G.segmentTitles[0]" = "Tylko Codzienny Tuzin";
 
 /* Class = "UISegmentedControl"; OZO-Xa-v5G.segmentTitles[1] = "Daily Dozen + 21 Tweaks"; ObjectID = "OZO-Xa-v5G"; */
-"OZO-Xa-v5G.segmentTitles[1]" = "Daily Dozen + 21 Adaptacji";
+"OZO-Xa-v5G.segmentTitles[1]" = "Codzienny Tuzin + 21 Adaptacji";
 
 /* Class = "UISegmentedControl"; RLb-GV-4hh.segmentTitles[0] = "Imperial"; ObjectID = "RLb-GV-4hh"; */
 "RLb-GV-4hh.segmentTitles[0]" = "Imperialne";
@@ -20,5 +20,5 @@
 "RLb-GV-4hh.segmentTitles[2]" = "Zmień jednostki";
 
 /* Class = "UITableViewSection"; footerTitle = "For health alone, use \"Daily Dozen Only\". For health and weight loss use \"Daily Dozen + 21 Tweaks\"."; ObjectID = "WdR-XV-IyP"; */
-"WdR-XV-IyP.footerTitle" = "Dla samego zdrowia użyj „Tylko Daily Dozen”. Dla zdrowia i utraty wagi użyj „Daily Dozen + 21 Adaptacji”.";
+"WdR-XV-IyP.footerTitle" = "Dla samego zdrowia użyj „Tylko Codzienny Tuzin”. Dla zdrowia i utraty wagi użyj „Codzienny Tuzin + 21 Adaptacji”.";
 

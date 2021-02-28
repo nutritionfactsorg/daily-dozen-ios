@@ -187,3 +187,9 @@
 
 /* Class = "UITableViewSection"; headerTitle = "21 Tweaks Visibility"; ObjectID = "WdR-XV-IyP"; */
 "settings.tweak.header" = "Visibilidad de 21 Ajustes";
+
+/* metric system kilograms */
+"weightEntry.text.kg" = "kg";
+
+/* imperial system pounds */
+"weightEntry.text.lbs" = "libras";
