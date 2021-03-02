@@ -32,7 +32,7 @@
 "dozeOtherInfo.confirm" = "OK";
 
 /* Daily Dozen other info message */
-"dozeOtherInfo.message" = "Vitamin B12 is essential for your health but does not count towards your daily servings.\\n\\nVitamin B12 is included in this app to provide you with an easy way to track your intake.";
+"dozeOtherInfo.message" = "Witamina B12 jest niezbędna dla zdrowia, ale nie jest uwzględniona w twoich dziennych porcjach.\n\nWitamina B12 jest wliczona do aplikacji, aby łatwiej śledzić jej spożycie.";
 
 /* ***** Daily Dozen Supplements ***** */
 "dozeOtherInfo.title" = "Suplementy";
@@ -53,7 +53,7 @@
 "historyRecord.movingMean" = "Moving Average";
 
 /* Servings History */
-"historyRecordDoze.heading" = "Historial de porciones";
+"historyRecordDoze.heading" = "Historia porcji";
 
 /* Servings */
 "historyRecordDoze.legend" = "Porcje";
