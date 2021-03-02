@@ -193,3 +193,6 @@
 
 /* imperial system pounds */
 "weightEntry.text.lbs" = "libras";
+
+/* About this app */
+"info.about.title" = "Sobre esta app";

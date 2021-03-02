@@ -19,7 +19,7 @@ class InfoMenuAboutTableVC: UITableViewController {
         guard
             let viewController = storyboard.instantiateInitialViewController()
             else { fatalError("Did not instantiate `InfoMenuAboutTableVC`") }
-        viewController.title = "About this app"
+        viewController.title = NSLocalizedString("info.about.title", comment: "About this app")
 
         return viewController
     }

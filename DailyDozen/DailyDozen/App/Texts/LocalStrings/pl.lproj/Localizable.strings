@@ -244,3 +244,5 @@
 /* imperial system pounds */
 "weightEntry.text.lbs" = "funt";
 
+/* About this app */
+"info.about.title" = "O aplikacji";

@@ -124,3 +124,6 @@
 
 /* imperial system pounds */
 "weightEntry.text.lbs" = "lbs";
+
+/* About this app */
+"info.about.title" = "About this app";
