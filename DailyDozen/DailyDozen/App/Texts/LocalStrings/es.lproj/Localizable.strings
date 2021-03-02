@@ -196,3 +196,6 @@
 
 /* About this app */
 "info.about.title" = "Sobre esta app";
+
+/* Videos link label */
+"videos.link.label" = "Videos";

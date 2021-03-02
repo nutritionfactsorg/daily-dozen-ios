@@ -28,7 +28,7 @@ class TweakDetailViewController: UIViewController {
 
     // MARK: - Nested
     private struct Strings {
-        static let videos = "VIDEOS" // :NYI:NSLocalizedString:
+        static let videos = NSLocalizedString("videos.link.label", comment: "VIDEOS")
     }
     
     // MARK: - Outlets

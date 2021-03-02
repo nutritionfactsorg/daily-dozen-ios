@@ -35,7 +35,7 @@
 "dozeOtherInfo.message" = "Vitamin B12 is essential for your health but does not count towards your daily servings.\\n\\nVitamin B12 is included in this app to provide you with an easy way to track your intake.";
 
 /* ***** Daily Dozen Supplements ***** */
-"dozeOtherInfo.title" = "Supplements";
+"dozeOtherInfo.title" = "Suplementy";
 
 /* display heading */
 "dozeSpices.heading" = "Zioła i przyprawy";
@@ -246,3 +246,6 @@
 
 /* About this app */
 "info.about.title" = "O aplikacji";
+
+/* Videos link label */
+"videos.link.label" = "Filmy";
