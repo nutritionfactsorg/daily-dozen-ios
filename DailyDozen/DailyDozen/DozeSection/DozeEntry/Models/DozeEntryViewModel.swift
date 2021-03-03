@@ -49,10 +49,7 @@ class DozeEntryViewModel {
     /// - Returns: A tuple with the item heading, image name and supplemental flag.
     func itemInfo(rowIndex: Int) -> (itemType: DataCountType, isSupplemental: Bool) {
         let rowType: DataCountType = DozeEntryViewModel.rowTypeArray[rowIndex]
-        let heading = rowType.headingDisplay
-        let isSupplemental = heading.contains("Vitamin")
-            || heading.contains("Omega")
-        
+        let isSupplemental = rowType.typeKey.hasPrefix("other") // e.g. otherVitaminB12        
         return (rowType, isSupplemental)
     }
     
