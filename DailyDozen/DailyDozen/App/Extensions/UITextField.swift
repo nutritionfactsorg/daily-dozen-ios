@@ -29,7 +29,7 @@ extension UITextField {
             // datePicker.sizeThatFits(CGSize(width: 0, height: 216))
         }
         self.inputView = datePicker // UIView
-        let color = UIColor(red: 0.0, green: 0.0, blue: 0.0, alpha: 0.0)
+        let color = UIColor.black
         self.tintColor = color // match background color to "hide" caret .greenColor, .white
         self.selectedTextRange = nil
                 
