@@ -52,7 +52,6 @@
 		4941D735237E266300ED84B5 /* DataCountAttributes.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4941D734237E266300ED84B5 /* DataCountAttributes.swift */; };
 		4943720D2487702300632053 /* HealthSynchronizer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4943720C2487702300632053 /* HealthSynchronizer.swift */; };
 		4944B99223AD7A1A008DFA30 /* ChartDataEntry.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4944B99123AD7A1A008DFA30 /* ChartDataEntry.swift */; };
-		495020DA2399DC780092D6F5 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 495020D82399DC780092D6F5 /* LaunchScreen.storyboard */; };
 		4955013A23CD453200C72FB3 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 4955013723CD453200C72FB3 /* Assets.xcassets */; };
 		495DAAEB23A06C330036077C /* WeightReport.swift in Sources */ = {isa = PBXBuildFile; fileRef = 495DAAEA23A06C330036077C /* WeightReport.swift */; };
 		495FA4212453EEF200DE3E58 /* LogService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 495FA4202453EEF200DE3E58 /* LogService.swift */; };
@@ -87,6 +86,7 @@
 		49B93E502477361100144C80 /* DatabaseBuiltInTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49B93E4F2477361100144C80 /* DatabaseBuiltInTest.swift */; };
 		49B97FE725F5EE5C009BA5A9 /* DozeEntryPagerLayout.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 49B97FE625F5EE5C009BA5A9 /* DozeEntryPagerLayout.storyboard */; };
 		49B97FEF25F5EF87009BA5A9 /* TweakEntryPagerLayout.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 49B97FEE25F5EF87009BA5A9 /* TweakEntryPagerLayout.storyboard */; };
+		49B9801525F611A5009BA5A9 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 49B9801425F611A5009BA5A9 /* LaunchScreen.storyboard */; };
 		49C646CB236F4A46000DA8DC /* UtilityLayout.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 49C646CA236F4A46000DA8DC /* UtilityLayout.storyboard */; };
 		49D6448C245CEC3300814AD5 /* HealthWeightRecord.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49D6448B245CEC3300814AD5 /* HealthWeightRecord.swift */; };
 		49D9B07B240DCA1F000E9822 /* UIView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49D9B07A240DCA1F000E9822 /* UIView.swift */; };
@@ -221,7 +221,6 @@
 		493A9C3223CE6B7500F679BE /* es */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = es; path = es.lproj/Localizable.strings; sourceTree = "<group>"; };
 		493B0EB1258D0D7B00FEDA8E /* dr_greger.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = dr_greger.png; sourceTree = "<group>"; };
 		493CE64D25D727B400F95BF3 /* pl */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = pl; path = pl.lproj/FirstLaunch.strings; sourceTree = "<group>"; };
-		493CE64E25D727E300F95BF3 /* pl */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = pl; path = pl.lproj/LaunchScreen.strings; sourceTree = "<group>"; };
 		493CE64F25D727E300F95BF3 /* pl */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = pl; path = pl.lproj/Main.strings; sourceTree = "<group>"; };
 		493CE65025D727E300F95BF3 /* pl */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = pl; path = pl.lproj/DozeDetailLayout.strings; sourceTree = "<group>"; };
 		493CE65125D727E300F95BF3 /* pl */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = pl; path = pl.lproj/DozeDetailSizeHeader.strings; sourceTree = "<group>"; };
@@ -255,7 +254,6 @@
 		4941D734237E266300ED84B5 /* DataCountAttributes.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DataCountAttributes.swift; sourceTree = "<group>"; };
 		4943720C2487702300632053 /* HealthSynchronizer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HealthSynchronizer.swift; sourceTree = "<group>"; };
 		4944B99123AD7A1A008DFA30 /* ChartDataEntry.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChartDataEntry.swift; sourceTree = "<group>"; };
-		495020D92399DC780092D6F5 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		4955013723CD453200C72FB3 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		495DAAEA23A06C330036077C /* WeightReport.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WeightReport.swift; sourceTree = "<group>"; };
 		495FA4202453EEF200DE3E58 /* LogService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LogService.swift; sourceTree = "<group>"; };
@@ -296,6 +294,7 @@
 		49B93E4F2477361100144C80 /* DatabaseBuiltInTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DatabaseBuiltInTest.swift; sourceTree = "<group>"; };
 		49B97FE625F5EE5C009BA5A9 /* DozeEntryPagerLayout.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = DozeEntryPagerLayout.storyboard; sourceTree = "<group>"; };
 		49B97FEE25F5EF87009BA5A9 /* TweakEntryPagerLayout.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = TweakEntryPagerLayout.storyboard; sourceTree = "<group>"; };
+		49B9801425F611A5009BA5A9 /* LaunchScreen.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = LaunchScreen.storyboard; sourceTree = "<group>"; };
 		49BB8C6A237373840047AFA4 /* DailyDozen.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = DailyDozen.entitlements; sourceTree = "<group>"; };
 		49C646CA236F4A46000DA8DC /* UtilityLayout.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = UtilityLayout.storyboard; sourceTree = "<group>"; };
 		49D6448B245CEC3300814AD5 /* HealthWeightRecord.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HealthWeightRecord.swift; sourceTree = "<group>"; };
@@ -950,8 +949,8 @@
 		CFD1BA311FCD24220057F549 /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				49B9801425F611A5009BA5A9 /* LaunchScreen.storyboard */,
 				498F7249239E013E004E501B /* FirstLaunch.storyboard */,
-				495020D82399DC780092D6F5 /* LaunchScreen.storyboard */,
 				497390AA23A5956900492D92 /* Main.storyboard */,
 				CFBEE2331FDE9A57005C0F45 /* RoundedView.swift */,
 				CFD1BA321FCD24920057F549 /* RoundedButton.swift */,
@@ -1216,9 +1215,9 @@
 				49D9B07D240DD09F000E9822 /* TweakDetailActivityUnitHeader.xib in Resources */,
 				49D9B07C240DD08F000E9822 /* DozeDetailSizeUnitHeader.xib in Resources */,
 				493A9C0A23CE62BC00F679BE /* TweakHistoryLayout.storyboard in Resources */,
+				49B9801525F611A5009BA5A9 /* LaunchScreen.storyboard in Resources */,
 				493A9BE623CE4F3700F679BE /* TweakDetailDescriptionHeader.xib in Resources */,
 				493A9BEC23CE612A00F679BE /* ItemHistoryLayout.storyboard in Resources */,
-				495020DA2399DC780092D6F5 /* LaunchScreen.storyboard in Resources */,
 				493A9BDA23CE4F0200F679BE /* TweakDetailLayout.storyboard in Resources */,
 				493A9BF623CE61F100F679BE /* DozeEntryLayout.storyboard in Resources */,
 				492474A323DB677A00D7D918 /* InfoPlist.strings in Resources */,
@@ -1715,15 +1714,6 @@
 				493CE66525D727E500F95BF3 /* pl */,
 			);
 			name = WeightHistoryLayout.storyboard;
-			sourceTree = "<group>";
-		};
-		495020D82399DC780092D6F5 /* LaunchScreen.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				495020D92399DC780092D6F5 /* Base */,
-				493CE64E25D727E300F95BF3 /* pl */,
-			);
-			name = LaunchScreen.storyboard;
 			sourceTree = "<group>";
 		};
 		497390AA23A5956900492D92 /* Main.storyboard */ = {
