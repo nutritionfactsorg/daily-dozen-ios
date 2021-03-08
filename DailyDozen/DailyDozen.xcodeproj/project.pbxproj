@@ -33,12 +33,10 @@
 		493A9BE623CE4F3700F679BE /* TweakDetailDescriptionHeader.xib in Resources */ = {isa = PBXBuildFile; fileRef = 493A9BE823CE4F3700F679BE /* TweakDetailDescriptionHeader.xib */; };
 		493A9BEC23CE612A00F679BE /* ItemHistoryLayout.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 493A9BEE23CE612A00F679BE /* ItemHistoryLayout.storyboard */; };
 		493A9BF023CE61BE00F679BE /* InfoMenuMainLayout.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 493A9BF223CE61BE00F679BE /* InfoMenuMainLayout.storyboard */; };
-		493A9BF323CE61E700F679BE /* DozeEntryPagerLayout.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 493A9BF523CE61E700F679BE /* DozeEntryPagerLayout.storyboard */; };
 		493A9BF623CE61F100F679BE /* DozeEntryLayout.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 493A9BF823CE61F100F679BE /* DozeEntryLayout.storyboard */; };
 		493A9BF923CE61FD00F679BE /* DozeEntryExtrasHeader.xib in Resources */ = {isa = PBXBuildFile; fileRef = 493A9BFB23CE61FD00F679BE /* DozeEntryExtrasHeader.xib */; };
 		493A9BFC23CE623700F679BE /* DozeHistoryLayout.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 493A9BFE23CE623700F679BE /* DozeHistoryLayout.storyboard */; };
 		493A9C0023CE627B00F679BE /* SettingsLayout.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 493A9C0223CE627B00F679BE /* SettingsLayout.storyboard */; };
-		493A9C0323CE629100F679BE /* TweakEntryPagerLayout.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 493A9C0523CE629100F679BE /* TweakEntryPagerLayout.storyboard */; };
 		493A9C0623CE629900F679BE /* TweakEntryLayout.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 493A9C0823CE629900F679BE /* TweakEntryLayout.storyboard */; };
 		493A9C0A23CE62BC00F679BE /* TweakHistoryLayout.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 493A9C0C23CE62BC00F679BE /* TweakHistoryLayout.storyboard */; };
 		493A9C0E23CE631600F679BE /* WeightEntryLayout.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 493A9C1023CE631600F679BE /* WeightEntryLayout.storyboard */; };
@@ -87,6 +85,8 @@
 		498F7251239E3007004E501B /* HealthManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 498F7250239E3007004E501B /* HealthManager.swift */; };
 		499B82FB239CD4D300E4AD19 /* WeightHistoryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 499B82FA239CD4D300E4AD19 /* WeightHistoryViewController.swift */; };
 		49B93E502477361100144C80 /* DatabaseBuiltInTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49B93E4F2477361100144C80 /* DatabaseBuiltInTest.swift */; };
+		49B97FE725F5EE5C009BA5A9 /* DozeEntryPagerLayout.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 49B97FE625F5EE5C009BA5A9 /* DozeEntryPagerLayout.storyboard */; };
+		49B97FEF25F5EF87009BA5A9 /* TweakEntryPagerLayout.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 49B97FEE25F5EF87009BA5A9 /* TweakEntryPagerLayout.storyboard */; };
 		49C646CB236F4A46000DA8DC /* UtilityLayout.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 49C646CA236F4A46000DA8DC /* UtilityLayout.storyboard */; };
 		49D6448C245CEC3300814AD5 /* HealthWeightRecord.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49D6448B245CEC3300814AD5 /* HealthWeightRecord.swift */; };
 		49D9B07B240DCA1F000E9822 /* UIView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49D9B07A240DCA1F000E9822 /* UIView.swift */; };
@@ -189,12 +189,10 @@
 		493A9BE723CE4F3700F679BE /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/TweakDetailDescriptionHeader.xib; sourceTree = "<group>"; };
 		493A9BED23CE612A00F679BE /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/ItemHistoryLayout.storyboard; sourceTree = "<group>"; };
 		493A9BF123CE61BE00F679BE /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/InfoMenuMainLayout.storyboard; sourceTree = "<group>"; };
-		493A9BF423CE61E700F679BE /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/DozeEntryPagerLayout.storyboard; sourceTree = "<group>"; };
 		493A9BF723CE61F100F679BE /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/DozeEntryLayout.storyboard; sourceTree = "<group>"; };
 		493A9BFA23CE61FD00F679BE /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/DozeEntryExtrasHeader.xib; sourceTree = "<group>"; };
 		493A9BFD23CE623700F679BE /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/DozeHistoryLayout.storyboard; sourceTree = "<group>"; };
 		493A9C0123CE627B00F679BE /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/SettingsLayout.storyboard; sourceTree = "<group>"; };
-		493A9C0423CE629100F679BE /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/TweakEntryPagerLayout.storyboard; sourceTree = "<group>"; };
 		493A9C0723CE629900F679BE /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/TweakEntryLayout.storyboard; sourceTree = "<group>"; };
 		493A9C0B23CE62BC00F679BE /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/TweakHistoryLayout.storyboard; sourceTree = "<group>"; };
 		493A9C0F23CE631600F679BE /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/WeightEntryLayout.storyboard; sourceTree = "<group>"; };
@@ -211,12 +209,10 @@
 		493A9C2423CE6B7400F679BE /* es */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = es; path = es.lproj/TweakDetailDescriptionHeader.strings; sourceTree = "<group>"; };
 		493A9C2523CE6B7400F679BE /* es */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = es; path = es.lproj/ItemHistoryLayout.strings; sourceTree = "<group>"; };
 		493A9C2623CE6B7400F679BE /* es */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = es; path = es.lproj/InfoMenuMainLayout.strings; sourceTree = "<group>"; };
-		493A9C2723CE6B7400F679BE /* es */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = es; path = es.lproj/DozeEntryPagerLayout.strings; sourceTree = "<group>"; };
 		493A9C2823CE6B7400F679BE /* es */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = es; path = es.lproj/DozeEntryLayout.strings; sourceTree = "<group>"; };
 		493A9C2923CE6B7400F679BE /* es */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = es; path = es.lproj/DozeEntryExtrasHeader.strings; sourceTree = "<group>"; };
 		493A9C2A23CE6B7500F679BE /* es */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = es; path = es.lproj/DozeHistoryLayout.strings; sourceTree = "<group>"; };
 		493A9C2B23CE6B7500F679BE /* es */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = es; path = es.lproj/SettingsLayout.strings; sourceTree = "<group>"; };
-		493A9C2C23CE6B7500F679BE /* es */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = es; path = es.lproj/TweakEntryPagerLayout.strings; sourceTree = "<group>"; };
 		493A9C2D23CE6B7500F679BE /* es */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = es; path = es.lproj/TweakEntryLayout.strings; sourceTree = "<group>"; };
 		493A9C2E23CE6B7500F679BE /* es */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = es; path = es.lproj/TweakHistoryLayout.strings; sourceTree = "<group>"; };
 		493A9C2F23CE6B7500F679BE /* es */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = es; path = es.lproj/WeightEntryLayout.strings; sourceTree = "<group>"; };
@@ -231,7 +227,6 @@
 		493CE65125D727E300F95BF3 /* pl */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = pl; path = pl.lproj/DozeDetailSizeHeader.strings; sourceTree = "<group>"; };
 		493CE65225D727E300F95BF3 /* pl */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = pl; path = pl.lproj/DozeDetailSizeUnitHeader.strings; sourceTree = "<group>"; };
 		493CE65325D727E300F95BF3 /* pl */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = pl; path = pl.lproj/DozeDetailTypeHeader.strings; sourceTree = "<group>"; };
-		493CE65425D727E300F95BF3 /* pl */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = pl; path = pl.lproj/DozeEntryPagerLayout.strings; sourceTree = "<group>"; };
 		493CE65525D727E300F95BF3 /* pl */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = pl; path = pl.lproj/DozeEntryExtrasHeader.strings; sourceTree = "<group>"; };
 		493CE65625D727E400F95BF3 /* pl */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = pl; path = pl.lproj/DozeEntryLayout.strings; sourceTree = "<group>"; };
 		493CE65725D727E400F95BF3 /* pl */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = pl; path = pl.lproj/DozeHistoryLayout.strings; sourceTree = "<group>"; };
@@ -243,7 +238,6 @@
 		493CE65D25D727E400F95BF3 /* pl */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = pl; path = pl.lproj/TweakDetailActivityHeader.strings; sourceTree = "<group>"; };
 		493CE65E25D727E400F95BF3 /* pl */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = pl; path = pl.lproj/TweakDetailActivityUnitHeader.strings; sourceTree = "<group>"; };
 		493CE65F25D727E400F95BF3 /* pl */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = pl; path = pl.lproj/TweakDetailDescriptionHeader.strings; sourceTree = "<group>"; };
-		493CE66025D727E400F95BF3 /* pl */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = pl; path = pl.lproj/TweakEntryPagerLayout.strings; sourceTree = "<group>"; };
 		493CE66125D727E400F95BF3 /* pl */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = pl; path = pl.lproj/TweakEntryLayout.strings; sourceTree = "<group>"; };
 		493CE66225D727E400F95BF3 /* pl */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = pl; path = pl.lproj/TweakHistoryLayout.strings; sourceTree = "<group>"; };
 		493CE66325D727E400F95BF3 /* pl */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = pl; path = pl.lproj/WeightEntryLayout.strings; sourceTree = "<group>"; };
@@ -300,6 +294,8 @@
 		49B0FD2125DF927B00236A12 /* pl */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = pl; path = pl.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		49B0FD2225DF927C00236A12 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		49B93E4F2477361100144C80 /* DatabaseBuiltInTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DatabaseBuiltInTest.swift; sourceTree = "<group>"; };
+		49B97FE625F5EE5C009BA5A9 /* DozeEntryPagerLayout.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = DozeEntryPagerLayout.storyboard; sourceTree = "<group>"; };
+		49B97FEE25F5EF87009BA5A9 /* TweakEntryPagerLayout.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = TweakEntryPagerLayout.storyboard; sourceTree = "<group>"; };
 		49BB8C6A237373840047AFA4 /* DailyDozen.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = DailyDozen.entitlements; sourceTree = "<group>"; };
 		49C646CA236F4A46000DA8DC /* UtilityLayout.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = UtilityLayout.storyboard; sourceTree = "<group>"; };
 		49D6448B245CEC3300814AD5 /* HealthWeightRecord.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HealthWeightRecord.swift; sourceTree = "<group>"; };
@@ -744,7 +740,7 @@
 		4981709E23920B090033882C /* Views */ = {
 			isa = PBXGroup;
 			children = (
-				493A9C0523CE629100F679BE /* TweakEntryPagerLayout.storyboard */,
+				49B97FEE25F5EF87009BA5A9 /* TweakEntryPagerLayout.storyboard */,
 				493A9C0823CE629900F679BE /* TweakEntryLayout.storyboard */,
 			);
 			path = Views;
@@ -1063,7 +1059,7 @@
 		CFF117781F97543900BFE73A /* Views */ = {
 			isa = PBXGroup;
 			children = (
-				493A9BF523CE61E700F679BE /* DozeEntryPagerLayout.storyboard */,
+				49B97FE625F5EE5C009BA5A9 /* DozeEntryPagerLayout.storyboard */,
 				493A9BFB23CE61FD00F679BE /* DozeEntryExtrasHeader.xib */,
 				493A9BF823CE61F100F679BE /* DozeEntryLayout.storyboard */,
 			);
@@ -1211,16 +1207,16 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				493A9BF323CE61E700F679BE /* DozeEntryPagerLayout.storyboard in Resources */,
 				493A9C0023CE627B00F679BE /* SettingsLayout.storyboard in Resources */,
+				49B97FE725F5EE5C009BA5A9 /* DozeEntryPagerLayout.storyboard in Resources */,
 				493A9BD723CE4EED00F679BE /* DozeDetailLayout.storyboard in Resources */,
 				497B137223CD72E600BC2488 /* InfoMenuAboutLayout.storyboard in Resources */,
+				49B97FEF25F5EF87009BA5A9 /* TweakEntryPagerLayout.storyboard in Resources */,
 				493A9C0623CE629900F679BE /* TweakEntryLayout.storyboard in Resources */,
 				49D9B07D240DD09F000E9822 /* TweakDetailActivityUnitHeader.xib in Resources */,
 				49D9B07C240DD08F000E9822 /* DozeDetailSizeUnitHeader.xib in Resources */,
 				493A9C0A23CE62BC00F679BE /* TweakHistoryLayout.storyboard in Resources */,
 				493A9BE623CE4F3700F679BE /* TweakDetailDescriptionHeader.xib in Resources */,
-				493A9C0323CE629100F679BE /* TweakEntryPagerLayout.storyboard in Resources */,
 				493A9BEC23CE612A00F679BE /* ItemHistoryLayout.storyboard in Resources */,
 				495020DA2399DC780092D6F5 /* LaunchScreen.storyboard in Resources */,
 				493A9BDA23CE4F0200F679BE /* TweakDetailLayout.storyboard in Resources */,
@@ -1631,16 +1627,6 @@
 			name = InfoMenuMainLayout.storyboard;
 			sourceTree = "<group>";
 		};
-		493A9BF523CE61E700F679BE /* DozeEntryPagerLayout.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				493A9BF423CE61E700F679BE /* Base */,
-				493A9C2723CE6B7400F679BE /* es */,
-				493CE65425D727E300F95BF3 /* pl */,
-			);
-			name = DozeEntryPagerLayout.storyboard;
-			sourceTree = "<group>";
-		};
 		493A9BF823CE61F100F679BE /* DozeEntryLayout.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
@@ -1679,16 +1665,6 @@
 				493CE65B25D727E400F95BF3 /* pl */,
 			);
 			name = SettingsLayout.storyboard;
-			sourceTree = "<group>";
-		};
-		493A9C0523CE629100F679BE /* TweakEntryPagerLayout.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				493A9C0423CE629100F679BE /* Base */,
-				493A9C2C23CE6B7500F679BE /* es */,
-				493CE66025D727E400F95BF3 /* pl */,
-			);
-			name = TweakEntryPagerLayout.storyboard;
 			sourceTree = "<group>";
 		};
 		493A9C0823CE629900F679BE /* TweakEntryLayout.storyboard */ = {
