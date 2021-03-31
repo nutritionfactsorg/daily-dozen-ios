@@ -80,7 +80,7 @@ class DozeEntryPagerViewController: UIViewController {
             navigationController?.pushViewController(viewController, animated: true)
         }
     }
-
+    
     // MARK: - Methods
     
     /// Updates UI for the current date.
@@ -91,7 +91,7 @@ class DozeEntryPagerViewController: UIViewController {
         dozePageDate = date
         dozeDateBarPicker.setDate(dozePageDate, animated: false)
         dozeDateBarPicker.maximumDate = DateManager.currentDatetime()
-
+        
         if dozePageDate.isInCurrentDayWith(DateManager.currentDatetime()) {
             dozeBackButton.superview?.isHidden = true
             dozeDateBarField.text = NSLocalizedString("dateButtonTitle.today", comment: "Date button 'Today' title")
@@ -102,41 +102,41 @@ class DozeEntryPagerViewController: UIViewController {
         }
         
         if order != .orderedSame {
-        guard let viewController = children.first as? DozeEntryViewController else { return }
-        viewController.view.fadeOut().fadeIn()
+            guard let viewController = children.first as? DozeEntryViewController else { return }
+            viewController.view.fadeOut().fadeIn()
             viewController.setViewModel(date: dozePageDate)
         }
     }
-
+    
     // MARK: - Actions
-
+    
     @objc private func dateBarTouchDown(_ sender: UITextField) {
         dozeDateBarField.text = dozeDateBarPicker.date.dateStringLocalized(for: .long)
         dozeDateBarPicker.maximumDate = DateManager.currentDatetime() // today
     }
-
+    
     @IBAction private func viewSwiped(_ sender: UISwipeGestureRecognizer) {
         let today = DateManager.currentDatetime()
         let interval = sender.direction == .left ? -1 : 1
         guard let swipedDate = dozeDateBarPicker.date.adding(.day, value: interval), 
               swipedDate <= today 
         else { return }
-
+        
         dozeDateBarPicker.setDate(swipedDate, animated: false)
         dozeDateBarPicker.maximumDate = DateManager.currentDatetime() // today
         updatePageDate(dozeDateBarPicker.date) 
-
+        
         guard let viewController = children.first as? DozeEntryViewController else { return }
-
+        
         if sender.direction == .left {
             viewController.view.slideOut(x: -view.frame.width).slideIn(x: view.frame.width)
         } else {
             viewController.view.slideOut(x: view.frame.width).slideIn(x: -view.frame.width)
         }
-
+        
         viewController.setViewModel(date: dozeDateBarPicker.date)
     }
-
+    
     @IBAction private func dozeBackButtonPressed(_ sender: UIButton) {
         updatePageDate(DateManager.currentDatetime())
     }

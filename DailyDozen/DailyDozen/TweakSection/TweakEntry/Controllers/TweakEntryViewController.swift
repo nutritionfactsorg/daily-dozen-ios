@@ -110,7 +110,7 @@ class TweakEntryViewController: UIViewController {
     
     // MARK: - Actions
     
-    /// TweakEntryTableViewCell infoButton
+    /// TweakEntryRow itemInfoButton
     @IBAction private func tweakInfoPressed(_ sender: UIButton) {
         let itemInfo = dataProvider.viewModel.itemInfo(rowIndex: sender.tag)
         
@@ -118,7 +118,7 @@ class TweakEntryViewController: UIViewController {
         navigationController?.pushViewController(viewController, animated: true)
     }
     
-    /// TweakEntryTableViewCell calendarButton
+    /// TweakEntryRow itemCalendarButton
     @IBAction private func tweakCalendarPressed(_ sender: UIButton) {
         let heading = dataProvider.viewModel.itemInfo(rowIndex: sender.tag).headingDisplay
         let dataCountType = dataProvider.viewModel.itemType(rowIndex: sender.tag)
@@ -141,10 +141,10 @@ class TweakEntryViewController: UIViewController {
 extension TweakEntryViewController: UITableViewDelegate {
     
     func tableView(_ tableView: UITableView, willDisplay cell: UITableViewCell, forRowAt indexPath: IndexPath) {
-        guard let tweakTableViewCell = cell as? TweakEntryTableViewCell else { return }
-        tweakTableViewCell.stateCollection.delegate = self
-        tweakTableViewCell.stateCollection.dataSource = dataProvider
-        tweakTableViewCell.stateCollection.reloadData()
+        guard let tweakEntryRow = cell as? TweakEntryRow else { return }
+        tweakEntryRow.itemStateCollection.delegate = self
+        tweakEntryRow.itemStateCollection.dataSource = dataProvider
+        tweakEntryRow.itemStateCollection.reloadData()
     }
     
     func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
@@ -193,7 +193,7 @@ extension TweakEntryViewController: UICollectionViewDelegate {
             checkmarkStates[index] = false
         }
         
-        guard let cell = collectionView.cellForItem(at: indexPath) as? TweakEntryStateCell else {
+        guard let cell = collectionView.cellForItem(at: indexPath) as? TweakItemStateCheckbox else {
             fatalError("There should be a cell")
         }
         cell.configure(with: checkmarkStates[indexPath.row])

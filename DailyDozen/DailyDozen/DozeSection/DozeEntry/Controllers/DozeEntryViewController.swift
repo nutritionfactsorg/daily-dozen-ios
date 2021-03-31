@@ -80,7 +80,7 @@ class DozeEntryViewController: UIViewController {
     
     // MARK: - Actions
     
-    /// DozeEntryTableViewCell infoButton
+    /// DozeEntryRow itemInfoButton
     @IBAction private func dozeInfoPressed(_ sender: UIButton) {
         let itemInfo = dataProvider.viewModel.itemInfo(rowIndex: sender.tag)
         
@@ -96,7 +96,7 @@ class DozeEntryViewController: UIViewController {
         navigationController?.pushViewController(viewController, animated: true)
     }
     
-    /// DozeEntryTableViewCell calendarButton
+    /// DozeEntryRow itemCalendarButton
     @IBAction private func dozeCalendarPressed(_ sender: UIButton) {
         let heading = dataProvider.viewModel.itemInfo(rowIndex: sender.tag).itemType.headingDisplay
         let itemType = dataProvider.viewModel.itemType(rowIndex: sender.tag)
@@ -120,10 +120,10 @@ class DozeEntryViewController: UIViewController {
 extension DozeEntryViewController: UITableViewDelegate {
     
     func tableView(_ tableView: UITableView, willDisplay cell: UITableViewCell, forRowAt indexPath: IndexPath) {
-        guard let dozeTableViewCell = cell as? DozeEntryTableViewCell else { return }
-        dozeTableViewCell.stateCollection.delegate = self
-        dozeTableViewCell.stateCollection.dataSource = dataProvider
-        dozeTableViewCell.stateCollection.reloadData()
+        guard let dozeEntryRow = cell as? DozeEntryRow else { return }
+        dozeEntryRow.itemStateCollection.delegate = self
+        dozeEntryRow.itemStateCollection.dataSource = dataProvider
+        dozeEntryRow.itemStateCollection.reloadData()
     }
     
     func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
@@ -172,7 +172,7 @@ extension DozeEntryViewController: UICollectionViewDelegate {
             checkmarkStates[index] = false
         }
                 
-        guard let cell = collectionView.cellForItem(at: indexPath) as? DozeEntryStateCell else {
+        guard let cell = collectionView.cellForItem(at: indexPath) as? DozeItemStateCheckbox else {
             fatalError("There should be a cell")
         }
         cell.configure(with: checkmarkStates[indexPath.row])

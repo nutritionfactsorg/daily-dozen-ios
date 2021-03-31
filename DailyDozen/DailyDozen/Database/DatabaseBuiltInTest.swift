@@ -183,6 +183,71 @@ public struct DatabaseBuiltInTest {
         )
     }
     
+    /// Generate Realm data for Streaks.
+    ///
+    /// ```
+    ///                Bean:  14 days @3
+    ///             Berries:   7 days @1
+    ///        Other Fruits:   2 days @3
+    /// 
+    ///      Herbs & Spices: 999 days @1
+    ///        Whole Grains: 999 days @3
+    ///           Beverages: 999 days @6
+    ///
+    ///       Preload Water:  14 days @3
+    ///    Negative Calorie:   7 days @3
+    /// Incorporate Vinegar:   2 days @3
+    /// 
+    ///   Nutritional Yeast: 999 days @1
+    ///               Cumin: 999 days @2
+    ///           Green Tea: 999 days @3
+    /// ```
+    func doGenerateDBStreaksBIT() {
+        LogService.shared.debug(
+            "••BEGIN•• doGenerateDBStreaksBIT()"
+        )
+        let realmMngr = RealmManager()
+        let realmDb = realmMngr.realmDb
+        
+        let today = Date()
+        // 2 days 
+        for i in 0 ..< 2 {
+            if let date = today.adding(.day, value: -i) {
+                realmDb.saveCount(3, date: date, countType: .dozeFruitsOther)
+                realmDb.saveCount(3, date: date, countType: .tweakMealVinegar)
+            }
+        }
+        // 7 days 
+        for i in 0 ..< 7 {
+            if let date = today.adding(.day, value: -i) {
+                realmDb.saveCount(1, date: date, countType: .dozeBerries)
+                realmDb.saveCount(3, date: date, countType: .tweakMealNegCal)
+            }
+        }
+        // 14 days 
+        for i in 0 ..< 14 {
+            if let date = today.adding(.day, value: -i) {
+                realmDb.saveCount(3, date: date, countType: .dozeBeans)
+                realmDb.saveCount(3, date: date, countType: .tweakMealWater)
+            }
+        }
+        // 999 days 
+        for i in 0 ..< 999 {
+            if let date = today.adding(.day, value: -i) {
+                realmDb.saveCount(1, date: date, countType: .dozeFruitsOther)
+                realmDb.saveCount(3, date: date, countType: .dozeWholeGrains)
+                realmDb.saveCount(6, date: date, countType: .dozeBeverages)
+                realmDb.saveCount(1, date: date, countType: .tweakDailyNutriYeast)
+                realmDb.saveCount(2, date: date, countType: .tweakDailyCumin)
+                realmDb.saveCount(3, date: date, countType: .tweakDailyGreenTea)
+            }
+        }
+
+        LogService.shared.debug(
+            "••EXIT•• UtilityTableViewController doGenerateDBStreaksBIT()"
+        )
+    }
+    
     // MARK: - Unsynced HK Actions
     // Unsynced HealthKit actions to setup to support testing.
     

@@ -11,8 +11,8 @@ class TweakEntryDataProvider: NSObject, UITableViewDataSource {
     
     // MARK: - Nested
     private struct Strings {
-        static let tweakTableViewCell = "tweakTableViewCell"
-        static let tweakStateCell = "tweakStateCell"
+        static let tweakEntryRowSid = "TweakEntryRowSid"
+        static let tweakItemStateCheckboxSid = "TweakItemStateCheckboxSid"
     }
     
     var viewModel: TweakEntryViewModel!
@@ -33,9 +33,9 @@ class TweakEntryDataProvider: NSObject, UITableViewDataSource {
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let realm = RealmProvider()
         guard
-            let tweakTableViewCell = tableView
-                .dequeueReusableCell(withIdentifier: Strings.tweakTableViewCell) as? TweakEntryTableViewCell else {
-                fatalError("Expected `TweakEntryTableViewCell`")
+            let tweakEntryRow = tableView
+                .dequeueReusableCell(withIdentifier: Strings.tweakEntryRowSid) as? TweakEntryRow else {
+                fatalError("Expected `TweakEntryRow`")
         }
 
         let rowIndex = indexPath.row
@@ -55,7 +55,7 @@ class TweakEntryDataProvider: NSObject, UITableViewDataSource {
             }
         }
         
-        tweakTableViewCell.configure(
+        tweakEntryRow.configure(
             heading: itemType.headingDisplay,
             tag: rowIndex,
             imageName: itemType.imageName,
@@ -64,7 +64,7 @@ class TweakEntryDataProvider: NSObject, UITableViewDataSource {
         let itemPid = viewModel.itemPid(rowIndex: rowIndex)
         realm.updateStreak(streak, pid: itemPid)
         
-        return tweakTableViewCell
+        return tweakEntryRow
     }
 }
 
@@ -77,9 +77,9 @@ extension TweakEntryDataProvider: UICollectionViewDataSource {
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(
-            withReuseIdentifier: Strings.tweakStateCell,
+            withReuseIdentifier: Strings.tweakItemStateCheckboxSid,
             for: indexPath)
-        guard let stateCell = cell as? TweakEntryStateCell else {
+        guard let stateCell = cell as? TweakItemStateCheckbox else {
             fatalError("There should be a cell")
         }
         

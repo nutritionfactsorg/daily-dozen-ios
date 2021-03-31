@@ -181,6 +181,17 @@ class UtilityTableViewController: UITableViewController {
         DatabaseBuiltInTest.shared.doGenerateDBLegacyDataBIT()
     }
     
+    @IBAction func doUtilityTestGenerateStreaksBtn(_ sender: UIButton) {
+        let alert = UIAlertController(title: "", message: Strings.utilityTestStreaksMsg, preferredStyle: .actionSheet)
+        let cancelAction = UIAlertAction(title: Strings.utilityConfirmCancel, style: .cancel, handler: nil)
+        alert.addAction(cancelAction)
+        let clearAction = UIAlertAction(title: Strings.utilityConfirmOK, style: .destructive) { (_: UIAlertAction) -> Void in
+            DatabaseBuiltInTest.shared.doGenerateDBStreaksBIT()
+        }
+        alert.addAction(clearAction)
+        present(alert, animated: true, completion: nil)
+    }
+    
     // MARK: - UI
     
     private struct Strings { // :NYI:LOCALIZE: localize utility strings
@@ -190,6 +201,7 @@ class UtilityTableViewController: UITableViewController {
         static let utilityDbExportMsg = "Exported file named "
         static let utilitySettingsClearMsg = "Clear (erase) all settings?\n\nThis cannot be undone."
         static let utilityTestHistoryClearMsg = "Export the history data to create an importable backup file before clearing the history data. The clear action cannot be undone.\n\nClear (erase) all history data from the database?"
+        static let utilityTestStreaksMsg = "The Simulate Progress action cannot be undone. If needed, export the history data to create an importable backup file.\n\nAdd the Simulated Progress data to the database?"
     }
         
     private func alertTwoButton() {

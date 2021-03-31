@@ -176,6 +176,9 @@
 /* play_sound */
 "reminder.settings.sound"="Sonido";
 
+/* vibrate */
+"reminder.settings.vibrate" = "Vibración";
+
 /* 'On' as in 'On or Off' */
 "reminder.state.on"="On";
 

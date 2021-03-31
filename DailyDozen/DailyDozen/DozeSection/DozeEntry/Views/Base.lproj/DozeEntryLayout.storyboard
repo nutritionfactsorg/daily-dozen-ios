@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="17701" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="M2f-B0-7nZ">
-    <device id="retina4_0" orientation="portrait" appearance="light"/>
+    <device id="retina5_5" orientation="portrait" appearance="light"/>
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17703"/>
@@ -8,38 +8,38 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--Doze Entry View Controller-->
+        <!--DozeEntryViewController-->
         <scene sceneID="dfs-XX-7fX">
             <objects>
-                <viewController id="M2f-B0-7nZ" customClass="DozeEntryViewController" customModule="DailyDozen" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="M2f-B0-7nZ" userLabel="DozeEntryViewController" customClass="DozeEntryViewController" customModule="DailyDozen" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="DkR-UO-MVw">
-                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="HYx-b2-Phb" customClass="RoundedView" customModule="DailyDozen" customModuleProvider="target">
-                                <rect key="frame" x="0.0" y="0.0" width="320" height="40"/>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="HYx-b2-Phb" userLabel="Header RoundedView" customClass="RoundedView" customModule="DailyDozen" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="0.0" width="414" height="40"/>
                                 <subviews>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Servings" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="1HM-mL-ZV9">
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Servings" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="1HM-mL-ZV9" userLabel="Header Servings">
                                         <rect key="frame" x="8" y="10" width="72" height="20"/>
                                         <fontDescription key="fontDescription" name="Helvetica-Bold" family="Helvetica" pointSize="17"/>
                                         <color key="textColor" red="0.078431372550000003" green="0.078431372550000003" blue="0.078431372550000003" alpha="1" colorSpace="calibratedRGB"/>
                                         <nil key="highlightedColor"/>
                                     </label>
-                                    <imageView hidden="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="ic_star" translatesAutoresizingMaskIntoConstraints="NO" id="UHf-fX-jsj">
-                                        <rect key="frame" x="192" y="5" width="30" height="30"/>
+                                    <imageView hidden="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="ic_star" translatesAutoresizingMaskIntoConstraints="NO" id="UHf-fX-jsj" userLabel="Header Star Image">
+                                        <rect key="frame" x="286" y="5" width="30" height="30"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="30" id="bU9-ZN-DeE"/>
                                             <constraint firstAttribute="width" constant="30" id="tbC-4f-Wvz"/>
                                         </constraints>
                                     </imageView>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="0 / 24" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ERa-UT-Rni">
-                                        <rect key="frame" x="230" y="9.5" width="44" height="21"/>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="0 / 24" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ERa-UT-Rni" userLabel="Header Count Label">
+                                        <rect key="frame" x="324" y="9.6666666666666643" width="44" height="21"/>
                                         <fontDescription key="fontDescription" name="HelveticaNeue-Medium" family="Helvetica Neue" pointSize="17"/>
                                         <color key="textColor" red="0.30196078431372547" green="0.30196078431372547" blue="0.30196078431372547" alpha="1" colorSpace="calibratedRGB"/>
                                         <nil key="highlightedColor"/>
                                     </label>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="C1m-C0-IqZ">
-                                        <rect key="frame" x="282" y="5" width="30" height="30"/>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="C1m-C0-IqZ" userLabel="Header History Button">
+                                        <rect key="frame" x="376" y="5" width="30" height="30"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="30" id="KiR-jJ-Hmu"/>
                                             <constraint firstAttribute="width" constant="30" id="lDP-jQ-6UY"/>
@@ -75,38 +75,38 @@
                                     </userDefinedRuntimeAttribute>
                                 </userDefinedRuntimeAttributes>
                             </view>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="V0Q-gc-qoP">
-                                <rect key="frame" x="0.0" y="44" width="320" height="524"/>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="V0Q-gc-qoP" userLabel="Entry View">
+                                <rect key="frame" x="0.0" y="44" width="414" height="692"/>
                                 <subviews>
                                     <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" allowsSelection="NO" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="9Z3-ZU-bjI">
-                                        <rect key="frame" x="0.0" y="0.0" width="320" height="524"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="414" height="692"/>
                                         <color key="backgroundColor" red="0.95294117649999999" green="0.95294117649999999" blue="0.95294117649999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <prototypes>
-                                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="none" indentationWidth="10" reuseIdentifier="dozeTableViewCell" rowHeight="90" id="mu0-2E-Dx4" customClass="DozeEntryTableViewCell" customModule="DailyDozen" customModuleProvider="target">
-                                                <rect key="frame" x="0.0" y="28" width="320" height="90"/>
+                                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="none" indentationWidth="10" reuseIdentifier="DozeEntryRowSid" rowHeight="90" id="mu0-2E-Dx4" userLabel="DozeEntryRow" customClass="DozeEntryRow" customModule="DailyDozen" customModuleProvider="target">
+                                                <rect key="frame" x="0.0" y="28" width="414" height="90"/>
                                                 <autoresizingMask key="autoresizingMask"/>
-                                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="mu0-2E-Dx4" id="SqB-Ue-Rcd">
-                                                    <rect key="frame" x="0.0" y="0.0" width="320" height="90"/>
+                                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="mu0-2E-Dx4" id="SqB-Ue-Rcd" userLabel="DozeEntryRow Content View">
+                                                    <rect key="frame" x="0.0" y="0.0" width="414" height="90"/>
                                                     <autoresizingMask key="autoresizingMask"/>
                                                     <subviews>
-                                                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="xJ4-yh-UEP" userLabel="DozeItemCellRoundedView" customClass="RoundedView" customModule="DailyDozen" customModuleProvider="target">
-                                                            <rect key="frame" x="8" y="8" width="304" height="74"/>
+                                                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="xJ4-yh-UEP" userLabel="DozeEntryRow RoundedView" customClass="RoundedView" customModule="DailyDozen" customModuleProvider="target">
+                                                            <rect key="frame" x="8" y="8" width="398" height="74"/>
                                                             <subviews>
-                                                                <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="ic_dozeBeans" translatesAutoresizingMaskIntoConstraints="NO" id="IS4-2B-57z" userLabel="DozeItemImageView">
+                                                                <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="ic_dozeBeans" translatesAutoresizingMaskIntoConstraints="NO" id="IS4-2B-57z" userLabel="Doze Item Image View">
                                                                     <rect key="frame" x="8" y="8" width="45" height="58"/>
                                                                     <constraints>
                                                                         <constraint firstAttribute="width" constant="45" id="7Oe-pm-jgc"/>
                                                                         <constraint firstAttribute="height" relation="lessThanOrEqual" constant="58" id="FSB-CE-DF9"/>
                                                                     </constraints>
                                                                 </imageView>
-                                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="252" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="qWl-8e-sO6" userLabel="DozeItemHeadingLabel">
-                                                                    <rect key="frame" x="61" y="8" width="207" height="21.5"/>
+                                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="252" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="qWl-8e-sO6" userLabel="Doze Item Heading Label">
+                                                                    <rect key="frame" x="61" y="8.0000000000000018" width="301" height="21.666666666666671"/>
                                                                     <fontDescription key="fontDescription" name="HelveticaNeue-Medium" family="Helvetica Neue" pointSize="18"/>
                                                                     <color key="textColor" white="0.15913340779999999" alpha="1" colorSpace="calibratedWhite"/>
                                                                     <nil key="highlightedColor"/>
                                                                 </label>
-                                                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="infoDark" showsTouchWhenHighlighted="YES" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="YC8-Tt-A17" userLabel="DozeItemInfoButton">
-                                                                    <rect key="frame" x="272" y="10" width="20" height="20"/>
+                                                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="infoDark" showsTouchWhenHighlighted="YES" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="YC8-Tt-A17" userLabel="Doze Item Info Button">
+                                                                    <rect key="frame" x="366" y="10" width="20" height="20"/>
                                                                     <constraints>
                                                                         <constraint firstAttribute="height" constant="20" id="99z-hR-6V2"/>
                                                                         <constraint firstAttribute="width" constant="20" id="r7C-qs-SdF"/>
@@ -116,38 +116,15 @@
                                                                         <action selector="dozeInfoPressed:" destination="M2f-B0-7nZ" eventType="touchUpInside" id="2uF-fr-cSU"/>
                                                                     </connections>
                                                                 </button>
-                                                                <button opaque="NO" contentMode="scaleAspectFit" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="UX8-vv-mKp" userLabel="DozeItemCalendarButton">
+                                                                <button opaque="NO" contentMode="scaleAspectFit" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="UX8-vv-mKp" userLabel="Doze Item Calendar Button">
                                                                     <rect key="frame" x="61" y="40" width="28" height="28"/>
                                                                     <state key="normal" image="ic_calendar"/>
                                                                     <connections>
                                                                         <action selector="dozeCalendarPressed:" destination="M2f-B0-7nZ" eventType="touchUpInside" id="Qyo-qf-d8I"/>
                                                                     </connections>
                                                                 </button>
-                                                                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="bRk-oe-WWO" userLabel="DozeStreakRoundedView" customClass="RoundedView" customModule="DailyDozen" customModuleProvider="target">
-                                                                    <rect key="frame" x="93" y="41.5" width="77.5" height="25"/>
-                                                                    <subviews>
-                                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="100 days" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="cW5-dD-Zy0">
-                                                                            <rect key="frame" x="8" y="4" width="61.5" height="17"/>
-                                                                            <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="15"/>
-                                                                            <color key="textColor" red="0.99999600649999998" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                                                            <nil key="highlightedColor"/>
-                                                                        </label>
-                                                                    </subviews>
-                                                                    <color key="backgroundColor" red="0.46045607328414917" green="0.40152227878570557" blue="0.27918004989624023" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                                                    <constraints>
-                                                                        <constraint firstItem="cW5-dD-Zy0" firstAttribute="centerY" secondItem="bRk-oe-WWO" secondAttribute="centerY" id="PS7-1m-iIT"/>
-                                                                        <constraint firstAttribute="trailing" secondItem="cW5-dD-Zy0" secondAttribute="trailing" constant="8" id="czz-cY-Jnq"/>
-                                                                        <constraint firstAttribute="height" constant="25" id="fYs-wI-Ojq"/>
-                                                                        <constraint firstItem="cW5-dD-Zy0" firstAttribute="leading" secondItem="bRk-oe-WWO" secondAttribute="leading" constant="8" id="u6s-yY-if7"/>
-                                                                    </constraints>
-                                                                    <userDefinedRuntimeAttributes>
-                                                                        <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
-                                                                            <real key="value" value="3"/>
-                                                                        </userDefinedRuntimeAttribute>
-                                                                    </userDefinedRuntimeAttributes>
-                                                                </view>
-                                                                <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" semanticContentAttribute="forceRightToLeft" bounces="NO" scrollEnabled="NO" pagingEnabled="YES" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" bouncesZoom="NO" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="WgI-63-9dY" userLabel="DozeStateCollectionView">
-                                                                    <rect key="frame" x="131" y="34" width="165" height="40"/>
+                                                                <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" semanticContentAttribute="forceRightToLeft" bounces="NO" scrollEnabled="NO" pagingEnabled="YES" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" bouncesZoom="NO" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="WgI-63-9dY" userLabel="Doze Item State Collection">
+                                                                    <rect key="frame" x="225" y="34" width="165" height="40"/>
                                                                     <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                                     <constraints>
                                                                         <constraint firstAttribute="width" constant="165" id="b4F-ac-RQS"/>
@@ -160,8 +137,8 @@
                                                                         <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
                                                                     </collectionViewFlowLayout>
                                                                     <cells>
-                                                                        <collectionViewCell opaque="NO" clipsSubviews="YES" contentMode="center" semanticContentAttribute="forceRightToLeft" reuseIdentifier="dozeStateCell" id="gRx-MN-aZ3" customClass="DozeEntryStateCell" customModule="DailyDozen" customModuleProvider="target">
-                                                                            <rect key="frame" x="0.0" y="7.5" width="25" height="25"/>
+                                                                        <collectionViewCell opaque="NO" clipsSubviews="YES" contentMode="center" semanticContentAttribute="forceRightToLeft" reuseIdentifier="DozeItemStateCheckboxSid" id="gRx-MN-aZ3" userLabel="DozeItemStateCheckbox" customClass="DozeItemStateCheckbox" customModule="DailyDozen" customModuleProvider="target">
+                                                                            <rect key="frame" x="0.0" y="7.666666666666667" width="25" height="25"/>
                                                                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                                             <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO">
                                                                                 <rect key="frame" x="0.0" y="0.0" width="25" height="25"/>
@@ -199,6 +176,29 @@
                                                                         </collectionViewCell>
                                                                     </cells>
                                                                 </collectionView>
+                                                                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="bRk-oe-WWO" userLabel="Doze Item Streak RoundedView" customClass="RoundedView" customModule="DailyDozen" customModuleProvider="target">
+                                                                    <rect key="frame" x="93" y="41.666666666666664" width="77.666666666666686" height="24.999999999999993"/>
+                                                                    <subviews>
+                                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="100 days" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="cW5-dD-Zy0" userLabel="Doze Item Streak Label">
+                                                                            <rect key="frame" x="7.9999999999999964" y="4" width="61.666666666666657" height="17"/>
+                                                                            <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="15"/>
+                                                                            <color key="textColor" red="0.99999600649999998" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                                            <nil key="highlightedColor"/>
+                                                                        </label>
+                                                                    </subviews>
+                                                                    <color key="backgroundColor" red="0.46045607328414917" green="0.40152227878570557" blue="0.27918004989624023" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                                    <constraints>
+                                                                        <constraint firstItem="cW5-dD-Zy0" firstAttribute="centerY" secondItem="bRk-oe-WWO" secondAttribute="centerY" id="PS7-1m-iIT"/>
+                                                                        <constraint firstAttribute="trailing" secondItem="cW5-dD-Zy0" secondAttribute="trailing" constant="8" id="czz-cY-Jnq"/>
+                                                                        <constraint firstAttribute="height" constant="25" id="fYs-wI-Ojq"/>
+                                                                        <constraint firstItem="cW5-dD-Zy0" firstAttribute="leading" secondItem="bRk-oe-WWO" secondAttribute="leading" constant="8" id="u6s-yY-if7"/>
+                                                                    </constraints>
+                                                                    <userDefinedRuntimeAttributes>
+                                                                        <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                                                            <real key="value" value="3"/>
+                                                                        </userDefinedRuntimeAttribute>
+                                                                    </userDefinedRuntimeAttributes>
+                                                                </view>
                                                             </subviews>
                                                             <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                             <constraints>
@@ -245,12 +245,12 @@
                                                 </tableViewCellContentView>
                                                 <color key="backgroundColor" red="0.95294117649999999" green="0.95294117649999999" blue="0.95294117649999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                 <connections>
-                                                    <outlet property="calendarButton" destination="UX8-vv-mKp" id="Id6-rF-pb3"/>
-                                                    <outlet property="infoButton" destination="YC8-Tt-A17" id="dbr-pG-ndq"/>
+                                                    <outlet property="itemCalendarButton" destination="UX8-vv-mKp" id="Id6-rF-pb3"/>
                                                     <outlet property="itemHeadingLabel" destination="qWl-8e-sO6" id="oVh-98-LtU"/>
                                                     <outlet property="itemImage" destination="IS4-2B-57z" id="vlA-b4-uNb"/>
-                                                    <outlet property="stateCollection" destination="WgI-63-9dY" id="BEP-II-uA7"/>
-                                                    <outlet property="streakLabel" destination="cW5-dD-Zy0" id="Uk1-u7-y36"/>
+                                                    <outlet property="itemInfoButton" destination="YC8-Tt-A17" id="dbr-pG-ndq"/>
+                                                    <outlet property="itemStateCollection" destination="WgI-63-9dY" id="BEP-II-uA7"/>
+                                                    <outlet property="itemStreakLabel" destination="cW5-dD-Zy0" id="Uk1-u7-y36"/>
                                                 </connections>
                                             </tableViewCell>
                                         </prototypes>

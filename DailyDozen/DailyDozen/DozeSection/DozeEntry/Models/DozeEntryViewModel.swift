@@ -80,7 +80,7 @@ class DozeEntryViewModel {
     /// - Parameter index: The current row index.
     /// - Returns: The states booland array.
     func dozeItemStates(rowIndex: Int) -> [Bool] {
-        let rowType = DozeEntryViewModel.rowTypeArray[rowIndex]
+        let rowType: DataCountType = DozeEntryViewModel.rowTypeArray[rowIndex]
         let maxServings = rowType.maxServings
         var states = [Bool](repeating: false, count: maxServings)
         if let count = tracker.itemsDict[rowType]?.count {

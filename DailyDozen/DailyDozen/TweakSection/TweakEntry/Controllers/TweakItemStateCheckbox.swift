@@ -1,5 +1,5 @@
 //
-//  TweakEntryStateCell.swift
+//  TweakItemStateCheckbox.swift
 //  DailyDozen
 //
 //  Copyright © 2019 Nutritionfacts.org. All rights reserved.
@@ -7,7 +7,7 @@
 
 import UIKit
 
-class TweakEntryStateCell: UICollectionViewCell {
+class TweakItemStateCheckbox: UICollectionViewCell {
     
     // MARK: - Outlets
     @IBOutlet private weak var checkbox: UIButtonCheckbox!
@@ -24,3 +24,13 @@ class TweakEntryStateCell: UICollectionViewCell {
         checkbox.layer.borderColor = state ? UIColor.greenColor.cgColor : UIColor.grayLightColor.cgColor
     }
 }
+
+// MARK: - States UICollectionViewDelegate
+
+/// `UICollectionViewDelegate` is an extension in `TweakEntryViewController`
+/// 
+/// Provides `collectionView(collectionView: UICollectionView, didSelectItemAt: IndexPath)`
+/// 
+/// - toggles checkmark states
+/// - updates Realm database
+/// - updates streaks

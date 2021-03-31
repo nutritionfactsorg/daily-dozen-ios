@@ -243,4 +243,34 @@ extension Date {
     // End of day = Start of tomorrow minus 1 second
     // End of month = Start of next month minus 1 second
     
+    /// duration 
+    /// selectedWeekdays = [2, 4, 6] // Example - Mon, Wed, Fri
+    func dateArray(
+        duration: Int, /// number of days
+        selectedWeekdays: [Int] = [1, 2, 3, 4, 5, 6, 7] /// week day 1=Sunday
+    ) -> [Date] {
+        let calendar = Calendar.current
+        let today = Date()
+        let dateEnding = calendar.date(byAdding: .day, value: duration, to: today)!
+
+        var matchingDates = [Date]()
+        // Finding matching dates at midnight - adjust as needed
+        let components = DateComponents(hour: 0, minute: 0, second: 0) // midnight
+        calendar.enumerateDates(startingAfter: today, matching: components, matchingPolicy: .nextTime) { 
+            (date, _, stop) in // (date: Date, strict: Bool, stop: Bool)
+            if let date = date {
+                if date <= dateEnding {
+                    let weekDay = calendar.component(.weekday, from: date)
+                    print(date, weekDay)
+                    if selectedWeekdays.contains(weekDay) {
+                        matchingDates.append(date)
+                    }
+                } else {
+                    stop = true
+                }
+            }
+        }
+        return matchingDates
+    }
+    
 }
