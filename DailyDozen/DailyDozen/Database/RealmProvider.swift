@@ -383,13 +383,41 @@ class RealmProvider {
         }
     }
     
-    func updateStreak(_ streak: Int, date: Date, countType: DataCountType) {
+    //if streak > 0 {
+    //    let yesterday = dataProvider.viewModel.trackerDate.adding(.day, value: -1)!
+    //    // previous day's streak +1
+    //    // :NYI: just read the streak for item from Realm given PID
+    //    let yesterdayTracker = realm.getDailyTracker(date: yesterday)
+    //    if let yesterdayStreak = yesterdayTracker.itemsDict[itemType]?.streak {
+    //        streak += yesterdayStreak
+    //    }
+    //}
+
+    func updateStreak(itemCompleted: Bool, date: Date, countType: DataCountType) {
         let pid = DataCountRecord.pid(date: date, countType: countType)
-        updateStreak(streak, pid: pid)
+        saveDailyTracker()
+        do {
+            try realm.write {
+                realm.create(
+                    DataCountRecord.self, 
+                    value: ["pid": pid, "streak": streak],
+                    update: Realm.UpdatePolicy.all
+                )
+            }
+        } catch {
+            LogService.shared.error(
+                "RealmProvider updateStreak \(error.localizedDescription)"
+            )
+        }
+    }
+    
+    func updateStreak_WAS(_ streak: Int, date: Date, countType: DataCountType) {
+        let pid = DataCountRecord.pid(date: date, countType: countType)
+        updateStreak_WAS(streak, pid: pid)
     }
     
     /// :!!!:NYI: updateStreak() needs to do more than a single value
-    func updateStreak(_ streak: Int, pid: String) {
+    func updateStreak_WAS(_ streak: Int, pid: String) {
         saveDailyTracker()
         do {
             try realm.write {

@@ -152,6 +152,8 @@ extension DozeEntryViewController: UICollectionViewDelegate {
         let rowIndex = collectionView.tag // which item
         let checkmarkIndex = indexPath.row // which checkmark
         var checkmarkStates = dataProvider.viewModel.dozeItemStates(rowIndex: rowIndex)
+        let itemDate = dataProvider.viewModel.trackerDate 
+        let itemType = dataProvider.viewModel.itemType(rowIndex: rowIndex)
         let itemPid = dataProvider.viewModel.itemPid(rowIndex: rowIndex)
         
         var stateTrueCounterOld = 0
@@ -176,25 +178,14 @@ extension DozeEntryViewController: UICollectionViewDelegate {
             fatalError("There should be a cell")
         }
         cell.configure(with: checkmarkStates[indexPath.row])
-        let itemType = dataProvider.viewModel.itemType(rowIndex: rowIndex)
         
         // Update Tracker Count
         let countNow = checkmarkStates.filter { $0 }.count
         realm.saveCount(countNow, pid: itemPid)
         
         // Update Tracker Streak
-        // :NYI: streak needs to include more than today+yesterday
-        var streak = checkmarkStates.count == countNow ? 1 : 0
-        if streak > 0 {
-            let yesterday = dataProvider.viewModel.trackerDate.adding(.day, value: -1)!
-            // previous day's streak +1
-            // :NYI: just read the streak for item from Realm given PID
-            let yesterdayTracker = realm.getDailyTracker(date: yesterday)
-            if let yesterdayStreak = yesterdayTracker.itemsDict[itemType]?.streak {
-                streak += yesterdayStreak
-            }
-        }
-        realm.updateStreak(streak, pid: itemPid)
+        let itemCompleted = checkmarkStates.count == countNow
+        realm.updateStreak(itemCompleted: itemCompleted, date: itemDate, countType: itemType)
         
         tableView.reloadData()
         

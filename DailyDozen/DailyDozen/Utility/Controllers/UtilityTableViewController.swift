@@ -181,6 +181,7 @@ class UtilityTableViewController: UITableViewController {
         DatabaseBuiltInTest.shared.doGenerateDBLegacyDataBIT()
     }
     
+    /// "Simulate Progress"
     @IBAction func doUtilityTestGenerateStreaksBtn(_ sender: UIButton) {
         let alert = UIAlertController(title: "", message: Strings.utilityTestStreaksMsg, preferredStyle: .actionSheet)
         let cancelAction = UIAlertAction(title: Strings.utilityConfirmCancel, style: .cancel, handler: nil)

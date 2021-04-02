@@ -49,7 +49,7 @@ class DozeEntryRow: UITableViewCell {
         //itemType.maxServings
         
         if let superview = itemStreakLabel.superview {
-            if streak > oneDay {
+            if streak > oneDay { // "1 day" streaks are not shown
                 var streakFormat = NSLocalizedString("streakDaysFormat", comment: "streak days format")
                 if itemType == .dozeBeverages {
                     // Daily Dozen beverages has 5 checkboxs overlays the streak indicator on small screens.
