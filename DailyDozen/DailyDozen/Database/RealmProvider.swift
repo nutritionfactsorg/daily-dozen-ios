@@ -330,18 +330,17 @@ class RealmProvider {
     }
     
     func saveCount(_ count: Int, date: Date, countType: DataCountType) {
-        let id = DataCountRecord.pid(date: date, countType: countType)
-        saveCount(count, pid: id)
-    }
-    
-    func saveCount(_ count: Int, pid: String) {
         saveDailyTracker()
+    
+        let pid = DataCountRecord.pid(date: date, countType: countType)
         do {
             try realm.write {
                 realm.create(
                     DataCountRecord.self,
                     value: ["pid": pid, "count": count],
                     update: Realm.UpdatePolicy.all)
+                let itemCompleted = countType.maxServings == count       
+                updateStreak(itemCompleted: itemCompleted, date: date, countType: countType)
             }
         } catch {
             LogService.shared.error(
@@ -380,57 +379,6 @@ class RealmProvider {
                     "RealmProvider deleteWeight \(error.localizedDescription)"
                 )
             }
-        }
-    }
-    
-    //if streak > 0 {
-    //    let yesterday = dataProvider.viewModel.trackerDate.adding(.day, value: -1)!
-    //    // previous day's streak +1
-    //    // :NYI: just read the streak for item from Realm given PID
-    //    let yesterdayTracker = realm.getDailyTracker(date: yesterday)
-    //    if let yesterdayStreak = yesterdayTracker.itemsDict[itemType]?.streak {
-    //        streak += yesterdayStreak
-    //    }
-    //}
-
-    func updateStreak(itemCompleted: Bool, date: Date, countType: DataCountType) {
-        let pid = DataCountRecord.pid(date: date, countType: countType)
-        saveDailyTracker()
-        do {
-            try realm.write {
-                realm.create(
-                    DataCountRecord.self, 
-                    value: ["pid": pid, "streak": streak],
-                    update: Realm.UpdatePolicy.all
-                )
-            }
-        } catch {
-            LogService.shared.error(
-                "RealmProvider updateStreak \(error.localizedDescription)"
-            )
-        }
-    }
-    
-    func updateStreak_WAS(_ streak: Int, date: Date, countType: DataCountType) {
-        let pid = DataCountRecord.pid(date: date, countType: countType)
-        updateStreak_WAS(streak, pid: pid)
-    }
-    
-    /// :!!!:NYI: updateStreak() needs to do more than a single value
-    func updateStreak_WAS(_ streak: Int, pid: String) {
-        saveDailyTracker()
-        do {
-            try realm.write {
-                realm.create(
-                    DataCountRecord.self, 
-                    value: ["pid": pid, "streak": streak],
-                    update: Realm.UpdatePolicy.all
-                )
-            }
-        } catch {
-            LogService.shared.error(
-                "RealmProvider updateStreak \(error.localizedDescription)"
-            )
         }
     }
     
@@ -474,5 +422,122 @@ class RealmProvider {
             )
         }
     }
+    
+    // MARK: Progress Streak Indicator Management
+    
+    // Note: The progress streak is a derived value. 
+    // The progress streak indicates the number of consecutive days completed
+    // for a specific topic.
+    
+    //if streak > 0 {
+    //    let yesterday = dataProvider.viewModel.trackerDate.adding(days: -1)
+    //    // previous day's streak +1
+    //    // :NYI: just read the streak for item from Realm given PID
+    //    let yesterdayTracker = realm.getDailyTracker(date: yesterday)
+    //    if let yesterdayStreak = yesterdayTracker.itemsDict[itemType]?.streak {
+    //        streak += yesterdayStreak
+    //    }
+    //}
+    
+    private func updateStreak(itemCompleted: Bool, date: Date, countType: DataCountType) {
+        saveDailyTracker()
+        if itemCompleted {
+            updateStreakCompleted(date: date, countType: countType)
+        } else {
+            updateStreakIncomplete(date: date, countType: countType)
+        }
+    }
+    
+    private func updateStreakCompleted(date: Date, countType: DataCountType) {
+        // check max count for "this" date
+        let thisPid = DataCountRecord.pid(date: date, countType: countType)
+        guard var thisRec = realm.object(ofType: DataCountRecord.self, forPrimaryKey: thisPid),
+              thisRec.count == countType.maxServings
+        else {
+            LogService.shared.error("""
+                Invalid updateStreakCompleted: \(thisPid)
+                * Note: persist the record count before updating the progress streak.
+                """)
+            return
+        }
+        
+        // check if previous date exists
+        var prevDay = date.adding(days: -1)
+        var prevPid = DataCountRecord.pid(date: prevDay, countType: countType)
+        guard var prevRec = realm.object(ofType: DataCountRecord.self, forPrimaryKey: prevPid) else {
+            do {
+                // case: previous is nil, thus this streak is 1
+                try realm.write { thisRec.streak = 1 }
+            } catch { LogService.shared.error("\(error)") }
+            return
+        }
+        
+        // check if previous date was not completed
+        if prevRec.count < countType.maxServings { // first check truth
+            do {
+                // case: previous date not completed, thus this streak is 1
+                try realm.write { thisRec.streak = 1 }
+            } catch { LogService.shared.error("\(error)") }
+            return
+        }
+        
+        // deterine expected streak
+        var countDown = prevRec.streak
+        var countExpected = countDown + 1
+        var countUp = 1
+                
+        var notDone = true
+        var needsDataCleanup = false
+        while notDone {
+            if let prevRecord = prevObj {
+                
+                prevDay = date.adding(days: -1)
+                prevPid = DataCountRecord.pid(date: prevDay, countType: countType)
+                prevObj = realm.object(ofType: DataCountRecord.self, forPrimaryKey: prevPid)
+                streakProgress += 1
+            } else {
+                notDone = false  
+            }
+        }
+        
+        if needsDataCleanup {
+            
+        }
+        
+        // find streak end
+        
+        
+    }
+    
+    private func updateStreakIncomplete(date: Date, countType: DataCountType) {
+        // 
+        let pid = DataCountRecord.pid(date: date, countType: countType)
+                
+        // check tomorrow
+        var nextDay = date.adding(days: 1)
+        var nextDayPid = DataCountRecord.pid(date: nextDay, countType: countType)
+        
+        
+        while let d = realm.object(ofType: DataWeightRecord.self, forPrimaryKey: nextDayPid) {
+            
+        }
+        
+        
+        
+        do {
+            try realm.write {
+                realm.create(
+                    DataCountRecord.self, 
+                    value: ["pid": pid, "streak": 0],
+                    update: Realm.UpdatePolicy.all
+                )
+            }
+        } catch {
+            LogService.shared.error(
+                "RealmProvider updateStreakIncomplete \(error.localizedDescription)"
+            )
+        }
+    }
+
     
 }

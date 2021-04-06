@@ -112,9 +112,8 @@ class WeightEntryPagerViewController: UIViewController {
     @IBAction private func viewSwiped(_ sender: UISwipeGestureRecognizer) {
         let today = DateManager.currentDatetime()
         let interval = sender.direction == .left ? -1 : 1
-        guard let swipedDate = weightDateBarPicker.date.adding(.day, value: interval), 
-              swipedDate <= today 
-        else { return }
+        let swipedDate = weightDateBarPicker.date.adding(days: interval)
+        guard swipedDate <= today else { return }
 
         weightDateBarPicker.setDate(swipedDate, animated: false)
         weightDateBarPicker.maximumDate = DateManager.currentDatetime() // today

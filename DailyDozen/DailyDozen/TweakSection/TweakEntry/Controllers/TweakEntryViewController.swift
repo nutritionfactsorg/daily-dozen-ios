@@ -203,11 +203,7 @@ extension TweakEntryViewController: UICollectionViewDelegate {
         
         // Update Tracker Count
         let countNow = checkmarkStates.filter { $0 }.count
-        realm.saveCount(countNow, pid: itemPid)
-        
-        // Update Tracker Streak
-        let itemCompleted = checkmarkStates.count == countNow       
-        realm.updateStreak(itemCompleted: itemCompleted, date: itemDate, countType: itemType)
+        realm.saveCount(countNow, date: itemDate, countType: itemType)
         
         tableView.reloadData()
         

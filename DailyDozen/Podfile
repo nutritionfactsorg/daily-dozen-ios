@@ -23,7 +23,7 @@ def common_pods
   ## https://cocoapods.org/pods/ActiveLabel
   ## https://github.com/optonaut/ActiveLabel.swift
   ## Swift: 5.0    
-  ## Swift Package Manager: 4.2 :APPEARS_OK:
+  ## Swift Package Manager: 4.2
   pod 'ActiveLabel', '~> 1.1.0'
   
   ## https://cocoapods.org/pods/Charts
@@ -41,17 +41,21 @@ def common_pods
   
   ## https://cocoapods.org/pods/RealmSwift
   ## https://github.com/realm/realm-cocoa
+  ## https://docs.mongodb.com/realm-legacy/docs/swift/4.4.1/index.html
   ## Swift: looks like 5
   ## C++: cxx14
   ## Swift Package Manager: 5.0
-  ## pod 'RealmSwift', '~> 3.18.0' ## Used in Daily Dozen release
-  ## pod 'RealmSwift', '~> 3.21.0' ## Skipped
   pod 'RealmSwift', '~> 4.4.1'     ## 
   
   ## https://cocoapods.org/pods/SimpleAnimation
   ## https://github.com/keithito/SimpleAnimation
-  ## Swift: 4.0 ... maybe ok at 4.2
-  ## Swift Package Manager: unspecified
+  ## version 0.4.2 2019.02.16
+  ##
+  ## import: *PagerViewController
+  ## use: fadeOut, fadeIn, slideOut, popIn
+  ##
+  ## SWIFT_VERSION: 3.0, 4.0
+  ## Swift Package Manager: unspecified thus 4.0
   pod 'SimpleAnimation', '~> 0.4.2'
 end
 

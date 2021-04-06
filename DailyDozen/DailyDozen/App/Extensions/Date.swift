@@ -217,6 +217,16 @@ extension Date {
         return Calendar.current.date(byAdding: component, value: value, to: self)
     }
     
+    /// Returns a new date by adding a number of days.
+    ///
+    /// - Parameters:
+    ///   - value: The calendar component value.
+    /// - Returns: A new date
+    func adding(days: Int) -> Date {
+        // unwrap since Calendar.Component.day is a reliable constraint.
+        return Calendar.current.date(byAdding: .day, value: days, to: self)!
+    }
+    
     // :???: candidate code to be either improved or deleted
     //    var startOfDay: Date {
     //        return Calendar.current.startOfDay(for: self)

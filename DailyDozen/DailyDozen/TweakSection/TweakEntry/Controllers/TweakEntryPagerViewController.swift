@@ -114,9 +114,8 @@ class TweakEntryPagerViewController: UIViewController {
     @IBAction private func viewSwiped(_ sender: UISwipeGestureRecognizer) {
         let today = DateManager.currentDatetime()
         let interval = sender.direction == .left ? -1 : 1
-        guard let swipedDate = tweakDateBarPicker.date.adding(.day, value: interval), 
-              swipedDate <= today 
-        else { return }
+        let swipedDate = tweakDateBarPicker.date.adding(days: interval)
+        guard swipedDate <= today else { return }
 
         tweakDateBarPicker.setDate(swipedDate, animated: false)
         tweakDateBarPicker.maximumDate = DateManager.currentDatetime() // today

@@ -118,9 +118,8 @@ class DozeEntryPagerViewController: UIViewController {
     @IBAction private func viewSwiped(_ sender: UISwipeGestureRecognizer) {
         let today = DateManager.currentDatetime()
         let interval = sender.direction == .left ? -1 : 1
-        guard let swipedDate = dozeDateBarPicker.date.adding(.day, value: interval), 
-              swipedDate <= today 
-        else { return }
+        let swipedDate = dozeDateBarPicker.date.adding(days: interval)
+        guard swipedDate <= today else { return }
         
         dozeDateBarPicker.setDate(swipedDate, animated: false)
         dozeDateBarPicker.maximumDate = DateManager.currentDatetime() // today
