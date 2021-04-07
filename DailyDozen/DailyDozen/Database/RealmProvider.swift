@@ -339,8 +339,7 @@ class RealmProvider {
                     DataCountRecord.self,
                     value: ["pid": pid, "count": count],
                     update: Realm.UpdatePolicy.all)
-                let itemCompleted = countType.maxServings == count       
-                updateStreak(itemCompleted: itemCompleted, date: date, countType: countType)
+                updateStreak(count: count, date: date, countType: countType)
             }
         } catch {
             LogService.shared.error(
@@ -439,8 +438,8 @@ class RealmProvider {
     //    }
     //}
     
-    private func updateStreak(itemCompleted: Bool, date: Date, countType: DataCountType) {
-        saveDailyTracker()
+    private func updateStreak(count: Int, date: Date, countType: DataCountType) {
+        let itemCompleted = countType.maxServings == count
         if itemCompleted {
             updateStreakCompleted(date: date, countType: countType)
         } else {
@@ -449,95 +448,152 @@ class RealmProvider {
     }
     
     private func updateStreakCompleted(date: Date, countType: DataCountType) {
-        // check max count for "this" date
+        // setup this date
         let thisPid = DataCountRecord.pid(date: date, countType: countType)
-        guard var thisRec = realm.object(ofType: DataCountRecord.self, forPrimaryKey: thisPid),
-              thisRec.count == countType.maxServings
+        guard let thisRec = realm.object(ofType: DataCountRecord.self, forPrimaryKey: thisPid)
         else {
-            LogService.shared.error("""
-                Invalid updateStreakCompleted: \(thisPid)
-                * Note: persist the record count before updating the progress streak.
-                """)
+            LogService.shared.error("Invalid updateStreakCompleted: \(thisPid) not retrieved")
             return
         }
         
-        // check if previous date exists
+        // set this day's streak based on previous date
         var prevDay = date.adding(days: -1)
         var prevPid = DataCountRecord.pid(date: prevDay, countType: countType)
-        guard var prevRec = realm.object(ofType: DataCountRecord.self, forPrimaryKey: prevPid) else {
-            do {
-                // case: previous is nil, thus this streak is 1
-                try realm.write { thisRec.streak = 1 }
-            } catch { LogService.shared.error("\(error)") }
-            return
+        if let yesterday = realm.object(ofType: DataCountRecord.self, forPrimaryKey: prevPid) {
+            thisRec.streak = yesterday.streak + 1
+        } else {
+            thisRec.streak = 1
         }
         
-        // check if previous date was not completed
-        if prevRec.count < countType.maxServings { // first check truth
-            do {
-                // case: previous date not completed, thus this streak is 1
-                try realm.write { thisRec.streak = 1 }
-            } catch { LogService.shared.error("\(error)") }
-            return
+        // check & update next (future) date streak values
+        var nextMaxValidStreak = thisRec.streak + 1
+        var nextDay = date.adding(days: 1)
+        var nextPid = DataCountRecord.pid(date: nextDay, countType: countType)
+        while let nextRec = realm.object(ofType: DataCountRecord.self, forPrimaryKey: nextPid) {
+            if nextRec.count < countType.maxServings {
+                if nextRec.streak == 0 {
+                    // Done. Next day streak not impacted by adjacent past streak update.
+                    break   
+                } else {                    
+                    LogService.shared.error("updateStreakCompleted \(nextPid) count:\(nextRec.count) < maxServings\(countType.maxServings) with streak:\(nextRec.streak) should not occur.")
+                    nextRec.streak = 0
+                    // Note: checking additional dates stops here. Investigate the error.
+                    break
+                }
+            } else if nextRec.count == countType.maxServings {
+                if nextRec.streak != nextMaxValidStreak {
+                    nextRec.streak = nextMaxValidStreak // Update
+                } else {
+                    break // Done.                        
+                }
+                nextMaxValidStreak += 1
+            } else if nextRec.count > countType.maxServings {
+                LogService.shared.error("updateStreakCompleted \(nextPid) count:\(nextRec.count) > maxServings\(countType.maxServings) should not occur.")
+                nextRec.count = countType.maxServings
+                nextRec.streak = nextMaxValidStreak
+                // Note: checking additional dates stops here. Investigate the error.
+                break
         }
         
-        // deterine expected streak
-        var countDown = prevRec.streak
-        var countExpected = countDown + 1
-        var countUp = 1
+            nextDay = nextDay.adding(days: 1)
+            nextPid = DataCountRecord.pid(date: nextDay, countType: countType)
+        }
                 
-        var notDone = true
-        var needsDataCleanup = false
-        while notDone {
-            if let prevRecord = prevObj {
-                
+        // count to verify this day's streak value.
+        var streakCount = 1
+        while let prevRec = realm.object(ofType: DataCountRecord.self, forPrimaryKey: prevPid) {
+            if prevRec.count == countType.maxServings {
+                streakCount += 1                
+            } else {
+                break
+            }
                 prevDay = date.adding(days: -1)
                 prevPid = DataCountRecord.pid(date: prevDay, countType: countType)
-                prevObj = realm.object(ofType: DataCountRecord.self, forPrimaryKey: prevPid)
-                streakProgress += 1
-            } else {
-                notDone = false  
             }
+        
+        if streakCount == thisRec.streak {
+            return // Done. Expected outcome.
         }
         
-        if needsDataCleanup {
-            
+        // check & update previous (past) date streak values
+        prevDay = date.adding(days: -1) // reset
+        prevPid = DataCountRecord.pid(date: prevDay, countType: countType) // reset
+        var prevMaxValidStreak = thisRec.streak - 1
+        while let prevRec = realm.object(ofType: DataCountRecord.self, forPrimaryKey: prevPid) {
+            if prevRec.count < countType.maxServings {
+                if prevRec.streak == 0 {
+                    // Done. Previous day streak not impacted by adjacent past streak update.
+                    break   
+                } else {                    
+                    LogService.shared.error("updateStreakIncomplete \(prevPid) count:\(prevRec.count) < maxServings\(countType.maxServings) with streak:\(prevRec.streak) should not occur.")
+                    prevRec.streak = 0
+                    // Note: checking additional dates stops here. Investigate the error.
+                    break
+                }
+            } else if prevRec.count == countType.maxServings {
+                if prevRec.streak != prevMaxValidStreak {
+                    prevRec.streak = prevMaxValidStreak
+                } else {
+                    break // Done.                        
+                }
+                prevMaxValidStreak -= 1
+            } else if prevRec.count > countType.maxServings {
+                LogService.shared.error("updateStreakIncomplete \(prevPid) count:\(prevRec.count) > maxServings\(countType.maxServings) should not occur.")
+                prevRec.count = countType.maxServings
+                prevRec.streak = prevMaxValidStreak
+                // Note: checking additional dates stops here. Investigate the error.
+                break
         }
         
-        // find streak end
-        
-        
+            prevDay = prevDay.adding(days: -1)
+            prevPid = DataCountRecord.pid(date: prevDay, countType: countType)
+        }        
     }
     
     private func updateStreakIncomplete(date: Date, countType: DataCountType) {
-        // 
-        let pid = DataCountRecord.pid(date: date, countType: countType)
+        // setup this date
+        let thisPid = DataCountRecord.pid(date: date, countType: countType)
+        guard let thisRec = realm.object(ofType: DataCountRecord.self, forPrimaryKey: thisPid)
+        else {
+            LogService.shared.error("Invalid updateStreakIncomplete: \(thisPid) not retrieved")
+            return
+        }
+        // this day's streak is 0
+        thisRec.streak = 0
                 
-        // check tomorrow
+        // check & update next (future) date streak values
+        var nextMaxValidStreak = 1
         var nextDay = date.adding(days: 1)
-        var nextDayPid = DataCountRecord.pid(date: nextDay, countType: countType)
-        
-        
-        while let d = realm.object(ofType: DataWeightRecord.self, forPrimaryKey: nextDayPid) {
-            
+        var nextPid = DataCountRecord.pid(date: nextDay, countType: countType)
+        while let nextRec = realm.object(ofType: DataCountRecord.self, forPrimaryKey: nextPid) {
+            if nextRec.count < countType.maxServings {
+                if nextRec.streak == 0 {
+                    // Done. Next day streak not impacted by adjacent past streak update.
+                    break   
+                } else {                    
+                    LogService.shared.error("updateStreakIncomplete \(nextPid) count:\(nextRec.count) < maxServings\(countType.maxServings) with streak:\(nextRec.streak) should not occur.")
+                    nextRec.streak = 0
+                    // Note: checking additional dates stops here. Investigate the error.
+                    break
+                }
+            } else if nextRec.count == countType.maxServings {
+                if nextRec.streak != nextMaxValidStreak {
+                    nextRec.streak = nextMaxValidStreak // update
+                } else {
+                    break // Done.
+                }
+                nextMaxValidStreak += 1
+            } else if nextRec.count > countType.maxServings {
+                LogService.shared.error("updateStreakIncomplete \(nextPid) count:\(nextRec.count) > maxServings\(countType.maxServings) should not occur.")
+                nextRec.count = countType.maxServings
+                nextRec.streak = nextMaxValidStreak
+                // Note: checking additional dates stops here. Investigate the error.
+                break
         }
         
-        
-        
-        do {
-            try realm.write {
-                realm.create(
-                    DataCountRecord.self, 
-                    value: ["pid": pid, "streak": 0],
-                    update: Realm.UpdatePolicy.all
-                )
+            nextDay = nextDay.adding(days: 1)
+            nextPid = DataCountRecord.pid(date: nextDay, countType: countType)
             }
-        } catch {
-            LogService.shared.error(
-                "RealmProvider updateStreakIncomplete \(error.localizedDescription)"
-            )
         }
-    }
-
     
 }

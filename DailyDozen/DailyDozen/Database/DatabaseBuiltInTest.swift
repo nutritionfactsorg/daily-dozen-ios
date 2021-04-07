@@ -215,6 +215,9 @@ public struct DatabaseBuiltInTest {
         for i in 0 ..< 2 {
             let date = today.adding(days: -i)
                 realmDb.saveCount(3, date: date, countType: .dozeFruitsOther)
+        }
+        for i in 0 ..< 2 {
+            let date = today.adding(days: -i)
                 realmDb.saveCount(3, date: date, countType: .tweakMealVinegar)
         }
         // 7 days 
@@ -231,16 +234,16 @@ public struct DatabaseBuiltInTest {
                 realmDb.saveCount(3, date: date, countType: .dozeBeans)
                 realmDb.saveCount(3, date: date, countType: .tweakMealWater)
             }
-        // 999 days 
-        print(":BIT: 999 days …")
-        for i in 0 ..< 999 {
+        // 100 days 
+        print(":BIT: 100 days …")
+        for i in stride(from: 0, to: 99, by: 1) {
             let date = today.adding(days: -i)
-                realmDb.saveCount(1, date: date, countType: .dozeFruitsOther)
-                realmDb.saveCount(3, date: date, countType: .dozeWholeGrains)
+            //realmDb.saveCount(1, date: date, countType: .dozeFruitsOther)
+            //realmDb.saveCount(3, date: date, countType: .dozeWholeGrains)
                 realmDb.saveCount(5, date: date, countType: .dozeBeverages)
-                realmDb.saveCount(1, date: date, countType: .tweakDailyNutriYeast)
-                realmDb.saveCount(2, date: date, countType: .tweakDailyCumin)
-                realmDb.saveCount(3, date: date, countType: .tweakDailyGreenTea)
+            //realmDb.saveCount(1, date: date, countType: .tweakDailyNutriYeast)
+            //realmDb.saveCount(2, date: date, countType: .tweakDailyCumin)
+            //realmDb.saveCount(3, date: date, countType: .tweakDailyGreenTea)
         }
         print(":BIT: Simulate Progress done.")
 

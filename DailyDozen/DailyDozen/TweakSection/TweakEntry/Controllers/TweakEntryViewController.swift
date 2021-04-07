@@ -175,7 +175,6 @@ extension TweakEntryViewController: UICollectionViewDelegate {
         var checkmarkStates = dataProvider.viewModel.tweakItemStates(rowIndex: rowIndex)
         let itemDate = dataProvider.viewModel.trackerDate 
         let itemType = dataProvider.viewModel.itemType(rowIndex: rowIndex)
-        let itemPid = dataProvider.viewModel.itemPid(rowIndex: rowIndex)
         
         var stateTrueCounterOld = 0
         for state in checkmarkStates where state {
