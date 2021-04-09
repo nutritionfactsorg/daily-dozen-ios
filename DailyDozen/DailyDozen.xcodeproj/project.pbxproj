@@ -13,6 +13,10 @@
 		4916451823EE4E440077731D /* TweakDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4916451723EE4E440077731D /* TweakDetailViewController.swift */; };
 		4916451A23EE51310077731D /* TweakDetailDataProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4916451923EE51310077731D /* TweakDetailDataProvider.swift */; };
 		4916451D23EE53610077731D /* TweakDetailData.json in Resources */ = {isa = PBXBuildFile; fileRef = 4916451F23EE53610077731D /* TweakDetailData.json */; };
+		492013C6261FF61900A5D635 /* DozeEntryRow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 492013C4261FF61900A5D635 /* DozeEntryRow.swift */; };
+		492013C7261FF61900A5D635 /* DozeItemStateCheckbox.swift in Sources */ = {isa = PBXBuildFile; fileRef = 492013C5261FF61900A5D635 /* DozeItemStateCheckbox.swift */; };
+		492013CD261FF64D00A5D635 /* TweakEntryRow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 492013CB261FF64C00A5D635 /* TweakEntryRow.swift */; };
+		492013CE261FF64D00A5D635 /* TweakItemStateCheckbox.swift in Sources */ = {isa = PBXBuildFile; fileRef = 492013CC261FF64C00A5D635 /* TweakItemStateCheckbox.swift */; };
 		49208ADC2585F16F00E994CA /* DateManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49208ADB2585F16F00E994CA /* DateManager.swift */; };
 		492474A323DB677A00D7D918 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 492474A123DB677A00D7D918 /* InfoPlist.strings */; };
 		492A1E702409B3FA00F6C37C /* TweakDetailActivityCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 492A1E6F2409B3FA00F6C37C /* TweakDetailActivityCell.swift */; };
@@ -66,8 +70,6 @@
 		497A8F0C2474AFC8001BEDCA /* DataWeightValues.swift in Sources */ = {isa = PBXBuildFile; fileRef = 497A8F0B2474AFC8001BEDCA /* DataWeightValues.swift */; };
 		497B137223CD72E600BC2488 /* InfoMenuAboutLayout.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 497B137423CD72E600BC2488 /* InfoMenuAboutLayout.storyboard */; };
 		497F91B2240990B600464E4E /* TweakDetailSections.swift in Sources */ = {isa = PBXBuildFile; fileRef = 497F91B1240990B600464E4E /* TweakDetailSections.swift */; };
-		4981708F2391B1790033882C /* TweakEntryStateCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4981708E2391B1790033882C /* TweakEntryStateCell.swift */; };
-		498170912391B19E0033882C /* TweakEntryTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 498170902391B19E0033882C /* TweakEntryTableViewCell.swift */; };
 		498170952391B6AB0033882C /* TweakEntrySections.swift in Sources */ = {isa = PBXBuildFile; fileRef = 498170942391B6AB0033882C /* TweakEntrySections.swift */; };
 		4981709B2391B85B0033882C /* TweakHistoryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4981709A2391B85B0033882C /* TweakHistoryViewController.swift */; };
 		4981709D2391B89E0033882C /* TweakHistoryViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4981709C2391B89E0033882C /* TweakHistoryViewModel.swift */; };
@@ -109,10 +111,8 @@
 		CF4902951FD91412000EAB68 /* ChartView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF4902941FD91412000EAB68 /* ChartView.swift */; };
 		CF4902971FD917D4000EAB68 /* ControlPanel.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF4902961FD917D4000EAB68 /* ControlPanel.swift */; };
 		CF49029B1FD91F01000EAB68 /* DozeHistoryViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF49029A1FD91F01000EAB68 /* DozeHistoryViewModel.swift */; };
-		CF4DECF71F9DF2A500DA094B /* DozeEntryTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF4DECF61F9DF2A500DA094B /* DozeEntryTableViewCell.swift */; };
 		CF4DECF91F9DF82900DA094B /* DozeEntryDataProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF4DECF81F9DF82900DA094B /* DozeEntryDataProvider.swift */; };
 		CF55BC4F2020450D00003D0D /* AlertBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF55BC4E2020450D00003D0D /* AlertBuilder.swift */; };
-		CF5B28B11FA0A2C500D57A48 /* DozeEntryStateCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF5B28B01FA0A2C500D57A48 /* DozeEntryStateCell.swift */; };
 		CF64DF311FB5DFCF00B4D124 /* DozeDetailSizeCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF64DF301FB5DFCF00B4D124 /* DozeDetailSizeCell.swift */; };
 		CF64DF331FB5E03C00B4D124 /* DozeDetailTypeCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF64DF321FB5E03C00B4D124 /* DozeDetailTypeCell.swift */; };
 		CF987C281F9E157300D4893E /* Item.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF987C271F9E157300D4893E /* Item.swift */; };
@@ -164,6 +164,10 @@
 		4916451923EE51310077731D /* TweakDetailDataProvider.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TweakDetailDataProvider.swift; sourceTree = "<group>"; };
 		4916451E23EE53610077731D /* Base */ = {isa = PBXFileReference; lastKnownFileType = text.json; name = Base; path = Base.lproj/TweakDetailData.json; sourceTree = "<group>"; };
 		4916452023EE53640077731D /* es */ = {isa = PBXFileReference; lastKnownFileType = text.json; name = es; path = es.lproj/TweakDetailData.json; sourceTree = "<group>"; };
+		492013C4261FF61900A5D635 /* DozeEntryRow.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DozeEntryRow.swift; sourceTree = "<group>"; };
+		492013C5261FF61900A5D635 /* DozeItemStateCheckbox.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DozeItemStateCheckbox.swift; sourceTree = "<group>"; };
+		492013CB261FF64C00A5D635 /* TweakEntryRow.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TweakEntryRow.swift; sourceTree = "<group>"; };
+		492013CC261FF64C00A5D635 /* TweakItemStateCheckbox.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TweakItemStateCheckbox.swift; sourceTree = "<group>"; };
 		49208ADB2585F16F00E994CA /* DateManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DateManager.swift; sourceTree = "<group>"; };
 		492474A223DB677A00D7D918 /* es */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = es; path = es.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		492A1E6F2409B3FA00F6C37C /* TweakDetailActivityCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TweakDetailActivityCell.swift; sourceTree = "<group>"; };
@@ -268,8 +272,6 @@
 		497A8F0B2474AFC8001BEDCA /* DataWeightValues.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataWeightValues.swift; sourceTree = "<group>"; };
 		497B137323CD72E600BC2488 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/InfoMenuAboutLayout.storyboard; sourceTree = "<group>"; };
 		497F91B1240990B600464E4E /* TweakDetailSections.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TweakDetailSections.swift; sourceTree = "<group>"; };
-		4981708E2391B1790033882C /* TweakEntryStateCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TweakEntryStateCell.swift; sourceTree = "<group>"; };
-		498170902391B19E0033882C /* TweakEntryTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TweakEntryTableViewCell.swift; sourceTree = "<group>"; };
 		498170942391B6AB0033882C /* TweakEntrySections.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TweakEntrySections.swift; sourceTree = "<group>"; };
 		4981709A2391B85B0033882C /* TweakHistoryViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TweakHistoryViewController.swift; sourceTree = "<group>"; };
 		4981709C2391B89E0033882C /* TweakHistoryViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TweakHistoryViewModel.swift; sourceTree = "<group>"; };
@@ -317,10 +319,8 @@
 		CF4902941FD91412000EAB68 /* ChartView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChartView.swift; sourceTree = "<group>"; };
 		CF4902961FD917D4000EAB68 /* ControlPanel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ControlPanel.swift; sourceTree = "<group>"; };
 		CF49029A1FD91F01000EAB68 /* DozeHistoryViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DozeHistoryViewModel.swift; sourceTree = "<group>"; };
-		CF4DECF61F9DF2A500DA094B /* DozeEntryTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DozeEntryTableViewCell.swift; sourceTree = "<group>"; };
 		CF4DECF81F9DF82900DA094B /* DozeEntryDataProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DozeEntryDataProvider.swift; sourceTree = "<group>"; };
 		CF55BC4E2020450D00003D0D /* AlertBuilder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlertBuilder.swift; sourceTree = "<group>"; };
-		CF5B28B01FA0A2C500D57A48 /* DozeEntryStateCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DozeEntryStateCell.swift; sourceTree = "<group>"; };
 		CF64DF301FB5DFCF00B4D124 /* DozeDetailSizeCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DozeDetailSizeCell.swift; sourceTree = "<group>"; };
 		CF64DF321FB5E03C00B4D124 /* DozeDetailTypeCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DozeDetailTypeCell.swift; sourceTree = "<group>"; };
 		CF987C271F9E157300D4893E /* Item.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Item.swift; sourceTree = "<group>"; };
@@ -709,9 +709,9 @@
 			isa = PBXGroup;
 			children = (
 				498170A023920DD60033882C /* TweakEntryPagerViewController.swift */,
-				4981708E2391B1790033882C /* TweakEntryStateCell.swift */,
-				498170902391B19E0033882C /* TweakEntryTableViewCell.swift */,
 				49F8D1DB23905B70003E139F /* TweakEntryViewController.swift */,
+				492013CB261FF64C00A5D635 /* TweakEntryRow.swift */,
+				492013CC261FF64C00A5D635 /* TweakItemStateCheckbox.swift */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -939,9 +939,9 @@
 			isa = PBXGroup;
 			children = (
 				CFC4A84E1F9761FF00B5AC75 /* DozeEntryPagerViewController.swift */,
-				CF5B28B01FA0A2C500D57A48 /* DozeEntryStateCell.swift */,
-				CF4DECF61F9DF2A500DA094B /* DozeEntryTableViewCell.swift */,
 				CFC4A8531F9776A500B5AC75 /* DozeEntryViewController.swift */,
+				492013C4261FF61900A5D635 /* DozeEntryRow.swift */,
+				492013C5261FF61900A5D635 /* DozeItemStateCheckbox.swift */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -1410,10 +1410,10 @@
 				499B82FB239CD4D300E4AD19 /* WeightHistoryViewController.swift in Sources */,
 				498170A123920DD60033882C /* TweakEntryPagerViewController.swift in Sources */,
 				49EF489F2586EA3500E89369 /* RoundedTextfield.swift in Sources */,
-				4981708F2391B1790033882C /* TweakEntryStateCell.swift in Sources */,
 				49821BAA2383727D006F166E /* DailyTracker.swift in Sources */,
 				498F7251239E3007004E501B /* HealthManager.swift in Sources */,
 				4904AF84239CB99600E271EC /* WeightEntryPagerViewController.swift in Sources */,
+				492013CE261FF64D00A5D635 /* TweakItemStateCheckbox.swift in Sources */,
 				49F8D1DC23905B70003E139F /* TweakEntryViewController.swift in Sources */,
 				498F7246239D90E2004E501B /* WeightEntryViewController.swift in Sources */,
 				4930360724760CBD00746D49 /* DatabaseMaintainer.swift in Sources */,
@@ -1427,8 +1427,10 @@
 				498170952391B6AB0033882C /* TweakEntrySections.swift in Sources */,
 				CF987C281F9E157300D4893E /* Item.swift in Sources */,
 				49B93E502477361100144C80 /* DatabaseBuiltInTest.swift in Sources */,
+				492013C6261FF61900A5D635 /* DozeEntryRow.swift in Sources */,
 				4964604623AC524700FBD976 /* PopupPickerView.swift in Sources */,
 				CF9EC1C0202196B100C7B3CA /* Fonts.swift in Sources */,
+				492013C7261FF61900A5D635 /* DozeItemStateCheckbox.swift in Sources */,
 				CFBEE2341FDE9A57005C0F45 /* RoundedView.swift in Sources */,
 				498F7244239D8B5C004E501B /* WeightHistoryViewModel.swift in Sources */,
 				497390B023A5D4F900492D92 /* SettingsViewController.swift in Sources */,
@@ -1439,14 +1441,13 @@
 				CF2FA9961FA87F0C003508F8 /* DozeDetailViewController.swift in Sources */,
 				CFECDFF8201EF7C1003E8572 /* Colors.swift in Sources */,
 				492A1E702409B3FA00F6C37C /* TweakDetailActivityCell.swift in Sources */,
+				492013CD261FF64D00A5D635 /* TweakEntryRow.swift in Sources */,
 				497390B123A5D4F900492D92 /* SettingsReminderViewController.swift in Sources */,
-				CF4DECF71F9DF2A500DA094B /* DozeEntryTableViewCell.swift in Sources */,
 				498D76A423709F9D00B5DF06 /* UtilityTableViewController.swift in Sources */,
 				CFE793571FA756E40084F075 /* RealmProviderLegacy.swift in Sources */,
 				CF4902971FD917D4000EAB68 /* ControlPanel.swift in Sources */,
 				497A8F0C2474AFC8001BEDCA /* DataWeightValues.swift in Sources */,
 				CFC060931FBC57C800A901A5 /* DozeEntrySections.swift in Sources */,
-				CF5B28B11FA0A2C500D57A48 /* DozeEntryStateCell.swift in Sources */,
 				CFBEE2321FDE963D005C0F45 /* InfoMenuAboutTableVC.swift in Sources */,
 				CF12918F1FC42DD300D1C17E /* DateCell.swift in Sources */,
 				CF2680021FB477AD004A6200 /* Date.swift in Sources */,
@@ -1458,7 +1459,6 @@
 				CFD1BA331FCD24920057F549 /* RoundedButton.swift in Sources */,
 				49D9B07B240DCA1F000E9822 /* UIView.swift in Sources */,
 				49F8D1DE23906B29003E139F /* TweakEntryDataProvider.swift in Sources */,
-				498170912391B19E0033882C /* TweakEntryTableViewCell.swift in Sources */,
 				4941D735237E266300ED84B5 /* DataCountAttributes.swift in Sources */,
 				CF9E03231FBD9FDE0084BC88 /* ItemHistoryViewController.swift in Sources */,
 				497F91B2240990B600464E4E /* TweakDetailSections.swift in Sources */,

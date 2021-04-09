@@ -4,6 +4,7 @@
 //
 //  Copyright © 2020 Nutritionfacts.org. All rights reserved.
 //
+// swiftlint:disable function_body_length
 
 import Foundation
 import HealthKit
@@ -210,42 +211,61 @@ public struct DatabaseBuiltInTest {
         let realmDb = realmMngr.realmDb
         
         let today = Date()
+        print("[\(Date().getCurrentBenchmarkSeconds)]")
         // 2 days 
-        print(":BIT: 2 days …")
+        print("  2 days … ")
         for i in 0 ..< 2 {
             let date = today.adding(days: -i)
                 realmDb.saveCount(3, date: date, countType: .dozeFruitsOther)
         }
-        for i in 0 ..< 2 {
-            let date = today.adding(days: -i)
-                realmDb.saveCount(3, date: date, countType: .tweakMealVinegar)
-        }
         // 7 days 
-        print(":BIT: 7 days …")
+        print("  7 days …")
         for i in 0 ..< 7 {
             let date = today.adding(days: -i)
                 realmDb.saveCount(1, date: date, countType: .dozeBerries)
-                realmDb.saveCount(3, date: date, countType: .tweakMealNegCal)
             }
         // 14 days 
-        print(":BIT: 14 days …")
+        print("  14 days …")
         for i in 0 ..< 14 {
             let date = today.adding(days: -i)
                 realmDb.saveCount(3, date: date, countType: .dozeBeans)
-                realmDb.saveCount(3, date: date, countType: .tweakMealWater)
             }
         // 100 days 
-        print(":BIT: 100 days …")
-        for i in stride(from: 0, to: 99, by: 1) {
+        print("  100 days …")
+        for i in 0 ..< 100 {
             let date = today.adding(days: -i)
-            //realmDb.saveCount(1, date: date, countType: .dozeFruitsOther)
-            //realmDb.saveCount(3, date: date, countType: .dozeWholeGrains)
+            realmDb.saveCount(1, date: date, countType: .dozeSpices)
+            realmDb.saveCount(3, date: date, countType: .dozeWholeGrains)
                 realmDb.saveCount(5, date: date, countType: .dozeBeverages)
-            //realmDb.saveCount(1, date: date, countType: .tweakDailyNutriYeast)
-            //realmDb.saveCount(2, date: date, countType: .tweakDailyCumin)
-            //realmDb.saveCount(3, date: date, countType: .tweakDailyGreenTea)
         }
-        print(":BIT: Simulate Progress done.")
+        print("[\(Date().getCurrentBenchmarkSeconds)]")
+
+        // 2 days 
+        for i in (0 ..< 2).reversed() {
+            let date = today.adding(days: -i)
+            realmDb.saveCount(3, date: date, countType: .tweakMealVinegar)
+        }
+        // 7 days 
+        print("  7 days …")
+        for i in (0 ..< 7).reversed() {
+            let date = today.adding(days: -i)
+            realmDb.saveCount(3, date: date, countType: .tweakMealNegCal)
+        }
+        // 14 days 
+        print("  14 days …")
+        for i in (0 ..< 14).reversed() {
+            let date = today.adding(days: -i)
+            realmDb.saveCount(3, date: date, countType: .tweakMealWater)
+        }
+        // 100 days 
+        print("  100 days …")
+        for i in (0 ..< 100).reversed() {
+            let date = today.adding(days: -i)
+            realmDb.saveCount(1, date: date, countType: .tweakDailyNutriYeast)
+            realmDb.saveCount(2, date: date, countType: .tweakDailyCumin)
+            realmDb.saveCount(3, date: date, countType: .tweakDailyGreenTea)
+        }
+        print("[\(Date().getCurrentBenchmarkSeconds)]")
 
         LogService.shared.debug(
             "••EXIT•• UtilityTableViewController doGenerateDBStreaksBIT()"

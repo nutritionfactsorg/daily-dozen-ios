@@ -25,6 +25,11 @@ extension Date {
         return .pm
     }
     
+    /// Seconds since 1970.01.01 00:00:00 UTC
+    var getCurrentBenchmarkSeconds: Double {
+        return self.timeIntervalSince1970
+    }
+    
     /// Return yyyyMMdd based on the current locale.
     var datestampKey: String {
         let dateFormatter = DateFormatter()

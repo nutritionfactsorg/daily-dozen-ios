@@ -338,7 +338,7 @@ class RealmProvider {
                 realm.create(
                     DataCountRecord.self,
                     value: ["pid": pid, "count": count],
-                    update: Realm.UpdatePolicy.all)
+                    update: Realm.UpdatePolicy.modified)
                 updateStreak(count: count, date: date, countType: countType)
             }
         } catch {
@@ -428,16 +428,6 @@ class RealmProvider {
     // The progress streak indicates the number of consecutive days completed
     // for a specific topic.
     
-    //if streak > 0 {
-    //    let yesterday = dataProvider.viewModel.trackerDate.adding(days: -1)
-    //    // previous day's streak +1
-    //    // :NYI: just read the streak for item from Realm given PID
-    //    let yesterdayTracker = realm.getDailyTracker(date: yesterday)
-    //    if let yesterdayStreak = yesterdayTracker.itemsDict[itemType]?.streak {
-    //        streak += yesterdayStreak
-    //    }
-    //}
-    
     private func updateStreak(count: Int, date: Date, countType: DataCountType) {
         let itemCompleted = countType.maxServings == count
         if itemCompleted {
@@ -500,6 +490,8 @@ class RealmProvider {
         }
                 
         // count to verify this day's streak value.
+        prevDay = date.adding(days: -1) // reset
+        prevPid = DataCountRecord.pid(date: prevDay, countType: countType) // reset
         var streakCount = 1
         while let prevRec = realm.object(ofType: DataCountRecord.self, forPrimaryKey: prevPid) {
             if prevRec.count == countType.maxServings {
@@ -507,7 +499,7 @@ class RealmProvider {
             } else {
                 break
             }
-                prevDay = date.adding(days: -1)
+            prevDay = prevDay.adding(days: -1)
                 prevPid = DataCountRecord.pid(date: prevDay, countType: countType)
             }
         
