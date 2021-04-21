@@ -14,8 +14,10 @@ class DozeEntryRow: UITableViewCell {
     @IBOutlet private weak var itemStreakLabel: UILabel!
     @IBOutlet private weak var itemHeadingLabel: UILabel!
     @IBOutlet weak var itemStateCollection: UICollectionView!
+    @IBOutlet weak var itemStatesWidth: NSLayoutConstraint!  // :TBD: adjust as needed
     @IBOutlet private weak var itemInfoButton: UIButton!
     @IBOutlet private weak var itemCalendarButton: UIButton!
+    var itemDataCountType: DataCountType!
     
     private let oneDay = 1
     private let oneWeek = 7
@@ -33,28 +35,28 @@ class DozeEntryRow: UITableViewCell {
         itemInfoButton.tag = tag
         itemCalendarButton.tag = tag
         itemImage.image = UIImage(named: itemType.imageName)
-        
-        if itemType == .dozeBeverages { // :DEBUG:
-            //CGRect(x: <#T##Double#>, y: <#T##Double#>, width: <#T##Double#>, height: <#T##Double#>)
-            //CGRect(origin: <#T##CGPoint#>, size: <#T##CGSize#>)
-            print(
-                """
-                :DEBUG: tag=\(tag) imageName='\(itemType.imageName)' heading='\(itemType.headingDisplay)'
-                               self.frame=\(self.frame)
-                        itemStreakLabel.frame=\(itemStreakLabel.frame)   
-                    itemStateCollection.frame=\(itemStateCollection.frame)  
-                """)
-        }
-        
-        //itemType.maxServings
+        itemDataCountType = itemType
         
         if let superview = itemStreakLabel.superview {
             if streak > oneDay { // "1 day" streaks are not shown
                 var streakFormat = NSLocalizedString("streakDaysFormat", comment: "streak days format")
-                if itemType == .dozeBeverages {
+                // self.frame.width values:
+                // 320 - iPhone 5S, SE (1st), iPod (7th) 
+                // 375 - iPhone 8, SE (2nd), 12 mini
+                // 428 - iPhone 12 Pro Max
+                if itemType == .dozeBeverages && self.frame.width < 374.0 {
                     // Daily Dozen beverages has 5 checkboxs overlays the streak indicator on small screens.
                     // which requires the `%d days` label to be shortened to just then number.
-                    streakFormat = "d%" // no units
+                    streakFormat = "%d" // no units
+                    if streak > 999 {
+                        streakFormat = "🏆" // trophy prize    
+                    }
+                    
+                    // Note: adjust contraint instead, if needed.
+                    //var f = itemStateCollection.frame
+                    //f.size.width = 33.0 // 165.0 / 5.0 = 33
+                    //itemStateCollection.frame = f
+
                 }
                 itemStreakLabel.text = String(format: streakFormat, streak)
                 superview.isHidden = false
@@ -74,6 +76,19 @@ class DozeEntryRow: UITableViewCell {
                 superview.isHidden = true
             }
         }
+        
+        //if itemType == .dozeBeverages || itemType == .dozeWholeGrains { // :DEBUG:
+            //CGRect(x, y, width, height) or CGRect(origin, size)
+            //print("tag=\(tag) \(itemType.imageName) width=\(self.frame.width)")
+            //print(
+            //    """
+            //    :DEBUG: tag=\(tag) imageName='\(itemType.imageName)' heading='\(itemType.headingDisplay)'
+            //               DozeEntryRow.frame=\(self.frame)
+            //            itemStreakLabel.frame=\(itemStreakLabel.frame)   
+            //        itemStateCollection.frame=\(itemStateCollection.frame)  
+            //    """)
+        //}
+
     }
     
 }

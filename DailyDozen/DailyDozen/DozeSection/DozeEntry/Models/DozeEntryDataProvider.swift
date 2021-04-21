@@ -73,7 +73,7 @@ extension DozeEntryDataProvider: UICollectionViewDataSource {
             fatalError("There should be a cell")
         }
         
-        let states = viewModel.dozeItemStates(rowIndex: collectionView.tag)
+        let states: [Bool] = viewModel.dozeItemStates(rowIndex: collectionView.tag)
         stateCell.configure(with: states[indexPath.row])
         return stateCell // individual checkbox
     }

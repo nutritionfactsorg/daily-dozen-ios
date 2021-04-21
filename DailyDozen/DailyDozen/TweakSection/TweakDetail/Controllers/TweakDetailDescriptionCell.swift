@@ -7,7 +7,7 @@
 
 import UIKit
 
-class TweakDetailDescriptionCell: UITableViewCell { // :!!!:TweakDetailDescriptionCell:
+class TweakDetailDescriptionCell: UITableViewCell {
 
     // MARK: - Outlets
     @IBOutlet private weak var titleLabel: UILabel!
