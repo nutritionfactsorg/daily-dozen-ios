@@ -130,7 +130,7 @@
 /* Class = "UITableViewSection"; headerTitle = "Measurement Units"; ObjectID = "IFs-g0-SPV"; */
 "settings.units.header" = "Jednostki miary";
 
-/* streak days format */
+/* progress: number '%d' of consecutive days completed. */
 "streakDaysFormat" = "%d dni";
 
 /* display heading */
@@ -238,14 +238,143 @@
 /* Weight entry heading */
 "weightEntry.heading" = "Waga";
 
-/* metric system kilograms */
-"weightEntry.text.kg" = "kg";
-
-/* imperial system pounds */
-"weightEntry.text.lbs" = "funt";
-
 /* About this app */
 "info.about.title" = "O aplikacji";
 
 /* Videos link label */
 "videos.link.label" = "Filmy";
+
+/* entry section header: "Supplements" */
+"dozeOtherInfo.section" = "Suplementy";
+
+/* Daily Dozen Header: "Servings" */
+"doze_entry_header" = "Porcje";
+
+/* Daily Dozen Header: "21 Tweaks" */
+"tweak_entry_header" = "21 Adaptacji";
+
+/* Weight Entry: "Morning (upon waking)" */
+"weight_entry_morning" = "Morning (upon waking)";
+
+/* Weight Entry: "Evening (right before bed)" */
+"weight_entry_evening" = "Evening (right before bed)";
+
+/* Weight Entry: "Time" */
+"weight_entry_time" = "Time";
+
+/* Weight Entry: "Clear" */
+"weight_entry_clear" = "Clear";
+
+/* Weight Entry Units: "kg" */
+"weight_entry_units_kg" = "kg";
+
+/* Weight Entry Units: "lbs" */
+"weight_entry_units_lbs" = "funt";
+
+/* History Label: "Time Scale" */
+"history_scale_label" = "Okres czasu";
+
+/* History Scale Choice: "Day" */
+"history_scale_choice_day" = "Dzień";
+
+/* History Scale Choice: "Month" */
+"history_scale_choice_month" = "Miesiąc";
+
+/* History Scale Choice: "Year" */
+"history_scale_choice_year" = "Rok";
+
+/* Weight History Action: "Edit Data" */
+"weight_history_edit_data" = "Edytuj dane";
+
+/* Doze Detail Section: "Sizes" */
+"doze_detail_section_sizes" = "Rozmiar porcji";
+
+/* Doze Detail Section: "Types" */
+"doze_detail_section_types" = "Rodzaje";
+
+/* Tweak Detail Section: "Activity" */
+"tweak_detail_section_activity" = "Aktywność";
+
+/* Tweak Detail Section: "Description" */
+"tweak_detail_section_description" = "Opis";
+
+/* "Units:" */
+"units_label" = "Jednostki:";
+
+/* Info: "About" */
+"info_app_about" = "O aplikacji";
+
+/*  Info: How Not to Die (Book) */
+"info_book_how_not_to_die" = "Książka: How Not to Die";
+
+/* Info: How Not to Die Cookbook (Book) */
+"info_book_how_not_to_die_cookbook" = "Książka: How Not to Die Cookbook";
+
+/* Info: How Not to Diet (Book) */
+"info_book_how_not_to_diet" = "Książka: How Not to Diet";
+
+/* Info: "Daily Dozen Challenge" */
+"info_webpage_daily_dozen_challenge" = "Wyzwanie Codzienny Tuzin";
+
+/* Info: "Donate" */
+"info_webpage_donate" = "Donacja";
+
+/* Info: "Open Source" */
+"info_webpage_open_source" = "Open Source";
+
+/* Info: "Subscribe" */
+"info_webpage_subscribe" = "Subskrybuj";
+
+/*  Info: "Latest Videos" */
+"info_webpage_videos_latest" = "Najnowsze filmy";
+
+/* First Launch: "For Health Alone" */
+"setting_health_alone_txt" = "Tylko dla zdrowia";
+
+/* First Launch: "For Health and Weight Loss" */
+"setting_health_weight_txt" = "Dla zdrowia i utraty wagi";
+
+/* First Launch: "Daily Dozen Only" */
+"setting_doze_only_btn" = "Tylko Codzienny Tuzin";
+
+/* First Launch: "Daily Dozen + 21 Tweaks" */
+"setting_doze_tweak_btn" = "Codzienny Tuzin + 21 Adaptacji";
+
+/* Settings: "Daily Dozen Only" */
+"setting_doze_only_choice" = "Tylko Codzienny Tuzin";
+
+/* Settings: "Daily Dozen + 21 Tweaks" */
+"setting_doze_tweak_choice" = "Codzienny Tuzin + 21 Adaptacji";
+
+/* Settings: Tweaks visibility footer text */
+"setting_doze_tweak_footer" = "Dla samego zdrowia użyj „Tylko Codzienny Tuzin”. Dla zdrowia i utraty wagi użyj „Codzienny Tuzin + 21 Adaptacji”.";
+
+/* Settings: units choice footer text */
+"settings_units_choice_footer" = "Ustaw jeden typ jednostek dla aplikacji lub aktywuj przełącznie przycisku w „Jednostki:”.";
+
+/* Settings: "Advanced Utilities" */
+"settings_advanced_utilities" = "Zaawansowane narzędzia";
+
+/* Info About: "Welcome to my Daily Dozen!" */
+"info_app_about_welcome" = "Witaj w moim Codzienny Tuzin!";
+
+/* Info About: application name */
+"info_app_about_app_name" = "Codzienny Tuzin";
+
+/* Info About: overview text */
+"info_app_about_overview" = "Korzystaj z tej aplikacji codziennie, aby śledzić żywność i porady, które polecam dla optymalnego zdrowia i długowieczności w moich książkach „Jak nie umrzeć przedwcześni” i „How Not to Diet”.";
+
+/* Info About: version number */
+"info_app_about_version" = "wersja 3.2.7";
+
+/* Info About: open source software credits */
+"info_app_about_oss_credits" = "Używane są następujące biblioteki open source: RealmSwift, Charts, FSCalendar, SimpleAnimation i ActiveLabel.";
+
+/* Info About: created by text */
+"info_app_about_created_by" = "Ta aplikacja została stworzona przez:
+- NutritionFacts.org
+- Christi Richards
+- Konstantin Khokhlov
+- Marc Campbell";
+
+/* file end */

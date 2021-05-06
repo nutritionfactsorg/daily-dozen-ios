@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="17506" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="tz1-ri-aeh">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="18122" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="tz1-ri-aeh">
     <device id="retina4_0" orientation="portrait" appearance="light"/>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17505"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="18093"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -167,6 +167,10 @@
                     <connections>
                         <outlet property="clearWeightAMButton" destination="NRG-eE-YhG" id="V3E-30-e3b"/>
                         <outlet property="clearWeightPMButton" destination="7l0-os-Oqt" id="LEX-WM-EYl"/>
+                        <outlet property="labelAmTime" destination="FBJ-Im-BZk" id="8nD-1P-91Z"/>
+                        <outlet property="labelEvening" destination="77g-xa-ali" id="qUk-PQ-5lp"/>
+                        <outlet property="labelMorning" destination="xCp-N8-5Uc" id="h2L-8Z-hra"/>
+                        <outlet property="labelPmTime" destination="g3G-kp-d2S" id="EJ8-cM-Pba"/>
                         <outlet property="timeAMInput" destination="0Oz-JE-Xra" id="wFh-dW-0Hd"/>
                         <outlet property="timePMInput" destination="cVd-c3-qI1" id="vCb-nG-JmQ"/>
                         <outlet property="weightAM" destination="bbx-Qc-Tgp" id="BVp-bo-8sN"/>

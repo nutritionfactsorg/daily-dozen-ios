@@ -43,9 +43,6 @@
 		493A9C0023CE627B00F679BE /* SettingsLayout.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 493A9C0223CE627B00F679BE /* SettingsLayout.storyboard */; };
 		493A9C0623CE629900F679BE /* TweakEntryLayout.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 493A9C0823CE629900F679BE /* TweakEntryLayout.storyboard */; };
 		493A9C0A23CE62BC00F679BE /* TweakHistoryLayout.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 493A9C0C23CE62BC00F679BE /* TweakHistoryLayout.storyboard */; };
-		493A9C0E23CE631600F679BE /* WeightEntryLayout.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 493A9C1023CE631600F679BE /* WeightEntryLayout.storyboard */; };
-		493A9C1123CE631F00F679BE /* WeightEntryPagerLayout.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 493A9C1323CE631F00F679BE /* WeightEntryPagerLayout.storyboard */; };
-		493A9C1523CE634400F679BE /* WeightHistoryLayout.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 493A9C1723CE634400F679BE /* WeightHistoryLayout.storyboard */; };
 		493B0EB2258D0D7B00FEDA8E /* dr_greger.png in Resources */ = {isa = PBXBuildFile; fileRef = 493B0EB1258D0D7B00FEDA8E /* dr_greger.png */; };
 		4941D72E237E13DC00ED84B5 /* RealmManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4941D726237E13DB00ED84B5 /* RealmManager.swift */; };
 		4941D72F237E13DC00ED84B5 /* DataCountRecord.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4941D728237E13DC00ED84B5 /* DataCountRecord.swift */; };
@@ -85,6 +82,9 @@
 		498F724F239E2EA3004E501B /* HealthKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 498F724E239E2EA3004E501B /* HealthKit.framework */; };
 		498F7251239E3007004E501B /* HealthManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 498F7250239E3007004E501B /* HealthManager.swift */; };
 		499B82FB239CD4D300E4AD19 /* WeightHistoryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 499B82FA239CD4D300E4AD19 /* WeightHistoryViewController.swift */; };
+		499B94E126439C9000AC275A /* WeightEntryPagerLayout.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 499B94DF26439C8F00AC275A /* WeightEntryPagerLayout.storyboard */; };
+		499B94E226439C9000AC275A /* WeightEntryLayout.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 499B94E026439C9000AC275A /* WeightEntryLayout.storyboard */; };
+		499B94E426439CBB00AC275A /* WeightHistoryLayout.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 499B94E326439CBB00AC275A /* WeightHistoryLayout.storyboard */; };
 		49B93E502477361100144C80 /* DatabaseBuiltInTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49B93E4F2477361100144C80 /* DatabaseBuiltInTest.swift */; };
 		49B97FE725F5EE5C009BA5A9 /* DozeEntryPagerLayout.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 49B97FE625F5EE5C009BA5A9 /* DozeEntryPagerLayout.storyboard */; };
 		49B97FEF25F5EF87009BA5A9 /* TweakEntryPagerLayout.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 49B97FEE25F5EF87009BA5A9 /* TweakEntryPagerLayout.storyboard */; };
@@ -199,9 +199,6 @@
 		493A9C0123CE627B00F679BE /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/SettingsLayout.storyboard; sourceTree = "<group>"; };
 		493A9C0723CE629900F679BE /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/TweakEntryLayout.storyboard; sourceTree = "<group>"; };
 		493A9C0B23CE62BC00F679BE /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/TweakHistoryLayout.storyboard; sourceTree = "<group>"; };
-		493A9C0F23CE631600F679BE /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/WeightEntryLayout.storyboard; sourceTree = "<group>"; };
-		493A9C1223CE631F00F679BE /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/WeightEntryPagerLayout.storyboard; sourceTree = "<group>"; };
-		493A9C1623CE634400F679BE /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/WeightHistoryLayout.storyboard; sourceTree = "<group>"; };
 		493A9C1C23CE6B7300F679BE /* es */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = es; path = es.lproj/InfoMenuAboutLayout.strings; sourceTree = "<group>"; };
 		493A9C1D23CE6B7300F679BE /* es */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = es; path = es.lproj/FirstLaunch.strings; sourceTree = "<group>"; };
 		493A9C1E23CE6B7300F679BE /* es */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = es; path = es.lproj/Main.strings; sourceTree = "<group>"; };
@@ -219,9 +216,6 @@
 		493A9C2B23CE6B7500F679BE /* es */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = es; path = es.lproj/SettingsLayout.strings; sourceTree = "<group>"; };
 		493A9C2D23CE6B7500F679BE /* es */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = es; path = es.lproj/TweakEntryLayout.strings; sourceTree = "<group>"; };
 		493A9C2E23CE6B7500F679BE /* es */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = es; path = es.lproj/TweakHistoryLayout.strings; sourceTree = "<group>"; };
-		493A9C2F23CE6B7500F679BE /* es */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = es; path = es.lproj/WeightEntryLayout.strings; sourceTree = "<group>"; };
-		493A9C3023CE6B7500F679BE /* es */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = es; path = es.lproj/WeightEntryPagerLayout.strings; sourceTree = "<group>"; };
-		493A9C3123CE6B7500F679BE /* es */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = es; path = es.lproj/WeightHistoryLayout.strings; sourceTree = "<group>"; };
 		493A9C3223CE6B7500F679BE /* es */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = es; path = es.lproj/Localizable.strings; sourceTree = "<group>"; };
 		493B0EB1258D0D7B00FEDA8E /* dr_greger.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = dr_greger.png; sourceTree = "<group>"; };
 		493CE64D25D727B400F95BF3 /* pl */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = pl; path = pl.lproj/FirstLaunch.strings; sourceTree = "<group>"; };
@@ -243,9 +237,6 @@
 		493CE65F25D727E400F95BF3 /* pl */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = pl; path = pl.lproj/TweakDetailDescriptionHeader.strings; sourceTree = "<group>"; };
 		493CE66125D727E400F95BF3 /* pl */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = pl; path = pl.lproj/TweakEntryLayout.strings; sourceTree = "<group>"; };
 		493CE66225D727E400F95BF3 /* pl */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = pl; path = pl.lproj/TweakHistoryLayout.strings; sourceTree = "<group>"; };
-		493CE66325D727E400F95BF3 /* pl */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = pl; path = pl.lproj/WeightEntryLayout.strings; sourceTree = "<group>"; };
-		493CE66425D727E500F95BF3 /* pl */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = pl; path = pl.lproj/WeightEntryPagerLayout.strings; sourceTree = "<group>"; };
-		493CE66525D727E500F95BF3 /* pl */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = pl; path = pl.lproj/WeightHistoryLayout.strings; sourceTree = "<group>"; };
 		493CE66625D727E500F95BF3 /* pl */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = pl; path = pl.lproj/Localizable.strings; sourceTree = "<group>"; };
 		493CE66725D727E500F95BF3 /* pl */ = {isa = PBXFileReference; lastKnownFileType = text.json; name = pl; path = pl.lproj/DozeDetailData.json; sourceTree = "<group>"; };
 		493CE66825D727E500F95BF3 /* pl */ = {isa = PBXFileReference; lastKnownFileType = text.json; name = pl; path = pl.lproj/TweakDetailData.json; sourceTree = "<group>"; };
@@ -291,6 +282,9 @@
 		498F724E239E2EA3004E501B /* HealthKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = HealthKit.framework; path = System/Library/Frameworks/HealthKit.framework; sourceTree = SDKROOT; };
 		498F7250239E3007004E501B /* HealthManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HealthManager.swift; sourceTree = "<group>"; };
 		499B82FA239CD4D300E4AD19 /* WeightHistoryViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeightHistoryViewController.swift; sourceTree = "<group>"; };
+		499B94DF26439C8F00AC275A /* WeightEntryPagerLayout.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = WeightEntryPagerLayout.storyboard; sourceTree = "<group>"; };
+		499B94E026439C9000AC275A /* WeightEntryLayout.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = WeightEntryLayout.storyboard; sourceTree = "<group>"; };
+		499B94E326439CBB00AC275A /* WeightHistoryLayout.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = WeightHistoryLayout.storyboard; sourceTree = "<group>"; };
 		49B0FD2125DF927B00236A12 /* pl */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = pl; path = pl.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		49B0FD2225DF927C00236A12 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		49B93E4F2477361100144C80 /* DatabaseBuiltInTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DatabaseBuiltInTest.swift; sourceTree = "<group>"; };
@@ -509,8 +503,8 @@
 		493A9C0D23CE62E300F679BE /* Views */ = {
 			isa = PBXGroup;
 			children = (
-				493A9C1023CE631600F679BE /* WeightEntryLayout.storyboard */,
-				493A9C1323CE631F00F679BE /* WeightEntryPagerLayout.storyboard */,
+				499B94E026439C9000AC275A /* WeightEntryLayout.storyboard */,
+				499B94DF26439C8F00AC275A /* WeightEntryPagerLayout.storyboard */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -518,7 +512,7 @@
 		493A9C1423CE633600F679BE /* Views */ = {
 			isa = PBXGroup;
 			children = (
-				493A9C1723CE634400F679BE /* WeightHistoryLayout.storyboard */,
+				499B94E326439CBB00AC275A /* WeightHistoryLayout.storyboard */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -1223,20 +1217,20 @@
 				492474A323DB677A00D7D918 /* InfoPlist.strings in Resources */,
 				49C646CB236F4A46000DA8DC /* UtilityLayout.storyboard in Resources */,
 				493A9BE323CE4F2D00F679BE /* DozeDetailTypeHeader.xib in Resources */,
-				493A9C1523CE634400F679BE /* WeightHistoryLayout.storyboard in Resources */,
 				493A9BF923CE61FD00F679BE /* DozeEntryExtrasHeader.xib in Resources */,
 				4955013A23CD453200C72FB3 /* Assets.xcassets in Resources */,
+				499B94E426439CBB00AC275A /* WeightHistoryLayout.storyboard in Resources */,
 				493A9BE023CE4F1C00F679BE /* TweakDetailActivityHeader.xib in Resources */,
 				493A9BFC23CE623700F679BE /* DozeHistoryLayout.storyboard in Resources */,
 				4916451D23EE53610077731D /* TweakDetailData.json in Resources */,
 				493A9BDD23CE4F1400F679BE /* DozeDetailSizeHeader.xib in Resources */,
 				493A9BD323CE47A000F679BE /* Localizable.strings in Resources */,
 				497390AC23A5956900492D92 /* Main.storyboard in Resources */,
-				493A9C0E23CE631600F679BE /* WeightEntryLayout.storyboard in Resources */,
-				493A9C1123CE631F00F679BE /* WeightEntryPagerLayout.storyboard in Resources */,
 				493B0EB2258D0D7B00FEDA8E /* dr_greger.png in Resources */,
 				CFF72B001FB9BB70001CC2E9 /* LinkSettings.plist in Resources */,
+				499B94E226439C9000AC275A /* WeightEntryLayout.storyboard in Resources */,
 				493A9BF023CE61BE00F679BE /* InfoMenuMainLayout.storyboard in Resources */,
+				499B94E126439C9000AC275A /* WeightEntryPagerLayout.storyboard in Resources */,
 				4933A75023EE2BC800CE4631 /* DozeDetailData.json in Resources */,
 				498F724B239E013E004E501B /* FirstLaunch.storyboard in Resources */,
 			);
@@ -1684,36 +1678,6 @@
 				493CE66225D727E400F95BF3 /* pl */,
 			);
 			name = TweakHistoryLayout.storyboard;
-			sourceTree = "<group>";
-		};
-		493A9C1023CE631600F679BE /* WeightEntryLayout.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				493A9C0F23CE631600F679BE /* Base */,
-				493A9C2F23CE6B7500F679BE /* es */,
-				493CE66325D727E400F95BF3 /* pl */,
-			);
-			name = WeightEntryLayout.storyboard;
-			sourceTree = "<group>";
-		};
-		493A9C1323CE631F00F679BE /* WeightEntryPagerLayout.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				493A9C1223CE631F00F679BE /* Base */,
-				493A9C3023CE6B7500F679BE /* es */,
-				493CE66425D727E500F95BF3 /* pl */,
-			);
-			name = WeightEntryPagerLayout.storyboard;
-			sourceTree = "<group>";
-		};
-		493A9C1723CE634400F679BE /* WeightHistoryLayout.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				493A9C1623CE634400F679BE /* Base */,
-				493A9C3123CE6B7500F679BE /* es */,
-				493CE66525D727E500F95BF3 /* pl */,
-			);
-			name = WeightHistoryLayout.storyboard;
 			sourceTree = "<group>";
 		};
 		497390AA23A5956900492D92 /* Main.storyboard */ = {

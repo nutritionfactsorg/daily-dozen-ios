@@ -17,22 +17,22 @@ class WeightEntryPagerViewController: UIViewController {
         let storyboard = UIStoryboard(name: "WeightEntryPagerLayout", bundle: nil)
         guard
             let viewController = storyboard.instantiateViewController(withIdentifier: "WeightEntryPagerLayoutID") as? WeightEntryPagerViewController
-            else { fatalError("Did not instantiate `WeightEntryPagerViewController`") }
+        else { fatalError("Did not instantiate `WeightEntryPagerViewController`") }
         viewController.weightPageDate = date
         return viewController
     }
-
+        
     // MARK: - Properties
-
+    
     /// Current page display date "truth"
     fileprivate var weightPageDate = DateManager.currentDatetime()
-
+    
     // MARK: - Outlets
     
     @IBOutlet private weak var weightBackButton: UIButton!
-    @IBOutlet weak var weightDateBarField: RoundedTextfield!
+    @IBOutlet weak var weightDateBarField: RoundedTextfield!    
     private var weightDateBarPicker: UIDatePicker!
-
+        
     // MARK: - UIViewController
     
     override func viewDidLoad() {
@@ -42,7 +42,7 @@ class WeightEntryPagerViewController: UIViewController {
             navBar.barTintColor = UIColor.greenColor
             navBar.tintColor = UIColor.white            
         }
-
+        
         title = NSLocalizedString("weightEntry.heading", comment: "Weight entry heading")
         
         weightDateBarPicker = weightDateBarField.datePicker(
@@ -53,7 +53,7 @@ class WeightEntryPagerViewController: UIViewController {
         )
         weightDateBarField.addTarget(self, action: #selector(dateBarTouchDown), for: .touchDown)
         updatePageDate(weightPageDate)
-        }
+    }
     
     @objc func weightDateBarCancelAction() {
         updatePageDate(weightPageDate) // same date
@@ -69,13 +69,13 @@ class WeightEntryPagerViewController: UIViewController {
         updatePageDate(DateManager.currentDatetime())
         self.weightDateBarField.resignFirstResponder()
     }
-
+    
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
         navigationController?.navigationBar.barTintColor = UIColor.greenColor
         navigationController?.navigationBar.titleTextAttributes = [NSAttributedString.Key.foregroundColor: UIColor.white]
     }
-
+    
     // MARK: - Methods
     /// Updates UI for the current date.
     ///
@@ -96,44 +96,44 @@ class WeightEntryPagerViewController: UIViewController {
         }
         
         if order != .orderedSame {
-        guard let viewController = children.first as? WeightEntryViewController else { return }
-        viewController.view.fadeOut().fadeIn()
+            guard let viewController = children.first as? WeightEntryViewController else { return }
+            viewController.view.fadeOut().fadeIn()
             viewController.setViewModel(date: weightPageDate)
         }
     }
-
+    
     // MARK: - Actions
-
+    
     @objc private func dateBarTouchDown(_ sender: UITextField) {
         weightDateBarField.text = weightDateBarPicker.date.dateStringLocalized(for: .long)
         weightDateBarPicker.maximumDate = DateManager.currentDatetime() // today
     }
-
+        
     @IBAction private func viewSwiped(_ sender: UISwipeGestureRecognizer) {
         let today = DateManager.currentDatetime()
         let interval = sender.direction == .left ? -1 : 1
         let swipedDate = weightDateBarPicker.date.adding(days: interval)
         guard swipedDate <= today else { return }
-
+        
         weightDateBarPicker.setDate(swipedDate, animated: false)
         weightDateBarPicker.maximumDate = DateManager.currentDatetime() // today
         updatePageDate(weightDateBarPicker.date)
-
+                
         guard let viewController = children.first as? DozeEntryViewController else { return }
-
+        
         if sender.direction == .left {
             viewController.view.slideOut(x: -view.frame.width).slideIn(x: view.frame.width)
         } else {
             viewController.view.slideOut(x: view.frame.width).slideIn(x: -view.frame.width)
         }
-
+        
         viewController.setViewModel(date: weightDateBarPicker.date)
     }
-
+    
     @IBAction private func weightBackButtonPressed(_ sender: UIButton) {
         updatePageDate(DateManager.currentDatetime())
     }
-
+    
     // MARK: - Navigation
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {

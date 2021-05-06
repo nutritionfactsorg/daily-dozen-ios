@@ -4,7 +4,7 @@
 //
 //  Copyright © 2019 Nutritionfacts.org. All rights reserved.
 //
-// swiftlint :ENABLED: disable file_length
+// swiftlint:disable file_length
 // swiftlint:disable function_body_length
 
 import UIKit
@@ -13,6 +13,13 @@ import HealthKit
 class WeightEntryViewController: UIViewController {
     
     // MARK: - Outlets
+    
+    // Labels
+    @IBOutlet weak var labelMorning: UILabel!
+    @IBOutlet weak var labelEvening: UILabel!
+    @IBOutlet weak var labelAmTime: UILabel!
+    @IBOutlet weak var labelPmTime: UILabel!
+    
     // Text Edit
     @IBOutlet weak var timeAMInput: UITextField!
     @IBOutlet weak var timePMInput: UITextField!
@@ -74,7 +81,7 @@ class WeightEntryViewController: UIViewController {
             let date = Date(healthkit: "\(datestampKey) \(timeText)"),
             var weight = Double(weightText),
             weight > 5.0 {
-                        
+            
             // Update local data
             if SettingsManager.isImperial() {
                 weight = weight / 2.2046 // kg = lbs * 2.2046
@@ -110,8 +117,8 @@ class WeightEntryViewController: UIViewController {
         
         // Unit Type
         if isImperial {
-            weightAMLabel.text = NSLocalizedString("weightEntry.text.lbs", comment: "imperial system pounds")
-            weightPMLabel.text = NSLocalizedString("weightEntry.text.lbs", comment: "imperial system pounds")
+            weightAMLabel.text = NSLocalizedString("weight_entry_units_lbs", comment: "imperial system pounds")
+            weightPMLabel.text = NSLocalizedString("weight_entry_units_lbs", comment: "imperial system pounds")
             if let txt = weightAM.text {
                 weightAM.text = SettingsManager.convertKgToLbs(txt)
             }
@@ -119,8 +126,8 @@ class WeightEntryViewController: UIViewController {
                 weightPM.text = SettingsManager.convertKgToLbs(txt)
             }
         } else {
-            weightAMLabel.text = NSLocalizedString("weightEntry.text.kg", comment: "metric system kilograms")
-            weightPMLabel.text = NSLocalizedString("weightEntry.text.kg", comment: "metric system kilograms")
+            weightAMLabel.text = NSLocalizedString("weight_entry_units_kg", comment: "metric system kilograms")
+            weightPMLabel.text = NSLocalizedString("weight_entry_units_kg", comment: "metric system kilograms")
             if let txt = weightAM.text {
                 weightAM.text = SettingsManager.convertLbsToKg(txt)
             }
@@ -164,6 +171,17 @@ class WeightEntryViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        labelMorning.text = NSLocalizedString("weight_entry_morning", comment: "Morning")
+        labelEvening.text = NSLocalizedString("weight_entry_evening", comment: "Evening")
+
+        let timeStr = NSLocalizedString("weight_entry_time", comment: "Time")
+        labelAmTime.text = timeStr
+        labelPmTime.text = timeStr
+
+        let clearStr = NSLocalizedString("weight_entry_clear", comment: "Clear")
+        clearWeightAMButton.setTitle(clearStr, for: .normal)
+        clearWeightPMButton.setTitle(clearStr, for: .normal)
+        
         weightPM.delegate = self
         weightAM.delegate = self
         timeAMInput.delegate = self
@@ -200,11 +218,11 @@ class WeightEntryViewController: UIViewController {
         
         // Unit Type
         if SettingsManager.isImperial() {
-            weightAMLabel.text = NSLocalizedString("weightEntry.text.lbs", comment: "imperial system pounds")
-            weightPMLabel.text = NSLocalizedString("weightEntry.text.lbs", comment: "imperial system pounds")
+            weightAMLabel.text = NSLocalizedString("weight_entry_units_lbs", comment: "imperial system pounds")
+            weightPMLabel.text = NSLocalizedString("weight_entry_units_lbs", comment: "imperial system pounds")
         } else {
-            weightAMLabel.text = NSLocalizedString("weightEntry.text.kg", comment: "metric system kilograms")
-            weightPMLabel.text = NSLocalizedString("weightEntry.text.kg", comment: "metric system kilograms")
+            weightAMLabel.text = NSLocalizedString("weight_entry_units_kg", comment: "metric system kilograms")
+            weightPMLabel.text = NSLocalizedString("weight_entry_units_kg", comment: "metric system kilograms")
         }
         
         //
@@ -225,7 +243,7 @@ class WeightEntryViewController: UIViewController {
             name: Notification.Name(rawValue: "BodyMassDataAvailable"),
             object: nil)
     }
-        
+    
     override func viewWillAppear(_ animated: Bool) {
         LogService.shared.debug("WeightEntryViewController viewWillAppear")
         super.viewWillAppear(animated)
@@ -299,7 +317,7 @@ class WeightEntryViewController: UIViewController {
         timeAMInput.text = recordAM.time
         weightAM.text = recordAM.weight
         timePickerAM.setDate(date, animated: false)
-                
+        
         let recordPM = HealthSynchronizer.shared.syncWeightToShow(date: date, ampm: .pm)
         timePMInput.text = recordPM.time
         weightPM.text = recordPM.weight

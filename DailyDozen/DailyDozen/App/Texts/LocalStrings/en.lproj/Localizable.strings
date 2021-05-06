@@ -42,7 +42,7 @@
 /* Units toggle button text: imperial measurement system */
 "unitToggle.imperial"="IMPERIAL";
 
-/* streak days format */
+/* progress: number '%d' of consecutive days completed. */
 "streakDaysFormat"="%d days";
 
 /* ***** Daily Dozen ***** */
@@ -119,14 +119,145 @@
 /* Class = "UITableViewSection"; headerTitle = "21 Tweaks Visibility"; ObjectID = "WdR-XV-IyP"; */
 "settings.tweak.header" = "21 Tweaks Visibility";
 
-/* metric system kilograms */
-"weightEntry.text.kg" = "kg";
-
-/* imperial system pounds */
-"weightEntry.text.lbs" = "lbs";
-
 /* About this app */
 "info.about.title" = "About this app";
 
 /* Videos link label */
 "videos.link.label" = "VIDEOS";
+
+/* entry section header: "Supplements" */
+"dozeOtherInfo.section" = "Supplements";
+
+/* Daily Dozen Header: "Servings" */
+"doze_entry_header" = "Servings";
+
+/* Daily Dozen Header: "21 Tweaks" */
+"tweak_entry_header" = "21 Tweaks";
+
+/* Weight Entry: "Morning (upon waking)" */
+"weight_entry_morning" = "Morning (upon waking)";
+
+/* Weight Entry: "Evening (right before bed)" */
+"weight_entry_evening" = "Evening (right before bed)";
+
+/* Weight Entry: "Time" */
+"weight_entry_time" = "Time";
+
+/* Weight Entry: "Clear" */
+"weight_entry_clear" = "Clear";
+
+/* Weight Entry Units: "kg" */
+"weight_entry_units_kg" = "kg";
+
+/* Weight Entry Units: "lbs" */
+"weight_entry_units_lbs" = "lbs";
+
+/* History Label: "Time Scale" */
+"history_scale_label" = "Time Scale";
+
+/* History Scale Choice: "Day" */
+"history_scale_choice_day" = "Day";
+
+/* History Scale Choice: "Month" */
+"history_scale_choice_month" = "Month";
+
+/* History Scale Choice: "Year" */
+"history_scale_choice_year" = "Year";
+
+/* Weight History Action: "Edit Data" */
+"weight_history_edit_data" = "Edit Data";
+
+/* Doze Detail Section: "Sizes" */
+"doze_detail_section_sizes" = "Servings Sizes";
+
+/* Doze Detail Section: "Types" */
+"doze_detail_section_types" = "Types";
+
+/* Tweak Detail Section: "Activity" */
+"tweak_detail_section_activity" = "Activity";
+
+/* Tweak Detail Section: "Description" */
+"tweak_detail_section_description" = "Description";
+
+/* "Units:" */
+"units_label" = "Units:";
+
+/* Info: "About" */
+"info_app_about" = "About";
+
+/*  Info: How Not to Die (Book) */
+"info_book_how_not_to_die" = "How Not to Die";
+
+/* Info: How Not to Die Cookbook (Book) */
+"info_book_how_not_to_die_cookbook" = "How Not to Die Cookbook";
+
+/* Info: How Not to Diet (Book) */
+"info_book_how_not_to_diet" = "How Not to Diet";
+
+/* Info: "Daily Dozen Challenge" */
+"info_webpage_daily_dozen_challenge" = "Daily Dozen Challenge";
+
+/* Info: "Donate" */
+"info_webpage_donate" = "Donate";
+
+/* Info: "Open Source" */
+"info_webpage_open_source" = "Open Source";
+
+/* Info: "Subscribe" */
+"info_webpage_subscribe" = "Subscribe";
+
+/*  Info: "Latest Videos" */
+"info_webpage_videos_latest" = "Latest Videos";
+
+/* First Launch: "For Health Alone" */
+"setting_health_alone_txt" = "For Health Alone";
+
+/* First Launch: "For Health and Weight Loss" */
+"setting_health_weight_txt" = "For Health and Weight Loss";
+
+/* First Launch: "Daily Dozen Only" */
+"setting_doze_only_btn" = "Daily Dozen
+Only";
+
+/* First Launch: "Daily Dozen + 21 Tweaks" */
+"setting_doze_tweak_btn" = "Daily Dozen +
+21 Tweaks";
+
+/* Settings: "Daily Dozen Only" */
+"setting_doze_only_choice" = "Daily Dozen Only";
+
+/* Settings: "Daily Dozen + 21 Tweaks" */
+"setting_doze_tweak_choice" = "Daily Dozen + 21 Tweaks";
+
+/* Settings: Tweaks visibility footer text */
+"setting_doze_tweak_footer" = "For health alone, use 'Daily Dozen Only'. For health and weight loss use 'Daily Dozen + 21 Tweaks'.";
+
+/* Settings: units choice footer text */
+"settings_units_choice_footer" = "Set to always be one unit type or enable the 'Units:' toggle button.";
+
+/* Settings: "Advanced Utilities" */
+"settings_advanced_utilities" = "Advanced Utilities";
+
+/* Info About: "Welcome to my Daily Dozen!" */
+"info_app_about_welcome" = "Welcome to my Daily Dozen!";
+
+/* Info About: application name */
+"info_app_about_app_name" = "Daily Dozen";
+
+/* Info About: overview text */
+"info_app_about_overview" = "Use this app on a daily basis to keep track of the foods and advice I recommend for optimal health and longevity in my books How Not to Die and How Not to Diet.";
+
+/* Info About: version number */
+"info_app_about_version" = "version 3.2.7";
+
+/* Info About: open source software credits */
+"info_app_about_oss_credits" = "The following open source libraries are used: RealmSwift, Charts, FSCalendar, SimpleAnimation and ActiveLabel.";
+
+/* Info About: created by text */
+"info_app_about_created_by" = "This app was created by:
+- NutritionFacts.org
+- Christi Richards
+- Konstantin Khokhlov
+- Marc Campbell";
+
+/* file end */

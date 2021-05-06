@@ -31,6 +31,7 @@ class WeightHistoryViewController: UIViewController {
     @IBOutlet weak var lineChartView: LineChartView!
     @IBOutlet private weak var controlPanel: ControlPanel! // Buttons: << < … > >>
     @IBOutlet private weak var scaleControl: UISegmentedControl! // Day|Month|Year
+    @IBOutlet weak var scaleLabel: UILabel!
     @IBOutlet weak var weightEditDataButton: UIButton!
     @IBOutlet weak var weightTitleUnits: UILabel!
     
@@ -131,7 +132,15 @@ class WeightHistoryViewController: UIViewController {
         navigationController?.navigationBar.titleTextAttributes = [NSAttributedString.Key.foregroundColor: UIColor.white]
         navigationController?.navigationBar.barTintColor = UIColor.greenColor
         navigationController?.navigationBar.tintColor = UIColor.white
+        
+        scaleControl.setTitle(NSLocalizedString("history_scale_choice_day", comment: "Day"), forSegmentAt: 0)
+        scaleControl.setTitle(NSLocalizedString("history_scale_choice_month", comment: "Month"), forSegmentAt: 1)
+        scaleControl.setTitle(NSLocalizedString("history_scale_choice_year", comment: "Year"), forSegmentAt: 2)
+        scaleLabel.text = NSLocalizedString("history_scale_label", comment: "Time Scale")
 
+        let title = NSLocalizedString("weight_history_edit_data", comment: "Edit Data")
+        weightEditDataButton.setTitle(title, for: .normal)
+        
         lineChartView.xAxis.valueFormatter = self
         setViewModel()
         //updateChart(fromDate: DateManager.currentDatetime(), toDate: DateManager.currentDatetime()) // :!!!:
