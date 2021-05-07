@@ -1,9 +1,0 @@
-/* Class = "UIButton"; normalTitle = "METRIC"; ObjectID = "1K3-d9-Hfb"; */
-"1K3-d9-Hfb.normalTitle" = "METRYCZNE";
-
-/* Class = "UILabel"; text = "Units:"; ObjectID = "3bd-8h-kcX"; */
-"3bd-8h-kcX.text" = "Jednostki:";
-
-/* Class = "UILabel"; text = "Serving Sizes"; ObjectID = "eU6-je-hVN"; */
-"eU6-je-hVN.text" = "Rozmiar porcji";
-

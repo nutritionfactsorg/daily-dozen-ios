@@ -234,7 +234,7 @@ class RealmProvider {
                 lastDatestamp = thisCounterDatestamp
             }
         }
-            // Append remaining weight records
+        // Append remaining weight records
         else if weightIndex < weightResults.count {
             while weightIndex < weightResults.count {
                 thisWeightRecord = weightResults[weightIndex]
@@ -331,7 +331,7 @@ class RealmProvider {
     
     func saveCount(_ count: Int, date: Date, countType: DataCountType) {
         saveDailyTracker()
-    
+
         let pid = DataCountRecord.pid(date: date, countType: countType)
         do {
             try realm.write {
@@ -483,12 +483,12 @@ class RealmProvider {
                 nextRec.streak = nextMaxValidStreak
                 // Note: checking additional dates stops here. Investigate the error.
                 break
-        }
-        
+            }
+            
             nextDay = nextDay.adding(days: 1)
             nextPid = DataCountRecord.pid(date: nextDay, countType: countType)
         }
-                
+        
         // count to verify this day's streak value.
         prevDay = date.adding(days: -1) // reset
         prevPid = DataCountRecord.pid(date: prevDay, countType: countType) // reset
@@ -500,13 +500,13 @@ class RealmProvider {
                 break
             }
             prevDay = prevDay.adding(days: -1)
-                prevPid = DataCountRecord.pid(date: prevDay, countType: countType)
-            }
+            prevPid = DataCountRecord.pid(date: prevDay, countType: countType)
+        }
         
         if streakCount == thisRec.streak {
             return // Done. Expected outcome.
-        }
-        
+        } 
+
         // check & update previous (past) date streak values
         prevDay = date.adding(days: -1) // reset
         prevPid = DataCountRecord.pid(date: prevDay, countType: countType) // reset
@@ -535,8 +535,8 @@ class RealmProvider {
                 prevRec.streak = prevMaxValidStreak
                 // Note: checking additional dates stops here. Investigate the error.
                 break
-        }
-        
+            }
+            
             prevDay = prevDay.adding(days: -1)
             prevPid = DataCountRecord.pid(date: prevDay, countType: countType)
         }        
@@ -552,7 +552,7 @@ class RealmProvider {
         }
         // this day's streak is 0
         thisRec.streak = 0
-                
+        
         // check & update next (future) date streak values
         var nextMaxValidStreak = 1
         var nextDay = date.adding(days: 1)
@@ -581,11 +581,11 @@ class RealmProvider {
                 nextRec.streak = nextMaxValidStreak
                 // Note: checking additional dates stops here. Investigate the error.
                 break
-        }
-        
+            }
+            
             nextDay = nextDay.adding(days: 1)
             nextPid = DataCountRecord.pid(date: nextDay, countType: countType)
-            }
         }
+    }
     
 }

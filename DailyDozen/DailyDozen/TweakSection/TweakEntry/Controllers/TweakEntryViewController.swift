@@ -13,6 +13,7 @@ class TweakEntryViewController: UIViewController {
     
     // MARK: - Outlets
     @IBOutlet private weak var dataProvider: TweakEntryDataProvider!
+    @IBOutlet weak var header21Tweaks: UILabel!
     @IBOutlet private weak var tableView: UITableView!
     @IBOutlet private weak var countLabel: UILabel!
     @IBOutlet private weak var starImage: UIImageView!
@@ -34,6 +35,9 @@ class TweakEntryViewController: UIViewController {
             }
         }
     }
+    
+    // entry.stats.completed
+    // Android uses 'out of' which does not fit on smaller Apple screens
     private var statesCountString: String {
         return "\(tweakDailyStateCount) / \(tweakDailyStateCountMaximum)"
     }
@@ -41,7 +45,7 @@ class TweakEntryViewController: UIViewController {
     // MARK: - UIViewController
     override func viewDidLoad() {
         super.viewDidLoad()
-        
+        header21Tweaks.text = NSLocalizedString("tweak_entry_header", comment: "21 Tweaks")
         setViewModel(date: DateManager.currentDatetime())
         
         tableView.dataSource = dataProvider

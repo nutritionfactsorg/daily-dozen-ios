@@ -69,7 +69,7 @@ class TweakEntryPagerViewController: UIViewController {
         updatePageDate(DateManager.currentDatetime())
         self.tweakDateBarField.resignFirstResponder()
     }
-
+    
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
 
@@ -87,7 +87,7 @@ class TweakEntryPagerViewController: UIViewController {
         tweakPageDate = date
         tweakDateBarPicker.setDate(tweakPageDate, animated: false)
         tweakDateBarPicker.maximumDate = DateManager.currentDatetime()
-
+        
         if tweakPageDate.isInCurrentDayWith(DateManager.currentDatetime()) {
             tweakBackButton.superview?.isHidden = true
             tweakDateBarField.text = NSLocalizedString("dateButtonTitle.today", comment: "Date button 'Today' title")
@@ -98,8 +98,8 @@ class TweakEntryPagerViewController: UIViewController {
         }
         
         if order != .orderedSame {
-        guard let viewController = children.first as? TweakEntryViewController else { return }
-        viewController.view.fadeOut().fadeIn()
+            guard let viewController = children.first as? TweakEntryViewController else { return }
+            viewController.view.fadeOut().fadeIn()
             viewController.setViewModel(date: tweakPageDate)
         }
     }

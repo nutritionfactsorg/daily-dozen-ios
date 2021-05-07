@@ -39,8 +39,15 @@ enum DozeEntrySections: Int {
         case .main:
             return nil
         case .supplements:
-            return Bundle.main
+            let view = Bundle.main
                 .loadNibNamed(Strings.supplementsHeader, owner: nil)?.first as? UIView
+            if let view = view {
+                if let label = view.viewWithTag(115117112) as? UILabel { // Object ID: W2v-Cp-vcd
+                    label.text = NSLocalizedString("dozeOtherInfo.section", comment: "entry section header: Supplements")
+                }
+                return view
+            }
+            return view
         }
     }
 

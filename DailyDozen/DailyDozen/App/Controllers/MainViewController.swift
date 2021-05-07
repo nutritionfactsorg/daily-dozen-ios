@@ -82,7 +82,7 @@ class MainViewController: UIViewController {
            let attachment = try? UNNotificationAttachment(identifier: "", url: url, options: nil) { 
             content.attachments.append(attachment)
         }
-
+        
         // Notification Time Trigger
         var timeComponents = DateComponents()
         timeComponents.hour = UserDefaults.standard.integer(forKey: SettingsKeys.reminderHourPref)

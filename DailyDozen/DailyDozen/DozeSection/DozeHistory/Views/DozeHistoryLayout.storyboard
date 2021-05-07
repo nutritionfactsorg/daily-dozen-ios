@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="15705" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="W8v-3t-yDA">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="18122" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="W8v-3t-yDA">
     <device id="retina4_7" orientation="portrait" appearance="light"/>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15706"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="18093"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -273,6 +273,7 @@
                                 </constraints>
                             </stackView>
                         </subviews>
+                        <viewLayoutGuide key="safeArea" id="EBL-A5-fjR"/>
                         <color key="backgroundColor" red="0.95294117649999999" green="0.95294117649999999" blue="0.95294117649999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
                             <constraint firstItem="zIk-Vv-QWQ" firstAttribute="leading" secondItem="EBL-A5-fjR" secondAttribute="leading" id="4RS-9q-9QP"/>
@@ -280,12 +281,12 @@
                             <constraint firstItem="EBL-A5-fjR" firstAttribute="bottom" secondItem="zIk-Vv-QWQ" secondAttribute="bottom" constant="6" id="PwF-ei-Lnv"/>
                             <constraint firstItem="zIk-Vv-QWQ" firstAttribute="trailing" secondItem="EBL-A5-fjR" secondAttribute="trailing" id="by0-1P-kct"/>
                         </constraints>
-                        <viewLayoutGuide key="safeArea" id="EBL-A5-fjR"/>
                     </view>
                     <connections>
                         <outlet property="chartView" destination="dpZ-0j-fti" id="zvb-Ft-pto"/>
                         <outlet property="controlPanel" destination="AXc-qN-o5Q" id="vaM-tH-Uzf"/>
                         <outlet property="scaleControl" destination="sM6-A9-KeP" id="KOn-Q6-a9s"/>
+                        <outlet property="scaleLabel" destination="27q-rq-qbu" id="QNr-Me-O4R"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="4UO-oL-cGk" userLabel="First Responder" sceneMemberID="firstResponder"/>

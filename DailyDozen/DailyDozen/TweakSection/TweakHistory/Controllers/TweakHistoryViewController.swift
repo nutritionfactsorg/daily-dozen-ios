@@ -35,7 +35,8 @@ class TweakHistoryViewController: UIViewController {
     @IBOutlet private weak var chartView: ChartView!
     @IBOutlet private weak var controlPanel: ControlPanel!
     @IBOutlet private weak var scaleControl: UISegmentedControl!
-
+    @IBOutlet weak var scaleLabel: UILabel!
+    
     // MARK: - Properties
     private var viewModel: TweakHistoryViewModel!
     private var currentTimeScale = TimeScale.day
@@ -92,6 +93,11 @@ class TweakHistoryViewController: UIViewController {
     // MARK: - UIViewController
     override func viewDidLoad() {
         super.viewDidLoad()
+
+        scaleControl.setTitle(NSLocalizedString("history_scale_choice_day", comment: "Day"), forSegmentAt: 0)
+        scaleControl.setTitle(NSLocalizedString("history_scale_choice_month", comment: "Month"), forSegmentAt: 1)
+        scaleControl.setTitle(NSLocalizedString("history_scale_choice_year", comment: "Year"), forSegmentAt: 2)
+        scaleLabel.text = NSLocalizedString("history_scale_label", comment: "Time Scale")
 
         chartView.xAxis.valueFormatter = self
         setViewModel()

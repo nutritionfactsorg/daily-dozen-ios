@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="17701" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="u1e-GF-Z27">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="18122" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="u1e-GF-Z27">
     <device id="retina5_5" orientation="portrait" appearance="light"/>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17703"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="18093"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -83,7 +83,7 @@
                                         <color key="backgroundColor" red="0.95294117649999999" green="0.95294117649999999" blue="0.95294117649999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <prototypes>
                                             <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="none" indentationWidth="10" reuseIdentifier="TweakEntryRowSid" rowHeight="90" id="0s9-h1-mhO" userLabel="TweakEntryRow" customClass="TweakEntryRow" customModule="DailyDozen" customModuleProvider="target">
-                                                <rect key="frame" x="0.0" y="28" width="414" height="90"/>
+                                                <rect key="frame" x="0.0" y="24.333333969116211" width="414" height="90"/>
                                                 <autoresizingMask key="autoresizingMask"/>
                                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="0s9-h1-mhO" id="Nxa-Gd-oAh" userLabel="TweakEntryRow Content View">
                                                     <rect key="frame" x="0.0" y="0.0" width="414" height="90"/>
@@ -280,6 +280,7 @@
                     <connections>
                         <outlet property="countLabel" destination="NPC-if-gUf" id="5SI-Zl-GJk"/>
                         <outlet property="dataProvider" destination="Bj3-0S-Y5n" id="sbc-9c-che"/>
+                        <outlet property="header21Tweaks" destination="5po-De-kCi" id="1pY-L8-b48"/>
                         <outlet property="starImage" destination="oWo-te-9I3" id="idK-A9-k8G"/>
                         <outlet property="tableView" destination="Rcg-UE-ozi" id="3yL-r8-3Eh"/>
                     </connections>

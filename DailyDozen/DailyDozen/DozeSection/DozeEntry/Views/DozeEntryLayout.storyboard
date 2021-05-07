@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="17701" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="M2f-B0-7nZ">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="18122" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="M2f-B0-7nZ">
     <device id="retina4_0" orientation="portrait" appearance="light"/>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17703"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="18093"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -83,7 +83,7 @@
                                         <color key="backgroundColor" red="0.95294117649999999" green="0.95294117649999999" blue="0.95294117649999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <prototypes>
                                             <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="none" indentationWidth="10" reuseIdentifier="DozeEntryRowSid" rowHeight="90" id="mu0-2E-Dx4" userLabel="DozeEntryRow" customClass="DozeEntryRow" customModule="DailyDozen" customModuleProvider="target">
-                                                <rect key="frame" x="0.0" y="28" width="320" height="90"/>
+                                                <rect key="frame" x="0.0" y="24.5" width="320" height="90"/>
                                                 <autoresizingMask key="autoresizingMask"/>
                                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="mu0-2E-Dx4" id="SqB-Ue-Rcd" userLabel="DozeEntryRow Content View">
                                                     <rect key="frame" x="0.0" y="0.0" width="320" height="90"/>
@@ -281,6 +281,7 @@
                     <connections>
                         <outlet property="countLabel" destination="ERa-UT-Rni" id="bLO-Yz-4zh"/>
                         <outlet property="dataProvider" destination="R1i-jB-i1L" id="5fV-pP-umQ"/>
+                        <outlet property="headerServings" destination="1HM-mL-ZV9" id="Ydu-3Z-oLd"/>
                         <outlet property="starImage" destination="UHf-fX-jsj" id="rSR-nU-R38"/>
                         <outlet property="tableView" destination="9Z3-ZU-bjI" id="ZfV-GR-P7b"/>
                     </connections>

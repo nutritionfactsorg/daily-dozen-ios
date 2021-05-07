@@ -34,7 +34,7 @@ class TweakEntryDataProvider: NSObject, UITableViewDataSource {
         guard let tweakEntryRow = tableView.dequeueReusableCell(
             withIdentifier: Strings.tweakEntryRowSid
         ) as? TweakEntryRow else {
-                fatalError("Expected `TweakEntryRow`")
+            fatalError("Expected `TweakEntryRow`")
         }
 
         let rowIndex = indexPath.row

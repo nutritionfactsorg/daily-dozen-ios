@@ -12,6 +12,7 @@ class DozeEntryViewController: UIViewController {
     
     // MARK: - Outlets
     @IBOutlet private weak var dataProvider: DozeEntryDataProvider!
+    @IBOutlet weak var headerServings: UILabel!
     @IBOutlet private weak var tableView: UITableView!
     @IBOutlet private weak var countLabel: UILabel!
     @IBOutlet private weak var starImage: UIImageView!
@@ -33,6 +34,9 @@ class DozeEntryViewController: UIViewController {
             }
         }
     }
+    
+    // entry.stats.completed
+    // Android uses 'out of' which does not fit on smaller Apple screens
     private var statesCountString: String {
         return "\(dozeDailyStateCount) / \(dozeDailyStateCountMaximum)"
     }
@@ -40,7 +44,7 @@ class DozeEntryViewController: UIViewController {
     // MARK: - UIViewController
     override func viewDidLoad() {
         super.viewDidLoad()
-        
+        headerServings.text = NSLocalizedString("doze_entry_header", comment: "Servings")
         setViewModel(date: DateManager.currentDatetime())
         
         tableView.dataSource = dataProvider

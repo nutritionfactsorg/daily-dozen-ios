@@ -22,7 +22,16 @@ class FirstLaunchViewController: UIViewController {
         
         return viewController
     }
-
+    
+    // Outlets
+    
+    @IBOutlet weak var settingHealthAloneLabel: UILabel!
+    @IBOutlet weak var settingHealthWeightLabel: UILabel!
+    @IBOutlet weak var settingDozeOnlyBtn: UIButton!
+    @IBOutlet weak var settingDozeTweakBtn: UIButton!
+        
+    // Actions
+    
     @IBAction func dailyDozenOnly(_ sender: Any) {
         UserDefaults.standard.set(true, forKey: SettingsKeys.hasSeenFirstLaunch)
         UserDefaults.standard.set(false, forKey: SettingsKeys.show21TweaksPref)
@@ -55,7 +64,15 @@ class FirstLaunchViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view.
+
+        settingHealthAloneLabel.text = NSLocalizedString("setting_health_alone_txt", comment: "For Health Alone")
+        settingHealthWeightLabel.text = NSLocalizedString("setting_health_weight_txt", comment: "For Health and Weight Loss")
+        settingDozeOnlyBtn.setTitle(
+            NSLocalizedString("setting_doze_only_btn", comment: "Daily Dozen\nOnly"),
+            for: .normal)
+        settingDozeTweakBtn.setTitle(
+            NSLocalizedString("setting_doze_tweak_btn", comment: "Daily Dozen +\n21 Tweaks"),
+            for: .normal)
     }
     
 }

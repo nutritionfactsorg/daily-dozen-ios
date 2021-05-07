@@ -43,31 +43,47 @@ enum TweakDetailSections: Int {
             // :UNITS_VISIBILITY: Handle imperial|metric unit button visibility
             let shouldShowTypeToggle = UserDefaults.standard.bool(forKey: SettingsKeys.unitsTypeToggleShowPref)
             if shouldShowTypeToggle == false {
-                return Bundle.main
-                    .loadNibNamed(Nibs.activityHeaderNib, owner: nil)?.first as? UIView
+                if let v = Bundle.main.loadNibNamed(Nibs.activityHeaderNib, owner: nil)?.first as? UIView,
+                   let label = v.viewWithTag(6599116) as? UILabel {
+                    label.text = NSLocalizedString("tweak_detail_section_activity", comment: "Activity")
+                    return v
+                }
+                return nil
             }
+            // if imperial and metic content is the same, then show without any units toggle
             if TweakTextsProvider.shared.isMetricTxtEqualToImperialTxt(itemTypeKey: itemTypeKey) {
-                return Bundle.main
-                    .loadNibNamed(Nibs.activityHeaderNib, owner: nil)?.first as? UIView
+                if let v = Bundle.main.loadNibNamed(Nibs.activityHeaderNib, owner: nil)?.first as? UIView,
+                   let label = v.viewWithTag(6599116) as? UILabel {
+                    label.text = NSLocalizedString("tweak_detail_section_activity", comment: "Activity")
+                    return v
+                }
+                return nil
             }
             // Handle imperial vs. metric units
-            if 
-                let unitsTypePrefStr = UserDefaults.standard.string(forKey: SettingsKeys.unitsTypePref),
-                let currentUnitsType = UnitsType(rawValue: unitsTypePrefStr),
-                let uiView: UIView = Bundle.main
-                    .loadNibNamed(Nibs.activityHeaderUnitNib, owner: nil)?
-                    .first as? UIView {
+            if let unitsTypePrefStr = UserDefaults.standard.string(forKey: SettingsKeys.unitsTypePref),
+               let currentUnitsType = UnitsType(rawValue: unitsTypePrefStr),
+               let uiView: UIView = Bundle.main.loadNibNamed(Nibs.activityHeaderUnitNib, owner: nil)?.first as? UIView,
+               let labelSection = uiView.viewWithTag(6599116) as? UILabel,
+               let labelUnits = uiView.viewWithTag(85110105) as? UILabel {
+                
+                labelSection.text = NSLocalizedString("tweak_detail_section_activity", comment: "Activity")
+                labelUnits.text = NSLocalizedString("units_label", comment: "Units:")
+                
                 // Handle imperial vs. metric units
                 let buttons = uiView.subviews(ofType: UIButton.self)
                 for btn in buttons {
                     btn.setTitle(currentUnitsType.title, for: .normal)
-                }              
+                }
                 return uiView
             }
             return nil
         case .description:
-            return Bundle.main
-                .loadNibNamed(Nibs.descriptionHeaderNib, owner: nil)?.first as? UIView
+            if let uiView = Bundle.main.loadNibNamed(Nibs.descriptionHeaderNib, owner: nil)?.first as? UIView,
+               let label = uiView.viewWithTag(68101115) as? UILabel {
+                label.text = NSLocalizedString("tweak_detail_section_description", comment: "Types")
+                return uiView
+            }
+            return nil
         }
     }
     
