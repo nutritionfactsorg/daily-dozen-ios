@@ -11,12 +11,42 @@ import UIKit
 // MARK: - UITableViewController
 class InfoMenuMainTableVC: UITableViewController {
 
+    // MARK: - Menu Labels
+    
+    @IBOutlet weak var infoAppAboutLabel: UILabel!
+    @IBOutlet weak var infoBookHowNotToDieLabel: UILabel!
+    @IBOutlet weak var infoBookHowNotToDieCookbookLabel: UILabel!
+    @IBOutlet weak var infoBookHowNotToDietLabel: UILabel!
+    @IBOutlet weak var infoWebDozeChallengeLabel: UILabel!
+    @IBOutlet weak var infoWebDonateLabel: UILabel!
+    @IBOutlet weak var infoWebOpenSourceLabel: UILabel!
+    @IBOutlet weak var infoWebSubscribeLabel: UILabel!
+    @IBOutlet weak var infoWebLatestLatestLabel: UILabel!
+    
     // MARK: - UITableViewController
     override func viewDidLoad() {
         super.viewDidLoad()
         navigationController?.navigationBar.barTintColor = UIColor.greenColor
         navigationController?.navigationBar.tintColor = UIColor.white
         navigationController?.navigationBar.titleTextAttributes = [NSAttributedString.Key.foregroundColor: UIColor.white]
+        
+        infoAppAboutLabel.text = NSLocalizedString("info_app_about", comment: "About")
+        infoBookHowNotToDieLabel.text = NSLocalizedString(
+            "info_book_how_not_to_die", comment: "How Not to Die")
+        infoBookHowNotToDieCookbookLabel.text = NSLocalizedString(
+            "info_book_how_not_to_die_cookbook", comment: "How Not to Die Cookbook")
+        infoBookHowNotToDietLabel.text = NSLocalizedString(
+            "info_book_how_not_to_diet", comment: "How Not to Diet")
+        infoWebDozeChallengeLabel.text = NSLocalizedString(
+            "info_webpage_daily_dozen_challenge", comment: "Daily Dozen Challenge")
+        infoWebDonateLabel.text = NSLocalizedString(
+            "info_webpage_donate", comment: "Donate")
+        infoWebOpenSourceLabel.text = NSLocalizedString(
+            "info_webpage_open_source", comment: "Open Source")
+        infoWebSubscribeLabel.text = NSLocalizedString(
+            "info_webpage_subscribe", comment: "Subscribe")
+        infoWebLatestLatestLabel.text = NSLocalizedString(
+            "info_webpage_videos_latest", comment: "Latest Videos")
     }
 
     /// Presents share services for CSV export backup file.

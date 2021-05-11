@@ -30,8 +30,6 @@
 		493A8B9A235E93DA00A5009A /* SettingsKeys.swift in Sources */ = {isa = PBXBuildFile; fileRef = 493A8B99235E93DA00A5009A /* SettingsKeys.swift */; };
 		493A9BD323CE47A000F679BE /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 493A9BD523CE47A000F679BE /* Localizable.strings */; };
 		493A9BEC23CE612A00F679BE /* ItemHistoryLayout.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 493A9BEE23CE612A00F679BE /* ItemHistoryLayout.storyboard */; };
-		493A9BF023CE61BE00F679BE /* InfoMenuMainLayout.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 493A9BF223CE61BE00F679BE /* InfoMenuMainLayout.storyboard */; };
-		493A9C0023CE627B00F679BE /* SettingsLayout.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 493A9C0223CE627B00F679BE /* SettingsLayout.storyboard */; };
 		493B0EB2258D0D7B00FEDA8E /* dr_greger.png in Resources */ = {isa = PBXBuildFile; fileRef = 493B0EB1258D0D7B00FEDA8E /* dr_greger.png */; };
 		4941D72E237E13DC00ED84B5 /* RealmManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4941D726237E13DB00ED84B5 /* RealmManager.swift */; };
 		4941D72F237E13DC00ED84B5 /* DataCountRecord.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4941D728237E13DC00ED84B5 /* DataCountRecord.swift */; };
@@ -49,12 +47,10 @@
 		4966D7FB237DE9D4004F3A20 /* Resources in Resources */ = {isa = PBXBuildFile; fileRef = 4966D7FA237DE9D3004F3A20 /* Resources */; };
 		496917DD238716BD00A9A743 /* RealmManagerLegacy.swift in Sources */ = {isa = PBXBuildFile; fileRef = 496917DC238716BD00A9A743 /* RealmManagerLegacy.swift */; };
 		497390A923A5941900492D92 /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 497390A823A5941900492D92 /* MainViewController.swift */; };
-		497390AC23A5956900492D92 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 497390AA23A5956900492D92 /* Main.storyboard */; };
 		497390B023A5D4F900492D92 /* SettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 497390AD23A5D4F800492D92 /* SettingsViewController.swift */; };
 		497390B123A5D4F900492D92 /* SettingsReminderViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 497390AE23A5D4F900492D92 /* SettingsReminderViewController.swift */; };
 		497A8F0A24748E88001BEDCA /* SettingsManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 497A8F0924748E88001BEDCA /* SettingsManager.swift */; };
 		497A8F0C2474AFC8001BEDCA /* DataWeightValues.swift in Sources */ = {isa = PBXBuildFile; fileRef = 497A8F0B2474AFC8001BEDCA /* DataWeightValues.swift */; };
-		497B137223CD72E600BC2488 /* InfoMenuAboutLayout.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 497B137423CD72E600BC2488 /* InfoMenuAboutLayout.storyboard */; };
 		497F91B2240990B600464E4E /* TweakDetailSections.swift in Sources */ = {isa = PBXBuildFile; fileRef = 497F91B1240990B600464E4E /* TweakDetailSections.swift */; };
 		498170952391B6AB0033882C /* TweakEntrySections.swift in Sources */ = {isa = PBXBuildFile; fileRef = 498170942391B6AB0033882C /* TweakEntrySections.swift */; };
 		4981709B2391B85B0033882C /* TweakHistoryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4981709A2391B85B0033882C /* TweakHistoryViewController.swift */; };
@@ -66,7 +62,6 @@
 		498D76A423709F9D00B5DF06 /* UtilityTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 498D76A323709F9D00B5DF06 /* UtilityTableViewController.swift */; };
 		498F7244239D8B5C004E501B /* WeightHistoryViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 498F7243239D8B5C004E501B /* WeightHistoryViewModel.swift */; };
 		498F7246239D90E2004E501B /* WeightEntryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 498F7245239D90E2004E501B /* WeightEntryViewController.swift */; };
-		498F724B239E013E004E501B /* FirstLaunch.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 498F7249239E013E004E501B /* FirstLaunch.storyboard */; };
 		498F724D239E08C0004E501B /* FirstLaunchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 498F724C239E08C0004E501B /* FirstLaunchViewController.swift */; };
 		498F724F239E2EA3004E501B /* HealthKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 498F724E239E2EA3004E501B /* HealthKit.framework */; };
 		498F7251239E3007004E501B /* HealthManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 498F7250239E3007004E501B /* HealthManager.swift */; };
@@ -96,6 +91,11 @@
 		49D9B07B240DCA1F000E9822 /* UIView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49D9B07A240DCA1F000E9822 /* UIView.swift */; };
 		49DB104D238E255D00E77E52 /* DozeEntryViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49DB104C238E255D00E77E52 /* DozeEntryViewModel.swift */; };
 		49DB104F238E257D00E77E52 /* TweakEntryViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49DB104E238E257D00E77E52 /* TweakEntryViewModel.swift */; };
+		49DEDA35264A0D0A0056462D /* SettingsLayout.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 49DEDA34264A0D0A0056462D /* SettingsLayout.storyboard */; };
+		49DEDA38264A0DEC0056462D /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 49DEDA36264A0DEC0056462D /* Main.storyboard */; };
+		49DEDA39264A0DEC0056462D /* FirstLaunch.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 49DEDA37264A0DEC0056462D /* FirstLaunch.storyboard */; };
+		49DEDA3B264A0FB20056462D /* InfoMenuAboutLayout.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 49DEDA3A264A0FB20056462D /* InfoMenuAboutLayout.storyboard */; };
+		49DEDA3D264A10A20056462D /* InfoMenuMainLayout.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 49DEDA3C264A10A20056462D /* InfoMenuMainLayout.storyboard */; };
 		49EF489F2586EA3500E89369 /* RoundedTextfield.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49EF489E2586EA3500E89369 /* RoundedTextfield.swift */; };
 		49F0377B233AD9B600FFD2EE /* UIButtonCheckbox.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49F0377A233AD9B600FFD2EE /* UIButtonCheckbox.swift */; };
 		49F66B792588752D00002DB2 /* UITextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49F66B782588752D00002DB2 /* UITextField.swift */; };
@@ -182,22 +182,10 @@
 		493A8B99235E93DA00A5009A /* SettingsKeys.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsKeys.swift; sourceTree = "<group>"; };
 		493A9BD423CE47A000F679BE /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
 		493A9BED23CE612A00F679BE /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/ItemHistoryLayout.storyboard; sourceTree = "<group>"; };
-		493A9BF123CE61BE00F679BE /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/InfoMenuMainLayout.storyboard; sourceTree = "<group>"; };
-		493A9C0123CE627B00F679BE /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/SettingsLayout.storyboard; sourceTree = "<group>"; };
-		493A9C1C23CE6B7300F679BE /* es */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = es; path = es.lproj/InfoMenuAboutLayout.strings; sourceTree = "<group>"; };
-		493A9C1D23CE6B7300F679BE /* es */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = es; path = es.lproj/FirstLaunch.strings; sourceTree = "<group>"; };
-		493A9C1E23CE6B7300F679BE /* es */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = es; path = es.lproj/Main.strings; sourceTree = "<group>"; };
 		493A9C2523CE6B7400F679BE /* es */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = es; path = es.lproj/ItemHistoryLayout.strings; sourceTree = "<group>"; };
-		493A9C2623CE6B7400F679BE /* es */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = es; path = es.lproj/InfoMenuMainLayout.strings; sourceTree = "<group>"; };
-		493A9C2B23CE6B7500F679BE /* es */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = es; path = es.lproj/SettingsLayout.strings; sourceTree = "<group>"; };
 		493A9C3223CE6B7500F679BE /* es */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = es; path = es.lproj/Localizable.strings; sourceTree = "<group>"; };
 		493B0EB1258D0D7B00FEDA8E /* dr_greger.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = dr_greger.png; sourceTree = "<group>"; };
-		493CE64D25D727B400F95BF3 /* pl */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = pl; path = pl.lproj/FirstLaunch.strings; sourceTree = "<group>"; };
-		493CE64F25D727E300F95BF3 /* pl */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = pl; path = pl.lproj/Main.strings; sourceTree = "<group>"; };
 		493CE65825D727E400F95BF3 /* pl */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = pl; path = pl.lproj/ItemHistoryLayout.strings; sourceTree = "<group>"; };
-		493CE65925D727E400F95BF3 /* pl */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = pl; path = pl.lproj/InfoMenuMainLayout.strings; sourceTree = "<group>"; };
-		493CE65A25D727E400F95BF3 /* pl */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = pl; path = pl.lproj/InfoMenuAboutLayout.strings; sourceTree = "<group>"; };
-		493CE65B25D727E400F95BF3 /* pl */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = pl; path = pl.lproj/SettingsLayout.strings; sourceTree = "<group>"; };
 		493CE66625D727E500F95BF3 /* pl */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = pl; path = pl.lproj/Localizable.strings; sourceTree = "<group>"; };
 		493CE66725D727E500F95BF3 /* pl */ = {isa = PBXFileReference; lastKnownFileType = text.json; name = pl; path = pl.lproj/DozeDetailData.json; sourceTree = "<group>"; };
 		493CE66825D727E500F95BF3 /* pl */ = {isa = PBXFileReference; lastKnownFileType = text.json; name = pl; path = pl.lproj/TweakDetailData.json; sourceTree = "<group>"; };
@@ -217,12 +205,10 @@
 		4966D7FA237DE9D3004F3A20 /* Resources */ = {isa = PBXFileReference; lastKnownFileType = folder; path = Resources; sourceTree = "<group>"; };
 		496917DC238716BD00A9A743 /* RealmManagerLegacy.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RealmManagerLegacy.swift; sourceTree = "<group>"; };
 		497390A823A5941900492D92 /* MainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
-		497390AB23A5956900492D92 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		497390AD23A5D4F800492D92 /* SettingsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SettingsViewController.swift; sourceTree = "<group>"; };
 		497390AE23A5D4F900492D92 /* SettingsReminderViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SettingsReminderViewController.swift; sourceTree = "<group>"; };
 		497A8F0924748E88001BEDCA /* SettingsManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsManager.swift; sourceTree = "<group>"; };
 		497A8F0B2474AFC8001BEDCA /* DataWeightValues.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataWeightValues.swift; sourceTree = "<group>"; };
-		497B137323CD72E600BC2488 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/InfoMenuAboutLayout.storyboard; sourceTree = "<group>"; };
 		497F91B1240990B600464E4E /* TweakDetailSections.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TweakDetailSections.swift; sourceTree = "<group>"; };
 		498170942391B6AB0033882C /* TweakEntrySections.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TweakEntrySections.swift; sourceTree = "<group>"; };
 		4981709A2391B85B0033882C /* TweakHistoryViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TweakHistoryViewController.swift; sourceTree = "<group>"; };
@@ -238,7 +224,6 @@
 		498D76A323709F9D00B5DF06 /* UtilityTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UtilityTableViewController.swift; sourceTree = "<group>"; };
 		498F7243239D8B5C004E501B /* WeightHistoryViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeightHistoryViewModel.swift; sourceTree = "<group>"; };
 		498F7245239D90E2004E501B /* WeightEntryViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeightEntryViewController.swift; sourceTree = "<group>"; };
-		498F724A239E013E004E501B /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/FirstLaunch.storyboard; sourceTree = "<group>"; };
 		498F724C239E08C0004E501B /* FirstLaunchViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FirstLaunchViewController.swift; sourceTree = "<group>"; };
 		498F724E239E2EA3004E501B /* HealthKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = HealthKit.framework; path = System/Library/Frameworks/HealthKit.framework; sourceTree = SDKROOT; };
 		498F7250239E3007004E501B /* HealthManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HealthManager.swift; sourceTree = "<group>"; };
@@ -271,6 +256,11 @@
 		49D9B07A240DCA1F000E9822 /* UIView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIView.swift; sourceTree = "<group>"; };
 		49DB104C238E255D00E77E52 /* DozeEntryViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DozeEntryViewModel.swift; sourceTree = "<group>"; };
 		49DB104E238E257D00E77E52 /* TweakEntryViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TweakEntryViewModel.swift; sourceTree = "<group>"; };
+		49DEDA34264A0D0A0056462D /* SettingsLayout.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = SettingsLayout.storyboard; sourceTree = "<group>"; };
+		49DEDA36264A0DEC0056462D /* Main.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Main.storyboard; sourceTree = "<group>"; };
+		49DEDA37264A0DEC0056462D /* FirstLaunch.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = FirstLaunch.storyboard; sourceTree = "<group>"; };
+		49DEDA3A264A0FB20056462D /* InfoMenuAboutLayout.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = InfoMenuAboutLayout.storyboard; sourceTree = "<group>"; };
+		49DEDA3C264A10A20056462D /* InfoMenuMainLayout.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = InfoMenuMainLayout.storyboard; sourceTree = "<group>"; };
 		49EF489E2586EA3500E89369 /* RoundedTextfield.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RoundedTextfield.swift; sourceTree = "<group>"; };
 		49F0377A233AD9B600FFD2EE /* UIButtonCheckbox.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIButtonCheckbox.swift; sourceTree = "<group>"; };
 		49F66B782588752D00002DB2 /* UITextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UITextField.swift; sourceTree = "<group>"; };
@@ -377,7 +367,7 @@
 		490A0127241080FA00C3EEEA /* Views */ = {
 			isa = PBXGroup;
 			children = (
-				493A9BF223CE61BE00F679BE /* InfoMenuMainLayout.storyboard */,
+				49DEDA3C264A10A20056462D /* InfoMenuMainLayout.storyboard */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -393,7 +383,7 @@
 		490A01292410812300C3EEEA /* Views */ = {
 			isa = PBXGroup;
 			children = (
-				497B137423CD72E600BC2488 /* InfoMenuAboutLayout.storyboard */,
+				49DEDA3A264A0FB20056462D /* InfoMenuAboutLayout.storyboard */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -572,7 +562,7 @@
 		4946DEE524106E430054AEBB /* Views */ = {
 			isa = PBXGroup;
 			children = (
-				493A9C0223CE627B00F679BE /* SettingsLayout.storyboard */,
+				49DEDA34264A0D0A0056462D /* SettingsLayout.storyboard */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -917,9 +907,9 @@
 		CFD1BA311FCD24220057F549 /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				49DEDA37264A0DEC0056462D /* FirstLaunch.storyboard */,
 				49B9801425F611A5009BA5A9 /* LaunchScreen.storyboard */,
-				498F7249239E013E004E501B /* FirstLaunch.storyboard */,
-				497390AA23A5956900492D92 /* Main.storyboard */,
+				49DEDA36264A0DEC0056462D /* Main.storyboard */,
 				CFBEE2331FDE9A57005C0F45 /* RoundedView.swift */,
 				CFD1BA321FCD24920057F549 /* RoundedButton.swift */,
 				49EF489E2586EA3500E89369 /* RoundedTextfield.swift */,
@@ -1174,10 +1164,8 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				493A9C0023CE627B00F679BE /* SettingsLayout.storyboard in Resources */,
 				49B97FE725F5EE5C009BA5A9 /* DozeEntryPagerLayout.storyboard in Resources */,
 				49C01CD22644AF48005E592D /* TweakDetailDescriptionHeader.xib in Resources */,
-				497B137223CD72E600BC2488 /* InfoMenuAboutLayout.storyboard in Resources */,
 				49B97FEF25F5EF87009BA5A9 /* TweakEntryPagerLayout.storyboard in Resources */,
 				49C01CC32644AA09005E592D /* DozeDetailSizeUnitHeader.xib in Resources */,
 				49C01CC22644AA09005E592D /* DozeDetailLayout.storyboard in Resources */,
@@ -1186,26 +1174,28 @@
 				493A9BEC23CE612A00F679BE /* ItemHistoryLayout.storyboard in Resources */,
 				492474A323DB677A00D7D918 /* InfoPlist.strings in Resources */,
 				49C01CC92644ABA4005E592D /* DozeEntryLayout.storyboard in Resources */,
+				49DEDA38264A0DEC0056462D /* Main.storyboard in Resources */,
 				49C01CC82644ABA4005E592D /* DozeEntryExtrasHeader.xib in Resources */,
 				49C646CB236F4A46000DA8DC /* UtilityLayout.storyboard in Resources */,
 				4955013A23CD453200C72FB3 /* Assets.xcassets in Resources */,
 				49C01CC42644AA09005E592D /* DozeDetailSizeHeader.xib in Resources */,
+				49DEDA3B264A0FB20056462D /* InfoMenuAboutLayout.storyboard in Resources */,
+				49DEDA3D264A10A20056462D /* InfoMenuMainLayout.storyboard in Resources */,
 				499B94E426439CBB00AC275A /* WeightHistoryLayout.storyboard in Resources */,
 				49C01CD52644AF48005E592D /* TweakDetailLayout.storyboard in Resources */,
 				49C01CC52644AA09005E592D /* DozeDetailTypeHeader.xib in Resources */,
 				49C01CD42644AF48005E592D /* TweakDetailActivityHeader.xib in Resources */,
+				49DEDA35264A0D0A0056462D /* SettingsLayout.storyboard in Resources */,
 				49C01CCD2644ADCB005E592D /* TweakEntryLayout.storyboard in Resources */,
 				4916451D23EE53610077731D /* TweakDetailData.json in Resources */,
+				49DEDA39264A0DEC0056462D /* FirstLaunch.storyboard in Resources */,
 				493A9BD323CE47A000F679BE /* Localizable.strings in Resources */,
-				497390AC23A5956900492D92 /* Main.storyboard in Resources */,
 				493B0EB2258D0D7B00FEDA8E /* dr_greger.png in Resources */,
 				CFF72B001FB9BB70001CC2E9 /* LinkSettings.plist in Resources */,
 				499B94E226439C9000AC275A /* WeightEntryLayout.storyboard in Resources */,
-				493A9BF023CE61BE00F679BE /* InfoMenuMainLayout.storyboard in Resources */,
 				499B94E126439C9000AC275A /* WeightEntryPagerLayout.storyboard in Resources */,
 				4933A75023EE2BC800CE4631 /* DozeDetailData.json in Resources */,
 				49C01CD32644AF48005E592D /* TweakDetailActivityUnitHeader.xib in Resources */,
-				498F724B239E013E004E501B /* FirstLaunch.storyboard in Resources */,
 				49C01CD72644AFDD005E592D /* TweakHistoryLayout.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -1502,56 +1492,6 @@
 				493CE65825D727E400F95BF3 /* pl */,
 			);
 			name = ItemHistoryLayout.storyboard;
-			sourceTree = "<group>";
-		};
-		493A9BF223CE61BE00F679BE /* InfoMenuMainLayout.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				493A9BF123CE61BE00F679BE /* Base */,
-				493A9C2623CE6B7400F679BE /* es */,
-				493CE65925D727E400F95BF3 /* pl */,
-			);
-			name = InfoMenuMainLayout.storyboard;
-			sourceTree = "<group>";
-		};
-		493A9C0223CE627B00F679BE /* SettingsLayout.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				493A9C0123CE627B00F679BE /* Base */,
-				493A9C2B23CE6B7500F679BE /* es */,
-				493CE65B25D727E400F95BF3 /* pl */,
-			);
-			name = SettingsLayout.storyboard;
-			sourceTree = "<group>";
-		};
-		497390AA23A5956900492D92 /* Main.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				497390AB23A5956900492D92 /* Base */,
-				493A9C1E23CE6B7300F679BE /* es */,
-				493CE64F25D727E300F95BF3 /* pl */,
-			);
-			name = Main.storyboard;
-			sourceTree = "<group>";
-		};
-		497B137423CD72E600BC2488 /* InfoMenuAboutLayout.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				497B137323CD72E600BC2488 /* Base */,
-				493A9C1C23CE6B7300F679BE /* es */,
-				493CE65A25D727E400F95BF3 /* pl */,
-			);
-			name = InfoMenuAboutLayout.storyboard;
-			sourceTree = "<group>";
-		};
-		498F7249239E013E004E501B /* FirstLaunch.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				498F724A239E013E004E501B /* Base */,
-				493A9C1D23CE6B7300F679BE /* es */,
-				493CE64D25D727B400F95BF3 /* pl */,
-			);
-			name = FirstLaunch.storyboard;
 			sourceTree = "<group>";
 		};
 /* End PBXVariantGroup section */

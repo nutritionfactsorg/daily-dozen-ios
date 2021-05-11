@@ -31,10 +31,10 @@ class SettingsReminderViewController: UITableViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-            settingsDatePicker.datePickerMode = .time
-            settingsDatePicker.date.hour = UserDefaults.standard.integer(forKey: SettingsKeys.reminderHourPref)
-            settingsDatePicker.date.minute = UserDefaults.standard.integer(forKey: SettingsKeys.reminderMinutePref)
-            
+        settingsDatePicker.datePickerMode = .time
+        settingsDatePicker.date.hour = UserDefaults.standard.integer(forKey: SettingsKeys.reminderHourPref)
+        settingsDatePicker.date.minute = UserDefaults.standard.integer(forKey: SettingsKeys.reminderMinutePref)
+        
         let canNotificate = UserDefaults.standard.bool(forKey: SettingsKeys.reminderCanNotify)
         reminderSwitch.isOn = canNotificate
         if reminderSwitch.isOn {
@@ -53,21 +53,21 @@ class SettingsReminderViewController: UITableViewController {
     override func viewWillDisappear(_ animated: Bool) {
         super.viewWillDisappear(animated)
         // Store Settings
-            UserDefaults.standard.set(settingsDatePicker.date.hour, forKey: SettingsKeys.reminderHourPref)
-            UserDefaults.standard.set(settingsDatePicker.date.minute, forKey: SettingsKeys.reminderMinutePref)
+        UserDefaults.standard.set(settingsDatePicker.date.hour, forKey: SettingsKeys.reminderHourPref)
+        UserDefaults.standard.set(settingsDatePicker.date.minute, forKey: SettingsKeys.reminderMinutePref)
         UserDefaults.standard.set(soundSwitch.isOn, forKey: SettingsKeys.reminderSoundPref)
         // Clear Requests
-            UNUserNotificationCenter.current().removeAllPendingNotificationRequests()
-            
+        UNUserNotificationCenter.current().removeAllPendingNotificationRequests()
+        
         if reminderSwitch.isOn == false {
             return // done
         }
         
         // Notification Content
-            let content = UNMutableNotificationContent()
+        let content = UNMutableNotificationContent()
         content.title = SettingsReminderContent.title
         content.body = SettingsReminderContent.body
-            content.badge = 1
+        content.badge = 1
         if soundSwitch.isOn {
             content.sound = UNNotificationSound.default 
         }
@@ -76,20 +76,20 @@ class SettingsReminderViewController: UITableViewController {
            let attachment = try? UNNotificationAttachment(identifier: "", url: url, options: nil) { 
             content.attachments.append(attachment)
         }
-            
+        
         // Notification Time Trigger
         var timeComponents = DateComponents()
         timeComponents.hour = settingsDatePicker.date.hour
         timeComponents.minute = settingsDatePicker.date.minute
         let dateTrigger = UNCalendarNotificationTrigger(dateMatching: timeComponents, repeats: true)
-            
+        
         // Post Notification Request
         let request = UNNotificationRequest(identifier: SettingsKeys.reminderRequestID, content: content, trigger: dateTrigger)
-            UNUserNotificationCenter.current().add(request) { (error) in
-                if let error = error {
-                    LogService.shared.error(
-                        "SettingsReminderViewController viewWillDisappear \(error.localizedDescription)"
-                    )
+        UNUserNotificationCenter.current().add(request) { (error) in
+            if let error = error {
+                LogService.shared.error(
+                    "SettingsReminderViewController viewWillDisappear \(error.localizedDescription)"
+                )
             }
         }
     }

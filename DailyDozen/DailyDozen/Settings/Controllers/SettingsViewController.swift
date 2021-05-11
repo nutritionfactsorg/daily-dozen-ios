@@ -18,12 +18,12 @@ class SettingsViewController: UITableViewController {
         guard
             let viewController = storyboard
                 .instantiateInitialViewController() as? SettingsViewController
-            else { fatalError("Did not instantiate `SettingsViewController`") }
+        else { fatalError("Did not instantiate `SettingsViewController`") }
         viewController.title = NSLocalizedString("navtab.preferences", comment: "Preferences (aka Settings, Configuration) navigation tab. Choose word different from 'Tweaks' translation")
         
         return viewController
     }
-
+    
     /// Measurement Units
     @IBOutlet weak var unitMeasureToggle: UISegmentedControl!
     /// Daily Reminder
@@ -94,8 +94,8 @@ class SettingsViewController: UITableViewController {
     func setUnitsMeasureSegment() {
         let shouldShowUnitsToggle = UserDefaults.standard.bool(forKey: SettingsKeys.unitsTypeToggleShowPref)
         guard let unitTypePrefStr =  UserDefaults.standard.string(forKey: SettingsKeys.unitsTypePref),
-            let unitTypePref = UnitsType(rawValue: unitTypePrefStr)
-            else { return } // :!!!:MEC:review
+              let unitTypePref = UnitsType(rawValue: unitTypePrefStr)
+        else { return } // :!!!:MEC:review
         if  shouldShowUnitsToggle == true {
             unitMeasureToggle.selectedSegmentIndex = UnitsSegmentState.toggleUnitsState.rawValue
         } else {
@@ -160,7 +160,7 @@ class SettingsViewController: UITableViewController {
                 object: 2, // Dozen, More, Settings
                 userInfo: nil)
         } else if tweakVisibilityController.selectedSegmentIndex == 1
-            && show21Tweaks == false {
+                    && show21Tweaks == false {
             // Toggle to show 2nd tab
             UserDefaults.standard.set(true, forKey: SettingsKeys.show21TweaksPref)
             NotificationCenter.default.post(
@@ -205,5 +205,5 @@ class SettingsViewController: UITableViewController {
         }
         return sectionName
     }
-        
+    
 }

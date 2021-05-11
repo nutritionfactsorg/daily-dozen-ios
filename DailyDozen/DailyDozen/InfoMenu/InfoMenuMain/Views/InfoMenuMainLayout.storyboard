@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="15705" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="clC-rM-ORC">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="18122" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="clC-rM-ORC">
     <device id="retina4_7" orientation="portrait" appearance="light"/>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15706"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="18093"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
@@ -14,7 +14,7 @@
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" dataMode="static" style="grouped" separatorStyle="none" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="18" sectionFooterHeight="18" id="16S-IN-QDi">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
+                        <color key="backgroundColor" systemColor="groupTableViewBackgroundColor"/>
                         <sections>
                             <tableViewSection id="0r0-lf-lo1">
                                 <cells>
@@ -513,10 +513,26 @@
                         </connections>
                     </tableView>
                     <navigationItem key="navigationItem" id="Lx4-kw-TO7"/>
+                    <connections>
+                        <outlet property="infoAppAboutLabel" destination="qGY-wh-1gB" id="62z-KG-nct"/>
+                        <outlet property="infoBookHowNotToDieCookbookLabel" destination="Cxo-5D-YUZ" id="7H0-Bk-ZEh"/>
+                        <outlet property="infoBookHowNotToDieLabel" destination="zQy-Dn-WXM" id="vL6-Pf-of3"/>
+                        <outlet property="infoBookHowNotToDietLabel" destination="MWr-7S-G8N" id="ZKW-Cg-le3"/>
+                        <outlet property="infoWebDonateLabel" destination="mqA-Vp-LZ7" id="ytM-WC-NVT"/>
+                        <outlet property="infoWebDozeChallengeLabel" destination="beF-Xl-TAq" id="D6O-Lk-3Pq"/>
+                        <outlet property="infoWebLatestLatestLabel" destination="uxH-8I-ydF" id="2WY-Cy-v7n"/>
+                        <outlet property="infoWebOpenSourceLabel" destination="qVR-SQ-jmS" id="o4t-Hz-qlI"/>
+                        <outlet property="infoWebSubscribeLabel" destination="dRO-1W-3EK" id="Kbp-hw-dZZ"/>
+                    </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="2YW-Mz-kGj" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1087.2" y="-182.15892053973016"/>
         </scene>
     </scenes>
+    <resources>
+        <systemColor name="groupTableViewBackgroundColor">
+            <color red="0.94901960784313721" green="0.94901960784313721" blue="0.96862745098039216" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
+    </resources>
 </document>

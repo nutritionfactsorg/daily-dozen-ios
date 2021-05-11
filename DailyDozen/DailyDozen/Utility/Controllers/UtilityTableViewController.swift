@@ -22,7 +22,7 @@ class UtilityTableViewController: UITableViewController {
 
         return viewController
     }
-
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         navigationController?.navigationBar.titleTextAttributes = [NSAttributedString.Key.foregroundColor: UIColor.white]
