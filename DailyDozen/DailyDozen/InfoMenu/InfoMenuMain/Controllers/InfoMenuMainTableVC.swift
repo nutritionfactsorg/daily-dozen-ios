@@ -26,7 +26,7 @@ class InfoMenuMainTableVC: UITableViewController {
     // MARK: - UITableViewController
     override func viewDidLoad() {
         super.viewDidLoad()
-        navigationController?.navigationBar.barTintColor = UIColor.greenColor
+        navigationController?.navigationBar.barTintColor = ColorManager.style.mainMedium
         navigationController?.navigationBar.tintColor = UIColor.white
         navigationController?.navigationBar.titleTextAttributes = [NSAttributedString.Key.foregroundColor: UIColor.white]
         

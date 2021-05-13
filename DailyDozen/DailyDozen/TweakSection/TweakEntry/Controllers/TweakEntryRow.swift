@@ -43,13 +43,13 @@ class TweakEntryRow: UITableViewCell {
                 superview.isHidden = false
                 
                 if streak < oneWeek {
-                    superview.backgroundColor = UIColor.streakBronzeColor
+                    superview.backgroundColor = ColorManager.style.streakBronze
                     itemStreakLabel.textColor = UIColor.white
                 } else if streak < twoWeeks {
-                    superview.backgroundColor = UIColor.streakSilverColor
+                    superview.backgroundColor = ColorManager.style.streakSilver
                     itemStreakLabel.textColor = UIColor.black
                 } else {
-                    superview.backgroundColor = UIColor.streakGoldColor
+                    superview.backgroundColor = ColorManager.style.streakGold
                     itemStreakLabel.textColor = UIColor.black
                 }
                 

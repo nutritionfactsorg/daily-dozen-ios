@@ -38,7 +38,7 @@ class DozeEntryPagerViewController: UIViewController {
         super.viewDidLoad()
         if let navBar = navigationController?.navigationBar {
             navBar.titleTextAttributes = [NSAttributedString.Key.foregroundColor: UIColor.white]
-            navBar.barTintColor = UIColor.greenColor
+            navBar.barTintColor = ColorManager.style.mainMedium
             navBar.tintColor = UIColor.white            
         }
         
@@ -71,7 +71,7 @@ class DozeEntryPagerViewController: UIViewController {
     
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
-        navigationController?.navigationBar.barTintColor = UIColor.greenColor
+        navigationController?.navigationBar.barTintColor = ColorManager.style.mainMedium
         navigationController?.navigationBar.titleTextAttributes = [NSAttributedString.Key.foregroundColor: UIColor.white]
         
         if UserDefaults.standard.bool(forKey: SettingsKeys.hasSeenFirstLaunch) == false {

@@ -21,7 +21,7 @@ class DozeItemStateCheckbox: UICollectionViewCell {
         checkbox.isSelected = state
         // Border color must match image background in UIButtonCheckbox setCheckboxImage()
         // See "ic_checkmark_fill"
-        checkbox.layer.borderColor = state ? UIColor.greenColor.cgColor : UIColor.grayLightColor.cgColor
+        checkbox.layer.borderColor = state ? ColorManager.style.checkboxBorderChecked.cgColor : ColorManager.style.checkboxBorderUnchecked.cgColor
     }
 }
 

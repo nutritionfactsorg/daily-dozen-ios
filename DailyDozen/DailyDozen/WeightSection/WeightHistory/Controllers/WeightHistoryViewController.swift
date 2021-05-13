@@ -130,7 +130,7 @@ class WeightHistoryViewController: UIViewController {
         LogService.shared.debug("•HK• WeightHistoryViewController viewDidLoad")
         super.viewDidLoad()
         navigationController?.navigationBar.titleTextAttributes = [NSAttributedString.Key.foregroundColor: UIColor.white]
-        navigationController?.navigationBar.barTintColor = UIColor.greenColor
+        navigationController?.navigationBar.barTintColor = ColorManager.style.mainMedium
         navigationController?.navigationBar.tintColor = UIColor.white
         
         scaleControl.setTitle(NSLocalizedString("history_scale_choice_day", comment: "Day"), forSegmentAt: 0)
@@ -161,8 +161,8 @@ class WeightHistoryViewController: UIViewController {
         
         let legendMorningText = NSLocalizedString("historyRecordWeight.legendMorning", comment: "Morning")
         let lineChartDataSetAM = LineChartDataSet(entries: am, label: legendMorningText)
-        lineChartDataSetAM.colors = [UIColor.yellowSunglowColor]
-        lineChartDataSetAM.circleColors = [UIColor.yellowSunglowColor]
+        lineChartDataSetAM.colors = [ColorManager.style.chartWeigthAM]
+        lineChartDataSetAM.circleColors = [ColorManager.style.chartWeigthAM]
         lineChartDataSetAM.circleHoleRadius = 0.0 // Default: 4.0
         lineChartDataSetAM.circleRadius = 4.0 // Default: 8.0
         lineChartDataSetAM.drawValuesEnabled = false
@@ -171,8 +171,8 @@ class WeightHistoryViewController: UIViewController {
 
         let legendEveningText = NSLocalizedString("historyRecordWeight.legendEvening", comment: "Evening")
         let lineChartDataSetPM = LineChartDataSet(entries: pm, label: legendEveningText)
-        lineChartDataSetPM.colors = [UIColor.redFlamePeaColor]
-        lineChartDataSetPM.circleColors = [UIColor.redFlamePeaColor]
+        lineChartDataSetPM.colors = [ColorManager.style.chartWeigthPM]
+        lineChartDataSetPM.circleColors = [ColorManager.style.chartWeigthPM]
         lineChartDataSetPM.circleHoleRadius = 0.0 // Default: 4.0
         lineChartDataSetPM.circleRadius = 4.0 // Default: 8.0
         lineChartDataSetPM.drawValuesEnabled = false

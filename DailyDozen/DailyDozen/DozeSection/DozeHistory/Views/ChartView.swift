@@ -30,16 +30,16 @@ class ChartView: CombinedChartView {
         legend.drawInside = false
 
         rightAxis.axisMinimum = 0
-        rightAxis.labelTextColor = UIColor.blueDarkColor
+        rightAxis.labelTextColor = ColorManager.style.chartLabel
         rightAxis.labelFont = UIFont.helevetica.withSize(12)
 
         leftAxis.axisMinimum = 0
-        leftAxis.labelTextColor = UIColor.blueDarkColor
+        leftAxis.labelTextColor = ColorManager.style.chartLabel
         leftAxis.labelFont = UIFont.helevetica.withSize(12)
 
         xAxis.labelPosition = .bothSided
         xAxis.granularity = 1
-        xAxis.labelTextColor = .blueDarkColor
+        xAxis.labelTextColor = ColorManager.style.chartLabel
         xAxis.labelFont = UIFont.helevetica.withSize(12)
     }
 
@@ -74,8 +74,8 @@ class ChartView: CombinedChartView {
         }
 
         let set = BarChartDataSet(entries: entries, label: label)
-        set.setColor(UIColor.greenColor)
-        set.valueTextColor = UIColor.greenColor
+        set.setColor(ColorManager.style.mainMedium)
+        set.valueTextColor = ColorManager.style.mainMedium
         set.valueFont = UIFont.helveticaBold.withSize(12)
         set.axisDependency = .left
 
@@ -93,16 +93,16 @@ class ChartView: CombinedChartView {
         }
 
         let set = LineChartDataSet(entries: entries, label: label)
-        set.setColor(UIColor.greenColor)
+        set.setColor(ColorManager.style.mainMedium)
         set.lineWidth = 2.5
-        set.setCircleColor(UIColor.greenColor)
+        set.setCircleColor(ColorManager.style.mainMedium)
         set.circleRadius = 5
         set.circleHoleRadius = 2.5
         set.fillColor = UIColor.white
         set.mode = .cubicBezier
         set.drawValuesEnabled = true
         set.valueFont = UIFont.helveticaBold.withSize(12)
-        set.valueTextColor = UIColor.greenColor
+        set.valueTextColor = ColorManager.style.mainMedium
         set.axisDependency = .left
 
         return LineChartData(dataSet: set)

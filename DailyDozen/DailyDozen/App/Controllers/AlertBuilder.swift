@@ -50,7 +50,7 @@ class AlertBuilder {
                 string: content.title,
                 attributes: [
                     NSAttributedString.Key.font: UIFont.helveticaBold,
-                    NSAttributedString.Key.foregroundColor: UIColor.greenColor]),
+                    NSAttributedString.Key.foregroundColor: ColorManager.style.mainMedium]),
             forKey: Keys.title)
 
         let message = NSAttributedString(
@@ -61,7 +61,7 @@ class AlertBuilder {
         alert.setValue(message, forKey: Keys.message)
 
         let action = UIAlertAction(title: Strings.dozeOtherInfoConfirm, style: .cancel, handler: nil)
-        action.setValue(UIColor.greenColor, forKey: Keys.textColor)
+        action.setValue(ColorManager.style.mainMedium, forKey: Keys.textColor)
         alert.addAction(action)
 
         return alert

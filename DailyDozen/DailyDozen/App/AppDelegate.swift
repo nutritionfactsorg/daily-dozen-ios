@@ -21,6 +21,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         logger.logLevel = LogServiceLevel.off
         
         #if DEBUG
+        print("PRODUCT_BUNDLE_IDENTIFIER = \(Bundle.main.bundleIdentifier ?? "not found")")
         print(":DEBUG:WAYPOINT: AppDelegate didFinishLaunchingWithOptions\n\((URL.inDocuments().path))")
         logger.logLevel = LogServiceLevel.verbose
         logger.useLogFileDefault()

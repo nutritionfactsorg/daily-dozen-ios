@@ -44,7 +44,7 @@ class InfoMenuAboutTableVC: UITableViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         navigationController?.navigationBar.titleTextAttributes = [NSAttributedString.Key.foregroundColor: UIColor.white]
-        navigationController?.navigationBar.barTintColor = UIColor.greenColor
+        navigationController?.navigationBar.barTintColor = ColorManager.style.mainMedium
         navigationController?.navigationBar.tintColor = UIColor.white
 
         let barItem = UIBarButtonItem(title: "Done", style: .done, target: nil, action: nil)
@@ -55,7 +55,7 @@ class InfoMenuAboutTableVC: UITableViewController {
         messageLabel.enabledTypes.append(bookType)
 
         messageLabel.customize { label in
-            label.customColor[bookType] = UIColor.greenColor
+            label.customColor[bookType] = ColorManager.style.mainMedium
             label.handleCustomTap(for: bookType) { _ in
                 UIApplication.shared
                     .open(LinksService.shared.siteBook,
@@ -83,7 +83,7 @@ class InfoMenuAboutTableVC: UITableViewController {
 
         if let aboutLink = link {
             label.customize { label in
-                label.customColor[about] = UIColor.greenColor
+                label.customColor[about] = ColorManager.style.mainMedium
                 label.handleCustomTap(for: about) { _ in
                     UIApplication.shared
                         .open(aboutLink,
