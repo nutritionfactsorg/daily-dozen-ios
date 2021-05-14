@@ -38,7 +38,12 @@ class ItemHistoryViewController: UIViewController {
 
     // MARK: - Outlets
     @IBOutlet private weak var calendarView: FSCalendar!
-
+    @IBOutlet weak var itemHistoryFooter: UIView!
+    @IBOutlet weak var itemHistoryFooterAll: UILabel!
+    @IBOutlet weak var itemHistoryFooterSome: UILabel!
+    @IBOutlet weak var itemHistoryHeader: UIView!
+    @IBOutlet weak var itemHistoryHeaderLabel: UILabel!
+    
     // MARK: - UIViewController
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -49,6 +54,14 @@ class ItemHistoryViewController: UIViewController {
         calendarView.delegate = self
         calendarView.dataSource = self
         calendarView.register(DateCell.self, forCellReuseIdentifier: Strings.cell)
+        
+        itemHistoryFooter.backgroundColor = ColorManager.style.mainMedium
+        itemHistoryHeader.backgroundColor = ColorManager.style.mainMedium
+        itemHistoryHeaderLabel.textColor = ColorManager.style.textWhite
+        
+        itemHistoryHeaderLabel.text = NSLocalizedString("item_history_heading", comment: "History")
+        itemHistoryFooterAll.text = NSLocalizedString("item_history_completed_all", comment: "All completed")
+        itemHistoryFooterSome.text = NSLocalizedString("item_history_completed_some", comment: "Some completed")
     }
 }
 

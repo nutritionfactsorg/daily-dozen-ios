@@ -377,4 +377,13 @@
 - Konstantin Khokhlov
 - Marc Campbell";
 
+/* Item History Heading: "History" */
+"item_history_heading" = "Historia";
+
+/* Item History Legend: "All completed" */
+"item_history_completed_all" = "Wszystkie porcje";
+
+/* Item History Legend: "Some completed" */
+"item_history_completed_some" = "Niektóre porcje";
+
 /* file end */

@@ -30,6 +30,7 @@ class WeightEntryPagerViewController: UIViewController {
     // MARK: - Outlets
     
     @IBOutlet private weak var weightBackButton: UIButton!
+    @IBOutlet weak var weightBackRoundedView: RoundedView!
     @IBOutlet weak var weightDateBarField: RoundedTextfield!    
     private var weightDateBarPicker: UIDatePicker!
         
@@ -45,13 +46,19 @@ class WeightEntryPagerViewController: UIViewController {
         
         title = NSLocalizedString("weightEntry.heading", comment: "Weight entry heading")
         
+        weightBackRoundedView.backgroundColor = ColorManager.style.mainMedium
+
         weightDateBarPicker = weightDateBarField.datePicker(
             target: self, 
             cancelAction: #selector(weightDateBarCancelAction), 
             doneAction: #selector(weightDateBarDoneAction), 
             todayAction: #selector(weightDateBarTodayAction)
         )
+        weightDateBarField.backgroundColor = ColorManager.style.mainMedium
+        weightDateBarField.tintColor = ColorManager.style.mainMedium
+        weightDateBarField.textColor = ColorManager.style.textWhite
         weightDateBarField.addTarget(self, action: #selector(dateBarTouchDown), for: .touchDown)
+        
         updatePageDate(weightPageDate)
     }
     

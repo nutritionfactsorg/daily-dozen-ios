@@ -68,4 +68,12 @@ struct ColorManager {
         return UIColor.streakSilverColor
     }
     
+    var textWhite: UIColor {
+        return UIColor.white
+    }
+
+    var textBlack: UIColor {
+        return UIColor.black
+    }
+
 }

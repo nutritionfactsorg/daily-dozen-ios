@@ -29,7 +29,6 @@
 		4933A75723EE49BB00CE4631 /* TweakDetailInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4933A75623EE49BB00CE4631 /* TweakDetailInfo.swift */; };
 		493A8B9A235E93DA00A5009A /* SettingsKeys.swift in Sources */ = {isa = PBXBuildFile; fileRef = 493A8B99235E93DA00A5009A /* SettingsKeys.swift */; };
 		493A9BD323CE47A000F679BE /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 493A9BD523CE47A000F679BE /* Localizable.strings */; };
-		493A9BEC23CE612A00F679BE /* ItemHistoryLayout.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 493A9BEE23CE612A00F679BE /* ItemHistoryLayout.storyboard */; };
 		493B0EB2258D0D7B00FEDA8E /* dr_greger.png in Resources */ = {isa = PBXBuildFile; fileRef = 493B0EB1258D0D7B00FEDA8E /* dr_greger.png */; };
 		4941D72E237E13DC00ED84B5 /* RealmManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4941D726237E13DB00ED84B5 /* RealmManager.swift */; };
 		4941D72F237E13DC00ED84B5 /* DataCountRecord.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4941D728237E13DC00ED84B5 /* DataCountRecord.swift */; };
@@ -86,6 +85,7 @@
 		49C01CD42644AF48005E592D /* TweakDetailActivityHeader.xib in Resources */ = {isa = PBXBuildFile; fileRef = 49C01CD02644AF48005E592D /* TweakDetailActivityHeader.xib */; };
 		49C01CD52644AF48005E592D /* TweakDetailLayout.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 49C01CD12644AF48005E592D /* TweakDetailLayout.storyboard */; };
 		49C01CD72644AFDD005E592D /* TweakHistoryLayout.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 49C01CD62644AFDD005E592D /* TweakHistoryLayout.storyboard */; };
+		49C39695264E556000920ECC /* ItemHistoryLayout.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 49C39694264E556000920ECC /* ItemHistoryLayout.storyboard */; };
 		49C646CB236F4A46000DA8DC /* UtilityLayout.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 49C646CA236F4A46000DA8DC /* UtilityLayout.storyboard */; };
 		49D6448C245CEC3300814AD5 /* HealthWeightRecord.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49D6448B245CEC3300814AD5 /* HealthWeightRecord.swift */; };
 		49D9B07B240DCA1F000E9822 /* UIView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49D9B07A240DCA1F000E9822 /* UIView.swift */; };
@@ -181,11 +181,8 @@
 		4933A75623EE49BB00CE4631 /* TweakDetailInfo.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TweakDetailInfo.swift; sourceTree = "<group>"; };
 		493A8B99235E93DA00A5009A /* SettingsKeys.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsKeys.swift; sourceTree = "<group>"; };
 		493A9BD423CE47A000F679BE /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
-		493A9BED23CE612A00F679BE /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/ItemHistoryLayout.storyboard; sourceTree = "<group>"; };
-		493A9C2523CE6B7400F679BE /* es */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = es; path = es.lproj/ItemHistoryLayout.strings; sourceTree = "<group>"; };
 		493A9C3223CE6B7500F679BE /* es */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = es; path = es.lproj/Localizable.strings; sourceTree = "<group>"; };
 		493B0EB1258D0D7B00FEDA8E /* dr_greger.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = dr_greger.png; sourceTree = "<group>"; };
-		493CE65825D727E400F95BF3 /* pl */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = pl; path = pl.lproj/ItemHistoryLayout.strings; sourceTree = "<group>"; };
 		493CE66625D727E500F95BF3 /* pl */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = pl; path = pl.lproj/Localizable.strings; sourceTree = "<group>"; };
 		493CE66725D727E500F95BF3 /* pl */ = {isa = PBXFileReference; lastKnownFileType = text.json; name = pl; path = pl.lproj/DozeDetailData.json; sourceTree = "<group>"; };
 		493CE66825D727E500F95BF3 /* pl */ = {isa = PBXFileReference; lastKnownFileType = text.json; name = pl; path = pl.lproj/TweakDetailData.json; sourceTree = "<group>"; };
@@ -251,6 +248,7 @@
 		49C01CD02644AF48005E592D /* TweakDetailActivityHeader.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = TweakDetailActivityHeader.xib; sourceTree = "<group>"; };
 		49C01CD12644AF48005E592D /* TweakDetailLayout.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = TweakDetailLayout.storyboard; sourceTree = "<group>"; };
 		49C01CD62644AFDD005E592D /* TweakHistoryLayout.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = TweakHistoryLayout.storyboard; sourceTree = "<group>"; };
+		49C39694264E556000920ECC /* ItemHistoryLayout.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = ItemHistoryLayout.storyboard; sourceTree = "<group>"; };
 		49C646CA236F4A46000DA8DC /* UtilityLayout.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = UtilityLayout.storyboard; sourceTree = "<group>"; };
 		49D6448B245CEC3300814AD5 /* HealthWeightRecord.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HealthWeightRecord.swift; sourceTree = "<group>"; };
 		49D9B07A240DCA1F000E9822 /* UIView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIView.swift; sourceTree = "<group>"; };
@@ -546,7 +544,7 @@
 			isa = PBXGroup;
 			children = (
 				CF12918E1FC42DD300D1C17E /* DateCell.swift */,
-				493A9BEE23CE612A00F679BE /* ItemHistoryLayout.storyboard */,
+				49C39694264E556000920ECC /* ItemHistoryLayout.storyboard */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -1171,7 +1169,6 @@
 				49C01CC22644AA09005E592D /* DozeDetailLayout.storyboard in Resources */,
 				49C01CCB2644AD11005E592D /* DozeHistoryLayout.storyboard in Resources */,
 				49B9801525F611A5009BA5A9 /* LaunchScreen.storyboard in Resources */,
-				493A9BEC23CE612A00F679BE /* ItemHistoryLayout.storyboard in Resources */,
 				492474A323DB677A00D7D918 /* InfoPlist.strings in Resources */,
 				49C01CC92644ABA4005E592D /* DozeEntryLayout.storyboard in Resources */,
 				49DEDA38264A0DEC0056462D /* Main.storyboard in Resources */,
@@ -1191,6 +1188,7 @@
 				49DEDA39264A0DEC0056462D /* FirstLaunch.storyboard in Resources */,
 				493A9BD323CE47A000F679BE /* Localizable.strings in Resources */,
 				493B0EB2258D0D7B00FEDA8E /* dr_greger.png in Resources */,
+				49C39695264E556000920ECC /* ItemHistoryLayout.storyboard in Resources */,
 				CFF72B001FB9BB70001CC2E9 /* LinkSettings.plist in Resources */,
 				499B94E226439C9000AC275A /* WeightEntryLayout.storyboard in Resources */,
 				499B94E126439C9000AC275A /* WeightEntryPagerLayout.storyboard in Resources */,
@@ -1482,16 +1480,6 @@
 				493CE66625D727E500F95BF3 /* pl */,
 			);
 			name = Localizable.strings;
-			sourceTree = "<group>";
-		};
-		493A9BEE23CE612A00F679BE /* ItemHistoryLayout.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				493A9BED23CE612A00F679BE /* Base */,
-				493A9C2523CE6B7400F679BE /* es */,
-				493CE65825D727E400F95BF3 /* pl */,
-			);
-			name = ItemHistoryLayout.storyboard;
 			sourceTree = "<group>";
 		};
 /* End PBXVariantGroup section */

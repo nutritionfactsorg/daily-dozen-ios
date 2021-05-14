@@ -4,7 +4,6 @@
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="18093"/>
-        <capability name="Named colors" minToolsVersion="9.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -22,9 +21,6 @@
                                 <subviews>
                                     <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" text="Today" borderStyle="roundedRect" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="pKR-lY-XXM" customClass="RoundedTextfield" customModule="DailyDozen" customModuleProvider="target">
                                         <rect key="frame" x="10" y="5" width="394" height="40"/>
-                                        <color key="backgroundColor" name="BrandGreen"/>
-                                        <color key="tintColor" name="BrandGreen"/>
-                                        <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <fontDescription key="fontDescription" name="Helvetica" family="Helvetica" pointSize="17"/>
                                         <textInputTraits key="textInputTraits"/>
                                     </textField>
@@ -79,7 +75,6 @@
                                                 </connections>
                                             </button>
                                         </subviews>
-                                        <color key="backgroundColor" name="BrandGreen"/>
                                         <constraints>
                                             <constraint firstItem="OIQ-oh-3QN" firstAttribute="centerY" secondItem="tBd-SF-4r6" secondAttribute="centerY" id="3yS-0u-AGJ"/>
                                             <constraint firstItem="OIQ-oh-3QN" firstAttribute="centerX" secondItem="tBd-SF-4r6" secondAttribute="centerX" id="HzA-1V-baS"/>
@@ -117,6 +112,7 @@
                     </view>
                     <connections>
                         <outlet property="weightBackButton" destination="OIQ-oh-3QN" id="oJB-Bz-pFg"/>
+                        <outlet property="weightBackRoundedView" destination="tBd-SF-4r6" id="lC3-kJ-ihq"/>
                         <outlet property="weightDateBarField" destination="pKR-lY-XXM" id="NxN-bO-IwX"/>
                     </connections>
                 </viewController>
@@ -143,9 +139,4 @@
             <point key="canvasLocation" x="1022" y="464"/>
         </scene>
     </scenes>
-    <resources>
-        <namedColor name="BrandGreen">
-            <color red="0.41176470588235292" green="0.29803921568627451" blue="0.75294117647058822" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-        </namedColor>
-    </resources>
 </document>

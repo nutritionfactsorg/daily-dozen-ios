@@ -260,4 +260,13 @@ Only";
 - Konstantin Khokhlov
 - Marc Campbell";
 
+/* Item History Heading: "History" */
+"item_history_heading" = "History";
+
+/* Item History Legend: "All completed" */
+"item_history_completed_all" = "All servings";
+
+/* Item History Legend: "Some completed" */
+"item_history_completed_some" = "Some servings";
+
 /* file end */

@@ -31,6 +31,7 @@ class TweakEntryPagerViewController: UIViewController {
     // MARK: - Outlets
     
     @IBOutlet private weak var tweakBackButton: UIButton!
+    @IBOutlet weak var tweakBackRoundedView: RoundedView!
     @IBOutlet weak var tweakDateBarField: RoundedTextfield!
     private var tweakDateBarPicker: UIDatePicker!
 
@@ -45,12 +46,17 @@ class TweakEntryPagerViewController: UIViewController {
 
         title = NSLocalizedString("navtab.tweaks", comment: "21 Tweaks (proper noun) navigation tab")
         
+        tweakBackRoundedView.backgroundColor = ColorManager.style.mainMedium
+        
         tweakDateBarPicker = tweakDateBarField.datePicker(
             target: self, 
             cancelAction: #selector(tweakDateBarCancelAction), 
             doneAction: #selector(tweakDateBarDoneAction), 
             todayAction: #selector(tweakDateBarTodayAction)
         )
+        tweakDateBarField.backgroundColor = ColorManager.style.mainMedium
+        tweakDateBarField.tintColor = ColorManager.style.mainMedium
+        tweakDateBarField.textColor = ColorManager.style.textWhite
         tweakDateBarField.addTarget(self, action: #selector(dateBarTouchDown), for: .touchDown)
         updatePageDate(DateManager.currentDatetime())
     }

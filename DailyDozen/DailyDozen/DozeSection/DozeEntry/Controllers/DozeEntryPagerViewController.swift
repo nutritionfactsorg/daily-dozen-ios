@@ -30,6 +30,7 @@ class DozeEntryPagerViewController: UIViewController {
     // MARK: - Outlets
     
     @IBOutlet private weak var dozeBackButton: UIButton!
+    @IBOutlet weak var dozeBackRoundedView: RoundedView!
     @IBOutlet weak var dozeDateBarField: RoundedTextfield!    
     private var dozeDateBarPicker: UIDatePicker!
     
@@ -44,12 +45,17 @@ class DozeEntryPagerViewController: UIViewController {
         
         title = NSLocalizedString("navtab.doze", comment: "Daily Dozen (proper noun) navigation tab")
         
+        dozeBackRoundedView.backgroundColor = ColorManager.style.mainMedium
+        
         dozeDateBarPicker = dozeDateBarField.datePicker(
             target: self, 
             cancelAction: #selector(dozeDateBarCancelAction), 
             doneAction: #selector(dozeDateBarDoneAction), 
             todayAction: #selector(dozeDateBarTodayAction)
         )
+        dozeDateBarField.backgroundColor = ColorManager.style.mainMedium
+        dozeDateBarField.tintColor = ColorManager.style.mainMedium
+        dozeDateBarField.textColor = ColorManager.style.textWhite
         dozeDateBarField.addTarget(self, action: #selector(dateBarTouchDown), for: .touchDown)
         updatePageDate(DateManager.currentDatetime())
     }
