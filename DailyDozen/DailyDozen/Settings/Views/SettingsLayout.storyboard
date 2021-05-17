@@ -4,7 +4,6 @@
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="18093"/>
-        <capability name="Named colors" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -34,7 +33,6 @@
                                                         <segment title="Metric"/>
                                                         <segment title="Toggle Units"/>
                                                     </segments>
-                                                    <color key="tintColor" name="IguanaGreen"/>
                                                     <connections>
                                                         <action selector="unitsTypePrefChanged:" destination="mGU-tx-G19" eventType="valueChanged" id="ycC-Y6-L0f"/>
                                                     </connections>
@@ -102,7 +100,6 @@
                                                         <segment title="Daily Dozen Only"/>
                                                         <segment title="Daily Dozen + 21 Tweaks"/>
                                                     </segments>
-                                                    <color key="tintColor" name="IguanaGreen"/>
                                                     <connections>
                                                         <action selector="doTweaksVisibilityChanged:" destination="mGU-tx-G19" eventType="valueChanged" id="AJw-tf-5Qo"/>
                                                     </connections>
@@ -153,7 +150,6 @@
                         <outlet property="advancedUtilitiesTableViewCell" destination="z0Z-Vi-TQY" id="OsV-iV-8HQ"/>
                         <outlet property="reminderIsOn" destination="XFw-2q-BdT" id="wAY-nx-7mR"/>
                         <outlet property="reminderLabel" destination="itH-G7-Kal" id="YkI-t8-JhN"/>
-                        <outlet property="soundSwitch" destination="rNl-6C-9Kw" id="vko-LB-RCK"/>
                         <outlet property="tweakVisibilityController" destination="OZO-Xa-v5G" id="LAW-0U-SrN"/>
                         <outlet property="unitMeasureToggle" destination="RLb-GV-4hh" id="khw-vy-RXJ"/>
                     </connections>
@@ -185,7 +181,6 @@
                                                     <constraints>
                                                         <constraint firstAttribute="width" secondItem="WSr-wG-uFV" secondAttribute="height" multiplier="47:31" id="yCq-I5-1gU"/>
                                                     </constraints>
-                                                    <color key="onTintColor" name="IguanaGreen"/>
                                                     <connections>
                                                         <action selector="reminderSwitched:" destination="TcI-bI-5iX" eventType="valueChanged" id="4hG-GP-lbH"/>
                                                     </connections>
@@ -253,7 +248,6 @@
                                                     <constraints>
                                                         <constraint firstAttribute="width" secondItem="rNl-6C-9Kw" secondAttribute="height" multiplier="47:31" id="RW1-wG-LXp"/>
                                                     </constraints>
-                                                    <color key="onTintColor" name="IguanaGreen"/>
                                                 </switch>
                                             </subviews>
                                             <constraints>
@@ -290,9 +284,6 @@
         </scene>
     </scenes>
     <resources>
-        <namedColor name="IguanaGreen">
-            <color red="0.63921568627450975" green="0.42352941176470588" blue="0.68235294117647061" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-        </namedColor>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>

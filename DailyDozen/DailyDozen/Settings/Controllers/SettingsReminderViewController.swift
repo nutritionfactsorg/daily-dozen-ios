@@ -48,6 +48,8 @@ class SettingsReminderViewController: UITableViewController {
         soundSwitchLabel.text = NSLocalizedString("reminder.settings.sound", comment: "Play Sound")
         // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
         // self.navigationItem.rightBarButtonItem = self.editButtonItem
+        reminderSwitch.onTintColor = ColorManager.style.mainMedium
+        soundSwitch.onTintColor = ColorManager.style.mainMedium
     }
     
     override func viewWillDisappear(_ animated: Bool) {

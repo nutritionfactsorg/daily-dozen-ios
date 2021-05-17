@@ -29,8 +29,6 @@ class SettingsViewController: UITableViewController {
     /// Daily Reminder
     @IBOutlet weak var reminderLabel: UILabel!
     @IBOutlet weak var reminderIsOn: UILabel!
-    // @IBOutlet weak var reminderSwitch: UISwitch!
-    @IBOutlet weak var soundSwitch: UISwitch!
     /// 21 Tweaks Visibility
     @IBOutlet weak var tweakVisibilityController: UISegmentedControl!
     
@@ -52,6 +50,7 @@ class SettingsViewController: UITableViewController {
         navigationController?.navigationBar.tintColor = UIColor.white
         
         // Measurement Units
+        unitMeasureToggle.tintColor = ColorManager.style.mainMedium
         setUnitsMeasureSegment()
         
         // Reminder
@@ -64,6 +63,7 @@ class SettingsViewController: UITableViewController {
         reminderLabel.text = NSLocalizedString("reminder.settings.enable", comment: "Enable Reminders")
         
         // 21 Tweaks Visibility
+        tweakVisibilityController.tintColor = ColorManager.style.mainMedium
         if UserDefaults.standard.bool(forKey: SettingsKeys.show21TweaksPref) {
             tweakVisibilityController.selectedSegmentIndex = 1
         } else {
