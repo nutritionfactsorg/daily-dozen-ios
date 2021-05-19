@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		4904AF84239CB99600E271EC /* WeightEntryPagerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4904AF83239CB99600E271EC /* WeightEntryPagerViewController.swift */; };
+		49088F452654C9B600C8CC91 /* ColorManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49088F442654C9B600C8CC91 /* ColorManager.swift */; };
 		4916451423EE4C410077731D /* TweakDetailViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4916451323EE4C410077731D /* TweakDetailViewModel.swift */; };
 		4916451623EE4D360077731D /* TweakTextsProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4916451523EE4D360077731D /* TweakTextsProvider.swift */; };
 		4916451823EE4E440077731D /* TweakDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4916451723EE4E440077731D /* TweakDetailViewController.swift */; };
@@ -158,6 +159,7 @@
 /* Begin PBXFileReference section */
 		2CB41DDE201AD844603D7163 /* Pods-DailyDozenTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-DailyDozenTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-DailyDozenTests/Pods-DailyDozenTests.debug.xcconfig"; sourceTree = "<group>"; };
 		4904AF83239CB99600E271EC /* WeightEntryPagerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeightEntryPagerViewController.swift; sourceTree = "<group>"; };
+		49088F442654C9B600C8CC91 /* ColorManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ColorManager.swift; sourceTree = "<group>"; };
 		4916451323EE4C410077731D /* TweakDetailViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TweakDetailViewModel.swift; sourceTree = "<group>"; };
 		4916451523EE4D360077731D /* TweakTextsProvider.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TweakTextsProvider.swift; sourceTree = "<group>"; };
 		4916451723EE4E440077731D /* TweakDetailViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TweakDetailViewController.swift; sourceTree = "<group>"; };
@@ -851,6 +853,7 @@
 			isa = PBXGroup;
 			children = (
 				4944B99123AD7A1A008DFA30 /* ChartDataEntry.swift */,
+				49088F442654C9B600C8CC91 /* ColorManager.swift */,
 				CFECDFF7201EF7C1003E8572 /* Colors.swift */,
 				CF2680011FB477AD004A6200 /* Date.swift */,
 				49208ADB2585F16F00E994CA /* DateManager.swift */,
@@ -1340,6 +1343,7 @@
 				CFF72AFE1FB9BAAA001CC2E9 /* LinkService.swift in Sources */,
 				49DB104D238E255D00E77E52 /* DozeEntryViewModel.swift in Sources */,
 				492A1E722409B41000F6C37C /* TweakDetailDescriptionCell.swift in Sources */,
+				49088F452654C9B600C8CC91 /* ColorManager.swift in Sources */,
 				496917DD238716BD00A9A743 /* RealmManagerLegacy.swift in Sources */,
 				CFC4A8541F9776A500B5AC75 /* DozeEntryViewController.swift in Sources */,
 				4981709D2391B89E0033882C /* TweakHistoryViewModel.swift in Sources */,

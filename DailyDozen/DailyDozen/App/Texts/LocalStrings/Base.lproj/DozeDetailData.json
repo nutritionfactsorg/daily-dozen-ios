@@ -660,7 +660,7 @@
         },
         {
           "text" : "Turnip greens",
-          "topic" : "topics/turnips"
+          "topic" : ""
         }
       ]
     },
@@ -944,7 +944,7 @@
         },
         {
           "text" : "Turnip greens",
-          "topic" : "topics/turnips"
+          "topic" : ""
         },
         {
           "text" : "Watercress",
