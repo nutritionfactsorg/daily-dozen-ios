@@ -4,8 +4,9 @@
 //
 //  Copyright © 2020 Nutritionfacts.org. All rights reserved.
 //
-// swiftlint:disable function_body_length
 // swiftlint:disable cyclomatic_complexity
+// swiftlint:disable function_body_length
+// swiftlint:disable type_body_length
 
 import Foundation
 import HealthKit
@@ -217,7 +218,12 @@ public struct DatabaseBuiltInTest {
     /// 7-day    7  6  5  4  3  2  1  0  7  6  5  4  3  2  1  0
     /// 
     /// ```
-    func doGenerateDBStreaksBIT() {
+    func doGenerateDBStreaksBIT(busyBar: AlertBusyBar? = nil) {
+        
+        busyBar?.setProgress(0/12)
+        
+        let timeIn = Date().getCurrentBenchmarkSeconds
+        let maxStreak = 7 // 100 (~minute), 999, 1000
         LogService.shared.debug(
             "••BEGIN•• doGenerateDBStreaksBIT()"
         )
@@ -225,37 +231,64 @@ public struct DatabaseBuiltInTest {
         let realmDb = realmMngr.realmDb
         
         let today = Date()
-        LogService.shared.debug("[\(Date().getCurrentBenchmarkSeconds)]")
-        // 2 days 
-        LogService.shared.debug("  2 days … ")
+        // 2 days
+        var timeA = Date().getCurrentBenchmarkSeconds
         for i in 0 ..< 2 {
             let date = today.adding(days: -i)
             realmDb.saveCount(3, date: date, countType: .dozeFruitsOther)
         }
+        var timeB = Date().getCurrentBenchmarkSeconds
+        LogService.shared.debug("\t2\ttime=\t\(timeB - timeA)\tsec")
+        busyBar?.setProgress(1/12)
+
         // 7 days 
-        LogService.shared.debug("  7 days …")
+        timeA = timeB
         for i in 0 ..< 7 {
             let date = today.adding(days: -i)
             realmDb.saveCount(1, date: date, countType: .dozeBerries)
         }
-        // 14 days 
-        LogService.shared.debug("  14 days …")
+        timeB = Date().getCurrentBenchmarkSeconds
+        LogService.shared.debug("\t7\ttime=\t\(timeB - timeA)\tsec")
+        busyBar?.setProgress(2/12)
+
+        // 14 days
+        timeA = timeB
         for i in 0 ..< 14 {
             let date = today.adding(days: -i)
             realmDb.saveCount(3, date: date, countType: .dozeBeans)
         }
-        // 100 days 
-        LogService.shared.debug("  100 days …")
-        for i in 0 ..< 100 {
+        timeB = Date().getCurrentBenchmarkSeconds
+        LogService.shared.debug("\t14\ttime=\t\(timeB - timeA)\tsec")
+        busyBar?.setProgress(3/12)
+
+        // Max streak days
+        timeA = timeB
+        for i in 0 ..< maxStreak {
             let date = today.adding(days: -i)
             realmDb.saveCount(1, date: date, countType: .dozeSpices)
+        }
+        timeB = Date().getCurrentBenchmarkSeconds
+        LogService.shared.debug("\t\(maxStreak)\ttime=\t\(timeB - timeA)\tsec")
+        busyBar?.setProgress(4/12)
+        timeA = timeB
+        for i in 0 ..< maxStreak {
+            let date = today.adding(days: -i)
             realmDb.saveCount(3, date: date, countType: .dozeWholeGrains)
+        }
+        timeB = Date().getCurrentBenchmarkSeconds
+        LogService.shared.debug("\t\(maxStreak)\ttime=\t\(timeB - timeA)\tsec")
+        busyBar?.setProgress(5/12)
+        timeA = timeB
+        for i in 0 ..< maxStreak {
+            let date = today.adding(days: -i)
             realmDb.saveCount(5, date: date, countType: .dozeBeverages)
         }
-        LogService.shared.debug("[\(Date().getCurrentBenchmarkSeconds)]")
+        timeB = Date().getCurrentBenchmarkSeconds
+        LogService.shared.debug("\t\(maxStreak)\ttime=\t\(timeB - timeA)\tsec")
+        busyBar?.setProgress(6/12)
 
         // 2 days: by editing streak history with 0
-        LogService.shared.debug("  2 days …")
+        timeA = timeB
         for i in (0 ..< 14).reversed() {
             let date = today.adding(days: -i)
             realmDb.saveCount(3, date: date, countType: .tweakMealVinegar)
@@ -264,8 +297,12 @@ public struct DatabaseBuiltInTest {
             let date = today.adding(days: -i)
             realmDb.saveCount(0, date: date, countType: .tweakMealVinegar)
         }
+        timeB = Date().getCurrentBenchmarkSeconds
+        LogService.shared.debug("\t19\ttime=\t\(timeB - timeA)\tsec")
+        busyBar?.setProgress(7/12)
+
         // 7 days: by editing streak history to add full count
-        LogService.shared.debug("  7 days …")
+        timeA = timeB
         for i in (0 ..< 15).reversed() {
             let date = today.adding(days: -i)
             if i % 4 == 3 {
@@ -278,26 +315,52 @@ public struct DatabaseBuiltInTest {
             let date = today.adding(days: -i)
             realmDb.saveCount(3, date: date, countType: .tweakMealNegCal)
         }
-        // 14 days 
-        LogService.shared.debug("  14 days …")
+        timeB = Date().getCurrentBenchmarkSeconds
+        LogService.shared.debug("\t16\ttime=\t\(timeB - timeA)\tsec")
+        busyBar?.setProgress(8/12)
+
+        // 14 days
+        timeA = timeB
         for i in (0 ..< 14).reversed() {
             let date = today.adding(days: -i)
             realmDb.saveCount(3, date: date, countType: .tweakMealWater)
         }
-        
-        // 100 days 
-        LogService.shared.debug("  100 days …")
-        for i in (0 ..< 100).reversed() {
+        timeB = Date().getCurrentBenchmarkSeconds
+        LogService.shared.debug("\t14\ttime=\t\(timeB - timeA)\tsec")
+        busyBar?.setProgress(9/12)
+
+        // Max streak days
+        timeA = timeB
+        for i in (0 ..< maxStreak).reversed() {
             let date = today.adding(days: -i)
             realmDb.saveCount(1, date: date, countType: .tweakDailyNutriYeast)
+        }
+        timeB = Date().getCurrentBenchmarkSeconds
+        LogService.shared.debug("\t\(maxStreak)\ttime=\t\(timeB - timeA)\tsec")
+        busyBar?.setProgress(10/12)
+        timeA = timeB
+        for i in (0 ..< maxStreak).reversed() {
+            let date = today.adding(days: -i)
             realmDb.saveCount(2, date: date, countType: .tweakDailyCumin)
+        }
+        timeB = Date().getCurrentBenchmarkSeconds
+        LogService.shared.debug("\t\(maxStreak)\ttime=\t\(timeB - timeA)\tsec")
+        busyBar?.setProgress(11/12)
+        timeA = timeB
+        for i in (0 ..< maxStreak).reversed() {
+            let date = today.adding(days: -i)
             realmDb.saveCount(3, date: date, countType: .tweakDailyGreenTea)
         }
-        LogService.shared.debug("[\(Date().getCurrentBenchmarkSeconds)]")
-        
+        timeB = Date().getCurrentBenchmarkSeconds
+        LogService.shared.debug("\t\(maxStreak)\ttime=\t\(timeB - timeA)\tsec")
+        busyBar?.setProgress(12/12)
+
+        let timeOut = Date().getCurrentBenchmarkSeconds
+        let lapsed = timeOut - timeIn
         LogService.shared.debug(
-            "••EXIT•• UtilityTableViewController doGenerateDBStreaksBIT()"
+            "••EXIT•• UtilityTableViewController doGenerateDBStreaksBIT() \(lapsed) sec"
         )
+        busyBar?.completed()
     }
     
     // MARK: - Unsynced HK Actions

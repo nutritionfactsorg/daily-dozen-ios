@@ -48,6 +48,8 @@ class SettingsViewController: UITableViewController {
         navigationController?.navigationBar.titleTextAttributes = [NSAttributedString.Key.foregroundColor: UIColor.white]
         navigationController?.navigationBar.barTintColor = ColorManager.style.mainMedium
         navigationController?.navigationBar.tintColor = UIColor.white
+        // default height (in points) for each row in the table view
+        self.tableView.rowHeight = 42
         
         // Measurement Units
         unitMeasureToggle.tintColor = ColorManager.style.mainMedium

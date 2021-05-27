@@ -43,7 +43,7 @@ class AlertBuilder {
     }
 
     static func newInstance(for content: AlertContent) -> UIAlertController {
-        let alert = UIAlertController(title: content.title, message: content.message, preferredStyle: .actionSheet)
+        let alert = UIAlertController(title: content.title, message: content.message, preferredStyle: .alert)
 
         alert.setValue(
             NSAttributedString(

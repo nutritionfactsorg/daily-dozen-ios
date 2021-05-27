@@ -22,6 +22,15 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         
         #if DEBUG
         print("PRODUCT_BUNDLE_IDENTIFIER = \(Bundle.main.bundleIdentifier ?? "not found")")
+        let device = UIDevice.current
+        print("""
+        DEVICE:
+                       model = \(device.model)
+                        name = \(device.name)
+                  systemName = \(device.systemName)
+               systemVersion = \(device.systemVersion)
+        """)
+        
         print(":DEBUG:WAYPOINT: AppDelegate didFinishLaunchingWithOptions\n\((URL.inDocuments().path))")
         logger.logLevel = LogServiceLevel.verbose
         logger.useLogFileDefault()
