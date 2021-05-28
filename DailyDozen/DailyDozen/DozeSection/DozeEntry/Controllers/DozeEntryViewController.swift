@@ -151,22 +151,23 @@ extension DozeEntryViewController: UITableViewDelegate {
 
 // MARK: - States UICollectionViewDelegate
 extension DozeEntryViewController: UICollectionViewDelegate {
-    
+        
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         let rowIndex = collectionView.tag // which item
         let checkmarkIndex = indexPath.row // which checkmark
         var checkmarkStates = dataProvider.viewModel.dozeItemStates(rowIndex: rowIndex)
-        let itemDate = dataProvider.viewModel.trackerDate 
-        let itemType = dataProvider.viewModel.itemType(rowIndex: rowIndex)
+        let itemDate: Date = dataProvider.viewModel.trackerDate
+        let itemType: DataCountType = dataProvider.viewModel.itemType(rowIndex: rowIndex)
         
-        var stateTrueCounterOld = 0
+        // States: before toggle update
+        var stateTrueCounterBefore = 0
         for state in checkmarkStates where state {
-            stateTrueCounterOld += 1 
+            stateTrueCounterBefore += 1 
         }
         
-        // Update States
-        let stateNew = !checkmarkStates[checkmarkIndex] // toggle state
-        checkmarkStates[checkmarkIndex] = stateNew
+        // States: after toggle update
+        let stateAfter: Bool = !checkmarkStates[checkmarkIndex] // toggle state
+        checkmarkStates[checkmarkIndex] = stateAfter
         // 0 is the rightmost item checkbox
         // fill true to the right. 
         for index in 0 ..< checkmarkIndex {
@@ -176,25 +177,28 @@ extension DozeEntryViewController: UICollectionViewDelegate {
         for index in checkmarkIndex+1 ..< checkmarkStates.count {
             checkmarkStates[index] = false
         }
-                
+        
         guard let cell = collectionView.cellForItem(at: indexPath) as? DozeItemStateCheckbox else {
             fatalError("There should be a cell")
         }
         cell.configure(with: checkmarkStates[indexPath.row])
         
         // Update Tracker Count
-        let countNow = checkmarkStates.filter { $0 }.count
-        realm.saveCount(countNow, date: itemDate, countType: itemType)
+        let countAfter = checkmarkStates.filter { $0 }.count
         
+        let busyAlert = AlertActivityBar()
+        busyAlert.setText("Updating progress") // :NYI:LOCALIZE:
+        
+        realm.saveCount(countAfter, date: itemDate, countType: itemType)
         tableView.reloadData()
         
         guard !dataProvider.viewModel.itemInfo(rowIndex: rowIndex).isSupplemental else {
             return
         }
         
-        let stateTrueCounterNew = stateNew ? checkmarkIndex+1 : checkmarkIndex
-
-        dozeDailyStateCount += stateTrueCounterNew - stateTrueCounterOld
+        let stateTrueCounterAfter = stateAfter ? checkmarkIndex+1 : checkmarkIndex
+        
+        dozeDailyStateCount += stateTrueCounterAfter - stateTrueCounterBefore
     }
 }
 

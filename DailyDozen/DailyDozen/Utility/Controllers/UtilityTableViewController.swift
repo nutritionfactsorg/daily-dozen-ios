@@ -115,6 +115,7 @@ class UtilityTableViewController: UITableViewController {
     
     func doUtilitySettingsShow() {
         var str = ""
+
         str.append(contentsOf: "reminderCanNotify: ")
         str.append(contentsOf: ": \(UserDefaults.standard.object(forKey: SettingsKeys.reminderCanNotify) ?? "nil")\n")
 
@@ -184,14 +185,25 @@ class UtilityTableViewController: UITableViewController {
     
     /// "Simulate Progress"
     @IBAction func doUtilityTestGenerateStreaksBtn(_ sender: UIButton) {
-        let alert = UIAlertController(title: "", message: Strings.utilityTestStreaksMsg, preferredStyle: .actionSheet)
+        let alert = UIAlertController(title: "", message: Strings.utilityTestStreaksMsg, preferredStyle: .alert)
         let cancelAction = UIAlertAction(title: Strings.utilityConfirmCancel, style: .cancel, handler: nil)
         alert.addAction(cancelAction)
-        let clearAction = UIAlertAction(title: Strings.utilityConfirmOK, style: .destructive) { (_: UIAlertAction) -> Void in
-            DatabaseBuiltInTest.shared.doGenerateDBStreaksBIT()
+        let generateAction = UIAlertAction(title: Strings.utilityConfirmOK, style: .destructive) { (_: UIAlertAction) -> Void in
+            let busyAlert = AlertActivityBar()
+            busyAlert.setText("Generating Progress Data") // :NYI:LOCALIZE:
+            busyAlert.show()
+            DispatchQueue.global(qos: .userInitiated).async {
+                // lower priority job here
+                DatabaseBuiltInTest.shared.doGenerateDBStreaksBIT(activityProgress: busyAlert)
+                DispatchQueue.main.async {
+                    // update ui here
+                    busyAlert.completed()
+                }
+            }
         }
-        alert.addAction(clearAction)
-        present(alert, animated: true, completion: nil)
+        alert.addAction(generateAction)
+                
+        UIApplication.shared.topViewController()?.present(alert, animated: true, completion: nil)
     }
     
     // MARK: - UI

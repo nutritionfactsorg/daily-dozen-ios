@@ -1,5 +1,5 @@
 //
-//  AlertBusyBar.swift
+//  AlertActivitySpinner.swift
 //  DailyDozen
 //
 //  Copyright © 2021 Nutritionfacts.org. All rights reserved.
@@ -8,15 +8,15 @@
 import Foundation
 import UIKit
 
-class AlertBusyBar: UIView {
+class AlertActivitySpinner: UIView, ActivityProgress {
     //
     private var _keyWindow: UIWindow!
     // elements
     private var _box: UIView!
     private var _label: UILabel!
-    private var _progress: UIProgressView!
+    private var _spinner: UIActivityIndicatorView!
     
-    init(parent: UIViewController) {
+    init() {
         _keyWindow = UIApplication.shared.keyWindowInConnectedScenes
         super.init(frame: _keyWindow.frame)
  
@@ -26,7 +26,7 @@ class AlertBusyBar: UIView {
     
     /// use when view is instantiated in code (unimplemented)
     override init(frame: CGRect) {
-        fatalError("AlertBusySpin init(frame:) not implemented")
+        fatalError("AlertActivitySpinner init(frame:) not implemented")
         //super.init(frame: frame)
         //setupView()
         //setupConstraints()
@@ -34,7 +34,7 @@ class AlertBusyBar: UIView {
     
     /// use when view is created via the Interface Builder (unimplemented)
     required init?(coder: NSCoder) {
-        fatalError("AlertBusySpin init(coder:) not implemented")
+        fatalError("AlertActivitySpinner init(coder:) not implemented")
         //super.init(coder: coder)
         //setupView()
         //setupConstraints()
@@ -54,18 +54,16 @@ class AlertBusyBar: UIView {
         _label.textAlignment = .center
         _box.addSubview(_label)
         
-        _progress = UIProgressView()
-        _progress.progressViewStyle = .default
-        _progress.trackTintColor = UIColor.gray // not filled
-        _progress.progressTintColor = UIColor.green // filled
-        _box.addSubview(_progress)
+        _spinner = UIActivityIndicatorView()
+        _spinner.color = ColorManager.style.mainForeground
+        _box.addSubview(_spinner)
     }
     
     private func setupConstraints() {
         // do *not* use old layout system
         _box.translatesAutoresizingMaskIntoConstraints = false
         _label.translatesAutoresizingMaskIntoConstraints = false
-        _progress.translatesAutoresizingMaskIntoConstraints = false
+        _spinner.translatesAutoresizingMaskIntoConstraints = false
         
         let guides: UILayoutGuide = layoutMarginsGuide
         //let margins: NSDirectionalEdgeInsets = directionalLayoutMargins
@@ -89,30 +87,32 @@ class AlertBusyBar: UIView {
         let labelTrailingAnchor = _label.trailingAnchor
             .constraint(equalTo: _box.trailingAnchor, constant: -8)
         
-        // progress
-        let progressTopAnchor = _progress.topAnchor
+        // spinner
+        let spinnerTopAnchor = _spinner.topAnchor
             .constraint(equalTo: _label.bottomAnchor, constant: 10)
-        let progressHeightAnchor = _progress.heightAnchor
+        let spinnerHeightAnchor = _spinner.heightAnchor
             .constraint(equalToConstant: 12.0)
-        let progressLeadingAnchor = _progress.leadingAnchor
+        let spinnerLeadingAnchor = _spinner.leadingAnchor
             .constraint(equalTo: _box.leadingAnchor, constant: 8)
-        let progressTrailingAnchor = _progress.trailingAnchor
+        let spinnerTrailingAnchor = _spinner.trailingAnchor
             .constraint(equalTo: _box.trailingAnchor, constant: -8)
         
         NSLayoutConstraint.activate([
             boxXAnchor, boxYAnchor, boxHeightAnchor, boxLeadingAnchor, boxTrailingAnchor,
             labelBottomAnchor, labelLeadingAnchor, labelTrailingAnchor,
-            progressTopAnchor, progressHeightAnchor, progressLeadingAnchor, progressTrailingAnchor
+            spinnerTopAnchor, spinnerHeightAnchor, spinnerLeadingAnchor, spinnerTrailingAnchor
         ])
     }
     
     func completed() {
-        self.removeFromSuperview()
+        DispatchQueue.main.async {
+            self._spinner.stopAnimating()
+            self.removeFromSuperview()
+        }
     }
     
     func setProgress(_ percent: Float) {
-        _progress.setProgress(percent, animated: true)
-        print(":!!!: progress=\(percent)")
+        // no progress value to set
     }
     
     func setText(_ s: String) {
@@ -120,6 +120,7 @@ class AlertBusyBar: UIView {
     }
     
     func show() {
+        _spinner.startAnimating()
         _keyWindow.addSubview(self)
     }
     

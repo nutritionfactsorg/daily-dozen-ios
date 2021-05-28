@@ -51,6 +51,15 @@ struct ColorManager {
         return UIColor(named: "BrandGreen") ??
             UIColor(red: 127/255, green: 192/255, blue: 76/255, alpha: 1)
     }
+
+    var mainBackgroundGray: UIColor {
+        return UIColor.lightGray
+    }
+
+    var mainForeground: UIColor {
+        return mainMedium
+    }
+    
 //
 //    var mainLight: UIColor {
 //

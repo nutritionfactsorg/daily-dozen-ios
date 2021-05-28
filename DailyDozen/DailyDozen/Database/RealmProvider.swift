@@ -331,7 +331,7 @@ class RealmProvider {
     
     func saveCount(_ count: Int, date: Date, countType: DataCountType) {
         saveDailyTracker()
-
+        
         let pid = DataCountRecord.pid(date: date, countType: countType)
         do {
             try realm.write {
@@ -465,7 +465,7 @@ class RealmProvider {
                     // Done. Next day streak not impacted by adjacent past streak update.
                     break   
                 } else {                    
-                    LogService.shared.error("updateStreakCompleted \(nextPid) count:\(nextRec.count) < maxServings\(countType.maxServings) with streak:\(nextRec.streak) should not occur.")
+                    LogService.shared.error("\(nextPid) count:\(nextRec.count) < maxServings\(countType.maxServings) with streak:\(nextRec.streak)")
                     nextRec.streak = 0
                     // Note: checking additional dates stops here. Investigate the error.
                     break
@@ -478,7 +478,7 @@ class RealmProvider {
                 }
                 nextMaxValidStreak += 1
             } else if nextRec.count > countType.maxServings {
-                LogService.shared.error("updateStreakCompleted \(nextPid) count:\(nextRec.count) > maxServings\(countType.maxServings) should not occur.")
+                LogService.shared.error("\(nextPid) count:\(nextRec.count) > maxServings\(countType.maxServings)")
                 nextRec.count = countType.maxServings
                 nextRec.streak = nextMaxValidStreak
                 // Note: checking additional dates stops here. Investigate the error.
@@ -506,7 +506,7 @@ class RealmProvider {
         if streakCount == thisRec.streak {
             return // Done. Expected outcome.
         } 
-
+        
         // check & update previous (past) date streak values
         prevDay = date.adding(days: -1) // reset
         prevPid = DataCountRecord.pid(date: prevDay, countType: countType) // reset
@@ -517,7 +517,7 @@ class RealmProvider {
                     // Done. Previous day streak not impacted by adjacent past streak update.
                     break   
                 } else {                    
-                    LogService.shared.error("updateStreakIncomplete \(prevPid) count:\(prevRec.count) < maxServings\(countType.maxServings) with streak:\(prevRec.streak) should not occur.")
+                    LogService.shared.error("\(prevPid) count:\(prevRec.count) < maxServings\(countType.maxServings) with streak:\(prevRec.streak)")
                     prevRec.streak = 0
                     // Note: checking additional dates stops here. Investigate the error.
                     break
@@ -530,7 +530,7 @@ class RealmProvider {
                 }
                 prevMaxValidStreak -= 1
             } else if prevRec.count > countType.maxServings {
-                LogService.shared.error("updateStreakIncomplete \(prevPid) count:\(prevRec.count) > maxServings\(countType.maxServings) should not occur.")
+                LogService.shared.error("\(prevPid) count:\(prevRec.count) > maxServings\(countType.maxServings)")
                 prevRec.count = countType.maxServings
                 prevRec.streak = prevMaxValidStreak
                 // Note: checking additional dates stops here. Investigate the error.
@@ -563,7 +563,7 @@ class RealmProvider {
                     // Done. Next day streak not impacted by adjacent past streak update.
                     break   
                 } else {                    
-                    LogService.shared.error("updateStreakIncomplete \(nextPid) count:\(nextRec.count) < maxServings\(countType.maxServings) with streak:\(nextRec.streak) should not occur.")
+                    LogService.shared.error("\(nextPid) count:\(nextRec.count) < maxServings\(countType.maxServings) with streak:\(nextRec.streak)")
                     nextRec.streak = 0
                     // Note: checking additional dates stops here. Investigate the error.
                     break
@@ -576,7 +576,7 @@ class RealmProvider {
                 }
                 nextMaxValidStreak += 1
             } else if nextRec.count > countType.maxServings {
-                LogService.shared.error("updateStreakIncomplete \(nextPid) count:\(nextRec.count) > maxServings\(countType.maxServings) should not occur.")
+                LogService.shared.error("\(nextPid) count:\(nextRec.count) > maxServings\(countType.maxServings)")
                 nextRec.count = countType.maxServings
                 nextRec.streak = nextMaxValidStreak
                 // Note: checking additional dates stops here. Investigate the error.
