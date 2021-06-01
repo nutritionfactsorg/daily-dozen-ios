@@ -9,8 +9,9 @@ import Foundation
 import UIKit
 
 class AlertActivitySpinner: UIView, ActivityProgress {
-    //
+    // display
     private var _keyWindow: UIWindow!
+    private var _isShown: Bool = false
     // elements
     private var _box: UIView!
     private var _label: UILabel!
@@ -116,12 +117,19 @@ class AlertActivitySpinner: UIView, ActivityProgress {
     }
     
     func setText(_ s: String) {
-        _label.text = s
+        DispatchQueue.main.async {
+            self._label.text = s
+        }
     }
     
     func show() {
-        _spinner.startAnimating()
-        _keyWindow.addSubview(self)
+        DispatchQueue.main.async {
+            if self._isShown == false {
+                self._spinner.startAnimating()
+                self._keyWindow.addSubview(self)
+                self._isShown = true
+            }
+        }
     }
     
 }

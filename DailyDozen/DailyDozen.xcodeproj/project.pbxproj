@@ -65,6 +65,9 @@
 		498F724D239E08C0004E501B /* FirstLaunchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 498F724C239E08C0004E501B /* FirstLaunchViewController.swift */; };
 		498F724F239E2EA3004E501B /* HealthKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 498F724E239E2EA3004E501B /* HealthKit.framework */; };
 		498F7251239E3007004E501B /* HealthManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 498F7250239E3007004E501B /* HealthManager.swift */; };
+		499089822665D9C40053D74D /* AlertActivityBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 499089812665D9C40053D74D /* AlertActivityBar.swift */; };
+		499089842665D9D70053D74D /* AlertActivitySpinner.swift in Sources */ = {isa = PBXBuildFile; fileRef = 499089832665D9D70053D74D /* AlertActivitySpinner.swift */; };
+		499089862665DA1A0053D74D /* UIApplication.swift in Sources */ = {isa = PBXBuildFile; fileRef = 499089852665DA1A0053D74D /* UIApplication.swift */; };
 		499B82FB239CD4D300E4AD19 /* WeightHistoryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 499B82FA239CD4D300E4AD19 /* WeightHistoryViewController.swift */; };
 		499B94E126439C9000AC275A /* WeightEntryPagerLayout.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 499B94DF26439C8F00AC275A /* WeightEntryPagerLayout.storyboard */; };
 		499B94E226439C9000AC275A /* WeightEntryLayout.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 499B94E026439C9000AC275A /* WeightEntryLayout.storyboard */; };
@@ -226,6 +229,9 @@
 		498F724C239E08C0004E501B /* FirstLaunchViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FirstLaunchViewController.swift; sourceTree = "<group>"; };
 		498F724E239E2EA3004E501B /* HealthKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = HealthKit.framework; path = System/Library/Frameworks/HealthKit.framework; sourceTree = SDKROOT; };
 		498F7250239E3007004E501B /* HealthManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HealthManager.swift; sourceTree = "<group>"; };
+		499089812665D9C40053D74D /* AlertActivityBar.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AlertActivityBar.swift; sourceTree = "<group>"; };
+		499089832665D9D70053D74D /* AlertActivitySpinner.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AlertActivitySpinner.swift; sourceTree = "<group>"; };
+		499089852665DA1A0053D74D /* UIApplication.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIApplication.swift; sourceTree = "<group>"; };
 		499B82FA239CD4D300E4AD19 /* WeightHistoryViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeightHistoryViewController.swift; sourceTree = "<group>"; };
 		499B94DF26439C8F00AC275A /* WeightEntryPagerLayout.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = WeightEntryPagerLayout.storyboard; sourceTree = "<group>"; };
 		499B94E026439C9000AC275A /* WeightEntryLayout.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = WeightEntryLayout.storyboard; sourceTree = "<group>"; };
@@ -859,6 +865,7 @@
 				49208ADB2585F16F00E994CA /* DateManager.swift */,
 				CF9EC1BF202196B100C7B3CA /* Fonts.swift */,
 				CFAAB3761F9F3FDF00B24748 /* URL.swift */,
+				499089852665DA1A0053D74D /* UIApplication.swift */,
 				49D9B07A240DCA1F000E9822 /* UIView.swift */,
 				49F66B782588752D00002DB2 /* UITextField.swift */,
 			);
@@ -975,8 +982,10 @@
 		CFE698501F974F0F00CD7905 /* Controllers */ = {
 			isa = PBXGroup;
 			children = (
-				498F724C239E08C0004E501B /* FirstLaunchViewController.swift */,
 				CF55BC4E2020450D00003D0D /* AlertBuilder.swift */,
+				499089812665D9C40053D74D /* AlertActivityBar.swift */,
+				499089832665D9D70053D74D /* AlertActivitySpinner.swift */,
+				498F724C239E08C0004E501B /* FirstLaunchViewController.swift */,
 				497390A823A5941900492D92 /* MainViewController.swift */,
 			);
 			path = Controllers;
@@ -1387,6 +1396,7 @@
 				498170952391B6AB0033882C /* TweakEntrySections.swift in Sources */,
 				CF987C281F9E157300D4893E /* Item.swift in Sources */,
 				49B93E502477361100144C80 /* DatabaseBuiltInTest.swift in Sources */,
+				499089822665D9C40053D74D /* AlertActivityBar.swift in Sources */,
 				492013C6261FF61900A5D635 /* DozeEntryRow.swift in Sources */,
 				4964604623AC524700FBD976 /* PopupPickerView.swift in Sources */,
 				CF9EC1C0202196B100C7B3CA /* Fonts.swift in Sources */,
@@ -1413,6 +1423,7 @@
 				CF2680021FB477AD004A6200 /* Date.swift in Sources */,
 				CFF72AFB1FB9A499001CC2E9 /* UnitsType.swift in Sources */,
 				493A8B9A235E93DA00A5009A /* SettingsKeys.swift in Sources */,
+				499089862665DA1A0053D74D /* UIApplication.swift in Sources */,
 				CFC4A84F1F9761FF00B5AC75 /* DozeEntryPagerViewController.swift in Sources */,
 				4943720D2487702300632053 /* HealthSynchronizer.swift in Sources */,
 				495DAAEB23A06C330036077C /* WeightReport.swift in Sources */,
@@ -1421,6 +1432,7 @@
 				49F8D1DE23906B29003E139F /* TweakEntryDataProvider.swift in Sources */,
 				4941D735237E266300ED84B5 /* DataCountAttributes.swift in Sources */,
 				CF9E03231FBD9FDE0084BC88 /* ItemHistoryViewController.swift in Sources */,
+				499089842665D9D70053D74D /* AlertActivitySpinner.swift in Sources */,
 				497F91B2240990B600464E4E /* TweakDetailSections.swift in Sources */,
 				49DB104F238E257D00E77E52 /* TweakEntryViewModel.swift in Sources */,
 				CF4DECF91F9DF82900DA094B /* DozeEntryDataProvider.swift in Sources */,

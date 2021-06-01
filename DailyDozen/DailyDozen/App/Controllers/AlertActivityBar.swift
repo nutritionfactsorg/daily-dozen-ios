@@ -19,11 +19,14 @@ protocol ActivityProgress {
     /// progress message
     func setText(_ s: String)
     
+    /// can use to show after determining if activity will seem "slow" to the user
+    func show()
 }
 
 class AlertActivityBar: UIView, ActivityProgress {
-    //
+    // display
     private var _keyWindow: UIWindow!
+    private var _isShown: Bool = false
     // elements
     private var _box: UIView!
     private var _label: UILabel!
@@ -133,11 +136,18 @@ class AlertActivityBar: UIView, ActivityProgress {
     }
     
     func setText(_ s: String) {
-        _label.text = s
+        DispatchQueue.main.async {
+            self._label.text = s
+        }
     }
     
     func show() {
-        _keyWindow.addSubview(self)
+        DispatchQueue.main.async {
+            if self._isShown == false {
+                self._keyWindow.addSubview(self)
+                self._isShown = true
+            }
+        }
     }
     
 }
