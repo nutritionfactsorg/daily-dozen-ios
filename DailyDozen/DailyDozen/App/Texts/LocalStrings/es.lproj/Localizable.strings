@@ -318,7 +318,7 @@
 "info_app_about_overview" = "Utiliza esta app a diario para llevar un registro de los alimentos que recomiendo para salud óptima y longevidad en mi libro Como no Morir.";
 
 /* Info About: version number */
-"info_app_about_version" = "versión 3.2.7";
+"info_app_about_version" = "versión 3.2.9";
 
 /* Info About: open source software credits */
 "info_app_about_oss_credits" = "Las siguientes open source libraries fueron utilizadas: RealmSwift, Charts, FSCalendar, SimpleAnimation and ActiveLabel.";

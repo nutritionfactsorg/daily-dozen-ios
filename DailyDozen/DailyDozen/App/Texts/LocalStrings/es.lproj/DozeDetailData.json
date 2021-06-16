@@ -56,7 +56,7 @@
         },
         {
           "text" : "Lentejas (beluga, francesa, roja)",
-          "topic" : "/es/topics/lentejas"
+          "topic" : "es/topics/lentejas"
         },
         {
           "text" : "Miso",
@@ -100,7 +100,7 @@
       "varieties" : [
         {
           "text" : "Açai",
-          "topic" : "/es/topics/bayas-de-acai-es"
+          "topic" : "es/topics/bayas-de-acai"
         },
         {
           "text" : "Agracejos",
@@ -112,7 +112,7 @@
         },
         {
           "text" : "Arándanos azules",
-          "topic" : "es/topics/arandanos-azules"
+          "topic" : ""
         },
         {
           "text" : "Cerezas (dulces o ácidas)",
@@ -192,7 +192,7 @@
         },
         {
           "text" : "Té de jazmín",
-          "topic" : "es/topics/te-de-jasmin"
+          "topic" : ""
         },
         {
           "text" : "Té de limón",
@@ -508,7 +508,7 @@
         },
         {
           "text" : "Bananas",
-          "topic" : "es/topics/bananos"
+          "topic" : ""
         },
         {
           "text" : "Melón cantalupo",
@@ -524,7 +524,7 @@
         },
         {
           "text" : "Higos",
-          "topic" : "es/topics/higos"
+          "topic" : ""
         },
         {
           "text" : "Toronja",
@@ -564,7 +564,7 @@
         },
         {
           "text" : "Papaya",
-          "topic" : "es/topics/papaya-es"
+          "topic" : ""
         },
         {
           "text" : "Maracuyá",
@@ -580,7 +580,7 @@
         },
         {
           "text" : "Piña",
-          "topic" : "/es/topics/pinas"
+          "topic" : ""
         },
         {
           "text" : "Ciruelas (en especial las negras)",
@@ -628,7 +628,7 @@
         },
         {
           "text" : "Hojas de remolacha",
-          "topic" : "es/topics/hojas-de-remolacha-es"
+          "topic" : ""
         },
         {
           "text" : "Col",
@@ -640,7 +640,7 @@
         },
         {
           "text" : "Mesclun (hojas tiernas)",
-          "topic" : "es/topics/ensalada-mesclun-es"
+          "topic" : ""
         },
         {
           "text" : "Hojas de mostaza",
@@ -764,7 +764,7 @@
         },
         {
           "text" : "Cardamomo",
-          "topic" : "es/topics/cardamomo"
+          "topic" : ""
         },
         {
           "text" : "Chile en polvo",
@@ -784,7 +784,7 @@
         },
         {
           "text" : "Cilantro",
-          "topic" : "es/topics/cilantro-es-2"
+          "topic" : ""
         },
         {
           "text" : "Comino",
@@ -816,7 +816,7 @@
         },
         {
           "text" : "Limoncillo",
-          "topic" : "es/topics/limoncillo-es"
+          "topic" : ""
         },
         {
           "text" : "Mejorana",
@@ -864,7 +864,7 @@
         },
         {
           "text" : "Tomillo",
-          "topic" : "es/topics/tomillo"
+          "topic" : ""
         },
         {
           "text" : "Cúrcuma",
@@ -932,7 +932,7 @@
         },
         {
           "text" : "Colinabo (verde, morado)",
-          "topic" : "es/topics/colinabo"
+          "topic" : ""
         },
         {
           "text" : "Hojas de mostaza",
@@ -940,7 +940,7 @@
         },
         {
           "text" : "Rábanos",
-          "topic" : "es/topics/rabanos"
+          "topic" : ""
         },
         {
           "text" : "Nabos verdes",
@@ -1016,7 +1016,7 @@
         },
         {
           "text" : "Patatas moradas",
-          "topic" : "es/topics/patatas-moradas"
+          "topic" : ""
         },
         {
           "text" : "Calabaza",
@@ -1104,7 +1104,7 @@
         },
         {
           "text" : "Teff",
-          "topic" : "es/topics/teff-es"
+          "topic" : ""
         },
         {
           "text" : "Pasta integral",

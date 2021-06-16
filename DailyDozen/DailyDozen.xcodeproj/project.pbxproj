@@ -188,9 +188,6 @@
 		493A9BD423CE47A000F679BE /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
 		493A9C3223CE6B7500F679BE /* es */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = es; path = es.lproj/Localizable.strings; sourceTree = "<group>"; };
 		493B0EB1258D0D7B00FEDA8E /* dr_greger.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = dr_greger.png; sourceTree = "<group>"; };
-		493CE66625D727E500F95BF3 /* pl */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = pl; path = pl.lproj/Localizable.strings; sourceTree = "<group>"; };
-		493CE66725D727E500F95BF3 /* pl */ = {isa = PBXFileReference; lastKnownFileType = text.json; name = pl; path = pl.lproj/DozeDetailData.json; sourceTree = "<group>"; };
-		493CE66825D727E500F95BF3 /* pl */ = {isa = PBXFileReference; lastKnownFileType = text.json; name = pl; path = pl.lproj/TweakDetailData.json; sourceTree = "<group>"; };
 		4941D726237E13DB00ED84B5 /* RealmManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RealmManager.swift; sourceTree = "<group>"; };
 		4941D728237E13DC00ED84B5 /* DataCountRecord.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DataCountRecord.swift; sourceTree = "<group>"; };
 		4941D729237E13DC00ED84B5 /* DataCountType.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DataCountType.swift; sourceTree = "<group>"; };
@@ -236,7 +233,6 @@
 		499B94DF26439C8F00AC275A /* WeightEntryPagerLayout.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = WeightEntryPagerLayout.storyboard; sourceTree = "<group>"; };
 		499B94E026439C9000AC275A /* WeightEntryLayout.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = WeightEntryLayout.storyboard; sourceTree = "<group>"; };
 		499B94E326439CBB00AC275A /* WeightHistoryLayout.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = WeightHistoryLayout.storyboard; sourceTree = "<group>"; };
-		49B0FD2125DF927B00236A12 /* pl */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = pl; path = pl.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		49B0FD2225DF927C00236A12 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		49B93E4F2477361100144C80 /* DatabaseBuiltInTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DatabaseBuiltInTest.swift; sourceTree = "<group>"; };
 		49B97FE625F5EE5C009BA5A9 /* DozeEntryPagerLayout.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = DozeEntryPagerLayout.storyboard; sourceTree = "<group>"; };
@@ -1140,7 +1136,6 @@
 				en,
 				Base,
 				es,
-				pl,
 			);
 			mainGroup = CFE6982F1F974B9700CD7905;
 			productRefGroup = CFE698391F974B9700CD7905 /* Products */;
@@ -1463,7 +1458,6 @@
 			children = (
 				4916451E23EE53610077731D /* Base */,
 				4916452023EE53640077731D /* es */,
-				493CE66825D727E500F95BF3 /* pl */,
 			);
 			name = TweakDetailData.json;
 			sourceTree = "<group>";
@@ -1472,7 +1466,6 @@
 			isa = PBXVariantGroup;
 			children = (
 				492474A223DB677A00D7D918 /* es */,
-				49B0FD2125DF927B00236A12 /* pl */,
 				49B0FD2225DF927C00236A12 /* en */,
 			);
 			name = InfoPlist.strings;
@@ -1483,7 +1476,6 @@
 			children = (
 				4933A75123EE2BC800CE4631 /* Base */,
 				4933A75323EE2BCB00CE4631 /* es */,
-				493CE66725D727E500F95BF3 /* pl */,
 			);
 			name = DozeDetailData.json;
 			sourceTree = "<group>";
@@ -1493,7 +1485,6 @@
 			children = (
 				493A9BD423CE47A000F679BE /* en */,
 				493A9C3223CE6B7500F679BE /* es */,
-				493CE66625D727E500F95BF3 /* pl */,
 			);
 			name = Localizable.strings;
 			sourceTree = "<group>";
@@ -1701,12 +1692,12 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_ENTITLEMENTS = DailyDozen/DailyDozen.entitlements;
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 13;
+				CURRENT_PROJECT_VERSION = 3;
 				DEVELOPMENT_TEAM = 2MG57YUZL5;
 				INFOPLIST_FILE = "$(SRCROOT)/DailyDozen/App/SupportingFiles/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 12.4;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				MARKETING_VERSION = 3.2.7;
+				MARKETING_VERSION = 3.2.9;
 				PRODUCT_BUNDLE_IDENTIFIER = com.nutritionfacts.dailydozen;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
@@ -1721,12 +1712,12 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_ENTITLEMENTS = DailyDozen/DailyDozen.entitlements;
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 13;
+				CURRENT_PROJECT_VERSION = 3;
 				DEVELOPMENT_TEAM = 2MG57YUZL5;
 				INFOPLIST_FILE = "$(SRCROOT)/DailyDozen/App/SupportingFiles/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 12.4;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				MARKETING_VERSION = 3.2.7;
+				MARKETING_VERSION = 3.2.9;
 				PRODUCT_BUNDLE_IDENTIFIER = com.nutritionfacts.dailydozen;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;

@@ -192,7 +192,7 @@
         },
         {
           "text" : "Jasmine tea",
-          "topic" : "topics/jasmine-tea"
+          "topic" : ""
         },
         {
           "text" : "Lemon balm tea",
@@ -524,7 +524,7 @@
         },
         {
           "text" : "Figs",
-          "topic" : "topics/figs"
+          "topic" : ""
         },
         {
           "text" : "Grapefruit",
@@ -564,7 +564,7 @@
         },
         {
           "text" : "Papaya",
-          "topic" : "topics/papaya"
+          "topic" : ""
         },
         {
           "text" : "Passion fruit",
@@ -580,7 +580,7 @@
         },
         {
           "text" : "Pineapple",
-          "topic" : "topics/pineapples"
+          "topic" : ""
         },
         {
           "text" : "Plums (especially black plums)",
@@ -628,7 +628,7 @@
         },
         {
           "text" : "Beet greens",
-          "topic" : "topics/beet-greens"
+          "topic" : ""
         },
         {
           "text" : "Collard greens",
@@ -640,7 +640,7 @@
         },
         {
           "text" : "Mesclun mix (assorted young salad greens)",
-          "topic" : "topics/mesclun-mix"
+          "topic" : ""
         },
         {
           "text" : "Mustard greens",
@@ -764,7 +764,7 @@
         },
         {
           "text" : "Cardamom",
-          "topic" : "topics/cardamom"
+          "topic" : ""
         },
         {
           "text" : "Chili powder",
@@ -784,7 +784,7 @@
         },
         {
           "text" : "Coriander",
-          "topic" : "topics/coriander"
+          "topic" : ""
         },
         {
           "text" : "Cumin",
@@ -816,7 +816,7 @@
         },
         {
           "text" : "Lemongrass",
-          "topic" : "topics/lemongrass"
+          "topic" : ""
         },
         {
           "text" : "Marjoram",
@@ -836,7 +836,7 @@
         },
         {
           "text" : "Smoked paprika",
-          "topic" : "topics/paprika"
+          "topic" : ""
         },
         {
           "text" : "Parsley",
@@ -864,7 +864,7 @@
         },
         {
           "text" : "Thyme",
-          "topic" : "topics/thyme"
+          "topic" : ""
         },
         {
           "text" : "Turmeric",
@@ -932,7 +932,7 @@
         },
         {
           "text" : "Kohlrabi (green and purple)",
-          "topic" : "topics/kohlrabi"
+          "topic" : ""
         },
         {
           "text" : "Mustard greens",
@@ -940,7 +940,7 @@
         },
         {
           "text" : "Radishes",
-          "topic" : "topics/radishes"
+          "topic" : ""
         },
         {
           "text" : "Turnip greens",
@@ -1016,7 +1016,7 @@
         },
         {
           "text" : "Purple potatoes",
-          "topic" : "topics/purple-potatoes"
+          "topic" : ""
         },
         {
           "text" : "Pumpkin",
@@ -1104,7 +1104,7 @@
         },
         {
           "text" : "Teff",
-          "topic" : "topics/teff"
+          "topic" : ""
         },
         {
           "text" : "Whole-wheat pasta",
