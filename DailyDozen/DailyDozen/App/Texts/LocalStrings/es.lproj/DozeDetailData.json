@@ -120,7 +120,7 @@
         },
         {
           "text" : "Uvas",
-          "topic" : "es/topics/uvas-de-concordia-es"
+          "topic" : "es/topics/uvas"
         },
         {
           "text" : "Arándanos rojos",
@@ -208,7 +208,7 @@
         },
         {
           "text" : "Infusión de menta",
-          "topic" : ""
+          "topic" : "es/topics/menta-es"
         },
         {
           "text" : "Infusión de rooibos",
@@ -628,7 +628,7 @@
         },
         {
           "text" : "Hojas de remolacha",
-          "topic" : ""
+          "topic" : "es/topics/remolachas-es"
         },
         {
           "text" : "Col",
@@ -1016,7 +1016,7 @@
         },
         {
           "text" : "Patatas moradas",
-          "topic" : ""
+          "topic" : "es/topics/papas"
         },
         {
           "text" : "Calabaza",
