@@ -74,19 +74,24 @@ class WeightEntryViewController: UIViewController {
     func saveIBWeight(ampm: DataWeightType) {
         let datestampKey = currentViewDateWeightEntry.datestampKey
         LogService.shared.debug("•HK• WeightEntryViewController saveIBWeight \(datestampKey)")
-        
+
+        let formatter = NumberFormatter()
+        formatter.numberStyle = .decimal
+        formatter.maximumFractionDigits = 2
+
         if
             let timeText = ampm == .am ? timeAMInput.text : timePMInput.text,
             let weightText = ampm == .am ? weightAM.text : weightPM.text,
             let date = Date(healthkit: "\(datestampKey) \(timeText)"),
-            var weight = Double(weightText),
-            weight > 5.0 {
-            
-            // Update local data
-            if SettingsManager.isImperial() {
-                weight = weight / 2.2046 // kg = lbs * 2.2046
+            let weightNSNumber = formatter.number(from: weightText) {
+            var weight = Double(truncating: weightNSNumber)
+            if weight > 5.0 {
+                // Update local data
+                if SettingsManager.isImperial() {
+                    weight = weight / 2.2046 // kg = lbs * 2.2046
+                }
+                HealthSynchronizer.shared.syncWeightPut(date: date, ampm: ampm, kg: weight)
             }
-            HealthSynchronizer.shared.syncWeightPut(date: date, ampm: ampm, kg: weight)
         }
         // Update local counter
         updateWeightDataCount()
