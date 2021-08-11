@@ -22,14 +22,9 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         
         #if DEBUG
         print("PRODUCT_BUNDLE_IDENTIFIER = \(Bundle.main.bundleIdentifier ?? "not found")")
-        let device = UIDevice.current
-        print("""
-        DEVICE:
-                       model = \(device.model)
-                        name = \(device.name)
-                  systemName = \(device.systemName)
-               systemVersion = \(device.systemVersion)
-        """)
+        
+        printDeviceInfo()
+        printLocaleInfo()
         
         print(":DEBUG:WAYPOINT: AppDelegate didFinishLaunchingWithOptions\n\((URL.inDocuments().path))")
         logger.logLevel = LogServiceLevel.verbose
@@ -46,8 +41,9 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         logger.debug("::::: SIMULATOR ENVIRONMENT :::::")
         let bundle = Bundle(for: type(of: self))
         logger.debug("Bundle & Resources Path:\n\(bundle.bundlePath)\n")
-        logger.debug("App Documents (RealmDB) Directory:\n\(URL.inDocuments().path)\n")
-        
+        logger.debug("App Documents (log files and exports) Directory:\n\(URL.inDocuments().path)\n")
+        logger.debug("App Library (database) Directory:\n\(URL.inLibrary().path)\n")
+
         /*
         // Preliminary integrity checks.
         let realmMngrOldCheck = RealmManagerLegacy(workingDirUrl: URL.inDocuments())
@@ -84,6 +80,37 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     
     func applicationDidBecomeActive(_ application: UIApplication) {
         application.applicationIconBadgeNumber = 0
+    }
+    
+    func printDeviceInfo() {
+        let device = UIDevice.current
+        //let uiIdiom = device.userInterfaceIdiom // phone, pad, tv, mac
+        print("""
+        DEVICE:
+                     model = \(device.model)
+                      name = \(device.name)
+                systemName = \(device.systemName)
+             systemVersion = \(device.systemVersion)
+        
+        """)
+    }
+    
+    func printLocaleInfo() {
+        let currentLocale = Locale.current
+        print("""
+        LOCALE:
+          decimalSeparator = \(currentLocale.decimalSeparator ?? "nil")
+
+                identifier = \(currentLocale.identifier)
+              languageCode = \(currentLocale.languageCode ?? "nil")
+                regionCode = \(currentLocale.regionCode ?? "nil")
+                scriptCode = \(currentLocale.scriptCode ?? "nil")
+               variantCode = \(currentLocale.variantCode ?? "nil")
+
+                  calendar = \(currentLocale.calendar)
+          usesMetricSystem = \(currentLocale.usesMetricSystem)
+        
+        """)
     }
     
 }

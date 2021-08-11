@@ -334,11 +334,14 @@ class HealthManager {
         
         for item: HKQuantitySample in samples {
             let bodymassKg = item.quantity.doubleValue(for: HKUnit.gramUnit(with: .kilo))
-            let weightKg = Double(bodymassKg)
-            let weightKgStr = String(format: "%.1f", weightKg)
-            let weightLbs = weightKg * 2.2046 // 1 kg = 2.2046 lbs
-            let weightLbsStr = String(format: "%.1f", weightLbs)
-
+            
+            guard
+                let weightKgStr = UnitsUtility.regionalKgWeight(fromKg: bodymassKg, toDecimalDigits: 2),
+                let weightLbsStr = UnitsUtility.regionalLbsWeight(fromKg: bodymassKg, toDecimalDigits: 2)
+            else {
+                continue
+            }
+            
             let dateFormatter = DateFormatter()
             dateFormatter.dateFormat = "yyyyMMdd.a"
             let dateStr = dateFormatter.string(from: item.startDate).lowercased()

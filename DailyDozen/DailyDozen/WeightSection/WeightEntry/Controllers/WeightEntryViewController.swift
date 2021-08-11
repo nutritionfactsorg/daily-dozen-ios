@@ -21,10 +21,10 @@ class WeightEntryViewController: UIViewController {
     @IBOutlet weak var labelPmTime: UILabel!
     
     // Text Edit
-    @IBOutlet weak var timeAMInput: UITextField!
-    @IBOutlet weak var timePMInput: UITextField!
-    @IBOutlet weak var weightAM: UITextField!
-    @IBOutlet weak var weightPM: UITextField!
+    @IBOutlet weak var timeAMEntry: UITextField!
+    @IBOutlet weak var timePMEntry: UITextField!
+    @IBOutlet weak var weightAMEntry: UITextField!
+    @IBOutlet weak var weightPMEntry: UITextField!
     
     @IBOutlet weak var weightAMLabel: UILabel!
     @IBOutlet weak var weightPMLabel: UILabel!
@@ -59,39 +59,39 @@ class WeightEntryViewController: UIViewController {
     
     func clearIBWeight(ampm: DataWeightType) {
         if ampm == .am {
-            timeAMInput.text = ""
-            weightAM.text = ""
+            timeAMEntry.text = ""
+            weightAMEntry.text = ""
         } else {
-            timePMInput.text = ""
-            weightPM.text = ""
+            timePMEntry.text = ""
+            weightPMEntry.text = ""
         }
         HealthSynchronizer.shared.syncWeightClear(date: currentViewDateWeightEntry, ampm: ampm)
         updateWeightDataCount()
     }
     
     /// Save weight values from InterfaceBuilder (IB) fields
-    /// :TBD:???:ToBeLocalized: time*Input.text need to be local independent for synced put record
+    /// :TBD:???:ToBeLocalized: `time*Entry.text` need to be local independent for synced put record
     func saveIBWeight(ampm: DataWeightType) {
         let datestampKey = currentViewDateWeightEntry.datestampKey
-        LogService.shared.debug("•HK• WeightEntryViewController saveIBWeight \(datestampKey)")
+        LogService.shared.debug(
+            "•HK• WeightEntryViewController saveIBWeight \(datestampKey)"
+        )
         
         if
-            let timeText = ampm == .am ? timeAMInput.text : timePMInput.text,
-            let weightText = ampm == .am ? weightAM.text : weightPM.text,
+            let timeText = ampm == .am ? timeAMEntry.text : timePMEntry.text,
+            let weightText = ampm == .am ? weightAMEntry.text : weightPMEntry.text,
             let date = Date(healthkit: "\(datestampKey) \(timeText)"),
-            var weight = Double(weightText),
-            weight > 5.0 {
-            
-            // Update local data
-            if SettingsManager.isImperial() {
-                weight = weight / 2.2046 // kg = lbs * 2.2046
-            }
-            HealthSynchronizer.shared.syncWeightPut(date: date, ampm: ampm, kg: weight)
+            let normalizedWeight = UnitsUtility.normalizedKgWeight(
+                from: weightText,
+                fromUnits: SettingsManager.unitsType()
+            )
+        {
+            HealthSynchronizer.shared.syncWeightPut(date: date, ampm: ampm, kg: normalizedWeight)
         }
         // Update local counter
         updateWeightDataCount()
     }
-    
+        
     /// showIBWeight() when "BodyMassDataAvailable" notification occurs
     @objc func showIBWeight(notification: Notification) {
         LogService.shared.debug("•HK• WeightEntryViewController showIBWeight")
@@ -101,11 +101,11 @@ class WeightEntryViewController: UIViewController {
         
         let weightToShow = healthRecord.getIBWeightToShow()
         if healthRecord.ampm == .am {
-            timeAMInput.text = weightToShow.time
-            weightAM.text = weightToShow.weight
+            timeAMEntry.text = weightToShow.time
+            weightAMEntry.text = weightToShow.weight
         } else {
-            timePMInput.text = weightToShow.time
-            weightPM.text = weightToShow.weight
+            timePMEntry.text = weightToShow.time
+            weightPMEntry.text = weightToShow.weight
         }
     }
     
@@ -119,20 +119,20 @@ class WeightEntryViewController: UIViewController {
         if isImperial {
             weightAMLabel.text = NSLocalizedString("weight_entry_units_lbs", comment: "imperial system pounds")
             weightPMLabel.text = NSLocalizedString("weight_entry_units_lbs", comment: "imperial system pounds")
-            if let txt = weightAM.text {
-                weightAM.text = SettingsManager.convertKgToLbs(txt)
+            if let txt = weightAMEntry.text {
+                weightAMEntry.text = UnitsUtility.convertKgToLbs(txt)
             }
-            if let txt = weightPM.text {
-                weightPM.text = SettingsManager.convertKgToLbs(txt)
+            if let txt = weightPMEntry.text {
+                weightPMEntry.text = UnitsUtility.convertKgToLbs(txt)
             }
         } else {
             weightAMLabel.text = NSLocalizedString("weight_entry_units_kg", comment: "metric system kilograms")
             weightPMLabel.text = NSLocalizedString("weight_entry_units_kg", comment: "metric system kilograms")
-            if let txt = weightAM.text {
-                weightAM.text = SettingsManager.convertLbsToKg(txt)
+            if let txt = weightAMEntry.text {
+                weightAMEntry.text = UnitsUtility.convertLbsToKg(txt)
             }
-            if let txt = weightPM.text {
-                weightPM.text = SettingsManager.convertLbsToKg(txt)
+            if let txt = weightPMEntry.text {
+                weightPMEntry.text = UnitsUtility.convertLbsToKg(txt)
             }
         }
     }
@@ -182,10 +182,10 @@ class WeightEntryViewController: UIViewController {
         clearWeightAMButton.setTitle(clearStr, for: .normal)
         clearWeightPMButton.setTitle(clearStr, for: .normal)
         
-        weightPM.delegate = self
-        weightAM.delegate = self
-        timeAMInput.delegate = self
-        timePMInput.delegate = self
+        weightPMEntry.delegate = self
+        weightAMEntry.delegate = self
+        timeAMEntry.delegate = self
+        timePMEntry.delegate = self
         
         guard let appDelegate = UIApplication.shared.delegate as? AppDelegate else {
             return
@@ -201,7 +201,7 @@ class WeightEntryViewController: UIViewController {
             timePickerAM.sizeToFit()
         }
         timePickerAM.addTarget(self, action: #selector(WeightEntryViewController.timeChangedAM(timePicker:)), for: .valueChanged)
-        timeAMInput.inputView = timePickerAM // assign initial value
+        timeAMEntry.inputView = timePickerAM // assign initial value
         
         // PM Evening
         timePickerPM = UIDatePicker() // :TBD:???: add min-max contraints?
@@ -212,7 +212,7 @@ class WeightEntryViewController: UIViewController {
             timePickerPM.sizeToFit()
         }        
         timePickerPM.addTarget(self, action: #selector(WeightEntryViewController.timeChangedPM(timePicker:)), for: .valueChanged)
-        timePMInput.inputView = timePickerPM
+        timePMEntry.inputView = timePickerPM
         
         setViewModel(date: currentViewDateWeightEntry)
         
@@ -283,7 +283,7 @@ class WeightEntryViewController: UIViewController {
         // dateFormatter.setLocalizedDateFormatFromTemplate(<#T##dateFormatTemplate: String##String#>) :TBD:ToBeLocalized?
         timePicker.minimumDate = min
         timePicker.maximumDate = max
-        timeAMInput.text = dateFormatter.string(from: timePicker.date)
+        timeAMEntry.text = dateFormatter.string(from: timePicker.date)
         //view.endEditing(true)
     }
     
@@ -295,7 +295,7 @@ class WeightEntryViewController: UIViewController {
         // dateFormatter.setLocalizedDateFormatFromTemplate(<#T##dateFormatTemplate: String##String#>) :TBD:ToBeLocalized?
         timePicker.minimumDate = min
         timePicker.maximumDate = max
-        timePMInput.text = dateFormatter.string(from: timePicker.date)
+        timePMEntry.text = dateFormatter.string(from: timePicker.date)
         //view.endEditing(true)
     }
     
@@ -314,13 +314,13 @@ class WeightEntryViewController: UIViewController {
         self.currentViewDateWeightEntry = date
         
         let recordAM = HealthSynchronizer.shared.syncWeightToShow(date: date, ampm: .am)
-        timeAMInput.text = recordAM.time
-        weightAM.text = recordAM.weight
+        timeAMEntry.text = recordAM.time
+        weightAMEntry.text = recordAM.weight
         timePickerAM.setDate(date, animated: false)
         
         let recordPM = HealthSynchronizer.shared.syncWeightToShow(date: date, ampm: .pm)
-        timePMInput.text = recordPM.time
-        weightPM.text = recordPM.weight
+        timePMEntry.text = recordPM.time
+        weightPMEntry.text = recordPM.weight
         if timePickerPM != nil {
             timePickerPM.setDate(date, animated: false)
         }
@@ -337,7 +337,7 @@ class WeightEntryViewController: UIViewController {
      */
     
     override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
-        // weightAM.endEditing(true)
+        // weightAMEntry.endEditing(true)
         view.endEditing(true)
     }
     
@@ -361,11 +361,11 @@ extension WeightEntryViewController: UITextFieldDelegate {
             let dateFormatter = DateFormatter()
             dateFormatter.dateFormat = "hh:mm a"
             // dateFormatter.setLocalizedDateFormatFromTemplate(<#T##dateFormatTemplate: String##String#>) :TBD:ToBeLocalized?
-            if textField == timeAMInput {
-                timeAMInput.text = dateFormatter.string(from: DateManager.currentDatetime())
+            if textField == timeAMEntry {
+                timeAMEntry.text = dateFormatter.string(from: DateManager.currentDatetime())
             }
-            if textField == timePMInput {
-                timePMInput.text = dateFormatter.string(from: DateManager.currentDatetime())
+            if textField == timePMEntry {
+                timePMEntry.text = dateFormatter.string(from: DateManager.currentDatetime())
             }
         }
         return true // return false to disallow editing.
@@ -377,7 +377,7 @@ extension WeightEntryViewController: UITextFieldDelegate {
     
     func textFieldShouldReturn(_ textField: UITextField) -> Bool {
         //LogService.shared.debug("textFieldShouldReturn")
-        //weightAM.endEditing(true)
+        //weightAMEntry.endEditing(true)
         view.endEditing(true)
         
         //textField.resignFirstResponder()
@@ -398,7 +398,7 @@ extension WeightEntryViewController: UITextFieldDelegate {
     func textFieldDidEndEditing(_ textField: UITextField) {
         //this is where you might add other code
         //LogService.shared.debug("textFieldDidEndEditing")
-        if let weight = weightAM.text {
+        if let weight = weightAMEntry.text {
             LogService.shared.debug("•HK• WeightEntryViewController textFieldDidEndEditing \(weight)")
         }
     }

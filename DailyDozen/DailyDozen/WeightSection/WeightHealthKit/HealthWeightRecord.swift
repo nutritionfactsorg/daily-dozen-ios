@@ -26,16 +26,21 @@ struct HealthWeightRecord {
             return (time: "", weight: "")
         } 
         
-        let bodymassKg = sample.quantity.doubleValue(for: HKUnit.gramUnit(with: .kilo))
-        var weight = Double(bodymassKg)
-        if SettingsManager.isImperial() {
-            weight = weight * 2.2046 // 1 kg = 2.2046 lbs
-        }
         let dateFormatter = DateFormatter()
         dateFormatter.dateFormat = "hh:mm a"
         let timeStr = dateFormatter.string(from: sample.startDate)
-        let weightStr = String(format: "%.1f", weight)
-        return (time: timeStr, weight: weightStr)
+
+        var bodymassKg = sample.quantity.doubleValue(for: HKUnit.gramUnit(with: .kilo))
+        
+        if let weightStr = UnitsUtility.regionalWeight(fromKg: bodymassKg, toUnits: SettingsManager.unitsType(), toDecimalDigits: 1) {
+            return (time: timeStr, weight: weightStr)
+        } else {
+            if SettingsManager.isImperial() {
+                bodymassKg = bodymassKg * 2.2046 // 1 kg = 2.2046 lbs
+            }
+            let weightStr = String(format: "%.1f", bodymassKg) // fallback if regional is nil
+            return (time: timeStr, weight: weightStr)
+        }
     }
     
     func toString() -> String {

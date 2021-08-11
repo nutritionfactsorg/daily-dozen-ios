@@ -91,6 +91,8 @@
 		49C01CD72644AFDD005E592D /* TweakHistoryLayout.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 49C01CD62644AFDD005E592D /* TweakHistoryLayout.storyboard */; };
 		49C39695264E556000920ECC /* ItemHistoryLayout.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 49C39694264E556000920ECC /* ItemHistoryLayout.storyboard */; };
 		49C646CB236F4A46000DA8DC /* UtilityLayout.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 49C646CA236F4A46000DA8DC /* UtilityLayout.storyboard */; };
+		49CA08A826C39DA8002D9F66 /* UnitsUtility.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49CA08A726C39DA8002D9F66 /* UnitsUtility.swift */; };
+		49CA08AA26C3A01C002D9F66 /* DailyDozenUnitsTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49CA08A926C3A01C002D9F66 /* DailyDozenUnitsTests.swift */; };
 		49D6448C245CEC3300814AD5 /* HealthWeightRecord.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49D6448B245CEC3300814AD5 /* HealthWeightRecord.swift */; };
 		49D9B07B240DCA1F000E9822 /* UIView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49D9B07A240DCA1F000E9822 /* UIView.swift */; };
 		49DB104D238E255D00E77E52 /* DozeEntryViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49DB104C238E255D00E77E52 /* DozeEntryViewModel.swift */; };
@@ -254,6 +256,8 @@
 		49C01CD62644AFDD005E592D /* TweakHistoryLayout.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = TweakHistoryLayout.storyboard; sourceTree = "<group>"; };
 		49C39694264E556000920ECC /* ItemHistoryLayout.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = ItemHistoryLayout.storyboard; sourceTree = "<group>"; };
 		49C646CA236F4A46000DA8DC /* UtilityLayout.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = UtilityLayout.storyboard; sourceTree = "<group>"; };
+		49CA08A726C39DA8002D9F66 /* UnitsUtility.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UnitsUtility.swift; sourceTree = "<group>"; };
+		49CA08A926C3A01C002D9F66 /* DailyDozenUnitsTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DailyDozenUnitsTests.swift; sourceTree = "<group>"; };
 		49D6448B245CEC3300814AD5 /* HealthWeightRecord.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HealthWeightRecord.swift; sourceTree = "<group>"; };
 		49D9B07A240DCA1F000E9822 /* UIView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIView.swift; sourceTree = "<group>"; };
 		49DB104C238E255D00E77E52 /* DozeEntryViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DozeEntryViewModel.swift; sourceTree = "<group>"; };
@@ -711,6 +715,7 @@
 				498A2278237CD81F007AF5FB /* DailyDozenTests.swift */,
 				498A227A237CD81F007AF5FB /* Info.plist */,
 				4966D7FA237DE9D3004F3A20 /* Resources */,
+				49CA08A926C3A01C002D9F66 /* DailyDozenUnitsTests.swift */,
 			);
 			path = DailyDozenTests;
 			sourceTree = "<group>";
@@ -996,6 +1001,7 @@
 				CFF72AFF1FB9BB70001CC2E9 /* LinkSettings.plist */,
 				495FA4202453EEF200DE3E58 /* LogService.swift */,
 				CFF72AFA1FB9A499001CC2E9 /* UnitsType.swift */,
+				49CA08A726C39DA8002D9F66 /* UnitsUtility.swift */,
 			);
 			path = SupportingFiles;
 			sourceTree = "<group>";
@@ -1324,6 +1330,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				49CA08AA26C3A01C002D9F66 /* DailyDozenUnitsTests.swift in Sources */,
 				498A2279237CD81F007AF5FB /* DailyDozenTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -1387,6 +1394,7 @@
 				4941D730237E13DC00ED84B5 /* DataCountType.swift in Sources */,
 				4941D732237E13DC00ED84B5 /* DataWeightType.swift in Sources */,
 				4941D72F237E13DC00ED84B5 /* DataCountRecord.swift in Sources */,
+				49CA08A826C39DA8002D9F66 /* UnitsUtility.swift in Sources */,
 				CFB5568C1FD180C3003B5813 /* Report.swift in Sources */,
 				498170952391B6AB0033882C /* TweakEntrySections.swift in Sources */,
 				CF987C281F9E157300D4893E /* Item.swift in Sources */,
@@ -1692,12 +1700,12 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_ENTITLEMENTS = DailyDozen/DailyDozen.entitlements;
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 5;
+				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = 2MG57YUZL5;
 				INFOPLIST_FILE = "$(SRCROOT)/DailyDozen/App/SupportingFiles/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 12.4;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				MARKETING_VERSION = 3.2.9;
+				MARKETING_VERSION = 3.2.11;
 				PRODUCT_BUNDLE_IDENTIFIER = com.nutritionfacts.dailydozen;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
@@ -1712,12 +1720,12 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_ENTITLEMENTS = DailyDozen/DailyDozen.entitlements;
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 5;
+				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = 2MG57YUZL5;
 				INFOPLIST_FILE = "$(SRCROOT)/DailyDozen/App/SupportingFiles/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 12.4;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				MARKETING_VERSION = 3.2.9;
+				MARKETING_VERSION = 3.2.11;
 				PRODUCT_BUNDLE_IDENTIFIER = com.nutritionfacts.dailydozen;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;

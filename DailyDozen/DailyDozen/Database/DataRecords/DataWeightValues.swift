@@ -18,7 +18,11 @@ struct DataWeightValues {
     var time: String = ""
     
     var kgStr: String {
-        return String(format: "%.1f", kg)
+        if let s = UnitsUtility.regionalKgWeight(fromKg: kg, toDecimalDigits: 1) {
+            return s
+        } else {
+            return String(format: "%.1f", kg) // fallback if region conversion is nil
+        }
     }
     
     var lbs: Double {
@@ -26,8 +30,12 @@ struct DataWeightValues {
     }
     
     var lbsStr: String {
-        let poundValue = kg * 2.204623
-        return String(format: "%.1f", poundValue)
+        if let s = UnitsUtility.regionalLbsWeight(fromKg: kg, toDecimalDigits: 1) {
+            return s
+        } else {
+            let poundValue = kg * 2.204623
+            return String(format: "%.1f", poundValue) // fallback if region conversion is nil
+        }
     }
     
     /// time of day "hh:mm a" format

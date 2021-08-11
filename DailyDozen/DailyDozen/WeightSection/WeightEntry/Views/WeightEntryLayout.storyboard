@@ -171,11 +171,11 @@
                         <outlet property="labelEvening" destination="77g-xa-ali" id="qUk-PQ-5lp"/>
                         <outlet property="labelMorning" destination="xCp-N8-5Uc" id="h2L-8Z-hra"/>
                         <outlet property="labelPmTime" destination="g3G-kp-d2S" id="EJ8-cM-Pba"/>
-                        <outlet property="timeAMInput" destination="0Oz-JE-Xra" id="wFh-dW-0Hd"/>
-                        <outlet property="timePMInput" destination="cVd-c3-qI1" id="vCb-nG-JmQ"/>
-                        <outlet property="weightAM" destination="bbx-Qc-Tgp" id="BVp-bo-8sN"/>
+                        <outlet property="timeAMEntry" destination="0Oz-JE-Xra" id="wFh-dW-0Hd"/>
+                        <outlet property="timePMEntry" destination="cVd-c3-qI1" id="vCb-nG-JmQ"/>
+                        <outlet property="weightAMEntry" destination="bbx-Qc-Tgp" id="BVp-bo-8sN"/>
                         <outlet property="weightAMLabel" destination="Tgz-om-dEk" id="gAl-6x-Xgw"/>
-                        <outlet property="weightPM" destination="EoK-qo-DeG" id="1YS-Yo-CBl"/>
+                        <outlet property="weightPMEntry" destination="EoK-qo-DeG" id="1YS-Yo-CBl"/>
                         <outlet property="weightPMLabel" destination="zV0-lA-zHj" id="eKZ-ml-bnp"/>
                     </connections>
                 </viewController>
