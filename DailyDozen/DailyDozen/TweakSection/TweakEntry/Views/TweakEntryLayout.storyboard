@@ -40,6 +40,7 @@
                                     </label>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="LuB-Sw-RTZ">
                                         <rect key="frame" x="376" y="5" width="30" height="30"/>
+                                        <accessibility key="accessibilityConfiguration" identifier="tweak_stats_history_access"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="30" id="J6k-aK-WzQ"/>
                                             <constraint firstAttribute="width" constant="30" id="vqI-sS-8Nk"/>
@@ -107,6 +108,7 @@
                                                                 </label>
                                                                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="infoDark" showsTouchWhenHighlighted="YES" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="19l-MH-q7M" userLabel="Tweak Item Info Button">
                                                                     <rect key="frame" x="366" y="10" width="20" height="20"/>
+                                                                    <accessibility key="accessibilityConfiguration" identifier="tweak_entry_info_access"/>
                                                                     <constraints>
                                                                         <constraint firstAttribute="width" constant="20" id="rYc-61-aKD"/>
                                                                         <constraint firstAttribute="height" constant="20" id="s2z-f5-J0f"/>
@@ -118,6 +120,7 @@
                                                                 </button>
                                                                 <button opaque="NO" contentMode="scaleAspectFit" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="1oc-B5-V1W" userLabel="Tweak Item Calendar Button">
                                                                     <rect key="frame" x="61" y="40" width="28" height="28"/>
+                                                                    <accessibility key="accessibilityConfiguration" identifier="tweak_entry_calendar_access"/>
                                                                     <state key="normal" image="ic_calendar"/>
                                                                     <connections>
                                                                         <action selector="tweakCalendarPressed:" destination="u1e-GF-Z27" eventType="touchUpInside" id="loH-9B-QN2"/>
@@ -146,6 +149,7 @@
                                                                                 <subviews>
                                                                                     <button opaque="NO" userInteractionEnabled="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="7rJ-3p-ulg" customClass="UIButtonCheckbox" customModule="DailyDozen" customModuleProvider="target">
                                                                                         <rect key="frame" x="0.0" y="0.0" width="25" height="25"/>
+                                                                                        <accessibility key="accessibilityConfiguration" identifier="tweak_entry_checkbox_access"/>
                                                                                         <color key="tintColor" red="0.52832656150000001" green="0.73248204210000001" blue="0.3516077359" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                                                         <state key="normal">
                                                                                             <color key="titleColor" red="0.49803921569999998" green="0.75294117650000003" blue="0.29803921570000003" alpha="1" colorSpace="calibratedRGB"/>

@@ -180,10 +180,10 @@
 "reminder.settings.vibrate" = "Vibración";
 
 /* 'On' as in 'On or Off' */
-"reminder.state.on"="On";
+"reminder.state.on"="encendido";
 
 /* 'Off' as in 'On or Off' */
-"reminder.state.off"="Off";
+"reminder.state.off"="apagado";
 
 /* Class = "UITableViewSection"; headerTitle = "Measurement Units"; ObjectID = "IFs-g0-SPV"; */
 "settings.units.header" = "Unidades de medida";
@@ -303,10 +303,10 @@
 "setting_doze_tweak_footer" = "Solo para la salud, use \"Docena Diaria solamente\". Para la salud y la pérdida de peso, use \"Docena Diaria + 21 Ajustes\".";
 
 /* Settings: units choice footer text */
-"settings_units_choice_footer" = "Configure siempre un tipo de unidad o active el botón de alternancia 'Unidades:'.";
+"setting_units_choice_footer" = "Configure siempre un tipo de unidad o active el botón de alternancia 'Unidades:'.";
 
 /* Settings: "Advanced Utilities" */
-"settings_advanced_utilities" = "Utilidades Avanzadas";
+"setting_util_advanced" = "Utilidades Avanzadas";
 
 /* Info About: "Welcome to my Daily Dozen!" */
 "info_app_about_welcome" = "¡Bienvenido a Mi Docena Diaria!";
@@ -338,5 +338,14 @@
 
 /* Item History Legend: "Some completed" */
 "item_history_completed_some" = "Algunas Porciones";
+
+/* Settings: units control segment 0 "Imperial" */
+"settings_units_0_imperial" = "Imperial";
+
+/* Settings: units control segment 1 "Metric" */
+"settings_units_1_metric" = "Métrico";
+
+/* Settings: units control segment 2 "Toggle Units" */
+"settings_units_2_toggle" = "Toggle Units";
 
 /* file end */

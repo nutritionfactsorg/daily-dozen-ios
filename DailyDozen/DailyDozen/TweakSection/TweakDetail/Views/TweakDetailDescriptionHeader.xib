@@ -16,6 +16,7 @@
             <subviews>
                 <label opaque="NO" userInteractionEnabled="NO" tag="68101115" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Description" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="YVI-sV-TDD">
                     <rect key="frame" x="5" y="5" width="110" height="40"/>
+                    <accessibility key="accessibilityConfiguration" identifier="tweak_detail_section_description_access"/>
                     <fontDescription key="fontDescription" name="HelveticaNeue-Bold" family="Helvetica Neue" pointSize="20"/>
                     <color key="textColor" red="0.078431372550000003" green="0.078431372550000003" blue="0.078431372550000003" alpha="1" colorSpace="calibratedRGB"/>
                     <nil key="highlightedColor"/>

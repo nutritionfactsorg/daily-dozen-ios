@@ -19,7 +19,9 @@ class MainViewController: UIViewController {
         navigationController?.navigationBar.tintColor = UIColor.white
         navigationController?.navigationBar.titleTextAttributes = [NSAttributedString.Key.foregroundColor: UIColor.white]
         navigationController?.navigationBar.isTranslucent = false
-
+        
+        mainTabBarController.tabBar.accessibilityIdentifier = "navtab_access"
+        
         // Global App Settings
         setupUnitsType()
         setupReminders()
@@ -145,11 +147,13 @@ class MainViewController: UIViewController {
 
         let titleDoze = NSLocalizedString("navtab.doze", comment: "Daily Dozen (proper noun) navigation tab")
         tabDailyDozenViewController.title = titleDoze
-        tabDailyDozenViewController.tabBarItem = UITabBarItem(
+        let tabDozeItem = UITabBarItem(
             title: titleDoze, // shows below tab bar item icon
             image: UIImage(named: "ic_tabapp_dailydozen"),
             tag: 0
         )
+        tabDozeItem.accessibilityIdentifier = "navtab_doze_access"
+        tabDailyDozenViewController.tabBarItem = tabDozeItem
         controllerArray.append(tabDailyDozenViewController)
 
         // Tweaks Tab
@@ -162,11 +166,13 @@ class MainViewController: UIViewController {
 
             let titleTweak = NSLocalizedString("navtab.tweaks", comment: "21 Tweaks (proper noun) navigation tab")
             tabTweaksViewController.title = titleTweak
-            tabTweaksViewController.tabBarItem = UITabBarItem(
+            let tabTweakItem = UITabBarItem(
                 title: titleTweak,
                 image: UIImage(named: "ic_tabapp_21tweaks"),
                 tag: 1
             )
+            tabTweakItem.accessibilityIdentifier = "navtab_tweak_access"
+            tabTweaksViewController.tabBarItem = tabTweakItem
             controllerArray.append(tabTweaksViewController)
         }
         
@@ -179,11 +185,13 @@ class MainViewController: UIViewController {
 
         let titleInfo = NSLocalizedString("navtab.info", comment: "More Information navigation tab")
         tabInfoViewController.title = titleInfo
-        tabInfoViewController.tabBarItem = UITabBarItem(
+        let tabInfoItem = UITabBarItem(
             title: titleInfo,
             image: UIImage(named: "ic_tabapp_more"),
             tag: 0
         )
+        tabInfoItem.accessibilityIdentifier = "navtab_info_access"
+        tabInfoViewController.tabBarItem = tabInfoItem
         controllerArray.append(tabInfoViewController)
 
         // Settings Tab
@@ -195,11 +203,13 @@ class MainViewController: UIViewController {
 
         let titleSettings = NSLocalizedString("navtab.preferences", comment: "Preferences (aka Settings, Configuration) navigation tab. Choose word different from 'Tweaks' translation")
         tabSettingsViewController.title = titleSettings
-        tabSettingsViewController.tabBarItem = UITabBarItem(
+        let tabSettingsItem = UITabBarItem(
             title: titleSettings,
             image: UIImage(named: "ic_tabapp_settings"),
             tag: 0
         )
+        tabSettingsItem.accessibilityIdentifier = "navtab_preferences_access"
+        tabSettingsViewController.tabBarItem = tabSettingsItem
         controllerArray.append(tabSettingsViewController)
 
         // Main Nav Bar Controller

@@ -57,12 +57,14 @@
                                             <subviews>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Enable Reminders" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="itH-G7-Kal">
                                                     <rect key="frame" x="20" y="12" width="137" height="20.5"/>
+                                                    <accessibility key="accessibilityConfiguration" identifier="reminder_cell_label_access"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" horizontalCompressionResistancePriority="751" text="On" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="XFw-2q-BdT">
                                                     <rect key="frame" x="354" y="11.5" width="22.5" height="21"/>
+                                                    <accessibility key="accessibilityConfiguration" identifier="reminder_cell_state_access"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
@@ -76,6 +78,9 @@
                                                 <constraint firstItem="itH-G7-Kal" firstAttribute="centerY" secondItem="38M-Xa-tjI" secondAttribute="centerY" id="WPt-DY-HyD"/>
                                             </constraints>
                                         </tableViewCellContentView>
+                                        <accessibility key="accessibilityConfiguration" identifier="reminder_cell_access">
+                                            <bool key="isElement" value="YES"/>
+                                        </accessibility>
                                         <connections>
                                             <segue destination="TcI-bI-5iX" kind="show" identifier="ShowDetailReminder" id="Uoa-aV-6Tw"/>
                                         </connections>
@@ -125,6 +130,7 @@
                                             <subviews>
                                                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Ebp-Lw-fWk" userLabel="Advanced Utilities">
                                                     <rect key="frame" x="145" y="7" width="124" height="30"/>
+                                                    <accessibility key="accessibilityConfiguration" identifier="setting_util_advanced_access"/>
                                                     <state key="normal" title="Advanced Utilities"/>
                                                     <connections>
                                                         <action selector="doUtilityShowAdvancedBtn:" destination="mGU-tx-G19" eventType="touchUpInside" id="lTj-yQ-Pig"/>
@@ -178,6 +184,7 @@
                                             <subviews>
                                                 <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" on="YES" translatesAutoresizingMaskIntoConstraints="NO" id="WSr-wG-uFV">
                                                     <rect key="frame" x="346" y="5" width="53.5" height="34"/>
+                                                    <accessibility key="accessibilityConfiguration" identifier="reminder_settings_enable_access"/>
                                                     <constraints>
                                                         <constraint firstAttribute="width" secondItem="WSr-wG-uFV" secondAttribute="height" multiplier="47:31" id="yCq-I5-1gU"/>
                                                     </constraints>
@@ -245,6 +252,7 @@
                                                 </label>
                                                 <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" on="YES" translatesAutoresizingMaskIntoConstraints="NO" id="rNl-6C-9Kw">
                                                     <rect key="frame" x="346" y="5" width="53.5" height="34"/>
+                                                    <accessibility key="accessibilityConfiguration" identifier="reminder_settings_sound_access"/>
                                                     <constraints>
                                                         <constraint firstAttribute="width" secondItem="rNl-6C-9Kw" secondAttribute="height" multiplier="47:31" id="RW1-wG-LXp"/>
                                                     </constraints>

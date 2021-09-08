@@ -17,6 +17,7 @@ class TweakEntryRow: UITableViewCell {
     @IBOutlet weak var itemStateCollection: UICollectionView!
     @IBOutlet private weak var itemInfoButton: UIButton!
     @IBOutlet private weak var itemCalendarButton: UIButton!
+    var itemDataCountType: DataCountType!
 
     private let oneDay = 1
     private let oneWeek = 7
@@ -35,6 +36,8 @@ class TweakEntryRow: UITableViewCell {
         itemInfoButton.tag = tag
         itemCalendarButton.tag = tag
         itemImage.image = UIImage(named: itemType.imageName)
+        itemDataCountType = itemType
+        self.accessibilityIdentifier = itemType.typeKey.appending("_access")
 
         if let superview = itemStreakLabel.superview {
             if streak > oneDay {

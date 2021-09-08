@@ -40,6 +40,7 @@
                                     </label>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="C1m-C0-IqZ" userLabel="Header History Button">
                                         <rect key="frame" x="282" y="5" width="30" height="30"/>
+                                        <accessibility key="accessibilityConfiguration" identifier="doze_stats_history_access"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="30" id="KiR-jJ-Hmu"/>
                                             <constraint firstAttribute="width" constant="30" id="lDP-jQ-6UY"/>
@@ -107,6 +108,7 @@
                                                                 </label>
                                                                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="infoDark" showsTouchWhenHighlighted="YES" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="YC8-Tt-A17" userLabel="Doze Item Info Button">
                                                                     <rect key="frame" x="276" y="10" width="20" height="20"/>
+                                                                    <accessibility key="accessibilityConfiguration" identifier="doze_entry_info_access"/>
                                                                     <constraints>
                                                                         <constraint firstAttribute="height" constant="20" id="99z-hR-6V2"/>
                                                                         <constraint firstAttribute="width" constant="20" id="r7C-qs-SdF"/>
@@ -118,6 +120,7 @@
                                                                 </button>
                                                                 <button opaque="NO" contentMode="scaleAspectFit" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="UX8-vv-mKp" userLabel="Doze Item Calendar Button">
                                                                     <rect key="frame" x="58" y="40" width="28" height="28"/>
+                                                                    <accessibility key="accessibilityConfiguration" identifier="doze_entry_calendar_access"/>
                                                                     <state key="normal" image="ic_calendar"/>
                                                                     <connections>
                                                                         <action selector="dozeCalendarPressed:" destination="M2f-B0-7nZ" eventType="touchUpInside" id="Qyo-qf-d8I"/>
@@ -146,6 +149,7 @@
                                                                                 <subviews>
                                                                                     <button opaque="NO" userInteractionEnabled="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="utq-hZ-ag5" customClass="UIButtonCheckbox" customModule="DailyDozen" customModuleProvider="target">
                                                                                         <rect key="frame" x="0.0" y="0.0" width="25" height="25"/>
+                                                                                        <accessibility key="accessibilityConfiguration" identifier="doze_entry_checkbox_access"/>
                                                                                         <color key="tintColor" red="0.52832656150565604" green="0.73248204210688017" blue="0.35160773592702321" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                                                         <state key="normal">
                                                                                             <color key="titleColor" red="0.49803921569999998" green="0.75294117650000003" blue="0.29803921570000003" alpha="1" colorSpace="calibratedRGB"/>

@@ -50,6 +50,7 @@ enum DozeDetailSections: Int {
                 if let v = Bundle.main.loadNibNamed(Nibs.amountHeaderNib, owner: nil)?.first as? UIView,
                    let label = v.viewWithTag(83105122) as? UILabel {
                     label.text = NSLocalizedString("doze_detail_section_sizes", comment: "Servings Sizes")
+                    label.accessibilityIdentifier = "doze_detail_section_sizes_access"
                     return v
                 }
                 return nil
@@ -61,6 +62,7 @@ enum DozeDetailSections: Int {
                let labelUnits = uiView.viewWithTag(85110105) as? UILabel {
                 
                 labelSection.text = NSLocalizedString("doze_detail_section_sizes", comment: "Servings Sizes")
+                labelSection.accessibilityIdentifier = "doze_detail_section_sizes_access"
                 labelUnits.text = NSLocalizedString("units_label", comment: "Units:")
                 
                 // Handle imperial vs. metric units
@@ -75,6 +77,7 @@ enum DozeDetailSections: Int {
             if let uiView = Bundle.main.loadNibNamed(Nibs.exampleHeaderNib, owner: nil)?.first as? UIView {
                 if let label = uiView.viewWithTag(84121112) as? UILabel {
                     label.text = NSLocalizedString("doze_detail_section_types", comment: "Types")
+                    label.accessibilityIdentifier = "doze_detail_section_types_access"
                     return uiView
                 }
             }

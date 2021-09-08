@@ -53,6 +53,15 @@ class SettingsViewController: UITableViewController {
         
         // Measurement Units
         unitMeasureToggle.tintColor = ColorManager.style.mainMedium
+        unitMeasureToggle.setTitle(
+            NSLocalizedString("settings_units_0_imperial", comment: "Imperial"), 
+            forSegmentAt: 0)
+        unitMeasureToggle.setTitle(
+            NSLocalizedString("settings_units_1_metric", comment: "Metric"),
+            forSegmentAt: 1)
+        unitMeasureToggle.setTitle(
+            NSLocalizedString("settings_units_2_toggle", comment: "Toggle Units"), 
+            forSegmentAt: 2)
         setUnitsMeasureSegment()
         
         // Reminder
@@ -66,6 +75,12 @@ class SettingsViewController: UITableViewController {
         
         // 21 Tweaks Visibility
         tweakVisibilityController.tintColor = ColorManager.style.mainMedium
+        tweakVisibilityController.setTitle(
+            NSLocalizedString("setting_doze_only_choice", comment: "Daily Dozen Only"), 
+            forSegmentAt: 0)
+        tweakVisibilityController.setTitle(
+            NSLocalizedString("setting_doze_tweak_choice", comment: "Daily Dozen + 21 Tweaks"),
+            forSegmentAt: 1)
         if UserDefaults.standard.bool(forKey: SettingsKeys.show21TweaksPref) {
             tweakVisibilityController.selectedSegmentIndex = 1
         } else {
@@ -201,6 +216,23 @@ class SettingsViewController: UITableViewController {
         case 2: // WdR-XV-IyP.headerTitle
             sectionName = NSLocalizedString("settings.tweak.header", comment: "21 Tweaks Visibility")
         case 3: // Bx8-EJ-3BK.headerTitle Developer Extras
+            sectionName = ""
+        default:
+            sectionName = ""
+        }
+        return sectionName
+    }
+    
+    override func tableView(_ tableView: UITableView, titleForFooterInSection section: Int) -> String? {
+        let sectionName: String
+        switch section {
+        case 0: // Measurement Footer Settings
+            sectionName = NSLocalizedString("setting_units_choice_footer", comment: "Measurement Units Footer")
+        case 1: // Reminder: no footer
+            sectionName = ""
+        case 2: // 21 Tweaks Visibility Footer
+            sectionName = NSLocalizedString("setting_doze_tweak_footer", comment: "21 Tweaks Visibility Footer")
+        case 3: // Developer Extras: no footer
             sectionName = ""
         default:
             sectionName = ""

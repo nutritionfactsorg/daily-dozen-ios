@@ -36,6 +36,7 @@ class DozeEntryRow: UITableViewCell {
         itemCalendarButton.tag = tag
         itemImage.image = UIImage(named: itemType.imageName)
         itemDataCountType = itemType
+        self.accessibilityIdentifier = itemType.typeKey.appending("_access")
         
         if let superview = itemStreakLabel.superview {
             if streak > oneDay { // "1 day" streaks are not shown

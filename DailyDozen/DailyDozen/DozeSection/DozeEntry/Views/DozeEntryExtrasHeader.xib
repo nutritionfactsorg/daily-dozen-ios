@@ -25,6 +25,7 @@
                         </label>
                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="infoLight" showsTouchWhenHighlighted="YES" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="a5y-4y-64O">
                             <rect key="frame" x="110.5" y="0.0" width="20" height="20"/>
+                            <accessibility key="accessibilityConfiguration" identifier="doze_extrasBtn_access"/>
                             <color key="tintColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             <connections>
                                 <action selector="supplementsHeaderInfoBtnPressed:" destination="-1" eventType="touchUpInside" id="ZTf-oD-iSy"/>

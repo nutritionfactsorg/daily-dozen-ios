@@ -118,4 +118,44 @@ struct UnitsUtility {
         return formatter.string(from: nsNumber)
     }
 
+    /// both `"2.8"` and `"2,8"` strings return `2.8`of  type `Double`
+    func csvImportToWeight(textValue: String) -> Double? {
+        let textValue = textValue.trimmingCharacters(in: CharacterSet.whitespaces)
+
+        var decimalPointValue: String = ""
+        for var c in textValue {
+            if c == "," { c = "." }
+            decimalPointValue.append(c)
+        }
+
+        // note: numbers such as "1,234.56" which become "1.234.56" will return nil
+        guard let value = Double(decimalPointValue)
+        else { return nil }
+
+        // range check
+        if value > 4 && value < 900 {
+            return value
+        }
+
+        return nil
+    }
+
 }
+
+//extension String {
+//    static let numberFormatter = NumberFormatter()
+//
+//    /// both `"2.8".doubleValue` and `"2,8".doubleValue` return `2.8` type `Double`
+//    var doubleValue: Double? {
+//        String.numberFormatter.decimalSeparator = "."
+//        if let result =  String.numberFormatter.number(from: self) {
+//            return result.doubleValue
+//        } else {
+//            String.numberFormatter.decimalSeparator = ","
+//            if let result = String.numberFormatter.number(from: self) {
+//                return result.doubleValue
+//            }
+//        }
+//        return nil
+//    }
+//}

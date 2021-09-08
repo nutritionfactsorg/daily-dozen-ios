@@ -46,6 +46,7 @@ enum TweakDetailSections: Int {
                 if let v = Bundle.main.loadNibNamed(Nibs.activityHeaderNib, owner: nil)?.first as? UIView,
                    let label = v.viewWithTag(6599116) as? UILabel {
                     label.text = NSLocalizedString("tweak_detail_section_activity", comment: "Activity")
+                    label.accessibilityIdentifier = "tweak_detail_section_activity_access"
                     return v
                 }
                 return nil
@@ -55,6 +56,7 @@ enum TweakDetailSections: Int {
                 if let v = Bundle.main.loadNibNamed(Nibs.activityHeaderNib, owner: nil)?.first as? UIView,
                    let label = v.viewWithTag(6599116) as? UILabel {
                     label.text = NSLocalizedString("tweak_detail_section_activity", comment: "Activity")
+                    label.accessibilityIdentifier = "tweak_detail_section_activity_access"
                     return v
                 }
                 return nil
@@ -67,6 +69,7 @@ enum TweakDetailSections: Int {
                let labelUnits = uiView.viewWithTag(85110105) as? UILabel {
                 
                 labelSection.text = NSLocalizedString("tweak_detail_section_activity", comment: "Activity")
+                labelSection.accessibilityIdentifier = "tweak_detail_section_activity_access"
                 labelUnits.text = NSLocalizedString("units_label", comment: "Units:")
                 
                 // Handle imperial vs. metric units
@@ -81,6 +84,7 @@ enum TweakDetailSections: Int {
             if let uiView = Bundle.main.loadNibNamed(Nibs.descriptionHeaderNib, owner: nil)?.first as? UIView,
                let label = uiView.viewWithTag(68101115) as? UILabel {
                 label.text = NSLocalizedString("tweak_detail_section_description", comment: "Types")
+                label.accessibilityIdentifier = "tweak_detail_section_description_access"
                 return uiView
             }
             return nil
