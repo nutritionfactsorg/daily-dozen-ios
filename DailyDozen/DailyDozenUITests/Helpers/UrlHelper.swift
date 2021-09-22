@@ -29,6 +29,7 @@ struct UrlHelper {
         let environment: [String: String] = ProcessInfo.processInfo.environment
 
         #if targetEnvironment(simulator)
+        /* ***************************************************************
         guard let path = environment["XCTestBundlePath"] else {
             fatalError("UrlHelper:FAIL: could not find XCTestBundlePath")
         }
@@ -37,6 +38,21 @@ struct UrlHelper {
             .deletingLastPathComponent() // DailyDozenUITests.xctest
             .deletingLastPathComponent() // PlugIns
             .deletingLastPathComponent() // DailyDozenUITests-Runner.app
+            .deletingLastPathComponent() // Debug-iphonesimulator
+            .deletingLastPathComponent() // Products
+            .deletingLastPathComponent() // Build
+            .appendingPathComponent("Screenshots", isDirectory: true)
+         ***************************************************************** */
+
+        // Key: DYLD_LIBRARY_PATH, DYLD_FRAMEWORK_PATH, 
+        //      __XCODE_BUILT_PRODUCTS_DIR_PATHS, __XPC_DYLD_FRAMEWORK_PATH, __XPC_DYLD_LIBRARY_PATH
+        //
+        // Value: …/DerivedData/DailyDozen-UUID/Build/Products/Debug-iphonesimulator"
+        guard let path = environment["__XCODE_BUILT_PRODUCTS_DIR_PATHS"] else {
+            fatalError("UrlHelper:FAIL: could not find XCTestBundlePath")
+        }
+        
+        let url = URL(fileURLWithPath: path, isDirectory: true)
             .deletingLastPathComponent() // Debug-iphonesimulator
             .deletingLastPathComponent() // Products
             .deletingLastPathComponent() // Build
