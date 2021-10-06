@@ -1,399 +1,399 @@
 /* Bundle display name */
-"CFBundleDisplayName"="DailyDozen";
+"CFBundleDisplayName" = "DailyDozen";
 
 /* Bundle name */
-"CFBundleName"="DailyDozen";
+"CFBundleName" = "DailyDozen";
 
 /*  */
-"DailyDozen"="DailyDozen";
+"DailyDozen" = "DailyDozen";
 
 /* Privacy - Health Share Usage Description */
-"NSHealthShareUsageDescription"="La función 21 Ajustes accede a sus datos de HealthKit para proporcionar actualizaciones a sus mediciones diarias de peso.";
+"NSHealthShareUsageDescription" = "La función 21 Ajustes accede a sus datos de HealthKit para proporcionar actualizaciones a sus mediciones diarias de peso.";
 
 /* Privacy - Health Update Usage Description */
-"NSHealthUpdateUsageDescription"="La función 21 Ajustes puede escribir datos de peso en HealthKit para ayudarlo a realizar un seguimiento de su progreso.";
+"NSHealthUpdateUsageDescription" = "La función 21 Ajustes puede escribir datos de peso en HealthKit para ayudarlo a realizar un seguimiento de su progreso.";
 
 /* Back to today */
-"dateBackButtonTitle"="Volver a hoy";
+"dateBackButtonTitle" = "Volver a hoy";
 
 /* Records: Daily Tally */
-"dateButtonTitle.today"="Hoy";
+"dateButtonTitle.today" = "Hoy";
 
 /* ***** Daily Dozen ***** */
-"dozeBeans.heading"="Legumbres";
+"dozeBeans.heading" = "Legumbres";
 
 /* display heading. */
-"dozeBerries.heading"="Frutos rojos";
+"dozeBerries.heading" = "Frutos rojos";
 
 /* display heading */
-"dozeBeverages.heading"="Bebidas";
+"dozeBeverages.heading" = "Bebidas";
 
 /* display heading */
-"dozeExercise.heading"="Ejercicio";
+"dozeExercise.heading" = "Ejercicio";
 
 /* display heading */
-"dozeFlaxseeds.heading"="Linaza";
+"dozeFlaxseeds.heading" = "Linaza";
 
 /* display heading */
-"dozeFruitsOther.heading"="Otras frutas";
+"dozeFruitsOther.heading" = "Otras frutas";
 
 /* display heading */
-"dozeGreens.heading"="Verduras de hoja verde";
+"dozeGreens.heading" = "Verduras de hoja verde";
 
 /* display heading */
-"dozeNuts.heading"="Frutos secos";
+"dozeNuts.heading" = "Frutos secos";
 
 /* Daily Dozen other info confirm */
-"dozeOtherInfo.confirm"="OK";
+"dozeOtherInfo.confirm" = "OK";
 
 /* Daily Dozen other info message */
-"dozeOtherInfo.message"="La vitamina B12 es esencial para la salud, pero no cuenta para las porciones diarias.\n\nLa Vitamina B12 se incluye en esta aplicación para proporcionarte una manera fácil de realizar un seguimiento de su ingesta.";
+"dozeOtherInfo.message" = "La vitamina B12 es esencial para la salud, pero no cuenta para las porciones diarias.\n\nLa Vitamina B12 se incluye en esta aplicación para proporcionarte una manera fácil de realizar un seguimiento de su ingesta.";
 
 /* entry section header: "Supplements" */
-"dozeOtherInfo.section"="Suplementos";
+"dozeOtherInfo.section" = "Suplementos";
 
 /* ***** Daily Dozen Supplements ***** */
-"dozeOtherInfo.title"="Suplementos";
+"dozeOtherInfo.title" = "Suplementos";
 
 /* display heading */
-"dozeSpices.heading"="Especias";
+"dozeSpices.heading" = "Especias";
 
 /* display heading */
-"dozeVegetablesCruciferous.heading"="Crucíferas";
+"dozeVegetablesCruciferous.heading" = "Crucíferas";
 
 /* display heading */
-"dozeVegetablesOther.heading"="Otras verduras";
+"dozeVegetablesOther.heading" = "Otras verduras";
 
 /* display heading */
-"dozeWholeGrains.heading"="Cereales integrales";
+"dozeWholeGrains.heading" = "Cereales integrales";
 
 /* Doze Detail Section: "Sizes" */
-"doze_detail_section_sizes"="Tamaño de las Porciones";
+"doze_detail_section_sizes" = "Tamaño de las Porciones";
 
 /* Doze Detail Section: "Types" */
-"doze_detail_section_types"="Tipos";
+"doze_detail_section_types" = "Tipos";
 
 /* Daily Dozen Header: "Servings" */
-"doze_entry_header"="Porciones";
+"doze_entry_header" = "Porciones";
 
 /*  */
-"historyRecord.movingMean"="Media móvil";
+"historyRecord.movingMean" = "Media móvil";
 
 /* Servings History */
-"historyRecordDoze.heading"="Historial de porciones";
+"historyRecordDoze.heading" = "Historial de porciones";
 
 /* Servings */
-"historyRecordDoze.legend"="Porciones";
+"historyRecordDoze.legend" = "Porciones";
 
 /* Tweaks History */
-"historyRecordTweak.heading"="Historial de ajustes";
+"historyRecordTweak.heading" = "Historial de ajustes";
 
 /* Tweaks */
-"historyRecordTweak.legend"="21 Ajustes";
+"historyRecordTweak.legend" = "21 Ajustes";
 
 /* Weight History */
-"historyRecordWeight.heading"="Historial de peso";
+"historyRecordWeight.heading" = "Historial de peso";
 
 /* Evening */
-"historyRecordWeight.legendEvening"="Noche";
+"historyRecordWeight.legendEvening" = "Noche";
 
 /* Morning */
-"historyRecordWeight.legendMorning"="Mañana";
+"historyRecordWeight.legendMorning" = "Mañana";
 
 /* Weight (lbs) */
-"historyRecordWeight.titleImperial"="Peso (libras)";
+"historyRecordWeight.titleImperial" = "Peso (libras)";
 
 /* Weight (kg) */
-"historyRecordWeight.titleMetric"="Peso (kg)";
+"historyRecordWeight.titleMetric" = "Peso (kg)";
 
 /* History Scale Choice: "Day" */
-"history_scale_choice_day"="Día";
+"history_scale_choice_day" = "Día";
 
 /* History Scale Choice: "Month" */
-"history_scale_choice_month"="Mes";
+"history_scale_choice_month" = "Mes";
 
 /* History Scale Choice: "Year" */
-"history_scale_choice_year"="Año";
+"history_scale_choice_year" = "Año";
 
 /* History Label: "Time Scale" */
-"history_scale_label"="Escala de tiempo";
+"history_scale_label" = "Escala de tiempo";
 
 /* About this app */
-"info.about.title"="Sobre esta app";
+"info.about.title" = "Sobre esta app";
 
 /* Info: "About" */
-"info_app_about"="Conócenos";
+"info_app_about" = "Conócenos";
 
 /* Info About: application name */
-"info_app_about_app_name"="Daily Dozen";
+"info_app_about_app_name" = "Daily Dozen";
 
 /* Info About: created by text */
-"info_app_about_created_by"="Esta app fue creada por:\n- NutritionFacts.org\n- Christi Richards\n- Konstantin Khokhlov\n- Marc Campbell";
+"info_app_about_created_by" = "Esta app fue creada por:\n- NutritionFacts.org\n- Christi Richards\n- Konstantin Khokhlov\n- Marc Campbell";
 
 /* Info About: open source software credits */
-"info_app_about_oss_credits"="Las siguientes open source libraries fueron utilizadas: RealmSwift, Charts, FSCalendar, SimpleAnimation and ActiveLabel.";
+"info_app_about_oss_credits" = "Las siguientes open source libraries fueron utilizadas: RealmSwift, Charts, FSCalendar, SimpleAnimation and ActiveLabel.";
 
 /* Info About: overview text */
-"info_app_about_overview"="Utiliza esta app a diario para llevar un registro de los alimentos que recomiendo para salud óptima y longevidad en mi libro Como no Morir.";
+"info_app_about_overview" = "Utiliza esta app a diario para llevar un registro de los alimentos que recomiendo para salud óptima y longevidad en mi libro Como no Morir.";
 
 /* Info About: version number */
-"info_app_about_version"="versión 3.2.11";
+"info_app_about_version" = "versión 3.2.11";
 
 /* Info About: "Welcome to my Daily Dozen!" */
-"info_app_about_welcome"="¡Bienvenido a Mi Docena Diaria!";
+"info_app_about_welcome" = "¡Bienvenido a Mi Docena Diaria!";
 
 /* Info: How Not to Die (Book) */
-"info_book_how_not_to_die"="Libro: Comer para no morir";
+"info_book_how_not_to_die" = "Libro: Comer para no morir";
 
 /* Info: How Not to Die Cookbook (Book) */
-"info_book_how_not_to_die_cookbook"="Libro: de recetas de Comer para no morir";
+"info_book_how_not_to_die_cookbook" = "Libro: de recetas de Comer para no morir";
 
 /* Info: How Not to Diet (Book) */
-"info_book_how_not_to_diet"="Libro: Comer para no engordar";
+"info_book_how_not_to_diet" = "Libro: Comer para no engordar";
 
 /* Info: "Daily Dozen Challenge" */
-"info_webpage_daily_dozen_challenge"="Objetivo Docena Diaria";
+"info_webpage_daily_dozen_challenge" = "Objetivo Docena Diaria";
 
 /* Info: "Donate" */
-"info_webpage_donate"="Dona";
+"info_webpage_donate" = "Dona";
 
 /* Info: "Open Source" */
-"info_webpage_open_source"="Código Abierto";
+"info_webpage_open_source" = "Código Abierto";
 
 /* Info: "Subscribe" */
-"info_webpage_subscribe"="Suscríbete";
+"info_webpage_subscribe" = "Suscríbete";
 
 /* Info: "Latest Videos" */
-"info_webpage_videos_latest"="Videos más Recientes";
+"info_webpage_videos_latest" = "Videos más Recientes";
 
 /* Item History Legend: "All completed" */
-"item_history_completed_all"="Todas las Porciones";
+"item_history_completed_all" = "Todas las Porciones";
 
 /* Item History Legend: "Some completed" */
-"item_history_completed_some"="Algunas Porciones";
+"item_history_completed_some" = "Algunas Porciones";
 
 /* Item History Heading: "History" */
-"item_history_heading"="Historia";
+"item_history_heading" = "Historia";
 
 /* Daily Dozen (proper noun) navigation tab */
-"navtab.doze"="Docena Diaria";
+"navtab.doze" = "Docena Diaria";
 
 /* More Information navigation tab */
-"navtab.info"="Información";
+"navtab.info" = "Información";
 
 /* Preferences (aka Settings, Configuration) navigation tab. Choose word different from 'Tweaks' translation */
-"navtab.preferences"="Configuración";
+"navtab.preferences" = "Configuración";
 
 /* 21 Tweaks (proper noun) navigation tab */
-"navtab.tweaks"="21 Ajustes";
+"navtab.tweaks" = "21 Ajustes";
 
 /* display heading */
-"otherOmega3.heading"="Omega 3 de origen vegetal";
+"otherOmega3.heading" = "Omega 3 de origen vegetal";
 
 /* ***** Daily Dozen Other ***** */
-"otherVitaminB12.heading"="Vitamina B12";
+"otherVitaminB12.heading" = "Vitamina B12";
 
 /* display heading */
-"otherVitaminD.heading"="Vitamina D";
+"otherVitaminD.heading" = "Vitamina D";
 
 /* daily_reminder_text alert text */
-"reminder.alert.text"="Actualiza las porciones de hoy";
+"reminder.alert.text" = "Actualiza las porciones de hoy";
 
 /* Daily Reminder (alert title, settings section heading) */
-"reminder.heading"="Recordatorio diario";
+"reminder.heading" = "Recordatorio diario";
 
 /* Enable Reminders (toggle switch label) */
-"reminder.settings.enable"="Activar el recordatorio";
+"reminder.settings.enable" = "Activar el recordatorio";
 
 /* play_sound */
-"reminder.settings.sound"="Sonido";
+"reminder.settings.sound" = "Sonido";
 
 /* remind_me_at */
-"reminder.settings.time"="Recuerdame a las";
+"reminder.settings.time" = "Recuerdame a las";
 
 /* vibrate */
-"reminder.settings.vibrate"="Vibración";
+"reminder.settings.vibrate" = "Vibración";
 
 /* 'Off' as in 'On or Off' */
-"reminder.state.off"="Off";
+"reminder.state.off" = "Off";
 
 /* 'On' as in 'On or Off' */
-"reminder.state.on"="On";
+"reminder.state.on" = "On";
 
 /* First Launch: "Daily Dozen Only" */
-"setting_doze_only_btn"="Docena Diaria solamente";
+"setting_doze_only_btn" = "Docena Diaria solamente";
 
 /* Settings: "Daily Dozen Only" */
-"setting_doze_only_choice"="Docena Diaria\nsolamente";
+"setting_doze_only_choice" = "Docena Diaria\nsolamente";
 
 /* First Launch: "Daily Dozen + 21 Tweaks" */
-"setting_doze_tweak_btn"="Docena Diaria + 21 Ajustes";
+"setting_doze_tweak_btn" = "Docena Diaria + 21 Ajustes";
 
 /* Settings: "Daily Dozen + 21 Tweaks" */
-"setting_doze_tweak_choice"="Docena Diaria +\n21 Ajustes";
+"setting_doze_tweak_choice" = "Docena Diaria +\n21 Ajustes";
 
 /* Settings: Tweaks visibility footer text */
-"setting_doze_tweak_footer"="Solo para la salud, use \"Docena Diaria solamente\". Para la salud y la pérdida de peso, use \"Docena Diaria + 21 Ajustes\".";
+"setting_doze_tweak_footer" = "Solo para la salud, use \"Docena Diaria solamente\". Para la salud y la pérdida de peso, use \"Docena Diaria + 21 Ajustes\".";
 
 /* First Launch: "For Health Alone" */
-"setting_health_alone_txt"="Para la salud sola";
+"setting_health_alone_txt" = "Para la salud sola";
 
 /* First Launch: "For Health and Weight Loss" */
-"setting_health_weight_txt"="Para la salud y la pérdida de peso";
+"setting_health_weight_txt" = "Para la salud y la pérdida de peso";
 
 /* Class = "UITableViewSection"; headerTitle = "21 Tweaks Visibility"; ObjectID = "WdR-XV-IyP"; */
-"settings.tweak.header"="Visibilidad de 21 Ajustes";
+"settings.tweak.header" = "Visibilidad de 21 Ajustes";
 
 /* Class = "UITableViewSection"; headerTitle = "Measurement Units"; ObjectID = "IFs-g0-SPV"; */
-"settings.units.header"="Unidades de medida";
+"settings.units.header" = "Unidades de medida";
 
 /* Settings: "Advanced Utilities" */
-"settings_advanced_utilities"="Utilidades Avanzadas";
+"settings_advanced_utilities" = "Utilidades Avanzadas";
 
 /* Settings: units choice footer text */
-"settings_units_choice_footer"="Configure siempre un tipo de unidad o active el botón de alternancia 'Unidades:'.";
+"settings_units_choice_footer" = "Configure siempre un tipo de unidad o active el botón de alternancia 'Unidades:'.";
 
 /* progress: number '%d' of consecutive days completed. */
-"streakDaysFormat"="%d días";
+"streakDaysFormat" = "%d días";
 
 /* display heading */
-"tweakCompleteIntentions.heading"="Completar tus metas";
+"tweakCompleteIntentions.heading" = "Completar tus metas";
 
 /* display heading */
-"tweakDailyBlackCumin.heading"="Comino negro";
+"tweakDailyBlackCumin.heading" = "Comino negro";
 
 /* display heading */
-"tweakDailyCumin.heading"="Comino";
+"tweakDailyCumin.heading" = "Comino";
 
 /* display heading */
-"tweakDailyDeflourDiet.heading"="Adiós a la harina";
+"tweakDailyDeflourDiet.heading" = "Adiós a la harina";
 
 /* display heading */
-"tweakDailyFrontLoad.heading"="Anticipar calorías";
+"tweakDailyFrontLoad.heading" = "Anticipar calorías";
 
 /* display heading */
-"tweakDailyGarlic.heading"="Ajo en polvo";
+"tweakDailyGarlic.heading" = "Ajo en polvo";
 
 /* display heading */
-"tweakDailyGinger.heading"="Jengibre o cayena";
+"tweakDailyGinger.heading" = "Jengibre o cayena";
 
 /* display heading */
-"tweakDailyGreenTea.heading"="Té verde";
+"tweakDailyGreenTea.heading" = "Té verde";
 
 /* display heading */
-"tweakDailyHydrate.heading"="Hidratación";
+"tweakDailyHydrate.heading" = "Hidratación";
 
 /* display heading */
-"tweakDailyNutriYeast.heading"="Levadura nutricional";
+"tweakDailyNutriYeast.heading" = "Levadura nutricional";
 
 /* display heading */
-"tweakDailyTimeRestrict.heading"="Restricción del horario de comidas";
+"tweakDailyTimeRestrict.heading" = "Restricción del horario de comidas";
 
 /* display heading */
-"tweakExerciseTiming.heading"="Ejercicio a buena hora";
+"tweakExerciseTiming.heading" = "Ejercicio a buena hora";
 
 /* display heading */
-"tweakMeal20Minutes.heading"="La regla de los veinte minutos";
+"tweakMeal20Minutes.heading" = "La regla de los veinte minutos";
 
 /* display heading */
-"tweakMealNegCal.heading"="Empezar con alimentos de calorías negativas";
+"tweakMealNegCal.heading" = "Empezar con alimentos de calorías negativas";
 
 /* display heading */
-"tweakMealUndistracted.heading"="Comidas sin distracciones";
+"tweakMealUndistracted.heading" = "Comidas sin distracciones";
 
 /* display heading */
-"tweakMealVinegar.heading"="Vinagre";
+"tweakMealVinegar.heading" = "Vinagre";
 
 /* ***** 21 Tweaks ***** */
-"tweakMealWater.heading"="Empezar con agua";
+"tweakMealWater.heading" = "Empezar con agua";
 
 /* display heading */
-"tweakNightlyFast.heading"="Ayuno después de las 7 P.M.";
+"tweakNightlyFast.heading" = "Ayuno después de las 7 P.M.";
 
 /* display heading */
-"tweakNightlySleep.heading"="Dormir lo suficiente";
+"tweakNightlySleep.heading" = "Dormir lo suficiente";
 
 /* display heading */
-"tweakNightlyTrendelenbrug.heading"="Trendelenburg";
+"tweakNightlyTrendelenbrug.heading" = "Trendelenburg";
 
 /* display heading */
-"tweakWeightTwice.heading"="Pesarse dos veces al día";
+"tweakWeightTwice.heading" = "Pesarse dos veces al día";
 
 /* Tweak Detail Section: "Activity" */
-"tweak_detail_section_activity"="Actividad";
+"tweak_detail_section_activity" = "Actividad";
 
 /* Tweak Detail Section: "Description" */
-"tweak_detail_section_description"="Descripción";
+"tweak_detail_section_description" = "Descripción";
 
 /* Daily Dozen Header: "21 Tweaks" */
-"tweak_entry_header"="21 Ajustes";
+"tweak_entry_header" = "21 Ajustes";
 
 /* Units toggle button text: imperial measurement system */
-"unitToggle.imperial"="Imperial";
+"unitToggle.imperial" = "Imperial";
 
 /* Units toggle button text: metric measurement system */
-"unitToggle.metric"="Métrico";
+"unitToggle.metric" = "Métrico";
 
 /* "Units:" */
-"units_label"="Unidades:";
+"units_label" = "Unidades:";
 
 /* URL path */
-"urlSegment.base"="https://nutritionfacts.org/";
+"urlSegment.base" = "https://nutritionfacts.org/";
 
 /*  */
-"urlSegment.lang"="es/";
+"urlSegment.lang" = "es/";
 
 /* main info menu: book */
-"urlSegmentInfoMenu.book"="es/comer-para-no-morir";
+"urlSegmentInfoMenu.book" = "es/comer-para-no-morir";
 
 /* main info menu: daily-dozen-challenge */
-"urlSegmentInfoMenu.challenge"="es/objetivo-la-docena-diaria";
+"urlSegmentInfoMenu.challenge" = "es/objetivo-la-docena-diaria";
 
 /* main info menu: cookbook */
-"urlSegmentInfoMenu.cookbook"="es/libro-de-recetas";
+"urlSegmentInfoMenu.cookbook" = "es/libro-de-recetas";
 
 /* main info menu: how-not-to-diet */
-"urlSegmentInfoMenu.diet"="es/";
+"urlSegmentInfoMenu.diet" = "es/";
 
 /* main info menu: donate */
-"urlSegmentInfoMenu.donate"="es/dona-a-nutritionfacts-org";
+"urlSegmentInfoMenu.donate" = "es/dona-a-nutritionfacts-org";
 
 /* main info menu: open-source */
-"urlSegmentInfoMenu.source"="es/open-source";
+"urlSegmentInfoMenu.source" = "es/open-source";
 
 /* main info menu: subscribe */
-"urlSegmentInfoMenu.subscribe"="es/suscribete";
+"urlSegmentInfoMenu.subscribe" = "es/suscribete";
 
 /* team */
-"urlSegmentInfoMenu.team"="es/equipo";
+"urlSegmentInfoMenu.team" = "es/equipo";
 
 /* main info menu: videos */
-"urlSegmentInfoMenu.videos"="es/videos";
+"urlSegmentInfoMenu.videos" = "es/videos";
 
 /* Videos link label */
-"videos.link.label"="Videos";
+"videos.link.label" = "Videos";
 
 /* Weight entry heading */
-"weightEntry.heading"="Peso";
+"weightEntry.heading" = "Peso";
 
 /* Weight Entry: "Clear" */
-"weight_entry_clear"="Clear";
+"weight_entry_clear" = "Clear";
 
 /* Weight Entry: "Evening (right before bed)" */
-"weight_entry_evening"="Evening (right before bed)";
+"weight_entry_evening" = "Evening (right before bed)";
 
 /* Weight Entry: "Morning (upon waking)" */
-"weight_entry_morning"="Morning (upon waking)";
+"weight_entry_morning" = "Morning (upon waking)";
 
 /* Weight Entry: "Time" */
-"weight_entry_time"="Time";
+"weight_entry_time" = "Time";
 
 /* Weight Entry Units: "kg" */
-"weight_entry_units_kg"="kg";
+"weight_entry_units_kg" = "kg";
 
 /* Weight Entry Units: "lbs" */
-"weight_entry_units_lbs"="libras";
+"weight_entry_units_lbs" = "libras";
 
 /* Weight History Action: "Edit Data" */
-"weight_history_edit_data"="Editar datos";
+"weight_history_edit_data" = "Editar datos";
 

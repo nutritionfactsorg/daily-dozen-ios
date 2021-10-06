@@ -181,7 +181,6 @@
 		4916451523EE4D360077731D /* TweakTextsProvider.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TweakTextsProvider.swift; sourceTree = "<group>"; };
 		4916451723EE4E440077731D /* TweakDetailViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TweakDetailViewController.swift; sourceTree = "<group>"; };
 		4916451923EE51310077731D /* TweakDetailDataProvider.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TweakDetailDataProvider.swift; sourceTree = "<group>"; };
-		4916451E23EE53610077731D /* Base */ = {isa = PBXFileReference; lastKnownFileType = text.json; name = Base; path = Base.lproj/TweakDetailData.json; sourceTree = "<group>"; };
 		4916452023EE53640077731D /* es */ = {isa = PBXFileReference; lastKnownFileType = text.json; name = es; path = es.lproj/TweakDetailData.json; sourceTree = "<group>"; };
 		491D554226E8A9EB00C756C8 /* DailyDozenUnitsTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DailyDozenUnitsTests.swift; sourceTree = "<group>"; };
 		491D554526E8AA1700C756C8 /* XCTestCase.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = XCTestCase.swift; sourceTree = "<group>"; };
@@ -208,7 +207,6 @@
 		4930360624760CBD00746D49 /* DatabaseMaintainer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DatabaseMaintainer.swift; sourceTree = "<group>"; };
 		4933A74A23EE267500CE4631 /* DozeTextsProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DozeTextsProvider.swift; sourceTree = "<group>"; };
 		4933A74C23EE28C500CE4631 /* DozeDetailInfo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DozeDetailInfo.swift; sourceTree = "<group>"; };
-		4933A75123EE2BC800CE4631 /* Base */ = {isa = PBXFileReference; lastKnownFileType = text.json; name = Base; path = Base.lproj/DozeDetailData.json; sourceTree = "<group>"; };
 		4933A75323EE2BCB00CE4631 /* es */ = {isa = PBXFileReference; lastKnownFileType = text.json; name = es; path = es.lproj/DozeDetailData.json; sourceTree = "<group>"; };
 		4933A75423EE39CC00CE4631 /* DozeDetailViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DozeDetailViewModel.swift; sourceTree = "<group>"; };
 		4933A75623EE49BB00CE4631 /* TweakDetailInfo.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TweakDetailInfo.swift; sourceTree = "<group>"; };
@@ -231,6 +229,9 @@
 		4964604523AC524700FBD976 /* PopupPickerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PopupPickerView.swift; sourceTree = "<group>"; };
 		4966D7FA237DE9D3004F3A20 /* Resources */ = {isa = PBXFileReference; lastKnownFileType = folder; path = Resources; sourceTree = "<group>"; };
 		496917DC238716BD00A9A743 /* RealmManagerLegacy.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RealmManagerLegacy.swift; sourceTree = "<group>"; };
+		496A66BA270ACB2700254531 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.json; name = en; path = en.lproj/DozeDetailData.json; sourceTree = "<group>"; };
+		496A66BB270ACB4000254531 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.json; name = en; path = en.lproj/TweakDetailData.json; sourceTree = "<group>"; };
+		496A66DE270CD0BA00254531 /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		497390A823A5941900492D92 /* MainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
 		497390AD23A5D4F800492D92 /* SettingsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SettingsViewController.swift; sourceTree = "<group>"; };
 		497390AE23A5D4F900492D92 /* SettingsReminderViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SettingsReminderViewController.swift; sourceTree = "<group>"; };
@@ -328,7 +329,6 @@
 		CFD1BA321FCD24920057F549 /* RoundedButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoundedButton.swift; sourceTree = "<group>"; };
 		CFE698381F974B9700CD7905 /* DailyDozen.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = DailyDozen.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		CFE6983B1F974B9700CD7905 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		CFE698471F974B9700CD7905 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		CFE793561FA756E40084F075 /* RealmProviderLegacy.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RealmProviderLegacy.swift; sourceTree = "<group>"; };
 		CFECDFF7201EF7C1003E8572 /* Colors.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Colors.swift; sourceTree = "<group>"; };
 		CFF72AFA1FB9A499001CC2E9 /* UnitsType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UnitsType.swift; sourceTree = "<group>"; };
@@ -716,6 +716,15 @@
 			path = WeightSection;
 			sourceTree = "<group>";
 		};
+		496A66BC270CCA7400254531 /* InfoPlist */ = {
+			isa = PBXGroup;
+			children = (
+				496A66DE270CD0BA00254531 /* Info.plist */,
+				492474A123DB677A00D7D918 /* InfoPlist.strings */,
+			);
+			path = InfoPlist;
+			sourceTree = "<group>";
+		};
 		498170932391B33B0033882C /* Controllers */ = {
 			isa = PBXGroup;
 			children = (
@@ -1024,6 +1033,7 @@
 				CFE6983B1F974B9700CD7905 /* AppDelegate.swift */,
 				CFE698501F974F0F00CD7905 /* Controllers */,
 				CFAAB3751F9F3FCD00B24748 /* Extensions */,
+				496A66BC270CCA7400254531 /* InfoPlist */,
 				4955013623CD453200C72FB3 /* Resources */,
 				CFE698511F974F1800CD7905 /* SupportingFiles */,
 				CF22F07D1FA8ACC300F25B70 /* Texts */,
@@ -1047,8 +1057,6 @@
 		CFE698511F974F1800CD7905 /* SupportingFiles */ = {
 			isa = PBXGroup;
 			children = (
-				CFE698471F974B9700CD7905 /* Info.plist */,
-				492474A123DB677A00D7D918 /* InfoPlist.strings */,
 				CFF72AFD1FB9BAAA001CC2E9 /* LinkService.swift */,
 				CFF72AFF1FB9BB70001CC2E9 /* LinkSettings.plist */,
 				495FA4202453EEF200DE3E58 /* LogService.swift */,
@@ -1528,8 +1536,8 @@
 		4916451F23EE53610077731D /* TweakDetailData.json */ = {
 			isa = PBXVariantGroup;
 			children = (
-				4916451E23EE53610077731D /* Base */,
 				4916452023EE53640077731D /* es */,
+				496A66BB270ACB4000254531 /* en */,
 			);
 			name = TweakDetailData.json;
 			sourceTree = "<group>";
@@ -1546,8 +1554,8 @@
 		4933A75223EE2BC800CE4631 /* DozeDetailData.json */ = {
 			isa = PBXVariantGroup;
 			children = (
-				4933A75123EE2BC800CE4631 /* Base */,
 				4933A75323EE2BCB00CE4631 /* es */,
+				496A66BA270ACB2700254531 /* en */,
 			);
 			name = DozeDetailData.json;
 			sourceTree = "<group>";
@@ -1769,7 +1777,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 5;
 				DEVELOPMENT_TEAM = 2MG57YUZL5;
-				INFOPLIST_FILE = "$(SRCROOT)/DailyDozen/App/SupportingFiles/Info.plist";
+				INFOPLIST_FILE = "$(SRCROOT)/DailyDozen/App/InfoPlist/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 12.3;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				MARKETING_VERSION = 3.2.11;
@@ -1789,7 +1797,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 5;
 				DEVELOPMENT_TEAM = 2MG57YUZL5;
-				INFOPLIST_FILE = "$(SRCROOT)/DailyDozen/App/SupportingFiles/Info.plist";
+				INFOPLIST_FILE = "$(SRCROOT)/DailyDozen/App/InfoPlist/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 12.3;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				MARKETING_VERSION = 3.2.11;
