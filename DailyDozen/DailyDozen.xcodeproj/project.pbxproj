@@ -282,6 +282,10 @@
 		49C01CD62644AFDD005E592D /* TweakHistoryLayout.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = TweakHistoryLayout.storyboard; sourceTree = "<group>"; };
 		49C39694264E556000920ECC /* ItemHistoryLayout.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = ItemHistoryLayout.storyboard; sourceTree = "<group>"; };
 		49C646CA236F4A46000DA8DC /* UtilityLayout.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = UtilityLayout.storyboard; sourceTree = "<group>"; };
+		49C8D1FC271FC75500D33A4F /* pt */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = pt; path = pt.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		49C8D1FD271FC75500D33A4F /* pt */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = pt; path = pt.lproj/Localizable.strings; sourceTree = "<group>"; };
+		49C8D1FE271FC75600D33A4F /* pt */ = {isa = PBXFileReference; lastKnownFileType = text.json; name = pt; path = pt.lproj/DozeDetailData.json; sourceTree = "<group>"; };
+		49C8D1FF271FC75600D33A4F /* pt */ = {isa = PBXFileReference; lastKnownFileType = text.json; name = pt; path = pt.lproj/TweakDetailData.json; sourceTree = "<group>"; };
 		49CA08A726C39DA8002D9F66 /* UnitsUtility.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UnitsUtility.swift; sourceTree = "<group>"; };
 		49D6448B245CEC3300814AD5 /* HealthWeightRecord.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HealthWeightRecord.swift; sourceTree = "<group>"; };
 		49D9B07A240DCA1F000E9822 /* UIView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIView.swift; sourceTree = "<group>"; };
@@ -1202,6 +1206,7 @@
 				en,
 				Base,
 				es,
+				pt,
 			);
 			mainGroup = CFE6982F1F974B9700CD7905;
 			productRefGroup = CFE698391F974B9700CD7905 /* Products */;
@@ -1538,6 +1543,7 @@
 			children = (
 				4916452023EE53640077731D /* es */,
 				496A66BB270ACB4000254531 /* en */,
+				49C8D1FF271FC75600D33A4F /* pt */,
 			);
 			name = TweakDetailData.json;
 			sourceTree = "<group>";
@@ -1547,6 +1553,7 @@
 			children = (
 				492474A223DB677A00D7D918 /* es */,
 				49B0FD2225DF927C00236A12 /* en */,
+				49C8D1FC271FC75500D33A4F /* pt */,
 			);
 			name = InfoPlist.strings;
 			sourceTree = "<group>";
@@ -1556,6 +1563,7 @@
 			children = (
 				4933A75323EE2BCB00CE4631 /* es */,
 				496A66BA270ACB2700254531 /* en */,
+				49C8D1FE271FC75600D33A4F /* pt */,
 			);
 			name = DozeDetailData.json;
 			sourceTree = "<group>";
@@ -1565,6 +1573,7 @@
 			children = (
 				493A9BD423CE47A000F679BE /* en */,
 				493A9C3223CE6B7500F679BE /* es */,
+				49C8D1FD271FC75500D33A4F /* pt */,
 			);
 			name = Localizable.strings;
 			sourceTree = "<group>";

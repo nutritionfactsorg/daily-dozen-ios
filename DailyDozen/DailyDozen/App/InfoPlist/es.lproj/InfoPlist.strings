@@ -1,4 +1,7 @@
-/* Bundle name */
+/* User-visible application name. Visible under icon. Used by Siri. */
+"CFBundleDisplayName" = "DailyDozen";
+
+/* User-visible application short name (15 Characters max) */
 "CFBundleName" = "DailyDozen";
 
 /* Privacy - Health Share Usage Description */

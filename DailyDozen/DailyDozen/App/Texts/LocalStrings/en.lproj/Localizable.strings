@@ -1,18 +1,3 @@
-/* Bundle display name */
-"CFBundleDisplayName" = "DailyDozen";
-
-/* Bundle name */
-"CFBundleName" = "DailyDozen";
-
-/*  */
-"DailyDozen" = "DailyDozen";
-
-/* Privacy - Health Share Usage Description */
-"NSHealthShareUsageDescription" = "The 21 Tweaks feature accesses your HealthKit data to provide updates to your daily weight measurements.";
-
-/* Privacy - Health Update Usage Description */
-"NSHealthUpdateUsageDescription" = "The 21 Tweaks feature can write weight data to HealthKit to help you keep track of your progress.";
-
 /* Back to today */
 "dateBackButtonTitle" = "Back to today";
 
@@ -128,11 +113,7 @@
 "info_app_about_app_name" = "Daily Dozen";
 
 /* Info About: created by text */
-"info_app_about_created_by" = "This app was created by:
-- NutritionFacts.org
-- Christi Richards
-- Konstantin Khokhlov
-- Marc Campbell";
+"info_app_about_created_by" = "This app was created by:\n- NutritionFacts.org\n- Christi Richards\n- Konstantin Khokhlov\n- Marc Campbell";
 
 /* Info About: open source software credits */
 "info_app_about_oss_credits" = "The following open source libraries are used: RealmSwift, Charts, FSCalendar, SimpleAnimation and ActiveLabel.";
@@ -246,10 +227,10 @@
 "setting_health_weight_txt" = "For Health and Weight Loss";
 
 /* Class = "UITableViewSection"; headerTitle = "21 Tweaks Visibility"; ObjectID = "WdR-XV-IyP"; */
-"settings.tweak.header" = "21 Tweaks Visibility";
+"setting_tweak_header" = "21 Tweaks Visibility";
 
 /* Class = "UITableViewSection"; headerTitle = "Measurement Units"; ObjectID = "IFs-g0-SPV"; */
-"settings.units.header" = "Measurement Units";
+"setting_units_header" = "Measurement Units";
 
 /* Settings: "Advanced Utilities" */
 "settings_advanced_utilities" = "Advanced Utilities";

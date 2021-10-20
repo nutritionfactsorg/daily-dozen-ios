@@ -1,18 +1,3 @@
-/* Bundle display name */
-"CFBundleDisplayName" = "DailyDozen";
-
-/* Bundle name */
-"CFBundleName" = "DailyDozen";
-
-/*  */
-"DailyDozen" = "DailyDozen";
-
-/* Privacy - Health Share Usage Description */
-"NSHealthShareUsageDescription" = "La función 21 Ajustes accede a sus datos de HealthKit para proporcionar actualizaciones a sus mediciones diarias de peso.";
-
-/* Privacy - Health Update Usage Description */
-"NSHealthUpdateUsageDescription" = "La función 21 Ajustes puede escribir datos de peso en HealthKit para ayudarlo a realizar un seguimiento de su progreso.";
-
 /* Back to today */
 "dateBackButtonTitle" = "Volver a hoy";
 
@@ -131,7 +116,7 @@
 "info_app_about_created_by" = "Esta app fue creada por:\n- NutritionFacts.org\n- Christi Richards\n- Konstantin Khokhlov\n- Marc Campbell";
 
 /* Info About: open source software credits */
-"info_app_about_oss_credits" = "Las siguientes open source libraries fueron utilizadas: RealmSwift, Charts, FSCalendar, SimpleAnimation and ActiveLabel.";
+"info_app_about_oss_credits" = "Las siguientes open source libraries fueron utilizadas: RealmSwift, Charts, FSCalendar, SimpleAnimation, y ActiveLabel.";
 
 /* Info About: overview text */
 "info_app_about_overview" = "Utiliza esta app a diario para llevar un registro de los alimentos que recomiendo para salud óptima y longevidad en mi libro Como no Morir.";
@@ -242,10 +227,10 @@
 "setting_health_weight_txt" = "Para la salud y la pérdida de peso";
 
 /* Class = "UITableViewSection"; headerTitle = "21 Tweaks Visibility"; ObjectID = "WdR-XV-IyP"; */
-"settings.tweak.header" = "Visibilidad de 21 Ajustes";
+"setting_tweak_header" = "Visibilidad de 21 Ajustes";
 
 /* Class = "UITableViewSection"; headerTitle = "Measurement Units"; ObjectID = "IFs-g0-SPV"; */
-"settings.units.header" = "Unidades de medida";
+"setting_units_header" = "Unidades de medida";
 
 /* Settings: "Advanced Utilities" */
 "settings_advanced_utilities" = "Utilidades Avanzadas";

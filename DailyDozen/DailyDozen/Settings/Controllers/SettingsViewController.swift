@@ -210,11 +210,11 @@ class SettingsViewController: UITableViewController {
         let sectionName: String
         switch section {
         case 0: // IFs-g0-SPV.headerTitle
-            sectionName = NSLocalizedString("settings.units.header", comment: "Measurement Units")
+            sectionName = NSLocalizedString("setting_units_header", comment: "Measurement Units")
         case 1: // GiY-ao-2ee.headerTitle
             sectionName = NSLocalizedString("reminder.heading", comment: "Daily Reminder")
         case 2: // WdR-XV-IyP.headerTitle
-            sectionName = NSLocalizedString("settings.tweak.header", comment: "21 Tweaks Visibility")
+            sectionName = NSLocalizedString("setting_tweak_header", comment: "21 Tweaks Visibility")
         case 3: // Bx8-EJ-3BK.headerTitle Developer Extras
             sectionName = ""
         default:
