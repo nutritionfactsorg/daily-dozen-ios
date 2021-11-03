@@ -62,7 +62,7 @@
 "doze_entry_header" = "Porciones";
 
 /*  */
-"historyRecord.movingMean" = "Media móvil";
+"historyRecord.movingAverage" = "Media móvil";
 
 /* Servings History */
 "historyRecordDoze.heading" = "Historial de porciones";
@@ -236,7 +236,7 @@
 "settings_advanced_utilities" = "Utilidades Avanzadas";
 
 /* Settings: units choice footer text */
-"settings_units_choice_footer" = "Configure siempre un tipo de unidad o active el botón de alternancia 'Unidades:'.";
+"setting_units_choice_footer" = "Configure siempre un tipo de unidad o active el botón de alternancia 'Unidades:'.";
 
 /* progress: number '%d' of consecutive days completed. */
 "streakDaysFormat" = "%d días";

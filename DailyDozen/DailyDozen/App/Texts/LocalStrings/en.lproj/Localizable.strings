@@ -62,7 +62,7 @@
 "doze_entry_header" = "Servings";
 
 /*  */
-"historyRecord.movingMean" = "Moving Average";
+"historyRecord.movingAverage" = "Moving Average";
 
 /* Servings History */
 "historyRecordDoze.heading" = "Servings History";
@@ -236,7 +236,7 @@
 "settings_advanced_utilities" = "Advanced Utilities";
 
 /* Settings: units choice footer text */
-"settings_units_choice_footer" = "Set to always be one unit type or enable the 'Units:' toggle button.";
+"setting_units_choice_footer" = "Set to always be one unit type or enable the 'Units:' toggle button.";
 
 /* progress: number '%d' of consecutive days completed. */
 "streakDaysFormat" = "%d days";

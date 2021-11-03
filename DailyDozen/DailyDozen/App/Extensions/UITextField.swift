@@ -37,7 +37,7 @@ extension UITextField {
         toolBar.frame = CGRect(x: 0, y: 0, width: screenWidth, height: 44)
         toolBar.isOpaque = false
         let cancelButton = UIBarButtonItem(barButtonSystemItem: .cancel, target: target, action: cancelAction)
-        let todayText = NSLocalizedString("dateButtonTitle.today", comment: "Date button 'Today' title")
+        let todayText = NSLocalizedString("dateButtonTitle.today", comment: "Date Button Title: 'Today'")
         let todayButton = UIBarButtonItem(title: todayText, style: .plain, target: target, action: todayAction)
         let doneButton = UIBarButtonItem(barButtonSystemItem: .done, target: target, action: doneAction)
         let flexSpace = UIBarButtonItem(barButtonSystemItem: .flexibleSpace, target: nil, action: nil)

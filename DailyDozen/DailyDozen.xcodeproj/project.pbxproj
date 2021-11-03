@@ -301,6 +301,18 @@
 		49F66B782588752D00002DB2 /* UITextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UITextField.swift; sourceTree = "<group>"; };
 		49F8D1DB23905B70003E139F /* TweakEntryViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TweakEntryViewController.swift; sourceTree = "<group>"; };
 		49F8D1DD23906B29003E139F /* TweakEntryDataProvider.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TweakEntryDataProvider.swift; sourceTree = "<group>"; };
+		49FCFE9327327894000E92F1 /* pt-BR */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "pt-BR"; path = "pt-BR.lproj/InfoPlist.strings"; sourceTree = "<group>"; };
+		49FCFE9427327894000E92F1 /* pt-BR */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "pt-BR"; path = "pt-BR.lproj/Localizable.strings"; sourceTree = "<group>"; };
+		49FCFE9527327894000E92F1 /* pt-BR */ = {isa = PBXFileReference; lastKnownFileType = text.json; name = "pt-BR"; path = "pt-BR.lproj/DozeDetailData.json"; sourceTree = "<group>"; };
+		49FCFE9627327895000E92F1 /* pt-BR */ = {isa = PBXFileReference; lastKnownFileType = text.json; name = "pt-BR"; path = "pt-BR.lproj/TweakDetailData.json"; sourceTree = "<group>"; };
+		49FCFE972732789F000E92F1 /* pt-PT */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "pt-PT"; path = "pt-PT.lproj/InfoPlist.strings"; sourceTree = "<group>"; };
+		49FCFE982732789F000E92F1 /* pt-PT */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "pt-PT"; path = "pt-PT.lproj/Localizable.strings"; sourceTree = "<group>"; };
+		49FCFE99273278A0000E92F1 /* pt-PT */ = {isa = PBXFileReference; lastKnownFileType = text.json; name = "pt-PT"; path = "pt-PT.lproj/DozeDetailData.json"; sourceTree = "<group>"; };
+		49FCFE9A273278A0000E92F1 /* pt-PT */ = {isa = PBXFileReference; lastKnownFileType = text.json; name = "pt-PT"; path = "pt-PT.lproj/TweakDetailData.json"; sourceTree = "<group>"; };
+		49FCFE9B273278AA000E92F1 /* ru */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ru; path = ru.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		49FCFE9C273278AA000E92F1 /* ru */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ru; path = ru.lproj/Localizable.strings; sourceTree = "<group>"; };
+		49FCFE9D273278AB000E92F1 /* ru */ = {isa = PBXFileReference; lastKnownFileType = text.json; name = ru; path = ru.lproj/DozeDetailData.json; sourceTree = "<group>"; };
+		49FCFE9E273278AB000E92F1 /* ru */ = {isa = PBXFileReference; lastKnownFileType = text.json; name = ru; path = ru.lproj/TweakDetailData.json; sourceTree = "<group>"; };
 		6ED3A55B48F7069CAE75156C /* Pods-DailyDozenTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-DailyDozenTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-DailyDozenTests/Pods-DailyDozenTests.release.xcconfig"; sourceTree = "<group>"; };
 		715D60F634E9BCD998C66B77 /* Pods_DailyDozenTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_DailyDozenTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		7D4AA01331AD98C99ADB2BC0 /* Pods-DailyDozen.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-DailyDozen.release.xcconfig"; path = "Pods/Target Support Files/Pods-DailyDozen/Pods-DailyDozen.release.xcconfig"; sourceTree = "<group>"; };
@@ -1207,6 +1219,9 @@
 				Base,
 				es,
 				pt,
+				"pt-BR",
+				"pt-PT",
+				ru,
 			);
 			mainGroup = CFE6982F1F974B9700CD7905;
 			productRefGroup = CFE698391F974B9700CD7905 /* Products */;
@@ -1544,6 +1559,9 @@
 				4916452023EE53640077731D /* es */,
 				496A66BB270ACB4000254531 /* en */,
 				49C8D1FF271FC75600D33A4F /* pt */,
+				49FCFE9627327895000E92F1 /* pt-BR */,
+				49FCFE9A273278A0000E92F1 /* pt-PT */,
+				49FCFE9E273278AB000E92F1 /* ru */,
 			);
 			name = TweakDetailData.json;
 			sourceTree = "<group>";
@@ -1554,6 +1572,9 @@
 				492474A223DB677A00D7D918 /* es */,
 				49B0FD2225DF927C00236A12 /* en */,
 				49C8D1FC271FC75500D33A4F /* pt */,
+				49FCFE9327327894000E92F1 /* pt-BR */,
+				49FCFE972732789F000E92F1 /* pt-PT */,
+				49FCFE9B273278AA000E92F1 /* ru */,
 			);
 			name = InfoPlist.strings;
 			sourceTree = "<group>";
@@ -1564,6 +1585,9 @@
 				4933A75323EE2BCB00CE4631 /* es */,
 				496A66BA270ACB2700254531 /* en */,
 				49C8D1FE271FC75600D33A4F /* pt */,
+				49FCFE9527327894000E92F1 /* pt-BR */,
+				49FCFE99273278A0000E92F1 /* pt-PT */,
+				49FCFE9D273278AB000E92F1 /* ru */,
 			);
 			name = DozeDetailData.json;
 			sourceTree = "<group>";
@@ -1574,6 +1598,9 @@
 				493A9BD423CE47A000F679BE /* en */,
 				493A9C3223CE6B7500F679BE /* es */,
 				49C8D1FD271FC75500D33A4F /* pt */,
+				49FCFE9427327894000E92F1 /* pt-BR */,
+				49FCFE982732789F000E92F1 /* pt-PT */,
+				49FCFE9C273278AA000E92F1 /* ru */,
 			);
 			name = Localizable.strings;
 			sourceTree = "<group>";

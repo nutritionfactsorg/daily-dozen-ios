@@ -96,10 +96,10 @@ class TweakEntryPagerViewController: UIViewController {
         
         if tweakPageDate.isInCurrentDayWith(DateManager.currentDatetime()) {
             tweakBackButton.superview?.isHidden = true
-            tweakDateBarField.text = NSLocalizedString("dateButtonTitle.today", comment: "Date button 'Today' title")
+            tweakDateBarField.text = NSLocalizedString("dateButtonTitle.today", comment: "Date Button Title: 'Today'")
         } else {
             tweakBackButton.superview?.isHidden = false
-            tweakBackButton.setTitle(NSLocalizedString("dateBackButtonTitle", comment: "Back to today"), for: UIControl.State.normal)
+            tweakBackButton.setTitle(NSLocalizedString("dateBackButtonTitle", comment: "Date Button Title: 'Back to today'"), for: UIControl.State.normal)
             tweakDateBarField.text = tweakDateBarPicker.date.dateStringLocalized(for: .long)
         }
         

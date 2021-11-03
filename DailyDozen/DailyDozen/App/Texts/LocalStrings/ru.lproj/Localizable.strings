@@ -1,0 +1,370 @@
+/* DailyDozen Localizable.strings (ru) */
+/* Copyright © 2021 Nutritionfacts.org. All rights reserved. */
+
+/*  */
+"apple.info.about.0" = "Добро пожаловать в Не сдохни!";
+
+/*  */
+"apple.info.about.1" = "Используйте это приложение на ежедневной основе, чтобы отслеживать продукты питания и следовать моим рекомендациям из книг Не Сдохни! Еда в борьбе за жизнь и Не сдохни на диете для поддержания оптимального состояния здоровья и продолжительности жизни.";
+
+/*  */
+"apple.info.about.2" = "Не сдохни!";
+
+/*  */
+"apple.info.about.3" = "версия 3.2.3";
+
+/*  */
+"apple.info.about.4" = "Это приложение было создано NutritionFacts.org, Кристи Ричардс, Константином Хохловым и Марком Кэмпбеллом.";
+
+/*  */
+"apple.info.about.5" = "Приложение использует следующие библиотеки с открытым кодом: RealmSwift, Charts, FSCalendar, SimpleAnimation, ActiveLabel.";
+
+/*  */
+"dateBackButtonTitle" = "Обратно к Сегодня";
+
+/*  */
+"dateButtonTitle.today" = "Сегодня";
+
+/*  */
+"dozeBeans.heading" = "Бобовые";
+
+/*  */
+"dozeBerries.heading" = "Ягоды";
+
+/*  */
+"dozeBeverages.heading" = "Напитки";
+
+/*  */
+"dozeExercise.heading" = "Физические Упражнения";
+
+/*  */
+"dozeFlaxseeds.heading" = "Семена льна";
+
+/*  */
+"dozeFruitsOther.heading" = "Другие Фрукты";
+
+/*  */
+"dozeGreens.heading" = "Листовые Овощи";
+
+/*  */
+"dozeNuts.heading" = "Орехи и Семена";
+
+/*  */
+"dozeOtherInfo.confirm" = "ОК";
+
+/*  */
+"dozeOtherInfo.message" = "Витамин B12 крайне важен для вашего здоровья, но он не считается с другими ежедневными порциями. \n\nВитамин B12 добавлен в это приложение, чтобы облегчить отслеживание приема добавки.";
+
+/*  */
+"dozeOtherInfo.title" = "Добавки";
+
+/*  */
+"dozeOtherInfo.title" = "Пищевые добавки";
+
+/*  */
+"dozeSpices.heading" = "Травы и Специи";
+
+/*  */
+"dozeVegetablesCruciferous.heading" = "Крестоцветные Овощи";
+
+/*  */
+"dozeVegetablesOther.heading" = "Прочие Овощи";
+
+/*  */
+"dozeWholeGrains.heading" = "Цельнозерновые Продукты";
+
+/*  */
+"doze_detail_section_sizes" = "Размер порции";
+
+/*  */
+"doze_detail_section_types" = "Типы";
+
+/*  */
+"doze_entry_header" = "Порции";
+
+/*  */
+"historyRecordDoze.heading" = "Порции История";
+
+/*  */
+"historyRecordDoze.legend" = "Порции";
+
+/*  */
+"historyRecordTweak.heading" = "Уловки История";
+
+/*  */
+"historyRecordTweak.legend" = "Уловки";
+
+/*  */
+"historyRecordWeight.heading" = "Вес История";
+
+/*  */
+"historyRecordWeight.legendEvening" = "Вечер";
+
+/*  */
+"historyRecordWeight.legendMorning" = "Утро";
+
+/*  */
+"historyRecordWeight.titleImperial" = "Вес (фунты)";
+
+/*  */
+"historyRecordWeight.titleMetric" = "Вес (кг)";
+
+/* Calendar view scale control */
+"history_scale_choice_day" = "День";
+
+/* Calendar view scale control */
+"history_scale_choice_month" = "Месяц";
+
+/* Calendar view scale control */
+"history_scale_choice_year" = "Год";
+
+/*  */
+"history_scale_label" = "Шкала Времени";
+
+/*  */
+"info.about.title" = "Об этом приложении";
+
+/*  */
+"info_app_about" = "О нас";
+
+/* Application Name: 'Daily Dozen' */
+"info_app_about_app_name" = "Не Сдохни!";
+
+/*  */
+"info_app_about_overview" = "Используйте данное приложение на ежедневной основе, чтобы отслеживать продукты питания и применять мои рекомендации для оптимального здоровья и продолжительности жизни, которые изложены в книгах Не сдохни и Не сдохни на Диете.";
+
+/* Application release version */
+"info_app_about_version" = "версия 3.2.1";
+
+/*  */
+"info_app_about_welcome" = "Добро пожаловать в Не сдохни!";
+
+/*  */
+"info_book_how_not_to_die" = "Книга: Не сдохни! Еда в борьбе за жизнь";
+
+/*  */
+"info_book_how_not_to_die_cookbook" = "Книга: Не сдохни! Кулинарная книга";
+
+/*  */
+"info_book_how_not_to_diet" = "Книга: Не сдохни на диете";
+
+/*  */
+"info_webpage_daily_dozen_challenge" = "Вызов Не сдохни!";
+
+/*  */
+"info_webpage_donate" = "Сделайте пожертвование";
+
+/*  */
+"info_webpage_open_source" = "Открытое программное обеспечение";
+
+/*  */
+"info_webpage_subscribe" = "Подпишитесь";
+
+/*  */
+"info_webpage_videos_latest" = "Последние видео";
+
+/*  */
+"item_history_completed_all" = "Все порции";
+
+/*  */
+"item_history_completed_some" = "Некоторые порции";
+
+/*  */
+"item_history_heading" = "История";
+
+/*  */
+"navtab.doze" = "Не сдохни!";
+
+/*  */
+"navtab.info" = "Информация";
+
+/*  */
+"navtab.preferences" = "Настройки";
+
+/*  */
+"navtab.tweaks" = "21 уловка";
+
+/*  */
+"otherVitaminB12.heading" = "Витамин B12";
+
+/* Alert notification text */
+"reminder.alert.text" = "Обновите порции за сегодня";
+
+/*  */
+"reminder.heading" = "Ежедневное напоминание";
+
+/* On/Off toggle label */
+"reminder.settings.enable" = "Включить напоминания";
+
+/*  */
+"reminder.settings.sound" = "Проиграть Звук";
+
+/*  */
+"reminder.settings.time" = "Напомнить мне в:";
+
+/* Android notification `vibrate` */
+"reminder.settings.vibrate" = "Вибрация";
+
+/* Off' as in 'On or Off', reminder is not enabled */
+"reminder.state.off" = "Отключить";
+
+/* On' as in 'On or Off' */
+"reminder.state.on" = "Включить";
+
+/*  */
+"setting_doze_only_btn" = "Только Не cдохни!";
+
+/*  */
+"setting_doze_only_choice" = "Только Не cдохни!";
+
+/*  */
+"setting_doze_tweak_btn" = "Не cдохни! + 21 уловка";
+
+/*  */
+"setting_doze_tweak_choice" = "Не cдохни! + 21 уловка";
+
+/*  */
+"setting_doze_tweak_footer" = "Только для здорового образа жизни используйте \"Только Не cдохни!\", для здоровья и потери веса используйте \"Не cдохни + 21 уловка\".";
+
+/*  */
+"setting_health_alone_txt" = "Только для здоровья";
+
+/*  */
+"setting_health_weight_txt" = "Для здоровья и похудения";
+
+/*  */
+"setting_tweak_header" = "Видимость 21 уловки";
+
+/* Part of "Imperial/Metric/Toggle Units" selector */
+"setting_units_0_imperial" = "Имперсая";
+
+/* Part of "Imperial/Metric/Toggle Units" selector */
+"setting_units_1_metric" = "Метрическая";
+
+/* Part of "Imperial/Metric/Toggle Units" selector */
+"setting_units_2_toggle" = "Переключатель";
+
+/*  */
+"setting_units_choice_footer" = "Установить только одну единицу измерения или включить кнопку переключения между единицами измерения.";
+
+/*  */
+"setting_units_header" = "Единицы измерения";
+
+/*  */
+"setting_util_advanced" = "Дополнительные инструменты";
+
+/* Formatted string %d days */
+"streakDaysFormat" = "%d дни";
+
+/*  */
+"tweakCompleteIntentions.heading" = "Воплощайте свои намерения";
+
+/*  */
+"tweakDailyBlackCumin.heading" = "Черный тмин/кумин (¼ ч.л.)";
+
+/*  */
+"tweakDailyCumin.heading" = "Тмин (½ чайной ложки с обедом и ужином)";
+
+/*  */
+"tweakDailyDeflourDiet.heading" = "Уберите муку из диеты";
+
+/*  */
+"tweakDailyFrontLoad.heading" = "Фронтальная калорийная загрузка";
+
+/*  */
+"tweakDailyGarlic.heading" = "Чесночный порошок (¼ ч.л.)";
+
+/*  */
+"tweakDailyGinger.heading" = "Молотый имбирь (1 чайная ложка) или кайенский перец (½ чайной ложки)";
+
+/*  */
+"tweakDailyGreenTea.heading" = "Зеленый чай (3 чашки)";
+
+/*  */
+"tweakDailyHydrate.heading" = "Избегайте обезвоживания";
+
+/*  */
+"tweakDailyNutriYeast.heading" = "Пищевые дрожжи неактивные (2 ч.л.)";
+
+/*  */
+"tweakDailyTimeRestrict.heading" = "Ограничивайте время приема пищи";
+
+/*  */
+"tweakExerciseTiming.heading" = "Оптимизируйте график выполнения физических упражнений";
+
+/*  */
+"tweakMeal20Minutes.heading" = "Следуйте двадцатиминутному правилу";
+
+/*  */
+"tweakMealNegCal.heading" = "Предварительная загрузка отрицательными калориями";
+
+/*  */
+"tweakMealUndistracted.heading" = "Не отвлекайтесь от еды";
+
+/*  */
+"tweakMealVinegar.heading" = "Включите уксус (2 ч.л. с каждым приемом пищи)";
+
+/*  */
+"tweakMealWater.heading" = "Предварительная водная загрузка";
+
+/*  */
+"tweakNightlyFast.heading" = "Не ешьте после 7:00 вечера";
+
+/*  */
+"tweakNightlySleep.heading" = "Высыпайтесь";
+
+/*  */
+"tweakNightlyTrendelenbrug.heading" = "Поэкспериментируйте с положением мягкого Тренделенбурга";
+
+/*  */
+"tweakWeightTwice.heading" = "Взвешивайтесь дважды в день";
+
+/*  */
+"tweak_detail_section_activity" = "Активность";
+
+/*  */
+"tweak_detail_section_description" = "Описание";
+
+/*  */
+"tweak_entry_header" = "21 Уловка";
+
+/*  */
+"unitToggle.imperial" = "имперская";
+
+/*  */
+"unitToggle.metric" = "метрическая";
+
+/*  */
+"units_label" = "Единица Измерения:";
+
+/* Keyword for link to video topics */
+"videos.link.label" = "ВИДЕО";
+
+/* Keyword for link to video topics */
+"videos.link.label" = "ВИДЕО";
+
+/*  */
+"weightEntry.heading" = "Вес";
+
+/*  */
+"weight_entry_clear" = "Очистить";
+
+/*  */
+"weight_entry_evening" = "Вечером (прямо перед сном)";
+
+/*  */
+"weight_entry_morning" = "Утром (сразу как проснулся)";
+
+/*  */
+"weight_entry_time" = "Время";
+
+/*  */
+"weight_entry_units_kg" = "кг";
+
+/*  */
+"weight_entry_units_lbs" = "фунты";
+
+/*  */
+"weight_history_edit_data" = "Редактировать данные";
+
+/* file end */

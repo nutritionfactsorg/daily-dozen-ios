@@ -95,10 +95,10 @@ class WeightEntryPagerViewController: UIViewController {
         
         if weightPageDate.isInCurrentDayWith(DateManager.currentDatetime()) {
             weightBackButton.superview?.isHidden = true
-            weightDateBarField.text = NSLocalizedString("dateButtonTitle.today", comment: "Date button 'Today' title")
+            weightDateBarField.text = NSLocalizedString("dateButtonTitle.today", comment: "Date Button Title: 'Today'")
         } else {
             weightBackButton.superview?.isHidden = false
-            weightBackButton.setTitle(NSLocalizedString("dateBackButtonTitle", comment: "Back to today"), for: UIControl.State.normal)
+            weightBackButton.setTitle(NSLocalizedString("dateBackButtonTitle", comment: "Date Button Title: 'Back to today'"), for: UIControl.State.normal)
             weightDateBarField.text = weightDateBarPicker.date.dateStringLocalized(for: .long)
         }
         

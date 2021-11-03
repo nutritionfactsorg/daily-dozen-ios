@@ -54,13 +54,13 @@ class SettingsViewController: UITableViewController {
         // Measurement Units
         unitMeasureToggle.tintColor = ColorManager.style.mainMedium
         unitMeasureToggle.setTitle(
-            NSLocalizedString("settings_units_0_imperial", comment: "Imperial"), 
+            NSLocalizedString("setting_units_0_imperial", comment: "Imperial"), 
             forSegmentAt: 0)
         unitMeasureToggle.setTitle(
-            NSLocalizedString("settings_units_1_metric", comment: "Metric"),
+            NSLocalizedString("setting_units_1_metric", comment: "Metric"),
             forSegmentAt: 1)
         unitMeasureToggle.setTitle(
-            NSLocalizedString("settings_units_2_toggle", comment: "Toggle Units"), 
+            NSLocalizedString("setting_units_2_toggle", comment: "Toggle Units"), 
             forSegmentAt: 2)
         setUnitsMeasureSegment()
         

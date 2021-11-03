@@ -1,4 +1,4 @@
-/* DailyDozen Localizable.strings (pt) */
+/* DailyDozen Localizable.strings (pt-BR) */
 /* Copyright © 2021 Nutritionfacts.org. All rights reserved. */
 
 /*  */
@@ -131,7 +131,7 @@
 "info_app_about_app_name" = "Dúzia Diária";
 
 /*  */
-"info_app_about_overview" = "Use este aplicativo diariamente para controlar os seus alimentos e acompanhar os conselhos que eu recomendo para uma ótima saúde e longevidade nos meus livros Como Não Morrer e Como Não Fazer Dieta.";
+"info_app_about_overview" = "Use este aplicativo diariamente para controlar os seus alimentos e acompanhar os conselhos que eu recomendo para uma ótima saúde e longevidade nos meus livros Comer Para Não Morrer e Como Não Fazer Dieta.";
 
 /* Application release version */
 "info_app_about_version" = "versão 3.2.1";
@@ -140,7 +140,7 @@
 "info_app_about_welcome" = "Bem-vindos à minha Dúzia Diária!";
 
 /*  */
-"info_book_how_not_to_die" = "Livro: Como Não Morrer";
+"info_book_how_not_to_die" = "Livro: Comer Para Não Morrer";
 
 /*  */
 "info_book_how_not_to_die_cookbook" = "Livro: Como Não Morrer - O Livro de Receitas";
