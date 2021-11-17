@@ -1,3 +1,6 @@
+/* DailyDozen InfoPlist.strings (en) */
+/* Copyright © 2021 Nutritionfacts.org. All rights reserved. */
+
 /* User-visible application name. Visible under icon. Used by Siri. */
 "CFBundleDisplayName" = "DailyDozen";
 
@@ -10,3 +13,4 @@
 /* Privacy - Health Update Usage Description */
 "NSHealthUpdateUsageDescription" = "The 21 Tweaks feature can write weight data to HealthKit to help you keep track of your progress.";
 
+/* file end */

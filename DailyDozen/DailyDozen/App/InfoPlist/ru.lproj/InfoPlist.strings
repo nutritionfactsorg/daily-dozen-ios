@@ -1,16 +1,10 @@
 /* DailyDozen InfoPlist.strings (ru) */
 /* Copyright © 2021 Nutritionfacts.org. All rights reserved. */
 
-/* User-visible application name. Visible under icon. Used by Siri. */
-"CFBundleDisplayName" = "DailyDozen";
-
-/* User-visible application short name (15 Characters max) */
-"CFBundleName" = "DailyDozen";
-
-/* Privacy - Health Share Usage Description */
+/*  */
 "NSHealthShareUsageDescription" = "Функциональность 21 уловка получает доступ к приложению Здоровье и посылает ежедневные обновления по измерению вашего веса.";
 
-/* Privacy - Health Update Usage Description */
+/*  */
 "NSHealthUpdateUsageDescription" = "Функциональность 21 уловка может писать данные по вашему весу в приложение Здоровье, чтобы помочь отслеживать ваш прогресс.";
 
 /* file end */

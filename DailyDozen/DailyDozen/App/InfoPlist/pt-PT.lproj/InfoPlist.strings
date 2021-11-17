@@ -1,16 +1,10 @@
 /* DailyDozen InfoPlist.strings (pt-PT) */
 /* Copyright © 2021 Nutritionfacts.org. All rights reserved. */
 
-/* User-visible application name. Visible under icon. Used by Siri. */
-"CFBundleDisplayName" = "DailyDozen";
-
-/* User-visible application short name (15 Characters max) */
-"CFBundleName" = "DailyDozen";
-
-/* Privacy - Health Share Usage Description */
+/*  */
 "NSHealthShareUsageDescription" = "A função 21 Ajustes acessa os dados do seu HealthKit para fornecer atualizações às suas medidas diárias de peso.";
 
-/* Privacy - Health Update Usage Description */
+/*  */
 "NSHealthUpdateUsageDescription" = "A função 21 Ajustes pode escrever dados no HealthKit para te ajudar a acompanhar o seu progresso.";
 
 /* file end */

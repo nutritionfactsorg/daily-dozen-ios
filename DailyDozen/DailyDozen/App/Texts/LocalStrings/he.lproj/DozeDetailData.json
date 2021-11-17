@@ -1,1113 +1,1113 @@
 {
   "itemsDict" : {
     "dozeBeans" : {
-      "heading" : "Beans",
+      "heading" : "שעועית",
       "servings" : [
         {
-          "imperial" : "¼ cup of hummus or bean dip",
-          "metric" : "60 g of hummus or bean dip"
+          "imperial" : "1/4 כוס חומוס או מטבל שעועית",
+          "metric" : "60 גרם חומוס או מטבל שעועית"
         },
         {
-          "imperial" : "½ cup cooked beans, split peas, lentils, tofu, or tempeh",
-          "metric" : "130 g cooked beans, split peas, lentils, tofu, or tempeh"
+          "imperial" : "1/2 כוס שעועית מבושלת, אפונה מפוצלת, קטניות, טופו או טמפה",
+          "metric" : "130 גרם שעועית מבושלת, אפונה מפוצלת, קטניות, טופו או טמפה"
         },
         {
-          "imperial" : "1 cup of fresh peas or sprouted lentils",
-          "metric" : "150 g of fresh peas or sprouted lentils"
+          "imperial" : "1 כוס אפונה טריה או עדשים מונבטות",
+          "metric" : "150גרם אפונה טריה או עדשים מונבטות"
         }
       ],
       "topic" : "topics/beans",
       "varieties" : [
         {
-          "text" : "Black beans",
+          "text" : "שעועית שחורה",
           "topic" : "topics/black-beans"
         },
         {
-          "text" : "Black-eyed peas",
+          "text" : "שעועית מנומרת",
           "topic" : ""
         },
         {
-          "text" : "Butter beans",
+          "text" : "שעועית לבנה",
           "topic" : ""
         },
         {
-          "text" : "Cannellini beans",
+          "text" : "שעועית קנליני",
           "topic" : ""
         },
         {
-          "text" : "Chickpeas/Garbanzo Beans",
+          "text" : "גרגרי חומוס/ שעועית גרבנזו",
           "topic" : "topics/chickpeas"
         },
         {
-          "text" : "Edamame",
+          "text" : "אדממה",
           "topic" : "topics/edamame"
         },
         {
-          "text" : "English peas",
+          "text" : "אפונת גינה",
           "topic" : ""
         },
         {
-          "text" : "Great northern beans",
+          "text" : "שעועית לבנה",
           "topic" : ""
         },
         {
-          "text" : "Kidney beans",
+          "text" : "שעועית אדומה",
           "topic" : "topics/kidney-beans"
         },
         {
-          "text" : "Lentils (beluga, french, and red varieties)",
+          "text" : "קטניות (בלוגה, צרפתיות ואדומות)",
           "topic" : "topics/lentils"
         },
         {
-          "text" : "Miso",
+          "text" : "מיסו",
           "topic" : "topics/miso"
         },
         {
-          "text" : "Navy beans",
+          "text" : "שעועית נייבי",
           "topic" : "topics/navy-beans"
         },
         {
-          "text" : "Pinto beans",
+          "text" : "שעועית פינטו",
           "topic" : "topics/pinto-beans"
         },
         {
-          "text" : "Small red beans",
+          "text" : "שעועית קטנה ואדומה",
           "topic" : ""
         },
         {
-          "text" : "Split peas (yellow or green)",
+          "text" : "אפונה מפוצלת (צהובה או ירוקה)",
           "topic" : "topics/split-peas"
         },
         {
-          "text" : "Tempeh",
+          "text" : "טמפה",
           "topic" : "topics/tempeh"
         }
       ]
     },
     "dozeBerries" : {
-      "heading" : "Berries",
+      "heading" : "גרגרי יער",
       "servings" : [
         {
-          "imperial" : "½ cup fresh or frozen",
-          "metric" : "60 g fresh or frozen"
+          "imperial" : "1/2 כוס טריה או קפואה",
+          "metric" : "60 גרם טריים או קפואים"
         },
         {
-          "imperial" : "¼ cup dried",
-          "metric" : "40 g dried"
+          "imperial" : "1/4 כוס יבשים",
+          "metric" : "40 גרם יבשים"
         }
       ],
       "topic" : "topics/berries",
       "varieties" : [
         {
-          "text" : "Acai berries",
+          "text" : "אסאי",
           "topic" : "topics/acai-berries"
         },
         {
-          "text" : "Barberries",
+          "text" : "ברביריס (גרגרים אדומים חמוצים)",
           "topic" : "topics/barberries"
         },
         {
-          "text" : "Blackberries",
+          "text" : "אסנה",
           "topic" : "topics/blackberries"
         },
         {
-          "text" : "Blueberries",
+          "text" : "אוכמניות",
           "topic" : "topics/blueberries"
         },
         {
-          "text" : "Cherries (sweet or tart)",
+          "text" : "דובדבנים",
           "topic" : "topics/cherries"
         },
         {
-          "text" : "Concord grapes",
+          "text" : "ענבי קונקורד",
           "topic" : "topics/grapes"
         },
         {
-          "text" : "Cranberries",
+          "text" : "חמוציות",
           "topic" : "topics/cranberries"
         },
         {
-          "text" : "Goji berries",
+          "text" : "גוג'י ברי",
           "topic" : "topics/goji-berries"
         },
         {
-          "text" : "Kumquats",
+          "text" : "תפוז סיני",
           "topic" : ""
         },
         {
-          "text" : "Mulberries",
+          "text" : "תותים",
           "topic" : ""
         },
         {
-          "text" : "Raspberries (black or red)",
+          "text" : "פטל שחור או אדום",
           "topic" : "topics/raspberries"
         },
         {
-          "text" : "Strawberries",
+          "text" : "תותי שדה",
           "topic" : "topics/strawberries"
         }
       ]
     },
     "dozeBeverages" : {
-      "heading" : "Beverages",
+      "heading" : "משקאות קלים",
       "servings" : [
         {
-          "imperial" : "One glass (12 ounces)",
-          "metric" : "One glass (350 ml)"
+          "imperial" : "כוס אחת 350 גרם)",
+          "metric" : "כוס אחת (350 מ\"ל)"
         }
       ],
       "topic" : "topics/beverages",
       "varieties" : [
         {
-          "text" : "Black tea",
+          "text" : "תה שחור",
           "topic" : "topics/black-tea"
         },
         {
-          "text" : "Chai tea",
+          "text" : "תה צ'אי",
           "topic" : "topics/chai-tea"
         },
         {
-          "text" : "Vanilla chamomile tea",
+          "text" : "תה קמומיל-וניל",
           "topic" : "topics/chamomile-tea"
         },
         {
-          "text" : "Coffee",
+          "text" : "קפה",
           "topic" : "topics/coffee"
         },
         {
-          "text" : "Earl grey tea",
+          "text" : "תה ארל-גריי",
           "topic" : "topics/earl-grey-tea"
         },
         {
-          "text" : "Green tea",
+          "text" : "תה ירוק",
           "topic" : "topics/green-tea"
         },
         {
-          "text" : "Hibiscus tea",
+          "text" : "תה היביסקוס",
           "topic" : "topics/hibiscus-tea"
         },
         {
-          "text" : "Hot chocolate",
+          "text" : "שוקולד חם",
           "topic" : ""
         },
         {
-          "text" : "Jasmine tea",
+          "text" : "תה יסמין",
           "topic" : ""
         },
         {
-          "text" : "Lemon balm tea",
+          "text" : "תה מליסה רפואית",
           "topic" : "topics/lemon-balm"
         },
         {
-          "text" : "Matcha tea",
+          "text" : "תה מקה",
           "topic" : "topics/matcha"
         },
         {
-          "text" : "Almond blossom oolong tea",
+          "text" : "תה אולונג",
           "topic" : "topics/oolong-tea"
         },
         {
-          "text" : "Peppermint tea",
+          "text" : "תה מנטה",
           "topic" : "topics/peppermint"
         },
         {
-          "text" : "Rooibos tea",
+          "text" : "תה רויבוש",
           "topic" : "topics/rooibos-tea"
         },
         {
-          "text" : "Water",
+          "text" : "מים",
           "topic" : "topics/water"
         },
         {
-          "text" : "White tea",
+          "text" : "תה לבן",
           "topic" : "topics/white-tea"
         }
       ]
     },
     "dozeExercise" : {
-      "heading" : "Exercise",
+      "heading" : "ספורט",
       "servings" : [
         {
-          "imperial" : "90 minutes of moderate-intensity activity",
-          "metric" : "90 minutes of moderate-intensity activity"
+          "imperial" : "90 דקות פעילות בעצימות בינונית",
+          "metric" : "90 דקות פעילות בעצימות בינונית"
         },
         {
-          "imperial" : "40 minutes of vigorous-intensity activity",
-          "metric" : "40 minutes of vigorous-intensity activity"
+          "imperial" : "40 דקות פעילות בעצימות גבוהה",
+          "metric" : "40 דקות פעילות בעצימות גבוהה"
         }
       ],
       "topic" : "topics/exercise",
       "varieties" : [
         {
-          "text" : "Bicycling",
+          "text" : "רכיבה על אופניים",
           "topic" : ""
         },
         {
-          "text" : "Canoeing",
+          "text" : "השטת קאנו",
           "topic" : ""
         },
         {
-          "text" : "Dancing",
+          "text" : "ריקוד",
           "topic" : ""
         },
         {
-          "text" : "Dodgeball",
+          "text" : "מחניים",
           "topic" : ""
         },
         {
-          "text" : "Downhill skiing",
+          "text" : "סקי במורד הרים",
           "topic" : ""
         },
         {
-          "text" : "Fencing",
+          "text" : "גינון",
           "topic" : ""
         },
         {
-          "text" : "Hiking",
+          "text" : "צעידה בהרים",
           "topic" : ""
         },
         {
-          "text" : "Housework",
+          "text" : "עבודות בית",
           "topic" : ""
         },
         {
-          "text" : "Ice-skating",
+          "text" : "החלקה על קרח",
           "topic" : ""
         },
         {
-          "text" : "Inline skating",
+          "text" : "גלגיליות",
           "topic" : ""
         },
         {
-          "text" : "Juggling",
+          "text" : "להטוטים",
           "topic" : ""
         },
         {
-          "text" : "Jumping on a trampoline",
+          "text" : "קפיצה על טרמפולינה",
           "topic" : ""
         },
         {
-          "text" : "Paddle boating",
+          "text" : "סירת פדאלים",
           "topic" : ""
         },
         {
-          "text" : "Playing frisbee",
+          "text" : "משחק פריסבי",
           "topic" : ""
         },
         {
-          "text" : "Roller-skating",
+          "text" : "רולר סקייט",
           "topic" : ""
         },
         {
-          "text" : "Shooting baskets",
+          "text" : "קליעה לסל",
           "topic" : ""
         },
         {
-          "text" : "Shoveling light snow",
+          "text" : "גירוף שלג מועט",
           "topic" : ""
         },
         {
-          "text" : "Skateboarding",
+          "text" : "גלישה בסקייטבורד",
           "topic" : ""
         },
         {
-          "text" : "Snorkeling",
+          "text" : "צלילה",
           "topic" : ""
         },
         {
-          "text" : "Surfing",
+          "text" : "גלישת גלים",
           "topic" : ""
         },
         {
-          "text" : "Swimming recreationally",
+          "text" : "תנועה במים",
           "topic" : ""
         },
         {
-          "text" : "Tennis (doubles)",
+          "text" : "טניס בזוגות",
           "topic" : ""
         },
         {
-          "text" : "Treading water",
+          "text" : "תנועה במים",
           "topic" : ""
         },
         {
-          "text" : "Walking briskly (4 mph)",
+          "text" : "הליכה מואצת (6 ק\"מ לשעה)",
           "topic" : ""
         },
         {
-          "text" : "Water aerobics",
+          "text" : "אירובי במים",
           "topic" : ""
         },
         {
-          "text" : "Waterskiing",
+          "text" : "סקי מים",
           "topic" : ""
         },
         {
-          "text" : "Yard work",
+          "text" : "עבודת גינה",
           "topic" : ""
         },
         {
-          "text" : "Yoga",
+          "text" : "יוגה",
           "topic" : ""
         },
         {
-          "text" : "Backpacking",
+          "text" : "תרמילאות",
           "topic" : ""
         },
         {
-          "text" : "Basketball",
+          "text" : "כדורסל",
           "topic" : ""
         },
         {
-          "text" : "Bicycling uphill",
+          "text" : "רכיבת אופניים בשטח",
           "topic" : ""
         },
         {
-          "text" : "Circuit weight training",
+          "text" : "אימוני משקולות מעגליים",
           "topic" : ""
         },
         {
-          "text" : "Cross-country skiing",
+          "text" : "סקי למרחקים ארוכים",
           "topic" : ""
         },
         {
-          "text" : "Football",
+          "text" : "כדורגל",
           "topic" : ""
         },
         {
-          "text" : "Hockey",
+          "text" : "הוקי",
           "topic" : ""
         },
         {
-          "text" : "Jogging",
+          "text" : "ריצה קלה",
           "topic" : ""
         },
         {
-          "text" : "Jumping jacks",
+          "text" : "תרגילי קפיצה",
           "topic" : ""
         },
         {
-          "text" : "Jumping rope",
+          "text" : "קפיצה על חבל",
           "topic" : ""
         },
         {
-          "text" : "Lacrosse",
+          "text" : "",
           "topic" : ""
         },
         {
-          "text" : "Push-ups",
+          "text" : "שכיבות שמיכה",
           "topic" : ""
         },
         {
-          "text" : "Pull-ups",
+          "text" : "מתח",
           "topic" : ""
         },
         {
-          "text" : "Racquetball",
+          "text" : "סקווש",
           "topic" : ""
         },
         {
-          "text" : "Rock climbing",
+          "text" : "טיפוס סלעים",
           "topic" : ""
         },
         {
-          "text" : "Rugby",
+          "text" : "רוגבי",
           "topic" : ""
         },
         {
-          "text" : "Running",
+          "text" : "ריצה",
           "topic" : ""
         },
         {
-          "text" : "Scuba diving",
+          "text" : "צלילה",
           "topic" : ""
         },
         {
-          "text" : "Tennis (singles)",
+          "text" : "טניס יחידים",
           "topic" : ""
         },
         {
-          "text" : "Soccer",
+          "text" : "כדורגל אמריקאי",
           "topic" : ""
         },
         {
-          "text" : "Speed skating",
+          "text" : "גלגיליות",
           "topic" : ""
         },
         {
-          "text" : "Squash",
+          "text" : "סקווש",
           "topic" : ""
         },
         {
-          "text" : "Step aerobics",
+          "text" : "הליכה אירובית על דרגש",
           "topic" : ""
         },
         {
-          "text" : "Swimming laps",
+          "text" : "שחיה בהקפות",
           "topic" : ""
         },
         {
-          "text" : "Walking briskly uphill",
+          "text" : "הליכה במעלה הרים",
           "topic" : ""
         },
         {
-          "text" : "Water jogging",
+          "text" : "הליכה במים",
           "topic" : ""
         }
       ]
     },
     "dozeFlaxseeds" : {
-      "heading" : "Flaxseeds",
+      "heading" : "זרעי פשתן",
       "servings" : [
         {
-          "imperial" : "1 tablespoon ground",
-          "metric" : "1 tablespoon ground"
+          "imperial" : "1 כף טחונים",
+          "metric" : "1 כף טחונים"
         }
       ],
       "topic" : "topics/flax-seeds",
       "varieties" : [
         {
-          "text" : "Brown flaxseeds",
+          "text" : "זרעי פשתן חומים",
           "topic" : ""
         },
         {
-          "text" : "Golden flaxseeds",
+          "text" : "זרעי פשתן זהובים",
           "topic" : ""
         }
       ]
     },
     "dozeFruitsOther" : {
-      "heading" : "Other Fruits",
+      "heading" : "פירות אחרים",
       "servings" : [
         {
-          "imperial" : "1 medium-sized fruit",
-          "metric" : "1 medium-sized fruit"
+          "imperial" : "1 פרי בינוני",
+          "metric" : "1 פרי בינוני"
         },
         {
-          "imperial" : "1 cup cut-up fruit",
-          "metric" : "120 g cut-up fruit"
+          "imperial" : "1/4 כוס פירות חתוכים",
+          "metric" : "120 גרם פירות חתוכים"
         },
         {
-          "imperial" : "¼ cup dried fruit",
-          "metric" : "40 g dried fruit"
+          "imperial" : "1/4 כוס פירות יבשים",
+          "metric" : "40 גרם פירות יבשים"
         }
       ],
       "topic" : "",
       "varieties" : [
         {
-          "text" : "Apples",
+          "text" : "תפוחים",
           "topic" : "topics/apples"
         },
         {
-          "text" : "Apricots",
+          "text" : "משמשים יבשים",
           "topic" : "topics/apricots"
         },
         {
-          "text" : "Avocados",
+          "text" : "אבוקדו",
           "topic" : "topics/avocados"
         },
         {
-          "text" : "Bananas",
+          "text" : "בננות",
           "topic" : "topics/bananas"
         },
         {
-          "text" : "Cantaloupe",
+          "text" : "מלון עם קליפה כתומה כהה",
           "topic" : "topics/cantaloupe"
         },
         {
-          "text" : "Clementines",
+          "text" : "קלמנטינות",
           "topic" : ""
         },
         {
-          "text" : "Dates",
+          "text" : "תמרים",
           "topic" : "topics/dates"
         },
         {
-          "text" : "Figs",
+          "text" : "תאנים ישות",
           "topic" : ""
         },
         {
-          "text" : "Grapefruit",
+          "text" : "אשכולית",
           "topic" : "topics/grapefruit"
         },
         {
-          "text" : "Honeydew",
+          "text" : "מלון עם קליפה חלקה ובשר  ירוק",
           "topic" : ""
         },
         {
-          "text" : "Kiwifruit",
+          "text" : "קיווי",
           "topic" : "topics/kiwifruit"
         },
         {
-          "text" : "Lemons",
+          "text" : "לימונים",
           "topic" : "topics/lemons"
         },
         {
-          "text" : "Limes",
+          "text" : "ליים",
           "topic" : "topics/limes"
         },
         {
-          "text" : "Lychees",
+          "text" : "ליצ'י",
           "topic" : ""
         },
         {
-          "text" : "Mangos",
+          "text" : "מנגו",
           "topic" : "topics/mango"
         },
         {
-          "text" : "Nectarines",
+          "text" : "נקטרינות",
           "topic" : ""
         },
         {
-          "text" : "Oranges",
+          "text" : "תפוזים",
           "topic" : "topics/oranges"
         },
         {
-          "text" : "Papaya",
+          "text" : "פאפיה",
           "topic" : ""
         },
         {
-          "text" : "Passion fruit",
+          "text" : "פסיפלורה",
           "topic" : ""
         },
         {
-          "text" : "Peaches",
+          "text" : "אפרסקים",
           "topic" : "topics/peaches"
         },
         {
-          "text" : "Pears",
+          "text" : "אגסים",
           "topic" : "topics/pears"
         },
         {
-          "text" : "Pineapple",
+          "text" : "אננס",
           "topic" : ""
         },
         {
-          "text" : "Plums (especially black plums)",
+          "text" : "שזיפים (בעיקר שחורים)",
           "topic" : "topics/plums"
         },
         {
-          "text" : "Pluots",
+          "text" : "",
           "topic" : ""
         },
         {
-          "text" : "Pomegranates",
+          "text" : "רימונים",
           "topic" : "topics/pomegranates"
         },
         {
-          "text" : "Prunes",
+          "text" : "קצוצים",
           "topic" : "topics/prunes"
         },
         {
-          "text" : "Tangerines",
+          "text" : "מנדרינה",
           "topic" : ""
         },
         {
-          "text" : "Watermelon",
+          "text" : "אבטיח",
           "topic" : "topics/watermelon"
         }
       ]
     },
     "dozeGreens" : {
-      "heading" : "Greens",
+      "heading" : "ירקות ירוקים",
       "servings" : [
         {
-          "imperial" : "1 cup raw",
-          "metric" : "60 g raw"
+          "imperial" : "1 כוס גולמית",
+          "metric" : "60 גרם גולמי"
         },
         {
-          "imperial" : "½ cup cooked",
-          "metric" : "90 g cooked"
+          "imperial" : "1/2 כוס מבושלים",
+          "metric" : "90 גרם מבושלים"
         }
       ],
       "topic" : "topics/greens",
       "varieties" : [
         {
-          "text" : "Arugula",
+          "text" : "אורוגולה",
           "topic" : ""
         },
         {
-          "text" : "Beet greens",
+          "text" : "סלק עלים",
           "topic" : "topics/beets"
         },
         {
-          "text" : "Collard greens",
+          "text" : "כרוב ירוק",
           "topic" : "topics/collard-greens"
         },
         {
-          "text" : "Kale (black, green, and red)",
+          "text" : "קייל (שחור, ירוק ואדום)",
           "topic" : "topics/kale"
         },
         {
-          "text" : "Mesclun mix (assorted young salad greens)",
+          "text" : "עלי בייבי",
           "topic" : ""
         },
         {
-          "text" : "Mustard greens",
+          "text" : "עלי חרדל",
           "topic" : "topics/mustard-greens"
         },
         {
-          "text" : "Sorrel",
+          "text" : "חומעה",
           "topic" : ""
         },
         {
-          "text" : "Spinach",
+          "text" : "תרד",
           "topic" : "topics/spinach"
         },
         {
-          "text" : "Swiss chard",
+          "text" : "סלק עלים, מנגולד",
           "topic" : "topics/swiss-chard"
         },
         {
-          "text" : "Turnip greens",
+          "text" : "לפת",
           "topic" : ""
         }
       ]
     },
     "dozeNuts" : {
-      "heading" : "Nuts and Seeds",
+      "heading" : "אגוזים וזרעים",
       "servings" : [
         {
-          "imperial" : "¼ cup nuts or seeds",
-          "metric" : "30 g nuts or seeds"
+          "imperial" : "1/4 כוס אגוזים או זרעים",
+          "metric" : "30 גרם אגוזים או זרעים"
         },
         {
-          "imperial" : "2 tablespoons nut or seed butter",
-          "metric" : "2 tablespoons nut or seed butter"
+          "imperial" : "2 כפות חמאת אגוזים או זרעים",
+          "metric" : "2 כפות חמאת אגוזים או זרעים"
         }
       ],
       "topic" : "topics/nuts",
       "varieties" : [
         {
-          "text" : "Almonds",
+          "text" : "שקדים",
           "topic" : "topics/almonds"
         },
         {
-          "text" : "Brazil nuts",
+          "text" : "אגוזי ברזיל",
           "topic" : "topics/brazil-nuts"
         },
         {
-          "text" : "Cashews",
+          "text" : "קשיו",
           "topic" : "topics/cashews"
         },
         {
-          "text" : "Chia seeds",
+          "text" : "זרעי צ'יה",
           "topic" : "topics/chia-seeds"
         },
         {
-          "text" : "Hazelnuts",
+          "text" : "אגוזי לוז",
           "topic" : "topics/hazelnuts"
         },
         {
-          "text" : "Hemp seeds",
+          "text" : "קנבוס",
           "topic" : ""
         },
         {
-          "text" : "Macadamia nuts",
+          "text" : "אגוזי מקדמיה",
           "topic" : "topics/macadamia-nuts"
         },
         {
-          "text" : "Pecans",
+          "text" : "פקאנים",
           "topic" : "topics/pecans"
         },
         {
-          "text" : "Pistachios",
+          "text" : "פיסטוק",
           "topic" : "topics/pistachios"
         },
         {
-          "text" : "Pumpkin seeds",
+          "text" : "גרעיני דלעת",
           "topic" : "topics/pumpkin-seeds"
         },
         {
-          "text" : "Sesame seeds",
+          "text" : "סומסום",
           "topic" : "topics/sesame-seeds"
         },
         {
-          "text" : "Sunflower seeds",
+          "text" : "גרעיני חמניה",
           "topic" : "topics/sunflower-seeds"
         },
         {
-          "text" : "Walnuts",
+          "text" : "אגוז מלך",
           "topic" : "topics/walnuts"
         }
       ]
     },
     "dozeSpices" : {
-      "heading" : "Herbs and Spices",
+      "heading" : "צמחי מרפא ותבלינים",
       "servings" : [
         {
-          "imperial" : "¼ teaspoon of turmeric",
-          "metric" : "¼ teaspoon of turmeric"
+          "imperial" : "1/4 כפית כורכום",
+          "metric" : "1/4 כפית כורכום"
         },
         {
-          "imperial" : "Any other (salt-free) herbs and spices you enjoy",
-          "metric" : "Any other (salt-free) herbs and spices you enjoy"
+          "imperial" : "עשבי מרפא ותבלינים נוספים (ללא מלח) שאתם אוהבים",
+          "metric" : "עשבי מרפא ותבלינים נוספים (ללא מלח) שאתם אוהבים"
         }
       ],
       "topic" : "topics/spices",
       "varieties" : [
         {
-          "text" : "Allspice",
+          "text" : "פלפל אנגלי",
           "topic" : "topics/allspice"
         },
         {
-          "text" : "Barberries",
+          "text" : "ברביריס -גרגירים אדומים חמוצים",
           "topic" : "topics/barberries"
         },
         {
-          "text" : "Basil",
+          "text" : "בזיליקום",
           "topic" : "topics/basil"
         },
         {
-          "text" : "Bay leaves",
+          "text" : "עלי דפנה",
           "topic" : ""
         },
         {
-          "text" : "Cardamom",
+          "text" : "הל",
           "topic" : ""
         },
         {
-          "text" : "Chili powder",
+          "text" : "אבקת צ'ילי",
           "topic" : ""
         },
         {
-          "text" : "Cilantro",
+          "text" : "כוסברה",
           "topic" : "topics/cilantro"
         },
         {
-          "text" : "Cinnamon",
+          "text" : "קינמון",
           "topic" : "topics/cinnamon"
         },
         {
-          "text" : "Cloves",
+          "text" : "ציפורן",
           "topic" : "topics/cloves"
         },
         {
-          "text" : "Coriander",
+          "text" : "כוסברה",
           "topic" : ""
         },
         {
-          "text" : "Cumin",
+          "text" : "כמון",
           "topic" : "topics/cumin"
         },
         {
-          "text" : "Curry powder",
+          "text" : "אבקת קארי",
           "topic" : "topics/curry-powder"
         },
         {
-          "text" : "Dill",
+          "text" : "שמיר",
           "topic" : ""
         },
         {
-          "text" : "Fenugreek",
+          "text" : "חילבה",
           "topic" : "topics/fenugreek"
         },
         {
-          "text" : "Garlic",
+          "text" : "שום",
           "topic" : "topics/garlic"
         },
         {
-          "text" : "Ginger",
+          "text" : "זנגויל",
           "topic" : "topics/ginger"
         },
         {
-          "text" : "Horseradish",
+          "text" : "חזרת",
           "topic" : ""
         },
         {
-          "text" : "Lemongrass",
+          "text" : "לימונית",
           "topic" : ""
         },
         {
-          "text" : "Marjoram",
+          "text" : "מיורן",
           "topic" : "topics/marjoram"
         },
         {
-          "text" : "Mustard powder",
+          "text" : "אבקת חרדל",
           "topic" : "topics/mustard-powder"
         },
         {
-          "text" : "Nutmeg",
+          "text" : "מוסקט",
           "topic" : "topics/nutmeg"
         },
         {
-          "text" : "Oregano",
+          "text" : "אורגנו",
           "topic" : "topics/oregano"
         },
         {
-          "text" : "Smoked paprika",
+          "text" : "פפריקה מעושנת",
           "topic" : ""
         },
         {
-          "text" : "Parsley",
+          "text" : "פטרוזיליה",
           "topic" : "topics/parsley"
         },
         {
-          "text" : "Pepper",
+          "text" : "פלפל",
           "topic" : "topics/pepper"
         },
         {
-          "text" : "Peppermint",
+          "text" : "מנטה",
           "topic" : "topics/peppermint"
         },
         {
-          "text" : "Rosemary",
+          "text" : "רוזמרין",
           "topic" : "topics/rosemary"
         },
         {
-          "text" : "Saffron",
+          "text" : "זעפרן",
           "topic" : "topics/saffron"
         },
         {
-          "text" : "Sage",
+          "text" : "מרווה",
           "topic" : ""
         },
         {
-          "text" : "Thyme",
+          "text" : "טימין",
           "topic" : ""
         },
         {
-          "text" : "Turmeric",
+          "text" : "כורכום",
           "topic" : "topics/turmeric"
         },
         {
-          "text" : "Vanilla",
+          "text" : "וניל",
           "topic" : ""
         }
       ]
     },
     "dozeVegetablesCruciferous" : {
-      "heading" : "Cruciferous Vegetables",
+      "heading" : "ירקות מצליבים",
       "servings" : [
         {
-          "imperial" : "½ cup chopped",
-          "metric" : "30–80 g chopped"
+          "imperial" : "1/2 כוס קצוצים",
+          "metric" : "30-80 גרם קצוצים"
         },
         {
-          "imperial" : "¼ cup Brussels or broccoli sprouts",
-          "metric" : "12 g Brussels or broccoli sprouts"
+          "imperial" : "1/4 כוס כרוב ניצנים או נבטי ברוקולי",
+          "metric" : "12 גרם כרוב ניצנים או נבטי ברוקולי"
         },
         {
-          "imperial" : "1 tablespoon horseradish",
-          "metric" : "1 tablespoon horseradish"
+          "imperial" : "כף חזרת",
+          "metric" : "כף חזרת"
         }
       ],
       "topic" : "",
       "varieties" : [
         {
-          "text" : "Arugula",
+          "text" : "אורוגולה",
           "topic" : ""
         },
         {
-          "text" : "Bok choy",
+          "text" : "בוק צ'וי",
           "topic" : "topics/bok-choy"
         },
         {
-          "text" : "Broccoli (incl. Romanesco)",
+          "text" : "ברוקולי (כולל רומנסקו)",
           "topic" : "topics/broccoli"
         },
         {
-          "text" : "Brussels sprouts",
+          "text" : "כרוב ניצנים",
           "topic" : "topics/brussels-sprouts"
         },
         {
-          "text" : "Cabbage (green, red and savoy)",
+          "text" : "כרוב (ירוק, אדום וסבוי)",
           "topic" : "topics/cabbage"
         },
         {
-          "text" : "Cauliflower (white, green, orange and purple)",
+          "text" : "כרובית (לבנה, ירוקה, כתומה וסגולה)",
           "topic" : "topics/cauliflower"
         },
         {
-          "text" : "Collard greens",
+          "text" : "כרוב ירוק",
           "topic" : "topics/collard-greens"
         },
         {
-          "text" : "Horseradish",
+          "text" : "חזרת",
           "topic" : ""
         },
         {
-          "text" : "Kale (black, green, and red)",
+          "text" : "קייל (שחור, ירוק ואדום)",
           "topic" : "topics/kale"
         },
         {
-          "text" : "Kohlrabi (green and purple)",
+          "text" : "קולרבי (ירוק וסגול)",
           "topic" : ""
         },
         {
-          "text" : "Mustard greens",
+          "text" : "עלי חרדל",
           "topic" : "topics/mustard-greens"
         },
         {
-          "text" : "Radishes",
+          "text" : "צנוניות",
           "topic" : ""
         },
         {
-          "text" : "Turnip greens",
+          "text" : "לפת",
           "topic" : ""
         },
         {
-          "text" : "Watercress",
+          "text" : "גרגר הנחלים",
           "topic" : "topics/watercress"
         }
       ]
     },
     "dozeVegetablesOther" : {
-      "heading" : "Other Vegetables",
+      "heading" : "ירקות אחרים",
       "servings" : [
         {
-          "imperial" : "1 cup raw leafy vegetables",
-          "metric" : "60 g raw leafy vegetables"
+          "imperial" : "כוס ירקות עליים טריים",
+          "metric" : "60 גרם ירקות עליים טריים"
         },
         {
-          "imperial" : "½ cup raw or cooked nonleafy vegetables",
-          "metric" : "50 g raw or cooked nonleafy vegetables"
+          "imperial" : "1/2 כוס ירקות לא עליים טריים או מבושלים",
+          "metric" : "50 גרם ירקות לא עליים טריים או מבושלים"
         },
         {
-          "imperial" : "½ cup vegetable juice",
-          "metric" : "125 ml vegetable juice"
+          "imperial" : "1/2 כוס מיץ ירקות",
+          "metric" : "125 מ\"ל מיץ ירקות"
         },
         {
-          "imperial" : "¼ cup dried mushrooms",
-          "metric" : "7 g dried mushrooms"
+          "imperial" : "1/4 כוס פטריות מיובשות",
+          "metric" : "7 גרם פטריות מיובשות"
         }
       ],
       "topic" : "",
       "varieties" : [
         {
-          "text" : "Artichokes",
+          "text" : "ארטישוקים",
           "topic" : "topics/artichokes"
         },
         {
-          "text" : "Asparagus",
+          "text" : "אספרגוס",
           "topic" : "topics/asparagus"
         },
         {
-          "text" : "Beets",
+          "text" : "סלקים",
           "topic" : "topics/beets"
         },
         {
-          "text" : "Bell peppers",
+          "text" : "גמבה",
           "topic" : "topics/bell-peppers"
         },
         {
-          "text" : "Carrots",
+          "text" : "גזרים",
           "topic" : "topics/carrots"
         },
         {
-          "text" : "Corn",
+          "text" : "תירס",
           "topic" : "topics/corn"
         },
         {
-          "text" : "Garlic",
+          "text" : "שום",
           "topic" : "topics/garlic"
         },
         {
-          "text" : "Mushrooms (button, oyster, portobello, and shiitake)",
+          "text" : "פטריות (כפתור, אויסטר, פורטובלו ושיטאקה)",
           "topic" : "topics/mushrooms"
         },
         {
-          "text" : "Okra",
+          "text" : "במיה",
           "topic" : "topics/okra"
         },
         {
-          "text" : "Onions",
+          "text" : "בצלים",
           "topic" : "topics/onions"
         },
         {
-          "text" : "Purple potatoes",
+          "text" : "תפוחי אדמה סגולים",
           "topic" : "topics/potatoes"
         },
         {
-          "text" : "Pumpkin",
+          "text" : "דלעת",
           "topic" : "topics/pumpkin"
         },
         {
-          "text" : "Sea vegetables (arame, dulse, and nori)",
+          "text" : "צמחי ים (אראמה, דולסה ונורי)",
           "topic" : "topics/sea-vegetables"
         },
         {
-          "text" : "Snap peas",
+          "text" : "אפונת סוכר",
           "topic" : ""
         },
         {
-          "text" : "Squash (delicata, summer, and spaghetti squash varieties)",
+          "text" : "סקווש (מעדני קיץ מסקווש וסקווש ספגטי)",
           "topic" : "topics/squash"
         },
         {
-          "text" : "Sweet potatoes/yams",
+          "text" : "בטטות ויאם",
           "topic" : "topics/sweet-potatoes"
         },
         {
-          "text" : "Tomatoes",
+          "text" : "עגבניות",
           "topic" : "topics/tomatoes"
         },
         {
-          "text" : "Zucchini",
+          "text" : "קישוא",
           "topic" : "topics/zucchini"
         }
       ]
     },
     "dozeWholeGrains" : {
-      "heading" : "Whole Grains",
+      "heading" : "דגנים מלאים",
       "servings" : [
         {
-          "imperial" : "½ cup hot cereal or cooked grains, pasta, or corn kernels",
-          "metric" : "100 g hot cereal or cooked grains, pasta, or corn kernels"
+          "imperial" : "1/2 כוס דגני בוקר חמים או דגנים מבושלים, פסטה או לבבות תירס",
+          "metric" : "100 גרם דגני בוקר חמים או דגנים מבושלים, פסטה או לבבות תירס"
         },
         {
-          "imperial" : "1 cup cold cereal",
-          "metric" : "50 g cold cereal"
+          "imperial" : "1 כוס דגני בוקר קרים",
+          "metric" : "50 גרם דגני בוקר קרים"
         },
         {
-          "imperial" : "1 tortilla or slice of bread",
-          "metric" : "1 tortilla or slice of bread"
+          "imperial" : "1 טורטיה או פרוסת לחם",
+          "metric" : "1 טורטיה או פרוסת לחם"
         },
         {
-          "imperial" : "½ a bagel or English muffin",
-          "metric" : "½ a bagel or English muffin"
+          "imperial" : "1/2 בייגל או מאפין אנגלי",
+          "metric" : "1/2 בייגל או מאפין אנגלי"
         },
         {
-          "imperial" : "3 cups popped popcorn",
-          "metric" : "30 g popped popcorn"
+          "imperial" : "3 כוסות פופקורן מוכן",
+          "metric" : "30 גרם פופקורן מוכן"
         }
       ],
       "topic" : "topics/grains",
       "varieties" : [
         {
-          "text" : "Barley",
+          "text" : "שעורה",
           "topic" : "topics/barley"
         },
         {
-          "text" : "Buckwheat",
+          "text" : "כוסמת",
           "topic" : "topics/buckwheat"
         },
         {
-          "text" : "Millet",
+          "text" : "דוחן",
           "topic" : "topics/millet"
         },
         {
-          "text" : "Oats",
+          "text" : "שיבולת שועל",
           "topic" : "topics/oats"
         },
         {
-          "text" : "Popcorn",
+          "text" : "פופקורן",
           "topic" : "topics/popcorn"
         },
         {
-          "text" : "Quinoa",
+          "text" : "קינואה",
           "topic" : "topics/quinoa"
         },
         {
-          "text" : "Rye",
+          "text" : "שיפון",
           "topic" : "topics/rye"
         },
         {
-          "text" : "Teff",
+          "text" : "טף",
           "topic" : ""
         },
         {
-          "text" : "Whole-wheat pasta",
+          "text" : "פסטה מחיטה מלא",
           "topic" : "topics/pasta"
         }
       ]

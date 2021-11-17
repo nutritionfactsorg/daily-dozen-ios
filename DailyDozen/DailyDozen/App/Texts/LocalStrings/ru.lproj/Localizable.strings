@@ -56,7 +56,7 @@
 "dozeOtherInfo.message" = "Витамин B12 крайне важен для вашего здоровья, но он не считается с другими ежедневными порциями. \n\nВитамин B12 добавлен в это приложение, чтобы облегчить отслеживание приема добавки.";
 
 /*  */
-"dozeOtherInfo.title" = "Добавки";
+"dozeOtherInfo.section" = "Пищевые добавки";
 
 /*  */
 "dozeOtherInfo.title" = "Пищевые добавки";
@@ -337,8 +337,38 @@
 /*  */
 "units_label" = "Единица Измерения:";
 
-/* Keyword for link to video topics */
-"videos.link.label" = "ВИДЕО";
+/* URL path */
+"urlSegment.base" = "https://nutritionfacts.org/";
+
+/*  */
+"urlSegment.lang" = "";
+
+/* main info menu: book */
+"urlSegmentInfoMenu.book" = "book";
+
+/* main info menu: daily-dozen-challenge */
+"urlSegmentInfoMenu.challenge" = "daily-dozen-challenge";
+
+/* main info menu: cookbook */
+"urlSegmentInfoMenu.cookbook" = "cookbook";
+
+/* main info menu: how-not-to-diet */
+"urlSegmentInfoMenu.diet" = "how-not-to-diet";
+
+/* main info menu: donate */
+"urlSegmentInfoMenu.donate" = "donate";
+
+/* main info menu: open-source */
+"urlSegmentInfoMenu.source" = "open-source";
+
+/* main info menu: subscribe */
+"urlSegmentInfoMenu.subscribe" = "subscribe";
+
+/* team */
+"urlSegmentInfoMenu.team" = "team";
+
+/* main info menu: videos */
+"urlSegmentInfoMenu.videos" = "videos";
 
 /* Keyword for link to video topics */
 "videos.link.label" = "ВИДЕО";

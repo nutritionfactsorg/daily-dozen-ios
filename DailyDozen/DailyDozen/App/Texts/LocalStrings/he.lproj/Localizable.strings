@@ -1,0 +1,403 @@
+/* DailyDozen Localizable.strings (he) */
+/* Copyright © 2021 Nutritionfacts.org. All rights reserved. */
+
+/*  */
+"apple.info.about.0" = "ברוכים הבאים לתריסר השבועי שלי!";
+
+/*  */
+"apple.info.about.1" = "השתמשו באפליקציה זו על בסיס יומי כדי לעקוב אחר המזונות והעצות שאני ממליץ עליהן לבריאות ואריכות ימים בצורה אופטימלית בספרים שלי \"איך לא למות\" ו\"איך לא לעשות דיאטה\".";
+
+/*  */
+"apple.info.about.2" = "התריסר היומי";
+
+/*  */
+"apple.info.about.3" = "ורסיה 3.2.3";
+
+/*  */
+"apple.info.about.4" = "אפליקציה זו נוצרה על ידי: NutritionFacts.org, כריסטי ריצ'רדס, קונסטנטין חוחלוב ומארק קמפבל";
+
+/*  */
+"apple.info.about.5" = "נעשה שימוש בספריות הקוד הפתוח שלהלן: RealmSwift, תרשימים, FSCalendar, SimpleAnimation, ActiveLabel.";
+
+/*  */
+"dateBackButtonTitle" = "בחזרה להיום";
+
+/*  */
+"dateButtonTitle.today" = "היום";
+
+/*  */
+"dozeBeans.heading" = "שעועית";
+
+/*  */
+"dozeBerries.heading" = "גרגרי יער";
+
+/*  */
+"dozeBeverages.heading" = "משקאות קלים";
+
+/*  */
+"dozeExercise.heading" = "ספורט";
+
+/*  */
+"dozeFlaxseeds.heading" = "זרעי פשתן";
+
+/*  */
+"dozeFruitsOther.heading" = "פירות אחרים";
+
+/*  */
+"dozeGreens.heading" = "ירקות ירוקים";
+
+/*  */
+"dozeNuts.heading" = "אגוזים וזרעים";
+
+/*  */
+"dozeOtherInfo.confirm" = "טוב";
+
+/*  */
+"dozeOtherInfo.message" = "ויטמין B12 חיוני לבריאותכם אך אינו נכנס לתוך המנות היומיומיות שלכם. \ n \ n ויטמין B12 כלול באפליקציה זו כדי לספק לכם דרך קלה לעקוב אחר צריכתכם.";
+
+/*  */
+"dozeOtherInfo.section" = "תוספי תזונה";
+
+/*  */
+"dozeOtherInfo.title" = "תוספי תזונה";
+
+/*  */
+"dozeSpices.heading" = "צמחי מרפא ותבלינים";
+
+/*  */
+"dozeVegetablesCruciferous.heading" = "ירקות מצליבים";
+
+/*  */
+"dozeVegetablesOther.heading" = "ירקות אחרים";
+
+/*  */
+"dozeWholeGrains.heading" = "דגנים מלאים";
+
+/*  */
+"doze_detail_section_sizes" = "גודלי מנות";
+
+/*  */
+"doze_detail_section_types" = "סוגים";
+
+/*  */
+"doze_entry_header" = "מנות";
+
+/*  */
+"historyRecordDoze.heading" = "הסטוריית המנות";
+
+/*  */
+"historyRecordDoze.legend" = "מנות";
+
+/*  */
+"historyRecordTweak.heading" = "שינויים בהסטוריה";
+
+/*  */
+"historyRecordTweak.legend" = "שינויים";
+
+/*  */
+"historyRecordWeight.heading" = "הסטוריית המשקל";
+
+/*  */
+"historyRecordWeight.legendEvening" = "ערב";
+
+/*  */
+"historyRecordWeight.legendMorning" = "בוקר";
+
+/*  */
+"historyRecordWeight.titleImperial" = "משקל (ליברות)";
+
+/*  */
+"historyRecordWeight.titleMetric" = "משקל (ק\"ג)";
+
+/* Calendar view scale control */
+"history_scale_choice_day" = "יום";
+
+/* Calendar view scale control */
+"history_scale_choice_month" = "חודש";
+
+/* Calendar view scale control */
+"history_scale_choice_year" = "שנה";
+
+/*  */
+"history_scale_label" = "סולם זמן";
+
+/*  */
+"info.about.title" = "בקשר לאפליקציה זו";
+
+/*  */
+"info_app_about" = "לגבי";
+
+/* 'Daily Dozen' application name */
+"info_app_about_app_name" = "השניים עשר היומי";
+
+/*  */
+"info_app_about_overview" = "השתמשו באפליקציה זו על בסיס יומי כדי לעקוב אחר המזונות והעצות שאני ממליץ עליהן לבריאות ואריכות ימים בצורה אופטימלית בספרים שלי \"איך לא למות\" ו\"איך לא לעשות דיאטה\".";
+
+/* Application release version */
+"info_app_about_version" = "ורסיה 3.2.1";
+
+/*  */
+"info_app_about_welcome" = "ברוכים הבאים לתריסר היומי שלי!";
+
+/*  */
+"info_book_how_not_to_die" = "ספר: כיצד לא למות";
+
+/*  */
+"info_book_how_not_to_die_cookbook" = "ספר: כיצד לא למות ספר הבישול";
+
+/*  */
+"info_book_how_not_to_diet" = "ספר: כיצד לא למות";
+
+/*  */
+"info_webpage_daily_dozen_challenge" = "האתגר של התריסר היומי";
+
+/*  */
+"info_webpage_donate" = "תירמו";
+
+/*  */
+"info_webpage_open_source" = "מקור פתוח";
+
+/*  */
+"info_webpage_subscribe" = "הירשמו";
+
+/*  */
+"info_webpage_videos_latest" = "הסרטונים האחרונים";
+
+/*  */
+"item_history_completed_all" = "כל המנות";
+
+/*  */
+"item_history_completed_some" = "חלק מהמנות";
+
+/*  */
+"item_history_heading" = "הסטוריה";
+
+/*  */
+"navtab.doze" = "התריסר היומי";
+
+/*  */
+"navtab.info" = "מידע";
+
+/*  */
+"navtab.preferences" = "העדפות";
+
+/*  */
+"navtab.tweaks" = "21 שינויים";
+
+/*  */
+"otherVitaminB12.heading" = "ויטמין B12";
+
+/* Alert notification text */
+"reminder.alert.text" = "עדכנו את המנות שלכם להיום";
+
+/*  */
+"reminder.heading" = "תזכורת יומית";
+
+/*  */
+"reminder.settings.enable" = "אפשר תזכורות";
+
+/* On/Off toggle label */
+"reminder.settings.enable" = "אפשר תזכורות";
+
+/*  */
+"reminder.settings.sound" = "השמעת צליל";
+
+/*  */
+"reminder.settings.time" = "הזכר לי ב:";
+
+/* Android notification `vibrate` */
+"reminder.settings.vibrate" = "רטט";
+
+/* 'Off' as in 'On or Off', reminder is not enabled */
+"reminder.state.off" = "סגור";
+
+/* 'On' as in 'On or Off' */
+"reminder.state.on" = "פתוח";
+
+/*  */
+"setting_doze_only_btn" = "התריסר היומי בלבד";
+
+/*  */
+"setting_doze_only_choice" = "התריסר היומי בלבד";
+
+/*  */
+"setting_doze_tweak_btn" = "התריסר היומי + 21 כוונונים";
+
+/*  */
+"setting_doze_tweak_choice" = "התריסר היומי +  21 כיוונונים";
+
+/*  */
+"setting_doze_tweak_footer" = "לבריאות בלבד, השתמשו ב\"תריסר היומי\" בלבד \". לבריאות וירידה במשקל השתמשו ב- \"תריסר היומי + 21 כיוונונים\".";
+
+/*  */
+"setting_health_alone_txt" = "עבור בריאות בלבד";
+
+/*  */
+"setting_health_weight_txt" = "עבור בריאות והורדה במשקל";
+
+/*  */
+"setting_tweak_header" = "ניראות של 21 הכיוונונים";
+
+/* Part of "Imperial/Metric/Toggle Units" selector */
+"setting_units_0_imperial" = "אימפריאלי";
+
+/* Part of "Imperial/Metric/Toggle Units" selector */
+"setting_units_1_metric" = "מטרי";
+
+/* Part of "Imperial/Metric/Toggle Units" selector */
+"setting_units_2_toggle" = "שינוי מצב היחידות";
+
+/*  */
+"setting_units_choice_footer" = "הגדירו תמיד סוג יחידה אחד או הפעילו את לחצן ההחלפה 'יחידות:'.";
+
+/*  */
+"setting_units_header" = "יחידות מדידה";
+
+/*  */
+"setting_util_advanced" = "כלי עזר מתקדמים";
+
+/* Formatted string %d days */
+"streakDaysFormat" = "%d ימים";
+
+/*  */
+"tweakCompleteIntentions.heading" = "כל חודשיים, צור שלוש כוונות יישום חדשות - \"אם X, אז Y\" מתכנן לבצע התנהגות מסוימת בהקשר ספציפי - ובדוק כל אחת מהן כאשר אתה משלים אותן מדי יום.";
+
+/*  */
+"tweakDailyBlackCumin.heading" = "כמון שחור (1/4 כפית)";
+
+/*  */
+"tweakDailyCumin.heading" = "כמון (1/2 כפית עם ארוחות צהריים וערב)";
+
+/*  */
+"tweakDailyDeflourDiet.heading" = "טירפו את התזונה שלכם";
+
+/*  */
+"tweakDailyFrontLoad.heading" = "חזית- טענו את הקלוריות שלכם";
+
+/*  */
+"tweakDailyGarlic.heading" = "אבקת שום (1/4 כפית)";
+
+/*  */
+"tweakDailyGinger.heading" = "זנגויל טחון (1 כפית) או פלפל קאיין (1/2 כפית)";
+
+/*  */
+"tweakDailyGreenTea.heading" = "תה ירוק (3 כוסות)";
+
+/*  */
+"tweakDailyHydrate.heading" = "שתו מספיק";
+
+/*  */
+"tweakDailyNutriYeast.heading" = "שמרי בירה (2 כפיות)";
+
+/*  */
+"tweakDailyTimeRestrict.heading" = "הגבלת זמן האכילה שלכם";
+
+/*  */
+"tweakExerciseTiming.heading" = "יעלו את זמן הספורט";
+
+/*  */
+"tweakMeal20Minutes.heading" = "עיקבו אחר חוק 20 הדקות";
+
+/*  */
+"tweakMealNegCal.heading" = "טענו מראש עם מזונות עם \"קלוריות שליליות\"";
+
+/*  */
+"tweakMealUndistracted.heading" = "תהנו מארוחות ללא הפרעה";
+
+/*  */
+"tweakMealVinegar.heading" = "שלבו חומץ (2 כפיות בכל ארוחה)";
+
+/*  */
+"tweakMealWater.heading" = "הטענו מראש עם מים";
+
+/*  */
+"tweakNightlyFast.heading" = "צומו לאחר 19:00";
+
+/*  */
+"tweakNightlySleep.heading" = "קבלו שינה מספיקה";
+
+/*  */
+"tweakNightlyTrendelenbrug.heading" = "התנסו ב-Trendelenburg מתון";
+
+/*  */
+"tweakWeightTwice.heading" = "שיקלו את עצמכם פעמיים ביום";
+
+/*  */
+"tweak_detail_section_activity" = "פעילות";
+
+/*  */
+"tweak_detail_section_description" = "תיאור";
+
+/*  */
+"tweak_entry_header" = "21 כוונונים";
+
+/*  */
+"unitToggle.imperial" = "קיסרי";
+
+/*  */
+"unitToggle.metric" = "מטרי";
+
+/*  */
+"units_label" = "יחידות:";
+
+/* URL path */
+"urlSegment.base" = "https://nutritionfacts.org/";
+
+/*  */
+"urlSegment.lang" = "";
+
+/* main info menu: book */
+"urlSegmentInfoMenu.book" = "book";
+
+/* main info menu: daily-dozen-challenge */
+"urlSegmentInfoMenu.challenge" = "daily-dozen-challenge";
+
+/* main info menu: cookbook */
+"urlSegmentInfoMenu.cookbook" = "cookbook";
+
+/* main info menu: how-not-to-diet */
+"urlSegmentInfoMenu.diet" = "how-not-to-diet";
+
+/* main info menu: donate */
+"urlSegmentInfoMenu.donate" = "donate";
+
+/* main info menu: open-source */
+"urlSegmentInfoMenu.source" = "open-source";
+
+/* main info menu: subscribe */
+"urlSegmentInfoMenu.subscribe" = "subscribe";
+
+/* team */
+"urlSegmentInfoMenu.team" = "team";
+
+/* main info menu: videos */
+"urlSegmentInfoMenu.videos" = "videos";
+
+/* Keyword for link to video topics */
+"videos.link.label" = "סרטונים";
+
+/*  */
+"weightEntry.heading" = "משקל";
+
+/*  */
+"weight_entry_clear" = "נקה";
+
+/*  */
+"weight_entry_evening" = "ערב (מיד לפני השינה)";
+
+/*  */
+"weight_entry_morning" = "בוקר (בזמן הליכה)";
+
+/*  */
+"weight_entry_time" = "זמן";
+
+/*  */
+"weight_entry_units_kg" = "ק\"ג";
+
+/*  */
+"weight_entry_units_lbs" = "ליברות";
+
+/*  */
+"weight_history_edit_data" = "עריכת נתונים";
+
+/* file end */

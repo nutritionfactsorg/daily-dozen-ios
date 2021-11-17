@@ -254,6 +254,10 @@
 		498F724C239E08C0004E501B /* FirstLaunchViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FirstLaunchViewController.swift; sourceTree = "<group>"; };
 		498F724E239E2EA3004E501B /* HealthKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = HealthKit.framework; path = System/Library/Frameworks/HealthKit.framework; sourceTree = SDKROOT; };
 		498F7250239E3007004E501B /* HealthManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HealthManager.swift; sourceTree = "<group>"; };
+		49905C5D27450AEB00856467 /* he */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = he; path = he.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		49905C5E27450AEB00856467 /* he */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = he; path = he.lproj/Localizable.strings; sourceTree = "<group>"; };
+		49905C5F27450AEB00856467 /* he */ = {isa = PBXFileReference; lastKnownFileType = text.json; name = he; path = he.lproj/DozeDetailData.json; sourceTree = "<group>"; };
+		49905C6027450AEB00856467 /* he */ = {isa = PBXFileReference; lastKnownFileType = text.json; name = he; path = he.lproj/TweakDetailData.json; sourceTree = "<group>"; };
 		499089812665D9C40053D74D /* AlertActivityBar.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AlertActivityBar.swift; sourceTree = "<group>"; };
 		499089832665D9D70053D74D /* AlertActivitySpinner.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AlertActivitySpinner.swift; sourceTree = "<group>"; };
 		499089852665DA1A0053D74D /* UIApplication.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIApplication.swift; sourceTree = "<group>"; };
@@ -1222,6 +1226,7 @@
 				"pt-BR",
 				"pt-PT",
 				ru,
+				he,
 			);
 			mainGroup = CFE6982F1F974B9700CD7905;
 			productRefGroup = CFE698391F974B9700CD7905 /* Products */;
@@ -1562,6 +1567,7 @@
 				49FCFE9627327895000E92F1 /* pt-BR */,
 				49FCFE9A273278A0000E92F1 /* pt-PT */,
 				49FCFE9E273278AB000E92F1 /* ru */,
+				49905C6027450AEB00856467 /* he */,
 			);
 			name = TweakDetailData.json;
 			sourceTree = "<group>";
@@ -1575,6 +1581,7 @@
 				49FCFE9327327894000E92F1 /* pt-BR */,
 				49FCFE972732789F000E92F1 /* pt-PT */,
 				49FCFE9B273278AA000E92F1 /* ru */,
+				49905C5D27450AEB00856467 /* he */,
 			);
 			name = InfoPlist.strings;
 			sourceTree = "<group>";
@@ -1588,6 +1595,7 @@
 				49FCFE9527327894000E92F1 /* pt-BR */,
 				49FCFE99273278A0000E92F1 /* pt-PT */,
 				49FCFE9D273278AB000E92F1 /* ru */,
+				49905C5F27450AEB00856467 /* he */,
 			);
 			name = DozeDetailData.json;
 			sourceTree = "<group>";
@@ -1601,6 +1609,7 @@
 				49FCFE9427327894000E92F1 /* pt-BR */,
 				49FCFE982732789F000E92F1 /* pt-PT */,
 				49FCFE9C273278AA000E92F1 /* ru */,
+				49905C5E27450AEB00856467 /* he */,
 			);
 			name = Localizable.strings;
 			sourceTree = "<group>";
