@@ -11,7 +11,7 @@
 "apple.info.about.2" = "התריסר היומי";
 
 /* Info Menu About: line 3 */
-"apple.info.about.3" = "ורסיה 3.2.3";
+"apple.info.about.3" = "ורסיה 3.2.11";
 
 /* Info Menu About: line 4 */
 "apple.info.about.4" = "אפליקציה זו נוצרה על ידי: NutritionFacts.org, כריסטי ריצ'רדס, קונסטנטין חוחלוב ומארק קמפבל";
@@ -173,7 +173,7 @@
 "info_app_about_overview" = "השתמשו באפליקציה זו על בסיס יומי כדי לעקוב אחר המזונות והעצות שאני ממליץ עליהן לבריאות ואריכות ימים בצורה אופטימלית בספרים שלי \"איך לא למות\" ו\"איך לא לעשות דיאטה\".";
 
 /* Info About View Application release version */
-"info_app_about_version" = "ורסיה 3.2.1";
+"info_app_about_version" = "ורסיה 3.2.11";
 
 /* Info About View */
 "info_app_about_welcome" = "ברוכים הבאים לתריסר היומי שלי!";
