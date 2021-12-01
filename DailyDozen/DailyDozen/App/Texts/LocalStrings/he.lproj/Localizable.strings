@@ -1,340 +1,385 @@
 /* DailyDozen Localizable.strings (he) */
 /* Copyright © 2021 Nutritionfacts.org. All rights reserved. */
 
-/*  */
+/* Info Menu About: line 0 */
 "apple.info.about.0" = "ברוכים הבאים לתריסר השבועי שלי!";
 
-/*  */
+/* Info Menu About: line 1 */
 "apple.info.about.1" = "השתמשו באפליקציה זו על בסיס יומי כדי לעקוב אחר המזונות והעצות שאני ממליץ עליהן לבריאות ואריכות ימים בצורה אופטימלית בספרים שלי \"איך לא למות\" ו\"איך לא לעשות דיאטה\".";
 
-/*  */
+/* Info Menu About: line 2 */
 "apple.info.about.2" = "התריסר היומי";
 
-/*  */
+/* Info Menu About: line 3 */
 "apple.info.about.3" = "ורסיה 3.2.3";
 
-/*  */
+/* Info Menu About: line 4 */
 "apple.info.about.4" = "אפליקציה זו נוצרה על ידי: NutritionFacts.org, כריסטי ריצ'רדס, קונסטנטין חוחלוב ומארק קמפבל";
 
-/*  */
+/* Info Menu About: line 5 */
 "apple.info.about.5" = "נעשה שימוש בספריות הקוד הפתוח שלהלן: RealmSwift, תרשימים, FSCalendar, SimpleAnimation, ActiveLabel.";
 
-/*  */
+/* Date Button Title: ‘Back to today’ */
 "dateBackButtonTitle" = "בחזרה להיום";
 
-/*  */
+/* Date Button Title: ‘Today’ */
 "dateButtonTitle.today" = "היום";
 
-/*  */
+/* heading for daily data entry item */
 "dozeBeans.heading" = "שעועית";
 
-/*  */
+/* https://nutritionfacts.org/topics/beans */
+"dozeBeans.topic" = "topics/beans";
+
+/* heading for daily data entry item */
 "dozeBerries.heading" = "גרגרי יער";
 
-/*  */
+/* https://nutritionfacts.org/topics/berries */
+"dozeBerries.topic" = "topics/berries";
+
+/* heading for daily data entry item */
 "dozeBeverages.heading" = "משקאות קלים";
 
-/*  */
+/* https://nutritionfacts.org/topics/beverages */
+"dozeBeverages.topic" = "topics/beverages";
+
+/* heading for daily data entry item */
 "dozeExercise.heading" = "ספורט";
 
-/*  */
+/* https://nutritionfacts.org/topics/exercise */
+"dozeExercise.topic" = "topics/exercise";
+
+/* heading for daily data entry item */
 "dozeFlaxseeds.heading" = "זרעי פשתן";
 
-/*  */
+/* https://nutritionfacts.org/topics/flax-seeds */
+"dozeFlaxseeds.topic" = "topics/flax-seeds";
+
+/* heading for daily data entry item */
 "dozeFruitsOther.heading" = "פירות אחרים";
 
-/*  */
+/* https://nutritionfacts.org/topics/fruit */
+"dozeFruitsOther.topic" = "topics/fruit";
+
+/* heading for daily data entry item */
 "dozeGreens.heading" = "ירקות ירוקים";
 
-/*  */
+/* https://nutritionfacts.org/topics/greens */
+"dozeGreens.topic" = "topics/greens";
+
+/* heading for daily data entry item */
 "dozeNuts.heading" = "אגוזים וזרעים";
 
-/*  */
+/* https://nutritionfacts.org/topics/nuts */
+"dozeNuts.topic" = "topics/nuts";
+
+/* Daily Dozen supplement info alert: dismissal button text */
 "dozeOtherInfo.confirm" = "טוב";
 
-/*  */
+/* Daily Dozen supplement info alert: message */
 "dozeOtherInfo.message" = "ויטמין B12 חיוני לבריאותכם אך אינו נכנס לתוך המנות היומיומיות שלכם. \ n \ n ויטמין B12 כלול באפליקציה זו כדי לספק לכם דרך קלה לעקוב אחר צריכתכם.";
 
-/*  */
+/* Daily Dozen daily entry section heading */
 "dozeOtherInfo.section" = "תוספי תזונה";
 
-/*  */
+/* Daily Dozen supplement info alert: title */
 "dozeOtherInfo.title" = "תוספי תזונה";
 
-/*  */
+/* heading for daily data entry item */
 "dozeSpices.heading" = "צמחי מרפא ותבלינים";
 
-/*  */
+/* https://nutritionfacts.org/topics/spices */
+"dozeSpices.topic" = "topics/spices";
+
+/* heading for daily data entry item */
 "dozeVegetablesCruciferous.heading" = "ירקות מצליבים";
 
-/*  */
+/* https://nutritionfacts.org/topics/cruciferous-vegetables */
+"dozeVegetablesCruciferous.topic" = "topics/cruciferous-vegetables";
+
+/* heading for daily data entry item */
 "dozeVegetablesOther.heading" = "ירקות אחרים";
 
-/*  */
+/* https://nutritionfacts.org/topics/vegetables */
+"dozeVegetablesOther.topic" = "topics/vegetables";
+
+/* heading for daily data entry item */
 "dozeWholeGrains.heading" = "דגנים מלאים";
 
-/*  */
+/* https://nutritionfacts.org/topics/grains */
+"dozeWholeGrains.topic" = "topics/grains";
+
+/* Doze Detail View subheading: ‘Serving Sizes’ */
 "doze_detail_section_sizes" = "גודלי מנות";
 
-/*  */
+/* Doze Detail View subheading: ‘Types’ */
 "doze_detail_section_types" = "סוגים";
 
-/*  */
+/* Doze Entry View heading: ‘Servings’ */
 "doze_entry_header" = "מנות";
 
 /*  */
+"historyRecord.movingAverage" = "ממוצע נע";
+
+/* History View */
 "historyRecordDoze.heading" = "הסטוריית המנות";
 
-/*  */
+/* History View */
 "historyRecordDoze.legend" = "מנות";
 
-/*  */
+/* History View */
 "historyRecordTweak.heading" = "שינויים בהסטוריה";
 
-/*  */
+/* History View */
 "historyRecordTweak.legend" = "שינויים";
 
-/*  */
+/* History View */
 "historyRecordWeight.heading" = "הסטוריית המשקל";
 
-/*  */
+/* History View */
 "historyRecordWeight.legendEvening" = "ערב";
 
-/*  */
+/* History View */
 "historyRecordWeight.legendMorning" = "בוקר";
 
-/*  */
+/* History View */
 "historyRecordWeight.titleImperial" = "משקל (ליברות)";
 
-/*  */
+/* History View */
 "historyRecordWeight.titleMetric" = "משקל (ק\"ג)";
 
-/* Calendar view scale control */
+/* History View: calendar scale control */
 "history_scale_choice_day" = "יום";
 
-/* Calendar view scale control */
+/* History View: calendar scale control */
 "history_scale_choice_month" = "חודש";
 
-/* Calendar view scale control */
+/* History View: calendar scale control */
 "history_scale_choice_year" = "שנה";
 
-/*  */
+/* History View: scale text */
 "history_scale_label" = "סולם זמן";
 
-/*  */
+/* Info About View */
 "info.about.title" = "בקשר לאפליקציה זו";
 
-/*  */
+/* Info About View */
 "info_app_about" = "לגבי";
 
-/* 'Daily Dozen' application name */
+/* Info About View Application Name: ‘Daily Dozen’ */
 "info_app_about_app_name" = "השניים עשר היומי";
 
-/*  */
+/* Info About View */
 "info_app_about_overview" = "השתמשו באפליקציה זו על בסיס יומי כדי לעקוב אחר המזונות והעצות שאני ממליץ עליהן לבריאות ואריכות ימים בצורה אופטימלית בספרים שלי \"איך לא למות\" ו\"איך לא לעשות דיאטה\".";
 
-/* Application release version */
+/* Info About View Application release version */
 "info_app_about_version" = "ורסיה 3.2.1";
 
-/*  */
+/* Info About View */
 "info_app_about_welcome" = "ברוכים הבאים לתריסר היומי שלי!";
 
-/*  */
+/* Info Menu: book title */
 "info_book_how_not_to_die" = "ספר: כיצד לא למות";
 
-/*  */
+/* Info Menu: book title */
 "info_book_how_not_to_die_cookbook" = "ספר: כיצד לא למות ספר הבישול";
 
-/*  */
+/* Info Menu: book title */
 "info_book_how_not_to_diet" = "ספר: כיצד לא למות";
 
-/*  */
+/* Info Menu */
 "info_webpage_daily_dozen_challenge" = "האתגר של התריסר היומי";
 
-/*  */
+/* Info Menu */
 "info_webpage_donate" = "תירמו";
 
-/*  */
+/* Info Menu */
 "info_webpage_open_source" = "מקור פתוח";
 
-/*  */
+/* Info Menu */
 "info_webpage_subscribe" = "הירשמו";
 
-/*  */
+/* Info Menu */
 "info_webpage_videos_latest" = "הסרטונים האחרונים";
 
-/*  */
+/* Item History Legend: ‘All completed’ */
 "item_history_completed_all" = "כל המנות";
 
-/*  */
+/* Item History Legend: ‘Some completed’ */
 "item_history_completed_some" = "חלק מהמנות";
 
-/*  */
+/* Item History Heading */
 "item_history_heading" = "הסטוריה";
 
-/*  */
+/* Main Navigation Tab Control: ‘Daily Dozen’ (proper noun) */
 "navtab.doze" = "התריסר היומי";
 
-/*  */
+/* Main Navigation Tab Control: show more information */
 "navtab.info" = "מידע";
 
-/*  */
+/* Main Navigation Tab Control: ‘Preferences’ synonyms: Settings, Configuration. Choose a translations with is different from Tweaks. */
 "navtab.preferences" = "העדפות";
 
-/*  */
+/* Main Navigation Tab Control: ‘21 Tweaks’ (proper noun) */
 "navtab.tweaks" = "21 שינויים";
 
-/*  */
+/* https://nutritionfacts.org/topics/omega-3-fatty-acids */
+"otherOmega3.topic" = "topics/omega-3-fatty-acids";
+
+/* heading for daily data entry item */
 "otherVitaminB12.heading" = "ויטמין B12";
+
+/* https://nutritionfacts.org/topics/vitamin-b12 */
+"otherVitaminB12.topic" = "topics/vitamin-b12";
+
+/* https://nutritionfacts.org/topics/vitamin-d-supplements */
+"otherVitaminD.topic" = "topics/vitamin-d-supplements";
 
 /* Alert notification text */
 "reminder.alert.text" = "עדכנו את המנות שלכם להיום";
 
-/*  */
+/* Daily Reminder (alert title, settings section heading) */
 "reminder.heading" = "תזכורת יומית";
 
-/*  */
+/* Daily Reminder On/Off toggle switch label */
 "reminder.settings.enable" = "אפשר תזכורות";
 
-/* On/Off toggle label */
-"reminder.settings.enable" = "אפשר תזכורות";
-
-/*  */
+/* Daily Reminder sound control heading */
 "reminder.settings.sound" = "השמעת צליל";
 
-/*  */
+/* Daily Reminder time control heading */
 "reminder.settings.time" = "הזכר לי ב:";
 
 /* Android notification `vibrate` */
 "reminder.settings.vibrate" = "רטט";
 
-/* 'Off' as in 'On or Off', reminder is not enabled */
+/* ‘Off’ as in ‘On (enabled) or Off (disabled)’, Daily Reminder is not enabled */
 "reminder.state.off" = "סגור";
 
-/* 'On' as in 'On or Off' */
+/* ‘On’ as in ‘On (enabled) or Off (disable)’. Daily Reminder is enabled */
 "reminder.state.on" = "פתוח";
 
-/*  */
+/* First Launch Setting: button text */
 "setting_doze_only_btn" = "התריסר היומי בלבד";
 
-/*  */
+/* Preference Settings View: selection button text */
 "setting_doze_only_choice" = "התריסר היומי בלבד";
 
-/*  */
+/* First Launch Setting: button text */
 "setting_doze_tweak_btn" = "התריסר היומי + 21 כוונונים";
 
-/*  */
+/* Preference Settings View: selection button text */
 "setting_doze_tweak_choice" = "התריסר היומי +  21 כיוונונים";
 
-/*  */
+/* Preference Settings View: brief description text below Tweaks visibility control. */
 "setting_doze_tweak_footer" = "לבריאות בלבד, השתמשו ב\"תריסר היומי\" בלבד \". לבריאות וירידה במשקל השתמשו ב- \"תריסר היומי + 21 כיוונונים\".";
 
-/*  */
+/* First Launch Setting: brief description above ‘Daily Dozen Only’ button. */
 "setting_health_alone_txt" = "עבור בריאות בלבד";
 
-/*  */
+/* First Launch Setting: brief description above ‘Daily Dozen + 21 Tweaks’ button. */
 "setting_health_weight_txt" = "עבור בריאות והורדה במשקל";
 
-/*  */
+/* Preference Settings View: tweaks visibilty subsection heading */
 "setting_tweak_header" = "ניראות של 21 הכיוונונים";
 
-/* Part of "Imperial/Metric/Toggle Units" selector */
+/* Preference Settings View: Part of ‘Imperial/Metric/Toggle Units’ selector */
 "setting_units_0_imperial" = "אימפריאלי";
 
-/* Part of "Imperial/Metric/Toggle Units" selector */
+/* Preference Settings View: Part of ‘Imperial/Metric/Toggle Units’ selector */
 "setting_units_1_metric" = "מטרי";
 
-/* Part of "Imperial/Metric/Toggle Units" selector */
+/* Preference Settings View: Part of ‘Imperial/Metric/Toggle Units’ selector */
 "setting_units_2_toggle" = "שינוי מצב היחידות";
 
-/*  */
+/* Preference Settings View: brief description text below units control. */
 "setting_units_choice_footer" = "הגדירו תמיד סוג יחידה אחד או הפעילו את לחצן ההחלפה 'יחידות:'.";
 
-/*  */
+/* Preference Settings View */
 "setting_units_header" = "יחידות מדידה";
 
-/*  */
+/* Preference Settings View */
 "setting_util_advanced" = "כלי עזר מתקדמים";
 
-/* Formatted string %d days */
+/* ‘Streak’ count. Synonym: ‘Progress‘. Formatted number ‘%d’ for consecutive days completed. Place translated text for ‘days’ on the right or left of ‘%d’ based on language directionality. */
 "streakDaysFormat" = "%d ימים";
 
-/*  */
+/* heading for daily data entry item */
 "tweakCompleteIntentions.heading" = "כל חודשיים, צור שלוש כוונות יישום חדשות - \"אם X, אז Y\" מתכנן לבצע התנהגות מסוימת בהקשר ספציפי - ובדוק כל אחת מהן כאשר אתה משלים אותן מדי יום.";
 
-/*  */
+/* heading for daily data entry item */
 "tweakDailyBlackCumin.heading" = "כמון שחור (1/4 כפית)";
 
-/*  */
+/* heading for daily data entry item */
 "tweakDailyCumin.heading" = "כמון (1/2 כפית עם ארוחות צהריים וערב)";
 
-/*  */
+/* heading for daily data entry item */
 "tweakDailyDeflourDiet.heading" = "טירפו את התזונה שלכם";
 
-/*  */
+/* heading for daily data entry item */
 "tweakDailyFrontLoad.heading" = "חזית- טענו את הקלוריות שלכם";
 
-/*  */
+/* heading for daily data entry item */
 "tweakDailyGarlic.heading" = "אבקת שום (1/4 כפית)";
 
-/*  */
+/* heading for daily data entry item */
 "tweakDailyGinger.heading" = "זנגויל טחון (1 כפית) או פלפל קאיין (1/2 כפית)";
 
-/*  */
+/* heading for daily data entry item */
 "tweakDailyGreenTea.heading" = "תה ירוק (3 כוסות)";
 
-/*  */
+/* heading for daily data entry item */
 "tweakDailyHydrate.heading" = "שתו מספיק";
 
-/*  */
+/* heading for daily data entry item */
 "tweakDailyNutriYeast.heading" = "שמרי בירה (2 כפיות)";
 
-/*  */
+/* heading for daily data entry item */
 "tweakDailyTimeRestrict.heading" = "הגבלת זמן האכילה שלכם";
 
-/*  */
+/* heading for daily data entry item */
 "tweakExerciseTiming.heading" = "יעלו את זמן הספורט";
 
-/*  */
+/* heading for daily data entry item */
 "tweakMeal20Minutes.heading" = "עיקבו אחר חוק 20 הדקות";
 
-/*  */
+/* heading for daily data entry item */
 "tweakMealNegCal.heading" = "טענו מראש עם מזונות עם \"קלוריות שליליות\"";
 
-/*  */
+/* heading for daily data entry item */
 "tweakMealUndistracted.heading" = "תהנו מארוחות ללא הפרעה";
 
-/*  */
+/* heading for daily data entry item */
 "tweakMealVinegar.heading" = "שלבו חומץ (2 כפיות בכל ארוחה)";
 
-/*  */
+/* heading for daily data entry item */
 "tweakMealWater.heading" = "הטענו מראש עם מים";
 
-/*  */
+/* heading for daily data entry item */
 "tweakNightlyFast.heading" = "צומו לאחר 19:00";
 
-/*  */
+/* heading for daily data entry item */
 "tweakNightlySleep.heading" = "קבלו שינה מספיקה";
 
-/*  */
+/* heading for daily data entry item */
 "tweakNightlyTrendelenbrug.heading" = "התנסו ב-Trendelenburg מתון";
 
-/*  */
+/* heading for daily data entry item */
 "tweakWeightTwice.heading" = "שיקלו את עצמכם פעמיים ביום";
 
-/*  */
+/* Tweaks Detail view section heading */
 "tweak_detail_section_activity" = "פעילות";
 
-/*  */
+/* Tweaks Detail view section heading */
 "tweak_detail_section_description" = "תיאור";
 
-/*  */
+/* Tweaks daily entry header */
 "tweak_entry_header" = "21 כוונונים";
 
-/*  */
+/* Units toggle button text: imperial measurement system */
 "unitToggle.imperial" = "קיסרי";
 
-/*  */
+/* Units toggle button text: metric measurement system */
 "unitToggle.metric" = "מטרי";
 
 /*  */
@@ -373,31 +418,31 @@
 /* main info menu: videos */
 "urlSegmentInfoMenu.videos" = "videos";
 
-/* Keyword for link to video topics */
+/* Label for hyperlink to nutritionfacts.org video topics */
 "videos.link.label" = "סרטונים";
 
-/*  */
+/* Weight Daily Entry: heading */
 "weightEntry.heading" = "משקל";
 
-/*  */
+/* Weight Daily Entry: clear button which deletes values */
 "weight_entry_clear" = "נקה";
 
-/*  */
+/* Weight Daily Entry: label */
 "weight_entry_evening" = "ערב (מיד לפני השינה)";
 
-/*  */
+/* Weight Daily Entry: label */
 "weight_entry_morning" = "בוקר (בזמן הליכה)";
 
-/*  */
+/* Weight Daily Entry: label */
 "weight_entry_time" = "זמן";
 
-/*  */
+/* Weight Daily Entry Units: label */
 "weight_entry_units_kg" = "ק\"ג";
 
-/*  */
+/* Weight Daily Entry Units: label */
 "weight_entry_units_lbs" = "ליברות";
 
-/*  */
+/* Weight Daily Entry: edit button to change values */
 "weight_history_edit_data" = "עריכת נתונים";
 
 /* file end */

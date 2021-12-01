@@ -1,0 +1,235 @@
+{
+  "itemsDict" : {
+    "tweakCompleteIntentions" : {
+      "activity" : {
+        "imperial" : "Vervollständigen Sie Ihre Umsetzungsabsichten",
+        "metric" : "Vervollständigen Sie Ihre Umsetzungsabsichten"
+      },
+      "description" : [
+        "Erstellen Sie alle zwei Monate drei neue Umsetzungsabsichten - \"wenn X, dann Y\"-Pläne, um ein bestimmtes Verhalten in einem bestimmten Kontext auszuführen - und haken Sie jeden dieser Pläne ab, wenn Sie ihn jeden Tag erfüllen."
+      ],
+      "heading" : "Vervollständigen Sie Ihre Umsetzungsabsichten",
+      "topic" : ""
+    },
+    "tweakDailyBlackCumin" : {
+      "activity" : {
+        "imperial" : "Schwarzkümmel (Nigella sativa) (¼ TL)",
+        "metric" : "Schwarzkümmel (Nigella sativa) (¼ TL)"
+      },
+      "description" : [
+        "Wie im Abschnitt Appetitzügler erwähnt, ergab eine systematische Überprüfung und Metaanalyse randomisierter, kontrollierter Studien zur Gewichtsabnahme, dass etwa ein viertel Teelöffel Schwarzkümmelpulver pro Tag den Body-Mass-Index innerhalb weniger Monate zu senken scheint. Beachten Sie, dass sich Schwarzkümmel von normalem Kreuzkümmel unterscheidet, bei dem die Dosierung anders ist."
+      ],
+      "heading" : "Schwarzkümmel (¼ TL)",
+      "topic" : ""
+    },
+    "tweakDailyCumin" : {
+      "activity" : {
+        "imperial" : "Kreuzkümmel (Cuminum cyminum) (½ TL zum Mittag- und Abendessen)",
+        "metric" : "Kreuzkümmel (Cuminum cyminum) (½ TL zum Mittag- und Abendessen)"
+      },
+      "description" : [
+        "Übergewichtige Frauen, die in einer randomisierten Studie ½ Teelöffel Kreuzkümmel zu ihrem Mittag- und Abendessen hinzufügten, übertrafen die Kontrollgruppe um weitere vier Pfund und 2,5 Zentimeter an der Taille. Es gibt auch Beweise für den Nutzen des Gewürz Safrans, aber eine Prise pro Tag würde einen Euro kosten, während ein Teelöffel Kreuzkümmel weniger als zehn Cent kostet."
+      ],
+      "heading" : "Kreuzkümmel (½ TL zum Mittag- und Abendessen)",
+      "topic" : ""
+    },
+    "tweakDailyDeflourDiet" : {
+      "activity" : {
+        "imperial" : "Mehl durch Vollkorn ersetzen",
+        "metric" : "Mehl durch Vollkorn ersetzen"
+      },
+      "description" : [
+        "Kreuzen Sie dieses Kästchen jeden Tag an, an dem Sie Vollkornprodukte in Form von unversehrten Körnern zu sich nehmen. Selbst bei 100-prozentigem Vollkorn wird unserem Mikrobiom durch die Pulverisierung die Stärke entzogen, die sonst in unversehrten Zellwänden in unseren Dickdarm transportiert würde."
+      ],
+      "heading" : "Mehl durch Vollkorn ersetzen",
+      "topic" : ""
+    },
+    "tweakDailyFrontLoad" : {
+      "activity" : {
+        "imperial" : "Verzehren Sie die Kalorien früh am Tag",
+        "metric" : "Verzehren Sie die Kalorien früh am Tag"
+      },
+      "description" : [
+        "Es ist für den Stoffwechsel vorteilhaft, mehr Kalorien auf einen früheren Zeitpunkt am Tag zu verteilen. Machen Sie also das Frühstück (idealerweise) oder das Mittagessen zu Ihrer größten Mahlzeit des Tages, ganz im Stil von König/Prinz/Bettler."
+      ],
+      "heading" : "Verzehren Sie die Kalorien früh am Tag",
+      "topic" : ""
+    },
+    "tweakDailyGarlic" : {
+      "activity" : {
+        "imperial" : "Knoblauchpulver (¼ TL)",
+        "metric" : "Knoblauchpulver (¼ TL)"
+      },
+      "description" : [
+        "Randomisierte, doppelblinde, placebokontrollierte Studien haben ergeben, dass bereits ein viertel Teelöffel Knoblauchpulver pro Tag das Körperfett reduzieren kann, und das zu Kosten von vielleicht zwei Cent pro Tag."
+      ],
+      "heading" : "Knoblauchpulver (¼ TL)",
+      "topic" : ""
+    },
+    "tweakDailyGinger" : {
+      "activity" : {
+        "imperial" : "Gemahlener Ingwer (1 TL) oder Cayenne-Pfeffer (½ TL)",
+        "metric" : "Gemahlener Ingwer (1 TL) oder Cayenne-Pfeffer (½ TL)"
+      },
+      "description" : [
+        "Randomisierte kontrollierte Studien haben gezeigt, dass ¼ Teelöffel bis 1½ Teelöffel gemahlener Ingwer das Gewicht für nur ein paar Cent pro Tag signifikant senken. Es reicht bereits, das gemahlene Gewürz in eine Tasse heißes Wasser zu rühren. Hinweis: Ingwer kann morgens besser wirken als abends. Chai-Tee ist eine leckere Möglichkeit, die Vorteile von grünem Tee und Ingwer in einem einzigen Getränk zu kombinieren. Alternativ können Sie zur Aktivierung des braunen Fettgewebes (BAT) einen rohen Jalapeño-Pfeffer oder ½ Teelöffel rotes Pfefferpulver (oder vermutlich auch zerkleinerte rote Pfefferflocken) zur täglichen Ernährung hinzufügen. Um die Schärfe in Schach zu halten, können Sie den Jalapeño sehr dünn in Scheiben schneiden oder fein hacken, um die Wirkung auf kleines Kribbeln zu reduzieren. Oder geben Sie den roten Pfeffer in eine Suppe oder in den Vollwertgemüse-Smoothie, den ich in einem meiner Kochvideos auf NutritionFacts.org vorgestellt habe."
+      ],
+      "heading" : "Gemahlener Ingwer (1 TL) oder Cayenne-Pfeffer (½ TL)",
+      "topic" : ""
+    },
+    "tweakDailyGreenTea" : {
+      "activity" : {
+        "imperial" : "Grüner Tee (3 Tassen)",
+        "metric" : "Grüner Tee (3 Tassen)"
+      },
+      "description" : [
+        "Trinken Sie täglich drei Tassen grüner Tee zwischen den Mahlzeiten (warten Sie  mindestens eine Stunde nach einer Mahlzeit, um die Eisenaufnahme nicht zu beeinträchtigen). Trinken Sie zu den Mahlzeiten Wasser, schwarzen Kaffee oder Hibiskus-Tee mit Zitronenverbene (im Verhältnis 6:1), aber überschreiten Sie niemals 750 ml Flüssigkeit pro Stunde (wichtig im Hinblick auf die zwei Gläser Wasser vor jeder Mahlzeit). Nutzen Sie die verstärkende Wirkung von Koffein, indem Sie Ihren grünen Tee zusammen mit etwas Gesundem trinkst, das Sie lieber mögen, aber trinken Sie keine großen Mengen an Koffein in den sechs Stunden vor dem Schlafengehen. Verwenden Sie keinen Süßstoff. Wenn Sie Ihren Tee normalerweise mit Honig oder Zucker süßen, versuchen Sie es stattdessen mit Yacon-Sirup."
+      ],
+      "heading" : "Grüner Tee (3 Tassen)",
+      "topic" : ""
+    },
+    "tweakDailyHydrate" : {
+      "activity" : {
+        "imperial" : "Genug trinken",
+        "metric" : "Genug trinken"
+      },
+      "description" : [
+        "Setzen Sie dieses Häkchen, wenn Ihr Urin nie dunkler als blassgelb ist. Bei Zufuhr von Lebensmitteln, die mit Riboflavin (Vitamin B2) angereichert sind (z.B. Hefeflocken), sollten sich Frauen an 9 Tassen ungesüßte Getränke pro Tag orientieren (was durch die zwei Gläser Wasser vor jeder Mahlzeit und die drei Tassen grünen Tee zwischen den Mahlzeiten bereits abgedeckt wird) und Männer an 13 Tassen pro Tag. Wenn Sie Herz- oder Nierenprobleme haben, erhöhen Sie die Flüssigkeitsaufnahme nicht, ohne vorher mit dem Arzt zu sprechen. Denken Sie daran, dass Diät-Soda zwar kalorienfrei sein mag, aber trotzdem Konsequenzen hat, wie wir im Kapitel \"Ohne Zuckerzusatz\" (Low in Added Sugar) erfahren haben."
+      ],
+      "heading" : "Genug trinken",
+      "topic" : ""
+    },
+    "tweakDailyNutriYeast" : {
+      "activity" : {
+        "imperial" : "Hefeflocken (2 TL)",
+        "metric" : "Hefeflocken (2 TL)"
+      },
+      "description" : [
+        "Zwei Teelöffel Bäcker-, Bier- oder Nährhefe enthalten ungefähr die Menge an Beta-1,3/1,6-Glucanen, die in randomisierten, doppelblinden, placebokontrollierten klinischen Studien eine Gewichtsreduktion begünstigt haben."
+      ],
+      "heading" : "Hefeflocken (2 TL)",
+      "topic" : ""
+    },
+    "tweakDailyTimeRestrict" : {
+      "activity" : {
+        "imperial" : "Essen zeitlich beschränken",
+        "metric" : "Essen zeitlich beschränken"
+      },
+      "description" : [
+        "Beschränken Sie das Essen auf ein tägliches Zeitfenster Ihrer Wahl von weniger als zwölf Stunden, an das Sie sich sieben Tage die Woche konsequent halten können. Angesichts der Vorteile einer Reduzierung der abendlichen Nahrungsaufnahme für den Biorythmus sollte das Fenster spätestens um 19 Uhr enden."
+      ],
+      "heading" : "Essen zeitlich beschränken",
+      "topic" : ""
+    },
+    "tweakExerciseTiming" : {
+      "activity" : {
+        "imperial" : "Bewegung zeitlich abstimmen",
+        "metric" : "Bewegung zeitlich abstimmen"
+      },
+      "description" : [
+        "Das tägliche Dutzend empfiehlt für ein langes Leben eine optimale Bewegungsdauer von 90 Minuten mäßig intensiver Aktivität pro Tag. Dies ist auch die optimale Bewegungsdauer für Gewichtsverlust. Bewegung ist immer gut – je mehr davon, desto besser. Es könnte jedoch vorteilhaft sein, die Aktivität in nüchternem Zustand durchzuführen, mit einem Abstand von sechs Stunden zur letzten Mahlzeit. Üblicherweise wäre dies vor dem Frühstück, aber wenn Sie es zeitlich abstimmen, können Sie Ihre Aktivität auch vor einem späten Mittagessen durchführen oder, bei einem frühen Mittagessen, vor dem Abendessen. Diese Zeiten richten sich wohlgemerkt an Nicht-Diabetiker. Diabetiker und Prädiabetiker sollten stattdessen 30 Minuten nach dem Beginn einer Mahlzeit mit einer idealerweise einstündigen Aktivität beginnen, um die Zeitspanne mit dem höchsten Blutzuckerspiegel vollständig abzudecken. Wenn Sie eine einzige Mahlzeit wählen müssten, nach der Sie aktiv werden, wäre es das Abendessen, da die Blutzuckerkontrolle durch den Biorhythmus im Laufe des Tages abnimmt. Im Idealfall wäre das Frühstück die größte Mahlzeit des Tages, und Sie würden Ihre Aktivität danach durchführen – oder, noch besser, nach jeder Mahlzeit."
+      ],
+      "heading" : "Bewegung zeitlich abstimmen",
+      "topic" : ""
+    },
+    "tweakMeal20Minutes" : {
+      "activity" : {
+        "imperial" : "20-Minuten-Regel befolgen",
+        "metric" : "20-Minuten-Regel befolgen"
+      },
+      "description" : [
+        "Dutzende Studien haben gezeigt, dass die Kalorienaufnahme verringert werden kann, wenn wir die Zeitspanne des Essens im Mund verlängern. Und zwar unabhängig davon, ob wir dies durch Essen mit zäherer Konsistenz, längeres Kauen, kleinere Portionen im Mund oder langsameres Essen erreichen. Verlängern Sie also die Dauer der Mahlzeit auf mindestens zwanzig Minuten, damit Ihre natürlichen Sättigungssignale ihre volle Wirkung entfalten können. Und wie? Indem Sie Lebensmittel auswählen, deren Verzehr länger dauert, und sie so essen, dass sie möglichst lange im Mund verbleiben. Denken Sie an sperrigere, härtere, kaubarere Lebensmittel in kleineren, gut durchgekauten Portionen."
+      ],
+      "heading" : "20-Minuten-Regel befolgen",
+      "topic" : ""
+    },
+    "tweakMealNegCal" : {
+      "activity" : {
+        "imperial" : "Mahlzeit mit \"Negativ-Kalorien\" beginnen",
+        "metric" : "Mahlzeit mit \"Negativ-Kalorien\" beginnen"
+      },
+      "description" : [
+        "Beginnen Sie  jede Mahlzeit als ersten Gang mit einem Apfel, einer leichten Suppe oder einem Salat mit weniger als 100 Kalorien pro Tasse."
+      ],
+      "heading" : "Mahlzeit mit \"Negativ-Kalorien\" beginnen",
+      "topic" : ""
+    },
+    "tweakMealUndistracted" : {
+      "activity" : {
+        "imperial" : "Ungestört essen",
+        "metric" : "Ungestört essen"
+      },
+      "description" : [
+        "Sehen Sie nicht fern und spielen Sie nicht mit dem Handy, während Sie essen. Setzen Sie  ein Häkchen für jede Mahlzeit ohne Ablenkung."
+      ],
+      "heading" : "Ungestört essen",
+      "topic" : ""
+    },
+    "tweakMealVinegar" : {
+      "activity" : {
+        "imperial" : "Essig hinzufügen (2 TL zu jeder Mahlzeit)",
+        "metric" : "Essig hinzufügen (2 TL zu jeder Mahlzeit)"
+      },
+      "description" : [
+        "Trinken Sie Essig niemals pur. Würzen Sie stattdessen Ihre Mahlzeiten oder gönnen Sie sich einen Beilagensalat mit einem beliebigen süßen und herzhaften Essig. Wenn Sie den Essig trinken möchten, mischen Sie ihn mit einem Glas Wasser und spülen Sie anschließend Ihren Mund mit Wasser, um Ihren Zahnschmelz zu schützen."
+      ],
+      "heading" : "Essig hinzufügen (2 TL zu jeder Mahlzeit)",
+      "topic" : ""
+    },
+    "tweakMealWater" : {
+      "activity" : {
+        "imperial" : "Mahlzeit mit kaltem Wasser beginnen",
+        "metric" : "Mahlzeit mit kaltem Wasser beginnen"
+      },
+      "description" : [
+        "Förderen Sie Ihren Stoffwechsel, indem Sie vor jeder Mahlzeit zwei Tassen kühles oder kaltes Wasser (ohne Geschmack) zu dir nehmen."
+      ],
+      "heading" : "Mahlzeit mit kaltem Wasser beginnen",
+      "topic" : ""
+    },
+    "tweakNightlyFast" : {
+      "activity" : {
+        "imperial" : "Fasten nach 19 Uhr",
+        "metric" : "Fasten nach 19 Uhr"
+      },
+      "description" : [
+        "Aufgrund unseres Biorhytmus begünstigt das Essen am Abend eine Gewichtszunahme mehr als die gleiche Anzahl an Kalorien früher am Tag. Fasten Sie also jeden Abend für mindestens zwölf Stunden, beginnend spätestens um 19 Uhr. Je weniger Kalorien nach Sonnenuntergang, desto besser."
+      ],
+      "heading" : "Fasten nach 19 Uhr",
+      "topic" : ""
+    },
+    "tweakNightlySleep" : {
+      "activity" : {
+        "imperial" : "Genug schlafen",
+        "metric" : "Genug schlafen"
+      },
+      "description" : [
+        "Setzen Sie dieses Häkchen, wenn Sie mindestens 7 Stunden geschlafen haben und zur üblichen Zeit ins Bett gegangen sind."
+      ],
+      "heading" : "Genug schlafen",
+      "topic" : ""
+    },
+    "tweakNightlyTrendelenbrug" : {
+      "activity" : {
+        "imperial" : "Mit leichter Trendelenburg-Lage experimentieren",
+        "metric" : "Mit leichter Trendelenburg-Lage experimentieren"
+      },
+      "description" : [
+        "Versuchen Sie, mindestens vier Stunden pro Nacht so zu liegen, dass Ihr Körper von Fuß bis Kopf um etwa sechs Grad geneigt ist, indem Sie das Bett am Fußende um 20 Zentimeter anheben (bzw. um 23 Zentimeter bei einer Bettlänge von mehr als 210 Zentimeter). Seien Sie beim Aufstehen jedoch äußerst vorsichtig, da dies bei den meisten Menschen zu einer orthostatischen Unverträglichkeit führt, auch wenn sie jung und gesund sind. Wenn Sie also zu schnell aufstehen, können Sie sich schwindelig, ohnmächtig oder benommen fühlen und Sie könnten fallen und sich verletzen. Stehen Sie also langsam auf. Zwei Tassen kaltes Wasser 30 Minuten vor dem Aufstehen können auch dazu beitragen, diese potenziell gefährliche Nebenwirkung zu vermeiden. \\n*WICHTIG: Versuchen Sie dies auf keinen Fall zu Hause, wenn Sie Herz- oder Lungenprobleme haben, an gastroösophagealem Reflux leiden oder Probleme mit Ihrem Gehirn (z.B. Schädel-Hirn-Trauma) oder Ihren Augen haben (eine Glaukom-Erkrankung in der Familie genügt bereits). Versuchen Sie dies auch nicht, ohne Ihren Arzt zu fragen, ob er der Meinung ist, dass Sie in leichter Trendelenburg-Lage sicher schlafen können.*"
+      ],
+      "heading" : "Mit leichter Trendelenburg-Lage experimentieren",
+      "topic" : ""
+    },
+    "tweakWeightTwice" : {
+      "activity" : {
+        "imperial" : "Zweimal täglich wiegen",
+        "metric" : "Zweimal täglich wiegen"
+      },
+      "description" : [
+        "Regelmäßiges Selbstwiegen wird als entscheidend angesehen für die langfristige Gewichtskontrolle. Es gibt jedoch nicht ausreichend Belege für eine bestimmte Häufigkeit des Wiegens. Meine Empfehlung basiert auf der einen Studie, die ergab, dass zweimal täglich – beim Aufwachen und direkt vor dem Schlafengehen – besser zu sein scheint als einmal täglich (etwa 3 Kilogramm Gewichtsverlust über 12 Wochen im Vergleich zu 1 Kilogramm)."
+      ],
+      "heading" : "Zweimal täglich wiegen",
+      "topic" : ""
+    }
+  }
+}

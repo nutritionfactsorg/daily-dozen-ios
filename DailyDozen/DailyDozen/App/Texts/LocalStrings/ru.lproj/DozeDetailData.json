@@ -1,0 +1,1126 @@
+{
+  "itemsDict" : {
+    "dozeBeans" : {
+      "heading" : "Бобовые",
+      "servings" : [
+        {
+          "imperial" : "¼ чашки хумуса или бобового соуса",
+          "metric" : "60 г хумуса или бобового соуса"
+        },
+        {
+          "imperial" : "½ чашки готовой фасоли, колотого гороха, чечевицы, тофу или темпе",
+          "metric" : "130 г готовой фасоли, колотого гороха, чечевицы, тофу или темпе"
+        },
+        {
+          "imperial" : "1 чашка свежего гороха или пророщенной чечевицы",
+          "metric" : "150 г свежего гороха или пророщенной чечевицы"
+        }
+      ],
+      "topic" : "topics/beans",
+      "varieties" : [
+        {
+          "text" : "Чёрная фасоль",
+          "topic" : "topics/black-beans"
+        },
+        {
+          "text" : "Черноглазая фасоль",
+          "topic" : ""
+        },
+        {
+          "text" : "Фасоль лима",
+          "topic" : ""
+        },
+        {
+          "text" : "Фасоль каннеллини",
+          "topic" : ""
+        },
+        {
+          "text" : "Нут",
+          "topic" : "topics/chickpeas"
+        },
+        {
+          "text" : "Эдамамэ",
+          "topic" : "topics/edamame"
+        },
+        {
+          "text" : "Садовый горох",
+          "topic" : ""
+        },
+        {
+          "text" : "Белая фасоль (великая северная)",
+          "topic" : ""
+        },
+        {
+          "text" : "Красная фасоль (кидни)",
+          "topic" : "topics/kidney-beans"
+        },
+        {
+          "text" : "Чечевица (чёрная \"белуга\", зеленая \"французская\" и разновидности красной)",
+          "topic" : "topics/lentils"
+        },
+        {
+          "text" : "Мисо",
+          "topic" : "topics/miso"
+        },
+        {
+          "text" : "Белая фасоль (флотская)",
+          "topic" : "topics/navy-beans"
+        },
+        {
+          "text" : "Фасоль пинто",
+          "topic" : "topics/pinto-beans"
+        },
+        {
+          "text" : "Мелкая красная фасоль",
+          "topic" : ""
+        },
+        {
+          "text" : "Горох колотый (жёлтый или зелёный)",
+          "topic" : "topics/split-peas"
+        },
+        {
+          "text" : "Темпе",
+          "topic" : "topics/tempeh"
+        }
+      ]
+    },
+    "dozeBerries" : {
+      "heading" : "Ягоды",
+      "servings" : [
+        {
+          "imperial" : "½ чашки свежих или замороженных",
+          "metric" : "60 г свежих или замороженных"
+        },
+        {
+          "imperial" : "¼ чашки сушёных",
+          "metric" : "40 г сушёных"
+        }
+      ],
+      "topic" : "topics/berries",
+      "varieties" : [
+        {
+          "text" : "Ягоды асаи",
+          "topic" : "topics/acai-berries"
+        },
+        {
+          "text" : "Барбарис",
+          "topic" : "topics/barberries"
+        },
+        {
+          "text" : "Ежевика",
+          "topic" : "topics/blackberries"
+        },
+        {
+          "text" : "Черника, голубика",
+          "topic" : "topics/blueberries"
+        },
+        {
+          "text" : "Вишня (или черешня)",
+          "topic" : "topics/cherries"
+        },
+        {
+          "text" : "Виноград Конкорд",
+          "topic" : "topics/grapes"
+        },
+        {
+          "text" : "Клюква",
+          "topic" : "topics/cranberries"
+        },
+        {
+          "text" : "Ягоды годжи",
+          "topic" : "topics/goji-berries"
+        },
+        {
+          "text" : "Кумкват",
+          "topic" : ""
+        },
+        {
+          "text" : "Шелковица",
+          "topic" : ""
+        },
+        {
+          "text" : "Малина (чёрная или красная)",
+          "topic" : "topics/raspberries"
+        },
+        {
+          "text" : "Клубника",
+          "topic" : "topics/strawberries"
+        }
+      ]
+    },
+    "dozeBeverages" : {
+      "heading" : "Напитки",
+      "servings" : [
+        {
+          "imperial" : "Один стакан (12 унций)",
+          "metric" : "Один стакан (350 мл)"
+        }
+      ],
+      "topic" : "topics/beverages",
+      "varieties" : [
+        {
+          "text" : "Чёрный чай",
+          "topic" : "topics/black-tea"
+        },
+        {
+          "text" : "Чай масала",
+          "topic" : "topics/chai-tea"
+        },
+        {
+          "text" : "Ромашковый чай с ванилью",
+          "topic" : "topics/chamomile-tea"
+        },
+        {
+          "text" : "Кофе",
+          "topic" : "topics/coffee"
+        },
+        {
+          "text" : "Чай Эрл Грей",
+          "topic" : "topics/earl-grey-tea"
+        },
+        {
+          "text" : "Зелёный чай",
+          "topic" : "topics/green-tea"
+        },
+        {
+          "text" : "Каркаде",
+          "topic" : "topics/hibiscus-tea"
+        },
+        {
+          "text" : "Горячий шоколад",
+          "topic" : ""
+        },
+        {
+          "text" : "Чай с жасмином",
+          "topic" : ""
+        },
+        {
+          "text" : "Чай из мелиссы",
+          "topic" : "topics/lemon-balm"
+        },
+        {
+          "text" : "Чай матча",
+          "topic" : "topics/matcha"
+        },
+        {
+          "text" : "Миндальный улун",
+          "topic" : "topics/oolong-tea"
+        },
+        {
+          "text" : "Чай из перечной мяты",
+          "topic" : "topics/peppermint"
+        },
+        {
+          "text" : "Ройбос",
+          "topic" : "topics/rooibos-tea"
+        },
+        {
+          "text" : "Вода",
+          "topic" : "topics/water"
+        },
+        {
+          "text" : "Белый чай",
+          "topic" : "topics/white-tea"
+        }
+      ]
+    },
+    "dozeExercise" : {
+      "heading" : "Физические Упражнения",
+      "servings" : [
+        {
+          "imperial" : "90 минут нагрузки средней интенсивности",
+          "metric" : "90 минут нагрузки средней интенсивности"
+        },
+        {
+          "imperial" : "40 минут интенсивной нагрузки",
+          "metric" : "40 минут интенсивной нагрузки"
+        }
+      ],
+      "topic" : "topics/exercise",
+      "varieties" : [
+        {
+          "text" : "Езда на велосипеде",
+          "topic" : ""
+        },
+        {
+          "text" : "Гребля",
+          "topic" : ""
+        },
+        {
+          "text" : "Танцы",
+          "topic" : ""
+        },
+        {
+          "text" : "Доджбол (вышибалы)",
+          "topic" : ""
+        },
+        {
+          "text" : "Горнолыжный спорт",
+          "topic" : ""
+        },
+        {
+          "text" : "Фехтование",
+          "topic" : ""
+        },
+        {
+          "text" : "Хайкинг (длительная прогулка, пешеходный туризм)",
+          "topic" : ""
+        },
+        {
+          "text" : "Работа по дому",
+          "topic" : ""
+        },
+        {
+          "text" : "Катание на коньках",
+          "topic" : ""
+        },
+        {
+          "text" : "Роллерблейдинг",
+          "topic" : ""
+        },
+        {
+          "text" : "Жонглирование",
+          "topic" : ""
+        },
+        {
+          "text" : "Прыжки на батуте",
+          "topic" : ""
+        },
+        {
+          "text" : "Катание на катамаране",
+          "topic" : ""
+        },
+        {
+          "text" : "Игра с летающим диском (фрисби)",
+          "topic" : ""
+        },
+        {
+          "text" : "Катание на роликах",
+          "topic" : ""
+        },
+        {
+          "text" : "Бросание мяча в корзину",
+          "topic" : ""
+        },
+        {
+          "text" : "Сгребание лёгкого снега",
+          "topic" : ""
+        },
+        {
+          "text" : "Скейтбординг",
+          "topic" : ""
+        },
+        {
+          "text" : "Сноркелинг",
+          "topic" : ""
+        },
+        {
+          "text" : "Сёрфинг",
+          "topic" : ""
+        },
+        {
+          "text" : "Свободное плавание",
+          "topic" : ""
+        },
+        {
+          "text" : "Парный теннис",
+          "topic" : ""
+        },
+        {
+          "text" : "Вертикальное удержание на плаву",
+          "topic" : ""
+        },
+        {
+          "text" : "Быстрая ходьба (6–7 км/ч)",
+          "topic" : ""
+        },
+        {
+          "text" : "Аквааэробика",
+          "topic" : ""
+        },
+        {
+          "text" : "Водные лыжи",
+          "topic" : ""
+        },
+        {
+          "text" : "Работа по саду",
+          "topic" : ""
+        },
+        {
+          "text" : "Йога",
+          "topic" : ""
+        },
+        {
+          "text" : "Поход с рюкзаком",
+          "topic" : ""
+        },
+        {
+          "text" : "Баскетбол",
+          "topic" : ""
+        },
+        {
+          "text" : "Горный велосипед",
+          "topic" : ""
+        },
+        {
+          "text" : "Силовые тренировки",
+          "topic" : ""
+        },
+        {
+          "text" : "Лыжный бег",
+          "topic" : ""
+        },
+        {
+          "text" : "Американский футбол",
+          "topic" : ""
+        },
+        {
+          "text" : "Хоккей",
+          "topic" : ""
+        },
+        {
+          "text" : "Бег трусцой",
+          "topic" : ""
+        },
+        {
+          "text" : "Прыжки \"ноги вместе – ноги врозь\"",
+          "topic" : ""
+        },
+        {
+          "text" : "Прыжки со скакалкой",
+          "topic" : ""
+        },
+        {
+          "text" : "Лакросс",
+          "topic" : ""
+        },
+        {
+          "text" : "Отжимания",
+          "topic" : ""
+        },
+        {
+          "text" : "Подтягивания",
+          "topic" : ""
+        },
+        {
+          "text" : "Ракетбол",
+          "topic" : ""
+        },
+        {
+          "text" : "Скалолазание",
+          "topic" : ""
+        },
+        {
+          "text" : "Регби",
+          "topic" : ""
+        },
+        {
+          "text" : "Бег",
+          "topic" : ""
+        },
+        {
+          "text" : "Дайвинг с аквалангом",
+          "topic" : ""
+        },
+        {
+          "text" : "Теннис",
+          "topic" : ""
+        },
+        {
+          "text" : "Футбол",
+          "topic" : ""
+        },
+        {
+          "text" : "Конькобежный спорт",
+          "topic" : ""
+        },
+        {
+          "text" : "Сквош",
+          "topic" : ""
+        },
+        {
+          "text" : "Аэробика на степе",
+          "topic" : ""
+        },
+        {
+          "text" : "Спортивное плавание",
+          "topic" : ""
+        },
+        {
+          "text" : "Быстрая ходьба в гору",
+          "topic" : ""
+        },
+        {
+          "text" : "Беговые движения на плаву",
+          "topic" : ""
+        }
+      ]
+    },
+    "dozeFlaxseeds" : {
+      "heading" : "Семена льна",
+      "servings" : [
+        {
+          "imperial" : "1 столовая ложка измельчённых",
+          "metric" : "1 столовая ложка измельчённых"
+        }
+      ],
+      "topic" : "topics/flax-seeds",
+      "varieties" : [
+        {
+          "text" : "Семена коричневого льна",
+          "topic" : ""
+        },
+        {
+          "text" : "Семена белого льна",
+          "topic" : ""
+        }
+      ]
+    },
+    "dozeFruitsOther" : {
+      "heading" : "Другие Фрукты",
+      "servings" : [
+        {
+          "imperial" : "1 фрукт среднего размера",
+          "metric" : "1 фрукт среднего размера"
+        },
+        {
+          "imperial" : "1 чашка нарезанных фруктов",
+          "metric" : "120 г нарезанного фрукта"
+        },
+        {
+          "imperial" : "¼ чашки сушёного фрукта",
+          "metric" : "40 г сушёного фрукта"
+        }
+      ],
+      "topic" : "",
+      "varieties" : [
+        {
+          "text" : "Яблоки",
+          "topic" : "topics/apples"
+        },
+        {
+          "text" : "Курага",
+          "topic" : "topics/apricots"
+        },
+        {
+          "text" : "Авокадо",
+          "topic" : "topics/avocados"
+        },
+        {
+          "text" : "Бананы",
+          "topic" : "topics/bananas"
+        },
+        {
+          "text" : "Дыня мускусная (канталупа)",
+          "topic" : "topics/cantaloupe"
+        },
+        {
+          "text" : "Мандарины (клементины)",
+          "topic" : ""
+        },
+        {
+          "text" : "Финики",
+          "topic" : "topics/dates"
+        },
+        {
+          "text" : "Сушёный инжир",
+          "topic" : ""
+        },
+        {
+          "text" : "Грейпфрут",
+          "topic" : "topics/grapefruit"
+        },
+        {
+          "text" : "Дыня Медовая",
+          "topic" : ""
+        },
+        {
+          "text" : "Киви",
+          "topic" : "topics/kiwifruit"
+        },
+        {
+          "text" : "Лимоны",
+          "topic" : "topics/lemons"
+        },
+        {
+          "text" : "Лаймы",
+          "topic" : "topics/limes"
+        },
+        {
+          "text" : "Личи",
+          "topic" : ""
+        },
+        {
+          "text" : "Манго",
+          "topic" : "topics/mango"
+        },
+        {
+          "text" : "Нектарины",
+          "topic" : ""
+        },
+        {
+          "text" : "Апельсины",
+          "topic" : "topics/oranges"
+        },
+        {
+          "text" : "Папайя",
+          "topic" : ""
+        },
+        {
+          "text" : "Маракуйя",
+          "topic" : ""
+        },
+        {
+          "text" : "Персики",
+          "topic" : "topics/peaches"
+        },
+        {
+          "text" : "Груши",
+          "topic" : "topics/pears"
+        },
+        {
+          "text" : "Ананас",
+          "topic" : ""
+        },
+        {
+          "text" : "Сливы (особенно тёмные сливы)",
+          "topic" : "topics/plums"
+        },
+        {
+          "text" : "Плумкот",
+          "topic" : ""
+        },
+        {
+          "text" : "Гранат",
+          "topic" : "topics/pomegranates"
+        },
+        {
+          "text" : "Чернослив",
+          "topic" : "topics/prunes"
+        },
+        {
+          "text" : "Мандарины",
+          "topic" : ""
+        },
+        {
+          "text" : "Арбуз",
+          "topic" : "topics/watermelon"
+        }
+      ]
+    },
+    "dozeGreens" : {
+      "heading" : "Листовые Овощи",
+      "servings" : [
+        {
+          "imperial" : "1 чашка сырых",
+          "metric" : "60 г сырых"
+        },
+        {
+          "imperial" : "½ чашки приготовленных",
+          "metric" : "90 г приготовленных"
+        }
+      ],
+      "topic" : "topics/greens",
+      "varieties" : [
+        {
+          "text" : "Руккола",
+          "topic" : ""
+        },
+        {
+          "text" : "Cвекольная ботва",
+          "topic" : "topics/beets"
+        },
+        {
+          "text" : "Листовая капуста",
+          "topic" : "topics/collard-greens"
+        },
+        {
+          "text" : "Кудрявая капуста кейл (тёмная, зелёная и красная)",
+          "topic" : "topics/kale"
+        },
+        {
+          "text" : "Месклан (ассорти из молодых салатных листьев)",
+          "topic" : ""
+        },
+        {
+          "text" : "Горчица листовая",
+          "topic" : "topics/mustard-greens"
+        },
+        {
+          "text" : "Щавель",
+          "topic" : ""
+        },
+        {
+          "text" : "Шпинат",
+          "topic" : "topics/spinach"
+        },
+        {
+          "text" : "Мангольд",
+          "topic" : "topics/swiss-chard"
+        },
+        {
+          "text" : "Ботва репы",
+          "topic" : ""
+        }
+      ]
+    },
+    "dozeNuts" : {
+      "heading" : "Орехи и Семена",
+      "servings" : [
+        {
+          "imperial" : "¼ чашки орехов или семян",
+          "metric" : "30 г орехов или семян"
+        },
+        {
+          "imperial" : "2 столовые ложки пасты из орехов или семян",
+          "metric" : "2 столовые ложки пасты из орехов или семян"
+        }
+      ],
+      "topic" : "topics/nuts",
+      "varieties" : [
+        {
+          "text" : "Миндаль",
+          "topic" : "topics/almonds"
+        },
+        {
+          "text" : "Бразильские орехи",
+          "topic" : "topics/brazil-nuts"
+        },
+        {
+          "text" : "Кешью",
+          "topic" : "topics/cashews"
+        },
+        {
+          "text" : "Семена чиа",
+          "topic" : "topics/chia-seeds"
+        },
+        {
+          "text" : "Фундук",
+          "topic" : "topics/hazelnuts"
+        },
+        {
+          "text" : "Семена конопли",
+          "topic" : ""
+        },
+        {
+          "text" : "Макадамия",
+          "topic" : "topics/macadamia-nuts"
+        },
+        {
+          "text" : "Орех пекан",
+          "topic" : "topics/pecans"
+        },
+        {
+          "text" : "Фисташки",
+          "topic" : "topics/pistachios"
+        },
+        {
+          "text" : "Семена тыквы",
+          "topic" : "topics/pumpkin-seeds"
+        },
+        {
+          "text" : "Кунжут",
+          "topic" : "topics/sesame-seeds"
+        },
+        {
+          "text" : "Семечки подсолнечника",
+          "topic" : "topics/sunflower-seeds"
+        },
+        {
+          "text" : "Грецкие орехи",
+          "topic" : "topics/walnuts"
+        }
+      ]
+    },
+    "dozeSpices" : {
+      "heading" : "Травы и Специи",
+      "servings" : [
+        {
+          "imperial" : "¼ чайной ложки куркумы",
+          "metric" : "¼ чайной ложки куркумы"
+        },
+        {
+          "imperial" : "Другие любимые пряности (без соли)",
+          "metric" : "Другие любимые пряности (без соли)"
+        }
+      ],
+      "topic" : "topics/spices",
+      "varieties" : [
+        {
+          "text" : "Душистый перец",
+          "topic" : "topics/allspice"
+        },
+        {
+          "text" : "Барбарис",
+          "topic" : "topics/barberries"
+        },
+        {
+          "text" : "Базилик",
+          "topic" : "topics/basil"
+        },
+        {
+          "text" : "Лавровый лист",
+          "topic" : ""
+        },
+        {
+          "text" : "Кардамон",
+          "topic" : ""
+        },
+        {
+          "text" : "Молотый чили",
+          "topic" : ""
+        },
+        {
+          "text" : "Кориандр (кинза)",
+          "topic" : "topics/cilantro"
+        },
+        {
+          "text" : "Корица",
+          "topic" : "topics/cinnamon"
+        },
+        {
+          "text" : "Гвоздика",
+          "topic" : "topics/cloves"
+        },
+        {
+          "text" : "Семена кориандра",
+          "topic" : ""
+        },
+        {
+          "text" : "Зира (кумин)",
+          "topic" : "topics/cumin"
+        },
+        {
+          "text" : "Карри",
+          "topic" : "topics/curry-powder"
+        },
+        {
+          "text" : "Укроп",
+          "topic" : ""
+        },
+        {
+          "text" : "Пажитник",
+          "topic" : "topics/fenugreek"
+        },
+        {
+          "text" : "Чеснок",
+          "topic" : "topics/garlic"
+        },
+        {
+          "text" : "Имбирь",
+          "topic" : "topics/ginger"
+        },
+        {
+          "text" : "Хрен",
+          "topic" : ""
+        },
+        {
+          "text" : "Лемонграсс",
+          "topic" : ""
+        },
+        {
+          "text" : "Майоран",
+          "topic" : "topics/marjoram"
+        },
+        {
+          "text" : "Горчичный порошок",
+          "topic" : "topics/mustard-powder"
+        },
+        {
+          "text" : "Мускатный орех",
+          "topic" : "topics/nutmeg"
+        },
+        {
+          "text" : "Орегано (душица)",
+          "topic" : "topics/oregano"
+        },
+        {
+          "text" : "Копченая паприка",
+          "topic" : ""
+        },
+        {
+          "text" : "Петрушка",
+          "topic" : "topics/parsley"
+        },
+        {
+          "text" : "Перец",
+          "topic" : "topics/pepper"
+        },
+        {
+          "text" : "Перечная мята",
+          "topic" : "topics/peppermint"
+        },
+        {
+          "text" : "Розмарин",
+          "topic" : "topics/rosemary"
+        },
+        {
+          "text" : "Шафран",
+          "topic" : "topics/saffron"
+        },
+        {
+          "text" : "Шалфей",
+          "topic" : ""
+        },
+        {
+          "text" : "Тимьян",
+          "topic" : ""
+        },
+        {
+          "text" : "Куркума",
+          "topic" : "topics/turmeric"
+        },
+        {
+          "text" : "Ваниль",
+          "topic" : ""
+        }
+      ]
+    },
+    "dozeVegetablesCruciferous" : {
+      "heading" : "Крестоцветные Овощи",
+      "servings" : [
+        {
+          "imperial" : "½ чашки нарезанных",
+          "metric" : "30–80 г нарезанных"
+        },
+        {
+          "imperial" : "¼ чашки брюссельской капусты или брокколи",
+          "metric" : "12 г брюссельской капусты или брокколи"
+        },
+        {
+          "imperial" : "1 столовая ложка хрена",
+          "metric" : "1 столовая ложка хрена"
+        }
+      ],
+      "topic" : "",
+      "varieties" : [
+        {
+          "text" : "Руккола",
+          "topic" : ""
+        },
+        {
+          "text" : "Пак-чой",
+          "topic" : "topics/bok-choy"
+        },
+        {
+          "text" : "Брокколи (включая романеско)",
+          "topic" : "topics/broccoli"
+        },
+        {
+          "text" : "Брюссельская капуста",
+          "topic" : "topics/brussels-sprouts"
+        },
+        {
+          "text" : "Капуста (белокочанная, красная и савойская)",
+          "topic" : "topics/cabbage"
+        },
+        {
+          "text" : "Цветная капуста (белая, зеленая, оранжевая, фиолетовая)",
+          "topic" : "topics/cauliflower"
+        },
+        {
+          "text" : "Листовая капуста Коллард",
+          "topic" : "topics/collard-greens"
+        },
+        {
+          "text" : "Хрен",
+          "topic" : ""
+        },
+        {
+          "text" : "Кудрявая капуста кейл (тёмная, зелёная и красная)",
+          "topic" : "topics/kale"
+        },
+        {
+          "text" : "Кольраби (зеленая и фиолетовая)",
+          "topic" : ""
+        },
+        {
+          "text" : "Горчица листовая",
+          "topic" : "topics/mustard-greens"
+        },
+        {
+          "text" : "Редис",
+          "topic" : ""
+        },
+        {
+          "text" : "Ботва репы",
+          "topic" : ""
+        },
+        {
+          "text" : "Водяной кресс",
+          "topic" : "topics/watercress"
+        }
+      ]
+    },
+    "dozeVegetablesOther" : {
+      "heading" : "Прочие Овощи",
+      "servings" : [
+        {
+          "imperial" : "1 чашка сырых листовых овощей",
+          "metric" : "60 г сырых листовых овощей"
+        },
+        {
+          "imperial" : "½ чашки сырых или приготовленных нелистовых овощей",
+          "metric" : "50 г сырых или приготовленных нелистовых овощей"
+        },
+        {
+          "imperial" : "½ чашки овощного сока",
+          "metric" : "125 мл овощного сока"
+        },
+        {
+          "imperial" : "¼ чашки сушёных грибов",
+          "metric" : "7 г сушёных грибов"
+        }
+      ],
+      "topic" : "",
+      "varieties" : [
+        {
+          "text" : "Артишоки",
+          "topic" : "topics/artichokes"
+        },
+        {
+          "text" : "Спаржа",
+          "topic" : "topics/asparagus"
+        },
+        {
+          "text" : "Свёкла",
+          "topic" : "topics/beets"
+        },
+        {
+          "text" : "Сладкий перец",
+          "topic" : "topics/bell-peppers"
+        },
+        {
+          "text" : "Морковь",
+          "topic" : "topics/carrots"
+        },
+        {
+          "text" : "Кукуруза",
+          "topic" : "topics/corn"
+        },
+        {
+          "text" : "Чеснок",
+          "topic" : "topics/garlic"
+        },
+        {
+          "text" : "Грибы (шампиньоны, вёшенки, портобелло и шиитаке)",
+          "topic" : "topics/mushrooms"
+        },
+        {
+          "text" : "Бамия (окра)",
+          "topic" : "topics/okra"
+        },
+        {
+          "text" : "Лук",
+          "topic" : "topics/onions"
+        },
+        {
+          "text" : "Фиолетовый картофель",
+          "topic" : "topics/potatoes"
+        },
+        {
+          "text" : "Тыква",
+          "topic" : "topics/pumpkin"
+        },
+        {
+          "text" : "Съедобные водоросли (араме, красные водоросли и нори)",
+          "topic" : "topics/sea-vegetables"
+        },
+        {
+          "text" : "Стручковый горох (Snap peas)",
+          "topic" : ""
+        },
+        {
+          "text" : "Сквош (деликата, летний, спагетти и другие виды)",
+          "topic" : "topics/squash"
+        },
+        {
+          "text" : "Батат/ямс",
+          "topic" : "topics/sweet-potatoes"
+        },
+        {
+          "text" : "Помидоры",
+          "topic" : "topics/tomatoes"
+        },
+        {
+          "text" : "Цуккини",
+          "topic" : "topics/zucchini"
+        }
+      ]
+    },
+    "dozeWholeGrains" : {
+      "heading" : "Цельнозерновые Продукты",
+      "servings" : [
+        {
+          "imperial" : "½ чашки приготовленных злаков/зерновых, пасты или кукурузных зёрен",
+          "metric" : "100 г приготовленных злаков/зерновых, пасты или кукурузных зёрен"
+        },
+        {
+          "imperial" : "1 чашка цельнозерновых хлопьев",
+          "metric" : "50 г цельнозерновых хлопьев"
+        },
+        {
+          "imperial" : "1 тортилья или ломтик хлеба",
+          "metric" : "1 тортилья или ломтик хлеба"
+        },
+        {
+          "imperial" : "½ бублика или английского маффина",
+          "metric" : "½ бублика или английской булочки"
+        },
+        {
+          "imperial" : "3 чашки приготовленного попкорна",
+          "metric" : "30 г приготовленного попкорна"
+        }
+      ],
+      "topic" : "topics/grains",
+      "varieties" : [
+        {
+          "text" : "Ячмень",
+          "topic" : "topics/barley"
+        },
+        {
+          "text" : "Гречневая крупа",
+          "topic" : "topics/buckwheat"
+        },
+        {
+          "text" : "Пшено",
+          "topic" : "topics/millet"
+        },
+        {
+          "text" : "Овёс",
+          "topic" : "topics/oats"
+        },
+        {
+          "text" : "Попкорн",
+          "topic" : "topics/popcorn"
+        },
+        {
+          "text" : "Киноа",
+          "topic" : "topics/quinoa"
+        },
+        {
+          "text" : "Рожь",
+          "topic" : "topics/rye"
+        },
+        {
+          "text" : "Теф",
+          "topic" : ""
+        },
+        {
+          "text" : "Цельнозерновая паста",
+          "topic" : "topics/pasta"
+        }
+      ]
+    },
+    "otherVitaminB12" : {
+      "heading" : "Vitamin B12",
+      "servings" : [
+
+      ],
+      "topic" : "topics/vitamin-b12",
+      "varieties" : [
+
+      ]
+    }
+  }
+}

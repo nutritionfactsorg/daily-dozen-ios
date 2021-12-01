@@ -19,35 +19,59 @@
 /* Info Menu About: line 5 */
 "apple.info.about.5" = "The following open source libraries are used: RealmSwift, Charts, FSCalendar, SimpleAnimation, ActiveLabel.";
 
-/* Date Button Title: 'Back to today' */
+/* Date Button Title: ‘Back to today’ */
 "dateBackButtonTitle" = "Back to today";
 
-/* Date Button Title: 'Today' */
+/* Date Button Title: ‘Today’ */
 "dateButtonTitle.today" = "Today";
 
 /* heading for daily data entry item */
 "dozeBeans.heading" = "Beans";
 
+/* https://nutritionfacts.org/topics/beans */
+"dozeBeans.topic" = "topics/beans";
+
 /* heading for daily data entry item */
 "dozeBerries.heading" = "Berries";
+
+/* https://nutritionfacts.org/topics/berries */
+"dozeBerries.topic" = "topics/berries";
 
 /* heading for daily data entry item */
 "dozeBeverages.heading" = "Beverages";
 
+/* https://nutritionfacts.org/topics/beverages */
+"dozeBeverages.topic" = "topics/beverages";
+
 /* heading for daily data entry item */
 "dozeExercise.heading" = "Exercise";
+
+/* https://nutritionfacts.org/topics/exercise */
+"dozeExercise.topic" = "topics/exercise";
 
 /* heading for daily data entry item */
 "dozeFlaxseeds.heading" = "Flaxseeds";
 
+/* https://nutritionfacts.org/topics/flax-seeds */
+"dozeFlaxseeds.topic" = "topics/flax-seeds";
+
 /* heading for daily data entry item */
 "dozeFruitsOther.heading" = "Other Fruits";
+
+/* https://nutritionfacts.org/topics/fruit */
+"dozeFruitsOther.topic" = "topics/fruit";
 
 /* heading for daily data entry item */
 "dozeGreens.heading" = "Greens";
 
+/* https://nutritionfacts.org/topics/greens */
+"dozeGreens.topic" = "topics/greens";
+
 /* heading for daily data entry item */
 "dozeNuts.heading" = "Nuts and Seeds";
+
+/* https://nutritionfacts.org/topics/nuts */
+"dozeNuts.topic" = "topics/nuts";
 
 /* Daily Dozen supplement info alert: dismissal button text */
 "dozeOtherInfo.confirm" = "OK";
@@ -64,22 +88,34 @@
 /* heading for daily data entry item */
 "dozeSpices.heading" = "Herbs and Spices";
 
+/* https://nutritionfacts.org/topics/spices */
+"dozeSpices.topic" = "topics/spices";
+
 /* heading for daily data entry item */
 "dozeVegetablesCruciferous.heading" = "Cruciferous Vegetables";
+
+/* https://nutritionfacts.org/topics/cruciferous-vegetables */
+"dozeVegetablesCruciferous.topic" = "topics/cruciferous-vegetables";
 
 /* heading for daily data entry item */
 "dozeVegetablesOther.heading" = "Other Vegetables";
 
+/* https://nutritionfacts.org/topics/vegetables */
+"dozeVegetablesOther.topic" = "topics/vegetables";
+
 /* heading for daily data entry item */
 "dozeWholeGrains.heading" = "Whole Grains";
 
-/* Doze Detail View subheading: 'Serving Sizes' */
+/* https://nutritionfacts.org/topics/grains */
+"dozeWholeGrains.topic" = "topics/grains";
+
+/* Doze Detail View subheading: ‘Serving Sizes’ */
 "doze_detail_section_sizes" = "Serving Sizes";
 
-/* Doze Detail View subheading: 'Types' */
+/* Doze Detail View subheading: ‘Types’ */
 "doze_detail_section_types" = "Types";
 
-/* Doze Entry View heading: 'Servings' */
+/* Doze Entry View heading: ‘Servings’ */
 "doze_entry_header" = "Servings";
 
 /*  */
@@ -130,7 +166,7 @@
 /* Info About View */
 "info_app_about" = "About";
 
-/* Info About View Application Name: 'Daily Dozen' */
+/* Info About View Application Name: ‘Daily Dozen’ */
 "info_app_about_app_name" = "Daily Dozen";
 
 /* Info About View */
@@ -166,29 +202,38 @@
 /* Info Menu */
 "info_webpage_videos_latest" = "Latest Videos";
 
-/* Item History Legend: 'All completed' */
+/* Item History Legend: ‘All completed’ */
 "item_history_completed_all" = "All servings";
 
-/* Item History Legend: 'Some completed' */
+/* Item History Legend: ‘Some completed’ */
 "item_history_completed_some" = "Some servings";
 
 /* Item History Heading */
 "item_history_heading" = "History";
 
-/* Main Navigation Tab Control: 'Daily Dozen' (proper noun) */
+/* Main Navigation Tab Control: ‘Daily Dozen’ (proper noun) */
 "navtab.doze" = "Daily Dozen";
 
 /* Main Navigation Tab Control: show more information */
 "navtab.info" = "Information";
 
-/* Main Navigation Tab Control: 'Preferences' synonyms: Settings, Configuration. Choose a translations with is different from Tweaks. */
+/* Main Navigation Tab Control: ‘Preferences’ synonyms: Settings, Configuration. Choose a translations with is different from Tweaks. */
 "navtab.preferences" = "Preferences";
 
-/* Main Navigation Tab Control: '21 Tweaks' (proper noun) */
+/* Main Navigation Tab Control: ‘21 Tweaks’ (proper noun) */
 "navtab.tweaks" = "21 Tweaks";
+
+/* https://nutritionfacts.org/topics/omega-3-fatty-acids */
+"otherOmega3.topic" = "topics/omega-3-fatty-acids";
 
 /* heading for daily data entry item */
 "otherVitaminB12.heading" = "Vitamin B12";
+
+/* https://nutritionfacts.org/topics/vitamin-b12 */
+"otherVitaminB12.topic" = "topics/vitamin-b12";
+
+/* https://nutritionfacts.org/topics/vitamin-d-supplements */
+"otherVitaminD.topic" = "topics/vitamin-d-supplements";
 
 /* Alert notification text */
 "reminder.alert.text" = "Update your servings for today";
@@ -208,10 +253,10 @@
 /* Android notification `vibrate` */
 "reminder.settings.vibrate" = "Vibrate";
 
-/* 'Off' as in 'On (enabled) or Off (disabled)', Daily Reminder is not enabled */
+/* ‘Off’ as in ‘On (enabled) or Off (disabled)’, Daily Reminder is not enabled */
 "reminder.state.off" = "Off";
 
-/* 'On' as in 'On (enabled) or Off (disable)'. Daily Reminder is enabled */
+/* ‘On’ as in ‘On (enabled) or Off (disable)’. Daily Reminder is enabled */
 "reminder.state.on" = "On";
 
 /* First Launch Setting: button text */
@@ -229,26 +274,26 @@
 /* Preference Settings View: brief description text below Tweaks visibility control. */
 "setting_doze_tweak_footer" = "For health alone, use “Daily Dozen Only”. For health and weight loss use “Daily Dozen + 21 Tweaks”.";
 
-/* First Launch Setting: brief description above 'Daily Dozen Only' button. */
+/* First Launch Setting: brief description above ‘Daily Dozen Only’ button. */
 "setting_health_alone_txt" = "For Health Alone";
 
-/* First Launch Setting: brief description above 'Daily Dozen + 21 Tweaks' button. */
+/* First Launch Setting: brief description above ‘Daily Dozen + 21 Tweaks’ button. */
 "setting_health_weight_txt" = "For Health and Weight Loss";
 
 /* Preference Settings View: tweaks visibilty subsection heading */
 "setting_tweak_header" = "21 Tweak Visibility";
 
-/* Preference Settings View: Part of 'Imperial/Metric/Toggle Units' selector */
+/* Preference Settings View: Part of ‘Imperial/Metric/Toggle Units’ selector */
 "setting_units_0_imperial" = "Imperial";
 
-/* Preference Settings View: Part of 'Imperial/Metric/Toggle Units' selector */
+/* Preference Settings View: Part of ‘Imperial/Metric/Toggle Units’ selector */
 "setting_units_1_metric" = "Metric";
 
-/* Preference Settings View: Part of 'Imperial/Metric/Toggle Units' selector */
+/* Preference Settings View: Part of ‘Imperial/Metric/Toggle Units’ selector */
 "setting_units_2_toggle" = "Toggle Units";
 
 /* Preference Settings View: brief description text below units control. */
-"setting_units_choice_footer" = "Set to always be one unit type or enable the 'Units:' toggle button.";
+"setting_units_choice_footer" = "Set to always be one unit type or enable the ‘Units:’ toggle button.";
 
 /* Preference Settings View */
 "setting_units_header" = "Measurement Units";
@@ -256,7 +301,7 @@
 /* Preference Settings View */
 "setting_util_advanced" = "Advanced Utilities";
 
-/* 'Streak' count. Synonym: 'Progress'. Formatted number '%d' for consecutive days completed. Place translated text for 'days' on the right or left of '%d' based on language directionality. */
+/* ‘Streak’ count. Synonym: ‘Progress‘. Formatted number ‘%d’ for consecutive days completed. Place translated text for ‘days’ on the right or left of ‘%d’ based on language directionality. */
 "streakDaysFormat" = "%d days";
 
 /* heading for daily data entry item */
@@ -332,10 +377,10 @@
 "tweak_entry_header" = "21 Tweaks";
 
 /* Units toggle button text: imperial measurement system */
-"unitToggle.imperial" = "Imperial";
+"unitToggle.imperial" = "imperial";
 
 /* Units toggle button text: metric measurement system */
-"unitToggle.metric" = "Metric";
+"unitToggle.metric" = "metric";
 
 /*  */
 "units_label" = "Units";

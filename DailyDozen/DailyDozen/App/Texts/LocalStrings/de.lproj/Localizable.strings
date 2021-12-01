@@ -1,233 +1,233 @@
-/* DailyDozen Localizable.strings (pt) */
+/* DailyDozen Localizable.strings (de) */
 /* Copyright © 2021 Nutritionfacts.org. All rights reserved. */
 
 /* Info Menu About: line 0 */
-"apple.info.about.0" = "Bem vindo à minha Dúzia Diária!";
+"apple.info.about.0" = "Willkommen zu meinem Täglichen Dutzend!";
 
 /* Info Menu About: line 1 */
-"apple.info.about.1" = "Use este aplicativo diariamente para acompanhar os alimentos e conselhos que eu recomendo para ter saúde ótima e longevidade nos meus livros Comer Para Não Morrer/Como Não Morrer e Como Não Fazer Dieta.";
+"apple.info.about.1" = "Verwenden Sie diese App täglich, um den Überblick über die Lebensmittel und Ratschläge zu behalten, die ich in meinen Büchern How Not to Die und How Not to Diet für optimale Gesundheit und Langlebigkeit empfehle.";
 
 /* Info Menu About: line 2 */
-"apple.info.about.2" = "Dúzia Diária";
+"apple.info.about.2" = "Das Tägliche Dutzend";
 
 /* Info Menu About: line 3 */
-"apple.info.about.3" = "versão 3.2.3";
+"apple.info.about.3" = "Version 3.2.3";
 
 /* Info Menu About: line 4 */
-"apple.info.about.4" = "Este aplicativo foi criado por: NutritionFacts.org, Christi Richards, Konstantin Khokhlov e Marc Campbell.";
+"apple.info.about.4" = "Diese App wurde erstellt von: NutritionFacts.org, Christi Richards, Konstantin Khokhlov, und Marc Campbell";
 
 /* Info Menu About: line 5 */
-"apple.info.about.5" = "As seguintes bibliotecas de código aberto foram usadas: RealmSwift, Charts, FSCalendar, SimpleAnimation, ActiveLabel.";
+"apple.info.about.5" = "Die folgenden Open-Source-Bibliotheken werden verwendet: RealmSwift, Charts, FSCalendar, SimpleAnimation, ActiveLabel.";
 
 /* Date Button Title: ‘Back to today’ */
-"dateBackButtonTitle" = "Voltar para hoje";
+"dateBackButtonTitle" = "Zurück zu heute";
 
 /* Date Button Title: ‘Today’ */
-"dateButtonTitle.today" = "Hoje";
+"dateButtonTitle.today" = "Heute";
 
 /* heading for daily data entry item */
-"dozeBeans.heading" = "Leguminosas";
+"dozeBeans.heading" = "Bohnen";
 
 /* https://nutritionfacts.org/topics/beans */
 "dozeBeans.topic" = "topics/beans";
 
 /* heading for daily data entry item */
-"dozeBerries.heading" = "Frutas Silvestres";
+"dozeBerries.heading" = "Beeren";
 
 /* https://nutritionfacts.org/topics/berries */
 "dozeBerries.topic" = "topics/berries";
 
 /* heading for daily data entry item */
-"dozeBeverages.heading" = "Bebidas";
+"dozeBeverages.heading" = "Getränke";
 
 /* https://nutritionfacts.org/topics/beverages */
 "dozeBeverages.topic" = "topics/beverages";
 
 /* heading for daily data entry item */
-"dozeExercise.heading" = "Exercícios";
+"dozeExercise.heading" = "Bewegung";
 
 /* https://nutritionfacts.org/topics/exercise */
 "dozeExercise.topic" = "topics/exercise";
 
 /* heading for daily data entry item */
-"dozeFlaxseeds.heading" = "Linhaça";
+"dozeFlaxseeds.heading" = "Leinsamen";
 
 /* https://nutritionfacts.org/topics/flax-seeds */
 "dozeFlaxseeds.topic" = "topics/flax-seeds";
 
 /* heading for daily data entry item */
-"dozeFruitsOther.heading" = "Outras Frutas";
+"dozeFruitsOther.heading" = "Anderes Obst";
 
 /* https://nutritionfacts.org/topics/fruit */
 "dozeFruitsOther.topic" = "topics/fruit";
 
 /* heading for daily data entry item */
-"dozeGreens.heading" = "Verduras";
+"dozeGreens.heading" = "Blattgemüse";
 
 /* https://nutritionfacts.org/topics/greens */
 "dozeGreens.topic" = "topics/greens";
 
 /* heading for daily data entry item */
-"dozeNuts.heading" = "Oleaginosas e Sementes";
+"dozeNuts.heading" = "Nüsse und Saaten";
 
 /* https://nutritionfacts.org/topics/nuts */
 "dozeNuts.topic" = "topics/nuts";
 
 /* Daily Dozen supplement info alert: dismissal button text */
-"dozeOtherInfo.confirm" = "Certo";
+"dozeOtherInfo.confirm" = "OK";
 
 /* Daily Dozen supplement info alert: message */
-"dozeOtherInfo.message" = "A vitamina B12 é essencial para a sua saúde mas não conta na suas porções diárias. \n\nA vitamina B12 é incluida neste aplicativo para fornecer a você uma forma fácil de acompanhar a sua ingestão.";
+"dozeOtherInfo.message" = "Vitamin B12 ist wichtig für die Gesundheit, wird aber nicht auf die tägliche Portion angerechnet.\n\nVitamin B12 ist in dieser App enthalten, um Ihnen eine einfache Möglichkeit zu bieten, Ihre Einnahme zu verfolgen.";
 
 /* Daily Dozen daily entry section heading */
-"dozeOtherInfo.section" = "Suplementos";
+"dozeOtherInfo.section" = "Nahrungsergänzungsmittel";
 
 /* Daily Dozen supplement info alert: title */
-"dozeOtherInfo.title" = "Suplementos";
+"dozeOtherInfo.title" = "Nahrungsergänzungsmittel";
 
 /* heading for daily data entry item */
-"dozeSpices.heading" = "Ervas e Especiarias";
+"dozeSpices.heading" = "Gewürze";
 
 /* https://nutritionfacts.org/topics/spices */
 "dozeSpices.topic" = "topics/spices";
 
 /* heading for daily data entry item */
-"dozeVegetablesCruciferous.heading" = "Vegetais Crucíferos";
+"dozeVegetablesCruciferous.heading" = "Kreuzblütler-Gemüse";
 
 /* https://nutritionfacts.org/topics/cruciferous-vegetables */
 "dozeVegetablesCruciferous.topic" = "topics/cruciferous-vegetables";
 
 /* heading for daily data entry item */
-"dozeVegetablesOther.heading" = "Outros Vegetais";
+"dozeVegetablesOther.heading" = "Anderes Gemüse";
 
 /* https://nutritionfacts.org/topics/vegetables */
 "dozeVegetablesOther.topic" = "topics/vegetables";
 
 /* heading for daily data entry item */
-"dozeWholeGrains.heading" = "Grãos Integrais";
+"dozeWholeGrains.heading" = "Vollkorn";
 
 /* https://nutritionfacts.org/topics/grains */
 "dozeWholeGrains.topic" = "topics/grains";
 
 /* Doze Detail View subheading: ‘Serving Sizes’ */
-"doze_detail_section_sizes" = "Tamanhos da Porção";
+"doze_detail_section_sizes" = "Portionsgrößen";
 
 /* Doze Detail View subheading: ‘Types’ */
-"doze_detail_section_types" = "Tipos";
+"doze_detail_section_types" = "Arten";
 
 /* Doze Entry View heading: ‘Servings’ */
-"doze_entry_header" = "Porções";
+"doze_entry_header" = "Portionen";
 
 /*  */
-"historyRecord.movingAverage" = "Média Móvel";
+"historyRecord.movingAverage" = "Gleitender Mittelwert";
 
 /* History View */
-"historyRecordDoze.heading" = "Histórico de Porções";
+"historyRecordDoze.heading" = "Portionen Verlauf";
 
 /* History View */
-"historyRecordDoze.legend" = "Porções";
+"historyRecordDoze.legend" = "Portionen Verlauf";
 
 /* History View */
-"historyRecordTweak.heading" = "Histórico de Ajustes";
+"historyRecordTweak.heading" = "Optimierungen Verlauf";
 
 /* History View */
-"historyRecordTweak.legend" = "Ajustes";
+"historyRecordTweak.legend" = "Optimierungen Verlauf";
 
 /* History View */
-"historyRecordWeight.heading" = "Histórico de Peso";
+"historyRecordWeight.heading" = "Gewichtsverlauf";
 
 /* History View */
-"historyRecordWeight.legendEvening" = "Noite";
+"historyRecordWeight.legendEvening" = "Abend";
 
 /* History View */
-"historyRecordWeight.legendMorning" = "Manhã";
+"historyRecordWeight.legendMorning" = "Morgen";
 
 /* History View */
-"historyRecordWeight.titleImperial" = "Peso (lbs)";
+"historyRecordWeight.titleImperial" = "Gewicht (Pfund)";
 
 /* History View */
-"historyRecordWeight.titleMetric" = "Peso (kg)";
+"historyRecordWeight.titleMetric" = "Gewicht (kg)";
 
 /* History View: calendar scale control */
-"history_scale_choice_day" = "Dia";
+"history_scale_choice_day" = "Tag";
 
 /* History View: calendar scale control */
-"history_scale_choice_month" = "Mês";
+"history_scale_choice_month" = "Monat";
 
 /* History View: calendar scale control */
-"history_scale_choice_year" = "Ano";
+"history_scale_choice_year" = "Jahr";
 
 /* History View: scale text */
-"history_scale_label" = "Escala de Tempo";
+"history_scale_label" = "Zeitskala";
 
 /* Info About View */
-"info.about.title" = "Sobre este aplicativo";
+"info.about.title" = "Über diese Anwendung";
 
 /* Info About View */
-"info_app_about" = "Sobre Nós";
+"info_app_about" = "Über";
 
 /* Info About View Application Name: ‘Daily Dozen’ */
-"info_app_about_app_name" = "Dúzia Diária";
+"info_app_about_app_name" = "Das tägliche Dutzend";
 
 /* Info About View */
-"info_app_about_overview" = "Use este aplicativo diariamente para controlar os seus alimentos e acompanhar os conselhos que eu recomendo para uma ótima saúde e longevidade nos meus livros Como Não Morrer e Como Não Fazer Dieta.";
+"info_app_about_overview" = "Verwenden Sie diese App täglich, um den Überblick über die Lebensmittel und Ratschläge zu behalten, die ich in meinen Büchern How Not to Die und How Not to Diet für optimale Gesundheit und Langlebigkeit empfehle.";
 
 /* Info About View Application release version */
-"info_app_about_version" = "versão 3.2.1";
+"info_app_about_version" = "Version 3.2.1";
 
 /* Info About View */
-"info_app_about_welcome" = "Bem-vindos à minha Dúzia Diária!";
+"info_app_about_welcome" = "Willkommen zu meinem Täglichen Dutzend!";
 
 /* Info Menu: book title */
-"info_book_how_not_to_die" = "Livro: Como Não Morrer";
+"info_book_how_not_to_die" = "Buch: How Not to Die";
 
 /* Info Menu: book title */
-"info_book_how_not_to_die_cookbook" = "Livro: Como Não Morrer - O Livro de Receitas";
+"info_book_how_not_to_die_cookbook" = "Buch: How Not to Die Kochbuch";
 
 /* Info Menu: book title */
-"info_book_how_not_to_diet" = "Livro: Como Não Fazer Dieta";
+"info_book_how_not_to_diet" = "Buch: How Not to Diet";
 
 /* Info Menu */
-"info_webpage_daily_dozen_challenge" = "Desafio Duzía Diária";
+"info_webpage_daily_dozen_challenge" = "Die Tägliches Dutzend Herausforderung";
 
 /* Info Menu */
-"info_webpage_donate" = "Doar";
+"info_webpage_donate" = "Spenden Sie";
 
 /* Info Menu */
-"info_webpage_open_source" = "Código Aberto";
+"info_webpage_open_source" = "Open Source";
 
 /* Info Menu */
-"info_webpage_subscribe" = "Inscreva-se";
+"info_webpage_subscribe" = "Abonnieren";
 
 /* Info Menu */
-"info_webpage_videos_latest" = "Últimos Vídeos";
+"info_webpage_videos_latest" = "Neueste Videos";
 
 /* Item History Legend: ‘All completed’ */
-"item_history_completed_all" = "Todas as porções";
+"item_history_completed_all" = "Alle Portionen";
 
 /* Item History Legend: ‘Some completed’ */
-"item_history_completed_some" = "Algumas porções";
+"item_history_completed_some" = "Einige Portionen";
 
 /* Item History Heading */
-"item_history_heading" = "Histórico";
+"item_history_heading" = "Hintergrund";
 
 /* Main Navigation Tab Control: ‘Daily Dozen’ (proper noun) */
-"navtab.doze" = "Dúzia Diária";
+"navtab.doze" = "Das Tägliche Dutzend";
 
 /* Main Navigation Tab Control: show more information */
-"navtab.info" = "Informação";
+"navtab.info" = "Information";
 
 /* Main Navigation Tab Control: ‘Preferences’ synonyms: Settings, Configuration. Choose a translations with is different from Tweaks. */
-"navtab.preferences" = "Preferências";
+"navtab.preferences" = "Einstellungen";
 
 /* Main Navigation Tab Control: ‘21 Tweaks’ (proper noun) */
-"navtab.tweaks" = "21 Ajustes";
+"navtab.tweaks" = "21 Optimierungen";
 
 /* https://nutritionfacts.org/topics/omega-3-fatty-acids */
 "otherOmega3.topic" = "topics/omega-3-fatty-acids";
 
 /* heading for daily data entry item */
-"otherVitaminB12.heading" = "Vitamina B12";
+"otherVitaminB12.heading" = "Vitamin B12";
 
 /* https://nutritionfacts.org/topics/vitamin-b12 */
 "otherVitaminB12.topic" = "topics/vitamin-b12";
@@ -236,154 +236,154 @@
 "otherVitaminD.topic" = "topics/vitamin-d-supplements";
 
 /* Alert notification text */
-"reminder.alert.text" = "Atualize as suas porções para hoje";
+"reminder.alert.text" = "Aktualisieren Sie Ihre Portionen für heute";
 
 /* Daily Reminder (alert title, settings section heading) */
-"reminder.heading" = "Lembrete Diário";
+"reminder.heading" = "Tägliche Erinnerung";
 
 /* Daily Reminder On/Off toggle switch label */
-"reminder.settings.enable" = "Habilitar Lembretes";
+"reminder.settings.enable" = "Erinnerungen einschalten";
 
 /* Daily Reminder sound control heading */
-"reminder.settings.sound" = "Habilitar Som";
+"reminder.settings.sound" = "Ton abspielen";
 
 /* Daily Reminder time control heading */
-"reminder.settings.time" = "Lembre-me em:";
+"reminder.settings.time" = "Errinnere mich um:";
 
 /* Android notification `vibrate` */
-"reminder.settings.vibrate" = "Vibrar";
+"reminder.settings.vibrate" = "Vibrieren";
 
 /* ‘Off’ as in ‘On (enabled) or Off (disabled)’, Daily Reminder is not enabled */
-"reminder.state.off" = "Desligado";
+"reminder.state.off" = "Aus";
 
 /* ‘On’ as in ‘On (enabled) or Off (disable)’. Daily Reminder is enabled */
-"reminder.state.on" = "Ligado";
+"reminder.state.on" = "An";
 
 /* First Launch Setting: button text */
-"setting_doze_only_btn" = "Apenas a Dúzia Diária";
+"setting_doze_only_btn" = "Nur Tägliches Dutzend";
 
-/* Preference Settings View: selection button text */
-"setting_doze_only_choice" = "Apenas a Dúzia Diária";
+/*  */
+"setting_doze_only_choice" = "Nur Tägliches Dutzend";
 
 /* First Launch Setting: button text */
-"setting_doze_tweak_btn" = "Dúzia Diária + 21 Ajustes";
+"setting_doze_tweak_btn" = "Tägliches Dutzend + 21 Optimierungen";
 
-/* Preference Settings View: selection button text */
-"setting_doze_tweak_choice" = "Dúzia Diária + 21 Ajustes";
+/*  */
+"setting_doze_tweak_choice" = "Tägliches Dutzend + 21 Optimierungen";
 
 /* Preference Settings View: brief description text below Tweaks visibility control. */
-"setting_doze_tweak_footer" = "Se está interessado apenas em saúde, use \"Apenas a Dúzia Diária\". Se está interessado em saúde e perda de peso use \"Dúzia Diária + 21 Ajustes\".";
+"setting_doze_tweak_footer" = "Für Gesundheit allein verwenden Sie \"Nur das tägliche Dutzend\". Für Gesundheit und Gewichtsabnahme verwenden Sie \"Tägliches Dutzend + 21 Optimierungen\".";
 
 /* First Launch Setting: brief description above ‘Daily Dozen Only’ button. */
-"setting_health_alone_txt" = "Para Saúde Apenas";
+"setting_health_alone_txt" = "Nur für die Gesundheit";
 
 /* First Launch Setting: brief description above ‘Daily Dozen + 21 Tweaks’ button. */
-"setting_health_weight_txt" = "Para Saúde e Perda de Peso";
+"setting_health_weight_txt" = "Für Gesundheit und Gewichtsabnahme";
 
 /* Preference Settings View: tweaks visibilty subsection heading */
-"setting_tweak_header" = "Visibilidade dos 21 Ajustes";
+"setting_tweak_header" = "21 Optimierungen Transparenz";
 
 /* Preference Settings View: Part of ‘Imperial/Metric/Toggle Units’ selector */
 "setting_units_0_imperial" = "Imperial";
 
 /* Preference Settings View: Part of ‘Imperial/Metric/Toggle Units’ selector */
-"setting_units_1_metric" = "Métrico";
+"setting_units_1_metric" = "Metrisch";
 
 /* Preference Settings View: Part of ‘Imperial/Metric/Toggle Units’ selector */
-"setting_units_2_toggle" = "Alternar Unidades";
+"setting_units_2_toggle" = "Umschalten";
 
 /* Preference Settings View: brief description text below units control. */
-"setting_units_choice_footer" = "Escolha ter as mesmas unidades de medida sempre ou ative o botão de alteração \"Unidades:\".";
+"setting_units_choice_footer" = "Legen Sie fest, dass es sich immer um denselben Einheitentyp handelt, oder aktivieren Sie die Umschalttaste \"Einheiten:\".";
 
 /* Preference Settings View */
-"setting_units_header" = "Unidades de Medida";
+"setting_units_header" = "Maßeinheiten";
 
 /* Preference Settings View */
-"setting_util_advanced" = "Funções Avançadas";
+"setting_util_advanced" = "Erweiterte Hilfsmittel";
 
 /* ‘Streak’ count. Synonym: ‘Progress‘. Formatted number ‘%d’ for consecutive days completed. Place translated text for ‘days’ on the right or left of ‘%d’ based on language directionality. */
-"streakDaysFormat" = "%d dias";
+"streakDaysFormat" = "%d Tage";
 
 /* heading for daily data entry item */
-"tweakCompleteIntentions.heading" = "Conclua Suas Intenções de Implementação";
+"tweakCompleteIntentions.heading" = "Vervollständigen Sie Ihre Umsetzungsabsichten";
 
 /* heading for daily data entry item */
-"tweakDailyBlackCumin.heading" = "Cominho Preto (¼ colher de chá)";
+"tweakDailyBlackCumin.heading" = "Schwarzkümmel (¼ TL)";
 
 /* heading for daily data entry item */
-"tweakDailyCumin.heading" = "Cominho (½ colher de chá no almoço e no jantar)";
+"tweakDailyCumin.heading" = "Kreuzkümmel (½ TL zum Mittag- und Abendessen)";
 
 /* heading for daily data entry item */
-"tweakDailyDeflourDiet.heading" = "Retire a Farinha da Sua Alimentação";
+"tweakDailyDeflourDiet.heading" = "Mehl durch Vollkorn ersetzen";
 
 /* heading for daily data entry item */
-"tweakDailyFrontLoad.heading" = "Consuma Mais Calorias de Manhã";
+"tweakDailyFrontLoad.heading" = "Verzehren Sie die Kalorien früh am Tag";
 
 /* heading for daily data entry item */
-"tweakDailyGarlic.heading" = "Alho em Pó (¼ colher de chá)";
+"tweakDailyGarlic.heading" = "Knoblauchpulver (¼ TL)";
 
 /* heading for daily data entry item */
-"tweakDailyGinger.heading" = "Gengibre em Pó (1 colher de chá) ou Pimenta Caiena (½ colher de chá)";
+"tweakDailyGinger.heading" = "Gemahlener Ingwer (1 TL) oder Cayenne-Pfeffer (½ TL)";
 
 /* heading for daily data entry item */
-"tweakDailyGreenTea.heading" = "Chá Verde (3 xícaras)";
+"tweakDailyGreenTea.heading" = "Grüner Tee (3 Tassen)";
 
 /* heading for daily data entry item */
-"tweakDailyHydrate.heading" = "Mantenha-se Hidratado";
+"tweakDailyHydrate.heading" = "Genug trinken";
 
 /* heading for daily data entry item */
-"tweakDailyNutriYeast.heading" = "Levedura Nutricional (2 colheres de chá)";
+"tweakDailyNutriYeast.heading" = "Hefeflocken (2 TL)";
 
 /* heading for daily data entry item */
-"tweakDailyTimeRestrict.heading" = "Limite o Tempo de sua Alimentação";
+"tweakDailyTimeRestrict.heading" = "Essen zeitlich beschränken";
 
 /* heading for daily data entry item */
-"tweakExerciseTiming.heading" = "Otimize o Tempo de Exercícios";
+"tweakExerciseTiming.heading" = "Bewegung zeitlich abstimmen";
 
 /* heading for daily data entry item */
-"tweakMeal20Minutes.heading" = "Siga a Regra dos Vinte Minutos";
+"tweakMeal20Minutes.heading" = "20-Minuten-Regel befolgen";
 
 /* heading for daily data entry item */
-"tweakMealNegCal.heading" = "Pré-refeição de Alimentos de \"Calorias Negativas\"";
+"tweakMealNegCal.heading" = "Mahlzeit mit \"Negativ-Kalorien\" beginnen";
 
 /* heading for daily data entry item */
-"tweakMealUndistracted.heading" = "Desfrute de Refeições sem Distrações";
+"tweakMealUndistracted.heading" = "Ungestört essen";
 
 /* heading for daily data entry item */
-"tweakMealVinegar.heading" = "Incorpore Vinagre (2 colheres de chá com cada refeição)";
+"tweakMealVinegar.heading" = "Essig hinzufügen (2 TL zu jeder Mahlzeit)";
 
 /* heading for daily data entry item */
-"tweakMealWater.heading" = "Pré-refeição de Água";
+"tweakMealWater.heading" = "Mahlzeit mit kaltem Wasser beginnen";
 
 /* heading for daily data entry item */
-"tweakNightlyFast.heading" = "Jejum Após as 19:00h";
+"tweakNightlyFast.heading" = "Fasten nach 19 Uhr";
 
 /* heading for daily data entry item */
-"tweakNightlySleep.heading" = "Durma o Suficiente";
+"tweakNightlySleep.heading" = "Genug schlafen";
 
 /* heading for daily data entry item */
-"tweakNightlyTrendelenbrug.heading" = "Experimente o Trendelenburg Leve";
+"tweakNightlyTrendelenbrug.heading" = "Mit leichter Trendelenburg-Lage experimentieren";
 
 /* heading for daily data entry item */
-"tweakWeightTwice.heading" = "Pese-se Duas Vezes por Dia";
+"tweakWeightTwice.heading" = "Zweimal täglich wiegen";
 
 /* Tweaks Detail view section heading */
-"tweak_detail_section_activity" = "Atividade";
+"tweak_detail_section_activity" = "Aktivität";
 
 /* Tweaks Detail view section heading */
-"tweak_detail_section_description" = "Descrição";
+"tweak_detail_section_description" = "Beschreibung";
 
 /* Tweaks daily entry header */
-"tweak_entry_header" = "21 Ajustes";
+"tweak_entry_header" = "21 Optimierungen";
 
 /* Units toggle button text: imperial measurement system */
 "unitToggle.imperial" = "imperial";
 
 /* Units toggle button text: metric measurement system */
-"unitToggle.metric" = "métrico";
+"unitToggle.metric" = "metrisch";
 
 /*  */
-"units_label" = "Unidades:";
+"units_label" = "Masseinheiten:";
 
 /* URL path */
 "urlSegment.base" = "https://nutritionfacts.org/";
@@ -419,30 +419,30 @@
 "urlSegmentInfoMenu.videos" = "videos";
 
 /* Label for hyperlink to nutritionfacts.org video topics */
-"videos.link.label" = "VÍDEOS";
+"videos.link.label" = "VIDEOS";
 
 /* Weight Daily Entry: heading */
-"weightEntry.heading" = "Peso";
+"weightEntry.heading" = "Gewicht";
 
 /* Weight Daily Entry: clear button which deletes values */
-"weight_entry_clear" = "Apagar";
+"weight_entry_clear" = "Löschen";
 
 /* Weight Daily Entry: label */
-"weight_entry_evening" = "Noite (antes de dormir)";
+"weight_entry_evening" = "Abends (direkt vor dem Schlafengehen)";
 
 /* Weight Daily Entry: label */
-"weight_entry_morning" = "Manhã (logo ao acordar)";
+"weight_entry_morning" = "Morgens (nach dem Aufwachen)";
 
 /* Weight Daily Entry: label */
-"weight_entry_time" = "Tempo";
+"weight_entry_time" = "Uhrzeit";
 
 /* Weight Daily Entry Units: label */
 "weight_entry_units_kg" = "kg";
 
 /* Weight Daily Entry Units: label */
-"weight_entry_units_lbs" = "lbs";
+"weight_entry_units_lbs" = "Pfund";
 
 /* Weight Daily Entry: edit button to change values */
-"weight_history_edit_data" = "Editar Dados";
+"weight_history_edit_data" = "Daten bearbeiten";
 
 /* file end */

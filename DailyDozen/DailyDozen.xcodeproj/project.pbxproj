@@ -202,6 +202,10 @@
 		492013CC261FF64C00A5D635 /* TweakItemStateCheckbox.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TweakItemStateCheckbox.swift; sourceTree = "<group>"; };
 		49208ADB2585F16F00E994CA /* DateManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DateManager.swift; sourceTree = "<group>"; };
 		492474A223DB677A00D7D918 /* es */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = es; path = es.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		4927925A2755EE97000DF1F8 /* de */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = de; path = de.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		4927925B2755EE97000DF1F8 /* de */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = de; path = de.lproj/Localizable.strings; sourceTree = "<group>"; };
+		4927925C2755EE97000DF1F8 /* de */ = {isa = PBXFileReference; lastKnownFileType = text.json; name = de; path = de.lproj/DozeDetailData.json; sourceTree = "<group>"; };
+		4927925D2755EE97000DF1F8 /* de */ = {isa = PBXFileReference; lastKnownFileType = text.json; name = de; path = de.lproj/TweakDetailData.json; sourceTree = "<group>"; };
 		492A1E6F2409B3FA00F6C37C /* TweakDetailActivityCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TweakDetailActivityCell.swift; sourceTree = "<group>"; };
 		492A1E712409B41000F6C37C /* TweakDetailDescriptionCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TweakDetailDescriptionCell.swift; sourceTree = "<group>"; };
 		4930360624760CBD00746D49 /* DatabaseMaintainer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DatabaseMaintainer.swift; sourceTree = "<group>"; };
@@ -286,10 +290,6 @@
 		49C01CD62644AFDD005E592D /* TweakHistoryLayout.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = TweakHistoryLayout.storyboard; sourceTree = "<group>"; };
 		49C39694264E556000920ECC /* ItemHistoryLayout.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = ItemHistoryLayout.storyboard; sourceTree = "<group>"; };
 		49C646CA236F4A46000DA8DC /* UtilityLayout.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = UtilityLayout.storyboard; sourceTree = "<group>"; };
-		49C8D1FC271FC75500D33A4F /* pt */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = pt; path = pt.lproj/InfoPlist.strings; sourceTree = "<group>"; };
-		49C8D1FD271FC75500D33A4F /* pt */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = pt; path = pt.lproj/Localizable.strings; sourceTree = "<group>"; };
-		49C8D1FE271FC75600D33A4F /* pt */ = {isa = PBXFileReference; lastKnownFileType = text.json; name = pt; path = pt.lproj/DozeDetailData.json; sourceTree = "<group>"; };
-		49C8D1FF271FC75600D33A4F /* pt */ = {isa = PBXFileReference; lastKnownFileType = text.json; name = pt; path = pt.lproj/TweakDetailData.json; sourceTree = "<group>"; };
 		49CA08A726C39DA8002D9F66 /* UnitsUtility.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UnitsUtility.swift; sourceTree = "<group>"; };
 		49D6448B245CEC3300814AD5 /* HealthWeightRecord.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HealthWeightRecord.swift; sourceTree = "<group>"; };
 		49D9B07A240DCA1F000E9822 /* UIView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIView.swift; sourceTree = "<group>"; };
@@ -1222,11 +1222,11 @@
 				en,
 				Base,
 				es,
-				pt,
 				"pt-BR",
 				"pt-PT",
 				ru,
 				he,
+				de,
 			);
 			mainGroup = CFE6982F1F974B9700CD7905;
 			productRefGroup = CFE698391F974B9700CD7905 /* Products */;
@@ -1563,11 +1563,11 @@
 			children = (
 				4916452023EE53640077731D /* es */,
 				496A66BB270ACB4000254531 /* en */,
-				49C8D1FF271FC75600D33A4F /* pt */,
 				49FCFE9627327895000E92F1 /* pt-BR */,
 				49FCFE9A273278A0000E92F1 /* pt-PT */,
 				49FCFE9E273278AB000E92F1 /* ru */,
 				49905C6027450AEB00856467 /* he */,
+				4927925D2755EE97000DF1F8 /* de */,
 			);
 			name = TweakDetailData.json;
 			sourceTree = "<group>";
@@ -1577,11 +1577,11 @@
 			children = (
 				492474A223DB677A00D7D918 /* es */,
 				49B0FD2225DF927C00236A12 /* en */,
-				49C8D1FC271FC75500D33A4F /* pt */,
 				49FCFE9327327894000E92F1 /* pt-BR */,
 				49FCFE972732789F000E92F1 /* pt-PT */,
 				49FCFE9B273278AA000E92F1 /* ru */,
 				49905C5D27450AEB00856467 /* he */,
+				4927925A2755EE97000DF1F8 /* de */,
 			);
 			name = InfoPlist.strings;
 			sourceTree = "<group>";
@@ -1591,11 +1591,11 @@
 			children = (
 				4933A75323EE2BCB00CE4631 /* es */,
 				496A66BA270ACB2700254531 /* en */,
-				49C8D1FE271FC75600D33A4F /* pt */,
 				49FCFE9527327894000E92F1 /* pt-BR */,
 				49FCFE99273278A0000E92F1 /* pt-PT */,
 				49FCFE9D273278AB000E92F1 /* ru */,
 				49905C5F27450AEB00856467 /* he */,
+				4927925C2755EE97000DF1F8 /* de */,
 			);
 			name = DozeDetailData.json;
 			sourceTree = "<group>";
@@ -1605,11 +1605,11 @@
 			children = (
 				493A9BD423CE47A000F679BE /* en */,
 				493A9C3223CE6B7500F679BE /* es */,
-				49C8D1FD271FC75500D33A4F /* pt */,
 				49FCFE9427327894000E92F1 /* pt-BR */,
 				49FCFE982732789F000E92F1 /* pt-PT */,
 				49FCFE9C273278AA000E92F1 /* ru */,
 				49905C5E27450AEB00856467 /* he */,
+				4927925B2755EE97000DF1F8 /* de */,
 			);
 			name = Localizable.strings;
 			sourceTree = "<group>";
