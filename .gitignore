@@ -8,7 +8,7 @@
 #################
 .DS_Store
 
-## SourceTree "Iconr" which is really "Icon\r"
+## Ignores SourceTree "Iconr" (folder icon) which is really `Icon\r`
 ## or add 0a 49 63 6e 6e 0d 0d 0a in binhex editor.  The extra 0a brackets the 'Icon\r\r' 
 Icon?
 

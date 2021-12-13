@@ -1,6 +1,12 @@
 /* DailyDozen InfoPlist.strings (he) */
 /* Copyright © 2021 Nutritionfacts.org. All rights reserved. */
 
+/* User-visible application name. Visible under icon. Used by Siri. */
+"CFBundleDisplayName" = "DailyDozen";
+
+/* User-visible application short name (15 Characters max) */
+"CFBundleName" = "DailyDozen";
+
 /* Privacy - Health Share Usage Description */
 "NSHealthShareUsageDescription" = "תוכנת 21 הכיוונונים יכולה לכתוב נתוני משקל ל- HealthKit כדי לעזור לכם לעקוב אחר ההתקדמות שלכם.";
 

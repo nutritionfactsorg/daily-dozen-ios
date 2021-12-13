@@ -1,3 +1,6 @@
+/* DailyDozen Localizable.strings (es) */
+/* Copyright © 2021 Nutritionfacts.org. All rights reserved. */
+
 /* Back to today */
 "dateBackButtonTitle" = "Volver a hoy";
 
@@ -382,3 +385,4 @@
 /* Weight History Action: "Edit Data" */
 "weight_history_edit_data" = "Editar datos";
 
+/* file end */
