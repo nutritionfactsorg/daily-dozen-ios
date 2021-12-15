@@ -10,8 +10,10 @@ import UIKit
 struct ColorManager {
     
     enum ColorManagerTheme {
-        case primary
-        case testml
+        case primaryDark
+        case primaryLight
+        case primaryAuto
+        case testPreview
     }
 
     static let style = ColorManager()
@@ -21,9 +23,10 @@ struct ColorManager {
     init() {
         if let identifier = Bundle.main.bundleIdentifier,
            identifier == "com.nutritionfacts.dailydozen.testml" {
-            theme = .testml
+            theme = .testPreview
         } else {
-            theme = .primary
+            // :NYI: preference based colorTheme
+            theme = .primaryLight
         }
     }
     

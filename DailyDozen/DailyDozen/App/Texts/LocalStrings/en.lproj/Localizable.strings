@@ -377,10 +377,10 @@
 "tweak_entry_header" = "21 Tweaks";
 
 /* Units toggle button text: imperial measurement system */
-"unitToggle.imperial" = "imperial";
+"unitToggle.imperial" = "Imperial";
 
 /* Units toggle button text: metric measurement system */
-"unitToggle.metric" = "metric";
+"unitToggle.metric" = "Metric";
 
 /*  */
 "units_label" = "Units";
