@@ -1,23 +1,14 @@
 /* DailyDozen Localizable.strings (pt-PT) */
 /* Copyright © 2021 Nutritionfacts.org. All rights reserved. */
 
-/* Info Menu About: line 0 */
-"apple.info.about.0" = "Bem vindo à minha Dúzia Diária!";
-
-/* Info Menu About: line 1 */
-"apple.info.about.1" = "Use este aplicativo diariamente para acompanhar os alimentos e conselhos que eu recomendo para ter saúde ótima e longevidade nos meus livros Comer Para Não Morrer/Como Não Morrer e Como Não Fazer Dieta.";
-
 /* Info Menu About: line 2 */
 "apple.info.about.2" = "Dúzia Diária";
 
-/* Info Menu About: line 3 */
-"apple.info.about.3" = "versão 3.2.11";
-
 /* Info Menu About: line 4 */
-"apple.info.about.4" = "Este aplicativo foi criado por: NutritionFacts.org, Christi Richards, Konstantin Khokhlov e Marc Campbell.";
+"info_app_about_created_by" = "Este aplicativo foi criado por: NutritionFacts.org, Christi Richards, Konstantin Khokhlov e Marc Campbell.";
 
 /* Info Menu About: line 5 */
-"apple.info.about.5" = "As seguintes bibliotecas de código aberto foram usadas: RealmSwift, Charts, FSCalendar, SimpleAnimation, ActiveLabel.";
+"info_app_about_oss_credits" = "As seguintes bibliotecas de código aberto foram usadas: RealmSwift, Charts, FSCalendar, SimpleAnimation, ActiveLabel.";
 
 /* Date Button Title: ‘Back to today’ */
 "dateBackButtonTitle" = "Voltar para hoje";

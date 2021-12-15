@@ -1,23 +1,14 @@
 /* DailyDozen Localizable.strings (he) */
 /* Copyright © 2021 Nutritionfacts.org. All rights reserved. */
 
-/* Info Menu About: line 0 */
-"apple.info.about.0" = "ברוכים הבאים לתריסר השבועי שלי!";
-
-/* Info Menu About: line 1 */
-"apple.info.about.1" = "השתמשו באפליקציה זו על בסיס יומי כדי לעקוב אחר המזונות והעצות שאני ממליץ עליהן לבריאות ואריכות ימים בצורה אופטימלית בספרים שלי \"איך לא למות\" ו\"איך לא לעשות דיאטה\".";
-
 /* Info Menu About: line 2 */
 "apple.info.about.2" = "התריסר היומי";
 
-/* Info Menu About: line 3 */
-"apple.info.about.3" = "ורסיה 3.2.11";
-
 /* Info Menu About: line 4 */
-"apple.info.about.4" = "אפליקציה זו נוצרה על ידי: NutritionFacts.org, כריסטי ריצ'רדס, קונסטנטין חוחלוב ומארק קמפבל";
+"info_app_about_created_by" = "אפליקציה זו נוצרה על ידי: NutritionFacts.org, כריסטי ריצ'רדס, קונסטנטין חוחלוב ומארק קמפבל";
 
 /* Info Menu About: line 5 */
-"apple.info.about.5" = "נעשה שימוש בספריות הקוד הפתוח שלהלן: RealmSwift, תרשימים, FSCalendar, SimpleAnimation, ActiveLabel.";
+"info_app_about_oss_credits" = "נעשה שימוש בספריות הקוד הפתוח שלהלן: RealmSwift, תרשימים, FSCalendar, SimpleAnimation, ActiveLabel.";
 
 /* Date Button Title: ‘Back to today’ */
 "dateBackButtonTitle" = "בחזרה להיום";
