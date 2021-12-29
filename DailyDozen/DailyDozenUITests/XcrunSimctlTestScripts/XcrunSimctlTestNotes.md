@@ -1,10 +1,10 @@
-# XcrunSimctlTestNotes
+# xcrun simctl Test Notes
 
 ## Contents <a id="contents"></a>
-[Section](#section-) •
+[Steps](#steps-) •
 [Resources](#resources-)
 
-## Section <a id="section-"></a><sup>[▴](#contents)</sup>
+## Steps <a id="steps-"></a><sup>[▴](#contents)</sup>
 
 **Step 1. Setup Environment Variables**
 
