@@ -148,9 +148,6 @@
 /* Info About View */
 "info_app_about" = "О нас";
 
-/* Info Menu About: line 2 */
-"info_app_about_app_name" = "Не сдохни!";
-
 /* Info About View Application Name: ‘Daily Dozen’ */
 "info_app_about_app_name" = "Не Сдохни!";
 
@@ -160,20 +157,11 @@
 /* Info Menu About: line 5 */
 "info_app_about_oss_credits" = "Приложение использует следующие библиотеки с открытым кодом: RealmSwift, Charts, FSCalendar, SimpleAnimation, ActiveLabel.";
 
-/* Info Menu About: line 1 */
-"info_app_about_overview" = "Используйте это приложение на ежедневной основе, чтобы отслеживать продукты питания и следовать моим рекомендациям из книг Не Сдохни! Еда в борьбе за жизнь и Не сдохни на диете для поддержания оптимального состояния здоровья и продолжительности жизни.";
-
 /* Info About View */
 "info_app_about_overview" = "Используйте данное приложение на ежедневной основе, чтобы отслеживать продукты питания и применять мои рекомендации для оптимального здоровья и продолжительности жизни, которые изложены в книгах Не сдохни и Не сдохни на Диете.";
 
-/* Info Menu About: line 3 */
-"info_app_about_version" = "версия 3.2.3";
-
 /* Info About View Application release version */
-"info_app_about_version" = "версия 3.2.1";
-
-/* Info Menu About: line 0 */
-"info_app_about_welcome" = "Добро пожаловать в Не сдохни!";
+"info_app_about_version" = "версия 3.2.11";
 
 /* Info About View */
 "info_app_about_welcome" = "Добро пожаловать в Не сдохни!";

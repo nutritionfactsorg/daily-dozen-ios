@@ -148,9 +148,6 @@
 /* Info About View */
 "info_app_about" = "Informació";
 
-/* Info Menu About: line 2 */
-"info_app_about_app_name" = "Dotzena Diària";
-
 /* Info About View Application Name: ‘Daily Dozen’ */
 "info_app_about_app_name" = "Dotzena Diària";
 
@@ -160,20 +157,11 @@
 /* Info Menu About: line 5 */
 "info_app_about_oss_credits" = "S'utilitzen les següents biblioteques de codi obert: RealmSwift, Charts, FSCalendar, SimpleAnimation, ActiveLabel.";
 
-/* Info Menu About: line 1 */
-"info_app_about_overview" = "Utilitza aquesta aplicació diàriament per fer un seguiment dels aliments i els consells que recomano per una salut i una longevitat òptimès als meus llibres How Not to Die and How Not to Diet.";
-
 /* Info About View */
 "info_app_about_overview" = "Utilitza aquesta app cada dia per fer un seguiment dels aliments i els consells que dono per una salut i longevitat òptimes als meus llibres How Not to Die i How Not to Diet.";
 
 /* Info About View Application release version */
-"info_app_about_version" = "versió 3.2.3";
-
-/* Info About View Application release version */
-"info_app_about_version" = "versió 3.2.7";
-
-/* Info Menu About: line 0 */
-"info_app_about_welcome" = "Benvingut a la meva Dotzena Diària!";
+"info_app_about_version" = "versió 3.2.11";
 
 /* Info About View */
 "info_app_about_welcome" = "Benvingut a la meva Dotzena Diària!";

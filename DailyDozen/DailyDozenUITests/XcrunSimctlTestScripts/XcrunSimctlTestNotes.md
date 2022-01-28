@@ -1,12 +1,13 @@
 # xcrun simctl Test Notes
 
 ## Contents <a id="contents"></a>
-[Steps](#steps-) •
-[Resources](#resources-)
+* [Step 1. Setup Environment Variables](#step-1-setup-environment-variables-)
+* [Step 2. Reset Device State](#step-2-reset-device-state-)
+* [Step 3. Set Device Language (Region)](#step-3-set-device-language-region-)
+* [Step 4. Run Device Test](#step-4-run-device-test-)
+* [Resources](#resources-)
 
-## Steps <a id="steps-"></a><sup>[▴](#contents)</sup>
-
-**Step 1. Setup Environment Variables**
+## Step 1. Setup Environment Variables <a id="step-1-setup-environment-variables-"></a><sup>[▴](#contents)</sup>
 
 Setup the machine specific environment variables in the appropriate resources file such as `~/.zshrc` or `$HOME/.bash_profile`. Edit simulator names in Xcode to replace spaces with underscore and append the major ios version to the name. For example, "iOS 15.2, iPhone 8" becomes `iPhone_8_15` and "iOS 14.5, iPad Pro (11-inch) (3rd generation)" becomes `iPad_Pro_11in_3rd_14`. Replace `Xʀ` with `Xr`
 
@@ -39,14 +40,14 @@ export UUID_iPhone_13_Pro_15="63081D25-20AE-4A46-8097-991ECEB5FCAB"
 export UUID_iPhone_13_Pro_Max_15="D61EF1F2-FEAE-4C29-9BF6-21F408C22CCE"
 ```
 
-**Step 2. Reset Device State**
+## Step 2. Reset Device State <a id="step-2-reset-device-state-"></a><sup>[▴](#contents)</sup>
 
 ``` sh
 #xcrun simctl erase DEVICE_UUID
 xcrun simctl erase $UUID_iPhone_13_Pro_Max_15
 ```
 
-**Step 3. Set Device Language (Region)**
+## Step 3. Set Device Language (Region) <a id="step-3-set-device-language-region-"></a><sup>[▴](#contents)</sup>
 
 > Approach: Using `plutil` to modify the region settings for a specific simulator.
 
@@ -162,7 +163,28 @@ setDeviceRegion   $UUID_iPhone_13_Pro_Max_15 "en_US"
 xcrun simctl boot $UUID_iPhone_13_Pro_Max_15
 ```
 
-**Step 4. Run Device Test**
+## Step 4. Run Device Test <a id="step-4-run-device-test-"></a><sup>[▴](#contents)</sup>
+
+``` sh
+xcodebuild clean
+
+xcodebuild -list -workspace DailyDozen.xcworkspace
+xcodebuild -workspace DailyDozen.xcworkspace -scheme DailyDozen -showTestPlans
+
+# Information about workspace "DailyDozen":
+#     Schemes:
+#         ActiveLabel
+#         Charts
+#         DailyDozen
+#         FSCalendar
+#         Pods-DailyDozen
+#         Pods-DailyDozenTests
+#         Realm
+#         RealmSwift
+#         SimpleAnimation
+
+xcodebuild -scheme DailyDozen -showTestPlans
+```
 
 ## Resources <a id="resources-"></a><sup>[▴](#contents)</sup>
 

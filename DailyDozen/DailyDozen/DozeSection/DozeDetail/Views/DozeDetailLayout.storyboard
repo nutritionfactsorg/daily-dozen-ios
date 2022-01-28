@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="18122" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="Hsh-Us-G4Y">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="19529" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="Hsh-Us-G4Y">
     <device id="retina4_0" orientation="portrait" appearance="light"/>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="18093"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="19519"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -17,11 +17,11 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" allowsSelection="NO" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="fvQ-f2-GlC">
-                                <rect key="frame" x="0.0" y="180" width="320" height="388"/>
+                                <rect key="frame" x="0.0" y="220" width="320" height="348"/>
                                 <color key="backgroundColor" red="0.95294117649999999" green="0.95294117649999999" blue="0.95294117649999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="dozeDetailSizeCell" rowHeight="75" id="ZQz-2Z-LTf" customClass="DozeDetailSizeCell" customModule="DailyDozen" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="24.5" width="320" height="75"/>
+                                        <rect key="frame" x="0.0" y="44.5" width="320" height="75"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="ZQz-2Z-LTf" id="R1O-eC-rRW">
                                             <rect key="frame" x="0.0" y="0.0" width="320" height="75"/>
@@ -76,7 +76,7 @@
                                         </connections>
                                     </tableViewCell>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="dozeDetailTypeCell" rowHeight="75" id="4by-sC-ujF" customClass="DozeDetailTypeCell" customModule="DailyDozen" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="99.5" width="320" height="75"/>
+                                        <rect key="frame" x="0.0" y="119.5" width="320" height="75"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="4by-sC-ujF" id="iU5-3t-3qP">
                                             <rect key="frame" x="0.0" y="0.0" width="320" height="75"/>
@@ -149,11 +149,11 @@
                                 </prototypes>
                                 <sections/>
                             </tableView>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="detail_dozeBeans" translatesAutoresizingMaskIntoConstraints="NO" id="ltu-V9-P9K">
-                                <rect key="frame" x="0.0" y="0.0" width="320" height="180"/>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" image="detail_dozeBeans" translatesAutoresizingMaskIntoConstraints="NO" id="ltu-V9-P9K">
+                                <rect key="frame" x="0.0" y="0.0" width="320" height="201"/>
                             </imageView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Beans" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="iJb-Vn-TS0">
-                                <rect key="frame" x="8" y="142" width="70" height="30"/>
+                                <rect key="frame" x="8" y="182" width="70" height="30"/>
                                 <fontDescription key="fontDescription" name="HelveticaNeue-Medium" family="Helvetica Neue" pointSize="24"/>
                                 <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <nil key="highlightedColor"/>
@@ -172,7 +172,7 @@
                             <constraint firstItem="ltu-V9-P9K" firstAttribute="leading" secondItem="4ld-ar-fiY" secondAttribute="leading" id="cWs-nf-R1g"/>
                             <constraint firstItem="fvQ-f2-GlC" firstAttribute="top" secondItem="iJb-Vn-TS0" secondAttribute="bottom" constant="8" id="eKX-WU-2Bj"/>
                             <constraint firstItem="fvQ-f2-GlC" firstAttribute="leading" secondItem="4ld-ar-fiY" secondAttribute="leading" id="gDd-s1-nwx"/>
-                            <constraint firstItem="fvQ-f2-GlC" firstAttribute="top" secondItem="4ld-ar-fiY" secondAttribute="top" constant="180" id="jWZ-vX-T5d"/>
+                            <constraint firstItem="fvQ-f2-GlC" firstAttribute="top" secondItem="4ld-ar-fiY" secondAttribute="top" constant="220" id="jWZ-vX-T5d"/>
                             <constraint firstItem="4ld-ar-fiY" firstAttribute="trailing" secondItem="fvQ-f2-GlC" secondAttribute="trailing" id="nKk-jO-E2B"/>
                         </constraints>
                     </view>

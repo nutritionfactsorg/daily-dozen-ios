@@ -69,6 +69,10 @@ class DozeDetailViewController: UIViewController {
         titleLabel.text = dataProvider.viewModel.itemTitle
     }
     
+    override func viewWillAppear(_ animated: Bool) {
+        self.edgesForExtendedLayout = []
+    }
+    
     // MARK: - Methods
     /// Sets a view model for the current item.
     ///

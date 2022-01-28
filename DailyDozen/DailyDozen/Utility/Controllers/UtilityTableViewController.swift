@@ -217,7 +217,7 @@ class UtilityTableViewController: UITableViewController {
         static let utilityTestHistoryClearMsg = "Export the history data to create an importable backup file before clearing the history data. The clear action cannot be undone.\n\nClear (erase) all history data from the database?"
         static let utilityTestStreaksMsg = "The Simulate Progress action cannot be undone. If needed, export the history data to create an importable backup file.\n\nAdd the Simulated Progress data to the database?"
     }
-        
+    
     private func alertTwoButton() {
         let alertController = UIAlertController(title: "Default Style", message: "A standard alert.", preferredStyle: .alert)
 

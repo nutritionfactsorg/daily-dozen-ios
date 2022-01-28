@@ -7,7 +7,6 @@
 //
 
 import UIKit
-import ActiveLabel
 
 class InfoMenuAboutTableVC: UITableViewController {
 
@@ -36,15 +35,12 @@ class InfoMenuAboutTableVC: UITableViewController {
     }
 
     // MARK: - Outlets
-    @IBOutlet private weak var messageLabel: ActiveLabel!
-    @IBOutlet private weak var infoLabel: ActiveLabel!
-    @IBOutlet private weak var designLabel: ActiveLabel!
     
     // Localized outlets
     @IBOutlet weak var infoAppAboutAppName: UILabel!
     @IBOutlet weak var infoAppAboutCreatedBy: UILabel!
     @IBOutlet weak var infoAppAboutOssCredits: UILabel!
-    @IBOutlet weak var infoAppAboutOverview: UILabel!    
+    @IBOutlet weak var infoAppAboutOverview: UILabel!
     @IBOutlet weak var infoAppAboutVersion: UILabel!
     @IBOutlet weak var infoAppAboutWelcome: UILabel!
     
@@ -58,7 +54,7 @@ class InfoMenuAboutTableVC: UITableViewController {
         let barItem = UIBarButtonItem(title: "Done", style: .done, target: nil, action: nil)
         barItem.tintColor = UIColor.white
         navigationItem.setLeftBarButton(barItem, animated: false)
-
+        
         infoAppAboutAppName.text = NSLocalizedString("info_app_about_app_name", comment: "")
         infoAppAboutCreatedBy.text = NSLocalizedString("info_app_about_created_by", comment: "")
         infoAppAboutOssCredits.text = NSLocalizedString("info_app_about_oss_credits", comment: "")
@@ -67,58 +63,6 @@ class InfoMenuAboutTableVC: UITableViewController {
         infoAppAboutWelcome.text = NSLocalizedString("info_app_about_welcome", comment: "")
     }
 
-    func viewDidLoad_WAS() {
-        super.viewDidLoad()
-        navigationController?.navigationBar.titleTextAttributes = [NSAttributedString.Key.foregroundColor: UIColor.white]
-        navigationController?.navigationBar.barTintColor = ColorManager.style.mainMedium
-        navigationController?.navigationBar.tintColor = UIColor.white
-
-        let barItem = UIBarButtonItem(title: "Done", style: .done, target: nil, action: nil)
-        barItem.tintColor = UIColor.white
-        navigationItem.setLeftBarButton(barItem, animated: false)
-
-        let bookType = ActiveType.custom(pattern: Regex.bookHowNotToDie)
-        messageLabel.enabledTypes.append(bookType)
-
-        messageLabel.customize { label in
-            label.customColor[bookType] = ColorManager.style.mainMedium
-            label.handleCustomTap(for: bookType) { _ in
-                UIApplication.shared
-                    .open(LinksService.shared.siteBook,
-                          options: convertToUIApplicationOpenExternalURLOptionsKeyDictionary([:]),
-                          completionHandler: nil)
-            }
-        }
-
-        provide(link: LinksService.shared.team, for: Regex.site, in: infoLabel)
-        provide(link: LinksService.shared.aboutChristi, for: Regex.christi, in: infoLabel)
-        provide(link: LinksService.shared.aboutConst, for: Regex.const, in: infoLabel)
-        provide(link: LinksService.shared.aboutMarc, for: Regex.marc, in: infoLabel)
-        // provide(link: LinksService.shared.aboutElements, for: Regex.elements, in: designLabel)
-    }
-
-    /// Provides a link for the current regex in the label.
-    ///
-    /// - Parameters:
-    ///   - link: The link.
-    ///   - pattern: The regex.
-    ///   - label: The label.
-    private func provide(link: URL?, for pattern: String, in label: ActiveLabel) {
-        let about = ActiveType.custom(pattern: pattern)
-        label.enabledTypes.append(about)
-
-        if let aboutLink = link {
-            label.customize { label in
-                label.customColor[about] = ColorManager.style.mainMedium
-                label.handleCustomTap(for: about) { _ in
-                    UIApplication.shared
-                        .open(aboutLink,
-                              options: convertToUIApplicationOpenExternalURLOptionsKeyDictionary([:]),
-                              completionHandler: nil)
-                }
-            }
-        }
-    }
 }
 
 // Helper function inserted by Swift 4.2 migrator.
