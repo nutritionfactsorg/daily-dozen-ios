@@ -1,15 +1,6 @@
 /* DailyDozen Localizable.strings (ru) */
 /* Copyright © 2021 Nutritionfacts.org. All rights reserved. */
 
-/* Info Menu About: line 2 */
-"apple.info.about.2" = "Не сдохни!";
-
-/* Info Menu About: line 4 */
-"info_app_about_created_by" = "Это приложение было создано NutritionFacts.org, Кристи Ричардс, Константином Хохловым и Марком Кэмпбеллом.";
-
-/* Info Menu About: line 5 */
-"info_app_about_oss_credits" = "Приложение использует следующие библиотеки с открытым кодом: RealmSwift, Charts, FSCalendar, SimpleAnimation, ActiveLabel.";
-
 /* Date Button Title: ‘Back to today’ */
 "dateBackButtonTitle" = "Обратно к Сегодня";
 
@@ -68,7 +59,7 @@
 "dozeOtherInfo.confirm" = "ОК";
 
 /* Daily Dozen supplement info alert: message */
-"dozeOtherInfo.message" = "Витамин B12 крайне важен для вашего здоровья, но он не считается с другими ежедневными порциями. \n\nВитамин B12 добавлен в это приложение, чтобы облегчить отслеживание приема добавки.";
+"dozeOtherInfo.message" = "Витамин B12 крайне важен для вашего здоровья, но он не считается с другими ежедневными порциями.\n\nВитамин B12 добавлен в это приложение, чтобы облегчить отслеживание приема добавки.";
 
 /* Daily Dozen daily entry section heading */
 "dozeOtherInfo.section" = "Пищевые добавки";
@@ -157,14 +148,32 @@
 /* Info About View */
 "info_app_about" = "О нас";
 
+/* Info Menu About: line 2 */
+"info_app_about_app_name" = "Не сдохни!";
+
 /* Info About View Application Name: ‘Daily Dozen’ */
 "info_app_about_app_name" = "Не Сдохни!";
+
+/* Info Menu About: line 4 */
+"info_app_about_created_by" = "Это приложение было создано NutritionFacts.org, Кристи Ричардс, Константином Хохловым и Марком Кэмпбеллом.";
+
+/* Info Menu About: line 5 */
+"info_app_about_oss_credits" = "Приложение использует следующие библиотеки с открытым кодом: RealmSwift, Charts, FSCalendar, SimpleAnimation, ActiveLabel.";
+
+/* Info Menu About: line 1 */
+"info_app_about_overview" = "Используйте это приложение на ежедневной основе, чтобы отслеживать продукты питания и следовать моим рекомендациям из книг Не Сдохни! Еда в борьбе за жизнь и Не сдохни на диете для поддержания оптимального состояния здоровья и продолжительности жизни.";
 
 /* Info About View */
 "info_app_about_overview" = "Используйте данное приложение на ежедневной основе, чтобы отслеживать продукты питания и применять мои рекомендации для оптимального здоровья и продолжительности жизни, которые изложены в книгах Не сдохни и Не сдохни на Диете.";
 
+/* Info Menu About: line 3 */
+"info_app_about_version" = "версия 3.2.3";
+
 /* Info About View Application release version */
-"info_app_about_version" = "версия 3.2.11";
+"info_app_about_version" = "версия 3.2.1";
+
+/* Info Menu About: line 0 */
+"info_app_about_welcome" = "Добро пожаловать в Не сдохни!";
 
 /* Info About View */
 "info_app_about_welcome" = "Добро пожаловать в Не сдохни!";

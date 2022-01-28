@@ -1,0 +1,1126 @@
+{
+  "itemsDict" : {
+    "dozeBeans" : {
+      "heading" : "Llegums",
+      "servings" : [
+        {
+          "imperial" : "¼ tassa d'hummus o untable de llegums",
+          "metric" : "60 g d'hummus o untable de llegums"
+        },
+        {
+          "imperial" : "½ tassa de llegums cuits, mongetes seques, llenties, tofu o tempeh",
+          "metric" : "130 g de llegums cuits, mongetes seques, llenties, tofu o tempeh"
+        },
+        {
+          "imperial" : "1 tassa de pèsols frescos o germinats de llenties",
+          "metric" : "150 g de pèsols frescos o germinats de llenties"
+        }
+      ],
+      "topic" : "topics/beans",
+      "varieties" : [
+        {
+          "text" : "Mongetes negres",
+          "topic" : "topics/black-beans"
+        },
+        {
+          "text" : "Mongetes de l'ull negre",
+          "topic" : ""
+        },
+        {
+          "text" : "Garrofons",
+          "topic" : ""
+        },
+        {
+          "text" : "Mongetes paretanes",
+          "topic" : ""
+        },
+        {
+          "text" : "Cigrons",
+          "topic" : "topics/chickpeas"
+        },
+        {
+          "text" : "Edamame",
+          "topic" : "topics/edamame"
+        },
+        {
+          "text" : "Pèsols",
+          "topic" : ""
+        },
+        {
+          "text" : "Mongetes confit",
+          "topic" : ""
+        },
+        {
+          "text" : "Mongetes sastre",
+          "topic" : "topics/kidney-beans"
+        },
+        {
+          "text" : "Llenties (rossa, pardina i altres varietats)",
+          "topic" : "topics/lentils"
+        },
+        {
+          "text" : "Miso",
+          "topic" : "topics/miso"
+        },
+        {
+          "text" : "Mongetes",
+          "topic" : "topics/navy-beans"
+        },
+        {
+          "text" : "Mongetes pintes",
+          "topic" : "topics/pinto-beans"
+        },
+        {
+          "text" : "Mongetes vermelles",
+          "topic" : ""
+        },
+        {
+          "text" : "Pèsols partits (verds o grocs)",
+          "topic" : "topics/split-peas"
+        },
+        {
+          "text" : "Tempeh",
+          "topic" : "topics/tempeh"
+        }
+      ]
+    },
+    "dozeBerries" : {
+      "heading" : "Fruits del bosc",
+      "servings" : [
+        {
+          "imperial" : "½ tassa frescos o congelats",
+          "metric" : "60 g frescos o congelats"
+        },
+        {
+          "imperial" : "¼ tassa dessecats",
+          "metric" : "40 g dessecats"
+        }
+      ],
+      "topic" : "topics/berries",
+      "varieties" : [
+        {
+          "text" : "Baies d'açaí",
+          "topic" : "topics/acai-berries"
+        },
+        {
+          "text" : "Coralets / Espinavinetes",
+          "topic" : "topics/barberries"
+        },
+        {
+          "text" : "Mores",
+          "topic" : "topics/blackberries"
+        },
+        {
+          "text" : "Mirtils",
+          "topic" : "topics/blueberries"
+        },
+        {
+          "text" : "Cireres (dolces o àcides)",
+          "topic" : "topics/cherries"
+        },
+        {
+          "text" : "Fruits de llambrusca",
+          "topic" : "topics/grapes"
+        },
+        {
+          "text" : "Nabius de grua",
+          "topic" : "topics/cranberries"
+        },
+        {
+          "text" : "Baies de goji",
+          "topic" : "topics/goji-berries"
+        },
+        {
+          "text" : "Cumquats",
+          "topic" : ""
+        },
+        {
+          "text" : "Mores nanes",
+          "topic" : ""
+        },
+        {
+          "text" : "Gerds",
+          "topic" : "topics/raspberries"
+        },
+        {
+          "text" : "Maduixes",
+          "topic" : "topics/strawberries"
+        }
+      ]
+    },
+    "dozeBeverages" : {
+      "heading" : "Begudes",
+      "servings" : [
+        {
+          "imperial" : "Un got (12 unces)",
+          "metric" : "Un got (350 ml)"
+        }
+      ],
+      "topic" : "topics/beverages",
+      "varieties" : [
+        {
+          "text" : "Te negre",
+          "topic" : "topics/black-tea"
+        },
+        {
+          "text" : "Te chai",
+          "topic" : "topics/chai-tea"
+        },
+        {
+          "text" : "Camamilla",
+          "topic" : "topics/chamomile-tea"
+        },
+        {
+          "text" : "Cafè",
+          "topic" : "topics/coffee"
+        },
+        {
+          "text" : "Te Earl Grey",
+          "topic" : "topics/earl-grey-tea"
+        },
+        {
+          "text" : "Te verd",
+          "topic" : "topics/green-tea"
+        },
+        {
+          "text" : "Infusió d'hibisc",
+          "topic" : "topics/hibiscus-tea"
+        },
+        {
+          "text" : "Xocolata calenta (sense sucre)",
+          "topic" : ""
+        },
+        {
+          "text" : "Te de gessamí",
+          "topic" : ""
+        },
+        {
+          "text" : "Infusió de melissa",
+          "topic" : "topics/lemon-balm"
+        },
+        {
+          "text" : "Te matcha",
+          "topic" : "topics/matcha"
+        },
+        {
+          "text" : "Te oolong",
+          "topic" : "topics/oolong-tea"
+        },
+        {
+          "text" : "Te amb menta",
+          "topic" : "topics/peppermint"
+        },
+        {
+          "text" : "Infusió de rooibos",
+          "topic" : "topics/rooibos-tea"
+        },
+        {
+          "text" : "Aigua",
+          "topic" : "topics/water"
+        },
+        {
+          "text" : "Te blanc",
+          "topic" : "topics/white-tea"
+        }
+      ]
+    },
+    "dozeExercise" : {
+      "heading" : "Exercici",
+      "servings" : [
+        {
+          "imperial" : "90 minuts d'activitat física moderada",
+          "metric" : "90 minuts d'activitat física moderada"
+        },
+        {
+          "imperial" : "40 minuts d'activitat física intensa",
+          "metric" : "40 minuts d'activitat física intensa"
+        }
+      ],
+      "topic" : "topics/exercise",
+      "varieties" : [
+        {
+          "text" : "Anar amb bicicleta",
+          "topic" : ""
+        },
+        {
+          "text" : "Anar amb canoa",
+          "topic" : ""
+        },
+        {
+          "text" : "Ballar",
+          "topic" : ""
+        },
+        {
+          "text" : "Jugar a matar conills",
+          "topic" : ""
+        },
+        {
+          "text" : "Esquí alpí",
+          "topic" : ""
+        },
+        {
+          "text" : "Esgrima",
+          "topic" : ""
+        },
+        {
+          "text" : "Senderisme",
+          "topic" : ""
+        },
+        {
+          "text" : "Feines de casa",
+          "topic" : ""
+        },
+        {
+          "text" : "Patinatge sobre gel",
+          "topic" : ""
+        },
+        {
+          "text" : "Patinatge en línia",
+          "topic" : ""
+        },
+        {
+          "text" : "Malabarismes",
+          "topic" : ""
+        },
+        {
+          "text" : "Salt de trampolí",
+          "topic" : ""
+        },
+        {
+          "text" : "Anar amb barca de pedals",
+          "topic" : ""
+        },
+        {
+          "text" : "Jugar amb un disc volador",
+          "topic" : ""
+        },
+        {
+          "text" : "Patinatge sobre rodes",
+          "topic" : ""
+        },
+        {
+          "text" : "Fer canastes",
+          "topic" : ""
+        },
+        {
+          "text" : "Palejar neu",
+          "topic" : ""
+        },
+        {
+          "text" : "Anar amb monopatí",
+          "topic" : ""
+        },
+        {
+          "text" : "Busseig",
+          "topic" : ""
+        },
+        {
+          "text" : "Surf",
+          "topic" : ""
+        },
+        {
+          "text" : "Natació",
+          "topic" : ""
+        },
+        {
+          "text" : "Tennis (en parella)",
+          "topic" : ""
+        },
+        {
+          "text" : "Natació sincronitzada",
+          "topic" : ""
+        },
+        {
+          "text" : "Caminar a pas lleuger",
+          "topic" : ""
+        },
+        {
+          "text" : "Aquagym",
+          "topic" : ""
+        },
+        {
+          "text" : "Esquí aquàtic",
+          "topic" : ""
+        },
+        {
+          "text" : "Feines del jardí",
+          "topic" : ""
+        },
+        {
+          "text" : "Ioga",
+          "topic" : ""
+        },
+        {
+          "text" : "Trescar",
+          "topic" : ""
+        },
+        {
+          "text" : "Bàsquet",
+          "topic" : ""
+        },
+        {
+          "text" : "Anar en bicicleta en pujada",
+          "topic" : ""
+        },
+        {
+          "text" : "Circuits d'entrenament amb peses",
+          "topic" : ""
+        },
+        {
+          "text" : "Esquí de fons",
+          "topic" : ""
+        },
+        {
+          "text" : "Futbol americà",
+          "topic" : ""
+        },
+        {
+          "text" : "Hoquei",
+          "topic" : ""
+        },
+        {
+          "text" : "Fúting",
+          "topic" : ""
+        },
+        {
+          "text" : "Salts amb obertura de braços i cames",
+          "topic" : ""
+        },
+        {
+          "text" : "Saltar a corda",
+          "topic" : ""
+        },
+        {
+          "text" : "Lacrosse",
+          "topic" : ""
+        },
+        {
+          "text" : "Flexions",
+          "topic" : ""
+        },
+        {
+          "text" : "Dominacions",
+          "topic" : ""
+        },
+        {
+          "text" : "Raquetbol",
+          "topic" : ""
+        },
+        {
+          "text" : "Escalada",
+          "topic" : ""
+        },
+        {
+          "text" : "Rugbi",
+          "topic" : ""
+        },
+        {
+          "text" : "Córrer",
+          "topic" : ""
+        },
+        {
+          "text" : "Submarinisme",
+          "topic" : ""
+        },
+        {
+          "text" : "Tennis (en solitari)",
+          "topic" : ""
+        },
+        {
+          "text" : "Futbol",
+          "topic" : ""
+        },
+        {
+          "text" : "Patinatge de velocitat sobre gel",
+          "topic" : ""
+        },
+        {
+          "text" : "Esquaix",
+          "topic" : ""
+        },
+        {
+          "text" : "Fitness",
+          "topic" : ""
+        },
+        {
+          "text" : "Voltes de natació",
+          "topic" : ""
+        },
+        {
+          "text" : "Caminar a pas lleuger en pujada",
+          "topic" : ""
+        },
+        {
+          "text" : "Aquajogging",
+          "topic" : ""
+        }
+      ]
+    },
+    "dozeFlaxseeds" : {
+      "heading" : "Llavors de lli",
+      "servings" : [
+        {
+          "imperial" : "1 cullerada (mòlt)",
+          "metric" : "1 cullerada (mòlt)"
+        }
+      ],
+      "topic" : "topics/flax-seeds",
+      "varieties" : [
+        {
+          "text" : "Llavors de lli marró",
+          "topic" : ""
+        },
+        {
+          "text" : "Llavors de lli daurat",
+          "topic" : ""
+        }
+      ]
+    },
+    "dozeFruitsOther" : {
+      "heading" : "Altres Fruites",
+      "servings" : [
+        {
+          "imperial" : "1 fruita de mida mitjana",
+          "metric" : "1 fruita de mida mitjana"
+        },
+        {
+          "imperial" : "1 tassa de fruita tallada",
+          "metric" : "120 g de fruita tallada"
+        },
+        {
+          "imperial" : "¼ tassa de fruita dessecada",
+          "metric" : "40 g de fruita dessecada"
+        }
+      ],
+      "topic" : "",
+      "varieties" : [
+        {
+          "text" : "Pomes",
+          "topic" : "topics/apples"
+        },
+        {
+          "text" : "Albercocs",
+          "topic" : "topics/apricots"
+        },
+        {
+          "text" : "Alvocats",
+          "topic" : "topics/avocados"
+        },
+        {
+          "text" : "Bananes",
+          "topic" : "topics/bananas"
+        },
+        {
+          "text" : "Cantalup",
+          "topic" : "topics/cantaloupe"
+        },
+        {
+          "text" : "Clementines",
+          "topic" : ""
+        },
+        {
+          "text" : "Dàtils",
+          "topic" : "topics/dates"
+        },
+        {
+          "text" : "Figues",
+          "topic" : ""
+        },
+        {
+          "text" : "Aranges",
+          "topic" : "topics/grapefruit"
+        },
+        {
+          "text" : "Meló verd",
+          "topic" : ""
+        },
+        {
+          "text" : "Kiwis",
+          "topic" : "topics/kiwifruit"
+        },
+        {
+          "text" : "Llimones",
+          "topic" : "topics/lemons"
+        },
+        {
+          "text" : "Llimes",
+          "topic" : "topics/limes"
+        },
+        {
+          "text" : "Litxis",
+          "topic" : ""
+        },
+        {
+          "text" : "Mangos",
+          "topic" : "topics/mango"
+        },
+        {
+          "text" : "Nectarines",
+          "topic" : ""
+        },
+        {
+          "text" : "Taronges",
+          "topic" : "topics/oranges"
+        },
+        {
+          "text" : "Papaies",
+          "topic" : ""
+        },
+        {
+          "text" : "Fruites de la passió",
+          "topic" : ""
+        },
+        {
+          "text" : "Préssecs",
+          "topic" : "topics/peaches"
+        },
+        {
+          "text" : "Peres",
+          "topic" : "topics/pears"
+        },
+        {
+          "text" : "Pinya",
+          "topic" : ""
+        },
+        {
+          "text" : "Prunes (especialment les fosques)",
+          "topic" : "topics/plums"
+        },
+        {
+          "text" : "Pluots",
+          "topic" : ""
+        },
+        {
+          "text" : "Magranes",
+          "topic" : "topics/pomegranates"
+        },
+        {
+          "text" : "Prunes seques",
+          "topic" : "topics/prunes"
+        },
+        {
+          "text" : "Tangerines",
+          "topic" : ""
+        },
+        {
+          "text" : "Meló",
+          "topic" : "topics/watermelon"
+        }
+      ]
+    },
+    "dozeGreens" : {
+      "heading" : "Verdures de fulla verda",
+      "servings" : [
+        {
+          "imperial" : "1 tassa crua",
+          "metric" : "60 g crua"
+        },
+        {
+          "imperial" : "½ tassa cuita",
+          "metric" : "90 g  cuita"
+        }
+      ],
+      "topic" : "topics/greens",
+      "varieties" : [
+        {
+          "text" : "Rúcula",
+          "topic" : ""
+        },
+        {
+          "text" : "Fulles de remolatxa",
+          "topic" : "topics/beets"
+        },
+        {
+          "text" : "Col de cabdell",
+          "topic" : "topics/collard-greens"
+        },
+        {
+          "text" : "Kale (negra, verda i vermella)",
+          "topic" : "topics/kale"
+        },
+        {
+          "text" : "Mesclum (barreja de brots i fulles)",
+          "topic" : ""
+        },
+        {
+          "text" : "Fulles de mostassa bruna",
+          "topic" : "topics/mustard-greens"
+        },
+        {
+          "text" : "Agrella",
+          "topic" : ""
+        },
+        {
+          "text" : "Espinacs",
+          "topic" : "topics/spinach"
+        },
+        {
+          "text" : "Bledes",
+          "topic" : "topics/swiss-chard"
+        },
+        {
+          "text" : "Fulles de nap",
+          "topic" : ""
+        }
+      ]
+    },
+    "dozeNuts" : {
+      "heading" : "Fruits secs i llavors",
+      "servings" : [
+        {
+          "imperial" : "¼ tassa de fruits secs o llavors",
+          "metric" : "30 g de fruits secs o llavors"
+        },
+        {
+          "imperial" : "2 cullerades de crema de fruits secs o llavors",
+          "metric" : "2 cullerades de crema de fruits secs o llavors"
+        }
+      ],
+      "topic" : "topics/nuts",
+      "varieties" : [
+        {
+          "text" : "Ametlles",
+          "topic" : "topics/almonds"
+        },
+        {
+          "text" : "Nous del Brasil",
+          "topic" : "topics/brazil-nuts"
+        },
+        {
+          "text" : "Anacards",
+          "topic" : "topics/cashews"
+        },
+        {
+          "text" : "Llavors de xia",
+          "topic" : "topics/chia-seeds"
+        },
+        {
+          "text" : "Avellanes",
+          "topic" : "topics/hazelnuts"
+        },
+        {
+          "text" : "Llavors de cànem",
+          "topic" : ""
+        },
+        {
+          "text" : "Nous de Macadamia",
+          "topic" : "topics/macadamia-nuts"
+        },
+        {
+          "text" : "Nous pecanes",
+          "topic" : "topics/pecans"
+        },
+        {
+          "text" : "Pistatxos",
+          "topic" : "topics/pistachios"
+        },
+        {
+          "text" : "Llavors de carbassa",
+          "topic" : "topics/pumpkin-seeds"
+        },
+        {
+          "text" : "Llavors de sèsam",
+          "topic" : "topics/sesame-seeds"
+        },
+        {
+          "text" : "Llavors de gira-sol",
+          "topic" : "topics/sunflower-seeds"
+        },
+        {
+          "text" : "Nous",
+          "topic" : "topics/walnuts"
+        }
+      ]
+    },
+    "dozeSpices" : {
+      "heading" : "Espècies",
+      "servings" : [
+        {
+          "imperial" : "¼ culleradeta de cúrcuma",
+          "metric" : "¼ culleradeta de cúrcuma"
+        },
+        {
+          "imperial" : "Qualsevol altra espècie (sense sal)",
+          "metric" : "Qualsevol altra espècie (sense sal)"
+        }
+      ],
+      "topic" : "topics/spices",
+      "varieties" : [
+        {
+          "text" : "Pebre de Jamaica",
+          "topic" : "topics/allspice"
+        },
+        {
+          "text" : "Berberis",
+          "topic" : "topics/barberries"
+        },
+        {
+          "text" : "Alfàbrega",
+          "topic" : "topics/basil"
+        },
+        {
+          "text" : "Llorer",
+          "topic" : ""
+        },
+        {
+          "text" : "Cardamom",
+          "topic" : ""
+        },
+        {
+          "text" : "Pebre de Caiena",
+          "topic" : ""
+        },
+        {
+          "text" : "Cilantre",
+          "topic" : "topics/cilantro"
+        },
+        {
+          "text" : "Canyella",
+          "topic" : "topics/cinnamon"
+        },
+        {
+          "text" : "Claus d'olor",
+          "topic" : "topics/cloves"
+        },
+        {
+          "text" : "Coriandre",
+          "topic" : ""
+        },
+        {
+          "text" : "Comí",
+          "topic" : "topics/cumin"
+        },
+        {
+          "text" : "Curri en pols",
+          "topic" : "topics/curry-powder"
+        },
+        {
+          "text" : "Anet",
+          "topic" : ""
+        },
+        {
+          "text" : "Fenigrec",
+          "topic" : "topics/fenugreek"
+        },
+        {
+          "text" : "All",
+          "topic" : "topics/garlic"
+        },
+        {
+          "text" : "Gingebre",
+          "topic" : "topics/ginger"
+        },
+        {
+          "text" : "Rave picant",
+          "topic" : ""
+        },
+        {
+          "text" : "Citronel·la",
+          "topic" : ""
+        },
+        {
+          "text" : "Marduix",
+          "topic" : "topics/marjoram"
+        },
+        {
+          "text" : "Grans de mostassa",
+          "topic" : "topics/mustard-powder"
+        },
+        {
+          "text" : "Nou moscada",
+          "topic" : "topics/nutmeg"
+        },
+        {
+          "text" : "Orenga",
+          "topic" : "topics/oregano"
+        },
+        {
+          "text" : "Pebre vermell",
+          "topic" : ""
+        },
+        {
+          "text" : "Julivert",
+          "topic" : "topics/parsley"
+        },
+        {
+          "text" : "Pebre",
+          "topic" : "topics/pepper"
+        },
+        {
+          "text" : "Menta pebrera",
+          "topic" : "topics/peppermint"
+        },
+        {
+          "text" : "Romaní",
+          "topic" : "topics/rosemary"
+        },
+        {
+          "text" : "Safrà",
+          "topic" : "topics/saffron"
+        },
+        {
+          "text" : "Sàlvia",
+          "topic" : ""
+        },
+        {
+          "text" : "Farigola",
+          "topic" : ""
+        },
+        {
+          "text" : "Cúrcuma",
+          "topic" : "topics/turmeric"
+        },
+        {
+          "text" : "Vainilla",
+          "topic" : ""
+        }
+      ]
+    },
+    "dozeVegetablesCruciferous" : {
+      "heading" : "Crucíferes",
+      "servings" : [
+        {
+          "imperial" : "½ tassa tallat",
+          "metric" : "30-80 g tallat"
+        },
+        {
+          "imperial" : "¼ tassa de cols de Brussel·les o brots de bròquil",
+          "metric" : "12 g de cols de Brussel·les o brots de bròquil"
+        },
+        {
+          "imperial" : "1 cullerada de rave picant",
+          "metric" : "1 cullerada de rave picant"
+        }
+      ],
+      "topic" : "",
+      "varieties" : [
+        {
+          "text" : "Rúcula",
+          "topic" : ""
+        },
+        {
+          "text" : "Bleda xinesa",
+          "topic" : "topics/bok-choy"
+        },
+        {
+          "text" : "Bròcoli (inclòs el Romanesco)",
+          "topic" : "topics/broccoli"
+        },
+        {
+          "text" : "Cols de Brussel·les",
+          "topic" : "topics/brussels-sprouts"
+        },
+        {
+          "text" : "Col (verda, llombarda i de Milà)",
+          "topic" : "topics/cabbage"
+        },
+        {
+          "text" : "Coliflor (blanca, verda, taronja o lila)",
+          "topic" : "topics/cauliflower"
+        },
+        {
+          "text" : "Col de cabdell",
+          "topic" : "topics/collard-greens"
+        },
+        {
+          "text" : "Rave picant",
+          "topic" : ""
+        },
+        {
+          "text" : "Kale (negra, verda i vermella)",
+          "topic" : "topics/kale"
+        },
+        {
+          "text" : "Colrave",
+          "topic" : ""
+        },
+        {
+          "text" : "Fulles de mostassa bruna",
+          "topic" : "topics/mustard-greens"
+        },
+        {
+          "text" : "Raves",
+          "topic" : ""
+        },
+        {
+          "text" : "Fulles de nap",
+          "topic" : ""
+        },
+        {
+          "text" : "Creixen",
+          "topic" : "topics/watercress"
+        }
+      ]
+    },
+    "dozeVegetablesOther" : {
+      "heading" : "Altres verdures",
+      "servings" : [
+        {
+          "imperial" : "1 tassa de verdures de fulla crues",
+          "metric" : "60 g de verdures de fulla crues"
+        },
+        {
+          "imperial" : "½ tassa de verdures sense fulla crues o cuites",
+          "metric" : "50 g de verdures sense fulla crues o cuites"
+        },
+        {
+          "imperial" : "½ tassa de suc de verdures",
+          "metric" : "125 ml de suc de verdures"
+        },
+        {
+          "imperial" : "¼ tassa de bolets dessecats",
+          "metric" : "7 g de bolets dessecats"
+        }
+      ],
+      "topic" : "",
+      "varieties" : [
+        {
+          "text" : "Carxofes",
+          "topic" : "topics/artichokes"
+        },
+        {
+          "text" : "Espàrrecs",
+          "topic" : "topics/asparagus"
+        },
+        {
+          "text" : "Remolatxes",
+          "topic" : "topics/beets"
+        },
+        {
+          "text" : "Pebrots",
+          "topic" : "topics/bell-peppers"
+        },
+        {
+          "text" : "Pastanagues",
+          "topic" : "topics/carrots"
+        },
+        {
+          "text" : "Blat de moro",
+          "topic" : "topics/corn"
+        },
+        {
+          "text" : "All",
+          "topic" : "topics/garlic"
+        },
+        {
+          "text" : "Bolets (xampinyons, gírgoles, portobello i xiitake)",
+          "topic" : "topics/mushrooms"
+        },
+        {
+          "text" : "Ocra",
+          "topic" : "topics/okra"
+        },
+        {
+          "text" : "Cebes",
+          "topic" : "topics/onions"
+        },
+        {
+          "text" : "Patates vermelles",
+          "topic" : "topics/potatoes"
+        },
+        {
+          "text" : "Carbassa",
+          "topic" : "topics/pumpkin"
+        },
+        {
+          "text" : "Algues (arame, dulse i nori)",
+          "topic" : "topics/sea-vegetables"
+        },
+        {
+          "text" : "Pesòls dolços",
+          "topic" : ""
+        },
+        {
+          "text" : "Albergínies",
+          "topic" : "topics/squash"
+        },
+        {
+          "text" : "Moniatos",
+          "topic" : "topics/sweet-potatoes"
+        },
+        {
+          "text" : "Tomàquets",
+          "topic" : "topics/tomatoes"
+        },
+        {
+          "text" : "Carvassó",
+          "topic" : "topics/zucchini"
+        }
+      ]
+    },
+    "dozeWholeGrains" : {
+      "heading" : "Cereals integrals",
+      "servings" : [
+        {
+          "imperial" : "½ tassa de cereals cuits, pasta integral o grans de blat cuits",
+          "metric" : "100 g de cereals cuits, pasta integral o grans de blat cuits"
+        },
+        {
+          "imperial" : "1 tassa de cereals freds",
+          "metric" : "50 g de cereals freds"
+        },
+        {
+          "imperial" : "1 tortilla o llesca de pa",
+          "metric" : "1 tortilla o llesca de pa"
+        },
+        {
+          "imperial" : "½ bagel o muffin anglès",
+          "metric" : "½ bagel o muffin anglès"
+        },
+        {
+          "imperial" : "3 tasses de crispetes de blat de moro",
+          "metric" : "30 g de crispetes de blat de moro"
+        }
+      ],
+      "topic" : "topics/grains",
+      "varieties" : [
+        {
+          "text" : "Ordi",
+          "topic" : "topics/barley"
+        },
+        {
+          "text" : "Blat sarraí",
+          "topic" : "topics/buckwheat"
+        },
+        {
+          "text" : "Mill",
+          "topic" : "topics/millet"
+        },
+        {
+          "text" : "Civada",
+          "topic" : "topics/oats"
+        },
+        {
+          "text" : "Crispetes",
+          "topic" : "topics/popcorn"
+        },
+        {
+          "text" : "Quinoa",
+          "topic" : "topics/quinoa"
+        },
+        {
+          "text" : "Sègol",
+          "topic" : "topics/rye"
+        },
+        {
+          "text" : "Tef",
+          "topic" : ""
+        },
+        {
+          "text" : "Pasta integral",
+          "topic" : "topics/pasta"
+        }
+      ]
+    },
+    "otherVitaminB12" : {
+      "heading" : "Vitamin B12",
+      "servings" : [
+
+      ],
+      "topic" : "topics/vitamin-b12",
+      "varieties" : [
+
+      ]
+    }
+  }
+}

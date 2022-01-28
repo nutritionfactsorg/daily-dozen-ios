@@ -1,56 +1,56 @@
-/* DailyDozen Localizable.strings (de) */
+/* DailyDozen Localizable.strings (ca) */
 /* Copyright © 2021 Nutritionfacts.org. All rights reserved. */
 
 /* Date Button Title: ‘Back to today’ */
-"dateBackButtonTitle" = "Zurück zu heute";
+"dateBackButtonTitle" = "Tornar a avui";
 
 /* Date Button Title: ‘Today’ */
-"dateButtonTitle.today" = "Heute";
+"dateButtonTitle.today" = "Avui";
 
 /* heading for daily data entry item */
-"dozeBeans.heading" = "Bohnen";
+"dozeBeans.heading" = "Llegums";
 
 /* https://nutritionfacts.org/topics/beans */
 "dozeBeans.topic" = "topics/beans";
 
 /* heading for daily data entry item */
-"dozeBerries.heading" = "Beeren";
+"dozeBerries.heading" = "Fruits del bosc";
 
 /* https://nutritionfacts.org/topics/berries */
 "dozeBerries.topic" = "topics/berries";
 
 /* heading for daily data entry item */
-"dozeBeverages.heading" = "Getränke";
+"dozeBeverages.heading" = "Begudes";
 
 /* https://nutritionfacts.org/topics/beverages */
 "dozeBeverages.topic" = "topics/beverages";
 
 /* heading for daily data entry item */
-"dozeExercise.heading" = "Bewegung";
+"dozeExercise.heading" = "Exercici";
 
 /* https://nutritionfacts.org/topics/exercise */
 "dozeExercise.topic" = "topics/exercise";
 
 /* heading for daily data entry item */
-"dozeFlaxseeds.heading" = "Leinsamen";
+"dozeFlaxseeds.heading" = "Llavors de lli";
 
 /* https://nutritionfacts.org/topics/flax-seeds */
 "dozeFlaxseeds.topic" = "topics/flax-seeds";
 
 /* heading for daily data entry item */
-"dozeFruitsOther.heading" = "Anderes Obst";
+"dozeFruitsOther.heading" = "Altres Fruites";
 
 /* https://nutritionfacts.org/topics/fruit */
 "dozeFruitsOther.topic" = "topics/fruit";
 
 /* heading for daily data entry item */
-"dozeGreens.heading" = "Blattgemüse";
+"dozeGreens.heading" = "Verdures de fulla verda";
 
 /* https://nutritionfacts.org/topics/greens */
 "dozeGreens.topic" = "topics/greens";
 
 /* heading for daily data entry item */
-"dozeNuts.heading" = "Nüsse und Saaten";
+"dozeNuts.heading" = "Fruits secs i llavors";
 
 /* https://nutritionfacts.org/topics/nuts */
 "dozeNuts.topic" = "topics/nuts";
@@ -59,175 +59,175 @@
 "dozeOtherInfo.confirm" = "OK";
 
 /* Daily Dozen supplement info alert: message */
-"dozeOtherInfo.message" = "Vitamin B12 ist wichtig für die Gesundheit, wird aber nicht auf die tägliche Portion angerechnet.\n\nVitamin B12 ist in dieser App enthalten, um Ihnen eine einfache Möglichkeit zu bieten, Ihre Einnahme zu verfolgen.";
+"dozeOtherInfo.message" = "La vitamina B12 és essencial per la teva salut però no compta en relació amb les teves racions diàries.\n\nLa Vitamina B12 està inclosa en aquesta app per proporcionar-te una manera fàcil de fer un seguiment de les dosis.";
 
 /* Daily Dozen daily entry section heading */
-"dozeOtherInfo.section" = "Nahrungsergänzungsmittel";
+"dozeOtherInfo.section" = "Suplements";
 
 /* Daily Dozen supplement info alert: title */
-"dozeOtherInfo.title" = "Nahrungsergänzungsmittel";
+"dozeOtherInfo.title" = "Suplements";
 
 /* heading for daily data entry item */
-"dozeSpices.heading" = "Gewürze";
+"dozeSpices.heading" = "Espècies";
 
 /* https://nutritionfacts.org/topics/spices */
 "dozeSpices.topic" = "topics/spices";
 
 /* heading for daily data entry item */
-"dozeVegetablesCruciferous.heading" = "Kreuzblütler-Gemüse";
+"dozeVegetablesCruciferous.heading" = "Crucíferes";
 
 /* https://nutritionfacts.org/topics/cruciferous-vegetables */
 "dozeVegetablesCruciferous.topic" = "topics/cruciferous-vegetables";
 
 /* heading for daily data entry item */
-"dozeVegetablesOther.heading" = "Anderes Gemüse";
+"dozeVegetablesOther.heading" = "Altres verdures";
 
 /* https://nutritionfacts.org/topics/vegetables */
 "dozeVegetablesOther.topic" = "topics/vegetables";
 
 /* heading for daily data entry item */
-"dozeWholeGrains.heading" = "Vollkorn";
+"dozeWholeGrains.heading" = "Cereals integrals";
 
 /* https://nutritionfacts.org/topics/grains */
 "dozeWholeGrains.topic" = "topics/grains";
 
 /* Doze Detail View subheading: ‘Serving Sizes’ */
-"doze_detail_section_sizes" = "Portionsgrößen";
+"doze_detail_section_sizes" = "Mida de les porcions";
 
 /* Doze Detail View subheading: ‘Types’ */
-"doze_detail_section_types" = "Arten";
+"doze_detail_section_types" = "Tipus";
 
 /* Doze Entry View heading: ‘Servings’ */
-"doze_entry_header" = "Portionen";
+"doze_entry_header" = "Porcions";
 
 /*  */
-"historyRecord.movingAverage" = "Gleitender Mittelwert";
+"historyRecord.movingAverage" = "Mesura mòbil";
 
 /* History View */
-"historyRecordDoze.heading" = "Portionen Verlauf";
+"historyRecordDoze.heading" = "Historial de Porcions";
 
 /* History View */
-"historyRecordDoze.legend" = "Portionen Verlauf";
+"historyRecordDoze.legend" = "Porcions";
 
 /* History View */
-"historyRecordTweak.heading" = "Optimierungen Verlauf";
+"historyRecordTweak.heading" = "Historial de Potenciadors";
 
 /* History View */
-"historyRecordTweak.legend" = "Optimierungen Verlauf";
+"historyRecordTweak.legend" = "Potenciadors";
 
 /* History View */
-"historyRecordWeight.heading" = "Gewichtsverlauf";
+"historyRecordWeight.heading" = "Historial de pes";
 
 /* History View */
-"historyRecordWeight.legendEvening" = "Abend";
+"historyRecordWeight.legendEvening" = "Vespre";
 
 /* History View */
-"historyRecordWeight.legendMorning" = "Morgen";
+"historyRecordWeight.legendMorning" = "Matí";
 
 /* History View */
-"historyRecordWeight.titleImperial" = "Gewicht (Pfund)";
+"historyRecordWeight.titleImperial" = "Pes (lliures)";
 
 /* History View */
-"historyRecordWeight.titleMetric" = "Gewicht (kg)";
+"historyRecordWeight.titleMetric" = "Pes (quilos)";
 
 /* History View: calendar scale control */
-"history_scale_choice_day" = "Tag";
+"history_scale_choice_day" = "Dia";
 
 /* History View: calendar scale control */
-"history_scale_choice_month" = "Monat";
+"history_scale_choice_month" = "Mes";
 
 /* History View: calendar scale control */
-"history_scale_choice_year" = "Jahr";
+"history_scale_choice_year" = "Any";
 
 /* History View: scale text */
-"history_scale_label" = "Zeitskala";
+"history_scale_label" = "Calendari";
 
 /* Info About View */
-"info.about.title" = "Über diese Anwendung";
+"info.about.title" = "Sobre aquesta app";
 
 /* Info About View */
-"info_app_about" = "Über";
+"info_app_about" = "Informació";
 
 /* Info Menu About: line 2 */
-"info_app_about_app_name" = "Das Tägliche Dutzend";
+"info_app_about_app_name" = "Dotzena Diària";
 
 /* Info About View Application Name: ‘Daily Dozen’ */
-"info_app_about_app_name" = "Das tägliche Dutzend";
+"info_app_about_app_name" = "Dotzena Diària";
 
 /* Info Menu About: line 4 */
-"info_app_about_created_by" = "Diese App wurde erstellt von: NutritionFacts.org, Christi Richards, Konstantin Khokhlov, und Marc Campbell";
+"info_app_about_created_by" = "Aquesta app ha estat creada per: NutritionFacts.org, Christi Richards, Konstantin Khokhlov i Marc Campbell";
 
 /* Info Menu About: line 5 */
-"info_app_about_oss_credits" = "Die folgenden Open-Source-Bibliotheken werden verwendet: RealmSwift, Charts, FSCalendar, SimpleAnimation, ActiveLabel.";
+"info_app_about_oss_credits" = "S'utilitzen les següents biblioteques de codi obert: RealmSwift, Charts, FSCalendar, SimpleAnimation, ActiveLabel.";
 
 /* Info Menu About: line 1 */
-"info_app_about_overview" = "Verwenden Sie diese App täglich, um den Überblick über die Lebensmittel und Ratschläge zu behalten, die ich in meinen Büchern How Not to Die und How Not to Diet für optimale Gesundheit und Langlebigkeit empfehle.";
+"info_app_about_overview" = "Utilitza aquesta aplicació diàriament per fer un seguiment dels aliments i els consells que recomano per una salut i una longevitat òptimès als meus llibres How Not to Die and How Not to Diet.";
 
 /* Info About View */
-"info_app_about_overview" = "Verwenden Sie diese App täglich, um den Überblick über die Lebensmittel und Ratschläge zu behalten, die ich in meinen Büchern How Not to Die und How Not to Diet für optimale Gesundheit und Langlebigkeit empfehle.";
-
-/* Info Menu About: line 3 */
-"info_app_about_version" = "Version 3.2.3";
+"info_app_about_overview" = "Utilitza aquesta app cada dia per fer un seguiment dels aliments i els consells que dono per una salut i longevitat òptimes als meus llibres How Not to Die i How Not to Diet.";
 
 /* Info About View Application release version */
-"info_app_about_version" = "Version 3.2.1";
+"info_app_about_version" = "versió 3.2.3";
+
+/* Info About View Application release version */
+"info_app_about_version" = "versió 3.2.7";
 
 /* Info Menu About: line 0 */
-"info_app_about_welcome" = "Willkommen zu meinem Täglichen Dutzend!";
+"info_app_about_welcome" = "Benvingut a la meva Dotzena Diària!";
 
 /* Info About View */
-"info_app_about_welcome" = "Willkommen zu meinem Täglichen Dutzend!";
+"info_app_about_welcome" = "Benvingut a la meva Dotzena Diària!";
 
 /* Info Menu: book title */
-"info_book_how_not_to_die" = "Buch: How Not to Die";
+"info_book_how_not_to_die" = "Llibre: How not to Die";
 
 /* Info Menu: book title */
-"info_book_how_not_to_die_cookbook" = "Buch: How Not to Die Kochbuch";
+"info_book_how_not_to_die_cookbook" = "Llibre: How not to Diet Cookbook";
 
 /* Info Menu: book title */
-"info_book_how_not_to_diet" = "Buch: How Not to Diet";
+"info_book_how_not_to_diet" = "Llibre: How not to Diet";
 
 /* Info Menu */
-"info_webpage_daily_dozen_challenge" = "Die Tägliches Dutzend Herausforderung";
+"info_webpage_daily_dozen_challenge" = "Repte de la Dotzena Diària";
 
 /* Info Menu */
-"info_webpage_donate" = "Spenden Sie";
+"info_webpage_donate" = "Donacions";
 
 /* Info Menu */
-"info_webpage_open_source" = "Open Source";
+"info_webpage_open_source" = "Codi Obert";
 
 /* Info Menu */
-"info_webpage_subscribe" = "Abonnieren";
+"info_webpage_subscribe" = "Subscriu-te";
 
 /* Info Menu */
-"info_webpage_videos_latest" = "Neueste Videos";
+"info_webpage_videos_latest" = "Últims vídeos";
 
 /* Item History Legend: ‘All completed’ */
-"item_history_completed_all" = "Alle Portionen";
+"item_history_completed_all" = "Totes les racions";
 
 /* Item History Legend: ‘Some completed’ */
-"item_history_completed_some" = "Einige Portionen";
+"item_history_completed_some" = "Algunes racions";
 
 /* Item History Heading */
-"item_history_heading" = "Hintergrund";
+"item_history_heading" = "Historial";
 
 /* Main Navigation Tab Control: ‘Daily Dozen’ (proper noun) */
-"navtab.doze" = "Das Tägliche Dutzend";
+"navtab.doze" = "Dotzena Diària";
 
 /* Main Navigation Tab Control: show more information */
-"navtab.info" = "Information";
+"navtab.info" = "Informació";
 
 /* Main Navigation Tab Control: ‘Preferences’ synonyms: Settings, Configuration. Choose a translations with is different from Tweaks. */
-"navtab.preferences" = "Einstellungen";
+"navtab.preferences" = "Preferències";
 
 /* Main Navigation Tab Control: ‘21 Tweaks’ (proper noun) */
-"navtab.tweaks" = "21 Optimierungen";
+"navtab.tweaks" = "21 Potenciadors";
 
 /* https://nutritionfacts.org/topics/omega-3-fatty-acids */
 "otherOmega3.topic" = "topics/omega-3-fatty-acids";
 
 /* heading for daily data entry item */
-"otherVitaminB12.heading" = "Vitamin B12";
+"otherVitaminB12.heading" = "Vitamina B12";
 
 /* https://nutritionfacts.org/topics/vitamin-b12 */
 "otherVitaminB12.topic" = "topics/vitamin-b12";
@@ -236,154 +236,154 @@
 "otherVitaminD.topic" = "topics/vitamin-d-supplements";
 
 /* Alert notification text */
-"reminder.alert.text" = "Aktualisieren Sie Ihre Portionen für heute";
+"reminder.alert.text" = "Actualitza les racions d'avui";
 
 /* Daily Reminder (alert title, settings section heading) */
-"reminder.heading" = "Tägliche Erinnerung";
+"reminder.heading" = "Recordatori Diari";
 
 /* Daily Reminder On/Off toggle switch label */
-"reminder.settings.enable" = "Erinnerungen einschalten";
+"reminder.settings.enable" = "Permetre Recordatoris";
 
 /* Daily Reminder sound control heading */
-"reminder.settings.sound" = "Ton abspielen";
+"reminder.settings.sound" = "Reproduir So";
 
 /* Daily Reminder time control heading */
-"reminder.settings.time" = "Errinnere mich um:";
+"reminder.settings.time" = "Recorda-m'ho a";
 
 /* Android notification `vibrate` */
-"reminder.settings.vibrate" = "Vibrieren";
+"reminder.settings.vibrate" = "Vibració";
 
 /* ‘Off’ as in ‘On (enabled) or Off (disabled)’, Daily Reminder is not enabled */
-"reminder.state.off" = "Aus";
+"reminder.state.off" = "Off";
 
 /* ‘On’ as in ‘On (enabled) or Off (disable)’. Daily Reminder is enabled */
-"reminder.state.on" = "An";
+"reminder.state.on" = "On";
 
 /* First Launch Setting: button text */
-"setting_doze_only_btn" = "Nur Tägliches Dutzend";
+"setting_doze_only_btn" = "Dotzena Diària\nNomés";
 
 /* Preference Settings View: selection button text */
-"setting_doze_only_choice" = "Nur Tägliches Dutzend";
+"setting_doze_only_choice" = "Només Dotzena Diària";
 
 /* First Launch Setting: button text */
-"setting_doze_tweak_btn" = "Tägliches Dutzend + 21 Optimierungen";
+"setting_doze_tweak_btn" = "Dotzena Diària +\n21 Potenciadors";
 
 /* Preference Settings View: selection button text */
-"setting_doze_tweak_choice" = "Tägliches Dutzend + 21 Optimierungen";
+"setting_doze_tweak_choice" = "Dotzena Diària + 21 Potenciadors";
 
 /* Preference Settings View: brief description text below Tweaks visibility control. */
-"setting_doze_tweak_footer" = "Für Gesundheit allein verwenden Sie \"Nur das tägliche Dutzend\". Für Gesundheit und Gewichtsabnahme verwenden Sie \"Tägliches Dutzend + 21 Optimierungen\".";
+"setting_doze_tweak_footer" = "Si t'interessa només la salut, utilitza \"Només Dotzena Diària\". Si t'interessa la salut i perdre pes utilitza \"Dotzena Diària + 21 Potenciadors\".";
 
 /* First Launch Setting: brief description above ‘Daily Dozen Only’ button. */
-"setting_health_alone_txt" = "Nur für die Gesundheit";
+"setting_health_alone_txt" = "Només Salut";
 
 /* First Launch Setting: brief description above ‘Daily Dozen + 21 Tweaks’ button. */
-"setting_health_weight_txt" = "Für Gesundheit und Gewichtsabnahme";
+"setting_health_weight_txt" = "Salut i Perdre Pes";
 
 /* Preference Settings View: tweaks visibilty subsection heading */
-"setting_tweak_header" = "21 Optimierungen Transparenz";
+"setting_tweak_header" = "Visibilitat dels 21 Potenciadors";
 
 /* Preference Settings View: Part of ‘Imperial/Metric/Toggle Units’ selector */
 "setting_units_0_imperial" = "Imperial";
 
 /* Preference Settings View: Part of ‘Imperial/Metric/Toggle Units’ selector */
-"setting_units_1_metric" = "Metrisch";
+"setting_units_1_metric" = "Mètric";
 
 /* Preference Settings View: Part of ‘Imperial/Metric/Toggle Units’ selector */
-"setting_units_2_toggle" = "Umschalten";
+"setting_units_2_toggle" = "Alternar Unitats";
 
 /* Preference Settings View: brief description text below units control. */
-"setting_units_choice_footer" = "Legen Sie fest, dass es sich immer um denselben Einheitentyp handelt, oder aktivieren Sie die Umschalttaste \"Einheiten:\".";
+"setting_units_choice_footer" = "Configura-ho perquè sigui sempre un tipus d'unitat o permet el botó d'alternància, \"Unitats\".";
 
 /* Preference Settings View */
-"setting_units_header" = "Maßeinheiten";
+"setting_units_header" = "Unitats de mesura";
 
 /* Preference Settings View */
-"setting_util_advanced" = "Erweiterte Hilfsmittel";
+"setting_util_advanced" = "Utilitats avançades";
 
 /* ‘Streak’ count. Synonym: ‘Progress‘. Formatted number ‘%d’ for consecutive days completed. Place translated text for ‘days’ on the right or left of ‘%d’ based on language directionality. */
-"streakDaysFormat" = "%d Tage";
+"streakDaysFormat" = "%d dies";
 
 /* heading for daily data entry item */
-"tweakCompleteIntentions.heading" = "Vervollständigen Sie Ihre Umsetzungsabsichten";
+"tweakCompleteIntentions.heading" = "Completa els Teus Objectius";
 
 /* heading for daily data entry item */
-"tweakDailyBlackCumin.heading" = "Schwarzkümmel (¼ TL)";
+"tweakDailyBlackCumin.heading" = "Comí negre (¼ culleradeta)";
 
 /* heading for daily data entry item */
-"tweakDailyCumin.heading" = "Kreuzkümmel (½ TL zum Mittag- und Abendessen)";
+"tweakDailyCumin.heading" = "Comí (½ culleradeta amb el dinar i el sopar)";
 
 /* heading for daily data entry item */
-"tweakDailyDeflourDiet.heading" = "Mehl durch Vollkorn ersetzen";
+"tweakDailyDeflourDiet.heading" = "Prou de farines";
 
 /* heading for daily data entry item */
-"tweakDailyFrontLoad.heading" = "Verzehren Sie die Kalorien früh am Tag";
+"tweakDailyFrontLoad.heading" = "Càrrega frontal de calories";
 
 /* heading for daily data entry item */
-"tweakDailyGarlic.heading" = "Knoblauchpulver (¼ TL)";
+"tweakDailyGarlic.heading" = "All en pols (¼ culleradeta)";
 
 /* heading for daily data entry item */
-"tweakDailyGinger.heading" = "Gemahlener Ingwer (1 TL) oder Cayenne-Pfeffer (½ TL)";
+"tweakDailyGinger.heading" = "Gingebre mòlt (1 culleradeta) o Pebre de Caiena (½ culleradeta)";
 
 /* heading for daily data entry item */
-"tweakDailyGreenTea.heading" = "Grüner Tee (3 Tassen)";
+"tweakDailyGreenTea.heading" = "Te Verd (3 tasses)";
 
 /* heading for daily data entry item */
-"tweakDailyHydrate.heading" = "Genug trinken";
+"tweakDailyHydrate.heading" = "Mantén-te Hidratat";
 
 /* heading for daily data entry item */
-"tweakDailyNutriYeast.heading" = "Hefeflocken (2 TL)";
+"tweakDailyNutriYeast.heading" = "Llevat de Cervesa Nutricional (2 culleradetes)";
 
 /* heading for daily data entry item */
-"tweakDailyTimeRestrict.heading" = "Essen zeitlich beschränken";
+"tweakDailyTimeRestrict.heading" = "Alimentació amb Temps Restringit";
 
 /* heading for daily data entry item */
-"tweakExerciseTiming.heading" = "Bewegung zeitlich abstimmen";
+"tweakExerciseTiming.heading" = "Optimitzar el Temps d'Exercici";
 
 /* heading for daily data entry item */
-"tweakMeal20Minutes.heading" = "20-Minuten-Regel befolgen";
+"tweakMeal20Minutes.heading" = "La Regla dels Vint Minuts";
 
 /* heading for daily data entry item */
-"tweakMealNegCal.heading" = "Mahlzeit mit \"Negativ-Kalorien\" beginnen";
+"tweakMealNegCal.heading" = "Començar amb Aliments de \"Calories Negatives\"";
 
 /* heading for daily data entry item */
-"tweakMealUndistracted.heading" = "Ungestört essen";
+"tweakMealUndistracted.heading" = "Àpats sense Distraccions";
 
 /* heading for daily data entry item */
-"tweakMealVinegar.heading" = "Essig hinzufügen (2 TL zu jeder Mahlzeit)";
+"tweakMealVinegar.heading" = "Vinagre (2 culleradetes a cada àpat)";
 
 /* heading for daily data entry item */
-"tweakMealWater.heading" = "Mahlzeit mit kaltem Wasser beginnen";
+"tweakMealWater.heading" = "Començar amb Aigua";
 
 /* heading for daily data entry item */
-"tweakNightlyFast.heading" = "Fasten nach 19 Uhr";
+"tweakNightlyFast.heading" = "Dejú Després de les 7:00 P.M.";
 
 /* heading for daily data entry item */
-"tweakNightlySleep.heading" = "Genug schlafen";
+"tweakNightlySleep.heading" = "Dorm Prou Hores";
 
 /* heading for daily data entry item */
-"tweakNightlyTrendelenbrug.heading" = "Mit leichter Trendelenburg-Lage experimentieren";
+"tweakNightlyTrendelenbrug.heading" = "Trendelenburg";
 
 /* heading for daily data entry item */
-"tweakWeightTwice.heading" = "Zweimal täglich wiegen";
+"tweakWeightTwice.heading" = "Pesar-se Dues Vegades al Dia";
 
 /* Tweaks Detail view section heading */
-"tweak_detail_section_activity" = "Aktivität";
+"tweak_detail_section_activity" = "Activitat";
 
 /* Tweaks Detail view section heading */
-"tweak_detail_section_description" = "Beschreibung";
+"tweak_detail_section_description" = "Descripció";
 
 /* Tweaks daily entry header */
-"tweak_entry_header" = "21 Optimierungen";
+"tweak_entry_header" = "21 Potenciadors";
 
 /* Units toggle button text: imperial measurement system */
 "unitToggle.imperial" = "imperial";
 
 /* Units toggle button text: metric measurement system */
-"unitToggle.metric" = "metrisch";
+"unitToggle.metric" = "mètric";
 
 /*  */
-"units_label" = "Masseinheiten:";
+"units_label" = "Unitats";
 
 /* URL path */
 "urlSegment.base" = "https://nutritionfacts.org/";
@@ -419,30 +419,30 @@
 "urlSegmentInfoMenu.videos" = "videos";
 
 /* Label for hyperlink to nutritionfacts.org video topics */
-"videos.link.label" = "VIDEOS";
+"videos.link.label" = "Vídeos";
 
 /* Weight Daily Entry: heading */
-"weightEntry.heading" = "Gewicht";
+"weightEntry.heading" = "Pes";
 
 /* Weight Daily Entry: clear button which deletes values */
-"weight_entry_clear" = "Löschen";
+"weight_entry_clear" = "Esborrar";
 
 /* Weight Daily Entry: label */
-"weight_entry_evening" = "Abends (direkt vor dem Schlafengehen)";
+"weight_entry_evening" = "Vespre (abans d'anar al llit)";
 
 /* Weight Daily Entry: label */
-"weight_entry_morning" = "Morgens (nach dem Aufwachen)";
+"weight_entry_morning" = "Matí (quan et lleves)";
 
 /* Weight Daily Entry: label */
-"weight_entry_time" = "Uhrzeit";
+"weight_entry_time" = "Temps";
 
 /* Weight Daily Entry Units: label */
 "weight_entry_units_kg" = "kg";
 
 /* Weight Daily Entry Units: label */
-"weight_entry_units_lbs" = "Pfund";
+"weight_entry_units_lbs" = "lliures";
 
 /* Weight Daily Entry: edit button to change values */
-"weight_history_edit_data" = "Daten bearbeiten";
+"weight_history_edit_data" = "Editar Dades";
 
 /* file end */

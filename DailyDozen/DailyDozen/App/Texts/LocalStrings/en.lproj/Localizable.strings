@@ -1,15 +1,6 @@
 /* DailyDozen Localizable.strings (en) */
 /* Copyright © 2021 Nutritionfacts.org. All rights reserved. */
 
-/* Info Menu About: line 2 */
-"apple.info.about.2" = "Daily Dozen";
-
-/* Info Menu About: line 4 */
-"info_app_about_created_by" = "This app was created by: NutritionFacts.org, Christi Richards, Konstantin Khokhlov, and Marc Campbell";
-
-/* Info Menu About: line 5 */
-"info_app_about_oss_credits" = "The following open source libraries are used: RealmSwift, Charts, FSCalendar, SimpleAnimation, ActiveLabel.";
-
 /* Date Button Title: ‘Back to today’ */
 "dateBackButtonTitle" = "Back to today";
 
@@ -157,14 +148,32 @@
 /* Info About View */
 "info_app_about" = "About";
 
+/* Info Menu About: line 2 */
+"info_app_about_app_name" = "Daily Dozen";
+
 /* Info About View Application Name: ‘Daily Dozen’ */
 "info_app_about_app_name" = "Daily Dozen";
+
+/* Info Menu About: line 4 */
+"info_app_about_created_by" = "This app was created by: NutritionFacts.org, Christi Richards, Konstantin Khokhlov, and Marc Campbell";
+
+/* Info Menu About: line 5 */
+"info_app_about_oss_credits" = "The following open source libraries are used: RealmSwift, Charts, FSCalendar, SimpleAnimation, ActiveLabel.";
+
+/* Info Menu About: line 1 */
+"info_app_about_overview" = "Use this app on a daily basis to keep track of the foods and advice I recommend for optimal health and longevity in my books How Not to Die and How Not to Diet.";
 
 /* Info About View */
 "info_app_about_overview" = "Use this app on a daily basis to keep track of the foods and advice I recommend for optimal health and longevity in my books How Not to Die and How Not to Diet.";
 
+/* Info Menu About: line 3 */
+"info_app_about_version" = "version 3.2.3";
+
 /* Info About View Application release version */
-"info_app_about_version" = "version 3.2.11";
+"info_app_about_version" = "version 3.2.7";
+
+/* Info Menu About: line 0 */
+"info_app_about_welcome" = "Welcome to my Daily Dozen!";
 
 /* Info About View */
 "info_app_about_welcome" = "Welcome to my Daily Dozen!";

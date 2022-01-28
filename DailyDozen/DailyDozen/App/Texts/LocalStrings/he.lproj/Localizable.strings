@@ -1,15 +1,6 @@
 /* DailyDozen Localizable.strings (he) */
 /* Copyright © 2021 Nutritionfacts.org. All rights reserved. */
 
-/* Info Menu About: line 2 */
-"apple.info.about.2" = "התריסר היומי";
-
-/* Info Menu About: line 4 */
-"info_app_about_created_by" = "אפליקציה זו נוצרה על ידי: NutritionFacts.org, כריסטי ריצ'רדס, קונסטנטין חוחלוב ומארק קמפבל";
-
-/* Info Menu About: line 5 */
-"info_app_about_oss_credits" = "נעשה שימוש בספריות הקוד הפתוח שלהלן: RealmSwift, תרשימים, FSCalendar, SimpleAnimation, ActiveLabel.";
-
 /* Date Button Title: ‘Back to today’ */
 "dateBackButtonTitle" = "בחזרה להיום";
 
@@ -68,7 +59,7 @@
 "dozeOtherInfo.confirm" = "טוב";
 
 /* Daily Dozen supplement info alert: message */
-"dozeOtherInfo.message" = "ויטמין B12 חיוני לבריאותכם אך אינו נכנס לתוך המנות היומיומיות שלכם. \ n \ n ויטמין B12 כלול באפליקציה זו כדי לספק לכם דרך קלה לעקוב אחר צריכתכם.";
+"dozeOtherInfo.message" = "ויטמין B12 חיוני לבריאותכם אך אינו נכנס לתוך המנות היומיומיות שלכם.\n\nויטמין B12 כלול באפליקציה זו כדי לספק לכם דרך קלה לעקוב אחר צריכתכם.";
 
 /* Daily Dozen daily entry section heading */
 "dozeOtherInfo.section" = "תוספי תזונה";
@@ -157,14 +148,32 @@
 /* Info About View */
 "info_app_about" = "לגבי";
 
+/* Info Menu About: line 2 */
+"info_app_about_app_name" = "התריסר היומי";
+
 /* Info About View Application Name: ‘Daily Dozen’ */
 "info_app_about_app_name" = "השניים עשר היומי";
+
+/* Info Menu About: line 4 */
+"info_app_about_created_by" = "אפליקציה זו נוצרה על ידי: NutritionFacts.org, כריסטי ריצ'רדס, קונסטנטין חוחלוב ומארק קמפבל";
+
+/* Info Menu About: line 5 */
+"info_app_about_oss_credits" = "נעשה שימוש בספריות הקוד הפתוח שלהלן: RealmSwift, תרשימים, FSCalendar, SimpleAnimation, ActiveLabel.";
+
+/* Info Menu About: line 1 */
+"info_app_about_overview" = "השתמשו באפליקציה זו על בסיס יומי כדי לעקוב אחר המזונות והעצות שאני ממליץ עליהן לבריאות ואריכות ימים בצורה אופטימלית בספרים שלי \"איך לא למות\" ו\"איך לא לעשות דיאטה\".";
 
 /* Info About View */
 "info_app_about_overview" = "השתמשו באפליקציה זו על בסיס יומי כדי לעקוב אחר המזונות והעצות שאני ממליץ עליהן לבריאות ואריכות ימים בצורה אופטימלית בספרים שלי \"איך לא למות\" ו\"איך לא לעשות דיאטה\".";
 
+/* Info Menu About: line 3 */
+"info_app_about_version" = "ורסיה 3.2.3";
+
 /* Info About View Application release version */
-"info_app_about_version" = "ורסיה 3.2.11";
+"info_app_about_version" = "ורסיה 3.2.1";
+
+/* Info Menu About: line 0 */
+"info_app_about_welcome" = "ברוכים הבאים לתריסר השבועי שלי!";
 
 /* Info About View */
 "info_app_about_welcome" = "ברוכים הבאים לתריסר היומי שלי!";
