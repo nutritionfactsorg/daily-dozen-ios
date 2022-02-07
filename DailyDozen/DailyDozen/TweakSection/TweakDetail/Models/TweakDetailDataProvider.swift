@@ -30,8 +30,8 @@ class TweakDetailDataProvider: NSObject, UITableViewDataSource {
         switch sectionType {
         case .activity:
             return viewModel.activityCount
-        case .description:
-            return viewModel.descriptionParagraphCount
+        case .explanation:
+            return 1
         }
     }
     
@@ -52,7 +52,7 @@ class TweakDetailDataProvider: NSObject, UITableViewDataSource {
             )
             return cell
             
-        case .description:
+        case .explanation:
             guard let cell = tableView
                 .dequeueReusableCell(withIdentifier: Strings.descriptionCellID) as? TweakDetailDescriptionCell
                 else { return UITableViewCell() }

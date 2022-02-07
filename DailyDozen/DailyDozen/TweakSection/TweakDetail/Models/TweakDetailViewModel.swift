@@ -24,11 +24,7 @@ struct TweakDetailViewModel {
     var activityCount: Int {
         return 1
     }
-    
-    /// Returns the number of description paragraphs.
-    var descriptionParagraphCount: Int {
-        return info.description.count
-    }
+
     /// Returns the item name.
     var itemTitle: String {
         return info.heading
@@ -72,7 +68,7 @@ struct TweakDetailViewModel {
     /// - Parameter index: The current index.
     /// - Returns: A tuple of the type name and type link.
     func descriptionParagraph(index: Int) -> String {
-        return info.description[index]
+        return info.explanation
     }
 
 }

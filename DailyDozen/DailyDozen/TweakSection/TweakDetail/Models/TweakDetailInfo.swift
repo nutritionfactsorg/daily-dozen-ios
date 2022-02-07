@@ -19,7 +19,7 @@ struct TweakDetailInfo: Codable {
         
         var heading: String
         var activity: Activity // like doze size
-        var description: [String] // like doze type
+        var explanation: String // replaces doze type list
         var topic: String // item level URL path fragment
     }
     

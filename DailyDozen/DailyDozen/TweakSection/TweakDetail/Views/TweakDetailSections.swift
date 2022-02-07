@@ -15,7 +15,7 @@ enum TweakDetailSections: Int {
         static let descriptionHeaderNib = "TweakDetailDescriptionHeader"
     }
     
-    case activity, description
+    case activity, explanation
     
     func headerHeight(itemTypeKey: String) -> CGFloat {
         let metricTxtEqualsImperialTxt = TweakTextsProvider.shared.isMetricTxtEqualToImperialTxt(itemTypeKey: itemTypeKey)
@@ -28,7 +28,7 @@ enum TweakDetailSections: Int {
             } else {
                 return 50 // Height: "Activity" only
             }
-        case .description:
+        case .explanation:
             return 50
         }
     }
@@ -80,7 +80,7 @@ enum TweakDetailSections: Int {
                 return uiView
             }
             return nil
-        case .description:
+        case .explanation:
             if let uiView = Bundle.main.loadNibNamed(Nibs.descriptionHeaderNib, owner: nil)?.first as? UIView,
                let label = uiView.viewWithTag(68101115) as? UILabel {
                 label.text = NSLocalizedString("tweak_detail_section_description", comment: "Types")
