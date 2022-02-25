@@ -145,25 +145,25 @@
 /* Info About View */
 "info.about.title" = "בקשר לאפליקציה זו";
 
-/* Info About View */
+/* Info About Menu Item */
 "info_app_about" = "לגבי";
 
-/* Info About View Application Name: ‘Daily Dozen’ */
+/* Info About View: Application Name ‘Daily Dozen’ */
 "info_app_about_app_name" = "התריסר היומי";
 
-/* Info Menu About: line 4 */
+/* Info About View: Created By */
 "info_app_about_created_by" = "אפליקציה זו נוצרה על ידי: NutritionFacts.org, כריסטי ריצ'רדס, קונסטנטין חוחלוב ומארק קמפבל";
 
-/* Info Menu About: line 5 */
+/* Info About View: Open Source Credits */
 "info_app_about_oss_credits" = "נעשה שימוש בספריות הקוד הפתוח שלהלן: RealmSwift, תרשימים, FSCalendar, SimpleAnimation, ActiveLabel.";
 
-/* Info About View */
+/* Info About View: Overview Text */
 "info_app_about_overview" = "השתמשו באפליקציה זו על בסיס יומי כדי לעקוב אחר המזונות והעצות שאני ממליץ עליהן לבריאות ואריכות ימים בצורה אופטימלית בספרים שלי \"איך לא למות\" ו\"איך לא לעשות דיאטה\".";
 
-/* Info About View Application release version */
+/* Info About View: Application release version */
 "info_app_about_version" = "ורסיה 3.2.11";
 
-/* Info About View */
+/* Info About View: Welcome */
 "info_app_about_welcome" = "ברוכים הבאים לתריסר היומי שלי!";
 
 /* Info Menu: book title */
@@ -293,13 +293,13 @@
 "streakDaysFormat" = "%d ימים";
 
 /* heading for daily data entry item */
-"tweakCompleteIntentions.heading" = "כל חודשיים, צור שלוש כוונות יישום חדשות - \"אם X, אז Y\" מתכנן לבצע התנהגות מסוימת בהקשר ספציפי - ובדוק כל אחת מהן כאשר אתה משלים אותן מדי יום.";
+"tweakCompleteIntentions.heading" = "";
 
 /* heading for daily data entry item */
-"tweakDailyBlackCumin.heading" = "כמון שחור (1/4 כפית)";
+"tweakDailyBlackCumin.heading" = "כמון שחור (¼ כפית)";
 
 /* heading for daily data entry item */
-"tweakDailyCumin.heading" = "כמון (1/2 כפית עם ארוחות צהריים וערב)";
+"tweakDailyCumin.heading" = "כמון (½ כפית עם ארוחות צהריים וערב)";
 
 /* heading for daily data entry item */
 "tweakDailyDeflourDiet.heading" = "טירפו את התזונה שלכם";
@@ -308,10 +308,10 @@
 "tweakDailyFrontLoad.heading" = "חזית- טענו את הקלוריות שלכם";
 
 /* heading for daily data entry item */
-"tweakDailyGarlic.heading" = "אבקת שום (1/4 כפית)";
+"tweakDailyGarlic.heading" = "אבקת שום (¼ כפית)";
 
 /* heading for daily data entry item */
-"tweakDailyGinger.heading" = "זנגויל טחון (1 כפית) או פלפל קאיין (1/2 כפית)";
+"tweakDailyGinger.heading" = "זנגויל טחון (1 כפית) או פלפל קאיין (½ כפית)";
 
 /* heading for daily data entry item */
 "tweakDailyGreenTea.heading" = "תה ירוק (3 כוסות)";

@@ -145,25 +145,28 @@
 /* Info About View */
 "info.about.title" = "About this app";
 
-/* Info About View */
+/* Info About Menu Item */
 "info_app_about" = "About";
 
-/* Info About View Application Name: ‘Daily Dozen’ */
+/* Info About View: Application Name ‘Daily Dozen’ */
 "info_app_about_app_name" = "Daily Dozen";
 
-/* Info Menu About: line 4 */
+/* Info About View: Created By */
 "info_app_about_created_by" = "This app was created by: NutritionFacts.org, Christi Richards, Konstantin Khokhlov, and Marc Campbell";
 
-/* Info Menu About: line 5 */
+/* Info About View: Open Source Credits */
 "info_app_about_oss_credits" = "The following open source libraries are used: RealmSwift, Charts, FSCalendar, SimpleAnimation, ActiveLabel.";
 
-/* Info About View */
+/* Info About View: Overview Text */
 "info_app_about_overview" = "Use this app on a daily basis to keep track of the foods and advice I recommend for optimal health and longevity in my books How Not to Die and How Not to Diet.";
 
-/* Info About View Application release version */
+/* Info About View: Contributing Translators List */
+"info_app_about_translators" = "Translators: Anke, Doron, Ricard, Ruth, Tania";
+
+/* Info About View: Application release version */
 "info_app_about_version" = "version 3.2.11";
 
-/* Info About View */
+/* Info About View: Welcome */
 "info_app_about_welcome" = "Welcome to my Daily Dozen!";
 
 /* Info Menu: book title */

@@ -2,11 +2,11 @@
   "itemsDict" : {
     "tweakCompleteIntentions" : {
       "activity" : {
-        "imperial" : "Conclua Suas Intenções de Implementação",
-        "metric" : "Conclua Suas Intenções de Implementação"
+        "imperial" : "Conclua as suas Intenções de Implementação",
+        "metric" : "Conclua as suas Intenções de Implementação"
       },
-      "explanation" : "A cada dois meses, crie três novas intenções de implementação — planos \"se X, então Y\" para executar um comportamento específico em um contexto específico — e marque cada uma delas conforme você as conclui todos os dias.",
-      "heading" : "Conclua Suas Intenções de Implementação",
+      "explanation" : "A cada dois meses, crie três novas intenções de implementação — planos \"se X, então Y\" para executar um comportamento específico num contexto específico — e marque cada uma delas conforme você as conclui, todos os dias.",
+      "heading" : "Conclua as suas Intenções de Implementação",
       "topic" : ""
     },
     "tweakDailyBlackCumin" : {
@@ -14,7 +14,7 @@
         "imperial" : "Cominho Preto (Nigella sativa) (¼ colher de chá)",
         "metric" : "Cominho Preto (Nigella sativa) (¼ colher de chá)"
       },
-      "explanation" : "Como observado na seção Supressão de Apetite, uma revisão sistemática e metanálise de estudos clínicos randomizados e controlados para perda de peso descobriu que cerca de um quarto de colher de chá de pó de cominho preto todos os dias parece reduzir o índice de massa corporal em um período de alguns meses. Observe que o cominho preto é diferente do cominho comum, para o qual a dosagem é diferente.",
+      "explanation" : "Como observado na secção Supressão de Apetite, uma revisão sistemática e metanálise de estudos clínicos randomizados e controlados para perda de peso descobriu que cerca de um quarto de colher de chá de pó de cominho-preto, todos os dias, parece reduzir o índice de massa corporal num período de alguns meses. Observe que o cominho preto é diferente do cominho comum, para o qual a dosagem é diferente.",
       "heading" : "Cominho Preto (¼ colher de chá)",
       "topic" : ""
     },
@@ -23,7 +23,7 @@
         "imperial" : "Cominho (Cuminum cyminum) (½ colher de chá no almoço e no jantar)",
         "metric" : "Cominho (Cuminum cyminum) (½ colher de chá no almoço e no jantar)"
       },
-      "explanation" : "Mulheres com sobrepeso randomizadas para adicionar meia colher de chá de cominho nos almoços e jantares superaram o grupo controle, reduzindo mais 1,8 kg e 2,5 cm na cintura. Também há evidências para apoiar o uso do açafrão, mas uma pitada por dia custaria 1 dólar, enquanto que uma colher de chá de cominho custa menos de 0,10 dólares.",
+      "explanation" : "Mulheres com excesso de peso, randomizadas para adicionar meia colher de chá de cominho nos almoços e jantares, superaram o grupo de controle, reduzindo mais 1,8 kg e 2,5 cm na cintura. Também há evidências para apoiar o uso do açafrão, mas uma pitada por dia custaria 1 dólar, enquanto que uma colher de chá de cominho custa menos de 0,10 dólares.",
       "heading" : "Cominho (½ colher de chá no almoço e no jantar)",
       "topic" : ""
     },
@@ -32,7 +32,7 @@
         "imperial" : "Retire a Farinha da Sua Alimentação",
         "metric" : "Retire a Farinha da Sua Alimentação"
       },
-      "explanation" : "Assinale esta opção todos os dias que as suas porções de grãos integrais forem na forma de grãos intactos. Moer grãos, incluindo grãos 100 % integrais, impede que o amido seja transportado dentro de parades celulares intactas para o nosso cólon, impedindo assim, que chegue ao nosso microbioma.",
+      "explanation" : "Assinale esta opção todos os dias que as suas porções de grãos integrais forem na forma de grãos intactos. Moer cereais, incluindo cereais 100 % integrais, rouba ao nosso microbioma o amido que normalmente viajaria até ao cólon envolvido em paredes celulares não destruídas.",
       "heading" : "Retire a Farinha da Sua Alimentação",
       "topic" : ""
     },
@@ -41,7 +41,7 @@
         "imperial" : "Consuma Mais Calorias de Manhã",
         "metric" : "Consuma Mais Calorias de Manhã"
       },
-      "explanation" : "Existem benefícios metabólicos no consumo de mais calorias no início do dia, portanto, faça da refeição matinal (idealmente) ou do almoço a sua maior refeição do dia, seguindo o estilo rei/príncipe/pobre.",
+      "explanation" : "Existem benefícios metabólicos no consumo de mais calorias no início do dia, portanto, faça da refeição matinal (idealmente) ou do almoço a sua maior refeição do dia, seguindo o estilo \"rei / príncipe / indigente\".",
       "heading" : "Consuma Mais Calorias de Manhã",
       "topic" : ""
     },
@@ -50,7 +50,7 @@
         "imperial" : "Alho em Pó (¼ colher de chá)",
         "metric" : "Alho em Pó (¼ colher de chá)"
       },
-      "explanation" : "Estudos randomizados, duplo-cegos e controlados por placebo descobriram que um quarto de colher de chá diária de alho em pó pode reduzir a gordura corporal a um custo de cerca de 0,02 dólares por dia.",
+      "explanation" : "Estudos randomizados, duplamente ocultados, e controlados por placebo, descobriram que um quarto de colher de chá diária de alho em pó pode reduzir a gordura corporal a um custo de cerca de 0,02 dólares por dia.",
       "heading" : "Alho em Pó (¼ colher de chá)",
       "topic" : ""
     },
@@ -59,7 +59,7 @@
         "imperial" : "Gengibre em Pó (1 colher de chá) ou Pimenta Caiena (½ colher de chá)",
         "metric" : "Gengibre em Pó (1 colher de chá) ou Pimenta Caiena (½ colher de chá)"
       },
-      "explanation" : "Estudos clínicos randomizados descobriram que entre ¼ de colher de chá a 1½ colheres de chá por dia de gengibre em pó reduzem significativamente o peso corporal por apenas alguns centavos por dia. Pode ser tão fácil quanto misturar o tempero moído em um copo de água quente. Nota: o gengibre pode funcionar melhor de manhã do que à noite. O chá chai é uma maneira saborosa de combinar os benefícios do chá verde e do gengibre em uma única bebida. Como alternativa, para a ativação do Tecido Adiposo Marrom, você pode adicionar uma pimenta jalapenho crua ou meia colher de chá de pimenta vermelha em pó (ou, presumivelmente, flocos de pimenta vermelha amassados) na sua alimentação diária. Para ajudar a combater o sabor picante, você pode fatiar bem fino ou picar muito bem o jalapenho, ou misturar a pimenta vermelha em uma sopa ou no smoothie de vegetais integrais que eu mostrei em um dos meus vídeos de culinária do NutritionFacts.org.",
+      "explanation" : "Estudos clínicos randomizados descobriram que entre ¼ de colher de chá a 1½ colheres de chá por dia de gengibre em pó reduzem significativamente o peso corporal por apenas alguns centavos por dia. Pode ser tão fácil quanto misturar o tempero moído num copo de água quente. Nota: o gengibre pode funcionar melhor de manhã do que à noite. O chá chai é uma maneira saborosa de combinar os benefícios do chá verde e do gengibre numa única bebida. Como alternativa, para a ativação do Tecido Adiposo Castanho, pode adicionar uma pimenta jalapenho crua ou meia colher de chá de pimenta vermelha em pó (ou, presumivelmente, flocos de pimenta vermelha amassados) na sua alimentação diária. Para ajudar a combater o sabor picante, você pode fatiar bem fino ou picar muito bem o jalapenho, ou misturar a pimenta vermelha numa sopa ou no smoothie de vegetais integrais que eu mostrei num dos meus vídeos de culinária do NutritionFacts.org.",
       "heading" : "Gengibre em Pó (1 colher de chá) ou Pimenta Caiena (½ colher de chá)",
       "topic" : ""
     },
@@ -68,7 +68,7 @@
         "imperial" : "Chá Verde (3 xícaras)",
         "metric" : "Chá Verde (3 xícaras)"
       },
-      "explanation" : "Beba três xícaras por dia entre as refeições (aguarde pelo menos uma hora após a refeição para não interferir na absorção de ferro). Durante as refeições, beba água, café preto ou chá de hibisco misturado 6:1 com verbena-limão, mas nunca exceda três xícaras de líquido por hora (importante devido aos meus conselhos de fazer uma pré-refeição de água). Aproveite o efeito reforçado da cafeína bebendo seu chá verde junto com algo saudável que você não gosta tanto, mas não consuma grandes quantidades de cafeína nas seis horas antes de dormir. Tomar chá sem adoçante é melhor, mas se você normalmente adoça o chá com mel ou açúcar, tente o xarope de yacon.",
+      "explanation" : "Beba três xícaras por dia entre as refeições (aguarde pelo menos uma hora após a refeição para não interferir na absorção de ferro). Durante as refeições, beba água, café preto ou infusão de hibisco misturado 6:1 com lúcia-lima, mas nunca exceda três xícaras de líquido por hora (importante devido aos meus conselhos de fazer uma pré-refeição de água). Aproveite o efeito \"reforçador\" da cafeína bebendo o seu chá verde juntamente com algo saudável que você não gosta tanto, mas não consuma grandes quantidades de cafeína nas seis horas antes de dormir. Tomar chá sem adoçante é melhor, mas se você normalmente adoça o chá com mel ou açúcar, tente o xarope de yacon.",
       "heading" : "Chá Verde (3 xícaras)",
       "topic" : ""
     },
@@ -77,7 +77,7 @@
         "imperial" : "Mantenha-se Hidratado",
         "metric" : "Mantenha-se Hidratado"
       },
-      "explanation" : "Assinale esta opção se a sua urina nunca parecer mais escura que amarelo pálido. Note que, se você estiver ingerindo alimentos enriquecidos com riboflavina (como levedura nutricional), baseie-se apenas no critério de ingerir nove copos de bebidas sem açúcar por dia para as mulheres (que seriam cumpridas pelas recomendações de pré-refeição de água e chá verde) ou 13 copos por dia para homens. Se você tiver problemas cardíacos ou renais, não aumente a ingestão de líquidos sem antes conversar com seu médico. Lembre-se de que o refrigerante diet pode estar isento de calorias, mas não está isento de consequências, como aprendemos na seção Baixo Teor de Açúcar Adicionado.",
+      "explanation" : "Assinale esta opção se a sua urina nunca parecer mais escura que amarelo-pálido. Note que, se você estiver ingerindo alimentos enriquecidos com riboflavina (como levedura nutricional), baseie-se apenas no critério de ingerir 9 copos de bebidas sem açúcar por dia para as mulheres (que seriam cumpridas pelas recomendações de pré-refeição de água e chá verde) ou 13 copos por dia para homens. Se você tiver problemas cardíacos ou renais, não aumente a ingestão de líquidos sem antes conversar com seu médico. Lembre-se de que os refrigerantes diet podem estar isentos de calorias, mas não estão isentos de consequências, como aprendemos na secção Baixo Teor de Açúcar Adicionado.",
       "heading" : "Mantenha-se Hidratado",
       "topic" : ""
     },
@@ -86,7 +86,7 @@
         "imperial" : "Levedura Nutricional (2 colheres de chá)",
         "metric" : "Levedura Nutricional (2 colheres de chá)"
       },
-      "explanation" : "Duas colheres de chá de levedura de padaria, cervejaria ou nutricional contêm aproximadamente a quantidade de beta 1,3/1,6 glucanos que facilita a perda de peso, conforme estudos clínicos randomizados, duplo-cegos e controlados por placebo.",
+      "explanation" : "Duas colheres de chá de levedura de cerveja ou \"nutricional\" contêm aproximadamente a quantidade de beta 1,3/1,6 glucanos que facilita a perda de peso, conforme estudos clínicos randomizados, duplamente ocultados, e controlados por placebo.",
       "heading" : "Levedura Nutricional (2 colheres de chá)",
       "topic" : ""
     },
@@ -95,17 +95,17 @@
         "imperial" : "Limite o Tempo de sua Alimentação",
         "metric" : "Limite o Tempo de sua Alimentação"
       },
-      "explanation" : "Limite a alimentação a um intervalo de tempo diário de sua escolha com menos de doze horas de duração, que você possa manter consistentemente, sete dias por semana. Dados os benefícios circadianos de reduzir a ingestão noturna de alimentos, o intervalo deve terminar antes das 19:00h.",
+      "explanation" : "Limite a alimentação a um intervalo de tempo diário à sua escolha com menos de 12 horas de duração, que você possa manter consistentemente, sete dias por semana. Dados os benefícios circadianos de reduzir a ingestão noturna de alimentos, o intervalo deve terminar antes das 19:00h.",
       "heading" : "Limite o Tempo de sua Alimentação",
       "topic" : ""
     },
     "tweakExerciseTiming" : {
       "activity" : {
-        "imperial" : "Otimize o Tempo de Exercícios",
-        "metric" : "Otimize o Tempo de Exercícios"
+        "imperial" : "Optimize o Tempo de Exercícios",
+        "metric" : "Optimize o Tempo de Exercícios"
       },
-      "explanation" : "A recomendação da Dúzia Diária para a duração ideal de exercícios para a longevidade é de noventa minutos de atividade de intensidade moderada por dia, que também é a duração ideal de exercícios para perda de peso. Qualquer momento é bom e, quanto mais, melhor, mas pode haver uma vantagem em se exercitar em jejum, pelo menos seis horas após a sua última refeição. Normalmente, isso significa antes da refeição matinal, mas se você planejar corretamente, pode se exercitar no meio do dia antes de um almoço tardio ou, se você almoçar suficientemente cedo, antes do jantar. Estes são os períodos para os não diabéticos. Diabéticos e pré-diabéticos devem começar a se exercitar trinta minutos após o início de uma refeição e, idealmente, se exercitar por pelo menos uma hora para passar completamente o pico de glicose no sangue. Se você tivesse que escolher uma única refeição para se exercitar depois, seria o jantar, devido ao ritmo circadiano de controle de glicose no sangue que diminui ao longo do dia. Idealmente, porém, a refeição matinal seria a maior refeição do dia e você deveria se exercitar depois disso — ou, melhor ainda, depois de cada refeição.",
-      "heading" : "Otimize o Tempo de Exercícios",
+      "explanation" : "A recomendação da Dúzia Diária para a duração ideal de exercícios para a longevidade é de 90 minutos de atividade de intensidade moderada por dia, que também é a duração ideal de exercícios para perda de peso. Qualquer momento é bom e, quanto mais, melhor, mas pode haver uma vantagem em se exercitar em jejum, pelo menos 6 horas após a sua última refeição. Normalmente, isso significa antes da refeição matinal, mas se você planejar corretamente, pode-se exercitar ao meio-dia antes de um almoço tardio ou, se você almoçar suficientemente cedo, antes do jantar. Estes são os períodos para os não diabéticos. Diabéticos e pré-diabéticos devem começar a exercitarem-se 30 minutos após o início de uma refeição e, idealmente, exercitarem-se por pelo menos 1 hora para passar completamente o pico de glicose no sangue. Se você tivesse que escolher uma única refeição para se exercitar a seguir, seria o jantar, devido ao ritmo circadiano de controle de glicose no sangue que diminui ao longo do dia. Idealmente, porém, a refeição matinal seria a maior refeição do dia e você deveria se exercitar depois disso — ou, melhor ainda, depois de cada refeição.",
+      "heading" : "Optimize o Tempo de Exercícios",
       "topic" : ""
     },
     "tweakMeal20Minutes" : {
@@ -113,17 +113,17 @@
         "imperial" : "Siga a Regra dos Vinte Minutos",
         "metric" : "Siga a Regra dos Vinte Minutos"
       },
-      "explanation" : "Seja através do aumento da viscosidade ou do número de mastigações ou da diminuição do tamanho da mordida e da taxa de alimentação, dezenas de estudos demonstraram que, independentemente de como aumentamos a quantidade de tempo que os alimentos permanecem na boca, isso pode resultar em uma menor ingestão calórica. Portanto, estenda a duração das refeições para pelo menos vinte minutos para permitir que seus sinais naturais de saciedade entrem em ação. De que forma? Escolhendo alimentos que demoram mais para serem ingeridos e comendo-os de maneira a prolongar o tempo que eles ficam na boca. Pense em alimentos mais volumosos, mais duros, que exigem mais mastigação, em pequenas quantidades bem mastigadas.",
+      "explanation" : "Seja através do aumento da viscosidade ou do número de mastigações ou da diminuição do tamanho da mordida e da taxa de alimentação, dezenas de estudos demonstraram que, seja qual for a forma como aumentamos a quantidade de tempo que os alimentos permanecem na boca, isso pode resultar numa menor ingestão calórica. Portanto, estenda a duração das refeições para pelo menos 20 minutos para permitir que seus sinais naturais de saciedade entrem em ação. De que forma? Escolhendo alimentos que demoram mais para serem ingeridos e comendo-os de maneira a prolongar o tempo que ficam na boca. Pense em alimentos mais volumosos, mais duros, que exigem mais mastigação, em pequenas quantidades bem mastigadas.",
       "heading" : "Siga a Regra dos Vinte Minutos",
       "topic" : ""
     },
     "tweakMealNegCal" : {
       "activity" : {
-        "imperial" : "Pré-refeição de Alimentos de \"Calorias Negativas\"",
-        "metric" : "Pré-refeição de Alimentos de \"Calorias Negativas\""
+        "imperial" : "Pré-refeição de Alimentos com \"Calorias Negativas\"",
+        "metric" : "Pré-refeição de Alimentos com \"Calorias Negativas\""
       },
       "explanation" : "Como primeiro prato, comece cada refeição com uma maçã, ou uma sopa ou uma salada considerada \"Luz Verde\" contendo menos de cem calorias por xícara.",
-      "heading" : "Pré-refeição de Alimentos de \"Calorias Negativas\"",
+      "heading" : "Pré-refeição de Alimentos com \"Calorias Negativas\"",
       "topic" : ""
     },
     "tweakMealUndistracted" : {
@@ -131,7 +131,7 @@
         "imperial" : "Desfrute de Refeições sem Distrações",
         "metric" : "Desfrute de Refeições sem Distrações"
       },
-      "explanation" : "Não coma enquanto assiste TV ou joga no seu celular. Assinale para cada refeição que puder comer sem distração.",
+      "explanation" : "Não coma enquanto assiste TV ou joga no seu telemóvel. Assinale cada refeição que puder comer sem distração.",
       "heading" : "Desfrute de Refeições sem Distrações",
       "topic" : ""
     },
@@ -140,7 +140,7 @@
         "imperial" : "Incorpore Vinagre (2 colheres de chá com cada refeição)",
         "metric" : "Incorpore Vinagre (2 colheres de chá com cada refeição)"
       },
-      "explanation" : "Nunca beba vinagre puro. Em vez disso, incorpore em refeições ou tempere uma salada, utilizando qualquer um dos vinagres doces e salgados. Se você quiser bebê-lo, misture-o em um copo de água e depois enxague a boca com água para proteger o esmalte dos dentes.",
+      "explanation" : "Nunca beba vinagre puro. Em vez disso, incorpore em refeições ou tempere uma salada, utilizando qualquer um dos vinagres doces e salgados. Se você quiser bebê-lo, misture-o num copo de água e depois enxague a boca com água para proteger o esmalte dos dentes.",
       "heading" : "Incorpore Vinagre (2 colheres de chá com cada refeição)",
       "topic" : ""
     },
@@ -149,7 +149,7 @@
         "imperial" : "Pré-refeição de Água",
         "metric" : "Pré-refeição de Água"
       },
-      "explanation" : "Planeje seus dois copos de água sem sabor, fria ou gelada, que aumentam o metabolismo, antes de cada refeição, para também aproveitar seus benefícios de pré-refeição.",
+      "explanation" : "Planeje os seus 2 copos de água sem sabor, fria ou gelada, que aumenta o metabolismo, antes de cada refeição, para também aproveitar os seus benefícios de pré-refeição.",
       "heading" : "Pré-refeição de Água",
       "topic" : ""
     },
@@ -158,7 +158,7 @@
         "imperial" : "Jejum Após as 19:00h",
         "metric" : "Jejum Após as 19:00h"
       },
-      "explanation" : "Devido aos nossos ritmos circadianos, os alimentos consumidos à noite engordam mais do que exatamente os mesmos alimentos ingeridos no início do dia, portanto jejue todas as noites por pelo menos doze horas, começando antes das 19:00h. Quanto menos calorias após o pôr do sol, melhor.",
+      "explanation" : "Devido aos nossos ritmos circadianos, os alimentos consumidos à noite engordam mais do que exatamente os mesmos alimentos ingeridos no início do dia, portanto jejue todas as noites por pelo menos 12 horas, começando antes das 19:00h. Quanto menos calorias após o pôr-do-sol, melhor.",
       "heading" : "Jejum Após as 19:00h",
       "topic" : ""
     },
@@ -167,17 +167,17 @@
         "imperial" : "Durma o Suficiente",
         "metric" : "Durma o Suficiente"
       },
-      "explanation" : "Assinale esta opção se você dormir pelo menos sete horas no seu horário de dormir usual.",
+      "explanation" : "Assinale esta opção se você dormir pelo menos 7 horas no seu horário de dormir usual.",
       "heading" : "Durma o Suficiente",
       "topic" : ""
     },
     "tweakNightlyTrendelenbrug" : {
       "activity" : {
-        "imperial" : "Experimente o Trendelenburg Leve",
-        "metric" : "Experimente o Trendelenburg Leve"
+        "imperial" : "Experimente a inclinação leve de Trendelenburg",
+        "metric" : "Experimente a inclinação leve de Trendelenburg"
       },
-      "explanation" : "Tente passar pelo menos quatro horas por noite deitado com o corpo inclinado a seis graus com a cabeça para baixo, elevando os pés da cama em 20 cm (ou 23 cm se você tiver uma cama \"California King\"). Seja extremamente cuidadoso ao sair da cama, pois isso causa intolerância ortostática na maioria das pessoas, mesmo se você for jovem e saudável — ou seja, se você levantar rápido demais, pode sentir tontura, ter um desmaio, cair e se machucar. Então levante-se devagar. Beber dois copos de água fria trinta minutos antes de se levantar também pode ajudar a evitar esse efeito colateral potencialmente perigoso.\n\n*IMPORTANTE: Não tente fazer isso se você tiver problemas cardíacos ou pulmonares, refluxo ácido, problemas no cérebro (como traumatismo craniano) ou nos olhos (até um histórico familiar de glaucoma o desqualifica). Além disso, não tente fazer isso antes de perguntar ao/à médico/a se ele/a acha seguro dormir em Trendelenburg leve.*",
-      "heading" : "Experimente o Trendelenburg Leve",
+      "explanation" : "Tente passar pelo menos 4 horas por noite deitado com o corpo inclinado a 6 graus com a cabeça para baixo, elevando os pés da cama em 20 cm (ou 23 cm se você tiver uma cama \"California King\"). Seja extremamente cuidadoso ao sair da cama, pois isso causa intolerância ortostática na maioria das pessoas, mesmo se você for jovem e saudável — ou seja, se você levantar rápido demais, pode sentir tontura, ter um desmaio, cair e magoar-se. Por isso, levante-se devagar. Beber dois copos de água fria trinta minutos antes de se levantar também pode ajudar a evitar esse efeito colateral potencialmente perigoso.\n*IMPORTANTE: Não tente fazer isso se você tiver problemas cardíacos ou pulmonares, refluxo ácido, problemas no cérebro (como traumatismo craniano) ou nos olhos (até um histórico familiar de glaucoma o desqualifica). Além disso, não tente fazer isso antes de perguntar ao/à médico/a se ele/a acha seguro dormir em Trendelenburg leve.*",
+      "heading" : "Experimente a inclinação leve de Trendelenburg",
       "topic" : ""
     },
     "tweakWeightTwice" : {
@@ -185,7 +185,7 @@
         "imperial" : "Pese-se Duas Vezes por Dia",
         "metric" : "Pese-se Duas Vezes por Dia"
       },
-      "explanation" : "A auto-pesagem regular é considerada crucial para o controle de peso a longo prazo, mas não há evidências suficientes para apoiar uma frequência específica de pesagem. Minha recomendação baseia-se no estudo que constatou que duas vezes por dia — ao acordar e logo antes de dormir — pareceu superior a uma vez por dia (cerca de 2,7 kg versus 0,9 kg de perda de peso em doze semanas).",
+      "explanation" : "A auto-pesagem regular é considerada crucial para o controle de peso a longo prazo, mas não há evidências suficientes para apoiar uma frequência específica de pesagem. A minha recomendação baseia-se no estudo que constatou que duas vezes por dia — ao acordar e logo antes de dormir — pareceu superior a uma vez por dia (cerca de 2,7 kg versus 0,9 kg de perda de peso em doze semanas).",
       "heading" : "Pese-se Duas Vezes por Dia",
       "topic" : ""
     }

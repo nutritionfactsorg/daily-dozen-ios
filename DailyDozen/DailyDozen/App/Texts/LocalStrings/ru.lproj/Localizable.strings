@@ -145,25 +145,25 @@
 /* Info About View */
 "info.about.title" = "Об этом приложении";
 
-/* Info About View */
+/* Info About Menu Item */
 "info_app_about" = "О нас";
 
-/* Info About View Application Name: ‘Daily Dozen’ */
+/* Info About View: Application Name ‘Daily Dozen’ */
 "info_app_about_app_name" = "Не Сдохни!";
 
-/* Info Menu About: line 4 */
+/* Info About View: Created By */
 "info_app_about_created_by" = "Это приложение было создано NutritionFacts.org, Кристи Ричардс, Константином Хохловым и Марком Кэмпбеллом.";
 
-/* Info Menu About: line 5 */
+/* Info About View: Open Source Credits */
 "info_app_about_oss_credits" = "Приложение использует следующие библиотеки с открытым кодом: RealmSwift, Charts, FSCalendar, SimpleAnimation, ActiveLabel.";
 
-/* Info About View */
+/* Info About View: Overview Text */
 "info_app_about_overview" = "Используйте данное приложение на ежедневной основе, чтобы отслеживать продукты питания и применять мои рекомендации для оптимального здоровья и продолжительности жизни, которые изложены в книгах Не сдохни и Не сдохни на Диете.";
 
-/* Info About View Application release version */
+/* Info About View: Application release version */
 "info_app_about_version" = "версия 3.2.11";
 
-/* Info About View */
+/* Info About View: Welcome */
 "info_app_about_welcome" = "Добро пожаловать в Не сдохни!";
 
 /* Info Menu: book title */

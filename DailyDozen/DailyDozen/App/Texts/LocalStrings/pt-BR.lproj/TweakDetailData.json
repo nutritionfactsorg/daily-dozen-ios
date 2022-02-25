@@ -5,7 +5,7 @@
         "imperial" : "Conclua Suas Intenções de Implementação",
         "metric" : "Conclua Suas Intenções de Implementação"
       },
-      "explanation" : "A cada dois meses, crie três novas intenções de implementação — planos \"se X, então Y\" para executar um comportamento específico em um contexto específico — e marque cada uma delas conforme você as conclui todos os dias.",
+      "explanation" : "A cada dois meses, crie três novas intenções de implementação — planos “se X, então Y” para executar um comportamento específico em um contexto específico — e marque cada uma delas conforme você as conclui todos os dias.",
       "heading" : "Conclua Suas Intenções de Implementação",
       "topic" : ""
     },
@@ -119,11 +119,11 @@
     },
     "tweakMealNegCal" : {
       "activity" : {
-        "imperial" : "Pré-refeição de Alimentos de \"Calorias Negativas\"",
-        "metric" : "Pré-refeição de Alimentos de \"Calorias Negativas\""
+        "imperial" : "Pré-refeição de Alimentos de “Calorias Negativas”",
+        "metric" : "Pré-refeição de Alimentos de “Calorias Negativas”"
       },
-      "explanation" : "Como primeiro prato, comece cada refeição com uma maçã, ou uma sopa ou uma salada considerada \"Luz Verde\" contendo menos de cem calorias por xícara.",
-      "heading" : "Pré-refeição de Alimentos de \"Calorias Negativas\"",
+      "explanation" : "Como primeiro prato, comece cada refeição com uma maçã, ou uma sopa ou uma salada considerada “Luz Verde” contendo menos de cem calorias por xícara.",
+      "heading" : "Pré-refeição de Alimentos de “Calorias Negativas”",
       "topic" : ""
     },
     "tweakMealUndistracted" : {
@@ -176,7 +176,7 @@
         "imperial" : "Experimente o Trendelenburg Leve",
         "metric" : "Experimente o Trendelenburg Leve"
       },
-      "explanation" : "Tente passar pelo menos quatro horas por noite deitado com o corpo inclinado a seis graus com a cabeça para baixo, elevando os pés da cama em 20 cm (ou 23 cm se você tiver uma cama \"California King\"). Seja extremamente cuidadoso ao sair da cama, pois isso causa intolerância ortostática na maioria das pessoas, mesmo se você for jovem e saudável — ou seja, se você levantar rápido demais, pode sentir tontura, ter um desmaio, cair e se machucar. Então levante-se devagar. Beber dois copos de água fria trinta minutos antes de se levantar também pode ajudar a evitar esse efeito colateral potencialmente perigoso.\n\n*IMPORTANTE: Não tente fazer isso se você tiver problemas cardíacos ou pulmonares, refluxo ácido, problemas no cérebro (como traumatismo craniano) ou nos olhos (até um histórico familiar de glaucoma o desqualifica). Além disso, não tente fazer isso antes de perguntar ao/à médico/a se ele/a acha seguro dormir em Trendelenburg leve.*",
+      "explanation" : "Tente passar pelo menos quatro horas por noite deitado com o corpo inclinado a seis graus com a cabeça para baixo, elevando os pés da cama em 20 cm (ou 23 cm se você tiver uma cama “California King”). Seja extremamente cuidadoso ao sair da cama, pois isso causa intolerância ortostática na maioria das pessoas, mesmo se você for jovem e saudável — ou seja, se você levantar rápido demais, pode sentir tontura, ter um desmaio, cair e se machucar. Então levante-se devagar. Beber dois copos de água fria trinta minutos antes de se levantar também pode ajudar a evitar esse efeito colateral potencialmente perigoso.\n\n*IMPORTANTE: Não tente fazer isso se você tiver problemas cardíacos ou pulmonares, refluxo ácido, problemas no cérebro (como traumatismo craniano) ou nos olhos (até um histórico familiar de glaucoma o desqualifica). Além disso, não tente fazer isso antes de perguntar ao/à médico/a se ele/a acha seguro dormir em Trendelenburg leve.*",
       "heading" : "Experimente o Trendelenburg Leve",
       "topic" : ""
     },

@@ -257,7 +257,7 @@
 "setting_doze_tweak_choice" = "Dúzia Diária + 21 Ajustes";
 
 /* Preference Settings View: brief description text below Tweaks visibility control. */
-"setting_doze_tweak_footer" = "Se está interessado apenas em saúde, use \"Apenas a Dúzia Diária\". Se está interessado em saúde e perda de peso use \"Dúzia Diária + 21 Ajustes\".";
+"setting_doze_tweak_footer" = "Se está interessado apenas em saúde, use “Apenas a Dúzia Diária”. Se está interessado em saúde e perda de peso use \"Dúzia Diária + 21 Ajustes\".";
 
 /* First Launch Setting: brief description above ‘Daily Dozen Only’ button. */
 "setting_health_alone_txt" = "Para Saúde Apenas";
@@ -278,7 +278,7 @@
 "setting_units_2_toggle" = "Alternar Unidades";
 
 /* Preference Settings View: brief description text below units control. */
-"setting_units_choice_footer" = "Escolha ter as mesmas unidades de medida sempre ou ative o botão de alteração \"Unidades:\".";
+"setting_units_choice_footer" = "Escolha ter as mesmas unidades de medida sempre ou ative o botão de alteração “Unidades:”.";
 
 /* Preference Settings View */
 "setting_units_header" = "Unidades de Medida";
@@ -329,7 +329,7 @@
 "tweakMeal20Minutes.heading" = "Siga a Regra dos Vinte Minutos";
 
 /* heading for daily data entry item */
-"tweakMealNegCal.heading" = "Pré-refeição de Alimentos de \"Calorias Negativas\"";
+"tweakMealNegCal.heading" = "Pré-refeição de Alimentos de “Calorias Negativas”";
 
 /* heading for daily data entry item */
 "tweakMealUndistracted.heading" = "Desfrute de Refeições sem Distrações";

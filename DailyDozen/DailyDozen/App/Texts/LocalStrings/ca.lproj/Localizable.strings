@@ -145,25 +145,25 @@
 /* Info About View */
 "info.about.title" = "Sobre aquesta app";
 
-/* Info About View */
+/* Info About Menu Item */
 "info_app_about" = "Informació";
 
-/* Info About View Application Name: ‘Daily Dozen’ */
+/* Info About View: Application Name ‘Daily Dozen’ */
 "info_app_about_app_name" = "Dotzena Diària";
 
-/* Info Menu About: line 4 */
+/* Info About View: Created By */
 "info_app_about_created_by" = "Aquesta app ha estat creada per: NutritionFacts.org, Christi Richards, Konstantin Khokhlov i Marc Campbell";
 
-/* Info Menu About: line 5 */
+/* Info About View: Open Source Credits */
 "info_app_about_oss_credits" = "S'utilitzen les següents biblioteques de codi obert: RealmSwift, Charts, FSCalendar, SimpleAnimation, ActiveLabel.";
 
-/* Info About View */
+/* Info About View: Overview Text */
 "info_app_about_overview" = "Utilitza aquesta app cada dia per fer un seguiment dels aliments i els consells que dono per una salut i longevitat òptimes als meus llibres How Not to Die i How Not to Diet.";
 
-/* Info About View Application release version */
+/* Info About View: Application release version */
 "info_app_about_version" = "versió 3.2.11";
 
-/* Info About View */
+/* Info About View: Welcome */
 "info_app_about_welcome" = "Benvingut a la meva Dotzena Diària!";
 
 /* Info Menu: book title */

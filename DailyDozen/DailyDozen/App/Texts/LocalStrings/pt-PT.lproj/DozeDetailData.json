@@ -4,8 +4,8 @@
       "heading" : "Leguminosas",
       "servings" : [
         {
-          "imperial" : "¼ xícara de homus ou patê de feijão",
-          "metric" : "60 g de homus ou patê de feijão"
+          "imperial" : "¼ xícara de hummus ou patê de feijão",
+          "metric" : "60 g de hummus ou patê de feijão"
         },
         {
           "imperial" : "½ xícara de feijão, ervilha, lentilha, tofu ou tempê cozidos",
@@ -59,7 +59,7 @@
           "topic" : "topics/lentils"
         },
         {
-          "text" : "Missô",
+          "text" : "Miso",
           "topic" : "topics/miso"
         },
         {
@@ -67,7 +67,7 @@
           "topic" : "topics/navy-beans"
         },
         {
-          "text" : "Feijão carioca/catarino",
+          "text" : "Feijão catarino",
           "topic" : "topics/pinto-beans"
         },
         {
@@ -79,21 +79,21 @@
           "topic" : "topics/split-peas"
         },
         {
-          "text" : "Tempê",
+          "text" : "Tempeh",
           "topic" : "topics/tempeh"
         }
       ]
     },
     "dozeBerries" : {
-      "heading" : "Frutas Silvestres",
+      "heading" : "Bagas",
       "servings" : [
         {
-          "imperial" : "½ xícara de frutas silvestres frescas ou congeladas",
-          "metric" : "60 g de frutas silvestres frescas ou congeladas"
+          "imperial" : "½ xícara de bagas frescas ou congeladas",
+          "metric" : "60 g de bagas frescas ou congeladas"
         },
         {
-          "imperial" : "¼ xícara de frutas silvestres secas",
-          "metric" : "40 g de frutas silvestres secas"
+          "imperial" : "¼ xícara de bagas secas",
+          "metric" : "40 g de bagas secas"
         }
       ],
       "topic" : "topics/berries",
@@ -103,7 +103,7 @@
           "topic" : "topics/acai-berries"
         },
         {
-          "text" : "Bérberis",
+          "text" : "Berberis",
           "topic" : "topics/barberries"
         },
         {
@@ -123,7 +123,7 @@
           "topic" : "topics/grapes"
         },
         {
-          "text" : "Arando/oxicoco",
+          "text" : "Arando",
           "topic" : "topics/cranberries"
         },
         {
@@ -135,7 +135,7 @@
           "topic" : ""
         },
         {
-          "text" : "Mulberries",
+          "text" : "Amora (de árvore)",
           "topic" : ""
         },
         {
@@ -167,7 +167,7 @@
           "topic" : "topics/chai-tea"
         },
         {
-          "text" : "Chá de camomila com baunilha",
+          "text" : "Infusão de camomila com baunilha",
           "topic" : "topics/chamomile-tea"
         },
         {
@@ -183,7 +183,7 @@
           "topic" : "topics/green-tea"
         },
         {
-          "text" : "Chá de hibisco",
+          "text" : "Infusão de hibisco",
           "topic" : "topics/hibiscus-tea"
         },
         {
@@ -195,7 +195,7 @@
           "topic" : ""
         },
         {
-          "text" : "Chá de erva-cidreira",
+          "text" : "Infusão de erva-cidreira",
           "topic" : "topics/lemon-balm"
         },
         {
@@ -207,11 +207,11 @@
           "topic" : "topics/oolong-tea"
         },
         {
-          "text" : "Chá de hortelã",
+          "text" : "Infusão de hortelã",
           "topic" : "topics/peppermint"
         },
         {
-          "text" : "Chá rooibos",
+          "text" : "Infusão de rooibos",
           "topic" : "topics/rooibos-tea"
         },
         {
@@ -225,15 +225,15 @@
       ]
     },
     "dozeExercise" : {
-      "heading" : "Exercícios",
+      "heading" : "Exercício",
       "servings" : [
         {
-          "imperial" : "90 minutos de atividade de intensidade moderada",
-          "metric" : "90 minutos de atividade de intensidade moderada"
+          "imperial" : "90 minutos de atividade com intensidade moderada",
+          "metric" : "90 minutos de atividade com intensidade moderada"
         },
         {
-          "imperial" : "40 minutos de atividade de intensidade vigorosa",
-          "metric" : "40 minutos de atividade de intensidade vigorosa"
+          "imperial" : "40 minutos de atividade com intensidade vigorosa",
+          "metric" : "40 minutos de atividade com intensidade vigorosa"
         }
       ],
       "topic" : "topics/exercise",
@@ -251,7 +251,7 @@
           "topic" : ""
         },
         {
-          "text" : "Queimada/Jogo do mata",
+          "text" : "Jogo do mata",
           "topic" : ""
         },
         {
@@ -271,11 +271,11 @@
           "topic" : ""
         },
         {
-          "text" : "Patinação no gelo",
+          "text" : "Patinagem no gelo",
           "topic" : ""
         },
         {
-          "text" : "Patinação inline",
+          "text" : "Patinagem em linha",
           "topic" : ""
         },
         {
@@ -295,7 +295,7 @@
           "topic" : ""
         },
         {
-          "text" : "Patinação",
+          "text" : "Patinagem",
           "topic" : ""
         },
         {
@@ -323,7 +323,7 @@
           "topic" : ""
         },
         {
-          "text" : "Tênis (duplas, 2vs2)",
+          "text" : "Ténis (em duplas)",
           "topic" : ""
         },
         {
@@ -351,7 +351,7 @@
           "topic" : ""
         },
         {
-          "text" : "Caminhada de mochila",
+          "text" : "Caminhada com mochila",
           "topic" : ""
         },
         {
@@ -367,7 +367,7 @@
           "topic" : ""
         },
         {
-          "text" : "Esqui cross-country",
+          "text" : "Esqui de fundo",
           "topic" : ""
         },
         {
@@ -379,7 +379,7 @@
           "topic" : ""
         },
         {
-          "text" : "Jogging/Corrida",
+          "text" : "Corrida",
           "topic" : ""
         },
         {
@@ -387,7 +387,7 @@
           "topic" : ""
         },
         {
-          "text" : "Pular corda",
+          "text" : "Saltar à corda",
           "topic" : ""
         },
         {
@@ -423,7 +423,7 @@
           "topic" : ""
         },
         {
-          "text" : "Tênis (1vs1)",
+          "text" : "Tênis (individual)",
           "topic" : ""
         },
         {
@@ -443,7 +443,7 @@
           "topic" : ""
         },
         {
-          "text" : "Natação contínua",
+          "text" : "Natação - voltas à piscina",
           "topic" : ""
         },
         {
@@ -451,7 +451,7 @@
           "topic" : ""
         },
         {
-          "text" : "Jogging na água",
+          "text" : "Corrida na água",
           "topic" : ""
         }
       ]
@@ -460,14 +460,14 @@
       "heading" : "Linhaça",
       "servings" : [
         {
-          "imperial" : "1 colher de sopa (moída/triturada)",
-          "metric" : "1 colher de sopa (moída/triturada)"
+          "imperial" : "1 colher de sopa (moída)",
+          "metric" : "1 colher de sopa (moída)"
         }
       ],
       "topic" : "topics/flax-seeds",
       "varieties" : [
         {
-          "text" : "Linhaça marrom",
+          "text" : "Linhaça castanha",
           "topic" : ""
         },
         {
@@ -511,11 +511,11 @@
           "topic" : "topics/bananas"
         },
         {
-          "text" : "Melão Gália/Cantaloupe",
+          "text" : "Meloa",
           "topic" : "topics/cantaloupe"
         },
         {
-          "text" : "Tangerina clementina",
+          "text" : "Clementina",
           "topic" : ""
         },
         {
@@ -539,15 +539,15 @@
           "topic" : "topics/kiwifruit"
         },
         {
-          "text" : "Limão amarelo",
+          "text" : "Limão",
           "topic" : "topics/lemons"
         },
         {
-          "text" : "Limão",
+          "text" : "Lima",
           "topic" : "topics/limes"
         },
         {
-          "text" : "Lichia",
+          "text" : "Líchia",
           "topic" : ""
         },
         {
@@ -587,7 +587,7 @@
           "topic" : "topics/plums"
         },
         {
-          "text" : "Damasco/Alperce Pluot",
+          "text" : "Pluot",
           "topic" : ""
         },
         {
@@ -631,11 +631,11 @@
           "topic" : "topics/beets"
         },
         {
-          "text" : "Couve galega",
+          "text" : "Couve-galega",
           "topic" : "topics/collard-greens"
         },
         {
-          "text" : "Kale/Couve-de-folhas (preta, verde e vermelha)",
+          "text" : "Kale (preta, verde e vermelha)",
           "topic" : "topics/kale"
         },
         {
@@ -647,7 +647,7 @@
           "topic" : "topics/mustard-greens"
         },
         {
-          "text" : "Vinagreira/Azeda",
+          "text" : "Azeda",
           "topic" : ""
         },
         {
@@ -655,25 +655,25 @@
           "topic" : "topics/spinach"
         },
         {
-          "text" : "Folhas de acelga/beterraba branca",
+          "text" : "Acelga",
           "topic" : "topics/swiss-chard"
         },
         {
-          "text" : "Folhas de nabo/Nabiças",
+          "text" : "Nabiça",
           "topic" : ""
         }
       ]
     },
     "dozeNuts" : {
-      "heading" : "Oleaginosas e Sementes",
+      "heading" : "Frutos secos e Sementes",
       "servings" : [
         {
-          "imperial" : "¼ xícara de oleaginosas ou sementes",
-          "metric" : "30 g de oleaginosas ou sementes"
+          "imperial" : "¼ xícara de frutos secos ou sementes",
+          "metric" : "30 g de frutos secos ou sementes"
         },
         {
-          "imperial" : "2 colheres de sopa de manteiga/pasta de oleaginosas ou sementes",
-          "metric" : "2 colheres de sopa de manteiga/pasta de oleaginosas ou sementes"
+          "imperial" : "2 colheres de sopa de manteiga de frutos secos ou sementes",
+          "metric" : "2 colheres de sopa de manteiga de frutos secos ou sementes"
         }
       ],
       "topic" : "topics/nuts",
@@ -683,19 +683,19 @@
           "topic" : "topics/almonds"
         },
         {
-          "text" : "Castanhas do Pará/Brasil",
+          "text" : "Castanhas do Pará",
           "topic" : "topics/brazil-nuts"
         },
         {
-          "text" : "Castanhas de cajú",
+          "text" : "Cajú",
           "topic" : "topics/cashews"
         },
         {
-          "text" : "Sementes de chia",
+          "text" : "Chia",
           "topic" : "topics/chia-seeds"
         },
         {
-          "text" : "Avelãs",
+          "text" : "Avelã",
           "topic" : "topics/hazelnuts"
         },
         {
@@ -711,7 +711,7 @@
           "topic" : "topics/pecans"
         },
         {
-          "text" : "Pistaches",
+          "text" : "Pistachios",
           "topic" : "topics/pistachios"
         },
         {
@@ -719,7 +719,7 @@
           "topic" : "topics/pumpkin-seeds"
         },
         {
-          "text" : "Gergelim/Sementes de sésamo",
+          "text" : "Sementes de sésamo",
           "topic" : "topics/sesame-seeds"
         },
         {
@@ -736,8 +736,8 @@
       "heading" : "Ervas e Especiarias",
       "servings" : [
         {
-          "imperial" : "¼ colher de chá de cúrcuma/açafrão-da-terra",
-          "metric" : "¼ colher de chá de cúrcuma/açafrão-da-terra"
+          "imperial" : "¼ colher de chá de cúrcuma",
+          "metric" : "¼ colher de chá de cúrcuma"
         },
         {
           "imperial" : "Qualquer outra erva (sem sal) e especiarias que goste",
@@ -747,7 +747,7 @@
       "topic" : "topics/spices",
       "varieties" : [
         {
-          "text" : "Pimenta dioica/pimenta-da-jamaica",
+          "text" : "Pimenta-da-jamaica",
           "topic" : "topics/allspice"
         },
         {
@@ -771,7 +771,7 @@
           "topic" : ""
         },
         {
-          "text" : "Folhas de coentro",
+          "text" : "Coentro",
           "topic" : "topics/cilantro"
         },
         {
@@ -791,15 +791,15 @@
           "topic" : "topics/cumin"
         },
         {
-          "text" : "Curry/Caril em pó",
+          "text" : "Caril em pó",
           "topic" : "topics/curry-powder"
         },
         {
-          "text" : "Endro/Aneto",
+          "text" : "Endro",
           "topic" : ""
         },
         {
-          "text" : "Feno-grego/Alforva",
+          "text" : "Feno-grego",
           "topic" : "topics/fenugreek"
         },
         {
@@ -811,11 +811,11 @@
           "topic" : "topics/ginger"
         },
         {
-          "text" : "Rábano-silvestre/Armorácia",
+          "text" : "Rábano",
           "topic" : ""
         },
         {
-          "text" : "Capim-cidreira/Capim-limão",
+          "text" : "Erva cidreira",
           "topic" : ""
         },
         {
@@ -831,15 +831,15 @@
           "topic" : "topics/nutmeg"
         },
         {
-          "text" : "Orégano",
+          "text" : "Orégão",
           "topic" : "topics/oregano"
         },
         {
-          "text" : "Páprica/Páprica defumada",
+          "text" : "Páprica",
           "topic" : ""
         },
         {
-          "text" : "Salsinha",
+          "text" : "Salsa",
           "topic" : "topics/parsley"
         },
         {
@@ -855,7 +855,7 @@
           "topic" : "topics/rosemary"
         },
         {
-          "text" : "Açafrão",
+          "text" : "Açafrão verdadeiro",
           "topic" : "topics/saffron"
         },
         {
@@ -867,7 +867,7 @@
           "topic" : ""
         },
         {
-          "text" : "Açafrão-da-terra/Cúrcuma",
+          "text" : "Cúrcuma / açafrão-da-terra",
           "topic" : "topics/turmeric"
         },
         {
@@ -884,12 +884,12 @@
           "metric" : "30–80 g de crucíferos picados"
         },
         {
-          "imperial" : "¼ xícara de brotos de brócolis ou couve-de-bruxelas",
-          "metric" : "12 g de brotos de brócolis ou couve-de-bruxelas"
+          "imperial" : "½ xícara de rebentos de brócolos ou couve-de-bruxelas",
+          "metric" : "44 g de rebentos de brócolos ou couve-de-bruxelas"
         },
         {
-          "imperial" : "1 colher de sopa de rábano-silvestre",
-          "metric" : "1 colher de sopa de rábano-silvestre"
+          "imperial" : "1 colher de sopa de rábano",
+          "metric" : "1 colher de sopa de rábano"
         }
       ],
       "topic" : "",
@@ -903,7 +903,7 @@
           "topic" : "topics/bok-choy"
         },
         {
-          "text" : "Brócolis/Brócolos (inclui couve-romanesca)",
+          "text" : "Brócolos (inclui couve-romanesca)",
           "topic" : "topics/broccoli"
         },
         {
@@ -911,7 +911,7 @@
           "topic" : "topics/brussels-sprouts"
         },
         {
-          "text" : "Repolho (verde, roxo e savoy)",
+          "text" : "Couve (verde, roxa e lombarda)",
           "topic" : "topics/cabbage"
         },
         {
@@ -919,15 +919,15 @@
           "topic" : "topics/cauliflower"
         },
         {
-          "text" : "Couve/Couve-galega",
+          "text" : "Couve-galega",
           "topic" : "topics/collard-greens"
         },
         {
-          "text" : "Rábano-silvestre/Armorácia",
+          "text" : "Rábano",
           "topic" : ""
         },
         {
-          "text" : "Kale/Couve-de-folhas (preta, verde e vermelha)",
+          "text" : "Kale (preta, verde e vermelha)",
           "topic" : "topics/kale"
         },
         {
@@ -943,7 +943,7 @@
           "topic" : ""
         },
         {
-          "text" : "Folhas de nabo/Nabiças",
+          "text" : "Nabiças",
           "topic" : ""
         },
         {
@@ -964,8 +964,8 @@
           "metric" : "50 g de vegetais não-folhosos crus ou cozidos"
         },
         {
-          "imperial" : "½ xícara de suco/sumo de vegetais",
-          "metric" : "125 ml de suco/sumo de vegetais"
+          "imperial" : "½ xícara de sumo de vegetais",
+          "metric" : "125 ml de sumo de vegetais"
         },
         {
           "imperial" : "¼ xícara de cogumelos secos",
@@ -979,7 +979,7 @@
           "topic" : "topics/artichokes"
         },
         {
-          "text" : "Aspargo",
+          "text" : "Espargo",
           "topic" : "topics/asparagus"
         },
         {
@@ -1019,7 +1019,7 @@
           "topic" : "topics/potatoes"
         },
         {
-          "text" : "Abóbora moranga",
+          "text" : "Abóbora",
           "topic" : "topics/pumpkin"
         },
         {
@@ -1027,11 +1027,11 @@
           "topic" : "topics/sea-vegetables"
         },
         {
-          "text" : "Ervilha torta",
+          "text" : "Vagem de ervilha",
           "topic" : ""
         },
         {
-          "text" : "Abóbora (variedades delicata, amarela/verão e espaguete)",
+          "text" : "Abóbora (variedades delicata, amarela e esparguete)",
           "topic" : "topics/squash"
         },
         {
@@ -1043,7 +1043,7 @@
           "topic" : "topics/tomatoes"
         },
         {
-          "text" : "Abobrinha/Curgete",
+          "text" : "Courgette",
           "topic" : "topics/zucchini"
         }
       ]
@@ -1083,7 +1083,7 @@
           "topic" : "topics/buckwheat"
         },
         {
-          "text" : "Painço",
+          "text" : "Millet",
           "topic" : "topics/millet"
         },
         {
@@ -1103,7 +1103,7 @@
           "topic" : "topics/rye"
         },
         {
-          "text" : "Teff/Tefe",
+          "text" : "Teff",
           "topic" : ""
         },
         {
