@@ -24,7 +24,7 @@ struct TweakDetailViewModel {
     var activityCount: Int {
         return 1
     }
-
+    
     /// Returns the item name.
     var itemTitle: String {
         return info.heading

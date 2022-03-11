@@ -1,0 +1,32 @@
+{
+  "configurations" : [
+    {
+      "id" : "5999372B-108E-47B3-BB5E-3B2BF928F32F",
+      "name" : "Configuration 1",
+      "options" : {
+
+      }
+    }
+  ],
+  "defaultOptions" : {
+
+  },
+  "testTargets" : [
+    {
+      "skippedTests" : [
+        "DozeUITests",
+        "MapHelperTests",
+        "SettingsUITests\/testUtilitiesView()",
+        "SnapHelperTests",
+        "TweakUITests",
+        "UrlHelperTests"
+      ],
+      "target" : {
+        "containerPath" : "container:DailyDozen.xcodeproj",
+        "identifier" : "498A2283237CD88A007AF5FB",
+        "name" : "DailyDozenUITests"
+      }
+    }
+  ],
+  "version" : 1
+}

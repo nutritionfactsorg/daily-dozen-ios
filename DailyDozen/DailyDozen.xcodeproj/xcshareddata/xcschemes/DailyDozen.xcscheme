@@ -51,6 +51,12 @@
             reference = "container:DailyDozenTestPlans/DailyDozen.xctestplan"
             default = "YES">
          </TestPlanReference>
+         <TestPlanReference
+            reference = "container:DailyDozenTestPlans/LocalesQuickCheck.xctestplan">
+         </TestPlanReference>
+         <TestPlanReference
+            reference = "container:DailyDozenTestPlans/LocalesBatchA.xctestplan">
+         </TestPlanReference>
       </TestPlans>
       <Testables>
          <TestableReference
@@ -79,6 +85,8 @@
       buildConfiguration = "Debug"
       selectedDebuggerIdentifier = "Xcode.DebuggerFoundation.Debugger.LLDB"
       selectedLauncherIdentifier = "Xcode.DebuggerFoundation.Launcher.LLDB"
+      language = "pt-BR"
+      region = "BR"
       launchStyle = "0"
       useCustomWorkingDirectory = "NO"
       ignoresPersistentStateOnLaunch = "NO"

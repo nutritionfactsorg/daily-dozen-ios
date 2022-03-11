@@ -89,11 +89,13 @@ class SettingsViewController: UITableViewController {
         
         #if targetEnvironment(simulator)
         // LogService.shared.debug("::::: SIMULATOR ENVIRONMENT: SettingsViewController :::::")
-        advancedUtilitiesTableViewCell.isHidden = false
+        //advancedUtilitiesTableViewCell.isHidden = false
+        advancedUtilitiesTableViewCell.isHidden = true // :UI_TEST:
         // LogService.shared.debug(":::::::::::::::::::::::::::::::::::::::::::::::::::::::::\n")
         #endif
         #if DEBUG
-        advancedUtilitiesTableViewCell.isHidden = false
+        //advancedUtilitiesTableViewCell.isHidden = false
+        advancedUtilitiesTableViewCell.isHidden = true // :UI_TEST:
         #endif
         
     }

@@ -294,6 +294,7 @@
 		49C01CD12644AF48005E592D /* TweakDetailLayout.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = TweakDetailLayout.storyboard; sourceTree = "<group>"; };
 		49C01CD62644AFDD005E592D /* TweakHistoryLayout.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = TweakHistoryLayout.storyboard; sourceTree = "<group>"; };
 		49C39694264E556000920ECC /* ItemHistoryLayout.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = ItemHistoryLayout.storyboard; sourceTree = "<group>"; };
+		49C4AAD427D9C04E00E0D54F /* LocalesQuickCheck.xctestplan */ = {isa = PBXFileReference; lastKnownFileType = text; path = LocalesQuickCheck.xctestplan; sourceTree = "<group>"; };
 		49C646CA236F4A46000DA8DC /* UtilityLayout.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = UtilityLayout.storyboard; sourceTree = "<group>"; };
 		49CA08A726C39DA8002D9F66 /* UnitsUtility.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UnitsUtility.swift; sourceTree = "<group>"; };
 		49D6448B245CEC3300814AD5 /* HealthWeightRecord.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HealthWeightRecord.swift; sourceTree = "<group>"; };
@@ -322,6 +323,7 @@
 		49FCFE9C273278AA000E92F1 /* ru */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ru; path = ru.lproj/Localizable.strings; sourceTree = "<group>"; };
 		49FCFE9D273278AB000E92F1 /* ru */ = {isa = PBXFileReference; lastKnownFileType = text.json; name = ru; path = ru.lproj/DozeDetailData.json; sourceTree = "<group>"; };
 		49FCFE9E273278AB000E92F1 /* ru */ = {isa = PBXFileReference; lastKnownFileType = text.json; name = ru; path = ru.lproj/TweakDetailData.json; sourceTree = "<group>"; };
+		49FECE9327DB0C3B0078C26D /* LocalesBatchA.xctestplan */ = {isa = PBXFileReference; lastKnownFileType = text; name = LocalesBatchA.xctestplan; path = DailyDozenTestPlans/LocalesBatchA.xctestplan; sourceTree = "<group>"; };
 		6ED3A55B48F7069CAE75156C /* Pods-DailyDozenTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-DailyDozenTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-DailyDozenTests/Pods-DailyDozenTests.release.xcconfig"; sourceTree = "<group>"; };
 		715D60F634E9BCD998C66B77 /* Pods_DailyDozenTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_DailyDozenTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		7D4AA01331AD98C99ADB2BC0 /* Pods-DailyDozen.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-DailyDozen.release.xcconfig"; path = "Pods/Target Support Files/Pods-DailyDozen/Pods-DailyDozen.release.xcconfig"; sourceTree = "<group>"; };
@@ -546,6 +548,7 @@
 			isa = PBXGroup;
 			children = (
 				49305AF6278E8AEF00B6D8B0 /* DailyDozen.xctestplan */,
+				49C4AAD427D9C04E00E0D54F /* LocalesQuickCheck.xctestplan */,
 			);
 			path = DailyDozenTestPlans;
 			sourceTree = "<group>";
@@ -1024,6 +1027,7 @@
 		CFE6982F1F974B9700CD7905 = {
 			isa = PBXGroup;
 			children = (
+				49FECE9327DB0C3B0078C26D /* LocalesBatchA.xctestplan */,
 				CFE6983A1F974B9700CD7905 /* DailyDozen */,
 				49305AF5278E8ABB00B6D8B0 /* DailyDozenTestPlans */,
 				498A2277237CD81F007AF5FB /* DailyDozenTests */,
@@ -1840,7 +1844,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_ENTITLEMENTS = DailyDozen/DailyDozen.entitlements;
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 19;
+				CURRENT_PROJECT_VERSION = 25;
 				DEVELOPMENT_TEAM = 2MG57YUZL5;
 				INFOPLIST_FILE = "$(SRCROOT)/DailyDozen/App/InfoPlist/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 12.3;
@@ -1860,7 +1864,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_ENTITLEMENTS = DailyDozen/DailyDozen.entitlements;
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 19;
+				CURRENT_PROJECT_VERSION = 25;
 				DEVELOPMENT_TEAM = 2MG57YUZL5;
 				INFOPLIST_FILE = "$(SRCROOT)/DailyDozen/App/InfoPlist/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 12.3;

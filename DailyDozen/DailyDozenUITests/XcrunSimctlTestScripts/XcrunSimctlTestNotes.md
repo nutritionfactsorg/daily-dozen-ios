@@ -54,6 +54,8 @@ xcrun simctl erase $UUID_iPhone_13_Pro_Max_15
 | Langauge (Region)     | AppleLanguages | AppleLocale |
 |-----------------------|----------------|-------------|
 | English (US)          | en-US          | en_US       |
+| Catalan (Andorra)     | ca-AD          | ca_AD       |
+| Catalan (Spain)       | ca-ES          | ca_ES       |
 | German (Germany)      | de-DE          | de_DE       |
 | Hebrew (Israel)       | he-IL          | he_IL       |
 | Portuguese (Brazil)   | pt-BR          | pt_BR       |
@@ -168,24 +170,58 @@ xcrun simctl boot $UUID_iPhone_13_Pro_Max_15
 ``` sh
 xcodebuild clean
 
+xcodebuild -showdestinations -workspace DailyDozen.xcworkspace -scheme DailyDozen
+
 xcodebuild -list -workspace DailyDozen.xcworkspace
-xcodebuild -workspace DailyDozen.xcworkspace -scheme DailyDozen -showTestPlans
 
 # Information about workspace "DailyDozen":
 #     Schemes:
-#         ActiveLabel
-#         Charts
+#         …
 #         DailyDozen
-#         FSCalendar
-#         Pods-DailyDozen
-#         Pods-DailyDozenTests
-#         Realm
-#         RealmSwift
-#         SimpleAnimation
 
-xcodebuild -scheme DailyDozen -showTestPlans
+xcodebuild -showTestPlans \
+    -workspace DailyDozen.xcworkspace \
+    -scheme DailyDozen \
+    -destination "name=iPhone_11_Pro_Max_15"
+
+#export DEST_iPhone_11_Pro_Max_15="OS=15.2,name=iPhone_11_Pro_Max_15"
+#xcodebuild  -showTestPlans -scheme DailyDozen -destination "$DEST_iPhone_11_Pro_Max_15"
+xcodebuild  -showTestPlans -scheme DailyDozen -destination "name=iPhone_11_Pro_Max_15"
+
+# Test plans associated with the scheme "DailyDozen":
+#         DailyDozen
+#         LocalesQuickCheck
+
 ```
+
+```
+cd ../..
+
+```
+
+## Screenshot Specifications <a id="screenshot-specifications-"></a><sup>[▴](#contents)</sup>
+
+* 6.5 inch (iPhone 13 Pro Max, iPhone 12 Pro Max, iPhone 11 Pro Max, iPhone 11, iPhone XS Max, iPhone XR)
+    * 1284 x 2778 pixels (portrait)
+        * iPhone 13 Pro Max/12 Pro Max
+    * 2778 x 1284 pixels (landscape)
+    * 1242 x 2688 pixels (portrait) … current screenshot size
+        * iPhone 11 Pro Max/XS Max
+    * 2688 x 1242 pixels (landscape)
+* 5.5 inch (iPhone 8 Plus, iPhone 7 Plus, iPhone 6s Plus)
+    * 1242 x 2208 pixels (portrait) … current screenshot size
+    * 2208 x 1242 pixels (landscape)
+* Smallest
+    * 640 × 1136 (4"), 9:16, 326 ppi
+        * iPod touch (gen 7), iOS 12 - 15 
+        * iPhone SE (gen 1), iOS 9 - 15
+        * iPhone 5s, iOS 7 - 12
+    * 750 × 1334 (4.7")
+        * iPhone SE (gen 3), SE (gen 2), 8, 7, 6s … up to iOS 15
 
 ## Resources <a id="resources-"></a><sup>[▴](#contents)</sup>
 
+* iOS Ref
+    * [Resolution by iOS device ⇗](https://iosref.com/res)
+    * [iOS version by device ⇗](https://iosref.com/ios)
 * [Using iOS Simulator with the Command Line ⇗](https://notificare.com/blog/2020/05/22/Using-iOS-Simulator-with-the-Command-Line/) has command line approach for setting the simulator language and region via `plutil`.

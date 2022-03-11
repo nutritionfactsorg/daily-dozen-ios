@@ -61,6 +61,9 @@
 /* Daily Dozen supplement info alert: message */
 "dozeOtherInfo.message" = "A vitamina B12 é essencial para a sua saúde mas não conta na suas porções diárias. \n\nA vitamina B12 é incluida neste aplicativo para fornecer a você uma forma fácil de acompanhar a sua ingestão.";
 
+/* Daily Dozen daily entry section heading */
+"dozeOtherInfo.section" = "Suplementos";
+
 /* Daily Dozen supplement info alert: title */
 "dozeOtherInfo.title" = "Suplementos";
 

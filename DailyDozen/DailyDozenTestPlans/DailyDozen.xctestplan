@@ -1,0 +1,36 @@
+{
+  "configurations" : [
+    {
+      "id" : "C814B4E7-10C7-44F7-947D-55B2003F6A58",
+      "name" : "Configuration 1",
+      "options" : {
+
+      }
+    }
+  ],
+  "defaultOptions" : {
+    "codeCoverage" : false,
+    "targetForVariableExpansion" : {
+      "containerPath" : "container:DailyDozen.xcodeproj",
+      "identifier" : "CFE698371F974B9700CD7905",
+      "name" : "DailyDozen"
+    }
+  },
+  "testTargets" : [
+    {
+      "target" : {
+        "containerPath" : "container:DailyDozen.xcodeproj",
+        "identifier" : "498A2275237CD81F007AF5FB",
+        "name" : "DailyDozenTests"
+      }
+    },
+    {
+      "target" : {
+        "containerPath" : "container:DailyDozen.xcodeproj",
+        "identifier" : "498A2283237CD88A007AF5FB",
+        "name" : "DailyDozenUITests"
+      }
+    }
+  ],
+  "version" : 1
+}
