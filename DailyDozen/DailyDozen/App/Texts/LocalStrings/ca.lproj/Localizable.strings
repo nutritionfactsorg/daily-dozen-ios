@@ -278,7 +278,7 @@
 "setting_units_1_metric" = "Mètric";
 
 /* Preference Settings View: Part of ‘Imperial/Metric/Toggle Units’ selector */
-"setting_units_2_toggle" = "Alternar Unitats";
+"setting_units_2_toggle" = "Canvi Unitats";
 
 /* Preference Settings View: brief description text below units control. */
 "setting_units_choice_footer" = "Configura-ho perquè sigui sempre un tipus d'unitat o permet el botó d'alternància, \"Unitats\".";

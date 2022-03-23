@@ -278,7 +278,7 @@
 "setting_units_1_metric" = "Метрическая";
 
 /* Preference Settings View: Part of ‘Imperial/Metric/Toggle Units’ selector */
-"setting_units_2_toggle" = "Переключатель";
+"setting_units_2_toggle" = "Тумблер";
 
 /* Preference Settings View: brief description text below units control. */
 "setting_units_choice_footer" = "Установить только одну единицу измерения или включить кнопку переключения между единицами измерения.";

@@ -149,7 +149,7 @@
 "info_app_about" = "Über";
 
 /* Info About View Application Name: ‘Daily Dozen’ */
-"info_app_about_app_name" = "Das Tägliche Dutzend";
+"info_app_about_app_name" = "Tägliches Dutzend";
 
 /* Info Menu About: line 4 */
 "info_app_about_created_by" = "Diese App wurde erstellt von: NutritionFacts.org, Christi Richards, Konstantin Khokhlov, und Marc Campbell";
@@ -176,7 +176,7 @@
 "info_book_how_not_to_diet" = "Buch: How Not to Diet";
 
 /* Info Menu */
-"info_webpage_daily_dozen_challenge" = "Die Tägliches Dutzend Herausforderung";
+"info_webpage_daily_dozen_challenge" = "Tägliches Dutzend Herausforderung";
 
 /* Info Menu */
 "info_webpage_donate" = "Spenden Sie";
