@@ -61,6 +61,9 @@
 /* Daily Dozen supplement info alert: message */
 "dozeOtherInfo.message" = "Witamina B12 jest niezbędna dla zdrowia, ale nie wlicza się do Twoich dziennych porcji.\n\nWitamina B12 jest natomiast uwzględniona w aplikacji, aby łatwiej śledzić jej spożycie.";
 
+/* Daily Dozen daily entry section heading */
+"dozeOtherInfo.section" = "Suplementy";
+
 /* Daily Dozen supplement info alert: title */
 "dozeOtherInfo.title" = "Suplementy";
 

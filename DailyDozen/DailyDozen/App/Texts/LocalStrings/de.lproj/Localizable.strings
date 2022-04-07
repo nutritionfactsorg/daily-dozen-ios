@@ -200,7 +200,7 @@
 "item_history_heading" = "Hintergrund";
 
 /* Main Navigation Tab Control: ‘Daily Dozen’ (proper noun) */
-"navtab.doze" = "Das Tägliche Dutzend";
+"navtab.doze" = "Tägliches Dutzend";
 
 /* Main Navigation Tab Control: show more information */
 "navtab.info" = "Information";

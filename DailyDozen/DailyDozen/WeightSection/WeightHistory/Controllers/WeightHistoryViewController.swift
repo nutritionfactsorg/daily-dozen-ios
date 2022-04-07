@@ -4,9 +4,9 @@
 //
 //  Copyright © 2019 Nutritionfacts.org. All rights reserved.
 //
-// swiftlint: disable cyclomatic_complexity
-// swiftlint: disable function_body_length
-// swiftlint: disable type_body_length
+// swiftlint: // disable cyclomatic_complexity
+// swiftlint: // disable function_body_length
+// swiftlint: // disable type_body_length
 
 import UIKit
 import Charts

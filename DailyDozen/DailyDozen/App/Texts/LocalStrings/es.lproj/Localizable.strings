@@ -203,10 +203,10 @@
 "reminder.settings.vibrate" = "Vibración";
 
 /* 'Off' as in 'On or Off' */
-"reminder.state.off" = "Off";
+"reminder.state.off" = "Apagado";
 
 /* 'On' as in 'On or Off' */
-"reminder.state.on" = "On";
+"reminder.state.on" = "Encendido";
 
 /* First Launch: "Daily Dozen Only" */
 "setting_doze_only_btn" = "Docena Diaria solamente";
@@ -229,17 +229,26 @@
 /* First Launch: "For Health and Weight Loss" */
 "setting_health_weight_txt" = "Para la salud y la pérdida de peso";
 
-/* Class = "UITableViewSection"; headerTitle = "21 Tweaks Visibility"; ObjectID = "WdR-XV-IyP"; */
+/* Preference Settings View: tweaks visibilty subsection heading */
 "setting_tweak_header" = "Visibilidad de 21 Ajustes";
+
+/* Preference Settings View: Part of ‘Imperial/Metric/Toggle Units’ selector */
+"setting_units_0_imperial" = "Imperial";
+
+/* Preference Settings View: Part of ‘Imperial/Metric/Toggle Units’ selector */
+"setting_units_1_metric" = "Métrico";
+
+/* Preference Settings View: Part of ‘Imperial/Metric/Toggle Units’ selector */
+"setting_units_2_toggle" = "Palanca";
+
+/* Preference Settings View: brief description text below units control. */
+"setting_units_choice_footer" = "Configure siempre un tipo de unidad o active el botón de alternancia 'Unidades:'.";
 
 /* Class = "UITableViewSection"; headerTitle = "Measurement Units"; ObjectID = "IFs-g0-SPV"; */
 "setting_units_header" = "Unidades de medida";
 
 /* Settings: "Advanced Utilities" */
-"settings_advanced_utilities" = "Utilidades Avanzadas";
-
-/* Settings: units choice footer text */
-"setting_units_choice_footer" = "Configure siempre un tipo de unidad o active el botón de alternancia 'Unidades:'.";
+"setting_util_advanced" = "Utilidades Avanzadas";
 
 /* progress: number '%d' of consecutive days completed. */
 "streakDaysFormat" = "%d días";
@@ -368,13 +377,13 @@
 "weight_entry_clear" = "Clear";
 
 /* Weight Entry: "Evening (right before bed)" */
-"weight_entry_evening" = "Evening (right before bed)";
+"weight_entry_evening" = "Noche";
 
 /* Weight Entry: "Morning (upon waking)" */
-"weight_entry_morning" = "Morning (upon waking)";
+"weight_entry_morning" = "Mañana";
 
 /* Weight Entry: "Time" */
-"weight_entry_time" = "Time";
+"weight_entry_time" = "Tiempo";
 
 /* Weight Entry Units: "kg" */
 "weight_entry_units_kg" = "kg";
