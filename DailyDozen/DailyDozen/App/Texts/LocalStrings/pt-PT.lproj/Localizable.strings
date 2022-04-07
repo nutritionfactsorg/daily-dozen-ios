@@ -170,7 +170,7 @@
 "info_book_how_not_to_die" = "Livro: Como Não Morrer";
 
 /* Info Menu: book title */
-"info_book_how_not_to_die_cookbook" = "Livro: Como Não Morrer - O Livro de Receitas";
+"info_book_how_not_to_die_cookbook" = "Livro: Como Não Morrer (Receitas)";
 
 /* Info Menu: book title */
 "info_book_how_not_to_diet" = "Livro: Como Não Fazer Dieta";
@@ -278,7 +278,7 @@
 "setting_units_1_metric" = "Métrico";
 
 /* Preference Settings View: Part of ‘Imperial/Metric/Toggle Units’ selector */
-"setting_units_2_toggle" = "Alternar Unidades";
+"setting_units_2_toggle" = "Unidades";
 
 /* Preference Settings View: brief description text below units control. */
 "setting_units_choice_footer" = "Escolha entre ter sempre as mesmas unidades de medida ou ativar o botão de escolha de \"Unidades:\".";
@@ -290,9 +290,6 @@
 "setting_util_advanced" = "Funções Avançadas";
 
 /* ‘Streak’ count. Synonym: ‘Progress‘. Formatted number ‘%d’ for consecutive days completed. Place translated text for ‘days’ on the right or left of ‘%d’ based on language directionality. */
-"streakDaysFormat" = "%d dias";
-
-/* Formatted string %d days */
 "streakDaysFormat" = "%d dias";
 
 /* heading for daily data entry item */

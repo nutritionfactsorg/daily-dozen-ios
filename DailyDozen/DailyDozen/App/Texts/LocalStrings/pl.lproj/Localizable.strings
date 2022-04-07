@@ -142,9 +142,6 @@
 /* Info About Menu Item */
 "info_app_about" = "O aplikacji";
 
-/*  */
-"info_app_about_app_name" = "Codzienny Tuzin";
-
 /* Info About View: Application Name ‘Daily Dozen’ */
 "info_app_about_app_name" = "Codzienny Tuzin";
 
@@ -154,17 +151,11 @@
 /* Info About View: Open Source Credits */
 "info_app_about_oss_credits" = "Używane są następujące biblioteki open source: RealmSwift, Charts, FSCalendar, SimpleAnimation i ActiveLabel.";
 
-/*  */
-"info_app_about_overview" = "Korzystaj z aplikacji codziennie, aby poznać żywność i porady, które polecam dla optymalnego zdrowia i długowieczności w moich książkach „Jak Nie Umrzeć Przedwcześnie” i „How Not to Diet”.";
-
 /* Info About View: Overview Text */
 "info_app_about_overview" = "Korzystaj z tej aplikacji codziennie, aby śledzić żywność i porady, które polecam dla optymalnego zdrowia i długowieczności w moich książkach „Jak nie umrzeć przedwcześnie” i „How Not to Diet”.";
 
 /* Info About View: Application release version */
 "info_app_about_version" = "wersja 3.2.11";
-
-/*  */
-"info_app_about_welcome" = "Witaj w moim Codziennym Tuzinie!";
 
 /* Info About View: Welcome */
 "info_app_about_welcome" = "Witaj w moim Codziennym Tuzinie!";

@@ -145,25 +145,25 @@
 /* Info About View */
 "info.about.title" = "Über diese Anwendung";
 
-/* Info About View */
+/* Info About Menu Item */
 "info_app_about" = "Über";
 
-/* Info About View Application Name: ‘Daily Dozen’ */
+/* Info About View: Application Name ‘Daily Dozen’ */
 "info_app_about_app_name" = "Tägliches Dutzend";
 
-/* Info Menu About: line 4 */
+/* Info About View: Created By */
 "info_app_about_created_by" = "Diese App wurde erstellt von: NutritionFacts.org, Christi Richards, Konstantin Khokhlov, und Marc Campbell";
 
-/* Info Menu About: line 5 */
+/* Info About View: Open Source Credits */
 "info_app_about_oss_credits" = "Die folgenden Open-Source-Bibliotheken werden verwendet: RealmSwift, Charts, FSCalendar, SimpleAnimation, ActiveLabel.";
 
-/* Info About View */
+/* Info About View: Overview Text */
 "info_app_about_overview" = "Verwenden Sie diese App täglich, um den Überblick über die Lebensmittel und Ratschläge zu behalten, die ich in meinen Büchern How Not to Die und How Not to Diet für optimale Gesundheit und Langlebigkeit empfehle.";
 
-/* Info About View Application release version */
+/* Info About View: Application release version */
 "info_app_about_version" = "Version 3.2.11";
 
-/* Info About View */
+/* Info About View: Welcome */
 "info_app_about_welcome" = "Willkommen zu meinem Täglichen Dutzend!";
 
 /* Info Menu: book title */

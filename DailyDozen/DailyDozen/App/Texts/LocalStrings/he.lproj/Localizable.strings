@@ -278,7 +278,7 @@
 "setting_units_1_metric" = "מטרי";
 
 /* Preference Settings View: Part of ‘Imperial/Metric/Toggle Units’ selector */
-"setting_units_2_toggle" = "שינוי מצב היחידות";
+"setting_units_2_toggle" = "שינוי סוג היחידה";
 
 /* Preference Settings View: brief description text below units control. */
 "setting_units_choice_footer" = "הגדירו תמיד סוג יחידה אחד או הפעילו את לחצן ההחלפה 'יחידות:'.";

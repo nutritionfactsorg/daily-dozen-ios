@@ -148,9 +148,6 @@
 /* Info About Menu Item */
 "info_app_about" = "Sobre Nós";
 
-/* Info Menu About: line 2 */
-"info_app_about_app_name" = "Dúzia Diária";
-
 /* Info About View: Application Name ‘Daily Dozen’ */
 "info_app_about_app_name" = "Dúzia Diária";
 
@@ -160,29 +157,23 @@
 /* Info About View: Open Source Credits */
 "info_app_about_oss_credits" = "As seguintes bibliotecas de código aberto foram usadas: RealmSwift, Charts, FSCalendar, SimpleAnimation, ActiveLabel.";
 
-/* Info Menu About: line 1 */
-"info_app_about_overview" = "Use este aplicativo diariamente para acompanhar os alimentos e conselhos que eu recomendo para ter saúde ótima e longevidade nos meus livros Comer Para Não Morrer/Como Não Morrer e Como Não Fazer Dieta.";
-
 /* Info About View: Overview Text */
 "info_app_about_overview" = "Use este aplicativo diariamente para controlar os seus alimentos e acompanhar os conselhos que eu recomendo para uma ótima saúde e longevidade nos meus livros Como Não Morrer e Como Não Fazer Dieta.";
 
 /* Info About View: Application release version */
 "info_app_about_version" = "versão 3.2.11";
 
-/* Info Menu About: line 0 */
-"info_app_about_welcome" = "Bem vindo à minha Dúzia Diária!";
-
 /* Info About View: Welcome */
 "info_app_about_welcome" = "Bem-vindos à minha Dúzia Diária!";
 
 /* Info Menu: book title */
-"info_book_how_not_to_die" = "Livro: Como Não Morrer";
+"info_book_how_not_to_die" = "Como Não Morrer";
 
 /* Info Menu: book title */
-"info_book_how_not_to_die_cookbook" = "Livro: Como Não Morrer - O Livro de Receitas";
+"info_book_how_not_to_die_cookbook" = "Como Não Morrer Receitas";
 
 /* Info Menu: book title */
-"info_book_how_not_to_diet" = "Livro: Como Não Fazer Dieta";
+"info_book_how_not_to_diet" = "Como Não Fazer Dieta";
 
 /* Info Menu */
 "info_webpage_daily_dozen_challenge" = "Desafio Duzía Diária";
@@ -287,7 +278,7 @@
 "setting_units_1_metric" = "Métrico";
 
 /* Preference Settings View: Part of ‘Imperial/Metric/Toggle Units’ selector */
-"setting_units_2_toggle" = "Alternar Unidades";
+"setting_units_2_toggle" = "Alternar";
 
 /* Preference Settings View: brief description text below units control. */
 "setting_units_choice_footer" = "Escolha ter as mesmas unidades de medida sempre ou ative o botão de alteração “Unidades:”.";
