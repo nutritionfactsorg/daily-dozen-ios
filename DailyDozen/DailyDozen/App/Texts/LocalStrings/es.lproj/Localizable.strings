@@ -107,7 +107,7 @@
 "history_scale_label" = "Escala de tiempo";
 
 /* About this app */
-"info.about.title" = "Sobre esta app";
+"info_app_about_heading" = "Sobre esta app";
 
 /* Info: "About" */
 "info_app_about" = "Conócenos";

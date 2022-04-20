@@ -143,7 +143,7 @@
 "history_scale_label" = "Zeitskala";
 
 /* Info About View */
-"info.about.title" = "Über diese Anwendung";
+"info_app_about_heading" = "Über diese Anwendung";
 
 /* Info About Menu Item */
 "info_app_about" = "Über";

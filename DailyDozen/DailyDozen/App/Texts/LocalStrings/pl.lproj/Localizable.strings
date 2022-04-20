@@ -140,7 +140,7 @@
 "history_scale_label" = "Okres czasu";
 
 /* Info About View */
-"info.about.title" = "O aplikacji";
+"info_app_about_heading" = "O aplikacji";
 
 /* Info About Menu Item */
 "info_app_about" = "O aplikacji";
