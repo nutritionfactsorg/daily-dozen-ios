@@ -143,7 +143,7 @@
 "history_scale_label" = "סולם זמן";
 
 /* Info About View */
-"info.about.title" = "בקשר לאפליקציה זו";
+"info_app_about_heading" = "בקשר לאפליקציה זו";
 
 /* Info About Menu Item */
 "info_app_about" = "לגבי";

@@ -242,7 +242,7 @@
 "weightEntry.heading" = "Waga";
 
 /* About this app */
-"info.about.title" = "O aplikacji";
+"info_app_about_heading" = "O aplikacji";
 
 /* Videos link label */
 "videos.link.label" = "Filmy";
