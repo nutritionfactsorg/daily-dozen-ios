@@ -41,9 +41,28 @@ The Daily Dozen iOS App is licensed under the GPLv3
 
 ## Updates
 
+**3.2.11**
+
+* Adds Catalan (ca), German (de), Hebrew (he), Polish (pl), Portuguese (pt-BR, pt-PT) and Russian (ru)
+
+**3.2.9**
+
+* Improved general support for language translations
+* Improved layout for smaller screens
+* Fixed case where days completed did not correctly display
+* Updated topic link references to website
+
+**3.2.5**
+
+* Updated date picker interaction
+* Fixed reminder notification
+* Fixed issue where date navigation "Today" remains as yesterday's date
+
 **3.2.3 (App Store: August 15, 2020)**
 
 * Improved Spanish translation
+
+_Note: Application level language selection via Settings, requires iOS 13 or newer._
 
 **3.2.1 (App Store: July 7, 2020)**
 
