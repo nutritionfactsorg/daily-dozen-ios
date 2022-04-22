@@ -1,15 +1,15 @@
 {
   "itemsDict" : {
     "dozeBeans" : {
-      "heading" : "Rośliny strączkowe",
+      "heading" : "Fasola",
       "servings" : [
         {
-          "imperial" : "¼ szklanki humusu lub dipu ze strączków",
-          "metric" : "60 g humusu lub dipu ze strączków"
+          "imperial" : "¼ szklanki humusu lub dipu z fasoli",
+          "metric" : "60 g humusu lub dipu z fasoli"
         },
         {
-          "imperial" : "½ szklanki ugotowanych strączków, groszku, soczewicy, tofu lub tempehu",
-          "metric" : "130 g ugotowanych strączków, groszku, soczewicy, tofu lub tempehu"
+          "imperial" : "½ szklanki ugotowanej fasoli, grochu łuskanego, soczewicy, tofu lub tempeh",
+          "metric" : "130 g ugotowanej fasoli, grochu łuskanego, soczewicy, tofu lub tempeh"
         },
         {
           "imperial" : "1 szklanka świeżego groszku lub kiełków soczewicy",
@@ -27,7 +27,7 @@
           "topic" : ""
         },
         {
-          "text" : "Fasola biała półksiężycowata",
+          "text" : "Fasola limeńska",
           "topic" : ""
         },
         {
@@ -51,7 +51,7 @@
           "topic" : ""
         },
         {
-          "text" : "Fasola nerkowata",
+          "text" : "Fasola czerwona kidney",
           "topic" : "topics/kidney-beans"
         },
         {
@@ -63,7 +63,7 @@
           "topic" : "topics/miso"
         },
         {
-          "text" : "Fasola Navy",
+          "text" : "Fasola garbanzo",
           "topic" : "topics/navy-beans"
         },
         {
@@ -71,7 +71,7 @@
           "topic" : "topics/pinto-beans"
         },
         {
-          "text" : "Fasola Red small",
+          "text" : "Fasola (mała czerwona)",
           "topic" : ""
         },
         {
@@ -85,7 +85,7 @@
       ]
     },
     "dozeBerries" : {
-      "heading" : "Jagody",
+      "heading" : "Owoce Jagodowe",
       "servings" : [
         {
           "imperial" : "½ szklanki świeżych lub mrożonych",
@@ -115,7 +115,7 @@
           "topic" : "topics/blueberries"
         },
         {
-          "text" : "Wiśnie (słodkie lub cierpkie)",
+          "text" : "Wiśnie i Czereśnie",
           "topic" : "topics/cherries"
         },
         {
@@ -152,8 +152,8 @@
       "heading" : "Napoje",
       "servings" : [
         {
-          "imperial" : "Jedna szklanka (12 uncji)",
-          "metric" : "Jedna szklanka  (350 ml)"
+          "imperial" : "Jedna szklanka (340 g)",
+          "metric" : "Jedna szklanka (350 ml)"
         }
       ],
       "topic" : "topics/beverages",
@@ -192,11 +192,11 @@
         },
         {
           "text" : "Herbata jaśminowa",
-          "topic" : "topics/jasmine-tea"
+          "topic" : ""
         },
         {
           "text" : "Herbata z melisy",
-          "topic" : ""
+          "topic" : "topics/lemon-balm"
         },
         {
           "text" : "Herbata matcha",
@@ -480,8 +480,8 @@
       "heading" : "Inne owoce",
       "servings" : [
         {
-          "imperial" : "1 średniej wielkości owoc",
-          "metric" : "1 średniej wielkości owoc"
+          "imperial" : "1 owoc średniej wielkości",
+          "metric" : "1 owoc  średniej wielkości"
         },
         {
           "imperial" : "1 szklanka pokrojonych owoców",
@@ -495,7 +495,7 @@
       "topic" : "",
       "varieties" : [
         {
-          "text" : "Jabłko",
+          "text" : "Jabłka",
           "topic" : "topics/apples"
         },
         {
@@ -507,7 +507,7 @@
           "topic" : "topics/avocados"
         },
         {
-          "text" : "Banan",
+          "text" : "Banany",
           "topic" : "topics/bananas"
         },
         {
@@ -515,7 +515,7 @@
           "topic" : "topics/cantaloupe"
         },
         {
-          "text" : "Mandarynka Klementynka",
+          "text" : "Klementynki",
           "topic" : ""
         },
         {
@@ -524,7 +524,7 @@
         },
         {
           "text" : "Suszone figi",
-          "topic" : "topics/figs"
+          "topic" : ""
         },
         {
           "text" : "Grejpfrut",
@@ -555,7 +555,7 @@
           "topic" : "topics/mango"
         },
         {
-          "text" : "Nektarynka Tangerynka",
+          "text" : "Nektarynki",
           "topic" : ""
         },
         {
@@ -564,23 +564,23 @@
         },
         {
           "text" : "Papaja",
-          "topic" : "topics/papaya"
+          "topic" : ""
         },
         {
           "text" : "Marakuja",
           "topic" : ""
         },
         {
-          "text" : "Brzoskwinia",
+          "text" : "Brzoskwinie",
           "topic" : "topics/peaches"
         },
         {
-          "text" : "Gruszka",
+          "text" : "Gruszki",
           "topic" : "topics/pears"
         },
         {
           "text" : "Ananas",
-          "topic" : "topics/pineapples"
+          "topic" : ""
         },
         {
           "text" : "Śliwki (zwłaszcza ciemnoskóre)",
@@ -591,7 +591,7 @@
           "topic" : ""
         },
         {
-          "text" : "Granat",
+          "text" : "Owoce granatu",
           "topic" : "topics/pomegranates"
         },
         {
@@ -609,7 +609,7 @@
       ]
     },
     "dozeGreens" : {
-      "heading" : "Warzywa liściaste",
+      "heading" : "Zielenina",
       "servings" : [
         {
           "imperial" : "1 szklanka surowych",
@@ -631,7 +631,7 @@
           "topic" : "topics/beets"
         },
         {
-          "text" : "Collard greens (liściasta odmiana kapusty)",
+          "text" : "Kapusta pastewna",
           "topic" : "topics/collard-greens"
         },
         {
@@ -639,11 +639,11 @@
           "topic" : "topics/kale"
         },
         {
-          "text" : "Mieszanka Mesclun (mieszanka młodych warzyw sałatkowych)",
-          "topic" : "topics/mesclun-mix"
+          "text" : "Mieszanka Mesclun (mieszanka młodych liści warzyw sałatkowych)",
+          "topic" : ""
         },
         {
-          "text" : "Kapusta sarepska",
+          "text" : "Musztardowiec",
           "topic" : "topics/mustard-greens"
         },
         {
@@ -707,7 +707,7 @@
           "topic" : "topics/macadamia-nuts"
         },
         {
-          "text" : "Orzechy Pekan",
+          "text" : "Orzechy pekan",
           "topic" : "topics/pecans"
         },
         {
@@ -764,7 +764,7 @@
         },
         {
           "text" : "Kardamon",
-          "topic" : "topics/cardamom"
+          "topic" : ""
         },
         {
           "text" : "Chili w proszku",
@@ -784,7 +784,7 @@
         },
         {
           "text" : "Kolendra",
-          "topic" : "topics/coriander"
+          "topic" : ""
         },
         {
           "text" : "Kmin rzymski",
@@ -816,7 +816,7 @@
         },
         {
           "text" : "Trawa cytrynowa",
-          "topic" : "topics/lemongrass"
+          "topic" : ""
         },
         {
           "text" : "Majeranek",
@@ -864,7 +864,7 @@
         },
         {
           "text" : "Tymianek",
-          "topic" : "topics/thyme"
+          "topic" : ""
         },
         {
           "text" : "Kurkuma",
@@ -884,8 +884,8 @@
           "metric" : "30–80 g posiekanych"
         },
         {
-          "imperial" : "¼ szklanki brukselek lub kiełków brokułu",
-          "metric" : "12 g brukselek lub kiełków brokułu"
+          "imperial" : "¼ szklanki brukselek lub kiełków brokułów",
+          "metric" : "12 g brukselek lub kiełków brokułów"
         },
         {
           "imperial" : "1 łyżka chrzanu",
@@ -907,7 +907,7 @@
           "topic" : "topics/broccoli"
         },
         {
-          "text" : "Brukselka",
+          "text" : "Brukselki",
           "topic" : "topics/brussels-sprouts"
         },
         {
@@ -919,7 +919,7 @@
           "topic" : "topics/cauliflower"
         },
         {
-          "text" : "Collard greens (liściasta odmiana kapusty)",
+          "text" : "Kapusta pastewna",
           "topic" : "topics/collard-greens"
         },
         {
@@ -932,22 +932,22 @@
         },
         {
           "text" : "Kalarepa (zielona i fioletowa)",
-          "topic" : "topics/kohlrabi"
+          "topic" : ""
         },
         {
-          "text" : "Kapusta sarepska",
+          "text" : "Musztardowiec",
           "topic" : "topics/mustard-greens"
         },
         {
           "text" : "Rzodkiewki",
-          "topic" : "topics/radishes"
+          "topic" : ""
         },
         {
           "text" : "Nać rzepy",
           "topic" : ""
         },
         {
-          "text" : "Rukiew wodna",
+          "text" : "Rzeżucha wodna",
           "topic" : "topics/watercress"
         }
       ]
@@ -1003,7 +1003,7 @@
           "topic" : "topics/garlic"
         },
         {
-          "text" : "Grzyby (młode pieczarki, boczniaki, pieczatki portobello, shiitake)",
+          "text" : "Grzyby (młode pieczarki, boczniaki, pieczarki portobello, shiitake)",
           "topic" : "topics/mushrooms"
         },
         {
@@ -1015,7 +1015,7 @@
           "topic" : "topics/onions"
         },
         {
-          "text" : "Ziemniaki truflowe",
+          "text" : "Ziemniaki truflowe (fioletowe)",
           "topic" : "topics/potatoes"
         },
         {
@@ -1035,7 +1035,7 @@
           "topic" : "topics/squash"
         },
         {
-          "text" : "Słodkie ziemniaki/Bataty",
+          "text" : "Słodkie ziemniaki/Pochrzyn",
           "topic" : "topics/sweet-potatoes"
         },
         {
@@ -1052,12 +1052,12 @@
       "heading" : "Pełnoziarniste zboża",
       "servings" : [
         {
-          "imperial" : "½ szklanki gorących płatków zbożowych lub gotowanych ziaren, makaronu lub ziaren kukurydzy",
-          "metric" : "100 g gorących płatków zbożowych lub gotowanych ziaren, makaronu lub ziaren kukurydzy"
+          "imperial" : "½ szklanki gorących płatków zbożowych lub gotowanych ziaren zbóż, makaronu lub ziaren kukurydzy",
+          "metric" : "100 g gorących płatków zbożowych lub gotowanych ziaren zbóż, makaronu lub ziaren kukurydzy"
         },
         {
-          "imperial" : "1 szklanka zimnych płatków śniadaniowych",
-          "metric" : "50 g zimnych płatków śniadaniowych"
+          "imperial" : "1 szklanka płatków śniadaniowych na zimno",
+          "metric" : "50 g płatków śniadaniowych na zimno"
         },
         {
           "imperial" : "1 tortilla lub kromka chleba",
@@ -1068,8 +1068,8 @@
           "metric" : "½ bajgla lub angielskiego muffina"
         },
         {
-          "imperial" : "3 filiżanki popcornu",
-          "metric" : "30 g popcornu"
+          "imperial" : "3 szklanki prażonej kukurydzy",
+          "metric" : "30 g prażonej kukurydzy"
         }
       ],
       "topic" : "topics/grains",
@@ -1104,7 +1104,7 @@
         },
         {
           "text" : "Miłka abisyńska",
-          "topic" : "topics/teff"
+          "topic" : ""
         },
         {
           "text" : "Makaron pełnoziarnisty",

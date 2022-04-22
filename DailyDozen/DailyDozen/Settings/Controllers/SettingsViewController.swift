@@ -4,6 +4,7 @@
 //
 //  Copyright © 2019 Nutritionfacts.org. All rights reserved.
 //
+// swiftlint:disable function_body_length
 
 import UIKit
 import UserNotifications
@@ -88,14 +89,16 @@ class SettingsViewController: UITableViewController {
         }
         
         #if targetEnvironment(simulator)
-        // LogService.shared.debug("::::: SIMULATOR ENVIRONMENT: SettingsViewController :::::")
+        LogService.shared.debug("::::: SIMULATOR ENVIRONMENT: SettingsViewController :::::")
         advancedUtilitiesTableViewCell.isHidden = false
-        // LogService.shared.debug(":::::::::::::::::::::::::::::::::::::::::::::::::::::::::\n")
+        //advancedUtilitiesTableViewCell.isHidden = true // :UI_TEST:
+        print("advancedUtilitiesTableViewCell.isHidden == \(advancedUtilitiesTableViewCell.isHidden)")
+        LogService.shared.debug(":::::::::::::::::::::::::::::::::::::::::::::::::::::::::\n")
         #endif
         #if DEBUG
-        advancedUtilitiesTableViewCell.isHidden = false
+        //advancedUtilitiesTableViewCell.isHidden = false
+        //advancedUtilitiesTableViewCell.isHidden = true // :UI_TEST:
         #endif
-        
     }
     
     override func viewWillAppear(_ animated: Bool) {

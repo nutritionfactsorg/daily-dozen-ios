@@ -2,11 +2,11 @@
   "itemsDict" : {
     "tweakCompleteIntentions" : {
       "activity" : {
-        "imperial" : "Spełnij swoje intencje implementacyjne",
-        "metric" : "Spełnij swoje intencje implementacyjne"
+        "imperial" : "Wypełnij Swoje Intencje",
+        "metric" : "Wypełnij Swoje Intencje"
       },
-      "explanation" : "Co dwa miesiące twórz trzy nowe intencje implementacyjne. Zaplanuj „jeśli X, to Y”,  by wykonać je w określonym kontekście - i odznaczaj każdą z nich po ich wykonaniu.",
-      "heading" : "Spełnij swoje intencje implementacyjne",
+      "explanation" : "Co dwa miesiące twórz trzy nowe intencje. Zaplanuj „jeśli X, to Y”, by wykonać je w określonym kontekście - i odznaczaj każdą z nich po ich wykonaniu.",
+      "heading" : "Wypełnij Swoje Intencje",
       "topic" : ""
     },
     "tweakDailyBlackCumin" : {
@@ -14,17 +14,17 @@
         "imperial" : "Czarnuszka (Nigella sativa) (¼ łyżeczki)",
         "metric" : "Czarnuszka (Nigella sativa) (¼ łyżeczki)"
       },
-      "explanation" : "Jak zauważono w sekcji „Tłumienie apetytu”, systematyczny przegląd i metaanaliza randomizowanych, kontrolowanych badań na temat utraty wagi wykazał, że około ćwierć łyżeczki czarnuszki w proszku każdego dnia wydaje się obniżać wskaźnik masy ciała w ciągu kilku miesięcy.",
+      "explanation" : "Jak zauważono w sekcji „Tłumienie apetytu”, systematyczny przegląd i metaanaliza randomizowanych, kontrolowanych badań na temat utraty wagi wykazały, że około ćwierć łyżeczki czarnuszki w proszku każdego dnia wydaje się obniżać wskaźnik masy ciała w ciągu kilku miesięcy.",
       "heading" : "Czarnuszka (¼ łyżeczki)",
       "topic" : ""
     },
     "tweakDailyCumin" : {
       "activity" : {
-        "imperial" : "Kminek (½ łyżeczki do obiadu i kolacji)",
-        "metric" : "Kminek (½ łyżeczki do obiadu i kolacji)"
+        "imperial" : "Kmin rzymski (½ łyżeczki do obiadu i kolacji)",
+        "metric" : "Kmin rzymski (½ łyżeczki do obiadu i kolacji)"
       },
-      "explanation" : "W randomizowaych badaniach, kobiety z nadwagą, które dodawały pół łyżeczki kminku do swoich obiadów i kolacji pokonały grupę kontrolną o 1,8 kg i straciły 2,5 cm w talii. Istnieją również dowody na zalety stosowania szafranu przyprawowego, ale zaledwie szczypta dziennie kosztowałaby więcej niż jedna łyżeczka kminku.",
-      "heading" : "Kminek (½ łyżeczki do obiadu i kolacji)",
+      "explanation" : "W randomizowaych badaniach, kobiety z nadwagą, które dodawały pół łyżeczki kminu rzymskiego do obiadów i kolacji, pokonały grupę kontrolną o 1,8 kg i straciły 2,5 cm w talii. Istnieją również dowody na zalety stosowania szafranu jako przyprawy, ale zaledwie szczypta dziennie kosztowałaby więcej niż jedna łyżeczka kminu.",
+      "heading" : "Kmin rzymski (½ łyżeczki do obiadu i kolacji)",
       "topic" : ""
     },
     "tweakDailyDeflourDiet" : {
@@ -32,7 +32,7 @@
         "imperial" : "Odmącz swoją dietę",
         "metric" : "Odmącz swoją dietę"
       },
-      "explanation" : "Zaznacz to pole każdego dnia, kiedy Twoje porcje pełnoziarnistych zbóż są dostarczone w postaci całych ziaren. Sproszkowanie nawet stuprocentowo pełnoziarnistych zbóż pozbawia naszą mikrobiotę skrobi, która w innym przypadku byłaby przetransportowana do naszej okrężnicy zamknięta w nienaruszonych ścianach komórkowych.",
+      "explanation" : "Zaznacz to pole każdego dnia, kiedy Twoje porcje pełnoziarnistych zbóż są dostarczone w postaci całych ziaren. Mielenie nawet stuprocentowo pełnoziarnistych zbóż pozbawia nasz mikrobiom skrobi, która w  przeciwnym razie byłaby przetransportowana do naszej okrężnicy zamknięta w nienaruszonych ścianach komórkowych.",
       "heading" : "Odmącz swoją dietę",
       "topic" : ""
     },
@@ -41,7 +41,7 @@
         "imperial" : "Więcej kalorii na początku dnia",
         "metric" : "Więcej kalorii na początku dnia"
       },
-      "explanation" : "Spożycie większej ilości kalorii wcześniej w ciągu dnia przynosi korzyści metaboliczne, więc przygotuj (najlepiej) śniadanie lub obiad jako największy posiłek dnia - w stylu prawdziwego króla / księcia / żebraka.",
+      "explanation" : "Spożycie większej ilości kalorii wcześniej w ciągu dnia przynosi korzyści metaboliczne, więc (najlepiej) przygotuj śniadanie lub obiad jako największy posiłek dnia - w stylu prawdziwego króla / księcia / żebraka (po ang. mówi się „śniadanie jak król, obiad jak książę, a kolację jak żebrak.\")",
       "heading" : "Więcej kalorii na początku dnia",
       "topic" : ""
     },
@@ -50,7 +50,7 @@
         "imperial" : "Czosnek w proszku (¼ łyżeczki)",
         "metric" : "Czosnek w proszku (¼ łyżeczki)"
       },
-      "explanation" : "Randomizowane, podwójnie ślepe, badania kontrolowane placebo wykazały, że zaledwie ćwierć łyżeczki czosnku dziennie może zmniejszyć tkankę tłuszczową - za jedynie grosze.",
+      "explanation" : "Randomizowane, podwójnie ślepe, badania kontrolowane placebo wykazały, że zaledwie ćwierć łyżeczki czosnku dziennie może zmniejszyć tkankę tłuszczową - za grosze.",
       "heading" : "Czosnek w proszku (¼ łyżeczki)",
       "topic" : ""
     },
@@ -59,7 +59,7 @@
         "imperial" : "Mielony imbir (1 łyżeczka) lub pieprz Cayenne (½ łyżeczki)",
         "metric" : "Mielony imbir (1 łyżeczka) lub pieprz Cayenne (½ łyżeczki)"
       },
-      "explanation" : "Randomizowane badania z grupą kontrolną wykazały, że ¼ łyżeczki do 1,5 łyżeczki mielonego imbiru na dzień znacznie zmniejszyła masę ciała, za zaledwie grosze. Może to być tak proste, jak wymieszanie zmielonej przyprawy w szklance gorącej wody. Uwaga: imbir może działać lepiej rano niż wieczorem. Herbata Chai to smaczny sposób na połączenie korzyści zielonej herbaty i imbiru w jednym napoju. Alternatywnie, aby aktywować brązowe tkanki tłuszczowe, możesz włączyć jedną surową papryczkę jalapeño lub pół łyżeczki sproszkowanej czerwonej papryki (lub, zakładam, pokruszonych płatków czerwonej papryki) do swojej codziennej diety. Aby zmniejszyć ostrość, możesz bardzo cienko pokroić lub drobno posiekać jalapeño, powinno mniej szczypać, lub wymieszać czerwoną paprykę z zupą lub ze smoothie z nieprzetworzonych warzyw, które przedstawiłem w jednym z moich filmów o gotowaniu na NutritionFacts.org.",
+      "explanation" : "Randomizowane badania z grupą kontrolną wykazały, że ¼ łyżeczki do 1,5 łyżeczki mielonego imbiru na dzień znacznie zmniejszyła masę ciała, a kosztuje grosze. Wystarczy proste wymieszanie zmielonej przyprawy w szklance gorącej wody. Uwaga: imbir może działać lepiej rano niż wieczorem. Herbata Chai to smaczny sposób na połączenie korzyści zielonej herbaty i imbiru w jednym. Alternatywnie, aby aktywować brązowe tkanki tłuszczowe, możesz dodać jedną surową papryczkę jalapeño lub pół łyżeczki sproszkowanej czerwonej papryki (lub, pokruszonych płatków czerwonej papryki) do swojej codziennej diety. Aby zmniejszyć ostrość, możesz bardzo cienko pokroić lub drobno posiekać jalapeño (powinno mniej szczypać) lub wymieszać czerwoną paprykę z zupą lub ze smoothie z nieprzetworzonych warzyw (które przedstawiłem w jednym z moich filmów o gotowaniu na NutritionFacts.org).",
       "heading" : "Mielony imbir (1 łyżeczka) lub pieprz Cayenne (½ łyżeczki)",
       "topic" : ""
     },
@@ -68,7 +68,7 @@
         "imperial" : "Zielona herbata (3 szklanki)",
         "metric" : "Zielona herbata (3 szklanki)"
       },
-      "explanation" : "Pij trzy szklanki dziennie między posiłkami (odczekaj co najmniej godzinę po posiłku, aby nie zakłócać wchłaniania żelaza). Podczas posiłków pij wodę, czarną kawę lub herbatę z hibiskusa zmieszaną w stosunku 6:1 z werbeną cytrynową, ale nigdy nie przekraczaj trzech szklanek płynu na godzinę (ważne, biorąc pod uwagę moje zalecenia o piciu przed posiłkami). Skorzystaj ze wzmacniającego działania kofeiny, pijąc zieloną herbatę razem z czymś zdrowym, co chciałbyś/-abyś lubić bardziej, ale nie spożywaj dużych ilości kofeiny w ciągu sześciu godzin przed snem. Najlepiej jest pić herbatę bez słodzika, ale jeśli zazwyczaj słodzisz herbatę miodem lub cukrem, spróbuj zamiast tego syropu Yacon.",
+      "explanation" : "Pij trzy szklanki dziennie między posiłkami (odczekaj co najmniej godzinę po posiłku, aby nie zakłócać wchłaniania żelaza). Podczas posiłków pij wodę, czarną kawę lub herbatę z hibiskusa zmieszaną w stosunku 6:1 z lippią trójlistną, ale nigdy nie przekraczaj trzech szklanek płynu na godzinę (ważne, biorąc pod uwagę moje zalecenia o piciu przed posiłkami). Skorzystaj ze wzmacniającego działania kofeiny, pijąc zieloną herbatę razem z czymś zdrowym, co chciałbyś/-abyś bardziej polubić, ale nie spożywaj dużych ilości kofeiny na sześć godzin przed snem. Najlepiej jest pić herbatę bez słodzika, ale jeśli zazwyczaj słodzisz herbatę miodem lub cukrem, spróbuj zamiast tego syropu Yacon.",
       "heading" : "Zielona herbata (3 szklanki)",
       "topic" : ""
     },
@@ -86,17 +86,17 @@
         "imperial" : "Drożdże odżywcze (2 łyżeczki)",
         "metric" : "Drożdże odżywcze (2 łyżeczki)"
       },
-      "explanation" : "Dwie łyżeczki drożdży piekarskich, piwowarskich lub odżywczych zawierają z grubsza ilość beta 1,3/1,6-glukanów znalezioną w randomizowanych, podwójnie ślepych, kontrolowanych placebo badaniach klinicznych, mających na celu ułatwienie utraty wagi.",
+      "explanation" : "Dwie łyżeczki drożdży (piekarskich, piwowarskich lub odżywczych) zawierają z grubsza 1,3/1,6- beta glukanów, które według randomizowanych, podwójnie ślepych, kontrolowanych badań klinicznych z placebo, ułatwiają utratę wagi.",
       "heading" : "Drożdże odżywcze (2 łyżeczki)",
       "topic" : ""
     },
     "tweakDailyTimeRestrict" : {
       "activity" : {
-        "imperial" : "Ogranicz czasowo jedzenie",
-        "metric" : "Ogranicz czasowo jedzenie"
+        "imperial" : "Ogranicz jedzenie czasowo",
+        "metric" : "Ogranicz jedzenie czasowo"
       },
-      "explanation" : "Staraj się jeść w wybranym przez siebie dziennym przedziale czasowym poniżej dwunastu godzin, którego możesz przestrzegać konsekwentnie, siedem dni w tygodniu. Biorąc pod uwagę dobowe korzyści wynikające z ograniczenia wieczornego odżywiania się, okienko powinno kończyć się przed godziną 19:00.",
-      "heading" : "Ogranicz czasowo jedzenie",
+      "explanation" : "Staraj się jeść w wybranym przez siebie dziennym przedziale czasowym poniżej dwunastu godzin, którego możesz przestrzegać konsekwentnie - siedem dni w tygodniu. Biorąc pod uwagę dobowe korzyści wynikające z ograniczenia wieczornego odżywiania się, okienko powinno zamknąć się przed godziną 19:00.",
+      "heading" : "Ogranicz jedzenie czasowo",
       "topic" : ""
     },
     "tweakExerciseTiming" : {
@@ -104,7 +104,7 @@
         "imperial" : "Zoptymalizuj czas ćwiczeń",
         "metric" : "Zoptymalizuj czas ćwiczeń"
       },
-      "explanation" : "Zalecenia Codzienny Tuzin dotyczące optymalnego czasu trwania ćwiczeń na długowieczność to dziewięćdziesiąt minut umiarkowanie intensywnych ćwiczeń dziennie, co jest również optymalnym czasem trwania ćwiczeń dla utraty wagi. Każda pora jest dobra, a im więcej ćwiczeń, tym lepiej, ale ćwiczenia na czczo mogą być korzystne, przynajmniej sześć godzin po ostatnim posiłku. Zwykle oznacza to przed śniadaniem, ale jeśli dobrze to zaplanowałeś/-łaś, możesz ćwiczyć w południe przed późnym obiadem lub, jeśli obiad jest spożywany wystarczająco wcześnie, przed kolacją. To jest czas odpowiedni dla osób bez cukrzycy. Diabetycy i osoby w stanie przedcukrzycowym powinny zamiast tego rozpocząć ćwiczenia 30 minut po rozpoczęciu posiłku i najlepiej przez co najmniej godzinę, aby całkowicie pokonać szczytowy poziom cukru we krwi. Gdybyś musiał/-a wybrać pojedynczy posiłek do ćwiczeń, byłby to obiad ze względu na dobowy rytm kontroli poziomu cukru we krwi, który słabnie przez dzień. Lepiej byłoby jednak, gdyby śniadanie było największym posiłkiem w ciągu dnia, a ćwiczenia po nim - lub jeszcze lepiej, po każdym posiłku.",
+      "explanation" : "Zalecenia Codziennego Tuzina dotyczące optymalnego czasu trwania ćwiczeń na długowieczność to dziewięćdziesiąt minut umiarkowanie intensywnych ćwiczeń dziennie, co jest również optymalnym czasem trwania ćwiczeń dla utraty wagi. Każda pora jest dobra, a im więcej ćwiczeń, tym lepiej, ale ćwiczenia na czczo (przynajmniej sześć godzin po ostatnim posiłku) są bardziej korzystne. Zwykle byłoby to przed śniadaniem, ale jeśli dobrze to zaplanować, możesz ćwiczyć w południe przed późnym obiadem lub, jeśli obiad jest spożywany wystarczająco wcześnie, przed kolacją. To jest czas odpowiedni dla osób które nie mają cukrzycy. Diabetycy i osoby w stanie przedcukrzycowym powinny zamiast tego rozpocząć ćwiczenia 30 minut po rozpoczęciu posiłku i najlepiej ćwiczyć przez co najmniej godzinę, aby czas ćwiczeń obejmował szczytowy poziom cukru we krwi. Gdybyś musiał/-a wybrać pojedynczy posiłek, po którym ćwiczysz, byłby to obiad - ze względu na dobowy rytm kontroli poziomu cukru we krwi, który słabnie wraz z dniem. Najlepiej byłoby jednak, gdyby śniadanie było największym posiłkiem w ciągu dnia, a ćwiczenia następowały po nim - lub jeszcze lepiej, po każdym posiłku.",
       "heading" : "Zoptymalizuj czas ćwiczeń",
       "topic" : ""
     },
@@ -113,7 +113,7 @@
         "imperial" : "Przestrzegaj zasady dwudziestu minut",
         "metric" : "Przestrzegaj zasady dwudziestu minut"
       },
-      "explanation" : "Niezależnie od tego, czy zwiększamy liczbę kęsów, czy też zmniejszamy rozmiar gryzów i tempo jedzenia, dziesiątki badań wykazały, że bez względu na to, jak wydłużamy czas przez jaki pokarm pozostaje w ustach, może to pomóc w mniejszym spożyciu kalorii. Dlatego wydłuż czas posiłku do co najmniej dwudziestu minut, aby naturalne sygnały sytości mogły się pojawić w pełni. Jak? Wybierając pokarmy, których spożycie zajmuje więcej czasu i jedząc je w sposób, który wydłuża ich czas pozostawania w ustach. Pomyśl o pokarmach większych, twardszych, o konsystencji wymagającej żucia i sprowadzeniu ich do mniejszych, dobrze przeżutych kęsów.",
+      "explanation" : "Niezależnie od tego, czy zwiększamy liczbę kęsów, czy też zmniejszamy rozmiar gryzów i tempo jedzenia, dziesiątki badań wykazały, że bez względu na to, jak wydłużamy czas kiedy pokarm pozostaje w ustach, może to pomóc zmniejszyć spożycie kalorii. Dlatego wydłuż czas posiłku do co najmniej dwudziestu minut, aby naturalne sygnały sytości w pełni się aktywowały. Jak? Wybierając pokarmy, których spożycie zajmuje więcej czasu i jedząc je w sposób, który wydłuża ich czas pozostawania w ustach. Pomyśl o spożywanu pokarmów większych, twardszych, o konsystencji wymagającej żucia i sprowadzeniu ich do mniejszych, dobrze przeżutych kęsów.",
       "heading" : "Przestrzegaj zasady dwudziestu minut",
       "topic" : ""
     },
@@ -131,7 +131,7 @@
         "imperial" : "Jedz bez rozpraszania uwagi",
         "metric" : "Jedz bez rozpraszania uwagi"
       },
-      "explanation" : "Nie jedz podczas oglądania telewizji lub grania na telefonie. Odhacz każdy posiłek, który udało ci się zjeść bez rozpraszania się.",
+      "explanation" : "Nie jedz podczas oglądania telewizji lub grania na telefonie. Odznacz każdy posiłek, który udało ci się zjeść bez rozpraszania się.",
       "heading" : "Jedz bez rozpraszania uwagi",
       "topic" : ""
     },
@@ -140,7 +140,7 @@
         "imperial" : "Włącz ocet do diety (2 łyżeczki do każdego posiłku)",
         "metric" : "Włącz ocet do diety (2 łyżeczki do każdego posiłku)"
       },
-      "explanation" : "Nigdy nie pij octu bezpośrednio. Zamiast tego, doprawiaj nim posiłki lub dodaj dowolny słodki czy pikantny ocet do sałatki. Jeśli chcesz go wypić, wymieszaj go w szklance wody, a po wypiciu przepłucz usta wodą, by chronić szkliwo zębów.",
+      "explanation" : "Nigdy nie pij octu bezpośrednio. Zamiast tego, doprawiaj nim posiłki lub dodaj dowolny słodki, czy pikantny ocet do sałatki. Jeśli chcesz go wypić, wymieszaj go w szklance wody, a po wypiciu przepłucz usta wodą, by chronić szkliwo zębów.",
       "heading" : "Włącz ocet do diety (2 łyżeczki do każdego posiłku)",
       "topic" : ""
     },
@@ -158,7 +158,7 @@
         "imperial" : "Nie jedz po 19:00",
         "metric" : "Nie jedz po 19:00"
       },
-      "explanation" : "Ze względu na nasz rytm dobowy, jedzenie spożywane w nocy jest bardziej tuczące niż dokładnie to samo jedzenie spożywane wcześniej w ciągu dnia, więc pość co najmniej 12 godzin przed godziną 19:00. Im mniej kalorii po zachodzie słońca, tym lepiej.",
+      "explanation" : "Ze względu na nasz rytm dobowy, jedzenie spożywane w nocy jest bardziej tuczące niż dokładnie to samo jedzenie spożywane wcześniej w ciągu dnia, więc pość co najmniej 12 godzin zaczynając od 19:00. Im mniej kalorii po zachodzie słońca, tym lepiej.",
       "heading" : "Nie jedz po 19:00",
       "topic" : ""
     },
@@ -167,17 +167,17 @@
         "imperial" : "Śpij wystarczająco dużo",
         "metric" : "Śpij wystarczająco dużo"
       },
-      "explanation" : "Zaznacz to pole, jeśli śpisz przynajmniej siedem godzin w swojej zwykłej porze snu.",
+      "explanation" : "Zaznacz to pole, jeśli śpisz przynajmniej siedem godzin o zwyczajowej porze.",
       "heading" : "Śpij wystarczająco dużo",
       "topic" : ""
     },
     "tweakNightlyTrendelenbrug" : {
       "activity" : {
-        "imperial" : "Eksperyment z łagodną pozycją Trendelenburga",
-        "metric" : "Eksperyment z łagodną pozycją Trendelenburga"
+        "imperial" : "Eksperyment z łagodną pozycją Trendelenburg",
+        "metric" : "Eksperyment z łagodną pozycją Trendelenburg"
       },
-      "explanation" : "Spróbuj spędzać co najmniej cztery godziny w nocy, leżąc nachylonym/-ną pod kątem sześć stopni - głową w dół, poprzez podwyższenie dolnych nóg łóżka o 20 cm (lub o 23 cm, jeśli masz łóżko California king). Należy zachować szczególną ostrożność, gdy wstajesz z łóżka, ponieważ powoduje to ortostatyczną nietolerancję u większości ludzi, nawet jeśli jesteś młody/-a i zdrowy/-a - co oznacza, że jeśli wstaniesz zbyt szybko, możesz odczuć zawroty głowy, słabość lub oszołomienie i upaść i zranić się. Więc wstań powoli. Wypicie dwóch szklanek zimnej wody na trzydzieści minut przed wstawaniem może również pomóc w zapobiegnięciu temu potencjalnie niebezpiecznemu efektowi ubocznemu.\n\nWAŻNE: nie próbuj tego w domu w ogóle, jeśli masz problemy z sercem lub płucami, refluks żołądkowy lub problemy z mózgiem (np. uraz głowy) lub oczu (nawet historia jaskry w rodzinie Cię dyskwalifikuje). Nie próbuj tego także, dopóki nie zapytasz swojego lekarza, czy uważa, że spanie w łagodnym Trendelenburgu jest bezpieczne.",
-      "heading" : "Eksperyment z łągodną pozycją Trendelenburga",
+      "explanation" : "Spróbuj spędzać co najmniej cztery godziny w nocy, leżąc pod kątem sześć stopni - głową w dół, poprzez podwyższenie dolnych nóg łóżka o 20 cm (lub o 23 cm, jeśli masz łóżko California king). Należy zachować szczególną ostrożność, gdy wstajesz z łóżka, ponieważ powoduje to ortostatyczną nietolerancję u większości ludzi, nawet jeśli jesteś młody/-a i zdrowy/-a - co oznacza, że jeśli wstaniesz zbyt szybko, możesz odczuć zawroty głowy, słabość lub oszołomienie, upaść i zranić się. Więc wstawaj powoli. Wypicie dwóch szklanek zimnej wody na trzydzieści minut przed wstawaniem może również pomóc w zapobieganiu temu potencjalnie niebezpiecznemu efektowi ubocznemu.\n\nWAŻNE: nigdy nie próbuj tego w domu, jeśli masz problemy z sercem lub płucami, refluks żołądkowy lub problemy z mózgiem (np. uraz głowy) lub oczu (nawet historia jaskry w rodzinie dyskwalifikuje Cię). Nie próbuj tego także, dopóki nie zapytasz swojego lekarza, czy uważa, że spanie w łagodnym Trendelenburgu jest bezpieczne.",
+      "heading" : "Eksperyment z łągodną pozycją Trendelenburg",
       "topic" : ""
     },
     "tweakWeightTwice" : {

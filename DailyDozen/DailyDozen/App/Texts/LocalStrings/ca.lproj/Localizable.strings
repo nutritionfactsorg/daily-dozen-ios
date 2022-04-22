@@ -161,7 +161,7 @@
 "info_app_about_overview" = "Utilitza aquesta app cada dia per fer un seguiment dels aliments i els consells que dono per una salut i longevitat òptimes als meus llibres How Not to Die i How Not to Diet.";
 
 /* Info About View: Application release version */
-"info_app_about_version" = "versió 3.2.11";
+"info_app_about_version" = "versió 3.2.15";
 
 /* Info About View: Welcome */
 "info_app_about_welcome" = "Benvingut a la meva Dotzena Diària!";
@@ -278,7 +278,7 @@
 "setting_units_1_metric" = "Mètric";
 
 /* Preference Settings View: Part of ‘Imperial/Metric/Toggle Units’ selector */
-"setting_units_2_toggle" = "Alternar Unitats";
+"setting_units_2_toggle" = "Canvi Unitats";
 
 /* Preference Settings View: brief description text below units control. */
 "setting_units_choice_footer" = "Configura-ho perquè sigui sempre un tipus d'unitat o permet el botó d'alternància, \"Unitats\".";
