@@ -492,7 +492,7 @@
           "metric" : "40 г сушёного фрукта"
         }
       ],
-      "topic" : "",
+      "topic" : "topics/fruit",
       "varieties" : [
         {
           "text" : "Яблоки",
@@ -892,7 +892,7 @@
           "metric" : "1 столовая ложка хрена"
         }
       ],
-      "topic" : "",
+      "topic" : "topics/cruciferous-vegetables",
       "varieties" : [
         {
           "text" : "Руккола",
@@ -972,7 +972,7 @@
           "metric" : "7 г сушёных грибов"
         }
       ],
-      "topic" : "",
+      "topic" : "topics/vegetables",
       "varieties" : [
         {
           "text" : "Артишоки",
@@ -1113,7 +1113,7 @@
       ]
     },
     "otherVitaminB12" : {
-      "heading" : "Vitamin B12",
+      "heading" : "Витамин B12",
       "servings" : [
 
       ],

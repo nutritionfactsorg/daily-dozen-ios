@@ -2,191 +2,191 @@
   "itemsDict" : {
     "tweakCompleteIntentions" : {
       "activity" : {
-        "imperial" : "Complete Your Implementation Intentions",
-        "metric" : "Complete Your Implementation Intentions"
+        "imperial" : "Изпълнете намеренията си за внедряване",
+        "metric" : "Изпълнете намеренията си за внедряване"
       },
-      "explanation" : "Every two months, create three new implementation intentions—\"if X, then Y\" plans to perform a particular behavior in a specific context—and check each one of them off as you complete them every day.",
-      "heading" : "Complete Your Implementation Intentions",
+      "explanation" : "На всеки два месеца създавайте три нови намерения за внедряване - „ако X, тогава Y“ планира да изпълнява определено поведение в конкретен контекст - и проверявайте всяко едно от тях, докато ги изпълнявате всеки ден.",
+      "heading" : "Изпълнете намеренията си за внедряване",
       "topic" : ""
     },
     "tweakDailyBlackCumin" : {
       "activity" : {
-        "imperial" : "Black Cumin (Nigella sativa) (¼ tsp)",
-        "metric" : "Black Cumin (Nigella sativa) (¼ tsp)"
+        "imperial" : "Черен кимион (Nigella sativa) (¼ ч.л.)",
+        "metric" : "Черен кимион (Nigella sativa) (¼ ч.л.)"
       },
-      "explanation" : "As noted in the Appetite Suppression section, a systematic review and meta-analysis of randomized, controlled weight-loss trials found that about a quarter teaspoon of black cumin powder every day appears to reduce body mass index within a span of a couple of months. Note that black cumin is different from regular cumin, for which the dosing is different.",
-      "heading" : "Black Cumin (¼ tsp)",
+      "explanation" : "Както бе отбелязано в раздела за потискане на апетита, систематичен преглед и мета-анализ на рандомизирани, контролирани изпитвания за отслабване установяват, че около четвърт чаена лъжичка прах от черен кимион всеки ден се появява за намаляване на индекса на телесната маса в рамките на период от няколко месеца. Обърнете внимание, че черният кимион е различен от обикновения кимион, при който дозирането е различно.",
+      "heading" : "Черен кимион (¼ ч.л.)",
       "topic" : ""
     },
     "tweakDailyCumin" : {
       "activity" : {
-        "imperial" : "Cumin (Cuminum cyminum) (½ tsp with lunch and dinner)",
-        "metric" : "Cumin (Cuminum cyminum) (½ tsp with lunch and dinner)"
+        "imperial" : "Кимион (цилуминов цимин) (½ ч.л. с обяд и вечеря)",
+        "metric" : "Кимион (цилуминов цимин) (½ ч.л. с обяд и вечеря)"
       },
-      "explanation" : "Overweight women randomized to add a half teaspoon of cumin to their lunches and dinners beat out the control group by four more pounds and an extra inch off their waists. There is also evidence to support the use of the spice saffron, but a pinch a day would cost a dollar, whereas a teaspoon of cumin costs less than ten cents.",
-      "heading" : "Cumin (½ tsp with lunch and dinner)",
+      "explanation" : "Жените с наднормено тегло се рандомизират, за да добавят половин чаена лъжичка кимион към обедите и вечерите си, избивайки контролната група с още четири килограма и допълнителен инч от талията си. Има и доказателства в подкрепа на употребата на шафран с подправки, но една щипка на ден би струвала долар, докато една чаена лъжичка кимион струва по-малко от десет цента.",
+      "heading" : "Кимион (½ ч.л. с обяд и вечеря)",
       "topic" : ""
     },
     "tweakDailyDeflourDiet" : {
       "activity" : {
-        "imperial" : "Deflour Your Diet",
-        "metric" : "Deflour Your Diet"
+        "imperial" : "Обезцветете диетата си",
+        "metric" : "Обезцветете диетата си"
       },
-      "explanation" : "Check this box every day your whole grain servings are in the form of intact grains. The powdering of even 100 percent whole grains robs our microbiomes of the starch that would otherwise be ferried down to our colons enclosed in unbroken cell walls.",
-      "heading" : "Deflour Your Diet",
+      "explanation" : "Поставете отметка в това поле всеки ден, когато порциите от пълнозърнести храни са под формата на непокътнати зърна. Прахът на дори 100 процента пълнозърнести храни ограбва нашите микробиоми от нишестето, които иначе биха се пренесли до колоните ни, затворени в неразрушени клетъчни стени.",
+      "heading" : "Обезцветете диетата си",
       "topic" : ""
     },
     "tweakDailyFrontLoad" : {
       "activity" : {
-        "imperial" : "Front-Load Your Calories",
-        "metric" : "Front-Load Your Calories"
+        "imperial" : "Предварително заредете калориите си",
+        "metric" : "Предварително заредете калориите си"
       },
-      "explanation" : "There are metabolic benefits to distributing more calories to earlier in the day, so make breakfast (ideally) or lunch your largest meal of the day in true king/prince/pauper style.",
-      "heading" : "Front-Load Your Calories",
+      "explanation" : "Има метаболитни ползи за разпределянето на повече калории по-рано през деня, така че направете закуска (в идеалния случай) или обяд най-голямата храна за деня в истински стил крал / принц / бедняк.",
+      "heading" : "Предварително заредете калориите си",
       "topic" : ""
     },
     "tweakDailyGarlic" : {
       "activity" : {
-        "imperial" : "Garlic Powder (¼ tsp)",
-        "metric" : "Garlic Powder (¼ tsp)"
+        "imperial" : "Чесън на прах (¼ ч.л.)",
+        "metric" : "Чесън на прах (¼ ч.л.)"
       },
-      "explanation" : "Randomized, double-blind, placebo-controlled studies have found that as little as a daily quarter teaspoon of garlic powder can reduce body fat at a cost of perhaps two cents a day.",
-      "heading" : "Garlic Powder (¼ tsp)",
+      "explanation" : "Рандомизирани, двойно-слепи, плацебо-контролирани проучвания са установили, че толкова малко, колкото дневна четвърт чаена лъжичка чесън на прах може да намали телесните мазнини с цената на може би две стотинки на ден.",
+      "heading" : "Чесън на прах (¼ ч.л.)",
       "topic" : ""
     },
     "tweakDailyGinger" : {
       "activity" : {
-        "imperial" : "Ground Ginger (1 tsp) or Cayenne Pepper (½ tsp)",
-        "metric" : "Ground Ginger (1 tsp) or Cayenne Pepper (½ tsp)"
+        "imperial" : "Млян джинджифил (1 ч.л.) или кайенски пипер (½ ч.л.)",
+        "metric" : "Млян джинджифил (1 ч.л.) или кайенски пипер (½ ч.л.)"
       },
-      "explanation" : "Randomized controlled trials have found that ¼ teaspoon to 1½ teaspoons a day of ground ginger significantly decreased body weight for just pennies a day. It can be as easy as stirring the ground spice into a cup of hot water. Note: Ginger may work better in the morning than evening. Chai tea is a tasty way to combine the green tea and ginger tricks into a single beverage. Alternately, for BAT activation, you can add one raw jalapeño pepper or a half teaspoon of red pepper powder (or, presumably, crushed red pepper flakes) into your daily diet. To help beat the heat, you can very thinly slice or finely chop the jalapeño to reduce its bite to little prickles, or mix the red pepper into soup or the whole-food vegetable smoothie I featured in one of my cooking videos on NutritionFacts.org.",
-      "heading" : "Ground Ginger (1 tsp) or Cayenne Pepper (½ tsp)",
+      "explanation" : "Рандомизирани контролирани проучвания установяват, че ¼ чаена лъжичка до 1½ чаена лъжичка на ден смлян джинджифил значително намалява телесното тегло само за стотинки на ден. Може да бъде толкова лесно, колкото да разбъркате смлената подправка в чаша гореща вода. Забележка: Джинджифилът може да действа по-добре сутрин, отколкото вечер. Чай чай е вкусен начин за комбиниране на трикове със зелен чай и джинджифил в една напитка. Алтернативно, за активиране на НДНТ, можете да добавите една сурова червена чушка или половин чаена лъжичка червен пипер на прах (или, вероятно, натрошени люспи от червен пипер) в ежедневната си диета. За да помогнете да победите топлината, можете много тънко да нарязвате или нарязвате на ситно джалапеньото, за да намалите хапката му до малки бодли, или да смесите червения пипер в супа или пълнозърнест зеленчуков пюре, което представих в едно от моите видеоклипове за готвене на NutritionFacts.org ,",
+      "heading" : "Млян джинджифил (1 ч.л.) или кайенски пипер (½ ч.л.)",
       "topic" : ""
     },
     "tweakDailyGreenTea" : {
       "activity" : {
-        "imperial" : "Green Tea (3 cups)",
-        "metric" : "Green Tea (3 cups)"
+        "imperial" : "Зелен чай (3 чаши)",
+        "metric" : "Зелен чай (3 чаши)"
       },
-      "explanation" : "Drink three cups a day between meals (waiting at least an hour after a meal so as to not interfere with iron absorption). During meals, drink water, black coffee, or hibiscus tea mixed 6:1 with lemon verbena, but never exceed three cups of fluid an hour (important given my water preloading advice). Take advantage of the reinforcing effect of caffeine by drinking your green tea along with something healthy you wish you liked more, but don't consume large amounts of caffeine within six hours of bedtime. Taking your tea without sweetener is best, but if you typically sweeten your tea with honey or sugar, try yacon syrup instead.",
-      "heading" : "Green Tea (3 cups)",
+      "explanation" : "Пийте три чаши на ден между храненията (изчаквайте поне час след хранене, така че да не пречи на усвояването на желязо). По време на хранене пийте вода, черно кафе или чай от хибискус, смесени 6: 1 с лимонена върбена, но никога не надвишавайте три чаши течност на час (важно, предвид моите съвети за предварително зареждане с вода). Възползвайте се от подсилващия ефект на кофеина, като пиете зеления си чай заедно с нещо здравословно, което желаете да ви хареса повече, но не консумирайте големи количества кофеин в рамките на шест часа преди лягане. Приемът на вашия чай без подсладител е най-добре, но ако обикновено подслаждате чая си с мед или захар, опитайте вместо това сироп от Якон.",
+      "heading" : "Зелен чай (3 чаши)",
       "topic" : ""
     },
     "tweakDailyHydrate" : {
       "activity" : {
-        "imperial" : "Stay Hydrated",
-        "metric" : "Stay Hydrated"
+        "imperial" : "Останете хидратирани",
+        "metric" : "Останете хидратирани"
       },
-      "explanation" : "Check this box if your urine never appears darker than a pale yellow.\n\nNote that if you're eating riboflavin-fortified foods (such as nutritional yeast), then base this instead on getting nine cups of unsweetened beverages a day for women (which would be taken care of by the green tea and water preloading recommendations) or thirteen cups a day for men.\n\nIf you have heart or kidney issues, don't increase fluid intake at all without first talking with your physician.\n\nRemember, diet soda may be calorie-free, but it's not consequence-free, as we learned in the Low in Added Sugar section.",
-      "heading" : "Stay Hydrated",
+      "explanation" : "Поставете отметка в това квадратче, ако урината ви никога не изглежда по-тъмна от бледо жълто. Обърнете внимание, че ако ядете обогатени с рибофлавин храни (като хранителни дрожди), вместо това основавайте това да получавате девет чаши неподсладени напитки на ден за жени (за което бихте се погрижили препоръките за зелен чай и предварително зареждане) или тринадесет чаши на ден за мъже. Ако имате проблеми със сърцето или бъбреците, изобщо не увеличавайте приема на течности, без първо да говорите с вашия лекар. Не забравяйте, че диетичната сода може да е без калории, но не е без последствия, както научихме в раздела с ниско съдържание на добавена захар.",
+      "heading" : "Останете хидратирани",
       "topic" : ""
     },
     "tweakDailyNutriYeast" : {
       "activity" : {
-        "imperial" : "Nutritional Yeast (2 tsp)",
-        "metric" : "Nutritional Yeast (2 tsp)"
+        "imperial" : "Хранителна мая (2 ч.л.)",
+        "metric" : "Хранителна мая (2 ч.л.)"
       },
-      "explanation" : "Two teaspoons of baker's, brewer's, or nutritional yeast contains roughly the amount of beta 1,3/1,6 glucans found in randomized, double-blind, placebo-controlled clinical trials to facilitate weight loss.",
-      "heading" : "Nutritional Yeast (2 tsp)",
+      "explanation" : "Две чаени лъжички хлебна, пивоварна или хранителна мая съдържат приблизително количеството бета 1,3 / 1,6 глюкани, открити в рандомизирани, двойно-слепи, плацебо-контролирани клинични изпитвания за улесняване на загубата на тегло.",
+      "heading" : "Хранителна мая (2 ч.л.)",
       "topic" : ""
     },
     "tweakDailyTimeRestrict" : {
       "activity" : {
-        "imperial" : "Time-Restrict Your Eating",
-        "metric" : "Time-Restrict Your Eating"
+        "imperial" : "Ограничете времето за хранене",
+        "metric" : "Ограничете времето за хранене"
       },
-      "explanation" : "Confine eating to a daily window of time of your choosing under twelve hours in length that you can stick to consistently, seven days a week. Given the circadian benefits of reducing evening food intake, the window should end before 7:00 p.m.",
-      "heading" : "Time-Restrict Your Eating",
+      "explanation" : "Ограничете храненето до дневен период от време, по ваш избор, с дължина под дванадесет часа, на която можете да се придържате последователно, седем дни в седмицата. Като се имат предвид циркадните предимства за намаляване на приема на вечерна храна, прозорецът трябва да приключи преди 19:00 ч.",
+      "heading" : "Ограничете времето за хранене",
       "topic" : ""
     },
     "tweakExerciseTiming" : {
       "activity" : {
-        "imperial" : "Optimize Exercise Timing",
-        "metric" : "Optimize Exercise Timing"
+        "imperial" : "Оптимизирайте времето за упражнения",
+        "metric" : "Оптимизирайте времето за упражнения"
       },
-      "explanation" : "The Daily Dozen's recommendation for optimum exercise duration for longevity is ninety minutes of moderately intense activity a day, which is also the optimum exercise duration for weight loss. Anytime is good, and the more, the better, but there may be an advantage to exercising in a fasted state, at least six hours after your last meal. Typically, this would mean before breakfast, but if you timed it right, you could exercise midday before a late lunch or, if lunch is eaten early enough, before dinner. This is the timing for nondiabetics. Diabetics and prediabetics should instead start exercising thirty minutes after the start of a meal and ideally go for at least an hour to completely straddle the blood sugar peak. If you had to choose a single meal to exercise after, it would be dinner, due to the circadian rhythm of blood sugar control that wanes throughout the day. Ideally, though, breakfast would be the largest meal of the day, and you'd exercise after that—or, even better, after every meal.",
-      "heading" : "Optimize Exercise Timing",
+      "explanation" : "Препоръката на ежедневната дузина за оптимална продължителност на тренировките за дълголетие е деветдесет минути умерено интензивна активност на ден, което е и оптималната продължителност на упражненията за отслабване. По всяко време е добре и колкото повече, толкова по-добре, но може да има предимство да упражнявате на гладно, поне шест часа след последното си хранене. Обикновено това би означавало преди закуска, но ако сте я присвоили правилно, можете да упражнявате обед преди късен обяд или, ако обядът е изяден достатъчно рано, преди вечеря. Това е времето за недиабетици. Вместо това диабетиците и предиабетиците трябва да започнат да спортуват тридесет минути след началото на хранене и в идеалния случай да продължат поне час, за да разграбят напълно пика на кръвната захар. Ако трябва да изберете едно хранене, за да упражнявате след това, това ще бъде вечеря, поради циркадния ритъм на контрол на кръвната захар, който намалява през целия ден. В идеалния случай обаче закуската би била най-голямото хранене за деня, а вие бихте тренирали след това - или още по-добре - след всяко хранене.",
+      "heading" : "Оптимизирайте времето за упражнения",
       "topic" : ""
     },
     "tweakMeal20Minutes" : {
       "activity" : {
-        "imperial" : "Follow the Twenty-Minute Rule",
-        "metric" : "Follow the Twenty-Minute Rule"
+        "imperial" : "Следвайте двадесетминутното правило",
+        "metric" : "Следвайте двадесетминутното правило"
       },
-      "explanation" : "Whether through increasing viscosity or the number of chews, or decreasing bite size and eating rate, dozens of studies have demonstrated that no matter how we boost the amount of time food is in our mouths, it can result in lower caloric intake. So extend meal duration to at least twenty minutes to allow your natural satiety signals to take full effect. How? By choosing foods that take longer to eat and eating them in a way that prolongs the time they stay in your mouth. Think bulkier, hardier, chewier foods in smaller, well-chewed bites.",
-      "heading" : "Follow the Twenty-Minute Rule",
+      "explanation" : "Независимо дали чрез увеличаване на вискозитета или броя на дъвченето или намаляване на размера на захапката и скоростта на хранене, десетки проучвания показват, че колкото и да увеличаваме времето, през което храната е в устата ни, това може да доведе до по-нисък прием на калории. Затова удължете продължителността на хранене до поне двадесет минути, за да позволите на вашите естествени сигнали за ситост да влязат в пълна сила. Как? Избирайки храни, които отнемат по-дълго време за ядене, и ги ядете по начин, който удължава времето, което остават в устата ви. Помислете за по-малки, добре дъвчени хапки по-обемни, по-твърди и по-чисти храни.",
+      "heading" : "Следвайте двадесетминутното правило",
       "topic" : ""
     },
     "tweakMealNegCal" : {
       "activity" : {
-        "imperial" : "Preload with \"Negative Calorie\" Foods",
-        "metric" : "Preload with \"Negative Calorie\" Foods"
+        "imperial" : "Предварително заредете с храни с отрицателни калории",
+        "metric" : "Предварително заредете с храни с отрицателни калории"
       },
-      "explanation" : "As the first course, start each meal with an apple or a Green Light soup or salad containing fewer than one hundred calories per cup.",
-      "heading" : "Preload with \"Negative Calorie\" Foods",
+      "explanation" : "Като първи курс започнете всяко хранене с ябълка или супа или салата Green Light, съдържащи по-малко от сто калории на чаша.",
+      "heading" : "Предварително заредете с храни с отрицателни калории",
       "topic" : ""
     },
     "tweakMealUndistracted" : {
       "activity" : {
-        "imperial" : "Enjoy Undistracted Meals",
-        "metric" : "Enjoy Undistracted Meals"
+        "imperial" : "Насладете се на неразделени ястия",
+        "metric" : "Насладете се на неразделени ястия"
       },
-      "explanation" : "Don't eat while watching TV or playing on your phone. Give yourself a check for each meal you're able to eat without distraction.",
-      "heading" : "Enjoy Undistracted Meals",
+      "explanation" : "Не яжте, докато гледате телевизия или играете на телефона си. Дайте си чек за всяко хранене, което можете да ядете, без да се разсейвате.",
+      "heading" : "Насладете се на неразделени ястия",
       "topic" : ""
     },
     "tweakMealVinegar" : {
       "activity" : {
-        "imperial" : "Incorporate Vinegar (2 tsp with each meal)",
-        "metric" : "Incorporate Vinegar (2 tsp with each meal)"
+        "imperial" : "Включете оцет (2 ч.л. с всяко хранене)",
+        "metric" : "Включете оцет (2 ч.л. с всяко хранене)"
       },
-      "explanation" : "Never drink vinegar straight. Instead, flavor meals or dress a side salad with any of the sweet and savory vinegars out there. If you want to drink it, make sure to mix it in a glass of water and, afterward, be sure to rinse your mouth out with water to protect your tooth enamel.",
-      "heading" : "Incorporate Vinegar (2 tsp with each meal)",
+      "explanation" : "Никога не пийте направо оцет. Вместо това овкусете ястия или обличайте странична салата с някой от сладките и пикантни оцети там. Ако искате да го изпиете, не забравяйте да го смесите в чаша вода и след това не забравяйте да изплакнете устата си с вода, за да защитите зъбния си емайл.",
+      "heading" : "Включете оцет (2 ч.л. с всяко хранене)",
       "topic" : ""
     },
     "tweakMealWater" : {
       "activity" : {
-        "imperial" : "Preload with Water",
-        "metric" : "Preload with Water"
+        "imperial" : "Предварително заредете с вода",
+        "metric" : "Предварително заредете с вода"
       },
-      "explanation" : "Time your metabolism-boosting two cups of cool or cold unflavored water before each meal to also take advantage of its preload benefits.",
-      "heading" : "Preload with Water",
+      "explanation" : "Отделете време, за да стимулирате метаболизма си две чаши студена или студена не ароматизирана вода преди всяко хранене, за да се възползвате и от предимствата му.",
+      "heading" : "Предварително заредете с вода",
       "topic" : ""
     },
     "tweakNightlyFast" : {
       "activity" : {
-        "imperial" : "Fast After 7:00 p.m.",
-        "metric" : "Fast After 7:00 p.m."
+        "imperial" : "Бързо след 7:00 ч.",
+        "metric" : "Бързо след 7:00 ч."
       },
-      "explanation" : "Due to our circadian rhythms, food eaten at night is more fattening than the exact same food eaten earlier in the day, so fast every night for at least twelve hours starting before 7:00 p.m. The fewer calories after sundown, the better.",
-      "heading" : "Fast After 7:00 pm",
+      "explanation" : "Поради нашите циркадни ритми, храната, изядена през нощта, е по-угояваща от същата същата храна, изядена по-рано през деня, толкова бърза всяка вечер в продължение на поне дванадесет часа, като се започне преди 19:00 ч. Колкото по-малко калории след залеза, толкова по-добре.",
+      "heading" : "Бързо след 19:00 ч",
       "topic" : ""
     },
     "tweakNightlySleep" : {
       "activity" : {
-        "imperial" : "Get Sufficient Sleep",
-        "metric" : "Get Sufficient Sleep"
+        "imperial" : "Получете достатъчно сън",
+        "metric" : "Получете достатъчно сън"
       },
-      "explanation" : "Check this box if you get at least seven hours of sleep at your regular bedtime.",
-      "heading" : "Get Sufficient Sleep",
+      "explanation" : "Поставете отметка в това поле, ако получавате поне седем часа сън в редовното си лягане.",
+      "heading" : "Получете достатъчно сън",
       "topic" : ""
     },
     "tweakNightlyTrendelenbrug" : {
       "activity" : {
-        "imperial" : "Experiment with Mild Trendelenburg",
-        "metric" : "Experiment with Mild Trendelenburg"
+        "imperial" : "Експериментирайте с лекия трендленбург",
+        "metric" : "Експериментирайте с лекия трендленбург"
       },
-      "explanation" : "Try spending at least four hours a night lying with your body tilted head-down six degrees by elevating the posts at the foot of your bed by eight inches (or by nine inches if you have a California king). Be extremely careful when you get out of bed, as this causes orthostatic intolerance in most people, even if you're young and healthy—meaning if you get up too fast, you can feel dizzy, faint, or light-headed and could fall and hurt yourself. So get up slowly. Drinking two cups of cold water thirty minutes before rising may also help prevent this potentially hazardous side effect.\n\nIMPORTANT: Do not try this at home at all if you have any heart or lung issues, acid reflux, or problems with your brain (like head trauma) or eyes (even a family history of glaucoma disqualifies you). Also do not try this until you ask your physician if they think it's safe for you to sleep in mild Trendelenburg.",
-      "heading" : "Experiment with Mild Trendelenburg",
+      "explanation" : "Опитайте да прекарвате поне четири часа на нощ в легнало с наклонено тяло с главата надолу шест градуса, като повдигнете стълбовете в подножието на леглото си с осем инча (или с девет инча, ако имате крал на Калифорния). Бъдете изключително внимателни, когато ставате от леглото, тъй като това причинява ортостатична непоносимост при повечето хора, дори и да сте млади и здрави - което означава, че ако станете твърде бързо, можете да почувствате замаяност, припадък или светлоглаза и може падайте и се наранявайте. Затова станете бавно. Пиенето на две чаши студена вода тридесет минути преди втасване също може да помогне за предотвратяване на този потенциално опасен страничен ефект.\n\n* ВАЖНО: Не опитвайте това у дома изобщо, ако имате проблеми със сърцето или белите дробове, рефлукс с киселина или проблеми с мозъка ви (като травма на главата) или очите (дори фамилна анамнеза за глаукома ви дисквалифицира). Също така не опитвайте това, докато не попитате лекаря си, ако те мислят, че е безопасно за вас да спите в мек Трендленбург. *",
+      "heading" : "Експериментирайте с лекия трендленбург",
       "topic" : ""
     },
     "tweakWeightTwice" : {
       "activity" : {
-        "imperial" : "Weigh Yourself Twice a Day",
-        "metric" : "Weigh Yourself Twice a Day"
+        "imperial" : "Претегляйте се два пъти на ден",
+        "metric" : "Претегляйте се два пъти на ден"
       },
-      "explanation" : "Regular self-weighing is considered crucial for long-term weight control, but there is insufficient evidence to support a specific frequency of weighing. My recommendation is based on the one study that found that twice daily—upon waking and right before bed—appeared superior to once a day (about six versus two pounds of weight loss over twelve weeks).",
-      "heading" : "Weigh Yourself Twice a Day",
+      "explanation" : "Редовното самопретегляне се счита за решаващо за дългосрочния контрол на теглото, но няма достатъчно доказателства в подкрепа на конкретна честота на претегляне. Моята препоръка се основава на едно проучване, което установи, че два пъти дневно - след събуждане и непосредствено преди лягане - изглежда по-добър от веднъж на ден (около шест срещу два килограма загуба на тегло за дванадесет седмици).",
+      "heading" : "Претегляйте се два пъти на ден",
       "topic" : ""
     }
   }

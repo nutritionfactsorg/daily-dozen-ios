@@ -2,191 +2,191 @@
   "itemsDict" : {
     "tweakCompleteIntentions" : {
       "activity" : {
-        "imperial" : "Complete Your Implementation Intentions",
-        "metric" : "Complete Your Implementation Intentions"
+        "imperial" : "完成您的實施意圖",
+        "metric" : "完成您的實施意圖"
       },
-      "explanation" : "Every two months, create three new implementation intentions—\"if X, then Y\" plans to perform a particular behavior in a specific context—and check each one of them off as you complete them every day.",
-      "heading" : "Complete Your Implementation Intentions",
+      "explanation" : "每兩個月，創建三個新的實施意圖-“如果是X，則是Y”計劃在特定的上下文中執行特定的行爲-並在每天完成它們時檢查每個目標。",
+      "heading" : "完成您的實施意圖",
       "topic" : ""
     },
     "tweakDailyBlackCumin" : {
       "activity" : {
-        "imperial" : "Black Cumin (Nigella sativa) (¼ tsp)",
-        "metric" : "Black Cumin (Nigella sativa) (¼ tsp)"
+        "imperial" : "黑小茴香（Nigella sativa）（¼茶匙）",
+        "metric" : "黑小茴香（Nigella sativa）（¼茶匙）"
       },
-      "explanation" : "As noted in the Appetite Suppression section, a systematic review and meta-analysis of randomized, controlled weight-loss trials found that about a quarter teaspoon of black cumin powder every day appears to reduce body mass index within a span of a couple of months. Note that black cumin is different from regular cumin, for which the dosing is different.",
-      "heading" : "Black Cumin (¼ tsp)",
+      "explanation" : "如“抑制食慾”部分所述，對隨機對照減肥試驗的系統評價和薈萃分析發現，每天約四分之一茶匙的黑孜然粉似乎會在幾個月內降低體重指數。請注意，黑孜然與常規孜然不同，後者的劑量有所不同。",
+      "heading" : "黑小茴香（¼茶匙）",
       "topic" : ""
     },
     "tweakDailyCumin" : {
       "activity" : {
-        "imperial" : "Cumin (Cuminum cyminum) (½ tsp with lunch and dinner)",
-        "metric" : "Cumin (Cuminum cyminum) (½ tsp with lunch and dinner)"
+        "imperial" : "孜然（Cumum cyminum）（午餐和晚餐含½茶匙）",
+        "metric" : "孜然（Cumum cyminum）（午餐和晚餐含½茶匙）"
       },
-      "explanation" : "Overweight women randomized to add a half teaspoon of cumin to their lunches and dinners beat out the control group by four more pounds and an extra inch off their waists. There is also evidence to support the use of the spice saffron, but a pinch a day would cost a dollar, whereas a teaspoon of cumin costs less than ten cents.",
-      "heading" : "Cumin (½ tsp with lunch and dinner)",
+      "explanation" : "超重的婦女在午餐和晚餐時隨機添加半茶匙的孜然，比對照組多了四磅，腰部也增加了一英寸。也有證據支持使用香料番紅花，但是每天捏一小撮要花一美元，而一茶匙孜然的價格不到十美分。",
+      "heading" : "小茴香（午餐和晚餐約½茶匙）",
       "topic" : ""
     },
     "tweakDailyDeflourDiet" : {
       "activity" : {
-        "imperial" : "Deflour Your Diet",
-        "metric" : "Deflour Your Diet"
+        "imperial" : "減少麪粉食品",
+        "metric" : "減少麪粉食品"
       },
-      "explanation" : "Check this box every day your whole grain servings are in the form of intact grains. The powdering of even 100 percent whole grains robs our microbiomes of the starch that would otherwise be ferried down to our colons enclosed in unbroken cell walls.",
-      "heading" : "Deflour Your Diet",
+      "explanation" : "每天您所有的穀物都以完整穀物的形式選中。即使是全穀物的100％粉末化，也剝奪了我們澱粉的微生物羣，否則這些微生物羣會被運送到封閉在未破裂的細胞壁中的結腸。",
+      "heading" : "減少麪粉食品",
       "topic" : ""
     },
     "tweakDailyFrontLoad" : {
       "activity" : {
-        "imperial" : "Front-Load Your Calories",
-        "metric" : "Front-Load Your Calories"
+        "imperial" : "提前加載您的卡路里",
+        "metric" : "提前加載您的卡路里"
       },
-      "explanation" : "There are metabolic benefits to distributing more calories to earlier in the day, so make breakfast (ideally) or lunch your largest meal of the day in true king/prince/pauper style.",
-      "heading" : "Front-Load Your Calories",
+      "explanation" : "在一天中的早些時候分配更多的卡路里有代謝的好處，就像中國俗話早“上吃飽中午吃好晚上吃少”，早餐或午餐早飯或午飯爲您一天中最大的一餐。",
+      "heading" : "提前加載您的卡路里",
       "topic" : ""
     },
     "tweakDailyGarlic" : {
       "activity" : {
-        "imperial" : "Garlic Powder (¼ tsp)",
-        "metric" : "Garlic Powder (¼ tsp)"
+        "imperial" : "大蒜粉（¼茶匙）",
+        "metric" : "大蒜粉（¼茶匙）"
       },
-      "explanation" : "Randomized, double-blind, placebo-controlled studies have found that as little as a daily quarter teaspoon of garlic powder can reduce body fat at a cost of perhaps two cents a day.",
-      "heading" : "Garlic Powder (¼ tsp)",
+      "explanation" : "隨機，雙盲，安慰劑對照的研究發現，每天少到一茶匙的大蒜粉就可以減少體內脂肪，每天的費用可能只有兩美分。",
+      "heading" : "大蒜粉（¼茶匙）",
       "topic" : ""
     },
     "tweakDailyGinger" : {
       "activity" : {
-        "imperial" : "Ground Ginger (1 tsp) or Cayenne Pepper (½ tsp)",
-        "metric" : "Ground Ginger (1 tsp) or Cayenne Pepper (½ tsp)"
+        "imperial" : "生薑粉（1茶匙）或辣椒粉（½茶匙）",
+        "metric" : "生薑粉（1茶匙）或辣椒粉（½茶匙）"
       },
-      "explanation" : "Randomized controlled trials have found that ¼ teaspoon to 1½ teaspoons a day of ground ginger significantly decreased body weight for just pennies a day. It can be as easy as stirring the ground spice into a cup of hot water. Note: Ginger may work better in the morning than evening. Chai tea is a tasty way to combine the green tea and ginger tricks into a single beverage. Alternately, for BAT activation, you can add one raw jalapeño pepper or a half teaspoon of red pepper powder (or, presumably, crushed red pepper flakes) into your daily diet. To help beat the heat, you can very thinly slice or finely chop the jalapeño to reduce its bite to little prickles, or mix the red pepper into soup or the whole-food vegetable smoothie I featured in one of my cooking videos on NutritionFacts.org.",
-      "heading" : "Ground Ginger (1 tsp) or Cayenne Pepper (½ tsp)",
+      "explanation" : "隨機對照試驗發現，每天姜粉研磨量爲¼茶匙至1.5茶匙，每天僅需幾便士就能顯着降低體重。就像將調味香料攪拌到一杯熱水中一樣容易。注意：生薑早上可能比晚上更好。柴茶是一種將綠茶和生薑花粉混合成一種飲料的美味方法。另外，對於BAT激活，您可以在日常飲食中添加一個生的墨西哥胡椒胡椒或半茶匙的紅辣椒粉（或大概是壓碎的紅辣椒片）。爲了幫助消除熱量，您可以將墨西哥胡椒切成薄片或切成薄片，以減少其刺傷，或將紅辣椒混入湯或全食蔬菜冰沙中，這是我在NutritionFacts.org上的一個烹飪視頻中精選的。",
+      "heading" : "生薑粉（1茶匙）或辣椒粉（½茶匙）",
       "topic" : ""
     },
     "tweakDailyGreenTea" : {
       "activity" : {
-        "imperial" : "Green Tea (3 cups)",
-        "metric" : "Green Tea (3 cups)"
+        "imperial" : "綠茶（3杯）",
+        "metric" : "綠茶（3杯）"
       },
-      "explanation" : "Drink three cups a day between meals (waiting at least an hour after a meal so as to not interfere with iron absorption). During meals, drink water, black coffee, or hibiscus tea mixed 6:1 with lemon verbena, but never exceed three cups of fluid an hour (important given my water preloading advice). Take advantage of the reinforcing effect of caffeine by drinking your green tea along with something healthy you wish you liked more, but don't consume large amounts of caffeine within six hours of bedtime. Taking your tea without sweetener is best, but if you typically sweeten your tea with honey or sugar, try yacon syrup instead.",
-      "heading" : "Green Tea (3 cups)",
+      "explanation" : "兩餐之間每天喝三杯（餐後至少等待一個小時，以免干擾鐵的吸收）。用餐時，喝水，黑咖啡或芙蓉花茶與檸檬馬鞭草以6：1的比例混合，但每小時不要超過三杯水（根據我的預裝水建議很重要）。通過喝綠茶以及您希望自己更喜歡的健康食品來充分利用咖啡因的增強作用，但在就寢時間的六個小時內不要攝入大量咖啡因。不含甜味劑的茶是最好的，但是如果您通常用蜂蜜或糖來甜茶，請嘗試使用Yacon糖漿。",
+      "heading" : "綠茶（3杯）",
       "topic" : ""
     },
     "tweakDailyHydrate" : {
       "activity" : {
-        "imperial" : "Stay Hydrated",
-        "metric" : "Stay Hydrated"
+        "imperial" : "保持水分",
+        "metric" : "保持水分"
       },
-      "explanation" : "Check this box if your urine never appears darker than a pale yellow.\n\nNote that if you're eating riboflavin-fortified foods (such as nutritional yeast), then base this instead on getting nine cups of unsweetened beverages a day for women (which would be taken care of by the green tea and water preloading recommendations) or thirteen cups a day for men.\n\nIf you have heart or kidney issues, don't increase fluid intake at all without first talking with your physician.\n\nRemember, diet soda may be calorie-free, but it's not consequence-free, as we learned in the Low in Added Sugar section.",
-      "heading" : "Stay Hydrated",
+      "explanation" : "如果您的尿液看上去不比淺黃色深，請選中此框。請注意，如果您正在食用核黃素強化的食物（例如營養酵母），則應以每天爲女性購買九杯不加糖的飲料爲基礎（綠茶和水預裝建議可以解決此問題）或男人一天十三杯。如果您有心臟或腎臟問題，請先與醫生交談，否則根本不要增加液體攝入量。請記住，減肥汽水可能不含卡路里，但並非零卡路里，正如我們在“低糖”中所瞭解的那樣。",
+      "heading" : "保持水分",
       "topic" : ""
     },
     "tweakDailyNutriYeast" : {
       "activity" : {
-        "imperial" : "Nutritional Yeast (2 tsp)",
-        "metric" : "Nutritional Yeast (2 tsp)"
+        "imperial" : "營養酵母（2茶匙）",
+        "metric" : "營養酵母（2茶匙）"
       },
-      "explanation" : "Two teaspoons of baker's, brewer's, or nutritional yeast contains roughly the amount of beta 1,3/1,6 glucans found in randomized, double-blind, placebo-controlled clinical trials to facilitate weight loss.",
-      "heading" : "Nutritional Yeast (2 tsp)",
+      "explanation" : "麪包，啤酒或營養酵母中的兩茶匙約含有在隨機，雙盲，安慰劑對照的臨牀試驗中發現的，可促進體重減輕的β1,3 / 1,6葡聚糖。",
+      "heading" : "營養酵母（2茶匙）",
       "topic" : ""
     },
     "tweakDailyTimeRestrict" : {
       "activity" : {
-        "imperial" : "Time-Restrict Your Eating",
-        "metric" : "Time-Restrict Your Eating"
+        "imperial" : "時間限制飲食",
+        "metric" : "時間限制飲食"
       },
-      "explanation" : "Confine eating to a daily window of time of your choosing under twelve hours in length that you can stick to consistently, seven days a week. Given the circadian benefits of reducing evening food intake, the window should end before 7:00 p.m.",
-      "heading" : "Time-Restrict Your Eating",
+      "explanation" : "將進食限制在您選擇的每日時間範圍之內，長度不超過十二小時，您可以每週七天堅持食用。考慮到減少晚上進食的晝夜節律益處，窗戶應在下午7:00之前結束。",
+      "heading" : "時間限制飲食",
       "topic" : ""
     },
     "tweakExerciseTiming" : {
       "activity" : {
-        "imperial" : "Optimize Exercise Timing",
-        "metric" : "Optimize Exercise Timing"
+        "imperial" : "優化運動時間",
+        "metric" : "優化運動時間"
       },
-      "explanation" : "The Daily Dozen's recommendation for optimum exercise duration for longevity is ninety minutes of moderately intense activity a day, which is also the optimum exercise duration for weight loss. Anytime is good, and the more, the better, but there may be an advantage to exercising in a fasted state, at least six hours after your last meal. Typically, this would mean before breakfast, but if you timed it right, you could exercise midday before a late lunch or, if lunch is eaten early enough, before dinner. This is the timing for nondiabetics. Diabetics and prediabetics should instead start exercising thirty minutes after the start of a meal and ideally go for at least an hour to completely straddle the blood sugar peak. If you had to choose a single meal to exercise after, it would be dinner, due to the circadian rhythm of blood sugar control that wanes throughout the day. Ideally, though, breakfast would be the largest meal of the day, and you'd exercise after that—or, even better, after every meal.",
-      "heading" : "Optimize Exercise Timing",
+      "explanation" : "爲了延長壽命，每天的最佳建議是每天進行90分鐘的中等強度的運動，這也是減肥的最佳運動時間。任何時候都是好事，而且越好越好，但是在最後一頓飯後至少六個小時以空腹狀態鍛鍊可能會有好處。通常，這意味着在早餐前，但是如果您選擇合適的時間，則可以在中午之前做午飯，或者，如果午餐吃得早，則在晚餐前做運動。這是非糖尿病患者的時機。糖尿病患者和糖尿病前期患者應該在進餐後三十分鐘開始鍛鍊，理想情況下至少要花一個小時才能完全跨越血糖峯值。如果您必須選擇一頓飯來運動，那將是晚餐，因爲整日血糖控制的晝夜節律逐漸減弱。不過，理想情況下，早餐將是一天中最豐盛的一頓飯，之後您應該鍛鍊身體，或者甚至在每頓飯後都要運動。",
+      "heading" : "優化運動時間",
       "topic" : ""
     },
     "tweakMeal20Minutes" : {
       "activity" : {
-        "imperial" : "Follow the Twenty-Minute Rule",
-        "metric" : "Follow the Twenty-Minute Rule"
+        "imperial" : "20分鐘規則",
+        "metric" : "20分鐘規則"
       },
-      "explanation" : "Whether through increasing viscosity or the number of chews, or decreasing bite size and eating rate, dozens of studies have demonstrated that no matter how we boost the amount of time food is in our mouths, it can result in lower caloric intake. So extend meal duration to at least twenty minutes to allow your natural satiety signals to take full effect. How? By choosing foods that take longer to eat and eating them in a way that prolongs the time they stay in your mouth. Think bulkier, hardier, chewier foods in smaller, well-chewed bites.",
-      "heading" : "Follow the Twenty-Minute Rule",
+      "explanation" : "不管是通過增加粘度或咀嚼次數，還是通過減小咬合大小和進食速度，數十項研究表明，無論我們如何增加食物在口腔中的停留時間，都可能導致熱量攝入降低。因此，將用餐時間至少延長至二十分鐘，以使您的自然飽腹感信號充分發揮作用。怎麼樣？通過選擇吃時間更長的食物，並以延長食物在嘴裏停留的時間來食用它們。用較小的，經過精心咀嚼的食物來考慮體積更大，更硬，更耐嚼的食物。",
+      "heading" : "遵循二十分鐘規則",
       "topic" : ""
     },
     "tweakMealNegCal" : {
       "activity" : {
-        "imperial" : "Preload with \"Negative Calorie\" Foods",
-        "metric" : "Preload with \"Negative Calorie\" Foods"
+        "imperial" : "先吃“負熱量”食品",
+        "metric" : "先吃“負熱量”食品"
       },
-      "explanation" : "As the first course, start each meal with an apple or a Green Light soup or salad containing fewer than one hundred calories per cup.",
-      "heading" : "Preload with \"Negative Calorie\" Foods",
+      "explanation" : "作爲第一道菜，每餐都以每杯少於100卡路里的蘋果或“綠燈”湯或色拉開始。",
+      "heading" : "預先吃“負熱量”食品",
       "topic" : ""
     },
     "tweakMealUndistracted" : {
       "activity" : {
-        "imperial" : "Enjoy Undistracted Meals",
-        "metric" : "Enjoy Undistracted Meals"
+        "imperial" : "專心用餐",
+        "metric" : "專心用餐"
       },
-      "explanation" : "Don't eat while watching TV or playing on your phone. Give yourself a check for each meal you're able to eat without distraction.",
-      "heading" : "Enjoy Undistracted Meals",
+      "explanation" : "看電視或玩手機時不要吃飯。給自己檢查一下您可以不分心地進餐的每一餐。",
+      "heading" : "專心用餐",
       "topic" : ""
     },
     "tweakMealVinegar" : {
       "activity" : {
-        "imperial" : "Incorporate Vinegar (2 tsp with each meal)",
-        "metric" : "Incorporate Vinegar (2 tsp with each meal)"
+        "imperial" : "加醋（每餐2茶匙）",
+        "metric" : "加醋（每餐2茶匙）"
       },
-      "explanation" : "Never drink vinegar straight. Instead, flavor meals or dress a side salad with any of the sweet and savory vinegars out there. If you want to drink it, make sure to mix it in a glass of water and, afterward, be sure to rinse your mouth out with water to protect your tooth enamel.",
-      "heading" : "Incorporate Vinegar (2 tsp with each meal)",
+      "explanation" : "切勿直接喝醋。把醋作爲調料或配上沙拉配甜味和鹹味醋。如果要喝，請確保將其與一杯水混合，然後再用水沖洗口腔以保護牙釉質。",
+      "heading" : "加入醋（每餐2茶匙）",
       "topic" : ""
     },
     "tweakMealWater" : {
       "activity" : {
-        "imperial" : "Preload with Water",
-        "metric" : "Preload with Water"
+        "imperial" : "先喝水",
+        "metric" : "先喝水"
       },
-      "explanation" : "Time your metabolism-boosting two cups of cool or cold unflavored water before each meal to also take advantage of its preload benefits.",
-      "heading" : "Preload with Water",
+      "explanation" : "每次進餐前安排兩杯涼爽或冷的無味水來促進新陳代謝，以充分利用其“預載”帶來的好處。",
+      "heading" : "預先加水",
       "topic" : ""
     },
     "tweakNightlyFast" : {
       "activity" : {
-        "imperial" : "Fast After 7:00 p.m.",
-        "metric" : "Fast After 7:00 p.m."
+        "imperial" : "晚上７點後絕食",
+        "metric" : "晚上７點後絕食"
       },
-      "explanation" : "Due to our circadian rhythms, food eaten at night is more fattening than the exact same food eaten earlier in the day, so fast every night for at least twelve hours starting before 7:00 p.m. The fewer calories after sundown, the better.",
-      "heading" : "Fast After 7:00 pm",
+      "explanation" : "由於我們的晝夜節律，晚上進食的食物比白天早些時候吃的完全相同的食物更容易發胖，所以每天晚上7:00之前開始，至少每晚要快十二個小時。日落後卡路里越少越好。",
+      "heading" : "晚上７點後絕食",
       "topic" : ""
     },
     "tweakNightlySleep" : {
       "activity" : {
-        "imperial" : "Get Sufficient Sleep",
-        "metric" : "Get Sufficient Sleep"
+        "imperial" : "獲得充足的睡眠",
+        "metric" : "獲得充足的睡眠"
       },
-      "explanation" : "Check this box if you get at least seven hours of sleep at your regular bedtime.",
-      "heading" : "Get Sufficient Sleep",
+      "explanation" : "如果您在正常就寢時間至少有七個小時的睡眠時間，請選中此框。",
+      "heading" : "獲得充足的睡眠",
       "topic" : ""
     },
     "tweakNightlyTrendelenbrug" : {
       "activity" : {
-        "imperial" : "Experiment with Mild Trendelenburg",
-        "metric" : "Experiment with Mild Trendelenburg"
+        "imperial" : "試試睡覺時讓頭稍微比較低",
+        "metric" : "試試睡覺時讓頭稍微比較低"
       },
-      "explanation" : "Try spending at least four hours a night lying with your body tilted head-down six degrees by elevating the posts at the foot of your bed by eight inches (or by nine inches if you have a California king). Be extremely careful when you get out of bed, as this causes orthostatic intolerance in most people, even if you're young and healthy—meaning if you get up too fast, you can feel dizzy, faint, or light-headed and could fall and hurt yourself. So get up slowly. Drinking two cups of cold water thirty minutes before rising may also help prevent this potentially hazardous side effect.\n\nIMPORTANT: Do not try this at home at all if you have any heart or lung issues, acid reflux, or problems with your brain (like head trauma) or eyes (even a family history of glaucoma disqualifies you). Also do not try this until you ask your physician if they think it's safe for you to sleep in mild Trendelenburg.",
-      "heading" : "Experiment with Mild Trendelenburg",
+      "explanation" : "嘗試將您的身體的頭部向下傾斜6度，使您的牀頭的牀頭擡高八英寸（如果您有加利福尼亞國王，則擡高九英寸），每晚至少花四個小時。起牀時要格外小心，因爲這會導致大多數人直立不寬容，即使您年輕又健康-這意味着如果您起得太快，您可能會感到頭暈，暈眩或頭昏眼花，並且可能跌倒傷害自己。所以慢慢起來。在升起前30分鐘喝兩杯冷水也可能有助於防止這種潛在的有害副作用。\n\n*重要提示：如果您有心臟或肺部問題，胃酸反流或大腦有問題，請不要在家嘗試（例如頭部外傷）或眼睛（甚至是青光眼的家族病史也會使您失去資格）。也不要嘗試此操作，除非您詢問您的醫生是否認爲您在輕度的特倫德倫伯臥位安全無事。*",
+      "heading" : "試試睡覺時讓頭稍微比較低",
       "topic" : ""
     },
     "tweakWeightTwice" : {
       "activity" : {
-        "imperial" : "Weigh Yourself Twice a Day",
-        "metric" : "Weigh Yourself Twice a Day"
+        "imperial" : "一天兩次稱自己",
+        "metric" : "一天兩次稱自己"
       },
-      "explanation" : "Regular self-weighing is considered crucial for long-term weight control, but there is insufficient evidence to support a specific frequency of weighing. My recommendation is based on the one study that found that twice daily—upon waking and right before bed—appeared superior to once a day (about six versus two pounds of weight loss over twelve weeks).",
-      "heading" : "Weigh Yourself Twice a Day",
+      "explanation" : "定期自我稱重對於長期控制體重至關重要，但沒有足夠的證據支持特定的稱重頻率。我的建議是根據一項研究發現的，該研究發現每天兩次（醒來時和就寢前）表現出比每天一次更好的效果（在12周內體重減輕約6磅對2磅）。",
+      "heading" : "一天兩次稱自己",
       "topic" : ""
     }
   }

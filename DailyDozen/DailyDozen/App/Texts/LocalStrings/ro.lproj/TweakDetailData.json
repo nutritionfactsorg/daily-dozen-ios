@@ -2,191 +2,191 @@
   "itemsDict" : {
     "tweakCompleteIntentions" : {
       "activity" : {
-        "imperial" : "Complete Your Implementation Intentions",
-        "metric" : "Complete Your Implementation Intentions"
+        "imperial" : "Completați-vă intențiile de implementare",
+        "metric" : "Completați-vă intențiile de implementare"
       },
-      "explanation" : "Every two months, create three new implementation intentions—\"if X, then Y\" plans to perform a particular behavior in a specific context—and check each one of them off as you complete them every day.",
-      "heading" : "Complete Your Implementation Intentions",
+      "explanation" : "La fiecare două luni, creați trei noi intenții de implementare - „dacă X, apoi Y” intenționează să efectueze un anumit comportament într-un context specific - și verificați fiecare dintre ele în timp ce le completați în fiecare zi.",
+      "heading" : "Completați-vă intențiile de implementare",
       "topic" : ""
     },
     "tweakDailyBlackCumin" : {
       "activity" : {
-        "imperial" : "Black Cumin (Nigella sativa) (¼ tsp)",
-        "metric" : "Black Cumin (Nigella sativa) (¼ tsp)"
+        "imperial" : "Cumin negru (Nigella sativa) (¼ lingură)",
+        "metric" : "Cumin negru (Nigella sativa) (¼ lingură)"
       },
-      "explanation" : "As noted in the Appetite Suppression section, a systematic review and meta-analysis of randomized, controlled weight-loss trials found that about a quarter teaspoon of black cumin powder every day appears to reduce body mass index within a span of a couple of months. Note that black cumin is different from regular cumin, for which the dosing is different.",
-      "heading" : "Black Cumin (¼ tsp)",
+      "explanation" : "După cum s-a menționat în secțiunea Supresia apetitului, o revizuire sistematică și meta-analiză a studiilor randomizate, controlate de pierdere în greutate, a constatat că aproximativ un sfert de linguriță de pulbere de chimen negru în fiecare zi pare să reducă indicele de masă corporală într-o perioadă de câteva luni. Rețineți că chimenul negru este diferit de chimenul obișnuit, pentru care dozarea este diferită.",
+      "heading" : "Cumin negru (¼ lingură)",
       "topic" : ""
     },
     "tweakDailyCumin" : {
       "activity" : {
-        "imperial" : "Cumin (Cuminum cyminum) (½ tsp with lunch and dinner)",
-        "metric" : "Cumin (Cuminum cyminum) (½ tsp with lunch and dinner)"
+        "imperial" : "Cumin (Cuminum cyminum) (½ linguriță cu prânz și cină)",
+        "metric" : "Cumin (Cuminum cyminum) (½ linguriță cu prânz și cină)"
       },
-      "explanation" : "Overweight women randomized to add a half teaspoon of cumin to their lunches and dinners beat out the control group by four more pounds and an extra inch off their waists. There is also evidence to support the use of the spice saffron, but a pinch a day would cost a dollar, whereas a teaspoon of cumin costs less than ten cents.",
-      "heading" : "Cumin (½ tsp with lunch and dinner)",
+      "explanation" : "Femeile supraponderale au intamplat la intamplare sa adauge o jumatate de lingurita de chimen la prânzurile lor, iar cina au bătut grupul de control cu încă patru kilograme și un centimetru suplimentar de la talie. Există, de asemenea, dovezi care să sprijine utilizarea șofranului de condimente, dar o ciupire pe zi ar costa un dolar, în timp ce o linguriță de chimen costă mai puțin de zece centi.",
+      "heading" : "Cumin (½ linguriță cu prânz și cină)",
       "topic" : ""
     },
     "tweakDailyDeflourDiet" : {
       "activity" : {
-        "imperial" : "Deflour Your Diet",
-        "metric" : "Deflour Your Diet"
+        "imperial" : "Deflorește-ți dieta",
+        "metric" : "Deflorește-ți dieta"
       },
-      "explanation" : "Check this box every day your whole grain servings are in the form of intact grains. The powdering of even 100 percent whole grains robs our microbiomes of the starch that would otherwise be ferried down to our colons enclosed in unbroken cell walls.",
-      "heading" : "Deflour Your Diet",
+      "explanation" : "Bifează această casetă în fiecare zi, porțiile întregi de cereale sunt sub formă de boabe intacte. Praful de chiar 100 de procente de cereale integrale ne furișează microbiomii de amidon, care altfel ar fi transportați până la coloanele noastre închise în pereții celulelor neîntrerupte.",
+      "heading" : "Deflorește-ți dieta",
       "topic" : ""
     },
     "tweakDailyFrontLoad" : {
       "activity" : {
-        "imperial" : "Front-Load Your Calories",
-        "metric" : "Front-Load Your Calories"
+        "imperial" : "Încărcați-vă caloriile din față",
+        "metric" : "Încărcați-vă caloriile din față"
       },
-      "explanation" : "There are metabolic benefits to distributing more calories to earlier in the day, so make breakfast (ideally) or lunch your largest meal of the day in true king/prince/pauper style.",
-      "heading" : "Front-Load Your Calories",
+      "explanation" : "Există avantaje metabolice pentru a distribui mai multe calorii la începutul zilei, așa că faceți micul dejun (ideal) sau prânzul cea mai mare masă a zilei în stilul rege / prinț / sărăcitor.",
+      "heading" : "Încărcați-vă caloriile din față",
       "topic" : ""
     },
     "tweakDailyGarlic" : {
       "activity" : {
-        "imperial" : "Garlic Powder (¼ tsp)",
-        "metric" : "Garlic Powder (¼ tsp)"
+        "imperial" : "Usturoi praf (¼ lingură)",
+        "metric" : "Usturoi praf (¼ lingură)"
       },
-      "explanation" : "Randomized, double-blind, placebo-controlled studies have found that as little as a daily quarter teaspoon of garlic powder can reduce body fat at a cost of perhaps two cents a day.",
-      "heading" : "Garlic Powder (¼ tsp)",
+      "explanation" : "Studiile randomizate, dublu-orb, controlate cu placebo au descoperit că doar un sfert de linguriță zilnic de praf de usturoi poate reduce grăsimea corporală cu un cost de aproximativ doi centi pe zi.",
+      "heading" : "Usturoi praf (¼ lingură)",
       "topic" : ""
     },
     "tweakDailyGinger" : {
       "activity" : {
-        "imperial" : "Ground Ginger (1 tsp) or Cayenne Pepper (½ tsp)",
-        "metric" : "Ground Ginger (1 tsp) or Cayenne Pepper (½ tsp)"
+        "imperial" : "Ghimbir măcinat (1 lingură) sau ardei Cayenne (½ linguriță)",
+        "metric" : "Ghimbir măcinat (1 lingură) sau ardei Cayenne (½ linguriță)"
       },
-      "explanation" : "Randomized controlled trials have found that ¼ teaspoon to 1½ teaspoons a day of ground ginger significantly decreased body weight for just pennies a day. It can be as easy as stirring the ground spice into a cup of hot water. Note: Ginger may work better in the morning than evening. Chai tea is a tasty way to combine the green tea and ginger tricks into a single beverage. Alternately, for BAT activation, you can add one raw jalapeño pepper or a half teaspoon of red pepper powder (or, presumably, crushed red pepper flakes) into your daily diet. To help beat the heat, you can very thinly slice or finely chop the jalapeño to reduce its bite to little prickles, or mix the red pepper into soup or the whole-food vegetable smoothie I featured in one of my cooking videos on NutritionFacts.org.",
-      "heading" : "Ground Ginger (1 tsp) or Cayenne Pepper (½ tsp)",
+      "explanation" : "Studiile controlate la întâmplare au descoperit că ¼ linguriță la 1½ linguriță pe zi de ghimbir măcinat a scăzut semnificativ greutatea corporală doar pentru un ban pe zi. Poate fi la fel de ușor ca agitarea condimentului măcinat într-o cană cu apă fierbinte. Notă: Ghimbirul poate funcționa mai bine dimineața decât seara. Ceaiul Chai este o modalitate gustoasă de a combina ceaiul verde și trucurile de ghimbir într-o singură băutură. În mod alternativ, pentru activarea BAT, puteți adăuga un ardei iute de jalapeño sau o jumătate de linguriță de piper roșu (sau, probabil, fulgi de ardei roșu zdrobit) în dieta zilnică. Pentru a ajuta la bătaia căldurii, puteți felia foarte subțire sau toca fin jalapeño pentru a-i reduce mușcăturile la micile gălbenușuri sau amesteca ardeiul roșu în ciorbă sau smoothie-ul cu legume cu alimente întregi pe care l-am prezentat într-unul dintre videoclipurile mele de gătit de pe NutritionFacts.org .",
+      "heading" : "Ghimbir măcinat (1 lingură) sau ardei Cayenne (½ linguriță)",
       "topic" : ""
     },
     "tweakDailyGreenTea" : {
       "activity" : {
-        "imperial" : "Green Tea (3 cups)",
-        "metric" : "Green Tea (3 cups)"
+        "imperial" : "Ceai verde (3 căni)",
+        "metric" : "Ceai verde (3 căni)"
       },
-      "explanation" : "Drink three cups a day between meals (waiting at least an hour after a meal so as to not interfere with iron absorption). During meals, drink water, black coffee, or hibiscus tea mixed 6:1 with lemon verbena, but never exceed three cups of fluid an hour (important given my water preloading advice). Take advantage of the reinforcing effect of caffeine by drinking your green tea along with something healthy you wish you liked more, but don't consume large amounts of caffeine within six hours of bedtime. Taking your tea without sweetener is best, but if you typically sweeten your tea with honey or sugar, try yacon syrup instead.",
-      "heading" : "Green Tea (3 cups)",
+      "explanation" : "Bea trei căni pe zi între mese (așteptați cel puțin o oră după masă, pentru a nu interfera cu absorbția fierului). În timpul meselor, bea apă, cafea neagră sau ceai de hibiscus amestecat 6: 1 cu verbena de lămâie, dar nu depășește niciodată trei căni de lichid pe oră (important având în vedere sfaturile mele de preîncărcare a apei). Profitați de efectul de consolidare al cofeinei, consumând ceaiul verde împreună cu ceva sănătos pe care doriți să vă fi plăcut mai mult, dar nu consumați cantități mari de cofeină în șase ore de la culcare. A lua ceai fără îndulcitor este cel mai bine, dar dacă în mod obișnuit îndulciți ceaiul cu miere sau zahăr, încercați în schimb siropul de yacon.",
+      "heading" : "Ceai verde (3 căni)",
       "topic" : ""
     },
     "tweakDailyHydrate" : {
       "activity" : {
-        "imperial" : "Stay Hydrated",
-        "metric" : "Stay Hydrated"
+        "imperial" : "Stai hidratat",
+        "metric" : "Stai hidratat"
       },
-      "explanation" : "Check this box if your urine never appears darker than a pale yellow.\n\nNote that if you're eating riboflavin-fortified foods (such as nutritional yeast), then base this instead on getting nine cups of unsweetened beverages a day for women (which would be taken care of by the green tea and water preloading recommendations) or thirteen cups a day for men.\n\nIf you have heart or kidney issues, don't increase fluid intake at all without first talking with your physician.\n\nRemember, diet soda may be calorie-free, but it's not consequence-free, as we learned in the Low in Added Sugar section.",
-      "heading" : "Stay Hydrated",
+      "explanation" : "Bifează această casetă dacă urina ta nu apare niciodată mai închisă decât un galben pal. Rețineți că, dacă mâncați alimente fortificate cu riboflavină (cum ar fi drojdia nutrițională), atunci bazați-o în loc să obțineți nouă căni de băuturi neîndulcite pe zi pentru femei (care ar fi îngrijite de recomandările de preîncărcare a ceaiului verde și a apei) sau treisprezece căni pe zi pentru bărbați. Dacă aveți probleme cu inima sau rinichii, nu creșteți deloc aportul de lichide fără să discutați mai întâi cu medicul dumneavoastră. Amintiți-vă, sodă dietetică poate fi fără calorii, dar nu este fără consecințe, așa cum am învățat în secțiunea Scăzut de zahăr adăugat.",
+      "heading" : "Stai hidratat",
       "topic" : ""
     },
     "tweakDailyNutriYeast" : {
       "activity" : {
-        "imperial" : "Nutritional Yeast (2 tsp)",
-        "metric" : "Nutritional Yeast (2 tsp)"
+        "imperial" : "Drojdie nutritivă (2 lingurițe)",
+        "metric" : "Drojdie nutritivă (2 lingurițe)"
       },
-      "explanation" : "Two teaspoons of baker's, brewer's, or nutritional yeast contains roughly the amount of beta 1,3/1,6 glucans found in randomized, double-blind, placebo-controlled clinical trials to facilitate weight loss.",
-      "heading" : "Nutritional Yeast (2 tsp)",
+      "explanation" : "Două lingurițe de panificatoare, de bere sau de drojdie nutrițională conțin aproximativ cantitatea de beta 1,3 / 1,6 glucane găsite în studii clinice randomizate, dublu-orb, controlate cu placebo, pentru a facilita pierderea în greutate.",
+      "heading" : "Drojdie nutritivă (2 lingurițe)",
       "topic" : ""
     },
     "tweakDailyTimeRestrict" : {
       "activity" : {
-        "imperial" : "Time-Restrict Your Eating",
-        "metric" : "Time-Restrict Your Eating"
+        "imperial" : "Limitați-vă mâncarea în timp",
+        "metric" : "Limitați-vă mâncarea în timp"
       },
-      "explanation" : "Confine eating to a daily window of time of your choosing under twelve hours in length that you can stick to consistently, seven days a week. Given the circadian benefits of reducing evening food intake, the window should end before 7:00 p.m.",
-      "heading" : "Time-Restrict Your Eating",
+      "explanation" : "Încercați să mâncați într-o fereastră zilnică de timp pe care o alegeți sub douăsprezece ore în lungime la care puteți rămâne constant, șapte zile pe săptămână. Având în vedere beneficiile circadiene ale reducerii aportului alimentar de seară, fereastra ar trebui să se încheie înainte de ora 19:00.",
+      "heading" : "Limitați-vă mâncarea în timp",
       "topic" : ""
     },
     "tweakExerciseTiming" : {
       "activity" : {
-        "imperial" : "Optimize Exercise Timing",
-        "metric" : "Optimize Exercise Timing"
+        "imperial" : "Optimizați cronometrarea exercițiilor",
+        "metric" : "Optimizați cronometrarea exercițiilor"
       },
-      "explanation" : "The Daily Dozen's recommendation for optimum exercise duration for longevity is ninety minutes of moderately intense activity a day, which is also the optimum exercise duration for weight loss. Anytime is good, and the more, the better, but there may be an advantage to exercising in a fasted state, at least six hours after your last meal. Typically, this would mean before breakfast, but if you timed it right, you could exercise midday before a late lunch or, if lunch is eaten early enough, before dinner. This is the timing for nondiabetics. Diabetics and prediabetics should instead start exercising thirty minutes after the start of a meal and ideally go for at least an hour to completely straddle the blood sugar peak. If you had to choose a single meal to exercise after, it would be dinner, due to the circadian rhythm of blood sugar control that wanes throughout the day. Ideally, though, breakfast would be the largest meal of the day, and you'd exercise after that—or, even better, after every meal.",
-      "heading" : "Optimize Exercise Timing",
+      "explanation" : "Recomandarea Daily Dozen pentru o durată optimă de exercitare pentru longevitate este de nouăzeci de minute de activitate moderat intensă pe zi, care este, de asemenea, durata optimă de exercițiu pentru pierderea în greutate. Oricând este bine, și cu atât mai mult, cu atât mai bine, dar poate exista un avantaj pentru a face exerciții în post, cel puțin șase ore după ultima masă. De obicei, acest lucru ar însemna înainte de micul dejun, dar dacă o cronometrați corect, puteți să faceți exerciții de prânz înainte de un prânz târziu sau, dacă prânzul este mâncat suficient de devreme, înainte de cină. Acesta este momentul pentru nondiabetici. Diabeticii și prediabeticii ar trebui să înceapă să facă exerciții fizice la treizeci de minute după începerea unei mese și, în mod ideal, să meargă cel puțin o oră pentru a depăși complet vârful de zahăr din sânge. Dacă ar trebui să alegeți o singură masă pentru a face exerciții fizice, ar fi cina, datorită ritmului circadian de control al zahărului din sânge care se stinge pe parcursul zilei. În mod ideal, micul dejun ar fi cea mai mare masă a zilei și ar trebui să exersezi după asta - sau, chiar mai bine, după fiecare masă.",
+      "heading" : "Optimizați cronometrarea exercițiilor",
       "topic" : ""
     },
     "tweakMeal20Minutes" : {
       "activity" : {
-        "imperial" : "Follow the Twenty-Minute Rule",
-        "metric" : "Follow the Twenty-Minute Rule"
+        "imperial" : "Urmați regula celor douăzeci de minute",
+        "metric" : "Urmați regula celor douăzeci de minute"
       },
-      "explanation" : "Whether through increasing viscosity or the number of chews, or decreasing bite size and eating rate, dozens of studies have demonstrated that no matter how we boost the amount of time food is in our mouths, it can result in lower caloric intake. So extend meal duration to at least twenty minutes to allow your natural satiety signals to take full effect. How? By choosing foods that take longer to eat and eating them in a way that prolongs the time they stay in your mouth. Think bulkier, hardier, chewier foods in smaller, well-chewed bites.",
-      "heading" : "Follow the Twenty-Minute Rule",
+      "explanation" : "Indiferent dacă prin creșterea vâscozității sau a numărului de mestecări sau prin scăderea dimensiunii mușcăturilor și a vitezei de alimentație, zeci de studii au demonstrat că, indiferent de modul în care vom stimula cantitatea de timp în care se află mâncarea în gură, aceasta poate duce la un aport caloric mai mic. Așadar, prelungiți durata mesei până la cel puțin douăzeci de minute pentru a permite semnalelor tale naturale de sațietate să aibă efect complet. Cum? Alegând alimente care durează mai mult timp și le consumi într-un mod care prelungește timpul în care rămân în gură. Gândiți-vă la mâncărurile mai vrac, mai dure, mai fragede, în mușcăturile mai mici, bine mestecate.",
+      "heading" : "Urmați regula celor douăzeci de minute",
       "topic" : ""
     },
     "tweakMealNegCal" : {
       "activity" : {
-        "imperial" : "Preload with \"Negative Calorie\" Foods",
-        "metric" : "Preload with \"Negative Calorie\" Foods"
+        "imperial" : "Preîncărcați cu alimente „calorii negative”",
+        "metric" : "Preîncărcați cu alimente „calorii negative”"
       },
-      "explanation" : "As the first course, start each meal with an apple or a Green Light soup or salad containing fewer than one hundred calories per cup.",
-      "heading" : "Preload with \"Negative Calorie\" Foods",
+      "explanation" : "Ca prim fel, începe fiecare masă cu un măr sau o supă sau o salată Green Light care conține mai puțin de o sută de calorii pe cană.",
+      "heading" : "Preîncărcați cu alimente „calorii negative”",
       "topic" : ""
     },
     "tweakMealUndistracted" : {
       "activity" : {
-        "imperial" : "Enjoy Undistracted Meals",
-        "metric" : "Enjoy Undistracted Meals"
+        "imperial" : "Bucurați-vă de mesele nedistractate",
+        "metric" : "Bucurați-vă de mesele nedistractate"
       },
-      "explanation" : "Don't eat while watching TV or playing on your phone. Give yourself a check for each meal you're able to eat without distraction.",
-      "heading" : "Enjoy Undistracted Meals",
+      "explanation" : "Nu mâncați în timp ce vizionați televizorul sau vă jucați pe telefon. Dă-ți un cec pentru fiecare masă pe care poți să-l mănânci fără distragere.",
+      "heading" : "Bucurați-vă de mesele nedistractate",
       "topic" : ""
     },
     "tweakMealVinegar" : {
       "activity" : {
-        "imperial" : "Incorporate Vinegar (2 tsp with each meal)",
-        "metric" : "Incorporate Vinegar (2 tsp with each meal)"
+        "imperial" : "Se încorporează oțet (2 lingurițe cu fiecare masă)",
+        "metric" : "Se încorporează oțet (2 lingurițe cu fiecare masă)"
       },
-      "explanation" : "Never drink vinegar straight. Instead, flavor meals or dress a side salad with any of the sweet and savory vinegars out there. If you want to drink it, make sure to mix it in a glass of water and, afterward, be sure to rinse your mouth out with water to protect your tooth enamel.",
-      "heading" : "Incorporate Vinegar (2 tsp with each meal)",
+      "explanation" : "Nu bea niciodată oțet drept. În schimb, aromează mesele sau îmbracă o salată laterală cu oricare dintre oțetele dulci și sărate de acolo. Dacă doriți să o beți, asigurați-vă că o amestecați într-un pahar cu apă și, apoi, asigurați-vă că vă clătiți gura cu apă pentru a vă proteja smalțul dinților.",
+      "heading" : "Se încorporează oțet (2 lingurițe cu fiecare masă)",
       "topic" : ""
     },
     "tweakMealWater" : {
       "activity" : {
-        "imperial" : "Preload with Water",
-        "metric" : "Preload with Water"
+        "imperial" : "Preîncărcați cu apă",
+        "metric" : "Preîncărcați cu apă"
       },
-      "explanation" : "Time your metabolism-boosting two cups of cool or cold unflavored water before each meal to also take advantage of its preload benefits.",
-      "heading" : "Preload with Water",
+      "explanation" : "Înaintea fiecărei mese, intensificați-vă metabolismul cu două căni de apă răcoroasă sau rece neflavată, pentru a profita de beneficiile sale de preîncărcare.",
+      "heading" : "Preîncărcați cu apă",
       "topic" : ""
     },
     "tweakNightlyFast" : {
       "activity" : {
-        "imperial" : "Fast After 7:00 p.m.",
-        "metric" : "Fast After 7:00 p.m."
+        "imperial" : "Repede după ora 19:00",
+        "metric" : "Repede după ora 19:00"
       },
-      "explanation" : "Due to our circadian rhythms, food eaten at night is more fattening than the exact same food eaten earlier in the day, so fast every night for at least twelve hours starting before 7:00 p.m. The fewer calories after sundown, the better.",
-      "heading" : "Fast After 7:00 pm",
+      "explanation" : "Datorită ritmurilor noastre circadiene, mâncarea mâncată noaptea este mai îngrășată decât aceeași mâncare mâncată mai devreme în timpul zilei, atât de rapid în fiecare seară timp de cel puțin douăsprezece ore începând înainte de ora 19:00. Cu cât mai puține calorii după apusul soarelui, cu atât mai bine.",
+      "heading" : "Repede după ora 19:00",
       "topic" : ""
     },
     "tweakNightlySleep" : {
       "activity" : {
-        "imperial" : "Get Sufficient Sleep",
-        "metric" : "Get Sufficient Sleep"
+        "imperial" : "Adormi-te suficient",
+        "metric" : "Adormi-te suficient"
       },
-      "explanation" : "Check this box if you get at least seven hours of sleep at your regular bedtime.",
-      "heading" : "Get Sufficient Sleep",
+      "explanation" : "Bifează această casetă dacă ai cel puțin șapte ore de somn la culcare obișnuită.",
+      "heading" : "Adormi-te suficient",
       "topic" : ""
     },
     "tweakNightlyTrendelenbrug" : {
       "activity" : {
-        "imperial" : "Experiment with Mild Trendelenburg",
-        "metric" : "Experiment with Mild Trendelenburg"
+        "imperial" : "Experiment cu Mild Trendelenburg",
+        "metric" : "Experiment cu Mild Trendelenburg"
       },
-      "explanation" : "Try spending at least four hours a night lying with your body tilted head-down six degrees by elevating the posts at the foot of your bed by eight inches (or by nine inches if you have a California king). Be extremely careful when you get out of bed, as this causes orthostatic intolerance in most people, even if you're young and healthy—meaning if you get up too fast, you can feel dizzy, faint, or light-headed and could fall and hurt yourself. So get up slowly. Drinking two cups of cold water thirty minutes before rising may also help prevent this potentially hazardous side effect.\n\nIMPORTANT: Do not try this at home at all if you have any heart or lung issues, acid reflux, or problems with your brain (like head trauma) or eyes (even a family history of glaucoma disqualifies you). Also do not try this until you ask your physician if they think it's safe for you to sleep in mild Trendelenburg.",
-      "heading" : "Experiment with Mild Trendelenburg",
+      "explanation" : "Încercați să petreceți cel puțin patru ore pe noapte culcată cu corpul înclinat cu capul în jos cu șase grade, ridicând posturile de la poalele patului dvs. cu opt centimetri (sau cu nouă centimetri dacă aveți un rege din California). Fii extrem de atent când te ridici din pat, deoarece acest lucru provoacă intoleranță ortostatică la majoritatea oamenilor, chiar dacă ești tânăr și sănătos - adică dacă te ridici prea repede, te poți simți amețit, leșin sau cap deschis cădeați și răniți-vă. Deci ridicați-vă încet. Consumul a două căni de apă rece cu treizeci de minute înainte de creștere poate ajuta, de asemenea, la prevenirea acestui efect secundar potențial periculos.\n\n* IMPORTANT: Nu încercați deloc acasă dacă aveți probleme cu inima sau cu plămânii, refluxul acid sau probleme cu creierul. (ca trauma capului) sau ochii (chiar și un istoric familial de glaucom te descalifică). De asemenea, nu încercați acest lucru până când nu întrebați medicul dvs. dacă consideră că este sigur să dormiți în Trendelenburg ușor. *",
+      "heading" : "Experiment cu Mild Trendelenburg",
       "topic" : ""
     },
     "tweakWeightTwice" : {
       "activity" : {
-        "imperial" : "Weigh Yourself Twice a Day",
-        "metric" : "Weigh Yourself Twice a Day"
+        "imperial" : "Cântărește-te de două ori pe zi",
+        "metric" : "Cântărește-te de două ori pe zi"
       },
-      "explanation" : "Regular self-weighing is considered crucial for long-term weight control, but there is insufficient evidence to support a specific frequency of weighing. My recommendation is based on the one study that found that twice daily—upon waking and right before bed—appeared superior to once a day (about six versus two pounds of weight loss over twelve weeks).",
-      "heading" : "Weigh Yourself Twice a Day",
+      "explanation" : "Auto-cântărirea este considerată crucială pentru controlul greutății pe termen lung, dar nu există dovezi suficiente pentru a susține o frecvență specifică de cântărire. Recomandarea mea se bazează pe un singur studiu care a constatat că de două ori pe zi - la trezire și chiar înainte de culcare - apărea superioară o dată pe zi (aproximativ șase versus două kilograme de pierdere în greutate pe parcursul a douăsprezece săptămâni).",
+      "heading" : "Cântărește-te de două ori pe zi",
       "topic" : ""
     }
   }

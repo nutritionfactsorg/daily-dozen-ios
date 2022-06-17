@@ -3,7 +3,7 @@
     "tweakCompleteIntentions" : {
       "activity" : {
         "imperial" : "Completar tus metas",
-        "metric" : "Complete tus metas"
+        "metric" : "Completar tus metas"
       },
       "explanation" : "Cada dos meses, crea tres metas nuevas, al estilo de \"si X, entonces Y\", para comportarte de cierta manera en situaciones específicas. Intenta marcar las tres casillas todos los días.",
       "heading" : "Completar tus metas",
@@ -11,20 +11,20 @@
     },
     "tweakDailyBlackCumin" : {
       "activity" : {
-        "imperial" : "Comino negro (Nigella sativa) (¼ cucharadita)",
-        "metric" : "Comino negro (Nigella sativa) (¼ cucharadita)"
+        "imperial" : "Comino negro (Nigella sativa) (¼ ctda.)",
+        "metric" : "Comino negro (Nigella sativa) (¼ ctda.)"
       },
       "explanation" : "Como se indica en la sección del libro que habla de la supresión del apetito, una revisión sistemática y un metanálisis de ensayos aleatorizados con grupo de control sobre la pérdida de peso concluyó que aproximadamente un cuarto de cucharadita de comino negro en polvo al día parece reducir el índice de masa corporal en un lapso de un par de meses. No olvides que el comino negro es diferente al comino normal, cuya ingesta recomendada es diferente.",
-      "heading" : "Comino negro (¼ cucharadita)",
+      "heading" : "Comino negro (¼ ctda.)",
       "topic" : ""
     },
     "tweakDailyCumin" : {
       "activity" : {
-        "imperial" : "Comino (Cuminum cyminum) (½ cucharadita con almuerzo y cena)",
-        "metric" : "Comino (Cuminum cyminum) (½ cucharadita con almuerzo y cena)"
+        "imperial" : "Comino (Cuminum cyminum) (½ ctda. almuerzo y cena)",
+        "metric" : "Comino (Cuminum cyminum) (½ ctda. almuerzo y cena)"
       },
       "explanation" : "Las mujeres con sobrepeso aleatorizadas a echarle media cucharadita de comino a sus almuerzos y cenas superaron al grupo de control, ya que perdieron casi 2 kg más y 2.5 cm extra en la cintura. También existe evidencia para apoyar el uso del azafrán, pero una pizca al día costaría un dólar, mientras que una cucharadita de comino cuesta menos de diez centavos.",
-      "heading" : "Comino (½ cucharadita con almuerzo y cena)",
+      "heading" : "Comino (½ ctda. almuerzo y cena)",
       "topic" : ""
     },
     "tweakDailyDeflourDiet" : {
@@ -47,20 +47,20 @@
     },
     "tweakDailyGarlic" : {
       "activity" : {
-        "imperial" : "Ajo en polvo (¼ cucharadita)",
-        "metric" : "Ajo en polvo (¼ cucharadita)"
+        "imperial" : "Ajo en polvo (¼ ctda.)",
+        "metric" : "Ajo en polvo (¼ ctda.)"
       },
       "explanation" : "Unos estudios aleatorizados, doble ciegos y controlados con placebo han encontrado que, con simplemente un cuarto de cucharadita diaria de ajo en polvo, se puede reducir la grasa corporal, a un costo de quizás dos centavos por día.",
-      "heading" : "Ajo en polvo (¼ cucharadita)",
+      "heading" : "Ajo en polvo (¼ ctda.)",
       "topic" : ""
     },
     "tweakDailyGinger" : {
       "activity" : {
-        "imperial" : "Jengibre en polvo (1 cucharadita) o cayena (½ cucharadita)",
-        "metric" : "Jengibre en polvo (1 cucharadita) o cayena (½ cucharadita)"
+        "imperial" : "Jengibre (1 ctda.) o cayena (½ ctda.)",
+        "metric" : "Jengibre (1 ctda.) o cayena (½ ctda.)"
       },
       "explanation" : "Unos ensayos aleatorizados y con grupo de control han descubierto que el consumo de ¼ a 1½ cucharadita al día de jengibre en polvo disminuye significativamente el peso corporal por solo unos centavos al día. Puede ser tan fácil como echar el jengibre en una taza de agua caliente. Nota: el jengibre podría funcionar mejor por la mañana que por la tarde. El chai es una forma estupenda de combinar los trucos del té verde y el jengibre en una sola bebida. Además, para activar el tejido adiposo pardo, también puedes añadir un jalapeño crudo o media cucharadita de chile en polvo a tu dieta diaria. Para ayudarte con el picante, puedes cortar el jalapeño en rodajas muy finas o picarlo muy bien. El chile en polvo lo podrías echar en las sopas y guisos o en el batido de verduras que hice en uno de mis videos de cocina en NutritionFacts.org.",
-      "heading" : "Jengibre molido (1 cucharadita) o cayena (½ cucharadita)",
+      "heading" : "Jengibre molido (1 ctda.) o cayena (½ ctda.)",
       "topic" : ""
     },
     "tweakDailyGreenTea" : {
@@ -83,11 +83,11 @@
     },
     "tweakDailyNutriYeast" : {
       "activity" : {
-        "imperial" : "Levadura nutricional (2 cucharaditas)",
-        "metric" : "Levadura nutricional (2 cucharaditas)"
+        "imperial" : "Levadura nutricional (2 ctda.)",
+        "metric" : "Levadura nutricional (2 ctda.)"
       },
       "explanation" : "Dos cucharaditas de levadura de panadería, de cerveza o nutricional contienen aproximadamente la cantidad de glucanos beta 1,3 / 1,6 correcta que, en ensayos clínicos aleatorizados, doble ciegos y con grupo de control, ha demostrado facilitar la pérdida de peso.",
-      "heading" : "Levadura nutricional (2 cucharaditas)",
+      "heading" : "Levadura nutricional (2 ctda.)",
       "topic" : ""
     },
     "tweakDailyTimeRestrict" : {
@@ -123,7 +123,7 @@
         "metric" : "Empezar con alimentos de calorías negativas"
       },
       "explanation" : "Como entrante, puedes comerte una manzana, una sopa o una ensalada con alimentos de luz verde que contenga menos de cien calorías por taza.",
-      "heading" : "Empezar con alimentos de calorías negativas",
+      "heading" : "Empezar con alimentos de \"calorías negativas\"",
       "topic" : ""
     },
     "tweakMealUndistracted" : {
@@ -137,11 +137,11 @@
     },
     "tweakMealVinegar" : {
       "activity" : {
-        "imperial" : "Vinagre (2 cucharaditas con cada comida)",
-        "metric" : "Vinagre (2 cucharaditas con cada comida)"
+        "imperial" : "Vinagre (2 ctda. cada comida)",
+        "metric" : "Vinagre (2 ctda. cada comida)"
       },
       "explanation" : "Nunca bebas vinagre solo. Puedes usarlo para condimentar las comidas o aderezar una ensalada. Puedes usar cualquier tipo de vinagre, dulce o salado. Si quieres beberlo, debes mezclarlo con un vaso de agua y enjuagarte la boca justo después para proteger el esmalte dental.",
-      "heading" : "Vinagre (2 cucharaditas con cada comida)",
+      "heading" : "Vinagre (2 ctda. cada comida)",
       "topic" : ""
     },
     "tweakMealWater" : {
@@ -173,10 +173,10 @@
     },
     "tweakNightlyTrendelenbrug" : {
       "activity" : {
-        "imperial" : "Experimenta con la Trendelenburg",
-        "metric" : "Experimenta con la Trendelenburg"
+        "imperial" : "Trendelenburg",
+        "metric" : "Trendelenburg"
       },
-      "explanation" : "Prueba a estar al menos cuatro horas cada noche con el cuerpo inclinado seis grados. Para conseguirlo, debes elevar los postes del pie de la cama unos 20 centímetros. Ten mucho cuidado al levantarte, ya que esta postura causa intolerancia ortostática para casi todo el mundo, aunque seas joven y estés saludable, así que, si te levantas demasiado rápido, puedes marearte, desmayarte o incluso caerte y hacerte daño. Por lo tanto, levántate lentamente. Beber dos tazas de agua fría treinta minutos antes de levantarte también podría ayudar a prevenir este efecto secundario potencialmente peligroso.\n\nIMPORTANTE: no intentes esto en casa si tienes problemas cardiacos o pulmonares, reflujo ácido, problemas cerebrales (como traumatismo craneal) u oculares (incluso un historial familiar de glaucoma lo descalifica). Si tienes cualquier duda, no lo intentes sin preguntarle a tu médico antes.",
+      "explanation" : "Prueba a estar al menos cuatro horas cada noche con el cuerpo inclinado seis grados. Para conseguirlo, debes elevar los postes del pie de la cama unos 20 centímetros. Ten mucho cuidado al levantarte, ya que esta postura causa intolerancia ortostática para casi todo el mundo, aunque seas joven y estés saludable, así que, si te levantas demasiado rápido, puedes marearte, desmayarte o incluso caerte y hacerte daño. Por lo tanto, levántate lentamente. Beber dos tazas de agua fría treinta minutos antes de levantarte también podría ayudar a prevenir este efecto secundario potencialmente peligroso.\n\n* IMPORTANTE: no intentes esto en casa si tienes problemas cardiacos o pulmonares, reflujo ácido, problemas cerebrales (como traumatismo craneal) u oculares (incluso un historial familiar de glaucoma lo descalifica). Si tienes cualquier duda, no lo intentes sin preguntarle a tu médico antes.*",
       "heading" : "Trendelenburg",
       "topic" : ""
     },

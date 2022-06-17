@@ -1,521 +1,521 @@
 {
   "itemsDict" : {
     "dozeBeans" : {
-      "heading" : "Beans",
+      "heading" : "Όσπρια",
       "servings" : [
         {
-          "imperial" : "¼ cup of hummus or bean dip",
-          "metric" : "60 g of hummus or bean dip"
+          "imperial" : "¼ φλιτζάνι χούμους ή ντιπ φασολιού",
+          "metric" : "60 γραμμάρια χούμους ή ντιπ φασολιού"
         },
         {
-          "imperial" : "½ cup cooked beans, split peas, lentils, tofu, or tempeh",
-          "metric" : "130 g cooked beans, split peas, lentils, tofu, or tempeh"
+          "imperial" : "½ φλιτζάνι μαγειρεμένα φασόλια, φάβα, φακές, τόφου, ή τέμπε",
+          "metric" : "130 γραμμάρια μαγειρεμένα φασόλια, φάβα, φακές, τόφου, ή τέμπε"
         },
         {
-          "imperial" : "1 cup of fresh peas or sprouted lentils",
-          "metric" : "150 g of fresh peas or sprouted lentils"
+          "imperial" : "1 φλιτζάνι αρακά ή φακές φυτρωμένες",
+          "metric" : "150 γραμμάρια αρακά ή φακές φυτρωμένες"
         }
       ],
       "topic" : "topics/beans",
       "varieties" : [
         {
-          "text" : "Black beans",
+          "text" : "Μαύρα",
           "topic" : "topics/black-beans"
         },
         {
-          "text" : "Black-eyed peas",
+          "text" : "Μαυρομάτικα",
           "topic" : ""
         },
         {
-          "text" : "Butter beans",
+          "text" : "Χάντρες (μπαρμπούνια)",
           "topic" : ""
         },
         {
-          "text" : "Cannellini beans",
+          "text" : "Γίγαντες",
           "topic" : ""
         },
         {
-          "text" : "Chickpeas/Garbanzo Beans",
+          "text" : "Ρεβίθια",
           "topic" : "topics/chickpeas"
         },
         {
-          "text" : "Edamame",
+          "text" : "Ενταμάμε",
           "topic" : "topics/edamame"
         },
         {
-          "text" : "English peas",
+          "text" : "Αρακάς",
           "topic" : ""
         },
         {
-          "text" : "Great northern beans",
+          "text" : "Μεγάλα βόρεια",
           "topic" : ""
         },
         {
-          "text" : "Kidney beans",
+          "text" : "Κόκκινα",
           "topic" : "topics/kidney-beans"
         },
         {
-          "text" : "Lentils (beluga, french, and red varieties)",
+          "text" : "Φακές (μαύρες beluga, γαλλικές, και κόκκινες ποικιλίες)",
           "topic" : "topics/lentils"
         },
         {
-          "text" : "Miso",
+          "text" : "Μίσο",
           "topic" : "topics/miso"
         },
         {
-          "text" : "Navy beans",
+          "text" : "Νέιβι",
           "topic" : "topics/navy-beans"
         },
         {
-          "text" : "Pinto beans",
+          "text" : "Πίντο",
           "topic" : "topics/pinto-beans"
         },
         {
-          "text" : "Small red beans",
+          "text" : "Μικρά κόκκινα",
           "topic" : ""
         },
         {
-          "text" : "Split peas (yellow or green)",
+          "text" : "Φάβα (κίτρινη ή πράσινη)",
           "topic" : "topics/split-peas"
         },
         {
-          "text" : "Tempeh",
+          "text" : "Τέμπε",
           "topic" : "topics/tempeh"
         }
       ]
     },
     "dozeBerries" : {
-      "heading" : "Berries",
+      "heading" : "Μούρα",
       "servings" : [
         {
-          "imperial" : "½ cup fresh or frozen",
-          "metric" : "60 g fresh or frozen"
+          "imperial" : "½ φλιτζάνι φρέσκα ή κατεψυγμένα",
+          "metric" : "60 γραμμάρια φρέσκα ή κατεψυγμένα"
         },
         {
-          "imperial" : "¼ cup dried",
-          "metric" : "40 g dried"
+          "imperial" : "¼ φλιτζανιού αποξηραμένα",
+          "metric" : "40 γραμμάρια αποξηραμένα"
         }
       ],
       "topic" : "topics/berries",
       "varieties" : [
         {
-          "text" : "Acai berries",
+          "text" : "Ασάι",
           "topic" : "topics/acai-berries"
         },
         {
-          "text" : "Barberries",
+          "text" : "Βερβερίς",
           "topic" : "topics/barberries"
         },
         {
-          "text" : "Blackberries",
+          "text" : "Βατόμουρα",
           "topic" : "topics/blackberries"
         },
         {
-          "text" : "Blueberries",
+          "text" : "Μύρτιλα",
           "topic" : "topics/blueberries"
         },
         {
-          "text" : "Cherries (sweet or tart)",
+          "text" : "Κεράσια (γλυκά ή ξινά)",
           "topic" : "topics/cherries"
         },
         {
-          "text" : "Concord grapes",
+          "text" : "Κονκόρντ σταφύλια",
           "topic" : "topics/grapes"
         },
         {
-          "text" : "Cranberries",
+          "text" : "Φίγγι",
           "topic" : "topics/cranberries"
         },
         {
-          "text" : "Goji berries",
+          "text" : "Γκότζι μπέρι",
           "topic" : "topics/goji-berries"
         },
         {
-          "text" : "Kumquats",
+          "text" : "Φορτουνέλλα",
           "topic" : ""
         },
         {
-          "text" : "Mulberries",
+          "text" : "Μορέα",
           "topic" : ""
         },
         {
-          "text" : "Raspberries (black or red)",
+          "text" : "Βατόμουρα (μαύρα ή κόκκινα)",
           "topic" : "topics/raspberries"
         },
         {
-          "text" : "Strawberries",
+          "text" : "Φράουλες",
           "topic" : "topics/strawberries"
         }
       ]
     },
     "dozeBeverages" : {
-      "heading" : "Beverages",
+      "heading" : "Ροφήματα",
       "servings" : [
         {
-          "imperial" : "One glass (12 ounces)",
-          "metric" : "One glass (350 ml)"
+          "imperial" : "Ένα ποτήρι (12 Ουγγιές)",
+          "metric" : "Ένα ποτήρι (350 ml)"
         }
       ],
       "topic" : "topics/beverages",
       "varieties" : [
         {
-          "text" : "Black tea",
+          "text" : "Μαύρο τσάι",
           "topic" : "topics/black-tea"
         },
         {
-          "text" : "Chai tea",
+          "text" : "Τσάι μασάλα",
           "topic" : "topics/chai-tea"
         },
         {
-          "text" : "Vanilla chamomile tea",
+          "text" : "Βανίλια χαμομήλι",
           "topic" : "topics/chamomile-tea"
         },
         {
-          "text" : "Coffee",
+          "text" : "Καφές",
           "topic" : "topics/coffee"
         },
         {
-          "text" : "Earl grey tea",
+          "text" : "Τσάι Earl Grey",
           "topic" : "topics/earl-grey-tea"
         },
         {
-          "text" : "Green tea",
+          "text" : "Πράσινο τσάι",
           "topic" : "topics/green-tea"
         },
         {
-          "text" : "Hibiscus tea",
+          "text" : "Τσάι υβίσκου",
           "topic" : "topics/hibiscus-tea"
         },
         {
-          "text" : "Hot chocolate",
+          "text" : "Ζεστή σοκολάτα",
           "topic" : ""
         },
         {
-          "text" : "Jasmine tea",
-          "topic" : "topics/jasmine-tea"
-        },
-        {
-          "text" : "Lemon balm tea",
+          "text" : "Τσάι γιασεμί",
           "topic" : ""
         },
         {
-          "text" : "Matcha tea",
+          "text" : "Τσάι με λεμόνι βάλσαμο",
+          "topic" : "topics/lemon-balm"
+        },
+        {
+          "text" : "Τσάι μάτσα",
           "topic" : "topics/matcha"
         },
         {
-          "text" : "Almond blossom oolong tea",
+          "text" : "Τσάι ούλονγκ",
           "topic" : "topics/oolong-tea"
         },
         {
-          "text" : "Peppermint tea",
+          "text" : "Τσάι μίνθη",
           "topic" : "topics/peppermint"
         },
         {
-          "text" : "Rooibos tea",
+          "text" : "Τσάι Ρόιμπος",
           "topic" : "topics/rooibos-tea"
         },
         {
-          "text" : "Water",
+          "text" : "Νερό",
           "topic" : "topics/water"
         },
         {
-          "text" : "White tea",
+          "text" : "Λευκό τσάι",
           "topic" : "topics/white-tea"
         }
       ]
     },
     "dozeExercise" : {
-      "heading" : "Exercise",
+      "heading" : "Γυμναστική",
       "servings" : [
         {
-          "imperial" : "90 minutes of moderate-intensity activity",
-          "metric" : "90 minutes of moderate-intensity activity"
+          "imperial" : "90 λεπτά δραστηριότητα μέτριας έντασης",
+          "metric" : "90 λεπτά δραστηριότητα μέτριας έντασης"
         },
         {
-          "imperial" : "40 minutes of vigorous-intensity activity",
-          "metric" : "40 minutes of vigorous-intensity activity"
+          "imperial" : "40 λεπτά δραστηριότητα έντονης έντασης",
+          "metric" : "40 λεπτά δραστηριότητα έντονης έντασης"
         }
       ],
       "topic" : "topics/exercise",
       "varieties" : [
         {
-          "text" : "Bicycling",
+          "text" : "Ποδηλασία",
           "topic" : ""
         },
         {
-          "text" : "Canoeing",
+          "text" : "Κωπηλασία με κανό",
           "topic" : ""
         },
         {
-          "text" : "Dancing",
+          "text" : "Χορός",
           "topic" : ""
         },
         {
-          "text" : "Dodgeball",
+          "text" : "Ντότζμπολ",
           "topic" : ""
         },
         {
-          "text" : "Downhill skiing",
+          "text" : "Κατάβαση",
           "topic" : ""
         },
         {
-          "text" : "Fencing",
+          "text" : "Ξιφασκία",
           "topic" : ""
         },
         {
-          "text" : "Hiking",
+          "text" : "Πεζοπορία",
           "topic" : ""
         },
         {
-          "text" : "Housework",
+          "text" : "Δουλειες του σπιτιού",
           "topic" : ""
         },
         {
-          "text" : "Ice-skating",
+          "text" : "Σκέϊτ στον πάγο",
           "topic" : ""
         },
         {
-          "text" : "Inline skating",
+          "text" : "Πατίνια ρόλλερ",
           "topic" : ""
         },
         {
-          "text" : "Juggling",
+          "text" : "Ζογκλερικά",
           "topic" : ""
         },
         {
-          "text" : "Jumping on a trampoline",
+          "text" : "Άλματα σε τραμπολίνο",
           "topic" : ""
         },
         {
-          "text" : "Paddle boating",
+          "text" : "Κουπί βαρκάδα",
           "topic" : ""
         },
         {
-          "text" : "Playing frisbee",
+          "text" : "Φρίσμπι",
           "topic" : ""
         },
         {
-          "text" : "Roller-skating",
+          "text" : "Ρόλερ Πατινάζ",
           "topic" : ""
         },
         {
-          "text" : "Shooting baskets",
+          "text" : "Kαλάθια Σκοποβολή",
           "topic" : ""
         },
         {
-          "text" : "Shoveling light snow",
+          "text" : "Ελαφρύ φτυαρίσμα χιονιού",
           "topic" : ""
         },
         {
-          "text" : "Skateboarding",
+          "text" : "Σκέιτμπορντ",
           "topic" : ""
         },
         {
-          "text" : "Snorkeling",
+          "text" : "Περιήγηση επιφανείας",
           "topic" : ""
         },
         {
-          "text" : "Surfing",
+          "text" : "Σέρφινγκ",
           "topic" : ""
         },
         {
-          "text" : "Swimming recreationally",
+          "text" : "Κολύμβηση αναψυχής",
           "topic" : ""
         },
         {
-          "text" : "Tennis (doubles)",
+          "text" : "Τένις (διπλό)",
           "topic" : ""
         },
         {
-          "text" : "Treading water",
+          "text" : "Όρθιο κολύμπι",
           "topic" : ""
         },
         {
-          "text" : "Walking briskly (4 mph)",
+          "text" : "Ζωηρό βάδισμα (6 χλμ)",
           "topic" : ""
         },
         {
-          "text" : "Water aerobics",
+          "text" : "Αεροβική στο νερό",
           "topic" : ""
         },
         {
-          "text" : "Waterskiing",
+          "text" : "Θαλάσσιο σκι",
           "topic" : ""
         },
         {
-          "text" : "Yard work",
+          "text" : "Δουλειά κήπου",
           "topic" : ""
         },
         {
-          "text" : "Yoga",
+          "text" : "Γιόγκα",
           "topic" : ""
         },
         {
-          "text" : "Backpacking",
+          "text" : "Σακίδιο στην πλάτη",
           "topic" : ""
         },
         {
-          "text" : "Basketball",
+          "text" : "Καλαθοσφαίρηση",
           "topic" : ""
         },
         {
-          "text" : "Bicycling uphill",
+          "text" : "Ποδηλασία σε ανηφόρα",
           "topic" : ""
         },
         {
-          "text" : "Circuit weight training",
+          "text" : "Κυκλική προπόνηση με βάρη",
           "topic" : ""
         },
         {
-          "text" : "Cross-country skiing",
+          "text" : "Σκι cross-country",
           "topic" : ""
         },
         {
-          "text" : "Football",
+          "text" : "Ποδόσφαιρο",
           "topic" : ""
         },
         {
-          "text" : "Hockey",
+          "text" : "Χόκεϊ",
           "topic" : ""
         },
         {
-          "text" : "Jogging",
+          "text" : "Στίβος",
           "topic" : ""
         },
         {
-          "text" : "Jumping jacks",
+          "text" : "Άλματα",
           "topic" : ""
         },
         {
-          "text" : "Jumping rope",
+          "text" : "Σχοινάκι",
           "topic" : ""
         },
         {
-          "text" : "Lacrosse",
+          "text" : "Λακρός",
           "topic" : ""
         },
         {
-          "text" : "Push-ups",
+          "text" : "Κάμψεις",
           "topic" : ""
         },
         {
-          "text" : "Pull-ups",
+          "text" : "Έλξεις",
           "topic" : ""
         },
         {
-          "text" : "Racquetball",
+          "text" : "Ράκετμπολ",
           "topic" : ""
         },
         {
-          "text" : "Rock climbing",
+          "text" : "Αναρρίχηση",
           "topic" : ""
         },
         {
-          "text" : "Rugby",
+          "text" : "Ράγκμπι",
           "topic" : ""
         },
         {
-          "text" : "Running",
+          "text" : "Τρέξιμο",
           "topic" : ""
         },
         {
-          "text" : "Scuba diving",
+          "text" : "Κατάδυση",
           "topic" : ""
         },
         {
-          "text" : "Tennis (singles)",
+          "text" : "Τένις (μονό)",
           "topic" : ""
         },
         {
-          "text" : "Soccer",
+          "text" : "Ποδόσφαιρο",
           "topic" : ""
         },
         {
-          "text" : "Speed skating",
+          "text" : "Πατινάζ ταχύτητας",
           "topic" : ""
         },
         {
-          "text" : "Squash",
+          "text" : "Καθίσματα",
           "topic" : ""
         },
         {
-          "text" : "Step aerobics",
+          "text" : "Αεροβική step",
           "topic" : ""
         },
         {
-          "text" : "Swimming laps",
+          "text" : "Γύροι κολύμβησης",
           "topic" : ""
         },
         {
-          "text" : "Walking briskly uphill",
+          "text" : "Ζωηρό βάδισμα σε ανηφόρα",
           "topic" : ""
         },
         {
-          "text" : "Water jogging",
+          "text" : "Τζόκινγκ νερού",
           "topic" : ""
         }
       ]
     },
     "dozeFlaxseeds" : {
-      "heading" : "Flaxseeds",
+      "heading" : "Λιναρόσπορος",
       "servings" : [
         {
-          "imperial" : "1 tablespoon ground",
-          "metric" : "1 tablespoon ground"
+          "imperial" : "1 κουταλιά της σούπας αλεσμένο",
+          "metric" : "1 κουταλιά της σούπας αλεσμένο"
         }
       ],
       "topic" : "topics/flax-seeds",
       "varieties" : [
         {
-          "text" : "Brown flaxseeds",
+          "text" : "Λιναρόσπορος καφέ",
           "topic" : ""
         },
         {
-          "text" : "Golden flaxseeds",
+          "text" : "Λιναρόσπορος χρυσός",
           "topic" : ""
         }
       ]
     },
     "dozeFruitsOther" : {
-      "heading" : "Other Fruits",
+      "heading" : "Άλλα Φρούτα",
       "servings" : [
         {
-          "imperial" : "1 medium-sized fruit",
-          "metric" : "1 medium-sized fruit"
+          "imperial" : "1 μεσαίου μεγέθους φρούτο",
+          "metric" : "1 μεσαίου μεγέθους φρούτο"
         },
         {
-          "imperial" : "1 cup cut-up fruit",
-          "metric" : "120 g cut-up fruit"
+          "imperial" : "1 φλυτζάνι κομμένο φρούτο",
+          "metric" : "120 γραμμάρια κομμένο φρούτο"
         },
         {
-          "imperial" : "¼ cup dried fruit",
-          "metric" : "40 g dried fruit"
+          "imperial" : "¼ φλιτζάνι αποξηραμένο φρούτο",
+          "metric" : "40 γραμμάρια αποξηραμένο φρούτο"
         }
       ],
-      "topic" : "",
+      "topic" : "topics/fruit",
       "varieties" : [
         {
-          "text" : "Apples",
+          "text" : "Μήλα",
           "topic" : "topics/apples"
         },
         {
-          "text" : "Apricots",
+          "text" : "Αποξηραμένα βερίκοκα",
           "topic" : "topics/apricots"
         },
         {
-          "text" : "Avocados",
+          "text" : "Αβοκάντο",
           "topic" : "topics/avocados"
         },
         {
-          "text" : "Bananas",
+          "text" : "Μπανάνες",
           "topic" : "topics/bananas"
         },
         {
-          "text" : "Cantaloupe",
+          "text" : "Πεπονάκι",
           "topic" : "topics/cantaloupe"
         },
         {
-          "text" : "Clementines",
+          "text" : "Κλημεντίνες",
           "topic" : ""
         },
         {
@@ -523,597 +523,597 @@
           "topic" : "topics/dates"
         },
         {
-          "text" : "Figs",
-          "topic" : "topics/figs"
+          "text" : "Ξερά σύκα",
+          "topic" : ""
         },
         {
-          "text" : "Grapefruit",
+          "text" : "Φράπα",
           "topic" : "topics/grapefruit"
         },
         {
-          "text" : "Honeydew",
+          "text" : "Χάνεϊντιου",
           "topic" : ""
         },
         {
-          "text" : "Kiwifruit",
+          "text" : "Ακτινίδια",
           "topic" : "topics/kiwifruit"
         },
         {
-          "text" : "Lemons",
+          "text" : "Λεμόνια",
           "topic" : "topics/lemons"
         },
         {
-          "text" : "Limes",
+          "text" : "Λάιμ",
           "topic" : "topics/limes"
         },
         {
-          "text" : "Lychees",
+          "text" : "Λίτσι",
           "topic" : ""
         },
         {
-          "text" : "Mangos",
+          "text" : "Μάνγκο",
           "topic" : "topics/mango"
         },
         {
-          "text" : "Nectarines",
+          "text" : "Νεκταρίνια",
           "topic" : ""
         },
         {
-          "text" : "Oranges",
+          "text" : "Πορτοκάλια",
           "topic" : "topics/oranges"
         },
         {
-          "text" : "Papaya",
-          "topic" : "topics/papaya"
-        },
-        {
-          "text" : "Passion fruit",
+          "text" : "Παπάγια",
           "topic" : ""
         },
         {
-          "text" : "Peaches",
+          "text" : "Φρούτο του πάθους",
+          "topic" : ""
+        },
+        {
+          "text" : "Ροδάκινα",
           "topic" : "topics/peaches"
         },
         {
-          "text" : "Pears",
+          "text" : "Αχλάδια",
           "topic" : "topics/pears"
         },
         {
-          "text" : "Pineapple",
-          "topic" : "topics/pineapples"
+          "text" : "Ανανάς",
+          "topic" : ""
         },
         {
-          "text" : "Plums (especially black plums)",
+          "text" : "Δαμάσκηνα (ειδικά μαύρα δαμάσκηνα)",
           "topic" : "topics/plums"
         },
         {
-          "text" : "Pluots",
+          "text" : "Δαμασκηνοβερίκοκα",
           "topic" : ""
         },
         {
-          "text" : "Pomegranates",
+          "text" : "Ρόδια",
           "topic" : "topics/pomegranates"
         },
         {
-          "text" : "Prunes",
+          "text" : "Ξερά δαμάσκηνα",
           "topic" : "topics/prunes"
         },
         {
-          "text" : "Tangerines",
+          "text" : "Μανταρίνια",
           "topic" : ""
         },
         {
-          "text" : "Watermelon",
+          "text" : "Καρπούζι",
           "topic" : "topics/watermelon"
         }
       ]
     },
     "dozeGreens" : {
-      "heading" : "Greens",
+      "heading" : "Πράσινα Φυλλώδη",
       "servings" : [
         {
-          "imperial" : "1 cup raw",
-          "metric" : "60 g raw"
+          "imperial" : "1 φλιτζάνι ωμά",
+          "metric" : "60 γραμμάρια ωμά"
         },
         {
-          "imperial" : "½ cup cooked",
-          "metric" : "90 g cooked"
+          "imperial" : "½ φλιτζάνι μαγειρεμένα",
+          "metric" : "90 γραμμάρια μαγειρεμένα"
         }
       ],
       "topic" : "topics/greens",
       "varieties" : [
         {
-          "text" : "Arugula",
+          "text" : "Ρόκα",
           "topic" : ""
         },
         {
-          "text" : "Beet greens",
+          "text" : "Χόρτα τεύτλων",
           "topic" : "topics/beets"
         },
         {
-          "text" : "Collard greens",
+          "text" : "Φύλλα Λαχανίδας",
           "topic" : "topics/collard-greens"
         },
         {
-          "text" : "Kale (black, green, and red)",
+          "text" : "Κέιλ (μαύρο, πράσινο και κόκκινο)",
           "topic" : "topics/kale"
         },
         {
-          "text" : "Mesclun mix (assorted young salad greens)",
-          "topic" : "topics/mesclun-mix"
-        },
-        {
-          "text" : "Mustard greens",
-          "topic" : "topics/mustard-greens"
-        },
-        {
-          "text" : "Sorrel",
+          "text" : "Σαλάτα μείγμα (διάφορα είδη πράσινων)",
           "topic" : ""
         },
         {
-          "text" : "Spinach",
+          "text" : "Φύλλα μουστάρδας",
+          "topic" : "topics/mustard-greens"
+        },
+        {
+          "text" : "Λάπαθο",
+          "topic" : ""
+        },
+        {
+          "text" : "Σπανάκι",
           "topic" : "topics/spinach"
         },
         {
-          "text" : "Swiss chard",
+          "text" : "Σέσκουλο",
           "topic" : "topics/swiss-chard"
         },
         {
-          "text" : "Turnip greens",
+          "text" : "Φύλλα γογγύλιων",
           "topic" : ""
         }
       ]
     },
     "dozeNuts" : {
-      "heading" : "Nuts and Seeds",
+      "heading" : "Ξηροί Καρποί",
       "servings" : [
         {
-          "imperial" : "¼ cup nuts or seeds",
-          "metric" : "30 g nuts or seeds"
+          "imperial" : "¼ φλιτζάνι ξηρούς καρπούς ή σπόρους",
+          "metric" : "30 γραμμάρια ξηρούς καρπούς ή σπόρους"
         },
         {
-          "imperial" : "2 tablespoons nut or seed butter",
-          "metric" : "2 tablespoons nut or seed butter"
+          "imperial" : "2 κουταλιές βούτηρο ξηρών καρπών ή σπόρων",
+          "metric" : "2 κουταλιές βούτηρο ξηρών καρπών ή σπόρων"
         }
       ],
       "topic" : "topics/nuts",
       "varieties" : [
         {
-          "text" : "Almonds",
+          "text" : "Αμύγδαλα",
           "topic" : "topics/almonds"
         },
         {
-          "text" : "Brazil nuts",
+          "text" : "Καρυδιά Βραζιλίας",
           "topic" : "topics/brazil-nuts"
         },
         {
-          "text" : "Cashews",
+          "text" : "Κάσιους",
           "topic" : "topics/cashews"
         },
         {
-          "text" : "Chia seeds",
+          "text" : "Σπόροι τσία",
           "topic" : "topics/chia-seeds"
         },
         {
-          "text" : "Hazelnuts",
+          "text" : "Φουντούκια",
           "topic" : "topics/hazelnuts"
         },
         {
-          "text" : "Hemp seeds",
+          "text" : "Σπόροι κάνναβης",
           "topic" : ""
         },
         {
-          "text" : "Macadamia nuts",
+          "text" : "Μακαδάμια",
           "topic" : "topics/macadamia-nuts"
         },
         {
-          "text" : "Pecans",
+          "text" : "Πεκάν",
           "topic" : "topics/pecans"
         },
         {
-          "text" : "Pistachios",
+          "text" : "Φιστίκια Αιγίνης",
           "topic" : "topics/pistachios"
         },
         {
-          "text" : "Pumpkin seeds",
+          "text" : "Κολοκυθόσποροι",
           "topic" : "topics/pumpkin-seeds"
         },
         {
-          "text" : "Sesame seeds",
+          "text" : "Σουσάμι",
           "topic" : "topics/sesame-seeds"
         },
         {
-          "text" : "Sunflower seeds",
+          "text" : "Ηλιόσποροι",
           "topic" : "topics/sunflower-seeds"
         },
         {
-          "text" : "Walnuts",
+          "text" : "Καρύδια",
           "topic" : "topics/walnuts"
         }
       ]
     },
     "dozeSpices" : {
-      "heading" : "Herbs and Spices",
+      "heading" : "Μπαχαρικά",
       "servings" : [
         {
-          "imperial" : "¼ teaspoon of turmeric",
-          "metric" : "¼ teaspoon of turmeric"
+          "imperial" : "¼ κουταλάκι του γλυκού κουρκουμά",
+          "metric" : "¼ κουταλάκι του γλυκού κουρκουμά"
         },
         {
-          "imperial" : "Any other (salt-free) herbs and spices you enjoy",
-          "metric" : "Any other (salt-free) herbs and spices you enjoy"
+          "imperial" : "Ότι άλλο (χωρίς αλάτι) βότανο και μπαχαρικό σας αρέσει",
+          "metric" : "Ότι άλλο (χωρίς αλάτι) βότανο και μπαχαρικό σας αρέσει"
         }
       ],
       "topic" : "topics/spices",
       "varieties" : [
         {
-          "text" : "Allspice",
+          "text" : "Μπαχάρι",
           "topic" : "topics/allspice"
         },
         {
-          "text" : "Barberries",
+          "text" : "Βερβερίς",
           "topic" : "topics/barberries"
         },
         {
-          "text" : "Basil",
+          "text" : "Βασίλικος",
           "topic" : "topics/basil"
         },
         {
-          "text" : "Bay leaves",
+          "text" : "Φύλλα δάφνης",
           "topic" : ""
         },
         {
-          "text" : "Cardamom",
-          "topic" : "topics/cardamom"
-        },
-        {
-          "text" : "Chili powder",
+          "text" : "Κάρδαμο",
           "topic" : ""
         },
         {
-          "text" : "Cilantro",
+          "text" : "Τσίλι σε σκόνη",
+          "topic" : ""
+        },
+        {
+          "text" : "Κόλιαντρο",
           "topic" : "topics/cilantro"
         },
         {
-          "text" : "Cinnamon",
+          "text" : "Κανέλα",
           "topic" : "topics/cinnamon"
         },
         {
-          "text" : "Cloves",
+          "text" : "Γαρίφαλο",
           "topic" : "topics/cloves"
         },
         {
-          "text" : "Coriander",
-          "topic" : "topics/coriander"
+          "text" : "Κολίανδρο",
+          "topic" : ""
         },
         {
-          "text" : "Cumin",
+          "text" : "Κύμινο",
           "topic" : "topics/cumin"
         },
         {
-          "text" : "Curry powder",
+          "text" : "Κάρυ",
           "topic" : "topics/curry-powder"
         },
         {
-          "text" : "Dill",
+          "text" : "Άνηθος",
           "topic" : ""
         },
         {
-          "text" : "Fenugreek",
+          "text" : "Τριγωνέλλα",
           "topic" : "topics/fenugreek"
         },
         {
-          "text" : "Garlic",
+          "text" : "Σκόρδο",
           "topic" : "topics/garlic"
         },
         {
-          "text" : "Ginger",
+          "text" : "Τζίντζερ",
           "topic" : "topics/ginger"
         },
         {
-          "text" : "Horseradish",
+          "text" : "Χρένο",
           "topic" : ""
         },
         {
-          "text" : "Lemongrass",
-          "topic" : "topics/lemongrass"
+          "text" : "Κυμβοπώγων",
+          "topic" : ""
         },
         {
-          "text" : "Marjoram",
+          "text" : "Μαντζουράνα",
           "topic" : "topics/marjoram"
         },
         {
-          "text" : "Mustard powder",
+          "text" : "Σκόνη μουστάρδας",
           "topic" : "topics/mustard-powder"
         },
         {
-          "text" : "Nutmeg",
+          "text" : "Μοσχοκάρυδο",
           "topic" : "topics/nutmeg"
         },
         {
-          "text" : "Oregano",
+          "text" : "Ρίγανη",
           "topic" : "topics/oregano"
         },
         {
-          "text" : "Smoked paprika",
+          "text" : "Καπνιστή πάπρικα",
           "topic" : ""
         },
         {
-          "text" : "Parsley",
+          "text" : "Μαϊντανός",
           "topic" : "topics/parsley"
         },
         {
-          "text" : "Pepper",
+          "text" : "Πιπέρι",
           "topic" : "topics/pepper"
         },
         {
-          "text" : "Peppermint",
+          "text" : "Μέντα",
           "topic" : "topics/peppermint"
         },
         {
-          "text" : "Rosemary",
+          "text" : "Δενδρολίβανο",
           "topic" : "topics/rosemary"
         },
         {
-          "text" : "Saffron",
+          "text" : "Σαφράνι",
           "topic" : "topics/saffron"
         },
         {
-          "text" : "Sage",
+          "text" : "Φασκόμηλο",
           "topic" : ""
         },
         {
-          "text" : "Thyme",
-          "topic" : "topics/thyme"
+          "text" : "Θυμάρι",
+          "topic" : ""
         },
         {
-          "text" : "Turmeric",
+          "text" : "Κουρκουμάς",
           "topic" : "topics/turmeric"
         },
         {
-          "text" : "Vanilla",
+          "text" : "Βανίλια",
           "topic" : ""
         }
       ]
     },
     "dozeVegetablesCruciferous" : {
-      "heading" : "Cruciferous Vegetables",
+      "heading" : "Σταυρανθή Λαχανικά",
       "servings" : [
         {
-          "imperial" : "½ cup chopped",
-          "metric" : "30–80 g chopped"
+          "imperial" : "½ φλιτζάνι ψιλοκομμένα",
+          "metric" : "30–80 γραμμάρια ψιλοκομμένα"
         },
         {
-          "imperial" : "¼ cup Brussels or broccoli sprouts",
-          "metric" : "12 g Brussels or broccoli sprouts"
+          "imperial" : "¼ φλιτζάνι λαχανάκι Βρυξέλλών ή φύτρα μπρόκολου",
+          "metric" : "12 γραμμάρια λαχανάκι Βρυξέλλών ή φύτρα μπρόκολου"
         },
         {
-          "imperial" : "1 tablespoon horseradish",
-          "metric" : "1 tablespoon horseradish"
+          "imperial" : "1 κουταλιά της σούπας χρένο",
+          "metric" : "1 κουταλιά της σούπας χρένο"
         }
       ],
-      "topic" : "",
+      "topic" : "topics/cruciferous-vegetables",
       "varieties" : [
         {
-          "text" : "Arugula",
+          "text" : "Ρόκα",
           "topic" : ""
         },
         {
-          "text" : "Bok choy",
+          "text" : "Μποκ τσόι",
           "topic" : "topics/bok-choy"
         },
         {
-          "text" : "Broccoli (incl. Romanesco)",
+          "text" : "Μπρόκολο (και το Romanesco)",
           "topic" : "topics/broccoli"
         },
         {
-          "text" : "Brussels sprouts",
+          "text" : "Λαχανάκια Βρυξελλών",
           "topic" : "topics/brussels-sprouts"
         },
         {
-          "text" : "Cabbage (green, red and savoy)",
+          "text" : "Λάχανο (πράσινο, κόκκινο, σπαράγγι λάχανο)",
           "topic" : "topics/cabbage"
         },
         {
-          "text" : "Cauliflower (white, green, orange and purple)",
+          "text" : "Κουνουπίδι (λευκό, πράσινο, πορτοκαλί, μοβ)",
           "topic" : "topics/cauliflower"
         },
         {
-          "text" : "Collard greens",
+          "text" : "Λαχανίδες",
           "topic" : "topics/collard-greens"
         },
         {
-          "text" : "Horseradish",
+          "text" : "Χρένο",
           "topic" : ""
         },
         {
-          "text" : "Kale (black, green, and red)",
+          "text" : "Κέιλ (μαύρο, πράσινο και κόκκινο)",
           "topic" : "topics/kale"
         },
         {
-          "text" : "Kohlrabi (green and purple)",
-          "topic" : "topics/kohlrabi"
-        },
-        {
-          "text" : "Mustard greens",
-          "topic" : "topics/mustard-greens"
-        },
-        {
-          "text" : "Radishes",
-          "topic" : "topics/radishes"
-        },
-        {
-          "text" : "Turnip greens",
+          "text" : "Γογγυλοκράμβες (πράσινο, μωβ)",
           "topic" : ""
         },
         {
-          "text" : "Watercress",
+          "text" : "Πράσινα μουστάρδας",
+          "topic" : "topics/mustard-greens"
+        },
+        {
+          "text" : "Ραπανάκια",
+          "topic" : ""
+        },
+        {
+          "text" : "Πράσινα γογγύλια",
+          "topic" : ""
+        },
+        {
+          "text" : "Κάρδαμο",
           "topic" : "topics/watercress"
         }
       ]
     },
     "dozeVegetablesOther" : {
-      "heading" : "Other Vegetables",
+      "heading" : "Άλλα Λαχανικά",
       "servings" : [
         {
-          "imperial" : "1 cup raw leafy vegetables",
-          "metric" : "60 g raw leafy vegetables"
+          "imperial" : "1 φλιτζάνι ωμά φυλλώδη λαχανικά",
+          "metric" : "60 γραμμάρια ωμά φυλλώδη λαχανικά"
         },
         {
-          "imperial" : "½ cup raw or cooked nonleafy vegetables",
-          "metric" : "50 g raw or cooked nonleafy vegetables"
+          "imperial" : "½ φλιτζάνι ωμά ή μαγειρεμένα μη φυλλώδη λαχανικά",
+          "metric" : "50 γραμμάρια ωμά ή μαγειρεμένα μη φυλλώδη λαχανικά"
         },
         {
-          "imperial" : "½ cup vegetable juice",
-          "metric" : "125 ml vegetable juice"
+          "imperial" : "½ φλιτζάνι χυμό λαχανικών",
+          "metric" : "125 ml χυμό λαχανικών"
         },
         {
-          "imperial" : "¼ cup dried mushrooms",
-          "metric" : "7 g dried mushrooms"
+          "imperial" : "¼ φλιτζάνι αποξηραμένα μανιτάρια",
+          "metric" : "7 γραμμάρια αποξηραμένα μανιτάρια"
         }
       ],
-      "topic" : "",
+      "topic" : "topics/vegetables",
       "varieties" : [
         {
-          "text" : "Artichokes",
+          "text" : "Αγκινάρες",
           "topic" : "topics/artichokes"
         },
         {
-          "text" : "Asparagus",
+          "text" : "Σπαράγγια",
           "topic" : "topics/asparagus"
         },
         {
-          "text" : "Beets",
+          "text" : "Παντζάρια",
           "topic" : "topics/beets"
         },
         {
-          "text" : "Bell peppers",
+          "text" : "Πιπεριές",
           "topic" : "topics/bell-peppers"
         },
         {
-          "text" : "Carrots",
+          "text" : "Καρότα",
           "topic" : "topics/carrots"
         },
         {
-          "text" : "Corn",
+          "text" : "Καλαμπόκι",
           "topic" : "topics/corn"
         },
         {
-          "text" : "Garlic",
+          "text" : "Σκόρδο",
           "topic" : "topics/garlic"
         },
         {
-          "text" : "Mushrooms (button, oyster, portobello, and shiitake)",
+          "text" : "Μανιτάρια (κουμπί, στρείδι, πόρτομπέλο, και σιτάκε)",
           "topic" : "topics/mushrooms"
         },
         {
-          "text" : "Okra",
+          "text" : "Μπάμιες",
           "topic" : "topics/okra"
         },
         {
-          "text" : "Onions",
+          "text" : "Κρεμμύδια",
           "topic" : "topics/onions"
         },
         {
-          "text" : "Purple potatoes",
+          "text" : "Μωβ πατάτες",
           "topic" : "topics/potatoes"
         },
         {
-          "text" : "Pumpkin",
+          "text" : "Κολοκύθα",
           "topic" : "topics/pumpkin"
         },
         {
-          "text" : "Sea vegetables (arame, dulse, and nori)",
+          "text" : "Φύκια (arame, κόκκινο φύκι, και Νόρι)",
           "topic" : "topics/sea-vegetables"
         },
         {
-          "text" : "Snap peas",
+          "text" : "Αρακάς",
           "topic" : ""
         },
         {
-          "text" : "Squash (delicata, summer, and spaghetti squash varieties)",
+          "text" : "Κολοκύθα (delicata, καλοκαιρινή, και ποικιλίες μακαρονιών κολοκύθας)",
           "topic" : "topics/squash"
         },
         {
-          "text" : "Sweet potatoes/yams",
+          "text" : "Γλυκοπατάτες",
           "topic" : "topics/sweet-potatoes"
         },
         {
-          "text" : "Tomatoes",
+          "text" : "Ντομάτες",
           "topic" : "topics/tomatoes"
         },
         {
-          "text" : "Zucchini",
+          "text" : "Κολοκυθάκι",
           "topic" : "topics/zucchini"
         }
       ]
     },
     "dozeWholeGrains" : {
-      "heading" : "Whole Grains",
+      "heading" : "Ολικής Αλέσεως",
       "servings" : [
         {
-          "imperial" : "½ cup hot cereal or cooked grains, pasta, or corn kernels",
-          "metric" : "100 g hot cereal or cooked grains, pasta, or corn kernels"
+          "imperial" : "½ φλιτζάνι ζεστά δημητριακά ή μαγειρεμένα, ζυμαρικά, ή πυρήνες καλαμποκιού",
+          "metric" : "100 γραμμάρια ζεστά δημητριακά ή μαγειρεμένα, ζυμαρικά, ή πυρήνες καλαμποκιού"
         },
         {
-          "imperial" : "1 cup cold cereal",
-          "metric" : "50 g cold cereal"
+          "imperial" : "1 φλιτζάνι κρύα δημητριακά",
+          "metric" : "50 γραμμάρια κρύα δημητριακά"
         },
         {
-          "imperial" : "1 tortilla or slice of bread",
-          "metric" : "1 tortilla or slice of bread"
+          "imperial" : "1 τορτίγια ή φέτα ψωμί",
+          "metric" : "1 τορτίγια ή φέτα ψωμί"
         },
         {
-          "imperial" : "½ a bagel or English muffin",
-          "metric" : "½ a bagel or English muffin"
+          "imperial" : "½ κουλούρι ή αγγλικό μάφιν",
+          "metric" : "½ κουλούρι ή αγγλικό μάφιν"
         },
         {
-          "imperial" : "3 cups popped popcorn",
-          "metric" : "30 g popped popcorn"
+          "imperial" : "3 φλιτζάνια ποπ κορν",
+          "metric" : "30 γραμμάρια ποπ κορν"
         }
       ],
       "topic" : "topics/grains",
       "varieties" : [
         {
-          "text" : "Barley",
+          "text" : "Κριθάρι",
           "topic" : "topics/barley"
         },
         {
-          "text" : "Buckwheat",
+          "text" : "Φαγόπυρο",
           "topic" : "topics/buckwheat"
         },
         {
-          "text" : "Millet",
+          "text" : "Κεχρί",
           "topic" : "topics/millet"
         },
         {
-          "text" : "Oats",
+          "text" : "Βρώμη",
           "topic" : "topics/oats"
         },
         {
-          "text" : "Popcorn",
+          "text" : "Ποπ κορν",
           "topic" : "topics/popcorn"
         },
         {
-          "text" : "Quinoa",
+          "text" : "Κινόα",
           "topic" : "topics/quinoa"
         },
         {
-          "text" : "Rye",
+          "text" : "Σίκαλη",
           "topic" : "topics/rye"
         },
         {
-          "text" : "Teff",
-          "topic" : "topics/teff"
+          "text" : "Τεφ",
+          "topic" : ""
         },
         {
-          "text" : "Whole-wheat pasta",
+          "text" : "Ζυμαρικά ολικής αλέσεως",
           "topic" : "topics/pasta"
         }
       ]
     },
     "otherVitaminB12" : {
-      "heading" : "Vitamin B12",
+      "heading" : "Βιταμίνη B12",
       "servings" : [
 
       ],

@@ -1,77 +1,44 @@
 /* DailyDozen Localizable.strings (el) */
 /* Copyright © 2021 Nutritionfacts.org. All rights reserved. */
 
-/* Info Menu About: line 0 */
-"info_app_about_welcome" = "Welcome to my Daily Dozen!";
-
-/* Info Menu About: line 1 */
-"info_app_about_overview" = "Use this app on a daily basis to keep track of the foods and advice I recommend for optimal health and longevity in my books How Not to Die and How Not to Diet.";
-
-/* Info Menu About: line 2 */
-"info_app_about_app_name" = "Daily Dozen";
-
-/* Info Menu About: line 3 */
-"info_app_about_version" = "version 3.2.11";
-
-/* Info Menu About: line 4 */
-"info_app_about_created_by" = "This app was created by: NutritionFacts.org, Christi Richards, Konstantin Khokhlov, and Marc Campbell";
-
-/* Info Menu About: line 5 */
-"info_app_about_oss_credits" = "The following open source libraries are used: RealmSwift, Charts, FSCalendar, SimpleAnimation, ActiveLabel.";
-
 /* Date Button Title: ‘Back to today’ */
-"dateBackButtonTitle" = "Back to today";
+"dateBackButtonTitle" = "Επιστροφή στο σήμερα";
 
 /* Date Button Title: ‘Today’ */
 "dateButtonTitle.today" = "Today";
 
-/* heading for daily data entry item */
-"dozeBeans.heading" = "Beans";
+/* Doze Detail View subheading: ‘Serving Sizes’ */
+"doze_detail_section_sizes" = "Μερίδα";
 
-/* https://nutritionfacts.org/topics/beans */
-"dozeBeans.topic" = "topics/beans";
+/* Doze Detail View subheading: ‘Types’ */
+"doze_detail_section_types" = "Τύποι";
 
-/* heading for daily data entry item */
-"dozeBerries.heading" = "Berries";
-
-/* https://nutritionfacts.org/topics/berries */
-"dozeBerries.topic" = "topics/berries";
+/* Doze Entry View heading: ‘Servings’ */
+"doze_entry_header" = "Μερίδες";
 
 /* heading for daily data entry item */
-"dozeBeverages.heading" = "Beverages";
-
-/* https://nutritionfacts.org/topics/beverages */
-"dozeBeverages.topic" = "topics/beverages";
+"dozeBeans.heading" = "Όσπρια";
 
 /* heading for daily data entry item */
-"dozeExercise.heading" = "Exercise";
-
-/* https://nutritionfacts.org/topics/exercise */
-"dozeExercise.topic" = "topics/exercise";
+"dozeBerries.heading" = "Μούρα";
 
 /* heading for daily data entry item */
-"dozeFlaxseeds.heading" = "Flaxseeds";
-
-/* https://nutritionfacts.org/topics/flax-seeds */
-"dozeFlaxseeds.topic" = "topics/flax-seeds";
+"dozeBeverages.heading" = "Ροφήματα";
 
 /* heading for daily data entry item */
-"dozeFruitsOther.heading" = "Other Fruits";
-
-/* https://nutritionfacts.org/topics/fruit */
-"dozeFruitsOther.topic" = "topics/fruit";
+"dozeExercise.heading" = "Γυμναστική";
 
 /* heading for daily data entry item */
-"dozeGreens.heading" = "Greens";
-
-/* https://nutritionfacts.org/topics/greens */
-"dozeGreens.topic" = "topics/greens";
+"dozeFlaxseeds.heading" = "Λιναρόσπορος";
 
 /* heading for daily data entry item */
-"dozeNuts.heading" = "Nuts and Seeds";
+"dozeFruitsOther.heading" = "Άλλα Φρούτα";
 
-/* https://nutritionfacts.org/topics/nuts */
-"dozeNuts.topic" = "topics/nuts";
+/* heading for daily data entry item */
+"dozeGreens.heading" = "Πράσινα Φυλλώδη";
+
+/* heading for daily data entry item */
+"dozeNuts.heading" = "Ξηροί Καρποί";
 
 /* Daily Dozen supplement info alert: dismissal button text */
 "dozeOtherInfo.confirm" = "OK";
@@ -86,40 +53,31 @@
 "dozeOtherInfo.title" = "Supplements";
 
 /* heading for daily data entry item */
-"dozeSpices.heading" = "Herbs and Spices";
-
-/* https://nutritionfacts.org/topics/spices */
-"dozeSpices.topic" = "topics/spices";
+"dozeSpices.heading" = "Μπαχαρικά";
 
 /* heading for daily data entry item */
-"dozeVegetablesCruciferous.heading" = "Cruciferous Vegetables";
-
-/* https://nutritionfacts.org/topics/cruciferous-vegetables */
-"dozeVegetablesCruciferous.topic" = "topics/cruciferous-vegetables";
+"dozeVegetablesCruciferous.heading" = "Σταυρανθή Λαχανικά";
 
 /* heading for daily data entry item */
-"dozeVegetablesOther.heading" = "Other Vegetables";
-
-/* https://nutritionfacts.org/topics/vegetables */
-"dozeVegetablesOther.topic" = "topics/vegetables";
+"dozeVegetablesOther.heading" = "Άλλα Λαχανικά";
 
 /* heading for daily data entry item */
-"dozeWholeGrains.heading" = "Whole Grains";
+"dozeWholeGrains.heading" = "Ολικής Αλέσεως";
 
-/* https://nutritionfacts.org/topics/grains */
-"dozeWholeGrains.topic" = "topics/grains";
+/* History View: calendar scale control */
+"history_scale_choice_day" = "Ημέρα";
 
-/* Doze Detail View subheading: ‘Serving Sizes’ */
-"doze_detail_section_sizes" = "Serving Sizes";
+/* History View: calendar scale control */
+"history_scale_choice_month" = "Μήνας";
 
-/* Doze Detail View subheading: ‘Types’ */
-"doze_detail_section_types" = "Types";
+/* History View: calendar scale control */
+"history_scale_choice_year" = "Έτος";
 
-/* Doze Entry View heading: ‘Servings’ */
-"doze_entry_header" = "Servings";
+/* History View: scale text */
+"history_scale_label" = "Χρονοδιάγραμμα";
 
 /*  */
-"historyRecord.movingAverage" = "Moving Average";
+"historyRecord.movingAverage" = "Κινητός Μέσος Όρος";
 
 /* History View */
 "historyRecordDoze.heading" = "Servings History";
@@ -131,16 +89,16 @@
 "historyRecordTweak.heading" = "Tweaks History";
 
 /* History View */
-"historyRecordTweak.legend" = "Tweaks";
+"historyRecordTweak.legend" = "Βελτιώσεις";
 
 /* History View */
-"historyRecordWeight.heading" = "Weight History";
+"historyRecordWeight.heading" = "Βάρος Ιστορία";
 
 /* History View */
-"historyRecordWeight.legendEvening" = "Evening";
+"historyRecordWeight.legendEvening" = "Απόγευμα";
 
 /* History View */
-"historyRecordWeight.legendMorning" = "Morning";
+"historyRecordWeight.legendMorning" = "Πρωί";
 
 /* History View */
 "historyRecordWeight.titleImperial" = "Weight (lbs)";
@@ -148,35 +106,29 @@
 /* History View */
 "historyRecordWeight.titleMetric" = "Weight (kg)";
 
-/* History View: calendar scale control */
-"history_scale_choice_day" = "Day";
+/* Info About Menu Item */
+"info_app_about" = "Σχετικά";
 
-/* History View: calendar scale control */
-"history_scale_choice_month" = "Month";
-
-/* History View: calendar scale control */
-"history_scale_choice_year" = "Year";
-
-/* History View: scale text */
-"history_scale_label" = "Time Scale";
-
-/* Info About View */
-"info_app_about_heading" = "About this app";
-
-/* Info About View */
-"info_app_about" = "About";
-
-/* Info About View Application Name: ‘Daily Dozen’ */
+/* Info About View: Application Name ‘Daily Dozen’ */
 "info_app_about_app_name" = "Daily Dozen";
 
-/* Info About View */
-"info_app_about_overview" = "Use this app on a daily basis to keep track of the foods and advice I recommend for optimal health and longevity in my books How Not to Die and How Not to Diet.";
-
-/* Info About View Application release version */
-"info_app_about_version" = "version 3.2.11";
+/* Info About View: Created By */
+"info_app_about_created_by" = "This app was created by: NutritionFacts.org, Christi Richards, Konstantin Khokhlov, and Marc Campbell";
 
 /* Info About View */
-"info_app_about_welcome" = "Welcome to my Daily Dozen!";
+"info_app_about_heading" = "Σχετικά με την εφαρμογή";
+
+/* Info About View: Open Source Credits */
+"info_app_about_oss_credits" = "The following open source libraries are used: RealmSwift, Charts, FSCalendar, SimpleAnimation, ActiveLabel.";
+
+/* Info About View: Overview Text */
+"info_app_about_overview" = "Χρησιμοποιήστε αυτή την εφαρμογή σε καθημερινή βάση για να παρακολουθείτε τα τρόφιμα που συστήνω για τη βέλτιστη υγεία και μακροζωία στο βιβλίο μου How Not to Die.";
+
+/* Info About View: Application release version */
+"info_app_about_version" = "version 3.2.21";
+
+/* Info About View: Welcome */
+"info_app_about_welcome" = "Καλωσορίσατε στο Daily Dozen!";
 
 /* Info Menu: book title */
 "info_book_how_not_to_die" = "Book: How Not to Die";
@@ -191,25 +143,25 @@
 "info_webpage_daily_dozen_challenge" = "Daily Dozen Challenge";
 
 /* Info Menu */
-"info_webpage_donate" = "Donate";
+"info_webpage_donate" = "Δωρεά";
 
 /* Info Menu */
-"info_webpage_open_source" = "Open Source";
+"info_webpage_open_source" = "Ανοιχτός Κώδικας";
 
 /* Info Menu */
-"info_webpage_subscribe" = "Subscribe";
+"info_webpage_subscribe" = "Εγγραφή";
 
 /* Info Menu */
-"info_webpage_videos_latest" = "Latest Videos";
+"info_webpage_videos_latest" = "Τελευταία Βίντεο";
 
 /* Item History Legend: ‘All completed’ */
-"item_history_completed_all" = "All servings";
+"item_history_completed_all" = "Όλες οι μερίδες";
 
 /* Item History Legend: ‘Some completed’ */
-"item_history_completed_some" = "Some servings";
+"item_history_completed_some" = "Μερικές Μερίδες";
 
 /* Item History Heading */
-"item_history_heading" = "History";
+"item_history_heading" = "Ιστορικό";
 
 /* Main Navigation Tab Control: ‘Daily Dozen’ (proper noun) */
 "navtab.doze" = "Daily Dozen";
@@ -223,20 +175,11 @@
 /* Main Navigation Tab Control: ‘21 Tweaks’ (proper noun) */
 "navtab.tweaks" = "21 Tweaks";
 
-/* https://nutritionfacts.org/topics/omega-3-fatty-acids */
-"otherOmega3.topic" = "topics/omega-3-fatty-acids";
-
 /* heading for daily data entry item */
-"otherVitaminB12.heading" = "Vitamin B12";
-
-/* https://nutritionfacts.org/topics/vitamin-b12 */
-"otherVitaminB12.topic" = "topics/vitamin-b12";
-
-/* https://nutritionfacts.org/topics/vitamin-d-supplements */
-"otherVitaminD.topic" = "topics/vitamin-d-supplements";
+"otherVitaminB12.heading" = "Βιταμίνη B12";
 
 /* Alert notification text */
-"reminder.alert.text" = "Update your servings for today";
+"reminder.alert.text" = "Ενημερώστε τις μερίδες σας για σήμερα";
 
 /* Daily Reminder (alert title, settings section heading) */
 "reminder.heading" = "Daily Reminder";
@@ -245,13 +188,13 @@
 "reminder.settings.enable" = "Enable Reminders";
 
 /* Daily Reminder sound control heading */
-"reminder.settings.sound" = "Play Sound";
+"reminder.settings.sound" = "Αναπαραγωγή ήχου";
 
 /* Daily Reminder time control heading */
-"reminder.settings.time" = "Remind me at";
+"reminder.settings.time" = "Θύμισέ μου στις";
 
 /* Android notification `vibrate` */
-"reminder.settings.vibrate" = "Vibrate";
+"reminder.settings.vibrate" = "Δόνηση";
 
 /* ‘Off’ as in ‘On (enabled) or Off (disabled)’, Daily Reminder is not enabled */
 "reminder.state.off" = "Off";
@@ -260,13 +203,13 @@
 "reminder.state.on" = "On";
 
 /* First Launch Setting: button text */
-"setting_doze_only_btn" = "Daily Dozen\nOnly";
+"setting_doze_only_btn" = "Καθημερινή μόνο δωδεκάδα";
 
 /* Preference Settings View: selection button text */
 "setting_doze_only_choice" = "Daily Dozen Only";
 
 /* First Launch Setting: button text */
-"setting_doze_tweak_btn" = "Daily Dozen +\n21 Tweaks";
+"setting_doze_tweak_btn" = "Ημερήσια Dozen 21 Tweaks";
 
 /* Preference Settings View: selection button text */
 "setting_doze_tweak_choice" = "Daily Dozen + 21 Tweaks";
@@ -275,10 +218,10 @@
 "setting_doze_tweak_footer" = "For health alone, use “Daily Dozen Only”. For health and weight loss use “Daily Dozen + 21 Tweaks”.";
 
 /* First Launch Setting: brief description above ‘Daily Dozen Only’ button. */
-"setting_health_alone_txt" = "For Health Alone";
+"setting_health_alone_txt" = "Για την υγεία μόνο";
 
 /* First Launch Setting: brief description above ‘Daily Dozen + 21 Tweaks’ button. */
-"setting_health_weight_txt" = "For Health and Weight Loss";
+"setting_health_weight_txt" = "Για την υγεία και την απώλεια βάρους";
 
 /* Preference Settings View: tweaks visibilty subsection heading */
 "setting_tweak_header" = "21 Tweak Visibility";
@@ -302,70 +245,7 @@
 "setting_util_advanced" = "Advanced Utilities";
 
 /* ‘Streak’ count. Synonym: ‘Progress‘. Formatted number ‘%d’ for consecutive days completed. Place translated text for ‘days’ on the right or left of ‘%d’ based on language directionality. */
-"streakDaysFormat" = "%d days";
-
-/* heading for daily data entry item */
-"tweakCompleteIntentions.heading" = "Complete Your Implementation Intentions";
-
-/* heading for daily data entry item */
-"tweakDailyBlackCumin.heading" = "Black Cumin (¼ tsp)";
-
-/* heading for daily data entry item */
-"tweakDailyCumin.heading" = "Cumin (½ tsp with lunch and dinner)";
-
-/* heading for daily data entry item */
-"tweakDailyDeflourDiet.heading" = "Deflour Your Diet";
-
-/* heading for daily data entry item */
-"tweakDailyFrontLoad.heading" = "Front-Load Your Calories";
-
-/* heading for daily data entry item */
-"tweakDailyGarlic.heading" = "Garlic Powder (¼ tsp)";
-
-/* heading for daily data entry item */
-"tweakDailyGinger.heading" = "Ground Ginger (1 tsp) or Cayenne Pepper (½ tsp)";
-
-/* heading for daily data entry item */
-"tweakDailyGreenTea.heading" = "Green Tea (3 cups)";
-
-/* heading for daily data entry item */
-"tweakDailyHydrate.heading" = "Stay Hydrated";
-
-/* heading for daily data entry item */
-"tweakDailyNutriYeast.heading" = "Nutritional Yeast (2 tsp)";
-
-/* heading for daily data entry item */
-"tweakDailyTimeRestrict.heading" = "Time-Restrict Your Eating";
-
-/* heading for daily data entry item */
-"tweakExerciseTiming.heading" = "Optimize Exercise Timing";
-
-/* heading for daily data entry item */
-"tweakMeal20Minutes.heading" = "Follow the Twenty-Minute Rule";
-
-/* heading for daily data entry item */
-"tweakMealNegCal.heading" = "Preload with “Negative Calorie” Foods";
-
-/* heading for daily data entry item */
-"tweakMealUndistracted.heading" = "Enjoy Undistracted Meals";
-
-/* heading for daily data entry item */
-"tweakMealVinegar.heading" = "Incorporate Vinegar (2 tsp with each meal)";
-
-/* heading for daily data entry item */
-"tweakMealWater.heading" = "Preload with Water";
-
-/* heading for daily data entry item */
-"tweakNightlyFast.heading" = "Fast After 7:00 pm";
-
-/* heading for daily data entry item */
-"tweakNightlySleep.heading" = "Get Sufficient Sleep";
-
-/* heading for daily data entry item */
-"tweakNightlyTrendelenbrug.heading" = "Experiment with Mild Trendelenburg";
-
-/* heading for daily data entry item */
-"tweakWeightTwice.heading" = "Weigh Yourself Twice a Day";
+"streakDaysFormat" = "%d ημέρες";
 
 /* Tweaks Detail view section heading */
 "tweak_detail_section_activity" = "Activity";
@@ -374,16 +254,79 @@
 "tweak_detail_section_description" = "Description";
 
 /* Tweaks daily entry header */
-"tweak_entry_header" = "21 Tweaks";
+"tweak_entry_header" = "21 Τσίμπημα";
 
-/* Units toggle button text: imperial measurement system */
-"unitToggle.imperial" = "imperial";
+/* heading for daily data entry item */
+"tweakCompleteIntentions.heading" = "Συμπληρώστε τις Προθέσεις σας εφαρμογής";
 
-/* Units toggle button text: metric measurement system */
-"unitToggle.metric" = "metric";
+/* heading for daily data entry item */
+"tweakDailyBlackCumin.heading" = "Μαύρο Κύμινο (¼ κουταλάκι κλπ)";
+
+/* heading for daily data entry item */
+"tweakDailyCumin.heading" = "Κύμινο (½ κουταλάκι με μεσημεριανό γεύμα και δείπνο)";
+
+/* heading for daily data entry item */
+"tweakDailyDeflourDiet.heading" = "Ξεχώρα τη διατροφή σας";
+
+/* heading for daily data entry item */
+"tweakDailyFrontLoad.heading" = "Μπροστά-Φορτώστε τις θερμίδες σας";
+
+/* heading for daily data entry item */
+"tweakDailyGarlic.heading" = "Σκόνη σκόρδου (¼ κουταλάκι σούπας)";
+
+/* heading for daily data entry item */
+"tweakDailyGinger.heading" = "Ground Ginger (1 κουταλάκι του γλυκού) ή πιπέρι Cayenne (½ κουταλάκι του γλυκού)";
+
+/* heading for daily data entry item */
+"tweakDailyGreenTea.heading" = "Πράσινο Τσάι (3 φλιτζάνια)";
+
+/* heading for daily data entry item */
+"tweakDailyHydrate.heading" = "Μείνετε ενυδατωμένοι";
+
+/* heading for daily data entry item */
+"tweakDailyNutriYeast.heading" = "Διατροφική ζύμη (2 κουταλιές της σούπας)";
+
+/* heading for daily data entry item */
+"tweakDailyTimeRestrict.heading" = "Χρόνος-Περιορισμός της κατανάλωσης";
+
+/* heading for daily data entry item */
+"tweakExerciseTiming.heading" = "Βελτιστοποιήστε το χρονικό διάστημα άσκησης";
+
+/* heading for daily data entry item */
+"tweakMeal20Minutes.heading" = "Ακολουθήστε τον κανόνα είκοσι λεπτών";
+
+/* heading for daily data entry item */
+"tweakMealNegCal.heading" = "Προεφοδιασμός με τρόφιμα με αρνητική θερμίδα";
+
+/* heading for daily data entry item */
+"tweakMealUndistracted.heading" = "Απολαύστε ανεπιθύμητα γεύματα";
+
+/* heading for daily data entry item */
+"tweakMealVinegar.heading" = "Ενσωματώστε ξίδι (2 κουταλιές της σούπας με κάθε γεύμα)";
+
+/* heading for daily data entry item */
+"tweakMealWater.heading" = "Προφόρτιση με νερό";
+
+/* heading for daily data entry item */
+"tweakNightlyFast.heading" = "Γρήγορα μετά τις 7:00 μ.μ.";
+
+/* heading for daily data entry item */
+"tweakNightlySleep.heading" = "Αποκτήστε επαρκή ύπνο";
+
+/* heading for daily data entry item */
+"tweakNightlyTrendelenbrug.heading" = "Πειραματιστείτε με το Mild Trendelenburg";
+
+/* heading for daily data entry item */
+"tweakWeightTwice.heading" = "Ζυγίστε τον εαυτό σας δύο φορές την ημέρα";
 
 /*  */
-"units_label" = "Units";
+"units_label" = "Μονάδες";
+
+/* Units toggle button text: imperial measurement system */
+"unitToggle.imperial" = "Αγγλοσαξονικό";
+
+/* Units toggle button text: metric measurement system */
+"unitToggle.metric" = "Μετρικό";
 
 /* URL path */
 "urlSegment.base" = "https://nutritionfacts.org/";
@@ -419,10 +362,7 @@
 "urlSegmentInfoMenu.videos" = "videos";
 
 /* Label for hyperlink to nutritionfacts.org video topics */
-"videos.link.label" = "Videos";
-
-/* Weight Daily Entry: heading */
-"weightEntry.heading" = "Weight";
+"videos.link.label" = "Βίντεο";
 
 /* Weight Daily Entry: clear button which deletes values */
 "weight_entry_clear" = "Clear";
@@ -444,5 +384,8 @@
 
 /* Weight Daily Entry: edit button to change values */
 "weight_history_edit_data" = "Edit Data";
+
+/* Weight Daily Entry: heading */
+"weightEntry.heading" = "Βάρος";
 
 /* file end */

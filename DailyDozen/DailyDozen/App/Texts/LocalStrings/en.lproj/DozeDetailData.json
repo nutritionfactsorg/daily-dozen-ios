@@ -492,7 +492,7 @@
           "metric" : "40 g dried fruit"
         }
       ],
-      "topic" : "",
+      "topic" : "topics/fruit",
       "varieties" : [
         {
           "text" : "Apples",
@@ -892,7 +892,7 @@
           "metric" : "1 tablespoon horseradish"
         }
       ],
-      "topic" : "",
+      "topic" : "topics/cruciferous-vegetables",
       "varieties" : [
         {
           "text" : "Arugula",
@@ -972,7 +972,7 @@
           "metric" : "7 g dried mushrooms"
         }
       ],
-      "topic" : "",
+      "topic" : "topics/vegetables",
       "varieties" : [
         {
           "text" : "Artichokes",

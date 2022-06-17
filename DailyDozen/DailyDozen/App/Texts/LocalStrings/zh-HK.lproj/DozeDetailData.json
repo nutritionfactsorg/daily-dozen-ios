@@ -35,7 +35,7 @@
           "topic" : ""
         },
         {
-          "text" : "Chickpeas/Garbanzo Beans",
+          "text" : "Chickpeas",
           "topic" : "topics/chickpeas"
         },
         {
@@ -192,11 +192,11 @@
         },
         {
           "text" : "Jasmine tea",
-          "topic" : "topics/jasmine-tea"
+          "topic" : ""
         },
         {
           "text" : "Lemon balm tea",
-          "topic" : ""
+          "topic" : "topics/lemon-balm"
         },
         {
           "text" : "Matcha tea",
@@ -492,14 +492,14 @@
           "metric" : "40 g dried fruit"
         }
       ],
-      "topic" : "",
+      "topic" : "topics/fruit",
       "varieties" : [
         {
           "text" : "Apples",
           "topic" : "topics/apples"
         },
         {
-          "text" : "Apricots",
+          "text" : "Dried apricots",
           "topic" : "topics/apricots"
         },
         {
@@ -523,8 +523,8 @@
           "topic" : "topics/dates"
         },
         {
-          "text" : "Figs",
-          "topic" : "topics/figs"
+          "text" : "Dried figs",
+          "topic" : ""
         },
         {
           "text" : "Grapefruit",
@@ -564,7 +564,7 @@
         },
         {
           "text" : "Papaya",
-          "topic" : "topics/papaya"
+          "topic" : ""
         },
         {
           "text" : "Passion fruit",
@@ -580,7 +580,7 @@
         },
         {
           "text" : "Pineapple",
-          "topic" : "topics/pineapples"
+          "topic" : ""
         },
         {
           "text" : "Plums (especially black plums)",
@@ -640,7 +640,7 @@
         },
         {
           "text" : "Mesclun mix (assorted young salad greens)",
-          "topic" : "topics/mesclun-mix"
+          "topic" : ""
         },
         {
           "text" : "Mustard greens",
@@ -764,7 +764,7 @@
         },
         {
           "text" : "Cardamom",
-          "topic" : "topics/cardamom"
+          "topic" : ""
         },
         {
           "text" : "Chili powder",
@@ -784,7 +784,7 @@
         },
         {
           "text" : "Coriander",
-          "topic" : "topics/coriander"
+          "topic" : ""
         },
         {
           "text" : "Cumin",
@@ -816,7 +816,7 @@
         },
         {
           "text" : "Lemongrass",
-          "topic" : "topics/lemongrass"
+          "topic" : ""
         },
         {
           "text" : "Marjoram",
@@ -864,7 +864,7 @@
         },
         {
           "text" : "Thyme",
-          "topic" : "topics/thyme"
+          "topic" : ""
         },
         {
           "text" : "Turmeric",
@@ -892,7 +892,7 @@
           "metric" : "1 tablespoon horseradish"
         }
       ],
-      "topic" : "",
+      "topic" : "topics/cruciferous-vegetables",
       "varieties" : [
         {
           "text" : "Arugula",
@@ -932,7 +932,7 @@
         },
         {
           "text" : "Kohlrabi (green and purple)",
-          "topic" : "topics/kohlrabi"
+          "topic" : ""
         },
         {
           "text" : "Mustard greens",
@@ -940,7 +940,7 @@
         },
         {
           "text" : "Radishes",
-          "topic" : "topics/radishes"
+          "topic" : ""
         },
         {
           "text" : "Turnip greens",
@@ -972,7 +972,7 @@
           "metric" : "7 g dried mushrooms"
         }
       ],
-      "topic" : "",
+      "topic" : "topics/vegetables",
       "varieties" : [
         {
           "text" : "Artichokes",
@@ -1104,7 +1104,7 @@
         },
         {
           "text" : "Teff",
-          "topic" : "topics/teff"
+          "topic" : ""
         },
         {
           "text" : "Whole-wheat pasta",
