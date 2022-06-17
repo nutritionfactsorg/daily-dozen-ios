@@ -492,7 +492,7 @@
           "metric" : "40 גרם פירות יבשים"
         }
       ],
-      "topic" : "",
+      "topic" : "topics/fruit",
       "varieties" : [
         {
           "text" : "תפוחים",
@@ -892,7 +892,7 @@
           "metric" : "כף חזרת"
         }
       ],
-      "topic" : "",
+      "topic" : "topics/cruciferous-vegetables",
       "varieties" : [
         {
           "text" : "אורוגולה",
@@ -972,7 +972,7 @@
           "metric" : "7 גרם פטריות מיובשות"
         }
       ],
-      "topic" : "",
+      "topic" : "topics/vegetables",
       "varieties" : [
         {
           "text" : "ארטישוקים",
@@ -1113,7 +1113,7 @@
       ]
     },
     "otherVitaminB12" : {
-      "heading" : "Vitamin B12",
+      "heading" : "ויטמין B12",
       "servings" : [
 
       ],

@@ -7,53 +7,38 @@
 /* Date Button Title: ‘Today’ */
 "dateButtonTitle.today" = "Dzisiaj";
 
+/* Doze Detail View subheading: ‘Serving Sizes’ */
+"doze_detail_section_sizes" = "Rozmiar porcji";
+
+/* Doze Detail View subheading: ‘Types’ */
+"doze_detail_section_types" = "Rodzaje";
+
+/* Doze Entry View heading: ‘Servings’ */
+"doze_entry_header" = "Porcje";
+
 /* heading for daily data entry item */
 "dozeBeans.heading" = "Fasola";
-
-/* https://nutritionfacts.org/topics/beans */
-"dozeBeans.topic" = "topics/beans";
 
 /* heading for daily data entry item */
 "dozeBerries.heading" = "Owoce Jagodowe";
 
-/* https://nutritionfacts.org/topics/berries */
-"dozeBerries.topic" = "topics/berries";
-
 /* heading for daily data entry item */
 "dozeBeverages.heading" = "Napoje";
-
-/* https://nutritionfacts.org/topics/beverages */
-"dozeBeverages.topic" = "topics/beverages";
 
 /* heading for daily data entry item */
 "dozeExercise.heading" = "Ćwiczenia";
 
-/* https://nutritionfacts.org/topics/exercise */
-"dozeExercise.topic" = "topics/exercise";
-
 /* heading for daily data entry item */
 "dozeFlaxseeds.heading" = "Siemię lniane";
-
-/* https://nutritionfacts.org/topics/flax-seeds */
-"dozeFlaxseeds.topic" = "topics/flax-seeds";
 
 /* heading for daily data entry item */
 "dozeFruitsOther.heading" = "Inne owoce";
 
-/* https://nutritionfacts.org/topics/fruit */
-"dozeFruitsOther.topic" = "topics/fruit";
-
 /* heading for daily data entry item */
 "dozeGreens.heading" = "Zielenina";
 
-/* https://nutritionfacts.org/topics/greens */
-"dozeGreens.topic" = "topics/greens";
-
 /* heading for daily data entry item */
 "dozeNuts.heading" = "Orzechy i nasiona";
-
-/* https://nutritionfacts.org/topics/nuts */
-"dozeNuts.topic" = "topics/nuts";
 
 /* Daily Dozen supplement info alert: dismissal button text */
 "dozeOtherInfo.confirm" = "OK";
@@ -70,35 +55,26 @@
 /* heading for daily data entry item */
 "dozeSpices.heading" = "Zioła i przyprawy";
 
-/* https://nutritionfacts.org/topics/spices */
-"dozeSpices.topic" = "topics/spices";
-
 /* heading for daily data entry item */
 "dozeVegetablesCruciferous.heading" = "Warzywa kapustne";
-
-/* https://nutritionfacts.org/topics/cruciferous-vegetables */
-"dozeVegetablesCruciferous.topic" = "topics/cruciferous-vegetables";
 
 /* heading for daily data entry item */
 "dozeVegetablesOther.heading" = "Inne warzywa";
 
-/* https://nutritionfacts.org/topics/vegetables */
-"dozeVegetablesOther.topic" = "topics/vegetables";
-
 /* heading for daily data entry item */
 "dozeWholeGrains.heading" = "Pełnoziarniste zboża";
 
-/* https://nutritionfacts.org/topics/grains */
-"dozeWholeGrains.topic" = "topics/grains";
+/* History View: calendar scale control */
+"history_scale_choice_day" = "Dzień";
 
-/* Doze Detail View subheading: ‘Serving Sizes’ */
-"doze_detail_section_sizes" = "Rozmiar porcji";
+/* History View: calendar scale control */
+"history_scale_choice_month" = "Miesiąc";
 
-/* Doze Detail View subheading: ‘Types’ */
-"doze_detail_section_types" = "Rodzaje";
+/* History View: calendar scale control */
+"history_scale_choice_year" = "Rok";
 
-/* Doze Entry View heading: ‘Servings’ */
-"doze_entry_header" = "Porcje";
+/* History View: scale text */
+"history_scale_label" = "Okres czasu";
 
 /* History View */
 "historyRecordDoze.heading" = "Historia porcji";
@@ -127,21 +103,6 @@
 /* History View */
 "historyRecordWeight.titleMetric" = "Waga (kg)";
 
-/* History View: calendar scale control */
-"history_scale_choice_day" = "Dzień";
-
-/* History View: calendar scale control */
-"history_scale_choice_month" = "Miesiąc";
-
-/* History View: calendar scale control */
-"history_scale_choice_year" = "Rok";
-
-/* History View: scale text */
-"history_scale_label" = "Okres czasu";
-
-/* Info About View */
-"info_app_about_heading" = "O aplikacji";
-
 /* Info About Menu Item */
 "info_app_about" = "O aplikacji";
 
@@ -150,6 +111,9 @@
 
 /* Info About View: Created By */
 "info_app_about_created_by" = "Ta aplikacja została stworzona przez: NutritionFacts.org, Christi Richards, Konstantin Khokhlov i Marc Campbell";
+
+/* Info About View */
+"info_app_about_heading" = "O aplikacji";
 
 /* Info About View: Open Source Credits */
 "info_app_about_oss_credits" = "Używane są następujące biblioteki open source: RealmSwift, Charts, FSCalendar, SimpleAnimation i ActiveLabel.";
@@ -208,17 +172,8 @@
 /* Main Navigation Tab Control: ‘21 Tweaks’ (proper noun) */
 "navtab.tweaks" = "21 Adaptacji";
 
-/* https://nutritionfacts.org/topics/omega-3-fatty-acids */
-"otherOmega3.topic" = "topics/omega-3-fatty-acids";
-
 /* heading for daily data entry item */
 "otherVitaminB12.heading" = "Witamina B12";
-
-/* https://nutritionfacts.org/topics/vitamin-b12 */
-"otherVitaminB12.topic" = "topics/vitamin-b12";
-
-/* https://nutritionfacts.org/topics/vitamin-d-supplements */
-"otherVitaminD.topic" = "topics/vitamin-d-supplements";
 
 /* Alert notification text */
 "reminder.alert.text" = "Zaktualizuj swoje dzisiejsze porcje";
@@ -289,6 +244,15 @@
 /* ‘Streak’ count. Synonym: ‘Progress‘. Formatted number ‘%d’ for consecutive days completed. Place translated text for ‘days’ on the right or left of ‘%d’ based on language directionality. */
 "streakDaysFormat" = "%d dni";
 
+/* Tweaks Detail view section heading */
+"tweak_detail_section_activity" = "Aktywność";
+
+/* Tweaks Detail view section heading */
+"tweak_detail_section_description" = "Opis";
+
+/* Tweaks daily entry header */
+"tweak_entry_header" = "21 Adaptacji";
+
 /* heading for daily data entry item */
 "tweakCompleteIntentions.heading" = "Wypełnij Swoje Intencje";
 
@@ -352,23 +316,14 @@
 /* heading for daily data entry item */
 "tweakWeightTwice.heading" = "Waż się dwa razy dziennie";
 
-/* Tweaks Detail view section heading */
-"tweak_detail_section_activity" = "Aktywność";
-
-/* Tweaks Detail view section heading */
-"tweak_detail_section_description" = "Opis";
-
-/* Tweaks daily entry header */
-"tweak_entry_header" = "21 Adaptacji";
+/*  */
+"units_label" = "Jednostki:";
 
 /* Units toggle button text: imperial measurement system */
 "unitToggle.imperial" = "imperialne";
 
 /* Units toggle button text: metric measurement system */
 "unitToggle.metric" = "metryczne";
-
-/*  */
-"units_label" = "Jednostki:";
 
 /* URL path */
 "urlSegment.base" = "https://nutritionfacts.org/";
@@ -406,9 +361,6 @@
 /* Label for hyperlink to nutritionfacts.org video topics */
 "videos.link.label" = "Filmy";
 
-/* Weight Daily Entry: heading */
-"weightEntry.heading" = "Waga";
-
 /* Weight Daily Entry: clear button which deletes values */
 "weight_entry_clear" = "Wyczyść";
 
@@ -429,5 +381,8 @@
 
 /* Weight Daily Entry: edit button to change values */
 "weight_history_edit_data" = "Edytuj dane";
+
+/* Weight Daily Entry: heading */
+"weightEntry.heading" = "Waga";
 
 /* file end */

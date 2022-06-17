@@ -7,53 +7,38 @@
 /* Date Button Title: ‘Today’ */
 "dateButtonTitle.today" = "היום";
 
+/* Doze Detail View subheading: ‘Serving Sizes’ */
+"doze_detail_section_sizes" = "גודלי מנות";
+
+/* Doze Detail View subheading: ‘Types’ */
+"doze_detail_section_types" = "סוגים";
+
+/* Doze Entry View heading: ‘Servings’ */
+"doze_entry_header" = "מנות";
+
 /* heading for daily data entry item */
 "dozeBeans.heading" = "שעועית";
-
-/* https://nutritionfacts.org/topics/beans */
-"dozeBeans.topic" = "topics/beans";
 
 /* heading for daily data entry item */
 "dozeBerries.heading" = "גרגרי יער";
 
-/* https://nutritionfacts.org/topics/berries */
-"dozeBerries.topic" = "topics/berries";
-
 /* heading for daily data entry item */
 "dozeBeverages.heading" = "משקאות קלים";
-
-/* https://nutritionfacts.org/topics/beverages */
-"dozeBeverages.topic" = "topics/beverages";
 
 /* heading for daily data entry item */
 "dozeExercise.heading" = "ספורט";
 
-/* https://nutritionfacts.org/topics/exercise */
-"dozeExercise.topic" = "topics/exercise";
-
 /* heading for daily data entry item */
 "dozeFlaxseeds.heading" = "זרעי פשתן";
-
-/* https://nutritionfacts.org/topics/flax-seeds */
-"dozeFlaxseeds.topic" = "topics/flax-seeds";
 
 /* heading for daily data entry item */
 "dozeFruitsOther.heading" = "פירות אחרים";
 
-/* https://nutritionfacts.org/topics/fruit */
-"dozeFruitsOther.topic" = "topics/fruit";
-
 /* heading for daily data entry item */
 "dozeGreens.heading" = "ירקות ירוקים";
 
-/* https://nutritionfacts.org/topics/greens */
-"dozeGreens.topic" = "topics/greens";
-
 /* heading for daily data entry item */
 "dozeNuts.heading" = "אגוזים וזרעים";
-
-/* https://nutritionfacts.org/topics/nuts */
-"dozeNuts.topic" = "topics/nuts";
 
 /* Daily Dozen supplement info alert: dismissal button text */
 "dozeOtherInfo.confirm" = "טוב";
@@ -70,35 +55,26 @@
 /* heading for daily data entry item */
 "dozeSpices.heading" = "צמחי מרפא ותבלינים";
 
-/* https://nutritionfacts.org/topics/spices */
-"dozeSpices.topic" = "topics/spices";
-
 /* heading for daily data entry item */
 "dozeVegetablesCruciferous.heading" = "ירקות מצליבים";
-
-/* https://nutritionfacts.org/topics/cruciferous-vegetables */
-"dozeVegetablesCruciferous.topic" = "topics/cruciferous-vegetables";
 
 /* heading for daily data entry item */
 "dozeVegetablesOther.heading" = "ירקות אחרים";
 
-/* https://nutritionfacts.org/topics/vegetables */
-"dozeVegetablesOther.topic" = "topics/vegetables";
-
 /* heading for daily data entry item */
 "dozeWholeGrains.heading" = "דגנים מלאים";
 
-/* https://nutritionfacts.org/topics/grains */
-"dozeWholeGrains.topic" = "topics/grains";
+/* History View: calendar scale control */
+"history_scale_choice_day" = "יום";
 
-/* Doze Detail View subheading: ‘Serving Sizes’ */
-"doze_detail_section_sizes" = "גודלי מנות";
+/* History View: calendar scale control */
+"history_scale_choice_month" = "חודש";
 
-/* Doze Detail View subheading: ‘Types’ */
-"doze_detail_section_types" = "סוגים";
+/* History View: calendar scale control */
+"history_scale_choice_year" = "שנה";
 
-/* Doze Entry View heading: ‘Servings’ */
-"doze_entry_header" = "מנות";
+/* History View: scale text */
+"history_scale_label" = "סולם זמן";
 
 /*  */
 "historyRecord.movingAverage" = "ממוצע נע";
@@ -130,21 +106,6 @@
 /* History View */
 "historyRecordWeight.titleMetric" = "משקל (ק\"ג)";
 
-/* History View: calendar scale control */
-"history_scale_choice_day" = "יום";
-
-/* History View: calendar scale control */
-"history_scale_choice_month" = "חודש";
-
-/* History View: calendar scale control */
-"history_scale_choice_year" = "שנה";
-
-/* History View: scale text */
-"history_scale_label" = "סולם זמן";
-
-/* Info About View */
-"info_app_about_heading" = "בקשר לאפליקציה זו";
-
 /* Info About Menu Item */
 "info_app_about" = "לגבי";
 
@@ -153,6 +114,9 @@
 
 /* Info About View: Created By */
 "info_app_about_created_by" = "אפליקציה זו נוצרה על ידי: NutritionFacts.org, כריסטי ריצ'רדס, קונסטנטין חוחלוב ומארק קמפבל";
+
+/* Info About View */
+"info_app_about_heading" = "בקשר לאפליקציה זו";
 
 /* Info About View: Open Source Credits */
 "info_app_about_oss_credits" = "נעשה שימוש בספריות הקוד הפתוח שלהלן: RealmSwift, תרשימים, FSCalendar, SimpleAnimation, ActiveLabel.";
@@ -211,17 +175,8 @@
 /* Main Navigation Tab Control: ‘21 Tweaks’ (proper noun) */
 "navtab.tweaks" = "21 שינויים";
 
-/* https://nutritionfacts.org/topics/omega-3-fatty-acids */
-"otherOmega3.topic" = "topics/omega-3-fatty-acids";
-
 /* heading for daily data entry item */
 "otherVitaminB12.heading" = "ויטמין B12";
-
-/* https://nutritionfacts.org/topics/vitamin-b12 */
-"otherVitaminB12.topic" = "topics/vitamin-b12";
-
-/* https://nutritionfacts.org/topics/vitamin-d-supplements */
-"otherVitaminD.topic" = "topics/vitamin-d-supplements";
 
 /* Alert notification text */
 "reminder.alert.text" = "עדכנו את המנות שלכם להיום";
@@ -292,6 +247,15 @@
 /* ‘Streak’ count. Synonym: ‘Progress‘. Formatted number ‘%d’ for consecutive days completed. Place translated text for ‘days’ on the right or left of ‘%d’ based on language directionality. */
 "streakDaysFormat" = "%d ימים";
 
+/* Tweaks Detail view section heading */
+"tweak_detail_section_activity" = "פעילות";
+
+/* Tweaks Detail view section heading */
+"tweak_detail_section_description" = "תיאור";
+
+/* Tweaks daily entry header */
+"tweak_entry_header" = "21 כוונונים";
+
 /* heading for daily data entry item */
 "tweakCompleteIntentions.heading" = "";
 
@@ -355,23 +319,14 @@
 /* heading for daily data entry item */
 "tweakWeightTwice.heading" = "שיקלו את עצמכם פעמיים ביום";
 
-/* Tweaks Detail view section heading */
-"tweak_detail_section_activity" = "פעילות";
-
-/* Tweaks Detail view section heading */
-"tweak_detail_section_description" = "תיאור";
-
-/* Tweaks daily entry header */
-"tweak_entry_header" = "21 כוונונים";
+/*  */
+"units_label" = "יחידות:";
 
 /* Units toggle button text: imperial measurement system */
 "unitToggle.imperial" = "קיסרי";
 
 /* Units toggle button text: metric measurement system */
 "unitToggle.metric" = "מטרי";
-
-/*  */
-"units_label" = "יחידות:";
 
 /* URL path */
 "urlSegment.base" = "https://nutritionfacts.org/";
@@ -409,9 +364,6 @@
 /* Label for hyperlink to nutritionfacts.org video topics */
 "videos.link.label" = "סרטונים";
 
-/* Weight Daily Entry: heading */
-"weightEntry.heading" = "משקל";
-
 /* Weight Daily Entry: clear button which deletes values */
 "weight_entry_clear" = "נקה";
 
@@ -432,5 +384,8 @@
 
 /* Weight Daily Entry: edit button to change values */
 "weight_history_edit_data" = "עריכת נתונים";
+
+/* Weight Daily Entry: heading */
+"weightEntry.heading" = "משקל";
 
 /* file end */

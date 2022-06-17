@@ -492,7 +492,7 @@
           "metric" : "40 g de fruita dessecada"
         }
       ],
-      "topic" : "",
+      "topic" : "topics/fruit",
       "varieties" : [
         {
           "text" : "Pomes",
@@ -892,7 +892,7 @@
           "metric" : "1 cullerada de rave picant"
         }
       ],
-      "topic" : "",
+      "topic" : "topics/cruciferous-vegetables",
       "varieties" : [
         {
           "text" : "Rúcula",
@@ -972,7 +972,7 @@
           "metric" : "7 g de bolets dessecats"
         }
       ],
-      "topic" : "",
+      "topic" : "topics/vegetables",
       "varieties" : [
         {
           "text" : "Carxofes",
@@ -1113,7 +1113,7 @@
       ]
     },
     "otherVitaminB12" : {
-      "heading" : "Vitamin B12",
+      "heading" : "Vitamina B12",
       "servings" : [
 
       ],

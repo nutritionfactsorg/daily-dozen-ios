@@ -492,7 +492,7 @@
           "metric" : "60g getrocknete Früchte"
         }
       ],
-      "topic" : "",
+      "topic" : "topics/fruit",
       "varieties" : [
         {
           "text" : "Äpfel",
@@ -892,7 +892,7 @@
           "metric" : "1 Esslöffel (15 ml) Meerrettich"
         }
       ],
-      "topic" : "",
+      "topic" : "topics/cruciferous-vegetables",
       "varieties" : [
         {
           "text" : "Rucola, Rauke",
@@ -972,7 +972,7 @@
           "metric" : "7 g getrocknete Pilze"
         }
       ],
-      "topic" : "",
+      "topic" : "topics/vegetables",
       "varieties" : [
         {
           "text" : "Artischocken",

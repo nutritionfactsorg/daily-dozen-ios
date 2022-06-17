@@ -7,53 +7,38 @@
 /* Date Button Title: ‘Today’ */
 "dateButtonTitle.today" = "Сегодня";
 
+/* Doze Detail View subheading: ‘Serving Sizes’ */
+"doze_detail_section_sizes" = "Размер порции";
+
+/* Doze Detail View subheading: ‘Types’ */
+"doze_detail_section_types" = "Виды";
+
+/* Doze Entry View heading: ‘Servings’ */
+"doze_entry_header" = "Порции";
+
 /* heading for daily data entry item */
 "dozeBeans.heading" = "Бобовые";
-
-/* https://nutritionfacts.org/topics/beans */
-"dozeBeans.topic" = "topics/beans";
 
 /* heading for daily data entry item */
 "dozeBerries.heading" = "Ягоды";
 
-/* https://nutritionfacts.org/topics/berries */
-"dozeBerries.topic" = "topics/berries";
-
 /* heading for daily data entry item */
 "dozeBeverages.heading" = "Напитки";
-
-/* https://nutritionfacts.org/topics/beverages */
-"dozeBeverages.topic" = "topics/beverages";
 
 /* heading for daily data entry item */
 "dozeExercise.heading" = "Физические Упражнения";
 
-/* https://nutritionfacts.org/topics/exercise */
-"dozeExercise.topic" = "topics/exercise";
-
 /* heading for daily data entry item */
 "dozeFlaxseeds.heading" = "Семена льна";
-
-/* https://nutritionfacts.org/topics/flax-seeds */
-"dozeFlaxseeds.topic" = "topics/flax-seeds";
 
 /* heading for daily data entry item */
 "dozeFruitsOther.heading" = "Другие Фрукты";
 
-/* https://nutritionfacts.org/topics/fruit */
-"dozeFruitsOther.topic" = "topics/fruit";
-
 /* heading for daily data entry item */
 "dozeGreens.heading" = "Листовые Овощи";
 
-/* https://nutritionfacts.org/topics/greens */
-"dozeGreens.topic" = "topics/greens";
-
 /* heading for daily data entry item */
 "dozeNuts.heading" = "Орехи и Семена";
-
-/* https://nutritionfacts.org/topics/nuts */
-"dozeNuts.topic" = "topics/nuts";
 
 /* Daily Dozen supplement info alert: dismissal button text */
 "dozeOtherInfo.confirm" = "ОК";
@@ -70,35 +55,26 @@
 /* heading for daily data entry item */
 "dozeSpices.heading" = "Травы и Специи";
 
-/* https://nutritionfacts.org/topics/spices */
-"dozeSpices.topic" = "topics/spices";
-
 /* heading for daily data entry item */
 "dozeVegetablesCruciferous.heading" = "Крестоцветные Овощи";
-
-/* https://nutritionfacts.org/topics/cruciferous-vegetables */
-"dozeVegetablesCruciferous.topic" = "topics/cruciferous-vegetables";
 
 /* heading for daily data entry item */
 "dozeVegetablesOther.heading" = "Прочие Овощи";
 
-/* https://nutritionfacts.org/topics/vegetables */
-"dozeVegetablesOther.topic" = "topics/vegetables";
-
 /* heading for daily data entry item */
 "dozeWholeGrains.heading" = "Цельнозерновые Продукты";
 
-/* https://nutritionfacts.org/topics/grains */
-"dozeWholeGrains.topic" = "topics/grains";
+/* History View: calendar scale control */
+"history_scale_choice_day" = "День";
 
-/* Doze Detail View subheading: ‘Serving Sizes’ */
-"doze_detail_section_sizes" = "Размер порции";
+/* History View: calendar scale control */
+"history_scale_choice_month" = "Месяц";
 
-/* Doze Detail View subheading: ‘Types’ */
-"doze_detail_section_types" = "Типы";
+/* History View: calendar scale control */
+"history_scale_choice_year" = "Год";
 
-/* Doze Entry View heading: ‘Servings’ */
-"doze_entry_header" = "Порции";
+/* History View: scale text */
+"history_scale_label" = "Шкала Времени";
 
 /*  */
 "historyRecord.movingAverage" = "Средняя подвижность";
@@ -130,21 +106,6 @@
 /* History View */
 "historyRecordWeight.titleMetric" = "Вес (кг)";
 
-/* History View: calendar scale control */
-"history_scale_choice_day" = "День";
-
-/* History View: calendar scale control */
-"history_scale_choice_month" = "Месяц";
-
-/* History View: calendar scale control */
-"history_scale_choice_year" = "Год";
-
-/* History View: scale text */
-"history_scale_label" = "Шкала Времени";
-
-/* Info About View */
-"info_app_about_heading" = "Об этом приложении";
-
 /* Info About Menu Item */
 "info_app_about" = "О нас";
 
@@ -154,11 +115,14 @@
 /* Info About View: Created By */
 "info_app_about_created_by" = "Это приложение было создано NutritionFacts.org, Кристи Ричардс, Константином Хохловым и Марком Кэмпбеллом.";
 
+/* Info About View */
+"info_app_about_heading" = "Об этом приложении";
+
 /* Info About View: Open Source Credits */
 "info_app_about_oss_credits" = "Приложение использует следующие библиотеки с открытым кодом: RealmSwift, Charts, FSCalendar, SimpleAnimation, ActiveLabel.";
 
 /* Info About View: Overview Text */
-"info_app_about_overview" = "Используйте данное приложение на ежедневной основе, чтобы отслеживать продукты питания и применять мои рекомендации для оптимального здоровья и продолжительности жизни, которые изложены в книгах Не сдохни и Не сдохни на Диете.";
+"info_app_about_overview" = "Используйте приложение каждый день, чтобы отслеживать продукты питания и следовать рекомендациям из книг Не Сдохни! Еда в борьбе за жизнь и Не сдохни на диете, быть здоровыми и жить дольше.";
 
 /* Info About View: Application release version */
 "info_app_about_version" = "версия 3.2.15";
@@ -211,17 +175,8 @@
 /* Main Navigation Tab Control: ‘21 Tweaks’ (proper noun) */
 "navtab.tweaks" = "21 уловка";
 
-/* https://nutritionfacts.org/topics/omega-3-fatty-acids */
-"otherOmega3.topic" = "topics/omega-3-fatty-acids";
-
 /* heading for daily data entry item */
 "otherVitaminB12.heading" = "Витамин B12";
-
-/* https://nutritionfacts.org/topics/vitamin-b12 */
-"otherVitaminB12.topic" = "topics/vitamin-b12";
-
-/* https://nutritionfacts.org/topics/vitamin-d-supplements */
-"otherVitaminD.topic" = "topics/vitamin-d-supplements";
 
 /* Alert notification text */
 "reminder.alert.text" = "Обновите порции за сегодня";
@@ -292,6 +247,15 @@
 /* ‘Streak’ count. Synonym: ‘Progress‘. Formatted number ‘%d’ for consecutive days completed. Place translated text for ‘days’ on the right or left of ‘%d’ based on language directionality. */
 "streakDaysFormat" = "%d дни";
 
+/* Tweaks Detail view section heading */
+"tweak_detail_section_activity" = "Активность";
+
+/* Tweaks Detail view section heading */
+"tweak_detail_section_description" = "Описание";
+
+/* Tweaks daily entry header */
+"tweak_entry_header" = "21 Уловка";
+
 /* heading for daily data entry item */
 "tweakCompleteIntentions.heading" = "Воплощайте свои намерения";
 
@@ -299,7 +263,7 @@
 "tweakDailyBlackCumin.heading" = "Черный тмин/кумин (¼ ч.л.)";
 
 /* heading for daily data entry item */
-"tweakDailyCumin.heading" = "Тмин (½ чайной ложки с обедом и ужином)";
+"tweakDailyCumin.heading" = "Тмин (½ ч.л. с обедом и ужином)";
 
 /* heading for daily data entry item */
 "tweakDailyDeflourDiet.heading" = "Уберите муку из диеты";
@@ -311,7 +275,7 @@
 "tweakDailyGarlic.heading" = "Чесночный порошок (¼ ч.л.)";
 
 /* heading for daily data entry item */
-"tweakDailyGinger.heading" = "Молотый имбирь (1 чайная ложка) или кайенский перец (½ чайной ложки)";
+"tweakDailyGinger.heading" = "Молотый имбирь (1 ч.л. ложка) или кайенский перец (½ ч.л. ложки)";
 
 /* heading for daily data entry item */
 "tweakDailyGreenTea.heading" = "Зеленый чай (3 чашки)";
@@ -355,23 +319,14 @@
 /* heading for daily data entry item */
 "tweakWeightTwice.heading" = "Взвешивайтесь дважды в день";
 
-/* Tweaks Detail view section heading */
-"tweak_detail_section_activity" = "Активность";
-
-/* Tweaks Detail view section heading */
-"tweak_detail_section_description" = "Описание";
-
-/* Tweaks daily entry header */
-"tweak_entry_header" = "21 Уловка";
+/*  */
+"units_label" = "Единица Измерения:";
 
 /* Units toggle button text: imperial measurement system */
 "unitToggle.imperial" = "имперская";
 
 /* Units toggle button text: metric measurement system */
 "unitToggle.metric" = "метрическая";
-
-/*  */
-"units_label" = "Единица Измерения:";
 
 /* URL path */
 "urlSegment.base" = "https://nutritionfacts.org/";
@@ -409,9 +364,6 @@
 /* Label for hyperlink to nutritionfacts.org video topics */
 "videos.link.label" = "ВИДЕО";
 
-/* Weight Daily Entry: heading */
-"weightEntry.heading" = "Вес";
-
 /* Weight Daily Entry: clear button which deletes values */
 "weight_entry_clear" = "Очистить";
 
@@ -432,5 +384,8 @@
 
 /* Weight Daily Entry: edit button to change values */
 "weight_history_edit_data" = "Редактировать данные";
+
+/* Weight Daily Entry: heading */
+"weightEntry.heading" = "Вес";
 
 /* file end */

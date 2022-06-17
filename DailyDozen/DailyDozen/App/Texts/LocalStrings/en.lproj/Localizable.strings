@@ -7,53 +7,38 @@
 /* Date Button Title: ‘Today’ */
 "dateButtonTitle.today" = "Today";
 
+/* Doze Detail View subheading: ‘Serving Sizes’ */
+"doze_detail_section_sizes" = "Serving Sizes";
+
+/* Doze Detail View subheading: ‘Types’ */
+"doze_detail_section_types" = "Types";
+
+/* Doze Entry View heading: ‘Servings’ */
+"doze_entry_header" = "Servings";
+
 /* heading for daily data entry item */
 "dozeBeans.heading" = "Beans";
-
-/* https://nutritionfacts.org/topics/beans */
-"dozeBeans.topic" = "topics/beans";
 
 /* heading for daily data entry item */
 "dozeBerries.heading" = "Berries";
 
-/* https://nutritionfacts.org/topics/berries */
-"dozeBerries.topic" = "topics/berries";
-
 /* heading for daily data entry item */
 "dozeBeverages.heading" = "Beverages";
-
-/* https://nutritionfacts.org/topics/beverages */
-"dozeBeverages.topic" = "topics/beverages";
 
 /* heading for daily data entry item */
 "dozeExercise.heading" = "Exercise";
 
-/* https://nutritionfacts.org/topics/exercise */
-"dozeExercise.topic" = "topics/exercise";
-
 /* heading for daily data entry item */
 "dozeFlaxseeds.heading" = "Flaxseeds";
-
-/* https://nutritionfacts.org/topics/flax-seeds */
-"dozeFlaxseeds.topic" = "topics/flax-seeds";
 
 /* heading for daily data entry item */
 "dozeFruitsOther.heading" = "Other Fruits";
 
-/* https://nutritionfacts.org/topics/fruit */
-"dozeFruitsOther.topic" = "topics/fruit";
-
 /* heading for daily data entry item */
 "dozeGreens.heading" = "Greens";
 
-/* https://nutritionfacts.org/topics/greens */
-"dozeGreens.topic" = "topics/greens";
-
 /* heading for daily data entry item */
 "dozeNuts.heading" = "Nuts and Seeds";
-
-/* https://nutritionfacts.org/topics/nuts */
-"dozeNuts.topic" = "topics/nuts";
 
 /* Daily Dozen supplement info alert: dismissal button text */
 "dozeOtherInfo.confirm" = "OK";
@@ -70,35 +55,26 @@
 /* heading for daily data entry item */
 "dozeSpices.heading" = "Herbs and Spices";
 
-/* https://nutritionfacts.org/topics/spices */
-"dozeSpices.topic" = "topics/spices";
-
 /* heading for daily data entry item */
 "dozeVegetablesCruciferous.heading" = "Cruciferous Vegetables";
-
-/* https://nutritionfacts.org/topics/cruciferous-vegetables */
-"dozeVegetablesCruciferous.topic" = "topics/cruciferous-vegetables";
 
 /* heading for daily data entry item */
 "dozeVegetablesOther.heading" = "Other Vegetables";
 
-/* https://nutritionfacts.org/topics/vegetables */
-"dozeVegetablesOther.topic" = "topics/vegetables";
-
 /* heading for daily data entry item */
 "dozeWholeGrains.heading" = "Whole Grains";
 
-/* https://nutritionfacts.org/topics/grains */
-"dozeWholeGrains.topic" = "topics/grains";
+/* History View: calendar scale control */
+"history_scale_choice_day" = "Day";
 
-/* Doze Detail View subheading: ‘Serving Sizes’ */
-"doze_detail_section_sizes" = "Serving Sizes";
+/* History View: calendar scale control */
+"history_scale_choice_month" = "Month";
 
-/* Doze Detail View subheading: ‘Types’ */
-"doze_detail_section_types" = "Types";
+/* History View: calendar scale control */
+"history_scale_choice_year" = "Year";
 
-/* Doze Entry View heading: ‘Servings’ */
-"doze_entry_header" = "Servings";
+/* History View: scale text */
+"history_scale_label" = "Time Scale";
 
 /*  */
 "historyRecord.movingAverage" = "Moving Average";
@@ -130,21 +106,6 @@
 /* History View */
 "historyRecordWeight.titleMetric" = "Weight (kg)";
 
-/* History View: calendar scale control */
-"history_scale_choice_day" = "Day";
-
-/* History View: calendar scale control */
-"history_scale_choice_month" = "Month";
-
-/* History View: calendar scale control */
-"history_scale_choice_year" = "Year";
-
-/* History View: scale text */
-"history_scale_label" = "Time Scale";
-
-/* Info About View */
-"info_app_about_heading" = "About this app";
-
 /* Info About Menu Item */
 "info_app_about" = "About";
 
@@ -154,14 +115,14 @@
 /* Info About View: Created By */
 "info_app_about_created_by" = "This app was created by: NutritionFacts.org, Christi Richards, Konstantin Khokhlov, and Marc Campbell";
 
+/* Info About View */
+"info_app_about_heading" = "About this app";
+
 /* Info About View: Open Source Credits */
 "info_app_about_oss_credits" = "The following open source libraries are used: RealmSwift, Charts, FSCalendar, SimpleAnimation, ActiveLabel.";
 
 /* Info About View: Overview Text */
 "info_app_about_overview" = "Use this app on a daily basis to keep track of the foods and advice I recommend for optimal health and longevity in my books How Not to Die and How Not to Diet.";
-
-/* Info About View: Contributing Translators List */
-"info_app_about_translators" = "Translators: Anke, Doron, Ricard, Ruth, Tania";
 
 /* Info About View: Application release version */
 "info_app_about_version" = "version 3.2.15";
@@ -214,17 +175,8 @@
 /* Main Navigation Tab Control: ‘21 Tweaks’ (proper noun) */
 "navtab.tweaks" = "21 Tweaks";
 
-/* https://nutritionfacts.org/topics/omega-3-fatty-acids */
-"otherOmega3.topic" = "topics/omega-3-fatty-acids";
-
 /* heading for daily data entry item */
 "otherVitaminB12.heading" = "Vitamin B12";
-
-/* https://nutritionfacts.org/topics/vitamin-b12 */
-"otherVitaminB12.topic" = "topics/vitamin-b12";
-
-/* https://nutritionfacts.org/topics/vitamin-d-supplements */
-"otherVitaminD.topic" = "topics/vitamin-d-supplements";
 
 /* Alert notification text */
 "reminder.alert.text" = "Update your servings for today";
@@ -295,6 +247,15 @@
 /* ‘Streak’ count. Synonym: ‘Progress‘. Formatted number ‘%d’ for consecutive days completed. Place translated text for ‘days’ on the right or left of ‘%d’ based on language directionality. */
 "streakDaysFormat" = "%d days";
 
+/* Tweaks Detail view section heading */
+"tweak_detail_section_activity" = "Activity";
+
+/* Tweaks Detail view section heading */
+"tweak_detail_section_description" = "Description";
+
+/* Tweaks daily entry header */
+"tweak_entry_header" = "21 Tweaks";
+
 /* heading for daily data entry item */
 "tweakCompleteIntentions.heading" = "Complete Your Implementation Intentions";
 
@@ -358,23 +319,14 @@
 /* heading for daily data entry item */
 "tweakWeightTwice.heading" = "Weigh Yourself Twice a Day";
 
-/* Tweaks Detail view section heading */
-"tweak_detail_section_activity" = "Activity";
-
-/* Tweaks Detail view section heading */
-"tweak_detail_section_description" = "Description";
-
-/* Tweaks daily entry header */
-"tweak_entry_header" = "21 Tweaks";
+/*  */
+"units_label" = "Units";
 
 /* Units toggle button text: imperial measurement system */
 "unitToggle.imperial" = "Imperial";
 
 /* Units toggle button text: metric measurement system */
 "unitToggle.metric" = "Metric";
-
-/*  */
-"units_label" = "Units";
 
 /* URL path */
 "urlSegment.base" = "https://nutritionfacts.org/";
@@ -412,9 +364,6 @@
 /* Label for hyperlink to nutritionfacts.org video topics */
 "videos.link.label" = "Videos";
 
-/* Weight Daily Entry: heading */
-"weightEntry.heading" = "Weight";
-
 /* Weight Daily Entry: clear button which deletes values */
 "weight_entry_clear" = "Clear";
 
@@ -435,5 +384,8 @@
 
 /* Weight Daily Entry: edit button to change values */
 "weight_history_edit_data" = "Edit Data";
+
+/* Weight Daily Entry: heading */
+"weightEntry.heading" = "Weight";
 
 /* file end */
