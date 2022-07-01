@@ -183,8 +183,8 @@ class DozeHistoryViewController: UIViewController {
     }
 }
 
-// MARK: - IAxisValueFormatter
-extension DozeHistoryViewController: IAxisValueFormatter {
+// MARK: - AxisValueFormatter
+extension DozeHistoryViewController: AxisValueFormatter {
 
     func stringForValue(_ value: Double, axis: AxisBase?) -> String {
         let labels: [String]

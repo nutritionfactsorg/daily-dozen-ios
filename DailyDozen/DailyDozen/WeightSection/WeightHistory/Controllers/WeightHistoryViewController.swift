@@ -345,8 +345,8 @@ class WeightHistoryViewController: UIViewController {
 
 }
 
-// MARK: - IAxisValueFormatter
-extension WeightHistoryViewController: IAxisValueFormatter {
+// MARK: - AxisValueFormatter
+extension WeightHistoryViewController: AxisValueFormatter {
 
     func stringForValue(_ value: Double, axis: AxisBase?) -> String {
         let labels: [String]

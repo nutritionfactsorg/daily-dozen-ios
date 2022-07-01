@@ -14,7 +14,7 @@ class ChartView: CombinedChartView {
     override func awakeFromNib() {
         super.awakeFromNib()
 
-        chartDescription?.enabled = false
+        chartDescription.enabled = false
         drawBarShadowEnabled = false
         highlightFullBarEnabled = false
         setScaleEnabled(false)
