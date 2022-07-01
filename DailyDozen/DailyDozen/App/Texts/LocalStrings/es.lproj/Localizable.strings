@@ -86,10 +86,10 @@
 "historyRecordDoze.legend" = "Porciones";
 
 /* History View */
-"historyRecordTweak.heading" = "Historial de ajustes";
+"historyRecordTweak.heading" = "Historial de potenciadores";
 
 /* History View */
-"historyRecordTweak.legend" = "21 Ajustes";
+"historyRecordTweak.legend" = "21 Potenciadores";
 
 /* History View */
 "historyRecordWeight.heading" = "Historial de peso";
@@ -173,7 +173,7 @@
 "navtab.preferences" = "Configuración";
 
 /* Main Navigation Tab Control: ‘21 Tweaks’ (proper noun) */
-"navtab.tweaks" = "21 Ajustes";
+"navtab.tweaks" = "21 Potenciadores";
 
 /* heading for daily data entry item */
 "otherVitaminB12.heading" = "Vitamina B12";
@@ -209,13 +209,13 @@
 "setting_doze_only_choice" = "Solo Docena Diaria";
 
 /* First Launch Setting: button text */
-"setting_doze_tweak_btn" = "Docena Diaria y 21 Ajustes";
+"setting_doze_tweak_btn" = "Docena Diaria y 21 Potenciadores";
 
 /* Preference Settings View: selection button text */
-"setting_doze_tweak_choice" = "Docena Diaria y 21 Ajustes";
+"setting_doze_tweak_choice" = "Docena Diaria y 21 Potenciadores";
 
 /* Preference Settings View: brief description text below Tweaks visibility control. */
-"setting_doze_tweak_footer" = "Solo para la salud, use \"Docena Diaria solamente\". Para la salud y la pérdida de peso, use \"Docena Diaria + 21 Ajustes\".";
+"setting_doze_tweak_footer" = "Solo para la salud, use \"Docena Diaria solamente\". Para la salud y la pérdida de peso, use \"Docena Diaria + 21 Potenciadores\".";
 
 /* First Launch Setting: brief description above ‘Daily Dozen Only’ button. */
 "setting_health_alone_txt" = "Para la salud sola";
@@ -224,7 +224,7 @@
 "setting_health_weight_txt" = "Para la salud y la pérdida de peso";
 
 /* Preference Settings View: tweaks visibilty subsection heading */
-"setting_tweak_header" = "Visibilidad de 21 Ajustes";
+"setting_tweak_header" = "Visibilidad de 21 Potenciadores";
 
 /* Preference Settings View: Part of ‘Imperial/Metric/Toggle Units’ selector */
 "setting_units_0_imperial" = "Imperial";
@@ -254,7 +254,7 @@
 "tweak_detail_section_description" = "Descripción";
 
 /* Tweaks daily entry header */
-"tweak_entry_header" = "21 Ajustes";
+"tweak_entry_header" = "21 Potenciadores";
 
 /* heading for daily data entry item */
 "tweakCompleteIntentions.heading" = "Completar tus metas";

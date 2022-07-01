@@ -13,7 +13,7 @@
 * Language: Swift 5.0
 * Swift Package Manager: 4.2
 * Version: `1.1.0` (2019.05)
-* Wanrings: Using 'class' keyword to define a class-constrained protocol is deprecated; use 'AnyObject' instead
+* Warnings: Using 'class' keyword to define a class-constrained protocol is deprecated; use 'AnyObject' instead
 
 The `ActiveLabel` library, as used in the DailyDozen, can be replaced by the [Swift Foundation Library `AttributedString`](https://developer.apple.com/documentation/foundation/attributedstring).  The `AttributedString` structure is available starting wiht iOS 15.
 
@@ -33,21 +33,19 @@ _The `ActiveLabel` library project has not been kept current with the progressio
 * <https://github.com/WenchaoD/FSCalendar>
 * Language: ObjC (88%), Swift (12%) 
 * Swift Package Manager: 5.3
-* Verions: `2.8.4` (2022.04.07)
+* Version: `2.8.4` (2022.04.07)
 
 **RealmSwift**
 
 * <https://cocoapods.org/pods/RealmSwift>
 * <https://github.com/realm/realm-cocoa>
 * <https://docs.mongodb.com/realm-legacy/docs/swift/4.4.1/index.html>
-* Language:
-    * Swift: looks like 5
-    * C++: cxx14
+* Language: Swift 5, C++ cxx14
 * Swift Package Manager: 5.0
 * Version:
     * `4.4.1` in use. _**"deprecated legacy project"**_
+        * Warnings: uses deprecated `kSecAttrAccessibleAlways`
     * `10.28.2` breaking changes relative to current DailyDozen implementation.
-* Warnings: uses deprecated `kSecAttrAccessibleAlways`
 
 **SimpleAnimation**
 
