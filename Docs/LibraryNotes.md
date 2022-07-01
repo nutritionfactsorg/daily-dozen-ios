@@ -1,10 +1,10 @@
 # Library Notes
 
-* Contents <a id="contents"></a>
-[Section](#section-) •
+# Contents <a id="contents"></a>
+[Library Status](#library-status-) •
 [Resources](#resources-)
 
-# Section <a id="section-"></a><sup>[▴](#contents)</sup>
+# Library Status <a id="library-status-"></a><sup>[▴](#contents)</sup>
 
 **ActiveLabel**
 
@@ -63,4 +63,4 @@ _The `SimpleAnimation` library project has not been kept current with the progre
 
 * [CocoaPods ⇗](https://cocoapods.org/)
 * CocoaPod Syntax
-    * [platform](https://guides.cocoapods.org/syntax/podfile.html#platform)
+    * [platform ⇗](https://guides.cocoapods.org/syntax/podfile.html#platform)
