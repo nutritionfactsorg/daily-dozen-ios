@@ -168,8 +168,8 @@ class TweakHistoryViewController: UIViewController {
     }
 }
 
-// MARK: - IAxisValueFormatter
-extension TweakHistoryViewController: IAxisValueFormatter {
+// MARK: - AxisValueFormatter
+extension TweakHistoryViewController: AxisValueFormatter {
 
     func stringForValue(_ value: Double, axis: AxisBase?) -> String {
         let labels: [String]

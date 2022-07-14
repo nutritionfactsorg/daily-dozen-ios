@@ -4,9 +4,9 @@
 //
 //  Copyright © 2019 Nutritionfacts.org. All rights reserved.
 //
-// swiftlint: disable cyclomatic_complexity
-// swiftlint: disable function_body_length
-// swiftlint: disable type_body_length
+// swiftlint: // disable cyclomatic_complexity
+// swiftlint: // disable function_body_length
+// swiftlint: // disable type_body_length
 
 import UIKit
 import Charts
@@ -345,8 +345,8 @@ class WeightHistoryViewController: UIViewController {
 
 }
 
-// MARK: - IAxisValueFormatter
-extension WeightHistoryViewController: IAxisValueFormatter {
+// MARK: - AxisValueFormatter
+extension WeightHistoryViewController: AxisValueFormatter {
 
     func stringForValue(_ value: Double, axis: AxisBase?) -> String {
         let labels: [String]

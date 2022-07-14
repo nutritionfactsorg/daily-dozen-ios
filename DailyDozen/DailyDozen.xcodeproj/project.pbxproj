@@ -120,6 +120,7 @@
 		49F8D1DC23905B70003E139F /* TweakEntryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49F8D1DB23905B70003E139F /* TweakEntryViewController.swift */; };
 		49F8D1DE23906B29003E139F /* TweakEntryDataProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49F8D1DD23906B29003E139F /* TweakEntryDataProvider.swift */; };
 		49FF226526583DB700ED848B /* AlertActivityBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49FF226426583DB700ED848B /* AlertActivityBar.swift */; };
+		4B814C1281B088D27536BB19 /* Pods_DailyDozen_DailyDozenUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 672D096E555F2581CA45AF96 /* Pods_DailyDozen_DailyDozenUITests.framework */; };
 		BD68BC5B2FB6D632F16CE9CD /* Pods_DailyDozenTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 715D60F634E9BCD998C66B77 /* Pods_DailyDozenTests.framework */; };
 		BED5BB460CE3AEE8CF585899 /* Pods_DailyDozen.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F514690D725E67AD54735EB9 /* Pods_DailyDozen.framework */; };
 		CF12918F1FC42DD300D1C17E /* DateCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF12918E1FC42DD300D1C17E /* DateCell.swift */; };
@@ -478,8 +479,10 @@
 		49F8D1DB23905B70003E139F /* TweakEntryViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TweakEntryViewController.swift; sourceTree = "<group>"; };
 		49F8D1DD23906B29003E139F /* TweakEntryDataProvider.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TweakEntryDataProvider.swift; sourceTree = "<group>"; };
 		49FF226426583DB700ED848B /* AlertActivityBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlertActivityBar.swift; sourceTree = "<group>"; };
+		672D096E555F2581CA45AF96 /* Pods_DailyDozen_DailyDozenUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_DailyDozen_DailyDozenUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		6ED3A55B48F7069CAE75156C /* Pods-DailyDozenTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-DailyDozenTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-DailyDozenTests/Pods-DailyDozenTests.release.xcconfig"; sourceTree = "<group>"; };
 		715D60F634E9BCD998C66B77 /* Pods_DailyDozenTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_DailyDozenTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		7B9970D40FDAC06804830110 /* Pods-DailyDozen-DailyDozenUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-DailyDozen-DailyDozenUITests.release.xcconfig"; path = "Pods/Target Support Files/Pods-DailyDozen-DailyDozenUITests/Pods-DailyDozen-DailyDozenUITests.release.xcconfig"; sourceTree = "<group>"; };
 		7D4AA01331AD98C99ADB2BC0 /* Pods-DailyDozen.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-DailyDozen.release.xcconfig"; path = "Pods/Target Support Files/Pods-DailyDozen/Pods-DailyDozen.release.xcconfig"; sourceTree = "<group>"; };
 		CF12918E1FC42DD300D1C17E /* DateCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DateCell.swift; sourceTree = "<group>"; };
 		CF17C8A61FAA019600367BF8 /* DozeDetailSections.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DozeDetailSections.swift; sourceTree = "<group>"; };
@@ -519,6 +522,7 @@
 		CFF72AFD1FB9BAAA001CC2E9 /* LinkService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LinkService.swift; sourceTree = "<group>"; };
 		CFF72AFF1FB9BB70001CC2E9 /* LinkSettings.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = LinkSettings.plist; sourceTree = "<group>"; };
 		DA1790B64ED37B6DB70223BE /* Pods-DailyDozen.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-DailyDozen.debug.xcconfig"; path = "Pods/Target Support Files/Pods-DailyDozen/Pods-DailyDozen.debug.xcconfig"; sourceTree = "<group>"; };
+		DF3E4BB2F0C2C66A4ED6C662 /* Pods-DailyDozen-DailyDozenUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-DailyDozen-DailyDozenUITests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-DailyDozen-DailyDozenUITests/Pods-DailyDozen-DailyDozenUITests.debug.xcconfig"; sourceTree = "<group>"; };
 		F514690D725E67AD54735EB9 /* Pods_DailyDozen.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_DailyDozen.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
@@ -542,6 +546,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				4B814C1281B088D27536BB19 /* Pods_DailyDozen_DailyDozenUITests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1035,6 +1040,7 @@
 				498F724E239E2EA3004E501B /* HealthKit.framework */,
 				F514690D725E67AD54735EB9 /* Pods_DailyDozen.framework */,
 				715D60F634E9BCD998C66B77 /* Pods_DailyDozenTests.framework */,
+				672D096E555F2581CA45AF96 /* Pods_DailyDozen_DailyDozenUITests.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -1315,6 +1321,8 @@
 				7D4AA01331AD98C99ADB2BC0 /* Pods-DailyDozen.release.xcconfig */,
 				2CB41DDE201AD844603D7163 /* Pods-DailyDozenTests.debug.xcconfig */,
 				6ED3A55B48F7069CAE75156C /* Pods-DailyDozenTests.release.xcconfig */,
+				DF3E4BB2F0C2C66A4ED6C662 /* Pods-DailyDozen-DailyDozenUITests.debug.xcconfig */,
+				7B9970D40FDAC06804830110 /* Pods-DailyDozen-DailyDozenUITests.release.xcconfig */,
 			);
 			name = Pods;
 			sourceTree = "<group>";
@@ -1348,7 +1356,6 @@
 				498A2272237CD81F007AF5FB /* Sources */,
 				498A2273237CD81F007AF5FB /* Frameworks */,
 				498A2274237CD81F007AF5FB /* Resources */,
-				F69A747D623F34AF81001F1E /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -1364,9 +1371,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 498A228B237CD88A007AF5FB /* Build configuration list for PBXNativeTarget "DailyDozenUITests" */;
 			buildPhases = (
+				542C63F6730A8EAD6FDD192C /* [CP] Check Pods Manifest.lock */,
 				498A2280237CD88A007AF5FB /* Sources */,
 				498A2281237CD88A007AF5FB /* Frameworks */,
 				498A2282237CD88A007AF5FB /* Resources */,
+				451114F77522A0D4A1E03B66 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -1577,6 +1586,45 @@
 			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
 			showEnvVarsInLog = 0;
 		};
+		451114F77522A0D4A1E03B66 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-DailyDozen-DailyDozenUITests/Pods-DailyDozen-DailyDozenUITests-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-DailyDozen-DailyDozenUITests/Pods-DailyDozen-DailyDozenUITests-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-DailyDozen-DailyDozenUITests/Pods-DailyDozen-DailyDozenUITests-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		542C63F6730A8EAD6FDD192C /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-DailyDozen-DailyDozenUITests-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
 		B928040A54DABDDC50DB0D10 /* [CP] Embed Pods Frameworks */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
@@ -1606,23 +1654,6 @@
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
 			shellScript = "if which swiftlint >/dev/null; then\nswiftlint\nelse\necho \"warning: SwiftLint not found. As applicable: install or add symbolic link or add PATH. See: https://github.com/realm/SwiftLint\"\nfi\n";
-		};
-		F69A747D623F34AF81001F1E /* [CP] Embed Pods Frameworks */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-DailyDozenTests/Pods-DailyDozenTests-frameworks-${CONFIGURATION}-input-files.xcfilelist",
-			);
-			name = "[CP] Embed Pods Frameworks";
-			outputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-DailyDozenTests/Pods-DailyDozenTests-frameworks-${CONFIGURATION}-output-files.xcfilelist",
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-DailyDozenTests/Pods-DailyDozenTests-frameworks.sh\"\n";
-			showEnvVarsInLog = 0;
 		};
 		F9148B5B6D2D32DAD583C1A4 /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
@@ -2114,6 +2145,7 @@
 		};
 		498A228C237CD88A007AF5FB /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = DF3E4BB2F0C2C66A4ED6C662 /* Pods-DailyDozen-DailyDozenUITests.debug.xcconfig */;
 			buildSettings = {
 				CLANG_ENABLE_OBJC_WEAK = YES;
 				CODE_SIGN_STYLE = Automatic;
@@ -2137,6 +2169,7 @@
 		};
 		498A228D237CD88A007AF5FB /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 7B9970D40FDAC06804830110 /* Pods-DailyDozen-DailyDozenUITests.release.xcconfig */;
 			buildSettings = {
 				CLANG_ENABLE_OBJC_WEAK = YES;
 				CODE_SIGN_STYLE = Automatic;
