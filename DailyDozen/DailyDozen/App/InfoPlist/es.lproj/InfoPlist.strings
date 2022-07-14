@@ -8,9 +8,9 @@
 "CFBundleName" = "DailyDozen";
 
 /* Privacy - Health Share Usage Description */
-"NSHealthShareUsageDescription" = "La función 21 Ajustes accede a sus datos de HealthKit para proporcionar actualizaciones a sus mediciones diarias de peso.";
+"NSHealthShareUsageDescription" = "La función 21 Potenciadores accede a sus datos de HealthKit para proporcionar actualizaciones a sus mediciones diarias de peso.";
 
 /* Privacy - Health Update Usage Description */
-"NSHealthUpdateUsageDescription" = "La función 21 Ajustes puede escribir datos de peso en HealthKit para ayudarlo a realizar un seguimiento de su progreso.";
+"NSHealthUpdateUsageDescription" = "La función 21 Potenciadores puede escribir datos de peso en HealthKit para ayudarlo a realizar un seguimiento de su progreso.";
 
 /* file end */
