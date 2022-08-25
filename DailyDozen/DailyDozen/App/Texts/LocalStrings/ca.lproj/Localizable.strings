@@ -215,7 +215,7 @@
 "setting_doze_tweak_choice" = "Dotzena Diària + 21 Potenciadors";
 
 /* Preference Settings View: brief description text below Tweaks visibility control. */
-"setting_doze_tweak_footer" = "Si t'interessa només la salut, utilitza \"Només Dotzena Diària\". Si t'interessa la salut i perdre pes utilitza \"Dotzena Diària + 21 Potenciadors\".";
+"setting_doze_tweak_footer" = "Si t'interessa només la salut, utilitza “Només Dotzena Diària”. Si t'interessa la salut i perdre pes utilitza “Dotzena Diària + 21 Potenciadors”.";
 
 /* First Launch Setting: brief description above ‘Daily Dozen Only’ button. */
 "setting_health_alone_txt" = "Només Salut";
@@ -236,7 +236,7 @@
 "setting_units_2_toggle" = "Canvi Unitats";
 
 /* Preference Settings View: brief description text below units control. */
-"setting_units_choice_footer" = "Configura-ho perquè sigui sempre un tipus d'unitat o permet el botó d'alternància, \"Unitats\".";
+"setting_units_choice_footer" = "Configura-ho perquè sigui sempre un tipus d'unitat o permet el botó d'alternància, “Unitats”.";
 
 /* Preference Settings View */
 "setting_units_header" = "Unitats de mesura";
@@ -296,7 +296,7 @@
 "tweakMeal20Minutes.heading" = "La Regla dels Vint Minuts";
 
 /* heading for daily data entry item */
-"tweakMealNegCal.heading" = "Començar amb Aliments de \"Calories Negatives\"";
+"tweakMealNegCal.heading" = "Començar amb Aliments de “Calories Negatives”";
 
 /* heading for daily data entry item */
 "tweakMealUndistracted.heading" = "Àpats sense Distraccions";

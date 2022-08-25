@@ -4,12 +4,12 @@
       "heading" : "שעועית",
       "servings" : [
         {
-          "imperial" : "¼ כוס חומוס או מטבל שעועית",
-          "metric" : "60 גרם חומוס או מטבל שעועית"
+          "imperial" : "¼ כוס חומוס או ממרח שעועית",
+          "metric" : "60 גרם חומוס או ממרח שעועית"
         },
         {
-          "imperial" : "½ כוס שעועית מבושלת, אפונה מפוצלת, קטניות, טופו או טמפה",
-          "metric" : "130 גרם שעועית מבושלת, אפונה מפוצלת, קטניות, טופו או טמפה"
+          "imperial" : "½ כוס קטניות מבושלות: שעועית, אפונה יבשה, עדשים, טופו או טמפה",
+          "metric" : "130 גרם קטניות מבושלות: שעועית, אפונה יבשה, עדשים, טופו או טמפה"
         },
         {
           "imperial" : "1 כוס אפונה טריה או עדשים מונבטות",
@@ -23,7 +23,7 @@
           "topic" : "topics/black-beans"
         },
         {
-          "text" : "שעועית מנומרת",
+          "text" : "לוביה",
           "topic" : ""
         },
         {
@@ -35,7 +35,7 @@
           "topic" : ""
         },
         {
-          "text" : "גרגרי חומוס/ שעועית גרבנזו",
+          "text" : "גרגרי חומוס",
           "topic" : "topics/chickpeas"
         },
         {
@@ -43,11 +43,11 @@
           "topic" : "topics/edamame"
         },
         {
-          "text" : "אפונת גינה",
+          "text" : "אפונה ירוקה טריה",
           "topic" : ""
         },
         {
-          "text" : "שעועית לבנה",
+          "text" : "שעועית צפונית גדולה",
           "topic" : ""
         },
         {
@@ -55,7 +55,7 @@
           "topic" : "topics/kidney-beans"
         },
         {
-          "text" : "קטניות (בלוגה, צרפתיות ואדומות)",
+          "text" : "עדשים (שחורות ירוקות ואדומות)",
           "topic" : "topics/lentils"
         },
         {
@@ -63,19 +63,19 @@
           "topic" : "topics/miso"
         },
         {
-          "text" : "שעועית נייבי",
+          "text" : "שעועית לבנה",
           "topic" : "topics/navy-beans"
         },
         {
-          "text" : "שעועית פינטו",
+          "text" : "שעועית מנוקדת",
           "topic" : "topics/pinto-beans"
         },
         {
-          "text" : "שעועית קטנה ואדומה",
+          "text" : "שעועית אדומה קטנה",
           "topic" : ""
         },
         {
-          "text" : "אפונה מפוצלת (צהובה או ירוקה)",
+          "text" : "אפונה יבשה (צהובה או ירוקה)",
           "topic" : "topics/split-peas"
         },
         {
@@ -85,11 +85,11 @@
       ]
     },
     "dozeBerries" : {
-      "heading" : "גרגרי יער",
+      "heading" : "פירות יער",
       "servings" : [
         {
-          "imperial" : "½ כוס טריה או קפואה",
-          "metric" : "60 גרם טריים או קפואים"
+          "imperial" : "½ כוס טרי או קפוא",
+          "metric" : "60 גרם טרי או קפוא"
         },
         {
           "imperial" : "¼ כוס יבשים",
@@ -103,11 +103,11 @@
           "topic" : "topics/acai-berries"
         },
         {
-          "text" : "ברביריס (גרגרים אדומים חמוצים)",
+          "text" : "ברברית (פירות יער אדומים)",
           "topic" : "topics/barberries"
         },
         {
-          "text" : "אסנה",
+          "text" : "אוסנה (פרי יער שחור)",
           "topic" : "topics/blackberries"
         },
         {
@@ -119,7 +119,7 @@
           "topic" : "topics/cherries"
         },
         {
-          "text" : "ענבי קונקורד",
+          "text" : "ענבים שחורים",
           "topic" : "topics/grapes"
         },
         {
@@ -135,7 +135,7 @@
           "topic" : ""
         },
         {
-          "text" : "תותים",
+          "text" : "תות עץ",
           "topic" : ""
         },
         {
@@ -143,7 +143,7 @@
           "topic" : "topics/raspberries"
         },
         {
-          "text" : "תותי שדה",
+          "text" : "תות שדה",
           "topic" : "topics/strawberries"
         }
       ]
@@ -152,7 +152,7 @@
       "heading" : "משקאות קלים",
       "servings" : [
         {
-          "imperial" : "כוס אחת 350 גרם)",
+          "imperial" : "כוס אחת (350 גרם)",
           "metric" : "כוס אחת (350 מ\"ל)"
         }
       ],
@@ -163,7 +163,7 @@
           "topic" : "topics/black-tea"
         },
         {
-          "text" : "תה צ'אי",
+          "text" : "צ'אי",
           "topic" : "topics/chai-tea"
         },
         {
@@ -187,7 +187,7 @@
           "topic" : "topics/hibiscus-tea"
         },
         {
-          "text" : "שוקולד חם",
+          "text" : "קקאו חם",
           "topic" : ""
         },
         {
@@ -195,11 +195,11 @@
           "topic" : ""
         },
         {
-          "text" : "תה מליסה רפואית",
+          "text" : "תה מליסה",
           "topic" : "topics/lemon-balm"
         },
         {
-          "text" : "תה מקה",
+          "text" : "תה מאצ'ה",
           "topic" : "topics/matcha"
         },
         {
@@ -225,7 +225,7 @@
       ]
     },
     "dozeExercise" : {
-      "heading" : "ספורט",
+      "heading" : "תרגול גופני",
       "servings" : [
         {
           "imperial" : "90 דקות פעילות בעצימות בינונית",
@@ -243,7 +243,7 @@
           "topic" : ""
         },
         {
-          "text" : "השטת קאנו",
+          "text" : "חתירה בקאנו",
           "topic" : ""
         },
         {
@@ -255,15 +255,15 @@
           "topic" : ""
         },
         {
-          "text" : "סקי במורד הרים",
+          "text" : "סקי במורד ",
           "topic" : ""
         },
         {
-          "text" : "גינון",
+          "text" : "סייף",
           "topic" : ""
         },
         {
-          "text" : "צעידה בהרים",
+          "text" : "סיורי הליכה",
           "topic" : ""
         },
         {
@@ -275,7 +275,7 @@
           "topic" : ""
         },
         {
-          "text" : "גלגיליות",
+          "text" : "החלקה על גלגיליות",
           "topic" : ""
         },
         {
@@ -283,11 +283,11 @@
           "topic" : ""
         },
         {
-          "text" : "קפיצה על טרמפולינה",
+          "text" : "קפיצה בטרמפולינה",
           "topic" : ""
         },
         {
-          "text" : "סירת פדאלים",
+          "text" : "חתירה בסירות אופניים",
           "topic" : ""
         },
         {
@@ -295,7 +295,7 @@
           "topic" : ""
         },
         {
-          "text" : "רולר סקייט",
+          "text" : "החלקה בגלגיליות",
           "topic" : ""
         },
         {
@@ -303,7 +303,7 @@
           "topic" : ""
         },
         {
-          "text" : "גירוף שלג מועט",
+          "text" : "גירוף שלג קל",
           "topic" : ""
         },
         {
@@ -331,7 +331,7 @@
           "topic" : ""
         },
         {
-          "text" : "הליכה מואצת (6 ק\"מ לשעה)",
+          "text" : "הליכה מהירה (6 ק\"מ לשעה)",
           "topic" : ""
         },
         {
@@ -363,11 +363,11 @@
           "topic" : ""
         },
         {
-          "text" : "אימוני משקולות מעגליים",
+          "text" : "אימוני משקולות מחזוריים",
           "topic" : ""
         },
         {
-          "text" : "סקי למרחקים ארוכים",
+          "text" : "סקי במישור",
           "topic" : ""
         },
         {
@@ -391,15 +391,15 @@
           "topic" : ""
         },
         {
-          "text" : "",
+          "text" : "לאקרוס",
           "topic" : ""
         },
         {
-          "text" : "שכיבות שמיכה",
+          "text" : "שכיבות סמיכה",
           "topic" : ""
         },
         {
-          "text" : "מתח",
+          "text" : "עליות מתח",
           "topic" : ""
         },
         {
@@ -407,7 +407,7 @@
           "topic" : ""
         },
         {
-          "text" : "טיפוס סלעים",
+          "text" : "טיפוס הרים",
           "topic" : ""
         },
         {
@@ -431,7 +431,7 @@
           "topic" : ""
         },
         {
-          "text" : "גלגיליות",
+          "text" : "החלקה על גלגיליות",
           "topic" : ""
         },
         {
@@ -439,15 +439,15 @@
           "topic" : ""
         },
         {
-          "text" : "הליכה אירובית על דרגש",
+          "text" : "תרגול מדרגה",
           "topic" : ""
         },
         {
-          "text" : "שחיה בהקפות",
+          "text" : "שחיה ",
           "topic" : ""
         },
         {
-          "text" : "הליכה במעלה הרים",
+          "text" : "הליכה נמרצת בהרים",
           "topic" : ""
         },
         {
@@ -499,7 +499,7 @@
           "topic" : "topics/apples"
         },
         {
-          "text" : "משמשים יבשים",
+          "text" : "משמש",
           "topic" : "topics/apricots"
         },
         {
@@ -511,7 +511,7 @@
           "topic" : "topics/bananas"
         },
         {
-          "text" : "מלון עם קליפה כתומה כהה",
+          "text" : "מלון כתום",
           "topic" : "topics/cantaloupe"
         },
         {
@@ -523,7 +523,7 @@
           "topic" : "topics/dates"
         },
         {
-          "text" : "תאנים ישות",
+          "text" : "תאנים ",
           "topic" : ""
         },
         {
@@ -531,7 +531,7 @@
           "topic" : "topics/grapefruit"
         },
         {
-          "text" : "מלון עם קליפה חלקה ובשר  ירוק",
+          "text" : "מלון ירוק",
           "topic" : ""
         },
         {
@@ -583,11 +583,11 @@
           "topic" : ""
         },
         {
-          "text" : "שזיפים (בעיקר שחורים)",
+          "text" : "שזיפים (במיוחד שחורים)",
           "topic" : "topics/plums"
         },
         {
-          "text" : "",
+          "text" : "נקטרינות",
           "topic" : ""
         },
         {
@@ -595,11 +595,11 @@
           "topic" : "topics/pomegranates"
         },
         {
-          "text" : "קצוצים",
+          "text" : "שזיפים מיובשים",
           "topic" : "topics/prunes"
         },
         {
-          "text" : "מנדרינה",
+          "text" : "מנדרינות",
           "topic" : ""
         },
         {
@@ -609,29 +609,29 @@
       ]
     },
     "dozeGreens" : {
-      "heading" : "ירקות ירוקים",
+      "heading" : "עלים ירוקים",
       "servings" : [
         {
-          "imperial" : "1 כוס גולמית",
-          "metric" : "60 גרם גולמי"
+          "imperial" : "1 כוס נא",
+          "metric" : "60 גרם נא"
         },
         {
-          "imperial" : "½ כוס מבושלים",
-          "metric" : "90 גרם מבושלים"
+          "imperial" : "½ כוס מבושל",
+          "metric" : "90 גרם מבושל"
         }
       ],
       "topic" : "topics/greens",
       "varieties" : [
         {
-          "text" : "אורוגולה",
+          "text" : "רוקולה",
           "topic" : ""
         },
         {
-          "text" : "סלק עלים",
+          "text" : "עלי סלק",
           "topic" : "topics/beets"
         },
         {
-          "text" : "כרוב ירוק",
+          "text" : "עלי קולרד",
           "topic" : "topics/collard-greens"
         },
         {
@@ -639,7 +639,7 @@
           "topic" : "topics/kale"
         },
         {
-          "text" : "עלי בייבי",
+          "text" : "תערובת עלי בייבי",
           "topic" : ""
         },
         {
@@ -655,11 +655,11 @@
           "topic" : "topics/spinach"
         },
         {
-          "text" : "סלק עלים, מנגולד",
+          "text" : "מנגולד",
           "topic" : "topics/swiss-chard"
         },
         {
-          "text" : "לפת",
+          "text" : "עלי לפת",
           "topic" : ""
         }
       ]
@@ -699,7 +699,7 @@
           "topic" : "topics/hazelnuts"
         },
         {
-          "text" : "קנבוס",
+          "text" : "זרעי קנבוס",
           "topic" : ""
         },
         {
@@ -707,7 +707,7 @@
           "topic" : "topics/macadamia-nuts"
         },
         {
-          "text" : "פקאנים",
+          "text" : "פקאן",
           "topic" : "topics/pecans"
         },
         {
@@ -751,7 +751,7 @@
           "topic" : "topics/allspice"
         },
         {
-          "text" : "ברביריס -גרגירים אדומים חמוצים",
+          "text" : "ברברית - פרי יער אדום",
           "topic" : "topics/barberries"
         },
         {
@@ -815,7 +815,7 @@
           "topic" : ""
         },
         {
-          "text" : "לימונית",
+          "text" : "עשב לימון",
           "topic" : ""
         },
         {
@@ -827,7 +827,7 @@
           "topic" : "topics/mustard-powder"
         },
         {
-          "text" : "מוסקט",
+          "text" : "אגוז מוסקט",
           "topic" : "topics/nutmeg"
         },
         {
@@ -843,7 +843,7 @@
           "topic" : "topics/parsley"
         },
         {
-          "text" : "פלפל",
+          "text" : "פלפל שחור",
           "topic" : "topics/pepper"
         },
         {
@@ -863,7 +863,7 @@
           "topic" : ""
         },
         {
-          "text" : "טימין",
+          "text" : "קורנית",
           "topic" : ""
         },
         {
@@ -884,8 +884,8 @@
           "metric" : "30-80 גרם קצוצים"
         },
         {
-          "imperial" : "¼ כוס כרוב ניצנים או נבטי ברוקולי",
-          "metric" : "12 גרם כרוב ניצנים או נבטי ברוקולי"
+          "imperial" : "¼ כוס נבטי כרוב ניצנים או ברוקולי",
+          "metric" : "12 גרם נבטי כרוב ניצנים או ברוקולי"
         },
         {
           "imperial" : "כף חזרת",
@@ -895,7 +895,7 @@
       "topic" : "topics/cruciferous-vegetables",
       "varieties" : [
         {
-          "text" : "אורוגולה",
+          "text" : "רוקולה",
           "topic" : ""
         },
         {
@@ -903,7 +903,7 @@
           "topic" : "topics/bok-choy"
         },
         {
-          "text" : "ברוקולי (כולל רומנסקו)",
+          "text" : "ברוקולי (כולל כרובית אלמוגים)",
           "topic" : "topics/broccoli"
         },
         {
@@ -911,7 +911,7 @@
           "topic" : "topics/brussels-sprouts"
         },
         {
-          "text" : "כרוב (ירוק, אדום וסבוי)",
+          "text" : "כרוב (ירוק, אדום ומסולסל)",
           "topic" : "topics/cabbage"
         },
         {
@@ -919,7 +919,7 @@
           "topic" : "topics/cauliflower"
         },
         {
-          "text" : "כרוב ירוק",
+          "text" : "עלי קולארד",
           "topic" : "topics/collard-greens"
         },
         {
@@ -943,7 +943,7 @@
           "topic" : ""
         },
         {
-          "text" : "לפת",
+          "text" : "עלי לפת",
           "topic" : ""
         },
         {
@@ -956,7 +956,7 @@
       "heading" : "ירקות אחרים",
       "servings" : [
         {
-          "imperial" : "כוס ירקות עליים טריים",
+          "imperial" : "כוס ירקות עלים נאים",
           "metric" : "60 גרם ירקות עליים טריים"
         },
         {
@@ -975,7 +975,7 @@
       "topic" : "topics/vegetables",
       "varieties" : [
         {
-          "text" : "ארטישוקים",
+          "text" : "ארטישוק",
           "topic" : "topics/artichokes"
         },
         {
@@ -983,15 +983,15 @@
           "topic" : "topics/asparagus"
         },
         {
-          "text" : "סלקים",
+          "text" : "סלק",
           "topic" : "topics/beets"
         },
         {
-          "text" : "גמבה",
+          "text" : "פלפלים",
           "topic" : "topics/bell-peppers"
         },
         {
-          "text" : "גזרים",
+          "text" : "גזר",
           "topic" : "topics/carrots"
         },
         {
@@ -1023,15 +1023,15 @@
           "topic" : "topics/pumpkin"
         },
         {
-          "text" : "צמחי ים (אראמה, דולסה ונורי)",
+          "text" : "אצות (אראמה, דולסה ונורי)",
           "topic" : "topics/sea-vegetables"
         },
         {
-          "text" : "אפונת סוכר",
+          "text" : "אפונה ירוקה",
           "topic" : ""
         },
         {
-          "text" : "סקווש (מעדני קיץ מסקווש וסקווש ספגטי)",
+          "text" : "דלעות (מסוג השדה, ערמונים, וספגטי)",
           "topic" : "topics/squash"
         },
         {
@@ -1043,7 +1043,7 @@
           "topic" : "topics/tomatoes"
         },
         {
-          "text" : "קישוא",
+          "text" : "קישואים",
           "topic" : "topics/zucchini"
         }
       ]
@@ -1052,7 +1052,7 @@
       "heading" : "דגנים מלאים",
       "servings" : [
         {
-          "imperial" : "½ כוס דגני בוקר חמים או דגנים מבושלים, פסטה או לבבות תירס",
+          "imperial" : "½ כוס דגני בוקר חמים או דגנים מבושלים, פסטה או גרעיני תירס",
           "metric" : "100 גרם דגני בוקר חמים או דגנים מבושלים, פסטה או לבבות תירס"
         },
         {
@@ -1064,7 +1064,7 @@
           "metric" : "1 טורטיה או פרוסת לחם"
         },
         {
-          "imperial" : "½ בייגל או מאפין אנגלי",
+          "imperial" : "½ בייגל או מאפין ",
           "metric" : "½ בייגל או מאפין אנגלי"
         },
         {
@@ -1107,7 +1107,7 @@
           "topic" : ""
         },
         {
-          "text" : "פסטה מחיטה מלא",
+          "text" : "פסטה מחיטה מלאה",
           "topic" : "topics/pasta"
         }
       ]

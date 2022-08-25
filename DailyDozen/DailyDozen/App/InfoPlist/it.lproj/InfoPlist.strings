@@ -8,9 +8,9 @@
 "CFBundleName" = "DailyDozen";
 
 /* Privacy - Health Share Usage Description */
-"NSHealthShareUsageDescription" = "La funzione \"I 21 aggiustamenti \" ha accesso ai dati del tuo HealthKit cosi` da fornire aggiornamenti alle tue misure di peso giornaliere";
+"NSHealthShareUsageDescription" = "La funzione \"21 Tweaks\" ha accesso ai dati del tuo HealthKit cosi` da fornire aggiornamenti al tuo monitoraggio giornaliero del peso";
 
 /* Privacy - Health Update Usage Description */
-"NSHealthUpdateUsageDescription" = "La funzione \"I 21 aggiustamenti \" puo` mandare i dati sul peso a HealthKit per aiutarti a tracciare il tuo progresso";
+"NSHealthUpdateUsageDescription" = "La funzione \"21 Tweaks\" puo` mandare i dati sul peso a HealthKit per aiutarti a tracciare i tuoi progressi";
 
 /* file end */

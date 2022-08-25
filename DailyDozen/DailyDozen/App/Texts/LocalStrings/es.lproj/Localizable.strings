@@ -185,7 +185,7 @@
 "reminder.heading" = "Recordatorio diario";
 
 /* Daily Reminder On/Off toggle switch label */
-"reminder.settings.enable" = "Activar el recordatorio";
+"reminder.settings.enable" = "Activar los recordatorios";
 
 /* Daily Reminder sound control heading */
 "reminder.settings.sound" = "Sonido";
@@ -209,22 +209,22 @@
 "setting_doze_only_choice" = "Solo Docena Diaria";
 
 /* First Launch Setting: button text */
-"setting_doze_tweak_btn" = "Docena Diaria y 21 Potenciadores";
+"setting_doze_tweak_btn" = "Docena Diaria + 21 Potenciadores";
 
 /* Preference Settings View: selection button text */
-"setting_doze_tweak_choice" = "Docena Diaria y 21 Potenciadores";
+"setting_doze_tweak_choice" = "Docena Diaria + 21 Potenciadores";
 
 /* Preference Settings View: brief description text below Tweaks visibility control. */
-"setting_doze_tweak_footer" = "Solo para la salud, use \"Docena Diaria solamente\". Para la salud y la pérdida de peso, use \"Docena Diaria + 21 Potenciadores\".";
+"setting_doze_tweak_footer" = "Para mejorar la salud, usa \"Solo Docena Diaria\". Para la salud y la pérdida de peso, usa \"Docena Diaria + 21 Potenciadores\".";
 
 /* First Launch Setting: brief description above ‘Daily Dozen Only’ button. */
-"setting_health_alone_txt" = "Para la salud sola";
+"setting_health_alone_txt" = "Para mejorar tu salud";
 
 /* First Launch Setting: brief description above ‘Daily Dozen + 21 Tweaks’ button. */
 "setting_health_weight_txt" = "Para la salud y la pérdida de peso";
 
 /* Preference Settings View: tweaks visibilty subsection heading */
-"setting_tweak_header" = "Visibilidad de 21 Potenciadores";
+"setting_tweak_header" = "Visibilidad de los 21 potenciadores";
 
 /* Preference Settings View: Part of ‘Imperial/Metric/Toggle Units’ selector */
 "setting_units_0_imperial" = "Imperial";
@@ -233,16 +233,16 @@
 "setting_units_1_metric" = "Métrico";
 
 /* Preference Settings View: Part of ‘Imperial/Metric/Toggle Units’ selector */
-"setting_units_2_toggle" = "Palanca";
+"setting_units_2_toggle" = "Palanca de unidades";
 
 /* Preference Settings View: brief description text below units control. */
-"setting_units_choice_footer" = "Configure siempre un tipo de unidad o active el botón de alternancia 'Unidades:'.";
+"setting_units_choice_footer" = "Escoge ver siempre la misma unidad o activa el botón de alternar unidades.";
 
 /* Preference Settings View */
 "setting_units_header" = "Unidades de medida";
 
 /* Preference Settings View */
-"setting_util_advanced" = "Utilidades Avanzadas";
+"setting_util_advanced" = "Opciones avanzadas";
 
 /* ‘Streak’ count. Synonym: ‘Progress‘. Formatted number ‘%d’ for consecutive days completed. Place translated text for ‘days’ on the right or left of ‘%d’ based on language directionality. */
 "streakDaysFormat" = "%d días";
@@ -323,10 +323,10 @@
 "units_label" = "Sistema";
 
 /* Units toggle button text: imperial measurement system */
-"unitToggle.imperial" = "Imperial";
+"unitToggle.imperial" = "IMPERIAL";
 
 /* Units toggle button text: metric measurement system */
-"unitToggle.metric" = "Métrico";
+"unitToggle.metric" = "MÉTRICO";
 
 /* URL path */
 "urlSegment.base" = "https://nutritionfacts.org/";
@@ -362,7 +362,7 @@
 "urlSegmentInfoMenu.videos" = "es/videos";
 
 /* Label for hyperlink to nutritionfacts.org video topics */
-"videos.link.label" = "Videos";
+"videos.link.label" = "VIDEOS";
 
 /* Weight Daily Entry: clear button which deletes values */
 "weight_entry_clear" = "Borrar";

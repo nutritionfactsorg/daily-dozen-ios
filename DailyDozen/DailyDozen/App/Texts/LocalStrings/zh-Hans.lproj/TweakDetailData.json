@@ -5,7 +5,7 @@
         "imperial" : "Complete Your Implementation Intentions",
         "metric" : "Complete Your Implementation Intentions"
       },
-      "explanation" : "Every two months, create three new implementation intentions—\"if X, then Y\" plans to perform a particular behavior in a specific context—and check each one of them off as you complete them every day.",
+      "explanation" : "Every two months, create three new implementation intentions—“if X, then Y” plans to perform a particular behavior in a specific context—and check each one of them off as you complete them every day.",
       "heading" : "Complete Your Implementation Intentions",
       "topic" : ""
     },
@@ -119,11 +119,11 @@
     },
     "tweakMealNegCal" : {
       "activity" : {
-        "imperial" : "Preload with \"Negative Calorie\" Foods",
-        "metric" : "Preload with \"Negative Calorie\" Foods"
+        "imperial" : "Preload with “Negative Calorie” Foods",
+        "metric" : "Preload with “Negative Calorie” Foods"
       },
       "explanation" : "As the first course, start each meal with an apple or a Green Light soup or salad containing fewer than one hundred calories per cup.",
-      "heading" : "Preload with \"Negative Calorie\" Foods",
+      "heading" : "Preload with “Negative Calorie” Foods",
       "topic" : ""
     },
     "tweakMealUndistracted" : {

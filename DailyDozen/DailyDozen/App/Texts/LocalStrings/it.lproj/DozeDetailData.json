@@ -8,12 +8,12 @@
           "metric" : "60 g di hummus o altra crema spalmabile di fagioli"
         },
         {
-          "imperial" : "½ tazza di fagioli cotti, piselli spezzati, lenticchie, tofu o tempé",
-          "metric" : "130 g di fagioli cotti, piselli spezzati, lenticchie, tofu o tempé"
+          "imperial" : "½ tazza di fagioli cotti, piselli spezzati, lenticchie, tofu o tempeh",
+          "metric" : "130 g di fagioli cotti, piselli spezzati, lenticchie, tofu o tempeh"
         },
         {
-          "imperial" : "1 tazza di piselli freschi o germogli di lenticchia",
-          "metric" : "150 g di piselli freschi o germogli di lenticchia"
+          "imperial" : "1 tazza di piselli freschi o germogli di lenticchie",
+          "metric" : "150 g di piselli freschi o germogli di lenticchie"
         }
       ],
       "topic" : "topics/beans",
@@ -27,7 +27,7 @@
           "topic" : ""
         },
         {
-          "text" : "Fagioli di Spagna",
+          "text" : "Fagioli di Lima",
           "topic" : ""
         },
         {
@@ -55,7 +55,7 @@
           "topic" : "topics/kidney-beans"
         },
         {
-          "text" : "Lenticchie (beluga, francese e varietà rossa)",
+          "text" : "Lenticchie (beluga, francesi e varietà rossa)",
           "topic" : "topics/lentils"
         },
         {
@@ -67,11 +67,11 @@
           "topic" : "topics/navy-beans"
         },
         {
-          "text" : "Fagiolo pinto",
+          "text" : "Fagioli Pinto",
           "topic" : "topics/pinto-beans"
         },
         {
-          "text" : "Fagiolo borlotti",
+          "text" : "Fagioli borlotti",
           "topic" : ""
         },
         {
@@ -79,7 +79,7 @@
           "topic" : "topics/split-peas"
         },
         {
-          "text" : "Tempè",
+          "text" : "Tempeh",
           "topic" : "topics/tempeh"
         }
       ]
@@ -92,8 +92,8 @@
           "metric" : "60 g freschi o congelati"
         },
         {
-          "imperial" : "¼ tazza essiccato",
-          "metric" : "40 g essiccato"
+          "imperial" : "¼ tazza disidratati",
+          "metric" : "40 g disidratati"
         }
       ],
       "topic" : "topics/berries",
@@ -103,7 +103,7 @@
           "topic" : "topics/acai-berries"
         },
         {
-          "text" : "Bacca di Berberis",
+          "text" : "Bacche di Berberis",
           "topic" : "topics/barberries"
         },
         {
@@ -119,7 +119,7 @@
           "topic" : "topics/cherries"
         },
         {
-          "text" : "Uva Concordia",
+          "text" : "Uva Concord",
           "topic" : "topics/grapes"
         },
         {
@@ -167,7 +167,7 @@
           "topic" : "topics/chai-tea"
         },
         {
-          "text" : "Infuso Camomilla Vaniglia",
+          "text" : "Camomilla aromatizzata alla vaniglia",
           "topic" : "topics/chamomile-tea"
         },
         {
@@ -179,7 +179,7 @@
           "topic" : "topics/earl-grey-tea"
         },
         {
-          "text" : "Tè Verde",
+          "text" : "Tè verde",
           "topic" : "topics/green-tea"
         },
         {
@@ -187,15 +187,15 @@
           "topic" : "topics/hibiscus-tea"
         },
         {
-          "text" : "Cioccolata Calda",
+          "text" : "Cioccolata calda",
           "topic" : ""
         },
         {
-          "text" : "Tè al Gelsomino",
+          "text" : "Tè al gelsomino",
           "topic" : ""
         },
         {
-          "text" : "Infuso di Melissa",
+          "text" : "Infuso di melissa",
           "topic" : "topics/lemon-balm"
         },
         {
@@ -203,7 +203,7 @@
           "topic" : "topics/matcha"
         },
         {
-          "text" : "Tè Oolong Mandorlo in Fiore",
+          "text" : "Tè Oolong ai fiori di mandorlo",
           "topic" : "topics/oolong-tea"
         },
         {
@@ -219,21 +219,21 @@
           "topic" : "topics/water"
         },
         {
-          "text" : "Tè Bianco",
+          "text" : "Tè bianco",
           "topic" : "topics/white-tea"
         }
       ]
     },
     "dozeExercise" : {
-      "heading" : "Esercizi",
+      "heading" : "Attività fisica",
       "servings" : [
         {
-          "imperial" : "90 minuti di attività moderata intensità",
-          "metric" : "90 minuti di attività moderata intensità"
+          "imperial" : "90 minuti di attività fisica moderata",
+          "metric" : "90 minuti di attività fisica moderata"
         },
         {
-          "imperial" : "40 minuti di attività vigorosa intensità",
-          "metric" : "40 minuti di attività vigorosa intensità"
+          "imperial" : "40 minuti di attività fisica intensa",
+          "metric" : "40 minuti di attività fisica intensa"
         }
       ],
       "topic" : "topics/exercise",
@@ -299,7 +299,7 @@
           "topic" : ""
         },
         {
-          "text" : "Basket",
+          "text" : "Tiri a canestro",
           "topic" : ""
         },
         {
@@ -307,7 +307,7 @@
           "topic" : ""
         },
         {
-          "text" : "Skateboarding",
+          "text" : "Andare sullo skateboard",
           "topic" : ""
         },
         {
@@ -315,11 +315,11 @@
           "topic" : ""
         },
         {
-          "text" : "Fare Surf",
+          "text" : "Surf",
           "topic" : ""
         },
         {
-          "text" : "Nuoto Ricreativo",
+          "text" : "Nuoto (non agonistico)",
           "topic" : ""
         },
         {
@@ -327,15 +327,15 @@
           "topic" : ""
         },
         {
-          "text" : "Treading water",
+          "text" : "Stare a galla in acqua",
           "topic" : ""
         },
         {
-          "text" : "Camminando di buon passo (6 km/h)",
+          "text" : "Camminata veloce (6 km/h)",
           "topic" : ""
         },
         {
-          "text" : "Water aerobics",
+          "text" : "Aerobica in acqua",
           "topic" : ""
         },
         {
@@ -343,7 +343,7 @@
           "topic" : ""
         },
         {
-          "text" : "Cantiere di lavoro",
+          "text" : "Giardinaggio",
           "topic" : ""
         },
         {
@@ -351,7 +351,7 @@
           "topic" : ""
         },
         {
-          "text" : "Zaino in Spalla",
+          "text" : "Backpacking",
           "topic" : ""
         },
         {
@@ -359,7 +359,7 @@
           "topic" : ""
         },
         {
-          "text" : "Andare in bicicletta in salita",
+          "text" : "Andare in bici in salita",
           "topic" : ""
         },
         {
@@ -371,7 +371,7 @@
           "topic" : ""
         },
         {
-          "text" : "Calcio",
+          "text" : "Football americano",
           "topic" : ""
         },
         {
@@ -387,7 +387,7 @@
           "topic" : ""
         },
         {
-          "text" : "Corda per saltare",
+          "text" : "Saltare la corda",
           "topic" : ""
         },
         {
@@ -399,7 +399,7 @@
           "topic" : ""
         },
         {
-          "text" : "Sollevamento",
+          "text" : "Trazioni",
           "topic" : ""
         },
         {
@@ -407,7 +407,7 @@
           "topic" : ""
         },
         {
-          "text" : "Arrampicata di roccia",
+          "text" : "Arrampicata su roccia",
           "topic" : ""
         },
         {
@@ -427,11 +427,11 @@
           "topic" : ""
         },
         {
-          "text" : "Soccer",
+          "text" : "Calcio",
           "topic" : ""
         },
         {
-          "text" : "Pattinaggio veloce",
+          "text" : "Pattinaggio di velocità",
           "topic" : ""
         },
         {
@@ -439,15 +439,15 @@
           "topic" : ""
         },
         {
-          "text" : "Step aerobics",
+          "text" : "Aerobica con step",
           "topic" : ""
         },
         {
-          "text" : "Vasche di Nuoto",
+          "text" : "Vasche a Nuoto",
           "topic" : ""
         },
         {
-          "text" : "Camminare di buon passo in salita",
+          "text" : "Camminata veloce in salita",
           "topic" : ""
         },
         {
@@ -460,8 +460,8 @@
       "heading" : "Semi Di Lino",
       "servings" : [
         {
-          "imperial" : "1 cucchiaio base",
-          "metric" : "1 cucchiaio base"
+          "imperial" : "1 cucchiaio di semi macinati",
+          "metric" : "1 cucchiaio di semi macinati"
         }
       ],
       "topic" : "topics/flax-seeds",
@@ -484,12 +484,12 @@
           "metric" : "1 frutto medio"
         },
         {
-          "imperial" : "1 tazza frutta tagliata",
-          "metric" : "120 g frutta tagliata"
+          "imperial" : "1 tazza di frutta tagliata",
+          "metric" : "120 g di frutta tagliata"
         },
         {
-          "imperial" : "¼ tazza frutta secca",
-          "metric" : "40 g frutta secca"
+          "imperial" : "¼ tazza di frutta secca",
+          "metric" : "40 g di frutta secca"
         }
       ],
       "topic" : "topics/fruit",
@@ -511,7 +511,7 @@
           "topic" : "topics/bananas"
         },
         {
-          "text" : "Cantalupo",
+          "text" : "Melone ",
           "topic" : "topics/cantaloupe"
         },
         {
@@ -519,11 +519,11 @@
           "topic" : ""
         },
         {
-          "text" : "Date",
+          "text" : "Datteri",
           "topic" : "topics/dates"
         },
         {
-          "text" : "Fichi secchi",
+          "text" : "Fichi",
           "topic" : ""
         },
         {
@@ -531,7 +531,7 @@
           "topic" : "topics/grapefruit"
         },
         {
-          "text" : "Melata",
+          "text" : "Melone bianco",
           "topic" : ""
         },
         {
@@ -543,15 +543,15 @@
           "topic" : "topics/lemons"
         },
         {
-          "text" : "Limes",
+          "text" : "Lime",
           "topic" : "topics/limes"
         },
         {
-          "text" : "Lici",
+          "text" : "Litchi",
           "topic" : ""
         },
         {
-          "text" : "Manghi",
+          "text" : "Mango",
           "topic" : "topics/mango"
         },
         {
@@ -587,7 +587,7 @@
           "topic" : "topics/plums"
         },
         {
-          "text" : "Pluots",
+          "text" : "Pluot",
           "topic" : ""
         },
         {
@@ -595,7 +595,7 @@
           "topic" : "topics/pomegranates"
         },
         {
-          "text" : "Prugne",
+          "text" : "Prugne secche",
           "topic" : "topics/prunes"
         },
         {
@@ -612,12 +612,12 @@
       "heading" : "Verdure a foglia",
       "servings" : [
         {
-          "imperial" : "1 tazza raw",
-          "metric" : "60 g raw"
+          "imperial" : "1 tazza da crude",
+          "metric" : "60 g da crude"
         },
         {
-          "imperial" : "½ tazza cooked",
-          "metric" : "90 g cooked"
+          "imperial" : "½ tazza da cotte",
+          "metric" : "90 g da cotte"
         }
       ],
       "topic" : "topics/greens",
@@ -627,19 +627,19 @@
           "topic" : ""
         },
         {
-          "text" : "Bietole",
+          "text" : "Biete",
           "topic" : "topics/beets"
         },
         {
-          "text" : "Cavolo Nero",
+          "text" : "Verdure a foglia larga",
           "topic" : "topics/collard-greens"
         },
         {
-          "text" : "Cavolo Kale (nero, verde e rosso)",
+          "text" : "Cavolo riccio (nero, verde e rosso)",
           "topic" : "topics/kale"
         },
         {
-          "text" : "Mix Mesclun (Assortimento di insalta giovane)",
+          "text" : "Misticanza (Insalatina giovane assortita)",
           "topic" : ""
         },
         {
@@ -665,15 +665,15 @@
       ]
     },
     "dozeNuts" : {
-      "heading" : "Noci e semi",
+      "heading" : "Frutta a guscio e semi",
       "servings" : [
         {
-          "imperial" : "¼ tazza noci o semi",
-          "metric" : "30 g noci o semi"
+          "imperial" : "¼ tazza di noci o semi",
+          "metric" : "30 g di noci o semi"
         },
         {
-          "imperial" : "2 pasta o burro di semi",
-          "metric" : "2 pasta o burro di semi"
+          "imperial" : "2 cucchiai di burro di semi o di frutta a guscio",
+          "metric" : "2 cucchiai di burro di semi o di frutta a guscio"
         }
       ],
       "topic" : "topics/nuts",
@@ -733,25 +733,25 @@
       ]
     },
     "dozeSpices" : {
-      "heading" : "Erbe e Spezie",
+      "heading" : "Erbe e spezie",
       "servings" : [
         {
           "imperial" : "¼ cucchiaino di curcuma",
           "metric" : "¼ cucchiaino di curcuma"
         },
         {
-          "imperial" : "Eventuali altre erbe (senza sale) e spezie a scelta",
-          "metric" : "Eventuali altre erbe (senza sale) e spezie a scelta"
+          "imperial" : "Altre erbe (senza sale) e spezie a scelta",
+          "metric" : "Altre erbe (senza sale) e spezie a scelta"
         }
       ],
       "topic" : "topics/spices",
       "varieties" : [
         {
-          "text" : "Pimenta dioica",
+          "text" : "Pimento (allspice)",
           "topic" : "topics/allspice"
         },
         {
-          "text" : "Berberis",
+          "text" : "Bacche di Berberis",
           "topic" : "topics/barberries"
         },
         {
@@ -771,7 +771,7 @@
           "topic" : ""
         },
         {
-          "text" : "Coriandolo",
+          "text" : "Foglie di coriandolo",
           "topic" : "topics/cilantro"
         },
         {
@@ -783,7 +783,7 @@
           "topic" : "topics/cloves"
         },
         {
-          "text" : "Coriandolo",
+          "text" : "Semi di coriandolo",
           "topic" : ""
         },
         {
@@ -859,7 +859,7 @@
           "topic" : "topics/saffron"
         },
         {
-          "text" : "Saggio",
+          "text" : "Salvia",
           "topic" : ""
         },
         {
@@ -880,12 +880,12 @@
       "heading" : "Verdure Crucifere",
       "servings" : [
         {
-          "imperial" : "½ tazza tritato",
-          "metric" : "30–80 g tritato"
+          "imperial" : "½ tazza tagliate",
+          "metric" : "30–80 g tagliate"
         },
         {
-          "imperial" : "¼ tazza  di Bruxelles o germogli di broccoli",
-          "metric" : "12 g  di Bruxelles o germogli di broccoli"
+          "imperial" : "¼ tazza di cavoletti di Bruxelles o broccoli",
+          "metric" : "12 g di cavoletti di Bruxelles o broccoli"
         },
         {
           "imperial" : "1 cucchiaio di rafano",
@@ -895,7 +895,7 @@
       "topic" : "topics/cruciferous-vegetables",
       "varieties" : [
         {
-          "text" : "Arugula",
+          "text" : "Rucola",
           "topic" : ""
         },
         {
@@ -903,23 +903,23 @@
           "topic" : "topics/bok-choy"
         },
         {
-          "text" : "Broccoli (incl. Romanesco)",
+          "text" : "Broccoli (anche cavolo romanesco)",
           "topic" : "topics/broccoli"
         },
         {
-          "text" : "Cavoletti di Brussel",
+          "text" : "Cavoletti di Bruxelles",
           "topic" : "topics/brussels-sprouts"
         },
         {
-          "text" : "Cavoli (verde, rosso, bianco, cappuccio, etc)",
+          "text" : "Cavolo (verde, rosso, bianco, cappuccio, etc)",
           "topic" : "topics/cabbage"
         },
         {
-          "text" : "Cavolfiori",
+          "text" : "Cavolfiore (bianco, verde, arancione, viola)",
           "topic" : "topics/cauliflower"
         },
         {
-          "text" : "Collard greens",
+          "text" : "Verdure a foglia larga",
           "topic" : "topics/collard-greens"
         },
         {
@@ -927,7 +927,7 @@
           "topic" : ""
         },
         {
-          "text" : "Kale (black, green, and red)",
+          "text" : "Cavolo riccio (nero, verde, rosso)",
           "topic" : "topics/kale"
         },
         {
@@ -956,20 +956,20 @@
       "heading" : "Ortaggi e altre verdure",
       "servings" : [
         {
-          "imperial" : "1 tazza verdure crude a foglia",
-          "metric" : "60 g verdure crude a foglia"
+          "imperial" : "1 tazza di verdure crude a foglia",
+          "metric" : "60 g di verdure crude a foglia"
         },
         {
-          "imperial" : "½ tazza crude o cotte di verdure non a foglia",
-          "metric" : "50 g crude o cotte di verdure non a foglia"
+          "imperial" : "½ tazza di verdure non a foglia crude o cotte",
+          "metric" : "50 g di verdure non a foglia crude o cotte"
         },
         {
-          "imperial" : "½ tazza succo di verdura",
-          "metric" : "125 ml succo di verdura"
+          "imperial" : "½ tazza di succo di verdura",
+          "metric" : "125 ml di succo di verdura"
         },
         {
-          "imperial" : "¼ tazza funghi secchi",
-          "metric" : "7 g funghi secchi"
+          "imperial" : "¼ tazza di funghi secchi",
+          "metric" : "7 g di funghi secchi"
         }
       ],
       "topic" : "topics/vegetables",
@@ -1027,11 +1027,11 @@
           "topic" : "topics/sea-vegetables"
         },
         {
-          "text" : "Piselli (Mangetout)",
+          "text" : "Taccole",
           "topic" : ""
         },
         {
-          "text" : "Zucca (varietà delicata, summer e spaghetti)",
+          "text" : "Zucca (varietà delica, summer e spaghetti)",
           "topic" : "topics/squash"
         },
         {
@@ -1052,24 +1052,24 @@
       "heading" : "Cereali Integrali",
       "servings" : [
         {
-          "imperial" : "½ tazza cereali caldi o cotti, pasta di nocciole o mais",
-          "metric" : "100 g cereali caldi o cotti, pasta di nocciole o mais"
+          "imperial" : "",
+          "metric" : "100 g di cereali cotti, pasta o chicchi di mais"
         },
         {
-          "imperial" : "1 tazza cereali freddi",
-          "metric" : "50 g cereali freddi"
+          "imperial" : "1 tazza di cereali freddi",
+          "metric" : "50 g di cereali freddi"
         },
         {
           "imperial" : "1 piadina, 1 tortilla o 1 fetta di pane integrale",
-          "metric" : "1 piadina, 1 tortilla o 1 fetta di pane integrale"
+          "metric" : "½ tazza di cereali cotti, pasta o chicchi di mais"
         },
         {
-          "imperial" : "½ bagel o focaccina inglese",
-          "metric" : "½ bagel o focaccina inglese"
+          "imperial" : "½ bagel o 1 tigella",
+          "metric" : "½ bagel o 1 tigella"
         },
         {
-          "imperial" : "3 tazze popcorn",
-          "metric" : "30 g popcorn"
+          "imperial" : "3 tazze di popcorn",
+          "metric" : "30 g di popcorn"
         }
       ],
       "topic" : "topics/grains",
@@ -1091,7 +1091,7 @@
           "topic" : "topics/oats"
         },
         {
-          "text" : "Popcorn",
+          "text" : "Pop corn",
           "topic" : "topics/popcorn"
         },
         {

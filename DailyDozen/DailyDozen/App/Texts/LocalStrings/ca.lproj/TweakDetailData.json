@@ -5,7 +5,7 @@
         "imperial" : "Completa els Teus Objectius",
         "metric" : "Completa els Teus Objectius"
       },
-      "explanation" : "Cada dos mesos, crea tres nous objectius - plans de \"si X, llavors Y\" per dur a terme una certa rutina en un context específic - i comprova'ls quan s'acabi el dia.",
+      "explanation" : "Cada dos mesos, crea tres nous objectius - plans de “si X, llavors Y” per dur a terme una certa rutina en un context específic - i comprova'ls quan s'acabi el dia.",
       "heading" : "Completa els Teus Objectius",
       "topic" : ""
     },
@@ -41,7 +41,7 @@
         "imperial" : "Càrrega frontal de calories",
         "metric" : "Càrrega frontal de calories"
       },
-      "explanation" : "Distribuir més calories durant les primeres hores del dia té beneficis metabòlics, per tant, fes que l'esmorzar (idealment) o el dinar siguin els teus àpats més copiosos del dia, de l'estil \"esmorzar com un rei, dinar com un príncep i sopar com un pobre\".",
+      "explanation" : "Distribuir més calories durant les primeres hores del dia té beneficis metabòlics, per tant, fes que l'esmorzar (idealment) o el dinar siguin els teus àpats més copiosos del dia, de l'estil “esmorzar com un rei, dinar com un príncep i sopar com un pobre”.",
       "heading" : "Càrrega frontal de calories",
       "topic" : ""
     },
@@ -119,11 +119,11 @@
     },
     "tweakMealNegCal" : {
       "activity" : {
-        "imperial" : "Començar amb Aliments de \"Calories Negatives\"",
-        "metric" : "Començar amb Aliments de \"Calories Negatives\""
+        "imperial" : "Començar amb Aliments de “Calories Negatives”",
+        "metric" : "Començar amb Aliments de “Calories Negatives”"
       },
       "explanation" : "Com entrant, pots menjar-te una poma, una sopa o una amanida amb aliments recomanats que continguin menys de cent calories per tassa.",
-      "heading" : "Començar amb Aliments de \"Calories Negatives\"",
+      "heading" : "Començar amb Aliments de “Calories Negatives”",
       "topic" : ""
     },
     "tweakMealUndistracted" : {

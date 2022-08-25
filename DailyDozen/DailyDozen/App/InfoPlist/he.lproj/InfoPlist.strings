@@ -8,9 +8,9 @@
 "CFBundleName" = "DailyDozen";
 
 /* Privacy - Health Share Usage Description */
-"NSHealthShareUsageDescription" = "תוכנת 21 הכיוונונים יכולה לכתוב נתוני משקל ל- HealthKit כדי לעזור לכם לעקוב אחר ההתקדמות שלכם.";
+"NSHealthShareUsageDescription" = "התכונה של \"21 הכיוונונים\" מקבלת נתונים מ- HealthKit כדי לעדכן את מדידות המשקל היומיות שלכם.";
 
 /* Privacy - Health Update Usage Description */
-"NSHealthUpdateUsageDescription" = "תכונת 21 הטוויקים יכולה לכתוב נתוני משקל ל- HealthKit כדי לעזור לכם לעקוב אחר ההתקדמות שלכם";
+"NSHealthUpdateUsageDescription" = "התכונה של \"21 הכיוונונים\" יכולה לשמור  נתוני משקל ב- HealthKit כדי לעזור לכם לעקוב אחרי ההתקדמות שלכם.";
 
 /* file end */

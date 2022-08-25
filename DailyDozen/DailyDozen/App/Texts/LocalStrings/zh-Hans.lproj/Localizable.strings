@@ -224,7 +224,7 @@
 "setting_doze_tweak_choice" = "Daily Dozen + 21 Tweak";
 
 /* Preference Settings View: brief description text below Tweaks visibility control. */
-"setting_doze_tweak_footer" = "For health alone, use \"Daily Dozen Only\". For health and weight loss use \"Daily Dozen + 21 Tweaks\".";
+"setting_doze_tweak_footer" = "For health alone, use “Daily Dozen Only”. For health and weight loss use “Daily Dozen + 21 Tweaks”.";
 
 /* First Launch Setting: brief description above ‘Daily Dozen Only’ button. */
 "setting_health_alone_txt" = "For Health Alone";
@@ -305,7 +305,7 @@
 "tweakMeal20Minutes.heading" = "Follow the Twenty-Minute Rule";
 
 /* heading for daily data entry item */
-"tweakMealNegCal.heading" = "Preload with \"Negative Calorie\" Foods";
+"tweakMealNegCal.heading" = "Preload with “Negative Calorie” Foods";
 
 /* heading for daily data entry item */
 "tweakMealUndistracted.heading" = "Enjoy Undistracted Meals";
