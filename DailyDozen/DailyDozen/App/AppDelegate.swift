@@ -29,8 +29,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         print(":DEBUG:WAYPOINT: AppDelegate didFinishLaunchingWithOptions\n\((URL.inDocuments().path))")
         logger.logLevel = LogServiceLevel.verbose
         logger.useLogFileDefault()
-        logger.debug("::::: DEBUG :::::")
-        logger.debug("AppDelegate didFinishLaunchingWithOptions DEBUG enabled")
+        logger.debug("::::: DEBUG :::::\nAppDelegate didFinishLaunchingWithOptions DEBUG enabled")
         
         DatabaseBuiltInTest.shared.runSuite()
         
@@ -38,11 +37,13 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         #endif
         
         #if targetEnvironment(simulator)
-        logger.debug("::::: SIMULATOR ENVIRONMENT :::::")
         let bundle = Bundle(for: type(of: self))
-        logger.debug("Bundle & Resources Path:\n\(bundle.bundlePath)\n")
-        logger.debug("App Documents (log files and exports) Directory:\n\(URL.inDocuments().path)\n")
-        logger.debug("App Library (database) Directory:\n\(URL.inLibrary().path)\n")
+        logger.debug("""
+        ::::: SIMULATOR ENVIRONMENT :::::
+        Bundle & Resources Path:\n\(bundle.bundlePath)\n
+        App Documents (log files and exports) Directory:\n\(URL.inDocuments().path)\n
+        App Library (database) Directory:\n\(URL.inLibrary().path)\n
+        """)
 
         /*
         // Preliminary integrity checks.
@@ -112,13 +113,13 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         print("""
         LOCALE:
           decimalSeparator = \(currentLocale.decimalSeparator ?? "nil")
-
+        
                 identifier = \(currentLocale.identifier)
               languageCode = \(currentLocale.languageCode ?? "nil")
                 regionCode = \(currentLocale.regionCode ?? "nil")
                 scriptCode = \(currentLocale.scriptCode ?? "nil")
                variantCode = \(currentLocale.variantCode ?? "nil")
-
+        
                   calendar = \(currentLocale.calendar)
           usesMetricSystem = \(currentLocale.usesMetricSystem)
         
