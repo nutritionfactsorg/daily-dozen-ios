@@ -1,8 +1,8 @@
 PODS:
   - ActiveLabel (1.1.0)
-  - Charts (4.0.3):
-    - Charts/Core (= 4.0.3)
-  - Charts/Core (4.0.3):
+  - Charts (4.1.0):
+    - Charts/Core (= 4.1.0)
+  - Charts/Core (4.1.0):
     - SwiftAlgorithms (~> 1.0)
   - FSCalendar (2.8.4)
   - Realm (4.4.1):
@@ -15,7 +15,7 @@ PODS:
 
 DEPENDENCIES:
   - ActiveLabel (~> 1.1.0)
-  - Charts (~> 4.0.3)
+  - Charts (~> 4.1.0)
   - FSCalendar (~> 2.8.4)
   - RealmSwift (~> 4.4.1)
   - SimpleAnimation (~> 0.4.2)
@@ -32,13 +32,13 @@ SPEC REPOS:
 
 SPEC CHECKSUMS:
   ActiveLabel: 5e3f4de79a1952d4604b845a0610d4776e4b82b3
-  Charts: d959d6723c8eedfdd0735dfc28cb0a71762ac4d9
+  Charts: 354f86803d11d9c35de280587fef50d1af063978
   FSCalendar: 2d1d0d9398f12d439f55c1fe0f01525b151b8260
   Realm: 4eb04d7487bd43c0581256f40b424eafb711deff
   RealmSwift: 3eb8924ff7100df5928c7602f71d0fec51e7c9c5
   SimpleAnimation: 5430010b9548f392e7459290acce01c9ceba7171
   SwiftAlgorithms: 38dda4731d19027fdeee1125f973111bf3386b53
 
-PODFILE CHECKSUM: c16b43b6ce18af1fe1d6221d3b5984a9cf467528
+PODFILE CHECKSUM: a43eb529616739a83a4a63833f59a1d7e6a129ca
 
 COCOAPODS: 1.11.3

@@ -7,7 +7,7 @@ target 'DailyDozen' do
 
   # Pods for DailyDozen
   pod 'ActiveLabel', '~> 1.1.0'
-  pod 'Charts', '~> 4.0.3'
+  pod 'Charts', '~> 4.1.0'
   pod 'FSCalendar', '~> 2.8.4'
   pod 'RealmSwift', '~> 4.4.1'
   pod 'SimpleAnimation', '~> 0.4.2'

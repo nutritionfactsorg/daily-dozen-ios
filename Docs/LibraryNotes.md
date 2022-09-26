@@ -23,9 +23,9 @@ _The `ActiveLabel` library project has not been kept current with the progressio
 
 * <https://cocoapods.org/pods/Charts>
 * <https://github.com/danielgindi/Charts>
-* Language: Swift 5 (84%), ObjC (15%)
+* Language: Swift 5 (84%), ObjC (16%)
 * Swift Package Manager: 5.1
-* Version: `4.0.3` (2022.05.25)
+* Version: `4.1.0` (2022.09.12)
 
 **FSCalendar**
 
@@ -45,7 +45,7 @@ _The `ActiveLabel` library project has not been kept current with the progressio
 * Version:
     * `4.4.1` in use. _**"deprecated legacy project"**_
         * Warnings: uses deprecated `kSecAttrAccessibleAlways`
-    * `10.28.2` breaking changes relative to current DailyDozen implementation.
+    * `10.30.0` breaking changes relative to current DailyDozen implementation.
 
 **SimpleAnimation**
 
