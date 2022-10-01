@@ -26,6 +26,13 @@ class MainViewController: UIViewController {
         setupUnitsType()
         setupReminders()
         setupTabNaviation()
+        
+        // Proper view controller containment. Required for iOS 16.
+        // Fix: keeps App Navigation Bar below System Status Bar 
+        // Fix: keeps App Tab Bar above System Home Indicator 
+        mainTabBarController.willMove(toParent: self)
+        view.addSubview(mainTabBarController.view)
+        self.addChild(mainTabBarController)
     }
     
     private func setupUnitsType() {

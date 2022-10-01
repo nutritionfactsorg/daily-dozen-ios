@@ -96,7 +96,8 @@ class SettingsViewController: UITableViewController {
         LogService.shared.debug(":::::::::::::::::::::::::::::::::::::::::::::::::::::::::\n")
         #endif
         #if DEBUG
-        //advancedUtilitiesTableViewCell.isHidden = false
+        advancedUtilitiesTableViewCell.isHidden = false
+        print("ADVANCED UTILITIES isHidden == \(advancedUtilitiesTableViewCell.isHidden)")
         //advancedUtilitiesTableViewCell.isHidden = true // :UI_TEST:
         #endif
     }
