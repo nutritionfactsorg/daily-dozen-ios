@@ -4,6 +4,7 @@ disabled_rules:
   - trailing_whitespace
   - closure_parameter_position
   - comment_spacing
+  - for_where
 
   # - file_length
   # - function_body_length

@@ -7,7 +7,7 @@ target 'DailyDozen' do
 
   # Pods for DailyDozen
   pod 'ActiveLabel', '~> 1.1.0'
-  pod 'Charts', '~> 4.0.3'
+  pod 'Charts', '~> 4.1.0'
   pod 'FSCalendar', '~> 2.8.4'
   pod 'RealmSwift', '~> 4.4.1'
   pod 'SimpleAnimation', '~> 0.4.2'
@@ -16,13 +16,13 @@ target 'DailyDozen' do
     inherit! :search_paths
     # Pods for testing
   end
-
+  
   target 'DailyDozenUITests' do
     # Pods for testing
   end
   
 end
-
+  
 post_install do |installer|
   installer.pods_project.targets.each do |target|
     target.build_configurations.each do |config|
