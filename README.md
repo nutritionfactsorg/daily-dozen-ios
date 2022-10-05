@@ -14,7 +14,7 @@ Dr. Greger’s Daily Dozen details the healthiest foods and how many servings of
 
 ## Contribute
 
-We would love for you to contribute to our source code and to help make the Daily Dozen for Android even better!
+We would love for you to [contribute][contribute] and help make the Daily Dozen for iOS even better!
 
 Check out our [Contribution Guidelines][contribute] for details on how to get started and our suggested best practices.
 
@@ -26,9 +26,10 @@ To help support [NutritionFacts.org][nutritionfacts.org], click [here][donate]
 
 The Daily Dozen iOS App is licensed under the GPLv3
 
-## Contributors
+## [Contributors][contributors]
 
-* [Konstantin Khokhlov][justaninja]
+* [Marc Campbell][marc-medley]
+* Konstantin Khokhlov <!-- [justaninja] page returns 404 not found -->
 * [Will Webb][innerfish]
 * [Christi Richards][christirichards]
 * [Lauren Hacker][laurenhacker]
@@ -41,18 +42,26 @@ The Daily Dozen iOS App is licensed under the GPLv3
 
 ## Updates
 
-**3.2.11**
+**3.2.21 (App Store: October 2, 2022)**
+
+* Updated Spanish (es) translation.
+    * Difference between the Android and iOS translation were resolved in the [daily-dozen-localization](https://github.com/nutritionfactsorg/daily-dozen-localization) repository. 
+    * The common elements of the Android and iOS translations are now the same in the released app.
+* Updated Russian (ru) translation.
+* General software quality improvements. 
+
+**3.2.11 (App Store: April 22, 2022)**
 
 * Adds Catalan (ca), German (de), Hebrew (he), Polish (pl), Portuguese (pt-BR, pt-PT) and Russian (ru)
 
-**3.2.9**
+**3.2.9 (App Store: July 29, 2021)**
 
 * Improved general support for language translations
 * Improved layout for smaller screens
 * Fixed case where days completed did not correctly display
 * Updated topic link references to website
 
-**3.2.5**
+**3.2.5 (App Store: February 10, 2021)**
 
 * Updated date picker interaction
 * Fixed reminder notification
@@ -104,11 +113,13 @@ Improvements:
 
 * Initial Release
 
-[nutritionfacts.org]: http://nutritionfacts.org "NutritionFacts.org - The Latest in Nutrition Research"
-[contribute]: https://github.com/nutritionfactsorg/daily-dozen-ios/blob/master/CONTRIBUTING.md "Contribute to the Daily Dozen Android App"
-[donate]: https://nutritionfacts.org/donate "Donate to NutritionFacts.org"
-[book]: http://nutritionfacts.org/book "How Not to Die"
-[christirichards]: http://github.com/christirichards "Christi Richards on GitHub"
-[innerfish]: https://github.com/innerfish "Will Webb on Github"
-[justaninja]: https://github.com/justaninja "Konstantin Khokhlov on Github"
-[laurenhacker]: http://github.com/lahacker "Lauren Hacker on Github"
+[nutritionfacts.org]:http://nutritionfacts.org "NutritionFacts.org - The Latest in Nutrition Research"
+[contribute]:CONTRIBUTING.md "Contribute to the Daily Dozen iOS App"
+[contributors]:https://github.com/nutritionfactsorg/daily-dozen-ios/graphs/contributors
+[donate]:https://nutritionfacts.org/donate "Donate to NutritionFacts.org"
+[book]:http://nutritionfacts.org/book "How Not to Die"
+[christirichards]:http://github.com/christirichards "Christi Richards on GitHub"
+[innerfish]:https://github.com/innerfish "Will Webb on Github"
+[justaninja]:https://github.com/justaninja "Konstantin Khokhlov on Github"
+[laurenhacker]:http://github.com/lahacker "Lauren Hacker on Github"
+[marc-medley]:http://github.com/marc-medley "Marc Campbell on Github"
