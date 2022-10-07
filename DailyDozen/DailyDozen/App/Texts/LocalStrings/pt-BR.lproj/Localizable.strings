@@ -124,6 +124,9 @@
 /* Info About View: Overview Text */
 "info_app_about_overview" = "Use este aplicativo diariamente para controlar os seus alimentos e acompanhar os conselhos que eu recomendo para uma ótima saúde e longevidade nos meus livros Comer Para Não Morrer e Como Não Fazer Dieta.";
 
+/* Info About View: Contributing Translators List */
+"info_app_about_translators" = "Agradecimentos especiais aos nossos tradutores voluntários: Ricard Soler Roger (ca), Anke Schliessmann (de), Doron Barak (he), Ruth Levy (he), Joanna Klopotek (pl), Tania Bassi (pt-BR), João Madureira (pt-PT), Evgeniya Lyakh (ru).";
+
 /* Info About View: Application release version */
 "info_app_about_version" = "versão 3.2.21";
 
@@ -201,6 +204,21 @@
 
 /* ‘On’ as in ‘On (enabled) or Off (disable)’. Daily Reminder is enabled */
 "reminder.state.on" = "Ligado";
+
+/* Google Firebase Analytics */
+"setting_analytics_body" = "Permitir que informações de uso anônimas sejam coletadas para ajudar a melhorar este aplicativo.";
+
+/* Google Firebase Analytics */
+"setting_analytics_enable" = "Ativar Análise";
+
+/* Google Firebase Analytics */
+"setting_analytics_opt_in" = "Ativar";
+
+/* Google Firebase Analytics */
+"setting_analytics_opt_out" = "Desativar";
+
+/* Google Firebase Analytics */
+"setting_analytics_title" = "Análise";
 
 /* First Launch Setting: button text */
 "setting_doze_only_btn" = "Apenas a Dúzia Diária";

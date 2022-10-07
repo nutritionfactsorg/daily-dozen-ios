@@ -124,6 +124,9 @@
 /* Info About View: Overview Text */
 "info_app_about_overview" = "Utilitza aquesta app cada dia per fer un seguiment dels aliments i els consells que dono per una salut i longevitat òptimes als meus llibres How Not to Die i How Not to Diet.";
 
+/* Info About View: Contributing Translators List */
+"info_app_about_translators" = "Special thanks to our volunteer translators: Ricard Soler Roger (ca), Anke Schliessmann (de), Doron Barak (he), Ruth Levy (he), Joanna Klopotek (pl), Tania Bassi (pt-BR), João Madureira (pt-PT), Evgeniya Lyakh (ru).";
+
 /* Info About View: Application release version */
 "info_app_about_version" = "versió 3.2.21";
 
@@ -201,6 +204,21 @@
 
 /* ‘On’ as in ‘On (enabled) or Off (disable)’. Daily Reminder is enabled */
 "reminder.state.on" = "On";
+
+/* Google Firebase Analytics */
+"setting_analytics_body" = "Habiliteu la recopilació d'informació d'ús anònima per ajudar a millorar aquesta aplicació.";
+
+/* Google Firebase Analytics */
+"setting_analytics_enable" = "Activa Analytics";
+
+/* Google Firebase Analytics */
+"setting_analytics_opt_in" = "Activar";
+
+/* Google Firebase Analytics */
+"setting_analytics_opt_out" = "Desactivar";
+
+/* Google Firebase Analytics */
+"setting_analytics_title" = "Analítica";
 
 /* First Launch Setting: button text */
 "setting_doze_only_btn" = "Dotzena Diària\nNomés";

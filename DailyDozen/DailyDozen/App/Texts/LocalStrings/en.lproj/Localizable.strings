@@ -64,6 +64,21 @@
 /* heading for daily data entry item */
 "dozeWholeGrains.heading" = "Whole Grains";
 
+/* History Data: export action button */
+"history_data_export_btn" = "Export History Data";
+
+/* History Data: export description text */
+"history_data__export_text" = "Export has been written to ...";
+
+/* History Data: import action button */
+"history_data_import_btn" = "Import History Data";
+
+/* History Data: import description text */
+"history_data__import_text" = "Caution: This import will overwrite all history data currently in this application. Would you like to proceed with the import which will overwrite the current data?";
+
+/* History Data: preferences header & title */
+"history_data_title" = "History";
+
 /* History View: calendar scale control */
 "history_scale_choice_day" = "Day";
 
@@ -123,6 +138,9 @@
 
 /* Info About View: Overview Text */
 "info_app_about_overview" = "Use this app on a daily basis to keep track of the foods and advice I recommend for optimal health and longevity in my books How Not to Die and How Not to Diet.";
+
+/* Info About View: Contributing Translators List */
+"info_app_about_translators" = "Special thanks to our volunteer translators: Ricard Soler Roger (ca), Anke Schliessmann (de), Doron Barak (he), Ruth Levy (he), Joanna Klopotek (pl), Tania Bassi (pt-BR), João Madureira (pt-PT), Evgeniya Lyakh (ru).";
 
 /* Info About View: Application release version */
 "info_app_about_version" = "version 3.2.21";
@@ -202,6 +220,33 @@
 /* ‘On’ as in ‘On (enabled) or Off (disable)’. Daily Reminder is enabled */
 "reminder.state.on" = "On";
 
+/* Google Firebase Analytics */
+"setting_analytics_body" = "Enable anonymous usage information to be collected to help improve this application.";
+
+/* Google Firebase Analytics: toggle label */
+"setting_analytics_enable" = "Enable Analytics";
+
+/* Google Firebase Analytics */
+"setting_analytics_opt_in" = "Opt In";
+
+/* Google Firebase Analytics */
+"setting_analytics_opt_out" = "Opt Out";
+
+/* Google Firebase Analytics: heading */
+"setting_analytics_title" = "Analytics";
+
+/* Appearance Header */
+"setting_appearance_header" = "Appearance";
+
+/* Appearance Mode: Auto */
+"setting_appearance_mode_auto" = "Auto";
+
+/* Appearance Mode: Dark */
+"setting_appearance_mode_dark" = "Dark";
+
+/* Appearance Mode: Light */
+"setting_appearance_mode_light" = "Light";
+
 /* First Launch Setting: button text */
 "setting_doze_only_btn" = "Daily Dozen\nOnly";
 
@@ -224,7 +269,7 @@
 "setting_health_weight_txt" = "For Health and Weight Loss";
 
 /* Preference Settings View: tweaks visibilty subsection heading */
-"setting_tweak_header" = "21 Tweak Visibility";
+"setting_tweak_header" = "21 Tweaks Visibility";
 
 /* Preference Settings View: Part of ‘Imperial/Metric/Toggle Units’ selector */
 "setting_units_0_imperial" = "Imperial";

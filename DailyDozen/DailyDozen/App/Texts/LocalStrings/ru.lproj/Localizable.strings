@@ -124,6 +124,9 @@
 /* Info About View: Overview Text */
 "info_app_about_overview" = "Используйте приложение каждый день, чтобы отслеживать продукты питания и следовать рекомендациям из книг Не Сдохни! Еда в борьбе за жизнь и Не сдохни на диете, быть здоровыми и жить дольше.";
 
+/* Info About View: Contributing Translators List */
+"info_app_about_translators" = "Особая благодарность нашим переводчикам-волонтерам: Ricard Soler Roger (ca), Anke Schliessmann (de), Doron Barak (he), Ruth Levy (he), Joanna Klopotek (pl), Tania Bassi (pt-BR), João Madureira (pt-PT), Evgeniya Lyakh (ru).";
+
 /* Info About View: Application release version */
 "info_app_about_version" = "версия 3.2.21";
 
@@ -201,6 +204,21 @@
 
 /* ‘On’ as in ‘On (enabled) or Off (disable)’. Daily Reminder is enabled */
 "reminder.state.on" = "Включить";
+
+/* Google Firebase Analytics */
+"setting_analytics_body" = "Включите анонимный сбор данных, чтобы помочь улучшить это приложение.";
+
+/* Google Firebase Analytics */
+"setting_analytics_enable" = "Включить аналитику.";
+
+/* Google Firebase Analytics */
+"setting_analytics_opt_in" = "Разрешить";
+
+/* Google Firebase Analytics */
+"setting_analytics_opt_out" = "Запретить";
+
+/* Google Firebase Analytics */
+"setting_analytics_title" = "Аналитика";
 
 /* First Launch Setting: button text */
 "setting_doze_only_btn" = "Только Не cдохни!";

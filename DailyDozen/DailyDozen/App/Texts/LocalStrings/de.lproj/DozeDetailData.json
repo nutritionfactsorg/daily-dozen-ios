@@ -884,12 +884,16 @@
           "metric" : "30–80 g gehackt"
         },
         {
-          "imperial" : "¼ Tasse Rosenkohl oder Brokkolisprossen",
-          "metric" : "12 g Rosenkohl oder Brokkolisprossen"
+          "imperial" : "1/2 Tasse Rosenkohl",
+          "metric" : "78 g Rosenkohl"
         },
         {
-          "imperial" : "1 Esslöffel Meerrettich",
-          "metric" : "1 Esslöffel (15 ml) Meerrettich"
+          "imperial" : "1/4 Tasse Broccolisprossen",
+          "metric" : "14 g Broccolisprossen"
+        },
+        {
+          "imperial" : "1 Eßlöffel Meerrettich",
+          "metric" : "1 Eßlöffel Meerrettich"
         }
       ],
       "topic" : "topics/cruciferous-vegetables",

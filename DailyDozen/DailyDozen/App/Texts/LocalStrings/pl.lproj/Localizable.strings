@@ -121,6 +121,9 @@
 /* Info About View: Overview Text */
 "info_app_about_overview" = "Korzystaj z tej aplikacji codziennie, aby śledzić żywność i porady, które polecam dla optymalnego zdrowia i długowieczności w moich książkach „Jak nie umrzeć przedwcześnie” i „How Not to Diet”.";
 
+/* Info About View: Contributing Translators List */
+"info_app_about_translators" = "Specjalne podziękowania dla naszych tłumaczy-wolontariuszy: Ricard Soler Roger (ca), Anke Schliessmann (de), Doron Barak (he), Ruth Levy (he), Hanna Gurzeda (pl), Joanna Klopotek (pl), Tania Bassi (pt-BR), João Madureira (pt-PT), Evgeniya Lyakh (ru).";
+
 /* Info About View: Application release version */
 "info_app_about_version" = "wersja 3.2.21";
 
@@ -198,6 +201,21 @@
 
 /* ‘On’ as in ‘On (enabled) or Off (disable)’. Daily Reminder is enabled */
 "reminder.state.on" = "Włączone";
+
+/* Google Firebase Analytics */
+"setting_analytics_body" = "Włącz zbieranie anonimowych informacji o użytkowaniu, aby pomóc ulepszyć aplikację.";
+
+/* Google Firebase Analytics */
+"setting_analytics_enable" = "Włącz Analytics";
+
+/* Google Firebase Analytics */
+"setting_analytics_opt_in" = "Potwierdzam";
+
+/* Google Firebase Analytics */
+"setting_analytics_opt_out" = "Rezygnuję";
+
+/* Google Firebase Analytics */
+"setting_analytics_title" = "Analytics";
 
 /* First Launch Setting: button text */
 "setting_doze_only_btn" = "Tylko Codzienny Tuzin";

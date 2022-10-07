@@ -124,6 +124,9 @@
 /* Info About View: Overview Text */
 "info_app_about_overview" = "Verwenden Sie diese App täglich, um den Überblick über die Lebensmittel und Ratschläge zu behalten, die ich in meinen Büchern How Not to Die und How Not to Diet für optimale Gesundheit und Langlebigkeit empfehle.";
 
+/* Info About View: Contributing Translators List */
+"info_app_about_translators" = "Besonderer Dank an unsere ehrenamtlichen Übersetzer: Ricard Soler Roger (ca), Anke Schliessmann (de), Doron Barak (he), Ruth Levy (he), Joanna Klopotek (pl), Tania Bassi (pt-BR), Joao Madureira (pt-PT), Evgeniya Lyakh (ru).";
+
 /* Info About View: Application release version */
 "info_app_about_version" = "Version 3.2.21";
 
@@ -201,6 +204,21 @@
 
 /* ‘On’ as in ‘On (enabled) or Off (disable)’. Daily Reminder is enabled */
 "reminder.state.on" = "An";
+
+/* Google Firebase Analytics */
+"setting_analytics_body" = "Aktivierung der Sammlung anonymer Nutzungsinformation um diese Anwendung zu verbessern.";
+
+/* Google Firebase Analytics */
+"setting_analytics_enable" = "Analytik aktivieren.";
+
+/* Google Firebase Analytics */
+"setting_analytics_opt_in" = "Opt-in";
+
+/* Google Firebase Analytics */
+"setting_analytics_opt_out" = "Opt-out";
+
+/* Google Firebase Analytics */
+"setting_analytics_title" = "Analytik";
 
 /* First Launch Setting: button text */
 "setting_doze_only_btn" = "Nur Tägliches Dutzend";

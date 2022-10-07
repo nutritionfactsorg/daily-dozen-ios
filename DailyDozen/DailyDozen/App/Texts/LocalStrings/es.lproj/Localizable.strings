@@ -124,6 +124,9 @@
 /* Info About View: Overview Text */
 "info_app_about_overview" = "Utiliza esta aplicación a diario para llevar un registro de los alimentos que recomiendo para una salud y longevidad óptimas en mi libro Comer para no morir.";
 
+/* Info About View: Contributing Translators List */
+"info_app_about_translators" = "Le damos las gracias a nuestros traductores voluntarios: Ricard Soler Roger (ca), Anke Schliessmann (de), Doron Barak (he), Ruth Levy (he), Joanna Klopotek (pl), Tania Bassi (pt-BR), João Madureira (pt-PT), Evgeniya Lyakh (ru), Ángela Graña (es).";
+
 /* Info About View: Application release version */
 "info_app_about_version" = "versión 3.2.21";
 
@@ -201,6 +204,21 @@
 
 /* ‘On’ as in ‘On (enabled) or Off (disable)’. Daily Reminder is enabled */
 "reminder.state.on" = "Encendido";
+
+/* Google Firebase Analytics */
+"setting_analytics_body" = "Permitir el acceso a la información de uso de esta app para su mejora.";
+
+/* Google Firebase Analytics */
+"setting_analytics_enable" = "Activar los análisis";
+
+/* Google Firebase Analytics */
+"setting_analytics_opt_in" = "Aceptar";
+
+/* Google Firebase Analytics */
+"setting_analytics_opt_out" = "Rechazar";
+
+/* Google Firebase Analytics */
+"setting_analytics_title" = "Análisis";
 
 /* First Launch Setting: button text */
 "setting_doze_only_btn" = "Solo Docena Diaria";

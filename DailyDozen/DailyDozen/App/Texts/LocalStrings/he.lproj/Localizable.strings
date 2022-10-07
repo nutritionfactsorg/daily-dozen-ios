@@ -130,6 +130,9 @@
 /* Info About View: Overview Text */
 "info_app_about_overview" = "השתמשו באפליקציה זו על בסיס יומי כדי לעקוב אחר המזונות והעצות שאני ממליץ עליהם לבריאות ואריכות ימים בצורה אופטימלית בספרים שלי \"איך לא למות\" ו\"איך לא לעשות דיאטה\".";
 
+/* Info About View: Contributing Translators List */
+"info_app_about_translators" = "תודה מיוחדת למתרגמים המתנדבים: Ricard Soler Roger (ca), Anke Schliessmann (de), Doron Barak (he), Ruth Levy (he), Joanna Klopotek (pl), Tania Bassi (pt-BR), João Madureira (pt-PT), Evgeniya Lyakh (ru). ";
+
 /* Info About View: Application release version */
 "info_app_about_version" = "גירסה 3.2.11";
 
@@ -210,6 +213,21 @@
 
 /* ‘On’ as in ‘On (enabled) or Off (disable)’. Daily Reminder is enabled */
 "reminder.state.on" = "מופעל";
+
+/* Google Firebase Analytics */
+"setting_analytics_body" = "אפשרו איסוף אנוניתי של מידע על שימוש כדי לשפר יישומון זה.";
+
+/* Google Firebase Analytics */
+"setting_analytics_enable" = "אפשרו Analytics";
+
+/* Google Firebase Analytics */
+"setting_analytics_opt_in" = "אשרו";
+
+/* Google Firebase Analytics */
+"setting_analytics_opt_out" = "בטלו אישור";
+
+/* Google Firebase Analytics */
+"setting_analytics_title" = "Analytics";
 
 /* First Launch Setting: button text */
 "setting_doze_only_btn" = "\"התריסר היומי\" \nבלבד";
