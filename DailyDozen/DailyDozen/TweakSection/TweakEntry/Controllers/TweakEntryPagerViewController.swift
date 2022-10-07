@@ -81,6 +81,16 @@ class TweakEntryPagerViewController: UIViewController {
 
         navigationController?.navigationBar.barTintColor = ColorManager.style.mainMedium
         navigationController?.navigationBar.titleTextAttributes = [NSAttributedString.Key.foregroundColor: UIColor.white]
+        
+        if UserDefaults.standard.object(forKey: SettingsKeys.analyticsIsEnabledPref) == nil {
+            #if DEBUG || QA 
+            
+            #else
+            
+            #endif
+            let alert = AnalyticsHelper.shared.buildAnalyticsConsentAlert()
+            present(alert, animated: true, completion: nil)
+        }
     }
 
     // MARK: - Methods

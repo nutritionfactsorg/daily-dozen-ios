@@ -41,7 +41,7 @@ class DozeEntryPagerViewController: UIViewController {
             navBar.titleTextAttributes = [NSAttributedString.Key.foregroundColor: UIColor.white]
             navBar.barTintColor = ColorManager.style.mainMedium
             navBar.tintColor = UIColor.white
-            //navBar.backgroundColor = ColorManager.style.mainMedium // iOS 15 addition
+            //navBar.backgroundColor = ColorManager.style.mainMedium // new in iOS 15
         }
         
         title = NSLocalizedString("navtab.doze", comment: "Daily Dozen (proper noun) navigation tab")
@@ -81,10 +81,21 @@ class DozeEntryPagerViewController: UIViewController {
         navigationController?.navigationBar.barTintColor = ColorManager.style.mainMedium
         navigationController?.navigationBar.titleTextAttributes = [NSAttributedString.Key.foregroundColor: UIColor.white]
         
+        // If key doesn‘t exist, this UserDefaults method returns false.
         if UserDefaults.standard.bool(forKey: SettingsKeys.hasSeenFirstLaunch) == false {
             UserDefaults.standard.set(true, forKey: SettingsKeys.hasSeenFirstLaunch)
             let viewController = FirstLaunchViewController.newInstance()
             navigationController?.pushViewController(viewController, animated: true)
+        }
+        
+        if UserDefaults.standard.object(forKey: SettingsKeys.analyticsIsEnabledPref) == nil {
+            #if DEBUG || QA 
+            
+            #else
+            
+            #endif
+            let alert = AnalyticsHelper.shared.buildAnalyticsConsentAlert()
+            present(alert, animated: true, completion: nil)
         }
     }
     

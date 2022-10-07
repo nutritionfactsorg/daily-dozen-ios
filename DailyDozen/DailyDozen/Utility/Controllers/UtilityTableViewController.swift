@@ -23,6 +23,9 @@ class UtilityTableViewController: UITableViewController {
         return viewController
     }
     
+    // Appearance Type: Standard | Preview
+    @IBOutlet weak var appearanceTypeControl: UISegmentedControl!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         navigationController?.navigationBar.titleTextAttributes = [NSAttributedString.Key.foregroundColor: UIColor.white]
@@ -86,6 +89,10 @@ class UtilityTableViewController: UITableViewController {
         //)
     }
     
+    @IBAction func doAppearanceTypeChanged(_ sender: UISegmentedControl) {
+        print(":!!!: doAppearanceModeChanged not implemented")
+    }
+    
     @IBAction func doUtilitySettingsClearBtn(_ sender: UIButton) {
         let alert = UIAlertController(title: "", message: Strings.utilitySettingsClearMsg, preferredStyle: .alert)
         let cancelAction = UIAlertAction(title: Strings.utilityConfirmCancel, style: .cancel, handler: nil)
@@ -99,14 +106,27 @@ class UtilityTableViewController: UITableViewController {
     
     func doUtilitySettingsClear() {
         let defaults = UserDefaults.standard
+        /// Reminder
         defaults.set(nil, forKey: SettingsKeys.reminderCanNotify)
         defaults.set(nil, forKey: SettingsKeys.reminderHourPref)
         defaults.set(nil, forKey: SettingsKeys.reminderMinutePref)
         defaults.set(nil, forKey: SettingsKeys.reminderSoundPref)
+        /// Units Type: imperial|metric
         defaults.set(nil, forKey: SettingsKeys.unitsTypePref)
+        /// unitsTypeToggleShowPref: shows units type toggle button when true|"1"|"on"
         defaults.set(nil, forKey: SettingsKeys.unitsTypeToggleShowPref)
+        /// Hide|Show 21 Tweaks
         defaults.set(nil, forKey: SettingsKeys.show21TweaksPref)
+        /// Used for first launch
         defaults.set(nil, forKey: SettingsKeys.hasSeenFirstLaunch)
+        
+        // Analytics is enabled when when true|"1"|"on"
+        defaults.set(nil, forKey: SettingsKeys.analyticsIsEnabledPref)
+        
+        // Light | Dark | Auto
+        defaults.set(nil, forKey: SettingsKeys.appearanceModePref)
+        // Standard | Preview
+        defaults.set(nil, forKey: SettingsKeys.appearanceTypePref)
     }
     
     @IBAction func doUtilitySettingsShowBtn(_ sender: UIButton) {
@@ -139,6 +159,15 @@ class UtilityTableViewController: UITableViewController {
         
         str.append(contentsOf: "hasSeenFirstLaunch")
         str.append(contentsOf: ": \(UserDefaults.standard.object(forKey: SettingsKeys.hasSeenFirstLaunch) ?? "nil")\n")
+        
+        str.append(contentsOf: "analyticsIsEnabledPref")
+        str.append(contentsOf: ": \(UserDefaults.standard.object(forKey: SettingsKeys.analyticsIsEnabledPref) ?? "nil")\n")
+        
+        str.append(contentsOf: "appearanceModePref")
+        str.append(contentsOf: ": \(UserDefaults.standard.object(forKey: SettingsKeys.appearanceModePref) ?? "nil")\n")
+        
+        str.append(contentsOf: "appearanceTypePref")
+        str.append(contentsOf: ": \(UserDefaults.standard.object(forKey: SettingsKeys.appearanceTypePref) ?? "nil")\n")
         
         #if DEBUG
         LogService.shared.debug(

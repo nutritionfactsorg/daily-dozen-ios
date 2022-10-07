@@ -5,9 +5,14 @@
 //  Created by Konstantin Khokhlov on 18.10.17.
 //  Copyright © 2017 Nutritionfacts.org. All rights reserved.
 //
+// swiftlint:disable function_body_length
 
 import UIKit
 import UserNotifications
+// Analytics Frameworks
+import Firebase
+import FirebaseAnalytics // "Google Analytics"
+//import AppTrackingTransparency // only needed if tracking across non-NutritionFacts apps & sites
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
@@ -67,7 +72,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         
         // ----- User Interface Setup -----
         // Note: User Interface particulars would be in SceneDelegate for newer impementations.
-        UILabel.appearance(whenContainedInInstancesOf: [UISegmentedControl.self]).numberOfLines = 0 // :!!!:NOPE: needed for variable number of lines ???
+        // `0` used for variable number of lines. :???: double check if needed
+        UILabel.appearance(whenContainedInInstancesOf: [UISegmentedControl.self]).numberOfLines = 0
         
         // ----- Notification Setup -----
         
@@ -87,7 +93,18 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
             UINavigationBar.appearance().compactAppearance = navigationBarAppearance
             UINavigationBar.appearance().scrollEdgeAppearance = navigationBarAppearance
         }
-
+        
+        // ----- Google (Firebase) Analytics -----
+        FirebaseApp.configure()
+        if UserDefaults.standard.bool(forKey: SettingsKeys.analyticsIsEnabledPref) == true {
+            Analytics.setAnalyticsCollectionEnabled(true)
+        } else {
+            Analytics.setAnalyticsCollectionEnabled(false)
+        }
+        #if DEBUG
+        #else
+        #endif
+        
         return true
     }
     

@@ -19,9 +19,6 @@ class SettingsReminderViewController: UITableViewController {
     @IBOutlet weak var settingsDatePicker: UIDatePicker!
     @IBOutlet weak var reminderSwitch: UISwitch!
     @IBOutlet weak var soundSwitch: UISwitch!
-    //    var soundIsOn: Bool!
-    var reminderSwitchPref: Bool!
-    //    var time: Date!
     // Labels
     @IBOutlet weak var reminderSwitchLabel: UILabel!
     @IBOutlet weak var remindMeAtLabel: UILabel!
@@ -96,7 +93,9 @@ class SettingsReminderViewController: UITableViewController {
         }
     }
     
-    @IBAction func reminderSwitched(_ sender: UISwitch) {
+    // MARK: - Actions
+    
+    @IBAction func doReminderSwitched(_ sender: UISwitch) {
         UserDefaults.standard.set(sender.isOn, forKey: SettingsKeys.reminderCanNotify)
         UNUserNotificationCenter.current().removeAllPendingNotificationRequests()
         if reminderSwitch.isOn {
@@ -106,7 +105,6 @@ class SettingsReminderViewController: UITableViewController {
             settingsDatePicker.isEnabled = false
             soundSwitch.isEnabled = false
         }
-        
     }
     
     // MARK: - Navigation
