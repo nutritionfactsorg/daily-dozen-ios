@@ -63,6 +63,7 @@ Pods/
 ## Google: Firebase ##
 ######################
 DailyDozen/DailyDozen/GoogleService-Info.plist
+GoogleService-Info.plist
 
 #################
 ## LibreOffice ##

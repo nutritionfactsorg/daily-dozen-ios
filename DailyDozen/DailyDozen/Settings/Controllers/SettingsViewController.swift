@@ -246,17 +246,17 @@ class SettingsViewController: UITableViewController {
         Analytics.setAnalyticsCollectionEnabled(true)
         UserDefaults.standard.set(true, forKey: SettingsKeys.analyticsIsEnabledPref)
         analyticsEnableToggle.isOn = true
-        LogService.shared.info("doAnalyticsEnable() completed")
+        LogService.shared.info("SettingsViewController doAnalyticsEnable() completed")
     }
     
     func doAnalyticsDisable() {
         if FirebaseApp.app() != nil {
             Analytics.setAnalyticsCollectionEnabled(false)
-            LogService.shared.info("doAnalyticsDisable() disabled existing FirebaseApp Analytics")
+            LogService.shared.info("SettingsViewController doAnalyticsDisable() disabled existing FirebaseApp Analytics")
         }
         UserDefaults.standard.set(false, forKey: SettingsKeys.analyticsIsEnabledPref)
         analyticsEnableToggle.isOn = false
-        LogService.shared.info("doAnalyticsDisable() completed")
+        LogService.shared.info("SettingsViewController doAnalyticsDisable() completed")
     }
     
     //@IBAction func doAppearanceModeChanged(_ sender: UISegmentedControl) {

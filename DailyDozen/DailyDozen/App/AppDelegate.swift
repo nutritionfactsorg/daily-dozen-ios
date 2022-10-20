@@ -98,8 +98,10 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         FirebaseApp.configure()
         if UserDefaults.standard.bool(forKey: SettingsKeys.analyticsIsEnabledPref) == true {
             Analytics.setAnalyticsCollectionEnabled(true)
+            LogService.shared.info("AppDelegate setAnalyticsCollectionEnabled(true)")
         } else {
             Analytics.setAnalyticsCollectionEnabled(false)
+            LogService.shared.info("AppDelegate setAnalyticsCollectionEnabled(false)")
         }
         #if DEBUG
         #else

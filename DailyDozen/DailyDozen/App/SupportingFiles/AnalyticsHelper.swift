@@ -41,15 +41,15 @@ struct AnalyticsHelper {
         //}
         Analytics.setAnalyticsCollectionEnabled(true)
         UserDefaults.standard.set(true, forKey: SettingsKeys.analyticsIsEnabledPref)
-        LogService.shared.info("doAnalyticsEnable() completed")
+        LogService.shared.info("AnalyticsHelper doAnalyticsEnable() completed")
     }
     
     func doAnalyticsDisable() {
         if FirebaseApp.app() != nil {
             Analytics.setAnalyticsCollectionEnabled(false)
-            LogService.shared.info("doAnalyticsDisable() disabled existing FirebaseApp Analytics")
+            LogService.shared.info("AnalyticsHelper doAnalyticsDisable() disabled existing FirebaseApp Analytics")
         }
         UserDefaults.standard.set(false, forKey: SettingsKeys.analyticsIsEnabledPref)
-        LogService.shared.info("doAnalyticsDisable() completed")
+        LogService.shared.info("AnalyticsHelper doAnalyticsDisable() completed")
     }
 }
