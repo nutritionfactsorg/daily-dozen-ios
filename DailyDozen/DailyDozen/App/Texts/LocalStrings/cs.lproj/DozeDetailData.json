@@ -1,0 +1,1130 @@
+{
+  "itemsDict" : {
+    "dozeBeans" : {
+      "heading" : "Luštěniny",
+      "servings" : [
+        {
+          "imperial" : "¼ šálku hummusu nebo luštěninového dipu",
+          "metric" : "60 g hummusu nebo luštěninového dipu"
+        },
+        {
+          "imperial" : "½ šálku vařených luštěnin, hrášku, čočky, tofu, nebo tempeh",
+          "metric" : "130 g vařených fazolí, hrášku, čočky, tofu nebo tempehu"
+        },
+        {
+          "imperial" : "1 šálek čerstvého hrášku nebo naklíčené čočky",
+          "metric" : "150 g čerstvého hrášku nebo naklíčené čočky"
+        }
+      ],
+      "topic" : "topics/beans",
+      "varieties" : [
+        {
+          "text" : "Černé fazole",
+          "topic" : "topics/black-beans"
+        },
+        {
+          "text" : "Černooké fazole",
+          "topic" : ""
+        },
+        {
+          "text" : "Máslové fazole",
+          "topic" : ""
+        },
+        {
+          "text" : "Fazole Cannellini ",
+          "topic" : ""
+        },
+        {
+          "text" : " Cizrna / Fazole Garbanzo",
+          "topic" : "topics/chickpeas"
+        },
+        {
+          "text" : "Fazole Edamame",
+          "topic" : "topics/edamame"
+        },
+        {
+          "text" : " Anglický hrášek",
+          "topic" : ""
+        },
+        {
+          "text" : "Velké severské fazole",
+          "topic" : ""
+        },
+        {
+          "text" : "Fazole (ve tvaru ledviny)",
+          "topic" : "topics/kidney-beans"
+        },
+        {
+          "text" : "Čočka (beluga, francouzské a červené odrůdy)",
+          "topic" : "topics/lentils"
+        },
+        {
+          "text" : "Miso pasta",
+          "topic" : "topics/miso"
+        },
+        {
+          "text" : "Fazole Navy",
+          "topic" : "topics/navy-beans"
+        },
+        {
+          "text" : "Fazole Pinto",
+          "topic" : "topics/pinto-beans"
+        },
+        {
+          "text" : "Malé červené fazole",
+          "topic" : ""
+        },
+        {
+          "text" : "Půlený hrách (žlutý nebo zelený)",
+          "topic" : "topics/split-peas"
+        },
+        {
+          "text" : "Tempeh",
+          "topic" : "topics/tempeh"
+        }
+      ]
+    },
+    "dozeBerries" : {
+      "heading" : "Bobule",
+      "servings" : [
+        {
+          "imperial" : "½ šálku čerstvého nebo mraženého",
+          "metric" : "60 g čerstvé nebo mražené"
+        },
+        {
+          "imperial" : "¼ šálku sušené",
+          "metric" : "40 g sušené"
+        }
+      ],
+      "topic" : "topics/berries",
+      "varieties" : [
+        {
+          "text" : "Acai bobule",
+          "topic" : "topics/acai-berries"
+        },
+        {
+          "text" : "Dřišťál",
+          "topic" : "topics/barberries"
+        },
+        {
+          "text" : "Ostružiny",
+          "topic" : "topics/blackberries"
+        },
+        {
+          "text" : "Borůvky",
+          "topic" : "topics/blueberries"
+        },
+        {
+          "text" : "Třešně nebo višně ",
+          "topic" : "topics/cherries"
+        },
+        {
+          "text" : "Hrozny (Concord)",
+          "topic" : "topics/grapes"
+        },
+        {
+          "text" : "Brusinky",
+          "topic" : "topics/cranberries"
+        },
+        {
+          "text" : "Goji bobule",
+          "topic" : "topics/goji-berries"
+        },
+        {
+          "text" : "Kumquaty",
+          "topic" : ""
+        },
+        {
+          "text" : "Moruše",
+          "topic" : ""
+        },
+        {
+          "text" : "Maliny (černé nebo červené)",
+          "topic" : "topics/raspberries"
+        },
+        {
+          "text" : "Jahody",
+          "topic" : "topics/strawberries"
+        }
+      ]
+    },
+    "dozeBeverages" : {
+      "heading" : "Nápoje",
+      "servings" : [
+        {
+          "imperial" : "Jedna sklenice (12 uncí)",
+          "metric" : "Jedna sklenice (350 ml)"
+        }
+      ],
+      "topic" : "topics/beverages",
+      "varieties" : [
+        {
+          "text" : "Černý čaj",
+          "topic" : "topics/black-tea"
+        },
+        {
+          "text" : "Chai čaj",
+          "topic" : "topics/chai-tea"
+        },
+        {
+          "text" : "Vanilkový, heřmánkový čaj",
+          "topic" : "topics/chamomile-tea"
+        },
+        {
+          "text" : "Káva",
+          "topic" : "topics/coffee"
+        },
+        {
+          "text" : "Earl grey čaj",
+          "topic" : "topics/earl-grey-tea"
+        },
+        {
+          "text" : "Zelený čaj",
+          "topic" : "topics/green-tea"
+        },
+        {
+          "text" : "Ibiškový čaj",
+          "topic" : "topics/hibiscus-tea"
+        },
+        {
+          "text" : "Horká čokoláda",
+          "topic" : ""
+        },
+        {
+          "text" : "Jasmínový čaj",
+          "topic" : ""
+        },
+        {
+          "text" : "Meduňkový čaj",
+          "topic" : "topics/lemon-balm"
+        },
+        {
+          "text" : "Matcha čaj",
+          "topic" : "topics/matcha"
+        },
+        {
+          "text" : "Čaj oolong (s mandlovou chutí)",
+          "topic" : "topics/oolong-tea"
+        },
+        {
+          "text" : "Mátový čaj",
+          "topic" : "topics/peppermint"
+        },
+        {
+          "text" : "Rooibos čaj",
+          "topic" : "topics/rooibos-tea"
+        },
+        {
+          "text" : "Voda",
+          "topic" : "topics/water"
+        },
+        {
+          "text" : "Bílý čaj",
+          "topic" : "topics/white-tea"
+        }
+      ]
+    },
+    "dozeExercise" : {
+      "heading" : "Pohyb",
+      "servings" : [
+        {
+          "imperial" : "90 minut středně intenzivní aktivity",
+          "metric" : "90 minut středně intenzivní aktivity"
+        },
+        {
+          "imperial" : "40 minut intenzivní aktivity",
+          "metric" : "40 minut intenzivní aktivity"
+        }
+      ],
+      "topic" : "topics/exercise",
+      "varieties" : [
+        {
+          "text" : "Jízda na kole",
+          "topic" : ""
+        },
+        {
+          "text" : "Kanoistika",
+          "topic" : ""
+        },
+        {
+          "text" : "Tanec",
+          "topic" : ""
+        },
+        {
+          "text" : "Vybíjená",
+          "topic" : ""
+        },
+        {
+          "text" : "Sjezdové lyžování",
+          "topic" : ""
+        },
+        {
+          "text" : "Šerm",
+          "topic" : ""
+        },
+        {
+          "text" : "Turistika",
+          "topic" : ""
+        },
+        {
+          "text" : "Domácí práce",
+          "topic" : ""
+        },
+        {
+          "text" : "Bruslení",
+          "topic" : ""
+        },
+        {
+          "text" : "Inline bruslení",
+          "topic" : ""
+        },
+        {
+          "text" : "Žonglování",
+          "topic" : ""
+        },
+        {
+          "text" : "Skákání na trampolíně",
+          "topic" : ""
+        },
+        {
+          "text" : "Plavba na šlapadlech",
+          "topic" : ""
+        },
+        {
+          "text" : "Hraní frisbee",
+          "topic" : ""
+        },
+        {
+          "text" : "Bruslení na kolečkových bruslích",
+          "topic" : ""
+        },
+        {
+          "text" : "Házení na koš",
+          "topic" : ""
+        },
+        {
+          "text" : "Odhrnování lehkého sněhu",
+          "topic" : ""
+        },
+        {
+          "text" : "Skateboarding",
+          "topic" : ""
+        },
+        {
+          "text" : "Šnorchlování",
+          "topic" : ""
+        },
+        {
+          "text" : "Surfování",
+          "topic" : ""
+        },
+        {
+          "text" : "Rekreační plavání",
+          "topic" : ""
+        },
+        {
+          "text" : "Tenis (čtyřhra)",
+          "topic" : ""
+        },
+        {
+          "text" : "Šlapání vody",
+          "topic" : ""
+        },
+        {
+          "text" : "Rychlá chůze (4 mph)",
+          "topic" : ""
+        },
+        {
+          "text" : "Vodní aerobik",
+          "topic" : ""
+        },
+        {
+          "text" : "Vodní lyžování",
+          "topic" : ""
+        },
+        {
+          "text" : "Práce na zahradě ",
+          "topic" : ""
+        },
+        {
+          "text" : "Jóga",
+          "topic" : ""
+        },
+        {
+          "text" : "Turistika",
+          "topic" : ""
+        },
+        {
+          "text" : "Basketball",
+          "topic" : ""
+        },
+        {
+          "text" : "Jízda na kole do kopce",
+          "topic" : ""
+        },
+        {
+          "text" : "Kruhový posilovací trénink",
+          "topic" : ""
+        },
+        {
+          "text" : "Běh na lyžích",
+          "topic" : ""
+        },
+        {
+          "text" : "Americký fotbal",
+          "topic" : ""
+        },
+        {
+          "text" : "Hokej",
+          "topic" : ""
+        },
+        {
+          "text" : "Běhání",
+          "topic" : ""
+        },
+        {
+          "text" : "Výskoky s roznožením a rozpažením (panáky)",
+          "topic" : ""
+        },
+        {
+          "text" : "Švihadlo",
+          "topic" : ""
+        },
+        {
+          "text" : "Lakros",
+          "topic" : ""
+        },
+        {
+          "text" : "Kliky",
+          "topic" : ""
+        },
+        {
+          "text" : "Přitahování se ",
+          "topic" : ""
+        },
+        {
+          "text" : "Raketbal",
+          "topic" : ""
+        },
+        {
+          "text" : "Horolezectví",
+          "topic" : ""
+        },
+        {
+          "text" : "Ragby",
+          "topic" : ""
+        },
+        {
+          "text" : "Běh",
+          "topic" : ""
+        },
+        {
+          "text" : "Potápění",
+          "topic" : ""
+        },
+        {
+          "text" : "Tenis (dvouhra)",
+          "topic" : ""
+        },
+        {
+          "text" : "Fotbal",
+          "topic" : ""
+        },
+        {
+          "text" : "Rychlobruslení",
+          "topic" : ""
+        },
+        {
+          "text" : "Squash",
+          "topic" : ""
+        },
+        {
+          "text" : "Step aerobik",
+          "topic" : ""
+        },
+        {
+          "text" : "Kondiční plavání",
+          "topic" : ""
+        },
+        {
+          "text" : "Rychlá chůze do kopce",
+          "topic" : ""
+        },
+        {
+          "text" : "Vodní jogging",
+          "topic" : ""
+        }
+      ]
+    },
+    "dozeFlaxseeds" : {
+      "heading" : "Lněná semínka",
+      "servings" : [
+        {
+          "imperial" : "1 polévková lžíce mleté",
+          "metric" : "1 polévková lžíce mleté"
+        }
+      ],
+      "topic" : "topics/flax-seeds",
+      "varieties" : [
+        {
+          "text" : "Hnědá lněná semínka",
+          "topic" : ""
+        },
+        {
+          "text" : "Zlatá lněná semínka",
+          "topic" : ""
+        }
+      ]
+    },
+    "dozeFruitsOther" : {
+      "heading" : "Ostatní ovoce",
+      "servings" : [
+        {
+          "imperial" : "1 středně velké ovoce",
+          "metric" : "1 středně velké ovoce"
+        },
+        {
+          "imperial" : "1 šálek nakrájeného ovoce",
+          "metric" : "120 g nakrájeného ovoce"
+        },
+        {
+          "imperial" : "¼ šálku sušeného ovoce",
+          "metric" : "40 g sušeného ovoce"
+        }
+      ],
+      "topic" : "topics/fruit",
+      "varieties" : [
+        {
+          "text" : "Jablka",
+          "topic" : "topics/apples"
+        },
+        {
+          "text" : "Meruňky",
+          "topic" : "topics/apricots"
+        },
+        {
+          "text" : "Avokádo",
+          "topic" : "topics/avocados"
+        },
+        {
+          "text" : "Banány",
+          "topic" : "topics/bananas"
+        },
+        {
+          "text" : "Ananasový meloun",
+          "topic" : "topics/cantaloupe"
+        },
+        {
+          "text" : "Klementinky",
+          "topic" : ""
+        },
+        {
+          "text" : "Datle",
+          "topic" : "topics/dates"
+        },
+        {
+          "text" : "Fíky",
+          "topic" : ""
+        },
+        {
+          "text" : "Grapefruit",
+          "topic" : "topics/grapefruit"
+        },
+        {
+          "text" : "Cukrový meloun",
+          "topic" : ""
+        },
+        {
+          "text" : "Kiwi",
+          "topic" : "topics/kiwifruit"
+        },
+        {
+          "text" : "Citrony",
+          "topic" : "topics/lemons"
+        },
+        {
+          "text" : "Limetky",
+          "topic" : "topics/limes"
+        },
+        {
+          "text" : "Liči",
+          "topic" : ""
+        },
+        {
+          "text" : "Mango",
+          "topic" : "topics/mango"
+        },
+        {
+          "text" : "Nektarinky",
+          "topic" : ""
+        },
+        {
+          "text" : "Pomeranče",
+          "topic" : "topics/oranges"
+        },
+        {
+          "text" : "Papája",
+          "topic" : ""
+        },
+        {
+          "text" : "Mučenka",
+          "topic" : ""
+        },
+        {
+          "text" : "Broskve",
+          "topic" : "topics/peaches"
+        },
+        {
+          "text" : "Hrušky",
+          "topic" : "topics/pears"
+        },
+        {
+          "text" : "Ananas",
+          "topic" : ""
+        },
+        {
+          "text" : "Švestky (zejména černé švestky)",
+          "topic" : "topics/plums"
+        },
+        {
+          "text" : "Blumy",
+          "topic" : ""
+        },
+        {
+          "text" : "Granátová jablka",
+          "topic" : "topics/pomegranates"
+        },
+        {
+          "text" : "Ryngle/Špendlíky",
+          "topic" : "topics/prunes"
+        },
+        {
+          "text" : "Mandarinky",
+          "topic" : ""
+        },
+        {
+          "text" : "Vodní meloun",
+          "topic" : "topics/watermelon"
+        }
+      ]
+    },
+    "dozeGreens" : {
+      "heading" : "Zelenina",
+      "servings" : [
+        {
+          "imperial" : "1 šálek syrové",
+          "metric" : "60 g syrové"
+        },
+        {
+          "imperial" : "½ šálku vařené",
+          "metric" : "90 g vařené"
+        }
+      ],
+      "topic" : "topics/greens",
+      "varieties" : [
+        {
+          "text" : "Rukola",
+          "topic" : ""
+        },
+        {
+          "text" : "Řepná nať",
+          "topic" : "topics/beets"
+        },
+        {
+          "text" : "Brukev zelná",
+          "topic" : "topics/collard-greens"
+        },
+        {
+          "text" : "Kapusta (černá, zelená a červená)",
+          "topic" : "topics/kale"
+        },
+        {
+          "text" : "Směs salátů (mladé zelené saláty)",
+          "topic" : ""
+        },
+        {
+          "text" : "Brukev zelená",
+          "topic" : "topics/mustard-greens"
+        },
+        {
+          "text" : "Šťovík",
+          "topic" : ""
+        },
+        {
+          "text" : "Špenát",
+          "topic" : "topics/spinach"
+        },
+        {
+          "text" : "Švýcarský mangold",
+          "topic" : "topics/swiss-chard"
+        },
+        {
+          "text" : "Tuřínová nať",
+          "topic" : ""
+        }
+      ]
+    },
+    "dozeNuts" : {
+      "heading" : "Ořechy a semena",
+      "servings" : [
+        {
+          "imperial" : "¼ šálku ořechů nebo semínek",
+          "metric" : "30 g ořechů nebo semínek"
+        },
+        {
+          "imperial" : "2 lžíce ořechového nebo semínkového másla",
+          "metric" : "2 lžíce ořechového nebo semínkového másla"
+        }
+      ],
+      "topic" : "topics/nuts",
+      "varieties" : [
+        {
+          "text" : "Mandle",
+          "topic" : "topics/almonds"
+        },
+        {
+          "text" : "Brazilské ořechy",
+          "topic" : "topics/brazil-nuts"
+        },
+        {
+          "text" : "Kešu ořechy",
+          "topic" : "topics/cashews"
+        },
+        {
+          "text" : "Chia semínka",
+          "topic" : "topics/chia-seeds"
+        },
+        {
+          "text" : "Lískové oříšky",
+          "topic" : "topics/hazelnuts"
+        },
+        {
+          "text" : "Konopná semínka",
+          "topic" : ""
+        },
+        {
+          "text" : "Makadamové ořechy",
+          "topic" : "topics/macadamia-nuts"
+        },
+        {
+          "text" : "Pekanové ořechy",
+          "topic" : "topics/pecans"
+        },
+        {
+          "text" : "Pistácie",
+          "topic" : "topics/pistachios"
+        },
+        {
+          "text" : "Dýňová semínka",
+          "topic" : "topics/pumpkin-seeds"
+        },
+        {
+          "text" : "Sezamová semínka",
+          "topic" : "topics/sesame-seeds"
+        },
+        {
+          "text" : "Slunečnicová semínka",
+          "topic" : "topics/sunflower-seeds"
+        },
+        {
+          "text" : "Vlašské ořechy",
+          "topic" : "topics/walnuts"
+        }
+      ]
+    },
+    "dozeSpices" : {
+      "heading" : "Bylinky a koření",
+      "servings" : [
+        {
+          "imperial" : "¼ lžičky kurkumy",
+          "metric" : "¼ lžičky kurkumy"
+        },
+        {
+          "imperial" : "Jakékoli další bylinky a koření (bez soli), které máte rádi",
+          "metric" : "Jakékoli další bylinky a koření (bez soli), které máte rádi"
+        }
+      ],
+      "topic" : "topics/spices",
+      "varieties" : [
+        {
+          "text" : "Nové koření",
+          "topic" : "topics/allspice"
+        },
+        {
+          "text" : "Dřišťál",
+          "topic" : "topics/barberries"
+        },
+        {
+          "text" : "Bazalka",
+          "topic" : "topics/basil"
+        },
+        {
+          "text" : "Bobkové listy",
+          "topic" : ""
+        },
+        {
+          "text" : "Kardamon",
+          "topic" : ""
+        },
+        {
+          "text" : "Chilli prášek",
+          "topic" : ""
+        },
+        {
+          "text" : "Koriandr (listy)",
+          "topic" : "topics/cilantro"
+        },
+        {
+          "text" : "Skořice",
+          "topic" : "topics/cinnamon"
+        },
+        {
+          "text" : "Hřebíček",
+          "topic" : "topics/cloves"
+        },
+        {
+          "text" : "Koriandr (semena)",
+          "topic" : ""
+        },
+        {
+          "text" : "Kmín",
+          "topic" : "topics/cumin"
+        },
+        {
+          "text" : "Kari v prášku",
+          "topic" : "topics/curry-powder"
+        },
+        {
+          "text" : "Kopr",
+          "topic" : ""
+        },
+        {
+          "text" : "Pískavice řecká",
+          "topic" : "topics/fenugreek"
+        },
+        {
+          "text" : "Česnek",
+          "topic" : "topics/garlic"
+        },
+        {
+          "text" : "Zázvor",
+          "topic" : "topics/ginger"
+        },
+        {
+          "text" : "Křen",
+          "topic" : ""
+        },
+        {
+          "text" : "Citronová tráva",
+          "topic" : ""
+        },
+        {
+          "text" : "Majoránka",
+          "topic" : "topics/marjoram"
+        },
+        {
+          "text" : "Hořčičný prášek",
+          "topic" : "topics/mustard-powder"
+        },
+        {
+          "text" : "Muškátový oříšek",
+          "topic" : "topics/nutmeg"
+        },
+        {
+          "text" : "Oregano",
+          "topic" : "topics/oregano"
+        },
+        {
+          "text" : "Uzená paprika",
+          "topic" : ""
+        },
+        {
+          "text" : "Petržel",
+          "topic" : "topics/parsley"
+        },
+        {
+          "text" : "Pepř",
+          "topic" : "topics/pepper"
+        },
+        {
+          "text" : "Máta peprná",
+          "topic" : "topics/peppermint"
+        },
+        {
+          "text" : "Rozmarýn",
+          "topic" : "topics/rosemary"
+        },
+        {
+          "text" : "Šafrán",
+          "topic" : "topics/saffron"
+        },
+        {
+          "text" : "Šalvěj",
+          "topic" : ""
+        },
+        {
+          "text" : "Tymián",
+          "topic" : ""
+        },
+        {
+          "text" : "Kurkuma",
+          "topic" : "topics/turmeric"
+        },
+        {
+          "text" : "Vanilka",
+          "topic" : ""
+        }
+      ]
+    },
+    "dozeVegetablesCruciferous" : {
+      "heading" : "Košťálová zelenina",
+      "servings" : [
+        {
+          "imperial" : "½ šálku nakrájené",
+          "metric" : "30–80 g nakrájené"
+        },
+        {
+          "imperial" : "½ šálku růžičkové kapusty",
+          "metric" : "78 g růžičkové kapusty"
+        },
+        {
+          "imperial" : "¼ šálku brokolicových klíčků",
+          "metric" : "14 g brokolicových klíčků"
+        },
+        {
+          "imperial" : "1 lžíce křenu",
+          "metric" : "1 lžíce křenu"
+        }
+      ],
+      "topic" : "topics/cruciferous-vegetables",
+      "varieties" : [
+        {
+          "text" : "Rukola",
+          "topic" : ""
+        },
+        {
+          "text" : "Čínské zelí",
+          "topic" : "topics/bok-choy"
+        },
+        {
+          "text" : "Brokolice (včetně Romanesco)",
+          "topic" : "topics/broccoli"
+        },
+        {
+          "text" : "Růžičková kapusta",
+          "topic" : "topics/brussels-sprouts"
+        },
+        {
+          "text" : "Zelí (zelené, červené a savojské)",
+          "topic" : "topics/cabbage"
+        },
+        {
+          "text" : "Květák (bílý, zelený, oranžový a fialový)",
+          "topic" : "topics/cauliflower"
+        },
+        {
+          "text" : "Brukev zelená",
+          "topic" : "topics/collard-greens"
+        },
+        {
+          "text" : "Křen",
+          "topic" : ""
+        },
+        {
+          "text" : "Kapusta (černá, zelená a červená)",
+          "topic" : "topics/kale"
+        },
+        {
+          "text" : "Kedlubna (zelená a fialová)",
+          "topic" : ""
+        },
+        {
+          "text" : "Brukev sítinovitá",
+          "topic" : "topics/mustard-greens"
+        },
+        {
+          "text" : "Ředkvičky",
+          "topic" : ""
+        },
+        {
+          "text" : "Tuřín",
+          "topic" : ""
+        },
+        {
+          "text" : "Řeřicha",
+          "topic" : "topics/watercress"
+        }
+      ]
+    },
+    "dozeVegetablesOther" : {
+      "heading" : "Ostatní zelenina",
+      "servings" : [
+        {
+          "imperial" : "1 šálek syrové listové zeleniny",
+          "metric" : "60 g syrové listové zeleniny"
+        },
+        {
+          "imperial" : "½ šálku syrové nebo vařené nelistové zeleniny",
+          "metric" : "50 g syrové nebo vařené nelistové zeleniny"
+        },
+        {
+          "imperial" : "½ šálku zeleninové šťávy",
+          "metric" : "125 ml zeleninové šťávy"
+        },
+        {
+          "imperial" : "¼ šálku sušených hub",
+          "metric" : "7 g sušených hub"
+        }
+      ],
+      "topic" : "topics/vegetables",
+      "varieties" : [
+        {
+          "text" : "Artyčoky",
+          "topic" : "topics/artichokes"
+        },
+        {
+          "text" : "Chřest",
+          "topic" : "topics/asparagus"
+        },
+        {
+          "text" : "Řepa",
+          "topic" : "topics/beets"
+        },
+        {
+          "text" : "Paprika (sladká)",
+          "topic" : "topics/bell-peppers"
+        },
+        {
+          "text" : "Mrkev",
+          "topic" : "topics/carrots"
+        },
+        {
+          "text" : "Kukuřice",
+          "topic" : "topics/corn"
+        },
+        {
+          "text" : "Česnek",
+          "topic" : "topics/garlic"
+        },
+        {
+          "text" : "Houby (pečárka - bílá, hnědá, hlíva ústřičná a shiitake)",
+          "topic" : "topics/mushrooms"
+        },
+        {
+          "text" : "Ibiškovec jedlý",
+          "topic" : "topics/okra"
+        },
+        {
+          "text" : "Cibule",
+          "topic" : "topics/onions"
+        },
+        {
+          "text" : "Fialové brambory",
+          "topic" : "topics/potatoes"
+        },
+        {
+          "text" : "Dýně",
+          "topic" : "topics/pumpkin"
+        },
+        {
+          "text" : "Mořská zelenina (řasy arame, dulse a nori)",
+          "topic" : "topics/sea-vegetables"
+        },
+        {
+          "text" : "Hrášek cukrový",
+          "topic" : ""
+        },
+        {
+          "text" : "Tykve (odrůdy delicata, letní a špagetové tykve)",
+          "topic" : "topics/squash"
+        },
+        {
+          "text" : "Sladké brambory, batáty",
+          "topic" : "topics/sweet-potatoes"
+        },
+        {
+          "text" : "Rajčata",
+          "topic" : "topics/tomatoes"
+        },
+        {
+          "text" : "Cuketa",
+          "topic" : "topics/zucchini"
+        }
+      ]
+    },
+    "dozeWholeGrains" : {
+      "heading" : "Celá zrna",
+      "servings" : [
+        {
+          "imperial" : "½ šálku obilné kaše nebo vařených zrn, těstovin nebo kukuřice",
+          "metric" : "100 g obilné kaše nebo vařených zrn, těstovin nebo kukuřice"
+        },
+        {
+          "imperial" : "1 šálek studených cereálií",
+          "metric" : "50 g studených cereálií"
+        },
+        {
+          "imperial" : "1 tortilla nebo krajíc chleba",
+          "metric" : "1 tortilla nebo krajíc chleba"
+        },
+        {
+          "imperial" : "½ housky/bagelu nebo anglického muffinu",
+          "metric" : "½ housky/bagelu nebo anglického muffinu"
+        },
+        {
+          "imperial" : "3 šálky popcornu",
+          "metric" : "30 g popcornu (popraskaného)"
+        }
+      ],
+      "topic" : "topics/grains",
+      "varieties" : [
+        {
+          "text" : "Ječmen",
+          "topic" : "topics/barley"
+        },
+        {
+          "text" : "Pohanka",
+          "topic" : "topics/buckwheat"
+        },
+        {
+          "text" : "Proso",
+          "topic" : "topics/millet"
+        },
+        {
+          "text" : "Oves",
+          "topic" : "topics/oats"
+        },
+        {
+          "text" : "Popcorn",
+          "topic" : "topics/popcorn"
+        },
+        {
+          "text" : "Quinoa",
+          "topic" : "topics/quinoa"
+        },
+        {
+          "text" : "Žito",
+          "topic" : "topics/rye"
+        },
+        {
+          "text" : "Teff - trpasličí proso",
+          "topic" : ""
+        },
+        {
+          "text" : "Celozrnné těstoviny",
+          "topic" : "topics/pasta"
+        }
+      ]
+    },
+    "otherVitaminB12" : {
+      "heading" : "Vitamín B12",
+      "servings" : [
+
+      ],
+      "topic" : "topics/vitamin-b12",
+      "varieties" : [
+
+      ]
+    }
+  }
+}

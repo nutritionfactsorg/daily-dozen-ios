@@ -1,0 +1,16 @@
+/* DailyDozen InfoPlist.strings (cs) */
+/* Copyright © 2021 Nutritionfacts.org. All rights reserved. */
+
+/* User-visible application name. Visible under icon. Used by Siri. */
+"CFBundleDisplayName" = "Denní Dvanáctka";
+
+/* User-visible application short name (15 Characters max) */
+"CFBundleName" = "DenniDvanactka ";
+
+/* Privacy - Health Share Usage Description */
+"NSHealthShareUsageDescription" = "Funkce Jednadvacítka Hubnutí přistupuje k vašim datům HealthKit a poskytuje aktualizace vašich denních měření váhy.";
+
+/* Privacy - Health Update Usage Description */
+"NSHealthUpdateUsageDescription" = "Funkce Jednadvacítka Hubnutí může zapisovat údaje o váze do HealthKit, což vám pomůže sledovat vaše pokroky.";
+
+/* file end */

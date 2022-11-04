@@ -125,10 +125,10 @@
 "info_app_about_overview" = "Verwenden Sie diese App täglich, um den Überblick über die Lebensmittel und Ratschläge zu behalten, die ich in meinen Büchern How Not to Die und How Not to Diet für optimale Gesundheit und Langlebigkeit empfehle.";
 
 /* Info About View: Contributing Translators List */
-"info_app_about_translators" = "Besonderer Dank an unsere ehrenamtlichen Übersetzer: Ricard Soler Roger (ca), Anke Schliessmann (de), Doron Barak (he), Ruth Levy (he), Joanna Klopotek (pl), Tania Bassi (pt-BR), Joao Madureira (pt-PT), Evgeniya Lyakh (ru).";
+"info_app_about_translators" = "Besonderer Dank an unsere ehrenamtlichen Übersetzer: Ricard Soler Roger (ca), Luděk Bouška (cs), Lenka Lukacová (cs), Anke Schliessmann (de), Doron Barak (he), Ruth Levy (he), Joanna Klopotek (pl), Tania Bassi (pt-BR), Joao Madureira (pt-PT), Evgeniya Lyakh (ru).";
 
 /* Info About View: Application release version */
-"info_app_about_version" = "Version 3.3.1";
+"info_app_about_version" = "Version 3.3.3";
 
 /* Info About View: Welcome */
 "info_app_about_welcome" = "Willkommen zu meinem Täglichen Dutzend!";
