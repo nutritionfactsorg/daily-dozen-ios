@@ -245,7 +245,7 @@
 "setting_tweak_header" = "Видимость 21 уловки";
 
 /* Preference Settings View: Part of ‘Imperial/Metric/Toggle Units’ selector */
-"setting_units_0_imperial" = "Имперсая";
+"setting_units_0_imperial" = "Имперская";
 
 /* Preference Settings View: Part of ‘Imperial/Metric/Toggle Units’ selector */
 "setting_units_1_metric" = "Метрическая";
