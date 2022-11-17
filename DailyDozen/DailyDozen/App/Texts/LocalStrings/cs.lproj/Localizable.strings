@@ -272,13 +272,13 @@
 "setting_tweak_header" = "Viditelnost Jednadvacítky Hubnutí";
 
 /* Preference Settings View: Part of ‘Imperial/Metric/Toggle Units’ selector */
-"setting_units_0_imperial" = "Imperiální jednotky";
+"setting_units_0_imperial" = "Imperiální"; /* Imperiální jednotky */
 
 /* Preference Settings View: Part of ‘Imperial/Metric/Toggle Units’ selector */
-"setting_units_1_metric" = "Metrické jednotky";
+"setting_units_1_metric" = "Metrické"; /* Metrické jednotky */
 
 /* Preference Settings View: Part of ‘Imperial/Metric/Toggle Units’ selector */
-"setting_units_2_toggle" = "Přepnout jednotky";
+"setting_units_2_toggle" = "Přepnout jednotky"; /* Přepnout jednotky */
 
 /* Preference Settings View: brief description text below units control. */
 "setting_units_choice_footer" = "Nastavte použití pouze jednoho typu jednotek, nebo umožnění přepínaní pomocí tlačítka \"Jednotky\".";
