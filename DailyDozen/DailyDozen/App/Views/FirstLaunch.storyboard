@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="18122" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="abI-xj-cFt">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="21507" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="abI-xj-cFt">
     <device id="retina4_0" orientation="portrait" appearance="light"/>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="18093"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="21505"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -23,10 +23,10 @@
                                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                                         <subviews>
                                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="12" translatesAutoresizingMaskIntoConstraints="NO" id="GRO-mm-rLg">
-                                                <rect key="frame" x="49.5" y="222.5" width="221" height="123"/>
+                                                <rect key="frame" x="49.5" y="220" width="221" height="128"/>
                                                 <subviews>
                                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="2" translatesAutoresizingMaskIntoConstraints="NO" id="lnb-zJ-IzP">
-                                                        <rect key="frame" x="0.0" y="0.0" width="221" height="55.5"/>
+                                                        <rect key="frame" x="0.0" y="0.0" width="221" height="58"/>
                                                         <subviews>
                                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="For Health Alone" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="atR-un-jgX">
                                                                 <rect key="frame" x="0.0" y="0.0" width="221" height="21.5"/>
@@ -34,23 +34,18 @@
                                                                 <nil key="textColor"/>
                                                                 <nil key="highlightedColor"/>
                                                             </label>
-                                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ReM-AP-Fpp" customClass="RoundedButton" customModule="DailyDozen" customModuleProvider="target">
-                                                                <rect key="frame" x="0.0" y="23.5" width="221" height="32"/>
-                                                                <fontDescription key="fontDescription" type="system" pointSize="16"/>
-                                                                <state key="normal" title="Daily Dozen Only"/>
-                                                                <userDefinedRuntimeAttributes>
-                                                                    <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
-                                                                        <real key="value" value="10"/>
-                                                                    </userDefinedRuntimeAttribute>
-                                                                </userDefinedRuntimeAttributes>
+                                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="d7j-QY-AH8">
+                                                                <rect key="frame" x="0.0" y="23.5" width="221" height="34.5"/>
+                                                                <state key="normal" title="Button"/>
+                                                                <buttonConfiguration key="configuration" style="filled" title="Button" titleAlignment="automatic"/>
                                                                 <connections>
-                                                                    <action selector="dailyDozenOnly:" destination="abI-xj-cFt" eventType="touchUpInside" id="2vY-Ms-iJd"/>
+                                                                    <action selector="dailyDozenOnlyBtnAction:" destination="abI-xj-cFt" eventType="touchUpInside" id="FvH-00-xxx"/>
                                                                 </connections>
                                                             </button>
                                                         </subviews>
                                                     </stackView>
                                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="2" translatesAutoresizingMaskIntoConstraints="NO" id="Pps-nD-1Rl">
-                                                        <rect key="frame" x="0.0" y="67.5" width="221" height="55.5"/>
+                                                        <rect key="frame" x="0.0" y="70" width="221" height="58"/>
                                                         <subviews>
                                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="For Health and Weight Loss" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="OdG-YQ-lT8">
                                                                 <rect key="frame" x="0.0" y="0.0" width="221" height="21.5"/>
@@ -58,17 +53,13 @@
                                                                 <nil key="textColor"/>
                                                                 <nil key="highlightedColor"/>
                                                             </label>
-                                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="wordWrap" translatesAutoresizingMaskIntoConstraints="NO" id="Lef-Iw-Ywr" customClass="RoundedButton" customModule="DailyDozen" customModuleProvider="target">
-                                                                <rect key="frame" x="0.0" y="23.5" width="221" height="32"/>
-                                                                <fontDescription key="fontDescription" type="system" pointSize="16"/>
-                                                                <state key="normal" title="Daily Dozen + 21 Tweaks"/>
-                                                                <userDefinedRuntimeAttributes>
-                                                                    <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
-                                                                        <real key="value" value="10"/>
-                                                                    </userDefinedRuntimeAttribute>
-                                                                </userDefinedRuntimeAttributes>
+                                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="b1e-B7-rMJ">
+                                                                <rect key="frame" x="0.0" y="23.5" width="221" height="34.5"/>
+                                                                <inset key="contentEdgeInsets" minX="10" minY="10" maxX="10" maxY="10"/>
+                                                                <state key="normal" title="Button"/>
+                                                                <buttonConfiguration key="configuration" style="filled" title="Button"/>
                                                                 <connections>
-                                                                    <action selector="dozenPlusTweaks:" destination="abI-xj-cFt" eventType="touchUpInside" id="BIu-rI-Kr3"/>
+                                                                    <action selector="dozenPlusTweaksBtnAction:" destination="abI-xj-cFt" eventType="touchUpInside" id="gME-QQ-Y6G"/>
                                                                 </connections>
                                                             </button>
                                                         </subviews>
@@ -95,8 +86,8 @@
                     </view>
                     <navigationItem key="navigationItem" id="eHn-kO-Mdo"/>
                     <connections>
-                        <outlet property="settingDozeOnlyBtn" destination="ReM-AP-Fpp" id="rgG-09-WSx"/>
-                        <outlet property="settingDozeTweakBtn" destination="Lef-Iw-Ywr" id="iWu-Mh-54Z"/>
+                        <outlet property="settingDozeOnlyButton" destination="d7j-QY-AH8" id="61h-5w-JcH"/>
+                        <outlet property="settingDozeTweakButton" destination="b1e-B7-rMJ" id="Lqr-rY-BPq"/>
                         <outlet property="settingHealthAloneLabel" destination="atR-un-jgX" id="Lra-a6-TfP"/>
                         <outlet property="settingHealthWeightLabel" destination="OdG-YQ-lT8" id="V15-tF-1pz"/>
                     </connections>
