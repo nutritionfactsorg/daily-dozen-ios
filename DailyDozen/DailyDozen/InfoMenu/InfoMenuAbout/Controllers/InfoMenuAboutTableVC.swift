@@ -64,13 +64,12 @@ class InfoMenuAboutTableVC: UITableViewController {
         \(NSLocalizedString("info_app_about_translators", comment: ""))
         
         """
-
+        
         infoAppAboutContent.text = aboutContentStr
         infoAppAboutOverview.text = NSLocalizedString("info_app_about_overview", comment: "")
         infoAppAboutVersion.text = NSLocalizedString("info_app_about_version", comment: "")
         infoAppAboutWelcome.text = NSLocalizedString("info_app_about_welcome", comment: "")
     }
-
 }
 
 // Helper function inserted by Swift 4.2 migrator.

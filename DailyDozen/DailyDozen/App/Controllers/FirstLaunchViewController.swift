@@ -68,7 +68,7 @@ class FirstLaunchViewController: UIViewController {
 
         settingHealthAloneLabel.text = NSLocalizedString("setting_health_alone_txt", comment: "For Health Alone")
         settingHealthWeightLabel.text = NSLocalizedString("setting_health_weight_txt", comment: "For Health and Weight Loss")
-                
+        
         settingDozeOnlyButton.backgroundColor = ColorManager.style.mainMedium
         settingDozeOnlyButton.tintColor = ColorManager.style.mainMedium
         settingDozeOnlyButton.setTitleColor(UIColor.white, for: .normal)

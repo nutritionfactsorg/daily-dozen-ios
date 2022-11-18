@@ -37,7 +37,7 @@
                                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="d7j-QY-AH8">
                                                                 <rect key="frame" x="0.0" y="23.5" width="221" height="34.5"/>
                                                                 <state key="normal" title="Button"/>
-                                                                <buttonConfiguration key="configuration" style="filled" title="Button" titleAlignment="automatic"/>
+                                                                <buttonConfiguration key="configuration" style="filled" title="Button"/>
                                                                 <connections>
                                                                     <action selector="dailyDozenOnlyBtnAction:" destination="abI-xj-cFt" eventType="touchUpInside" id="FvH-00-xxx"/>
                                                                 </connections>
