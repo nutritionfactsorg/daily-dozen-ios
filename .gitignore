@@ -59,6 +59,11 @@ Pods/
 !Podfile
 !Podfile.lock
 
+######################
+## Google: Firebase ##
+######################
+DailyDozen/DailyDozen/GoogleService-Info.plist
+
 #################
 ## LibreOffice ##
 #################
