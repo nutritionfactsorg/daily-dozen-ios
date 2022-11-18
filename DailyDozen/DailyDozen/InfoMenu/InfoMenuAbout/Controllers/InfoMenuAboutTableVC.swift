@@ -38,8 +38,7 @@ class InfoMenuAboutTableVC: UITableViewController {
     
     // Localized outlets
     @IBOutlet weak var infoAppAboutAppName: UILabel!
-    @IBOutlet weak var infoAppAboutCreatedBy: UILabel!
-    @IBOutlet weak var infoAppAboutOssCredits: UILabel!
+    @IBOutlet weak var infoAppAboutContent: UILabel!
     @IBOutlet weak var infoAppAboutOverview: UILabel!
     @IBOutlet weak var infoAppAboutVersion: UILabel!
     @IBOutlet weak var infoAppAboutWelcome: UILabel!
@@ -56,8 +55,7 @@ class InfoMenuAboutTableVC: UITableViewController {
         navigationItem.setLeftBarButton(barItem, animated: false)
         
         infoAppAboutAppName.text = NSLocalizedString("info_app_about_app_name", comment: "")
-        infoAppAboutCreatedBy.text = NSLocalizedString("info_app_about_created_by", comment: "")
-        infoAppAboutOssCredits.text = NSLocalizedString("info_app_about_oss_credits", comment: "")
+        infoAppAboutContent.text = NSLocalizedString("info_app_about_created_by", comment: "")
         infoAppAboutOverview.text = NSLocalizedString("info_app_about_overview", comment: "")
         infoAppAboutVersion.text = NSLocalizedString("info_app_about_version", comment: "")
         infoAppAboutWelcome.text = NSLocalizedString("info_app_about_welcome", comment: "")
