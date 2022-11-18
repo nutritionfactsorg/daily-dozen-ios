@@ -27,7 +27,7 @@
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" apportionsSegmentWidthsByContent="YES" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="RLb-GV-4hh">
-                                                    <rect key="frame" x="48" y="6.5" width="224" height="32"/>
+                                                    <rect key="frame" x="12" y="6.5" width="296" height="32"/>
                                                     <segments>
                                                         <segment title="Imperial"/>
                                                         <segment title="Metric"/>
@@ -39,6 +39,8 @@
                                                 </segmentedControl>
                                             </subviews>
                                             <constraints>
+                                                <constraint firstItem="RLb-GV-4hh" firstAttribute="leading" secondItem="IB8-po-j4u" secondAttribute="leading" constant="12" id="4g3-M9-hTE"/>
+                                                <constraint firstAttribute="trailing" secondItem="RLb-GV-4hh" secondAttribute="trailing" constant="12" id="S2Z-YS-rTF"/>
                                                 <constraint firstItem="RLb-GV-4hh" firstAttribute="centerY" secondItem="IB8-po-j4u" secondAttribute="centerY" id="jEW-Jo-NCq"/>
                                                 <constraint firstItem="RLb-GV-4hh" firstAttribute="centerX" secondItem="IB8-po-j4u" secondAttribute="centerX" id="sNP-4H-4C4"/>
                                             </constraints>
