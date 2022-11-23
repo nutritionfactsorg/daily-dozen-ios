@@ -139,7 +139,7 @@
 /* Info About View: Overview Text */
 "info_app_about_overview" = "Tato aplikace je určena k dennímu zaznamenávání jídel a sledování doporučení pro optimální zdraví a dlouhověkost, která uvádím ve svých knihách Jak nezemřít a Jak nedietovat.";
 
-/* Info About View: Contributing Translators List */
+/* Info About View: Contributing Translators List (language code)  See https://en.wikipedia.org/wiki/List_of_ISO_639-1_codes */
 "info_app_about_translators" = "Zvláštní poděkování patří našim dobrovolným překladatelům: Ricard Soler Roger (ca), Luděk Bouška (cs), Lenka Lukacová (cs), Anke Schliessmann (de), Ángela Graña (es), Doron Barak (on), Ruth Levy (on), Joanna Klopotek (pl), Tania Bassi ( pt-BR), João Madureira (pt-PT), Evgeniya Lyakh (ru).";
 
 /* Info About View: Application release version */
@@ -254,10 +254,10 @@
 "setting_doze_only_choice" = "Jen Denní Dvanáctka";
 
 /* First Launch Setting: button text */
-"setting_doze_tweak_btn" = "Denní Dvanáctka +\nJedandvacítka Hubnutí";
+"setting_doze_tweak_btn" = "Denní Dvanáctka +\nJednadvacítka Hubnutí";
 
 /* Preference Settings View: selection button text */
-"setting_doze_tweak_choice" = "Denní Dvanáctka + Jedandvacítka Hubnutí";
+"setting_doze_tweak_choice" = "Denní Dvanáctka + Jednadvacítka Hubnutí";
 
 /* Preference Settings View: brief description text below Tweaks visibility control. */
 "setting_doze_tweak_footer" = "Pouze pro zdraví použijte „Jen Denní Dvanáctka“. Pro zdraví a hubnutí použijte „Denní Dvanáctka + Jednadvacítka Hubnutí“.";
@@ -272,16 +272,16 @@
 "setting_tweak_header" = "Viditelnost Jednadvacítky Hubnutí";
 
 /* Preference Settings View: Part of ‘Imperial/Metric/Toggle Units’ selector */
-"setting_units_0_imperial" = "Imperiální"; /* Imperiální jednotky */
+"setting_units_0_imperial" = "Imperiální";
 
 /* Preference Settings View: Part of ‘Imperial/Metric/Toggle Units’ selector */
-"setting_units_1_metric" = "Metrické"; /* Metrické jednotky */
+"setting_units_1_metric" = "Metrické";
 
 /* Preference Settings View: Part of ‘Imperial/Metric/Toggle Units’ selector */
-"setting_units_2_toggle" = "Přepnout jednotky"; /* Přepnout jednotky */
+"setting_units_2_toggle" = "Přepnout jednotky";
 
 /* Preference Settings View: brief description text below units control. */
-"setting_units_choice_footer" = "Nastavte použití pouze jednoho typu jednotek, nebo umožnění přepínaní pomocí tlačítka \"Jednotky\".";
+"setting_units_choice_footer" = "Nastavte použití pouze jednoho typu jednotek, nebo umožněte přepínaní pomocí tlačítka „Přepnout jednotky“.";
 
 /* Preference Settings View */
 "setting_units_header" = "Měrné jednotky";
