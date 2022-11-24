@@ -884,16 +884,16 @@
           "metric" : "30-80 g tallat"
         },
         {
-          "imperial" : "½ cup Brussels sprouts",
-          "metric" : "78 g Brussels sprouts"
+          "imperial" : "½ tassa de cols de Brussel·les",
+          "metric" : "78 g de cols de Brussel·les"
         },
         {
-          "imperial" : "¼ cup Broccoli sprouts",
-          "metric" : "14 g Broccoli sprouts"
+          "imperial" : "¼ tassa brots de bròquil",
+          "metric" : "14 g brots de bròquil"
         },
         {
-          "imperial" : "1 tablespoon horseradish",
-          "metric" : "1 tablespoon horseradish"
+          "imperial" : "1 cullerada de rave picant",
+          "metric" : "1 cullerada de rave picant"
         }
       ],
       "topic" : "topics/cruciferous-vegetables",
