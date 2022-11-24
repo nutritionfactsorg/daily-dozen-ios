@@ -101,10 +101,10 @@
 "historyRecordDoze.legend" = "Denní Dvanáctka";
 
 /* History View */
-"historyRecordTweak.heading" = "Historie Jednadvacítky Hubnutí";
+"historyRecordTweak.heading" = "Historie 21 Hubnutí";
 
 /* History View */
-"historyRecordTweak.legend" = "Jednadvacítka Hubnutí";
+"historyRecordTweak.legend" = "21 Hubnutí";
 
 /* History View */
 "historyRecordWeight.heading" = "Historie hmotnosti";
@@ -191,7 +191,7 @@
 "navtab.preferences" = "Předvolby";
 
 /* Main Navigation Tab Control: ‘21 Tweaks’ (proper noun) */
-"navtab.tweaks" = "Jednadvacítka Hubnutí";
+"navtab.tweaks" = "21 Hubnutí";
 
 /* heading for daily data entry item */
 "otherVitaminB12.heading" = "Vitamín B12";
@@ -254,13 +254,13 @@
 "setting_doze_only_choice" = "Jen Denní Dvanáctka";
 
 /* First Launch Setting: button text */
-"setting_doze_tweak_btn" = "Denní Dvanáctka +\nJednadvacítka Hubnutí";
+"setting_doze_tweak_btn" = "Denní Dvanáctka +\n21 Hubnutí";
 
 /* Preference Settings View: selection button text */
-"setting_doze_tweak_choice" = "Denní Dvanáctka + Jednadvacítka Hubnutí";
+"setting_doze_tweak_choice" = "Denní Dvanáctka + 21 Hubnutí";
 
 /* Preference Settings View: brief description text below Tweaks visibility control. */
-"setting_doze_tweak_footer" = "Pouze pro zdraví použijte „Jen Denní Dvanáctka“. Pro zdraví a hubnutí použijte „Denní Dvanáctka + Jednadvacítka Hubnutí“.";
+"setting_doze_tweak_footer" = "Pouze pro zdraví použijte „Jen Denní Dvanáctka“. Pro zdraví a hubnutí použijte „Denní Dvanáctka + 21 Hubnutí“.";
 
 /* First Launch Setting: brief description above ‘Daily Dozen Only’ button. */
 "setting_health_alone_txt" = "Jen pro zdraví";
@@ -269,7 +269,7 @@
 "setting_health_weight_txt" = "Pro zdraví a hubnutí";
 
 /* Preference Settings View: tweaks visibilty subsection heading */
-"setting_tweak_header" = "Viditelnost Jednadvacítky Hubnutí";
+"setting_tweak_header" = "Viditelnost 21 Hubnutí";
 
 /* Preference Settings View: Part of ‘Imperial/Metric/Toggle Units’ selector */
 "setting_units_0_imperial" = "Imperiální";
@@ -299,7 +299,7 @@
 "tweak_detail_section_description" = "Popis";
 
 /* Tweaks daily entry header */
-"tweak_entry_header" = "Jednadvacítka Hubnutí";
+"tweak_entry_header" = "21 Hubnutí";
 
 /* heading for daily data entry item */
 "tweakCompleteIntentions.heading" = "Dokončete své implementační záměry";
