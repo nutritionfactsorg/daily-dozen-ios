@@ -2,8 +2,8 @@
   "itemsDict" : {
     "tweakCompleteIntentions" : {
       "activity" : {
-        "imperial" : "Dokončete své implementační záměry",
-        "metric" : "Dokončete své implementační záměry"
+        "imperial" : "Dokončujte své implementační záměry",
+        "metric" : "Dokončujte své implementační záměry"
       },
       "explanation" : "Každé dva měsíce vytvořte tři nové implementační záměry – plány „když X, pak Y“ pro provedení konkrétního chování v konkrétním kontextu – a každý z nich zaškrtněte, když je každý den dokončujete.",
       "heading" : "Dokončete své implementační záměry",
@@ -20,8 +20,8 @@
     },
     "tweakDailyCumin" : {
       "activity" : {
-        "imperial" : "Kmín (Cuminum cyminum) (½ lžičky s obědem a večeří)",
-        "metric" : "Kmín (Cuminum cyminum) (½ lžičky s obědem a večeří)"
+        "imperial" : "Římský kmín (Cuminum cyminum) (½ lžičky s obědem a večeří)",
+        "metric" : "Římský kmín (Cuminum cyminum) (½ lžičky s obědem a večeří)"
       },
       "explanation" : "Ženy s nadváhou náhodně vybrané do skupiny, která si k obědu a večeři dávala navíc půl lžičky římského kmínu, zhubly oproti kontrolní skupině o 4 kila a palec (2,5cm) v pase více. Existují také důkazy ohledně stejné účinnosti šafránu (koření), toho by ale špetka denně stála dolar, zatímco lžička římského kmínu stojí méně než deset centů.",
       "heading" : "Římský kmin (½ lžičky s obědem a večeří)",
@@ -159,7 +159,7 @@
         "metric" : "Nejezte po 19:00"
       },
       "explanation" : "Kvůli našim cirkadiánním rytmům se z jídla konzumovaného večer a v noci uloží více tuku, než z úplně stejného jídla, konzumovaného v dřívější denní dobu. Proto se každou noc, počínaje 19:00, alespoň dvanáct hodin postěte. Čím méně kalorií po západu slunce, tím lépe.",
-      "heading" : "Nejezte po 19:00",
+      "heading" : "Nejezte po 19:00 hodině",
       "topic" : ""
     },
     "tweakNightlySleep" : {

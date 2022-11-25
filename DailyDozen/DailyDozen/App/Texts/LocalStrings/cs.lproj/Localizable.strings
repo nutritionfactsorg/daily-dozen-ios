@@ -20,7 +20,7 @@
 "dozeBeans.heading" = "Luštěniny";
 
 /* heading for daily data entry item */
-"dozeBerries.heading" = "Bobule";
+"dozeBerries.heading" = "Bobuloviny";
 
 /* heading for daily data entry item */
 "dozeBeverages.heading" = "Nápoje";
@@ -62,7 +62,7 @@
 "dozeVegetablesOther.heading" = "Ostatní zelenina";
 
 /* heading for daily data entry item */
-"dozeWholeGrains.heading" = "Celá zrna";
+"dozeWholeGrains.heading" = "Celozrnné obilniny";
 
 /* History Data: export action button */
 "history_data_export_btn" = "Export History Data";
@@ -122,7 +122,7 @@
 "historyRecordWeight.titleMetric" = "Váha (kg)";
 
 /* Info About Menu Item */
-"info_app_about" = "Menu";
+"info_app_about" = "O autorovi";
 
 /* Info About View: Application Name ‘Daily Dozen’ */
 "info_app_about_app_name" = "Denní Dvanáctka";
@@ -353,7 +353,7 @@
 "tweakMealWater.heading" = "Pijte vodou před jídlem";
 
 /* heading for daily data entry item */
-"tweakNightlyFast.heading" = "Nejezte po 19:00";
+"tweakNightlyFast.heading" = "Nejezte po 19:00 hodině";
 
 /* heading for daily data entry item */
 "tweakNightlySleep.heading" = "Dopřejte si dostatek spánku";
