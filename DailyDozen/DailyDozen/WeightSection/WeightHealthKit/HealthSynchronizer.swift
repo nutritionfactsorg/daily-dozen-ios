@@ -4,6 +4,7 @@
 //
 //  Copyright © 2020 Nutritionfacts.org. All rights reserved.
 //
+// swiftlint:disable function_body_length
 
 import Foundation
 import HealthKit

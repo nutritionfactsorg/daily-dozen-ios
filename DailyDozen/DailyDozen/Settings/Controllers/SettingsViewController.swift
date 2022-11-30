@@ -4,7 +4,6 @@
 //
 //  Copyright © 2019 Nutritionfacts.org. All rights reserved.
 //
-// swiftlint:disable function_body_length 
 
 import UIKit
 import UserNotifications
