@@ -42,6 +42,14 @@ The Daily Dozen iOS App is licensed under the GPLv3
 
 ## Updates
 
+**3.3.3 (App Store: November 30, 2022)**
+
+* Adds support for Czech language.
+
+**3.3.1 (App Store: Oct 21, 2022)**
+
+* Adds anonymous opt-in analytics to support product improvement..
+
 **3.2.21 (App Store: October 2, 2022)**
 
 * Updated Spanish (es) translation.
