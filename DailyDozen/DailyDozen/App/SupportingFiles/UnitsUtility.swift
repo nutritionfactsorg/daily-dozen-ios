@@ -65,7 +65,7 @@ struct UnitsUtility {
         
         switch fromUnits {
         case .imperial:
-            weight = weight / 2.2046 // kg = lbs * 2.2046
+            weight /= 2.2046 // kg = lbs * 2.2046
         case .metric:
             break // text in metric kg format. no conversion required.
         }

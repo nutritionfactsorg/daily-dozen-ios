@@ -36,7 +36,7 @@ struct HealthWeightRecord {
             return (time: timeStr, weight: weightStr)
         } else {
             if SettingsManager.isImperial() {
-                bodymassKg = bodymassKg * 2.2046 // 1 kg = 2.2046 lbs
+                bodymassKg *= 2.2046 // 1 kg = 2.2046 lbs
             }
             let weightStr = String(format: "%.1f", bodymassKg) // fallback if regional is nil
             return (time: timeStr, weight: weightStr)
