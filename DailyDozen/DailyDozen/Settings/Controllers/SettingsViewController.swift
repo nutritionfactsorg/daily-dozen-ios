@@ -4,6 +4,7 @@
 //
 //  Copyright © 2019 Nutritionfacts.org. All rights reserved.
 //
+// swiftlint:disable function_body_length 
 
 import UIKit
 import UserNotifications
@@ -37,8 +38,8 @@ class SettingsViewController: UITableViewController {
     // Appearance Mode: Light | Dark | Auto
     //@IBOutlet weak var appearanceModeControl: UISegmentedControl!
     // History Data
-    //@IBOutlet weak var historyDataExportBtn: UIButton!
-    //@IBOutlet weak var historyDataImportBtn: UIButton!
+    @IBOutlet weak var historyDataExportBtn: UIButton!
+    @IBOutlet weak var historyDataImportBtn: UIButton!
     // Analytics: OFF | ON
     @IBOutlet weak var analyticsEnableLabel: UILabel!
     @IBOutlet weak var analyticsEnableToggle: UISwitch!
@@ -112,12 +113,12 @@ class SettingsViewController: UITableViewController {
         setUnitsMeasureSegment()
         
         // History Data
-        //historyDataExportBtn.setTitle(
-        //    NSLocalizedString("history_data_export_btn", comment: "Export"),
-        //    for: .normal)
-        //historyDataImportBtn.setTitle(
-        //    NSLocalizedString("history_data_import_btn", comment: "Import"),
-        //    for: .normal)
+        historyDataExportBtn.setTitle(
+            NSLocalizedString("history_data_export_btn", comment: "Export"),
+            for: .normal)
+        historyDataImportBtn.setTitle(
+            NSLocalizedString("history_data_import_btn", comment: "Import"),
+            for: .normal)
         
         // Analytics
         analyticsEnableLabel.text = NSLocalizedString("setting_analytics_enable", comment: "Enable Analytics")
@@ -261,14 +262,14 @@ class SettingsViewController: UITableViewController {
     //@IBAction func doAppearanceModeChanged(_ sender: UISegmentedControl) {
     //    print(":!!!: doAppearanceModeChanged not implemented")
     //}
-    //
-    //@IBAction func doHistoryDataExport(_ sender: UIButton) {
-    //    print(":!!!: doHistoryDataExport not implemented")
-    //}
-    //
-    //@IBAction func doHistoryDataImport(_ sender: UIButton) {
-    //    print(":!!!: doHistoryDataImport not implemented")
-    //}
+    
+    @IBAction func doHistoryDataExport(_ sender: UIButton) {
+        print(":!!!: doHistoryDataExport not implemented")
+    }
+    
+    @IBAction func doHistoryDataImport(_ sender: UIButton) {
+        print(":!!!: doHistoryDataImport not implemented")
+    }
     
     @IBAction func doTweaksVisibilityChanged(_ sender: UISegmentedControl) {
         // LogService.shared.debug("selectedSegmentIndex = \(segmentedControl.selectedSegmentIndex)")
@@ -320,9 +321,11 @@ class SettingsViewController: UITableViewController {
             sectionName = NSLocalizedString("reminder.heading", comment: "Daily Reminder")
         case 2: // WdR-XV-IyP.headerTitle
             sectionName = NSLocalizedString("setting_tweak_header", comment: "21 Tweaks Visibility")
-        case 3: // Firebase Analytics: no header
+        case 3: // Database Export/Import: no header
+            sectionName = NSLocalizedString("history_data_title", comment: "History")
+        case 4: // Firebase Analytics: no header
             sectionName = NSLocalizedString("setting_analytics_title", comment: "Analytics")
-        case 4: // Advanced Utilities: no header
+        case 5: // Advanced Utilities: no header
             sectionName = ""
         default:
             sectionName = ""
@@ -339,9 +342,11 @@ class SettingsViewController: UITableViewController {
             sectionName = ""
         case 2: // 21 Tweaks Visibility
             sectionName = NSLocalizedString("setting_doze_tweak_footer", comment: "21 Tweaks Visibility Footer")
-        case 3: // Firebase Analytics: no footer
+        case 3: // Database Export/Import: no footer
             sectionName = ""
-        case 4: // Advanced Utilities: no footer
+        case 4: // Firebase Analytics: no footer
+            sectionName = ""
+        case 5: // Advanced Utilities: no footer
             sectionName = ""
         default:
             sectionName = ""
