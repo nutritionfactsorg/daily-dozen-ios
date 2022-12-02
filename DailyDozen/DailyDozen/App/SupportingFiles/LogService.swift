@@ -159,7 +159,7 @@ public class LogService {
         // formatter.timeZone = NSTimeZone(abbreviation: "UTC")
         let dateTimestamp = formatter.string(from: currentTime)
         
-        let logfileName = "log-\(nameToken)-\(dateTimestamp).txt"
+        let logfileName = "\(dateTimestamp)_log_\(nameToken).txt"
         logfileUrl = URL.inDocuments(filename: logfileName)
         
         do {

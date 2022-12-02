@@ -33,7 +33,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         
         print(":DEBUG:WAYPOINT: AppDelegate didFinishLaunchingWithOptions\n\((URL.inDocuments().path))")
         logger.logLevel = LogServiceLevel.verbose
-        logger.useLogFileDefault()
+        logger.useLogFile(nameToken: "dev") // logger.useLogFileDefault()
         logger.debug("::::: DEBUG :::::\nAppDelegate didFinishLaunchingWithOptions DEBUG enabled")
         
         DatabaseBuiltInTest.shared.runSuite()

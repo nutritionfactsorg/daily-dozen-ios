@@ -64,11 +64,20 @@
 /* heading for daily data entry item */
 "dozeWholeGrains.heading" = "Whole Grains";
 
+/* History Data Alert: Cancel */
+"history_data_alert_cancel" = "Cancel";
+
+/* History Data Alert: Clear */
+"history_data_alert_clear" = "Clear";
+
+/* History Data Alert: Clear */
+"history_data_alert_ok" = "OK";
+
 /* History Data: export action button */
 "history_data_export_btn" = "Export History Data";
 
 /* History Data: export description text */
-"history_data__export_text" = "Export has been written to ...";
+"history_data_export_text" = "Export has been written to:";
 
 /* History Data: import action button */
 "history_data_import_btn" = "Import History Data";

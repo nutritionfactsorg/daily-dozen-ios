@@ -44,7 +44,8 @@ public struct DatabaseMaintainer {
         }
         
         // Check for version Legacy (V00)
-        if fm.fileExists(atPath: URL.inDocuments(filename: RealmProviderLegacy.realmFilename).path) {
+        let fileNameV00 = RealmProviderLegacy.realmFilename
+        if fm.fileExists(atPath: URL.inDocuments(filename: fileNameV00).path) {
             return 0
         }
         
@@ -136,7 +137,8 @@ public struct DatabaseMaintainer {
 
         var backupUrl = URL.inBackup()
         // Add timestamp subdirectory
-        backupUrl.appendPathComponent(DateManager.currentDatetime().datestampyyyyMMddHHmmss, isDirectory: true)
+        let timestamp = DateManager.currentDatetime().datestampyyyyMMddHHmmss
+        backupUrl.appendPathComponent(timestamp, isDirectory: true)
         
         do {
             try fm.createDirectory(at: backupUrl, withIntermediateDirectories: true)

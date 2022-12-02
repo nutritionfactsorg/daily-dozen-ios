@@ -37,9 +37,11 @@ class SettingsViewController: UITableViewController {
     @IBOutlet weak var tweakVisibilityControl: UISegmentedControl!
     // Appearance Mode: Light | Dark | Auto
     //@IBOutlet weak var appearanceModeControl: UISegmentedControl!
+
     // History Data
     @IBOutlet weak var historyDataExportBtn: UIButton!
     @IBOutlet weak var historyDataImportBtn: UIButton!
+    
     // Analytics: OFF | ON
     @IBOutlet weak var analyticsEnableLabel: UILabel!
     @IBOutlet weak var analyticsEnableToggle: UISwitch!
@@ -109,9 +111,6 @@ class SettingsViewController: UITableViewController {
         //    NSLocalizedString("setting_appearance_mode_auto", comment: "Auto"),
         //    forSegmentAt: 2)
         
-        // Appearance Mode
-        setUnitsMeasureSegment()
-        
         // History Data
         historyDataExportBtn.setTitle(
             NSLocalizedString("history_data_export_btn", comment: "Export"),
@@ -119,6 +118,8 @@ class SettingsViewController: UITableViewController {
         historyDataImportBtn.setTitle(
             NSLocalizedString("history_data_import_btn", comment: "Import"),
             for: .normal)
+        historyDataExportBtn.setTitleColor(ColorManager.style.mainMedium, for: UIControl.State.normal)
+        historyDataImportBtn.setTitleColor(ColorManager.style.mainMedium, for: UIControl.State.normal)
         
         // Analytics
         analyticsEnableLabel.text = NSLocalizedString("setting_analytics_enable", comment: "Enable Analytics")
@@ -264,11 +265,52 @@ class SettingsViewController: UITableViewController {
     //}
     
     @IBAction func doHistoryDataExport(_ sender: UIButton) {
-        print(":!!!: doHistoryDataExport not implemented")
+        LogService.shared.info("SettingsViewController doHistoryDataExport()")
+        let realmMngr = RealmManager()
+        let backupFilename = realmMngr.csvExport(marker: "data")
+        #if DEBUG
+        _ = realmMngr.csvExportWeight(marker: "weight_db_dev")
+        HealthSynchronizer.shared.syncWeightExport(marker: "weight_hk_dev")
+        #endif
+        
+        let msg = NSLocalizedString("history_data_export_text", comment: "Export has been written to: ")
+        let strMsg = "\(msg)\n\n\(backupFilename)"
+        
+        let strOK = NSLocalizedString("history_data_alert_ok", comment: "OK")
+        let alert = UIAlertController(title: "", message: strMsg, preferredStyle: .alert)
+        let okAction = UIAlertAction(title: strOK, style: .default, handler: nil)
+        alert.addAction(okAction)
+        present(alert, animated: true, completion: nil)
+        
+        //let activityViewController = UIActivityViewController(
+        //    activityItems: [URL.inDocuments(filename: backupFilename)],
+        //    applicationActivities: nil)
+        //activityViewController.popoverPresentationController?.sourceView = view
+        //present(activityViewController, animated: true, completion: nil)
     }
     
     @IBAction func doHistoryDataImport(_ sender: UIButton) {
-        print(":!!!: doHistoryDataImport not implemented")
+        LogService.shared.info("SettingsViewController doHistoryDataImport()")
+        
+        //PopupPickerView.show(
+        //    items: <#T##[String]#>, 
+        //    doneBottonCompletion: <#T##PopupPickerView.CompletionBlock?##PopupPickerView.CompletionBlock?##(String?, String?) -> Void#>, 
+        //    didSelectCompletion: <#T##PopupPickerView.CompletionBlock?##PopupPickerView.CompletionBlock?##(String?, String?) -> Void#>, 
+        //    cancelBottonCompletion: <#T##PopupPickerView.CompletionBlock?##PopupPickerView.CompletionBlock?##(String?, String?) -> Void#>
+        //)
+        
+        //PopupPickerView.show(
+        //    items: ["item1", "item2", "item3"],
+        //    itemIds: ["id1", "id2", "id3"],
+        //    selectedValue: "item3", 
+        //    doneBottonCompletion: { (item: String?, index: String?) in
+        //        LogService.shared.debug("done", item ?? "nil", index ?? "nil")}, 
+        //    didSelectCompletion: { (item: String?, index: String?) in
+        //        LogService.shared.debug("selection", item ?? "nil", index ?? "nil") },
+        //    cancelBottonCompletion: { (item: String?, index: String?) in
+        //        LogService.shared.debug("cancelled", item ?? "nil", index ?? "nil") }
+        //)
+
     }
     
     @IBAction func doTweaksVisibilityChanged(_ sender: UISegmentedControl) {
@@ -321,9 +363,9 @@ class SettingsViewController: UITableViewController {
             sectionName = NSLocalizedString("reminder.heading", comment: "Daily Reminder")
         case 2: // WdR-XV-IyP.headerTitle
             sectionName = NSLocalizedString("setting_tweak_header", comment: "21 Tweaks Visibility")
-        case 3: // Database Export/Import: no header
+        case 3: // Database Export/Import: "History"
             sectionName = NSLocalizedString("history_data_title", comment: "History")
-        case 4: // Firebase Analytics: no header
+        case 4: // Firebase Analytics: "Analytics"
             sectionName = NSLocalizedString("setting_analytics_title", comment: "Analytics")
         case 5: // Advanced Utilities: no header
             sectionName = ""
