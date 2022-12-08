@@ -5,7 +5,7 @@
         "imperial" : "Completar tus metas",
         "metric" : "Completar tus metas"
       },
-      "explanation" : "Cada dos meses, crea tres metas nuevas, al estilo de \"si X, entonces Y\", para comportarte de cierta manera en situaciones específicas. Intenta marcar las tres casillas todos los días.",
+      "explanation" : "Cada dos meses, crea tres metas nuevas, al estilo de “si X, entonces Y”, para comportarte de cierta manera en situaciones específicas. Intenta marcar las tres casillas todos los días.",
       "heading" : "Completar tus metas",
       "topic" : ""
     },
@@ -123,7 +123,7 @@
         "metric" : "Empezar con alimentos de calorías negativas"
       },
       "explanation" : "Como entrante, puedes comerte una manzana, una sopa o una ensalada con alimentos de luz verde que contenga menos de cien calorías por taza.",
-      "heading" : "Empezar con alimentos de \"calorías negativas\"",
+      "heading" : "Empezar con alimentos de “calorías negativas”",
       "topic" : ""
     },
     "tweakMealUndistracted" : {

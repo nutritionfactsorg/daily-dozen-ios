@@ -125,7 +125,7 @@
 "info_app_about_overview" = "Utiliza esta aplicación a diario para llevar un registro de los alimentos que recomiendo para una salud y longevidad óptimas en mi libro Comer para no morir.";
 
 /* Info About View: Contributing Translators List (language code)  See https://en.wikipedia.org/wiki/List_of_ISO_639-1_codes */
-"info_app_about_translators" = "Le damos las gracias a nuestros traductores voluntarios: Ricard Soler Roger (ca), Luděk Bouška (cs), Lenka Lukacová (cs), Anke Schliessmann (de), Ángela Graña (es), Doron Barak (he), Ruth Levy (he), Joanna Klopotek (pl), Tania Bassi (pt-BR), João Madureira (pt-PT), Evgeniya Lyakh (ru).";
+"info_app_about_translators" = "Le damos las gracias a nuestros traductores voluntarios: Ricard Soler Roger (ca), Luděk Bouška (cs,sk), Lenka Lukacová (cs), Anke Schliessmann (de), Ángela Graña (es), Doron Barak (he), Ruth Levy (he), Joanna Klopotek (pl), Tania Bassi (pt-BR), João Madureira (pt-PT), Evgeniya Lyakh (ru), Katarína Mocáková (sk).";
 
 /* Info About View: Application release version */
 "info_app_about_version" = "versión 3.3.3";
@@ -233,7 +233,7 @@
 "setting_doze_tweak_choice" = "Docena Diaria + 21 Potenciadores";
 
 /* Preference Settings View: brief description text below Tweaks visibility control. */
-"setting_doze_tweak_footer" = "Para mejorar la salud, usa \"Solo Docena Diaria\". Para la salud y la pérdida de peso, usa \"Docena Diaria + 21 Potenciadores\".";
+"setting_doze_tweak_footer" = "Para mejorar la salud, usa “Solo Docena Diaria”. Para la salud y la pérdida de peso, usa “Docena Diaria + 21 Potenciadores”.";
 
 /* First Launch Setting: brief description above ‘Daily Dozen Only’ button. */
 "setting_health_alone_txt" = "Para mejorar tu salud";
@@ -314,7 +314,7 @@
 "tweakMeal20Minutes.heading" = "La regla de los veinte minutos";
 
 /* heading for daily data entry item */
-"tweakMealNegCal.heading" = "Empezar con alimentos de \"calorías negativas\"";
+"tweakMealNegCal.heading" = "Empezar con alimentos de “calorías negativas”";
 
 /* heading for daily data entry item */
 "tweakMealUndistracted.heading" = "Comidas sin distracciones";
