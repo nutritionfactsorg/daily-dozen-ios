@@ -1,0 +1,445 @@
+/* DailyDozen Localizable.strings (sk) */
+/* Copyright © 2021 Nutritionfacts.org. All rights reserved. */
+
+/* Date Button Title: ‘Back to today’ */
+"dateBackButtonTitle" = "Späť na Dnes";
+
+/* Date Button Title: ‘Today’ */
+"dateButtonTitle.today" = "Dnes";
+
+/* Doze Detail View subheading: ‘Serving Sizes’ */
+"doze_detail_section_sizes" = "Veľkosť porcie";
+
+/* Doze Detail View subheading: ‘Types’ */
+"doze_detail_section_types" = "Typy";
+
+/* Doze Entry View heading: ‘Servings’ */
+"doze_entry_header" = "Porcia";
+
+/* heading for daily data entry item */
+"dozeBeans.heading" = "Strukoviny";
+
+/* heading for daily data entry item */
+"dozeBerries.heading" = "Bobuľoviny";
+
+/* heading for daily data entry item */
+"dozeBeverages.heading" = "Nápoje";
+
+/* heading for daily data entry item */
+"dozeExercise.heading" = "Pohyb";
+
+/* heading for daily data entry item */
+"dozeFlaxseeds.heading" = "Ľanové semienka";
+
+/* heading for daily data entry item */
+"dozeFruitsOther.heading" = "Ostatné ovocie";
+
+/* heading for daily data entry item */
+"dozeGreens.heading" = "Zelenina";
+
+/* heading for daily data entry item */
+"dozeNuts.heading" = "Orechy a semená";
+
+/* Daily Dozen supplement info alert: dismissal button text */
+"dozeOtherInfo.confirm" = "OK";
+
+/* Daily Dozen supplement info alert: message */
+"dozeOtherInfo.message" = "Vitamín B12 je nevyhnutný pre vaše zdravie, ale nezapočítava sa do denných porcií. \n\nVitamín B12 je v tejto aplikácii zahrnutý, aby ste si mohli jednoducho monitorovať jeho príjem.";
+
+/* Daily Dozen daily entry section heading */
+"dozeOtherInfo.section" = "Doplnky";
+
+/* Daily Dozen supplement info alert: title */
+"dozeOtherInfo.title" = "Doplnky";
+
+/* heading for daily data entry item */
+"dozeSpices.heading" = "Bylinky a korenie";
+
+/* heading for daily data entry item */
+"dozeVegetablesCruciferous.heading" = "Košťálová zelenina";
+
+/* heading for daily data entry item */
+"dozeVegetablesOther.heading" = "Ostatná zelenina";
+
+/* heading for daily data entry item */
+"dozeWholeGrains.heading" = "Celozrnné obilniny";
+
+/* History Data Alert: Cancel */
+"history_data_alert_cancel" = "Cancel";
+
+/* History Data Alert: Clear */
+"history_data_alert_clear" = "Clear";
+
+/* History Data Alert: Clear */
+"history_data_alert_ok" = "OK";
+
+/* History Data: export action button */
+"history_data_export_btn" = "Export History Data";
+
+/* History Data: export description text */
+"history_data_export_text" = "Export has been written to:";
+
+/* History Data: import action button */
+"history_data_import_btn" = "Import History Data";
+
+/* History Data: import description text */
+"history_data__import_text" = "Caution: This import will overwrite all history data currently in this application. Would you like to proceed with the import which will overwrite the current data?";
+
+/* History Data: preferences header & title */
+"history_data_title" = "History";
+
+/* History View: calendar scale control */
+"history_scale_choice_day" = "Deň";
+
+/* History View: calendar scale control */
+"history_scale_choice_month" = "Mesiac";
+
+/* History View: calendar scale control */
+"history_scale_choice_year" = "Rok";
+
+/* History View: scale text */
+"history_scale_label" = "Časové merítko";
+
+/*  */
+"historyRecord.movingAverage" = "Pohyblivý priemer";
+
+/* History View */
+"historyRecordDoze.heading" = "História Dennej Dvanástky";
+
+/* History View */
+"historyRecordDoze.legend" = "Denná Dvanástka";
+
+/* History View */
+"historyRecordTweak.heading" = "História 21 Vylepšení";
+
+/* History View */
+"historyRecordTweak.legend" = "21 Vylepšení";
+
+/* History View */
+"historyRecordWeight.heading" = "História hmotnosti";
+
+/* History View */
+"historyRecordWeight.legendEvening" = "Večer";
+
+/* History View */
+"historyRecordWeight.legendMorning" = "Ráno";
+
+/* History View */
+"historyRecordWeight.titleImperial" = "Váha (libry)";
+
+/* History View */
+"historyRecordWeight.titleMetric" = "Váha (kg)";
+
+/* Info About Menu Item */
+"info_app_about" = "O aplikácii";
+
+/* Info About View: Application Name ‘Daily Dozen’ */
+"info_app_about_app_name" = "Denná Dvanástka";
+
+/* Info About View: Created By */
+"info_app_about_created_by" = "Túto aplikáciu vytvorili: NutritionFacts.org, Christi Richards, Konštantín Khokhlov a Marc Campbell";
+
+/* Info About View */
+"info_app_about_heading" = "O tejto aplikácii";
+
+/* Info About View: Open Source Credits */
+"info_app_about_oss_credits" = "Aplikácia používa nasledujúce open source knižnice: RealmSwift, Charts, FSCalendar, SimpleAnimation, ActiveLabel.";
+
+/* Info About View: Overview Text */
+"info_app_about_overview" = "Táto aplikácia je určená na denné zaznamenávanie jedál a sledovanie odporúčaní pre optimálne zdravie a dlhovekosť, ktoré uvádzam vo svojich knihách Ako nezomrieť a Ako nedietovať.";
+
+/* Info About View: Contributing Translators List (language code)  See https://en.wikipedia.org/wiki/List_of_ISO_639-1_codes */
+"info_app_about_translators" = "Osobitné poďakovanie patrí našim dobrovoľným prekladateľom: Ricard Soler Roger (ca), Luděk Bouška (cz, sk), Lenka Lukacová (cz), Anke Schliessmann (de), Doron Barak (on), Ruth Levy (on), Joanna Klopotek (pl), Tania Bassi (pt-BR), Joao Madureira (pt-PT), Evgeniya Lyakh (ru), Katarína Mocáková (sk)., Katarína Mocáková (sk).";
+
+/* Info About View: Application release version */
+"info_app_about_version" = "verzia 3.2.21";
+
+/* Info About View: Welcome */
+"info_app_about_welcome" = "Vitajte v mojej Dennej Dvanástke!";
+
+/* Info Menu: book title */
+"info_book_how_not_to_die" = "Kniha: Ako Nezomrieť";
+
+/* Info Menu: book title */
+"info_book_how_not_to_die_cookbook" = "Kniha: Kuchárka Ako nezomrieť";
+
+/* Info Menu: book title */
+"info_book_how_not_to_diet" = "Kniha: Ako Nedietovať";
+
+/* Info Menu */
+"info_webpage_daily_dozen_challenge" = "Výzva Dennej Dvanástky";
+
+/* Info Menu */
+"info_webpage_donate" = "Darovať";
+
+/* Info Menu */
+"info_webpage_open_source" = "Open Source";
+
+/* Info Menu */
+"info_webpage_subscribe" = "Predplatiť si";
+
+/* Info Menu */
+"info_webpage_videos_latest" = "Najnovšie videá";
+
+/* Item History Legend: ‘All completed’ */
+"item_history_completed_all" = "Všetky porcie";
+
+/* Item History Legend: ‘Some completed’ */
+"item_history_completed_some" = "Niektoré porcie";
+
+/* Item History Heading */
+"item_history_heading" = "História";
+
+/* Main Navigation Tab Control: ‘Daily Dozen’ (proper noun) */
+"navtab.doze" = "Denná Dvanástka";
+
+/* Main Navigation Tab Control: show more information */
+"navtab.info" = "Informácie";
+
+/* Main Navigation Tab Control: ‘Preferences’ synonyms: Settings, Configuration. Choose a translations with is different from Tweaks. */
+"navtab.preferences" = "Predvoľby";
+
+/* Main Navigation Tab Control: ‘21 Tweaks’ (proper noun) */
+"navtab.tweaks" = "21 Vylepšení";
+
+/* heading for daily data entry item */
+"otherVitaminB12.heading" = "Vitamín B12";
+
+/* Alert notification text */
+"reminder.alert.text" = "Aktualizujte svoje porcie pre dnešok";
+
+/* Daily Reminder (alert title, settings section heading) */
+"reminder.heading" = "Denné pripomenutie";
+
+/* Daily Reminder On/Off toggle switch label */
+"reminder.settings.enable" = "Povoliť pripomenutie";
+
+/* Daily Reminder sound control heading */
+"reminder.settings.sound" = "Prehrať zvuk";
+
+/* Daily Reminder time control heading */
+"reminder.settings.time" = "Pripomenúť v";
+
+/* Android notification `vibrate` */
+"reminder.settings.vibrate" = "Vibrácie";
+
+/* ‘Off’ as in ‘On (enabled) or Off (disabled)’, Daily Reminder is not enabled */
+"reminder.state.off" = "Vypnuté";
+
+/* ‘On’ as in ‘On (enabled) or Off (disable)’. Daily Reminder is enabled */
+"reminder.state.on" = "Zapnuté";
+
+/* Google Firebase Analytics */
+"setting_analytics_body" = "Povoľte zhromažďovanie anonymných informácií o používaní aplikácie, ktoré pomôžu túto aplikáciu zlepšiť.";
+
+/* Google Firebase Analytics */
+"setting_analytics_enable" = "Povoliť službu Analytika";
+
+/* Google Firebase Analytics */
+"setting_analytics_opt_in" = "Prihlásiť sa";
+
+/* Google Firebase Analytics */
+"setting_analytics_opt_out" = "Odhlásiť sa";
+
+/* Google Firebase Analytics */
+"setting_analytics_title" = "Analytika";
+
+/* Appearance Header */
+"setting_appearance_header" = "Appearance";
+
+/* Appearance Mode: Auto */
+"setting_appearance_mode_auto" = "Auto";
+
+/* Appearance Mode: Dark */
+"setting_appearance_mode_dark" = "Dark";
+
+/* Appearance Mode: Light */
+"setting_appearance_mode_light" = "Light";
+
+/* First Launch Setting: button text */
+"setting_doze_only_btn" = "Len\nDenná Dvanástka";
+
+/* Preference Settings View: selection button text */
+"setting_doze_only_choice" = "Len Denná Dvanástka";
+
+/* First Launch Setting: button text */
+"setting_doze_tweak_btn" = "Denná Dvanástka +\n21 Vylepšení";
+
+/* Preference Settings View: selection button text */
+"setting_doze_tweak_choice" = "Denná Dvanástka + 21 Vylepšení";
+
+/* Preference Settings View: brief description text below Tweaks visibility control. */
+"setting_doze_tweak_footer" = "Iba pre zdravie použite „Len Denná Dvanástka“. Pre zdravie a chudnutie použite „Denná Dvanástka + 21 Vylepšení“.";
+
+/* First Launch Setting: brief description above ‘Daily Dozen Only’ button. */
+"setting_health_alone_txt" = "Len pre zdravie";
+
+/* First Launch Setting: brief description above ‘Daily Dozen + 21 Tweaks’ button. */
+"setting_health_weight_txt" = "Pre zdravie a chudnutie";
+
+/* Preference Settings View: tweaks visibilty subsection heading */
+"setting_tweak_header" = "Viditeľnosť 21 Vylepšení";
+
+/* Preference Settings View: Part of ‘Imperial/Metric/Toggle Units’ selector */
+"setting_units_0_imperial" = "Imperiálne";
+
+/* Preference Settings View: Part of ‘Imperial/Metric/Toggle Units’ selector */
+"setting_units_1_metric" = "Metrické";
+
+/* Preference Settings View: Part of ‘Imperial/Metric/Toggle Units’ selector */
+"setting_units_2_toggle" = "Prepnúť jednotky";
+
+/* Preference Settings View: brief description text below units control. */
+"setting_units_choice_footer" = "Nastavte použitie iba jedného typu jednotiek, alebo umožnite prepínanie pomocou tlačidla „Prepnúť jednotky“.";
+
+/* Preference Settings View */
+"setting_units_header" = "Merné jednotky";
+
+/* Preference Settings View */
+"setting_util_advanced" = "Pokročilé nástroje";
+
+/* ‘Streak’ count. Synonym: ‘Progress‘. Formatted number ‘%d’ for consecutive days completed. Place translated text for ‘days’ on the right or left of ‘%d’ based on language directionality. */
+"streakDaysFormat" = "%d dní";
+
+/* Tweaks Detail view section heading */
+"tweak_detail_section_activity" = "Aktivita";
+
+/* Tweaks Detail view section heading */
+"tweak_detail_section_description" = "Popis";
+
+/* Tweaks daily entry header */
+"tweak_entry_header" = "21 Vylepšení";
+
+/* heading for daily data entry item */
+"tweakCompleteIntentions.heading" = "Dokončite svoje implementačné zámery";
+
+/* heading for daily data entry item */
+"tweakDailyBlackCumin.heading" = "Čierna rasca (¼ lyžičky)";
+
+/* heading for daily data entry item */
+"tweakDailyCumin.heading" = "Rímsky kmin (½ lyžičky s obedom a večerou)";
+
+/* heading for daily data entry item */
+"tweakDailyDeflourDiet.heading" = "Zbavte sa múky";
+
+/* heading for daily data entry item */
+"tweakDailyFrontLoad.heading" = "Jedzte viac v prvej polovici dňa";
+
+/* heading for daily data entry item */
+"tweakDailyGarlic.heading" = "Cesnakový prášok (¼ lyžičky)";
+
+/* heading for daily data entry item */
+"tweakDailyGinger.heading" = "Mletý zázvor (1 lyžička) alebo kajenské korenie (½ lyžičky)";
+
+/* heading for daily data entry item */
+"tweakDailyGreenTea.heading" = "Zelený čaj (3 šálky)";
+
+/* heading for daily data entry item */
+"tweakDailyHydrate.heading" = "Zostaňte hydratovaní";
+
+/* heading for daily data entry item */
+"tweakDailyNutriYeast.heading" = "Lahôdkové droždie (2 lyžičky)";
+
+/* heading for daily data entry item */
+"tweakDailyTimeRestrict.heading" = "Vymedzte si čas na jedlo";
+
+/* heading for daily data entry item */
+"tweakExerciseTiming.heading" = "Optimalizujte načasovanie pohybu";
+
+/* heading for daily data entry item */
+"tweakMeal20Minutes.heading" = "Dodržujte pravidlo dvadsiatich minút";
+
+/* heading for daily data entry item */
+"tweakMealNegCal.heading" = "Predplňte sa potravinami s „negatívnymi kalóriami“.";
+
+/* heading for daily data entry item */
+"tweakMealUndistracted.heading" = "Nenechajte sa vyrušovať počas jedla";
+
+/* heading for daily data entry item */
+"tweakMealVinegar.heading" = "Používajte ocot (2 lyžičky s každým jedlom)";
+
+/* heading for daily data entry item */
+"tweakMealWater.heading" = "Pite vodu pred jedlom";
+
+/* heading for daily data entry item */
+"tweakNightlyFast.heading" = "Nejedzte po 19:00 hodine";
+
+/* heading for daily data entry item */
+"tweakNightlySleep.heading" = "Doprajte si dostatok spánku";
+
+/* heading for daily data entry item */
+"tweakNightlyTrendelenbrug.heading" = "Experimentujte s miernou Trendelenburgovou polohou";
+
+/* heading for daily data entry item */
+"tweakWeightTwice.heading" = "Vážte sa dvakrát denne";
+
+/*  */
+"units_label" = "Jednotky";
+
+/* Units toggle button text: imperial measurement system */
+"unitToggle.imperial" = "Imperiálne";
+
+/* Units toggle button text: metric measurement system */
+"unitToggle.metric" = "Metrické";
+
+/* URL path */
+"urlSegment.base" = "https://nutritionfacts.org/";
+
+/*  */
+"urlSegment.lang" = "";
+
+/* main info menu: book */
+"urlSegmentInfoMenu.book" = "book";
+
+/* main info menu: daily-dozen-challenge */
+"urlSegmentInfoMenu.challenge" = "daily-dozen-challenge";
+
+/* main info menu: cookbook */
+"urlSegmentInfoMenu.cookbook" = "cookbook";
+
+/* main info menu: how-not-to-diet */
+"urlSegmentInfoMenu.diet" = "how-not-to-diet";
+
+/* main info menu: donate */
+"urlSegmentInfoMenu.donate" = "donate";
+
+/* main info menu: open-source */
+"urlSegmentInfoMenu.source" = "open-source";
+
+/* main info menu: subscribe */
+"urlSegmentInfoMenu.subscribe" = "subscribe";
+
+/* team */
+"urlSegmentInfoMenu.team" = "team";
+
+/* main info menu: videos */
+"urlSegmentInfoMenu.videos" = "videos";
+
+/* Label for hyperlink to nutritionfacts.org video topics */
+"videos.link.label" = "Videá";
+
+/* Weight Daily Entry: clear button which deletes values */
+"weight_entry_clear" = "Vymazať";
+
+/* Weight Daily Entry: label */
+"weight_entry_evening" = "Večer (tesne pred spaním)";
+
+/* Weight Daily Entry: label */
+"weight_entry_morning" = "Ráno (po prebudení)";
+
+/* Weight Daily Entry: label */
+"weight_entry_time" = "Čas";
+
+/* Weight Daily Entry Units: label */
+"weight_entry_units_kg" = "kg";
+
+/* Weight Daily Entry Units: label */
+"weight_entry_units_lbs" = "libry";
+
+/* Weight Daily Entry: edit button to change values */
+"weight_history_edit_data" = "Upraviť dáta";
+
+/* Weight Daily Entry: heading */
+"weightEntry.heading" = "Hmotnosť";
+
+/* file end */
