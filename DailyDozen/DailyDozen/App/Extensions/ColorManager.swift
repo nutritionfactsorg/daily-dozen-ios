@@ -87,5 +87,21 @@ struct ColorManager {
     var textBlack: UIColor {
         return UIColor.black
     }
+    
+    var pickerHeaderBackground: UIColor {
+        return UIColor.darkGray
+    }
 
+    var pickerHeaderText: UIColor {
+        return UIColor.white
+    }
+    
+    var pickerScrollBackground: UIColor {
+        return UIColor.white
+    }
+
+    var pickerScrollText: UIColor {
+        return UIColor.black
+    }
+    
 }

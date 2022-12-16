@@ -4,13 +4,16 @@
 //
 //  Copyright © 2019 Nutritionfacts.org. All rights reserved.
 //
-// swiftlint:disable function_body_length 
+// swiftlint:disable type_body_length
+// swiftlint:disable file_length
 
 import UIKit
 import UserNotifications
 // Analytics Frameworks
 import Firebase
 import FirebaseAnalytics // "Google Analytics"
+
+// swiftlint: // disable type_body_length
 
 class SettingsViewController: UITableViewController {
     
@@ -48,6 +51,9 @@ class SettingsViewController: UITableViewController {
     
     // Advance Utilities
     @IBOutlet weak var advancedUtilitiesTableViewCell: UITableViewCell! // .isHidden
+    
+    // Logger
+    let logger = LogService.shared
     
     enum UnitsSegmentState: Int {
         case imperialState = 0
@@ -125,11 +131,11 @@ class SettingsViewController: UITableViewController {
         analyticsEnableLabel.text = NSLocalizedString("setting_analytics_enable", comment: "Enable Analytics")
         
         #if targetEnvironment(simulator)
-        LogService.shared.debug("::::: SIMULATOR ENVIRONMENT: SettingsViewController :::::")
+        logger.debug("::::: SIMULATOR ENVIRONMENT: SettingsViewController :::::")
         advancedUtilitiesTableViewCell.isHidden = false
         //advancedUtilitiesTableViewCell.isHidden = true // :UI_TEST:
         print("ADVANCED UTILITIES advancedUtilitiesTableViewCell.isHidden == \(advancedUtilitiesTableViewCell.isHidden)")
-        LogService.shared.debug(":::::::::::::::::::::::::::::::::::::::::::::::::::::::::\n")
+        logger.debug(":::::::::::::::::::::::::::::::::::::::::::::::::::::::::\n")
         #endif
         #if DEBUG
         advancedUtilitiesTableViewCell.isHidden = false
@@ -221,12 +227,12 @@ class SettingsViewController: UITableViewController {
     }
     
     func doAnalyticsConsent() {
-        let alertMsgBogyStr = NSLocalizedString("setting_analytics_body", comment: "Analytics request")
+        let alertMsgBodyStr = NSLocalizedString("setting_analytics_body", comment: "Analytics request")
         let alertMsgTitleStr = NSLocalizedString("setting_analytics_title", comment: "Analytics title")
         let optInStr = NSLocalizedString("setting_analytics_opt_in", comment: "Opt-In")
         let optOutStr = NSLocalizedString("setting_analytics_opt_out", comment: "Opt-Out")
 
-        let alert = UIAlertController(title: alertMsgTitleStr, message: alertMsgBogyStr, preferredStyle: .alert)
+        let alert = UIAlertController(title: alertMsgTitleStr, message: alertMsgBodyStr, preferredStyle: .alert)
         let optOutAction = UIAlertAction(title: optOutStr, style: .default) {
             (_: UIAlertAction) -> Void in
             self.doAnalyticsDisable()
@@ -247,17 +253,17 @@ class SettingsViewController: UITableViewController {
         Analytics.setAnalyticsCollectionEnabled(true)
         UserDefaults.standard.set(true, forKey: SettingsKeys.analyticsIsEnabledPref)
         analyticsEnableToggle.isOn = true
-        LogService.shared.info("SettingsViewController doAnalyticsEnable() completed")
+        logger.info("SettingsViewController doAnalyticsEnable() completed")
     }
     
     func doAnalyticsDisable() {
         if FirebaseApp.app() != nil {
             Analytics.setAnalyticsCollectionEnabled(false)
-            LogService.shared.info("SettingsViewController doAnalyticsDisable() disabled existing FirebaseApp Analytics")
+            logger.info("SettingsViewController doAnalyticsDisable() disabled existing FirebaseApp Analytics")
         }
         UserDefaults.standard.set(false, forKey: SettingsKeys.analyticsIsEnabledPref)
         analyticsEnableToggle.isOn = false
-        LogService.shared.info("SettingsViewController doAnalyticsDisable() completed")
+        logger.info("SettingsViewController doAnalyticsDisable() completed")
     }
     
     //@IBAction func doAppearanceModeChanged(_ sender: UISegmentedControl) {
@@ -265,9 +271,9 @@ class SettingsViewController: UITableViewController {
     //}
     
     @IBAction func doHistoryDataExport(_ sender: UIButton) {
-        LogService.shared.info("SettingsViewController doHistoryDataExport()")
+        logger.info("SettingsViewController doHistoryDataExport()")
         let realmMngr = RealmManager()
-        let backupFilename = realmMngr.csvExport(marker: "data")
+        let backupFilename = realmMngr.csvExport(marker: "DailyDozen")
         #if DEBUG
         _ = realmMngr.csvExportWeight(marker: "weight_db_dev")
         HealthSynchronizer.shared.syncWeightExport(marker: "weight_hk_dev")
@@ -290,31 +296,145 @@ class SettingsViewController: UITableViewController {
     }
     
     @IBAction func doHistoryDataImport(_ sender: UIButton) {
-        LogService.shared.info("SettingsViewController doHistoryDataImport()")
+        logger.info("SettingsViewController doHistoryDataImport()")
         
-        //PopupPickerView.show(
-        //    items: <#T##[String]#>, 
-        //    doneBottonCompletion: <#T##PopupPickerView.CompletionBlock?##PopupPickerView.CompletionBlock?##(String?, String?) -> Void#>, 
-        //    didSelectCompletion: <#T##PopupPickerView.CompletionBlock?##PopupPickerView.CompletionBlock?##(String?, String?) -> Void#>, 
-        //    cancelBottonCompletion: <#T##PopupPickerView.CompletionBlock?##PopupPickerView.CompletionBlock?##(String?, String?) -> Void#>
-        //)
+        // Get qualified files
+        let fileUrls = doHistoryDataImportFileFind()
+                
+        if fileUrls.isEmpty {
+            doHistoryDataImportFileNotFoundAlert()
+            return
+        }
         
-        //PopupPickerView.show(
-        //    items: ["item1", "item2", "item3"],
-        //    itemIds: ["id1", "id2", "id3"],
-        //    selectedValue: "item3", 
-        //    doneBottonCompletion: { (item: String?, index: String?) in
-        //        LogService.shared.debug("done", item ?? "nil", index ?? "nil")}, 
-        //    didSelectCompletion: { (item: String?, index: String?) in
-        //        LogService.shared.debug("selection", item ?? "nil", index ?? "nil") },
-        //    cancelBottonCompletion: { (item: String?, index: String?) in
-        //        LogService.shared.debug("cancelled", item ?? "nil", index ?? "nil") }
-        //)
+        var filenameList: [String] = []
+        var filenameIndices: [String] = []
+        for idx in 0 ..< fileUrls.count {
+            filenameList.append(fileUrls[idx].deletingPathExtension().lastPathComponent)
+            filenameIndices.append("\(idx)")
+        }
+        
+        PopupPickerView.show(
+            cancelTitle: NSLocalizedString("history_data_alert_cancel", comment: "Cancel"), 
+            doneTitle: NSLocalizedString("history_data_alert_import", comment: "Import"),
+            items: filenameList, 
+            itemIds: filenameIndices
+            //selectedValue: String?
+        ) { 
+            // importButtonCompletion
+            (item: String?, id: String?) in
+            LogService.shared.debug("importButtonCompletion item:\(item ?? "nil") id:\(id ?? "nil")")
+            if let id = id, let idx = Int(id) {
+                let url = fileUrls[idx]
+                self.doHistoryDataImportFile(url: url)
+            }
+        } didSelectCompletion: { 
+            // didSelectCompletion is called each time scroll selection changes
+            (_: String?, _: String?) in
+            // Nothing to do.
+        } cancelButtonCompletion: { (_: String?, _: String?) in
+            // Nothing to do.
+        }
+    }
+    
+    func doHistoryDataImportFileFind() -> [URL] {
+        var csvFileList: [URL] = []
+        let fm = FileManager.default
+        
+        do {
+            // Get the document directory url
+            let docDirUrl = try fm.url(
+                for: .documentDirectory,
+                in: .userDomainMask,
+                appropriateFor: nil,
+                create: true
+            )
+            logger.debug("docDirUrl: \(docDirUrl.path)")
+            
+            // Get the directory contents urls (including subfolders urls)
+            let docDirContents = try fm.contentsOfDirectory(
+                at: docDirUrl,
+                includingPropertiesForKeys: nil
+            )
+            logger.debug("docDirContents: \(docDirContents)")
+            
+            guard let csvHeaderCheck = "Date,Beans,Berries,".data(using: .utf8, allowLossyConversion: false) else {
+                logger.debug("doHistoryDataImportFileFind did not create csvHeaderCheck")
+                return csvFileList 
+            }
+            let byteCount = csvHeaderCheck.count
+            
+            for url in docDirContents {
+                if url.pathExtension.lowercased() == "csv" {
+                    let handle = try FileHandle(forReadingFrom: url)
+                    if #available(iOS 13.4, *) {
+                        if let firstBytes = try handle.read(upToCount: byteCount) {
+                            if firstBytes == csvHeaderCheck {
+                                csvFileList.append(url)
+                            }
+                        }
+                        try handle.close()
+                    } else {
+                        // Fallback on earlier versions
+                        // :DEPRECATED:
+                        let firstBytes: Data = handle.readData(ofLength: byteCount)
+                        if firstBytes == csvHeaderCheck {
+                            csvFileList.append(url)
+                        }
+                        handle.closeFile()
+                    }
+                }
+            }
+        } catch {
+            logger.debug("doHistoryDataImportFileFind() \(error)")
+        }
+        
+        return csvFileList
+    }
+    
+    func doHistoryDataImportFile(url: URL) {
+        doHistoryDataImportFileConfirmAlert(url: url)
+    }
+    
+    func doHistoryDataImportFileNotFoundAlert() {
+        let alertMsgTitleStr = NSLocalizedString("history_data_title", comment: "History")
+        let alertMsgBodyStr = NSLocalizedString("history_data_import_notfound_text", comment: "file not found")
+        let okStr = NSLocalizedString("history_data_alert_ok", comment: "Ok")
 
+        let alert = UIAlertController(title: alertMsgTitleStr, message: alertMsgBodyStr, preferredStyle: .alert)
+        let okAction = UIAlertAction(title: okStr, style: .default) {
+            (_: UIAlertAction) -> Void in
+            // nothing to do
+        }
+        alert.addAction(okAction)
+        present(alert, animated: true, completion: nil)
+    }
+    
+    func doHistoryDataImportFileConfirmAlert(url: URL) {
+        let alertMsgTitleStr = NSLocalizedString("history_data_title", comment: "History")
+        let alertMsgBodyStr = NSLocalizedString("history_data_import_caution_text", comment: "caution: will overwrite")
+        let importStr = NSLocalizedString("history_data_alert_import", comment: "Import")
+        let cancelStr = NSLocalizedString("history_data_alert_cancel", comment: "Cancel")
+        
+        let alert = UIAlertController(title: alertMsgTitleStr, message: alertMsgBodyStr, preferredStyle: .alert)
+        let cancelAction = UIAlertAction(title: cancelStr, style: .default) {
+            (_: UIAlertAction) -> Void in
+            // nothing to do
+        }
+        alert.addAction(cancelAction)
+        
+        let importAction = UIAlertAction(title: importStr, style: .default) {
+            (_: UIAlertAction) -> Void in
+            // import to NutritionFacts.realm
+            let realmUrl = URL.inDocuments(filename: RealmProvider.realmFilename)
+            let realmManager = RealmManager(fileURL: realmUrl)
+            realmManager.csvImport(url: url)
+        }
+        alert.addAction(importAction)
+        present(alert, animated: true, completion: nil)
     }
     
     @IBAction func doTweaksVisibilityChanged(_ sender: UISegmentedControl) {
-        // LogService.shared.debug("selectedSegmentIndex = \(segmentedControl.selectedSegmentIndex)")
+        // logger.debug("selectedSegmentIndex = \(segmentedControl.selectedSegmentIndex)")
         let show21Tweaks = UserDefaults.standard.bool(forKey: SettingsKeys.show21TweaksPref)
         if tweakVisibilityControl.selectedSegmentIndex == 0
             && show21Tweaks {

@@ -134,7 +134,7 @@ public struct DatabaseMaintainer {
         )
         let fm = FileManager.default        
         let documentsUrl = URL.inDocuments()
-
+        
         var backupUrl = URL.inBackup()
         // Add timestamp subdirectory
         let timestamp = DateManager.currentDatetime().datestampyyyyMMddHHmmss

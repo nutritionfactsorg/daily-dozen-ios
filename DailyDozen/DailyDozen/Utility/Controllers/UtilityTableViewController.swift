@@ -71,20 +71,20 @@ class UtilityTableViewController: UITableViewController {
     @IBAction func doUtilityDBImportDataBtn(_ sender: UIButton) {
         //PopupPickerView.show(
         //    items: <#T##[String]#>, 
-        //    doneBottonCompletion: <#T##PopupPickerView.CompletionBlock?##PopupPickerView.CompletionBlock?##(String?, String?) -> Void#>, 
+        //    doneButtonCompletion: <#T##PopupPickerView.CompletionBlock?##PopupPickerView.CompletionBlock?##(String?, String?) -> Void#>, 
         //    didSelectCompletion: <#T##PopupPickerView.CompletionBlock?##PopupPickerView.CompletionBlock?##(String?, String?) -> Void#>, 
-        //    cancelBottonCompletion: <#T##PopupPickerView.CompletionBlock?##PopupPickerView.CompletionBlock?##(String?, String?) -> Void#>
+        //    cancelButtonCompletion: <#T##PopupPickerView.CompletionBlock?##PopupPickerView.CompletionBlock?##(String?, String?) -> Void#>
         //)
         
         //PopupPickerView.show(
         //    items: ["item1", "item2", "item3"],
         //    itemIds: ["id1", "id2", "id3"],
         //    selectedValue: "item3", 
-        //    doneBottonCompletion: { (item: String?, index: String?) in
+        //    doneButtonCompletion: { (item: String?, index: String?) in
         //        LogService.shared.debug("done", item ?? "nil", index ?? "nil")}, 
         //    didSelectCompletion: { (item: String?, index: String?) in
         //        LogService.shared.debug("selection", item ?? "nil", index ?? "nil") },
-        //    cancelBottonCompletion: { (item: String?, index: String?) in
+        //    cancelButtonCompletion: { (item: String?, index: String?) in
         //        LogService.shared.debug("cancelled", item ?? "nil", index ?? "nil") }
         //)
     }

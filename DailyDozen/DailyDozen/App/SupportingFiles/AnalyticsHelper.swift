@@ -15,12 +15,12 @@ struct AnalyticsHelper {
     static var shared = AnalyticsHelper()
     
     func buildAnalyticsConsentAlert() -> UIAlertController {
-        let alertMsgBogyStr = NSLocalizedString("setting_analytics_body", comment: "Analytics request")
+        let alertMsgBodyStr = NSLocalizedString("setting_analytics_body", comment: "Analytics request")
         let alertMsgTitleStr = NSLocalizedString("setting_analytics_title", comment: "Analytics title")
         let optInStr = NSLocalizedString("setting_analytics_opt_in", comment: "Opt-In")
         let optOutStr = NSLocalizedString("setting_analytics_opt_out", comment: "Opt-Out")
 
-        let alert = UIAlertController(title: alertMsgTitleStr, message: alertMsgBogyStr, preferredStyle: .alert)
+        let alert = UIAlertController(title: alertMsgTitleStr, message: alertMsgBodyStr, preferredStyle: .alert)
         let optOutAction = UIAlertAction(title: optOutStr, style: .default) {
             (_: UIAlertAction) -> Void in
             self.doAnalyticsDisable()

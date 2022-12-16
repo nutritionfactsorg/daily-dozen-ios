@@ -67,9 +67,13 @@ class RealmManager {
     
     func csvImport(filename: String) {
         let inUrl = URL.inDocuments().appendingPathComponent(filename)
-        guard let contents = try? String(contentsOf: inUrl)  else {
+        csvImport(url: inUrl)
+    }
+    
+    func csvImport(url: URL) {
+        guard let contents = try? String(contentsOf: url)  else {
             LogService.shared.error(
-                "FAIL RealmManager csvImport file not found '\(filename)'"
+                "FAIL RealmManager csvImport file not found '\(url.lastPathComponent)'"
             )
             return
         }

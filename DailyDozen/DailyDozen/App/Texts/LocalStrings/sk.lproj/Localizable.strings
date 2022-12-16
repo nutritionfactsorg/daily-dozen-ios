@@ -71,6 +71,9 @@
 "history_data_alert_clear" = "Clear";
 
 /* History Data Alert: Clear */
+"history_data_alert_import" = "Import";
+
+/* History Data Alert: Clear */
 "history_data_alert_ok" = "OK";
 
 /* History Data: export action button */
@@ -83,7 +86,7 @@
 "history_data_import_btn" = "Import History Data";
 
 /* History Data: import description text */
-"history_data__import_text" = "Caution: This import will overwrite all history data currently in this application. Would you like to proceed with the import which will overwrite the current data?";
+"history_data_import_text" = "Caution: This import will overwrite all history data currently in this application. Would you like to proceed with the import which will overwrite the current data?";
 
 /* History Data: preferences header & title */
 "history_data_title" = "History";

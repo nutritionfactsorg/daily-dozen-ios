@@ -20,10 +20,15 @@ class PopupPickerView: NSObject, UIPickerViewDelegate, UIPickerViewDataSource { 
      }
      */
     
-    //Theme colors
-    var itemTextColor = UIColor.black
-    var backgroundColor = UIColor.orange.withAlphaComponent(0.5)
-    var toolBarColor = UIColor.blue
+    // Button Text
+    var buttonCancelTitle = NSLocalizedString("history_data_alert_cancel", comment: "Cancel")
+    var buttonDoneTitle = NSLocalizedString("history_data_alert_ok", comment: "OK")
+    
+    // Theme colors
+    var headerBackgroundColor = ColorManager.style.pickerHeaderBackground
+    var headerTextColor = ColorManager.style.pickerHeaderText
+    var scrollBackgroundColor = ColorManager.style.pickerScrollBackground
+    var scrollTextColor = ColorManager.style.pickerScrollText
     var font = UIFont.systemFont(ofSize: 16)
     
     private static var shared: PopupPickerView!
@@ -35,8 +40,8 @@ class PopupPickerView: NSObject, UIPickerViewDelegate, UIPickerViewDataSource { 
     
     typealias CompletionBlock = (_ item: String?, _ id: String?) -> Void
     var didSelectCompletion: CompletionBlock?
-    var doneBottonCompletion: CompletionBlock?
-    var cancelBottonCompletion: CompletionBlock?
+    var doneButtonCompletion: CompletionBlock?
+    var cancelButtonCompletion: CompletionBlock?
     
     lazy var pickerView: UIPickerView = {
         let pv = UIPickerView()
@@ -44,7 +49,7 @@ class PopupPickerView: NSObject, UIPickerViewDelegate, UIPickerViewDataSource { 
         pv.delegate = self
         pv.dataSource = self
         pv.showsSelectionIndicator = true
-        pv.backgroundColor = self.backgroundColor
+        pv.backgroundColor = self.scrollBackgroundColor
         return pv
     }()
     
@@ -58,7 +63,7 @@ class PopupPickerView: NSObject, UIPickerViewDelegate, UIPickerViewDataSource { 
     
     lazy var tooBar: UIView={
         let view = UIView()
-        view.backgroundColor = self.toolBarColor
+        view.backgroundColor = self.headerBackgroundColor
         view.translatesAutoresizingMaskIntoConstraints = false
         
         view.addSubview(buttonDone)
@@ -78,8 +83,8 @@ class PopupPickerView: NSObject, UIPickerViewDelegate, UIPickerViewDataSource { 
     
     lazy var buttonDone: UIButton={
         let button = UIButton(type: .system)
-        button.setTitle("Done", for: .normal)
-        button.tintColor = self.itemTextColor
+        button.setTitle(buttonDoneTitle, for: .normal)
+        button.tintColor = self.headerTextColor
         button.titleLabel?.font = self.font
         button.translatesAutoresizingMaskIntoConstraints = false
         button.titleLabel?.adjustsFontSizeToFitWidth = true
@@ -89,8 +94,8 @@ class PopupPickerView: NSObject, UIPickerViewDelegate, UIPickerViewDataSource { 
     
     lazy var buttonCancel: UIButton = {
         let button = UIButton(type: .system)
-        button.setTitle("Cancel", for: .normal)
-        button.tintColor = self.itemTextColor
+        button.setTitle(buttonCancelTitle, for: .normal)
+        button.tintColor = self.headerTextColor
         button.titleLabel?.font = self.font
         button.translatesAutoresizingMaskIntoConstraints = false
         button.titleLabel?.adjustsFontSizeToFitWidth = true
@@ -98,7 +103,7 @@ class PopupPickerView: NSObject, UIPickerViewDelegate, UIPickerViewDataSource { 
         return button
     }()
     
-    static func show(items: [String], itemIds: [String]? = nil, selectedValue: String? = nil, doneBottonCompletion: CompletionBlock?, didSelectCompletion: CompletionBlock?, cancelBottonCompletion: CompletionBlock?) {
+    static func show(cancelTitle: String? = nil, doneTitle: String? = nil, items: [String], itemIds: [String]? = nil, selectedValue: String? = nil, doneButtonCompletion: CompletionBlock?, didSelectCompletion: CompletionBlock?, cancelButtonCompletion: CompletionBlock?) {
         
         if PopupPickerView.shared == nil {
             shared = PopupPickerView()
@@ -106,12 +111,19 @@ class PopupPickerView: NSObject, UIPickerViewDelegate, UIPickerViewDataSource { 
             return
         }
         
+        if let cancelTitle = cancelTitle {
+            shared.buttonCancelTitle = cancelTitle
+        }
+        if let doneTitle = doneTitle {
+            shared.buttonDoneTitle = doneTitle
+        }
+        
         if let appDelegate = UIApplication.shared.delegate as? AppDelegate, 
             let keyWindow = appDelegate.window {
             
-            shared.cancelBottonCompletion = cancelBottonCompletion
+            shared.cancelButtonCompletion = cancelButtonCompletion
             shared.didSelectCompletion = didSelectCompletion
-            shared.doneBottonCompletion = doneBottonCompletion
+            shared.doneButtonCompletion = doneButtonCompletion
             shared.dataSource.items = items
             
             if let idsVal = itemIds, items.count == idsVal.count { //ids can not be less or more than items
@@ -192,7 +204,7 @@ class PopupPickerView: NSObject, UIPickerViewDelegate, UIPickerViewDataSource { 
     func pickerView(_ pickerView: UIPickerView, attributedTitleForRow row: Int, forComponent component: Int) -> NSAttributedString? {
         if let names = dataSource.items {
             let item = names[row]
-            return NSAttributedString(string: item, attributes: [NSAttributedString.Key.foregroundColor: itemTextColor, NSAttributedString.Key.font: font])
+            return NSAttributedString(string: item, attributes: [NSAttributedString.Key.foregroundColor: scrollTextColor, NSAttributedString.Key.font: font])
         }
         return nil
     }
@@ -211,21 +223,21 @@ class PopupPickerView: NSObject, UIPickerViewDelegate, UIPickerViewDataSource { 
     }
     
     @objc func buttonDoneClicked() {
-        self.hidePicker(handler: doneBottonCompletion)
+        self.hidePicker(handler: doneButtonCompletion)
     }
     
     @objc func buttonCancelClicked() {
-        self.hidePicker(handler: cancelBottonCompletion)
+        self.hidePicker(handler: cancelButtonCompletion)
     }
     
     func hidePicker(handler: CompletionBlock?) {
         var itemName: String?
         var id: String?
         let row = self.pickerView.selectedRow(inComponent: 0)
-        if let names = dataSource.items {
+        if let names = dataSource.items, names.isEmpty == false {
             itemName = names[row]
         }
-        if let ids = dataSource.itemIds {
+        if let ids = dataSource.itemIds, ids.isEmpty == false {
             id = ids[row]
         }
         handler?(itemName, id)
