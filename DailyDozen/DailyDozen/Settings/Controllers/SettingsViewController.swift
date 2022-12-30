@@ -6,6 +6,7 @@
 //
 // swiftlint:disable type_body_length
 // swiftlint:disable file_length
+// swiftlint:disable function_body_length
 
 import UIKit
 import UserNotifications
@@ -309,11 +310,11 @@ class SettingsViewController: UITableViewController {
         var filenameList: [String] = []
         var filenameIndices: [String] = []
         for idx in 0 ..< fileUrls.count {
-            filenameList.append(fileUrls[idx].deletingPathExtension().lastPathComponent)
+            filenameList.append(fileUrls[idx].lastPathComponent)
             filenameIndices.append("\(idx)")
         }
         
-        PopupPickerView.show(
+        ImportPopupPickerView.show(
             cancelTitle: NSLocalizedString("history_data_alert_cancel", comment: "Cancel"), 
             doneTitle: NSLocalizedString("history_data_alert_import", comment: "Import"),
             items: filenameList, 

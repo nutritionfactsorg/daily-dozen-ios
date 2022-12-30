@@ -31,16 +31,16 @@ class ChartView: CombinedChartView {
 
         rightAxis.axisMinimum = 0
         rightAxis.labelTextColor = ColorManager.style.chartLabel
-        rightAxis.labelFont = UIFont.helevetica.withSize(12)
+        rightAxis.labelFont = UIFont.helevetica17.withSize(12)
 
         leftAxis.axisMinimum = 0
         leftAxis.labelTextColor = ColorManager.style.chartLabel
-        leftAxis.labelFont = UIFont.helevetica.withSize(12)
+        leftAxis.labelFont = UIFont.helevetica17.withSize(12)
 
         xAxis.labelPosition = .bothSided
         xAxis.granularity = 1
         xAxis.labelTextColor = ColorManager.style.chartLabel
-        xAxis.labelFont = UIFont.helevetica.withSize(12)
+        xAxis.labelFont = UIFont.helevetica17.withSize(12)
     }
 
     func configure(with map: [Int], for scale: TimeScale, label: String) {
@@ -76,7 +76,7 @@ class ChartView: CombinedChartView {
         let set = BarChartDataSet(entries: entries, label: label)
         set.setColor(ColorManager.style.mainMedium)
         set.valueTextColor = ColorManager.style.mainMedium
-        set.valueFont = UIFont.helveticaBold.withSize(12)
+        set.valueFont = UIFont.helveticaBold22.withSize(12)
         set.axisDependency = .left
 
         let data = BarChartData(dataSet: set)
@@ -101,7 +101,7 @@ class ChartView: CombinedChartView {
         set.fillColor = UIColor.white
         set.mode = .cubicBezier
         set.drawValuesEnabled = true
-        set.valueFont = UIFont.helveticaBold.withSize(12)
+        set.valueFont = UIFont.helveticaBold22.withSize(12)
         set.valueTextColor = ColorManager.style.mainMedium
         set.axisDependency = .left
 

@@ -8,7 +8,7 @@
 
 import UIKit
 
-class PopupPickerView: NSObject, UIPickerViewDelegate, UIPickerViewDataSource { // UIPickerView
+class ImportPopupPickerView: NSObject, UIPickerViewDelegate, UIPickerViewDataSource { // UIPickerView
     
     // MARK: - UIPickerView
     
@@ -26,12 +26,13 @@ class PopupPickerView: NSObject, UIPickerViewDelegate, UIPickerViewDataSource { 
     
     // Theme colors
     var headerBackgroundColor = ColorManager.style.pickerHeaderBackground
+    var headerFont = UIFont.helevetica17
     var headerTextColor = ColorManager.style.pickerHeaderText
     var scrollBackgroundColor = ColorManager.style.pickerScrollBackground
+    var scrollFont = UIFont.courier16
     var scrollTextColor = ColorManager.style.pickerScrollText
-    var font = UIFont.systemFont(ofSize: 16)
     
-    private static var shared: PopupPickerView!
+    private static var shared: ImportPopupPickerView!
     var bottomAnchorOfPickerView: NSLayoutConstraint!
     var heightOfPickerView: CGFloat = UIDevice.current.userInterfaceIdiom == .pad ? 160 : 120
     var heightOfToolbar: CGFloat = UIDevice.current.userInterfaceIdiom == .pad ? 50 : 40
@@ -53,7 +54,7 @@ class PopupPickerView: NSObject, UIPickerViewDelegate, UIPickerViewDataSource { 
         return pv
     }()
     
-    lazy var disablerView: UIView={
+    lazy var disablerView: UIView = {
         let view = UIView()
         view.backgroundColor = UIColor.black.withAlphaComponent(0.1)
         view.translatesAutoresizingMaskIntoConstraints = false
@@ -61,7 +62,7 @@ class PopupPickerView: NSObject, UIPickerViewDelegate, UIPickerViewDataSource { 
         return view
     }()
     
-    lazy var tooBar: UIView={
+    lazy var pickerToolbar: UIView = {
         let view = UIView()
         view.backgroundColor = self.headerBackgroundColor
         view.translatesAutoresizingMaskIntoConstraints = false
@@ -81,11 +82,11 @@ class PopupPickerView: NSObject, UIPickerViewDelegate, UIPickerViewDataSource { 
         return view
     }()
     
-    lazy var buttonDone: UIButton={
+    lazy var buttonDone: UIButton = {
         let button = UIButton(type: .system)
         button.setTitle(buttonDoneTitle, for: .normal)
         button.tintColor = self.headerTextColor
-        button.titleLabel?.font = self.font
+        button.titleLabel?.font = self.headerFont
         button.translatesAutoresizingMaskIntoConstraints = false
         button.titleLabel?.adjustsFontSizeToFitWidth = true
         button.addTarget(self, action: #selector(self.buttonDoneClicked), for: .touchUpInside)
@@ -96,7 +97,7 @@ class PopupPickerView: NSObject, UIPickerViewDelegate, UIPickerViewDataSource { 
         let button = UIButton(type: .system)
         button.setTitle(buttonCancelTitle, for: .normal)
         button.tintColor = self.headerTextColor
-        button.titleLabel?.font = self.font
+        button.titleLabel?.font = self.headerFont
         button.translatesAutoresizingMaskIntoConstraints = false
         button.titleLabel?.adjustsFontSizeToFitWidth = true
         button.addTarget(self, action: #selector(self.buttonCancelClicked), for: .touchUpInside)
@@ -105,8 +106,8 @@ class PopupPickerView: NSObject, UIPickerViewDelegate, UIPickerViewDataSource { 
     
     static func show(cancelTitle: String? = nil, doneTitle: String? = nil, items: [String], itemIds: [String]? = nil, selectedValue: String? = nil, doneButtonCompletion: CompletionBlock?, didSelectCompletion: CompletionBlock?, cancelButtonCompletion: CompletionBlock?) {
         
-        if PopupPickerView.shared == nil {
-            shared = PopupPickerView()
+        if ImportPopupPickerView.shared == nil {
+            shared = ImportPopupPickerView()
         } else {
             return
         }
@@ -126,7 +127,7 @@ class PopupPickerView: NSObject, UIPickerViewDelegate, UIPickerViewDataSource { 
             shared.doneButtonCompletion = doneButtonCompletion
             shared.dataSource.items = items
             
-            if let idsVal = itemIds, items.count == idsVal.count { //ids can not be less or more than items
+            if let idsVal = itemIds, items.count == idsVal.count {
                 shared?.dataSource.itemIds  = itemIds
             }
             
@@ -145,11 +146,11 @@ class PopupPickerView: NSObject, UIPickerViewDelegate, UIPickerViewDataSource { 
             shared.bottomAnchorOfPickerView = shared.pickerView.topAnchor.constraint(equalTo: shared.disablerView.bottomAnchor, constant: 0)
             shared.bottomAnchorOfPickerView.isActive = true
             
-            shared.disablerView.addSubview(shared.tooBar)
-            shared.tooBar.heightAnchor.constraint(equalToConstant: shared.heightOfToolbar).isActive = true
-            shared.tooBar.leftAnchor.constraint(equalTo: shared.disablerView.leftAnchor, constant: 0).isActive = true
-            shared.tooBar.rightAnchor.constraint(equalTo: shared.disablerView.rightAnchor, constant: 0).isActive = true
-            shared.tooBar.bottomAnchor.constraint(equalTo: shared.pickerView.topAnchor, constant: 0).isActive = true
+            shared.disablerView.addSubview(shared.pickerToolbar)
+            shared.pickerToolbar.heightAnchor.constraint(equalToConstant: shared.heightOfToolbar).isActive = true
+            shared.pickerToolbar.leftAnchor.constraint(equalTo: shared.disablerView.leftAnchor, constant: 0).isActive = true
+            shared.pickerToolbar.rightAnchor.constraint(equalTo: shared.disablerView.rightAnchor, constant: 0).isActive = true
+            shared.pickerToolbar.bottomAnchor.constraint(equalTo: shared.pickerView.topAnchor, constant: 0).isActive = true
             
             keyWindow.layoutIfNeeded()
             
@@ -194,19 +195,63 @@ class PopupPickerView: NSObject, UIPickerViewDelegate, UIPickerViewDataSource { 
     
     // MARK: - UIPickerViewDelegate
     
-    func pickerView(_ pickerView: UIPickerView, titleForRow row: Int, forComponent component: Int) -> String? {
-        if let names = dataSource.items {
-            return names[row]
-        }
-        return nil
-    }
+//    func pickerView(_ pickerView: UIPickerView, titleForRow row: Int, forComponent component: Int) -> String? {
+//        if let names = dataSource.items {
+//            return names[row]
+//        }
+//        return nil
+//    }
     
-    func pickerView(_ pickerView: UIPickerView, attributedTitleForRow row: Int, forComponent component: Int) -> NSAttributedString? {
+//    func pickerView(_ pickerView: UIPickerView, attributedTitleForRow row: Int, forComponent component: Int) -> NSAttributedString? {
+//        
+//        if let names = dataSource.items {
+//            let itemStr = names[row] + ".this.that.ext"
+//            let attributes: [NSAttributedString.Key: Any] = [
+//                NSAttributedString.Key.foregroundColor: self.scrollTextColor,
+//                NSAttributedString.Key.font: self.scrollFont
+//            ]
+//            // init(markdown:options:baseURL:)' requires iOS 15 or newer
+//            let aStr = NSAttributedString(string: itemStr, attributes: attributes)
+//            return aStr
+//        }
+//        return nil
+//    }
+    
+    // UIView based
+    func pickerView(_ pickerView: UIPickerView, viewForRow row: Int, forComponent component: Int, reusing view: UIView?) -> UIView {
+        
+        var pickerData: [String]!
         if let names = dataSource.items {
-            let item = names[row]
-            return NSAttributedString(string: item, attributes: [NSAttributedString.Key.foregroundColor: scrollTextColor, NSAttributedString.Key.font: font])
+            pickerData = names
+        } else {
+            pickerData = ["?"]
         }
-        return nil
+        
+        var pickerLabel: UILabel!
+        if view == nil { // if no label yet
+            pickerLabel = UILabel()
+            //color the label's background
+            //let hue = CGFloat(row)/CGFloat(pickerData.count)
+            //pickerLabel.backgroundColor = UIColor(hue: hue, saturation: 1.0, brightness: 1.0, alpha: 1.0)
+            pickerLabel.backgroundColor  = scrollBackgroundColor
+        }
+        if let view = view as? UILabel {
+            pickerLabel = view
+        } else {
+            pickerLabel = UILabel()
+            pickerLabel.backgroundColor  = scrollBackgroundColor
+        }
+        
+        let titleData = pickerData[row]
+        let attributes: [NSAttributedString.Key: Any] = [
+            NSAttributedString.Key.font: scrollFont,
+            NSAttributedString.Key.foregroundColor: scrollTextColor
+        ]
+        let title = NSAttributedString(string: titleData, attributes: attributes)
+        pickerLabel.attributedText = title
+        pickerLabel.textAlignment = .center
+        
+        return pickerLabel
     }
     
     func pickerView(_ pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
@@ -221,7 +266,9 @@ class PopupPickerView: NSObject, UIPickerViewDelegate, UIPickerViewDataSource { 
         }
         self.didSelectCompletion?(itemName, id)
     }
-    
+        
+    // MARK: - 
+
     @objc func buttonDoneClicked() {
         self.hidePicker(handler: doneButtonCompletion)
     }
@@ -254,7 +301,7 @@ class PopupPickerView: NSObject, UIPickerViewDelegate, UIPickerViewDataSource { 
                 self.disablerView.alpha = 0},
             completion: { (_: Bool) in
                 self.disablerView.removeFromSuperview()
-                PopupPickerView.shared = nil}
+                ImportPopupPickerView.shared = nil}
         )
     }
     

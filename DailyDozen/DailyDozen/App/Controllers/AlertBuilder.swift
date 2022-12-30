@@ -49,14 +49,14 @@ class AlertBuilder {
             NSAttributedString(
                 string: content.title,
                 attributes: [
-                    NSAttributedString.Key.font: UIFont.helveticaBold,
+                    NSAttributedString.Key.font: UIFont.helveticaBold22,
                     NSAttributedString.Key.foregroundColor: ColorManager.style.mainMedium]),
             forKey: Keys.title)
 
         let message = NSAttributedString(
             string: content.message,
             attributes: [
-                NSAttributedString.Key.font: UIFont.helevetica,
+                NSAttributedString.Key.font: UIFont.helevetica17,
                 NSAttributedString.Key.foregroundColor: UIColor.lightGray])
         alert.setValue(message, forKey: Keys.message)
 
