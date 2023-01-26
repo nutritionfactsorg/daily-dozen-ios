@@ -422,7 +422,7 @@ class RealmProvider {
         }
     }
     
-    // MARK: Progress Streak Indicator Management
+    // MARK: - Progress Streak Indicator Management
     
     // Note: The progress streak is a derived value. 
     // The progress streak indicates the number of consecutive days completed

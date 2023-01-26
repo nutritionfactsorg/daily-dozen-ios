@@ -325,8 +325,8 @@ class SettingsViewController: UITableViewController {
             (item: String?, id: String?) in
             LogService.shared.debug("importButtonCompletion item:\(item ?? "nil") id:\(id ?? "nil")")
             if let id = id, let idx = Int(id) {
-                let url = fileUrls[idx]
-                self.doHistoryDataImportFile(url: url)
+                let csvUrl = fileUrls[idx]
+                self.doHistoryDataImportFile(csvUrl: csvUrl)
             }
         } didSelectCompletion: { 
             // didSelectCompletion is called each time scroll selection changes
@@ -392,8 +392,8 @@ class SettingsViewController: UITableViewController {
         return csvFileList
     }
     
-    func doHistoryDataImportFile(url: URL) {
-        doHistoryDataImportFileConfirmAlert(url: url)
+    func doHistoryDataImportFile(csvUrl: URL) {
+        doHistoryDataImportFileConfirmAlert(csvUrl: csvUrl)
     }
     
     func doHistoryDataImportFileNotFoundAlert() {
@@ -410,7 +410,7 @@ class SettingsViewController: UITableViewController {
         present(alert, animated: true, completion: nil)
     }
     
-    func doHistoryDataImportFileConfirmAlert(url: URL) {
+    func doHistoryDataImportFileConfirmAlert(csvUrl: URL) {
         let alertMsgTitleStr = NSLocalizedString("history_data_title", comment: "History")
         let alertMsgBodyStr = NSLocalizedString("history_data_import_caution_text", comment: "caution: will overwrite")
         let importStr = NSLocalizedString("history_data_alert_import", comment: "Import")
@@ -425,13 +425,17 @@ class SettingsViewController: UITableViewController {
         
         let importAction = UIAlertAction(title: importStr, style: .default) {
             (_: UIAlertAction) -> Void in
-            // import to NutritionFacts.realm
-            let realmUrl = URL.inDocuments(filename: RealmProvider.realmFilename)
-            let realmManager = RealmManager(fileURL: realmUrl)
-            realmManager.csvImport(url: url)
+            self.doDataHistoryImportHandler(csvUrl: csvUrl)
         }
         alert.addAction(importAction)
         present(alert, animated: true, completion: nil)
+    }
+    
+    func doDataHistoryImportHandler(csvUrl: URL) {
+        // import to NutritionFacts.realm
+        let realmUrl = URL.inDatabase(filename: RealmProvider.realmFilename)
+        let realmManager = RealmManager(fileURL: realmUrl)
+        realmManager.csvImport(url: csvUrl)
     }
     
     @IBAction func doTweaksVisibilityChanged(_ sender: UISegmentedControl) {
