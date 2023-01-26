@@ -21,7 +21,7 @@ class RealmManager {
     }
     
     func csvExport(marker: String) -> String {
-        let filename = "\(Date.datestampNow())_\(marker).csv"
+        let filename = "\(marker)_\(Date.datestampNow()).csv"
         csvExport(filename: filename)
         return filename
     }
