@@ -33,7 +33,7 @@ class ItemHistoryViewController: UIViewController {
     }
 
     // MARK: - Properties
-    private let realm = RealmProvider()
+    private let realm = RealmProvider.primary
     fileprivate var itemType: DataCountType!
 
     // MARK: - Outlets

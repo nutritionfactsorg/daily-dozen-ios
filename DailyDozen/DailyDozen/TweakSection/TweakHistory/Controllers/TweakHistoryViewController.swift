@@ -105,7 +105,7 @@ class TweakHistoryViewController: UIViewController {
 
     // MARK: - Methods
     private func setViewModel() {
-        let realm = RealmProvider()
+        let realm = RealmProvider.primary
 
         let trackers: [DailyTracker] = realm.getDailyTrackers()
         guard trackers.count > 0 else {

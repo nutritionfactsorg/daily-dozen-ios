@@ -38,7 +38,7 @@ class WeightHistoryViewController: UIViewController {
     // MARK: - Properties
     private var weightViewModel: WeightHistoryViewModel!
     private var currentTimeScale = TimeScale.day
-    private let realm = RealmProvider()
+    private let realm = RealmProvider.primary
 
     private var chartSettings: (year: Int, month: Int)! {
         didSet {
@@ -266,7 +266,7 @@ class WeightHistoryViewController: UIViewController {
     // -------------------------
 
     private func setViewModel() {
-        let realm = RealmProvider()
+        let realm = RealmProvider.primary
         
         let weights = realm.getDailyWeights()
         guard weights.am.count + weights.pm.count > 0 else {

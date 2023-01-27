@@ -24,7 +24,7 @@ struct HealthSynchronizer {
     static var shared = HealthSynchronizer()
     
     // MARK: - Properties
-    private let realm = RealmProvider()
+    private let realm = RealmProvider.primary
     
     /// Note: keep `realm` operations on this thread. Pass value copies of realm objects to the `serialSyncQueue` tasks.
     private let serialSyncQueue = DispatchQueue(label: "com.nutritionfacts.queues.serial.sync", qos: DispatchQoS.userInitiated)

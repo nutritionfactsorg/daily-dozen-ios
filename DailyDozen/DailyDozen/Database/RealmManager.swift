@@ -13,7 +13,7 @@ class RealmManager {
     
     /// 
     init() {
-        realmDb = RealmProvider()
+        realmDb = RealmProvider.primary
     }
     
     init(fileURL: URL) {

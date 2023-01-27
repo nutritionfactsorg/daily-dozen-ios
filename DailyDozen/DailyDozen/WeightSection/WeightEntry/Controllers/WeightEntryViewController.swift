@@ -34,7 +34,7 @@ class WeightEntryViewController: UIViewController {
     @IBOutlet weak var clearWeightPMButton: UIButton!
     
     // MARK: - Properties
-    private let realm = RealmProvider()
+    private let realm = RealmProvider.primary
     public var currentViewDateWeightEntry: Date = DateManager.currentDatetime() {
         didSet {
             LogService.shared.debug("@DATE \(currentViewDateWeightEntry.datestampKey) WeightEntryViewController")

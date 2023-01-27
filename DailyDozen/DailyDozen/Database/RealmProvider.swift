@@ -17,10 +17,45 @@ protocol RealmDelegate: AnyObject {
 }
 
 class RealmProvider {
-    
+    // Current Default Database
+    static var primary = RealmProvider()
+    //
     public static let realmFilename = "NutritionFacts.realm"
+    public static let realmFilenameScratch = "NutritionFacts.scratch.realm"
+    public static func realmFilenameNowstamp() -> String {
+        return "NutritionFacts.\(Date.datestampNow()).realm"
+    }
+    public static func realmBackupList() -> [String] {
+        var filenameList: [String] = []
+        let fm = FileManager.default
+        
+        let keys: [URLResourceKey] = [.isRegularFileKey]
+        let options: FileManager.DirectoryEnumerationOptions = [.skipsHiddenFiles, .skipsSubdirectoryDescendants]
+        
+        do {
+            let contentUrls = try fm.contentsOfDirectory(
+                at: URL.inDatabase(), 
+                includingPropertiesForKeys: keys, 
+                options: options)
+            for url in contentUrls {
+                // 'Regex' is only available in iOS 16.0 or newer
+                // 'contains: Regex' is only available in iOS 16.0 or newer
+                let regex = "^NutritionFacts.[_0-9]+.realm$"
+                let filename = url.lastPathComponent
+                if filename.regexMatch(pattern: regex) {
+                    filenameList.append(filename)
+                }
+            }
+        } catch {
+            LogService.shared.error(
+                "RealmProvider realmBackupList \(error.localizedDescription)"
+            )
+        }
+        
+        return filenameList.sorted()
+    }
     
-    private let realm: Realm
+    private var realm: Realm
     private var unsavedDailyTracker: DailyTracker?
     
     /// Default current local Realm at Library/Database/defaultName
@@ -40,6 +75,31 @@ class RealmProvider {
             fatalError("FAIL: could not instantiate RealmProvider.")
         }
         self.realm = realm
+    }
+    
+    static func initialize(fileURL: URL) {
+        //Realm.Configuration(
+        //    fileURL: <#T##URL?#>, 
+        //    inMemoryIdentifier: <#T##String?#>, 
+        //    syncConfiguration: <#T##SyncConfiguration?#>, 
+        //    encryptionKey: <#T##Data?#>, 
+        //    readOnly: <#T##Bool#>, 
+        //    schemaVersion: <#T##UInt64#>, 
+        //    migrationBlock: <#T##MigrationBlock?##MigrationBlock?##(_ migration: Migration, _ oldSchemaVersion: UInt64) -> Void#>, 
+        //    deleteRealmIfMigrationNeeded: <#T##Bool#>, 
+        //    shouldCompactOnLaunch: <#T##((Int, Int) -> Bool)?##((Int, Int) -> Bool)?##(Int, Int) -> Bool#>, 
+        //    objectTypes: <#T##[Object.Type]?#>)
+        
+        let config = Realm.Configuration(
+            fileURL: fileURL,   // local Realm file url
+            objectTypes: [DataCountRecord.self, DataWeightRecord.self])
+        Realm.Configuration.defaultConfiguration = config
+        guard let realm = try? Realm() else {
+            fatalError("FAIL: could not instantiate RealmProvider.")
+        }
+        RealmProvider.primary.realm = realm
+        //Realm.invalidate(<#T##self: Realm##Realm#>)
+        _ = Realm.refresh(RealmProvider.primary.realm)
     }
     
     func initialDailyTracker(date: Date) -> DailyTracker {

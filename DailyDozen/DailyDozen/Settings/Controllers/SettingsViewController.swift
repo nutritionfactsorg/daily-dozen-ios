@@ -389,7 +389,9 @@ class SettingsViewController: UITableViewController {
             logger.debug("doHistoryDataImportFileFind() \(error)")
         }
         
-        return csvFileList
+        return csvFileList.sorted {
+            $0.lastPathComponent < $1.lastPathComponent
+        }
     }
     
     func doHistoryDataImportFile(csvUrl: URL) {
@@ -433,9 +435,48 @@ class SettingsViewController: UITableViewController {
     
     func doDataHistoryImportHandler(csvUrl: URL) {
         // import to NutritionFacts.realm
-        let realmUrl = URL.inDatabase(filename: RealmProvider.realmFilename)
+        let realmUrl = URL.inDatabase(filename: RealmProvider.realmFilenameScratch)
         let realmManager = RealmManager(fileURL: realmUrl)
-        realmManager.csvImport(url: csvUrl)
+        
+        realmManager.csvImport(url: csvUrl) 
+        // :!!!: check for successful import
+        
+        let fm = FileManager.default
+        do {
+            // • Backup primary database
+            try fm.moveItem(
+                at: URL.inDatabase(filename: RealmProvider.realmFilename), 
+                to: URL.inDatabase(filename: RealmProvider.realmFilenameNowstamp())
+            )
+            
+            // • Move imported database into primary database location
+            try fm.moveItem(
+                at: URL.inDatabase(filename: RealmProvider.realmFilenameScratch), 
+                to: URL.inDatabase(filename: RealmProvider.realmFilename)
+            )
+            
+            // • Insure connection to the new current "primary" database
+            RealmProvider.initialize(
+                fileURL: URL.inDatabase(filename: RealmProvider.realmFilename))
+            
+            // • Cleanup. Remove excess backups.
+            let backupList = RealmProvider.realmBackupList()
+            let backupMaxCount = 5 // excess threshold
+            if backupList.count > backupMaxCount {
+                let excessList = backupList.prefix(backupList.count - backupMaxCount)
+                for filename in excessList {
+                    try fm.removeItem(at: URL.inDatabase(filename: filename))
+                }
+            }
+        } catch {
+            // csvUrl.path() 'path(percentEncoded:)' requires iOS 16.0 or newer
+            // csvUrl.path will be deprecated in a future version of iOS
+            LogService.shared.error("""
+                doDataHistoryImportHandler
+                    csvfile:\(csvUrl.path)
+                    error:'\(error)'
+                """)
+        }
     }
     
     @IBAction func doTweaksVisibilityChanged(_ sender: UISegmentedControl) {

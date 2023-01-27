@@ -19,7 +19,7 @@ class TweakEntryViewController: UIViewController {
     @IBOutlet private weak var starImage: UIImageView!
     
     // MARK: - Properties
-    private let realm = RealmProvider()
+    private let realm = RealmProvider.primary
     private let tweakDailyStateCountMaximum = 37
     
     /// Number of 'checked' states for the viewed date.

@@ -18,7 +18,7 @@ class DozeEntryViewController: UIViewController {
     @IBOutlet private weak var starImage: UIImageView!
     
     // MARK: - Properties
-    private let realm = RealmProvider()
+    //private let realm = RealmProvider.primary
     private let dozeDailyStateCountMaximum = 24
     
     /// Number of 'checked' states for the viewed date.
@@ -69,7 +69,8 @@ class DozeEntryViewController: UIViewController {
     ///
     /// - Parameter item: The current date.
     func setViewModel(date: Date) {
-        dataProvider.viewModel = DozeEntryViewModel(tracker: realm.getDailyTracker(date: date))
+        //dataProvider.viewModel = DozeEntryViewModel(tracker: realm.getDailyTracker(date: date))
+        dataProvider.viewModel = DozeEntryViewModel(tracker: RealmProvider.primary.getDailyTracker(date: date))
         
         // Update N/MAX daily checked items count
         dozeDailyStateCount = 0
@@ -190,7 +191,8 @@ extension DozeEntryViewController: UICollectionViewDelegate {
         let busyAlert = AlertActivityBar()
         busyAlert.setText("Updating progress") // :NYI:LOCALIZE:
         
-        realm.saveCount(countAfter, date: itemDate, countType: itemType)
+        //realm.saveCount(countAfter, date: itemDate, countType: itemType)
+        RealmProvider.primary.saveCount(countAfter, date: itemDate, countType: itemType)
         tableView.reloadData()
         
         guard !dataProvider.viewModel.itemInfo(rowIndex: rowIndex).isSupplemental else {
