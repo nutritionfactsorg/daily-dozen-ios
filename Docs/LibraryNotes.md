@@ -40,6 +40,7 @@ _The `ActiveLabel` library project has not been kept current with the progressio
 * <https://cocoapods.org/pods/RealmSwift>
 * <https://github.com/realm/realm-cocoa>
 * <https://docs.mongodb.com/realm-legacy/docs/swift/4.4.1/index.html>
+    * <https://www.mongodb.com/docs/legacy/realm/swift/4.1.1/api/>
 * Language: Swift 5, C++ cxx14
 * Swift Package Manager: 5.0
 * Version:
