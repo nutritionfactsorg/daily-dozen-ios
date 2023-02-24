@@ -1,79 +1,124 @@
-/* DailyDozen Localizable.strings (en) */
+/* DailyDozen Localizable.strings (ro) */
 /* Copyright © 2021 Nutritionfacts.org. All rights reserved. */
 
 /* Date Button Title: ‘Back to today’ */
-"dateBackButtonTitle" = "Back to today";
+"dateBackButtonTitle" = "Înapoi la ziua de azi";
 
 /* Date Button Title: ‘Today’ */
-"dateButtonTitle.today" = "Today";
+"dateButtonTitle.today" = "Azi";
 
 /* Doze Detail View subheading: ‘Serving Sizes’ */
-"doze_detail_section_sizes" = "Serving Sizes";
+"doze_detail_section_sizes" = "Dimensiunea unei porții (Sugestie)";
 
 /* Doze Detail View subheading: ‘Types’ */
-"doze_detail_section_types" = "Types";
+"doze_detail_section_types" = "Tipuri";
 
 /* Doze Entry View heading: ‘Servings’ */
-"doze_entry_header" = "Servings";
+"doze_entry_header" = "Porții";
 
 /* heading for daily data entry item */
-"dozeBeans.heading" = "Beans";
+"dozeBeans.heading" = "Leguminoase boabe";
 
 /* heading for daily data entry item */
-"dozeBerries.heading" = "Berries";
+"dozeBerries.heading" = "Fructe de pădure";
 
 /* heading for daily data entry item */
-"dozeBeverages.heading" = "Beverages";
+"dozeBeverages.heading" = "Băuturi";
 
 /* heading for daily data entry item */
-"dozeExercise.heading" = "Exercise";
+"dozeExercise.heading" = "Exerciții fizice";
 
 /* heading for daily data entry item */
-"dozeFlaxseeds.heading" = "Flaxseeds";
+"dozeFlaxseeds.heading" = "Semințe de in";
 
 /* heading for daily data entry item */
-"dozeFruitsOther.heading" = "Other Fruits";
+"dozeFruitsOther.heading" = "Alte fructe";
 
 /* heading for daily data entry item */
-"dozeGreens.heading" = "Greens";
+"dozeGreens.heading" = "Verdețuri";
 
 /* heading for daily data entry item */
-"dozeNuts.heading" = "Nuts and Seeds";
+"dozeNuts.heading" = "Nuci și semințe";
 
 /* Daily Dozen supplement info alert: dismissal button text */
 "dozeOtherInfo.confirm" = "OK";
 
 /* Daily Dozen supplement info alert: message */
-"dozeOtherInfo.message" = "Vitamin B12 is essential for your health but does not count towards your daily servings.\n\nVitamin B12 is included in this app to provide you with an easy way to track your intake.";
+"dozeOtherInfo.message" = "Vitamina B12 este esențială pentru sănătatea dvs., dar nu este inclusă în porțiile zilnice.\n\nVitamina B12 este inclusă în această aplicație pentru a vă oferi o modalitate ușoară de a vă urmări aportul.";
 
 /* Daily Dozen daily entry section heading */
-"dozeOtherInfo.section" = "Supplements";
+"dozeOtherInfo.section" = "Suplimente";
 
 /* Daily Dozen supplement info alert: title */
-"dozeOtherInfo.title" = "Supplements";
+"dozeOtherInfo.title" = "Suplimente";
 
 /* heading for daily data entry item */
-"dozeSpices.heading" = "Herbs and Spices";
+"dozeSpices.heading" = "Plante aromatice și condimente";
 
 /* heading for daily data entry item */
-"dozeVegetablesCruciferous.heading" = "Cruciferous Vegetables";
+"dozeVegetablesCruciferous.heading" = "Legume crucifere";
 
 /* heading for daily data entry item */
-"dozeVegetablesOther.heading" = "Other Vegetables";
+"dozeVegetablesOther.heading" = "Alte legume";
 
 /* heading for daily data entry item */
-"dozeWholeGrains.heading" = "Whole Grains";
+"dozeWholeGrains.heading" = "Cereale integrale";
 
-/* History Data Alert: Cancel */
+/*  */
+"faq_adapt_question" = "Duzina Zilnică înseamnă prea multă/prea puțină mâncare pentru mine! Pot s-o adaptez?";
+
+/*  */
+"faq_adapt_response" = "Da, Duzina Zilnică se dorește a fi un ghid al celor mai sănătoase alimente pe care ne străduim să le includem zilnic. Nu este un plan de mese și nu își propune să fie prescriptivă. Faceți tot posibilul pentru a mânca o gamă variată de alimente vegetale integrale și adaptați Duzina Zilnică la cantitățile care vă convin.";
+
+/*  */
+"faq_age_question" = "Este Duzina Zilnică adaptabilă pentru copii și adolescenți?";
+
+/*  */
+"faq_age_response.0" = "Copiii și adolescenții au necesități calorice diferite pe parcursul evoluției lor. Aceste nevoi se schimbă astfel încât să le susțină creșterea și dezvoltarea în fiecare etapă. ";
+
+/*  */
+"faq_age_response.1" = "Duzina Zilnică a fost concepută ca un ghid pentru a ajuta oamenii să includă unele dintre cele mai sănătoase alimente în rutina lor zilnică. În timp ce același sistem poate fi folosit pentru majoritatea oamenilor de-a lungul ciclului de viață, cantitatea de alimente pe care trebuie să o consume o persoană variază în funcție de o serie de factori, precum vârsta și nivelul de activitate. Deoarece nu putem oferi consiliere nutrițională sau medicală pentru copilul dvs. aflat în creștere, părinții ar trebui să folosească acest ghid așa cum consideră potrivit pentru nevoile copilului lor și/sau să consulte un dietetician autorizat sau alt furnizor de servicii medicale pentru a determina nevoile individuale ale acestuia.";
+
+/*  */
+"faq_calories_question" = "Câte calorii sunt incluse în Duzina Zilnică?";
+
+/*  */
+"faq_calories_response.0" = "Duzina Zilnică are o medie de aproximativ 1.200 de calorii, dar având în vedere gama largă de opțiuni alimentare din fiecare categorie, poate varia între 800 și 1800 de calorii. De exemplu, în categoria „Alte Legume”: o cană de ardei gras are o densitate calorică mult mai mică decât o cană de cartofi dulci gătiți, prin urmare intervalul caloric va depinde de alegerile alimentare specifice. Acesta este lucrul grozav în legătură cu Lista de Verificare Duzina Zilnică - nu este o abordare unică, putând fi adaptată nevoilor dvs.";
+
+/*  */
+"faq_calories_response.1" = "Dacă scopul dvs. este pierderea în greutate, puteți găsi mai multe informații în cartea „Cum să nu ții o dietă” și în cele „21 de Trucuri” incluse în carte. În „Cum să nu ții o dietă”, am notat: „O analiză sistematică a strategiilor de scădere în greutate eficiente a concluzionat că, având în vedere încetinirea metabolică și creșterea apetitului care însoțesc pierderea în greutate, pentru a obține o scădere în greutate semnificativă, ar putea fi nevoie ca numărul de calorii să scadă până la 1.200 de calorii pe zi pentru femei și 1.500 de calorii pe zi pentru bărbați.”";
+
+/*  */
+"faq_calories_response.2" = "Pe de altă parte, dacă obiectivul dvs. este creșterea în greutate, ați putea să vă concentrați pe adăugarea de alimente cu densitate calorică ridicată, cum ar fi cartofii dulci, avocado, nucile și produsele din soia.";
+
+/*  */
+"faq_mother_question" = "Pot să fac asta în timpul sarcinii sau alăptării?";
+
+/*  */
+"faq_mother_response" = "Persoanele însărcinate sau care alăptează au nevoi calorice și nutriționale diferite față de persoanele care nu sunt în aceste situații. Vă reamintim că Duzina Zilnică nu este un plan de mese și nu ar trebui să reprezinte singurele alimente consumate într-o zi. Persoanele însărcinate sau care alăptează ar trebui să consulte medicul sau un dietetician autorizat pentru asistență în îndeplinirea necesarului caloric și a nevoilor nutriționale specifice.";
+
+/*  */
+"faq_scaling_question" = "Nu pot mânca atât de multe leguminoase/cereale/etc.!";
+
+/*  */
+"faq_scaling_response" = "Este în regulă! Duzina Zilnică este un ghid aspirațional. Faceți tot posibilul să încorporați cât mai multe dintre aceste alimente vegetale sănătoase. Dacă abia ați început să consumați mai multe leguminoase (sau cereale, verdețuri, etc!), ați putea să începeți cu cantități mai mici pe care să le creșteți progresiv pentru a oferi microbiomului șansa de a se adapta. De asemenea, puteți fi creativi: de exemplu, adăugați niște leguminoase la fulgii de ovăz de la micul dejun. Dacă îl umpleți cu fructe de pădure, semințe de in și nuci, nici măcar nu veți observa leguminoasele. Puteți, de asemenea, să pasați leguminoasele într-o pastă tartinbilă sau să gătiți rețeta mea de [BROL](https://nutritionfacts.org/recipe/basic-brol-barley-rye-oats-and-lentils)—orz, secară, crupe de ovăz și linte — pe care o folosesc ca bază pentru multe rețete și este o modalitate simplă de a combina o varietate de cereale integrale cu o porție de leguminoase.";
+
+/*  */
+"faq_supplements_question" = "Credeam că dr. Greger recomandă luarea de suplimente de vitamina D și DHA (Omega-3). De ce nu sunt incluse?";
+
+/*  */
+"faq_supplements_response" = "Am actualizat aplicația Duzina Zilnică pentru a reflecta doar suplimentele necesare. De exemplu, Vitamina D este necesară doar pentru persoanele care nu se expun suficient la soare. Scopul nostru este să vă împărtășim datele științifice, astfel încât să puteți lua propriile decizii în cunoștință de cauză. Puteți vedea toate recomandările mele pe pagina [Optimum Nutrient](https://nutritionfacts.org/optimum-nutrient-recommendations).";
+
+/* History Data Alert: Cancel button */
 "history_data_alert_cancel" = "Cancel";
 
-/* History Data Alert: Clear */
+/* History Data Alert: Clear button */
 "history_data_alert_clear" = "Clear";
 
-/* History Data Alert: Clear */
+/* History Data Alert: Import buttom */
 "history_data_alert_import" = "Import";
 
-/* History Data Alert: Clear */
+/* History Data Alert: OK button */
 "history_data_alert_ok" = "OK";
 
 /* History Data: export action button */
@@ -85,206 +130,197 @@
 /* History Data: import action button */
 "history_data_import_btn" = "Import History Data";
 
-/* History Data: import description text */
+/* History Data: import caution text */
 "history_data_import_caution_text" = "Caution: This import will overwrite all history data currently in this Daily Dozen application. Would you like to proceed with the import?";
 
-/* History Data: import description text */
+/* History Data: import data error text */
+"history_data_import_error_text" = "Error: The import was not performed because of a data error. The existing data has remained unchanged.";
+
+/* History Data: import not found text */
 "history_data_import_notfound_text" = "Did not find a valid import file in the Daily Dozen Documents folder.";
 
 /* History Data: preferences header & title */
 "history_data_title" = "History";
 
 /* History View: calendar scale control */
-"history_scale_choice_day" = "Day";
+"history_scale_choice_day" = "Zi";
 
 /* History View: calendar scale control */
-"history_scale_choice_month" = "Month";
+"history_scale_choice_month" = "Lună";
 
 /* History View: calendar scale control */
-"history_scale_choice_year" = "Year";
+"history_scale_choice_year" = "An";
 
 /* History View: scale text */
-"history_scale_label" = "Time Scale";
+"history_scale_label" = "Interval";
 
 /*  */
-"historyRecord.movingAverage" = "Moving Average";
+"historyRecord.movingAverage" = "Medie exerciții fizice";
 
 /* History View */
-"historyRecordDoze.heading" = "Servings History";
+"historyRecordDoze.heading" = "Istoric porții";
 
 /* History View */
-"historyRecordDoze.legend" = "Servings";
+"historyRecordDoze.legend" = "Porții";
 
 /* History View */
-"historyRecordTweak.heading" = "Tweaks History";
+"historyRecordTweak.heading" = "Istoric Trucuri";
 
 /* History View */
-"historyRecordTweak.legend" = "Tweaks";
+"historyRecordTweak.legend" = "Trucuri";
 
 /* History View */
-"historyRecordWeight.heading" = "Weight History";
+"historyRecordWeight.heading" = "Istoric greutate";
 
 /* History View */
-"historyRecordWeight.legendEvening" = "Evening";
+"historyRecordWeight.legendEvening" = "Seară";
 
 /* History View */
-"historyRecordWeight.legendMorning" = "Morning";
+"historyRecordWeight.legendMorning" = "Dimineaţă";
 
 /* History View */
-"historyRecordWeight.titleImperial" = "Weight (lbs)";
+"historyRecordWeight.titleImperial" = "Greutate (lbs)";
 
 /* History View */
-"historyRecordWeight.titleMetric" = "Weight (kg)";
+"historyRecordWeight.titleMetric" = "Greutate (kg)";
 
 /* Info About Menu Item */
-"info_app_about" = "About";
+"info_app_about" = "Despre";
 
 /* Info About View: Application Name ‘Daily Dozen’ */
-"info_app_about_app_name" = "Daily Dozen";
+"info_app_about_app_name" = "Duzina Zilnică";
 
 /* Info About View: Created By */
-"info_app_about_created_by" = "This app was created by: NutritionFacts.org, Christi Richards, Konstantin Khokhlov, and Marc Campbell";
+"info_app_about_created_by" = "Această aplicație a fost creată de: NutritionFacts.org, Christi Richards, Konstantin Khokhlov și Marc Campbell.";
 
 /* Info About View */
-"info_app_about_heading" = "About this app";
+"info_app_about_heading" = "Despre această aplicație";
 
 /* Info About View: Open Source Credits */
-"info_app_about_oss_credits" = "The following open source libraries are used: RealmSwift, Charts, FSCalendar, SimpleAnimation, ActiveLabel.";
+"info_app_about_oss_credits" = "S-au folosit următoarele librării open source: RealmSwift, Charts, FSCalendar, SimpleAnimation, ActiveLabel.";
 
 /* Info About View: Overview Text */
-"info_app_about_overview" = "Use this app on a daily basis to keep track of the foods and advice I recommend for optimal health and longevity in my books How Not to Die and How Not to Diet.";
+"info_app_about_overview" = "Utilizați această aplicație zilnic pentru a urmări alimentele și sfaturile pe care le recomand pentru o sănătate optimă și longevitate în cărțile mele „Cum să nu mori” și „Cum să nu ții o dietă”.";
 
-/* Info About View: Contributing Translators List (language code)  See https://en.wikipedia.org/wiki/List_of_ISO_639-1_codes */
-"info_app_about_translators" = "Special thanks to our volunteer translators: Ricard Soler Roger (ca), Luděk Bouška (cs,sk), Lenka Lukacová (cs), Anke Schliessmann (de), Ángela Graña (es), Doron Barak (he), Ruth Levy (he), Joanna Klopotek (pl), Tania Bassi (pt-BR), João Madureira (pt-PT), Evgeniya Lyakh (ru), Katarína Mocáková (sk).";
+/* Info About View: Contributing Translators List */
+"info_app_about_translators" = "Mulțumiri speciale traducătorilor noștri voluntari: Ricard Soler Roger (ca), Anke Schliessmann (de), Doron Barak (he), Ruth Levy (he), Joanna Klopotek (pl), Tania Bassi (pt-BR), João Madureira (pt-PT), Cristina Lauby (ro), Evgeniya Lyakh (ru).";
 
 /* Info About View: Application release version */
-"info_app_about_version" = "version 3.4.1";
+"info_app_about_version" = "versiune 3.2.21";
 
 /* Info About View: Welcome */
-"info_app_about_welcome" = "Welcome to my Daily Dozen!";
+"info_app_about_welcome" = "Bine ați venit în Duzina Zilnică!";
 
 /* Info Menu: book title */
-"info_book_how_not_to_die" = "Book: How Not to Die";
+"info_book_how_not_to_die" = "Carte: Cum să nu mori";
 
 /* Info Menu: book title */
-"info_book_how_not_to_die_cookbook" = "Book: How Not to Die Cookbook";
+"info_book_how_not_to_die_cookbook" = "Carte: 100+ rețete bazate pe studii științifice - Cum să nu mori";
 
 /* Info Menu: book title */
-"info_book_how_not_to_diet" = "Book: How Not to Diet";
+"info_book_how_not_to_diet" = "Carte: Cum să nu ții o rețetă";
 
 /* Info Menu */
-"info_webpage_daily_dozen_challenge" = "Daily Dozen Challenge";
+"info_webpage_daily_dozen_challenge" = "Provocarea „Duzina Zilnică”";
 
 /* Info Menu */
-"info_webpage_donate" = "Donate";
+"info_webpage_donate" = "Donați";
 
 /* Info Menu */
 "info_webpage_open_source" = "Open Source";
 
 /* Info Menu */
-"info_webpage_subscribe" = "Subscribe";
+"info_webpage_subscribe" = "Abonați-vă";
 
 /* Info Menu */
-"info_webpage_videos_latest" = "Latest Videos";
+"info_webpage_videos_latest" = "Ultimele videoclipuri";
 
 /* Item History Legend: ‘All completed’ */
-"item_history_completed_all" = "All servings";
+"item_history_completed_all" = "Toate porțiile";
 
 /* Item History Legend: ‘Some completed’ */
-"item_history_completed_some" = "Some servings";
+"item_history_completed_some" = "Câteva porții";
 
 /* Item History Heading */
-"item_history_heading" = "History";
+"item_history_heading" = "Istoric";
 
 /* Main Navigation Tab Control: ‘Daily Dozen’ (proper noun) */
-"navtab.doze" = "Daily Dozen";
+"navtab.doze" = "Duzina Zilnică";
 
 /* Main Navigation Tab Control: show more information */
-"navtab.info" = "Information";
+"navtab.info" = "Informații";
 
 /* Main Navigation Tab Control: ‘Preferences’ synonyms: Settings, Configuration. Choose a translations with is different from Tweaks. */
-"navtab.preferences" = "Preferences";
+"navtab.preferences" = "Preferințe";
 
 /* Main Navigation Tab Control: ‘21 Tweaks’ (proper noun) */
-"navtab.tweaks" = "21 Tweaks";
+"navtab.tweaks" = "21 de Trucuri";
 
 /* heading for daily data entry item */
-"otherVitaminB12.heading" = "Vitamin B12";
+"otherVitaminB12.heading" = "Vitamina B12";
 
 /* Alert notification text */
-"reminder.alert.text" = "Update your servings for today";
+"reminder.alert.text" = "Actualizați porțiile pentru astăzi";
 
 /* Daily Reminder (alert title, settings section heading) */
-"reminder.heading" = "Daily Reminder";
+"reminder.heading" = "Memento zilnic";
 
 /* Daily Reminder On/Off toggle switch label */
-"reminder.settings.enable" = "Enable Reminders";
+"reminder.settings.enable" = "Activează Memento";
 
 /* Daily Reminder sound control heading */
-"reminder.settings.sound" = "Play Sound";
+"reminder.settings.sound" = "Redă sunetul";
 
 /* Daily Reminder time control heading */
-"reminder.settings.time" = "Remind me at";
+"reminder.settings.time" = "Amintește-mi la";
 
 /* Android notification `vibrate` */
-"reminder.settings.vibrate" = "Vibrate";
+"reminder.settings.vibrate" = "Vibrează";
 
 /* ‘Off’ as in ‘On (enabled) or Off (disabled)’, Daily Reminder is not enabled */
-"reminder.state.off" = "Off";
+"reminder.state.off" = "Oprit";
 
 /* ‘On’ as in ‘On (enabled) or Off (disable)’. Daily Reminder is enabled */
-"reminder.state.on" = "On";
+"reminder.state.on" = "Pornit";
 
 /* Google Firebase Analytics */
-"setting_analytics_body" = "Enable anonymous usage information to be collected to help improve this application.";
-
-/* Google Firebase Analytics: toggle label */
-"setting_analytics_enable" = "Enable Analytics";
+"setting_analytics_body" = "Permiteți colectarea informațiilor de utilizare anonime pentru a ajuta la îmbunătățirea acestei aplicații.";
 
 /* Google Firebase Analytics */
-"setting_analytics_opt_in" = "Opt In";
+"setting_analytics_enable" = "Permiteți analiza datelor";
 
 /* Google Firebase Analytics */
-"setting_analytics_opt_out" = "Opt Out";
+"setting_analytics_opt_in" = "Înscriere";
 
-/* Google Firebase Analytics: heading */
-"setting_analytics_title" = "Analytics";
+/* Google Firebase Analytics */
+"setting_analytics_opt_out" = "Renunțare";
 
-/* Appearance Header */
-"setting_appearance_header" = "Appearance";
-
-/* Appearance Mode: Auto */
-"setting_appearance_mode_auto" = "Auto";
-
-/* Appearance Mode: Dark */
-"setting_appearance_mode_dark" = "Dark";
-
-/* Appearance Mode: Light */
-"setting_appearance_mode_light" = "Light";
+/* Google Firebase Analytics */
+"setting_analytics_title" = "Analiza datelor";
 
 /* First Launch Setting: button text */
-"setting_doze_only_btn" = "Daily Dozen\nOnly";
+"setting_doze_only_btn" = "Numai Duzina Zilnică";
 
 /* Preference Settings View: selection button text */
-"setting_doze_only_choice" = "Daily Dozen Only";
+"setting_doze_only_choice" = "Numai Duzina Zilnică";
 
 /* First Launch Setting: button text */
-"setting_doze_tweak_btn" = "Daily Dozen +\n21 Tweaks";
+"setting_doze_tweak_btn" = "Duzina Zilnică +\n21 de Trucuri";
 
 /* Preference Settings View: selection button text */
-"setting_doze_tweak_choice" = "Daily Dozen + 21 Tweaks";
+"setting_doze_tweak_choice" = "Duzina Zilnică + 21 de Trucuri";
 
 /* Preference Settings View: brief description text below Tweaks visibility control. */
-"setting_doze_tweak_footer" = "For health alone, use “Daily Dozen Only”. For health and weight loss use “Daily Dozen + 21 Tweaks”.";
+"setting_doze_tweak_footer" = "Pentru sănătate exclusiv, folosește “Duzina Zilnică”. Pentru sănătate și pierdere în greutate folosește “Duzina Zilnică + 21 de Trucuri”.";
 
 /* First Launch Setting: brief description above ‘Daily Dozen Only’ button. */
-"setting_health_alone_txt" = "For Health Alone";
+"setting_health_alone_txt" = "Numai pentru Sănătate";
 
 /* First Launch Setting: brief description above ‘Daily Dozen + 21 Tweaks’ button. */
-"setting_health_weight_txt" = "For Health and Weight Loss";
+"setting_health_weight_txt" = "Pentru Sănătate și Pierdere în Greutate";
 
 /* Preference Settings View: tweaks visibilty subsection heading */
-"setting_tweak_header" = "21 Tweaks Visibility";
+"setting_tweak_header" = "Vizibilitate 21 de Trucuri";
 
 /* Preference Settings View: Part of ‘Imperial/Metric/Toggle Units’ selector */
 "setting_units_0_imperial" = "Imperial";
@@ -293,94 +329,94 @@
 "setting_units_1_metric" = "Metric";
 
 /* Preference Settings View: Part of ‘Imperial/Metric/Toggle Units’ selector */
-"setting_units_2_toggle" = "Toggle Units";
+"setting_units_2_toggle" = "Comută unități de măsură";
 
 /* Preference Settings View: brief description text below units control. */
-"setting_units_choice_footer" = "Set to always be one unit type or enable the ‘Units:’ toggle button.";
+"setting_units_choice_footer" = "Setați pentru a folosi întotdeauna aceeași unitate de măsură sau activați butonul de comutare „Unități de măsură:”";
 
 /* Preference Settings View */
-"setting_units_header" = "Measurement Units";
+"setting_units_header" = "Unități de măsură";
 
 /* Preference Settings View */
-"setting_util_advanced" = "Advanced Utilities";
+"setting_util_advanced" = "Utilități avansate";
 
 /* ‘Streak’ count. Synonym: ‘Progress‘. Formatted number ‘%d’ for consecutive days completed. Place translated text for ‘days’ on the right or left of ‘%d’ based on language directionality. */
-"streakDaysFormat" = "%d days";
+"streakDaysFormat" = "%d zile";
 
 /* Tweaks Detail view section heading */
-"tweak_detail_section_activity" = "Activity";
+"tweak_detail_section_activity" = "Activitate";
 
 /* Tweaks Detail view section heading */
-"tweak_detail_section_description" = "Description";
+"tweak_detail_section_description" = "Descriere";
 
 /* Tweaks daily entry header */
-"tweak_entry_header" = "21 Tweaks";
+"tweak_entry_header" = "21 de Trucuri";
 
 /* heading for daily data entry item */
-"tweakCompleteIntentions.heading" = "Complete Your Implementation Intentions";
+"tweakCompleteIntentions.heading" = "Completați-vă intențiile de implementare";
 
 /* heading for daily data entry item */
-"tweakDailyBlackCumin.heading" = "Black Cumin (¼ tsp)";
+"tweakDailyBlackCumin.heading" = "Chimion negru (¼ linguriță)";
 
 /* heading for daily data entry item */
-"tweakDailyCumin.heading" = "Cumin (½ tsp with lunch and dinner)";
+"tweakDailyCumin.heading" = "Chimion (½ linguriță cu prânzul și cina)";
 
 /* heading for daily data entry item */
-"tweakDailyDeflourDiet.heading" = "Deflour Your Diet";
+"tweakDailyDeflourDiet.heading" = "Defăinați-vă dieta";
 
 /* heading for daily data entry item */
-"tweakDailyFrontLoad.heading" = "Front-Load Your Calories";
+"tweakDailyFrontLoad.heading" = "Consumați caloriile devreme";
 
 /* heading for daily data entry item */
-"tweakDailyGarlic.heading" = "Garlic Powder (¼ tsp)";
+"tweakDailyGarlic.heading" = "Usturoi praf (¼ linguriță)";
 
 /* heading for daily data entry item */
-"tweakDailyGinger.heading" = "Ground Ginger (1 tsp) or Cayenne Pepper (½ tsp)";
+"tweakDailyGinger.heading" = "Ghimbir măcinat (1 linguriță) sau ardei Cayenne (½ linguriță)";
 
 /* heading for daily data entry item */
-"tweakDailyGreenTea.heading" = "Green Tea (3 cups)";
+"tweakDailyGreenTea.heading" = "Ceai verde (3 căni)";
 
 /* heading for daily data entry item */
-"tweakDailyHydrate.heading" = "Stay Hydrated";
+"tweakDailyHydrate.heading" = "Rămâi hidratat";
 
 /* heading for daily data entry item */
-"tweakDailyNutriYeast.heading" = "Nutritional Yeast (2 tsp)";
+"tweakDailyNutriYeast.heading" = "Drojdie inactivă (2 lingurițe)";
 
 /* heading for daily data entry item */
-"tweakDailyTimeRestrict.heading" = "Time-Restrict Your Eating";
+"tweakDailyTimeRestrict.heading" = "Restricționați-vă mesele în intervale de timp";
 
 /* heading for daily data entry item */
-"tweakExerciseTiming.heading" = "Optimize Exercise Timing";
+"tweakExerciseTiming.heading" = "Optimizați cronometrarea exercițiilor";
 
 /* heading for daily data entry item */
-"tweakMeal20Minutes.heading" = "Follow the Twenty-Minute Rule";
+"tweakMeal20Minutes.heading" = "Urmați Regula celor douăzeci de minute";
 
 /* heading for daily data entry item */
-"tweakMealNegCal.heading" = "Preload with “Negative Calorie” Foods";
+"tweakMealNegCal.heading" = "Preîncărcați cu alimente cu „calorii negative”";
 
 /* heading for daily data entry item */
-"tweakMealUndistracted.heading" = "Enjoy Undistracted Meals";
+"tweakMealUndistracted.heading" = "Bucurați-vă de mese fără distrageri";
 
 /* heading for daily data entry item */
-"tweakMealVinegar.heading" = "Incorporate Vinegar (2 tsp with each meal)";
+"tweakMealVinegar.heading" = "Încorporați oțet (2 lingurițe cu fiecare masă)";
 
 /* heading for daily data entry item */
-"tweakMealWater.heading" = "Preload with Water";
+"tweakMealWater.heading" = "Preîncărcați cu apă";
 
 /* heading for daily data entry item */
-"tweakNightlyFast.heading" = "Fast After 7:00 pm";
+"tweakNightlyFast.heading" = "Postiți după ora 19:00";
 
 /* heading for daily data entry item */
-"tweakNightlySleep.heading" = "Get Sufficient Sleep";
+"tweakNightlySleep.heading" = "Dormiți suficient";
 
 /* heading for daily data entry item */
-"tweakNightlyTrendelenbrug.heading" = "Experiment with Mild Trendelenburg";
+"tweakNightlyTrendelenbrug.heading" = "Experimentați cu poziția Trendelenburg ușoară";
 
 /* heading for daily data entry item */
-"tweakWeightTwice.heading" = "Weigh Yourself Twice a Day";
+"tweakWeightTwice.heading" = "Cântăriți-vă de două ori pe zi";
 
 /*  */
-"units_label" = "Units";
+"units_label" = "Unități";
 
 /* Units toggle button text: imperial measurement system */
 "unitToggle.imperial" = "Imperial";
@@ -422,19 +458,19 @@
 "urlSegmentInfoMenu.videos" = "videos";
 
 /* Label for hyperlink to nutritionfacts.org video topics */
-"videos.link.label" = "Videos";
+"videos.link.label" = "Videoclipuri";
 
 /* Weight Daily Entry: clear button which deletes values */
-"weight_entry_clear" = "Clear";
+"weight_entry_clear" = "Șterge";
 
 /* Weight Daily Entry: label */
-"weight_entry_evening" = "Evening (right before bed)";
+"weight_entry_evening" = "Seara (înainte de culcare)";
 
 /* Weight Daily Entry: label */
-"weight_entry_morning" = "Morning (upon waking)";
+"weight_entry_morning" = "Dimineața (la trezire)";
 
 /* Weight Daily Entry: label */
-"weight_entry_time" = "Time";
+"weight_entry_time" = "Timp";
 
 /* Weight Daily Entry Units: label */
 "weight_entry_units_kg" = "kg";
@@ -443,9 +479,9 @@
 "weight_entry_units_lbs" = "lbs";
 
 /* Weight Daily Entry: edit button to change values */
-"weight_history_edit_data" = "Edit Data";
+"weight_history_edit_data" = "Editează Datele";
 
 /* Weight Daily Entry: heading */
-"weightEntry.heading" = "Weight";
+"weightEntry.heading" = "Greutate";
 
 /* file end */

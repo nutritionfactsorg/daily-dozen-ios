@@ -8,7 +8,7 @@
 "dateButtonTitle.today" = "Dnes";
 
 /* Doze Detail View subheading: ‘Serving Sizes’ */
-"doze_detail_section_sizes" = "Veľkosť porcie";
+"doze_detail_section_sizes" = "Veľkosti porcí (odporúčané)";
 
 /* Doze Detail View subheading: ‘Types’ */
 "doze_detail_section_types" = "Typy";
@@ -64,32 +64,83 @@
 /* heading for daily data entry item */
 "dozeWholeGrains.heading" = "Celozrnné obilniny";
 
-/* History Data Alert: Cancel */
-"history_data_alert_cancel" = "Cancel";
+/*  */
+"faq_adapt_question" = "Denná Dvanástka je pre mňa príliš veľa/príliš málo jedla! Môžem si to prispôsobiť?";
 
-/* History Data Alert: Clear */
-"history_data_alert_clear" = "Clear";
+/*  */
+"faq_adapt_response" = "Áno, Daily Dozen má byť jednoducho sprievodcom tých najzdravších potravín, ktoré sa snažíme každý deň zaradiť. Nie je to plán stravovania a nie je určený na predpis. Snažte sa jesť rozmanitú škálu celých rastlinných potravín a prispôsobte denný tucet množstvu, ktoré vám vyhovuje.";
 
-/* History Data Alert: Clear */
-"history_data_alert_import" = "Import";
+/*  */
+"faq_age_question" = "Je to prispôsobiteľné pre deti, dospievajúcich a mládež?";
 
-/* History Data Alert: Clear */
+/*  */
+"faq_age_response.0" = "Deti, dospievajúci a dospievajúci majú počas svojho životného cyklu rôzne kalorické potreby. Tieto potreby sa menia, aby podporili rast a rozvoj v každej fáze.";
+
+/*  */
+"faq_age_response.1" = "Denná Dvanástka bola navrhnutá ako sprievodca, ktorý má ľuďom pomôcť zaradiť niektoré z najzdravších potravín do ich každodennej stravy. Zatiaľ čo rovnaký rámec možno použiť pre väčšinu ľudí počas celého životného cyklu, množstvo jedla, ktoré človek potrebuje zjesť, sa bude líšiť v závislosti od mnohých faktorov, ako je vek a úroveň aktivity. Keďže nemôžeme poskytnúť špecifické výživové alebo lekárske poradenstvo pre vaše rastúce dieťa, rodičia by mali používať túto príručku, pretože považujú za najvhodnejšiu pre potreby svojho dieťaťa a/alebo by sa mali poradiť s registrovaným dietológom alebo iným poskytovateľom zdravotnej starostlivosti, aby im pomohli určiť, čo je pre ich individuálne potreby najlepšie.";
+
+/*  */
+"faq_calories_question" = "Koľko kalórií je v Dennej Dvanástke?";
+
+/*  */
+"faq_calories_response.0" = "Denná Dvanástka má v priemere asi 1200 kalórií, ale vzhľadom na široký výber jedál v každej kategórii sa môže pohybovať od 800 do 1800. Zvážte kategóriu Iná zelenina: šálka papriky má oveľa nižšiu kalorickú hustotu ako šálka varených sladkých zemiakov, preto bude kalorický rozsah závisieť od vášho konkrétneho výberu jedla. To je skvelá vec na kontrolnom zozname Dennej Dvanástky – nejde o univerzálny prístup a dá sa prispôsobiť vašim potrebám.";
+
+/*  */
+"faq_calories_response.1" = "Ak je vaším cieľom chudnutie, ďalšie informácie nájdete v časti „Ako nedietovať“ a v sprievodných 21 intervenciách. V knihe „Ako nedietovať“ som poznamenal: „Systémový prehľad úspešných stratégií chudnutia dospel k záveru, že vzhľadom na spomalenie metabolizmu a zvýšenú chuť do jedla, ktoré sprevádza chudnutie, na dosiahnutie významného úbytku hmotnosti môže byť potrebné, aby počet kalórií klesol až na minimum. 1200 kalórií denne pre ženy a 1500 kalórií denne pre mužov.“";
+
+/*  */
+"faq_calories_response.2" = "Na druhej strane, ak je vaším cieľom priberanie na váhe, možno sa budete chcieť zamerať na pridávanie potravín s vyšším obsahom kalórií, ako sú sladké zemiaky, avokádo, orechy a sójové produkty.";
+
+/*  */
+"faq_mother_question" = "Môžem to robiť počas tehotenstva alebo dojčenia?";
+
+/*  */
+"faq_mother_response" = "Ženy, ktoré sú tehotné alebo dojčia, majú iné kalorické a nutričné potreby ako ľudia, ktorí nie sú. Pripomíname, že Denná Dvanástka nie je plán stravovania a nemal by byť jediným jedlom, ktoré sa skonzumuje počas dňa. Ženy, ktoré sú tehotné alebo dojčia, by sa mali poradiť so svojím praktickým lekárom alebo registrovaným dietológom, aby im pomohol splniť ich špecifické kalorické požiadavky a nutričné potreby.";
+
+/*  */
+"faq_scaling_question" = "Nemôžem zjesť toľko fazule/zŕn/atď.!";
+
+/*  */
+"faq_scaling_response" = "To je v poriadku! The Denná Dvanástka je ambiciózny sprievodca. Urobte všetko pre to, aby ste začlenili čo najviac týchto zdravých rastlinných potravín. Ak ste nováčikom v konzumácii veľkého množstva strukovín (alebo obilnín, zeleniny atď.), možno budete musieť začať s menšími množstvami a pomaly ich zvyšovať, aby ste svojmu mikrobiómu dali šancu prispôsobiť sa. Môžete byť aj kreatívni: napríklad pridajte trochu fazule do svojej rannej ovsenej kaše. Ak doň naložíte bobule, ľanové semienka a orechy, fazuľu si ani nevšimnete. Môžete tiež rozdrviť fazuľu na sendvičovú nátierku alebo pripraviť môj [BROL](https://nutritionfacts.org/recipe/basic-brol-barley-rye-oats-and-lentils) – jačmeň, raž, ovsené krúpy a šošovica – ktorú používam ako základ mnohých jedál a je to jednoduchý spôsob, ako získať rôzne celozrnné výrobky so zabudovanou porciou strukovín.";
+
+/*  */
+"faq_supplements_question" = "Myslel som, že doktor Greger odporúča užívať doplnky vitamínu D a DHA. Prečo nie sú zahrnuté?";
+
+/*  */
+"faq_supplements_response" = "Aktualizovali sme aplikáciu Denná Dvanástka, aby obsahovala iba požadované doplnky. Napríklad vitamín D je potrebný len pre ľudí, ktorí sa nedostatočne vystavujú slnku. Naším cieľom je podeliť sa s vami o vedu, aby ste mohli robiť vlastné informované rozhodnutia. Všetky moje odporúčania si môžete pozrieť na stránke [Optimum Nutrient](https://nutritionfacts.org/optimum-nutrient-recommendations).";
+
+/* History Data Alert: Cancel button */
+"history_data_alert_cancel" = "Zrušiť";
+
+/* History Data Alert: Clear button */
+"history_data_alert_clear" = "Vyčistiť";
+
+/* History Data Alert: Import buttom */
+"history_data_alert_import" = "Importovať";
+
+/* History Data Alert: OK button */
 "history_data_alert_ok" = "OK";
 
 /* History Data: export action button */
-"history_data_export_btn" = "Export History Data";
+"history_data_export_btn" = "Exportovať údaje histórie";
 
 /* History Data: export description text */
-"history_data_export_text" = "Export has been written to:";
+"history_data_export_text" = "Export bol zapísaný na adresu:";
 
 /* History Data: import action button */
-"history_data_import_btn" = "Import History Data";
+"history_data_import_btn" = "Importovať údaje histórie";
 
-/* History Data: import description text */
-"history_data_import_text" = "Caution: This import will overwrite all history data currently in this application. Would you like to proceed with the import which will overwrite the current data?";
+/* History Data: import caution text */
+"history_data_import_caution_text" = "Upozornenie: Tento import prepíše všetky údaje histórie, ktoré sú momentálne v tejto aplikácii Daily Dozen. Chcete pokračovať v importe?";
+
+/* History Data: import data error text */
+"history_data_import_error_text" = "Chyba: Import sa nevykonal z dôvodu chyby údajov. Existujúce údaje zostali nezmenené.";
+
+/* History Data: import not found text */
+"history_data_import_notfound_text" = "V priečinku Daily Dozen Documents sa nenašiel platný súbor pre import.";
 
 /* History Data: preferences header & title */
-"history_data_title" = "History";
+"history_data_title" = "História";
 
 /* History View: calendar scale control */
 "history_scale_choice_day" = "Deň";

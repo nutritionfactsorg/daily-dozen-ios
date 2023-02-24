@@ -4,16 +4,24 @@
       "heading" : "Fasola",
       "servings" : [
         {
-          "imperial" : "¼ szklanki humusu lub dipu z fasoli",
-          "metric" : "60 g humusu lub dipu z fasoli"
+          "imperial" : "¼ szklanki hummusu lub dipu z fasoli",
+          "metric" : "60 g hummusu lub dipu z fasoli"
         },
         {
-          "imperial" : "½ szklanki ugotowanej fasoli, grochu łuskanego, soczewicy, tofu lub tempeh",
-          "metric" : "130 g ugotowanej fasoli, grochu łuskanego, soczewicy, tofu lub tempeh"
+          "imperial" : "½ szklanki ugotowanej fasoli, grochu łuskanego, lub soczewicy",
+          "metric" : "90 g ugotowanej fasoli, grochu łuskanego, lub soczewicy"
         },
         {
-          "imperial" : "1 szklanka świeżego groszku lub kiełków soczewicy",
-          "metric" : "150 g świeżego groszku lub kiełków soczewicy"
+          "imperial" : "½ szklanki tofu lub tempehu",
+          "metric" : "100 g tofu lub tempehu"
+        },
+        {
+          "imperial" : "1 szklanka świeżego groszku lub groszku młodego cukrowego",
+          "metric" : "130 g świeżego groszku lub groszku młodego cukrowego"
+        },
+        {
+          "imperial" : "1 szklanka świeżych kiełków strączków (soczewica, fasola mung)",
+          "metric" : "100 g świeżych kiełków strączków (soczewica, fasola mung)"
         }
       ],
       "topic" : "topics/beans",

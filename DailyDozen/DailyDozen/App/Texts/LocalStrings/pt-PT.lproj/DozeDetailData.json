@@ -4,16 +4,24 @@
       "heading" : "Leguminosas",
       "servings" : [
         {
-          "imperial" : "¼ xícara de hummus ou patê de feijão",
-          "metric" : "60 g de hummus ou patê de feijão"
+          "imperial" : "¼ copo de hummus or pasta de leguminosas",
+          "metric" : "60 g de hummus or pasta de leguminosas"
         },
         {
-          "imperial" : "½ xícara de feijão, ervilha, lentilha, tofu ou tempê cozidos",
-          "metric" : "130 g de feijão, ervilha, lentilha, tofu ou tempê cozidos"
+          "imperial" : "½ copo de feijões, ervilhas ou lentilhas cozidas",
+          "metric" : "90 g de feijões, ervilhas ou lentilhas cozidas"
         },
         {
-          "imperial" : "1 xícara de ervilha fresca ou lentilha germinada",
-          "metric" : "150 g de ervilha fresca ou lentilha germinada"
+          "imperial" : "½ copo de tofu ou tempeh",
+          "metric" : "100 g de tofu ou tempeh"
+        },
+        {
+          "imperial" : "1 copo de ervilhas frescas",
+          "metric" : "130 g de ervilhas frescas"
+        },
+        {
+          "imperial" : "1 copo de leguminosas frescas germinadas (lentilhas, feijão-mungo)",
+          "metric" : "100 g de leguminosas frescas germinadas (lentilhas, feijão-mungo)"
         }
       ],
       "topic" : "topics/beans",

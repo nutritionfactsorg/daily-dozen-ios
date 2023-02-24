@@ -4,16 +4,24 @@
       "heading" : "Бобовые",
       "servings" : [
         {
-          "imperial" : "¼ чашки хумуса или бобового соуса",
-          "metric" : "60 г хумуса или бобового соуса"
+          "imperial" : "¼ cup hummus or bean dip",
+          "metric" : "60 g hummus or bean dip"
         },
         {
-          "imperial" : "½ чашки готовой фасоли, колотого гороха, чечевицы, тофу или темпе",
-          "metric" : "130 г готовой фасоли, колотого гороха, чечевицы, тофу или темпе"
+          "imperial" : "½ cup cooked beans, split peas, or lentils",
+          "metric" : "90 g cooked beans, split peas, or lentils"
         },
         {
-          "imperial" : "1 чашка свежего гороха или пророщенной чечевицы",
-          "metric" : "150 г свежего гороха или пророщенной чечевицы"
+          "imperial" : "½ cup tofu or tempeh",
+          "metric" : "100 g tofu or tempeh"
+        },
+        {
+          "imperial" : "1 cup fresh peas or snow peas",
+          "metric" : "130 g fresh peas or snow peas"
+        },
+        {
+          "imperial" : "1 cup fresh sprouted beans (lentils, mung beans)",
+          "metric" : "100 g fresh sprouted beans (lentils, mung beans)"
         }
       ],
       "topic" : "topics/beans",

@@ -1,16 +1,16 @@
-/* DailyDozen InfoPlist.strings (en) */
+/* DailyDozen InfoPlist.strings (ro) */
 /* Copyright © 2021 Nutritionfacts.org. All rights reserved. */
 
 /* User-visible application name. Visible under icon. Used by Siri. */
-"CFBundleDisplayName" = "DailyDozen";
+"CFBundleDisplayName" = "DuzinaZilnică";
 
 /* User-visible application short name (15 Characters max) */
-"CFBundleName" = "DailyDozen";
+"CFBundleName" = "DuzinaZilnică";
 
 /* Privacy - Health Share Usage Description */
-"NSHealthShareUsageDescription" = "The 21 Tweaks feature accesses your HealthKit data to provide updates to your daily weight measurements.";
+"NSHealthShareUsageDescription" = "Funcționalitatea „21 de Trucuri” accesează datele tale HealthKit pentru a oferi actualizări ale măsurătorilor zilnice privind greutatea.";
 
 /* Privacy - Health Update Usage Description */
-"NSHealthUpdateUsageDescription" = "The 21 Tweaks feature can write weight data to HealthKit to help you keep track of your progress.";
+"NSHealthUpdateUsageDescription" = "Funcționalitatea „21 de Trucuri” poate înregistra în HealthKit date privind greutatea pentru a te ajuta să urmărești progresul.";
 
 /* file end */

@@ -4,16 +4,24 @@
       "heading" : "Strukoviny",
       "servings" : [
         {
-          "imperial" : "¼ šálky hummusu alebo strukovinového dipu",
-          "metric" : "60 g hummusu alebo strukovinového dipu"
+          "imperial" : "¼ šálky hummusu alebo fazuľového dipu",
+          "metric" : "60 g hummusu alebo fazuľového dipu"
         },
         {
-          "imperial" : "½ šálky varených strukovín, hrášku, šošovice, tofu, alebo tempeh",
-          "metric" : "130 g varených fazulí, hrášku, šošovice, tofu alebo tempehu"
+          "imperial" : "½ šálky varenej fazule, hrachu alebo šošovice",
+          "metric" : "90 g varenej fazule, hrachu alebo šošovice"
         },
         {
-          "imperial" : "1 šálka čerstvého hrášku alebo naklíčenej šošovice",
-          "metric" : "150 g čerstvého hrášku alebo naklíčenej šošovice"
+          "imperial" : "½ šálky tofu alebo tempehu",
+          "metric" : "100 g tofu alebo tempehu"
+        },
+        {
+          "imperial" : "1 šálka čerstvého hrášku alebo cukrového hrášku",
+          "metric" : "130 g čerstvého hrášku alebo cukrového hrášku"
+        },
+        {
+          "imperial" : "1½ šálky čerstvej naklíčenej fazule (šošovica, fazuľa mungo)",
+          "metric" : "100 g čerstvej naklíčenej fazule (šošovica, fazuľa mungo)"
         }
       ],
       "topic" : "topics/beans",

@@ -4,16 +4,24 @@
       "heading" : "Luštěniny",
       "servings" : [
         {
-          "imperial" : "¼ šálku hummusu nebo luštěninového dipu",
-          "metric" : "60 g hummusu nebo luštěninového dipu"
+          "imperial" : "¼ šálku hummusu nebo fazolového dipu",
+          "metric" : "60 g šálku hummusu nebo fazolového dipu"
         },
         {
-          "imperial" : "½ šálku vařených luštěnin, hrášku, čočky, tofu, nebo tempeh",
-          "metric" : "130 g vařených fazolí, hrášku, čočky, tofu nebo tempehu"
+          "imperial" : "½ šálku vařených fazolí, hrachu nebo čočky",
+          "metric" : "90 g vařených fazolí, hrachu nebo čočky"
         },
         {
-          "imperial" : "1 šálek čerstvého hrášku nebo naklíčené čočky",
-          "metric" : "150 g čerstvého hrášku nebo naklíčené čočky"
+          "imperial" : "½ šálku tofu nebo tempehu",
+          "metric" : "100 g tofu nebo tempehu"
+        },
+        {
+          "imperial" : "1 šálek čerstvého nebo cukrového hrášku",
+          "metric" : "130 g čerstvého nebo cukrového hrášku"
+        },
+        {
+          "imperial" : "1 šálku čerstvých naklíčených fazolí (čočka, mungo)",
+          "metric" : "100 g čerstvých naklíčených fazolí (čočka, mungo)"
         }
       ],
       "topic" : "topics/beans",

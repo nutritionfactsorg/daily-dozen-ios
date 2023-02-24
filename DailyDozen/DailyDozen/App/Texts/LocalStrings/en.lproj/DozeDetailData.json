@@ -4,16 +4,24 @@
       "heading" : "Beans",
       "servings" : [
         {
-          "imperial" : "¼ cup of hummus or bean dip",
-          "metric" : "60 g of hummus or bean dip"
+          "imperial" : "¼ cup hummus or bean dip",
+          "metric" : "60 g hummus or bean dip"
         },
         {
-          "imperial" : "½ cup cooked beans, split peas, lentils, tofu, or tempeh",
-          "metric" : "130 g cooked beans, split peas, lentils, tofu, or tempeh"
+          "imperial" : "½ cup cooked beans, split peas, or lentils",
+          "metric" : "90 g cooked beans, split peas, or lentils"
         },
         {
-          "imperial" : "1 cup of fresh peas or sprouted lentils",
-          "metric" : "150 g of fresh peas or sprouted lentils"
+          "imperial" : "½ cup tofu or tempeh",
+          "metric" : "100 g tofu or tempeh"
+        },
+        {
+          "imperial" : "1 cup fresh peas or snow peas",
+          "metric" : "130 g fresh peas or snow peas"
+        },
+        {
+          "imperial" : "1 cup fresh sprouted beans (lentils, mung beans)",
+          "metric" : "100 g fresh sprouted beans (lentils, mung beans)"
         }
       ],
       "topic" : "topics/beans",
@@ -1068,8 +1076,8 @@
           "metric" : "1 tortilla or slice of bread"
         },
         {
-          "imperial" : "½ a bagel or English muffin",
-          "metric" : "½ a bagel or English muffin"
+          "imperial" : "½ bagel or English muffin",
+          "metric" : "½ bagel or English muffin"
         },
         {
           "imperial" : "3 cups popped popcorn",

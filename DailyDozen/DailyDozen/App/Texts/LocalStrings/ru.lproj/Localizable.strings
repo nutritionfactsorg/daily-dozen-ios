@@ -8,7 +8,7 @@
 "dateButtonTitle.today" = "Сегодня";
 
 /* Doze Detail View subheading: ‘Serving Sizes’ */
-"doze_detail_section_sizes" = "Размер порции";
+"doze_detail_section_sizes" = "Serving Sizes (Suggested)";
 
 /* Doze Detail View subheading: ‘Types’ */
 "doze_detail_section_types" = "Виды";
@@ -63,6 +63,84 @@
 
 /* heading for daily data entry item */
 "dozeWholeGrains.heading" = "Цельнозерновые Продукты";
+
+/*  */
+"faq_adapt_question" = "The Daily Dozen is too much/too little food for me! Can I adapt it?";
+
+/*  */
+"faq_adapt_response" = "Yes, the Daily Dozen is simply meant to be a guide of the healthiest foods that we strive to include every day. It’s not a meal plan and is not meant to be prescriptive. Do your best to eat a diverse array of whole plant foods and adapt the Daily Dozen to the quantities that work for you.";
+
+/*  */
+"faq_age_question" = "Is this adaptable for children, adolescents, and teens?";
+
+/*  */
+"faq_age_response.0" = "Children, adolescents, and teenagers have different caloric needs throughout their lifecycle. These needs change to support growth and development at each stage.";
+
+/*  */
+"faq_age_response.1" = "The Daily Dozen was designed as a guide to help people include some of the healthiest foods into their daily routine. While the same framework can be used for most people throughout the lifecycle, the amount of food one needs to eat will vary based on a number of factors like age and activity level. Since we can’t provide specific nutrition or medical advice for your growing child, parents should use this guide as they see best for their child’s needs and/or consult with a registered dietitian or other healthcare provider to help determine what is best for their individual needs.";
+
+/*  */
+"faq_calories_question" = "How many calories are in the Daily Dozen?";
+
+/*  */
+"faq_calories_response.0" = "The Daily Dozen averages about 1,200 calories, but given the wide array of food choices in each category, it can range anywhere from 800-1800. Consider the Other Vegetables category: a cup of bell peppers has a much lower caloric density than a cup of cooked sweet potatoes, therefore the caloric range will depend on your specific food choices. That’s the great thing about the Daily Dozen Checklist—it’s not a one size fits all approach, and can be adapted to your needs.";
+
+/*  */
+"faq_calories_response.1" = "If your goal is weight loss, you can find more information in “How Not to Diet” and the accompanying Twenty-One Tweaks. In “How Not to Diet”, I noted: “A systematic review of successful weight-loss strategies concluded that given the metabolic slowing and increased appetite that accompanies weight loss, to achieve significant weight loss, calorie counts may need to drop as low as 1,200 calories a day for women and 1,500 calories a day for men.”";
+
+/*  */
+"faq_calories_response.2" = "On the other hand, if your goal is weight gain, then you may want to focus on adding in more calorie-dense foods, such as sweet potatoes, avocados, nuts, and soy products.";
+
+/*  */
+"faq_mother_question" = "Can I do this while pregnant or breastfeeding?";
+
+/*  */
+"faq_mother_response" = "People who are pregnant or breastfeeding have different caloric and nutritional needs than people who are not. As a reminder, the Daily Dozen is not a meal plan and should not be the only foods consumed within a day. People who are pregnant or breastfeeding should consult with their health care practitioner or a registered dietician for assistance with meeting their specific caloric requirements and nutritional needs.";
+
+/*  */
+"faq_scaling_question" = "I can’t possibly eat that many beans/grains/etc.!";
+
+/*  */
+"faq_scaling_response" = "That’s okay! The Daily Dozen is an aspirational guide. Do your best to incorporate as many of these healthy plant foods as possible. If you are new to eating a lot of beans (or grains, greens, etc!), you may need to start with smaller amounts and slowly increase the quantity in order to give your microbiome a chance to adjust. You can also get creative: for example, add some beans to your morning oatmeal. If you load it up with berries, flax seeds, and nuts, you won’t even notice the beans. You can also mash beans into a sandwich spread, or make my [BROL](https://nutritionfacts.org/recipe/basic-brol-barley-rye-oats-and-lentils)—barley, rye, oat groats, and lentils—that I use as a base for many meals and is a simple way to get a variety of whole grains with a built-in serving of legumes.";
+
+/*  */
+"faq_supplements_question" = "I thought that Dr. Greger recommends taking Vitamin D and DHA supplements. Why aren’t they included?";
+
+/*  */
+"faq_supplements_response" = "We have updated the Daily Dozen app to reflect only required supplements. For example, Vitamin D is only needed for people who get inadequate sun exposure. Our goal is to share the science with you so you can make your own informed decisions. You can see all of my recommendations on the [Optimum Nutrient](https://nutritionfacts.org/optimum-nutrient-recommendations) page.";
+
+/* History Data Alert: Cancel button */
+"history_data_alert_cancel" = "Cancel";
+
+/* History Data Alert: Clear button */
+"history_data_alert_clear" = "Clear";
+
+/* History Data Alert: Import buttom */
+"history_data_alert_import" = "Import";
+
+/* History Data Alert: OK button */
+"history_data_alert_ok" = "OK";
+
+/* History Data: export action button */
+"history_data_export_btn" = "Export History Data";
+
+/* History Data: export description text */
+"history_data_export_text" = "Export has been written to:";
+
+/* History Data: import action button */
+"history_data_import_btn" = "Import History Data";
+
+/* History Data: import caution text */
+"history_data_import_caution_text" = "Caution: This import will overwrite all history data currently in this Daily Dozen application. Would you like to proceed with the import?";
+
+/* History Data: import data error text */
+"history_data_import_error_text" = "Error: The import was not performed because of a data error. The existing data has remained unchanged.";
+
+/* History Data: import not found text */
+"history_data_import_notfound_text" = "Did not find a valid import file in the Daily Dozen Documents folder.";
+
+/* History Data: preferences header & title */
+"history_data_title" = "History";
 
 /* History View: calendar scale control */
 "history_scale_choice_day" = "День";

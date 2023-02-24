@@ -8,7 +8,7 @@
 "dateButtonTitle.today" = "Dnes";
 
 /* Doze Detail View subheading: ‘Serving Sizes’ */
-"doze_detail_section_sizes" = "Velikost porce";
+"doze_detail_section_sizes" = "Velikosti porcí (doporučené)";
 
 /* Doze Detail View subheading: ‘Types’ */
 "doze_detail_section_types" = "Typy";
@@ -64,20 +64,83 @@
 /* heading for daily data entry item */
 "dozeWholeGrains.heading" = "Celozrnné obilniny";
 
+/*  */
+"faq_adapt_question" = "Denní Dvanáctka je pro mě příliš mnoho/málo jídla! Mohu si to přizpůsobit?";
+
+/*  */
+"faq_adapt_response" = "Ano, Denní Dvanáctka má být jen průvodcem těch nejzdravějších potravin, které se snažíme každý den zařazovat. Nejedná se o jídelní plán a není míněno jako norma. Snažte se jíst rozmanitou škálu celých rostlinných potravin a přizpůsobte Denní Dvanáctku množství, které vám vyhovuje.";
+
+/*  */
+"faq_age_question" = "Je to vhodné pro děti, dospívající a mládež?";
+
+/*  */
+"faq_age_response.0" = "Děti, dospívající a mládež mají během svého životního cyklu různé kalorické potřeby. Tyto potřeby se mění, aby podpořily růst a rozvoj v každé fázi.";
+
+/*  */
+"faq_age_response.1" = "Denní Dvanáctka byla navržena jako průvodce, který má lidem pomoci zařadit některé z nejzdravějších potravin do jejich každodenní stravy. Zatímco stejné doporučení lze použít pro většinu lidí v průběhu životního cyklu, množství jídla, které člověk potřebuje sníst, se bude lišit v závislosti na řadě faktorů, jako je věk a úroveň aktivity. Vzhledem k tomu, že nemůžeme poskytnout konkrétní výživové nebo lékařské poradenství pro vaše rostoucí dítě, měli by rodiče používat tuto příručku rozumně, protože nejlépe znají potřeby svého dítěte, a/nebo by se měli poradit s registrovaným dietologem nebo jiným poskytovatelem zdravotní péče, aby pomohl určit, co je pro jejich potřeby nejvhodnější.";
+
+/*  */
+"faq_calories_question" = "Kolik kalorií je v Denní Dvanáctce?";
+
+/*  */
+"faq_calories_response.0" = "Denní Dvanáctka má průměrně asi 1200 kalorií, ale vzhledem k širokému výběru potravin v každé kategorii se může pohybovat kdekoli od 800 do 1 800. Zvažte kategorii Ostatní zelenina: šálek papriky má mnohem nižší kalorickou hustotu než šálek vařených sladkých brambor, proto bude kalorický rozsah záviset na vašem konkrétním výběru potravin. To je na denním kontrolním seznamu Dvanáctky skvělá věc – není to univerzální přístup a lze jej přizpůsobit vašim potřebám.";
+
+/*  */
+"faq_calories_response.1" = "Pokud je vaším cílem zhubnout, více informací naleznete v knize „Jak nedietovat“ a v doprovodných 21 intervencích. V knize „Jak nedietovat“ jsem poznamenal: „Systematický přehled úspěšných strategií hubnutí dospěl k závěru, že vzhledem ke zpomalení metabolismu a zvýšené chuti k jídlu, které doprovázejí hubnutí, k dosažení významného úbytku hmotnosti může být nutné snížit počet kalorií až na minimum. 1200 kalorií denně pro ženy a 1500 kalorií denně pro muže.“";
+
+/*  */
+"faq_calories_response.2" = "Na druhou stranu, pokud je vaším cílem přibírání na váze, pak se možná budete chtít zaměřit na přidání kaloricky bohatších potravin, jako jsou sladké brambory, avokádo, ořechy a sójové produkty.";
+
+/*  */
+"faq_mother_question" = "Mohu to vše dělat během těhotenství nebo kojení?";
+
+/*  */
+"faq_mother_response" = "Ženy, které jsou těhotné nebo kojí, mají jiné kalorické a nutriční potřeby než ostatní lidé. Připomínáme, že Denní Dvanáctka není jídelním plánem a neměla by být jediným jídlem spotřebovaným během dne. Ženy, které jsou těhotné nebo kojí, by se měli poradit se svým praktickým lékařem nebo registrovaným dietologem, který jim pomůže naplnit jejich specifické kalorické požadavky a nutriční potřeby.";
+
+/*  */
+"faq_scaling_question" = "Nemůžu sníst tolik luštěnín/cereálií/atd.!";
+
+/*  */
+"faq_scaling_response" = "To je v pořádku! Denní Dvanáctka je aspirační průvodce. Snažte se začlenit co nejvíce těchto zdravých rostlinných potravin. Pokud jste nováčkem v konzumaci velkého množství luštěnin (nebo obilí, zeleniny atd.), možná budete muset začít s menším množstvím a pomalu je zvyšovat, aby se váš mikrobiom mohl přizpůsobit. Můžete být také kreativní: přidejte například fazole do své ranní ovesné kaše. Když do něj naložíte bobule, lněná semínka a ořechy, fazolí si ani nevšimnete. Můžete také rozmačkat luštěniny na sendvičovou pomazánku nebo připravit můj [BROL](https://nutritionfacts.org/recipe/basic-brol-barley-rye-oats-and-lentils) – ječmen, žito, ovesné kroupy a čočka – který používám jako základ mnoha jídel a je to jednoduchý způsob, jak získat různé celozrnné výrobky s vestavěnou porcí luštěnin.";
+
+/*  */
+"faq_supplements_question" = "Myslel jsem, že Dr. Greger doporučuje užívat vitamin D a DHA doplňky. Proč nejsou zahrnuty?";
+
+/*  */
+"faq_supplements_response" = "Aktualizovali jsme aplikaci Denní Dvanáctka tak, aby odrážela pouze požadované doplňky. Například vitamín D je potřebný pouze pro lidi, kteří se nedostatečně vystavují slunci. Naším cílem je sdílet s vámi vědu, abyste mohli činit svá informovaná rozhodnutí. Všechna moje doporučení si můžete prohlédnout na stránce [Optimum Nutrient](https://nutritionfacts.org/optimum-nutrient-recommendations).";
+
+/* History Data Alert: Cancel button */
+"history_data_alert_cancel" = "Zrušit";
+
+/* History Data Alert: Clear button */
+"history_data_alert_clear" = "Vyčistit";
+
+/* History Data Alert: Import buttom */
+"history_data_alert_import" = "Import";
+
+/* History Data Alert: OK button */
+"history_data_alert_ok" = "OK";
+
 /* History Data: export action button */
-"history_data_export_btn" = "Export History Data";
+"history_data_export_btn" = "Export historických dat";
 
 /* History Data: export description text */
-"history_data_export_text" = "Export has been written to ...";
+"history_data_export_text" = "Export byl zapsán na adresu:";
 
 /* History Data: import action button */
-"history_data_import_btn" = "Import History Data";
+"history_data_import_btn" = "Import historických dat";
 
-/* History Data: import description text */
-"history_data_import_text" = "Caution: This import will overwrite all history data currently in this application. Would you like to proceed with the import which will overwrite the current data?";
+/* History Data: import caution text */
+"history_data_import_caution_text" = "Upozornění: Tento import přepíše všechna historická data v této aplikaci Daily Dozen. Chcete pokračovat v importu?";
+
+/* History Data: import data error text */
+"history_data_import_error_text" = "Chyba: Import se nezdařil kvůli chybě dat. Stávající data zůstala nezměněna.";
+
+/* History Data: import not found text */
+"history_data_import_notfound_text" = "Ve složce Daily Dozen Documents nebyl nalezen platný soubor pro import.";
 
 /* History Data: preferences header & title */
-"history_data_title" = "History";
+"history_data_title" = "Historie";
 
 /* History View: calendar scale control */
 "history_scale_choice_day" = "Den";

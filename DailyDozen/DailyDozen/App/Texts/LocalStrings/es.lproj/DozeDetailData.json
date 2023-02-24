@@ -4,16 +4,24 @@
       "heading" : "Legumbres",
       "servings" : [
         {
-          "imperial" : "¼ taza de hummus o untable de legumbres",
-          "metric" : "60 g de hummus o untable de legumbres"
+          "imperial" : "¼ taza de hummus o paté de otras legumbres",
+          "metric" : "60 g de hummus o paté de otras legumbres"
         },
         {
-          "imperial" : "½ taza de frijoles cocidos, arvejas partidas, lentejas, tofu o tempeh",
-          "metric" : "130 g de frijoles cocidos, arvejas partidas, lentejas, tofu o tempeh"
+          "imperial" : "½ taza de legumbres cocinadas",
+          "metric" : "90 g de legumbres cocinadas"
         },
         {
-          "imperial" : "1 taza de guisantes frescos o brotes de lentejas",
-          "metric" : "150 g de guisantes frescos o brotes de lentejas"
+          "imperial" : "½ taza de tofu o tempeh",
+          "metric" : "100 g de tofu o tempeh"
+        },
+        {
+          "imperial" : "1 taza de arvejas o tirabeques",
+          "metric" : "130 g de arvejas o tirabeques"
+        },
+        {
+          "imperial" : "1 taza de brotes de legumbres ",
+          "metric" : "100 g de brotes de legumbres"
         }
       ],
       "topic" : "es/topics/legumbres-es",
