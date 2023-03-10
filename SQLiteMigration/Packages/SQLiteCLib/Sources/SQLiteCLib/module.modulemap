@@ -1,0 +1,5 @@
+module SQLiteCLib [system] {
+    header "sqliteclib.h"
+    link "sqlite3"
+    export *
+}
