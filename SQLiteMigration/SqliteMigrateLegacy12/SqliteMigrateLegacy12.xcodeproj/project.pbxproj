@@ -38,6 +38,7 @@
 		4C8A23F929BB0A2300C7B1D1 /* SQLiteApi */ = {isa = PBXFileReference; lastKnownFileType = wrapper; name = SQLiteApi; path = ../Packages/SQLiteApi; sourceTree = "<group>"; };
 		4C8A23FB29BB0A6400C7B1D1 /* SQLiteCLib */ = {isa = PBXFileReference; lastKnownFileType = wrapper; name = SQLiteCLib; path = ../Packages/SQLiteCLib; sourceTree = "<group>"; };
 		4C8A240229BB0AB700C7B1D1 /* SQLiteFramework */ = {isa = PBXFileReference; lastKnownFileType = wrapper; name = SQLiteFramework; path = ../Packages/SQLiteFramework; sourceTree = "<group>"; };
+		4CC0313629CD925D003787C5 /* LogService */ = {isa = PBXFileReference; lastKnownFileType = wrapper; name = LogService; path = ../Packages/LogService; sourceTree = "<group>"; };
 		B364E0DF29BAA8C900357CC3 /* SqliteMigrateLegacy12.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SqliteMigrateLegacy12.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		B364E0E229BAA8C900357CC3 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		B364E0E429BAA8C900357CC3 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -98,6 +99,7 @@
 		4C8A23F729BB08BE00C7B1D1 /* Packages */ = {
 			isa = PBXGroup;
 			children = (
+				4CC0313629CD925D003787C5 /* LogService */,
 				4C8A23F829BB08BE00C7B1D1 /* SQLiteManager */,
 				4C8A23F929BB0A2300C7B1D1 /* SQLiteApi */,
 				4C8A23FB29BB0A6400C7B1D1 /* SQLiteCLib */,
