@@ -1,9 +1,7 @@
 //
-//  SQLiteFramework/SQLiteQuery.swift
-//  aknowtz
+//  SQLiteQuery.swift
+//  SQLiteFramework
 //
-
-//3456789*123456789*123456789*123456789*123456789*123456789*123456789*123456789*
 
 import Foundation
 import SQLiteCLib

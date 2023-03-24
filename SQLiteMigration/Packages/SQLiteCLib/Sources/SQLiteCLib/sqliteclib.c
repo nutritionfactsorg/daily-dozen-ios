@@ -1,3 +1,4 @@
 //
 //  csqlite.c
-//  
+//  SQLiteCLib  
+//

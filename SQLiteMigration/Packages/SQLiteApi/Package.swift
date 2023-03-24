@@ -1,5 +1,8 @@
 // swift-tools-version: 5.7
 // The swift-tools-version declares the minimum version of Swift required to build this package.
+//
+// Package.swift
+// SQLiteApi
 
 import PackageDescription
 
@@ -18,6 +21,7 @@ let package = Package(
     dependencies: [
         // Dependencies declare other packages that this package depends on.
         // .package(url: /* package url */, from: "1.0.0"),
+        .package(path: "../LogService"),
         .package(path: "../SQLiteFramework"),
     ],
     targets: [
@@ -25,7 +29,7 @@ let package = Package(
         // Targets can depend on other targets in this package, and on products in packages this package depends on.
         .target(
             name: "SQLiteApi",
-            dependencies: []),
+            dependencies: ["LogService", "SQLiteFramework"]),
         .testTarget(
             name: "SQLiteApiTests",
             dependencies: ["SQLiteApi"]),

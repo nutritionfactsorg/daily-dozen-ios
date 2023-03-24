@@ -1,3 +1,8 @@
+//
+// SQLiteManagerTests.swift
+// SQLiteManager
+//
+
 import XCTest
 @testable import SQLiteManager
 

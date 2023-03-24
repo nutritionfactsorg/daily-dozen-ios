@@ -1,6 +1,6 @@
 //
-//  SQLiteFramework/SQLiteStatus.swift
-//  aknowtz
+//  SQLiteStatus.swift
+//  SQLiteFramework
 //
 
 import Foundation

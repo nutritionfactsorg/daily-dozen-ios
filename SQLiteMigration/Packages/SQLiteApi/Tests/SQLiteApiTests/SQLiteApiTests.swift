@@ -1,3 +1,8 @@
+//
+// SQLiteApiTests.swift
+// SQLiteApi
+//
+
 import XCTest
 @testable import SQLiteApi
 

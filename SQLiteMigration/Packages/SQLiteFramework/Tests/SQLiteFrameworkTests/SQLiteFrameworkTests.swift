@@ -1,3 +1,8 @@
+//
+//  SQLiteFrameworkTests.swift
+//  SQLiteFramework
+//
+
 import XCTest
 @testable import SQLiteFramework
 

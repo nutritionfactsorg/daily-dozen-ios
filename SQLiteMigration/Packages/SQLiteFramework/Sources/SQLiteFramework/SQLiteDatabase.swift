@@ -1,5 +1,6 @@
 //
-//  SQLiteFramework/SQLiteDatabase.swift
+//  SQLiteDatabase.swift
+//  SQLiteFramework
 //
 
 import Foundation
