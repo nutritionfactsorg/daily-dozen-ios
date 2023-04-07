@@ -1,0 +1,487 @@
+/* DailyDozen Localizable.strings (bg) */
+/* Copyright © 2021 Nutritionfacts.org. All rights reserved. */
+
+/* Date Button Title: ‘Back to today’ */
+"dateBackButtonTitle" = "Върнете се към днешната дата";
+
+/* Date Button Title: ‘Today’ */
+"dateButtonTitle.today" = "Днес";
+
+/* Doze Detail View subheading: ‘Serving Sizes’ */
+"doze_detail_section_sizes" = "Размери на порции (препоръчани)";
+
+/* Doze Detail View subheading: ‘Types’ */
+"doze_detail_section_types" = "Видове";
+
+/* Doze Entry View heading: ‘Servings’ */
+"doze_entry_header" = "Порция";
+
+/* heading for daily data entry item */
+"dozeBeans.heading" = "Бобови";
+
+/* heading for daily data entry item */
+"dozeBerries.heading" = "Горски плодове";
+
+/* heading for daily data entry item */
+"dozeBeverages.heading" = "Напитки";
+
+/* heading for daily data entry item */
+"dozeExercise.heading" = "Упражнения";
+
+/* heading for daily data entry item */
+"dozeFlaxseeds.heading" = "Ленено семе";
+
+/* heading for daily data entry item */
+"dozeFruitsOther.heading" = "Други плодове";
+
+/* heading for daily data entry item */
+"dozeGreens.heading" = "Зеленолистни зеленчуци";
+
+/* heading for daily data entry item */
+"dozeNuts.heading" = "Ядки";
+
+/* Daily Dozen supplement info alert: dismissal button text */
+"dozeOtherInfo.confirm" = "ОК";
+
+/* Daily Dozen supplement info alert: message */
+"dozeOtherInfo.message" = "Витамин B12 е от съществено значение за вашето здраве, но не се брои към ежедневните ви порции.\n\nВитамин B12 е включен в това приложение, за да ви осигури лесен начин за проследяване на приема.";
+
+/* Daily Dozen daily entry section heading */
+"dozeOtherInfo.section" = "Добавки";
+
+/* Daily Dozen supplement info alert: title */
+"dozeOtherInfo.title" = "Добавки";
+
+/* heading for daily data entry item */
+"dozeSpices.heading" = "Подправки";
+
+/* heading for daily data entry item */
+"dozeVegetablesCruciferous.heading" = "Кръстоцветни зеленчуци";
+
+/* heading for daily data entry item */
+"dozeVegetablesOther.heading" = "Други зеленчуци";
+
+/* heading for daily data entry item */
+"dozeWholeGrains.heading" = "Пълнозърнести";
+
+/*  */
+"faq_adapt_question" = "Daily Dozen е твърде много/твърде малко храна за мен! Мога ли да го адаптирам?";
+
+/*  */
+"faq_adapt_response" = "Да, Daily Dozen е просто предназначен да бъде ръководство за най-здравословните храни, които се стремим да включваме всеки ден. Това не е план за хранене и не е предназначен да бъде предписван. Направете всичко възможно да ядете разнообразие от цели растителни храни и адаптирайте Daily Dozen към количествата, които работят за вас.";
+
+/*  */
+"faq_age_question" = "Може ли да се приложи за деца, юноши и тийнейджъри?";
+
+/*  */
+"faq_age_response.0" = "Децата, юношите и тийнейджърите имат различни калорични нужди през целия си жизнен цикъл. Тези нужди се променят, за да подкрепят растежа и развитието на всеки етап.";
+
+/*  */
+"faq_age_response.1" = "Daily Dozen е създаден като ръководство, което да помогне на хората да включат някои от най-здравословните храни в ежедневието си. Въпреки че един и същи режим може да се използва за повечето хора през целия им живот, количеството храна, което човек трябва да изяде, ще варира в зависимост от редица фактори като възраст и ниво на активност. Тъй като не можем да предоставим конкретни хранителни или медицински съвети за вашето растящо дете, родителите трябва да използват това ръководство, тъй като смятат, че е най-добро за нуждите на детето си и/или да се консултират с регистриран диетолог или друг доставчик на здравни услуги, за да определят какво е най-добро за тях потребности.";
+
+/*  */
+"faq_calories_question" = "Колко калории има в Daily Dozen?";
+
+/*  */
+"faq_calories_response.0" = "Daily Dozen има средно около 1200 калории, но предвид широкия набор от храни във всяка категория, може да варира от 800 до 1800. Помислете за категорията „Други зеленчуци“: чаша чушки има много по-ниска калорична плътност от чаша варени сладки картофи, следователно калорийният диапазон ще зависи от конкретния ви избор на храна. Това е страхотното нещо на контролния списък Daily Dozen — това не е универсален подход и може да бъде адаптиран към вашите нужди.";
+
+/*  */
+"faq_calories_response.1" = "Ако целта ви е загуба на тегло, можете да намерите повече информация в „Можем без диети“ и придружаващите двадесет и едно ощипвания. В „Можем без диети“ отбелязах: „Систематичен преглед на успешни стратегии за отслабване стигна до заключението, че като се има предвид забавянето на метаболизма и повишения апетит, които съпътстват загубата на тегло, за да се постигне значителна загуба на тегло, може да се наложи броят на калориите да падне до 1200 калории на ден за жени и 1500 калории на ден за мъже.";
+
+/*  */
+"faq_calories_response.2" = "От друга страна, ако целта ви е наддаване на тегло, тогава може да искате да се съсредоточите върху добавянето на по-калорични храни, като сладки картофи, авокадо, ядки и соеви продукти.";
+
+/*  */
+"faq_mother_question" = "Мога ли да правя това по време на бременност или кърмене?";
+
+/*  */
+"faq_mother_response" = "Жените, които са бременни или кърмят, имат различни калорични и хранителни нужди от жените, които не са. Като напомняне, Daily Dozen не е план за хранене и не трябва да бъде единствената храна, консумирана в рамките на един ден. Жените, които са бременни или кърмят, трябва да се консултират със своя медицински специалист или регистриран диетолог за помощ при посрещане на техните специфични калорични изисквания и хранителни нужди.";
+
+/*  */
+"faq_scaling_question" = "Не мога да ям толкова много боб/зърна/и т.н.!";
+
+/*  */
+"faq_scaling_response" = "Това е добре! Daily Dozen е амбициозен наръчник. Направете всичко възможно да включите възможно най-много от тези здравословни растителни храни. Ако не сте започнали да ядете много боб (или зърнени храни, зеленчуци и т.н.!), може да се наложи да започнете с по-малки количества и бавно да увеличавате количеството, за да дадете шанс на микробиома си да се коригира. Можете също така да бъдете креативни: например, добавете малко боб към сутрешната си овесена каша. Ако го заредите с горски плодове, ленени семена и ядки, дори няма да забележите зърната. Можете също така да пасирате боб в сандвич или да направите моя [BROL](https://nutritionfacts.org/recipe/basic-brol-barley-rye-oats-and-lentils) — ечемичен, ръжен, овесен зърнени храни и леща — която използвам като основа за много ястия и е лесен начин за получаване на разнообразие от пълнозърнести храни с вградена порция бобови растения.";
+
+/*  */
+"faq_supplements_question" = "Мислех, че д-р Грегър препоръчва приема на добавки с витамин D и DHA. Защо не са включени?";
+
+/*  */
+"faq_supplements_response" = "Актуализирахме приложението Daily Dozen, за да отразява само необходимите добавки. Например, витамин D е необходим само на хора, които не се излагат достатъчно на слънце. Нашата цел е да споделим науката с вас, за да можете да вземате свои собствени информирани решения. Можете да видите всичките ми препоръки на страницата [Оптимални хранителни вещества](https://nutritionfacts.org/optimum-nutrient-recommendations).";
+
+/* History Data Alert: Cancel button */
+"history_data_alert_cancel" = "Отказ";
+
+/* History Data Alert: Clear button */
+"history_data_alert_clear" = "Изчисти";
+
+/* History Data Alert: Import buttom */
+"history_data_alert_import" = "Импортиране";
+
+/* History Data Alert: OK button */
+"history_data_alert_ok" = "ОК";
+
+/* History Data: export action button */
+"history_data_export_btn" = "Експортиране на данни за хронологията";
+
+/* History Data: export description text */
+"history_data_export_text" = "Експортирането е записано в:";
+
+/* History Data: import action button */
+"history_data_import_btn" = "Импортиране на данни за хронологията";
+
+/* History Data: import caution text */
+"history_data_import_caution_text" = "Внимание: Това импортиране ще презапише всички данни за хронологията в момента в това приложение Daily Dozen. Искате ли да продължите с импортирането?";
+
+/* History Data: import data error text */
+"history_data_import_error_text" = "Грешка: Импортирането не е извършено поради грешка в данните. Съществуващите данни са останали непроменени.";
+
+/* History Data: import not found text */
+"history_data_import_notfound_text" = "Не е намерен валиден импортиран файл в папката Daily Dozen Documents.";
+
+/* History Data: preferences header & title */
+"history_data_title" = "История";
+
+/* History View: calendar scale control */
+"history_scale_choice_day" = "Ден";
+
+/* History View: calendar scale control */
+"history_scale_choice_month" = "Месец";
+
+/* History View: calendar scale control */
+"history_scale_choice_year" = "Година";
+
+/* History View: scale text */
+"history_scale_label" = "Времева скала";
+
+/*  */
+"historyRecord.movingAverage" = "Средна стойност";
+
+/* History View */
+"historyRecordDoze.heading" = "История на порциите";
+
+/* History View */
+"historyRecordDoze.legend" = "Порции";
+
+/* History View */
+"historyRecordTweak.heading" = "История на настройките";
+
+/* History View */
+"historyRecordTweak.legend" = "Фини настройки";
+
+/* History View */
+"historyRecordWeight.heading" = "История на теглото";
+
+/* History View */
+"historyRecordWeight.legendEvening" = "Вечер";
+
+/* History View */
+"historyRecordWeight.legendMorning" = "Сутрин";
+
+/* History View */
+"historyRecordWeight.titleImperial" = "Тегло (lbs)";
+
+/* History View */
+"historyRecordWeight.titleMetric" = "Тегло (кг)";
+
+/* Info About Menu Item */
+"info_app_about" = "Относно";
+
+/* Info About View: Application Name ‘Daily Dozen’ */
+"info_app_about_app_name" = "Daily Dozen";
+
+/* Info About View: Created By */
+"info_app_about_created_by" = "Това приложение е създадено от: NutritionFacts.org, Кристи Ричардс, Константин Хохлов и Марк Кембъл";
+
+/* Info About View */
+"info_app_about_heading" = "Информация за приложението";
+
+/* Info About View: Open Source Credits */
+"info_app_about_oss_credits" = "Използват се следните библиотеки с отворен код: RealmSwift, Charts, FSCalendar, SimpleAnimation, ActiveLabel.";
+
+/* Info About View: Overview Text */
+"info_app_about_overview" = "Използвайте това приложение на дневна база, за да следите храните, които аз препоръчвам за оптимално здраве и дълголетие в книгата си „Как да не умрем“.";
+
+/* Info About View: Contributing Translators List (language code)  See https://en.wikipedia.org/wiki/List_of_ISO_639-1_codes */
+"info_app_about_translators" = "Специални благодарности на нашите преводачи доброволци: Petar & Tsveti Enchev (bg), Ricard Soler Roger (ca), Luděk Bouška (cs,sk), Lenka Lukacová (cs), Anke Schliessmann (de), Ángela Graña (es), Doron Barak (he), Ruth Levy (he), Annalisa Guerrini-Körner (it), Ilaria Zanini (it), Hanna Gurzeda (pl), Joanna Klopotek (pl), Tania Bassi (pt-BR), João Madureira (pt-PT), Evgeniya Lyakh (ru), Katarína Mocáková (sk).";
+
+/* Info About View: Application release version */
+"info_app_about_version" = "версия 3.4.1";
+
+/* Info About View: Welcome */
+"info_app_about_welcome" = "Добре дошли в моя Daily Dozen!";
+
+/* Info Menu: book title */
+"info_book_how_not_to_die" = "Книга: Можем да сме здрави";
+
+/* Info Menu: book title */
+"info_book_how_not_to_die_cookbook" = "Книга: Можем да сме здрави (готварска книга)";
+
+/* Info Menu: book title */
+"info_book_how_not_to_diet" = "Книга: Как да не спазваме диети";
+
+/* Info Menu */
+"info_webpage_daily_dozen_challenge" = "Daily Dozen Challenge";
+
+/* Info Menu */
+"info_webpage_donate" = "Направете дарение";
+
+/* Info Menu */
+"info_webpage_open_source" = "Отворен код";
+
+/* Info Menu */
+"info_webpage_subscribe" = "Абонирай се";
+
+/* Info Menu */
+"info_webpage_videos_latest" = "Най-новите видео клипове";
+
+/* Item History Legend: ‘All completed’ */
+"item_history_completed_all" = "Всички порции";
+
+/* Item History Legend: ‘Some completed’ */
+"item_history_completed_some" = "Някои порции";
+
+/* Item History Heading */
+"item_history_heading" = "История";
+
+/* Main Navigation Tab Control: ‘Daily Dozen’ (proper noun) */
+"navtab.doze" = "Daily Dozen";
+
+/* Main Navigation Tab Control: show more information */
+"navtab.info" = "Информация";
+
+/* Main Navigation Tab Control: ‘Preferences’ synonyms: Settings, Configuration. Choose a translations with is different from Tweaks. */
+"navtab.preferences" = "Настройки";
+
+/* Main Navigation Tab Control: ‘21 Tweaks’ (proper noun) */
+"navtab.tweaks" = "21 настройки";
+
+/* heading for daily data entry item */
+"otherVitaminB12.heading" = "Витамин B12";
+
+/* Alert notification text */
+"reminder.alert.text" = "Актуализиране на вашите порции за днес";
+
+/* Daily Reminder (alert title, settings section heading) */
+"reminder.heading" = "Ежедневно напомняне";
+
+/* Daily Reminder On/Off toggle switch label */
+"reminder.settings.enable" = "Активиране на напомнянията";
+
+/* Daily Reminder sound control heading */
+"reminder.settings.sound" = "Възпроизвеждане на звук";
+
+/* Daily Reminder time control heading */
+"reminder.settings.time" = "Напомни ми на";
+
+/* Android notification `vibrate` */
+"reminder.settings.vibrate" = "Вибрация";
+
+/* ‘Off’ as in ‘On (enabled) or Off (disabled)’, Daily Reminder is not enabled */
+"reminder.state.off" = "Изкл";
+
+/* ‘On’ as in ‘On (enabled) or Off (disable)’. Daily Reminder is enabled */
+"reminder.state.on" = "Вкл";
+
+/* Google Firebase Analytics */
+"setting_analytics_body" = "Разрешете събирането на анонимна информация за употреба, за да помогнете за подобряването на това приложение.";
+
+/* Google Firebase Analytics */
+"setting_analytics_enable" = "Активирайте Анализ";
+
+/* Google Firebase Analytics */
+"setting_analytics_opt_in" = "Записване";
+
+/* Google Firebase Analytics */
+"setting_analytics_opt_out" = "Отписване";
+
+/* Google Firebase Analytics */
+"setting_analytics_title" = "Анализ";
+
+/* First Launch Setting: button text */
+"setting_doze_only_btn" = "Ежедневно само десетина";
+
+/* Preference Settings View: selection button text */
+"setting_doze_only_choice" = "Daily Dozen само";
+
+/* First Launch Setting: button text */
+"setting_doze_tweak_btn" = "Daily Dozen + \n21 Tweaks";
+
+/* Preference Settings View: selection button text */
+"setting_doze_tweak_choice" = "Daily Dozen + 21 Tweaks";
+
+/* Preference Settings View: brief description text below Tweaks visibility control. */
+"setting_doze_tweak_footer" = "Само за здраве използвайте „Daily Dozen само“. За здраве и загуба на тегло използвайте „Daily Dozen + 21 Tweaks“.";
+
+/* First Launch Setting: brief description above ‘Daily Dozen Only’ button. */
+"setting_health_alone_txt" = "За самото здраве";
+
+/* First Launch Setting: brief description above ‘Daily Dozen + 21 Tweaks’ button. */
+"setting_health_weight_txt" = "За здраве и отслабване";
+
+/* Preference Settings View: tweaks visibilty subsection heading */
+"setting_tweak_header" = "21 Tweaks видимост";
+
+/* Preference Settings View: Part of ‘Imperial/Metric/Toggle Units’ selector */
+"setting_units_0_imperial" = "Имперски";
+
+/* Preference Settings View: Part of ‘Imperial/Metric/Toggle Units’ selector */
+"setting_units_1_metric" = "Метрични";
+
+/* Preference Settings View: Part of ‘Imperial/Metric/Toggle Units’ selector */
+"setting_units_2_toggle" = "Превключване на единици";
+
+/* Preference Settings View: brief description text below units control. */
+"setting_units_choice_footer" = "Задайте винаги да бъде един тип единица или активирайте бутона за превключване „Единици:“.";
+
+/* Preference Settings View */
+"setting_units_header" = "Мерни единици";
+
+/* Preference Settings View */
+"setting_util_advanced" = "Разширени инструменти";
+
+/* ‘Streak’ count. Synonym: ‘Progress‘. Formatted number ‘%d’ for consecutive days completed. Place translated text for ‘days’ on the right or left of ‘%d’ based on language directionality. */
+"streakDaysFormat" = "%d дни";
+
+/* Tweaks Detail view section heading */
+"tweak_detail_section_activity" = "Дейност";
+
+/* Tweaks Detail view section heading */
+"tweak_detail_section_description" = "Описание";
+
+/* Tweaks daily entry header */
+"tweak_entry_header" = "21 Tweaks";
+
+/* heading for daily data entry item */
+"tweakCompleteIntentions.heading" = "Изпълнете намеренията си за прилагане на зададеното";
+
+/* heading for daily data entry item */
+"tweakDailyBlackCumin.heading" = "Черен кимион (¼ ч.л.)";
+
+/* heading for daily data entry item */
+"tweakDailyCumin.heading" = "Кимион (½ ч.л. с обяд и вечеря)";
+
+/* heading for daily data entry item */
+"tweakDailyDeflourDiet.heading" = "Обезцветете диетата си";
+
+/* heading for daily data entry item */
+"tweakDailyFrontLoad.heading" = "Предварително заредете калориите си";
+
+/* heading for daily data entry item */
+"tweakDailyGarlic.heading" = "Чесън на прах (¼ ч.л.)";
+
+/* heading for daily data entry item */
+"tweakDailyGinger.heading" = "Млян джинджифил (1 ч.л.) или кайенски пипер (½ ч.л.)";
+
+/* heading for daily data entry item */
+"tweakDailyGreenTea.heading" = "Зелен чай (3 чаши)";
+
+/* heading for daily data entry item */
+"tweakDailyHydrate.heading" = "Останете хидратирани";
+
+/* heading for daily data entry item */
+"tweakDailyNutriYeast.heading" = "Хранителна мая (2 ч.л.)";
+
+/* heading for daily data entry item */
+"tweakDailyTimeRestrict.heading" = "Ограничете времето за хранене";
+
+/* heading for daily data entry item */
+"tweakExerciseTiming.heading" = "Оптимизирайте времето за упражнения";
+
+/* heading for daily data entry item */
+"tweakMeal20Minutes.heading" = "Следвайте двадесетминутното правило";
+
+/* heading for daily data entry item */
+"tweakMealNegCal.heading" = "Предварително заредете с храни с отрицателни калории";
+
+/* heading for daily data entry item */
+"tweakMealUndistracted.heading" = "Насладете се на неразделени ястия";
+
+/* heading for daily data entry item */
+"tweakMealVinegar.heading" = "Включете оцет (2 ч.л. с всяко хранене)";
+
+/* heading for daily data entry item */
+"tweakMealWater.heading" = "Предварително заредете с вода";
+
+/* heading for daily data entry item */
+"tweakNightlyFast.heading" = "Гладуване след 19:00 ч";
+
+/* heading for daily data entry item */
+"tweakNightlySleep.heading" = "Получете достатъчно сън";
+
+/* heading for daily data entry item */
+"tweakNightlyTrendelenbrug.heading" = "Експериментирайте с лекия трендленбург";
+
+/* heading for daily data entry item */
+"tweakWeightTwice.heading" = "Претегляйте се два пъти на ден";
+
+/*  */
+"units_label" = "единици";
+
+/* Units toggle button text: imperial measurement system */
+"unitToggle.imperial" = "имперски";
+
+/* Units toggle button text: metric measurement system */
+"unitToggle.metric" = "метричен";
+
+/* URL path */
+"urlSegment.base" = "https://nutritionfacts.org/";
+
+/*  */
+"urlSegment.lang" = "";
+
+/* main info menu: book */
+"urlSegmentInfoMenu.book" = "book";
+
+/* main info menu: daily-dozen-challenge */
+"urlSegmentInfoMenu.challenge" = "daily-dozen-challenge";
+
+/* main info menu: cookbook */
+"urlSegmentInfoMenu.cookbook" = "cookbook";
+
+/* main info menu: how-not-to-diet */
+"urlSegmentInfoMenu.diet" = "how-not-to-diet";
+
+/* main info menu: donate */
+"urlSegmentInfoMenu.donate" = "donate";
+
+/* main info menu: open-source */
+"urlSegmentInfoMenu.source" = "open-source";
+
+/* main info menu: subscribe */
+"urlSegmentInfoMenu.subscribe" = "subscribe";
+
+/* team */
+"urlSegmentInfoMenu.team" = "team";
+
+/* main info menu: videos */
+"urlSegmentInfoMenu.videos" = "videos";
+
+/* Label for hyperlink to nutritionfacts.org video topics */
+"videos.link.label" = "Видео клипове";
+
+/* Weight Daily Entry: clear button which deletes values */
+"weight_entry_clear" = "Изчисти";
+
+/* Weight Daily Entry: label */
+"weight_entry_evening" = "Вечер (точно преди лягане)";
+
+/* Weight Daily Entry: label */
+"weight_entry_morning" = "Сутрин (при събуждане)";
+
+/* Weight Daily Entry: label */
+"weight_entry_time" = "Време";
+
+/* Weight Daily Entry Units: label */
+"weight_entry_units_kg" = "кг";
+
+/* Weight Daily Entry Units: label */
+"weight_entry_units_lbs" = "паундове";
+
+/* Weight Daily Entry: edit button to change values */
+"weight_history_edit_data" = "Редактиране на данни";
+
+/* Weight Daily Entry: heading */
+"weightEntry.heading" = "Тегло";
+
+/* file end */

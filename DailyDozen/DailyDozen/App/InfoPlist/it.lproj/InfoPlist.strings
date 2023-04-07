@@ -1,0 +1,16 @@
+/* DailyDozen InfoPlist.strings (it) */
+/* Copyright © 2021 Nutritionfacts.org. All rights reserved. */
+
+/* User-visible application name. Visible under icon. Used by Siri. */
+"CFBundleDisplayName" = "DailyDozen";
+
+/* User-visible application short name (15 Characters max) */
+"CFBundleName" = "DailyDozen";
+
+/* Privacy - Health Share Usage Description */
+"NSHealthShareUsageDescription" = "La funzione \"21 modifiche\" consente di accedere ai dati del tuo Kit salute per aggiornare il monitoraggio giornaliero del peso.";
+
+/* Privacy - Health Update Usage Description */
+"NSHealthUpdateUsageDescription" = "Con la funzione \"21 modifiche\" puoi salvare i dati del peso nel Kit salute per aiutarti a tenere traccia dei tuoi progressi.";
+
+/* file end */

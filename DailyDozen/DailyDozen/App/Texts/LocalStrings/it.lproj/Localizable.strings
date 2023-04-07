@@ -1,0 +1,487 @@
+/* DailyDozen Localizable.strings (it) */
+/* Copyright © 2021 Nutritionfacts.org. All rights reserved. */
+
+/* Date Button Title: ‘Back to today’ */
+"dateBackButtonTitle" = "Torna a oggi";
+
+/* Date Button Title: ‘Today’ */
+"dateButtonTitle.today" = "Oggi";
+
+/* Doze Detail View subheading: ‘Serving Sizes’ */
+"doze_detail_section_sizes" = "Dimensioni delle porzioni (suggerite)";
+
+/* Doze Detail View subheading: ‘Types’ */
+"doze_detail_section_types" = "Tipi";
+
+/* Doze Entry View heading: ‘Servings’ */
+"doze_entry_header" = "Porzioni";
+
+/* heading for daily data entry item */
+"dozeBeans.heading" = "Legumi";
+
+/* heading for daily data entry item */
+"dozeBerries.heading" = "Frutti di bosco";
+
+/* heading for daily data entry item */
+"dozeBeverages.heading" = "Bevande";
+
+/* heading for daily data entry item */
+"dozeExercise.heading" = "Attività fisica";
+
+/* heading for daily data entry item */
+"dozeFlaxseeds.heading" = "Semi di lino";
+
+/* heading for daily data entry item */
+"dozeFruitsOther.heading" = "Altri frutti";
+
+/* heading for daily data entry item */
+"dozeGreens.heading" = "Verdure verdi";
+
+/* heading for daily data entry item */
+"dozeNuts.heading" = "Frutta a guscio e semi";
+
+/* Daily Dozen supplement info alert: dismissal button text */
+"dozeOtherInfo.confirm" = "OK";
+
+/* Daily Dozen supplement info alert: message */
+"dozeOtherInfo.message" = "La vitamina B12 è essenziale per la tua salute, ma non viene conteggiata nelle porzioni giornaliere.\n\n La vitamina B12 è inclusa in quest'app per aiutarti a controllare facilmente quanta ne assumi.";
+
+/* Daily Dozen daily entry section heading */
+"dozeOtherInfo.section" = "Integratori";
+
+/* Daily Dozen supplement info alert: title */
+"dozeOtherInfo.title" = "Integratori";
+
+/* heading for daily data entry item */
+"dozeSpices.heading" = "Erbe e spezie";
+
+/* heading for daily data entry item */
+"dozeVegetablesCruciferous.heading" = "Verdure crucifere";
+
+/* heading for daily data entry item */
+"dozeVegetablesOther.heading" = "Altre verdure";
+
+/* heading for daily data entry item */
+"dozeWholeGrains.heading" = "Cereali Integrali";
+
+/*  */
+"faq_adapt_question" = "Le porzioni di Daily Dozen sono troppo grandi/troppo piccole per me! Posso adattarle?";
+
+/*  */
+"faq_adapt_response" = "Sì, Daily Dozen vuole essere semplicemente una guida sugli alimenti più sani che ci sforziamo di assumere ogni giorno. Non è un piano alimentare e non è da intendersi come prescrittivo. Cerca di mangiare un'ampia gamma di alimenti vegetali e integrali e adatta le porzioni di Daily Dozen alle tue esigenze.";
+
+/*  */
+"faq_age_question" = "È adatto a bambini, ragazzi e adolescenti?";
+
+/*  */
+"faq_age_response.0" = "Bambini, ragazzi e adolescenti hanno esigenze caloriche diverse durante la loro vita. Tali esigenze cambiano ad ogni stadio per supportare la crescita e lo sviluppo.";
+
+/*  */
+"faq_age_response.1" = "Daily Dozen è stata ideata come una guida per aiutare le persone ad includere alcuni dei cibi più sani nella loro routine quotidiana. Anche se per la maggior parte delle persone lo stesso quadro di riferimento può essere usato per tutta la vita, la quantità di cibo di cui si ha bisogno può variare in base a diversi fattori, come l'età e il livello di attività. Dato che non possiamo fornire consigli medici e nutrizionali specifici per i bambini in crescita, i genitori devono usare questa guida come meglio ritengono per le esigenze del proprio figlio e/o consultare un dietista o un'altra figura medica per individuare la soluzione migliore per le loro esigenze individuali. ";
+
+/*  */
+"faq_calories_question" = "Quante calorie ci sono in Daily Dozen?";
+
+/*  */
+"faq_calories_response.0" = "Daily Dozen si aggira in media intorno alle 1200 calorie, ma data l'ampia gamma di alimenti tra cui scegliere in ogni categoria, può variare da un minimo di 800 ad un massimo di 1800. Consideriamo la categoria Altre verdure: una porzione di peperoni ha una densità calorica molto inferiore di una porzione di patate dolci cotte, perciò il range calorico dipenderà da quali cibi nello specifico sceglierai. È questo il bello della lista di Daily Dozen: non è un approccio unico e universale e può essere adattato alle tue esigenze.";
+
+/*  */
+"faq_calories_response.1" = "Se il tuo obiettivo è perdere peso, puoi trovare maggiori informazioni in \"Contro le diete\" e nell'allegato \"Ventuno modifiche\". In \"Contro le diete\" ho scritto:\"Una revisione sistematica delle strategie per perdere peso che hanno avuto successo ha concluso che, dati il rallentamento del metabolismo e l'aumento dell'appetito che accompagnano la perdita di peso, per ottenere una perdita di peso significativa l'apporto calorico deve scendere il più vicino possibile a 1200 calorie giornaliere per le donne e 1500 per gli uomini.\"";
+
+/*  */
+"faq_calories_response.2" = "Al contrario, se il tuo obiettivo è aumentare di peso, allora dovresti focalizzarti sull'aggiungere più alimenti ad alta intensità calorica, come patate dolci, avocado, frutta a guscio e prodotti a base di soia. ";
+
+/*  */
+"faq_mother_question" = "Posso farlo se sono incinta o se sto allattando?";
+
+/*  */
+"faq_mother_response" = "In gravidanza e in allattamento le esigenze caloriche e nutrizionali cambiano molto. Ricordiamo che Daily Dozen non è un piano alimentare e non contiene tutti gli alimenti che vanno consumati nell'arco della giornata. Se sei in gravidanza o stai allattando, dovresti consultare il tuo medico o un dietista che ti aiuti a soddisfare il tuo specifico fabbisogno calorico e le tue esigenze nutrizionali. ";
+
+/*  */
+"faq_scaling_question" = "Non posso mangiare così tanti legumi/cereali ecc!";
+
+/*  */
+"faq_scaling_response" = "Non c'è problema! Daily Dozen è una guida orientativa. Fai del tuo meglio per integrare il maggior numero possibile di questi alimenti vegetali e sani. Se non sei abituato a mangiare tanti legumi (o cereali, verdure, ecc) inizia con piccole quantità e aumentale gradualmente per permettere al tuo microbioma di adattarsi. Sii creativo: per esempio, puoi aggiungere dei fagioli al porridge per colazione. Se ci aggiungi frutti di bosco, semi di lino e frutta secca non sentirai nemmeno che ci sono i fagioli. Puoi anche schiacciare i fagioli e spalmarli in un panino, oppure puoi preparare la mia [BROL](https://nutritionfacts.org/recipe/basic-brol-barley-rye-oats-and-lentils) con orzo, segale, avena decorticata e lenticchie, che uso come base per molti piatti e che rappresenta un modo semplice per avere una varietà di cereali integrali in un'unica porzione di legumi. ";
+
+/*  */
+"faq_supplements_question" = "Pensavo che il Dott. Greger consigliasse l'assunzione di vitamina D e integratori DHA. Perché non sono inclusi?";
+
+/*  */
+"faq_supplements_response" = "Abbiamo aggiornato l'app Daily Dozen per mostrare solo gli integratori necessari. Per esempio, solo chi non si espone al sole a sufficienza deve integrare la vitamina D. Il nostro obiettivo è condividere il sapere scientifico in modo che tu possa prendere le tue decisioni con cognizione di causa. Puoi trovare tutti i miei consigli alla pagina [Optimum Nutrient](https://nutritionfacts.org/optimum-nutrient-recommendations).";
+
+/* History Data Alert: Cancel button */
+"history_data_alert_cancel" = "Cancella";
+
+/* History Data Alert: Clear button */
+"history_data_alert_clear" = "Annulla";
+
+/* History Data Alert: Import buttom */
+"history_data_alert_import" = "Importa";
+
+/* History Data Alert: OK button */
+"history_data_alert_ok" = "OK";
+
+/* History Data: export action button */
+"history_data_export_btn" = "Esporta dati di cronologia";
+
+/* History Data: export description text */
+"history_data_export_text" = "L'esportazione è stata salvata in:";
+
+/* History Data: import action button */
+"history_data_import_btn" = "Importa dati di cronologia";
+
+/* History Data: import caution text */
+"history_data_import_caution_text" = "Attenzione: l'importazione sovrascriverà tutti i dati presenti nell'applicazione Daily Dozen. Vuoi procedere con l'importazione?";
+
+/* History Data: import data error text */
+"history_data_import_error_text" = "Errore: l'importazione non è stata eseguita a causa di un errore nei dati. I dati esistenti sono rimasti invariati.";
+
+/* History Data: import not found text */
+"history_data_import_notfound_text" = "Non sono stati trovati file d'importazione validi nella cartella documenti di Daily Dozen.";
+
+/* History Data: preferences header & title */
+"history_data_title" = "Cronologia";
+
+/* History View: calendar scale control */
+"history_scale_choice_day" = "Giorno";
+
+/* History View: calendar scale control */
+"history_scale_choice_month" = "Mese";
+
+/* History View: calendar scale control */
+"history_scale_choice_year" = "Anno";
+
+/* History View: scale text */
+"history_scale_label" = "Periodo temporale";
+
+/*  */
+"historyRecord.movingAverage" = "Media dei movimenti";
+
+/* History View */
+"historyRecordDoze.heading" = "Cronologia porzioni";
+
+/* History View */
+"historyRecordDoze.legend" = "Porzioni";
+
+/* History View */
+"historyRecordTweak.heading" = "Cronologia modifiche";
+
+/* History View */
+"historyRecordTweak.legend" = "Modifiche";
+
+/* History View */
+"historyRecordWeight.heading" = "Cronologia peso";
+
+/* History View */
+"historyRecordWeight.legendEvening" = "Sera";
+
+/* History View */
+"historyRecordWeight.legendMorning" = "Mattina";
+
+/* History View */
+"historyRecordWeight.titleImperial" = "Peso (lbs)";
+
+/* History View */
+"historyRecordWeight.titleMetric" = "Peso (kg)";
+
+/* Info About Menu Item */
+"info_app_about" = "Informazioni";
+
+/* Info About View: Application Name ‘Daily Dozen’ */
+"info_app_about_app_name" = "Daily Dozen";
+
+/* Info About View: Created By */
+"info_app_about_created_by" = "Questa app è stata creata da: NutritionFacts.org, Christi Richards, Konstantin Khokhlov e Marc Campbell";
+
+/* Info About View */
+"info_app_about_heading" = "Informazioni sull'app";
+
+/* Info About View: Open Source Credits */
+"info_app_about_oss_credits" = "Sono state usate le seguenti librerie open source: RealmSwift, Charts, FSCalendar, SimpleAnimation, ActiveLabel.";
+
+/* Info About View: Overview Text */
+"info_app_about_overview" = "Utilizza questa applicazione giornalmente per tenere traccia degli alimenti e dei miei consigli per una salute ottimale e una vita longeva tratti dai miei libri “Sei quel che mangi” e “Contro le diete”.";
+
+/* Info About View: Contributing Translators List (language code)  See https://en.wikipedia.org/wiki/List_of_ISO_639-1_codes */
+"info_app_about_translators" = "Un ringraziamento speciale ai nostri traduttori volontari: Petar & Tsveti Enchev (bg), Ricard Soler Roger (ca), Luděk Bouška (cs,sk), Lenka Lukacová (cs), Anke Schliessmann (de), Ángela Graña (es), Doron Barak (he), Ruth Levy (he), Annalisa Guerrini-Körner (it), Ilaria Zanini (it), Hanna Gurzeda (pl), Joanna Klopotek (pl), Tania Bassi (pt-BR), João Madureira (pt-PT), Evgeniya Lyakh (ru), Katarína Mocáková (sk).";
+
+/* Info About View: Application release version */
+"info_app_about_version" = "versione 3.4.1";
+
+/* Info About View: Welcome */
+"info_app_about_welcome" = "Ti diamo il benvenuto in Daily Dozen!";
+
+/* Info Menu: book title */
+"info_book_how_not_to_die" = "Libro: Sei quel che mangi";
+
+/* Info Menu: book title */
+"info_book_how_not_to_die_cookbook" = "Libro di ricette: La dieta che ti salva la vita";
+
+/* Info Menu: book title */
+"info_book_how_not_to_diet" = "Libro: Contro le diete ";
+
+/* Info Menu */
+"info_webpage_daily_dozen_challenge" = "Sfida Daily Dozen";
+
+/* Info Menu */
+"info_webpage_donate" = "Dona";
+
+/* Info Menu */
+"info_webpage_open_source" = "Open Source";
+
+/* Info Menu */
+"info_webpage_subscribe" = "Iscriviti";
+
+/* Info Menu */
+"info_webpage_videos_latest" = "Ultimi video";
+
+/* Item History Legend: ‘All completed’ */
+"item_history_completed_all" = "Tutte le porzioni";
+
+/* Item History Legend: ‘Some completed’ */
+"item_history_completed_some" = "Alcune porzioni";
+
+/* Item History Heading */
+"item_history_heading" = "Cronologia";
+
+/* Main Navigation Tab Control: ‘Daily Dozen’ (proper noun) */
+"navtab.doze" = "Daily Dozen";
+
+/* Main Navigation Tab Control: show more information */
+"navtab.info" = "Informazioni";
+
+/* Main Navigation Tab Control: ‘Preferences’ synonyms: Settings, Configuration. Choose a translations with is different from Tweaks. */
+"navtab.preferences" = "Preferenze";
+
+/* Main Navigation Tab Control: ‘21 Tweaks’ (proper noun) */
+"navtab.tweaks" = "21 modifiche";
+
+/* heading for daily data entry item */
+"otherVitaminB12.heading" = "Vitamina B12";
+
+/* Alert notification text */
+"reminder.alert.text" = "Aggiorna le tue porzioni di oggi";
+
+/* Daily Reminder (alert title, settings section heading) */
+"reminder.heading" = "Promemoria giornaliero";
+
+/* Daily Reminder On/Off toggle switch label */
+"reminder.settings.enable" = "Attiva i promemoria";
+
+/* Daily Reminder sound control heading */
+"reminder.settings.sound" = "Riproduci suoni";
+
+/* Daily Reminder time control heading */
+"reminder.settings.time" = "Promemoria alle";
+
+/* Android notification `vibrate` */
+"reminder.settings.vibrate" = "Vibrazione";
+
+/* ‘Off’ as in ‘On (enabled) or Off (disabled)’, Daily Reminder is not enabled */
+"reminder.state.off" = "Off";
+
+/* ‘On’ as in ‘On (enabled) or Off (disable)’. Daily Reminder is enabled */
+"reminder.state.on" = "On";
+
+/* Google Firebase Analytics */
+"setting_analytics_body" = "Consenti la raccolta di informazioni anonime sull'utilizzo per contribuire a migliorare questa applicazione.";
+
+/* Google Firebase Analytics */
+"setting_analytics_enable" = "Consenti analitica";
+
+/* Google Firebase Analytics */
+"setting_analytics_opt_in" = "Opt In";
+
+/* Google Firebase Analytics */
+"setting_analytics_opt_out" = "Opt Out";
+
+/* Google Firebase Analytics */
+"setting_analytics_title" = "Analitica";
+
+/* First Launch Setting: button text */
+"setting_doze_only_btn" = "Solo Daily Dozen\n";
+
+/* Preference Settings View: selection button text */
+"setting_doze_only_choice" = "Solo Daily Dozen";
+
+/* First Launch Setting: button text */
+"setting_doze_tweak_btn" = "Daily Dozen +\n21 modifiche";
+
+/* Preference Settings View: selection button text */
+"setting_doze_tweak_choice" = "Daily Dozen + 21 modifiche";
+
+/* Preference Settings View: brief description text below Tweaks visibility control. */
+"setting_doze_tweak_footer" = "Per il percorso salute, usa \"Solo Daily Dozen\". Per il percorso salute e perdita di peso, usa “Daily Dozen + 21 modifiche”.";
+
+/* First Launch Setting: brief description above ‘Daily Dozen Only’ button. */
+"setting_health_alone_txt" = "Percorso salute";
+
+/* First Launch Setting: brief description above ‘Daily Dozen + 21 Tweaks’ button. */
+"setting_health_weight_txt" = "Percorso salute e perdita di peso";
+
+/* Preference Settings View: tweaks visibilty subsection heading */
+"setting_tweak_header" = "Visibilità 21 modifiche";
+
+/* Preference Settings View: Part of ‘Imperial/Metric/Toggle Units’ selector */
+"setting_units_0_imperial" = "Sistema imperiale";
+
+/* Preference Settings View: Part of ‘Imperial/Metric/Toggle Units’ selector */
+"setting_units_1_metric" = "Sistema metrico";
+
+/* Preference Settings View: Part of ‘Imperial/Metric/Toggle Units’ selector */
+"setting_units_2_toggle" = "Cambia sistema";
+
+/* Preference Settings View: brief description text below units control. */
+"setting_units_choice_footer" = "Imposta un sistema predefinito o attiva l'opzione \"Sistema:\" per cambiarlo.";
+
+/* Preference Settings View */
+"setting_units_header" = "Unità di misura";
+
+/* Preference Settings View */
+"setting_util_advanced" = "Utilità avanzate";
+
+/* ‘Streak’ count. Synonym: ‘Progress‘. Formatted number ‘%d’ for consecutive days completed. Place translated text for ‘days’ on the right or left of ‘%d’ based on language directionality. */
+"streakDaysFormat" = "%d giorni";
+
+/* Tweaks Detail view section heading */
+"tweak_detail_section_activity" = "Attività";
+
+/* Tweaks Detail view section heading */
+"tweak_detail_section_description" = "Descrizione";
+
+/* Tweaks daily entry header */
+"tweak_entry_header" = "21 modifiche";
+
+/* heading for daily data entry item */
+"tweakCompleteIntentions.heading" = "Completa le tue ambizioni di miglioramento";
+
+/* heading for daily data entry item */
+"tweakDailyBlackCumin.heading" = "Cumino nero (¼ di cucchiaino)";
+
+/* heading for daily data entry item */
+"tweakDailyCumin.heading" = "Cumino (½ cucchiaino a pranzo e a cena)";
+
+/* heading for daily data entry item */
+"tweakDailyDeflourDiet.heading" = "Meno farina nella tua dieta";
+
+/* heading for daily data entry item */
+"tweakDailyFrontLoad.heading" = "Più calorie a inizio giornata";
+
+/* heading for daily data entry item */
+"tweakDailyGarlic.heading" = "Aglio in polvere (¼  di cucchiaino)";
+
+/* heading for daily data entry item */
+"tweakDailyGinger.heading" = "Zenzero macinato (1 cucchiaino) o pepe di cayenna (½ cucchiaino)";
+
+/* heading for daily data entry item */
+"tweakDailyGreenTea.heading" = "Tè verde (3 tazze)";
+
+/* heading for daily data entry item */
+"tweakDailyHydrate.heading" = "Ricordati di bere";
+
+/* heading for daily data entry item */
+"tweakDailyNutriYeast.heading" = "Lievito alimentare (2 cucchiaini)";
+
+/* heading for daily data entry item */
+"tweakDailyTimeRestrict.heading" = "Limita il tuo tempo per mangiare";
+
+/* heading for daily data entry item */
+"tweakExerciseTiming.heading" = "Ottimizza i tempi di allenamento";
+
+/* heading for daily data entry item */
+"tweakMeal20Minutes.heading" = "Segui la regola dei venti minuti";
+
+/* heading for daily data entry item */
+"tweakMealNegCal.heading" = "Inizia i tuoi pasti con cibi \"a calorie negative\"";
+
+/* heading for daily data entry item */
+"tweakMealUndistracted.heading" = "Goditi i pasti senza distrazioni";
+
+/* heading for daily data entry item */
+"tweakMealVinegar.heading" = "Integra l'aceto (2 cucchiaini per ogni pasto)";
+
+/* heading for daily data entry item */
+"tweakMealWater.heading" = "Bevi prima dei pasti";
+
+/* heading for daily data entry item */
+"tweakNightlyFast.heading" = "Digiuna dopo le 19:00";
+
+/* heading for daily data entry item */
+"tweakNightlySleep.heading" = "Dormi a sufficienza";
+
+/* heading for daily data entry item */
+"tweakNightlyTrendelenbrug.heading" = "Prova una posizione di Trendelenburg leggera";
+
+/* heading for daily data entry item */
+"tweakWeightTwice.heading" = "Pesati due volte al giorno";
+
+/*  */
+"units_label" = "Sistema";
+
+/* Units toggle button text: imperial measurement system */
+"unitToggle.imperial" = "Imperiale";
+
+/* Units toggle button text: metric measurement system */
+"unitToggle.metric" = "Metrico";
+
+/* URL path */
+"urlSegment.base" = "https://nutritionfacts.org/";
+
+/*  */
+"urlSegment.lang" = "";
+
+/* main info menu: book */
+"urlSegmentInfoMenu.book" = "book";
+
+/* main info menu: daily-dozen-challenge */
+"urlSegmentInfoMenu.challenge" = "daily-dozen-challenge";
+
+/* main info menu: cookbook */
+"urlSegmentInfoMenu.cookbook" = "cookbook";
+
+/* main info menu: how-not-to-diet */
+"urlSegmentInfoMenu.diet" = "how-not-to-diet";
+
+/* main info menu: donate */
+"urlSegmentInfoMenu.donate" = "donate";
+
+/* main info menu: open-source */
+"urlSegmentInfoMenu.source" = "open-source";
+
+/* main info menu: subscribe */
+"urlSegmentInfoMenu.subscribe" = "subscribe";
+
+/* team */
+"urlSegmentInfoMenu.team" = "team";
+
+/* main info menu: videos */
+"urlSegmentInfoMenu.videos" = "videos";
+
+/* Label for hyperlink to nutritionfacts.org video topics */
+"videos.link.label" = "Video";
+
+/* Weight Daily Entry: clear button which deletes values */
+"weight_entry_clear" = "Annulla";
+
+/* Weight Daily Entry: label */
+"weight_entry_evening" = "Sera (prima di coricarsi)";
+
+/* Weight Daily Entry: label */
+"weight_entry_morning" = "Mattino (al risveglio)";
+
+/* Weight Daily Entry: label */
+"weight_entry_time" = "Ora";
+
+/* Weight Daily Entry Units: label */
+"weight_entry_units_kg" = "kg";
+
+/* Weight Daily Entry Units: label */
+"weight_entry_units_lbs" = "lbs";
+
+/* Weight Daily Entry: edit button to change values */
+"weight_history_edit_data" = "Modifica dati";
+
+/* Weight Daily Entry: heading */
+"weightEntry.heading" = "Peso";
+
+/* file end */
