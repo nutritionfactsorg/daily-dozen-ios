@@ -8,7 +8,7 @@
 "dateButtonTitle.today" = "Hoje";
 
 /* Doze Detail View subheading: ‘Serving Sizes’ */
-"doze_detail_section_sizes" = "Tamanhos da Porção";
+"doze_detail_section_sizes" = "Porções (sugeridas)";
 
 /* Doze Detail View subheading: ‘Types’ */
 "doze_detail_section_types" = "Tipos";
@@ -65,82 +65,82 @@
 "dozeWholeGrains.heading" = "Grãos Integrais";
 
 /*  */
-"faq_adapt_question" = "The Daily Dozen is too much/too little food for me! Can I adapt it?";
+"faq_adapt_question" = "A Dúzia Diária é muita/pouca comida para mim! Posso adaptá-la?";
 
 /*  */
-"faq_adapt_response" = "Yes, the Daily Dozen is simply meant to be a guide of the healthiest foods that we strive to include every day. It’s not a meal plan and is not meant to be prescriptive. Do your best to eat a diverse array of whole plant foods and adapt the Daily Dozen to the quantities that work for you.";
+"faq_adapt_response" = "Sim, a Dúzia Diária é simplesmente um guia dos alimentos mais saudáveis que nos esforçamos para incluir todos os dias. Não é um plano de refeições e não pretende ser prescritivo. Faça o possível para comer uma variedade diversificada de alimentos vegetais integrais e adapte a Dúzia Diária às quantidades que funcionam melhor para você.";
 
 /*  */
-"faq_age_question" = "Is this adaptable for children, adolescents, and teens?";
+"faq_age_question" = "É adaptável para crianças e adolescentes?";
 
 /*  */
-"faq_age_response.0" = "Children, adolescents, and teenagers have different caloric needs throughout their lifecycle. These needs change to support growth and development at each stage.";
+"faq_age_response.0" = "Crianças e adolescentes têm diferentes necessidades calóricas ao longo de seu ciclo de vida. Essas necessidades mudam de acordo com o crescimento e o desenvolvimento em cada estágio.";
 
 /*  */
-"faq_age_response.1" = "The Daily Dozen was designed as a guide to help people include some of the healthiest foods into their daily routine. While the same framework can be used for most people throughout the lifecycle, the amount of food one needs to eat will vary based on a number of factors like age and activity level. Since we can’t provide specific nutrition or medical advice for your growing child, parents should use this guide as they see best for their child’s needs and/or consult with a registered dietitian or other healthcare provider to help determine what is best for their individual needs.";
+"faq_age_response.1" = "A Dúzia Diária foi desenvolvida como um guia para ajudar as pessoas a incluir alguns dos alimentos mais saudáveis em sua rotina diária. Embora a mesma estrutura possa ser usada para a maioria das pessoas ao longo do ciclo de vida, a quantidade de comida necessária varia de acordo com vários fatores, como idade e nível de atividade. Como não podemos fornecer aconselhamento nutricional ou médico específico para seu/sua filho/a em crescimento, os pais devem usar este guia conforme acharem melhor para as necessidades de seus/suas filhos/as e/ou consultar um/a nutricionista registrado/a ou outro profissional da saúde para ajudar a determinar o que é melhor para as necessidades de seu/sua filho/a.";
 
 /*  */
-"faq_calories_question" = "How many calories are in the Daily Dozen?";
+"faq_calories_question" = "Quantas calorias a Dúzia Diária tem?";
 
 /*  */
-"faq_calories_response.0" = "The Daily Dozen averages about 1,200 calories, but given the wide array of food choices in each category, it can range anywhere from 800-1800. Consider the Other Vegetables category: a cup of bell peppers has a much lower caloric density than a cup of cooked sweet potatoes, therefore the caloric range will depend on your specific food choices. That’s the great thing about the Daily Dozen Checklist—it’s not a one size fits all approach, and can be adapted to your needs.";
+"faq_calories_response.0" = "A Dúzia Diária tem em média cerca de 1.200 calorias, mas, dada a ampla variedade de opções de alimentos de cada categoria, pode variar de 800 a 1.800. Por exemplo, na categoria Outros Vegetais: uma xícara de pimentão tem uma densidade calórica muito menor do que uma xícara de batata-doce cozida, portanto, a faixa calórica dependerá das suas escolhas alimentares específicas. Essa é a grande vantagem da Lista da Dúzia Diária — não é uma abordagem única e pode ser adaptada às suas necessidades.";
 
 /*  */
-"faq_calories_response.1" = "If your goal is weight loss, you can find more information in “How Not to Diet” and the accompanying Twenty-One Tweaks. In “How Not to Diet”, I noted: “A systematic review of successful weight-loss strategies concluded that given the metabolic slowing and increased appetite that accompanies weight loss, to achieve significant weight loss, calorie counts may need to drop as low as 1,200 calories a day for women and 1,500 calories a day for men.”";
+"faq_calories_response.1" = "Se o seu objetivo é perder peso, você pode encontrar mais informações no livro “Como Não Fazer Dieta” e nos Vinte e Um Ajustes que o acompanham. Em “Como Não Fazer Dieta”, eu observei: “Uma revisão sistemática de estratégias bem sucedidas de perda de peso concluiu que, devido à desaceleração metabólica e ao aumento do apetite que acompanham a perda de peso, para atingir uma perda de peso significativa, a quantidade de calorias pode precisar baixar para 1.200 calorias por dia para mulheres e 1.500 calorias por dia para homens”.";
 
 /*  */
-"faq_calories_response.2" = "On the other hand, if your goal is weight gain, then you may want to focus on adding in more calorie-dense foods, such as sweet potatoes, avocados, nuts, and soy products.";
+"faq_calories_response.2" = "Por outro lado, se o seu objetivo é ganhar peso, você pode adicionar mais alimentos ricos em calorias, como batata-doce, abacate, castanhas e produtos de soja.";
 
 /*  */
-"faq_mother_question" = "Can I do this while pregnant or breastfeeding?";
+"faq_mother_question" = "Posso fazer isso durante a gravidez ou a amamentação?";
 
 /*  */
-"faq_mother_response" = "People who are pregnant or breastfeeding have different caloric and nutritional needs than people who are not. As a reminder, the Daily Dozen is not a meal plan and should not be the only foods consumed within a day. People who are pregnant or breastfeeding should consult with their health care practitioner or a registered dietician for assistance with meeting their specific caloric requirements and nutritional needs.";
+"faq_mother_response" = "Pessoas grávidas ou amamentando têm necessidades calóricas e nutricionais diferentes de pessoas que não estão. Como lembrete, a Dúzia Diária não é um plano de refeições e não deve ser uma lista dos únicos alimentos consumidos em um dia. As pessoas que estão grávidas ou amamentando devem consultar um/a médico/a ou um/a nutricionista registrado/a para obter assistência no atendimento das suas necessidades calóricas e nutricionais específicas.";
 
 /*  */
-"faq_scaling_question" = "I can’t possibly eat that many beans/grains/etc.!";
+"faq_scaling_question" = "Eu não consigo comer tantos feijões/grãos/etc.!";
 
 /*  */
-"faq_scaling_response" = "That’s okay! The Daily Dozen is an aspirational guide. Do your best to incorporate as many of these healthy plant foods as possible. If you are new to eating a lot of beans (or grains, greens, etc!), you may need to start with smaller amounts and slowly increase the quantity in order to give your microbiome a chance to adjust. You can also get creative: for example, add some beans to your morning oatmeal. If you load it up with berries, flax seeds, and nuts, you won’t even notice the beans. You can also mash beans into a sandwich spread, or make my [BROL](https://nutritionfacts.org/recipe/basic-brol-barley-rye-oats-and-lentils)—barley, rye, oat groats, and lentils—that I use as a base for many meals and is a simple way to get a variety of whole grains with a built-in serving of legumes.";
+"faq_scaling_response" = "Tudo bem! A Dúzia Diária é um guia aspiracional. Faça o possível para incorporar o máximo possível desses alimentos vegetais saudáveis. Se você está começando a comer muitos feijões (ou grãos, verduras, etc!), pode ser necessário começar com quantidades menores e aumentar lentamente a quantidade para dar ao seu microbioma uma chance de se ajustar. Você também pode ser criativo: por exemplo, adicione alguns feijões ao seu mingau de aveia. Se você adicionar frutas silvestres, sementes de linhaça e castanhas, nem notará os feijões. Você também pode amassar feijão e fazer um patê para sanduíche ou fazer meu [BROL](https://nutritionfacts.org/recipe/basic-brol-barley-rye-oats-and-lentils) — cevada, centeio, aveia e lentilhas — que eu uso como base para muitas refeições e é uma maneira simples de obter uma variedade de grãos integrais com uma porção integrada de leguminosas.";
 
 /*  */
-"faq_supplements_question" = "I thought that Dr. Greger recommends taking Vitamin D and DHA supplements. Why aren’t they included?";
+"faq_supplements_question" = "Eu achei que o Dr. Greger recomendasse tomar suplementos de vitamina D e DHA. Por que eles não estão incluídos?";
 
 /*  */
-"faq_supplements_response" = "We have updated the Daily Dozen app to reflect only required supplements. For example, Vitamin D is only needed for people who get inadequate sun exposure. Our goal is to share the science with you so you can make your own informed decisions. You can see all of my recommendations on the [Optimum Nutrient](https://nutritionfacts.org/optimum-nutrient-recommendations) page.";
+"faq_supplements_response" = "Atualizamos o aplicativo da Dúzia Diária para refletir apenas os suplementos necessários. Por exemplo, a vitamina D só é necessária para pessoas que não tem exposição solar adequada. Nosso objetivo é compartilhar a ciência com você para que você possa tomar as suas próprias decisões informadas. Você pode ver todas as minhas recomendações na página [Optimum Nutrient] (https://nutritionfacts.org/optimum-nutrient-recommendations).";
 
 /* History Data Alert: Cancel button */
-"history_data_alert_cancel" = "Cancel";
+"history_data_alert_cancel" = "Cancelar";
 
 /* History Data Alert: Clear button */
-"history_data_alert_clear" = "Clear";
+"history_data_alert_clear" = "Limpar";
 
 /* History Data Alert: Import buttom */
-"history_data_alert_import" = "Import";
+"history_data_alert_import" = "Importar";
 
 /* History Data Alert: OK button */
-"history_data_alert_ok" = "OK";
+"history_data_alert_ok" = "Certo";
 
 /* History Data: export action button */
-"history_data_export_btn" = "Export History Data";
+"history_data_export_btn" = "Exportar Dados do Histórico";
 
 /* History Data: export description text */
-"history_data_export_text" = "Export has been written to:";
+"history_data_export_text" = "Dados Exportados foram escritos em:";
 
 /* History Data: import action button */
-"history_data_import_btn" = "Import History Data";
+"history_data_import_btn" = "Importar Dados do Histórico";
 
 /* History Data: import caution text */
-"history_data_import_caution_text" = "Caution: This import will overwrite all history data currently in this Daily Dozen application. Would you like to proceed with the import?";
+"history_data_import_caution_text" = "Atenção: esta importação substituirá todos os dados do histórico no aplicativo da Dúzia Diária. Deseja prosseguir com a importação?";
 
 /* History Data: import data error text */
-"history_data_import_error_text" = "Error: The import was not performed because of a data error. The existing data has remained unchanged.";
+"history_data_import_error_text" = "Erro: A importação não foi realizada devido a um erro nos dados. Os dados existentes não foram alterados.";
 
 /* History Data: import not found text */
-"history_data_import_notfound_text" = "Did not find a valid import file in the Daily Dozen Documents folder.";
+"history_data_import_notfound_text" = "Não foi encontrado um arquivo de importação válido na pasta Documentos da Dúzia Diária.";
 
 /* History Data: preferences header & title */
-"history_data_title" = "History";
+"history_data_title" = "Histórico";
 
 /* History View: calendar scale control */
 "history_scale_choice_day" = "Dia";
@@ -203,7 +203,7 @@
 "info_app_about_overview" = "Use este aplicativo diariamente para controlar os seus alimentos e acompanhar os conselhos que eu recomendo para uma ótima saúde e longevidade nos meus livros Comer Para Não Morrer e Como Não Fazer Dieta.";
 
 /* Info About View: Contributing Translators List (language code)  See https://en.wikipedia.org/wiki/List_of_ISO_639-1_codes */
-"info_app_about_translators" = "Agradecimentos especiais aos nossos tradutores voluntários: Ricard Soler Roger (ca), Luděk Bouška (cs,sk), Lenka Lukacová (cs), Anke Schliessmann (de), Ángela Graña (es), Doron Barak (he), Ruth Levy (he), Joanna Klopotek (pl), Tania Bassi (pt-BR), João Madureira (pt-PT), Evgeniya Lyakh (ru), Katarína Mocáková (sk).";
+"info_app_about_translators" = "Agradecimentos especiais aos nossos tradutores voluntários: Petar & Tsveti Enchev (bg), Ricard Soler Roger (ca), Luděk Bouška (cs,sk), Lenka Lukacová (cs), Anke Schliessmann (de), Ángela Graña (es), Doron Barak (he), Ruth Levy (he), Annalisa Guerrini-Körner (it), Ilaria Zanini (it), Hanna Gurzeda (pl), Joanna Klopotek (pl), Tania Bassi (pt-BR), João Madureira (pt-PT), Evgeniya Lyakh (ru), Katarína Mocáková (sk).";
 
 /* Info About View: Application release version */
 "info_app_about_version" = "versão 3.4.1";

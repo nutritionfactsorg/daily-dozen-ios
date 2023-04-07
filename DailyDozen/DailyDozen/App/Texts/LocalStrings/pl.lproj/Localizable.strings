@@ -110,37 +110,37 @@
 "faq_supplements_response" = "Zaktualizowaliśmy aplikację Codzienny Tuzin, aby zawierała tylko wymagane suplementy. Na przykład witamina D jest potrzebna tylko osobom, które mają niewystarczającą ekspozycję na słońce. Naszym celem jest dzielenie się z tobą nauką, abyś mógł/-a podejmować własne, świadome decyzje. Możesz zobaczyć wszystkie moje zalecenia na stronie [Optimum Nutrient](https://nutritionfacts.org/optimum-nutrient-recommendations).";
 
 /* History Data Alert: Cancel button */
-"history_data_alert_cancel" = "Cancel";
+"history_data_alert_cancel" = "Anuluj";
 
 /* History Data Alert: Clear button */
-"history_data_alert_clear" = "Clear";
+"history_data_alert_clear" = "Wyczyść";
 
 /* History Data Alert: Import buttom */
-"history_data_alert_import" = "Import";
+"history_data_alert_import" = "Importuj";
 
 /* History Data Alert: OK button */
 "history_data_alert_ok" = "OK";
 
 /* History Data: export action button */
-"history_data_export_btn" = "Export History Data";
+"history_data_export_btn" = "Eksportuj dane";
 
 /* History Data: export description text */
-"history_data_export_text" = "Export has been written to:";
+"history_data_export_text" = "Dane wyeksportowano do:";
 
 /* History Data: import action button */
-"history_data_import_btn" = "Import History Data";
+"history_data_import_btn" = "Importuj dane";
 
 /* History Data: import caution text */
-"history_data_import_caution_text" = "Caution: This import will overwrite all history data currently in this Daily Dozen application. Would you like to proceed with the import?";
+"history_data_import_caution_text" = "Uwaga: Ten import spowoduje, że wszystkie dane znajdujące się obecnie w tej aplikacji Codzienny Tuzin zostaną zastąpione. Czy chcesz kontynuować import?";
 
 /* History Data: import data error text */
-"history_data_import_error_text" = "Error: The import was not performed because of a data error. The existing data has remained unchanged.";
+"history_data_import_error_text" = "Błąd: Importowanie nie powiodło się z powodu błędu danych. Dotychczasowe dane nie uległy zmianie.";
 
 /* History Data: import not found text */
-"history_data_import_notfound_text" = "Did not find a valid import file in the Daily Dozen Documents folder.";
+"history_data_import_notfound_text" = "Nie znaleziono prawidłowego pliku importu w folderze Dokumenty Codziennego Tuzina.";
 
 /* History Data: preferences header & title */
-"history_data_title" = "History";
+"history_data_title" = "Historia";
 
 /* History View: calendar scale control */
 "history_scale_choice_day" = "Dzień";
@@ -200,7 +200,7 @@
 "info_app_about_overview" = "Korzystaj z tej aplikacji codziennie, aby śledzić żywność i porady, które polecam dla optymalnego zdrowia i długowieczności w moich książkach „Jak nie umrzeć przedwcześnie” i „How Not to Diet”.";
 
 /* Info About View: Contributing Translators List (language code)  See https://en.wikipedia.org/wiki/List_of_ISO_639-1_codes */
-"info_app_about_translators" = "Specjalne podziękowania dla naszych tłumaczy-wolontariuszy: Ricard Soler Roger (ca), Luděk Bouška (cs,sk), Lenka Lukacová (cs), Anke Schliessmann (de), Ángela Graña (es), Doron Barak (he), Ruth Levy (he), Hanna Gurzeda (pl), Joanna Klopotek (pl), Tania Bassi (pt-BR), João Madureira (pt-PT), Evgeniya Lyakh (ru), Katarína Mocáková (sk).";
+"info_app_about_translators" = "Specjalne podziękowania dla naszych tłumaczy-wolontariuszy: Petar & Tsveti Enchev (bg), Ricard Soler Roger (ca), Luděk Bouška (cs,sk), Lenka Lukacová (cs), Anke Schliessmann (de), Ángela Graña (es), Doron Barak (he), Ruth Levy (he), Annalisa Guerrini-Körner (it), Ilaria Zanini (it), Hanna Gurzeda (pl), Joanna Klopotek (pl), Tania Bassi (pt-BR), João Madureira (pt-PT), Evgeniya Lyakh (ru), Katarína Mocáková (sk).";
 
 /* Info About View: Application release version */
 "info_app_about_version" = "wersja 3.4.1";
