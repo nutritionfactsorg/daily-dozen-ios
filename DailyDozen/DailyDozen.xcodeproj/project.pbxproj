@@ -342,6 +342,14 @@
 		4C5C4EFB2995C8C00096AAA1 /* ro */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ro; path = ro.lproj/Localizable.strings; sourceTree = "<group>"; };
 		4C5C4EFC2995C8C00096AAA1 /* ro */ = {isa = PBXFileReference; lastKnownFileType = text.json; name = ro; path = ro.lproj/DozeDetailData.json; sourceTree = "<group>"; };
 		4C5C4EFD2995C8C00096AAA1 /* ro */ = {isa = PBXFileReference; lastKnownFileType = text.json; name = ro; path = ro.lproj/TweakDetailData.json; sourceTree = "<group>"; };
+		4C97E05C29E0247200601772 /* bg */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = bg; path = bg.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		4C97E05D29E0247200601772 /* bg */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = bg; path = bg.lproj/Localizable.strings; sourceTree = "<group>"; };
+		4C97E05E29E0247200601772 /* bg */ = {isa = PBXFileReference; lastKnownFileType = text.json; name = bg; path = bg.lproj/DozeDetailData.json; sourceTree = "<group>"; };
+		4C97E05F29E0247200601772 /* bg */ = {isa = PBXFileReference; lastKnownFileType = text.json; name = bg; path = bg.lproj/TweakDetailData.json; sourceTree = "<group>"; };
+		4C97E06029E0247E00601772 /* it */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = it; path = it.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		4C97E06129E0247E00601772 /* it */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = it; path = it.lproj/Localizable.strings; sourceTree = "<group>"; };
+		4C97E06229E0247E00601772 /* it */ = {isa = PBXFileReference; lastKnownFileType = text.json; name = it; path = it.lproj/DozeDetailData.json; sourceTree = "<group>"; };
+		4C97E06329E0247E00601772 /* it */ = {isa = PBXFileReference; lastKnownFileType = text.json; name = it; path = it.lproj/TweakDetailData.json; sourceTree = "<group>"; };
 		4C98FFD829143A3D00E92B66 /* cs */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = cs; path = cs.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		4C98FFD929143A3D00E92B66 /* cs */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = cs; path = cs.lproj/Localizable.strings; sourceTree = "<group>"; };
 		4C98FFDA29143A3E00E92B66 /* cs */ = {isa = PBXFileReference; lastKnownFileType = text.json; name = cs; path = cs.lproj/DozeDetailData.json; sourceTree = "<group>"; };
@@ -1245,8 +1253,9 @@
 		CFE698301F974B9700CD7905 /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
+				BuildIndependentTargetsInParallel = YES;
 				LastSwiftUpdateCheck = 1120;
-				LastUpgradeCheck = 1210;
+				LastUpgradeCheck = 1430;
 				ORGANIZATIONNAME = Nutritionfacts.org;
 				TargetAttributes = {
 					498A2275237CD81F007AF5FB = {
@@ -1284,6 +1293,8 @@
 				cs,
 				sk,
 				ro,
+				bg,
+				it,
 			);
 			mainGroup = CFE6982F1F974B9700CD7905;
 			productRefGroup = CFE698391F974B9700CD7905 /* Products */;
@@ -1634,6 +1645,8 @@
 				4C98FFDB29143A3F00E92B66 /* cs */,
 				4C4632F02941A3A100CB0313 /* sk */,
 				4C5C4EFD2995C8C00096AAA1 /* ro */,
+				4C97E05F29E0247200601772 /* bg */,
+				4C97E06329E0247E00601772 /* it */,
 			);
 			name = TweakDetailData.json;
 			sourceTree = "<group>";
@@ -1653,6 +1666,8 @@
 				4C98FFD829143A3D00E92B66 /* cs */,
 				4C4632ED2941A3A100CB0313 /* sk */,
 				4C5C4EFA2995C8C00096AAA1 /* ro */,
+				4C97E05C29E0247200601772 /* bg */,
+				4C97E06029E0247E00601772 /* it */,
 			);
 			name = InfoPlist.strings;
 			sourceTree = "<group>";
@@ -1672,6 +1687,8 @@
 				4C98FFDA29143A3E00E92B66 /* cs */,
 				4C4632EF2941A3A100CB0313 /* sk */,
 				4C5C4EFC2995C8C00096AAA1 /* ro */,
+				4C97E05E29E0247200601772 /* bg */,
+				4C97E06229E0247E00601772 /* it */,
 			);
 			name = DozeDetailData.json;
 			sourceTree = "<group>";
@@ -1691,6 +1708,8 @@
 				4C98FFD929143A3D00E92B66 /* cs */,
 				4C4632EE2941A3A100CB0313 /* sk */,
 				4C5C4EFB2995C8C00096AAA1 /* ro */,
+				4C97E05D29E0247200601772 /* bg */,
+				4C97E06129E0247E00601772 /* it */,
 			);
 			name = Localizable.strings;
 			sourceTree = "<group>";
