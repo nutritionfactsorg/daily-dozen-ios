@@ -2,6 +2,8 @@
 //  SqliteConnector.swift
 //  SqliteMigrateLegacy
 //
+//  Copyright © 2023 NutritionFacts.org. All rights reserved.
+//
 
 import Foundation
 import SQLiteApi

@@ -115,7 +115,7 @@
 		4C3C599C29BA7AF300CED942 /* SqliteMigrateLegacy */ = {
 			isa = PBXGroup;
 			children = (
-				4C3C59D029BAA3A800CED942 /* Sqlite */,
+				4C3C59D029BAA3A800CED942 /* Database */,
 				4C3C599D29BA7AF300CED942 /* AppDelegate.swift */,
 				4C3C599F29BA7AF300CED942 /* SceneDelegate.swift */,
 				4C3C59A129BA7AF300CED942 /* ViewController.swift */,
@@ -144,12 +144,12 @@
 			path = SqliteMigrateLegacyUITests;
 			sourceTree = "<group>";
 		};
-		4C3C59D029BAA3A800CED942 /* Sqlite */ = {
+		4C3C59D029BAA3A800CED942 /* Database */ = {
 			isa = PBXGroup;
 			children = (
 				4C3C59D129BAA3BB00CED942 /* SqliteConnector.swift */,
 			);
-			path = Sqlite;
+			path = Database;
 			sourceTree = "<group>";
 		};
 		4C439EE829BB0C0100121A39 /* Packages */ = {

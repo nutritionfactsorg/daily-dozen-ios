@@ -1,6 +1,6 @@
 //
 //  SpmResourcesUtil.swift
-//  SQLiteFramework
+//  SQLiteFramework/Utilities
 //
 
 import Foundation
