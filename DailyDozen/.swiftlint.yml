@@ -5,6 +5,7 @@ disabled_rules:
   - closure_parameter_position
   - comment_spacing
   - for_where
+  - blanket_disable_command
 
   # - file_length
   # - function_body_length
