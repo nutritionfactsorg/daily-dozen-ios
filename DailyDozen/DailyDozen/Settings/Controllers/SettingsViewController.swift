@@ -14,8 +14,6 @@ import UserNotifications
 import Firebase
 import FirebaseAnalytics // "Google Analytics"
 
-// swiftlint: // disable type_body_length
-
 class SettingsViewController: UITableViewController {
     
     /// Instantiates and returns the initial view controller for a storyboard.
