@@ -3,7 +3,7 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 52;
+	objectVersion = 53;
 	objects = {
 
 /* Begin PBXBuildFile section */
@@ -100,10 +100,10 @@
 			isa = PBXGroup;
 			children = (
 				4CC0313629CD925D003787C5 /* LogService */,
-				4C8A23F829BB08BE00C7B1D1 /* SQLiteManager */,
 				4C8A23F929BB0A2300C7B1D1 /* SQLiteApi */,
 				4C8A23FB29BB0A6400C7B1D1 /* SQLiteCLib */,
 				4C8A240229BB0AB700C7B1D1 /* SQLiteFramework */,
+				4C8A23F829BB08BE00C7B1D1 /* SQLiteManager */,
 			);
 			name = Packages;
 			sourceTree = "<group>";
@@ -202,8 +202,9 @@
 		B364E0D729BAA8C800357CC3 /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
+				BuildIndependentTargetsInParallel = YES;
 				LastSwiftUpdateCheck = 1010;
-				LastUpgradeCheck = 1420;
+				LastUpgradeCheck = 1430;
 				ORGANIZATIONNAME = NutritionFacts.org;
 				TargetAttributes = {
 					B364E0DE29BAA8C900357CC3 = {

@@ -6,6 +6,7 @@
 //
 
 import UIKit
+
 class ViewController: UIViewController {
 
     override func viewDidLoad() {
@@ -29,7 +30,7 @@ class ViewController: UIViewController {
         SqliteConnector.run.importData()
     }
     
-    @IBAction func timingTest(_ sender: UIButton) {
+    @IBAction func timingTestBtn(_ sender: UIButton) {
         SqliteConnector.run.timingTest()
     }
     
