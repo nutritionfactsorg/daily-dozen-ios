@@ -14,6 +14,7 @@ target 'DailyDozen' do
   
   ## https://github.com/firebase/firebase-ios-sdk
   ##
+  ## Original
   ## Firebase (8.14.0)
   ## FirebaseAnalytics (8.14.0)
   ## FirebaseCore (8.14.0)
@@ -24,6 +25,18 @@ target 'DailyDozen' do
   ## GoogleUtilities (7.7.0)
   ## PromisesObjC (2.1.0)
   ## nanopb (2.30908.0)
+  
+  #### Update
+  ## Firebase 10.8.0
+  ## FirebaseAnalytics 10.8.0
+  ## FirebaseCore 10.8.0
+  ## FirebaseCoreInternal 10.8.0
+  ## FirebaseInstallations 10.8.0
+  ## GoogleAppMeasurement 10.8.0
+  ## GoogleUtilities 7.11.1
+  ## PromisesObjC 2.2.0
+  ## nanopb 2.30909.0
+
   ##
   ## For Analytics WITH IDFA collection capability
   #pod 'Firebase/Analytics'
@@ -54,6 +67,7 @@ post_install do |installer|
                 
         config.build_settings['ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES'] = '$(inherited)'
         
+        # Toggle Mac (Designed for iPhone) and Mac (Designed for iPad) destinations.
         config.build_settings['SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD'] = 'NO'
         config.build_settings['SUPPORTS_MACCATALYST'] = 'NO'
         
