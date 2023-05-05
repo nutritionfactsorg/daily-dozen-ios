@@ -206,7 +206,7 @@
 "info_app_about_translators" = "Besonderer Dank an unsere ehrenamtlichen Übersetzer: Petar & Tsveti Enchev (bg), Ricard Soler Roger (ca), Luděk Bouška (cs,sk), Lenka Lukacová (cs), Anke Schliessmann (de), Ángela Graña (es), Doron Barak (he), Ruth Levy (he), Annalisa Guerrini-Körner (it), Ilaria Zanini (it), Hanna Gurzeda (pl), Joanna Klopotek (pl), Tania Bassi (pt-BR), Joao Madureira (pt-PT), Evgeniya Lyakh (ru), Katarína Mocáková (sk).";
 
 /* Info About View: Application release version */
-"info_app_about_version" = "Version 3.4.1";
+"info_app_about_version" = "Version 3.4.3";
 
 /* Info About View: Welcome */
 "info_app_about_welcome" = "Willkommen zu meinem Täglichen Dutzend!";
