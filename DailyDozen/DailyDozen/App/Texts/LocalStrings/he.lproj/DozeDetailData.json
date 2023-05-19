@@ -4,24 +4,24 @@
       "heading" : "שעועית",
       "servings" : [
         {
-          "imperial" : "¼ cup hummus or bean dip",
-          "metric" : "60 g hummus or bean dip"
+          "imperial" : "1/4 כוס חומוס או מתבל קיטניות",
+          "metric" : "60 גרם חומוס או מתבל קיטניות"
         },
         {
-          "imperial" : "½ cup cooked beans, split peas, or lentils",
-          "metric" : "90 g cooked beans, split peas, or lentils"
+          "imperial" : "1/2 כוס שעועית, אפונה יבשה, או עדשים- מבושלות",
+          "metric" : "90 גרם שעועית, אפונה יבשה, או עדשים- מבושלות"
         },
         {
-          "imperial" : "½ cup tofu or tempeh",
-          "metric" : "100 g tofu or tempeh"
+          "imperial" : "1/2 כוס טופו או טמפה",
+          "metric" : "100 גרם טופו או טמפה"
         },
         {
-          "imperial" : "1 cup fresh peas or snow peas",
-          "metric" : "130 g fresh peas or snow peas"
+          "imperial" : "1 כוס אפונה טריה או אפונת שלג",
+          "metric" : "130 גרם אפונה טריה או אפונת שלג"
         },
         {
-          "imperial" : "1 cup fresh sprouted beans (lentils, mung beans)",
-          "metric" : "100 g fresh sprouted beans (lentils, mung beans)"
+          "imperial" : "1 כוס  קטניות מונבטות (עדשים, שעועית מש)",
+          "metric" : "100 גרם קטניות מונבטות (עדשים, שעועית מש)"
         }
       ],
       "topic" : "topics/beans",

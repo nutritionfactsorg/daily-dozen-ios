@@ -8,7 +8,7 @@
 "dateButtonTitle.today" = "היום";
 
 /* Doze Detail View subheading: ‘Serving Sizes’ */
-"doze_detail_section_sizes" = "Serving Sizes (Suggested)";
+"doze_detail_section_sizes" = "גודל מנה (מוצע)";
 
 /* Doze Detail View subheading: ‘Types’ */
 "doze_detail_section_types" = "סוגים";
@@ -65,82 +65,82 @@
 "dozeWholeGrains.heading" = "דגנים מלאים";
 
 /*  */
-"faq_adapt_question" = "The Daily Dozen is too much/too little food for me! Can I adapt it?";
+"faq_adapt_question" = "\"התריסר היומי\" זה יותר מדי אוכל בשבילי! האם אוכל להתאים את זה?";
 
 /*  */
-"faq_adapt_response" = "Yes, the Daily Dozen is simply meant to be a guide of the healthiest foods that we strive to include every day. It’s not a meal plan and is not meant to be prescriptive. Do your best to eat a diverse array of whole plant foods and adapt the Daily Dozen to the quantities that work for you.";
+"faq_adapt_response" = "כן, \"התריסר היומי\" אמור להיות רק מדריך למזונות הבריאים ביותר שאנו שואפים לכלול כל יום. הוא אינו תכנית ארוחות ולא אמור להיות הנחיות מדוייקות. השתדלו לאכול מגוון רחב של מזונות צמחיים שלמים והתאימו את \"התריסר היומי\" לכמויות שמתאימות לכם.";
 
 /*  */
-"faq_age_question" = "Is this adaptable for children, adolescents, and teens?";
+"faq_age_question" = "האם זה ניתן להתאמה לילדים, מתבגרים, ובני עשרה?";
 
 /*  */
-"faq_age_response.0" = "Children, adolescents, and teenagers have different caloric needs throughout their lifecycle. These needs change to support growth and development at each stage.";
+"faq_age_response.0" = "לילדים, מתבגרים ובני עשרה יש דרישות קלוריות שונות בשלבים שונים של החיים. צרכים אלו משתנים כדי לתמוך בצמיחה והתפתחות בכל שלב.";
 
 /*  */
-"faq_age_response.1" = "The Daily Dozen was designed as a guide to help people include some of the healthiest foods into their daily routine. While the same framework can be used for most people throughout the lifecycle, the amount of food one needs to eat will vary based on a number of factors like age and activity level. Since we can’t provide specific nutrition or medical advice for your growing child, parents should use this guide as they see best for their child’s needs and/or consult with a registered dietitian or other healthcare provider to help determine what is best for their individual needs.";
+"faq_age_response.1" = "\"התריסר היומי\" תוכנן להיות מדריך שעוזר לאנשים להכליל כמה מהמזונות הבריאים ביותר בתזונתם היומיומית. בעוד שניתן להשתמש באותה התבנית עבור רוב האנשים בכל שלבי החיים, כמות המזון הנדרשת לכם משתנה לפי מספר גורמים כמו גיל ורמת פעילות. מאחר ואיננו יכולים לתת ייעוץ תזונתי או רפואי עבור ילדכם הגדל, הורים צריכים להשתמש במדריך זה לפי מיטב הבנתם עבור הצרכים של הילד, ו/או להתייעץ עם דיאטנית מוסמכת או עם יועץ רפואי אחר שיעזרו לקבוע מה עדיף  לצרכים המסויימים שלהם.";
 
 /*  */
-"faq_calories_question" = "How many calories are in the Daily Dozen?";
+"faq_calories_question" = "כמה קלוריות יש ב-\"תריסר היומי\"?";
 
 /*  */
-"faq_calories_response.0" = "The Daily Dozen averages about 1,200 calories, but given the wide array of food choices in each category, it can range anywhere from 800-1800. Consider the Other Vegetables category: a cup of bell peppers has a much lower caloric density than a cup of cooked sweet potatoes, therefore the caloric range will depend on your specific food choices. That’s the great thing about the Daily Dozen Checklist—it’s not a one size fits all approach, and can be adapted to your needs.";
+"faq_calories_response.0" = "ב-\"תריסר היומי\" יש בממוצע כ-1200 קלוריות, אבל בגלל המגוון הרחב של מזונות שונים בכל קטגוריה, זה יכול להשתנות בין 800 ל-1800 קלוריות. למשל, בקטגוריה \"ירקות אחרים\": בכוס של פלפלים ירוקים יש הרבה פחות קלוריות מאשר בכוס של בטטה מבושלת, לכן טווח הקלוריות תלוי בבחירות המסויימות שלכם. זה היתרון של הרשימות ב-\"תריסר היומי\"- אין זו גישה של דבר אחד לכולם, אלא ניתן להתאים זאת לצרכים שלכם.";
 
 /*  */
-"faq_calories_response.1" = "If your goal is weight loss, you can find more information in “How Not to Diet” and the accompanying Twenty-One Tweaks. In “How Not to Diet”, I noted: “A systematic review of successful weight-loss strategies concluded that given the metabolic slowing and increased appetite that accompanies weight loss, to achieve significant weight loss, calorie counts may need to drop as low as 1,200 calories a day for women and 1,500 calories a day for men.”";
+"faq_calories_response.1" = "אם המטרה שלכם היא הפחתת משקל, תוכלו למצוא מידע נוסף בספר “How Not to Diet”, ובתוספת שלו \"Twenty-One Tweaks\". ב-“How Not to Diet\" ציינתי: \"סקירה שיטתית של אסטרטגיות מוצלחות להפחתת משקל הסיקה שבגלל ההאטה המטבולית והתאבון המוגבר שמלווים הפחתת משקל, כדי להשיג הפחתת משקל משמעותית, ייתכן שצריכת הקלוריות צריכה לרדת עד 1200 קלוריות ליום בנשים ו-1500 קלוריות ביום בגברים.";
 
 /*  */
-"faq_calories_response.2" = "On the other hand, if your goal is weight gain, then you may want to focus on adding in more calorie-dense foods, such as sweet potatoes, avocados, nuts, and soy products.";
+"faq_calories_response.2" = "מצד שני, אם מטרתכם היא עלייה במשקל, אולי תרצו להתמקד בהוספת מזונות עתירי קלוריות כמו בטטה, אבוקדו, אגוזים ומוצרי סויה.";
 
 /*  */
-"faq_mother_question" = "Can I do this while pregnant or breastfeeding?";
+"faq_mother_question" = "אוכל לעשות זאת בזמן הריון או הנקה?";
 
 /*  */
-"faq_mother_response" = "People who are pregnant or breastfeeding have different caloric and nutritional needs than people who are not. As a reminder, the Daily Dozen is not a meal plan and should not be the only foods consumed within a day. People who are pregnant or breastfeeding should consult with their health care practitioner or a registered dietician for assistance with meeting their specific caloric requirements and nutritional needs.";
+"faq_mother_response" = "לנשים בהריון או מניקות יש צרכים קלוריים ותזונתיים שונים מאנשים אחרים. נזכיר שה\"תריסר היומי\" אינו תכנית ארוחות ולא צריך להיות המזונות שרק אותם תצרכו במהלך היום. נשים בהריון או מניקות צריכות להתייעץ עם מומחי רפואה או דיאטניות מוסמכות לעזרה בהשגת הדרישות הקלוריות והתזונתיות שלהן. ";
 
 /*  */
-"faq_scaling_question" = "I can’t possibly eat that many beans/grains/etc.!";
+"faq_scaling_question" = "אינני יכול בשום אופן לאכול כל כך הרבה קטניות/דגנים/וכו.!";
 
 /*  */
-"faq_scaling_response" = "That’s okay! The Daily Dozen is an aspirational guide. Do your best to incorporate as many of these healthy plant foods as possible. If you are new to eating a lot of beans (or grains, greens, etc!), you may need to start with smaller amounts and slowly increase the quantity in order to give your microbiome a chance to adjust. You can also get creative: for example, add some beans to your morning oatmeal. If you load it up with berries, flax seeds, and nuts, you won’t even notice the beans. You can also mash beans into a sandwich spread, or make my [BROL](https://nutritionfacts.org/recipe/basic-brol-barley-rye-oats-and-lentils)—barley, rye, oat groats, and lentils—that I use as a base for many meals and is a simple way to get a variety of whole grains with a built-in serving of legumes.";
+"faq_scaling_response" = "זה בסדר. התריסר היומי מדריך לכוון לשאוף אליו. עשו כמיטב יכולתכם להכליל את מירב המזונות הצמחיים הבריאים הללו. אם זה חדש לכם לאכול הרבה קטניות (או דגנים, ירוקים, וכו.), ייתכן שתצטרכו להתחיל בכמויות קטנות יותר ולהגדילן בהדרגה, כדי לתת לחיידקי המעיים שלכם זמן להתאמה. תוכלו גם להיות יצירתיים. למשל, הוספת שעועית לשיבולת השועל שלכם בבוקר. אם תוסיפו להם הרבה פירות יער, פשתן, זרעים ואגוזים, לא תרגישו את השעועית כלל. תוכלו גם לרסק את השעועית לממרח סנדביץ, או להכין את המתכון שלי לשיפון, שיבולת שועל, שעורה ועדשים [BROL](https://nutritionfacts.org/recipe/basic-brol-barley-rye-oats-and-lentils) שמשמש לי כבסיס לארוחות רבות והוא דרך פשוטה לקבל מגוון דגנים מלאים ומכיל גם מנת קטניות. ";
 
 /*  */
-"faq_supplements_question" = "I thought that Dr. Greger recommends taking Vitamin D and DHA supplements. Why aren’t they included?";
+"faq_supplements_question" = "חשבתי שד\"ר גרגר ממליץ לקחת תוספי ויטמין די ו-DHA. מדוע הם אינם נכללים כאן?";
 
 /*  */
-"faq_supplements_response" = "We have updated the Daily Dozen app to reflect only required supplements. For example, Vitamin D is only needed for people who get inadequate sun exposure. Our goal is to share the science with you so you can make your own informed decisions. You can see all of my recommendations on the [Optimum Nutrient](https://nutritionfacts.org/optimum-nutrient-recommendations) page.";
+"faq_supplements_response" = "עדכנו את התריסר היומי כך שיכיל רק תוספים נדרשים. לדוגמה, ויטמין די נדרש רק לאנשים שאינם נחשפים מספיק לשמש. מטרתנו לחלוק אתכם את המדע כדי שתוכלו לעשות החלטות מודעות בעצמכם. תוכלו למצוא את כל המלצותי בדף [Optimum Nutrient](https://nutritionfacts.org/optimum-nutrient-recommendations) ";
 
 /* History Data Alert: Cancel button */
-"history_data_alert_cancel" = "Cancel";
+"history_data_alert_cancel" = "בטל";
 
 /* History Data Alert: Clear button */
-"history_data_alert_clear" = "Clear";
+"history_data_alert_clear" = "נקה";
 
 /* History Data Alert: Import buttom */
-"history_data_alert_import" = "Import";
+"history_data_alert_import" = "ייבוא";
 
 /* History Data Alert: OK button */
-"history_data_alert_ok" = "OK";
+"history_data_alert_ok" = "אישור";
 
 /* History Data: export action button */
-"history_data_export_btn" = "Export History Data";
+"history_data_export_btn" = "ייצוא נתוני היסטוריה";
 
 /* History Data: export description text */
-"history_data_export_text" = "Export has been written to:";
+"history_data_export_text" = "ייצוא הועבר אל:";
 
 /* History Data: import action button */
-"history_data_import_btn" = "Import History Data";
+"history_data_import_btn" = "ייבוא נתוני היסטוריה";
 
 /* History Data: import caution text */
-"history_data_import_caution_text" = "Caution: This import will overwrite all history data currently in this Daily Dozen application. Would you like to proceed with the import?";
+"history_data_import_caution_text" = "שימו לב: ייבוא זה יחליף את כל מידע ההיסטוריה שנמצא עכשיו ביישומון התריסר היומי הזה.  האם תרצו להמשיך בייבוא?";
 
 /* History Data: import data error text */
-"history_data_import_error_text" = "Error: The import was not performed because of a data error. The existing data has remained unchanged.";
+"history_data_import_error_text" = "שגיאה: ייבוא זה לא בוצע בגלל שגיאת נתונים. המידע הקיים נשאר ללא שינוי.";
 
 /* History Data: import not found text */
-"history_data_import_notfound_text" = "Did not find a valid import file in the Daily Dozen Documents folder.";
+"history_data_import_notfound_text" = "לא נמצא קובץ ייבוא תקף בתיק המסמכים של התריסר היומי.";
 
 /* History Data: preferences header & title */
-"history_data_title" = "History";
+"history_data_title" = "היסטוריה";
 
 /* History View: calendar scale control */
 "history_scale_choice_day" = "יום";
@@ -209,7 +209,7 @@
 "info_app_about_overview" = "השתמשו באפליקציה זו על בסיס יומי כדי לעקוב אחר המזונות והעצות שאני ממליץ עליהם לבריאות ואריכות ימים בצורה אופטימלית בספרים שלי \"איך לא למות\" ו\"איך לא לעשות דיאטה\".";
 
 /* Info About View: Contributing Translators List (language code)  See https://en.wikipedia.org/wiki/List_of_ISO_639-1_codes */
-"info_app_about_translators" = "תודה מיוחדת למתרגמים המתנדבים: Petar & Tsveti Enchev (bg), Ricard Soler Roger (ca), Luděk Bouška (cs,sk), Lenka Lukacová (cs), Anke Schliessmann (de), Ángela Graña (es), Doron Barak (he), Ruth Levy (he), Annalisa Guerrini-Körner (it), Ilaria Zanini (it), Hanna Gurzeda (pl), Joanna Klopotek (pl), Tania Bassi (pt-BR), João Madureira (pt-PT), Evgeniya Lyakh (ru), Katarína Mocáková (sk). ";
+"info_app_about_translators" = "תודה מיוחדת למתרגמים המתנדבים: Petar Enchev (bg), Tsveti Enchev (bg), Ricard Soler Roger (ca), Luděk Bouška (cs,sk), Lenka Lukacová (cs), Anke Schliessmann (de), Ángela Graña (es), Audray Harkins (fr), Doron Barak (he), Ruth Levy (he), Annalisa Guerrini-Körner (it), Ilaria Zanini (it), Hanna Gurzeda (pl), Joanna Klopotek (pl), Tania Bassi (pt-BR), João Madureira (pt-PT), Cristina Lauby (ro), Evgeniya Lyakh (ru), Katarína Mocáková (sk).";
 
 /* Info About View: Application release version */
 "info_app_about_version" = "גירסה 3.4.3";

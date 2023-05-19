@@ -1,248 +1,248 @@
-/* DailyDozen Localizable.strings (en) */
+/* DailyDozen Localizable.strings (fr) */
 /* Copyright © 2021 Nutritionfacts.org. All rights reserved. */
 
 /* Date Button Title: ‘Back to today’ */
-"dateBackButtonTitle" = "Back to today";
+"dateBackButtonTitle" = "Retour à aujourd'hui";
 
 /* Date Button Title: ‘Today’ */
-"dateButtonTitle.today" = "Today";
+"dateButtonTitle.today" = "Aujourd'hui";
 
 /* Doze Detail View subheading: ‘Serving Sizes’ */
-"doze_detail_section_sizes" = "Serving Sizes (Suggested)";
+"doze_detail_section_sizes" = "Portions (à titre indicatif)";
 
 /* Doze Detail View subheading: ‘Types’ */
-"doze_detail_section_types" = "Types";
+"doze_detail_section_types" = "Exemples";
 
 /* Doze Entry View heading: ‘Servings’ */
-"doze_entry_header" = "Servings";
+"doze_entry_header" = "Portions";
 
 /* heading for daily data entry item */
-"dozeBeans.heading" = "Beans";
+"dozeBeans.heading" = "Légumineuses";
 
 /* heading for daily data entry item */
-"dozeBerries.heading" = "Berries";
+"dozeBerries.heading" = "Baies";
 
 /* heading for daily data entry item */
-"dozeBeverages.heading" = "Beverages";
+"dozeBeverages.heading" = "Boissons";
 
 /* heading for daily data entry item */
-"dozeExercise.heading" = "Exercise";
+"dozeExercise.heading" = "Exercice";
 
 /* heading for daily data entry item */
-"dozeFlaxseeds.heading" = "Flaxseeds";
+"dozeFlaxseeds.heading" = "Graines de lin";
 
 /* heading for daily data entry item */
-"dozeFruitsOther.heading" = "Other Fruits";
+"dozeFruitsOther.heading" = "Autres fruits";
 
 /* heading for daily data entry item */
-"dozeGreens.heading" = "Greens";
+"dozeGreens.heading" = "Légumes verts";
 
 /* heading for daily data entry item */
-"dozeNuts.heading" = "Nuts and Seeds";
+"dozeNuts.heading" = "Noix";
 
 /* Daily Dozen supplement info alert: dismissal button text */
 "dozeOtherInfo.confirm" = "OK";
 
 /* Daily Dozen supplement info alert: message */
-"dozeOtherInfo.message" = "Vitamin B12 is essential for your health but does not count towards your daily servings.\n\nVitamin B12 is included in this app to provide you with an easy way to track your intake.";
+"dozeOtherInfo.message" = "La vitamine B12 est essentielle à notre santé.\n\nElle n'est pas comptée comme élément de votre apport journalier Daily Dozen mais est tout de même incluse dans cette app afin de vous permettre d'en faire le suivi.";
 
 /* Daily Dozen daily entry section heading */
-"dozeOtherInfo.section" = "Supplements";
+"dozeOtherInfo.section" = "Compléments alimentaires";
 
 /* Daily Dozen supplement info alert: title */
-"dozeOtherInfo.title" = "Supplements";
+"dozeOtherInfo.title" = "Compléments alimentaires";
 
 /* heading for daily data entry item */
-"dozeSpices.heading" = "Herbs and Spices";
+"dozeSpices.heading" = "Épices et herbes aromatiques";
 
 /* heading for daily data entry item */
-"dozeVegetablesCruciferous.heading" = "Cruciferous Vegetables";
+"dozeVegetablesCruciferous.heading" = "Légumes crucifères";
 
 /* heading for daily data entry item */
-"dozeVegetablesOther.heading" = "Other Vegetables";
+"dozeVegetablesOther.heading" = "Autres légumes";
 
 /* heading for daily data entry item */
-"dozeWholeGrains.heading" = "Whole Grains";
+"dozeWholeGrains.heading" = "Céréales complètes";
 
 /*  */
-"faq_adapt_question" = "The Daily Dozen is too much/too little food for me! Can I adapt it?";
+"faq_adapt_question" = "J'ai trop/pas assez à manger en suivant Daily Dozen ! Est-ce que je peux l'adapter ?";
 
 /*  */
-"faq_adapt_response" = "Yes, the Daily Dozen is simply meant to be a guide of the healthiest foods that we strive to include every day. It’s not a meal plan and is not meant to be prescriptive. Do your best to eat a diverse array of whole plant foods and adapt the Daily Dozen to the quantities that work for you.";
+"faq_adapt_response" = "Oui, Daily Dozen indique simplement les aliments que l'on devrait essayer d'inclure dans notre alimentation journalière pour être en bonne santé mais ce n'est pas un plan alimentaire à suivre à la lettre. Essayez tout simplement de manger une grande variété d'aliments sains et adaptez les quantités afin qu'elles vous conviennent.";
 
 /*  */
-"faq_age_question" = "Is this adaptable for children, adolescents, and teens?";
+"faq_age_question" = "Peut-on adapter ces recommandations à des enfants, adolescents et jeunes adultes ?";
 
 /*  */
-"faq_age_response.0" = "Children, adolescents, and teenagers have different caloric needs throughout their lifecycle. These needs change to support growth and development at each stage.";
+"faq_age_response.0" = "Les besoins caloriques des enfants, adolescents et jeunes adultes changent tout au long de leur croissance afin de favoriser cette croissance et leur épanouissement.";
 
 /*  */
-"faq_age_response.1" = "The Daily Dozen was designed as a guide to help people include some of the healthiest foods into their daily routine. While the same framework can be used for most people throughout the lifecycle, the amount of food one needs to eat will vary based on a number of factors like age and activity level. Since we can’t provide specific nutrition or medical advice for your growing child, parents should use this guide as they see best for their child’s needs and/or consult with a registered dietitian or other healthcare provider to help determine what is best for their individual needs.";
+"faq_age_response.1" = "Le but de Daily Dozen est d’aiguiller les gens vers une alimentation journalière saine. Même si ces recommandations conviendront à la plupart des gens, les quantités de nourriture nécessaires à une personne en particulier peuvent varier en fonction de divers critères tels que l’âge ou le niveau d’activité physique. Nous ne pouvons pas fournir de conseils nutritionnels ou médicaux spécifiques à chaque enfant et conseillons donc aux parents d’utiliser ces recommandations comme un guide à adapter au mieux aux besoins de leur enfant et/ou de consulter un nutritionniste ou professionnel de santé afin d’établir les besoins spécifiques de leur enfant.";
 
 /*  */
-"faq_calories_question" = "How many calories are in the Daily Dozen?";
+"faq_calories_question" = "Combien de calories représentent les quantités Daily Dozen?";
 
 /*  */
-"faq_calories_response.0" = "The Daily Dozen averages about 1,200 calories, but given the wide array of food choices in each category, it can range anywhere from 800-1800. Consider the Other Vegetables category: a cup of bell peppers has a much lower caloric density than a cup of cooked sweet potatoes, therefore the caloric range will depend on your specific food choices. That’s the great thing about the Daily Dozen Checklist—it’s not a one size fits all approach, and can be adapted to your needs.";
+"faq_calories_response.0" = "Il y a environ 1 200 calories en tout dans les recommandations Daily Dozen mais, vu la multitude d’options dans chaque catégorie d’aliment, le total peut varier de 800 à 1 800 calories. Si l’on prend, par exemple, la catégorie des “Autres légumes”, une portion de poivrons contient beaucoup moins de calories qu’une portion de patates douces ; la quantité totale de calories dépend donc de vos choix d’aliments dans chaque catégorie. C’est l’avantage de la liste Daily Dozen : ce n’est pas une liste gravée dans la pierre et elle peut parfaitement être adaptée à chaque besoin spécifique.";
 
 /*  */
-"faq_calories_response.1" = "If your goal is weight loss, you can find more information in “How Not to Diet” and the accompanying Twenty-One Tweaks. In “How Not to Diet”, I noted: “A systematic review of successful weight-loss strategies concluded that given the metabolic slowing and increased appetite that accompanies weight loss, to achieve significant weight loss, calorie counts may need to drop as low as 1,200 calories a day for women and 1,500 calories a day for men.”";
+"faq_calories_response.1" = "Si votre but est de perdre du poids, vous pourrez trouver plus d’informations dans mon livre “Comment ne pas faire de régime” et les 21 astuces incluses. Comme je l’ai écrit dans ce livre : “Un examen systématique des stratégies d’amincissement efficaces a conclu que, compte tenu du ralentissement du métabolisme et de l’augmentation de l’appétit qui accompagnent tout régime, pour parvenir à une perte de poids significative, le nombre de calories doit être relativement bas, soit 1 200 calories par jour pour les femmes et 1 500 pour les hommes.”";
 
 /*  */
-"faq_calories_response.2" = "On the other hand, if your goal is weight gain, then you may want to focus on adding in more calorie-dense foods, such as sweet potatoes, avocados, nuts, and soy products.";
+"faq_calories_response.2" = "Par contre, si votre de but est de prendre du poids, il faudra alors vous orienter vers des aliments riches en calories tels que les patates douces, avocats, noix ou produits à base de soja.";
 
 /*  */
-"faq_mother_question" = "Can I do this while pregnant or breastfeeding?";
+"faq_mother_question" = "Est-ce que je peux suivre Daily Dozen si je suis enceinte ou si j’allaite ?";
 
 /*  */
-"faq_mother_response" = "People who are pregnant or breastfeeding have different caloric and nutritional needs than people who are not. As a reminder, the Daily Dozen is not a meal plan and should not be the only foods consumed within a day. People who are pregnant or breastfeeding should consult with their health care practitioner or a registered dietician for assistance with meeting their specific caloric requirements and nutritional needs.";
+"faq_mother_response" = "Lorsque vous êtes enceinte ou allaitez, vos besoins caloriques et nutritionnels changent. Nous tenons à rappeler que Daily Dozen n’est pas un plan alimentaire et ne devrait pas être votre unique source d’alimentation quotidienne. Les personnes enceintes ou en phase d’allaitement devraient consulter un professionnel de santé ou un nutritionniste afin de s’assurer de répondre à leur besoins caloriques et nutritionnels spécifiques.";
 
 /*  */
-"faq_scaling_question" = "I can’t possibly eat that many beans/grains/etc.!";
+"faq_scaling_question" = "C'est beaucoup trop de haricots/céréales/etc à manger pour moi !";
 
 /*  */
-"faq_scaling_response" = "That’s okay! The Daily Dozen is an aspirational guide. Do your best to incorporate as many of these healthy plant foods as possible. If you are new to eating a lot of beans (or grains, greens, etc!), you may need to start with smaller amounts and slowly increase the quantity in order to give your microbiome a chance to adjust. You can also get creative: for example, add some beans to your morning oatmeal. If you load it up with berries, flax seeds, and nuts, you won’t even notice the beans. You can also mash beans into a sandwich spread, or make my [BROL](https://nutritionfacts.org/recipe/basic-brol-barley-rye-oats-and-lentils)—barley, rye, oat groats, and lentils—that I use as a base for many meals and is a simple way to get a variety of whole grains with a built-in serving of legumes.";
+"faq_scaling_response" = "Pas de problème ! Daily Dozen est un idéal vers lequel tendre mais, si vous n’avez pas l’habitude de manger beaucoup de légumes secs (ou céréales, légumes verts, etc !), il faudra peut-être commencer par de plus faibles quantités et augmenter progressivement afin de laisser à votre microbiote le temps de s’adapter.\n\nVous pouvez laisser libre cours à votre imagination : ajoutez des haricots à votre porridge au petit déjeuner par exemple. Si vous y mettez beaucoup de baies, graines de lin et noix, vous ne remarquerez même pas les haricots. Vous pouvez aussi écraser des haricots et les intégrer à votre garniture de sandwich ou faire mon [BROL](https://nutritionfacts.org/recipe/basic-brol-barley-rye-oats-and-lentils) : un mélange d’orge, seigle, avoine et lentilles qui est la base de beaucoup de mes repas et est une façon facile d’intégrer divers ingrédients importants à votre alimentation (des céréales complètes avec une portion de légumes secs).";
 
 /*  */
-"faq_supplements_question" = "I thought that Dr. Greger recommends taking Vitamin D and DHA supplements. Why aren’t they included?";
+"faq_supplements_question" = "Je croyais que le Dr. Greger recommandait de prendre des compléments de vitamine D et DHA. Pourquoi ne sont-ils pas dans la liste ?";
 
 /*  */
-"faq_supplements_response" = "We have updated the Daily Dozen app to reflect only required supplements. For example, Vitamin D is only needed for people who get inadequate sun exposure. Our goal is to share the science with you so you can make your own informed decisions. You can see all of my recommendations on the [Optimum Nutrient](https://nutritionfacts.org/optimum-nutrient-recommendations) page.";
+"faq_supplements_response" = "Nous avons mis à jour les recommandations Daily Dozen de façon à n’inclure que les compléments indispensables. Par exemple, la vitamine D n’est requise que pour les gens avec une exposition au soleil insuffisante. Notre but est de vous fournir toutes les informations scientifiques dont vous avez besoin pour former votre propre opinion. Vous pourrez trouver toutes mes recommandations en termes de compléments alimentaires sur la page [Optimum Nutrient](https://nutritionfacts.org/optimum-nutrient-recommendations).";
 
 /* History Data Alert: Cancel button */
-"history_data_alert_cancel" = "Cancel";
+"history_data_alert_cancel" = "Annuler";
 
 /* History Data Alert: Clear button */
-"history_data_alert_clear" = "Clear";
+"history_data_alert_clear" = "Effacer";
 
 /* History Data Alert: Import buttom */
-"history_data_alert_import" = "Import";
+"history_data_alert_import" = "Importer";
 
 /* History Data Alert: OK button */
 "history_data_alert_ok" = "OK";
 
 /* History Data: export action button */
-"history_data_export_btn" = "Export History Data";
+"history_data_export_btn" = "Exporter historique";
 
 /* History Data: export description text */
-"history_data_export_text" = "Export has been written to:";
+"history_data_export_text" = "Exporté vers :";
 
 /* History Data: import action button */
-"history_data_import_btn" = "Import History Data";
+"history_data_import_btn" = "Importer historique";
 
 /* History Data: import caution text */
-"history_data_import_caution_text" = "Caution: This import will overwrite all history data currently in this Daily Dozen application. Would you like to proceed with the import?";
+"history_data_import_caution_text" = "Attention : cette importation de données remplacera tout l’historique actuellement contenu dans cette app. Voulez-vous continuer l’importation ?";
 
 /* History Data: import data error text */
-"history_data_import_error_text" = "Error: The import was not performed because of a data error. The existing data has remained unchanged.";
+"history_data_import_error_text" = "Erreur : l’importation a été annulée suite à une erreur dans les données. Aucun changement n'a été enregistré.";
 
 /* History Data: import not found text */
-"history_data_import_notfound_text" = "Did not find a valid import file in the Daily Dozen Documents folder.";
+"history_data_import_notfound_text" = "Il n’y a pas de document au bon format dans le dossier Daily Dozen.";
 
 /* History Data: preferences header & title */
-"history_data_title" = "History";
+"history_data_title" = "Historique";
 
 /* History View: calendar scale control */
-"history_scale_choice_day" = "Day";
+"history_scale_choice_day" = "Jour";
 
 /* History View: calendar scale control */
-"history_scale_choice_month" = "Month";
+"history_scale_choice_month" = "Mois";
 
 /* History View: calendar scale control */
-"history_scale_choice_year" = "Year";
+"history_scale_choice_year" = "Année";
 
 /* History View: scale text */
-"history_scale_label" = "Time Scale";
+"history_scale_label" = "Affichage";
 
 /*  */
-"historyRecord.movingAverage" = "Moving Average";
+"historyRecord.movingAverage" = "Moyenne mobile";
 
 /* History View */
-"historyRecordDoze.heading" = "Servings History";
+"historyRecordDoze.heading" = "Historique Portions";
 
 /* History View */
-"historyRecordDoze.legend" = "Servings";
+"historyRecordDoze.legend" = "Portions";
 
 /* History View */
-"historyRecordTweak.heading" = "Tweaks History";
+"historyRecordTweak.heading" = "Historique Astuces";
 
 /* History View */
-"historyRecordTweak.legend" = "Tweaks";
+"historyRecordTweak.legend" = "Astuces";
 
 /* History View */
-"historyRecordWeight.heading" = "Weight History";
+"historyRecordWeight.heading" = "Historique Poids";
 
 /* History View */
-"historyRecordWeight.legendEvening" = "Evening";
+"historyRecordWeight.legendEvening" = "Soir";
 
 /* History View */
-"historyRecordWeight.legendMorning" = "Morning";
+"historyRecordWeight.legendMorning" = "Matin";
 
 /* History View */
-"historyRecordWeight.titleImperial" = "Weight (lbs)";
+"historyRecordWeight.titleImperial" = "Poids (lbs)";
 
 /* History View */
-"historyRecordWeight.titleMetric" = "Weight (kg)";
+"historyRecordWeight.titleMetric" = "Poids (kg)";
 
 /* Info About Menu Item */
-"info_app_about" = "About";
+"info_app_about" = "À propos";
 
 /* Info About View: Application Name ‘Daily Dozen’ */
 "info_app_about_app_name" = "Daily Dozen";
 
 /* Info About View: Created By */
-"info_app_about_created_by" = "This app was created by: NutritionFacts.org, Christi Richards, Konstantin Khokhlov, and Marc Campbell";
+"info_app_about_created_by" = "App créée par : NutritionFacts.org, Christi Richards, Konstantin Khokhlov et Marc Campbell";
 
 /* Info About View */
-"info_app_about_heading" = "About this app";
+"info_app_about_heading" = "À propos de cette app";
 
 /* Info About View: Open Source Credits */
-"info_app_about_oss_credits" = "The following open source libraries are used: RealmSwift, Charts, FSCalendar, SimpleAnimation, ActiveLabel.";
+"info_app_about_oss_credits" = "Librairies open source utilisées : RealmSwift, Charts, FSCalendar, SimpleAnimation, ActiveLabel.";
 
 /* Info About View: Overview Text */
-"info_app_about_overview" = "Use this app on a daily basis to keep track of the foods and advice I recommend for optimal health and longevity in my books How Not to Die and How Not to Diet.";
+"info_app_about_overview" = "Utilisez cette app tous les jours pour suivre les aliments que je recommande pour une santé et une longévité optimales dans mes livres 'Comment ne pas mourir' et 'Comment ne pas faire de régime.'";
 
 /* Info About View: Contributing Translators List (language code)  See https://en.wikipedia.org/wiki/List_of_ISO_639-1_codes */
-"info_app_about_translators" = "Special thanks to our volunteer translators: Petar & Tsveti Enchev (bg), Ricard Soler Roger (ca), Luděk Bouška (cs,sk), Lenka Lukacová (cs), Anke Schliessmann (de), Ángela Graña (es), Doron Barak (he), Ruth Levy (he), Annalisa Guerrini-Körner (it), Ilaria Zanini (it), Hanna Gurzeda (pl), Joanna Klopotek (pl), Tania Bassi (pt-BR), João Madureira (pt-PT), Evgeniya Lyakh (ru), Katarína Mocáková (sk).";
+"info_app_about_translators" = "Remerciements particuliers à nos traducteurs bénévoles : Petar Enchev (bg), Tsveti Enchev (bg), Ricard Soler Roger (ca), Luděk Bouška (cs,sk), Lenka Lukacová (cs), Anke Schliessmann (de), Ángela Graña (es), Audray Harkins (fr), Doron Barak (he), Ruth Levy (he), Annalisa Guerrini-Körner (it), Ilaria Zanini (it), Hanna Gurzeda (pl), Joanna Klopotek (pl), Tania Bassi (pt-BR), João Madureira (pt-PT), Cristina Lauby (ro), Evgeniya Lyakh (ru), Katarína Mocáková (sk).";
 
 /* Info About View: Application release version */
 "info_app_about_version" = "version 3.4.3";
 
 /* Info About View: Welcome */
-"info_app_about_welcome" = "Welcome to my Daily Dozen!";
+"info_app_about_welcome" = "Bienvenue dans Daily Dozen!";
 
 /* Info Menu: book title */
-"info_book_how_not_to_die" = "Book: How Not to Die";
+"info_book_how_not_to_die" = "Livre : Comment ne pas mourir";
 
 /* Info Menu: book title */
-"info_book_how_not_to_die_cookbook" = "Book: How Not to Die Cookbook";
+"info_book_how_not_to_die_cookbook" = "Livre : How Not to Die Cookbook";
 
 /* Info Menu: book title */
-"info_book_how_not_to_diet" = "Book: How Not to Diet";
+"info_book_how_not_to_diet" = "Livre : Comment ne pas faire de régime";
 
 /* Info Menu */
-"info_webpage_daily_dozen_challenge" = "Daily Dozen Challenge";
+"info_webpage_daily_dozen_challenge" = "Challenge Daily Dozen";
 
 /* Info Menu */
-"info_webpage_donate" = "Donate";
+"info_webpage_donate" = "Faire un don";
 
 /* Info Menu */
-"info_webpage_open_source" = "Open Source";
+"info_webpage_open_source" = "Open source";
 
 /* Info Menu */
-"info_webpage_subscribe" = "Subscribe";
+"info_webpage_subscribe" = "Souscrire";
 
 /* Info Menu */
-"info_webpage_videos_latest" = "Latest Videos";
+"info_webpage_videos_latest" = "Dernières vidéos";
 
 /* Item History Legend: ‘All completed’ */
-"item_history_completed_all" = "All servings";
+"item_history_completed_all" = "Toutes les portions";
 
 /* Item History Legend: ‘Some completed’ */
-"item_history_completed_some" = "Some servings";
+"item_history_completed_some" = "Quelques portions";
 
 /* Item History Heading */
-"item_history_heading" = "History";
+"item_history_heading" = "Historique";
 
 /* Main Navigation Tab Control: ‘Daily Dozen’ (proper noun) */
 "navtab.doze" = "Daily Dozen";
@@ -251,31 +251,31 @@
 "navtab.info" = "Information";
 
 /* Main Navigation Tab Control: ‘Preferences’ synonyms: Settings, Configuration. Choose a translations with is different from Tweaks. */
-"navtab.preferences" = "Preferences";
+"navtab.preferences" = "Préférences";
 
 /* Main Navigation Tab Control: ‘21 Tweaks’ (proper noun) */
-"navtab.tweaks" = "21 Tweaks";
+"navtab.tweaks" = "21 Astuces";
 
 /* heading for daily data entry item */
-"otherVitaminB12.heading" = "Vitamin B12";
+"otherVitaminB12.heading" = "Vitamine B12";
 
 /* Alert notification text */
-"reminder.alert.text" = "Update your servings for today";
+"reminder.alert.text" = "Mettez à jour vos portions pour aujourd'hui";
 
 /* Daily Reminder (alert title, settings section heading) */
-"reminder.heading" = "Daily Reminder";
+"reminder.heading" = "Rappel journalier";
 
 /* Daily Reminder On/Off toggle switch label */
-"reminder.settings.enable" = "Enable Reminders";
+"reminder.settings.enable" = "Activer les rappels";
 
 /* Daily Reminder sound control heading */
-"reminder.settings.sound" = "Play Sound";
+"reminder.settings.sound" = "Emettre un son";
 
 /* Daily Reminder time control heading */
-"reminder.settings.time" = "Remind me at";
+"reminder.settings.time" = "Rappel à";
 
 /* Android notification `vibrate` */
-"reminder.settings.vibrate" = "Vibrate";
+"reminder.settings.vibrate" = "Vibrer";
 
 /* ‘Off’ as in ‘On (enabled) or Off (disabled)’, Daily Reminder is not enabled */
 "reminder.state.off" = "Off";
@@ -284,157 +284,145 @@
 "reminder.state.on" = "On";
 
 /* Google Firebase Analytics */
-"setting_analytics_body" = "Enable anonymous usage information to be collected to help improve this application.";
+"setting_analytics_body" = "Autoriser la collecte d'informations anonymisées pour aider à améliorer cette application.";
 
 /* Google Firebase Analytics */
-"setting_analytics_enable" = "Enable Analytics";
+"setting_analytics_enable" = "Autoriser la collecte de statistiques";
 
 /* Google Firebase Analytics */
-"setting_analytics_opt_in" = "Opt In";
+"setting_analytics_opt_in" = "Autoriser";
 
 /* Google Firebase Analytics */
-"setting_analytics_opt_out" = "Opt Out";
+"setting_analytics_opt_out" = "Refuser";
 
 /* Google Firebase Analytics */
 "setting_analytics_title" = "Analytics";
 
-/* Appearance Header */
-"setting_appearance_header" = "Appearance";
-
-/* Appearance Mode: Auto */
-"setting_appearance_mode_auto" = "Auto";
-
-/* Appearance Mode: Dark */
-"setting_appearance_mode_dark" = "Dark";
-
-/* Appearance Mode: Light */
-"setting_appearance_mode_light" = "Light";
-
 /* First Launch Setting: button text */
-"setting_doze_only_btn" = "Daily Dozen\nOnly";
+"setting_doze_only_btn" = "Daily Dozen Uniquement";
 
 /* Preference Settings View: selection button text */
-"setting_doze_only_choice" = "Daily Dozen Only";
+"setting_doze_only_choice" = "Daily Dozen Uniquement";
 
 /* First Launch Setting: button text */
-"setting_doze_tweak_btn" = "Daily Dozen +\n21 Tweaks";
+"setting_doze_tweak_btn" = "Daily Dozen + 21 Astuces";
 
 /* Preference Settings View: selection button text */
-"setting_doze_tweak_choice" = "Daily Dozen + 21 Tweaks";
+"setting_doze_tweak_choice" = "Daily Dozen + 21 Astuces";
 
 /* Preference Settings View: brief description text below Tweaks visibility control. */
-"setting_doze_tweak_footer" = "For health alone, use “Daily Dozen Only”. For health and weight loss use “Daily Dozen + 21 Tweaks”.";
+"setting_doze_tweak_footer" = "Pour des recommandations de santé uniquement, utilisez \"Daily Dozen Uniquement\". Pour des recommandations de santé et de perte de poids, utilisez “Daily Dozen + 21 Astuces”.";
 
 /* First Launch Setting: brief description above ‘Daily Dozen Only’ button. */
-"setting_health_alone_txt" = "For Health Alone";
+"setting_health_alone_txt" = "Recommandations de santé uniquement";
 
 /* First Launch Setting: brief description above ‘Daily Dozen + 21 Tweaks’ button. */
-"setting_health_weight_txt" = "For Health and Weight Loss";
+"setting_health_weight_txt" = "Recommandations de santé et de perte de poids";
 
 /* Preference Settings View: tweaks visibilty subsection heading */
-"setting_tweak_header" = "21 Tweaks Visibility";
+"setting_tweak_header" = "Option 21 Astuces";
 
 /* Preference Settings View: Part of ‘Imperial/Metric/Toggle Units’ selector */
-"setting_units_0_imperial" = "Imperial";
+"setting_units_0_imperial" = "Impérial";
 
 /* Preference Settings View: Part of ‘Imperial/Metric/Toggle Units’ selector */
-"setting_units_1_metric" = "Metric";
+"setting_units_1_metric" = "Métrique";
 
 /* Preference Settings View: Part of ‘Imperial/Metric/Toggle Units’ selector */
-"setting_units_2_toggle" = "Toggle Units";
+"setting_units_2_toggle" = "Option d'unités";
 
 /* Preference Settings View: brief description text below units control. */
-"setting_units_choice_footer" = "Set to always be one unit type or enable the ‘Units:’ toggle button.";
+"setting_units_choice_footer" = "Choisissez de ne voir qu'une seule unité ou de garder le bouton 'Option d'unités' visible.";
 
 /* Preference Settings View */
-"setting_units_header" = "Measurement Units";
+"setting_units_header" = "Unités de mesure";
 
 /* Preference Settings View */
-"setting_util_advanced" = "Advanced Utilities";
+"setting_util_advanced" = "Fonctions avancées";
 
 /* ‘Streak’ count. Synonym: ‘Progress‘. Formatted number ‘%d’ for consecutive days completed. Place translated text for ‘days’ on the right or left of ‘%d’ based on language directionality. */
-"streakDaysFormat" = "%d days";
+"streakDaysFormat" = "%d jours";
 
 /* Tweaks Detail view section heading */
-"tweak_detail_section_activity" = "Activity";
+"tweak_detail_section_activity" = "Activité";
 
 /* Tweaks Detail view section heading */
 "tweak_detail_section_description" = "Description";
 
 /* Tweaks daily entry header */
-"tweak_entry_header" = "21 Tweaks";
+"tweak_entry_header" = "21 Astuces";
 
 /* heading for daily data entry item */
-"tweakCompleteIntentions.heading" = "Complete Your Implementation Intentions";
+"tweakCompleteIntentions.heading" = "Complétez vos objectifs";
 
 /* heading for daily data entry item */
-"tweakDailyBlackCumin.heading" = "Black Cumin (¼ tsp)";
+"tweakDailyBlackCumin.heading" = "Cumin noir (¼ c. à café)";
 
 /* heading for daily data entry item */
-"tweakDailyCumin.heading" = "Cumin (½ tsp with lunch and dinner)";
+"tweakDailyCumin.heading" = "Cumin (½ c. à café au déjeuner et au dîner)";
 
 /* heading for daily data entry item */
-"tweakDailyDeflourDiet.heading" = "Deflour Your Diet";
+"tweakDailyDeflourDiet.heading" = "Défarinez votre alimentation";
 
 /* heading for daily data entry item */
-"tweakDailyFrontLoad.heading" = "Front-Load Your Calories";
+"tweakDailyFrontLoad.heading" = "Concentrez vos calories en début de journée";
 
 /* heading for daily data entry item */
-"tweakDailyGarlic.heading" = "Garlic Powder (¼ tsp)";
+"tweakDailyGarlic.heading" = "Ail en poudre (¼ c. à café)";
 
 /* heading for daily data entry item */
-"tweakDailyGinger.heading" = "Ground Ginger (1 tsp) or Cayenne Pepper (½ tsp)";
+"tweakDailyGinger.heading" = "Gingembre moulu (1 c. à café) ou piment de Cayenne (½ c. à café)";
 
 /* heading for daily data entry item */
-"tweakDailyGreenTea.heading" = "Green Tea (3 cups)";
+"tweakDailyGreenTea.heading" = "Thé vert (3 tasses)";
 
 /* heading for daily data entry item */
-"tweakDailyHydrate.heading" = "Stay Hydrated";
+"tweakDailyHydrate.heading" = "Restez hydraté";
 
 /* heading for daily data entry item */
-"tweakDailyNutriYeast.heading" = "Nutritional Yeast (2 tsp)";
+"tweakDailyNutriYeast.heading" = "Levure nutritionnelle (2 c. à café)";
 
 /* heading for daily data entry item */
-"tweakDailyTimeRestrict.heading" = "Time-Restrict Your Eating";
+"tweakDailyTimeRestrict.heading" = "Consommez vos aliments sur une durée définie";
 
 /* heading for daily data entry item */
-"tweakExerciseTiming.heading" = "Optimize Exercise Timing";
+"tweakExerciseTiming.heading" = "Optimisez vos exercices";
 
 /* heading for daily data entry item */
-"tweakMeal20Minutes.heading" = "Follow the Twenty-Minute Rule";
+"tweakMeal20Minutes.heading" = "Suivez la règle des vingt minutes";
 
 /* heading for daily data entry item */
-"tweakMealNegCal.heading" = "Preload with “Negative Calorie” Foods";
+"tweakMealNegCal.heading" = "Préchargez avec des “calories négatives”";
 
 /* heading for daily data entry item */
-"tweakMealUndistracted.heading" = "Enjoy Undistracted Meals";
+"tweakMealUndistracted.heading" = "Prenez vos repas sans distraction";
 
 /* heading for daily data entry item */
-"tweakMealVinegar.heading" = "Incorporate Vinegar (2 tsp with each meal)";
+"tweakMealVinegar.heading" = "Prenez du vinaigre (2 c. à café par repas)";
 
 /* heading for daily data entry item */
-"tweakMealWater.heading" = "Preload with Water";
+"tweakMealWater.heading" = "Préchargez avec de l'eau";
 
 /* heading for daily data entry item */
-"tweakNightlyFast.heading" = "Fast After 7:00 pm";
+"tweakNightlyFast.heading" = "Jeûnez après 19h";
 
 /* heading for daily data entry item */
-"tweakNightlySleep.heading" = "Get Sufficient Sleep";
+"tweakNightlySleep.heading" = "Dormez suffisamment";
 
 /* heading for daily data entry item */
-"tweakNightlyTrendelenbrug.heading" = "Experiment with Mild Trendelenburg";
+"tweakNightlyTrendelenbrug.heading" = "Testez la position de Trendelenburg modérée";
 
 /* heading for daily data entry item */
-"tweakWeightTwice.heading" = "Weigh Yourself Twice a Day";
+"tweakWeightTwice.heading" = "Pesez-vous deux fois par jour";
 
 /*  */
-"units_label" = "Units";
+"units_label" = "Unités";
 
 /* Units toggle button text: imperial measurement system */
-"unitToggle.imperial" = "Imperial";
+"unitToggle.imperial" = "Impérial";
 
 /* Units toggle button text: metric measurement system */
-"unitToggle.metric" = "Metric";
+"unitToggle.metric" = "Métrique";
 
 /* URL path */
 "urlSegment.base" = "https://nutritionfacts.org/";
@@ -470,19 +458,19 @@
 "urlSegmentInfoMenu.videos" = "videos";
 
 /* Label for hyperlink to nutritionfacts.org video topics */
-"videos.link.label" = "Videos";
+"videos.link.label" = "Vidéos";
 
 /* Weight Daily Entry: clear button which deletes values */
-"weight_entry_clear" = "Clear";
+"weight_entry_clear" = "Effacer";
 
 /* Weight Daily Entry: label */
-"weight_entry_evening" = "Evening (right before bed)";
+"weight_entry_evening" = "Soir (juste avant le coucher)";
 
 /* Weight Daily Entry: label */
-"weight_entry_morning" = "Morning (upon waking)";
+"weight_entry_morning" = "Matin (au réveil)";
 
 /* Weight Daily Entry: label */
-"weight_entry_time" = "Time";
+"weight_entry_time" = "Heure";
 
 /* Weight Daily Entry Units: label */
 "weight_entry_units_kg" = "kg";
@@ -491,9 +479,9 @@
 "weight_entry_units_lbs" = "lbs";
 
 /* Weight Daily Entry: edit button to change values */
-"weight_history_edit_data" = "Edit Data";
+"weight_history_edit_data" = "Modifier";
 
 /* Weight Daily Entry: heading */
-"weightEntry.heading" = "Weight";
+"weightEntry.heading" = "Poids";
 
 /* file end */

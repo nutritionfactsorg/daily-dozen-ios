@@ -8,7 +8,7 @@
 "dateButtonTitle.today" = "Avui";
 
 /* Doze Detail View subheading: ‘Serving Sizes’ */
-"doze_detail_section_sizes" = "Mida de les porcions (suggerit)";
+"doze_detail_section_sizes" = "Mides de la porció (suggerit)";
 
 /* Doze Detail View subheading: ‘Types’ */
 "doze_detail_section_types" = "Tipus";
@@ -65,82 +65,82 @@
 "dozeWholeGrains.heading" = "Cereals integrals";
 
 /*  */
-"faq_adapt_question" = "The Daily Dozen is too much/too little food for me! Can I adapt it?";
+"faq_adapt_question" = "La Dotzena Diària és massa/massa poc menjar per a mi! Puc adaptar-lo?";
 
 /*  */
-"faq_adapt_response" = "Yes, the Daily Dozen is simply meant to be a guide of the healthiest foods that we strive to include every day. It’s not a meal plan and is not meant to be prescriptive. Do your best to eat a diverse array of whole plant foods and adapt the Daily Dozen to the quantities that work for you.";
+"faq_adapt_response" = "Sí, la Dotzena Diària només vol ser una guia dels aliments més saludables que ens esforcem per incloure cada dia. No és un pla d'àpats i no pretén ser prescriptiu. Fes tot el possible per menjar una gran varietat d'aliments vegetals sencers i adapta la Dotzena Diària a les quantitats que et funcionin.";
 
 /*  */
-"faq_age_question" = "Is this adaptable for children, adolescents, and teens?";
+"faq_age_question" = "És adaptable per a nens, adolescents i adolescents?";
 
 /*  */
-"faq_age_response.0" = "Children, adolescents, and teenagers have different caloric needs throughout their lifecycle. These needs change to support growth and development at each stage.";
+"faq_age_response.0" = "Els nens, adolescents i adolescents tenen necessitats calòriques diferents al llarg del seu cicle de vida. Aquestes necessitats canvien per donar suport al creixement i desenvolupament en cada etapa.";
 
 /*  */
-"faq_age_response.1" = "The Daily Dozen was designed as a guide to help people include some of the healthiest foods into their daily routine. While the same framework can be used for most people throughout the lifecycle, the amount of food one needs to eat will vary based on a number of factors like age and activity level. Since we can’t provide specific nutrition or medical advice for your growing child, parents should use this guide as they see best for their child’s needs and/or consult with a registered dietitian or other healthcare provider to help determine what is best for their individual needs.";
+"faq_age_response.1" = "El Daily Dozen va ser dissenyat com una guia per ajudar la gent a incloure alguns dels aliments més saludables a la seva rutina diària. Tot i que el mateix marc es pot utilitzar per a la majoria de les persones al llarg del cicle de vida, la quantitat d'aliments que cal menjar variarà en funció d'una sèrie de factors com l'edat i el nivell d'activitat. Com que no podem oferir consells mèdics o nutricionals específics per al vostre fill en creixement, els pares haurien d'utilitzar aquesta guia segons considerin adequat per a les necessitats del seu fill i/o consultar amb un dietista registrat o un altre metge proveïdor d'atenció per ajudar a determinar què és el millor per a les vostres necessitats.";
 
 /*  */
-"faq_calories_question" = "How many calories are in the Daily Dozen?";
+"faq_calories_question" = "Quantes calories hi ha a la Dotzena Diària?";
 
 /*  */
-"faq_calories_response.0" = "The Daily Dozen averages about 1,200 calories, but given the wide array of food choices in each category, it can range anywhere from 800-1800. Consider the Other Vegetables category: a cup of bell peppers has a much lower caloric density than a cup of cooked sweet potatoes, therefore the caloric range will depend on your specific food choices. That’s the great thing about the Daily Dozen Checklist—it’s not a one size fits all approach, and can be adapted to your needs.";
+"faq_calories_response.0" = "La Dotzena Diària té una mitjana d'unes 1.200 calories, però donada l'àmplia varietat d'opcions d'aliments de cada categoria, pot variar entre 800 i 1800. Penseu en la categoria Altres verdures: una tassa de pebrots morrons té una densitat calòrica molt menor que una tassa de moniatos cuits, per tant, el rang calòric dependrà de les vostres opcions alimentàries específiques. Això és el millor de la llista de verificació de la Dotzena Diària: no és un enfocament únic i es pot adaptar a les vostres necessitats.";
 
 /*  */
-"faq_calories_response.1" = "If your goal is weight loss, you can find more information in “How Not to Diet” and the accompanying Twenty-One Tweaks. In “How Not to Diet”, I noted: “A systematic review of successful weight-loss strategies concluded that given the metabolic slowing and increased appetite that accompanies weight loss, to achieve significant weight loss, calorie counts may need to drop as low as 1,200 calories a day for women and 1,500 calories a day for men.”";
+"faq_calories_response.1" = "Si el vostre objectiu és perdre pes, podeu trobar més informació a “Com no fer dieta” i els 21 Potenciadors que l'acompanyen. A “Com no fer dieta”, vaig assenyalar: “Una revisió sistemàtica d'estratègies de pèrdua de pes reeixides va concloure que, donada la desacceleració metabòlica i l'augment de la gana que acompanya la pèrdua de pes, per aconseguir una pèrdua de pes significativa, és possible que el recompte de calories hagi de baixar tant com sigui. 1.200 calories al dia per a les dones i 1.500 calories al dia per als homes”.";
 
 /*  */
-"faq_calories_response.2" = "On the other hand, if your goal is weight gain, then you may want to focus on adding in more calorie-dense foods, such as sweet potatoes, avocados, nuts, and soy products.";
+"faq_calories_response.2" = "D'altra banda, si el vostre objectiu és l'augment de pes, potser us voleu centrar a afegir aliments més densos en calories, com ara moniatos, alvocats, fruits secs i productes de soja.";
 
 /*  */
-"faq_mother_question" = "Can I do this while pregnant or breastfeeding?";
+"faq_mother_question" = "Puc fer-ho durant l'embaràs o la lactància?";
 
 /*  */
-"faq_mother_response" = "People who are pregnant or breastfeeding have different caloric and nutritional needs than people who are not. As a reminder, the Daily Dozen is not a meal plan and should not be the only foods consumed within a day. People who are pregnant or breastfeeding should consult with their health care practitioner or a registered dietician for assistance with meeting their specific caloric requirements and nutritional needs.";
+"faq_mother_response" = "Les persones que estan embarassades o en període de lactància tenen necessitats calòriques i nutricionals diferents de les persones que no ho estan. Com a recordatori, la Dotzena Diària no és un pla d'àpats i no hauria de ser els únics aliments que es consumeixen en un dia. Les persones embarassades o en període de lactància han de consultar amb el seu metge de capçalera o amb un dietista registrat per ajudar-los a satisfer les seves necessitats calòriques i nutricionals específiques.";
 
 /*  */
-"faq_scaling_question" = "I can’t possibly eat that many beans/grains/etc.!";
+"faq_scaling_question" = "No puc menjar tantes mongetes/grans/etc.!";
 
 /*  */
-"faq_scaling_response" = "That’s okay! The Daily Dozen is an aspirational guide. Do your best to incorporate as many of these healthy plant foods as possible. If you are new to eating a lot of beans (or grains, greens, etc!), you may need to start with smaller amounts and slowly increase the quantity in order to give your microbiome a chance to adjust. You can also get creative: for example, add some beans to your morning oatmeal. If you load it up with berries, flax seeds, and nuts, you won’t even notice the beans. You can also mash beans into a sandwich spread, or make my [BROL](https://nutritionfacts.org/recipe/basic-brol-barley-rye-oats-and-lentils)—barley, rye, oat groats, and lentils—that I use as a base for many meals and is a simple way to get a variety of whole grains with a built-in serving of legumes.";
+"faq_scaling_response" = "Està bé! The Daily Dozen és una guia amb aspiracions. Feu tot el possible per incorporar tants d'aquests aliments vegetals saludables com sigui possible. Si sou nou a menjar moltes mongetes (o grans, verdures, etc.!), potser haureu de començar amb quantitats més petites i augmentar lentament la quantitat per donar-li l'oportunitat al vostre microbioma d'ajustar-se. També podeu ser creatius: per exemple, afegiu unes mongetes a la vostra civada del matí. Si el carregueu amb baies, llavors de lli i fruits secs, ni tan sols notareu les mongetes. També podeu triturar les mongetes en un entrepà o fer el meu [BROL](https://nutritionfacts.org/recipe/basic-brol-barley-rye-oats-and-lentils): ordi, sègol, civada i llenties: que faig servir com a base per a molts àpats i és una manera senzilla d'aconseguir una varietat de cereals integrals amb una porció integrada de llegums.";
 
 /*  */
-"faq_supplements_question" = "I thought that Dr. Greger recommends taking Vitamin D and DHA supplements. Why aren’t they included?";
+"faq_supplements_question" = "Vaig pensar que el Dr. Greger recomana prendre suplements de vitamina D i DHA. Per què no estan inclosos?";
 
 /*  */
-"faq_supplements_response" = "We have updated the Daily Dozen app to reflect only required supplements. For example, Vitamin D is only needed for people who get inadequate sun exposure. Our goal is to share the science with you so you can make your own informed decisions. You can see all of my recommendations on the [Optimum Nutrient](https://nutritionfacts.org/optimum-nutrient-recommendations) page.";
+"faq_supplements_response" = "Hem actualitzat l'aplicació Daily Dozen per reflectir només els suplements necessaris. Per exemple, la vitamina D només és necessària per a les persones que s'exposició al sol inadequada. El nostre objectiu és compartir la ciència amb vosaltres perquè pugueu prendre les vostres pròpies decisions informades. Podeu veure totes les meves recomanacions a la pàgina [Optimum Nutrient](https://nutritionfacts.org/optimum-nutrient-recommendations).";
 
 /* History Data Alert: Cancel button */
-"history_data_alert_cancel" = "Cancel";
+"history_data_alert_cancel" = "Cancel·lar";
 
 /* History Data Alert: Clear button */
-"history_data_alert_clear" = "Clear";
+"history_data_alert_clear" = "Esborrar";
 
 /* History Data Alert: Import buttom */
-"history_data_alert_import" = "Import";
+"history_data_alert_import" = "Importar";
 
 /* History Data Alert: OK button */
-"history_data_alert_ok" = "OK";
+"history_data_alert_ok" = "D'acord";
 
 /* History Data: export action button */
-"history_data_export_btn" = "Export History Data";
+"history_data_export_btn" = "Exporta dades";
 
 /* History Data: export description text */
-"history_data_export_text" = "Export has been written to:";
+"history_data_export_text" = "L'exportació s'ha escrit a:";
 
 /* History Data: import action button */
-"history_data_import_btn" = "Import History Data";
+"history_data_import_btn" = "Importa dades de l'historial";
 
 /* History Data: import caution text */
-"history_data_import_caution_text" = "Caution: This import will overwrite all history data currently in this Daily Dozen application. Would you like to proceed with the import?";
+"history_data_import_caution_text" = "Precaució: aquesta importació sobreescriurà totes les dades de l'historial actualment en aquesta aplicació Daily Dozen. Voleu continuar amb la importació?";
 
 /* History Data: import data error text */
-"history_data_import_error_text" = "Error: The import was not performed because of a data error. The existing data has remained unchanged.";
+"history_data_import_error_text" = "Error: la importació ha fallat a causa d'un error de dades. Les dades existents no han canviat.";
 
 /* History Data: import not found text */
-"history_data_import_notfound_text" = "Did not find a valid import file in the Daily Dozen Documents folder.";
+"history_data_import_notfound_text" = "No s'ha trobat cap fitxer d'importació vàlid a la carpeta Daily Dozen Documents.";
 
 /* History Data: preferences header & title */
-"history_data_title" = "History";
+"history_data_title" = "Història";
 
 /* History View: calendar scale control */
 "history_scale_choice_day" = "Dia";
@@ -203,7 +203,7 @@
 "info_app_about_overview" = "Utilitza aquesta app cada dia per fer un seguiment dels aliments i els consells que dono per una salut i longevitat òptimes als meus llibres How Not to Die i How Not to Diet.";
 
 /* Info About View: Contributing Translators List (language code)  See https://en.wikipedia.org/wiki/List_of_ISO_639-1_codes */
-"info_app_about_translators" = "Agraïment especial als nostres traductors voluntaris: Petar & Tsveti Enchev (bg), Ricard Soler Roger (ca), Luděk Bouška (cs,sk), Lenka Lukacová (cs), Anke Schliessmann (de), Ángela Graña (es), Doron Barak (he), Ruth Levy (he), Annalisa Guerrini-Körner (it), Ilaria Zanini (it), Hanna Gurzeda (pl), Joanna Klopotek (pl), Tania Bassi (pt-BR), João Madureira (pt-PT), Evgeniya Lyakh (ru), Katarína Mocáková (sk).";
+"info_app_about_translators" = "Agraïment especial als nostres traductors voluntaris: Petar Enchev (bg), Tsveti Enchev (bg), Ricard Soler Roger (ca), Luděk Bouška (cs,sk), Lenka Lukacová (cs), Anke Schliessmann (de), Ángela Graña (es), Audray Harkins (fr), Doron Barak (he), Ruth Levy (he), Annalisa Guerrini-Körner (it), Ilaria Zanini (it), Hanna Gurzeda (pl), Joanna Klopotek (pl), Tania Bassi (pt-BR), João Madureira (pt-PT), Cristina Lauby (ro), Evgeniya Lyakh (ru), Katarína Mocáková (sk).";
 
 /* Info About View: Application release version */
 "info_app_about_version" = "versió 3.4.3";

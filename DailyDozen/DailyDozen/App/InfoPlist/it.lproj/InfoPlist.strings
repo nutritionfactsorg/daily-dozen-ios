@@ -8,9 +8,9 @@
 "CFBundleName" = "DailyDozen";
 
 /* Privacy - Health Share Usage Description */
-"NSHealthShareUsageDescription" = "La funzione \"21 modifiche\" consente di accedere ai dati del tuo Kit salute per aggiornare il monitoraggio giornaliero del peso.";
+"NSHealthShareUsageDescription" = "La funzione \"Ventuno mosse\" consente di accedere ai dati del tuo Kit salute per aggiornare il monitoraggio giornaliero del peso.";
 
 /* Privacy - Health Update Usage Description */
-"NSHealthUpdateUsageDescription" = "Con la funzione \"21 modifiche\" puoi salvare i dati del peso nel Kit salute per aiutarti a tenere traccia dei tuoi progressi.";
+"NSHealthUpdateUsageDescription" = "Con la funzione \"Ventuno mosse\" puoi salvare i dati del peso nel Kit salute per aiutarti a tenere traccia dei tuoi progressi.";
 
 /* file end */

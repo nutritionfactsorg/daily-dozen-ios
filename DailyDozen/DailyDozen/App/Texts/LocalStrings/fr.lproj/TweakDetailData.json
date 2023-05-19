@@ -2,191 +2,191 @@
   "itemsDict" : {
     "tweakCompleteIntentions" : {
       "activity" : {
-        "imperial" : "Complete Your Implementation Intentions",
-        "metric" : "Complete Your Implementation Intentions"
+        "imperial" : "Complétez vos objectifs",
+        "metric" : "Complétez vos objectifs"
       },
-      "explanation" : "Every two months, create three new implementation intentions—“if X, then Y” plans to perform a particular behavior in a specific context—and check each one of them off as you complete them every day.",
-      "heading" : "Complete Your Implementation Intentions",
+      "explanation" : "Tous les deux mois, créez trois nouveaux objectifs – du style «si X, alors Y», afin de déterminer une marche à suivre dans un contexte spécifique – et cochez une case par objectif complété chaque jour.",
+      "heading" : "Complétez vos objectifs",
       "topic" : ""
     },
     "tweakDailyBlackCumin" : {
       "activity" : {
-        "imperial" : "Black Cumin (Nigella sativa) (¼ tsp)",
-        "metric" : "Black Cumin (Nigella sativa) (¼ tsp)"
+        "imperial" : "Cumin noir (Nigella sativa) (¼ c. à café)",
+        "metric" : "Cumin noir (Nigella sativa) (¼ c. à café)"
       },
-      "explanation" : "As noted in the Appetite Suppression section, a systematic review and meta-analysis of randomized, controlled weight-loss trials found that about a quarter teaspoon of black cumin powder every day appears to reduce body mass index within a span of a couple of months. Note that black cumin is different from regular cumin, for which the dosing is different.",
-      "heading" : "Black Cumin (¼ tsp)",
+      "explanation" : "Une revue systématique et méta-analyse d’études randomisées avec contrôle sur la perte de poids ont révélé qu'environ un quart de cuillère à café de poudre de cumin noir par jour semble réduire l'indice de masse corporelle en l'espace de quelques mois.\n\nNotez que le cumin noir est différent du cumin ordinaire, pour lequel un autre dosage est recommandé.",
+      "heading" : "Cumin noir (¼ c. à café)",
       "topic" : ""
     },
     "tweakDailyCumin" : {
       "activity" : {
-        "imperial" : "Cumin (Cuminum cyminum) (½ tsp with lunch and dinner)",
-        "metric" : "Cumin (Cuminum cyminum) (½ tsp with lunch and dinner)"
+        "imperial" : "Cumin (Cuminum cyminum) (½ c. à café au déjeuner et au dîner)",
+        "metric" : "Cumin (Cuminum cyminum) (½ c. à café au déjeuner et au dîner)"
       },
-      "explanation" : "Overweight women randomized to add a half teaspoon of cumin to their lunches and dinners beat out the control group by four more pounds and an extra inch off their waists. There is also evidence to support the use of the spice saffron, but a pinch a day would cost a dollar, whereas a teaspoon of cumin costs less than ten cents.",
-      "heading" : "Cumin (½ tsp with lunch and dinner)",
+      "explanation" : "Des femmes en surpoids randomisées de manière à ajouter une demi-cuillère à café de cumin à leur déjeuner et dîner ont battu le groupe témoin de 2 kg et 2,5 cm de tour de taille. Le safran s’est également avéré efficace, mais une pincée par jour coûte un dollar, tandis qu'une cuillère à café de cumin coûte moins de dix cents.",
+      "heading" : "Cumin (½ c. à café au déjeuner et au dîner)",
       "topic" : ""
     },
     "tweakDailyDeflourDiet" : {
       "activity" : {
-        "imperial" : "Deflour Your Diet",
-        "metric" : "Deflour Your Diet"
+        "imperial" : "Défarinez votre alimentation",
+        "metric" : "Défarinez votre alimentation"
       },
-      "explanation" : "Check this box every day your whole grain servings are in the form of intact grains. The powdering of even 100 percent whole grains robs our microbiomes of the starch that would otherwise be ferried down to our colons enclosed in unbroken cell walls.",
-      "heading" : "Deflour Your Diet",
+      "explanation" : "Cochez cette case chaque jour où vous consommez vos céréales complètes sous forme de grains intacts. Une fois moulues, même les céréales 100% complètes privent notre microbiote de l’amidon que des grains intacts peuvent transporter jusqu’à notre côlon encapsulé dans des parois cellulaires inaltérées.",
+      "heading" : "Défarinez votre alimentation",
       "topic" : ""
     },
     "tweakDailyFrontLoad" : {
       "activity" : {
-        "imperial" : "Front-Load Your Calories",
-        "metric" : "Front-Load Your Calories"
+        "imperial" : "Concentrez vos calories en début de journée",
+        "metric" : "Concentrez vos calories en début de journée"
       },
-      "explanation" : "There are metabolic benefits to distributing more calories to earlier in the day, so make breakfast (ideally) or lunch your largest meal of the day in true king/prince/pauper style.",
-      "heading" : "Front-Load Your Calories",
+      "explanation" : "Consommer plus de calories plus tôt dans la journée est bénéfique au métabolisme, alors faites du petit déjeuner (idéalement) ou du déjeuner votre plus grand repas de la journée ; comme le veut l’adage qui nous recommande de manger comme un roi le matin, comme un prince le midi et comme un pauvre le soir.",
+      "heading" : "Concentrez vos calories en début de journée",
       "topic" : ""
     },
     "tweakDailyGarlic" : {
       "activity" : {
-        "imperial" : "Garlic Powder (¼ tsp)",
-        "metric" : "Garlic Powder (¼ tsp)"
+        "imperial" : "Ail en poudre (¼ c. à café)",
+        "metric" : "Ail en poudre (¼ c. à café)"
       },
-      "explanation" : "Randomized, double-blind, placebo-controlled studies have found that as little as a daily quarter teaspoon of garlic powder can reduce body fat at a cost of perhaps two cents a day.",
-      "heading" : "Garlic Powder (¼ tsp)",
+      "explanation" : "Des études randomisées en double aveugle sous contrôle placebo ont démontré que l’on peut réduire sa masse graisseuse en prenant à peine un quart de cuillère à café d'ail en poudre par jour, coûtant seulement deux cents par jour.",
+      "heading" : "Ail en poudre (¼ c. à café)",
       "topic" : ""
     },
     "tweakDailyGinger" : {
       "activity" : {
-        "imperial" : "Ground Ginger (1 tsp) or Cayenne Pepper (½ tsp)",
-        "metric" : "Ground Ginger (1 tsp) or Cayenne Pepper (½ tsp)"
+        "imperial" : "Gingembre moulu (1 c. à café) ou piment de Cayenne (½ c. à café)",
+        "metric" : "Gingembre moulu (1 c. à café) ou piment de Cayenne (½ c. à café)"
       },
-      "explanation" : "Randomized controlled trials have found that ¼ teaspoon to 1½ teaspoons a day of ground ginger significantly decreased body weight for just pennies a day. It can be as easy as stirring the ground spice into a cup of hot water. Note: Ginger may work better in the morning than evening. Chai tea is a tasty way to combine the green tea and ginger tricks into a single beverage. Alternately, for BAT activation, you can add one raw jalapeño pepper or a half teaspoon of red pepper powder (or, presumably, crushed red pepper flakes) into your daily diet. To help beat the heat, you can very thinly slice or finely chop the jalapeño to reduce its bite to little prickles, or mix the red pepper into soup or the whole-food vegetable smoothie I featured in one of my cooking videos on NutritionFacts.org.",
-      "heading" : "Ground Ginger (1 tsp) or Cayenne Pepper (½ tsp)",
+      "explanation" : "Des essais contrôlés randomisés ont révélé que ¼ de cuillère à café à 1½ cuillères à café de gingembre moulu par jour diminuait considérablement la masse corporelle pour seulement quelques centimes par jour. Vous pouvez tout simplement le diluer dans de l’eau chaude.\nN.B. : le gingembre est peut-être plus efficace le matin que le soir.\n\nLe thé Chai peut vous permettre de délicieusement combiner les astuces thé vert et gingembre en une seule boisson.\nAutrement, vous pouvez ajouter un piment jalapeño cru ou ½ cuillère à café de piment moulu (ou flocons de piment) dans votre alimentation quotidienne pour activer votre tissu adipeux brun. Pour atténuer sa force, vous pouvez émincer ou hacher le jalapeño très finement ou mélanger le piment moulu dans une soupe ou le smoothie de légumes complet qui figure dans l'une de mes vidéos sur NutritionFacts.org.",
+      "heading" : "Gingembre moulu (1 c. à café) ou piment de Cayenne (½ c. à café)",
       "topic" : ""
     },
     "tweakDailyGreenTea" : {
       "activity" : {
-        "imperial" : "Green Tea (3 cups)",
-        "metric" : "Green Tea (3 cups)"
+        "imperial" : "Thé vert (3 tasses)",
+        "metric" : "Thé vert (3 tasses)"
       },
-      "explanation" : "Drink three cups a day between meals (waiting at least an hour after a meal so as to not interfere with iron absorption). During meals, drink water, black coffee, or hibiscus tea mixed 6:1 with lemon verbena, but never exceed three cups of fluid an hour (important given my water preloading advice). Take advantage of the reinforcing effect of caffeine by drinking your green tea along with something healthy you wish you liked more, but don’t consume large amounts of caffeine within six hours of bedtime. Taking your tea without sweetener is best, but if you typically sweeten your tea with honey or sugar, try yacon syrup instead.",
-      "heading" : "Green Tea (3 cups)",
+      "explanation" : "Buvez trois tasses par jour entre les repas (attendez au moins une heure après un repas pour ne pas interférer avec l'absorption du fer).\nPendant les repas, buvez de l'eau, du café noir ou de la tisane d'hibiscus mélangée 6/1 avec de la verveine citronnée, mais ne dépassez jamais trois tasses de liquide par heure (important compte tenu de mon astuce de précharge d'eau).\nProfitez de l'effet de renforcement positif de la caféine en buvant votre thé vert avec quelque chose de sain que vous voudriez aimer plus, mais évitez de consommer trop de caféine dans les six heures avant le coucher.\nIl est préférable de prendre votre thé sans édulcorant mais si vous sucrez généralement votre thé avec du miel ou du sucre, essayez plutôt le sirop de yacon.",
+      "heading" : "Thé vert (3 tasses)",
       "topic" : ""
     },
     "tweakDailyHydrate" : {
       "activity" : {
-        "imperial" : "Stay Hydrated",
-        "metric" : "Stay Hydrated"
+        "imperial" : "Restez hydraté",
+        "metric" : "Restez hydraté"
       },
-      "explanation" : "Check this box if your urine never appears darker than a pale yellow.\n\nNote that if you’re eating riboflavin-fortified foods (such as nutritional yeast), then base this instead on getting nine cups of unsweetened beverages a day for women (which would be taken care of by the green tea and water preloading recommendations) or thirteen cups a day for men.\n\nIf you have heart or kidney issues, don’t increase fluid intake at all without first talking with your physician.\n\nRemember, diet soda may be calorie-free, but it’s not consequence-free, as we learned in the Low in Added Sugar section.",
-      "heading" : "Stay Hydrated",
+      "explanation" : "Cochez cette case si votre urine n’est jamais plus sombre que jaune pâle dans la journée.\n\nNotez que si vous mangez des aliments enrichis en riboflavine (comme la levure nutritionnelle), concentrez-vous plutôt sur neuf tasses de boissons non sucrées par jour pour les femmes (ce qui serait pris en charge par les recommandations de précharge de thé vert et d'eau) ou treize tasses par jour pour les hommes.\n\nSi vous avez des problèmes cardiaques ou rénaux, n'augmentez pas votre apport quotidien en liquides sans consulter votre médecin.\n\nAttention, comme expliqué dans mon livre ‘Comment ne pas faire de régime’, les sodas lights sont peut-être sans calories mais ils ne sont pas sans conséquences.",
+      "heading" : "Restez hydraté",
       "topic" : ""
     },
     "tweakDailyNutriYeast" : {
       "activity" : {
-        "imperial" : "Nutritional Yeast (2 tsp)",
-        "metric" : "Nutritional Yeast (2 tsp)"
+        "imperial" : "Levure nutritionnelle (2 c. à café)",
+        "metric" : "Levure nutritionnelle (2 c. à café)"
       },
-      "explanation" : "Two teaspoons of baker’s, brewer’s, or nutritional yeast contains roughly the amount of beta 1,3/1,6 glucans found in randomized, double-blind, placebo-controlled clinical trials to facilitate weight loss.",
-      "heading" : "Nutritional Yeast (2 tsp)",
+      "explanation" : "Deux cuillères à café de levure de boulanger, de bière ou nutritionnelle contiennent à peu près la quantité de bêta-(1,3/1,6)-glucanes qui permet de faciliter la perte de poids selon des études randomisées en double aveugle sous contrôle placebo.",
+      "heading" : "Levure nutritionnelle (2 c. à café)",
       "topic" : ""
     },
     "tweakDailyTimeRestrict" : {
       "activity" : {
-        "imperial" : "Time-Restrict Your Eating",
-        "metric" : "Time-Restrict Your Eating"
+        "imperial" : "Consommez vos aliments sur une durée définie",
+        "metric" : "Consommez vos aliments sur une durée définie"
       },
-      "explanation" : "Confine eating to a daily window of time of your choosing under twelve hours in length that you can stick to consistently, seven days a week. Given the circadian benefits of reducing evening food intake, the window should end before 7:00 p.m.",
-      "heading" : "Time-Restrict Your Eating",
+      "explanation" : "Définissez une période de moins de douze heures par jour pour votre consommation alimentaire. Choissisez une fenêtre de douze heures à laquelle vous pourrez vous tenir tous les jours de la semaine. Sachant qu’il est bénéfique, par rapport aux rythmes circadiens, de ne pas consommer trop le soir, la période choisie devrait se terminer à 19h00 au plus tard.",
+      "heading" : "Consommez vos aliments sur une durée définie",
       "topic" : ""
     },
     "tweakExerciseTiming" : {
       "activity" : {
-        "imperial" : "Optimize Exercise Timing",
-        "metric" : "Optimize Exercise Timing"
+        "imperial" : "Optimisez vos exercices",
+        "metric" : "Optimisez vos exercices"
       },
-      "explanation" : "The Daily Dozen’s recommendation for optimum exercise duration for longevity is ninety minutes of moderately intense activity a day, which is also the optimum exercise duration for weight loss. Anytime is good, and the more, the better, but there may be an advantage to exercising in a fasted state, at least six hours after your last meal. Typically, this would mean before breakfast, but if you timed it right, you could exercise midday before a late lunch or, if lunch is eaten early enough, before dinner. This is the timing for nondiabetics. Diabetics and prediabetics should instead start exercising thirty minutes after the start of a meal and ideally go for at least an hour to completely straddle the blood sugar peak. If you had to choose a single meal to exercise after, it would be dinner, due to the circadian rhythm of blood sugar control that wanes throughout the day. Ideally, though, breakfast would be the largest meal of the day, and you’d exercise after that—or, even better, after every meal.",
-      "heading" : "Optimize Exercise Timing",
+      "explanation" : "La recommandation Daily Dozen pour une durée d'exercice optimale pour la longévité est de 90 minutes d'activité modérément intense par jour, ce qui est également la durée optimale pour la perte de poids. Cela est bénéfique à tout moment de la journée et plus vous en faites, mieux c’est, mais c’est peut-être encore mieux à jeun (au moins six heures après votre dernier repas). Ceci est généralement avant le petit-déjeuner, mais si vous calculez bien, vous pourriez faire de l'exercice avant un déjeuner tardif ou, si votre déjeuner est suffisamment tôt, avant le dîner. Ça c'est pour les non-diabétiques.\n\nLes diabétiques et prédiabétiques devraient, quant à eux, commencer à faire de l'exercice trente minutes après le début d'un repas et, idéalement, pendant au moins une heure pour passer complètement le pic de glycémie. Le repas optimal pour cela serait le dîner, en raison du rythme circadien du contrôle de la glycémie qui diminue tout au long de la journée. Mais, idéalement, le petit-déjeuner devrait être le plus gros repas de la journée et vous devriez faire votre exercice juste après – ou, mieux encore, après chaque repas.",
+      "heading" : "Optimisez vos exercices",
       "topic" : ""
     },
     "tweakMeal20Minutes" : {
       "activity" : {
-        "imperial" : "Follow the Twenty-Minute Rule",
-        "metric" : "Follow the Twenty-Minute Rule"
+        "imperial" : "Suivez la règle des vingt minutes",
+        "metric" : "Suivez la règle des vingt minutes"
       },
-      "explanation" : "Whether through increasing viscosity or the number of chews, or decreasing bite size and eating rate, dozens of studies have demonstrated that no matter how we boost the amount of time food is in our mouths, it can result in lower caloric intake. So extend meal duration to at least twenty minutes to allow your natural satiety signals to take full effect. How? By choosing foods that take longer to eat and eating them in a way that prolongs the time they stay in your mouth. Think bulkier, hardier, chewier foods in smaller, well-chewed bites.",
-      "heading" : "Follow the Twenty-Minute Rule",
+      "explanation" : "Que ce soit en augmentant la viscosité ou le nombre de mastications, ou en diminuant la taille des bouchées et la vitesse de consommation, des dizaines d'études ont démontré que, quelle que soit la façon que nous utilisons pour prendre plus de temps à manger, cela peut entraîner une diminution de l'apport calorique. Faites en sorte que votre repas dure au moins vingt minutes pour activer pleinement vos signaux de satiété.\n\nComment ? En choisissant des aliments qui prennent plus de temps à manger et en les gardant en bouche aussi longtemps que possible. Optez pour des aliments plus volumineux, plus durs et qui ont besoin d’être bien mâchés en prenant de plus petites bouchées.",
+      "heading" : "Suivez la règle des vingt minutes",
       "topic" : ""
     },
     "tweakMealNegCal" : {
       "activity" : {
-        "imperial" : "Preload with “Negative Calorie” Foods",
-        "metric" : "Preload with “Negative Calorie” Foods"
+        "imperial" : "Préchargez avec des “calories négatives”",
+        "metric" : "Préchargez avec des “calories négatives”"
       },
-      "explanation" : "As the first course, start each meal with an apple or a Green Light soup or salad containing fewer than one hundred calories per cup.",
-      "heading" : "Preload with “Negative Calorie” Foods",
+      "explanation" : "Commencez chaque repas avec une pomme ou bien une soupe ou salade contenant moins de cent calories par tasse (1 tasse = 250 ml).",
+      "heading" : "Préchargez avec des “calories négatives”",
       "topic" : ""
     },
     "tweakMealUndistracted" : {
       "activity" : {
-        "imperial" : "Enjoy Undistracted Meals",
-        "metric" : "Enjoy Undistracted Meals"
+        "imperial" : "Prenez vos repas sans distraction",
+        "metric" : "Prenez vos repas sans distraction"
       },
-      "explanation" : "Don’t eat while watching TV or playing on your phone. Give yourself a check for each meal you’re able to eat without distraction.",
-      "heading" : "Enjoy Undistracted Meals",
+      "explanation" : "Evitez de regarder la télévision ou jouer sur votre téléphone pendant les repas. Cochez cette case à chaque repas que vous arrivez à manger sans distraction.",
+      "heading" : "Prenez vos repas sans distraction",
       "topic" : ""
     },
     "tweakMealVinegar" : {
       "activity" : {
-        "imperial" : "Incorporate Vinegar (2 tsp with each meal)",
-        "metric" : "Incorporate Vinegar (2 tsp with each meal)"
+        "imperial" : "Prenez du vinaigre (2 c. à café par repas)",
+        "metric" : "Prenez du vinaigre (2 c. à café par repas)"
       },
-      "explanation" : "Never drink vinegar straight. Instead, flavor meals or dress a side salad with any of the sweet and savory vinegars out there. If you want to drink it, make sure to mix it in a glass of water and, afterward, be sure to rinse your mouth out with water to protect your tooth enamel.",
-      "heading" : "Incorporate Vinegar (2 tsp with each meal)",
+      "explanation" : "Ne buvez jamais de vinaigre pur. Utilisez-le plutôt pour aromatiser vos plats ou assaisonner vos salades. Choisissez n’importe quel vinaigre sucré ou salé. Si vous voulez le boire, mélangez-le bien dans un verre d'eau et n’oubliez pas de vous rincer la bouche avec de l’eau en suivant pour protéger l'émail de vos dents.",
+      "heading" : "Prenez du vinaigre (2 c. à café par repas)",
       "topic" : ""
     },
     "tweakMealWater" : {
       "activity" : {
-        "imperial" : "Preload with Water",
-        "metric" : "Preload with Water"
+        "imperial" : "Préchargez avec de l'eau",
+        "metric" : "Préchargez avec de l'eau"
       },
-      "explanation" : "Time your metabolism-boosting two cups of cool or cold unflavored water before each meal to also take advantage of its preload benefits.",
-      "heading" : "Preload with Water",
+      "explanation" : "Buvez deux verres d’eau fraîche ou froide non aromatisée avant chaque repas pour stimuler votre métabolisme et profiter de la faculté de précharge de l'eau.",
+      "heading" : "Préchargez avec de l'eau",
       "topic" : ""
     },
     "tweakNightlyFast" : {
       "activity" : {
-        "imperial" : "Fast After 7:00 p.m.",
-        "metric" : "Fast After 7:00 p.m."
+        "imperial" : "Jeûnez après 19h",
+        "metric" : "Jeûnez après 19h"
       },
-      "explanation" : "Due to our circadian rhythms, food eaten at night is more fattening than the exact same food eaten earlier in the day, so fast every night for at least twelve hours starting before 7:00 p.m. The fewer calories after sundown, the better.",
-      "heading" : "Fast After 7:00 pm",
+      "explanation" : "En raison de nos rythmes circadiens, les aliments consommés le soir font davantage grossir que les mêmes aliments plus tôt dans la journée. Il est donc préférable de jeûner tous les soirs pendant au moins douze heures en commençant avant 19h. Moins vous consommez de calories après le coucher du soleil, mieux c’est.",
+      "heading" : "Jeûnez après 19h",
       "topic" : ""
     },
     "tweakNightlySleep" : {
       "activity" : {
-        "imperial" : "Get Sufficient Sleep",
-        "metric" : "Get Sufficient Sleep"
+        "imperial" : "Dormez suffisamment",
+        "metric" : "Dormez suffisamment"
       },
-      "explanation" : "Check this box if you get at least seven hours of sleep at your regular bedtime.",
-      "heading" : "Get Sufficient Sleep",
+      "explanation" : "Cochez cette case si vous avez dormi au moins sept heures en vous couchant à l’heure habituelle.",
+      "heading" : "Dormez suffisamment",
       "topic" : ""
     },
     "tweakNightlyTrendelenbrug" : {
       "activity" : {
-        "imperial" : "Experiment with Mild Trendelenburg",
-        "metric" : "Experiment with Mild Trendelenburg"
+        "imperial" : "Testez la position de Trendelenburg modérée",
+        "metric" : "Testez la position de Trendelenburg modérée"
       },
-      "explanation" : "Try spending at least four hours a night lying with your body tilted head-down six degrees by elevating the posts at the foot of your bed by eight inches (or by nine inches if you have a California king). Be extremely careful when you get out of bed, as this causes orthostatic intolerance in most people, even if you’re young and healthy—meaning if you get up too fast, you can feel dizzy, faint, or light-headed and could fall and hurt yourself. So get up slowly. Drinking two cups of cold water thirty minutes before rising may also help prevent this potentially hazardous side effect.\n\n*IMPORTANT: Do not try this at home at all if you have any heart or lung issues, acid reflux, or problems with your brain (like head trauma) or eyes (even a family history of glaucoma disqualifies you). Also do not try this until you ask your physician if they think it’s safe for you to sleep in mild Trendelenburg.*",
-      "heading" : "Experiment with Mild Trendelenburg",
+      "explanation" : "Essayez de passer au moins quatre heures par nuit avec la tête inclinée de 6 degrés vers le bas par rapport aux pieds en surélevant les pieds de votre lit de 20 cm.\nSoyez extrêmement prudent au lever car cela provoque une intolérance orthostatique chez la plupart des gens, même jeunes et en bonne santé – ce qui veut dire que, si vous vous levez trop vite, vous pourriez être étourdi ou pris de malaise et tomber et vous blesser. Levez-vous donc lentement. Boire deux verres d'eau fraiche trente minutes avant de vous lever peut également aider à prévenir cet effet indésirable.\n\nIMPORTANT : N'essayez pas cela si vous avez le moindre problème cardiaque ou pulmonaire, des remontées acides, ou si vous souffrez de problèmes cérébraux (comme un traumatisme crânien) ou oculaires (même des antécédents familiaux de glaucome vous disqualifient). N'essayez pas non plus avant d'avoir demandé à votre médecin s'il pense que la position de Trendelenburg modérée est sans danger pour vous.",
+      "heading" : "Testez la position de Trendelenburg modérée",
       "topic" : ""
     },
     "tweakWeightTwice" : {
       "activity" : {
-        "imperial" : "Weigh Yourself Twice a Day",
-        "metric" : "Weigh Yourself Twice a Day"
+        "imperial" : "Pesez-vous deux fois par jour",
+        "metric" : "Pesez-vous deux fois par jour"
       },
-      "explanation" : "Regular self-weighing is considered crucial for long-term weight control, but there is insufficient evidence to support a specific frequency of weighing. My recommendation is based on the one study that found that twice daily—upon waking and right before bed—appeared superior to once a day (about six versus two pounds of weight loss over twelve weeks).",
-      "heading" : "Weigh Yourself Twice a Day",
+      "explanation" : "Se peser régulièrement est essentiel pour contrôler son poids sur le long terme mais il n’y a pour l’instant pas de preuves justifiant une fréquence spécifique.\nMa recommandation est basée sur une étude qui a montré que deux fois par jour (au réveil et juste avant le coucher) semblait plus efficace qu’une fois par jour (environ 3kg perdus contre 1kg sur douze semaines).",
+      "heading" : "Pesez-vous deux fois par jour",
       "topic" : ""
     }
   }

@@ -8,7 +8,7 @@
 "dateButtonTitle.today" = "Oggi";
 
 /* Doze Detail View subheading: ‘Serving Sizes’ */
-"doze_detail_section_sizes" = "Dimensioni delle porzioni (suggerite)";
+"doze_detail_section_sizes" = "Porzioni (consigliate)";
 
 /* Doze Detail View subheading: ‘Types’ */
 "doze_detail_section_types" = "Tipi";
@@ -203,7 +203,7 @@
 "info_app_about_overview" = "Utilizza questa applicazione giornalmente per tenere traccia degli alimenti e dei miei consigli per una salute ottimale e una vita longeva tratti dai miei libri “Sei quel che mangi” e “Contro le diete”.";
 
 /* Info About View: Contributing Translators List (language code)  See https://en.wikipedia.org/wiki/List_of_ISO_639-1_codes */
-"info_app_about_translators" = "Un ringraziamento speciale ai nostri traduttori volontari: Petar & Tsveti Enchev (bg), Ricard Soler Roger (ca), Luděk Bouška (cs,sk), Lenka Lukacová (cs), Anke Schliessmann (de), Ángela Graña (es), Doron Barak (he), Ruth Levy (he), Annalisa Guerrini-Körner (it), Ilaria Zanini (it), Hanna Gurzeda (pl), Joanna Klopotek (pl), Tania Bassi (pt-BR), João Madureira (pt-PT), Evgeniya Lyakh (ru), Katarína Mocáková (sk).";
+"info_app_about_translators" = "Un ringraziamento speciale ai nostri traduttori volontari: Petar Enchev (bg), Tsveti Enchev (bg), Ricard Soler Roger (ca), Luděk Bouška (cs,sk), Lenka Lukacová (cs), Anke Schliessmann (de), Ángela Graña (es), Audray Harkins (fr), Doron Barak (he), Ruth Levy (he), Annalisa Guerrini-Körner (it), Ilaria Zanini (it), Hanna Gurzeda (pl), Joanna Klopotek (pl), Tania Bassi (pt-BR), João Madureira (pt-PT), Cristina Lauby (ro), Evgeniya Lyakh (ru), Katarína Mocáková (sk).";
 
 /* Info About View: Application release version */
 "info_app_about_version" = "versione 3.4.3";
@@ -254,7 +254,7 @@
 "navtab.preferences" = "Preferenze";
 
 /* Main Navigation Tab Control: ‘21 Tweaks’ (proper noun) */
-"navtab.tweaks" = "21 modifiche";
+"navtab.tweaks" = "Ventuno mosse";
 
 /* heading for daily data entry item */
 "otherVitaminB12.heading" = "Vitamina B12";
@@ -305,13 +305,13 @@
 "setting_doze_only_choice" = "Solo Daily Dozen";
 
 /* First Launch Setting: button text */
-"setting_doze_tweak_btn" = "Daily Dozen +\n21 modifiche";
+"setting_doze_tweak_btn" = "Daily Dozen +\nVentuno mosse";
 
 /* Preference Settings View: selection button text */
-"setting_doze_tweak_choice" = "Daily Dozen + 21 modifiche";
+"setting_doze_tweak_choice" = "Daily Dozen + Ventuno mosse";
 
 /* Preference Settings View: brief description text below Tweaks visibility control. */
-"setting_doze_tweak_footer" = "Per il percorso salute, usa \"Solo Daily Dozen\". Per il percorso salute e perdita di peso, usa “Daily Dozen + 21 modifiche”.";
+"setting_doze_tweak_footer" = "Per il percorso salute, usa \"Solo Daily Dozen\". Per il percorso salute e perdita di peso, usa “Daily Dozen + Ventuno mosse”.";
 
 /* First Launch Setting: brief description above ‘Daily Dozen Only’ button. */
 "setting_health_alone_txt" = "Percorso salute";
@@ -320,7 +320,7 @@
 "setting_health_weight_txt" = "Percorso salute e perdita di peso";
 
 /* Preference Settings View: tweaks visibilty subsection heading */
-"setting_tweak_header" = "Visibilità 21 modifiche";
+"setting_tweak_header" = "Visibilità Ventuno mosse";
 
 /* Preference Settings View: Part of ‘Imperial/Metric/Toggle Units’ selector */
 "setting_units_0_imperial" = "Sistema imperiale";
@@ -350,7 +350,7 @@
 "tweak_detail_section_description" = "Descrizione";
 
 /* Tweaks daily entry header */
-"tweak_entry_header" = "21 modifiche";
+"tweak_entry_header" = "Ventuno mosse";
 
 /* heading for daily data entry item */
 "tweakCompleteIntentions.heading" = "Completa le tue ambizioni di miglioramento";

@@ -8,7 +8,7 @@
 "dateButtonTitle.today" = "Heute";
 
 /* Doze Detail View subheading: ‘Serving Sizes’ */
-"doze_detail_section_sizes" = "Portionsgrößen (empfohlen)";
+"doze_detail_section_sizes" = "Portionsgröße (empfohlen)";
 
 /* Doze Detail View subheading: ‘Types’ */
 "doze_detail_section_types" = "Arten";
@@ -65,82 +65,82 @@
 "dozeWholeGrains.heading" = "Vollkorn";
 
 /*  */
-"faq_adapt_question" = "The Daily Dozen is too much/too little food for me! Can I adapt it?";
+"faq_adapt_question" = "Die Daily Dozen ist zu viel/zu wenig Essen für mich! Kann ich es anpassen?";
 
 /*  */
-"faq_adapt_response" = "Yes, the Daily Dozen is simply meant to be a guide of the healthiest foods that we strive to include every day. It’s not a meal plan and is not meant to be prescriptive. Do your best to eat a diverse array of whole plant foods and adapt the Daily Dozen to the quantities that work for you.";
+"faq_adapt_response" = "Ja, die Daily Dozen ist einfach ein Leitfaden der gesündesten Nahrungsmittel, die wir versuchen jeden Tag zu uns zu nehmen. Es ist kein Speiseplan und sollte nicht vorschriftsmäßig gesehen werden. Versuch dein Bestes eine Vielfalt von vollwertigen pflanzlichen Lebensmitteln zu essen und passe die Daily Dozen zu den Mengen an, die für dich am besten passen.";
 
 /*  */
-"faq_age_question" = "Is this adaptable for children, adolescents, and teens?";
+"faq_age_question" = "Kann die Daily Dozen für Kinder, Jugendliche und Teenager angepasst werden?";
 
 /*  */
-"faq_age_response.0" = "Children, adolescents, and teenagers have different caloric needs throughout their lifecycle. These needs change to support growth and development at each stage.";
+"faq_age_response.0" = "Kinder, Jugendliche und Teenager haben einen verschiedenen Kalorienbedarf während ihrer Lebensdauer. Dieser Bedarf ändert sich, um Wachstum und die Entwicklung bei jedem Abschnitt zu fördern.";
 
 /*  */
-"faq_age_response.1" = "The Daily Dozen was designed as a guide to help people include some of the healthiest foods into their daily routine. While the same framework can be used for most people throughout the lifecycle, the amount of food one needs to eat will vary based on a number of factors like age and activity level. Since we can’t provide specific nutrition or medical advice for your growing child, parents should use this guide as they see best for their child’s needs and/or consult with a registered dietitian or other healthcare provider to help determine what is best for their individual needs.";
+"faq_age_response.1" = "Die Daily Dozen ist ein Leitfaden, um Menschen zu helfen einige der gesündesten Lebensmittel in ihre tägliche Routine einzubauen. Obwohl der gleiche Rahmen für die meisten Menschen während ihrer Lebensdauer genutzt werden kann, hängt die Menge der Nahrungsmittel, die ein Mensch konsumieren sollte von verschiedenen Faktoren ab, wie Alter und Aktivitätslevel. Da wir keinen spezifischen Ernährungs- oder medizinischen Rat für ihr heranwachsendes Kind geben können, sollten Eltern diese Richtschnur so annehmen, wie sie es am besten für den Bedarf ihres Kindes ansehen. Zusätzlich können Sie einen Ernährungsberater oder Arzt konsultieren, um zu bestimmen was das Beste für den individuellen Bedarf ist.";
 
 /*  */
-"faq_calories_question" = "How many calories are in the Daily Dozen?";
+"faq_calories_question" = "Wie viele Kalorien sind die Daily Dozen?";
 
 /*  */
-"faq_calories_response.0" = "The Daily Dozen averages about 1,200 calories, but given the wide array of food choices in each category, it can range anywhere from 800-1800. Consider the Other Vegetables category: a cup of bell peppers has a much lower caloric density than a cup of cooked sweet potatoes, therefore the caloric range will depend on your specific food choices. That’s the great thing about the Daily Dozen Checklist—it’s not a one size fits all approach, and can be adapted to your needs.";
+"faq_calories_response.0" = "Die Daily Dozen sind durchschnittlich 1.200 Kalorien aber aufgrund der Vielfalt und Auswahl an Nahrungsmitteln in jeder Kategorie, kann dies zwischen 800-1.800 schwanken. Schau dir zum Beispiel die Kategorie Gemüse an: 240 Gramm Paprika hat eine niedrigere Kaloriendichte als 240 Gramm Süßkartoffeln, daher hängt der Kalorienbereich davon ab, welche Nahrungsmittel ausgewählt werden. Das ist das gute an der Daily Dozen Checkliste - sie ist keine Einheitslösung und kann an die eigenen Bedürfnisse angepasst werden.";
 
 /*  */
-"faq_calories_response.1" = "If your goal is weight loss, you can find more information in “How Not to Diet” and the accompanying Twenty-One Tweaks. In “How Not to Diet”, I noted: “A systematic review of successful weight-loss strategies concluded that given the metabolic slowing and increased appetite that accompanies weight loss, to achieve significant weight loss, calorie counts may need to drop as low as 1,200 calories a day for women and 1,500 calories a day for men.”";
+"faq_calories_response.1" = "Wenn du Gewicht verlieren möchtest, kannst du mehr Informationen in \"How Not to Diet\" finden und den beigelegten einundzwanzig Optimierungen. In \"How Not to Diet\" habe ich geschrieben: \"Eine systemische Überprüfung von Strategien des Gewichtsverlusts schließt, dass aufgrund des verlangsamten Stoffwechsel und dem gesteigertem Appetit, welches den Gewichtsverlust begleitet, kann ein bedeutender Gewichtsverlust eventuell nur dann erreicht werden, wenn die Kalorien auf ungefähr 1.200 für Frauen und 1.500 für Männer reduziert werden.\"";
 
 /*  */
-"faq_calories_response.2" = "On the other hand, if your goal is weight gain, then you may want to focus on adding in more calorie-dense foods, such as sweet potatoes, avocados, nuts, and soy products.";
+"faq_calories_response.2" = "Auf der anderen Seite, wenn dein Ziel ist, Gewicht zuzunehmen, dann konzentriere dich darauf mehr kalorienreiche Nahrungsmittel zu dir zu nehmen, wie Süßkartoffeln, Avocados, Nüsse und Sojaprodukte. ";
 
 /*  */
-"faq_mother_question" = "Can I do this while pregnant or breastfeeding?";
+"faq_mother_question" = "Kann ich den Daily Dozen folgen, wenn ich schwanger bin oder stille?";
 
 /*  */
-"faq_mother_response" = "People who are pregnant or breastfeeding have different caloric and nutritional needs than people who are not. As a reminder, the Daily Dozen is not a meal plan and should not be the only foods consumed within a day. People who are pregnant or breastfeeding should consult with their health care practitioner or a registered dietician for assistance with meeting their specific caloric requirements and nutritional needs.";
+"faq_mother_response" = "Schwangere oder stillende Frauen haben einen verschiedenen Kalorien- und Nährstoffbedarf als Menschen die dies nicht sind. Zur Erinnerung, die Daily Dozen ist kein Speiseplan und sollten nicht die einzigen Nahrungsmittel sein, die pro Tag zu sich genommen werden sollten. Schwangere und stillende Frauen sollten sich mit einem Arzt oder einem Ernährungswissenschaftler beraten, um ihren spezifischen Kalorien- und Nährstoffbedarf zu erzielen. ";
 
 /*  */
-"faq_scaling_question" = "I can’t possibly eat that many beans/grains/etc.!";
+"faq_scaling_question" = "Ich kann doch unmöglich so viele Bohnen/Vollkorn/usw. essen!";
 
 /*  */
-"faq_scaling_response" = "That’s okay! The Daily Dozen is an aspirational guide. Do your best to incorporate as many of these healthy plant foods as possible. If you are new to eating a lot of beans (or grains, greens, etc!), you may need to start with smaller amounts and slowly increase the quantity in order to give your microbiome a chance to adjust. You can also get creative: for example, add some beans to your morning oatmeal. If you load it up with berries, flax seeds, and nuts, you won’t even notice the beans. You can also mash beans into a sandwich spread, or make my [BROL](https://nutritionfacts.org/recipe/basic-brol-barley-rye-oats-and-lentils)—barley, rye, oat groats, and lentils—that I use as a base for many meals and is a simple way to get a variety of whole grains with a built-in serving of legumes.";
+"faq_scaling_response" = "Das ist ok! Die Daily Dozen ist ein ehrgeiziger Leitfaden. Gib dein Bestes, um so viele von diesen gesunden Nahrungsmittel zu dir zu nehmen wie möglich. Wenn du es nicht gewöhnt bist viele Bohnen (oder Vollkorn, Gemüse usw.!) zu essen, dann kannst du mit einer kleinen Mengen anfangen und dann langsam anfangen die Menge zu erhöhen, um deinem Mikrobiom die Möglichkeit zu geben sich anzupassen. Du kannst auch experimentieren: zum Beispiel, füge Bohnen zu deinem Haferbrei zum Frühstück dazu. Wenn du diesen mit Beeren, Leimsamen und Nüssen belädst, dann fallen dir die Bohnen gar nicht auf. Du kannst auch pürierte Bohnen in deinen Brotaufstrich mischen oder mache meinen [BROL](https://nutritionfacts.org/recipe/basic-brol-barley-rye-oats-and-lentils) - Gerste, Roggen, Hafergrütze und Linsen - welches ich als eine Basis für viele meiner Mahlzeiten nehme. Ein einfacher Weg um eine Vielfalt von Vollkorn mit einer eingebauten Portion von Hülsenfrüchte zu konsumieren.";
 
 /*  */
-"faq_supplements_question" = "I thought that Dr. Greger recommends taking Vitamin D and DHA supplements. Why aren’t they included?";
+"faq_supplements_question" = "Ich dachte, dass Dr. Greger empfiehlt Vitamin D und DHA Ergänzungsmittel zu nehmen. Warum werden diese hier nicht genannt?";
 
 /*  */
-"faq_supplements_response" = "We have updated the Daily Dozen app to reflect only required supplements. For example, Vitamin D is only needed for people who get inadequate sun exposure. Our goal is to share the science with you so you can make your own informed decisions. You can see all of my recommendations on the [Optimum Nutrient](https://nutritionfacts.org/optimum-nutrient-recommendations) page.";
+"faq_supplements_response" = "Wir haben die Daily Dozen App aktualisiert, damit diese nur die notwendigen Ergänzungsmittel wiederspiegelt. Zum Beispiel, Vitamin D ist nur notwendig für Menschen, die nicht genügend Sonne bekommen. Unser Ziel ist es, die Wissenschaft mit euch zu teilen, damit ihr informierte Entscheidungen treffen könnt. Du kannst alle meine Empfehlungen hier finden: [optimale Nährstoffe](https://nutritionfacts.org/optimum-nutrient-recommendations)";
 
 /* History Data Alert: Cancel button */
-"history_data_alert_cancel" = "Cancel";
+"history_data_alert_cancel" = "Abbrechen";
 
 /* History Data Alert: Clear button */
-"history_data_alert_clear" = "Clear";
+"history_data_alert_clear" = "Löschen";
 
 /* History Data Alert: Import buttom */
-"history_data_alert_import" = "Import";
+"history_data_alert_import" = "Importieren";
 
 /* History Data Alert: OK button */
 "history_data_alert_ok" = "OK";
 
 /* History Data: export action button */
-"history_data_export_btn" = "Export History Data";
+"history_data_export_btn" = "Verlaufsdaten exportieren";
 
 /* History Data: export description text */
-"history_data_export_text" = "Export has been written to:";
+"history_data_export_text" = "Der Export wurde geschrieben an:";
 
 /* History Data: import action button */
-"history_data_import_btn" = "Import History Data";
+"history_data_import_btn" = "Verlaufsdaten importieren";
 
 /* History Data: import caution text */
-"history_data_import_caution_text" = "Caution: This import will overwrite all history data currently in this Daily Dozen application. Would you like to proceed with the import?";
+"history_data_import_caution_text" = "Warnung: Dieser Import wird alle Verlaufsdaten überschreiben, die zur Zeit in der Daily Dozen app vorhanden sind. Wollen Sie mit dem Import fortfahren?";
 
 /* History Data: import data error text */
-"history_data_import_error_text" = "Error: The import was not performed because of a data error. The existing data has remained unchanged.";
+"history_data_import_error_text" = "Fehler: Der Import konnte aufgrund eines Datenfehlers nicht ausgeführt werden. Die vorhandenen Daten bleiben unverändert.";
 
 /* History Data: import not found text */
-"history_data_import_notfound_text" = "Did not find a valid import file in the Daily Dozen Documents folder.";
+"history_data_import_notfound_text" = "Es konnte keine gültige Importdatei in dem Daily Dozen Dokumente-Ordner gefunden werden";
 
 /* History Data: preferences header & title */
-"history_data_title" = "History";
+"history_data_title" = "Verlauf";
 
 /* History View: calendar scale control */
 "history_scale_choice_day" = "Tag";
@@ -203,7 +203,7 @@
 "info_app_about_overview" = "Verwenden Sie diese App täglich, um den Überblick über die Lebensmittel und Ratschläge zu behalten, die ich in meinen Büchern How Not to Die und How Not to Diet für optimale Gesundheit und Langlebigkeit empfehle.";
 
 /* Info About View: Contributing Translators List (language code)  See https://en.wikipedia.org/wiki/List_of_ISO_639-1_codes */
-"info_app_about_translators" = "Besonderer Dank an unsere ehrenamtlichen Übersetzer: Petar & Tsveti Enchev (bg), Ricard Soler Roger (ca), Luděk Bouška (cs,sk), Lenka Lukacová (cs), Anke Schliessmann (de), Ángela Graña (es), Doron Barak (he), Ruth Levy (he), Annalisa Guerrini-Körner (it), Ilaria Zanini (it), Hanna Gurzeda (pl), Joanna Klopotek (pl), Tania Bassi (pt-BR), Joao Madureira (pt-PT), Evgeniya Lyakh (ru), Katarína Mocáková (sk).";
+"info_app_about_translators" = "Besonderer Dank an unsere ehrenamtlichen Übersetzer: Petar Enchev (bg), Tsveti Enchev (bg), Ricard Soler Roger (ca), Luděk Bouška (cs,sk), Lenka Lukacová (cs), Anke Schliessmann (de), Ángela Graña (es), Audray Harkins (fr), Doron Barak (he), Ruth Levy (he), Annalisa Guerrini-Körner (it), Ilaria Zanini (it), Hanna Gurzeda (pl), Joanna Klopotek (pl), Tania Bassi (pt-BR), João Madureira (pt-PT), Cristina Lauby (ro), Evgeniya Lyakh (ru), Katarína Mocáková (sk).";
 
 /* Info About View: Application release version */
 "info_app_about_version" = "Version 3.4.3";
