@@ -109,6 +109,9 @@
 /*  */
 "faq_supplements_response" = "Am actualizat aplicația Duzina Zilnică pentru a reflecta doar suplimentele necesare. De exemplu, Vitamina D este necesară doar pentru persoanele care nu se expun suficient la soare. Scopul nostru este să vă împărtășim datele științifice, astfel încât să puteți lua propriile decizii în cunoștință de cauză. Puteți vedea toate recomandările mele pe pagina [Optimum Nutrient](https://nutritionfacts.org/optimum-nutrient-recommendations).";
 
+/* Info Menu */
+"faq_title" = "Întrebări Frecvente";
+
 /* History Data Alert: Cancel button */
 "history_data_alert_cancel" = "Anulează";
 

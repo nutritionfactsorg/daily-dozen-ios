@@ -109,6 +109,9 @@
 /*  */
 "faq_supplements_response" = "Nous avons mis à jour les recommandations Daily Dozen de façon à n’inclure que les compléments indispensables. Par exemple, la vitamine D n’est requise que pour les gens avec une exposition au soleil insuffisante. Notre but est de vous fournir toutes les informations scientifiques dont vous avez besoin pour former votre propre opinion. Vous pourrez trouver toutes mes recommandations en termes de compléments alimentaires sur la page [Optimum Nutrient](https://nutritionfacts.org/optimum-nutrient-recommendations).";
 
+/* Info Menu */
+"faq_title" = "Questions fréquentes";
+
 /* History Data Alert: Cancel button */
 "history_data_alert_cancel" = "Annuler";
 

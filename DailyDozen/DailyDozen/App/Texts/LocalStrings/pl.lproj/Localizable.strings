@@ -109,6 +109,9 @@
 /*  */
 "faq_supplements_response" = "Zaktualizowaliśmy aplikację Codzienny Tuzin, aby zawierała tylko wymagane suplementy. Na przykład witamina D jest potrzebna tylko osobom, które mają niewystarczającą ekspozycję na słońce. Naszym celem jest dzielenie się z tobą nauką, abyś mógł/-a podejmować własne, świadome decyzje. Możesz zobaczyć wszystkie moje zalecenia na stronie [Optimum Nutrient](https://nutritionfacts.org/optimum-nutrient-recommendations).";
 
+/* Info Menu */
+"faq_title" = "Często Zadawane Pytania";
+
 /* History Data Alert: Cancel button */
 "history_data_alert_cancel" = "Anuluj";
 

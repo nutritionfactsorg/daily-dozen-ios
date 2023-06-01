@@ -109,6 +109,9 @@
 /*  */
 "faq_supplements_response" = "Aktualizovali jsme aplikaci Denní Dvanáctka tak, aby odrážela pouze požadované doplňky. Například vitamín D je potřebný pouze pro lidi, kteří se nedostatečně vystavují slunci. Naším cílem je sdílet s vámi vědu, abyste mohli činit svá informovaná rozhodnutí. Všechna moje doporučení si můžete prohlédnout na stránce [Optimum Nutrient](https://nutritionfacts.org/optimum-nutrient-recommendations).";
 
+/* Info Menu */
+"faq_title" = "Často kladené otázky";
+
 /* History Data Alert: Cancel button */
 "history_data_alert_cancel" = "Zrušit";
 

@@ -109,6 +109,9 @@
 /*  */
 "faq_supplements_response" = "Wir haben die Daily Dozen App aktualisiert, damit diese nur die notwendigen Ergänzungsmittel wiederspiegelt. Zum Beispiel, Vitamin D ist nur notwendig für Menschen, die nicht genügend Sonne bekommen. Unser Ziel ist es, die Wissenschaft mit euch zu teilen, damit ihr informierte Entscheidungen treffen könnt. Du kannst alle meine Empfehlungen hier finden: [optimale Nährstoffe](https://nutritionfacts.org/optimum-nutrient-recommendations)";
 
+/* Info Menu */
+"faq_title" = "Häufig gestellte Fragen";
+
 /* History Data Alert: Cancel button */
 "history_data_alert_cancel" = "Abbrechen";
 

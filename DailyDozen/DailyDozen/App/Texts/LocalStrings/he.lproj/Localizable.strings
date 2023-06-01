@@ -109,6 +109,9 @@
 /*  */
 "faq_supplements_response" = "עדכנו את התריסר היומי כך שיכיל רק תוספים נדרשים. לדוגמה, ויטמין די נדרש רק לאנשים שאינם נחשפים מספיק לשמש. מטרתנו לחלוק אתכם את המדע כדי שתוכלו לעשות החלטות מודעות בעצמכם. תוכלו למצוא את כל המלצותי בדף [Optimum Nutrient](https://nutritionfacts.org/optimum-nutrient-recommendations) ";
 
+/* Info Menu */
+"faq_title" = "שאלה נפוצה";
+
 /* History Data Alert: Cancel button */
 "history_data_alert_cancel" = "בטל";
 

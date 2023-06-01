@@ -109,6 +109,9 @@
 /*  */
 "faq_supplements_response" = "We have updated the Daily Dozen app to reflect only required supplements. For example, Vitamin D is only needed for people who get inadequate sun exposure. Our goal is to share the science with you so you can make your own informed decisions. You can see all of my recommendations on the [Optimum Nutrient](https://nutritionfacts.org/optimum-nutrient-recommendations) page.";
 
+/* Info Menu */
+"faq_title" = "Frequently Asked Questions";
+
 /* History Data Alert: Cancel button */
 "history_data_alert_cancel" = "Cancel";
 

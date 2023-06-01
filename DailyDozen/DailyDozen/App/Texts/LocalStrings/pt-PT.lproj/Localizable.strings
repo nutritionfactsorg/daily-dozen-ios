@@ -109,6 +109,9 @@
 /*  */
 "faq_supplements_response" = "Atualizámos a aplicação Dúzia Diária para refletir apenas os suplementos obrigatórios. Por exemplo, a vitamina D é apenas necessária em pessoas com exposição ao sol inadequada. O nosso objetivo é partilhar a ciência consigo para que possa fazer as suas decisões informadas na página [Recomendações Óptimas de Nutrientes](https://nutritionfacts.org/optimum-nutrient-recommendations)";
 
+/* Info Menu */
+"faq_title" = "Questões Frequentes";
+
 /* History Data Alert: Cancel button */
 "history_data_alert_cancel" = "Cancelar";
 

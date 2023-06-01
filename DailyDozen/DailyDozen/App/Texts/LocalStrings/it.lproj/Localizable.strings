@@ -109,6 +109,9 @@
 /*  */
 "faq_supplements_response" = "Abbiamo aggiornato l'app Daily Dozen per mostrare solo gli integratori necessari. Per esempio, solo chi non si espone al sole a sufficienza deve integrare la vitamina D. Il nostro obiettivo è condividere il sapere scientifico in modo che tu possa prendere le tue decisioni con cognizione di causa. Puoi trovare tutti i miei consigli alla pagina [Optimum Nutrient](https://nutritionfacts.org/optimum-nutrient-recommendations).";
 
+/* Info Menu */
+"faq_title" = "Domande frequenti";
+
 /* History Data Alert: Cancel button */
 "history_data_alert_cancel" = "Cancella";
 

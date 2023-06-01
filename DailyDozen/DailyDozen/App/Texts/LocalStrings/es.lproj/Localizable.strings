@@ -109,6 +109,9 @@
 /*  */
 "faq_supplements_response" = "Hemos actualizado la aplicación de la Docena Diaria para que solo incluya los suplementos obligatorios. Por ejemplo, la suplementación con vitamina D solo es necesaria para quienes no reciben suficiente exposición al sol. Nuestra meta es compartir la ciencia contigo para que tomes tus propias decisiones informadas. Puedes ver todas mis recomendaciones en la página de [Recomendaciones para una nutrición óptima](https://nutritionfacts.org/es/recomendaciones-para-una-nutricion-optima/).";
 
+/* Info Menu */
+"faq_title" = "Preguntas frecuentes";
+
 /* History Data Alert: Cancel button */
 "history_data_alert_cancel" = "Cancelar";
 

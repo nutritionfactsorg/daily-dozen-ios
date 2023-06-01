@@ -109,6 +109,9 @@
 /*  */
 "faq_supplements_response" = "Hem actualitzat l'aplicació Daily Dozen per reflectir només els suplements necessaris. Per exemple, la vitamina D només és necessària per a les persones que s'exposició al sol inadequada. El nostre objectiu és compartir la ciència amb vosaltres perquè pugueu prendre les vostres pròpies decisions informades. Podeu veure totes les meves recomanacions a la pàgina [Optimum Nutrient](https://nutritionfacts.org/optimum-nutrient-recommendations).";
 
+/* Info Menu */
+"faq_title" = "Preguntes freqüents";
+
 /* History Data Alert: Cancel button */
 "history_data_alert_cancel" = "Cancel·lar";
 
