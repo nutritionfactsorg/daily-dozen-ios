@@ -715,6 +715,10 @@
           "topic" : "topics/macadamia-nuts"
         },
         {
+          "text" : "Arachidi",
+          "topic" : "topics/peanuts"
+        },
+        {
           "text" : "Noci pecan",
           "topic" : "topics/pecans"
         },

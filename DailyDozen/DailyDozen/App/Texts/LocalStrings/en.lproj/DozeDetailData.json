@@ -715,6 +715,10 @@
           "topic" : "topics/macadamia-nuts"
         },
         {
+          "text" : "Peanuts",
+          "topic" : "topics/peanuts"
+        },
+        {
           "text" : "Pecans",
           "topic" : "topics/pecans"
         },

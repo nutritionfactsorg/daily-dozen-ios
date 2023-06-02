@@ -715,6 +715,10 @@
           "topic" : "topics/macadamia-nuts"
         },
         {
+          "text" : "Orzeszki ziemne",
+          "topic" : "topics/peanuts"
+        },
+        {
           "text" : "Orzechy pekan",
           "topic" : "topics/pecans"
         },

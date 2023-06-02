@@ -715,6 +715,10 @@
           "topic" : "topics/macadamia-nuts"
         },
         {
+          "text" : "Арахис",
+          "topic" : "topics/peanuts"
+        },
+        {
           "text" : "Орех пекан",
           "topic" : "topics/pecans"
         },
