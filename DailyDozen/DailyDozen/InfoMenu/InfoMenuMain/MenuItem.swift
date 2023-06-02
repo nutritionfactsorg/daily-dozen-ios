@@ -44,12 +44,10 @@ enum MenuItem: Int {
     }
 
     /// Defines item order for `InfoMenuMainTableVC`
-    case videos, book, cookbook, diet, challenge, donate, subscribe, source, about
+    case videos, book, cookbook, diet, faq, challenge, donate, subscribe, source, about
 
     var link: String? {
         switch self {
-        case .about:
-            return nil // not a URL link
         case .videos:
             return Links.videos
         case .book:
@@ -58,6 +56,8 @@ enum MenuItem: Int {
             return Links.cookbook
         case .diet:
             return Links.diet
+        case .faq:
+            return nil // not a URL link
         case .challenge:
             return Links.challenge
         case .donate:
@@ -66,6 +66,8 @@ enum MenuItem: Int {
             return Links.subscribe
         case .source:
             return Links.source
+        case .about:
+            return nil // not a URL link
         }
     }
 
@@ -73,6 +75,8 @@ enum MenuItem: Int {
         switch self {
         case .about:
             return InfoMenuAboutTableVC.newInstance()
+        case .faq:
+            return InfoMenuFaqTableVC.newInstance()
         // case .develop: :???:NYI: location of develop menu
         //    return UtilityViewController.newInstance()
         case .videos, .book, .cookbook, .diet, .challenge, .donate, .subscribe, .source:

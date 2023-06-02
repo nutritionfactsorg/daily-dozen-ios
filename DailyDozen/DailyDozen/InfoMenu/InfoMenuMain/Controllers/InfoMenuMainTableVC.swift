@@ -14,6 +14,7 @@ class InfoMenuMainTableVC: UITableViewController {
     // MARK: - Menu Labels
     
     @IBOutlet weak var infoAppAboutLabel: UILabel!
+    @IBOutlet weak var infoAppFAQLabel: UILabel!
     @IBOutlet weak var infoBookHowNotToDieLabel: UILabel!
     @IBOutlet weak var infoBookHowNotToDieCookbookLabel: UILabel!
     @IBOutlet weak var infoBookHowNotToDietLabel: UILabel!
@@ -31,6 +32,7 @@ class InfoMenuMainTableVC: UITableViewController {
         navigationController?.navigationBar.titleTextAttributes = [NSAttributedString.Key.foregroundColor: UIColor.white]
         
         infoAppAboutLabel.text = NSLocalizedString("info_app_about", comment: "About")
+        infoAppFAQLabel.text = NSLocalizedString("faq_title", comment: "FAQ")
         infoBookHowNotToDieLabel.text = NSLocalizedString(
             "info_book_how_not_to_die", comment: "How Not to Die")
         infoBookHowNotToDieCookbookLabel.text = NSLocalizedString(

@@ -2,7 +2,6 @@
 //  Strings.swift
 //  DailyDozen
 //
-//  Created by mc on 1/26/23.
 //  Copyright © 2023 Nutritionfacts.org. All rights reserved.
 //
 

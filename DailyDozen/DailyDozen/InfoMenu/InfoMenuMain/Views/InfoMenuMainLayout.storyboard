@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="19529" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="clC-rM-ORC">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="21701" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="clC-rM-ORC">
     <device id="retina4_7" orientation="portrait" appearance="light"/>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="19519"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="21678"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
@@ -246,8 +246,65 @@
                                             <bool key="isElement" value="YES"/>
                                         </accessibility>
                                     </tableViewCell>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" rowHeight="65" id="Utw-ap-P1z" userLabel="Cell Daily Dozen Challenge">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" rowHeight="65" id="IFg-7q-oXW" userLabel="Cell Frequently Asked Questions">
                                         <rect key="frame" x="0.0" y="278" width="375" height="65"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="IFg-7q-oXW" id="RT9-DQ-U5j">
+                                            <rect key="frame" x="0.0" y="0.0" width="375" height="65"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="bND-QF-22m" customClass="RoundedView" customModule="DailyDozen" customModuleProvider="target">
+                                                    <rect key="frame" x="4" y="1" width="367" height="63"/>
+                                                    <subviews>
+                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Frequently Asked Questions" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Lwd-nA-ANd">
+                                                            <rect key="frame" x="8" y="21.5" width="351" height="20"/>
+                                                            <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="17"/>
+                                                            <color key="textColor" red="0.23437002300000001" green="0.25768834350000003" blue="0.3199615777" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                            <nil key="highlightedColor"/>
+                                                        </label>
+                                                    </subviews>
+                                                    <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="trailing" secondItem="Lwd-nA-ANd" secondAttribute="trailing" constant="8" id="1a6-xs-eDB"/>
+                                                        <constraint firstItem="Lwd-nA-ANd" firstAttribute="leading" secondItem="bND-QF-22m" secondAttribute="leading" constant="8" id="Man-Fk-qBi"/>
+                                                        <constraint firstItem="Lwd-nA-ANd" firstAttribute="centerY" secondItem="bND-QF-22m" secondAttribute="centerY" id="yTZ-x8-mdv"/>
+                                                    </constraints>
+                                                    <userDefinedRuntimeAttributes>
+                                                        <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                                            <real key="value" value="5"/>
+                                                        </userDefinedRuntimeAttribute>
+                                                        <userDefinedRuntimeAttribute type="number" keyPath="borderWidth">
+                                                            <real key="value" value="0.0"/>
+                                                        </userDefinedRuntimeAttribute>
+                                                        <userDefinedRuntimeAttribute type="color" keyPath="shadowColor">
+                                                            <color key="value" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                        </userDefinedRuntimeAttribute>
+                                                        <userDefinedRuntimeAttribute type="number" keyPath="shadowRadius">
+                                                            <real key="value" value="1"/>
+                                                        </userDefinedRuntimeAttribute>
+                                                        <userDefinedRuntimeAttribute type="size" keyPath="shadowOffset">
+                                                            <size key="value" width="0.0" height="2"/>
+                                                        </userDefinedRuntimeAttribute>
+                                                        <userDefinedRuntimeAttribute type="number" keyPath="shadowOpacity">
+                                                            <real key="value" value="1"/>
+                                                        </userDefinedRuntimeAttribute>
+                                                    </userDefinedRuntimeAttributes>
+                                                </view>
+                                            </subviews>
+                                            <constraints>
+                                                <constraint firstItem="bND-QF-22m" firstAttribute="top" secondItem="RT9-DQ-U5j" secondAttribute="top" constant="1" id="It7-Sp-qrc"/>
+                                                <constraint firstItem="bND-QF-22m" firstAttribute="leading" secondItem="RT9-DQ-U5j" secondAttribute="leading" constant="4" id="MkP-Yd-YAh"/>
+                                                <constraint firstAttribute="trailing" secondItem="bND-QF-22m" secondAttribute="trailing" constant="4" id="Z5m-dt-o4x"/>
+                                                <constraint firstAttribute="bottom" secondItem="bND-QF-22m" secondAttribute="bottom" constant="1" id="fsL-8w-1zi"/>
+                                            </constraints>
+                                        </tableViewCellContentView>
+                                        <color key="backgroundColor" red="0.95294117649999999" green="0.95294117649999999" blue="0.95294117649999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <accessibility key="accessibilityConfiguration" identifier="info_item_challenge_access">
+                                            <bool key="isElement" value="YES"/>
+                                        </accessibility>
+                                    </tableViewCell>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" rowHeight="65" id="Utw-ap-P1z" userLabel="Cell Daily Dozen Challenge">
+                                        <rect key="frame" x="0.0" y="343" width="375" height="65"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="Utw-ap-P1z" id="Jd6-oh-CP3">
                                             <rect key="frame" x="0.0" y="0.0" width="375" height="65"/>
@@ -304,7 +361,7 @@
                                         </accessibility>
                                     </tableViewCell>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" rowHeight="65" id="798-ky-NoK" userLabel="Cell Donate">
-                                        <rect key="frame" x="0.0" y="343" width="375" height="65"/>
+                                        <rect key="frame" x="0.0" y="408" width="375" height="65"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="798-ky-NoK" id="Bpx-Z1-0zG">
                                             <rect key="frame" x="0.0" y="0.0" width="375" height="65"/>
@@ -361,7 +418,7 @@
                                         </accessibility>
                                     </tableViewCell>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" rowHeight="65" id="yDW-U5-QhZ" userLabel="Cell Subscribe">
-                                        <rect key="frame" x="0.0" y="408" width="375" height="65"/>
+                                        <rect key="frame" x="0.0" y="473" width="375" height="65"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="yDW-U5-QhZ" id="Vpv-Ul-w2b">
                                             <rect key="frame" x="0.0" y="0.0" width="375" height="65"/>
@@ -418,7 +475,7 @@
                                         </accessibility>
                                     </tableViewCell>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" rowHeight="65" id="tF5-lu-oLF" userLabel="Cell Open Source">
-                                        <rect key="frame" x="0.0" y="473" width="375" height="65"/>
+                                        <rect key="frame" x="0.0" y="538" width="375" height="65"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="tF5-lu-oLF" id="XUL-OR-LvQ">
                                             <rect key="frame" x="0.0" y="0.0" width="375" height="65"/>
@@ -475,7 +532,7 @@
                                         </accessibility>
                                     </tableViewCell>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" rowHeight="65" id="an3-Wf-4gx" userLabel="Cell About">
-                                        <rect key="frame" x="0.0" y="538" width="375" height="65"/>
+                                        <rect key="frame" x="0.0" y="603" width="375" height="65"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="an3-Wf-4gx" id="lhP-ks-sX1">
                                             <rect key="frame" x="0.0" y="0.0" width="375" height="65"/>
@@ -542,6 +599,7 @@
                     <navigationItem key="navigationItem" id="Lx4-kw-TO7"/>
                     <connections>
                         <outlet property="infoAppAboutLabel" destination="qGY-wh-1gB" id="62z-KG-nct"/>
+                        <outlet property="infoAppFAQLabel" destination="Lwd-nA-ANd" id="mNF-p3-JrH"/>
                         <outlet property="infoBookHowNotToDieCookbookLabel" destination="Cxo-5D-YUZ" id="7H0-Bk-ZEh"/>
                         <outlet property="infoBookHowNotToDieLabel" destination="zQy-Dn-WXM" id="vL6-Pf-of3"/>
                         <outlet property="infoBookHowNotToDietLabel" destination="MWr-7S-G8N" id="ZKW-Cg-le3"/>

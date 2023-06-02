@@ -2,7 +2,6 @@
 //  AnalyticsHelper.swift
 //  DailyDozen
 //
-//  Created by mc on 2022.10.06.
 //  Copyright © 2022 Nutritionfacts.org. All rights reserved.
 //
 
