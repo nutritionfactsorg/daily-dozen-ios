@@ -26,6 +26,9 @@ _The `ActiveLabel` library project has not been kept current with the progressio
 * Language: Swift 5 (84%), ObjC (16%)
 * Swift Package Manager: 5.1
 * Version: `4.1.0` (2022.09.12)
+    - deprecated: DanielGindi `Charts` 
+    - renamed DanielGindi `Charts` to `DGCharts` due to namespace conflict with SwiftUI `Charts`
+    - `DGCharts` (5.0.0, 2023.06.08) has breaking changes when migrating from DanielGindi `Charts`
 
 **FSCalendar**
 
@@ -34,6 +37,9 @@ _The `ActiveLabel` library project has not been kept current with the progressio
 * Language: ObjC (88%), Swift (12%) 
 * Swift Package Manager: 5.3
 * Version: `2.8.4` (2022.04.07)
+    - minimal code updates since 2018.11.07
+    - 36 disallowed syntax issues "double-quoted include "*.h" in framework header, expected angle-bracketed instead"
+    - settings "Quoted Include In Framework Header" CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER to No did not clear the errors.
 
 **RealmSwift**
 
