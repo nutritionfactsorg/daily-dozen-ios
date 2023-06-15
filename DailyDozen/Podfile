@@ -27,14 +27,15 @@ target 'DailyDozen' do
   ## nanopb (2.30908.0)
   
   #### Update
-  ## Firebase 10.8.0
-  ## FirebaseAnalytics 10.8.0
-  ## FirebaseCore 10.8.0
-  ## FirebaseCoreInternal 10.8.0
-  ## FirebaseInstallations 10.8.0
-  ## GoogleAppMeasurement 10.8.0
+  ## Firebase 10.11.0
+  ## FirebaseAnalytics 10.11.0
+  ## FirebaseCore 10.11.0
+  ## FirebaseCoreInternal 10.11.0
+  ## FirebaseInstallations 10.11.0
+  ## GoogleAppMeasurement 10.11.0
   ## GoogleUtilities 7.11.1
   ## PromisesObjC 2.2.0
+  ## SwiftAlgorithms (1.0.0)
   ## nanopb 2.30909.0
 
   ##
@@ -59,18 +60,22 @@ post_install do |installer|
   installer.pods_project.targets.each do |target|
     target.build_configurations.each do |config|
         # Exclude building for arm64 simulator (M1 chipset).
+        # Note: Revisit `EXCLUDED_ARCHS` after removing RealmSwift
         # Apple XCFrameworks are needed to support this properly, future work.
         config.build_settings['EXCLUDED_ARCHS[sdk=iphonesimulator*]'] = 'arm64'
-        config.build_settings['ONLY_ACTIVE_ARCH'] = 'YES'
+        #config.build_settings['ONLY_ACTIVE_ARCH'] = 'YES'
         
-        config.build_settings['IPHONEOS_DEPLOYMENT_TARGET'] = '12.4'
+        #config.build_settings['IPHONEOS_DEPLOYMENT_TARGET'] = '12.4'
+        config.build_settings['IPHONEOS_DEPLOYMENT_TARGET'] = '13.1'
                 
-        config.build_settings['ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES'] = '$(inherited)'
+        #config.build_settings['ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES'] = '$(inherited)'
         
         # Toggle Mac (Designed for iPhone) and Mac (Designed for iPad) destinations.
-        config.build_settings['SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD'] = 'NO'
-        config.build_settings['SUPPORTS_MACCATALYST'] = 'NO'
+        #config.build_settings['SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD'] = 'NO'
+        #config.build_settings['SUPPORTS_MACCATALYST'] = 'NO'
         
+        # other: `ARCHS` $(ARCHS_STANDARD)
+        # other: `CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER` 'NO'
         # not specified 'SWIFT_VERSION'
     end
   end
