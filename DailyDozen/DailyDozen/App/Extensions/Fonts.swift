@@ -9,7 +9,7 @@
 import UIKit
 
 extension UIFont {
-
+    
     // MARK: - Nested
     private struct Strings {
         static let courier = "Courier"
@@ -23,6 +23,14 @@ extension UIFont {
     
     static var helevetica17: UIFont {
         return UIFont(name: Strings.helvetica, size: 17) ?? UIFont.systemFont(ofSize: 17)
+    }
+    
+    static var heleveticaBold17: UIFont {
+        return UIFont(name: Strings.helveticaBold, size: 17) ?? UIFont.boldSystemFont(ofSize: 17)
+    }
+    
+    static var heleveticaBold18: UIFont {
+        return UIFont(name: Strings.helveticaBold, size: 18) ?? UIFont.boldSystemFont(ofSize: 18)
     }
     
     static var helveticaBold22: UIFont {
