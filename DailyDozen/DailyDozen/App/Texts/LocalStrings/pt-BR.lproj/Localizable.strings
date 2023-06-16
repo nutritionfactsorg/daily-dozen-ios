@@ -107,7 +107,7 @@
 "faq_supplements_question" = "Eu achei que o Dr. Greger recomendasse tomar suplementos de vitamina D e DHA. Por que eles não estão incluídos?";
 
 /*  */
-"faq_supplements_response" = "Atualizamos o aplicativo da Dúzia Diária para refletir apenas os suplementos necessários. Por exemplo, a vitamina D só é necessária para pessoas que não tem exposição solar adequada. Nosso objetivo é compartilhar a ciência com você para que você possa tomar as suas próprias decisões informadas. Você pode ver todas as minhas recomendações na página [Optimum Nutrient] (https://nutritionfacts.org/optimum-nutrient-recommendations).";
+"faq_supplements_response" = "Atualizamos o aplicativo da Dúzia Diária para refletir apenas os suplementos necessários. Por exemplo, a vitamina D só é necessária para pessoas que não tem exposição solar adequada. Nosso objetivo é compartilhar a ciência com você para que você possa tomar as suas próprias decisões informadas. Você pode ver todas as minhas recomendações na página [Optimum Nutrient](https://nutritionfacts.org/optimum-nutrient-recommendations).";
 
 /* Info Menu */
 "faq_title" = "Perguntas Frequentes";
