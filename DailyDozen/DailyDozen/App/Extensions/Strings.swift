@@ -6,6 +6,44 @@
 //
 
 import Foundation
+import UIKit
+
+func parseLinkedString(_ s: String) -> NSAttributedString {
+    // parses for single markdown hyperlink within the string 
+    let regex = "([^\\[]*)\\[([^\\[]*)\\]\\(([^\\)]*)\\)(.*)"
+    let parts = s.regexSearch(pattern: regex)
+    
+    let textAttributes: [NSAttributedString.Key: Any] = [
+        //.foregroundColor: ColorManager.style.textBlack, 
+        //.backgroundColor: UIColor.tbd,
+        .font: UIFont.helevetica17,
+    ]
+    
+    guard parts.count == 5 else { 
+        return NSAttributedString(string: s, attributes: textAttributes)
+    }
+    let pre = parts[1]
+    let linkname = parts[2]
+    let linkurl = parts[3]
+    let post = parts[4]
+    
+    let linkAttributes: [NSAttributedString.Key: Any] = [
+        //.foregroundColor: ColorManager.style.textBlack, 
+        //.backgroundColor: UIColor.tbd,
+        .font: UIFont.helevetica17,
+        .link: linkurl,
+        //.underlineColor: UIColor.white
+        .underlineStyle: NSUnderlineStyle.single.rawValue
+    ]
+    
+    let atStr = NSMutableAttributedString(string: pre, attributes: textAttributes)
+    let atLink = NSMutableAttributedString(string: linkname, attributes: linkAttributes)
+    atStr.append(atLink)
+    let atPost = NSMutableAttributedString(string: post, attributes: textAttributes)
+    atStr.append(atPost)
+    
+    return atStr
+}
 
 public extension String {
     
