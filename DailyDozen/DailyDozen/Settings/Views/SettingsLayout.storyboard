@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="21507" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="mGU-tx-G19">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="21701" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="mGU-tx-G19">
     <device id="retina5_9" orientation="portrait" appearance="light"/>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="21505"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="21679"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -146,35 +146,12 @@
                                             </constraints>
                                         </tableViewCellContentView>
                                     </tableViewCell>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="none" indentationWidth="10" id="Acd-lb-lFC" userLabel="Cell Database Import">
-                                        <rect key="frame" x="0.0" y="461.33333396911621" width="375" height="43.666667938232422"/>
-                                        <autoresizingMask key="autoresizingMask"/>
-                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="Acd-lb-lFC" id="0Mx-pY-1JM">
-                                            <rect key="frame" x="0.0" y="0.0" width="375" height="43.666667938232422"/>
-                                            <autoresizingMask key="autoresizingMask"/>
-                                            <subviews>
-                                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="1XP-vR-Okm">
-                                                    <rect key="frame" x="20" y="4.3333333333333321" width="335" height="35"/>
-                                                    <state key="normal" title="Button"/>
-                                                    <buttonConfiguration key="configuration" style="plain" title="Import History Data"/>
-                                                    <connections>
-                                                        <action selector="doHistoryDataImport:" destination="mGU-tx-G19" eventType="touchUpInside" id="PkD-iy-Rzn"/>
-                                                    </connections>
-                                                </button>
-                                            </subviews>
-                                            <constraints>
-                                                <constraint firstItem="1XP-vR-Okm" firstAttribute="leading" secondItem="0Mx-pY-1JM" secondAttribute="leading" constant="20" symbolic="YES" id="Ibl-As-ObV"/>
-                                                <constraint firstItem="1XP-vR-Okm" firstAttribute="centerY" secondItem="0Mx-pY-1JM" secondAttribute="centerY" id="h9s-0Q-Sz5"/>
-                                                <constraint firstAttribute="trailing" secondItem="1XP-vR-Okm" secondAttribute="trailing" constant="20" symbolic="YES" id="pIh-Ba-mUO"/>
-                                            </constraints>
-                                        </tableViewCellContentView>
-                                    </tableViewCell>
                                 </cells>
                             </tableViewSection>
                             <tableViewSection headerTitle="Analytics" id="Bx8-EJ-3BK" userLabel="Section Analytics">
                                 <cells>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="none" indentationWidth="10" id="z0Z-Vi-TQY" userLabel="Cell Analytics">
-                                        <rect key="frame" x="0.0" y="561.00000190734863" width="375" height="43.666667938232422"/>
+                                        <rect key="frame" x="0.0" y="517.33333396911621" width="375" height="43.666667938232422"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="z0Z-Vi-TQY" id="OGB-7d-gUW">
                                             <rect key="frame" x="0.0" y="0.0" width="375" height="43.666667938232422"/>
@@ -207,7 +184,7 @@
                             <tableViewSection id="qf1-g7-Fsn" userLabel="Section Utilities">
                                 <cells>
                                     <tableViewCell hidden="YES" clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="none" indentationWidth="10" id="gxx-lR-mAa" userLabel="Cell Utilities">
-                                        <rect key="frame" x="0.0" y="640.66666984558105" width="375" height="43.666667938232422"/>
+                                        <rect key="frame" x="0.0" y="597.00000190734863" width="375" height="43.666667938232422"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="gxx-lR-mAa" id="UsX-Fx-idf">
                                             <rect key="frame" x="0.0" y="0.0" width="375" height="43.666667938232422"/>
@@ -242,7 +219,6 @@
                         <outlet property="analyticsEnableLabel" destination="hW5-az-JRh" id="r6L-8j-2bl"/>
                         <outlet property="analyticsEnableToggle" destination="icn-fN-mzT" id="zJp-7G-PhE"/>
                         <outlet property="historyDataExportBtn" destination="rPd-id-2B0" id="iyN-0q-J2t"/>
-                        <outlet property="historyDataImportBtn" destination="1XP-vR-Okm" id="Jqu-nS-Tvq"/>
                         <outlet property="reminderIsOn" destination="XFw-2q-BdT" id="wAY-nx-7mR"/>
                         <outlet property="reminderLabel" destination="itH-G7-Kal" id="YkI-t8-JhN"/>
                         <outlet property="tweakVisibilityControl" destination="OZO-Xa-v5G" id="LAW-0U-SrN"/>
@@ -258,7 +234,7 @@
             <objects>
                 <tableViewController id="TcI-bI-5iX" customClass="SettingsReminderViewController" customModule="DailyDozen" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="static" style="grouped" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="18" sectionFooterHeight="18" id="aRl-Za-mVJ">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="755"/>
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="802"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <sections>
