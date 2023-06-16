@@ -121,8 +121,10 @@
 		49F8D1DE23906B29003E139F /* TweakEntryDataProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49F8D1DD23906B29003E139F /* TweakEntryDataProvider.swift */; };
 		4C079D4C287FFC5B00234849 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 4C079D4B287FFC5B00234849 /* GoogleService-Info.plist */; };
 		4C092E3F28EF5E97004D5539 /* AnalyticsHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C092E3E28EF5E97004D5539 /* AnalyticsHelper.swift */; };
-		4C1400D92A29E8E800729FE5 /* InfoMenuFaqTableVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C1400D82A29E8E800729FE5 /* InfoMenuFaqTableVC.swift */; };
-		4C1400DD2A29E96300729FE5 /* InfoMenuFaqLayout.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4C1400DC2A29E96300729FE5 /* InfoMenuFaqLayout.storyboard */; };
+		4C7D52F52A3B81DE00386832 /* ExpandableTableViewCellDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C7D52F42A3B81DE00386832 /* ExpandableTableViewCellDelegate.swift */; };
+		4C7D52F72A3B8F3200386832 /* InfoFaqTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C7D52F62A3B8F3200386832 /* InfoFaqTableViewController.swift */; };
+		4C7D52F92A3B8FDA00386832 /* InfoFaqTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C7D52F82A3B8FDA00386832 /* InfoFaqTableViewCell.swift */; };
+		4C7D52FF2A3B9C3D00386832 /* InfoFaqHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C7D52FE2A3B9C3D00386832 /* InfoFaqHeaderView.swift */; };
 		4CBCB2BB2983779F00015393 /* Strings.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4CBCB2BA2983779F00015393 /* Strings.swift */; };
 		594FD37586B9F2DE900FA79A /* Pods_DailyDozen_DailyDozenUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E4A1DB4E4E487CFF8C7EE374 /* Pods_DailyDozen_DailyDozenUITests.framework */; };
 		BD68BC5B2FB6D632F16CE9CD /* Pods_DailyDozenTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 715D60F634E9BCD998C66B77 /* Pods_DailyDozenTests.framework */; };
@@ -336,8 +338,6 @@
 		49FECE9327DB0C3B0078C26D /* LocalesBatchA.xctestplan */ = {isa = PBXFileReference; lastKnownFileType = text; path = LocalesBatchA.xctestplan; sourceTree = "<group>"; };
 		4C079D4B287FFC5B00234849 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		4C092E3E28EF5E97004D5539 /* AnalyticsHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnalyticsHelper.swift; sourceTree = "<group>"; };
-		4C1400D82A29E8E800729FE5 /* InfoMenuFaqTableVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InfoMenuFaqTableVC.swift; sourceTree = "<group>"; };
-		4C1400DC2A29E96300729FE5 /* InfoMenuFaqLayout.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = InfoMenuFaqLayout.storyboard; sourceTree = "<group>"; };
 		4C4632ED2941A3A100CB0313 /* sk */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = sk; path = sk.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		4C4632EE2941A3A100CB0313 /* sk */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = sk; path = sk.lproj/Localizable.strings; sourceTree = "<group>"; };
 		4C4632EF2941A3A100CB0313 /* sk */ = {isa = PBXFileReference; lastKnownFileType = text.json; name = sk; path = sk.lproj/DozeDetailData.json; sourceTree = "<group>"; };
@@ -346,6 +346,10 @@
 		4C5C4EFB2995C8C00096AAA1 /* ro */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ro; path = ro.lproj/Localizable.strings; sourceTree = "<group>"; };
 		4C5C4EFC2995C8C00096AAA1 /* ro */ = {isa = PBXFileReference; lastKnownFileType = text.json; name = ro; path = ro.lproj/DozeDetailData.json; sourceTree = "<group>"; };
 		4C5C4EFD2995C8C00096AAA1 /* ro */ = {isa = PBXFileReference; lastKnownFileType = text.json; name = ro; path = ro.lproj/TweakDetailData.json; sourceTree = "<group>"; };
+		4C7D52F42A3B81DE00386832 /* ExpandableTableViewCellDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExpandableTableViewCellDelegate.swift; sourceTree = "<group>"; };
+		4C7D52F62A3B8F3200386832 /* InfoFaqTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InfoFaqTableViewController.swift; sourceTree = "<group>"; };
+		4C7D52F82A3B8FDA00386832 /* InfoFaqTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InfoFaqTableViewCell.swift; sourceTree = "<group>"; };
+		4C7D52FE2A3B9C3D00386832 /* InfoFaqHeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InfoFaqHeaderView.swift; sourceTree = "<group>"; };
 		4C86097E2A0491C500A6EBDE /* fr */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = fr; path = fr.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		4C86097F2A0491C500A6EBDE /* fr */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = fr; path = fr.lproj/Localizable.strings; sourceTree = "<group>"; };
 		4C8609802A0491C500A6EBDE /* fr */ = {isa = PBXFileReference; lastKnownFileType = text.json; name = fr; path = fr.lproj/DozeDetailData.json; sourceTree = "<group>"; };
@@ -911,7 +915,7 @@
 		4C1400DA2A29E8EF00729FE5 /* Controllers */ = {
 			isa = PBXGroup;
 			children = (
-				4C1400D82A29E8E800729FE5 /* InfoMenuFaqTableVC.swift */,
+				4C7D52F62A3B8F3200386832 /* InfoFaqTableViewController.swift */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -919,7 +923,8 @@
 		4C1400DB2A29E92600729FE5 /* Views */ = {
 			isa = PBXGroup;
 			children = (
-				4C1400DC2A29E96300729FE5 /* InfoMenuFaqLayout.storyboard */,
+				4C7D52FE2A3B9C3D00386832 /* InfoFaqHeaderView.swift */,
+				4C7D52F82A3B8FDA00386832 /* InfoFaqTableViewCell.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -1179,6 +1184,7 @@
 		CFF117711F9752CA00BFE73A /* InfoMenu */ = {
 			isa = PBXGroup;
 			children = (
+				4C7D52F42A3B81DE00386832 /* ExpandableTableViewCellDelegate.swift */,
 				4C1400D72A29E87500729FE5 /* InfoMenuFaq */,
 				490A0126241080D300C3EEEA /* InfoMenuMain */,
 				CFBEE22A1FDE8CBA005C0F45 /* InfoMenuAbout */,
@@ -1382,7 +1388,6 @@
 				499B94E426439CBB00AC275A /* WeightHistoryLayout.storyboard in Resources */,
 				49C01CD52644AF48005E592D /* TweakDetailLayout.storyboard in Resources */,
 				49C01CC52644AA09005E592D /* DozeDetailTypeHeader.xib in Resources */,
-				4C1400DD2A29E96300729FE5 /* InfoMenuFaqLayout.storyboard in Resources */,
 				49C01CD42644AF48005E592D /* TweakDetailActivityHeader.xib in Resources */,
 				49DEDA35264A0D0A0056462D /* SettingsLayout.storyboard in Resources */,
 				49C01CCD2644ADCB005E592D /* TweakEntryLayout.storyboard in Resources */,
@@ -1565,7 +1570,6 @@
 				CF4902951FD91412000EAB68 /* ChartView.swift in Sources */,
 				498F724D239E08C0004E501B /* FirstLaunchViewController.swift in Sources */,
 				4941D733237E13DC00ED84B5 /* RealmProvider.swift in Sources */,
-				4C1400D92A29E8E800729FE5 /* InfoMenuFaqTableVC.swift in Sources */,
 				4944B99223AD7A1A008DFA30 /* ChartDataEntry.swift in Sources */,
 				4941D72E237E13DC00ED84B5 /* RealmManager.swift in Sources */,
 				CFAAB3721F9F3BC600B24748 /* Doze.swift in Sources */,
@@ -1606,7 +1610,10 @@
 				499089822665D9C40053D74D /* AlertActivityBar.swift in Sources */,
 				492013C6261FF61900A5D635 /* DozeEntryRow.swift in Sources */,
 				4964604623AC524700FBD976 /* ImportPopupPickerView.swift in Sources */,
+				4C7D52FF2A3B9C3D00386832 /* InfoFaqHeaderView.swift in Sources */,
 				CF9EC1C0202196B100C7B3CA /* Fonts.swift in Sources */,
+				4C7D52F72A3B8F3200386832 /* InfoFaqTableViewController.swift in Sources */,
+				4C7D52F52A3B81DE00386832 /* ExpandableTableViewCellDelegate.swift in Sources */,
 				4C092E3F28EF5E97004D5539 /* AnalyticsHelper.swift in Sources */,
 				492013C7261FF61900A5D635 /* DozeItemStateCheckbox.swift in Sources */,
 				CFBEE2341FDE9A57005C0F45 /* RoundedView.swift in Sources */,
@@ -1648,6 +1655,7 @@
 				CF55BC4F2020450D00003D0D /* AlertBuilder.swift in Sources */,
 				4916451623EE4D360077731D /* TweakTextsProvider.swift in Sources */,
 				4CBCB2BB2983779F00015393 /* Strings.swift in Sources */,
+				4C7D52F92A3B8FDA00386832 /* InfoFaqTableViewCell.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

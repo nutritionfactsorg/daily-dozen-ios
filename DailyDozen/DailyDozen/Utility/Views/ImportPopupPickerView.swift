@@ -49,7 +49,6 @@ class ImportPopupPickerView: NSObject, UIPickerViewDelegate, UIPickerViewDataSou
         pv.translatesAutoresizingMaskIntoConstraints = false
         pv.delegate = self
         pv.dataSource = self
-        pv.showsSelectionIndicator = true
         pv.backgroundColor = self.scrollBackgroundColor
         return pv
     }()
