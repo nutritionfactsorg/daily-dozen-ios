@@ -209,7 +209,7 @@
 "info_app_about_translators" = "Special thanks to our volunteer translators: Petar Enchev (bg), Tsveti Enchev (bg), Ricard Soler Roger (ca), Luděk Bouška (cs,sk), Lenka Lukacová (cs), Anke Schliessmann (de), Ángela Graña (es), Audray Harkins (fr), Doron Barak (he), Ruth Levy (he), Annalisa Guerrini-Körner (it), Ilaria Zanini (it), Hanna Gurzeda (pl), Joanna Klopotek (pl), Tania Bassi (pt-BR), João Madureira (pt-PT), Cristina Lauby (ro), Evgeniya Lyakh (ru), Katarína Mocáková (sk).";
 
 /* Info About View: Application release version */
-"info_app_about_version" = "version 3.4.3";
+"info_app_about_version" = "version 3.4.5";
 
 /* Info About View: Welcome */
 "info_app_about_welcome" = "Welcome to my Daily Dozen!";

@@ -125,21 +125,22 @@ class SettingsViewController: UITableViewController {
             for: .normal)
         historyDataExportBtn.setTitleColor(ColorManager.style.mainMedium, for: UIControl.State.normal)
         historyDataImportBtn.setTitleColor(ColorManager.style.mainMedium, for: UIControl.State.normal)
+        historyDataImportBtn.isHidden = true // :RELEASE:
         
         // Analytics
         analyticsEnableLabel.text = NSLocalizedString("setting_analytics_enable", comment: "Enable Analytics")
         
         #if targetEnvironment(simulator)
         logger.debug("::::: SIMULATOR ENVIRONMENT: SettingsViewController :::::")
-        advancedUtilitiesTableViewCell.isHidden = false
-        //advancedUtilitiesTableViewCell.isHidden = true // :UI_TEST:
+        //advancedUtilitiesTableViewCell.isHidden = false
+        advancedUtilitiesTableViewCell.isHidden = true // :UI_TEST: :RELEASE:
         print("ADVANCED UTILITIES advancedUtilitiesTableViewCell.isHidden == \(advancedUtilitiesTableViewCell.isHidden)")
         logger.debug(":::::::::::::::::::::::::::::::::::::::::::::::::::::::::\n")
         #endif
         #if DEBUG
-        advancedUtilitiesTableViewCell.isHidden = false
+        //advancedUtilitiesTableViewCell.isHidden = false
+        advancedUtilitiesTableViewCell.isHidden = true // :UI_TEST: :RELEASE:
         print("ADVANCED UTILITIES advancedUtilitiesTableViewCell.isHidden == \(advancedUtilitiesTableViewCell.isHidden)")
-        //advancedUtilitiesTableViewCell.isHidden = true // :UI_TEST:
         #endif
     }
     
