@@ -434,16 +434,16 @@
 "urlSegment.lang" = "es/";
 
 /* main info menu: book */
-"urlSegmentInfoMenu.book" = "es/comer-para-no-morir";
+"urlSegmentInfoMenu.book" = "es/libro/comer-para-no-morir";
 
 /* main info menu: daily-dozen-challenge */
 "urlSegmentInfoMenu.challenge" = "es/objetivo-la-docena-diaria";
 
 /* main info menu: cookbook */
-"urlSegmentInfoMenu.cookbook" = "es/libro-de-recetas";
+"urlSegmentInfoMenu.cookbook" = "es/libro/libro-de-recetas";
 
 /* main info menu: how-not-to-diet */
-"urlSegmentInfoMenu.diet" = "es/comer-para-no-engordar/";
+"urlSegmentInfoMenu.diet" = "es/libro/comer-para-no-engordar/";
 
 /* main info menu: donate */
 "urlSegmentInfoMenu.donate" = "es/dona-a-nutritionfacts-org";

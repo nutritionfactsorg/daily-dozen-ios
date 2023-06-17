@@ -434,16 +434,16 @@
 "urlSegment.lang" = "";
 
 /* main info menu: book */
-"urlSegmentInfoMenu.book" = "book";
+"urlSegmentInfoMenu.book" = "book/how-not-to-die";
 
 /* main info menu: daily-dozen-challenge */
 "urlSegmentInfoMenu.challenge" = "daily-dozen-challenge";
 
 /* main info menu: cookbook */
-"urlSegmentInfoMenu.cookbook" = "cookbook";
+"urlSegmentInfoMenu.cookbook" = "book/how-not-to-die-cookbook";
 
 /* main info menu: how-not-to-diet */
-"urlSegmentInfoMenu.diet" = "how-not-to-diet";
+"urlSegmentInfoMenu.diet" = "book/how-not-to-diet";
 
 /* main info menu: donate */
 "urlSegmentInfoMenu.donate" = "donate";
