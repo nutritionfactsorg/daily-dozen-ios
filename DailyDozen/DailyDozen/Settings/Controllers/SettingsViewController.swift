@@ -132,14 +132,14 @@ class SettingsViewController: UITableViewController {
         
         #if targetEnvironment(simulator)
         logger.debug("::::: SIMULATOR ENVIRONMENT: SettingsViewController :::::")
-        //advancedUtilitiesTableViewCell.isHidden = false
-        advancedUtilitiesTableViewCell.isHidden = true // :UI_TEST: :RELEASE:
+        advancedUtilitiesTableViewCell.isHidden = false // :ADVANCED:DEBUG:
+        //advancedUtilitiesTableViewCell.isHidden = true // :ADVANCED:RELEASE:
         print("ADVANCED UTILITIES advancedUtilitiesTableViewCell.isHidden == \(advancedUtilitiesTableViewCell.isHidden)")
         logger.debug(":::::::::::::::::::::::::::::::::::::::::::::::::::::::::\n")
         #endif
         #if DEBUG
-        //advancedUtilitiesTableViewCell.isHidden = false
-        advancedUtilitiesTableViewCell.isHidden = true // :UI_TEST: :RELEASE:
+        advancedUtilitiesTableViewCell.isHidden = false // :ADVANCED:DEBUG:
+        //advancedUtilitiesTableViewCell.isHidden = true // :ADVANCED:RELEASE:
         print("ADVANCED UTILITIES advancedUtilitiesTableViewCell.isHidden == \(advancedUtilitiesTableViewCell.isHidden)")
         #endif
     }
