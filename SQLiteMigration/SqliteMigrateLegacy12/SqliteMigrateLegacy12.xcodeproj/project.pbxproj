@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		4C3BFD5D2A4EAF00002D46F5 /* DateExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C3BFD5C2A4EAEFF002D46F5 /* DateExtension.swift */; };
 		4C3C5A1129BAA98400CED942 /* SqliteConnector.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C3C5A1029BAA98400CED942 /* SqliteConnector.swift */; };
 		4C439EE729BB0B1F00121A39 /* SQLiteFramework in Frameworks */ = {isa = PBXBuildFile; productRef = 4C439EE629BB0B1F00121A39 /* SQLiteFramework */; };
 		4C5F3E8F29BAF547004360CC /* URL.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C5F3E8E29BAF547004360CC /* URL.swift */; };
@@ -32,6 +33,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		4C3BFD5C2A4EAEFF002D46F5 /* DateExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DateExtension.swift; sourceTree = "<group>"; };
 		4C3C5A1029BAA98400CED942 /* SqliteConnector.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SqliteConnector.swift; sourceTree = "<group>"; };
 		4C5F3E8E29BAF547004360CC /* URL.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = URL.swift; sourceTree = "<group>"; };
 		4C8A23F829BB08BE00C7B1D1 /* SQLiteManager */ = {isa = PBXFileReference; lastKnownFileType = wrapper; name = SQLiteManager; path = ../Packages/SQLiteManager; sourceTree = "<group>"; };
@@ -91,6 +93,7 @@
 		4C5F3E8D29BAF530004360CC /* Extensions */ = {
 			isa = PBXGroup;
 			children = (
+				4C3BFD5C2A4EAEFF002D46F5 /* DateExtension.swift */,
 				4C5F3E8E29BAF547004360CC /* URL.swift */,
 			);
 			path = Extensions;
@@ -263,6 +266,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				4C3C5A1129BAA98400CED942 /* SqliteConnector.swift in Sources */,
+				4C3BFD5D2A4EAF00002D46F5 /* DateExtension.swift in Sources */,
 				B364E0E529BAA8C900357CC3 /* ViewController.swift in Sources */,
 				B364E0E329BAA8C900357CC3 /* AppDelegate.swift in Sources */,
 				4C5F3E8F29BAF547004360CC /* URL.swift in Sources */,
