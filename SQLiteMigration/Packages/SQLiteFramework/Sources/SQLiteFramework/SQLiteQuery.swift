@@ -114,7 +114,7 @@ public class SQLiteQuery {
                 print("ERROR: query.statementPrepare sql==\(sql)")
                 fatalError()
             }
-        }            
+        }
     }
     
     deinit {
