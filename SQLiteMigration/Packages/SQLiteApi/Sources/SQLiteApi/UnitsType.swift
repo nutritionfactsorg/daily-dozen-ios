@@ -16,7 +16,7 @@ enum UnitsType: String {
 
     case imperial
     case metric
-
+    
     /// Returns localized name for the unit system currently in use.
     var title: String {
         switch self {

@@ -1,6 +1,6 @@
 //
 //  DataWeightRecord.swift
-//  SQLiteApi
+//  SQLiteApi/DataWeight
 //
 
 import Foundation

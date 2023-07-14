@@ -1,12 +1,12 @@
 //
-//  DataCount1Table.swift
+//  DataWeight1Table.swift
 //  SQLiteApi/DataWeight
 //
 
 import Foundation
 import SQLiteFramework
 
-public struct DataCount1Table {
+public struct DataWeight1Table {
     
     public unowned let api: SQLiteApi
     public init(api: SQLiteApi) {
@@ -15,12 +15,11 @@ public struct DataCount1Table {
     
     public func create() {
         let sql = """
-        CREATE TABLE IF NOT EXISTS "NFData1CountTbl" (
-            datacount_date_psid  TEXT,
-            datacount_kind_pfnid INTEGER,
-            datacount_count      INTEGER,
-            datacount_streak     INTEGER,
-            PRIMARY KEY("datacount_date_psid", "datacount_kind_pfnid")
+        CREATE TABLE IF NOT EXISTS "NFData1WeightTbl" (
+            dataweight_pid  TEXT,
+            dataweight_kg   REAL,
+            dataweight_time TEST,
+            PRIMARY KEY("dataweight_pid")
         );
         """
         
@@ -28,5 +27,5 @@ public struct DataCount1Table {
         let query = SQLiteQuery(sql: sql, db: api.dailydozenDb)
         print("query \(query.getStatus().toString())")
     }
-    
+
 }

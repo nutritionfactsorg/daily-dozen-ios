@@ -1,6 +1,6 @@
 //
 //  URL.swift
-//  SqliteMigrateLegacy12
+//  SqliteMigrateLegacy12/Extensions
 //
 //  Copyright © 2023 NutritionFacts.org. All rights reserved.
 //

@@ -61,15 +61,15 @@ public class SQLiteQuery {
     public let QUERY_NO_ERROR = 0 // :NYI: use something more modern.
 
     /// Database
-    public var _db: SQLiteDatabase // :WIP:ACCESS_LEVEL:INTERNAL:
+    public var _db: SQLiteDatabase // :WIP:ACCESS_LEVEL.INTERNAL
     /// Original SQL statement
-    public var _sql: String // :WIP:ACCESS_LEVEL:INTERNAL:
+    public var _sql: String // :WIP:ACCESS_LEVEL.INTERNAL
     /// Bindings where SQL statement ":1" is binding position `1`
-    public var _bindings: [Int32] // :WIP:ACCESS_LEVEL:INTERNAL:
+    public var _bindings: [Int32] // :WIP:ACCESS_LEVEL.INTERNAL
     /// :returns: SQLiteResult array of [Str]
-    public var _result: SQLiteResult // :WIP:ACCESS_LEVEL:INTERNAL:
+    public var _result: SQLiteResult // :WIP:ACCESS_LEVEL.INTERNAL
     
-    /// :WIP:ACCESS_LEVEL:FILEPRIVATE:
+    // :WIP:ACCESS_LEVEL.FILEPRIVATE
     public var _laststatus: SQLiteStatus
     
     /// Prepared statement ID
@@ -314,7 +314,7 @@ public class SQLiteQuery {
         _laststatus = status
     }
     
-    /// :WIP:ACCESS_LEVEL:FILEPRIVATE:
+    // :WIP:ACCESS_LEVEL.FILEPRIVATE
     public func setStatusError(context: String, message: String) {
         let err = SQLiteStatus(
             type: SQLiteStatusType.statementError, 
@@ -326,7 +326,7 @@ public class SQLiteQuery {
         print(err.toString())
     }
     
-    /// :WIP:ACCESS_LEVEL:FILEPRIVATE:
+    // :WIP:ACCESS_LEVEL.FILEPRIVATE
     public func setStatusError(context: String, code: Int32) {
         if let errmsg = String(validatingUTF8: sqlite3_errmsg(_db.dbPtr)) {
             let err = SQLiteStatus(
@@ -350,7 +350,7 @@ public class SQLiteQuery {
         }
     }
     
-    /// :WIP:ACCESS_LEVEL:FILEPRIVATE:
+    // :WIP:ACCESS_LEVEL.FILEPRIVATE
     public func setStatusOk(context: String) {
         let ok = SQLiteStatus(
             type: SQLiteStatusType.noError, 

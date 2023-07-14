@@ -1,6 +1,6 @@
 //
 //  DataWeight1Record.swift
-//  SQLiteApi
+//  SQLiteApi/DataWeight
 //
 
 import Foundation
@@ -11,29 +11,29 @@ public struct DataWeight1Record: Codable {
     // MARK: - fields
     
     /// yyyyMMdd.typeKey e.g. 20190101.am
-    public var pid: String = ""
+    public var dataweight_pid: String = ""
     /// kilograms
-    public dynamic var kg: Double = 0.0
+    public dynamic var dataweight_kg: Double = 0.0
     /// time of day 24-hour "HH:mm" format
-    public dynamic var time: String = ""
+    public dynamic var dataweight_time: String = ""
     
     var kgStr: String {
-        if let s = UnitsUtility.regionalKgWeight(fromKg: kg, toDecimalDigits: 1) {
+        if let s = UnitsUtility.regionalKgWeight(fromKg: dataweight_kg, toDecimalDigits: 1) {
             return s
         } else {
-            return String(format: "%.1f", kg) // fallback if region conversion is nil
+            return String(format: "%.1f", dataweight_kg) // fallback if region conversion is nil
         }
     }
     
     var lbs: Double {
-        return kg * 2.204623
+        return dataweight_kg * 2.204623
     }
     
     var lbsStr: String {
-        if let s = UnitsUtility.regionalLbsWeight(fromKg: kg, toDecimalDigits: 1) {
+        if let s = UnitsUtility.regionalLbsWeight(fromKg: dataweight_kg, toDecimalDigits: 1) {
             return s
         } else {
-            let poundValue = kg * 2.204623
+            let poundValue = dataweight_kg * 2.204623
             return String(format: "%.1f", poundValue) // fallback if region conversion is nil
         }
     }
@@ -42,7 +42,7 @@ public struct DataWeight1Record: Codable {
     var timeAmPm: String {
         let fromDateFormatter = DateFormatter()
         fromDateFormatter.dateFormat = "HH:mm"
-        if let fromDate = fromDateFormatter.date(from: time) {
+        if let fromDate = fromDateFormatter.date(from: dataweight_time) {
             let toDateFormatter = DateFormatter()
             toDateFormatter.dateFormat = "hh:mm a"
             let fromTime: String = toDateFormatter.string(from: fromDate)
@@ -52,14 +52,14 @@ public struct DataWeight1Record: Codable {
     }
     
     var datetime: Date? {
-        let datestring = "\(pid.prefix(8)) \(time)"
+        let datestring = "\(dataweight_pid.prefix(8)) \(dataweight_time)"
         let dateFormatter = DateFormatter()
         dateFormatter.dateFormat = "yyyyMMdd HH:mm"
         return dateFormatter.date(from: datestring)
     }
     
     var pidKeys: (datestampKey: String, typeKey: String) {
-        let parts = self.pid.components(separatedBy: ".")
+        let parts = self.dataweight_pid.components(separatedBy: ".")
         return (datestampKey: parts[0], typeKey: parts[1])
     }
     
@@ -100,16 +100,16 @@ public struct DataWeight1Record: Codable {
         }
 
         //self.init()
-        self.pid = "\(datestampKey).\(typeKey)"
-        self.kg = kg
-        self.time = timeHHmm
+        self.dataweight_pid = "\(datestampKey).\(typeKey)"
+        self.dataweight_kg = kg
+        self.dataweight_time = timeHHmm
     }
     
     init(date: Date, weightType: DataWeightType, kg: Double) {
         //self.init()
-        self.pid = "\(date.datestampKey).\(weightType.typeKey)"
-        self.kg = kg
-        self.time = date.datestampHHmm
+        self.dataweight_pid = "\(date.datestampKey).\(weightType.typeKey)"
+        self.dataweight_kg = kg
+        self.dataweight_time = date.datestampHHmm
     }
     
     // MARK: - Realm Meta Information

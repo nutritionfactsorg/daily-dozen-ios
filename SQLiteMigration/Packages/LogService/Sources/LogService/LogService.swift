@@ -120,7 +120,7 @@ public struct LogService {
         var logString = "[[\(lineCount)]] \(string)"
         #if DEBUG
         if watchpointList.contains(lineCount) {
-            logString = ":::WATCHPOINT::: [[\(lineCount)]]\n" + logString
+            logString = "•WATCHPOINT• [[\(lineCount)]]\n" + logString
         }
         #endif
         
@@ -170,10 +170,10 @@ public struct LogService {
             if let url = logfileUrl {
                 try "FILE: \(logfileName)\n".write(to: url, atomically: true, encoding: String.Encoding.utf8)
             } else {
-                print(":FAIL: LogService useLogFile() logfileUrl is nil")
+                print("FAIL: LogService useLogFile() logfileUrl is nil")
             }
         } catch {
-            print(":FAIL: LogService useLogFile() could not write initial line to \(logfileName)")
+            print("FAIL: LogService useLogFile() could not write initial line to \(logfileName)")
         }
     }
     

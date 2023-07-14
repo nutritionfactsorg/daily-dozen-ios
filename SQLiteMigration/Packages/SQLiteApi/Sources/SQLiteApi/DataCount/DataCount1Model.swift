@@ -1,6 +1,6 @@
 //
 //  DataCount1Model.swift
-//  SQLiteApi
+//  SQLiteApi/DataCount
 //
 
 import Foundation
@@ -16,7 +16,7 @@ public struct DataCount1Model {
     
     /// INSERT one row record into database.
     public func create(_ r: DataCount1Record) {
-        var sqlItemA = "INSERT INTO data_count_1_table("
+        var sqlItemA = "INSERT INTO datacount_1_table("
         var sqlItemB = "VALUES ("
         
         sqlItemA.append(" datacount_date_psid,")
@@ -46,7 +46,7 @@ public struct DataCount1Model {
     
     public func createTable() {
         let sql = """
-        CREATE TABLE IF NOT EXISTS "data_count_1_table" (
+        CREATE TABLE IF NOT EXISTS "datacount_1_table" (
             datacount_date_psid  TEXT,
             datacount_kind_pfnid INTEGER,
             datacount_count      INTEGER,

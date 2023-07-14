@@ -1,6 +1,6 @@
 //
 //  SqliteConnector.swift
-//  SqliteMigrateLegacy12
+//  SqliteMigrateLegacy12/Database
 //
 //  Copyright © 2023 NutritionFacts.org. All rights reserved.
 //
@@ -28,6 +28,7 @@ struct SqliteConnector {
         print("run createData")
         //let r = DataCount1Record(date: Date(), countType: .dozeBeans, count: 2, streak: 0)
         //sqliteApi.dataCount.create(r)
+        // 3 * 365 = 1095
         doGenerateDBHistoryBIT(numberOfDays: 1095, defaultDB: true)
     }
 
@@ -54,6 +55,7 @@ struct SqliteConnector {
             "••BEGIN•• doGenerateDBHistoryBIT(\(numberOfDays))  \(Date())"
         )
         //let urlLegacy = URL.inDocuments(filename: "test_\(numberOfDays)_days.realm")
+        sqliteApi.transactionBegin()
         
         let calendar = Calendar.current
         let today = Date() // today
@@ -73,12 +75,14 @@ struct SqliteConnector {
             let stepByDay = DateComponents(day: -1)
             date = calendar.date(byAdding: stepByDay, to: date)!
             
+            // --- COUNT RECORDS ---
             for countType in DataCountType.allCases {
                 // Add data counts
                 let r = DataCount1Record(date: date, countType: countType, count: 1, streak: 0)
                 sqliteApi.dataCount.create(r)
             }
             
+            // --- WEIGHT RECORDS ---
             let stepByAm = DateComponents(hour: Int.random(in: 7...8), minute: Int.random(in: 1...59))
             let dateAm = calendar.date(byAdding: stepByAm, to: date)!
             
@@ -93,7 +97,11 @@ struct SqliteConnector {
             //realmProvider.saveDBWeight(date: dateAm, ampm: .am, kg: weightAm)
             //realmProvider.saveDBWeight(date: datePm, ampm: .pm, kg: weightPm)
             
-            if i < 5 {
+            let nToLog = 5
+            if i == 0 {
+                LogService.shared.debug("•• first \(nToLog) weight entries")
+            }
+            if i < nToLog {
                 let weightAmStr = String(format: "%.2f", weightAm)
                 let weightPmStr = String(format: "%.2f", weightAm)
                 LogService.shared.debug(
@@ -101,6 +109,7 @@ struct SqliteConnector {
                 )
             }
         }
+        sqliteApi.transactionCommit()
         LogService.shared.debug(
             "••EXIT•• doUtilityTestGenerateHistory(…) \(Date())"
         )

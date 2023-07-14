@@ -45,7 +45,7 @@ public class SQLiteDatabase {
     }
     public typealias OptionDictionary = Dictionary<ConnectionOption, AnyObject>
     
-    /// :WIP:ACCESS_LEVEL:FILEPRIVATE:
+    // :WIP:ACCESS_LEVEL.FILEPRIVATE
     public var _laststatus: SQLiteStatus = SQLiteStatus(
         type: SQLiteStatusType.noError, 
         context: "Initial Status"
@@ -367,7 +367,7 @@ public class SQLiteDatabase {
         return _laststatus;
     }
     
-    /// :WIP:ACCESS_LEVEL:FILEPRIVATE:
+    // :WIP:ACCESS_LEVEL.FILEPRIVATE
     public func setStatusError(context: String) {
         let err = SQLiteStatus(
             type: SQLiteStatusType.connectionError, 
@@ -379,7 +379,7 @@ public class SQLiteDatabase {
         print(err.toString())
     }
     
-    /// :WIP:ACCESS_LEVEL:FILEPRIVATE:
+    // :WIP:ACCESS_LEVEL.FILEPRIVATE
     public func setStatusError(context: String, code: Int32) {
         if let errmsg = String(validatingUTF8: sqlite3_errmsg(self.dbPtr)) {
             let err = SQLiteStatus(
@@ -403,7 +403,7 @@ public class SQLiteDatabase {
         }
     }
     
-    /// :WIP:ACCESS_LEVEL:FILEPRIVATE:
+    // :WIP:ACCESS_LEVEL.FILEPRIVATE
     public func setStatusOk(context: String) {
         let ok = SQLiteStatus(
             type: SQLiteStatusType.noError, 

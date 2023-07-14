@@ -11,10 +11,10 @@ import Foundation
 /// Design Option: each row has 2D values array with 1D column name array.
 /// 
 public struct SQLiteResult {
-    /// :WIP:ACCESS_LEVEL:
+    // :WIP:ACCESS_LEVEL:
     public var columnNames: [String]
     // var columnType or blobType: [String: some_type ] // column name string: type
-    /// :WIP:ACCESS_LEVEL:
+    // :WIP:ACCESS_LEVEL:
     public var data: [[Any?]]
     
     // 
