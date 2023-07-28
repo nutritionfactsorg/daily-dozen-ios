@@ -34,15 +34,15 @@ struct SqliteConnector {
     }
 
     func exportData() {
-        print("run exportData")
+        print("run exportData") // :GTD:
     }
 
     func importData() {
-        print("run importData")
+        print("run importData") // :GTD:
     }
     
     func timingTest() {
-        print("run timingTest")
+        print("run timingTest") // :GTD:
     }
     
     /// Generate data
@@ -84,29 +84,31 @@ struct SqliteConnector {
             }
             
             // --- WEIGHT RECORDS ---
-            let stepByAm = DateComponents(hour: Int.random(in: 7...8), minute: Int.random(in: 1...59))
-            let dateAm = calendar.date(byAdding: stepByAm, to: date)!
+            let stepByAM = DateComponents(hour: Int.random(in: 7...8), minute: Int.random(in: 1...59))
+            let dateAM = calendar.date(byAdding: stepByAM, to: date)!
             
-            let stepByPm = DateComponents(hour: Int.random(in: 21...23), minute: Int.random(in: 1...59))
-            let datePm = calendar.date(byAdding: stepByPm, to: date)!
+            let stepByPM = DateComponents(hour: Int.random(in: 21...23), minute: Int.random(in: 1...59))
+            let datePM = calendar.date(byAdding: stepByPM, to: date)!
             
             //
             let x = Double(i)
-            let weightAm = weightBase + weightAmplitude * sin(x * weightCycleStep)
-            let weightPm = weightBase - weightAmplitude * sin(x * weightCycleStep)
+            let weightAM = weightBase + weightAmplitude * sin(x * weightCycleStep)
+            let weightPM = weightBase - weightAmplitude * sin(x * weightCycleStep)
             
-            //realmProvider.saveDBWeight(date: dateAm, ampm: .am, kg: weightAm)
-            //realmProvider.saveDBWeight(date: datePm, ampm: .pm, kg: weightPm)
+            let rAM = SqlDataWeightRecord(date: dateAM, weightType: .am, kg: weightAM)
+            sqliteApi.dataWeight.create(rAM)
+            let rPM = SqlDataWeightRecord(date: datePM, weightType: .pm, kg: weightPM)            
+            sqliteApi.dataWeight.create(rPM)
             
             let nToLog = 5
             if i == 0 {
                 LogService.shared.debug("•• first \(nToLog) weight entries")
             }
             if i < nToLog {
-                let weightAmStr = String(format: "%.2f", weightAm)
-                let weightPmStr = String(format: "%.2f", weightAm)
+                let weightAmStr = String(format: "%.2f", weightAM)
+                let weightPmStr = String(format: "%.2f", weightAM)
                 LogService.shared.debug(
-                    "    \(date) [AM] \(dateAm) \(weightAmStr) [PM] \(datePm) \(weightPmStr)"
+                    "    \(date) [AM] \(dateAM) \(weightAmStr) [PM] \(datePM) \(weightPmStr)"
                 )
             }
         }

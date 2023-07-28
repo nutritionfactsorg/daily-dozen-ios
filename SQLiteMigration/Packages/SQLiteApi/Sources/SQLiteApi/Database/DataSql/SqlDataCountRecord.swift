@@ -23,16 +23,21 @@ public struct SqlDataCountRecord: Codable {
     
     // "\(datacount_kind_pfnid).\(dataCountType.typeKey)"
     // 20190214.dozeBeans
-    public var pid: String // :TBD: refactor to string id `sid`
+    public var pid: String // :GTD: refactor to string id `sid`
     
-    public var pidKeys: (datestampKey: String, typeKey: String) {
-        let parts = self.pid.components(separatedBy: ".")
-        return (datestampKey: parts[0], typeKey: parts[1])
+    // :GTD: pidKeys needs to be checked where used … is string still needed?
+    public var pidKeys: (datestampSid: String, typeKey: String)? {
+        if let typeKey = DataCountType(nid: datacount_kind_pfnid)?.typeKey {
+            return (datestampSid: datacount_date_psid, typeKey: typeKey)
+        } else {
+            return nil
+        }
     }
-
+    
+    // :GTD: pidParts uses needs check
     public var pidParts: (datestamp: Date, countType: DataCountType)? {
-        guard let date = Date.init(datestampKey: pidKeys.datestampKey),
-            let countType = DataCountType(itemTypeKey: pidKeys.typeKey) else {
+        guard let date = Date.init(datestampSid: datacount_date_psid),
+            let countType = DataCountType(nid: datacount_kind_pfnid) else {
                 LogService.shared.error(
                     "SqlDataCountRecord pidParts has invalid datestamp or typeKey"
                 )
@@ -44,36 +49,36 @@ public struct SqlDataCountRecord: Codable {
     // MARK: Class Methods
     
     static func pid(date: Date, countType: DataCountType) -> String {
-        return "\(date.datestampKey).\(countType.typeKey)"
+        return "\(date.datestampSid).\(countType.typeKey)"
     }
 
-    static func pid(datestampKey: String, typeKey: String) -> String {
-        return "\(datestampKey).\(typeKey)"
+    static func pid(datestampSid: String, typeKey: String) -> String {
+        return "\(datestampSid).\(typeKey)"
     }
 
-    static func pidKeys(pid: String) -> (datestampKey: String, typeKey: String) {
+    static func pidKeys(pid: String) -> (datestampSid: String, typeKey: String) {
         let parts = pid.components(separatedBy: ".")
-        return (datestampKey: parts[0], typeKey: parts[1])
+        return (datestampSid: parts[0], typeKey: parts[1])
     }
     
     // MARK: - Init
     
     /// CSV Initialer.
-    public init?(datestampKey: String, typeKey: String, count: Int = 0, streak: Int = 0) {
+    public init?(datestampSid: String, typeKey: String, count: Int = 0, streak: Int = 0) {
         guard let dataCountType = DataCountType(itemTypeKey: typeKey),
-            Date(datestampKey: datestampKey) != nil else {
+            Date(datestampSid: datestampSid) != nil else {
             return nil
         }
         
         //self.init()
-        datacount_date_psid = datestampKey // YYYYMMDD
+        datacount_date_psid = datestampSid // YYYYMMDD
         datacount_kind_pfnid = dataCountType.nid
 
         datacount_count = count
         if datacount_count > dataCountType.maxServings {
             datacount_count = dataCountType.maxServings
             LogService.shared.error(
-                "SqlDataCountRecord init datestampKey:\(datestampKey) typekey:\(typeKey) count:\(count) exceeded max servings \(dataCountType.maxServings)"
+                "SqlDataCountRecord init datestampSid:\(datestampSid) typekey:\(typeKey) count:\(count) exceeded max servings \(dataCountType.maxServings)"
             )
 
         }
@@ -84,14 +89,14 @@ public struct SqlDataCountRecord: Codable {
     
     public init(date: Date, countType: DataCountType, count: Int = 0, streak: Int = 0) {
         //self.init()
-        datacount_date_psid = date.datestampKey // YYYYMMDD
+        datacount_date_psid = date.datestampSid // YYYYMMDD
         datacount_kind_pfnid = countType.nid    // number index
         
         datacount_count = count
         if datacount_count > countType.maxServings {
             datacount_count = countType.maxServings
             LogService.shared.error(
-                "SqlDataCountRecord init date:\(date.datestampKey) countType:\(countType.typeKey) count:\(count) exceeds max servings \(countType.maxServings)"
+                "SqlDataCountRecord init date:\(date.datestampSid) countType:\(countType.typeKey) count:\(count) exceeds max servings \(countType.maxServings)"
             )
         }
         datacount_streak = streak
@@ -108,7 +113,7 @@ public struct SqlDataCountRecord: Codable {
     // MARK: - Data Presentation Methods
     
     func title() -> String {
-        guard let tmp = DataCountType(rawValue: self.pidKeys.typeKey) else {
+        guard let tmp = DataCountType(nid: self.datacount_kind_pfnid) else {
             return "Undefined Title (Error)" 
         }
         return tmp.headingDisplay

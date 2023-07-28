@@ -7,6 +7,7 @@ import Foundation
 
 extension Date {
     
+    /// yyyyMMdd
     init?(datestampKey: String) {
         let dateFormatter = DateFormatter()
         dateFormatter.dateFormat = "yyyyMMdd"
@@ -18,6 +19,18 @@ extension Date {
         }
     }
     
+    /// yyyy-MM-dd ISO 8601 String ID based on the current locale
+    init?(datestampSid: String) {
+        let dateFormatter = DateFormatter()
+        dateFormatter.dateFormat = "yyyy-MM-dd"
+        if let date = dateFormatter.date(from: datestampSid) {
+            self = date
+            return
+        } else {
+            return nil
+        }
+    }
+
     var datestampHHmm: String {
         let dateFormatter = DateFormatter()
         dateFormatter.dateFormat = "HH:mm"
@@ -28,6 +41,13 @@ extension Date {
     var datestampKey: String {
         let dateFormatter = DateFormatter()
         dateFormatter.dateFormat = "yyyyMMdd"
+        return dateFormatter.string(from: self)
+    }
+    
+    /// Return yyyy-MM-dd ISO 8601 String ID based on the current locale.
+    var datestampSid: String {
+        let dateFormatter = DateFormatter()
+        dateFormatter.dateFormat = "yyyy-MM-dd"
         return dateFormatter.string(from: self)
     }
     
@@ -43,5 +63,5 @@ extension Date {
     var year: Int {
         return Calendar.current.component(.year, from: self)
     }
-
+    
 }

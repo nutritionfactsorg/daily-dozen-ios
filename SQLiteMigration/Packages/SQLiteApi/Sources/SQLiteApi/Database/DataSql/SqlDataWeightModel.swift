@@ -20,7 +20,7 @@ public struct SqlDataWeightModel {
         var sqlItemB = "VALUES ("
         
         sqlItemA.append(" dataweight_date_psid,")
-        sqlItemB.append(" \(r.dataweight_date_psid),")
+        sqlItemB.append(" '\(r.dataweight_date_psid)',")
 
         sqlItemA.append(" dataweight_ampm_pnid,")
         sqlItemB.append(" \(r.dataweight_ampm_pnid),")
@@ -28,8 +28,8 @@ public struct SqlDataWeightModel {
         sqlItemA.append(" dataweight_kg,")
         sqlItemB.append(" \(r.dataweight_kg),")
 
-        sqlItemA.append(" dataweight_time,")
-        sqlItemB.append(" \(r.dataweight_time),")
+        sqlItemA.append(" dataweight_time")
+        sqlItemB.append(" '\(r.dataweight_time)'")
         
         sqlItemA.append(" ) ")
         sqlItemB.append(" );")

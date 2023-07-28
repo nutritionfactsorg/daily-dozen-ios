@@ -20,7 +20,7 @@ public struct SqlDataCountModel {
         var sqlItemB = "VALUES ("
         
         sqlItemA.append(" datacount_date_psid,")
-        sqlItemB.append(" \(r.datacount_date_psid),")
+        sqlItemB.append(" '\(r.datacount_date_psid)',")
 
         sqlItemA.append(" datacount_kind_pfnid,")
         sqlItemB.append(" \(r.datacount_kind_pfnid),")
