@@ -631,9 +631,9 @@
 		4941D724237E121E00ED84B5 /* Database */ = {
 			isa = PBXGroup;
 			children = (
+				4C22C9942A73546C0008D7B6 /* Data */,
 				49B93E4F2477361100144C80 /* DatabaseBuiltInTest.swift */,
 				4930360624760CBD00746D49 /* DatabaseMaintainer.swift */,
-				4941D727237E13DC00ED84B5 /* DataRecords */,
 				CFAAB37B1F9F4B0D00B24748 /* RealmLegacy */,
 				4941D726237E13DB00ED84B5 /* RealmManager.swift */,
 				4941D72C237E13DC00ED84B5 /* RealmProvider.swift */,
@@ -641,18 +641,14 @@
 			path = Database;
 			sourceTree = "<group>";
 		};
-		4941D727237E13DC00ED84B5 /* DataRecords */ = {
+		4941D727237E13DC00ED84B5 /* DataRealm */ = {
 			isa = PBXGroup;
 			children = (
-				49821BA92383727D006F166E /* DailyTracker.swift */,
 				4941D728237E13DC00ED84B5 /* DataCountRecord.swift */,
-				4941D729237E13DC00ED84B5 /* DataCountType.swift */,
-				4941D734237E266300ED84B5 /* DataCountAttributes.swift */,
 				4941D72A237E13DC00ED84B5 /* DataWeightRecord.swift */,
-				4941D72B237E13DC00ED84B5 /* DataWeightType.swift */,
 				497A8F0B2474AFC8001BEDCA /* DataWeightValues.swift */,
 			);
-			path = DataRecords;
+			path = DataRealm;
 			sourceTree = "<group>";
 		};
 		4946DEE0241068A30054AEBB /* Views */ = {
@@ -927,6 +923,26 @@
 				4C7D52F82A3B8FDA00386832 /* InfoFaqTableViewCell.swift */,
 			);
 			path = Views;
+			sourceTree = "<group>";
+		};
+		4C22C9932A733A540008D7B6 /* DataSql */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = DataSql;
+			sourceTree = "<group>";
+		};
+		4C22C9942A73546C0008D7B6 /* Data */ = {
+			isa = PBXGroup;
+			children = (
+				49821BA92383727D006F166E /* DailyTracker.swift */,
+				4941D729237E13DC00ED84B5 /* DataCountType.swift */,
+				4941D734237E266300ED84B5 /* DataCountAttributes.swift */,
+				4941D72B237E13DC00ED84B5 /* DataWeightType.swift */,
+				4C22C9932A733A540008D7B6 /* DataSql */,
+				4941D727237E13DC00ED84B5 /* DataRealm */,
+			);
+			path = Data;
 			sourceTree = "<group>";
 		};
 		68646D18FC1A63146B00CB7C /* Frameworks */ = {

@@ -1,24 +1,30 @@
 //
-//  DataWeightCopy.swift
-//  DailyDozen
+//  DataWeightRecord.swift
+//  DatabaseMigration
 //
-//  Copyright © 2020 Nutritionfacts.org. All rights reserved.
+//  Copyright © 2019 NutritionFacts.org. All rights reserved.
 //
 
 import Foundation
+import RealmSwift
 
-/// DataWeightCopy: DataWeightRecord without Realm Object inheritance
-class DataWeightCopy {
+class DataWeightRecord: Object {
     
-    /// yyyyMMdd.typeKey e.g. 20190101.amKey
-    var pid: String = ""
+    // MARK: - fields
+    
+    /// yyyyMMdd.typeKey e.g. 20190101.am
+    @objc dynamic var pid: String = ""
     /// kilograms
-    var kg: Double = 0.0
+    @objc dynamic var kg: Double = 0.0
     /// time of day 24-hour "HH:mm" format
-    var time: String = ""
+    @objc dynamic var time: String = ""
     
     var kgStr: String {
-        return String(format: "%.1f", kg)
+        if let s = UnitsUtility.regionalKgWeight(fromKg: kg, toDecimalDigits: 1) {
+            return s
+        } else {
+            return String(format: "%.1f", kg) // fallback if region conversion is nil
+        }
     }
     
     var lbs: Double {
@@ -26,8 +32,12 @@ class DataWeightCopy {
     }
     
     var lbsStr: String {
-        let poundValue = kg * 2.204623
-        return String(format: "%.1f", poundValue)
+        if let s = UnitsUtility.regionalLbsWeight(fromKg: kg, toDecimalDigits: 1) {
+            return s
+        } else {
+            let poundValue = kg * 2.204623
+            return String(format: "%.1f", poundValue) // fallback if region conversion is nil
+        }
     }
     
     /// time of day "hh:mm a" format
@@ -94,7 +104,7 @@ class DataWeightCopy {
         self.init()
         self.pid = "\(datestampKey).\(typeKey)"
         self.kg = kg
-        self.time = time
+        self.time = timeHHmm
     }
     
     convenience init(date: Date, weightType: DataWeightType, kg: Double) {
@@ -104,7 +114,7 @@ class DataWeightCopy {
         self.time = date.datestampHHmm
     }
     
-    // MARK: - Meta Information
+    // MARK: - Realm Meta Information
     
     override static func primaryKey() -> String? {
         return "pid"
