@@ -46,12 +46,7 @@
 		493A9BD323CE47A000F679BE /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 493A9BD523CE47A000F679BE /* Localizable.strings */; };
 		493B0EB2258D0D7B00FEDA8E /* dr_greger.png in Resources */ = {isa = PBXBuildFile; fileRef = 493B0EB1258D0D7B00FEDA8E /* dr_greger.png */; };
 		4941D72E237E13DC00ED84B5 /* RealmManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4941D726237E13DB00ED84B5 /* RealmManager.swift */; };
-		4941D72F237E13DC00ED84B5 /* DataCountRecord.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4941D728237E13DC00ED84B5 /* DataCountRecord.swift */; };
-		4941D730237E13DC00ED84B5 /* DataCountType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4941D729237E13DC00ED84B5 /* DataCountType.swift */; };
-		4941D731237E13DC00ED84B5 /* DataWeightRecord.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4941D72A237E13DC00ED84B5 /* DataWeightRecord.swift */; };
-		4941D732237E13DC00ED84B5 /* DataWeightType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4941D72B237E13DC00ED84B5 /* DataWeightType.swift */; };
 		4941D733237E13DC00ED84B5 /* RealmProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4941D72C237E13DC00ED84B5 /* RealmProvider.swift */; };
-		4941D735237E266300ED84B5 /* DataCountAttributes.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4941D734237E266300ED84B5 /* DataCountAttributes.swift */; };
 		4943720D2487702300632053 /* HealthSynchronizer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4943720C2487702300632053 /* HealthSynchronizer.swift */; };
 		4944B99223AD7A1A008DFA30 /* ChartDataEntry.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4944B99123AD7A1A008DFA30 /* ChartDataEntry.swift */; };
 		4955013A23CD453200C72FB3 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 4955013723CD453200C72FB3 /* Assets.xcassets */; };
@@ -64,13 +59,11 @@
 		497390B023A5D4F900492D92 /* SettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 497390AD23A5D4F800492D92 /* SettingsViewController.swift */; };
 		497390B123A5D4F900492D92 /* SettingsReminderViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 497390AE23A5D4F900492D92 /* SettingsReminderViewController.swift */; };
 		497A8F0A24748E88001BEDCA /* SettingsManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 497A8F0924748E88001BEDCA /* SettingsManager.swift */; };
-		497A8F0C2474AFC8001BEDCA /* DataWeightValues.swift in Sources */ = {isa = PBXBuildFile; fileRef = 497A8F0B2474AFC8001BEDCA /* DataWeightValues.swift */; };
 		497F91B2240990B600464E4E /* TweakDetailSections.swift in Sources */ = {isa = PBXBuildFile; fileRef = 497F91B1240990B600464E4E /* TweakDetailSections.swift */; };
 		498170952391B6AB0033882C /* TweakEntrySections.swift in Sources */ = {isa = PBXBuildFile; fileRef = 498170942391B6AB0033882C /* TweakEntrySections.swift */; };
 		4981709B2391B85B0033882C /* TweakHistoryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4981709A2391B85B0033882C /* TweakHistoryViewController.swift */; };
 		4981709D2391B89E0033882C /* TweakHistoryViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4981709C2391B89E0033882C /* TweakHistoryViewModel.swift */; };
 		498170A123920DD60033882C /* TweakEntryPagerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 498170A023920DD60033882C /* TweakEntryPagerViewController.swift */; };
-		49821BAA2383727D006F166E /* DailyTracker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49821BA92383727D006F166E /* DailyTracker.swift */; };
 		498A2279237CD81F007AF5FB /* DailyDozenTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 498A2278237CD81F007AF5FB /* DailyDozenTests.swift */; };
 		498D76A423709F9D00B5DF06 /* UtilityTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 498D76A323709F9D00B5DF06 /* UtilityTableViewController.swift */; };
 		498F7244239D8B5C004E501B /* WeightHistoryViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 498F7243239D8B5C004E501B /* WeightHistoryViewModel.swift */; };
@@ -121,6 +114,13 @@
 		49F8D1DE23906B29003E139F /* TweakEntryDataProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49F8D1DD23906B29003E139F /* TweakEntryDataProvider.swift */; };
 		4C079D4C287FFC5B00234849 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 4C079D4B287FFC5B00234849 /* GoogleService-Info.plist */; };
 		4C092E3F28EF5E97004D5539 /* AnalyticsHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C092E3E28EF5E97004D5539 /* AnalyticsHelper.swift */; };
+		4C22C9A02A737DEE0008D7B6 /* DailyTracker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C22C9962A737DEE0008D7B6 /* DailyTracker.swift */; };
+		4C22C9A12A737DEE0008D7B6 /* DataCountAttributes.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C22C9972A737DEE0008D7B6 /* DataCountAttributes.swift */; };
+		4C22C9A22A737DEE0008D7B6 /* DataCountType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C22C9982A737DEE0008D7B6 /* DataCountType.swift */; };
+		4C22C9A32A737DEE0008D7B6 /* DataCountRecord.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C22C99A2A737DEE0008D7B6 /* DataCountRecord.swift */; };
+		4C22C9A42A737DEE0008D7B6 /* DataWeightRecord.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C22C99B2A737DEE0008D7B6 /* DataWeightRecord.swift */; };
+		4C22C9A52A737DEE0008D7B6 /* DataWeightValues.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C22C99C2A737DEE0008D7B6 /* DataWeightValues.swift */; };
+		4C22C9A72A737DEE0008D7B6 /* DataWeightType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C22C99F2A737DEE0008D7B6 /* DataWeightType.swift */; };
 		4C7D52F52A3B81DE00386832 /* ExpandableTableViewCellDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C7D52F42A3B81DE00386832 /* ExpandableTableViewCellDelegate.swift */; };
 		4C7D52F72A3B8F3200386832 /* InfoFaqTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C7D52F62A3B8F3200386832 /* InfoFaqTableViewController.swift */; };
 		4C7D52F92A3B8FDA00386832 /* InfoFaqTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C7D52F82A3B8FDA00386832 /* InfoFaqTableViewCell.swift */; };
@@ -232,12 +232,7 @@
 		493A9C3223CE6B7500F679BE /* es */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = es; path = es.lproj/Localizable.strings; sourceTree = "<group>"; };
 		493B0EB1258D0D7B00FEDA8E /* dr_greger.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = dr_greger.png; sourceTree = "<group>"; };
 		4941D726237E13DB00ED84B5 /* RealmManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RealmManager.swift; sourceTree = "<group>"; };
-		4941D728237E13DC00ED84B5 /* DataCountRecord.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DataCountRecord.swift; sourceTree = "<group>"; };
-		4941D729237E13DC00ED84B5 /* DataCountType.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DataCountType.swift; sourceTree = "<group>"; };
-		4941D72A237E13DC00ED84B5 /* DataWeightRecord.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DataWeightRecord.swift; sourceTree = "<group>"; };
-		4941D72B237E13DC00ED84B5 /* DataWeightType.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DataWeightType.swift; sourceTree = "<group>"; };
 		4941D72C237E13DC00ED84B5 /* RealmProvider.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RealmProvider.swift; sourceTree = "<group>"; };
-		4941D734237E266300ED84B5 /* DataCountAttributes.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DataCountAttributes.swift; sourceTree = "<group>"; };
 		4943720C2487702300632053 /* HealthSynchronizer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HealthSynchronizer.swift; sourceTree = "<group>"; };
 		4944B99123AD7A1A008DFA30 /* ChartDataEntry.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChartDataEntry.swift; sourceTree = "<group>"; };
 		4955013723CD453200C72FB3 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -253,13 +248,11 @@
 		497390AD23A5D4F800492D92 /* SettingsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SettingsViewController.swift; sourceTree = "<group>"; };
 		497390AE23A5D4F900492D92 /* SettingsReminderViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SettingsReminderViewController.swift; sourceTree = "<group>"; };
 		497A8F0924748E88001BEDCA /* SettingsManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsManager.swift; sourceTree = "<group>"; };
-		497A8F0B2474AFC8001BEDCA /* DataWeightValues.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataWeightValues.swift; sourceTree = "<group>"; };
 		497F91B1240990B600464E4E /* TweakDetailSections.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TweakDetailSections.swift; sourceTree = "<group>"; };
 		498170942391B6AB0033882C /* TweakEntrySections.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TweakEntrySections.swift; sourceTree = "<group>"; };
 		4981709A2391B85B0033882C /* TweakHistoryViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TweakHistoryViewController.swift; sourceTree = "<group>"; };
 		4981709C2391B89E0033882C /* TweakHistoryViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TweakHistoryViewModel.swift; sourceTree = "<group>"; };
 		498170A023920DD60033882C /* TweakEntryPagerViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TweakEntryPagerViewController.swift; sourceTree = "<group>"; };
-		49821BA92383727D006F166E /* DailyTracker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DailyTracker.swift; sourceTree = "<group>"; };
 		498A2276237CD81F007AF5FB /* DailyDozenTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = DailyDozenTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		498A2278237CD81F007AF5FB /* DailyDozenTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DailyDozenTests.swift; sourceTree = "<group>"; };
 		498A227A237CD81F007AF5FB /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -338,6 +331,13 @@
 		49FECE9327DB0C3B0078C26D /* LocalesBatchA.xctestplan */ = {isa = PBXFileReference; lastKnownFileType = text; path = LocalesBatchA.xctestplan; sourceTree = "<group>"; };
 		4C079D4B287FFC5B00234849 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		4C092E3E28EF5E97004D5539 /* AnalyticsHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnalyticsHelper.swift; sourceTree = "<group>"; };
+		4C22C9962A737DEE0008D7B6 /* DailyTracker.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DailyTracker.swift; sourceTree = "<group>"; };
+		4C22C9972A737DEE0008D7B6 /* DataCountAttributes.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DataCountAttributes.swift; sourceTree = "<group>"; };
+		4C22C9982A737DEE0008D7B6 /* DataCountType.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DataCountType.swift; sourceTree = "<group>"; };
+		4C22C99A2A737DEE0008D7B6 /* DataCountRecord.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DataCountRecord.swift; sourceTree = "<group>"; };
+		4C22C99B2A737DEE0008D7B6 /* DataWeightRecord.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DataWeightRecord.swift; sourceTree = "<group>"; };
+		4C22C99C2A737DEE0008D7B6 /* DataWeightValues.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DataWeightValues.swift; sourceTree = "<group>"; };
+		4C22C99F2A737DEE0008D7B6 /* DataWeightType.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DataWeightType.swift; sourceTree = "<group>"; };
 		4C4632ED2941A3A100CB0313 /* sk */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = sk; path = sk.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		4C4632EE2941A3A100CB0313 /* sk */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = sk; path = sk.lproj/Localizable.strings; sourceTree = "<group>"; };
 		4C4632EF2941A3A100CB0313 /* sk */ = {isa = PBXFileReference; lastKnownFileType = text.json; name = sk; path = sk.lproj/DozeDetailData.json; sourceTree = "<group>"; };
@@ -631,28 +631,14 @@
 		4941D724237E121E00ED84B5 /* Database */ = {
 			isa = PBXGroup;
 			children = (
+				4C22C9952A737DEE0008D7B6 /* Data */,
 				49B93E4F2477361100144C80 /* DatabaseBuiltInTest.swift */,
 				4930360624760CBD00746D49 /* DatabaseMaintainer.swift */,
-				4941D727237E13DC00ED84B5 /* DataRecords */,
 				CFAAB37B1F9F4B0D00B24748 /* RealmLegacy */,
 				4941D726237E13DB00ED84B5 /* RealmManager.swift */,
 				4941D72C237E13DC00ED84B5 /* RealmProvider.swift */,
 			);
 			path = Database;
-			sourceTree = "<group>";
-		};
-		4941D727237E13DC00ED84B5 /* DataRecords */ = {
-			isa = PBXGroup;
-			children = (
-				49821BA92383727D006F166E /* DailyTracker.swift */,
-				4941D728237E13DC00ED84B5 /* DataCountRecord.swift */,
-				4941D729237E13DC00ED84B5 /* DataCountType.swift */,
-				4941D734237E266300ED84B5 /* DataCountAttributes.swift */,
-				4941D72A237E13DC00ED84B5 /* DataWeightRecord.swift */,
-				4941D72B237E13DC00ED84B5 /* DataWeightType.swift */,
-				497A8F0B2474AFC8001BEDCA /* DataWeightValues.swift */,
-			);
-			path = DataRecords;
 			sourceTree = "<group>";
 		};
 		4946DEE0241068A30054AEBB /* Views */ = {
@@ -927,6 +913,36 @@
 				4C7D52F82A3B8FDA00386832 /* InfoFaqTableViewCell.swift */,
 			);
 			path = Views;
+			sourceTree = "<group>";
+		};
+		4C22C9952A737DEE0008D7B6 /* Data */ = {
+			isa = PBXGroup;
+			children = (
+				4C22C9962A737DEE0008D7B6 /* DailyTracker.swift */,
+				4C22C9972A737DEE0008D7B6 /* DataCountAttributes.swift */,
+				4C22C9982A737DEE0008D7B6 /* DataCountType.swift */,
+				4C22C9992A737DEE0008D7B6 /* DataRealm */,
+				4C22C99D2A737DEE0008D7B6 /* DataSql */,
+				4C22C99F2A737DEE0008D7B6 /* DataWeightType.swift */,
+			);
+			path = Data;
+			sourceTree = "<group>";
+		};
+		4C22C9992A737DEE0008D7B6 /* DataRealm */ = {
+			isa = PBXGroup;
+			children = (
+				4C22C99A2A737DEE0008D7B6 /* DataCountRecord.swift */,
+				4C22C99B2A737DEE0008D7B6 /* DataWeightRecord.swift */,
+				4C22C99C2A737DEE0008D7B6 /* DataWeightValues.swift */,
+			);
+			path = DataRealm;
+			sourceTree = "<group>";
+		};
+		4C22C99D2A737DEE0008D7B6 /* DataSql */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = DataSql;
 			sourceTree = "<group>";
 		};
 		68646D18FC1A63146B00CB7C /* Frameworks */ = {
@@ -1583,25 +1599,23 @@
 				4916451A23EE51310077731D /* TweakDetailDataProvider.swift in Sources */,
 				4981709B2391B85B0033882C /* TweakHistoryViewController.swift in Sources */,
 				497A8F0A24748E88001BEDCA /* SettingsManager.swift in Sources */,
-				4941D731237E13DC00ED84B5 /* DataWeightRecord.swift in Sources */,
+				4C22C9A32A737DEE0008D7B6 /* DataCountRecord.swift in Sources */,
 				4916451423EE4C410077731D /* TweakDetailViewModel.swift in Sources */,
 				49208ADC2585F16F00E994CA /* DateManager.swift in Sources */,
 				499B82FB239CD4D300E4AD19 /* WeightHistoryViewController.swift in Sources */,
 				498170A123920DD60033882C /* TweakEntryPagerViewController.swift in Sources */,
 				49EF489F2586EA3500E89369 /* RoundedTextfield.swift in Sources */,
-				49821BAA2383727D006F166E /* DailyTracker.swift in Sources */,
 				498F7251239E3007004E501B /* HealthManager.swift in Sources */,
 				4904AF84239CB99600E271EC /* WeightEntryPagerViewController.swift in Sources */,
 				492013CE261FF64D00A5D635 /* TweakItemStateCheckbox.swift in Sources */,
+				4C22C9A02A737DEE0008D7B6 /* DailyTracker.swift in Sources */,
 				49F8D1DC23905B70003E139F /* TweakEntryViewController.swift in Sources */,
 				498F7246239D90E2004E501B /* WeightEntryViewController.swift in Sources */,
 				4930360724760CBD00746D49 /* DatabaseMaintainer.swift in Sources */,
 				CFC4A84D1F975A3900B5AC75 /* InfoMenuMainTableVC.swift in Sources */,
 				CFE6983C1F974B9700CD7905 /* AppDelegate.swift in Sources */,
 				CF64DF311FB5DFCF00B4D124 /* DozeDetailSizeCell.swift in Sources */,
-				4941D730237E13DC00ED84B5 /* DataCountType.swift in Sources */,
-				4941D732237E13DC00ED84B5 /* DataWeightType.swift in Sources */,
-				4941D72F237E13DC00ED84B5 /* DataCountRecord.swift in Sources */,
+				4C22C9A52A737DEE0008D7B6 /* DataWeightValues.swift in Sources */,
 				49CA08A826C39DA8002D9F66 /* UnitsUtility.swift in Sources */,
 				CFB5568C1FD180C3003B5813 /* Report.swift in Sources */,
 				498170952391B6AB0033882C /* TweakEntrySections.swift in Sources */,
@@ -1616,6 +1630,7 @@
 				4C7D52F52A3B81DE00386832 /* ExpandableTableViewCellDelegate.swift in Sources */,
 				4C092E3F28EF5E97004D5539 /* AnalyticsHelper.swift in Sources */,
 				492013C7261FF61900A5D635 /* DozeItemStateCheckbox.swift in Sources */,
+				4C22C9A12A737DEE0008D7B6 /* DataCountAttributes.swift in Sources */,
 				CFBEE2341FDE9A57005C0F45 /* RoundedView.swift in Sources */,
 				498F7244239D8B5C004E501B /* WeightHistoryViewModel.swift in Sources */,
 				497390B023A5D4F900492D92 /* SettingsViewController.swift in Sources */,
@@ -1624,6 +1639,7 @@
 				CF49029B1FD91F01000EAB68 /* DozeHistoryViewModel.swift in Sources */,
 				4933A74B23EE267600CE4631 /* DozeTextsProvider.swift in Sources */,
 				CF2FA9961FA87F0C003508F8 /* DozeDetailViewController.swift in Sources */,
+				4C22C9A72A737DEE0008D7B6 /* DataWeightType.swift in Sources */,
 				CFECDFF8201EF7C1003E8572 /* Colors.swift in Sources */,
 				492A1E702409B3FA00F6C37C /* TweakDetailActivityCell.swift in Sources */,
 				492013CD261FF64D00A5D635 /* TweakEntryRow.swift in Sources */,
@@ -1631,11 +1647,11 @@
 				498D76A423709F9D00B5DF06 /* UtilityTableViewController.swift in Sources */,
 				CFE793571FA756E40084F075 /* RealmProviderLegacy.swift in Sources */,
 				CF4902971FD917D4000EAB68 /* ControlPanel.swift in Sources */,
-				497A8F0C2474AFC8001BEDCA /* DataWeightValues.swift in Sources */,
 				CFC060931FBC57C800A901A5 /* DozeEntrySections.swift in Sources */,
 				CFBEE2321FDE963D005C0F45 /* InfoMenuAboutTableVC.swift in Sources */,
 				CF12918F1FC42DD300D1C17E /* DateCell.swift in Sources */,
 				CF2680021FB477AD004A6200 /* Date.swift in Sources */,
+				4C22C9A22A737DEE0008D7B6 /* DataCountType.swift in Sources */,
 				CFF72AFB1FB9A499001CC2E9 /* UnitsType.swift in Sources */,
 				493A8B9A235E93DA00A5009A /* SettingsKeys.swift in Sources */,
 				499089862665DA1A0053D74D /* UIApplication.swift in Sources */,
@@ -1643,9 +1659,9 @@
 				4943720D2487702300632053 /* HealthSynchronizer.swift in Sources */,
 				495DAAEB23A06C330036077C /* WeightReport.swift in Sources */,
 				CFD1BA331FCD24920057F549 /* RoundedButton.swift in Sources */,
+				4C22C9A42A737DEE0008D7B6 /* DataWeightRecord.swift in Sources */,
 				49D9B07B240DCA1F000E9822 /* UIView.swift in Sources */,
 				49F8D1DE23906B29003E139F /* TweakEntryDataProvider.swift in Sources */,
-				4941D735237E266300ED84B5 /* DataCountAttributes.swift in Sources */,
 				CF9E03231FBD9FDE0084BC88 /* ItemHistoryViewController.swift in Sources */,
 				499089842665D9D70053D74D /* AlertActivitySpinner.swift in Sources */,
 				497F91B2240990B600464E4E /* TweakDetailSections.swift in Sources */,
