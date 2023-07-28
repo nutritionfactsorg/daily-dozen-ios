@@ -19,7 +19,7 @@ struct DozeHistoryViewModel {
     }
 
     // MARK: - Inits
-    init(_ trackers: [DailyTracker]) {
+    init(_ trackers: [RealmDailyTracker]) {
         report = Report(trackers, isDailyDozen: true)
     }
 

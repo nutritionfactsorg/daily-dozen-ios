@@ -114,12 +114,12 @@
 		49F8D1DE23906B29003E139F /* TweakEntryDataProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49F8D1DD23906B29003E139F /* TweakEntryDataProvider.swift */; };
 		4C079D4C287FFC5B00234849 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 4C079D4B287FFC5B00234849 /* GoogleService-Info.plist */; };
 		4C092E3F28EF5E97004D5539 /* AnalyticsHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C092E3E28EF5E97004D5539 /* AnalyticsHelper.swift */; };
-		4C22C9A02A737DEE0008D7B6 /* DailyTracker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C22C9962A737DEE0008D7B6 /* DailyTracker.swift */; };
+		4C22C9A02A737DEE0008D7B6 /* RealmDailyTracker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C22C9962A737DEE0008D7B6 /* RealmDailyTracker.swift */; };
 		4C22C9A12A737DEE0008D7B6 /* DataCountAttributes.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C22C9972A737DEE0008D7B6 /* DataCountAttributes.swift */; };
 		4C22C9A22A737DEE0008D7B6 /* DataCountType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C22C9982A737DEE0008D7B6 /* DataCountType.swift */; };
-		4C22C9A32A737DEE0008D7B6 /* DataCountRecord.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C22C99A2A737DEE0008D7B6 /* DataCountRecord.swift */; };
+		4C22C9A32A737DEE0008D7B6 /* RealmDataCountRecord.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C22C99A2A737DEE0008D7B6 /* RealmDataCountRecord.swift */; };
 		4C22C9A42A737DEE0008D7B6 /* DataWeightRecord.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C22C99B2A737DEE0008D7B6 /* DataWeightRecord.swift */; };
-		4C22C9A52A737DEE0008D7B6 /* DataWeightValues.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C22C99C2A737DEE0008D7B6 /* DataWeightValues.swift */; };
+		4C22C9A52A737DEE0008D7B6 /* RealmDataWeightValues.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C22C99C2A737DEE0008D7B6 /* RealmDataWeightValues.swift */; };
 		4C22C9A72A737DEE0008D7B6 /* DataWeightType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C22C99F2A737DEE0008D7B6 /* DataWeightType.swift */; };
 		4C7D52F52A3B81DE00386832 /* ExpandableTableViewCellDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C7D52F42A3B81DE00386832 /* ExpandableTableViewCellDelegate.swift */; };
 		4C7D52F72A3B8F3200386832 /* InfoFaqTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C7D52F62A3B8F3200386832 /* InfoFaqTableViewController.swift */; };
@@ -331,12 +331,12 @@
 		49FECE9327DB0C3B0078C26D /* LocalesBatchA.xctestplan */ = {isa = PBXFileReference; lastKnownFileType = text; path = LocalesBatchA.xctestplan; sourceTree = "<group>"; };
 		4C079D4B287FFC5B00234849 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		4C092E3E28EF5E97004D5539 /* AnalyticsHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnalyticsHelper.swift; sourceTree = "<group>"; };
-		4C22C9962A737DEE0008D7B6 /* DailyTracker.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DailyTracker.swift; sourceTree = "<group>"; };
+		4C22C9962A737DEE0008D7B6 /* RealmDailyTracker.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RealmDailyTracker.swift; sourceTree = "<group>"; };
 		4C22C9972A737DEE0008D7B6 /* DataCountAttributes.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DataCountAttributes.swift; sourceTree = "<group>"; };
 		4C22C9982A737DEE0008D7B6 /* DataCountType.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DataCountType.swift; sourceTree = "<group>"; };
-		4C22C99A2A737DEE0008D7B6 /* DataCountRecord.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DataCountRecord.swift; sourceTree = "<group>"; };
+		4C22C99A2A737DEE0008D7B6 /* RealmDataCountRecord.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RealmDataCountRecord.swift; sourceTree = "<group>"; };
 		4C22C99B2A737DEE0008D7B6 /* DataWeightRecord.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DataWeightRecord.swift; sourceTree = "<group>"; };
-		4C22C99C2A737DEE0008D7B6 /* DataWeightValues.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DataWeightValues.swift; sourceTree = "<group>"; };
+		4C22C99C2A737DEE0008D7B6 /* RealmDataWeightValues.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RealmDataWeightValues.swift; sourceTree = "<group>"; };
 		4C22C99F2A737DEE0008D7B6 /* DataWeightType.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DataWeightType.swift; sourceTree = "<group>"; };
 		4C4632ED2941A3A100CB0313 /* sk */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = sk; path = sk.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		4C4632EE2941A3A100CB0313 /* sk */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = sk; path = sk.lproj/Localizable.strings; sourceTree = "<group>"; };
@@ -918,7 +918,6 @@
 		4C22C9952A737DEE0008D7B6 /* Data */ = {
 			isa = PBXGroup;
 			children = (
-				4C22C9962A737DEE0008D7B6 /* DailyTracker.swift */,
 				4C22C9972A737DEE0008D7B6 /* DataCountAttributes.swift */,
 				4C22C9982A737DEE0008D7B6 /* DataCountType.swift */,
 				4C22C9992A737DEE0008D7B6 /* DataRealm */,
@@ -931,9 +930,10 @@
 		4C22C9992A737DEE0008D7B6 /* DataRealm */ = {
 			isa = PBXGroup;
 			children = (
-				4C22C99A2A737DEE0008D7B6 /* DataCountRecord.swift */,
+				4C22C9962A737DEE0008D7B6 /* RealmDailyTracker.swift */,
+				4C22C99A2A737DEE0008D7B6 /* RealmDataCountRecord.swift */,
 				4C22C99B2A737DEE0008D7B6 /* DataWeightRecord.swift */,
-				4C22C99C2A737DEE0008D7B6 /* DataWeightValues.swift */,
+				4C22C99C2A737DEE0008D7B6 /* RealmDataWeightValues.swift */,
 			);
 			path = DataRealm;
 			sourceTree = "<group>";
@@ -1599,7 +1599,7 @@
 				4916451A23EE51310077731D /* TweakDetailDataProvider.swift in Sources */,
 				4981709B2391B85B0033882C /* TweakHistoryViewController.swift in Sources */,
 				497A8F0A24748E88001BEDCA /* SettingsManager.swift in Sources */,
-				4C22C9A32A737DEE0008D7B6 /* DataCountRecord.swift in Sources */,
+				4C22C9A32A737DEE0008D7B6 /* RealmDataCountRecord.swift in Sources */,
 				4916451423EE4C410077731D /* TweakDetailViewModel.swift in Sources */,
 				49208ADC2585F16F00E994CA /* DateManager.swift in Sources */,
 				499B82FB239CD4D300E4AD19 /* WeightHistoryViewController.swift in Sources */,
@@ -1608,14 +1608,14 @@
 				498F7251239E3007004E501B /* HealthManager.swift in Sources */,
 				4904AF84239CB99600E271EC /* WeightEntryPagerViewController.swift in Sources */,
 				492013CE261FF64D00A5D635 /* TweakItemStateCheckbox.swift in Sources */,
-				4C22C9A02A737DEE0008D7B6 /* DailyTracker.swift in Sources */,
+				4C22C9A02A737DEE0008D7B6 /* RealmDailyTracker.swift in Sources */,
 				49F8D1DC23905B70003E139F /* TweakEntryViewController.swift in Sources */,
 				498F7246239D90E2004E501B /* WeightEntryViewController.swift in Sources */,
 				4930360724760CBD00746D49 /* DatabaseMaintainer.swift in Sources */,
 				CFC4A84D1F975A3900B5AC75 /* InfoMenuMainTableVC.swift in Sources */,
 				CFE6983C1F974B9700CD7905 /* AppDelegate.swift in Sources */,
 				CF64DF311FB5DFCF00B4D124 /* DozeDetailSizeCell.swift in Sources */,
-				4C22C9A52A737DEE0008D7B6 /* DataWeightValues.swift in Sources */,
+				4C22C9A52A737DEE0008D7B6 /* RealmDataWeightValues.swift in Sources */,
 				49CA08A826C39DA8002D9F66 /* UnitsUtility.swift in Sources */,
 				CFB5568C1FD180C3003B5813 /* Report.swift in Sources */,
 				498170952391B6AB0033882C /* TweakEntrySections.swift in Sources */,

@@ -13,7 +13,7 @@ struct DailyReport {
     var statesCount = 0
     var date: Date
 
-    init(tracker: DailyTracker, isDailyDozen: Bool) {
+    init(tracker: RealmDailyTracker, isDailyDozen: Bool) {
         var statesCount = 0
         if isDailyDozen {
             for type in DozeEntryViewModel.rowTypeArray {
@@ -65,7 +65,7 @@ struct YearlyReport {
 struct Report {
     var data = [YearlyReport]()
 
-    init(_ trackers: [DailyTracker], isDailyDozen: Bool) {
+    init(_ trackers: [RealmDailyTracker], isDailyDozen: Bool) {
         let dailyReports = trackers.map { DailyReport(tracker: $0, isDailyDozen: isDailyDozen) }
         var monthReports = [MonthReport]()
 

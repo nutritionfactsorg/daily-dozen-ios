@@ -26,7 +26,7 @@ class DozeEntryViewModel {
     ]
     
     // MARK: - Properties
-    private let tracker: DailyTracker
+    private let tracker: RealmDailyTracker
     
     /// Returns Daily Dozen item count.
     var count: Int {
@@ -38,7 +38,7 @@ class DozeEntryViewModel {
     }
     
     // MARK: - Inits
-    init(tracker: DailyTracker) {
+    init(tracker: RealmDailyTracker) {
         self.tracker = tracker
     }
     
@@ -59,8 +59,8 @@ class DozeEntryViewModel {
     /// - Returns: The streak count.
     func itemStreak(rowIndex: Int) -> Int {
         let itemType = DozeEntryViewModel.rowTypeArray[rowIndex]
-        if let dataCountRecord = tracker.itemsDict[itemType] {
-            return dataCountRecord.streak
+        if let realmDataCountRecord = tracker.itemsDict[itemType] {
+            return realmDataCountRecord.streak
         } else {
             return 0
         }

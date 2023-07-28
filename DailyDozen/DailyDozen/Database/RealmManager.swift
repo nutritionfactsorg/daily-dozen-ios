@@ -44,13 +44,13 @@ class RealmManager {
         }
     }
     
-    private func csvExportLine(tracker: DailyTracker) -> String {
+    private func csvExportLine(tracker: RealmDailyTracker) -> String {
         var str = ""
         str.append("\(tracker.date.datestampKey)")
         
         for dataCountType in DataCountType.allCases {
-            if let dataCountRecord = tracker.itemsDict[dataCountType] {
-                str.append(",\(dataCountRecord.count)")
+            if let realmDataCountRecord = tracker.itemsDict[dataCountType] {
+                str.append(",\(realmDataCountRecord.count)")
             } else {
                 str.append(",0")
             }
@@ -136,7 +136,7 @@ class RealmManager {
         return currentHeaderFiltered == legacyHeader
     }
     
-    private func csvProcess(line: String) -> DailyTracker? {
+    private func csvProcess(line: String) -> RealmDailyTracker? {
         let columns = line
             .replacingOccurrences(of: " ", with: "")
             .components(separatedBy: ",")
@@ -148,17 +148,17 @@ class RealmManager {
         guard let date = Date(datestampKey: datastampKey) else {
             return nil
         }
-        var tracker = DailyTracker(date: date)
+        var tracker = RealmDailyTracker(date: date)
         
         var index = 1
         for dataCountType in DataCountType.allCases {
             if let value = Int(columns[index]) {
-                let dataCountRecord = DataCountRecord(
+                let realmDataCountRecord = RealmDataCountRecord(
                 date: date,
                 countType: dataCountType,
                 count: value
                 )
-                tracker.itemsDict[dataCountType] = dataCountRecord
+                tracker.itemsDict[dataCountType] = realmDataCountRecord
             } else {
                 LogService.shared.error(
                     "FAIL RealmManager csvProcess \(index) in \(line)"
@@ -168,7 +168,7 @@ class RealmManager {
         }
         
         let weightIndexOffset = 1 + DataCountType.allCases.count
-        let weightAM = DataWeightRecord(
+        let weightAM = RealmDataWeightRecord(
             datestampKey: datastampKey,
             typeKey: DataWeightType.am.typeKey,
             kilograms: columns[weightIndexOffset],
@@ -177,7 +177,7 @@ class RealmManager {
         if let weight = weightAM {
             tracker.weightAM = weight
         }
-        let weightPM = DataWeightRecord(
+        let weightPM = RealmDataWeightRecord(
             datestampKey: datastampKey,
             typeKey: DataWeightType.pm.typeKey,
             kilograms: columns[weightIndexOffset+2],
@@ -190,7 +190,7 @@ class RealmManager {
         return tracker
     }
     
-    private func csvProcessLegacy(line: String) -> DailyTracker? {
+    private func csvProcessLegacy(line: String) -> RealmDailyTracker? {
         let columns = line
             .replacingOccurrences(of: " ", with: "")
             .components(separatedBy: ",")
@@ -208,7 +208,7 @@ class RealmManager {
         guard let date = Date(datestampKey: datastampKey) else {
             return nil
         }
-        let tracker = DailyTracker(date: date)
+        let tracker = RealmDailyTracker(date: date)
 
         tracker.setCount(typeKey: .dozeBeans, countText: columns[1])
         tracker.setCount(typeKey: .dozeBerries, countText: columns[2])
