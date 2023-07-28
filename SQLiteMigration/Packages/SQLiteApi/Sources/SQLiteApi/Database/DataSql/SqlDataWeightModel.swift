@@ -1,13 +1,13 @@
 //
-//  DataWeight1Model.swift
-//  SQLiteApi/DataWeight
+//  SqlDataWeightModel.swift
+//  SQLiteApi/DataSql
 //
 
 import Foundation
 import SQLiteFramework
 
-/// Handles Create Read Update Delete (CRUD) for one or more DataCount1Record.
-public struct DataWeight1Model {
+/// Handles Create Read Update Delete (CRUD) for one or more SqlDataCountRecord.
+public struct SqlDataWeightModel {
     
     public unowned let api: SQLiteApi
     public init(api: SQLiteApi) {
@@ -15,12 +15,15 @@ public struct DataWeight1Model {
     }
     
     /// INSERT one row record into database.
-    public func create(_ r: DataWeight1Record) {
-        var sqlItemA = "INSERT INTO dataweight_1_table("
+    public func create(_ r: SqlDataWeightRecord) {
+        var sqlItemA = "INSERT INTO dataweight_table("
         var sqlItemB = "VALUES ("
         
-        sqlItemA.append(" dataweight_pid,")
-        sqlItemB.append(" \(r.dataweight_pid),")
+        sqlItemA.append(" dataweight_date_psid,")
+        sqlItemB.append(" \(r.dataweight_date_psid),")
+
+        sqlItemA.append(" dataweight_ampm_pnid,")
+        sqlItemB.append(" \(r.dataweight_ampm_pnid),")
 
         sqlItemA.append(" dataweight_kg,")
         sqlItemB.append(" \(r.dataweight_kg),")
@@ -33,7 +36,7 @@ public struct DataWeight1Model {
 
         let query = SQLiteQuery(sql: sqlItemA + sqlItemB, db: api.dailydozenDb)
         if query.getStatus().type != .noError {
-            print("FAIL: DataWeight1Model create(_ item: DataWeight1Record))")
+            print("FAIL: SqlDataWeightModel create(_ item: SqlDataWeightRecord))")
         }
     }
     
@@ -42,11 +45,12 @@ public struct DataWeight1Model {
     
     public func createTable() {
         let sql = """
-        CREATE TABLE IF NOT EXISTS "dataweight_1_table" (
-            dataweight_pid  TEXT,
-            dataweight_kg   REAL,
-            dataweight_time TEST,
-            PRIMARY KEY("dataweight_pid")
+        CREATE TABLE IF NOT EXISTS "dataweight_table" (
+            dataweight_date_psid TEXT,
+            dataweight_ampm_pnid INTEGER,
+            dataweight_kg        REAL,
+            dataweight_time      TEXT,
+            PRIMARY KEY("dataweight_date_psid", "dataweight_ampm_pnid")
         );
         """
         

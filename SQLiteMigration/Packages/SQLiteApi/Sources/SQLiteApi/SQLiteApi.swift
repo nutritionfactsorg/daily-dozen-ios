@@ -10,8 +10,8 @@ import SQLiteFramework
 public class SQLiteApi {
     // Phase 1 initialization
     public let dailydozenDb: SQLiteDatabase
-    public var dataCount: DataCount1Model!
-    public var dataWeight: DataWeight1Model!
+    public var dataCount: SqlDataCountModel!
+    public var dataWeight: SqlDataWeightModel!
     
     public init(dbUrl: URL) {
         // Phase 1 initialization
@@ -19,8 +19,8 @@ public class SQLiteApi {
         
         // Phase 2 
         // `api` is `unowned` in following instances.
-        self.dataCount = DataCount1Model(api: self)
-        self.dataWeight = DataWeight1Model(api: self)
+        self.dataCount = SqlDataCountModel(api: self)
+        self.dataWeight = SqlDataWeightModel(api: self)
         
         // Phase 3
         let openedOk: Bool = dailydozenDb.open()
@@ -45,7 +45,7 @@ public class SQLiteApi {
         let sql = "BEGIN TRANSACTION;"
         let query = SQLiteQuery(sql: sql, db: dailydozenDb)
         if query.getStatus().type != .noError {
-            print("FAIL: DataWeight1Model create(_ item: DataWeight1Record))")
+            print("FAIL: SqlDataWeightModel create(_ item: SqlDataWeightRecord))")
         }
     }
     
@@ -53,7 +53,7 @@ public class SQLiteApi {
         let sql = "COMMIT TRANSACTION;"
         let query = SQLiteQuery(sql: sql, db: dailydozenDb)
         if query.getStatus().type != .noError {
-            print("FAIL: DataWeight1Model create(_ item: DataWeight1Record))")
+            print("FAIL: SqlDataWeightModel create(_ item: SqlDataWeightRecord))")
         }
     }
 }

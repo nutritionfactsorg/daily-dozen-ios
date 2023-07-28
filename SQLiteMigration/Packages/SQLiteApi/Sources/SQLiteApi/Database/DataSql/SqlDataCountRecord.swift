@@ -1,6 +1,6 @@
 //
-//  DataCount1Record.swift
-//  SQLiteApi
+//  SqlDataCountRecord.swift
+//  SQLiteApi/DataSql
 //
 
 import Foundation
@@ -8,17 +8,17 @@ import LogService
 
 /// Object Relationship Mapping (ORM)
 /// Handles mapping from relationship data and item record object 
-public struct DataCount1Record: Codable {
+public struct SqlDataCountRecord: Codable {
     
     // MARK: - fields
     
-    ///    datacount_date_psid  TEXT;     -- YYYYMMDD
+    ///    `datacount_date_psid`  TEXT;     -- yyy-MM-dd ISO 8601
     public var datacount_date_psid: String
-    ///    datacount_kind_pfnid INTEGER,  -- integer 0=dozeBeans, etc.
+    ///    `datacount_kind_pfnid` INTEGER,  -- integer 0=dozeBeans, etc.
     public var datacount_kind_pfnid: Int
-    ///    datacount_count      INTEGER
+    ///    `datacount_count`      INTEGER
     public var datacount_count: Int
-    ///    datacount_streak     INTEGER
+    ///    `datacount_streak`     INTEGER
     public var datacount_streak: Int
     
     // "\(datacount_kind_pfnid).\(dataCountType.typeKey)"
@@ -34,7 +34,7 @@ public struct DataCount1Record: Codable {
         guard let date = Date.init(datestampKey: pidKeys.datestampKey),
             let countType = DataCountType(itemTypeKey: pidKeys.typeKey) else {
                 LogService.shared.error(
-                    "DataCountRecord pidParts has invalid datestamp or typeKey"
+                    "SqlDataCountRecord pidParts has invalid datestamp or typeKey"
                 )
                 return nil
         }
@@ -73,7 +73,7 @@ public struct DataCount1Record: Codable {
         if datacount_count > dataCountType.maxServings {
             datacount_count = dataCountType.maxServings
             LogService.shared.error(
-                "DataCountRecord init datestampKey:\(datestampKey) typekey:\(typeKey) count:\(count) exceeded max servings \(dataCountType.maxServings)"
+                "SqlDataCountRecord init datestampKey:\(datestampKey) typekey:\(typeKey) count:\(count) exceeded max servings \(dataCountType.maxServings)"
             )
 
         }
@@ -91,7 +91,7 @@ public struct DataCount1Record: Codable {
         if datacount_count > countType.maxServings {
             datacount_count = countType.maxServings
             LogService.shared.error(
-                "DataCountRecord init date:\(date.datestampKey) countType:\(countType.typeKey) count:\(count) exceeds max servings \(countType.maxServings)"
+                "SqlDataCountRecord init date:\(date.datestampKey) countType:\(countType.typeKey) count:\(count) exceeds max servings \(countType.maxServings)"
             )
         }
         datacount_streak = streak
@@ -121,7 +121,7 @@ public struct DataCount1Record: Codable {
             setCount(value)
         } else {
             LogService.shared.error(
-                "DataCountRecord setCount() not convertable to Int \(text)"
+                "SqlDataCountRecord setCount() not convertable to Int \(text)"
             )
         }
     }
@@ -132,12 +132,12 @@ public struct DataCount1Record: Codable {
             if datacount_count > countType.maxServings {
                 datacount_count = countType.maxServings
                 LogService.shared.error(
-                    "DataCountRecord setCount \(pid) \(count) exceeds max servings"
+                    "SqlDataCountRecord setCount \(pid) \(count) exceeds max servings"
                 )
             }
         } else {
             LogService.shared.error(
-                "DataCountRecord setCount \(pid) \(count) could not range check servings"
+                "SqlDataCountRecord setCount \(pid) \(count) could not range check servings"
             )
         }
     }

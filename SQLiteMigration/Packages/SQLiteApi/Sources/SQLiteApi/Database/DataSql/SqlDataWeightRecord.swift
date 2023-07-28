@@ -1,17 +1,19 @@
 //
-//  DataWeight1Record.swift
-//  SQLiteApi/DataWeight
+//  SqlDataWeightRecord.swift
+//  SQLiteApi/DataSql
 //
 
 import Foundation
 import LogService
 
-public struct DataWeight1Record: Codable {
+public struct SqlDataWeightRecord: Codable {
     
     // MARK: - fields
     
-    /// yyyyMMdd.typeKey e.g. 20190101.am
-    public var dataweight_pid: String = ""
+    /// yyyy-MM-dd e.g. 2019-01-01 ISO 8601
+    public var dataweight_date_psid: String = ""
+    /// am/pm typeKey where am = 0, pm = 1
+    public var dataweight_ampm_pnid: Int = 0
     /// kilograms
     public dynamic var dataweight_kg: Double = 0.0
     /// time of day 24-hour "HH:mm" format
@@ -39,27 +41,28 @@ public struct DataWeight1Record: Codable {
     }
     
     /// time of day "hh:mm a" format
-    var timeAmPm: String {
-        let fromDateFormatter = DateFormatter()
-        fromDateFormatter.dateFormat = "HH:mm"
-        if let fromDate = fromDateFormatter.date(from: dataweight_time) {
-            let toDateFormatter = DateFormatter()
-            toDateFormatter.dateFormat = "hh:mm a"
-            let fromTime: String = toDateFormatter.string(from: fromDate)
-            return fromTime
-        }
-        return ""
-    }
+    /// :MIGRATE:SQL: timeAmPm should not be needed with SQL schema
+    //var timeAmPm: String {
+    //    let fromDateFormatter = DateFormatter()
+    //    fromDateFormatter.dateFormat = "HH:mm"
+    //    if let fromDate = fromDateFormatter.date(from: dataweight_time) {
+    //        let toDateFormatter = DateFormatter()
+    //        toDateFormatter.dateFormat = "hh:mm a"
+    //        let fromTime: String = toDateFormatter.string(from: fromDate)
+    //        return fromTime
+    //    }
+    //    return ""
+    //}
     
     var datetime: Date? {
-        let datestring = "\(dataweight_pid.prefix(8)) \(dataweight_time)"
+        let datestring = "\(dataweight_date_psid)T\(dataweight_time)"
         let dateFormatter = DateFormatter()
-        dateFormatter.dateFormat = "yyyyMMdd HH:mm"
+        dateFormatter.dateFormat = "yyyy-MM-ddTHH:mm"
         return dateFormatter.date(from: datestring)
     }
     
     var pidKeys: (datestampKey: String, typeKey: String) {
-        let parts = self.dataweight_pid.components(separatedBy: ".")
+        let parts = self.dataweight_date_psid.components(separatedBy: ".")
         return (datestampKey: parts[0], typeKey: parts[1])
     }
     
@@ -100,14 +103,14 @@ public struct DataWeight1Record: Codable {
         }
 
         //self.init()
-        self.dataweight_pid = "\(datestampKey).\(typeKey)"
+        self.dataweight_date_psid = "\(datestampKey).\(typeKey)"
         self.dataweight_kg = kg
         self.dataweight_time = timeHHmm
     }
     
     init(date: Date, weightType: DataWeightType, kg: Double) {
         //self.init()
-        self.dataweight_pid = "\(date.datestampKey).\(weightType.typeKey)"
+        self.dataweight_date_psid = "\(date.datestampKey).\(weightType.typeKey)"
         self.dataweight_kg = kg
         self.dataweight_time = date.datestampHHmm
     }

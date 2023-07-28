@@ -26,10 +26,11 @@ struct SqliteConnector {
 
     func createData() {
         print("run createData")
-        //let r = DataCount1Record(date: Date(), countType: .dozeBeans, count: 2, streak: 0)
+        //let r = SqlDataCountRecord(date: Date(), countType: .dozeBeans, count: 2, streak: 0)
         //sqliteApi.dataCount.create(r)
         // 3 * 365 = 1095
-        doGenerateDBHistoryBIT(numberOfDays: 1095, defaultDB: true)
+        //doGenerateDBHistoryBIT(numberOfDays: 1095, defaultDB: true)
+        doGenerateDBHistoryBIT(numberOfDays: 28, defaultDB: true)
     }
 
     func exportData() {
@@ -49,7 +50,7 @@ struct SqliteConnector {
     /// * ~1 month -> 30 days 
     /// * ~10 months -> 300 days
     /// * ~2.7 years or ~33 months -> 1000 days (2000 weight entries)
-    /// * 3 years (1095 days, 2190 weight entries) -> 365*3
+    /// * 3 years (1095 days, 37230 count entries, 2190 weight entries) -> 365*3
     func doGenerateDBHistoryBIT(numberOfDays: Int, defaultDB: Bool) {
         LogService.shared.debug(
             "••BEGIN•• doGenerateDBHistoryBIT(\(numberOfDays))  \(Date())"
@@ -78,7 +79,7 @@ struct SqliteConnector {
             // --- COUNT RECORDS ---
             for countType in DataCountType.allCases {
                 // Add data counts
-                let r = DataCount1Record(date: date, countType: countType, count: 1, streak: 0)
+                let r = SqlDataCountRecord(date: date, countType: countType, count: 1, streak: 0)
                 sqliteApi.dataCount.create(r)
             }
             

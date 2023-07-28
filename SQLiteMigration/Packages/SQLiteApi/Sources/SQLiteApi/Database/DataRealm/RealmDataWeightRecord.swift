@@ -1,15 +1,17 @@
 //
-//  DataWeightRecord.swift
-//  SQLiteApi/DataWeight
+//  RealmDataWeightRecord.swift
+//  SQLiteApi/DataRealm
 //
 
 import Foundation
 import LogService
 
-public struct DataWeightRecord: Codable {
+/// Mock RealmDB weight record
+public struct RealmDataWeightRecord: Codable {
     
     // MARK: - fields
     
+    /// maps to `dataweight_date_psid` + `dataweight_ampm_pnid`
     /// yyyyMMdd.typeKey e.g. 20190101.am
     public var pid: String = ""
     /// kilograms
@@ -67,7 +69,7 @@ public struct DataWeightRecord: Codable {
         guard let date = Date.init(datestampKey: pidKeys.datestampKey),
             let weightType = DataWeightType(typeKey: pidKeys.typeKey) else {
                 LogService.shared.error(
-                    "DataWeightRecord pidParts has invalid datestamp or weightType"
+                    "RealmDataWeightRecord pidParts has invalid datestamp or weightType"
                 )
                 return nil
         }

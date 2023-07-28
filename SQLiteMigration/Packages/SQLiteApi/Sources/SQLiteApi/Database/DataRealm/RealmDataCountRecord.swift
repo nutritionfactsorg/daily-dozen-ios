@@ -1,16 +1,17 @@
 //
-//  DataCountRecord.swift
-//  SQLiteApi
+//  RealmDataCountRecord.swift
+//  SQLiteApi/DataRealm
 //
 
 import Foundation
 import LogService
 
-public struct DataCountRecord: Codable {
+/// Mock RealmDB count record
+public struct RealmDataCountRecord: Codable {
     
     // MARK: - fields
     
-    /// `datacount_pid` TEXT  -- PRIMARY KEY.
+    /// maps to `datacount_date_psid`.`datacount_kind_pfnid`.name
     /// yyyyMMdd.typeKey e.g. 20190101.beansKey
     public var pid: String = ""
     /// `datacount_count` -- INTEGER
@@ -29,7 +30,7 @@ public struct DataCountRecord: Codable {
         guard let date = Date.init(datestampKey: pidKeys.datestampKey),
             let countType = DataCountType(itemTypeKey: pidKeys.typeKey) else {
                 LogService.shared.error(
-                    "DataCountRecord pidParts has invalid datestamp or typeKey"
+                    "RealmDataCountRecord pidParts has invalid datestamp or typeKey"
                 )
                 return nil
         }
@@ -67,7 +68,7 @@ public struct DataCountRecord: Codable {
         if self.count > dataCountType.maxServings {
             self.count = dataCountType.maxServings
             LogService.shared.error(
-                "DataCountRecord init datestampKey:\(datestampKey) typekey:\(typeKey) count:\(count) exceeded max servings \(dataCountType.maxServings)"
+                "RealmDataCountRecord init datestampKey:\(datestampKey) typekey:\(typeKey) count:\(count) exceeded max servings \(dataCountType.maxServings)"
             )
 
         }
@@ -82,7 +83,7 @@ public struct DataCountRecord: Codable {
         if self.count > countType.maxServings {
             self.count = countType.maxServings
             LogService.shared.error(
-                "DataCountRecord init date:\(date.datestampKey) countType:\(countType.typeKey) count:\(count) exceeds max servings \(countType.maxServings)"
+                "RealmDataCountRecord init date:\(date.datestampKey) countType:\(countType.typeKey) count:\(count) exceeds max servings \(countType.maxServings)"
             )
         }
         self.streak = streak
@@ -110,7 +111,7 @@ public struct DataCountRecord: Codable {
             setCount(value)
         } else {
             LogService.shared.error(
-                "DataCountRecord setCount() not convertable to Int \(text)"
+                "RealmDataCountRecord setCount() not convertable to Int \(text)"
             )
         }
     }
@@ -121,12 +122,12 @@ public struct DataCountRecord: Codable {
             if self.count > countType.maxServings {
                 self.count = countType.maxServings
                 LogService.shared.error(
-                    "DataCountRecord setCount \(pid) \(count) exceeds max servings"
+                    "RealmDataCountRecord setCount \(pid) \(count) exceeds max servings"
                 )
             }
         } else {
             LogService.shared.error(
-                "DataCountRecord setCount \(pid) \(count) could not range check servings"
+                "RealmDataCountRecord setCount \(pid) \(count) could not range check servings"
             )
         }
     }

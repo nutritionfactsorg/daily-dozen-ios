@@ -1,13 +1,13 @@
 //
-//  DataCount1Model.swift
-//  SQLiteApi/DataCount
+//  SqlDataCountModel.swift
+//  SQLiteApi/DataSql
 //
 
 import Foundation
 import SQLiteFramework
 
-/// Handles Create Read Update Delete (CRUD) for one or more DataCount1Record.
-public struct DataCount1Model {
+/// Handles Create Read Update Delete (CRUD) for one or more SqlDataCountRecord.
+public struct SqlDataCountModel {
     
     public unowned let api: SQLiteApi
     public init(api: SQLiteApi) {
@@ -15,8 +15,8 @@ public struct DataCount1Model {
     }
     
     /// INSERT one row record into database.
-    public func create(_ r: DataCount1Record) {
-        var sqlItemA = "INSERT INTO datacount_1_table("
+    public func create(_ r: SqlDataCountRecord) {
+        var sqlItemA = "INSERT INTO datacount_table("
         var sqlItemB = "VALUES ("
         
         sqlItemA.append(" datacount_date_psid,")
@@ -46,7 +46,7 @@ public struct DataCount1Model {
     
     public func createTable() {
         let sql = """
-        CREATE TABLE IF NOT EXISTS "datacount_1_table" (
+        CREATE TABLE IF NOT EXISTS "datacount_table" (
             datacount_date_psid  TEXT,
             datacount_kind_pfnid INTEGER,
             datacount_count      INTEGER,
