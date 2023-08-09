@@ -15,9 +15,9 @@ public struct SqlDataWeightRecord: Codable {
     /// am/pm typeKey where am = 0, pm = 1
     public var dataweight_ampm_pnid: Int = 0
     /// kilograms
-    public dynamic var dataweight_kg: Double = 0.0
+    public var dataweight_kg: Double = 0.0
     /// time of day 24-hour "HH:mm" format
-    public dynamic var dataweight_time: String = ""
+    public var dataweight_time: String = ""
     
     public var kgStr: String {
         if let s = UnitsUtility.regionalKgWeight(fromKg: dataweight_kg, toDecimalDigits: 1) {
