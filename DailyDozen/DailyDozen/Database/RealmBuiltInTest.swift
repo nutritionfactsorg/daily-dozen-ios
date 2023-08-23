@@ -1,5 +1,5 @@
 //
-//  DatabaseBuiltInTest.swift
+//  RealmBuiltInTest.swift
 //  DailyDozen
 //
 //  Copyright © 2020 Nutritionfacts.org. All rights reserved.
@@ -12,9 +12,9 @@ import Foundation
 import HealthKit
 
 /// Utilities to support Built-In-Test (BIT).
-public struct DatabaseBuiltInTest {
+public struct RealmBuiltInTest {
     
-    static public var shared = DatabaseBuiltInTest()
+    static public var shared = RealmBuiltInTest()
     
     public let hkHealthStore = HKHealthStore()
     
@@ -23,8 +23,8 @@ public struct DatabaseBuiltInTest {
         LogService.shared.debug(">>> HKHealthStore.isHealthDataAvailable() \(HKHealthStore.isHealthDataAvailable())")
         
         //HealthManager.shared.exportHKWeight(name: "BIT00")
-        //DatabaseBuiltInTest.shared.doGenerateDBHistoryBIT(numberOfDays: 3, defaultDB: false)
-        //DatabaseBuiltInTest.shared.doGenerateDBHistoryBIT(numberOfDays: 365*3, defaultDB: false) // 1095 days, 2190 weight entries
+        //RealmBuiltInTest.shared.doGenerateDBHistoryBIT(numberOfDays: 3, defaultDB: false)
+        //RealmBuiltInTest.shared.doGenerateDBHistoryBIT(numberOfDays: 365*3, defaultDB: false) // 1095 days, 2190 weight entries
         
         //doGenerateHKSampleDataBIT()
         // :!!!:NYI: BIT runSuite()
@@ -146,7 +146,7 @@ public struct DatabaseBuiltInTest {
             }
         }
         LogService.shared.debug(
-            "••EXIT•• UtilityTableViewController doUtilityTestGenerateHistory(…)"
+            "••EXIT•• UtilityTableViewController doGenerateDBHistoryBIT(…)"
         )
     }
     

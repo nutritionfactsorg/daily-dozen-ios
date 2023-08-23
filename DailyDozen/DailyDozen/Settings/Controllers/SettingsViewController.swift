@@ -125,7 +125,6 @@ class SettingsViewController: UITableViewController {
             for: .normal)
         historyDataExportBtn.setTitleColor(ColorManager.style.mainMedium, for: UIControl.State.normal)
         historyDataImportBtn.setTitleColor(ColorManager.style.mainMedium, for: UIControl.State.normal)
-        historyDataImportBtn.isHidden = true // :RELEASE:
         
         // Analytics
         analyticsEnableLabel.text = NSLocalizedString("setting_analytics_enable", comment: "Enable Analytics")

@@ -1,5 +1,5 @@
 //
-//  DatabaseMaintainer.swift
+//  RealmMaintainer.swift
 //  DailyDozen
 //
 //  Copyright © 2020 Nutritionfacts.org. All rights reserved.
@@ -7,9 +7,9 @@
 
 import Foundation
 
-public struct DatabaseMaintainer {
+public struct RealmMaintainer {
     
-    static public var shared = DatabaseMaintainer()
+    static public var shared = RealmMaintainer()
     
     public func doMigration() {
         let level = getMigrationLevel()
@@ -165,7 +165,7 @@ public struct DatabaseMaintainer {
                         
         } catch {
             LogService.shared.error(
-                "DatabaseMaintainer doMigration_C_Backup \(error.localizedDescription)"
+                "RealmMaintainer doMigration_C_Backup \(error.localizedDescription)"
             )
         }
     

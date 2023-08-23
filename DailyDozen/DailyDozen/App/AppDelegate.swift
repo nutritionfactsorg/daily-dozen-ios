@@ -36,7 +36,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         logger.useLogFile(nameToken: "dev") // logger.useLogFileDefault()
         logger.debug("::::: DEBUG :::::\nAppDelegate didFinishLaunchingWithOptions DEBUG enabled")
         
-        DatabaseBuiltInTest.shared.runSuite()
+        RealmBuiltInTest.shared.runSuite()
         
         logger.debug(":::::::::::::::::\n")
         #endif
@@ -68,7 +68,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         // =====  Global Setup  =====
         
         // ----- Database Setup -----
-        DatabaseMaintainer.shared.doMigration()
+        RealmMaintainer.shared.doMigration()
         
         // ----- User Interface Setup -----
         // Note: User Interface particulars would be in SceneDelegate for newer impementations.
