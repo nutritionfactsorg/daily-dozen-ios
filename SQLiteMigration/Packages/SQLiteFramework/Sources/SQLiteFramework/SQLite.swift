@@ -9,9 +9,9 @@ import SQLiteCLib
 public struct SQLite {
     
     // :UNUSED: casting names no longer needed
-    /// type for pointer which cannot be represented in Swift
+    // type for pointer which cannot be represented in Swift
     //typealias sqlite3 = OpaquePointer // :SWIFT2: COpaquePointer
-    /// UnsafePointer<UInt8> `const unsigned char *`
+    // UnsafePointer<UInt8> `const unsigned char *`
     //typealias CCharHandle  = UnsafeMutablePointer<UnsafeMutablePointer<CChar>>
     //typealias CCharPointer = UnsafeMutablePointer<CChar>
     //typealias CVoidPointer = UnsafeMutableRawPointer // :SWIFT2: UnsafeMutablePointer<Void>
@@ -27,8 +27,8 @@ public struct SQLite {
         return SpmResourcesUtil.getProcessInfo()
     }
     
-    public static func getSqliteInfo() -> [String:String] {
-        var info: [String:String] = [:]
+    public static func getSqliteInfo() -> [String: String] {
+        var info: [String: String] = [:]
          // Int32 0 
         // Result (Error) Code https://sqlite.org/rescode.html
         info["SQLITE_OK"] = String(SQLITE_OK)      // Int32 (0) SQLITE_OK

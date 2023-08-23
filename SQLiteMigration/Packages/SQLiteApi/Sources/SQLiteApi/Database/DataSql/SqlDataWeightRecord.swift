@@ -2,6 +2,8 @@
 //  SqlDataWeightRecord.swift
 //  SQLiteApi/DataSql
 //
+// SQLite specific snake_case_name mapping
+// swiftlint:disable identifier_name 
 
 import Foundation
 import LogService
@@ -40,8 +42,8 @@ public struct SqlDataWeightRecord: Codable {
         }
     }
     
-    /// time of day "hh:mm a" format
-    /// :MIGRATE:SQL: timeAmPm should not be needed with SQL schema
+    // time of day "hh:mm a" format
+    // :MIGRATE:SQL: timeAmPm should not be needed with SQL schema
     //var timeAmPm: String {
     //    let fromDateFormatter = DateFormatter()
     //    fromDateFormatter.dateFormat = "HH:mm"

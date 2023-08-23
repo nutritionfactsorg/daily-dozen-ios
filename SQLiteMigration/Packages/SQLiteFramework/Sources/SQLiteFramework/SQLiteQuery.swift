@@ -2,6 +2,9 @@
 //  SQLiteQuery.swift
 //  SQLiteFramework
 //
+// swiftlint:disable cyclomatic_complexity
+// swiftlint:disable function_body_length
+// swiftlint:disable identifier_name
 
 import Foundation
 import SQLiteCLib
@@ -109,8 +112,7 @@ public class SQLiteQuery {
         if !sql.isEmpty {
             if statementPrepare(sql) == QUERY_NO_ERROR {
                 statementExecute()
-            } 
-            else {
+            } else {
                 print("ERROR: query.statementPrepare sql==\(sql)")
                 fatalError()
             }
@@ -126,7 +128,7 @@ public class SQLiteQuery {
     // MARK: - Query Management
     
     public func statementPrepare(_ sql: String) -> Int {
-        var pStatement: OpaquePointer? = nil
+        var pStatement: OpaquePointer?
         if _db.dbPtr != nil {
             if let cSql = sql.cString(using: String.Encoding.utf8) {
                 let statusPrepare = sqlite3_prepare_v2(
@@ -138,8 +140,7 @@ public class SQLiteQuery {
                 ) 
                 if statusPrepare != SQLITE_OK {
                     setStatusError(context: "statementPrepare", code: statusPrepare)
-                }
-                else {
+                } else {
                     pStatementId = _db.statementAdd(pStatement!)
                     setStatusOk(context: "statementPrepare")
                 }
@@ -153,12 +154,10 @@ public class SQLiteQuery {
         if let id = pStatementId {
             if let pStatement = _db.statementGet(id) {
                 sqlite3_reset(pStatement)
-            }
-            else {
+            } else {
                 setStatusError(context: "statementReset", message: "driver.statementGet(id) is nil")
             }
-        }
-        else {
+        } else {
             setStatusError(context: "statementReset", message: "pStatementId is nil")
         }
     }
@@ -176,18 +175,15 @@ public class SQLiteQuery {
                     )
                     if statusBind != SQLITE_OK {
                         setStatusError(context: "statementBind", code: statusBind)
-                    }
-                    else {
+                    } else {
                         setStatusOk(context: "statementBind")
                     }
                     return statusBind
                 }
-            }
-            else {
+            } else {
                 setStatusError(context: "statementBind", message: "driver.statementGet(id) is nil")
             }
-        }
-        else {
+        } else {
             setStatusError(context: "statementBind", message: "pStatementId is nil")
         } 
         return SQLITE_ERROR // 1
@@ -245,7 +241,6 @@ public class SQLiteQuery {
                         // print("SQLITE_NULL:    \(columnName)")
                         // thisRow += [nil]
                         rowData.append(nil)
-                        break
                     case SQLITE_TEXT: // SQLITE3_TEXT
                         if let v = sqlite3_column_text(pStatement, i) {
                             // :SWIFT2: let s = String(cString: CCharPointer(v))
@@ -255,8 +250,7 @@ public class SQLiteQuery {
                             //  as AnyObject?
                             rowData.append(s) 
                             // print("SQLITE_TEXT:    \(columnName)=\(s!)")
-                        } 
-                        else {
+                        } else {
                             setStatusError(context: "statementExecute", message: "SQLITE_TEXT: not convertable")
                             print("ERROR: statementExecute() SQLITE_TEXT: not convertable")
                             fatalError("ERROR: statementExecute() SQLITE_TEXT: not convertable") // :REMOVE:
@@ -265,7 +259,6 @@ public class SQLiteQuery {
                         setStatusError(context: "statementExecute", message: "sqlite3_column_type not found")
                         print("ERROR: statementExecute() sqlite3_column_type not found")
                         fatalError("ERROR: statementExecute() sqlite3_column_type not found") // :REMOVE:
-                        break
                     }
                 }          
                 
@@ -276,12 +269,10 @@ public class SQLiteQuery {
             }
             if statusStep != SQLITE_DONE {
                 setStatusError(context: "statementExecute", code: statusStep)
-            }
-            else {
+            } else {
                 setStatusOk(context: "statementExecute")
             }
-        }
-        else {
+        } else {
             setStatusError(context: "statementExecute", message: "pStatementId is nil")
         } 
     }
@@ -299,7 +290,7 @@ public class SQLiteQuery {
     
     /// - Returns: SQLiteStatus information
     public func getStatus() -> SQLiteStatus {
-        return _laststatus;
+        return _laststatus
     }
     
     /// - Returns: `true` if error occurred.
@@ -337,8 +328,7 @@ public class SQLiteQuery {
             )
             setStatus(err)
             print(err.toString())
-        }
-        else {
+        } else {
             let err = SQLiteStatus(
                 type: SQLiteStatusType.statementError, 
                 context: context, 

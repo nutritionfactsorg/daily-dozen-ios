@@ -36,7 +36,7 @@ public class SQLiteApi {
     
     /// Close opened databases.
     deinit {
-        let _ = dailydozenDb.close() // :NYI: handle return result
+        _ = dailydozenDb.close() // :NYI: handle return result
     }
     
     // MARK: - Transaction Support
@@ -57,5 +57,3 @@ public class SQLiteApi {
         }
     }
 }
-
-

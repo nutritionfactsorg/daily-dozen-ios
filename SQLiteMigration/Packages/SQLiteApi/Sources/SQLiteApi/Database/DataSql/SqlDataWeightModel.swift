@@ -40,7 +40,6 @@ public struct SqlDataWeightModel {
         }
     }
     
-    
     // MARK: - Table
     
     public func createTable() {

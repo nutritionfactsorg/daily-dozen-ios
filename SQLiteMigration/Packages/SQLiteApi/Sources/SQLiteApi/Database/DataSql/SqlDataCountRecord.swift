@@ -2,9 +2,10 @@
 //  SqlDataCountRecord.swift
 //  SQLiteApi/DataSql
 //
+// SQLite specific snake_case_name mapping
+// swiftlint:disable identifier_name 
 
 import Foundation
-import LogService
 
 /// Object Relationship Mapping (ORM)
 /// Handles mapping from relationship data and item record object 

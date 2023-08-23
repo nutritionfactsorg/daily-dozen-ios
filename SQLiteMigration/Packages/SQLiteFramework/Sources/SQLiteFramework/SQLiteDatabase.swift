@@ -2,6 +2,10 @@
 //  SQLiteDatabase.swift
 //  SQLiteFramework
 //
+// swiftlint:disable cyclomatic_complexity
+// swiftlint:disable file_length
+// swiftlint:disable identifier_name
+// swiftlint:disable type_body_length
 
 import Foundation
 import SQLiteCLib
@@ -43,7 +47,7 @@ public class SQLiteDatabase {
         // case SQLITE_ENABLE_SHARED_CACHE
         // sqlite3_enable_shared_cache unavalaible in Swift. deprecated in OSX 10.9
     }
-    public typealias OptionDictionary = Dictionary<ConnectionOption, AnyObject>
+    public typealias OptionDictionary = [ConnectionOption: AnyObject]
     
     // :WIP:ACCESS_LEVEL.FILEPRIVATE
     public var _laststatus: SQLiteStatus = SQLiteStatus(
@@ -54,8 +58,8 @@ public class SQLiteDatabase {
     // SQLite 
     public var dbOptions: OptionDictionary
     public var dbUrl: URL
-    public var dbPtr: OpaquePointer? = nil // sqlite3 *db : Database handle
-    public var stmtDictionary = Dictionary<Int, OpaquePointer>()
+    public var dbPtr: OpaquePointer? // sqlite3 *db : Database handle
+    public var stmtDictionary = [Int: OpaquePointer]()
     public var stmtIdCount = 0
     
     /// :NYI: throws 
@@ -107,8 +111,7 @@ public class SQLiteDatabase {
                 sqlite3_busy_timeout(dbPtr, timeOut)
                 setStatusOk(context: "open success")
                 return true
-            }
-            else {
+            } else {
                 if dbPtr != nil {
                     sqlite3_close_v2(dbPtr)
                     dbPtr = nil
@@ -116,8 +119,7 @@ public class SQLiteDatabase {
                 setStatusError(context: "open", code: status)
                 return false
             }
-        }
-        else {
+        } else {
             setStatusError(context: "ERROR/access open create cString failed")
             return false
         }
@@ -127,7 +129,7 @@ public class SQLiteDatabase {
     /// Releases all query statements, then closes the database.
     /// - Returns: `true` if successful.
     public func close() -> Bool {
-        if (isOpen()) {
+        if isOpen() {
             
             for pStatement in stmtDictionary.values {
                 sqlite3_finalize(pStatement)
@@ -216,26 +218,21 @@ public class SQLiteDatabase {
         for charIs in sql {
             if charWas == nil {
                 charWas = charIs
-            }
-            else if charWas == "/" && charIs == "*" && hasPrecedingWhiteSpace {
+            } else if charWas == "/" && charIs == "*" && hasPrecedingWhiteSpace {
                 isInsideDelimiter = true
                 charWas = nil
-            }
-            else if charWas == "*" && charIs == "/" && isInsideDelimiter {
+            } else if charWas == "*" && charIs == "/" && isInsideDelimiter {
                 isInsideDelimiter = false
                 charWas = nil
-            }
-            else if !isInsideDelimiter, let cw = charWas {
+            } else if !isInsideDelimiter, let cw = charWas {
                 if cw == "\n"{
                     hasPrecedingWhiteSpace = true
-                } 
-                else if cw != " " && cw != "\t" {
+                } else if cw != " " && cw != "\t" {
                     hasPrecedingWhiteSpace = false
                 }
                 result.append(cw)
                 charWas = charIs
-            }
-            else if isInsideDelimiter {
+            } else if isInsideDelimiter {
                 charWas = charIs
             }
         }
@@ -256,7 +253,7 @@ public class SQLiteDatabase {
         
         for l: String.SubSequence in lines {
             var lineResult: String = ""
-            var charWas: Character? = nil
+            var charWas: Character?
             var delimiterFound = false
             var inQuote = false
             var isEscaped = false
@@ -264,22 +261,18 @@ public class SQLiteDatabase {
             for charIs: Character in l {
                 if charWas == nil {
                     charWas = charIs
-                }
-                else if !inQuote && charWas == "'" {
+                } else if !inQuote && charWas == "'" {
                     inQuote = true
                     if let cw = charWas {
                         lineResult.append(cw)
                         charWas = charIs
                     }
-                }
-                else if inQuote {
+                } else if inQuote {
                     if charWas == "'" && isEscaped {
                         isEscaped = false
-                    }
-                    else if charWas == "'" && !isEscaped && charIs == "'" {
+                    } else if charWas == "'" && !isEscaped && charIs == "'" {
                         isEscaped = true
-                    }
-                    else if charWas == "'" && !isEscaped && charIs != "'" {
+                    } else if charWas == "'" && !isEscaped && charIs != "'" {
                         inQuote = false
                     }
   
@@ -287,12 +280,10 @@ public class SQLiteDatabase {
                         lineResult.append(cw)
                         charWas = charIs
                     }
-                }
-                else if !inQuote && charWas == "-" && charIs == "-" {
+                } else if !inQuote && charWas == "-" && charIs == "-" {
                     delimiterFound = true
                     break
-                }
-                else if let cw = charWas {
+                } else if let cw = charWas {
                     lineResult.append(cw)
                     charWas = charIs
                 }
@@ -311,7 +302,6 @@ public class SQLiteDatabase {
         }
         return result
     }
-
     
     ////////////////////////////////////////
     // MARK: - Status (Error) Management
@@ -338,8 +328,7 @@ public class SQLiteDatabase {
     public func statementGet(_ id: Int) -> OpaquePointer? {
         if let pStatement = stmtDictionary[id] {
             return pStatement
-        }
-        else {
+        } else {
             return nil
         }
     }
@@ -364,7 +353,7 @@ public class SQLiteDatabase {
     ///  - Returns: SQLiteStatus information
     /// 
     public func getStatus() -> SQLiteStatus {
-        return _laststatus;
+        return _laststatus
     }
     
     // :WIP:ACCESS_LEVEL.FILEPRIVATE
@@ -390,8 +379,7 @@ public class SQLiteDatabase {
             )
             setStatus(err)
             print(err.toString())
-        }
-        else {
+        } else {
             let err = SQLiteStatus(
                 type: SQLiteStatusType.connectionError, 
                 context: context, 
@@ -420,7 +408,7 @@ public class SQLiteDatabase {
     public func foreignkeys(_ state: Bool) {
         let s = "PRAGMA foreign_keys = \(state.rawInt());"
         let query = SQLiteQuery(sql: s, db: self)
-        if let _ = query.getResult() {
+        if query.getResult() != nil {
             setStatusOk(context: "foreignkeys set = (\(state.rawInt()))")
             return
         }
@@ -437,8 +425,7 @@ public class SQLiteDatabase {
             // result.data = [[Optional(0)]]
             if let a = result.data.first,
                 let b = a.first, 
-                let c = b as? Int
-            {
+                let c = b as? Int {
                 let state = Bool(int: c)
                 setStatusOk(context: "foreignkeys query ok (\(state.rawInt()))")
                 return state
@@ -447,5 +434,5 @@ public class SQLiteDatabase {
         setStatusError(context: "FAIL/foreignkeys query")
         return nil
     }
-
+    
 }

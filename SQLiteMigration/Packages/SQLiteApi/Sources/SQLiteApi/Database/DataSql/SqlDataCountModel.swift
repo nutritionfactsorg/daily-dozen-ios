@@ -41,7 +41,6 @@ public struct SqlDataCountModel {
 
     }
     
-    
     // MARK: - Table
     
     public func createTable() {

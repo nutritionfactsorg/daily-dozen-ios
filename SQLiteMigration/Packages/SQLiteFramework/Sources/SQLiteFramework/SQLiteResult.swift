@@ -3,7 +3,6 @@
 //  SQLiteFramework
 //
 
-
 import Foundation
 
 /// SQLiteResult class provides an abstract interface for accessing data
@@ -26,7 +25,7 @@ public struct SQLiteResult {
     //
     public func toStringTsv(withColumnNames: Bool = true) -> String {
         var s = ""
-        if (withColumnNames) {
+        if withColumnNames {
             var cIdx = 0
             while cIdx < columnNames.count {
                 s += columnNames[cIdx]
@@ -40,8 +39,7 @@ public struct SQLiteResult {
             while columnIdx < row.count {
                 if let value = row[columnIdx] {
                    s += "\(value)"
-                }
-                else {
+                } else {
                     s += "" // "NULL"
                 }
                 s += columnIdx < row.count - 1 ? "\t" : "\n"
