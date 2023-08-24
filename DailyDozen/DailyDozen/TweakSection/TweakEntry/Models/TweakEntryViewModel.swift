@@ -34,7 +34,7 @@ class TweakEntryViewModel {
     ]
     
     // MARK: - Properties
-    private let tracker: DailyTracker
+    private let tracker: RealmDailyTracker
     
     /// Returns 21 Tweak item count.
     var count: Int {
@@ -46,7 +46,7 @@ class TweakEntryViewModel {
     }
     
     // MARK: - Inits
-    init(tracker: DailyTracker) {
+    init(tracker: RealmDailyTracker) {
         self.tracker = tracker
         LogService.shared.debug("@DATE \(tracker.date.datestampKey) TweakEntryViewModel.init()")
     }
@@ -66,8 +66,8 @@ class TweakEntryViewModel {
     /// - Returns: The streak count.
     func itemStreak(rowIndex: Int) -> Int {
         let itemType = TweakEntryViewModel.rowTypeArray[rowIndex]
-        if let dataCountRecord = tracker.itemsDict[itemType] {
-            return dataCountRecord.streak
+        if let realmDataCountRecord = tracker.itemsDict[itemType] {
+            return realmDataCountRecord.streak
         } else {
             return 0
         }

@@ -1,5 +1,5 @@
 //
-//  DataWeightRecord.swift
+//  RealmDataWeightRecord.swift
 //  DatabaseMigration
 //
 //  Copyright © 2019 NutritionFacts.org. All rights reserved.
@@ -8,7 +8,9 @@
 import Foundation
 import RealmSwift
 
-class DataWeightRecord: Object {
+class RealmDataWeightRecord: Object {
+    
+    // MARK: - fields
     
     // MARK: - fields
     
@@ -69,7 +71,7 @@ class DataWeightRecord: Object {
         guard let date = Date.init(datestampKey: pidKeys.datestampKey),
             let weightType = DataWeightType(typeKey: pidKeys.typeKey) else {
                 LogService.shared.error(
-                    "DataWeightRecord pidParts has invalid datestamp or weightType"
+                    "RealmDataWeightRecord pidParts has invalid datestamp or weightType"
                 )
                 return nil
         }

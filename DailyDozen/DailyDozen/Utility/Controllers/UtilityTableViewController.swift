@@ -23,9 +23,6 @@ class UtilityTableViewController: UITableViewController {
         return viewController
     }
     
-    // Appearance Type: Standard | Preview
-    @IBOutlet weak var appearanceTypeControl: UISegmentedControl!
-    
     override func viewDidLoad() {
         super.viewDidLoad()
         navigationController?.navigationBar.titleTextAttributes = [NSAttributedString.Key.foregroundColor: UIColor.white]
@@ -34,19 +31,85 @@ class UtilityTableViewController: UITableViewController {
         // default height (in points) for each row in the table view
         self.tableView.rowHeight = 42
     }
-
-    // MARK: - Table view data source
-
-    // Simple static storyboard table
     
-    // MARK: - Actions
-        
-    @IBAction func doUtilityDBExportDataBtn(_ sender: UIButton) {
-        doUtilityDBExportData()
+    // MARK: - SQLite Utilities
+    
+    @IBAction func doUtilitySQLiteClearDbBtn(_ sender: UIButton) {
+        SqliteConnector.run.clearDb()
+    }
+    
+    @IBAction func doUtilitySQLiteCreateDataBtn(_ sender: UIButton) {
+        SqliteConnector.run.createData()
+    }
+    
+    @IBAction func doUtilitySQLiteExportDataBtn(_ sender: UIButton) {
+        SqliteConnector.run.exportData()
+    }
+    
+    @IBAction func doUtilitySQLiteImportDataBtn(_ sender: UIButton) {
+        SqliteConnector.run.importData()
+    }
+    
+    @IBAction func doUtilitySQLiteTimingTextBtn(_ sender: UIButton) {
+        SqliteConnector.run.timingTest()
+    }
+    
+    // MARK: - Realm Utilities
+    
+    @IBAction func doUtilityRealmClearHistoryBtn(_ sender: UIButton) {
+        let alert = UIAlertController(title: "", message: Strings.utilityTestHistoryClearMsg, preferredStyle: .alert)
+        let cancelAction = UIAlertAction(title: Strings.utilityConfirmCancel, style: .cancel, handler: nil)
+        alert.addAction(cancelAction)
+        let clearAction = UIAlertAction(title: Strings.utilityConfirmClear, style: .destructive) { (_: UIAlertAction) -> Void in
+            RealmBuiltInTest.shared.doClearAllDataInMigrationChainBIT()
+        }
+        alert.addAction(clearAction)
+        present(alert, animated: true, completion: nil)
+    }
+    
+    /// Note: When writing a large number of data entries AND 
+    /// the database is open in the Realm browser is open, 
+    /// then some value(s) may not be written.  
+    /// Do not have the Realm browser open when writing data in simulator to
+    /// avoid this is situation. The root cause of this issue is unknown.
+    @IBAction func doUtilityRealmGenerateHistoryBtn(_ sender: UIButton) {
+        // half month
+        RealmBuiltInTest.shared.doGenerateDBHistoryBIT(numberOfDays: 15, defaultDB: true)
+    }
+    
+    @IBAction func doUtilityRealmGenerateLegacyBtn(_ sender: UIButton) {
+        RealmBuiltInTest.shared.doGenerateDBLegacyDataBIT()
+    }
+    
+    /// "Simulate Progress"
+    @IBAction func doUtilityRealmGenerateStreaksBtn(_ sender: UIButton) {
+        let alert = UIAlertController(title: "", message: Strings.utilityTestStreaksMsg, preferredStyle: .alert)
+        let cancelAction = UIAlertAction(title: Strings.utilityConfirmCancel, style: .cancel, handler: nil)
+        alert.addAction(cancelAction)
+        let generateAction = UIAlertAction(title: Strings.utilityConfirmOK, style: .destructive) { (_: UIAlertAction) -> Void in
+            let busyAlert = AlertActivityBar()
+            busyAlert.setText("Generating Progress Data") // :NYI:LOCALIZE:
+            busyAlert.show()
+            DispatchQueue.global(qos: .userInitiated).async {
+                // lower priority job here
+                RealmBuiltInTest.shared.doGenerateDBStreaksBIT(activityProgress: busyAlert)
+                DispatchQueue.main.async {
+                    // update ui here
+                    busyAlert.completed()
+                }
+            }
+        }
+        alert.addAction(generateAction)
+                
+        UIApplication.shared.topViewController()?.present(alert, animated: true, completion: nil)
+    }
+    
+    @IBAction func doUtilityRealmDBExportBtn(_ sender: UIButton) {
+        doUtilityRealmDBExport()
     }
     
     /// Presents share services.
-    private func doUtilityDBExportData() { // see also presentShareServices() { // Backup
+    private func doUtilityRealmDBExport() { // see also presentShareServices() { // Backup
         let realmMngr = RealmManager()
         let backupFilename = realmMngr.csvExport(marker: "db_export_data")
         #if DEBUG
@@ -68,7 +131,7 @@ class UtilityTableViewController: UITableViewController {
         //present(activityViewController, animated: true, completion: nil)
     }
     
-    @IBAction func doUtilityDBImportDataBtn(_ sender: UIButton) {
+    @IBAction func doUtilityRealmDBImportBtn(_ sender: UIButton) {
         //ImportPopupPickerView.show(
         //    items: <#T##[String]#>, 
         //    doneButtonCompletion: <#T##ImportPopupPickerView.CompletionBlock?##PopupPickerView.CompletionBlock?##(String?, String?) -> Void#>, 
@@ -89,9 +152,22 @@ class UtilityTableViewController: UITableViewController {
         //)
     }
     
+    // MARK: - Date & Time Utilities
+    
+    @IBAction func doUtilityRealmAddOneDayBtn(_ sender: UIButton) {
+        DateManager.incrementDay()
+    }
+    
+    // MARK: - Appearance
+    
+    // Appearance Type: Standard | Preview
+    @IBOutlet weak var appearanceTypeControl: UISegmentedControl!
+    
     @IBAction func doAppearanceTypeChanged(_ sender: UISegmentedControl) {
         print(":!!!: doAppearanceModeChanged not implemented")
     }
+    
+    // MARK: - Settings
     
     @IBAction func doUtilitySettingsClearBtn(_ sender: UIButton) {
         let alert = UIAlertController(title: "", message: Strings.utilitySettingsClearMsg, preferredStyle: .alert)
@@ -185,57 +261,7 @@ class UtilityTableViewController: UITableViewController {
         present(alert, animated: true, completion: nil)
     }
     
-    // MARK: - Test Database
-    
-    @IBAction func doUtilityTestClearHistoryBtn(_ sender: UIButton) {
-        let alert = UIAlertController(title: "", message: Strings.utilityTestHistoryClearMsg, preferredStyle: .alert)
-        let cancelAction = UIAlertAction(title: Strings.utilityConfirmCancel, style: .cancel, handler: nil)
-        alert.addAction(cancelAction)
-        let clearAction = UIAlertAction(title: Strings.utilityConfirmClear, style: .destructive) { (_: UIAlertAction) -> Void in
-            //self.doUtilityTestClearHistoryMigrationsChain()
-            DatabaseBuiltInTest.shared.doClearAllDataInMigrationChainBIT()
-        }
-        alert.addAction(clearAction)
-        present(alert, animated: true, completion: nil)
-    }
-    
-    /// Note: When writing a large number of data entries AND the database is open 
-    /// in the Realm browser is open, then some value(s) may not be written.  
-    /// Do not have the Realm browser open when writing data in simulator to
-    /// avoid this is situation. The root cause of this issue is unknown.
-    @IBAction func doUtilityTestGenerateHistoryBtn(_ sender: UIButton) {
-        // half month
-        DatabaseBuiltInTest.shared.doGenerateDBHistoryBIT(numberOfDays: 15, defaultDB: true)
-    }
-    
-    @IBAction func doUtilityTestGenerateLegacyBtn(_ sender: UIButton) {
-        DatabaseBuiltInTest.shared.doGenerateDBLegacyDataBIT()
-    }
-    
-    /// "Simulate Progress"
-    @IBAction func doUtilityTestGenerateStreaksBtn(_ sender: UIButton) {
-        let alert = UIAlertController(title: "", message: Strings.utilityTestStreaksMsg, preferredStyle: .alert)
-        let cancelAction = UIAlertAction(title: Strings.utilityConfirmCancel, style: .cancel, handler: nil)
-        alert.addAction(cancelAction)
-        let generateAction = UIAlertAction(title: Strings.utilityConfirmOK, style: .destructive) { (_: UIAlertAction) -> Void in
-            let busyAlert = AlertActivityBar()
-            busyAlert.setText("Generating Progress Data") // :NYI:LOCALIZE:
-            busyAlert.show()
-            DispatchQueue.global(qos: .userInitiated).async {
-                // lower priority job here
-                DatabaseBuiltInTest.shared.doGenerateDBStreaksBIT(activityProgress: busyAlert)
-                DispatchQueue.main.async {
-                    // update ui here
-                    busyAlert.completed()
-                }
-            }
-        }
-        alert.addAction(generateAction)
-                
-        UIApplication.shared.topViewController()?.present(alert, animated: true, completion: nil)
-    }
-    
-    // MARK: - UI
+    // MARK: - **Private**
     
     private struct Strings { // :NYI:LOCALIZE: localize utility strings
         static let utilityConfirmCancel = "Cancel"
@@ -274,18 +300,10 @@ class UtilityTableViewController: UITableViewController {
         self.present(alertController, animated: true, completion: nil) // (() -> Void)?
     }
     
-    /*
-    // MARK: - Navigation
-
     // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
-    }
-    */
+    //override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+    // Get the new view controller using segue.destination.
+    // Pass the selected object to the new view controller.
+    //}
 
-    @IBAction func doUtilityTestAddOneDayBtn(_ sender: UIButton) {
-        DateManager.incrementDay()
-    }
-    
 }

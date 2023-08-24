@@ -14,11 +14,6 @@ struct HealthWeightRecord {
     let ampm: DataWeightType
     var hkWeightSamples: [HKQuantitySample]
     
-    init(ampm: DataWeightType, hkWeightSamples: [HKQuantitySample]) {
-        self.ampm = ampm
-        self.hkWeightSamples = hkWeightSamples
-    }
-    
     /// Weight data to show to user "IB"
     func getIBWeightToShow() -> (time: String, weight: String) {        
         // Return "first" HK weight record if present

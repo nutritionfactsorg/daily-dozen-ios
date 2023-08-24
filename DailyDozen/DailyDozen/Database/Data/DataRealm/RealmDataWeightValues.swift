@@ -1,5 +1,5 @@
 //
-//  DataWeightValues.swift
+//  RealmDataWeightValues.swift
 //  DailyDozen
 //
 //  Copyright © 2020 Nutritionfacts.org. All rights reserved.
@@ -7,8 +7,9 @@
 
 import Foundation
 
-/// DataWeightValues: DataWeightRecord without Realm `Object` inheritance
-struct DataWeightValues {
+/// RealmDataWeightValues: RealmDataWeightRecord without Realm `Object` inheritance
+/// Used specifically for HK Integration
+struct RealmDataWeightValues {
     
     /// yyyyMMdd.typeKey e.g. 20190101.am
     var pid: String = ""
@@ -67,7 +68,7 @@ struct DataWeightValues {
         guard let date = Date(datestampKey: pidKeys.datestampKey),
             let weightType = DataWeightType(typeKey: pidKeys.typeKey) else {
                 LogService.shared.error(
-                    "DataWeightRecord pidParts has invalid datestamp or weightType"
+                    "RealmDataWeightRecord pidParts has invalid datestamp or weightType"
                 )
                 return nil
         }
@@ -110,7 +111,7 @@ struct DataWeightValues {
         self.time = date.datestampHHmm
     }
     
-    init(record: DataWeightRecord) {
+    init(record: RealmDataWeightRecord) {
         self.pid = record.pid
         self.kg = record.kg
         self.time = record.time

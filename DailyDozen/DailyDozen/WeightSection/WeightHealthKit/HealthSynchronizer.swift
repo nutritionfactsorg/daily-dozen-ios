@@ -32,10 +32,10 @@ struct HealthSynchronizer {
     public func resetSyncAll() {
         // Note: keep realm object access and processing on the same thread
         let dbResults = self.realm.getDBWeightDatetimes()
-        var dbValues = [DataWeightValues]()
-        for record: DataWeightRecord in dbResults {
+        var dbValues = [RealmDataWeightValues]()
+        for record: RealmDataWeightRecord in dbResults {
             // Copy Realm `Object` values on this thead before completion block and `async` enqueueing.
-            dbValues.append(DataWeightValues(record: record))
+            dbValues.append(RealmDataWeightValues(record: record))
         }
         HealthManager.shared.deleteHKAllWeigths { // completion: () -> Void
             for values in dbValues {
@@ -57,7 +57,7 @@ struct HealthSynchronizer {
         // PM: ascending order FALSE so latest   PM time lists first.
         let ascending = ampm == .am
         
-        let values = DataWeightValues(date: date, weightType: ampm, kg: kg)
+        let values = RealmDataWeightValues(date: date, weightType: ampm, kg: kg)
         
         serialSyncQueue.async {
             HealthManager.shared.readHKWeight(
@@ -74,7 +74,7 @@ struct HealthSynchronizer {
             LogService.shared.error("syncWeightDateResultsHK \"\(error.localizedDescription)\"")
         }
         
-        guard let values = passthru as? DataWeightValues,
+        guard let values = passthru as? RealmDataWeightValues,
             let datetime = values.datetime else {
                 LogService.shared.error("syncWeightDateResultsHK expected an 'VALUES' DataWeightType")
                 return
@@ -163,7 +163,7 @@ struct HealthSynchronizer {
     
     /// 
     func syncWeightToShow(date: Date, ampm: DataWeightType) -> (time: String, weight: String) {
-        let record: DataWeightRecord? = realm.getDBWeight(date: date, ampm: ampm)
+        let record: RealmDataWeightRecord? = realm.getDBWeight(date: date, ampm: ampm)
         
         // Return DB weight record if present
         if let record = record {

@@ -1,5 +1,5 @@
 //
-//  DataCountRecord.swift
+//  RealmDataCountRecord.swift
 //  DatabaseMigration
 //
 //  Copyright © 2019 NutritionFacts.org. All rights reserved.
@@ -8,7 +8,7 @@
 import Foundation
 import RealmSwift
 
-class DataCountRecord: Object {
+class RealmDataCountRecord: Object {
     
     // MARK: - RealmDB Persisted Properties
     
@@ -28,7 +28,7 @@ class DataCountRecord: Object {
         guard let date = Date.init(datestampKey: pidKeys.datestampKey),
             let countType = DataCountType(itemTypeKey: pidKeys.typeKey) else {
                 LogService.shared.error(
-                    "DataCountRecord pidParts has invalid datestamp or typeKey"
+                    "RealmDataCountRecord pidParts has invalid datestamp or typeKey"
                 )
                 return nil
         }
@@ -66,7 +66,7 @@ class DataCountRecord: Object {
         if self.count > dataCountType.maxServings {
             self.count = dataCountType.maxServings
             LogService.shared.error(
-                "DataCountRecord init datestampKey:\(datestampKey) typekey:\(typeKey) count:\(count) exceeded max servings \(dataCountType.maxServings)"
+                "RealmDataCountRecord init datestampKey:\(datestampKey) typekey:\(typeKey) count:\(count) exceeded max servings \(dataCountType.maxServings)"
             )
 
         }
@@ -81,7 +81,7 @@ class DataCountRecord: Object {
         if self.count > countType.maxServings {
             self.count = countType.maxServings
             LogService.shared.error(
-                "DataCountRecord init date:\(date.datestampKey) countType:\(countType.typeKey) count:\(count) exceeds max servings \(countType.maxServings)"
+                "RealmDataCountRecord init date:\(date.datestampKey) countType:\(countType.typeKey) count:\(count) exceeds max servings \(countType.maxServings)"
             )
         }
         self.streak = streak
@@ -109,7 +109,7 @@ class DataCountRecord: Object {
             setCount(value)
         } else {
             LogService.shared.error(
-                "DataCountRecord setCount() not convertable to Int \(text)"
+                "RealmDataCountRecord setCount() not convertable to Int \(text)"
             )
         }
     }
@@ -120,12 +120,12 @@ class DataCountRecord: Object {
             if self.count > countType.maxServings {
                 self.count = countType.maxServings
                 LogService.shared.error(
-                    "DataCountRecord setCount \(pid) \(count) exceeds max servings"
+                    "RealmDataCountRecord setCount \(pid) \(count) exceeds max servings"
                 )
             }
         } else {
             LogService.shared.error(
-                "DataCountRecord setCount \(pid) \(count) could not range check servings"
+                "RealmDataCountRecord setCount \(pid) \(count) could not range check servings"
             )
         }
     }

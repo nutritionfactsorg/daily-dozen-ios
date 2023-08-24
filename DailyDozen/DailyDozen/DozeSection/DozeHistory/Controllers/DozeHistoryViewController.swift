@@ -122,7 +122,7 @@ class DozeHistoryViewController: UIViewController {
     private func setViewModel() {
         let realm = RealmProvider.primary
 
-        let trackers: [DailyTracker] = realm.getDailyTrackers()
+        let trackers: [RealmDailyTracker] = realm.getDailyTrackers()
         guard trackers.count > 0 else {
             controlPanel.isHidden = true
             scaleControl.isEnabled = false

@@ -18,7 +18,7 @@ struct TweakHistoryViewModel {
     }
 
     // MARK: - Inits
-    init(_ trackers: [DailyTracker]) {
+    init(_ trackers: [RealmDailyTracker]) {
         report = Report(trackers, isDailyDozen: false)
     }
 

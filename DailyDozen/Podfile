@@ -9,7 +9,8 @@ target 'DailyDozen' do
   pod 'ActiveLabel', '~> 1.1.0'
   pod 'Charts', '~> 4.1.0'
   pod 'FSCalendar', '~> 2.8.4'
-  pod 'RealmSwift', '~> 4.4.1'
+  ##pod 'RealmSwift', '~> 4.4.1'
+  pod 'RealmSwift', '~> 10.40.2'
   pod 'SimpleAnimation', '~> 0.4.2'
   
   ## https://github.com/firebase/firebase-ios-sdk
@@ -37,6 +38,28 @@ target 'DailyDozen' do
   ## PromisesObjC 2.2.0
   ## SwiftAlgorithms (1.0.0)
   ## nanopb 2.30909.0
+
+  ## > pod update
+  ## Update all pods
+  ## Updating local specs repositories
+  ## Analyzing dependencies
+  ## Downloading dependencies
+  ## Installing ActiveLabel 1.1.0
+  ## Installing Charts 4.1.0
+  ## Installing FSCalendar 2.8.4
+  ## Installing Firebase 10.11.0
+  ## Installing FirebaseAnalytics 10.11.0
+  ## Installing FirebaseCore 10.11.0
+  ## Installing FirebaseCoreInternal 10.11.0
+  ## Installing FirebaseInstallations 10.11.0
+  ## Installing GoogleAppMeasurement 10.11.0
+  ## Installing GoogleUtilities 7.11.1
+  ## Installing PromisesObjC 2.2.0
+  ## Installing Realm 10.40.2 (was 4.4.1)
+  ## Installing RealmSwift 10.40.2 (was 4.4.1)
+  ## Installing SimpleAnimation 0.4.2
+  ## Installing SwiftAlgorithms 1.0.0
+  ## Installing nanopb 2.30909.0
 
   ##
   ## For Analytics WITH IDFA collection capability

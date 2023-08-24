@@ -22,7 +22,7 @@ struct DailyWeightReport {
         return datePM!
     }
     
-    init?(am: DataWeightRecord?, pm: DataWeightRecord?) {
+    init?(am: RealmDataWeightRecord?, pm: RealmDataWeightRecord?) {
         if am == nil && pm == nil { return nil }
         if let am = am, let date = am.datetime {
             dateAM = date
@@ -97,10 +97,10 @@ struct YearlyWeightReport {
 struct WeightReport {
     var data = [YearlyWeightReport]()
 
-    // amRecords: [DataWeightRecord], pmRecords: [DataWeightRecord]
+    // amRecords: [RealmDataWeightRecord], pmRecords: [RealmDataWeightRecord]
     // amRecords, pmRecords must be presorted
     // amRecords, pmRecords must both contain at least one member
-    private func merge(amRecords: [DataWeightRecord], pmRecords: [DataWeightRecord]) -> [DailyWeightReport] {
+    private func merge(amRecords: [RealmDataWeightRecord], pmRecords: [RealmDataWeightRecord]) -> [DailyWeightReport] {
         var results = [DailyWeightReport]()
 
         var amIndex = 0
@@ -151,7 +151,7 @@ struct WeightReport {
     }
     
     /// weight pecords must be date sorted
-    init(amRecords: [DataWeightRecord], pmRecords: [DataWeightRecord]) {
+    init(amRecords: [RealmDataWeightRecord], pmRecords: [RealmDataWeightRecord]) {
         var dailyReports = [DailyWeightReport]()
         
         // Convert am/pm into daily weight records

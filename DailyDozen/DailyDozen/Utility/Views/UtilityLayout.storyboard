@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="21225" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="CD1-9a-Pcp">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="21701" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="CD1-9a-Pcp">
     <device id="retina6_0" orientation="portrait" appearance="light"/>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="21207"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="21679"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -17,57 +17,275 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <sections>
-                            <tableViewSection headerTitle="Database" id="fXK-YN-EGm">
+                            <tableViewSection headerTitle="SQLite Utilities" id="fXK-YN-EGm">
                                 <cells>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="none" indentationWidth="10" id="9AE-nw-WHM" userLabel="Cell Export Data">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="none" indentationWidth="10" id="ooJ-RH-bg1" userLabel="Cell Clear DB">
                                         <rect key="frame" x="0.0" y="55.333332061767578" width="390" height="43.666667938232422"/>
                                         <autoresizingMask key="autoresizingMask"/>
-                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="9AE-nw-WHM" id="JKI-hV-5ln">
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="ooJ-RH-bg1" id="vuc-rK-PmY">
                                             <rect key="frame" x="0.0" y="0.0" width="390" height="43.666667938232422"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Dz9-r4-n8B">
-                                                    <rect key="frame" x="128" y="7" width="134" height="30"/>
-                                                    <accessibility key="accessibilityConfiguration" identifier="util_db_btn_export_access"/>
-                                                    <state key="normal" title="Export History Data"/>
+                                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="vhd-JM-ncr">
+                                                    <rect key="frame" x="164.66666666666666" y="7" width="61" height="30"/>
+                                                    <state key="normal" title="Clear DB"/>
                                                     <connections>
-                                                        <action selector="doUtilityDBExportDataBtn:" destination="CD1-9a-Pcp" eventType="touchUpInside" id="dKz-ZR-DAQ"/>
+                                                        <action selector="doUtilitySQLiteClearDbBtn:" destination="CD1-9a-Pcp" eventType="touchUpInside" id="MUw-ZK-Yy6"/>
                                                     </connections>
                                                 </button>
                                             </subviews>
                                             <constraints>
-                                                <constraint firstItem="Dz9-r4-n8B" firstAttribute="centerY" secondItem="JKI-hV-5ln" secondAttribute="centerY" id="XfF-1y-o0H"/>
-                                                <constraint firstItem="Dz9-r4-n8B" firstAttribute="centerX" secondItem="JKI-hV-5ln" secondAttribute="centerX" id="fMa-3p-oGQ"/>
+                                                <constraint firstItem="vhd-JM-ncr" firstAttribute="centerY" secondItem="vuc-rK-PmY" secondAttribute="centerY" id="0sp-ne-5i3"/>
+                                                <constraint firstItem="vhd-JM-ncr" firstAttribute="centerX" secondItem="vuc-rK-PmY" secondAttribute="centerX" id="NY0-Qs-vwx"/>
                                             </constraints>
                                         </tableViewCellContentView>
                                     </tableViewCell>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="none" indentationWidth="10" id="Sf0-wi-j1K" userLabel="Cell Import Data">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="none" indentationWidth="10" id="Far-bm-sml" userLabel="Cell Create Data">
                                         <rect key="frame" x="0.0" y="99" width="390" height="43.666667938232422"/>
                                         <autoresizingMask key="autoresizingMask"/>
-                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="Sf0-wi-j1K" id="elQ-IW-qDl">
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="Far-bm-sml" id="Ol8-eM-Yws">
                                             <rect key="frame" x="0.0" y="0.0" width="390" height="43.666667938232422"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Rxx-Kh-PUk">
-                                                    <rect key="frame" x="127.66666666666669" y="7" width="135" height="30"/>
-                                                    <state key="normal" title="Import History Data"/>
+                                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="CRQ-I3-vQL">
+                                                    <rect key="frame" x="154" y="7" width="82" height="30"/>
+                                                    <state key="normal" title="Create Data"/>
                                                     <connections>
-                                                        <action selector="doUtilityDBImportDataBtn:" destination="CD1-9a-Pcp" eventType="touchUpInside" id="YO9-Sc-Pk6"/>
+                                                        <action selector="doUtilitySQLiteCreateDataBtn:" destination="CD1-9a-Pcp" eventType="touchUpInside" id="LMs-kX-Lms"/>
                                                     </connections>
                                                 </button>
                                             </subviews>
                                             <constraints>
-                                                <constraint firstItem="Rxx-Kh-PUk" firstAttribute="centerX" secondItem="elQ-IW-qDl" secondAttribute="centerX" id="002-2E-B8e"/>
-                                                <constraint firstItem="Rxx-Kh-PUk" firstAttribute="centerY" secondItem="elQ-IW-qDl" secondAttribute="centerY" id="L1Z-vk-v9l"/>
+                                                <constraint firstItem="CRQ-I3-vQL" firstAttribute="centerY" secondItem="Ol8-eM-Yws" secondAttribute="centerY" id="ItP-0r-Usp"/>
+                                                <constraint firstItem="CRQ-I3-vQL" firstAttribute="centerX" secondItem="Ol8-eM-Yws" secondAttribute="centerX" id="xhG-eo-s0b"/>
+                                            </constraints>
+                                        </tableViewCellContentView>
+                                    </tableViewCell>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="none" indentationWidth="10" id="db1-pp-tAr" userLabel="Cell Export Data">
+                                        <rect key="frame" x="0.0" y="142.66666793823242" width="390" height="43.666667938232422"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="db1-pp-tAr" id="oce-hY-VIg">
+                                            <rect key="frame" x="0.0" y="0.0" width="390" height="43.666667938232422"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="dP0-2U-mIk">
+                                                    <rect key="frame" x="154.66666666666666" y="7" width="81" height="30"/>
+                                                    <state key="normal" title="Export Data"/>
+                                                    <connections>
+                                                        <action selector="doUtilitySQLiteExportDataBtn:" destination="CD1-9a-Pcp" eventType="touchUpInside" id="C0S-Yp-Foq"/>
+                                                    </connections>
+                                                </button>
+                                            </subviews>
+                                            <constraints>
+                                                <constraint firstItem="dP0-2U-mIk" firstAttribute="centerX" secondItem="oce-hY-VIg" secondAttribute="centerX" id="1KF-au-jQe"/>
+                                                <constraint firstItem="dP0-2U-mIk" firstAttribute="centerY" secondItem="oce-hY-VIg" secondAttribute="centerY" id="dls-Kw-FDG"/>
+                                            </constraints>
+                                        </tableViewCellContentView>
+                                    </tableViewCell>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="none" indentationWidth="10" id="am6-79-vG2" userLabel="Cell Import Data">
+                                        <rect key="frame" x="0.0" y="186.33333587646484" width="390" height="43.666667938232422"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="am6-79-vG2" id="Ss8-xa-840">
+                                            <rect key="frame" x="0.0" y="0.0" width="390" height="43.666667938232422"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="cxO-SU-Gab">
+                                                    <rect key="frame" x="154.66666666666666" y="7" width="81" height="30"/>
+                                                    <state key="normal" title="Import Data"/>
+                                                    <connections>
+                                                        <action selector="doUtilitySQLiteImportDataBtn:" destination="CD1-9a-Pcp" eventType="touchUpInside" id="2W1-g7-gFw"/>
+                                                    </connections>
+                                                </button>
+                                            </subviews>
+                                            <constraints>
+                                                <constraint firstItem="cxO-SU-Gab" firstAttribute="centerY" secondItem="Ss8-xa-840" secondAttribute="centerY" id="Y2v-9a-Uw2"/>
+                                                <constraint firstItem="cxO-SU-Gab" firstAttribute="centerX" secondItem="Ss8-xa-840" secondAttribute="centerX" id="Yea-Jq-R6X"/>
+                                            </constraints>
+                                        </tableViewCellContentView>
+                                    </tableViewCell>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="none" indentationWidth="10" id="leh-5P-Z7r" userLabel="Cell Timing Test">
+                                        <rect key="frame" x="0.0" y="230.00000381469727" width="390" height="43.666667938232422"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="leh-5P-Z7r" id="pap-Bm-wRb">
+                                            <rect key="frame" x="0.0" y="0.0" width="390" height="43.666667938232422"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="UpX-P7-cnh">
+                                                    <rect key="frame" x="155" y="7" width="80" height="30"/>
+                                                    <state key="normal" title="Timing Test"/>
+                                                    <connections>
+                                                        <action selector="doUtilitySQLiteTimingTextBtn:" destination="CD1-9a-Pcp" eventType="touchUpInside" id="Vqt-t4-oRd"/>
+                                                    </connections>
+                                                </button>
+                                            </subviews>
+                                            <constraints>
+                                                <constraint firstItem="UpX-P7-cnh" firstAttribute="centerX" secondItem="pap-Bm-wRb" secondAttribute="centerX" id="428-NX-cbQ"/>
+                                                <constraint firstItem="UpX-P7-cnh" firstAttribute="centerY" secondItem="pap-Bm-wRb" secondAttribute="centerY" id="aZg-Bz-TeM"/>
                                             </constraints>
                                         </tableViewCellContentView>
                                     </tableViewCell>
                                 </cells>
                             </tableViewSection>
-                            <tableViewSection headerTitle="Appearance Name" id="hXa-yC-G2R">
+                            <tableViewSection headerTitle="Realm Utilities" id="2lg-0x-cs5">
+                                <cells>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="none" indentationWidth="10" id="c7x-Wp-lwG" userLabel="Cell Test Clear All Data">
+                                        <rect key="frame" x="0.0" y="329.66666984558105" width="390" height="43.666667938232422"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="c7x-Wp-lwG" id="Y48-Pf-xjB">
+                                            <rect key="frame" x="0.0" y="0.0" width="390" height="43.666667938232422"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="u1x-kD-z9U">
+                                                    <rect key="frame" x="140" y="7" width="110" height="30"/>
+                                                    <state key="normal" title="Clear All History"/>
+                                                    <connections>
+                                                        <action selector="doUtilityRealmClearHistoryBtn:" destination="CD1-9a-Pcp" eventType="touchUpInside" id="nPZ-nI-tbc"/>
+                                                    </connections>
+                                                </button>
+                                            </subviews>
+                                            <constraints>
+                                                <constraint firstItem="u1x-kD-z9U" firstAttribute="centerX" secondItem="Y48-Pf-xjB" secondAttribute="centerX" id="Hgh-XN-BJN"/>
+                                                <constraint firstItem="u1x-kD-z9U" firstAttribute="centerY" secondItem="Y48-Pf-xjB" secondAttribute="centerY" id="PzM-Ek-tcr"/>
+                                            </constraints>
+                                        </tableViewCellContentView>
+                                    </tableViewCell>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="none" indentationWidth="10" id="AtJ-yX-k75" userLabel="Cell Generate Test History">
+                                        <rect key="frame" x="0.0" y="373.33333778381348" width="390" height="43.666667938232422"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="AtJ-yX-k75" id="amp-jn-Pgq">
+                                            <rect key="frame" x="0.0" y="0.0" width="390" height="43.666667938232422"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="u8x-U4-ghk">
+                                                    <rect key="frame" x="120" y="7" width="150" height="30"/>
+                                                    <state key="normal" title="Generate Test History"/>
+                                                    <connections>
+                                                        <action selector="doUtilityRealmGenerateHistoryBtn:" destination="CD1-9a-Pcp" eventType="touchUpInside" id="byR-wc-HF1"/>
+                                                    </connections>
+                                                </button>
+                                            </subviews>
+                                            <constraints>
+                                                <constraint firstItem="u8x-U4-ghk" firstAttribute="centerY" secondItem="amp-jn-Pgq" secondAttribute="centerY" id="90R-IU-Te5"/>
+                                                <constraint firstItem="u8x-U4-ghk" firstAttribute="centerX" secondItem="amp-jn-Pgq" secondAttribute="centerX" id="GDI-BT-9RQ"/>
+                                            </constraints>
+                                        </tableViewCellContentView>
+                                    </tableViewCell>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="none" indentationWidth="10" id="fUB-ZG-ShZ" userLabel="Cell Generate Legacy Test History">
+                                        <rect key="frame" x="0.0" y="417.0000057220459" width="390" height="43.666667938232422"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="fUB-ZG-ShZ" id="00Z-0p-nOO">
+                                            <rect key="frame" x="0.0" y="0.0" width="390" height="43.666667938232422"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Cxe-IW-vMb">
+                                                    <rect key="frame" x="93.666666666666686" y="7" width="203" height="30"/>
+                                                    <state key="normal" title="Generate Legacy Test History"/>
+                                                    <connections>
+                                                        <action selector="doUtilityRealmGenerateLegacyBtn:" destination="CD1-9a-Pcp" eventType="touchUpInside" id="eCS-uI-zNq"/>
+                                                    </connections>
+                                                </button>
+                                            </subviews>
+                                            <constraints>
+                                                <constraint firstItem="Cxe-IW-vMb" firstAttribute="centerX" secondItem="00Z-0p-nOO" secondAttribute="centerX" id="arW-he-LiY"/>
+                                                <constraint firstItem="Cxe-IW-vMb" firstAttribute="centerY" secondItem="00Z-0p-nOO" secondAttribute="centerY" id="hK2-O8-Jan"/>
+                                            </constraints>
+                                        </tableViewCellContentView>
+                                    </tableViewCell>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="none" indentationWidth="10" id="3SC-VP-1St" userLabel="Cell Simulate Progress">
+                                        <rect key="frame" x="0.0" y="460.66667366027832" width="390" height="43.666667938232422"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="3SC-VP-1St" id="loi-cx-hcF">
+                                            <rect key="frame" x="0.0" y="0.0" width="390" height="43.666667938232422"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="AlB-LT-cca">
+                                                    <rect key="frame" x="133" y="7" width="124" height="30"/>
+                                                    <state key="normal" title="Simulate Progress"/>
+                                                    <connections>
+                                                        <action selector="doUtilityRealmGenerateStreaksBtn:" destination="CD1-9a-Pcp" eventType="touchUpInside" id="xmJ-jb-TYi"/>
+                                                    </connections>
+                                                </button>
+                                            </subviews>
+                                            <constraints>
+                                                <constraint firstItem="AlB-LT-cca" firstAttribute="centerY" secondItem="loi-cx-hcF" secondAttribute="centerY" id="0D1-E2-1AL"/>
+                                                <constraint firstItem="AlB-LT-cca" firstAttribute="centerX" secondItem="loi-cx-hcF" secondAttribute="centerX" id="igW-2Z-9Fi"/>
+                                            </constraints>
+                                        </tableViewCellContentView>
+                                    </tableViewCell>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="none" indentationWidth="10" id="hG4-mX-ruv" userLabel="Cell Export History Data">
+                                        <rect key="frame" x="0.0" y="504.33334159851074" width="390" height="43.666667938232422"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="hG4-mX-ruv" id="1cD-HS-zjM">
+                                            <rect key="frame" x="0.0" y="0.0" width="390" height="43.666667938232422"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="eFl-tL-qa9">
+                                                    <rect key="frame" x="128" y="7" width="134" height="30"/>
+                                                    <accessibility key="accessibilityConfiguration" identifier="util_db_btn_export_access"/>
+                                                    <state key="normal" title="Export History Data"/>
+                                                    <connections>
+                                                        <action selector="doUtilityRealmDBExportBtn:" destination="CD1-9a-Pcp" eventType="touchUpInside" id="Iti-Xd-QXK"/>
+                                                    </connections>
+                                                </button>
+                                            </subviews>
+                                            <constraints>
+                                                <constraint firstItem="eFl-tL-qa9" firstAttribute="centerX" secondItem="1cD-HS-zjM" secondAttribute="centerX" id="4Gi-ve-7aC"/>
+                                                <constraint firstItem="eFl-tL-qa9" firstAttribute="centerY" secondItem="1cD-HS-zjM" secondAttribute="centerY" id="Aeq-Cn-paw"/>
+                                            </constraints>
+                                        </tableViewCellContentView>
+                                    </tableViewCell>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="none" indentationWidth="10" id="GeT-AV-fii" userLabel="Cell Import History Data">
+                                        <rect key="frame" x="0.0" y="548.00000953674316" width="390" height="43.666667938232422"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="GeT-AV-fii" id="AtT-ng-gve">
+                                            <rect key="frame" x="0.0" y="0.0" width="390" height="43.666667938232422"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="bhq-Sp-CXh">
+                                                    <rect key="frame" x="127.66666666666669" y="7" width="135" height="30"/>
+                                                    <state key="normal" title="Import History Data"/>
+                                                    <connections>
+                                                        <action selector="doUtilityRealmDBImportBtn:" destination="CD1-9a-Pcp" eventType="touchUpInside" id="JvN-bf-9Iq"/>
+                                                    </connections>
+                                                </button>
+                                            </subviews>
+                                            <constraints>
+                                                <constraint firstItem="bhq-Sp-CXh" firstAttribute="centerX" secondItem="AtT-ng-gve" secondAttribute="centerX" id="ccx-aS-0TH"/>
+                                                <constraint firstItem="bhq-Sp-CXh" firstAttribute="centerY" secondItem="AtT-ng-gve" secondAttribute="centerY" id="xcU-WE-oiT"/>
+                                            </constraints>
+                                        </tableViewCellContentView>
+                                    </tableViewCell>
+                                </cells>
+                            </tableViewSection>
+                            <tableViewSection headerTitle="Date &amp; Time Test  Utilities" id="ImX-8b-ncH" userLabel="Date Time Test  Utilities">
+                                <cells>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="none" indentationWidth="10" id="Oid-2b-knT" userLabel="Add 1 Day">
+                                        <rect key="frame" x="0.0" y="647.66667747497559" width="390" height="43.666667938232422"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="Oid-2b-knT" id="slK-sz-hx4">
+                                            <rect key="frame" x="0.0" y="0.0" width="390" height="43.666667938232422"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="8CC-sS-K4Z">
+                                                    <rect key="frame" x="150" y="7" width="90" height="30"/>
+                                                    <state key="normal" title="Add One Day"/>
+                                                    <connections>
+                                                        <action selector="doUtilityRealmAddOneDayBtn:" destination="CD1-9a-Pcp" eventType="touchUpInside" id="hxC-ZX-52E"/>
+                                                    </connections>
+                                                </button>
+                                            </subviews>
+                                            <constraints>
+                                                <constraint firstItem="8CC-sS-K4Z" firstAttribute="centerX" secondItem="slK-sz-hx4" secondAttribute="centerX" id="YEG-WK-lfp"/>
+                                                <constraint firstItem="8CC-sS-K4Z" firstAttribute="centerY" secondItem="slK-sz-hx4" secondAttribute="centerY" id="er7-Kx-soz"/>
+                                            </constraints>
+                                        </tableViewCellContentView>
+                                    </tableViewCell>
+                                </cells>
+                            </tableViewSection>
+                            <tableViewSection headerTitle="Appearance" id="hXa-yC-G2R">
                                 <cells>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="none" indentationWidth="10" id="H2a-r6-K4L" userLabel="Appearance Name Cell">
-                                        <rect key="frame" x="0.0" y="198.66666603088379" width="390" height="43.666667938232422"/>
+                                        <rect key="frame" x="0.0" y="747.33334541320801" width="390" height="43.666667938232422"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="H2a-r6-K4L" id="Fvh-AD-6Ne">
                                             <rect key="frame" x="0.0" y="0.0" width="390" height="43.666667938232422"/>
@@ -97,10 +315,10 @@
                             <tableViewSection headerTitle="Settings" id="n78-aT-NfW">
                                 <cells>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="none" indentationWidth="10" id="Fuy-eB-CVN" userLabel="Cell Clear Settings">
-                                        <rect key="frame" x="0.0" y="298.33333396911621" width="390" height="43.666667938232422"/>
+                                        <rect key="frame" x="0.0" y="847.00001335144043" width="390" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="Fuy-eB-CVN" id="7Xb-De-znD">
-                                            <rect key="frame" x="0.0" y="0.0" width="390" height="43.666667938232422"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="390" height="44"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="kTo-RP-VVx">
@@ -118,13 +336,13 @@
                                         </tableViewCellContentView>
                                     </tableViewCell>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="none" indentationWidth="10" id="KjC-8e-ySM" userLabel="Cell Test Create Legacy">
-                                        <rect key="frame" x="0.0" y="342.00000190734863" width="390" height="43.666667938232422"/>
+                                        <rect key="frame" x="0.0" y="891.00001335144043" width="390" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="KjC-8e-ySM" id="UP2-9H-XtR">
-                                            <rect key="frame" x="0.0" y="0.0" width="390" height="43.666667938232422"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="390" height="44"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="XnG-k6-i5e">
+                                                <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="XnG-k6-i5e">
                                                     <rect key="frame" x="145.66666666666666" y="7" width="99" height="30"/>
                                                     <state key="normal" title="Show Settings"/>
                                                     <connections>
@@ -135,119 +353,6 @@
                                             <constraints>
                                                 <constraint firstItem="XnG-k6-i5e" firstAttribute="centerX" secondItem="UP2-9H-XtR" secondAttribute="centerX" id="ETS-uL-1Bv"/>
                                                 <constraint firstItem="XnG-k6-i5e" firstAttribute="centerY" secondItem="UP2-9H-XtR" secondAttribute="centerY" id="UrK-eH-WJI"/>
-                                            </constraints>
-                                        </tableViewCellContentView>
-                                    </tableViewCell>
-                                </cells>
-                            </tableViewSection>
-                            <tableViewSection headerTitle="Test Utilities" id="2lg-0x-cs5">
-                                <cells>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="none" indentationWidth="10" id="c7x-Wp-lwG" userLabel="Cell Test Clear All Data">
-                                        <rect key="frame" x="0.0" y="441.66666984558105" width="390" height="43.666667938232422"/>
-                                        <autoresizingMask key="autoresizingMask"/>
-                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="c7x-Wp-lwG" id="Y48-Pf-xjB">
-                                            <rect key="frame" x="0.0" y="0.0" width="390" height="43.666667938232422"/>
-                                            <autoresizingMask key="autoresizingMask"/>
-                                            <subviews>
-                                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="u1x-kD-z9U">
-                                                    <rect key="frame" x="140" y="7" width="110" height="30"/>
-                                                    <state key="normal" title="Clear All History"/>
-                                                    <connections>
-                                                        <action selector="doUtilityTestClearHistoryBtn:" destination="CD1-9a-Pcp" eventType="touchUpInside" id="nPZ-nI-tbc"/>
-                                                    </connections>
-                                                </button>
-                                            </subviews>
-                                            <constraints>
-                                                <constraint firstItem="u1x-kD-z9U" firstAttribute="centerX" secondItem="Y48-Pf-xjB" secondAttribute="centerX" id="Hgh-XN-BJN"/>
-                                                <constraint firstItem="u1x-kD-z9U" firstAttribute="centerY" secondItem="Y48-Pf-xjB" secondAttribute="centerY" id="PzM-Ek-tcr"/>
-                                            </constraints>
-                                        </tableViewCellContentView>
-                                    </tableViewCell>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="none" indentationWidth="10" id="AtJ-yX-k75" userLabel="Cell Test Create Data">
-                                        <rect key="frame" x="0.0" y="485.33333778381348" width="390" height="43.666667938232422"/>
-                                        <autoresizingMask key="autoresizingMask"/>
-                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="AtJ-yX-k75" id="amp-jn-Pgq">
-                                            <rect key="frame" x="0.0" y="0.0" width="390" height="43.666667938232422"/>
-                                            <autoresizingMask key="autoresizingMask"/>
-                                            <subviews>
-                                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="u8x-U4-ghk">
-                                                    <rect key="frame" x="120" y="7" width="150" height="30"/>
-                                                    <state key="normal" title="Generate Test History"/>
-                                                    <connections>
-                                                        <action selector="doUtilityTestGenerateHistoryBtn:" destination="CD1-9a-Pcp" eventType="touchUpInside" id="byR-wc-HF1"/>
-                                                    </connections>
-                                                </button>
-                                            </subviews>
-                                            <constraints>
-                                                <constraint firstItem="u8x-U4-ghk" firstAttribute="centerY" secondItem="amp-jn-Pgq" secondAttribute="centerY" id="90R-IU-Te5"/>
-                                                <constraint firstItem="u8x-U4-ghk" firstAttribute="centerX" secondItem="amp-jn-Pgq" secondAttribute="centerX" id="GDI-BT-9RQ"/>
-                                            </constraints>
-                                        </tableViewCellContentView>
-                                    </tableViewCell>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="none" indentationWidth="10" id="fUB-ZG-ShZ" userLabel="Cell Test Create Legacy">
-                                        <rect key="frame" x="0.0" y="529.0000057220459" width="390" height="43.666667938232422"/>
-                                        <autoresizingMask key="autoresizingMask"/>
-                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="fUB-ZG-ShZ" id="00Z-0p-nOO">
-                                            <rect key="frame" x="0.0" y="0.0" width="390" height="43.666667938232422"/>
-                                            <autoresizingMask key="autoresizingMask"/>
-                                            <subviews>
-                                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Cxe-IW-vMb">
-                                                    <rect key="frame" x="93.666666666666686" y="7" width="203" height="30"/>
-                                                    <state key="normal" title="Generate Legacy Test History"/>
-                                                    <connections>
-                                                        <action selector="doUtilityTestGenerateLegacyBtn:" destination="CD1-9a-Pcp" eventType="touchUpInside" id="eCS-uI-zNq"/>
-                                                    </connections>
-                                                </button>
-                                            </subviews>
-                                            <constraints>
-                                                <constraint firstItem="Cxe-IW-vMb" firstAttribute="centerX" secondItem="00Z-0p-nOO" secondAttribute="centerX" id="arW-he-LiY"/>
-                                                <constraint firstItem="Cxe-IW-vMb" firstAttribute="centerY" secondItem="00Z-0p-nOO" secondAttribute="centerY" id="hK2-O8-Jan"/>
-                                            </constraints>
-                                        </tableViewCellContentView>
-                                    </tableViewCell>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="none" indentationWidth="10" id="3SC-VP-1St" userLabel="Cell Test Create Streaks">
-                                        <rect key="frame" x="0.0" y="572.66667366027832" width="390" height="43.666667938232422"/>
-                                        <autoresizingMask key="autoresizingMask"/>
-                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="3SC-VP-1St" id="loi-cx-hcF">
-                                            <rect key="frame" x="0.0" y="0.0" width="390" height="43.666667938232422"/>
-                                            <autoresizingMask key="autoresizingMask"/>
-                                            <subviews>
-                                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="AlB-LT-cca">
-                                                    <rect key="frame" x="133" y="7" width="124" height="30"/>
-                                                    <state key="normal" title="Simulate Progress"/>
-                                                    <connections>
-                                                        <action selector="doUtilityTestGenerateStreaksBtn:" destination="CD1-9a-Pcp" eventType="touchUpInside" id="xmJ-jb-TYi"/>
-                                                    </connections>
-                                                </button>
-                                            </subviews>
-                                            <constraints>
-                                                <constraint firstItem="AlB-LT-cca" firstAttribute="centerY" secondItem="loi-cx-hcF" secondAttribute="centerY" id="0D1-E2-1AL"/>
-                                                <constraint firstItem="AlB-LT-cca" firstAttribute="centerX" secondItem="loi-cx-hcF" secondAttribute="centerX" id="igW-2Z-9Fi"/>
-                                            </constraints>
-                                        </tableViewCellContentView>
-                                    </tableViewCell>
-                                </cells>
-                            </tableViewSection>
-                            <tableViewSection headerTitle="Date &amp; Time Test  Utilities" id="ImX-8b-ncH" userLabel="Date Time Test  Utilities">
-                                <cells>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="none" indentationWidth="10" id="Oid-2b-knT" userLabel="Add 1 Day">
-                                        <rect key="frame" x="0.0" y="672.33334159851074" width="390" height="43.666667938232422"/>
-                                        <autoresizingMask key="autoresizingMask"/>
-                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="Oid-2b-knT" id="slK-sz-hx4">
-                                            <rect key="frame" x="0.0" y="0.0" width="390" height="43.666667938232422"/>
-                                            <autoresizingMask key="autoresizingMask"/>
-                                            <subviews>
-                                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="8CC-sS-K4Z">
-                                                    <rect key="frame" x="150" y="7" width="90" height="30"/>
-                                                    <state key="normal" title="Add One Day"/>
-                                                    <connections>
-                                                        <action selector="doUtilityTestAddOneDayBtn:" destination="CD1-9a-Pcp" eventType="touchUpInside" id="hxC-ZX-52E"/>
-                                                    </connections>
-                                                </button>
-                                            </subviews>
-                                            <constraints>
-                                                <constraint firstItem="8CC-sS-K4Z" firstAttribute="centerX" secondItem="slK-sz-hx4" secondAttribute="centerX" id="YEG-WK-lfp"/>
-                                                <constraint firstItem="8CC-sS-K4Z" firstAttribute="centerY" secondItem="slK-sz-hx4" secondAttribute="centerY" id="er7-Kx-soz"/>
                                             </constraints>
                                         </tableViewCellContentView>
                                     </tableViewCell>
