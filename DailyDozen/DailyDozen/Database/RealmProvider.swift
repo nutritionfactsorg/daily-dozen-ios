@@ -397,7 +397,7 @@ class RealmProvider {
             try realm.write {
                 realm.create(
                     RealmDataCountRecord.self,
-                    value: ["pid": pid, "count": count] as [String : Any],
+                    value: ["pid": pid, "count": count] as [String: Any],
                     update: Realm.UpdatePolicy.modified)
                 updateStreak(count: count, date: date, countType: countType)
             }
@@ -416,7 +416,7 @@ class RealmProvider {
             try realm.write {
                 realm.create(
                     RealmDataWeightRecord.self,
-                    value: ["pid": pid, "kg": kg, "time": date.datestampHHmm] as [String : Any],
+                    value: ["pid": pid, "kg": kg, "time": date.datestampHHmm] as [String: Any],
                     update: Realm.UpdatePolicy.all)
             }
         } catch {

@@ -13,12 +13,15 @@ extension UIApplication {
     var keyWindowInConnectedScenes: UIWindow? {
         // A key window receives keyboard and other non-touch related events.
         // Only one window at a time may be the key window.
+        let windowScenes: [UIWindowScene] = connectedScenes.compactMap({ $0 as? UIWindowScene })
+        let windows: [UIWindow] = windowScenes.flatMap({ $0.windows })
         return windows.first(where: { $0.isKeyWindow })
     }
 
     func topViewController() -> UIViewController? {
-        
-        let keyWindow = UIApplication.shared.windows.filter {$0.isKeyWindow}.first
+        let windowScenes: [UIWindowScene] = connectedScenes.compactMap({ $0 as? UIWindowScene })
+        let windows: [UIWindow] = windowScenes.flatMap({ $0.windows })
+        let keyWindow = windows.filter {$0.isKeyWindow}.first
 
         if var topController = keyWindow?.rootViewController {
             
