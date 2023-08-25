@@ -28,7 +28,7 @@ class DozeEntryViewController: UIViewController {
             if dozeDailyStateCount == dozeDailyStateCountMaximum {
                 starImage.popIn() // Show daily achievement star
                 // Ask the user for ratings and reviews in the App Store
-                SKStoreReviewController.requestReview()
+                SKStoreReviewController.requestReviewInCurrentScene()
             } else {
                 starImage.popOut() // Hide daily achievement star
             }

@@ -125,6 +125,7 @@
 		4C7D52F72A3B8F3200386832 /* InfoFaqTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C7D52F62A3B8F3200386832 /* InfoFaqTableViewController.swift */; };
 		4C7D52F92A3B8FDA00386832 /* InfoFaqTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C7D52F82A3B8FDA00386832 /* InfoFaqTableViewCell.swift */; };
 		4C7D52FF2A3B9C3D00386832 /* InfoFaqHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C7D52FE2A3B9C3D00386832 /* InfoFaqHeaderView.swift */; };
+		4C7E17052A987F3B00A515F9 /* SKStoreReviewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C7E17042A987F3B00A515F9 /* SKStoreReviewController.swift */; };
 		4CAE49022A95D07B00B5ED51 /* SQLite.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4CAE48EF2A95C46E00B5ED51 /* SQLite.swift */; };
 		4CAE49032A95D07B00B5ED51 /* SQLiteFramework.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4CAE48F32A95C46E00B5ED51 /* SQLiteFramework.swift */; };
 		4CAE49042A95D07B00B5ED51 /* SQLiteExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4CAE48F02A95C46E00B5ED51 /* SQLiteExtension.swift */; };
@@ -361,6 +362,7 @@
 		4C7D52F62A3B8F3200386832 /* InfoFaqTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InfoFaqTableViewController.swift; sourceTree = "<group>"; };
 		4C7D52F82A3B8FDA00386832 /* InfoFaqTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InfoFaqTableViewCell.swift; sourceTree = "<group>"; };
 		4C7D52FE2A3B9C3D00386832 /* InfoFaqHeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InfoFaqHeaderView.swift; sourceTree = "<group>"; };
+		4C7E17042A987F3B00A515F9 /* SKStoreReviewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SKStoreReviewController.swift; sourceTree = "<group>"; };
 		4C86097E2A0491C500A6EBDE /* fr */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = fr; path = fr.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		4C86097F2A0491C500A6EBDE /* fr */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = fr; path = fr.lproj/Localizable.strings; sourceTree = "<group>"; };
 		4C8609802A0491C500A6EBDE /* fr */ = {isa = PBXFileReference; lastKnownFileType = text.json; name = fr; path = fr.lproj/DozeDetailData.json; sourceTree = "<group>"; };
@@ -1105,6 +1107,7 @@
 				CF2680011FB477AD004A6200 /* Date.swift */,
 				49208ADB2585F16F00E994CA /* DateManager.swift */,
 				CF9EC1BF202196B100C7B3CA /* Fonts.swift */,
+				4C7E17042A987F3B00A515F9 /* SKStoreReviewController.swift */,
 				4CBCB2BA2983779F00015393 /* Strings.swift */,
 				CFAAB3761F9F3FDF00B24748 /* URL.swift */,
 				499089852665DA1A0053D74D /* UIApplication.swift */,
@@ -1660,6 +1663,7 @@
 				CF64DF311FB5DFCF00B4D124 /* DozeDetailSizeCell.swift in Sources */,
 				4C22C9A52A737DEE0008D7B6 /* RealmDataWeightValues.swift in Sources */,
 				4CAE49172A95E8F400B5ED51 /* SQLiteConnector.swift in Sources */,
+				4C7E17052A987F3B00A515F9 /* SKStoreReviewController.swift in Sources */,
 				49CA08A826C39DA8002D9F66 /* UnitsUtility.swift in Sources */,
 				CFB5568C1FD180C3003B5813 /* Report.swift in Sources */,
 				498170952391B6AB0033882C /* TweakEntrySections.swift in Sources */,
