@@ -41,7 +41,7 @@ class DozeEntryPagerViewController: UIViewController {
             navBar.titleTextAttributes = [NSAttributedString.Key.foregroundColor: UIColor.white]
             navBar.barTintColor = ColorManager.style.mainMedium
             navBar.tintColor = UIColor.white
-            //navBar.backgroundColor = ColorManager.style.mainMedium // new in iOS 15
+            navBar.backgroundColor = ColorManager.style.mainMedium
         }
         
         title = NSLocalizedString("navtab.doze", comment: "Daily Dozen (proper noun) navigation tab")
