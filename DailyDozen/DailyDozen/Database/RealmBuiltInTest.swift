@@ -6,7 +6,6 @@
 //
 // swiftlint:disable cyclomatic_complexity
 // swiftlint:disable function_body_length
-// swiftlint:disable type_body_length
 
 import Foundation
 import HealthKit
@@ -18,28 +17,11 @@ public struct RealmBuiltInTest {
     
     public let hkHealthStore = HKHealthStore()
     
-    public func runSuite() { // :@@@:
-        LogService.shared.debug(">>> :DEBUG:WAYPOINT: DatabaseBuiltInTest runSuite()")        
-        LogService.shared.debug(">>> HKHealthStore.isHealthDataAvailable() \(HKHealthStore.isHealthDataAvailable())")
-        
-        //HealthManager.shared.exportHKWeight(name: "BIT00")
-        //RealmBuiltInTest.shared.doGenerateDBHistoryBIT(numberOfDays: 3, defaultDB: false)
-        //RealmBuiltInTest.shared.doGenerateDBHistoryBIT(numberOfDays: 365*3, defaultDB: false) // 1095 days, 2190 weight entries
-        
-        //doGenerateHKSampleDataBIT()
-        // :!!!:NYI: BIT runSuite()
-    }
-    
-    /// Clear Documents/Legacy, Documents/V01 and Library/Database/V02 Realm data.
+    /// Clear Documents/V01 and Library/Database/V02 Realm data.
     func doClearAllDataInMigrationChainBIT() {
         LogService.shared.debug(
             "••BEGIN•• UtilityTableViewController doClearAllDataInMigrationChainBIT()"
         )
-        
-        let urlLegacy = URL.inDocuments(filename: RealmProviderLegacy.realmFilename)
-        let realmMngrLegacy = RealmManagerLegacy(fileUrl: urlLegacy)
-        let realmDbOld = realmMngrLegacy.realmDb
-        realmDbOld.deleteDBAllLegacy()
         
         let urlV01 = URL.inDocuments(filename: RealmProvider.realmFilename)
         let realmMngrV01 = RealmManager(fileURL: urlV01)
@@ -54,26 +36,6 @@ public struct RealmBuiltInTest {
             "••EXIT•• UtilityTableViewController doClearAllDataInMigrationChainBIT()"
         )
     }
-    
-    func doGenerateDBLegacyDataBIT() {
-        let urlLegacy = URL.inDocuments(filename: RealmProviderLegacy.realmFilename)
-        let realmMngrLegacy = RealmManagerLegacy(fileUrl: urlLegacy)
-        let realmDbLegacy = realmMngrLegacy.realmDb
-        // World Pasta Day: Oct 25, 1995
-        let date1995Pasta = Date(datestampKey: "19951025")!
-        // Add known content to legacy
-        let dozeCheck = realmDbLegacy.getDozeLegacy(for: date1995Pasta)
-        realmDbLegacy.saveStatesLegacy([true, false, true], id: dozeCheck.items[0].id) // Beans
-        realmDbLegacy.saveStatesLegacy([false, true, false], id: dozeCheck.items[2].id) // Other Fruit
-    }
-    
-    func doGenerateDBV01DataBIT() {
-        fatalError(":NYI: doGenerateDBV01DataBIT")
-    } 
-    
-    func doGenerateDBV02DataBIT() {
-        fatalError(":NYI: doGenerateDBV02DataBIT")
-    } 
     
     /// Create initial state for 
     public func doGenerateHKSampleDataBIT() {
@@ -97,8 +59,8 @@ public struct RealmBuiltInTest {
         LogService.shared.debug(
             "••BEGIN•• doGenerateDBHistoryBIT(\(numberOfDays))"
         )
-        let urlLegacy = URL.inDocuments(filename: "test_\(numberOfDays)_days.realm")
-        let realmMngrCheck = RealmManager(fileURL: urlLegacy)
+        let url = URL.inDocuments(filename: "test_\(numberOfDays)_days.realm")
+        let realmMngrCheck = RealmManager(fileURL: url)
         let realmProvider = realmMngrCheck.realmDb
         
         let calendar = Calendar.current
@@ -147,42 +109,6 @@ public struct RealmBuiltInTest {
         }
         LogService.shared.debug(
             "••EXIT•• UtilityTableViewController doGenerateDBHistoryBIT(…)"
-        )
-    }
-    
-    func doGenerateDBHistoryLegacyBIT(numberOfDays: Int) {
-        LogService.shared.debug(
-            "••BEGIN•• doGenerateDBHistoryLegacyBIT(\(numberOfDays))"
-        )
-        let urlLegacy = URL.inDocuments(filename: "test_\(numberOfDays)_days_legacy.realm")
-        let realmMngrCheckLegacy = RealmManagerLegacy(fileUrl: urlLegacy)
-        let realmProviderLegacy = realmMngrCheckLegacy.realmDb
-        
-        let calendar = Calendar.current
-        let today = DateManager.currentDatetime() // today
-        
-        let dateComponents = DateComponents(
-            calendar: calendar,
-            year: today.year, month: today.month, day: today.day,
-            hour: 0, minute: 0, second: 0
-        )
-        var date = calendar.date(from: dateComponents)!
-        
-        for _ in 0..<numberOfDays { 
-            let stepByDay = DateComponents(day: -1)
-            date = calendar.date(byAdding: stepByDay, to: date)!
-            let dozely = realmProviderLegacy.getDozeLegacy(for: date)
-            
-            // Add data states
-            // #0 beans
-            realmProviderLegacy.saveStatesLegacy([true, true, true], id: dozely.items[0].id)
-            // #2 fruit
-            realmProviderLegacy.saveStatesLegacy([Bool.random(), Bool.random(), Bool.random()], id: dozely.items[2].id)
-            
-            // pre 21 tweaks has no weight entries.
-        }
-        LogService.shared.debug(
-            "••EXIT•• doGenerateDBHistoryLegacyBIT(…)"
         )
     }
     
@@ -240,7 +166,7 @@ public struct RealmBuiltInTest {
         var timeB = Date().getCurrentBenchmarkSeconds
         LogService.shared.debug("\t2\ttime=\t\(timeB - timeA)\tsec")
         activityProgress?.setProgress(1/12)
-
+        
         // 7 days 
         timeA = timeB
         for i in 0 ..< 7 {
@@ -250,7 +176,7 @@ public struct RealmBuiltInTest {
         timeB = Date().getCurrentBenchmarkSeconds
         LogService.shared.debug("\t7\ttime=\t\(timeB - timeA)\tsec")
         activityProgress?.setProgress(2/12)
-
+        
         // 14 days
         timeA = timeB
         for i in 0 ..< 14 {
@@ -260,7 +186,7 @@ public struct RealmBuiltInTest {
         timeB = Date().getCurrentBenchmarkSeconds
         LogService.shared.debug("\t14\ttime=\t\(timeB - timeA)\tsec")
         activityProgress?.setProgress(3/12)
-
+        
         // Max streak days
         timeA = timeB
         for i in 0 ..< maxStreak {
@@ -286,7 +212,7 @@ public struct RealmBuiltInTest {
         timeB = Date().getCurrentBenchmarkSeconds
         LogService.shared.debug("\t\(maxStreak)\ttime=\t\(timeB - timeA)\tsec")
         activityProgress?.setProgress(6/12)
-
+        
         // 2 days: by editing streak history with 0
         timeA = timeB
         for i in (0 ..< 14).reversed() {
@@ -300,7 +226,7 @@ public struct RealmBuiltInTest {
         timeB = Date().getCurrentBenchmarkSeconds
         LogService.shared.debug("\t19\ttime=\t\(timeB - timeA)\tsec")
         activityProgress?.setProgress(7/12)
-
+        
         // 7 days: by editing streak history to add full count
         timeA = timeB
         for i in (0 ..< 15).reversed() {
@@ -318,7 +244,7 @@ public struct RealmBuiltInTest {
         timeB = Date().getCurrentBenchmarkSeconds
         LogService.shared.debug("\t16\ttime=\t\(timeB - timeA)\tsec")
         activityProgress?.setProgress(8/12)
-
+        
         // 14 days
         timeA = timeB
         for i in (0 ..< 14).reversed() {
@@ -328,7 +254,7 @@ public struct RealmBuiltInTest {
         timeB = Date().getCurrentBenchmarkSeconds
         LogService.shared.debug("\t14\ttime=\t\(timeB - timeA)\tsec")
         activityProgress?.setProgress(9/12)
-
+        
         // Max streak days
         timeA = timeB
         for i in (0 ..< maxStreak).reversed() {
@@ -354,13 +280,13 @@ public struct RealmBuiltInTest {
         timeB = Date().getCurrentBenchmarkSeconds
         LogService.shared.debug("\t\(maxStreak)\ttime=\t\(timeB - timeA)\tsec")
         activityProgress?.setProgress(12/12)
-
+        
         let timeOut = Date().getCurrentBenchmarkSeconds
         let lapsed = timeOut - timeIn
         LogService.shared.debug(
             "••EXIT•• UtilityTableViewController doGenerateDBStreaksBIT() \(lapsed) sec"
         )
-// :!!!:        activityProgress?.completed()
+        // :!!!:        activityProgress?.completed()
     }
     
     // MARK: - Unsynced HK Actions

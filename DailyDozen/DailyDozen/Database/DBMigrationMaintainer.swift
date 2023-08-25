@@ -31,7 +31,7 @@ public struct DBMigrationMaintainer {
     private func getMigrationLevel() -> Int {
         let fm = FileManager.default
         // Check for version V03 SQLite
-        if fm.fileExists(atPath: URL.inDatabase(filename: SqliteConnector.sqliteFilename).path) {
+        if fm.fileExists(atPath: URL.inDatabase(filename: SQLiteConnector.sqliteFilename).path) {
             return 3
         }
 
@@ -44,9 +44,6 @@ public struct DBMigrationMaintainer {
         if fm.fileExists(atPath: URL.inDocuments(filename: RealmProvider.realmFilename).path) {
             return 1
         }
-        
-        // Check for version Legacy (V00)
-        // return 0 -- no longer supported
         
         // Create Libary/Database directory if not present
         let databaseUrl = URL.inLibrary().appendingPathComponent("Database", isDirectory: true)

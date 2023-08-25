@@ -53,12 +53,6 @@ class DailyDozenTests: XCTestCase {
         print("\n::: testB :::")
         let date = date2009Porridge
         
-        let urlLegacy = workingUrl.appendingPathComponent("testBLegacy.realm", isDirectory: false)
-        let realmLegacy = RealmProviderLegacy(fileURL: urlLegacy)
-        let dozeA = realmLegacy.getDozeLegacy(for: date)
-        let dozeAItems: List<Item> = dozeA.items
-        realmLegacy.saveStatesLegacy([true, true, true], id: dozeAItems[0].id)
-        
         let urlV01 = workingUrl.appendingPathComponent("testBV01.realm", isDirectory: false)
         let realmV01 = RealmProvider(fileURL: urlV01)
         _ = realmV01.getDailyTracker(date: date)
@@ -79,22 +73,10 @@ class DailyDozenTests: XCTestCase {
         // Oct  2, 2013 Nationale Kale Day
         let date00 = date2013Kale
 
-        let urlLegacy = workingUrl.appendingPathComponent("testCLegacy.realm", isDirectory: false)
-        let realmMngrLegacy = RealmManagerLegacy(fileUrl: urlLegacy)
-        let realmDBLegacy = realmMngrLegacy.realmDb
-        realmDBLegacy.deleteDBAllLegacy()
         let urlV01 = workingUrl.appendingPathComponent("testCV01.realm", isDirectory: false)
         let realmMngrV01 = RealmManager(fileURL: urlV01)
         let realmDBV01 = realmMngrV01.realmDb
         realmDBV01.deleteDBAll()
-
-        // Add known content to legacy
-        let dozeA = realmDBLegacy.getDozeLegacy(for: date00)
-        realmDBLegacy.saveStatesLegacy([true, false, true], id: dozeA.items[0].id) // Beans
-        
-        // 01: export legacy file, then import to new database
-        let filename01 = realmMngrLegacy.csvExport()
-        realmMngrV01.csvImport(filename: filename01)
 
         // Check new content length & values
         let trackersPass01 = realmDBV01.getDailyTrackers()

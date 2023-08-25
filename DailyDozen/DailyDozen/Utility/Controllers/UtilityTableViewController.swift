@@ -35,23 +35,23 @@ class UtilityTableViewController: UITableViewController {
     // MARK: - SQLite Utilities
     
     @IBAction func doUtilitySQLiteClearDbBtn(_ sender: UIButton) {
-        SqliteConnector.run.clearDb()
+        SQLiteConnector.run.clearDb()
     }
     
     @IBAction func doUtilitySQLiteCreateDataBtn(_ sender: UIButton) {
-        SqliteConnector.run.createData()
+        SQLiteConnector.run.createData()
     }
     
     @IBAction func doUtilitySQLiteExportDataBtn(_ sender: UIButton) {
-        SqliteConnector.run.exportData()
+        SQLiteConnector.run.exportData()
     }
     
     @IBAction func doUtilitySQLiteImportDataBtn(_ sender: UIButton) {
-        SqliteConnector.run.importData()
+        SQLiteConnector.run.importData()
     }
     
     @IBAction func doUtilitySQLiteTimingTextBtn(_ sender: UIButton) {
-        SqliteConnector.run.timingTest()
+        SQLiteConnector.run.timingTest()
     }
     
     // MARK: - Realm Utilities
@@ -75,10 +75,6 @@ class UtilityTableViewController: UITableViewController {
     @IBAction func doUtilityRealmGenerateHistoryBtn(_ sender: UIButton) {
         // half month
         RealmBuiltInTest.shared.doGenerateDBHistoryBIT(numberOfDays: 15, defaultDB: true)
-    }
-    
-    @IBAction func doUtilityRealmGenerateLegacyBtn(_ sender: UIButton) {
-        RealmBuiltInTest.shared.doGenerateDBLegacyDataBIT()
     }
     
     /// "Simulate Progress"

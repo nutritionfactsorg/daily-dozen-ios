@@ -21,26 +21,38 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     
     var window: UIWindow?
     
-    func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
+    func application(
+        _ application: UIApplication, 
+        didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?
+    ) -> Bool {
         let logger = LogService.shared
         logger.logLevel = LogServiceLevel.off
         
+        // =====  DEBUG SETUP  =====
         #if DEBUG
-        print("PRODUCT_BUNDLE_IDENTIFIER = \(Bundle.main.bundleIdentifier ?? "not found")")
+        let identifier = Bundle.main.bundleIdentifier ?? "not found"
+        print("PRODUCT_BUNDLE_IDENTIFIER = \(identifier)")
         
         printDeviceInfo()
         printLocaleInfo()
         
-        print(":DEBUG:WAYPOINT: AppDelegate didFinishLaunchingWithOptions\n\((URL.inDocuments().path))")
+        print("""
+        :DEBUG:WAYPOINT: AppDelegate didFinishLaunchingWithOptions
+        \((URL.inDocuments().path))
+        """)
         logger.logLevel = LogServiceLevel.verbose
         logger.useLogFile(nameToken: "dev") // logger.useLogFileDefault()
-        logger.debug("::::: DEBUG :::::\nAppDelegate didFinishLaunchingWithOptions DEBUG enabled")
+        logger.debug("""
+        ::::: DEBUG :::::
+        AppDelegate didFinishLaunchingWithOptions DEBUG enabled
+        """)
         
-        RealmBuiltInTest.shared.runSuite()
+        SQLiteBuiltInTest.shared.runSuite()
         
         logger.debug(":::::::::::::::::\n")
         #endif
         
+        // =====  SIMULATOR SETUP  =====
         #if targetEnvironment(simulator)
         let bundle = Bundle(for: type(of: self))
         logger.debug("""
@@ -49,34 +61,19 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         App Documents (log files and exports) Directory:\n\(URL.inDocuments().path)\n
         App Library (database) Directory:\n\(URL.inLibrary().path)\n
         """)
-
-        /*
-        // Preliminary integrity checks.
-        let realmMngrOldCheck = RealmManagerLegacy(workingDirUrl: URL.inDocuments())
-        let realmDbOldCheck = realmMngrOldCheck.realmDb
-        // World Pasta Day: Oct 25, 1995
-        let date1995Pasta = Date(datestampKey: "19951025")!
-        // Add known content to legacy
-        let dozeCheck = realmDbOldCheck.getDozeLegacy(for: date1995Pasta)
-        realmDbOldCheck.saveStatesLegacy([true, false, true], id: dozeCheck.items[0].id) // Beans
-        realmDbOldCheck.saveStatesLegacy([false, true, false], id: dozeCheck.items[2].id) // Other Fruits
-        */
- 
         logger.debug(":::::::::::::::::::::::::::::::::\n")
         #endif
         
-        // =====  Global Setup  =====
+        // =====  GLOBAL SETUP  =====
         
         // ----- Database Setup -----
-        RealmMaintainer.shared.doMigration()
+        DBMigrationMaintainer.shared.doMigration()
         
         // ----- User Interface Setup -----
-        // Note: User Interface particulars would be in SceneDelegate for newer impementations.
         // `0` used for variable number of lines. :???: double check if needed
         UILabel.appearance(whenContainedInInstancesOf: [UISegmentedControl.self]).numberOfLines = 0
         
-        // ----- Notification Setup -----
-        
+        // ----- Notification Setup -----        
         UNUserNotificationCenter.current().requestAuthorization(options: [.alert, .sound, .badge]) { (_, error) in
             if let error = error {
                 logger.debug("AppDelegate didFinishLaunchingWithOptions \(error.localizedDescription)")
@@ -101,9 +98,6 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
             Analytics.setAnalyticsCollectionEnabled(false)
             LogService.shared.info("AppDelegate setAnalyticsCollectionEnabled(false)")
         }
-        #if DEBUG
-        #else
-        #endif
         
         return true
     }

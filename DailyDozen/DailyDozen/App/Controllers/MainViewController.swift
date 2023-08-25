@@ -38,7 +38,7 @@ class MainViewController: UIViewController {
     private func setupUnitsType() {
         // ----- Settings: Units Type -----
         if UserDefaults.standard.bool(forKey: SettingsKeys.hasSeenFirstLaunch) == false {
-            // Set true to Show UnitsType Toggle to be similar to legacy user's experience
+            // Set true to Show UnitsType Toggle
             UserDefaults.standard.set(true, forKey: SettingsKeys.unitsTypeToggleShowPref)
         }
         
@@ -250,7 +250,7 @@ extension MainViewController: UNUserNotificationCenterDelegate {
         willPresent notification: UNNotification,
         withCompletionHandler completionHandler: @escaping (UNNotificationPresentationOptions) -> Void) {
 
-        completionHandler([.alert, .sound])
+            completionHandler([.alert, .sound])
     }
 
     func userNotificationCenter(

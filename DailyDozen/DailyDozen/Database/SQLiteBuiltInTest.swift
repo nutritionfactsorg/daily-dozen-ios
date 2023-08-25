@@ -15,4 +15,15 @@ public struct SQLiteBuiltInTest {
     
     public let hkHealthStore = HKHealthStore()
     
+    public func runSuite() {
+        LogService.shared.debug(">>> :DEBUG:WAYPOINT: SQLiteBuiltInTest runSuite()")        
+        LogService.shared.debug(">>> HKHealthStore.isHealthDataAvailable() \(HKHealthStore.isHealthDataAvailable())")
+        
+        //HealthManager.shared.exportHKWeight(name: "BIT00")
+        //SQLiteBuiltInTest.shared.doGenerateDBHistoryBIT(numberOfDays: 3, defaultDB: false)
+        //SQLiteBuiltInTest.shared.doGenerateDBHistoryBIT(numberOfDays: 365*3, defaultDB: false) // 1095 days, 2190 weight entries
+        
+        //doGenerateHKSampleDataBIT()
+    }
+    
 }

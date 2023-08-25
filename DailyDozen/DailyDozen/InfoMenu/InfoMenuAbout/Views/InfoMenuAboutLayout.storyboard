@@ -2,7 +2,6 @@
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="21701" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="NTs-nj-edx">
     <device id="retina4_7" orientation="portrait" appearance="light"/>
     <dependencies>
-        <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="21679"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
@@ -263,14 +262,6 @@ Volunteer translators:</string>
             <point key="canvasLocation" x="157" y="80"/>
         </scene>
     </scenes>
-    <designables>
-        <designable name="Zgt-w4-qQw">
-            <size key="intrinsicContentSize" width="161" height="99.5"/>
-        </designable>
-        <designable name="dwQ-CS-gz3">
-            <size key="intrinsicContentSize" width="1238.5" height="20"/>
-        </designable>
-    </designables>
     <resources>
         <image name="dr_greger" width="500" height="500"/>
         <image name="logo" width="2666" height="695"/>

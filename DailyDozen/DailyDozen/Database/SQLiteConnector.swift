@@ -1,14 +1,20 @@
 //
-//  SqliteConnector.swift
-//  SqliteMigrateLegacy12/Database
+//  SQLiteConnector.swift
+//  Database
 //
 //  Copyright © 2023 NutritionFacts.org. All rights reserved.
 //
 
 import Foundation
 
-struct SqliteConnector {
-    static var run = SqliteConnector()
+struct SQLiteConnector {
+    static var run = SQLiteConnector()
+    //
+    public static let sqliteFilename = "NutritionFacts.sqlite3"
+    public static let sqliteFilenameScratch = "NutritionFacts.scratch.sqlite3"
+    public static func sqliteFilenameNowstamp() -> String {
+        return "NutritionFacts.\(Date.datestampNow()).sqlite3"
+    }
     
     let dbUrl: URL
     let sqliteApi: SQLiteApi
@@ -21,7 +27,7 @@ struct SqliteConnector {
     func clearDb() {
         print("run clearDb")
     }
-
+    
     func createData() {
         print("run createData")
         //let r = SqlDataCountRecord(date: Date(), countType: .dozeBeans, count: 2, streak: 0)
@@ -30,11 +36,11 @@ struct SqliteConnector {
         //doGenerateDBHistoryBIT(numberOfDays: 1095, defaultDB: true)
         doGenerateDBHistoryBIT(numberOfDays: 28, defaultDB: true)
     }
-
+    
     func exportData() {
         print("run exportData") // :GTD:
     }
-
+    
     func importData() {
         print("run importData") // :GTD:
     }
