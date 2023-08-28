@@ -49,7 +49,8 @@ class UtilityTableViewController: UITableViewController {
     private func doUtilityDBExportData() { // see also presentShareServices() { // Backup
         let realmMngr = RealmManager()
         let backupFilename = realmMngr.csvExport(marker: "db_export_data")
-        #if DEBUG
+        // :SQLITE:TBD: export debug scope
+        #if DEBUG_NOT
         _ = realmMngr.csvExportWeight(marker: "db_export_weight")
         HealthSynchronizer.shared.syncWeightExport(marker: "hk_export_weight")
         #endif
@@ -199,20 +200,24 @@ class UtilityTableViewController: UITableViewController {
         present(alert, animated: true, completion: nil)
     }
     
+    /// doUtilityTestGenerateHistoryBtn() willl "Generate Test History"
+    /// 
     /// Note: When writing a large number of data entries AND the database is open 
     /// in the Realm browser is open, then some value(s) may not be written.  
     /// Do not have the Realm browser open when writing data in simulator to
     /// avoid this is situation. The root cause of this issue is unknown.
     @IBAction func doUtilityTestGenerateHistoryBtn(_ sender: UIButton) {
         // half month
-        DatabaseBuiltInTest.shared.doGenerateDBHistoryBIT(numberOfDays: 15, defaultDB: true)
+        //DatabaseBuiltInTest.shared.doGenerateDBHistoryBIT(numberOfDays: 15, defaultDB: true)
+        // :SQLITE:TBD: test count variance 3 years
+        DatabaseBuiltInTest.shared.doGenerateDBHistoryBIT(numberOfDays: 1095, defaultDB: true)
     }
     
     @IBAction func doUtilityTestGenerateLegacyBtn(_ sender: UIButton) {
         DatabaseBuiltInTest.shared.doGenerateDBLegacyDataBIT()
     }
     
-    /// "Simulate Progress"
+    /// doUtilityTestGenerateStreaksBtn() will "Simulate Progress"
     @IBAction func doUtilityTestGenerateStreaksBtn(_ sender: UIButton) {
         let alert = UIAlertController(title: "", message: Strings.utilityTestStreaksMsg, preferredStyle: .alert)
         let cancelAction = UIAlertAction(title: Strings.utilityConfirmCancel, style: .cancel, handler: nil)
