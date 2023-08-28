@@ -67,6 +67,8 @@ class UtilityTableViewController: UITableViewController {
         present(alert, animated: true, completion: nil)
     }
     
+    /// doUtilityTestGenerateHistoryBtn() willl "Generate Test History"
+    /// 
     /// Note: When writing a large number of data entries AND 
     /// the database is open in the Realm browser is open, 
     /// then some value(s) may not be written.  
@@ -76,11 +78,11 @@ class UtilityTableViewController: UITableViewController {
         // half month
         //RealmBuiltInTest.shared.doGenerateDBHistoryBIT(numberOfDays: 15, defaultDB: true)
         
-        // three years: 1095 days
+        // :SQLITE:TBD: three years -> 1095 days
         RealmBuiltInTest.shared.doGenerateDBHistoryBIT(numberOfDays: 1095, defaultDB: true)
     }
     
-    /// "Simulate Progress"
+    /// doUtilityRealmGenerateStreaksBtn(…) "Simulate Progress"
     @IBAction func doUtilityRealmGenerateStreaksBtn(_ sender: UIButton) {
         let alert = UIAlertController(title: "", message: Strings.utilityTestStreaksMsg, preferredStyle: .alert)
         let cancelAction = UIAlertAction(title: Strings.utilityConfirmCancel, style: .cancel, handler: nil)
@@ -111,7 +113,8 @@ class UtilityTableViewController: UITableViewController {
     private func doUtilityRealmDBExport() { // see also presentShareServices() { // Backup
         let realmMngr = RealmManager()
         let backupFilename = realmMngr.csvExport(marker: "db_export_data")
-        #if DEBUG
+        // :SQLITE:TBD: export debug scope
+        #if DEBUG_NOT
         _ = realmMngr.csvExportWeight(marker: "db_export_weight")
         HealthSynchronizer.shared.syncWeightExport(marker: "hk_export_weight")
         #endif

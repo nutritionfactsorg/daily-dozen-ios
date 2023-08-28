@@ -273,7 +273,8 @@ class SettingsViewController: UITableViewController {
         logger.info("SettingsViewController doHistoryDataExport()")
         let realmMngr = RealmManager()
         let backupFilename = realmMngr.csvExport(marker: "DailyDozen")
-        #if DEBUG
+        // :SQLITE:TBD: export debug scope
+        #if DEBUG_NOT
         _ = realmMngr.csvExportWeight(marker: "weight_db_dev")
         HealthSynchronizer.shared.syncWeightExport(marker: "weight_hk_dev")
         #endif

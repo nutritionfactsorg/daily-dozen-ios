@@ -59,7 +59,8 @@ public struct RealmBuiltInTest {
         LogService.shared.debug(
             "••BEGIN•• doGenerateDBHistoryBIT(\(numberOfDays))"
         )
-        let url = URL.inDocuments(filename: "test_\(numberOfDays)_days.realm")
+        //let url = URL.inDocuments(filename: "test_\(numberOfDays)_days.realm")
+        let url = URL.inDatabase(filename: RealmProvider.realmFilename)
         let realmMngrCheck = RealmManager(fileURL: url)
         let realmProvider = realmMngrCheck.realmDb
         
@@ -81,9 +82,22 @@ public struct RealmBuiltInTest {
             let stepByDay = DateComponents(day: -1)
             date = calendar.date(byAdding: stepByDay, to: date)!
             
-            // Add data counts
+            // Add Daily Dozen data counts
             realmProvider.saveCount(3, date: date, countType: .dozeBeans) // 0-3
             realmProvider.saveCount(Int.random(in: 0...3), date: date, countType: .dozeFruitsOther) // 0-3
+            
+            // :SQLite:TBD: test count variance
+            realmProvider.saveCount(1, date: date, countType: .dozeBerries) 
+            realmProvider.saveCount(1, date: date, countType: .dozeVegetablesCruciferous) 
+            realmProvider.saveCount(1, date: date, countType: .dozeGreens) 
+            realmProvider.saveCount(1, date: date, countType: .dozeVegetablesOther) 
+            realmProvider.saveCount(1, date: date, countType: .dozeFlaxseeds) 
+            realmProvider.saveCount(1, date: date, countType: .dozeNuts) 
+            realmProvider.saveCount(1, date: date, countType: .dozeSpices) 
+            realmProvider.saveCount(1, date: date, countType: .dozeWholeGrains) 
+            realmProvider.saveCount(1, date: date, countType: .dozeBeverages) 
+            realmProvider.saveCount(1, date: date, countType: .dozeExercise) 
+            realmProvider.saveCount(1, date: date, countType: .otherVitaminB12) 
             
             let stepByAm = DateComponents(hour: Int.random(in: 7...8), minute: Int.random(in: 1...59))
             let dateAm = calendar.date(byAdding: stepByAm, to: date)!
