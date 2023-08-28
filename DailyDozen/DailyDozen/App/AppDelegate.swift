@@ -47,7 +47,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         AppDelegate didFinishLaunchingWithOptions DEBUG enabled
         """)
         
-        SQLiteBuiltInTest.shared.runSuite()
+        SQLiteBuiltInTest.shared.runSuite() // :GTD:01: setup initial state
         
         logger.debug(":::::::::::::::::\n")
         #endif
@@ -67,7 +67,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         // =====  GLOBAL SETUP  =====
         
         // ----- Database Setup -----
-        DBMigrationMaintainer.shared.doMigration()
+        DBMigrationMaintainer.shared.doMigration() // :GTD:02: migrate from initial state
         
         // ----- User Interface Setup -----
         // `0` used for variable number of lines. :???: double check if needed

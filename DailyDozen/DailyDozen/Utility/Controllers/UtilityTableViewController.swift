@@ -74,7 +74,10 @@ class UtilityTableViewController: UITableViewController {
     /// avoid this is situation. The root cause of this issue is unknown.
     @IBAction func doUtilityRealmGenerateHistoryBtn(_ sender: UIButton) {
         // half month
-        RealmBuiltInTest.shared.doGenerateDBHistoryBIT(numberOfDays: 15, defaultDB: true)
+        //RealmBuiltInTest.shared.doGenerateDBHistoryBIT(numberOfDays: 15, defaultDB: true)
+        
+        // three years: 1095 days
+        RealmBuiltInTest.shared.doGenerateDBHistoryBIT(numberOfDays: 1095, defaultDB: true)
     }
     
     /// "Simulate Progress"
