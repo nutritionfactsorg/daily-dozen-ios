@@ -26,6 +26,9 @@ class UtilityTableViewController: UITableViewController {
     // Appearance Type: Standard | Preview
     @IBOutlet weak var appearanceTypeControl: UISegmentedControl!
     
+    // Logger
+    let logger = LogService.shared
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         navigationController?.navigationBar.titleTextAttributes = [NSAttributedString.Key.foregroundColor: UIColor.white]
@@ -45,8 +48,8 @@ class UtilityTableViewController: UITableViewController {
         doUtilityDBExportData()
     }
     
-    /// Presents share services.
-    private func doUtilityDBExportData() { // see also presentShareServices() { // Backup
+    private func doUtilityDBExportData() {
+        logger.info("UtilityTableViewController doUtilityDBExportData()")
         let realmMngr = RealmManager()
         let backupFilename = realmMngr.csvExport(marker: "db_export_data")
         // :SQLITE:TBD: export debug scope
@@ -61,12 +64,6 @@ class UtilityTableViewController: UITableViewController {
         let okAction = UIAlertAction(title: Strings.utilityConfirmOK, style: .default, handler: nil)
         alert.addAction(okAction)
         present(alert, animated: true, completion: nil)
-        
-        //let activityViewController = UIActivityViewController(
-        //    activityItems: [URL.inDocuments(filename: backupFilename)],
-        //    applicationActivities: nil)
-        //activityViewController.popoverPresentationController?.sourceView = view
-        //present(activityViewController, animated: true, completion: nil)
     }
     
     @IBAction func doUtilityDBImportDataBtn(_ sender: UIButton) {
