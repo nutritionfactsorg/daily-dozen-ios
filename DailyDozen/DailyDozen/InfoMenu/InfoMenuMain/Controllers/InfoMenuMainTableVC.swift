@@ -50,18 +50,7 @@ class InfoMenuMainTableVC: UITableViewController {
         infoWebLatestLatestLabel.text = NSLocalizedString(
             "info_webpage_videos_latest", comment: "Latest Videos")
     }
-
-    /// Presents share services for CSV export backup file.
-    private func presentShareServices() { // Backup
-        let realmMngr = RealmManager()
-        let backupFilename = realmMngr.csvExport(marker: "dailydozen_data")
-        
-        let activityViewController = UIActivityViewController(
-            activityItems: [URL.inDocuments(filename: backupFilename)],
-            applicationActivities: nil)
-        activityViewController.popoverPresentationController?.sourceView = view
-        present(activityViewController, animated: true, completion: nil)
-    }
+    
 }
 
 // MARK: - UITableViewDelegate
@@ -82,8 +71,6 @@ extension InfoMenuMainTableVC {
             // `AboutViewController`
             //let aboutViewController = AboutBuilder.newInstance()
             navigationController?.pushViewController(viewController, animated: true)
-        } else {
-            presentShareServices() // Backup: iCloud, on device file, ... more
         }
         tableView.selectRow(at: nil, animated: false, scrollPosition: .none)
     }

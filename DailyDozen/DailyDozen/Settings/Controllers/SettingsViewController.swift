@@ -269,16 +269,24 @@ class SettingsViewController: UITableViewController {
     //    print(":!!!: doAppearanceModeChanged not implemented")
     //}
     
+    var backupFilename: String?
+    
     @IBAction func doHistoryDataExport(_ sender: UIButton) {
         logger.info("SettingsViewController doHistoryDataExport()")
         let realmMngr = RealmManager()
-        let backupFilename = realmMngr.csvExport(marker: "DailyDozen")
+        backupFilename = realmMngr.csvExport(marker: "DailyDozen")
         // :SQLITE:TBD: export debug scope
         #if DEBUG_NOT
         _ = realmMngr.csvExportWeight(marker: "weight_db_dev")
         HealthSynchronizer.shared.syncWeightExport(marker: "weight_hk_dev")
         #endif
         
+        doHistoryDataExportAlert()
+        //doHistoryDataExportShare()
+    }
+
+    func doHistoryDataExportAlert() {
+        guard let backupFilename else { return }
         let msg = NSLocalizedString("history_data_export_text", comment: "Export has been written to: ")
         let strMsg = "\(msg)\n\n\(backupFilename)"
         
@@ -286,13 +294,49 @@ class SettingsViewController: UITableViewController {
         let alert = UIAlertController(title: "", message: strMsg, preferredStyle: .alert)
         let okAction = UIAlertAction(title: strOK, style: .default, handler: nil)
         alert.addAction(okAction)
-        present(alert, animated: true, completion: nil)
         
-        //let activityViewController = UIActivityViewController(
-        //    activityItems: [URL.inDocuments(filename: backupFilename)],
-        //    applicationActivities: nil)
-        //activityViewController.popoverPresentationController?.sourceView = view
-        //present(activityViewController, animated: true, completion: nil)
+        present(alert, animated: true, completion: nil)        
+    }
+    
+    func doHistoryDataExportShare() {
+        guard let backupFilename else { return }
+        print("SettingsViewController ... doHistoryDataExport")
+        // --- Presents share services for AirDrop, Files, etc ---
+        let activityViewController = UIActivityViewController(
+            activityItems: [URL.inDocuments(filename: backupFilename)],
+            applicationActivities: nil)
+        
+        var excludedActivityTypes: [UIActivity.ActivityType] = [
+            .postToTwitter,
+            .postToWeibo,
+            //.message,
+            //.mail,
+            .print,
+            //.copyToPasteboard,
+            .assignToContact,
+            .saveToCameraRoll,
+            .addToReadingList,
+            .postToFlickr,
+            .postToVimeo,
+            .postToTencentWeibo,
+            //.airDrop,
+            .openInIBooks,
+            .markupAsPDF,
+        ]
+        if #available(iOS 15.4, *) {
+            excludedActivityTypes.append(.sharePlay)
+        }
+        if #available(iOS 16.0, *) {
+            excludedActivityTypes.append(.collaborationInviteWithLink)
+            excludedActivityTypes.append(.collaborationCopyLink)
+        }
+        if #available(iOS 16.4, *) {
+            excludedActivityTypes.append(.addToHomeScreen)
+        }
+        
+        activityViewController.excludedActivityTypes = excludedActivityTypes
+        activityViewController.popoverPresentationController?.sourceView = self.view
+        self.present(activityViewController, animated: true, completion: nil)
     }
     
     @IBAction func doHistoryDataImport(_ sender: UIButton) {
