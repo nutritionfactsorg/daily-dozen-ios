@@ -121,10 +121,60 @@
                                     </tableViewCell>
                                 </cells>
                             </tableViewSection>
+                            <tableViewSection headerTitle="History" id="fFE-N0-YTl" userLabel="Section Database">
+                                <cells>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="none" indentationWidth="10" id="5Qg-dp-TG3" userLabel="Cell Database Export">
+                                        <rect key="frame" x="0.0" y="417.66666603088379" width="375" height="43.666667938232422"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="5Qg-dp-TG3" id="RJj-EL-a2D">
+                                            <rect key="frame" x="0.0" y="0.0" width="375" height="43.666667938232422"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="rPd-id-2B0">
+                                                    <rect key="frame" x="20" y="4.3333333333333321" width="335" height="35"/>
+                                                    <state key="normal" title="Button"/>
+                                                    <buttonConfiguration key="configuration" style="plain" title="Export History Data"/>
+                                                    <connections>
+                                                        <action selector="doHistoryDataExport:" destination="mGU-tx-G19" eventType="touchUpInside" id="hKi-aL-Uaj"/>
+                                                    </connections>
+                                                </button>
+                                            </subviews>
+                                            <constraints>
+                                                <constraint firstItem="rPd-id-2B0" firstAttribute="leading" secondItem="RJj-EL-a2D" secondAttribute="leading" constant="20" symbolic="YES" id="0fV-TZ-RbO"/>
+                                                <constraint firstItem="rPd-id-2B0" firstAttribute="centerY" secondItem="RJj-EL-a2D" secondAttribute="centerY" id="R2M-S1-rpC"/>
+                                                <constraint firstAttribute="trailing" secondItem="rPd-id-2B0" secondAttribute="trailing" constant="20" symbolic="YES" id="qbN-RZ-oVV"/>
+                                            </constraints>
+                                        </tableViewCellContentView>
+                                    </tableViewCell>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="none" indentationWidth="10" id="Acd-lb-lFC" userLabel="Cell Database Import">
+                                        <rect key="frame" x="0.0" y="461.33333396911621" width="375" height="43.666667938232422"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="Acd-lb-lFC" id="0Mx-pY-1JM">
+                                            <rect key="frame" x="0.0" y="0.0" width="375" height="43.666667938232422"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="1XP-vR-Okm">
+                                                    <rect key="frame" x="20" y="4.3333333333333321" width="335" height="35"/>
+                                                    <state key="normal" title="Button"/>
+                                                    <buttonConfiguration key="configuration" style="plain" title="Import History Data"/>
+                                                    <connections>
+                                                        <action selector="doHistoryDataImport:" destination="mGU-tx-G19" eventType="touchUpInside" id="PkD-iy-Rzn"/>
+                                                    </connections>
+                                                </button>
+                                            </subviews>
+                                            <constraints>
+                                                <constraint firstItem="1XP-vR-Okm" firstAttribute="leading" secondItem="0Mx-pY-1JM" secondAttribute="leading" constant="20" symbolic="YES" id="Ibl-As-ObV"/>
+                                                <constraint firstItem="1XP-vR-Okm" firstAttribute="centerY" secondItem="0Mx-pY-1JM" secondAttribute="centerY" id="h9s-0Q-Sz5"/>
+                                                <constraint firstAttribute="trailing" secondItem="1XP-vR-Okm" secondAttribute="trailing" constant="20" symbolic="YES" id="pIh-Ba-mUO"/>
+                                            </constraints>
+                                        </tableViewCellContentView>
+                                    </tableViewCell>
+                                </cells>
+                            </tableViewSection>
                             <tableViewSection headerTitle="Analytics" id="Bx8-EJ-3BK" userLabel="Section Analytics">
                                 <cells>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="none" indentationWidth="10" id="z0Z-Vi-TQY" userLabel="Cell Analytics">
-                                        <rect key="frame" x="0.0" y="417.66666603088379" width="375" height="43.666667938232422"/>
+                                        <rect key="frame" x="0.0" y="561.00000190734863" width="375" height="43.666667938232422"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="z0Z-Vi-TQY" id="OGB-7d-gUW">
                                             <rect key="frame" x="0.0" y="0.0" width="375" height="43.666667938232422"/>
@@ -149,56 +199,6 @@
                                                 <constraint firstItem="icn-fN-mzT" firstAttribute="centerY" secondItem="OGB-7d-gUW" secondAttribute="centerY" id="OZq-Gd-LbZ"/>
                                                 <constraint firstItem="icn-fN-mzT" firstAttribute="leading" secondItem="hW5-az-JRh" secondAttribute="trailing" constant="8" symbolic="YES" id="RVH-O4-LT2"/>
                                                 <constraint firstAttribute="trailing" secondItem="icn-fN-mzT" secondAttribute="trailing" constant="16" id="tXv-3n-8Y1"/>
-                                            </constraints>
-                                        </tableViewCellContentView>
-                                    </tableViewCell>
-                                </cells>
-                            </tableViewSection>
-                            <tableViewSection headerTitle="History" id="fFE-N0-YTl" userLabel="Section Database">
-                                <cells>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="none" indentationWidth="10" id="5Qg-dp-TG3" userLabel="Cell Database Export">
-                                        <rect key="frame" x="0.0" y="517.33333396911621" width="375" height="43.666667938232422"/>
-                                        <autoresizingMask key="autoresizingMask"/>
-                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="5Qg-dp-TG3" id="RJj-EL-a2D">
-                                            <rect key="frame" x="0.0" y="0.0" width="375" height="43.666667938232422"/>
-                                            <autoresizingMask key="autoresizingMask"/>
-                                            <subviews>
-                                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="rPd-id-2B0">
-                                                    <rect key="frame" x="20" y="4.3333333333333321" width="335" height="35"/>
-                                                    <state key="normal" title="Button"/>
-                                                    <buttonConfiguration key="configuration" style="plain" title="Export History Data"/>
-                                                    <connections>
-                                                        <action selector="doHistoryDataExport:" destination="mGU-tx-G19" eventType="touchUpInside" id="hKi-aL-Uaj"/>
-                                                    </connections>
-                                                </button>
-                                            </subviews>
-                                            <constraints>
-                                                <constraint firstItem="rPd-id-2B0" firstAttribute="leading" secondItem="RJj-EL-a2D" secondAttribute="leading" constant="20" symbolic="YES" id="0fV-TZ-RbO"/>
-                                                <constraint firstItem="rPd-id-2B0" firstAttribute="centerY" secondItem="RJj-EL-a2D" secondAttribute="centerY" id="R2M-S1-rpC"/>
-                                                <constraint firstAttribute="trailing" secondItem="rPd-id-2B0" secondAttribute="trailing" constant="20" symbolic="YES" id="qbN-RZ-oVV"/>
-                                            </constraints>
-                                        </tableViewCellContentView>
-                                    </tableViewCell>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="none" indentationWidth="10" id="Acd-lb-lFC" userLabel="Cell Database Import">
-                                        <rect key="frame" x="0.0" y="561.00000190734863" width="375" height="43.666667938232422"/>
-                                        <autoresizingMask key="autoresizingMask"/>
-                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="Acd-lb-lFC" id="0Mx-pY-1JM">
-                                            <rect key="frame" x="0.0" y="0.0" width="375" height="43.666667938232422"/>
-                                            <autoresizingMask key="autoresizingMask"/>
-                                            <subviews>
-                                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="1XP-vR-Okm">
-                                                    <rect key="frame" x="20" y="4.3333333333333321" width="335" height="35"/>
-                                                    <state key="normal" title="Button"/>
-                                                    <buttonConfiguration key="configuration" style="plain" title="Import History Data"/>
-                                                    <connections>
-                                                        <action selector="doHistoryDataImport:" destination="mGU-tx-G19" eventType="touchUpInside" id="PkD-iy-Rzn"/>
-                                                    </connections>
-                                                </button>
-                                            </subviews>
-                                            <constraints>
-                                                <constraint firstItem="1XP-vR-Okm" firstAttribute="leading" secondItem="0Mx-pY-1JM" secondAttribute="leading" constant="20" symbolic="YES" id="Ibl-As-ObV"/>
-                                                <constraint firstItem="1XP-vR-Okm" firstAttribute="centerY" secondItem="0Mx-pY-1JM" secondAttribute="centerY" id="h9s-0Q-Sz5"/>
-                                                <constraint firstAttribute="trailing" secondItem="1XP-vR-Okm" secondAttribute="trailing" constant="20" symbolic="YES" id="pIh-Ba-mUO"/>
                                             </constraints>
                                         </tableViewCellContentView>
                                     </tableViewCell>
