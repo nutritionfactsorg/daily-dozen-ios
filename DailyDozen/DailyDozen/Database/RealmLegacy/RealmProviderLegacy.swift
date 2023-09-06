@@ -75,7 +75,7 @@ class RealmProviderLegacy {
         saveDozeLegacy()
         do {
             try realm.write {
-                realm.create(Item.self, value: ["id": id, "states": states], update: Realm.UpdatePolicy.all)
+                realm.create(Item.self, value: ["id": id, "states": states] as [String: Any], update: Realm.UpdatePolicy.all)
             }
         } catch {
             LogService.shared.error(
@@ -89,7 +89,7 @@ class RealmProviderLegacy {
         do {
             try realm.write {
                 // BUG: id+streak(0) only causing memory leak when called but not later used.
-                realm.create(Item.self, value: ["id": id, "streak": streak], update: Realm.UpdatePolicy.all)
+                realm.create(Item.self, value: ["id": id, "streak": streak] as [String: Any], update: Realm.UpdatePolicy.all)
             }
         } catch {
             LogService.shared.error(
