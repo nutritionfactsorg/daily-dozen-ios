@@ -342,40 +342,38 @@ class SettingsViewController: UITableViewController {
             applicationActivities: nil)
         
         activityVC.completionWithItemsHandler = {
-            (activityType: UIActivity.ActivityType?, completed: Bool, _: [Any]?, error: Error?) in
-            print("activity: \(String(describing: activityType))")
+            (activity: UIActivity.ActivityType?, success: Bool, items: [Any]?, error: Error?) in
             
-            if completed {
-                print("share completed")
-                //self.isPresented = false
-                return
+            print("activity: \(String(describing: activity))")
+            print("items: \(String(describing: items))")
+            print("success: \(success)")
+            if let error {
+                print("error while sharing: \(error.localizedDescription)")
             } else {
-                print("cancel")
+                print("error: none")
             }
-            if let shareError = error {
-                print("error while sharing: \(shareError.localizedDescription)")
-            }
-            
         }
         
         var excludedActivityTypes: [UIActivity.ActivityType] = [
-            .postToTwitter,
-            .postToWeibo,
-            //.message,
-            //.mail,
-            .print,
-            //.copyToPasteboard,
-            .assignToContact,
-            .saveToCameraRoll,
             .addToReadingList,
-            .postToFlickr,
-            .postToVimeo,
-            .postToTencentWeibo,
             //.airDrop,
-            .openInIBooks,
+            .assignToContact,
+            //.copyToPasteboard,
+            //.mail,
             .markupAsPDF,
+            //.message,
+            .openInIBooks,
+            .postToFlickr,
+            .postToTencentWeibo,
+            .postToTwitter,
+            .postToVimeo,
+            .postToWeibo,
+            .print,
+            .saveToCameraRoll,
+            UIActivity.ActivityType(rawValue: "com.amazon.Lassen.SendToKindleExtension"),
             UIActivity.ActivityType(rawValue: "com.apple.reminders.sharingextension"),
-            UIActivity.ActivityType(rawValue: "com.apple.mobilenotes.SharingExtension")
+            UIActivity.ActivityType(rawValue: "com.apple.mobilenotes.SharingExtension"),
+            UIActivity.ActivityType(rawValue: "com.google.chrome.ios.ShareExtension"),
         ]
         if #available(iOS 15.4, *) {
             excludedActivityTypes.append(.sharePlay)
