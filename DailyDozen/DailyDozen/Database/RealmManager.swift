@@ -29,7 +29,7 @@ class RealmManager {
     func csvExport(filename: String) {
         let outUrl = URL.inDocuments().appendingPathComponent(filename)
         var content = RealmManager.csvHeader
-
+        
         let allTrackers = realmDb.getDailyTrackers()
         for tracker in allTrackers {
             content.append(csvExportLine(tracker: tracker))

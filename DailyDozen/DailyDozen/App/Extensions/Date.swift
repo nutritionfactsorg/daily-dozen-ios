@@ -71,6 +71,14 @@ extension Date {
         return dateFormatter.string(from: currentTime)
     }
     
+    static func datestampExportSubject() -> String {
+        let currentTime = DateManager.currentDatetime()
+        let dateFormatter = DateFormatter()
+        // filename compatible format
+        dateFormatter.dateFormat = "yyyy.MM.dd HH:mm:ss"
+        return dateFormatter.string(from: currentTime)
+    }
+    
     init?(healthkit: String) {
         let dateFormatter = DateFormatter()
         dateFormatter.dateFormat = "yyyyMMdd hh:mm a"
