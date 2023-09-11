@@ -30,51 +30,61 @@ extension Date {
         return self.timeIntervalSince1970
     }
     
-    /// Return yyyyMMdd based on the current locale.
+    /// Return `yyyyMMdd` based on the current locale.
     var datestampKey: String {
         let dateFormatter = DateFormatter()
         dateFormatter.dateFormat = "yyyyMMdd"
         return dateFormatter.string(from: self)
     }
     
+    /// Return `yyyy-MM-dd` ISO 8601 String ID based on the current locale.
+    var datestampSid: String {
+        let dateFormatter = DateFormatter()
+        dateFormatter.dateFormat = "yyyy-MM-dd"
+        return dateFormatter.string(from: self)
+    }
+    
+    /// `HH:mm`
     var datestampHHmm: String {
         let dateFormatter = DateFormatter()
         dateFormatter.dateFormat = "HH:mm"
         return dateFormatter.string(from: self)
     }
     
+    /// `yyyyMMdd_HHmmss`
     var datestampyyyyMMddHHmmss: String {
         let dateFormatter = DateFormatter()
         dateFormatter.dateFormat = "yyyyMMdd_HHmmss"
         return dateFormatter.string(from: self)
     }
     
+    /// `yyyyMMdd_HHmmss.SSS`
     var datestampyyyyMMddHHmmssSSS: String {
         let dateFormatter = DateFormatter()
         dateFormatter.dateFormat = "yyyyMMdd_HHmmss.SSS"
         return dateFormatter.string(from: self)
     }
     
+    /// filename compatible format `yyyyMMdd_HHmmss`
     static func datestampNow() -> String {
         let currentTime = DateManager.currentDatetime()
         let dateFormatter = DateFormatter()
-        // filename compatible format
         dateFormatter.dateFormat = "yyyyMMdd_HHmmss"
         return dateFormatter.string(from: currentTime)
     }
     
+    /// filename compatible format `yyyyMMdd-HHmmss`, hyphen for word break
     static func datestampExport() -> String {
         let currentTime = DateManager.currentDatetime()
         let dateFormatter = DateFormatter()
-        // filename compatible format
         dateFormatter.dateFormat = "yyyyMMdd-HHmmss"
         return dateFormatter.string(from: currentTime)
     }
     
+    /// email subject format `yyyy.MM.dd HH:mm:ss`
     static func datestampExportSubject() -> String {
         let currentTime = DateManager.currentDatetime()
         let dateFormatter = DateFormatter()
-        // filename compatible format
         dateFormatter.dateFormat = "yyyy.MM.dd HH:mm:ss"
         return dateFormatter.string(from: currentTime)
     }
@@ -106,6 +116,18 @@ extension Date {
         let dateFormatter = DateFormatter()
         dateFormatter.dateFormat = "yyyyMMdd_HHmmss.SSS"
         if let date = dateFormatter.date(from: datastampLong) {
+            self = date
+            return
+        } else {
+            return nil
+        }
+    }
+    
+    /// yyyy-MM-dd ISO 8601 String ID based on the current locale
+    init?(datestampSid: String) {
+        let dateFormatter = DateFormatter()
+        dateFormatter.dateFormat = "yyyy-MM-dd"
+        if let date = dateFormatter.date(from: datestampSid) {
             self = date
             return
         } else {
