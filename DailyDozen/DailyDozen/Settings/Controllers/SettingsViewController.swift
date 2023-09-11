@@ -298,40 +298,6 @@ class SettingsViewController: UITableViewController {
         present(alert, animated: true, completion: nil)        
     }
     
-    func misc() { // :EXAMPLE: to be removed
-        let url = URL(string: "whatever")!
-        //let applicationActivities: [UIActivity]?
-        
-        let activityVC = UIActivityViewController(activityItems: [url], applicationActivities: nil)
-        
-        activityVC.completionWithItemsHandler = {
-            (activityType: UIActivity.ActivityType?, completed: Bool, _: [Any]?, error: Error?) in
-            print("activity: \(String(describing: activityType))")
-            
-            if completed {
-                print("share completed")
-                //self.isPresented = false
-                return
-            } else {
-                print("cancel")
-            }
-            if let shareError = error {
-                print("error while sharing: \(shareError.localizedDescription)")
-            }
-            
-        }
-        
-        activityVC.excludedActivityTypes = [
-            UIActivity.ActivityType.assignToContact,
-            // ...,
-        ]
-        
-        activityVC.popoverPresentationController?.sourceRect = self.view.frame
-        activityVC.popoverPresentationController?.barButtonItem = navigationItem.rightBarButtonItem
-        
-        self.present(activityVC, animated: true)
-    }
-    
     func doHistoryDataExportShare() {
         guard let backupFilename else { return }
         print("SettingsViewController ... doHistoryDataExport")
@@ -342,16 +308,18 @@ class SettingsViewController: UITableViewController {
             applicationActivities: nil)
         
         activityVC.completionWithItemsHandler = {
-            (activity: UIActivity.ActivityType?, success: Bool, items: [Any]?, error: Error?) in
+            (activity: UIActivity.ActivityType?, completed: Bool, items: [Any]?, error: Error?) in
             
-            print("activity: \(String(describing: activity))")
-            print("items: \(String(describing: items))")
-            print("success: \(success)")
-            if let error {
-                print("error while sharing: \(error.localizedDescription)")
-            } else {
-                print("error: none")
-            }
+            var errorStr = error?.localizedDescription ?? "none"
+            
+            self.logger.debug(
+            """
+            doHistoryDataExportShare() completionWithItemsHandler
+                activity: \(String(describing: activity))
+                items: \(String(describing: items))
+                completed: \(completed)
+                error: \(errorStr)\n
+            """)
         }
         
         var excludedActivityTypes: [UIActivity.ActivityType] = [
@@ -386,6 +354,12 @@ class SettingsViewController: UITableViewController {
             excludedActivityTypes.append(.addToHomeScreen)
         }
         activityVC.excludedActivityTypes = excludedActivityTypes
+        
+        var subject = NSLocalizedString("CFBundleDisplayName", 
+                                        tableName: "InfoPlist",
+                                        comment: "DailyDozen")
+        subject.append(" \(Date.datestampExportSubject())")
+        activityVC.setValue(subject, forKey: "Subject")
         
         activityVC.popoverPresentationController?.sourceRect = self.view.frame
         //activityVC.popoverPresentationController?.barButtonItem = navigationItem.rightBarButtonItem
