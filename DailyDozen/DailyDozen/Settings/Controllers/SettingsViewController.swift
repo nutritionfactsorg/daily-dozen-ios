@@ -311,7 +311,7 @@ class SettingsViewController: UITableViewController {
         activityVC.completionWithItemsHandler = {
             (activity: UIActivity.ActivityType?, completed: Bool, items: [Any]?, error: Error?) in
             
-            var errorStr = error?.localizedDescription ?? "none"
+            let errorStr = error?.localizedDescription ?? "none"
             
             self.logger.debug(
             """
