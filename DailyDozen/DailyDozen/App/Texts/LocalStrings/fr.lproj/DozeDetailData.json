@@ -407,7 +407,7 @@
           "topic" : ""
         },
         {
-          "text" : "Abdos",
+          "text" : "Tractions",
           "topic" : ""
         },
         {
@@ -555,7 +555,7 @@
           "topic" : "topics/limes"
         },
         {
-          "text" : "Lychees",
+          "text" : "Litchi",
           "topic" : ""
         },
         {
@@ -673,7 +673,7 @@
       ]
     },
     "dozeNuts" : {
-      "heading" : "Noix",
+      "heading" : "Noix et graines",
       "servings" : [
         {
           "imperial" : "¼ tasse de noix ou graines",
@@ -783,7 +783,7 @@
           "topic" : ""
         },
         {
-          "text" : "Coriandre fraîche",
+          "text" : "Coriandre (feuilles)",
           "topic" : "topics/cilantro"
         },
         {
@@ -795,7 +795,7 @@
           "topic" : "topics/cloves"
         },
         {
-          "text" : "Coriandre",
+          "text" : "Coriandre (graines)",
           "topic" : ""
         },
         {
@@ -1043,7 +1043,7 @@
           "topic" : "topics/sea-vegetables"
         },
         {
-          "text" : "Petits pois",
+          "text" : "Pois gourmand",
           "topic" : ""
         },
         {
