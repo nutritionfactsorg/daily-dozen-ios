@@ -56,7 +56,19 @@ target 'DailyDozen' do
   
 end
   
+
+### Firebase issue 
+### DT_TOOLCHAIN_DIR cannot be used to evaluate LIBRARY_SEARCH_PATHS, use TOOLCHAIN_DIR instead
 post_install do |installer|
+  ### :ADD: for Firebase issue approach 1
+  #installer.aggregate_targets.each do |target|
+  #  target.xcconfigs.each do |variant, xcconfig|
+  #    xcconfig_path = target.client_root + target.xcconfig_relative_path(variant)
+  #    IO.write(xcconfig_path, IO.read(xcconfig_path).gsub("DT_TOOLCHAIN_DIR", "TOOLCHAIN_DIR"))
+  #  end
+  #end
+  ###
+  
   installer.pods_project.targets.each do |target|
     target.build_configurations.each do |config|
         # Exclude building for arm64 simulator (M1 chipset).
@@ -77,6 +89,21 @@ post_install do |installer|
         # other: `ARCHS` $(ARCHS_STANDARD)
         # other: `CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER` 'NO'
         # not specified 'SWIFT_VERSION'
+        
+
+        ### :ADD: for Firebase issue approach 1
+        #if config.base_configuration_reference.is_a? Xcodeproj::Project::Object::PBXFileReference
+        #  xcconfig_path = config.base_configuration_reference.real_path
+        #  IO.write(xcconfig_path, IO.read(xcconfig_path).gsub("DT_TOOLCHAIN_DIR", "TOOLCHAIN_DIR"))
+        #end
+        ###
+        
+        ### :ADD: for Firebase issue approach 2
+        xcconfig_path = config.base_configuration_reference.real_path
+        xcconfig = File.read(xcconfig_path)
+        xcconfig_mod = xcconfig.gsub(/DT_TOOLCHAIN_DIR/, "TOOLCHAIN_DIR")
+        File.open(xcconfig_path, "w") { |file| file << xcconfig_mod }
+        ###
     end
   end
 end
