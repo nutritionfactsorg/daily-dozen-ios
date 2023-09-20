@@ -78,7 +78,9 @@ target 'DailyDozen' do
   end
   
 end
-  
+
+### Firebase issue 
+### DT_TOOLCHAIN_DIR cannot be used to evaluate LIBRARY_SEARCH_PATHS, use TOOLCHAIN_DIR instead
 post_install do |installer|
   installer.pods_project.targets.each do |target|
     target.build_configurations.each do |config|
@@ -100,6 +102,13 @@ post_install do |installer|
         # other: `ARCHS` $(ARCHS_STANDARD)
         # other: `CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER` 'NO'
         # not specified 'SWIFT_VERSION'
+        
+        ### :ADD: for Firebase issue
+        xcconfig_path = config.base_configuration_reference.real_path
+        xcconfig = File.read(xcconfig_path)
+        xcconfig_mod = xcconfig.gsub(/DT_TOOLCHAIN_DIR/, "TOOLCHAIN_DIR")
+        File.open(xcconfig_path, "w") { |file| file << xcconfig_mod }
+        ###
     end
   end
 end
