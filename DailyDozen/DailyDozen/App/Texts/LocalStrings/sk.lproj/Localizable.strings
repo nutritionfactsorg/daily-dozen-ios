@@ -209,7 +209,7 @@
 "info_app_about_translators" = "Osobitné poďakovanie patrí našim dobrovoľným prekladateľom: Petar Enchev (bg), Tsveti Enchev (bg), Ricard Soler Roger (ca), Luděk Bouška (cs,sk), Lenka Lukacová (cs), Anke Schliessmann (de), Ángela Graña (es), Audray Harkins (fr), Doron Barak (he), Ruth Levy (he), Annalisa Guerrini-Körner (it), Ilaria Zanini (it), Hanna Gurzeda (pl), Joanna Klopotek (pl), Tania Bassi (pt-BR), João Madureira (pt-PT), Cristina Lauby (ro), Evgeniya Lyakh (ru), Katarína Mocáková (sk).";
 
 /* Info About View: Application release version */
-"info_app_about_version" = "verzia 3.2.21";
+"info_app_about_version" = "verzia 3.5.1";
 
 /* Info About View: Welcome */
 "info_app_about_welcome" = "Vitajte v mojej Dennej Dvanástke!";
