@@ -13,7 +13,7 @@ public struct DatabaseMaintainer {
     
     public func doMigration() {
         let level = getMigrationLevel()
-        LogService.shared.debug("→→→ :DEBUG:WAYPOINT: doMigration() level=\(level)")
+        LogService.shared.debug("→→→ :WAYPOINT: doMigration() level=\(level)")
         
         if level == 0 {
             // V01 and V02 not present.

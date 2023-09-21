@@ -41,6 +41,42 @@ class AlertActivitySpinner: UIView, ActivityProgress {
         //setupConstraints()
     }
     
+    // MARK: - Activity Methods
+    
+    func completed() {
+        DispatchQueue.main.async {
+            self._spinner.stopAnimating()
+            self.removeFromSuperview()
+        }
+    }
+    
+    func setProgress(ratio: Float, text: String) {
+        setRatio(ratio)
+        setText(text)
+    }
+    
+    func setRatio(_ percent: Float) {
+        // no progress value to set
+    }
+    
+    func setText(_ s: String) {
+        DispatchQueue.main.async {
+            self._label.text = s
+        }
+    }
+    
+    func show() {
+        DispatchQueue.main.async {
+            if self._isShown == false {
+                self._spinner.startAnimating()
+                self._keyWindow.addSubview(self)
+                self._isShown = true
+            }
+        }
+    }
+    
+    // MARK: - Internal Methods
+    
     private func setupView() {
         _box = UIView()
         _box.isOpaque = true
@@ -103,33 +139,6 @@ class AlertActivitySpinner: UIView, ActivityProgress {
             labelBottomAnchor, labelLeadingAnchor, labelTrailingAnchor,
             spinnerTopAnchor, spinnerHeightAnchor, spinnerLeadingAnchor, spinnerTrailingAnchor
         ])
-    }
-    
-    func completed() {
-        DispatchQueue.main.async {
-            self._spinner.stopAnimating()
-            self.removeFromSuperview()
-        }
-    }
-    
-    func setProgress(_ percent: Float) {
-        // no progress value to set
-    }
-    
-    func setText(_ s: String) {
-        DispatchQueue.main.async {
-            self._label.text = s
-        }
-    }
-    
-    func show() {
-        DispatchQueue.main.async {
-            if self._isShown == false {
-                self._spinner.startAnimating()
-                self._keyWindow.addSubview(self)
-                self._isShown = true
-            }
-        }
     }
     
 }

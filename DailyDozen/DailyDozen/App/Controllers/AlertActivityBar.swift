@@ -12,9 +12,17 @@ protocol ActivityProgress {
     
     /// call when finished
     func completed()
-        
-    /// set percent completed
-    func setProgress(_ percent: Float)
+    
+    /// Set progress
+    /// 
+    /// -Parameters: 
+    ///   - ratio: fraction 0.0 to 1.0 completed
+    ///   - text: description string
+    func setProgress(ratio: Float, text: String)
+    
+    /// -Parameters: 
+    ///   - ratio: fraction 0.0 to 1.0 completed
+    func setRatio(_ ratio: Float)
 
     /// progress message
     func setText(_ s: String)
@@ -55,6 +63,43 @@ class AlertActivityBar: UIView, ActivityProgress {
         //setupView()
         //setupConstraints()
     }
+    
+    // MARK: - Activity Methods
+    
+    func completed() {
+        DispatchQueue.main.async {
+            self.removeFromSuperview()
+        }
+    }
+    
+    func setProgress(ratio: Float, text: String) {
+        setRatio(ratio)
+        setText(text)
+    }
+    
+    func setRatio(_ ratio: Float) {
+        DispatchQueue.main.async {
+            // Note: animated can overshoot with sudden lower ratio
+            self._progress.setProgress(ratio, animated: false)
+        }
+    }
+    
+    func setText(_ s: String) {
+        DispatchQueue.main.async {
+            self._label.text = s
+        }
+    }
+    
+    func show() {
+        DispatchQueue.main.async {
+            if self._isShown == false {
+                self._keyWindow.addSubview(self)
+                self._isShown = true
+            }
+        }
+    }
+    
+    // MARK: - Internal Methods
     
     private func setupView() {
         _box = UIView()
@@ -117,37 +162,12 @@ class AlertActivityBar: UIView, ActivityProgress {
             .constraint(equalTo: _box.trailingAnchor, constant: -8)
         
         NSLayoutConstraint.activate([
-            boxXAnchor, boxYAnchor, boxHeightAnchor, boxLeadingAnchor, boxTrailingAnchor,
+            boxXAnchor, boxYAnchor, 
+            boxHeightAnchor, boxLeadingAnchor, boxTrailingAnchor,
             labelBottomAnchor, labelLeadingAnchor, labelTrailingAnchor,
-            progressTopAnchor, progressHeightAnchor, progressLeadingAnchor, progressTrailingAnchor
+            progressTopAnchor, progressHeightAnchor, 
+            progressLeadingAnchor, progressTrailingAnchor
         ])
-    }
-    
-    func completed() {
-        DispatchQueue.main.async {
-            self.removeFromSuperview()
-        }
-    }
-    
-    func setProgress(_ percent: Float) {
-        DispatchQueue.main.async {
-            self._progress.setProgress(percent, animated: true)
-        }
-    }
-    
-    func setText(_ s: String) {
-        DispatchQueue.main.async {
-            self._label.text = s
-        }
-    }
-    
-    func show() {
-        DispatchQueue.main.async {
-            if self._isShown == false {
-                self._keyWindow.addSubview(self)
-                self._isShown = true
-            }
-        }
     }
     
 }

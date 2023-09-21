@@ -7,6 +7,7 @@
 // swiftlint:disable cyclomatic_complexity
 // swiftlint:disable function_body_length
 // swiftlint:disable type_body_length
+// swiftlint:disable file_length
 
 import Foundation
 import HealthKit
@@ -19,7 +20,7 @@ public struct DatabaseBuiltInTest {
     public let hkHealthStore = HKHealthStore()
     
     public func runSuite() { // :@@@:
-        LogService.shared.debug(">>> :DEBUG:WAYPOINT: DatabaseBuiltInTest runSuite()")        
+        LogService.shared.debug(">>> :WAYPOINT: DatabaseBuiltInTest runSuite()")        
         LogService.shared.debug(">>> HKHealthStore.isHealthDataAvailable() \(HKHealthStore.isHealthDataAvailable())")
         
         //HealthManager.shared.exportHKWeight(name: "BIT00")
@@ -27,7 +28,7 @@ public struct DatabaseBuiltInTest {
         //DatabaseBuiltInTest.shared.doGenerateDBHistoryBIT(numberOfDays: 365*3, defaultDB: false) // 1095 days, 2190 weight entries
         
         //doGenerateHKSampleDataBIT()
-        // :!!!:NYI: BIT runSuite()
+        // :GTD:NYI: BIT runSuite()
     }
     
     /// Clear Documents/Legacy, Documents/V01 and Library/Database/V02 Realm data.
@@ -93,10 +94,15 @@ public struct DatabaseBuiltInTest {
     /// * ~10 months -> 300 days
     /// * ~2.7 years or ~33 months -> 1000 days (2000 weight entries)
     /// * 3 years (1095 days, 2190 weight entries) -> 365*3
-    func doGenerateDBHistoryBIT(numberOfDays: Int, defaultDB: Bool) {
+    func doGenerateDBHistoryBIT(numberOfDays: Int, defaultDB: Bool, activity: ActivityProgress? = nil) {
         LogService.shared.debug(
             "••BEGIN•• doGenerateDBHistoryBIT(\(numberOfDays))"
         )
+        let activityStepsTotal: Float = 50.0 // 50 progress steps
+        var activityStepIdx = 0
+        let activityStepSize = Int((Float(numberOfDays) / activityStepsTotal).rounded(.up))
+        activity?.setRatio(0.0)
+        
         //let url = URL.inDocuments(filename: "test_\(numberOfDays)_days.realm")
         let url = URL.inDatabase(filename: RealmProvider.realmFilename)
         let realmMngrCheck = RealmManager(fileURL: url)
@@ -151,12 +157,18 @@ public struct DatabaseBuiltInTest {
             realmProvider.saveDBWeight(date: dateAm, ampm: .am, kg: weightAm)
             realmProvider.saveDBWeight(date: datePm, ampm: .pm, kg: weightPm)
             
-            if i < 5 {
+            if i > activityStepIdx * activityStepSize {
+                let ratio = Float(i) / Float(numberOfDays)
+                let percent = (100 * ratio).rounded(.down)
+                activity?.setRatio(ratio)
+                activity?.setText("\(Int(percent))%")
+                
                 let weightAmStr = String(format: "%.2f", weightAm)
                 let weightPmStr = String(format: "%.2f", weightAm)
                 LogService.shared.debug(
                     "    \(date) [AM] \(dateAm) \(weightAmStr) [PM] \(datePm) \(weightPmStr)"
                 )
+                activityStepIdx += 1
             }
         }
         LogService.shared.debug(
@@ -232,16 +244,17 @@ public struct DatabaseBuiltInTest {
     /// 7-day    7  6  5  4  3  2  1  0  7  6  5  4  3  2  1  0
     /// 
     /// ```
-    func doGenerateDBStreaksBIT(activityProgress: ActivityProgress? = nil) {
+    func doGenerateDBStreaksBIT(activity: ActivityProgress? = nil) {
         
-        activityProgress?.setProgress(0/12)
+        activity?.setText("0/12")
+        activity?.setRatio(0/12)
         
         let timeIn = Date().getCurrentBenchmarkSeconds
         let maxStreak = 100 // 100 (~minute), 999, 1000
         LogService.shared.debug(
             "••BEGIN•• doGenerateDBStreaksBIT()"
         )
-        let realmMngr = RealmManager()
+        let realmMngr = RealmManager(newThread: true)
         let realmDb = realmMngr.realmDb
         
         let today = Date()
@@ -253,7 +266,8 @@ public struct DatabaseBuiltInTest {
         }
         var timeB = Date().getCurrentBenchmarkSeconds
         LogService.shared.debug("\t2\ttime=\t\(timeB - timeA)\tsec")
-        activityProgress?.setProgress(1/12)
+        activity?.setText("1/12")
+        activity?.setRatio(1/12)
 
         // 7 days 
         timeA = timeB
@@ -263,7 +277,8 @@ public struct DatabaseBuiltInTest {
         }
         timeB = Date().getCurrentBenchmarkSeconds
         LogService.shared.debug("\t7\ttime=\t\(timeB - timeA)\tsec")
-        activityProgress?.setProgress(2/12)
+        activity?.setText("2/12")
+        activity?.setRatio(2/12)
 
         // 14 days
         timeA = timeB
@@ -273,7 +288,8 @@ public struct DatabaseBuiltInTest {
         }
         timeB = Date().getCurrentBenchmarkSeconds
         LogService.shared.debug("\t14\ttime=\t\(timeB - timeA)\tsec")
-        activityProgress?.setProgress(3/12)
+        activity?.setText("3/12")
+        activity?.setRatio(3/12)
 
         // Max streak days
         timeA = timeB
@@ -283,7 +299,8 @@ public struct DatabaseBuiltInTest {
         }
         timeB = Date().getCurrentBenchmarkSeconds
         LogService.shared.debug("\t\(maxStreak)\ttime=\t\(timeB - timeA)\tsec")
-        activityProgress?.setProgress(4/12)
+        activity?.setText("4/12")
+        activity?.setRatio(4/12)
         timeA = timeB
         for i in 0 ..< maxStreak {
             let date = today.adding(days: -i)
@@ -291,7 +308,8 @@ public struct DatabaseBuiltInTest {
         }
         timeB = Date().getCurrentBenchmarkSeconds
         LogService.shared.debug("\t\(maxStreak)\ttime=\t\(timeB - timeA)\tsec")
-        activityProgress?.setProgress(5/12)
+        activity?.setText("5/12")
+        activity?.setRatio(5/12)
         timeA = timeB
         for i in 0 ..< maxStreak {
             let date = today.adding(days: -i)
@@ -299,7 +317,8 @@ public struct DatabaseBuiltInTest {
         }
         timeB = Date().getCurrentBenchmarkSeconds
         LogService.shared.debug("\t\(maxStreak)\ttime=\t\(timeB - timeA)\tsec")
-        activityProgress?.setProgress(6/12)
+        activity?.setText("6/12")
+        activity?.setRatio(6/12)
 
         // 2 days: by editing streak history with 0
         timeA = timeB
@@ -313,7 +332,8 @@ public struct DatabaseBuiltInTest {
         }
         timeB = Date().getCurrentBenchmarkSeconds
         LogService.shared.debug("\t19\ttime=\t\(timeB - timeA)\tsec")
-        activityProgress?.setProgress(7/12)
+        activity?.setText("7/12")
+        activity?.setRatio(7/12)
 
         // 7 days: by editing streak history to add full count
         timeA = timeB
@@ -331,7 +351,8 @@ public struct DatabaseBuiltInTest {
         }
         timeB = Date().getCurrentBenchmarkSeconds
         LogService.shared.debug("\t16\ttime=\t\(timeB - timeA)\tsec")
-        activityProgress?.setProgress(8/12)
+        activity?.setText("8/12")
+        activity?.setRatio(8/12)
 
         // 14 days
         timeA = timeB
@@ -341,7 +362,8 @@ public struct DatabaseBuiltInTest {
         }
         timeB = Date().getCurrentBenchmarkSeconds
         LogService.shared.debug("\t14\ttime=\t\(timeB - timeA)\tsec")
-        activityProgress?.setProgress(9/12)
+        activity?.setText("9/12")
+        activity?.setRatio(9/12)
 
         // Max streak days
         timeA = timeB
@@ -351,7 +373,8 @@ public struct DatabaseBuiltInTest {
         }
         timeB = Date().getCurrentBenchmarkSeconds
         LogService.shared.debug("\t\(maxStreak)\ttime=\t\(timeB - timeA)\tsec")
-        activityProgress?.setProgress(10/12)
+        activity?.setText("10/12")
+        activity?.setRatio(10/12)
         timeA = timeB
         for i in (0 ..< maxStreak).reversed() {
             let date = today.adding(days: -i)
@@ -359,7 +382,8 @@ public struct DatabaseBuiltInTest {
         }
         timeB = Date().getCurrentBenchmarkSeconds
         LogService.shared.debug("\t\(maxStreak)\ttime=\t\(timeB - timeA)\tsec")
-        activityProgress?.setProgress(11/12)
+        activity?.setText("11/12")
+        activity?.setRatio(11/12)
         timeA = timeB
         for i in (0 ..< maxStreak).reversed() {
             let date = today.adding(days: -i)
@@ -367,14 +391,15 @@ public struct DatabaseBuiltInTest {
         }
         timeB = Date().getCurrentBenchmarkSeconds
         LogService.shared.debug("\t\(maxStreak)\ttime=\t\(timeB - timeA)\tsec")
-        activityProgress?.setProgress(12/12)
+        activity?.setText("12/12")
+        activity?.setRatio(12/12)
 
         let timeOut = Date().getCurrentBenchmarkSeconds
         let lapsed = timeOut - timeIn
         LogService.shared.debug(
             "••EXIT•• UtilityTableViewController doGenerateDBStreaksBIT() \(lapsed) sec"
         )
-// :!!!:        activityProgress?.completed()
+        // :GTD:???: activityProgress?.completed() // needed?
     }
     
     // MARK: - Unsynced HK Actions

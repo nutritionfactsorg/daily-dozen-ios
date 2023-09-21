@@ -79,16 +79,16 @@ class RealmProvider {
     
     static func initialize(fileURL: URL) {
         //Realm.Configuration(
-        //    fileURL: <#T##URL?#>, 
-        //    inMemoryIdentifier: <#T##String?#>, 
-        //    syncConfiguration: <#T##SyncConfiguration?#>, 
-        //    encryptionKey: <#T##Data?#>, 
-        //    readOnly: <#T##Bool#>, 
-        //    schemaVersion: <#T##UInt64#>, 
-        //    migrationBlock: <#T##MigrationBlock?##MigrationBlock?##(_ migration: Migration, _ oldSchemaVersion: UInt64) -> Void#>, 
-        //    deleteRealmIfMigrationNeeded: <#T##Bool#>, 
-        //    shouldCompactOnLaunch: <#T##((Int, Int) -> Bool)?##((Int, Int) -> Bool)?##(Int, Int) -> Bool#>, 
-        //    objectTypes: <#T##[Object.Type]?#>)
+        //    fileURL: URL?,
+        //    inMemoryIdentifier: String?,
+        //    syncConfiguration: SyncConfiguration?,
+        //    encryptionKey: Data?,
+        //    readOnly: Bool,
+        //    schemaVersion: UInt64, 
+        //    migrationBlock: MigrationBlock?, 
+        //    deleteRealmIfMigrationNeeded: Bool, 
+        //    shouldCompactOnLaunch: ((Int, Int) -> Bool)?, 
+        //    objectTypes: [ObjectType]?)
         
         let config = Realm.Configuration(
             fileURL: fileURL,   // local Realm file url
@@ -98,7 +98,7 @@ class RealmProvider {
             fatalError("FAIL: could not instantiate RealmProvider.")
         }
         RealmProvider.primary.realm = realm
-        //Realm.invalidate(<#T##self: Realm##Realm#>)
+        //Realm.invalidate(self: Realm)
         _ = Realm.refresh(RealmProvider.primary.realm)
     }
     
@@ -196,21 +196,30 @@ class RealmProvider {
     }
     
     /// Note: minimal checked. Expects stored database values to be valid. Exists on first data error.
-    func getDailyTrackers() -> [DailyTracker] {        
+    func getDailyTrackers(activity: ActivityProgress? = nil) -> [DailyTracker] {
         // Daily Dozen & Tweaks Counters
+        activity?.setProgress(ratio: 0.0, text: "0/3")
         let counterResultsById = realm.objects(DataCountRecord.self)
             .sorted(byKeyPath: "pid")
         
         // Weight History
+        activity?.setProgress(ratio: 0.33, text: "1/3")
         let weightResultsById = realm.objects(DataWeightRecord.self)
             .sorted(byKeyPath: "pid")
         
+        // :NOTE: proceeds quickly to here.
         if counterResultsById.count > 0 && weightResultsById.count > 0 {
-            return getDailyTrackersMerged(counterResults: counterResultsById, weightResults: weightResultsById)
+            activity?.setProgress(ratio: 0.66, text: "2/3")
+            let data = getDailyTrackersMerged(counterResults: counterResultsById, weightResults: weightResultsById)
+            return data
         } else if counterResultsById.count > 0 {
-            return getDailyTrackersCountersOnly(counterResults: counterResultsById)
+            activity?.setProgress(ratio: 0.66, text: "2/3")
+            let data = getDailyTrackersCountersOnly(counterResults: counterResultsById)
+            return data
         } else if weightResultsById.count > 0 {
-            return getDailyTrackersWeightOnly(weightResults: weightResultsById)
+            activity?.setProgress(ratio: 0.66, text: "2/3")
+            let data = getDailyTrackersWeightOnly(weightResults: weightResultsById)
+            return data
         } else {
             return [DailyTracker]()
         }

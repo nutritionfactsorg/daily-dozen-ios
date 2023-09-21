@@ -50,7 +50,7 @@ class UtilityTableViewController: UITableViewController {
     
     private func doUtilityDBExportData() {
         logger.info("UtilityTableViewController doUtilityDBExportData()")
-        let realmMngr = RealmManager()
+        let realmMngr = RealmManager(newThread: true)
         let backupFilename = realmMngr.csvExport(marker: "db_export_data")
         // :SQLITE:TBD: export debug scope
         #if DEBUG_NOT
@@ -68,10 +68,10 @@ class UtilityTableViewController: UITableViewController {
     
     @IBAction func doUtilityDBImportDataBtn(_ sender: UIButton) {
         //ImportPopupPickerView.show(
-        //    items: <#T##[String]#>, 
-        //    doneButtonCompletion: <#T##ImportPopupPickerView.CompletionBlock?##PopupPickerView.CompletionBlock?##(String?, String?) -> Void#>, 
-        //    didSelectCompletion: <#T##ImportPopupPickerView.CompletionBlock?##PopupPickerView.CompletionBlock?##(String?, String?) -> Void#>, 
-        //    cancelButtonCompletion: <#T##ImportPopupPickerView.CompletionBlock?##PopupPickerView.CompletionBlock?##(String?, String?) -> Void#>
+        //    items: [String],
+        //    doneButtonCompletion: ImportPopupPickerView.CompletionBlock?,
+        //    didSelectCompletion: ImportPopupPickerView.CompletionBlock?,
+        //    cancelButtonCompletion: ImportPopupPickerView.CompletionBlock?
         //)
         
         //ImportPopupPickerView.show(
@@ -88,7 +88,7 @@ class UtilityTableViewController: UITableViewController {
     }
     
     @IBAction func doAppearanceTypeChanged(_ sender: UISegmentedControl) {
-        print(":!!!: doAppearanceModeChanged not implemented")
+        logger.info(":NYI: doAppearanceModeChanged not implemented")
     }
     
     @IBAction func doUtilitySettingsClearBtn(_ sender: UIButton) {
@@ -206,8 +206,19 @@ class UtilityTableViewController: UITableViewController {
     @IBAction func doUtilityTestGenerateHistoryBtn(_ sender: UIButton) {
         // half month
         //DatabaseBuiltInTest.shared.doGenerateDBHistoryBIT(numberOfDays: 15, defaultDB: true)
-        // :SQLITE:TBD: test count variance 3 years
-        DatabaseBuiltInTest.shared.doGenerateDBHistoryBIT(numberOfDays: 1095, defaultDB: true)
+        // :SQLITE:TBD: test count variance 3 years (1095 days)
+        let busyAlert = AlertActivityBar()
+        busyAlert.setText("0%")
+        busyAlert.show()
+        DispatchQueue.global(qos: .userInitiated).async {
+            // lower priority job here
+            DatabaseBuiltInTest.shared
+                .doGenerateDBHistoryBIT(numberOfDays: 1095, defaultDB: true, activity: busyAlert)
+            DispatchQueue.main.async {
+                // update ui here
+                busyAlert.completed()
+            }
+        }
     }
     
     @IBAction func doUtilityTestGenerateLegacyBtn(_ sender: UIButton) {
@@ -216,16 +227,22 @@ class UtilityTableViewController: UITableViewController {
     
     /// doUtilityTestGenerateStreaksBtn() will "Simulate Progress"
     @IBAction func doUtilityTestGenerateStreaksBtn(_ sender: UIButton) {
-        let alert = UIAlertController(title: "", message: Strings.utilityTestStreaksMsg, preferredStyle: .alert)
-        let cancelAction = UIAlertAction(title: Strings.utilityConfirmCancel, style: .cancel, handler: nil)
+        let alert = UIAlertController(
+            title: "", message: Strings.utilityTestStreaksMsg, preferredStyle: .alert
+        )
+        let cancelAction = UIAlertAction(
+            title: Strings.utilityConfirmCancel, style: .cancel, handler: nil
+        )
         alert.addAction(cancelAction)
-        let generateAction = UIAlertAction(title: Strings.utilityConfirmOK, style: .destructive) { (_: UIAlertAction) -> Void in
+        let generateAction = UIAlertAction(
+            title: Strings.utilityConfirmOK, style: .destructive
+        ) { (_: UIAlertAction) -> Void in
             let busyAlert = AlertActivityBar()
-            busyAlert.setText("Generating Progress Data") // :NYI:LOCALIZE:
+            busyAlert.setText("0%")
             busyAlert.show()
             DispatchQueue.global(qos: .userInitiated).async {
                 // lower priority job here
-                DatabaseBuiltInTest.shared.doGenerateDBStreaksBIT(activityProgress: busyAlert)
+                DatabaseBuiltInTest.shared.doGenerateDBStreaksBIT(activity: busyAlert)
                 DispatchQueue.main.async {
                     // update ui here
                     busyAlert.completed()

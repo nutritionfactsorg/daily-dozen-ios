@@ -138,8 +138,8 @@ class SettingsViewController: UITableViewController {
         logger.debug(":::::::::::::::::::::::::::::::::::::::::::::::::::::::::\n")
         #endif
         #if DEBUG
-        advancedUtilitiesTableViewCell.isHidden = false // :ADVANCED:DEBUG:
-        //advancedUtilitiesTableViewCell.isHidden = true // :ADVANCED:RELEASE:
+        advancedUtilitiesTableViewCell.isHidden = false // :ADVANCED:#DEBUG:
+        //advancedUtilitiesTableViewCell.isHidden = true // :ADVANCED:#RELEASE:
         print("ADVANCED UTILITIES advancedUtilitiesTableViewCell.isHidden == \(advancedUtilitiesTableViewCell.isHidden)")
         #endif
     }
@@ -160,7 +160,7 @@ class SettingsViewController: UITableViewController {
         let shouldShowUnitsToggle = UserDefaults.standard.bool(forKey: SettingsKeys.unitsTypeToggleShowPref)
         guard let unitTypePrefStr =  UserDefaults.standard.string(forKey: SettingsKeys.unitsTypePref),
               let unitTypePref = UnitsType(rawValue: unitTypePrefStr)
-        else { return } // :!!!:MEC:review
+        else { return }
         if  shouldShowUnitsToggle == true {
             unitMeasureToggle.selectedSegmentIndex = UnitsSegmentState.toggleUnitsState.rawValue
         } else {
@@ -267,13 +267,18 @@ class SettingsViewController: UITableViewController {
     }
     
     //@IBAction func doAppearanceModeChanged(_ sender: UISegmentedControl) {
-    //    print(":!!!: doAppearanceModeChanged not implemented")
+    //    print(":TBD: doAppearanceModeChanged not implemented")
     //}
     
     var backupFilename: String?
     
     @IBAction func doHistoryDataExport(_ sender: UIButton) {
-        logger.info("SettingsViewController doHistoryDataExport()")
+        //doHistoryDataExportActivityNone()
+        doHistoryDataExportActivityShow()
+    }
+    
+    func doHistoryDataExportActivityNone() {
+        logger.info("SettingsViewController doHistoryDataExportActivityNone()")
         let realmMngr = RealmManager()
         backupFilename = realmMngr.csvExport(marker: "DailyDozen")
         // :SQLITE:TBD: export debug scope
@@ -285,9 +290,37 @@ class SettingsViewController: UITableViewController {
         //doHistoryDataExportAlert()
         doHistoryDataExportShare()
     }
-
+    
+    func doHistoryDataExportActivityShow() {
+        logger.info("SettingsViewController doHistoryDataExportActivityShow()")
+        
+        // -----------------
+        let busyAlert = AlertActivityBar()
+        let msg = NSLocalizedString("history_data_export_btn", comment: "Export")
+        busyAlert.setText(msg)
+        busyAlert.show()
+        DispatchQueue.global(qos: .userInitiated).async {
+            // lower priority job here
+            let realmMngr = RealmManager(newThread: true)
+            
+            self.backupFilename = realmMngr.csvExport(marker: "DailyDozen", activity: busyAlert)
+            // :SQLITE:TBD: export debug scope
+            #if DEBUG_NOT
+            _ = realmMngr.csvExportWeight(marker: "weight_db_dev")
+            HealthSynchronizer.shared.syncWeightExport(marker: "weight_hk_dev")
+            #endif
+            DispatchQueue.main.async {
+                // update ui here
+                busyAlert.completed()
+                //doHistoryDataExportAlert()
+                self.doHistoryDataExportShare()
+            }
+        }
+    }
+    
     func doHistoryDataExportAlert() {
         guard let backupFilename else { return }
+        logger.info("SettingsViewController ... doHistoryDataExportAlert")
         let msg = NSLocalizedString("history_data_export_text", comment: "Export has been written to: ")
         let strMsg = "\(msg)\n\n\(backupFilename)"
         
@@ -301,11 +334,11 @@ class SettingsViewController: UITableViewController {
     
     func doHistoryDataExportShare() {
         guard let backupFilename else { return }
-        print("SettingsViewController ... doHistoryDataExport")
+        logger.info("SettingsViewController ... doHistoryDataExportShare")
         // --- Presents share services for AirDrop, Files, etc ---
         let urls: [URL] = [URL.inDocuments(filename: backupFilename)]
         let activityVC = UIActivityViewController(
-            activityItems: urls,
+            activityItems: urls,  // provided file path url
             applicationActivities: nil)
         
         activityVC.completionWithItemsHandler = {
@@ -511,7 +544,7 @@ class SettingsViewController: UITableViewController {
         let realmManager = RealmManager(fileURL: realmUrl)
         
         realmManager.csvImport(url: csvUrl) 
-        // :!!!: check for successful import
+        // :GTD: check/verify for successful import
         
         let fm = FileManager.default
         do {
