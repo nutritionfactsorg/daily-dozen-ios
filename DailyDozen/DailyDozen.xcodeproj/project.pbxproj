@@ -141,6 +141,7 @@
 		4CAE49152A95E8D400B5ED51 /* SQLiteManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4CAE49142A95E8D400B5ED51 /* SQLiteManager.swift */; };
 		4CAE49172A95E8F400B5ED51 /* SQLiteConnector.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4CAE49162A95E8F400B5ED51 /* SQLiteConnector.swift */; };
 		4CBCB2BB2983779F00015393 /* Strings.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4CBCB2BA2983779F00015393 /* Strings.swift */; };
+		4CCB92C32ABCDD6D0095C3D8 /* Thread.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4CCB92C22ABCDD6D0095C3D8 /* Thread.swift */; };
 		594FD37586B9F2DE900FA79A /* Pods_DailyDozen_DailyDozenUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E4A1DB4E4E487CFF8C7EE374 /* Pods_DailyDozen_DailyDozenUITests.framework */; };
 		BD68BC5B2FB6D632F16CE9CD /* Pods_DailyDozenTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 715D60F634E9BCD998C66B77 /* Pods_DailyDozenTests.framework */; };
 		BED5BB460CE3AEE8CF585899 /* Pods_DailyDozen.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F514690D725E67AD54735EB9 /* Pods_DailyDozen.framework */; };
@@ -394,6 +395,7 @@
 		4CAE49142A95E8D400B5ED51 /* SQLiteManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SQLiteManager.swift; sourceTree = "<group>"; };
 		4CAE49162A95E8F400B5ED51 /* SQLiteConnector.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SQLiteConnector.swift; sourceTree = "<group>"; };
 		4CBCB2BA2983779F00015393 /* Strings.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Strings.swift; sourceTree = "<group>"; };
+		4CCB92C22ABCDD6D0095C3D8 /* Thread.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Thread.swift; sourceTree = "<group>"; };
 		6ED3A55B48F7069CAE75156C /* Pods-DailyDozenTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-DailyDozenTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-DailyDozenTests/Pods-DailyDozenTests.release.xcconfig"; sourceTree = "<group>"; };
 		715D60F634E9BCD998C66B77 /* Pods_DailyDozenTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_DailyDozenTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		7D4AA01331AD98C99ADB2BC0 /* Pods-DailyDozen.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-DailyDozen.release.xcconfig"; path = "Pods/Target Support Files/Pods-DailyDozen/Pods-DailyDozen.release.xcconfig"; sourceTree = "<group>"; };
@@ -1113,6 +1115,7 @@
 				499089852665DA1A0053D74D /* UIApplication.swift */,
 				49D9B07A240DCA1F000E9822 /* UIView.swift */,
 				49F66B782588752D00002DB2 /* UITextField.swift */,
+				4CCB92C22ABCDD6D0095C3D8 /* Thread.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -1694,6 +1697,7 @@
 				4CAE49112A95D76500B5ED51 /* SqlDataWeightRecord.swift in Sources */,
 				4C22C9A72A737DEE0008D7B6 /* DataWeightType.swift in Sources */,
 				CFECDFF8201EF7C1003E8572 /* Colors.swift in Sources */,
+				4CCB92C32ABCDD6D0095C3D8 /* Thread.swift in Sources */,
 				492A1E702409B3FA00F6C37C /* TweakDetailActivityCell.swift in Sources */,
 				4CAE490A2A95D70C00B5ED51 /* SQLiteApi.swift in Sources */,
 				492013CD261FF64D00A5D635 /* TweakEntryRow.swift in Sources */,
