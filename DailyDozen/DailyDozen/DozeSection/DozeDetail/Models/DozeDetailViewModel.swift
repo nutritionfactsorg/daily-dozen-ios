@@ -73,7 +73,7 @@ struct DozeDetailViewModel {
     /// - Returns: A tuple of the type name and type link.
     func typeData(index: Int) -> (name: String, hasLink: Bool) {
         let name = info.varieties[index].text 
-        let hasLink = info.varieties[index].topic == "" // :???:!!!: correct logic?
+        let hasLink = info.varieties[index].topic == "" // :GTD:???: correct logic?
         return (name, hasLink)
     }
     
@@ -82,7 +82,7 @@ struct DozeDetailViewModel {
     /// - Parameter index: The current index.
     /// - Returns: The type toipic url.
     func typeTopicURL(index: Int) -> URL? {
-        if info.varieties[index].topic.isEmpty { // :???:!!!: review logic
+        if info.varieties[index].topic.isEmpty { // :GTD:???: review logic
             return nil
         }
         let topic =  info.varieties[index].topic

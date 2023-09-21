@@ -28,6 +28,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         let logger = LogService.shared
         logger.logLevel = LogServiceLevel.off
         
+        // =====  DEBUG SETUP  =====
         #if DEBUG
         let identifier = Bundle.main.bundleIdentifier ?? "not found"
         print("PRODUCT_BUNDLE_IDENTIFIER = \(identifier)")
@@ -36,7 +37,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         printLocaleInfo()
         
         print("""
-        :DEBUG:WAYPOINT: AppDelegate didFinishLaunchingWithOptions
+        :#DEBUG:WAYPOINT: AppDelegate didFinishLaunchingWithOptions
         \((URL.inDocuments().path))
         """)
         logger.logLevel = LogServiceLevel.verbose
@@ -63,7 +64,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         logger.debug(":::::::::::::::::::::::::::::::::\n")
         #endif
         
-        // =====  Global Setup  =====
+        // =====  GLOBAL SETUP  =====
         
         // ----- Database Setup -----
         DatabaseMaintainer.shared.doMigration()

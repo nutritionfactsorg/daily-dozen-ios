@@ -112,7 +112,7 @@ class DailyDozenTests: XCTestCase {
         realmMngrV01.realmDb.deleteDBAll()
         realmMngrV01.csvImport(filename: filename02)
 
-        // :!!!: check new content length & values
+        // :GTD: check new content length & values
         let trackersPass02 = realmDBV01.getDailyTrackers()
         XCTAssert(trackersPass02.count == 1, "incorrect number of imported legacy trackers")
         XCTAssert(

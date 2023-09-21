@@ -140,7 +140,7 @@ class WeightHistoryViewController: UIViewController {
         
         lineChartView.xAxis.valueFormatter = self
         setViewModel()
-        //updateChart(fromDate: DateManager.currentDatetime(), toDate: DateManager.currentDatetime()) // :!!!:
+        //updateChart(fromDate: DateManager.currentDatetime(), toDate: DateManager.currentDatetime()) // :GTD: needed?
     }
     
     // -------------------------
