@@ -22,7 +22,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     var window: UIWindow?
     
     func application(
-        _ application: UIApplication, 
+        _ application: UIApplication,
         didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?
     ) -> Bool {
         let logger = LogService.shared
@@ -37,7 +37,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         printLocaleInfo()
         
         print("""
-        :DEBUG:WAYPOINT: AppDelegate didFinishLaunchingWithOptions
+        :#DEBUG:WAYPOINT: AppDelegate didFinishLaunchingWithOptions
         \((URL.inDocuments().path))
         """)
         logger.logLevel = LogServiceLevel.verbose
@@ -73,7 +73,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         // `0` used for variable number of lines. :???: double check if needed
         UILabel.appearance(whenContainedInInstancesOf: [UISegmentedControl.self]).numberOfLines = 0
         
-        // ----- Notification Setup -----        
+        // ----- Notification Setup -----
         UNUserNotificationCenter.current().requestAuthorization(options: [.alert, .sound, .badge]) { (_, error) in
             if let error = error {
                 logger.debug("AppDelegate didFinishLaunchingWithOptions \(error.localizedDescription)")

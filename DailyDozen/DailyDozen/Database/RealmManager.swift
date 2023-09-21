@@ -12,27 +12,47 @@ class RealmManager {
     let realmDb: RealmProvider
     
     /// 
-    init() {
-        realmDb = RealmProvider.primary
+    init(newThread: Bool = false) {
+        if newThread {
+            realmDb = RealmProvider()
+        } else {
+            realmDb = RealmProvider.primary
+        }
     }
     
     init(fileURL: URL) {
         realmDb = RealmProvider(fileURL: fileURL)
     }
     
-    func csvExport(marker: String) -> String {
+    func csvExport(marker: String, activity: ActivityProgress? = nil) -> String {
         let filename = "\(marker)-\(Date.datestampExport()).csv"
-        csvExport(filename: filename)
+        csvExport(filename: filename, activity: activity)
         return filename
     }
     
-    func csvExport(filename: String) {
+    func csvExport(filename: String, activity: ActivityProgress? = nil) {
         let outUrl = URL.inDocuments().appendingPathComponent(filename)
         var content = RealmManager.csvHeader
         
-        let allTrackers = realmDb.getDailyTrackers()
-        for tracker in allTrackers {
+        let allTrackers = realmDb.getDailyTrackers(activity: activity)
+        let trackerCount = allTrackers.count
+        
+        let activityStepsTotal: Float = 50.0 // 50 progress steps
+        var activityStepIdx = 0
+        let activityStepSize = Int((Float(trackerCount) / activityStepsTotal).rounded(.up))
+        activity?.setProgress(ratio: 0.0, text: "0%")
+        
+        for i in 0 ..< allTrackers.count {
+            let tracker = allTrackers[i]
             content.append(csvExportLine(tracker: tracker))
+            
+            if i > activityStepIdx * activityStepSize {
+                let ratio = Float(i) / Float(trackerCount)
+                let percent = (100 * ratio).rounded(.down)
+                let text = "\(Int(percent))%"
+                activity?.setProgress(ratio: ratio, text: text)
+                activityStepIdx += 1
+            }
         }
         
         do {
