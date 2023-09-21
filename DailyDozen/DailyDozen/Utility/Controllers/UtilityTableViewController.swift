@@ -112,9 +112,9 @@ class UtilityTableViewController: UITableViewController {
         doUtilityRealmDBExport()
     }
     
-    private func doUtilityDBExportData() {
-        logger.info("UtilityTableViewController doUtilityDBExportData()")
-        let realmMngr = RealmManager()
+    private func doUtilityRealmDBExport() {
+        logger.info("UtilityTableViewController doUtilityRealmDBExport()")
+        let realmMngr = RealmManager(newThread: true)
         let backupFilename = realmMngr.csvExport(marker: "db_export_data")
         // :SQLITE:TBD: export debug scope
         #if DEBUG_NOT
@@ -132,10 +132,10 @@ class UtilityTableViewController: UITableViewController {
     
     @IBAction func doUtilityRealmDBImportBtn(_ sender: UIButton) {
         //ImportPopupPickerView.show(
-        //    items: <#T##[String]#>, 
-        //    doneButtonCompletion: <#T##ImportPopupPickerView.CompletionBlock?##PopupPickerView.CompletionBlock?##(String?, String?) -> Void#>, 
-        //    didSelectCompletion: <#T##ImportPopupPickerView.CompletionBlock?##PopupPickerView.CompletionBlock?##(String?, String?) -> Void#>, 
-        //    cancelButtonCompletion: <#T##ImportPopupPickerView.CompletionBlock?##PopupPickerView.CompletionBlock?##(String?, String?) -> Void#>
+        //    items: [String],
+        //    doneButtonCompletion: ImportPopupPickerView.CompletionBlock?,
+        //    didSelectCompletion: ImportPopupPickerView.CompletionBlock?,
+        //    cancelButtonCompletion: ImportPopupPickerView.CompletionBlock?
         //)
         
         //ImportPopupPickerView.show(
@@ -163,7 +163,7 @@ class UtilityTableViewController: UITableViewController {
     @IBOutlet weak var appearanceTypeControl: UISegmentedControl!
     
     @IBAction func doAppearanceTypeChanged(_ sender: UISegmentedControl) {
-        print(":!!!: doAppearanceModeChanged not implemented")
+        logger.info(":NYI: doAppearanceModeChanged not implemented")
     }
     
     // MARK: - Settings
