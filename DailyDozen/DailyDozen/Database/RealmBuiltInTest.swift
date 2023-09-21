@@ -158,9 +158,10 @@ public struct RealmBuiltInTest {
     /// 7-day    7  6  5  4  3  2  1  0  7  6  5  4  3  2  1  0
     /// 
     /// ```
-    func doGenerateDBStreaksBIT(activityProgress: ActivityProgress? = nil) {
+    func doGenerateDBStreaksBIT(activity: ActivityProgress? = nil) {
         
-        activityProgress?.setProgress(0/12)
+        activity?.setText("0/12")
+        activity?.setRatio(0/12)
         
         let timeIn = Date().getCurrentBenchmarkSeconds
         let maxStreak = 100 // 100 (~minute), 999, 1000
@@ -179,7 +180,8 @@ public struct RealmBuiltInTest {
         }
         var timeB = Date().getCurrentBenchmarkSeconds
         LogService.shared.debug("\t2\ttime=\t\(timeB - timeA)\tsec")
-        activityProgress?.setProgress(1/12)
+        activity?.setText("1/12")
+        activity?.setRatio(1/12)
         
         // 7 days 
         timeA = timeB
@@ -189,7 +191,8 @@ public struct RealmBuiltInTest {
         }
         timeB = Date().getCurrentBenchmarkSeconds
         LogService.shared.debug("\t7\ttime=\t\(timeB - timeA)\tsec")
-        activityProgress?.setProgress(2/12)
+        activity?.setText("2/12")
+        activity?.setRatio(2/12)
         
         // 14 days
         timeA = timeB
@@ -199,7 +202,8 @@ public struct RealmBuiltInTest {
         }
         timeB = Date().getCurrentBenchmarkSeconds
         LogService.shared.debug("\t14\ttime=\t\(timeB - timeA)\tsec")
-        activityProgress?.setProgress(3/12)
+        activity?.setText("3/12")
+        activity?.setRatio(3/12)
         
         // Max streak days
         timeA = timeB
@@ -209,7 +213,8 @@ public struct RealmBuiltInTest {
         }
         timeB = Date().getCurrentBenchmarkSeconds
         LogService.shared.debug("\t\(maxStreak)\ttime=\t\(timeB - timeA)\tsec")
-        activityProgress?.setProgress(4/12)
+        activity?.setText("4/12")
+        activity?.setRatio(4/12)
         timeA = timeB
         for i in 0 ..< maxStreak {
             let date = today.adding(days: -i)
@@ -217,7 +222,8 @@ public struct RealmBuiltInTest {
         }
         timeB = Date().getCurrentBenchmarkSeconds
         LogService.shared.debug("\t\(maxStreak)\ttime=\t\(timeB - timeA)\tsec")
-        activityProgress?.setProgress(5/12)
+        activity?.setText("5/12")
+        activity?.setRatio(5/12)
         timeA = timeB
         for i in 0 ..< maxStreak {
             let date = today.adding(days: -i)
@@ -225,7 +231,8 @@ public struct RealmBuiltInTest {
         }
         timeB = Date().getCurrentBenchmarkSeconds
         LogService.shared.debug("\t\(maxStreak)\ttime=\t\(timeB - timeA)\tsec")
-        activityProgress?.setProgress(6/12)
+        activity?.setText("6/12")
+        activity?.setRatio(6/12)
         
         // 2 days: by editing streak history with 0
         timeA = timeB
@@ -239,7 +246,8 @@ public struct RealmBuiltInTest {
         }
         timeB = Date().getCurrentBenchmarkSeconds
         LogService.shared.debug("\t19\ttime=\t\(timeB - timeA)\tsec")
-        activityProgress?.setProgress(7/12)
+        activity?.setText("7/12")
+        activity?.setRatio(7/12)
         
         // 7 days: by editing streak history to add full count
         timeA = timeB
@@ -257,7 +265,8 @@ public struct RealmBuiltInTest {
         }
         timeB = Date().getCurrentBenchmarkSeconds
         LogService.shared.debug("\t16\ttime=\t\(timeB - timeA)\tsec")
-        activityProgress?.setProgress(8/12)
+        activity?.setText("8/12")
+        activity?.setRatio(8/12)
         
         // 14 days
         timeA = timeB
@@ -267,7 +276,8 @@ public struct RealmBuiltInTest {
         }
         timeB = Date().getCurrentBenchmarkSeconds
         LogService.shared.debug("\t14\ttime=\t\(timeB - timeA)\tsec")
-        activityProgress?.setProgress(9/12)
+        activity?.setText("9/12")
+        activity?.setRatio(9/12)
         
         // Max streak days
         timeA = timeB
@@ -277,7 +287,8 @@ public struct RealmBuiltInTest {
         }
         timeB = Date().getCurrentBenchmarkSeconds
         LogService.shared.debug("\t\(maxStreak)\ttime=\t\(timeB - timeA)\tsec")
-        activityProgress?.setProgress(10/12)
+        activity?.setText("10/12")
+        activity?.setRatio(10/12)
         timeA = timeB
         for i in (0 ..< maxStreak).reversed() {
             let date = today.adding(days: -i)
@@ -285,7 +296,8 @@ public struct RealmBuiltInTest {
         }
         timeB = Date().getCurrentBenchmarkSeconds
         LogService.shared.debug("\t\(maxStreak)\ttime=\t\(timeB - timeA)\tsec")
-        activityProgress?.setProgress(11/12)
+        activity?.setText("11/12")
+        activity?.setRatio(11/12)
         timeA = timeB
         for i in (0 ..< maxStreak).reversed() {
             let date = today.adding(days: -i)
@@ -293,7 +305,8 @@ public struct RealmBuiltInTest {
         }
         timeB = Date().getCurrentBenchmarkSeconds
         LogService.shared.debug("\t\(maxStreak)\ttime=\t\(timeB - timeA)\tsec")
-        activityProgress?.setProgress(12/12)
+        activity?.setText("12/12")
+        activity?.setRatio(12/12)
         
         let timeOut = Date().getCurrentBenchmarkSeconds
         let lapsed = timeOut - timeIn

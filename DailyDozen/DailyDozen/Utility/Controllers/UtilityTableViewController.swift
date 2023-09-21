@@ -96,7 +96,7 @@ class UtilityTableViewController: UITableViewController {
             busyAlert.show()
             DispatchQueue.global(qos: .userInitiated).async {
                 // lower priority job here
-                RealmBuiltInTest.shared.doGenerateDBStreaksBIT(activityProgress: busyAlert)
+                RealmBuiltInTest.shared.doGenerateDBStreaksBIT(activity: busyAlert)
                 DispatchQueue.main.async {
                     // update ui here
                     busyAlert.completed()

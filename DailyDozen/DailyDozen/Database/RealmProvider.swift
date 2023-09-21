@@ -196,21 +196,30 @@ class RealmProvider {
     }
     
     /// Note: minimal checked. Expects stored database values to be valid. Exists on first data error.
-    func getDailyTrackers() -> [RealmDailyTracker] {        
+    func getDailyTrackers(activity: ActivityProgress? = nil) -> [RealmDailyTracker] {        
         // Daily Dozen & Tweaks Counters
+        activity?.setProgress(ratio: 0.0, text: "0/3")
         let counterResultsById = realm.objects(RealmDataCountRecord.self)
             .sorted(byKeyPath: "pid")
         
         // Weight History
+        activity?.setProgress(ratio: 0.33, text: "1/3")
         let weightResultsById = realm.objects(RealmDataWeightRecord.self)
             .sorted(byKeyPath: "pid")
         
+        // :NOTE: proceeds quickly to here.
         if counterResultsById.count > 0 && weightResultsById.count > 0 {
-            return getDailyTrackersMerged(counterResults: counterResultsById, weightResults: weightResultsById)
+            activity?.setProgress(ratio: 0.66, text: "2/3")
+            let data = getDailyTrackersMerged(counterResults: counterResultsById, weightResults: weightResultsById)
+            return data
         } else if counterResultsById.count > 0 {
-            return getDailyTrackersCountersOnly(counterResults: counterResultsById)
+            activity?.setProgress(ratio: 0.66, text: "2/3")
+            let data = getDailyTrackersCountersOnly(counterResults: counterResultsById)
+            return data
         } else if weightResultsById.count > 0 {
-            return getDailyTrackersWeightOnly(weightResults: weightResultsById)
+            activity?.setProgress(ratio: 0.66, text: "2/3")
+            let data = getDailyTrackersWeightOnly(weightResults: weightResultsById)
+            return data
         } else {
             return [RealmDailyTracker]()
         }
