@@ -208,10 +208,6 @@ class SettingsViewController: UITableViewController {
         }
     }
     
-    override func viewWillDisappear(_ animated: Bool) {
-        super.viewWillDisappear(animated)
-    }
-    
     // MARK: - Actions
     
     @IBAction func doAnalyticsSwitched(_ sender: UISwitch) {
