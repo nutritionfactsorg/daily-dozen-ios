@@ -9,7 +9,8 @@ import Foundation
 
 /// 
 struct SettingsKeys {
-    /// ----- UserDefaults keys -----
+    // MARK: - UserDefaults keys
+    
     /// Reminder
     static let reminderCanNotify = "reminderCanNotify"
     static let reminderHourPref = "reminderHourPref"
@@ -24,15 +25,21 @@ struct SettingsKeys {
     /// Used for first launch
     static let hasSeenFirstLaunch = "hasSeenFirstLaunch_v3.1.0"
     
-    // Analytics is enabled when when true|"1"|"on"
+    /// Analytics is enabled when when true|"1"|"on"
     static let analyticsIsEnabledPref = "analyticsIsEnabledPref"
     
-    // Light | Dark | Auto
+    /// Light | Dark | Auto
     static let appearanceModePref = "appearanceModePref"
-    // Standard | Preview
+    /// Standard | Preview
     static let appearanceTypePref = "appearanceTypePref"
     
-    /// ----- UNNotificationRequest identifiers -----
-    /// Reminder
+    /// Exercise Display Gamut: 1 x 45 minutes, 3 x 15 minutes, 6 x 8 minutes
+    static let exerciseGamutPref = "exerciseGamutPref"
+    
+    // MARK: - UNNotificationRequest identifiers
+    
+    /// Reminder UNNotificationRequest identifier
     static let reminderRequestID = "reminderRequestID"
+    
+    ///
 }
