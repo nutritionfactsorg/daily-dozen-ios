@@ -38,15 +38,15 @@ struct SQLiteConnector {
     }
     
     func exportData() {
-        print("run exportData") // :GTD:
+        print(":NYI: SQLiteConnector exportData()") // :GTD:
     }
     
     func importData() {
-        print("run importData") // :GTD:
+        print(":NYI: SQLiteConnector importData()") // :GTD:
     }
     
     func timingTest() {
-        print("run timingTest") // :GTD:
+        print(":NYI: SQLiteConnector timingTest()") // :GTD:
     }
     
     /// Generate data

@@ -47,7 +47,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         AppDelegate didFinishLaunchingWithOptions DEBUG enabled
         """)
         
-        SQLiteBuiltInTest.shared.runSuite() // :GTD:01: setup initial state
+        SQLiteBuiltInTest.shared.setupInitialState() // :GTD:01.a: setup initial state
         
         logger.debug(":::::::::::::::::\n")
         #endif
@@ -58,8 +58,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         logger.debug("""
         ::::: SIMULATOR ENVIRONMENT :::::
         Bundle & Resources Path:\n\(bundle.bundlePath)\n
-        App Documents (log files and exports) Directory:\n\(URL.inDocuments().path)\n
-        App Library (database) Directory:\n\(URL.inLibrary().path)\n
+        App Documents Directory:\n\(URL.inDocuments().path)\n
+        App Library Directory:\n\(URL.inLibrary().path)\n
         """)
         logger.debug(":::::::::::::::::::::::::::::::::\n")
         #endif
@@ -67,7 +67,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         // =====  GLOBAL SETUP  =====
         
         // ----- Database Setup -----
-        DBMigrationMaintainer.shared.doMigration() // :GTD:02: migrate from initial state
+        DBMigrationMaintainer.shared.doMigration() // :GTD:02.a: migrate from initial state
         
         // ----- User Interface Setup -----
         // `0` used for variable number of lines. :???: double check if needed

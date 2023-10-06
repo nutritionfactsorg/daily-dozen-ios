@@ -2,7 +2,6 @@
 //  UrlHelperTests.swift
 //  DailyDozenUITests
 //
-//  Created by marc on 2021.08.29.
 //  Copyright © 2021 Nutritionfacts.org. All rights reserved.
 //
 

@@ -67,35 +67,64 @@ class RealmProvider {
     /// Prefer `init()` for default current local Realm.
     /// Use `init(fileURL: URL)` to access a local Realm which _is not the current local default_.
     init(fileURL: URL) {
-        let config = Realm.Configuration(
-            fileURL: fileURL,   // local Realm file url
-            objectTypes: [RealmDataCountRecord.self, RealmDataWeightRecord.self])
-        Realm.Configuration.defaultConfiguration = config
-        guard let realm = try? Realm() else {
-            fatalError("FAIL: could not instantiate RealmProvider.")
+        let fm = FileManager.default
+        // Create Library/Database directory if not present
+        let databaseUrl = URL.inLibrary()
+            .appendingPathComponent("Database", isDirectory: true)
+        do {
+            try fm.createDirectory(at: databaseUrl, withIntermediateDirectories: true)
+        } catch {
+            LogService.shared.error(" \(error)")
         }
-        self.realm = realm
-    }
-    
-    static func initialize(fileURL: URL) {
-        //Realm.Configuration(
-        //    fileURL: <#T##URL?#>, 
-        //    inMemoryIdentifier: <#T##String?#>, 
-        //    syncConfiguration: <#T##SyncConfiguration?#>, 
-        //    encryptionKey: <#T##Data?#>, 
-        //    readOnly: <#T##Bool#>, 
-        //    schemaVersion: <#T##UInt64#>, 
-        //    migrationBlock: <#T##MigrationBlock?##MigrationBlock?##(_ migration: Migration, _ oldSchemaVersion: UInt64) -> Void#>, 
-        //    deleteRealmIfMigrationNeeded: <#T##Bool#>, 
-        //    shouldCompactOnLaunch: <#T##((Int, Int) -> Bool)?##((Int, Int) -> Bool)?##(Int, Int) -> Bool#>, 
-        //    objectTypes: <#T##[Object.Type]?#>)
         
         let config = Realm.Configuration(
             fileURL: fileURL,   // local Realm file url
             objectTypes: [RealmDataCountRecord.self, RealmDataWeightRecord.self])
         Realm.Configuration.defaultConfiguration = config
         guard let realm = try? Realm() else {
-            fatalError("FAIL: could not instantiate RealmProvider.")
+            if #available(iOS 16.0, *) {
+                fatalError("FAIL: could not instantiate (init) RealmProvider. fileURL:\(fileURL.path(percentEncoded: false))")
+            } else {
+                // Fallback on earlier versions
+                fatalError("FAIL: could not instantiate (init) RealmProvider. fileURL:\(fileURL.absoluteString)")
+            }
+        }
+        self.realm = realm
+    }
+    
+    static func initialize(fileURL: URL) {
+        let fm = FileManager.default
+        // Create Library/Database directory if not present
+        let databaseUrl = URL.inLibrary()
+            .appendingPathComponent("Database", isDirectory: true)
+        do {
+            try fm.createDirectory(at: databaseUrl, withIntermediateDirectories: true)
+        } catch {
+            LogService.shared.error(" \(error)")
+        }
+        //Realm.Configuration(
+        //    fileURL: URL?,
+        //    inMemoryIdentifier: String?,
+        //    syncConfiguration: SyncConfiguration?,
+        //    encryptionKey: Data?,
+        //    readOnly: Bool,
+        //    schemaVersion: UInt64,
+        //    migrationBlock: MigrationBlock?,
+        //    deleteRealmIfMigrationNeeded: Bool,
+        //    shouldCompactOnLaunch: ((Int, Int) -> Bool)?,
+        //    objectTypes: [Object.Type]?
+        
+        let config = Realm.Configuration(
+            fileURL: fileURL,   // local Realm file url
+            objectTypes: [RealmDataCountRecord.self, RealmDataWeightRecord.self])
+        Realm.Configuration.defaultConfiguration = config
+        guard let realm = try? Realm() else {
+            if #available(iOS 16.0, *) {
+                fatalError("FAIL: could not instantiate (static func) RealmProvider. fileURL:\(fileURL.path(percentEncoded: false))")
+            } else {
+                // Fallback on earlier versions
+                fatalError("FAIL: could not instantiate (static func) RealmProvider. fileURL:\(fileURL.absoluteString)")
+            }
         }
         RealmProvider.primary.realm = realm
         //Realm.invalidate(<#T##self: Realm##Realm#>)

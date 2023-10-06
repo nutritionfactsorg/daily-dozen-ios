@@ -2,7 +2,6 @@
 //  SQLiteBuiltInTest.swift
 //  DailyDozen
 //
-//  Created by mc on 8/23/23.
 //  Copyright © 2023 Nutritionfacts.org. All rights reserved.
 //
 
@@ -15,26 +14,34 @@ public struct SQLiteBuiltInTest {
     
     public let hkHealthStore = HKHealthStore()
     
-    public func runSuite() {
-        LogService.shared.debug(">>> :DEBUG:WAYPOINT: SQLiteBuiltInTest runSuite()")        
-        LogService.shared.debug(">>> HKHealthStore.isHealthDataAvailable() \(HKHealthStore.isHealthDataAvailable())")
+    public func setupInitialState(_ scenario: Int = 1) {
+        let isHealthDataAvailable = HKHealthStore.isHealthDataAvailable()
+        LogService.shared.debug(
+            """
+            >>> :BIT:WAYPOINT: SQLiteBuiltInTest setupInitialState()")
+            >>> HKHealthStore.isHealthDataAvailable() \(isHealthDataAvailable)
+            
+            """)
+        
+        let realmBIT = RealmBuiltInTest.shared
+        switch scenario {
+        case 1: // :GTD:01.b: create initial realm database state
+            // minimal Realm database initial state, no HealthKit Data
+            realmBIT.doGenerateDBHistoryBIT(numberOfDays: 3, defaultDB: false)
+        case 2: // :NYI: multi-year Realm database
+            // 1095 days, 2190 weight entries
+            realmBIT.doGenerateDBHistoryBIT(numberOfDays: 365*3, defaultDB: false)
+        case 3: // :NYI: minimal SQLite database
+            break
+        default:
+            break
+        }
         
         //HealthManager.shared.exportHKWeight(name: "BIT00")
         
-        // :GTD:01: create initial realm database state
+        // :NYI: SQLite database round trip. create, export, clear, export, import first, export
         
-        // CASE:01A: minimal Realm database initial state, no HealthKit
-        RealmBuiltInTest.shared.doGenerateDBHistoryBIT(numberOfDays: 3, defaultDB: false)
-        
-        // CASE:01B: multi-year Realm database
-        //SQLiteBuiltInTest.shared.doGenerateDBHistoryBIT(numberOfDays: 365*3, defaultDB: false) // 1095 days, 2190 weight entries
-        
-        // CASE:01C: minimal SQLite database
-        
-        // CASE:01D: SQLite database round trip. create, export, clear, export, import first, export
-
-        // HEALTHKIT
-        //doGenerateHKSampleDataBIT()
+        // :NYI: HEALTHKIT doGenerateHKSampleDataBIT()
     }
     
 }

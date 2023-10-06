@@ -13,16 +13,17 @@ public struct DBMigrationMaintainer {
     
     public func doMigration() {
         let level = getMigrationLevel()
-        LogService.shared.debug("→→→ :DEBUG:WAYPOINT: doMigration() level=\(level)")
+        LogService.shared.debug("→→→ :DEBUG:WAYPOINT: doMigration() DB level=\(level)")
+        
+        // DB00: RealmProviderLegacy "main.realm" is no longer supported
         
         if level == 1 {
-            // V01 is present, but not V02
-            // Start migration from V01
-            doMigration_B_V02toV03()
+            // DB01 is present, but not DB02
+            // Start migration from DB01
+            doMigration_B_DB01toDB02()
             doMigration_C_Backup()
         } else if level == 2 {
-            // :GTD:!!!: needs level 2 to level 3 migration 
-            // no migration needed.
+            // :GTD:02.b:!!!: needs level 2 to level 3 migration 
         } else if level == 3 {
             // no migration needed.
         }
@@ -30,22 +31,26 @@ public struct DBMigrationMaintainer {
     
     private func getMigrationLevel() -> Int {
         let fm = FileManager.default
-        // Check for version V03 SQLite
+        
+        // DB Version DB03: SQLiteProvider "Database/NutritionFacts.sqlite"
         if fm.fileExists(atPath: URL.inDatabase(filename: SQLiteConnector.sqliteFilename).path) {
             return 3
         }
 
-        // Check for version V02
+        // DB Version DB02: RealmProvider "Database/NutritionFacts.realm"
         if fm.fileExists(atPath: URL.inDatabase(filename: RealmProvider.realmFilename).path) {
             return 2
         }
         
-        // Check for version V01
+        // DB Version DB01: RealmProvider "Documents/NutritionFacts.realm"
         if fm.fileExists(atPath: URL.inDocuments(filename: RealmProvider.realmFilename).path) {
             return 1
         }
         
-        // Create Libary/Database directory if not present
+        // DB Version DB00: RealmProviderLegacy "main.realm"
+        // DB00 is no longer supported
+        
+        // Create Library/Database directory if not present
         let databaseUrl = URL.inLibrary().appendingPathComponent("Database", isDirectory: true)
         do {
             try fm.createDirectory(at: databaseUrl, withIntermediateDirectories: true)
@@ -59,9 +64,9 @@ public struct DBMigrationMaintainer {
     }
     
     /// PreHKSyncRealm
-    public func doMigration_B_V02toV03() {
+    public func doMigration_B_DB01toDB02() {
         let fm = FileManager.default
-        // Create Libary/Database directory if not present
+        // Create Library/Database directory if not present
         let databaseUrl = URL.inLibrary().appendingPathComponent("Database", isDirectory: true)
         do {
             try fm.createDirectory(at: databaseUrl, withIntermediateDirectories: true)
@@ -84,7 +89,7 @@ public struct DBMigrationMaintainer {
             fm.fileExists(atPath: toUrl02.path) == false,
             fm.fileExists(atPath: toUrl03.path) == false        
             else {
-                LogService.shared.error("doMigration_B_V02toV03 file existance criteria not met.")
+                LogService.shared.error("doMigration_B_DB01toDB02 file existance criteria not met.")
                 return
         }
         
@@ -94,7 +99,7 @@ public struct DBMigrationMaintainer {
             // Directory copy
             try fm.copyItem(at: fromUrl03, to: toUrl03)            
         } catch {
-            LogService.shared.error("doMigration_B_V02toV03 '\(error)'")
+            LogService.shared.error("doMigration_B_DB01toDB02 '\(error)'")
         }
         
         #if DEBUG
