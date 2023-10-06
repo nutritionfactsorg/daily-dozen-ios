@@ -35,6 +35,7 @@ struct SettingsKeys {
     
     /// Exercise Display Gamut: 1 x 45 minutes, 3 x 15 minutes, 6 x 8 minutes
     static let exerciseGamutPref = "exerciseGamutPref"
+    static let exerciseGamutMaxUsed = "exerciseGamutMaxUsed"
     
     // MARK: - UNNotificationRequest identifiers
     

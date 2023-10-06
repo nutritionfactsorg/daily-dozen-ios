@@ -69,4 +69,23 @@ struct SettingsManager {
     public static func exerciseGamutInt() -> Int {
         return exerciseGamut().int
     }
+    
+    /// Daily count for exercises (number of checkboxes)
+    /// Exercise Display Gamut: 1 x 45 minutes, 3 x 15 minutes, 6 x 8 minutes
+    /// Highest gamut every set in user preferences
+    public static func exerciseGamutMaxUsed() -> ExerciseGamut {
+        let exerciseGamutMaxUsedInt = UserDefaults.standard.integer(forKey: SettingsKeys.exerciseGamutMaxUsed)
+        guard let maxGamut = ExerciseGamut(rawValue: exerciseGamutMaxUsedInt)
+        else {
+            return ExerciseGamut.default // default if not specified in preferences
+        }
+        return maxGamut
+    }
+
+    /// Daily count for exercises (number of checkboxes)
+    /// Exercise Display Gamut: 1 x 45 minutes, 3 x 15 minutes, 6 x 8 minutes
+    /// Highest gamut every set in user preferences
+    public static func exerciseGamutMaxUsedInt() -> Int {
+        return exerciseGamutMaxUsed().int
+    }
 }
