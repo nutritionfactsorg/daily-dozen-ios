@@ -16,15 +16,15 @@ public struct DatabaseMaintainer {
         LogService.shared.debug("→→→ :WAYPOINT: doMigration() level=\(level)")
         
         if level == 0 {
-            // V01 and V02 not present.
-            // Start migration from Legacy V00
-            doMigration_A_LegacyToV01()
-            doMigration_B_V02toV03()
+            // DB01 and DB02 not present.
+            // Start migration from Legacy DB00
+            doMigration_A_LegacyToDB01()
+            doMigration_B_DB01toDB02()
             doMigration_C_Backup()
         } else if level == 1 {
-            // V01 is present, but not V02
-            // Start migration from V01
-            doMigration_B_V02toV03()
+            // DB01 is present, but not DB02
+            // Start migration from DB01
+            doMigration_B_DB01toDB02()
             doMigration_C_Backup()
         } else if level == 2 {
             // no migration needed.
@@ -33,19 +33,19 @@ public struct DatabaseMaintainer {
     
     private func getMigrationLevel() -> Int {
         let fm = FileManager.default
-        // Check for version V02
+        // DB Version DB02: RealmProvider "Database/NutritionFacts.realm"
         if fm.fileExists(atPath: URL.inDatabase(filename: RealmProvider.realmFilename).path) {
             return 2
         }
         
-        // Check for version V01
+        // DB Version DB01: RealmProvider "Documents/NutritionFacts.realm"
         if fm.fileExists(atPath: URL.inDocuments(filename: RealmProvider.realmFilename).path) {
             return 1
         }
         
-        // Check for version Legacy (V00)
-        let fileNameV00 = RealmProviderLegacy.realmFilename
-        if fm.fileExists(atPath: URL.inDocuments(filename: fileNameV00).path) {
+        // DB Version DB00: RealmProviderLegacy "main.realm"
+        let filenameDB00 = RealmProviderLegacy.realmFilename
+        if fm.fileExists(atPath: URL.inDocuments(filename: filenameDB00).path) {
             return 0
         }
         
@@ -65,7 +65,7 @@ public struct DatabaseMaintainer {
     ///
     /// * Array of discrete boolean becomes an integer count.
     /// * Does not sync with HealthKit
-    public func doMigration_A_LegacyToV01() {
+    public func doMigration_A_LegacyToDB01() {
         // export from "main.realm"
         let urlLegacy = URL.inDocuments(filename: RealmProviderLegacy.realmFilename)
         let realmMngrLegacy = RealmManagerLegacy(fileUrl: urlLegacy)
@@ -78,7 +78,7 @@ public struct DatabaseMaintainer {
     }
     
     /// PreHKSyncRealm
-    public func doMigration_B_V02toV03() {
+    public func doMigration_B_DB01toDB02() {
         let fm = FileManager.default
         // Create Libary/Database directory if not present
         let databaseUrl = URL.inLibrary().appendingPathComponent("Database", isDirectory: true)
@@ -103,7 +103,7 @@ public struct DatabaseMaintainer {
             fm.fileExists(atPath: toUrl02.path) == false,
             fm.fileExists(atPath: toUrl03.path) == false        
             else {
-                LogService.shared.error("doMigration_B_V02toV03 file existance criteria not met.")
+                LogService.shared.error("doMigration_B_DB01toDB02 file existance criteria not met.")
                 return
         }
         
@@ -113,7 +113,7 @@ public struct DatabaseMaintainer {
             // Directory copy
             try fm.copyItem(at: fromUrl03, to: toUrl03)            
         } catch {
-            LogService.shared.error("doMigration_B_V02toV03 '\(error)'")
+            LogService.shared.error("doMigration_B_DB01toDB02 '\(error)'")
         }
         
         #if DEBUG

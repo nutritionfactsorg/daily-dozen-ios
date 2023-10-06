@@ -213,7 +213,7 @@ class UtilityTableViewController: UITableViewController {
         DispatchQueue.global(qos: .userInitiated).async {
             // lower priority job here
             DatabaseBuiltInTest.shared
-                .doGenerateDBHistoryBIT(numberOfDays: 1095, defaultDB: true, activity: busyAlert)
+                .doGenerateDBHistoryBIT(numberOfDays: 100, defaultDB: true, activity: busyAlert)
             DispatchQueue.main.async {
                 // update ui here
                 busyAlert.completed()

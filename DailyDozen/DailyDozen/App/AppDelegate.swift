@@ -58,8 +58,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         logger.debug("""
         ::::: SIMULATOR ENVIRONMENT :::::
         Bundle & Resources Path:\n\(bundle.bundlePath)\n
-        App Documents (log files and exports) Directory:\n\(URL.inDocuments().path)\n
-        App Library (database) Directory:\n\(URL.inLibrary().path)\n
+        App Documents Directory:\n\(URL.inDocuments().path)\n
+        App Library Directory:\n\(URL.inLibrary().path)\n
         """)
         logger.debug(":::::::::::::::::::::::::::::::::\n")
         #endif

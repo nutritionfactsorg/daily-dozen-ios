@@ -927,13 +927,6 @@
 			path = Views;
 			sourceTree = "<group>";
 		};
-		4C22C9932A733A540008D7B6 /* DataSql */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = DataSql;
-			sourceTree = "<group>";
-		};
 		4C22C9942A73546C0008D7B6 /* Data */ = {
 			isa = PBXGroup;
 			children = (
@@ -941,7 +934,6 @@
 				4941D729237E13DC00ED84B5 /* DataCountType.swift */,
 				4941D734237E266300ED84B5 /* DataCountAttributes.swift */,
 				4941D72B237E13DC00ED84B5 /* DataWeightType.swift */,
-				4C22C9932A733A540008D7B6 /* DataSql */,
 				4941D727237E13DC00ED84B5 /* DataRealm */,
 			);
 			path = Data;

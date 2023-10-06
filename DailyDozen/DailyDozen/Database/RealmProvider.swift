@@ -72,7 +72,7 @@ class RealmProvider {
             objectTypes: [DataCountRecord.self, DataWeightRecord.self])
         Realm.Configuration.defaultConfiguration = config
         guard let realm = try? Realm() else {
-            fatalError("FAIL: could not instantiate RealmProvider.")
+            fatalError("FAIL: could not instantiate (init) RealmProvider.")
         }
         self.realm = realm
     }
@@ -95,7 +95,7 @@ class RealmProvider {
             objectTypes: [DataCountRecord.self, DataWeightRecord.self])
         Realm.Configuration.defaultConfiguration = config
         guard let realm = try? Realm() else {
-            fatalError("FAIL: could not instantiate RealmProvider.")
+            fatalError("FAIL: could not instantiate (static func) RealmProvider.")
         }
         RealmProvider.primary.realm = realm
         //Realm.invalidate(self: Realm)
