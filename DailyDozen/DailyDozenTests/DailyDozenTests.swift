@@ -76,7 +76,7 @@ class DailyDozenTests: XCTestCase {
         let urlV01 = workingUrl.appendingPathComponent("testCV01.realm", isDirectory: false)
         let realmMngrV01 = RealmManager(fileURL: urlV01)
         let realmDBV01 = realmMngrV01.realmDb
-        realmDBV01.deleteDBAll()
+        realmDBV01.deleteAllObjects()
 
         // Check new content length & values
         let trackersPass01 = realmDBV01.getDailyTrackers()
@@ -91,7 +91,7 @@ class DailyDozenTests: XCTestCase {
         
         // 02: export new database format
         let filename02 = realmMngrV01.csvExport(marker: "testC")
-        realmMngrV01.realmDb.deleteDBAll()
+        realmMngrV01.realmDb.deleteAllObjects()
         realmMngrV01.csvImport(filename: filename02)
 
         // :!!!: check new content length & values

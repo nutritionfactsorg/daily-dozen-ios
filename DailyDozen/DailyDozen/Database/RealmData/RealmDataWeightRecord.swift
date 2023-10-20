@@ -12,8 +12,6 @@ class RealmDataWeightRecord: Object {
     
     // MARK: - fields
     
-    // MARK: - fields
-    
     /// yyyyMMdd.typeKey e.g. 20190101.am
     @objc dynamic var pid: String = ""
     /// kilograms
@@ -91,7 +89,7 @@ class RealmDataWeightRecord: Object {
     
     // MARK: - Init
     
-    /// CSV Initialer.
+    /// CSV Initializer: RealmDataWeightRecord
     convenience init?(datestampKey: String, typeKey: String, kilograms: String, timeHHmm: String) {
         guard DataWeightType(typeKey: typeKey) != nil,
             Date(datestampKey: datestampKey) != nil,

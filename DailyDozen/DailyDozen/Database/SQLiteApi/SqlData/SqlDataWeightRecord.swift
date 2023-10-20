@@ -20,6 +20,9 @@ public struct SqlDataWeightRecord: Codable {
     /// time of day 24-hour "HH:mm" format
     public var dataweight_time: String = ""
     
+    public var kg: Double { dataweight_kg }
+    public var time: String { dataweight_time }
+    
     public var kgStr: String {
         if let s = UnitsUtility.regionalKgWeight(fromKg: dataweight_kg, toDecimalDigits: 1) {
             return s
@@ -91,7 +94,7 @@ public struct SqlDataWeightRecord: Codable {
     
     // MARK: - Init
     
-    /// CSV Initialer. :GTD: implement typeKey and typeNid
+    /// CSV Initializer: SqlDataWeightRecord :GTD: implement typeKey and typeNid
     public init?(datestampSid: String, typeKey: String, kilograms: String, timeHHmm: String) {
         guard DataWeightType(typeKey: typeKey) != nil,
             Date(datestampSid: datestampSid) != nil,

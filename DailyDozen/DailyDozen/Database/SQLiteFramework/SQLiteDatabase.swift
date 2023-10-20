@@ -14,10 +14,10 @@ import SQLite3
 /// 
 /// Once a database is open:
 ///  
-/// * `tables()` list of tables in the database, 
-/// * `primaryIndex()` to get a table's primary index
-/// * `record()` to get meta-information about a table's fields (e.g., field names).
-/// * `getStatus()` information about last status update.
+/// - `tables()` list of tables in the database, 
+/// - `primaryIndex()` to get a table's primary index
+/// - `record()` to get meta-information about a table's fields (e.g., field names).
+/// - `getStatus()` information about last status update.
 ///  
 /// **Note:** 
 /// Use SQLiteQuery executeStatement() to execute a prepared query statement.

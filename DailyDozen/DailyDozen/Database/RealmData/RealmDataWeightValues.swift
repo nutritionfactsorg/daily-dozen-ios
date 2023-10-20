@@ -88,7 +88,7 @@ struct RealmDataWeightValues {
     
     // MARK: - Init
     
-    /// CSV Initialer.
+    /// CSV Initializer: RealmDataWeightValues
     init?(datestampKey: String, typeKey: String, kilograms: String, timeHHmm: String) {
         guard DataWeightType(typeKey: typeKey) != nil,
             Date(datestampKey: datestampKey) != nil,

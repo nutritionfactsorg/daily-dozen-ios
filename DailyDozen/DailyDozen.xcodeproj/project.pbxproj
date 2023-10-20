@@ -113,6 +113,7 @@
 		49F8D1DE23906B29003E139F /* TweakEntryDataProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49F8D1DD23906B29003E139F /* TweakEntryDataProvider.swift */; };
 		4C079D4C287FFC5B00234849 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 4C079D4B287FFC5B00234849 /* GoogleService-Info.plist */; };
 		4C092E3F28EF5E97004D5539 /* AnalyticsHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C092E3E28EF5E97004D5539 /* AnalyticsHelper.swift */; };
+		4C1E359B2AE268BA008B3B2B /* SqlDailyTracker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C1E359A2AE268BA008B3B2B /* SqlDailyTracker.swift */; };
 		4C22C9A02A737DEE0008D7B6 /* RealmDailyTracker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C22C9962A737DEE0008D7B6 /* RealmDailyTracker.swift */; };
 		4C22C9A12A737DEE0008D7B6 /* DataCountAttributes.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C22C9972A737DEE0008D7B6 /* DataCountAttributes.swift */; };
 		4C22C9A22A737DEE0008D7B6 /* DataCountType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C22C9982A737DEE0008D7B6 /* DataCountType.swift */; };
@@ -138,7 +139,6 @@
 		4CAE49102A95D76500B5ED51 /* SqlDataCountModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4CAE490C2A95D76500B5ED51 /* SqlDataCountModel.swift */; };
 		4CAE49112A95D76500B5ED51 /* SqlDataWeightRecord.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4CAE490D2A95D76500B5ED51 /* SqlDataWeightRecord.swift */; };
 		4CAE49122A95D76500B5ED51 /* SqlDataWeightModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4CAE490E2A95D76500B5ED51 /* SqlDataWeightModel.swift */; };
-		4CAE49152A95E8D400B5ED51 /* SQLiteManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4CAE49142A95E8D400B5ED51 /* SQLiteManager.swift */; };
 		4CAE49172A95E8F400B5ED51 /* SQLiteConnector.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4CAE49162A95E8F400B5ED51 /* SQLiteConnector.swift */; };
 		4CBCB2BB2983779F00015393 /* Strings.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4CBCB2BA2983779F00015393 /* Strings.swift */; };
 		4CCB92C32ABCDD6D0095C3D8 /* Thread.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4CCB92C22ABCDD6D0095C3D8 /* Thread.swift */; };
@@ -343,6 +343,7 @@
 		49FECE9327DB0C3B0078C26D /* LocalesBatchA.xctestplan */ = {isa = PBXFileReference; lastKnownFileType = text; path = LocalesBatchA.xctestplan; sourceTree = "<group>"; };
 		4C079D4B287FFC5B00234849 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		4C092E3E28EF5E97004D5539 /* AnalyticsHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnalyticsHelper.swift; sourceTree = "<group>"; };
+		4C1E359A2AE268BA008B3B2B /* SqlDailyTracker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SqlDailyTracker.swift; sourceTree = "<group>"; };
 		4C22C9962A737DEE0008D7B6 /* RealmDailyTracker.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RealmDailyTracker.swift; sourceTree = "<group>"; };
 		4C22C9972A737DEE0008D7B6 /* DataCountAttributes.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DataCountAttributes.swift; sourceTree = "<group>"; };
 		4C22C9982A737DEE0008D7B6 /* DataCountType.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DataCountType.swift; sourceTree = "<group>"; };
@@ -392,7 +393,6 @@
 		4CAE490C2A95D76500B5ED51 /* SqlDataCountModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SqlDataCountModel.swift; sourceTree = "<group>"; };
 		4CAE490D2A95D76500B5ED51 /* SqlDataWeightRecord.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SqlDataWeightRecord.swift; sourceTree = "<group>"; };
 		4CAE490E2A95D76500B5ED51 /* SqlDataWeightModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SqlDataWeightModel.swift; sourceTree = "<group>"; };
-		4CAE49142A95E8D400B5ED51 /* SQLiteManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SQLiteManager.swift; sourceTree = "<group>"; };
 		4CAE49162A95E8F400B5ED51 /* SQLiteConnector.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SQLiteConnector.swift; sourceTree = "<group>"; };
 		4CBCB2BA2983779F00015393 /* Strings.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Strings.swift; sourceTree = "<group>"; };
 		4CCB92C22ABCDD6D0095C3D8 /* Thread.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Thread.swift; sourceTree = "<group>"; };
@@ -659,6 +659,7 @@
 			children = (
 				4C22C9952A737DEE0008D7B6 /* Data */,
 				4930360624760CBD00746D49 /* DBMigrationMaintainer.swift */,
+				4C22C9992A737DEE0008D7B6 /* RealmData */,
 				49B93E4F2477361100144C80 /* RealmBuiltInTest.swift */,
 				4941D726237E13DB00ED84B5 /* RealmManager.swift */,
 				4941D72C237E13DC00ED84B5 /* RealmProvider.swift */,
@@ -666,7 +667,6 @@
 				4C5D7C7F2A967F3A000D5153 /* SQLiteBuiltInTest.swift */,
 				4CAE49162A95E8F400B5ED51 /* SQLiteConnector.swift */,
 				4CAE48EE2A95C43C00B5ED51 /* SQLiteFramework */,
-				4CAE49142A95E8D400B5ED51 /* SQLiteManager.swift */,
 			);
 			path = Database;
 			sourceTree = "<group>";
@@ -950,13 +950,12 @@
 			children = (
 				4C22C9972A737DEE0008D7B6 /* DataCountAttributes.swift */,
 				4C22C9982A737DEE0008D7B6 /* DataCountType.swift */,
-				4C22C9992A737DEE0008D7B6 /* DataRealm */,
 				4C22C99F2A737DEE0008D7B6 /* DataWeightType.swift */,
 			);
 			path = Data;
 			sourceTree = "<group>";
 		};
-		4C22C9992A737DEE0008D7B6 /* DataRealm */ = {
+		4C22C9992A737DEE0008D7B6 /* RealmData */ = {
 			isa = PBXGroup;
 			children = (
 				4C22C9962A737DEE0008D7B6 /* RealmDailyTracker.swift */,
@@ -964,7 +963,7 @@
 				4C22C99B2A737DEE0008D7B6 /* RealmDataWeightRecord.swift */,
 				4C22C99C2A737DEE0008D7B6 /* RealmDataWeightValues.swift */,
 			);
-			path = DataRealm;
+			path = RealmData;
 			sourceTree = "<group>";
 		};
 		4CAE48EE2A95C43C00B5ED51 /* SQLiteFramework */ = {
@@ -985,20 +984,21 @@
 			isa = PBXGroup;
 			children = (
 				4CAE49092A95D70C00B5ED51 /* SQLiteApi.swift */,
-				4CAE48F72A95CCC200B5ED51 /* DataSql */,
+				4CAE48F72A95CCC200B5ED51 /* SqlData */,
 			);
 			path = SQLiteApi;
 			sourceTree = "<group>";
 		};
-		4CAE48F72A95CCC200B5ED51 /* DataSql */ = {
+		4CAE48F72A95CCC200B5ED51 /* SqlData */ = {
 			isa = PBXGroup;
 			children = (
 				4CAE490C2A95D76500B5ED51 /* SqlDataCountModel.swift */,
 				4CAE490B2A95D76500B5ED51 /* SqlDataCountRecord.swift */,
 				4CAE490E2A95D76500B5ED51 /* SqlDataWeightModel.swift */,
 				4CAE490D2A95D76500B5ED51 /* SqlDataWeightRecord.swift */,
+				4C1E359A2AE268BA008B3B2B /* SqlDailyTracker.swift */,
 			);
-			path = DataSql;
+			path = SqlData;
 			sourceTree = "<group>";
 		};
 		68646D18FC1A63146B00CB7C /* Frameworks */ = {
@@ -1686,13 +1686,13 @@
 				4C22C9A12A737DEE0008D7B6 /* DataCountAttributes.swift in Sources */,
 				4CAE49052A95D07B00B5ED51 /* SQLiteStatus.swift in Sources */,
 				CFBEE2341FDE9A57005C0F45 /* RoundedView.swift in Sources */,
-				4CAE49152A95E8D400B5ED51 /* SQLiteManager.swift in Sources */,
 				498F7244239D8B5C004E501B /* WeightHistoryViewModel.swift in Sources */,
 				497390B023A5D4F900492D92 /* SettingsViewController.swift in Sources */,
 				49F66B792588752D00002DB2 /* UITextField.swift in Sources */,
 				CF9EC1C32021D37000C7B3CA /* MenuItem.swift in Sources */,
 				CF49029B1FD91F01000EAB68 /* DozeHistoryViewModel.swift in Sources */,
 				4933A74B23EE267600CE4631 /* DozeTextsProvider.swift in Sources */,
+				4C1E359B2AE268BA008B3B2B /* SqlDailyTracker.swift in Sources */,
 				CF2FA9961FA87F0C003508F8 /* DozeDetailViewController.swift in Sources */,
 				4CAE49112A95D76500B5ED51 /* SqlDataWeightRecord.swift in Sources */,
 				4C22C9A72A737DEE0008D7B6 /* DataWeightType.swift in Sources */,

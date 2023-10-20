@@ -12,6 +12,8 @@ public class SQLiteApi {
     public var dataCount: SqlDataCountModel!
     public var dataWeight: SqlDataWeightModel!
     
+    private var unsavedDailyTracker: SqlDailyTracker?
+    
     public init(dbUrl: URL) {
         // Phase 1 initialization
         self.dailydozenDb = SQLiteDatabase(url: dbUrl)
@@ -36,6 +38,30 @@ public class SQLiteApi {
     /// Close opened databases.
     deinit {
         _ = dailydozenDb.close() // :NYI: handle return result
+    }
+    
+    func getDailyTrackers(activity: ActivityProgress? = nil) -> [SqlDailyTracker] {
+        // Daily Dozen & Tweaks Counters
+        activity?.setProgress(ratio: 0.0, text: "0/3")
+
+        // Weight History
+        activity?.setProgress(ratio: 0.33, text: "1/3")
+        
+        return []
+    }
+    
+    func saveDailyTracker() {
+        guard let tracker = unsavedDailyTracker else {
+            //LogService.shared.debug(
+            //    "RealmProvider saveDailyTracker unsavedDailyTracker is nil"
+            //)
+            return
+        }
+        saveDailyTracker(tracker: tracker)
+    }
+    
+    func saveDailyTracker(tracker: SqlDailyTracker) {
+        //
     }
     
     // MARK: - Transaction Support

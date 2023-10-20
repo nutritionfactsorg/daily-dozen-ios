@@ -47,7 +47,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         AppDelegate didFinishLaunchingWithOptions DEBUG enabled
         """)
         
-        SQLiteBuiltInTest.shared.setupInitialState() // :GTD:01.a: setup initial state
+        SQLiteBuiltInTest.shared.setupInitialState(.db02)
         
         logger.debug(":::::::::::::::::\n")
         #endif

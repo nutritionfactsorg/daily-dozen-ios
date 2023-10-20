@@ -508,14 +508,15 @@ class RealmProvider {
         }
     }
     
-    func deleteDBAll() {
+    /// Deletes all objects from the Realm.
+    func deleteAllObjects() {
         do {
             try realm.write {
                 realm.deleteAll()
             }
         } catch {
             LogService.shared.error(
-                "FAIL RealmProvider deleteDBAll() description:\(error.localizedDescription)"
+                "FAIL RealmProvider deleteAllObjects() description:\(error.localizedDescription)"
             )
         }
     }

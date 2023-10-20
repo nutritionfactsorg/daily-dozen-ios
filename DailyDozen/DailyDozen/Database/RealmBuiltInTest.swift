@@ -16,23 +16,24 @@ public struct RealmBuiltInTest {
     static public var shared = RealmBuiltInTest()
     
     public let hkHealthStore = HKHealthStore()
+    let logger = LogService.shared
     
     /// Clear Documents/V01 and Library/Database/V02 Realm data.
     func doClearAllDataInMigrationChainBIT() {
-        LogService.shared.debug(
+        logger.debug(
             "••BEGIN•• UtilityTableViewController doClearAllDataInMigrationChainBIT()"
         )
         
         let urlV01 = URL.inDocuments(filename: RealmProvider.realmFilename)
         let realmMngrV01 = RealmManager(fileURL: urlV01)
         let realmDbV01 = realmMngrV01.realmDb
-        realmDbV01.deleteDBAll()
+        realmDbV01.deleteAllObjects()
         
         let realmMngrV02 = RealmManager()
         let realmDbV02 = realmMngrV02.realmDb
-        realmDbV02.deleteDBAll()
+        realmDbV02.deleteAllObjects()
         
-        LogService.shared.debug(
+        logger.debug(
             "••EXIT•• UtilityTableViewController doClearAllDataInMigrationChainBIT()"
         )
     }
@@ -51,16 +52,18 @@ public struct RealmBuiltInTest {
     
     /// Generate Realm data
     ///
-    /// * ~1 month -> 30 days 
-    /// * ~10 months -> 300 days
-    /// * ~2.7 years or ~33 months -> 1000 days (2000 weight entries)
-    /// * 3 years (1095 days, 2190 weight entries) -> 365*3
-    func doGenerateDBHistoryBIT(numberOfDays: Int, defaultDB: Bool) {
-        LogService.shared.debug(
+    /// - ~1 month -> 30 days 
+    /// - ~10 months -> 300 days
+    /// - ~2.7 years or ~33 months -> 1000 days (2000 weight entries)
+    /// - 3 years (1095 days, 2190 weight entries) -> `3*365`
+    func doGenerateDBHistoryBIT(numberOfDays: Int, inLibDbDir: Bool) {
+        logger.debug(
             "••BEGIN•• doGenerateDBHistoryBIT(\(numberOfDays))"
         )
-        //let url = URL.inDocuments(filename: "test_\(numberOfDays)_days.realm")
-        let url = URL.inDatabase(filename: RealmProvider.realmFilename)
+        let url = inLibDbDir ?
+        URL.inDatabase(filename: RealmProvider.realmFilename) : 
+        URL.inDocuments(filename: RealmProvider.realmFilename)
+        
         let realmMngrCheck = RealmManager(fileURL: url)
         let realmProvider = realmMngrCheck.realmDb
         
@@ -75,13 +78,10 @@ public struct RealmBuiltInTest {
         var date = calendar.date(from: dateComponents)!
         
         let weightBase = 65.0 // kg
-        LogService.shared.debug("    baseWeigh \(weightBase) kg, \(weightBase * 2.2) lbs")
+        logger.debug("    baseWeigh \(weightBase) kg, \(weightBase * 2.2) lbs")
         let weightAmplitude = 2.0 // kg
         let weightCycleStep = (2 * Double.pi) / (30 * 2)
-        for i in 0..<numberOfDays { 
-            let stepByDay = DateComponents(day: -1)
-            date = calendar.date(byAdding: stepByDay, to: date)!
-            
+        for i in 0..<numberOfDays {
             // Add Daily Dozen data counts
             realmProvider.saveCount(3, date: date, countType: .dozeBeans) // 0-3
             realmProvider.saveCount(Int.random(in: 0...3), date: date, countType: .dozeFruitsOther) // 0-3
@@ -116,12 +116,15 @@ public struct RealmBuiltInTest {
             if i < 5 {
                 let weightAmStr = String(format: "%.2f", weightAm)
                 let weightPmStr = String(format: "%.2f", weightAm)
-                LogService.shared.debug(
+                logger.debug(
                     "    \(date) [AM] \(dateAm) \(weightAmStr) [PM] \(datePm) \(weightPmStr)"
                 )
             }
+            
+            let stepByDay = DateComponents(day: -1)
+            date = calendar.date(byAdding: stepByDay, to: date)!
         }
-        LogService.shared.debug(
+        logger.debug(
             "••EXIT•• UtilityTableViewController doGenerateDBHistoryBIT(…)"
         )
     }
@@ -165,7 +168,7 @@ public struct RealmBuiltInTest {
         
         let timeIn = Date().getCurrentBenchmarkSeconds
         let maxStreak = 100 // 100 (~minute), 999, 1000
-        LogService.shared.debug(
+        logger.debug(
             "••BEGIN•• doGenerateDBStreaksBIT()"
         )
         let realmMngr = RealmManager()
@@ -179,7 +182,7 @@ public struct RealmBuiltInTest {
             realmDb.saveCount(3, date: date, countType: .dozeFruitsOther)
         }
         var timeB = Date().getCurrentBenchmarkSeconds
-        LogService.shared.debug("\t2\ttime=\t\(timeB - timeA)\tsec")
+        logger.debug("\t2\ttime=\t\(timeB - timeA)\tsec")
         activity?.setText("1/12")
         activity?.setRatio(1/12)
         
@@ -190,7 +193,7 @@ public struct RealmBuiltInTest {
             realmDb.saveCount(1, date: date, countType: .dozeBerries)
         }
         timeB = Date().getCurrentBenchmarkSeconds
-        LogService.shared.debug("\t7\ttime=\t\(timeB - timeA)\tsec")
+        logger.debug("\t7\ttime=\t\(timeB - timeA)\tsec")
         activity?.setText("2/12")
         activity?.setRatio(2/12)
         
@@ -201,7 +204,7 @@ public struct RealmBuiltInTest {
             realmDb.saveCount(3, date: date, countType: .dozeBeans)
         }
         timeB = Date().getCurrentBenchmarkSeconds
-        LogService.shared.debug("\t14\ttime=\t\(timeB - timeA)\tsec")
+        logger.debug("\t14\ttime=\t\(timeB - timeA)\tsec")
         activity?.setText("3/12")
         activity?.setRatio(3/12)
         
@@ -212,7 +215,7 @@ public struct RealmBuiltInTest {
             realmDb.saveCount(1, date: date, countType: .dozeSpices)
         }
         timeB = Date().getCurrentBenchmarkSeconds
-        LogService.shared.debug("\t\(maxStreak)\ttime=\t\(timeB - timeA)\tsec")
+        logger.debug("\t\(maxStreak)\ttime=\t\(timeB - timeA)\tsec")
         activity?.setText("4/12")
         activity?.setRatio(4/12)
         timeA = timeB
@@ -221,7 +224,7 @@ public struct RealmBuiltInTest {
             realmDb.saveCount(3, date: date, countType: .dozeWholeGrains)
         }
         timeB = Date().getCurrentBenchmarkSeconds
-        LogService.shared.debug("\t\(maxStreak)\ttime=\t\(timeB - timeA)\tsec")
+        logger.debug("\t\(maxStreak)\ttime=\t\(timeB - timeA)\tsec")
         activity?.setText("5/12")
         activity?.setRatio(5/12)
         timeA = timeB
@@ -230,7 +233,7 @@ public struct RealmBuiltInTest {
             realmDb.saveCount(5, date: date, countType: .dozeBeverages)
         }
         timeB = Date().getCurrentBenchmarkSeconds
-        LogService.shared.debug("\t\(maxStreak)\ttime=\t\(timeB - timeA)\tsec")
+        logger.debug("\t\(maxStreak)\ttime=\t\(timeB - timeA)\tsec")
         activity?.setText("6/12")
         activity?.setRatio(6/12)
         
@@ -245,7 +248,7 @@ public struct RealmBuiltInTest {
             realmDb.saveCount(0, date: date, countType: .tweakMealVinegar)
         }
         timeB = Date().getCurrentBenchmarkSeconds
-        LogService.shared.debug("\t19\ttime=\t\(timeB - timeA)\tsec")
+        logger.debug("\t19\ttime=\t\(timeB - timeA)\tsec")
         activity?.setText("7/12")
         activity?.setRatio(7/12)
         
@@ -264,7 +267,7 @@ public struct RealmBuiltInTest {
             realmDb.saveCount(3, date: date, countType: .tweakMealNegCal)
         }
         timeB = Date().getCurrentBenchmarkSeconds
-        LogService.shared.debug("\t16\ttime=\t\(timeB - timeA)\tsec")
+        logger.debug("\t16\ttime=\t\(timeB - timeA)\tsec")
         activity?.setText("8/12")
         activity?.setRatio(8/12)
         
@@ -275,7 +278,7 @@ public struct RealmBuiltInTest {
             realmDb.saveCount(3, date: date, countType: .tweakMealWater)
         }
         timeB = Date().getCurrentBenchmarkSeconds
-        LogService.shared.debug("\t14\ttime=\t\(timeB - timeA)\tsec")
+        logger.debug("\t14\ttime=\t\(timeB - timeA)\tsec")
         activity?.setText("9/12")
         activity?.setRatio(9/12)
         
@@ -286,7 +289,7 @@ public struct RealmBuiltInTest {
             realmDb.saveCount(1, date: date, countType: .tweakDailyNutriYeast)
         }
         timeB = Date().getCurrentBenchmarkSeconds
-        LogService.shared.debug("\t\(maxStreak)\ttime=\t\(timeB - timeA)\tsec")
+        logger.debug("\t\(maxStreak)\ttime=\t\(timeB - timeA)\tsec")
         activity?.setText("10/12")
         activity?.setRatio(10/12)
         timeA = timeB
@@ -295,7 +298,7 @@ public struct RealmBuiltInTest {
             realmDb.saveCount(2, date: date, countType: .tweakDailyCumin)
         }
         timeB = Date().getCurrentBenchmarkSeconds
-        LogService.shared.debug("\t\(maxStreak)\ttime=\t\(timeB - timeA)\tsec")
+        logger.debug("\t\(maxStreak)\ttime=\t\(timeB - timeA)\tsec")
         activity?.setText("11/12")
         activity?.setRatio(11/12)
         timeA = timeB
@@ -304,13 +307,13 @@ public struct RealmBuiltInTest {
             realmDb.saveCount(3, date: date, countType: .tweakDailyGreenTea)
         }
         timeB = Date().getCurrentBenchmarkSeconds
-        LogService.shared.debug("\t\(maxStreak)\ttime=\t\(timeB - timeA)\tsec")
+        logger.debug("\t\(maxStreak)\ttime=\t\(timeB - timeA)\tsec")
         activity?.setText("12/12")
         activity?.setRatio(12/12)
         
         let timeOut = Date().getCurrentBenchmarkSeconds
         let lapsed = timeOut - timeIn
-        LogService.shared.debug(
+        logger.debug(
             "••EXIT•• UtilityTableViewController doGenerateDBStreaksBIT() \(lapsed) sec"
         )
         // :!!!:        activityProgress?.completed()

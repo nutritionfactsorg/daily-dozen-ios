@@ -49,18 +49,4 @@ extension URL {
         return URL.inDatabase().appendingPathComponent(filename, isDirectory: false)
     }
     
-    /// - Returns: `Library/Backup/` directory URL
-    static func inBackup() -> URL {
-        let fm = FileManager.default
-        let urlList = fm.urls(for: .libraryDirectory, in: .userDomainMask)
-        let url = urlList[0].appendingPathComponent("Backup", isDirectory: true)
-        return url
-    }
-
-    /// - Parameter filename: A file name.
-    /// - Returns: `Library/Backup/filename` URL
-    static func inBackup(filename: String) -> URL {
-        return URL.inBackup().appendingPathComponent(filename, isDirectory: false)
-    }
-
 }

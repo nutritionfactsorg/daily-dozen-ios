@@ -7,7 +7,7 @@ import Foundation
 
 public extension Bool {
     
-    /// ANSI C: if (NON_ZERO_EXPRESSION) then { EXECUTE_CODE_BLOCK }
+    /// ANSI C: if (`NON_ZERO_EXPRESSION`) then { `EXECUTE_CODE_BLOCK` }
     /// SQLite: Boolean values are stored as integers 0 (false) and 1 (true).
     init(int: Int) {
         if int == 0 {

@@ -12,8 +12,8 @@ import Foundation
 ///  The canonical, normalized weight is kilograms as a Double
 ///
 /// * range, persisted maximum: 4 kg to 400 kg
-/// * resolution, export/import: two decimal places
-/// * resolution, persisted minimum: 0.05 kg, 0.1 lb
+/// * resolution, export/import: one decimal place
+/// * resolution, persisted minimum: 0.1 kg, 0.22 lb
 
 public enum UnitsWeightError: String, Error {
     case outOfRange = "Out of allowed range: 4 kg to 400 kg"

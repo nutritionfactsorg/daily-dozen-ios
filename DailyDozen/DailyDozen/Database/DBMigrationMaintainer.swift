@@ -10,40 +10,55 @@ import Foundation
 public struct DBMigrationMaintainer {
     
     static public var shared = DBMigrationMaintainer()
+    let logger = LogService.shared
     
     public func doMigration() {
         let level = getMigrationLevel()
-        LogService.shared.debug("→→→ :DEBUG:WAYPOINT: doMigration() DB level=\(level)")
+        logger.debug("➜➜➜ :DEBUG:WAYPOINT: doMigration() DB level=\(level)")
         
         // DB00: RealmProviderLegacy "main.realm" is no longer supported
         
         if level == 1 {
-            // DB01 is present, but not DB02
+            // PRESENT: DB01 RealmProvider  "Documents/NutritionFacts.realm"
+            //  ABSENT: DB02 RealmProvider  "Library/Database/NutritionFacts.realm"
+            //  ABSENT: DB03 SQLiteProvider "Library/Database/NutritionFacts.sqlite3"
             // Start migration from DB01
             doMigration_B_DB01toDB02()
-            doMigration_C_Backup()
+            let filename = doMigration_C_BD02Export()
+            doMigration_D_DB02toDB03(filename: filename)
+            _ = doMigration_E_BD03Export()
         } else if level == 2 {
-            // :GTD:02.b:!!!: needs level 2 to level 3 migration 
+            // PRESENT: DB02 RealmProvider  "Library/Database/NutritionFacts.realm"
+            //  ABSENT: DB03 SQLiteProvider "Library/Database/NutritionFacts.sqlite3"
+            let filename = doMigration_C_BD02Export()
+            doMigration_D_DB02toDB03(filename: filename)
+            _ = doMigration_E_BD03Export()
         } else if level == 3 {
-            // no migration needed.
+            // DB03 is either present or be created by the application
         }
     }
     
+    /// Level 1 RealmProvider  `Documents/NutritionFacts.realm.*`
+    /// Level 2 RealmProvider  `Library/Database/NutritionFacts.realm.*`
+    /// Level 3 SQLiteProvider `Library/Database/NutritionFacts.sqlite3`
     private func getMigrationLevel() -> Int {
         let fm = FileManager.default
         
-        // DB Version DB03: SQLiteProvider "Database/NutritionFacts.sqlite"
-        if fm.fileExists(atPath: URL.inDatabase(filename: SQLiteConnector.sqliteFilename).path) {
+        // DB Version DB03: SQLiteProvider "Library/Database/NutritionFacts.sqlite3"
+        let db03Url = URL.inDatabase(filename: SQLiteConnector.sqliteFilename)
+        if fm.fileExists(atPath: db03Url.path) {
             return 3
         }
-
-        // DB Version DB02: RealmProvider "Database/NutritionFacts.realm"
-        if fm.fileExists(atPath: URL.inDatabase(filename: RealmProvider.realmFilename).path) {
+        
+        // DB Version DB02: RealmProvider "Library/Database/NutritionFacts.realm"
+        let db02Url = URL.inDatabase(filename: RealmProvider.realmFilename)
+        if fm.fileExists(atPath: db02Url.path) {
             return 2
         }
         
         // DB Version DB01: RealmProvider "Documents/NutritionFacts.realm"
-        if fm.fileExists(atPath: URL.inDocuments(filename: RealmProvider.realmFilename).path) {
+        let db01Url = URL.inDocuments(filename: RealmProvider.realmFilename)
+        if fm.fileExists(atPath: db01Url.path) {
             return 1
         }
         
@@ -51,27 +66,30 @@ public struct DBMigrationMaintainer {
         // DB00 is no longer supported
         
         // Create Library/Database directory if not present
-        let databaseUrl = URL.inLibrary().appendingPathComponent("Database", isDirectory: true)
+        let databaseUrl = URL.inLibrary()
+            .appendingPathComponent("Database", isDirectory: true)
         do {
             try fm.createDirectory(at: databaseUrl, withIntermediateDirectories: true)
         } catch {
-            LogService.shared.error(" \(error)")
+            logger.error(" \(error)")
         }
         
         // If no realm or sqlite databases are present, 
-        // then use the most recent version.
+        // then use the highest migration level.
+        // Application will create a new empty database, if needed.
         return 3
     }
     
-    /// PreHKSyncRealm
+    /// Move realm database from Documents/ to Library/Database
     public func doMigration_B_DB01toDB02() {
         let fm = FileManager.default
         // Create Library/Database directory if not present
-        let databaseUrl = URL.inLibrary().appendingPathComponent("Database", isDirectory: true)
+        let databaseUrl = URL.inLibrary()
+            .appendingPathComponent("Database", isDirectory: true)
         do {
             try fm.createDirectory(at: databaseUrl, withIntermediateDirectories: true)
         } catch {
-            LogService.shared.error(" \(error)")
+            logger.error(" \(error)")
         }
 
         let fromUrl01 = URL.inDocuments(filename: "NutritionFacts.realm")
@@ -89,17 +107,16 @@ public struct DBMigrationMaintainer {
             fm.fileExists(atPath: toUrl02.path) == false,
             fm.fileExists(atPath: toUrl03.path) == false        
             else {
-                LogService.shared.error("doMigration_B_DB01toDB02 file existance criteria not met.")
+                logger.error("doMigration_B_DB01toDB02 file existance criteria not met.")
                 return
         }
         
         do {
-            try fm.copyItem(at: fromUrl01, to: toUrl01)
-            try fm.copyItem(at: fromUrl02, to: toUrl02)            
-            // Directory copy
-            try fm.copyItem(at: fromUrl03, to: toUrl03)            
+            try fm.copyItem(at: fromUrl01, to: toUrl01) // file copy
+            try fm.copyItem(at: fromUrl02, to: toUrl02) // file copy
+            try fm.copyItem(at: fromUrl03, to: toUrl03) // dir copy
         } catch {
-            LogService.shared.error("doMigration_B_DB01toDB02 '\(error)'")
+            logger.error("doMigration_B_DB01toDB02 '\(error)'")
         }
         
         #if DEBUG
@@ -113,51 +130,29 @@ public struct DBMigrationMaintainer {
         HealthSynchronizer.shared.resetSyncAll()
     }
     
-    /// Move Documents/* to Library/Backup/
-    public func doMigration_C_Backup() {
-        LogService.shared.debug(
-            "••BEGIN•• UtilityTableViewController doMigration_C_Backup()"
-        )
-        let fm = FileManager.default        
-        let documentsUrl = URL.inDocuments()
+    /// Export BD02 to Library/Backup/
+    public func doMigration_C_BD02Export() -> String {
+        logger.debug("••BEGIN•• UtilityTableViewController doMigration_C_BD02Export()")
+        let realmMngr = RealmManager(newThread: true)
+        let filename = realmMngr.csvExport(marker: "db_export_data")
         
-        var backupUrl = URL.inBackup()
-        // Add timestamp subdirectory
-        let timestamp = DateManager.currentDatetime().datestampyyyyMMddHHmmss
-        backupUrl.appendPathComponent(timestamp, isDirectory: true)
+        #if DEBUG_NOT
+        _ = realmMngr.csvExportWeight(marker: "db_export_weight")
+        HealthSynchronizer.shared.syncWeightExport(marker: "hk_export_weight")
+        #endif
         
-        do {
-            try fm.createDirectory(at: backupUrl, withIntermediateDirectories: true)
-            
-            let keys: [URLResourceKey] = [.isDirectoryKey]
-            let options: FileManager.DirectoryEnumerationOptions = [.skipsHiddenFiles]
-            let contentUrls = try fm.contentsOfDirectory(
-                at: documentsUrl, 
-                includingPropertiesForKeys: keys, 
-                options: options)
-            for fromUrl in contentUrls {
-                // skip: leave log* files in Documents/
-                if fromUrl.lastPathComponent.hasPrefix("log") ||
-                    fromUrl.lastPathComponent.hasSuffix("csv") {
-                    continue
-                }
-                
-                let toUrl = backupUrl.appendingPathComponent(fromUrl.lastPathComponent)
-                LogService.shared.debug("→→→ from: \(fromUrl)")
-                LogService.shared.debug("→→→   to: \(toUrl)")
-                // Move file or directory to new location synchronously.
-                try fm.moveItem(at: fromUrl, to: toUrl)
-            }
-                        
-        } catch {
-            LogService.shared.error(
-                "DBMigrationMaintainer doMigration_C_Backup \(error.localizedDescription)"
-            )
-        }
-    
-        LogService.shared.debug(
-            "••EXIT•• UtilityTableViewController doMigration_C_Backup()"
-        )
+        logger.debug("••EXIT•• UtilityTableViewController doMigration_C_BD02Export()")
+        return filename
     }
     
+    func doMigration_D_DB02toDB03(filename: String) { // :GTD:02.d
+        logger.debug("••BEGIN•• UtilityTableViewController doMigration_D_DB02toDB03()")
+        // Import
+
+    }
+    
+    func doMigration_E_BD03Export() -> String { // :GTD:02.e
+        logger.debug("••BEGIN•• UtilityTableViewController doMigration_E_BD03Export()")
+        return ""
+    }
 }

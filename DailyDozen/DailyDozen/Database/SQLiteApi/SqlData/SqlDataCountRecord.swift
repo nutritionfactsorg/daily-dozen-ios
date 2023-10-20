@@ -22,6 +22,8 @@ public struct SqlDataCountRecord: Codable {
     ///    `datacount_streak`     INTEGER
     public var datacount_streak: Int
     
+    public var count: Int { datacount_count }
+    
     // "\(datacount_kind_pfnid).\(dataCountType.typeKey)"
     // 20190214.dozeBeans
     public var pid: String // :GTD: refactor to string id `sid`
@@ -64,7 +66,7 @@ public struct SqlDataCountRecord: Codable {
     
     // MARK: - Init
     
-    /// CSV Initialer.
+    /// CSV Initializer: SqlDataCountRecord
     public init?(datestampSid: String, typeKey: String, count: Int = 0, streak: Int = 0) {
         guard let dataCountType = DataCountType(itemTypeKey: typeKey),
             Date(datestampSid: datestampSid) != nil else {

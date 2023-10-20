@@ -38,23 +38,23 @@ class UtilityTableViewController: UITableViewController {
     // MARK: - SQLite Utilities
     
     @IBAction func doUtilitySQLiteClearDbBtn(_ sender: UIButton) {
-        SQLiteConnector.run.clearDb()
+        SQLiteConnector.api.clearDb()
     }
     
     @IBAction func doUtilitySQLiteCreateDataBtn(_ sender: UIButton) {
-        SQLiteConnector.run.createData()
+        SQLiteConnector.api.createData()
     }
     
     @IBAction func doUtilitySQLiteExportDataBtn(_ sender: UIButton) {
-        SQLiteConnector.run.exportData()
+        SQLiteConnector.api.exportData()
     }
     
     @IBAction func doUtilitySQLiteImportDataBtn(_ sender: UIButton) {
-        SQLiteConnector.run.importData()
+        SQLiteConnector.api.importData()
     }
     
     @IBAction func doUtilitySQLiteTimingTextBtn(_ sender: UIButton) {
-        SQLiteConnector.run.timingTest()
+        SQLiteConnector.api.timingTest()
     }
     
     // MARK: - Realm Utilities
@@ -79,10 +79,10 @@ class UtilityTableViewController: UITableViewController {
     /// avoid this is situation. The root cause of this issue is unknown.
     @IBAction func doUtilityRealmGenerateHistoryBtn(_ sender: UIButton) {
         // half month
-        //RealmBuiltInTest.shared.doGenerateDBHistoryBIT(numberOfDays: 15, defaultDB: true)
+        //RealmBuiltInTest.shared.doGenerateDBHistoryBIT(numberOfDays: 15, inLibDbDir: true)
         
         // :SQLITE:TBD: three years -> 1095 days
-        RealmBuiltInTest.shared.doGenerateDBHistoryBIT(numberOfDays: 1095, defaultDB: true)
+        RealmBuiltInTest.shared.doGenerateDBHistoryBIT(numberOfDays: 1095, inLibDbDir: true)
     }
     
     /// doUtilityRealmGenerateStreaksBtn(…) "Simulate Progress"
@@ -116,7 +116,7 @@ class UtilityTableViewController: UITableViewController {
         logger.info("UtilityTableViewController doUtilityRealmDBExport()")
         let realmMngr = RealmManager(newThread: true)
         let backupFilename = realmMngr.csvExport(marker: "db_export_data")
-        // :SQLITE:TBD: export debug scope
+        
         #if DEBUG_NOT
         _ = realmMngr.csvExportWeight(marker: "db_export_weight")
         HealthSynchronizer.shared.syncWeightExport(marker: "hk_export_weight")
