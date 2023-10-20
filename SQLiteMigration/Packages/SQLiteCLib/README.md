@@ -1,3 +1,0 @@
-# SQLiteCLib
-
-SQLite system library.
