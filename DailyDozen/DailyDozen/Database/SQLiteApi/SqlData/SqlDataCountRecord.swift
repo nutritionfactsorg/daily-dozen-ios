@@ -22,14 +22,27 @@ public struct SqlDataCountRecord: Codable {
     ///    `datacount_streak`     INTEGER
     public var datacount_streak: Int
     
+    /// Canonical `field` (Column) Name Order
+    fileprivate enum Column: Int {
+        case datacountDatePsid  = 0
+        case datacountKindPfnid = 1
+        case datacountCount     = 2
+        case datacountStreak    = 3
+        
+        var idx: Int {self.rawValue}
+    }
+    
     public var count: Int { datacount_count }
     
-    // "\(datacount_kind_pfnid).\(dataCountType.typeKey)"
-    // 20190214.dozeBeans
-    public var pid: String // :GTD: refactor to string id `sid`
+    /// e.g. "20190214.dozeBeans"
+    public var idString: String {
+        if let parts = idKeys {
+            return "\(parts.datestampSid).\(parts.typeKey)"
+        }
+        return "\(datacount_date_psid).\(datacount_kind_pfnid)?"
+    }
     
-    // :GTD: pidKeys needs to be checked where used … is string still needed?
-    public var pidKeys: (datestampSid: String, typeKey: String)? {
+    public var idKeys: (datestampSid: String, typeKey: String)? {
         if let typeKey = DataCountType(nid: datacount_kind_pfnid)?.typeKey {
             return (datestampSid: datacount_date_psid, typeKey: typeKey)
         } else {
@@ -37,11 +50,10 @@ public struct SqlDataCountRecord: Codable {
         }
     }
     
-    // :GTD: pidParts uses needs check
-    public var pidParts: (datestamp: Date, countType: DataCountType)? {
+    public var idParts: (datestamp: Date, countType: DataCountType)? {
         guard let date = Date.init(datestampSid: datacount_date_psid),
             let countType = DataCountType(nid: datacount_kind_pfnid) else {
-                LogService.shared.error(
+                logit.error(
                     "SqlDataCountRecord pidParts has invalid datestamp or typeKey"
                 )
                 return nil
@@ -80,14 +92,12 @@ public struct SqlDataCountRecord: Codable {
         datacount_count = count
         if datacount_count > dataCountType.maxServings {
             datacount_count = dataCountType.maxServings
-            LogService.shared.error(
+            logit.error(
                 "SqlDataCountRecord init datestampSid:\(datestampSid) typekey:\(typeKey) count:\(count) exceeded max servings \(dataCountType.maxServings)"
             )
 
         }
         datacount_streak = streak
-        
-        self.pid = "\(datacount_kind_pfnid).\(dataCountType.typeKey)"
     }
     
     public init(date: Date, countType: DataCountType, count: Int = 0, streak: Int = 0) {
@@ -98,13 +108,33 @@ public struct SqlDataCountRecord: Codable {
         datacount_count = count
         if datacount_count > countType.maxServings {
             datacount_count = countType.maxServings
-            LogService.shared.error(
+            logit.error(
                 "SqlDataCountRecord init date:\(date.datestampSid) countType:\(countType.typeKey) count:\(count) exceeds max servings \(countType.maxServings)"
             )
         }
         datacount_streak = streak
+    }
+    
+    public init?( row: [Any?], api: SQLiteApi ) {
+        guard // required fields
+            let datePsid = row[Column.datacountDatePsid.idx] as? String,
+            let kindPfnid = row[Column.datacountKindPfnid.idx] as? Int,
+            let count = row[Column.datacountCount.idx] as? Int,
+            let streak = row[Column.datacountStreak.idx] as? Int
+        else {
+            return nil
+            //var s = ""
+            //for a in row {
+            //    s.append("\(a ?? "nil")")
+            //}
+            //
+            //throw SQLiteApiError.rowConversionFailed(s)
+        }
         
-        self.pid = "\(datacount_kind_pfnid).\(countType.typeKey)"
+        self.datacount_date_psid = datePsid
+        self.datacount_kind_pfnid = kindPfnid
+        self.datacount_count = count
+        self.datacount_streak = streak
     }
     
     // MARK: - Meta Information
@@ -128,7 +158,7 @@ public struct SqlDataCountRecord: Codable {
         if let value = Int(text) {
             setCount(value)
         } else {
-            LogService.shared.error(
+            logit.error(
                 "SqlDataCountRecord setCount() not convertable to Int \(text)"
             )
         }
@@ -136,16 +166,16 @@ public struct SqlDataCountRecord: Codable {
     
     mutating func setCount(_ count: Int) {
         datacount_count = count
-        if let countType = pidParts?.countType {
+        if let countType = idParts?.countType {
             if datacount_count > countType.maxServings {
                 datacount_count = countType.maxServings
-                LogService.shared.error(
-                    "SqlDataCountRecord setCount \(pid) \(count) exceeds max servings"
+                logit.error(
+                    "SqlDataCountRecord setCount \(idString) \(count) exceeds max servings"
                 )
             }
         } else {
-            LogService.shared.error(
-                "SqlDataCountRecord setCount \(pid) \(count) could not range check servings"
+            logit.error(
+                "SqlDataCountRecord setCount \(idString) \(count) could not range check servings"
             )
         }
     }

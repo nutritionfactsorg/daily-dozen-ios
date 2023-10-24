@@ -16,8 +16,6 @@ struct SqlDailyTracker {
     var weightAM: SqlDataWeightRecord
     var weightPM: SqlDataWeightRecord
     
-    let logger = LogService.shared
-    
     init(date: Date) {
         self.date = date
         
@@ -33,7 +31,7 @@ struct SqlDailyTracker {
         if let value = Int(countText) {
             setCount(typeKey: typeKey, count: value)
         } else {
-            logger.error("SqlDailyTracker setCount() countText \(countText) not convertable")
+            logit.error("SqlDailyTracker setCount() countText \(countText) not convertable")
         }
     }
     
@@ -41,7 +39,7 @@ struct SqlDailyTracker {
         if var sqlDataCountRecord = itemsDict[typeKey] {
             sqlDataCountRecord.setCount(count)
         } else {
-            logger.error("SqlDailyTracker setCount() type not found \(typeKey.typeKey)")
+            logit.error("SqlDailyTracker setCount() type not found \(typeKey.typeKey)")
         }
     }
     

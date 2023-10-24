@@ -14,6 +14,7 @@ public struct SQLiteResult {
     public var columnNames: [String]
     // var columnType or blobType: [String: some_type ] // column name string: type
     // :WIP:ACCESS_LEVEL:
+    /// Data elements can be any of `Int`, `Double`, `String` or `nil`
     public var data: [[Any?]]
     
     // 

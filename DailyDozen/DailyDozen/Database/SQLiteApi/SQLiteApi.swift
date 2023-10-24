@@ -5,6 +5,10 @@
 
 import Foundation
 
+public enum SQLiteApiError: Error {
+    case rowConversionFailed(String)
+}
+
 /// NOTE: `deinit` can only be implemented in a class
 public class SQLiteApi {
     // Phase 1 initialization
