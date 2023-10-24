@@ -13,7 +13,6 @@ struct SQLiteConnector {
     public static let sqliteFilename = "NutritionFacts.sqlite3"
     
     let dbUrl: URL
-    let logger = LogService.shared
     let sqliteApi: SQLiteApi
     
     init() {
@@ -23,7 +22,7 @@ struct SQLiteConnector {
             do {
                 try fm.createDirectory(at: databaseDir, withIntermediateDirectories: true)
             } catch {
-                logger.error("SQLiteConnector failed to create Database/")
+                logit.error("SQLiteConnector failed to create Database/")
             }
         }
         
@@ -34,24 +33,24 @@ struct SQLiteConnector {
     // MARK: Advanced Utilities Connection
     
     func clearDb() {
-        logger.info("run clearDb")
+        logit.info("run clearDb")
     }
     
     func createData() {
-        logger.info("run SQLiteConnector Utility createData")
+        logit.info("run SQLiteConnector Utility createData")
         generateHistoryBIT(numberOfDays: 28)
     }
     
     func exportData() {
-        logger.info(":NYI: SQLiteConnector Utility exportData()") // :GTD:
+        logit.info(":NYI: SQLiteConnector Utility exportData()") // :GTD:
     }
     
     func importData() {
-        logger.info(":NYI: SQLiteConnector Utility importData()") // :GTD:
+        logit.info(":NYI: SQLiteConnector Utility importData()") // :GTD:
     }
     
     func timingTest() {
-        logger.info(":NYI: SQLiteConnector Utility timingTest()") // :GTD:
+        logit.info(":NYI: SQLiteConnector Utility timingTest()") // :GTD:
     }
     
     // MARK: - Export & Import TSV Connection
@@ -90,7 +89,7 @@ struct SQLiteConnector {
         do {
             try content.write(to: outUrl, atomically: true, encoding: .utf8)
         } catch {
-            LogService.shared.error(
+            logit.error(
                 "FAIL SQLiteConnector csvExport \(error) path:'\(outUrl.path)'"
             )
         }
@@ -124,14 +123,14 @@ struct SQLiteConnector {
     
     func csvImport(url: URL) {
         guard let contents = try? String(contentsOf: url)  else {
-            LogService.shared.error(
+            logit.error(
                 "FAIL SQLiteConnector csvImport file not found '\(url.lastPathComponent)'"
             )
             return
         }
         let lines = contents.components(separatedBy: .newlines)
         guard lines.count > 1 else {
-            LogService.shared.error(
+            logit.error(
                 "FAIL SQLiteConnector csvImport CSV has less that 2 lines"
             )
             return
@@ -144,7 +143,7 @@ struct SQLiteConnector {
                 }
             }
         } else {
-            LogService.shared.error(
+            logit.error(
                 "FAIL SQLiteConnector csvImport CSV does not contain a valid header line"
             )
             return
@@ -176,7 +175,7 @@ struct SQLiteConnector {
                 )
                 tracker.itemsDict[dataCountType] = sqlDataCountRecord
             } else {
-                LogService.shared.error(
+                logit.error(
                     "FAIL SQLiteConnector csvProcess \(index) in \(line)"
                 )
             }
@@ -245,7 +244,7 @@ struct SQLiteConnector {
     /// - ~2.7 years or ~33 months -> 1000 days (2000 weight entries)
     /// - 3 years (1095 days, 37230 count entries, 2190 weight entries) -> `3*365`
     func generateHistoryBIT(numberOfDays: Int) {
-        logger.debug(
+        logit.debug(
             "••BEGIN•• generateHistoryBIT(\(numberOfDays))  \(Date())"
         )
         sqliteApi.transactionBegin()
@@ -261,7 +260,7 @@ struct SQLiteConnector {
         var date = calendar.date(from: dateComponents)!
         
         let weightBase = 65.0 // kg
-        logger.debug("    baseWeigh \(weightBase) kg, \(weightBase * 2.2) lbs")
+        logit.debug("    baseWeigh \(weightBase) kg, \(weightBase * 2.2) lbs")
         let weightAmplitude = 2.0 // kg
         let weightCycleStep = (2 * Double.pi) / (30 * 2)
         for i in 0..<numberOfDays {
@@ -291,12 +290,12 @@ struct SQLiteConnector {
             
             let nToLog = 5
             if i == 0 {
-                logger.debug("•• first \(nToLog) weight entries")
+                logit.debug("•• first \(nToLog) weight entries")
             }
             if i < nToLog {
                 let weightAmStr = String(format: "%.2f", weightAM)
                 let weightPmStr = String(format: "%.2f", weightAM)
-                logger.debug(
+                logit.debug(
                     "    \(date) [AM] \(dateAM) \(weightAmStr) [PM] \(datePM) \(weightPmStr)"
                 )
             }
@@ -305,7 +304,7 @@ struct SQLiteConnector {
             date = calendar.date(byAdding: stepByDay, to: date)!
         }
         sqliteApi.transactionCommit()
-        logger.debug(
+        logit.debug(
             "••EXIT•• SqliteConnector generateHistoryBIT(…) \(Date())"
         )
     }

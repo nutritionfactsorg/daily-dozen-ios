@@ -13,7 +13,6 @@ public struct SQLiteBuiltInTest {
     static public var shared = SQLiteBuiltInTest()
     
     public let hkHealthStore = HKHealthStore()
-    let logger = LogService.shared
         
     // MARK: - Initial State Management
     
@@ -32,7 +31,7 @@ public struct SQLiteBuiltInTest {
     
     public func setupInitialState(_ scenario: InitialState) {
         let isHealthDataAvailable = HKHealthStore.isHealthDataAvailable()
-        LogService.shared.debug(
+        logit.debug(
             """
             >>> :BIT:WAYPOINT: SQLiteBuiltInTest setupInitialState()")
             >>> HKHealthStore.isHealthDataAvailable() \(isHealthDataAvailable)

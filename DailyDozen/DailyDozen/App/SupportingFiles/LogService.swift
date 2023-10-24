@@ -7,8 +7,11 @@
 
 import Foundation
 
+var logit = LogService.shared
+
 ///
-/// - Note: Be sure to set the "DEBUG" symbol in the compiler flags for the development build.
+/// - Note: Be sure to set the "DEBUG" symbol in the compiler flags
+///   for the development build.
 /// 
 /// `Build Settings` > `All, Levels` > `Swift Compiler` - `Custom Flags/Other Swift Flags` >  
 /// `(+) -D DEBUG`

@@ -47,7 +47,7 @@ class RealmProvider {
                 }
             }
         } catch {
-            LogService.shared.error(
+            logit.error(
                 "RealmProvider realmBackupList \(error.localizedDescription)"
             )
         }
@@ -74,7 +74,7 @@ class RealmProvider {
         do {
             try fm.createDirectory(at: databaseUrl, withIntermediateDirectories: true)
         } catch {
-            LogService.shared.error(" \(error)")
+            logit.error(" \(error)")
         }
         
         let config = Realm.Configuration(
@@ -100,7 +100,7 @@ class RealmProvider {
         do {
             try fm.createDirectory(at: databaseUrl, withIntermediateDirectories: true)
         } catch {
-            LogService.shared.error(" \(error)")
+            logit.error(" \(error)")
         }
         //Realm.Configuration(
         //    fileURL: URL?,
@@ -440,7 +440,7 @@ class RealmProvider {
                 updateStreak(count: count, date: date, countType: countType)
             }
         } catch {
-            LogService.shared.error(
+            logit.error(
                 "RealmProvider saveCount \(error.localizedDescription)"
             )
         }
@@ -458,7 +458,7 @@ class RealmProvider {
                     update: Realm.UpdatePolicy.all)
             }
         } catch {
-            LogService.shared.error(
+            logit.error(
                 "RealmProvider saveDBWeight \(error.localizedDescription)"
             )
         }
@@ -472,7 +472,7 @@ class RealmProvider {
                     realm.delete(record)
                 }
             } catch {
-                LogService.shared.error(
+                logit.error(
                     "RealmProvider deleteWeight \(error.localizedDescription)"
                 )
             }
@@ -481,7 +481,7 @@ class RealmProvider {
     
     func saveDailyTracker() {
         guard let tracker = unsavedDailyTracker else {
-            //LogService.shared.debug(
+            //logit.debug(
             //    "RealmProvider saveDailyTracker unsavedDailyTracker is nil"
             //)
             return
@@ -502,7 +502,7 @@ class RealmProvider {
                 unsavedDailyTracker = nil
             }                
         } catch {
-            LogService.shared.error(
+            logit.error(
                 "FAIL RealmProvider saveDailyTracker() tracker:\(tracker) description:\(error.localizedDescription)"
             )
         }
@@ -515,7 +515,7 @@ class RealmProvider {
                 realm.deleteAll()
             }
         } catch {
-            LogService.shared.error(
+            logit.error(
                 "FAIL RealmProvider deleteAllObjects() description:\(error.localizedDescription)"
             )
         }
@@ -541,7 +541,7 @@ class RealmProvider {
         let thisPid = RealmDataCountRecord.pid(date: date, countType: countType)
         guard let thisRec = realm.object(ofType: RealmDataCountRecord.self, forPrimaryKey: thisPid)
         else {
-            LogService.shared.error("Invalid updateStreakCompleted: \(thisPid) not retrieved")
+            logit.error("Invalid updateStreakCompleted: \(thisPid) not retrieved")
             return
         }
         
@@ -564,7 +564,7 @@ class RealmProvider {
                     // Done. Next day streak not impacted by adjacent past streak update.
                     break   
                 } else {                    
-                    LogService.shared.error("\(nextPid) count:\(nextRec.count) < maxServings\(countType.maxServings) with streak:\(nextRec.streak)")
+                    logit.error("\(nextPid) count:\(nextRec.count) < maxServings\(countType.maxServings) with streak:\(nextRec.streak)")
                     nextRec.streak = 0
                     // Note: checking additional dates stops here. Investigate the error.
                     break
@@ -577,7 +577,7 @@ class RealmProvider {
                 }
                 nextMaxValidStreak += 1
             } else if nextRec.count > countType.maxServings {
-                LogService.shared.error("\(nextPid) count:\(nextRec.count) > maxServings\(countType.maxServings)")
+                logit.error("\(nextPid) count:\(nextRec.count) > maxServings\(countType.maxServings)")
                 nextRec.count = countType.maxServings
                 nextRec.streak = nextMaxValidStreak
                 // Note: checking additional dates stops here. Investigate the error.
@@ -616,7 +616,7 @@ class RealmProvider {
                     // Done. Previous day streak not impacted by adjacent past streak update.
                     break   
                 } else {                    
-                    LogService.shared.error("\(prevPid) count:\(prevRec.count) < maxServings\(countType.maxServings) with streak:\(prevRec.streak)")
+                    logit.error("\(prevPid) count:\(prevRec.count) < maxServings\(countType.maxServings) with streak:\(prevRec.streak)")
                     prevRec.streak = 0
                     // Note: checking additional dates stops here. Investigate the error.
                     break
@@ -629,7 +629,7 @@ class RealmProvider {
                 }
                 prevMaxValidStreak -= 1
             } else if prevRec.count > countType.maxServings {
-                LogService.shared.error("\(prevPid) count:\(prevRec.count) > maxServings\(countType.maxServings)")
+                logit.error("\(prevPid) count:\(prevRec.count) > maxServings\(countType.maxServings)")
                 prevRec.count = countType.maxServings
                 prevRec.streak = prevMaxValidStreak
                 // Note: checking additional dates stops here. Investigate the error.
@@ -646,7 +646,7 @@ class RealmProvider {
         let thisPid = RealmDataCountRecord.pid(date: date, countType: countType)
         guard let thisRec = realm.object(ofType: RealmDataCountRecord.self, forPrimaryKey: thisPid)
         else {
-            LogService.shared.error("Invalid updateStreakIncomplete: \(thisPid) not retrieved")
+            logit.error("Invalid updateStreakIncomplete: \(thisPid) not retrieved")
             return
         }
         // this day's streak is 0
@@ -662,7 +662,7 @@ class RealmProvider {
                     // Done. Next day streak not impacted by adjacent past streak update.
                     break   
                 } else {                    
-                    LogService.shared.error("\(nextPid) count:\(nextRec.count) < maxServings\(countType.maxServings) with streak:\(nextRec.streak)")
+                    logit.error("\(nextPid) count:\(nextRec.count) < maxServings\(countType.maxServings) with streak:\(nextRec.streak)")
                     nextRec.streak = 0
                     // Note: checking additional dates stops here. Investigate the error.
                     break
@@ -675,7 +675,7 @@ class RealmProvider {
                 }
                 nextMaxValidStreak += 1
             } else if nextRec.count > countType.maxServings {
-                LogService.shared.error("\(nextPid) count:\(nextRec.count) > maxServings\(countType.maxServings)")
+                logit.error("\(nextPid) count:\(nextRec.count) > maxServings\(countType.maxServings)")
                 nextRec.count = countType.maxServings
                 nextRec.streak = nextMaxValidStreak
                 // Note: checking additional dates stops here. Investigate the error.

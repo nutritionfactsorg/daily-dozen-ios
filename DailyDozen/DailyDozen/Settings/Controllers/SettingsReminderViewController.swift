@@ -86,7 +86,7 @@ class SettingsReminderViewController: UITableViewController {
         let request = UNNotificationRequest(identifier: SettingsKeys.reminderRequestID, content: content, trigger: dateTrigger)
         UNUserNotificationCenter.current().add(request) { (error) in
             if let error = error {
-                LogService.shared.error(
+                logit.error(
                     "SettingsReminderViewController viewWillDisappear \(error.localizedDescription)"
                 )
             }
@@ -112,8 +112,8 @@ class SettingsReminderViewController: UITableViewController {
     // In a storyboard-based application, you will often want to do a little preparation before navigation
     //    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
     //        if segue.destination is SettingsViewController {
-    //           LogService.shared.debug("leaving detail")
-    //           LogService.shared.debug(UserDefaults.standard.bool(forKey: SettingsKeys.reminderCanNotify))
+    //           logit.debug("leaving detail")
+    //           logit.debug(UserDefaults.standard.bool(forKey: SettingsKeys.reminderCanNotify))
     //            }
     //        }
 }

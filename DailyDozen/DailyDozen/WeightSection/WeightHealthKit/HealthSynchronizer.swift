@@ -71,12 +71,12 @@ struct HealthSynchronizer {
     /// Only modifies HealthKit sample values
     private func syncWeightDateResultsHK(passthru: Any?, query: HKSampleQuery, samples: [HKSample]?, error: Error?) {
         if let error = error {
-            LogService.shared.error("syncWeightDateResultsHK \"\(error.localizedDescription)\"")
+            logit.error("syncWeightDateResultsHK \"\(error.localizedDescription)\"")
         }
         
         guard let values = passthru as? RealmDataWeightValues,
             let datetime = values.datetime else {
-                LogService.shared.error("syncWeightDateResultsHK expected an 'VALUES' DataWeightType")
+                logit.error("syncWeightDateResultsHK expected an 'VALUES' DataWeightType")
                 return
         }
         

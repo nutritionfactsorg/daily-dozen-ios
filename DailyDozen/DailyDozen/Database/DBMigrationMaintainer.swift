@@ -10,11 +10,10 @@ import Foundation
 public struct DBMigrationMaintainer {
     
     static public var shared = DBMigrationMaintainer()
-    let logger = LogService.shared
     
     public func doMigration() {
         let level = getMigrationLevel()
-        logger.debug("➜➜➜ :DEBUG:WAYPOINT: doMigration() DB level=\(level)")
+        logit.debug("➜➜➜ :DEBUG:WAYPOINT: doMigration() DB level=\(level)")
         
         // DB00: RealmProviderLegacy "main.realm" is no longer supported
         
@@ -71,7 +70,7 @@ public struct DBMigrationMaintainer {
         do {
             try fm.createDirectory(at: databaseUrl, withIntermediateDirectories: true)
         } catch {
-            logger.error(" \(error)")
+            logit.error(" \(error)")
         }
         
         // If no realm or sqlite databases are present, 
@@ -89,7 +88,7 @@ public struct DBMigrationMaintainer {
         do {
             try fm.createDirectory(at: databaseUrl, withIntermediateDirectories: true)
         } catch {
-            logger.error(" \(error)")
+            logit.error(" \(error)")
         }
 
         let fromUrl01 = URL.inDocuments(filename: "NutritionFacts.realm")
@@ -107,7 +106,7 @@ public struct DBMigrationMaintainer {
             fm.fileExists(atPath: toUrl02.path) == false,
             fm.fileExists(atPath: toUrl03.path) == false        
             else {
-                logger.error("doMigration_B_DB01toDB02 file existance criteria not met.")
+                logit.error("doMigration_B_DB01toDB02 file existance criteria not met.")
                 return
         }
         
@@ -116,7 +115,7 @@ public struct DBMigrationMaintainer {
             try fm.copyItem(at: fromUrl02, to: toUrl02) // file copy
             try fm.copyItem(at: fromUrl03, to: toUrl03) // dir copy
         } catch {
-            logger.error("doMigration_B_DB01toDB02 '\(error)'")
+            logit.error("doMigration_B_DB01toDB02 '\(error)'")
         }
         
         #if DEBUG
@@ -132,7 +131,7 @@ public struct DBMigrationMaintainer {
     
     /// Export BD02 to Library/Backup/
     public func doMigration_C_BD02Export() -> String {
-        logger.debug("••BEGIN•• UtilityTableViewController doMigration_C_BD02Export()")
+        logit.debug("••BEGIN•• UtilityTableViewController doMigration_C_BD02Export()")
         let realmMngr = RealmManager(newThread: true)
         let filename = realmMngr.csvExport(marker: "db_export_data")
         
@@ -141,18 +140,18 @@ public struct DBMigrationMaintainer {
         HealthSynchronizer.shared.syncWeightExport(marker: "hk_export_weight")
         #endif
         
-        logger.debug("••EXIT•• UtilityTableViewController doMigration_C_BD02Export()")
+        logit.debug("••EXIT•• UtilityTableViewController doMigration_C_BD02Export()")
         return filename
     }
     
     func doMigration_D_DB02toDB03(filename: String) { // :GTD:02.d
-        logger.debug("••BEGIN•• UtilityTableViewController doMigration_D_DB02toDB03()")
+        logit.debug("••BEGIN•• UtilityTableViewController doMigration_D_DB02toDB03()")
         // Import
 
     }
     
     func doMigration_E_BD03Export() -> String { // :GTD:02.e
-        logger.debug("••BEGIN•• UtilityTableViewController doMigration_E_BD03Export()")
+        logit.debug("••BEGIN•• UtilityTableViewController doMigration_E_BD03Export()")
         return ""
     }
 }

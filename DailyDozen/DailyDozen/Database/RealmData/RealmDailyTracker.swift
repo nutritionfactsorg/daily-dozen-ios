@@ -16,8 +16,6 @@ struct RealmDailyTracker {
     var weightAM: RealmDataWeightRecord
     var weightPM: RealmDataWeightRecord
     
-    let logger = LogService.shared
-    
     init(date: Date) {
         self.date = date
         
@@ -33,7 +31,7 @@ struct RealmDailyTracker {
         if let value = Int(countText) {
             setCount(typeKey: typeKey, count: value)
         } else {
-            logger.error("RealmDailyTracker setCount() countText \(countText) not convertable")
+            logit.error("RealmDailyTracker setCount() countText \(countText) not convertable")
         }
     }
     
@@ -41,7 +39,7 @@ struct RealmDailyTracker {
         if let realmDataCountRecord = itemsDict[typeKey] {
             realmDataCountRecord.setCount(count)
         } else {
-            logger.error("RealmDailyTracker setCount() type not found \(typeKey.typeKey)")
+            logit.error("RealmDailyTracker setCount() type not found \(typeKey.typeKey)")
         }
     }
     

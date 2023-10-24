@@ -48,7 +48,7 @@ class TweakEntryViewModel {
     // MARK: - Inits
     init(tracker: RealmDailyTracker) {
         self.tracker = tracker
-        LogService.shared.debug("@DATE \(tracker.date.datestampKey) TweakEntryViewModel.init()")
+        logit.debug("@DATE \(tracker.date.datestampKey) TweakEntryViewModel.init()")
     }
     
     // MARK: - Methods
@@ -95,7 +95,7 @@ class TweakEntryViewModel {
             }
         }
         if rowIndex == 16 {
-            LogService.shared.verbose("# TweakEntryViewModel itemStates \(rowIndex):\(itemPid(rowIndex: rowIndex)) \(states)")
+            logit.verbose("# TweakEntryViewModel itemStates \(rowIndex):\(itemPid(rowIndex: rowIndex)) \(states)")
         }
         return states
     }

@@ -52,7 +52,7 @@ public class SQLiteApi {
     
     func saveDailyTracker() {
         guard let tracker = unsavedDailyTracker else {
-            //LogService.shared.debug(
+            //logit.debug(
             //    "RealmProvider saveDailyTracker unsavedDailyTracker is nil"
             //)
             return

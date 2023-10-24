@@ -27,7 +27,7 @@ class RealmDataCountRecord: Object {
     var pidParts: (datestamp: Date, countType: DataCountType)? {
         guard let date = Date.init(datestampKey: pidKeys.datestampKey),
             let countType = DataCountType(itemTypeKey: pidKeys.typeKey) else {
-                LogService.shared.error(
+                logit.error(
                     "RealmDataCountRecord pidParts has invalid datestamp or typeKey"
                 )
                 return nil
@@ -65,7 +65,7 @@ class RealmDataCountRecord: Object {
         self.count = count
         if self.count > dataCountType.maxServings {
             self.count = dataCountType.maxServings
-            LogService.shared.error(
+            logit.error(
                 "RealmDataCountRecord init datestampKey:\(datestampKey) typekey:\(typeKey) count:\(count) exceeded max servings \(dataCountType.maxServings)"
             )
 
@@ -80,7 +80,7 @@ class RealmDataCountRecord: Object {
         self.count = count
         if self.count > countType.maxServings {
             self.count = countType.maxServings
-            LogService.shared.error(
+            logit.error(
                 "RealmDataCountRecord init date:\(date.datestampKey) countType:\(countType.typeKey) count:\(count) exceeds max servings \(countType.maxServings)"
             )
         }
@@ -108,7 +108,7 @@ class RealmDataCountRecord: Object {
         if let value = Int(text) {
             setCount(value)
         } else {
-            LogService.shared.error(
+            logit.error(
                 "RealmDataCountRecord setCount() not convertable to Int \(text)"
             )
         }
@@ -119,12 +119,12 @@ class RealmDataCountRecord: Object {
         if let countType = pidParts?.countType {
             if self.count > countType.maxServings {
                 self.count = countType.maxServings
-                LogService.shared.error(
+                logit.error(
                     "RealmDataCountRecord setCount \(pid) \(count) exceeds max servings"
                 )
             }
         } else {
-            LogService.shared.error(
+            logit.error(
                 "RealmDataCountRecord setCount \(pid) \(count) could not range check servings"
             )
         }

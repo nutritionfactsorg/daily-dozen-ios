@@ -54,9 +54,9 @@ class HealthManager {
             read: hkTypesToRead, 
             completion: { (success, error) in
                 if success {
-                    LogService.shared.debug("•HK• HealthManager Authorization success")
+                    logit.debug("•HK• HealthManager Authorization success")
                 } else {
-                    LogService.shared.error("•HK• HealthManager Authorization error: \(String(describing: error?.localizedDescription))")
+                    logit.error("•HK• HealthManager Authorization error: \(String(describing: error?.localizedDescription))")
                 }
         })
     }
@@ -101,7 +101,7 @@ class HealthManager {
     
     /// Read HealthKit data and send update notification.
     public func readHKWeight(date: Date, ampm: DataWeightType) {
-        LogService.shared.debug("•HK• WeightEntryViewController readHKWeight date: \(date.datestampyyyyMMddHHmmss) ampm: \(ampm.typeKey)")        
+        logit.debug("•HK• WeightEntryViewController readHKWeight date: \(date.datestampyyyyMMddHHmmss) ampm: \(ampm.typeKey)")        
         let predicate = buildPredicate(date: date, ampm: ampm)
         
         // AM: ascending order TRUE  so earliest AM time lists first.
@@ -152,37 +152,37 @@ class HealthManager {
     private func readResultsDisplay(passthru: Any?, query: HKSampleQuery, samples: [HKSample]?, error: Error?) {
         
         if let error = error {
-            LogService.shared.error("readHKResultDisplay \"\(error.localizedDescription)\"")
+            logit.error("readHKResultDisplay \"\(error.localizedDescription)\"")
         }
         
         guard let ampm = passthru as? DataWeightType else {
-            LogService.shared.error("readHKResultDisplay expected an 'AMPM' value")
+            logit.error("readHKResultDisplay expected an 'AMPM' value")
             return
         }
         
         if let hkQuantitySamples = samples as? [HKQuantitySample] {
             let r = HealthWeightRecord(ampm: ampm, hkWeightSamples: hkQuantitySamples)
-            LogService.shared.debug("•HK• WeightEntryViewController HealthWeightRecord\n\(r.toString())")
+            logit.debug("•HK• WeightEntryViewController HealthWeightRecord\n\(r.toString())")
             
             DispatchQueue.main.async(execute: {
                 NotificationCenter.default.post(
                     name: Notification.Name(rawValue: "BodyMassDataAvailable"),
                     object: r,
                     userInfo: nil)
-                LogService.shared.debug("•HK• WeightEntryViewController post BodyMassDataAvailable")
+                logit.debug("•HK• WeightEntryViewController post BodyMassDataAvailable")
             })
         }               
     }
     
     private func readResultsLog(passthru: Any?, query: HKSampleQuery, samples: [HKSample]?, error: Error?) {
         guard let samples = samples as? [HKQuantitySample] else {
-            LogService.shared.info("readResultsLog no samples found")
+            logit.info("readResultsLog no samples found")
             return 
         }
         
         var str = "\nHealthManager READ Results:\n"
         str.append(HealthManager.toStringCSV(samples: samples))
-        LogService.shared.info(str)
+        logit.info(str)
     }
     
     // MARK: - SAVE
@@ -197,7 +197,7 @@ class HealthManager {
     
     /// Update or create HealthKit weight sample
     public func saveHKWeight(date: Date, weight: Double, isImperial: Bool, metadata: [String: Any]? = nil) {
-        LogService.shared.verbose("::: HealthManager saveHKWeight \(String(format: "%.1f", weight)) \(date.datestampyyyyMMddHHmmss)")
+        logit.verbose("::: HealthManager saveHKWeight \(String(format: "%.1f", weight)) \(date.datestampyyyyMMddHHmmss)")
         let bodymassQType = HKQuantityType.quantityType(forIdentifier: .bodyMass)!
         let hkUnit = isImperial ? HKUnit.pound() : HKUnit.gramUnit(with: .kilo)
         let hkQuantity = HKQuantity(unit: hkUnit, doubleValue: weight)
@@ -215,10 +215,10 @@ class HealthManager {
     
     private func saveResultsLog(success: Bool, error: Error?) {
         if error != nil {
-            LogService.shared.error("::: HealthManager saveResultsLog error: '\(error.debugDescription)'")
+            logit.error("::: HealthManager saveResultsLog error: '\(error.debugDescription)'")
         }
         if success {
-            LogService.shared.debug("::: HealthManager saveResultsLog SUCCESS")
+            logit.debug("::: HealthManager saveResultsLog SUCCESS")
         }
     }
     
@@ -268,11 +268,11 @@ class HealthManager {
     }
     
     private func deleteResultsLog(success: Bool, deletedObjectCount: Int, error: Error?) {
-        LogService.shared.info("HealthManager deleteResultsLog() success=\(success) count=\(deletedObjectCount) error=\(error.debugDescription)")
+        logit.info("HealthManager deleteResultsLog() success=\(success) count=\(deletedObjectCount) error=\(error.debugDescription)")
     }
     
     private func deleteResultsLog(success: Bool, error: Error?) {
-        LogService.shared.info("HealthManager deleteResultsLog() success=\(success) error=\(error.debugDescription)")
+        logit.info("HealthManager deleteResultsLog() success=\(success) error=\(error.debugDescription)")
     }
     
     // Use: clear & reset sync values
@@ -285,9 +285,9 @@ class HealthManager {
             (success: Bool, deletedObjectCount: Int, error: Error?) in
             if success == false {
                 if let error = error {
-                    LogService.shared.debug("deleteHKAllWeigths failed count=\(deletedObjectCount) error=\(error)")
+                    logit.debug("deleteHKAllWeigths failed count=\(deletedObjectCount) error=\(error)")
                 } else {
-                    LogService.shared.debug("deleteHKAllWeigths failed count=\(deletedObjectCount)")
+                    logit.debug("deleteHKAllWeigths failed count=\(deletedObjectCount)")
                 }
                 return
             }
@@ -304,17 +304,17 @@ class HealthManager {
     
     private func exportResults(passthru: Any?, query: HKSampleQuery, samples: [HKSample]?, error: Error?) {
         if let error = error {
-            LogService.shared.error("HealthManager exportResults error:'\(error)'")
+            logit.error("HealthManager exportResults error:'\(error)'")
             return
         }
         
         guard let samples = samples as? [HKQuantitySample] else { 
-            LogService.shared.verbose("HealthManager exportResults no weight samples found.")
+            logit.verbose("HealthManager exportResults no weight samples found.")
             return 
         }
         
         guard let filename = passthru as? String else {
-            LogService.shared.error("HealthManager exportResults passthru failed.")
+            logit.error("HealthManager exportResults passthru failed.")
             return
         }
         
@@ -323,7 +323,7 @@ class HealthManager {
         do {
             try content.write(to: outUrl, atomically: true, encoding: .utf8)
         } catch {
-            LogService.shared.error(
+            logit.error(
                 "FAIL HealthManager exportResults \(error) path:'\(outUrl.path)'"
             )
         }

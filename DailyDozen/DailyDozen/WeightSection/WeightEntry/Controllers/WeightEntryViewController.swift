@@ -37,7 +37,7 @@ class WeightEntryViewController: UIViewController {
     private let realm = RealmProvider.primary
     public var currentViewDateWeightEntry: Date = DateManager.currentDatetime() {
         didSet {
-            LogService.shared.debug("@DATE \(currentViewDateWeightEntry.datestampKey) WeightEntryViewController")
+            logit.debug("@DATE \(currentViewDateWeightEntry.datestampKey) WeightEntryViewController")
         }
     }
     private var timePickerAM: UIDatePicker!
@@ -73,7 +73,7 @@ class WeightEntryViewController: UIViewController {
     /// :TBD:???:ToBeLocalized: `time*Entry.text` need to be local independent for synced put record
     func saveIBWeight(ampm: DataWeightType) {
         let datestampKey = currentViewDateWeightEntry.datestampKey
-        LogService.shared.debug(
+        logit.debug(
             "•HK• WeightEntryViewController saveIBWeight \(datestampKey)"
         )
         
@@ -94,7 +94,7 @@ class WeightEntryViewController: UIViewController {
         
     /// showIBWeight() when "BodyMassDataAvailable" notification occurs
     @objc func showIBWeight(notification: Notification) {
-        LogService.shared.debug("•HK• WeightEntryViewController showIBWeight")
+        logit.debug("•HK• WeightEntryViewController showIBWeight")
         guard let healthRecord = notification.object as? HealthWeightRecord else {
             return
         }
@@ -245,14 +245,14 @@ class WeightEntryViewController: UIViewController {
     }
     
     override func viewWillAppear(_ animated: Bool) {
-        LogService.shared.debug("WeightEntryViewController viewWillAppear")
+        logit.debug("WeightEntryViewController viewWillAppear")
         super.viewWillAppear(animated)
         setViewModel(date: self.currentViewDateWeightEntry)
     }
     
     /// Return to previous screen. Not invoked by date pager.
     override func viewWillDisappear(_ animated: Bool) {
-        LogService.shared.debug("WeightEntryViewController viewWillDisappear")
+        logit.debug("WeightEntryViewController viewWillDisappear")
         super.viewWillDisappear(animated)
         // Update stored values
         saveIBWeight(ampm: .am)
@@ -305,7 +305,7 @@ class WeightEntryViewController: UIViewController {
     ///
     /// - Parameter item: sets the current date.
     func setViewModel(date: Date) {
-        LogService.shared.debug("•HK• WeightEntryViewController setViewModel \(date.datestampKey)")
+        logit.debug("•HK• WeightEntryViewController setViewModel \(date.datestampKey)")
         // Update or create stored values from the current view
         saveIBWeight(ampm: .am)
         saveIBWeight(ampm: .pm)
@@ -354,7 +354,7 @@ extension WeightEntryViewController: UIPickerViewDelegate {
 extension WeightEntryViewController: UITextFieldDelegate {
     // :1:
     func textFieldShouldBeginEditing(_ textField: UITextField) -> Bool {
-        //LogService.shared.debug("textFieldShouldBeginEditing")
+        //logit.debug("textFieldShouldBeginEditing")
         
         // :===: should solve initial picker registration
         if textField.text == nil || textField.text!.isEmpty {
@@ -372,11 +372,11 @@ extension WeightEntryViewController: UITextFieldDelegate {
     }
     // :2:
     func textFieldDidBeginEditing(_ textField: UITextField) {
-        //LogService.shared.debug("textFieldDidBeginEditing")
+        //logit.debug("textFieldDidBeginEditing")
     }
     
     func textFieldShouldReturn(_ textField: UITextField) -> Bool {
-        //LogService.shared.debug("textFieldShouldReturn")
+        //logit.debug("textFieldShouldReturn")
         //weightAMEntry.endEditing(true)
         view.endEditing(true)
         
@@ -386,7 +386,7 @@ extension WeightEntryViewController: UITextFieldDelegate {
     
     // :3:
     func textFieldShouldEndEditing(_ textField: UITextField) -> Bool {
-        //LogService.shared.debug("textFieldShouldEndEditing")
+        //logit.debug("textFieldShouldEndEditing")
         if textField.text != "" {
             return true
         } else {
@@ -397,9 +397,9 @@ extension WeightEntryViewController: UITextFieldDelegate {
     // :4:
     func textFieldDidEndEditing(_ textField: UITextField) {
         //this is where you might add other code
-        //LogService.shared.debug("textFieldDidEndEditing")
+        //logit.debug("textFieldDidEndEditing")
         if let weight = weightAMEntry.text {
-            LogService.shared.debug("•HK• WeightEntryViewController textFieldDidEndEditing \(weight)")
+            logit.debug("•HK• WeightEntryViewController textFieldDidEndEditing \(weight)")
         }
     }
 }

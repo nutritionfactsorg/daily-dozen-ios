@@ -25,8 +25,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         _ application: UIApplication,
         didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?
     ) -> Bool {
-        let logger = LogService.shared
-        logger.logLevel = LogServiceLevel.off
+        logit.logLevel = LogServiceLevel.off
         
         // =====  DEBUG SETUP  =====
         #if DEBUG
@@ -40,28 +39,28 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         :#DEBUG:WAYPOINT: AppDelegate didFinishLaunchingWithOptions
         \((URL.inDocuments().path))
         """)
-        logger.logLevel = LogServiceLevel.verbose
-        logger.useLogFile(nameToken: "dev") // logger.useLogFileDefault()
-        logger.debug("""
+        logit.logLevel = LogServiceLevel.verbose
+        logit.useLogFile(nameToken: "dev") // logit.useLogFileDefault()
+        logit.debug("""
         ::::: DEBUG :::::
         AppDelegate didFinishLaunchingWithOptions DEBUG enabled
         """)
         
         SQLiteBuiltInTest.shared.setupInitialState(.db02)
         
-        logger.debug(":::::::::::::::::\n")
+        logit.debug(":::::::::::::::::\n")
         #endif
         
         // =====  SIMULATOR SETUP  =====
         #if targetEnvironment(simulator)
         let bundle = Bundle(for: type(of: self))
-        logger.debug("""
+        logit.debug("""
         ::::: SIMULATOR ENVIRONMENT :::::
         Bundle & Resources Path:\n\(bundle.bundlePath)\n
         App Documents Directory:\n\(URL.inDocuments().path)\n
         App Library Directory:\n\(URL.inLibrary().path)\n
         """)
-        logger.debug(":::::::::::::::::::::::::::::::::\n")
+        logit.debug(":::::::::::::::::::::::::::::::::\n")
         #endif
         
         // =====  GLOBAL SETUP  =====
@@ -76,7 +75,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         // ----- Notification Setup -----
         UNUserNotificationCenter.current().requestAuthorization(options: [.alert, .sound, .badge]) { (_, error) in
             if let error = error {
-                logger.debug("AppDelegate didFinishLaunchingWithOptions \(error.localizedDescription)")
+                logit.debug("AppDelegate didFinishLaunchingWithOptions \(error.localizedDescription)")
             }
         }
         
@@ -93,10 +92,10 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         FirebaseApp.configure()
         if UserDefaults.standard.bool(forKey: SettingsKeys.analyticsIsEnabledPref) == true {
             Analytics.setAnalyticsCollectionEnabled(true)
-            LogService.shared.info("AppDelegate setAnalyticsCollectionEnabled(true)")
+            logit.info("AppDelegate setAnalyticsCollectionEnabled(true)")
         } else {
             Analytics.setAnalyticsCollectionEnabled(false)
-            LogService.shared.info("AppDelegate setAnalyticsCollectionEnabled(false)")
+            logit.info("AppDelegate setAnalyticsCollectionEnabled(false)")
         }
         
         return true

@@ -68,7 +68,7 @@ class WeightHistoryViewController: UIViewController {
                 let data = weightViewModel.monthData(yearIndex: chartSettings.year, monthIndex: chartSettings.month)
                 
                 // :DEBUG:LOG_VERBOSE:
-                //LogService.shared.verbose("## Weight History: \(data.month) chartSettings(year:\(chartSettings.year), month:\(chartSettings.month)) ##") 
+                //logit.verbose("## Weight History: \(data.month) chartSettings(year:\(chartSettings.year), month:\(chartSettings.month)) ##") 
                 //var i = 0
                 //for point in data.points {
                 //    let dataStr = """
@@ -76,7 +76,7 @@ class WeightHistoryViewController: UIViewController {
                 //    \(point.dateAM?.datestampHHmm ?? "nil") \(String(format: "%.2f", point.kgAM ?? -1.0)) • \
                 //    \(point.datePM?.datestampHHmm ?? "nil") \(String(format: "%.2f", point.kgPM ?? -1.0)) 
                 //    """
-                //    LogService.shared.verbose(dataStr)
+                //    logit.verbose(dataStr)
                 //    i += 1
                 //}
 
@@ -95,7 +95,7 @@ class WeightHistoryViewController: UIViewController {
                 let data = weightViewModel.yearlyData(yearIndex: chartSettings.year)
 
                 // :DEBUG:LOG_VERBOSE:
-                //LogService.shared.verbose("## Weight History: \(data.year) chartSettings(year:\(chartSettings.year), month:\(chartSettings.month)) ##")
+                //logit.verbose("## Weight History: \(data.year) chartSettings(year:\(chartSettings.year), month:\(chartSettings.month)) ##")
                 //var i = 0
                 //for point in data.points {
                 //    let dataStr = """
@@ -103,7 +103,7 @@ class WeightHistoryViewController: UIViewController {
                 //    \(point.dateAM?.datestampHHmm ?? "nil") \(String(format: "%.2f", point.kgAM ?? -1.0)) • \
                 //    \(point.datePM?.datestampHHmm ?? "nil") \(String(format: "%.2f", point.kgPM ?? -1.0)) 
                 //    """
-                //    LogService.shared.verbose(dataStr)
+                //    logit.verbose(dataStr)
                 //    i += 1
                 //}
 
@@ -124,7 +124,7 @@ class WeightHistoryViewController: UIViewController {
 
     // MARK: - Methods
     override func viewDidLoad() {
-        LogService.shared.debug("•HK• WeightHistoryViewController viewDidLoad")
+        logit.debug("•HK• WeightHistoryViewController viewDidLoad")
         super.viewDidLoad()
         navigationController?.navigationBar.titleTextAttributes = [NSAttributedString.Key.foregroundColor: UIColor.white]
         navigationController?.navigationBar.barTintColor = ColorManager.style.mainMedium
@@ -241,20 +241,20 @@ class WeightHistoryViewController: UIViewController {
         }
 
         // :DEBUG:LOG_VERBOSE:
-        //LogService.shared.verbose("\n•••••••••••••••••••••••••••••••••••••••••••••••••")
-        //LogService.shared.verbose("••• WeightHistoryViewController updateChart() •••")
-        //LogService.shared.verbose("••• INPUT: points @ scale:\(scale.toString()) •••")
+        //logit.verbose("\n•••••••••••••••••••••••••••••••••••••••••••••••••")
+        //logit.verbose("••• WeightHistoryViewController updateChart() •••")
+        //logit.verbose("••• INPUT: points @ scale:\(scale.toString()) •••")
         //for dailyWeightReport in points {
-        //    LogService.shared.verbose(dailyWeightReport.toString())
+        //    logit.verbose(dailyWeightReport.toString())
         //}
-        //LogService.shared.verbose("••• OUTPUT: dataEntries @ xAxisRange:\(xAxisRange) •••")
-        //LogService.shared.verbose("••• AM (x,y)")
+        //logit.verbose("••• OUTPUT: dataEntries @ xAxisRange:\(xAxisRange) •••")
+        //logit.verbose("••• AM (x,y)")
         //for chartDataEntry: ChartDataEntry in dataEntriesAM {
-        //    LogService.shared.verbose(chartDataEntry.toStringXY())
+        //    logit.verbose(chartDataEntry.toStringXY())
         //}
-        //LogService.shared.verbose("••• PM (x,y)")
+        //logit.verbose("••• PM (x,y)")
         //for chartDataEntry in dataEntriesPM {
-        //    LogService.shared.verbose(chartDataEntry.toStringXY())
+        //    logit.verbose(chartDataEntry.toStringXY())
         //}
         
         updateChartWithData(am: dataEntriesAM, pm: dataEntriesPM, range: xAxisRange)

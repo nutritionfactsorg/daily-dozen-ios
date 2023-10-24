@@ -58,7 +58,7 @@ class RealmManager {
         do {
             try content.write(to: outUrl, atomically: true, encoding: .utf8)
         } catch {
-            LogService.shared.error(
+            logit.error(
                 "FAIL RealmManager csvExport \(error) path:'\(outUrl.path)'"
             )
         }
@@ -92,14 +92,14 @@ class RealmManager {
     
     func csvImport(url: URL) {
         guard let contents = try? String(contentsOf: url)  else {
-            LogService.shared.error(
+            logit.error(
                 "FAIL RealmManager csvImport file not found '\(url.lastPathComponent)'"
             )
             return
         }
         let lines = contents.components(separatedBy: .newlines)
         guard lines.count > 1 else {
-            LogService.shared.error(
+            logit.error(
                 "FAIL RealmManager csvImport CSV has less that 2 lines"
             )
             return
@@ -112,7 +112,7 @@ class RealmManager {
                 }
             }
         } else {
-            LogService.shared.error(
+            logit.error(
                 "FAIL RealmManager csvImport CSV does not contain a valid header line"
             )
             return
@@ -159,7 +159,7 @@ class RealmManager {
                 )
                 tracker.itemsDict[dataCountType] = realmDataCountRecord
             } else {
-                LogService.shared.error(
+                logit.error(
                     "FAIL RealmManager csvProcess \(index) in \(line)"
                 )
             }
@@ -224,7 +224,7 @@ class RealmManager {
         do {
             try content.write(to: outUrl, atomically: true, encoding: .utf8)
         } catch {
-            LogService.shared.error(
+            logit.error(
                 "FAIL RealmManager csvExport \(error) path:'\(outUrl.path)'"
             )
         }

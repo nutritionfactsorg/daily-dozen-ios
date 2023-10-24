@@ -102,7 +102,7 @@ class MainViewController: UIViewController {
         let request = UNNotificationRequest(identifier: SettingsKeys.reminderRequestID, content: content, trigger: dateTrigger)
         UNUserNotificationCenter.current().add(request) { (error) in
             if let error = error {
-                LogService.shared.error(
+                logit.error(
                     "MainViewController setupReminders() \(error.localizedDescription)"
                 )
             }

@@ -61,11 +61,11 @@ class TweakEntryViewController: UIViewController {
         // :HealthKit:
         if HKHealthStore.isHealthDataAvailable() {
             // add code to use HealthKit here...
-            // LogService.shared.debug("Yes, HealthKit is Available")
+            // logit.debug("Yes, HealthKit is Available")
             let healthManager = HealthManager()
             healthManager.requestPermissions()
         } else {
-            // LogService.shared.debug("There is a problem accessing HealthKit")
+            // logit.debug("There is a problem accessing HealthKit")
         }
         
         NotificationCenter.default.addObserver(
@@ -76,7 +76,7 @@ class TweakEntryViewController: UIViewController {
     }
     
     override func viewWillAppear(_ animated: Bool) {
-        LogService.shared.debug("TweakEntryViewController viewWillAppear")
+        logit.debug("TweakEntryViewController viewWillAppear")
         super.viewWillAppear(animated)
         setViewModel(date: dataProvider.viewModel.trackerDate)
     }
@@ -96,7 +96,7 @@ class TweakEntryViewController: UIViewController {
     ///
     /// - Parameter item: The current date.
     func setViewModel(date: Date) {
-        LogService.shared.debug("@DATE \(date.datestampKey) TweakEntryViewController setViewModel")
+        logit.debug("@DATE \(date.datestampKey) TweakEntryViewController setViewModel")
         dataProvider.viewModel = TweakEntryViewModel(tracker: realm.getDailyTracker(date: date))
         
         // Update N/MAX daily checked items count 

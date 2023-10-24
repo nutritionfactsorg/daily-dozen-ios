@@ -51,9 +51,6 @@ class SettingsViewController: UITableViewController {
     // Advance Utilities
     @IBOutlet weak var advancedUtilitiesTableViewCell: UITableViewCell! // .isHidden
     
-    // Logger
-    let logger = LogService.shared
-    
     enum UnitsSegmentState: Int {
         case imperialState = 0
         case metricState = 1
@@ -130,11 +127,11 @@ class SettingsViewController: UITableViewController {
         analyticsEnableLabel.text = NSLocalizedString("setting_analytics_enable", comment: "Enable Analytics")
         
         #if targetEnvironment(simulator)
-        logger.debug("::::: SIMULATOR ENVIRONMENT: SettingsViewController :::::")
+        logit.debug("::::: SIMULATOR ENVIRONMENT: SettingsViewController :::::")
         advancedUtilitiesTableViewCell.isHidden = false // :ADVANCED:DEBUG:
         //advancedUtilitiesTableViewCell.isHidden = true // :ADVANCED:RELEASE:
         print("ADVANCED UTILITIES advancedUtilitiesTableViewCell.isHidden == \(advancedUtilitiesTableViewCell.isHidden)")
-        logger.debug(":::::::::::::::::::::::::::::::::::::::::::::::::::::::::\n")
+        logit.debug(":::::::::::::::::::::::::::::::::::::::::::::::::::::::::\n")
         #endif
         #if DEBUG
         advancedUtilitiesTableViewCell.isHidden = false // :ADVANCED:#DEBUG:
@@ -248,17 +245,17 @@ class SettingsViewController: UITableViewController {
         Analytics.setAnalyticsCollectionEnabled(true)
         UserDefaults.standard.set(true, forKey: SettingsKeys.analyticsIsEnabledPref)
         analyticsEnableToggle.isOn = true
-        logger.info("SettingsViewController doAnalyticsEnable() completed")
+        logit.info("SettingsViewController doAnalyticsEnable() completed")
     }
     
     func doAnalyticsDisable() {
         if FirebaseApp.app() != nil {
             Analytics.setAnalyticsCollectionEnabled(false)
-            logger.info("SettingsViewController doAnalyticsDisable() disabled existing FirebaseApp Analytics")
+            logit.info("SettingsViewController doAnalyticsDisable() disabled existing FirebaseApp Analytics")
         }
         UserDefaults.standard.set(false, forKey: SettingsKeys.analyticsIsEnabledPref)
         analyticsEnableToggle.isOn = false
-        logger.info("SettingsViewController doAnalyticsDisable() completed")
+        logit.info("SettingsViewController doAnalyticsDisable() completed")
     }
     
     //@IBAction func doAppearanceModeChanged(_ sender: UISegmentedControl) {
@@ -273,7 +270,7 @@ class SettingsViewController: UITableViewController {
     }
     
     func doHistoryDataExportActivityNone() {
-        logger.info("SettingsViewController doHistoryDataExportActivityNone()")
+        logit.info("SettingsViewController doHistoryDataExportActivityNone()")
         let realmMngr = RealmManager()
         backupFilename = realmMngr.csvExport(marker: "DailyDozen")
         // :SQLITE:TBD: export debug scope
@@ -287,7 +284,7 @@ class SettingsViewController: UITableViewController {
     }
     
     func doHistoryDataExportActivityShow() {
-        logger.info("SettingsViewController doHistoryDataExportActivityShow()")
+        logit.info("SettingsViewController doHistoryDataExportActivityShow()")
         
         // -----------------
         let busyAlert = AlertActivityBar()
@@ -315,7 +312,7 @@ class SettingsViewController: UITableViewController {
     
     func doHistoryDataExportAlert() {
         guard let backupFilename else { return }
-        logger.info("SettingsViewController ... doHistoryDataExportAlert")
+        logit.info("SettingsViewController ... doHistoryDataExportAlert")
         let msg = NSLocalizedString("history_data_export_text", comment: "Export has been written to: ")
         let strMsg = "\(msg)\n\n\(backupFilename)"
         
@@ -329,7 +326,7 @@ class SettingsViewController: UITableViewController {
     
     func doHistoryDataExportShare() {
         guard let backupFilename else { return }
-        logger.info("SettingsViewController ... doHistoryDataExportShare")
+        logit.info("SettingsViewController ... doHistoryDataExportShare")
         // --- Presents share services for AirDrop, Files, etc ---
         let urls: [URL] = [URL.inDocuments(filename: backupFilename)]
         let activityVC = UIActivityViewController(
@@ -341,7 +338,7 @@ class SettingsViewController: UITableViewController {
             
             let errorStr = error?.localizedDescription ?? "none"
             
-            self.logger.debug(
+            logit.debug(
             """
             doHistoryDataExportShare() completionWithItemsHandler
                 activity: \(String(describing: activity))
@@ -397,7 +394,7 @@ class SettingsViewController: UITableViewController {
     }
     
     @IBAction func doHistoryDataImport(_ sender: UIButton) {
-        logger.info("SettingsViewController doHistoryDataImport()")
+        logit.info("SettingsViewController doHistoryDataImport()")
         
         // Get qualified files
         let fileUrls = doHistoryDataImportFileFind()
@@ -423,7 +420,7 @@ class SettingsViewController: UITableViewController {
         ) { 
             // importButtonCompletion
             (item: String?, id: String?) in
-            LogService.shared.debug("importButtonCompletion item:\(item ?? "nil") id:\(id ?? "nil")")
+            logit.debug("importButtonCompletion item:\(item ?? "nil") id:\(id ?? "nil")")
             if let id = id, let idx = Int(id) {
                 let csvUrl = fileUrls[idx]
                 self.doHistoryDataImportFile(csvUrl: csvUrl)
@@ -449,17 +446,17 @@ class SettingsViewController: UITableViewController {
                 appropriateFor: nil,
                 create: true
             )
-            logger.debug("docDirUrl: \(docDirUrl.path)")
+            logit.debug("docDirUrl: \(docDirUrl.path)")
             
             // Get the directory contents urls (including subfolders urls)
             let docDirContents = try fm.contentsOfDirectory(
                 at: docDirUrl,
                 includingPropertiesForKeys: nil
             )
-            logger.debug("docDirContents: \(docDirContents)")
+            logit.debug("docDirContents: \(docDirContents)")
             
             guard let csvHeaderCheck = "Date,Beans,Berries,".data(using: .utf8, allowLossyConversion: false) else {
-                logger.debug("doHistoryDataImportFileFind did not create csvHeaderCheck")
+                logit.debug("doHistoryDataImportFileFind did not create csvHeaderCheck")
                 return csvFileList 
             }
             let byteCount = csvHeaderCheck.count
@@ -486,7 +483,7 @@ class SettingsViewController: UITableViewController {
                 }
             }
         } catch {
-            logger.debug("doHistoryDataImportFileFind() \(error)")
+            logit.debug("doHistoryDataImportFileFind() \(error)")
         }
         
         return csvFileList.sorted {
@@ -571,7 +568,7 @@ class SettingsViewController: UITableViewController {
         } catch {
             // csvUrl.path() 'path(percentEncoded:)' requires iOS 16.0 or newer
             // csvUrl.path will be deprecated in a future version of iOS
-            LogService.shared.error("""
+            logit.error("""
                 doDataHistoryImportHandler
                     csvfile:\(csvUrl.path)
                     error:'\(error)'
@@ -580,7 +577,7 @@ class SettingsViewController: UITableViewController {
     }
     
     @IBAction func doTweaksVisibilityChanged(_ sender: UISegmentedControl) {
-        // logger.debug("selectedSegmentIndex = \(segmentedControl.selectedSegmentIndex)")
+        // logit.debug("selectedSegmentIndex = \(segmentedControl.selectedSegmentIndex)")
         let show21Tweaks = UserDefaults.standard.bool(forKey: SettingsKeys.show21TweaksPref)
         if tweakVisibilityControl.selectedSegmentIndex == 0
             && show21Tweaks {

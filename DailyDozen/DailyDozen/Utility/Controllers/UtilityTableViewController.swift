@@ -23,9 +23,6 @@ class UtilityTableViewController: UITableViewController {
         return viewController
     }
     
-    // Logger
-    let logger = LogService.shared
-    
     override func viewDidLoad() {
         super.viewDidLoad()
         navigationController?.navigationBar.titleTextAttributes = [NSAttributedString.Key.foregroundColor: UIColor.white]
@@ -113,7 +110,7 @@ class UtilityTableViewController: UITableViewController {
     }
     
     private func doUtilityRealmDBExport() {
-        logger.info("UtilityTableViewController doUtilityRealmDBExport()")
+        logit.info("UtilityTableViewController doUtilityRealmDBExport()")
         let realmMngr = RealmManager(newThread: true)
         let backupFilename = realmMngr.csvExport(marker: "db_export_data")
         
@@ -143,11 +140,11 @@ class UtilityTableViewController: UITableViewController {
         //    itemIds: ["id1", "id2", "id3"],
         //    selectedValue: "item3", 
         //    doneButtonCompletion: { (item: String?, index: String?) in
-        //        LogService.shared.debug("done", item ?? "nil", index ?? "nil")}, 
+        //        logit.debug("done", item ?? "nil", index ?? "nil")}, 
         //    didSelectCompletion: { (item: String?, index: String?) in
-        //        LogService.shared.debug("selection", item ?? "nil", index ?? "nil") },
+        //        logit.debug("selection", item ?? "nil", index ?? "nil") },
         //    cancelButtonCompletion: { (item: String?, index: String?) in
-        //        LogService.shared.debug("cancelled", item ?? "nil", index ?? "nil") }
+        //        logit.debug("cancelled", item ?? "nil", index ?? "nil") }
         //)
     }
     
@@ -163,7 +160,7 @@ class UtilityTableViewController: UITableViewController {
     @IBOutlet weak var appearanceTypeControl: UISegmentedControl!
     
     @IBAction func doAppearanceTypeChanged(_ sender: UISegmentedControl) {
-        logger.info(":NYI: doAppearanceModeChanged not implemented")
+        logit.info(":NYI: doAppearanceModeChanged not implemented")
     }
     
     // MARK: - Settings
@@ -245,7 +242,7 @@ class UtilityTableViewController: UITableViewController {
         str.append(contentsOf: ": \(UserDefaults.standard.object(forKey: SettingsKeys.appearanceTypePref) ?? "nil")\n")
         
         #if DEBUG
-        LogService.shared.debug(
+        logit.debug(
             """
             UtilityTableViewController doUtilitySettingsShow()…\n
             ••• UserDefaults Values •••\n
@@ -276,21 +273,21 @@ class UtilityTableViewController: UITableViewController {
         let alertController = UIAlertController(title: "Default Style", message: "A standard alert.", preferredStyle: .alert)
 
         let cancelAction = UIAlertAction(title: "Cancel", style: .cancel) { (action: UIAlertAction) -> Void in
-            LogService.shared.debug(
+            logit.debug(
                 "••CANCEL•• UtilityTableViewController alertTwoButton() \(action)"
             )
         }
         alertController.addAction(cancelAction)
 
         let okAction = UIAlertAction(title: "OK", style: .default) { (action: UIAlertAction) -> Void in
-            LogService.shared.debug(
+            logit.debug(
                 "••OK•• UtilityTableViewController alertTwoButton() \(action)"
             )
         }
         alertController.addAction(okAction)
 
         let destroyAction = UIAlertAction(title: "Destroy", style: .destructive) { (action: UIAlertAction) -> Void in
-            LogService.shared.debug(
+            logit.debug(
                 "••DESTROY•• UtilityTableViewController alertTwoButton() \(action)"
             )
         }
