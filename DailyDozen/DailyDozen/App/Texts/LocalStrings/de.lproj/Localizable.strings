@@ -86,16 +86,16 @@
 "faq_calories_response.0" = "Die Daily Dozen sind durchschnittlich 1.200 Kalorien aber aufgrund der Vielfalt und Auswahl an Nahrungsmitteln in jeder Kategorie, kann dies zwischen 800-1.800 schwanken. Schau dir zum Beispiel die Kategorie Gemüse an: 240 Gramm Paprika hat eine niedrigere Kaloriendichte als 240 Gramm Süßkartoffeln, daher hängt der Kalorienbereich davon ab, welche Nahrungsmittel ausgewählt werden. Das ist das gute an der Daily Dozen Checkliste - sie ist keine Einheitslösung und kann an die eigenen Bedürfnisse angepasst werden.";
 
 /*  */
-"faq_calories_response.1" = "Wenn du Gewicht verlieren möchtest, kannst du mehr Informationen in \"How Not to Diet\" finden und den beigelegten einundzwanzig Optimierungen. In \"How Not to Diet\" habe ich geschrieben: \"Eine systemische Überprüfung von Strategien des Gewichtsverlusts schließt, dass aufgrund des verlangsamten Stoffwechsel und dem gesteigertem Appetit, welches den Gewichtsverlust begleitet, kann ein bedeutender Gewichtsverlust eventuell nur dann erreicht werden, wenn die Kalorien auf ungefähr 1.200 für Frauen und 1.500 für Männer reduziert werden.\"";
+"faq_calories_response.1" = "Wenn du Gewicht verlieren möchtest, kannst du mehr Informationen in “How Not to Diet” finden und den beigelegten einundzwanzig Optimierungen. In “How Not to Diet” habe ich geschrieben: “Eine systemische Überprüfung von Strategien des Gewichtsverlusts schließt, dass aufgrund des verlangsamten Stoffwechsel und dem gesteigertem Appetit, welches den Gewichtsverlust begleitet, kann ein bedeutender Gewichtsverlust eventuell nur dann erreicht werden, wenn die Kalorien auf ungefähr 1.200 für Frauen und 1.500 für Männer reduziert werden.”";
 
 /*  */
-"faq_calories_response.2" = "Auf der anderen Seite, wenn dein Ziel ist, Gewicht zuzunehmen, dann konzentriere dich darauf mehr kalorienreiche Nahrungsmittel zu dir zu nehmen, wie Süßkartoffeln, Avocados, Nüsse und Sojaprodukte. ";
+"faq_calories_response.2" = "Auf der anderen Seite, wenn dein Ziel ist, Gewicht zuzunehmen, dann konzentriere dich darauf mehr kalorienreiche Nahrungsmittel zu dir zu nehmen, wie Süßkartoffeln, Avocados, Nüsse und Sojaprodukte.";
 
 /*  */
 "faq_mother_question" = "Kann ich den Daily Dozen folgen, wenn ich schwanger bin oder stille?";
 
 /*  */
-"faq_mother_response" = "Schwangere oder stillende Frauen haben einen verschiedenen Kalorien- und Nährstoffbedarf als Menschen die dies nicht sind. Zur Erinnerung, die Daily Dozen ist kein Speiseplan und sollten nicht die einzigen Nahrungsmittel sein, die pro Tag zu sich genommen werden sollten. Schwangere und stillende Frauen sollten sich mit einem Arzt oder einem Ernährungswissenschaftler beraten, um ihren spezifischen Kalorien- und Nährstoffbedarf zu erzielen. ";
+"faq_mother_response" = "Schwangere oder stillende Frauen haben einen verschiedenen Kalorien- und Nährstoffbedarf als Menschen die dies nicht sind. Zur Erinnerung, die Daily Dozen ist kein Speiseplan und sollten nicht die einzigen Nahrungsmittel sein, die pro Tag zu sich genommen werden sollten. Schwangere und stillende Frauen sollten sich mit einem Arzt oder einem Ernährungswissenschaftler beraten, um ihren spezifischen Kalorien- und Nährstoffbedarf zu erzielen.";
 
 /*  */
 "faq_scaling_question" = "Ich kann doch unmöglich so viele Bohnen/Vollkorn/usw. essen!";
@@ -314,7 +314,7 @@
 "setting_doze_tweak_choice" = "Tägliches Dutzend + 21 Optimierungen";
 
 /* Preference Settings View: brief description text below Tweaks visibility control. */
-"setting_doze_tweak_footer" = "Für Gesundheit allein verwenden Sie \"Nur das tägliche Dutzend\". Für Gesundheit und Gewichtsabnahme verwenden Sie \"Tägliches Dutzend + 21 Optimierungen\".";
+"setting_doze_tweak_footer" = "Für Gesundheit allein verwenden Sie “Nur das tägliche Dutzend”. Für Gesundheit und Gewichtsabnahme verwenden Sie “Tägliches Dutzend + 21 Optimierungen”.";
 
 /* First Launch Setting: brief description above ‘Daily Dozen Only’ button. */
 "setting_health_alone_txt" = "Nur für die Gesundheit";
@@ -335,7 +335,7 @@
 "setting_units_2_toggle" = "Umschalten";
 
 /* Preference Settings View: brief description text below units control. */
-"setting_units_choice_footer" = "Legen Sie fest, dass es sich immer um denselben Einheitentyp handelt, oder aktivieren Sie die Umschalttaste \"Einheiten:\".";
+"setting_units_choice_footer" = "Legen Sie fest, dass es sich immer um denselben Einheitentyp handelt, oder aktivieren Sie die Umschalttaste “Einheiten:”.";
 
 /* Preference Settings View */
 "setting_units_header" = "Maßeinheiten";
@@ -395,7 +395,7 @@
 "tweakMeal20Minutes.heading" = "20-Minuten-Regel befolgen";
 
 /* heading for daily data entry item */
-"tweakMealNegCal.heading" = "Mahlzeit mit \"Negativ-Kalorien\" beginnen";
+"tweakMealNegCal.heading" = "Mahlzeit mit “Negativ-Kalorien” beginnen";
 
 /* heading for daily data entry item */
 "tweakMealUndistracted.heading" = "Ungestört essen";

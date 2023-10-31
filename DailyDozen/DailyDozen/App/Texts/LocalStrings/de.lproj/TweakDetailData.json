@@ -5,7 +5,7 @@
         "imperial" : "Vervollständigen Sie Ihre Umsetzungsabsichten",
         "metric" : "Vervollständigen Sie Ihre Umsetzungsabsichten"
       },
-      "explanation" : "Erstellen Sie alle zwei Monate drei neue Umsetzungsabsichten - \"wenn X, dann Y\"-Pläne, um ein bestimmtes Verhalten in einem bestimmten Kontext auszuführen - und haken Sie jeden dieser Pläne ab, wenn Sie ihn jeden Tag erfüllen.",
+      "explanation" : "Erstellen Sie alle zwei Monate drei neue Umsetzungsabsichten - “wenn X, dann Y”-Pläne, um ein bestimmtes Verhalten in einem bestimmten Kontext auszuführen - und haken Sie jeden dieser Pläne ab, wenn Sie ihn jeden Tag erfüllen.",
       "heading" : "Vervollständigen Sie Ihre Umsetzungsabsichten",
       "topic" : ""
     },
@@ -77,7 +77,7 @@
         "imperial" : "Genug trinken",
         "metric" : "Genug trinken"
       },
-      "explanation" : "Setzen Sie dieses Häkchen, wenn Ihr Urin nie dunkler als blassgelb ist. Bei Zufuhr von Lebensmitteln, die mit Riboflavin (Vitamin B2) angereichert sind (z.B. Hefeflocken), sollten sich Frauen an 9 Tassen ungesüßte Getränke pro Tag orientieren (was durch die zwei Gläser Wasser vor jeder Mahlzeit und die drei Tassen grünen Tee zwischen den Mahlzeiten bereits abgedeckt wird) und Männer an 13 Tassen pro Tag.\n\nWenn Sie Herz- oder Nierenprobleme haben, erhöhen Sie die Flüssigkeitsaufnahme nicht, ohne vorher mit dem Arzt zu sprechen.\n\nDenken Sie daran, dass Diät-Soda zwar kalorienfrei sein mag, aber trotzdem Konsequenzen hat, wie wir im Kapitel \"Ohne Zuckerzusatz\" (Low in Added Sugar) erfahren haben.",
+      "explanation" : "Setzen Sie dieses Häkchen, wenn Ihr Urin nie dunkler als blassgelb ist. Bei Zufuhr von Lebensmitteln, die mit Riboflavin (Vitamin B2) angereichert sind (z.B. Hefeflocken), sollten sich Frauen an 9 Tassen ungesüßte Getränke pro Tag orientieren (was durch die zwei Gläser Wasser vor jeder Mahlzeit und die drei Tassen grünen Tee zwischen den Mahlzeiten bereits abgedeckt wird) und Männer an 13 Tassen pro Tag.\n\nWenn Sie Herz- oder Nierenprobleme haben, erhöhen Sie die Flüssigkeitsaufnahme nicht, ohne vorher mit dem Arzt zu sprechen.\n\nDenken Sie daran, dass Diät-Soda zwar kalorienfrei sein mag, aber trotzdem Konsequenzen hat, wie wir im Kapitel “Ohne Zuckerzusatz” (Low in Added Sugar) erfahren haben.",
       "heading" : "Genug trinken",
       "topic" : ""
     },
@@ -119,11 +119,11 @@
     },
     "tweakMealNegCal" : {
       "activity" : {
-        "imperial" : "Mahlzeit mit \"Negativ-Kalorien\" beginnen",
-        "metric" : "Mahlzeit mit \"Negativ-Kalorien\" beginnen"
+        "imperial" : "Mahlzeit mit “Negativ-Kalorien” beginnen",
+        "metric" : "Mahlzeit mit “Negativ-Kalorien” beginnen"
       },
       "explanation" : "Beginnen Sie  jede Mahlzeit als ersten Gang mit einem Apfel, einer leichten Suppe oder einem Salat mit weniger als 100 Kalorien pro Tasse.",
-      "heading" : "Mahlzeit mit \"Negativ-Kalorien\" beginnen",
+      "heading" : "Mahlzeit mit “Negativ-Kalorien” beginnen",
       "topic" : ""
     },
     "tweakMealUndistracted" : {
