@@ -2004,7 +2004,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_ENTITLEMENTS = DailyDozen/DailyDozen.entitlements;
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 7;
+				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = 2MG57YUZL5;
 				ENABLE_USER_SCRIPT_SANDBOXING = NO;
 				"EXCLUDED_ARCHS[sdk=iphonesimulator*]" = arm64;
@@ -2014,7 +2014,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 3.4.9;
+				MARKETING_VERSION = 3.4.11;
 				PRODUCT_BUNDLE_IDENTIFIER = com.nutritionfacts.dailydozen;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
@@ -2032,7 +2032,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_ENTITLEMENTS = DailyDozen/DailyDozen.entitlements;
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 7;
+				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = 2MG57YUZL5;
 				ENABLE_USER_SCRIPT_SANDBOXING = NO;
 				INFOPLIST_FILE = "$(SRCROOT)/DailyDozen/App/InfoPlist/Info.plist";
@@ -2041,7 +2041,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 3.4.9;
+				MARKETING_VERSION = 3.4.11;
 				ONLY_ACTIVE_ARCH = NO;
 				PRODUCT_BUNDLE_IDENTIFIER = com.nutritionfacts.dailydozen;
 				PRODUCT_NAME = "$(TARGET_NAME)";
