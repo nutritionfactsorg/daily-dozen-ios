@@ -4,23 +4,23 @@
       "heading" : "Bohnen",
       "servings" : [
         {
-          "imperial" : "32 Gramm Hummus oder Bohnendip",
+          "imperial" : "¼ Tasse Hummus oder Bohnendip",
           "metric" : "60 Gramm Hummus oder Bohnendip"
         },
         {
-          "imperial" : "170 Gramm gekochte Bohnen, Erbsen oder Linsen",
+          "imperial" : "½ Tasse gekochte Bohnen, Erbsen oder Linsen",
           "metric" : "90 Gramm gekochte Bohnen, Erbsen oder Linsen"
         },
         {
-          "imperial" : "170 Gramm Tofu oder Tempeh ",
+          "imperial" : "½ Tasse Tofu oder Tempeh",
           "metric" : "100 Gramm Tofu oder Tempeh"
         },
         {
-          "imperial" : "240 Gramm frische Erbsen oder Zuckererbsen ",
+          "imperial" : "1 Tasse frische Erbsen oder Zuckererbsen",
           "metric" : "130 Gramm frische Erbsen oder Zuckererbsen"
         },
         {
-          "imperial" : "240 Gramm frische Sojasprossen (Linsen, Mungbohnen) ",
+          "imperial" : "1 Tasse frische Sojasprossen (Linsen, Mungbohnen)",
           "metric" : "100 Gramm frische Sojasprossen (Linsen, Mungbohnen)"
         }
       ],

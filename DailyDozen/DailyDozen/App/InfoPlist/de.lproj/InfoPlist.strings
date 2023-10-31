@@ -8,9 +8,9 @@
 "CFBundleName" = "DailyDozen";
 
 /* Privacy - Health Share Usage Description */
-"NSHealthShareUsageDescription" = "Die Funktion \"21 Optimierungen\" greift auf Ihre HealthKit-Daten zu, um Aktualisierungen für Ihre täglichen Gewichtsmessungen bereitzustellen.";
+"NSHealthShareUsageDescription" = "Die Funktion “21 Optimierungen” greift auf Ihre HealthKit-Daten zu, um Aktualisierungen für Ihre täglichen Gewichtsmessungen bereitzustellen.";
 
 /* Privacy - Health Update Usage Description */
-"NSHealthUpdateUsageDescription" = "Die Funktion 21 Tweaks kann Gewichtsdaten in HealthKit schreiben, damit Sie Ihren Fortschritt verfolgen können.";
+"NSHealthUpdateUsageDescription" = "Die Funktion “21 Optimierungen” kann Gewichtsdaten in HealthKit schreiben, damit Sie Ihren Fortschritt verfolgen können.";
 
 /* file end */
