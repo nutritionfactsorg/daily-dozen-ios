@@ -1,5 +1,6 @@
 # Set minimum supported iOS version
 platform :ios, '12.4'
+#platform :ios, '15.1'
 
 target 'DailyDozen' do
   # Comment out the next line to *not*use* dynamic frameworks
