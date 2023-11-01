@@ -7,7 +7,7 @@
 
 import Foundation
 
-/// Object Relationship Mapping (ORM)
+/// Object Relationship Mapping (ORM) for `datacount_table`
 /// Handles mapping from relationship data and item record object 
 public struct SqlDataCountRecord: Codable {
     

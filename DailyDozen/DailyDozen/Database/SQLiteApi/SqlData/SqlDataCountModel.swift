@@ -86,17 +86,21 @@ public struct SqlDataCountModel {
         guard let old = readOne(date: new.datacount_date_psid, kind: new.datacount_kind_pfnid)
             else { return }
         
-        if let sql = updateRecordSql(new: new, old: old) {
+        if let sql = updateSql(new: new, old: old) {
             let _: SQLiteQuery = SQLiteQuery(sql: sql, db: api.dailydozenDb)
         }
     }
     
-    fileprivate func updateRecordSql(new: SqlDataCountRecord, old: SqlDataCountRecord) -> String? {
-        // UPDATE item_table 
-        // SET item_title='…', item_publishinfo='…'
-        // WHERE item_puid='…';
+    fileprivate func updateSql(new: SqlDataCountRecord, old: SqlDataCountRecord) -> String? {
+        let r = new
+
+        var sql = "UPDATE datacount_table "
+        sql.append("SET datacount_count='\(r.datacount_count)', ")
+        sql.append("datacount_streak='\(r.datacount_streak)' ")
+        sql.append("WHERE datacount_date_psid='\(r.datacount_date_psid)' ")
+        sql.append("AND datacount_kind_pfnid='\(r.datacount_kind_pfnid)' ")
         
-        fatalError()
+        return sql
     }
     
     /// same as createOrUpdate

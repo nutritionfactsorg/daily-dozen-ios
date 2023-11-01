@@ -7,6 +7,8 @@
 
 import Foundation
 
+/// Object Relationship Mapping (ORM) for `dataweight_table`
+/// Handles mapping from relationship data and item record object
 public struct SqlDataWeightRecord: Codable {
     
     // MARK: - fields
@@ -19,6 +21,16 @@ public struct SqlDataWeightRecord: Codable {
     public var dataweight_kg: Double = 0.0
     /// time of day 24-hour "HH:mm" format
     public var dataweight_time: String = ""
+    
+    /// Canonical `field` (Column) Name Order
+    fileprivate enum Column: Int {
+        case dataweightDatePsid  = 0
+        case dataweightAmpmFnid = 1
+        case dataweightKg       = 2
+        case dataweightTime     = 3
+        
+        var idx: Int {self.rawValue}
+    }
     
     public var kg: Double { dataweight_kg }
     public var time: String { dataweight_time }
@@ -73,7 +85,7 @@ public struct SqlDataWeightRecord: Codable {
     public var pidParts: (datestamp: Date, weightType: DataWeightType)? {
         guard let date = Date.init(datestampSid: pidKeys.datestampSid),
             let weightType = DataWeightType(typeKey: pidKeys.typeKey) else {
-                LogService.shared.error(
+                logit.error(
                     "SqlDataWeightRecord pidParts has invalid datestamp or weightType"
                 )
                 return nil
@@ -120,6 +132,28 @@ public struct SqlDataWeightRecord: Codable {
         self.dataweight_ampm_pnid = weightType.typeNid
         self.dataweight_kg = kg
         self.dataweight_time = date.datestampHHmm
+    }
+    
+    public init?( row: [Any?], api: SQLiteApi ) {
+        guard // required fields
+            let datePsid = row[Column.dataweightDatePsid.idx] as? String,
+            let kindPfnid = row[Column.dataweightAmpmFnid.idx] as? Int,
+            let kg = row[Column.dataweightKg.idx] as? Double,
+            let time = row[Column.dataweightTime.idx] as? String
+        else {
+            return nil
+            //var s = ""
+            //for a in row {
+            //    s.append("\(a ?? "nil")")
+            //}
+            //
+            //throw SQLiteApiError.rowConversionFailed(s)
+        }
+        
+        self.dataweight_date_psid = datePsid
+        self.dataweight_ampm_pnid = kindPfnid
+        self.dataweight_kg = kg
+        self.dataweight_time = time
     }
     
     // MARK: - Realm Meta Information
