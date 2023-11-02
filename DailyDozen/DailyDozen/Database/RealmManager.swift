@@ -33,6 +33,7 @@ class RealmManager {
     func csvExport(filename: String, activity: ActivityProgress? = nil) {
         let outUrl = URL.inDocuments().appendingPathComponent(filename)
         var content = RealmManager.csvHeader
+        content.append(RealmManager.csvHeaderLine2)
         
         let allTrackers = realmDb.getDailyTrackers(activity: activity)
         let trackerCount = allTrackers.count
@@ -77,9 +78,9 @@ class RealmManager {
         }
         // Weight
         str.append(",\(tracker.weightAM.time)")
-        str.append(",\(tracker.weightAM.kg)")
+        str.append(",\(tracker.weightAM.kgStr)")
         str.append(",\(tracker.weightPM.time)")
-        str.append(",\(tracker.weightPM.kg)")
+        str.append(",\(tracker.weightPM.kgStr)")
         str.append("\n")
         
         return str
@@ -106,7 +107,18 @@ class RealmManager {
         }
         
         if isValidCsvHeader(lines[0]) {
-            for i in 1..<lines.count {
+            
+            if lines.count >= 2 {
+                if lines[1].hasPrefix("(GOAL)") {
+                    // :NYI: check/set basis for execercise units, weight kg/lbs
+                } else {
+                    if let dailyTracker = csvProcess(line: lines[1]) {
+                        realmDb.saveDailyTracker(tracker: dailyTracker)
+                    }
+                }
+            }
+            
+            for i in 2..<lines.count {
                 if let dailyTracker = csvProcess(line: lines[i]) {
                     realmDb.saveDailyTracker(tracker: dailyTracker)
                 }
@@ -199,6 +211,21 @@ class RealmManager {
         str.append(",Weight AM Value")
         str.append(",Weight PM Time")
         str.append(",Weight PM Value")
+        
+        str.append("\n")
+        return str
+    }
+    
+    private static var csvHeaderLine2: String {
+        var str = "(GOAL)"
+        for dataCountType in DataCountType.allCases {
+            str.append(",\(dataCountType.goalServings)")
+        }
+        // Weight
+        str.append(",-AM-") // Weight AM Time
+        str.append(",kg")   // Weight AM Value
+        str.append(",-PM-") // Weight PM Time
+        str.append(",kg")   // Weight PM Value
         
         str.append("\n")
         return str

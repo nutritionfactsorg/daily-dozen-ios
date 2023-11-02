@@ -59,6 +59,13 @@ public struct SqlDataCountModel {
     }
     
     /// returns 1 record from database if present
+    public func readOne(date: Date, countType: DataCountType) -> SqlDataCountRecord? {
+        let dateSid = date.datestampSid
+        let kindNid = countType.nid
+        return readOne(date: dateSid, kind: kindNid)
+    }
+    
+    /// returns 1 record from database if present
     public func readOne(date: String, kind: Int) -> SqlDataCountRecord? {
         var sql = "SELECT * FROM item_table WHERE "
         sql += "datacount_date_psid='\(date)' AND "

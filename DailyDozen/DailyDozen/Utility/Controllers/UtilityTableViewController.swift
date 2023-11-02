@@ -35,23 +35,23 @@ class UtilityTableViewController: UITableViewController {
     // MARK: - SQLite Utilities
     
     @IBAction func doUtilitySQLiteClearDbBtn(_ sender: UIButton) {
-        SQLiteConnector.api.clearDb()
+        SQLiteConnector.dot.clearDb()
     }
     
     @IBAction func doUtilitySQLiteCreateDataBtn(_ sender: UIButton) {
-        SQLiteConnector.api.createData()
+        SQLiteConnector.dot.createData()
     }
     
     @IBAction func doUtilitySQLiteExportDataBtn(_ sender: UIButton) {
-        SQLiteConnector.api.exportData()
+        SQLiteConnector.dot.exportData()
     }
     
     @IBAction func doUtilitySQLiteImportDataBtn(_ sender: UIButton) {
-        SQLiteConnector.api.importData()
+        SQLiteConnector.dot.importData()
     }
     
     @IBAction func doUtilitySQLiteTimingTextBtn(_ sender: UIButton) {
-        SQLiteConnector.api.timingTest()
+        SQLiteConnector.dot.timingTest()
     }
     
     // MARK: - Realm Utilities

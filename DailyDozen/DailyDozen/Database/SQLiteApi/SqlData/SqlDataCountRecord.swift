@@ -34,14 +34,6 @@ public struct SqlDataCountRecord: Codable {
     
     public var count: Int { datacount_count }
     
-    /// e.g. "20190214.dozeBeans"
-    public var idString: String {
-        if let parts = idKeys {
-            return "\(parts.datestampSid).\(parts.typeKey)"
-        }
-        return "\(datacount_date_psid).\(datacount_kind_pfnid)?"
-    }
-    
     public var idKeys: (datestampSid: String, typeKey: String)? {
         if let typeKey = DataCountType(nid: datacount_kind_pfnid)?.typeKey {
             return (datestampSid: datacount_date_psid, typeKey: typeKey)
@@ -59,6 +51,14 @@ public struct SqlDataCountRecord: Codable {
                 return nil
         }
         return (datestamp: date, countType: countType)
+    }
+    
+    /// Description string for logging. e.g., "20190214•0•dozeBeans"
+    public var idString: String {
+        if let parts = idKeys {
+            return "\(parts.datestampSid)•\(datacount_kind_pfnid)•\(parts.typeKey)"
+        }
+        return "\(datacount_date_psid)•\(datacount_kind_pfnid)•unknown?"
     }
 
     // MARK: Class Methods
@@ -170,12 +170,12 @@ public struct SqlDataCountRecord: Codable {
             if datacount_count > countType.goalServings {
                 datacount_count = countType.goalServings
                 logit.error(
-                    "SqlDataCountRecord setCount \(idString) \(count) exceeds max servings"
+                    "SqlDataCountRecord setCount \(idString)@\(count) exceeds servings goal"
                 )
             }
         } else {
             logit.error(
-                "SqlDataCountRecord setCount \(idString) \(count) could not range check servings"
+                "SqlDataCountRecord setCount \(idString)@\(count) could not range check servings"
             )
         }
     }

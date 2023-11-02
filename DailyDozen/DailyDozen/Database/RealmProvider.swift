@@ -489,6 +489,7 @@ class RealmProvider {
         saveDailyTracker(tracker: tracker)
     }
     
+    /// Write DailyTracker to Realm Database
     func saveDailyTracker(tracker: RealmDailyTracker) {
         do {
             try realm.write {
@@ -644,6 +645,7 @@ class RealmProvider {
     private func updateStreakIncomplete(date: Date, countType: DataCountType) {
         // setup this date
         let thisPid = RealmDataCountRecord.pid(date: date, countType: countType)
+        // Retrieve single instance given object type with the given primary key
         guard let thisRec = realm.object(ofType: RealmDataCountRecord.self, forPrimaryKey: thisPid)
         else {
             logit.error("Invalid updateStreakIncomplete: \(thisPid) not retrieved")
@@ -656,6 +658,7 @@ class RealmProvider {
         var nextMaxValidStreak = 1
         var nextDay = date.adding(days: 1)
         var nextPid = RealmDataCountRecord.pid(date: nextDay, countType: countType)
+        // Retrieve single instance given object type with the given primary key
         while let nextRec = realm.object(ofType: RealmDataCountRecord.self, forPrimaryKey: nextPid) {
             if nextRec.count < countType.goalServings {
                 if nextRec.streak == 0 {

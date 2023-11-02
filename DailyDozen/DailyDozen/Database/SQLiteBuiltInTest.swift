@@ -50,7 +50,7 @@ public struct SQLiteBuiltInTest {
                 .doGenerateDBHistoryBIT(numberOfDays: 3, inLibDbDir: true)
         case .db03:
             removeExistingDBs()
-            SQLiteConnector.api.generateHistoryBIT(numberOfDays: 3)
+            SQLiteConnector.dot.generateHistoryBIT(numberOfDays: 3)
         case .deleteExistingDB:
             removeExistingDBs()
         case .noop:

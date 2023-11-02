@@ -77,11 +77,13 @@ public struct SqlDataWeightRecord: Codable {
         return dateFormatter.date(from: datestring)
     }
     
+    // :RENAME:???: pidKeys -> idKeys
     public var pidKeys: (datestampSid: String, typeKey: String) {
         let parts = self.dataweight_date_psid.components(separatedBy: ".")
         return (datestampSid: parts[0], typeKey: parts[1])
     }
     
+    // :RENAME:???: pidParts -> idParts
     public var pidParts: (datestamp: Date, weightType: DataWeightType)? {
         guard let date = Date.init(datestampSid: pidKeys.datestampSid),
             let weightType = DataWeightType(typeKey: pidKeys.typeKey) else {
@@ -91,6 +93,12 @@ public struct SqlDataWeightRecord: Codable {
                 return nil
         }
         return (datestamp: date, weightType: weightType)
+    }
+    
+    /// Description string for logging. e.g., "20190214•0•am"
+    public var idString: String {
+        let parts = pidKeys
+        return "\(parts.datestampSid)•\(dataweight_ampm_pnid)•\(parts.typeKey)"
     }
     
     // MARK: Class Methods
