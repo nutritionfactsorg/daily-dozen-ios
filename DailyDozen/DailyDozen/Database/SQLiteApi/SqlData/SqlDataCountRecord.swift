@@ -90,10 +90,10 @@ public struct SqlDataCountRecord: Codable {
         datacount_kind_pfnid = dataCountType.nid
 
         datacount_count = count
-        if datacount_count > dataCountType.maxServings {
-            datacount_count = dataCountType.maxServings
+        if datacount_count > dataCountType.goalServings {
+            datacount_count = dataCountType.goalServings
             logit.error(
-                "SqlDataCountRecord init datestampSid:\(datestampSid) typekey:\(typeKey) count:\(count) exceeded max servings \(dataCountType.maxServings)"
+                "SqlDataCountRecord init datestampSid:\(datestampSid) typekey:\(typeKey) count:\(count) exceeded max servings \(dataCountType.goalServings)"
             )
 
         }
@@ -106,10 +106,10 @@ public struct SqlDataCountRecord: Codable {
         datacount_kind_pfnid = countType.nid    // number index
         
         datacount_count = count
-        if datacount_count > countType.maxServings {
-            datacount_count = countType.maxServings
+        if datacount_count > countType.goalServings {
+            datacount_count = countType.goalServings
             logit.error(
-                "SqlDataCountRecord init date:\(date.datestampSid) countType:\(countType.typeKey) count:\(count) exceeds max servings \(countType.maxServings)"
+                "SqlDataCountRecord init date:\(date.datestampSid) countType:\(countType.typeKey) count:\(count) exceeds max servings \(countType.goalServings)"
             )
         }
         datacount_streak = streak
@@ -167,8 +167,8 @@ public struct SqlDataCountRecord: Codable {
     mutating func setCount(_ count: Int) {
         datacount_count = count
         if let countType = idParts?.countType {
-            if datacount_count > countType.maxServings {
-                datacount_count = countType.maxServings
+            if datacount_count > countType.goalServings {
+                datacount_count = countType.goalServings
                 logit.error(
                     "SqlDataCountRecord setCount \(idString) \(count) exceeds max servings"
                 )

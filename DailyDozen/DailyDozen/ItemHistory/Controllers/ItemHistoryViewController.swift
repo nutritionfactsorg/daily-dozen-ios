@@ -82,9 +82,9 @@ extension ItemHistoryViewController: FSCalendarDataSource {
 
         let itemsDict = realm.getDailyTracker(date: date).itemsDict
         if let statesCount = itemsDict[itemType]?.count {
-            cell.configure(for: statesCount, maximum: itemType.maxServings)
+            cell.configure(for: statesCount, maximum: itemType.goalServings)
         } else {
-            cell.configure(for: 0, maximum: itemType.maxServings)
+            cell.configure(for: 0, maximum: itemType.goalServings)
         }
         
         return cell

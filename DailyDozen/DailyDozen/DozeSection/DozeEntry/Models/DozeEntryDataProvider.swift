@@ -62,7 +62,7 @@ class DozeEntryDataProvider: NSObject, UITableViewDataSource {
 extension DozeEntryDataProvider: UICollectionViewDataSource {
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return viewModel.itemInfo(rowIndex: collectionView.tag).itemType.maxServings
+        return viewModel.itemInfo(rowIndex: collectionView.tag).itemType.goalServings
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {

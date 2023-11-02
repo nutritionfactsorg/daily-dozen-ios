@@ -57,7 +57,7 @@ class TweakEntryDataProvider: NSObject, UITableViewDataSource {
 extension TweakEntryDataProvider: UICollectionViewDataSource {
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return viewModel.itemInfo(rowIndex: collectionView.tag).maxServings
+        return viewModel.itemInfo(rowIndex: collectionView.tag).goalServings
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {

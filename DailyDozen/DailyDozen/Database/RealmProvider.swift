@@ -528,7 +528,7 @@ class RealmProvider {
     // for a specific topic.
     
     private func updateStreak(count: Int, date: Date, countType: DataCountType) {
-        let itemCompleted = countType.maxServings == count
+        let itemCompleted = countType.goalServings == count
         if itemCompleted {
             updateStreakCompleted(date: date, countType: countType)
         } else {
@@ -559,26 +559,26 @@ class RealmProvider {
         var nextDay = date.adding(days: 1)
         var nextPid = RealmDataCountRecord.pid(date: nextDay, countType: countType)
         while let nextRec = realm.object(ofType: RealmDataCountRecord.self, forPrimaryKey: nextPid) {
-            if nextRec.count < countType.maxServings {
+            if nextRec.count < countType.goalServings {
                 if nextRec.streak == 0 {
                     // Done. Next day streak not impacted by adjacent past streak update.
                     break   
                 } else {                    
-                    logit.error("\(nextPid) count:\(nextRec.count) < maxServings\(countType.maxServings) with streak:\(nextRec.streak)")
+                    logit.error("\(nextPid) count:\(nextRec.count) < goalServings\(countType.goalServings) with streak:\(nextRec.streak)")
                     nextRec.streak = 0
                     // Note: checking additional dates stops here. Investigate the error.
                     break
                 }
-            } else if nextRec.count == countType.maxServings {
+            } else if nextRec.count == countType.goalServings {
                 if nextRec.streak != nextMaxValidStreak {
                     nextRec.streak = nextMaxValidStreak // Update
                 } else {
                     break // Done.                        
                 }
                 nextMaxValidStreak += 1
-            } else if nextRec.count > countType.maxServings {
-                logit.error("\(nextPid) count:\(nextRec.count) > maxServings\(countType.maxServings)")
-                nextRec.count = countType.maxServings
+            } else if nextRec.count > countType.goalServings {
+                logit.error("\(nextPid) count:\(nextRec.count) > goalServings\(countType.goalServings)")
+                nextRec.count = countType.goalServings
                 nextRec.streak = nextMaxValidStreak
                 // Note: checking additional dates stops here. Investigate the error.
                 break
@@ -593,7 +593,7 @@ class RealmProvider {
         prevPid = RealmDataCountRecord.pid(date: prevDay, countType: countType) // reset
         var streakCount = 1
         while let prevRec = realm.object(ofType: RealmDataCountRecord.self, forPrimaryKey: prevPid) {
-            if prevRec.count == countType.maxServings {
+            if prevRec.count == countType.goalServings {
                 streakCount += 1                
             } else {
                 break
@@ -611,26 +611,26 @@ class RealmProvider {
         prevPid = RealmDataCountRecord.pid(date: prevDay, countType: countType) // reset
         var prevMaxValidStreak = thisRec.streak - 1
         while let prevRec = realm.object(ofType: RealmDataCountRecord.self, forPrimaryKey: prevPid) {
-            if prevRec.count < countType.maxServings {
+            if prevRec.count < countType.goalServings {
                 if prevRec.streak == 0 {
                     // Done. Previous day streak not impacted by adjacent past streak update.
                     break   
                 } else {                    
-                    logit.error("\(prevPid) count:\(prevRec.count) < maxServings\(countType.maxServings) with streak:\(prevRec.streak)")
+                    logit.error("\(prevPid) count:\(prevRec.count) < goalServings\(countType.goalServings) with streak:\(prevRec.streak)")
                     prevRec.streak = 0
                     // Note: checking additional dates stops here. Investigate the error.
                     break
                 }
-            } else if prevRec.count == countType.maxServings {
+            } else if prevRec.count == countType.goalServings {
                 if prevRec.streak != prevMaxValidStreak {
                     prevRec.streak = prevMaxValidStreak
                 } else {
                     break // Done.                        
                 }
                 prevMaxValidStreak -= 1
-            } else if prevRec.count > countType.maxServings {
-                logit.error("\(prevPid) count:\(prevRec.count) > maxServings\(countType.maxServings)")
-                prevRec.count = countType.maxServings
+            } else if prevRec.count > countType.goalServings {
+                logit.error("\(prevPid) count:\(prevRec.count) > goalServings\(countType.goalServings)")
+                prevRec.count = countType.goalServings
                 prevRec.streak = prevMaxValidStreak
                 // Note: checking additional dates stops here. Investigate the error.
                 break
@@ -657,26 +657,26 @@ class RealmProvider {
         var nextDay = date.adding(days: 1)
         var nextPid = RealmDataCountRecord.pid(date: nextDay, countType: countType)
         while let nextRec = realm.object(ofType: RealmDataCountRecord.self, forPrimaryKey: nextPid) {
-            if nextRec.count < countType.maxServings {
+            if nextRec.count < countType.goalServings {
                 if nextRec.streak == 0 {
                     // Done. Next day streak not impacted by adjacent past streak update.
                     break   
                 } else {                    
-                    logit.error("\(nextPid) count:\(nextRec.count) < maxServings\(countType.maxServings) with streak:\(nextRec.streak)")
+                    logit.error("\(nextPid) count:\(nextRec.count) < goalServings\(countType.goalServings) with streak:\(nextRec.streak)")
                     nextRec.streak = 0
                     // Note: checking additional dates stops here. Investigate the error.
                     break
                 }
-            } else if nextRec.count == countType.maxServings {
+            } else if nextRec.count == countType.goalServings {
                 if nextRec.streak != nextMaxValidStreak {
                     nextRec.streak = nextMaxValidStreak // update
                 } else {
                     break // Done.
                 }
                 nextMaxValidStreak += 1
-            } else if nextRec.count > countType.maxServings {
-                logit.error("\(nextPid) count:\(nextRec.count) > maxServings\(countType.maxServings)")
-                nextRec.count = countType.maxServings
+            } else if nextRec.count > countType.goalServings {
+                logit.error("\(nextPid) count:\(nextRec.count) > goalServings\(countType.goalServings)")
+                nextRec.count = countType.goalServings
                 nextRec.streak = nextMaxValidStreak
                 // Note: checking additional dates stops here. Investigate the error.
                 break

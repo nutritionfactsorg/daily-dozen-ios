@@ -88,7 +88,7 @@ class TweakEntryViewModel {
     /// - Returns: The states booland array.
     func tweakItemStates(rowIndex: Int) -> [Bool] {
         let rowType = TweakEntryViewModel.rowTypeArray[rowIndex]
-        var states = [Bool](repeating: false, count: rowType.maxServings)
+        var states = [Bool](repeating: false, count: rowType.goalServings)
         if let count = tracker.itemsDict[rowType]?.count {
             for i in 0..<count {
                 states[i] = true

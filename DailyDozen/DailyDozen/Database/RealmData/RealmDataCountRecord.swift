@@ -63,10 +63,10 @@ class RealmDataCountRecord: Object {
         self.pid = "\(datestampKey).\(typeKey)"
 
         self.count = count
-        if self.count > dataCountType.maxServings {
-            self.count = dataCountType.maxServings
+        if self.count > dataCountType.goalServings {
+            self.count = dataCountType.goalServings
             logit.error(
-                "RealmDataCountRecord init datestampKey:\(datestampKey) typekey:\(typeKey) count:\(count) exceeded max servings \(dataCountType.maxServings)"
+                "RealmDataCountRecord init datestampKey:\(datestampKey) typekey:\(typeKey) count:\(count) exceeded max servings \(dataCountType.goalServings)"
             )
 
         }
@@ -78,10 +78,10 @@ class RealmDataCountRecord: Object {
         self.pid = "\(date.datestampKey).\(countType.typeKey)"
 
         self.count = count
-        if self.count > countType.maxServings {
-            self.count = countType.maxServings
+        if self.count > countType.goalServings {
+            self.count = countType.goalServings
             logit.error(
-                "RealmDataCountRecord init date:\(date.datestampKey) countType:\(countType.typeKey) count:\(count) exceeds max servings \(countType.maxServings)"
+                "RealmDataCountRecord init date:\(date.datestampKey) countType:\(countType.typeKey) count:\(count) exceeds max servings \(countType.goalServings)"
             )
         }
         self.streak = streak
@@ -117,8 +117,8 @@ class RealmDataCountRecord: Object {
     func setCount(_ count: Int) {
         self.count = count
         if let countType = pidParts?.countType {
-            if self.count > countType.maxServings {
-                self.count = countType.maxServings
+            if self.count > countType.goalServings {
+                self.count = countType.goalServings
                 logit.error(
                     "RealmDataCountRecord setCount \(pid) \(count) exceeds max servings"
                 )

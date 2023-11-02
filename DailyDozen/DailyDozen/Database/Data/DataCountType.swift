@@ -64,8 +64,8 @@ public enum DataCountType: String, CaseIterable {
         return DataCountAttributes.shared.dict[self]!.headingDisplay
     }
     
-    var maxServings: Int {
-        return DataCountAttributes.shared.dict[self]!.maxServings
+    var goalServings: Int {
+        return DataCountAttributes.shared.dict[self]!.goalServings
     }
     
     init?(csvHeading: String) {
