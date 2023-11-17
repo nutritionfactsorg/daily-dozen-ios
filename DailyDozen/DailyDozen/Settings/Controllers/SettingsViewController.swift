@@ -536,7 +536,7 @@ class SettingsViewController: UITableViewController {
         let realmManager = RealmManager(fileURL: realmUrl)
         
         realmManager.csvImport(url: csvUrl) 
-        // :GTD: check/verify for successful import
+        // :GTD: check/verify for successful Settings import
         
         let fm = FileManager.default
         do {

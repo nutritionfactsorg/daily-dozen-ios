@@ -33,7 +33,8 @@ public struct DBMigrationMaintainer {
             doMigration_D_DB02toDB03(filename: filename)
             _ = doMigration_E_BD03Export()
         } else if level == 3 {
-            // DB03 is either present or be created by the application
+            // DB03 is either present or will be created by the application
+            logit.debug(":GTD:E: DB03 present or created")
         }
     }
     
@@ -144,13 +145,13 @@ public struct DBMigrationMaintainer {
         return filename
     }
     
-    func doMigration_D_DB02toDB03(filename: String) { // :GTD:02.d
+    func doMigration_D_DB02toDB03(filename: String) { // :GTD:C: DB03 Import
         logit.debug("••BEGIN•• DBMigrationMaintainer doMigration_D_DB02toDB03()")
         // Import to SQLite
         SQLiteConnector.dot.csvImport(filename: filename)
     }
     
-    func doMigration_E_BD03Export() -> String { // :GTD:02.e
+    func doMigration_E_BD03Export() -> String { // :GTD:D: DB03 export
         logit.debug("••BEGIN•• DBMigrationMaintainer doMigration_E_BD03Export()")
         // Export from SQLite
         let filename = SQLiteConnector.dot.csvExport(marker: "migrated", activity: nil)

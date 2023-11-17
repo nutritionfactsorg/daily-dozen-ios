@@ -41,6 +41,4 @@ struct SettingsKeys {
     
     /// Reminder UNNotificationRequest identifier
     static let reminderRequestID = "reminderRequestID"
-    
-    ///
 }

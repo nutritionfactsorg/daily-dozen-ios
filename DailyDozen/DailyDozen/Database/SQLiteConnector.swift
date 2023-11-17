@@ -4,6 +4,8 @@
 //
 //  Copyright © 2023 NutritionFacts.org. All rights reserved.
 //
+// swiftlint:disable type_body_length
+// swiftlint:disable file_length
 
 import Foundation
 
@@ -11,7 +13,10 @@ struct SQLiteConnector {
     static var dot = SQLiteConnector()
     //
     public static let sqliteFilename = "NutritionFacts.sqlite3"
-    
+    /// csvExerciseGamut may differ from SettingsManager.exerciseGamut()
+    var csvExerciseGamut: SettingsManager.ExerciseGamut
+    /// csvUnitsType may differ from SettingsManager.unitsType()
+    var csvUnitsType: UnitsType
     let dbUrl: URL
     let sqliteApi: SQLiteApi
     
@@ -28,6 +33,9 @@ struct SQLiteConnector {
         
         dbUrl = URL.inDatabase(filename: SQLiteConnector.sqliteFilename)
         sqliteApi = SQLiteApi(dbUrl: dbUrl)
+        // Initialize to user preferences
+        csvExerciseGamut = SettingsManager.exerciseGamut()
+        csvUnitsType = SettingsManager.unitsType()
     }
     
     // MARK: Advanced Utilities Connection
@@ -37,23 +45,23 @@ struct SQLiteConnector {
     }
     
     func createData() {
-        logit.info("run SQLiteConnector Utility createData")
+        logit.info("run SQLiteConnector Utility createData 28 days")
         generateHistoryBIT(numberOfDays: 28)
     }
     
     func exportData() {
-        logit.info(":NYI: SQLiteConnector Utility exportData()") // :GTD:
+        logit.info(":GTD:NYI: SQLiteConnector Utility exportData()")
     }
     
     func importData() {
-        logit.info(":NYI: SQLiteConnector Utility importData()") // :GTD:
+        logit.info(":GTD:NYI: SQLiteConnector Utility importData()")
     }
     
     func timingTest() {
-        logit.info(":NYI: SQLiteConnector Utility timingTest()") // :GTD:
+        logit.info(":GTD:NYI: SQLiteConnector Utility timingTest()")
     }
     
-    // MARK: - Export & Import TSV Connection
+    // MARK: - Export & Import CSV Connection
     
     func csvExport(marker: String, activity: ActivityProgress? = nil) -> String {
         let filename = "\(marker)-\(Date.datestampExport()).csv"
@@ -63,8 +71,8 @@ struct SQLiteConnector {
     
     func csvExport(filename: String, activity: ActivityProgress? = nil) {
         let outUrl = URL.inDocuments().appendingPathComponent(filename)
-        var content = SQLiteConnector.csvHeader
-        content.append(SQLiteConnector.csvHeaderLine2)
+        var content = csvKeysHeader()
+        content.append(csvUnitsHeader())
         
         let allTrackers = sqliteApi.getDailyTrackers(activity: activity)
         let trackerCount = allTrackers.count
@@ -108,92 +116,111 @@ struct SQLiteConnector {
             }
         }
         // Weight
-        str.append(",\(tracker.weightAM.time)")
-        str.append(",\(tracker.weightAM.kgStr)")
-        str.append(",\(tracker.weightPM.time)")
-        str.append(",\(tracker.weightPM.kgStr)")
-        str.append("\n")
+        if csvUnitsType == .imperial {
+            str.append(",\(tracker.weightAM.time)")
+            str.append(",\(tracker.weightAM.lbsStr)")
+            str.append(",\(tracker.weightPM.time)")
+            str.append(",\(tracker.weightPM.lbsStr)")
+            str.append("\n")
+        } else {
+            str.append(",\(tracker.weightAM.time)")
+            str.append(",\(tracker.weightAM.kgStr)")
+            str.append(",\(tracker.weightPM.time)")
+            str.append(",\(tracker.weightPM.kgStr)")
+            str.append("\n")
+        }
         
         return str
     }
     
-    func csvImport(filename: String) {
+    mutating func csvImport(filename: String) {
         let inUrl = URL.inDocuments().appendingPathComponent(filename)
         csvImport(url: inUrl)
     }
     
-    func csvImport(url: URL) {
+    mutating func csvImport(url: URL) {
         guard let contents = try? String(contentsOf: url)  else {
             logit.error(
-                "FAIL SQLiteConnector csvImport file not found '\(url.lastPathComponent)'"
+                "FAIL: csvImport file not found '\(url.lastPathComponent)'"
             )
             return
         }
         let lines = contents.components(separatedBy: .newlines)
-        guard lines.count > 1 else {
-            logit.error(
-                "FAIL SQLiteConnector csvImport CSV has less that 2 lines"
-            )
+        
+        guard lines.count >= 2 else {
+            logit.error("csvImport file without data")
+            return
+        }
+        guard isValidCsvKeysHeader(lines[0]) else {
+            logit.error("FAIL: csvImport invalid keys header")
             return
         }
         
-        if isValidCsvHeader(lines[0]) {
-            
-            if lines.count >= 2 {
-                if lines[1].hasPrefix("(GOAL)") {
-                    // :NYI: check/set basis for execercise units, weight kg/lbs
-                } else {
-                    if let dailyTracker = csvProcess(line: lines[1]) {
-                        sqliteApi.saveDailyTracker(tracker: dailyTracker)
-                    }
-                }
-            }
-            
-            for i in 2..<lines.count {
-                if let dailyTracker = csvProcess(line: lines[i]) {
-                    sqliteApi.saveDailyTracker(tracker: dailyTracker)
-                }
+        if lines[1].hasPrefix("(UNITS)") {
+            if isValidSetCsvUnitsHeader(lines[1]) {
+                logit.info("(UNITS) \(csvExerciseGamut), \(csvUnitsType)")
+            } else {
+                logit.error("FAIL: (UNITS) invalid")
+                return
             }
         } else {
-            logit.error(
-                "FAIL SQLiteConnector csvImport CSV does not contain a valid header line"
-            )
-            return
+            // No (UNITS) row: exercise is 1 unit. weight is kg
+            csvExerciseGamut = .one
+            csvUnitsType = .metric
+            if let dailyTracker = csvImportLine(lines[1]) {
+                sqliteApi.saveDailyTracker(tracker: dailyTracker)
+            } else {
+                logit.error("FAIL: 1st data row invalid")
+                return
+            }
         }
         
+        var skippedLineCount = 0
+        for i in 2..<lines.count {
+            if let dailyTracker = csvImportLine(lines[i]) {
+                sqliteApi.saveDailyTracker(tracker: dailyTracker)
+            } else {
+                skippedLineCount += 1
+            }
+        }
+        logit.debug("csvImport skippedLineCount==\(skippedLineCount)")
+        
+        // Restore to user preferences
+        csvExerciseGamut = SettingsManager.exerciseGamut()
+        csvUnitsType = SettingsManager.unitsType()
     }
     
-    private func csvProcess(line: String) -> SqlDailyTracker? {
-        let columns = line
-            .replacingOccurrences(of: " ", with: "")
+    private func csvImportLine(_ line: String) -> SqlDailyTracker? {
+        let columns = line.replacingOccurrences(of: " ", with: "")
             .components(separatedBy: ",")
+        // column count = date(1) + checkboxes(n) + weight(4)
         guard columns.count == 1 + DataCountType.allCases.count + 4 else {
             return nil
         }
-        
+        // Process date column
         let datastampKey = columns[0]
         guard let date = Date(datestampKey: datastampKey) else {
             return nil
         }
         var tracker = SqlDailyTracker(date: date)
-        
+        // Process checkbox datacount columns
         var index = 1
         for dataCountType in DataCountType.allCases {
-            if let value = Int(columns[index]) {
-                let sqlDataCountRecord = SqlDataCountRecord(
-                    date: date,
-                    countType: dataCountType,
-                    count: value
-                )
-                tracker.itemsDict[dataCountType] = sqlDataCountRecord
-            } else {
-                logit.error(
-                    "FAIL SQLiteConnector csvProcess \(index) in \(line)"
-                )
+            guard var value = Int(columns[index])
+            else {
+                logit.error("FAIL: csvImportLine @index=\(index) in \(line)")
+                return nil
             }
+            
+            let sqlDataCountRecord = SqlDataCountRecord(
+                date: date,
+                countType: dataCountType,
+                count: value
+            )
+            tracker.itemsDict[dataCountType] = sqlDataCountRecord
             index += 1
         }
-        
+        // Process weight columns
         let weightIndexOffset = 1 + DataCountType.allCases.count
         let weightAM = SqlDataWeightRecord(
             datestampSid: datastampKey,
@@ -217,22 +244,10 @@ struct SQLiteConnector {
         return tracker
     }
     
-    private func isValidCsvHeader(_ header: String) -> Bool {
-        let currentHeaderNormalized = header
-            .replacingOccurrences(of: " ", with: "")
-            .replacingOccurrences(of: "-", with: "")
-            .lowercased()
-            .appending("\n")
-        
-        let referenceHeaderNormalize = SQLiteConnector.csvHeader
-            .replacingOccurrences(of: " ", with: "")
-            .replacingOccurrences(of: "-", with: "")
-            .lowercased()
-        
-        return currentHeaderNormalized == referenceHeaderNormalize
-    }
+    // MARK: - CSV Headers
     
-    private static var csvHeader: String {
+    /// CSV 1st Header Line: Key Names
+    private func csvKeysHeader() -> String {
         var str = "Date"
         for dataCountType in DataCountType.allCases {
             str.append(",\(dataCountType.headingCSV)")
@@ -247,19 +262,81 @@ struct SQLiteConnector {
         return str
     }
     
-    private static var csvHeaderLine2: String {
-        var str = "(GOAL)"
+    /// CSV 2nd Header Line: Units 100% goal, exercise gamut, weight units
+    /// Based on csvExerciseGamut, csvUnitsType values.
+    private func csvUnitsHeader() -> String {
+        var str = "(UNITS)"
+        // 100% Goals
         for dataCountType in DataCountType.allCases {
-            str.append(",\(dataCountType.goalServings)")
+            if dataCountType == .dozeExercise {
+                str.append(",\(csvExerciseGamut.int)")
+            } else {
+                str.append(",\(dataCountType.goalServings)")
+            }
         }
-        // Weight
-        str.append(",-AM-") // Weight AM Time
-        str.append(",kg")   // Weight AM Value
-        str.append(",-PM-") // Weight PM Time
-        str.append(",kg")   // Weight PM Value
+        // Weight // :GTD:(UNITS): kg|lbs
+        if csvUnitsType == .imperial {
+            str.append(",(AM)") // Weight AM Time
+            str.append(",lbs")   // Weight AM Value
+            str.append(",(PM)") // Weight PM Time
+            str.append(",lbs")   // Weight PM Value
+        } else {
+            str.append(",(AM)") // Weight AM Time
+            str.append(",kg")   // Weight AM Value
+            str.append(",(PM)") // Weight PM Time
+            str.append(",kg")   // Weight PM Value
+        }
         
         str.append("\n")
         return str
+    }
+    
+    private func isValidCsvKeysHeader(_ header: String) -> Bool {
+        let currentHeaderNormalized = header
+            .replacingOccurrences(of: " ", with: "")
+            .replacingOccurrences(of: "-", with: "")
+            .lowercased()
+            .appending("\n")
+        
+        let referenceHeaderNormalize = csvKeysHeader()
+            .replacingOccurrences(of: " ", with: "")
+            .replacingOccurrences(of: "-", with: "")
+            .lowercased()
+        
+        return currentHeaderNormalized == referenceHeaderNormalize
+    }
+    
+    /// Validates and sets 
+    private mutating func isValidSetCsvUnitsHeader(_ header: String, withSet: Bool = true) -> Bool {
+        let inboundHeaderNormalized = header
+            .replacingOccurrences(of: " ", with: "")
+            .replacingOccurrences(of: "-", with: "")
+            .lowercased()
+            .appending("\n")
+        
+        let columns = inboundHeaderNormalized.components(separatedBy: ",")
+        guard 
+            columns.count == 41,
+            let gamut = SettingsManager.ExerciseGamut(columns[13]), // dozeExercies
+            let unitsAM = UnitsType(columns[38]), // AM Units
+            let unitsPM = UnitsType(columns[40]), // PM Units
+            unitsAM == unitsPM
+        else { return false }
+        
+        csvExerciseGamut = gamut
+        csvUnitsType = unitsAM
+        
+        let referenceHeaderNormalize = csvUnitsHeader()
+            .replacingOccurrences(of: " ", with: "")
+            .replacingOccurrences(of: "-", with: "")
+            .lowercased()
+        
+        if inboundHeaderNormalized == referenceHeaderNormalize {
+            return true
+        } else {
+            logit.error("isValidSetCsvUnitsHeader match failed")
+            return false
+        }
     }
     
     // MARK: - Built In Test (BIT) Connection

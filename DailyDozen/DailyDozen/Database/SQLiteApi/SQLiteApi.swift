@@ -2,6 +2,8 @@
 // SQLiteApi.swift
 // SQLiteApi
 //
+// swiftlint:disable cyclomatic_complexity
+// swiftlint:disable function_body_length
 
 import Foundation
 
@@ -57,18 +59,35 @@ public class SQLiteApi {
         return []
     }
     
+    // :GTD: saveDBWeight(date: Date, ampm: DataWeightType, kg: Double)
+    
+    // :GTD: deleteDBWeight(date: Date, ampm: DataWeightType)
+    
     func saveDailyTracker() {
         guard let tracker = unsavedDailyTracker else {
             //logit.debug(
-            //    "RealmProvider saveDailyTracker unsavedDailyTracker is nil"
+            //    "SQLiteApi saveDailyTracker unsavedDailyTracker is nil"
             //)
             return
         }
         saveDailyTracker(tracker: tracker)
     }
     
+    /// Write DailyTracker to SQLite Database
     func saveDailyTracker(tracker: SqlDailyTracker) {
-        //
+        let trackerDict: [DataCountType: SqlDataCountRecord] = tracker.itemsDict
+        for key in trackerDict.keys {
+            let sqlDataCountRecord = trackerDict[key]!
+            dataCount.createOrUpdate(sqlDataCountRecord)
+        }
+        unsavedDailyTracker = nil
+        // :???:!!!: weights?
+        // :???: error handling needed ?
+    }
+    
+    /// Deletes all objects from the SQLite database.
+    func deleteAllObjects() {
+        fatalError(":GTD: delete all objects in both tables e.g. DROP & CREATE")
     }
     
     // MARK: - Progress Streak Indicator Management

@@ -15,10 +15,18 @@ import Foundation
 /// * SettingsLayout
 /// * TweakDetailActivityUnitHeader
 enum UnitsType: String {
-
+    
     case imperial
     case metric
-
+    
+    init?(_ str: String) {
+        switch str {
+        case "imperial": self = .imperial
+        case "metric": self = .metric
+        default: return nil
+        }
+    }
+    
     /// Returns localized name for the unit system currently in use.
     var title: String {
         switch self {

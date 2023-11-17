@@ -108,6 +108,7 @@ public struct SqlDataCountRecord: Codable {
         datacount_count = count
         if datacount_count > countType.goalServings {
             datacount_count = countType.goalServings
+            // :NYI:GOAL: capability to exceed servings goal
             logit.error(
                 "SqlDataCountRecord init date:\(date.datestampSid) countType:\(countType.typeKey) count:\(count) exceeds max servings \(countType.goalServings)"
             )
