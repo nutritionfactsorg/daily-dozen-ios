@@ -42,6 +42,30 @@ The Daily Dozen iOS App is licensed under the GPLv3
 
 ## Updates
 
+**3.5.1 (pending)**
+
+- Adds data import.
+
+**3.4.13 (Beta PreRelease Test: Nov 16, 2023)**
+
+- Adds Chinese (Traditional) translation.
+
+**3.4.11 (App Store: Nov 1, 2023)**
+
+- Updated German translation.
+
+**3.4.9 (App Store: Sep 22, 2023)**
+
+- Improved data export.
+- Updated language translations.
+
+**3.4.7 (App Store: Aug 10, 2023)**
+
+- Adds Bulgarian, French, Italian, Romanian, and Slovak language support.
+- Adds support to export data to a file which can be accessed via a computer cable connection.
+- Adds Frequently Asked Questions (FAQ)
+- General software quality improvements.
+
 **3.3.3 (App Store: November 30, 2022)**
 
 * Adds support for Czech language.
