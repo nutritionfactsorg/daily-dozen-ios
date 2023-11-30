@@ -20,7 +20,7 @@
 "dozeBeans.heading" = "豆類";
 
 /* heading for daily data entry item */
-"dozeBerries.heading" = "莓果類";
+"dozeBerries.heading" = "漿果類";
 
 /* heading for daily data entry item */
 "dozeBeverages.heading" = "飲料";
@@ -83,10 +83,10 @@
 "faq_calories_question" = "每日12清單中含有多少卡路里？";
 
 /*  */
-"faq_calories_response.0" = "每日12清單平均約1,200卡路里，但考慮到每個類別的食物選擇範圍廣泛，它可以在800-1800之間的任何地方。想想「其他蔬菜」類別：一杯甜椒的熱量密度比一杯煮熟的紅薯低得多，因此熱量範圍將取決於您的具體食物選擇。這就是每日12清單的偉大之處——它不是一種放之四海而皆準的方法，可以根據您的需要進行調整。";
+"faq_calories_response.0" = "每日12清單平均約1,200卡路里，但考慮到每個類別的食物選擇範圍廣泛，這個數字可以落在800-1800之間的任何地方。想想「其他蔬菜」類別：一杯甜椒的熱量密度比一杯煮熟的紅薯低得多，因此熱量範圍將取決於您的具體食物選擇。這就是每日12清單的偉大之處——它不是一種放之四海而皆準的方法，可以根據您的需要進行調整。";
 
 /*  */
-"faq_calories_response.1" = "如果您的目標是減重，您可以在《食療聖經減重版》和隨附的21項調整中找到更多信息。 在《食療聖經減重版》一書中，我指出：「一項對成功減重策略的系統回顧得出的結論是，考慮到伴隨減重而來的新陳代謝減慢和食慾增加，要實現顯著減重，卡路里計數可能需要降低至女性每天1,200卡路里，男性每天1,500卡路里。」";
+"faq_calories_response.1" = "如果您的目標是減重，您可以在《食療聖經減重版》和隨附的21招中找到更多信息。 在《食療聖經減重版》一書中，我指出：「一項對成功減重策略的系統回顧得出的結論是，考慮到伴隨減重而來的新陳代謝減慢和食慾增加，要實現顯著減重，卡路里計數可能需要降低至女性每天1,200卡路里，男性每天1,500卡路里。」";
 
 /*  */
 "faq_calories_response.2" = "另一方面，如果您的目標是增加體重，那麼您可能需要專注於添加更多高熱量食物，例如紅薯、酪梨、堅果和豆製品。";
@@ -98,13 +98,13 @@
 "faq_mother_response" = "懷孕或哺乳的人與未懷孕或哺乳的人有不同的熱量和營養需求。 提醒一下，每日12清單不是膳食計劃，也不應該是一天內食用的唯一食物。 懷孕或哺乳的人應該諮詢她們的保健醫生或註冊營養師，以獲得滿足其特定熱量需求和營養需求的幫助。";
 
 /*  */
-"faq_scaling_question" = "我不可能吃那麼多豆子/穀物/等等！";
+"faq_scaling_question" = "我不可能吃那麼多豆子/穀物/其他食物！";
 
 /*  */
-"faq_scaling_response" = "根據個人需求變化是可以的。每日12清單是一本勵志指南。盡可能多地攝入這些健康的植物性食物。 如果您剛開始大量食用豆類（或穀物、蔬菜等！），您可能需要從少量開始，然後慢慢增加數量，以便讓您的微生物組有機會進行調整。您也可以發揮創意：例如，在早餐燕麥片中加入一些豆類。如果您用漿果、亞麻籽和堅果裝滿它，您甚至不會注意到豆子。您也可以將豆子搗碎成三明治塗抹醬，或製作我的BROL（https://nutritionfacts.org/recipe/basic-brol-barley-rye-oats-and-lentils）——大麥、黑麥、去殼燕麥和小扁豆——我用它作為許多餐食的基礎，是一種簡單的方法來獲取各種全穀物和豆類。";
+"faq_scaling_response" = "根據個人需求變化是可以的。每日12清單是一個勵志指南。盡可能多地攝入這些健康的植物性食物。 如果您剛開始大量食用豆類（或穀物、蔬菜等），您可能需要從少量開始，然後慢慢增加數量，以便讓您的微生物組有機會進行調整。您也可以發揮創意：例如，在早餐燕麥片中加入一些豆類。如果您裝了滿滿的漿果、亞麻籽和堅果，您甚至不會注意到豆子的存在。您也可以將豆子搗碎成三明治塗抹醬，或製作我的BROL（https://nutritionfacts.org/recipe/basic-brol-barley-rye-oats-and-lentils）——大麥、黑麥、去殼燕麥和小扁豆——我用它作為許多餐食的基礎，是一種簡單的方法來獲取各種全穀物和豆類。";
 
 /*  */
-"faq_supplements_question" = "我以為葛雷格醫生建議服用維生素D和DHA補充劑，為什麼不包括它們？";
+"faq_supplements_question" = "我以為葛雷格醫師建議服用維生素D和DHA補充劑，為什麼清單裡不包括這些呢？";
 
 /*  */
 "faq_supplements_response" = "我們更新了每日12清單應用程序，僅反映必需的補充劑。例如，只有陽光照射不足的人才需要維生素D。我們的目標是與您分享科學知識，以便您做出明智的決定。您可以在「最佳營養」（https://nutritionfacts.org/optimum-nutrient-recommendations）頁面上查看我的所有建議。";
@@ -242,7 +242,7 @@
 "item_history_completed_all" = "全部份量";
 
 /* Item History Legend: ‘Some completed’ */
-"item_history_completed_some" = "部分份量";
+"item_history_completed_some" = "部份份量";
 
 /* Item History Heading */
 "item_history_heading" = "歷史紀錄";
@@ -257,7 +257,7 @@
 "navtab.preferences" = "喜好";
 
 /* Main Navigation Tab Control: ‘21 Tweaks’ (proper noun) */
-"navtab.tweaks" = "21項調整";
+"navtab.tweaks" = "21招";
 
 /* heading for daily data entry item */
 "otherVitaminB12.heading" = "維生素B12";
@@ -320,13 +320,13 @@
 "setting_doze_only_choice" = "仅限每日12清單";
 
 /* First Launch Setting: button text */
-"setting_doze_tweak_btn" = "每日21項調整\n";
+"setting_doze_tweak_btn" = "每日21招\n";
 
 /* Preference Settings View: selection button text */
-"setting_doze_tweak_choice" = "每日12清單 + 每日21項調整";
+"setting_doze_tweak_choice" = "每日12清單 + 每日21招";
 
 /* Preference Settings View: brief description text below Tweaks visibility control. */
-"setting_doze_tweak_footer" = "僅為健康考慮，使用「每日12清單」。為了健康和減重，則使用「每日12清單 + 21項調整」。";
+"setting_doze_tweak_footer" = "僅為健康考慮，使用「每日12清單」。為了健康和減重，則使用「每日12清單 + 21招」。";
 
 /* First Launch Setting: brief description above ‘Daily Dozen Only’ button. */
 "setting_health_alone_txt" = "僅為健康";
@@ -335,7 +335,7 @@
 "setting_health_weight_txt" = "为健康和减重";
 
 /* Preference Settings View: tweaks visibilty subsection heading */
-"setting_tweak_header" = "21項調整的可見性";
+"setting_tweak_header" = "21招的可見性";
 
 /* Preference Settings View: Part of ‘Imperial/Metric/Toggle Units’ selector */
 "setting_units_0_imperial" = "英制";
@@ -365,7 +365,7 @@
 "tweak_detail_section_description" = "描述";
 
 /* Tweaks daily entry header */
-"tweak_entry_header" = "21項調整";
+"tweak_entry_header" = "21招";
 
 /* heading for daily data entry item */
 "tweakCompleteIntentions.heading" = "完成您的實施意圖";
@@ -377,10 +377,10 @@
 "tweakDailyCumin.heading" = "孜然（午餐和晚餐½茶匙）";
 
 /* heading for daily data entry item */
-"tweakDailyDeflourDiet.heading" = "減少麵粉食品";
+"tweakDailyDeflourDiet.heading" = "勿將食物磨成粉";
 
 /* heading for daily data entry item */
-"tweakDailyFrontLoad.heading" = "前置您的卡路里攝入";
+"tweakDailyFrontLoad.heading" = "提早載入熱量";
 
 /* heading for daily data entry item */
 "tweakDailyGarlic.heading" = "大蒜粉（¼茶匙）";
@@ -392,43 +392,43 @@
 "tweakDailyGreenTea.heading" = "綠茶（3杯）";
 
 /* heading for daily data entry item */
-"tweakDailyHydrate.heading" = "充分補水";
+"tweakDailyHydrate.heading" = "保持體內水分充足";
 
 /* heading for daily data entry item */
 "tweakDailyNutriYeast.heading" = "營養酵母（2茶匙）";
 
 /* heading for daily data entry item */
-"tweakDailyTimeRestrict.heading" = "限時飲食";
+"tweakDailyTimeRestrict.heading" = "限制進餐時間區間";
 
 /* heading for daily data entry item */
-"tweakExerciseTiming.heading" = "優化運動時間";
+"tweakExerciseTiming.heading" = "把握運動良機";
 
 /* heading for daily data entry item */
-"tweakMeal20Minutes.heading" = "遵循20分鐘規則";
+"tweakMeal20Minutes.heading" = "嚴守用餐20分鐘法則";
 
 /* heading for daily data entry item */
-"tweakMealNegCal.heading" = "預先吃「負熱量」食品";
+"tweakMealNegCal.heading" = "預載負熱量食物";
 
 /* heading for daily data entry item */
 "tweakMealUndistracted.heading" = "專心用餐";
 
 /* heading for daily data entry item */
-"tweakMealVinegar.heading" = "加醋（每餐2茶匙）";
+"tweakMealVinegar.heading" = "配醋一起吃（每餐2茶匙）";
 
 /* heading for daily data entry item */
-"tweakMealWater.heading" = "預先補水";
+"tweakMealWater.heading" = "預載水分";
 
 /* heading for daily data entry item */
 "tweakNightlyFast.heading" = "晚上７點後禁食";
 
 /* heading for daily data entry item */
-"tweakNightlySleep.heading" = "獲得充足的睡眠";
+"tweakNightlySleep.heading" = "睡眠充足";
 
 /* heading for daily data entry item */
-"tweakNightlyTrendelenbrug.heading" = "試試睡覺時讓頭稍微比較低";
+"tweakNightlyTrendelenbrug.heading" = "採取微微頭低腳高的仰臥睡姿";
 
 /* heading for daily data entry item */
-"tweakWeightTwice.heading" = "一天兩次自我稱重";
+"tweakWeightTwice.heading" = "每天量體重兩次";
 
 /*  */
 "units_label" = "單位";

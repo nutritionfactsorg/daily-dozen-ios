@@ -93,15 +93,15 @@
       ]
     },
     "dozeBerries" : {
-      "heading" : "莓果類",
+      "heading" : "漿果類",
       "servings" : [
         {
-          "imperial" : "½杯新鮮或冷凍莓果",
-          "metric" : "½杯新鮮或冷凍莓果"
+          "imperial" : "½杯新鮮或冷凍漿果",
+          "metric" : "60克新鮮或冷凍漿果"
         },
         {
-          "imperial" : "¼杯莓果乾",
-          "metric" : "¼杯莓果乾"
+          "imperial" : "¼杯漿果乾",
+          "metric" : "40克漿果乾"
         }
       ],
       "topic" : "topics/berries",
@@ -1055,7 +1055,7 @@
           "topic" : "topics/sweet-potatoes"
         },
         {
-          "text" : "番茄",
+          "text" : "蕃茄",
           "topic" : "topics/tomatoes"
         },
         {
