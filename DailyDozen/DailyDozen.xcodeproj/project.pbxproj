@@ -395,6 +395,10 @@
 		4CAE490E2A95D76500B5ED51 /* SqlDataWeightModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SqlDataWeightModel.swift; sourceTree = "<group>"; };
 		4CAE49162A95E8F400B5ED51 /* SQLiteConnector.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SQLiteConnector.swift; sourceTree = "<group>"; };
 		4CBCB2BA2983779F00015393 /* Strings.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Strings.swift; sourceTree = "<group>"; };
+		4CC975592B1912A500A939B3 /* zh-Hant */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hant"; path = "zh-Hant.lproj/InfoPlist.strings"; sourceTree = "<group>"; };
+		4CC9755A2B1912A500A939B3 /* zh-Hant */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hant"; path = "zh-Hant.lproj/Localizable.strings"; sourceTree = "<group>"; };
+		4CC9755B2B1912A500A939B3 /* zh-Hant */ = {isa = PBXFileReference; lastKnownFileType = text.json; name = "zh-Hant"; path = "zh-Hant.lproj/DozeDetailData.json"; sourceTree = "<group>"; };
+		4CC9755C2B1912A500A939B3 /* zh-Hant */ = {isa = PBXFileReference; lastKnownFileType = text.json; name = "zh-Hant"; path = "zh-Hant.lproj/TweakDetailData.json"; sourceTree = "<group>"; };
 		4CCB92C22ABCDD6D0095C3D8 /* Thread.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Thread.swift; sourceTree = "<group>"; };
 		6ED3A55B48F7069CAE75156C /* Pods-DailyDozenTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-DailyDozenTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-DailyDozenTests/Pods-DailyDozenTests.release.xcconfig"; sourceTree = "<group>"; };
 		715D60F634E9BCD998C66B77 /* Pods_DailyDozenTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_DailyDozenTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -1399,6 +1403,7 @@
 				bg,
 				it,
 				fr,
+				"zh-Hant",
 			);
 			mainGroup = CFE6982F1F974B9700CD7905;
 			productRefGroup = CFE698391F974B9700CD7905 /* Products */;
@@ -1769,6 +1774,7 @@
 				4C97E05F29E0247200601772 /* bg */,
 				4C97E06329E0247E00601772 /* it */,
 				4C8609812A0491C500A6EBDE /* fr */,
+				4CC9755C2B1912A500A939B3 /* zh-Hant */,
 			);
 			name = TweakDetailData.json;
 			sourceTree = "<group>";
@@ -1791,6 +1797,7 @@
 				4C97E05C29E0247200601772 /* bg */,
 				4C97E06029E0247E00601772 /* it */,
 				4C86097E2A0491C500A6EBDE /* fr */,
+				4CC975592B1912A500A939B3 /* zh-Hant */,
 			);
 			name = InfoPlist.strings;
 			sourceTree = "<group>";
@@ -1813,6 +1820,7 @@
 				4C97E05E29E0247200601772 /* bg */,
 				4C97E06229E0247E00601772 /* it */,
 				4C8609802A0491C500A6EBDE /* fr */,
+				4CC9755B2B1912A500A939B3 /* zh-Hant */,
 			);
 			name = DozeDetailData.json;
 			sourceTree = "<group>";
@@ -1835,6 +1843,7 @@
 				4C97E05D29E0247200601772 /* bg */,
 				4C97E06129E0247E00601772 /* it */,
 				4C86097F2A0491C500A6EBDE /* fr */,
+				4CC9755A2B1912A500A939B3 /* zh-Hant */,
 			);
 			name = Localizable.strings;
 			sourceTree = "<group>";

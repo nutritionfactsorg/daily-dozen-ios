@@ -1,0 +1,16 @@
+/* DailyDozen InfoPlist.strings (zh-Hant) */
+/* Copyright © 2021 Nutritionfacts.org. All rights reserved. */
+
+/* User-visible application name. Visible under icon. Used by Siri. */
+"CFBundleDisplayName" = "每日12清單";
+
+/* User-visible application short name (15 Characters max) */
+"CFBundleName" = "每日12清單";
+
+/* Privacy - Health Share Usage Description */
+"NSHealthShareUsageDescription" = "21招取得您的HealthKit數據，提供您每日的體重計量";
+
+/* Privacy - Health Update Usage Description */
+"NSHealthUpdateUsageDescription" = "21招能將體重數據紀錄到HealthKit，幫助追蹤您的進步";
+
+/* file end */
