@@ -46,7 +46,7 @@ The Daily Dozen iOS App is licensed under the GPLv3
 
 - Adds data import.
 
-**3.4.13 (Beta PreRelease Test: Nov 16, 2023)**
+**3.4.13 (Release Candidate: Nov 30, 2023)**
 
 - Adds Chinese (Traditional) translation.
 
