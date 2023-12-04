@@ -24,6 +24,8 @@ class DozeDetailTypeCell: UITableViewCell {
         titleLabel.text = title
         linkButton.isHidden = useLink
         linkButton.tag = tag
+        let videos = NSLocalizedString("videos.link.label", comment: "VIDEOS")
+        linkButton.setTitle(videos, for: .normal)
     }
 
     // Use: 21 Tweaks
