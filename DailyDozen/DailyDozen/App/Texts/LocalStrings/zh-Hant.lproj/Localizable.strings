@@ -95,7 +95,7 @@
 "faq_mother_question" = "我可以在懷孕或哺乳期間這樣做嗎？";
 
 /*  */
-"faq_mother_response" = "懷孕或哺乳的人與未懷孕或哺乳的人有不同的熱量和營養需求。 提醒一下，每日12清單不是膳食計劃，也不應該是一天內食用的唯一食物。 懷孕或哺乳的人應該諮詢她們的保健醫生或註冊營養師，以獲得滿足其特定熱量需求和營養需求的幫助。";
+"faq_mother_response" = "懷孕或哺乳的人與未懷孕或哺乳的人有不同的熱量和營養需求。 提醒一下，每日12清單不是膳食計劃，也不應該是一天內食用的唯一食物。 懷孕或哺乳的人應該諮詢她們的保健醫師或註冊營養師，以獲得滿足其特定熱量需求和營養需求的幫助。";
 
 /*  */
 "faq_scaling_question" = "我不可能吃那麼多豆子/穀物/其他食物！";
@@ -209,10 +209,10 @@
 "info_app_about_translators" = "特別鳴謝翻譯志願者：Petar Enchev（bg）、Tsveti Enchev（bg）、Ricard Soler Roger（ca）、Luděk Bouška（cs,sk）、Lenka Lukacová（cs）、Anke Schliessmann（de）、Ángela Graña（es）、Audray Harkins（fr）、Doron Barak（he）、Ruth Levy（he）、Annalisa Guerrini-Körner（it）、Ilaria Zanini（it）、Hanna Gurzeda（pl）、Joanna Klopotek（pl）、Tania Bassi（pt-BR）、João Madureira（pt-PT）、Cristina Lauby（ro）、Evgeniya Lyakh（ru）、Katarína Mocáková（sk)。";
 
 /* Info About View: Application release version */
-"info_app_about_version" = "3.4.13版本";
+"info_app_about_version" = "3.5.1版本";
 
 /* Info About View: Welcome */
-"info_app_about_welcome" = "歡迎來到我的《每日12清單》！";
+"info_app_about_welcome" = "歡迎來到我的「每日12清單」！";
 
 /* Info Menu: book title */
 "info_book_how_not_to_die" = "書籍：食療聖經";
