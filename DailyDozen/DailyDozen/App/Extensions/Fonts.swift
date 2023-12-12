@@ -13,8 +13,9 @@ extension UIFont {
     // MARK: - Nested
     private struct Strings {
         static let courier = "Courier"
-        static let helveticaBold = "Helvetica-Bold"
-        static let helvetica = "Helvetica"
+        static let helvetica = "HelveticaNeue"
+        static let helveticaBold = "HelveticaNeue-Bold"
+        static let helveticaMedium = "HelveticaNeue-Medium"
     }
     
     static var courier16: UIFont {
@@ -36,4 +37,9 @@ extension UIFont {
     static var helveticaBold22: UIFont {
         return UIFont(name: Strings.helveticaBold, size: 22) ?? UIFont.boldSystemFont(ofSize: 22)
     }
+    
+    static var helveticaMedium17: UIFont {
+        return UIFont(name: Strings.helveticaMedium, size: 17) ?? UIFont.systemFont(ofSize: 17, weight: .medium)
+    }
+    
 }

@@ -50,14 +50,25 @@ class TweakDetailViewController: UIViewController {
         tableView.rowHeight = UITableView.automaticDimension // dynamic height
         
         if let dataCountType = dataProvider.dataCountType {
+            // Videos are currently `doze` Daily Dozen but not 21 Tweaks
             if dataCountType.typeKey.prefix(4) == "doze" {
-                // TweakDetailViewController VIDEOS
-                navigationItem.rightBarButtonItem = UIBarButtonItem(
-                    title: Strings.videos,
-                    style: .done,
-                    target: self,
-                    action: #selector(barItemPressed)
-                )
+                let topicUrl = dataProvider.viewModel.topicURL
+                if topicUrl.path != "/" {
+                    // DozeDetailViewController add "VIDEOS" navigation
+                    let bbitem = UIBarButtonItem(
+                        title: Strings.videos,
+                        style: .done,
+                        target: self,
+                        action: #selector(barItemPressed)
+                    )
+                    
+                    bbitem.setTitleTextAttributes([
+                        NSAttributedString.Key.font: UIFont.helveticaMedium17,
+                        NSAttributedString.Key.foregroundColor: UIColor.white,
+                    ], for: .normal)
+                    
+                    navigationItem.rightBarButtonItem = bbitem
+                }
             }
         }
         
