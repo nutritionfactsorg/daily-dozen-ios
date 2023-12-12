@@ -461,7 +461,7 @@
 "urlSegmentInfoMenu.videos" = "videos";
 
 /* Label for hyperlink to nutritionfacts.org video topics */
-"videos.link.label" = "Videoclipuri";
+"videos.link.label" = "Videouri";
 
 /* Weight Daily Entry: clear button which deletes values */
 "weight_entry_clear" = "Șterge";

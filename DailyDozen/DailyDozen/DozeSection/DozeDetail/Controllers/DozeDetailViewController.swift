@@ -50,17 +50,24 @@ class DozeDetailViewController: UIViewController {
         tableView.rowHeight = UITableView.automaticDimension // dynamic height
         
         if let dataCountType = dataProvider.dataCountType {
+            // Videos are currently `doze` Daily Dozen but not 21 Tweaks
             if dataCountType.typeKey.prefix(4) == "doze" {
                 let topicUrl = dataProvider.viewModel.topicURL
-                // "urlSegment.base"="https://nutritionfacts.org/";
                 if topicUrl.path != "/" {
                     // DozeDetailViewController add "VIDEOS" navigation
-                    navigationItem.rightBarButtonItem = UIBarButtonItem(
+                    let bbitem = UIBarButtonItem(
                         title: Strings.videos,
                         style: .done,
                         target: self,
                         action: #selector(barItemPressed)
                     )
+                    
+                    bbitem.setTitleTextAttributes([
+                        NSAttributedString.Key.font: UIFont.helveticaMedium17,
+                        NSAttributedString.Key.foregroundColor: UIColor.white,
+                    ], for: .normal)
+                    
+                    navigationItem.rightBarButtonItem = bbitem
                 }
             }
         }
