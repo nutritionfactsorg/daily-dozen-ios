@@ -314,7 +314,7 @@
 "setting_doze_tweak_choice" = "Daily Dozen + 21 Astuces";
 
 /* Preference Settings View: brief description text below Tweaks visibility control. */
-"setting_doze_tweak_footer" = "Pour des recommandations de santé uniquement, utilisez ‘Daily Dozen Uniquement’. Pour des recommandations de santé et de perte de poids, utilisez ‘Daily Dozen + 21 Astuces’.";
+"setting_doze_tweak_footer" = "Pour des recommandations de santé uniquement, utilisez “Daily Dozen Uniquement”. Pour des recommandations de santé et de perte de poids, utilisez “Daily Dozen + 21 Astuces”.";
 
 /* First Launch Setting: brief description above ‘Daily Dozen Only’ button. */
 "setting_health_alone_txt" = "Recommandations de santé uniquement";
