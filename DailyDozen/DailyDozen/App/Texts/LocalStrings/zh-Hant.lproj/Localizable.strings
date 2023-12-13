@@ -65,7 +65,7 @@
 "dozeWholeGrains.heading" = "全穀類";
 
 /*  */
-"faq_adapt_question" = "每日12清單建議我吃太多/太少！我可以調整嗎？";
+"faq_adapt_question" = "每日12清單建議我吃太多／太少！我可以調整嗎？";
 
 /*  */
 "faq_adapt_response" = "是的，每日12清單只是為了指導我們每天努力攝取的最健康的食物。這不是膳食計劃，也不是規定性的。盡最大努力吃各種各樣的全食物蔬食食品，並根據適合您的數量調整每日12清單。";
@@ -98,7 +98,7 @@
 "faq_mother_response" = "懷孕或哺乳的人與未懷孕或哺乳的人有不同的熱量和營養需求。 提醒一下，每日12清單不是膳食計劃，也不應該是一天內食用的唯一食物。 懷孕或哺乳的人應該諮詢她們的保健醫師或註冊營養師，以獲得滿足其特定熱量需求和營養需求的幫助。";
 
 /*  */
-"faq_scaling_question" = "我不可能吃那麼多豆子/穀物/其他食物！";
+"faq_scaling_question" = "我不可能吃那麼多豆子／穀物／其他食物！";
 
 /*  */
 "faq_scaling_response" = "根據個人需求變化是可以的。每日12清單是一個勵志指南。盡可能多地攝入這些健康的植物性食物。 如果您剛開始大量食用豆類（或穀物、蔬菜等），您可能需要從少量開始，然後慢慢增加數量，以便讓您的微生物組有機會進行調整。您也可以發揮創意：例如，在早餐燕麥片中加入一些豆類。如果您裝了滿滿的漿果、亞麻籽和堅果，您甚至不會注意到豆子的存在。您也可以將豆子搗碎成三明治塗抹醬，或製作我的BROL（https://nutritionfacts.org/recipe/basic-brol-barley-rye-oats-and-lentils）——大麥、黑麥、去殼燕麥和小扁豆——我用它作為許多餐食的基礎，是一種簡單的方法來獲取各種全穀物和豆類。";
@@ -314,10 +314,10 @@
 "setting_appearance_mode_light" = "Light";
 
 /* First Launch Setting: button text */
-"setting_doze_only_btn" = "仅限每日12清單\n";
+"setting_doze_only_btn" = "僅限每日12清單\n";
 
 /* Preference Settings View: selection button text */
-"setting_doze_only_choice" = "仅限每日12清單";
+"setting_doze_only_choice" = "僅限每日12清單";
 
 /* First Launch Setting: button text */
 "setting_doze_tweak_btn" = "每日21招\n";
@@ -332,7 +332,7 @@
 "setting_health_alone_txt" = "僅為健康";
 
 /* First Launch Setting: brief description above ‘Daily Dozen + 21 Tweaks’ button. */
-"setting_health_weight_txt" = "为健康和减重";
+"setting_health_weight_txt" = "為健康和減重";
 
 /* Preference Settings View: tweaks visibilty subsection heading */
 "setting_tweak_header" = "21招的可見性";
@@ -347,7 +347,7 @@
 "setting_units_2_toggle" = "切換單位";
 
 /* Preference Settings View: brief description text below units control. */
-"setting_units_choice_footer" = "設置為始終為一種單位類型，或啟用「單位：」切換按鈕。";
+"setting_units_choice_footer" = "設置為始終為一種單位類型，或啟用「單位」切換按鈕。";
 
 /* Preference Settings View */
 "setting_units_header" = "計量單位";

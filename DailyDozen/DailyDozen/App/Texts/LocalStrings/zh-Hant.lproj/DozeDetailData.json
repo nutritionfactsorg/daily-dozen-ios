@@ -927,11 +927,11 @@
           "topic" : "topics/brussels-sprouts"
         },
         {
-          "text" : "甘藍（綠，紫，野甘藍）",
+          "text" : "甘藍（綠、紫、野甘藍）",
           "topic" : "topics/cabbage"
         },
         {
-          "text" : "花椰菜（白色，綠色，橙色，紫色）",
+          "text" : "花椰菜（白色、綠色、橙色、紫色）",
           "topic" : "topics/cauliflower"
         },
         {
@@ -947,7 +947,7 @@
           "topic" : "topics/kale"
         },
         {
-          "text" : "大頭菜（綠色，紫色）",
+          "text" : "大頭菜（綠色、紫色）",
           "topic" : ""
         },
         {
@@ -1051,7 +1051,7 @@
           "topic" : "topics/squash"
         },
         {
-          "text" : "地瓜／番薯",
+          "text" : "地瓜／蕃薯",
           "topic" : "topics/sweet-potatoes"
         },
         {
