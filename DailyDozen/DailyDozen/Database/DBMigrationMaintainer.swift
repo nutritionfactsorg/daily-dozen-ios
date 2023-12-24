@@ -47,18 +47,27 @@ public struct DBMigrationMaintainer {
         // DB Version DB03: SQLiteProvider "Library/Database/NutritionFacts.sqlite3"
         let db03Url = URL.inDatabase(filename: SQLiteConnector.sqliteFilename)
         if fm.fileExists(atPath: db03Url.path) {
+            logit.info("""
+            Migration Level: 3 SQLiteProvider Library/Database/NutritionFacts.sqlite3 
+            """)
             return 3
         }
         
         // DB Version DB02: RealmProvider "Library/Database/NutritionFacts.realm"
         let db02Url = URL.inDatabase(filename: RealmProvider.realmFilename)
         if fm.fileExists(atPath: db02Url.path) {
+            logit.info("""
+            Migration Level: 2 RealmProvider  `Library/Database/NutritionFacts.realm.*` 
+            """)
             return 2
         }
         
         // DB Version DB01: RealmProvider "Documents/NutritionFacts.realm"
         let db01Url = URL.inDocuments(filename: RealmProvider.realmFilename)
         if fm.fileExists(atPath: db01Url.path) {
+            logit.info("""
+            Migration Level 1 RealmProvider `Documents/NutritionFacts.realm.*`
+            """)
             return 1
         }
         
@@ -77,6 +86,9 @@ public struct DBMigrationMaintainer {
         // If no realm or sqlite databases are present, 
         // then use the highest migration level.
         // Application will create a new empty database, if needed.
+        logit.info("""
+        Migration Level: 3 SQLiteProvider no database present 
+        """)
         return 3
     }
     

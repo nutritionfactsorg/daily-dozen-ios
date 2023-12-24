@@ -46,9 +46,10 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         AppDelegate didFinishLaunchingWithOptions DEBUG enabled
         """)
         
-        SQLiteBuiltInTest.shared.setupInitialState(.db02) // :GTD:B:√: initial DB
+        let s: SQLiteBuiltInTest.InitialState = .db02
+        SQLiteBuiltInTest.shared.setupInitialState(s) // :GTD:B:√: initial DB
         
-        logit.debug(":::::::::::::::::\n")
+        logit.debug(":::::::: InitialState=\(s) ::::::::\n")
         #endif
         
         // =====  SIMULATOR SETUP  =====

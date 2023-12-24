@@ -206,7 +206,8 @@ struct SQLiteConnector {
         // Process checkbox datacount columns
         var index = 1
         for dataCountType in DataCountType.allCases {
-            guard var value = Int(columns[index])
+            //guard var value = Int(columns[index])
+            guard let value = Int(columns[index])
             else {
                 logit.error("FAIL: csvImportLine @index=\(index) in \(line)")
                 return nil
