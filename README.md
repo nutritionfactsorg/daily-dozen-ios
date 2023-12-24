@@ -46,15 +46,13 @@ The Daily Dozen iOS App is licensed under the GPLv3
 
 - Adds data import.
 
-<!--
-**3.4.15 (App Store: Dec *15*, 2023)**
+**3.4.15 (App Store: Dec 13, 2023)**
 
 - Localized product name on App Store product page for Chinese (Traditional).
--->
 
-**3.4.13 (App Store: Dec 13, 2023)**
+**3.4.13, 3.4.15 (App Store: Dec 13, 2023)**
 
-- Adds Chinese (Traditional) translation.
+- Adds Chinese Traditional translation.
 
 **3.4.11 (App Store: Nov 1, 2023)**
 
