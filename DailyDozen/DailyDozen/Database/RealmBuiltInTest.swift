@@ -20,7 +20,7 @@ public struct RealmBuiltInTest {
     /// Clear Documents/V01 and Library/Database/V02 Realm data.
     func doClearAllDataInMigrationChainBIT() {
         logit.debug(
-            "••BEGIN•• UtilityTableViewController doClearAllDataInMigrationChainBIT()"
+            "••BEGIN•• RealmBuiltInTest doClearAllDataInMigrationChainBIT()"
         )
         
         let urlV01 = URL.inDocuments(filename: RealmProvider.realmFilename)
@@ -33,7 +33,7 @@ public struct RealmBuiltInTest {
         realmDbV02.deleteAllObjects()
         
         logit.debug(
-            "••EXIT•• UtilityTableViewController doClearAllDataInMigrationChainBIT()"
+            "••EXIT•• RealmBuiltInTest doClearAllDataInMigrationChainBIT()"
         )
     }
     
@@ -57,7 +57,7 @@ public struct RealmBuiltInTest {
     /// - 3 years (1095 days, 2190 weight entries) -> `3*365`
     func doGenerateDBHistoryBIT(numberOfDays: Int, inLibDbDir: Bool) {
         logit.debug(
-            "••BEGIN•• doGenerateDBHistoryBIT(\(numberOfDays))"
+            "••BEGIN•• RealmBuiltInTest doGenerateDBHistoryBIT(\(numberOfDays))"
         )
         let url = inLibDbDir ?
         URL.inDatabase(filename: RealmProvider.realmFilename) : 
@@ -124,7 +124,7 @@ public struct RealmBuiltInTest {
             date = calendar.date(byAdding: stepByDay, to: date)!
         }
         logit.debug(
-            "••EXIT•• UtilityTableViewController doGenerateDBHistoryBIT(…)"
+            "••EXIT•• RealmBuiltInTest doGenerateDBHistoryBIT(…)"
         )
     }
     
@@ -313,7 +313,7 @@ public struct RealmBuiltInTest {
         let timeOut = Date().getCurrentBenchmarkSeconds
         let lapsed = timeOut - timeIn
         logit.debug(
-            "••EXIT•• UtilityTableViewController doGenerateDBStreaksBIT() \(lapsed) sec"
+            "••EXIT•• RealmBuiltInTest doGenerateDBStreaksBIT() \(lapsed) sec"
         )
         // :!!!:        activityProgress?.completed()
     }

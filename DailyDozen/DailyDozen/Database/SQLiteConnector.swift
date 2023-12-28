@@ -14,7 +14,7 @@ struct SQLiteConnector {
     //
     public static let sqliteFilename = "NutritionFacts.sqlite3"
     /// csvExerciseGamut may differ from SettingsManager.exerciseGamut()
-    var csvExerciseGamut: SettingsManager.ExerciseGamut
+    var csvExerciseGamut: ExerciseGamut
     /// csvUnitsType may differ from SettingsManager.unitsType()
     var csvUnitsType: UnitsType
     let dbUrl: URL
@@ -165,7 +165,7 @@ struct SQLiteConnector {
             }
         } else {
             // No (UNITS) row: exercise is 1 unit. weight is kg
-            csvExerciseGamut = .one
+            csvExerciseGamut = ExerciseGamut.one
             csvUnitsType = .metric
             if let dailyTracker = csvImportLine(lines[1]) {
                 sqliteApi.saveDailyTracker(tracker: dailyTracker)
@@ -313,14 +313,13 @@ struct SQLiteConnector {
             .replacingOccurrences(of: " ", with: "")
             .replacingOccurrences(of: "-", with: "")
             .lowercased()
-            .appending("\n")
         
         let columns = inboundHeaderNormalized.components(separatedBy: ",")
         guard 
             columns.count == 41,
-            let gamut = SettingsManager.ExerciseGamut(columns[13]), // dozeExercies
-            let unitsAM = UnitsType(columns[38]), // AM Units
-            let unitsPM = UnitsType(columns[40]), // PM Units
+            let gamut = ExerciseGamut(columns[13]), // dozeExercies
+            let unitsAM = UnitsType(mass: columns[38]), // AM Units
+            let unitsPM = UnitsType(mass: columns[40]), // PM Units
             unitsAM == unitsPM
         else { return false }
         
@@ -332,6 +331,7 @@ struct SQLiteConnector {
             .replacingOccurrences(of: "-", with: "")
             .lowercased()
         
+        /// :GTD:FIX: \n, (AM)|(PM)
         if inboundHeaderNormalized == referenceHeaderNormalize {
             return true
         } else {
@@ -350,7 +350,7 @@ struct SQLiteConnector {
     /// - 3 years (1095 days, 37230 count entries, 2190 weight entries) -> `3*365`
     func generateHistoryBIT(numberOfDays: Int) {
         logit.debug(
-            "••BEGIN•• generateHistoryBIT(\(numberOfDays))  \(Date())"
+            "••BEGIN•• SQLiteConnector generateHistoryBIT(\(numberOfDays))  \(Date())"
         )
         sqliteApi.transactionBegin()
         

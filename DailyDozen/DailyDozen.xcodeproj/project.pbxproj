@@ -122,6 +122,7 @@
 		4C22C9A52A737DEE0008D7B6 /* RealmDataWeightValues.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C22C99C2A737DEE0008D7B6 /* RealmDataWeightValues.swift */; };
 		4C22C9A72A737DEE0008D7B6 /* DataWeightType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C22C99F2A737DEE0008D7B6 /* DataWeightType.swift */; };
 		4C5D7C802A967F3A000D5153 /* SQLiteBuiltInTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C5D7C7F2A967F3A000D5153 /* SQLiteBuiltInTest.swift */; };
+		4C7695992B3D58C600FE3768 /* ExerciseGamut.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C7695982B3D58C600FE3768 /* ExerciseGamut.swift */; };
 		4C7D52F52A3B81DE00386832 /* ExpandableTableViewCellDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C7D52F42A3B81DE00386832 /* ExpandableTableViewCellDelegate.swift */; };
 		4C7D52F72A3B8F3200386832 /* InfoFaqTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C7D52F62A3B8F3200386832 /* InfoFaqTableViewController.swift */; };
 		4C7D52F92A3B8FDA00386832 /* InfoFaqTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C7D52F82A3B8FDA00386832 /* InfoFaqTableViewCell.swift */; };
@@ -360,6 +361,7 @@
 		4C5C4EFC2995C8C00096AAA1 /* ro */ = {isa = PBXFileReference; lastKnownFileType = text.json; name = ro; path = ro.lproj/DozeDetailData.json; sourceTree = "<group>"; };
 		4C5C4EFD2995C8C00096AAA1 /* ro */ = {isa = PBXFileReference; lastKnownFileType = text.json; name = ro; path = ro.lproj/TweakDetailData.json; sourceTree = "<group>"; };
 		4C5D7C7F2A967F3A000D5153 /* SQLiteBuiltInTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SQLiteBuiltInTest.swift; sourceTree = "<group>"; };
+		4C7695982B3D58C600FE3768 /* ExerciseGamut.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExerciseGamut.swift; sourceTree = "<group>"; };
 		4C7D52F42A3B81DE00386832 /* ExpandableTableViewCellDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExpandableTableViewCellDelegate.swift; sourceTree = "<group>"; };
 		4C7D52F62A3B8F3200386832 /* InfoFaqTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InfoFaqTableViewController.swift; sourceTree = "<group>"; };
 		4C7D52F82A3B8FDA00386832 /* InfoFaqTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InfoFaqTableViewCell.swift; sourceTree = "<group>"; };
@@ -1239,6 +1241,7 @@
 			isa = PBXGroup;
 			children = (
 				4C092E3E28EF5E97004D5539 /* AnalyticsHelper.swift */,
+				4C7695982B3D58C600FE3768 /* ExerciseGamut.swift */,
 				CFF72AFD1FB9BAAA001CC2E9 /* LinkService.swift */,
 				CFF72AFF1FB9BB70001CC2E9 /* LinkSettings.plist */,
 				495FA4202453EEF200DE3E58 /* LogService.swift */,
@@ -1695,6 +1698,7 @@
 				497390B023A5D4F900492D92 /* SettingsViewController.swift in Sources */,
 				49F66B792588752D00002DB2 /* UITextField.swift in Sources */,
 				CF9EC1C32021D37000C7B3CA /* MenuItem.swift in Sources */,
+				4C7695992B3D58C600FE3768 /* ExerciseGamut.swift in Sources */,
 				CF49029B1FD91F01000EAB68 /* DozeHistoryViewModel.swift in Sources */,
 				4933A74B23EE267600CE4631 /* DozeTextsProvider.swift in Sources */,
 				4C1E359B2AE268BA008B3B2B /* SqlDailyTracker.swift in Sources */,

@@ -127,7 +127,7 @@ class SettingsViewController: UITableViewController {
         analyticsEnableLabel.text = NSLocalizedString("setting_analytics_enable", comment: "Enable Analytics")
         
         #if targetEnvironment(simulator)
-        logit.debug("::::: SIMULATOR ENVIRONMENT: SettingsViewController :::::")
+        logit.info("::::: SIMULATOR ENVIRONMENT: SettingsViewController :::::")
         advancedUtilitiesTableViewCell.isHidden = false // :ADVANCED:DEBUG:
         //advancedUtilitiesTableViewCell.isHidden = true // :ADVANCED:RELEASE:
         print("ADVANCED UTILITIES advancedUtilitiesTableViewCell.isHidden == \(advancedUtilitiesTableViewCell.isHidden)")

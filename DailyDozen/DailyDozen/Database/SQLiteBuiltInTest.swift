@@ -17,6 +17,7 @@ public struct SQLiteBuiltInTest {
     // MARK: - Initial State Management
     
     public enum InitialState {
+        // case db00 RealmProviderLegacy "main.realm" is no longer supported
         /// DB01 RealmProvider  "Documents/NutritionFacts.realm"
         case db01
         /// DB02 RealmProvider  "Library/Database/NutritionFacts.realm"
@@ -24,37 +25,47 @@ public struct SQLiteBuiltInTest {
         /// DB03 SQLiteProvider "Library/Database/NutritionFacts.sqlite3"
         case db03
         /// none. deletes any existing database
-        case deleteExistingDB
+        case dbDel
         /// no change to whatever database may or may not be present
-        case noop
+        case dbNoop
     }
     
     public func setupInitialState(_ scenario: InitialState) {
         let isHealthDataAvailable = HKHealthStore.isHealthDataAvailable()
-        logit.debug(
-            """
-            >>> :BIT:WAYPOINT: SQLiteBuiltInTest setupInitialState()")
-            >>> HKHealthStore.isHealthDataAvailable() \(isHealthDataAvailable)
-            
-            """)
+        logit.info(":: SQLiteBuiltInTest setupInitialState()")
+        logit.info(":: HKHealthStore.isHealthDataAvailable() \(isHealthDataAvailable)")
         
         // Note: `3*365` is 1095 days, 2190 weight entries
         switch scenario {
         case .db01:
+            logit.info(
+                "•• InitialState:db01: Realm Documents/NutritionFacts.realm"
+            )
             removeExistingDBs()
             RealmBuiltInTest.shared
                 .doGenerateDBHistoryBIT(numberOfDays: 3, inLibDbDir: false)
         case .db02:
+            logit.info(
+                "•• InitialState:db02: Realm Library/Database/NutritionFacts.realm"
+            )
             removeExistingDBs()
             RealmBuiltInTest.shared
                 .doGenerateDBHistoryBIT(numberOfDays: 3, inLibDbDir: true)
         case .db03:
+            logit.info(
+                "•• InitialState:db03: SQLite Library/Database/NutritionFacts.sqlite"
+            )
             removeExistingDBs()
             SQLiteConnector.dot.generateHistoryBIT(numberOfDays: 3)
-        case .deleteExistingDB:
+        case .dbDel:
+            logit.info(
+                "•• InitialState:dbDel: delete existing database"
+            )
             removeExistingDBs()
-        case .noop:
-            break
+        case .dbNoop:
+            logit.info(
+                "•• InitialState:dbNoop: use existing database, if present"
+            )
         }
         
         //HealthManager.shared.exportHKWeight(name: "BIT00")
@@ -65,6 +76,7 @@ public struct SQLiteBuiltInTest {
     }
     
     func removeExistingDBs() {
+        logit.info(":: … removeExistingDBs()")
         let fm = FileManager.default
         
         // DB Version DB01: RealmProvider "Documents/NutritionFacts.realm"

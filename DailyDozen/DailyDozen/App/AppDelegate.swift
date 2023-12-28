@@ -46,10 +46,23 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         AppDelegate didFinishLaunchingWithOptions DEBUG enabled
         """)
         
-        let s: SQLiteBuiltInTest.InitialState = .db02
-        SQLiteBuiltInTest.shared.setupInitialState(s) // :GTD:B:√: initial DB
+        /// :GTD:UserPrefOverride: SettingsKeys.unitsTypePref Imperial (lbs) | Metric (kgs)
+        UserDefaults.standard.set(UnitsType.imperial.rawValue, forKey: SettingsKeys.unitsTypePref)
+        //UserDefaults.standard.set(UnitsType.metric.rawValue, forKey: SettingsKeys.unitsTypePref)
+        logit.info(":: unitsTypePref==\( SettingsManager.unitsType() )")
         
-        logit.debug(":::::::: InitialState=\(s) ::::::::\n")
+        /// :GTD:UserPrefOverride: SettingsKeys.exerciseGamutMaxUsed
+        UserDefaults.standard.set(ExerciseGamut.one.rawValue, forKey: SettingsKeys.exerciseGamutPref)
+        UserDefaults.standard.set(ExerciseGamut.one.rawValue, forKey: SettingsKeys.exerciseGamutMaxUsed)
+        //UserDefaults.standard.set(ExerciseGamut.six.rawValue, forKey: SettingsKeys.exerciseGamutPref
+        //UserDefaults.standard.set(ExerciseGamut.six.rawValue, forKey: SettingsKeys.exerciseGamutMaxUsed)
+        logit.info(":: exerciseGamutMaxUsedInt()==\( SettingsManager.exerciseGamutMaxUsedInt() )")
+        
+        let s: SQLiteBuiltInTest.InitialState = .db02
+        logit.info(":: [[A]] InitialState=\(s) ::")
+        SQLiteBuiltInTest.shared.setupInitialState(s) // :GTD:B:√: initial DB
+        logit.info(":: [[A]] InitialState ::END::\n")
+        
         #endif
         
         // =====  SIMULATOR SETUP  =====

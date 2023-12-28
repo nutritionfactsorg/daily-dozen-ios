@@ -27,6 +27,14 @@ enum UnitsType: String {
         }
     }
     
+    init?(mass: String) {
+        switch mass {
+        case "lbs": self = .imperial
+        case "kg": self = .metric
+        default: return nil
+        }
+    }
+    
     /// Returns localized name for the unit system currently in use.
     var title: String {
         switch self {

@@ -13,27 +13,39 @@ public struct DBMigrationMaintainer {
     
     public func doMigration() {
         let level = getMigrationLevel()
-        logit.debug("➜➜➜ :DEBUG:WAYPOINT: doMigration() DB level=\(level)")
+        logit.info("➜➜➜ :DEBUG:WAYPOINT: doMigration() DB level=\(level)")
         
         // DB00: RealmProviderLegacy "main.realm" is no longer supported
         
         if level == 1 {
-            // PRESENT: DB01 RealmProvider  "Documents/NutritionFacts.realm"
-            //  ABSENT: DB02 RealmProvider  "Library/Database/NutritionFacts.realm"
-            //  ABSENT: DB03 SQLiteProvider "Library/Database/NutritionFacts.sqlite3"
-            // Start migration from DB01
+            logit.info(
+            """
+            ••Migration Level == 1••
+            PRESENT: DB01 RealmProvider  "Documents/NutritionFacts.realm"
+             ABSENT: DB02 RealmProvider  "Library/Database/NutritionFacts.realm"
+             ABSENT: DB03 SQLiteProvider "Library/Database/NutritionFacts.sqlite3"
+            Start migration from DB01
+            """)
             doMigration_B_DB01toDB02()
             let filename = doMigration_C_BD02Export()
             doMigration_D_DB02toDB03(filename: filename)
             _ = doMigration_E_BD03Export()
         } else if level == 2 {
-            // PRESENT: DB02 RealmProvider  "Library/Database/NutritionFacts.realm"
-            //  ABSENT: DB03 SQLiteProvider "Library/Database/NutritionFacts.sqlite3"
+            logit.info(
+            """
+            ••Migration Level == 2••
+            PRESENT: DB02 RealmProvider  "Library/Database/NutritionFacts.realm"
+             ABSENT: DB03 SQLiteProvider "Library/Database/NutritionFacts.sqlite3"
+            """)
             let filename = doMigration_C_BD02Export()
             doMigration_D_DB02toDB03(filename: filename)
             _ = doMigration_E_BD03Export()
         } else if level == 3 {
-            // DB03 is either present or will be created by the application
+            logit.info(
+            """
+            ••Migration Level == 3••
+            DB03 is either present or will be created by the application
+            """)
             logit.debug(":GTD:E: DB03 present or created")
         }
     }
@@ -161,12 +173,14 @@ public struct DBMigrationMaintainer {
         logit.debug("••BEGIN•• DBMigrationMaintainer doMigration_D_DB02toDB03()")
         // Import to SQLite
         SQLiteConnector.dot.csvImport(filename: filename)
+        logit.debug("••EXIT•• DBMigrationMaintainer doMigration_D_DB02toDB03()")
     }
     
     func doMigration_E_BD03Export() -> String { // :GTD:D: DB03 export
         logit.debug("••BEGIN•• DBMigrationMaintainer doMigration_E_BD03Export()")
         // Export from SQLite
         let filename = SQLiteConnector.dot.csvExport(marker: "migrated", activity: nil)
+        logit.debug("••EXIT•• DBMigrationMaintainer doMigration_E_BD03Export()")
         return filename
     }
 }
