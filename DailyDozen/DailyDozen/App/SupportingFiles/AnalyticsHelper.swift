@@ -35,20 +35,28 @@ struct AnalyticsHelper {
     }
     
     func doAnalyticsEnable() {
+        #if (DEBUG && WITH_ANALYTICS) || !DEBUG
         //if FirebaseApp.app() == nil {
         //    FirebaseApp.configure()
         //}
         Analytics.setAnalyticsCollectionEnabled(true)
         UserDefaults.standard.set(true, forKey: SettingsKeys.analyticsIsEnabledPref)
         logit.info("AnalyticsHelper doAnalyticsEnable() completed")
+        #else
+        logit.info("ANALYTICS is excluded from the build. (AnalyticsHelper doAnalyticsEnable)")
+        #endif
     }
     
     func doAnalyticsDisable() {
+        #if (DEBUG && WITH_ANALYTICS) || !DEBUG
         if FirebaseApp.app() != nil {
             Analytics.setAnalyticsCollectionEnabled(false)
             logit.info("AnalyticsHelper doAnalyticsDisable() disabled existing FirebaseApp Analytics")
         }
         UserDefaults.standard.set(false, forKey: SettingsKeys.analyticsIsEnabledPref)
         logit.info("AnalyticsHelper doAnalyticsDisable() completed")
+        #else
+        logit.info("ANALYTICS is excluded from the build. (AnalyticsHelper doAnalyticsDisable)")
+        #endif
     }
 }

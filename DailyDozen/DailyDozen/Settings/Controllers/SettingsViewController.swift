@@ -239,6 +239,7 @@ class SettingsViewController: UITableViewController {
     }
     
     func doAnalyticsEnable() {
+        #if (DEBUG && WITH_ANALYTICS) || !DEBUG
         //if FirebaseApp.app() == nil {
         //    FirebaseApp.configure()
         //}
@@ -246,9 +247,13 @@ class SettingsViewController: UITableViewController {
         UserDefaults.standard.set(true, forKey: SettingsKeys.analyticsIsEnabledPref)
         analyticsEnableToggle.isOn = true
         logit.info("SettingsViewController doAnalyticsEnable() completed")
+        #else
+        logit.info("ANALYTICS is excluded from the build. (SettingsViewController doAnalyticsEnable)")
+        #endif
     }
     
     func doAnalyticsDisable() {
+        #if (DEBUG && WITH_ANALYTICS) || !DEBUG
         if FirebaseApp.app() != nil {
             Analytics.setAnalyticsCollectionEnabled(false)
             logit.info("SettingsViewController doAnalyticsDisable() disabled existing FirebaseApp Analytics")
@@ -256,6 +261,9 @@ class SettingsViewController: UITableViewController {
         UserDefaults.standard.set(false, forKey: SettingsKeys.analyticsIsEnabledPref)
         analyticsEnableToggle.isOn = false
         logit.info("SettingsViewController doAnalyticsDisable() completed")
+        #else
+        logit.info("ANALYTICS is excluded from the build. (SettingsViewController doAnalyticsDisable)")
+        #endif
     }
     
     //@IBAction func doAppearanceModeChanged(_ sender: UISegmentedControl) {

@@ -103,6 +103,9 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         UINavigationBar.appearance().scrollEdgeAppearance = navigationBarAppearance
         
         // ----- Google (Firebase) Analytics -----
+        // In the Project Build Settings use `SWIFT_ACTIVE_COMPILATION_CONDITIONS`
+        // to set either `WITH_ANALYTICS` xor `WITHOUT_ANALYTICS`
+        #if (DEBUG && WITH_ANALYTICS) || !DEBUG
         FirebaseApp.configure()
         if UserDefaults.standard.bool(forKey: SettingsKeys.analyticsIsEnabledPref) == true {
             Analytics.setAnalyticsCollectionEnabled(true)
@@ -111,7 +114,11 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
             Analytics.setAnalyticsCollectionEnabled(false)
             logit.info("AppDelegate setAnalyticsCollectionEnabled(false)")
         }
-        
+        logit.info("ANALYTICS is included in the build.")
+        #else
+        logit.info("ANALYTICS is excluded from the build.")
+        #endif
+                
         return true
     }
     
