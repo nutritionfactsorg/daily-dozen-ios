@@ -4,6 +4,8 @@ Contributing to the Daily Dozen for iOS
 We would love for you to contribute to our source code and to help make the Daily Dozen for iOS even better!  Here are the guidelines we would like you to follow:
 
  - [Code of Conduct](#coc)
+ - [Prerequisites](#prerequisites)
+ - [Getting Started](#getting-started)
  - [Question or Problem?](#question)
  - [Issues and Bugs](#issue)
  - [Feature Requests](#feature)
@@ -14,6 +16,26 @@ We would love for you to contribute to our source code and to help make the Dail
 ----------------------------------
 
 Help us to keep the [Daily Dozen for iOS][daily-dozen-ios] open and inclusive.  Please read and follow our [Code of Conduct][coc]
+
+<a name="prerequisites"></a> Prerequisites
+-------------------------------------------
+
+Make sure to have Apple's Xcode, and [cocapods] package management tool installed on your machine.
+
+<a name="getting-started"></a> Getting Started
+-------------------------------------------
+
+To get the project up and running on your machine first clone the repo with your preferend method.
+
+Perform a package install with:
+
+```sh
+$ pod install
+```
+
+> Depending on version management a `$ pod install --repo-update` may be necessary
+>
+> 01/05/2024 : Removing `GoogleServices-Infol.plist` references and commenting out instances of Firebase may be necessary to have a full fresh build (see [issue](https://github.com/nutritionfactsorg/daily-dozen-ios/issues/73))
 
 <a name="question"></a> Have a Question or Problem?
 ---------------------------------------------------
@@ -151,6 +173,7 @@ A full commit with a **subject**, a **body** and a **footer** should also have e
 ### Footer
 The footer should reference GitHub issues that this commit **Closes**.
 
+[cocoapods]: https://cocoapods.org "Cocoapods"
 [daily-dozen-android]: https://github.com/nutritionfactsorg/daily-dozen-android "Daily Dozen for Android"
 [daily-dozen-ios]: https://github.com/nutritionfactsorg/daily-dozen-ios "Daily Dozen for iOS"
 [nutritionfacts.org]: http://nutritionfacts.org "NutritionFacts.org - The Latest in Nutrition Research"
