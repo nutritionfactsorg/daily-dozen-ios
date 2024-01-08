@@ -156,7 +156,7 @@ class MainViewController: UIViewController {
         tabDailyDozenViewController.title = titleDoze
         let tabDozeItem = UITabBarItem(
             title: titleDoze, // shows below tab bar item icon
-            image: UIImage(named: "ic_tabapp_dailydozen"),
+            image: UIImage(systemName: "12.square.fill"),
             tag: 0
         )
         tabDozeItem.accessibilityIdentifier = "navtab_doze_access"
