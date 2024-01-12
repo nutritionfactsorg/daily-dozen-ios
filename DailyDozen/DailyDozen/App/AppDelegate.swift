@@ -27,8 +27,28 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     ) -> Bool {
         logit.logLevel = LogServiceLevel.off
         
+        #if DEBUG && WITH_ANALYTICS
+        print("SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG WITH_ANALYTICS")
+        #elseif DEBUG && WITHOUT_ANALYTICS
+        print("SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG WITHOUT_ANALYTICS")
+        #endif
+        
+        // =====  SIMULATOR ENVIRONMENT  =====
+        #if targetEnvironment(simulator)
+        let bundle = Bundle(for: type(of: self))
+        print("""
+        \n::::: SIMULATOR ENVIRONMENT :::::
+        Bundle & Resources Path:\n\(bundle.bundlePath)\n
+        App Documents Directory:\n\(URL.inDocuments().path)\n
+        App Library Directory:\n\(URL.inLibrary().path)\n
+        :::::::::::::::::::::::::::::::::\n
+        """)
+        #endif
+        
         // =====  DEBUG SETUP  =====
         #if DEBUG
+        logit.logLevel = LogServiceLevel.verbose
+
         let identifier = Bundle.main.bundleIdentifier ?? "not found"
         print("PRODUCT_BUNDLE_IDENTIFIER = \(identifier)")
         
@@ -36,10 +56,9 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         printLocaleInfo()
         
         print("""
-        :#DEBUG:WAYPOINT: AppDelegate didFinishLaunchingWithOptions
-        \((URL.inDocuments().path))
+        :DEBUG:WAYPOINT: AppDelegate didFinishLaunchingWithOptions
+        \((URL.inDocuments().path))\n
         """)
-        logit.logLevel = LogServiceLevel.verbose
         logit.useLogFile(nameToken: "dev") // logit.useLogFileDefault()
         logit.debug("""
         ::::: DEBUG :::::
@@ -59,22 +78,10 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         logit.info(":: exerciseGamutMaxUsedInt()==\( SettingsManager.exerciseGamutMaxUsedInt() )")
         
         let s: SQLiteBuiltInTest.InitialState = .db02
-        logit.info(":: [[A]] InitialState=\(s) ::")
+        logit.info("••DB_STATE••INITIAL_DEBUG_SETUP••BEGIN•• InitialState=\(s)")
         SQLiteBuiltInTest.shared.setupInitialState(s) // :GTD:B:√: initial DB
-        logit.info(":: [[A]] InitialState ::END::\n")
+        logit.info("••DB_STATE••INITIAL_DEBUG_SETUP•••END••• InitialState=\(s)\n")
         
-        #endif
-        
-        // =====  SIMULATOR SETUP  =====
-        #if targetEnvironment(simulator)
-        let bundle = Bundle(for: type(of: self))
-        logit.debug("""
-        ::::: SIMULATOR ENVIRONMENT :::::
-        Bundle & Resources Path:\n\(bundle.bundlePath)\n
-        App Documents Directory:\n\(URL.inDocuments().path)\n
-        App Library Directory:\n\(URL.inLibrary().path)\n
-        """)
-        logit.debug(":::::::::::::::::::::::::::::::::\n")
         #endif
         
         // =====  GLOBAL SETUP  =====
@@ -103,9 +110,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         UINavigationBar.appearance().scrollEdgeAppearance = navigationBarAppearance
         
         // ----- Google (Firebase) Analytics -----
-        // In the Project Build Settings use `SWIFT_ACTIVE_COMPILATION_CONDITIONS`
-        // to set either `WITH_ANALYTICS` xor `WITHOUT_ANALYTICS`
-        #if (DEBUG && WITH_ANALYTICS) || !DEBUG
+        // See Project Build Settings `SWIFT_ACTIVE_COMPILATION_CONDITIONS`
+        #if WITH_ANALYTICS
         FirebaseApp.configure()
         if UserDefaults.standard.bool(forKey: SettingsKeys.analyticsIsEnabledPref) == true {
             Analytics.setAnalyticsCollectionEnabled(true)

@@ -33,7 +33,7 @@ public struct RealmBuiltInTest {
         realmDbV02.deleteAllObjects()
         
         logit.debug(
-            "••EXIT•• RealmBuiltInTest doClearAllDataInMigrationChainBIT()"
+            "•••END••• RealmBuiltInTest doClearAllDataInMigrationChainBIT()"
         )
     }
     
@@ -116,7 +116,7 @@ public struct RealmBuiltInTest {
                 let weightAmStr = String(format: "%.2f", weightAm)
                 let weightPmStr = String(format: "%.2f", weightAm)
                 logit.debug(
-                    "    \(date) [AM] \(dateAm) \(weightAmStr) [PM] \(datePm) \(weightPmStr)"
+                    "    \(date) [am] \(dateAm) \(weightAmStr) [pm] \(datePm) \(weightPmStr)"
                 )
             }
             
@@ -124,7 +124,7 @@ public struct RealmBuiltInTest {
             date = calendar.date(byAdding: stepByDay, to: date)!
         }
         logit.debug(
-            "••EXIT•• RealmBuiltInTest doGenerateDBHistoryBIT(…)"
+            "•••END••• RealmBuiltInTest doGenerateDBHistoryBIT(…)"
         )
     }
     
@@ -313,7 +313,7 @@ public struct RealmBuiltInTest {
         let timeOut = Date().getCurrentBenchmarkSeconds
         let lapsed = timeOut - timeIn
         logit.debug(
-            "••EXIT•• RealmBuiltInTest doGenerateDBStreaksBIT() \(lapsed) sec"
+            "•••END••• RealmBuiltInTest doGenerateDBStreaksBIT() \(lapsed) sec"
         )
         // :!!!:        activityProgress?.completed()
     }

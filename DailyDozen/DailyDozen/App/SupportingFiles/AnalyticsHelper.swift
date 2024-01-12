@@ -35,7 +35,7 @@ struct AnalyticsHelper {
     }
     
     func doAnalyticsEnable() {
-        #if (DEBUG && WITH_ANALYTICS) || !DEBUG
+        #if WITH_ANALYTICS
         //if FirebaseApp.app() == nil {
         //    FirebaseApp.configure()
         //}
@@ -48,7 +48,7 @@ struct AnalyticsHelper {
     }
     
     func doAnalyticsDisable() {
-        #if (DEBUG && WITH_ANALYTICS) || !DEBUG
+        #if WITH_ANALYTICS
         if FirebaseApp.app() != nil {
             Analytics.setAnalyticsCollectionEnabled(false)
             logit.info("AnalyticsHelper doAnalyticsDisable() disabled existing FirebaseApp Analytics")

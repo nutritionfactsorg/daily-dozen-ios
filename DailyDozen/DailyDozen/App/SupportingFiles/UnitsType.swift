@@ -21,16 +21,16 @@ enum UnitsType: String {
     
     init?(_ str: String) {
         switch str {
-        case "imperial": self = .imperial
-        case "metric": self = .metric
+        case "imperial", "[imperial]": self = .imperial
+        case "metric", "[metric]": self = .metric
         default: return nil
         }
     }
     
     init?(mass: String) {
         switch mass {
-        case "lbs": self = .imperial
-        case "kg": self = .metric
+        case "lbs", "[lbs]": self = .imperial
+        case "kg", "[kg]": self = .metric
         default: return nil
         }
     }

@@ -80,7 +80,7 @@ struct DataCountAttributes {
             countType: .dozeExercise,
             headingDisplay: NSLocalizedString("dozeExercise.heading", comment: "heading for daily data entry item"),
             headingCSV: "Exercise",
-            goalServings: SettingsManager.exerciseGamutInt()), // :GTD:(UNITS): exerciseGamut
+            goalServings: SettingsManager.exerciseGamutInt()), // :GTD:[UNITS]: exerciseGamut
         .otherVitaminB12: Attribute(
             countType: .otherVitaminB12,
             headingDisplay: NSLocalizedString("otherVitaminB12.heading", comment: "heading for daily data entry item"),

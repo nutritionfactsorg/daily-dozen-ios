@@ -72,7 +72,7 @@ struct SQLiteConnector {
     func csvExport(filename: String, activity: ActivityProgress? = nil) {
         let outUrl = URL.inDocuments().appendingPathComponent(filename)
         var content = csvKeysHeader()
-        content.append(csvUnitsHeader())
+        content.append(csvUnitsHeader() + "\n")
         
         let allTrackers = sqliteApi.getDailyTrackers(activity: activity)
         let trackerCount = allTrackers.count
@@ -156,15 +156,15 @@ struct SQLiteConnector {
             return
         }
         
-        if lines[1].hasPrefix("(UNITS)") {
+        if lines[1].hasPrefix("[UNITS]") {
             if isValidSetCsvUnitsHeader(lines[1]) {
-                logit.info("(UNITS) \(csvExerciseGamut), \(csvUnitsType)")
+                logit.info("[UNITS] csvExerciseGamut=\(csvExerciseGamut), csvUnitsType=\(csvUnitsType)")
             } else {
-                logit.error("FAIL: (UNITS) invalid")
+                logit.error("FAIL: [UNITS] row invalid")
                 return
             }
         } else {
-            // No (UNITS) row: exercise is 1 unit. weight is kg
+            // No [UNITS] row: exercise is 1 unit. weight is kg
             csvExerciseGamut = ExerciseGamut.one
             csvUnitsType = .metric
             if let dailyTracker = csvImportLine(lines[1]) {
@@ -266,7 +266,7 @@ struct SQLiteConnector {
     /// CSV 2nd Header Line: Units 100% goal, exercise gamut, weight units
     /// Based on csvExerciseGamut, csvUnitsType values.
     private func csvUnitsHeader() -> String {
-        var str = "(UNITS)"
+        var str = "[UNITS]"
         // 100% Goals
         for dataCountType in DataCountType.allCases {
             if dataCountType == .dozeExercise {
@@ -275,20 +275,18 @@ struct SQLiteConnector {
                 str.append(",\(dataCountType.goalServings)")
             }
         }
-        // Weight // :GTD:(UNITS): kg|lbs
+        // Weight // :GTD:[UNITS]: kg|lbs
         if csvUnitsType == .imperial {
-            str.append(",(AM)") // Weight AM Time
-            str.append(",lbs")   // Weight AM Value
-            str.append(",(PM)") // Weight PM Time
-            str.append(",lbs")   // Weight PM Value
+            str.append(",[am]")  // Weight AM Time
+            str.append(",[lbs]") // Weight AM Value
+            str.append(",[pm]")  // Weight PM Time
+            str.append(",[lbs]") // Weight PM Value
         } else {
-            str.append(",(AM)") // Weight AM Time
-            str.append(",kg")   // Weight AM Value
-            str.append(",(PM)") // Weight PM Time
-            str.append(",kg")   // Weight PM Value
+            str.append(",[am]")  // Weight AM Time
+            str.append(",[kg]")  // Weight AM Value
+            str.append(",[pm]")  // Weight PM Time
+            str.append(",[kg]")  // Weight PM Value
         }
-        
-        str.append("\n")
         return str
     }
     
@@ -317,7 +315,7 @@ struct SQLiteConnector {
         let columns = inboundHeaderNormalized.components(separatedBy: ",")
         guard 
             columns.count == 41,
-            let gamut = ExerciseGamut(columns[13]), // dozeExercies
+            let gamut = ExerciseGamut(columns[12]), // dozeExercies "Exercise"
             let unitsAM = UnitsType(mass: columns[38]), // AM Units
             let unitsPM = UnitsType(mass: columns[40]), // PM Units
             unitsAM == unitsPM
@@ -331,11 +329,10 @@ struct SQLiteConnector {
             .replacingOccurrences(of: "-", with: "")
             .lowercased()
         
-        /// :GTD:FIX: \n, (AM)|(PM)
         if inboundHeaderNormalized == referenceHeaderNormalize {
             return true
         } else {
-            logit.error("isValidSetCsvUnitsHeader match failed")
+            logit.error("isValidSetCsvUnitsHeader() match failed")
             return false
         }
     }
@@ -401,7 +398,7 @@ struct SQLiteConnector {
                 let weightAmStr = String(format: "%.2f", weightAM)
                 let weightPmStr = String(format: "%.2f", weightAM)
                 logit.debug(
-                    "    \(date) [AM] \(dateAM) \(weightAmStr) [PM] \(datePM) \(weightPmStr)"
+                    "    \(date) [am] \(dateAM) \(weightAmStr) [pm] \(datePM) \(weightPmStr)"
                 )
             }
             
@@ -410,7 +407,7 @@ struct SQLiteConnector {
         }
         sqliteApi.transactionCommit()
         logit.debug(
-            "••EXIT•• SqliteConnector generateHistoryBIT(…) \(Date())"
+            "•••END••• SqliteConnector generateHistoryBIT(…) \(Date())"
         )
     }
     

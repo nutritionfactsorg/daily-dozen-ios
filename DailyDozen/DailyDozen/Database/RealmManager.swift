@@ -109,7 +109,7 @@ class RealmManager {
         if isValidCsvHeader(lines[0]) {
             
             if lines.count >= 2 {
-                if lines[1].hasPrefix("(UNITS)") {
+                if lines[1].hasPrefix("[UNITS]") {
                     // :NYI: check/set basis for execercise units, weight kg/lbs
                 } else {
                     if let dailyTracker = csvProcess(line: lines[1]) {
@@ -217,15 +217,15 @@ class RealmManager {
     }
     
     private static var csvHeaderLine2: String {
-        var str = "(UNITS)"
+        var str = "[UNITS]"
         for dataCountType in DataCountType.allCases {
             str.append(",\(dataCountType.goalServings)")
         }
         // Weight
-        str.append(",-AM-") // Weight AM Time
-        str.append(",kg")   // Weight AM Value
-        str.append(",-PM-") // Weight PM Time
-        str.append(",kg")   // Weight PM Value
+        str.append(",[am]") // Weight AM Time
+        str.append(",[kg]")   // Weight AM Value
+        str.append(",[pm]") // Weight PM Time
+        str.append(",[kg]")   // Weight PM Value
         
         str.append("\n")
         return str

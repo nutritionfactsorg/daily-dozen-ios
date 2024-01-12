@@ -20,30 +20,45 @@ public struct DBMigrationMaintainer {
         if level == 1 {
             logit.info(
             """
-            ••Migration Level == 1••
+            ••DB_STATE••MIGRATE_1••BEGIN•• Migration Level == 1
             PRESENT: DB01 RealmProvider  "Documents/NutritionFacts.realm"
              ABSENT: DB02 RealmProvider  "Library/Database/NutritionFacts.realm"
              ABSENT: DB03 SQLiteProvider "Library/Database/NutritionFacts.sqlite3"
-            Start migration from DB01
+            Start migration by relocating DB01 to DB02 …
             """)
             doMigration_B_DB01toDB02()
+
+            logit.info("••DB_STATE••MIGRATE_1•• DB01 moved to DB02. starting DB02 export …")
             let filename = doMigration_C_BD02Export()
+
+            logit.info("••DB_STATE••MIGRATE_1•• DB02 export completed, starting DB03 import …")
             doMigration_D_DB02toDB03(filename: filename)
+
+            logit.info("••DB_STATE••MIGRATE_1•• DB03 import completed. starting DB03 backup export …")
             _ = doMigration_E_BD03Export()
+
+            logit.info("••DB_STATE••MIGRATE_1•••END••• Migration Level == 1 completed.")
         } else if level == 2 {
             logit.info(
             """
-            ••Migration Level == 2••
+            ••DB_STATE••MIGRATE_2••BEGIN•• Migration Level == 2
             PRESENT: DB02 RealmProvider  "Library/Database/NutritionFacts.realm"
              ABSENT: DB03 SQLiteProvider "Library/Database/NutritionFacts.sqlite3"
+                     … starting DB02 export.
             """)
             let filename = doMigration_C_BD02Export()
+            
+            logit.info("••DB_STATE••MIGRATE_2•• DB02 export completed, starting DB03 import …")
             doMigration_D_DB02toDB03(filename: filename)
+            
+            logit.info("••DB_STATE••MIGRATE_2•• DB03 import completed. starting DB03 backup export …")
             _ = doMigration_E_BD03Export()
+            
+            logit.info("••DB_STATE••MIGRATE_2•••END••• Migration Level == 2 completed.")
         } else if level == 3 {
             logit.info(
             """
-            ••Migration Level == 3••
+            ••DB_STATE••MIGRATE_3••NO-OP•• Migration Level == 3 (nothing to migration)
             DB03 is either present or will be created by the application
             """)
             logit.debug(":GTD:E: DB03 present or created")
@@ -165,7 +180,7 @@ public struct DBMigrationMaintainer {
         HealthSynchronizer.shared.syncWeightExport(marker: "hk_export_weight")
         #endif
         
-        logit.debug("••EXIT•• DBMigrationMaintainer doMigration_C_BD02Export()")
+        logit.debug("•••END••• DBMigrationMaintainer doMigration_C_BD02Export()")
         return filename
     }
     
@@ -173,14 +188,14 @@ public struct DBMigrationMaintainer {
         logit.debug("••BEGIN•• DBMigrationMaintainer doMigration_D_DB02toDB03()")
         // Import to SQLite
         SQLiteConnector.dot.csvImport(filename: filename)
-        logit.debug("••EXIT•• DBMigrationMaintainer doMigration_D_DB02toDB03()")
+        logit.debug("•••END••• DBMigrationMaintainer doMigration_D_DB02toDB03()")
     }
     
     func doMigration_E_BD03Export() -> String { // :GTD:D: DB03 export
         logit.debug("••BEGIN•• DBMigrationMaintainer doMigration_E_BD03Export()")
         // Export from SQLite
         let filename = SQLiteConnector.dot.csvExport(marker: "migrated", activity: nil)
-        logit.debug("••EXIT•• DBMigrationMaintainer doMigration_E_BD03Export()")
+        logit.debug("•••END••• DBMigrationMaintainer doMigration_E_BD03Export()")
         return filename
     }
 }

@@ -239,7 +239,7 @@ class SettingsViewController: UITableViewController {
     }
     
     func doAnalyticsEnable() {
-        #if (DEBUG && WITH_ANALYTICS) || !DEBUG
+        #if WITH_ANALYTICS
         //if FirebaseApp.app() == nil {
         //    FirebaseApp.configure()
         //}
@@ -253,7 +253,7 @@ class SettingsViewController: UITableViewController {
     }
     
     func doAnalyticsDisable() {
-        #if (DEBUG && WITH_ANALYTICS) || !DEBUG
+        #if WITH_ANALYTICS
         if FirebaseApp.app() != nil {
             Analytics.setAnalyticsCollectionEnabled(false)
             logit.info("SettingsViewController doAnalyticsDisable() disabled existing FirebaseApp Analytics")
