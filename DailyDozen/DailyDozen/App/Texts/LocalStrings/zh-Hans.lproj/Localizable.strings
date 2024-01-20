@@ -1,0 +1,490 @@
+/* DailyDozen Localizable.strings (zh-Hans) */
+/* Copyright © 2021 Nutritionfacts.org. All rights reserved. */
+
+/* Date Button Title: ‘Back to today’ */
+"dateBackButtonTitle" = "回到今天";
+
+/* Date Button Title: ‘Today’ */
+"dateButtonTitle.today" = "今天";
+
+/* Doze Detail View subheading: ‘Serving Sizes’ */
+"doze_detail_section_sizes" = "份量（建议）";
+
+/* Doze Detail View subheading: ‘Types’ */
+"doze_detail_section_types" = "种类";
+
+/* Doze Entry View heading: ‘Servings’ */
+"doze_entry_header" = "份量";
+
+/* heading for daily data entry item */
+"dozeBeans.heading" = "豆类";
+
+/* heading for daily data entry item */
+"dozeBerries.heading" = "浆果类";
+
+/* heading for daily data entry item */
+"dozeBeverages.heading" = "饮料";
+
+/* heading for daily data entry item */
+"dozeExercise.heading" = "运动";
+
+/* heading for daily data entry item */
+"dozeFlaxseeds.heading" = "亚麻籽";
+
+/* heading for daily data entry item */
+"dozeFruitsOther.heading" = "其他水果";
+
+/* heading for daily data entry item */
+"dozeGreens.heading" = "绿叶蔬菜";
+
+/* heading for daily data entry item */
+"dozeNuts.heading" = "坚果和种子";
+
+/* Daily Dozen supplement info alert: dismissal button text */
+"dozeOtherInfo.confirm" = "确定";
+
+/* Daily Dozen supplement info alert: message */
+"dozeOtherInfo.message" = "维生素B12对健康来说至关重要，但不算在每日12清单的份量当中。\n\n本应用程序包含维生素B12，让您能方便追踪摄取量。";
+
+/* Daily Dozen daily entry section heading */
+"dozeOtherInfo.section" = "补充剂";
+
+/* Daily Dozen supplement info alert: title */
+"dozeOtherInfo.title" = "补充剂";
+
+/* heading for daily data entry item */
+"dozeSpices.heading" = "香草和香料";
+
+/* heading for daily data entry item */
+"dozeVegetablesCruciferous.heading" = "十字花科蔬菜";
+
+/* heading for daily data entry item */
+"dozeVegetablesOther.heading" = "其他蔬菜";
+
+/* heading for daily data entry item */
+"dozeWholeGrains.heading" = "全谷物";
+
+/*  */
+"faq_adapt_question" = "每日12清单建议我吃太多／太少！我可以调整吗？";
+
+/*  */
+"faq_adapt_response" = "是的，每日12清单只是为了指导我们每天努力摄取的最健康的食物。这不是膳食计划，也不是规定性的。尽最大努力吃各种各样的全食物蔬食食品，并根据适合您的数量调整每日12清单。";
+
+/*  */
+"faq_age_question" = "这是否适用于儿童和青少年？";
+
+/*  */
+"faq_age_response.0" = "儿童和青少年在整个生命周期中有不同的热量需求。 这些需求在每个阶段发生改变，是为了支持每个阶段的增长和发展。";
+
+/*  */
+"faq_age_response.1" = "每日12清单旨在作为指南，帮助人们将一些最健康的食物纳入日常生活。虽然同一框架可用于大多数人的整个生命周期，但一个人需要吃的食物量会因年龄和活动水平等多种因素而异。由于我们无法为您成长中的孩子提供具体的营养或医疗建议，因此父母应该根据他们认为最适合孩子需求的方式使用本指南和/或咨询注册营养师或其他医疗保健提供者，以帮助确定最适合他们个人的内容需要。";
+
+/*  */
+"faq_calories_question" = "每日12清单中含有多少卡路里？";
+
+/*  */
+"faq_calories_response.0" = "每日12清单平均约1,200卡路里，但考虑到每个类别的食物选择范围广泛，这个数字可以落在800-1800之间的任何地方。想想“其他蔬菜”类别：一杯甜椒的热量密度比一杯煮熟的红薯低得多，因此热量范围将取决于您的具体食物选择。这就是每日12清单的伟大之处——它不是一种放之四海而皆准的方法，可以根据您的需要进行调整。";
+
+/*  */
+"faq_calories_response.1" = "如果您的目标是减重，您可以在《吃饱瘦身》和随附的21妙方中找到更多信息。 在《救命减重版》一书中，我指出：“一项对成功减重策略的系统回顾得出的结论是，考虑到伴随减重而来的新陈代谢减慢和食欲增加，要实现显著减重，卡路里计数可能需要降低至女性每天1,200卡路里，男性每天1,500卡路里。”";
+
+/*  */
+"faq_calories_response.2" = "另一方面，如果您的目标是增加体重，那么您可能需要专注于添加更多高热量食物，例如红薯、牛油果、坚果和豆制品。";
+
+/*  */
+"faq_mother_question" = "我可以在怀孕或哺乳期间这样做吗？";
+
+/*  */
+"faq_mother_response" = "怀孕或哺乳的人与未怀孕或哺乳的人有不同的热量和营养需求。 提醒一下，每日12清单不是膳食计划，也不应该是一天内食用的唯一食物。 怀孕或哺乳的人应该咨询她们的保健医师或注册营养师，以获得满足其特定热量需求和营养需求的帮助。";
+
+/*  */
+"faq_scaling_question" = "我不可能吃那么多豆子／谷物／其他食物！";
+
+/*  */
+"faq_scaling_response" = "根据个人需求变化是可以的。每日12清单是一个励志指南。尽可能多地摄入这些健康的植物性食物。 如果您刚开始大量食用豆类（或谷物、蔬菜等），您可能需要从少量开始，然后慢慢增加数量，以便让您的微生物组有机会进行调整。您也可以发挥创意：例如，在早餐燕麦片中加入一些豆类。如果您装了满满的浆果、亚麻籽和坚果，您甚至不会注意到豆子的存在。您也可以将豆子捣碎成三明治涂抹酱，或制作我的BROL（https://nutritionfacts.org/recipe/basic-brol-barley-rye-oats-and-lentils）——大麦、黑麦、去壳燕麦和小扁豆——我用它作为许多餐食的基础，是一种简单的方法来获取各种全谷物和豆类。";
+
+/*  */
+"faq_supplements_question" = "我以为格雷格医生建议服用维生素D和DHA补充剂，为什么清单里不包括这些呢？";
+
+/*  */
+"faq_supplements_response" = "我们更新了每日12清单应用程序，仅反映必需的补充剂。例如，只有阳光照射不足的人才需要维生素D。我们的目标是与您分享科学知识，以便您做出明智的决定。您可以在“最佳营养”（https://nutritionfacts.org/optimum-nutrient-recommendations）页面上查看我的所有建议。";
+
+/* Info Menu */
+"faq_title" = "常见问题";
+
+/* History Data Alert: Cancel button */
+"history_data_alert_cancel" = "取消";
+
+/* History Data Alert: Clear button */
+"history_data_alert_clear" = "清除";
+
+/* History Data Alert: Import buttom */
+"history_data_alert_import" = "导入";
+
+/* History Data Alert: OK button */
+"history_data_alert_ok" = "确认";
+
+/* History Data: export action button */
+"history_data_export_btn" = "导出历史数据";
+
+/* History Data: export description text */
+"history_data_export_text" = "导出已写入：";
+
+/* History Data: import action button */
+"history_data_import_btn" = "导入历史数据";
+
+/* History Data: import caution text */
+"history_data_import_caution_text" = "注意：此导入将覆蓋此每日12清单应用程序中当前的所有历史数据。 是否继续导入？";
+
+/* History Data: import data error text */
+"history_data_import_error_text" = "错误：由于数据错误而未执行导入。现有数据保持不变。";
+
+/* History Data: import not found text */
+"history_data_import_notfound_text" = "在每日12清单文件夹中未找到有效的导入文件。";
+
+/* History Data: preferences header & title */
+"history_data_title" = "历史";
+
+/* History View: calendar scale control */
+"history_scale_choice_day" = "日";
+
+/* History View: calendar scale control */
+"history_scale_choice_month" = "月";
+
+/* History View: calendar scale control */
+"history_scale_choice_year" = "年";
+
+/* History View: scale text */
+"history_scale_label" = "时间尺度";
+
+/*  */
+"historyRecord.movingAverage" = "活动平均数";
+
+/* History View */
+"historyRecordDoze.heading" = "份量历史";
+
+/* History View */
+"historyRecordDoze.legend" = "份量";
+
+/* History View */
+"historyRecordTweak.heading" = "妙方历史";
+
+/* History View */
+"historyRecordTweak.legend" = "妙方";
+
+/* History View */
+"historyRecordWeight.heading" = "体重历史记录";
+
+/* History View */
+"historyRecordWeight.legendEvening" = "晚上";
+
+/* History View */
+"historyRecordWeight.legendMorning" = "早上";
+
+/* History View */
+"historyRecordWeight.titleImperial" = "体重（磅）";
+
+/* History View */
+"historyRecordWeight.titleMetric" = "体重（公斤）";
+
+/* Info About Menu Item */
+"info_app_about" = "关于我们";
+
+/* Info About View: Application Name ‘Daily Dozen’ */
+"info_app_about_app_name" = "每日12清单";
+
+/* Info About View: Created By */
+"info_app_about_created_by" = "本应用程序由以下单位及个人制作：NutritionFacts.org、Christi Richards、Konstantin Khokhlov和Marc Campbell";
+
+/* Info About View */
+"info_app_about_heading" = "关于本应用程序";
+
+/* Info About View: Open Source Credits */
+"info_app_about_oss_credits" = "使用了以下的开放资源：RealmSwift、Charts、FSCalendar、SimpleAnimation、ActiveLabel";
+
+/* Info About View: Overview Text */
+"info_app_about_overview" = "我在《救命》中推荐了能够让您健康长寿的食物，请每天使用这个应用程序来记录与追踪您对这些食物的摄取量。";
+
+/* Info About View: Contributing Translators List (language code)  See https://en.wikipedia.org/wiki/List_of_ISO_639-1_codes */
+"info_app_about_translators" = "特别鸣谢翻译志愿者：Petar Enchev（bg）、Tsveti Enchev（bg）、Ricard Soler Roger（ca）、Luděk Bouška（cs,sk）、Lenka Lukacová（cs）、Anke Schliessmann（de）、Ángela Graña（es）、Audray Harkins（fr）、Doron Barak（he）、Ruth Levy（he）、Annalisa Guerrini-Körner（it）、Ilaria Zanini（it）、Hanna Gurzeda（pl）、Joanna Klopotek（pl）、Tania Bassi（pt-BR）、João Madureira（pt-PT）、Cristina Lauby（ro）、Evgeniya Lyakh（ru）、Katarína Mocáková（sk)。";
+
+/* Info About View: Application release version */
+"info_app_about_version" = "3.4.17版本";
+
+/* Info About View: Welcome */
+"info_app_about_welcome" = "欢迎来到我的“每日12清单”！";
+
+/* Info Menu: book title */
+"info_book_how_not_to_die" = "书籍：救命！逆转和预防致命疾病的科学饮食";
+
+/* Info Menu: book title */
+"info_book_how_not_to_die_cookbook" = "书籍：救命食谱";
+
+/* Info Menu: book title */
+"info_book_how_not_to_diet" = "书籍：吃饱瘦身";
+
+/* Info Menu */
+"info_webpage_daily_dozen_challenge" = "每日12清单挑战";
+
+/* Info Menu */
+"info_webpage_donate" = "捐款";
+
+/* Info Menu */
+"info_webpage_open_source" = "开放资源";
+
+/* Info Menu */
+"info_webpage_subscribe" = "订阅";
+
+/* Info Menu */
+"info_webpage_videos_latest" = "最新视频";
+
+/* Item History Legend: ‘All completed’ */
+"item_history_completed_all" = "全部份量";
+
+/* Item History Legend: ‘Some completed’ */
+"item_history_completed_some" = "部份份量";
+
+/* Item History Heading */
+"item_history_heading" = "历史纪录";
+
+/* Main Navigation Tab Control: ‘Daily Dozen’ (proper noun) */
+"navtab.doze" = "每日12清单";
+
+/* Main Navigation Tab Control: show more information */
+"navtab.info" = "信息";
+
+/* Main Navigation Tab Control: ‘Preferences’ synonyms: Settings, Configuration. Choose a translations with is different from Tweaks. */
+"navtab.preferences" = "喜好";
+
+/* Main Navigation Tab Control: ‘21 Tweaks’ (proper noun) */
+"navtab.tweaks" = "21妙方";
+
+/* heading for daily data entry item */
+"otherVitaminB12.heading" = "维生素B12";
+
+/* Alert notification text */
+"reminder.alert.text" = "更新您的今日份量";
+
+/* Daily Reminder (alert title, settings section heading) */
+"reminder.heading" = "每日提醒";
+
+/* Daily Reminder On/Off toggle switch label */
+"reminder.settings.enable" = "开启提醒";
+
+/* Daily Reminder sound control heading */
+"reminder.settings.sound" = "播放声音";
+
+/* Daily Reminder time control heading */
+"reminder.settings.time" = "提醒时间";
+
+/* Android notification `vibrate` */
+"reminder.settings.vibrate" = "震动";
+
+/* ‘Off’ as in ‘On (enabled) or Off (disabled)’, Daily Reminder is not enabled */
+"reminder.state.off" = "关";
+
+/* ‘On’ as in ‘On (enabled) or Off (disable)’. Daily Reminder is enabled */
+"reminder.state.on" = "开";
+
+/* Google Firebase Analytics */
+"setting_analytics_body" = "允许收集匿名使用信息以帮助改进此应用程序";
+
+/* Google Firebase Analytics */
+"setting_analytics_enable" = "启用分析";
+
+/* Google Firebase Analytics */
+"setting_analytics_opt_in" = "选择同意";
+
+/* Google Firebase Analytics */
+"setting_analytics_opt_out" = "选择退出";
+
+/* Google Firebase Analytics */
+"setting_analytics_title" = "分析";
+
+/* First Launch Setting: button text */
+"setting_doze_only_btn" = "仅限每日12清单\n";
+
+/* Preference Settings View: selection button text */
+"setting_doze_only_choice" = "仅限每日12清单";
+
+/* First Launch Setting: button text */
+"setting_doze_tweak_btn" = "每日21妙方\n";
+
+/* Preference Settings View: selection button text */
+"setting_doze_tweak_choice" = "每日12清单 + 每日21妙方";
+
+/* Preference Settings View: brief description text below Tweaks visibility control. */
+"setting_doze_tweak_footer" = "仅为健康考虑，使用“每日12清单”。为了健康和减重，则使用“每日12清单 + 21妙方”。";
+
+/* First Launch Setting: brief description above ‘Daily Dozen Only’ button. */
+"setting_health_alone_txt" = "仅为健康";
+
+/* First Launch Setting: brief description above ‘Daily Dozen + 21 Tweaks’ button. */
+"setting_health_weight_txt" = "为健康和减重";
+
+/* Preference Settings View: tweaks visibilty subsection heading */
+"setting_tweak_header" = "21妙方的可见性";
+
+/* Preference Settings View: Part of ‘Imperial/Metric/Toggle Units’ selector */
+"setting_units_0_imperial" = "英制";
+
+/* Preference Settings View: Part of ‘Imperial/Metric/Toggle Units’ selector */
+"setting_units_1_metric" = "公制";
+
+/* Preference Settings View: Part of ‘Imperial/Metric/Toggle Units’ selector */
+"setting_units_2_toggle" = "切换单位";
+
+/* Preference Settings View: brief description text below units control. */
+"setting_units_choice_footer" = "设置为始终为一种单位类型，或启用“单位”切换按钮。";
+
+/* Preference Settings View */
+"setting_units_header" = "计量单位";
+
+/* Preference Settings View */
+"setting_util_advanced" = "进阶工具";
+
+/* ‘Streak’ count. Synonym: ‘Progress‘. Formatted number ‘%d’ for consecutive days completed. Place translated text for ‘days’ on the right or left of ‘%d’ based on language directionality. */
+"streakDaysFormat" = "%d 天";
+
+/* Tweaks Detail view section heading */
+"tweak_detail_section_activity" = "活动";
+
+/* Tweaks Detail view section heading */
+"tweak_detail_section_description" = "描述";
+
+/* Tweaks daily entry header */
+"tweak_entry_header" = "21妙方";
+
+/* heading for daily data entry item */
+"tweakCompleteIntentions.heading" = "完成您的实施意图";
+
+/* heading for daily data entry item */
+"tweakDailyBlackCumin.heading" = "黑孜然（¼茶匙）";
+
+/* heading for daily data entry item */
+"tweakDailyCumin.heading" = "孜然（午餐和晚餐½茶匙）";
+
+/* heading for daily data entry item */
+"tweakDailyDeflourDiet.heading" = "勿将食物磨成粉";
+
+/* heading for daily data entry item */
+"tweakDailyFrontLoad.heading" = "提早载入热量";
+
+/* heading for daily data entry item */
+"tweakDailyGarlic.heading" = "大蒜粉（¼茶匙）";
+
+/* heading for daily data entry item */
+"tweakDailyGinger.heading" = "生姜粉（1茶匙）或卡宴辣椒粉（½茶匙）";
+
+/* heading for daily data entry item */
+"tweakDailyGreenTea.heading" = "绿茶（3杯）";
+
+/* heading for daily data entry item */
+"tweakDailyHydrate.heading" = "保持体内水分充足";
+
+/* heading for daily data entry item */
+"tweakDailyNutriYeast.heading" = "营养酵母（2茶匙）";
+
+/* heading for daily data entry item */
+"tweakDailyTimeRestrict.heading" = "限制进餐时间区间";
+
+/* heading for daily data entry item */
+"tweakExerciseTiming.heading" = "把握运动良机";
+
+/* heading for daily data entry item */
+"tweakMeal20Minutes.heading" = "严守用餐20分钟法则";
+
+/* heading for daily data entry item */
+"tweakMealNegCal.heading" = "预载负热量食物";
+
+/* heading for daily data entry item */
+"tweakMealUndistracted.heading" = "专心用餐";
+
+/* heading for daily data entry item */
+"tweakMealVinegar.heading" = "配醋一起吃（每餐2茶匙）";
+
+/* heading for daily data entry item */
+"tweakMealWater.heading" = "预载水分";
+
+/* heading for daily data entry item */
+"tweakNightlyFast.heading" = "晚上７点后禁食";
+
+/* heading for daily data entry item */
+"tweakNightlySleep.heading" = "睡眠充足";
+
+/* heading for daily data entry item */
+"tweakNightlyTrendelenbrug.heading" = "采取微微头低脚高的仰卧睡姿";
+
+/* heading for daily data entry item */
+"tweakWeightTwice.heading" = "每天量体重两次";
+
+/*  */
+"units_label" = "单位";
+
+/* Units toggle button text: imperial measurement system */
+"unitToggle.imperial" = "英制";
+
+/* Units toggle button text: metric measurement system */
+"unitToggle.metric" = "公制";
+
+/* URL path */
+"urlSegment.base" = "https://nutritionfacts.org/";
+
+/*  */
+"urlSegment.lang" = "";
+
+/* main info menu: book */
+"urlSegmentInfoMenu.book" = "book/how-not-to-die";
+
+/* main info menu: daily-dozen-challenge */
+"urlSegmentInfoMenu.challenge" = "daily-dozen-challenge";
+
+/* main info menu: cookbook */
+"urlSegmentInfoMenu.cookbook" = "book/how-not-to-die-cookbook";
+
+/* main info menu: how-not-to-diet */
+"urlSegmentInfoMenu.diet" = "book/how-not-to-diet";
+
+/* main info menu: donate */
+"urlSegmentInfoMenu.donate" = "donate";
+
+/* main info menu: open-source */
+"urlSegmentInfoMenu.source" = "open-source";
+
+/* main info menu: subscribe */
+"urlSegmentInfoMenu.subscribe" = "subscribe";
+
+/* team */
+"urlSegmentInfoMenu.team" = "team";
+
+/* main info menu: videos */
+"urlSegmentInfoMenu.videos" = "videos";
+
+/* Label for hyperlink to nutritionfacts.org video topics */
+"videos.link.label" = "视频";
+
+/* Weight Daily Entry: clear button which deletes values */
+"weight_entry_clear" = "清除";
+
+/* Weight Daily Entry: label */
+"weight_entry_evening" = "夜间（就寝前）";
+
+/* Weight Daily Entry: label */
+"weight_entry_morning" = "早晨（起床时）";
+
+/* Weight Daily Entry: label */
+"weight_entry_time" = "时间";
+
+/* Weight Daily Entry Units: label */
+"weight_entry_units_kg" = "公斤";
+
+/* Weight Daily Entry Units: label */
+"weight_entry_units_lbs" = "磅";
+
+/* Weight Daily Entry: edit button to change values */
+"weight_history_edit_data" = "编辑数据";
+
+/* Weight Daily Entry: heading */
+"weightEntry.heading" = "体重";
+
+/* file end */
