@@ -1,0 +1,1142 @@
+{
+  "itemsDict" : {
+    "dozeBeans" : {
+      "heading" : "豆类",
+      "servings" : [
+        {
+          "imperial" : "¼杯鹰嘴豆泥或其他豆泥",
+          "metric" : "60克鹰嘴豆或其他豆泥"
+        },
+        {
+          "imperial" : "½杯煮熟的豆子、豌豆或小扁豆",
+          "metric" : "90克煮熟的豆子、豌豆或小扁豆"
+        },
+        {
+          "imperial" : "½杯豆腐或天贝",
+          "metric" : "100克豆腐或天贝"
+        },
+        {
+          "imperial" : "1杯新鲜豌豆或荷兰豆",
+          "metric" : "130克新鲜豌豆或荷兰豆"
+        },
+        {
+          "imperial" : "1杯新鲜发芽豆（扁豆、绿豆）",
+          "metric" : "100克新鲜发芽豆（扁豆、绿豆）"
+        }
+      ],
+      "topic" : "topics/beans",
+      "varieties" : [
+        {
+          "text" : "黑豆",
+          "topic" : "topics/black-beans"
+        },
+        {
+          "text" : "黑眼豆",
+          "topic" : ""
+        },
+        {
+          "text" : "利马豆",
+          "topic" : ""
+        },
+        {
+          "text" : "白腰豆",
+          "topic" : ""
+        },
+        {
+          "text" : "鹰嘴豆",
+          "topic" : "topics/chickpeas"
+        },
+        {
+          "text" : "毛豆",
+          "topic" : "topics/edamame"
+        },
+        {
+          "text" : "麦豌豆",
+          "topic" : ""
+        },
+        {
+          "text" : "白芸豆",
+          "topic" : ""
+        },
+        {
+          "text" : "芸豆",
+          "topic" : "topics/kidney-beans"
+        },
+        {
+          "text" : "小扁豆（包括黑扁豆、法国扁豆与红扁豆等品种）",
+          "topic" : "topics/lentils"
+        },
+        {
+          "text" : "味噌",
+          "topic" : "topics/miso"
+        },
+        {
+          "text" : "白豆",
+          "topic" : "topics/navy-beans"
+        },
+        {
+          "text" : "花豆",
+          "topic" : "topics/pinto-beans"
+        },
+        {
+          "text" : "小红豆",
+          "topic" : ""
+        },
+        {
+          "text" : "豌豆（黄豌豆或绿豌豆）",
+          "topic" : "topics/split-peas"
+        },
+        {
+          "text" : "天贝",
+          "topic" : "topics/tempeh"
+        }
+      ]
+    },
+    "dozeBerries" : {
+      "heading" : "浆果类",
+      "servings" : [
+        {
+          "imperial" : "½杯新鲜或冷冻浆果",
+          "metric" : "60克新鲜或冷冻浆果"
+        },
+        {
+          "imperial" : "¼杯浆果干",
+          "metric" : "40克浆果干"
+        }
+      ],
+      "topic" : "topics/berries",
+      "varieties" : [
+        {
+          "text" : "巴西莓",
+          "topic" : "topics/acai-berries"
+        },
+        {
+          "text" : "莿莓",
+          "topic" : "topics/barberries"
+        },
+        {
+          "text" : "黑莓",
+          "topic" : "topics/blackberries"
+        },
+        {
+          "text" : "蓝莓",
+          "topic" : "topics/blueberries"
+        },
+        {
+          "text" : "樱桃（甜或酸）",
+          "topic" : "topics/cherries"
+        },
+        {
+          "text" : "康科德葡萄",
+          "topic" : "topics/grapes"
+        },
+        {
+          "text" : "蔓越莓",
+          "topic" : "topics/cranberries"
+        },
+        {
+          "text" : "枸杞",
+          "topic" : "topics/goji-berries"
+        },
+        {
+          "text" : "金橘",
+          "topic" : ""
+        },
+        {
+          "text" : "桑葚",
+          "topic" : ""
+        },
+        {
+          "text" : "覆盆子（黑色或红色）",
+          "topic" : "topics/raspberries"
+        },
+        {
+          "text" : "草莓",
+          "topic" : "topics/strawberries"
+        }
+      ]
+    },
+    "dozeBeverages" : {
+      "heading" : "饮料",
+      "servings" : [
+        {
+          "imperial" : "一杯（12盎司）",
+          "metric" : "一杯（350毫升）"
+        }
+      ],
+      "topic" : "topics/beverages",
+      "varieties" : [
+        {
+          "text" : "红茶",
+          "topic" : "topics/black-tea"
+        },
+        {
+          "text" : "印度香茶",
+          "topic" : "topics/chai-tea"
+        },
+        {
+          "text" : "香草洋甘菊茶",
+          "topic" : "topics/chamomile-tea"
+        },
+        {
+          "text" : "咖啡",
+          "topic" : "topics/coffee"
+        },
+        {
+          "text" : "伯爵茶",
+          "topic" : "topics/earl-grey-tea"
+        },
+        {
+          "text" : "绿茶",
+          "topic" : "topics/green-tea"
+        },
+        {
+          "text" : "洛神花茶",
+          "topic" : "topics/hibiscus-tea"
+        },
+        {
+          "text" : "热巧克力",
+          "topic" : ""
+        },
+        {
+          "text" : "茉莉花茶",
+          "topic" : ""
+        },
+        {
+          "text" : "柠檬香精茶",
+          "topic" : "topics/lemon-balm"
+        },
+        {
+          "text" : "抹茶",
+          "topic" : "topics/matcha"
+        },
+        {
+          "text" : "杏仁花乌龙茶",
+          "topic" : "topics/oolong-tea"
+        },
+        {
+          "text" : "薄荷茶",
+          "topic" : "topics/peppermint"
+        },
+        {
+          "text" : "南非国宝茶",
+          "topic" : "topics/rooibos-tea"
+        },
+        {
+          "text" : "水",
+          "topic" : "topics/water"
+        },
+        {
+          "text" : "白茶",
+          "topic" : "topics/white-tea"
+        }
+      ]
+    },
+    "dozeExercise" : {
+      "heading" : "运动",
+      "servings" : [
+        {
+          "imperial" : "90分钟的中等强度运动",
+          "metric" : "90分钟的中等强度运动"
+        },
+        {
+          "imperial" : "40分钟的剧烈运动",
+          "metric" : "40分钟的剧烈运动"
+        }
+      ],
+      "topic" : "topics/exercise",
+      "varieties" : [
+        {
+          "text" : "骑自行车",
+          "topic" : ""
+        },
+        {
+          "text" : "滑独木舟",
+          "topic" : ""
+        },
+        {
+          "text" : "跳舞",
+          "topic" : ""
+        },
+        {
+          "text" : "躲避球",
+          "topic" : ""
+        },
+        {
+          "text" : "下坡滑雪",
+          "topic" : ""
+        },
+        {
+          "text" : "击剑",
+          "topic" : ""
+        },
+        {
+          "text" : "健行",
+          "topic" : ""
+        },
+        {
+          "text" : "做家事",
+          "topic" : ""
+        },
+        {
+          "text" : "溜冰",
+          "topic" : ""
+        },
+        {
+          "text" : "直排轮滑",
+          "topic" : ""
+        },
+        {
+          "text" : "杂耍",
+          "topic" : ""
+        },
+        {
+          "text" : "蹦床运动",
+          "topic" : ""
+        },
+        {
+          "text" : "踩脚踏船",
+          "topic" : ""
+        },
+        {
+          "text" : "玩飞盘",
+          "topic" : ""
+        },
+        {
+          "text" : "四轮溜冰",
+          "topic" : ""
+        },
+        {
+          "text" : "投篮",
+          "topic" : ""
+        },
+        {
+          "text" : "铲雪（轻微积雪）",
+          "topic" : ""
+        },
+        {
+          "text" : "玩滑板",
+          "topic" : ""
+        },
+        {
+          "text" : "浮潜",
+          "topic" : ""
+        },
+        {
+          "text" : "冲浪",
+          "topic" : ""
+        },
+        {
+          "text" : "休闲式游泳",
+          "topic" : ""
+        },
+        {
+          "text" : "网球（双打）",
+          "topic" : ""
+        },
+        {
+          "text" : "踩水",
+          "topic" : ""
+        },
+        {
+          "text" : "健走（每小时6公里）",
+          "topic" : ""
+        },
+        {
+          "text" : "水中有氧运动",
+          "topic" : ""
+        },
+        {
+          "text" : "滑水",
+          "topic" : ""
+        },
+        {
+          "text" : "整理庭院",
+          "topic" : ""
+        },
+        {
+          "text" : "瑜珈",
+          "topic" : ""
+        },
+        {
+          "text" : "背包旅行",
+          "topic" : ""
+        },
+        {
+          "text" : "打篮球",
+          "topic" : ""
+        },
+        {
+          "text" : "自行车爬坡",
+          "topic" : ""
+        },
+        {
+          "text" : "循环抗阻训练",
+          "topic" : ""
+        },
+        {
+          "text" : "越野滑雪",
+          "topic" : ""
+        },
+        {
+          "text" : "美式足球",
+          "topic" : ""
+        },
+        {
+          "text" : "曲棍球",
+          "topic" : ""
+        },
+        {
+          "text" : "慢跑",
+          "topic" : ""
+        },
+        {
+          "text" : "开合跳",
+          "topic" : ""
+        },
+        {
+          "text" : "跳绳",
+          "topic" : ""
+        },
+        {
+          "text" : "袋棍球",
+          "topic" : ""
+        },
+        {
+          "text" : "俯卧撑",
+          "topic" : ""
+        },
+        {
+          "text" : "引体向上",
+          "topic" : ""
+        },
+        {
+          "text" : "短柄墙球",
+          "topic" : ""
+        },
+        {
+          "text" : "攀岩",
+          "topic" : ""
+        },
+        {
+          "text" : "橄榄球",
+          "topic" : ""
+        },
+        {
+          "text" : "跑步",
+          "topic" : ""
+        },
+        {
+          "text" : "潜水",
+          "topic" : ""
+        },
+        {
+          "text" : "网球（单打）",
+          "topic" : ""
+        },
+        {
+          "text" : "足球",
+          "topic" : ""
+        },
+        {
+          "text" : "速度滑冰",
+          "topic" : ""
+        },
+        {
+          "text" : "壁球",
+          "topic" : ""
+        },
+        {
+          "text" : "阶梯有氧",
+          "topic" : ""
+        },
+        {
+          "text" : "来回游泳",
+          "topic" : ""
+        },
+        {
+          "text" : "上坡快走",
+          "topic" : ""
+        },
+        {
+          "text" : "水中慢跑",
+          "topic" : ""
+        }
+      ]
+    },
+    "dozeFlaxseeds" : {
+      "heading" : "亚麻籽",
+      "servings" : [
+        {
+          "imperial" : "1大匙亚麻籽粉",
+          "metric" : "1大匙亚麻籽粉"
+        }
+      ],
+      "topic" : "topics/flax-seeds",
+      "varieties" : [
+        {
+          "text" : "棕色亚麻籽",
+          "topic" : ""
+        },
+        {
+          "text" : "黄金亚麻籽",
+          "topic" : ""
+        }
+      ]
+    },
+    "dozeFruitsOther" : {
+      "heading" : "其他水果",
+      "servings" : [
+        {
+          "imperial" : "1颗中型水果",
+          "metric" : "1颗中型水果"
+        },
+        {
+          "imperial" : "1杯水果丁",
+          "metric" : "120克水果丁"
+        },
+        {
+          "imperial" : "¼杯果干",
+          "metric" : "40克果干"
+        }
+      ],
+      "topic" : "topics/fruit",
+      "varieties" : [
+        {
+          "text" : "苹果",
+          "topic" : "topics/apples"
+        },
+        {
+          "text" : "杏子",
+          "topic" : "topics/apricots"
+        },
+        {
+          "text" : "牛油果",
+          "topic" : "topics/avocados"
+        },
+        {
+          "text" : "香蕉",
+          "topic" : "topics/bananas"
+        },
+        {
+          "text" : "哈密瓜",
+          "topic" : "topics/cantaloupe"
+        },
+        {
+          "text" : "小柑橘",
+          "topic" : ""
+        },
+        {
+          "text" : "椰枣",
+          "topic" : "topics/dates"
+        },
+        {
+          "text" : "无花果",
+          "topic" : ""
+        },
+        {
+          "text" : "葡萄柚",
+          "topic" : "topics/grapefruit"
+        },
+        {
+          "text" : "香瓜",
+          "topic" : ""
+        },
+        {
+          "text" : "奇异果",
+          "topic" : "topics/kiwifruit"
+        },
+        {
+          "text" : "柠檬",
+          "topic" : "topics/lemons"
+        },
+        {
+          "text" : "莱姆",
+          "topic" : "topics/limes"
+        },
+        {
+          "text" : "荔枝",
+          "topic" : ""
+        },
+        {
+          "text" : "芒果",
+          "topic" : "topics/mango"
+        },
+        {
+          "text" : "油桃",
+          "topic" : ""
+        },
+        {
+          "text" : "橙子",
+          "topic" : "topics/oranges"
+        },
+        {
+          "text" : "木瓜",
+          "topic" : ""
+        },
+        {
+          "text" : "百香果",
+          "topic" : ""
+        },
+        {
+          "text" : "桃子",
+          "topic" : "topics/peaches"
+        },
+        {
+          "text" : "梨",
+          "topic" : "topics/pears"
+        },
+        {
+          "text" : "凤梨",
+          "topic" : ""
+        },
+        {
+          "text" : "李子（尤其是黑李）",
+          "topic" : "topics/plums"
+        },
+        {
+          "text" : "杏李",
+          "topic" : ""
+        },
+        {
+          "text" : "石榴",
+          "topic" : "topics/pomegranates"
+        },
+        {
+          "text" : "西梅干",
+          "topic" : "topics/prunes"
+        },
+        {
+          "text" : "橘子",
+          "topic" : ""
+        },
+        {
+          "text" : "西瓜",
+          "topic" : "topics/watermelon"
+        }
+      ]
+    },
+    "dozeGreens" : {
+      "heading" : "绿叶蔬菜",
+      "servings" : [
+        {
+          "imperial" : "1杯生菜",
+          "metric" : "60克生菜"
+        },
+        {
+          "imperial" : "½杯煮过的蔬菜",
+          "metric" : "90克煮过的蔬菜"
+        }
+      ],
+      "topic" : "topics/greens",
+      "varieties" : [
+        {
+          "text" : "芝麻菜",
+          "topic" : ""
+        },
+        {
+          "text" : "甜菜叶",
+          "topic" : "topics/beets"
+        },
+        {
+          "text" : "绿叶甘蓝",
+          "topic" : "topics/collard-greens"
+        },
+        {
+          "text" : "羽衣甘蓝（黑色、绿色与红色品种）",
+          "topic" : "topics/kale"
+        },
+        {
+          "text" : "综合生菜叶（综合幼嫩绿色沙拉）",
+          "topic" : "topics/salads"
+        },
+        {
+          "text" : "芥菜",
+          "topic" : "topics/mustard-greens"
+        },
+        {
+          "text" : "酸模",
+          "topic" : ""
+        },
+        {
+          "text" : "菠菜",
+          "topic" : "topics/spinach"
+        },
+        {
+          "text" : "瑞士甜菜",
+          "topic" : "topics/swiss-chard"
+        },
+        {
+          "text" : "芜菁叶",
+          "topic" : ""
+        }
+      ]
+    },
+    "dozeNuts" : {
+      "heading" : "坚果和种子",
+      "servings" : [
+        {
+          "imperial" : "¼杯坚果或种子",
+          "metric" : "30克坚果或种子"
+        },
+        {
+          "imperial" : "2大匙果仁酱或种子酱",
+          "metric" : "2大匙果仁酱或种子酱"
+        }
+      ],
+      "topic" : "topics/nuts",
+      "varieties" : [
+        {
+          "text" : "杏仁",
+          "topic" : "topics/almonds"
+        },
+        {
+          "text" : "巴西坚果",
+          "topic" : "topics/brazil-nuts"
+        },
+        {
+          "text" : "腰果",
+          "topic" : "topics/cashews"
+        },
+        {
+          "text" : "奇亚籽",
+          "topic" : "topics/chia-seeds"
+        },
+        {
+          "text" : "榛子",
+          "topic" : "topics/hazelnuts"
+        },
+        {
+          "text" : "火麻仁",
+          "topic" : ""
+        },
+        {
+          "text" : "夏威夷果",
+          "topic" : "topics/macadamia-nuts"
+        },
+        {
+          "text" : "花生",
+          "topic" : "topics/peanuts"
+        },
+        {
+          "text" : "碧根果",
+          "topic" : "topics/pecans"
+        },
+        {
+          "text" : "开心果",
+          "topic" : "topics/pistachios"
+        },
+        {
+          "text" : "南瓜籽",
+          "topic" : "topics/pumpkin-seeds"
+        },
+        {
+          "text" : "芝麻籽",
+          "topic" : "topics/sesame-seeds"
+        },
+        {
+          "text" : "葵花籽",
+          "topic" : "topics/sunflower-seeds"
+        },
+        {
+          "text" : "核桃",
+          "topic" : "topics/walnuts"
+        }
+      ]
+    },
+    "dozeSpices" : {
+      "heading" : "香草和香料",
+      "servings" : [
+        {
+          "imperial" : "¼茶匙姜黄",
+          "metric" : "¼茶匙姜黄"
+        },
+        {
+          "imperial" : "任何其他您所喜欢的（无盐）香草和香料",
+          "metric" : "任何其他您所喜欢的（无盐）香草和香料"
+        }
+      ],
+      "topic" : "topics/spices",
+      "varieties" : [
+        {
+          "text" : "众香子",
+          "topic" : "topics/allspice"
+        },
+        {
+          "text" : "莿莓",
+          "topic" : "topics/barberries"
+        },
+        {
+          "text" : "罗勒",
+          "topic" : "topics/basil"
+        },
+        {
+          "text" : "月桂叶",
+          "topic" : ""
+        },
+        {
+          "text" : "小荳蔻",
+          "topic" : ""
+        },
+        {
+          "text" : "辣椒粉",
+          "topic" : ""
+        },
+        {
+          "text" : "芫荽",
+          "topic" : "topics/cilantro"
+        },
+        {
+          "text" : "肉桂",
+          "topic" : "topics/cinnamon"
+        },
+        {
+          "text" : "丁香",
+          "topic" : "topics/cloves"
+        },
+        {
+          "text" : "香菜",
+          "topic" : ""
+        },
+        {
+          "text" : "孜然",
+          "topic" : "topics/cumin"
+        },
+        {
+          "text" : "咖哩粉",
+          "topic" : "topics/curry-powder"
+        },
+        {
+          "text" : "莳萝",
+          "topic" : ""
+        },
+        {
+          "text" : "葫芦巴",
+          "topic" : "topics/fenugreek"
+        },
+        {
+          "text" : "大蒜",
+          "topic" : "topics/garlic"
+        },
+        {
+          "text" : "姜",
+          "topic" : "topics/ginger"
+        },
+        {
+          "text" : "辣根",
+          "topic" : ""
+        },
+        {
+          "text" : "柠檬草",
+          "topic" : ""
+        },
+        {
+          "text" : "墨角兰",
+          "topic" : "topics/marjoram"
+        },
+        {
+          "text" : "芥末粉",
+          "topic" : "topics/mustard-powder"
+        },
+        {
+          "text" : "肉豆蔻",
+          "topic" : "topics/nutmeg"
+        },
+        {
+          "text" : "牛至",
+          "topic" : "topics/oregano"
+        },
+        {
+          "text" : "烟燻红椒粉",
+          "topic" : ""
+        },
+        {
+          "text" : "欧芹",
+          "topic" : "topics/parsley"
+        },
+        {
+          "text" : "胡椒",
+          "topic" : "topics/pepper"
+        },
+        {
+          "text" : "薄荷",
+          "topic" : "topics/peppermint"
+        },
+        {
+          "text" : "迷迭香",
+          "topic" : "topics/rosemary"
+        },
+        {
+          "text" : "番红花",
+          "topic" : "topics/saffron"
+        },
+        {
+          "text" : "鼠尾草",
+          "topic" : ""
+        },
+        {
+          "text" : "百里香",
+          "topic" : ""
+        },
+        {
+          "text" : "姜黄",
+          "topic" : "topics/turmeric"
+        },
+        {
+          "text" : "香草",
+          "topic" : ""
+        }
+      ]
+    },
+    "dozeVegetablesCruciferous" : {
+      "heading" : "十字花科蔬菜",
+      "servings" : [
+        {
+          "imperial" : "½杯切碎的十字花科蔬菜",
+          "metric" : "30至80克切碎的十字花科蔬菜"
+        },
+        {
+          "imperial" : "½杯孢子甘蓝苗",
+          "metric" : "80克孢子甘蓝苗"
+        },
+        {
+          "imperial" : "¼杯西蓝花苗",
+          "metric" : "15克西蓝花苗"
+        },
+        {
+          "imperial" : "一大匙辣根",
+          "metric" : "一大匙辣根"
+        }
+      ],
+      "topic" : "topics/cruciferous-vegetables",
+      "varieties" : [
+        {
+          "text" : "芝麻菜",
+          "topic" : ""
+        },
+        {
+          "text" : "青江菜",
+          "topic" : "topics/bok-choy"
+        },
+        {
+          "text" : "西蓝花（包括罗马花椰菜）",
+          "topic" : "topics/broccoli"
+        },
+        {
+          "text" : "球芽甘蓝",
+          "topic" : "topics/brussels-sprouts"
+        },
+        {
+          "text" : "甘蓝（绿、紫、野甘蓝）",
+          "topic" : "topics/cabbage"
+        },
+        {
+          "text" : "花椰菜（白色、绿色、橙色、紫色）",
+          "topic" : "topics/cauliflower"
+        },
+        {
+          "text" : "绿叶甘蓝",
+          "topic" : "topics/collard-greens"
+        },
+        {
+          "text" : "辣根",
+          "topic" : ""
+        },
+        {
+          "text" : "羽衣甘蓝（黑色、绿色与红色品种）",
+          "topic" : "topics/kale"
+        },
+        {
+          "text" : "大头菜（绿色、紫色）",
+          "topic" : ""
+        },
+        {
+          "text" : "芥菜",
+          "topic" : "topics/mustard-greens"
+        },
+        {
+          "text" : "白萝卜",
+          "topic" : ""
+        },
+        {
+          "text" : "芜菁叶",
+          "topic" : ""
+        },
+        {
+          "text" : "西洋菜",
+          "topic" : "topics/watercress"
+        }
+      ]
+    },
+    "dozeVegetablesOther" : {
+      "heading" : "其他蔬菜",
+      "servings" : [
+        {
+          "imperial" : "1杯生叶菜",
+          "metric" : "60克生叶菜"
+        },
+        {
+          "imperial" : "½杯生或熟的非叶菜",
+          "metric" : "50克生或熟的非叶菜"
+        },
+        {
+          "imperial" : "½杯蔬菜汁",
+          "metric" : "125毫升蔬菜汁"
+        },
+        {
+          "imperial" : "¼杯干菇类",
+          "metric" : "7克干菇类"
+        }
+      ],
+      "topic" : "topics/vegetables",
+      "varieties" : [
+        {
+          "text" : "洋蓟",
+          "topic" : "topics/artichokes"
+        },
+        {
+          "text" : "芦笋",
+          "topic" : "topics/asparagus"
+        },
+        {
+          "text" : "甜菜",
+          "topic" : "topics/beets"
+        },
+        {
+          "text" : "甜椒",
+          "topic" : "topics/bell-peppers"
+        },
+        {
+          "text" : "胡萝卜",
+          "topic" : "topics/carrots"
+        },
+        {
+          "text" : "玉米",
+          "topic" : "topics/corn"
+        },
+        {
+          "text" : "大蒜",
+          "topic" : "topics/garlic"
+        },
+        {
+          "text" : "菇类（洋菇、平菇、波特菇与香菇）",
+          "topic" : "topics/mushrooms"
+        },
+        {
+          "text" : "秋葵",
+          "topic" : "topics/okra"
+        },
+        {
+          "text" : "洋葱",
+          "topic" : "topics/onions"
+        },
+        {
+          "text" : "紫薯",
+          "topic" : "topics/potatoes"
+        },
+        {
+          "text" : "南瓜",
+          "topic" : "topics/pumpkin"
+        },
+        {
+          "text" : "海带（海藻、红藻与海苔）",
+          "topic" : "topics/sea-vegetables"
+        },
+        {
+          "text" : "甜脆豌豆",
+          "topic" : ""
+        },
+        {
+          "text" : "南瓜属（包括花生南瓜、夏南瓜与金线南瓜等品种）",
+          "topic" : "topics/squash"
+        },
+        {
+          "text" : "红薯／蕃薯",
+          "topic" : "topics/sweet-potatoes"
+        },
+        {
+          "text" : "蕃茄",
+          "topic" : "topics/tomatoes"
+        },
+        {
+          "text" : "西葫芦",
+          "topic" : "topics/zucchini"
+        }
+      ]
+    },
+    "dozeWholeGrains" : {
+      "heading" : "全谷物",
+      "servings" : [
+        {
+          "imperial" : "½杯热麦片或煮熟的谷物、意大利面或玉米粒",
+          "metric" : "100克热麦片或煮熟的谷物、意大利面或玉米粒"
+        },
+        {
+          "imperial" : "1杯冷麦片",
+          "metric" : "50克冷麦片"
+        },
+        {
+          "imperial" : "1份墨西哥薄饼或1片面包",
+          "metric" : "1份墨西哥薄饼或1片面包"
+        },
+        {
+          "imperial" : "½个贝果或英式松饼",
+          "metric" : "½个贝果或英式松饼"
+        },
+        {
+          "imperial" : "3杯爆米花",
+          "metric" : "30克爆米花"
+        }
+      ],
+      "topic" : "topics/grains",
+      "varieties" : [
+        {
+          "text" : "大麦",
+          "topic" : "topics/barley"
+        },
+        {
+          "text" : "荞麦",
+          "topic" : "topics/buckwheat"
+        },
+        {
+          "text" : "小米",
+          "topic" : "topics/millet"
+        },
+        {
+          "text" : "燕麦",
+          "topic" : "topics/oats"
+        },
+        {
+          "text" : "爆米花",
+          "topic" : "topics/popcorn"
+        },
+        {
+          "text" : "藜麦",
+          "topic" : "topics/quinoa"
+        },
+        {
+          "text" : "裸麦",
+          "topic" : "topics/rye"
+        },
+        {
+          "text" : "画眉草籽",
+          "topic" : ""
+        },
+        {
+          "text" : "全麦意大利面",
+          "topic" : "topics/pasta"
+        }
+      ]
+    },
+    "otherVitaminB12" : {
+      "heading" : "维生素B12",
+      "servings" : [
+
+      ],
+      "topic" : "topics/vitamin-b12",
+      "varieties" : [
+
+      ]
+    }
+  }
+}

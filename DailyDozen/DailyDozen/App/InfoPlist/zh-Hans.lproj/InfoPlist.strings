@@ -1,0 +1,16 @@
+/* DailyDozen InfoPlist.strings (zh-Hans) */
+/* Copyright © 2021 Nutritionfacts.org. All rights reserved. */
+
+/* User-visible application name. Visible under icon. Used by Siri. */
+"CFBundleDisplayName" = "每日12清单";
+
+/* User-visible application short name (15 Characters max) */
+"CFBundleName" = "每日12清单";
+
+/* Privacy - Health Share Usage Description */
+"NSHealthShareUsageDescription" = "21妙方取得您的“健康”数据，提供您每日的体重计量";
+
+/* Privacy - Health Update Usage Description */
+"NSHealthUpdateUsageDescription" = "21妙方能将体重数据纪录到“健康”，帮助追踪您的进步";
+
+/* file end */

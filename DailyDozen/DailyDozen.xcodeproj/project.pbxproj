@@ -373,6 +373,10 @@
 		4C98FFDB29143A3F00E92B66 /* cs */ = {isa = PBXFileReference; lastKnownFileType = text.json; name = cs; path = cs.lproj/TweakDetailData.json; sourceTree = "<group>"; };
 		4CBCB2BA2983779F00015393 /* Strings.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Strings.swift; sourceTree = "<group>"; };
 		4CCB92C02ABCC20D0095C3D8 /* Thread.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Thread.swift; sourceTree = "<group>"; };
+		4CE1EDF82B5B512D00B3B19F /* zh-Hans */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hans"; path = "zh-Hans.lproj/InfoPlist.strings"; sourceTree = "<group>"; };
+		4CE1EDF92B5B512D00B3B19F /* zh-Hans */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hans"; path = "zh-Hans.lproj/Localizable.strings"; sourceTree = "<group>"; };
+		4CE1EDFA2B5B512D00B3B19F /* zh-Hans */ = {isa = PBXFileReference; lastKnownFileType = text.json; name = "zh-Hans"; path = "zh-Hans.lproj/DozeDetailData.json"; sourceTree = "<group>"; };
+		4CE1EDFB2B5B512D00B3B19F /* zh-Hans */ = {isa = PBXFileReference; lastKnownFileType = text.json; name = "zh-Hans"; path = "zh-Hans.lproj/TweakDetailData.json"; sourceTree = "<group>"; };
 		6ED3A55B48F7069CAE75156C /* Pods-DailyDozenTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-DailyDozenTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-DailyDozenTests/Pods-DailyDozenTests.release.xcconfig"; sourceTree = "<group>"; };
 		715D60F634E9BCD998C66B77 /* Pods_DailyDozenTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_DailyDozenTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		7D4AA01331AD98C99ADB2BC0 /* Pods-DailyDozen.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-DailyDozen.release.xcconfig"; path = "Pods/Target Support Files/Pods-DailyDozen/Pods-DailyDozen.release.xcconfig"; sourceTree = "<group>"; };
@@ -1352,6 +1356,7 @@
 				it,
 				fr,
 				"zh-Hant",
+				"zh-Hans",
 			);
 			mainGroup = CFE6982F1F974B9700CD7905;
 			productRefGroup = CFE698391F974B9700CD7905 /* Products */;
@@ -1711,6 +1716,7 @@
 				4C97E06329E0247E00601772 /* it */,
 				4C8609812A0491C500A6EBDE /* fr */,
 				4C53E9752B06EF2E00128432 /* zh-Hant */,
+				4CE1EDFB2B5B512D00B3B19F /* zh-Hans */,
 			);
 			name = TweakDetailData.json;
 			sourceTree = "<group>";
@@ -1734,6 +1740,7 @@
 				4C97E06029E0247E00601772 /* it */,
 				4C86097E2A0491C500A6EBDE /* fr */,
 				4C53E9722B06EF2E00128432 /* zh-Hant */,
+				4CE1EDF82B5B512D00B3B19F /* zh-Hans */,
 			);
 			name = InfoPlist.strings;
 			sourceTree = "<group>";
@@ -1757,6 +1764,7 @@
 				4C97E06229E0247E00601772 /* it */,
 				4C8609802A0491C500A6EBDE /* fr */,
 				4C53E9742B06EF2E00128432 /* zh-Hant */,
+				4CE1EDFA2B5B512D00B3B19F /* zh-Hans */,
 			);
 			name = DozeDetailData.json;
 			sourceTree = "<group>";
@@ -1780,6 +1788,7 @@
 				4C97E06129E0247E00601772 /* it */,
 				4C86097F2A0491C500A6EBDE /* fr */,
 				4C53E9732B06EF2E00128432 /* zh-Hant */,
+				4CE1EDF92B5B512D00B3B19F /* zh-Hans */,
 			);
 			name = Localizable.strings;
 			sourceTree = "<group>";
