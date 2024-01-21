@@ -45,6 +45,11 @@ The Daily Dozen iOS App is licensed under the GPLv3
 **3.5.1 (pending)**
 
 - Adds data import.
+- Database upgrade.
+
+**3.4.17 (TestFlight Beta: Jan 20, 2024)**
+
+- Adds Simplified Chinese translation.
 
 **3.4.15 (App Store: Dec 13, 2023)**
 
@@ -52,7 +57,7 @@ The Daily Dozen iOS App is licensed under the GPLv3
 
 **3.4.13 (App Store: Dec 13, 2023)**
 
-- Adds Chinese Traditional translation.
+- Adds Traditional Chinese translation.
 
 **3.4.11 (App Store: Nov 1, 2023)**
 
@@ -107,7 +112,7 @@ The Daily Dozen iOS App is licensed under the GPLv3
 
 * Improved Spanish translation
 
-_Note: Application level language selection via Settings, requires iOS 13 or newer._
+    > _Note: Application level language selection via Settings, requires iOS 13 or newer._
 
 **3.2.1 (App Store: July 7, 2020)**
 
@@ -121,15 +126,13 @@ _Note: Application level language selection via Settings, requires iOS 13 or new
 
 **3.1.0 (App Store: December 17, 2019)**
 
-* Adds 21 Tweaks
-* Adds Weight Tracking with Health Kit Integration
-* Add Application Tab Controller bar
-
-Improvements:
-
-* Adds settings control to choice between using "Daily Dozen only" or "Daily Dozen + 21 Tweaks".
-
-* Adds settings control to select whether to use Imperial or Metric type units throughout the app.
+- Additions: 
+    * Adds 21 Tweaks
+    * Adds Weight Tracking with Health Kit Integration
+    * Add Application Tab Controller bar
+- Improvements:
+    * Adds settings control to choice between using "Daily Dozen only" or "Daily Dozen + 21 Tweaks".
+    * Adds settings control to select whether to use Imperial or Metric type units throughout the app.
 
 **2.0.0 (App Store: March 9, 2018)**
 
