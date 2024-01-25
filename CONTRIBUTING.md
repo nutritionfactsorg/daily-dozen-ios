@@ -61,7 +61,7 @@ When submitting an issue, providing the following information will increase the 
 
 Before you create and submit a Pull Request, please create an [Issue Ticket][issue] which describes the envisioned contribution. An Issue Ticket will allow for discussion of how a fix or enhancement aligns with project history, impact, and roadmap. This step should also clarify approach, timeline, and naturally lead to a go/no-go/defer action plan from a core team member.
 
-If an Issue Ticket proceeds to a "go" plan, then you can be pointed to which branch to use at that time.
+If an Issue Ticket proceeds to a "go" plan, then you will be pointed to which branch to use at that time.
 
 **Getting Up To Speed**
 
@@ -75,7 +75,15 @@ We want to foster a community of participation and learning, especially for peop
 
 * Please submit all pull requests to the [nutritionfactsorg/daily-dozen-ios][daily-dozen-ios] repository in the branch designated by a core team member for the related Issue Ticket.
 
-If you don't have a feature in mind, but would like to contribute back to the project, check out the [open issues][issues] and see if there are any you can tackle. _Note: the issue tickets tagged with "`help wanted`" and "`help wanted` `beginner`" are the ones looking for someone to do the related Pull Request._
+If you don't have a feature in mind, but would like to contribute back to the project, check out the [open issues][issues] and see if there are any you can tackle. 
+
+The outreach [labels](https://github.com/nutritionfactsorg/daily-dozen-ios/issues/labels) ("beginner, "good first issue" and "help wanted") indicate which issues are looking for community participation to do the related Pull Request.
+
+| | |
+|--------|---------------------|
+| ![][lbl-beginner]    | Indicates an issue which is easier or less complicated to resolve. |
+| ![][lbl-good-first]  | Indicates a good issue for new contributors. |
+| ![][lbl-help-wanted] | Indicates that a maintainer wants help on an issue or pull request. |
 
 <a name="commit"></a> Git Commit Guidelines
 -------------------------------------------
@@ -162,4 +170,13 @@ The footer should reference GitHub issues that this commit **Closes**.
 [cremail]: mailto:christi@nutritionfacts.org?subject=Slack%20#Development%20Invitation
 
 
+<!-- LABELS -->
 
+[lbl-beginner]:CONTRIBUTING_files/lbl-beginner.svg
+[src-beginner]:https://labl.es/svg?text=beginner&bgcolor=128a0c
+
+[lbl-good-first]:CONTRIBUTING_files/lbl-good-first.svg
+[src-good-first]:https://labl.es/svg?text=good%20first%20issue&bgcolor=128a0c
+
+[lbl-help-wanted]:CONTRIBUTING_files/lbl-help-wanted.svg
+[src-help-wanted]:https://labl.es/svg?text=help%20wanted&bgcolor=128a0c

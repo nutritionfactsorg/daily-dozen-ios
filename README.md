@@ -28,7 +28,7 @@ The Daily Dozen iOS App is licensed under the GPLv3
 
 ## [Contributors][contributors]
 
-* [Marc Campbell][marc-medley]
+* [Marc Campbell][marc-medley] (maintainer)
 * Konstantin Khokhlov <!-- [justaninja] page returns 404 not found -->
 * [Will Webb][innerfish]
 * [Christi Richards][christirichards]
@@ -47,17 +47,14 @@ The Daily Dozen iOS App is licensed under the GPLv3
 - Adds data import.
 - Database upgrade.
 
-**3.4.17 (TestFlight Beta: Jan 20, 2024)**
+**3.4.17 (App Store: Jan 24, 2024)**
 
 - Adds Simplified Chinese translation.
 
-**3.4.15 (App Store: Dec 13, 2023)**
-
-- Localized product name on App Store product page for Chinese (Traditional).
-
-**3.4.13 (App Store: Dec 13, 2023)**
+**3.4.13, 3.4.15 (App Store: Dec 13, 2023)**
 
 - Adds Traditional Chinese translation.
+- Localized product name on App Store product page for Chinese (Traditional).
 
 **3.4.11 (App Store: Nov 1, 2023)**
 
