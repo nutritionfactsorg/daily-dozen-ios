@@ -12,6 +12,8 @@ target 'DailyDozen' do
   pod 'FSCalendar', '~> 2.8.4'
   ##pod 'RealmSwift', '~> 4.4.1'
   ##pod 'RealmSwift', '~> 10.40.2'
+  ##pod 'RealmSwift', '~> 10.44.0'
+  ##pod 'RealmSwift', '~> 10.46.0'
   pod 'RealmSwift', '~> 10.44.0'
   pod 'SimpleAnimation', '~> 0.4.2'
   
@@ -64,11 +66,11 @@ target 'DailyDozen' do
   ## Installing nanopb 2.30909.0
 
   ##
-  ## For Analytics WITH IDFA collection capability
-  #pod 'Firebase/Analytics'
-  ## For Analytics WITHOUG IDFA collection capability
-  pod 'Firebase/AnalyticsWithoutAdIdSupport'
-  
+  ### For Analytics WITH IDFA collection capability
+  ##pod 'Firebase/Analytics'
+  ### For Analytics WITHOUG IDFA collection capability
+  ##pod 'Firebase/AnalyticsWithoutAdIdSupport'
+  pod 'Firebase/AnalyticsWithoutAdIdSupport', '~> 10.20.0'
   
   target 'DailyDozenTests' do
     inherit! :search_paths
