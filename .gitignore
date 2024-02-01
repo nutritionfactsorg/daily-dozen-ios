@@ -1,9 +1,8 @@
 ### see: https://github.com/github/gitignore  # example templates
 
-## place for local-only notes.
+## place for local-only notes. e.g. *__LOCAL.md, *__LOCAL.txt 
 *__LOCAL
-*__LOCAL.md
-
+*__LOCAL.*
 
 #################
 ## Apple macOS ##
