@@ -71,7 +71,7 @@ public class LogService {
     /// Log line numbers to watch: [Int]  
     public var watchpointList: [Int] = []
     ///
-    private var logfileUrl: URL?
+    public var logfileUrl: URL?
     
     /// DateFromatter used internally.
     private let dateFormatter = DateFormatter()

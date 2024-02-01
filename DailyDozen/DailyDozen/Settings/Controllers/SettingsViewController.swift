@@ -130,13 +130,15 @@ class SettingsViewController: UITableViewController {
         logit.info("::::: SIMULATOR ENVIRONMENT: SettingsViewController :::::")
         advancedUtilitiesTableViewCell.isHidden = false // :ADVANCED:DEBUG:
         //advancedUtilitiesTableViewCell.isHidden = true // :ADVANCED:RELEASE:
-        print("ADVANCED UTILITIES advancedUtilitiesTableViewCell.isHidden == \(advancedUtilitiesTableViewCell.isHidden)")
-        logit.debug(":::::::::::::::::::::::::::::::::::::::::::::::::::::::::\n")
+        logit.debug("""
+        ADVANCED UTILITIES advancedUtilitiesTableViewCell.isHidden == \(advancedUtilitiesTableViewCell.isHidden)
+        logit.debug(":::::::::::::::::::::::::::::::::::::::::::::::::::::::::\n
+        """)
         #endif
         #if DEBUG
         advancedUtilitiesTableViewCell.isHidden = false // :ADVANCED:#DEBUG:
         //advancedUtilitiesTableViewCell.isHidden = true // :ADVANCED:#RELEASE:
-        print("ADVANCED UTILITIES advancedUtilitiesTableViewCell.isHidden == \(advancedUtilitiesTableViewCell.isHidden)")
+        logit.debug("ADVANCED UTILITIES advancedUtilitiesTableViewCell.isHidden == \(advancedUtilitiesTableViewCell.isHidden)")
         #endif
     }
     
@@ -267,7 +269,7 @@ class SettingsViewController: UITableViewController {
     }
     
     //@IBAction func doAppearanceModeChanged(_ sender: UISegmentedControl) {
-    //    print(":TBD: doAppearanceModeChanged not implemented")
+    //    logit.debug(":TBD: doAppearanceModeChanged not implemented")
     //}
     
     var backupFilename: String?

@@ -314,7 +314,7 @@ extension Date {
             if let date = date {
                 if date <= dateEnding {
                     let weekDay = calendar.component(.weekday, from: date)
-                    print(date, weekDay)
+                    logit.debug("\(date), \(weekDay)")
                     if selectedWeekdays.contains(weekDay) {
                         matchingDates.append(date)
                     }

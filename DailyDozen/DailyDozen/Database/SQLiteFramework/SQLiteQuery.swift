@@ -79,7 +79,7 @@ public class SQLiteQuery {
     public var pStatementId: Int?
     
     public init(db: SQLiteDatabase) {
-        // print("•  SQLiteQuery.init()")
+        // logit.debug("•  SQLiteQuery.init()")
         self._db = db
         self._sql = ""
         self._laststatus = SQLiteStatus(
@@ -95,7 +95,7 @@ public class SQLiteQuery {
     /// Construct SQLiteQuery from an SQL query String. 
     /// A non-empty query string will be executed.
     public init(sql: String = "", db: SQLiteDatabase) {
-        // print("•  SQLiteQuery.init()")
+        // logit.debug("•  SQLiteQuery.init()")
         
         self._db = db
         self._sql = ""
@@ -113,7 +113,7 @@ public class SQLiteQuery {
             if statementPrepare(sql) == QUERY_NO_ERROR {
                 statementExecute()
             } else {
-                print("ERROR: query.statementPrepare sql==\(sql)")
+                logit.error("ERROR: query.statementPrepare sql==\(sql)")
                 fatalError()
             }
         }
@@ -217,7 +217,7 @@ public class SQLiteQuery {
                     
                     switch sqlite3_column_type(pStatement, i) {
                     case SQLITE_BLOB:
-                        // print("SQLITE_BLOB:    \(columnName)")
+                        // logit.debug("SQLITE_BLOB:    \(columnName)")
                         fatalError("ERROR: statementExecute() SQLITE_BLOB unsupported")
                     case SQLITE_FLOAT:  
                         let v: Double = sqlite3_column_double(pStatement, i)
@@ -225,7 +225,7 @@ public class SQLiteQuery {
                         // :Ubuntu: error: cannot convert value of type 'Double' to type 'AnyObject?' in coercion
                         //  as AnyObject?
                         rowData.append(v) 
-                        // print("SQLITE_FLOAT:   \(columnName)=\(v)")
+                        // logit.debug("SQLITE_FLOAT:   \(columnName)=\(v)")
                     case SQLITE_INTEGER:
                         // let v:Int32 = sqlite3_column_int(pStatement, i)
                         let v: Int = Int(sqlite3_column_int64(pStatement, i)) // Int64
@@ -235,10 +235,10 @@ public class SQLiteQuery {
                         // as! AnyObject --> warn, always succeeds
                         // as AnyObject 
                         rowData.append(v) // v as AnyObject?
-                        // print("SQLITE_INTEGER: \(columnName)=\(v)")
+                        // logit.debug("SQLITE_INTEGER: \(columnName)=\(v)")
                     case SQLITE_NULL:  
                         // :?: add null objects?  ... preferrably not. 
-                        // print("SQLITE_NULL:    \(columnName)")
+                        // logit.debug("SQLITE_NULL:    \(columnName)")
                         // thisRow += [nil]
                         rowData.append(nil)
                     case SQLITE_TEXT: // SQLITE3_TEXT
@@ -249,15 +249,15 @@ public class SQLiteQuery {
                             let s = String(cString: v)
                             //  as AnyObject?
                             rowData.append(s) 
-                            // print("SQLITE_TEXT:    \(columnName)=\(s!)")
+                            // logit.error("SQLITE_TEXT:    \(columnName)=\(s!)")
                         } else {
                             setStatusError(context: "statementExecute", message: "SQLITE_TEXT: not convertable")
-                            print("ERROR: statementExecute() SQLITE_TEXT: not convertable")
+                            logit.error("ERROR: statementExecute() SQLITE_TEXT: not convertable")
                             fatalError("ERROR: statementExecute() SQLITE_TEXT: not convertable") // :REMOVE:
                         }            
                     default:
                         setStatusError(context: "statementExecute", message: "sqlite3_column_type not found")
-                        print("ERROR: statementExecute() sqlite3_column_type not found")
+                        logit.error("ERROR: statementExecute() sqlite3_column_type not found")
                         fatalError("ERROR: statementExecute() sqlite3_column_type not found") // :REMOVE:
                     }
                 }          
@@ -314,7 +314,7 @@ public class SQLiteQuery {
             dbMessage: message
         )
         setStatus(err)
-        print(err.toString())
+        logit.error(err.toString())
     }
     
     // :WIP:ACCESS_LEVEL.FILEPRIVATE
@@ -327,7 +327,7 @@ public class SQLiteQuery {
                 dbMessage: errmsg
             )
             setStatus(err)
-            print(err.toString())
+            logit.error(err.toString())
         } else {
             let err = SQLiteStatus(
                 type: SQLiteStatusType.statementError, 
@@ -336,7 +336,7 @@ public class SQLiteQuery {
                 dbMessage: "String.fromCString failed"
             )
             setStatus(err)
-            print(err.toString())
+            logit.error(err.toString())
         }
     }
     
@@ -349,7 +349,7 @@ public class SQLiteQuery {
             dbMessage: "SUCCESS"
         )
         setStatus(ok)
-        // print(ok.toString())
+        // logit.debug(ok.toString())
     }
     
 }

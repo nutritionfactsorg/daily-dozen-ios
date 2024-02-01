@@ -79,13 +79,13 @@ public class SQLiteDatabase {
     /// 
     public func open() -> Bool {
         let timeOut: Int32 = 
-            dbOptions[ConnectionOption.sqlite_BUSY_TIMEOUT] as? Int32 ?? 5000
+        dbOptions[ConnectionOption.sqlite_BUSY_TIMEOUT] as? Int32 ?? 5000
         
         let openReadOnlyOption: Bool = 
-            dbOptions[ConnectionOption.sqlite_OPEN_READONLY] as? Bool ?? false
+        dbOptions[ConnectionOption.sqlite_OPEN_READONLY] as? Bool ?? false
         
         let openUriOption: Bool =
-            dbOptions[ConnectionOption.sqlite_OPEN_URI] as? Bool ?? false
+        dbOptions[ConnectionOption.sqlite_OPEN_URI] as? Bool ?? false
         
         if isOpen() {
             let closedOk: Bool = close()
@@ -141,13 +141,13 @@ public class SQLiteDatabase {
             }
             
             dbPtr = nil
-
+            
             setStatusOk(context: "SUCCESS/close")
             return true
         }
         return true // 
     }
-
+    
     ///   - Returns: `true` if the database is open.
     public func isOpen() -> Bool {
         return dbPtr != nil ? true : false 
@@ -169,7 +169,7 @@ public class SQLiteDatabase {
     ///
     public func importSqlFile(url: URL, verbose: Bool = false) {
         guard var fileContent = try? String(contentsOf: url, encoding: String.Encoding.utf8)
-            else {return}
+        else {return}
         
         // prepare file statements
         fileContent = SQLiteDatabase.removingBlockComments(sql: fileContent)
@@ -190,9 +190,9 @@ public class SQLiteDatabase {
         }
         
         if verbose {
-            print("--- SQL from file: ---\n\(url.path)")
+            logit.verbose("--- SQL from file: ---\n\(url.path)")
             for c in commands {
-                print("---\n\(c)")
+                logit.verbose("---\n\(c)")
             }
         }
         
@@ -274,7 +274,7 @@ public class SQLiteDatabase {
                     } else if charWas == "'" && !isEscaped && charIs != "'" {
                         inQuote = false
                     }
-  
+                    
                     if let cw = charWas {
                         lineResult.append(cw)
                         charWas = charIs
@@ -364,7 +364,7 @@ public class SQLiteDatabase {
             dbMessage: "String.fromCString failed"
         )
         setStatus(err)
-        print(err.toString())
+        logit.error(err.toString())
     }
     
     // :WIP:ACCESS_LEVEL.FILEPRIVATE
@@ -377,7 +377,7 @@ public class SQLiteDatabase {
                 dbMessage: errmsg
             )
             setStatus(err)
-            print(err.toString())
+            logit.error(err.toString())
         } else {
             let err = SQLiteStatus(
                 type: SQLiteStatusType.connectionError, 
@@ -386,7 +386,7 @@ public class SQLiteDatabase {
                 dbMessage: "String.fromCString failed"
             )
             setStatus(err)
-            print(err.toString())
+            logit.error(err.toString())
         }
     }
     
@@ -399,9 +399,9 @@ public class SQLiteDatabase {
             dbMessage: "SUCCESS"
         )
         setStatus(ok)
-        // print(ok.toString())
+        // logit.debug(ok.toString())
     }
-
+    
     // MARK: - Foreign Keys
     
     public func foreignkeys(_ state: Bool) {
@@ -423,7 +423,7 @@ public class SQLiteDatabase {
             // result.columnNames = ["foreign_keys"]
             // result.data = [[Optional(0)]]
             if let a = result.data.first,
-                let b = a.first, 
+               let b = a.first, 
                 let c = b as? Int {
                 let state = Bool(int: c)
                 setStatusOk(context: "foreignkeys query ok (\(state.rawInt()))")

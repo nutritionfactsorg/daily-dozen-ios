@@ -266,7 +266,7 @@ public class SQLiteApi {
         let sql = "BEGIN TRANSACTION;"
         let query = SQLiteQuery(sql: sql, db: dailydozenDb)
         if query.getStatus().type != .noError {
-            print("FAIL: SqlDataWeightModel create(_ item: SqlDataWeightRecord))")
+            logit.error("FAIL: SqlDataWeightModel create(_ item: SqlDataWeightRecord))")
         }
     }
     
@@ -274,7 +274,7 @@ public class SQLiteApi {
         let sql = "COMMIT TRANSACTION;"
         let query = SQLiteQuery(sql: sql, db: dailydozenDb)
         if query.getStatus().type != .noError {
-            print("FAIL: SqlDataWeightModel create(_ item: SqlDataWeightRecord))")
+            logit.error("FAIL: SqlDataWeightModel create(_ item: SqlDataWeightRecord))")
         }
     }
 }

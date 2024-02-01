@@ -27,39 +27,21 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     ) -> Bool {
         logit.logLevel = LogServiceLevel.off
         
-        #if DEBUG && WITH_ANALYTICS
-        print("SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG WITH_ANALYTICS")
-        #elseif DEBUG && WITHOUT_ANALYTICS
-        print("SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG WITHOUT_ANALYTICS")
-        #endif
-        
-        // =====  SIMULATOR ENVIRONMENT  =====
-        #if targetEnvironment(simulator)
-        let bundle = Bundle(for: type(of: self))
-        print("""
-        \n::::: SIMULATOR ENVIRONMENT :::::
-        Bundle & Resources Path:\n\(bundle.bundlePath)\n
-        App Documents Directory:\n\(URL.inDocuments().path)\n
-        App Library Directory:\n\(URL.inLibrary().path)\n
-        :::::::::::::::::::::::::::::::::\n
-        """)
-        #endif
-        
         // =====  DEBUG SETUP  =====
         #if DEBUG
         logit.logLevel = LogServiceLevel.verbose
+        logit.useLogFile(nameToken: "dev") // logit.useLogFileDefault()
 
         let identifier = Bundle.main.bundleIdentifier ?? "not found"
-        print("PRODUCT_BUNDLE_IDENTIFIER = \(identifier)")
+        logit.info("PRODUCT_BUNDLE_IDENTIFIER = \(identifier)")
         
-        printDeviceInfo()
-        printLocaleInfo()
+        logDeviceInfo()
+        logLocaleInfo()
         
-        print("""
+        logit.info("""
         :DEBUG:WAYPOINT: AppDelegate didFinishLaunchingWithOptions
         \((URL.inDocuments().path))\n
         """)
-        logit.useLogFile(nameToken: "dev") // logit.useLogFileDefault()
         logit.debug("""
         ::::: DEBUG :::::
         AppDelegate didFinishLaunchingWithOptions DEBUG enabled
@@ -82,6 +64,54 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         SQLiteBuiltInTest.shared.setupInitialState(s) // :GTD:B:√: initial DB
         logit.info("••DB_STATE••INITIAL_DEBUG_SETUP•••END••• InitialState=\(s)\n")
         
+        #endif
+        
+        // =====  ANALYTICS ENVIRONMENT  =====
+        #if DEBUG && WITH_ANALYTICS
+        logit.info("SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG WITH_ANALYTICS")
+        #elseif DEBUG && WITHOUT_ANALYTICS
+        logit.info("SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG WITHOUT_ANALYTICS")
+        #endif
+        
+        // =====  SIMULATOR ENVIRONMENT  =====
+        #if targetEnvironment(simulator)
+        let bundle = Bundle(for: type(of: self))
+        logit.info("""
+        \n::::: SIMULATOR ENVIRONMENT :::::
+        Bundle & Resources Path:\n\(bundle.bundlePath)\n
+        App Documents Directory:\n\(URL.inDocuments().path)\n
+        App Library Directory:\n\(URL.inLibrary().path)\n
+        :::::::::::::::::::::::::::::::::\n
+        """)
+        #endif
+        
+        // =====  DEBUG: XCODE 15.1/.2/… DEBUGGER WORKAROUND  =====
+        #if DEBUG
+        logit.logLevel = LogServiceLevel.verbose
+        let logitpath = logit.logfileUrl?.absoluteString ?? "logpath not available"
+        logit.debug("""
+        \n::::: WORKAROUND: PAUSE 1 :::::
+        Workaround: Xcode 15.• debugger not auto-attaching to iOS 15/16 simulator
+        logit file path:
+        \(logitpath)
+        
+        CAUTION: 
+        • Copy any required info (e.g. logit path) before a detach/attach cycle.
+        • Currently, detach/attach clears the debug console.
+        • Any print() further statements may not have debug console output.
+        • The logit file will continue to update.
+        
+        NEXT STEP: detach
+        :::::::::::::::::::::::::::::::::\n
+        """)
+        pause()
+
+        logit.debug("""
+        \n::::: WORKAROUND: PAUSE 2 :::::
+        NEXT STEP: attach
+        :::::::::::::::::::::::::::::::::\n
+        """)
+        pause()
         #endif
         
         // =====  GLOBAL SETUP  =====
@@ -132,10 +162,10 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         application.applicationIconBadgeNumber = 0
     }
     
-    func printDeviceInfo() {
+    func logDeviceInfo() {
         let device = UIDevice.current
         //let uiIdiom = device.userInterfaceIdiom // phone, pad, tv, mac
-        print("""
+        logit.info("""
         DEVICE:
                      model = \(device.model)
                       name = \(device.name)
@@ -145,9 +175,9 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         """)
     }
     
-    func printLocaleInfo() {
+    func logLocaleInfo() {
         let currentLocale = Locale.current
-        print("""
+        logit.info("""
         LOCALE:
           decimalSeparator = \(currentLocale.decimalSeparator ?? "nil")
         

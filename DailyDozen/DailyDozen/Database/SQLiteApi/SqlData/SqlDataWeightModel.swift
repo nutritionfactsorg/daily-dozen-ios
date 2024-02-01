@@ -35,7 +35,7 @@ public struct SqlDataWeightModel {
 
         let query = SQLiteQuery(sql: sqlItemA + sqlItemB, db: api.dailydozenDb)
         if query.getStatus().type != .noError {
-            print("FAIL: SqlDataWeightModel create(_ item: SqlDataWeightRecord))")
+            logit.error("FAIL: SqlDataWeightModel create(_ item: SqlDataWeightRecord))")
         }
     }
     
@@ -69,7 +69,7 @@ public struct SqlDataWeightModel {
         let query: SQLiteQuery = SQLiteQuery(sql: sql, db: api.dailydozenDb)
         if let result = query.getResult() {
             if result.data.count > 1 {
-                print("ERROR: item_puid NOT UNIQUE")
+                logit.error("ERROR: item_puid NOT UNIQUE")
                 return nil
             }
             
@@ -141,9 +141,9 @@ public struct SqlDataWeightModel {
         );
         """
         
-        print("• sql\n\(sql)")
+        logit.debug("• sql\n\(sql)")
         let query = SQLiteQuery(sql: sql, db: api.dailydozenDb)
-        print("query \(query.getStatus().toString())")
+        logit.debug("query \(query.getStatus().toString())")
     }
     
 }

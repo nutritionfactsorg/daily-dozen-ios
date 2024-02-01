@@ -80,8 +80,8 @@ class DozeEntryRow: UITableViewCell {
         
         //if itemType == .dozeBeverages || itemType == .dozeWholeGrains { // :DEBUG:
             //CGRect(x, y, width, height) or CGRect(origin, size)
-            //print("tag=\(tag) \(itemType.imageName) width=\(self.frame.width)")
-            //print(
+            //logit.debug("tag=\(tag) \(itemType.imageName) width=\(self.frame.width)")
+            //logit.debug(
             //    """
             //    :DEBUG: tag=\(tag) imageName='\(itemType.imageName)' heading='\(itemType.headingDisplay)'
             //               DozeEntryRow.frame=\(self.frame)

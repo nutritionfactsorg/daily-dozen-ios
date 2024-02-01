@@ -35,7 +35,7 @@ public struct SqlDataCountModel {
 
         let query = SQLiteQuery(sql: sqlItemA + sqlItemB, db: api.dailydozenDb)
         if query.getStatus().type != .noError {
-            print("FAIL: ItemModel create(_ item: ItemRecord))")
+            logit.error("FAIL: ItemModel create(_ item: ItemRecord))")
         }
     }
     
@@ -76,7 +76,7 @@ public struct SqlDataCountModel {
         let query: SQLiteQuery = SQLiteQuery(sql: sql, db: api.dailydozenDb)
         if let result = query.getResult() {
             if result.data.count > 1 {
-                print("ERROR: item_puid NOT UNIQUE")
+                logit.error("ERROR: item_puid NOT UNIQUE")
                 return nil
             }
             
