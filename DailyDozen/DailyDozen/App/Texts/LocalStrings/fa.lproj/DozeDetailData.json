@@ -1,0 +1,1142 @@
+{
+  "itemsDict" : {
+    "dozeBeans" : {
+      "heading" : "حبوبات",
+      "servings" : [
+        {
+          "imperial" : "یک‌چهارم فنجان حُمُص یا دیپ لوبیا",
+          "metric" : "۶۰ گرم حُمُص یا دیپ لوبیا"
+        },
+        {
+          "imperial" : "یک‌دوم فنجان لوبیا، لپه، یا عدس پخته",
+          "metric" : "۹۰ گرم لوبیا، لپه، یا عدس پخته"
+        },
+        {
+          "imperial" : "یک‌دوم فنجان توفو یا تِمپه",
+          "metric" : "۱۰۰ گرم توفو یا تِمپه"
+        },
+        {
+          "imperial" : "۱ فنجان نخود سبز یا نخود فرنگی",
+          "metric" : "۱۳۰ گرم نخود سبز یا نخود فرنگی"
+        },
+        {
+          "imperial" : "۱ فنجان حبوبات جوانه‌زده تازه (عدس، ماش)",
+          "metric" : "۱۰۰ گرم حبوبات جوانه‌زده تازه (عدس، ماش)"
+        }
+      ],
+      "topic" : "topics/beans",
+      "varieties" : [
+        {
+          "text" : "لوبیا سیاه",
+          "topic" : "topics/black-beans"
+        },
+        {
+          "text" : "لوبیا چشم‌بلبلی",
+          "topic" : ""
+        },
+        {
+          "text" : "لوبیا عروس",
+          "topic" : ""
+        },
+        {
+          "text" : "لوبیا کشاورزی",
+          "topic" : ""
+        },
+        {
+          "text" : "نخود",
+          "topic" : "topics/chickpeas"
+        },
+        {
+          "text" : "اِدامامه (سویای نارس پخته‌شده)",
+          "topic" : "topics/edamame"
+        },
+        {
+          "text" : "نخود فرنگی",
+          "topic" : ""
+        },
+        {
+          "text" : "سویا",
+          "topic" : ""
+        },
+        {
+          "text" : "لوبیا قرمز",
+          "topic" : "topics/kidney-beans"
+        },
+        {
+          "text" : "عدس (سیاه، سبز، زرد، قهوه‌ای و قرمز)",
+          "topic" : "topics/lentils"
+        },
+        {
+          "text" : "میسو (خمیر سویا)",
+          "topic" : "topics/miso"
+        },
+        {
+          "text" : "لوبیا سفید",
+          "topic" : "topics/navy-beans"
+        },
+        {
+          "text" : "لوبیا چیتی",
+          "topic" : "topics/pinto-beans"
+        },
+        {
+          "text" : "لوبیا قرمز ریز",
+          "topic" : ""
+        },
+        {
+          "text" : "لپه (زرد یا سبز)",
+          "topic" : "topics/split-peas"
+        },
+        {
+          "text" : "تِمپه",
+          "topic" : "topics/tempeh"
+        }
+      ]
+    },
+    "dozeBerries" : {
+      "heading" : "توت‌ها",
+      "servings" : [
+        {
+          "imperial" : "یک‌دوم فنجان تازه یا منجمد",
+          "metric" : "۶۰ گرم تازه یا منجمد"
+        },
+        {
+          "imperial" : "یک‌چهارم فنجان خشک‌شده",
+          "metric" : "۴۰ گرم خشک‌شده"
+        }
+      ],
+      "topic" : "topics/berries",
+      "varieties" : [
+        {
+          "text" : "توت آکای",
+          "topic" : "topics/acai-berries"
+        },
+        {
+          "text" : "زرشک",
+          "topic" : "topics/barberries"
+        },
+        {
+          "text" : "تمشک",
+          "topic" : "topics/blackberries"
+        },
+        {
+          "text" : "توت‌آبی/سیاه گیله/بلوبِری",
+          "topic" : "topics/blueberries"
+        },
+        {
+          "text" : "گیلاس یا آلبالو",
+          "topic" : "topics/cherries"
+        },
+        {
+          "text" : "انگور",
+          "topic" : "topics/grapes"
+        },
+        {
+          "text" : "توت خرس/کرَن‌بری",
+          "topic" : "topics/cranberries"
+        },
+        {
+          "text" : "گوجی‌بِری",
+          "topic" : "topics/goji-berries"
+        },
+        {
+          "text" : "کامکوات",
+          "topic" : ""
+        },
+        {
+          "text" : "توت",
+          "topic" : ""
+        },
+        {
+          "text" : "رَزبِری (سیاه یا قرمز)",
+          "topic" : "topics/raspberries"
+        },
+        {
+          "text" : "توت فرنگی",
+          "topic" : "topics/strawberries"
+        }
+      ]
+    },
+    "dozeBeverages" : {
+      "heading" : "نوشیدنی‌ها",
+      "servings" : [
+        {
+          "imperial" : "یک لیوان (۱۲ اونس)",
+          "metric" : "یک لیوان (۳۵۰ میلی‌لیتر)"
+        }
+      ],
+      "topic" : "topics/beverages",
+      "varieties" : [
+        {
+          "text" : "چای سیاه",
+          "topic" : "topics/black-tea"
+        },
+        {
+          "text" : "چای ماسالا",
+          "topic" : "topics/chai-tea"
+        },
+        {
+          "text" : "چای وانیل و بابونه",
+          "topic" : "topics/chamomile-tea"
+        },
+        {
+          "text" : "قهوه",
+          "topic" : "topics/coffee"
+        },
+        {
+          "text" : "چای اِرل گرِی",
+          "topic" : "topics/earl-grey-tea"
+        },
+        {
+          "text" : "چای سبز",
+          "topic" : "topics/green-tea"
+        },
+        {
+          "text" : "چای ترش",
+          "topic" : "topics/hibiscus-tea"
+        },
+        {
+          "text" : "شکلات داغ/هات چاکلت",
+          "topic" : ""
+        },
+        {
+          "text" : "چای گل یاس",
+          "topic" : ""
+        },
+        {
+          "text" : "چای بادرَنجبویه",
+          "topic" : "topics/lemon-balm"
+        },
+        {
+          "text" : "چای ماچا",
+          "topic" : "topics/matcha"
+        },
+        {
+          "text" : "چای شکوفه بادام و اولانگ",
+          "topic" : "topics/oolong-tea"
+        },
+        {
+          "text" : "چای نعناع",
+          "topic" : "topics/peppermint"
+        },
+        {
+          "text" : "چای قرمز/چای رویبوس",
+          "topic" : "topics/rooibos-tea"
+        },
+        {
+          "text" : "آب",
+          "topic" : "topics/water"
+        },
+        {
+          "text" : "چای سفید",
+          "topic" : "topics/white-tea"
+        }
+      ]
+    },
+    "dozeExercise" : {
+      "heading" : "ورزش",
+      "servings" : [
+        {
+          "imperial" : "۹۰ دقیقه فعالیت با شدت متوسط",
+          "metric" : "۹۰ دقیقه فعالیت با شدت متوسط"
+        },
+        {
+          "imperial" : "۴۰ دقیقه فعالیت با شدت بالا",
+          "metric" : "۴۰ دقیقه فعالیت با شدت بالا"
+        }
+      ],
+      "topic" : "topics/exercise",
+      "varieties" : [
+        {
+          "text" : "دوچرخه‌سواری",
+          "topic" : ""
+        },
+        {
+          "text" : "قایق‌رانی",
+          "topic" : ""
+        },
+        {
+          "text" : "رقص",
+          "topic" : ""
+        },
+        {
+          "text" : "بازی وسطی",
+          "topic" : ""
+        },
+        {
+          "text" : "اسکی آلپاین",
+          "topic" : ""
+        },
+        {
+          "text" : "شمشیربازی",
+          "topic" : ""
+        },
+        {
+          "text" : "تپه‌نوردی",
+          "topic" : ""
+        },
+        {
+          "text" : "کار منزل/خانه‌داری",
+          "topic" : ""
+        },
+        {
+          "text" : "اسکیت روی یخ",
+          "topic" : ""
+        },
+        {
+          "text" : "اسکیت این‌لاین",
+          "topic" : ""
+        },
+        {
+          "text" : "ژانگولربازی/تردستی با توپ",
+          "topic" : ""
+        },
+        {
+          "text" : "پریدن روی جَستانه/ترامپولین",
+          "topic" : ""
+        },
+        {
+          "text" : "قایق‌سواری پدالی",
+          "topic" : ""
+        },
+        {
+          "text" : "بازی فریزبی",
+          "topic" : ""
+        },
+        {
+          "text" : "رول‌اسکیت/پالیزه",
+          "topic" : ""
+        },
+        {
+          "text" : "پرتاب توپ در سبد",
+          "topic" : ""
+        },
+        {
+          "text" : "پارو زدن برف سبک",
+          "topic" : ""
+        },
+        {
+          "text" : "اسکیت‌بُردسواری",
+          "topic" : ""
+        },
+        {
+          "text" : "غواصی سطحی/غواصی کم‌عمق/غواصی با لوله تنفسی",
+          "topic" : ""
+        },
+        {
+          "text" : "موج‌سواری",
+          "topic" : ""
+        },
+        {
+          "text" : "شنا",
+          "topic" : ""
+        },
+        {
+          "text" : "تنیس دو‌به‌دو/دوبل",
+          "topic" : ""
+        },
+        {
+          "text" : "پای دوچرخه (شنا)",
+          "topic" : ""
+        },
+        {
+          "text" : "راه رفتن تند (۶/۵ کیلومتر بر ساعت)",
+          "topic" : ""
+        },
+        {
+          "text" : "اِروبیک آبی",
+          "topic" : ""
+        },
+        {
+          "text" : "اسکی روی آب",
+          "topic" : ""
+        },
+        {
+          "text" : "کارهای حیاط",
+          "topic" : ""
+        },
+        {
+          "text" : "یوگا",
+          "topic" : ""
+        },
+        {
+          "text" : "کوله‌گردی",
+          "topic" : ""
+        },
+        {
+          "text" : "بسکتبال",
+          "topic" : ""
+        },
+        {
+          "text" : "دوچرخه‌سواری در سربالایی",
+          "topic" : ""
+        },
+        {
+          "text" : "تمرینات گردشی/چرخشی/دایره‌ای با وزنه",
+          "topic" : ""
+        },
+        {
+          "text" : "اسکی صحرانوردی/کراس کانتری",
+          "topic" : ""
+        },
+        {
+          "text" : "فوتبال آمریکایی",
+          "topic" : ""
+        },
+        {
+          "text" : "هاکی",
+          "topic" : ""
+        },
+        {
+          "text" : "دوی آهسته",
+          "topic" : ""
+        },
+        {
+          "text" : "پروانه",
+          "topic" : ""
+        },
+        {
+          "text" : "طناب‌بازی",
+          "topic" : ""
+        },
+        {
+          "text" : "لاکراس",
+          "topic" : ""
+        },
+        {
+          "text" : "شنای سوئدی",
+          "topic" : ""
+        },
+        {
+          "text" : "بالاکش/بارفیکس/پول‌آپ",
+          "topic" : ""
+        },
+        {
+          "text" : "راکت‌بال",
+          "topic" : ""
+        },
+        {
+          "text" : "صخره‌نوردی",
+          "topic" : ""
+        },
+        {
+          "text" : "راگبی",
+          "topic" : ""
+        },
+        {
+          "text" : "دویدن",
+          "topic" : ""
+        },
+        {
+          "text" : "غواصی با تجهیزات و کپسول اکسیژن",
+          "topic" : ""
+        },
+        {
+          "text" : "تنیس یک‌به‌یک/سینگل",
+          "topic" : ""
+        },
+        {
+          "text" : "فوتبال",
+          "topic" : ""
+        },
+        {
+          "text" : "اسکیت سرعت",
+          "topic" : ""
+        },
+        {
+          "text" : "اِسکواش",
+          "topic" : ""
+        },
+        {
+          "text" : "اِستِپ اِیروبیک",
+          "topic" : ""
+        },
+        {
+          "text" : "زومبا",
+          "topic" : ""
+        },
+        {
+          "text" : "تند راه رفتن در سربالایی",
+          "topic" : ""
+        },
+        {
+          "text" : "دویدن نرم در آب",
+          "topic" : ""
+        }
+      ]
+    },
+    "dozeFlaxseeds" : {
+      "heading" : "تخم کتان",
+      "servings" : [
+        {
+          "imperial" : "۱ قاشق غذاخوری آسیاب‌شده",
+          "metric" : "۱ قاشق غذاخوری آسیاب‌شده"
+        }
+      ],
+      "topic" : "topics/flax-seeds",
+      "varieties" : [
+        {
+          "text" : "تخم کتان قهوه‌ای",
+          "topic" : ""
+        },
+        {
+          "text" : "تخم کتان طلایی",
+          "topic" : ""
+        }
+      ]
+    },
+    "dozeFruitsOther" : {
+      "heading" : "سایر میوه‌ها",
+      "servings" : [
+        {
+          "imperial" : "۱ میوه با اندازه متوسط",
+          "metric" : "۱ میوه با اندازه متوسط"
+        },
+        {
+          "imperial" : "۱ فنجان میوه خردشده",
+          "metric" : "۱۲۰ گرم میوه خردشده"
+        },
+        {
+          "imperial" : "یک‌چهارم فنجان میوه خشک‌شده",
+          "metric" : "۴۰ گرم میوه خشک‌شده"
+        }
+      ],
+      "topic" : "topics/fruit",
+      "varieties" : [
+        {
+          "text" : "سیب",
+          "topic" : "topics/apples"
+        },
+        {
+          "text" : "زردآلو",
+          "topic" : "topics/apricots"
+        },
+        {
+          "text" : "آووکادو",
+          "topic" : "topics/avocados"
+        },
+        {
+          "text" : "موز",
+          "topic" : "topics/bananas"
+        },
+        {
+          "text" : "گرمک",
+          "topic" : "topics/cantaloupe"
+        },
+        {
+          "text" : "یافا",
+          "topic" : ""
+        },
+        {
+          "text" : "خرما",
+          "topic" : "topics/dates"
+        },
+        {
+          "text" : "انجیر",
+          "topic" : ""
+        },
+        {
+          "text" : "نارَنگور/گریپ‌فروت",
+          "topic" : "topics/grapefruit"
+        },
+        {
+          "text" : "طالبی",
+          "topic" : ""
+        },
+        {
+          "text" : "کیوی",
+          "topic" : "topics/kiwifruit"
+        },
+        {
+          "text" : "لیموترش",
+          "topic" : "topics/lemons"
+        },
+        {
+          "text" : "لیموی شیراز/لیموترش کوچک",
+          "topic" : "topics/limes"
+        },
+        {
+          "text" : "سُرخالو/لیچی",
+          "topic" : ""
+        },
+        {
+          "text" : "انبه",
+          "topic" : "topics/mango"
+        },
+        {
+          "text" : "شلیل",
+          "topic" : ""
+        },
+        {
+          "text" : "پرتقال",
+          "topic" : "topics/oranges"
+        },
+        {
+          "text" : "پاپایا",
+          "topic" : ""
+        },
+        {
+          "text" : "میوه شهوت/پشن‌فروت",
+          "topic" : ""
+        },
+        {
+          "text" : "هلو",
+          "topic" : "topics/peaches"
+        },
+        {
+          "text" : "گلابی",
+          "topic" : "topics/pears"
+        },
+        {
+          "text" : "آناناس",
+          "topic" : ""
+        },
+        {
+          "text" : "آلو (مخصوصا آلوی سیاه)",
+          "topic" : "topics/plums"
+        },
+        {
+          "text" : "خرمالو",
+          "topic" : ""
+        },
+        {
+          "text" : "انار",
+          "topic" : "topics/pomegranates"
+        },
+        {
+          "text" : "آلو بخارا",
+          "topic" : "topics/prunes"
+        },
+        {
+          "text" : "نارنگی",
+          "topic" : ""
+        },
+        {
+          "text" : "هندوانه",
+          "topic" : "topics/watermelon"
+        }
+      ]
+    },
+    "dozeGreens" : {
+      "heading" : "سبزیجات",
+      "servings" : [
+        {
+          "imperial" : "۱ فنجان خام",
+          "metric" : "۶۰ گرم خام"
+        },
+        {
+          "imperial" : "یک‌دوم فنجان پخته",
+          "metric" : "۹۰ گرم پخته"
+        }
+      ],
+      "topic" : "topics/greens",
+      "varieties" : [
+        {
+          "text" : "منداب راکتی/راکت/آروگولا",
+          "topic" : ""
+        },
+        {
+          "text" : "برگ چغندر",
+          "topic" : "topics/beets"
+        },
+        {
+          "text" : "کلم سبز/کلم‌برگ سبز/سبزی کولارد",
+          "topic" : "topics/collard-greens"
+        },
+        {
+          "text" : "کِیل (سیاه، سبز، و قرمز)",
+          "topic" : "topics/kale"
+        },
+        {
+          "text" : "مخلوط مِسکلون (ترکیبی از انواع سبزیجات سالادی)",
+          "topic" : "topics/salads"
+        },
+        {
+          "text" : "برگ خردل",
+          "topic" : "topics/mustard-greens"
+        },
+        {
+          "text" : "سبزی خوردن",
+          "topic" : ""
+        },
+        {
+          "text" : "اسفناج",
+          "topic" : "topics/spinach"
+        },
+        {
+          "text" : "برگ چغندر",
+          "topic" : "topics/swiss-chard"
+        },
+        {
+          "text" : "برگ شلغم",
+          "topic" : ""
+        }
+      ]
+    },
+    "dozeNuts" : {
+      "heading" : "آجیل‌ها و تخمه‌ها",
+      "servings" : [
+        {
+          "imperial" : "یک‌چهارم فنجان آجیل یا تخمه",
+          "metric" : "۳۰ گرم خشکبار یا تخمه"
+        },
+        {
+          "imperial" : "۲ قاشق غذاخوری کره آجیل یا تخمه",
+          "metric" : "۲ قاشق غذاخوری کره آجیل یا تخمه"
+        }
+      ],
+      "topic" : "topics/nuts",
+      "varieties" : [
+        {
+          "text" : "بادام",
+          "topic" : "topics/almonds"
+        },
+        {
+          "text" : "بادام برزیلی",
+          "topic" : "topics/brazil-nuts"
+        },
+        {
+          "text" : "بادام هندی",
+          "topic" : "topics/cashews"
+        },
+        {
+          "text" : "دانه چیا",
+          "topic" : "topics/chia-seeds"
+        },
+        {
+          "text" : "فندق",
+          "topic" : "topics/hazelnuts"
+        },
+        {
+          "text" : "شاهدانه",
+          "topic" : ""
+        },
+        {
+          "text" : "فندق خامه‌ای/فندق ماکادامیا/فندق استرالیایی",
+          "topic" : "topics/macadamia-nuts"
+        },
+        {
+          "text" : "بادام زمینی",
+          "topic" : "topics/peanuts"
+        },
+        {
+          "text" : "گردوی آمریکایی/پِکان",
+          "topic" : "topics/pecans"
+        },
+        {
+          "text" : "پسته",
+          "topic" : "topics/pistachios"
+        },
+        {
+          "text" : "تخمه کدو",
+          "topic" : "topics/pumpkin-seeds"
+        },
+        {
+          "text" : "کنجد",
+          "topic" : "topics/sesame-seeds"
+        },
+        {
+          "text" : "تخمه آفتاب‌گردان",
+          "topic" : "topics/sunflower-seeds"
+        },
+        {
+          "text" : "گردو",
+          "topic" : "topics/walnuts"
+        }
+      ]
+    },
+    "dozeSpices" : {
+      "heading" : "ادویه‌ها و سبزیجات معطر",
+      "servings" : [
+        {
+          "imperial" : "یک‌چهارم قاشق چای‌خوری زردچوبه",
+          "metric" : "یک‌چهارم قاشق چای‌خوری زردچوبه"
+        },
+        {
+          "imperial" : "هر سبزی معطر و ادویه (بدون نمک) دیگری که از آن لذت می‌برید",
+          "metric" : "هر سبزی معطر و ادویه (بدون نمک) دیگری که از آن لذت می‌برید"
+        }
+      ],
+      "topic" : "topics/spices",
+      "varieties" : [
+        {
+          "text" : "فلفل رنگی",
+          "topic" : "topics/allspice"
+        },
+        {
+          "text" : "زرشک",
+          "topic" : "topics/barberries"
+        },
+        {
+          "text" : "ریحان",
+          "topic" : "topics/basil"
+        },
+        {
+          "text" : "برگ بو",
+          "topic" : ""
+        },
+        {
+          "text" : "هل",
+          "topic" : ""
+        },
+        {
+          "text" : "پودر چیلی",
+          "topic" : ""
+        },
+        {
+          "text" : "گشنیز",
+          "topic" : "topics/cilantro"
+        },
+        {
+          "text" : "دارچین",
+          "topic" : "topics/cinnamon"
+        },
+        {
+          "text" : "میخک",
+          "topic" : "topics/cloves"
+        },
+        {
+          "text" : "گشنیز",
+          "topic" : ""
+        },
+        {
+          "text" : "زیره",
+          "topic" : "topics/cumin"
+        },
+        {
+          "text" : "پودر کاری",
+          "topic" : "topics/curry-powder"
+        },
+        {
+          "text" : "شوید",
+          "topic" : ""
+        },
+        {
+          "text" : "شنبلیله",
+          "topic" : "topics/fenugreek"
+        },
+        {
+          "text" : "سیر",
+          "topic" : "topics/garlic"
+        },
+        {
+          "text" : "زنجبیل",
+          "topic" : "topics/ginger"
+        },
+        {
+          "text" : "ترب کوهی",
+          "topic" : ""
+        },
+        {
+          "text" : "علف لیمو",
+          "topic" : ""
+        },
+        {
+          "text" : "مرزنگوش",
+          "topic" : "topics/marjoram"
+        },
+        {
+          "text" : "پودر خردل",
+          "topic" : "topics/mustard-powder"
+        },
+        {
+          "text" : "جوز هندی",
+          "topic" : "topics/nutmeg"
+        },
+        {
+          "text" : "پونه کوهی",
+          "topic" : "topics/oregano"
+        },
+        {
+          "text" : "پاپریکای دودی",
+          "topic" : ""
+        },
+        {
+          "text" : "جعفری",
+          "topic" : "topics/parsley"
+        },
+        {
+          "text" : "فلفل",
+          "topic" : "topics/pepper"
+        },
+        {
+          "text" : "نعناع",
+          "topic" : "topics/peppermint"
+        },
+        {
+          "text" : "رُزماری",
+          "topic" : "topics/rosemary"
+        },
+        {
+          "text" : "زعفران",
+          "topic" : "topics/saffron"
+        },
+        {
+          "text" : "مریم‌گُلی",
+          "topic" : ""
+        },
+        {
+          "text" : "آویشن",
+          "topic" : ""
+        },
+        {
+          "text" : "زردچوبه",
+          "topic" : "topics/turmeric"
+        },
+        {
+          "text" : "وانیل",
+          "topic" : ""
+        }
+      ]
+    },
+    "dozeVegetablesCruciferous" : {
+      "heading" : "سبزیجات چَلیپایی/صلیبی",
+      "servings" : [
+        {
+          "imperial" : "یک‌دوم فنجان خردشده",
+          "metric" : "۳۰-۸۰ گرم خردشده"
+        },
+        {
+          "imperial" : "یک‌دوم فنجان کلم بروکسل/فندقی",
+          "metric" : "۸۰ گرم کلم بروکسل/فندقی"
+        },
+        {
+          "imperial" : "یک‌چهارم فنجان کلم بروکلی",
+          "metric" : "۱۵ گرم کلم بروکلی"
+        },
+        {
+          "imperial" : "۱ قاشق غذاخوری ترب کوهی",
+          "metric" : "۱ قاشق غذاخوری ترب کوهی"
+        }
+      ],
+      "topic" : "topics/cruciferous-vegetables",
+      "varieties" : [
+        {
+          "text" : "منداب راکتی/راکت/آروگولا",
+          "topic" : ""
+        },
+        {
+          "text" : "باک چوی (نوعی کلم‌برگ چینی)",
+          "topic" : "topics/bok-choy"
+        },
+        {
+          "text" : "کلم بروکلی (از جمله کلم رومی/رومانسکو)",
+          "topic" : "topics/broccoli"
+        },
+        {
+          "text" : "کلم بروکسل",
+          "topic" : "topics/brussels-sprouts"
+        },
+        {
+          "text" : "کلم (سبز، قرمز، پیچ)",
+          "topic" : "topics/cabbage"
+        },
+        {
+          "text" : "گل‌کلم (سفید، سبز، نارنجی و بنفش)",
+          "topic" : "topics/cauliflower"
+        },
+        {
+          "text" : "کلم سبز/کلم‌برگ سبز/سبزی کولارد",
+          "topic" : "topics/collard-greens"
+        },
+        {
+          "text" : "ترب کوهی",
+          "topic" : ""
+        },
+        {
+          "text" : "کلم کِیل (سیاه، سبز، و قرمز)",
+          "topic" : "topics/kale"
+        },
+        {
+          "text" : "کلم قُمری (سبز و بنفش)",
+          "topic" : ""
+        },
+        {
+          "text" : "برگ خردل",
+          "topic" : "topics/mustard-greens"
+        },
+        {
+          "text" : "تربچه",
+          "topic" : ""
+        },
+        {
+          "text" : "برگ شلغم",
+          "topic" : ""
+        },
+        {
+          "text" : "شاهی آبی/ترتیزک آبی/علف چشمه",
+          "topic" : "topics/watercress"
+        }
+      ]
+    },
+    "dozeVegetablesOther" : {
+      "heading" : "سایر سبزیجات",
+      "servings" : [
+        {
+          "imperial" : "۱ فنجان سبزیجات برگ‌دار خام",
+          "metric" : "۶۰ گرم سبزیجات برگ‌دار خام"
+        },
+        {
+          "imperial" : "یک‌دوم فنجان سبزیجات بی‌برگ خام یا پخته",
+          "metric" : "۵۰ گرم سبزیجات بی‌برگ خام یا پخته"
+        },
+        {
+          "imperial" : "یک‌دوم فنجان آب سبزیجات",
+          "metric" : "۱۲۵ میلی‌لیتر"
+        },
+        {
+          "imperial" : "یک‌چهارم فنجان قارچ خشک‌شده",
+          "metric" : "۷ گرم  قارچ خشک‌شده"
+        }
+      ],
+      "topic" : "topics/vegetables",
+      "varieties" : [
+        {
+          "text" : "کنگرفرنگی/آرتیشو",
+          "topic" : "topics/artichokes"
+        },
+        {
+          "text" : "مارچوبه",
+          "topic" : "topics/asparagus"
+        },
+        {
+          "text" : "چغندر",
+          "topic" : "topics/beets"
+        },
+        {
+          "text" : "فلفل دلمه‌ای",
+          "topic" : "topics/bell-peppers"
+        },
+        {
+          "text" : "هویج",
+          "topic" : "topics/carrots"
+        },
+        {
+          "text" : "بلال",
+          "topic" : "topics/corn"
+        },
+        {
+          "text" : "سیر",
+          "topic" : "topics/garlic"
+        },
+        {
+          "text" : "قارچ (دکمه‌ای، صدفی، پُرتابِلّا، و شیتاکه)",
+          "topic" : "topics/mushrooms"
+        },
+        {
+          "text" : "بامیه",
+          "topic" : "topics/okra"
+        },
+        {
+          "text" : "پیاز",
+          "topic" : "topics/onions"
+        },
+        {
+          "text" : "سیب‌زمینی بنفش",
+          "topic" : "topics/potatoes"
+        },
+        {
+          "text" : "کدو حلوایی",
+          "topic" : "topics/pumpkin"
+        },
+        {
+          "text" : "جلبک دریایی (آرامه، دولس، و نوری)",
+          "topic" : "topics/sea-vegetables"
+        },
+        {
+          "text" : "لوبیا سبز",
+          "topic" : ""
+        },
+        {
+          "text" : "کدو (دِلیکاتا، مُسَمّا، و انواع کدو اسپاگتی/سبزیجاتی)",
+          "topic" : "topics/squash"
+        },
+        {
+          "text" : "سیب‌زمینی شیرین/یَم",
+          "topic" : "topics/sweet-potatoes"
+        },
+        {
+          "text" : "گوجه‌فرنگی",
+          "topic" : "topics/tomatoes"
+        },
+        {
+          "text" : "کدو سبز",
+          "topic" : "topics/zucchini"
+        }
+      ]
+    },
+    "dozeWholeGrains" : {
+      "heading" : "غلات کامل/سبوس‌دار",
+      "servings" : [
+        {
+          "imperial" : "یک‌دوم فنجان غلات گرم یا غلات پخته، پاستا یا دانه ذرت",
+          "metric" : "۱۰۰ گرم غلات گرم یا غلات پخته، پاستا یا دانه ذرت"
+        },
+        {
+          "imperial" : "۱ فنجان غلات سرد",
+          "metric" : "۵۰ گرم غلات سرد"
+        },
+        {
+          "imperial" : "۱ تُرتیلا یا ۱ برش نان",
+          "metric" : "۱ ترتیلا یا ۱ برش نان"
+        },
+        {
+          "imperial" : "یک‌دوم نان شیرینی حلقوی یا مافین انگلیسی",
+          "metric" : "یک‌دوم نان شیرینی حلقوی یا مافین انگلیسی"
+        },
+        {
+          "imperial" : "۳ فنجان ذرت بوداده",
+          "metric" : "۳۰ گرم ذرت بوداده"
+        }
+      ],
+      "topic" : "topics/grains",
+      "varieties" : [
+        {
+          "text" : "جو",
+          "topic" : "topics/barley"
+        },
+        {
+          "text" : "گندم سیاه",
+          "topic" : "topics/buckwheat"
+        },
+        {
+          "text" : "ارزن",
+          "topic" : "topics/millet"
+        },
+        {
+          "text" : "جو دوسر",
+          "topic" : "topics/oats"
+        },
+        {
+          "text" : "ذرت بوداده",
+          "topic" : "topics/popcorn"
+        },
+        {
+          "text" : "کینوا",
+          "topic" : "topics/quinoa"
+        },
+        {
+          "text" : "چاودار",
+          "topic" : "topics/rye"
+        },
+        {
+          "text" : "تِف",
+          "topic" : ""
+        },
+        {
+          "text" : "ماکارونی با گندم کامل",
+          "topic" : "topics/pasta"
+        }
+      ]
+    },
+    "otherVitaminB12" : {
+      "heading" : "ویتامین ب۱۲",
+      "servings" : [
+
+      ],
+      "topic" : "topics/vitamin-b12",
+      "varieties" : [
+
+      ]
+    }
+  }
+}

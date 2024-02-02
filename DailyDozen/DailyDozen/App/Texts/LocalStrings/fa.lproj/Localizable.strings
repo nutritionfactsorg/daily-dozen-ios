@@ -1,0 +1,502 @@
+/* DailyDozen Localizable.strings (fa) */
+/* Copyright © 2021 Nutritionfacts.org. All rights reserved. */
+
+/* Date Button Title: ‘Back to today’ */
+"dateBackButtonTitle" = "بازگشت به امروز";
+
+/* Date Button Title: ‘Today’ */
+"dateButtonTitle.today" = "امروز";
+
+/* Doze Detail View subheading: ‘Serving Sizes’ */
+"doze_detail_section_sizes" = "اندازه سهم‌ها (پیشنهادی)";
+
+/* Doze Detail View subheading: ‘Types’ */
+"doze_detail_section_types" = "انواع";
+
+/* Doze Entry View heading: ‘Servings’ */
+"doze_entry_header" = "سهم‌ها";
+
+/* heading for daily data entry item */
+"dozeBeans.heading" = "حبوبات";
+
+/* heading for daily data entry item */
+"dozeBerries.heading" = "توت‌ها";
+
+/* heading for daily data entry item */
+"dozeBeverages.heading" = "نوشیدنی‌ها";
+
+/* heading for daily data entry item */
+"dozeExercise.heading" = "ورزش";
+
+/* heading for daily data entry item */
+"dozeFlaxseeds.heading" = "تخم کتان";
+
+/* heading for daily data entry item */
+"dozeFruitsOther.heading" = "سایر میوه‌ها";
+
+/* heading for daily data entry item */
+"dozeGreens.heading" = "سبزیجات";
+
+/* heading for daily data entry item */
+"dozeNuts.heading" = "آجیل‌ها و تخمه‌ها";
+
+/* Daily Dozen supplement info alert: dismissal button text */
+"dozeOtherInfo.confirm" = "بسیارخب";
+
+/* Daily Dozen supplement info alert: message */
+"dozeOtherInfo.message" = "ویتامین ب۱۲ برای سلامتی‌تان ضروری است؛ اما شامل سهم‌های هرروزه‌تان نمی‌شود./n/n عنوان «ویتامین ب۱۲» در این اپ، به منظور ارائه راهی ساده برای نظارت بر مصرف‌تان آورده شده است.";
+
+/* Daily Dozen daily entry section heading */
+"dozeOtherInfo.section" = "مکمل‌های غذایی";
+
+/* Daily Dozen supplement info alert: title */
+"dozeOtherInfo.title" = "مکمل‌های غذایی";
+
+/* heading for daily data entry item */
+"dozeSpices.heading" = "ادویه‌ها و سبزیجات معطر";
+
+/* heading for daily data entry item */
+"dozeVegetablesCruciferous.heading" = "سبزیجات چَلیپایی/صلیبی";
+
+/* heading for daily data entry item */
+"dozeVegetablesOther.heading" = "سایر سبزیجات";
+
+/* heading for daily data entry item */
+"dozeWholeGrains.heading" = "غلات کامل/سبوس‌دار";
+
+/*  */
+"faq_adapt_question" = "The Daily Dozen is too much/too little food for me! Can I adapt it?";
+
+/*  */
+"faq_adapt_response" = "Yes, the Daily Dozen is simply meant to be a guide of the healthiest foods that we strive to include every day. It’s not a meal plan and is not meant to be prescriptive. Do your best to eat a diverse array of whole plant foods and adapt the Daily Dozen to the quantities that work for you.";
+
+/*  */
+"faq_age_question" = "Is this adaptable for children, adolescents, and teens?";
+
+/*  */
+"faq_age_response.0" = "Children, adolescents, and teenagers have different caloric needs throughout their lifecycle. These needs change to support growth and development at each stage.";
+
+/*  */
+"faq_age_response.1" = "The Daily Dozen was designed as a guide to help people include some of the healthiest foods into their daily routine. While the same framework can be used for most people throughout the lifecycle, the amount of food one needs to eat will vary based on a number of factors like age and activity level. Since we can’t provide specific nutrition or medical advice for your growing child, parents should use this guide as they see best for their child’s needs and/or consult with a registered dietitian or other healthcare provider to help determine what is best for their individual needs.";
+
+/*  */
+"faq_calories_question" = "How many calories are in the Daily Dozen?";
+
+/*  */
+"faq_calories_response.0" = "The Daily Dozen averages about 1,200 calories, but given the wide array of food choices in each category, it can range anywhere from 800-1800. Consider the Other Vegetables category: a cup of bell peppers has a much lower caloric density than a cup of cooked sweet potatoes, therefore the caloric range will depend on your specific food choices. That’s the great thing about the Daily Dozen Checklist—it’s not a one size fits all approach, and can be adapted to your needs.";
+
+/*  */
+"faq_calories_response.1" = "If your goal is weight loss, you can find more information in “How Not to Diet” and the accompanying Twenty-One Tweaks. In “How Not to Diet”, I noted: “A systematic review of successful weight-loss strategies concluded that given the metabolic slowing and increased appetite that accompanies weight loss, to achieve significant weight loss, calorie counts may need to drop as low as 1,200 calories a day for women and 1,500 calories a day for men.”";
+
+/*  */
+"faq_calories_response.2" = "On the other hand, if your goal is weight gain, then you may want to focus on adding in more calorie-dense foods, such as sweet potatoes, avocados, nuts, and soy products.";
+
+/*  */
+"faq_mother_question" = "Can I do this while pregnant or breastfeeding?";
+
+/*  */
+"faq_mother_response" = "People who are pregnant or breastfeeding have different caloric and nutritional needs than people who are not. As a reminder, the Daily Dozen is not a meal plan and should not be the only foods consumed within a day. People who are pregnant or breastfeeding should consult with their health care practitioner or a registered dietician for assistance with meeting their specific caloric requirements and nutritional needs.";
+
+/*  */
+"faq_scaling_question" = "I can’t possibly eat that many beans/grains/etc.!";
+
+/*  */
+"faq_scaling_response" = "That’s okay! The Daily Dozen is an aspirational guide. Do your best to incorporate as many of these healthy plant foods as possible. If you are new to eating a lot of beans (or grains, greens, etc!), you may need to start with smaller amounts and slowly increase the quantity in order to give your microbiome a chance to adjust. You can also get creative: for example, add some beans to your morning oatmeal. If you load it up with berries, flax seeds, and nuts, you won’t even notice the beans. You can also mash beans into a sandwich spread, or make my [BROL](https://nutritionfacts.org/recipe/basic-brol-barley-rye-oats-and-lentils)—barley, rye, oat groats, and lentils—that I use as a base for many meals and is a simple way to get a variety of whole grains with a built-in serving of legumes.";
+
+/*  */
+"faq_supplements_question" = "I thought that Dr. Greger recommends taking Vitamin D and DHA supplements. Why aren’t they included?";
+
+/*  */
+"faq_supplements_response" = "We have updated the Daily Dozen app to reflect only required supplements. For example, Vitamin D is only needed for people who get inadequate sun exposure. Our goal is to share the science with you so you can make your own informed decisions. You can see all of my recommendations on the [Optimum Nutrient](https://nutritionfacts.org/optimum-nutrient-recommendations) page.";
+
+/* Info Menu */
+"faq_title" = "Frequently Asked Questions";
+
+/* History Data Alert: Cancel button */
+"history_data_alert_cancel" = "Cancel";
+
+/* History Data Alert: Clear button */
+"history_data_alert_clear" = "Clear";
+
+/* History Data Alert: Import buttom */
+"history_data_alert_import" = "Import";
+
+/* History Data Alert: OK button */
+"history_data_alert_ok" = "OK";
+
+/* History Data: export action button */
+"history_data_export_btn" = "Export History Data";
+
+/* History Data: export description text */
+"history_data_export_text" = "Export has been written to:";
+
+/* History Data: import action button */
+"history_data_import_btn" = "Import History Data";
+
+/* History Data: import caution text */
+"history_data_import_caution_text" = "Caution: This import will overwrite all history data currently in this Daily Dozen application. Would you like to proceed with the import?";
+
+/* History Data: import data error text */
+"history_data_import_error_text" = "Error: The import was not performed because of a data error. The existing data has remained unchanged.";
+
+/* History Data: import not found text */
+"history_data_import_notfound_text" = "Did not find a valid import file in the Daily Dozen Documents folder.";
+
+/* History Data: preferences header & title */
+"history_data_title" = "History";
+
+/* History View: calendar scale control */
+"history_scale_choice_day" = "روز";
+
+/* History View: calendar scale control */
+"history_scale_choice_month" = "ماه";
+
+/* History View: calendar scale control */
+"history_scale_choice_year" = "سال";
+
+/* History View: scale text */
+"history_scale_label" = "مقیاس زمانی";
+
+/*  */
+"historyRecord.movingAverage" = "میانگین تحرک";
+
+/* History View */
+"historyRecordDoze.heading" = "سابقه سهم‌ها";
+
+/* History View */
+"historyRecordDoze.legend" = "سهم‌ها";
+
+/* History View */
+"historyRecordTweak.heading" = "سابقه ترفندها";
+
+/* History View */
+"historyRecordTweak.legend" = "ترفندها";
+
+/* History View */
+"historyRecordWeight.heading" = "سابقه وزن";
+
+/* History View */
+"historyRecordWeight.legendEvening" = "شب";
+
+/* History View */
+"historyRecordWeight.legendMorning" = "صبح";
+
+/* History View */
+"historyRecordWeight.titleImperial" = "وزن (پوند)";
+
+/* History View */
+"historyRecordWeight.titleMetric" = "وزن (کیلوگرم)";
+
+/* Info About Menu Item */
+"info_app_about" = "درباره";
+
+/* Info About View: Application Name ‘Daily Dozen’ */
+"info_app_about_app_name" = "دوازه‌تای روزانه";
+
+/* Info About View: Created By */
+"info_app_about_created_by" = "این اپ توسط NutritionFacts.org، کریستی ریچاردز، کُنستانتین خُخلُف، و مارک کَمپبِل ساخته شده است.";
+
+/* Info About View */
+"info_app_about_heading" = "درباره این اپ";
+
+/* Info About View: Open Source Credits */
+"info_app_about_oss_credits" = "بایگانی‌های منبع‌بازی که در ادامه می‌آید مورد استفاده قرار گرفته‌اند: RealmSwift، Charts، FSCalendar، SimpleAnimation، ActiveLabel.";
+
+/* Info About View: Overview Text */
+"info_app_about_overview" = "از این اپ برای ثبت و نظارت بر غذاهای‌تان به‌صورت روزانه بهره بگیرید و برای توصیه‌هایی که جهت دستیابی به سلامتی مطلوب و طول عمر ارائه کرده‌ام، به کتاب‌هایم «چگونه نمیریم» و «چگونه رژیم نگیریم» مراجعه کنید.";
+
+/* Info About View: Contributing Translators List (language code)  See https://en.wikipedia.org/wiki/List_of_ISO_639-1_codes */
+"info_app_about_translators" = "Special thanks to our volunteer translators: Petar Enchev (bg), Tsveti Enchev (bg), Ricard Soler Roger (ca), Luděk Bouška (cs,sk), Lenka Lukacová (cs), Anke Schliessmann (de), Ángela Graña (es), Audray Harkins (fr), Doron Barak (he), Ruth Levy (he), Annalisa Guerrini-Körner (it), Ilaria Zanini (it), Hanna Gurzeda (pl), Joanna Klopotek (pl), Tania Bassi (pt-BR), João Madureira (pt-PT), Cristina Lauby (ro), Evgeniya Lyakh (ru), Katarína Mocáková (sk).";
+
+/* Info About View: Application release version */
+"info_app_about_version" = "نسخه ۳.۵.۱";
+
+/* Info About View: Welcome */
+"info_app_about_welcome" = "به «دوازده‌تای روزانه» من خوش آمدید!";
+
+/* Info Menu: book title */
+"info_book_how_not_to_die" = "کتاب: چگونه نمیریم";
+
+/* Info Menu: book title */
+"info_book_how_not_to_die_cookbook" = "کتاب آشپزی: چگونه نمیریم";
+
+/* Info Menu: book title */
+"info_book_how_not_to_diet" = "کتاب: چگونه رژیم نگیریم";
+
+/* Info Menu */
+"info_webpage_daily_dozen_challenge" = "چالش «دوازده‌تای روزانه»";
+
+/* Info Menu */
+"info_webpage_donate" = "حمایت مالی";
+
+/* Info Menu */
+"info_webpage_open_source" = "منبع‌باز";
+
+/* Info Menu */
+"info_webpage_subscribe" = "مشترک شدن";
+
+/* Info Menu */
+"info_webpage_videos_latest" = "آخرین ویدئوها";
+
+/* Item History Legend: ‘All completed’ */
+"item_history_completed_all" = "همه سهم‌ها";
+
+/* Item History Legend: ‘Some completed’ */
+"item_history_completed_some" = "برخی سهم‌ها";
+
+/* Item History Heading */
+"item_history_heading" = "سابقه";
+
+/* Main Navigation Tab Control: ‘Daily Dozen’ (proper noun) */
+"navtab.doze" = "دوازده‌تای روزانه";
+
+/* Main Navigation Tab Control: show more information */
+"navtab.info" = "اطلاعات";
+
+/* Main Navigation Tab Control: ‘Preferences’ synonyms: Settings, Configuration. Choose a translations with is different from Tweaks. */
+"navtab.preferences" = "ترجیحات";
+
+/* Main Navigation Tab Control: ‘21 Tweaks’ (proper noun) */
+"navtab.tweaks" = "۲۱ ترفند";
+
+/* heading for daily data entry item */
+"otherVitaminB12.heading" = "ویتامین ب۱۲";
+
+/* Alert notification text */
+"reminder.alert.text" = "سهم‌های امروزتان را ثبت کنید";
+
+/* Daily Reminder (alert title, settings section heading) */
+"reminder.heading" = "یادآوری روزانه";
+
+/* Daily Reminder On/Off toggle switch label */
+"reminder.settings.enable" = "فعالسازی یادآورنده‌ها";
+
+/* Daily Reminder sound control heading */
+"reminder.settings.sound" = "پخش صدا";
+
+/* Daily Reminder time control heading */
+"reminder.settings.time" = "در این زمان به من یادآوری کن";
+
+/* Android notification `vibrate` */
+"reminder.settings.vibrate" = "لرزش";
+
+/* ‘Off’ as in ‘On (enabled) or Off (disabled)’, Daily Reminder is not enabled */
+"reminder.state.off" = "غیرفعال";
+
+/* ‘On’ as in ‘On (enabled) or Off (disable)’. Daily Reminder is enabled */
+"reminder.state.on" = "فعال";
+
+/* Google Firebase Analytics */
+"setting_analytics_body" = "Enable anonymous usage information to be collected to help improve this application.";
+
+/* Google Firebase Analytics */
+"setting_analytics_enable" = "Enable Analytics";
+
+/* Google Firebase Analytics */
+"setting_analytics_opt_in" = "Opt In";
+
+/* Google Firebase Analytics */
+"setting_analytics_opt_out" = "Opt Out";
+
+/* Google Firebase Analytics */
+"setting_analytics_title" = "Analytics";
+
+/* Appearance Header */
+"setting_appearance_header" = "Appearance";
+
+/* Appearance Mode: Auto */
+"setting_appearance_mode_auto" = "Auto";
+
+/* Appearance Mode: Dark */
+"setting_appearance_mode_dark" = "Dark";
+
+/* Appearance Mode: Light */
+"setting_appearance_mode_light" = "Light";
+
+/* First Launch Setting: button text */
+"setting_doze_only_btn" = "دوازده‌تای روزانه \nفقط";
+
+/* Preference Settings View: selection button text */
+"setting_doze_only_choice" = "فقط دوازده‌تای روزانه";
+
+/* First Launch Setting: button text */
+"setting_doze_tweak_btn" = "دوازده‌تای روزانه +\n ۲۱ ترفند";
+
+/* Preference Settings View: selection button text */
+"setting_doze_tweak_choice" = "دوازده‌تای روزانه + ۲۱ ترفند";
+
+/* Preference Settings View: brief description text below Tweaks visibility control. */
+"setting_doze_tweak_footer" = "اگر فقط دستیابی به سلامتی را در نظر دارید، از «فقط دوازده‌تای روزانه» استفاده کنید. اگر علاوه‌بر سلامتی، کاهش وزن را هم در نظر دارید از «دوازده‌تای روزانه + ۲۱ ترفند» استفاده کنید.";
+
+/* First Launch Setting: brief description above ‘Daily Dozen Only’ button. */
+"setting_health_alone_txt" = "فقط برای سلامتی";
+
+/* First Launch Setting: brief description above ‘Daily Dozen + 21 Tweaks’ button. */
+"setting_health_weight_txt" = "برای سلامتی و کاهش وزن";
+
+/* Preference Settings View: tweaks visibilty subsection heading */
+"setting_tweak_header" = "وضعیت نمایش «۲۱ ترفند»";
+
+/* Preference Settings View: Part of ‘Imperial/Metric/Toggle Units’ selector */
+"setting_units_0_imperial" = "انگلیسی (امپریال)";
+
+/* Preference Settings View: Part of ‘Imperial/Metric/Toggle Units’ selector */
+"setting_units_1_metric" = "مِتریک";
+
+/* Preference Settings View: Part of ‘Imperial/Metric/Toggle Units’ selector */
+"setting_units_2_toggle" = "تغییر واحد اندازه‌گیری";
+
+/* Preference Settings View: brief description text below units control. */
+"setting_units_choice_footer" = "تنظیم کنید که همیشه یک نوع واحد اندازه‌گیری به‌کار رود، یا این‌که دکمه «واحدها» را فعال کنید.";
+
+/* Preference Settings View */
+"setting_units_header" = "واحدهای اندازه‌گیری";
+
+/* Preference Settings View */
+"setting_util_advanced" = "ابزارهای پیشرفته";
+
+/* ‘Streak’ count. Synonym: ‘Progress‘. Formatted number ‘%d’ for consecutive days completed. Place translated text for ‘days’ on the right or left of ‘%d’ based on language directionality. */
+"streakDaysFormat" = "%d روز";
+
+/* Tweaks Detail view section heading */
+"tweak_detail_section_activity" = "فعالیت";
+
+/* Tweaks Detail view section heading */
+"tweak_detail_section_description" = "توضیحات";
+
+/* Tweaks daily entry header */
+"tweak_entry_header" = "۲۱ ترفند";
+
+/* heading for daily data entry item */
+"tweakCompleteIntentions.heading" = "اهداف اجرایی‌تان را به انجام برسانید";
+
+/* heading for daily data entry item */
+"tweakDailyBlackCumin.heading" = "سیاه‌دانه (یک‌چهارم قاشق چای‌خوری)";
+
+/* heading for daily data entry item */
+"tweakDailyCumin.heading" = "زیره سبز (یک‌دوم قاشق چای‌خوری همراه با ناهار و شام)";
+
+/* heading for daily data entry item */
+"tweakDailyDeflourDiet.heading" = "خوراک روزانه‌تان را از آرد غلات خالی کنید";
+
+/* heading for daily data entry item */
+"tweakDailyFrontLoad.heading" = "کالری‌های‌تان را اوایل روز دریافت کنید";
+
+/* heading for daily data entry item */
+"tweakDailyGarlic.heading" = "پودر سیر (یک‌چهارم قاشق چای‌خوری)";
+
+/* heading for daily data entry item */
+"tweakDailyGinger.heading" = "زنجبیل آسیاب‌شده (۱ قاشق چای‌خوری) یا فلفل کایِن (یک‌دوم قاشق چای‌خوری)";
+
+/* heading for daily data entry item */
+"tweakDailyGreenTea.heading" = "چای سبز (۳ فنجان)";
+
+/* heading for daily data entry item */
+"tweakDailyHydrate.heading" = "بدن‌تان را پرآب (هیدراته) نگه دارید";
+
+/* heading for daily data entry item */
+"tweakDailyNutriYeast.heading" = "مخمر مغذی (۲ قاشق چای‌خوری)";
+
+/* heading for daily data entry item */
+"tweakDailyTimeRestrict.heading" = "زمان غذا خوردن‌تان را محدود کنید";
+
+/* heading for daily data entry item */
+"tweakExerciseTiming.heading" = "زمانبندی ورزش‌تان را بهینه کنید";
+
+/* heading for daily data entry item */
+"tweakMeal20Minutes.heading" = "از «قانون بیست دقیقه» پیروی کنید";
+
+/* heading for daily data entry item */
+"tweakMealNegCal.heading" = "قبل از غذای اصلی، غذاهای دارای «کالری منفی» بخورید";
+
+/* heading for daily data entry item */
+"tweakMealUndistracted.heading" = "بدون حواس‌پرتی از وعده‌های غذای‌تان لذت ببرید";
+
+/* heading for daily data entry item */
+"tweakMealVinegar.heading" = "سرکه اضافه کنید (۲ قاشق چای‌خوری با هر وعده غذا)";
+
+/* heading for daily data entry item */
+"tweakMealWater.heading" = "قبل از غذا آب بنوشید";
+
+/* heading for daily data entry item */
+"tweakNightlyFast.heading" = "بعد از ساعت ۷:۰۰ شب ناشتا بمانید";
+
+/* heading for daily data entry item */
+"tweakNightlySleep.heading" = "به اندازه کافی بخوابید";
+
+/* heading for daily data entry item */
+"tweakNightlyTrendelenbrug.heading" = "حالت ترِندِلِنبِرگ با شیب کم را امتحان کنید";
+
+/* heading for daily data entry item */
+"tweakWeightTwice.heading" = "خودتان را دوبار در روز وزن کنید";
+
+/*  */
+"units_label" = "واحدها";
+
+/* Units toggle button text: imperial measurement system */
+"unitToggle.imperial" = "انگلیسی (امپریال)";
+
+/* Units toggle button text: metric measurement system */
+"unitToggle.metric" = "متریک";
+
+/* URL path */
+"urlSegment.base" = "https://nutritionfacts.org/";
+
+/*  */
+"urlSegment.lang" = "";
+
+/* main info menu: book */
+"urlSegmentInfoMenu.book" = "book/how-not-to-die";
+
+/* main info menu: daily-dozen-challenge */
+"urlSegmentInfoMenu.challenge" = "daily-dozen-challenge";
+
+/* main info menu: cookbook */
+"urlSegmentInfoMenu.cookbook" = "book/how-not-to-die-cookbook";
+
+/* main info menu: how-not-to-diet */
+"urlSegmentInfoMenu.diet" = "book/how-not-to-diet";
+
+/* main info menu: donate */
+"urlSegmentInfoMenu.donate" = "donate";
+
+/* main info menu: open-source */
+"urlSegmentInfoMenu.source" = "open-source";
+
+/* main info menu: subscribe */
+"urlSegmentInfoMenu.subscribe" = "subscribe";
+
+/* team */
+"urlSegmentInfoMenu.team" = "team";
+
+/* main info menu: videos */
+"urlSegmentInfoMenu.videos" = "videos";
+
+/* Label for hyperlink to nutritionfacts.org video topics */
+"videos.link.label" = "ویدئوها";
+
+/* Weight Daily Entry: clear button which deletes values */
+"weight_entry_clear" = "پاکسازی";
+
+/* Weight Daily Entry: label */
+"weight_entry_evening" = "شب (درست پیش از خواب)";
+
+/* Weight Daily Entry: label */
+"weight_entry_morning" = "صبح (بلافاصله پس از بیدار شدن)";
+
+/* Weight Daily Entry: label */
+"weight_entry_time" = "زمان";
+
+/* Weight Daily Entry Units: label */
+"weight_entry_units_kg" = "کیلوگرم";
+
+/* Weight Daily Entry Units: label */
+"weight_entry_units_lbs" = "پوند";
+
+/* Weight Daily Entry: edit button to change values */
+"weight_history_edit_data" = "ویرایش اطلاعات";
+
+/* Weight Daily Entry: heading */
+"weightEntry.heading" = "وزن";
+
+/* file end */
