@@ -1,0 +1,16 @@
+/* DailyDozen InfoPlist.strings (fa) */
+/* Copyright © 2021 Nutritionfacts.org. All rights reserved. */
+
+/* User-visible application name. Visible under icon. Used by Siri. */
+"CFBundleDisplayName" = "دوازده‌تای روزانه";
+
+/* User-visible application short name (15 Characters max) */
+"CFBundleName" = "دوازده‌تای روزانه";
+
+/* Privacy - Health Share Usage Description */
+"NSHealthShareUsageDescription" = "ویژگی «۲۱ ترفند» برای به‌روزرسانی میزان وزن روزانه‌تان، از داده‌های HealthKitتان استفاده می‌کند.";
+
+/* Privacy - Health Update Usage Description */
+"NSHealthUpdateUsageDescription" = "ویژگی «۲۱ ترفند» می‌تواند داده‌های مربوط به وزن‌تان را در HealthKitتان وارد کند تا به این طریق به نظارت بر پیشروی‌تان کمک کند.";
+
+/* file end */
