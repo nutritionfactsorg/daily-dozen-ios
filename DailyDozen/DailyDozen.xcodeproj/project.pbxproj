@@ -343,6 +343,10 @@
 		4C4632EE2941A3A100CB0313 /* sk */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = sk; path = sk.lproj/Localizable.strings; sourceTree = "<group>"; };
 		4C4632EF2941A3A100CB0313 /* sk */ = {isa = PBXFileReference; lastKnownFileType = text.json; name = sk; path = sk.lproj/DozeDetailData.json; sourceTree = "<group>"; };
 		4C4632F02941A3A100CB0313 /* sk */ = {isa = PBXFileReference; lastKnownFileType = text.json; name = sk; path = sk.lproj/TweakDetailData.json; sourceTree = "<group>"; };
+		4C4CF1FD2B6C83C100C776DE /* fa */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = fa; path = fa.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		4C4CF1FE2B6C83C200C776DE /* fa */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = fa; path = fa.lproj/Localizable.strings; sourceTree = "<group>"; };
+		4C4CF1FF2B6C83C200C776DE /* fa */ = {isa = PBXFileReference; lastKnownFileType = text.json; name = fa; path = fa.lproj/DozeDetailData.json; sourceTree = "<group>"; };
+		4C4CF2002B6C83C200C776DE /* fa */ = {isa = PBXFileReference; lastKnownFileType = text.json; name = fa; path = fa.lproj/TweakDetailData.json; sourceTree = "<group>"; };
 		4C53E9722B06EF2E00128432 /* zh-Hant */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hant"; path = "zh-Hant.lproj/InfoPlist.strings"; sourceTree = "<group>"; };
 		4C53E9732B06EF2E00128432 /* zh-Hant */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hant"; path = "zh-Hant.lproj/Localizable.strings"; sourceTree = "<group>"; };
 		4C53E9742B06EF2E00128432 /* zh-Hant */ = {isa = PBXFileReference; lastKnownFileType = text.json; name = "zh-Hant"; path = "zh-Hant.lproj/DozeDetailData.json"; sourceTree = "<group>"; };
@@ -1357,6 +1361,7 @@
 				fr,
 				"zh-Hant",
 				"zh-Hans",
+				fa,
 			);
 			mainGroup = CFE6982F1F974B9700CD7905;
 			productRefGroup = CFE698391F974B9700CD7905 /* Products */;
@@ -1717,6 +1722,7 @@
 				4C8609812A0491C500A6EBDE /* fr */,
 				4C53E9752B06EF2E00128432 /* zh-Hant */,
 				4CE1EDFB2B5B512D00B3B19F /* zh-Hans */,
+				4C4CF2002B6C83C200C776DE /* fa */,
 			);
 			name = TweakDetailData.json;
 			sourceTree = "<group>";
@@ -1741,6 +1747,7 @@
 				4C86097E2A0491C500A6EBDE /* fr */,
 				4C53E9722B06EF2E00128432 /* zh-Hant */,
 				4CE1EDF82B5B512D00B3B19F /* zh-Hans */,
+				4C4CF1FD2B6C83C100C776DE /* fa */,
 			);
 			name = InfoPlist.strings;
 			sourceTree = "<group>";
@@ -1765,6 +1772,7 @@
 				4C8609802A0491C500A6EBDE /* fr */,
 				4C53E9742B06EF2E00128432 /* zh-Hant */,
 				4CE1EDFA2B5B512D00B3B19F /* zh-Hans */,
+				4C4CF1FF2B6C83C200C776DE /* fa */,
 			);
 			name = DozeDetailData.json;
 			sourceTree = "<group>";
@@ -1789,6 +1797,7 @@
 				4C86097F2A0491C500A6EBDE /* fr */,
 				4C53E9732B06EF2E00128432 /* zh-Hant */,
 				4CE1EDF92B5B512D00B3B19F /* zh-Hans */,
+				4C4CF1FE2B6C83C200C776DE /* fa */,
 			);
 			name = Localizable.strings;
 			sourceTree = "<group>";
@@ -2022,7 +2031,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_ENTITLEMENTS = DailyDozen/DailyDozen.entitlements;
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 5;
+				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = 2MG57YUZL5;
 				ENABLE_USER_SCRIPT_SANDBOXING = NO;
 				"EXCLUDED_ARCHS[sdk=iphonesimulator*]" = arm64;
@@ -2032,7 +2041,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 3.4.17;
+				MARKETING_VERSION = 3.4.19;
 				PRODUCT_BUNDLE_IDENTIFIER = com.nutritionfacts.dailydozen;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
@@ -2050,7 +2059,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_ENTITLEMENTS = DailyDozen/DailyDozen.entitlements;
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 5;
+				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = 2MG57YUZL5;
 				ENABLE_USER_SCRIPT_SANDBOXING = NO;
 				INFOPLIST_FILE = "$(SRCROOT)/DailyDozen/App/InfoPlist/Info.plist";
@@ -2059,7 +2068,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 3.4.17;
+				MARKETING_VERSION = 3.4.19;
 				ONLY_ACTIVE_ARCH = NO;
 				PRODUCT_BUNDLE_IDENTIFIER = com.nutritionfacts.dailydozen;
 				PRODUCT_NAME = "$(TARGET_NAME)";
