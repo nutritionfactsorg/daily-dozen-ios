@@ -1,5 +1,5 @@
 //
-//  AnalyticsHelper.swift
+//  GoogleAnalyticsHelper.swift
 //  DailyDozen
 //
 //  Copyright © 2022 Nutritionfacts.org. All rights reserved.
@@ -8,10 +8,10 @@
 import UIKit
 // Analytics Frameworks
 import Firebase
-import FirebaseAnalytics // "Google Analytics"
+import FirebaseAnalytics // aka "Google Analytics"
 
-struct AnalyticsHelper {
-    static var shared = AnalyticsHelper()
+struct GoogleAnalyticsHelper {
+    static var shared = GoogleAnalyticsHelper()
     
     func buildAnalyticsConsentAlert() -> UIAlertController {
         let alertMsgBodyStr = NSLocalizedString("setting_analytics_body", comment: "Analytics request")
@@ -41,7 +41,7 @@ struct AnalyticsHelper {
         //}
         Analytics.setAnalyticsCollectionEnabled(true)
         UserDefaults.standard.set(true, forKey: SettingsKeys.analyticsIsEnabledPref)
-        logit.info("AnalyticsHelper doAnalyticsEnable() completed")
+        logit.info("GoogleAnalyticsHelper doAnalyticsEnable() completed")
         #else
         logit.info("ANALYTICS is excluded from the build. (AnalyticsHelper doAnalyticsEnable)")
         #endif
@@ -51,12 +51,12 @@ struct AnalyticsHelper {
         #if WITH_ANALYTICS
         if FirebaseApp.app() != nil {
             Analytics.setAnalyticsCollectionEnabled(false)
-            logit.info("AnalyticsHelper doAnalyticsDisable() disabled existing FirebaseApp Analytics")
+            logit.info("GoogleAnalyticsHelper doAnalyticsDisable() disabled existing FirebaseApp Analytics")
         }
         UserDefaults.standard.set(false, forKey: SettingsKeys.analyticsIsEnabledPref)
-        logit.info("AnalyticsHelper doAnalyticsDisable() completed")
+        logit.info("GoogleAnalyticsHelper doAnalyticsDisable() completed")
         #else
-        logit.info("ANALYTICS is excluded from the build. (AnalyticsHelper doAnalyticsDisable)")
+        logit.info("ANALYTICS is excluded from the build. (GoogleAnalyticsHelper doAnalyticsDisable)")
         #endif
     }
 }

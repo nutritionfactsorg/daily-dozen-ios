@@ -111,8 +111,6 @@
 		49F66B792588752D00002DB2 /* UITextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49F66B782588752D00002DB2 /* UITextField.swift */; };
 		49F8D1DC23905B70003E139F /* TweakEntryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49F8D1DB23905B70003E139F /* TweakEntryViewController.swift */; };
 		49F8D1DE23906B29003E139F /* TweakEntryDataProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49F8D1DD23906B29003E139F /* TweakEntryDataProvider.swift */; };
-		4C079D4C287FFC5B00234849 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 4C079D4B287FFC5B00234849 /* GoogleService-Info.plist */; };
-		4C092E3F28EF5E97004D5539 /* AnalyticsHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C092E3E28EF5E97004D5539 /* AnalyticsHelper.swift */; };
 		4C1E359B2AE268BA008B3B2B /* SqlDailyTracker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C1E359A2AE268BA008B3B2B /* SqlDailyTracker.swift */; };
 		4C22C9A02A737DEE0008D7B6 /* RealmDailyTracker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C22C9962A737DEE0008D7B6 /* RealmDailyTracker.swift */; };
 		4C22C9A12A737DEE0008D7B6 /* DataCountAttributes.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C22C9972A737DEE0008D7B6 /* DataCountAttributes.swift */; };
@@ -121,6 +119,7 @@
 		4C22C9A42A737DEE0008D7B6 /* RealmDataWeightRecord.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C22C99B2A737DEE0008D7B6 /* RealmDataWeightRecord.swift */; };
 		4C22C9A52A737DEE0008D7B6 /* RealmDataWeightValues.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C22C99C2A737DEE0008D7B6 /* RealmDataWeightValues.swift */; };
 		4C22C9A72A737DEE0008D7B6 /* DataWeightType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C22C99F2A737DEE0008D7B6 /* DataWeightType.swift */; };
+		4C4CF1F92B6C0AC800C776DE /* GoogleAnalyticsHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C4CF1F82B6C0AC800C776DE /* GoogleAnalyticsHelper.swift */; };
 		4C5D7C802A967F3A000D5153 /* SQLiteBuiltInTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C5D7C7F2A967F3A000D5153 /* SQLiteBuiltInTest.swift */; };
 		4C7695992B3D58C600FE3768 /* ExerciseGamut.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C7695982B3D58C600FE3768 /* ExerciseGamut.swift */; };
 		4C7D52F52A3B81DE00386832 /* ExpandableTableViewCellDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C7D52F42A3B81DE00386832 /* ExpandableTableViewCellDelegate.swift */; };
@@ -128,6 +127,7 @@
 		4C7D52F92A3B8FDA00386832 /* InfoFaqTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C7D52F82A3B8FDA00386832 /* InfoFaqTableViewCell.swift */; };
 		4C7D52FF2A3B9C3D00386832 /* InfoFaqHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C7D52FE2A3B9C3D00386832 /* InfoFaqHeaderView.swift */; };
 		4C7E17052A987F3B00A515F9 /* SKStoreReviewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C7E17042A987F3B00A515F9 /* SKStoreReviewController.swift */; };
+		4C88DC332B69DE3C00BF972B /* GoogleService in Resources */ = {isa = PBXBuildFile; fileRef = 4C88DC322B69DE3C00BF972B /* GoogleService */; };
 		4CAE49022A95D07B00B5ED51 /* SQLite.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4CAE48EF2A95C46E00B5ED51 /* SQLite.swift */; };
 		4CAE49032A95D07B00B5ED51 /* SQLiteFramework.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4CAE48F32A95C46E00B5ED51 /* SQLiteFramework.swift */; };
 		4CAE49042A95D07B00B5ED51 /* SQLiteExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4CAE48F02A95C46E00B5ED51 /* SQLiteExtension.swift */; };
@@ -196,6 +196,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		06E4FA9B23D821B30952BB40 /* Pods-DailyDozenTests.debugoss.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-DailyDozenTests.debugoss.xcconfig"; path = "Pods/Target Support Files/Pods-DailyDozenTests/Pods-DailyDozenTests.debugoss.xcconfig"; sourceTree = "<group>"; };
+		135CB253624B203502E895A9 /* Pods-DailyDozen.releaseoss.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-DailyDozen.releaseoss.xcconfig"; path = "Pods/Target Support Files/Pods-DailyDozen/Pods-DailyDozen.releaseoss.xcconfig"; sourceTree = "<group>"; };
 		2CB41DDE201AD844603D7163 /* Pods-DailyDozenTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-DailyDozenTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-DailyDozenTests/Pods-DailyDozenTests.debug.xcconfig"; sourceTree = "<group>"; };
 		4904AF83239CB99600E271EC /* WeightEntryPagerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeightEntryPagerViewController.swift; sourceTree = "<group>"; };
 		49088F442654C9B600C8CC91 /* ColorManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ColorManager.swift; sourceTree = "<group>"; };
@@ -342,8 +344,6 @@
 		49FCFE9D273278AB000E92F1 /* ru */ = {isa = PBXFileReference; lastKnownFileType = text.json; name = ru; path = ru.lproj/DozeDetailData.json; sourceTree = "<group>"; };
 		49FCFE9E273278AB000E92F1 /* ru */ = {isa = PBXFileReference; lastKnownFileType = text.json; name = ru; path = ru.lproj/TweakDetailData.json; sourceTree = "<group>"; };
 		49FECE9327DB0C3B0078C26D /* LocalesBatchA.xctestplan */ = {isa = PBXFileReference; lastKnownFileType = text; path = LocalesBatchA.xctestplan; sourceTree = "<group>"; };
-		4C079D4B287FFC5B00234849 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
-		4C092E3E28EF5E97004D5539 /* AnalyticsHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnalyticsHelper.swift; sourceTree = "<group>"; };
 		4C1E359A2AE268BA008B3B2B /* SqlDailyTracker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SqlDailyTracker.swift; sourceTree = "<group>"; };
 		4C22C9962A737DEE0008D7B6 /* RealmDailyTracker.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RealmDailyTracker.swift; sourceTree = "<group>"; };
 		4C22C9972A737DEE0008D7B6 /* DataCountAttributes.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DataCountAttributes.swift; sourceTree = "<group>"; };
@@ -356,6 +356,13 @@
 		4C4632EE2941A3A100CB0313 /* sk */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = sk; path = sk.lproj/Localizable.strings; sourceTree = "<group>"; };
 		4C4632EF2941A3A100CB0313 /* sk */ = {isa = PBXFileReference; lastKnownFileType = text.json; name = sk; path = sk.lproj/DozeDetailData.json; sourceTree = "<group>"; };
 		4C4632F02941A3A100CB0313 /* sk */ = {isa = PBXFileReference; lastKnownFileType = text.json; name = sk; path = sk.lproj/TweakDetailData.json; sourceTree = "<group>"; };
+		4C4CF1F82B6C0AC800C776DE /* GoogleAnalyticsHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GoogleAnalyticsHelper.swift; sourceTree = "<group>"; };
+		4C4CF1FB2B6C4F3700C776DE /* appstore.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = appstore.xcconfig; sourceTree = "<group>"; };
+		4C4CF1FC2B6C4F4D00C776DE /* oss.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = oss.xcconfig; sourceTree = "<group>"; };
+		4C4CF2012B6C9A3300C776DE /* fa */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = fa; path = fa.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		4C4CF2022B6C9A3300C776DE /* fa */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = fa; path = fa.lproj/Localizable.strings; sourceTree = "<group>"; };
+		4C4CF2032B6C9A3300C776DE /* fa */ = {isa = PBXFileReference; lastKnownFileType = text.json; name = fa; path = fa.lproj/DozeDetailData.json; sourceTree = "<group>"; };
+		4C4CF2042B6C9A3300C776DE /* fa */ = {isa = PBXFileReference; lastKnownFileType = text.json; name = fa; path = fa.lproj/TweakDetailData.json; sourceTree = "<group>"; };
 		4C5C4EFA2995C8C00096AAA1 /* ro */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ro; path = ro.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		4C5C4EFB2995C8C00096AAA1 /* ro */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ro; path = ro.lproj/Localizable.strings; sourceTree = "<group>"; };
 		4C5C4EFC2995C8C00096AAA1 /* ro */ = {isa = PBXFileReference; lastKnownFileType = text.json; name = ro; path = ro.lproj/DozeDetailData.json; sourceTree = "<group>"; };
@@ -371,6 +378,7 @@
 		4C86097F2A0491C500A6EBDE /* fr */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = fr; path = fr.lproj/Localizable.strings; sourceTree = "<group>"; };
 		4C8609802A0491C500A6EBDE /* fr */ = {isa = PBXFileReference; lastKnownFileType = text.json; name = fr; path = fr.lproj/DozeDetailData.json; sourceTree = "<group>"; };
 		4C8609812A0491C500A6EBDE /* fr */ = {isa = PBXFileReference; lastKnownFileType = text.json; name = fr; path = fr.lproj/TweakDetailData.json; sourceTree = "<group>"; };
+		4C88DC322B69DE3C00BF972B /* GoogleService */ = {isa = PBXFileReference; lastKnownFileType = folder; path = GoogleService; sourceTree = "<group>"; };
 		4C97E05C29E0247200601772 /* bg */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = bg; path = bg.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		4C97E05D29E0247200601772 /* bg */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = bg; path = bg.lproj/Localizable.strings; sourceTree = "<group>"; };
 		4C97E05E29E0247200601772 /* bg */ = {isa = PBXFileReference; lastKnownFileType = text.json; name = bg; path = bg.lproj/DozeDetailData.json; sourceTree = "<group>"; };
@@ -406,6 +414,8 @@
 		4CE1EDFD2B5B516D00B3B19F /* zh-Hans */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hans"; path = "zh-Hans.lproj/Localizable.strings"; sourceTree = "<group>"; };
 		4CE1EDFE2B5B516D00B3B19F /* zh-Hans */ = {isa = PBXFileReference; lastKnownFileType = text.json; name = "zh-Hans"; path = "zh-Hans.lproj/DozeDetailData.json"; sourceTree = "<group>"; };
 		4CE1EDFF2B5B516D00B3B19F /* zh-Hans */ = {isa = PBXFileReference; lastKnownFileType = text.json; name = "zh-Hans"; path = "zh-Hans.lproj/TweakDetailData.json"; sourceTree = "<group>"; };
+		523C9F9406E6AA01FFC5667B /* Pods-DailyDozenTests.releaseoss.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-DailyDozenTests.releaseoss.xcconfig"; path = "Pods/Target Support Files/Pods-DailyDozenTests/Pods-DailyDozenTests.releaseoss.xcconfig"; sourceTree = "<group>"; };
+		5EF2DC93CC9F7A7C7804C6A2 /* Pods-DailyDozen.debugoss.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-DailyDozen.debugoss.xcconfig"; path = "Pods/Target Support Files/Pods-DailyDozen/Pods-DailyDozen.debugoss.xcconfig"; sourceTree = "<group>"; };
 		6ED3A55B48F7069CAE75156C /* Pods-DailyDozenTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-DailyDozenTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-DailyDozenTests/Pods-DailyDozenTests.release.xcconfig"; sourceTree = "<group>"; };
 		715D60F634E9BCD998C66B77 /* Pods_DailyDozenTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_DailyDozenTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		7D4AA01331AD98C99ADB2BC0 /* Pods-DailyDozen.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-DailyDozen.release.xcconfig"; path = "Pods/Target Support Files/Pods-DailyDozen/Pods-DailyDozen.release.xcconfig"; sourceTree = "<group>"; };
@@ -444,7 +454,9 @@
 		CFF72AFF1FB9BB70001CC2E9 /* LinkSettings.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = LinkSettings.plist; sourceTree = "<group>"; };
 		DA1790B64ED37B6DB70223BE /* Pods-DailyDozen.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-DailyDozen.debug.xcconfig"; path = "Pods/Target Support Files/Pods-DailyDozen/Pods-DailyDozen.debug.xcconfig"; sourceTree = "<group>"; };
 		E4A1DB4E4E487CFF8C7EE374 /* Pods_DailyDozen_DailyDozenUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_DailyDozen_DailyDozenUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		EBCCA9C52853F61F2C70A1B4 /* Pods-DailyDozen-DailyDozenUITests.debugoss.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-DailyDozen-DailyDozenUITests.debugoss.xcconfig"; path = "Pods/Target Support Files/Pods-DailyDozen-DailyDozenUITests/Pods-DailyDozen-DailyDozenUITests.debugoss.xcconfig"; sourceTree = "<group>"; };
 		F514690D725E67AD54735EB9 /* Pods_DailyDozen.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_DailyDozen.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		FE2A4D4A372DBA32E2C2FC35 /* Pods-DailyDozen-DailyDozenUITests.releaseoss.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-DailyDozen-DailyDozenUITests.releaseoss.xcconfig"; path = "Pods/Target Support Files/Pods-DailyDozen-DailyDozenUITests/Pods-DailyDozen-DailyDozenUITests.releaseoss.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -976,6 +988,15 @@
 			path = RealmData;
 			sourceTree = "<group>";
 		};
+		4C4CF1FA2B6C4F0900C776DE /* XCConfig */ = {
+			isa = PBXGroup;
+			children = (
+				4C4CF1FB2B6C4F3700C776DE /* appstore.xcconfig */,
+				4C4CF1FC2B6C4F4D00C776DE /* oss.xcconfig */,
+			);
+			path = XCConfig;
+			sourceTree = "<group>";
+		};
 		4CAE48EE2A95C43C00B5ED51 /* SQLiteFramework */ = {
 			isa = PBXGroup;
 			children = (
@@ -1200,7 +1221,6 @@
 			isa = PBXGroup;
 			children = (
 				49BB8C6A237373840047AFA4 /* DailyDozen.entitlements */,
-				4C079D4B287FFC5B00234849 /* GoogleService-Info.plist */,
 				CFE6984F1F974EFF00CD7905 /* App */,
 				4941D724237E121E00ED84B5 /* Database */,
 				495D02E823F632350006ABA5 /* DozeSection */,
@@ -1244,13 +1264,15 @@
 		CFE698511F974F1800CD7905 /* SupportingFiles */ = {
 			isa = PBXGroup;
 			children = (
-				4C092E3E28EF5E97004D5539 /* AnalyticsHelper.swift */,
 				4C7695982B3D58C600FE3768 /* ExerciseGamut.swift */,
+				4C4CF1F82B6C0AC800C776DE /* GoogleAnalyticsHelper.swift */,
+				4C88DC322B69DE3C00BF972B /* GoogleService */,
 				CFF72AFD1FB9BAAA001CC2E9 /* LinkService.swift */,
 				CFF72AFF1FB9BB70001CC2E9 /* LinkSettings.plist */,
 				495FA4202453EEF200DE3E58 /* LogService.swift */,
 				CFF72AFA1FB9A499001CC2E9 /* UnitsType.swift */,
 				49CA08A726C39DA8002D9F66 /* UnitsUtility.swift */,
+				4C4CF1FA2B6C4F0900C776DE /* XCConfig */,
 			);
 			path = SupportingFiles;
 			sourceTree = "<group>";
@@ -1295,6 +1317,12 @@
 				6ED3A55B48F7069CAE75156C /* Pods-DailyDozenTests.release.xcconfig */,
 				CBD97A6A7952BD092FDB1C74 /* Pods-DailyDozen-DailyDozenUITests.debug.xcconfig */,
 				C17D6523D8DF6412E7B275AB /* Pods-DailyDozen-DailyDozenUITests.release.xcconfig */,
+				5EF2DC93CC9F7A7C7804C6A2 /* Pods-DailyDozen.debugoss.xcconfig */,
+				135CB253624B203502E895A9 /* Pods-DailyDozen.releaseoss.xcconfig */,
+				EBCCA9C52853F61F2C70A1B4 /* Pods-DailyDozen-DailyDozenUITests.debugoss.xcconfig */,
+				FE2A4D4A372DBA32E2C2FC35 /* Pods-DailyDozen-DailyDozenUITests.releaseoss.xcconfig */,
+				06E4FA9B23D821B30952BB40 /* Pods-DailyDozenTests.debugoss.xcconfig */,
+				523C9F9406E6AA01FFC5667B /* Pods-DailyDozenTests.releaseoss.xcconfig */,
 			);
 			name = Pods;
 			sourceTree = "<group>";
@@ -1349,7 +1377,8 @@
 				CFE698341F974B9700CD7905 /* Sources */,
 				CFE698351F974B9700CD7905 /* Frameworks */,
 				CFE698361F974B9700CD7905 /* Resources */,
-				CFE6984E1F974CE400CD7905 /* ShellScript */,
+				CFE6984E1F974CE400CD7905 /* Script: Swift Lint */,
+				4C8218542B69F7A6008C493A /* Script: GoogleService  */,
 				B928040A54DABDDC50DB0D10 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
@@ -1412,6 +1441,7 @@
 				fr,
 				"zh-Hant",
 				"zh-Hans",
+				fa,
 			);
 			mainGroup = CFE6982F1F974B9700CD7905;
 			productRefGroup = CFE698391F974B9700CD7905 /* Products */;
@@ -1449,6 +1479,7 @@
 				49C01CD22644AF48005E592D /* TweakDetailDescriptionHeader.xib in Resources */,
 				49B97FEF25F5EF87009BA5A9 /* TweakEntryPagerLayout.storyboard in Resources */,
 				49C01CC32644AA09005E592D /* DozeDetailSizeUnitHeader.xib in Resources */,
+				4C88DC332B69DE3C00BF972B /* GoogleService in Resources */,
 				49C01CC22644AA09005E592D /* DozeDetailLayout.storyboard in Resources */,
 				49C01CCB2644AD11005E592D /* DozeHistoryLayout.storyboard in Resources */,
 				49B9801525F611A5009BA5A9 /* LaunchScreen.storyboard in Resources */,
@@ -1474,7 +1505,6 @@
 				49C39695264E556000920ECC /* ItemHistoryLayout.storyboard in Resources */,
 				CFF72B001FB9BB70001CC2E9 /* LinkSettings.plist in Resources */,
 				499B94E226439C9000AC275A /* WeightEntryLayout.storyboard in Resources */,
-				4C079D4C287FFC5B00234849 /* GoogleService-Info.plist in Resources */,
 				499B94E126439C9000AC275A /* WeightEntryPagerLayout.storyboard in Resources */,
 				4933A75023EE2BC800CE4631 /* DozeDetailData.json in Resources */,
 				49C01CD32644AF48005E592D /* TweakDetailActivityUnitHeader.xib in Resources */,
@@ -1525,6 +1555,25 @@
 			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
 			showEnvVarsInLog = 0;
 		};
+		4C8218542B69F7A6008C493A /* Script: GoogleService  */ = {
+			isa = PBXShellScriptBuildPhase;
+			alwaysOutOfDate = 1;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+			);
+			name = "Script: GoogleService ";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "### https://developer.apple.com/documentation/xcode/build-settings-reference\necho \"Script: GoogleService\"\n\nFILE_FROM=\"$BUILT_PRODUCTS_DIR/$WRAPPER_NAME/GoogleService/GoogleService-Info.plist\"\nFILE_TO=\"$BUILT_PRODUCTS_DIR/$WRAPPER_NAME/GoogleService-Info.plist\"\necho \"$FILE\"\nif [ -f $FILE ]; then\n   echo \"FILE GoogleService-Info.plist is present.\"\n   mv $FILE_FROM $FILE_TO\nelse\n   echo \"FILE GoogleService-Info.plist is not present.\"\nfi\n";
+		};
 		B928040A54DABDDC50DB0D10 /* [CP] Embed Pods Frameworks */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
@@ -1542,7 +1591,7 @@
 			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-DailyDozen/Pods-DailyDozen-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
-		CFE6984E1F974CE400CD7905 /* ShellScript */ = {
+		CFE6984E1F974CE400CD7905 /* Script: Swift Lint */ = {
 			isa = PBXShellScriptBuildPhase;
 			alwaysOutOfDate = 1;
 			buildActionMask = 2147483647;
@@ -1550,6 +1599,7 @@
 			);
 			inputPaths = (
 			);
+			name = "Script: Swift Lint";
 			outputPaths = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -1694,7 +1744,6 @@
 				4CAE49122A95D76500B5ED51 /* SqlDataWeightModel.swift in Sources */,
 				4C7D52F52A3B81DE00386832 /* ExpandableTableViewCellDelegate.swift in Sources */,
 				4CAE49102A95D76500B5ED51 /* SqlDataCountModel.swift in Sources */,
-				4C092E3F28EF5E97004D5539 /* AnalyticsHelper.swift in Sources */,
 				492013C7261FF61900A5D635 /* DozeItemStateCheckbox.swift in Sources */,
 				4C22C9A12A737DEE0008D7B6 /* DataCountAttributes.swift in Sources */,
 				4CAE49052A95D07B00B5ED51 /* SQLiteStatus.swift in Sources */,
@@ -1706,6 +1755,7 @@
 				4C7695992B3D58C600FE3768 /* ExerciseGamut.swift in Sources */,
 				CF49029B1FD91F01000EAB68 /* DozeHistoryViewModel.swift in Sources */,
 				4933A74B23EE267600CE4631 /* DozeTextsProvider.swift in Sources */,
+				4C4CF1F92B6C0AC800C776DE /* GoogleAnalyticsHelper.swift in Sources */,
 				4C1E359B2AE268BA008B3B2B /* SqlDailyTracker.swift in Sources */,
 				CF2FA9961FA87F0C003508F8 /* DozeDetailViewController.swift in Sources */,
 				4CAE49112A95D76500B5ED51 /* SqlDataWeightRecord.swift in Sources */,
@@ -1785,6 +1835,7 @@
 				4C8609812A0491C500A6EBDE /* fr */,
 				4CC9755C2B1912A500A939B3 /* zh-Hant */,
 				4CE1EDFF2B5B516D00B3B19F /* zh-Hans */,
+				4C4CF2042B6C9A3300C776DE /* fa */,
 			);
 			name = TweakDetailData.json;
 			sourceTree = "<group>";
@@ -1809,6 +1860,7 @@
 				4C86097E2A0491C500A6EBDE /* fr */,
 				4CC975592B1912A500A939B3 /* zh-Hant */,
 				4CE1EDFC2B5B516C00B3B19F /* zh-Hans */,
+				4C4CF2012B6C9A3300C776DE /* fa */,
 			);
 			name = InfoPlist.strings;
 			sourceTree = "<group>";
@@ -1833,6 +1885,7 @@
 				4C8609802A0491C500A6EBDE /* fr */,
 				4CC9755B2B1912A500A939B3 /* zh-Hant */,
 				4CE1EDFE2B5B516D00B3B19F /* zh-Hans */,
+				4C4CF2032B6C9A3300C776DE /* fa */,
 			);
 			name = DozeDetailData.json;
 			sourceTree = "<group>";
@@ -1857,6 +1910,7 @@
 				4C86097F2A0491C500A6EBDE /* fr */,
 				4CC9755A2B1912A500A939B3 /* zh-Hant */,
 				4CE1EDFD2B5B516D00B3B19F /* zh-Hans */,
+				4C4CF2022B6C9A3300C776DE /* fa */,
 			);
 			name = Localizable.strings;
 			sourceTree = "<group>";
@@ -1964,8 +2018,9 @@
 			};
 			name = Release;
 		};
-		CFE698481F974B9700CD7905 /* Debug */ = {
+		4C3A0E3A2B6DFAFE000F3210 /* DebugOSS */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 4C4CF1FC2B6C4F4D00C776DE /* oss.xcconfig */;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
 				ASSETCATALOG_COMPILER_GENERATE_SWIFT_ASSET_SYMBOL_EXTENSIONS = YES;
@@ -2022,14 +2077,95 @@
 				MTL_ENABLE_DEBUG_INFO = YES;
 				ONLY_ACTIVE_ARCH = YES;
 				SDKROOT = iphoneos;
-				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
-				"SWIFT_ACTIVE_COMPILATION_CONDITIONS[arch=*]" = "DEBUG WITH_ANALYTICS";
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "DEBUG $(inherited)";
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 			};
-			name = Debug;
+			name = DebugOSS;
 		};
-		CFE698491F974B9700CD7905 /* Release */ = {
+		4C3A0E3B2B6DFAFE000F3210 /* DebugOSS */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 5EF2DC93CC9F7A7C7804C6A2 /* Pods-DailyDozen.debugoss.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = DailyDozen/DailyDozen.entitlements;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 3;
+				DEVELOPMENT_TEAM = 2MG57YUZL5;
+				ENABLE_USER_SCRIPT_SANDBOXING = NO;
+				"EXCLUDED_ARCHS[sdk=iphonesimulator*]" = arm64;
+				INFOPLIST_FILE = "$(SRCROOT)/DailyDozen/App/InfoPlist/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 15.1;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 3.5.1;
+				PRODUCT_BUNDLE_IDENTIFIER = com.nutritionfacts.dailydozen;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
+				SUPPORTS_MACCATALYST = NO;
+				SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD = NO;
+				SUPPORTS_XR_DESIGNED_FOR_IPHONE_IPAD = NO;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "$(inherited)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = 1;
+			};
+			name = DebugOSS;
+		};
+		4C3A0E3C2B6DFAFE000F3210 /* DebugOSS */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 06E4FA9B23D821B30952BB40 /* Pods-DailyDozenTests.debugoss.xcconfig */;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 2MG57YUZL5;
+				ENABLE_USER_SCRIPT_SANDBOXING = NO;
+				INFOPLIST_FILE = DailyDozenTests/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.1;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				PRODUCT_BUNDLE_IDENTIFIER = org.nutritionfacts.apple.DailyDozenTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/DailyDozen.app/DailyDozen";
+			};
+			name = DebugOSS;
+		};
+		4C3A0E3D2B6DFAFE000F3210 /* DebugOSS */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = EBCCA9C52853F61F2C70A1B4 /* Pods-DailyDozen-DailyDozenUITests.debugoss.xcconfig */;
+			buildSettings = {
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 2MG57YUZL5;
+				ENABLE_USER_SCRIPT_SANDBOXING = NO;
+				INFOPLIST_FILE = DailyDozenUITests/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.1;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				PRODUCT_BUNDLE_IDENTIFIER = org.nutritionfacts.apple.DailyDozenUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = DailyDozen;
+			};
+			name = DebugOSS;
+		};
+		4C3A0E3E2B6DFB0C000F3210 /* ReleaseOSS */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 4C4CF1FC2B6C4F4D00C776DE /* oss.xcconfig */;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
 				ASSETCATALOG_COMPILER_GENERATE_SWIFT_ASSET_SYMBOL_EXTENSIONS = YES;
@@ -2080,7 +2216,210 @@
 				MTL_ENABLE_DEBUG_INFO = NO;
 				ONLY_ACTIVE_ARCH = YES;
 				SDKROOT = iphoneos;
-				SWIFT_ACTIVE_COMPILATION_CONDITIONS = WITH_ANALYTICS;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "$(inherited)";
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = ReleaseOSS;
+		};
+		4C3A0E3F2B6DFB0C000F3210 /* ReleaseOSS */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 135CB253624B203502E895A9 /* Pods-DailyDozen.releaseoss.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = DailyDozen/DailyDozen.entitlements;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 3;
+				DEVELOPMENT_TEAM = 2MG57YUZL5;
+				ENABLE_USER_SCRIPT_SANDBOXING = NO;
+				INFOPLIST_FILE = "$(SRCROOT)/DailyDozen/App/InfoPlist/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 15.1;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 3.5.1;
+				ONLY_ACTIVE_ARCH = NO;
+				PRODUCT_BUNDLE_IDENTIFIER = com.nutritionfacts.dailydozen;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
+				SUPPORTS_MACCATALYST = NO;
+				SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD = NO;
+				SUPPORTS_XR_DESIGNED_FOR_IPHONE_IPAD = NO;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "$(inherited)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = 1;
+			};
+			name = ReleaseOSS;
+		};
+		4C3A0E402B6DFB0C000F3210 /* ReleaseOSS */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 523C9F9406E6AA01FFC5667B /* Pods-DailyDozenTests.releaseoss.xcconfig */;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 2MG57YUZL5;
+				ENABLE_USER_SCRIPT_SANDBOXING = NO;
+				INFOPLIST_FILE = DailyDozenTests/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.1;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				MTL_FAST_MATH = YES;
+				PRODUCT_BUNDLE_IDENTIFIER = org.nutritionfacts.apple.DailyDozenTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/DailyDozen.app/DailyDozen";
+			};
+			name = ReleaseOSS;
+		};
+		4C3A0E412B6DFB0C000F3210 /* ReleaseOSS */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = FE2A4D4A372DBA32E2C2FC35 /* Pods-DailyDozen-DailyDozenUITests.releaseoss.xcconfig */;
+			buildSettings = {
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 2MG57YUZL5;
+				ENABLE_USER_SCRIPT_SANDBOXING = NO;
+				INFOPLIST_FILE = DailyDozenUITests/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.1;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				MTL_FAST_MATH = YES;
+				PRODUCT_BUNDLE_IDENTIFIER = org.nutritionfacts.apple.DailyDozenUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = DailyDozen;
+			};
+			name = ReleaseOSS;
+		};
+		CFE698481F974B9700CD7905 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 4C4CF1FB2B6C4F3700C776DE /* appstore.xcconfig */;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ASSETCATALOG_COMPILER_GENERATE_SWIFT_ASSET_SYMBOL_EXTENSIONS = YES;
+				CLANG_ANALYZER_LOCALIZABILITY_NONLOCALIZED = YES;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				"EXCLUDED_ARCHS[sdk=iphonesimulator*]" = arm64;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.1;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "DEBUG $(inherited)";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		CFE698491F974B9700CD7905 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 4C4CF1FB2B6C4F3700C776DE /* appstore.xcconfig */;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ASSETCATALOG_COMPILER_GENERATE_SWIFT_ASSET_SYMBOL_EXTENSIONS = YES;
+				CLANG_ANALYZER_LOCALIZABILITY_NONLOCALIZED = YES;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				"EXCLUDED_ARCHS[sdk=iphonesimulator*]" = arm64;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.1;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "$(inherited)";
 				SWIFT_COMPILATION_MODE = wholemodule;
 				SWIFT_OPTIMIZATION_LEVEL = "-O";
 				VALIDATE_PRODUCT = YES;
@@ -2110,6 +2449,8 @@
 				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
 				SUPPORTS_MACCATALYST = NO;
 				SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD = NO;
+				SUPPORTS_XR_DESIGNED_FOR_IPHONE_IPAD = NO;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "$(inherited)";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = 1;
 			};
@@ -2138,6 +2479,8 @@
 				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
 				SUPPORTS_MACCATALYST = NO;
 				SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD = NO;
+				SUPPORTS_XR_DESIGNED_FOR_IPHONE_IPAD = NO;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "$(inherited)";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = 1;
 			};
@@ -2150,7 +2493,9 @@
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				498A227D237CD81F007AF5FB /* Debug */,
+				4C3A0E3C2B6DFAFE000F3210 /* DebugOSS */,
 				498A227E237CD81F007AF5FB /* Release */,
+				4C3A0E402B6DFB0C000F3210 /* ReleaseOSS */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
@@ -2159,7 +2504,9 @@
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				498A228C237CD88A007AF5FB /* Debug */,
+				4C3A0E3D2B6DFAFE000F3210 /* DebugOSS */,
 				498A228D237CD88A007AF5FB /* Release */,
+				4C3A0E412B6DFB0C000F3210 /* ReleaseOSS */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
@@ -2168,7 +2515,9 @@
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				CFE698481F974B9700CD7905 /* Debug */,
+				4C3A0E3A2B6DFAFE000F3210 /* DebugOSS */,
 				CFE698491F974B9700CD7905 /* Release */,
+				4C3A0E3E2B6DFB0C000F3210 /* ReleaseOSS */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
@@ -2177,7 +2526,9 @@
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				CFE6984B1F974B9700CD7905 /* Debug */,
+				4C3A0E3B2B6DFAFE000F3210 /* DebugOSS */,
 				CFE6984C1F974B9700CD7905 /* Release */,
+				4C3A0E3F2B6DFB0C000F3210 /* ReleaseOSS */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;

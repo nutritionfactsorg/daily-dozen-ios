@@ -1,0 +1,11 @@
+//
+//  oss.xcconfig
+//  DailyDozen
+//
+//  Copyright © 2024 Nutritionfacts.org. All rights reserved.
+//
+
+// Configuration settings file format documentation can be found at:
+// https://help.apple.com/xcode/#/dev745c5c974
+
+SWIFT_ACTIVE_COMPILATION_CONDITIONS = WITHOUT_ANALYTICS

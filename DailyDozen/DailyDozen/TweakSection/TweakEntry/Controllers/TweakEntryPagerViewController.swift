@@ -88,8 +88,12 @@ class TweakEntryPagerViewController: UIViewController {
             #else
             
             #endif
-            let alert = AnalyticsHelper.shared.buildAnalyticsConsentAlert()
+            
+            #if WITH_ANALYTICS
+            let alert = GoogleAnalyticsHelper.shared.buildAnalyticsConsentAlert()
             present(alert, animated: true, completion: nil)
+            #else
+            #endif
         }
     }
 
