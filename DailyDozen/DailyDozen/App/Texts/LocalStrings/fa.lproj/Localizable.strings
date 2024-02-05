@@ -65,85 +65,85 @@
 "dozeWholeGrains.heading" = "غلات کامل/سبوس‌دار";
 
 /*  */
-"faq_adapt_question" = "The Daily Dozen is too much/too little food for me! Can I adapt it?";
+"faq_adapt_question" = "«دوازده‌تای روزانه» برای من بیش از حد زیاد/بیش از حد کم است! می‌توانم آن را با شرایط خود مطابقت دهم؟";
 
 /*  */
-"faq_adapt_response" = "Yes, the Daily Dozen is simply meant to be a guide of the healthiest foods that we strive to include every day. It’s not a meal plan and is not meant to be prescriptive. Do your best to eat a diverse array of whole plant foods and adapt the Daily Dozen to the quantities that work for you.";
+"faq_adapt_response" = "بله، «دوازده‌تای روزانه» صرفاً راهنمای سالم‌ترین غذاهایی است که سعی می‌کنیم آن‌ها را به خوراک روزانه اضافه کنیم. این راهنما، برنامه غذایی نیست و قرار نیست تجویزی باشد. همه تلاش خود را بکنید تا طیف متنوعی از غذاهای گیاهی کامل را بخورید و «دوازده‌تای روزانه» را، با مقادیری که برای‌تان مناسب است، مطابقت دهید.";
 
 /*  */
-"faq_age_question" = "Is this adaptable for children, adolescents, and teens?";
+"faq_age_question" = "آیا «دوازده‌تای روزانه» برای کودکان و نوجوانان هم مناسب است؟";
 
 /*  */
-"faq_age_response.0" = "Children, adolescents, and teenagers have different caloric needs throughout their lifecycle. These needs change to support growth and development at each stage.";
+"faq_age_response.0" = "کودکان و نوجوانان در سراسر چرخه زندگی‌شان نیاز به مقدار کالری متفاوتی دارند. این نیازها برای کمک به رشد و تکامل آن‌ها در هر مرحله تغییر می‌کند. ";
 
 /*  */
-"faq_age_response.1" = "The Daily Dozen was designed as a guide to help people include some of the healthiest foods into their daily routine. While the same framework can be used for most people throughout the lifecycle, the amount of food one needs to eat will vary based on a number of factors like age and activity level. Since we can’t provide specific nutrition or medical advice for your growing child, parents should use this guide as they see best for their child’s needs and/or consult with a registered dietitian or other healthcare provider to help determine what is best for their individual needs.";
+"faq_age_response.1" = "«دوازده‌تای روزانه» طراحی شده تا به مردم کمک کند بعضی از سالم‌ترین غذاها را در خوراک روزانه‌شان لحاظ کنند. با این که همین چارچوب می‌تواند برای اکثر مردم در سراسر چرخه زندگی‌شان مورد استفاده قرار بگیرد، اما میزان غذایی که هر فرد نیاز دارد، بسته به عوامل مختلفی نظیر سن و سطح فعالیت، متفاوت خواهد بود. از آن‌جایی که ما نمی‌توانیم برای فرزند در حال رشدتان توصیه‌های تغذیه‌ای یا پزشکی مخصوصی ارائه دهیم، والدین باید از این راهنما به نحوی استفاده کنند که به‌نظرشان برای فرزندشان بهتر است و/یا با یک متخصص تغذیه رسمی یا دیگر ارائه‌دهندگان خدمات بهداشتی و درمانی برای تعیین آن‌چه برای نیازهای فردی فرزندشان بهتر است مشورت بگیرند.";
 
 /*  */
-"faq_calories_question" = "How many calories are in the Daily Dozen?";
+"faq_calories_question" = "«دوازده‌تای روزانه» چه مقدار کالری دارد؟";
 
 /*  */
-"faq_calories_response.0" = "The Daily Dozen averages about 1,200 calories, but given the wide array of food choices in each category, it can range anywhere from 800-1800. Consider the Other Vegetables category: a cup of bell peppers has a much lower caloric density than a cup of cooked sweet potatoes, therefore the caloric range will depend on your specific food choices. That’s the great thing about the Daily Dozen Checklist—it’s not a one size fits all approach, and can be adapted to your needs.";
+"faq_calories_response.0" = "«دوازده‌تای روزانه» به‌طور متوسط ۱۲۰۰ کالری دارد، اما با توجه به طیف گسترده‌ای از انتخاب‌های غذایی در هر دسته، می‌تواند از ۸۰۰ تا ۱۸۰۰ کالری متغیر باشد. به عنوان مثال، دسته‌بندی «سایر سبزیجات» را در نظر بگیرید: یک فنجان فلفل دلمه‌ای نسبت به یک فنجان سیب‌زمینی شیرین پخته تراکم کالری بسیار کمتری دارد، بنابراین محدوده کالری این راهنما به انتخاب‌های غذایی خاص شما بستگی دارد. این نکته‌ای عالی در مورد فهرست بازبینی «دوازده‌تای روزانه» است که یک نسخه واحد برای همه نیست و می‌تواند با نیازهای هر فرد تطابق پیدا کند.";
 
 /*  */
-"faq_calories_response.1" = "If your goal is weight loss, you can find more information in “How Not to Diet” and the accompanying Twenty-One Tweaks. In “How Not to Diet”, I noted: “A systematic review of successful weight-loss strategies concluded that given the metabolic slowing and increased appetite that accompanies weight loss, to achieve significant weight loss, calorie counts may need to drop as low as 1,200 calories a day for women and 1,500 calories a day for men.”";
+"faq_calories_response.1" = "اگر هدف‌تان کاهش وزن باشد، می‌توانید در کتاب «چگونه رژیم نگیریم» به همراه «۲۱ ترفند»، اطلاعات بیشتری پیدا کنید. در کتاب «چگونه رژیم نگیریم» آورده‌ام که: «یک بررسی نظام‌مند از راهبردهای موفق برای کاهش وزن، نشان می‌دهد که با توجه به کُند شدن سوخت‌و‌ساز بدن و افزایش اشتها، که هردو در حین کاهش وزن رخ می‌دهند، برای آن‌که به کاهش وزن قابل توجهی دست یابید، ممکن است نیاز باشد که میزان کالری‌های دریافتی به حداقل ۱۲۰۰ کالری در روز برای زنان و ۱۵۰۰ کالری در روز برای مردان کاهش یابد.»";
 
 /*  */
-"faq_calories_response.2" = "On the other hand, if your goal is weight gain, then you may want to focus on adding in more calorie-dense foods, such as sweet potatoes, avocados, nuts, and soy products.";
+"faq_calories_response.2" = "از طرف دیگر، اگر هدف‌تان افزایش وزن باشد، پس ممکن است بخواهید روی افزودن غذاهای پرکالری، نظیر سیب‌زمینی شیرین، آووکادو، آجیل، و فرآورده‌های سویا، متمرکز شوید.";
 
 /*  */
-"faq_mother_question" = "Can I do this while pregnant or breastfeeding?";
+"faq_mother_question" = "می‌توانم در دوران بارداری یا شیردهی از این راهنما استفاده کنم؟";
 
 /*  */
-"faq_mother_response" = "People who are pregnant or breastfeeding have different caloric and nutritional needs than people who are not. As a reminder, the Daily Dozen is not a meal plan and should not be the only foods consumed within a day. People who are pregnant or breastfeeding should consult with their health care practitioner or a registered dietician for assistance with meeting their specific caloric requirements and nutritional needs.";
+"faq_mother_response" = "افراد که باردار هستند یا در دوران شیردهی قرار دارند نسبت سایر افراد مواد غذایی و میزان کالری متفاوتی نیاز دارند. به عنوان یادآوری عرض می‌شود که «دوازده‌تای روزانه» یک برنامه غذایی نیست و نباید تنها غذاهایی باشد که روزانه مصرف می‌شود. زنان باردار یا شیرده، برای کمک به تأمین کالری و نیازهای غذایی خود، باید با پزشک یا یک متخصص تغذیه رسمی مشورت کنند.";
 
 /*  */
-"faq_scaling_question" = "I can’t possibly eat that many beans/grains/etc.!";
+"faq_scaling_question" = "امکان ندارد که بتوانم آن‌همه حبوبات/غلات/غیره بخورم!";
 
 /*  */
-"faq_scaling_response" = "That’s okay! The Daily Dozen is an aspirational guide. Do your best to incorporate as many of these healthy plant foods as possible. If you are new to eating a lot of beans (or grains, greens, etc!), you may need to start with smaller amounts and slowly increase the quantity in order to give your microbiome a chance to adjust. You can also get creative: for example, add some beans to your morning oatmeal. If you load it up with berries, flax seeds, and nuts, you won’t even notice the beans. You can also mash beans into a sandwich spread, or make my [BROL](https://nutritionfacts.org/recipe/basic-brol-barley-rye-oats-and-lentils)—barley, rye, oat groats, and lentils—that I use as a base for many meals and is a simple way to get a variety of whole grains with a built-in serving of legumes.";
+"faq_scaling_response" = "اشکالی ندارد! «دوازده‌تای روزانه» یک راهنمای آرمانی است. همه تلاش خود را بکنید تا هرقدر که برای‌تان ممکن است از این غذاهای گیاهی سالم مصرف کنید. اگر در خوردن مقدار زیادی حبوبات (یا غلات، سبزیجات، و غیره!) تازه‌کار هستید، ممکن است لازم باشد که با مقادیر کمتر شروع کنید و به تدریج مقدار را افزایش دهید تا به‌این‌ترتیب به میکروبیوم‌تان فرصت هماهنگ شدن بدهید. می‌توانید خلاقیت نیز به خرج دهید: برای مثال، به غلات صبحانه‌تان مقداری حبوبات اضافه کنید. اگر غلات صبحانه‌تان را سرشار از توت، تخم کتان، و آجیل کرده باشید، اصلا متوجه وجود حبوبات در آن نخواهید شد. همچنین می‌توانید حبوبات کوبیده‌شده را ساندویچ کنید، یا این [غذای] (https://nutritionfacts.org/recipe/basic-brol-barley-rye-oats-and-lentils) من را درست کنید که ترکیبی از جو، چاودار، بلغور جو دوسر، و عدس است، و من از آن به‌عنوان مبنایی برای بسیاری از وعده‌های غذایی استفاده می‌کنم که راه ساده‌ای برای دریافت انواع غلات کامل همراه با سهمی از حبوبات است.";
 
 /*  */
-"faq_supplements_question" = "I thought that Dr. Greger recommends taking Vitamin D and DHA supplements. Why aren’t they included?";
+"faq_supplements_question" = "فکر می‌کردم دکتر گرِگِر مصرف قرص‌های مکمل غذایی ویتامین دی و دی‌اچ‌اِی را توصیه می‌کند. چرا این مکمل‌ها در این راهنما لحاظ نشده‌اند؟";
 
 /*  */
-"faq_supplements_response" = "We have updated the Daily Dozen app to reflect only required supplements. For example, Vitamin D is only needed for people who get inadequate sun exposure. Our goal is to share the science with you so you can make your own informed decisions. You can see all of my recommendations on the [Optimum Nutrient](https://nutritionfacts.org/optimum-nutrient-recommendations) page.";
+"faq_supplements_response" = "ما اپ «دوازده‌تای روزانه» را به‌روزرسانی کرده‌ایم تا فقط مکمل‌های غذایی مورد نیاز را منعکس کند. برای مثال، ویتامین دی فقط برای افرادی نیاز است که به‌قدر کافی در معرض آفتاب قرار نمی‌گیرند. هدف ما این است که اطلاعات علمی را در اختیارتان بگذاریم تا بتوانید خودتان تصمیمات آگاهانه بگیرید. می‌توانید تمامی توصیه‌های من را درباره [مواد غذایی مطلوب] در صفحه (https://nutritionfacts.org/optimum-nutrient-recommendations) مشاهده کنید.";
 
 /* Info Menu */
-"faq_title" = "Frequently Asked Questions";
+"faq_title" = "سؤالات متداول";
 
 /* History Data Alert: Cancel button */
-"history_data_alert_cancel" = "Cancel";
+"history_data_alert_cancel" = "لغو";
 
 /* History Data Alert: Clear button */
-"history_data_alert_clear" = "Clear";
+"history_data_alert_clear" = "پاک‌سازی";
 
 /* History Data Alert: Import buttom */
-"history_data_alert_import" = "Import";
+"history_data_alert_import" = "واردسازی";
 
 /* History Data Alert: OK button */
-"history_data_alert_ok" = "OK";
+"history_data_alert_ok" = "بسیارخب";
 
 /* History Data: export action button */
-"history_data_export_btn" = "Export History Data";
+"history_data_export_btn" = "خروجی‌گیری از داده‌های سابقه";
 
 /* History Data: export description text */
-"history_data_export_text" = "Export has been written to:";
+"history_data_export_text" = "خروجی‌ گرفته شده است در:";
 
 /* History Data: import action button */
-"history_data_import_btn" = "Import History Data";
+"history_data_import_btn" = "واردسازی داده‌های سابقه";
 
 /* History Data: import caution text */
-"history_data_import_caution_text" = "Caution: This import will overwrite all history data currently in this Daily Dozen application. Would you like to proceed with the import?";
+"history_data_import_caution_text" = "هشدار: این واردسازی بر روی تمام داده‌های مربوط به سابقه فعلی‌تان در این اپ «دوازده‌تای روزانه» جایگزین خواهد شد. آیا مایل هستید که عملیات واردسازی را ادامه دهید؟";
 
 /* History Data: import data error text */
-"history_data_import_error_text" = "Error: The import was not performed because of a data error. The existing data has remained unchanged.";
+"history_data_import_error_text" = "خطا: عملیات واردسازی به‌دلیل خطای داده انجام نشد. داده‌های موجود به‌صورت دست‌نخورده باقی‌ ماندند.";
 
 /* History Data: import not found text */
-"history_data_import_notfound_text" = "Did not find a valid import file in the Daily Dozen Documents folder.";
+"history_data_import_notfound_text" = "در پوشه اسناد «دوازده‌تای روزانه» فایل ورودی معتبری یافت نشد.";
 
 /* History Data: preferences header & title */
-"history_data_title" = "History";
+"history_data_title" = "سابقه";
 
 /* History View: calendar scale control */
 "history_scale_choice_day" = "روز";
@@ -206,10 +206,10 @@
 "info_app_about_overview" = "از این اپ برای ثبت و نظارت بر غذاهای‌تان به‌صورت روزانه بهره بگیرید و برای توصیه‌هایی که جهت دستیابی به سلامتی مطلوب و طول عمر ارائه کرده‌ام، به کتاب‌هایم «چگونه نمیریم» و «چگونه رژیم نگیریم» مراجعه کنید.";
 
 /* Info About View: Contributing Translators List (language code)  See https://en.wikipedia.org/wiki/List_of_ISO_639-1_codes */
-"info_app_about_translators" = "Special thanks to our volunteer translators: Petar Enchev (bg), Tsveti Enchev (bg), Ricard Soler Roger (ca), Luděk Bouška (cs,sk), Lenka Lukacová (cs), Anke Schliessmann (de), Ángela Graña (es), Audray Harkins (fr), Doron Barak (he), Ruth Levy (he), Annalisa Guerrini-Körner (it), Ilaria Zanini (it), Hanna Gurzeda (pl), Joanna Klopotek (pl), Tania Bassi (pt-BR), João Madureira (pt-PT), Cristina Lauby (ro), Evgeniya Lyakh (ru), Katarína Mocáková (sk).";
+"info_app_about_translators" = "تشکر ویژه داریم از مترجمان داوطلب‌مان: Petar Enchev (bg), Tsveti Enchev (bg), Ricard Soler Roger (ca), Luděk Bouška (cs,sk), Lenka Lukacová (cs), Anke Schliessmann (de), Ángela Graña (es), Saeed Salamian (fa), Audray Harkins (fr), Doron Barak (he), Ruth Levy (he), Annalisa Guerrini-Körner (it), Ilaria Zanini (it), Hanna Gurzeda (pl), Joanna Klopotek (pl), Tania Bassi (pt-BR), João Madureira (pt-PT), Cristina Lauby (ro), Evgeniya Lyakh (ru), Katarína Mocáková (sk).";
 
 /* Info About View: Application release version */
-"info_app_about_version" = "نسخه ۳.۵.۱";
+"info_app_about_version" = "نسخه ۳.۴.۱۹";
 
 /* Info About View: Welcome */
 "info_app_about_welcome" = "به «دوازده‌تای روزانه» من خوش آمدید!";
@@ -287,16 +287,16 @@
 "reminder.state.on" = "فعال";
 
 /* Google Firebase Analytics */
-"setting_analytics_body" = "Enable anonymous usage information to be collected to help improve this application.";
+"setting_analytics_body" = "برای کمک به بهبود این برنامه، جمع‌آوری اطلاعات مربوط به نحوه استفاده به‌صورت ناشناس را فعال نمایید.";
 
 /* Google Firebase Analytics */
-"setting_analytics_enable" = "Enable Analytics";
+"setting_analytics_enable" = "Analytics را فعال نمایید";
 
 /* Google Firebase Analytics */
-"setting_analytics_opt_in" = "Opt In";
+"setting_analytics_opt_in" = "مشارکت";
 
 /* Google Firebase Analytics */
-"setting_analytics_opt_out" = "Opt Out";
+"setting_analytics_opt_out" = "عدم مشارکت";
 
 /* Google Firebase Analytics */
 "setting_analytics_title" = "Analytics";
