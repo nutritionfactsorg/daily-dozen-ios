@@ -83,35 +83,14 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         App Library Directory:\n\(URL.inLibrary().path)\n
         :::::::::::::::::::::::::::::::::\n
         """)
-        #endif
         
         // =====  DEBUG: XCODE 15.1/.2/… DEBUGGER WORKAROUND  =====
-        #if DEBUG
-        logit.logLevel = LogServiceLevel.verbose
-        let logitpath = logit.logfileUrl?.absoluteString ?? "logpath not available"
-        logit.debug("""
-        \n::::: WORKAROUND: PAUSE 1 :::::
-        Workaround: Xcode 15.• debugger not auto-attaching to iOS 15/16 simulator
-        logit file path:
-        \(logitpath)
-        
-        CAUTION: 
-        • Copy any required info (e.g. logit path) before a detach/attach cycle.
-        • Currently, detach/attach clears the debug console.
-        • Any print() further statements may not have debug console output.
-        • The logit file will continue to update.
-        
-        NEXT STEP: detach
-        :::::::::::::::::::::::::::::::::\n
-        """)
-        pause()
-
-        logit.debug("""
-        \n::::: WORKAROUND: PAUSE 2 :::::
-        NEXT STEP: attach
-        :::::::::::::::::::::::::::::::::\n
-        """)
-        pause()
+        let systemName = UIDevice.current.systemName
+        let systemVersion = UIDevice.current.systemVersion
+        if systemName == "iOS",
+           systemVersion.hasPrefix("15") || systemVersion.hasPrefix("16") {
+            pauseDebug()
+        }
         #endif
         
         // =====  GLOBAL SETUP  =====
@@ -156,6 +135,35 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         #endif
                 
         return true
+    }
+    
+    func pauseDebug() {
+        // =====  DEBUG: XCODE 15.1/.2/… DEBUGGER WORKAROUND  =====
+        logit.logLevel = LogServiceLevel.verbose
+        let logitpath = logit.logfileUrl?.absoluteString ?? "logpath not available"
+        logit.debug("""
+        \n::::: WORKAROUND: PAUSE 1 :::::
+        Workaround: Xcode 15.• debugger not auto-attaching to iOS 15/16 simulator
+        logit file path:
+        \(logitpath)
+        
+        NEXT STEPS: 
+        • Copy any required info (e.g. logit path) before a detach/attach cycle.
+        • Currently, detach/attach clears the debug console.
+        • Any print() further statements may not have debug console output.
+        • The logit file will continue to update.
+        
+        … then, detach, if applicable.
+        :::::::::::::::::::::::::::::::::\n
+        """)
+        pause()
+
+        logit.debug("""
+        \n::::: WORKAROUND: PAUSE 2 :::::
+        NEXT STEP: attach, if applicable
+        :::::::::::::::::::::::::::::::::\n
+        """)
+        pause()
     }
     
     func applicationDidBecomeActive(_ application: UIApplication) {

@@ -1572,7 +1572,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "### https://developer.apple.com/documentation/xcode/build-settings-reference\necho \"Script: GoogleService\"\n\nFILE_FROM=\"$BUILT_PRODUCTS_DIR/$WRAPPER_NAME/GoogleService/GoogleService-Info.plist\"\nFILE_TO=\"$BUILT_PRODUCTS_DIR/$WRAPPER_NAME/GoogleService-Info.plist\"\necho \"$FILE\"\nif [ -f $FILE ]; then\n   echo \"FILE GoogleService-Info.plist is present.\"\n   mv $FILE_FROM $FILE_TO\nelse\n   echo \"FILE GoogleService-Info.plist is not present.\"\nfi\n";
+			shellScript = "### https://developer.apple.com/documentation/xcode/build-settings-reference\necho \"Script: GoogleService\"\n\nFILE_SOURCE=\"$BUILT_PRODUCTS_DIR/$WRAPPER_NAME/GoogleService/GoogleService-Info.plist\"\nFILE_TARGET=\"$BUILT_PRODUCTS_DIR/$WRAPPER_NAME/GoogleService-Info.plist\"\n#echo \"SOURCE: $FILE_SOURCE\"\n#echo \"TARGET: $FILE_TARGET\"\n\nif [ -f $FILE_SOURCE ]; then\n   echo \"FILE GoogleService-Info.plist is present.\"\n   echo \"SOURCE: $FILE_SOURCE\"\n   echo \"TARGET: $FILE_TARGET\"\n   mv $FILE_SOURCE $FILE_TARGET\nelse\n   echo \"FILE GoogleService-Info.plist is not present.\"\nfi\n";
 		};
 		B928040A54DABDDC50DB0D10 /* [CP] Embed Pods Frameworks */ = {
 			isa = PBXShellScriptBuildPhase;

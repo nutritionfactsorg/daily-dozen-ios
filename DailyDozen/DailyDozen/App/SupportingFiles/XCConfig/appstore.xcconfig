@@ -9,3 +9,6 @@
 // https://help.apple.com/xcode/#/dev745c5c974
 
 SWIFT_ACTIVE_COMPILATION_CONDITIONS = WITH_ANALYTICS
+
+// Note: In addition, `$(inherited)` was added to SWIFT_ACTIVE_COMPILATION_CONDITIONS
+//       at Targets > DailyDozen > Build Settings for Levels: DailyDozen target
