@@ -153,14 +153,14 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         • Any print() further statements may not have debug console output.
         • The logit file will continue to update.
         
-        … then, detach, if applicable.
+        … then, Detach from DailyDozen process.
         :::::::::::::::::::::::::::::::::\n
         """)
         pause()
 
         logit.debug("""
         \n::::: WORKAROUND: PAUSE 2 :::::
-        NEXT STEP: attach, if applicable
+        NEXT STEP: Attach to Process > DailyDozen
         :::::::::::::::::::::::::::::::::\n
         """)
         pause()
