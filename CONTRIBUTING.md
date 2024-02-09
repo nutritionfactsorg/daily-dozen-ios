@@ -59,13 +59,15 @@ When submitting an issue, providing the following information will increase the 
 
 ### Submitting a Pull Request
 
-Before you create and submit a Pull Request, please create an [Issue Ticket][issue] which describes the envisioned contribution. An Issue Ticket will allow for discussion of how a fix or enhancement aligns with project history, impact, and roadmap. This step should also clarify approach, timeline, and naturally lead to a go/no-go/defer action plan from a core team member.
+Before you create and submit a Pull Request, please create an [Issue Ticket][issue] which describes the envisioned contribution. An Issue Ticket will allow for discussion of how a fix or enhancement aligns with project history, impact, and roadmap. This step should also clarify approach, timeline, and naturally lead to a go/no-go/defer action plan from the [core team](https://github.com/orgs/nutritionfactsorg/people).
 
 If an Issue Ticket proceeds to a "go" plan, then you will be pointed to which branch to use at that time.
 
 **Getting Up To Speed**
 
-We want to foster a community of participation and learning, especially for people interested in committing to FOSS projects. Kent C. Dodds provides a great set of tutorials covering [How to Contribute to an Open Source Project on GitHub][contribute-os] geared toward submitting your first Pull Request.  Check it out and start contributing!  
+We want to foster a community of participation and learning, especially for people interested in committing to FOSS projects. Kent C. Dodds provides a great set of tutorials covering [How to Contribute to an Open Source Project on GitHub][contribute-os] geared toward submitting your first Pull Request.
+
+Developer documentation for the DailyDozen iOS application is in located in the `Docs` directory.  The [Docs/DeveloperNotes.md](Docs/DeveloperNotes.md) file provides dev environment, build, and debug information particular to the DailyDozen iOS app development.
 
 **Before you submit your Pull Request consider the following guidelines:**
 
@@ -75,15 +77,15 @@ We want to foster a community of participation and learning, especially for peop
 
 * Please submit all pull requests to the [nutritionfactsorg/daily-dozen-ios][daily-dozen-ios] repository in the branch designated by a core team member for the related Issue Ticket.
 
-If you don't have a feature in mind, but would like to contribute back to the project, check out the [open issues][issues] and see if there are any you can tackle. 
+If you don't have a feature in mind, but would like to contribute back to the project, check out the [open issues][issues]. _The ["Active Outreach" labels][labels] ("beginner, "good first issue" and "help wanted") indicate which issues are looking for community participation to work the related Discussion, Issue, and possible subsequent Pull Request._
 
-The outreach [labels](https://github.com/nutritionfactsorg/daily-dozen-ios/issues/labels) ("beginner, "good first issue" and "help wanted") indicate which issues are looking for community participation to do the related Pull Request.
+| Active Outreach | |
+|:------:|---------------------|
+| [![][lbl-beginner]][labels] | Indicates an issue which is easier or less complicated to resolve. |
+| [![][lbl-good-first]][labels] | Indicates a good issue for new contributors. |
+| [![][lbl-help-wanted]][labels] | Indicates that a maintainer wants help on an issue or pull request. |
 
-| | |
-|--------|---------------------|
-| ![][lbl-beginner]    | Indicates an issue which is easier or less complicated to resolve. |
-| ![][lbl-good-first]  | Indicates a good issue for new contributors. |
-| ![][lbl-help-wanted] | Indicates that a maintainer wants help on an issue or pull request. |
+[labels]:Docs/Labels.md
 
 <a name="commit"></a> Git Commit Guidelines
 -------------------------------------------
@@ -180,3 +182,5 @@ The footer should reference GitHub issues that this commit **Closes**.
 
 [lbl-help-wanted]:CONTRIBUTING_files/lbl-help-wanted.svg
 [src-help-wanted]:https://labl.es/svg?text=help%20wanted&bgcolor=128a0c
+
+<!-- label generator: https://labl.es/ -->
