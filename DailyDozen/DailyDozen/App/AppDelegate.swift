@@ -71,6 +71,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         logit.info("SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG WITH_ANALYTICS")
         #elseif DEBUG && WITHOUT_ANALYTICS
         logit.info("SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG WITHOUT_ANALYTICS")
+        #elseif DEBUG
+        logit.info("SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG // ANALYTICS STATE NOT SET")
         #endif
         
         // =====  SIMULATOR ENVIRONMENT  =====

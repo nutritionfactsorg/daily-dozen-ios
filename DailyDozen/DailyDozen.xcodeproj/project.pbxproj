@@ -111,6 +111,8 @@
 		49F66B792588752D00002DB2 /* UITextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49F66B782588752D00002DB2 /* UITextField.swift */; };
 		49F8D1DC23905B70003E139F /* TweakEntryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49F8D1DB23905B70003E139F /* TweakEntryViewController.swift */; };
 		49F8D1DE23906B29003E139F /* TweakEntryDataProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49F8D1DD23906B29003E139F /* TweakEntryDataProvider.swift */; };
+		4C06BECC2B87234A005CE4D4 /* appstore-debug.xcconfig in Resources */ = {isa = PBXBuildFile; fileRef = 4C06BECB2B87234A005CE4D4 /* appstore-debug.xcconfig */; };
+		4C06BECE2B87237F005CE4D4 /* oss-debug.xcconfig in Resources */ = {isa = PBXBuildFile; fileRef = 4C06BECD2B87237F005CE4D4 /* oss-debug.xcconfig */; };
 		4C1E359B2AE268BA008B3B2B /* SqlDailyTracker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C1E359A2AE268BA008B3B2B /* SqlDailyTracker.swift */; };
 		4C22C9A02A737DEE0008D7B6 /* RealmDailyTracker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C22C9962A737DEE0008D7B6 /* RealmDailyTracker.swift */; };
 		4C22C9A12A737DEE0008D7B6 /* DataCountAttributes.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C22C9972A737DEE0008D7B6 /* DataCountAttributes.swift */; };
@@ -344,6 +346,8 @@
 		49FCFE9D273278AB000E92F1 /* ru */ = {isa = PBXFileReference; lastKnownFileType = text.json; name = ru; path = ru.lproj/DozeDetailData.json; sourceTree = "<group>"; };
 		49FCFE9E273278AB000E92F1 /* ru */ = {isa = PBXFileReference; lastKnownFileType = text.json; name = ru; path = ru.lproj/TweakDetailData.json; sourceTree = "<group>"; };
 		49FECE9327DB0C3B0078C26D /* LocalesBatchA.xctestplan */ = {isa = PBXFileReference; lastKnownFileType = text; path = LocalesBatchA.xctestplan; sourceTree = "<group>"; };
+		4C06BECB2B87234A005CE4D4 /* appstore-debug.xcconfig */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xcconfig; path = "appstore-debug.xcconfig"; sourceTree = "<group>"; };
+		4C06BECD2B87237F005CE4D4 /* oss-debug.xcconfig */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xcconfig; path = "oss-debug.xcconfig"; sourceTree = "<group>"; };
 		4C1E359A2AE268BA008B3B2B /* SqlDailyTracker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SqlDailyTracker.swift; sourceTree = "<group>"; };
 		4C22C9962A737DEE0008D7B6 /* RealmDailyTracker.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RealmDailyTracker.swift; sourceTree = "<group>"; };
 		4C22C9972A737DEE0008D7B6 /* DataCountAttributes.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DataCountAttributes.swift; sourceTree = "<group>"; };
@@ -357,8 +361,8 @@
 		4C4632EF2941A3A100CB0313 /* sk */ = {isa = PBXFileReference; lastKnownFileType = text.json; name = sk; path = sk.lproj/DozeDetailData.json; sourceTree = "<group>"; };
 		4C4632F02941A3A100CB0313 /* sk */ = {isa = PBXFileReference; lastKnownFileType = text.json; name = sk; path = sk.lproj/TweakDetailData.json; sourceTree = "<group>"; };
 		4C4CF1F82B6C0AC800C776DE /* GoogleAnalyticsHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GoogleAnalyticsHelper.swift; sourceTree = "<group>"; };
-		4C4CF1FB2B6C4F3700C776DE /* appstore.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = appstore.xcconfig; sourceTree = "<group>"; };
-		4C4CF1FC2B6C4F4D00C776DE /* oss.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = oss.xcconfig; sourceTree = "<group>"; };
+		4C4CF1FB2B6C4F3700C776DE /* appstore-release.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = "appstore-release.xcconfig"; sourceTree = "<group>"; };
+		4C4CF1FC2B6C4F4D00C776DE /* oss-release.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = "oss-release.xcconfig"; sourceTree = "<group>"; };
 		4C4CF2012B6C9A3300C776DE /* fa */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = fa; path = fa.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		4C4CF2022B6C9A3300C776DE /* fa */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = fa; path = fa.lproj/Localizable.strings; sourceTree = "<group>"; };
 		4C4CF2032B6C9A3300C776DE /* fa */ = {isa = PBXFileReference; lastKnownFileType = text.json; name = fa; path = fa.lproj/DozeDetailData.json; sourceTree = "<group>"; };
@@ -991,8 +995,10 @@
 		4C4CF1FA2B6C4F0900C776DE /* XCConfig */ = {
 			isa = PBXGroup;
 			children = (
-				4C4CF1FB2B6C4F3700C776DE /* appstore.xcconfig */,
-				4C4CF1FC2B6C4F4D00C776DE /* oss.xcconfig */,
+				4C06BECB2B87234A005CE4D4 /* appstore-debug.xcconfig */,
+				4C4CF1FB2B6C4F3700C776DE /* appstore-release.xcconfig */,
+				4C06BECD2B87237F005CE4D4 /* oss-debug.xcconfig */,
+				4C4CF1FC2B6C4F4D00C776DE /* oss-release.xcconfig */,
 			);
 			path = XCConfig;
 			sourceTree = "<group>";
@@ -1475,6 +1481,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				4C06BECE2B87237F005CE4D4 /* oss-debug.xcconfig in Resources */,
 				49B97FE725F5EE5C009BA5A9 /* DozeEntryPagerLayout.storyboard in Resources */,
 				49C01CD22644AF48005E592D /* TweakDetailDescriptionHeader.xib in Resources */,
 				49B97FEF25F5EF87009BA5A9 /* TweakEntryPagerLayout.storyboard in Resources */,
@@ -1497,6 +1504,7 @@
 				49C01CC52644AA09005E592D /* DozeDetailTypeHeader.xib in Resources */,
 				49C01CD42644AF48005E592D /* TweakDetailActivityHeader.xib in Resources */,
 				49DEDA35264A0D0A0056462D /* SettingsLayout.storyboard in Resources */,
+				4C06BECC2B87234A005CE4D4 /* appstore-debug.xcconfig in Resources */,
 				49C01CCD2644ADCB005E592D /* TweakEntryLayout.storyboard in Resources */,
 				4916451D23EE53610077731D /* TweakDetailData.json in Resources */,
 				49DEDA39264A0DEC0056462D /* FirstLaunch.storyboard in Resources */,
@@ -1572,7 +1580,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "### https://developer.apple.com/documentation/xcode/build-settings-reference\necho \"Script: GoogleService\"\n\nFILE_SOURCE=\"$BUILT_PRODUCTS_DIR/$WRAPPER_NAME/GoogleService/GoogleService-Info.plist\"\nFILE_TARGET=\"$BUILT_PRODUCTS_DIR/$WRAPPER_NAME/GoogleService-Info.plist\"\n#echo \"SOURCE: $FILE_SOURCE\"\n#echo \"TARGET: $FILE_TARGET\"\n\nif [ -f $FILE_SOURCE ]; then\n   echo \"FILE GoogleService-Info.plist is present.\"\n   echo \"SOURCE: $FILE_SOURCE\"\n   echo \"TARGET: $FILE_TARGET\"\n   mv $FILE_SOURCE $FILE_TARGET\nelse\n   echo \"FILE GoogleService-Info.plist is not present.\"\nfi\n";
+			shellScript = "### https://developer.apple.com/documentation/xcode/build-settings-reference\necho \"Script: GoogleService\"\n\nFILE_SOURCE=\"$BUILT_PRODUCTS_DIR/$WRAPPER_NAME/GoogleService/GoogleService-Info.plist\"\nFILE_TARGET=\"$BUILT_PRODUCTS_DIR/$WRAPPER_NAME/GoogleService-Info.plist\"\n\nif [ -f $FILE_SOURCE ]; then\n   echo \"FILE GoogleService-Info.plist is present.\"\n   echo \"SOURCE: $FILE_SOURCE\"\n   echo \"TARGET: $FILE_TARGET\"\n   mv $FILE_SOURCE $FILE_TARGET\nelse\n   echo \"FILE GoogleService-Info.plist is not present.\"\nfi\n";
 		};
 		B928040A54DABDDC50DB0D10 /* [CP] Embed Pods Frameworks */ = {
 			isa = PBXShellScriptBuildPhase;
@@ -2020,7 +2028,7 @@
 		};
 		4C3A0E3A2B6DFAFE000F3210 /* DebugOSS */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 4C4CF1FC2B6C4F4D00C776DE /* oss.xcconfig */;
+			baseConfigurationReference = 4C06BECD2B87237F005CE4D4 /* oss-debug.xcconfig */;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
 				ASSETCATALOG_COMPILER_GENERATE_SWIFT_ASSET_SYMBOL_EXTENSIONS = YES;
@@ -2076,6 +2084,7 @@
 				IPHONEOS_DEPLOYMENT_TARGET = 15.1;
 				MTL_ENABLE_DEBUG_INFO = YES;
 				ONLY_ACTIVE_ARCH = YES;
+				PRODUCT_NAME = "$(TARGET_NAME)";
 				SDKROOT = iphoneos;
 				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "DEBUG $(inherited)";
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
@@ -2094,6 +2103,7 @@
 				ENABLE_USER_SCRIPT_SANDBOXING = NO;
 				"EXCLUDED_ARCHS[sdk=iphonesimulator*]" = arm64;
 				INFOPLIST_FILE = "$(SRCROOT)/DailyDozen/App/InfoPlist/Info.plist";
+				INFOPLIST_KEY_CFBundleDisplayName = "$(TARGET_NAME)";
 				IPHONEOS_DEPLOYMENT_TARGET = 15.1;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -2101,10 +2111,9 @@
 				);
 				MARKETING_VERSION = 3.5.1;
 				PRODUCT_BUNDLE_IDENTIFIER = com.nutritionfacts.dailydozen;
-				PRODUCT_NAME = "$(TARGET_NAME)";
 				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
 				SUPPORTS_MACCATALYST = NO;
-				SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD = NO;
+				SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD = YES;
 				SUPPORTS_XR_DESIGNED_FOR_IPHONE_IPAD = NO;
 				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "$(inherited)";
 				SWIFT_VERSION = 5.0;
@@ -2165,7 +2174,7 @@
 		};
 		4C3A0E3E2B6DFB0C000F3210 /* ReleaseOSS */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 4C4CF1FC2B6C4F4D00C776DE /* oss.xcconfig */;
+			baseConfigurationReference = 4C4CF1FC2B6C4F4D00C776DE /* oss-release.xcconfig */;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
 				ASSETCATALOG_COMPILER_GENERATE_SWIFT_ASSET_SYMBOL_EXTENSIONS = YES;
@@ -2214,7 +2223,7 @@
 				GCC_WARN_UNUSED_VARIABLE = YES;
 				IPHONEOS_DEPLOYMENT_TARGET = 15.1;
 				MTL_ENABLE_DEBUG_INFO = NO;
-				ONLY_ACTIVE_ARCH = YES;
+				PRODUCT_NAME = "$(TARGET_NAME)";
 				SDKROOT = iphoneos;
 				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "$(inherited)";
 				SWIFT_COMPILATION_MODE = wholemodule;
@@ -2234,18 +2243,17 @@
 				DEVELOPMENT_TEAM = 2MG57YUZL5;
 				ENABLE_USER_SCRIPT_SANDBOXING = NO;
 				INFOPLIST_FILE = "$(SRCROOT)/DailyDozen/App/InfoPlist/Info.plist";
+				INFOPLIST_KEY_CFBundleDisplayName = "$(TARGET_NAME)";
 				IPHONEOS_DEPLOYMENT_TARGET = 15.1;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 3.5.1;
-				ONLY_ACTIVE_ARCH = NO;
 				PRODUCT_BUNDLE_IDENTIFIER = com.nutritionfacts.dailydozen;
-				PRODUCT_NAME = "$(TARGET_NAME)";
 				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
 				SUPPORTS_MACCATALYST = NO;
-				SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD = NO;
+				SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD = YES;
 				SUPPORTS_XR_DESIGNED_FOR_IPHONE_IPAD = NO;
 				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "$(inherited)";
 				SWIFT_VERSION = 5.0;
@@ -2304,7 +2312,7 @@
 		};
 		CFE698481F974B9700CD7905 /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 4C4CF1FB2B6C4F3700C776DE /* appstore.xcconfig */;
+			baseConfigurationReference = 4C06BECB2B87234A005CE4D4 /* appstore-debug.xcconfig */;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
 				ASSETCATALOG_COMPILER_GENERATE_SWIFT_ASSET_SYMBOL_EXTENSIONS = YES;
@@ -2360,6 +2368,7 @@
 				IPHONEOS_DEPLOYMENT_TARGET = 15.1;
 				MTL_ENABLE_DEBUG_INFO = YES;
 				ONLY_ACTIVE_ARCH = YES;
+				PRODUCT_NAME = "$(TARGET_NAME)";
 				SDKROOT = iphoneos;
 				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "DEBUG $(inherited)";
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
@@ -2368,7 +2377,7 @@
 		};
 		CFE698491F974B9700CD7905 /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 4C4CF1FB2B6C4F3700C776DE /* appstore.xcconfig */;
+			baseConfigurationReference = 4C4CF1FB2B6C4F3700C776DE /* appstore-release.xcconfig */;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
 				ASSETCATALOG_COMPILER_GENERATE_SWIFT_ASSET_SYMBOL_EXTENSIONS = YES;
@@ -2417,7 +2426,7 @@
 				GCC_WARN_UNUSED_VARIABLE = YES;
 				IPHONEOS_DEPLOYMENT_TARGET = 15.1;
 				MTL_ENABLE_DEBUG_INFO = NO;
-				ONLY_ACTIVE_ARCH = YES;
+				PRODUCT_NAME = "$(TARGET_NAME)";
 				SDKROOT = iphoneos;
 				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "$(inherited)";
 				SWIFT_COMPILATION_MODE = wholemodule;
@@ -2438,6 +2447,7 @@
 				ENABLE_USER_SCRIPT_SANDBOXING = NO;
 				"EXCLUDED_ARCHS[sdk=iphonesimulator*]" = arm64;
 				INFOPLIST_FILE = "$(SRCROOT)/DailyDozen/App/InfoPlist/Info.plist";
+				INFOPLIST_KEY_CFBundleDisplayName = "$(TARGET_NAME)";
 				IPHONEOS_DEPLOYMENT_TARGET = 15.1;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -2445,10 +2455,9 @@
 				);
 				MARKETING_VERSION = 3.5.1;
 				PRODUCT_BUNDLE_IDENTIFIER = com.nutritionfacts.dailydozen;
-				PRODUCT_NAME = "$(TARGET_NAME)";
 				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
 				SUPPORTS_MACCATALYST = NO;
-				SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD = NO;
+				SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD = YES;
 				SUPPORTS_XR_DESIGNED_FOR_IPHONE_IPAD = NO;
 				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "$(inherited)";
 				SWIFT_VERSION = 5.0;
@@ -2467,18 +2476,17 @@
 				DEVELOPMENT_TEAM = 2MG57YUZL5;
 				ENABLE_USER_SCRIPT_SANDBOXING = NO;
 				INFOPLIST_FILE = "$(SRCROOT)/DailyDozen/App/InfoPlist/Info.plist";
+				INFOPLIST_KEY_CFBundleDisplayName = "$(TARGET_NAME)";
 				IPHONEOS_DEPLOYMENT_TARGET = 15.1;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 3.5.1;
-				ONLY_ACTIVE_ARCH = NO;
 				PRODUCT_BUNDLE_IDENTIFIER = com.nutritionfacts.dailydozen;
-				PRODUCT_NAME = "$(TARGET_NAME)";
 				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
 				SUPPORTS_MACCATALYST = NO;
-				SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD = NO;
+				SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD = YES;
 				SUPPORTS_XR_DESIGNED_FOR_IPHONE_IPAD = NO;
 				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "$(inherited)";
 				SWIFT_VERSION = 5.0;

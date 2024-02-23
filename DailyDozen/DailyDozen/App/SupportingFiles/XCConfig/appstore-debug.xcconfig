@@ -1,0 +1,25 @@
+//
+//  appstore.xcconfig
+//  DailyDozen
+//
+//  Copyright © 2024 Nutritionfacts.org. All rights reserved.
+//
+
+// Configuration settings file format documentation can be found at:
+// https://help.apple.com/xcode/#/dev745c5c974
+
+// Note:
+//     `$(inherited)` was also added to SWIFT_ACTIVE_COMPILATION_CONDITIONS
+//     at Targets > DailyDozen > Build Settings for Levels: DailyDozen target
+SWIFT_ACTIVE_COMPILATION_CONDITIONS = WITH_ANALYTICS
+
+// :NYI: build configuration management of name & identifier
+// SEE ALSO: project.bpxproj
+// PRODUCT_NAME = "$(TARGET_NAME)";
+//     related term: CFBundleName
+//     related term: INFOPLIST_KEY_CFBundleDisplayName
+//PRODUCT_NAME = $(TARGET_NAME) β //PRODUCT_NAME = $(inherited) β
+//PRODUCT_BUNDLE_IDENTIFIER = com.nutritionfacts.dailydozen.debug
+
+// :NYI: build configuration control of debug build app icon
+//ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon-Beta
