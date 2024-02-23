@@ -27,7 +27,7 @@ The DozenDozen app is implemented to support iOS 15.1 or newer iOS versions. The
 - Apple Vision - Out of scope.
 - iPhone - iOS 15.1 or later. Directly supported.
 - iPad - iPadOS 15.1 or later. Indirectly supported as an iOS app 
-- iPod Touch - iOS 15. Last iOS verion for iPods. Directly supported iOS.
+- iPod Touch - iOS 15. Last iOS version for iPods. Directly supported iOS.
 - Mac - macOS 12.0 or later on a Mac with Apple M1 chip or later. Indirectly supported as a built-for-iOS app which happens to run on some Mac computers.
 
 > _Note: Although the app can run on iPadOS and the newer ARM-based macOS, iOS on iPhone is the primary scope for the source code in this repository at this time._
