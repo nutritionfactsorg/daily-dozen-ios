@@ -11,6 +11,6 @@
 "NSHealthShareUsageDescription" = "ویژگی «۲۱ ترفند» برای به‌روزرسانی میزان وزن روزانه‌تان، از داده‌های HealthKitتان استفاده می‌کند.";
 
 /* Privacy - Health Update Usage Description */
-"NSHealthUpdateUsageDescription" = "ویژگی «۲۱ ترفند» می‌تواند داده‌های مربوط به وزن‌تان را در HealthKitتان وارد کند تا به این طریق به نظارت بر پیشروی‌تان کمک کند.";
+"NSHealthUpdateUsageDescription" = "ویژگی «۲۱ ترفند» می‌تواند داده‌های مربوط به وزنتان را در HealthKitتان وارد کند تا به‌این‌طریق به نظارت بر پیشروی‌تان کمک کند.";
 
 /* file end */
