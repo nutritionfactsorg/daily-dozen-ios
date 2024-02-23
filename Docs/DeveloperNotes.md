@@ -1,15 +1,16 @@
-# Daily Dozen App Developer Notes
+# DailyDozen App Developer Notes
 
 _This document provides developer notes for building and debugging the Open Source Daily Dozen app for Apple products._
 
 Contents: <a id="contents"></a>
 [Essentials](#essentials-) •
 [Build](#build-) •
-[Debug](#debug-)
+[Debug](#debug-) •
+[Utilities](#utilities-)
 
 ## Essentials <a id="essentials-"></a><sup>[▴](#contents)</sup>
 
-**Prerequisites: A working knowledge of [Apple iOS SW Development][AppleDocs], [CocoaPods][], [Git][], [GitHub][], [Swift][], [Xcode][] is required for software development.**
+**Prerequisites: A working knowledge of [Apple iOS SW Development][AppleDocs], [CocoaPods][], [Git][], [GitHub][], [Swift][], and [Xcode][] is required for _software development_.**
 
 CocoaPods may be replaced with the [Swift Package Manager][SPM] at some future time. [Homebrew][] can be helpful to install and update supporting tools.
 
@@ -19,7 +20,7 @@ The 3rd party library versions currently in use are specified in [DailyDozen/Pod
 
 _OS Versions_
 
-The Dozen Dozen app is implemented to support iOS 15.1 or newer iOS versions. The Daily Dozen app can be run on, and is supported on, the range of Apple OS hardware as follows: 
+The DozenDozen app is implemented to support iOS 15.1 or newer iOS versions. The Daily Dozen app can be run on, and is supported on, the range of Apple OS hardware as follows: 
 
 - Apple Watch - Currently out of scope.
 - Apple TV - Out of scope.
@@ -33,7 +34,7 @@ The Dozen Dozen app is implemented to support iOS 15.1 or newer iOS versions. Th
 
 _Software Development Tool Versions_
 
-The latest production-release version of each software development tool is used for all development which is candidate to be distributed in Apple's App Store:
+The latest production-release version of each software development tool is used for all development which is a candidate to be distributed in Apple's App Store:
 
 - [Apple Xcode](https://apps.apple.com/us/app/xcode/id497799835)
 - [CocoaPods](https://formulae.brew.sh/formula/cocoapods)
@@ -64,11 +65,68 @@ The `DailyDozenAppstore` scheme is used to build any version that is submitted t
 #endif
 ```
 
+See [XcodeConfigs.md](XcodeConfigs.md) for additional information on the DailyDozen Xcode build configurations.
+
 ## Debug <a id="debug-"></a><sup>[▴](#contents)</sup>
 
-**Advanced Utilities**
+**Console**
 
-There is a screen with Advanced Utilities which can be accessed through the Preferences screen for `DEBUG` builds.
+The path to the simulator files is included in the console output.
+
+```
+::::: SIMULATOR ENVIRONMENT :::::
+Bundle & Resources Path:
+/Users/…/CoreSimulator/Devices/…/data/Containers/Bundle/Application/…/DailyDozen.app
+
+App Documents Directory:
+/Users/…/CoreSimulator/Devices/…/data/Containers/Data/Application/SOME_ID/Documents
+```
+
+The simulator app path can be used with the Terminal command `open` to reveal the directory which contains the log files (if enabled) and the database files.
+
+``` sh
+open /Users/…/CoreSimulator/Devices/…/data/Containers/Data/Application/SOME_ID
+```
+
+**Logging**
+
+A `LogServer` shared instance `logit` is used instead of `print()` statements in the DailyDozen source code.  The `LogServer` can simultaneously output to the debug console and write to a timestamped text log file.
+
+``` swift
+var logit = LogService.shared
+
+public class LogService {
+    static var shared = LogService()
+    /// Current log level.
+    public var logLevel = LogServiceLevel.defaultLevel
+    // …
+    public func useLogFile(nameToken: String) { … }
+}
+```
+
+Several logging levels are supported.
+
+``` swift
+logit.error("…")
+logit.warning("…")
+logit.info("…") // default, in most cases
+logit.debug("…")
+logit.verbose("…")
+```
+
+**Workaround: Xcode debugger breakpoints not pausing**
+
+Xcode versions 15.1 and 15.2 were found to not pause at breakpoints for iOS 15 and iOS 16 when debugging the Daily Dozen app while using the Simulator.
+
+Some fault isolation and internet searching confirmed that the issue was with Apple Development tools (see links below), and not an issue in the Daily Dozen build/debug process.
+
+A successful workaround has been implemented for the DailyDozen build/debug process. Workaround steps are posted in Issue #79:
+
+- ["Xcode debugger doesn't pause at breakpoints (simulator iOS 15, 16)"](https://github.com/nutritionfactsorg/daily-dozen-ios/issues/79)
+
+## Utilities <a id="utilities-"></a><sup>[▴](#contents)</sup>
+
+A number of developer utilities is provided on an Advanced Utilities screen. The Advanced Utilities screen can be accessed through the Preferences screen in `#if DEBUG` enabled builds.
 
 ``` swift
 #if DEBUG
@@ -79,17 +137,24 @@ advancedUtilitiesTableViewCell.isHidden = false
 
 ![](DeveloperNotes_files/UtilitiesAdvanced.png)
 
-> ⚠️ **_Caution: The Advanced Utilities has several functions that can overwrite the entire Daily Dozen settings and/or database. These utilities are intended for use with the simulator or on test devices which do not contain personal Daily Dozen data. If used for devices with personal data, then first use the "Export History" to save a backup of the data._**
+> ⚠️ **_Caution: The Advanced Utilities has several functions that can overwrite the entire DailyDozen app settings and/or database. These utilities are intended for use with the simulator or on test devices which do not contain personal DailyDozen app data. If used for devices with personal data, then first use the "Export Data" to save a backup of the data._**
 
-**Workaround: Xcode debugger breakpoints not pausing**
+**Advanced Utilities**
 
-Xcode versions 15.1 and 15.2 were found to not pause at breakpoints for iOS 15 and iOS 16 when debugging the Daily Dozen app while using the Simulator.
+A partial list of available Advanced Utilities is listed below. These utilities are subject to change without notice.
 
-Some fault isolation and internet searching confirmed that the issue was with Apple Development tools (see links below), and not issue in the Daily Dozen build/debug process.
-
-A successful workaround has been implemented for the DailyDozen build/debug process. Workaround steps are posted in Issue #79:
-
-- ["Xcode debugger doesn't pause at breakpoints (simulator iOS 15, 16)"](https://github.com/nutritionfactsorg/daily-dozen-ios/issues/79)
+- Database
+    - Clear DB - erases all DB data
+    - Create Data - generated simulated data
+    - Export Data
+    - Import Data
+    - Simulate Progress - checkbox progress data sufficient to trigger each stage of streak indicater
+    - Timing Test
+- Date & Time
+    - Add One Day
+- Settings
+    - Clear Settings
+    - Show Settings
 
 <!--  -->
 

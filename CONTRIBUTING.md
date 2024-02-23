@@ -65,7 +65,7 @@ If an Issue Ticket proceeds to a "go" plan, then you will be pointed to which br
 
 **Getting Up To Speed**
 
-We want to foster a community of participation and learning, especially for people interested in committing to FOSS projects. Kent C. Dodds provides a great set of tutorials covering [How to Contribute to an Open Source Project on GitHub][contribute-os] geared toward submitting your first Pull Request.
+We want to foster a community of participation and learning, especially for people interested in committing to Open Source Software (OSS) projects. Kent C. Dodds provides a great set of tutorials covering [How to Contribute to an Open Source Project on GitHub][contribute-os] geared toward submitting your first Pull Request.
 
 Developer documentation for the DailyDozen iOS application is in located in the `Docs` directory.  The [Docs/DeveloperNotes.md](Docs/DeveloperNotes.md) file provides dev environment, build, and debug information particular to the DailyDozen iOS app development.
 
@@ -77,10 +77,10 @@ Developer documentation for the DailyDozen iOS application is in located in the 
 
 * Please submit all pull requests to the [nutritionfactsorg/daily-dozen-ios][daily-dozen-ios] repository in the branch designated by a core team member for the related Issue Ticket.
 
-If you don't have a feature in mind, but would like to contribute back to the project, check out the [open issues][issues]. _The ["Active Outreach" labels][labels] ("beginner, "good first issue" and "help wanted") indicate which issues are looking for community participation to work the related Discussion, Issue, and possible subsequent Pull Request._
+If you don't have a feature in mind, but would like to contribute back to the project, check out the [open issues][issues]. _The ["Community Outreach" labels][labels] ("beginner, "good first issue" and "help wanted") indicate which issues are looking for community participation to work the related Discussion, Issue, and possible subsequent Pull Request._
 
-| Active Outreach | |
-|:------:|---------------------|
+| Community Outreach | |
+|:-------:|---------------------|
 | [![][lbl-beginner]][labels] | Indicates an issue which is easier or less complicated to resolve. |
 | [![][lbl-good-first]][labels] | Indicates a good issue for new contributors. |
 | [![][lbl-help-wanted]][labels] | Indicates that a maintainer wants help on an issue or pull request. |

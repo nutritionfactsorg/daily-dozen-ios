@@ -1,34 +1,34 @@
 # DailyDozen Labels
 
-| Active Outreach | |
-|:----:|---------------------|
+| Communication | |
+|:-------:|---------------------|
+| [![][lbl-discussion]][labels-page] |  |
+| [![][lbl-docs]][labels-page] | Improvements or additions to documentation. |
+| [![][lbl-support]][labels-page] | Inbound support question for more information or "how to". |
+
+| Community Outreach | |
+|:-------:|---------------------|
 | [![][lbl-beginner]][labels-page]       | Indicates an issues which is easier or less complicated to resolve. |
 | [![][lbl-good-first]][labels-page]   | Indicates a good issue for new contributors. |
 | [![][lbl-help-wanted]][labels-page] | Indicates that a maintainer wants help on an issue or pull request. |
 
-| Communication | |
-|:----:|---------------------|
-| [![][lbl-docs]][labels-page] | Improvements or additions to documentation. |
-| [![][lbl-open-discuss]][labels-page] |  |
-| [![][lbl-support]][labels-page] | Inbound support question for more information or "how to". |
-
 | Status | |
-|:----:|---------------------|
+|:-------:|---------------------|
 | [![][lbl-beyond]][labels-page] | Beyond the current scope of active implementation. Possible roadmap item. |
 | [![][lbl-in-progress]][labels-page] |  |
 | [![][lbl-on-hold]][labels-page] |  |
 | [![][lbl-question]][labels-page] | Indicates that an issue, pull request, or discussion needs more information. |
-| [![][lbl-review]][labels-page] | Indicates that an issue, pull request, or discussion which needs internal review. |
+| [![][lbl-review]][labels-page] | Indicates that an issue, pull request, or discussion needs internal review. |
 
-| Status | Close Reason |
-|:----:|---------------------|
+| Status | Reason to Close |
+|:-------:|:--------------------|
 | [![][lbl-duplicate]][labels-page] | Indicates similar issues, pull requests, or discussions. |
 | [![][lbl-out-of-scope]][labels-page] | Something that does not fit within the project's objectives. |
 | [![][lbl-outdated]][labels-page] | Indicates that an issue, pull request, or discussion is no longer relevant. |
 | [![][lbl-wontfix]][labels-page] | Indicates that work won't continue on an issue, pull request, or discussion. |
 
 | Type | |
-|:----:|---------------------|
+|:-------:|---------------------|
 | [![][lbl-bug]][labels-page] | Indicates an unexpected problem or unintended behavior. |
 | [![][lbl-enhancement]][labels-page] | Indicates new feature or code improvement requests. |
 | [![][lbl-optimize]][labels-page] | Code quality improvement. e.g., efficiency, maintainability, performance, reliability, testability. |
@@ -71,8 +71,8 @@
 [lbl-docs]:Labels_files/lbl-documentation.svg
 [src-docs]:https://labl.es/svg?text=documentation&bgcolor=fbca04
 
-[lbl-open-discuss]:Labels_files/lbl-open-discussion.svg
-[src-open-discuss]:https://labl.es/svg?text=open%20discussion&bgcolor=fbca04
+[lbl-discussion]:Labels_files/lbl-discussion.svg
+[src-discussion]:https://labl.es/svg?text=discussion&bgcolor=fbca04
 
 [lbl-support]:Labels_files/lbl-support.svg
 [src-support]:https://labl.es/svg?text=support&bgcolor=fbca04
