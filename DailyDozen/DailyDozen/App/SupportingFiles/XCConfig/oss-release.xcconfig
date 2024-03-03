@@ -15,3 +15,7 @@ SWIFT_ACTIVE_COMPILATION_CONDITIONS = WITHOUT_ANALYTICS
 
 // :NYI: build configuration management of name & identifier
 //PRODUCT_NAME = $(TARGET_NAME)
+
+// Resolves "Error creating LLDB target … using an empty LLDB target…"
+// Default: NO
+//ONLY_ACTIVE_ARCH = NO
