@@ -1,8 +1,9 @@
-# DailyDozen Xcode Project Configurations
+# DailyDozen Xcode Project Configuration
 
 Contents: <a id="contents"></a>
 [Open Source Software (OSS) Configuration](#open-source-software-oss-configuration-) •
 [Apple App Store Configuration](#apple-app-store-configuration-) •
+[Build Settings: Architecture](#build-settings-architecture-) •
 [Resources](#resources-)
 
 ## Open Source Software (OSS) Configuration <a id="open-source-software-oss-configuration-"></a><sup>[▴](#contents)</sup>
@@ -99,6 +100,52 @@ logit.info("GoogleAnalyticsHelper doAnalyticsEnable() completed")
 #else
 logit.info("ANALYTICS is excluded from the build. (AnalyticsHelper doAnalyticsEnable)")
 #endif
+```
+
+## Build Settings: Architecture <a id="build-settings-architecture-"></a><sup>[▴](#contents)</sup>
+
+The following was used to investigate and resolve the `…using an empty LLDB target…` error for Xcode and the associated iPhone Simulator:
+
+> Error creating LLDB target at path '/…/DailyDozen.app'- using an empty LLDB target …
+
+Use `file` to check the archicture of the build executable. The build folder can be located with the **Product** > **Show Build Folder in Finder** menu.
+
+``` sh
+pwd
+# …path/to/Build
+cd Products/Debug-iphonesimulator/ExampleName.app
+
+file ExampleName
+# Mach-O 64-bit executable x86_64
+
+### x86_64 causes an empty LLDB target error when debugging
+### iOS in the Simulator on an Apple Silicon computer.
+```
+
+_debug.xcconfig_
+
+The `ONLY_ACTIVE_ARCH` setting can be added to `*.xcconfig` files for both implementation and documentation purposes.
+
+``` ini
+// Resolve "Error creating LLDB target … using an empty LLDB target…"
+ONLY_ACTIVE_ARCH = YES
+```
+
+_.xcodeproj Settings_
+
+| Title | Name | Debug | Release |
+|:------|:-----|:-----:|:-------:|
+| Architectures | `ARCHS` | default: `$(ARCHS_STANDARD)` | default: `$(ARCHS_STANDARD)` |
+| Excluded Architectures | `EXCLUDED_ARCHS` | unset | unset |
+| Build Active Architectures Only | `ONLY_ACTIVE_ARCH` | Yes | default: No |
+
+_CocoaPods Podfile_
+
+``` rb
+### other: `ONLY_ACTIVE_ARCH` = YES only for `*Debug*` configurations
+if config.name.include?("Debug")
+    config.build_settings["ONLY_ACTIVE_ARCH"] = "NO"
+end
 ```
 
 ## Resources <a id="resources-"></a><sup>[▴](#contents)</sup>
