@@ -37,7 +37,7 @@ class DozeEntryViewController: UIViewController {
     
     // entry.stats.completed
     // Android `out_of` uses 'out of' which does not fit on smaller Apple screens
-    // :???:LOCALIZE: Is "X/Y" format universal?
+    // :NYI:LOCALIZE: Is "X/Y" format universal?
     private var statesCountString: String {
         return "\(dozeDailyStateCount) / \(dozeDailyStateCountMaximum)"
     }

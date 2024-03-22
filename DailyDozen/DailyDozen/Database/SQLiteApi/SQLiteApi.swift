@@ -49,6 +49,21 @@ public class SQLiteApi {
         _ = dailydozenDb.close() // :NYI: handle return result
     }
     
+    func adminBackup() {
+        
+        // •! return value?
+    }
+    
+    func adminNew() {
+        
+        // •! return value?
+    }
+    
+    func adminRestore() {
+        
+        // •! return value?
+    }
+    
     func getDailyTrackers(activity: ActivityProgress? = nil) -> [SqlDailyTracker] {
         // Daily Dozen & Tweaks Counters
         activity?.setProgress(ratio: 0.0, text: "0/3")

@@ -10,36 +10,42 @@ import UIKit
 
 extension UIFont {
     
-    // MARK: - Nested
-    private struct Strings {
-        static let courier = "Courier"
-        static let helvetica = "HelveticaNeue"
-        static let helveticaBold = "HelveticaNeue-Bold"
-        static let helveticaMedium = "HelveticaNeue-Medium"
+    static var fontMonoSystem16: UIFont {
+        return UIFont.monospacedSystemFont(ofSize: 16, weight: .regular)
     }
     
-    static var courier16: UIFont {
-        return UIFont(name: Strings.courier, size: 16) ?? UIFont.systemFont(ofSize: 16)
+    static var fontSystem17: UIFont {
+        return UIFont.systemFont(ofSize: 17)
     }
     
-    static var helevetica17: UIFont {
-        return UIFont(name: Strings.helvetica, size: 17) ?? UIFont.systemFont(ofSize: 17)
+    static var fontSystemBold17: UIFont {
+        return UIFont.boldSystemFont(ofSize: 17)
     }
     
-    static var heleveticaBold17: UIFont {
-        return UIFont(name: Strings.helveticaBold, size: 17) ?? UIFont.boldSystemFont(ofSize: 17)
+    static var fontSystemBold18: UIFont {
+        return UIFont.boldSystemFont(ofSize: 18)
     }
     
-    static var heleveticaBold18: UIFont {
-        return UIFont(name: Strings.helveticaBold, size: 18) ?? UIFont.boldSystemFont(ofSize: 18)
+    static var fontSystemBold22: UIFont {
+        return UIFont.boldSystemFont(ofSize: 22)
     }
     
-    static var helveticaBold22: UIFont {
-        return UIFont(name: Strings.helveticaBold, size: 22) ?? UIFont.boldSystemFont(ofSize: 22)
+    static var fontSystemMedium17: UIFont {
+        return UIFont.systemFont(ofSize: 17, weight: .medium)
     }
     
-    static var helveticaMedium17: UIFont {
-        return UIFont(name: Strings.helveticaMedium, size: 17) ?? UIFont.systemFont(ofSize: 17, weight: .medium)
+    /// :SWIFTUI:NYI: consider `preferredFont(forTextStyle:)`
+    /// Consider using `preferredFont(forTextStyle:UITraitCollection:)` 
+    /// instead of `systemFont`, `boldSystemFont`, `italicSystemFont`
+    /// 
+    /// See also:
+    /// - https://developer.apple.com/documentation/uikit/uifont/textstyle
+    /// - https://developer.apple.com/documentation/uikit/uitraitcollection/
+    static func dailydozenBodyFont(traits: UITraitCollection? = nil) -> UIFont {
+        return UIFont.preferredFont(
+            forTextStyle: TextStyle.body, 
+            compatibleWith: traits
+        )
     }
     
 }

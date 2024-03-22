@@ -15,7 +15,7 @@ final class InfoFaqHeaderView: UIView {
         lbl.text = NSLocalizedString("faq_title", comment: "")
         lbl.accessibilityIdentifier = "faq_title_access"
         
-        lbl.font = UIFont.helveticaBold22
+        lbl.font = UIFont.fontSystemBold22
         lbl.backgroundColor = ColorManager.style.mainMedium
         lbl.tintColor = ColorManager.style.mainMedium
         lbl.textColor = ColorManager.style.textWhite

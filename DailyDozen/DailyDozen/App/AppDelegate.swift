@@ -31,7 +31,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         #if DEBUG
         logit.logLevel = LogServiceLevel.verbose
         logit.useLogFile(nameToken: "dev") // logit.useLogFileDefault()
-
+        
         let identifier = Bundle.main.bundleIdentifier ?? "not found"
         logit.info("PRODUCT_BUNDLE_IDENTIFIER = \(identifier)")
         
@@ -61,7 +61,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         
         let s: SQLiteBuiltInTest.InitialState = .db02
         logit.info("••DB_STATE••INITIAL_DEBUG_SETUP••BEGIN•• InitialState=\(s)")
-        SQLiteBuiltInTest.shared.setupInitialState(s) // :GTD:B:√: initial DB
+        SQLiteBuiltInTest.shared.setupInitialState(s, numberOfDays: 0) // :GTD:B:√: initial DB
         logit.info("••DB_STATE••INITIAL_DEBUG_SETUP•••END••• InitialState=\(s)\n")
         
         #endif
@@ -135,7 +135,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         #else
         logit.info("ANALYTICS is excluded from the build.")
         #endif
-                
+        
         return true
     }
     
@@ -159,7 +159,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         :::::::::::::::::::::::::::::::::\n
         """)
         pause()
-
+        
         logit.debug("""
         \n::::: WORKAROUND: PAUSE 2 :::::
         NEXT STEP: Attach to Process > DailyDozen

@@ -39,7 +39,7 @@ class SettingsViewController: UITableViewController {
     @IBOutlet weak var tweakVisibilityControl: UISegmentedControl!
     // Appearance Mode: Light | Dark | Auto
     //@IBOutlet weak var appearanceModeControl: UISegmentedControl!
-
+    
     // History Data
     @IBOutlet weak var historyDataExportBtn: UIButton!
     @IBOutlet weak var historyDataImportBtn: UIButton!
@@ -122,22 +122,23 @@ class SettingsViewController: UITableViewController {
             for: .normal)
         historyDataExportBtn.setTitleColor(ColorManager.style.mainMedium, for: UIControl.State.normal)
         historyDataImportBtn.setTitleColor(ColorManager.style.mainMedium, for: UIControl.State.normal)
+        historyDataImportBtn.isHidden = true // :ADVANCED:PREVIEW:
         
         // Analytics
         analyticsEnableLabel.text = NSLocalizedString("setting_analytics_enable", comment: "Enable Analytics")
         
         #if targetEnvironment(simulator)
         logit.info("::::: SIMULATOR ENVIRONMENT: SettingsViewController :::::")
-        advancedUtilitiesTableViewCell.isHidden = false // :ADVANCED:DEBUG:
-        //advancedUtilitiesTableViewCell.isHidden = true // :ADVANCED:RELEASE:
+        //advancedUtilitiesTableViewCell.isHidden = false // :ADVANCED:DEBUG:
+        advancedUtilitiesTableViewCell.isHidden = true // :ADVANCED:RELEASE:
         logit.debug("""
         ADVANCED UTILITIES advancedUtilitiesTableViewCell.isHidden == \(advancedUtilitiesTableViewCell.isHidden)
         logit.debug(":::::::::::::::::::::::::::::::::::::::::::::::::::::::::\n
         """)
         #endif
         #if DEBUG
-        advancedUtilitiesTableViewCell.isHidden = false // :ADVANCED:#DEBUG:
-        //advancedUtilitiesTableViewCell.isHidden = true // :ADVANCED:#RELEASE:
+        //advancedUtilitiesTableViewCell.isHidden = false // :ADVANCED:#DEBUG:
+        advancedUtilitiesTableViewCell.isHidden = true // :ADVANCED:#RELEASE:
         logit.debug("ADVANCED UTILITIES advancedUtilitiesTableViewCell.isHidden == \(advancedUtilitiesTableViewCell.isHidden)")
         #endif
     }
@@ -225,7 +226,7 @@ class SettingsViewController: UITableViewController {
         let alertMsgTitleStr = NSLocalizedString("setting_analytics_title", comment: "Analytics title")
         let optInStr = NSLocalizedString("setting_analytics_opt_in", comment: "Opt-In")
         let optOutStr = NSLocalizedString("setting_analytics_opt_out", comment: "Opt-Out")
-
+        
         let alert = UIAlertController(title: alertMsgTitleStr, message: alertMsgBodyStr, preferredStyle: .alert)
         let optOutAction = UIAlertAction(title: optOutStr, style: .default) {
             (_: UIAlertAction) -> Void in
@@ -275,25 +276,44 @@ class SettingsViewController: UITableViewController {
     var backupFilename: String?
     
     @IBAction func doHistoryDataExport(_ sender: UIButton) {
-        //doHistoryDataExportActivityNone()
-        doHistoryDataExportActivityShow()
+        //doHistoryDataExportActivityNoneDB02()
+        //doHistoryDataExportActivityShowDB02()
+        //doHistoryDataExportActivityNoneDB03()
+        doHistoryDataExportActivityShowDB03()
     }
     
-    func doHistoryDataExportActivityNone() {
+    /// Export DB02 without export activity indicator UI
+    func doHistoryDataExportActivityNoneDB02() {
         logit.info("SettingsViewController doHistoryDataExportActivityNone()")
         let realmMngr = RealmManager()
         backupFilename = realmMngr.csvExport(marker: "DailyDozen")
         // :SQLITE:TBD: export debug scope
         #if DEBUG_NOT
-        _ = realmMngr.csvExportWeight(marker: "weight_db_dev")
-        HealthSynchronizer.shared.syncWeightExport(marker: "weight_hk_dev")
+        _ = realmMngr.csvExportWeight(marker: "DailyDozen_Weights_Dev")
+        HealthSynchronizer.shared.syncWeightExport(marker: "DailyDozen_Weights_HK_dev")
         #endif
         
         //doHistoryDataExportAlert()
         doHistoryDataExportShare()
     }
     
-    func doHistoryDataExportActivityShow() {
+    /// Export DB03 without export activity indicator UI
+    func doHistoryDataExportActivityNoneDB03() {
+        logit.info("SettingsViewController doHistoryDataExportActivityNone()")
+        let dbConnect = SQLiteConnector.shared
+        backupFilename = dbConnect.csvExport(marker: "DailyDozen", activity: nil)
+        // :SQLITE:TBD: export debug scope
+        #if DEBUG_NOT
+        _ = dbConnect.csvExportWeight(marker: "DailyDozen_Weights_Dev")
+        HealthSynchronizer.shared.syncWeightExport(marker: "DailyDozen_Weights_HK_dev")
+        #endif
+        
+        //doHistoryDataExportAlert()
+        doHistoryDataExportShare()
+    }
+    
+    /// Export DB02 with export activity indicator UI
+    func doHistoryDataExportActivityShowDB02() {
         logit.info("SettingsViewController doHistoryDataExportActivityShow()")
         
         // -----------------
@@ -308,8 +328,36 @@ class SettingsViewController: UITableViewController {
             self.backupFilename = realmMngr.csvExport(marker: "DailyDozen", activity: busyAlert)
             // :SQLITE:TBD: export debug scope
             #if DEBUG_NOT
-            _ = realmMngr.csvExportWeight(marker: "weight_db_dev")
-            HealthSynchronizer.shared.syncWeightExport(marker: "weight_hk_dev")
+            _ = realmMngr.csvExportWeight(marker: "DailyDozen_Weights_Dev")
+            HealthSynchronizer.shared.syncWeightExport(marker: "DailyDozen_Weights_HK_dev")
+            #endif
+            DispatchQueue.main.async {
+                // update ui here
+                busyAlert.completed()
+                //doHistoryDataExportAlert()
+                self.doHistoryDataExportShare()
+            }
+        }
+    }
+    
+    /// Export DB03 with export activity indicator UI
+    func doHistoryDataExportActivityShowDB03() {
+        logit.info("SettingsViewController doHistoryDataExportActivityShow()")
+        
+        // -----------------
+        let busyAlert = AlertActivityBar()
+        let msg = NSLocalizedString("history_data_export_btn", comment: "Export")
+        busyAlert.setText(msg)
+        busyAlert.show()
+        DispatchQueue.global(qos: .userInitiated).async {
+            // lower priority job here
+            let dbConnect = SQLiteConnector.shared
+            
+            self.backupFilename = dbConnect.csvExport(marker: "DailyDozen", activity: busyAlert)
+            // :SQLITE:TBD: export debug scope
+            #if DEBUG_NOT
+            _ = dbConnect.csvExportWeight(marker: "DailyDozen_Weights_Dev")
+            HealthSynchronizer.shared.syncWeightExport(marker: "DailyDozen_Weights_HK_dev")
             #endif
             DispatchQueue.main.async {
                 // update ui here
@@ -364,7 +412,7 @@ class SettingsViewController: UITableViewController {
             .assignToContact,
             //.copyToPasteboard,
             //.mail,
-            .markupAsPDF,
+                .markupAsPDF,
             //.message,
             .openInIBooks,
             .postToFlickr,
@@ -408,7 +456,7 @@ class SettingsViewController: UITableViewController {
         
         // Get qualified files
         let fileUrls = doHistoryDataImportFileFind()
-                
+        
         if fileUrls.isEmpty {
             doHistoryDataImportFileNotFoundAlert()
             return
@@ -433,7 +481,7 @@ class SettingsViewController: UITableViewController {
             logit.debug("importButtonCompletion item:\(item ?? "nil") id:\(id ?? "nil")")
             if let id = id, let idx = Int(id) {
                 let csvUrl = fileUrls[idx]
-                self.doHistoryDataImportFile(csvUrl: csvUrl)
+                self.doHistoryDataImportRealmFile(csvUrl: csvUrl)
             }
         } didSelectCompletion: { 
             // didSelectCompletion is called each time scroll selection changes
@@ -463,33 +511,25 @@ class SettingsViewController: UITableViewController {
                 at: docDirUrl,
                 includingPropertiesForKeys: nil
             )
-            logit.debug("docDirContents: \(docDirContents)")
+            logit.verbose("docDirContents: \(docDirContents)")
             
+            // :NYI:LOCALIZE: csvHeaderCheck
+            // :NYI:DATA:IMPORT: full length header check with white space tolerance
             guard let csvHeaderCheck = "Date,Beans,Berries,".data(using: .utf8, allowLossyConversion: false) else {
                 logit.debug("doHistoryDataImportFileFind did not create csvHeaderCheck")
-                return csvFileList 
+                return csvFileList
             }
             let byteCount = csvHeaderCheck.count
             
             for url in docDirContents {
                 if url.pathExtension.lowercased() == "csv" {
                     let handle = try FileHandle(forReadingFrom: url)
-                    if #available(iOS 13.4, *) {
-                        if let firstBytes = try handle.read(upToCount: byteCount) {
-                            if firstBytes == csvHeaderCheck {
-                                csvFileList.append(url)
-                            }
-                        }
-                        try handle.close()
-                    } else {
-                        // Fallback on earlier versions
-                        // :DEPRECATED:
-                        let firstBytes: Data = handle.readData(ofLength: byteCount)
+                    if let firstBytes = try handle.read(upToCount: byteCount) {
                         if firstBytes == csvHeaderCheck {
                             csvFileList.append(url)
                         }
-                        handle.closeFile()
                     }
+                    try handle.close()
                 }
             }
         } catch {
@@ -501,15 +541,11 @@ class SettingsViewController: UITableViewController {
         }
     }
     
-    func doHistoryDataImportFile(csvUrl: URL) {
-        doHistoryDataImportFileConfirmAlert(csvUrl: csvUrl)
-    }
-    
     func doHistoryDataImportFileNotFoundAlert() {
         let alertMsgTitleStr = NSLocalizedString("history_data_title", comment: "History")
         let alertMsgBodyStr = NSLocalizedString("history_data_import_notfound_text", comment: "file not found")
         let okStr = NSLocalizedString("history_data_alert_ok", comment: "Ok")
-
+        
         let alert = UIAlertController(title: alertMsgTitleStr, message: alertMsgBodyStr, preferredStyle: .alert)
         let okAction = UIAlertAction(title: okStr, style: .default) {
             (_: UIAlertAction) -> Void in
@@ -519,7 +555,8 @@ class SettingsViewController: UITableViewController {
         present(alert, animated: true, completion: nil)
     }
     
-    func doHistoryDataImportFileConfirmAlert(csvUrl: URL) {
+    /// Imports data from CSV file to RealmDB after user alert confirmation
+    func doHistoryDataImportRealmFile(csvUrl: URL) {
         let alertMsgTitleStr = NSLocalizedString("history_data_title", comment: "History")
         let alertMsgBodyStr = NSLocalizedString("history_data_import_caution_text", comment: "caution: will overwrite")
         let importStr = NSLocalizedString("history_data_alert_import", comment: "Import")
@@ -534,18 +571,18 @@ class SettingsViewController: UITableViewController {
         
         let importAction = UIAlertAction(title: importStr, style: .default) {
             (_: UIAlertAction) -> Void in
-            self.doDataHistoryImportHandler(csvUrl: csvUrl)
+            self.doHistoryDataImportRealmHandler(csvUrl: csvUrl)
         }
         alert.addAction(importAction)
         present(alert, animated: true, completion: nil)
     }
     
-    func doDataHistoryImportHandler(csvUrl: URL) {
+    func doHistoryDataImportRealmHandler(csvUrl: URL) {
         // import to NutritionFacts.realm
         let realmUrl = URL.inDatabase(filename: RealmProvider.realmFilenameScratch)
         let realmManager = RealmManager(fileURL: realmUrl)
         
-        realmManager.csvImport(url: csvUrl) 
+        realmManager.csvImport(url: csvUrl)
         // :GTD: check/verify for successful Settings import
         
         let fm = FileManager.default
@@ -579,11 +616,50 @@ class SettingsViewController: UITableViewController {
             // csvUrl.path() 'path(percentEncoded:)' requires iOS 16.0 or newer
             // csvUrl.path will be deprecated in a future version of iOS
             logit.error("""
-                doDataHistoryImportHandler
+                doDataHistoryImportRealmHandler
                     csvfile:\(csvUrl.path)
                     error:'\(error)'
                 """)
         }
+    }
+    
+    /// Imports data from CSV file to SQLiteDB after user alert confirmation
+    func doHistoryDataSQLiteImportFile(csvUrl: URL) {
+        let alertMsgTitleStr = NSLocalizedString("history_data_title", comment: "History") 
+        let alertMsgBodyStr = NSLocalizedString("history_data_import_caution_text", comment: "caution: will overwrite")
+        let importStr = NSLocalizedString("history_data_alert_import", comment: "Import")
+        let cancelStr = NSLocalizedString("history_data_alert_cancel", comment: "Cancel")
+        
+        let alert = UIAlertController(title: alertMsgTitleStr, message: alertMsgBodyStr, preferredStyle: .alert)
+        let cancelAction = UIAlertAction(title: cancelStr, style: .default) {
+            (_: UIAlertAction) -> Void in
+            // nothing to do
+        }
+        alert.addAction(cancelAction)
+        
+        let importAction = UIAlertAction(title: importStr, style: .default) {
+            (_: UIAlertAction) -> Void in
+            self.doHistoryDataImportSQLiteHandler(csvUrl: csvUrl)
+        }
+        alert.addAction(importAction)
+        present(alert, animated: true, completion: nil)
+    }
+    
+    /// Imports CSV URL to Library/Database/NutritionFacts.sqlite3
+    func doHistoryDataImportSQLiteHandler(csvUrl: URL) {
+        let dbConnect = SQLiteConnector.shared
+        
+        let dbUrl = dbConnect.dbUrl
+        let dbFnmUrl = dbConnect.sqliteFilenameUrl
+        let dbTmpUrl = dbConnect.sqliteFilenameTmpUrl
+        
+        let result = dbConnect.sqliteApi.dailydozenDb.close()
+        guard result == true else {
+            logit.error("doHistoryDataImportSQLiteHandler failed to close database")
+            return
+        }
+        
+        // •!•!•!
     }
     
     @IBAction func doTweaksVisibilityChanged(_ sender: UISegmentedControl) {

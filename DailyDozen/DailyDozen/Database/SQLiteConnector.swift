@@ -10,15 +10,25 @@
 import Foundation
 
 struct SQLiteConnector {
-    static var dot = SQLiteConnector()
+    static var shared = SQLiteConnector()
     //
     public static let sqliteFilename = "NutritionFacts.sqlite3"
+    public static let sqliteFilenameTmp = "NutritionFacts.tmp.sqlite3"
     /// csvExerciseGamut may differ from SettingsManager.exerciseGamut()
     var csvExerciseGamut: ExerciseGamut
     /// csvUnitsType may differ from SettingsManager.unitsType()
     var csvUnitsType: UnitsType
-    let dbUrl: URL
-    let sqliteApi: SQLiteApi
+    ///
+    var dbUrl: URL
+    var sqliteApi: SQLiteApi
+    
+    var sqliteFilenameUrl: URL {
+        return URL.inDatabase(filename: SQLiteConnector.sqliteFilename)
+    }
+    
+    var sqliteFilenameTmpUrl: URL {
+        return URL.inDatabase(filename: SQLiteConnector.sqliteFilenameTmp)
+    }
     
     init() {
         let databaseDir = URL.inDatabase()
@@ -38,19 +48,40 @@ struct SQLiteConnector {
         csvUnitsType = SettingsManager.unitsType()
     }
     
+    // MARK: Admin Database
+    
+    /// Creates a backup of the current database
+    func adminBackup() {
+        sqliteApi.adminBackup()
+        // •! any return value needed from adminNew()?
+    }
+    
+    /// Creates a new empty database
+    func adminNew() {
+        sqliteApi.adminNew()
+        // •! any return value needed from adminNew()?
+    }
+    
+    /// Restore backup database if present
+    func adminRestore() {
+        sqliteApi.adminRestore()
+        // •! any return value needed adminRestore()?
+    }
+    
     // MARK: Advanced Utilities Connection
     
     func clearDb() {
         logit.info("run clearDb")
     }
     
-    func createData() {
-        logit.info("run SQLiteConnector Utility createData 28 days")
-        generateHistoryBIT(numberOfDays: 28)
+    func createData(numberOfDays: Int) {
+        logit.info("run SQLiteConnector Utility createData 2 days")
+        generateHistoryBIT(numberOfDays: numberOfDays)
     }
     
     func exportData() {
-        logit.info(":GTD:NYI: SQLiteConnector Utility exportData()")
+        logit.info("SQLiteConnector Utility exportData()") // :GTD:NYI: activity
+        csvExport(marker: "DB02_Utility_Data", activity: nil)
     }
     
     func importData() {
@@ -337,9 +368,35 @@ struct SQLiteConnector {
         }
     }
     
+    // MARK: - Weight Only
+    
+    func csvExportWeight(marker: String) -> String {
+        let filename = "\(Date.datestampNow())_\(marker).csv"
+        csvExportWeight(filename: filename)
+        return filename
+    }
+    
+    func csvExportWeight(filename: String) {
+        let outUrl = URL.inDocuments().appendingPathComponent(filename)
+        var content = "DB_PID,time,kg,lbs\n"
+        
+        //let allWeights = realmDb.getDailyWeightsArray()        
+        //for record in allWeights {
+        //    content.append("\(record.pid),\(record.time),\(record.kgStr),\(record.lbsStr)\n")
+        //}
+        //
+        //do {
+        //    try content.write(to: outUrl, atomically: true, encoding: .utf8)
+        //} catch {
+        //    logit.error(
+        //        "FAIL RealmManager csvExport \(error) path:'\(outUrl.path)'"
+        //    )
+        //}
+    }
+    
     // MARK: - Built In Test (BIT) Connection
     
-    /// Generate data
+    /// Generate random data
     ///
     /// - ~1 month -> 30 days 
     /// - ~10 months -> 300 days

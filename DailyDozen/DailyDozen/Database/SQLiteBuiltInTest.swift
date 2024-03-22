@@ -30,7 +30,7 @@ public struct SQLiteBuiltInTest {
         case dbNoop
     }
     
-    public func setupInitialState(_ scenario: InitialState) {
+    public func setupInitialState(_ scenario: InitialState, numberOfDays: Int = 3) {
         let isHealthDataAvailable = HKHealthStore.isHealthDataAvailable()
         logit.info(":: SQLiteBuiltInTest setupInitialState()")
         logit.info(":: HKHealthStore.isHealthDataAvailable() \(isHealthDataAvailable)")
@@ -43,20 +43,21 @@ public struct SQLiteBuiltInTest {
             )
             removeExistingDBs()
             RealmBuiltInTest.shared
-                .doGenerateDBHistoryBIT(numberOfDays: 3, inLibDbDir: false)
+                .doGenerateDBHistoryBIT(numberOfDays: numberOfDays, inLibDbDir: false)
         case .db02:
             logit.info(
                 "•• InitialState:db02: Realm Library/Database/NutritionFacts.realm"
             )
             removeExistingDBs()
             RealmBuiltInTest.shared
-                .doGenerateDBHistoryBIT(numberOfDays: 3, inLibDbDir: true)
+                .doGenerateDBHistoryBIT(numberOfDays: numberOfDays, inLibDbDir: true)
         case .db03:
             logit.info(
                 "•• InitialState:db03: SQLite Library/Database/NutritionFacts.sqlite"
             )
             removeExistingDBs()
-            SQLiteConnector.dot.generateHistoryBIT(numberOfDays: 3)
+            let dbConnect = SQLiteConnector.shared
+            dbConnect.generateHistoryBIT(numberOfDays: numberOfDays)
         case .dbDel:
             logit.info(
                 "•• InitialState:dbDel: delete existing database"
@@ -75,6 +76,7 @@ public struct SQLiteBuiltInTest {
         // :NYI: HEALTHKIT doGenerateHKSampleDataBIT()
     }
     
+    /// Deletes any existing DB01, DB02, DB03, `Database/` via FileManager
     func removeExistingDBs() {
         logit.info(":: … removeExistingDBs()")
         let fm = FileManager.default

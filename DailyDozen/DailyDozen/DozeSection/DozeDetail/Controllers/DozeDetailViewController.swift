@@ -63,7 +63,7 @@ class DozeDetailViewController: UIViewController {
                     )
                     
                     bbitem.setTitleTextAttributes([
-                        NSAttributedString.Key.font: UIFont.helveticaMedium17,
+                        NSAttributedString.Key.font: UIFont.fontSystemMedium17,
                         NSAttributedString.Key.foregroundColor: UIColor.white,
                     ], for: .normal)
                     

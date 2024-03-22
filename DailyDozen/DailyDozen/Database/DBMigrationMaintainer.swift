@@ -6,7 +6,14 @@
 //
 
 import Foundation
-
+/// 
+///
+///
+///
+///
+///
+///
+///
 public struct DBMigrationMaintainer {
     
     static public var shared = DBMigrationMaintainer()
@@ -160,24 +167,31 @@ public struct DBMigrationMaintainer {
         
         #if DEBUG
         let realmManager = RealmManager()
-        _ = realmManager.csvExport(marker: "migration_pre_data")
-        _ = realmManager.csvExportWeight(marker: "migration_pre_weight")
-        HealthSynchronizer.shared.syncWeightExport(marker: "migration_pre_hk_sync")
+        _ = realmManager.csvExport(marker: "DB02_MigrationB_Moved_Data")
+        _ = realmManager.csvExportWeight(marker: "DB02_MigrationB_Moved_Weights")
+        HealthSynchronizer.shared.syncWeightExport(marker: "HK02_MigrationB_Moved")
         #endif
         
         // clear and re-sync "NutritionFacts.realm" with HealthKit
         HealthSynchronizer.shared.resetSyncAll()
+        
+        #if DEBUG
+        let realmMngr = RealmManager()
+        _ = realmMngr.csvExport(marker: "DB02_MigrationB_Synced_Data")
+        _ = realmMngr.csvExportWeight(marker: "DB02_MigrationB_Synced_Weights")
+        HealthSynchronizer.shared.syncWeightExport(marker: "HK02_MigrationB_Synced")
+        #endif
     }
     
     /// Export BD02 to Library/Backup/
     public func doMigration_C_BD02Export() -> String {
         logit.debug("••BEGIN•• DBMigrationMaintainer doMigration_C_BD02Export()")
         let realmMngr = RealmManager(newThread: true)
-        let filename = realmMngr.csvExport(marker: "db_export_data")
+        let filename = realmMngr.csvExport(marker: "DB02_MigrationC_Data")
         
         #if DEBUG_NOT
-        _ = realmMngr.csvExportWeight(marker: "db_export_weight")
-        HealthSynchronizer.shared.syncWeightExport(marker: "hk_export_weight")
+        _ = realmMngr.csvExportWeight(marker: "DB02_MigrationC_Weights")
+        HealthSynchronizer.shared.syncWeightExport(marker: "HK02_MigrationC")
         #endif
         
         logit.debug("•••END••• DBMigrationMaintainer doMigration_C_BD02Export()")
@@ -187,14 +201,16 @@ public struct DBMigrationMaintainer {
     func doMigration_D_DB02toDB03(filename: String) { // :GTD:C: DB03 Import
         logit.debug("••BEGIN•• DBMigrationMaintainer doMigration_D_DB02toDB03()")
         // Import to SQLite
-        SQLiteConnector.dot.csvImport(filename: filename)
+        var dbConnect = SQLiteConnector.shared
+        dbConnect.csvImport(filename: filename)
         logit.debug("•••END••• DBMigrationMaintainer doMigration_D_DB02toDB03()")
     }
     
     func doMigration_E_BD03Export() -> String { // :GTD:D: DB03 export
         logit.debug("••BEGIN•• DBMigrationMaintainer doMigration_E_BD03Export()")
         // Export from SQLite
-        let filename = SQLiteConnector.dot.csvExport(marker: "migrated", activity: nil)
+        let dbConnect = SQLiteConnector.shared
+        let filename = dbConnect.csvExport(marker: "DB03_MigrationE_Data", activity: nil)
         logit.debug("•••END••• DBMigrationMaintainer doMigration_E_BD03Export()")
         return filename
     }

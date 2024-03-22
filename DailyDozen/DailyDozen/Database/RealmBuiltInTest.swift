@@ -18,15 +18,19 @@ public struct RealmBuiltInTest {
     public let hkHealthStore = HKHealthStore()
     
     /// Clear Documents/V01 and Library/Database/V02 Realm data.
+    /// Uses RealmDB `deleteAllObjects()`
     func doClearAllDataInMigrationChainBIT() {
         logit.debug(
             "••BEGIN•• RealmBuiltInTest doClearAllDataInMigrationChainBIT()"
         )
         
+        let fm = FileManager.default
         let urlV01 = URL.inDocuments(filename: RealmProvider.realmFilename)
-        let realmMngrV01 = RealmManager(fileURL: urlV01)
-        let realmDbV01 = realmMngrV01.realmDb
-        realmDbV01.deleteAllObjects()
+        if fm.fileExists(atPath: urlV01.absoluteString) {
+            let realmMngrV01 = RealmManager(fileURL: urlV01)
+            let realmDbV01 = realmMngrV01.realmDb
+            realmDbV01.deleteAllObjects()
+        }
         
         let realmMngrV02 = RealmManager()
         let realmDbV02 = realmMngrV02.realmDb
@@ -51,7 +55,7 @@ public struct RealmBuiltInTest {
     
     /// Generate Realm data
     ///
-    /// - ~1 month -> 30 days 
+    /// - ~1 month -> 30 days
     /// - ~10 months -> 300 days
     /// - ~2.7 years or ~33 months -> 1000 days (2000 weight entries)
     /// - 3 years (1095 days, 2190 weight entries) -> `3*365`

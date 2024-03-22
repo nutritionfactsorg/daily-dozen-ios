@@ -26,7 +26,7 @@ final class InfoFaqTableViewCell: UITableViewCell {
     
     private let qLabel: UILabel = {
         let lbl = UILabel()
-        lbl.font = UIFont.heleveticaBold17
+        lbl.font = UIFont.fontSystemBold17
         lbl.numberOfLines = 0
         return lbl
     }()
@@ -46,7 +46,7 @@ final class InfoFaqTableViewCell: UITableViewCell {
     
     private let rTView: UITextView = {
         let tview = UITextView()
-        tview.font = UIFont.helevetica17
+        tview.font = UIFont.fontSystem17
         tview.sizeToFit()
         tview.isScrollEnabled = false
         tview.isEditable = false

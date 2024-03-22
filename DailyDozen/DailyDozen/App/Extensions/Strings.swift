@@ -16,7 +16,7 @@ func parseLinkedString(_ s: String) -> NSAttributedString {
     let textAttributes: [NSAttributedString.Key: Any] = [
         //.foregroundColor: ColorManager.style.textBlack, 
         //.backgroundColor: UIColor.tbd,
-        .font: UIFont.helevetica17,
+        .font: UIFont.fontSystem17,
     ]
     
     guard parts.count == 5 else { 
@@ -30,7 +30,7 @@ func parseLinkedString(_ s: String) -> NSAttributedString {
     let linkAttributes: [NSAttributedString.Key: Any] = [
         //.foregroundColor: ColorManager.style.textBlack, 
         //.backgroundColor: UIColor.tbd,
-        .font: UIFont.helevetica17,
+        .font: UIFont.fontSystem17,
         .link: linkurl,
         //.underlineColor: UIColor.white
         .underlineStyle: NSUnderlineStyle.single.rawValue

@@ -26,10 +26,10 @@ class ImportPopupPickerView: NSObject, UIPickerViewDelegate, UIPickerViewDataSou
     
     // Theme colors
     var headerBackgroundColor = ColorManager.style.pickerHeaderBackground
-    var headerFont = UIFont.helevetica17
+    var headerFont = UIFont.fontSystem17
     var headerTextColor = ColorManager.style.pickerHeaderText
     var scrollBackgroundColor = ColorManager.style.pickerScrollBackground
-    var scrollFont = UIFont.courier16
+    var scrollFont = UIFont.fontMonoSystem16
     var scrollTextColor = ColorManager.style.pickerScrollText
     
     private static var shared: ImportPopupPickerView!

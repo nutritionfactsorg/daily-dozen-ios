@@ -34,24 +34,70 @@ class UtilityTableViewController: UITableViewController {
     
     // MARK: - SQLite Utilities
     
+    @IBAction func doUtilitySQLiteAdminBackupBtn(_ sender: UIButton) {
+        let dbConnect = SQLiteConnector.shared
+        dbConnect.adminBackup() // •!
+    }
+    
+    @IBAction func doUtilitySQLiteAdminNewBtn(_ sender: UIButton) {
+        let dbConnect = SQLiteConnector.shared
+        dbConnect.adminNew() // •!
+    }
+    
+    @IBAction func doUtilitySQLiteAdminRestoreBtn(_ sender: UIButton) {
+        let dbConnect = SQLiteConnector.shared
+        dbConnect.adminRestore() // •!
+    }
+    
     @IBAction func doUtilitySQLiteClearDbBtn(_ sender: UIButton) {
-        SQLiteConnector.dot.clearDb()
+        let alert = UIAlertController(title: "", message: Strings.utilityTestHistoryClearMsg, preferredStyle: .alert)
+        let cancelAction = UIAlertAction(title: Strings.utilityConfirmCancel, style: .cancel, handler: nil)
+        alert.addAction(cancelAction)
+        let clearAction = UIAlertAction(title: Strings.utilityConfirmClear, style: .destructive) { (_: UIAlertAction) -> Void in
+            let dbConnect = SQLiteConnector.shared
+            dbConnect.clearDb()
+        }
+        alert.addAction(clearAction)
+        present(alert, animated: true, completion: nil)
     }
     
     @IBAction func doUtilitySQLiteCreateDataBtn(_ sender: UIButton) {
-        SQLiteConnector.dot.createData()
+        let dbConnect = SQLiteConnector.shared
+        dbConnect.createData(numberOfDays: 2)
     }
     
     @IBAction func doUtilitySQLiteExportDataBtn(_ sender: UIButton) {
-        SQLiteConnector.dot.exportData()
+        logit.info("UtilityTableViewController doUtilitySQLiteCreateDataBtn()")
+        let dbConnect = SQLiteConnector.shared
+        dbConnect.exportData()
+    }
+    
+    private func doUtilitySQLiteExportData() {
+        logit.info("UtilityTableViewController doUtilitySQLiteExportData()")
+        let dbConnect = SQLiteConnector.shared
+        let backupFilename = dbConnect.csvExport(marker: "DB03_Utility_Data")
+        
+        #if DEBUG_NOT
+        _ = dbConnect.csvExportWeight(marker: "DB03_Utility_Weights")
+        HealthSynchronizer.shared.syncWeightExport(marker: "HK03_Utility")
+        #endif
+        
+        let str = "\(Strings.utilityDbExportMsg): \"\(backupFilename)\"."
+        
+        let alert = UIAlertController(title: "", message: str, preferredStyle: .alert)
+        let okAction = UIAlertAction(title: Strings.utilityConfirmOK, style: .default, handler: nil)
+        alert.addAction(okAction)
+        present(alert, animated: true, completion: nil)
     }
     
     @IBAction func doUtilitySQLiteImportDataBtn(_ sender: UIButton) {
-        SQLiteConnector.dot.importData()
+        let dbConnect = SQLiteConnector.shared
+        dbConnect.importData()
     }
     
     @IBAction func doUtilitySQLiteTimingTextBtn(_ sender: UIButton) {
-        SQLiteConnector.dot.timingTest()
+        let dbConnect = SQLiteConnector.shared
+        dbConnect.timingTest()
     }
     
     // MARK: - Realm Utilities
@@ -67,7 +113,7 @@ class UtilityTableViewController: UITableViewController {
         present(alert, animated: true, completion: nil)
     }
     
-    /// doUtilityTestGenerateHistoryBtn() willl "Generate Test History"
+    /// doUtilityTestGenerateHistoryBtn() will "Generate Test History"
     /// 
     /// Note: When writing a large number of data entries AND 
     /// the database is open in the Realm browser is open, 
@@ -75,14 +121,14 @@ class UtilityTableViewController: UITableViewController {
     /// Do not have the Realm browser open when writing data in simulator to
     /// avoid this is situation. The root cause of this issue is unknown.
     @IBAction func doUtilityRealmGenerateHistoryBtn(_ sender: UIButton) {
-        // half month
-        //RealmBuiltInTest.shared.doGenerateDBHistoryBIT(numberOfDays: 15, inLibDbDir: true)
-        
-        // :SQLITE:TBD: three years -> 1095 days
-        RealmBuiltInTest.shared.doGenerateDBHistoryBIT(numberOfDays: 1095, inLibDbDir: true)
+        //   15 days (half month)
+        // 1095 days (3 years) ~ 3 minutes M2 simulator
+        RealmBuiltInTest.shared.doGenerateDBHistoryBIT(numberOfDays: 15, inLibDbDir: true)
     }
     
     /// doUtilityRealmGenerateStreaksBtn(…) "Simulate Progress"
+    /// 
+    /// Note: 
     @IBAction func doUtilityRealmGenerateStreaksBtn(_ sender: UIButton) {
         let alert = UIAlertController(title: "", message: Strings.utilityTestStreaksMsg, preferredStyle: .alert)
         let cancelAction = UIAlertAction(title: Strings.utilityConfirmCancel, style: .cancel, handler: nil)
@@ -91,14 +137,20 @@ class UtilityTableViewController: UITableViewController {
             let busyAlert = AlertActivityBar()
             busyAlert.setText("Generating Progress Data") // :NYI:LOCALIZE:
             busyAlert.show()
-            DispatchQueue.global(qos: .userInitiated).async {
-                // lower priority job here
-                RealmBuiltInTest.shared.doGenerateDBStreaksBIT(activity: busyAlert)
-                DispatchQueue.main.async {
-                    // update ui here
-                    busyAlert.completed()
-                }
-            }
+            
+            // -- option: keep on main thread --
+            RealmBuiltInTest.shared.doGenerateDBStreaksBIT(activity: busyAlert)
+            busyAlert.completed()
+            
+            // -- option: dispatch to userInitiated thread --
+            //DispatchQueue.global(qos: .userInitiated).async {
+            //    // lower priority job here
+            //    RealmBuiltInTest.shared.doGenerateDBStreaksBIT(activity: busyAlert)
+            //    DispatchQueue.main.async {
+            //        // update ui here
+            //        busyAlert.completed()
+            //    }
+            //}
         }
         alert.addAction(generateAction)
                 
@@ -112,11 +164,11 @@ class UtilityTableViewController: UITableViewController {
     private func doUtilityRealmDBExport() {
         logit.info("UtilityTableViewController doUtilityRealmDBExport()")
         let realmMngr = RealmManager(newThread: true)
-        let backupFilename = realmMngr.csvExport(marker: "db_export_data")
+        let backupFilename = realmMngr.csvExport(marker: "DB02_Utility_Data")
         
         #if DEBUG_NOT
-        _ = realmMngr.csvExportWeight(marker: "db_export_weight")
-        HealthSynchronizer.shared.syncWeightExport(marker: "hk_export_weight")
+        _ = realmMngr.csvExportWeight(marker: "DB02_Utility_Weights")
+        HealthSynchronizer.shared.syncWeightExport(marker: "HK02_Utility")
         #endif
         
         let str = "\(Strings.utilityDbExportMsg): \"\(backupFilename)\"."
