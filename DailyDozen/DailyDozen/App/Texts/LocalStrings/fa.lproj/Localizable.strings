@@ -29,13 +29,13 @@
 "dozeExercise.heading" = "ورزش";
 
 /* heading for daily data entry item */
-"dozeFlaxseeds.heading" = "تخم کتان";
+"dozeFlaxseeds.heading" = "تخمِ کتان";
 
 /* heading for daily data entry item */
-"dozeFruitsOther.heading" = "سایر میوه‌ها";
+"dozeFruitsOther.heading" = "سایرِ میوه‌ها";
 
 /* heading for daily data entry item */
-"dozeGreens.heading" = "سبزیجات برگ‌دار سبز";
+"dozeGreens.heading" = "سبزیجاتِ برگ‌دارِ سبز";
 
 /* heading for daily data entry item */
 "dozeNuts.heading" = "آجیل‌ها و تخمه‌ها";
@@ -44,7 +44,7 @@
 "dozeOtherInfo.confirm" = "بسیارخب";
 
 /* Daily Dozen supplement info alert: message */
-"dozeOtherInfo.message" = "ویتامین ب۱۲ برای سلامتی‌تان ضروری است؛ اما شامل سهم‌های هرروزه‌تان نمی‌شود./n/n عنوان «ویتامین ب۱۲» در این اپ، به‌منظور ارائه راهی ساده برای نظارت بر مصرفتان آورده شده است.";
+"dozeOtherInfo.message" = "ویتامین ب۱۲ برای سلامتی‌تان ضروری است؛ اما شاملِ سهم‌های هرروزه‌تان نمی‌شود./n/n عنوان «ویتامین ب۱۲» در این اپ، به‌منظورِ ارائۀ راهی ساده برای نظارت بر مصرفتان آورده شده است.";
 
 /* Daily Dozen daily entry section heading */
 "dozeOtherInfo.section" = "مکمل‌های غذایی";
@@ -53,64 +53,64 @@
 "dozeOtherInfo.title" = "مکمل‌های غذایی";
 
 /* heading for daily data entry item */
-"dozeSpices.heading" = "ادویه‌ها و سبزیجات معطر";
+"dozeSpices.heading" = "ادویه‌ها و سبزیجاتِ معطر";
 
 /* heading for daily data entry item */
-"dozeVegetablesCruciferous.heading" = "سبزیجات چَلیپایی/صلیبی";
+"dozeVegetablesCruciferous.heading" = "سبزیجاتِ چَلیپایی/صلیبی";
 
 /* heading for daily data entry item */
-"dozeVegetablesOther.heading" = "سایر سبزیجات";
+"dozeVegetablesOther.heading" = "سایرِ سبزیجات";
 
 /* heading for daily data entry item */
-"dozeWholeGrains.heading" = "غلات کامل/سبوس‌دار";
+"dozeWholeGrains.heading" = "غلاتِ کامل/سبوس‌دار";
 
 /*  */
 "faq_adapt_question" = "«دوازده‌تای روزانه» برای من بیش از حد زیاد/بیش از حد کم است! می‌توانم آن را با شرایط خود مطابقت دهم؟";
 
 /*  */
-"faq_adapt_response" = "بله، «دوازده‌تای روزانه» صرفاً راهنمای سالم‌ترین غذاهایی است که سعی می‌کنیم آن‌ها را به خوراک روزانه اضافه کنیم. این راهنما، برنامۀ غذایی نیست و قرار نیست تجویزی باشد. همۀ تلاش خود را بکنید تا طیف متنوعی از غذاهای گیاهی کامل را بخورید و «دوازده‌تای روزانه» را، با مقادیری که برایتان مناسب است، مطابقت دهید.";
+"faq_adapt_response" = "بله، «دوازده‌تای روزانه» صرفاً راهنمای سالم‌ترین غذاهایی است که سعی می‌کنیم آن‌ها را به خوراک روزانه اضافه کنیم. این راهنما، برنامۀ غذایی نیست و قرار نیست تجویزی باشد. همۀ تلاش خود را بکنید تا طیفِ متنوعی از غذاهای گیاهیِ کامل را بخورید و «دوازده‌تای روزانه» را، با مقادیری که برایتان مناسب است، مطابقت دهید.";
 
 /*  */
 "faq_age_question" = "آیا «دوازده‌تای روزانه» برای کودکان و نوجوانان هم مناسب است؟";
 
 /*  */
-"faq_age_response.0" = "کودکان و نوجوانان در سراسر چرخۀ زندگی‌شان نیاز به‌مقدار کالری متفاوتی دارند. این نیازها برای کمک به رشد و تکامل آن‌ها در هر مرحله تغییر می‌کند. ";
+"faq_age_response.0" = "کودکان و نوجوانان در سراسرِ چرخۀ زندگی‌شان نیاز به مقدارکالریِ متفاوتی دارند. این نیازها برای کمک به رشد و تکاملِ آن‌ها در هر مرحله تغییر می‌کند.";
 
 /*  */
-"faq_age_response.1" = "«دوازده‌تای روزانه» طراحی شده تا به مردم کمک کند که بعضی از سالم‌ترین غذاها را در خوراک روزانه‌شان لحاظ کنند. بااینکه همین چارچوب می‌تواند برای اکثر مردم در سراسر چرخه زندگی‌شان مورد استفاده قرار بگیرد، اما میزان غذایی که هر فرد نیاز دارد، بسته به عوامل مختلفی نظیر سن و سطح فعالیت، متفاوت خواهد بود. از آنجایی که ما نمی‌توانیم برای فرزند در حال رشدتان توصیه‌های تغذیه‌ای یا پزشکی مخصوصی ارائه دهیم، والدین باید از این راهنما به نحوی استفاده کنند که به‌نظرشان برای فرزندشان بهتر است و/یا با یک متخصص رسمی تغذیه یا دیگر ارائه‌دهندگان خدمات بهداشتی و درمانی برای تعیین آنچه برای نیازهای فردی فرزندشان بهتر است مشورت بگیرند.";
+"faq_age_response.1" = "«دوازده‌تای روزانه» به این منظور طراحی شده است که به مردم کمک کند تا بعضی از سالم‌ترین غذاها را در خوراکِ روزانه‌شان لحاظ کنند. بااینکه همین چارچوب می‌تواند برای اکثرِ مردم در سراسرِ چرخۀ زندگی‌شان موردِ استفاده قرار بگیرد، اما میزانِ غذایی که هر فرد نیاز دارد، بسته به عواملِ مختلفی نظیرِ سن و سطحِ فعالیت، متفاوت خواهد بود. از آنجایی که ما نمی‌توانیم برای فرزندِ درحالِ رشدتان توصیه‌های تغذیه‌ای یا پزشکیِ مخصوصی ارائه دهیم، والدین باید از این راهنما به نحوی استفاده کنند که به‌نظرشان برای فرزندشان بهتر است و/یا با یک متخصصِ رسمیِ تغذیه یا دیگر ارائه‌دهندگان خدماتِ بهداشتی و درمانی برای تعیینِ آنچه برای نیازهای فردیِ فرزندشان بهتر است مشورت بگیرند.";
 
 /*  */
 "faq_calories_question" = "«دوازده‌تای روزانه» چه مقدار کالری دارد؟";
 
 /*  */
-"faq_calories_response.0" = "«دوازده‌تای روزانه» به‌طور متوسط ۱۲۰۰ کالری دارد، اما باتوجه به طیف گسترده‌ای از انتخاب‌های غذایی در هر دسته، می‌تواند از ۸۰۰ تا ۱۸۰۰ کالری متغیر باشد. به‌عنوان مثال، دسته‌بندی «سایر سبزیجات» را در نظر بگیرید: یک فنجان فلفل دلمه‌ای نسبت به یک فنجان سیب‌زمینی شیرین پخته تراکم کالری بسیار کمتری دارد، بنابراین محدودۀ کالری این راهنما به انتخاب‌های غذایی خاص شما بستگی دارد. این نکته‌ای عالی در مورد فهرست بازبینی «دوازده‌تای روزانه» است که یک نسخۀ واحد برای همه نیست و می‌تواند با نیازهای هر فرد تطابق پیدا کند.";
+"faq_calories_response.0" = "«دوازده‌تای روزانه» به‌طور متوسط ۱۲۰۰ کالری دارد، اما باتوجه به طیفِ گسترده‌ای از انتخاب‌های غذایی در هر دسته، مقدارِ کالریِ آن می‌تواند از ۸۰۰ تا ۱۸۰۰ کالری متغیر باشد. به‌عنوانِ مثال، دسته‌بندیِ «سایرِ سبزیجات» را در نظر بگیرید: یک پیمانه فلفلِ دلمه‌ای نسبت به یک پیمانه سیب‌زمینیِ شیرینِ پخته تراکمِ کالریِ بسیار کمتری دارد، بنابراین محدودۀ کالریِ این راهنما به انتخاب‌های غذاییِ خاصِ شما بستگی دارد. این خصوصیتی عالی در موردِ فهرستِ بازبینیِ «دوازده‌تای روزانه» است که نسخۀ واحدی برای همه نیست و می‌تواند با نیازهای هر فرد تطابق پیدا کند.";
 
 /*  */
-"faq_calories_response.1" = "اگر هدفتان کاهش وزن باشد، می‌توانید در کتاب «چگونه رژیم نگیریم» به همراه «۲۱ ترفند»، اطلاعات بیشتری در این مورد پیدا کنید. در کتاب «چگونه رژیم نگیریم» آورده‌ام که: «یک بررسی نظام‌مند از راهبردهای موفق برای کاهش وزن، نشان می‌دهد که با توجه به کُند شدن سوخت‌و‌ساز بدن و افزایش اشتها، که هر دو در حین کاهش وزن رخ می‌دهند، برای آنکه به کاهش وزن قابل توجهی دست یابید، ممکن است نیاز باشد که میزان کالری‌های دریافتی به حداقل ۱۲۰۰ کالری در روز برای زنان و ۱۵۰۰ کالری در روز برای مردان کاهش یابد.»";
+"faq_calories_response.1" = "اگر هدفتان کاهشِ وزن باشد، می‌توانید در کتابِ «چگونه رژیم نگیریم» همراه با «۲۱ ترفند»، اطلاعاتِ بیشتری در این مورد پیدا کنید. در کتابِ «چگونه رژیم نگیریم» آورده‌ام که: «یک بررسیِ نظام‌مند از راهبردهای موفق برای کاهشِ وزن نشان می‌دهد که با توجه به کُند شدنِ سوخت‌و‌سازِ بدن و افزایشِ اشتها، که هر دو در حینِ کاهشِ وزن رخ می‌دهند، برای آنکه به کاهشِ وزنِ قابلِ توجهی دست یابید، ممکن است نیاز باشد که میزانِ کالری‌های دریافتی به حداقل ۱۲۰۰ کالری در روز برای زنان و ۱۵۰۰ کالری در روز برای مردان کاهش یابد.»";
 
 /*  */
-"faq_calories_response.2" = "از‌طرف‌دیگر، اگر هدفتان افزایش وزن باشد، پس ممکن است بخواهید روی افزودن غذاهای پرکالری، نظیر سیب‌زمینی شیرین، آووکادو، آجیل، و فرآورده‌های سویا، متمرکز شوید.";
+"faq_calories_response.2" = "از‌طرف‌ِدیگر، اگر هدفتان افزایشِ وزن باشد، پس ممکن است بخواهید روی افزودنِ غذاهای پرکالری، نظیرِ سیب‌زمینیِ شیرین، آووکادو، آجیل، و فرآورده‌های سویا به خوراکِ روزانه‌تان متمرکز شوید.";
 
 /*  */
-"faq_mother_question" = "می‌توانم در دوران بارداری یا شیردهی از این راهنما استفاده کنم؟";
+"faq_mother_question" = "می‌توانم در دورانِ بارداری یا شیردهی از این راهنما استفاده کنم؟";
 
 /*  */
-"faq_mother_response" = "افرادی که باردار هستند یا در دوران شیردهی قرار دارند نسبت به سایر افراد مواد غذایی و میزان کالری متفاوتی نیاز دارند. به‌عنوان یادآوری عرض می‌شود که «دوازده‌تای روزانه» یک برنامۀ غذایی نیست و بهتر است تنها غذاهایی نباشد که روزانه مصرف می‌شود. زنان باردار یا شیرده، برای کمک به تأمین کالری و نیازهای غذایی خود، باید با پزشک یا یک متخصص رسمی تغذیه مشورت کنند.";
+"faq_mother_response" = "افرادی که باردار هستند یا در دورانِ شیردهی قرار دارند نسبت به سایرِ افراد موادِ غذایی و میزان‌کالریِ متفاوتی نیاز دارند. به‌عنوانِ یادآوری عرض می‌شود که «دوازده‌تای روزانه» برنامۀ غذایی نیست و بهتر است تنها غذاهایی نباشد که روزانه مصرف می‌شود. زنانِ باردار یا شیرده، برای کمک به تأمینِ کالری و نیازهای غذاییِ خود، باید با پزشک یا یک متخصصِ رسمیِ تغذیه مشورت کنند.";
 
 /*  */
 "faq_scaling_question" = "امکان ندارد که بتوانم آن‌همه حبوبات/غلات/همانند آن‌ها را بخورم!";
 
 /*  */
-"faq_scaling_response" = "اشکالی ندارد! «دوازده‌تای روزانه» یک راهنمای آرمانی است. همه تلاش خود را بکنید تا هرقدر که برایتان ممکن است از این غذاهای گیاهی سالم مصرف کنید. اگر در خوردن مقدار زیادی حبوبات (یا غلات، سبزیجات، و همانند آن‌ها!) تازه‌کار هستید، ممکن است لازم باشد که با مقادیر کمتر شروع کنید و به‌تدریج مقدار را افزایش دهید تا به‌این‌ترتیب به میکروبیومتان فرصت هماهنگ شدن بدهید. می‌توانید خلاقیت نیز به خرج دهید: برای مثال، به غلات صبحانه‌تان مقداری حبوبات اضافه کنید. اگر غلات صبحانه‌تان را سرشار از توت، تخم کتان، و آجیل کرده باشید، اصلا متوجه وجود حبوبات در آن نخواهید شد. همچنین می‌توانید حبوبات کوبیده‌شده را ساندویچ کنید، یا این [غذای] (https://nutritionfacts.org/recipe/basic-brol-barley-rye-oats-and-lentils) من را درست کنید که ترکیبی از جو، چاودار، بلغور جو دوسر، و عدس است، و من از آن به‌عنوان بخش اصلی بسیاری از وعده‌های غذایی استفاده می‌کنم که راه ساده‌ای برای دریافت انواع غلات کامل همراه با سهمی از حبوبات است.";
+"faq_scaling_response" = "اشکالی ندارد! «دوازده‌تای روزانه» یک راهنمای آرمانی است. همۀ تلاش خود را بکنید تا هرقدر که برایتان ممکن است از این غذاهای گیاهیِ سالم مصرف کنید. اگر در خوردنِ مقدار زیادی حبوبات (یا غلات، سبزیجات، و همانندِ آن‌ها!) تازه‌کار هستید، ممکن است لازم باشد که با مقادیرِ کمتر شروع کنید و به‌تدریج مقدار را افزایش دهید تا به‌این‌ترتیب به میکروبیومتان فرصتِ هماهنگ شدن بدهید. می‌توانید خلاقیت نیز به خرج دهید: برای مثال، به غلاتِ صبحانه‌تان مقداری حبوبات اضافه کنید. اگر غلاتِ صبحانه‌تان را سرشار از توت، تخمِ کتان، و آجیل کرده باشید، اصلا متوجهِ وجودِ حبوبات در آن نخواهید شد. همچنین می‌توانید حبوباتِ کوبیده‌شده را ساندویچ کنید، یا این [غذای] (https://nutritionfacts.org/recipe/basic-brol-barley-rye-oats-and-lentils) من را درست کنید که ترکیبی از جو، چاودار، بلغورِ جو دوسر، و عدس است، و من از آن به‌عنوانِ بخشِ اصلی بسیاری از وعده‌های غذایی استفاده می‌کنم که راهِ ساده‌ای برای دریافتِ انواعِ غلاتِ کامل همراه با سهمی از حبوبات است.";
 
 /*  */
-"faq_supplements_question" = "فکر می‌کردم دکتر گرِگِر مصرف قرص‌های مکمل غذایی ویتامین دی و دی‌اِچ‌اِی را توصیه می‌کند. چرا این مکمل‌ها در این راهنما لحاظ نشده‌اند؟";
+"faq_supplements_question" = "فکر می‌کردم دکتر گرِگِر مصرفِ قرص‌های مکملِ غذایی ویتامین دی و دی‌اِچ‌اِی را توصیه می‌کند. چرا این مکمل‌ها در این راهنما لحاظ نشده‌اند؟";
 
 /*  */
-"faq_supplements_response" = "ما اپ «دوازده‌تای روزانه» را به‌روزرسانی کرده‌ایم تا فقط مکمل‌های غذایی مورد نیاز را منعکس کند. برای مثال، ویتامین دی فقط برای افرادی نیاز است که به‌قدر کافی در معرض آفتاب قرار نمی‌گیرند. هدف ما این است که اطلاعات علمی را در اختیارتان بگذاریم تا خودتان بتوانید در زمینه‌های مربوطه تصمیمات آگاهانه بگیرید. می‌توانید تمامی توصیه‌های من را درباره مقادیر مطلوب مواد مغذی در [اینجا] (https://nutritionfacts.org/optimum-nutrient-recommendations) مشاهده کنید.";
+"faq_supplements_response" = "ما اپ «دوازده‌تای روزانه» را به‌نحوی به‌روزرسانی کرده‌ایم که فقط مکمل‌های غذاییِ موردِ نیاز را منعکس کند. برای مثال، ویتامینِ دی فقط برای افرادی نیاز است که به‌قدرِ کافی در معرضِ آفتاب قرار نمی‌گیرند. هدفِ ما این است که اطلاعاتِ علمی را در اختیارتان بگذاریم تا خودتان بتوانید در زمینه‌های مربوطه تصمیماتِ آگاهانه بگیرید. می‌توانید تمامی توصیه‌های من را دربارۀ مقادیرِ مطلوبِ موادِ مغذی در [اینجا] (https://nutritionfacts.org/optimum-nutrient-recommendations) مشاهده کنید.";
 
 /* Info Menu */
-"faq_title" = "سؤالات متداول";
+"faq_title" = "سؤالاتِ متداول";
 
 /* History Data Alert: Cancel button */
 "history_data_alert_cancel" = "لغو";
@@ -131,16 +131,16 @@
 "history_data_export_text" = "خروجی‌ در این نشانی گرفته شده است:";
 
 /* History Data: import action button */
-"history_data_import_btn" = "واردسازی داده‌های سابقه";
+"history_data_import_btn" = "واردسازیِ داده‌های سابقه";
 
 /* History Data: import caution text */
-"history_data_import_caution_text" = "هشدار: این واردسازی بر روی تمام داده‌های مربوط به سابقۀ فعلی‌تان در این اپ «دوازده‌تای روزانه» جایگزین خواهد شد. آیا مایل هستید که عملیات واردسازی را ادامه دهید؟";
+"history_data_import_caution_text" = "هشدار: این واردسازی بر روی تمام داده‌های مربوط به سابقۀ فعلی‌تان در این اپ «دوازده‌تای روزانه» جایگزین خواهد شد. آیا مایل هستید که عملیاتِ واردسازی را ادامه دهید؟";
 
 /* History Data: import data error text */
-"history_data_import_error_text" = "خطا: عملیات واردسازی به‌دلیل خطای داده انجام نشد. داده‌های موجود به‌صورت دست‌نخورده باقی‌ مانده‌اند.";
+"history_data_import_error_text" = "خطا: عملیاتِ واردسازی به‌دلیل خطای داده انجام نشد. داده‌های موجود به‌صورتِ دست‌نخورده باقی‌ مانده‌اند.";
 
 /* History Data: import not found text */
-"history_data_import_notfound_text" = "در پوشۀ اسناد «دوازده‌تای روزانه» فایل ورودی معتبری یافت نشد.";
+"history_data_import_notfound_text" = "در پوشۀ اسنادِ «دوازده‌تای روزانه» فایلِ ورودیِ معتبری یافت نشد.";
 
 /* History Data: preferences header & title */
 "history_data_title" = "سابقه";
@@ -155,10 +155,10 @@
 "history_scale_choice_year" = "سال";
 
 /* History View: scale text */
-"history_scale_label" = "مقیاس زمانی";
+"history_scale_label" = "مقیاسِ زمانی";
 
 /*  */
-"historyRecord.movingAverage" = "میانگین تحرک";
+"historyRecord.movingAverage" = "میانگینِ تحرک";
 
 /* History View */
 "historyRecordDoze.heading" = "سابقۀ سهم‌ها";
@@ -200,16 +200,16 @@
 "info_app_about_heading" = "دربارۀ این اپ";
 
 /* Info About View: Open Source Credits */
-"info_app_about_oss_credits" = "بایگانی‌های منبع‌بازی که در ادامه می‌آید مورد استفاده قرار گرفته‌اند: RealmSwift، Charts، FSCalendar، SimpleAnimation، ActiveLabel.";
+"info_app_about_oss_credits" = "بایگانی‌های منبع‌بازی که در ادامه می‌آید موردِ استفاده قرار گرفته‌اند: RealmSwift، Charts، FSCalendar، SimpleAnimation، ActiveLabel.";
 
 /* Info About View: Overview Text */
-"info_app_about_overview" = "از این اپ برای ثبت و نظارت بر غذاهایتان به‌صورت روزانه بهره بگیرید و برای توصیه‌هایی که جهت دستیابی به سلامتی مطلوب و طول عمر ارائه کرده‌ام، به کتاب‌هایم «چگونه نمیریم» و «چگونه رژیم نگیریم» مراجعه کنید.";
+"info_app_about_overview" = "از این اپ برای ثبت و نظارت بر غذاهایتان به‌صورتِ روزانه بهره بگیرید و برای توصیه‌هایی که جهتِ دستیابی به سلامتیِ مطلوب و طولِ عمر ارائه کرده‌ام، به کتاب‌هایم «چگونه نمیریم» و «چگونه رژیم نگیریم» مراجعه کنید.";
 
 /* Info About View: Contributing Translators List (language code)  See https://en.wikipedia.org/wiki/List_of_ISO_639-1_codes */
-"info_app_about_translators" = "تشکر ویژه داریم از مترجمان داوطلبمان: Petar Enchev (bg), Tsveti Enchev (bg), Ricard Soler Roger (ca), Luděk Bouška (cs,sk), Lenka Lukacová (cs), Anke Schliessmann (de), Ángela Graña (es), Saeed Salamian (fa), Audray Harkins (fr), Doron Barak (he), Ruth Levy (he), Annalisa Guerrini-Körner (it), Ilaria Zanini (it), Hanna Gurzeda (pl), Joanna Klopotek (pl), Tania Bassi (pt-BR), João Madureira (pt-PT), Cristina Lauby (ro), Evgeniya Lyakh (ru), Katarína Mocáková (sk).";
+"info_app_about_translators" = "تشکرِ ویژه داریم از مترجمانِ داوطلبمان: پِتار اِنچِف (بلغاری)، تسوِتی اِنچِف (بلغاری)، ریکارد سولِر رُجِر (کاتالان)، لویِِک بوشکا (چکی، اسلواکی)، لِنکا لوکاتسووا (چکی)، آنکه اِشلیسمان (آلمانی)، آنخِلا گرانیا (اسپانیایی)، سعید سلامیان (فارسی)، آودری هارکینز (فرانسوی)، دورون بَرَک (عبری)، روث لِوی (عبری)، آنالیزا گووِرینی کُرنِر (ایتالیایی)، ایلاریا زِنینی (ایتالیایی)، حانا گوزِندا (لهستانی)، یوآنا کلوپوتِک (لهستانی)، تانیا باسی (پرتغالی برزیل)، ژوائو مادورِئیرو (پرتغالی پرتغال)، کریستینا لائوبی (رومانیایی)، ایوجِنیا لیک (روسیه)، کاتارینا موتزاکووا (اسلواکی)";
 
 /* Info About View: Application release version */
-"info_app_about_version" = "نسخه ۳.۵.۱";
+"info_app_about_version" = "نسخۀ ۳.۵.۱";
 
 /* Info About View: Welcome */
 "info_app_about_welcome" = "به «دوازده‌تای روزانه» من خوش آمدید!";
@@ -218,16 +218,16 @@
 "info_book_how_not_to_die" = "کتاب: چگونه نمیریم";
 
 /* Info Menu: book title */
-"info_book_how_not_to_die_cookbook" = "کتاب آشپزی: چگونه نمیریم";
+"info_book_how_not_to_die_cookbook" = "کتابِ آشپزی: چگونه نمیریم";
 
 /* Info Menu: book title */
 "info_book_how_not_to_diet" = "کتاب: چگونه رژیم نگیریم";
 
 /* Info Menu */
-"info_webpage_daily_dozen_challenge" = "چالش «دوازده‌تای روزانه»";
+"info_webpage_daily_dozen_challenge" = "چالشِ «دوازده‌تای روزانه»";
 
 /* Info Menu */
-"info_webpage_donate" = "حمایت مالی";
+"info_webpage_donate" = "حمایتِ مالی";
 
 /* Info Menu */
 "info_webpage_open_source" = "منبع‌باز";
@@ -260,19 +260,19 @@
 "navtab.tweaks" = "۲۱ ترفند";
 
 /* heading for daily data entry item */
-"otherVitaminB12.heading" = "ویتامین ب۱۲";
+"otherVitaminB12.heading" = "ویتامینِ ب۱۲";
 
 /* Alert notification text */
 "reminder.alert.text" = "سهم‌های امروزتان را ثبت کنید";
 
 /* Daily Reminder (alert title, settings section heading) */
-"reminder.heading" = "یادآوری روزانه";
+"reminder.heading" = "یادآوریِ روزانه";
 
 /* Daily Reminder On/Off toggle switch label */
-"reminder.settings.enable" = "فعال‌سازی یادآورنده‌ها";
+"reminder.settings.enable" = "فعال‌سازیِ یادآورنده‌ها";
 
 /* Daily Reminder sound control heading */
-"reminder.settings.sound" = "پخش صدا";
+"reminder.settings.sound" = "پخشِ صدا";
 
 /* Daily Reminder time control heading */
 "reminder.settings.time" = "در این زمان به من یادآوری کن";
@@ -287,10 +287,10 @@
 "reminder.state.on" = "فعال";
 
 /* Google Firebase Analytics */
-"setting_analytics_body" = "برای کمک به بهبود این اپ، اجازه دهید که اطلاعات مربوط به نحوۀ استفاده‌تان به‌صورت ناشناس جمع‌آوری شوند. ";
+"setting_analytics_body" = "برای کمک به بهبودِ این اپ، اجازه دهید که اطلاعاتِ مربوط به نحوۀ استفاده‌تان به‌صورتِ ناشناس جمع‌آوری شوند.";
 
 /* Google Firebase Analytics */
-"setting_analytics_enable" = "Analytics را فعال نمایید";
+"setting_analytics_enable" = "را فعال نمایید Analytics";
 
 /* Google Firebase Analytics */
 "setting_analytics_opt_in" = "مشارکت";
@@ -300,18 +300,6 @@
 
 /* Google Firebase Analytics */
 "setting_analytics_title" = "Analytics";
-
-/* Appearance Header */
-"setting_appearance_header" = "Appearance";
-
-/* Appearance Mode: Auto */
-"setting_appearance_mode_auto" = "Auto";
-
-/* Appearance Mode: Dark */
-"setting_appearance_mode_dark" = "Dark";
-
-/* Appearance Mode: Light */
-"setting_appearance_mode_light" = "Light";
 
 /* First Launch Setting: button text */
 "setting_doze_only_btn" = "دوازده‌تای روزانه \nفقط";
@@ -326,28 +314,28 @@
 "setting_doze_tweak_choice" = "دوازده‌تای روزانه + ۲۱ ترفند";
 
 /* Preference Settings View: brief description text below Tweaks visibility control. */
-"setting_doze_tweak_footer" = "اگر فقط دستیابی به سلامتی را در نظر دارید، از «فقط دوازده‌تای روزانه» استفاده کنید. اگر علاوه‌بر سلامتی، کاهش وزن را هم در نظر دارید از «دوازده‌تای روزانه + ۲۱ ترفند» استفاده کنید.";
+"setting_doze_tweak_footer" = "اگر فقط دستیابی به سلامتی را در نظر دارید، از «فقط دوازده‌تای روزانه» استفاده کنید. اگر علاوه‌بر سلامتی، کاهشِ وزن را هم در نظر دارید از «دوازده‌تای روزانه + ۲۱ ترفند» استفاده کنید.";
 
 /* First Launch Setting: brief description above ‘Daily Dozen Only’ button. */
 "setting_health_alone_txt" = "فقط برای سلامتی";
 
 /* First Launch Setting: brief description above ‘Daily Dozen + 21 Tweaks’ button. */
-"setting_health_weight_txt" = "برای سلامتی و کاهش وزن";
+"setting_health_weight_txt" = "برای سلامتی و کاهشِ وزن";
 
 /* Preference Settings View: tweaks visibilty subsection heading */
-"setting_tweak_header" = "وضعیت نمایش «۲۱ ترفند»";
+"setting_tweak_header" = "وضعیتِ نمایشِ «۲۱ ترفند»";
 
 /* Preference Settings View: Part of ‘Imperial/Metric/Toggle Units’ selector */
-"setting_units_0_imperial" = "امپریال";
+"setting_units_0_imperial" = "اِمپِریال";
 
 /* Preference Settings View: Part of ‘Imperial/Metric/Toggle Units’ selector */
 "setting_units_1_metric" = "مِتریک";
 
 /* Preference Settings View: Part of ‘Imperial/Metric/Toggle Units’ selector */
-"setting_units_2_toggle" = "تغییر واحد اندازه‌گیری";
+"setting_units_2_toggle" = "تغییرِ واحدِ اندازه‌گیری";
 
 /* Preference Settings View: brief description text below units control. */
-"setting_units_choice_footer" = "تنظیم کنید که همیشه به‌طور ثابت از یک واحد اندازه‌گیری استفاده شود، یا اینکه دکمۀ «واحد اندازه‌گیری» را فعال کنید تا در هر لحظه بتوانید واحد اندازه‌گیری هر کدام از دسته‌بندی‌ها را تغییر دهید.";
+"setting_units_choice_footer" = "تعیین کنید که همیشه به‌طورِ ثابت از یک واحدِ اندازه‌گیری استفاده شود، یا اینکه دکمۀ «واحد اندازه‌گیری» را فعال کنید تا در هر لحظه بتوانید واحدِ اندازه‌گیریِ هر کدام از دسته‌بندی‌ها را تغییر دهید.";
 
 /* Preference Settings View */
 "setting_units_header" = "واحدهای اندازه‌گیری";
@@ -368,25 +356,25 @@
 "tweak_entry_header" = "۲۱ ترفند";
 
 /* heading for daily data entry item */
-"tweakCompleteIntentions.heading" = "اهداف اجرایی‌تان را به انجام برسانید";
+"tweakCompleteIntentions.heading" = "اهدافِ اجرایی‌تان را به انجام برسانید";
 
 /* heading for daily data entry item */
-"tweakDailyBlackCumin.heading" = "سیاه‌دانه (یک‌چهارم قاشق چای‌خوری)";
+"tweakDailyBlackCumin.heading" = "سیاه‌دانه (یک‌چهارمِ قاشقِ چای‌خوری)";
 
 /* heading for daily data entry item */
-"tweakDailyCumin.heading" = "زیرۀ سبز (یک‌دوم قاشق چای‌خوری همراه با ناهار و شام)";
+"tweakDailyCumin.heading" = "زیرۀ سبز (یک‌دومِ قاشقِ چای‌خوری همراه با ناهار و شام)";
 
 /* heading for daily data entry item */
-"tweakDailyDeflourDiet.heading" = "خوراک روزانه‌تان را از آرد غلات خالی کنید";
+"tweakDailyDeflourDiet.heading" = "خوراکِ روزانه‌تان را از آردِ غلات خالی کنید";
 
 /* heading for daily data entry item */
-"tweakDailyFrontLoad.heading" = "کالری‌هایتان را اوایل روز دریافت کنید";
+"tweakDailyFrontLoad.heading" = "کالری‌هایتان را اوایلِ روز دریافت کنید";
 
 /* heading for daily data entry item */
-"tweakDailyGarlic.heading" = "پودر سیر (یک‌چهارم قاشق چای‌خوری)";
+"tweakDailyGarlic.heading" = "پودرِ سیر (یک‌چهارمِ قاشقِ چای‌خوری)";
 
 /* heading for daily data entry item */
-"tweakDailyGinger.heading" = "زنجبیل آسیاب‌شده (۱ قاشق چای‌خوری) یا فلفل کایِن (یک‌دوم قاشق چای‌خوری)";
+"tweakDailyGinger.heading" = "زنجبیلِ آسیاب‌شده (۱ قاشقِ چای‌خوری) یا فلفلِ کایِن (یک‌دومِ قاشقِ چای‌خوری)";
 
 /* heading for daily data entry item */
 "tweakDailyGreenTea.heading" = "چای سبز (۳ فنجان)";
@@ -395,49 +383,49 @@
 "tweakDailyHydrate.heading" = "بدنتان را پُرآب (هیدراته) نگه دارید";
 
 /* heading for daily data entry item */
-"tweakDailyNutriYeast.heading" = "مخمر مغذی (۲ قاشق چای‌خوری)";
+"tweakDailyNutriYeast.heading" = "مخمرِ مغذی (۲ قاشقِ چای‌خوری)";
 
 /* heading for daily data entry item */
-"tweakDailyTimeRestrict.heading" = "زمان غذا خوردنتان را محدود کنید";
+"tweakDailyTimeRestrict.heading" = "زمانِ غذا خوردنتان را محدود کنید";
 
 /* heading for daily data entry item */
-"tweakExerciseTiming.heading" = "زمانبندی ورزشتان را بهینه کنید";
+"tweakExerciseTiming.heading" = "زمانبندیِ ورزشتان را بهینه کنید";
 
 /* heading for daily data entry item */
-"tweakMeal20Minutes.heading" = "از «قانون بیست دقیقه» پیروی کنید";
+"tweakMeal20Minutes.heading" = "از «قانونِ بیست دقیقه» پیروی کنید";
 
 /* heading for daily data entry item */
-"tweakMealNegCal.heading" = "قبل از غذای اصلی، غذاهای دارای «کالری منفی» بخورید";
+"tweakMealNegCal.heading" = "قبل از غذای اصلی، غذاهای دارای «کالریِ منفی» بخورید";
 
 /* heading for daily data entry item */
-"tweakMealUndistracted.heading" = "بدون حواس‌پرتی از وعده‌های غذایتان لذت ببرید";
+"tweakMealUndistracted.heading" = "بدونِ حواس‌پرتی از وعده‌های غذایتان لذت ببرید";
 
 /* heading for daily data entry item */
-"tweakMealVinegar.heading" = "سرکه اضافه کنید (۲ قاشق چای‌خوری با هر وعده غذا)";
+"tweakMealVinegar.heading" = "سرکه اضافه کنید (۲ قاشقِ چای‌خوری با هر وعدۀ غذا)";
 
 /* heading for daily data entry item */
 "tweakMealWater.heading" = "قبل از غذا آب بنوشید";
 
 /* heading for daily data entry item */
-"tweakNightlyFast.heading" = "بعد از ساعت ۷:۰۰ شب ناشتا بمانید";
+"tweakNightlyFast.heading" = "بعد از ساعتِ ۷:۰۰ شب ناشتا بمانید";
 
 /* heading for daily data entry item */
-"tweakNightlySleep.heading" = "به اندازه کافی بخوابید";
+"tweakNightlySleep.heading" = "به اندازۀ کافی بخوابید";
 
 /* heading for daily data entry item */
-"tweakNightlyTrendelenbrug.heading" = "حالت ترِندِلِنبِرگ با شیب کم را امتحان کنید";
+"tweakNightlyTrendelenbrug.heading" = "حالتِ ترِندِلِنبِرگ با شیبِ کم را امتحان کنید";
 
 /* heading for daily data entry item */
 "tweakWeightTwice.heading" = "خودتان را دوبار در روز وزن کنید";
 
 /*  */
-"units_label" = "واحد اندازه‌گیری";
+"units_label" = "واحدِ اندازه‌گیری";
 
 /* Units toggle button text: imperial measurement system */
-"unitToggle.imperial" = "امپریال";
+"unitToggle.imperial" = "اِمپِریال";
 
 /* Units toggle button text: metric measurement system */
-"unitToggle.metric" = "متریک";
+"unitToggle.metric" = "مِتریک";
 
 /* URL path */
 "urlSegment.base" = "https://nutritionfacts.org/";
@@ -494,7 +482,7 @@
 "weight_entry_units_lbs" = "پوند";
 
 /* Weight Daily Entry: edit button to change values */
-"weight_history_edit_data" = "ویرایش داده‌ها";
+"weight_history_edit_data" = "ویرایشِ داده‌ها";
 
 /* Weight Daily Entry: heading */
 "weightEntry.heading" = "وزن";
