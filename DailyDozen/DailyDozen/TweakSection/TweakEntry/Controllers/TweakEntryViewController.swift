@@ -37,9 +37,16 @@ class TweakEntryViewController: UIViewController {
     }
     
     // entry.stats.completed
-    // Android uses 'out of' which does not fit on smaller Apple screens
+    // Android key `out_of` uses 'out of' which does not fit on smaller Apple screens
     private var statesCountString: String {
-        return "\(tweakDailyStateCount) / \(tweakDailyStateCountMaximum)"
+        let nf = NumberFormatter()
+        
+        if let countStr = nf.string(from: tweakDailyStateCount as NSNumber),
+           let maxStr = nf.string(from: tweakDailyStateCountMaximum as NSNumber) {
+            return("\(countStr) / \(maxStr)")
+        } else {
+            return "\(tweakDailyStateCount) / \(tweakDailyStateCountMaximum)"
+        }
     }
     
     // MARK: - UIViewController

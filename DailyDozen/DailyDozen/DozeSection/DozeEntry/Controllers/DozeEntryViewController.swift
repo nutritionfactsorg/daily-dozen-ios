@@ -36,10 +36,16 @@ class DozeEntryViewController: UIViewController {
     }
     
     // entry.stats.completed
-    // Android `out_of` uses 'out of' which does not fit on smaller Apple screens
-    // :NYI:LOCALIZE: Is "X/Y" format universal?
+    // Android key `out_of` uses 'out of' which does not fit on smaller Apple screens
     private var statesCountString: String {
-        return "\(dozeDailyStateCount) / \(dozeDailyStateCountMaximum)"
+        let nf = NumberFormatter()
+        
+        if let countStr = nf.string(from: dozeDailyStateCount as NSNumber),
+           let maxStr = nf.string(from: dozeDailyStateCountMaximum as NSNumber) {
+            return("\(countStr) / \(maxStr)")
+        } else {
+            return "\(dozeDailyStateCount) / \(dozeDailyStateCountMaximum)"
+        }
     }
     
     // MARK: - UIViewController

@@ -195,22 +195,18 @@ class WeightEntryViewController: UIViewController {
         // AM Morning
         timePickerAM = UIDatePicker() // :TBD:???: add min-max contraints?
         timePickerAM.datePickerMode = .time
-        if #available(iOS 13.4, *) {
-            // Expressly use inline wheel (UIPickerView) style.
-            timePickerAM.preferredDatePickerStyle = .wheels
-            timePickerAM.sizeToFit()
-        }
+        // Expressly use inline wheel (UIPickerView) style.
+        timePickerAM.preferredDatePickerStyle = .wheels
+        timePickerAM.sizeToFit()
         timePickerAM.addTarget(self, action: #selector(WeightEntryViewController.timeChangedAM(timePicker:)), for: .valueChanged)
         timeAMEntry.inputView = timePickerAM // assign initial value
         
         // PM Evening
         timePickerPM = UIDatePicker() // :TBD:???: add min-max contraints?
         timePickerPM.datePickerMode = .time
-        if #available(iOS 13.4, *) {
-            // Expressly use inline wheel (UIPickerView) style.
-            timePickerPM.preferredDatePickerStyle = .wheels
-            timePickerPM.sizeToFit()
-        }        
+        // Expressly use inline wheel (UIPickerView) style.
+        timePickerPM.preferredDatePickerStyle = .wheels
+        timePickerPM.sizeToFit()
         timePickerPM.addTarget(self, action: #selector(WeightEntryViewController.timeChangedPM(timePicker:)), for: .valueChanged)
         timePMEntry.inputView = timePickerPM
         

@@ -1,0 +1,48 @@
+{
+  "configurations" : [
+    {
+      "id" : "02AFF49C-7E93-4A06-9E0E-31DBAD807A4A",
+      "name" : "Test Scheme Action",
+      "options" : {
+
+      }
+    }
+  ],
+  "defaultOptions" : {
+    "codeCoverage" : false,
+    "commandLineArgumentEntries" : [
+      {
+        "argument" : "-FIRAnalyticsDebugEnabled",
+        "enabled" : false
+      },
+      {
+        "argument" : "-FIRDebugDisabled"
+      }
+    ],
+    "environmentVariableEntries" : [
+      {
+        "key" : "REALM_DISABLE_ANALYTICS",
+        "value" : "1"
+      },
+      {
+        "key" : "REALM_DISABLE_UPDATE_CHECKER",
+        "value" : "1"
+      }
+    ],
+    "targetForVariableExpansion" : {
+      "containerPath" : "container:DailyDozen.xcodeproj",
+      "identifier" : "CFE698371F974B9700CD7905",
+      "name" : "DailyDozen"
+    }
+  },
+  "testTargets" : [
+    {
+      "target" : {
+        "containerPath" : "container:DailyDozen.xcodeproj",
+        "identifier" : "498A2275237CD81F007AF5FB",
+        "name" : "DailyDozenTests"
+      }
+    }
+  ],
+  "version" : 1
+}

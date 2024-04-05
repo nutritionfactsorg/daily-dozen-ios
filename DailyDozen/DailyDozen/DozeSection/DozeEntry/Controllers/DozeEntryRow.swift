@@ -57,9 +57,17 @@ class DozeEntryRow: UITableViewCell {
                     //var f = itemStateCollection.frame
                     //f.size.width = 33.0 // 165.0 / 5.0 = 33
                     //itemStateCollection.frame = f
-
                 }
-                itemStreakLabel.text = String(format: streakFormat, streak)
+                
+                let nf = NumberFormatter()
+                if let daysStr = nf.string(from: streak as NSNumber) {
+                    let str = streakFormat.replacingOccurrences(of: "%d", with: daysStr)
+                    itemStreakLabel.text = str
+                    //if #available(iOS 16.0, *)
+                    //streakFormat.replacing("%d", with: daysStr)
+                } else {
+                    itemStreakLabel.text = String(format: streakFormat, streak)
+                }
                 superview.isHidden = false
                 
                 if streak < oneWeek {

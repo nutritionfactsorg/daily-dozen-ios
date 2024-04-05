@@ -20,14 +20,13 @@ extension UITextField {
         let datePicker = UIDatePicker()
         datePicker.frame = CGRect(x: 0, y: 0, width: screenWidth, height: 128) // 216 | 128
         datePicker.datePickerMode = UIDatePicker.Mode.date
-        if #available(iOS 14, *) { // Added condition for iOS 14 and above
-            // .compact => small non-selector view => old style wheels
-            // .wheels  => old style wheels
-            // .inline  => new style calendar quick select
-            datePicker.preferredDatePickerStyle = .wheels
-            datePicker.sizeToFit()
-            // datePicker.sizeThatFits(CGSize(width: 0, height: 216))
-        }
+        // .compact => small non-selector view => old style wheels
+        // .wheels  => old style wheels
+        // .inline  => new style calendar quick select
+        datePicker.preferredDatePickerStyle = .wheels
+        datePicker.sizeToFit()
+        // datePicker.sizeThatFits(CGSize(width: 0, height: 216))
+        
         self.inputView = datePicker // UIView
         let color = UIColor.black
         self.tintColor = color // match background color to "hide" caret .greenColor, .white
@@ -56,14 +55,14 @@ extension UITextField {
         let datePicker = UIDatePicker()
         datePicker.frame = CGRect(x: 0, y: 0, width: screenWidth, height: 128) // 216 | 128
         datePicker.datePickerMode = UIDatePicker.Mode.time
-        if #available(iOS 14, *) { // Added condition for iOS 14 and above
-            // .compact => small non-selector view => old style wheels
-            // .wheels  => old style wheels
-            // .inline  => new style calendar quick select
-            datePicker.preferredDatePickerStyle = .wheels
-            datePicker.sizeToFit()
-            // datePicker.sizeThatFits(CGSize(width: 0, height: 216))
-        }
+        
+        // .compact => small non-selector view => old style wheels
+        // .wheels  => old style wheels
+        // .inline  => new style calendar quick select
+        datePicker.preferredDatePickerStyle = .wheels
+        datePicker.sizeToFit()
+        // datePicker.sizeThatFits(CGSize(width: 0, height: 216))
+        
         self.inputView = datePicker // UIView
         
         let toolBar = UIToolbar()

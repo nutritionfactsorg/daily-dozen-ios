@@ -111,8 +111,6 @@
 		49F66B792588752D00002DB2 /* UITextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49F66B782588752D00002DB2 /* UITextField.swift */; };
 		49F8D1DC23905B70003E139F /* TweakEntryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49F8D1DB23905B70003E139F /* TweakEntryViewController.swift */; };
 		49F8D1DE23906B29003E139F /* TweakEntryDataProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49F8D1DD23906B29003E139F /* TweakEntryDataProvider.swift */; };
-		4C06BECC2B87234A005CE4D4 /* appstore-debug.xcconfig in Resources */ = {isa = PBXBuildFile; fileRef = 4C06BECB2B87234A005CE4D4 /* appstore-debug.xcconfig */; };
-		4C06BECE2B87237F005CE4D4 /* oss-debug.xcconfig in Resources */ = {isa = PBXBuildFile; fileRef = 4C06BECD2B87237F005CE4D4 /* oss-debug.xcconfig */; };
 		4C1E359B2AE268BA008B3B2B /* SqlDailyTracker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C1E359A2AE268BA008B3B2B /* SqlDailyTracker.swift */; };
 		4C22C9A02A737DEE0008D7B6 /* RealmDailyTracker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C22C9962A737DEE0008D7B6 /* RealmDailyTracker.swift */; };
 		4C22C9A12A737DEE0008D7B6 /* DataCountAttributes.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C22C9972A737DEE0008D7B6 /* DataCountAttributes.swift */; };
@@ -123,6 +121,7 @@
 		4C22C9A72A737DEE0008D7B6 /* DataWeightType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C22C99F2A737DEE0008D7B6 /* DataWeightType.swift */; };
 		4C4CF1F92B6C0AC800C776DE /* GoogleAnalyticsHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C4CF1F82B6C0AC800C776DE /* GoogleAnalyticsHelper.swift */; };
 		4C5D7C802A967F3A000D5153 /* SQLiteBuiltInTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C5D7C7F2A967F3A000D5153 /* SQLiteBuiltInTest.swift */; };
+		4C67BABF2BBE3C3500647DFC /* NumberLocalizationTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C67BABE2BBE3C3500647DFC /* NumberLocalizationTests.swift */; };
 		4C7695992B3D58C600FE3768 /* ExerciseGamut.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C7695982B3D58C600FE3768 /* ExerciseGamut.swift */; };
 		4C7D52F52A3B81DE00386832 /* ExpandableTableViewCellDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C7D52F42A3B81DE00386832 /* ExpandableTableViewCellDelegate.swift */; };
 		4C7D52F72A3B8F3200386832 /* InfoFaqTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C7D52F62A3B8F3200386832 /* InfoFaqTableViewController.swift */; };
@@ -348,6 +347,7 @@
 		49FECE9327DB0C3B0078C26D /* LocalesBatchA.xctestplan */ = {isa = PBXFileReference; lastKnownFileType = text; path = LocalesBatchA.xctestplan; sourceTree = "<group>"; };
 		4C06BECB2B87234A005CE4D4 /* appstore-debug.xcconfig */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xcconfig; path = "appstore-debug.xcconfig"; sourceTree = "<group>"; };
 		4C06BECD2B87237F005CE4D4 /* oss-debug.xcconfig */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xcconfig; path = "oss-debug.xcconfig"; sourceTree = "<group>"; };
+		4C19237F2BBF5F9B009FB85A /* PrivacyInfo.xcprivacy */ = {isa = PBXFileReference; lastKnownFileType = text.xml; path = PrivacyInfo.xcprivacy; sourceTree = "<group>"; };
 		4C1E359A2AE268BA008B3B2B /* SqlDailyTracker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SqlDailyTracker.swift; sourceTree = "<group>"; };
 		4C22C9962A737DEE0008D7B6 /* RealmDailyTracker.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RealmDailyTracker.swift; sourceTree = "<group>"; };
 		4C22C9972A737DEE0008D7B6 /* DataCountAttributes.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DataCountAttributes.swift; sourceTree = "<group>"; };
@@ -372,6 +372,7 @@
 		4C5C4EFC2995C8C00096AAA1 /* ro */ = {isa = PBXFileReference; lastKnownFileType = text.json; name = ro; path = ro.lproj/DozeDetailData.json; sourceTree = "<group>"; };
 		4C5C4EFD2995C8C00096AAA1 /* ro */ = {isa = PBXFileReference; lastKnownFileType = text.json; name = ro; path = ro.lproj/TweakDetailData.json; sourceTree = "<group>"; };
 		4C5D7C7F2A967F3A000D5153 /* SQLiteBuiltInTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SQLiteBuiltInTest.swift; sourceTree = "<group>"; };
+		4C67BABE2BBE3C3500647DFC /* NumberLocalizationTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NumberLocalizationTests.swift; sourceTree = "<group>"; };
 		4C7695982B3D58C600FE3768 /* ExerciseGamut.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExerciseGamut.swift; sourceTree = "<group>"; };
 		4C7D52F42A3B81DE00386832 /* ExpandableTableViewCellDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExpandableTableViewCellDelegate.swift; sourceTree = "<group>"; };
 		4C7D52F62A3B8F3200386832 /* InfoFaqTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InfoFaqTableViewController.swift; sourceTree = "<group>"; };
@@ -896,6 +897,7 @@
 			children = (
 				498A2278237CD81F007AF5FB /* DailyDozenTests.swift */,
 				491D554226E8A9EB00C756C8 /* DailyDozenUnitsTests.swift */,
+				4C67BABE2BBE3C3500647DFC /* NumberLocalizationTests.swift */,
 				498A227A237CD81F007AF5FB /* Info.plist */,
 				4966D7FA237DE9D3004F3A20 /* Resources */,
 			);
@@ -1251,6 +1253,7 @@
 				CFE698511F974F1800CD7905 /* SupportingFiles */,
 				CF22F07D1FA8ACC300F25B70 /* Texts */,
 				CFD1BA311FCD24220057F549 /* Views */,
+				4C19237F2BBF5F9B009FB85A /* PrivacyInfo.xcprivacy */,
 			);
 			path = App;
 			sourceTree = "<group>";
@@ -1404,7 +1407,7 @@
 			attributes = {
 				BuildIndependentTargetsInParallel = YES;
 				LastSwiftUpdateCheck = 1120;
-				LastUpgradeCheck = 1500;
+				LastUpgradeCheck = 1530;
 				ORGANIZATIONNAME = Nutritionfacts.org;
 				TargetAttributes = {
 					498A2275237CD81F007AF5FB = {
@@ -1481,7 +1484,6 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				4C06BECE2B87237F005CE4D4 /* oss-debug.xcconfig in Resources */,
 				49B97FE725F5EE5C009BA5A9 /* DozeEntryPagerLayout.storyboard in Resources */,
 				49C01CD22644AF48005E592D /* TweakDetailDescriptionHeader.xib in Resources */,
 				49B97FEF25F5EF87009BA5A9 /* TweakEntryPagerLayout.storyboard in Resources */,
@@ -1504,7 +1506,6 @@
 				49C01CC52644AA09005E592D /* DozeDetailTypeHeader.xib in Resources */,
 				49C01CD42644AF48005E592D /* TweakDetailActivityHeader.xib in Resources */,
 				49DEDA35264A0D0A0056462D /* SettingsLayout.storyboard in Resources */,
-				4C06BECC2B87234A005CE4D4 /* appstore-debug.xcconfig in Resources */,
 				49C01CCD2644ADCB005E592D /* TweakEntryLayout.storyboard in Resources */,
 				4916451D23EE53610077731D /* TweakDetailData.json in Resources */,
 				49DEDA39264A0DEC0056462D /* FirstLaunch.storyboard in Resources */,
@@ -1662,6 +1663,7 @@
 			files = (
 				498A2279237CD81F007AF5FB /* DailyDozenTests.swift in Sources */,
 				491D554326E8A9EC00C756C8 /* DailyDozenUnitsTests.swift in Sources */,
+				4C67BABF2BBE3C3500647DFC /* NumberLocalizationTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
