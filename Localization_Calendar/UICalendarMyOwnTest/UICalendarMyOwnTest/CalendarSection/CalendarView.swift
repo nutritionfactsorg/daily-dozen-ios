@@ -2,7 +2,6 @@
 //  CalendarView.swift
 //  UICalendarMyOwnTest
 //
-//
 
 import SwiftUI
 
@@ -19,7 +18,7 @@ struct CalendarView: UIViewRepresentable {
         if !isGregorian {
             //both of these are needed to make persian calendar
             view.calendar = Calendar(identifier: .persian)
-            view.locale = Locale(identifier: "fa") // will this be needed if language is fa?
+            view.locale = Locale(identifier: "fa") // :???: required if device language is fa?
         }
         
         else {
@@ -119,6 +118,5 @@ struct CalendarView: UIViewRepresentable {
         }
         
     }
-    
     
 }
