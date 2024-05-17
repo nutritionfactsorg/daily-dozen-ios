@@ -130,6 +130,13 @@
 		4C7D52FF2A3B9C3D00386832 /* InfoFaqHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C7D52FE2A3B9C3D00386832 /* InfoFaqHeaderView.swift */; };
 		4C7E17052A987F3B00A515F9 /* SKStoreReviewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C7E17042A987F3B00A515F9 /* SKStoreReviewController.swift */; };
 		4C88DC332B69DE3C00BF972B /* GoogleService in Resources */ = {isa = PBXBuildFile; fileRef = 4C88DC322B69DE3C00BF972B /* GoogleService */; };
+		4C9F25202BF72B9000627ABB /* AllSomeFooterView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C9F25182BF72B9000627ABB /* AllSomeFooterView.swift */; };
+		4C9F25212BF72B9000627ABB /* CalendarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C9F25192BF72B9000627ABB /* CalendarView.swift */; };
+		4C9F25222BF72B9000627ABB /* Event.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C9F251A2BF72B9000627ABB /* Event.swift */; };
+		4C9F25232BF72B9000627ABB /* EventsCalendarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C9F251B2BF72B9000627ABB /* EventsCalendarView.swift */; };
+		4C9F25242BF72B9000627ABB /* EventStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C9F251C2BF72B9000627ABB /* EventStore.swift */; };
+		4C9F25252BF72B9000627ABB /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C9F251D2BF72B9000627ABB /* Extensions.swift */; };
+		4C9F25262BF72B9000627ABB /* Extras.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C9F251E2BF72B9000627ABB /* Extras.swift */; };
 		4CAE49022A95D07B00B5ED51 /* SQLite.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4CAE48EF2A95C46E00B5ED51 /* SQLite.swift */; };
 		4CAE49032A95D07B00B5ED51 /* SQLiteFramework.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4CAE48F32A95C46E00B5ED51 /* SQLiteFramework.swift */; };
 		4CAE49042A95D07B00B5ED51 /* SQLiteExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4CAE48F02A95C46E00B5ED51 /* SQLiteExtension.swift */; };
@@ -397,6 +404,13 @@
 		4C98FFD929143A3D00E92B66 /* cs */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = cs; path = cs.lproj/Localizable.strings; sourceTree = "<group>"; };
 		4C98FFDA29143A3E00E92B66 /* cs */ = {isa = PBXFileReference; lastKnownFileType = text.json; name = cs; path = cs.lproj/DozeDetailData.json; sourceTree = "<group>"; };
 		4C98FFDB29143A3F00E92B66 /* cs */ = {isa = PBXFileReference; lastKnownFileType = text.json; name = cs; path = cs.lproj/TweakDetailData.json; sourceTree = "<group>"; };
+		4C9F25182BF72B9000627ABB /* AllSomeFooterView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AllSomeFooterView.swift; sourceTree = "<group>"; };
+		4C9F25192BF72B9000627ABB /* CalendarView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CalendarView.swift; sourceTree = "<group>"; };
+		4C9F251A2BF72B9000627ABB /* Event.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Event.swift; sourceTree = "<group>"; };
+		4C9F251B2BF72B9000627ABB /* EventsCalendarView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EventsCalendarView.swift; sourceTree = "<group>"; };
+		4C9F251C2BF72B9000627ABB /* EventStore.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EventStore.swift; sourceTree = "<group>"; };
+		4C9F251D2BF72B9000627ABB /* Extensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Extensions.swift; sourceTree = "<group>"; };
+		4C9F251E2BF72B9000627ABB /* Extras.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Extras.swift; sourceTree = "<group>"; };
 		4CAE48EF2A95C46E00B5ED51 /* SQLite.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SQLite.swift; sourceTree = "<group>"; };
 		4CAE48F02A95C46E00B5ED51 /* SQLiteExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SQLiteExtension.swift; sourceTree = "<group>"; };
 		4CAE48F12A95C46E00B5ED51 /* SQLiteStatus.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SQLiteStatus.swift; sourceTree = "<group>"; };
@@ -1006,6 +1020,20 @@
 			path = XCConfig;
 			sourceTree = "<group>";
 		};
+		4C9F251F2BF72B9000627ABB /* CalendarEmbed */ = {
+			isa = PBXGroup;
+			children = (
+				4C9F25182BF72B9000627ABB /* AllSomeFooterView.swift */,
+				4C9F25192BF72B9000627ABB /* CalendarView.swift */,
+				4C9F251A2BF72B9000627ABB /* Event.swift */,
+				4C9F251B2BF72B9000627ABB /* EventsCalendarView.swift */,
+				4C9F251C2BF72B9000627ABB /* EventStore.swift */,
+				4C9F251D2BF72B9000627ABB /* Extensions.swift */,
+				4C9F251E2BF72B9000627ABB /* Extras.swift */,
+			);
+			path = CalendarEmbed;
+			sourceTree = "<group>";
+		};
 		4CAE48EE2A95C43C00B5ED51 /* SQLiteFramework */ = {
 			isa = PBXGroup;
 			children = (
@@ -1301,6 +1329,7 @@
 		CFF117751F9753B700BFE73A /* DozeEntry */ = {
 			isa = PBXGroup;
 			children = (
+				4C9F251F2BF72B9000627ABB /* CalendarEmbed */,
 				CFC4A8501F97620400B5AC75 /* Controllers */,
 				CF987C261F9E149000D4893E /* Models */,
 				CFF117781F97543900BFE73A /* Views */,
@@ -1703,6 +1732,8 @@
 				49DB104D238E255D00E77E52 /* DozeEntryViewModel.swift in Sources */,
 				492A1E722409B41000F6C37C /* TweakDetailDescriptionCell.swift in Sources */,
 				49088F452654C9B600C8CC91 /* ColorManager.swift in Sources */,
+				4C9F25262BF72B9000627ABB /* Extras.swift in Sources */,
+				4C9F25222BF72B9000627ABB /* Event.swift in Sources */,
 				CFC4A8541F9776A500B5AC75 /* DozeEntryViewController.swift in Sources */,
 				4981709D2391B89E0033882C /* TweakHistoryViewModel.swift in Sources */,
 				4916451823EE4E440077731D /* TweakDetailViewController.swift in Sources */,
@@ -1725,6 +1756,7 @@
 				4C22C9A32A737DEE0008D7B6 /* RealmDataCountRecord.swift in Sources */,
 				4916451423EE4C410077731D /* TweakDetailViewModel.swift in Sources */,
 				49208ADC2585F16F00E994CA /* DateManager.swift in Sources */,
+				4C9F25212BF72B9000627ABB /* CalendarView.swift in Sources */,
 				499B82FB239CD4D300E4AD19 /* WeightHistoryViewController.swift in Sources */,
 				498170A123920DD60033882C /* TweakEntryPagerViewController.swift in Sources */,
 				49EF489F2586EA3500E89369 /* RoundedTextfield.swift in Sources */,
@@ -1734,12 +1766,14 @@
 				4C22C9A02A737DEE0008D7B6 /* RealmDailyTracker.swift in Sources */,
 				49F8D1DC23905B70003E139F /* TweakEntryViewController.swift in Sources */,
 				498F7246239D90E2004E501B /* WeightEntryViewController.swift in Sources */,
+				4C9F25202BF72B9000627ABB /* AllSomeFooterView.swift in Sources */,
 				4CAE49042A95D07B00B5ED51 /* SQLiteExtension.swift in Sources */,
 				4930360724760CBD00746D49 /* DBMigrationMaintainer.swift in Sources */,
 				CFC4A84D1F975A3900B5AC75 /* InfoMenuMainTableVC.swift in Sources */,
 				CFE6983C1F974B9700CD7905 /* AppDelegate.swift in Sources */,
 				CF64DF311FB5DFCF00B4D124 /* DozeDetailSizeCell.swift in Sources */,
 				4C22C9A52A737DEE0008D7B6 /* RealmDataWeightValues.swift in Sources */,
+				4C9F25242BF72B9000627ABB /* EventStore.swift in Sources */,
 				4CAE49172A95E8F400B5ED51 /* SQLiteConnector.swift in Sources */,
 				4C7E17052A987F3B00A515F9 /* SKStoreReviewController.swift in Sources */,
 				49CA08A826C39DA8002D9F66 /* UnitsUtility.swift in Sources */,
@@ -1753,11 +1787,13 @@
 				4C7D52FF2A3B9C3D00386832 /* InfoFaqHeaderView.swift in Sources */,
 				CF9EC1C0202196B100C7B3CA /* Fonts.swift in Sources */,
 				4C7D52F72A3B8F3200386832 /* InfoFaqTableViewController.swift in Sources */,
+				4C9F25252BF72B9000627ABB /* Extensions.swift in Sources */,
 				4CAE49122A95D76500B5ED51 /* SqlDataWeightModel.swift in Sources */,
 				4C7D52F52A3B81DE00386832 /* ExpandableTableViewCellDelegate.swift in Sources */,
 				4CAE49102A95D76500B5ED51 /* SqlDataCountModel.swift in Sources */,
 				492013C7261FF61900A5D635 /* DozeItemStateCheckbox.swift in Sources */,
 				4C22C9A12A737DEE0008D7B6 /* DataCountAttributes.swift in Sources */,
+				4C9F25232BF72B9000627ABB /* EventsCalendarView.swift in Sources */,
 				4CAE49052A95D07B00B5ED51 /* SQLiteStatus.swift in Sources */,
 				CFBEE2341FDE9A57005C0F45 /* RoundedView.swift in Sources */,
 				498F7244239D8B5C004E501B /* WeightHistoryViewModel.swift in Sources */,

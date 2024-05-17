@@ -21,12 +21,12 @@ struct GoogleAnalyticsHelper {
 
         let alert = UIAlertController(title: alertMsgTitleStr, message: alertMsgBodyStr, preferredStyle: .alert)
         let optOutAction = UIAlertAction(title: optOutStr, style: .default) {
-            (_: UIAlertAction) -> Void in
+            (_: UIAlertAction) in
             self.doAnalyticsDisable()
         }
         alert.addAction(optOutAction)
         let optInAction = UIAlertAction(title: optInStr, style: .default) {
-            (_: UIAlertAction) -> Void in
+            (_: UIAlertAction) in
             self.doAnalyticsEnable()
         }
         alert.addAction(optInAction)

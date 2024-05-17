@@ -129,16 +129,16 @@ class SettingsViewController: UITableViewController {
         
         #if targetEnvironment(simulator)
         logit.info("::::: SIMULATOR ENVIRONMENT: SettingsViewController :::::")
-        //advancedUtilitiesTableViewCell.isHidden = false // :ADVANCED:DEBUG:
-        advancedUtilitiesTableViewCell.isHidden = true // :ADVANCED:RELEASE:
+        advancedUtilitiesTableViewCell.isHidden = false // :ADVANCED:DEBUG:
+        //advancedUtilitiesTableViewCell.isHidden = true // :ADVANCED:RELEASE:
         logit.debug("""
         ADVANCED UTILITIES advancedUtilitiesTableViewCell.isHidden == \(advancedUtilitiesTableViewCell.isHidden)
         logit.debug(":::::::::::::::::::::::::::::::::::::::::::::::::::::::::\n
         """)
         #endif
         #if DEBUG
-        //advancedUtilitiesTableViewCell.isHidden = false // :ADVANCED:#DEBUG:
-        advancedUtilitiesTableViewCell.isHidden = true // :ADVANCED:#RELEASE:
+        advancedUtilitiesTableViewCell.isHidden = false // :ADVANCED:#DEBUG:
+        //advancedUtilitiesTableViewCell.isHidden = true // :ADVANCED:#RELEASE:
         logit.debug("ADVANCED UTILITIES advancedUtilitiesTableViewCell.isHidden == \(advancedUtilitiesTableViewCell.isHidden)")
         #endif
     }
@@ -229,12 +229,12 @@ class SettingsViewController: UITableViewController {
         
         let alert = UIAlertController(title: alertMsgTitleStr, message: alertMsgBodyStr, preferredStyle: .alert)
         let optOutAction = UIAlertAction(title: optOutStr, style: .default) {
-            (_: UIAlertAction) -> Void in
+            (_: UIAlertAction) in
             self.doAnalyticsDisable()
         }
         alert.addAction(optOutAction)
         let optInAction = UIAlertAction(title: optInStr, style: .default) {
-            (_: UIAlertAction) -> Void in
+            (_: UIAlertAction) in
             self.doAnalyticsEnable()
         }
         alert.addAction(optInAction)
@@ -548,7 +548,7 @@ class SettingsViewController: UITableViewController {
         
         let alert = UIAlertController(title: alertMsgTitleStr, message: alertMsgBodyStr, preferredStyle: .alert)
         let okAction = UIAlertAction(title: okStr, style: .default) {
-            (_: UIAlertAction) -> Void in
+            (_: UIAlertAction) in
             // nothing to do
         }
         alert.addAction(okAction)
@@ -564,13 +564,13 @@ class SettingsViewController: UITableViewController {
         
         let alert = UIAlertController(title: alertMsgTitleStr, message: alertMsgBodyStr, preferredStyle: .alert)
         let cancelAction = UIAlertAction(title: cancelStr, style: .default) {
-            (_: UIAlertAction) -> Void in
+            (_: UIAlertAction) in
             // nothing to do
         }
         alert.addAction(cancelAction)
         
         let importAction = UIAlertAction(title: importStr, style: .default) {
-            (_: UIAlertAction) -> Void in
+            (_: UIAlertAction) in
             self.doHistoryDataImportRealmHandler(csvUrl: csvUrl)
         }
         alert.addAction(importAction)
@@ -632,13 +632,13 @@ class SettingsViewController: UITableViewController {
         
         let alert = UIAlertController(title: alertMsgTitleStr, message: alertMsgBodyStr, preferredStyle: .alert)
         let cancelAction = UIAlertAction(title: cancelStr, style: .default) {
-            (_: UIAlertAction) -> Void in
+            (_: UIAlertAction) in
             // nothing to do
         }
         alert.addAction(cancelAction)
         
         let importAction = UIAlertAction(title: importStr, style: .default) {
-            (_: UIAlertAction) -> Void in
+            (_: UIAlertAction) in
             self.doHistoryDataImportSQLiteHandler(csvUrl: csvUrl)
         }
         alert.addAction(importAction)

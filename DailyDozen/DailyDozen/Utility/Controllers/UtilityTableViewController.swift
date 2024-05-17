@@ -9,7 +9,7 @@ import UIKit
 
 // MARK: - Controller
 class UtilityTableViewController: UITableViewController {
-
+    
     /// Instantiates and returns the initial view controller for a storyboard.
     ///
     /// - Returns: The initial view controller in the storyboard.
@@ -17,9 +17,9 @@ class UtilityTableViewController: UITableViewController {
         let storyboard = UIStoryboard(name: "UtilityLayout", bundle: nil)
         guard
             let viewController = storyboard.instantiateInitialViewController()
-            else { fatalError("Did not instantiate `UtilityTableViewController`") }
+        else { fatalError("Did not instantiate `UtilityTableViewController`") }
         viewController.title = "Utility"
-
+        
         return viewController
     }
     
@@ -53,7 +53,8 @@ class UtilityTableViewController: UITableViewController {
         let alert = UIAlertController(title: "", message: Strings.utilityTestHistoryClearMsg, preferredStyle: .alert)
         let cancelAction = UIAlertAction(title: Strings.utilityConfirmCancel, style: .cancel, handler: nil)
         alert.addAction(cancelAction)
-        let clearAction = UIAlertAction(title: Strings.utilityConfirmClear, style: .destructive) { (_: UIAlertAction) -> Void in
+        let clearAction = UIAlertAction(title: Strings.utilityConfirmClear, style: .destructive) { 
+            (_: UIAlertAction) in
             let dbConnect = SQLiteConnector.shared
             dbConnect.clearDb()
         }
@@ -77,10 +78,10 @@ class UtilityTableViewController: UITableViewController {
         let dbConnect = SQLiteConnector.shared
         let backupFilename = dbConnect.csvExport(marker: "DB03_Utility_Data")
         
-        #if DEBUG_NOT
+#if DEBUG_NOT
         _ = dbConnect.csvExportWeight(marker: "DB03_Utility_Weights")
         HealthSynchronizer.shared.syncWeightExport(marker: "HK03_Utility")
-        #endif
+#endif
         
         let str = "\(Strings.utilityDbExportMsg): \"\(backupFilename)\"."
         
@@ -106,7 +107,8 @@ class UtilityTableViewController: UITableViewController {
         let alert = UIAlertController(title: "", message: Strings.utilityTestHistoryClearMsg, preferredStyle: .alert)
         let cancelAction = UIAlertAction(title: Strings.utilityConfirmCancel, style: .cancel, handler: nil)
         alert.addAction(cancelAction)
-        let clearAction = UIAlertAction(title: Strings.utilityConfirmClear, style: .destructive) { (_: UIAlertAction) -> Void in
+        let clearAction = UIAlertAction(title: Strings.utilityConfirmClear, style: .destructive) {
+            (_: UIAlertAction) in
             RealmBuiltInTest.shared.doClearAllDataInMigrationChainBIT()
         }
         alert.addAction(clearAction)
@@ -123,7 +125,9 @@ class UtilityTableViewController: UITableViewController {
     @IBAction func doUtilityRealmGenerateHistoryBtn(_ sender: UIButton) {
         //   15 days (half month)
         // 1095 days (3 years) ~ 3 minutes M2 simulator
-        RealmBuiltInTest.shared.doGenerateDBHistoryBIT(numberOfDays: 15, inLibDbDir: true)
+        // RealmBuiltInTest.shared.doGenerateDBHistoryBIT(numberOfDays: 1095, inLibDbDir: true)
+        RealmBuiltInTest.shared.doGenerateDBHistoryBIT(numberOfDays: 150, inLibDbDir: true)
+        //RealmBuiltInTest.shared.doGenerateDBHistoryBIT(numberOfDays: 15, inLibDbDir: true)
     }
     
     /// doUtilityRealmGenerateStreaksBtn(…) "Simulate Progress"
@@ -133,7 +137,8 @@ class UtilityTableViewController: UITableViewController {
         let alert = UIAlertController(title: "", message: Strings.utilityTestStreaksMsg, preferredStyle: .alert)
         let cancelAction = UIAlertAction(title: Strings.utilityConfirmCancel, style: .cancel, handler: nil)
         alert.addAction(cancelAction)
-        let generateAction = UIAlertAction(title: Strings.utilityConfirmOK, style: .destructive) { (_: UIAlertAction) -> Void in
+        let generateAction = UIAlertAction(title: Strings.utilityConfirmOK, style: .destructive) {
+            (_: UIAlertAction) in
             let busyAlert = AlertActivityBar()
             busyAlert.setText("Generating Progress Data") // :NYI:LOCALIZE:
             busyAlert.show()
@@ -153,7 +158,7 @@ class UtilityTableViewController: UITableViewController {
             //}
         }
         alert.addAction(generateAction)
-                
+        
         UIApplication.shared.topViewController()?.present(alert, animated: true, completion: nil)
     }
     
@@ -166,10 +171,10 @@ class UtilityTableViewController: UITableViewController {
         let realmMngr = RealmManager(newThread: true)
         let backupFilename = realmMngr.csvExport(marker: "DB02_Utility_Data")
         
-        #if DEBUG_NOT
+#if DEBUG_NOT
         _ = realmMngr.csvExportWeight(marker: "DB02_Utility_Weights")
         HealthSynchronizer.shared.syncWeightExport(marker: "HK02_Utility")
-        #endif
+#endif
         
         let str = "\(Strings.utilityDbExportMsg): \"\(backupFilename)\"."
         
@@ -221,7 +226,8 @@ class UtilityTableViewController: UITableViewController {
         let alert = UIAlertController(title: "", message: Strings.utilitySettingsClearMsg, preferredStyle: .alert)
         let cancelAction = UIAlertAction(title: Strings.utilityConfirmCancel, style: .cancel, handler: nil)
         alert.addAction(cancelAction)
-        let clearAction = UIAlertAction(title: Strings.utilityConfirmClear, style: .destructive) { (_: UIAlertAction) -> Void in
+        let clearAction = UIAlertAction(title: Strings.utilityConfirmClear, style: .destructive) {
+            (_: UIAlertAction) in
             self.doUtilitySettingsClear()
         }
         alert.addAction(clearAction)
@@ -259,25 +265,25 @@ class UtilityTableViewController: UITableViewController {
     
     func doUtilitySettingsShow() {
         var str = ""
-
+        
         str.append(contentsOf: "reminderCanNotify: ")
         str.append(contentsOf: ": \(UserDefaults.standard.object(forKey: SettingsKeys.reminderCanNotify) ?? "nil")\n")
-
+        
         str.append(contentsOf: "reminderHourPref")
         str.append(contentsOf: ": \(UserDefaults.standard.object(forKey: SettingsKeys.reminderHourPref) ?? "nil")\n")
-
+        
         str.append(contentsOf: "reminderMinutePref")
         str.append(contentsOf: ": \(UserDefaults.standard.object(forKey: SettingsKeys.reminderMinutePref) ?? "nil")\n")
-
+        
         str.append(contentsOf: "reminderSoundPref")
         str.append(contentsOf: ": \(UserDefaults.standard.object(forKey: SettingsKeys.reminderSoundPref) ?? "nil")\n")
-
+        
         str.append(contentsOf: "unitsTypePref")
         str.append(contentsOf: ": \(UserDefaults.standard.object(forKey: SettingsKeys.unitsTypePref) ?? "nil")\n")
-
+        
         str.append(contentsOf: "unitsTypeToggleShowPref")
         str.append(contentsOf: ": \(UserDefaults.standard.object(forKey: SettingsKeys.unitsTypeToggleShowPref) ?? "nil")\n")
-
+        
         str.append(contentsOf: "show21TweaksPref")
         str.append(contentsOf: ": \(UserDefaults.standard.object(forKey: SettingsKeys.show21TweaksPref) ?? "nil")\n")
         
@@ -293,7 +299,7 @@ class UtilityTableViewController: UITableViewController {
         str.append(contentsOf: "appearanceTypePref")
         str.append(contentsOf: ": \(UserDefaults.standard.object(forKey: SettingsKeys.appearanceTypePref) ?? "nil")\n")
         
-        #if DEBUG
+#if DEBUG
         logit.debug(
             """
             UtilityTableViewController doUtilitySettingsShow()…\n
@@ -301,7 +307,7 @@ class UtilityTableViewController: UITableViewController {
             \(str)
             """
         )
-        #endif
+#endif
         
         let alert = UIAlertController(title: "", message: str, preferredStyle: .alert)
         let okAction = UIAlertAction(title: Strings.utilityConfirmOK, style: .default, handler: nil)
@@ -323,22 +329,25 @@ class UtilityTableViewController: UITableViewController {
     
     private func alertTwoButton() {
         let alertController = UIAlertController(title: "Default Style", message: "A standard alert.", preferredStyle: .alert)
-
-        let cancelAction = UIAlertAction(title: "Cancel", style: .cancel) { (action: UIAlertAction) -> Void in
+        
+        let cancelAction = UIAlertAction(title: "Cancel", style: .cancel) {
+            (action: UIAlertAction) in
             logit.debug(
                 "••CANCEL•• UtilityTableViewController alertTwoButton() \(action)"
             )
         }
         alertController.addAction(cancelAction)
-
-        let okAction = UIAlertAction(title: "OK", style: .default) { (action: UIAlertAction) -> Void in
+        
+        let okAction = UIAlertAction(title: "OK", style: .default) {
+            (action: UIAlertAction) in
             logit.debug(
                 "••OK•• UtilityTableViewController alertTwoButton() \(action)"
             )
         }
         alertController.addAction(okAction)
-
-        let destroyAction = UIAlertAction(title: "Destroy", style: .destructive) { (action: UIAlertAction) -> Void in
+        
+        let destroyAction = UIAlertAction(title: "Destroy", style: .destructive) {
+            (action: UIAlertAction) in
             logit.debug(
                 "••DESTROY•• UtilityTableViewController alertTwoButton() \(action)"
             )
@@ -353,5 +362,5 @@ class UtilityTableViewController: UITableViewController {
     // Get the new view controller using segue.destination.
     // Pass the selected object to the new view controller.
     //}
-
+    
 }

@@ -7,6 +7,7 @@
 
 import UIKit
 import StoreKit // Used to request app store reivew by user.
+import SwiftUI
 
 class DozeEntryViewController: UIViewController {
     
@@ -108,14 +109,30 @@ class DozeEntryViewController: UIViewController {
         navigationController?.pushViewController(viewController, animated: true)
     }
     
+    // Function to segue to SwiftUI View
+    //@IBSegueAction func embedSwiftUIView(_ coder: NSCoder) -> UIViewController? {
+    //    print("•• segue")
+    //    // :GTD:  Change to false in production version
+    //    return UIHostingController(coder: coder, rootView: EventsCalendarView().environmentObject(EventStore(preview: true)))
+    //}
+    
     /// DozeEntryRow itemCalendarButton
     @IBAction private func dozeCalendarPressed(_ sender: UIButton) {
         let heading = dataProvider.viewModel.itemInfo(rowIndex: sender.tag).itemType.headingDisplay
         let itemType = dataProvider.viewModel.itemType(rowIndex: sender.tag)
-        let viewController = ItemHistoryViewController.newInstance(heading: heading, itemType: itemType)
-        navigationController?.pushViewController(viewController, animated: true)
+        if #unavailable(iOS 16.0) {
+            let viewController = ItemHistoryViewController.newInstance(heading: heading, itemType: itemType)
+            navigationController?.pushViewController(viewController, animated: true)
+        } else {
+            //adding embedded swiftUI view
+            //***
+            
+            getDataForCalendar.getData(itemType: itemType)
+            //****
+            let vc = UIHostingController(rootView: EventsCalendarView().environmentObject(EventStore(preview: false)))
+            navigationController?.pushViewController(vc, animated: true)
+        }
     }
-    
     @IBAction private func supplementsHeaderInfoBtnPressed(_ sender: UIButton) {
         let alert = AlertBuilder.newInstance(for: .dietarySupplement)
         present(alert, animated: true, completion: nil)
@@ -159,7 +176,7 @@ extension DozeEntryViewController: UITableViewDelegate {
 
 // MARK: - States UICollectionViewDelegate
 extension DozeEntryViewController: UICollectionViewDelegate {
-        
+    
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         let rowIndex = collectionView.tag // which item
         let checkmarkIndex = indexPath.row // which checkmark

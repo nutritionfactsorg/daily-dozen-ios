@@ -2,7 +2,6 @@
 //  AppDelegate.swift
 //  DailyDozen
 //
-//  Created by Konstantin Khokhlov on 18.10.17.
 //  Copyright © 2017 Nutritionfacts.org. All rights reserved.
 //
 // swiftlint:disable function_body_length
@@ -59,7 +58,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         //UserDefaults.standard.set(ExerciseGamut.six.rawValue, forKey: SettingsKeys.exerciseGamutMaxUsed)
         logit.info(":: exerciseGamutMaxUsedInt()==\( SettingsManager.exerciseGamutMaxUsedInt() )")
         
-        let s: SQLiteBuiltInTest.InitialState = .db02
+        let s: SQLiteBuiltInTest.InitialState = .dbNoop // .db02
         logit.info("••DB_STATE••INITIAL_DEBUG_SETUP••BEGIN•• InitialState=\(s)")
         SQLiteBuiltInTest.shared.setupInitialState(s, numberOfDays: 0) // :GTD:B:√: initial DB
         logit.info("••DB_STATE••INITIAL_DEBUG_SETUP•••END••• InitialState=\(s)\n")

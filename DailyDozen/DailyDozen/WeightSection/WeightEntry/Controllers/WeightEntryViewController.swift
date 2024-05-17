@@ -84,14 +84,13 @@ class WeightEntryViewController: UIViewController {
             let normalizedWeight = UnitsUtility.normalizedKgWeight(
                 from: weightText,
                 fromUnits: SettingsManager.unitsType()
-            )
-        {
+            ) {
             HealthSynchronizer.shared.syncWeightPut(date: date, ampm: ampm, kg: normalizedWeight)
         }
         // Update local counter
         updateWeightDataCount()
     }
-        
+    
     /// showIBWeight() when "BodyMassDataAvailable" notification occurs
     @objc func showIBWeight(notification: Notification) {
         logit.debug("•HK• WeightEntryViewController showIBWeight")
@@ -173,11 +172,11 @@ class WeightEntryViewController: UIViewController {
         
         labelMorning.text = NSLocalizedString("weight_entry_morning", comment: "Morning")
         labelEvening.text = NSLocalizedString("weight_entry_evening", comment: "Evening")
-
+        
         let timeStr = NSLocalizedString("weight_entry_time", comment: "Time")
         labelAmTime.text = timeStr
         labelPmTime.text = timeStr
-
+        
         let clearStr = NSLocalizedString("weight_entry_clear", comment: "Clear")
         clearWeightAMButton.setTitle(clearStr, for: .normal)
         clearWeightPMButton.setTitle(clearStr, for: .normal)

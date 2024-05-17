@@ -224,7 +224,7 @@ public class SQLiteDatabase {
                 isInsideDelimiter = false
                 charWas = nil
             } else if !isInsideDelimiter, let cw = charWas {
-                if cw == "\n"{
+                if cw == "\n" {
                     hasPrecedingWhiteSpace = true
                 } else if cw != " " && cw != "\t" {
                     hasPrecedingWhiteSpace = false
