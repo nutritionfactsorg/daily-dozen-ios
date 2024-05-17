@@ -9,13 +9,13 @@ import SwiftUI
 class ViewController: UIViewController {
     
     override func viewDidLoad() {
-        print ("•• ViewController viewDidLoad")
+        print("•• ViewController viewDidLoad")
         super.viewDidLoad()
         // Do any additional setup after loading the view.
     }
     
     @IBSegueAction func embedSwiftUIView(_ coder: NSCoder) -> UIViewController? {
-        print ("•• IBSegueAction embedSwiftUIView")
+        print("•• IBSegueAction embedSwiftUIView")
         // :GTD:  Change to false in production version
         return UIHostingController(coder: coder, rootView: EventsCalendarView().environmentObject(EventStore(preview: true)))
     }

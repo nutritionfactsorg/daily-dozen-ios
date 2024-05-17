@@ -43,12 +43,12 @@ struct EventsCalendarView: View {
             }
             //.navigationTitle("History View")
             .navigationBarTitleDisplayMode(.inline)
-            .toolbar{
+            .toolbar {
                 ToolbarItem(placement: .topBarLeading) {
                     Text("item_history_heading")
                         .font(.system(size: 30))
                         .foregroundColor(.white)
-                        .shadow(color: .gray, radius: 1,  x: 0, y: 2)
+                        .shadow(color: .gray, radius: 1, x: 0, y: 2)
                     //.shadow(color: .gray, radius: 5, x: 0, y: 2)
                 }
             }
@@ -64,5 +64,5 @@ struct EventsCalendarView: View {
 #Preview {
     //let myEvents = EventStore(preview: true)
     EventsCalendarView()
-        .environmentObject(EventStore(preview:true))
+        .environmentObject(EventStore(preview: true))
 }

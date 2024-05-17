@@ -23,9 +23,7 @@ struct CalendarView: UIViewRepresentable {
             //both of these are needed to make persian calendar
             view.calendar = Calendar(identifier: .persian)
             // view.locale = Locale(identifier: "fa") // :???: required if device language is fa?
-        }
-        
-        else {
+        } else {
             view.calendar = Calendar(identifier: .gregorian)
         }
         
@@ -84,8 +82,7 @@ struct CalendarView: UIViewRepresentable {
                 )
                 
                 return icon2
-            }
-            else {
+            } else {
                 return nil
             }
             
