@@ -14,7 +14,8 @@ target 'DailyDozen' do
   ##pod 'RealmSwift', '~> 10.40.2'
   ##pod 'RealmSwift', '~> 10.44.0'
   ##pod 'RealmSwift', '~> 10.46.0'
-  pod 'RealmSwift', '~> 10.44.0'
+  ##pod 'RealmSwift', '~> 10.44.0' no longer available. rolled back to 10.42.4
+  pod 'RealmSwift', '~> 10.42.4'
   pod 'SimpleAnimation', '~> 0.4.2'
   
   ## https://github.com/firebase/firebase-ios-sdk
@@ -69,8 +70,21 @@ target 'DailyDozen' do
   ### For Analytics WITH IDFA collection capability
   ##pod 'Firebase/Analytics'
   ### For Analytics WITHOUG IDFA collection capability
-  ##pod 'Firebase/AnalyticsWithoutAdIdSupport'
-  pod 'Firebase/AnalyticsWithoutAdIdSupport', '~> 10.20.0'
+  ##pod 'Firebase/AnalyticsWithoutAdIdSupport', '~> 10.20.0' no longer available
+  pod 'Firebase/AnalyticsWithoutAdIdSupport'
+  ### Resulting install
+  ### Installing Firebase (10.15.0)
+  ### Installing FirebaseAnalytics (10.15.0)
+  ### Installing FirebaseCore (10.15.0)
+  ### Installing FirebaseCoreInternal (10.15.0)
+  ### Installing FirebaseInstallations (10.15.0)
+  ### Installing GoogleAppMeasurement (10.15.0)
+  ### Installing GoogleUtilities (7.11.5)
+  ### Installing PromisesObjC (2.3.1)
+  ### Installing Realm (10.42.4)
+  ### Installing RealmSwift (10.42.4)
+  ### Installing SwiftAlgorithms (1.0.0)
+  ### Installing nanopb (2.30909.0)
   
   target 'DailyDozenTests' do
     inherit! :search_paths
