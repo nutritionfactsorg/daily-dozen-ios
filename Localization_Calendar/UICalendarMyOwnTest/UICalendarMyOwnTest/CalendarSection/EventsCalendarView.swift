@@ -2,7 +2,6 @@
 //  EventsCalendarView.swift
 //  UICalendarMyOwnTest
 //
-//
 
 import SwiftUI
 
@@ -11,17 +10,17 @@ struct EventsCalendarView: View {
     @State private var dateSelected: DateComponents?
     @State private var displayEvents = false
     
-    
     var body: some View {
         NavigationStack {
             VStack(spacing: 0) {
                 ScrollView {
-                    CalendarView(interval: DateInterval(start: .distantPast, end: .distantFuture),
+                    CalendarView(interval: DateInterval(start: .distantPast, end: .now),
                                  eventStore: eventStore,
                                  dateSelected: $dateSelected,
                                  displayEvents: $displayEvents)
                     
                 }
+                
                 AllSomeFooterView()
                 
                 // Text(LocalizedStringKey("item_history_completed_some")
@@ -46,7 +45,7 @@ struct EventsCalendarView: View {
             .navigationBarTitleDisplayMode(.inline)
             .toolbar{
                 ToolbarItem(placement: .topBarLeading) {
-                    Text("History")
+                    Text("item_history_heading")
                         .font(.system(size: 30))
                         .foregroundColor(.white)
                         .shadow(color: .gray, radius: 1,  x: 0, y: 2)

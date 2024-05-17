@@ -1,8 +1,6 @@
 //
 //  Colors.swift
-//  UICalendarMyOwnTest
-//
-//  Copyright © 2018 Nutritionfacts.org. All rights reserved.
+//  DailyDozen
 //
 
 import UIKit

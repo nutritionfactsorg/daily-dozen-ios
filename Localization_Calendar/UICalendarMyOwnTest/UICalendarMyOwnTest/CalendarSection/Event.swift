@@ -2,7 +2,6 @@
 //  Event.swift
 //  UICalendarMyOwnTest
 //
-//
 
 import SwiftUI
 
@@ -20,21 +19,14 @@ struct Event: Identifiable {
             switch self {
             case .full:
                 return mainMedium
-                
-                
             case .some:
                 return yellowSunglowColor
-                
             case .none:
                 return nil
-                
-                
             case .unspecified:
                 return nil
             }
         }
-        
-        
     }
     
     var eventType: EventType
@@ -58,7 +50,6 @@ struct Event: Identifiable {
     init(id: String = UUID().uuidString, eventType: EventType = .unspecified, date: Date) {
         self.eventType = eventType
         self.date = date
-        
         self.id = id
     }
     

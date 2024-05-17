@@ -15,10 +15,14 @@ struct CalendarView: UIViewRepresentable {
         let view = UICalendarView()
         view.delegate = context.coordinator
         
-        if !isGregorian {
+        //if #unavailable(iOS 16.0) {
+        // only runs if <iOS 16
+        //   }
+        //:GTD: needs to be if is Persian?
+        if isPersian {
             //both of these are needed to make persian calendar
             view.calendar = Calendar(identifier: .persian)
-            view.locale = Locale(identifier: "fa") // :???: required if device language is fa?
+            // view.locale = Locale(identifier: "fa") // :???: required if device language is fa?
         }
         
         else {
@@ -72,12 +76,6 @@ struct CalendarView: UIViewRepresentable {
                               size: .large)
             }
             let singleEvent = foundEvents.first!
-            //return .customView {
-            //                let icon = UILabel()
-            //                
-            //                icon.text = singleEvent.eventType.icon
-            
-            
             if singleEvent.eventType == .full || singleEvent.eventType == .some {
                 let icon2 = UICalendarView.Decoration.image(
                     UIImage(systemName: "circle.fill"),
@@ -90,15 +88,7 @@ struct CalendarView: UIViewRepresentable {
             else {
                 return nil
             }
-            //   }
             
-            
-            // let heart = UICalendarView.Decoration.image(
-            //     UIImage(systemName: "circle.fill"),
-            //     color: UIColor.green,
-            //     size: .large
-            // )
-            // return heart
         }
         
         func dateSelection(_ selection: UICalendarSelectionSingleDate,
@@ -115,6 +105,23 @@ struct CalendarView: UIViewRepresentable {
         func dateSelection(_ selection: UICalendarSelectionSingleDate,
                            canSelectDate dateComponents: DateComponents?) -> Bool {
             return true
+        }
+        
+        func calendarView(_ calendarView: UICalendarView, didChangeVisibleDateComponentsFrom previousDateComponents: DateComponents) {
+            print("•• CalendarView didChangeVisibleDateComponents")
+            print(previousDateComponents)
+            let calendar = Calendar.current
+            if let previousDate = calendar.date(from: previousDateComponents) {
+                if let fromDate = calendar.date(byAdding: .month, value: -1, to: previousDate),
+                   let toDate = calendar.date(byAdding: .month, value: +1, to: previousDate) {
+                    print("""
+                    •• :NYI: integration to fetch persistant stored data
+                               from: \(fromDate)
+                             toDate: \(toDate)
+                    """)
+                    //PersistantDataStore.shared.fetchMultipleMonth(fromDate: beforeDate, toDate: afterDate)
+                }
+            }
         }
         
     }

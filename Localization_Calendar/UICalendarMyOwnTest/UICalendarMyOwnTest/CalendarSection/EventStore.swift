@@ -2,7 +2,6 @@
 //  EventStore.swift
 //  UICalendarMyOwnTest
 //
-//
 
 import Foundation
 
@@ -22,6 +21,7 @@ class EventStore: ObservableObject {
         if preview {
             events = Event.sampleEvents
         } else {
+            // :GTD: Integration Point
             // load from your persistence store
         }
     }
