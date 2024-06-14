@@ -14,6 +14,10 @@ extension UIFont {
         return UIFont.monospacedSystemFont(ofSize: 16, weight: .regular)
     }
     
+    static var fontSystemBold16: UIFont {
+        return UIFont.boldSystemFont(ofSize: 16)
+    }
+    
     static var fontSystem17: UIFont {
         return UIFont.systemFont(ofSize: 17)
     }
