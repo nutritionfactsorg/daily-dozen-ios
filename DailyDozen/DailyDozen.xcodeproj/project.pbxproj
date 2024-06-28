@@ -391,6 +391,10 @@
 		4C86097F2A0491C500A6EBDE /* fr */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = fr; path = fr.lproj/Localizable.strings; sourceTree = "<group>"; };
 		4C8609802A0491C500A6EBDE /* fr */ = {isa = PBXFileReference; lastKnownFileType = text.json; name = fr; path = fr.lproj/DozeDetailData.json; sourceTree = "<group>"; };
 		4C8609812A0491C500A6EBDE /* fr */ = {isa = PBXFileReference; lastKnownFileType = text.json; name = fr; path = fr.lproj/TweakDetailData.json; sourceTree = "<group>"; };
+		4C8896C32C2EAA87007C8655 /* uk */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = uk; path = uk.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		4C8896C42C2EAA88007C8655 /* uk */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = uk; path = uk.lproj/Localizable.strings; sourceTree = "<group>"; };
+		4C8896C52C2EAA88007C8655 /* uk */ = {isa = PBXFileReference; lastKnownFileType = text.json; name = uk; path = uk.lproj/DozeDetailData.json; sourceTree = "<group>"; };
+		4C8896C62C2EAA88007C8655 /* uk */ = {isa = PBXFileReference; lastKnownFileType = text.json; name = uk; path = uk.lproj/TweakDetailData.json; sourceTree = "<group>"; };
 		4C88DC322B69DE3C00BF972B /* GoogleService */ = {isa = PBXFileReference; lastKnownFileType = folder; path = GoogleService; sourceTree = "<group>"; };
 		4C97E05C29E0247200601772 /* bg */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = bg; path = bg.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		4C97E05D29E0247200601772 /* bg */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = bg; path = bg.lproj/Localizable.strings; sourceTree = "<group>"; };
@@ -1481,6 +1485,7 @@
 				"zh-Hant",
 				"zh-Hans",
 				fa,
+				uk,
 			);
 			mainGroup = CFE6982F1F974B9700CD7905;
 			productRefGroup = CFE698391F974B9700CD7905 /* Products */;
@@ -1884,6 +1889,7 @@
 				4CC9755C2B1912A500A939B3 /* zh-Hant */,
 				4CE1EDFF2B5B516D00B3B19F /* zh-Hans */,
 				4C4CF2042B6C9A3300C776DE /* fa */,
+				4C8896C62C2EAA88007C8655 /* uk */,
 			);
 			name = TweakDetailData.json;
 			sourceTree = "<group>";
@@ -1909,6 +1915,7 @@
 				4CC975592B1912A500A939B3 /* zh-Hant */,
 				4CE1EDFC2B5B516C00B3B19F /* zh-Hans */,
 				4C4CF2012B6C9A3300C776DE /* fa */,
+				4C8896C32C2EAA87007C8655 /* uk */,
 			);
 			name = InfoPlist.strings;
 			sourceTree = "<group>";
@@ -1934,6 +1941,7 @@
 				4CC9755B2B1912A500A939B3 /* zh-Hant */,
 				4CE1EDFE2B5B516D00B3B19F /* zh-Hans */,
 				4C4CF2032B6C9A3300C776DE /* fa */,
+				4C8896C52C2EAA88007C8655 /* uk */,
 			);
 			name = DozeDetailData.json;
 			sourceTree = "<group>";
@@ -1959,6 +1967,7 @@
 				4CC9755A2B1912A500A939B3 /* zh-Hant */,
 				4CE1EDFD2B5B516D00B3B19F /* zh-Hans */,
 				4C4CF2022B6C9A3300C776DE /* fa */,
+				4C8896C42C2EAA88007C8655 /* uk */,
 			);
 			name = Localizable.strings;
 			sourceTree = "<group>";

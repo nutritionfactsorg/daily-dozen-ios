@@ -1,0 +1,502 @@
+/* DailyDozen Localizable.strings (uk) */
+/* Copyright © 2021 Nutritionfacts.org. All rights reserved. */
+
+/* Date Button Title: ‘Back to today’ */
+"dateBackButtonTitle" = "До сьогодні";
+
+/* Date Button Title: ‘Today’ */
+"dateButtonTitle.today" = "Сьогодні";
+
+/* Doze Detail View subheading: ‘Serving Sizes’ */
+"doze_detail_section_sizes" = "Розміри порцій (Пропоновані)";
+
+/* Doze Detail View subheading: ‘Types’ */
+"doze_detail_section_types" = "Види";
+
+/* Doze Entry View heading: ‘Servings’ */
+"doze_entry_header" = "Порції";
+
+/* heading for daily data entry item */
+"dozeBeans.heading" = "Боби";
+
+/* heading for daily data entry item */
+"dozeBerries.heading" = "Ягоди";
+
+/* heading for daily data entry item */
+"dozeBeverages.heading" = "Напої";
+
+/* heading for daily data entry item */
+"dozeExercise.heading" = "Фізична активність";
+
+/* heading for daily data entry item */
+"dozeFlaxseeds.heading" = "Насіння льону";
+
+/* heading for daily data entry item */
+"dozeFruitsOther.heading" = "Інші фрукти";
+
+/* heading for daily data entry item */
+"dozeGreens.heading" = "Зелень";
+
+/* heading for daily data entry item */
+"dozeNuts.heading" = "Горіхи та насіння";
+
+/* Daily Dozen supplement info alert: dismissal button text */
+"dozeOtherInfo.confirm" = "ОК";
+
+/* Daily Dozen supplement info alert: message */
+"dozeOtherInfo.message" = "Вітамін В12 надзвичайно важливий для твого здоров'я, але він не включений до решти щоденних порцій.\n\n Вітамін В12 доданий до цього застосунку для того щоб тобі було легше відслідковувати його вживання.";
+
+/* Daily Dozen daily entry section heading */
+"dozeOtherInfo.section" = "БАДи";
+
+/* Daily Dozen supplement info alert: title */
+"dozeOtherInfo.title" = "БАДи";
+
+/* heading for daily data entry item */
+"dozeSpices.heading" = "Трави та спеції";
+
+/* heading for daily data entry item */
+"dozeVegetablesCruciferous.heading" = "Хрестоцвіті овочі";
+
+/* heading for daily data entry item */
+"dozeVegetablesOther.heading" = "Інші овочі";
+
+/* heading for daily data entry item */
+"dozeWholeGrains.heading" = "Цільні зерна";
+
+/*  */
+"faq_adapt_question" = "The Daily Dozen is too much/too little food for me! Can I adapt it?";
+
+/*  */
+"faq_adapt_response" = "Yes, the Daily Dozen is simply meant to be a guide of the healthiest foods that we strive to include every day. It’s not a meal plan and is not meant to be prescriptive. Do your best to eat a diverse array of whole plant foods and adapt the Daily Dozen to the quantities that work for you.";
+
+/*  */
+"faq_age_question" = "Is this adaptable for children, adolescents, and teens?";
+
+/*  */
+"faq_age_response.0" = "Children, adolescents, and teenagers have different caloric needs throughout their lifecycle. These needs change to support growth and development at each stage.";
+
+/*  */
+"faq_age_response.1" = "The Daily Dozen was designed as a guide to help people include some of the healthiest foods into their daily routine. While the same framework can be used for most people throughout the lifecycle, the amount of food one needs to eat will vary based on a number of factors like age and activity level. Since we can’t provide specific nutrition or medical advice for your growing child, parents should use this guide as they see best for their child’s needs and/or consult with a registered dietitian or other healthcare provider to help determine what is best for their individual needs.";
+
+/*  */
+"faq_calories_question" = "How many calories are in the Daily Dozen?";
+
+/*  */
+"faq_calories_response.0" = "The Daily Dozen averages about 1,200 calories, but given the wide array of food choices in each category, it can range anywhere from 800-1800. Consider the Other Vegetables category: a cup of bell peppers has a much lower caloric density than a cup of cooked sweet potatoes, therefore the caloric range will depend on your specific food choices. That’s the great thing about the Daily Dozen Checklist—it’s not a one size fits all approach, and can be adapted to your needs.";
+
+/*  */
+"faq_calories_response.1" = "If your goal is weight loss, you can find more information in “How Not to Diet” and the accompanying Twenty-One Tweaks. In “How Not to Diet”, I noted: “A systematic review of successful weight-loss strategies concluded that given the metabolic slowing and increased appetite that accompanies weight loss, to achieve significant weight loss, calorie counts may need to drop as low as 1,200 calories a day for women and 1,500 calories a day for men.”";
+
+/*  */
+"faq_calories_response.2" = "On the other hand, if your goal is weight gain, then you may want to focus on adding in more calorie-dense foods, such as sweet potatoes, avocados, nuts, and soy products.";
+
+/*  */
+"faq_mother_question" = "Can I do this while pregnant or breastfeeding?";
+
+/*  */
+"faq_mother_response" = "People who are pregnant or breastfeeding have different caloric and nutritional needs than people who are not. As a reminder, the Daily Dozen is not a meal plan and should not be the only foods consumed within a day. People who are pregnant or breastfeeding should consult with their health care practitioner or a registered dietician for assistance with meeting their specific caloric requirements and nutritional needs.";
+
+/*  */
+"faq_scaling_question" = "I can’t possibly eat that many beans/grains/etc.!";
+
+/*  */
+"faq_scaling_response" = "That’s okay! The Daily Dozen is an aspirational guide. Do your best to incorporate as many of these healthy plant foods as possible. If you are new to eating a lot of beans (or grains, greens, etc!), you may need to start with smaller amounts and slowly increase the quantity in order to give your microbiome a chance to adjust. You can also get creative: for example, add some beans to your morning oatmeal. If you load it up with berries, flax seeds, and nuts, you won’t even notice the beans. You can also mash beans into a sandwich spread, or make my [BROL](https://nutritionfacts.org/recipe/basic-brol-barley-rye-oats-and-lentils)—barley, rye, oat groats, and lentils—that I use as a base for many meals and is a simple way to get a variety of whole grains with a built-in serving of legumes.";
+
+/*  */
+"faq_supplements_question" = "I thought that Dr. Greger recommends taking Vitamin D and DHA supplements. Why aren’t they included?";
+
+/*  */
+"faq_supplements_response" = "We have updated the Daily Dozen app to reflect only required supplements. For example, Vitamin D is only needed for people who get inadequate sun exposure. Our goal is to share the science with you so you can make your own informed decisions. You can see all of my recommendations on the [Optimum Nutrient](https://nutritionfacts.org/optimum-nutrient-recommendations) page.";
+
+/* Info Menu */
+"faq_title" = "Frequently Asked Questions";
+
+/* History Data Alert: Cancel button */
+"history_data_alert_cancel" = "Cancel";
+
+/* History Data Alert: Clear button */
+"history_data_alert_clear" = "Clear";
+
+/* History Data Alert: Import buttom */
+"history_data_alert_import" = "Import";
+
+/* History Data Alert: OK button */
+"history_data_alert_ok" = "OK";
+
+/* History Data: export action button */
+"history_data_export_btn" = "Export History Data";
+
+/* History Data: export description text */
+"history_data_export_text" = "Export has been written to:";
+
+/* History Data: import action button */
+"history_data_import_btn" = "Import History Data";
+
+/* History Data: import caution text */
+"history_data_import_caution_text" = "Caution: This import will overwrite all history data currently in this Daily Dozen application. Would you like to proceed with the import?";
+
+/* History Data: import data error text */
+"history_data_import_error_text" = "Error: The import was not performed because of a data error. The existing data has remained unchanged.";
+
+/* History Data: import not found text */
+"history_data_import_notfound_text" = "Did not find a valid import file in the Daily Dozen Documents folder.";
+
+/* History Data: preferences header & title */
+"history_data_title" = "History";
+
+/* History View: calendar scale control */
+"history_scale_choice_day" = "День";
+
+/* History View: calendar scale control */
+"history_scale_choice_month" = "Місяць";
+
+/* History View: calendar scale control */
+"history_scale_choice_year" = "Рік";
+
+/* History View: scale text */
+"history_scale_label" = "Шкала часу";
+
+/*  */
+"historyRecord.movingAverage" = "Середня кількість руху";
+
+/* History View */
+"historyRecordDoze.heading" = "Історія порцій";
+
+/* History View */
+"historyRecordDoze.legend" = "Порції";
+
+/* History View */
+"historyRecordTweak.heading" = "Історія налаштувань";
+
+/* History View */
+"historyRecordTweak.legend" = "Хитрощі";
+
+/* History View */
+"historyRecordWeight.heading" = "Історія ваги";
+
+/* History View */
+"historyRecordWeight.legendEvening" = "Вечір";
+
+/* History View */
+"historyRecordWeight.legendMorning" = "Ранок";
+
+/* History View */
+"historyRecordWeight.titleImperial" = "Вага (фунти)";
+
+/* History View */
+"historyRecordWeight.titleMetric" = "Вага (кг)";
+
+/* Info About Menu Item */
+"info_app_about" = "Про";
+
+/* Info About View: Application Name ‘Daily Dozen’ */
+"info_app_about_app_name" = "Дюжина доктора Грегера";
+
+/* Info About View: Created By */
+"info_app_about_created_by" = "Цей застосунок було створено NutritionFacts.org, Крісті Річардс, Констянтином Хохловим та Марком Кемпбеллом";
+
+/* Info About View */
+"info_app_about_heading" = "Про цей застосунок";
+
+/* Info About View: Open Source Credits */
+"info_app_about_oss_credits" = "Застосунок використовує наступні бібліотеки з відкритим кодом: RealmSwift, Charts, FSCalendar, SimpleAnimation, ActiveLabel.";
+
+/* Info About View: Overview Text */
+"info_app_about_overview" = "Використовуй цей застосунок щодня, щоб відслідковувати продукти харчування та слідувати рекомендаціям для міцного здоров'я та довголіття із моїх книг “Як не померти передчасно” та “How Not to diet (Як не сидіти на дієті)”";
+
+/* Info About View: Contributing Translators List (language code)  See https://en.wikipedia.org/wiki/List_of_ISO_639-1_codes */
+"info_app_about_translators" = "Special thanks to our volunteer translators: Petar Enchev (bg), Tsveti Enchev (bg), Ricard Soler Roger (ca), Luděk Bouška (cs,sk), Lenka Lukacová (cs), Anke Schliessmann (de), Ángela Graña (es), Saeed Salamian (fa), Audray Harkins (fr), Doron Barak (he), Ruth Levy (he), Annalisa Guerrini-Körner (it), Ilaria Zanini (it), Hanna Gurzeda (pl), Joanna Klopotek (pl), Tania Bassi (pt-BR), João Madureira (pt-PT), Cristina Lauby (ro), Evgeniya Lyakh (ru), Katarína Mocáková (sk).";
+
+/* Info About View: Application release version */
+"info_app_about_version" = "версія 3.5.1";
+
+/* Info About View: Welcome */
+"info_app_about_welcome" = "Ласкаво просимо до “Дюжини доктора Грегера”";
+
+/* Info Menu: book title */
+"info_book_how_not_to_die" = "Книга: Як не померти передчасно";
+
+/* Info Menu: book title */
+"info_book_how_not_to_die_cookbook" = "Кулінарна книга: Як не померти передчасно";
+
+/* Info Menu: book title */
+"info_book_how_not_to_diet" = "Книга: Як не сидіти на дієті";
+
+/* Info Menu */
+"info_webpage_daily_dozen_challenge" = "Челендж “Дюжина доктора Грегера”";
+
+/* Info Menu */
+"info_webpage_donate" = "Зробити пожертву";
+
+/* Info Menu */
+"info_webpage_open_source" = "Відкрите програмне забезпечення";
+
+/* Info Menu */
+"info_webpage_subscribe" = "Підписатись";
+
+/* Info Menu */
+"info_webpage_videos_latest" = "Останні відео";
+
+/* Item History Legend: ‘All completed’ */
+"item_history_completed_all" = "Всі порції";
+
+/* Item History Legend: ‘Some completed’ */
+"item_history_completed_some" = "Деякі порції";
+
+/* Item History Heading */
+"item_history_heading" = "Історія";
+
+/* Main Navigation Tab Control: ‘Daily Dozen’ (proper noun) */
+"navtab.doze" = "Дюжина доктора Грегера";
+
+/* Main Navigation Tab Control: show more information */
+"navtab.info" = "Інформація";
+
+/* Main Navigation Tab Control: ‘Preferences’ synonyms: Settings, Configuration. Choose a translations with is different from Tweaks. */
+"navtab.preferences" = "Налаштування";
+
+/* Main Navigation Tab Control: ‘21 Tweaks’ (proper noun) */
+"navtab.tweaks" = "21 Хитрість";
+
+/* heading for daily data entry item */
+"otherVitaminB12.heading" = "Вітамін В12";
+
+/* Alert notification text */
+"reminder.alert.text" = "Оновити порції за сьогодні";
+
+/* Daily Reminder (alert title, settings section heading) */
+"reminder.heading" = "Щоденне нагадування";
+
+/* Daily Reminder On/Off toggle switch label */
+"reminder.settings.enable" = "Увімкнути нагадування";
+
+/* Daily Reminder sound control heading */
+"reminder.settings.sound" = "Відтворити звук";
+
+/* Daily Reminder time control heading */
+"reminder.settings.time" = "Нагадати мені о:";
+
+/* Android notification `vibrate` */
+"reminder.settings.vibrate" = "Увімкнути Віброрежим";
+
+/* ‘Off’ as in ‘On (enabled) or Off (disabled)’, Daily Reminder is not enabled */
+"reminder.state.off" = "Вимкнути";
+
+/* ‘On’ as in ‘On (enabled) or Off (disable)’. Daily Reminder is enabled */
+"reminder.state.on" = "Ввімкнути";
+
+/* Google Firebase Analytics */
+"setting_analytics_body" = "Enable anonymous usage information to be collected to help improve this application.";
+
+/* Google Firebase Analytics */
+"setting_analytics_enable" = "Enable Analytics";
+
+/* Google Firebase Analytics */
+"setting_analytics_opt_in" = "Opt In";
+
+/* Google Firebase Analytics */
+"setting_analytics_opt_out" = "Opt Out";
+
+/* Google Firebase Analytics */
+"setting_analytics_title" = "Analytics";
+
+/* Appearance Header */
+"setting_appearance_header" = "Appearance";
+
+/* Appearance Mode: Auto */
+"setting_appearance_mode_auto" = "Auto";
+
+/* Appearance Mode: Dark */
+"setting_appearance_mode_dark" = "Dark";
+
+/* Appearance Mode: Light */
+"setting_appearance_mode_light" = "Light";
+
+/* First Launch Setting: button text */
+"setting_doze_only_btn" = "Тільки Дюжина\nдоктора Грегера";
+
+/* Preference Settings View: selection button text */
+"setting_doze_only_choice" = "Тільки Дюжина доктора Грегера";
+
+/* First Launch Setting: button text */
+"setting_doze_tweak_btn" = "Дюжина доктора Грегера +\n21 Хитрість";
+
+/* Preference Settings View: selection button text */
+"setting_doze_tweak_choice" = "Дюжина доктора Грегера + 21 Хитрість";
+
+/* Preference Settings View: brief description text below Tweaks visibility control. */
+"setting_doze_tweak_footer" = "Якщо твоя ціль лише здоров'я - обирай “Дюжина доктора Грегера”. Якщо твоя ціль здоров'я та схуднення - обирай “Дюжина доктора Грегера” + “21 Хитрість”";
+
+/* First Launch Setting: brief description above ‘Daily Dozen Only’ button. */
+"setting_health_alone_txt" = "Лише для здоров'я";
+
+/* First Launch Setting: brief description above ‘Daily Dozen + 21 Tweaks’ button. */
+"setting_health_weight_txt" = "Для здоров'я та схуднення";
+
+/* Preference Settings View: tweaks visibilty subsection heading */
+"setting_tweak_header" = "Видимість 21 Хитрість";
+
+/* Preference Settings View: Part of ‘Imperial/Metric/Toggle Units’ selector */
+"setting_units_0_imperial" = "Імперський";
+
+/* Preference Settings View: Part of ‘Imperial/Metric/Toggle Units’ selector */
+"setting_units_1_metric" = "Метричний";
+
+/* Preference Settings View: Part of ‘Imperial/Metric/Toggle Units’ selector */
+"setting_units_2_toggle" = "Перемикач одиниць";
+
+/* Preference Settings View: brief description text below units control. */
+"setting_units_choice_footer" = "Встановити єдину одиницю виміру або ввімкнути функцію перемикання різних одиниць виміру";
+
+/* Preference Settings View */
+"setting_units_header" = "Одиниці вимірюваня";
+
+/* Preference Settings View */
+"setting_util_advanced" = "Розширені утиліти";
+
+/* ‘Streak’ count. Synonym: ‘Progress‘. Formatted number ‘%d’ for consecutive days completed. Place translated text for ‘days’ on the right or left of ‘%d’ based on language directionality. */
+"streakDaysFormat" = "%d днів";
+
+/* Tweaks Detail view section heading */
+"tweak_detail_section_activity" = "Активність";
+
+/* Tweaks Detail view section heading */
+"tweak_detail_section_description" = "Опис";
+
+/* Tweaks daily entry header */
+"tweak_entry_header" = "21 Хитрість";
+
+/* heading for daily data entry item */
+"tweakCompleteIntentions.heading" = "Втілюй свої наміри";
+
+/* heading for daily data entry item */
+"tweakDailyBlackCumin.heading" = "Чорний кмин (¼ чайної ложки)";
+
+/* heading for daily data entry item */
+"tweakDailyCumin.heading" = "Кмин (½ чайної ложки на обід і вечерю)";
+
+/* heading for daily data entry item */
+"tweakDailyDeflourDiet.heading" = "Прибери борошно зі свого раціону";
+
+/* heading for daily data entry item */
+"tweakDailyFrontLoad.heading" = "Вживай більшу кількість калорій в першій половині дня";
+
+/* heading for daily data entry item */
+"tweakDailyGarlic.heading" = "Порошок часнику (¼ чайної ложки)";
+
+/* heading for daily data entry item */
+"tweakDailyGinger.heading" = "Мелений імбир (1 чайна ложка) або каєнський перець (½ чайної ложки)";
+
+/* heading for daily data entry item */
+"tweakDailyGreenTea.heading" = "Зелений чай (3 чашки)";
+
+/* heading for daily data entry item */
+"tweakDailyHydrate.heading" = "Залишайся гідратованим";
+
+/* heading for daily data entry item */
+"tweakDailyNutriYeast.heading" = "Харчові дріжджі (2 чайні ложки)";
+
+/* heading for daily data entry item */
+"tweakDailyTimeRestrict.heading" = "Обмежуй кількість годин протягом яких вживаєш їжу";
+
+/* heading for daily data entry item */
+"tweakExerciseTiming.heading" = "Оптимізуй час виконання фізичних навантажень";
+
+/* heading for daily data entry item */
+"tweakMeal20Minutes.heading" = "Слідуй правилу 20 хв";
+
+/* heading for daily data entry item */
+"tweakMealNegCal.heading" = "Користуйся правилом “Негативних калорій”";
+
+/* heading for daily data entry item */
+"tweakMealUndistracted.heading" = "Не відволікайся під час їжі";
+
+/* heading for daily data entry item */
+"tweakMealVinegar.heading" = "Додавай оцет (2 ч.л. з кожним прийомом їжі)";
+
+/* heading for daily data entry item */
+"tweakMealWater.heading" = "Пий воду перед їжею";
+
+/* heading for daily data entry item */
+"tweakNightlyFast.heading" = "Останній прийом їжі має бути о 7 вечора";
+
+/* heading for daily data entry item */
+"tweakNightlySleep.heading" = "Висипайся";
+
+/* heading for daily data entry item */
+"tweakNightlyTrendelenbrug.heading" = "Експериментуй з частковим положенням Тренделенбурга";
+
+/* heading for daily data entry item */
+"tweakWeightTwice.heading" = "Зважуйся двічі на день";
+
+/*  */
+"units_label" = "Одиниці вимірювання";
+
+/* Units toggle button text: imperial measurement system */
+"unitToggle.imperial" = "Англійська система мір";
+
+/* Units toggle button text: metric measurement system */
+"unitToggle.metric" = "Метрична система мір";
+
+/* URL path */
+"urlSegment.base" = "https://nutritionfacts.org/";
+
+/*  */
+"urlSegment.lang" = "";
+
+/* main info menu: book */
+"urlSegmentInfoMenu.book" = "book/how-not-to-die";
+
+/* main info menu: daily-dozen-challenge */
+"urlSegmentInfoMenu.challenge" = "daily-dozen-challenge";
+
+/* main info menu: cookbook */
+"urlSegmentInfoMenu.cookbook" = "book/how-not-to-die-cookbook";
+
+/* main info menu: how-not-to-diet */
+"urlSegmentInfoMenu.diet" = "book/how-not-to-diet";
+
+/* main info menu: donate */
+"urlSegmentInfoMenu.donate" = "donate";
+
+/* main info menu: open-source */
+"urlSegmentInfoMenu.source" = "open-source";
+
+/* main info menu: subscribe */
+"urlSegmentInfoMenu.subscribe" = "subscribe";
+
+/* team */
+"urlSegmentInfoMenu.team" = "team";
+
+/* main info menu: videos */
+"urlSegmentInfoMenu.videos" = "videos";
+
+/* Label for hyperlink to nutritionfacts.org video topics */
+"videos.link.label" = "Відео";
+
+/* Weight Daily Entry: clear button which deletes values */
+"weight_entry_clear" = "Очистити";
+
+/* Weight Daily Entry: label */
+"weight_entry_evening" = "Вага (перед сном)";
+
+/* Weight Daily Entry: label */
+"weight_entry_morning" = "Вага (зранку)";
+
+/* Weight Daily Entry: label */
+"weight_entry_time" = "Час";
+
+/* Weight Daily Entry Units: label */
+"weight_entry_units_kg" = "кг";
+
+/* Weight Daily Entry Units: label */
+"weight_entry_units_lbs" = "фунти";
+
+/* Weight Daily Entry: edit button to change values */
+"weight_history_edit_data" = "Оновити дані";
+
+/* Weight Daily Entry: heading */
+"weightEntry.heading" = "Вага";
+
+/* file end */
