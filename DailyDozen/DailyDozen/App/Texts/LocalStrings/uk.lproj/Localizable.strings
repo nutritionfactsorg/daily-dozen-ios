@@ -65,85 +65,85 @@
 "dozeWholeGrains.heading" = "Цільні зерна";
 
 /*  */
-"faq_adapt_question" = "The Daily Dozen is too much/too little food for me! Can I adapt it?";
+"faq_adapt_question" = "Дюжина доктора Грегера містить забагато/замало їжі для мене! Можна її адаптувати?";
 
 /*  */
-"faq_adapt_response" = "Yes, the Daily Dozen is simply meant to be a guide of the healthiest foods that we strive to include every day. It’s not a meal plan and is not meant to be prescriptive. Do your best to eat a diverse array of whole plant foods and adapt the Daily Dozen to the quantities that work for you.";
+"faq_adapt_response" = "Так, Дюжина доктора Грегера це просто довідник найкорисніших продуктів, що ми намагаємося включити у свій щоденний раціон. Вона не є планом із харчування. Намагайся їсти різноманітну цільну рослинну їжу та адаптуй Дюжину доктора Грегера до кількості, яка підходить саме тобі. ";
 
 /*  */
-"faq_age_question" = "Is this adaptable for children, adolescents, and teens?";
+"faq_age_question" = "Чи адаптована вона для дітей та підлітків?";
 
 /*  */
-"faq_age_response.0" = "Children, adolescents, and teenagers have different caloric needs throughout their lifecycle. These needs change to support growth and development at each stage.";
+"faq_age_response.0" = "Діти та підлітки мають різні потреби в калоріях протягом життєвого циклу. Ці потреби змінюються, щоб підтримувати ріст та розвиток на кожному етапі.  ";
 
 /*  */
-"faq_age_response.1" = "The Daily Dozen was designed as a guide to help people include some of the healthiest foods into their daily routine. While the same framework can be used for most people throughout the lifecycle, the amount of food one needs to eat will vary based on a number of factors like age and activity level. Since we can’t provide specific nutrition or medical advice for your growing child, parents should use this guide as they see best for their child’s needs and/or consult with a registered dietitian or other healthcare provider to help determine what is best for their individual needs.";
+"faq_age_response.1" = "Дюжина доктора Грегера була розроблена як посібник, що допоможе людям включати деякі з найкорисніших продуктів у свій щоденний раціон. Хоча одна і та ж структура може використовуватися для більшості людей протягом усього життєвого циклу, кількість їжі, яку потрібно з’їсти, змінюватиметься залежно від ряду факторів, таких як вік та рівень активності. Оскільки ми не можемо надати конкретні поради щодо харчування або медичні поради для вашої дитини, яка росте, батьки повинні використовувати цей посібник таким чином, як вони вважають найкращим для своєї дитини та/або проконсультуватися з ліцензованим дієтологом чи іншим медичним працівником, щоб допомогти визначити, що найкраще в їхній конкретній ситуації.";
 
 /*  */
-"faq_calories_question" = "How many calories are in the Daily Dozen?";
+"faq_calories_question" = "Скільки калорій у Дюжині доктора Грегера?";
 
 /*  */
-"faq_calories_response.0" = "The Daily Dozen averages about 1,200 calories, but given the wide array of food choices in each category, it can range anywhere from 800-1800. Consider the Other Vegetables category: a cup of bell peppers has a much lower caloric density than a cup of cooked sweet potatoes, therefore the caloric range will depend on your specific food choices. That’s the great thing about the Daily Dozen Checklist—it’s not a one size fits all approach, and can be adapted to your needs.";
+"faq_calories_response.0" = "Дюжина доктора Грегера в середньому містить близько 1200 калорій, але, враховуючи широкий вибір їжі в кожній категорії, цифра може коливатися від 800 до 1800. Якщо поглянути на категорію \"Інші овочі\": чашка болгарського перцю має набагато нижчу калорійність, ніж чашка вареної солодкої картоплі, тому діапазон калорій залежатиме від твого вибору їжі.  У цьому і перевага Дюжини доктора Грегера — її можна адаптувати до твоїх потреб.";
 
 /*  */
-"faq_calories_response.1" = "If your goal is weight loss, you can find more information in “How Not to Diet” and the accompanying Twenty-One Tweaks. In “How Not to Diet”, I noted: “A systematic review of successful weight-loss strategies concluded that given the metabolic slowing and increased appetite that accompanies weight loss, to achieve significant weight loss, calorie counts may need to drop as low as 1,200 calories a day for women and 1,500 calories a day for men.”";
+"faq_calories_response.1" = "Якщо твоя мета — схуднення, ти можеш знайти більше інформації в розділі \"How Not to Diet\" та його додатку \"21 Хитрість\". У книзі \"How Not to Diet\" я зазначив: \"Систематичний огляд успішних стратегій схуднення показує, що, враховуючи уповільнення метаболізму та підвищення апетиту, які супроводжують втрату ваги, для досягнення значної втрати ваги, кількість калорій, можливо, доведеться знизити до 1200 калорій на день для жінок і 1500 калорій на день для чоловіків\".";
 
 /*  */
-"faq_calories_response.2" = "On the other hand, if your goal is weight gain, then you may want to focus on adding in more calorie-dense foods, such as sweet potatoes, avocados, nuts, and soy products.";
+"faq_calories_response.2" = "З іншого боку, якщо твоя мета — набрати вагу, ти можеш зосередитися на додаванні більш калорійних продуктів, таких як батат, авокадо, горіхи та соєві продукти.";
 
 /*  */
-"faq_mother_question" = "Can I do this while pregnant or breastfeeding?";
+"faq_mother_question" = "Чи можна використовувати Дюжину доктора Грегера під час вагітності та годуванні грудьми?";
 
 /*  */
-"faq_mother_response" = "People who are pregnant or breastfeeding have different caloric and nutritional needs than people who are not. As a reminder, the Daily Dozen is not a meal plan and should not be the only foods consumed within a day. People who are pregnant or breastfeeding should consult with their health care practitioner or a registered dietician for assistance with meeting their specific caloric requirements and nutritional needs.";
+"faq_mother_response" = "Жінки, які вагітні або годують грудьми, мають інші потреби в калоріях і харчуванні, ніж інші люди. Нагадуємо, що Дюжина доктора Грегера не є планом харчування і не повинна бути єдиною їжею, спожитою протягом дня. Жінкам, які вагітні або годують грудьми, слід проконсультуватися зі своїм лікарем або ліцензованим дієтологом, щоб отримати допомогу щодо їхніх особливих потреб у калоріях та харчуванні.";
 
 /*  */
-"faq_scaling_question" = "I can’t possibly eat that many beans/grains/etc.!";
+"faq_scaling_question" = "Я не можу з’їсти стільки бобів/зерен тощо!";
 
 /*  */
-"faq_scaling_response" = "That’s okay! The Daily Dozen is an aspirational guide. Do your best to incorporate as many of these healthy plant foods as possible. If you are new to eating a lot of beans (or grains, greens, etc!), you may need to start with smaller amounts and slowly increase the quantity in order to give your microbiome a chance to adjust. You can also get creative: for example, add some beans to your morning oatmeal. If you load it up with berries, flax seeds, and nuts, you won’t even notice the beans. You can also mash beans into a sandwich spread, or make my [BROL](https://nutritionfacts.org/recipe/basic-brol-barley-rye-oats-and-lentils)—barley, rye, oat groats, and lentils—that I use as a base for many meals and is a simple way to get a variety of whole grains with a built-in serving of legumes.";
+"faq_scaling_response" = "Нічого страшного! Дюжина доктора Грегера створена для того, щоб тебе надихнути. Роби усе можливе, щоб включити якомога більше цих здорових рослинних продуктів. Якщо ти тільки починаєш їсти багато бобів (або зерен, зелені тощо!), можливо, тобі доведеться почати з меншої кількості і поступово збільшувати кількість, щоб дати своєму мікробіому можливість пристосуватися. Ти також можеш проявити креативність: наприклад, додати трохи квасолі в ранкову вівсянку. Якщо ти додасиш до неї ягід, насіння льону та горіхи, бобів і не помітиш. Ти також можеш додати квасолю в пасту для бутербродів або приготувати мій [BROL](https://nutritionfacts.org/recipe/basic-brol-barley-rye-oats-and-lentils) — ячмінну, житню, вівсяну крупу та сочевиця, яку я використовую як основу для багатьох страв , що є простим способом отримати різноманітні цільні зерна з вбудованою порцією бобових.";
 
 /*  */
-"faq_supplements_question" = "I thought that Dr. Greger recommends taking Vitamin D and DHA supplements. Why aren’t they included?";
+"faq_supplements_question" = "Я думав, що доктор Грегер рекомендує приймати суплементи з вітаміном D та DHA. Чому вони не включені?";
 
 /*  */
-"faq_supplements_response" = "We have updated the Daily Dozen app to reflect only required supplements. For example, Vitamin D is only needed for people who get inadequate sun exposure. Our goal is to share the science with you so you can make your own informed decisions. You can see all of my recommendations on the [Optimum Nutrient](https://nutritionfacts.org/optimum-nutrient-recommendations) page.";
+"faq_supplements_response" = "Ми оновили додаток Дюжина доктора Грегера, щоб відобразити лише необхідні суплементи. Наприклад, вітамін D потрібен лише людям, які недостатньо перебувають на сонці. Наша мета — поділитися з тобою наукою, щоб ти міг/могла приймати власні обґрунтовані рішення. Ти можеш переглянути всі мої рекомендації на сторінці [Оптимальний нутрієнт](https://nutritionfacts.org/optimum-nutrient-recommendations).";
 
 /* Info Menu */
-"faq_title" = "Frequently Asked Questions";
+"faq_title" = "Поширені Запитання";
 
 /* History Data Alert: Cancel button */
-"history_data_alert_cancel" = "Cancel";
+"history_data_alert_cancel" = "Відмінити";
 
 /* History Data Alert: Clear button */
-"history_data_alert_clear" = "Clear";
+"history_data_alert_clear" = "Очистити";
 
 /* History Data Alert: Import buttom */
-"history_data_alert_import" = "Import";
+"history_data_alert_import" = "Імпорт";
 
 /* History Data Alert: OK button */
 "history_data_alert_ok" = "OK";
 
 /* History Data: export action button */
-"history_data_export_btn" = "Export History Data";
+"history_data_export_btn" = "Експорт даних історії";
 
 /* History Data: export description text */
-"history_data_export_text" = "Export has been written to:";
+"history_data_export_text" = "Експорт написано до:";
 
 /* History Data: import action button */
-"history_data_import_btn" = "Import History Data";
+"history_data_import_btn" = "Імпорт даних історії";
 
 /* History Data: import caution text */
-"history_data_import_caution_text" = "Caution: This import will overwrite all history data currently in this Daily Dozen application. Would you like to proceed with the import?";
+"history_data_import_caution_text" = "Увага: цей імпорт перезапише всі дані історії, які зараз є в програмі Дюжина доктора Грегера. Бажаєте продовжити імпорт?";
 
 /* History Data: import data error text */
-"history_data_import_error_text" = "Error: The import was not performed because of a data error. The existing data has remained unchanged.";
+"history_data_import_error_text" = "Помилка: імпорт не виконано через помилку даних. Існуючі дані залишилися без змін.";
 
 /* History Data: import not found text */
-"history_data_import_notfound_text" = "Did not find a valid import file in the Daily Dozen Documents folder.";
+"history_data_import_notfound_text" = "Не знайдено дійсний файл імпорту в папці  Дюжина доктора Грегера Документи";
 
 /* History Data: preferences header & title */
-"history_data_title" = "History";
+"history_data_title" = "Історія ";
 
 /* History View: calendar scale control */
 "history_scale_choice_day" = "День";
@@ -206,7 +206,7 @@
 "info_app_about_overview" = "Використовуй цей застосунок щодня, щоб відслідковувати продукти харчування та слідувати рекомендаціям для міцного здоров'я та довголіття із моїх книг “Як не померти передчасно” та “How Not to diet (Як не сидіти на дієті)”";
 
 /* Info About View: Contributing Translators List (language code)  See https://en.wikipedia.org/wiki/List_of_ISO_639-1_codes */
-"info_app_about_translators" = "Special thanks to our volunteer translators: Petar Enchev (bg), Tsveti Enchev (bg), Ricard Soler Roger (ca), Luděk Bouška (cs,sk), Lenka Lukacová (cs), Anke Schliessmann (de), Ángela Graña (es), Saeed Salamian (fa), Audray Harkins (fr), Doron Barak (he), Ruth Levy (he), Annalisa Guerrini-Körner (it), Ilaria Zanini (it), Hanna Gurzeda (pl), Joanna Klopotek (pl), Tania Bassi (pt-BR), João Madureira (pt-PT), Cristina Lauby (ro), Evgeniya Lyakh (ru), Katarína Mocáková (sk).";
+"info_app_about_translators" = "Особлива подяка нашим перекладачам-волонтерам: Petar Enchev (bg), Tsveti Enchev (bg), Ricard Soler Roger (ca), Luděk Bouška (cs,sk), Lenka Lukacová (cs), Anke Schliessmann (de), Ángela Graña (es), Saeed Salamian (fa), Audray Harkins (fr), Doron Barak (he), Ruth Levy (he), Annalisa Guerrini-Körner (it), Ilaria Zanini (it), Hanna Gurzeda (pl), Joanna Klopotek (pl), Tania Bassi (pt-BR), João Madureira (pt-PT), Cristina Lauby (ro), Evgeniya Lyakh (ru), Katarína Mocáková (sk), Sabina Aliieva (uk).";
 
 /* Info About View: Application release version */
 "info_app_about_version" = "версія 3.5.1";
@@ -287,19 +287,19 @@
 "reminder.state.on" = "Ввімкнути";
 
 /* Google Firebase Analytics */
-"setting_analytics_body" = "Enable anonymous usage information to be collected to help improve this application.";
+"setting_analytics_body" = "Дозвольте збір анонімної інформації щодо використання, щоб покращити цей застосунок.";
 
 /* Google Firebase Analytics */
-"setting_analytics_enable" = "Enable Analytics";
+"setting_analytics_enable" = "Включити Аналітику";
 
 /* Google Firebase Analytics */
-"setting_analytics_opt_in" = "Opt In";
+"setting_analytics_opt_in" = "Обрати";
 
 /* Google Firebase Analytics */
-"setting_analytics_opt_out" = "Opt Out";
+"setting_analytics_opt_out" = "Відмовитися";
 
 /* Google Firebase Analytics */
-"setting_analytics_title" = "Analytics";
+"setting_analytics_title" = "Аналітика";
 
 /* Appearance Header */
 "setting_appearance_header" = "Appearance";
@@ -314,13 +314,13 @@
 "setting_appearance_mode_light" = "Light";
 
 /* First Launch Setting: button text */
-"setting_doze_only_btn" = "Тільки Дюжина\nдоктора Грегера";
+"setting_doze_only_btn" = "Тільки Дюжина доктора Грегера";
 
 /* Preference Settings View: selection button text */
 "setting_doze_only_choice" = "Тільки Дюжина доктора Грегера";
 
 /* First Launch Setting: button text */
-"setting_doze_tweak_btn" = "Дюжина доктора Грегера +\n21 Хитрість";
+"setting_doze_tweak_btn" = "Дюжина доктора Грегера + 21 Хитрість";
 
 /* Preference Settings View: selection button text */
 "setting_doze_tweak_choice" = "Дюжина доктора Грегера + 21 Хитрість";
