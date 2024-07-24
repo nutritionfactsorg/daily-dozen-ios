@@ -1,5 +1,5 @@
 //
-//  EventsCalendarView.swift
+//  EventCalendarView.swift
 //  DailyDozen
 //
 //  Copyright © 2024 Nutritionfacts.org. All rights reserved.
@@ -7,7 +7,7 @@
 
 import SwiftUI
 
-struct EventsCalendarView: View {
+struct EventCalendarView: View {
     @EnvironmentObject var eventStore: EventStore
     @State private var dateSelected: DateComponents?
     @State private var displayEvents = false
@@ -24,7 +24,7 @@ struct EventsCalendarView: View {
                         
                     }
                     
-                    AllSomeFooterView()
+                    EventCalendarFooterView()
                     
                     // Text(LocalizedStringKey("item_history_completed_some")
                     //        .toolbar {
@@ -56,7 +56,7 @@ struct EventsCalendarView: View {
                     }
                 }
                 .toolbarBackground(
-                    Color(mainMedium),
+                    .orange, // :GTD:COLOR:
                     for: .navigationBar)
                 .toolbarBackground(.visible, for: .navigationBar)
                 
@@ -69,6 +69,6 @@ struct EventsCalendarView: View {
 
 #Preview {
     //let myEvents = EventStore(preview: true)
-    EventsCalendarView()
+    EventCalendarView()
         .environmentObject(EventStore(preview: true))
 }

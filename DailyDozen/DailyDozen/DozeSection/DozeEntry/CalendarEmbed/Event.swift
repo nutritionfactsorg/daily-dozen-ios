@@ -20,9 +20,9 @@ struct Event: Identifiable {
         var icon2: UIColor? {
             switch self {
             case .full:
-                return mainMedium
+                return ColorManager.style.calendarAllChecked
             case .some:
-                return yellowSunglowColor
+                return ColorManager.style.calendarSomeChecked
             case .none:
                 return nil
                 //return white would be consistent with existing DD code.

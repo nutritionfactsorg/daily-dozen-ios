@@ -104,4 +104,18 @@ struct ColorManager {
         return UIColor.black
     }
     
+    // MARK: - Calendar Colors
+    
+    var calendarAllChecked: UIColor {
+        return UIColor(red: 235/255, green: 193/255, blue: 64/255, alpha: 1)
+    }
+    
+    var calendarSomeChecked: UIColor {
+        return UIColor(red: 255/255, green: 251/255, blue: 0/255, alpha: 1)
+    }
+    
+    var calendarNoneChecked: UIColor {
+        return UIColor.white
+    }
+    
 }

@@ -113,26 +113,24 @@ class DozeEntryViewController: UIViewController {
     //@IBSegueAction func embedSwiftUIView(_ coder: NSCoder) -> UIViewController? {
     //    print("•• segue")
     //    // :GTD:  Change to false in production version
-    //    return UIHostingController(coder: coder, rootView: EventsCalendarView().environmentObject(EventStore(preview: true)))
+    //    return UIHostingController(coder: coder, rootView: EventCalendarView().environmentObject(EventStore(preview: true)))
     //}
     
     /// DozeEntryRow itemCalendarButton
     @IBAction private func dozeCalendarPressed(_ sender: UIButton) {
         let heading = dataProvider.viewModel.itemInfo(rowIndex: sender.tag).itemType.headingDisplay
         let itemType = dataProvider.viewModel.itemType(rowIndex: sender.tag)
-        if #unavailable(iOS 16.0) {
+        if #available(iOS 16.0, *) { //*** iOS 16+ add embedded SwiftUI View
+            getDataForCalendar.getData(itemType: itemType)
+            let vc = UIHostingController(rootView: EventCalendarView()
+                .environmentObject(EventStore(preview: false)))
+            navigationController?.pushViewController(vc, animated: true)
+        } else {
             let viewController = ItemHistoryViewController.newInstance(heading: heading, itemType: itemType)
             navigationController?.pushViewController(viewController, animated: true)
-        } else {
-            //adding embedded swiftUI view
-            //***
-            
-            getDataForCalendar.getData(itemType: itemType)
-            //****
-            let vc = UIHostingController(rootView: EventsCalendarView().environmentObject(EventStore(preview: false)))
-            navigationController?.pushViewController(vc, animated: true)
         }
     }
+    
     @IBAction private func supplementsHeaderInfoBtnPressed(_ sender: UIButton) {
         let alert = AlertBuilder.newInstance(for: .dietarySupplement)
         present(alert, animated: true, completion: nil)

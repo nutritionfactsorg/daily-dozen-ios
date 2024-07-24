@@ -6,20 +6,8 @@
 //
 
 import SwiftUI
-//Extras and Global
 
-// Note: NutritionFacts colors //Not sure about yellowSunglow
-
-var mainMedium: UIColor {
-    return UIColor(named: "BrandGreen") ??
-    UIColor(red: 127/255, green: 192/255, blue: 76/255, alpha: 1)
-}
-
-var yellowSunglowColor: UIColor {
-    return UIColor(red: 253/255, green: 212/255, blue: 69/255, alpha: 1)
-}
-
-//Globel to set calendar to use Persian Calendar
+//Global to set calendar to use Persian Calendar
 var isPersian: Bool = false
 //*********************Below is testing
 //**Getting Realm Data**//
