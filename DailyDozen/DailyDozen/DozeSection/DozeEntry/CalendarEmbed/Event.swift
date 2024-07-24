@@ -61,13 +61,13 @@ struct Event: Identifiable {
     // Data to be used in the preview
     static var sampleEvents: [Event] {
         return [
-            Event(eventType: .full, date: Date().diff(numDays: 0) ),
-            Event(date: Date().diff(numDays: -1)),
-            Event(eventType: .full, date: Date().diff(numDays: 6) ),
-            Event(eventType: .some, date: Date().diff(numDays: 2) ),
-            //Event(eventType: .none, date: Date().diff(numDays: -1)),
-            Event(eventType: .some, date: Date().diff(numDays: -3)),
-            Event(date: Date().diff(numDays: -4))
+            Event(eventType: .full, date: Date().adding(days: 0) ),
+            Event(date: Date().adding(days: -1)),
+            Event(eventType: .full, date: Date().adding(days: 6) ),
+            Event(eventType: .some, date: Date().adding(days: 2) ),
+            //Event(eventType: .none, date: Date().adding(days: -1)),
+            Event(eventType: .some, date: Date().adding(days: -3)),
+            Event(date: Date().adding(days: -4))
         ]
     }
     

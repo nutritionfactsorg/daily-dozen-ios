@@ -30,7 +30,7 @@ struct GetDataForCalendar {
         }
         
         for i in 0...1095 { //*** :GTD: fetch events loop fixed vs UI range
-            date = Date().diff(numDays: -i)
+            date = Date().adding(days: -i)
             
             let itemsDict = realm.getDailyTracker(date: date).itemsDict
             if let count = itemsDict[itemType]?.count {

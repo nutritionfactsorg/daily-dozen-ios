@@ -271,9 +271,10 @@ extension Date {
     }
     
     // :???: candidate code to be either improved or deleted
-    //    var startOfDay: Date {
-    //        return Calendar.current.startOfDay(for: self)
-    //    }
+    var startOfDay: Date {
+        return Calendar.current.startOfDay(for: self)
+    }
+    
     //
     //    var endOfDay: Date {
     //    var components = DateComponents()
