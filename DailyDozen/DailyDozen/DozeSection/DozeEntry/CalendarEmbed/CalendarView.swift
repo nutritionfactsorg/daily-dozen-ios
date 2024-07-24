@@ -21,8 +21,7 @@ struct CalendarView: UIViewRepresentable {
         //if #unavailable(iOS 16.0) {
         // only runs if <iOS 16
         //   }
-        //:GTD: needs to be if is Persian?
-        if isPersian {
+        if Locale.current.isPersian {
             //both of these are needed to make persian calendar?
             view.calendar = Calendar(identifier: .persian)
             //  view.locale = Locale(identifier: "fa") // :???: required if device language is fa?
