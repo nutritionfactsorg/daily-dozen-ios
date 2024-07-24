@@ -121,7 +121,7 @@ class DozeEntryViewController: UIViewController {
         let heading = dataProvider.viewModel.itemInfo(rowIndex: sender.tag).itemType.headingDisplay
         let itemType = dataProvider.viewModel.itemType(rowIndex: sender.tag)
         if #available(iOS 16.0, *) { //*** iOS 16+ add embedded SwiftUI View
-            getDataForCalendar.getData(itemType: itemType)
+            GetDataForCalendar.doit.getData(itemType: itemType)
             let vc = UIHostingController(rootView: EventCalendarView()
                 .environmentObject(EventStore(preview: false)))
             navigationController?.pushViewController(vc, animated: true)

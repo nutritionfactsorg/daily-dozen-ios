@@ -7,63 +7,43 @@
 
 import SwiftUI
 
-//Global to set calendar to use Persian Calendar
-var isPersian: Bool = false
-//*********************Below is testing
-//**Getting Realm Data**//
-
-var getDataForCalendar = GetDataForCalendar()
-
+/// Use: EventStore events [Event]
 var fetchedEvents: [Event] = []
 
-// Related: extension ItemHistoryViewController: FSCalendarDataSource
-//*** Get data from Realm
-
+/// Fetch Realm data for calendar
 struct GetDataForCalendar {
-    var dozevents: [Event] = []
+    /// Singleton: GetDataForCalendar // :GTD: change to instance approach?
+    static var doit = GetDataForCalendar()
+    
     // @ObservedObject var eventStore: EventStore
     var date = Date()
     let realm = RealmProvider.primary
-    //var itemType: DataCountType!
     
     mutating func getData(itemType: DataCountType) {
+        var dozevents: [Event] = []
+        let goal = itemType.goalServings
+        
         let currentDatetime = DateManager.currentDatetime()
         guard date <= currentDatetime else {
             logit.error("Error: getData date '\(date)' > currentDatetime '\(currentDatetime)'")
             return
         }
-        dozevents = []
-        //:GTD:// this is where the loop is to read Realm
-        for i in 0...1095 {
+        
+        for i in 0...1095 { //*** :GTD: fetch events loop fixed vs UI range
             date = Date().diff(numDays: -i)
             
-            // expected: all itemTypes for ONE day
             let itemsDict = realm.getDailyTracker(date: date).itemsDict
-            if let statesCount = itemsDict[itemType]?.count {
-                //   print("\(itemType.typeKey) \(statesCount)/\(itemType.goalServings)")
-                //cell.configure(for: statesCount, maximum: itemType.goalServings)
-                configure(for: statesCount, maximum: itemType.goalServings, date: date)
+            if let count = itemsDict[itemType]?.count {
+                if count == goal {
+                    dozevents.append(Event(eventType: .full, date: date ))
+                } else if count > 0 {
+                    dozevents.append(Event(eventType: .some, date: date ))
+                } else {
+                    dozevents.append(Event(eventType: .none, date: date ))
+                }
             } else {
-                // print("\(itemType.typeKey) nil/\(itemType.goalServings)")
-                //cell.configure(for: 0, maximum: itemType.goalServings)
-                configure(for: 0, maximum: itemType.goalServings, date: date)
+                dozevents.append(Event(eventType: .none, date: date ))
             }
-        }
-        
-    }
-    
-    mutating func configure(for count: Int, maximum: Int, date: Date) {
-        
-        if count == maximum {
-            dozevents.append(Event(eventType: .full, date: date ))
-            
-            // borderView.backgroundColor = UIColor.yellowColor
-        } else if count > 0 {
-            dozevents.append(Event(eventType: .some, date: date ))
-            // borderView.backgroundColor = UIColor.yellow
-        } else {
-            dozevents.append(Event(eventType: .none, date: date ))
-            //            borderView.backgroundColor = UIColor.white
         }
         
         fetchedEvents = dozevents
