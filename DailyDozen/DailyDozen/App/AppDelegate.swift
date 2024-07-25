@@ -90,7 +90,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         let systemVersion = UIDevice.current.systemVersion
         if systemName == "iOS",
            systemVersion.hasPrefix("15") || systemVersion.hasPrefix("16") {
-            pauseDebug()
+            //pauseDebug()
         }
         #endif
         
