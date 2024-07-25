@@ -9,7 +9,7 @@ import Foundation
 import UIKit
 import StoreKit
 
-// :SwiftUI:Upgrade:
+// :SWIFTUI:NYI:Upgrade:
 //private struct ContentView: View {
 //    @Environment(\.requestReview) private var requestReview
 //

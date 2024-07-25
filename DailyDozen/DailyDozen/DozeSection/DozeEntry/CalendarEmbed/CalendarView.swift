@@ -18,13 +18,10 @@ struct CalendarView: UIViewRepresentable {
         let view = UICalendarView()
         view.delegate = context.coordinator
         
-        //if #unavailable(iOS 16.0) {
-        // only runs if <iOS 16
-        //   }
         if Locale.current.isPersian {
             //both of these are needed to make persian calendar?
             view.calendar = Calendar(identifier: .persian)
-            //  view.locale = Locale(identifier: "fa") // :???: required if device language is fa?
+            // view.locale = Locale(identifier: "fa") // :???: required if device language is fa?
         } else {
             view.calendar = Calendar(identifier: .gregorian)
         }

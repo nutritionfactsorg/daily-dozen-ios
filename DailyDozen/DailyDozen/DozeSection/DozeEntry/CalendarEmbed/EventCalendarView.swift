@@ -17,52 +17,28 @@ struct EventCalendarView: View {
             NavigationStack {
                 VStack(spacing: 0) {
                     ScrollView {
-                        CalendarView(interval: DateInterval(start: .distantPast, end: .now),
-                                     eventStore: eventStore,
-                                     dateSelected: $dateSelected,
-                                     displayEvents: $displayEvents)
-                        
+                        CalendarView(
+                            interval: DateInterval(start: .distantPast, end: .now),
+                            eventStore: eventStore,
+                            dateSelected: $dateSelected,
+                            displayEvents: $displayEvents)
                     }
-                    
                     EventCalendarFooterView()
-                    
-                    // Text(LocalizedStringKey("item_history_completed_some")
-                    //        .toolbar {
-                    //            ToolbarItem(placement: .navigationBarTrailing) {
-                    //                Button {
-                    //                    formType = .new
-                    //                } label: {
-                    //                    Image(systemName: "plus.circle.fill")
-                    //                        .imageScale(.medium)
-                    //                }
-                    //            }
-                    //        }
-                    //        .sheet(item: $formType) { $0 }
-                    //        .sheet(isPresented: $displayEvents) {
-                    //            DaysEventsListView(dateSelected: $dateSelected)
-                    //                .presentationDetents([.medium, .large])
-                    //        }
-                    
                 }
-                //.navigationTitle("History View")
                 .navigationBarTitleDisplayMode(.inline)
                 .toolbar {
                     ToolbarItem(placement: .topBarLeading) {
                         Text("item_history_heading", comment: "History")
-                            .font(.system(size: 30))
-                            .foregroundColor(.white)
+                            .font(.fontSystemBold21)
+                            .foregroundColor(ColorGuide.textWhite)
                             .shadow(color: .gray, radius: 1, x: 0, y: 2)
-                        //.shadow(color: .gray, radius: 5, x: 0, y: 2)
                     }
                 }
-                .toolbarBackground(
-                    .orange, // :GTD:COLOR:
-                    for: .navigationBar)
+                .toolbarBackground(ColorGuide.mainMedium, for: .navigationBar)
                 .toolbarBackground(.visible, for: .navigationBar)
-                
             }
         } else {
-            // Fallback on earlier versions
+            // N/A: SwiftUI only used for DailyDozen iOS 16 or newer
         }
     }
 }

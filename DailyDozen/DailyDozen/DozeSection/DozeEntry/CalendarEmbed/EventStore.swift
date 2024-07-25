@@ -26,7 +26,6 @@ class EventStore: ObservableObject {
             events = fetchedEvents
             // :GTD: Integration Point
             // load from your persistence store
-            
         }
     }
     

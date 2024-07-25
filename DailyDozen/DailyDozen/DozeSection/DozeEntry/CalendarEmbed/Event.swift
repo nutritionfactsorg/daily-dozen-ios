@@ -8,8 +8,7 @@
 import SwiftUI
 
 struct Event: Identifiable {
-    //    let itemIcon = UIImage(systemName: "circle.fill")
-    //    var itemIconColor: Color?
+    
     enum EventType: String, Identifiable, CaseIterable {
         case full, some, none, unspecified
         
@@ -24,8 +23,7 @@ struct Event: Identifiable {
             case .some:
                 return ColorManager.style.calendarSomeChecked
             case .none:
-                return nil
-                //return white would be consistent with existing DD code.
+                return nil // effectively `.white` per existing DD code.
             case .unspecified:
                 return nil
             }
@@ -40,11 +38,7 @@ struct Event: Identifiable {
     
     var dateComponents: DateComponents {
         var dateComponents = Calendar.current.dateComponents(
-            [.month,
-             .day,
-             .year,
-             .hour,
-             .minute],
+            [.month, .day, .year, .hour, .minute],
             from: date)
         dateComponents.timeZone = TimeZone.current
         dateComponents.calendar = Calendar(identifier: .gregorian)

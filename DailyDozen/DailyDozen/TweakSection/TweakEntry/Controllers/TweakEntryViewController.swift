@@ -131,11 +131,14 @@ class TweakEntryViewController: UIViewController {
     
     /// TweakEntryRow itemCalendarButton
     @IBAction private func tweakCalendarPressed(_ sender: UIButton) {
-        let heading = dataProvider.viewModel.itemInfo(rowIndex: sender.tag).headingDisplay
-        let dataCountType = dataProvider.viewModel.itemType(rowIndex: sender.tag)
+        let itemHeading = dataProvider.viewModel
+            .itemInfo(rowIndex: sender.tag)
+            .headingDisplay
+        let itemType = dataProvider.viewModel
+            .itemType(rowIndex: sender.tag)
         
-        var viewController = ItemHistoryViewController.newInstance(heading: heading, itemType: dataCountType)
-        if dataCountType == .tweakWeightTwice {
+        var viewController = ItemHistoryViewController.newInstance(heading: itemHeading, itemType: itemType)
+        if itemType == .tweakWeightTwice {
             viewController = WeightHistoryViewController.newInstance()
         }
         navigationController?.pushViewController(viewController, animated: true)

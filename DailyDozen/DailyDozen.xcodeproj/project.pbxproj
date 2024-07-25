@@ -152,6 +152,7 @@
 		4CBCB2BB2983779F00015393 /* Strings.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4CBCB2BA2983779F00015393 /* Strings.swift */; };
 		4CBF74102C517A9A00C60E1C /* ColorGuide.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4CBF740F2C517A9A00C60E1C /* ColorGuide.swift */; };
 		4CBF74122C51A5E300C60E1C /* Locale.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4CBF74112C51A5E300C60E1C /* Locale.swift */; };
+		4CBF74142C51BF2500C60E1C /* Font.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4CBF74132C51BF2500C60E1C /* Font.swift */; };
 		4CCB92C32ABCDD6D0095C3D8 /* Thread.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4CCB92C22ABCDD6D0095C3D8 /* Thread.swift */; };
 		594FD37586B9F2DE900FA79A /* Pods_DailyDozen_DailyDozenUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E4A1DB4E4E487CFF8C7EE374 /* Pods_DailyDozen_DailyDozenUITests.framework */; };
 		BD68BC5B2FB6D632F16CE9CD /* Pods_DailyDozenTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 715D60F634E9BCD998C66B77 /* Pods_DailyDozenTests.framework */; };
@@ -431,6 +432,7 @@
 		4CBCB2BA2983779F00015393 /* Strings.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Strings.swift; sourceTree = "<group>"; };
 		4CBF740F2C517A9A00C60E1C /* ColorGuide.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ColorGuide.swift; sourceTree = "<group>"; };
 		4CBF74112C51A5E300C60E1C /* Locale.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Locale.swift; sourceTree = "<group>"; };
+		4CBF74132C51BF2500C60E1C /* Font.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Font.swift; sourceTree = "<group>"; };
 		4CC975592B1912A500A939B3 /* zh-Hant */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hant"; path = "zh-Hant.lproj/InfoPlist.strings"; sourceTree = "<group>"; };
 		4CC9755A2B1912A500A939B3 /* zh-Hant */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hant"; path = "zh-Hant.lproj/Localizable.strings"; sourceTree = "<group>"; };
 		4CC9755B2B1912A500A939B3 /* zh-Hant */ = {isa = PBXFileReference; lastKnownFileType = text.json; name = "zh-Hant"; path = "zh-Hant.lproj/DozeDetailData.json"; sourceTree = "<group>"; };
@@ -1182,6 +1184,7 @@
 				CFECDFF7201EF7C1003E8572 /* Colors.swift */,
 				CF2680011FB477AD004A6200 /* Date.swift */,
 				49208ADB2585F16F00E994CA /* DateManager.swift */,
+				4CBF74132C51BF2500C60E1C /* Font.swift */,
 				CF9EC1BF202196B100C7B3CA /* Fonts.swift */,
 				4C7E17042A987F3B00A515F9 /* SKStoreReviewController.swift */,
 				4CBCB2BA2983779F00015393 /* Strings.swift */,
@@ -1853,6 +1856,7 @@
 				4916451623EE4D360077731D /* TweakTextsProvider.swift in Sources */,
 				4CBCB2BB2983779F00015393 /* Strings.swift in Sources */,
 				4C7D52F92A3B8FDA00386832 /* InfoFaqTableViewCell.swift in Sources */,
+				4CBF74142C51BF2500C60E1C /* Font.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

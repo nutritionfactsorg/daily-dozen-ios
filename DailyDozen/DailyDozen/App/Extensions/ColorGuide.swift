@@ -16,6 +16,19 @@ struct ColorGuide {
         case testPreview
     }
     
+    static var mainMedium: Color {
+        // Color("BrandGreen") 
+        return Color(.sRGB, red: 127/255, green: 192/255, blue: 76/255, opacity: 1.0)
+    }
+    
+    static var textWhite: Color {
+        return Color.white
+    }
+
+    static var textBlack: Color {
+        return Color.black
+    }
+    
     // MARK: - Calendar Colors
     
     static var calendarAllChecked: Color {
@@ -28,6 +41,10 @@ struct ColorGuide {
     
     static var calendarNoneChecked: Color {
         Color.white
+    }
+    
+    static var calendarFooter: Color {
+        Color(.sRGB, red: 220/255, green: 220/255, blue: 220/255, opacity: 1.0)
     }
     
 }

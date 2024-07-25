@@ -7,8 +7,6 @@
 
 import SwiftUI
 
-// Note: `item_history_*` NutritionFacts localized text keys
-
 struct EventCalendarFooterView: View {
     var body: some View {
         ZStack {
@@ -16,7 +14,7 @@ struct EventCalendarFooterView: View {
                 .foregroundColor(.clear)
                 .frame(height: 50)
                 .frame(maxWidth: .infinity)
-                .background(.gray) // :GTD:COLOR:
+                .background(ColorGuide.calendarFooter)
             HStack {
                 Label(
                     title: { Text("item_history_completed_some") },
