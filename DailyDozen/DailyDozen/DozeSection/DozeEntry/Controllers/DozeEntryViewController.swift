@@ -113,7 +113,7 @@ class DozeEntryViewController: UIViewController {
     //@IBSegueAction func embedSwiftUIView(_ coder: NSCoder) -> UIViewController? {
     //    print("•• segue")
     //    // :GTD:  Change to false in production version
-    //    return UIHostingController(coder: coder, rootView: EventCalendarView().environmentObject(EventStore(preview: true)))
+    //    return UIHostingController(coder: coder, rootView: DozeEventCalendarView().environmentObject(DozeEventStore(preview: true)))
     //}
     
     /// DozeEntryRow itemCalendarButton
@@ -123,11 +123,12 @@ class DozeEntryViewController: UIViewController {
             .itemType.headingDisplay
         let itemType = dataProvider.viewModel
             .itemType(rowIndex: sender.tag)
-        if #available(iOS 16.0, *) { //*** iOS 16+ add embedded SwiftUI View
-            // :GTD:???: Use instance instead of singleton?
+        
+        if #available(iOS 16.0, *) { //*** iOS 16+ embedded SwiftUI View
+            // :GTD:TDB: Use instance instead of singleton?
             GetDataForCalendar.doit.getData(itemType: itemType)
-            let vc = UIHostingController(rootView: EventCalendarView()
-                .environmentObject(EventStore(preview: false)))
+            let vc = UIHostingController(rootView: DozeEventCalendarView()
+                .environmentObject(DozeEventStore(preview: false)))
             navigationController?.pushViewController(vc, animated: true)
         } else {
             let viewController = ItemHistoryViewController

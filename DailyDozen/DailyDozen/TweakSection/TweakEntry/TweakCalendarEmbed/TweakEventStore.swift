@@ -1,5 +1,5 @@
 //
-//  EventStore.swift
+//  TweakEventStore.swift
 //  DailyDozen
 //
 //  Copyright © 2024 Nutritionfacts.org. All rights reserved.
@@ -8,7 +8,7 @@
 import Foundation
 
 @MainActor
-class EventStore: ObservableObject {
+class TweakEventStore: ObservableObject {
     @Published var events = [Event]()
     @Published var preview: Bool
     @Published var changedEvent: Event?
@@ -23,7 +23,7 @@ class EventStore: ObservableObject {
         if preview {
             events = Event.sampleEvents
         } else {
-            events = fetchedEvents
+            events = fetchedTweakEvents
             // :GTD: Integration Point
             // load from your persistence store
         }

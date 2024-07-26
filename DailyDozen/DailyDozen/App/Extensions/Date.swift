@@ -30,17 +30,19 @@ extension Date {
         return self.timeIntervalSince1970
     }
     
-    /// Return `yyyyMMdd` based on the current locale.
+    /// Return `yyyyMMdd` in English.
     var datestampKey: String {
         let dateFormatter = DateFormatter()
         dateFormatter.dateFormat = "yyyyMMdd"
+        dateFormatter.locale = Locale(identifier: "en")
         return dateFormatter.string(from: self)
     }
     
-    /// Return `yyyy-MM-dd` ISO 8601 String ID based on the current locale.
+    /// Return `yyyy-MM-dd` ISO 8601 in English.
     var datestampSid: String {
         let dateFormatter = DateFormatter()
         dateFormatter.dateFormat = "yyyy-MM-dd"
+        dateFormatter.locale = Locale(identifier: "en")
         return dateFormatter.string(from: self)
     }
     

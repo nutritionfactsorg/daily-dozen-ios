@@ -7,7 +7,8 @@
 
 import UIKit
 import HealthKit
-import StoreKit  // Used to request app store reivew by user.
+import StoreKit  // Used to request app store reivew by user
+import SwiftUI
 
 class TweakEntryViewController: UIViewController {
     
@@ -137,11 +138,20 @@ class TweakEntryViewController: UIViewController {
         let itemType = dataProvider.viewModel
             .itemType(rowIndex: sender.tag)
         
-        var viewController = ItemHistoryViewController.newInstance(heading: itemHeading, itemType: itemType)
         if itemType == .tweakWeightTwice {
-            viewController = WeightHistoryViewController.newInstance()
+            let viewController = WeightHistoryViewController.newInstance()
+            navigationController?.pushViewController(viewController, animated: true)
+        } else if #available(iOS 16.0, *) { //*** iOS 16+ embedded SwiftUI View
+            // :GTD:TBD: Use instance instead of singleton?
+            GetDataForCalendar.doit.getData(itemType: itemType)
+            let vc = UIHostingController(rootView: TweakEventCalendarView()
+                .environmentObject(TweakEventStore(preview: false)))
+            navigationController?.pushViewController(vc, animated: true)
+        } else {
+            let viewController = ItemHistoryViewController
+                .newInstance(heading: itemHeading, itemType: itemType)
+            navigationController?.pushViewController(viewController, animated: true)
         }
-        navigationController?.pushViewController(viewController, animated: true)
     }
     
     @IBAction private func tweakHistoryPressed(_ sender: UIButton) {

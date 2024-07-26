@@ -1,5 +1,5 @@
 //
-//  CalendarView.swift
+//  TweakCalendarView.swift
 //  DailyDozen
 //
 //  Copyright © 2024 Nutritionfacts.org. All rights reserved.
@@ -8,9 +8,9 @@
 import SwiftUI
 
 @available(iOS 16.0, *)
-struct CalendarView: UIViewRepresentable {
+struct TweakCalendarView: UIViewRepresentable {
     let interval: DateInterval
-    @ObservedObject var eventStore: EventStore
+    @ObservedObject var eventStore: TweakEventStore
     @Binding var dateSelected: DateComponents?
     @Binding var displayEvents: Bool
     
@@ -27,7 +27,7 @@ struct CalendarView: UIViewRepresentable {
             view.calendar = Calendar(identifier: .gregorian)
         }
         
-        view.availableDateRange = interval
+        view.availableDateRange = interval // DateInterval
         
         //to make fit inside UIVewRepresentable
         view.setContentCompressionResistancePriority(.defaultLow, for: .vertical)
@@ -41,12 +41,13 @@ struct CalendarView: UIViewRepresentable {
     }
     
     /// UIViewRepresentable makeCoordinator()
-    func makeCoordinator() -> EventCalendarCoordinator {
+    func makeCoordinator() -> TweakEventCalendarCoordinator {
         Coordinator(parent: self, eventStore: _eventStore)
     }
     
     /// UIViewRepresentable updateUIView(UIViewType:Context)
     func updateUIView(_ uiView: UIViewType, context: Context) {
+        logit.debug("@@@T1 TweakCalendar updateUIView")
         if let changedEvent = eventStore.changedEvent {
             uiView.reloadDecorations(forDateComponents: [changedEvent.dateComponents], animated: true)
             eventStore.changedEvent = nil
@@ -61,11 +62,11 @@ struct CalendarView: UIViewRepresentable {
 }
 
 @available(iOS 16.0, *)
-class EventCalendarCoordinator: NSObject, UICalendarViewDelegate {
-    var parent: CalendarView
-    @ObservedObject var eventStore: EventStore
+class TweakEventCalendarCoordinator: NSObject, UICalendarViewDelegate {
+    var parent: TweakCalendarView
+    @ObservedObject var eventStore: TweakEventStore
     
-    init(parent: CalendarView, eventStore: ObservedObject<EventStore>) {
+    init(parent: TweakCalendarView, eventStore: ObservedObject<TweakEventStore>) {
         self.parent = parent
         self._eventStore = eventStore
     }
@@ -76,37 +77,35 @@ class EventCalendarCoordinator: NSObject, UICalendarViewDelegate {
         _ calendarView: UICalendarView,
         decorationFor dateComponents: DateComponents
     ) -> UICalendarView.Decoration? {
-        let foundEvents = eventStore.events
-            .filter {$0.date.startOfDay == dateComponents.date?.startOfDay}
+        guard let dateSid = dateComponents.date?.datestampSid else { return nil }
+        //logit.verbose("@@@ TweakEventCalendar dateKey is \(dateSid)")
         
-        if foundEvents.isEmpty { return nil }
-        
-        if foundEvents.count > 1 {  //more than one event for same date
-            logit.debug("same day found multiple events: \(foundEvents)")
-            return .image(UIImage(systemName: "doc.on.doc.fill"),
-                          color: .red,
-                          size: .large)
+        for event in eventStore.events {
+            //logit.verbose("@@@T1 \(event.date.datestampSid) =? \(dateSid) \(event.date.datestampSid == dateSid)")
+            let eventSid = event.date.datestampSid
+            if eventSid == dateSid {
+                //logit.verbose("@@@@T2 \(eventSid) == \(dateSid) \(eventSid == dateSid) … \(event.eventType)")
+                
+                if event.eventType == .full || event.eventType == .some {
+                    let icon2 = UICalendarView.Decoration.image(
+                        UIImage(systemName: "circle.fill"),
+                        color: event.eventType.icon2,
+                        size: .large
+                    )
+                    return icon2
+                } else {
+                    return nil
+                }
+            }
         }
-        
-        let singleEvent = foundEvents.first!
-        if singleEvent.eventType == .full || singleEvent.eventType == .some {
-            let icon2 = UICalendarView.Decoration.image(
-                UIImage(systemName: "circle.fill"),
-                color: singleEvent.eventType.icon2,
-                size: .large
-            )
-            return icon2
-        } else {
-            return nil
-        }
-        
+        return nil
     }
     
     func calendarView(_ calendarView: UICalendarView, didChangeVisibleDateComponentsFrom previousDateComponents: DateComponents) {
         logit.debug("""
-        •• CalendarView didChangeVisibleDateComponents
+        •• TweakCalendarView didChangeVisibleDateComponents
         previousDateComponents:
-        \(previousDateComponents)
+        \(previousDateComponents.date?.datestampKey ?? ".date nil")
         ••\n
         """)
         let calendar = Calendar.current
@@ -114,9 +113,11 @@ class EventCalendarCoordinator: NSObject, UICalendarViewDelegate {
             if let fromDate = calendar.date(byAdding: .month, value: -1, to: previousDate),
                let toDate = calendar.date(byAdding: .month, value: +1, to: previousDate) {
                 logit.debug("""
-                •• :NYI: integration to fetch persistant stored data
-                           from: \(fromDate)
+                •• :NYI: Tweak integration to fetch persistant stored data
+                       fromDate: \(fromDate)
+                        fromSid: \(fromDate.datestampSid)
                          toDate: \(toDate)
+                          toSid: \(toDate.datestampSid)
                 """)
                 //PersistantDataStore.shared.fetchMultipleMonth(fromDate: beforeDate, toDate: afterDate)
             }
@@ -126,7 +127,7 @@ class EventCalendarCoordinator: NSObject, UICalendarViewDelegate {
 }
 
 @available(iOS 16.0, *)
-extension EventCalendarCoordinator: UICalendarSelectionSingleDateDelegate {
+extension TweakEventCalendarCoordinator: UICalendarSelectionSingleDateDelegate {
     func dateSelection(_ selection: UICalendarSelectionSingleDate,
                        didSelectDate dateComponents: DateComponents?) {
         parent.dateSelected = dateComponents

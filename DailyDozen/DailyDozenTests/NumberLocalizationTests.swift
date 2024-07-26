@@ -2,7 +2,6 @@
 //  NumberLocalizationTests.swift
 //  DailyDozenTests
 //
-//  Created by mc on 2024.04.03.
 //  Copyright © 2024 Nutritionfacts.org. All rights reserved.
 //
 

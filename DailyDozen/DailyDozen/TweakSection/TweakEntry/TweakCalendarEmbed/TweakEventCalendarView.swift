@@ -1,5 +1,5 @@
 //
-//  EventCalendarView.swift
+//  TweakEventCalendarView.swift
 //  DailyDozen
 //
 //  Copyright © 2024 Nutritionfacts.org. All rights reserved.
@@ -7,8 +7,8 @@
 
 import SwiftUI
 
-struct EventCalendarView: View {
-    @EnvironmentObject var eventStore: EventStore
+struct TweakEventCalendarView: View {
+    @EnvironmentObject var eventStore: TweakEventStore
     @State private var dateSelected: DateComponents?
     @State private var displayEvents = false
     
@@ -17,7 +17,7 @@ struct EventCalendarView: View {
             NavigationStack {
                 VStack(spacing: 0) {
                     ScrollView {
-                        CalendarView(
+                        TweakCalendarView(
                             interval: DateInterval(start: .distantPast, end: .now),
                             eventStore: eventStore,
                             dateSelected: $dateSelected,
@@ -44,7 +44,7 @@ struct EventCalendarView: View {
 }
 
 #Preview {
-    //let myEvents = EventStore(preview: true)
-    EventCalendarView()
-        .environmentObject(EventStore(preview: true))
+    //let myEvents = TweakEventStore(preview: true)
+    TweakEventCalendarView()
+        .environmentObject(TweakEventStore(preview: true))
 }

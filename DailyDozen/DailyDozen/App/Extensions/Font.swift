@@ -2,7 +2,6 @@
 //  FontsGuide.swift
 //  DailyDozen
 //
-//  Created by mc on 2024.07.24.
 //  Copyright © 2024 Nutritionfacts.org. All rights reserved.
 //
 

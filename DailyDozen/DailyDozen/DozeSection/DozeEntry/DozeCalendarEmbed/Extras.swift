@@ -8,19 +8,20 @@
 import SwiftUI
 
 /// Use: EventStore events [Event]
-var fetchedEvents: [Event] = []
+var fetchedDozeEvents: [Event] = []
+var fetchedTweakEvents: [Event] = []
 
 /// Fetch Realm data for calendar
 struct GetDataForCalendar {
     /// Singleton: GetDataForCalendar // :GTD: change to instance approach?
     static var doit = GetDataForCalendar()
     
-    // @ObservedObject var eventStore: EventStore
+    // @ObservedObject var eventStore: DozeEventStore
     var date = Date()
     let realm = RealmProvider.primary
     
     mutating func getData(itemType: DataCountType) {
-        var dozevents: [Event] = []
+        var eventList: [Event] = []
         let goal = itemType.goalServings
         
         let currentDatetime = DateManager.currentDatetime()
@@ -35,18 +36,22 @@ struct GetDataForCalendar {
             let itemsDict = realm.getDailyTracker(date: date).itemsDict
             if let count = itemsDict[itemType]?.count {
                 if count == goal {
-                    dozevents.append(Event(eventType: .full, date: date ))
+                    eventList.append(Event(eventType: .full, date: date ))
                 } else if count > 0 {
-                    dozevents.append(Event(eventType: .some, date: date ))
+                    eventList.append(Event(eventType: .some, date: date ))
                 } else {
-                    dozevents.append(Event(eventType: .none, date: date ))
+                    eventList.append(Event(eventType: .none, date: date ))
                 }
             } else {
-                dozevents.append(Event(eventType: .none, date: date ))
+                eventList.append(Event(eventType: .none, date: date ))
             }
         }
         
-        fetchedEvents = dozevents
+        if itemType.isTweak {
+            fetchedTweakEvents = eventList
+        } else {
+            fetchedDozeEvents = eventList
+        }
     }
     
 }
