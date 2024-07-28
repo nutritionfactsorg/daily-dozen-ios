@@ -52,7 +52,7 @@ struct ColorManager {
     
     var mainMedium: UIColor {
         return UIColor(named: "BrandGreen") ??
-            UIColor(red: 127/255, green: 192/255, blue: 76/255, alpha: 1)
+        UIColor(red: 127/255.0, green: 192/255.0, blue: 76/255.0, alpha: 1.0)
     }
 
     var mainBackgroundGray: UIColor {
@@ -107,11 +107,11 @@ struct ColorManager {
     // MARK: - Calendar Colors
     
     var calendarAllChecked: UIColor {
-        return UIColor(red: 235/255, green: 193/255, blue: 64/255, alpha: 1)
+        return UIColor(red: 235/255.0, green: 193/255.0, blue: 64/255.0, alpha: 1.0)
     }
     
     var calendarSomeChecked: UIColor {
-        return UIColor(red: 255/255, green: 251/255, blue: 0/255, alpha: 1)
+        return UIColor(red: 255/255.0, green: 251/255.0, blue: 0/255.0, alpha: 1.0)
     }
     
     var calendarNoneChecked: UIColor {

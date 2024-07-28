@@ -157,6 +157,7 @@
 		4CC1003A2C5314C3003A853F /* TweakEventStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4CC100372C53118D003A853F /* TweakEventStore.swift */; };
 		4CC1003C2C53161F003A853F /* TweakEventCalendarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4CC1003B2C53161F003A853F /* TweakEventCalendarView.swift */; };
 		4CCB92C32ABCDD6D0095C3D8 /* Thread.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4CCB92C22ABCDD6D0095C3D8 /* Thread.swift */; };
+		4CF940432C55932C0071647C /* DailyDozenColorTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4CF940422C55932C0071647C /* DailyDozenColorTests.swift */; };
 		594FD37586B9F2DE900FA79A /* Pods_DailyDozen_DailyDozenUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E4A1DB4E4E487CFF8C7EE374 /* Pods_DailyDozen_DailyDozenUITests.framework */; };
 		BD68BC5B2FB6D632F16CE9CD /* Pods_DailyDozenTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 715D60F634E9BCD998C66B77 /* Pods_DailyDozenTests.framework */; };
 		BED5BB460CE3AEE8CF585899 /* Pods_DailyDozen.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F514690D725E67AD54735EB9 /* Pods_DailyDozen.framework */; };
@@ -448,6 +449,7 @@
 		4CE1EDFD2B5B516D00B3B19F /* zh-Hans */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hans"; path = "zh-Hans.lproj/Localizable.strings"; sourceTree = "<group>"; };
 		4CE1EDFE2B5B516D00B3B19F /* zh-Hans */ = {isa = PBXFileReference; lastKnownFileType = text.json; name = "zh-Hans"; path = "zh-Hans.lproj/DozeDetailData.json"; sourceTree = "<group>"; };
 		4CE1EDFF2B5B516D00B3B19F /* zh-Hans */ = {isa = PBXFileReference; lastKnownFileType = text.json; name = "zh-Hans"; path = "zh-Hans.lproj/TweakDetailData.json"; sourceTree = "<group>"; };
+		4CF940422C55932C0071647C /* DailyDozenColorTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DailyDozenColorTests.swift; sourceTree = "<group>"; };
 		523C9F9406E6AA01FFC5667B /* Pods-DailyDozenTests.releaseoss.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-DailyDozenTests.releaseoss.xcconfig"; path = "Pods/Target Support Files/Pods-DailyDozenTests/Pods-DailyDozenTests.releaseoss.xcconfig"; sourceTree = "<group>"; };
 		5EF2DC93CC9F7A7C7804C6A2 /* Pods-DailyDozen.debugoss.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-DailyDozen.debugoss.xcconfig"; path = "Pods/Target Support Files/Pods-DailyDozen/Pods-DailyDozen.debugoss.xcconfig"; sourceTree = "<group>"; };
 		6ED3A55B48F7069CAE75156C /* Pods-DailyDozenTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-DailyDozenTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-DailyDozenTests/Pods-DailyDozenTests.release.xcconfig"; sourceTree = "<group>"; };
@@ -925,6 +927,7 @@
 			isa = PBXGroup;
 			children = (
 				498A2278237CD81F007AF5FB /* DailyDozenTests.swift */,
+				4CF940422C55932C0071647C /* DailyDozenColorTests.swift */,
 				491D554226E8A9EB00C756C8 /* DailyDozenUnitsTests.swift */,
 				4C67BABE2BBE3C3500647DFC /* NumberLocalizationTests.swift */,
 				498A227A237CD81F007AF5FB /* Info.plist */,
@@ -1722,6 +1725,7 @@
 			files = (
 				498A2279237CD81F007AF5FB /* DailyDozenTests.swift in Sources */,
 				491D554326E8A9EC00C756C8 /* DailyDozenUnitsTests.swift in Sources */,
+				4CF940432C55932C0071647C /* DailyDozenColorTests.swift in Sources */,
 				4C67BABF2BBE3C3500647DFC /* NumberLocalizationTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
