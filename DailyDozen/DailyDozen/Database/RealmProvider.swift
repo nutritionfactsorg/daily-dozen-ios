@@ -206,6 +206,17 @@ class RealmProvider {
         return records
     }
     
+    func getDailyCountRecord(date: Date, countType: DataCountType) -> RealmDataCountRecord? {
+        let datestampkey = date.datestampKey
+        let typekey = countType.typeKey
+        let pid = RealmDataCountRecord.pid(datestampKey: datestampkey, typeKey: typekey)
+        
+        if let item = realm.object(ofType: RealmDataCountRecord.self, forPrimaryKey: pid) {
+            return item
+        }
+        return nil
+    }
+    
     func getDailyTracker(date: Date) -> RealmDailyTracker {
         let datestampKey = date.datestampKey
         

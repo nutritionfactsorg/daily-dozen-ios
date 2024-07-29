@@ -118,17 +118,22 @@ class DozeEntryViewController: UIViewController {
     
     /// DozeEntryRow itemCalendarButton
     @IBAction private func dozeCalendarPressed(_ sender: UIButton) {
-        let itemHeading = dataProvider.viewModel
+        let itemHeading: String = dataProvider.viewModel
             .itemInfo(rowIndex: sender.tag)
             .itemType.headingDisplay
-        let itemType = dataProvider.viewModel
+        let itemType: DataCountType = dataProvider.viewModel
             .itemType(rowIndex: sender.tag)
         
         if #available(iOS 16.0, *) { //*** iOS 16+ embedded SwiftUI View
             // :GTD:TDB: Use instance instead of singleton?
-            GetDataForCalendar.doit.getData(itemType: itemType)
-            let vc = UIHostingController(rootView: DozeEventCalendarView()
-                .environmentObject(DozeEventStore(preview: false)))
+            
+            // :GTD:TDB: slower calendar data update …
+            //GetDataForCalendar.doit.getData(itemType: itemType)
+            //let vc = UIHostingController(rootView: DozeEventCalendarView()
+            //    .environmentObject(DozeEventStore(preview: false)))
+            
+            let vc = UIHostingController(rootView: DozeEventCalendar2View(itemType: itemType))
+            
             navigationController?.pushViewController(vc, animated: true)
         } else {
             let viewController = ItemHistoryViewController

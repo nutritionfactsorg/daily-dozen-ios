@@ -54,4 +54,11 @@ struct GetDataForCalendar {
         }
     }
     
+    func getData(date: Date, itemType: DataCountType) -> (count: Int, goal: Int)? {
+        if let r = realm.getDailyCountRecord(date: date, countType: itemType) {
+            return (count: r.count, goal: itemType.goalServings)
+        }
+        return nil
+    }
+    
 }
