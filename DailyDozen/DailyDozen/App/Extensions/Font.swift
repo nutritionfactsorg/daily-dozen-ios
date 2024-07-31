@@ -13,6 +13,10 @@ extension Font {
         return Font.system(size: 21, weight: .bold, design: .default)
     }
     
+    static var fontSystemMedium14: Font {
+        return Font.system(size: 14, weight: .medium, design: .default)
+    }
+    
     static var fontSystemMedium17: Font {
         return Font.system(size: 17, weight: .medium, design: .default)
     }

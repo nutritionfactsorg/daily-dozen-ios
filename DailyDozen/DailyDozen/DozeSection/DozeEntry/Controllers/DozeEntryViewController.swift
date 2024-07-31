@@ -125,15 +125,8 @@ class DozeEntryViewController: UIViewController {
             .itemType(rowIndex: sender.tag)
         
         if #available(iOS 16.0, *) { //*** iOS 16+ embedded SwiftUI View
-            // :GTD:TDB: Use instance instead of singleton?
-            
-            // :GTD:TDB: slower calendar data update …
-            //GetDataForCalendar.doit.getData(itemType: itemType)
-            //let vc = UIHostingController(rootView: DozeEventCalendarView()
-            //    .environmentObject(DozeEventStore(preview: false)))
-            
-            let vc = UIHostingController(rootView: DozeEventCalendar2View(itemType: itemType))
-            
+            let rootview = DozeEventCalendar2View(itemType: itemType)
+            let vc = UIHostingController(rootView: rootview)
             navigationController?.pushViewController(vc, animated: true)
         } else {
             let viewController = ItemHistoryViewController

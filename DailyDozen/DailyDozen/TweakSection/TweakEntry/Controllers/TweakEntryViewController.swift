@@ -142,16 +142,8 @@ class TweakEntryViewController: UIViewController {
             let viewController = WeightHistoryViewController.newInstance()
             navigationController?.pushViewController(viewController, animated: true)
         } else if #available(iOS 16.0, *) { //*** iOS 16+ embedded SwiftUI View
-            // :GTD:TBD: Use instance instead of singleton?
-            
-            // :GTD:TDB: slower calendar data update …
-            //GetDataForCalendar.doit.getData(itemType: itemType)
-            //let vc = UIHostingController(rootView: TweakEventCalendarView()
-            //    .environmentObject(TweakEventStore(preview: false)))
-            //navigationController?.pushViewController(vc, animated: true)
-            
-            let vc = UIHostingController(rootView: TweakEventCalendar2View(itemType: itemType))
-            
+            let rootview = TweakEventCalendar2View(itemType: itemType)
+            let vc = UIHostingController(rootView: rootview)
             navigationController?.pushViewController(vc, animated: true)
         } else {
             let viewController = ItemHistoryViewController

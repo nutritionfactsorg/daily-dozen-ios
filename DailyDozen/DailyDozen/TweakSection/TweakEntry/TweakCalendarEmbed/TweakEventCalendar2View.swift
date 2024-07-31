@@ -20,29 +20,26 @@ struct TweakEventCalendar2View: View {
     
     var body: some View {
         if #available(iOS 16.0, *) {
-            NavigationStack {
-                VStack(spacing: 0) {
-                    ScrollView {
-                        TweakCalendar2View(
-                            interval: DateInterval(start: .distantPast, end: .now),
-                            dateSelected: $dateSelected,
-                            displayEvents: $displayEvents,
-                            itemType: $itemType
-                        )
-                    }
-                    EventCalendarFooterView()
+            VStack(spacing: 0) {
+                ZStack {
+                    Rectangle()
+                        .foregroundColor(.clear)
+                        .frame(height: 45)
+                        .frame(maxWidth: .infinity)
+                        .background(ColorGuide.mainMedium)
+                    Text(verbatim: itemType.headingDisplay)
+                        .font(.fontSystemMedium17)
+                        .foregroundColor(ColorGuide.textWhite)
                 }
-                .navigationBarTitleDisplayMode(.inline)
-                .toolbar {
-                    ToolbarItem(placement: .topBarLeading) {
-                        Text("item_history_heading", comment: "History")
-                            .font(.fontSystemBold21)
-                            .foregroundColor(ColorGuide.textWhite)
-                            .shadow(color: .gray, radius: 1, x: 0, y: 2)
-                    }
+                ScrollView {
+                    TweakCalendar2View(
+                        interval: DateInterval(start: .distantPast, end: .now),
+                        dateSelected: $dateSelected,
+                        displayEvents: $displayEvents,
+                        itemType: $itemType
+                    )
                 }
-                .toolbarBackground(ColorGuide.mainMedium, for: .navigationBar)
-                .toolbarBackground(.visible, for: .navigationBar)
+                EventCalendarFooterView()
             }
         } else {
             // N/A: SwiftUI only used for DailyDozen iOS 16 or newer
