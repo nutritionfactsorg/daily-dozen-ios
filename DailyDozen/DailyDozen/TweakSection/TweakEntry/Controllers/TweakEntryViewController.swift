@@ -132,10 +132,10 @@ class TweakEntryViewController: UIViewController {
     
     /// TweakEntryRow itemCalendarButton
     @IBAction private func tweakCalendarPressed(_ sender: UIButton) {
-        let itemHeading = dataProvider.viewModel
+        let itemHeading: String = dataProvider.viewModel
             .itemInfo(rowIndex: sender.tag)
             .headingDisplay
-        let itemType = dataProvider.viewModel
+        let itemType: DataCountType = dataProvider.viewModel
             .itemType(rowIndex: sender.tag)
         
         if itemType == .tweakWeightTwice {
@@ -143,9 +143,15 @@ class TweakEntryViewController: UIViewController {
             navigationController?.pushViewController(viewController, animated: true)
         } else if #available(iOS 16.0, *) { //*** iOS 16+ embedded SwiftUI View
             // :GTD:TBD: Use instance instead of singleton?
-            GetDataForCalendar.doit.getData(itemType: itemType)
-            let vc = UIHostingController(rootView: TweakEventCalendarView()
-                .environmentObject(TweakEventStore(preview: false)))
+            
+            // :GTD:TDB: slower calendar data update …
+            //GetDataForCalendar.doit.getData(itemType: itemType)
+            //let vc = UIHostingController(rootView: TweakEventCalendarView()
+            //    .environmentObject(TweakEventStore(preview: false)))
+            //navigationController?.pushViewController(vc, animated: true)
+            
+            let vc = UIHostingController(rootView: TweakEventCalendar2View(itemType: itemType))
+            
             navigationController?.pushViewController(vc, animated: true)
         } else {
             let viewController = ItemHistoryViewController
