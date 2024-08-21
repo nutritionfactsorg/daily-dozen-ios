@@ -16,13 +16,18 @@ _The `ActiveLabel` library project has not been kept current with the progressio
 **Charts**
 
 - <https://cocoapods.org/pods/Charts>
+    - <https://cocoapods.org/pods/DGCharts>
 - <https://github.com/danielgindi/Charts>
+    - <https://github.com/ChartsOrg/Charts>
+    - <https://github.com/ChartsOrg/Charts/releases/tag/5.0.0>
+    - <https://github.com/ChartsOrg/Charts/releases/tag/5.1.0>
 - Language: Swift 5 (84%), ObjC (16%)
 - Swift Package Manager: 5.1
-- Version: `4.1.0` (2022.09.12), `5.0.0` (2023.06.08)
+- Version: `4.1.0` (2022.09.12 in use), `5.1.0` (2024.02.15)
     - deprecated: DanielGindi `Charts` 
     - renamed DanielGindi `Charts` to `DGCharts` due to namespace conflict with SwiftUI `Charts`
-    - `DGCharts` (5.0.0, 2023.06.08) has breaking changes when migrating from DanielGindi `Charts`
+    - `DGCharts` (5.1.0, 2024.02.15) has breaking changes when migrating from DanielGindi `Charts`
+- [Swift Charts](https://developer.apple.com/documentation/charts)
 
 **FSCalendar**
 
