@@ -17,7 +17,7 @@ struct WeightHistoryViewModel {
     }
 
     // MARK: - Inits
-    init(amRecords: [RealmDataWeightRecord], pmRecords: [RealmDataWeightRecord]) {
+    init(amRecords: [DataWeightRecord], pmRecords: [DataWeightRecord]) {
         report = WeightReport(amRecords: amRecords, pmRecords: pmRecords)
         logit.verbose(
             "WeightHistoryViewModel init report:\n\(report.toString())"

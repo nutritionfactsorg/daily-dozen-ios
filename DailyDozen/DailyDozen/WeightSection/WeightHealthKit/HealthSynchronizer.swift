@@ -33,7 +33,7 @@ struct HealthSynchronizer {
         // Note: keep realm object access and processing on the same thread
         let dbResults = self.realm.getDBWeightDatetimes()
         var dbValues = [RealmDataWeightValues]()
-        for record: RealmDataWeightRecord in dbResults {
+        for record: DataWeightRecord in dbResults {
             // Copy Realm `Object` values on this thead before completion block and `async` enqueueing.
             dbValues.append(RealmDataWeightValues(record: record))
         }
@@ -163,7 +163,7 @@ struct HealthSynchronizer {
     
     /// 
     func syncWeightToShow(date: Date, ampm: DataWeightType) -> (time: String, weight: String) {
-        let record: RealmDataWeightRecord? = realm.getDBWeight(date: date, ampm: ampm)
+        let record: DataWeightRecord? = realm.getDBWeight(date: date, ampm: ampm)
         
         // Return DB weight record if present
         if let record = record {

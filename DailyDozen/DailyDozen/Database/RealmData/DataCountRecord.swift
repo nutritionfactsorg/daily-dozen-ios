@@ -1,5 +1,5 @@
 //
-//  RealmDataCountRecord.swift
+//  DataCountRecord.swift
 //  DatabaseMigration
 //
 //  Copyright © 2019 NutritionFacts.org. All rights reserved.
@@ -8,7 +8,7 @@
 import Foundation
 import RealmSwift
 
-class RealmDataCountRecord: Object {
+class DataCountRecord: Object {
     
     // MARK: - RealmDB Persisted Properties
     
@@ -28,7 +28,7 @@ class RealmDataCountRecord: Object {
         guard let date = Date.init(datestampKey: pidKeys.datestampKey),
             let countType = DataCountType(itemTypeKey: pidKeys.typeKey) else {
                 logit.error(
-                    "RealmDataCountRecord pidParts has invalid datestamp or typeKey"
+                    "DataCountRecord pidParts has invalid datestamp or typeKey"
                 )
                 return nil
         }
@@ -52,7 +52,7 @@ class RealmDataCountRecord: Object {
     
     // MARK: - Init
     
-    /// CSV Initializer: RealmDataCountRecord
+    /// CSV Initializer: DataCountRecord
     convenience init?(datestampKey: String, typeKey: String, count: Int = 0, streak: Int = 0) {
         guard let dataCountType = DataCountType(itemTypeKey: typeKey),
             Date(datestampKey: datestampKey) != nil else {
@@ -66,7 +66,7 @@ class RealmDataCountRecord: Object {
         if self.count > dataCountType.goalServings {
             self.count = dataCountType.goalServings
             logit.error(
-                "RealmDataCountRecord init datestampKey:\(datestampKey) typekey:\(typeKey) count:\(count) exceeded max servings \(dataCountType.goalServings)"
+                "DataCountRecord init datestampKey:\(datestampKey) typekey:\(typeKey) count:\(count) exceeded max servings \(dataCountType.goalServings)"
             )
 
         }
@@ -81,7 +81,7 @@ class RealmDataCountRecord: Object {
         if self.count > countType.goalServings {
             self.count = countType.goalServings
             logit.error(
-                "RealmDataCountRecord init date:\(date.datestampKey) countType:\(countType.typeKey) count:\(count) exceeds max servings \(countType.goalServings)"
+                "DataCountRecord init date:\(date.datestampKey) countType:\(countType.typeKey) count:\(count) exceeds max servings \(countType.goalServings)"
             )
         }
         self.streak = streak
@@ -109,7 +109,7 @@ class RealmDataCountRecord: Object {
             setCount(value)
         } else {
             logit.error(
-                "RealmDataCountRecord setCount() not convertable to Int \(text)"
+                "DataCountRecord setCount() not convertable to Int \(text)"
             )
         }
     }
@@ -120,12 +120,12 @@ class RealmDataCountRecord: Object {
             if self.count > countType.goalServings {
                 self.count = countType.goalServings
                 logit.error(
-                    "RealmDataCountRecord setCount \(pid) \(count) exceeds max servings"
+                    "DataCountRecord setCount \(pid) \(count) exceeds max servings"
                 )
             }
         } else {
             logit.error(
-                "RealmDataCountRecord setCount \(pid) \(count) could not range check servings"
+                "DataCountRecord setCount \(pid) \(count) could not range check servings"
             )
         }
     }

@@ -164,7 +164,7 @@ class RealmManager {
         var index = 1
         for dataCountType in DataCountType.allCases {
             if let value = Int(columns[index]) {
-                let realmDataCountRecord = RealmDataCountRecord(
+                let realmDataCountRecord = DataCountRecord(
                     date: date,
                     countType: dataCountType,
                     count: value
@@ -179,7 +179,7 @@ class RealmManager {
         }
         
         let weightIndexOffset = 1 + DataCountType.allCases.count
-        let weightAM = RealmDataWeightRecord(
+        let weightAM = DataWeightRecord(
             datestampKey: datastampKey,
             typeKey: DataWeightType.am.typeKey,
             kilograms: columns[weightIndexOffset],
@@ -188,7 +188,7 @@ class RealmManager {
         if let weight = weightAM {
             tracker.weightAM = weight
         }
-        let weightPM = RealmDataWeightRecord(
+        let weightPM = DataWeightRecord(
             datestampKey: datastampKey,
             typeKey: DataWeightType.pm.typeKey,
             kilograms: columns[weightIndexOffset+2],

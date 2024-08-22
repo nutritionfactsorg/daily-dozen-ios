@@ -79,7 +79,7 @@ class RealmProvider {
         
         let config = Realm.Configuration(
             fileURL: fileURL,   // local Realm file url
-            objectTypes: [RealmDataCountRecord.self, RealmDataWeightRecord.self])
+            objectTypes: [DataCountRecord.self, DataWeightRecord.self])
         Realm.Configuration.defaultConfiguration = config
         guard let realm = try? Realm() else {
             if #available(iOS 16.0, *) {
@@ -116,7 +116,7 @@ class RealmProvider {
         
         let config = Realm.Configuration(
             fileURL: fileURL,   // local Realm file url
-            objectTypes: [RealmDataCountRecord.self, RealmDataWeightRecord.self])
+            objectTypes: [DataCountRecord.self, DataWeightRecord.self])
         Realm.Configuration.defaultConfiguration = config
         guard let realm = try? Realm() else {
             if #available(iOS 16.0, *) {
@@ -136,24 +136,24 @@ class RealmProvider {
     }
     
     /// Use: weight entry
-    func getDBWeight(date: Date, ampm: DataWeightType) -> RealmDataWeightRecord? {
+    func getDBWeight(date: Date, ampm: DataWeightType) -> DataWeightRecord? {
         let datestampKey = date.datestampKey
         let pid = ampm == .am ? "\(datestampKey).am" : "\(datestampKey).pm"
         
-        let weightRecord = realm.object(ofType: RealmDataWeightRecord.self, forPrimaryKey: pid)
+        let weightRecord = realm.object(ofType: DataWeightRecord.self, forPrimaryKey: pid)
         return weightRecord
     }
     
     // Use: datetime list to sync with HealthKit
-    func getDBWeightDatetimes() -> Results<RealmDataWeightRecord> {
-        return realm.objects(RealmDataWeightRecord.self)
+    func getDBWeightDatetimes() -> Results<DataWeightRecord> {
+        return realm.objects(DataWeightRecord.self)
     }
     
     /// Use: TBD
-    func getDailyWeights(fromDate: Date, toDate: Date) -> (am: [RealmDataWeightRecord], pm: [RealmDataWeightRecord]) {
-        var amRecords = [RealmDataWeightRecord]()
-        var pmRecords = [RealmDataWeightRecord]()
-        let weightResults = realm.objects(RealmDataWeightRecord.self)
+    func getDailyWeights(fromDate: Date, toDate: Date) -> (am: [DataWeightRecord], pm: [DataWeightRecord]) {
+        var amRecords = [DataWeightRecord]()
+        var pmRecords = [DataWeightRecord]()
+        let weightResults = realm.objects(DataWeightRecord.self)
         let weightResultsById = weightResults.sorted(byKeyPath: "pid")
         
         let fromDateKey = fromDate.datestampKey
@@ -175,10 +175,10 @@ class RealmProvider {
     }
     
     /// Use: history view
-    func getDailyWeights() -> (am: [RealmDataWeightRecord], pm: [RealmDataWeightRecord]) {
-        var amRecords = [RealmDataWeightRecord]()
-        var pmRecords = [RealmDataWeightRecord]()
-        let weightResults = realm.objects(RealmDataWeightRecord.self)
+    func getDailyWeights() -> (am: [DataWeightRecord], pm: [DataWeightRecord]) {
+        var amRecords = [DataWeightRecord]()
+        var pmRecords = [DataWeightRecord]()
+        let weightResults = realm.objects(DataWeightRecord.self)
         let weightResultsById = weightResults.sorted(byKeyPath: "pid")
         
         for realmDataWeightRecord in weightResultsById {
@@ -194,9 +194,9 @@ class RealmProvider {
     }
     
     /// Use: weight export
-    func getDailyWeightsArray() -> [RealmDataWeightRecord] {
-        var records = [RealmDataWeightRecord]()
-        let weightResults = realm.objects(RealmDataWeightRecord.self)
+    func getDailyWeightsArray() -> [DataWeightRecord] {
+        var records = [DataWeightRecord]()
+        let weightResults = realm.objects(DataWeightRecord.self)
         let weightResultsById = weightResults.sorted(byKeyPath: "pid")
         
         for realmDataWeightRecord in weightResultsById {
@@ -206,12 +206,12 @@ class RealmProvider {
         return records
     }
     
-    func getDailyCountRecord(date: Date, countType: DataCountType) -> RealmDataCountRecord? {
+    func getDailyCountRecord(date: Date, countType: DataCountType) -> DataCountRecord? {
         let datestampkey = date.datestampKey
         let typekey = countType.typeKey
-        let pid = RealmDataCountRecord.pid(datestampKey: datestampkey, typeKey: typekey)
+        let pid = DataCountRecord.pid(datestampKey: datestampkey, typeKey: typekey)
         
-        if let item = realm.object(ofType: RealmDataCountRecord.self, forPrimaryKey: pid) {
+        if let item = realm.object(ofType: DataCountRecord.self, forPrimaryKey: pid) {
             return item
         }
         return nil
@@ -223,11 +223,11 @@ class RealmProvider {
         var dailyTracker = RealmDailyTracker(date: date)
         
         for dataCountType in DataCountType.allCases {
-            let pid = RealmDataCountRecord.pid(datestampKey: datestampKey, typeKey: dataCountType.typeKey)
-            if let item = realm.object(ofType: RealmDataCountRecord.self, forPrimaryKey: pid) {
+            let pid = DataCountRecord.pid(datestampKey: datestampKey, typeKey: dataCountType.typeKey)
+            if let item = realm.object(ofType: DataCountRecord.self, forPrimaryKey: pid) {
                 dailyTracker.itemsDict[dataCountType] = item
             } else {
-                dailyTracker.itemsDict[dataCountType] = RealmDataCountRecord(date: date, countType: dataCountType)
+                dailyTracker.itemsDict[dataCountType] = DataCountRecord(date: date, countType: dataCountType)
             }
         }
         
@@ -239,12 +239,12 @@ class RealmProvider {
     func getDailyTrackers(activity: ActivityProgress? = nil) -> [RealmDailyTracker] {        
         // Daily Dozen & Tweaks Counters
         activity?.setProgress(ratio: 0.0, text: "0/3")
-        let counterResultsById = realm.objects(RealmDataCountRecord.self)
+        let counterResultsById = realm.objects(DataCountRecord.self)
             .sorted(byKeyPath: "pid")
         
         // Weight History
         activity?.setProgress(ratio: 0.33, text: "1/3")
-        let weightResultsById = realm.objects(RealmDataWeightRecord.self)
+        let weightResultsById = realm.objects(DataWeightRecord.self)
             .sorted(byKeyPath: "pid")
         
         // :NOTE: proceeds quickly to here.
@@ -266,17 +266,17 @@ class RealmProvider {
     }
     
     /// Merges counts and weights in to single [DailyTracker] array
-    private func getDailyTrackersMerged(counterResults: Results<RealmDataCountRecord>, weightResults: Results<RealmDataWeightRecord>) -> [RealmDailyTracker] {
+    private func getDailyTrackersMerged(counterResults: Results<DataCountRecord>, weightResults: Results<DataWeightRecord>) -> [RealmDailyTracker] {
         var allTrackers = [RealmDailyTracker]()
         
         let counterResults = counterResults.sorted(byKeyPath: "pid")
         let weightResults = weightResults.sorted(byKeyPath: "pid")
         
-        var thisCounterRecord: RealmDataCountRecord = counterResults[0]
+        var thisCounterRecord: DataCountRecord = counterResults[0]
         var thisCounterDatestamp = thisCounterRecord.pidKeys.datestampKey // yyyyMMdd
         guard let thisCounterDate = Date(datestampKey: thisCounterDatestamp) else { return allTrackers }
         
-        var thisWeightRecord: RealmDataWeightRecord = weightResults[0]
+        var thisWeightRecord: DataWeightRecord = weightResults[0]
         var thisWeightDatestamp = thisWeightRecord.pidKeys.datestampKey // yyyyMMdd
         guard let thisWeightDate = Date(datestampKey: thisWeightDatestamp) else { return allTrackers }
         
@@ -372,10 +372,10 @@ class RealmProvider {
     }
     
     /// requires presort from lower to higher datestamps
-    private func getDailyTrackersCountersOnly(counterResults: Results<RealmDataCountRecord>) -> [RealmDailyTracker] {
+    private func getDailyTrackersCountersOnly(counterResults: Results<DataCountRecord>) -> [RealmDailyTracker] {
         var allTrackers = [RealmDailyTracker]()
         
-        var thisCounterRecord: RealmDataCountRecord = counterResults[0]
+        var thisCounterRecord: DataCountRecord = counterResults[0]
         var thisCounterDatestamp = thisCounterRecord.pidKeys.datestampKey
         guard let thisDate = Date(datestampKey: thisCounterDatestamp) else { return allTrackers }
         
@@ -404,10 +404,10 @@ class RealmProvider {
     }
     
     /// requires presort from lower to higher datestamps
-    private func getDailyTrackersWeightOnly(weightResults: Results<RealmDataWeightRecord>) -> [RealmDailyTracker] {
+    private func getDailyTrackersWeightOnly(weightResults: Results<DataWeightRecord>) -> [RealmDailyTracker] {
         var allTrackers = [RealmDailyTracker]()
         
-        var thisWeightRecord: RealmDataWeightRecord = weightResults[0]
+        var thisWeightRecord: DataWeightRecord = weightResults[0]
         var thisWeightDatestamp = thisWeightRecord.pidKeys.datestampKey
         guard let thisDate = Date(datestampKey: thisWeightDatestamp) else { return allTrackers }
         
@@ -441,11 +441,11 @@ class RealmProvider {
     func saveCount(_ count: Int, date: Date, countType: DataCountType) {
         saveDailyTracker()
         
-        let pid = RealmDataCountRecord.pid(date: date, countType: countType)
+        let pid = DataCountRecord.pid(date: date, countType: countType)
         do {
             try realm.write {
                 realm.create(
-                    RealmDataCountRecord.self,
+                    DataCountRecord.self,
                     value: ["pid": pid, "count": count] as [String: Any],
                     update: Realm.UpdatePolicy.modified)
                 updateStreak(count: count, date: date, countType: countType)
@@ -464,7 +464,7 @@ class RealmProvider {
         do {
             try realm.write {
                 realm.create(
-                    RealmDataWeightRecord.self,
+                    DataWeightRecord.self,
                     value: ["pid": pid, "kg": kg, "time": date.datestampHHmm] as [String: Any],
                     update: Realm.UpdatePolicy.all)
             }
@@ -477,7 +477,7 @@ class RealmProvider {
     
     func deleteDBWeight(date: Date, ampm: DataWeightType) {
         let pid = "\(date.datestampKey).\(ampm.typeKey)"
-        if let record = realm.object(ofType: RealmDataWeightRecord.self, forPrimaryKey: pid) {
+        if let record = realm.object(ofType: DataWeightRecord.self, forPrimaryKey: pid) {
             do {
                 try realm.write {
                     realm.delete(record)
@@ -507,7 +507,7 @@ class RealmProvider {
                 let trackerDict = tracker.itemsDict
                 for key in trackerDict.keys {
                     realm.add(
-                        trackerDict[key]!, // RealmDataCountRecord
+                        trackerDict[key]!, // DataCountRecord
                         update: Realm.UpdatePolicy.all
                     )
                 }
@@ -550,8 +550,8 @@ class RealmProvider {
     
     private func updateStreakCompleted(date: Date, countType: DataCountType) {
         // setup this date
-        let thisPid = RealmDataCountRecord.pid(date: date, countType: countType)
-        guard let thisRec = realm.object(ofType: RealmDataCountRecord.self, forPrimaryKey: thisPid)
+        let thisPid = DataCountRecord.pid(date: date, countType: countType)
+        guard let thisRec = realm.object(ofType: DataCountRecord.self, forPrimaryKey: thisPid)
         else {
             logit.error("Invalid updateStreakCompleted: \(thisPid) not retrieved")
             return
@@ -559,8 +559,8 @@ class RealmProvider {
         
         // set this day's streak based on previous date
         var prevDay = date.adding(days: -1)
-        var prevPid = RealmDataCountRecord.pid(date: prevDay, countType: countType)
-        if let yesterday = realm.object(ofType: RealmDataCountRecord.self, forPrimaryKey: prevPid) {
+        var prevPid = DataCountRecord.pid(date: prevDay, countType: countType)
+        if let yesterday = realm.object(ofType: DataCountRecord.self, forPrimaryKey: prevPid) {
             thisRec.streak = yesterday.streak + 1
         } else {
             thisRec.streak = 1
@@ -569,8 +569,8 @@ class RealmProvider {
         // check & update next (future) date streak values
         var nextMaxValidStreak = thisRec.streak + 1
         var nextDay = date.adding(days: 1)
-        var nextPid = RealmDataCountRecord.pid(date: nextDay, countType: countType)
-        while let nextRec = realm.object(ofType: RealmDataCountRecord.self, forPrimaryKey: nextPid) {
+        var nextPid = DataCountRecord.pid(date: nextDay, countType: countType)
+        while let nextRec = realm.object(ofType: DataCountRecord.self, forPrimaryKey: nextPid) {
             if nextRec.count < countType.goalServings {
                 if nextRec.streak == 0 {
                     // Done. Next day streak not impacted by adjacent past streak update.
@@ -597,21 +597,21 @@ class RealmProvider {
             }
             
             nextDay = nextDay.adding(days: 1)
-            nextPid = RealmDataCountRecord.pid(date: nextDay, countType: countType)
+            nextPid = DataCountRecord.pid(date: nextDay, countType: countType)
         }
         
         // count to verify this day's streak value.
         prevDay = date.adding(days: -1) // reset
-        prevPid = RealmDataCountRecord.pid(date: prevDay, countType: countType) // reset
+        prevPid = DataCountRecord.pid(date: prevDay, countType: countType) // reset
         var streakCount = 1
-        while let prevRec = realm.object(ofType: RealmDataCountRecord.self, forPrimaryKey: prevPid) {
+        while let prevRec = realm.object(ofType: DataCountRecord.self, forPrimaryKey: prevPid) {
             if prevRec.count == countType.goalServings {
                 streakCount += 1                
             } else {
                 break
             }
             prevDay = prevDay.adding(days: -1)
-            prevPid = RealmDataCountRecord.pid(date: prevDay, countType: countType)
+            prevPid = DataCountRecord.pid(date: prevDay, countType: countType)
         }
         
         if streakCount == thisRec.streak {
@@ -620,9 +620,9 @@ class RealmProvider {
         
         // check & update previous (past) date streak values
         prevDay = date.adding(days: -1) // reset
-        prevPid = RealmDataCountRecord.pid(date: prevDay, countType: countType) // reset
+        prevPid = DataCountRecord.pid(date: prevDay, countType: countType) // reset
         var prevMaxValidStreak = thisRec.streak - 1
-        while let prevRec = realm.object(ofType: RealmDataCountRecord.self, forPrimaryKey: prevPid) {
+        while let prevRec = realm.object(ofType: DataCountRecord.self, forPrimaryKey: prevPid) {
             if prevRec.count < countType.goalServings {
                 if prevRec.streak == 0 {
                     // Done. Previous day streak not impacted by adjacent past streak update.
@@ -649,15 +649,15 @@ class RealmProvider {
             }
             
             prevDay = prevDay.adding(days: -1)
-            prevPid = RealmDataCountRecord.pid(date: prevDay, countType: countType)
+            prevPid = DataCountRecord.pid(date: prevDay, countType: countType)
         }        
     }
     
     private func updateStreakIncomplete(date: Date, countType: DataCountType) {
         // setup this date
-        let thisPid = RealmDataCountRecord.pid(date: date, countType: countType)
+        let thisPid = DataCountRecord.pid(date: date, countType: countType)
         // Retrieve single instance given object type with the given primary key
-        guard let thisRec = realm.object(ofType: RealmDataCountRecord.self, forPrimaryKey: thisPid)
+        guard let thisRec = realm.object(ofType: DataCountRecord.self, forPrimaryKey: thisPid)
         else {
             logit.error("Invalid updateStreakIncomplete: \(thisPid) not retrieved")
             return
@@ -668,9 +668,9 @@ class RealmProvider {
         // check & update next (future) date streak values
         var nextMaxValidStreak = 1
         var nextDay = date.adding(days: 1)
-        var nextPid = RealmDataCountRecord.pid(date: nextDay, countType: countType)
+        var nextPid = DataCountRecord.pid(date: nextDay, countType: countType)
         // Retrieve single instance given object type with the given primary key
-        while let nextRec = realm.object(ofType: RealmDataCountRecord.self, forPrimaryKey: nextPid) {
+        while let nextRec = realm.object(ofType: DataCountRecord.self, forPrimaryKey: nextPid) {
             if nextRec.count < countType.goalServings {
                 if nextRec.streak == 0 {
                     // Done. Next day streak not impacted by adjacent past streak update.
@@ -697,7 +697,7 @@ class RealmProvider {
             }
             
             nextDay = nextDay.adding(days: 1)
-            nextPid = RealmDataCountRecord.pid(date: nextDay, countType: countType)
+            nextPid = DataCountRecord.pid(date: nextDay, countType: countType)
         }
     }
     

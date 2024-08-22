@@ -68,7 +68,7 @@ struct RealmDataWeightValues {
         guard let date = Date(datestampKey: pidKeys.datestampKey),
             let weightType = DataWeightType(typeKey: pidKeys.typeKey) else {
                 logit.error(
-                    "RealmDataWeightRecord pidParts has invalid datestamp or weightType"
+                    "DataWeightRecord pidParts has invalid datestamp or weightType"
                 )
                 return nil
         }
@@ -111,7 +111,7 @@ struct RealmDataWeightValues {
         self.time = date.datestampHHmm
     }
     
-    init(record: RealmDataWeightRecord) {
+    init(record: DataWeightRecord) {
         self.pid = record.pid
         self.kg = record.kg
         self.time = record.time

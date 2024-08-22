@@ -115,8 +115,8 @@
 		4C22C9A02A737DEE0008D7B6 /* RealmDailyTracker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C22C9962A737DEE0008D7B6 /* RealmDailyTracker.swift */; };
 		4C22C9A12A737DEE0008D7B6 /* DataCountAttributes.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C22C9972A737DEE0008D7B6 /* DataCountAttributes.swift */; };
 		4C22C9A22A737DEE0008D7B6 /* DataCountType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C22C9982A737DEE0008D7B6 /* DataCountType.swift */; };
-		4C22C9A32A737DEE0008D7B6 /* RealmDataCountRecord.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C22C99A2A737DEE0008D7B6 /* RealmDataCountRecord.swift */; };
-		4C22C9A42A737DEE0008D7B6 /* RealmDataWeightRecord.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C22C99B2A737DEE0008D7B6 /* RealmDataWeightRecord.swift */; };
+		4C22C9A32A737DEE0008D7B6 /* DataCountRecord.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C22C99A2A737DEE0008D7B6 /* DataCountRecord.swift */; };
+		4C22C9A42A737DEE0008D7B6 /* DataWeightRecord.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C22C99B2A737DEE0008D7B6 /* DataWeightRecord.swift */; };
 		4C22C9A52A737DEE0008D7B6 /* RealmDataWeightValues.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C22C99C2A737DEE0008D7B6 /* RealmDataWeightValues.swift */; };
 		4C22C9A72A737DEE0008D7B6 /* DataWeightType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C22C99F2A737DEE0008D7B6 /* DataWeightType.swift */; };
 		4C2DF9132C59DA9300F8D54B /* TweakCalendar2View.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C2DF9112C59DA9300F8D54B /* TweakCalendar2View.swift */; };
@@ -370,8 +370,8 @@
 		4C22C9962A737DEE0008D7B6 /* RealmDailyTracker.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RealmDailyTracker.swift; sourceTree = "<group>"; };
 		4C22C9972A737DEE0008D7B6 /* DataCountAttributes.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DataCountAttributes.swift; sourceTree = "<group>"; };
 		4C22C9982A737DEE0008D7B6 /* DataCountType.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DataCountType.swift; sourceTree = "<group>"; };
-		4C22C99A2A737DEE0008D7B6 /* RealmDataCountRecord.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RealmDataCountRecord.swift; sourceTree = "<group>"; };
-		4C22C99B2A737DEE0008D7B6 /* RealmDataWeightRecord.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RealmDataWeightRecord.swift; sourceTree = "<group>"; };
+		4C22C99A2A737DEE0008D7B6 /* DataCountRecord.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DataCountRecord.swift; sourceTree = "<group>"; };
+		4C22C99B2A737DEE0008D7B6 /* DataWeightRecord.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DataWeightRecord.swift; sourceTree = "<group>"; };
 		4C22C99C2A737DEE0008D7B6 /* RealmDataWeightValues.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RealmDataWeightValues.swift; sourceTree = "<group>"; };
 		4C22C99F2A737DEE0008D7B6 /* DataWeightType.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DataWeightType.swift; sourceTree = "<group>"; };
 		4C2DF9112C59DA9300F8D54B /* TweakCalendar2View.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TweakCalendar2View.swift; sourceTree = "<group>"; };
@@ -1028,8 +1028,8 @@
 			isa = PBXGroup;
 			children = (
 				4C22C9962A737DEE0008D7B6 /* RealmDailyTracker.swift */,
-				4C22C99A2A737DEE0008D7B6 /* RealmDataCountRecord.swift */,
-				4C22C99B2A737DEE0008D7B6 /* RealmDataWeightRecord.swift */,
+				4C22C99A2A737DEE0008D7B6 /* DataCountRecord.swift */,
+				4C22C99B2A737DEE0008D7B6 /* DataWeightRecord.swift */,
 				4C22C99C2A737DEE0008D7B6 /* RealmDataWeightValues.swift */,
 			);
 			path = RealmData;
@@ -1797,7 +1797,7 @@
 				4916451A23EE51310077731D /* TweakDetailDataProvider.swift in Sources */,
 				4981709B2391B85B0033882C /* TweakHistoryViewController.swift in Sources */,
 				497A8F0A24748E88001BEDCA /* SettingsManager.swift in Sources */,
-				4C22C9A32A737DEE0008D7B6 /* RealmDataCountRecord.swift in Sources */,
+				4C22C9A32A737DEE0008D7B6 /* DataCountRecord.swift in Sources */,
 				4916451423EE4C410077731D /* TweakDetailViewModel.swift in Sources */,
 				4CC1003A2C5314C3003A853F /* TweakEventStore.swift in Sources */,
 				49208ADC2585F16F00E994CA /* DateManager.swift in Sources */,
@@ -1881,7 +1881,7 @@
 				4943720D2487702300632053 /* HealthSynchronizer.swift in Sources */,
 				495DAAEB23A06C330036077C /* WeightReport.swift in Sources */,
 				CFD1BA331FCD24920057F549 /* RoundedButton.swift in Sources */,
-				4C22C9A42A737DEE0008D7B6 /* RealmDataWeightRecord.swift in Sources */,
+				4C22C9A42A737DEE0008D7B6 /* DataWeightRecord.swift in Sources */,
 				49D9B07B240DCA1F000E9822 /* UIView.swift in Sources */,
 				49F8D1DE23906B29003E139F /* TweakEntryDataProvider.swift in Sources */,
 				CF9E03231FBD9FDE0084BC88 /* ItemHistoryViewController.swift in Sources */,

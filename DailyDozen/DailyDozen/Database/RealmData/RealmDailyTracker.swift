@@ -11,20 +11,20 @@ struct RealmDailyTracker {
     
     let date: Date
         
-    var itemsDict: [DataCountType: RealmDataCountRecord]
+    var itemsDict: [DataCountType: DataCountRecord]
     // Weight
-    var weightAM: RealmDataWeightRecord
-    var weightPM: RealmDataWeightRecord
+    var weightAM: DataWeightRecord
+    var weightPM: DataWeightRecord
     
     init(date: Date) {
         self.date = date
         
-        itemsDict = [DataCountType: RealmDataCountRecord]()
+        itemsDict = [DataCountType: DataCountRecord]()
         for dataCountType in DataCountType.allCases {
-            itemsDict[dataCountType] = RealmDataCountRecord(date: date, countType: dataCountType)
+            itemsDict[dataCountType] = DataCountRecord(date: date, countType: dataCountType)
         }
-        self.weightAM = RealmDataWeightRecord(date: date, weightType: .am, kg: 0.0)
-        self.weightPM = RealmDataWeightRecord(date: date, weightType: .pm, kg: 0.0)
+        self.weightAM = DataWeightRecord(date: date, weightType: .am, kg: 0.0)
+        self.weightPM = DataWeightRecord(date: date, weightType: .pm, kg: 0.0)
     }
     
     func setCount(typeKey: DataCountType, countText: String) {
