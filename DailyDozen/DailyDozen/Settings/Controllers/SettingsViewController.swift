@@ -277,9 +277,9 @@ class SettingsViewController: UITableViewController {
     
     @IBAction func doHistoryDataExport(_ sender: UIButton) {
         //doHistoryDataExportActivityNoneDB02()
-        //doHistoryDataExportActivityShowDB02()
+        doHistoryDataExportActivityShowDB02()
         //doHistoryDataExportActivityNoneDB03()
-        doHistoryDataExportActivityShowDB03()
+        //doHistoryDataExportActivityShowDB03() // :GOAL:
     }
     
     /// Export DB02 without export activity indicator UI
