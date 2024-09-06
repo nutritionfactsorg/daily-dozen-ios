@@ -1,0 +1,1142 @@
+{
+  "itemsDict" : {
+    "dozeBeans" : {
+      "heading" : "Графчиња (Мешунки)",
+      "servings" : [
+        {
+          "imperial" : "¼ шоља хумус или паста од грав",
+          "metric" : "60 г хумус или паста од грав"
+        },
+        {
+          "imperial" : "½ шоља варен грав, разделен грашок или леќа",
+          "metric" : "90 г варен грав, разделен грашок или леќа"
+        },
+        {
+          "imperial" : "½ шоља тофу или темпе",
+          "metric" : "100 г тофу или темпе"
+        },
+        {
+          "imperial" : "1 шоља свеж или замрзнат грашок",
+          "metric" : "130 г свеж или замрзнат грашок"
+        },
+        {
+          "imperial" : "1 шоља свежи изртени гравчиња (леќа, мунг грав)",
+          "metric" : "100 г свежи изртени гравчиња (леќа, мунг грав)"
+        }
+      ],
+      "topic" : "topics/beans",
+      "varieties" : [
+        {
+          "text" : "Црн грав",
+          "topic" : "topics/black-beans"
+        },
+        {
+          "text" : "Грав со црно око",
+          "topic" : ""
+        },
+        {
+          "text" : "Лима грав",
+          "topic" : ""
+        },
+        {
+          "text" : "Грав канелини",
+          "topic" : ""
+        },
+        {
+          "text" : "Леблебија",
+          "topic" : "topics/chickpeas"
+        },
+        {
+          "text" : "Едамаме",
+          "topic" : "topics/edamame"
+        },
+        {
+          "text" : "Градинарски грашок",
+          "topic" : ""
+        },
+        {
+          "text" : "Бел грав (Great Northern)",
+          "topic" : ""
+        },
+        {
+          "text" : "Црвен грав (Кидни)",
+          "topic" : "topics/kidney-beans"
+        },
+        {
+          "text" : "Леќа (црна, зелена и црвена)",
+          "topic" : "topics/lentils"
+        },
+        {
+          "text" : "Мисо",
+          "topic" : "topics/miso"
+        },
+        {
+          "text" : "Бел грав (Navy)",
+          "topic" : "topics/navy-beans"
+        },
+        {
+          "text" : "Пинто грав",
+          "topic" : "topics/pinto-beans"
+        },
+        {
+          "text" : "Мал црвен грав",
+          "topic" : ""
+        },
+        {
+          "text" : "Раздвоен грашок (жолт или зелен)",
+          "topic" : "topics/split-peas"
+        },
+        {
+          "text" : "Темпе",
+          "topic" : "topics/tempeh"
+        }
+      ]
+    },
+    "dozeBerries" : {
+      "heading" : "Бобинки",
+      "servings" : [
+        {
+          "imperial" : "½ шоља свежи или замрзнати",
+          "metric" : "60 г свежи или замрзнати"
+        },
+        {
+          "imperial" : "¼ шоља суви",
+          "metric" : "40 г суви"
+        }
+      ],
+      "topic" : "topics/berries",
+      "varieties" : [
+        {
+          "text" : "Асаи",
+          "topic" : "topics/acai-berries"
+        },
+        {
+          "text" : "Беринки",
+          "topic" : "topics/barberries"
+        },
+        {
+          "text" : "Капини",
+          "topic" : "topics/blackberries"
+        },
+        {
+          "text" : "Боровинки",
+          "topic" : "topics/blueberries"
+        },
+        {
+          "text" : "Цреши (слатки или кисели)",
+          "topic" : "topics/cherries"
+        },
+        {
+          "text" : "Грозје",
+          "topic" : "topics/grapes"
+        },
+        {
+          "text" : "Брусница",
+          "topic" : "topics/cranberries"
+        },
+        {
+          "text" : "Гоџи бери",
+          "topic" : "topics/goji-berries"
+        },
+        {
+          "text" : "Кумкват",
+          "topic" : ""
+        },
+        {
+          "text" : "Дудинки",
+          "topic" : ""
+        },
+        {
+          "text" : "Малини (црни или црвени)",
+          "topic" : "topics/raspberries"
+        },
+        {
+          "text" : "Јагоди",
+          "topic" : "topics/strawberries"
+        }
+      ]
+    },
+    "dozeBeverages" : {
+      "heading" : "Пијалоци",
+      "servings" : [
+        {
+          "imperial" : "Една чаша (12 унци)",
+          "metric" : "Една чаша (350 мл)"
+        }
+      ],
+      "topic" : "topics/beverages",
+      "varieties" : [
+        {
+          "text" : "Црн чај",
+          "topic" : "topics/black-tea"
+        },
+        {
+          "text" : "Чаи чај",
+          "topic" : "topics/chai-tea"
+        },
+        {
+          "text" : "Камилица",
+          "topic" : "topics/chamomile-tea"
+        },
+        {
+          "text" : "Кафе",
+          "topic" : "topics/coffee"
+        },
+        {
+          "text" : "Ерл Греј чај",
+          "topic" : "topics/earl-grey-tea"
+        },
+        {
+          "text" : "Зелен чај",
+          "topic" : "topics/green-tea"
+        },
+        {
+          "text" : "Хибискус",
+          "topic" : "topics/hibiscus-tea"
+        },
+        {
+          "text" : "Топол напиток од какао",
+          "topic" : ""
+        },
+        {
+          "text" : "Чај од јасмин",
+          "topic" : ""
+        },
+        {
+          "text" : "Лимонов чај",
+          "topic" : "topics/lemon-balm"
+        },
+        {
+          "text" : "Мача чај",
+          "topic" : "topics/matcha"
+        },
+        {
+          "text" : "Almond blossom oolong tea",
+          "topic" : "topics/oolong-tea"
+        },
+        {
+          "text" : "Нане",
+          "topic" : "topics/peppermint"
+        },
+        {
+          "text" : "Ројбос",
+          "topic" : "topics/rooibos-tea"
+        },
+        {
+          "text" : "Вода",
+          "topic" : "topics/water"
+        },
+        {
+          "text" : "Бел чај",
+          "topic" : "topics/white-tea"
+        }
+      ]
+    },
+    "dozeExercise" : {
+      "heading" : "Вежбање",
+      "servings" : [
+        {
+          "imperial" : "90 минути умерена активност",
+          "metric" : "90 минути умерена активност"
+        },
+        {
+          "imperial" : "40 минути интензивна активност",
+          "metric" : "40 минути интензивна активност"
+        }
+      ],
+      "topic" : "topics/exercise",
+      "varieties" : [
+        {
+          "text" : "Возење велосипед",
+          "topic" : ""
+        },
+        {
+          "text" : "Кану",
+          "topic" : ""
+        },
+        {
+          "text" : "Танц",
+          "topic" : ""
+        },
+        {
+          "text" : "Скијање",
+          "topic" : ""
+        },
+        {
+          "text" : "Скијање",
+          "topic" : ""
+        },
+        {
+          "text" : "Мачување",
+          "topic" : ""
+        },
+        {
+          "text" : "Планинарење",
+          "topic" : ""
+        },
+        {
+          "text" : "Домаќински работи",
+          "topic" : ""
+        },
+        {
+          "text" : "Лизгање на мраз",
+          "topic" : ""
+        },
+        {
+          "text" : "Лизгање",
+          "topic" : ""
+        },
+        {
+          "text" : "Жонглирање",
+          "topic" : ""
+        },
+        {
+          "text" : "Скокање на трамполина",
+          "topic" : ""
+        },
+        {
+          "text" : "Веслање",
+          "topic" : ""
+        },
+        {
+          "text" : "Играње со фризби",
+          "topic" : ""
+        },
+        {
+          "text" : "Ролерки",
+          "topic" : ""
+        },
+        {
+          "text" : "Шутирање кошеви",
+          "topic" : ""
+        },
+        {
+          "text" : "Лесно чистење на снег",
+          "topic" : ""
+        },
+        {
+          "text" : "Скејтборд",
+          "topic" : ""
+        },
+        {
+          "text" : "Снорклање",
+          "topic" : ""
+        },
+        {
+          "text" : "Сурфање",
+          "topic" : ""
+        },
+        {
+          "text" : "Рекреативно пливање",
+          "topic" : ""
+        },
+        {
+          "text" : "Тенис (двојки)",
+          "topic" : ""
+        },
+        {
+          "text" : "Пловење во вода",
+          "topic" : ""
+        },
+        {
+          "text" : "Брзо одење (6.5 км/час)",
+          "topic" : ""
+        },
+        {
+          "text" : "Воден аеробик",
+          "topic" : ""
+        },
+        {
+          "text" : "Скијање на вода",
+          "topic" : ""
+        },
+        {
+          "text" : "Градинарство",
+          "topic" : ""
+        },
+        {
+          "text" : "Јога",
+          "topic" : ""
+        },
+        {
+          "text" : "Бекпекинг",
+          "topic" : ""
+        },
+        {
+          "text" : "Кошарка",
+          "topic" : ""
+        },
+        {
+          "text" : "Возење велосипед нагоре",
+          "topic" : ""
+        },
+        {
+          "text" : "Вежбање со тегови",
+          "topic" : ""
+        },
+        {
+          "text" : "Скијање крос-кантри",
+          "topic" : ""
+        },
+        {
+          "text" : "Рагби / Американски фудбал",
+          "topic" : ""
+        },
+        {
+          "text" : "Хокеј",
+          "topic" : ""
+        },
+        {
+          "text" : "Џогирање",
+          "topic" : ""
+        },
+        {
+          "text" : "Скокање",
+          "topic" : ""
+        },
+        {
+          "text" : "Скокање со јаже",
+          "topic" : ""
+        },
+        {
+          "text" : "Lacrosse",
+          "topic" : ""
+        },
+        {
+          "text" : "Склекови",
+          "topic" : ""
+        },
+        {
+          "text" : "Згибови",
+          "topic" : ""
+        },
+        {
+          "text" : "Racquetball",
+          "topic" : ""
+        },
+        {
+          "text" : "Искачување",
+          "topic" : ""
+        },
+        {
+          "text" : "Рагби / Американски фудбал",
+          "topic" : ""
+        },
+        {
+          "text" : "Трчање",
+          "topic" : ""
+        },
+        {
+          "text" : "Скуба нуркање",
+          "topic" : ""
+        },
+        {
+          "text" : "Тенис",
+          "topic" : ""
+        },
+        {
+          "text" : "Фудбал",
+          "topic" : ""
+        },
+        {
+          "text" : "Брзо скијање",
+          "topic" : ""
+        },
+        {
+          "text" : "Скуош",
+          "topic" : ""
+        },
+        {
+          "text" : "Степ аеробик",
+          "topic" : ""
+        },
+        {
+          "text" : "Пливање",
+          "topic" : ""
+        },
+        {
+          "text" : "Брзо одење нагоре",
+          "topic" : ""
+        },
+        {
+          "text" : "Трчање во вода",
+          "topic" : ""
+        }
+      ]
+    },
+    "dozeFlaxseeds" : {
+      "heading" : "Ленено семе",
+      "servings" : [
+        {
+          "imperial" : "1 лажица мелено",
+          "metric" : "1 лажица мелено"
+        }
+      ],
+      "topic" : "topics/flax-seeds",
+      "varieties" : [
+        {
+          "text" : "Лененово семе (кафеаво)",
+          "topic" : ""
+        },
+        {
+          "text" : "Лененово семе (златно)",
+          "topic" : ""
+        }
+      ]
+    },
+    "dozeFruitsOther" : {
+      "heading" : "Други овошја",
+      "servings" : [
+        {
+          "imperial" : "1 средно големо овошје",
+          "metric" : "1 средно големо овошје"
+        },
+        {
+          "imperial" : "1 шоља исецкано овошје",
+          "metric" : "120 г исецкано овошје"
+        },
+        {
+          "imperial" : "¼ шоља сушено овошје",
+          "metric" : "40 г сушено овошје"
+        }
+      ],
+      "topic" : "topics/fruit",
+      "varieties" : [
+        {
+          "text" : "Јаболка",
+          "topic" : "topics/apples"
+        },
+        {
+          "text" : "Кајсии",
+          "topic" : "topics/apricots"
+        },
+        {
+          "text" : "Авокадо",
+          "topic" : "topics/avocados"
+        },
+        {
+          "text" : "Банани",
+          "topic" : "topics/bananas"
+        },
+        {
+          "text" : "Диња канталуп",
+          "topic" : "topics/cantaloupe"
+        },
+        {
+          "text" : "Мандарини (Клементини)",
+          "topic" : ""
+        },
+        {
+          "text" : "Урми",
+          "topic" : "topics/dates"
+        },
+        {
+          "text" : "Смокви",
+          "topic" : ""
+        },
+        {
+          "text" : "Грејпфрут",
+          "topic" : "topics/grapefruit"
+        },
+        {
+          "text" : "Диња галија",
+          "topic" : ""
+        },
+        {
+          "text" : "Киви",
+          "topic" : "topics/kiwifruit"
+        },
+        {
+          "text" : "Лимони",
+          "topic" : "topics/lemons"
+        },
+        {
+          "text" : "Зелени лимони",
+          "topic" : "topics/limes"
+        },
+        {
+          "text" : "Личе",
+          "topic" : ""
+        },
+        {
+          "text" : "Манго",
+          "topic" : "topics/mango"
+        },
+        {
+          "text" : "Нектарини",
+          "topic" : ""
+        },
+        {
+          "text" : "Портокали",
+          "topic" : "topics/oranges"
+        },
+        {
+          "text" : "Папаја",
+          "topic" : ""
+        },
+        {
+          "text" : "Маракуја",
+          "topic" : ""
+        },
+        {
+          "text" : "Праски",
+          "topic" : "topics/peaches"
+        },
+        {
+          "text" : "Круши",
+          "topic" : "topics/pears"
+        },
+        {
+          "text" : "Ананас",
+          "topic" : ""
+        },
+        {
+          "text" : "Сливи (особено црни сливи)",
+          "topic" : "topics/plums"
+        },
+        {
+          "text" : "Плуоти",
+          "topic" : ""
+        },
+        {
+          "text" : "Калинка",
+          "topic" : "topics/pomegranates"
+        },
+        {
+          "text" : "Суви сливи",
+          "topic" : "topics/prunes"
+        },
+        {
+          "text" : "Мандарини",
+          "topic" : ""
+        },
+        {
+          "text" : "Лубеница",
+          "topic" : "topics/watermelon"
+        }
+      ]
+    },
+    "dozeGreens" : {
+      "heading" : "Зелени лиснати зеленчуци",
+      "servings" : [
+        {
+          "imperial" : "1 шоља свежи",
+          "metric" : "60 г свежи"
+        },
+        {
+          "imperial" : "½ шоља варени",
+          "metric" : "90 г варени"
+        }
+      ],
+      "topic" : "topics/greens",
+      "varieties" : [
+        {
+          "text" : "Рукола",
+          "topic" : ""
+        },
+        {
+          "text" : "Лисја од цвекло",
+          "topic" : "topics/beets"
+        },
+        {
+          "text" : "Кељ",
+          "topic" : "topics/collard-greens"
+        },
+        {
+          "text" : "Кељ (црн, зелен, црвен)",
+          "topic" : "topics/kale"
+        },
+        {
+          "text" : "Месклин (млади листови)",
+          "topic" : "topics/salads"
+        },
+        {
+          "text" : "Лисја од синап",
+          "topic" : "topics/mustard-greens"
+        },
+        {
+          "text" : "Киселец",
+          "topic" : ""
+        },
+        {
+          "text" : "Спанаќ",
+          "topic" : "topics/spinach"
+        },
+        {
+          "text" : "Блитва",
+          "topic" : "topics/swiss-chard"
+        },
+        {
+          "text" : "Лисја од репка",
+          "topic" : ""
+        }
+      ]
+    },
+    "dozeNuts" : {
+      "heading" : "Јаткасти плодови",
+      "servings" : [
+        {
+          "imperial" : "¼ шоља јатки или семиња",
+          "metric" : "30 г јатки или семиња"
+        },
+        {
+          "imperial" : "2 лажици путер од јатки или семиња",
+          "metric" : "2 лажици путер од јатки или семиња"
+        }
+      ],
+      "topic" : "topics/nuts",
+      "varieties" : [
+        {
+          "text" : "Бадеми",
+          "topic" : "topics/almonds"
+        },
+        {
+          "text" : "Бразилски ореви",
+          "topic" : "topics/brazil-nuts"
+        },
+        {
+          "text" : "Кeшу јатки (Индијски ореви)",
+          "topic" : "topics/cashews"
+        },
+        {
+          "text" : "Чиа семе",
+          "topic" : "topics/chia-seeds"
+        },
+        {
+          "text" : "Лешници",
+          "topic" : "topics/hazelnuts"
+        },
+        {
+          "text" : "Семки од коноп",
+          "topic" : ""
+        },
+        {
+          "text" : "Макадамија",
+          "topic" : "topics/macadamia-nuts"
+        },
+        {
+          "text" : "Кикиритки",
+          "topic" : "topics/peanuts"
+        },
+        {
+          "text" : "Пекан ореви",
+          "topic" : "topics/pecans"
+        },
+        {
+          "text" : "Фстаци",
+          "topic" : "topics/pistachios"
+        },
+        {
+          "text" : "Семки од тиква",
+          "topic" : "topics/pumpkin-seeds"
+        },
+        {
+          "text" : "Семки од сусам",
+          "topic" : "topics/sesame-seeds"
+        },
+        {
+          "text" : "Семки од сончоглед",
+          "topic" : "topics/sunflower-seeds"
+        },
+        {
+          "text" : "Ореви",
+          "topic" : "topics/walnuts"
+        }
+      ]
+    },
+    "dozeSpices" : {
+      "heading" : "Зачини",
+      "servings" : [
+        {
+          "imperial" : "¼ кафена лажичка куркума",
+          "metric" : "¼ кафена лажичка куркума"
+        },
+        {
+          "imperial" : "Други билки и зачини без сол по ваш избор",
+          "metric" : "Други билки и зачини без сол по ваш избор"
+        }
+      ],
+      "topic" : "topics/spices",
+      "varieties" : [
+        {
+          "text" : "Бибер",
+          "topic" : "topics/allspice"
+        },
+        {
+          "text" : "Барбери",
+          "topic" : "topics/barberries"
+        },
+        {
+          "text" : "Босилек",
+          "topic" : "topics/basil"
+        },
+        {
+          "text" : "Ловоров лист",
+          "topic" : ""
+        },
+        {
+          "text" : "Кардамон",
+          "topic" : ""
+        },
+        {
+          "text" : "Чили во прав",
+          "topic" : ""
+        },
+        {
+          "text" : "Коријандер",
+          "topic" : "topics/cilantro"
+        },
+        {
+          "text" : "Цимет",
+          "topic" : "topics/cinnamon"
+        },
+        {
+          "text" : "Каранфилче",
+          "topic" : "topics/cloves"
+        },
+        {
+          "text" : "Коријандер",
+          "topic" : ""
+        },
+        {
+          "text" : "Кумин",
+          "topic" : "topics/cumin"
+        },
+        {
+          "text" : "Кари во прав",
+          "topic" : "topics/curry-powder"
+        },
+        {
+          "text" : "Копар",
+          "topic" : ""
+        },
+        {
+          "text" : "Фенугрик",
+          "topic" : "topics/fenugreek"
+        },
+        {
+          "text" : "Лук",
+          "topic" : "topics/garlic"
+        },
+        {
+          "text" : "Ѓумбир",
+          "topic" : "topics/ginger"
+        },
+        {
+          "text" : "Рен",
+          "topic" : ""
+        },
+        {
+          "text" : "Цитронела",
+          "topic" : ""
+        },
+        {
+          "text" : "Мајоран",
+          "topic" : "topics/marjoram"
+        },
+        {
+          "text" : "Мелено семе од синап",
+          "topic" : "topics/mustard-powder"
+        },
+        {
+          "text" : "Мускатно оревче",
+          "topic" : "topics/nutmeg"
+        },
+        {
+          "text" : "Орегано",
+          "topic" : "topics/oregano"
+        },
+        {
+          "text" : "Димен пипер",
+          "topic" : ""
+        },
+        {
+          "text" : "Магдонос",
+          "topic" : "topics/parsley"
+        },
+        {
+          "text" : "Пипер во прав",
+          "topic" : "topics/pepper"
+        },
+        {
+          "text" : "Нане",
+          "topic" : "topics/peppermint"
+        },
+        {
+          "text" : "Рузмарин",
+          "topic" : "topics/rosemary"
+        },
+        {
+          "text" : "Шафран",
+          "topic" : "topics/saffron"
+        },
+        {
+          "text" : "Жалфија",
+          "topic" : ""
+        },
+        {
+          "text" : "Мајчина душица",
+          "topic" : ""
+        },
+        {
+          "text" : "Куркума",
+          "topic" : "topics/turmeric"
+        },
+        {
+          "text" : "Ванила",
+          "topic" : ""
+        }
+      ]
+    },
+    "dozeVegetablesCruciferous" : {
+      "heading" : "Крстоцветни зеленчуци",
+      "servings" : [
+        {
+          "imperial" : "½ шоља исецкани",
+          "metric" : "30–80 г исецкани"
+        },
+        {
+          "imperial" : "½ шоља прокељ",
+          "metric" : "80 г прокељ"
+        },
+        {
+          "imperial" : "¼ шоља никулци од брокули",
+          "metric" : "15 г никулци од брокули"
+        },
+        {
+          "imperial" : "1 супена лажица рен",
+          "metric" : "1 супена лажица рен"
+        }
+      ],
+      "topic" : "topics/cruciferous-vegetables",
+      "varieties" : [
+        {
+          "text" : "Рукола",
+          "topic" : ""
+        },
+        {
+          "text" : "Бок чој",
+          "topic" : "topics/bok-choy"
+        },
+        {
+          "text" : "Брокула (вклучувајќи Романеско)",
+          "topic" : "topics/broccoli"
+        },
+        {
+          "text" : "Прокељ",
+          "topic" : "topics/brussels-sprouts"
+        },
+        {
+          "text" : "Зелка (зелена, црвена)",
+          "topic" : "topics/cabbage"
+        },
+        {
+          "text" : "Карфиол",
+          "topic" : "topics/cauliflower"
+        },
+        {
+          "text" : "Кељ",
+          "topic" : "topics/collard-greens"
+        },
+        {
+          "text" : "Рен",
+          "topic" : ""
+        },
+        {
+          "text" : "Кељ (црн, зелен, црвен)",
+          "topic" : "topics/kale"
+        },
+        {
+          "text" : "Келераба (зелена, виолетова)",
+          "topic" : ""
+        },
+        {
+          "text" : "Лисја од синап",
+          "topic" : "topics/mustard-greens"
+        },
+        {
+          "text" : "Ротквици",
+          "topic" : ""
+        },
+        {
+          "text" : "Лисја од репка",
+          "topic" : ""
+        },
+        {
+          "text" : "Водна кресонка",
+          "topic" : "topics/watercress"
+        }
+      ]
+    },
+    "dozeVegetablesOther" : {
+      "heading" : "Други зеленчуци",
+      "servings" : [
+        {
+          "imperial" : "1 шоља свежи лиснати зеленчуци",
+          "metric" : "60 г свежи лиснати зеленчуци"
+        },
+        {
+          "imperial" : "½ шоља свежи или варени не-лиснати зеленчуци",
+          "metric" : "50 г свежи или варени не-лиснати зеленчуци"
+        },
+        {
+          "imperial" : "½ шоља сок од зеленчук",
+          "metric" : "125 мл сок од зеленчук"
+        },
+        {
+          "imperial" : "¼ шоља суви печурки",
+          "metric" : "7 г суви печурки"
+        }
+      ],
+      "topic" : "topics/vegetables",
+      "varieties" : [
+        {
+          "text" : "Артичпка",
+          "topic" : "topics/artichokes"
+        },
+        {
+          "text" : "Аспарагус",
+          "topic" : "topics/asparagus"
+        },
+        {
+          "text" : "Цвекло",
+          "topic" : "topics/beets"
+        },
+        {
+          "text" : "Пиперки",
+          "topic" : "topics/bell-peppers"
+        },
+        {
+          "text" : "Моркови",
+          "topic" : "topics/carrots"
+        },
+        {
+          "text" : "Пченка",
+          "topic" : "topics/corn"
+        },
+        {
+          "text" : "Лук",
+          "topic" : "topics/garlic"
+        },
+        {
+          "text" : "Печурки",
+          "topic" : "topics/mushrooms"
+        },
+        {
+          "text" : "Бамји",
+          "topic" : "topics/okra"
+        },
+        {
+          "text" : "Кромид",
+          "topic" : "topics/onions"
+        },
+        {
+          "text" : "Компири",
+          "topic" : "topics/potatoes"
+        },
+        {
+          "text" : "Тиква",
+          "topic" : "topics/pumpkin"
+        },
+        {
+          "text" : "Алги",
+          "topic" : "topics/sea-vegetables"
+        },
+        {
+          "text" : "Боранија",
+          "topic" : ""
+        },
+        {
+          "text" : "Мала тиква",
+          "topic" : "topics/squash"
+        },
+        {
+          "text" : "Сладок компир",
+          "topic" : "topics/sweet-potatoes"
+        },
+        {
+          "text" : "Домати",
+          "topic" : "topics/tomatoes"
+        },
+        {
+          "text" : "Тиквички",
+          "topic" : "topics/zucchini"
+        }
+      ]
+    },
+    "dozeWholeGrains" : {
+      "heading" : "Цели зрна",
+      "servings" : [
+        {
+          "imperial" : "½ шоља топли житарки или варени жита, тестенини или пченкарни никулци",
+          "metric" : "100 г топли житарки или варени жита, тестенини или пченкарни никулци"
+        },
+        {
+          "imperial" : "1 шоља ладни житарки",
+          "metric" : "50 г ладни житарки"
+        },
+        {
+          "imperial" : "1 тортиља или парче леб",
+          "metric" : "1 тортиља или парче леба"
+        },
+        {
+          "imperial" : "½ ѓеврек или мафин",
+          "metric" : "½ ѓеврек или мафин"
+        },
+        {
+          "imperial" : "3 чаши пуканки",
+          "metric" : "30 г пуканки"
+        }
+      ],
+      "topic" : "topics/grains",
+      "varieties" : [
+        {
+          "text" : "Јачмен",
+          "topic" : "topics/barley"
+        },
+        {
+          "text" : "Хељда",
+          "topic" : "topics/buckwheat"
+        },
+        {
+          "text" : "Просо",
+          "topic" : "topics/millet"
+        },
+        {
+          "text" : "Овес",
+          "topic" : "topics/oats"
+        },
+        {
+          "text" : "Пуканки",
+          "topic" : "topics/popcorn"
+        },
+        {
+          "text" : "Киноа",
+          "topic" : "topics/quinoa"
+        },
+        {
+          "text" : "'Рж",
+          "topic" : "topics/rye"
+        },
+        {
+          "text" : "Теф",
+          "topic" : ""
+        },
+        {
+          "text" : "Интегрални тестенини",
+          "topic" : "topics/pasta"
+        }
+      ]
+    },
+    "otherVitaminB12" : {
+      "heading" : "Витамин Б12",
+      "servings" : [
+
+      ],
+      "topic" : "topics/vitamin-b12",
+      "varieties" : [
+
+      ]
+    }
+  }
+}
