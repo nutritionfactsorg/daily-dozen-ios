@@ -1,5 +1,5 @@
 //
-//  TweakEventCalendar2View.swift
+//  DozeEventCalendarView.swift
 //  DailyDozen
 //
 //  Copyright © 2024 Nutritionfacts.org. All rights reserved.
@@ -7,7 +7,7 @@
 
 import SwiftUI
 
-struct TweakEventCalendar2View: View {
+struct DozeEventCalendarView: View {
     @State private var dateSelected: DateComponents?
     @State private var displayEvents = false
     @State private var itemType: DataCountType
@@ -32,7 +32,7 @@ struct TweakEventCalendar2View: View {
                         .foregroundColor(ColorGuide.textWhite)
                 }
                 ScrollView {
-                    TweakCalendar2View(
+                    DozeCalendarView(
                         interval: DateInterval(start: .distantPast, end: .now),
                         dateSelected: $dateSelected,
                         displayEvents: $displayEvents,

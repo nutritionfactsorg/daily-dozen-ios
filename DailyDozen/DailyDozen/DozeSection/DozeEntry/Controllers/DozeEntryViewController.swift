@@ -118,7 +118,7 @@ class DozeEntryViewController: UIViewController {
             .itemType(rowIndex: sender.tag)
         
         if #available(iOS 16.0, *) { //*** iOS 16+ embedded SwiftUI View
-            let rootview = DozeEventCalendar2View(itemType: itemType)
+            let rootview = DozeEventCalendarView(itemType: itemType)
             let vc = UIHostingController(rootView: rootview)
             navigationController?.pushViewController(vc, animated: true)
         } else {

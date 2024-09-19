@@ -1,5 +1,5 @@
 //
-//  DozeCalendar2View.swift
+//  TweakCalendarView.swift
 //  DailyDozen
 //
 //  Copyright © 2024 Nutritionfacts.org. All rights reserved.
@@ -8,7 +8,7 @@
 import SwiftUI
 
 @available(iOS 16.0, *)
-struct DozeCalendar2View: UIViewRepresentable {
+struct TweakCalendarView: UIViewRepresentable {
     let interval: DateInterval
     @Binding var dateSelected: DateComponents?
     @Binding var displayEvents: Bool
@@ -41,13 +41,13 @@ struct DozeCalendar2View: UIViewRepresentable {
     }
     
     /// UIViewRepresentable makeCoordinator()
-    func makeCoordinator() -> DozeEventCalendar2Coordinator {
+    func makeCoordinator() -> TweakEventCalendar2Coordinator {
         Coordinator(parent: self, itemType: itemType)
     }
     
     /// UIViewRepresentable updateUIView(UIViewType:Context)
     func updateUIView(_ uiView: UIViewType, context: Context) {
-        logit.debug("@@@ DozeCalendar updateUIView")
+        logit.debug("@@@ TweakCalendar updateUIView")
         // :GTD:???: verify nothing to do here
     }
     
@@ -55,11 +55,11 @@ struct DozeCalendar2View: UIViewRepresentable {
 
 /// Delegate: Calendar Date Decoration
 @available(iOS 16.0, *)
-class DozeEventCalendar2Coordinator: NSObject, UICalendarViewDelegate {
-    var parent: DozeCalendar2View
+class TweakEventCalendar2Coordinator: NSObject, UICalendarViewDelegate {
+    var parent: TweakCalendarView
     var itemType: DataCountType
     
-    init(parent: DozeCalendar2View, itemType: DataCountType) {
+    init(parent: TweakCalendarView, itemType: DataCountType) {
         self.parent = parent
         self.itemType = itemType
     }
@@ -99,7 +99,7 @@ class DozeEventCalendar2Coordinator: NSObject, UICalendarViewDelegate {
         didChangeVisibleDateComponentsFrom previousDateComponents: DateComponents) {
             
             logit.debug("""
-            •• DozeCalendar2View didChangeVisibleDateComponents
+            •• TweakCalendarView didChangeVisibleDateComponents
                previousDateComponents:
                   \(previousDateComponents.date?.datestampKey ?? ".date nil")
             ••\n
@@ -110,7 +110,7 @@ class DozeEventCalendar2Coordinator: NSObject, UICalendarViewDelegate {
                 if let fromDate = calendar.date(byAdding: .month, value: -1, to: previousDate),
                    let toDate = calendar.date(byAdding: .month, value: +1, to: previousDate) {
                     logit.debug("""
-                •• :NYI: Doze integration to fetch persistant stored data
+                •• :NYI: Tweak integration to fetch persistant stored data
                        fromDate: \(fromDate)
                         fromSid: \(fromDate.datestampSid)
                          toDate: \(toDate)
@@ -125,7 +125,7 @@ class DozeEventCalendar2Coordinator: NSObject, UICalendarViewDelegate {
 
 // /// Extension: Calendar Date Selection :NYI:
 //@available(iOS 16.0, *)
-//extension DozeEventCalendar2Coordinator: UICalendarSelectionSingleDateDelegate {
+//extension TweakEventCalendar2Coordinator: UICalendarSelectionSingleDateDelegate {
 //    func dateSelection(_ selection: UICalendarSelectionSingleDate,
 //                       didSelectDate dateComponents: DateComponents?) {
 //        parent.dateSelected = dateComponents

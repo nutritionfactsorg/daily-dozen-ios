@@ -119,10 +119,10 @@
 		4C22C9A42A737DEE0008D7B6 /* DataWeightRecord.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C22C99B2A737DEE0008D7B6 /* DataWeightRecord.swift */; };
 		4C22C9A52A737DEE0008D7B6 /* RealmDataWeightValues.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C22C99C2A737DEE0008D7B6 /* RealmDataWeightValues.swift */; };
 		4C22C9A72A737DEE0008D7B6 /* DataWeightType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C22C99F2A737DEE0008D7B6 /* DataWeightType.swift */; };
-		4C2DF9132C59DA9300F8D54B /* TweakCalendar2View.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C2DF9112C59DA9300F8D54B /* TweakCalendar2View.swift */; };
-		4C2DF9142C59DA9300F8D54B /* TweakEventCalendar2View.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C2DF9122C59DA9300F8D54B /* TweakEventCalendar2View.swift */; };
-		4C45A41C2C56C9A900AF36C2 /* DozeCalendar2View.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C45A41B2C56C9A900AF36C2 /* DozeCalendar2View.swift */; };
-		4C45A41E2C56D03B00AF36C2 /* DozeEventCalendar2View.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C45A41D2C56D03B00AF36C2 /* DozeEventCalendar2View.swift */; };
+		4C2DF9132C59DA9300F8D54B /* TweakCalendarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C2DF9112C59DA9300F8D54B /* TweakCalendarView.swift */; };
+		4C2DF9142C59DA9300F8D54B /* TweakEventCalendarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C2DF9122C59DA9300F8D54B /* TweakEventCalendarView.swift */; };
+		4C45A41C2C56C9A900AF36C2 /* DozeCalendarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C45A41B2C56C9A900AF36C2 /* DozeCalendarView.swift */; };
+		4C45A41E2C56D03B00AF36C2 /* DozeEventCalendarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C45A41D2C56D03B00AF36C2 /* DozeEventCalendarView.swift */; };
 		4C4CF1F92B6C0AC800C776DE /* GoogleAnalyticsHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C4CF1F82B6C0AC800C776DE /* GoogleAnalyticsHelper.swift */; };
 		4C5D7C802A967F3A000D5153 /* SQLiteBuiltInTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C5D7C7F2A967F3A000D5153 /* SQLiteBuiltInTest.swift */; };
 		4C627B3D2BBF87FC00D03539 /* PrivacyInfo.xcprivacy in Resources */ = {isa = PBXBuildFile; fileRef = 4C19237F2BBF5F9B009FB85A /* PrivacyInfo.xcprivacy */; };
@@ -368,10 +368,10 @@
 		4C22C99B2A737DEE0008D7B6 /* DataWeightRecord.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DataWeightRecord.swift; sourceTree = "<group>"; };
 		4C22C99C2A737DEE0008D7B6 /* RealmDataWeightValues.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RealmDataWeightValues.swift; sourceTree = "<group>"; };
 		4C22C99F2A737DEE0008D7B6 /* DataWeightType.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DataWeightType.swift; sourceTree = "<group>"; };
-		4C2DF9112C59DA9300F8D54B /* TweakCalendar2View.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TweakCalendar2View.swift; sourceTree = "<group>"; };
-		4C2DF9122C59DA9300F8D54B /* TweakEventCalendar2View.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TweakEventCalendar2View.swift; sourceTree = "<group>"; };
-		4C45A41B2C56C9A900AF36C2 /* DozeCalendar2View.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DozeCalendar2View.swift; sourceTree = "<group>"; };
-		4C45A41D2C56D03B00AF36C2 /* DozeEventCalendar2View.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DozeEventCalendar2View.swift; sourceTree = "<group>"; };
+		4C2DF9112C59DA9300F8D54B /* TweakCalendarView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TweakCalendarView.swift; sourceTree = "<group>"; };
+		4C2DF9122C59DA9300F8D54B /* TweakEventCalendarView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TweakEventCalendarView.swift; sourceTree = "<group>"; };
+		4C45A41B2C56C9A900AF36C2 /* DozeCalendarView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DozeCalendarView.swift; sourceTree = "<group>"; };
+		4C45A41D2C56D03B00AF36C2 /* DozeEventCalendarView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DozeEventCalendarView.swift; sourceTree = "<group>"; };
 		4C4632ED2941A3A100CB0313 /* sk */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = sk; path = sk.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		4C4632EE2941A3A100CB0313 /* sk */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = sk; path = sk.lproj/Localizable.strings; sourceTree = "<group>"; };
 		4C4632EF2941A3A100CB0313 /* sk */ = {isa = PBXFileReference; lastKnownFileType = text.json; name = sk; path = sk.lproj/DozeDetailData.json; sourceTree = "<group>"; };
@@ -1041,8 +1041,8 @@
 		4C9F251F2BF72B9000627ABB /* DozeCalendarEmbed */ = {
 			isa = PBXGroup;
 			children = (
-				4C45A41B2C56C9A900AF36C2 /* DozeCalendar2View.swift */,
-				4C45A41D2C56D03B00AF36C2 /* DozeEventCalendar2View.swift */,
+				4C45A41B2C56C9A900AF36C2 /* DozeCalendarView.swift */,
+				4C45A41D2C56D03B00AF36C2 /* DozeEventCalendarView.swift */,
 				4C9F251A2BF72B9000627ABB /* Event.swift */,
 				4C9F25182BF72B9000627ABB /* EventCalendarFooterView.swift */,
 				4C9F251E2BF72B9000627ABB /* Extras.swift */,
@@ -1088,8 +1088,8 @@
 		4CC100362C53117E003A853F /* TweakCalendarEmbed */ = {
 			isa = PBXGroup;
 			children = (
-				4C2DF9112C59DA9300F8D54B /* TweakCalendar2View.swift */,
-				4C2DF9122C59DA9300F8D54B /* TweakEventCalendar2View.swift */,
+				4C2DF9112C59DA9300F8D54B /* TweakCalendarView.swift */,
+				4C2DF9122C59DA9300F8D54B /* TweakEventCalendarView.swift */,
 			);
 			path = TweakCalendarEmbed;
 			sourceTree = "<group>";
@@ -1790,7 +1790,7 @@
 				4CBF74102C517A9A00C60E1C /* ColorGuide.swift in Sources */,
 				499B82FB239CD4D300E4AD19 /* WeightHistoryViewController.swift in Sources */,
 				498170A123920DD60033882C /* TweakEntryPagerViewController.swift in Sources */,
-				4C45A41E2C56D03B00AF36C2 /* DozeEventCalendar2View.swift in Sources */,
+				4C45A41E2C56D03B00AF36C2 /* DozeEventCalendarView.swift in Sources */,
 				49EF489F2586EA3500E89369 /* RoundedTextfield.swift in Sources */,
 				498F7251239E3007004E501B /* HealthManager.swift in Sources */,
 				4904AF84239CB99600E271EC /* WeightEntryPagerViewController.swift in Sources */,
@@ -1803,7 +1803,7 @@
 				4930360724760CBD00746D49 /* DBMigrationMaintainer.swift in Sources */,
 				CFC4A84D1F975A3900B5AC75 /* InfoMenuMainTableVC.swift in Sources */,
 				CFE6983C1F974B9700CD7905 /* AppDelegate.swift in Sources */,
-				4C2DF9132C59DA9300F8D54B /* TweakCalendar2View.swift in Sources */,
+				4C2DF9132C59DA9300F8D54B /* TweakCalendarView.swift in Sources */,
 				CF64DF311FB5DFCF00B4D124 /* DozeDetailSizeCell.swift in Sources */,
 				4C22C9A52A737DEE0008D7B6 /* RealmDataWeightValues.swift in Sources */,
 				4CAE49172A95E8F400B5ED51 /* SQLiteConnector.swift in Sources */,
@@ -1856,7 +1856,7 @@
 				CFF72AFB1FB9A499001CC2E9 /* UnitsType.swift in Sources */,
 				4C5D7C802A967F3A000D5153 /* SQLiteBuiltInTest.swift in Sources */,
 				493A8B9A235E93DA00A5009A /* SettingsKeys.swift in Sources */,
-				4C45A41C2C56C9A900AF36C2 /* DozeCalendar2View.swift in Sources */,
+				4C45A41C2C56C9A900AF36C2 /* DozeCalendarView.swift in Sources */,
 				499089862665DA1A0053D74D /* UIApplication.swift in Sources */,
 				CFC4A84F1F9761FF00B5AC75 /* DozeEntryPagerViewController.swift in Sources */,
 				4943720D2487702300632053 /* HealthSynchronizer.swift in Sources */,
@@ -1869,7 +1869,7 @@
 				499089842665D9D70053D74D /* AlertActivitySpinner.swift in Sources */,
 				497F91B2240990B600464E4E /* TweakDetailSections.swift in Sources */,
 				4CAE49032A95D07B00B5ED51 /* SQLiteFramework.swift in Sources */,
-				4C2DF9142C59DA9300F8D54B /* TweakEventCalendar2View.swift in Sources */,
+				4C2DF9142C59DA9300F8D54B /* TweakEventCalendarView.swift in Sources */,
 				49DB104F238E257D00E77E52 /* TweakEntryViewModel.swift in Sources */,
 				CF4DECF91F9DF82900DA094B /* DozeEntryDataProvider.swift in Sources */,
 				CF17C8A71FAA019600367BF8 /* DozeDetailSections.swift in Sources */,

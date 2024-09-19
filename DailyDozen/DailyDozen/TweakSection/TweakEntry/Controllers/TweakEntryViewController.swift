@@ -142,7 +142,7 @@ class TweakEntryViewController: UIViewController {
             let viewController = WeightHistoryViewController.newInstance()
             navigationController?.pushViewController(viewController, animated: true)
         } else if #available(iOS 16.0, *) { //*** iOS 16+ embedded SwiftUI View
-            let rootview = TweakEventCalendar2View(itemType: itemType)
+            let rootview = TweakEventCalendarView(itemType: itemType)
             let vc = UIHostingController(rootView: rootview)
             navigationController?.pushViewController(vc, animated: true)
         } else {
