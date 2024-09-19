@@ -1,9 +1,8 @@
 PODS:
   - ActiveLabel (1.1.0)
-  - Charts (4.1.0):
-    - Charts/Core (= 4.1.0)
-  - Charts/Core (4.1.0):
-    - SwiftAlgorithms (~> 1.0)
+  - DGCharts (5.1.0):
+    - DGCharts/Core (= 5.1.0)
+  - DGCharts/Core (5.1.0)
   - Firebase/AnalyticsWithoutAdIdSupport (11.2.0):
     - Firebase/CoreOnly
     - FirebaseAnalytics/WithoutAdIdSupport (~> 11.2.0)
@@ -75,11 +74,10 @@ PODS:
   - RealmSwift (10.42.4):
     - Realm (= 10.42.4)
   - SimpleAnimation (0.4.2)
-  - SwiftAlgorithms (1.0.0)
 
 DEPENDENCIES:
   - ActiveLabel (~> 1.1.0)
-  - Charts (~> 4.1.0)
+  - DGCharts (~> 5.1.0)
   - Firebase/AnalyticsWithoutAdIdSupport
   - FSCalendar (~> 2.8.4)
   - RealmSwift (~> 10.42.4)
@@ -88,7 +86,7 @@ DEPENDENCIES:
 SPEC REPOS:
   https://github.com/CocoaPods/Specs.git:
     - ActiveLabel
-    - Charts
+    - DGCharts
     - Firebase
     - FirebaseAnalytics
     - FirebaseCore
@@ -102,11 +100,10 @@ SPEC REPOS:
     - Realm
     - RealmSwift
     - SimpleAnimation
-    - SwiftAlgorithms
 
 SPEC CHECKSUMS:
   ActiveLabel: 5e3f4de79a1952d4604b845a0610d4776e4b82b3
-  Charts: ce0768268078eee0336f122c3c4ca248e4e204c5
+  DGCharts: 1c6daf585b6cfc78807af44ea690d357c410627f
   Firebase: 98e6bf5278170668a7983e12971a66b2cd57fc8c
   FirebaseAnalytics: c36efd5710c60c17558650fa58c2066eca7e9265
   FirebaseCore: a282032ae9295c795714ded2ec9c522fc237f8da
@@ -120,8 +117,7 @@ SPEC CHECKSUMS:
   Realm: a3a10c2110744ec9510a5fc21a6051818c6181c7
   RealmSwift: d25fa6c3cbb722a698993a501206d9841d79ca32
   SimpleAnimation: 5430010b9548f392e7459290acce01c9ceba7171
-  SwiftAlgorithms: 38dda4731d19027fdeee1125f973111bf3386b53
 
-PODFILE CHECKSUM: cee73cfbc82de56a4d1f61cde0072216367f2b9a
+PODFILE CHECKSUM: 2129f382325bbf01f833fc4829e47127bc762054
 
 COCOAPODS: 1.15.2

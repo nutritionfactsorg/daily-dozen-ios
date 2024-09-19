@@ -6,7 +6,7 @@
 //
 
 import UIKit
-import Charts
+import DGCharts
 
 /// Historic record of daily checkbox tally.
 class WeightHistoryViewController: UIViewController {

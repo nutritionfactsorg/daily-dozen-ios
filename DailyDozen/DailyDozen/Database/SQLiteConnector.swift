@@ -396,7 +396,7 @@ struct SQLiteConnector {
         logit.verbose("""
         outUrl: \(outUrl.absoluteString)
         content: 
-        \(content)
+        \(content.append(":NYI:"))
         """)
     }
     

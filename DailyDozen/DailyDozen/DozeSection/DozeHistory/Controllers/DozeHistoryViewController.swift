@@ -7,7 +7,7 @@
 //
 
 import UIKit
-import Charts
+import DGCharts
 import RealmSwift
 
 // MARK: - Nested

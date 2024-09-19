@@ -6,7 +6,7 @@
 //
 
 import Foundation
-import Charts
+import DGCharts
 
 extension ChartDataEntry {
     func toStringXY() -> String {
