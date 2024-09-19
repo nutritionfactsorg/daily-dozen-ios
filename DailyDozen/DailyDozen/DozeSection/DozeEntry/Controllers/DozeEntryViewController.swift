@@ -109,13 +109,6 @@ class DozeEntryViewController: UIViewController {
         navigationController?.pushViewController(viewController, animated: true)
     }
     
-    // Function to segue to SwiftUI View
-    //@IBSegueAction func embedSwiftUIView(_ coder: NSCoder) -> UIViewController? {
-    //    print("•• segue")
-    //    // :GTD:  Change to false in production version
-    //    return UIHostingController(coder: coder, rootView: DozeEventCalendarView().environmentObject(DozeEventStore(preview: true)))
-    //}
-    
     /// DozeEntryRow itemCalendarButton
     @IBAction private func dozeCalendarPressed(_ sender: UIButton) {
         let itemHeading: String = dataProvider.viewModel

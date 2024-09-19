@@ -16,7 +16,6 @@ struct GetDataForCalendar {
     /// Singleton: GetDataForCalendar // :GTD: change to instance approach?
     static var doit = GetDataForCalendar()
     
-    // @ObservedObject var eventStore: DozeEventStore
     var date = Date()
     let realm = RealmProvider.primary
     
