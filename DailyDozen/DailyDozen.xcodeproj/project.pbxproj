@@ -1465,7 +1465,7 @@
 			attributes = {
 				BuildIndependentTargetsInParallel = YES;
 				LastSwiftUpdateCheck = 1120;
-				LastUpgradeCheck = 1530;
+				LastUpgradeCheck = 1600;
 				ORGANIZATIONNAME = Nutritionfacts.org;
 				TargetAttributes = {
 					498A2275237CD81F007AF5FB = {

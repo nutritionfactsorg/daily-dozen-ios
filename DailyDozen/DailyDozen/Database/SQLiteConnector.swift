@@ -81,7 +81,7 @@ struct SQLiteConnector {
     
     func exportData() {
         logit.info("SQLiteConnector Utility exportData()") // :GTD:NYI: activity
-        csvExport(marker: "DB02_Utility_Data", activity: nil)
+        _ = csvExport(marker: "DB02_Utility_Data", activity: nil)
     }
     
     func importData() {
@@ -392,6 +392,12 @@ struct SQLiteConnector {
         //        "FAIL RealmManager csvExport \(error) path:'\(outUrl.path)'"
         //    )
         //}
+        
+        logit.verbose("""
+        outUrl: \(outUrl.absoluteString)
+        content: 
+        \(content)
+        """)
     }
     
     // MARK: - Built In Test (BIT) Connection

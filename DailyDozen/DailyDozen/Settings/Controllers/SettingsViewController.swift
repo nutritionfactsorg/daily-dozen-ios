@@ -660,6 +660,12 @@ class SettingsViewController: UITableViewController {
         }
         
         // •!•!•!
+        logit.debug("""
+                dbUrl: \(dbUrl.absoluteString)
+             dbFnmUrl: \(dbFnmUrl.absoluteString)
+             dbTmpUrl: \(dbTmpUrl.absoluteString)
+        """)
+        
     }
     
     @IBAction func doTweaksVisibilityChanged(_ sender: UISegmentedControl) {
