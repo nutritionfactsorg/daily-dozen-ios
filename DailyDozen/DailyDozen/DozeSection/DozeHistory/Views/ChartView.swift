@@ -43,7 +43,7 @@ class ChartView: CombinedChartView {
         xAxis.labelFont = UIFont.fontSystem17.withSize(12)
     }
 
-    func configure(with map: [Int], for scale: TimeScale, label: String) {
+    func configure(with map: [Int], for scale: ChartTimeScale, label: String) {
         let data = CombinedChartData()
         if scale == .day {
             data.barData = generateBarData(for: map, label: label)

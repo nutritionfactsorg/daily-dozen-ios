@@ -10,22 +10,6 @@ import UIKit
 import DGCharts
 import RealmSwift
 
-// MARK: - Nested
-enum TimeScale: Int {
-    case day, month, year
-    
-    func toString() -> String {
-        switch self {
-        case .day:
-            return "day"
-        case .month:
-            return "day"
-        case .year:
-            return "year"
-        }
-    }
-}
-
 /// Historic record of daily checkbox tally.
 class DozeHistoryViewController: UIViewController {
 
@@ -51,7 +35,7 @@ class DozeHistoryViewController: UIViewController {
     
     // MARK: - Properties
     private var viewModel: DozeHistoryViewModel!
-    private var currentTimeScale = TimeScale.day
+    private var currentTimeScale = ChartTimeScale.day
 
     private var chartSettings: (year: Int, month: Int)! {
         didSet {
@@ -167,7 +151,7 @@ class DozeHistoryViewController: UIViewController {
     }
 
     @IBAction private func timeScaleChanged(_ sender: UISegmentedControl) {
-        guard let timeScale = TimeScale(rawValue: sender.selectedSegmentIndex) else { return }
+        guard let timeScale = ChartTimeScale(rawValue: sender.selectedSegmentIndex) else { return }
         currentTimeScale = timeScale
 
         switch currentTimeScale {

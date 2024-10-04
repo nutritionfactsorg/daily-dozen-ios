@@ -134,6 +134,7 @@
 		4C7D52FF2A3B9C3D00386832 /* InfoFaqHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C7D52FE2A3B9C3D00386832 /* InfoFaqHeaderView.swift */; };
 		4C7E17052A987F3B00A515F9 /* SKStoreReviewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C7E17042A987F3B00A515F9 /* SKStoreReviewController.swift */; };
 		4C88DC332B69DE3C00BF972B /* GoogleService in Resources */ = {isa = PBXBuildFile; fileRef = 4C88DC322B69DE3C00BF972B /* GoogleService */; };
+		4C9E9C1E2CAFA087008E2467 /* ChartTimeScale.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C9E9C1D2CAFA087008E2467 /* ChartTimeScale.swift */; };
 		4C9F25202BF72B9000627ABB /* EventCalendarFooterView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C9F25182BF72B9000627ABB /* EventCalendarFooterView.swift */; };
 		4C9F25222BF72B9000627ABB /* Event.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C9F251A2BF72B9000627ABB /* Event.swift */; };
 		4C9F25262BF72B9000627ABB /* Extras.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C9F251E2BF72B9000627ABB /* Extras.swift */; };
@@ -420,6 +421,7 @@
 		4C98FFD929143A3D00E92B66 /* cs */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = cs; path = cs.lproj/Localizable.strings; sourceTree = "<group>"; };
 		4C98FFDA29143A3E00E92B66 /* cs */ = {isa = PBXFileReference; lastKnownFileType = text.json; name = cs; path = cs.lproj/DozeDetailData.json; sourceTree = "<group>"; };
 		4C98FFDB29143A3F00E92B66 /* cs */ = {isa = PBXFileReference; lastKnownFileType = text.json; name = cs; path = cs.lproj/TweakDetailData.json; sourceTree = "<group>"; };
+		4C9E9C1D2CAFA087008E2467 /* ChartTimeScale.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChartTimeScale.swift; sourceTree = "<group>"; };
 		4C9F25182BF72B9000627ABB /* EventCalendarFooterView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EventCalendarFooterView.swift; sourceTree = "<group>"; };
 		4C9F251A2BF72B9000627ABB /* Event.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Event.swift; sourceTree = "<group>"; };
 		4C9F251E2BF72B9000627ABB /* Extras.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Extras.swift; sourceTree = "<group>"; };
@@ -1330,6 +1332,7 @@
 		CFE698511F974F1800CD7905 /* SupportingFiles */ = {
 			isa = PBXGroup;
 			children = (
+				4C9E9C1D2CAFA087008E2467 /* ChartTimeScale.swift */,
 				4C7695982B3D58C600FE3768 /* ExerciseGamut.swift */,
 				4C4CF1F82B6C0AC800C776DE /* GoogleAnalyticsHelper.swift */,
 				4C88DC322B69DE3C00BF972B /* GoogleService */,
@@ -1765,6 +1768,7 @@
 				49088F452654C9B600C8CC91 /* ColorManager.swift in Sources */,
 				4C9F25262BF72B9000627ABB /* Extras.swift in Sources */,
 				4C9F25222BF72B9000627ABB /* Event.swift in Sources */,
+				4C9E9C1E2CAFA087008E2467 /* ChartTimeScale.swift in Sources */,
 				CFC4A8541F9776A500B5AC75 /* DozeEntryViewController.swift in Sources */,
 				4981709D2391B89E0033882C /* TweakHistoryViewModel.swift in Sources */,
 				4916451823EE4E440077731D /* TweakDetailViewController.swift in Sources */,

@@ -34,7 +34,7 @@ class WeightHistoryViewController: UIViewController {
     
     // MARK: - Properties
     private var weightViewModel: WeightHistoryViewModel!
-    private var currentTimeScale = TimeScale.day
+    private var currentTimeScale = ChartTimeScale.day
     private let realm = RealmProvider.primary
 
     private var chartSettings: (year: Int, month: Int)! {
@@ -185,7 +185,7 @@ class WeightHistoryViewController: UIViewController {
         lineChartView.xAxis.avoidFirstLastClippingEnabled = true
     }
     
-    func updateChart(points: [DailyWeightReport], scale: TimeScale) {
+    func updateChart(points: [DailyWeightReport], scale: ChartTimeScale) {
         
         guard 
             let firstDatestampKey = points.first?.anyDate.datestampKey,
@@ -315,7 +315,7 @@ class WeightHistoryViewController: UIViewController {
     }
 
     @IBAction private func timeScaleChanged(_ sender: UISegmentedControl) {
-        guard let timeScale = TimeScale(rawValue: sender.selectedSegmentIndex) else { return }
+        guard let timeScale = ChartTimeScale(rawValue: sender.selectedSegmentIndex) else { return }
         currentTimeScale = timeScale
 
         switch currentTimeScale {

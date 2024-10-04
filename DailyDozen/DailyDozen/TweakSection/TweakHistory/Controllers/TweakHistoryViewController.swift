@@ -9,11 +9,6 @@ import UIKit
 import DGCharts
 import RealmSwift
 
-// MARK: - Nested
-//enum TimeScale: Int {
-//    case day, month, year
-//}
-
 /// Historic record of daily checkbox tally.
 class TweakHistoryViewController: UIViewController {
 
@@ -39,7 +34,7 @@ class TweakHistoryViewController: UIViewController {
     
     // MARK: - Properties
     private var viewModel: TweakHistoryViewModel!
-    private var currentTimeScale = TimeScale.day
+    private var currentTimeScale = ChartTimeScale.day
 
     private var chartSettings: (year: Int, month: Int)! {
         didSet {
@@ -152,7 +147,7 @@ class TweakHistoryViewController: UIViewController {
     }
 
     @IBAction private func timeScaleChanged(_ sender: UISegmentedControl) {
-        guard let timeScale = TimeScale(rawValue: sender.selectedSegmentIndex) else { return }
+        guard let timeScale = ChartTimeScale(rawValue: sender.selectedSegmentIndex) else { return }
         currentTimeScale = timeScale
 
         switch currentTimeScale {
