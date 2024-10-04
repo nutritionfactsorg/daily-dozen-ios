@@ -4,7 +4,9 @@
 
 - <https://cocoapods.org/pods/ActiveLabel>
 - <https://github.com/optonaut/ActiveLabel.swift>
-- Language: Swift 5.0
+- Language:
+    - Swift 5.0
+    - **BLOCKING: Error blocks Swift 6.0 compile.**
 - Swift Package Manager: 4.2
 - Version: `1.1.5` (2020.11)
 - Warnings: Using 'class' keyword to define a class-constrained protocol is deprecated; use 'AnyObject' instead
@@ -13,20 +15,22 @@ The `ActiveLabel` library, as used in the DailyDozen, can potentially be replace
 
 _The `ActiveLabel` library project has not been kept current with the progression of the Swift platform._
 
-**Charts**
+**DGCharts**
 
-- <https://cocoapods.org/pods/Charts>
-    - <https://cocoapods.org/pods/DGCharts>
+- DGCarts <https://cocoapods.org/pods/DGCharts>
+- **25 issues. deprecations since iOS 13.0**
 - <https://github.com/danielgindi/Charts>
     - <https://github.com/ChartsOrg/Charts>
-    - <https://github.com/ChartsOrg/Charts/releases/tag/5.0.0>
     - <https://github.com/ChartsOrg/Charts/releases/tag/5.1.0>
 - Language: Swift 5 (84%), ObjC (16%)
 - Swift Package Manager: 5.1
-- Version: `4.1.0` (2022.09.12 in use), `5.1.0` (2024.02.15)
+- Version: `5.1.0` (2024.02.15)
     - deprecated: DanielGindi `Charts` 
     - renamed DanielGindi `Charts` to `DGCharts` due to namespace conflict with SwiftUI `Charts`
     - `DGCharts` (5.1.0, 2024.02.15) has breaking changes when migrating from DanielGindi `Charts`
+
+**Swift Charts**
+
 - [Swift Charts](https://developer.apple.com/documentation/charts)
 
 **FSCalendar**
