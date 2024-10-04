@@ -24,15 +24,15 @@ class InfoMenuAboutTableVC: UITableViewController {
     }
 
     // MARK: - Nested
-    private struct Regex {
-        static let bookHowNotToDie = "\\sHow Not to Die\\b"
-        static let bookHowNotToDiet = "\\sHow Not to Diet\\b"
-        static let site = "\\sNutritionFacts.org\\b"
-        static let christi = "\\sChristi Richards\\b"
-        static let const = "\\sKonstantin Khokhlov\\b"
-        static let marc = "\\sMarc Campbell\\b"
-        static let elements = "\\sSketch Elements\\b"
-    }
+//    private struct Regex {
+//        static let bookHowNotToDie = "\\sHow Not to Die\\b"
+//        static let bookHowNotToDiet = "\\sHow Not to Diet\\b"
+//        static let site = "\\sNutritionFacts.org\\b"
+//        static let christi = "\\sChristi Richards\\b"
+//        static let const = "\\sKonstantin Khokhlov\\b"
+//        static let marc = "\\sMarc Campbell\\b"
+//        static let elements = "\\sSketch Elements\\b"
+//    }
 
     // MARK: - Outlets
     
