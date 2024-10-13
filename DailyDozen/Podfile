@@ -14,7 +14,6 @@ target 'DailyDozen' do
   use_frameworks!
 
   ### Pods for DailyDozen
-  pod 'ActiveLabel', '~> 1.1.0'
   ##pod 'Charts', '~> 4.1.0'
   pod 'DGCharts', '~> 5.1.0'
   pod 'FSCalendar', '~> 2.8.4'
@@ -57,7 +56,6 @@ target 'DailyDozen' do
   ## Updating local specs repositories
   ## Analyzing dependencies
   ## Downloading dependencies
-  ## Installing ActiveLabel 1.1.0
   ## Installing Charts 4.1.0
   ## Installing FSCalendar 2.8.4
   ## Installing Firebase 10.11.0
