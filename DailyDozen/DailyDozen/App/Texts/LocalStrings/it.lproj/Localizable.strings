@@ -200,7 +200,7 @@
 "info_app_about_heading" = "Informazioni sull'app";
 
 /* Info About View: Open Source Credits */
-"info_app_about_oss_credits" = "Sono state usate le seguenti librerie open source: RealmSwift, Charts, FSCalendar, SimpleAnimation, ActiveLabel.";
+"info_app_about_oss_credits" = "Sono state usate le seguenti librerie open source: RealmSwift, Charts, FSCalendar, SimpleAnimation.";
 
 /* Info About View: Overview Text */
 "info_app_about_overview" = "Utilizza questa applicazione giornalmente per tenere traccia degli alimenti e dei miei consigli per una salute ottimale e una vita longeva tratti dai miei libri “Sei quel che mangi” e “Contro le diete”.";

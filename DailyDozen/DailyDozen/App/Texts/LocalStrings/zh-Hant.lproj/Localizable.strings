@@ -200,7 +200,7 @@
 "info_app_about_heading" = "關於本應用程序";
 
 /* Info About View: Open Source Credits */
-"info_app_about_oss_credits" = "使用了以下的開放資源：RealmSwift、Charts、FSCalendar、SimpleAnimation、ActiveLabel";
+"info_app_about_oss_credits" = "使用了以下的開放資源：RealmSwift、Charts、FSCalendar、SimpleAnimation";
 
 /* Info About View: Overview Text */
 "info_app_about_overview" = "我在《食療聖經》中推薦了能夠讓您健康長壽的食物，請每天使用這個應用程序來記錄與追蹤您對這些食物的攝取量。";

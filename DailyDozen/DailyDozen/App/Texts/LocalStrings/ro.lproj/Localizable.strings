@@ -200,7 +200,7 @@
 "info_app_about_heading" = "Despre această aplicație";
 
 /* Info About View: Open Source Credits */
-"info_app_about_oss_credits" = "S-au folosit următoarele librării open source: RealmSwift, Charts, FSCalendar, SimpleAnimation, ActiveLabel.";
+"info_app_about_oss_credits" = "S-au folosit următoarele librării open source: RealmSwift, Charts, FSCalendar, SimpleAnimation.";
 
 /* Info About View: Overview Text */
 "info_app_about_overview" = "Utilizați această aplicație zilnic pentru a urmări alimentele și sfaturile pe care le recomand pentru o sănătate optimă și longevitate în cărțile mele „Cum să nu mori” și „Cum să nu ții o dietă”.";

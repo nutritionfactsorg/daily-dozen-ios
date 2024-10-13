@@ -200,7 +200,7 @@
 "info_app_about_heading" = "关于本应用程序";
 
 /* Info About View: Open Source Credits */
-"info_app_about_oss_credits" = "使用了以下的开放资源：RealmSwift、Charts、FSCalendar、SimpleAnimation、ActiveLabel";
+"info_app_about_oss_credits" = "使用了以下的开放资源：RealmSwift、Charts、FSCalendar、SimpleAnimation";
 
 /* Info About View: Overview Text */
 "info_app_about_overview" = "我在《救命》中推荐了能够让您健康长寿的食物，请每天使用这个应用程序来记录与追踪您对这些食物的摄取量。";

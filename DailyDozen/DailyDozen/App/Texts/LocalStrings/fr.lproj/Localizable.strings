@@ -200,7 +200,7 @@
 "info_app_about_heading" = "À propos de cette app";
 
 /* Info About View: Open Source Credits */
-"info_app_about_oss_credits" = "Librairies open source utilisées : RealmSwift, Charts, FSCalendar, SimpleAnimation, ActiveLabel.";
+"info_app_about_oss_credits" = "Librairies open source utilisées : RealmSwift, Charts, FSCalendar, SimpleAnimation.";
 
 /* Info About View: Overview Text */
 "info_app_about_overview" = "Utilisez cette app tous les jours pour suivre les aliments que je recommande pour une santé et une longévité optimales dans mes livres 'Comment ne pas mourir' et 'Comment ne pas faire de régime.'";

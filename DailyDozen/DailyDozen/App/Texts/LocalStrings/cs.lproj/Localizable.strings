@@ -200,7 +200,7 @@
 "info_app_about_heading" = "O této aplikaci";
 
 /* Info About View: Open Source Credits */
-"info_app_about_oss_credits" = "Aplikace používá následující open source knihovny: RealmSwift, Charts, FSCalendar, SimpleAnimation, ActiveLabel.";
+"info_app_about_oss_credits" = "Aplikace používá následující open source knihovny: RealmSwift, Charts, FSCalendar, SimpleAnimation.";
 
 /* Info About View: Overview Text */
 "info_app_about_overview" = "Tato aplikace je určena k dennímu zaznamenávání jídel a sledování doporučení pro optimální zdraví a dlouhověkost, která uvádím ve svých knihách Jak nezemřít a Jak nedietovat.";

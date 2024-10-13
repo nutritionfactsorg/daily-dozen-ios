@@ -200,7 +200,7 @@
 "info_app_about_heading" = "Sobre aquesta app";
 
 /* Info About View: Open Source Credits */
-"info_app_about_oss_credits" = "S'utilitzen les següents biblioteques de codi obert: RealmSwift, Charts, FSCalendar, SimpleAnimation, ActiveLabel.";
+"info_app_about_oss_credits" = "S'utilitzen les següents biblioteques de codi obert: RealmSwift, Charts, FSCalendar, SimpleAnimation.";
 
 /* Info About View: Overview Text */
 "info_app_about_overview" = "Utilitza aquesta app cada dia per fer un seguiment dels aliments i els consells que dono per una salut i longevitat òptimes als meus llibres How Not to Die i How Not to Diet.";

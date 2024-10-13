@@ -200,7 +200,7 @@
 "info_app_about_heading" = "Про цей застосунок";
 
 /* Info About View: Open Source Credits */
-"info_app_about_oss_credits" = "Застосунок використовує наступні бібліотеки з відкритим кодом: RealmSwift, Charts, FSCalendar, SimpleAnimation, ActiveLabel.";
+"info_app_about_oss_credits" = "Застосунок використовує наступні бібліотеки з відкритим кодом: RealmSwift, Charts, FSCalendar, SimpleAnimation.";
 
 /* Info About View: Overview Text */
 "info_app_about_overview" = "Використовуй цей застосунок щодня, щоб відслідковувати продукти харчування та слідувати рекомендаціям для міцного здоров'я та довголіття із моїх книг “Як не померти передчасно” та “How Not to diet (Як не сидіти на дієті)”";

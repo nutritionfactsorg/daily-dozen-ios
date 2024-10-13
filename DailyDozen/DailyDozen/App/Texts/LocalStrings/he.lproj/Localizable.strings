@@ -203,7 +203,7 @@
 "info_app_about_heading" = "בקשר לאפליקציה זו";
 
 /* Info About View: Open Source Credits */
-"info_app_about_oss_credits" = "נעשה שימוש בספריות הקוד הפתוח הבאות: RealmSwift, Charts,, FSCalendar, SimpleAnimation, ActiveLabel.";
+"info_app_about_oss_credits" = "נעשה שימוש בספריות הקוד הפתוח הבאות: RealmSwift, Charts,, FSCalendar, SimpleAnimation.";
 
 /* Info Menu About: line 1 */
 "info_app_about_overview" = "השתמשו באפליקציה זו על בסיס יומי כדי לעקוב אחר המזונות והעצות שאני ממליץ עליהם לבריאות ואריכות ימים בצורה אופטימלית בספרים שלי \"איך לא למות\" ו\"איך לא לעשות דיאטה\".";

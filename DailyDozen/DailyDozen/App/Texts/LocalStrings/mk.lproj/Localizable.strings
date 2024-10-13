@@ -200,7 +200,7 @@
 "info_app_about_heading" = "За оваа апликација";
 
 /* Info About View: Open Source Credits */
-"info_app_about_oss_credits" = "The following open source libraries are used: RealmSwift, Charts, FSCalendar, SimpleAnimation, ActiveLabel.";
+"info_app_about_oss_credits" = "The following open source libraries are used: RealmSwift, Charts, FSCalendar, SimpleAnimation.";
 
 /* Info About View: Overview Text */
 "info_app_about_overview" = "Користете ја оваа апликација секојдневно за да водите евиденција за храната што ја препорачувам за оптимално здравје и долговечност во мојата книга „How not to die“.";

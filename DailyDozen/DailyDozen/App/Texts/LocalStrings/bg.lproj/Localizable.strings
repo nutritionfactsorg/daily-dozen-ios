@@ -200,7 +200,7 @@
 "info_app_about_heading" = "Информация за приложението";
 
 /* Info About View: Open Source Credits */
-"info_app_about_oss_credits" = "Използват се следните библиотеки с отворен код: RealmSwift, Charts, FSCalendar, SimpleAnimation, ActiveLabel.";
+"info_app_about_oss_credits" = "Използват се следните библиотеки с отворен код: RealmSwift, Charts, FSCalendar, SimpleAnimation.";
 
 /* Info About View: Overview Text */
 "info_app_about_overview" = "Използвайте това приложение на дневна база, за да следите храните, които аз препоръчвам за оптимално здраве и дълголетие в книгата си „Как да не умрем“.";
