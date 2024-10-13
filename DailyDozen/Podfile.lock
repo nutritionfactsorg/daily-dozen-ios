@@ -1,5 +1,4 @@
 PODS:
-  - ActiveLabel (1.1.0)
   - DGCharts (5.1.0):
     - DGCharts/Core (= 5.1.0)
   - DGCharts/Core (5.1.0)
@@ -76,7 +75,6 @@ PODS:
   - SimpleAnimation (0.4.2)
 
 DEPENDENCIES:
-  - ActiveLabel (~> 1.1.0)
   - DGCharts (~> 5.1.0)
   - Firebase/AnalyticsWithoutAdIdSupport
   - FSCalendar (~> 2.8.4)
@@ -85,7 +83,6 @@ DEPENDENCIES:
 
 SPEC REPOS:
   https://github.com/CocoaPods/Specs.git:
-    - ActiveLabel
     - DGCharts
     - Firebase
     - FirebaseAnalytics
@@ -102,7 +99,6 @@ SPEC REPOS:
     - SimpleAnimation
 
 SPEC CHECKSUMS:
-  ActiveLabel: 5e3f4de79a1952d4604b845a0610d4776e4b82b3
   DGCharts: 1c6daf585b6cfc78807af44ea690d357c410627f
   Firebase: 5c575140761e22324806f401e38c483d58db2dec
   FirebaseAnalytics: ce1593872635a5ebd715d0d3937fab195991ecc9
@@ -118,6 +114,6 @@ SPEC CHECKSUMS:
   RealmSwift: d25fa6c3cbb722a698993a501206d9841d79ca32
   SimpleAnimation: 5430010b9548f392e7459290acce01c9ceba7171
 
-PODFILE CHECKSUM: 2129f382325bbf01f833fc4829e47127bc762054
+PODFILE CHECKSUM: 39595c3612572d0067272c56f3f32035ea2a57cc
 
 COCOAPODS: 1.15.2
