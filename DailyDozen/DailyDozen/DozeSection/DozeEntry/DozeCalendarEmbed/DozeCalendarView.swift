@@ -55,7 +55,7 @@ struct DozeCalendarView: UIViewRepresentable {
 
 /// Delegate: Calendar Date Decoration
 @available(iOS 16.0, *)
-class DozeEventCalendar2Coordinator: NSObject, UICalendarViewDelegate {
+class DozeEventCalendar2Coordinator: NSObject, @preconcurrency UICalendarViewDelegate {
     var parent: DozeCalendarView
     var itemType: DataCountType
     

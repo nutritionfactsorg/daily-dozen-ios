@@ -55,7 +55,7 @@ struct TweakCalendarView: UIViewRepresentable {
 
 /// Delegate: Calendar Date Decoration
 @available(iOS 16.0, *)
-class TweakEventCalendar2Coordinator: NSObject, UICalendarViewDelegate {
+class TweakEventCalendar2Coordinator: NSObject, @preconcurrency UICalendarViewDelegate {
     var parent: TweakCalendarView
     var itemType: DataCountType
     
