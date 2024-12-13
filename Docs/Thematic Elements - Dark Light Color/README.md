@@ -10,33 +10,8 @@ The purples assets are used find the hard coded elements which needed to be gene
 
 | BrandGreen | hexadecimal | Red, Green, Blue     | Color     |
 |------------|:-----------:|:--------------------:|:---------:|
-| Develop    |  `#694cc0`  | `(105, 76, 192)`  | ![](README_files/color_BrandGreen_develop.png) |
-| Release    |  `#7fc04c`  | `(127, 192, 76)`  | ![](README_files/color_BrandGreen_release.png) |
-
-<table>
-  <thead>
-    <tr>
-      <th>BrandGreen</th>
-      <th>hexadecimal</th>
-      <th>Red, Green, Blue</th>
-      <th>Color</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <td>Develop</td>
-      <td>`#694cc0`</td>
-      <td>`rgb(105, 76, 192)`</td>
-      <td>![][cBGdev]</td>
-    </tr>
-    <tr>
-      <td>Release</td>
-      <td>`#7fc04c`</td>
-      <td>`rgb(127, 192, 76)`</td>
-      <td>![](README_files/color_BrandGreen_release.png)</td>
-    </tr>
-  </tbody>
-</table>
+| Develop    |  `#694cc0`  | `rgb(105, 76, 192)`  | ![cBGdev][] |
+| Release    |  `#7fc04c`  | `rgb(127, 192, 76)`  | ![cBGrel][] |
 
 ``` swift
 UIColor(red: 127/255, green: 192/255, blue: 76/255, alpha: 1)
