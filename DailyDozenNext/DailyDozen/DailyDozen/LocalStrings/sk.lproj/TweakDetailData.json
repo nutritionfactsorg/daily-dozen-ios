@@ -1,0 +1,193 @@
+{
+  "itemsDict" : {
+    "tweakCompleteIntentions" : {
+      "activity" : {
+        "imperial" : "Dokončujte svoje implementačné zámery",
+        "metric" : "Dokončujte svoje implementačné zámery"
+      },
+      "explanation" : "Každé dva mesiace vytvorte tri nové implementačné zámery – plány „keď X, potom Y“ na vykonanie konkrétneho správania v konkrétnom kontexte – a každý z nich zaškrtnite, keď ich každý deň dokončíte.",
+      "heading" : "Dokončite svoje implementačné zámery",
+      "topic" : ""
+    },
+    "tweakDailyBlackCumin" : {
+      "activity" : {
+        "imperial" : "Čierna rasca (Nigella sativa) (¼ lyžičky)",
+        "metric" : "Čierna rasca (Nigella sativa) (¼ lyžičky)"
+      },
+      "explanation" : "Ako je uvedené v časti Potlačenie chuti do jedla, systematický prehľad a metaanalýza randomizovaných, kontrolovaných štúdií chudnutia zistila, že asi štvrtina čajovej lyžičky prášku z čiernej rasce každý deň znižuje index telesnej hmotnosti počas niekoľkých mesiacov. Všimnite si, že čierna rasca sa líši od bežnej rasce, u ktorej sa líši dávkovanie.",
+      "heading" : "Čierna rasca (¼ lyžičky)",
+      "topic" : ""
+    },
+    "tweakDailyCumin" : {
+      "activity" : {
+        "imperial" : "Rímska rasca (Cuminum cyminum) (½ lyžičky s obedom a večerou)",
+        "metric" : "Rímska rasca (Cuminum cyminum) (½ lyžičky s obedom a večerou)"
+      },
+      "explanation" : "Ženy s nadváhou náhodne vybrané do skupiny, ktorá si na obed a večeru dávala navyše pol lyžičky rímskej rasce, schudli oproti kontrolnej skupine o 4 kilá a 2,5 cm v páse viac. Existujú tiež dôkazy ohľadom rovnakej účinnosti šafranu (korenia), toho by ale štipka denne stála viacej eur, zatiaľ čo lyžička rímskej rasce stojí niekoľko centov.",
+      "heading" : "Rímsky kmin (½ lyžičky s obedom a večerou)",
+      "topic" : ""
+    },
+    "tweakDailyDeflourDiet" : {
+      "activity" : {
+        "imperial" : "Zbavte sa múky",
+        "metric" : "Zbavte sa múky"
+      },
+      "explanation" : "Začiarknite toto políčko každý deň, keď jete celozrnné porcie vo forme neporušených zŕn. Rozdrvenie dokonca aj stopercentne celých zŕn pripravuje naše mikrobiomy o škrob, ktorý by inak bol doručený do hrubého čreva uzavretý do neporušených bunkových stien.",
+      "heading" : "Zbavte sa múky",
+      "topic" : ""
+    },
+    "tweakDailyFrontLoad" : {
+      "activity" : {
+        "imperial" : "Jedzte viac v prvej polovici dňa",
+        "metric" : "Jedzte viac v prvej polovici dňa"
+      },
+      "explanation" : "Rozloženie príjmu väčšieho množstva kalórií do skoršej časti dňa má metabolické výhody, preto si z (ideálne) raňajok, alebo obeda urobte najväčšie jedlo dňa, v súlade s princípom kráľ/princ/chudák.",
+      "heading" : "Jedzte viac v prvej polovici dňa",
+      "topic" : ""
+    },
+    "tweakDailyGarlic" : {
+      "activity" : {
+        "imperial" : "Cesnakový prášok (¼ lyžičky)",
+        "metric" : "Cesnakový prášok (¼ lyžičky)"
+      },
+      "explanation" : "Randomizované, dvojito zaslepené, placebom kontrolované štúdie zistili, že len štvrť čajovej lyžičky cesnakového prášku denne môže znížiť telesný tuk za cenu pár centov denne.",
+      "heading" : "Cesnakový prášok (¼ lyžičky)",
+      "topic" : ""
+    },
+    "tweakDailyGinger" : {
+      "activity" : {
+        "imperial" : "Mletý zázvor (1 lyžička) alebo kajenské korenie (½ lyžičky)",
+        "metric" : "Mletý zázvor (1 lyžička) alebo kajenské korenie (½ lyžičky)"
+      },
+      "explanation" : "Randomizované kontrolované štúdie zistili, že ¼ lyžičky až 1½ lyžičky mletého zázvoru denne významne znižuje telesnú hmotnosť, za cenu iba halierov. Je to také jednoduché, ako zamiešať lyžičku mletého korenia do šálky horúcej vody. Poznámka: zázvor môže lepšie pôsobiť ráno než večer. Čaj Chai je chutný spôsob, ako spojiť trik s korením a trik so zeleným čajom do jediného nápoja. Alternatívne, pre aktiváciu BAT, môžete do svojej každodennej stravy pridať jednu surovú jalapeño papričku, alebo pol lyžičky prášku z červenej papriky (prípadne aj nadrvené paprikové vločky). Pre zníženie pálivosti je možné jalapeno nakrájať na veľmi tenké plátky, alebo nadrobno nasekať – to zredukuje pálenie na jemné škrabanie – alebo vmiešajte papriku do „celého jedla vo forme zeleninového smoothie“, ktoré uvádzam v jednom zo svojich videí o varení na stránkach NutritionFacts.",
+      "heading" : "Mletý zázvor (1 lyžička) alebo kajenské korenie (½ lyžičky)",
+      "topic" : ""
+    },
+    "tweakDailyGreenTea" : {
+      "activity" : {
+        "imperial" : "Zelený čaj (3 šálky)",
+        "metric" : "Zelený čaj (3 šálky)"
+      },
+      "explanation" : "Pite tri šálky denne medzi jedlami (počkajte aspoň hodinu po jedle, aby ste nenarušili vstrebávanie železa). Počas jedla pite vodu alebo ibištekový čaj zmiešaný v pomere 6:1 s citrónovou verbenou, ale nikdy neprekračujte tri šálky tekutiny za hodinu (dôležité vzhľadom na moju radu ohľadom predbežného naplnenia vodou). Využite posilňujúci účinok kofeínu tým, že budete piť svoj zelený čaj spolu s niečím zdravým, čo si prajete, aby vám chutilo viac, ale nekonzumujte veľké množstvo kofeínu šesť hodín pred spaním. Najlepšie je piť čaj bez sladidla, ale pokiaľ si čaj obvykle zladíte medom alebo cukrom, skúste namiesto toho akonový sirup.",
+      "heading" : "Zelený čaj (3 šálky)",
+      "topic" : ""
+    },
+    "tweakDailyHydrate" : {
+      "activity" : {
+        "imperial" : "Zostaňte hydratovaní",
+        "metric" : "Zostaňte hydratovaní"
+      },
+      "explanation" : "Toto políčko zaskrtnite, ak sa váš moč nikdy nejaví tmavší, než svetlo žltý. \n\nPoznámka: ak jete potraviny obohatené riboflavínom (napríklad nutričné ​​droždie), riaďte sa namiesto toho tým, či ste za deň vypili deväť šálok (pre ženy), alebo trinásť šálok (pre mužov) nesladených nápojov (to by malo byť pokryté odporúčaniami pre zelený čaj a predbežné naplnenie vodou). \n\nAk trpíte problémami so srdcom alebo obličkami, nezvyšujte príjem tekutín bez toho, aby ste sa predtým poradili so svojím lekárom. \n\nPamätajte, že light/diétne sýtené nápoje môžu byť bez kalórií, ale nie sú bez následkov, ako sme sa dozvedeli v sekcii Nízky obsah pridaného cukru.",
+      "heading" : "Zostaňte hydratovaní",
+      "topic" : ""
+    },
+    "tweakDailyNutriYeast" : {
+      "activity" : {
+        "imperial" : "Lahôdkové droždie (2 lyžičky)",
+        "metric" : "Lahôdkové droždie (2 lyžičky)"
+      },
+      "explanation" : "Dve čajové lyžičky pekárskeho, pivovarského alebo lahôdkového droždia obsahujú zhruba také množstvo beta 1,3/1,6 glukánov, aké bolo nájdené v randomizovaných, dvojito zaslepených, placebom kontrolovaných klinických štúdiách na uľahčenie chudnutia.",
+      "heading" : "Lahôdkové droždie (2 lyžičky)",
+      "topic" : ""
+    },
+    "tweakDailyTimeRestrict" : {
+      "activity" : {
+        "imperial" : "Vymedzte si čas na jedlo",
+        "metric" : "Vymedzte si čas na jedlo"
+      },
+      "explanation" : "Vymedzte si pre jedenie denné časové okno, nie dlhšie ako 12 hodín, ktoré môžete dôsledne dodržiavať sedem dní v týždni. Vzhľadom na cirkadiánne výhody večerného zníženia príjmu potravy by okno malo skončiť pred 19:00.",
+      "heading" : "Vymedzte si čas na jedlo",
+      "topic" : ""
+    },
+    "tweakExerciseTiming" : {
+      "activity" : {
+        "imperial" : "Optimalizujte načasovanie pohybu",
+        "metric" : "Optimalizujte načasovanie pohybu"
+      },
+      "explanation" : "Denná Dvanástka odporúča ako optimálne množstvo pohybu na dosiahnutie dlhovekosti deväťdesiat minút stredne intenzívnej aktivity denne, čo je tiež optimálne množstvo pohybu na chudnutie. Pohyb je dobrý kedykoľvek a čím viac, tým lepšie, špeciálne výhody však môže prinášať pohyb nalačno, najskôr šesť hodín po poslednom jedle. To by typicky znamenalo pred raňajkami, ale pokiaľ to správne načasujete, je možné cvičiť na obed pred neskorým obedom, alebo, ak ste obed jedli naopak dostatočne skoro, pred večerou. Toto načasovanie platí pre nediabetikov. Diabetici a prediabetici by naopak mali s pohybom začať tridsať minút po začiatku jedla a ideálne v aktivite vytrvať aspoň hodinu, aby kompletne preklenuli vrchol hladiny cukru v krvi. Ak by ste si mali vybrať pohyb po jedinom jedle, bola by to večera, vzhľadom na to, že cirkadiánny rytmus kontroly hladiny cukru v krvi počas dňa slabne. Ideálne by však najväčším jedlom dňa boli raňajky, a cvičili by ste po nich – alebo, ešte lepšie, po každom jedle.",
+      "heading" : "Optimalizujte načasovanie pohybu",
+      "topic" : ""
+    },
+    "tweakMeal20Minutes" : {
+      "activity" : {
+        "imperial" : "Dodržujte pravidlo dvadsiatich minút",
+        "metric" : "Dodržujte pravidlo dvadsiatich minút"
+      },
+      "explanation" : "Či už zvýšením viskozity alebo počtu žuvaní alebo znížením veľkosti sústa a rýchlosti jedenia, desiatky štúdií preukázali, že bez ohľadu na to, ako zvýšime dobu, počas ktorej je jedlo v našich ústach, môže to viesť k nižšiemu kalorickému príjmu. Predĺžte teda dobu jedla aspoň na dvadsať minút, aby sa vaše prirodzené signály sýtosti mohli plne prejaviť. Ako? Výberom potravín, ktorých konzumácia trvá dlhšie, a ich konzumáciou spôsobom, ktorý predĺži dobu, po ktorú zostanú v ústach. Jedzte objemnejšie, tuhšie alebo potraviny nutné žuť, v malých, poriadne rozžuvaných sústoch.",
+      "heading" : "Dodržujte pravidlo dvadsiatich minút",
+      "topic" : ""
+    },
+    "tweakMealNegCal" : {
+      "activity" : {
+        "imperial" : "Predplňte sa potravinami s „negatívnymi kalóriami“.",
+        "metric" : "Predplňte sa potravinami s „negatívnymi kalóriami“."
+      },
+      "explanation" : "Ako prvý chod začnite každé jedlo jablkom, alebo polievkou, alebo šalátom Green Light s menej ako 100 kalóriami na šálku.",
+      "heading" : "Predplňte sa potravinami s „negatívnymi kalóriami“.",
+      "topic" : ""
+    },
+    "tweakMealUndistracted" : {
+      "activity" : {
+        "imperial" : "Nenechajte sa vyrušovať počas jedla",
+        "metric" : "Nenechajte sa vyrušovať počas jedla"
+      },
+      "explanation" : "Nesledujte televíziu a nepoužívajte telefón pri jedle. Začiarknite si políčko za každé jedlo, ktoré dokážete zjesť bez rozptyľovania.",
+      "heading" : "Nenechajte sa vyrušovať počas jedla",
+      "topic" : ""
+    },
+    "tweakMealVinegar" : {
+      "activity" : {
+        "imperial" : "Používajte ocot (2 lyžičky s každým jedlom)",
+        "metric" : "Používajte ocot (2 lyžičky s každým jedlom)"
+      },
+      "explanation" : "Nikdy nepite čistý ocot. Namiesto toho používajte ktorýkoľvek z dostupných octov (sladkých aj „slaných“) na dochutenie jedla, alebo pokvapkanie prílohového šalátu. Pokiaľ ho piť chcete, nezabudnite ho nariediť v pohári s vodou a po požití si dôkladne vypláchnite ústa, aby ste ochránili zubnú sklovinu.",
+      "heading" : "Používajte ocot (2 lyžičky s každým jedlom)",
+      "topic" : ""
+    },
+    "tweakMealWater" : {
+      "activity" : {
+        "imperial" : "Pite vodu pred jedlom",
+        "metric" : "Pite vodu pred jedlom"
+      },
+      "explanation" : "Načasujte si vypitie dvoch šálok studenej neochutenej vody pred každým jedlom na zrýchlenie metabolizmu, aby ste tiež využili výhody naplnenia sa vodou.",
+      "heading" : "Pite vodu pred jedlom",
+      "topic" : ""
+    },
+    "tweakNightlyFast" : {
+      "activity" : {
+        "imperial" : "Nejedzte po 19:00 hodine",
+        "metric" : "Nejedzte po 19:00 hodine"
+      },
+      "explanation" : "Kvôli našim cirkadiánnym rytmom sa z jedla konzumovaného večer a v noci uloží viac tuku, než z úplne rovnakého jedla, konzumovaného v skoršiu dennú dobu. Preto sa každú noc, počnúc 19:00, aspoň dvanásť hodín postite. Čím menej kalórií po západe slnka, tým lepšie.",
+      "heading" : "Nejedzte po 19:00 hodine",
+      "topic" : ""
+    },
+    "tweakNightlySleep" : {
+      "activity" : {
+        "imperial" : "Doprajte si dostatok spánku",
+        "metric" : "Doprajte si dostatok spánku"
+      },
+      "explanation" : "Toto políčko zaškrtnite, ak pri dodržaní svojho pravidelného času ľahnutia spíte aspoň sedem hodín.",
+      "heading" : "Doprajte si dostatok spánku",
+      "topic" : ""
+    },
+    "tweakNightlyTrendelenbrug" : {
+      "activity" : {
+        "imperial" : "Experimentujte s miernou Trendelenburgovou polohou",
+        "metric" : "Experimentujte s miernou Trendelenburgovou polohou"
+      },
+      "explanation" : "Skúste stráviť aspoň štyri hodiny za noc ležaním s telom nakloneným hlavou dole pod uhlom šesť stupňov. Tento náklon je možné dosiahnuť podložením/zdvihnutím stĺpikov v nohách postele o 20cm (22,5cm pokiaľ je vaša posteľ dlhšia ako štandardná). Buďte extrémne opatrní pri vstávaní z tejto polohy, pretože u väčšiny ľudí spôsobuje ortostatickú intoleranciu, dokonca aj keď ste mladí a zdraví. Pokiaľ teda vstanete príliš rýchlo, môžete pocítiť závrat, mdloby alebo točenie hlavy a mohli by ste spadnúť a zraniť sa. Takže vstávajte pomaly. Vypitie dvoch šálok studenej vody tridsať minút pred vstávaním (zdvihnutím sa z postele) môže pomôcť predísť tomuto potenciálne nebezpečnému vedľajšiemu efektu. \n\n*DÔLEŽITÉ: Toto doma v žiadnom prípade neskúšajte, ak trpíte problémami so srdcom alebo pľúcami, pálením záhy, alebo problémami s mozgom (traumatické zranenie hlavy) alebo očami (dokonca aj rodinná anamnéza glaukómu vás diskvalifikuje). Tiež toto neskúšajte, kým sa svojho lekára nespýtate, či si myslia, že je pre vás bezpečné spať v polohe \"mierny Trendelenburg\". *",
+      "heading" : "Experimentujte s miernou Trendelenburgovou polohou",
+      "topic" : ""
+    },
+    "tweakWeightTwice" : {
+      "activity" : {
+        "imperial" : "Vážte sa dvakrát denne",
+        "metric" : "Vážte sa dvakrát denne"
+      },
+      "explanation" : "Pravidelné váženie je považované za kľúčové pre dlhodobú kontrolu hmotnosti, ale neexistujú dostatočné dôkazy na podporu konkrétnej frekvencie váženia. Moje odporúčanie je založené na jednej štúdii, ktorá zistila, že dvakrát denne – po prebudení a tesne pred spaním – sa zdalo byť lepšie ako raz denne (asi šesť oproti dvom kilogramom úbytku hmotnosti za dvanásť týždňov).",
+      "heading" : "Vážte sa dvakrát denne",
+      "topic" : ""
+    }
+  }
+}

@@ -1,0 +1,487 @@
+/* DailyDozen Localizable.strings (pl) */
+/* Copyright © 2021 Nutritionfacts.org. All rights reserved. */
+
+/* Date Button Title: ‘Back to today’ */
+"dateBackButtonTitle" = "Powrót do dzisiaj";
+
+/* Date Button Title: ‘Today’ */
+"dateButtonTitle.today" = "Dzisiaj";
+
+/* Doze Detail View subheading: ‘Serving Sizes’ */
+"doze_detail_section_sizes" = "Rozmiar porcji (Sugerowany)";
+
+/* Doze Detail View subheading: ‘Types’ */
+"doze_detail_section_types" = "Rodzaje";
+
+/* Doze Entry View heading: ‘Servings’ */
+"doze_entry_header" = "Porcje";
+
+/* heading for daily data entry item */
+"dozeBeans.heading" = "Fasola";
+
+/* heading for daily data entry item */
+"dozeBerries.heading" = "Owoce Jagodowe";
+
+/* heading for daily data entry item */
+"dozeBeverages.heading" = "Napoje";
+
+/* heading for daily data entry item */
+"dozeExercise.heading" = "Ćwiczenia";
+
+/* heading for daily data entry item */
+"dozeFlaxseeds.heading" = "Siemię lniane";
+
+/* heading for daily data entry item */
+"dozeFruitsOther.heading" = "Inne owoce";
+
+/* heading for daily data entry item */
+"dozeGreens.heading" = "Zielenina";
+
+/* heading for daily data entry item */
+"dozeNuts.heading" = "Orzechy i nasiona";
+
+/* Daily Dozen supplement info alert: dismissal button text */
+"dozeOtherInfo.confirm" = "OK";
+
+/* Daily Dozen supplement info alert: message */
+"dozeOtherInfo.message" = "Witamina B12 jest niezbędna dla zdrowia, ale nie wlicza się do Twoich dziennych porcji.\n\nWitamina B12 jest natomiast uwzględniona w aplikacji, aby łatwiej śledzić jej spożycie.";
+
+/* Daily Dozen daily entry section heading */
+"dozeOtherInfo.section" = "Suplementy";
+
+/* Daily Dozen supplement info alert: title */
+"dozeOtherInfo.title" = "Suplementy";
+
+/* heading for daily data entry item */
+"dozeSpices.heading" = "Zioła i przyprawy";
+
+/* heading for daily data entry item */
+"dozeVegetablesCruciferous.heading" = "Warzywa kapustne";
+
+/* heading for daily data entry item */
+"dozeVegetablesOther.heading" = "Inne warzywa";
+
+/* heading for daily data entry item */
+"dozeWholeGrains.heading" = "Pełnoziarniste zboża";
+
+/*  */
+"faq_adapt_question" = "Codzienny Tuzin to dla mnie za dużo/za mało jedzenia! Czy mogę to dostosować?";
+
+/*  */
+"faq_adapt_response" = "Tak, Codzienny Tuzin ma być po prostu przewodnikiem po najzdrowszej żywności, którą staramy się włączać do naszej diety każdego dnia. To nie jest plan posiłków i nie ma na celu niczego narzucać. Staraj się jeść różnorodną gamę pełnowartościowych pokarmów roślinnych i dostosuj Codzienny Tuzin do ilości, które ci odpowiadają.";
+
+/*  */
+"faq_age_question" = "Czy Codzienny Tuzin można dostosować pod dzieci i młodzież?";
+
+/*  */
+"faq_age_response.0" = "Dzieci i młodzież mają różne zapotrzebowanie kaloryczne w okresie dorastania. Zmienia się ono, aby wspierać wzrost i rozwój na każdym etapie.";
+
+/*  */
+"faq_age_response.1" = "Codzienny Tuzin został stworzony jako przewodnik mający pomóc ludziom włączyć niektóre z najzdrowszych pokarmów do ich codziennej diety. Chociaż te same wytyczne mogą być stosowane przez większość ludzi przez cały ich cykl życia, ilość żywności, którą należy zjeść, będzie się różnić w zależności od wielu czynników, takich jak wiek i poziom aktywności fizycznej. Ponieważ nie możemy zapewnić konkretnych porad żywieniowych ani medycznych dla twojego rosnącego dziecka, rodzice powinni korzystać z tego przewodnika tak, jak uznają to za najlepsze dla potrzeb ich dziecka i/lub skonsultować się z dietetykiem lub innym pracownikiem służby zdrowia, który pomoże określić, co jest najlepsze dla ich indywidualnych potrzeb.";
+
+/*  */
+"faq_calories_question" = "Ile kalorii pokrywa Codzienny Tuzin?";
+
+/*  */
+"faq_calories_response.0" = "Codzienny Tuzin średnio pokrywa około 1200 kalorii, ale biorąc pod uwagę szeroki wybór żywności w każdej kategorii, ten zakres może wahać się od 800 do 1800 kalorii. Weź pod uwagę kategorię \"Inne Warzywa\": szklanka papryki ma znacznie niższą gęstość kaloryczną niż szklanka gotowanych słodkich ziemniaków, dlatego zakres kaloryczny będzie zależał od twoich konkretnych wyborów żywieniowych. To właśnie jest wspaniałe w Liście kontrolnej Codziennego Tuzina — można je dostosować do własnych potrzeb.";
+
+/*  */
+"faq_calories_response.1" = "Jeśli twoim celem jest utrata masy ciała, więcej informacji znajdziesz w linku do książki „How Not to Diet” i w zakładce \"21 Adaptacji\". W „How Not to Diet” wspomniałem: „Systematyczny przegląd skutecznych strategii odchudzania wykazał, że biorąc pod uwagę spowolnienie metabolizmu i zwiększony apetyt, który towarzyszy utracie wagi, aby osiągnąć znaczną utratę wagi, liczba kalorii może wymagać spadku nawet do 1200 kalorii dziennie dla kobiet i 1500 kalorii dziennie dla mężczyzn.\"";
+
+/*  */
+"faq_calories_response.2" = "Z kolei, jeśli twoim celem jest przybranie na wadze, możesz skupić się na dodawaniu pokarmów o większej zawartości kalorii, takich jak słodkie ziemniaki, awokado, orzechy i produkty sojowe.";
+
+/*  */
+"faq_mother_question" = "Czy mogę stosować się do Codziennego Tuzina w czasie ciąży lub karmienia piersią?";
+
+/*  */
+"faq_mother_response" = "Osoby w ciąży lub karmiące piersią mają inne potrzeby kaloryczne i żywieniowe niż osoby niebędące w ciąży. Przypominamy, że Codzienny Tuzin nie jest planem posiłków i produkty z Listy kontrolnej nie powinny być jedynymi produktami spożywanymi w ciągu dnia. Osoby w ciąży lub karmiące piersią powinny skonsultować się ze swoim lekarzem lub dietetykiem w celu uzyskania pomocy w spełnieniu ich określonych wymagań kalorycznych i potrzeb żywieniowych.";
+
+/*  */
+"faq_scaling_question" = "Nie jestem w stanie zjeść tak dużo warzyw strączkowych/zbóż/itd.!";
+
+/*  */
+"faq_scaling_response" = "W porządku! Codzienny Tuzin to tylko przewodnik z inspiracjami, do których możesz dążyć. Postaraj się włączyć do swojej diety jak najwięcej z tych zdrowych pokarmów roślinnych. Jeśli dopiero zaczynasz jeść dużo strączków (lub zbóż, zieleniny itp.!), być może będziesz musiał/-a zacząć od mniejszych ilości, powoli je zwiększając, aby dać swojemu mikrobiomowi szansę na dostosowanie się. Możesz także wykazać się kreatywnością: na przykład dodaj trochę fasoli do porannej owsianki. Jeśli dodasz także jagody, siemię lniane i orzechy, nawet nie zauważysz fasoli. Możesz też zmiksować fasolę na pastę do kanapek lub zrobić mój [BROL](https://nutritionfacts.org/recipe/basic-brol-barley-rye-oats-and-lentils) – obłuszczone ziarno jęczmienia, ziarno żyta, kasza owsiana pęczak i soczewica — tego używam jako bazę do wielu posiłków. Jest ona prostym sposobem na włączenie do diety różnorodnych pełnych ziaren i roślin strączkowych.";
+
+/*  */
+"faq_supplements_question" = "Myślałem/-am, że dr Greger zaleca przyjmowanie suplementów witaminy D i kwasu DHA. Dlaczego nie są one uwzględnione?";
+
+/*  */
+"faq_supplements_response" = "Zaktualizowaliśmy aplikację Codzienny Tuzin, aby zawierała tylko wymagane suplementy. Na przykład witamina D jest potrzebna tylko osobom, które mają niewystarczającą ekspozycję na słońce. Naszym celem jest dzielenie się z tobą nauką, abyś mógł/-a podejmować własne, świadome decyzje. Możesz zobaczyć wszystkie moje zalecenia na stronie [Optimum Nutrient](https://nutritionfacts.org/optimum-nutrient-recommendations).";
+
+/* Info Menu */
+"faq_title" = "Często Zadawane Pytania";
+
+/* History Data Alert: Cancel button */
+"history_data_alert_cancel" = "Anuluj";
+
+/* History Data Alert: Clear button */
+"history_data_alert_clear" = "Wyczyść";
+
+/* History Data Alert: Import buttom */
+"history_data_alert_import" = "Importuj";
+
+/* History Data Alert: OK button */
+"history_data_alert_ok" = "OK";
+
+/* History Data: export action button */
+"history_data_export_btn" = "Eksportuj dane";
+
+/* History Data: export description text */
+"history_data_export_text" = "Dane wyeksportowano do:";
+
+/* History Data: import action button */
+"history_data_import_btn" = "Importuj dane";
+
+/* History Data: import caution text */
+"history_data_import_caution_text" = "Uwaga: Ten import spowoduje, że wszystkie dane znajdujące się obecnie w tej aplikacji Codzienny Tuzin zostaną zastąpione. Czy chcesz kontynuować import?";
+
+/* History Data: import data error text */
+"history_data_import_error_text" = "Błąd: Importowanie nie powiodło się z powodu błędu danych. Dotychczasowe dane nie uległy zmianie.";
+
+/* History Data: import not found text */
+"history_data_import_notfound_text" = "Nie znaleziono prawidłowego pliku importu w folderze Dokumenty Codziennego Tuzina.";
+
+/* History Data: preferences header & title */
+"history_data_title" = "Historia";
+
+/* History View: calendar scale control */
+"history_scale_choice_day" = "Dzień";
+
+/* History View: calendar scale control */
+"history_scale_choice_month" = "Miesiąc";
+
+/* History View: calendar scale control */
+"history_scale_choice_year" = "Rok";
+
+/* History View: scale text */
+"history_scale_label" = "Okres czasu";
+
+/* History View */
+"historyRecordDoze.heading" = "Historia porcji";
+
+/* History View */
+"historyRecordDoze.legend" = "Porcje";
+
+/* History View */
+"historyRecordTweak.heading" = "Historia adaptacji";
+
+/* History View */
+"historyRecordTweak.legend" = "Adaptacje";
+
+/* History View */
+"historyRecordWeight.heading" = "Historia pomiarów wagi";
+
+/* History View */
+"historyRecordWeight.legendEvening" = "Wieczór";
+
+/* History View */
+"historyRecordWeight.legendMorning" = "Ranek";
+
+/* History View */
+"historyRecordWeight.titleImperial" = "Waga (funt)";
+
+/* History View */
+"historyRecordWeight.titleMetric" = "Waga (kg)";
+
+/* Info About Menu Item */
+"info_app_about" = "O aplikacji";
+
+/* Info About View: Application Name ‘Daily Dozen’ */
+"info_app_about_app_name" = "Codzienny Tuzin";
+
+/* Info About View: Created By */
+"info_app_about_created_by" = "Ta aplikacja została stworzona przez: NutritionFacts.org, Christi Richards, Konstantin Khokhlov i Marc Campbell";
+
+/* Info About View */
+"info_app_about_heading" = "O aplikacji";
+
+/* Info About View: Open Source Credits */
+"info_app_about_oss_credits" = "Używane są następujące biblioteki open source: RealmSwift, Charts, FSCalendar, SimpleAnimation i ActiveLabel.";
+
+/* Info About View: Overview Text */
+"info_app_about_overview" = "Korzystaj z tej aplikacji codziennie, aby śledzić żywność i porady, które polecam dla optymalnego zdrowia i długowieczności w moich książkach „Jak nie umrzeć przedwcześnie” i „How Not to Diet”.";
+
+/* Info About View: Contributing Translators List (language code)  See https://en.wikipedia.org/wiki/List_of_ISO_639-1_codes */
+"info_app_about_translators" = "Specjalne podziękowania dla naszych tłumaczy-wolontariuszy: Petar Enchev (bg), Tsveti Enchev (bg), Ricard Soler Roger (ca), Luděk Bouška (cs,sk), Lenka Lukacová (cs), Anke Schliessmann (de), Ángela Graña (es), Saeed Salamian (fa), Audray Harkins (fr), Doron Barak (he), Ruth Levy (he), Annalisa Guerrini-Körner (it), Ilaria Zanini (it), Hanna Gurzeda (pl), Joanna Klopotek (pl), Tania Bassi (pt-BR), João Madureira (pt-PT), Cristina Lauby (ro), Evgeniya Lyakh (ru), Katarína Mocáková (sk), Sabina Aliieva (uk).";
+
+/* Info About View: Application release version */
+"info_app_about_version" = "wersja 3.5.1";
+
+/* Info About View: Welcome */
+"info_app_about_welcome" = "Witaj w moim Codziennym Tuzinie!";
+
+/* Info Menu: book title */
+"info_book_how_not_to_die" = "Książka: Jak nie umrzeć przedwcześnie";
+
+/* Info Menu: book title */
+"info_book_how_not_to_die_cookbook" = "Książka: Jak Gotować By Nie Umrzeć Przedwcześnie";
+
+/* Info Menu: book title */
+"info_book_how_not_to_diet" = "Książka: How Not to Diet";
+
+/* Info Menu */
+"info_webpage_daily_dozen_challenge" = "Wyzwanie Codziennego Tuzina";
+
+/* Info Menu */
+"info_webpage_donate" = "Donacja";
+
+/* Info Menu */
+"info_webpage_open_source" = "Open Source";
+
+/* Info Menu */
+"info_webpage_subscribe" = "Subskrybuj";
+
+/* Info Menu */
+"info_webpage_videos_latest" = "Najnowsze filmy";
+
+/* Item History Legend: ‘All completed’ */
+"item_history_completed_all" = "Wszystkie porcje";
+
+/* Item History Legend: ‘Some completed’ */
+"item_history_completed_some" = "Niektóre porcje";
+
+/* Item History Heading */
+"item_history_heading" = "Historia";
+
+/* Main Navigation Tab Control: ‘Daily Dozen’ (proper noun) */
+"navtab.doze" = "Codzienny Tuzin";
+
+/* Main Navigation Tab Control: show more information */
+"navtab.info" = "Informacja";
+
+/* Main Navigation Tab Control: ‘Preferences’ synonyms: Settings, Configuration. Choose a translations with is different from Tweaks. */
+"navtab.preferences" = "Ustawienia";
+
+/* Main Navigation Tab Control: ‘21 Tweaks’ (proper noun) */
+"navtab.tweaks" = "21 Adaptacji";
+
+/* heading for daily data entry item */
+"otherVitaminB12.heading" = "Witamina B12";
+
+/* Alert notification text */
+"reminder.alert.text" = "Zaktualizuj swoje dzisiejsze porcje";
+
+/* Daily Reminder (alert title, settings section heading) */
+"reminder.heading" = "Codzienne przypomnienie";
+
+/* Daily Reminder On/Off toggle switch label */
+"reminder.settings.enable" = "Włącz przypomnienia";
+
+/* Daily Reminder sound control heading */
+"reminder.settings.sound" = "Włącz dźwięk";
+
+/* Daily Reminder time control heading */
+"reminder.settings.time" = "Przypomnij o:";
+
+/* Android notification `vibrate` */
+"reminder.settings.vibrate" = "Wibracje";
+
+/* ‘Off’ as in ‘On (enabled) or Off (disabled)’, Daily Reminder is not enabled */
+"reminder.state.off" = "Wyłączone";
+
+/* ‘On’ as in ‘On (enabled) or Off (disable)’. Daily Reminder is enabled */
+"reminder.state.on" = "Włączone";
+
+/* Google Firebase Analytics */
+"setting_analytics_body" = "Włącz zbieranie anonimowych informacji o użytkowaniu, aby pomóc ulepszyć aplikację.";
+
+/* Google Firebase Analytics */
+"setting_analytics_enable" = "Włącz Analytics";
+
+/* Google Firebase Analytics */
+"setting_analytics_opt_in" = "Potwierdzam";
+
+/* Google Firebase Analytics */
+"setting_analytics_opt_out" = "Rezygnuję";
+
+/* Google Firebase Analytics */
+"setting_analytics_title" = "Analytics";
+
+/* First Launch Setting: button text */
+"setting_doze_only_btn" = "Tylko Codzienny Tuzin";
+
+/*  */
+"setting_doze_only_choice" = "Tylko Codzienny Tuzin";
+
+/* First Launch Setting: button text */
+"setting_doze_tweak_btn" = "Codzienny Tuzin + 21 Adaptacji";
+
+/*  */
+"setting_doze_tweak_choice" = "Codzienny Tuzin + 21 Adaptacji";
+
+/* Preference Settings View: brief description text below Tweaks visibility control. */
+"setting_doze_tweak_footer" = "Dla samego zdrowia użyj „Tylko Codzienny Tuzin”. Dla zdrowia i utraty wagi użyj „Codzienny Tuzin + 21 Adaptacji”.";
+
+/* First Launch Setting: brief description above ‘Daily Dozen Only’ button. */
+"setting_health_alone_txt" = "Wyłącznie Dla Zdrowia";
+
+/* First Launch Setting: brief description above ‘Daily Dozen + 21 Tweaks’ button. */
+"setting_health_weight_txt" = "Dla Zdrowia i Utraty Wagi";
+
+/* Preference Settings View: tweaks visibilty subsection heading */
+"setting_tweak_header" = "Widoczność 21 Adaptacji";
+
+/* Preference Settings View: Part of ‘Imperial/Metric/Toggle Units’ selector */
+"setting_units_0_imperial" = "Imperialne";
+
+/* Preference Settings View: Part of ‘Imperial/Metric/Toggle Units’ selector */
+"setting_units_1_metric" = "Metryczne";
+
+/* Preference Settings View: Part of ‘Imperial/Metric/Toggle Units’ selector */
+"setting_units_2_toggle" = "Zmień jednostki";
+
+/* Preference Settings View: brief description text below units control. */
+"setting_units_choice_footer" = "Ustaw jeden typ jednostek dla aplikacji lub aktywuj przełącznie przycisku w „Jednostki”.";
+
+/* Preference Settings View */
+"setting_units_header" = "Jednostki miar";
+
+/* Preference Settings View */
+"setting_util_advanced" = "Zaawansowane narzędzia";
+
+/* ‘Streak’ count. Synonym: ‘Progress‘. Formatted number ‘%d’ for consecutive days completed. Place translated text for ‘days’ on the right or left of ‘%d’ based on language directionality. */
+"streakDaysFormat" = "%d dni";
+
+/* Tweaks Detail view section heading */
+"tweak_detail_section_activity" = "Aktywność";
+
+/* Tweaks Detail view section heading */
+"tweak_detail_section_description" = "Opis";
+
+/* Tweaks daily entry header */
+"tweak_entry_header" = "21 Adaptacji";
+
+/* heading for daily data entry item */
+"tweakCompleteIntentions.heading" = "Wypełnij Swoje Intencje";
+
+/* heading for daily data entry item */
+"tweakDailyBlackCumin.heading" = "Czarnuszka (¼ łyżeczki)";
+
+/* heading for daily data entry item */
+"tweakDailyCumin.heading" = "Kmin rzymski (½ łyżeczki do obiadu i kolacji)";
+
+/* heading for daily data entry item */
+"tweakDailyDeflourDiet.heading" = "Odmącz swoją dietę";
+
+/* heading for daily data entry item */
+"tweakDailyFrontLoad.heading" = "Więcej kalorii na początku dnia";
+
+/* heading for daily data entry item */
+"tweakDailyGarlic.heading" = "Czosnek w proszku (¼ łyżeczki)";
+
+/* heading for daily data entry item */
+"tweakDailyGinger.heading" = "Mielony imbir (1 łyżeczka) lub pieprz Cayenne (½ łyżeczki)";
+
+/* heading for daily data entry item */
+"tweakDailyGreenTea.heading" = "Zielona herbata (3 szklanki)";
+
+/* heading for daily data entry item */
+"tweakDailyHydrate.heading" = "Nawadniaj się";
+
+/* heading for daily data entry item */
+"tweakDailyNutriYeast.heading" = "Drożdże odżywcze (2 łyżeczki)";
+
+/* heading for daily data entry item */
+"tweakDailyTimeRestrict.heading" = "Ogranicz jedzenie czasowo";
+
+/* heading for daily data entry item */
+"tweakExerciseTiming.heading" = "Zoptymalizuj czas ćwiczeń";
+
+/* heading for daily data entry item */
+"tweakMeal20Minutes.heading" = "Przestrzegaj zasady dwudziestu minut";
+
+/* heading for daily data entry item */
+"tweakMealNegCal.heading" = "Spożywaj pokarmy o „negatywnej kaloryczności”";
+
+/* heading for daily data entry item */
+"tweakMealUndistracted.heading" = "Jedz bez rozpraszania uwagi";
+
+/* heading for daily data entry item */
+"tweakMealVinegar.heading" = "Włącz ocet do diety (2 łyżeczki do każdego posiłku)";
+
+/* heading for daily data entry item */
+"tweakMealWater.heading" = "Woda przed posiłkiem";
+
+/* heading for daily data entry item */
+"tweakNightlyFast.heading" = "Nie jedz po 19:00";
+
+/* heading for daily data entry item */
+"tweakNightlySleep.heading" = "Śpij wystarczająco dużo";
+
+/* heading for daily data entry item */
+"tweakNightlyTrendelenbrug.heading" = "Eksperyment z łągodną pozycją Trendelenburg";
+
+/* heading for daily data entry item */
+"tweakWeightTwice.heading" = "Waż się dwa razy dziennie";
+
+/*  */
+"units_label" = "Jednostki:";
+
+/* Units toggle button text: imperial measurement system */
+"unitToggle.imperial" = "imperialne";
+
+/* Units toggle button text: metric measurement system */
+"unitToggle.metric" = "metryczne";
+
+/* URL path */
+"urlSegment.base" = "https://nutritionfacts.org/";
+
+/*  */
+"urlSegment.lang" = "";
+
+/* main info menu: book */
+"urlSegmentInfoMenu.book" = "book/how-not-to-die";
+
+/* main info menu: daily-dozen-challenge */
+"urlSegmentInfoMenu.challenge" = "daily-dozen-challenge";
+
+/* main info menu: cookbook */
+"urlSegmentInfoMenu.cookbook" = "book/how-not-to-die-cookbook";
+
+/* main info menu: how-not-to-diet */
+"urlSegmentInfoMenu.diet" = "book/how-not-to-diet";
+
+/* main info menu: donate */
+"urlSegmentInfoMenu.donate" = "donate";
+
+/* main info menu: open-source */
+"urlSegmentInfoMenu.source" = "open-source";
+
+/* main info menu: subscribe */
+"urlSegmentInfoMenu.subscribe" = "subscribe";
+
+/* team */
+"urlSegmentInfoMenu.team" = "team";
+
+/* main info menu: videos */
+"urlSegmentInfoMenu.videos" = "videos";
+
+/* Label for hyperlink to nutritionfacts.org video topics */
+"videos.link.label" = "Filmy";
+
+/* Weight Daily Entry: clear button which deletes values */
+"weight_entry_clear" = "Wyczyść";
+
+/* Weight Daily Entry: label */
+"weight_entry_evening" = "Wieczór (tuż przed snem)";
+
+/* Weight Daily Entry: label */
+"weight_entry_morning" = "Rano (zaraz po przebudzeniu)";
+
+/* Weight Daily Entry: label */
+"weight_entry_time" = "Czas";
+
+/* Weight Daily Entry Units: label */
+"weight_entry_units_kg" = "kg";
+
+/* Weight Daily Entry Units: label */
+"weight_entry_units_lbs" = "funt";
+
+/* Weight Daily Entry: edit button to change values */
+"weight_history_edit_data" = "Edytuj dane";
+
+/* Weight Daily Entry: heading */
+"weightEntry.heading" = "Waga";
+
+/* file end */

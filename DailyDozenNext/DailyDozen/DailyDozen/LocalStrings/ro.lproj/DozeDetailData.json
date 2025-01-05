@@ -1,0 +1,1142 @@
+{
+  "itemsDict" : {
+    "dozeBeans" : {
+      "heading" : "Leguminoase boabe",
+      "servings" : [
+        {
+          "imperial" : "¼ cană humus sau de fasole frecată",
+          "metric" : "60 g humus sau de fasole frecată"
+        },
+        {
+          "imperial" : "½ cană fasole gătită, mazăre uscată (galbenă sau verde) sau linte",
+          "metric" : "90 g fasole gătită, mazăre uscată (galbenă sau verde) sau linte"
+        },
+        {
+          "imperial" : "½ cană tofu sau tempeh",
+          "metric" : "100 g tofu sau tempeh"
+        },
+        {
+          "imperial" : "1 cană mazăre de grădină sau mazăre de zăpadă",
+          "metric" : "100 g mazăre de grădină sau mazăre de zăpadă"
+        },
+        {
+          "imperial" : "1 cană leguminoase încolțite (linte, fasole mung)",
+          "metric" : "100 g leguminoase încolțite (linte, fasole mung)"
+        }
+      ],
+      "topic" : "topics/beans",
+      "varieties" : [
+        {
+          "text" : "Fasole neagră",
+          "topic" : "topics/black-beans"
+        },
+        {
+          "text" : "Fasole ochi negru",
+          "topic" : ""
+        },
+        {
+          "text" : "Fasole untoasă (Lima)",
+          "topic" : ""
+        },
+        {
+          "text" : "Fasole Cannellini",
+          "topic" : ""
+        },
+        {
+          "text" : "Năut",
+          "topic" : "topics/chickpeas"
+        },
+        {
+          "text" : "Edamame (păstăi verzi de soia)",
+          "topic" : "topics/edamame"
+        },
+        {
+          "text" : "Mazăre de grădină",
+          "topic" : ""
+        },
+        {
+          "text" : "Fasole albă mare",
+          "topic" : ""
+        },
+        {
+          "text" : "Fasole roșie",
+          "topic" : "topics/kidney-beans"
+        },
+        {
+          "text" : "Linte (beluga, franceză și roșie)",
+          "topic" : "topics/lentils"
+        },
+        {
+          "text" : "Miso",
+          "topic" : "topics/miso"
+        },
+        {
+          "text" : "Fasole albă cu bob mic",
+          "topic" : "topics/navy-beans"
+        },
+        {
+          "text" : "Fasole Pinto",
+          "topic" : "topics/pinto-beans"
+        },
+        {
+          "text" : "Fasole roșie cu bobul mic",
+          "topic" : ""
+        },
+        {
+          "text" : "Mazăre uscată (galbenă sau verde)",
+          "topic" : "topics/split-peas"
+        },
+        {
+          "text" : "Tempeh",
+          "topic" : "topics/tempeh"
+        }
+      ]
+    },
+    "dozeBerries" : {
+      "heading" : "Fructe de pădure",
+      "servings" : [
+        {
+          "imperial" : "½ cană proaspete sau congelate",
+          "metric" : "60 g proaspete sau congelate"
+        },
+        {
+          "imperial" : "¼ cană uscate",
+          "metric" : "40 g uscate"
+        }
+      ],
+      "topic" : "topics/berries",
+      "varieties" : [
+        {
+          "text" : "Acai",
+          "topic" : "topics/acai-berries"
+        },
+        {
+          "text" : "Agrișe",
+          "topic" : "topics/barberries"
+        },
+        {
+          "text" : "Mure",
+          "topic" : "topics/blackberries"
+        },
+        {
+          "text" : "Afine",
+          "topic" : "topics/blueberries"
+        },
+        {
+          "text" : "Cireșe sau vișine",
+          "topic" : "topics/cherries"
+        },
+        {
+          "text" : "Struguri violet",
+          "topic" : "topics/grapes"
+        },
+        {
+          "text" : "Merișoare",
+          "topic" : "topics/cranberries"
+        },
+        {
+          "text" : "Goji (Cătină de garduri)",
+          "topic" : "topics/goji-berries"
+        },
+        {
+          "text" : "Kumquat",
+          "topic" : ""
+        },
+        {
+          "text" : "Dude",
+          "topic" : ""
+        },
+        {
+          "text" : "Zmeură (neagră sau roșie)",
+          "topic" : "topics/raspberries"
+        },
+        {
+          "text" : "Căpșuni",
+          "topic" : "topics/strawberries"
+        }
+      ]
+    },
+    "dozeBeverages" : {
+      "heading" : "Băuturi",
+      "servings" : [
+        {
+          "imperial" : "Un pahar (12 uncii)",
+          "metric" : "Un pahar (350 ml)"
+        }
+      ],
+      "topic" : "topics/beverages",
+      "varieties" : [
+        {
+          "text" : "Ceai negru",
+          "topic" : "topics/black-tea"
+        },
+        {
+          "text" : "Ceai negru condimentat",
+          "topic" : "topics/chai-tea"
+        },
+        {
+          "text" : "Ceai de mușețel cu vanilie",
+          "topic" : "topics/chamomile-tea"
+        },
+        {
+          "text" : "Cafea",
+          "topic" : "topics/coffee"
+        },
+        {
+          "text" : "Ceai Earl Grey",
+          "topic" : "topics/earl-grey-tea"
+        },
+        {
+          "text" : "Ceai verde",
+          "topic" : "topics/green-tea"
+        },
+        {
+          "text" : "Ceai de hibiscus",
+          "topic" : "topics/hibiscus-tea"
+        },
+        {
+          "text" : "Ciocolată caldă",
+          "topic" : ""
+        },
+        {
+          "text" : "Ceai de iasomie",
+          "topic" : ""
+        },
+        {
+          "text" : "Ceai de roiniță",
+          "topic" : "topics/lemon-balm"
+        },
+        {
+          "text" : "Ceai matcha",
+          "topic" : "topics/matcha"
+        },
+        {
+          "text" : "Ceai oolong cu flori de migdale",
+          "topic" : "topics/oolong-tea"
+        },
+        {
+          "text" : "Ceai de mentă",
+          "topic" : "topics/peppermint"
+        },
+        {
+          "text" : "Ceai rooibos",
+          "topic" : "topics/rooibos-tea"
+        },
+        {
+          "text" : "Apă",
+          "topic" : "topics/water"
+        },
+        {
+          "text" : "Ceai alb",
+          "topic" : "topics/white-tea"
+        }
+      ]
+    },
+    "dozeExercise" : {
+      "heading" : "Exerciții fizice",
+      "servings" : [
+        {
+          "imperial" : "90 de minute de activitate fizică moderată",
+          "metric" : "90 de minute de activitate fizică moderată"
+        },
+        {
+          "imperial" : "40 de minute de activitate fizică intensă",
+          "metric" : "40 de minute de activitate fizică intensă"
+        }
+      ],
+      "topic" : "topics/exercise",
+      "varieties" : [
+        {
+          "text" : "Ciclism",
+          "topic" : ""
+        },
+        {
+          "text" : "Canotaj",
+          "topic" : ""
+        },
+        {
+          "text" : "Dans",
+          "topic" : ""
+        },
+        {
+          "text" : "DodgeBall",
+          "topic" : ""
+        },
+        {
+          "text" : "Schiat în pantă",
+          "topic" : ""
+        },
+        {
+          "text" : "Scrimă",
+          "topic" : ""
+        },
+        {
+          "text" : "Drumeție",
+          "topic" : ""
+        },
+        {
+          "text" : "Muncă în gospodărie",
+          "topic" : ""
+        },
+        {
+          "text" : "Patinaj pe gheață",
+          "topic" : ""
+        },
+        {
+          "text" : "Mers pe role",
+          "topic" : ""
+        },
+        {
+          "text" : "Jonglat",
+          "topic" : ""
+        },
+        {
+          "text" : "Sărituri pe o trambulină elastică",
+          "topic" : ""
+        },
+        {
+          "text" : "Vâslit",
+          "topic" : ""
+        },
+        {
+          "text" : "Frisbee",
+          "topic" : ""
+        },
+        {
+          "text" : "Patinaj cu rotile (patine cu 4 role)",
+          "topic" : ""
+        },
+        {
+          "text" : "Aruncări la coșul de baschet",
+          "topic" : ""
+        },
+        {
+          "text" : "Curățarea zăpezii cu lopata",
+          "topic" : ""
+        },
+        {
+          "text" : "Skateboarding",
+          "topic" : ""
+        },
+        {
+          "text" : "Snorkeling",
+          "topic" : ""
+        },
+        {
+          "text" : "Surfing",
+          "topic" : ""
+        },
+        {
+          "text" : "Înot recreațional",
+          "topic" : ""
+        },
+        {
+          "text" : "Tenis (la dublu)",
+          "topic" : ""
+        },
+        {
+          "text" : "Călcat apa (înot)",
+          "topic" : ""
+        },
+        {
+          "text" : "Mers rapid (6,5 km pe oră)",
+          "topic" : ""
+        },
+        {
+          "text" : "Aerobică în apă",
+          "topic" : ""
+        },
+        {
+          "text" : "Schi nautic",
+          "topic" : ""
+        },
+        {
+          "text" : "Grădinărit",
+          "topic" : ""
+        },
+        {
+          "text" : "Yoga",
+          "topic" : ""
+        },
+        {
+          "text" : "Excursie cu rucsacul",
+          "topic" : ""
+        },
+        {
+          "text" : "Baschet",
+          "topic" : ""
+        },
+        {
+          "text" : "Ciclism în rampă",
+          "topic" : ""
+        },
+        {
+          "text" : "Antrenament cu greutăți în circuit",
+          "topic" : ""
+        },
+        {
+          "text" : "Schi fond",
+          "topic" : ""
+        },
+        {
+          "text" : "Fotbal american",
+          "topic" : ""
+        },
+        {
+          "text" : "Hochei",
+          "topic" : ""
+        },
+        {
+          "text" : "Jogging",
+          "topic" : ""
+        },
+        {
+          "text" : "Sărituri",
+          "topic" : ""
+        },
+        {
+          "text" : "Sărituri cu coarda",
+          "topic" : ""
+        },
+        {
+          "text" : "Lacrosse",
+          "topic" : ""
+        },
+        {
+          "text" : "Flotări",
+          "topic" : ""
+        },
+        {
+          "text" : "Tracțiuni",
+          "topic" : ""
+        },
+        {
+          "text" : "Racquetball",
+          "topic" : ""
+        },
+        {
+          "text" : "Alpinism",
+          "topic" : ""
+        },
+        {
+          "text" : "Rugby",
+          "topic" : ""
+        },
+        {
+          "text" : "Alergat",
+          "topic" : ""
+        },
+        {
+          "text" : "Scufundări",
+          "topic" : ""
+        },
+        {
+          "text" : "Tenis (simplu)",
+          "topic" : ""
+        },
+        {
+          "text" : "Fotbal european",
+          "topic" : ""
+        },
+        {
+          "text" : "Patinaj viteză",
+          "topic" : ""
+        },
+        {
+          "text" : "Squash",
+          "topic" : ""
+        },
+        {
+          "text" : "Step aerobic",
+          "topic" : ""
+        },
+        {
+          "text" : "Înot profesionist (Ture de bazin)",
+          "topic" : ""
+        },
+        {
+          "text" : "Mers rapid la deal",
+          "topic" : ""
+        },
+        {
+          "text" : "Jogging acvatic",
+          "topic" : ""
+        }
+      ]
+    },
+    "dozeFlaxseeds" : {
+      "heading" : "Semințe de in",
+      "servings" : [
+        {
+          "imperial" : "1 lingură măcinate",
+          "metric" : "1 lingură măcinate"
+        }
+      ],
+      "topic" : "topics/flax-seeds",
+      "varieties" : [
+        {
+          "text" : "Semințe de in brun",
+          "topic" : ""
+        },
+        {
+          "text" : "Semințe de in auriu",
+          "topic" : ""
+        }
+      ]
+    },
+    "dozeFruitsOther" : {
+      "heading" : "Alte fructe",
+      "servings" : [
+        {
+          "imperial" : "1 fruct de mărime medie",
+          "metric" : "1 fruct de mărime medie"
+        },
+        {
+          "imperial" : "1 cană fructe tăiate",
+          "metric" : "120 g fructe tăiate"
+        },
+        {
+          "imperial" : "¼ cană fructe uscate",
+          "metric" : "40 g fructe uscate"
+        }
+      ],
+      "topic" : "topics/fruit",
+      "varieties" : [
+        {
+          "text" : "Mere",
+          "topic" : "topics/apples"
+        },
+        {
+          "text" : "Caise",
+          "topic" : "topics/apricots"
+        },
+        {
+          "text" : "Avocado",
+          "topic" : "topics/avocados"
+        },
+        {
+          "text" : "Banane",
+          "topic" : "topics/bananas"
+        },
+        {
+          "text" : "Pepene galben Cantalup",
+          "topic" : "topics/cantaloupe"
+        },
+        {
+          "text" : "Clementine",
+          "topic" : ""
+        },
+        {
+          "text" : "Curmale",
+          "topic" : "topics/dates"
+        },
+        {
+          "text" : "Smochine",
+          "topic" : ""
+        },
+        {
+          "text" : "Grepfrut",
+          "topic" : "topics/grapefruit"
+        },
+        {
+          "text" : "Pepene galben Honeydew",
+          "topic" : ""
+        },
+        {
+          "text" : "Kiwi",
+          "topic" : "topics/kiwifruit"
+        },
+        {
+          "text" : "Lămâi galbene",
+          "topic" : "topics/lemons"
+        },
+        {
+          "text" : "Lămâi verzi",
+          "topic" : "topics/limes"
+        },
+        {
+          "text" : "Litchi",
+          "topic" : ""
+        },
+        {
+          "text" : "Mango",
+          "topic" : "topics/mango"
+        },
+        {
+          "text" : "Nectarine",
+          "topic" : ""
+        },
+        {
+          "text" : "Portocale",
+          "topic" : "topics/oranges"
+        },
+        {
+          "text" : "Papaya",
+          "topic" : ""
+        },
+        {
+          "text" : "Fructul pasiunii",
+          "topic" : ""
+        },
+        {
+          "text" : "Piersici",
+          "topic" : "topics/peaches"
+        },
+        {
+          "text" : "Pere",
+          "topic" : "topics/pears"
+        },
+        {
+          "text" : "Ananas",
+          "topic" : ""
+        },
+        {
+          "text" : "Prune (în special cele negre sau vineții închise)",
+          "topic" : "topics/plums"
+        },
+        {
+          "text" : "Pluote (caise-prune)",
+          "topic" : ""
+        },
+        {
+          "text" : "Rodii",
+          "topic" : "topics/pomegranates"
+        },
+        {
+          "text" : "Prune uscate",
+          "topic" : "topics/prunes"
+        },
+        {
+          "text" : "Mandarine",
+          "topic" : ""
+        },
+        {
+          "text" : "Pepene roșu",
+          "topic" : "topics/watermelon"
+        }
+      ]
+    },
+    "dozeGreens" : {
+      "heading" : "Verdețuri",
+      "servings" : [
+        {
+          "imperial" : "1 cană crude",
+          "metric" : "60 g crude"
+        },
+        {
+          "imperial" : "½ cană gătite",
+          "metric" : "90 g gătite"
+        }
+      ],
+      "topic" : "topics/greens",
+      "varieties" : [
+        {
+          "text" : "Rucola",
+          "topic" : ""
+        },
+        {
+          "text" : "Frunze de sfeclă",
+          "topic" : "topics/beets"
+        },
+        {
+          "text" : "Varză verde furajeră",
+          "topic" : "topics/collard-greens"
+        },
+        {
+          "text" : "Varză Kale (neagră, verde și roșie)",
+          "topic" : "topics/kale"
+        },
+        {
+          "text" : "Amestec de salate tinere",
+          "topic" : "topics/salads"
+        },
+        {
+          "text" : "Frunze de muștar",
+          "topic" : "topics/mustard-greens"
+        },
+        {
+          "text" : "Măcriș",
+          "topic" : ""
+        },
+        {
+          "text" : "Spanac",
+          "topic" : "topics/spinach"
+        },
+        {
+          "text" : "Mangold (Sfeclă elvețiană)",
+          "topic" : "topics/swiss-chard"
+        },
+        {
+          "text" : "Frunze de nap",
+          "topic" : ""
+        }
+      ]
+    },
+    "dozeNuts" : {
+      "heading" : "Nuci și semințe",
+      "servings" : [
+        {
+          "imperial" : "¼ cană nuci sau semințe",
+          "metric" : "30 g nuci sau semințe"
+        },
+        {
+          "imperial" : "2 linguri unt de nuci sau de semințe",
+          "metric" : "2 linguri unt de nuci sau de semințe"
+        }
+      ],
+      "topic" : "topics/nuts",
+      "varieties" : [
+        {
+          "text" : "Migdale",
+          "topic" : "topics/almonds"
+        },
+        {
+          "text" : "Nuci braziliene",
+          "topic" : "topics/brazil-nuts"
+        },
+        {
+          "text" : "Caju",
+          "topic" : "topics/cashews"
+        },
+        {
+          "text" : "Semințe de chia",
+          "topic" : "topics/chia-seeds"
+        },
+        {
+          "text" : "Alune de pădure",
+          "topic" : "topics/hazelnuts"
+        },
+        {
+          "text" : "Semințe de cânepă",
+          "topic" : ""
+        },
+        {
+          "text" : "Nuci macadamia",
+          "topic" : "topics/macadamia-nuts"
+        },
+        {
+          "text" : "Arahide",
+          "topic" : "topics/peanuts"
+        },
+        {
+          "text" : "Nuci pecan",
+          "topic" : "topics/pecans"
+        },
+        {
+          "text" : "Fistic",
+          "topic" : "topics/pistachios"
+        },
+        {
+          "text" : "Semințe de dovleac",
+          "topic" : "topics/pumpkin-seeds"
+        },
+        {
+          "text" : "Semințe de susan",
+          "topic" : "topics/sesame-seeds"
+        },
+        {
+          "text" : "Semințe de floarea soarelui",
+          "topic" : "topics/sunflower-seeds"
+        },
+        {
+          "text" : "Nuci",
+          "topic" : "topics/walnuts"
+        }
+      ]
+    },
+    "dozeSpices" : {
+      "heading" : "Plante aromatice și condimente",
+      "servings" : [
+        {
+          "imperial" : "¼ linguriță de turmeric",
+          "metric" : "¼ linguriță de turmeric"
+        },
+        {
+          "imperial" : "Orice alte plante aromatice și condimente (fără sare) care vă plac",
+          "metric" : "Orice alte plante aromatice și condimente (fără sare) care vă plac"
+        }
+      ],
+      "topic" : "topics/spices",
+      "varieties" : [
+        {
+          "text" : "Ienibahar",
+          "topic" : "topics/allspice"
+        },
+        {
+          "text" : "Dracila (lemn-galben)",
+          "topic" : "topics/barberries"
+        },
+        {
+          "text" : "Busuioc",
+          "topic" : "topics/basil"
+        },
+        {
+          "text" : "Frunze de dafin",
+          "topic" : ""
+        },
+        {
+          "text" : "Cardamom",
+          "topic" : ""
+        },
+        {
+          "text" : "Pulbere de chili",
+          "topic" : ""
+        },
+        {
+          "text" : "Frunze de coriandru",
+          "topic" : "topics/cilantro"
+        },
+        {
+          "text" : "Scorţişoară",
+          "topic" : "topics/cinnamon"
+        },
+        {
+          "text" : "Cuișoare",
+          "topic" : "topics/cloves"
+        },
+        {
+          "text" : "Boabe de coriandru",
+          "topic" : ""
+        },
+        {
+          "text" : "Chimion",
+          "topic" : "topics/cumin"
+        },
+        {
+          "text" : "Pulbere de curry",
+          "topic" : "topics/curry-powder"
+        },
+        {
+          "text" : "Mărar",
+          "topic" : ""
+        },
+        {
+          "text" : "Schinduf",
+          "topic" : "topics/fenugreek"
+        },
+        {
+          "text" : "Usturoi",
+          "topic" : "topics/garlic"
+        },
+        {
+          "text" : "Ghimbir",
+          "topic" : "topics/ginger"
+        },
+        {
+          "text" : "Hrean",
+          "topic" : ""
+        },
+        {
+          "text" : "Lemongrass",
+          "topic" : ""
+        },
+        {
+          "text" : "Maghiran",
+          "topic" : "topics/marjoram"
+        },
+        {
+          "text" : "Pulbere din semințe de muștar",
+          "topic" : "topics/mustard-powder"
+        },
+        {
+          "text" : "Nucșoară",
+          "topic" : "topics/nutmeg"
+        },
+        {
+          "text" : "Oregano",
+          "topic" : "topics/oregano"
+        },
+        {
+          "text" : "Boia afumată",
+          "topic" : ""
+        },
+        {
+          "text" : "Pătrunjel",
+          "topic" : "topics/parsley"
+        },
+        {
+          "text" : "Piper",
+          "topic" : "topics/pepper"
+        },
+        {
+          "text" : "Mentă",
+          "topic" : "topics/peppermint"
+        },
+        {
+          "text" : "Rozmarin",
+          "topic" : "topics/rosemary"
+        },
+        {
+          "text" : "Şofran",
+          "topic" : "topics/saffron"
+        },
+        {
+          "text" : "Salvie",
+          "topic" : ""
+        },
+        {
+          "text" : "Cimbru",
+          "topic" : ""
+        },
+        {
+          "text" : "Turmeric",
+          "topic" : "topics/turmeric"
+        },
+        {
+          "text" : "Vanilie",
+          "topic" : ""
+        }
+      ]
+    },
+    "dozeVegetablesCruciferous" : {
+      "heading" : "Legume crucifere",
+      "servings" : [
+        {
+          "imperial" : "½ cană tocate",
+          "metric" : "30–80 g tocate"
+        },
+        {
+          "imperial" : "½ cană varză de Bruxelles",
+          "metric" : "80 g varză de Bruxelles"
+        },
+        {
+          "imperial" : "¼ cană germeni de broccoli",
+          "metric" : "15 g cană germeni de broccoli"
+        },
+        {
+          "imperial" : "1 lingură de hrean",
+          "metric" : "1 lingură de hrean"
+        }
+      ],
+      "topic" : "topics/cruciferous-vegetables",
+      "varieties" : [
+        {
+          "text" : "Rucola",
+          "topic" : ""
+        },
+        {
+          "text" : "Varză chinezească (Pak choy)",
+          "topic" : "topics/bok-choy"
+        },
+        {
+          "text" : "Broccoli (incl. Romanesco)",
+          "topic" : "topics/broccoli"
+        },
+        {
+          "text" : "Varză de Bruxelles",
+          "topic" : "topics/brussels-sprouts"
+        },
+        {
+          "text" : "Varză (verde, roșie, creață)",
+          "topic" : "topics/cabbage"
+        },
+        {
+          "text" : "Conopidă (albă, verde, portocalie, violet)",
+          "topic" : "topics/cauliflower"
+        },
+        {
+          "text" : "Varză verde furajeră",
+          "topic" : "topics/collard-greens"
+        },
+        {
+          "text" : "Hrean",
+          "topic" : ""
+        },
+        {
+          "text" : "Varză Kale (neagră, verde și roșie)",
+          "topic" : "topics/kale"
+        },
+        {
+          "text" : "Gulie (verde, violet)",
+          "topic" : ""
+        },
+        {
+          "text" : "Frunze de muștar",
+          "topic" : "topics/mustard-greens"
+        },
+        {
+          "text" : "Ridichi",
+          "topic" : ""
+        },
+        {
+          "text" : "Frunze de nap",
+          "topic" : ""
+        },
+        {
+          "text" : "Năsturel (Creson de apă)",
+          "topic" : "topics/watercress"
+        }
+      ]
+    },
+    "dozeVegetablesOther" : {
+      "heading" : "Alte legume",
+      "servings" : [
+        {
+          "imperial" : "1 cană legume frunzoase, crude",
+          "metric" : "60 g legume frunzoase, crude"
+        },
+        {
+          "imperial" : "½ cană legume fară frunze, crude sau gătite",
+          "metric" : "50 g legume fară frunze, crude sau gătite"
+        },
+        {
+          "imperial" : "½ cană suc de legume",
+          "metric" : "125 ml suc de legume"
+        },
+        {
+          "imperial" : "¼ cană ciuperci uscate",
+          "metric" : "7 g ciuperci uscate"
+        }
+      ],
+      "topic" : "topics/vegetables",
+      "varieties" : [
+        {
+          "text" : "Anghinare",
+          "topic" : "topics/artichokes"
+        },
+        {
+          "text" : "Sparanghel",
+          "topic" : "topics/asparagus"
+        },
+        {
+          "text" : "Sfeclă roșie",
+          "topic" : "topics/beets"
+        },
+        {
+          "text" : "Ardei grași",
+          "topic" : "topics/bell-peppers"
+        },
+        {
+          "text" : "Morcovi",
+          "topic" : "topics/carrots"
+        },
+        {
+          "text" : "Porumb",
+          "topic" : "topics/corn"
+        },
+        {
+          "text" : "Usturoi",
+          "topic" : "topics/garlic"
+        },
+        {
+          "text" : "Ciuperci (champignon, pleurotus, portobello și shiitake)",
+          "topic" : "topics/mushrooms"
+        },
+        {
+          "text" : "Bame",
+          "topic" : "topics/okra"
+        },
+        {
+          "text" : "Ceapă",
+          "topic" : "topics/onions"
+        },
+        {
+          "text" : "Cartofi mov",
+          "topic" : "topics/potatoes"
+        },
+        {
+          "text" : "Dovleac",
+          "topic" : "topics/pumpkin"
+        },
+        {
+          "text" : "Alge de mare (arame, dulse și nori)",
+          "topic" : "topics/sea-vegetables"
+        },
+        {
+          "text" : "Mazăre dulce (păstăi)",
+          "topic" : ""
+        },
+        {
+          "text" : "Dovleci (delicata, de vară, spaghetti)",
+          "topic" : "topics/squash"
+        },
+        {
+          "text" : "Cartofi dulci/igname",
+          "topic" : "topics/sweet-potatoes"
+        },
+        {
+          "text" : "Roșii",
+          "topic" : "topics/tomatoes"
+        },
+        {
+          "text" : "Dovlecei",
+          "topic" : "topics/zucchini"
+        }
+      ]
+    },
+    "dozeWholeGrains" : {
+      "heading" : "Cereale integrale",
+      "servings" : [
+        {
+          "imperial" : "½ cană terci de cereale sau cereale gătite, paste, sau boabe de porumb",
+          "metric" : "100 g terci de cereale sau cereale gătite, paste, sau boabe de porumb"
+        },
+        {
+          "imperial" : "1 cană de cereale reci",
+          "metric" : "50 g cereale reci"
+        },
+        {
+          "imperial" : "1 tortilla sau felie de pâine",
+          "metric" : "1 tortilla sau felie de pâine"
+        },
+        {
+          "imperial" : "½ dintr-o baghetă sau brioșă englezească",
+          "metric" : "½ baghetă sau brioșă englezească"
+        },
+        {
+          "imperial" : "3 căni de floricele de porumb (pop-corn)",
+          "metric" : "30 g floricele de porumb (pop-corn)"
+        }
+      ],
+      "topic" : "topics/grains",
+      "varieties" : [
+        {
+          "text" : "Orz",
+          "topic" : "topics/barley"
+        },
+        {
+          "text" : "Hrișcă",
+          "topic" : "topics/buckwheat"
+        },
+        {
+          "text" : "Mei",
+          "topic" : "topics/millet"
+        },
+        {
+          "text" : "Ovăz",
+          "topic" : "topics/oats"
+        },
+        {
+          "text" : "Floricele de porumb (pop-corn)",
+          "topic" : "topics/popcorn"
+        },
+        {
+          "text" : "Quinoa",
+          "topic" : "topics/quinoa"
+        },
+        {
+          "text" : "Secară",
+          "topic" : "topics/rye"
+        },
+        {
+          "text" : "Taf (mei etiopian)",
+          "topic" : ""
+        },
+        {
+          "text" : "Paste din grâu integral",
+          "topic" : "topics/pasta"
+        }
+      ]
+    },
+    "otherVitaminB12" : {
+      "heading" : "Vitamina B12",
+      "servings" : [
+
+      ],
+      "topic" : "topics/vitamin-b12",
+      "varieties" : [
+
+      ]
+    }
+  }
+}

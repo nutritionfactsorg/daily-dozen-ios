@@ -1,0 +1,490 @@
+/* DailyDozen Localizable.strings (pt-PT) */
+/* Copyright © 2021 Nutritionfacts.org. All rights reserved. */
+
+/* Date Button Title: ‘Back to today’ */
+"dateBackButtonTitle" = "Voltar para hoje";
+
+/* Date Button Title: ‘Today’ */
+"dateButtonTitle.today" = "Hoje";
+
+/* Doze Detail View subheading: ‘Serving Sizes’ */
+"doze_detail_section_sizes" = "Tamanhos de Porções (sugestão)";
+
+/* Doze Detail View subheading: ‘Types’ */
+"doze_detail_section_types" = "Tipos";
+
+/* Doze Entry View heading: ‘Servings’ */
+"doze_entry_header" = "Porções";
+
+/* heading for daily data entry item */
+"dozeBeans.heading" = "Leguminosas";
+
+/* heading for daily data entry item */
+"dozeBerries.heading" = "Bagas";
+
+/* heading for daily data entry item */
+"dozeBeverages.heading" = "Bebidas";
+
+/* heading for daily data entry item */
+"dozeExercise.heading" = "Exercício";
+
+/* heading for daily data entry item */
+"dozeFlaxseeds.heading" = "Linhaça";
+
+/* heading for daily data entry item */
+"dozeFruitsOther.heading" = "Outras Frutas";
+
+/* heading for daily data entry item */
+"dozeGreens.heading" = "Verduras";
+
+/* heading for daily data entry item */
+"dozeNuts.heading" = "Frutos secos e Sementes";
+
+/* Daily Dozen supplement info alert: dismissal button text */
+"dozeOtherInfo.confirm" = "OK";
+
+/* Daily Dozen supplement info alert: message */
+"dozeOtherInfo.message" = "A vitamina B12 é essencial para a sua saúde mas não conta na suas porções diárias. \n\nA vitamina B12 é incluida neste aplicativo para lhe fornecer uma forma fácil de acompanhar a sua ingestão.";
+
+/* Daily Dozen daily entry section heading */
+"dozeOtherInfo.section" = "Suplementos";
+
+/* Daily Dozen supplement info alert: title */
+"dozeOtherInfo.title" = "Suplementos";
+
+/* heading for daily data entry item */
+"dozeSpices.heading" = "Ervas e Especiarias";
+
+/* heading for daily data entry item */
+"dozeVegetablesCruciferous.heading" = "Vegetais Crucíferos";
+
+/* heading for daily data entry item */
+"dozeVegetablesOther.heading" = "Outros Vegetais";
+
+/* heading for daily data entry item */
+"dozeWholeGrains.heading" = "Grãos Integrais";
+
+/*  */
+"faq_adapt_question" = "Preciso de mais / de menos do que a Dúzia Diária. Posso adaptá-la?";
+
+/*  */
+"faq_adapt_response" = "Sim, a Dúzia Diária tenciona ser simplesmente um guia dos alimentos mais saudáveis que tentamos incluir todos os dias. Não é um plano de refeições e não tenciona ser uma receita fixa. Faça o melhor para comer uma gama diversa de alimentos vegetais integrais e adapte a Dúzia Diária às quantidades que funcionam para si.";
+
+/*  */
+"faq_age_question" = "É adaptável a crianças e adolescentes?";
+
+/*  */
+"faq_age_response.0" = "Crianças e adolescentes têm necessidades calóricas diferentes ao longo do seu ciclo de vida. Estas necessidades mudam para apoiar o crescimento e desenvolvimento em cada fase.";
+
+/*  */
+"faq_age_response.1" = "A Dúzia Diária foi desenhada como um guia para ajudar as pessoas a incluir alguns dos alimentos mais saudáveis na sua rotina diária. Embora a sua estrutura possa ser usada para a maioria das pessoas ao longo do seu ciclo de vida, a quantidade de alimentos que é necessário comer varia baseada em vários fatores como idade e nível de atividade. Visto que não podemos fornecer conselhos nutricionais ou médicos para a sua criança em crescimento, os pais devem usar este guia como acharem melhor para as necessidades da sua criança e/ou consultar um nutricionista ou outro profissional de saúde para os ajudar a determinar o que mais se adapta às suas necessidades individuais.";
+
+/*  */
+"faq_calories_question" = "Quantas calorias estão na Dúzia Diária?";
+
+/*  */
+"faq_calories_response.0" = "A Dúzia Diária tem em média 1200 kcal, mas dada a vasta gama de escolhas alimentares em cada categoria, pode variar entre 800 a 1800. Considere a categoria Outros Vegetais: um copo de pimentões tem uma densidade calórica muito menor do que um copo de batatas-doces cozidas, portanto a gama calórica irá depender das suas escolhas alimentares específicas. Isso é o que é tão bom sobre a Dúzia Diária — não é uma abordagem única para todos os casos, e pode ser adaptada às suas necessidades.";
+
+/*  */
+"faq_calories_response.1" = "Se o seu objectivo é perda de peso, pode encontrar mais informação em \"Como Não Fazer Dieta\" e os capítulos sobre os 21 Ajustes. Em \"Como Não Fazer Dieta\", notei: \"uma revisão sistemátia de estratégias bem sucedidas de perda de peso concluiu que dado o abrandamento metabólico e aumento do apetite que acontece na perda de peso, para se atingir perda de peso significativa, poderá ser necessário baixar  a contagem calórica até 1200 kcal por dia para mulheres e 1500 kcal por dia para homens.\"";
+
+/*  */
+"faq_calories_response.2" = "Por outro lado, se o seu objetivo é ganho de peso, então pode querer focar-se em adicionar alimentos mais ricos em calorias, como batatas-doces, abacates, frutos secos, e produtos de soja.";
+
+/*  */
+"faq_mother_question" = "Posso seguir a Dúzia Diária enquanto estiver grávida ou a amamentar?";
+
+/*  */
+"faq_mother_response" = "Mulheres grávidas ou a amamentar têm diferentes necessidades calóricas e nutricionais do que as pessoas que não estão. Vale a pena lembrar que a Dúzia Diária não é um plano alimentar e não deverá ser o único conjunto de alimentos consumidos por dia. Mulheres grávidas ou a amamentar deverão consultar com o seu médico ou nutricionista para terem assistência em cumprir as suas necessidades calóricas e nutricionais específicas.";
+
+/*  */
+"faq_scaling_question" = "Não consigo comer tantos feijões/cereais/etc.!";
+
+/*  */
+"faq_scaling_response" = "Isso não faz mal! A Dúzia Diária é um guia aspiracional. Faça o melhor para incorporar tantos desses alimentos vegetais saudáveis quanto possível. Se for a primeira vez que come muitas leguminosas (ou cereais, verduras, etc.!), pode precisar de começar com quantidades mais pequenas e gradualmente aumentar a quantidade para dar ao seu microbioma uma hipótese de se ajustar. Pode também ser criativo: por exemplo, adicionar algumas leguminosas à sua papa de aveia. Se juntar bagas, linhaça moída, e frutos secos, nem vai dar conta de que tem leguminosas. Também pode amassar as leguminosas para fazer uma pasta para pôr em sanduíches, ou fazer o meu  [BROL](https://nutritionfacts.org/recipe/basic-brol-barley-rye-oats-and-lentils) — cevada, centeio, aveia, e lentilhas — que uso como base para muitas refeições e é uma forma simples de obter uma variedade de cereais integrais e incluir uma porção de leguminosas.";
+
+/*  */
+"faq_supplements_question" = "Pensava que o Dr. Greger recomendava tomar suplementos de Vitamina D e DHA. Porque não estão incluídos?";
+
+/*  */
+"faq_supplements_response" = "Atualizámos a aplicação Dúzia Diária para refletir apenas os suplementos obrigatórios. Por exemplo, a vitamina D é apenas necessária em pessoas com exposição ao sol inadequada. O nosso objetivo é partilhar a ciência consigo para que possa fazer as suas decisões informadas na página [Recomendações Óptimas de Nutrientes](https://nutritionfacts.org/optimum-nutrient-recommendations)";
+
+/* Info Menu */
+"faq_title" = "Questões Frequentes";
+
+/* History Data Alert: Cancel button */
+"history_data_alert_cancel" = "Cancelar";
+
+/* History Data Alert: Clear button */
+"history_data_alert_clear" = "Limpar";
+
+/* History Data Alert: Import buttom */
+"history_data_alert_import" = "Importar";
+
+/* History Data Alert: OK button */
+"history_data_alert_ok" = "OK";
+
+/* History Data: export action button */
+"history_data_export_btn" = "Exportar Dados do Histórico";
+
+/* History Data: export description text */
+"history_data_export_text" = "A exportação foi gravada em:";
+
+/* History Data: import action button */
+"history_data_import_btn" = "Importar Dados do Histórico";
+
+/* History Data: import caution text */
+"history_data_import_caution_text" = "Aviso: Esta importação irá apagar todos os dados do histórico atualmente nesta aplicação da Dúzia Diária. Gostaria de continuar com a importação?";
+
+/* History Data: import data error text */
+"history_data_import_error_text" = "Erro: A importação não foi realizada devido a um erro dos dados. Os dados existentes permaneceram inalterados.";
+
+/* History Data: import not found text */
+"history_data_import_notfound_text" = "Não foi encontrado um ficheiro válido para importação na pasta dos Documentos da Dúzia Diária.";
+
+/* History Data: preferences header & title */
+"history_data_title" = "Histórico";
+
+/* History View: calendar scale control */
+"history_scale_choice_day" = "Dia";
+
+/* History View: calendar scale control */
+"history_scale_choice_month" = "Mês";
+
+/* History View: calendar scale control */
+"history_scale_choice_year" = "Ano";
+
+/* History View: scale text */
+"history_scale_label" = "Escala de Tempo";
+
+/*  */
+"historyRecord.movingAverage" = "Média Móvel";
+
+/* History View */
+"historyRecordDoze.heading" = "Histórico de Porções";
+
+/* History View */
+"historyRecordDoze.legend" = "Porções";
+
+/* History View */
+"historyRecordTweak.heading" = "Histórico de Truques";
+
+/* History View */
+"historyRecordTweak.legend" = "Truques";
+
+/* History View */
+"historyRecordWeight.heading" = "Histórico de Peso";
+
+/* History View */
+"historyRecordWeight.legendEvening" = "Noite";
+
+/* History View */
+"historyRecordWeight.legendMorning" = "Manhã";
+
+/* History View */
+"historyRecordWeight.titleImperial" = "Peso (lbs)";
+
+/* History View */
+"historyRecordWeight.titleMetric" = "Peso (kg)";
+
+/* Info About Menu Item */
+"info_app_about" = "Sobre Nós";
+
+/* Info About View: Application Name ‘Daily Dozen’ */
+"info_app_about_app_name" = "Dúzia Diária";
+
+/* Info About View: Created By */
+"info_app_about_created_by" = "Este aplicativo foi criado por: NutritionFacts.org, Christi Richards, Konstantin Khokhlov e Marc Campbell.";
+
+/* Info About View */
+"info_app_about_heading" = "Sobre este aplicativo";
+
+/* Info About View: Open Source Credits */
+"info_app_about_oss_credits" = "As seguintes bibliotecas de código aberto foram usadas: RealmSwift, Charts, FSCalendar, SimpleAnimation, ActiveLabel.";
+
+/* Info About View: Overview Text */
+"info_app_about_overview" = "Use este aplicativo diariamente para controlar os seus alimentos e acompanhar os conselhos que eu recomendo para uma ótima saúde e longevidade nos meus livros Como Não Morrer e Como Não Fazer Dieta.";
+
+/* Info About View: Contributing Translators List (language code)  See https://en.wikipedia.org/wiki/List_of_ISO_639-1_codes */
+"info_app_about_translators" = "Agradecimentos especiais aos tradutores voluntários: Petar Enchev (bg), Tsveti Enchev (bg), Ricard Soler Roger (ca), Luděk Bouška (cs,sk), Lenka Lukacová (cs), Anke Schliessmann (de), Ángela Graña (es), Saeed Salamian (fa), Audray Harkins (fr), Doron Barak (he), Ruth Levy (he), Annalisa Guerrini-Körner (it), Ilaria Zanini (it), Hanna Gurzeda (pl), Joanna Klopotek (pl), Tania Bassi (pt-BR), João Madureira (pt-PT), Cristina Lauby (ro), Evgeniya Lyakh (ru), Katarína Mocáková (sk), Sabina Aliieva (uk).";
+
+/* Info About View: Application release version */
+"info_app_about_version" = "versão 3.5.1";
+
+/* Info About View: Welcome */
+"info_app_about_welcome" = "Bem-vindos à minha Dúzia Diária!";
+
+/* Info Menu: book title */
+"info_book_how_not_to_die" = "Livro: Como Não Morrer";
+
+/* Info Menu: book title */
+"info_book_how_not_to_die_cookbook" = "Livro: Como Não Morrer (Receitas)";
+
+/* Info Menu: book title */
+"info_book_how_not_to_diet" = "Livro: Como Não Fazer Dieta";
+
+/* Info Menu */
+"info_webpage_daily_dozen_challenge" = "Desafio Duzía Diária";
+
+/* Info Menu */
+"info_webpage_donate" = "Doar";
+
+/* Info Menu */
+"info_webpage_open_source" = "Código Aberto";
+
+/* Info Menu */
+"info_webpage_subscribe" = "Subscreva";
+
+/* Info Menu */
+"info_webpage_videos_latest" = "Últimos Vídeos";
+
+/* Item History Legend: ‘All completed’ */
+"item_history_completed_all" = "Todas as porções";
+
+/* Item History Legend: ‘Some completed’ */
+"item_history_completed_some" = "Algumas porções";
+
+/* Item History Heading */
+"item_history_heading" = "Histórico";
+
+/* Main Navigation Tab Control: ‘Daily Dozen’ (proper noun) */
+"navtab.doze" = "Dúzia Diária";
+
+/* Main Navigation Tab Control: show more information */
+"navtab.info" = "Informação";
+
+/* Main Navigation Tab Control: ‘Preferences’ synonyms: Settings, Configuration. Choose a translations with is different from Tweaks. */
+"navtab.preferences" = "Preferências";
+
+/* Main Navigation Tab Control: ‘21 Tweaks’ (proper noun) */
+"navtab.tweaks" = "21 Truques";
+
+/* heading for daily data entry item */
+"otherVitaminB12.heading" = "Vitamina B12";
+
+/* Alert notification text */
+"reminder.alert.text" = "Atualize as suas porções para hoje";
+
+/* Daily Reminder (alert title, settings section heading) */
+"reminder.heading" = "Lembrete Diário";
+
+/* Daily Reminder On/Off toggle switch label */
+"reminder.settings.enable" = "Habilitar Lembretes";
+
+/* Daily Reminder sound control heading */
+"reminder.settings.sound" = "Habilitar Som";
+
+/* Daily Reminder time control heading */
+"reminder.settings.time" = "Lembre-me em:";
+
+/* Android notification `vibrate` */
+"reminder.settings.vibrate" = "Vibrar";
+
+/* ‘Off’ as in ‘On (enabled) or Off (disabled)’, Daily Reminder is not enabled */
+"reminder.state.off" = "Desligado";
+
+/* ‘On’ as in ‘On (enabled) or Off (disable)’. Daily Reminder is enabled */
+"reminder.state.on" = "Ligado";
+
+/* Google Firebase Analytics */
+"setting_analytics_body" = "Permitir que informação anónima sobre o uso seja recolhida para ajudar a melhorar a aplicação.";
+
+/* Google Firebase Analytics */
+"setting_analytics_enable" = "Permitir analítica";
+
+/* Google Firebase Analytics */
+"setting_analytics_opt_in" = "Optar por participar";
+
+/* Google Firebase Analytics */
+"setting_analytics_opt_out" = "Optar por não participar";
+
+/* Google Firebase Analytics */
+"setting_analytics_title" = "Analítica";
+
+/* First Launch Setting: button text */
+"setting_doze_only_btn" = "Apenas a Dúzia Diária";
+
+/* Preference Settings View: selection button text */
+"setting_doze_only_choice" = "Apenas a Dúzia Diária";
+
+/* First Launch Setting: button text */
+"setting_doze_tweak_btn" = "Dúzia Diária + 21 Truques";
+
+/* Preference Settings View: selection button text */
+"setting_doze_tweak_choice" = "Dúzia Diária + 21 Truques";
+
+/* Preference Settings View: brief description text below Tweaks visibility control. */
+"setting_doze_tweak_footer" = "Se está interessado apenas em saúde, use \"Apenas a Dúzia Diária\". Se está interessado em saúde e perda de peso use \"Dúzia Diária + 21 Truques\".";
+
+/* First Launch Setting: brief description above ‘Daily Dozen Only’ button. */
+"setting_health_alone_txt" = "Apenas para Saúde";
+
+/* First Launch Setting: brief description above ‘Daily Dozen + 21 Tweaks’ button. */
+"setting_health_weight_txt" = "Para Saúde e Perda de Peso";
+
+/* Preference Settings View: tweaks visibilty subsection heading */
+"setting_tweak_header" = "Visibilidade dos 21 Truques";
+
+/* Preference Settings View: Part of ‘Imperial/Metric/Toggle Units’ selector */
+"setting_units_0_imperial" = "Imperial";
+
+/* Preference Settings View: Part of ‘Imperial/Metric/Toggle Units’ selector */
+"setting_units_1_metric" = "Métrico";
+
+/* Preference Settings View: Part of ‘Imperial/Metric/Toggle Units’ selector */
+"setting_units_2_toggle" = "Unidades";
+
+/* Preference Settings View: brief description text below units control. */
+"setting_units_choice_footer" = "Escolha entre ter sempre as mesmas unidades de medida ou ativar o botão de escolha de \"Unidades:\".";
+
+/* Preference Settings View */
+"setting_units_header" = "Unidades de Medida";
+
+/* Preference Settings View */
+"setting_util_advanced" = "Funções Avançadas";
+
+/* ‘Streak’ count. Synonym: ‘Progress‘. Formatted number ‘%d’ for consecutive days completed. Place translated text for ‘days’ on the right or left of ‘%d’ based on language directionality. */
+"streakDaysFormat" = "%d dias";
+
+/* Tweaks Detail view section heading */
+"tweak_detail_section_activity" = "Atividade";
+
+/* Tweaks Detail view section heading */
+"tweak_detail_section_description" = "Descrição";
+
+/* Tweaks daily entry header */
+"tweak_entry_header" = "21 Truques";
+
+/* heading for daily data entry item */
+"tweakCompleteIntentions.heading" = "Conclua as suas Intenções de Implementação";
+
+/* heading for daily data entry item */
+"tweakDailyBlackCumin.heading" = "Cominho Preto (¼ colher de chá)";
+
+/* heading for daily data entry item */
+"tweakDailyCumin.heading" = "Cominho (½ colher de chá no almoço e no jantar)";
+
+/* heading for daily data entry item */
+"tweakDailyDeflourDiet.heading" = "Retire a Farinha da Sua Alimentação";
+
+/* heading for daily data entry item */
+"tweakDailyFrontLoad.heading" = "Consuma Mais Calorias de Manhã";
+
+/* heading for daily data entry item */
+"tweakDailyGarlic.heading" = "Alho em Pó (¼ colher de chá)";
+
+/* heading for daily data entry item */
+"tweakDailyGinger.heading" = "Gengibre em Pó (1 colher de chá) ou Pimenta Caiena (½ colher de chá)";
+
+/* heading for daily data entry item */
+"tweakDailyGreenTea.heading" = "Chá Verde (3 xícaras)";
+
+/* heading for daily data entry item */
+"tweakDailyHydrate.heading" = "Mantenha-se Hidratado";
+
+/* heading for daily data entry item */
+"tweakDailyNutriYeast.heading" = "Levedura Nutricional (2 colheres de chá)";
+
+/* heading for daily data entry item */
+"tweakDailyTimeRestrict.heading" = "Limite o Tempo de sua Alimentação";
+
+/* heading for daily data entry item */
+"tweakExerciseTiming.heading" = "Optimize o Tempo de Exercícios";
+
+/* heading for daily data entry item */
+"tweakMeal20Minutes.heading" = "Siga a Regra dos Vinte Minutos";
+
+/* heading for daily data entry item */
+"tweakMealNegCal.heading" = "Pré-refeição de Alimentos com \"Calorias Negativas\"";
+
+/* heading for daily data entry item */
+"tweakMealUndistracted.heading" = "Desfrute de Refeições sem Distrações";
+
+/* heading for daily data entry item */
+"tweakMealVinegar.heading" = "Incorpore Vinagre (2 colheres de chá com cada refeição)";
+
+/* heading for daily data entry item */
+"tweakMealWater.heading" = "Pré-refeição de Água";
+
+/* heading for daily data entry item */
+"tweakNightlyFast.heading" = "Jejum Após as 19:00h";
+
+/* heading for daily data entry item */
+"tweakNightlySleep.heading" = "Durma o Suficiente";
+
+/* heading for daily data entry item */
+"tweakNightlyTrendelenbrug.heading" = "Experimente a inclinação leve de Trendelenburg";
+
+/* heading for daily data entry item */
+"tweakWeightTwice.heading" = "Pese-se Duas Vezes por Dia";
+
+/*  */
+"units_label" = "Unidades:";
+
+/* Units toggle button text: imperial measurement system */
+"unitToggle.imperial" = "Imperial";
+
+/* Units toggle button text: metric measurement system */
+"unitToggle.metric" = "métrico";
+
+/* URL path */
+"urlSegment.base" = "https://nutritionfacts.org/";
+
+/*  */
+"urlSegment.lang" = "";
+
+/* main info menu: book */
+"urlSegmentInfoMenu.book" = "book/how-not-to-die";
+
+/* main info menu: daily-dozen-challenge */
+"urlSegmentInfoMenu.challenge" = "daily-dozen-challenge";
+
+/* main info menu: cookbook */
+"urlSegmentInfoMenu.cookbook" = "book/how-not-to-die-cookbook";
+
+/* main info menu: how-not-to-diet */
+"urlSegmentInfoMenu.diet" = "book/how-not-to-diet";
+
+/* main info menu: donate */
+"urlSegmentInfoMenu.donate" = "donate";
+
+/* main info menu: open-source */
+"urlSegmentInfoMenu.source" = "open-source";
+
+/* main info menu: subscribe */
+"urlSegmentInfoMenu.subscribe" = "subscribe";
+
+/* team */
+"urlSegmentInfoMenu.team" = "team";
+
+/* main info menu: videos */
+"urlSegmentInfoMenu.videos" = "videos";
+
+/* Label for hyperlink to nutritionfacts.org video topics */
+"videos.link.label" = "VÍDEOS";
+
+/* Weight Daily Entry: clear button which deletes values */
+"weight_entry_clear" = "Apagar";
+
+/* Weight Daily Entry: label */
+"weight_entry_evening" = "Noite (antes de dormir)";
+
+/* Weight Daily Entry: label */
+"weight_entry_morning" = "Manhã (logo ao acordar)";
+
+/* Weight Daily Entry: label */
+"weight_entry_time" = "Tempo";
+
+/* Weight Daily Entry Units: label */
+"weight_entry_units_kg" = "kg";
+
+/* Weight Daily Entry Units: label */
+"weight_entry_units_lbs" = "lbs";
+
+/* Weight Daily Entry: edit button to change values */
+"weight_history_edit_data" = "Editar Dados";
+
+/* Weight Daily Entry: heading */
+"weightEntry.heading" = "Peso";
+
+/* file end */
