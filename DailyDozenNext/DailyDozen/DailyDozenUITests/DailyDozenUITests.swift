@@ -2,7 +2,7 @@
 //  DailyDozenUITests.swift
 //  DailyDozenUITests
 //
-//  Copyright © 2017 Nutritionfacts.org. All rights reserved.
+//  Copyright © 2024 Nutritionfacts.org. All rights reserved.
 //
 
 import XCTest
