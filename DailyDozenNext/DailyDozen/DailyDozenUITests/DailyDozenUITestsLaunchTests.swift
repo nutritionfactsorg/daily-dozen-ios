@@ -9,9 +9,10 @@ import XCTest
 
 final class DailyDozenUITestsLaunchTests: XCTestCase {
 
-    override class var runsForEachTargetApplicationUIConfiguration: Bool {
-        true
-    }
+    // :???: Is this class var needed? Apple generated?
+    //override class var runsForEachTargetApplicationUIConfiguration: Bool {
+    //    true
+    //}
 
     override func setUpWithError() throws {
         continueAfterFailure = false

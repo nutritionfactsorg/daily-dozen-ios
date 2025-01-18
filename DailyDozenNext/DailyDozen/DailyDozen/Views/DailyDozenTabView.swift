@@ -13,11 +13,11 @@ struct DailyDozenTabView: View {
             VStack {
                 Text("Daily Dozen View")
             }
-//            navigationTitle("Daily Dozen") //!!Needs localization
-//            .navigationBarTitleDisplayMode(.inline)
+            .navigationTitle(Text("navtab.doze")) //!!Needs localization comment
+            .navigationBarTitleDisplayMode(.inline)
 //            
-//            .toolbarBackground(.visible, for: .navigationBar)
-//            .toolbarBackground(.brandGreen, for: .navigationBar)
+            .toolbarBackground(.visible, for: .navigationBar)
+            .toolbarBackground(.brandGreen, for: .navigationBar)
 //            .toolbarColorScheme(.dark) // allows title to be white
         }
     }
@@ -25,4 +25,5 @@ struct DailyDozenTabView: View {
 
 #Preview {
     DailyDozenTabView()
+    //.preferredColorScheme(.dark)
 }

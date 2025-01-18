@@ -39,11 +39,10 @@ enum MenuItem: Int, CaseIterable, Identifiable {
             "urlSegmentInfoMenu.source",
             comment: "main info menu: open-source")
     }
-///MJ insert temp
     
     /// Defines item order for `InfoMenuMainTableVC`
     case videos, book, cookbook, diet, faq, challenge, donate, subscribe, source, about
-
+//Below not used
 //    var link: String? { 
 //        switch self {
 //        case .videos:
@@ -82,5 +81,3 @@ enum MenuItem: Int, CaseIterable, Identifiable {
 //        }
 //    }
 }
-
-

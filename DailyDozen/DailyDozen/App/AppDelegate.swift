@@ -17,7 +17,6 @@ import FirebaseAnalytics // "Google Analytics"
 class AppDelegate: UIResponder, UIApplicationDelegate {
     
     weak var realmDelegate: RealmDelegate?
-    
     var window: UIWindow?
     
     func application(

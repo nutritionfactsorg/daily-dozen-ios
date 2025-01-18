@@ -19,9 +19,7 @@ struct InformationTabView: View {
       
         let appendU = linkService.link(menu: mlink)
 
-       
-        
-        print(appendU)
+       // print(appendU)
         return appendU
     }
     var body: some View {
@@ -32,9 +30,9 @@ struct InformationTabView: View {
             //                Text(item.wrappedValue)
             //
             //            }
-           List{
+           List {
                Link(destination: getLink(mlink: theMenuLink.videos)) {
-                   Text ("info_webpage_videos_latest", comment: "Latest Videos")
+                   Text("info_webpage_videos_latest", comment: "Latest Videos")
                }
                Link(destination: getLink(mlink: theMenuLink.book)
                ) {
@@ -46,49 +44,68 @@ struct InformationTabView: View {
                    Text("info_book_how_not_to_die_cookbook", comment: "How Not to Die Cookbook")
                }
             
-                Link(destination:  getLink(mlink: theMenuLink.diet)
-                ){
-                    Text ("info_book_how_not_to_diet", comment: "How Not to Diet")
+                Link(destination: getLink(mlink: theMenuLink.diet)
+                ) {
+                    Text("info_book_how_not_to_diet", comment: "How Not to Diet")
                 }
                
-               Text("faq_title", comment: "FAQ") //!!!NYI
-               
-               Link(destination:  getLink(mlink: theMenuLink.challenge)) {
+               NavigationLink {
+                   InfoFaqTableView()
+               } label: {
+                   Text("faq_title", comment: "FAQ")
+               }
+               //.accentColor(.black)
+              
+               Link(destination: getLink(mlink: theMenuLink.challenge)) {
                    Text( "info_webpage_daily_dozen_challenge", comment: "Daily Dozen Challenge")
                }
                
-               Link(destination:  getLink(mlink: theMenuLink.donate)) {
+               Link(destination: getLink(mlink: theMenuLink.donate)) {
                    Text( "info_webpage_donate", comment: "Donate")
                }
                
-               Link(destination:  getLink(mlink: theMenuLink.subscribe)) {
+               Link(destination: getLink(mlink: theMenuLink.subscribe)) {
                    Text( "info_webpage_subscribe", comment: "Subscribe")
                }
                
-               Link(destination:  getLink(mlink: theMenuLink.source)) {
+               Link(destination: getLink(mlink: theMenuLink.source)) {
                    Text( "info_webpage_open_source", comment: "Open Source")
                }
+           
+               NavigationLink {
+                   AboutView()
+               } label: {
+                   Text("info_app_about", comment: "About")
+               }
                
-               Text("info_app_about", comment: "About") //NYI
+               //This way is hack to get rid of disclosure https://stackoverflow.com/questions/58333499/swiftui-navigationlink-hide-arrow/74198140#74198140
+               Text("info_app_about", comment: "About")
+                   .background(
+                    NavigationLink("", destination: AboutView()
+                                  ) .opacity(0)
+               )
 
            }
         
         //.listStyle(.plain)
-        .navigationTitle("Information") //!!Needs localization
+           .navigationTitle(Text("navtab.info"))
+        //.navigationTitle("Information") //GTDz" !!Needs localization
         .navigationBarTitleDisplayMode(.inline)
-        
+
         .toolbarBackground(.visible, for: .navigationBar)
         .toolbarBackground(.brandGreen, for: .navigationBar)
         .toolbarColorScheme(.dark) // allows title to be white  //https://www.youtube.com/watch?v=Tf3xqyf6tBQ
         
-        
+        // !!GTDz: hack doesn't always seem to work.
         }
                 
     }
 }
 
-#Preview {
-   // InformationTabView()
-    InformationTabView().preferredColorScheme(.dark)
-    // ContentView()
+struct InformationTabView_Previews: PreviewProvider {
+    static var previews: some View {
+        ForEach(ColorScheme.allCases, id: \.self) {
+            InformationTabView().preferredColorScheme($0)
+        }
+    }
 }

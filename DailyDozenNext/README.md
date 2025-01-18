@@ -49,6 +49,12 @@ Path: App/Views/FirstLaunch.storyboard
 
 Path: InfoMenu/InfoMenuAbout/Views/InfoMenuAboutLayout.storyboard
 
+- [x] Basic main nav tabs in place. SF symbol based.
+- [x] Initial localization setup for the languages.
+- [ ] Migration of LinksService
+- [ ] Migration of v2.x/v3.x colors into Assets.xcassets/Colors
+- [ ] About view layout.
+
 ## InfoMenuMainLayout.storyboard <a id="InfoMenuMainLayout-storyboard-"></a><sup>[▴](#contents)</sup>
 
 Path: InfoMenu/InfoMenuMain/Views/InfoMenuMainLayout.storyboard
