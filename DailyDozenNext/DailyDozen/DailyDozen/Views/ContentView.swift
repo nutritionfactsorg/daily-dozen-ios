@@ -50,5 +50,6 @@ struct ContentView: View {
 
 #Preview {
    ContentView().preferredColorScheme(.dark)
-   // ContentView()
+   
+   //  .environment(\.locale, .init(identifier: "de"))
 }

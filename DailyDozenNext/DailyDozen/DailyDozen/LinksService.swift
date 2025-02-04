@@ -11,7 +11,7 @@ class LinksService {
     private let baseURL =  URL(string: "https://nutritionfacts.org")
 
     var siteMain: URL {
-        return baseURL ?? URL(string: "https://nutritionfacts.org")! // :GTD:!!!:  Is this even needed?  If so, try catch
+        return baseURL ?? URL(string: "https://nutritionfacts.org")! //!!!MEC::  Is this even needed?  If so, try catch
     }
     
     func link(menu: String) -> URL {
