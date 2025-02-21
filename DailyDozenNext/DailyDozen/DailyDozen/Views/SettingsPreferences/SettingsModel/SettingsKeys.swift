@@ -10,10 +10,11 @@ import Foundation
 struct SettingsKeys {
     // MARK: - UserDefaults keys
     
+    //NYIz:  Need to add selectedTIme
     /// Reminder
     static let reminderCanNotify = "reminderCanNotify"
-    static let reminderHourPref = "reminderHourPref"
-    static let reminderMinutePref = "reminderMinutePref"
+//    static let reminderHourPref = "reminderHourPref"
+//    static let reminderMinutePref = "reminderMinutePref"
     static let reminderSoundPref = "reminderSoundPref"
     /// Units Type: imperial|metric
     static let unitsTypePref = "unitsTypePref"

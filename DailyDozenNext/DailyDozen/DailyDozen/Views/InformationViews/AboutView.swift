@@ -23,7 +23,7 @@ struct AboutView: View {
             VStack {
                 
                 HeaderView()
-                   .scaledToFill()
+                    .scaledToFill()
                     .frame(maxWidth: 500, minHeight: 50, maxHeight: 100) //::NOTEz: check frame sizes
             }
             
@@ -41,7 +41,7 @@ struct AboutView: View {
                             Text("info_app_about_welcome")
                                 .bold()
                                 .font(.title2)  //::GTDz What size
-                               // .foregroundStyle(.nfText)
+                            // .foregroundStyle(.nfText)
                                 .padding(10)
                             Text("info_app_about_overview")
                                 .multilineTextAlignment(.leading)
@@ -54,7 +54,7 @@ struct AboutView: View {
                     .border(.white) //old: default system white //::TBDz not sure this is even needed
                     .cornerRadius(5)
                     .shadow(color: .nfGray50.opacity(1.0), radius: 5, x: 1, y: 1)
-//                    .shadow(color: .gray.opacity(1.0), radius: 5, x: 1, y: 1)
+                    //                    .shadow(color: .gray.opacity(1.0), radius: 5, x: 1, y: 1)
                     
                     //::GTD check current app
                     //shadow color sb light gray color
@@ -64,20 +64,20 @@ struct AboutView: View {
                     Section {
                         DailyDozenAboutCreditView()
                         // .border(.white) //old: default system white //::TBDz not sure this is even needed
-                            
+                        
                             .shadow(color: .nfGray50.opacity(1.0), radius: 5, x: 1, y: 1)
-                            
+                        
                     }
                 }
                 //.background(.gray)
             }
-           
-           // Spacer()
-                .navigationTitle("About this app") //!!GTDz Needs localization
-                .navigationBarTitleDisplayMode(.inline)
-                .toolbarBackground(.visible, for: .navigationBar)
-                .toolbarBackground(.brandGreen, for: .navigationBar)
-                .toolbarColorScheme(.dark)
+            
+            // Spacer()
+            .navigationTitle("About this app") //!!GTDz Needs localization
+            .navigationBarTitleDisplayMode(.inline)
+            .toolbarBackground(.visible, for: .navigationBar)
+            .toolbarBackground(.brandGreen, for: .navigationBar)
+            .toolbarColorScheme(.dark)
         }
     }
 }

@@ -20,7 +20,7 @@ struct DateManager {
         if let d = Calendar.current.date(byAdding: components, to: datetime) {
             datetime = d
         } else {
-           // logit.error("DateManager currentDatetime() failed to ")
+            logit.error("DateManager currentDatetime() failed to ")
         }
         #endif
         return datetime
