@@ -4,7 +4,10 @@
 //
 //  Copyright © 2025 Nutritionfacts.org. All rights reserved.
 //
-
+//NYIz: B12/Supplement section not implemented nor link to NF.org
+//NYIz: checkbox not implemented
+//NYIz: History Buttons
+//NYIz: Servings Totals
 import SwiftUI
 
 struct DailyDozenTabView: View {
@@ -27,6 +30,7 @@ struct DailyDozenTabView: View {
   
     var body: some View {
         NavigationStack {
+           
             VStack {
                 ForEach(DailyDozenTabView.rowTypeArray, id: \.self) { item in
                     HStack {
@@ -36,10 +40,10 @@ struct DailyDozenTabView: View {
                             .aspectRatio(contentMode: .fit)
                        
                         Text(item.headingDisplay)
-                        Button {
-                            print("Info button was tapped")
-                        } label: {
-                            Image(systemName: "info")
+                        NavigationLink(destination: DailyDozenDetailView(dataCountTypeItem: item)) {
+                            Image(systemName: "info.circle")
+                                .font(.system(size: 12))
+                            //TBDz fontsize?
                         }
                     }
                     .padding(10)
@@ -51,7 +55,7 @@ struct DailyDozenTabView: View {
             .toolbarBackground(.visible, for: .navigationBar)
             .toolbarBackground(.brandGreen, for: .navigationBar)
 //            .toolbarColorScheme(.dark) // allows title to be white
-        }
+        } //NavStack
     }
 }
 

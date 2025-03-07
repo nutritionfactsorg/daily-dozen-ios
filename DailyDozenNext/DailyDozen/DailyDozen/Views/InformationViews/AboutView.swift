@@ -73,7 +73,7 @@ struct AboutView: View {
             }
             
             // Spacer()
-            .navigationTitle("About this app") //!!GTDz Needs localization
+            .navigationTitle("info_app_about_heading") 
             .navigationBarTitleDisplayMode(.inline)
             .toolbarBackground(.visible, for: .navigationBar)
             .toolbarBackground(.brandGreen, for: .navigationBar)

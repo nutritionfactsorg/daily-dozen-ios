@@ -82,6 +82,6 @@ struct InfoFaqTableView: View {
 #Preview {
 
     InfoFaqTableView()
-      .environment(\.locale, .init(identifier: "de"))
+     // .environment(\.locale, .init(identifier: "de"))
        
 }

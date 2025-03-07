@@ -67,18 +67,16 @@ class DozeEntryViewModel {
 //    }
     
     // Returns a url for the current item name.
-//  ///
-//  /// - Parameter itemName: The item name.
-//  /// - Returns: A NutritionFacts topic url.
-//    func topicURL(itemTypeKey: String) -> URL {
-//        let topic = DozeTextsProvider.shared.getTopic(itemTypeKey: itemTypeKey)
-//        return LinksService.shared.link(topic: topic)
-//    }
+    /// - Parameter itemName: The item name.
+    /// - Returns: A NutritionFacts topic url.
+    func topicURL(itemTypeKey: String) -> URL {
+        let topic = DozeTextsProvider.shared.getTopic(itemTypeKey: itemTypeKey)
+        return LinksService.shared.link(topic: topic)
+    }
     
     // Returns item states in the doze for the current index.
-//  ///
-//  /// - Parameter index: The current row index.
-//  /// - Returns: The states booland array.
+    /// - Parameter index: The current row index.
+    /// - Returns: The states booland array.
 //    func dozeItemStates(rowIndex: Int) -> [Bool] {
 //        let rowType: DataCountType = DozeEntryViewModel.rowTypeArray[rowIndex]
 //        let goalServings = rowType.goalServings
