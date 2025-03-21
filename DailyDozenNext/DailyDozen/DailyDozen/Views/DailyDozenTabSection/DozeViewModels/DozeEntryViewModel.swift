@@ -26,21 +26,21 @@ class DozeEntryViewModel {
     ]
     
     // MARK: - Properties
-//    private let tracker: RealmDailyTracker
+    private let tracker: SqlDailyTracker
     
     /// Returns Daily Dozen item count.
     var count: Int {
         return DozeEntryViewModel.rowTypeArray.count
     }
     
-//    var trackerDate: Date {
-//        tracker.date
-//    }
+    var trackerDate: Date {
+        tracker.date
+    }
     
     // MARK: - Inits
-//    init(tracker: RealmDailyTracker) {
-//        self.tracker = tracker
-//    }
+    init(tracker: SqlDailyTracker) {
+        self.tracker = tracker
+    }
     
     // MARK: - Methods
     /// Returns an item name and type in the doze for the current index.
@@ -75,8 +75,8 @@ class DozeEntryViewModel {
     }
     
     // Returns item states in the doze for the current index.
-    /// - Parameter index: The current row index.
-    /// - Returns: The states booland array.
+    // - Parameter index: The current row index.
+    // - Returns: The states booland array.
 //    func dozeItemStates(rowIndex: Int) -> [Bool] {
 //        let rowType: DataCountType = DozeEntryViewModel.rowTypeArray[rowIndex]
 //        let goalServings = rowType.goalServings
@@ -96,26 +96,25 @@ class DozeEntryViewModel {
     func itemType(rowIndex: Int) -> DataCountType {
         return DozeEntryViewModel.rowTypeArray[rowIndex]
     }
-    
-    /// Returns an item type key in the tracker for the current index.
-    ///
-    /// - Parameter index: The current row index.
-    /// - Returns: The item type key string.
+//    
+//    /// Returns an item type key in the tracker for the current index.
+//    ///
+//    /// - Parameter index: The current row index.
+//    /// - Returns: The item type key string.
     func itemTypeKey(rowIndex: Int) -> String {
         return DozeEntryViewModel.rowTypeArray[rowIndex].typeKey
     }
-    
-//    func itemPid(rowIndex: Int) -> String {
-//        let itemType = DozeEntryViewModel.rowTypeArray[rowIndex]
-//        return tracker.getPid(typeKey: itemType)
-//    }
-    
-    /// Returns an image name for the current index.
-    ///
-    /// - Parameter index: The current table row index.
-    /// - Returns: The image name.
+//    
+    func itemPid(rowIndex: Int) -> String {
+        let itemType = DozeEntryViewModel.rowTypeArray[rowIndex]
+        return tracker.getPid(typeKey: itemType)
+    }
+//    
+//    /// Returns an image name for the current index.
+//    ///
+//    /// - Parameter index: The current table row index.
+//    /// - Returns: The image name.
     func imageName(rowIndex: Int) -> String {
         return DozeEntryViewModel.rowTypeArray[rowIndex].imageName
     }
-    
 }
