@@ -7,9 +7,10 @@
 
 import SwiftUI
 
-struct DatePickerView: View {
+struct DatePickerSheetViewWAS: View {
     @Binding var selectedDate: Date
     @Environment(\.dismiss) var dismiss
+    let onDateSelected: (Date) -> Void
     
     var body: some View {
         VStack(spacing: 5) {
@@ -22,7 +23,9 @@ struct DatePickerView: View {
                 .foregroundColor(.blue)
                 Spacer()
                 Button("Today") {
-                    selectedDate = Date()
+                   // selectedDate = Date()
+                    onDateSelected(selectedDate)
+                    dismiss()
                 }
                 .foregroundColor(.blue)
                 Spacer()
@@ -30,6 +33,7 @@ struct DatePickerView: View {
                    // isShowingSheet = false
                     // TBDz  action you want with selectedDate here
                     print("Selected date: \(selectedDate)")
+                    onDateSelected(selectedDate)
                     dismiss()
                 }
                 .foregroundColor(.blue)
@@ -45,6 +49,9 @@ struct DatePickerView: View {
                         displayedComponents: [.date]
                     )
                     .datePickerStyle(.wheel)
+                   // .modifier(OnChangeDateModifier(date: selectedDate) { newDate in
+                  //      onDateSelected(newDate)
+                 //   })
                     .labelsHidden()  //needed to center
                     .padding()
                     
@@ -57,10 +64,10 @@ struct DatePickerView: View {
 //    @State static var previewDate = Date()
 //    DatePickerView(selectedDate: $previewDate)
 //}
-struct DatePickerView_Previews: PreviewProvider {
-    @State static var previewDate = Date()  // Static state for preview
-    
-    static var previews: some View {
-        DatePickerView(selectedDate: $previewDate)
-    }
-}
+//struct DatePickerView_Previews: PreviewProvider {
+//    @State static var previewDate = Date()  // Static state for preview
+//    @State static var previewSelected = Date()
+//    static var previews: some View {
+//        DatePickerSheetView(selectedDate: $previewDate, onDateSelected: previewDate)
+//    }
+//}

@@ -9,7 +9,7 @@ import Testing
 @testable import DailyDozen // module
 
 struct DailyTrackerTests {
-
+    
     func dateBeforeDays(_ days: Int) -> Date {
         let today = Date()
         if let pastDate = Calendar.current.date(byAdding: .day, value: days, to: today) {
@@ -65,17 +65,19 @@ struct DailyTrackerTests {
     @Test
     func testSqlDataArray() async throws {
         var data = [SqlDailyTracker]()
-        
+        print("**")
+        print(createSqlTracker(date: Date()))
+        print("**")
         data.append(createSqlTracker(date: Date()))
-       // data.append(createSqlTracker(date: Date()))
+        // data.append(createSqlTracker(date: Date()))
         data.append(createSqlTracker(date: dateBeforeDays(-2)))
         data.append(createSqlTracker(date: dateBeforeDays(-5)))
         
-       // print(data)
-       // print(data[0].itemsDict[.dozeBeans] ?? "No Value")
-        print(data[0].itemsDict[.dozeBeans]?.datacount_count ?? "No Value")
+        // print(data)
+        // print(data[0].itemsDict[.dozeBeans] ?? "No Value")
+        //  print(data[0].itemsDict[.dozeBeans]?.datacount_count ?? "No Value")
         //if let lastIndex = data.lastIndex(where: <#T##(SqlDailyTracker) throws -> Bool#>)
-        print(data.count)
+        //  print(data.count)
         
     }
     
@@ -109,14 +111,14 @@ struct DailyTrackerTests {
             weightType: DataWeightType.am,
             kg: 59)
         
-       // print(tracker)"
- //       print(tracker.itemsDict[.dozeGreens] ?? "None")
-        print(tracker.date)
-       // print(tracker.itemsDict.values)
-        print(tracker.getPid(typeKey: .dozeBeans))
-        var item = DataCountType.dozeGreens
+        print(tracker)
+        // print(tracker.itemsDict[.dozeGreens] ?? "None")
+        // print(tracker.date)
+        // print(tracker.itemsDict.values)
+        // print(tracker.getPid(typeKey: .dozeBeans))
+        //  var item = DataCountType.dozeGreens
         
-        print(tracker.itemsDict[item]!.datacount_count)
+        //  print(tracker.itemsDict[item]!.datacount_count)
     }
-
+    
 }

@@ -100,6 +100,32 @@ public struct SqlDataCountRecord: Codable {
         datacount_streak = streak
     }
     
+    /// CSV Initializer: SqlDataCountRecord
+    public init?(
+        datacount_date_psid datestampSid: String,
+        datacount_kind_pfnid typeKey: Int,
+        datacount_count count: Int = 0,
+        datacount_streak streak: Int = 0
+    ) {
+        guard let dataCountType = DataCountType(nid: typeKey),
+            Date(datestampSid: datestampSid) != nil else {
+            return nil
+        }
+        
+        //self.init()
+        datacount_date_psid = datestampSid // YYYYMMDD
+        datacount_kind_pfnid = dataCountType.nid
+
+        datacount_count = count
+        if datacount_count > dataCountType.goalServings {
+            datacount_count = dataCountType.goalServings
+            logit.error(
+                "SqlDataCountRecord init datestampSid:\(datestampSid) typekey:\(typeKey) count:\(count) exceeded max servings \(dataCountType.goalServings)"
+            )
+        }
+        datacount_streak = streak
+    }
+    
     public init(date: Date, countType: DataCountType, count: Int = 0, streak: Int = 0) {
         //self.init()
         datacount_date_psid = date.datestampSid // YYYYMMDD

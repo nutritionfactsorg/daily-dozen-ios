@@ -28,9 +28,8 @@ import Foundation
 
 extension Date {
     
-    // :NYIz:
-        
-//    /// Return DataWeightType `.am` or `.pm`
+    //NYIz
+//  ///Return DataWeightType `.am` or `.pm`
 //    var ampm: DataWeightType {
 //        if self.hour < 12 {
 //            return .am
@@ -108,6 +107,30 @@ extension Date {
         let dateFormatter = DateFormatter()
         dateFormatter.dateFormat = "yyyyMMdd hh:mm a"
         if let date = dateFormatter.date(from: healthkit) {
+            self = date
+            return
+        } else {
+            return nil
+        }
+    }
+    
+    // `"yyyy-MM-dd HH:mm:ss Z"` ISO 8601 international standard compliant
+    //
+    //- **`yyyy`**: Represents the four-digit year (e.g., 2025)
+    //- **`MM`**: Represents the two-digit month (e.g., 03 for March)
+    //- **`dd`**: Represents the two-digit day (e.g., 26)
+    //- **`HH`**: Represents the two-digit hour in 24-hour format (e.g., 14 for 2 PM)
+    //- **`mm`**: Represents the two-digit minutes (e.g., 30)
+    //- **`ss`**: Represents the two-digit seconds (e.g., 45)
+    //- **`Z`**: Represents the UTC offset or "Z" for Zulu time (UTC), such as "+00:00" or "Z" timezone information.
+    //
+    //The standard is flexible but typically uses a "T" separator between the date and time (e.g., `2025-03-26T14:30:45Z`)
+    init?(iso8601: String) {
+        let formatter = DateFormatter()
+        //formatter.dateFormat = "yyyy-MM-dd HH:mm:ss Z"
+        formatter.dateFormat = iso8601.contains("T") ? "yyyy-MM-ddTHH:mm:ss Z" : "yyyy-MM-dd HH:mm:ss Z"
+        
+        if let date = formatter.date(from: iso8601) {
             self = date
             return
         } else {

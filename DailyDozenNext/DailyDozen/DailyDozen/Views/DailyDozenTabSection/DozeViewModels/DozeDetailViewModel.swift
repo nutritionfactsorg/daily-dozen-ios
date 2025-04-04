@@ -82,7 +82,6 @@ struct DozeDetailViewModel {
     /// - Parameter index: The current index.
     /// - Returns: The type toipic url.
    
-    
     func typeTopicURLWAS(index: Int) -> URL? {
         if info.varieties[index].topic.isEmpty { // :GTD:???: review logic
             return nil

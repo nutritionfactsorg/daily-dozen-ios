@@ -44,6 +44,20 @@ struct CheckboxView2: View {
     }
 }
 
+struct CheckboxView3: View {
+    let isChecked: Bool
+    //let onTap: () -> Void
+  //  let onChange: (Int) -> Void
+    var body: some View {
+       
+            Image(systemName: isChecked ? "checkmark.square.fill" : "square")
+                .resizable()
+                .frame(width: 20, height: 20) //
+                .foregroundColor(isChecked ? .brandGreen : .grayLight)
+                .fontWeight(.heavy)
+    }
+}
+
 #Preview {
     //let isChecked = true
     HStack(spacing: 20) {
@@ -51,10 +65,9 @@ struct CheckboxView2: View {
                 isChecked: false,
                 onTap: { print("Tapped unchecked box") }
             )
-            CheckboxView2(
-                isChecked: true,
-                onTap: { print("Tapped checked box") }
-            )
+            CheckboxView3(
+                isChecked: true)
+               // onTap: { print("Tapped checked box") }
         }
         .padding()
     }

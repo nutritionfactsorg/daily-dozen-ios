@@ -7,7 +7,7 @@
 
 import SwiftUI
 
-struct DozeBackToTodayButtonView: View {
+struct DozeBackToTodayButtonViewWAS: View {
     var body: some View {
         VStack {
             
@@ -26,6 +26,27 @@ struct DozeBackToTodayButtonView: View {
     }
 }
 
+struct DozeBackToTodayButtonView: View {
+    let isToday: Bool
+    let action: () -> Void
+    
+    var body: some View {
+        if !isToday {
+            Button(action: action) {
+                Text("dateBackButtonTitle")
+                    .frame(maxWidth: .infinity)
+                    .padding(5)
+                    .background(Color.brandGreen)
+                    .foregroundColor(.white)
+                    //.cornerRadius(8)
+                    .ignoresSafeArea(edges: .horizontal)
+            }
+            //.padding(.horizontal)
+           // .padding(.bottom, 10)
+        }
+    }
+}
+
 #Preview {
-    DozeBackToTodayButtonView()
+    //DozeBackToTodayButtonView(isToday: <#Bool#>, action: <#() -> Void#>)
 }

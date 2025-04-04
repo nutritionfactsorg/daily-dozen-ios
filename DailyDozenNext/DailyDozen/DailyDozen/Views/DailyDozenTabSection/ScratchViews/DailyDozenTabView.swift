@@ -13,7 +13,56 @@ struct DailyDozenTabView: View {
     private var dozeDateBarField: String = ""
     private var dozePageDate = DateManager.currentDatetime()
     @State private var currentIndex: Int = 0
+    @State private var selectedRecord: SqlDailyTracker?
     
+    var records: [SqlDailyTracker] = returnSQLDataArray()
+    let startDate = Calendar.current.date(from: DateComponents(year: 2015, month: 3, day: 13))!
+    let endDate = Calendar.current.date(from: DateComponents(year: 2025, month: 3, day: 20))!
+    let direction: Direction = .leftToRight
+    
+    private var dateRange: [Date] {
+        var dates: [Date] = []
+        var currentDate = startDate
+        
+        while currentDate <= endDate {
+            dates.append(currentDate)
+            currentDate = Calendar.current.date(byAdding: .day, value: 1, to: currentDate)!
+        }
+        return dates
+    }
+    
+    private func findRecordForDate(_ date: Date) {
+       
+        let calendar = Calendar.current
+        let selectedComponents = calendar.dateComponents([.year, .month, .day], from: date)
+        
+        selectedRecord = records.first { record in
+            let recordComponents = calendar.dateComponents([.year, .month, .day], from: record.date)
+            return selectedComponents == recordComponents
+        }
+    }
+    
+    func updateCheckedCount(_ newCount: Int, totalCheckboxes: Int) {
+            var checkedCount = min(newCount, totalCheckboxes)  // Keep it within bounds
+            // You'd also save this to the database here
+        }
+    private func handleTap(index: Int, numBoxes: Int, numxCheckedBoxes: Int) {
+        let x = numxCheckedBoxes
+        // xCheckbox = numBoxes
+        let adjustedIndex = direction == .leftToRight ? index : (numBoxes - 1 - index)
+        
+        // If tapping an unchecked box
+        if adjustedIndex >= x {
+            // x = adjustedIndex + 1
+            updateCheckedCount(adjustedIndex + 1, totalCheckboxes: numBoxes)
+        }
+        // If tapping a checked box
+        else {
+            // Uncheck this box and everything after it
+            // x = adjustedIndex
+            updateCheckedCount(adjustedIndex + 1, totalCheckboxes: numBoxes)
+        }
+    }
     mutating func updatePageDate(_ date: Date) {
         let order = Calendar.current.compare(date, to: dozePageDate, toGranularity: .day)
         dozePageDate = date
@@ -41,7 +90,10 @@ struct DailyDozenTabView: View {
                 .tint(.brandGreen)
                 .padding(5)
                 .sheet(isPresented: $isShowingSheet) {
-                    DatePickerView(selectedDate: $selectedDate)
+                    DatePickerSheetViewWAS(selectedDate: $selectedDate) { date in
+                        findRecordForDate(date)
+    
+                    }
                         .presentationDetents([.medium]) // Optional: controls sheet height
                 }
                 //  .presentationDetents([.medium])
@@ -90,7 +142,7 @@ struct DailyDozenTabView: View {
 //                }
                // .padding(5)
                 DailyDozenTabSingleDayView()
-                DozeBackToTodayButtonView()
+                DozeBackToTodayButtonViewWAS()
             } //VStack
                // .presentationDetents([.medium])
         .navigationTitle(Text("navtab.doze")) //!!Needs localization comment
