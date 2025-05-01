@@ -14,7 +14,7 @@ enum Direction {
 
 struct ContiguousCheckboxView: View {
     let n: Int          // Total number of checkboxes
-    @State var x: Int    // Number of checked boxes //Might need to Change to @Binding so parent can access and modify it, depending on when save to database occurs.
+    @Binding var x: Int    // Number of checked boxes //Might need to Change to @Binding so parent can access and modify it, depending on when save to database occurs.
     let direction: Direction
     let onChange: (Int) -> Void // Callback for count changes
     
@@ -35,8 +35,9 @@ struct ContiguousCheckboxView: View {
                         .foregroundColor(index < x ? .brandGreen : .grayLight)
                         .fontWeight(.heavy)
                          .onTapGesture {
-                                x = index < x ? index : index + 1
-                                onChange(x)
+                             let newX = index < x ? index : index + 1
+                             x = newX
+                             onChange(newX)
                             }
                     }
             } else {
@@ -47,12 +48,16 @@ struct ContiguousCheckboxView: View {
                         .foregroundColor(index < x ? .brandGreen : .grayLight)
                         .fontWeight(.heavy)
                         .onTapGesture {
-                            x = index < x ? index : index + 1
-                            onChange(x)
+                            let newX = index < x ? index : index + 1
+                            x = newX
+                            onChange(newX)
                         }
                 }
                 
             }
+        }
+        .onAppear {
+           // print("ContiguousCheckboxView: n = \(n), x = \(x)")
         }
         .onDisappear {
         // Save to database when this view goes away

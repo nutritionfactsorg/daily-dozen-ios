@@ -45,7 +45,7 @@ func fetchMockDataId(daysBeforeToday: Int, scenario: MockDataScenario = .simple)
         let countBeans = SqlDataCountRecord(
             date: date,
             countType: DataCountType.dozeBeans,
-            count: 3,
+            count: 2,
             streak: 1
         )
         tracker.itemsDict[.dozeBeans] = countBeans
@@ -177,7 +177,7 @@ func returnSQLDataArray() -> [SqlDailyTracker] {
 // )
 //]
 
-let dateA = Date(iso8601: "2025-03-26 18:19:36 +0000")!
+let dateA = Date(iso8601: "2025-04-15 18:19:36 +0000")!
 
 //let a: SqlDailyTracker? = SqlDailyTracker(
 //    date: dateA, itemsDict: [
@@ -279,9 +279,9 @@ let sampleSQLArray: [SqlDailyTracker] = [b]
 let dateISOFormatter = ISO8601DateFormatter()
 
 let b: SqlDailyTracker = SqlDailyTracker(
-    date: dateISOFormatter.date(from: "2025-03-25T18:19:36Z")!, itemsDict: [
-        DataCountType.dozeBeans: SqlDataCountRecord(datacount_date_psid: "2025-03-24", datacount_kind_pfnid: 1, datacount_count: 3, datacount_streak: 5)!,
-        DataCountType.dozeBerries: SqlDataCountRecord(datacount_date_psid: "2025-03-24", datacount_kind_pfnid: 2, datacount_count: 1, datacount_streak: 1)!
+    date: dateISOFormatter.date(from: "2025-04-15T18:19:36Z")!, itemsDict: [
+        DataCountType.dozeBeans: SqlDataCountRecord(datacount_date_psid: "2025-04-15", datacount_kind_pfnid: 1, datacount_count: 3, datacount_streak: 5)!,
+        DataCountType.dozeBerries: SqlDataCountRecord(datacount_date_psid: "2025-04-15", datacount_kind_pfnid: 2, datacount_count: 1, datacount_streak: 1)!
     ], weightAM: nil, weightPM: nil
 //    weightAM: SqlDataWeightRecord(dataweight_date_psid: "2025-03-26", dataweight_ampm_pnid: 0, dataweight_kg: 59.0, dataweight_time: "11:19"),
 //    weightPM: SqlDataWeightRecord(dataweight_date_psid: "2025-03-26", dataweight_ampm_pnid: 1, dataweight_kg: 0.0, dataweight_time: "11:19")

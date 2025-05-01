@@ -18,10 +18,10 @@ struct DozeBackToTodayButtonViewWAS: View {
                     .frame(maxWidth: .infinity)
             })
             .buttonStyle(.borderedProminent)
-           
+            
             .ignoresSafeArea(edges: .horizontal)
             .tint(.brandGreen)
-           // .padding(5)
+            // .padding(5)
         }
     }
 }
@@ -36,13 +36,18 @@ struct DozeBackToTodayButtonView: View {
                 Text("dateBackButtonTitle")
                     .frame(maxWidth: .infinity)
                     .padding(5)
-                    .background(Color.brandGreen)
                     .foregroundColor(.white)
+                    .background(Color.brandGreen)
+//                    .background(
+//                        RoundedRectangle(cornerRadius: 8)
+//                            .fill(Color.brandGreen)
+//                    )
                     //.cornerRadius(8)
                     .ignoresSafeArea(edges: .horizontal)
             }
             //.padding(.horizontal)
-           // .padding(.bottom, 10)
+            .padding(.bottom, 10)
+            .frame(maxWidth: .infinity)
         }
     }
 }

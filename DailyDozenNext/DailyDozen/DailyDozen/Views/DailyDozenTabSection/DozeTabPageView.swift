@@ -6,16 +6,33 @@
 //
 
 import SwiftUI
+import StoreKit
 
 struct DozeTabPageView: View {
+    @Environment(\.requestReview) var requestReview
     let date: Date
     @State var record: SqlDailyTracker?
     @Binding var records: [SqlDailyTracker] // Binding to main records array for saving
    // let onCountChange: (Int) -> Void // Callback to report count
     @State private var showingAlert = false
+    @State private var showStarImage = false
+//    private var dozeDailyStateCount: Int {
+//            record?.itemsDict.values.reduce(0) { $0 + $1.datacount_count } ?? 0
+//        }
     private var dozeDailyStateCount: Int {
-            record?.itemsDict.values.reduce(0) { $0 + $1.datacount_count } ?? 0
+            guard let record = record else {
+                return 0
+            }
+        var total = 0
+                for (itemType, itemRecord) in record.itemsDict {
+                    if !supplementItems.contains(itemType) {
+                        total += itemRecord.datacount_count
+                    }
         }
+            return total
+        }
+
+    private let dozeDailyStateCountMaximum = 24
     
     private var regularItems: [DataCountType] {
             DozeEntryViewModel.rowTypeArray.filter { $0 != .otherVitaminB12 }
@@ -26,21 +43,29 @@ struct DozeTabPageView: View {
         }
        
     var body: some View {
-         ScrollView {
-             VStack {
-                 
-                    HStack {
-                     Text("doze_entry_header")
-                     Spacer()
-                    // Text("4/24") // TBDz, NYI
-                     Text("\(dozeDailyStateCount)/24")
-                     //Text("\(dozeDailyStateCount)/\(DozeEntryViewModel.rowTypeArray.reduce(0) { $0 + $1.goalServings })")
-                     Image("ic_stat")
-                 }
-                 .padding(10)
-               //  Text(date, style: .date)
-                 ForEach(regularItems, id: \.self) { item in
-                         DozeEntryRowView(
+       // ScrollView {
+        VStack {
+            HStack {
+                Text("doze_entry_header")
+                Spacer()
+                if showStarImage {
+                    Image("ic_star")
+                        .onAppear {
+                            requestReview()
+                        }
+                }
+                // Text("4/24") // TBDz, NYI
+                Text("\(dozeDailyStateCount)/\(dozeDailyStateCountMaximum)")
+                //Text("\(dozeDailyStateCount)/\(DozeEntryViewModel.rowTypeArray.reduce(0) { $0 + $1.goalServings })")
+                Image("ic_stat")
+            }
+            
+            .padding(10)
+            ScrollView {
+                VStack {
+                    //  Text(date, style: .date)
+                    ForEach(regularItems, id: \.self) { item in
+                        DozeEntryRowView(
                             item: item,
                             record: record,
                             date: date,
@@ -53,49 +78,54 @@ struct DozeTabPageView: View {
                                 }
                                 // update the tracker
                                 record?.itemsDict[item]?.datacount_count = count
+                                showStarImage = dozeDailyStateCount == dozeDailyStateCountMaximum // Update star visibility
                             }
-                         )
-                 } //ForEach regular
-                 if !supplementItems.isEmpty {
-                     HStack {
-                         Text("dozeOtherInfo.section")
-                             .font(.headline)
-                             .padding(.top, 20)
-                             .padding(.horizontal, 10)
-                         Button {
-                             showingAlert.toggle()
-                         } label: {
-                             Image(systemName: "info.circle")
-                                 .foregroundColor(.nfDarkGray)
-                         }
-                         .alert(isPresented: $showingAlert) {
-                             Alert(title: Text( "dozeOtherInfo.title"), message: Text("dozeOtherInfo.message"))
-                         }
+                        )
+                    } //ForEach regular
+                    if !supplementItems.isEmpty {
+                        HStack {
+                            Text("dozeOtherInfo.section")
+                                .font(.headline)
+                                .padding(.top, 20)
+                                .padding(.horizontal, 10)
+                            Button {
+                                showingAlert.toggle()
+                            } label: {
+                                Image(systemName: "info.circle")
+                                    .foregroundColor(.nfDarkGray)
+                            }
+                            .alert(isPresented: $showingAlert) {
+                                Alert(title: Text( "dozeOtherInfo.title"), message: Text("dozeOtherInfo.message"))
+                            }
+                        }
+                        
+                        ForEach(supplementItems, id: \.self) { item in
+                            DozeEntryRowView(
+                                item: item,
+                                record: record,
+                                date: date,
+                                onCheck: { count in
+                                    // create tracker, if tracker does not exist i.e. == nil.
+                                    if record == nil {
+                                        let newRecord = SqlDailyTracker(date: date)
+                                        record = newRecord
+                                        records.append(newRecord)
+                                    }
+                                    // update the tracker
+                                    record?.itemsDict[item]?.datacount_count = count
+                                }
+                            )
+                        }
                     }
-                     
-                     ForEach(supplementItems, id: \.self) { item in
-                         DozeEntryRowView(
-                            item: item,
-                            record: record,
-                            date: date,
-                            onCheck: { count in
-                                // create tracker, if tracker does not exist i.e. == nil.
-                                if record == nil {
-                                    let newRecord = SqlDailyTracker(date: date)
-                                    record = newRecord
-                                    records.append(newRecord)
-                                }
-                                // update the tracker
-                                record?.itemsDict[item]?.datacount_count = count
-                            }
-                         )
-                     }
-                 }
-             } //VStack
-         }
+                } //VStack
+            }
+        }
          .onAppear {
                      record = records.first { Calendar.current.isDate($0.date, inSameDayAs: date) }
                     // onCountChange(dozeDailyStateCount) // Initial count
+//             print("DatePageView onAppear: date = \(date), record = \(String(describing: record?.itemsDict))")
+//             print("***")
+                    showStarImage = dozeDailyStateCount == dozeDailyStateCountMaximum
                  }
      }
  }

@@ -8,6 +8,11 @@
 import SwiftUI
 
 struct ContentView: View {
+//    init() {
+//           UITabBar.appearance().isTranslucent = false
+//          // UITabBar.appearance().backgroundColor = .white  //Could be set to something else
+//      }
+    
     var body: some View {
         TabView {
             DozeTabView()
@@ -46,6 +51,12 @@ struct ContentView: View {
                 }
         }
         .tint(Color(.tabAccent))
+        .toolbarBackground(
+
+               // 1
+               Color.white,
+               // 2
+               for: .tabBar)
     }
 }
 

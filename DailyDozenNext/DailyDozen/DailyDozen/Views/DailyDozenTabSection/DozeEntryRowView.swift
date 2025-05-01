@@ -12,9 +12,11 @@ struct DozeEntryRowView: View {
     
     let item: DataCountType
     let record: SqlDailyTracker?
+    let records: [SqlDailyTracker] = [] // needed?
     let date: Date
     let onCheck: (Int) -> Void // Callback for when checkbox changes
     @State private var localCount: Int = 0
+    @State private var count: Int = 0 // Initialize with default
     
     private var regularItems: [DataCountType] {
             DozeEntryViewModel.rowTypeArray.filter { $0 != .otherVitaminB12 }
@@ -25,7 +27,7 @@ struct DozeEntryRowView: View {
         }
     
     var body: some View {
-        
+       
             HStack {
                 Image(item.imageName)
                     .resizable()
@@ -35,6 +37,7 @@ struct DozeEntryRowView: View {
                     .padding(5)
                 VStack(alignment: .leading) {
                     HStack {
+                        
                         Text(item.headingDisplay)
                             .padding(5)
                         Spacer()
@@ -51,20 +54,22 @@ struct DozeEntryRowView: View {
                         }  //TBDz!!::  Needs URL cleanup
                     }
                     HStack {
-                        Image("ic_calendar")
-                            .resizable()
-                            .scaledToFit()
-                            .frame(width: 30, height: 30)
+                        NavigationLink(destination: DozeCalendarView(item: item, records: records )) {
+                            Image("ic_calendar")
+                                .resizable()
+                                .scaledToFit()
+                                .frame(width: 30, height: 30)
+                        }
                         //StreakView(streak: streakCount)
                         StreakView(streak: record?.itemsDict[item]?.datacount_streak ?? 0) // guess at what this might be when implemented
                         Spacer()
                         HStack {
                             // let itemData = record.itemsDict[item]
-                            let count = record?.itemsDict[item]?.datacount_count ?? localCount
+                           
                             let boxes = item.goalServings
                             ContiguousCheckboxView(
                                 n: boxes,
-                                x: count,
+                                x: $count,
                                 direction: .leftToRight,
                                 onChange: { newCount in
                                     if record == nil {
@@ -75,13 +80,22 @@ struct DozeEntryRowView: View {
                                     }
                                 }
                             )
+                            
                         }
                     }
                 }
             } //HStack
             .padding(10)
             .shadowboxed()
-        
+            .onAppear {
+                count = record?.itemsDict[item]?.datacount_count ?? localCount
+                        print("DozeEntryRowView: item = \(item), count = \(record?.itemsDict[item]?.datacount_count ?? localCount), localCount = \(localCount)")
+                    }
+            .onChange(of: record?.itemsDict[item]?.datacount_count) { newCount in
+                    if let newCount = newCount {
+                            count = newCount
+                 }
+            }
         //else is for supplements
 //        else {
 //            HStack {

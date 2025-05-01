@@ -112,26 +112,39 @@ struct DozeTabView: View {
                     } //TabView
                     //.tabViewStyle(.page)
                     .tabViewStyle(.page(indexDisplayMode: .never))
-                    .frame(height: 500)
+                    .frame(minHeight: 300, maxHeight: .infinity)
                     //  .frame(maxWidth: .infinity, maxHeight: .infinity)
                     .onChange(of: currentIndex) { newIndex in
                         selectedDate = dateRange[newIndex]
                         extendDateRangeIfNeeded(for: newIndex)
                     } //onChange
                     //Spacer to push content up if needed
-                   // Spacer()
+                    Spacer()
                 }//VStack
-                DozeBackToTodayButtonView(isToday: isToday, action: goToToday)
-                    .frame(maxWidth: .infinity) // Ensure it spans the width
-                    .background(Color.clear) // Avoid obstructing content behind
+                
+               DozeBackToTodayButtonView(isToday: isToday, action: goToToday)
+                    .padding(.bottom, 0) // Remove bottom padding
+                    .background(
+                         Color.white
+                            .ignoresSafeArea(edges: .bottom)  )
+                   // .safeAreaInset(edge: .bottom) { // Ensure button stays above tab bar
+                      //  Color.clear // Placeholder to respect safe area
+                        // Ensure button is on top
+                  //  }
+                  //  .zIndex(1)
+                
+                   // .frame(maxWidth: .infinity) // Ensure it spans the width
+                   // .background(Color.clear) // Avoid obstructing content behind
             } //ZStack
-            
+            .background(Color.white) // Ensure solid background for TabView  (if want a different color like gray, change it here)
+           
             .sheet(isPresented: $isShowingSheet) {
                 DatePickerSheetView(selectedDate: $selectedDate, dateRange: $dateRange, currentIndex: $currentIndex)
                     .presentationDetents([.medium])
             } //sheet
             .onAppear {
                 extendDateRangeIfNeeded(for: currentIndex)
+                records = returnSQLDataArray()
             }
             .navigationTitle(Text("navtab.doze")) //!!Needs localization comment
             .navigationBarTitleDisplayMode(.inline)
