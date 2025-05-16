@@ -27,6 +27,26 @@ extension View {
   }
 }
 
+// ViewModifier for chartXScale
+struct ChartXScaleModifier: ViewModifier {
+    let domain: ClosedRange<Date>?
+    
+    func body(content: Content) -> some View {
+        if let domain = domain {
+            content.chartXScale(domain: domain)
+        } else {
+            content
+        }
+    }
+}
+
+// Extension to make the modifier easily accessible
+extension View {
+    func applyChartXScale(domain: ClosedRange<Date>?) -> some View {
+        modifier(ChartXScaleModifier(domain: domain))
+    }
+}
+
 //Custom modifier for iOS 16/17 compatibility
 //struct OnChangeDateModifier: ViewModifier {
 //    let date: Date

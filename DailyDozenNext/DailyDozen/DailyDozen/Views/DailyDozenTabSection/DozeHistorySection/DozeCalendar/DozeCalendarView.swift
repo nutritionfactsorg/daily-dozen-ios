@@ -22,14 +22,20 @@ struct DozeCalendarView: View {
             UICalendarViewRepresentable(item: item, records: records, currentMonth: $currentMonth)
                 .frame(height: 400)
             
-            Spacer() // Push the footer to the bottom
-               
-            LegendView() // Add the footer with the legend
-                .padding(.bottom, 0) // Remove bottom padding
-                .background(
-                     Color.white
-                        //.ignoresSafeArea(edges: .bottom)
-                       )
+           // Push the footer to the bottom
+//               
+//            LegendView() // Add the footer with the legend
+//                .padding(.bottom, 0) // Remove bottom padding
+//                .background(
+//                     Color.white
+//                        //.ignoresSafeArea(edges: .bottom)
+//                       )
+            Spacer()
+                .safeAreaInset(edge: .bottom) {
+                    LegendView()
+                        .background(Color.white)
+                        .frame(maxWidth: .infinity, maxHeight: 100)
+                }
         }
         .navigationTitle(item.headingDisplay) // NYIzTBD:  Is this localized?  Right now Simplified to just the item name
         .navigationBarTitleDisplayMode(.inline)

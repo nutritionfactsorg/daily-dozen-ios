@@ -84,7 +84,8 @@ func returnSQLDataArray() -> [SqlDailyTracker] {
     
     data.append(createSqlTracker(date: Date()))
     data.append(createSqlTracker(date: dateBeforeDays(-2)))
-    data.append(createSqlTracker(date: dateBeforeDays(-5)))
+    data.append(createSqlTracker(date: dateBeforeDays(-30)))
+    data.append(createSqlTracker(date: dateBeforeDays(-360)))
    // data.append(createSqlTracker(date: Date()))
     
     return(data)

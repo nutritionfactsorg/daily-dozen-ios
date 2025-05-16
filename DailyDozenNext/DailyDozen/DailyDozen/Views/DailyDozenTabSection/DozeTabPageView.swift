@@ -57,7 +57,10 @@ struct DozeTabPageView: View {
                 // Text("4/24") // TBDz, NYI
                 Text("\(dozeDailyStateCount)/\(dozeDailyStateCountMaximum)")
                 //Text("\(dozeDailyStateCount)/\(DozeEntryViewModel.rowTypeArray.reduce(0) { $0 + $1.goalServings })")
-                Image("ic_stat")
+                NavigationLink(destination: DozeServingsHistoryView(trackers: [b])) {
+                    Image("ic_stat")
+                }
+                
             }
             
             .padding(10)

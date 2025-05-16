@@ -89,7 +89,7 @@ struct DozeEntryRowView: View {
             .shadowboxed()
             .onAppear {
                 count = record?.itemsDict[item]?.datacount_count ?? localCount
-                        print("DozeEntryRowView: item = \(item), count = \(record?.itemsDict[item]?.datacount_count ?? localCount), localCount = \(localCount)")
+                logit.debug("DozeEntryRowView: item = \(item), count = \(record?.itemsDict[item]?.datacount_count ?? localCount), localCount = \(localCount)")
                     }
             .onChange(of: record?.itemsDict[item]?.datacount_count) { newCount in
                     if let newCount = newCount {

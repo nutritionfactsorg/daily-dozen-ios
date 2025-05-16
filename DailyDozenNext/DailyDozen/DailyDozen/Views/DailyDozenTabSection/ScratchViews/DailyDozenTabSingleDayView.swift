@@ -72,7 +72,7 @@ struct DailyDozenTabSingleDayView: View {
                                     StreakView(streak: streakCount)
                                     Spacer()
                                     HStack(spacing: 5) {
-                                        ForEach(0..<item.goalServings, id: \.self) { index in
+                                        ForEach(0..<item.goalServings, id: \.self) { _ in
                                              //TBDz I imagine the index will be used later
                                                 CheckboxView(isChecked: true)
                                                 //TBDz need to work on toggle and actual checks

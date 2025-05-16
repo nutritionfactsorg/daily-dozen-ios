@@ -59,10 +59,10 @@ struct DozeHeaderView: View {
     }
     
     var body: some View {
-        Button(action: { isShowingSheet.toggle() }) {
+        Button(action: { isShowingSheet.toggle() }, label: {
             Text(buttonTitle)
                 .frame(width: 300, height: 30, alignment: .center)
-        }
+        })
         .buttonStyle(.borderedProminent)
         .tint(.brandGreen)
         .padding(5)

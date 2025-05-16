@@ -9,7 +9,7 @@ import SwiftUI
 
 struct LegendView: View {
     var body: some View {
-        HStack(spacing: 20) {
+        HStack(alignment: .center, spacing: 20) {
             // Some servings (yellow)
             HStack(spacing: 8) {
                 Circle()

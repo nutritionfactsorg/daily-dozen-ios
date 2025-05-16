@@ -38,7 +38,7 @@ struct CheckboxView2: View {
                 .fontWeight(.heavy)
                 .onTapGesture {
                     onTap()
-                    print("OnTapGesture")
+                    logit.debug("OnTapGesture")
                 }
         
     }
