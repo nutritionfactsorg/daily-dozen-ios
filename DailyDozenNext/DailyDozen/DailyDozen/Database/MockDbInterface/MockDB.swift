@@ -84,6 +84,7 @@ func returnSQLDataArray() -> [SqlDailyTracker] {
     
     data.append(createSqlTracker(date: Date()))
     data.append(createSqlTracker(date: dateBeforeDays(-2)))
+    data.append(createSqlTracker(date: dateBeforeDays(-5)))
     data.append(createSqlTracker(date: dateBeforeDays(-30)))
     data.append(createSqlTracker(date: dateBeforeDays(-360)))
    // data.append(createSqlTracker(date: Date()))
@@ -268,8 +269,8 @@ let dateA = Date(iso8601: "2025-04-15 18:19:36 +0000")!
 
 let a: SqlDailyTracker = SqlDailyTracker(
     date: dateA, itemsDict: [
-        DataCountType.dozeBeans: SqlDataCountRecord(datacount_date_psid: "2025-03-26", datacount_kind_pfnid: 1, datacount_count: 3, datacount_streak: 1)!,
-        DataCountType.dozeBerries: SqlDataCountRecord(datacount_date_psid: "2025-03-26", datacount_kind_pfnid: 2, datacount_count: 0, datacount_streak: 0)!
+        DataCountType.dozeBeans: SqlDataCountRecord(datacount_date_psid: "2025-05-01", datacount_kind_pfnid: 1, datacount_count: 3, datacount_streak: 1)!,
+        DataCountType.dozeBerries: SqlDataCountRecord(datacount_date_psid: "2025-05-01", datacount_kind_pfnid: 2, datacount_count: 0, datacount_streak: 0)!
     ], weightAM: nil, weightPM: nil
 //    weightAM: SqlDataWeightRecord(dataweight_date_psid: "2025-03-26", dataweight_ampm_pnid: 0, dataweight_kg: 59.0, dataweight_time: "11:19"),
 //    weightPM: SqlDataWeightRecord(dataweight_date_psid: "2025-03-26", dataweight_ampm_pnid: 1, dataweight_kg: 0.0, dataweight_time: "11:19")
@@ -280,9 +281,9 @@ let sampleSQLArray: [SqlDailyTracker] = [b]
 let dateISOFormatter = ISO8601DateFormatter()
 
 let b: SqlDailyTracker = SqlDailyTracker(
-    date: dateISOFormatter.date(from: "2025-04-15T18:19:36Z")!, itemsDict: [
-        DataCountType.dozeBeans: SqlDataCountRecord(datacount_date_psid: "2025-04-15", datacount_kind_pfnid: 1, datacount_count: 3, datacount_streak: 5)!,
-        DataCountType.dozeBerries: SqlDataCountRecord(datacount_date_psid: "2025-04-15", datacount_kind_pfnid: 2, datacount_count: 1, datacount_streak: 1)!
+    date: dateISOFormatter.date(from: "2025-05-12T18:19:36Z")!, itemsDict: [
+        DataCountType.dozeBeans: SqlDataCountRecord(datacount_date_psid: "2025-05-12", datacount_kind_pfnid: 1, datacount_count: 3, datacount_streak: 5)!,
+        DataCountType.dozeBerries: SqlDataCountRecord(datacount_date_psid: "2025-05-12", datacount_kind_pfnid: 2, datacount_count: 1, datacount_streak: 1)!
     ], weightAM: nil, weightPM: nil
 //    weightAM: SqlDataWeightRecord(dataweight_date_psid: "2025-03-26", dataweight_ampm_pnid: 0, dataweight_kg: 59.0, dataweight_time: "11:19"),
 //    weightPM: SqlDataWeightRecord(dataweight_date_psid: "2025-03-26", dataweight_ampm_pnid: 1, dataweight_kg: 0.0, dataweight_time: "11:19")

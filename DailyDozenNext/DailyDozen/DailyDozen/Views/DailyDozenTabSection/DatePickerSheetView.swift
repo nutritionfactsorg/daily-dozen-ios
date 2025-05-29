@@ -102,7 +102,6 @@ struct DatePickerSheetView: View {
                 }
                 // .padding(10)
                 
-                
                 DatePicker(
                     "",
                     selection: $selectedDate,
@@ -112,7 +111,6 @@ struct DatePickerSheetView: View {
                 .datePickerStyle(.wheel)
               //  .frame(maxHeight: UIScreen.main.bounds.height / 3)
                 .labelsHidden()  //needed to center
-                
                 
             }
             .padding()
