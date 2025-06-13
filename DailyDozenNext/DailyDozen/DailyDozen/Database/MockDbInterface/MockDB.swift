@@ -76,22 +76,33 @@ func fetchMockDataId(daysBeforeToday: Int, scenario: MockDataScenario = .simple)
         data.append(createSqlTracker(date: dateBeforeDays(-5)))
        // data.append(createSqlTracker(date: Date()))
         
-        print(data)
+        print("the data is: \(data)")
     }
 
-func returnSQLDataArray() -> [SqlDailyTracker] {
-    var data = [SqlDailyTracker]()
-    
-    data.append(createSqlTracker(date: Date()))
-    data.append(createSqlTracker(date: dateBeforeDays(-2)))
-    data.append(createSqlTracker(date: dateBeforeDays(-5)))
-    data.append(createSqlTracker(date: dateBeforeDays(-30)))
-    data.append(createSqlTracker(date: dateBeforeDays(-360)))
-   // data.append(createSqlTracker(date: Date()))
-    
-    return(data)
+func fetchSQLData(date: Date = Date()) -> [SqlDailyTracker] {
+    return returnSQLDataArray(date: date)
 }
 
+func dateBeforeDays(_ days: Int, today: Date = Date()) -> Date { // ::EDIT::
+    if let pastDate = Calendar.current.date(byAdding: .day, value: days, to: today) {
+        return pastDate
+    }
+    return today // Fallback to current date if calculation fails
+}
+
+func returnSQLDataArray(date: Date = Date()) -> [SqlDailyTracker] { // ::EDIT::
+    var data: [SqlDailyTracker] = []
+    
+    data.append(createSqlTracker(date: date))
+    data.append(createSqlTracker(date: dateBeforeDays(-2, today: date)))
+    data.append(createSqlTracker(date: dateBeforeDays(-5, today: date)))
+    data.append(createSqlTracker(date: dateBeforeDays(-30, today: date)))
+    data.append(createSqlTracker(date: dateBeforeDays(-364, today: date)))
+    // data.append(createSqlTracker(date: Date()))
+    
+    logit.debug("## returnSQLDataArray() count=\(data.count) ##")
+    return(data)
+}
 //let sampleSQLArray: [SqlDailyTracker] =
 //[SqlDailyTracker(
 //    date: "2025-03-26 18:19:36 +0000", itemsDict: [
@@ -279,6 +290,8 @@ let a: SqlDailyTracker = SqlDailyTracker(
 let sampleSQLArray: [SqlDailyTracker] = [b]
 
 let dateISOFormatter = ISO8601DateFormatter()
+ 
+let mockDB: [SqlDailyTracker] = returnSQLDataArray()
 
 let b: SqlDailyTracker = SqlDailyTracker(
     date: dateISOFormatter.date(from: "2025-05-12T18:19:36Z")!, itemsDict: [

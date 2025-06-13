@@ -10,7 +10,7 @@ import SwiftUI
 struct DozeTabView: View {
     
     var streakCount = 3000 // NYI Calulation on how to calculate streek -- just a placeholder for now
-    @State private var records: [SqlDailyTracker] = returnSQLDataArray()
+    @State private var records: [SqlDailyTracker] = fetchSQLData()
     // @State private var records: [SqlDailyTracker] = []
     @State private var isShowingSheet = false
     @State private var selectedRecord: SqlDailyTracker?
@@ -144,7 +144,7 @@ struct DozeTabView: View {
             } //sheet
             .onAppear {
                 extendDateRangeIfNeeded(for: currentIndex)
-                records = returnSQLDataArray()
+                records = fetchSQLData()
             }
             .navigationTitle(Text("navtab.doze")) //!!Needs localization comment
             .navigationBarTitleDisplayMode(.inline)

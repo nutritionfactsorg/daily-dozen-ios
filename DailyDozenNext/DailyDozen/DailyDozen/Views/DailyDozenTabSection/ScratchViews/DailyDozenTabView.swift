@@ -15,7 +15,7 @@ struct DailyDozenTabView: View {
     @State private var currentIndex: Int = 0
     @State private var selectedRecord: SqlDailyTracker?
     
-    var records: [SqlDailyTracker] = returnSQLDataArray()
+    var records: [SqlDailyTracker] = fetchSQLData()
     let startDate = Calendar.current.date(from: DateComponents(year: 2015, month: 3, day: 13))!
     let endDate = Calendar.current.date(from: DateComponents(year: 2025, month: 3, day: 20))!
     let direction: Direction = .leftToRight

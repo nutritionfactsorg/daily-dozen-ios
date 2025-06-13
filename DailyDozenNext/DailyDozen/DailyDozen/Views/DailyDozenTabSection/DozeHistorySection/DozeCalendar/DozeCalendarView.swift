@@ -56,7 +56,7 @@ struct DozeCalendarView: View {
         NavigationStack {
             DozeCalendarView(
                 item: .dozeBeans,
-                records: returnSQLDataArray()
+                records: fetchSQLData()
             )
         }
         //  .previewDisplayName("Beans Calendar")

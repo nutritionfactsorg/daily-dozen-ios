@@ -50,7 +50,10 @@ class ServingsDataProcessor {
         // for tracker in mockTrackers {
         //    print("Tracker date: \(tracker.date), itemsDict: \(tracker.itemsDict.map { ($0.key, $0.value.datacount_count) })")
         // }
-        logit.verbose("Tracker: \(trackers)")
+        // logit.debug("Tracker: \(trackers)")
+        for tracker in trackers {
+            logit.debug("Tracker date: \(tracker.date), itemsDict: \(tracker.itemsDict.map { ($0.key, $0.value.datacount_count) })")
+        }
     }
     
     func dailyServings(forMonthOf date: Date) -> [ChartData] {
@@ -115,7 +118,7 @@ class ServingsDataProcessor {
         
         let theMappedMonthlyTotals = monthlyTotals.map { ChartData(date: $0.key, totalServings: $0.value) }
             .sorted { $0.date! < $1.date! }
-        logit.verbose( "MappedMonthlytotals: \(theMappedMonthlyTotals)")
+        logit.debug( "MappedMonthlytotals: \(theMappedMonthlyTotals)")
         return theMappedMonthlyTotals
     }
     
