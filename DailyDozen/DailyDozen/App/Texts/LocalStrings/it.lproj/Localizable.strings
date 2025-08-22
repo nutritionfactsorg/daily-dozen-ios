@@ -86,7 +86,7 @@
 "faq_calories_response.0" = "Daily Dozen si aggira in media intorno alle 1200 calorie, ma data l'ampia gamma di alimenti tra cui scegliere in ogni categoria, può variare da un minimo di 800 ad un massimo di 1800. Consideriamo la categoria Altre verdure: una porzione di peperoni ha una densità calorica molto inferiore di una porzione di patate dolci cotte, perciò il range calorico dipenderà da quali cibi nello specifico sceglierai. È questo il bello della lista di Daily Dozen: non è un approccio unico e universale e può essere adattato alle tue esigenze.";
 
 /*  */
-"faq_calories_response.1" = "Se il tuo obiettivo è perdere peso, puoi trovare maggiori informazioni in \"Contro le diete\" e nell'allegato \"Ventuno modifiche\". In \"Contro le diete\" ho scritto:\"Una revisione sistematica delle strategie per perdere peso che hanno avuto successo ha concluso che, dati il rallentamento del metabolismo e l'aumento dell'appetito che accompagnano la perdita di peso, per ottenere una perdita di peso significativa l'apporto calorico deve scendere il più vicino possibile a 1200 calorie giornaliere per le donne e 1500 per gli uomini.\"";
+"faq_calories_response.1" = "Se il tuo obiettivo è perdere peso, puoi trovare maggiori informazioni in “Contro le diete” e nell'allegato “Ventuno modifiche”. In “Contro le diete” ho scritto:“Una revisione sistematica delle strategie per perdere peso che hanno avuto successo ha concluso che, dati il rallentamento del metabolismo e l'aumento dell'appetito che accompagnano la perdita di peso, per ottenere una perdita di peso significativa l'apporto calorico deve scendere il più vicino possibile a 1200 calorie giornaliere per le donne e 1500 per gli uomini.”";
 
 /*  */
 "faq_calories_response.2" = "Al contrario, se il tuo obiettivo è aumentare di peso, allora dovresti focalizzarti sull'aggiungere più alimenti ad alta intensità calorica, come patate dolci, avocado, frutta a guscio e prodotti a base di soia. ";
@@ -314,7 +314,7 @@
 "setting_doze_tweak_choice" = "Daily Dozen + Ventuno mosse";
 
 /* Preference Settings View: brief description text below Tweaks visibility control. */
-"setting_doze_tweak_footer" = "Per il percorso salute, usa \"Solo Daily Dozen\". Per il percorso salute e perdita di peso, usa “Daily Dozen + Ventuno mosse”.";
+"setting_doze_tweak_footer" = "Per il percorso salute, usa “Solo Daily Dozen”. Per il percorso salute e perdita di peso, usa “Daily Dozen + Ventuno mosse”.";
 
 /* First Launch Setting: brief description above ‘Daily Dozen Only’ button. */
 "setting_health_alone_txt" = "Percorso salute";
@@ -335,7 +335,7 @@
 "setting_units_2_toggle" = "Cambia sistema";
 
 /* Preference Settings View: brief description text below units control. */
-"setting_units_choice_footer" = "Imposta un sistema predefinito o attiva l'opzione \"Sistema:\" per cambiarlo.";
+"setting_units_choice_footer" = "Imposta un sistema predefinito o attiva l'opzione “Sistema:” per cambiarlo.";
 
 /* Preference Settings View */
 "setting_units_header" = "Unità di misura";
@@ -395,7 +395,7 @@
 "tweakMeal20Minutes.heading" = "Segui la regola dei venti minuti";
 
 /* heading for daily data entry item */
-"tweakMealNegCal.heading" = "Inizia i tuoi pasti con cibi \"a calorie negative\"";
+"tweakMealNegCal.heading" = "Inizia i tuoi pasti con cibi “a calorie negative”";
 
 /* heading for daily data entry item */
 "tweakMealUndistracted.heading" = "Goditi i pasti senza distrazioni";

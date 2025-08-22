@@ -83,10 +83,10 @@
 "faq_calories_question" = "Ile kalorii pokrywa Codzienny Tuzin?";
 
 /*  */
-"faq_calories_response.0" = "Codzienny Tuzin średnio pokrywa około 1200 kalorii, ale biorąc pod uwagę szeroki wybór żywności w każdej kategorii, ten zakres może wahać się od 800 do 1800 kalorii. Weź pod uwagę kategorię \"Inne Warzywa\": szklanka papryki ma znacznie niższą gęstość kaloryczną niż szklanka gotowanych słodkich ziemniaków, dlatego zakres kaloryczny będzie zależał od twoich konkretnych wyborów żywieniowych. To właśnie jest wspaniałe w Liście kontrolnej Codziennego Tuzina — można je dostosować do własnych potrzeb.";
+"faq_calories_response.0" = "Codzienny Tuzin średnio pokrywa około 1200 kalorii, ale biorąc pod uwagę szeroki wybór żywności w każdej kategorii, ten zakres może wahać się od 800 do 1800 kalorii. Weź pod uwagę kategorię “Inne Warzywa”: szklanka papryki ma znacznie niższą gęstość kaloryczną niż szklanka gotowanych słodkich ziemniaków, dlatego zakres kaloryczny będzie zależał od twoich konkretnych wyborów żywieniowych. To właśnie jest wspaniałe w Liście kontrolnej Codziennego Tuzina — można je dostosować do własnych potrzeb.";
 
 /*  */
-"faq_calories_response.1" = "Jeśli twoim celem jest utrata masy ciała, więcej informacji znajdziesz w linku do książki „How Not to Diet” i w zakładce \"21 Adaptacji\". W „How Not to Diet” wspomniałem: „Systematyczny przegląd skutecznych strategii odchudzania wykazał, że biorąc pod uwagę spowolnienie metabolizmu i zwiększony apetyt, który towarzyszy utracie wagi, aby osiągnąć znaczną utratę wagi, liczba kalorii może wymagać spadku nawet do 1200 kalorii dziennie dla kobiet i 1500 kalorii dziennie dla mężczyzn.\"";
+"faq_calories_response.1" = "Jeśli twoim celem jest utrata masy ciała, więcej informacji znajdziesz w linku do książki „How Not to Diet” i w zakładce “21 Adaptacji”. W „How Not to Diet” wspomniałem: „Systematyczny przegląd skutecznych strategii odchudzania wykazał, że biorąc pod uwagę spowolnienie metabolizmu i zwiększony apetyt, który towarzyszy utracie wagi, aby osiągnąć znaczną utratę wagi, liczba kalorii może wymagać spadku nawet do 1200 kalorii dziennie dla kobiet i 1500 kalorii dziennie dla mężczyzn.”";
 
 /*  */
 "faq_calories_response.2" = "Z kolei, jeśli twoim celem jest przybranie na wadze, możesz skupić się na dodawaniu pokarmów o większej zawartości kalorii, takich jak słodkie ziemniaki, awokado, orzechy i produkty sojowe.";
@@ -156,6 +156,9 @@
 
 /* History View: scale text */
 "history_scale_label" = "Okres czasu";
+
+/*  */
+"historyRecord.movingAverage" = "Średnia ruchoma";
 
 /* History View */
 "historyRecordDoze.heading" = "Historia porcji";

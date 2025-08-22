@@ -86,7 +86,7 @@
 "faq_calories_response.0" = "A Dúzia Diária tem em média 1200 kcal, mas dada a vasta gama de escolhas alimentares em cada categoria, pode variar entre 800 a 1800. Considere a categoria Outros Vegetais: um copo de pimentões tem uma densidade calórica muito menor do que um copo de batatas-doces cozidas, portanto a gama calórica irá depender das suas escolhas alimentares específicas. Isso é o que é tão bom sobre a Dúzia Diária — não é uma abordagem única para todos os casos, e pode ser adaptada às suas necessidades.";
 
 /*  */
-"faq_calories_response.1" = "Se o seu objectivo é perda de peso, pode encontrar mais informação em \"Como Não Fazer Dieta\" e os capítulos sobre os 21 Ajustes. Em \"Como Não Fazer Dieta\", notei: \"uma revisão sistemátia de estratégias bem sucedidas de perda de peso concluiu que dado o abrandamento metabólico e aumento do apetite que acontece na perda de peso, para se atingir perda de peso significativa, poderá ser necessário baixar  a contagem calórica até 1200 kcal por dia para mulheres e 1500 kcal por dia para homens.\"";
+"faq_calories_response.1" = "Se o seu objectivo é perda de peso, pode encontrar mais informação em “Como Não Fazer Dieta” e os capítulos sobre os 21 Ajustes. Em “Como Não Fazer Dieta”, notei: “uma revisão sistemátia de estratégias bem sucedidas de perda de peso concluiu que dado o abrandamento metabólico e aumento do apetite que acontece na perda de peso, para se atingir perda de peso significativa, poderá ser necessário baixar  a contagem calórica até 1200 kcal por dia para mulheres e 1500 kcal por dia para homens.”";
 
 /*  */
 "faq_calories_response.2" = "Por outro lado, se o seu objetivo é ganho de peso, então pode querer focar-se em adicionar alimentos mais ricos em calorias, como batatas-doces, abacates, frutos secos, e produtos de soja.";
@@ -314,7 +314,7 @@
 "setting_doze_tweak_choice" = "Dúzia Diária + 21 Truques";
 
 /* Preference Settings View: brief description text below Tweaks visibility control. */
-"setting_doze_tweak_footer" = "Se está interessado apenas em saúde, use \"Apenas a Dúzia Diária\". Se está interessado em saúde e perda de peso use \"Dúzia Diária + 21 Truques\".";
+"setting_doze_tweak_footer" = "Se está interessado apenas em saúde, use “Apenas a Dúzia Diária”. Se está interessado em saúde e perda de peso use “Dúzia Diária + 21 Truques”.";
 
 /* First Launch Setting: brief description above ‘Daily Dozen Only’ button. */
 "setting_health_alone_txt" = "Apenas para Saúde";
@@ -335,7 +335,7 @@
 "setting_units_2_toggle" = "Unidades";
 
 /* Preference Settings View: brief description text below units control. */
-"setting_units_choice_footer" = "Escolha entre ter sempre as mesmas unidades de medida ou ativar o botão de escolha de \"Unidades:\".";
+"setting_units_choice_footer" = "Escolha entre ter sempre as mesmas unidades de medida ou ativar o botão de escolha de “Unidades:”.";
 
 /* Preference Settings View */
 "setting_units_header" = "Unidades de Medida";
@@ -395,7 +395,7 @@
 "tweakMeal20Minutes.heading" = "Siga a Regra dos Vinte Minutos";
 
 /* heading for daily data entry item */
-"tweakMealNegCal.heading" = "Pré-refeição de Alimentos com \"Calorias Negativas\"";
+"tweakMealNegCal.heading" = "Pré-refeição de Alimentos com “Calorias Negativas”";
 
 /* heading for daily data entry item */
 "tweakMealUndistracted.heading" = "Desfrute de Refeições sem Distrações";

@@ -314,7 +314,7 @@
 "setting_doze_tweak_choice" = "Dúzia Diária + 21 Ajustes";
 
 /* Preference Settings View: brief description text below Tweaks visibility control. */
-"setting_doze_tweak_footer" = "Se está interessado apenas em saúde, use “Apenas a Dúzia Diária”. Se está interessado em saúde e perda de peso use \"Dúzia Diária + 21 Ajustes\".";
+"setting_doze_tweak_footer" = "Se está interessado apenas em saúde, use “Apenas a Dúzia Diária”. Se está interessado em saúde e perda de peso use “Dúzia Diária + 21 Ajustes”.";
 
 /* First Launch Setting: brief description above ‘Daily Dozen Only’ button. */
 "setting_health_alone_txt" = "Para Saúde Apenas";
