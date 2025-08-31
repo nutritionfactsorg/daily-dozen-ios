@@ -1,0 +1,193 @@
+{
+  "itemsDict" : {
+    "tweakCompleteIntentions" : {
+      "activity" : {
+        "imperial" : "Megvalósítási tervek végrehajtása",
+        "metric" : "Megvalósítási tervek végrehajtása"
+      },
+      "explanation" : "Kéthavonta hozzon létre három új megvalósítási tervet – „ha X, akkor Y” formában. Tervezze meg, hogy egy konkrét tevékenységet egy adott módon végre fog hajtani, és pipálja is ki minden nap, amikor végrehajtja őket.",
+      "heading" : "Megvalósítási tervek végrehajtása",
+      "topic" : ""
+    },
+    "tweakDailyBlackCumin" : {
+      "activity" : {
+        "imperial" : "Fekete kömény (Nigella sativa) (¼ tk)",
+        "metric" : "Fekete kömény (Nigella sativa) (¼ tk)"
+      },
+      "explanation" : "Ahogy az Étvágycsökkentő szakaszban megjegyeztük, a randomizált, kontrollált súlycsökkentő kísérletek szisztematikus áttekintése és metaanalízise azt találta, hogy naponta körülbelül negyed teáskanál fekete kömény por néhány hónapon belül csökkenti a testtömeg-indexet. Vegye figyelembe, hogy a fekete kömény eltér a hagyományos köménytől, amelynek adagolása eltérő.",
+      "heading" : "Fekete kömény (¼ teáskanál)",
+      "topic" : ""
+    },
+    "tweakDailyCumin" : {
+      "activity" : {
+        "imperial" : "Római kömény (Cuminum cyminum) (½ teáskanál ebédhez és vacsorához)",
+        "metric" : "Római kömény (Cuminum cyminum) (½ teáskanál ebédhez és vacsorához)"
+      },
+      "explanation" : "A véletlenszerűen kiválasztott túlsúlyos nők egy fél teáskanálnyi köményt adtak az ebédjükhöz és a vacsorájukhoz és testsúlyban négy kilogrammal, derékbőségben egy centiméterrel nagyobb fogyást értek el, mint a kontrollcsoport. Bizonyított a fűszersáfrány hatásossága is, de abból egy csipetnyi ~400Ft-ba kerülne, míg egy teáskanál kömény kevesebb, mint 40Ft. (2025-ös árfolyam szerint)",
+      "heading" : "Római kömény (½ teáskanál ebédhez és vacsorához)",
+      "topic" : ""
+    },
+    "tweakDailyDeflourDiet" : {
+      "activity" : {
+        "imperial" : "Lisztmentesítse az étrendjét",
+        "metric" : "Lisztmentesítse az étrendjét"
+      },
+      "explanation" : "Jelölje be ezt a négyzetet azokon a napokon, amikor teljes kiőrlésű gabonát egész, sértetlen szemek formájában fogyaszt. Az egész gabonaszemek töretlen sejtfala keményítőt szállít a vastagbélbe. Ha porrá őrölt gabonát fogyaszt, akkor ettől a tápanyagtól megfosztja a vastagbelet, még 100%-os, teljes kiőrlésű gabonák esetében is.",
+      "heading" : "Lisztmentesítse az étrendjét",
+      "topic" : ""
+    },
+    "tweakDailyFrontLoad" : {
+      "activity" : {
+        "imperial" : "Kalóriák előtöltése a nap korábbi szakaszában.",
+        "metric" : "Kalóriák előtöltése a nap korábbi szakaszában."
+      },
+      "explanation" : "Jót tesz az anyagcserének, ha több kalória jut a nap korai szakaszára, ezért legyen a reggeli (ideális esetben) vagy az ebéd a nap legbőségesebb étkezés a közmondásos király-polgár-koldus minta szerint.",
+      "heading" : "Kalóriák előtöltése a nap korábbi szakaszában.",
+      "topic" : ""
+    },
+    "tweakDailyGarlic" : {
+      "activity" : {
+        "imperial" : "Fokhagyma por (¼ teáskanál)",
+        "metric" : "Fokhagyma por (¼ teáskanál)"
+      },
+      "explanation" : "Randomizált, kettős-vak, placebóval kontrollált kísérletek arra jutottak, hogy csupán napi negyed teáskanálnyi fokhagymapor csökkenti a testzsírt, minimális költségek mellett.",
+      "heading" : "Fokhagyma por (¼ teáskanál)",
+      "topic" : ""
+    },
+    "tweakDailyGinger" : {
+      "activity" : {
+        "imperial" : "Őrölt gyömbér (1 teáskanál) vagy cayenne bors (½ teáskanál)",
+        "metric" : "Őrölt gyömbér (1 teáskanál) vagy cayenne bors (½ teáskanál)"
+      },
+      "explanation" : "Randomizált, kontrollált kísérletek arra jutottak, hogy napi negyed - másfél teáskanálnyi gyömbérpor jelentősen csökkenti a testsúlyt, minimális költségek mellett. Egyszerűen csak keverje a gyömbérport egy csészényi meleg vízbe. Megjegyzés: A gyömbér hatásosabb reggel, mint este. A chai teával ízletesen egyesítheti a zöld tea és a gyömbér előnyeit. Tovább fokozhatja a hatást - és egyben aktiválhatja a barna zsírszövetet is - ha egy nyers jalapeño paprikát vagy fél teáskanálnyi chilipaprika port - vagy ugyanennyi chilipelyhet - fogyaszt naponta. A csípősséget csökkenti, ha hajszál vékonyra szeleteli, vagy apróra vágja a jalapeñot, illetve ha levesbe vagy teljes értékű zöldségturmixba keveri a chilit, ahogyan ezt az egyik főzős videómban bemutattam a NutritionFacts.org oldalon.",
+      "heading" : "Őrölt gyömbér (1 teáskanál) vagy cayenne bors (½ teáskanál)",
+      "topic" : ""
+    },
+    "tweakDailyGreenTea" : {
+      "activity" : {
+        "imperial" : "Zöld tea (3 csésze)",
+        "metric" : "Zöld tea (3 csésze)"
+      },
+      "explanation" : "Igyon három csészényi folyadékot az étkezések között (várjon legalább egy órát az étkezés után, hogy ne zavarja a vas felszívódását). Az étkezések alatt igyon vizet, feketekávét, vagy hibiszkusz teát, 6:1 arányban citromverbénával keverve, de soha ne igyon egy órán belül három csészénél többet (ez a víz előtöltési tanácsom miatt fontos). Használja ki a koffein megerősítő hatását, igyon zöld teát, amikor valami olyan egészséges ételt fogyaszt, amit szeretne jobban megkedvelni. Soha ne fogyasszon nagy mennyiségű koffeint a lefekvés előtti hat órában. A tea édesítés nélkül a legjobb, de ha mézzel, vagy cukorral szokta inni, akkor próbálja ki a yaconból (inkagumóból) készült szirupot.",
+      "heading" : "Zöld tea (3 csésze)",
+      "topic" : ""
+    },
+    "tweakDailyHydrate" : {
+      "activity" : {
+        "imperial" : "Hidratáljon",
+        "metric" : "Hidratáljon"
+      },
+      "explanation" : "Jelölje be ezt a négyzetet, ha a vizelete soha nem sötétebb halványsárgánál.\n\nNe feledje, hogy ha riboflavinnal dúsított ételeket (például étkezési sörélesztőpelyhet) fogyaszt, akkor nők esetében napi kilenc csésze cukrozatlan italt legyen az alap (például zöld tea, vagy víz a folyadék előtöltési ajánlások szerint), férfiak esetében az ajánlott mennyiség tizenhárom csésze. Ha szív- vagy veseproblémái vannak, akkor egyáltalán ne növelje a folyadékbevitelt anélkül, hogy ezt az orvosával megbeszélné.\n\nNe feledje, hogy a diétás üdítőitalok lehetnek kalóriamentesek, de nem következménymentesek, ahogyan azt a Csökkentett Cukortartalom fejezetből megtudtuk.",
+      "heading" : "Hidratáljon",
+      "topic" : ""
+    },
+    "tweakDailyNutriYeast" : {
+      "activity" : {
+        "imperial" : "Étkezési sörélesztőpehely (2 teáskanál)",
+        "metric" : "Étkezési sörélesztőpehely (2 teáskanál)"
+      },
+      "explanation" : "Két teáskanál sütő-élesztő vagy étkezési sörélesztőpehely nagyjából annyi béta 1,3/1,6-glükánt tartalmaz, amennyit randomizált, kettős vak, placebo-kontrollos klinikai vizsgálatok szerint elősegíti a fogyást.",
+      "heading" : "Étkezési sörélesztőpehely (2 teáskanál)",
+      "topic" : ""
+    },
+    "tweakDailyTimeRestrict" : {
+      "activity" : {
+        "imperial" : "Időablakos étkezés",
+        "metric" : "Időablakos étkezés"
+      },
+      "explanation" : "Korlátozza az étkezését egy ön által kiválasztott napi időablakra, amely nem haladja meg a tizenkét órát, és amelyet folyamatosan, a hét minden napján be tud tartani. Tekintettel az esti étkezés csökkentésének cirkadián előnyeire, az ablaknak 19:00 előtt kell véget érnie.",
+      "heading" : "Időablakos étkezés",
+      "topic" : ""
+    },
+    "tweakExerciseTiming" : {
+      "activity" : {
+        "imperial" : "Eddzen optimális időben",
+        "metric" : "Eddzen optimális időben"
+      },
+      "explanation" : "A Daily Dozen ajánlása az optimális edzésidőre a hosszú élettartam érdekében napi kilencven perc közepesen intenzív tevékenység, ami egyben az optimális edzésidő a fogyáshoz is. Bármikor jó, és minél több, annál jobb, de előnye lehet annak, ha éhgyomorra mozog, legalább hat órával az utolsó étkezés után. Ez általában reggeli előtti időpontot jelenti, de ha jól időzítette, akkor délben is mozoghat egy késői ebéd előtt, vagy ha elég korán ebédel, akkor vacsora előtt. Az időzítés cukrobetegeknél és prediabétesz esetében eltérő. A cukorbetegeknek és a prediabéteszeseknek az étkezés megkezdése után harminc perccel kell elkezdeniük a testmozgást, és ideális esetben legalább egy órát kell mozogniuk, hogy teljesen átlépjék a vércukorszint csúcsát. Ha egyetlen étkezést kellene választania edzés után, az a vacsora legyen, a vércukorszint szabályozásának cirkadián ritmusa miatt, amely a nap folyamán csökken. Ideális esetben azonban a reggeli a nap legnagyobb étkezése, és utána jó edzeni – vagy ami még jobb, minden étkezés után.",
+      "heading" : "Eddzen optimális időben",
+      "topic" : ""
+    },
+    "tweakMeal20Minutes" : {
+      "activity" : {
+        "imperial" : "Kövesse a húszperces szabályt",
+        "metric" : "Kövesse a húszperces szabályt"
+      },
+      "explanation" : "Akár sűrűbb, rágósabb ételek fogyasztásával, akár több rágással, akár kisebb harapásokkal és lassabb étkezéssel érjük el, tanulmányok tucatjai bizonyították, hogy ha növeljük az időt, amit az étel a szánkban tölt, az csökkentheti a kalóriabevitelt. Tehát tartson az étkezés legalább húsz percig, hogy a természetes jóllakottság érzése is érvényesüljön. Hogyan? Válasszon olyan ételeket, amelyeknek az elfogyasztása hosszabb ideig tart, és egyen úgy, hogy a falat hosszabb ideig legyen a szájában. Gondoljon darabosabb, keményebb, rágósabb ételekre, amiket kisebb, jól megrágott falatokban fogyaszt el.",
+      "heading" : "Kövesse a húszperces szabályt",
+      "topic" : ""
+    },
+    "tweakMealNegCal" : {
+      "activity" : {
+        "imperial" : "„Negatív kalóriatartalmú” ételek előtöltése",
+        "metric" : "„Negatív kalóriatartalmú” ételek előtöltése"
+      },
+      "explanation" : "Minden étkezés első fogása egy alma legyen, vagy egy olyan Zöld Lámpás leves vagy saláta, amely csészénként száznál kevesebb kalóriát tartalmaz.",
+      "heading" : "„Negatív kalóriatartalmú” ételek előtöltése",
+      "topic" : ""
+    },
+    "tweakMealUndistracted" : {
+      "activity" : {
+        "imperial" : "Élvezze zavartalanul az étkezést",
+        "metric" : "Élvezze zavartalanul az étkezést"
+      },
+      "explanation" : "Ne nézzen tévét, ne játsszon a telefonján evés közben. Adjon magának egy pipát minden étkezés után, amelyet zavartalanul tudott elfogyasztani.",
+      "heading" : "Élvezze zavartalanul az étkezést",
+      "topic" : ""
+    },
+    "tweakMealVinegar" : {
+      "activity" : {
+        "imperial" : "Adjunk hozzá ecetet (2 tk minden étkezéshez)",
+        "metric" : "Adjunk hozzá ecetet (2 tk minden étkezéshez)"
+      },
+      "explanation" : "Soha ne igyon ecetet közvetlenül. Használja az ételek ízesítésére, vagy fogyasszon köretként salátát és a különféle ecetek bármelyikével készítsen hozzá öntetet. Ha az ecetet italként fogyasztaná, akkor feltétlenül keverje el egy pohár vízben, és utána alaposan öblítse ki a száját, hogy megvédje a fogzománcot a károsodástól.",
+      "heading" : "Adjunk hozzá ecetet (2 tk minden étkezéshez)",
+      "topic" : ""
+    },
+    "tweakMealWater" : {
+      "activity" : {
+        "imperial" : "Étkezés előtt igyon vizet",
+        "metric" : "Étkezés előtt igyon vizet"
+      },
+      "explanation" : "Minden étkezés előtt ütemezzen be két csésze hideg vagy hűvös ízesítetlen vizet. Ezzel egyszerre serkenti az anyagcserét, és kihasználja az előtöltés előnyeit.",
+      "heading" : "Étkezés előtt igyon vizet",
+      "topic" : ""
+    },
+    "tweakNightlyFast" : {
+      "activity" : {
+        "imperial" : "Böjtöljön 19:00 után",
+        "metric" : "Böjtöljön 19:00 után"
+      },
+      "explanation" : "A cirkadián ritmusunkból adódóan az éjszaka elfogyasztott ételek hizlalóbbak, mint a nap során korábban elfogyasztott ételek, ezért böjtöljünk minden éjjel legalább tizenkét órán keresztül, 19:00 óra előtt kezdve. Minél kevesebb kalóriát viszünk be naplemente után, annál jobb.",
+      "heading" : "Böjtöljön 19:00 után",
+      "topic" : ""
+    },
+    "tweakNightlySleep" : {
+      "activity" : {
+        "imperial" : "Aludjon eleget",
+        "metric" : "Aludjon eleget"
+      },
+      "explanation" : "Jelölje be ezt a négyzetet, ha legalább hét órát alszik, a szokásos ritmusa szerint.",
+      "heading" : "Aludjon eleget",
+      "topic" : ""
+    },
+    "tweakNightlyTrendelenbrug" : {
+      "activity" : {
+        "imperial" : "Kísérletezzen Enyhe Trendelenburggal",
+        "metric" : "Kísérletezzen Enyhe Trendelenburggal"
+      },
+      "explanation" : "Próbáljon meg éjszakánként legalább négy órát úgy feküdni, hogy a feje enyhén lejjebb van a lábánál. Emelje meg az ágy láb felőli végét kb. 20 centiméterrel (22 centiméterrel, ha extra nagyméretű, 2 méternél hosszabb ágya van). Figyelem! Rendkívül óvatosan keljen fel az ágyból, mivel ez a testhelyzet ortosztatikus intoleranciát okoz a többségnél, még a fiatal és egészséges embereknél is. Ez azt jelenti, hogy ha túl gyorsan kel fel, akkor elszédülhet, vagy el is ájulhat, ami balesetet és sérülést okozhat. Ha kipróbálja ezt a módszert, mindig lassan keljen fel. Ha 30 perccel a felkelés előtt iszik két csésze hideg vizet, az is segíthet megelőzni ezeket a potenciálisan veszélyes mellékhatást.\n\n*FONTOS: Egyáltalán ne próbálja ki ezt otthon, ha szív- vagy tüdőproblémája, savas refluxja vagy agyi problémái vannak (például fejsérülés)",
+      "heading" : "Kísérletezzen Enyhe Trendelenburggal",
+      "topic" : ""
+    },
+    "tweakWeightTwice" : {
+      "activity" : {
+        "imperial" : "Mérje meg a súlyát naponta kétszer",
+        "metric" : "Mérje meg a súlyát naponta kétszer"
+      },
+      "explanation" : "A rendszeres súlymérés kulcsfontosságú a hosszú távú testsúlykontroll szempontjából, de nincs rá elegendő bizonyíték, hogy mi az optimális gyakoriság. Javaslatom azon az egyetlen tanulmányon alapul, amely megállapította, hogy a napi kétszeri mérés – ébredés után és lefekvés előtt – jobbnak tűnt, mint a napi egyszeri (az első esetben körülbelül hat, a második esetben kettő kiló fogyást értek el tizenkét hét alatt).",
+      "heading" : "Mérje meg a súlyát naponta kétszer",
+      "topic" : ""
+    }
+  }
+}

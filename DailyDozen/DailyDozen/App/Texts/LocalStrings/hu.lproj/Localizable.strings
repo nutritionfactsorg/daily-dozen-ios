@@ -1,0 +1,490 @@
+/* DailyDozen Localizable.strings (hu) */
+/* Copyright © 2021 Nutritionfacts.org. All rights reserved. */
+
+/* Date Button Title: ‘Back to today’ */
+"dateBackButtonTitle" = "Vissza a mai naphoz";
+
+/* Date Button Title: ‘Today’ */
+"dateButtonTitle.today" = "Ma";
+
+/* Doze Detail View subheading: ‘Serving Sizes’ */
+"doze_detail_section_sizes" = "Adagok mérete";
+
+/* Doze Detail View subheading: ‘Types’ */
+"doze_detail_section_types" = "Típusok";
+
+/* Doze Entry View heading: ‘Servings’ */
+"doze_entry_header" = "Adagok";
+
+/* heading for daily data entry item */
+"dozeBeans.heading" = "Babfélék";
+
+/* heading for daily data entry item */
+"dozeBerries.heading" = "Bogyós gyümölcsök";
+
+/* heading for daily data entry item */
+"dozeBeverages.heading" = "Italok";
+
+/* heading for daily data entry item */
+"dozeExercise.heading" = "Testmozgás";
+
+/* heading for daily data entry item */
+"dozeFlaxseeds.heading" = "Lenmag";
+
+/* heading for daily data entry item */
+"dozeFruitsOther.heading" = "Egyéb gyümölcsök";
+
+/* heading for daily data entry item */
+"dozeGreens.heading" = "Zöldek";
+
+/* heading for daily data entry item */
+"dozeNuts.heading" = "Diófélék és magvak";
+
+/* Daily Dozen supplement info alert: dismissal button text */
+"dozeOtherInfo.confirm" = "OK";
+
+/* Daily Dozen supplement info alert: message */
+"dozeOtherInfo.message" = "A B12-vitamin alapvető fontosságú az egészsége szempontjából, de nem számít bele a napi adagokba.\n\nA B12-vitamint felvettük az alkalmazásba, hogy könnyen nyomon követhesse a bevitelét.";
+
+/* Daily Dozen daily entry section heading */
+"dozeOtherInfo.section" = "Táplálékkiegészítők";
+
+/* Daily Dozen supplement info alert: title */
+"dozeOtherInfo.title" = "Táplálékkiegészítők";
+
+/* heading for daily data entry item */
+"dozeSpices.heading" = "Gyógynövények és fűszerek";
+
+/* heading for daily data entry item */
+"dozeVegetablesCruciferous.heading" = "Keresztes virágú zöldségek";
+
+/* heading for daily data entry item */
+"dozeVegetablesOther.heading" = "Egyéb zöldségek";
+
+/* heading for daily data entry item */
+"dozeWholeGrains.heading" = "Teljes kiőrlésű gabonák";
+
+/*  */
+"faq_adapt_question" = "A Napi Tucat túl sok/túl kevés nekem! Alakíthatok rajta?";
+
+/*  */
+"faq_adapt_response" = "Igen, a Napi Tucatot csak egy útmutatónak szántuk, ami megmutatja legegészségesebb ételeket, amiknek a napi fogyasztására törekednünk kell. Nem előírás és nem étkezési terv. Törekedjen változatos növényi étrendre és alakítsa a Napi Tucat mennyiségeit a saját igényeihez!";
+
+/*  */
+"faq_age_question" = "Alkalmazható gyermekek, serdülők és tinédzserek számára is? ";
+
+/*  */
+"faq_age_response.0" = "A gyermekeknek, serdülőknek és tinédzsereknek életciklusonként eltérő a kalóriaigényük. Ezek a változó szükségletek biztosítják számukra minden szakaszban a megfelelő növekedést és fejlődést.";
+
+/*  */
+"faq_age_response.1" = "A Napi Tucatot útmutatónak szántuk, hogy segítsen beépíteni a legegészségesebb ételeket a napi étkezéseinkbe. Bár a rendszer a legtöbb ember számára az egész életciklus során használható, a szükséges ételmennyiséget számos tényező befolyásolhatja, például az életkor és az aktivitási szint. Mivel nem tudunk konkrét táplálkozási vagy orvosi tanácsot adni a növésben lévő gyermek számára, a szülőknek kell ezt az útmutatót a gyermekük igényeihez igazítaniuk és/vagy konzultálniuk egy regisztrált dietetikussal vagy más egészségügyi szakemberrel és az ő segítségével meghatározni a gyermek egyéni igényeit.";
+
+/*  */
+"faq_calories_question" = "Hány kalória van a Napi Tucatban?";
+
+/*  */
+"faq_calories_response.0" = "A Napi Tucat átlagosan körülbelül 1200 kalóriát tartalmaz, de mivel minden kategóriában széles a választható ételek köre, ez az érték 800 és 1800 kalória között mozoghat. Vegyük például az „egyéb zöldségek” kategóriát, egy csésze kaliforniai paprikának sokkal kisebb a kalóriasűrűsége, mint egy csésze főtt édesburgonyának, a kalóriamennyiség az Ön döntésétől függ. Ez a nagyszerű a Napi Tucat rendszerben, hogy nem egyetlen univerzális megoldást akar mindenkire ráerőltetni, hanem mindenki a saját igényeihez alakíthatja.";
+
+/*  */
+"faq_calories_response.1" = "Ha fogyni szeretne, további információkat talál a „Hogyan ne diétázz” című könyvemben és a benne foglalt „Huszonegy Trükk” fejezetben. A „Hogyan ne diétázz” című könyvben megjegyeztem: „A sikeres fogyókúrás stratégiák szisztematikus áttekintése arra az eredményre jutott, hogy a fogyással járó anyagcsere-lassulás és megnövekedett étvágy miatt jelentős fogyás eléréséhez a napi kalóriabevitelt akár napi 1200 kalóriára is le kell csökkenteni a nők, illetve 1500 kalóriára a férfiak esetében.”";
+
+/*  */
+"faq_calories_response.2" = "Másrészt, ha a súlygyarapodás a cél, akkor érdemes lehet gyakrabban, kalóriadúsabb ételeket, például édesburgonyát, avokádót, dióféléket és szójatermékeket fogyasztani.";
+
+/*  */
+"faq_mother_question" = "Követhetem a Napi Tucatot terhesség vagy szoptatás idején is?";
+
+/*  */
+"faq_mother_response" = "A terhes vagy szoptató nők kalória- és tápanyagigénye eltér a többiekétől. Emlékeztetőül: a Napi Tucat nem étkezési terv, és nem szabad kizárólag erre alapozni a napi táplálkozást. A várandós vagy szoptató nők konzultáljanak egészségügyi szakemberrel vagy regisztrált dietetikussal, hogy megfelelően kielégíthessék az egyéni kalória- és táplálkozási igényeiket.";
+
+/*  */
+"faq_scaling_question" = "Egyszerűen képtelen vagyok ennyi babot, gabonát, stb. megenni!";
+
+/*  */
+"faq_scaling_response" = "Semmi baj! A Napi Tucat egy iránymutatás. Törekedjen arra, hogy a lehető legtöbb egészséges növényi ételt adja hozzá az étrendjéhez. Ha csak most kezdett el sok babot (vagy gabonát, zöldséget stb.) fogyasztani, akkor lehet, hogy kisebb adagokkal kell kezdenie, és lassan kell növelnie a mennyiséget. Így a  mikrobiomnak lesz lehetősége alkalmazkodni az új helyzethez. Legyen bátran kreatív: például adhat egy kis babot a reggeli zabkásájához. Ha telepakolja bogyós gyümölcsökkel, lenmaggal és diófélékkel, észre sem veszi a különbséget. Készíthet babpüréből szendvicskrémet, vagy elkészítheti a [BROL](https://nutritionfacts.org/recipe/basic-brol-barley-rye-oats-and-lentils) receptemet – árpa, rozs, zab és lencse –, amit sok étkezés alapjául használok, és egy egyszerű módszer, hogy többféle teljes kiőrlésű gabonát és hüvelyest fogyasszon el egy étkezésen belül.";
+
+/*  */
+"faq_supplements_question" = "Azt hittem, Dr. Greger D-vitamin és DHA táplálék kiegészítők szedését javasolja. Miért nem látom őket?";
+
+/*  */
+"faq_supplements_response" = "Frissítettük a Napi Tucat alkalmazást, hogy csak a szükséges kiegészítőket jelenítse meg. Például a D-vitaminra csak azoknak van szükségük, akik nem töltenek elég időt napfényben. Célunk, hogy a megalapozott döntésekhez szükséges tudományos eredményeket megosszuk önökkel. Az összes ajánlásomat megtekinthetik az [Optimális Tápanyagbevitel](https://nutritionfacts.org/optimum-nutrient-recommendations) oldalon.";
+
+/* Info Menu */
+"faq_title" = "Gyakran Ismételt Kérdések";
+
+/* History Data Alert: Cancel button */
+"history_data_alert_cancel" = "Mégsem";
+
+/* History Data Alert: Clear button */
+"history_data_alert_clear" = "Törlés";
+
+/* History Data Alert: Import buttom */
+"history_data_alert_import" = "Importálás";
+
+/* History Data Alert: OK button */
+"history_data_alert_ok" = "OK";
+
+/* History Data: export action button */
+"history_data_export_btn" = "Előzmény adatok exportálása";
+
+/* History Data: export description text */
+"history_data_export_text" = "Az exportálás ide íródott:";
+
+/* History Data: import action button */
+"history_data_import_btn" = "Előzmény adatok importálása";
+
+/* History Data: import caution text */
+"history_data_import_caution_text" = "Figyelem: Ez az importálás felülírja a Napi Tucat alkalmazás összes korábbi adatát. Folytatja az importálást?";
+
+/* History Data: import data error text */
+"history_data_import_error_text" = "Hiba: Az importálás adathiba miatt sikertelen. A meglévő adatok változatlanok maradtak.";
+
+/* History Data: import not found text */
+"history_data_import_notfound_text" = "Nem található érvényes importfájl a Napi Tucat dokumentumok mappájában.";
+
+/* History Data: preferences header & title */
+"history_data_title" = "Előzmények";
+
+/* History View: calendar scale control */
+"history_scale_choice_day" = "Nap";
+
+/* History View: calendar scale control */
+"history_scale_choice_month" = "Hónap";
+
+/* History View: calendar scale control */
+"history_scale_choice_year" = "Év";
+
+/* History View: scale text */
+"history_scale_label" = "Időskála";
+
+/*  */
+"historyRecord.movingAverage" = "Mozgóátlag";
+
+/* History View */
+"historyRecordDoze.heading" = "Adag történet";
+
+/* History View */
+"historyRecordDoze.legend" = "Adagok";
+
+/* History View */
+"historyRecordTweak.heading" = "Trükkök előzményei";
+
+/* History View */
+"historyRecordTweak.legend" = "Trükkök";
+
+/* History View */
+"historyRecordWeight.heading" = "Súlytörténet";
+
+/* History View */
+"historyRecordWeight.legendEvening" = "Este";
+
+/* History View */
+"historyRecordWeight.legendMorning" = "Reggel";
+
+/* History View */
+"historyRecordWeight.titleImperial" = "Súly (font)";
+
+/* History View */
+"historyRecordWeight.titleMetric" = "Súly (kg)";
+
+/* Info About Menu Item */
+"info_app_about" = "Az alkalmazásról";
+
+/* Info About View: Application Name ‘Daily Dozen’ */
+"info_app_about_app_name" = "Napi tucat";
+
+/* Info About View: Created By */
+"info_app_about_created_by" = "Ezt az alkalmazást készítette: NutritionFacts.org, Christi Richards, Konstantin Khokhlov és Marc Campbell";
+
+/* Info About View */
+"info_app_about_heading" = "Erről az alkalmazásról";
+
+/* Info About View: Open Source Credits */
+"info_app_about_oss_credits" = "A következő nyílt forráskódú könyvtárak használatosak: RealmSwift, Charts, FSCalendar, SimpleAnimation.";
+
+/* Info About View: Overview Text */
+"info_app_about_overview" = "Használja ezt az alkalmazást naponta! Így könnyedén követheti a tanácsaimat és fogyaszthatja az általam ajánlott élelmiszereket, amelyeket az optimális egészség és a hosszú élet eléréséhez ajánlok a Hogy ne halj meg és a Hogyan ne diétázz című könyveimben.";
+
+/* Info About View: Contributing Translators List (language code)  See https://en.wikipedia.org/wiki/List_of_ISO_639-1_codes */
+"info_app_about_translators" = "Külön köszönet önkéntes fordítóinknak: Petar Enchev (bg), Tsveti Enchev (bg), Ricard Soler Roger (ca), Luděk Bouška (cs,sk), Lenka Lukacová (cs), Anke Schliessmann (de), Ángela Graña (es), Saeed Salamian (fa), Audray Harkins (fr), Doron Barak (he), Ruth Levy (he), dr. Stern Borbála (hu), Kertész Tibor (hu), Annalisa Guerrini-Körner (it), Ilaria Zanini (it), Hanna Gurzeda (pl), Joanna Klopotek (pl), Tania Bassi (pt-BR), João Madureira (pt-PT), Cristina Lauby (ro), Evgeniya Lyakh (ru), Katarína Mocáková (sk), Sabina Aliieva (uk).";
+
+/* Info About View: Application release version */
+"info_app_about_version" = "3.5.3 verzió";
+
+/* Info About View: Welcome */
+"info_app_about_welcome" = "Üdvözöljük a személyes Napi Tucat oldalán!";
+
+/* Info Menu: book title */
+"info_book_how_not_to_die" = "Könyv: Hogy ne halj meg";
+
+/* Info Menu: book title */
+"info_book_how_not_to_die_cookbook" = "Könyv: Hogy ne halj meg Szakácskönyv";
+
+/* Info Menu: book title */
+"info_book_how_not_to_diet" = "Könyv: Hogyan ne diétázz";
+
+/* Info Menu */
+"info_webpage_daily_dozen_challenge" = "Napi tucat kihívás";
+
+/* Info Menu */
+"info_webpage_donate" = "Adományozz";
+
+/* Info Menu */
+"info_webpage_open_source" = "Nyílt forráskód";
+
+/* Info Menu */
+"info_webpage_subscribe" = "Iratkozz fel";
+
+/* Info Menu */
+"info_webpage_videos_latest" = "Legújabb videók";
+
+/* Item History Legend: ‘All completed’ */
+"item_history_completed_all" = "Minden adag";
+
+/* Item History Legend: ‘Some completed’ */
+"item_history_completed_some" = "Néhány adag";
+
+/* Item History Heading */
+"item_history_heading" = "Előzmények";
+
+/* Main Navigation Tab Control: ‘Daily Dozen’ (proper noun) */
+"navtab.doze" = "Napi tucat";
+
+/* Main Navigation Tab Control: show more information */
+"navtab.info" = "Információ";
+
+/* Main Navigation Tab Control: ‘Preferences’ synonyms: Settings, Configuration. Choose a translations with is different from Tweaks. */
+"navtab.preferences" = "Preferenciák";
+
+/* Main Navigation Tab Control: ‘21 Tweaks’ (proper noun) */
+"navtab.tweaks" = "21 Trükk";
+
+/* heading for daily data entry item */
+"otherVitaminB12.heading" = "B12 vitamin";
+
+/* Alert notification text */
+"reminder.alert.text" = "Mai adagok megadása";
+
+/* Daily Reminder (alert title, settings section heading) */
+"reminder.heading" = "Napi emlékeztető";
+
+/* Daily Reminder On/Off toggle switch label */
+"reminder.settings.enable" = "Emlékeztetők engedélyezése";
+
+/* Daily Reminder sound control heading */
+"reminder.settings.sound" = "Hang lejátszása";
+
+/* Daily Reminder time control heading */
+"reminder.settings.time" = "Emlékeztessen ekkor:";
+
+/* Android notification `vibrate` */
+"reminder.settings.vibrate" = "Rezgés";
+
+/* ‘Off’ as in ‘On (enabled) or Off (disabled)’, Daily Reminder is not enabled */
+"reminder.state.off" = "Ki";
+
+/* ‘On’ as in ‘On (enabled) or Off (disable)’. Daily Reminder is enabled */
+"reminder.state.on" = "Be";
+
+/* Google Firebase Analytics */
+"setting_analytics_body" = "Anonim használati információk gyűjtésének engedélyezése az alkalmazás fejlesztése érdekében.";
+
+/* Google Firebase Analytics */
+"setting_analytics_enable" = "Statisztika engedélyezése";
+
+/* Google Firebase Analytics */
+"setting_analytics_opt_in" = "Feliratkozás";
+
+/* Google Firebase Analytics */
+"setting_analytics_opt_out" = "Leiratkozás";
+
+/* Google Firebase Analytics */
+"setting_analytics_title" = "Statisztika";
+
+/* First Launch Setting: button text */
+"setting_doze_only_btn" = "Napi tucat\nCsak";
+
+/* Preference Settings View: selection button text */
+"setting_doze_only_choice" = "Csak napi tucat";
+
+/* First Launch Setting: button text */
+"setting_doze_tweak_btn" = "Napi tucat +\n21 Trükk";
+
+/* Preference Settings View: selection button text */
+"setting_doze_tweak_choice" = "Napi tucat + 21 Trükk";
+
+/* Preference Settings View: brief description text below Tweaks visibility control. */
+"setting_doze_tweak_footer" = "Egészséges életmód eléréséhez használja a „Csak Napi Tucat” ajánlást. Ha az egészséges életmód mellett fogyni is szeretne, akkor használja a „Napi Tucat + 21 Trükk” ajánlásokat.";
+
+/* First Launch Setting: brief description above ‘Daily Dozen Only’ button. */
+"setting_health_alone_txt" = "Csak egészséges életmód";
+
+/* First Launch Setting: brief description above ‘Daily Dozen + 21 Tweaks’ button. */
+"setting_health_weight_txt" = "Egészséges életmód és fogyás";
+
+/* Preference Settings View: tweaks visibilty subsection heading */
+"setting_tweak_header" = "21 Trükk Láthatóság";
+
+/* Preference Settings View: Part of ‘Imperial/Metric/Toggle Units’ selector */
+"setting_units_0_imperial" = "Angolszász";
+
+/* Preference Settings View: Part of ‘Imperial/Metric/Toggle Units’ selector */
+"setting_units_1_metric" = "Metrikus";
+
+/* Preference Settings View: Part of ‘Imperial/Metric/Toggle Units’ selector */
+"setting_units_2_toggle" = "Mértékegységek váltása";
+
+/* Preference Settings View: brief description text below units control. */
+"setting_units_choice_footer" = "Beállíthatja, hogy egy mértékegységet használ, vagy engedélyezi az „Mértékegység:” váltógombot.";
+
+/* Preference Settings View */
+"setting_units_header" = "Mértékegységek";
+
+/* Preference Settings View */
+"setting_util_advanced" = "Speciális segédprogramok";
+
+/* ‘Streak’ count. Synonym: ‘Progress‘. Formatted number ‘%d’ for consecutive days completed. Place translated text for ‘days’ on the right or left of ‘%d’ based on language directionality. */
+"streakDaysFormat" = "%d nap";
+
+/* Tweaks Detail view section heading */
+"tweak_detail_section_activity" = "Tevékenység";
+
+/* Tweaks Detail view section heading */
+"tweak_detail_section_description" = "Leírás";
+
+/* Tweaks daily entry header */
+"tweak_entry_header" = "21 Trükk";
+
+/* heading for daily data entry item */
+"tweakCompleteIntentions.heading" = "Megvalósítási tervek végrehajtása";
+
+/* heading for daily data entry item */
+"tweakDailyBlackCumin.heading" = "Fekete kömény (¼ teáskanál)";
+
+/* heading for daily data entry item */
+"tweakDailyCumin.heading" = "Római kömény (½ teáskanál ebédhez és vacsorához)";
+
+/* heading for daily data entry item */
+"tweakDailyDeflourDiet.heading" = "Lisztmentesítse az étrendjét";
+
+/* heading for daily data entry item */
+"tweakDailyFrontLoad.heading" = "Kalóriák előtöltése a nap korábbi szakaszában.";
+
+/* heading for daily data entry item */
+"tweakDailyGarlic.heading" = "Fokhagyma por (¼ teáskanál)";
+
+/* heading for daily data entry item */
+"tweakDailyGinger.heading" = "Őrölt gyömbér (1 teáskanál) vagy cayenne bors (½ teáskanál)";
+
+/* heading for daily data entry item */
+"tweakDailyGreenTea.heading" = "Zöld tea (3 csésze)";
+
+/* heading for daily data entry item */
+"tweakDailyHydrate.heading" = "Hidratáljon";
+
+/* heading for daily data entry item */
+"tweakDailyNutriYeast.heading" = "Étkezési sörélesztőpehely (2 teáskanál)";
+
+/* heading for daily data entry item */
+"tweakDailyTimeRestrict.heading" = "Időablakos étkezés";
+
+/* heading for daily data entry item */
+"tweakExerciseTiming.heading" = "Eddzen optimális időben";
+
+/* heading for daily data entry item */
+"tweakMeal20Minutes.heading" = "Kövesse a húszperces szabályt";
+
+/* heading for daily data entry item */
+"tweakMealNegCal.heading" = "„Negatív kalóriatartalmú” ételek előtöltése";
+
+/* heading for daily data entry item */
+"tweakMealUndistracted.heading" = "Élvezze zavartalanul az étkezést";
+
+/* heading for daily data entry item */
+"tweakMealVinegar.heading" = "Adjunk hozzá ecetet (2 tk minden étkezéshez)";
+
+/* heading for daily data entry item */
+"tweakMealWater.heading" = "Étkezés előtt igyon vizet";
+
+/* heading for daily data entry item */
+"tweakNightlyFast.heading" = "Böjtöljön 19:00 után";
+
+/* heading for daily data entry item */
+"tweakNightlySleep.heading" = "Aludjon eleget";
+
+/* heading for daily data entry item */
+"tweakNightlyTrendelenbrug.heading" = "Kísérletezzen Enyhe Trendelenburggal";
+
+/* heading for daily data entry item */
+"tweakWeightTwice.heading" = "Mérje meg a súlyát naponta kétszer";
+
+/*  */
+"units_label" = "Mértékegységek";
+
+/* Units toggle button text: imperial measurement system */
+"unitToggle.imperial" = "Angolszász";
+
+/* Units toggle button text: metric measurement system */
+"unitToggle.metric" = "Metrikus";
+
+/* URL path */
+"urlSegment.base" = "https://nutritionfacts.org/";
+
+/*  */
+"urlSegment.lang" = "";
+
+/* main info menu: book */
+"urlSegmentInfoMenu.book" = "book/how-not-to-die";
+
+/* main info menu: daily-dozen-challenge */
+"urlSegmentInfoMenu.challenge" = "daily-dozen-challenge";
+
+/* main info menu: cookbook */
+"urlSegmentInfoMenu.cookbook" = "book/how-not-to-die-cookbook";
+
+/* main info menu: how-not-to-diet */
+"urlSegmentInfoMenu.diet" = "book/how-not-to-diet";
+
+/* main info menu: donate */
+"urlSegmentInfoMenu.donate" = "donate";
+
+/* main info menu: open-source */
+"urlSegmentInfoMenu.source" = "open-source";
+
+/* main info menu: subscribe */
+"urlSegmentInfoMenu.subscribe" = "subscribe";
+
+/* team */
+"urlSegmentInfoMenu.team" = "team";
+
+/* main info menu: videos */
+"urlSegmentInfoMenu.videos" = "videos";
+
+/* Label for hyperlink to nutritionfacts.org video topics */
+"videos.link.label" = "Videók";
+
+/* Weight Daily Entry: clear button which deletes values */
+"weight_entry_clear" = "Törlés";
+
+/* Weight Daily Entry: label */
+"weight_entry_evening" = "Este (közvetlenül lefekvés előtt)";
+
+/* Weight Daily Entry: label */
+"weight_entry_morning" = "Reggel (ébredés után)";
+
+/* Weight Daily Entry: label */
+"weight_entry_time" = "Idő";
+
+/* Weight Daily Entry Units: label */
+"weight_entry_units_kg" = "kg";
+
+/* Weight Daily Entry Units: label */
+"weight_entry_units_lbs" = "font";
+
+/* Weight Daily Entry: edit button to change values */
+"weight_history_edit_data" = "Adatok szerkesztése";
+
+/* Weight Daily Entry: heading */
+"weightEntry.heading" = "Súly";
+
+/* file end */

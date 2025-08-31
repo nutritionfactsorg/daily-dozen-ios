@@ -1,0 +1,1134 @@
+{
+  "itemsDict" : {
+    "dozeBeans" : {
+      "heading" : "Babfélék",
+      "servings" : [
+        {
+          "imperial" : "¼ csésze humusz vagy babkrém",
+          "metric" : "70 g humusz vagy babkrém"
+        },
+        {
+          "imperial" : "½ csésze főtt bab, sárgaborsó vagy lencse",
+          "metric" : "100 g főtt bab, sárgaborsó, vagy lencse"
+        },
+        {
+          "imperial" : "⅓ csésze tofu vagy tempeh",
+          "metric" : "80 g tofu vagy tempeh"
+        },
+        {
+          "imperial" : "1 csésze friss borsó vagy csírázott lencse",
+          "metric" : "100 g friss borsó vagy csírázott lencse"
+        }
+      ],
+      "topic" : "topics/beans",
+      "varieties" : [
+        {
+          "text" : "Fekete bab",
+          "topic" : "topics/black-beans"
+        },
+        {
+          "text" : "Fekete szemű bab",
+          "topic" : ""
+        },
+        {
+          "text" : "Vajbab",
+          "topic" : ""
+        },
+        {
+          "text" : "Cannellini bab",
+          "topic" : ""
+        },
+        {
+          "text" : "Csicseriborsó/Garbanzo bab",
+          "topic" : "topics/chickpeas"
+        },
+        {
+          "text" : "Edamame",
+          "topic" : "topics/edamame"
+        },
+        {
+          "text" : "Zöldborsó",
+          "topic" : ""
+        },
+        {
+          "text" : "Nagyszemű északi fehérbab",
+          "topic" : ""
+        },
+        {
+          "text" : "Vesebab",
+          "topic" : "topics/kidney-beans"
+        },
+        {
+          "text" : "Lencsék (beluga, francialencse és vöröslencse fajták)",
+          "topic" : "topics/lentils"
+        },
+        {
+          "text" : "Apró fehérbab",
+          "topic" : "topics/navy-beans"
+        },
+        {
+          "text" : "Tarkabab",
+          "topic" : "topics/pinto-beans"
+        },
+        {
+          "text" : "Kis vörösbab",
+          "topic" : ""
+        },
+        {
+          "text" : "Felesborsó (sárga vagy zöld)",
+          "topic" : "topics/split-peas"
+        },
+        {
+          "text" : "Tempeh",
+          "topic" : "topics/tempeh"
+        }
+      ]
+    },
+    "dozeBerries" : {
+      "heading" : "Bogyós gyümölcsök",
+      "servings" : [
+        {
+          "imperial" : "½ csésze frissen vagy fagyasztva",
+          "metric" : "70 g friss vagy fagyasztott"
+        },
+        {
+          "imperial" : "¼ csésze szárított",
+          "metric" : "40 g szárított"
+        }
+      ],
+      "topic" : "topics/berries",
+      "varieties" : [
+        {
+          "text" : "Acai bogyó",
+          "topic" : "topics/acai-berries"
+        },
+        {
+          "text" : "Borbolya",
+          "topic" : "topics/barberries"
+        },
+        {
+          "text" : "Szeder",
+          "topic" : "topics/blackberries"
+        },
+        {
+          "text" : "Áfonya",
+          "topic" : "topics/blueberries"
+        },
+        {
+          "text" : "Cseresznye vagy meggy",
+          "topic" : "topics/cherries"
+        },
+        {
+          "text" : "Konkord (kék) szőlő",
+          "topic" : "topics/grapes"
+        },
+        {
+          "text" : "Vörösáfonya",
+          "topic" : "topics/cranberries"
+        },
+        {
+          "text" : "Goji bogyó",
+          "topic" : "topics/goji-berries"
+        },
+        {
+          "text" : "Kumkvat",
+          "topic" : ""
+        },
+        {
+          "text" : "Faeper",
+          "topic" : ""
+        },
+        {
+          "text" : "Málna (fekete vagy piros)",
+          "topic" : "topics/raspberries"
+        },
+        {
+          "text" : "Eper",
+          "topic" : "topics/strawberries"
+        }
+      ]
+    },
+    "dozeBeverages" : {
+      "heading" : "Italok",
+      "servings" : [
+        {
+          "imperial" : "Egy pohár (12 uncia)",
+          "metric" : "Egy pohár (350 ml)"
+        }
+      ],
+      "topic" : "topics/beverages",
+      "varieties" : [
+        {
+          "text" : "Fekete tea",
+          "topic" : "topics/black-tea"
+        },
+        {
+          "text" : "Chai tea",
+          "topic" : "topics/chai-tea"
+        },
+        {
+          "text" : "Vaníliás kamilla tea",
+          "topic" : "topics/chamomile-tea"
+        },
+        {
+          "text" : "Kávé",
+          "topic" : "topics/coffee"
+        },
+        {
+          "text" : "Earl grey tea",
+          "topic" : "topics/earl-grey-tea"
+        },
+        {
+          "text" : "Zöld tea",
+          "topic" : "topics/green-tea"
+        },
+        {
+          "text" : "Hibiszkusz tea",
+          "topic" : "topics/hibiscus-tea"
+        },
+        {
+          "text" : "Jázmintea",
+          "topic" : ""
+        },
+        {
+          "text" : "Citromfű tea",
+          "topic" : "topics/lemon-balm"
+        },
+        {
+          "text" : "Matcha tea",
+          "topic" : "topics/matcha"
+        },
+        {
+          "text" : "Mandulavirágos oolong tea",
+          "topic" : "topics/oolong-tea"
+        },
+        {
+          "text" : "Borsmenta tea",
+          "topic" : "topics/peppermint"
+        },
+        {
+          "text" : "Rooibos tea",
+          "topic" : "topics/rooibos-tea"
+        },
+        {
+          "text" : "Víz",
+          "topic" : "topics/water"
+        },
+        {
+          "text" : "Fehér tea",
+          "topic" : "topics/white-tea"
+        }
+      ]
+    },
+    "dozeExercise" : {
+      "heading" : "Testmozgás",
+      "servings" : [
+        {
+          "imperial" : "90 perc közepes intenzitású mozgás",
+          "metric" : "90 perc közepes intenzitású mozgás"
+        },
+        {
+          "imperial" : "40 perc intenzív mozgás",
+          "metric" : "40 perc intenzív mozgás"
+        }
+      ],
+      "topic" : "topics/exercise",
+      "varieties" : [
+        {
+          "text" : "Biciklizés",
+          "topic" : ""
+        },
+        {
+          "text" : "Kenuzás",
+          "topic" : ""
+        },
+        {
+          "text" : "Táncolás",
+          "topic" : ""
+        },
+        {
+          "text" : "Kidobós",
+          "topic" : ""
+        },
+        {
+          "text" : "Síelés",
+          "topic" : ""
+        },
+        {
+          "text" : "Vívás",
+          "topic" : ""
+        },
+        {
+          "text" : "Túrázás",
+          "topic" : ""
+        },
+        {
+          "text" : "Házimunka",
+          "topic" : ""
+        },
+        {
+          "text" : "Jégkorcsolyázás",
+          "topic" : ""
+        },
+        {
+          "text" : "Görkorcsolyázás",
+          "topic" : ""
+        },
+        {
+          "text" : "Zsonglőrködés",
+          "topic" : ""
+        },
+        {
+          "text" : "Ugrálás trambulinon",
+          "topic" : ""
+        },
+        {
+          "text" : "Stand Up Paddle (SUP)",
+          "topic" : ""
+        },
+        {
+          "text" : "Frizbizés",
+          "topic" : ""
+        },
+        {
+          "text" : "Görkorcsolyázás",
+          "topic" : ""
+        },
+        {
+          "text" : "Kosárra dobás",
+          "topic" : ""
+        },
+        {
+          "text" : "Könnyed hólapátolás",
+          "topic" : ""
+        },
+        {
+          "text" : "Gördeszkázás",
+          "topic" : ""
+        },
+        {
+          "text" : "Sznorkelezés",
+          "topic" : ""
+        },
+        {
+          "text" : "Szörfözés",
+          "topic" : ""
+        },
+        {
+          "text" : "Rekreációs úszás",
+          "topic" : ""
+        },
+        {
+          "text" : "Teniszezés (páros)",
+          "topic" : ""
+        },
+        {
+          "text" : "Helyben úszás (taposás)",
+          "topic" : ""
+        },
+        {
+          "text" : "Gyors séta (6,5 km/h)",
+          "topic" : ""
+        },
+        {
+          "text" : "Vízi aerobikozás",
+          "topic" : ""
+        },
+        {
+          "text" : "Vízisíelés",
+          "topic" : ""
+        },
+        {
+          "text" : "Kerti munka",
+          "topic" : ""
+        },
+        {
+          "text" : "Jóga",
+          "topic" : ""
+        },
+        {
+          "text" : "Hátizsákkal túrázás",
+          "topic" : ""
+        },
+        {
+          "text" : "Kosárlabda",
+          "topic" : ""
+        },
+        {
+          "text" : "Kerékpározás hegyre fel",
+          "topic" : ""
+        },
+        {
+          "text" : "Súlyzós köredzés",
+          "topic" : ""
+        },
+        {
+          "text" : "Sífutás",
+          "topic" : ""
+        },
+        {
+          "text" : "Futball",
+          "topic" : ""
+        },
+        {
+          "text" : "Jégkorong",
+          "topic" : ""
+        },
+        {
+          "text" : "Kocogás",
+          "topic" : ""
+        },
+        {
+          "text" : "Terpeszugrás (Jumping jacks)",
+          "topic" : ""
+        },
+        {
+          "text" : "Ugrókötelezés",
+          "topic" : ""
+        },
+        {
+          "text" : "Lacrosse",
+          "topic" : ""
+        },
+        {
+          "text" : "Fekvőtámasz",
+          "topic" : ""
+        },
+        {
+          "text" : "Húzódzkodás",
+          "topic" : ""
+        },
+        {
+          "text" : "Raketball",
+          "topic" : ""
+        },
+        {
+          "text" : "Sziklamászás",
+          "topic" : ""
+        },
+        {
+          "text" : "Rögbi",
+          "topic" : ""
+        },
+        {
+          "text" : "Futás",
+          "topic" : ""
+        },
+        {
+          "text" : "Búvárkodás",
+          "topic" : ""
+        },
+        {
+          "text" : "Tenisz (egyes)",
+          "topic" : ""
+        },
+        {
+          "text" : "Futball",
+          "topic" : ""
+        },
+        {
+          "text" : "Gyorskorcsolya",
+          "topic" : ""
+        },
+        {
+          "text" : "Fallabda",
+          "topic" : ""
+        },
+        {
+          "text" : "Step aerobic",
+          "topic" : ""
+        },
+        {
+          "text" : "Úszodai úszás",
+          "topic" : ""
+        },
+        {
+          "text" : "Gyors séta hegyre fel",
+          "topic" : ""
+        },
+        {
+          "text" : "Aqua fitnesz",
+          "topic" : ""
+        }
+      ]
+    },
+    "dozeFlaxseeds" : {
+      "heading" : "Lenmag",
+      "servings" : [
+        {
+          "imperial" : "1 evőkanál őrölt",
+          "metric" : "1 evőkanál őrölt"
+        }
+      ],
+      "topic" : "topics/flax-seeds",
+      "varieties" : [
+        {
+          "text" : "Barna lenmag",
+          "topic" : ""
+        },
+        {
+          "text" : "Arany lenmag",
+          "topic" : ""
+        }
+      ]
+    },
+    "dozeFruitsOther" : {
+      "heading" : "Egyéb gyümölcsök",
+      "servings" : [
+        {
+          "imperial" : "1 közepes méretű gyümölcs",
+          "metric" : "1 közepes méretű gyümölcs"
+        },
+        {
+          "imperial" : "1 csésze darabolt gyümölcs",
+          "metric" : "150 g darabolt gyümölcs"
+        },
+        {
+          "imperial" : "¼ csésze szárított gyümölcs",
+          "metric" : "40 g szárított gyümölcs"
+        }
+      ],
+      "topic" : "topics/fruit",
+      "varieties" : [
+        {
+          "text" : "Alma",
+          "topic" : "topics/apples"
+        },
+        {
+          "text" : "Sárgabarack",
+          "topic" : "topics/apricots"
+        },
+        {
+          "text" : "Avokádó",
+          "topic" : "topics/avocados"
+        },
+        {
+          "text" : "Banán",
+          "topic" : "topics/bananas"
+        },
+        {
+          "text" : "Sárgadinnye",
+          "topic" : "topics/cantaloupe"
+        },
+        {
+          "text" : "Klementin",
+          "topic" : ""
+        },
+        {
+          "text" : "Datolya",
+          "topic" : "topics/dates"
+        },
+        {
+          "text" : "Füge",
+          "topic" : ""
+        },
+        {
+          "text" : "Grapefruit",
+          "topic" : "topics/grapefruit"
+        },
+        {
+          "text" : "Mézdinnye",
+          "topic" : ""
+        },
+        {
+          "text" : "Kiwi",
+          "topic" : "topics/kiwifruit"
+        },
+        {
+          "text" : "Citrom",
+          "topic" : "topics/lemons"
+        },
+        {
+          "text" : "Lime",
+          "topic" : "topics/limes"
+        },
+        {
+          "text" : "Licsi",
+          "topic" : ""
+        },
+        {
+          "text" : "Mangó",
+          "topic" : "topics/mango"
+        },
+        {
+          "text" : "Nektarin",
+          "topic" : ""
+        },
+        {
+          "text" : "Narancs",
+          "topic" : "topics/oranges"
+        },
+        {
+          "text" : "Papaya",
+          "topic" : ""
+        },
+        {
+          "text" : "Maracuja/passiógyümölcs",
+          "topic" : ""
+        },
+        {
+          "text" : "Őszibarack",
+          "topic" : "topics/peaches"
+        },
+        {
+          "text" : "Körte",
+          "topic" : "topics/pears"
+        },
+        {
+          "text" : "Ananász",
+          "topic" : ""
+        },
+        {
+          "text" : "Szilva (főleg fekete szilva)",
+          "topic" : "topics/plums"
+        },
+        {
+          "text" : "Pluot (kajszilva)",
+          "topic" : ""
+        },
+        {
+          "text" : "Gránátalma",
+          "topic" : "topics/pomegranates"
+        },
+        {
+          "text" : "Aszalt szilva",
+          "topic" : "topics/prunes"
+        },
+        {
+          "text" : "Mandarinfélék",
+          "topic" : ""
+        },
+        {
+          "text" : "Görögdinnye",
+          "topic" : "topics/watermelon"
+        }
+      ]
+    },
+    "dozeGreens" : {
+      "heading" : "Zöldek",
+      "servings" : [
+        {
+          "imperial" : "1 csésze nyersen",
+          "metric" : "60 g nyersen"
+        },
+        {
+          "imperial" : "½ csésze főtt",
+          "metric" : "90 g főzve"
+        }
+      ],
+      "topic" : "topics/greens",
+      "varieties" : [
+        {
+          "text" : "Rukkola",
+          "topic" : ""
+        },
+        {
+          "text" : "Cékla zöldje",
+          "topic" : "topics/beets"
+        },
+        {
+          "text" : "Káposztafélék",
+          "topic" : "topics/collard-greens"
+        },
+        {
+          "text" : "Kelkáposzta (fekete, zöld és piros)",
+          "topic" : "topics/kale"
+        },
+        {
+          "text" : "Saláta mix (zsenge zöldsaláta válogatás)",
+          "topic" : "topics/salads"
+        },
+        {
+          "text" : "Mustár zöldek",
+          "topic" : "topics/mustard-greens"
+        },
+        {
+          "text" : "Sóska",
+          "topic" : ""
+        },
+        {
+          "text" : "Spenót",
+          "topic" : "topics/spinach"
+        },
+        {
+          "text" : "Svájci (piros) mángold",
+          "topic" : "topics/swiss-chard"
+        },
+        {
+          "text" : "Tarlórépa levele",
+          "topic" : ""
+        }
+      ]
+    },
+    "dozeNuts" : {
+      "heading" : "Diófélék és magvak",
+      "servings" : [
+        {
+          "imperial" : "¼ csésze dióféle vagy olajos mag",
+          "metric" : "30 g dióféle vagy olajos mag"
+        },
+        {
+          "imperial" : "2 evőkanál dió- vagy magvaj",
+          "metric" : "2 evőkanál dió- vagy magvaj"
+        }
+      ],
+      "topic" : "topics/nuts",
+      "varieties" : [
+        {
+          "text" : "Mandula",
+          "topic" : "topics/almonds"
+        },
+        {
+          "text" : "Kesudió",
+          "topic" : "topics/cashews"
+        },
+        {
+          "text" : "Chiamag",
+          "topic" : "topics/chia-seeds"
+        },
+        {
+          "text" : "Mogyoró",
+          "topic" : "topics/hazelnuts"
+        },
+        {
+          "text" : "Kendermag",
+          "topic" : ""
+        },
+        {
+          "text" : "Makadámdió",
+          "topic" : "topics/macadamia-nuts"
+        },
+        {
+          "text" : "mogyoró",
+          "topic" : "topics/peanuts"
+        },
+        {
+          "text" : "Pekándió",
+          "topic" : "topics/pecans"
+        },
+        {
+          "text" : "Pisztácia",
+          "topic" : "topics/pistachios"
+        },
+        {
+          "text" : "Tökmag",
+          "topic" : "topics/pumpkin-seeds"
+        },
+        {
+          "text" : "Szezámmag",
+          "topic" : "topics/sesame-seeds"
+        },
+        {
+          "text" : "Napraforgómag",
+          "topic" : "topics/sunflower-seeds"
+        },
+        {
+          "text" : "Dió",
+          "topic" : "topics/walnuts"
+        }
+      ]
+    },
+    "dozeSpices" : {
+      "heading" : "Gyógynövények és fűszerek",
+      "servings" : [
+        {
+          "imperial" : "¼ teáskanál kurkuma",
+          "metric" : "¼ teáskanál kurkuma"
+        },
+        {
+          "imperial" : "Bármilyen más (sómentes) gyógynövény és fűszer, amit szeret",
+          "metric" : "Bármilyen más (sómentes) gyógynövény és fűszer, amit szeret"
+        }
+      ],
+      "topic" : "topics/spices",
+      "varieties" : [
+        {
+          "text" : "Vegyesfűszer",
+          "topic" : "topics/allspice"
+        },
+        {
+          "text" : "Borbolya",
+          "topic" : "topics/barberries"
+        },
+        {
+          "text" : "Bazsalikom",
+          "topic" : "topics/basil"
+        },
+        {
+          "text" : "Babérlevél",
+          "topic" : ""
+        },
+        {
+          "text" : "Kardamom",
+          "topic" : ""
+        },
+        {
+          "text" : "Chili por",
+          "topic" : ""
+        },
+        {
+          "text" : "Koriander (levél)",
+          "topic" : "topics/cilantro"
+        },
+        {
+          "text" : "Fahéj",
+          "topic" : "topics/cinnamon"
+        },
+        {
+          "text" : "Szegfűszeg",
+          "topic" : "topics/cloves"
+        },
+        {
+          "text" : "Koriander (fűszer)",
+          "topic" : ""
+        },
+        {
+          "text" : "Kömény",
+          "topic" : "topics/cumin"
+        },
+        {
+          "text" : "Curry por",
+          "topic" : "topics/curry-powder"
+        },
+        {
+          "text" : "Kapor",
+          "topic" : ""
+        },
+        {
+          "text" : "Görögszéna",
+          "topic" : "topics/fenugreek"
+        },
+        {
+          "text" : "Fokhagyma",
+          "topic" : "topics/garlic"
+        },
+        {
+          "text" : "Gyömbér",
+          "topic" : "topics/ginger"
+        },
+        {
+          "text" : "Torma",
+          "topic" : ""
+        },
+        {
+          "text" : "Citromfű",
+          "topic" : ""
+        },
+        {
+          "text" : "Majoránna",
+          "topic" : "topics/marjoram"
+        },
+        {
+          "text" : "Mustárpor",
+          "topic" : "topics/mustard-powder"
+        },
+        {
+          "text" : "Szerecsendió",
+          "topic" : "topics/nutmeg"
+        },
+        {
+          "text" : "Oregano",
+          "topic" : "topics/oregano"
+        },
+        {
+          "text" : "Füstölt paprika",
+          "topic" : ""
+        },
+        {
+          "text" : "Petrezselyem",
+          "topic" : "topics/parsley"
+        },
+        {
+          "text" : "Bors",
+          "topic" : "topics/pepper"
+        },
+        {
+          "text" : "Borsmenta",
+          "topic" : "topics/peppermint"
+        },
+        {
+          "text" : "Rozmaring",
+          "topic" : "topics/rosemary"
+        },
+        {
+          "text" : "Sáfrány",
+          "topic" : "topics/saffron"
+        },
+        {
+          "text" : "Zsálya",
+          "topic" : ""
+        },
+        {
+          "text" : "Kakukkfű",
+          "topic" : ""
+        },
+        {
+          "text" : "Kurkuma",
+          "topic" : "topics/turmeric"
+        },
+        {
+          "text" : "Vanília",
+          "topic" : ""
+        }
+      ]
+    },
+    "dozeVegetablesCruciferous" : {
+      "heading" : "Keresztes virágú zöldségek",
+      "servings" : [
+        {
+          "imperial" : "½ csésze főtt leveles zöldségek",
+          "metric" : "90 g főtt leveles zöldségek"
+        },
+        {
+          "imperial" : "½ csésze nyers vagy főtt nem leveles zöldségek",
+          "metric" : "60 g nyers vagy főtt nem leveles zöldségek"
+        },
+        {
+          "imperial" : "1 csésze nyers leveles zöldségek",
+          "metric" : "90 g nyers leveles zöldségek"
+        },
+        {
+          "imperial" : "¼ csésze brokkolicsíra",
+          "metric" : "15 g brokkolicsíra"
+        },
+        {
+          "imperial" : "1 evőkanál torma",
+          "metric" : "1 evőkanál torma"
+        }
+      ],
+      "topic" : "topics/cruciferous-vegetables",
+      "varieties" : [
+        {
+          "text" : "Rukkola",
+          "topic" : ""
+        },
+        {
+          "text" : "Bordás kel",
+          "topic" : "topics/bok-choy"
+        },
+        {
+          "text" : "Brokkoli (beleértve a romanescót is)",
+          "topic" : "topics/broccoli"
+        },
+        {
+          "text" : "Kelbimbó",
+          "topic" : "topics/brussels-sprouts"
+        },
+        {
+          "text" : "Káposzta (zöld, vörös és kelkáposzta)",
+          "topic" : "topics/cabbage"
+        },
+        {
+          "text" : "Karfiol (fehér, zöld, narancs és lila)",
+          "topic" : "topics/cauliflower"
+        },
+        {
+          "text" : "Káposztafélék",
+          "topic" : "topics/collard-greens"
+        },
+        {
+          "text" : "Torma",
+          "topic" : ""
+        },
+        {
+          "text" : "Fodros kel (fekete, zöld és piros)",
+          "topic" : "topics/kale"
+        },
+        {
+          "text" : "Karalábé (zöld és lila)",
+          "topic" : ""
+        },
+        {
+          "text" : "Mustár levél (Szareptai mustár)",
+          "topic" : "topics/mustard-greens"
+        },
+        {
+          "text" : "Retekfélék",
+          "topic" : ""
+        },
+        {
+          "text" : "Tarlórépa levele",
+          "topic" : ""
+        },
+        {
+          "text" : "Vízitorma",
+          "topic" : "topics/watercress"
+        }
+      ]
+    },
+    "dozeVegetablesOther" : {
+      "heading" : "Egyéb zöldségek",
+      "servings" : [
+        {
+          "imperial" : "1 csésze nyers leveles zöldség",
+          "metric" : "60 g nyers leveles zöldség"
+        },
+        {
+          "imperial" : "½ csésze nyers vagy főtt nem leveles zöldség",
+          "metric" : "90 g nyers vagy főtt (nem leveles) zöldség"
+        },
+        {
+          "imperial" : "½ csésze zöldséglé",
+          "metric" : "120 ml zöldséglé"
+        },
+        {
+          "imperial" : "¼ csésze szárított gomba",
+          "metric" : "10 g szárított gomba"
+        }
+      ],
+      "topic" : "topics/vegetables",
+      "varieties" : [
+        {
+          "text" : "Articsóka",
+          "topic" : "topics/artichokes"
+        },
+        {
+          "text" : "Spárga",
+          "topic" : "topics/asparagus"
+        },
+        {
+          "text" : "Cékla",
+          "topic" : "topics/beets"
+        },
+        {
+          "text" : "Kaliforniai paprika",
+          "topic" : "topics/bell-peppers"
+        },
+        {
+          "text" : "Sárgarépa",
+          "topic" : "topics/carrots"
+        },
+        {
+          "text" : "Kukorica",
+          "topic" : "topics/corn"
+        },
+        {
+          "text" : "Fokhagyma",
+          "topic" : "topics/garlic"
+        },
+        {
+          "text" : "gomba (csiperke, laska, portobello és shiitake)",
+          "topic" : "topics/mushrooms"
+        },
+        {
+          "text" : "Okra",
+          "topic" : "topics/okra"
+        },
+        {
+          "text" : "Hagymafélék",
+          "topic" : "topics/onions"
+        },
+        {
+          "text" : "Lila burgonyák",
+          "topic" : "topics/potatoes"
+        },
+        {
+          "text" : "Tök",
+          "topic" : "topics/pumpkin"
+        },
+        {
+          "text" : "Tengeri zöldségek (arame, dulse és nori)",
+          "topic" : "topics/sea-vegetables"
+        },
+        {
+          "text" : "Cukorborsó",
+          "topic" : ""
+        },
+        {
+          "text" : "Tökfélék (mogyorótök, zsenge tök, spárgatök-variációk)",
+          "topic" : "topics/squash"
+        },
+        {
+          "text" : "Édesburgonya / jamgyökér",
+          "topic" : "topics/sweet-potatoes"
+        },
+        {
+          "text" : "Paradicsom",
+          "topic" : "topics/tomatoes"
+        },
+        {
+          "text" : "Cukkini",
+          "topic" : "topics/zucchini"
+        }
+      ]
+    },
+    "dozeWholeGrains" : {
+      "heading" : "Teljes kiőrlésű gabonák",
+      "servings" : [
+        {
+          "imperial" : "½ csésze főtt teljes kiőrlésű gabona, teljes kiőrlésű tészta vagy kukoricaszem",
+          "metric" : "100 g főtt gabonakása, főtt teljes gabonaszem, tészta vagy kukorica"
+        },
+        {
+          "imperial" : "1 csésze 100% teljes kiőrlésű hideg gabonapehely",
+          "metric" : "50 g 100% teljes kiőrlésű hideg gabonapehely"
+        },
+        {
+          "imperial" : "1 100% teljes kiőrlésű (búza)tortilla (vagy 2 kisebb kukoricatortilla)",
+          "metric" : "1 100% teljes kiőrlésű (búza)tortilla (vagy 2 kisebb kukoricatortilla)"
+        },
+        {
+          "imperial" : "1 szelet 100% teljes kiőrlésű kenyér",
+          "metric" : "1 szelet 100% teljes kiőrlésű kenyér"
+        },
+        {
+          "imperial" : "½ zsemle vagy angol muffin",
+          "metric" : "½ zsemle vagy angol muffin"
+        },
+        {
+          "imperial" : "3 csésze pattogatott kukorica",
+          "metric" : "30 g pattogatott kukorica"
+        }
+      ],
+      "topic" : "topics/grains",
+      "varieties" : [
+        {
+          "text" : "Árpa",
+          "topic" : "topics/barley"
+        },
+        {
+          "text" : "Hajdina",
+          "topic" : "topics/buckwheat"
+        },
+        {
+          "text" : "Köles",
+          "topic" : "topics/millet"
+        },
+        {
+          "text" : "Zab",
+          "topic" : "topics/oats"
+        },
+        {
+          "text" : "Pattogatott kukorica",
+          "topic" : "topics/popcorn"
+        },
+        {
+          "text" : "Quinoa",
+          "topic" : "topics/quinoa"
+        },
+        {
+          "text" : "Rozs",
+          "topic" : "topics/rye"
+        },
+        {
+          "text" : "Teff (törpe köles)",
+          "topic" : ""
+        },
+        {
+          "text" : "Teljes kiőrlésű tészta",
+          "topic" : "topics/pasta"
+        }
+      ]
+    },
+    "otherVitaminB12" : {
+      "heading" : "B12 vitamin",
+      "servings" : [
+
+      ],
+      "topic" : "topics/vitamin-b12",
+      "varieties" : [
+
+      ]
+    }
+  }
+}
