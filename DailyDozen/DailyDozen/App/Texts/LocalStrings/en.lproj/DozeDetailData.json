@@ -5,23 +5,19 @@
       "servings" : [
         {
           "imperial" : "¼ cup hummus or bean dip",
-          "metric" : "60 g hummus or bean dip"
+          "metric" : "70 g hummus or bean dip"
         },
         {
           "imperial" : "½ cup cooked beans, split peas, or lentils",
-          "metric" : "90 g cooked beans, split peas, or lentils"
+          "metric" : "100 g cooked beans, split peas, or lentils"
         },
         {
-          "imperial" : "½ cup tofu or tempeh",
-          "metric" : "100 g tofu or tempeh"
+          "imperial" : "⅓ cup tofu or tempeh",
+          "metric" : "80 g tofu or tempeh"
         },
         {
-          "imperial" : "1 cup fresh peas or snow peas",
-          "metric" : "130 g fresh peas or snow peas"
-        },
-        {
-          "imperial" : "1 cup fresh sprouted beans (lentils, mung beans)",
-          "metric" : "100 g fresh sprouted beans (lentils, mung beans)"
+          "imperial" : "1 cup fresh peas or sprouted lentils",
+          "metric" : "100 g fresh peas or sprouted lentils"
         }
       ],
       "topic" : "topics/beans",
@@ -67,10 +63,6 @@
           "topic" : "topics/lentils"
         },
         {
-          "text" : "Miso",
-          "topic" : "topics/miso"
-        },
-        {
           "text" : "Navy beans",
           "topic" : "topics/navy-beans"
         },
@@ -97,7 +89,7 @@
       "servings" : [
         {
           "imperial" : "½ cup fresh or frozen",
-          "metric" : "60 g fresh or frozen"
+          "metric" : "70 g fresh or frozen"
         },
         {
           "imperial" : "¼ cup dried",
@@ -193,10 +185,6 @@
         {
           "text" : "Hibiscus tea",
           "topic" : "topics/hibiscus-tea"
-        },
-        {
-          "text" : "Hot chocolate",
-          "topic" : ""
         },
         {
           "text" : "Jasmine tea",
@@ -493,7 +481,7 @@
         },
         {
           "imperial" : "1 cup cut-up fruit",
-          "metric" : "120 g cut-up fruit"
+          "metric" : "150 g cut-up fruit"
         },
         {
           "imperial" : "¼ cup dried fruit",
@@ -689,10 +677,6 @@
         {
           "text" : "Almonds",
           "topic" : "topics/almonds"
-        },
-        {
-          "text" : "Brazil nuts",
-          "topic" : "topics/brazil-nuts"
         },
         {
           "text" : "Cashews",
@@ -892,16 +876,20 @@
       "heading" : "Cruciferous Vegetables",
       "servings" : [
         {
-          "imperial" : "½ cup chopped",
-          "metric" : "30–80 g chopped"
+          "imperial" : "½ cup cooked leafy vegetables",
+          "metric" : "90 g cooked leafy vegetables"
         },
         {
-          "imperial" : "½ cup Brussels sprouts",
-          "metric" : "80 g Brussels sprouts"
+          "imperial" : "½ cup raw or cooked non-leafy vegetables",
+          "metric" : "60 g raw or cooked non-leafy vegetables"
         },
         {
-          "imperial" : "¼ cup Broccoli sprouts",
-          "metric" : "15 g Broccoli sprouts"
+          "imperial" : "1 cup raw leafy vegetables",
+          "metric" : "90 g raw leafy vegetables"
+        },
+        {
+          "imperial" : "¼ cup broccoli sprouts",
+          "metric" : "20 g broccoli sprouts"
         },
         {
           "imperial" : "1 tablespoon horseradish",
@@ -977,15 +965,15 @@
         },
         {
           "imperial" : "½ cup raw or cooked nonleafy vegetables",
-          "metric" : "50 g raw or cooked nonleafy vegetables"
+          "metric" : "90 g raw or cooked nonleafy vegetables"
         },
         {
           "imperial" : "½ cup vegetable juice",
-          "metric" : "125 ml vegetable juice"
+          "metric" : "120 ml vegetable juice"
         },
         {
           "imperial" : "¼ cup dried mushrooms",
-          "metric" : "7 g dried mushrooms"
+          "metric" : "10 g dried mushrooms"
         }
       ],
       "topic" : "topics/vegetables",
@@ -1019,7 +1007,7 @@
           "topic" : "topics/garlic"
         },
         {
-          "text" : "Mushrooms (button, oyster, portobello, and shiitake)",
+          "text" : "Mushrooms (button, oyster, porcini, portobello, and shiitake)",
           "topic" : "topics/mushrooms"
         },
         {
@@ -1068,16 +1056,20 @@
       "heading" : "Whole Grains",
       "servings" : [
         {
-          "imperial" : "½ cup hot cereal or cooked grains, pasta, or corn kernels",
-          "metric" : "100 g hot cereal or cooked grains, pasta, or corn kernels"
+          "imperial" : "½ cup cooked whole grains, whole-wheat pasta, or corn kernels",
+          "metric" : "100 g cooked whole grains, whole-wheat pasta, or corn kernels"
         },
         {
-          "imperial" : "1 cup cold cereal",
-          "metric" : "50 g cold cereal"
+          "imperial" : "1 cup 100% whole grain cold cereal",
+          "metric" : "50 g 100% whole grain cold cereal"
         },
         {
-          "imperial" : "1 tortilla or slice of bread",
-          "metric" : "1 tortilla or slice of bread"
+          "imperial" : "1 100% whole grain tortilla (or 2 smaller corn tortillas)",
+          "metric" : "1 100% whole grain tortilla (or 2 smaller corn tortillas)"
+        },
+        {
+          "imperial" : "1 slice of 100% whole grain bread",
+          "metric" : "1 slice of 100% whole grain bread"
         },
         {
           "imperial" : "½ bagel or English muffin",

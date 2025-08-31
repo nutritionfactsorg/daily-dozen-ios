@@ -5,23 +5,19 @@
       "servings" : [
         {
           "imperial" : "¼ cană humus sau de fasole frecată",
-          "metric" : "60 g humus sau de fasole frecată"
+          "metric" : "70 g humus sau pastă de fasole"
         },
         {
           "imperial" : "½ cană fasole gătită, mazăre uscată (galbenă sau verde) sau linte",
-          "metric" : "90 g fasole gătită, mazăre uscată (galbenă sau verde) sau linte"
+          "metric" : "100 g fasole gătită, mazăre despicată sau linte"
         },
         {
-          "imperial" : "½ cană tofu sau tempeh",
-          "metric" : "100 g tofu sau tempeh"
+          "imperial" : "⅓ cană tofu sau tempeh",
+          "metric" : "80 g tofu sau tempeh"
         },
         {
-          "imperial" : "1 cană mazăre de grădină sau mazăre de zăpadă",
-          "metric" : "100 g mazăre de grădină sau mazăre de zăpadă"
-        },
-        {
-          "imperial" : "1 cană leguminoase încolțite (linte, fasole mung)",
-          "metric" : "100 g leguminoase încolțite (linte, fasole mung)"
+          "imperial" : "1 cană mazăre proaspătă sau linte încolțită",
+          "metric" : "100 g mazăre proaspătă sau linte încolțită"
         }
       ],
       "topic" : "topics/beans",
@@ -67,10 +63,6 @@
           "topic" : "topics/lentils"
         },
         {
-          "text" : "Miso",
-          "topic" : "topics/miso"
-        },
-        {
           "text" : "Fasole albă cu bob mic",
           "topic" : "topics/navy-beans"
         },
@@ -97,7 +89,7 @@
       "servings" : [
         {
           "imperial" : "½ cană proaspete sau congelate",
-          "metric" : "60 g proaspete sau congelate"
+          "metric" : "70 g proaspete sau congelate"
         },
         {
           "imperial" : "¼ cană uscate",
@@ -193,10 +185,6 @@
         {
           "text" : "Ceai de hibiscus",
           "topic" : "topics/hibiscus-tea"
-        },
-        {
-          "text" : "Ciocolată caldă",
-          "topic" : ""
         },
         {
           "text" : "Ceai de iasomie",
@@ -493,7 +481,7 @@
         },
         {
           "imperial" : "1 cană fructe tăiate",
-          "metric" : "120 g fructe tăiate"
+          "metric" : "150 g fructe tăiate"
         },
         {
           "imperial" : "¼ cană fructe uscate",
@@ -689,10 +677,6 @@
         {
           "text" : "Migdale",
           "topic" : "topics/almonds"
-        },
-        {
-          "text" : "Nuci braziliene",
-          "topic" : "topics/brazil-nuts"
         },
         {
           "text" : "Caju",
@@ -892,20 +876,24 @@
       "heading" : "Legume crucifere",
       "servings" : [
         {
-          "imperial" : "½ cană tocate",
-          "metric" : "30–80 g tocate"
+          "imperial" : "½ cană legume cu frunze gătite",
+          "metric" : "90 g legume cu frunze gătite"
         },
         {
-          "imperial" : "½ cană varză de Bruxelles",
-          "metric" : "80 g varză de Bruxelles"
+          "imperial" : "½ cană legume non-frunze crude sau gătite",
+          "metric" : "60 g legume non-frunze crude sau gătite"
+        },
+        {
+          "imperial" : "1 cană legume cu frunze crude",
+          "metric" : "90 g legume cu frunze crude"
         },
         {
           "imperial" : "¼ cană germeni de broccoli",
-          "metric" : "15 g cană germeni de broccoli"
+          "metric" : "20 g germeni de broccoli"
         },
         {
-          "imperial" : "1 lingură de hrean",
-          "metric" : "1 lingură de hrean"
+          "imperial" : "1 lingură hrean",
+          "metric" : "1 lingură hrean"
         }
       ],
       "topic" : "topics/cruciferous-vegetables",
@@ -977,15 +965,15 @@
         },
         {
           "imperial" : "½ cană legume fară frunze, crude sau gătite",
-          "metric" : "50 g legume fară frunze, crude sau gătite"
+          "metric" : "90 g legume non-frunze crude sau gătite"
         },
         {
           "imperial" : "½ cană suc de legume",
-          "metric" : "125 ml suc de legume"
+          "metric" : "120 ml suc de legume"
         },
         {
           "imperial" : "¼ cană ciuperci uscate",
-          "metric" : "7 g ciuperci uscate"
+          "metric" : "10 g ciuperci uscate"
         }
       ],
       "topic" : "topics/vegetables",
@@ -1068,24 +1056,28 @@
       "heading" : "Cereale integrale",
       "servings" : [
         {
-          "imperial" : "½ cană terci de cereale sau cereale gătite, paste, sau boabe de porumb",
-          "metric" : "100 g terci de cereale sau cereale gătite, paste, sau boabe de porumb"
+          "imperial" : "½ cană cereale integrale gătite, paste din grâu integral sau boabe de porumb",
+          "metric" : "100 g cereale integrale gătite, paste din grâu integral sau boabe de porumb"
         },
         {
-          "imperial" : "1 cană de cereale reci",
-          "metric" : "50 g cereale reci"
+          "imperial" : "1 cană cereale reci 100% integrale",
+          "metric" : "50 g cereale reci 100% integrale"
         },
         {
-          "imperial" : "1 tortilla sau felie de pâine",
-          "metric" : "1 tortilla sau felie de pâine"
+          "imperial" : "1 tortilla 100% integrală (sau 2 tortilla mai mici din porumb)",
+          "metric" : "1 tortilla 100% integrală (sau 2 tortilla mai mici din porumb)"
         },
         {
-          "imperial" : "½ dintr-o baghetă sau brioșă englezească",
-          "metric" : "½ baghetă sau brioșă englezească"
+          "imperial" : "1 felie de pâine 100% integrală",
+          "metric" : "1 felie de pâine 100% integrală"
         },
         {
-          "imperial" : "3 căni de floricele de porumb (pop-corn)",
-          "metric" : "30 g floricele de porumb (pop-corn)"
+          "imperial" : "½ covrig sau brioșă englezească",
+          "metric" : "½ covrig sau brioșă englezească"
+        },
+        {
+          "imperial" : "3 căni popcorn expandat",
+          "metric" : "30 g popcorn expandat"
         }
       ],
       "topic" : "topics/grains",

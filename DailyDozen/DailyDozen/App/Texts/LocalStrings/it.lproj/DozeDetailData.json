@@ -5,23 +5,19 @@
       "servings" : [
         {
           "imperial" : "60 g di hummus o crema di fagioli",
-          "metric" : "60 g di hummus o crema di fagioli"
+          "metric" : "70 g di hummus o crema di fagioli"
         },
         {
           "imperial" : "90 g di fagioli cotti, piselli decorticati o lenticchie",
-          "metric" : "90 g di fagioli cotti, piselli decorticati o lenticchie"
+          "metric" : "100 g di fagioli cotti, piselli decorticati o lenticchie"
         },
         {
-          "imperial" : "100 g di tofu o tempeh",
-          "metric" : "100 g di tofu o tempeh"
+          "imperial" : "⅓ tazza di tofu o tempeh",
+          "metric" : "80 g di tofu o tempeh"
         },
         {
-          "imperial" : "130 g di piselli freschi o taccole",
-          "metric" : "130 g di piselli freschi o taccole"
-        },
-        {
-          "imperial" : "100 g di fagioli germogliati freschi (lenticchie, fagioli mungo)",
-          "metric" : "100 g di fagioli germogliati freschi (lenticchie, fagioli mungo)"
+          "imperial" : "1 tazza di piselli freschi o lenticchie germinate",
+          "metric" : "100 g di piselli freschi o lenticchie germinate"
         }
       ],
       "topic" : "topics/beans",
@@ -67,10 +63,6 @@
           "topic" : "topics/lentils"
         },
         {
-          "text" : "Miso",
-          "topic" : "topics/miso"
-        },
-        {
           "text" : "Fagioli tondini",
           "topic" : "topics/navy-beans"
         },
@@ -97,7 +89,7 @@
       "servings" : [
         {
           "imperial" : "60 g freschi o congelati",
-          "metric" : "60 g freschi o congelati"
+          "metric" : "70 g freschi o congelati"
         },
         {
           "imperial" : "40 g disidratati",
@@ -193,10 +185,6 @@
         {
           "text" : "Carcadè",
           "topic" : "topics/hibiscus-tea"
-        },
-        {
-          "text" : "Cioccolata calda",
-          "topic" : ""
         },
         {
           "text" : "Tè al gelsomino",
@@ -493,7 +481,7 @@
         },
         {
           "imperial" : "120 g di frutta tagliata",
-          "metric" : "120 g di frutta tagliata"
+          "metric" : "150 g di frutta tagliata a pezzi"
         },
         {
           "imperial" : "40 g di frutta secca",
@@ -689,10 +677,6 @@
         {
           "text" : "Mandorle",
           "topic" : "topics/almonds"
-        },
-        {
-          "text" : "Noci brasiliane",
-          "topic" : "topics/brazil-nuts"
         },
         {
           "text" : "Anacardi",
@@ -892,16 +876,20 @@
       "heading" : "Verdure crucifere",
       "servings" : [
         {
-          "imperial" : "30–80 g tagliate",
-          "metric" : "30–80 g tagliate"
+          "imperial" : "½ tazza di verdura a foglia larga cotta",
+          "metric" : "90 g di verdura a foglia larga cotta"
         },
         {
-          "imperial" : "80 g di cavolini di Bruxelles",
-          "metric" : "80 g di cavolini di Bruxelles"
+          "imperial" : "½ tazza di verdura non a foglia larga, cotta o cruda",
+          "metric" : "60 g di verdura a foglia larga, cotta o cruda"
         },
         {
-          "imperial" : "15 g di germogli di broccoli",
-          "metric" : "15 g di germogli di broccoli"
+          "imperial" : "1 tazza di verdura a foglia larga cruda",
+          "metric" : "90 g di verdura a foglia larga cruda"
+        },
+        {
+          "imperial" : "¼ tazza di germogli di broccoli",
+          "metric" : "20 g di germogli di broccoli"
         },
         {
           "imperial" : "1 cucchiaio di rafano",
@@ -977,15 +965,15 @@
         },
         {
           "imperial" : "50 g di verdure non a foglia crude o cotte",
-          "metric" : "50 g di verdure non a foglia crude o cotte"
+          "metric" : "90 g di verdura non a foglia larga, cotta o cruda"
         },
         {
           "imperial" : "125 ml di centrifugato di verdure",
-          "metric" : "125 ml di centrifugato di verdure"
+          "metric" : "120 ml di centrifugato di verdure"
         },
         {
           "imperial" : "7 g di funghi secchi",
-          "metric" : "7 g di funghi secchi"
+          "metric" : "10 g di funghi secchi"
         }
       ],
       "topic" : "topics/vegetables",
@@ -1019,7 +1007,7 @@
           "topic" : "topics/garlic"
         },
         {
-          "text" : "Funghi (champignon, orecchioni, portobello e shiitake)",
+          "text" : "Funghi (champignon, cardoncelli, porcini, portobello e shiitake)",
           "topic" : "topics/mushrooms"
         },
         {
@@ -1068,16 +1056,20 @@
       "heading" : "Cereali Integrali",
       "servings" : [
         {
-          "imperial" : "100 g di cereali cotti, pasta o chicchi di mais",
-          "metric" : "100 g di cereali cotti, pasta o chicchi di mais"
+          "imperial" : "½ tazza di cereali integrali cotti, pasta integrale o chicchi di mais",
+          "metric" : "100 g di cereali integrali cotti, pasta integrale o chicchi di mais"
         },
         {
-          "imperial" : "50 g di cereali freddi",
-          "metric" : "50 g di cereali freddi"
+          "imperial" : "1 tazza di cereali integrali freddi",
+          "metric" : "50 g di cereali integrali freddi"
         },
         {
-          "imperial" : "1 piadina o 1 fetta di pane",
-          "metric" : "1 piadina o 1 fetta di pane"
+          "imperial" : "1 tortilla integrale (o 2 più piccole di mais)",
+          "metric" : "1 tortilla integrale (o 2 più piccole di mais)"
+        },
+        {
+          "imperial" : "1 fetta di pane integrale",
+          "metric" : "1 fetta di pane integrale"
         },
         {
           "imperial" : "½ bagel o tigella",

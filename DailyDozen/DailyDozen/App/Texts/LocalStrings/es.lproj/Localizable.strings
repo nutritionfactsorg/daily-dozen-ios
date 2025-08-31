@@ -86,7 +86,7 @@
 "faq_calories_response.0" = "La Docena Diaria aporta una media de 1200 calorías, pero, debido a la gran variedad de alimentos de cada categoría, puede estar entre 800 y 1800 calorías. Piensa en la categoría de Otras verduras: una taza de pimientos tiene una densidad calórica mucho menor que una taza de batata cocida, así que el rango de calorías depende de los alimentos que ingieras. Es lo bueno de la Docena Diaria, que no son reglas estrictas, sino que se puede adaptar a tus necesidades. ";
 
 /*  */
-"faq_calories_response.1" = "Si quieres perder peso, puedes encontrar más información en \"Comer para no engordar\" y sus 21 potenciadores. En \"Comer para no engordar\", explico: \"Una revisión sistemática de las estrategias exitosas de pérdida de peso concluyó que, debido a que el metabolismo se ralentiza y tu apetito aumenta cuando pierdes peso, para poder perder bastante peso, quizá debas reducir tu consumo calórico a incluso 1200 calorías al día para las mujeres y 1500 calorías al día para los hombres\". ";
+"faq_calories_response.1" = "Si quieres perder peso, puedes encontrar más información en “Comer para no engordar” y sus 21 potenciadores. En “Comer para no engordar”, explico: “Una revisión sistemática de las estrategias exitosas de pérdida de peso concluyó que, debido a que el metabolismo se ralentiza y tu apetito aumenta cuando pierdes peso, para poder perder bastante peso, quizá debas reducir tu consumo calórico a incluso 1200 calorías al día para las mujeres y 1500 calorías al día para los hombres”. ";
 
 /*  */
 "faq_calories_response.2" = "Al mismo tiempo, si quieres ganar peso, quizá te interese enfocarte en añadir más alimentos densos en calorías, como las batatas, los aguacates, los frutos secos y los productos de soja.";
@@ -206,10 +206,10 @@
 "info_app_about_overview" = "Utiliza esta aplicación a diario para llevar un registro de los alimentos que recomiendo para una salud y longevidad óptimas en mi libro Comer para no morir.";
 
 /* Info About View: Contributing Translators List (language code)  See https://en.wikipedia.org/wiki/List_of_ISO_639-1_codes */
-"info_app_about_translators" = "Le damos las gracias a nuestros traductores voluntarios: Petar Enchev (bg), Tsveti Enchev (bg), Ricard Soler Roger (ca), Luděk Bouška (cs,sk), Lenka Lukacová (cs), Anke Schliessmann (de), Ángela Graña (es), Saeed Salamian (fa), Audray Harkins (fr), Doron Barak (he), Ruth Levy (he), Annalisa Guerrini-Körner (it), Ilaria Zanini (it), Hanna Gurzeda (pl), Joanna Klopotek (pl), Tania Bassi (pt-BR), João Madureira (pt-PT), Cristina Lauby (ro), Evgeniya Lyakh (ru), Katarína Mocáková (sk), Sabina Aliieva (uk).";
+"info_app_about_translators" = "Le damos las gracias a nuestros traductores voluntarios: Petar Enchev (bg), Tsveti Enchev (bg), Ricard Soler Roger (ca), Luděk Bouška (cs,sk), Lenka Lukacová (cs), Anke Schliessmann (de), Ángela Graña (es), Saeed Salamian (fa), Audray Harkins (fr), Doron Barak (he), Ruth Levy (he), dr. Stern Borbála (hu), Kertész Tibor (hu), Annalisa Guerrini-Körner (it), Ilaria Zanini (it), Hanna Gurzeda (pl), Joanna Klopotek (pl), Tania Bassi (pt-BR), João Madureira (pt-PT), Cristina Lauby (ro), Evgeniya Lyakh (ru), Katarína Mocáková (sk), Sabina Aliieva (uk).";
 
 /* Info About View: Application release version */
-"info_app_about_version" = "versión 3.5.1";
+"info_app_about_version" = "versión 3.5.3";
 
 /* Info About View: Welcome */
 "info_app_about_welcome" = "¡Bienvenido a mi Docena Diaria!";

@@ -5,23 +5,19 @@
       "servings" : [
         {
           "imperial" : "¼杯鷹嘴豆泥",
-          "metric" : "60克鷹嘴豆或其他豆泥"
+          "metric" : "70克鷹嘴豆或其他豆泥"
         },
         {
           "imperial" : "½杯煮熟的豆子、豌豆或扁豆",
-          "metric" : "90克煮熟的豆子、豌豆或扁豆"
+          "metric" : "100克煮熟的豆子、去皮豌豆或扁豆"
         },
         {
-          "imperial" : "½杯豆腐或天貝",
-          "metric" : "100克豆腐或豆豉"
+          "imperial" : "⅓杯豆腐或天貝",
+          "metric" : "80克豆腐或天貝"
         },
         {
-          "imperial" : "1杯新鮮豌豆或荷蘭豆",
-          "metric" : "130克新鮮豌豆或荷蘭豆"
-        },
-        {
-          "imperial" : "1杯新鮮萌芽豆（扁豆、綠豆）",
-          "metric" : "100克新鮮萌芽豆（扁豆、綠豆）"
+          "imperial" : "1杯新鮮豌豆或萌芽扁豆",
+          "metric" : "100克新鮮豌豆或萌芽扁豆"
         }
       ],
       "topic" : "topics/beans",
@@ -67,10 +63,6 @@
           "topic" : "topics/lentils"
         },
         {
-          "text" : "味噌",
-          "topic" : "topics/miso"
-        },
-        {
           "text" : "白豆",
           "topic" : "topics/navy-beans"
         },
@@ -97,7 +89,7 @@
       "servings" : [
         {
           "imperial" : "½杯新鮮或冷凍漿果",
-          "metric" : "60克新鮮或冷凍漿果"
+          "metric" : "70克新鮮或冷凍"
         },
         {
           "imperial" : "¼杯漿果乾",
@@ -193,10 +185,6 @@
         {
           "text" : "洛神花茶",
           "topic" : "topics/hibiscus-tea"
-        },
-        {
-          "text" : "熱巧克力",
-          "topic" : ""
         },
         {
           "text" : "茉莉花茶",
@@ -493,7 +481,7 @@
         },
         {
           "imperial" : "1杯水果丁",
-          "metric" : "120克水果丁"
+          "metric" : "150克水果丁"
         },
         {
           "imperial" : "¼杯果乾",
@@ -689,10 +677,6 @@
         {
           "text" : "杏仁",
           "topic" : "topics/almonds"
-        },
-        {
-          "text" : "巴西堅果",
-          "topic" : "topics/brazil-nuts"
         },
         {
           "text" : "腰果",
@@ -892,16 +876,20 @@
       "heading" : "十字花科蔬菜",
       "servings" : [
         {
-          "imperial" : "½杯切碎的十字花科蔬菜",
-          "metric" : "30至80克切碎的十字花科蔬菜"
+          "imperial" : "½杯熟綠葉菜",
+          "metric" : "90克熟綠葉菜"
         },
         {
-          "imperial" : "½杯孢子甘藍苗",
-          "metric" : "80克孢子甘藍苗"
+          "imperial" : "½杯生或熟非綠葉菜",
+          "metric" : "60克生或熟非綠葉菜"
+        },
+        {
+          "imperial" : "1杯生綠葉菜",
+          "metric" : "90克生綠葉菜"
         },
         {
           "imperial" : "¼杯花椰菜苗",
-          "metric" : "15克花椰菜苗"
+          "metric" : "20克花椰菜苗"
         },
         {
           "imperial" : "一大匙辣根",
@@ -977,15 +965,15 @@
         },
         {
           "imperial" : "½杯生或熟的非葉菜",
-          "metric" : "50克生或熟的非葉菜"
+          "metric" : "90克生或熟非綠葉菜"
         },
         {
           "imperial" : "½杯蔬菜汁",
-          "metric" : "125毫升蔬菜汁"
+          "metric" : "120毫升蔬菜汁"
         },
         {
           "imperial" : "¼杯乾燥菇類",
-          "metric" : "7克乾燥菇類"
+          "metric" : "10克乾菇類"
         }
       ],
       "topic" : "topics/vegetables",
@@ -1019,7 +1007,7 @@
           "topic" : "topics/garlic"
         },
         {
-          "text" : "菇類（洋菇、秀珍菇、波特菇與香菇）",
+          "text" : "菇類（洋菇、秀珍菇、牛肝菌菇、波特菇與香菇）",
           "topic" : "topics/mushrooms"
         },
         {
@@ -1068,16 +1056,20 @@
       "heading" : "全穀類",
       "servings" : [
         {
-          "imperial" : "½杯熱麥片或煮熟的穀物、義大利麵或玉米粒",
-          "metric" : "100克熱麥片或煮熟的穀物、義大利麵或玉米粒"
+          "imperial" : "½杯熟全穀物、全麥義大利麵或玉米粒",
+          "metric" : "100克熟全穀物、全麥義大利麵或玉米粒"
         },
         {
-          "imperial" : "1杯冷麥片",
-          "metric" : "50克冷麥片"
+          "imperial" : "1杯100%冷全穀物麥片",
+          "metric" : "50克100%冷全穀物麥片"
         },
         {
-          "imperial" : "1份墨西哥薄餅或1片麵包",
-          "metric" : "1份墨西哥薄餅或1片麵包"
+          "imperial" : "1塊100%全穀物墨西哥餅（或2塊小玉米餅）",
+          "metric" : "1塊100%全穀物墨西哥餅（或2塊小玉米餅）"
+        },
+        {
+          "imperial" : "1片100%全穀物麵包",
+          "metric" : "1片100%全穀物麵包"
         },
         {
           "imperial" : "½個貝果或英式鬆餅",

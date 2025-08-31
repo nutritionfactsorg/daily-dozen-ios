@@ -5,23 +5,19 @@
       "servings" : [
         {
           "imperial" : "¼ taza de hummus o paté de otras legumbres",
-          "metric" : "60 g de hummus o paté de otras legumbres"
+          "metric" : "70 g de hummus o paté de otras legumbres"
         },
         {
           "imperial" : "½ taza de legumbres cocinadas",
-          "metric" : "90 g de legumbres cocinadas"
+          "metric" : "100 g de legumbres cocinadas"
         },
         {
-          "imperial" : "½ taza de tofu o tempeh",
-          "metric" : "100 g de tofu o tempeh"
+          "imperial" : "⅓ taza de tofu o tempeh",
+          "metric" : "80 g de tofu o tempeh"
         },
         {
-          "imperial" : "1 taza de arvejas o tirabeques",
-          "metric" : "130 g de arvejas o tirabeques"
-        },
-        {
-          "imperial" : "1 taza de brotes de legumbres ",
-          "metric" : "100 g de brotes de legumbres"
+          "imperial" : "1 taza de arvejas o brotes de lentejas",
+          "metric" : "100 g de arvejas o brotes de lentejas"
         }
       ],
       "topic" : "es/topics/legumbres-es",
@@ -67,10 +63,6 @@
           "topic" : "es/topics/lentejas"
         },
         {
-          "text" : "Miso",
-          "topic" : "es/topics/miso-es"
-        },
-        {
           "text" : "Frijoles blancos",
           "topic" : "es/topics/frijoles-blancos"
         },
@@ -97,7 +89,7 @@
       "servings" : [
         {
           "imperial" : "½ taza frescos o congelados",
-          "metric" : "60 g frescos o congelados"
+          "metric" : "70 g frescos o congelados"
         },
         {
           "imperial" : "¼ taza secos",
@@ -193,10 +185,6 @@
         {
           "text" : "Infusión de hibisco",
           "topic" : "es/topics/hibiscus-tea-es"
-        },
-        {
-          "text" : "Chocolate caliente",
-          "topic" : ""
         },
         {
           "text" : "Té de jazmín",
@@ -493,7 +481,7 @@
         },
         {
           "imperial" : "1 taza de fruta picada",
-          "metric" : "120 g de fruta picada"
+          "metric" : "150 g de fruta picada"
         },
         {
           "imperial" : "¼ taza de fruta seca",
@@ -691,10 +679,6 @@
           "topic" : "es/topics/almendras"
         },
         {
-          "text" : "Nueces de Brasil",
-          "topic" : "es/topics/nueces-de-brasil-es"
-        },
-        {
           "text" : "Anacardos",
           "topic" : "es/topics/anacardos"
         },
@@ -796,7 +780,7 @@
         },
         {
           "text" : "Cilantro",
-          "topic" : "es/topics/cilantro-es"
+          "topic" : ""
         },
         {
           "text" : "Comino",
@@ -892,16 +876,20 @@
       "heading" : "Crucíferas",
       "servings" : [
         {
-          "imperial" : "½ taza picadas",
-          "metric" : "30–80 g picadas"
+          "imperial" : "½ taza de verduras de hoja cocinadas",
+          "metric" : "90 g de verduras de hoja cocinadas"
         },
         {
-          "imperial" : "½ taza de coles de Bruselas",
-          "metric" : "80 g de coles de Bruselas"
+          "imperial" : "½ taza de verduras crudas o cocinadas (no de hoja)",
+          "metric" : "60 g de verduras crudas o cocinadas (no de hoja)"
+        },
+        {
+          "imperial" : "1 taza de verduras de hoja crudas",
+          "metric" : "90 g verduras de hoja crudas"
         },
         {
           "imperial" : "¼ taza de brotes de brócoli",
-          "metric" : "15 g de brotes de brócoli"
+          "metric" : "20 g de brotes de brócoli"
         },
         {
           "imperial" : "1 cucharada de rábano picante",
@@ -977,15 +965,15 @@
         },
         {
           "imperial" : "½ taza de verduras sin hoja crudas o cocidas",
-          "metric" : "50 g de verduras sin hoja crudas o cocidas"
+          "metric" : "90 g de verduras crudas o cocinadas (no de hoja)"
         },
         {
           "imperial" : "½ taza de jugo de verduras",
-          "metric" : "125 ml de jugo de verduras"
+          "metric" : "120 ml de jugo de verduras"
         },
         {
           "imperial" : "¼ taza de champiñones secos",
-          "metric" : "7 g de champiñones secos"
+          "metric" : "10 g de hongos secos"
         }
       ],
       "topic" : "es/topics/vegetales",
@@ -1019,7 +1007,7 @@
           "topic" : "es/topics/ajo"
         },
         {
-          "text" : "Champiñones",
+          "text" : "Hongos (champiñones, ostra, portobello, shiitake y boletus)",
           "topic" : "es/topics/champinones"
         },
         {
@@ -1068,16 +1056,20 @@
       "heading" : "Cereales integrales",
       "servings" : [
         {
-          "imperial" : "½ taza de cereales cocidos, pasta o granos de maíz cocidos",
-          "metric" : "100 g de cereales cocidos, pasta o granos de maíz cocidos"
+          "imperial" : "½ taza de cereales integrales cocidos, pasta de trigo integral o granos de maíz",
+          "metric" : "100 g de cereales integrales cocidos, pasta integral o granos de maíz"
         },
         {
-          "imperial" : "1 taza de cereales fríos",
-          "metric" : "50 g de cereales fríos"
+          "imperial" : "1 taza de cereales integrales fríos ",
+          "metric" : "50 g de cereales integrales fríos"
         },
         {
-          "imperial" : "1 tortilla o rodaja de pan",
-          "metric" : "1 tortilla o rodaja de pan"
+          "imperial" : "1 tortilla 100% integral (o 2 tortillas pequeñas de maíz)",
+          "metric" : "1 tortilla 100% integral (o 2 tortillas pequeñas de maíz)"
+        },
+        {
+          "imperial" : "1 rebanada de pan 100% integral",
+          "metric" : "1 rebanada de pan 100% integral"
         },
         {
           "imperial" : "½ bagel o English muffin",

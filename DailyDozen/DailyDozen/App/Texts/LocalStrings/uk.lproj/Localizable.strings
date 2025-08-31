@@ -206,10 +206,10 @@
 "info_app_about_overview" = "Використовуй цей застосунок щодня, щоб відслідковувати продукти харчування та слідувати рекомендаціям для міцного здоров'я та довголіття із моїх книг “Як не померти передчасно” та “How Not to diet (Як не сидіти на дієті)”";
 
 /* Info About View: Contributing Translators List (language code)  See https://en.wikipedia.org/wiki/List_of_ISO_639-1_codes */
-"info_app_about_translators" = "Особлива подяка нашим перекладачам-волонтерам: Petar Enchev (bg), Tsveti Enchev (bg), Ricard Soler Roger (ca), Luděk Bouška (cs,sk), Lenka Lukacová (cs), Anke Schliessmann (de), Ángela Graña (es), Saeed Salamian (fa), Audray Harkins (fr), Doron Barak (he), Ruth Levy (he), Annalisa Guerrini-Körner (it), Ilaria Zanini (it), Hanna Gurzeda (pl), Joanna Klopotek (pl), Tania Bassi (pt-BR), João Madureira (pt-PT), Cristina Lauby (ro), Evgeniya Lyakh (ru), Katarína Mocáková (sk), Sabina Aliieva (uk).";
+"info_app_about_translators" = "Особлива подяка нашим перекладачам-волонтерам: Petar Enchev (bg), Tsveti Enchev (bg), Ricard Soler Roger (ca), Luděk Bouška (cs,sk), Lenka Lukacová (cs), Anke Schliessmann (de), Ángela Graña (es), Saeed Salamian (fa), Audray Harkins (fr), Doron Barak (he), Ruth Levy (he), dr. Stern Borbála (hu), Kertész Tibor (hu), Annalisa Guerrini-Körner (it), Ilaria Zanini (it), Hanna Gurzeda (pl), Joanna Klopotek (pl), Tania Bassi (pt-BR), João Madureira (pt-PT), Cristina Lauby (ro), Evgeniya Lyakh (ru), Katarína Mocáková (sk), Sabina Aliieva (uk).";
 
 /* Info About View: Application release version */
-"info_app_about_version" = "версія 3.5.1";
+"info_app_about_version" = "версія 3.5.3";
 
 /* Info About View: Welcome */
 "info_app_about_welcome" = "Ласкаво просимо до “Дюжини доктора Грегера”";
@@ -300,18 +300,6 @@
 
 /* Google Firebase Analytics */
 "setting_analytics_title" = "Аналітика";
-
-/* Appearance Header */
-"setting_appearance_header" = "Appearance";
-
-/* Appearance Mode: Auto */
-"setting_appearance_mode_auto" = "Auto";
-
-/* Appearance Mode: Dark */
-"setting_appearance_mode_dark" = "Dark";
-
-/* Appearance Mode: Light */
-"setting_appearance_mode_light" = "Light";
 
 /* First Launch Setting: button text */
 "setting_doze_only_btn" = "Тільки Дюжина доктора Грегера";

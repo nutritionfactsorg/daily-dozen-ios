@@ -5,23 +5,19 @@
       "servings" : [
         {
           "imperial" : "¼ tasse de houmous ou autre crème de haricots",
-          "metric" : "60 g de houmous ou autre crème de haricots"
+          "metric" : "70 g de houmous ou autre crème de haricots"
         },
         {
           "imperial" : "½ tasse de haricots cuits, pois cassés ou lentilles",
-          "metric" : "90 g de haricots cuits, pois cassés ou lentilles"
+          "metric" : "100 g de haricots cuits, pois cassés ou lentilles"
         },
         {
-          "imperial" : "½ tasse de tofu ou tempeh",
-          "metric" : "100 g de tofu ou tempeh"
+          "imperial" : "⅓ tasse de tofu ou tempeh",
+          "metric" : "80 g de tofu ou tempeh"
         },
         {
-          "imperial" : "1 tasse de petits pois ou pois mangetout",
-          "metric" : "130 g de petits pois ou pois mangetout"
-        },
-        {
-          "imperial" : "1 tasse de lentilles ou fèves germées",
-          "metric" : "100 g de lentilles ou fèves germées"
+          "imperial" : "1 tasse de petits pois ou lentilles germées",
+          "metric" : "100 g de petits pois ou lentilles germées"
         }
       ],
       "topic" : "topics/beans",
@@ -67,10 +63,6 @@
           "topic" : "topics/lentils"
         },
         {
-          "text" : "Miso",
-          "topic" : "topics/miso"
-        },
-        {
           "text" : "Haricots blancs",
           "topic" : "topics/navy-beans"
         },
@@ -97,7 +89,7 @@
       "servings" : [
         {
           "imperial" : "½ tasse fraîches ou congelées",
-          "metric" : "60 g fraîches ou congelées"
+          "metric" : "70 g fraîches ou congelées"
         },
         {
           "imperial" : "¼ tasse séchées",
@@ -193,10 +185,6 @@
         {
           "text" : "Infusion d'hibiscus",
           "topic" : "topics/hibiscus-tea"
-        },
-        {
-          "text" : "Chocolat chaud",
-          "topic" : ""
         },
         {
           "text" : "Thé au jasmin",
@@ -493,7 +481,7 @@
         },
         {
           "imperial" : "1 tasse de fruits coupés",
-          "metric" : "120 g de fruits coupés"
+          "metric" : "150 g de fruits coupés"
         },
         {
           "imperial" : "¼ tasse de fruits secs",
@@ -689,10 +677,6 @@
         {
           "text" : "Amandes",
           "topic" : "topics/almonds"
-        },
-        {
-          "text" : "Noix du Brésil",
-          "topic" : "topics/brazil-nuts"
         },
         {
           "text" : "Noix de cajou",
@@ -892,16 +876,20 @@
       "heading" : "Légumes crucifères",
       "servings" : [
         {
-          "imperial" : "½ tasse hachés",
-          "metric" : "30–80 g hachés"
+          "imperial" : "½ tasse de légumes-feuilles cuits",
+          "metric" : "90 g de légumes-feuilles cuits"
         },
         {
-          "imperial" : "½ tasse de choux de Bruxelles",
-          "metric" : "80 g de choux de Bruxelles"
+          "imperial" : "½ tasse de légumes sans feuilles crus ou cuits",
+          "metric" : "60 g de légumes sans feuilles crus ou cuits"
+        },
+        {
+          "imperial" : "1 tasse de légumes-feuilles crus",
+          "metric" : "90 g de légumes-feuilles crus"
         },
         {
           "imperial" : "¼ tasse de pousses de brocoli",
-          "metric" : "15 g de pousses de brocoli"
+          "metric" : "20 g de pousses de brocoli"
         },
         {
           "imperial" : "1 cuillère à soupe de raifort",
@@ -981,11 +969,11 @@
         },
         {
           "imperial" : "½ tasse de jus de légumes",
-          "metric" : "125 ml de jus de légumes"
+          "metric" : "120 ml de jus de légumes"
         },
         {
           "imperial" : "¼ tasse de champignons séchés",
-          "metric" : "7 g de champignons séchés"
+          "metric" : "10 g de champignons séchés"
         }
       ],
       "topic" : "topics/vegetables",
@@ -1068,16 +1056,20 @@
       "heading" : "Céréales complètes",
       "servings" : [
         {
-          "imperial" : "½ tasse de céréales cuites ou pâtes",
-          "metric" : "100 g de céréales cuites ou pâtes"
+          "imperial" : "½ tasse de céréales ou pâtes complètes cuites, ou de maïs en grain",
+          "metric" : "100 g de céréales ou pâtes complètes cuites, ou de maïs en grain"
         },
         {
-          "imperial" : "1 tasse de céréales froides",
-          "metric" : "50 g de céréales froides"
+          "imperial" : "1 tasse de céréales complètes froides",
+          "metric" : "50 g de céréales complètes froides"
         },
         {
-          "imperial" : "1 tortilla ou tranche de pain",
-          "metric" : "1 tortilla ou tranche de pain"
+          "imperial" : "1 tortilla wrap de farine complète (ou 2 tortillas de maïs plus petites)",
+          "metric" : "1 tortilla wrap de farine complète (ou 2 tortillas de maïs plus petites)"
+        },
+        {
+          "imperial" : "1 tranche de pain complet",
+          "metric" : "1 tranche de pain complet"
         },
         {
           "imperial" : "½ bagel ou muffin anglais",
