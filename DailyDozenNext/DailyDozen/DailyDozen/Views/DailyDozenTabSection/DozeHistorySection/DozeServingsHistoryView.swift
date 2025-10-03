@@ -237,38 +237,36 @@ struct DozeServingsHistoryView: View {
         let domain = yearlyXDomain(data: data)
         // Get unique years
         let years = data.compactMap { $0.year }.sorted().uniqued()
-        // Create Date objects for axis marks
+        // Define yearDates at the function level
         let yearDates = years.map { year -> Date in
-            let components = DateComponents(year: year, month: 1, day: 1, hour: 0, minute: 0, second: 0)
-            guard let date = calendar.date(from: components) else {
-                fatalError("Failed to create date for year \(year)")
-            }
-            return date
+            calendar.date(from: DateComponents(year: year, month: 1, day: 1, hour: 0, minute: 0, second: 0)) ?? today
         }
 
-        return Chart(data) { item in
-            let xValue = calendar.date(from: DateComponents(year: item.year, month: 1, day: 1, hour: 0, minute: 0, second: 0)) ?? {
-                fatalError("Failed to create date for year \(item.year ?? -1)")
-            }()
-            LineMark(
-                x: .value("Year", xValue, unit: .year),
-                y: .value("Servings", item.totalServings)
-            )
-            .foregroundStyle(.brandGreen)
-            .interpolationMethod(.catmullRom)
-            .lineStyle(.init(lineWidth: 3))
-            .symbol(.circle)
-            .symbolSize(CGSize(width: 10, height: 10))
-            
-            PointMark(
-                x: .value("Year", xValue, unit: .year),
-                y: .value("Servings", item.totalServings)
-            )
-            .foregroundStyle(.brandGreen)
-            .opacity(0)
-            .annotation(position: .top, alignment: .center, spacing: 6) {
-                if item.totalServings > 0 {
-                    servingsAnnotation(servings: item.totalServings, year: item.year)
+        return Chart {
+            ForEach(data) { item in
+                if let year = item.year {
+                    let xValue = calendar.date(from: DateComponents(year: year, month: 1, day: 1, hour: 0, minute: 0, second: 0)) ?? today
+                    LineMark(
+                        x: .value("Year", xValue, unit: .year),
+                        y: .value("Servings", item.totalServings)
+                    )
+                    .foregroundStyle(.brandGreen)
+                    .interpolationMethod(.catmullRom)
+                    .lineStyle(.init(lineWidth: 3))
+                    .symbol(.circle)
+                    .symbolSize(CGSize(width: 10, height: 10))
+                    
+                    PointMark(
+                        x: .value("Year", xValue, unit: .year),
+                        y: .value("Servings", item.totalServings)
+                    )
+                    .foregroundStyle(.brandGreen)
+                    .opacity(0)
+                    .annotation(position: .top, alignment: .center, spacing: 6) {
+                        if item.totalServings > 0 {
+                            servingsAnnotation(servings: item.totalServings, year: year)
+                        }
+                    }
                 }
             }
         }
@@ -277,21 +275,24 @@ struct DozeServingsHistoryView: View {
         .chartScrollPosition(x: $yearlyScrollPosition)
         .chartXScale(domain: domain)
         .chartYScale(domain: 0...config.yAxisUpperBound)
-        .chartXVisibleDomain(length: Int(11 * 365 * 24 * 60 * 60)) // 11 years
+        .chartXVisibleDomain(length: Int(11 * 365 * 24 * 60 * 60)) // 11 years in seconds
         .chartPlotStyle { plotArea in
             plotArea
                 .padding(.bottom, 40)
                 .padding(.trailing, 100)
         }
         .chartXAxis {
-            AxisMarks(values: yearDates) { value in
+            AxisMarks(preset: .aligned, values: .stride(by: .year)) { value in
                 AxisGridLine()
                 AxisTick()
                 AxisValueLabel(centered: true) {
                     if let date = value.as(Date.self) {
-                        Text(String(calendar.component(.year, from: date)))
-                            .font(.system(size: 10))
-                            .offset(y: 8)
+                        let year = calendar.component(.year, from: date)
+                        if years.contains(year) {
+                            Text(String(year))
+                                .font(.system(size: 10))
+                                .offset(y: 8)
+                        }
                     }
                 }
             }
@@ -308,23 +309,19 @@ struct DozeServingsHistoryView: View {
         .padding(.horizontal)
         .task {
             if let latestYear = years.max() {
-                let scrollDate = calendar.date(from: DateComponents(year: latestYear, month: 12, day: 31, hour: 23, minute: 59, second: 59)) ?? {
-                    fatalError("Failed to create scroll date for year \(latestYear)")
-                }()
+                let scrollDate = calendar.date(from: DateComponents(year: latestYear, month: 12, day: 31, hour: 23, minute: 59, second: 59)) ?? today
                 yearlyScrollPosition = scrollDate
-                print("YearlyChart: Task set scroll position to \(latestYear), Scroll Date: \(yearlyScrollPosition)")
+                print("YearlyChart: Task set scroll position to \(latestYear), Scroll Date: \(yearlyScrollPosition) at \(today)")
             }
         }
         .onAppear {
             if let latestYear = years.max() {
-                let scrollDate = calendar.date(from: DateComponents(year: latestYear, month: 12, day: 31, hour: 23, minute: 59, second: 59)) ?? {
-                    fatalError("Failed to create scroll date for year \(latestYear)")
-                }()
+                let scrollDate = calendar.date(from: DateComponents(year: latestYear, month: 12, day: 31, hour: 23, minute: 59, second: 59)) ?? today
                 yearlyScrollPosition = scrollDate
                 DispatchQueue.main.asyncAfter(deadline: .now() + 0.1) {
                     yearlyScrollPosition = scrollDate
                 }
-                print("YearlyChart: OnAppear set scroll position to \(latestYear), Scroll Date: \(yearlyScrollPosition), Years: \(years), YearDates: \(yearDates.map { calendar.component(.year, from: $0) }), Chart Width: \(max(300, CGFloat(data.count) * 150 + 40))")
+                print("YearlyChart: OnAppear set scroll position to \(latestYear), Scroll Date: \(yearlyScrollPosition), Years: \(years), YearDates: \(yearDates.map { calendar.component(.year, from: $0) }), Chart Width: \(max(300, CGFloat(data.count) * 200 + 40)) at \(today)")
             }
             print("YearlyChart Data: \(data.map { "Year: \($0.year ?? -1), Servings: \($0.totalServings)" })")
         }
@@ -448,14 +445,23 @@ struct DozeServingsHistoryView: View {
     }
     
     private func yearlyXDomain(data: [ChartData]) -> ClosedRange<Date> {
-        let years = data.compactMap { $0.year }.sorted()
-        let startYear = years.first ?? calendar.component(.year, from: today)
-        let endYear = years.last ?? calendar.component(.year, from: today)
-        let start = calendar.date(from: DateComponents(year: startYear, month: 1, day: 1)) ?? today
-        let end = calendar.date(from: DateComponents(year: endYear, month: 12, day: 31)) ?? today
+        let startYear = data.compactMap { $0.year }.min() ?? calendar.component(.year, from: today)
+        let endYear = (data.compactMap { $0.year }.max() ?? calendar.component(.year, from: today)) + 1 // Extend to next year
         print("YearlyXDomain: \(startYear) to \(endYear)")
-        return start...end
+        let startDate = calendar.date(from: DateComponents(year: startYear, month: 1, day: 1, hour: 0, minute: 0, second: 0)) ?? today
+        let endDate = calendar.date(from: DateComponents(year: endYear, month: 1, day: 1, hour: 0, minute: 0, second: 0)) ?? today
+        return startDate...endDate
     }
+    
+//    private func yearlyXDomain(data: [ChartData]) -> ClosedRange<Date> {
+//        let years = data.compactMap { $0.year }.sorted()
+//        let startYear = years.first ?? calendar.component(.year, from: today)
+//        let endYear = years.last ?? calendar.component(.year, from: today)
+//        let start = calendar.date(from: DateComponents(year: startYear, month: 1, day: 1)) ?? today
+//        let end = calendar.date(from: DateComponents(year: endYear, month: 12, day: 31)) ?? today
+//        print("YearlyXDomain: \(startYear) to \(endYear)")
+//        return start...end
+//    }
 }
 
 // Helper to generate axis mark values
