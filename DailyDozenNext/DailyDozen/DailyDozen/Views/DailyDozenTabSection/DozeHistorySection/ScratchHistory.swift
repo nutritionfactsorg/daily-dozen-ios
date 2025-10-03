@@ -1,22 +1,23 @@
 //
-//  DozeServingsHistoryView.swift
+//  ScratchHistory.swift
 //  DailyDozen
 //
-
+//  Created by mc on 5/21/25.
+//
 import SwiftUI
 import Charts
+
 // swiftlint:disable function_body_length
 // swiftlint:disable type_body_length
 
-// Extension to ensure unique years
-extension Sequence where Element: Hashable {
-    func uniqued() -> [Element] {
-        var seen: Set<Element> = []
-        return filter { seen.insert($0).inserted }
-    }
-}
+//extension Sequence where Element: Hashable {
+//    func uniqued() -> [Element] {
+//        var seen: Set<Element> = []
+//        return filter { seen.insert($0).inserted }
+//    }
+//}
 
-struct DozeServingsHistoryView: View {
+struct DozeServingsHistoryViewTest: View {
     @State private var selectedTimeScale: TimeScale = .daily
     @State private var selectedDate: Date = Calendar.current.startOfDay(for: Date())
     @State private var dailyScrollPosition: Date = Calendar.current.startOfDay(for: Date())
@@ -235,16 +236,19 @@ struct DozeServingsHistoryView: View {
     private func yearlyChartContent(data: [ChartData]) -> some View {
         let config = ChartConfig(data: data, isYearly: true)
         let domain = yearlyXDomain(data: data)
-        // Get unique years
+        // Create Date objects for x-axis marks, matching chart x-values exactly
         let years = data.compactMap { $0.year }.sorted().uniqued()
-        // Create Date objects for axis marks
-        let yearDates = years.map { year -> Date in
+        let yearDates = years.map { year in
             let components = DateComponents(year: year, month: 1, day: 1, hour: 0, minute: 0, second: 0)
             guard let date = calendar.date(from: components) else {
                 fatalError("Failed to create date for year \(year)")
             }
             return date
         }
+
+        // Debug data
+        let debugYears = years
+        let debugYearDates = yearDates.map { calendar.component(.year, from: $0) }
 
         return Chart(data) { item in
             let xValue = calendar.date(from: DateComponents(year: item.year, month: 1, day: 1, hour: 0, minute: 0, second: 0)) ?? {
@@ -291,7 +295,7 @@ struct DozeServingsHistoryView: View {
                     if let date = value.as(Date.self) {
                         Text(String(calendar.component(.year, from: date)))
                             .font(.system(size: 10))
-                            .offset(y: 8)
+                            .offset(y: 20)
                     }
                 }
             }
@@ -308,7 +312,7 @@ struct DozeServingsHistoryView: View {
         .padding(.horizontal)
         .task {
             if let latestYear = years.max() {
-                let scrollDate = calendar.date(from: DateComponents(year: latestYear, month: 12, day: 31, hour: 23, minute: 59, second: 59)) ?? {
+                let scrollDate = calendar.date(from: DateComponents(year: latestYear, month: 12, day: 31, hour: 0, minute: 0, second: 0)) ?? {
                     fatalError("Failed to create scroll date for year \(latestYear)")
                 }()
                 yearlyScrollPosition = scrollDate
@@ -317,14 +321,14 @@ struct DozeServingsHistoryView: View {
         }
         .onAppear {
             if let latestYear = years.max() {
-                let scrollDate = calendar.date(from: DateComponents(year: latestYear, month: 12, day: 31, hour: 23, minute: 59, second: 59)) ?? {
+                let scrollDate = calendar.date(from: DateComponents(year: latestYear, month: 12, day: 31, hour: 0, minute: 0, second: 0)) ?? {
                     fatalError("Failed to create scroll date for year \(latestYear)")
                 }()
                 yearlyScrollPosition = scrollDate
                 DispatchQueue.main.asyncAfter(deadline: .now() + 0.1) {
                     yearlyScrollPosition = scrollDate
                 }
-                print("YearlyChart: OnAppear set scroll position to \(latestYear), Scroll Date: \(yearlyScrollPosition), Years: \(years), YearDates: \(yearDates.map { calendar.component(.year, from: $0) }), Chart Width: \(max(300, CGFloat(data.count) * 150 + 40))")
+                print("YearlyChart: OnAppear set scroll position to \(latestYear), Scroll Date: \(yearlyScrollPosition), Years: \(debugYears), YearDates: \(debugYearDates), Chart Width: \(max(300, CGFloat(data.count) * 150 + 40))")
             }
             print("YearlyChart Data: \(data.map { "Year: \($0.year ?? -1), Servings: \($0.totalServings)" })")
         }
@@ -459,18 +463,18 @@ struct DozeServingsHistoryView: View {
 }
 
 // Helper to generate axis mark values
-extension ClosedRange where Bound == Date {
-    func toArray(using calendar: Calendar) -> [Date] {
-        var dates: [Date] = []
-        var current = lowerBound
-        while current <= upperBound {
-            dates.append(current)
-            current = calendar.date(byAdding: .year, value: 1, to: current) ?? current
-        }
-        return dates
-    }
-}
-
+//extension ClosedRange where Bound == Date {
+//    func toArray(using calendar: Calendar) -> [Date] {
+//        var dates: [Date] = []
+//        var current = lowerBound
+//        while current <= upperBound {
+//            dates.append(current)
+//            current = calendar.date(byAdding: .year, value: 1, to: current) ?? current
+//        }
+//        return dates
+//    }
+//}
+    
 #Preview {
     let sampleTrackers = [
         // Existing 2015 entry
@@ -613,3 +617,4 @@ extension ClosedRange where Bound == Date {
     ]
     return DozeServingsHistoryView(trackers: sampleTrackers)
 }
+
