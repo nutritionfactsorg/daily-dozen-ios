@@ -59,7 +59,7 @@ public struct RealmBuiltInTest {
     /// - ~10 months -> 300 days
     /// - ~2.7 years or ~33 months -> 1000 days (2000 weight entries)
     /// - 3 years (1095 days, 2190 weight entries) -> `3*365`
-    func doGenerateDBHistoryBIT(numberOfDays: Int, inLibDbDir: Bool) {
+    func doGenerateDBHistoryBIT(numberOfDays: Int, inLibDbDir: Bool) { // :DATA:GENERATE:
         logit.debug(
             "••BEGIN•• RealmBuiltInTest doGenerateDBHistoryBIT(\(numberOfDays))"
         )
@@ -90,9 +90,15 @@ public struct RealmBuiltInTest {
             realmProvider.saveCount(Int.random(in: 0...3), date: date, countType: .dozeFruitsOther) // 0-3
             
             // :SQLite:TBD: test count variance
-            realmProvider.saveCount(1, date: date, countType: .dozeBerries) 
-            realmProvider.saveCount(1, date: date, countType: .dozeVegetablesCruciferous) 
-            realmProvider.saveCount(1, date: date, countType: .dozeGreens) 
+            var count = Int.random(in: 0...DataCountType.dozeBerries.goalServings)
+            realmProvider.saveCount(count, date: date, countType: .dozeBerries) 
+
+            count = Int.random(in: 0...DataCountType.dozeVegetablesCruciferous.goalServings)
+            realmProvider.saveCount(count, date: date, countType: .dozeVegetablesCruciferous)
+            
+            count = Int.random(in: 0...DataCountType.dozeGreens.goalServings)
+            realmProvider.saveCount(count, date: date, countType: .dozeGreens) 
+            
             realmProvider.saveCount(1, date: date, countType: .dozeVegetablesOther) 
             realmProvider.saveCount(1, date: date, countType: .dozeFlaxseeds) 
             realmProvider.saveCount(1, date: date, countType: .dozeNuts) 
@@ -164,6 +170,7 @@ public struct RealmBuiltInTest {
     /// 7-day    7  6  5  4  3  2  1  0  7  6  5  4  3  2  1  0
     /// 
     /// ```
+    /// :DATA:GENERATE:
     func doGenerateDBStreaksBIT(activity: ActivityProgress? = nil) {
         
         activity?.setText("0/12")

@@ -68,7 +68,7 @@ struct SQLiteConnector {
         // •! any return value needed adminRestore()?
     }
     
-    // MARK: Advanced Utilities Connection
+    // MARK: - Advanced Utilities Connection
     
     func clearDb() {
         logit.info("run clearDb")

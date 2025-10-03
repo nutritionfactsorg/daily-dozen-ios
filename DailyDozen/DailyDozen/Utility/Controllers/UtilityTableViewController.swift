@@ -122,18 +122,18 @@ class UtilityTableViewController: UITableViewController {
     /// then some value(s) may not be written.  
     /// Do not have the Realm browser open when writing data in simulator to
     /// avoid this is situation. The root cause of this issue is unknown.
-    @IBAction func doUtilityRealmGenerateHistoryBtn(_ sender: UIButton) {
+    @IBAction func doUtilityRealmGenerateHistoryBtn(_ sender: UIButton) { // :DATA:GENERATE:
         //   15 days (half month)
         // 1095 days (3 years) ~ 3 minutes M2 simulator
-        // RealmBuiltInTest.shared.doGenerateDBHistoryBIT(numberOfDays: 1095, inLibDbDir: true)
-        RealmBuiltInTest.shared.doGenerateDBHistoryBIT(numberOfDays: 150, inLibDbDir: true)
+        RealmBuiltInTest.shared.doGenerateDBHistoryBIT(numberOfDays: 1095, inLibDbDir: true)
+        //RealmBuiltInTest.shared.doGenerateDBHistoryBIT(numberOfDays: 150, inLibDbDir: true)
         //RealmBuiltInTest.shared.doGenerateDBHistoryBIT(numberOfDays: 15, inLibDbDir: true)
     }
     
     /// doUtilityRealmGenerateStreaksBtn(…) "Simulate Progress"
     /// 
     /// Note: 
-    @IBAction func doUtilityRealmGenerateStreaksBtn(_ sender: UIButton) {
+    @IBAction func doUtilityRealmGenerateStreaksBtn(_ sender: UIButton) { /// :DATA:GENERATE:
         let alert = UIAlertController(title: "", message: Strings.utilityTestStreaksMsg, preferredStyle: .alert)
         let cancelAction = UIAlertAction(title: Strings.utilityConfirmCancel, style: .cancel, handler: nil)
         alert.addAction(cancelAction)
