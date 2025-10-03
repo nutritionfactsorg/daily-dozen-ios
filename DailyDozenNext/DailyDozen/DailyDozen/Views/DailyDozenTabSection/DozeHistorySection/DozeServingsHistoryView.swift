@@ -76,7 +76,7 @@ struct DozeServingsHistoryView: View {
                             .frame(minWidth: max(geometry.size.width, 480))
                     case .yearly:
                         yearlyChart
-                            .frame(idealWidth: max(geometry.size.width, CGFloat(processor.yearlyServings().count) * 20 + 40)) // Increased buffer
+                            .frame(idealWidth: max(geometry.size.width, CGFloat(processor.yearlyServings().count) * 100 + 40)) // Increased buffer  (adjust the 100  as needed)
                     }
                 }
                 .padding(.vertical, 60)
@@ -237,10 +237,6 @@ struct DozeServingsHistoryView: View {
         let domain = yearlyXDomain(data: data)
         // Get unique years
         let years = data.compactMap { $0.year }.sorted().uniqued()
-        // Define yearDates at the function level
-        let yearDates = years.map { year -> Date in
-            calendar.date(from: DateComponents(year: year, month: 1, day: 1, hour: 0, minute: 0, second: 0)) ?? today
-        }
 
         return Chart {
             ForEach(data) { item in
@@ -321,48 +317,46 @@ struct DozeServingsHistoryView: View {
                 DispatchQueue.main.asyncAfter(deadline: .now() + 0.1) {
                     yearlyScrollPosition = scrollDate
                 }
-                print("YearlyChart: OnAppear set scroll position to \(latestYear), Scroll Date: \(yearlyScrollPosition), Years: \(years), YearDates: \(yearDates.map { calendar.component(.year, from: $0) }), Chart Width: \(max(300, CGFloat(data.count) * 200 + 40)) at \(today)")
+                print("YearlyChart: OnAppear set scroll position to \(latestYear), Scroll Date: \(yearlyScrollPosition), Years: \(years), Chart Width: \(max(300, CGFloat(data.count) * 200 + 40)) at \(today)")
             }
             print("YearlyChart Data: \(data.map { "Year: \($0.year ?? -1), Servings: \($0.totalServings)" })")
         }
     }
-    
     // MARK: - Scroll Position Logic
-    private func updateScrollPosition() {
-        switch selectedTimeScale {
-        case .daily:
-            let monthStart = calendar.startOfMonth(for: selectedDate)
-            let monthEnd = min(calendar.endOfMonth(for: selectedDate), today)
-            dailyScrollPosition = today >= monthStart && today <= monthEnd ? today : monthEnd
-        case .monthly:
-            let yearStart = calendar.date(from: DateComponents(year: calendar.component(.year, from: selectedDate), month: 1, day: 1))!
-            let yearEnd = calendar.date(from: DateComponents(year: calendar.component(.year, from: selectedDate), month: 12, day: 31))!
-            let currentMonthStart = calendar.startOfMonth(for: today)
-            monthlyScrollPosition = today >= yearStart && today <= yearEnd ? currentMonthStart : yearEnd
-        case .yearly:
-            let latestYear = processor.yearlyServings().compactMap { $0.year }.max() ?? calendar.component(.year, from: today)
-            yearlyScrollPosition = calendar.date(from: DateComponents(year: latestYear)) ?? today
-            print("YearlyChart: updateScrollPosition set to \(latestYear)")
-        }
-    }
-    
-    // MARK: - Annotation Helper
-    private func servingsAnnotation(servings: Int, year: Int? = nil) -> some View {
-        Text("\(servings)")
-            .font(.system(size: 10).bold())
-            .foregroundColor(.black)
-            .padding(3)
-            .background(servings > 0 ? Color.white.opacity(0.9) : Color.red.opacity(0.7))
-            .clipShape(RoundedRectangle(cornerRadius: 4))
-            .onAppear {
-//                if let year = year {
-//                    print("Yearly: Annotating year \(year), Servings: \($0.totalServings)")
-//                } else {
-//                    print("Annotating Servings: \(servings)")
-//                }
-            }
-    }
-    
+       private func updateScrollPosition() {
+           switch selectedTimeScale {
+           case .daily:
+               let monthStart = calendar.startOfMonth(for: selectedDate)
+               let monthEnd = min(calendar.endOfMonth(for: selectedDate), today)
+               dailyScrollPosition = today >= monthStart && today <= monthEnd ? today : monthEnd
+           case .monthly:
+               let yearStart = calendar.date(from: DateComponents(year: calendar.component(.year, from: selectedDate), month: 1, day: 1))!
+               let yearEnd = calendar.date(from: DateComponents(year: calendar.component(.year, from: selectedDate), month: 12, day: 31))!
+               let currentMonthStart = calendar.startOfMonth(for: today)
+               monthlyScrollPosition = today >= yearStart && today <= yearEnd ? currentMonthStart : yearEnd
+           case .yearly:
+               let latestYear = processor.yearlyServings().compactMap { $0.year }.max() ?? calendar.component(.year, from: today)
+               yearlyScrollPosition = calendar.date(from: DateComponents(year: latestYear, month: 12, day: 31)) ?? today
+               print("YearlyChart: updateScrollPosition set to \(latestYear), Scroll Date: \(yearlyScrollPosition)")
+           }
+       }
+       
+       // MARK: - Annotation Helper
+       private func servingsAnnotation(servings: Int, year: Int? = nil) -> some View {
+           Text("\(servings)")
+               .font(.system(size: 10).bold())
+               .foregroundColor(.black)
+               .padding(3)
+               .background(servings > 0 ? Color.white.opacity(0.9) : Color.red.opacity(0.7))
+               .clipShape(RoundedRectangle(cornerRadius: 4))
+               .onAppear {
+                   if let year = year {
+                       print("Yearly: Annotating year \(year), Servings: \(servings)")
+                   } else {
+                       print("Annotating Servings: \(servings)")
+                   }
+               }
+       }
     // MARK: - Navigation Logic
     private func navigateBackward() {
         switch selectedTimeScale {
@@ -611,7 +605,8 @@ extension ClosedRange where Bound == Date {
             date: Calendar.current.date(from: DateComponents(year: 2025, month: 5, day: 15))!,
             itemsDict: [
                 DataCountType.dozeBeans: SqlDataCountRecord(datacount_date_psid: "2025-05-15", datacount_kind_pfnid: 1, datacount_count: 3, datacount_streak: 1)!,
-                DataCountType.dozeBerries: SqlDataCountRecord(datacount_date_psid: "2025-05-15", datacount_kind_pfnid: 2, datacount_count: 5, datacount_streak: 1)!
+                DataCountType.dozeBerries: SqlDataCountRecord(datacount_date_psid: "2025-05-15", datacount_kind_pfnid: 2, datacount_count: 1, datacount_streak: 1)!,
+                DataCountType.dozeBeverages: SqlDataCountRecord(datacount_date_psid: "2025-05-15", datacount_kind_pfnid: 11, datacount_count: 2, datacount_streak: 1)!
             ],
             weightAM: nil,
             weightPM: nil
