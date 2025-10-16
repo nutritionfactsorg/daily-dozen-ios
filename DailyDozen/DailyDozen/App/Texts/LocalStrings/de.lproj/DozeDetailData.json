@@ -279,7 +279,7 @@
           "topic" : ""
         },
         {
-          "text" : "Jonglieren auf einem Trampolin",
+          "text" : "Trampolin springen",
           "topic" : ""
         },
         {
@@ -732,8 +732,8 @@
       "heading" : "Gewürze",
       "servings" : [
         {
-          "imperial" : "¼ Teelöffel (1,2 ml) Kurkuma",
-          "metric" : "¼ Teelöffel (1,2 ml) Kurkuma"
+          "imperial" : "¼ Teelöffel (1-2 Gramm) Kurkuma",
+          "metric" : "¼ Teelöffel (1-2 Gramm) Kurkuma"
         },
         {
           "imperial" : "Alle anderen (salzfreien) Kräuter und Gewürze, die Sie mögen",
@@ -991,7 +991,7 @@
           "topic" : "topics/beets"
         },
         {
-          "text" : "Glockenpaprika",
+          "text" : "Paprika",
           "topic" : "topics/bell-peppers"
         },
         {

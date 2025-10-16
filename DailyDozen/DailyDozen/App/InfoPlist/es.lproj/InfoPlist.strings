@@ -11,6 +11,6 @@
 "NSHealthShareUsageDescription" = "La función 21 Potenciadores accede a tus datos de HealthKit para proporcionar actualizaciones a tus mediciones diarias de peso.";
 
 /* Privacy - Health Update Usage Description */
-"NSHealthUpdateUsageDescription" = "La función 21 Potenciadores puede escribir datos de peso en HealthKit para ayudarte a realizar un seguimiento de tu progreso.";
+"NSHealthUpdateUsageDescription" = "La función 21 Potenciadores puede añadir datos de peso en HealthKit para ayudarte a realizar un seguimiento de tu progreso.";
 
 /* file end */

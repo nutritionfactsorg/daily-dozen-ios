@@ -16,8 +16,8 @@
           "metric" : "80 g tofu vagy tempeh"
         },
         {
-          "imperial" : "1 csésze friss borsó vagy csírázott lencse",
-          "metric" : "100 g friss borsó vagy csírázott lencse"
+          "imperial" : "1 csésze friss borsó vagy csíráztatott lencse",
+          "metric" : "100 g friss borsó vagy csíráztatott lencse"
         }
       ],
       "topic" : "topics/beans",
@@ -876,15 +876,15 @@
       "heading" : "Keresztes virágú zöldségek",
       "servings" : [
         {
-          "imperial" : "½ csésze főtt leveles zöldségek",
-          "metric" : "90 g főtt leveles zöldségek"
+          "imperial" : "½ csésze főtt leveles zöldség",
+          "metric" : "90 g főtt leveles zöldség"
         },
         {
-          "imperial" : "½ csésze nyers vagy főtt nem leveles zöldségek",
+          "imperial" : "½ csésze nyers vagy főtt nem leveles zöldség",
           "metric" : "90 g nyers vagy főtt nem leveles zöldség"
         },
         {
-          "imperial" : "1 csésze nyers leveles zöldségek",
+          "imperial" : "1 csésze nyers leveles zöldség",
           "metric" : "60 g nyers leveles zöldség"
         },
         {
@@ -1056,7 +1056,7 @@
       "heading" : "Teljes kiőrlésű gabonák",
       "servings" : [
         {
-          "imperial" : "½ csésze főtt teljes kiőrlésű gabona, teljes kiőrlésű tészta vagy kukoricaszem",
+          "imperial" : "½ csésze főtt teljes kiőrlésű gabona, teljes kiőrlésű tészta vagy kukorica",
           "metric" : "100 g főtt gabonakása, főtt teljes gabonaszem, tészta vagy kukorica"
         },
         {

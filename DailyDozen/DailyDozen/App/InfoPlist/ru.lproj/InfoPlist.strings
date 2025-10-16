@@ -8,9 +8,9 @@
 "CFBundleName" = "DailyDozen";
 
 /* Privacy - Health Share Usage Description */
-"NSHealthShareUsageDescription" = "Функциональность 21 уловка получает доступ к приложению Здоровье и посылает ежедневные обновления по измерению вашего веса.";
+"NSHealthShareUsageDescription" = "Сервис «21 секрет» получает доступ к приложению «Здоровье», чтобы ежедневно обновлять информацию о вашем весе.";
 
 /* Privacy - Health Update Usage Description */
-"NSHealthUpdateUsageDescription" = "Функциональность 21 уловка может писать данные по вашему весу в приложение Здоровье, чтобы помочь отслеживать ваш прогресс.";
+"NSHealthUpdateUsageDescription" = "Сервис «21 секрет» может фиксировать информацию о вашем весе в приложении «Здоровье», чтобы помочь вам отслеживать ваш прогресс.";
 
 /* file end */

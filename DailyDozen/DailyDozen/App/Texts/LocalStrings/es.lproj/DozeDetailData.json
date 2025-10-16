@@ -92,8 +92,8 @@
           "metric" : "70 g frescos o congelados"
         },
         {
-          "imperial" : "¼ taza secos",
-          "metric" : "40 g secos"
+          "imperial" : "¼ taza deshidratados",
+          "metric" : "40 g deshidratados"
         }
       ],
       "topic" : "es/topics/bayas-es",
@@ -484,8 +484,8 @@
           "metric" : "150 g de fruta picada"
         },
         {
-          "imperial" : "¼ taza de fruta seca",
-          "metric" : "40 g de fruta seca"
+          "imperial" : "¼ taza de fruta deshidratada",
+          "metric" : "40 g de fruta deshidratada"
         }
       ],
       "topic" : "es/topics/fruta",
@@ -964,7 +964,7 @@
           "metric" : "60 g de verduras de hoja crudas"
         },
         {
-          "imperial" : "½ taza de verduras sin hoja crudas o cocidas",
+          "imperial" : "½ taza de verduras crudas o cocidas (no de hoja)",
           "metric" : "90 g de verduras crudas o cocinadas (no de hoja)"
         },
         {
@@ -972,8 +972,8 @@
           "metric" : "120 ml de jugo de verduras"
         },
         {
-          "imperial" : "¼ taza de champiñones secos",
-          "metric" : "10 g de hongos secos"
+          "imperial" : "¼ taza de champiñones deshidratados",
+          "metric" : "10 g de champiñones deshidratados"
         }
       ],
       "topic" : "es/topics/vegetales",
@@ -1060,7 +1060,7 @@
           "metric" : "100 g de cereales integrales cocidos, pasta integral o granos de maíz"
         },
         {
-          "imperial" : "1 taza de cereales integrales fríos ",
+          "imperial" : "1 taza de cereales integrales fríos",
           "metric" : "50 g de cereales integrales fríos"
         },
         {

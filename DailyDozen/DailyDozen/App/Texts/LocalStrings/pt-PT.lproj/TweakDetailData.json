@@ -77,7 +77,7 @@
         "imperial" : "Mantenha-se Hidratado",
         "metric" : "Mantenha-se Hidratado"
       },
-      "explanation" : "Assinale esta opção se a sua urina nunca parecer mais escura que amarelo-pálido. Note que, se você estiver ingerindo alimentos enriquecidos com riboflavina (como levedura nutricional), baseie-se apenas no critério de ingerir 9 copos de bebidas sem açúcar por dia para as mulheres (que seriam cumpridas pelas recomendações de pré-refeição de água e chá verde) ou 13 copos por dia para homens. Se você tiver problemas cardíacos ou renais, não aumente a ingestão de líquidos sem antes conversar com seu médico. Lembre-se de que os refrigerantes diet podem estar isentos de calorias, mas não estão isentos de consequências, como aprendemos na secção Baixo Teor de Açúcar Adicionado.",
+      "explanation" : "Assinale esta opção se a sua urina nunca parecer mais escura que amarelo-pálido. Note que, se você estiver ingerindo alimentos enriquecidos com riboflavina (como levedura nutricional), baseie-se apenas no critério de ingerir 9 copos de bebidas sem açúcar por dia para as mulheres (que seriam cumpridas pelas recomendações de pré-refeição de água e chá verde) ou 13 copos por dia para homens. Se você tiver problemas cardíacos ou renais, não aumente a ingestão de líquidos sem antes conversar com o seu médico. Lembre-se de que os refrigerantes diet podem estar isentos de calorias, mas não estão isentos de consequências, como aprendemos na secção Baixo Teor de Açúcar Adicionado.",
       "heading" : "Mantenha-se Hidratado",
       "topic" : ""
     },
@@ -95,7 +95,7 @@
         "imperial" : "Limite o Tempo de sua Alimentação",
         "metric" : "Limite o Tempo de sua Alimentação"
       },
-      "explanation" : "Limite a alimentação a um intervalo de tempo diário à sua escolha com menos de 12 horas de duração, que você possa manter consistentemente, sete dias por semana. Dados os benefícios circadianos de reduzir a ingestão noturna de alimentos, o intervalo deve terminar antes das 19:00h.",
+      "explanation" : "Limite a alimentação a um intervalo de tempo diário à sua escolha com menos de 12 horas de duração, que você possa manter consistentemente, sete dias por semana. Tendo em conta os benefícios circadianos de reduzir a ingestão noturna de alimentos, o intervalo deve terminar antes das 19:00h.",
       "heading" : "Limite o Tempo de sua Alimentação",
       "topic" : ""
     },

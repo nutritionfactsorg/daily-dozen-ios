@@ -68,7 +68,7 @@
 "faq_adapt_question" = "Die Daily Dozen ist zu viel/zu wenig Essen für mich! Kann ich es anpassen?";
 
 /*  */
-"faq_adapt_response" = "Ja, die Daily Dozen ist einfach ein Leitfaden der gesündesten Nahrungsmittel, die wir versuchen jeden Tag zu uns zu nehmen. Es ist kein Speiseplan und sollte nicht vorschriftsmäßig gesehen werden. Versuch dein Bestes eine Vielfalt von vollwertigen pflanzlichen Lebensmitteln zu essen und passe die Daily Dozen zu den Mengen an, die für dich am besten passen.";
+"faq_adapt_response" = "Ja, die Daily Dozen ist lediglich als Leitfaden für die gesündesten Lebensmittel gedacht, die wir täglich einzubauen versuchen sollten. Sie ist kein Ernährungsplan und nicht als Vorgabe gedacht. Bemühen Sie sich, eine vielfältige Auswahl an vollwertigen pflanzlichen Lebensmitteln zu essen und passen Sie die Daily Dozen in den Mengen an, die für Sie geeignet sind.";
 
 /*  */
 "faq_age_question" = "Kann die Daily Dozen für Kinder, Jugendliche und Teenager angepasst werden?";
@@ -83,10 +83,10 @@
 "faq_calories_question" = "Wie viele Kalorien sind die Daily Dozen?";
 
 /*  */
-"faq_calories_response.0" = "Die Daily Dozen sind durchschnittlich 1.200 Kalorien aber aufgrund der Vielfalt und Auswahl an Nahrungsmitteln in jeder Kategorie, kann dies zwischen 800-1.800 schwanken. Schau dir zum Beispiel die Kategorie Gemüse an: 240 Gramm Paprika hat eine niedrigere Kaloriendichte als 240 Gramm Süßkartoffeln, daher hängt der Kalorienbereich davon ab, welche Nahrungsmittel ausgewählt werden. Das ist das gute an der Daily Dozen Checkliste - sie ist keine Einheitslösung und kann an die eigenen Bedürfnisse angepasst werden.";
+"faq_calories_response.0" = "Die Daily Dozen umfasst im Durchschnitt etwa 1.200 Kalorien, kann je nach Auswahl der Lebensmittel aber zwischen 800 und 1.800 Kalorien variieren. Betrachten Sie zum Beispiel die Kategorie „Andere Gemüse“: Eine Tasse Paprika hat eine deutlich geringere Kaloriendichte als eine Tasse gekochte Süßkartoffeln. Der Kalorienbereich hängt daher von Ihren individuellen Entscheidungen ab. Genau darin liegt der Vorteil der Daily Dozen-Checkliste – sie ist kein starres Schema, sondern lässt sich flexibel an Ihre Bedürfnisse anpassen.";
 
 /*  */
-"faq_calories_response.1" = "Wenn du Gewicht verlieren möchtest, kannst du mehr Informationen in “How Not to Diet” finden und den beigelegten einundzwanzig Optimierungen. In “How Not to Diet” habe ich geschrieben: “Eine systemische Überprüfung von Strategien des Gewichtsverlusts schließt, dass aufgrund des verlangsamten Stoffwechsel und dem gesteigertem Appetit, welches den Gewichtsverlust begleitet, kann ein bedeutender Gewichtsverlust eventuell nur dann erreicht werden, wenn die Kalorien auf ungefähr 1.200 für Frauen und 1.500 für Männer reduziert werden.”";
+"faq_calories_response.1" = "Wenn Ihr Ziel Gewichtsreduktion ist, finden Sie weitere Informationen in “How Not to Diet” sowie in den dazugehörigen einundzwanzig Optimierungen. In “How Not to Diet” habe ich festgehalten: „Eine systematische Übersicht über erfolgreiche Strategien zur Gewichtsabnahme kam zu dem Schluss, dass aufgrund der mit dem Gewichtsverlust einhergehenden Stoffwechselverlangsamung und des gesteigerten Appetits die Kalorienzufuhr für eine signifikante Gewichtsabnahme auf bis zu 1.200 Kalorien pro Tag für Frauen und 1.500 Kalorien pro Tag für Männer sinken muss.“";
 
 /*  */
 "faq_calories_response.2" = "Auf der anderen Seite, wenn dein Ziel ist, Gewicht zuzunehmen, dann konzentriere dich darauf mehr kalorienreiche Nahrungsmittel zu dir zu nehmen, wie Süßkartoffeln, Avocados, Nüsse und Sojaprodukte.";
@@ -95,19 +95,19 @@
 "faq_mother_question" = "Kann ich den Daily Dozen folgen, wenn ich schwanger bin oder stille?";
 
 /*  */
-"faq_mother_response" = "Schwangere oder stillende Frauen haben einen verschiedenen Kalorien- und Nährstoffbedarf als Menschen die dies nicht sind. Zur Erinnerung, die Daily Dozen ist kein Speiseplan und sollten nicht die einzigen Nahrungsmittel sein, die pro Tag zu sich genommen werden sollten. Schwangere und stillende Frauen sollten sich mit einem Arzt oder einem Ernährungswissenschaftler beraten, um ihren spezifischen Kalorien- und Nährstoffbedarf zu erzielen.";
+"faq_mother_response" = "Schwangere und stillende Menschen haben andere kalorische und nährstoffbezogene Bedürfnisse als Personen, die weder schwanger sind noch stillen. Zur Erinnerung: Die Daily Dozen ist kein Ernährungsplan und sollte nicht die einzigen Lebensmittel darstellen, die Sie am Tag zu sich nehmen. Schwangere und stillende Personen sollten sich von ihrer Ärztin, ihrem Arzt oder einer zertifizierten Ernährungsfachkraft beraten lassen, um ihre spezifischen Kalorienbedarfe und Nährstoffanforderungen zu decken.";
 
 /*  */
 "faq_scaling_question" = "Ich kann doch unmöglich so viele Bohnen/Vollkorn/usw. essen!";
 
 /*  */
-"faq_scaling_response" = "Das ist ok! Die Daily Dozen ist ein ehrgeiziger Leitfaden. Gib dein Bestes, um so viele von diesen gesunden Nahrungsmittel zu dir zu nehmen wie möglich. Wenn du es nicht gewöhnt bist viele Bohnen (oder Vollkorn, Gemüse usw.!) zu essen, dann kannst du mit einer kleinen Mengen anfangen und dann langsam anfangen die Menge zu erhöhen, um deinem Mikrobiom die Möglichkeit zu geben sich anzupassen. Du kannst auch experimentieren: zum Beispiel, füge Bohnen zu deinem Haferbrei zum Frühstück dazu. Wenn du diesen mit Beeren, Leimsamen und Nüssen belädst, dann fallen dir die Bohnen gar nicht auf. Du kannst auch pürierte Bohnen in deinen Brotaufstrich mischen oder mache meinen [BROL](https://nutritionfacts.org/recipe/basic-brol-barley-rye-oats-and-lentils) - Gerste, Roggen, Hafergrütze und Linsen - welches ich als eine Basis für viele meiner Mahlzeiten nehme. Ein einfacher Weg um eine Vielfalt von Vollkorn mit einer eingebauten Portion von Hülsenfrüchte zu konsumieren.";
+"faq_scaling_response" = "Das ist ok! Die Daily Dozen ist ein ehrgeiziger Leitfaden. Versuchen Sie, so viele dieser gesunden pflanzlichen Lebensmittel wie möglich einzubauen. Wenn Sie neu darin sind, größere Mengen an Hülsenfrüchten (oder Getreide, Blattgemüse usw.) zu essen, beginnen Sie am besten mit kleineren Portionen und steigern Sie diese langsam, damit sich Ihr Mikrobiom anpassen kann. Sie können auch kreativ werden: Geben Sie zum Beispiel ein paar Bohnen in Ihren morgendlichen Brei. Mit Beeren, Leinsamen und Nüssen kombiniert merken Sie die Bohnen kaum. Sie können Bohnen auch zu einem Brotaufstrich zerdrücken oder mein [BROL](https://nutritionfacts.org/recipe/basic-brol-barley-rye-oats-and-lentils) zubereiten – eine Mischung aus Gerste, Roggen, Haferkernen und Linsen, die ich als Basis für viele Mahlzeiten nutze. So erhalten Sie ganz einfach eine Vielfalt an Vollkorngetreiden mit einer integrierten Portion Hülsenfrüchte.";
 
 /*  */
 "faq_supplements_question" = "Ich dachte, dass Dr. Greger empfiehlt Vitamin D und DHA Ergänzungsmittel zu nehmen. Warum werden diese hier nicht genannt?";
 
 /*  */
-"faq_supplements_response" = "Wir haben die Daily Dozen App aktualisiert, damit diese nur die notwendigen Ergänzungsmittel wiederspiegelt. Zum Beispiel, Vitamin D ist nur notwendig für Menschen, die nicht genügend Sonne bekommen. Unser Ziel ist es, die Wissenschaft mit euch zu teilen, damit ihr informierte Entscheidungen treffen könnt. Du kannst alle meine Empfehlungen hier finden: [optimale Nährstoffe](https://nutritionfacts.org/optimum-nutrient-recommendations)";
+"faq_supplements_response" = "Wir haben die Daily Dozen-App so angepasst, dass nur noch erforderliche Supplemente aufgeführt werden. Vitamin D wird zum Beispiel nur für Personen benötigt, die nicht ausreichend Sonnenlicht abbekommen. Unser Ziel ist es, Ihnen die wissenschaftlichen Grundlagen zu vermitteln, damit Sie Ihre eigenen fundierten Entscheidungen treffen können. Alle meine Empfehlungen finden Sie auf der Seite [Optimum Nutrient](https://nutritionfacts.org/optimum-nutrient-recommendations).";
 
 /* Info Menu */
 "faq_title" = "Häufig gestellte Fragen";
@@ -365,7 +365,7 @@
 "tweakDailyCumin.heading" = "Kreuzkümmel (½ TL zum Mittag- und Abendessen)";
 
 /* heading for daily data entry item */
-"tweakDailyDeflourDiet.heading" = "Mehl durch Vollkorn ersetzen";
+"tweakDailyDeflourDiet.heading" = "Mehl durch ganzes Korn ersetzen";
 
 /* heading for daily data entry item */
 "tweakDailyFrontLoad.heading" = "Verzehren Sie die Kalorien früh am Tag";
@@ -389,7 +389,7 @@
 "tweakDailyTimeRestrict.heading" = "Essen zeitlich beschränken";
 
 /* heading for daily data entry item */
-"tweakExerciseTiming.heading" = "Bewegung zeitlich abstimmen";
+"tweakExerciseTiming.heading" = "Optimierung des Trainingszeitpunkts";
 
 /* heading for daily data entry item */
 "tweakMeal20Minutes.heading" = "20-Minuten-Regel befolgen";
@@ -476,7 +476,7 @@
 "weight_entry_time" = "Uhrzeit";
 
 /* Weight Daily Entry Units: label */
-"weight_entry_units_kg" = "kg";
+"weight_entry_units_kg" = "Kg";
 
 /* Weight Daily Entry Units: label */
 "weight_entry_units_lbs" = "Pfund";
