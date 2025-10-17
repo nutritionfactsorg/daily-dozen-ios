@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="23094" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="NTs-nj-edx">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="24128" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="NTs-nj-edx">
     <device id="retina4_7" orientation="portrait" appearance="light"/>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="23084"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="24063"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -162,33 +162,33 @@
                                         </tableViewCellContentView>
                                         <color key="backgroundColor" red="0.95294117649999999" green="0.95294117649999999" blue="0.95294117649999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                     </tableViewCell>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" rowHeight="560" id="X1b-RA-DhD">
-                                        <rect key="frame" x="0.0" y="470" width="375" height="560"/>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" rowHeight="680" id="X1b-RA-DhD">
+                                        <rect key="frame" x="0.0" y="470" width="375" height="680"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="X1b-RA-DhD" id="3aM-Fj-W7q">
-                                            <rect key="frame" x="0.0" y="0.0" width="375" height="560"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="375" height="680"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <view contentMode="scaleToFill" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="i3e-FJ-rCi" customClass="RoundedView" customModule="DailyDozen" customModuleProvider="target">
-                                                    <rect key="frame" x="20" y="10" width="353" height="560"/>
+                                                    <rect key="frame" x="20" y="10" width="353" height="662"/>
                                                     <subviews>
                                                         <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillProportionally" alignment="center" spacing="15" translatesAutoresizingMaskIntoConstraints="NO" id="sPw-mc-JqX">
-                                                            <rect key="frame" x="8" y="8" width="319" height="524"/>
+                                                            <rect key="frame" x="8" y="8" width="319" height="644"/>
                                                             <subviews>
                                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Daily Dozen" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="DJR-bj-qUq">
-                                                                    <rect key="frame" x="104" y="0.0" width="111" height="71.5"/>
+                                                                    <rect key="frame" x="104" y="0.0" width="111" height="88"/>
                                                                     <fontDescription key="fontDescription" type="boldSystem" pointSize="20"/>
                                                                     <color key="textColor" white="0.15913340779999999" alpha="1" colorSpace="calibratedWhite"/>
                                                                     <nil key="highlightedColor"/>
                                                                 </label>
                                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="version 3.5.1" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gX5-vX-xBe">
-                                                                    <rect key="frame" x="112.5" y="86.5" width="94.5" height="61"/>
+                                                                    <rect key="frame" x="112.5" y="103" width="94.5" height="75"/>
                                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                                     <color key="textColor" red="0.23437002300000001" green="0.25768834350000003" blue="0.3199615777" alpha="0.599609375" colorSpace="custom" customColorSpace="sRGB"/>
                                                                     <nil key="highlightedColor"/>
                                                                 </label>
                                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="natural" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Zgt-w4-qQw">
-                                                                    <rect key="frame" x="8" y="162.5" width="303" height="361.5"/>
+                                                                    <rect key="frame" x="8" y="193" width="303" height="451"/>
                                                                     <string key="text">Created by: 
 Libraries used:
 
@@ -260,7 +260,7 @@ Volunteer translators:</string>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="j1V-q5-z5s" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="157" y="80"/>
+            <point key="canvasLocation" x="156" y="79.610194902548727"/>
         </scene>
     </scenes>
     <resources>
