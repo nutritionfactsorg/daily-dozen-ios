@@ -206,7 +206,7 @@
 "info_app_about_overview" = "我在《食療聖經》中推薦了能夠讓您健康長壽的食物，請每天使用這個應用程序來記錄與追蹤您對這些食物的攝取量。";
 
 /* Info About View: Contributing Translators List (language code)  See https://en.wikipedia.org/wiki/List_of_ISO_639-1_codes */
-"info_app_about_translators" = "特別鳴謝翻譯志願者：Petar Enchev（bg）、Tsveti Enchev（bg）、Ricard Soler Roger（ca）、Luděk Bouška（cs,sk）、Lenka Lukacová（cs）、Anke Schliessmann（de）、Ángela Graña(es)、Saeed Salamian (fa)、Audray Harkins（fr）、Doron Barak（he）、Ruth Levy（he）、dr. Stern Borbála (hu)、Kertész Tibor (hu)、Annalisa Guerrini-Körner（it）、Ilaria Zanini（it）、Hanna Gurzeda（pl）、Joanna Klopotek（pl）、Tania Bassi（pt-BR）、João Madureira（pt-PT）、Cristina Lauby（ro）、Evgeniya Lyakh（ru）、Katarína Mocáková（sk）、Sabina Aliieva（uk)。";
+"info_app_about_translators" = "特別鳴謝翻譯志願者：Adelina Chernaeva（bg）、Petar Enchev（bg）、Tsveti Enchev（bg）、Ricard Soler Roger（ca）、Luděk Bouška（cs、sk）、Lucie Doleželová（cs）、Lenka Lukacová（cs）、Anke Schliessmann（de）、Sofia Schuessler（de）、Ángela Graña(es）、Saeed Salamian（fa）、Audray Harkins（fr）、Doron Barak（he）、Ruth Levy（he）、dr. Stern Borbála（hu）、Kertész Tibor（hu）、Adriana Centrone（it）、Annalisa Guerrini-Körner（it）、Ilaria Zanini（it）、Andrijeski（mk）、Hangur（pl）、Hanna Gurzeda（pl）、Joanna Klopotek（pl）、Tania Bassi（pt-BR）、João Madureira（pt-PT）、Cristina Lauby（ro）、Evgeniya Lyakh（ru）、Anna Miliutina（ru）、Katarína Mocáková（sk）、Sabina Aliieva（uk）、Hailey Chang（zh）";
 
 /* Info About View: Application release version */
 "info_app_about_version" = "3.5.3版本";
