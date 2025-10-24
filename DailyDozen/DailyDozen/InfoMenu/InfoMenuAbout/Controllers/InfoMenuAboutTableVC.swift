@@ -53,8 +53,12 @@ class InfoMenuAboutTableVC: UITableViewController {
         let barItem = UIBarButtonItem(title: "Done", style: .done, target: nil, action: nil)
         barItem.tintColor = UIColor.white
         navigationItem.setLeftBarButton(barItem, animated: false)
+
+        infoAppAboutWelcome.text = NSLocalizedString("info_app_about_welcome", comment: "")
+        infoAppAboutOverview.text = NSLocalizedString("info_app_about_overview", comment: "")
         
         infoAppAboutAppName.text = NSLocalizedString("info_app_about_app_name", comment: "")
+        infoAppAboutVersion.text = NSLocalizedString("info_app_about_version", comment: "")
         
         let aboutContentStr = """
         \(NSLocalizedString("info_app_about_created_by", comment: ""))
@@ -63,12 +67,8 @@ class InfoMenuAboutTableVC: UITableViewController {
         
         \(NSLocalizedString("info_app_about_translators", comment: ""))
         
-        """
-        
+        """        
         infoAppAboutContent.text = aboutContentStr
-        infoAppAboutOverview.text = NSLocalizedString("info_app_about_overview", comment: "")
-        infoAppAboutVersion.text = NSLocalizedString("info_app_about_version", comment: "")
-        infoAppAboutWelcome.text = NSLocalizedString("info_app_about_welcome", comment: "")
     }
 }
 
