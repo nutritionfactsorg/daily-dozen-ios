@@ -39,7 +39,7 @@
           "topic" : ""
         },
         {
-          "text" : "Csicseriborsó/Garbanzo bab",
+          "text" : "Csicseriborsó/garbanzo bab",
           "topic" : "topics/chickpeas"
         },
         {
@@ -283,7 +283,7 @@
           "topic" : ""
         },
         {
-          "text" : "Stand Up Paddle (SUP)",
+          "text" : "Evezés",
           "topic" : ""
         },
         {
@@ -531,7 +531,7 @@
           "topic" : ""
         },
         {
-          "text" : "Kiwi",
+          "text" : "Kivi",
           "topic" : "topics/kiwifruit"
         },
         {
@@ -539,7 +539,7 @@
           "topic" : "topics/lemons"
         },
         {
-          "text" : "Lime",
+          "text" : "Lime (zöldcitrom)",
           "topic" : "topics/limes"
         },
         {
@@ -605,7 +605,7 @@
       ]
     },
     "dozeGreens" : {
-      "heading" : "Zöldek",
+      "heading" : "Zöld leveles zöldségek",
       "servings" : [
         {
           "imperial" : "1 csésze nyersen",
@@ -639,7 +639,7 @@
           "topic" : "topics/salads"
         },
         {
-          "text" : "Mustár zöldek",
+          "text" : "Mustár zöldje (szareptai mustár)",
           "topic" : "topics/mustard-greens"
         },
         {
@@ -687,7 +687,7 @@
           "topic" : "topics/chia-seeds"
         },
         {
-          "text" : "Mogyoró",
+          "text" : "Törökmogyoró",
           "topic" : "topics/hazelnuts"
         },
         {
@@ -699,7 +699,7 @@
           "topic" : "topics/macadamia-nuts"
         },
         {
-          "text" : "mogyoró",
+          "text" : "Földimogyoró",
           "topic" : "topics/peanuts"
         },
         {
@@ -743,7 +743,7 @@
       "topic" : "topics/spices",
       "varieties" : [
         {
-          "text" : "Vegyesfűszer",
+          "text" : "Szegfűbors",
           "topic" : "topics/allspice"
         },
         {
@@ -811,7 +811,7 @@
           "topic" : ""
         },
         {
-          "text" : "Citromfű",
+          "text" : "Citronella",
           "topic" : ""
         },
         {
@@ -923,7 +923,7 @@
           "topic" : "topics/cauliflower"
         },
         {
-          "text" : "Káposztafélék",
+          "text" : "Vadkáposzta (leveles kel)",
           "topic" : "topics/collard-greens"
         },
         {
@@ -1007,7 +1007,7 @@
           "topic" : "topics/garlic"
         },
         {
-          "text" : "gomba (csiperke, laska, portobello és shiitake)",
+          "text" : "Gomba (csiperke, laska, portobello és shiitake)",
           "topic" : "topics/mushrooms"
         },
         {
