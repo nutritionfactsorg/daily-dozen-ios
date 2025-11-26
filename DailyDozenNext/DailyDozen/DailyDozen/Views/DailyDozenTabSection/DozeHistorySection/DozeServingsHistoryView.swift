@@ -2,11 +2,12 @@
 //  DozeServingsHistoryView.swift
 //  DailyDozen
 //
+// swiftlint:disable function_body_length
+// swiftlint:disable type_body_length
+// swiftlint:disable file_length
 
 import SwiftUI
 import Charts
-// swiftlint:disable function_body_length
-// swiftlint:disable type_body_length
 
 // Extension to ensure unique years
 extension Sequence where Element: Hashable {
@@ -130,7 +131,7 @@ struct DozeServingsHistoryView: View {
         .chartScrollableAxes(.horizontal)
         .chartScrollTargetBehavior(.valueAligned(matching: .init()))
         .chartScrollPosition(x: $dailyScrollPosition)
-        .chartXScale(domain: .automatic) // Use automatic domain
+        .chartXScale(domain: dailyXDomain) // Use refined domain
         .chartXVisibleDomain(length: Int(15 * 24 * 60 * 60)) // Show 15 days at a time
         .chartYScale(domain: 0...24)
         .chartXAxis {
@@ -159,7 +160,7 @@ struct DozeServingsHistoryView: View {
                 dailyScrollPosition = scrollDate
             }
             print("DailyChart Filtered Data: \(filteredData.map { "Date: \(String(describing: $0.date)), Day: \(calendar.component(.day, from: $0.date!)), Servings: \($0.totalServings)" })")
-            // Debug expected axis labels using allData
+            // Debug expected axis labels
             let startDate = calendar.startOfMonth(for: selectedDate)
             let endDate = calendar.endOfMonth(for: selectedDate)
             var currentDate = startDate
@@ -167,7 +168,8 @@ struct DozeServingsHistoryView: View {
                 print("Expected Daily AxisMark: \(calendar.component(.day, from: currentDate))")
                 currentDate = calendar.date(byAdding: .day, value: 1, to: currentDate)!
             }
-            print("Daily Scroll Position Set To: \(scrollDate)")
+           // print("Daily Scroll Position Set To: \(scrollDate)")
+            //rint("DailyXDomain Start: \(startDate), End: \(dailyXDomain.upperBound), TimeZone: \(calendar.timeZone)")
         }
     }
     
@@ -201,7 +203,8 @@ struct DozeServingsHistoryView: View {
         .chartScrollableAxes(.horizontal)
         .chartScrollTargetBehavior(.valueAligned(matching: .init()))
         .chartScrollPosition(x: $monthlyScrollPosition)
-        .chartXScale(domain: .automatic) // Use automatic domain
+        .chartXScale(domain: monthlyXDomain) // Use automatic domain
+       
         .chartXVisibleDomain(length: Int(365 * 24 * 60 * 60)) // Show all 12 months
         .chartYScale(domain: 0...config.yAxisUpperBound)
         .chartXAxis {
@@ -339,9 +342,7 @@ struct DozeServingsHistoryView: View {
                 DispatchQueue.main.asyncAfter(deadline: .now() + 0.1) {
                     yearlyScrollPosition = scrollDate
                 }
-               // print("YearlyChart: OnAppear set scroll position to \(latestYear), Scroll Date: \(yearlyScrollPosition), Years: \(years), Chart Width: \(max(300, CGFloat(data.count) * 200 + 40)) at \(today)")
             }
-         //   print("YearlyChart Data: \(data.map { "Year: \($0.year ?? -1), Servings: \($0.totalServings)" })")
         }
     }
     // MARK: - Scroll Position Logic
@@ -371,13 +372,6 @@ struct DozeServingsHistoryView: View {
                .padding(3)
                .background(servings > 0 ? Color.white.opacity(0.9) : Color.red.opacity(0.7))
                .clipShape(RoundedRectangle(cornerRadius: 4))
-//               .onAppear {
-//                   if let year = year {
-//                       print("Yearly: Annotating year \(year), Servings: \(servings)")
-//                   } else {
-//                       print("Annotating Servings: \(servings)")
-//                   }
-//               }
        }
     // MARK: - Navigation Logic
     private func navigateBackward() {
@@ -447,83 +441,66 @@ struct DozeServingsHistoryView: View {
         case .yearly: return .dateTime.year()
         }
     }
-
-    private var dailyXDomain: ClosedRange<Date> {
-        let start = calendar.startOfMonth(for: selectedDate)
-        let end = calendar.endOfMonth(for: selectedDate)
-        return start...end
-    }
     
-    private var extendedDailyXDomain: ClosedRange<Date> {
-        let start = calendar.startOfMonth(for: selectedDate)
-        let end = calendar.endOfMonth(for: selectedDate)
-        let extendedEnd = calendar.date(byAdding: .day, value: 1, to: end) ?? end // Extend to next day
-        return start...extendedEnd
-    }
-//    private var dailyXDomain: ClosedRange<Date> {
-//        let start = calendar.startOfMonth(for: selectedDate)
-//        let end = min(calendar.endOfMonth(for: selectedDate), today)
-//        return start...end
+//    func datesInMonth(year: Int, month: Int) -> [Date] {
+//        let calendar = Calendar.current
+//        let startOfMonth = calendar.date(from: DateComponents(year: year, month: month, day: 1))!
+//        
+//        // Get the range of days in the month
+//        let range = calendar.range(of: .day, in: .month, for: startOfMonth)!
+//        
+//        // Generate array of dates
+//        let arange = range.compactMap { day in
+//            calendar.date(from: DateComponents(year: year, month: month, day: day))
+//        }
+//        print(arange)
+//        return arange
 //    }
-    private var extendedMonthlyXDomain: ClosedRange<Date> {
-        let start = calendar.date(from: DateComponents(year: calendar.component(.year, from: selectedDate), month: 1, day: 1)) ?? Date()
-        let end = calendar.date(from: DateComponents(year: calendar.component(.year, from: selectedDate), month: 12, day: 31)) ?? Date()
-        let extendedEnd = calendar.date(byAdding: .month, value: 1, to: end) ?? end // Extend to January 1 of next year
-        return start...extendedEnd
-    }
     
+//    private var monthlyXDomain: ClosedRange<Date> {
+//           let start = calendar.date(from: DateComponents(year: calendar.component(.year, from: selectedDate), month: 1, day: 1)) ?? Date()
+//      
+//           let end = calendar.date(from: DateComponents(year: calendar.component(.year, from: selectedDate), month: 12, day: 31)) ?? Date()
+//           return start...end
+//       }
     private var monthlyXDomain: ClosedRange<Date> {
         let start = calendar.date(from: DateComponents(year: calendar.component(.year, from: selectedDate), month: 1, day: 1)) ?? Date()
         let end = calendar.date(from: DateComponents(year: calendar.component(.year, from: selectedDate), month: 12, day: 31)) ?? Date()
-        return start...end
+        guard let endWithBuffer = calendar.date(byAdding: .day, value: 1, to: end) else {
+            fatalError("Unable to compute end date with buffer")
+        }
+        return start...endWithBuffer
     }
-//    private var monthlyXDomain: ClosedRange<Date> {
-//        let start = calendar.date(from: DateComponents(year: calendar.component(.year, from: selectedDate), month: 1, day: 1)) ?? Date()
-//        let end = calendar.date(from: DateComponents(year: calendar.component(.year, from: selectedDate) + 1, month: 1, day: 1)) ?? Date()
-//        return start...end
+    
+//    private var dailyXDomain: ClosedRange<Date> {
+//        let start = calendar.startOfMonth(for: selectedDate)
+//        //let end = calendar.endOfMonth(for: selectedDate)
+//        guard let endOfMonth = calendar.date(byAdding: DateComponents(month: 1, day: 0 ), to: start) else {
+//            fatalError("Unable to get start date from date")
+//        }
+//        // let end = min(calendar.endOfMonth(for: selectedDate), today)
+//    
+//        return start...endOfMonth
+//        
 //    }
-//    private var monthlyXDomain: ClosedRange<Date> {
-//        let start = calendar.date(from: DateComponents(year: calendar.component(.year, from: selectedDate), month: 1, day: 1)) ?? Date()
-//        let end = calendar.date(from: DateComponents(year: calendar.component(.year, from: selectedDate), month: 12, day: 31)) ?? Date()
-//        return start...end
-//    }
-//    private var monthlyXDomain: ClosedRange<Date> {
-//        let start = calendar.date(from: DateComponents(year: calendar.component(.year, from: selectedDate), month: 1, day: 1)) ?? Date()
-//        let end = calendar.date(from: DateComponents(year: calendar.component(.year, from: selectedDate), month: 12, day: 31, hour: 23, minute: 59, second: 59)) ?? Date()
-//        let extendedEnd = calendar.date(byAdding: .month, value: 1, to: end) ?? end // Extend to January 1, 2026
-//        return start...extendedEnd
-//    }
+    private var dailyXDomain: ClosedRange<Date> {
+        let start = calendar.startOfMonth(for: selectedDate)
+        //let end = calendar.endOfMonth(for: selectedDate)
+        let end = min(calendar.endOfMonth(for: selectedDate), today)
+        guard let endWithBuffer = calendar.date(byAdding: .day, value: 1, to: end) else {
+            fatalError("Unable to compute end date with buffer")
+        }
+        
+        return start...endWithBuffer
+    }
     
     private func yearlyXDomain(data: [ChartData]) -> ClosedRange<Date> {
         let startYear = data.compactMap { $0.year }.min() ?? calendar.component(.year, from: today)
         let endYear = (data.compactMap { $0.year }.max() ?? calendar.component(.year, from: today)) + 1 // Extend to next year
-        print("YearlyXDomain: \(startYear) to \(endYear)")
+       // print("YearlyXDomain: \(startYear) to \(endYear)")
         let startDate = calendar.date(from: DateComponents(year: startYear, month: 1, day: 1, hour: 0, minute: 0, second: 0)) ?? today
         let endDate = calendar.date(from: DateComponents(year: endYear, month: 1, day: 1, hour: 0, minute: 0, second: 0)) ?? today
         return startDate...endDate
-    }
-    
-//    private func yearlyXDomain(data: [ChartData]) -> ClosedRange<Date> {
-//        let years = data.compactMap { $0.year }.sorted()
-//        let startYear = years.first ?? calendar.component(.year, from: today)
-//        let endYear = years.last ?? calendar.component(.year, from: today)
-//        let start = calendar.date(from: DateComponents(year: startYear, month: 1, day: 1)) ?? today
-//        let end = calendar.date(from: DateComponents(year: endYear, month: 12, day: 31)) ?? today
-//        print("YearlyXDomain: \(startYear) to \(endYear)")
-//        return start...end
-//    }
-}
-
-// Helper to generate axis mark values
-extension ClosedRange where Bound == Date {
-    func toArray(using calendar: Calendar) -> [Date] {
-        var dates: [Date] = []
-        var current = lowerBound
-        while current <= upperBound {
-            dates.append(current)
-            current = calendar.date(byAdding: .year, value: 1, to: current) ?? current
-        }
-        return dates
     }
 }
 
@@ -658,11 +635,11 @@ extension ClosedRange where Bound == Date {
             weightPM: nil
         ),
         SqlDailyTracker(
-            date: Calendar.current.date(from: DateComponents(year: 2025, month: 5, day: 28))!,
+            date: Calendar.current.date(from: DateComponents(year: 2025, month: 5, day: 29))!,
             itemsDict: [
-                DataCountType.dozeBeans: SqlDataCountRecord(datacount_date_psid: "2025-05-15", datacount_kind_pfnid: 1, datacount_count: 3, datacount_streak: 1)!,
-                DataCountType.dozeBerries: SqlDataCountRecord(datacount_date_psid: "2025-05-15", datacount_kind_pfnid: 2, datacount_count: 1, datacount_streak: 1)!,
-                DataCountType.dozeBeverages: SqlDataCountRecord(datacount_date_psid: "2025-05-15", datacount_kind_pfnid: 11, datacount_count: 2, datacount_streak: 1)!
+                DataCountType.dozeBeans: SqlDataCountRecord(datacount_date_psid: "2025-05-29", datacount_kind_pfnid: 1, datacount_count: 3, datacount_streak: 1)!,
+                DataCountType.dozeBerries: SqlDataCountRecord(datacount_date_psid: "2025-05-29", datacount_kind_pfnid: 2, datacount_count: 1, datacount_streak: 1)!,
+                DataCountType.dozeBeverages: SqlDataCountRecord(datacount_date_psid: "2025-05-29", datacount_kind_pfnid: 11, datacount_count: 2, datacount_streak: 1)!
             ],
             weightAM: nil,
             weightPM: nil

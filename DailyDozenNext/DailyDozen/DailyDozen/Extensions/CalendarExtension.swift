@@ -44,3 +44,16 @@ extension Calendar {
         return components1 == components2
     }
 }
+
+// Helper to generate axis mark values
+extension ClosedRange where Bound == Date {
+    func toArray(using calendar: Calendar) -> [Date] {
+        var dates: [Date] = []
+        var current = lowerBound
+        while current <= upperBound {
+            dates.append(current)
+            current = calendar.date(byAdding: .year, value: 1, to: current) ?? current
+        }
+        return dates
+    }
+}

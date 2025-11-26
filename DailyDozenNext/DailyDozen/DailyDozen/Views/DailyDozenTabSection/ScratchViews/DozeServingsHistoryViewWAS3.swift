@@ -4,8 +4,7 @@
 //
 import SwiftUI
 import Charts
-// swiftlint:disable function_body_length
-//swiftlint:disable type_body_length
+
 //struct DozeServingsHistoryViewWAS3: View {
 //    @State private var selectedTimeScale: TimeScale = .daily
 //    @State private var selectedDate: Date = Calendar.current.startOfDay(for: Date())

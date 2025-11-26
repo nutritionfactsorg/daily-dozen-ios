@@ -60,10 +60,11 @@ class LinksService {
     func link(topic: String) -> URL {
         return baseURL!.appendingPathComponent(topic)  //NYI guard to prevent optional
     }
-    /// Returns a url for the current menu item.
-    ///
-    /// - Parameter menu: The current menu item.
-    /// - Returns: A url.
+    
+    // Returns a url for the current menu item.
+    //
+//  /// - Parameter menu: The current menu item.
+//  /// - Returns: A url.
 //    func link(menu: String) -> URL {
 //        return baseURL.appendingPathComponent(menu)
 //    }
