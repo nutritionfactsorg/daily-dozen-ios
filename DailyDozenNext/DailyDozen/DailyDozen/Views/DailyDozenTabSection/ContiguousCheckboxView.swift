@@ -63,6 +63,7 @@ struct ContiguousCheckboxView: View {
         // Save to database when this view goes away
       //  saveToDatabase(x: x)
             //may also need to do it on change of scene phase
+            //ModData(date: dateBeforeDays(-1))
 //
     }
     }

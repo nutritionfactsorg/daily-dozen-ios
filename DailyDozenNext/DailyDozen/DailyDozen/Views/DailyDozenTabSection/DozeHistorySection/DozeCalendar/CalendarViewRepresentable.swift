@@ -23,7 +23,8 @@ struct UICalendarViewRepresentable: UIViewRepresentable {
         calendarView.locale = Locale.autoupdatingCurrent
         calendarView.availableDateRange = DateInterval(start: Date.distantPast, end: today)
         calendarView.setVisibleDateComponents(DateComponents(year: calendar.component(.year, from: currentMonth), month: calendar.component(.month, from: currentMonth)), animated: false)
-        
+        // Ensure font supports dynamic type
+        calendarView.fontDesign = .default // or .rounded for better accessibility
         calendarView.delegate = context.coordinator
         return calendarView
     }
@@ -62,14 +63,14 @@ struct UICalendarViewRepresentable: UIViewRepresentable {
                 return nil
             } else if count == parent.item.goalServings {
                 return .customView {
-                    let view = UIView(frame: CGRect(x: 0, y: 0, width: 20, height: 20))
+                    let view = UIView(frame: CGRect(x: 0, y: 0, width: 15, height: 15))
                     view.backgroundColor = .calendarAllChecked //!!TBDz  fix color
                     view.layer.cornerRadius = 10
                     return view
                 }
             } else {
                 return .customView {
-                    let view = UIView(frame: CGRect(x: 0, y: 0, width: 20, height: 20))
+                    let view = UIView(frame: CGRect(x: 0, y: 0, width: 15, height: 15))
                     view.backgroundColor = .calendarSomeChecked ////!!TBDz  fix color
                     view.layer.cornerRadius = 10
                     return view

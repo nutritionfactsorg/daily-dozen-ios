@@ -74,13 +74,30 @@ struct DozeTabPageView: View {
                             date: date,
                             onCheck: { count in
                                 // create tracker, if tracker does not exist i.e. == nil.
-                                if record == nil {
-                                    let newRecord = SqlDailyTracker(date: date)
-                                    record = newRecord
-                                    records.append(newRecord)
-                                }
+                                   var updatedRecord = record
+                                   if updatedRecord == nil {
+                                        let newRecord = SqlDailyTracker(date: date)
+                                            updatedRecord = newRecord
+                                            records.append(newRecord)
+                                       appendToMockDB(newRecord)
+                                       print("the record is: \(String(describing: updatedRecord))")
+                                    }
                                 // update the tracker
-                                record?.itemsDict[item]?.datacount_count = count
+                              //  print(updatedRecord?.itemsDict[item] ?? "Nothing to print1")
+                                updatedRecord?.itemsDict[item]?.datacount_count = count
+                               // print(updatedRecord?.itemsDict[item] ?? "Nothing to print2")
+                                // Update mockDB and records
+                                if let updatedRecord = updatedRecord {
+                                    updateMockDB(with: updatedRecord) // Sync with mockDB
+                                    // Update records binding to ensure consistency
+                                    if let index = records.firstIndex(where: { Calendar.current.isDate($0.date, inSameDayAs: date) }) {
+                                        records[index] = updatedRecord
+                                    } else {
+                                        records.append(updatedRecord)
+                                    }
+                                }
+                                
+                                record = updatedRecord
                                 showStarImage = dozeDailyStateCount == dozeDailyStateCountMaximum // Update star visibility
                             }
                         )
@@ -109,13 +126,33 @@ struct DozeTabPageView: View {
                                 date: date,
                                 onCheck: { count in
                                     // create tracker, if tracker does not exist i.e. == nil.
-                                    if record == nil {
+                                    // Create tracker if it doesn't exist
+                                    var updatedRecord = record
+                                    if updatedRecord == nil {
                                         let newRecord = SqlDailyTracker(date: date)
-                                        record = newRecord
-                                        records.append(newRecord)
+                                        updatedRecord = newRecord
+                                        records.append(newRecord) // Update the binding
+                                        appendToMockDB(newRecord) // Sync with mockDB
+                                        print("the record is: \(String(describing: updatedRecord))")
                                     }
-                                    // update the tracker
-                                    record?.itemsDict[item]?.datacount_count = count
+                                               
+                                               // Update the tracker
+                                               print(updatedRecord?.itemsDict[item] ?? "Nothing to print1")
+                                               updatedRecord?.itemsDict[item]?.datacount_count = count
+                                               print(updatedRecord?.itemsDict[item] ?? "Nothing to print2")
+                                    // Update mockDB and records
+                                    if let updatedRecord = updatedRecord {
+                                        updateMockDB(with: updatedRecord) // Sync with mockDB
+                                        // Update records binding to ensure consistency
+                                        if let index = records.firstIndex(where: { Calendar.current.isDate($0.date, inSameDayAs: date) }) {
+                                            records[index] = updatedRecord
+                                        } else {
+                                            records.append(updatedRecord)
+                                        }
+                                    }
+                                    
+                                    record = updatedRecord
+                                   // showStarImage = dozeDailyStateCount == dozeDailyStateCountMaximum
                                 }
                             )
                         }
@@ -124,13 +161,51 @@ struct DozeTabPageView: View {
             }
         }
          .onAppear {
-                     record = records.first { Calendar.current.isDate($0.date, inSameDayAs: date) }
+             record = records.first { Calendar.current.isDate($0.date, inSameDayAs: date)
+                // print("record: \(record.count ?? "no record found")")
+             }
                     // onCountChange(dozeDailyStateCount) // Initial count
 //             print("DatePageView onAppear: date = \(date), record = \(String(describing: record?.itemsDict))")
 //             print("***")
                     showStarImage = dozeDailyStateCount == dozeDailyStateCountMaximum
                  }
+         .onDisappear {
+            // updateRecord()
+         }
      }
+    //TBDz not used yet
+//    private func updateRecord(for item: DataCountType, with count: Int) {
+//       
+//          if record == nil {
+//                let newRecord = SqlDailyTracker(
+//                    date: date,
+//                    itemsDict: [item: SqlDataCountRecord](
+//                        datacount_date_psid: DateFormatter.sqliteDateFormat.string(from: date),
+//                        datacount_kind_pfnid: item.hashValue,
+//                        datacount_count: count,
+//                        datacount_streak: 0
+//                    )]
+//                )
+//                record = newRecord
+//                records.append(newRecord)
+//            } else {
+//                var updatedItemsDict = record!.itemsDict
+//                updatedItemsDict[item] = SqlDataCountRecord(
+//                    datacount_date_psid: DateFormatter.sqliteDateFormat.string(from: date),
+//                    datacount_kind_pfnid: item.hashValue,
+//                    datacount_count: count,
+//                    datacount_streak: updatedItemsDict[item]?.datacount_streak ?? 0
+//                )
+//                let updatedRecord = SqlDailyTracker(date: date, itemsDict: updatedItemsDict)
+//                if let index = records.firstIndex(where: { Calendar.current.isDate($0.date, inSameDayAs: date) }) {
+//                    records[index] = updatedRecord
+//                }
+//                record = updatedRecord
+ //
+ //           }
+           // showStarImage = dozeDailyStateCount == dozeDailyStateCountMaximum
+        
+ //   }
  }
 //#Preview {
 //    DozeTabPageView(date: Calendar.current.date(byAdding: .day, value: -2, to: Date()) ?? Date(), record: b, records: [b])

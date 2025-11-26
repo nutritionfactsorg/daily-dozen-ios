@@ -27,73 +27,109 @@ struct DozeServingsHistoryView: View {
     private let calendar = Calendar.current
     private let today = Calendar.current.startOfDay(for: Date())
     
-    private var dateFormatter: DateFormatter {
+//    private var dateFormatter: DateFormatter {
+//        let formatter = DateFormatter()
+//        formatter.dateFormat = "MMM yyyy"
+//        return formatter
+//    }
+//    
+    private let dateFormatter: DateFormatter = {
         let formatter = DateFormatter()
-        formatter.dateFormat = "MMM yyyy"
+        formatter.locale = Locale.current
+        formatter.setLocalizedDateFormatFromTemplate("MMM yyyy") // Abbreviated month, year (e.g., "May 2025", "Mai 2025")
         return formatter
-    }
+    }()
     
     init(trackers: [SqlDailyTracker]) {
         self.processor = ServingsDataProcessor(trackers: trackers)
     }
     
     var body: some View {
-        VStack {
-            Picker("Time Scale", selection: $selectedTimeScale) {
-                ForEach(TimeScale.allCases) { scale in
-                    Text(scale.rawValue).tag(scale)
-                }
-            }
-            .pickerStyle(.segmented)
-            .padding()
-            
-            if selectedTimeScale != .yearly {
+        NavigationStack {
+            VStack {
                 HStack {
-                    Button(action: navigateBackward) {
-                        Image(systemName: "chevron.left")
+                    Text("history_scale_label")
+                    .padding()
+                    Picker("history_scale_label", selection: $selectedTimeScale) {
+                        ForEach(TimeScale.allCases) { scale in
+                            Text(scale.localizedName).tag(scale)
+                            
+                        }
                     }
-                    .disabled(!canNavigateBackward)
-                    
-                    Spacer()
-                    Text(dateLabel)
-                    Spacer()
-                    
-                    Button(action: navigateForward) {
-                        Image(systemName: "chevron.right")
-                    }
-                    .disabled(!canNavigateForward)
+                    .pickerStyle(.segmented)
+                    .padding()
                 }
-                .padding(.horizontal)
-            }
-            
-            GeometryReader { geometry in
-                Group {
-                    switch selectedTimeScale {
-                    case .daily:
-                        dailyChart
-//                            .frame(minWidth: max(geometry.size.width, CGFloat(processor.dailyServings(forMonthOf: selectedDate).filter { $0.totalServings > 0 }.count) * 20))
+                if selectedTimeScale != .yearly {
+                    HStack {
+                        // Double chevron backward
+                        Button(action: navigateToStart) {
+                            Image(systemName: "chevron.left.2")
+                                .foregroundStyle(canNavigateToStart ? .brandGreen : .gray)
+                        }
+                        .disabled(!canNavigateToStart)
+                        .padding()
+                        // Single chevron backward
+                        Button(action: navigateBackward) {
+                            Image(systemName: "chevron.left")
+                                .foregroundStyle(canNavigateBackward ? .brandGreen : .gray)
+                        }
+                        .disabled(!canNavigateBackward)
+                        
+                        Spacer()
+                        Text(dateLabel)
+                        Spacer()
+                        
+                        // Single chevron forward
+                        Button(action: navigateForward) {
+                           Image(systemName: "chevron.right")
+                                .foregroundStyle(canNavigateForward ? .brandGreen : .gray)
+                        }
+                        .disabled(!canNavigateForward)
+                        .padding()
+                        // Double chevron forward
+                        Button(action: navigateToEnd) {
+                            Image(systemName: "chevron.right.2")
+                                .foregroundStyle(canNavigateToEnd ? .brandGreen : .gray)
+                        }
+                        .disabled(!canNavigateToEnd)
+                    }
+                    .padding(.horizontal)
+                }
+                
+                GeometryReader { geometry in
+                    Group {
+                        switch selectedTimeScale {
+                        case .daily:
+                            dailyChart
+                            //                            .frame(minWidth: max(geometry.size.width, CGFloat(processor.dailyServings(forMonthOf: selectedDate).filter { $0.totalServings > 0 }.count) * 20))
                             //.frame(idealWidth: max(geometry.size.width, CGFloat(processor.dailyServings(forMonthOf: selectedDate).filter { $0.totalServings > 0 }.count) * 20))
-                            .frame(idealWidth: max(geometry.size.width, CGFloat(processor.dailyServings(forMonthOf: selectedDate).count) * 40 + 40))
-                    case .monthly:
-                        monthlyChart
-                          //  .frame(minWidth: max(geometry.size.width, 480))
-                            .frame(idealWidth: max(geometry.size.width, CGFloat(processor.monthlyServings(forYearOf: selectedDate).count) * 60 + 40))
-                    case .yearly:
-                        yearlyChart
-                            .frame(idealWidth: max(geometry.size.width, CGFloat(processor.yearlyServings().count) * 100 + 40)) // Increased buffer  (adjust the 100  as needed)
+                                .frame(idealWidth: max(geometry.size.width, CGFloat(processor.dailyServings(forMonthOf: selectedDate).count) * 40 + 40))
+                        case .monthly:
+                            monthlyChart
+                            //  .frame(minWidth: max(geometry.size.width, 480))
+                                .frame(idealWidth: max(geometry.size.width, CGFloat(processor.monthlyServings(forYearOf: selectedDate).count) * 60 + 40))
+                        case .yearly:
+                            yearlyChart
+                                .frame(idealWidth: max(geometry.size.width, CGFloat(processor.yearlyServings().count) * 100 + 40)) // Increased buffer  (adjust the 100  as needed)
+                        }
                     }
+                    .padding(.vertical, 60)
+                    .padding(.horizontal, 10)
+                    .frame(minHeight: 600)
                 }
-                .padding(.vertical, 60)
-                .padding(.horizontal, 10)
-                .frame(minHeight: 600)
+            } //MainVStack
+            .onChange(of: selectedTimeScale) { _, _ in
+                updateScrollPosition()
             }
-        }
-        .onChange(of: selectedTimeScale) { _, _ in
-            updateScrollPosition()
-        }
-        .onAppear {
-            updateScrollPosition()
-        }
+            .onAppear {
+                updateScrollPosition()
+            }
+            .navigationTitle("historyRecordDoze.heading")
+            .navigationBarTitleDisplayMode(.inline)
+            .toolbarBackground(.visible, for: .navigationBar)
+            .toolbarBackground(.brandGreen, for: .navigationBar)
+            .toolbarColorScheme(.dark)
+        }//NavStack
     }
     
     // MARK: - Chart Config
@@ -111,47 +147,56 @@ struct DozeServingsHistoryView: View {
     
     // MARK: - Chart Views
     private var dailyChart: some View {
-        let allData = processor.dailyServings(forMonthOf: selectedDate) // Includes all days (May 1–31)
-        let filteredData = allData.filter { $0.totalServings > 0 } // Data for bars
+        let allData = processor.dailyServings(forMonthOf: selectedDate)
+        let filteredData = allData.filter { $0.totalServings > 0 }
 
-        return Chart(filteredData) { item in
-            let date = item.date!
-            BarMark(
-                x: .value("Date", date, unit: .day),
-                y: .value("Servings", item.totalServings),
-                width: 10
-            )
-            .foregroundStyle(date == today ? .red : .brandGreen)
-            .annotation(position: .top, alignment: .center, spacing: 4) {
-                if item.totalServings > 0 {
-                    servingsAnnotation(servings: item.totalServings)
-                }
-            }
-        }
-        .chartScrollableAxes(.horizontal)
-        .chartScrollTargetBehavior(.valueAligned(matching: .init()))
-        .chartScrollPosition(x: $dailyScrollPosition)
-        .chartXScale(domain: dailyXDomain) // Use refined domain
-        .chartXVisibleDomain(length: Int(15 * 24 * 60 * 60)) // Show 15 days at a time
-        .chartYScale(domain: 0...24)
-        .chartXAxis {
-            AxisMarks(preset: .aligned, values: .stride(by: .day, count: 1)) { value in
-                AxisGridLine()
-                AxisTick()
-                AxisValueLabel(centered: true) {
-                    if let date = value.as(Date.self) {
-                        Text(date, format: .dateTime.day())
-                            .font(.caption2)
+        return VStack(alignment: .center, spacing: 0) {
+            Chart(filteredData) { item in
+                let date = item.date!
+                BarMark(
+                    x: .value("Date", date, unit: .day),
+                    y: .value("Servings", item.totalServings),
+                    width: 10
+                )
+                .foregroundStyle(date == today ? .red : .brandGreen)
+                .annotation(position: .top, alignment: .center, spacing: 4) {
+                    if item.totalServings > 0 {
+                        servingsAnnotation(servings: item.totalServings)
                     }
                 }
             }
-        }
-        .chartYAxis {
-            AxisMarks(values: .automatic) { _ in
-                AxisGridLine()
-                AxisTick()
-                AxisValueLabel()
+            .chartScrollableAxes(.horizontal)
+            .chartScrollTargetBehavior(.valueAligned(matching: .init()))
+            .chartScrollPosition(x: $dailyScrollPosition)
+            .chartXScale(domain: dailyXDomain)
+            .chartXVisibleDomain(length: Int(15 * 24 * 60 * 60))
+            .chartYScale(domain: 0...24)
+            .chartXAxis {
+                AxisMarks(preset: .aligned, values: .stride(by: .day, count: 1)) { value in
+                    AxisGridLine()
+                    AxisTick()
+                    AxisValueLabel(centered: true) {
+                        if let date = value.as(Date.self) {
+                            Text(date, format: .dateTime.day())
+                                .font(.caption2)
+                        }
+                    }
+                }
             }
+            .chartYAxis {
+                AxisMarks(values: .automatic) { _ in
+                    AxisGridLine()
+                    AxisTick()
+                    AxisValueLabel()
+                }
+            }
+            .chartPlotStyle { plotArea in
+                plotArea
+                 //   .background(.mint.opacity(0.03))
+                    .border(.brandGreen) //TBDz pick color and add to other views
+            }
+
+            legendView // Place legend below chart
         }
         .onAppear {
             let scrollDate = calendar.date(bySettingHour: 12, minute: 0, second: 0, of: today) ?? today
@@ -160,16 +205,13 @@ struct DozeServingsHistoryView: View {
                 dailyScrollPosition = scrollDate
             }
             print("DailyChart Filtered Data: \(filteredData.map { "Date: \(String(describing: $0.date)), Day: \(calendar.component(.day, from: $0.date!)), Servings: \($0.totalServings)" })")
-            // Debug expected axis labels
             let startDate = calendar.startOfMonth(for: selectedDate)
             let endDate = calendar.endOfMonth(for: selectedDate)
             var currentDate = startDate
             while currentDate <= endDate {
-                print("Expected Daily AxisMark: \(calendar.component(.day, from: currentDate))")
+               // print("Expected Daily AxisMark: \(calendar.component(.day, from: currentDate))")
                 currentDate = calendar.date(byAdding: .day, value: 1, to: currentDate)!
             }
-           // print("Daily Scroll Position Set To: \(scrollDate)")
-            //rint("DailyXDomain Start: \(startDate), End: \(dailyXDomain.upperBound), TimeZone: \(calendar.timeZone)")
         }
     }
     
@@ -177,67 +219,69 @@ struct DozeServingsHistoryView: View {
         let data = processor.monthlyServings(forYearOf: selectedDate)
         let config = ChartConfig(data: data, isYearly: false)
 
-        return Chart(data) { item in
-            LineMark(
-                x: .value("Month", item.date!, unit: .month),
-                y: .value("Servings", item.totalServings)
-            )
-            .foregroundStyle(.brandGreen)
-            .interpolationMethod(.catmullRom)
-            .lineStyle(.init(lineWidth: 3))
-            .symbol(.circle)
-            .symbolSize(CGSize(width: 10, height: 10))
-            
-            PointMark(
-                x: .value("Month", item.date!, unit: .month),
-                y: .value("Servings", item.totalServings)
-            )
-            .foregroundStyle(.brandGreen)
-            .opacity(0)
-            .annotation(position: .top, alignment: .center, spacing: 6) {
-                if item.totalServings > 0 {
-                    servingsAnnotation(servings: item.totalServings)
-                }
-            }
-        }
-        .chartScrollableAxes(.horizontal)
-        .chartScrollTargetBehavior(.valueAligned(matching: .init()))
-        .chartScrollPosition(x: $monthlyScrollPosition)
-        .chartXScale(domain: monthlyXDomain) // Use automatic domain
-       
-        .chartXVisibleDomain(length: Int(365 * 24 * 60 * 60)) // Show all 12 months
-        .chartYScale(domain: 0...config.yAxisUpperBound)
-        .chartXAxis {
-            AxisMarks(preset: .aligned, values: .stride(by: .month, count: 1)) { value in
-                AxisGridLine()
-                AxisTick()
-                AxisValueLabel(centered: true) {
-                    if let date = value.as(Date.self) {
-                        Text(date, format: .dateTime.month(.abbreviated))
-                            .font(.caption2)
+        return VStack(alignment: .center, spacing: 0) {
+            Chart(data) { item in
+                LineMark(
+                    x: .value("Month", item.date!, unit: .month),
+                    y: .value("Servings", item.totalServings)
+                )
+                .foregroundStyle(.brandGreen)
+                .interpolationMethod(.catmullRom)
+                .lineStyle(.init(lineWidth: 3))
+                .symbol(.circle)
+                .symbolSize(CGSize(width: 10, height: 10))
+                
+                PointMark(
+                    x: .value("Month", item.date!, unit: .month),
+                    y: .value("Servings", item.totalServings)
+                )
+                .foregroundStyle(.brandGreen)
+                .opacity(0)
+                .annotation(position: .top, alignment: .center, spacing: 6) {
+                    if item.totalServings > 0 {
+                        servingsAnnotation(servings: item.totalServings)
                     }
                 }
             }
-        }
-        .chartYAxis {
-            AxisMarks(values: .automatic) {
-                AxisGridLine()
-                AxisTick()
-                AxisValueLabel()
+            .chartScrollableAxes(.horizontal)
+            .chartScrollTargetBehavior(.valueAligned(matching: .init()))
+            .chartScrollPosition(x: $monthlyScrollPosition)
+            .chartXScale(domain: monthlyXDomain)
+            .chartXVisibleDomain(length: Int(365 * 24 * 60 * 60))
+            .chartYScale(domain: 0...config.yAxisUpperBound)
+            .chartXAxis {
+                AxisMarks(preset: .aligned, values: .stride(by: .month, count: 1)) { value in
+                    AxisGridLine()
+                    AxisTick()
+                    AxisValueLabel(centered: true) {
+                        if let date = value.as(Date.self) {
+                            Text(date, format: .dateTime.month(.abbreviated))
+                                .font(.caption2)
+                        }
+                    }
+                }
             }
+            .chartYAxis {
+                AxisMarks(values: .automatic) {
+                    AxisGridLine()
+                    AxisTick()
+                    AxisValueLabel()
+                }
+            }
+            .frame(minHeight: config.chartHeight + 30)
+            .padding(.vertical, 40)
+            .padding(.horizontal)
+
+            legendView // Place legend below chart
         }
-        .frame(minHeight: config.chartHeight + 30)
-        .padding(.vertical, 40)
-        .padding(.horizontal)
         .onAppear {
-            print("MonthlyChart Data: \(data.map { "Month: \(calendar.component(.month, from: $0.date!)), Servings: \($0.totalServings)" })")
-            print("Y-Axis Domain: 0...\(config.yAxisUpperBound)")
-            // Debug expected axis labels
+            logit.debug("MonthlyChart Data: \(data.map { "Month: \(calendar.component(.month, from: $0.date!)), Servings: \($0.totalServings)" })")
+            logit.debug("Y-Axis Domain: 0...\(config.yAxisUpperBound)")
             let startDate = calendar.date(from: DateComponents(year: calendar.component(.year, from: selectedDate), month: 1, day: 1)) ?? selectedDate
             let endDate = calendar.date(from: DateComponents(year: calendar.component(.year, from: selectedDate), month: 12, day: 31)) ?? selectedDate
             var currentDate = startDate
             while currentDate <= endDate {
-                print("Expected Monthly AxisMark: \(calendar.component(.month, from: currentDate))")
+//                print("Expected Monthly AxisMark: \(calendar.component(.month, from: currentDate))")
                 currentDate = calendar.date(byAdding: .month, value: 1, to: currentDate)!
             }
         }
@@ -259,75 +303,77 @@ struct DozeServingsHistoryView: View {
     private func yearlyChartContent(data: [ChartData]) -> some View {
         let config = ChartConfig(data: data, isYearly: true)
         let domain = yearlyXDomain(data: data)
-        // Get unique years
         let years = data.compactMap { $0.year }.sorted().uniqued()
 
-        return Chart {
-            ForEach(data) { item in
-                if let year = item.year {
-                    let xValue = calendar.date(from: DateComponents(year: year, month: 1, day: 1, hour: 0, minute: 0, second: 0)) ?? today
-                    LineMark(
-                        x: .value("Year", xValue, unit: .year),
-                        y: .value("Servings", item.totalServings)
-                    )
-                    .foregroundStyle(.brandGreen)
-                    .interpolationMethod(.catmullRom)
-                    .lineStyle(.init(lineWidth: 3))
-                    .symbol(.circle)
-                    .symbolSize(CGSize(width: 10, height: 10))
-                    
-                    PointMark(
-                        x: .value("Year", xValue, unit: .year),
-                        y: .value("Servings", item.totalServings)
-                    )
-                    .foregroundStyle(.brandGreen)
-                    .opacity(0)
-                    .annotation(position: .top, alignment: .center, spacing: 6) {
-                        if item.totalServings > 0 {
-                            servingsAnnotation(servings: item.totalServings, year: year)
+        return VStack(alignment: .center, spacing: 0) {
+            Chart {
+                ForEach(data) { item in
+                    if let year = item.year {
+                        let xValue = calendar.date(from: DateComponents(year: year, month: 1, day: 1, hour: 0, minute: 0, second: 0)) ?? today
+                        LineMark(
+                            x: .value("Year", xValue, unit: .year),
+                            y: .value("Servings", item.totalServings)
+                        )
+                        .foregroundStyle(.brandGreen)
+                        .interpolationMethod(.catmullRom)
+                        .lineStyle(.init(lineWidth: 3))
+                        .symbol(.circle)
+                        .symbolSize(CGSize(width: 10, height: 10))
+                        
+                        PointMark(
+                            x: .value("Year", xValue, unit: .year),
+                            y: .value("Servings", item.totalServings)
+                        )
+                        .foregroundStyle(.brandGreen)
+                        .opacity(0)
+                        .annotation(position: .top, alignment: .center, spacing: 6) {
+                            if item.totalServings > 0 {
+                                servingsAnnotation(servings: item.totalServings, year: year)
+                            }
                         }
                     }
                 }
             }
-        }
-        .chartScrollableAxes(.horizontal)
-        .chartScrollTargetBehavior(.valueAligned(matching: .init(year: 1)))
-        .chartScrollPosition(x: $yearlyScrollPosition)
-        .chartXScale(domain: domain)
-        .chartYScale(domain: 0...config.yAxisUpperBound)
-        .chartXVisibleDomain(length: Int(11 * 365 * 24 * 60 * 60)) // 11 years in seconds
-        .chartPlotStyle { plotArea in
-            plotArea
-                .padding(.bottom, 40)
-                .padding(.trailing, 100)
-        }
-        .chartXAxis {
-            
-           AxisMarks(preset: .aligned, values: .stride(by: .year)) { value in
-                AxisGridLine()
-                AxisTick()
-                AxisValueLabel(centered: true) {
-                    if let date = value.as(Date.self) {
-                        let year = calendar.component(.year, from: date)
-                        if years.contains(year) {
-                            Text(String(year))
-                                .font(.system(size: 10))
-                                .offset(y: 8)
+            .chartScrollableAxes(.horizontal)
+            .chartScrollTargetBehavior(.valueAligned(matching: .init(year: 1)))
+            .chartScrollPosition(x: $yearlyScrollPosition)
+            .chartXScale(domain: domain)
+            .chartYScale(domain: 0...config.yAxisUpperBound)
+            .chartXVisibleDomain(length: Int(11 * 365 * 24 * 60 * 60))
+            .chartPlotStyle { plotArea in
+                plotArea
+                    .padding(.bottom, 40)
+                    .padding(.trailing, 100)
+            }
+            .chartXAxis {
+                AxisMarks(preset: .aligned, values: .stride(by: .year)) { value in
+                    AxisGridLine()
+                    AxisTick()
+                    AxisValueLabel(centered: true) {
+                        if let date = value.as(Date.self) {
+                            let year = calendar.component(.year, from: date)
+                            if years.contains(year) {
+                                Text(String(year))
+                                    .font(.system(size: 10))
+                                    .offset(y: 8)
+                            }
                         }
                     }
                 }
             }
-        }
-        .chartYAxis {
-            AxisMarks(values: .automatic) {
-                AxisGridLine()
-                AxisTick()
-                AxisValueLabel()
+            .chartYAxis {
+                AxisMarks(values: .automatic) {
+                    AxisGridLine()
+                    AxisTick()
+                    AxisValueLabel()
+                }
             }
+            .frame(minHeight: config.chartHeight)
+            .padding(.vertical, 30)
+            .padding(.horizontal)
+
+            legendView // Place legend below chart
         }
-        .frame(minHeight: config.chartHeight)
-        .padding(.vertical, 30)
-        .padding(.horizontal)
         .task {
             if let latestYear = years.max() {
                 let scrollDate = calendar.date(from: DateComponents(year: latestYear, month: 12, day: 31, hour: 23, minute: 59, second: 59)) ?? today
@@ -345,6 +391,19 @@ struct DozeServingsHistoryView: View {
             }
         }
     }
+    
+  private var legendView: some View {
+        HStack(spacing: 8) {
+            Rectangle()
+                .fill(.brandGreen)
+                .frame(width: 12, height: 12)
+            Text(String(localized: "historyRecordDoze.legend", comment: "Legend label for servings"))
+                .font(.caption)
+                .foregroundStyle(.primary)
+        }
+        .padding(.top, 8)
+    }
+    
     // MARK: - Scroll Position Logic
        private func updateScrollPosition() {
            switch selectedTimeScale {
@@ -374,6 +433,16 @@ struct DozeServingsHistoryView: View {
                .clipShape(RoundedRectangle(cornerRadius: 4))
        }
     // MARK: - Navigation Logic
+    
+    private var earliestDate: Date {
+        guard let earliest = processor.earliestDate() else { return today }
+        return calendar.startOfMonth(for: earliest)
+    }
+    private var latestDate: Date {
+        guard let latest = processor.latestDate() else { return today }
+        return calendar.startOfMonth(for: min(latest, today))
+    }
+    
     private func navigateBackward() {
         switch selectedTimeScale {
         case .daily:
@@ -417,6 +486,54 @@ struct DozeServingsHistoryView: View {
         case .monthly:
             let nextYear = calendar.date(byAdding: .year, value: 1, to: selectedDate)!
             return calendar.component(.year, from: nextYear) <= calendar.component(.year, from: today)
+        default:
+            return false
+        }
+    }
+    
+    private func navigateToStart() {
+        switch selectedTimeScale {
+        case .daily:
+            selectedDate = earliestDate
+            updateScrollPosition()
+        case .monthly:
+            selectedDate = calendar.date(from: DateComponents(year: calendar.component(.year, from: earliestDate), month: 1, day: 1))!
+            updateScrollPosition()
+        default:
+            break
+        }
+    }
+
+    private func navigateToEnd() {
+        switch selectedTimeScale {
+        case .daily:
+            selectedDate = latestDate
+            updateScrollPosition()
+        case .monthly:
+            selectedDate = calendar.date(from: DateComponents(year: calendar.component(.year, from: latestDate), month: 1, day: 1))!
+            updateScrollPosition()
+        default:
+            break
+        }
+    }
+    
+    private var canNavigateToStart: Bool {
+        switch selectedTimeScale {
+        case .daily:
+            return calendar.startOfMonth(for: selectedDate) > earliestDate
+        case .monthly:
+            return calendar.component(.year, from: selectedDate) > calendar.component(.year, from: earliestDate)
+        default:
+            return false
+        }
+    }
+
+    private var canNavigateToEnd: Bool {
+        switch selectedTimeScale {
+        case .daily:
+            return calendar.startOfMonth(for: selectedDate) < latestDate
+        case .monthly:
+            return calendar.component(.year, from: selectedDate) < calendar.component(.year, from: latestDate)
         default:
             return false
         }
@@ -485,14 +602,14 @@ struct DozeServingsHistoryView: View {
 //    }
     private var dailyXDomain: ClosedRange<Date> {
         let start = calendar.startOfMonth(for: selectedDate)
-        //let end = calendar.endOfMonth(for: selectedDate)
-        let end = min(calendar.endOfMonth(for: selectedDate), today)
+        let end = calendar.endOfMonth(for: selectedDate)
+       // let end = min(calendar.endOfMonth(for: selectedDate), today)
         guard let endWithBuffer = calendar.date(byAdding: .day, value: 1, to: end) else {
             fatalError("Unable to compute end date with buffer")
         }
         
         return start...endWithBuffer
-    }
+    }   //TBDz need to determine why a buffer is needed.  
     
     private func yearlyXDomain(data: [ChartData]) -> ClosedRange<Date> {
         let startYear = data.compactMap { $0.year }.min() ?? calendar.component(.year, from: today)
@@ -646,4 +763,5 @@ struct DozeServingsHistoryView: View {
         )
     ]
     return DozeServingsHistoryView(trackers: sampleTrackers)
+     .environment(\.locale, .init(identifier: "de"))
 }

@@ -38,6 +38,16 @@ func fetchMockDataId(daysBeforeToday: Int, scenario: MockDataScenario = .simple)
         return SqlDailyTrackerId(tracker: tracker)
     }
 }
+
+//func appendMockData(date: Date) {  //TBDz: TempTesting
+//    var tracker = SqlDailyTracker(date: date)
+//    let trackerDict: [DataCountType: SqlDataCountRecord] = tracker.itemsDict
+//    for key in trackerDict.keys {
+//        let sqlDataCountRecord = trackerDict[key]!
+//       
+//    }
+//    
+//}
     func createSqlTracker(date: Date) -> SqlDailyTracker {
         var tracker = SqlDailyTracker(date: date)
         
@@ -45,7 +55,7 @@ func fetchMockDataId(daysBeforeToday: Int, scenario: MockDataScenario = .simple)
         let countBeans = SqlDataCountRecord(
             date: date,
             countType: DataCountType.dozeBeans,
-            count: 2,
+            count: 3,
             streak: 1
         )
         tracker.itemsDict[.dozeBeans] = countBeans
@@ -80,7 +90,26 @@ func fetchMockDataId(daysBeforeToday: Int, scenario: MockDataScenario = .simple)
     }
 
 func fetchSQLData(date: Date = Date()) -> [SqlDailyTracker] {
-    return returnSQLDataArray(date: date)
+  // return returnSQLDataArray(date: date)
+   return mockDB
+}
+
+func appendToMockDB(_ tracker: SqlDailyTracker) {
+    mockDB.append(tracker)
+    print("mockDB updated: \(mockDB)") // Debug to confirm
+}
+
+func updateMockDB(with tracker: SqlDailyTracker) {
+    let calendar = Calendar.current
+    if let index = mockDB.firstIndex(where: { calendar.isDate($0.date, inSameDayAs: tracker.date) }) {
+        // Update existing record
+        mockDB[index] = tracker
+        print("mockDB updated existing record for date \(tracker.date): \(mockDB[index])")
+    } else {
+        // Append new record
+        mockDB.append(tracker)
+        print("mockDB appended new record: \(mockDB)")
+    }
 }
 
 func dateBeforeDays(_ days: Int, today: Date = Date()) -> Date { // ::EDIT::
@@ -291,7 +320,147 @@ let sampleSQLArray: [SqlDailyTracker] = [b]
 
 let dateISOFormatter = ISO8601DateFormatter()
  
-let mockDB: [SqlDailyTracker] = returnSQLDataArray()
+//let mockDB: [SqlDailyTracker] = returnSQLDataArray()
+var mockDB: [SqlDailyTracker] =  [
+    // Existing 2015 entry
+    SqlDailyTracker(
+        date: Calendar.current.date(from: DateComponents(year: 2015, month: 1, day: 1))!,
+        itemsDict: [
+            DataCountType.dozeBeans: SqlDataCountRecord(datacount_date_psid: "2015-06-01", datacount_kind_pfnid: 1, datacount_count: 2, datacount_streak: 1)!,
+            DataCountType.dozeBerries: SqlDataCountRecord(datacount_date_psid: "2015-06-01", datacount_kind_pfnid: 2, datacount_count: 1, datacount_streak: 1)!
+        ],
+        weightAM: nil,
+        weightPM: nil
+    ),
+    // Add 2016
+    SqlDailyTracker(
+        date: Calendar.current.date(from: DateComponents(year: 2016, month: 6, day: 1))!,
+        itemsDict: [
+            DataCountType.dozeBeans: SqlDataCountRecord(datacount_date_psid: "2016-06-01", datacount_kind_pfnid: 1, datacount_count: 2, datacount_streak: 1)!,
+            DataCountType.dozeBerries: SqlDataCountRecord(datacount_date_psid: "2016-06-01", datacount_kind_pfnid: 2, datacount_count: 1, datacount_streak: 1)!
+        ],
+        weightAM: nil,
+        weightPM: nil
+    ),
+    // Add 2017
+    SqlDailyTracker(
+        date: Calendar.current.date(from: DateComponents(year: 2017, month: 4, day: 28))!,
+        itemsDict: [
+            DataCountType.dozeBeans: SqlDataCountRecord(datacount_date_psid: "2017-06-01", datacount_kind_pfnid: 1, datacount_count: 2, datacount_streak: 1)!,
+            DataCountType.dozeBerries: SqlDataCountRecord(datacount_date_psid: "2017-06-01", datacount_kind_pfnid: 2, datacount_count: 1, datacount_streak: 1)!
+        ],
+        weightAM: nil,
+        weightPM: nil
+    ),
+    // Add 2018
+    SqlDailyTracker(
+        date: Calendar.current.date(from: DateComponents(year: 2018, month: 6, day: 1))!,
+        itemsDict: [
+            DataCountType.dozeBeans: SqlDataCountRecord(datacount_date_psid: "2018-06-01", datacount_kind_pfnid: 1, datacount_count: 2, datacount_streak: 1)!,
+            DataCountType.dozeBerries: SqlDataCountRecord(datacount_date_psid: "2018-06-01", datacount_kind_pfnid: 2, datacount_count: 1, datacount_streak: 1)!
+        ],
+        weightAM: nil,
+        weightPM: nil
+    ),
+    // Add 2019
+    SqlDailyTracker(
+        date: Calendar.current.date(from: DateComponents(year: 2019, month: 6, day: 1))!,
+        itemsDict: [
+            DataCountType.dozeBeans: SqlDataCountRecord(datacount_date_psid: "2019-06-01", datacount_kind_pfnid: 1, datacount_count: 2, datacount_streak: 1)!,
+            DataCountType.dozeBerries: SqlDataCountRecord(datacount_date_psid: "2019-06-01", datacount_kind_pfnid: 2, datacount_count: 1, datacount_streak: 1)!
+        ],
+        weightAM: nil,
+        weightPM: nil
+    ),
+    // Add 2020
+    SqlDailyTracker(
+        date: Calendar.current.date(from: DateComponents(year: 2020, month: 6, day: 1))!,
+        itemsDict: [
+            DataCountType.dozeBeans: SqlDataCountRecord(datacount_date_psid: "2020-06-01", datacount_kind_pfnid: 1, datacount_count: 2, datacount_streak: 1)!,
+            DataCountType.dozeBerries: SqlDataCountRecord(datacount_date_psid: "2020-06-01", datacount_kind_pfnid: 2, datacount_count: 1, datacount_streak: 1)!
+        ],
+        weightAM: nil,
+        weightPM: nil
+    ),
+    // Add 2021
+    SqlDailyTracker(
+        date: Calendar.current.date(from: DateComponents(year: 2021, month: 6, day: 1))!,
+        itemsDict: [
+            DataCountType.dozeBeans: SqlDataCountRecord(datacount_date_psid: "2021-06-01", datacount_kind_pfnid: 1, datacount_count: 2, datacount_streak: 1)!,
+            DataCountType.dozeBerries: SqlDataCountRecord(datacount_date_psid: "2021-06-01", datacount_kind_pfnid: 2, datacount_count: 1, datacount_streak: 1)!
+        ],
+        weightAM: nil,
+        weightPM: nil
+    ),
+    // Add 2022
+    SqlDailyTracker(
+        date: Calendar.current.date(from: DateComponents(year: 2022, month: 6, day: 1))!,
+        itemsDict: [
+            DataCountType.dozeBeans: SqlDataCountRecord(datacount_date_psid: "2022-06-01", datacount_kind_pfnid: 1, datacount_count: 2, datacount_streak: 1)!,
+            DataCountType.dozeBerries: SqlDataCountRecord(datacount_date_psid: "2022-06-01", datacount_kind_pfnid: 2, datacount_count: 1, datacount_streak: 1)!
+        ],
+        weightAM: nil,
+        weightPM: nil
+    ),
+    // Add 2023
+    SqlDailyTracker(
+        date: Calendar.current.date(from: DateComponents(year: 2023, month: 6, day: 1))!,
+        itemsDict: [
+            DataCountType.dozeBeans: SqlDataCountRecord(datacount_date_psid: "2023-06-01", datacount_kind_pfnid: 1, datacount_count: 2, datacount_streak: 1)!,
+            DataCountType.dozeBerries: SqlDataCountRecord(datacount_date_psid: "2023-06-01", datacount_kind_pfnid: 2, datacount_count: 1, datacount_streak: 1)!
+        ],
+        weightAM: nil,
+        weightPM: nil
+    ),
+    // Existing 2024 entry
+    SqlDailyTracker(
+        date: Calendar.current.date(from: DateComponents(year: 2024, month: 5, day: 19))!,
+        itemsDict: [
+            DataCountType.dozeBeans: SqlDataCountRecord(datacount_date_psid: "2024-05-18", datacount_kind_pfnid: 1, datacount_count: 2, datacount_streak: 1)!,
+            DataCountType.dozeBerries: SqlDataCountRecord(datacount_date_psid: "2024-05-18", datacount_kind_pfnid: 2, datacount_count: 1, datacount_streak: 1)!
+        ],
+        weightAM: nil,
+        weightPM: nil
+    ),
+    // Existing 2025 entries
+    SqlDailyTracker(
+        date: Calendar.current.date(from: DateComponents(year: 2025, month: 4, day: 14))!,
+        itemsDict: [
+            DataCountType.dozeBeans: SqlDataCountRecord(datacount_date_psid: "2025-04-14", datacount_kind_pfnid: 1, datacount_count: 2, datacount_streak: 1)!,
+            DataCountType.dozeBerries: SqlDataCountRecord(datacount_date_psid: "2025-04-14", datacount_kind_pfnid: 2, datacount_count: 1, datacount_streak: 1)!
+        ],
+        weightAM: nil,
+        weightPM: nil
+    ),
+    SqlDailyTracker(
+        date: Calendar.current.date(from: DateComponents(year: 2025, month: 5, day: 9))!,
+        itemsDict: [
+            DataCountType.dozeBeans: SqlDataCountRecord(datacount_date_psid: "2025-05-09", datacount_kind_pfnid: 1, datacount_count: 2, datacount_streak: 1)!,
+            DataCountType.dozeBerries: SqlDataCountRecord(datacount_date_psid: "2025-05-09", datacount_kind_pfnid: 2, datacount_count: 1, datacount_streak: 1)!
+        ],
+        weightAM: nil,
+        weightPM: nil
+    ),
+    SqlDailyTracker(
+        date: Calendar.current.date(from: DateComponents(year: 2025, month: 5, day: 12))!,
+        itemsDict: [
+            DataCountType.dozeBeans: SqlDataCountRecord(datacount_date_psid: "2025-05-12", datacount_kind_pfnid: 1, datacount_count: 2, datacount_streak: 1)!,
+            DataCountType.dozeBerries: SqlDataCountRecord(datacount_date_psid: "2025-05-12", datacount_kind_pfnid: 2, datacount_count: 1, datacount_streak: 1)!
+        ],
+        weightAM: nil,
+        weightPM: nil
+    ),
+    SqlDailyTracker(
+        date: Calendar.current.date(from: DateComponents(year: 2025, month: 5, day: 29))!,
+        itemsDict: [
+            DataCountType.dozeBeans: SqlDataCountRecord(datacount_date_psid: "2025-05-29", datacount_kind_pfnid: 1, datacount_count: 3, datacount_streak: 1)!,
+            DataCountType.dozeBerries: SqlDataCountRecord(datacount_date_psid: "2025-05-29", datacount_kind_pfnid: 2, datacount_count: 1, datacount_streak: 1)!,
+            DataCountType.dozeBeverages: SqlDataCountRecord(datacount_date_psid: "2025-05-29", datacount_kind_pfnid: 11, datacount_count: 2, datacount_streak: 1)!
+        ],
+        weightAM: nil,
+        weightPM: nil
+    )
+]
 
 let b: SqlDailyTracker = SqlDailyTracker(
     date: dateISOFormatter.date(from: "2025-05-12T18:19:36Z")!, itemsDict: [

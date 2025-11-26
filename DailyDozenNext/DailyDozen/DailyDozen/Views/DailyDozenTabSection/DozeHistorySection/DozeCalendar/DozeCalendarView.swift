@@ -10,7 +10,7 @@ import SwiftUI
 //TBDz:  Be sure an check impact on Persian
 struct DozeCalendarView: View {
     let item: DataCountType
-    let records: [SqlDailyTracker]
+    let records: [SqlDailyTracker] = fetchSQLData()
     
     @State private var currentMonth: Date = Date()
     
@@ -20,7 +20,7 @@ struct DozeCalendarView: View {
     var body: some View {
         VStack {
             UICalendarViewRepresentable(item: item, records: records, currentMonth: $currentMonth)
-                .frame(height: 400)
+              //  .frame(height: 400)
             
            // Push the footer to the bottom
 //               
@@ -55,8 +55,8 @@ struct DozeCalendarView: View {
         
         NavigationStack {
             DozeCalendarView(
-                item: .dozeBeans,
-                records: fetchSQLData()
+                item: .dozeBeans
+               // records: mockDB
             )
         }
         //  .previewDisplayName("Beans Calendar")

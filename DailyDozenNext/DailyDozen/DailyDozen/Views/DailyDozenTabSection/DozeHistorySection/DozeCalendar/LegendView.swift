@@ -15,7 +15,7 @@ struct LegendView: View {
                 Circle()
                     .fill(Color.calendarSomeChecked)
                     .frame(width: 20, height: 20)
-                Text("Some servings")
+                Text("item_history_completed_some")
                     .font(.caption)
                     .foregroundColor(.black)
             }
@@ -23,7 +23,7 @@ struct LegendView: View {
                 Circle()
                     .fill(Color.calendarAllChecked)
                     .frame(width: 20, height: 20)
-                Text("All servings")
+                Text("item_history_completed_all")
                     .font(.caption)
                     .foregroundColor(.black)
             }

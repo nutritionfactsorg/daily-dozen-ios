@@ -144,7 +144,7 @@ struct DozeTabView: View {
             } //sheet
             .onAppear {
                 extendDateRangeIfNeeded(for: currentIndex)
-                records = fetchSQLData()
+               // records = fetchSQLData()  duplicate data?
             }
             .navigationTitle(Text("navtab.doze")) //!!Needs localization comment
             .navigationBarTitleDisplayMode(.inline)

@@ -9,13 +9,31 @@ import Foundation
 import Charts
 import SwiftUI
 
+//enum TimeScale: String, CaseIterable, Identifiable {
+//    case daily = "Daily"
+//    case monthly = "Monthly"
+//    case yearly = "Yearly"
+//    var id: String { rawValue }
+//}
+
 enum TimeScale: String, CaseIterable, Identifiable {
     case daily = "Daily"
     case monthly = "Monthly"
     case yearly = "Yearly"
+    
     var id: String { rawValue }
+    
+    var localizedName: String {
+        switch self {
+        case .daily:
+            return String(localized: "history_scale_choice_day", comment: "Daily time scale")
+        case .monthly:
+            return String(localized: "history_scale_choice_month", comment: "Monthly time scale")
+        case .yearly:
+            return String(localized: "history_scale_choice_year", comment: "Yearly time scale")
+        }
+    }
 }
-
 // Chart data struct
 struct ChartData: Identifiable {
     let id = UUID()
@@ -42,7 +60,7 @@ class ServingsDataProcessor {
     private let today: Date
     
     init(trackers: [SqlDailyTracker]) {
-        self.trackers = trackers // Revert to using trackers parameter
+        self.trackers = trackers // Revert to using trackers parameter (was trackers)
         self.today = calendar.startOfDay(for: Date())
         // Debug returnSQLDataArray() to inspect mock data
        // let mockTrackers = returnSQLDataArray()  //TBDz may need to change
@@ -51,6 +69,7 @@ class ServingsDataProcessor {
         //    print("Tracker date: \(tracker.date), itemsDict: \(tracker.itemsDict.map { ($0.key, $0.value.datacount_count) })")
        // }
        // logit.debug("Tracker: \(trackers)")
+       
          for tracker in trackers {
             // logit.debug("Tracker date: \(tracker.date), itemsDict: \(tracker.itemsDict.map { ($0.key, $0.value.datacount_count) })")
          }
@@ -174,5 +193,12 @@ class ServingsDataProcessor {
             .sorted { $0.year! < $1.year! }
         print("YearlyServings: Result count: \(result.count), Years and Servings: \(result.map { ($0.year!, $0.totalServings) })")
         return result
+    }
+    
+    func earliestDate() -> Date? {
+        trackers.map { $0.date }.min()
+    }
+    func latestDate() -> Date? {
+        trackers.map { $0.date }.max()
     }
 }

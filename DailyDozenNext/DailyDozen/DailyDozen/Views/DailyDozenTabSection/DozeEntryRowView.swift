@@ -12,7 +12,7 @@ struct DozeEntryRowView: View {
     
     let item: DataCountType
     let record: SqlDailyTracker?
-    let records: [SqlDailyTracker] = [] // needed?
+    let records: [SqlDailyTracker] = mockDB // needed?
     let date: Date
     let onCheck: (Int) -> Void // Callback for when checkbox changes
     @State private var localCount: Int = 0
@@ -54,7 +54,8 @@ struct DozeEntryRowView: View {
                         }  //TBDz!!::  Needs URL cleanup
                     }
                     HStack {
-                        NavigationLink(destination: DozeCalendarView(item: item, records: records )) {
+                        //NavigationLink(destination: DozeCalendarView(item: item, records: records )) {
+                        NavigationLink(destination: DozeCalendarView(item: item)) {
                             Image("ic_calendar")
                                 .resizable()
                                 .scaledToFit()
