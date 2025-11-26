@@ -2,7 +2,7 @@
 //  ScratchView5.swift
 //  DailyDozen
 //
-//  Created by mc on 3/26/25.
+//  Copyright © 2025 Nutritionfacts.org. All rights reserved.
 //
 import SwiftUI
 

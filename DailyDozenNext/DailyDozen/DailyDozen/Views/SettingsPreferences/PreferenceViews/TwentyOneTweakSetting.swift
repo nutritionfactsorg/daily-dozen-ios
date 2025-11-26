@@ -2,7 +2,7 @@
 //  21TweakSetting.swift
 //  DailyDozen
 //
-//  Created by mc on 2/17/25.
+//  Copyright © 2025 Nutritionfacts.org. All rights reserved.
 //
 
 import SwiftUI

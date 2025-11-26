@@ -2,7 +2,7 @@
 //  Date.swift
 //  DailyDozen
 //
-//  Created by mc on 1/30/25.
+//  Copyright © 2025 Nutritionfacts.org. All rights reserved.
 //
 
 import Foundation

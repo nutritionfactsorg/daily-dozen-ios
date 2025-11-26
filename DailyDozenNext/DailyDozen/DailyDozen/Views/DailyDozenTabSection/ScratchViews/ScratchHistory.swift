@@ -2,7 +2,7 @@
 //  ScratchHistory.swift
 //  DailyDozen
 //
-//  Created by mc on 5/21/25.
+//  Copyright © 2025 Nutritionfacts.org. All rights reserved.
 //
 import SwiftUI
 import Charts

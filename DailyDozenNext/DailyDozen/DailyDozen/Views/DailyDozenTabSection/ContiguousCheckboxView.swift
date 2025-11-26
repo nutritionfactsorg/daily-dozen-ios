@@ -2,7 +2,7 @@
 //  CongiguousCheckboxView.swift
 //  DailyDozen
 //
-//  Created by mc on 3/19/25.
+//  Copyright © 2025 Nutritionfacts.org. All rights reserved.
 //
 
 import SwiftUI

@@ -2,7 +2,7 @@
 //  LegendView.swift
 //  DailyDozen
 //
-//  Created by mc on 4/21/25.
+//  Copyright © 2025 Nutritionfacts.org. All rights reserved.
 //
 
 import SwiftUI
