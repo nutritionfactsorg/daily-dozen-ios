@@ -107,25 +107,32 @@ struct DozeServingsHistoryView: View {
     
     // MARK: - Chart Views
     private var dailyChart: some View {
-        let data = processor.dailyServings(forMonthOf: selectedDate).filter { $0.totalServings > 0 }
-        return Chart(data) { item in
+        let allData = processor.dailyServings(forMonthOf: selectedDate) // Now includes all days (May 1–31)
+        let filteredData = allData.filter { $0.totalServings > 0 } // Data for bars (up to May 23)
+        let axisDates = allData.map { $0.date! } // All dates for AxisMarks (May 1–31)
+
+        return Chart(filteredData) { item in
+            let date = item.date!
             BarMark(
-                x: .value("Date", item.date!, unit: .day),
+                x: .value("Date", date, unit: .day),
                 y: .value("Servings", item.totalServings),
                 width: 10
             )
-            .foregroundStyle(item.date! == today ? .red : .brandGreen)
+            .foregroundStyle(date == today ? .red : .brandGreen)
             .annotation(position: .top, alignment: .center, spacing: 4) {
-                servingsAnnotation(servings: item.totalServings)
+                if item.totalServings > 0 {
+                    servingsAnnotation(servings: item.totalServings)
+                }
             }
         }
         .chartScrollableAxes(.horizontal)
-        .chartScrollTargetBehavior(.valueAligned(matching: .init()))
+        .chartScrollTargetBehavior(.valueAligned(matching: .init(day: 1)))
         .chartScrollPosition(x: $dailyScrollPosition)
         .chartXScale(domain: dailyXDomain)
+        .chartXVisibleDomain(length: Int(15 * 24 * 60 * 60)) // Show 15 days at a time
         .chartYScale(domain: 0...24)
         .chartXAxis {
-            AxisMarks(values: data.map { $0.date! }) { value in
+            AxisMarks(preset: .aligned, values: axisDates) { value in
                 AxisGridLine()
                 AxisTick()
                 AxisValueLabel(centered: true) {
@@ -143,16 +150,18 @@ struct DozeServingsHistoryView: View {
                 AxisValueLabel()
             }
         }
-        /* Uncomment to debug label alignment
-        .chartXSelection(value: Binding(
-            get: { dailyScrollPosition },
-            set: { dailyScrollPosition = $0 ?? dailyScrollPosition }
-        ))
-        */
         .onAppear {
-            print("DailyChart Data: \(data.map { "Date: \(String(describing: $0.date)), Day: \(calendar.component(.day, from: $0.date!)), Servings: \($0.totalServings)" })")
-            print("X-Axis Values: \(data.map { calendar.component(.day, from: $0.date!) })")
+            // Set initial scroll position to today (May 23)
+            let scrollDate = calendar.date(bySettingHour: 23, minute: 59, second: 59, of: today) ?? today
+            dailyScrollPosition = scrollDate
+            DispatchQueue.main.asyncAfter(deadline: .now() + 0.1) {
+                dailyScrollPosition = scrollDate
+            }
+            print("DailyChart Filtered Data: \(filteredData.map { "Date: \(String(describing: $0.date)), Day: \(calendar.component(.day, from: $0.date!)), Servings: \($0.totalServings)" })")
+            print("X-Axis Values (Days): \(axisDates.map { calendar.component(.day, from: $0) })")
             print("Y-Axis Domain: 0...24")
+            print("DailyXDomain: \(calendar.component(.day, from: dailyXDomain.lowerBound)) to \(calendar.component(.day, from: dailyXDomain.upperBound))")
+            print("Daily Scroll Position Set To: \(scrollDate)")
         }
     }
     
@@ -317,9 +326,9 @@ struct DozeServingsHistoryView: View {
                 DispatchQueue.main.asyncAfter(deadline: .now() + 0.1) {
                     yearlyScrollPosition = scrollDate
                 }
-                print("YearlyChart: OnAppear set scroll position to \(latestYear), Scroll Date: \(yearlyScrollPosition), Years: \(years), Chart Width: \(max(300, CGFloat(data.count) * 200 + 40)) at \(today)")
+               // print("YearlyChart: OnAppear set scroll position to \(latestYear), Scroll Date: \(yearlyScrollPosition), Years: \(years), Chart Width: \(max(300, CGFloat(data.count) * 200 + 40)) at \(today)")
             }
-            print("YearlyChart Data: \(data.map { "Year: \($0.year ?? -1), Servings: \($0.totalServings)" })")
+         //   print("YearlyChart Data: \(data.map { "Year: \($0.year ?? -1), Servings: \($0.totalServings)" })")
         }
     }
     // MARK: - Scroll Position Logic
@@ -425,12 +434,18 @@ struct DozeServingsHistoryView: View {
         case .yearly: return .dateTime.year()
         }
     }
-    
+
     private var dailyXDomain: ClosedRange<Date> {
         let start = calendar.startOfMonth(for: selectedDate)
-        let end = min(calendar.endOfMonth(for: selectedDate), today)
+        let end = calendar.endOfMonth(for: selectedDate)
         return start...end
     }
+    
+//    private var dailyXDomain: ClosedRange<Date> {
+//        let start = calendar.startOfMonth(for: selectedDate)
+//        let end = min(calendar.endOfMonth(for: selectedDate), today)
+//        return start...end
+//    }
     
     private var monthlyXDomain: ClosedRange<Date> {
         let start = calendar.date(from: DateComponents(year: calendar.component(.year, from: selectedDate), month: 1, day: 1)) ?? Date()

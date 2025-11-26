@@ -52,7 +52,7 @@ class ServingsDataProcessor {
         // }
         // logit.debug("Tracker: \(trackers)")
         for tracker in trackers {
-            logit.debug("Tracker date: \(tracker.date), itemsDict: \(tracker.itemsDict.map { ($0.key, $0.value.datacount_count) })")
+            // logit.debug("Tracker date: \(tracker.date), itemsDict: \(tracker.itemsDict.map { ($0.key, $0.value.datacount_count) })")
         }
     }
     
@@ -61,7 +61,7 @@ class ServingsDataProcessor {
         let endOfMonth = min(calendar.endOfMonth(for: date), today)
         var dailyTotals: [Date: Int] = [:]
         
-        print("DailyServings: Processing month: \(date), Start: \(startOfMonth), End: \(endOfMonth)")
+        // print("DailyServings: Processing month: \(date), Start: \(startOfMonth), End: \(endOfMonth)")
         var currentDate = startOfMonth
         while currentDate <= endOfMonth {
             dailyTotals[currentDate] = 0
