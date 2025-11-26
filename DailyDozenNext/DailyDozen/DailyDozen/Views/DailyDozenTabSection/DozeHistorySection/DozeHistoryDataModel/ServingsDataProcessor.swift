@@ -73,18 +73,18 @@ class ServingsDataProcessor {
                 let total = tracker.itemsDict.values
                     .filter { $0.datacount_count > 0 }
                     .reduce(0) { (sum, record) in
-                        print("Daily: Tracker date: \(tracker.date), Record: \(record.datacount_count)")
+                      //  print("Daily: Tracker date: \(tracker.date), Record: \(record.datacount_count)")
                         return sum + record.datacount_count
                     }
                 let trackerDate = calendar.startOfDay(for: tracker.date)
                 dailyTotals[trackerDate] = total
-                print("Daily: Tracker date: \(trackerDate), Total: \(total)")
+               // print("Daily: Tracker date: \(trackerDate), Total: \(total)")
             }
         }
         
         let result = dailyTotals.map { ChartData(date: $0.key, totalServings: $0.value) }
             .sorted { $0.date! < $1.date! }
-        print("DailyServings: Result count: \(result.count), Dates and Totals: \(result.map { ($0.date!, $0.totalServings) })")
+       // print("DailyServings: Result count: \(result.count), Dates and Totals: \(result.map { ($0.date!, $0.totalServings) })")
         return result
     }
     

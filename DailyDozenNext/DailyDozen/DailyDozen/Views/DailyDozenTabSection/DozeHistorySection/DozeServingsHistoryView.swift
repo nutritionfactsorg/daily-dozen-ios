@@ -70,10 +70,13 @@ struct DozeServingsHistoryView: View {
                     switch selectedTimeScale {
                     case .daily:
                         dailyChart
-                            .frame(minWidth: max(geometry.size.width, CGFloat(processor.dailyServings(forMonthOf: selectedDate).filter { $0.totalServings > 0 }.count) * 20))
+//                            .frame(minWidth: max(geometry.size.width, CGFloat(processor.dailyServings(forMonthOf: selectedDate).filter { $0.totalServings > 0 }.count) * 20))
+                            //.frame(idealWidth: max(geometry.size.width, CGFloat(processor.dailyServings(forMonthOf: selectedDate).filter { $0.totalServings > 0 }.count) * 20))
+                            .frame(idealWidth: max(geometry.size.width, CGFloat(processor.dailyServings(forMonthOf: selectedDate).count) * 40 + 40))
                     case .monthly:
                         monthlyChart
-                            .frame(minWidth: max(geometry.size.width, 480))
+                          //  .frame(minWidth: max(geometry.size.width, 480))
+                            .frame(idealWidth: max(geometry.size.width, CGFloat(processor.monthlyServings(forYearOf: selectedDate).count) * 60 + 40))
                     case .yearly:
                         yearlyChart
                             .frame(idealWidth: max(geometry.size.width, CGFloat(processor.yearlyServings().count) * 100 + 40)) // Increased buffer  (adjust the 100  as needed)
@@ -126,7 +129,8 @@ struct DozeServingsHistoryView: View {
             }
         }
         .chartScrollableAxes(.horizontal)
-        .chartScrollTargetBehavior(.valueAligned(matching: .init(day: 1)))
+       // .chartScrollTargetBehavior(.valueAligned(matching: .init(day: 1)))
+        .chartScrollTargetBehavior(.valueAligned(matching: .init()))
         .chartScrollPosition(x: $dailyScrollPosition)
         .chartXScale(domain: dailyXDomain)
         .chartXVisibleDomain(length: Int(15 * 24 * 60 * 60)) // Show 15 days at a time
@@ -151,8 +155,8 @@ struct DozeServingsHistoryView: View {
             }
         }
         .onAppear {
-            // Set initial scroll position to today (May 23)
-            let scrollDate = calendar.date(bySettingHour: 23, minute: 59, second: 59, of: today) ?? today
+            // Set initial scroll position to today
+            let scrollDate = calendar.date(bySettingHour: 12, minute: 0, second: 0, of: today) ?? today
             dailyScrollPosition = scrollDate
             DispatchQueue.main.asyncAfter(deadline: .now() + 0.1) {
                 dailyScrollPosition = scrollDate
@@ -163,84 +167,87 @@ struct DozeServingsHistoryView: View {
             print("DailyXDomain: \(calendar.component(.day, from: dailyXDomain.lowerBound)) to \(calendar.component(.day, from: dailyXDomain.upperBound))")
             print("Daily Scroll Position Set To: \(scrollDate)")
         }
+//        onChange(of: dailyScrollPosition) { newPosition in
+//                print("Daily Scroll Position Changed To: \(newPosition), Day: \(calendar.component(.day, from: newPosition))")
+//            }
     }
     
     private var monthlyChart: some View {
-        let data = processor.monthlyServings(forYearOf: selectedDate)
-        let config = ChartConfig(data: data, isYearly: false)
-        let monthDates = (1...12).compactMap {
-            calendar.date(from: DateComponents(year: calendar.component(.year, from: selectedDate), month: $0, day: 1))
-        }
-        return Chart(data) { item in
-            LineMark(
-                x: .value("Month", item.date!, unit: .month),
-                y: .value("Servings", item.totalServings)
-            )
-            .foregroundStyle(.brandGreen)
-            .interpolationMethod(.catmullRom)
-            .lineStyle(.init(lineWidth: 3))
-            .symbol(.circle)
-            .symbolSize(CGSize(width: 10, height: 10))
-            
-            PointMark(
-                x: .value("Month", item.date!, unit: .month),
-                y: .value("Servings", item.totalServings)
-            )
-            .foregroundStyle(.brandGreen)
-            .opacity(0)
-            .annotation(position: .top, alignment: .center, spacing: 6) {
-                if item.totalServings > 0 {
-                    servingsAnnotation(servings: item.totalServings)
-                }
-            }
-        }
-        .chartScrollableAxes(.horizontal)
-        .chartScrollTargetBehavior(.valueAligned(matching: .init()))
-        .chartScrollPosition(x: $monthlyScrollPosition)
-        .chartXScale(domain: monthlyXDomain)
-        .chartYScale(domain: 0...config.yAxisUpperBound)
-        .chartXAxis {
-            AxisMarks(values: monthDates) { value in
-                AxisGridLine()
-                AxisTick()
-                AxisValueLabel(centered: true) {
-                    if let date = value.as(Date.self) {
-                        Text(date, format: .dateTime.month(.abbreviated))
-                            .font(.caption2)
-                            .offset(y: 8)
-                    }
-                }
-            }
-        }
-        .chartYAxis {
-            AxisMarks(values: .automatic) {
-                AxisGridLine()
-                AxisTick()
-                AxisValueLabel()
-            }
-        }
-        .frame(minHeight: config.chartHeight + 30)
-        .padding(.vertical, 40)
-        .padding(.horizontal)
-        .onAppear {
-            print("MonthlyChart Data: \(data.map { "Month: \(calendar.component(.month, from: $0.date!)), Servings: \($0.totalServings)" })")
-            print("Y-Axis Domain: 0...\(config.yAxisUpperBound)")
-        }
-    }
+           let data = processor.monthlyServings(forYearOf: selectedDate)
+           let config = ChartConfig(data: data, isYearly: false)
+           let monthDates = (1...12).compactMap {
+               calendar.date(from: DateComponents(year: calendar.component(.year, from: selectedDate), month: $0, day: 1))
+           }
+           return Chart(data) { item in
+               LineMark(
+                   x: .value("Month", item.date!, unit: .month),
+                   y: .value("Servings", item.totalServings)
+               )
+               .foregroundStyle(.brandGreen)
+               .interpolationMethod(.catmullRom)
+               .lineStyle(.init(lineWidth: 3))
+               .symbol(.circle)
+               .symbolSize(CGSize(width: 10, height: 10))
+               
+               PointMark(
+                   x: .value("Month", item.date!, unit: .month),
+                   y: .value("Servings", item.totalServings)
+               )
+               .foregroundStyle(.brandGreen)
+               .opacity(0)
+               .annotation(position: .top, alignment: .center, spacing: 6) {
+                   if item.totalServings > 0 {
+                       servingsAnnotation(servings: item.totalServings)
+                   }
+               }
+           }
+           .chartScrollableAxes(.horizontal)
+           .chartScrollTargetBehavior(.valueAligned(matching: .init()))
+           .chartScrollPosition(x: $monthlyScrollPosition)
+           .chartXScale(domain: monthlyXDomain)
+           .chartYScale(domain: 0...config.yAxisUpperBound)
+           .chartXAxis {
+               AxisMarks(values: monthDates) { value in
+                   AxisGridLine()
+                   AxisTick()
+                   AxisValueLabel(centered: true) {
+                       if let date = value.as(Date.self) {
+                           Text(date, format: .dateTime.month(.abbreviated))
+                               .font(.caption2)
+                               .offset(y: 8)
+                       }
+                   }
+               }
+           }
+           .chartYAxis {
+               AxisMarks(values: .automatic) {
+                   AxisGridLine()
+                   AxisTick()
+                   AxisValueLabel()
+               }
+           }
+           .frame(minHeight: config.chartHeight + 30)
+           .padding(.vertical, 40)
+           .padding(.horizontal)
+           .onAppear {
+               print("MonthlyChart Data: \(data.map { "Month: \(calendar.component(.month, from: $0.date!)), Servings: \($0.totalServings)" })")
+               print("Y-Axis Domain: 0...\(config.yAxisUpperBound)")
+           }
+       }
     
     private var yearlyChart: some View {
-        let data = processor.yearlyServings()
-        return Group {
-            if data.isEmpty {
-                Text("No yearly data available")
-                    .foregroundColor(.gray)
-                    .frame(minWidth: 300, minHeight: 300)
-            } else {
-                yearlyChartContent(data: data)
+            let data = processor.yearlyServings()
+            return Group {
+                if data.isEmpty {
+                    Text("No yearly data available")
+                        .foregroundColor(.gray)
+                        .frame(minWidth: 300, minHeight: 300)
+                } else {
+                    yearlyChartContent(data: data)
+                }
             }
         }
-    }
-    
+        
     private func yearlyChartContent(data: [ChartData]) -> some View {
         let config = ChartConfig(data: data, isYearly: true)
         let domain = yearlyXDomain(data: data)
@@ -358,13 +365,13 @@ struct DozeServingsHistoryView: View {
                .padding(3)
                .background(servings > 0 ? Color.white.opacity(0.9) : Color.red.opacity(0.7))
                .clipShape(RoundedRectangle(cornerRadius: 4))
-               .onAppear {
-                   if let year = year {
-                       print("Yearly: Annotating year \(year), Servings: \(servings)")
-                   } else {
-                       print("Annotating Servings: \(servings)")
-                   }
-               }
+//               .onAppear {
+//                   if let year = year {
+//                       print("Yearly: Annotating year \(year), Servings: \(servings)")
+//                   } else {
+//                       print("Annotating Servings: \(servings)")
+//                   }
+//               }
        }
     // MARK: - Navigation Logic
     private func navigateBackward() {
@@ -452,6 +459,12 @@ struct DozeServingsHistoryView: View {
         let end = calendar.date(from: DateComponents(year: calendar.component(.year, from: selectedDate), month: 12, day: 31)) ?? Date()
         return start...end
     }
+//    private var monthlyXDomain: ClosedRange<Date> {
+//        let start = calendar.date(from: DateComponents(year: calendar.component(.year, from: selectedDate), month: 1, day: 1)) ?? Date()
+//        let end = calendar.date(from: DateComponents(year: calendar.component(.year, from: selectedDate), month: 12, day: 31, hour: 23, minute: 59, second: 59)) ?? Date()
+//        let extendedEnd = calendar.date(byAdding: .month, value: 1, to: end) ?? end // Extend to January 1, 2026
+//        return start...extendedEnd
+//    }
     
     private func yearlyXDomain(data: [ChartData]) -> ClosedRange<Date> {
         let startYear = data.compactMap { $0.year }.min() ?? calendar.component(.year, from: today)
