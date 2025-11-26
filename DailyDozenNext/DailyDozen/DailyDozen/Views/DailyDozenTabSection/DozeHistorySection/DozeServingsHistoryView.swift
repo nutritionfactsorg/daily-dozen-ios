@@ -110,9 +110,8 @@ struct DozeServingsHistoryView: View {
     
     // MARK: - Chart Views
     private var dailyChart: some View {
-        let allData = processor.dailyServings(forMonthOf: selectedDate) // Now includes all days (May 1–31)
-        let filteredData = allData.filter { $0.totalServings > 0 } // Data for bars (up to May 23)
-        let axisDates = allData.map { $0.date! } // All dates for AxisMarks (May 1–31)
+        let allData = processor.dailyServings(forMonthOf: selectedDate) // Includes all days (May 1–31)
+        let filteredData = allData.filter { $0.totalServings > 0 } // Data for bars
 
         return Chart(filteredData) { item in
             let date = item.date!
@@ -129,14 +128,13 @@ struct DozeServingsHistoryView: View {
             }
         }
         .chartScrollableAxes(.horizontal)
-       // .chartScrollTargetBehavior(.valueAligned(matching: .init(day: 1)))
         .chartScrollTargetBehavior(.valueAligned(matching: .init()))
         .chartScrollPosition(x: $dailyScrollPosition)
-        .chartXScale(domain: dailyXDomain)
+        .chartXScale(domain: .automatic) // Use automatic domain
         .chartXVisibleDomain(length: Int(15 * 24 * 60 * 60)) // Show 15 days at a time
         .chartYScale(domain: 0...24)
         .chartXAxis {
-            AxisMarks(preset: .aligned, values: axisDates) { value in
+            AxisMarks(preset: .aligned, values: .stride(by: .day, count: 1)) { value in
                 AxisGridLine()
                 AxisTick()
                 AxisValueLabel(centered: true) {
@@ -155,85 +153,92 @@ struct DozeServingsHistoryView: View {
             }
         }
         .onAppear {
-            // Set initial scroll position to today
             let scrollDate = calendar.date(bySettingHour: 12, minute: 0, second: 0, of: today) ?? today
             dailyScrollPosition = scrollDate
             DispatchQueue.main.asyncAfter(deadline: .now() + 0.1) {
                 dailyScrollPosition = scrollDate
             }
             print("DailyChart Filtered Data: \(filteredData.map { "Date: \(String(describing: $0.date)), Day: \(calendar.component(.day, from: $0.date!)), Servings: \($0.totalServings)" })")
-            print("X-Axis Values (Days): \(axisDates.map { calendar.component(.day, from: $0) })")
-            print("Y-Axis Domain: 0...24")
-            print("DailyXDomain: \(calendar.component(.day, from: dailyXDomain.lowerBound)) to \(calendar.component(.day, from: dailyXDomain.upperBound))")
+            // Debug expected axis labels using allData
+            let startDate = calendar.startOfMonth(for: selectedDate)
+            let endDate = calendar.endOfMonth(for: selectedDate)
+            var currentDate = startDate
+            while currentDate <= endDate {
+                print("Expected Daily AxisMark: \(calendar.component(.day, from: currentDate))")
+                currentDate = calendar.date(byAdding: .day, value: 1, to: currentDate)!
+            }
             print("Daily Scroll Position Set To: \(scrollDate)")
         }
-//        onChange(of: dailyScrollPosition) { newPosition in
-//                print("Daily Scroll Position Changed To: \(newPosition), Day: \(calendar.component(.day, from: newPosition))")
-//            }
     }
     
     private var monthlyChart: some View {
-           let data = processor.monthlyServings(forYearOf: selectedDate)
-           let config = ChartConfig(data: data, isYearly: false)
-           let monthDates = (1...12).compactMap {
-               calendar.date(from: DateComponents(year: calendar.component(.year, from: selectedDate), month: $0, day: 1))
-           }
-           return Chart(data) { item in
-               LineMark(
-                   x: .value("Month", item.date!, unit: .month),
-                   y: .value("Servings", item.totalServings)
-               )
-               .foregroundStyle(.brandGreen)
-               .interpolationMethod(.catmullRom)
-               .lineStyle(.init(lineWidth: 3))
-               .symbol(.circle)
-               .symbolSize(CGSize(width: 10, height: 10))
-               
-               PointMark(
-                   x: .value("Month", item.date!, unit: .month),
-                   y: .value("Servings", item.totalServings)
-               )
-               .foregroundStyle(.brandGreen)
-               .opacity(0)
-               .annotation(position: .top, alignment: .center, spacing: 6) {
-                   if item.totalServings > 0 {
-                       servingsAnnotation(servings: item.totalServings)
-                   }
-               }
-           }
-           .chartScrollableAxes(.horizontal)
-           .chartScrollTargetBehavior(.valueAligned(matching: .init()))
-           .chartScrollPosition(x: $monthlyScrollPosition)
-           .chartXScale(domain: monthlyXDomain)
-           .chartYScale(domain: 0...config.yAxisUpperBound)
-           .chartXAxis {
-               AxisMarks(values: monthDates) { value in
-                   AxisGridLine()
-                   AxisTick()
-                   AxisValueLabel(centered: true) {
-                       if let date = value.as(Date.self) {
-                           Text(date, format: .dateTime.month(.abbreviated))
-                               .font(.caption2)
-                               .offset(y: 8)
-                       }
-                   }
-               }
-           }
-           .chartYAxis {
-               AxisMarks(values: .automatic) {
-                   AxisGridLine()
-                   AxisTick()
-                   AxisValueLabel()
-               }
-           }
-           .frame(minHeight: config.chartHeight + 30)
-           .padding(.vertical, 40)
-           .padding(.horizontal)
-           .onAppear {
-               print("MonthlyChart Data: \(data.map { "Month: \(calendar.component(.month, from: $0.date!)), Servings: \($0.totalServings)" })")
-               print("Y-Axis Domain: 0...\(config.yAxisUpperBound)")
-           }
-       }
+        let data = processor.monthlyServings(forYearOf: selectedDate)
+        let config = ChartConfig(data: data, isYearly: false)
+
+        return Chart(data) { item in
+            LineMark(
+                x: .value("Month", item.date!, unit: .month),
+                y: .value("Servings", item.totalServings)
+            )
+            .foregroundStyle(.brandGreen)
+            .interpolationMethod(.catmullRom)
+            .lineStyle(.init(lineWidth: 3))
+            .symbol(.circle)
+            .symbolSize(CGSize(width: 10, height: 10))
+            
+            PointMark(
+                x: .value("Month", item.date!, unit: .month),
+                y: .value("Servings", item.totalServings)
+            )
+            .foregroundStyle(.brandGreen)
+            .opacity(0)
+            .annotation(position: .top, alignment: .center, spacing: 6) {
+                if item.totalServings > 0 {
+                    servingsAnnotation(servings: item.totalServings)
+                }
+            }
+        }
+        .chartScrollableAxes(.horizontal)
+        .chartScrollTargetBehavior(.valueAligned(matching: .init()))
+        .chartScrollPosition(x: $monthlyScrollPosition)
+        .chartXScale(domain: .automatic) // Use automatic domain
+        .chartXVisibleDomain(length: Int(365 * 24 * 60 * 60)) // Show all 12 months
+        .chartYScale(domain: 0...config.yAxisUpperBound)
+        .chartXAxis {
+            AxisMarks(preset: .aligned, values: .stride(by: .month, count: 1)) { value in
+                AxisGridLine()
+                AxisTick()
+                AxisValueLabel(centered: true) {
+                    if let date = value.as(Date.self) {
+                        Text(date, format: .dateTime.month(.abbreviated))
+                            .font(.caption2)
+                    }
+                }
+            }
+        }
+        .chartYAxis {
+            AxisMarks(values: .automatic) {
+                AxisGridLine()
+                AxisTick()
+                AxisValueLabel()
+            }
+        }
+        .frame(minHeight: config.chartHeight + 30)
+        .padding(.vertical, 40)
+        .padding(.horizontal)
+        .onAppear {
+            print("MonthlyChart Data: \(data.map { "Month: \(calendar.component(.month, from: $0.date!)), Servings: \($0.totalServings)" })")
+            print("Y-Axis Domain: 0...\(config.yAxisUpperBound)")
+            // Debug expected axis labels
+            let startDate = calendar.date(from: DateComponents(year: calendar.component(.year, from: selectedDate), month: 1, day: 1)) ?? selectedDate
+            let endDate = calendar.date(from: DateComponents(year: calendar.component(.year, from: selectedDate), month: 12, day: 31)) ?? selectedDate
+            var currentDate = startDate
+            while currentDate <= endDate {
+                print("Expected Monthly AxisMark: \(calendar.component(.month, from: currentDate))")
+                currentDate = calendar.date(byAdding: .month, value: 1, to: currentDate)!
+            }
+        }
+    }
     
     private var yearlyChart: some View {
             let data = processor.yearlyServings()
@@ -294,7 +299,8 @@ struct DozeServingsHistoryView: View {
                 .padding(.trailing, 100)
         }
         .chartXAxis {
-            AxisMarks(preset: .aligned, values: .stride(by: .year)) { value in
+            
+           AxisMarks(preset: .aligned, values: .stride(by: .year)) { value in
                 AxisGridLine()
                 AxisTick()
                 AxisValueLabel(centered: true) {
@@ -448,17 +454,39 @@ struct DozeServingsHistoryView: View {
         return start...end
     }
     
+    private var extendedDailyXDomain: ClosedRange<Date> {
+        let start = calendar.startOfMonth(for: selectedDate)
+        let end = calendar.endOfMonth(for: selectedDate)
+        let extendedEnd = calendar.date(byAdding: .day, value: 1, to: end) ?? end // Extend to next day
+        return start...extendedEnd
+    }
 //    private var dailyXDomain: ClosedRange<Date> {
 //        let start = calendar.startOfMonth(for: selectedDate)
 //        let end = min(calendar.endOfMonth(for: selectedDate), today)
 //        return start...end
 //    }
+    private var extendedMonthlyXDomain: ClosedRange<Date> {
+        let start = calendar.date(from: DateComponents(year: calendar.component(.year, from: selectedDate), month: 1, day: 1)) ?? Date()
+        let end = calendar.date(from: DateComponents(year: calendar.component(.year, from: selectedDate), month: 12, day: 31)) ?? Date()
+        let extendedEnd = calendar.date(byAdding: .month, value: 1, to: end) ?? end // Extend to January 1 of next year
+        return start...extendedEnd
+    }
     
     private var monthlyXDomain: ClosedRange<Date> {
         let start = calendar.date(from: DateComponents(year: calendar.component(.year, from: selectedDate), month: 1, day: 1)) ?? Date()
         let end = calendar.date(from: DateComponents(year: calendar.component(.year, from: selectedDate), month: 12, day: 31)) ?? Date()
         return start...end
     }
+//    private var monthlyXDomain: ClosedRange<Date> {
+//        let start = calendar.date(from: DateComponents(year: calendar.component(.year, from: selectedDate), month: 1, day: 1)) ?? Date()
+//        let end = calendar.date(from: DateComponents(year: calendar.component(.year, from: selectedDate) + 1, month: 1, day: 1)) ?? Date()
+//        return start...end
+//    }
+//    private var monthlyXDomain: ClosedRange<Date> {
+//        let start = calendar.date(from: DateComponents(year: calendar.component(.year, from: selectedDate), month: 1, day: 1)) ?? Date()
+//        let end = calendar.date(from: DateComponents(year: calendar.component(.year, from: selectedDate), month: 12, day: 31)) ?? Date()
+//        return start...end
+//    }
 //    private var monthlyXDomain: ClosedRange<Date> {
 //        let start = calendar.date(from: DateComponents(year: calendar.component(.year, from: selectedDate), month: 1, day: 1)) ?? Date()
 //        let end = calendar.date(from: DateComponents(year: calendar.component(.year, from: selectedDate), month: 12, day: 31, hour: 23, minute: 59, second: 59)) ?? Date()
@@ -630,7 +658,7 @@ extension ClosedRange where Bound == Date {
             weightPM: nil
         ),
         SqlDailyTracker(
-            date: Calendar.current.date(from: DateComponents(year: 2025, month: 5, day: 15))!,
+            date: Calendar.current.date(from: DateComponents(year: 2025, month: 5, day: 28))!,
             itemsDict: [
                 DataCountType.dozeBeans: SqlDataCountRecord(datacount_date_psid: "2025-05-15", datacount_kind_pfnid: 1, datacount_count: 3, datacount_streak: 1)!,
                 DataCountType.dozeBerries: SqlDataCountRecord(datacount_date_psid: "2025-05-15", datacount_kind_pfnid: 2, datacount_count: 1, datacount_streak: 1)!,

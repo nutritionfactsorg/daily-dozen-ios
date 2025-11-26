@@ -45,15 +45,15 @@ class ServingsDataProcessor {
         self.trackers = trackers // Revert to using trackers parameter
         self.today = calendar.startOfDay(for: Date())
         // Debug returnSQLDataArray() to inspect mock data
-        // let mockTrackers = returnSQLDataArray()  //TBDz may need to change
-        // print("returnSQLDataArray: Tracker count: \(mockTrackers.count)")
-        // for tracker in mockTrackers {
+       // let mockTrackers = returnSQLDataArray()  //TBDz may need to change
+       // print("returnSQLDataArray: Tracker count: \(mockTrackers.count)")
+       // for tracker in mockTrackers {
         //    print("Tracker date: \(tracker.date), itemsDict: \(tracker.itemsDict.map { ($0.key, $0.value.datacount_count) })")
-        // }
-        // logit.debug("Tracker: \(trackers)")
-        for tracker in trackers {
+       // }
+       // logit.debug("Tracker: \(trackers)")
+         for tracker in trackers {
             // logit.debug("Tracker date: \(tracker.date), itemsDict: \(tracker.itemsDict.map { ($0.key, $0.value.datacount_count) })")
-        }
+         }
     }
     
     func dailyServings(forMonthOf date: Date) -> [ChartData] {
@@ -61,7 +61,7 @@ class ServingsDataProcessor {
         let endOfMonth = min(calendar.endOfMonth(for: date), today)
         var dailyTotals: [Date: Int] = [:]
         
-        // print("DailyServings: Processing month: \(date), Start: \(startOfMonth), End: \(endOfMonth)")
+      //  print("DailyServings: Processing month: \(date), Start: \(startOfMonth), End: \(endOfMonth)")
         var currentDate = startOfMonth
         while currentDate <= endOfMonth {
             dailyTotals[currentDate] = 0
@@ -121,6 +121,36 @@ class ServingsDataProcessor {
         logit.debug( "MappedMonthlytotals: \(theMappedMonthlyTotals)")
         return theMappedMonthlyTotals
     }
+//    func monthlyServings(forYearOf date: Date) -> [ChartData] {
+//        let selectedYear = calendar.component(.year, from: date)
+//        let currentYear = calendar.component(.year, from: today)
+//        
+//        if selectedYear > currentYear {
+//            return []
+//        }
+//        
+//        var monthlyTotals: [Date: Int] = [:]
+//        for month in 1...12 {
+//            if let monthDate = calendar.date(from: DateComponents(year: selectedYear, month: month, day: 1)) {
+//                monthlyTotals[monthDate] = 0
+//            }
+//        }
+//        
+//        for tracker in trackers where tracker.date <= today {
+//            if calendar.isDate(tracker.date, inSameYearAs: date) {
+//                let monthStart = calendar.startOfMonth(for: tracker.date)
+//                let total = tracker.itemsDict.values
+//                    .filter { $0.datacount_count > 0 }
+//                    .reduce(0) { $0 + $1.datacount_count }
+//                monthlyTotals[monthStart, default: 0] += total
+//            }
+//        }
+//        
+//        let theMappedMonthlyTotals = monthlyTotals.map { ChartData(date: $0.key, totalServings: Double($0.value)) }
+//            .sorted { $0.date < $1.date }
+//        logit.debug("MappedMonthlytotals: \(theMappedMonthlyTotals)")
+//        return theMappedMonthlyTotals
+//    }
     
     func yearlyServings() -> [ChartData] {
         print("YearlyServings: Today is \(today), Tracker count: \(trackers.count)")
