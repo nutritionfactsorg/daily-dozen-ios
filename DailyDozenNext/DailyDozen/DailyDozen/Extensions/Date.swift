@@ -309,9 +309,16 @@ extension Date {
     }
     
     // :???: candidate code to be either improved or deleted
+    //TBDz used it in charts
     var startOfDay: Date {
         return Calendar.current.startOfDay(for: self)
     }
+    
+    var startOfMonth: Date {
+           let calendar = Calendar.current
+           let components = calendar.dateComponents([.year, .month], from: self)
+           return calendar.date(from: components)!
+       }
     
 //    /// duration
 //    /// selectedWeekdays = [2, 4, 6] // Example - Mon, Wed, Fri

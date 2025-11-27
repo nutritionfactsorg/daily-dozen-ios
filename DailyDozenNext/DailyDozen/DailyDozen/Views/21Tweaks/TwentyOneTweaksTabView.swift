@@ -30,6 +30,18 @@ struct TwentyOneTweaksTabView: View {
         NavigationStack {
             VStack {
                 Text("Twenty-One Tweaks View")
+                //TBDz  just a placeholder to test out weight
+                NavigationLink(destination: WeightChartView()) {
+                    Text("Chart View")
+                        .font(.headline)
+                        .padding()
+                        .frame(maxWidth: .infinity)
+                        .background(Color.blue)
+                        .foregroundColor(.white)
+                        .cornerRadius(10)
+                        .padding(.horizontal)
+                }
+               
             }
             .navigationTitle(Text("navtab.tweaks")) //!!Needs localization comment
             .navigationBarTitleDisplayMode(.inline)
