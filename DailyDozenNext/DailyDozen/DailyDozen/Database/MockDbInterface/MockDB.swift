@@ -255,6 +255,18 @@ var mockDB: [SqlDailyTracker] =  [
         weightAM: nil,
         weightPM: nil
     ),
+    SqlDailyTracker(
+        date: Calendar.current.date(from: DateComponents(year: 2015, month: 1, day: 2))!,
+        itemsDict: [:],
+        weightAM: SqlDataWeightRecord(date: Date(), weightType: .am, kg: 68.0),
+        weightPM: SqlDataWeightRecord(date: Date(), weightType: .pm, kg: 68.5)
+    ),
+    SqlDailyTracker(
+        date: Calendar.current.date(from: DateComponents(year: 2015, month: 2, day: 3))!,
+        itemsDict: [:],
+        weightAM: SqlDataWeightRecord(date: Date(), weightType: .am, kg: 69.0),
+        weightPM: SqlDataWeightRecord(date: Date(), weightType: .pm, kg: 69.5)
+    ),
     // Add 2016
     SqlDailyTracker(
         date: Calendar.current.date(from: DateComponents(year: 2016, month: 6, day: 1))!,
@@ -342,10 +354,16 @@ var mockDB: [SqlDailyTracker] =  [
             DataCountType.dozeBeans: SqlDataCountRecord(datacount_date_psid: "2024-05-18", datacount_kind_pfnid: 1, datacount_count: 2, datacount_streak: 1)!,
             DataCountType.dozeBerries: SqlDataCountRecord(datacount_date_psid: "2024-05-18", datacount_kind_pfnid: 2, datacount_count: 1, datacount_streak: 1)!
         ],
-        weightAM: nil,
-        weightPM: nil
+        weightAM: SqlDataWeightRecord(date: Date(), weightType: .am, kg: 40.42),
+        weightPM: SqlDataWeightRecord(date: Date(), weightType: .pm, kg: 41.30)
     ),
     // Existing 2025 entries
+    SqlDailyTracker(
+        date: Calendar.current.date(from: DateComponents(year: 2025, month: 1, day: 2))!,
+        itemsDict: [:],
+        weightAM: SqlDataWeightRecord(date: Date(), weightType: .am, kg: 44),
+        weightPM: SqlDataWeightRecord(date: Date(), weightType: .pm, kg: 45.36)
+    ),
     SqlDailyTracker(
         date: Calendar.current.date(from: DateComponents(year: 2025, month: 4, day: 14))!,
         itemsDict: [
@@ -410,12 +428,6 @@ var mockDB: [SqlDailyTracker] =  [
         itemsDict: [:],
         weightAM: SqlDataWeightRecord(date: Date(), weightType: .am, kg: 70.3),
         weightPM: SqlDataWeightRecord(date: Date(), weightType: .pm, kg: 71.0)
-    ),
-    SqlDailyTracker(
-        date: Calendar.current.date(from: DateComponents(year: 2015, month: 1, day: 2))!,
-        itemsDict: [:],
-        weightAM: SqlDataWeightRecord(date: Date(), weightType: .am, kg: 68.0),
-        weightPM: SqlDataWeightRecord(date: Date(), weightType: .pm, kg: 68.5)
     ),
     SqlDailyTracker(
         date: Calendar.current.date(from: DateComponents(year: 2025, month: 6, day: 25))!,

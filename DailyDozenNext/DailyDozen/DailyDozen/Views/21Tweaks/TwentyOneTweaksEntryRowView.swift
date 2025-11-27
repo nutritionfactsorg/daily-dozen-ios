@@ -21,34 +21,97 @@ struct TwentyOneTweaksEntryRowView: View {
     @State private var navigateToWeightEntry: Bool = false
     @State private var localCount: Int = 0
     @State private var count: Int = 0 // Initialize with default
-    
+    @State private var navigationPath = NavigationPath()
+    @State private var mockDBTrigger = UUID() // Trigger refresh on mockDB changes
+    //TBDz:  if updateCount isn't working correctly, try the below.
+   
     private func updateCount() {
         if item == .tweakWeightTwice {
-            
             if let tracker = mockDB.first(where: { Calendar.current.isDate($0.date, inSameDayAs: date.startOfDay) }) {
                 let amWeight = tracker.weightAM.dataweight_kg
                 let pmWeight = tracker.weightPM.dataweight_kg
                 let newCount = (amWeight > 0 ? 1 : 0) + (pmWeight > 0 ? 1 : 0)
+               // Compare with localCount instead of count
+                if newCount != localCount {
+                    count = newCount
+                    localCount = newCount
+                    onCheck(newCount)
+                    print("🟢 •Update• Count updated for \(date.startOfDay.datestampSid): \(newCount), AM: \(amWeight), PM: \(pmWeight)")
+                } else {
+                    count = newCount
+                    localCount = newCount
+                    print("🟢 •Skip• No count change for \(date.startOfDay.datestampSid): \(newCount)")
+                }
+            } else {
+                // Compare with localCount
+                if 0 != localCount {
+                    count = 0
+                    localCount = 0
+                    onCheck(0)
+                    print("🟢 •Update• No tracker found for \(date.startOfDay.datestampSid), count set to 0")
+                } else {
+                    count = 0
+                    localCount = 0
+                    print("🟢 •Skip• No tracker found, no count change for \(date.startOfDay.datestampSid)")
+                }
+            }
+        } else {
+            let newCount = record?.itemsDict[item]?.datacount_count ?? 0
+            if newCount != localCount {
                 count = newCount
                 localCount = newCount
                 onCheck(newCount)
-                // print("Updated count for \(date.datestampSid): \(newCount), AM: \(amWeight), PM: \(pmWeight)")
+                print("🟢 •Update• Count set for \(date.startOfDay.datestampSid): \(item.headingDisplay) count \(newCount)")
             } else {
-                count = 0
-                localCount = 0
-                onCheck(0)
-                // print("No tracker found for \(date.datestampSid), count set to 0")
+                count = newCount
+                localCount = newCount
+                print("🟢 •Skip• No count change for \(date.startOfDay.datestampSid): \(item.headingDisplay) count \(newCount)")
             }
-        } else {
-            count = record?.itemsDict[item]?.datacount_count ?? localCount
-            localCount = count
-            onCheck(count)
-            //print("Updated count for \(item.headingDisplay): \(count)")
         }
     }
+
+//    private func updateCount() {
+//        if item == .tweakWeightTwice {
+//            if let tracker = mockDB.first(where: { Calendar.current.isDate($0.date, inSameDayAs: date.startOfDay) }) {
+//                let amWeight = tracker.weightAM.dataweight_kg
+//                let pmWeight = tracker.weightPM.dataweight_kg
+//                let newCount = (amWeight > 0 ? 1 : 0) + (pmWeight > 0 ? 1 : 0)
+//                count = newCount
+//                localCount = newCount
+//               // Only call onCheck if count changed
+//                if newCount != count {
+//                    onCheck(newCount)
+//                    print("🟢 •Update• Count updated for \(date.startOfDay.datestampSid): \(newCount), AM: \(amWeight), PM: \(pmWeight)")
+//                } else {
+//                    print("🟢 •Skip• No count change for \(date.startOfDay.datestampSid): \(newCount)")
+//                }
+//            } else {
+//                count = 0
+//                localCount = 0
+//                // Only call onCheck if count changed
+//                if count != localCount {
+//                    onCheck(0)
+//                    print("🟢 •Update• No tracker found for \(date.startOfDay.datestampSid), count set to 0")
+//                } else {
+//                    print("🟢 •Skip• No tracker found, no count change for \(date.startOfDay.datestampSid)")
+//                }
+//            }
+//        } else {
+//            let newCount = record?.itemsDict[item]?.datacount_count ?? 0
+//            count = newCount
+//            localCount = newCount
+//             // Only call onCheck if count changed
+//            if newCount != count {
+//                onCheck(newCount)
+//                print("🟢 •Update• Count set for \(date.startOfDay.datestampSid): \(item.headingDisplay) count \(newCount)")
+//            } else {
+//                print("🟢 •Skip• No count change for \(date.startOfDay.datestampSid): \(item.headingDisplay) count \(newCount)")
+//            }
+//        }
+//    }
     
     var body: some View {
-        NavigationStack {
+        NavigationStack(path: $navigationPath) {
             HStack {
                 Image(item.imageName)
                     .resizable()
@@ -71,7 +134,7 @@ struct TwentyOneTweaksEntryRowView: View {
                     HStack {
                         //TBDz should clicking boxes on weight do something?
                         if item == .tweakWeightTwice {
-                            NavigationLink(destination: WeightChartView()) {
+                            NavigationLink(value: "chart") {
                                 Image("ic_calendar")
                                     .resizable()
                                     .scaledToFit()
@@ -99,7 +162,8 @@ struct TwentyOneTweaksEntryRowView: View {
                                 } else {
                                     localCount = newCount
                                     onCheck(newCount) // Update non-weight item count
-                                    print("Checkbox changed for \(item.headingDisplay): \(newCount)")
+                                    print("🟢 •Update• Checkbox changed for \(item.headingDisplay): \(newCount)")
+                                                           
                                 }
                             },
                             isDisabled: item == .tweakWeightTwice,
@@ -111,6 +175,17 @@ struct TwentyOneTweaksEntryRowView: View {
             .padding(10)
             .shadowboxed()
             
+            .navigationDestination(for: DataCountType.self) { item in
+                TwentyOneDetailView(dataCountTypeItem: item)
+            }
+            .navigationDestination(for: String.self) { value in
+                if value == "chart" {
+                    WeightChartView()
+                }
+            }
+            .navigationDestination(for: Date.self) { date in
+                WeightEntryView(initialDate: date)
+            }
             .navigationDestination(isPresented: $navigateToWeightEntry) {
                 WeightEntryView(initialDate: date.startOfDay)
             }
@@ -141,6 +216,10 @@ struct TwentyOneTweaksEntryRowView: View {
                 onCheck(newCount)
             }
         }
+        .onChange(of: mockDBTrigger) { _, _ in
+                    updateCount()
+                    print("🟢 •Refresh• mockDBTrigger changed, updated count for \(date.startOfDay.datestampSid): \(item.headingDisplay)")
+                }
         
     }
 }

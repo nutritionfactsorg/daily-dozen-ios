@@ -23,9 +23,11 @@ struct WeightEntryView: View {
     @State private var currentIndex: Int = 0 // Track current index
     @State private var isShowingSheet = false
     @State private var selectedDate = Date()
+    @State private var records: [SqlDailyTracker] = fetchSQLData()
     
-    init(initialDate: Date, viewModel: WeightEntryViewModel = WeightEntryViewModel()) {
-        self._viewModel = StateObject(wrappedValue: viewModel)
+    @MainActor
+    init(initialDate: Date, viewModel: WeightEntryViewModel? =  nil) {
+        self._viewModel = StateObject(wrappedValue: viewModel ?? WeightEntryViewModel())
         self._currentDate = State(initialValue: initialDate.startOfDay)
         // Initialize dateRange with 30 days before today up to today
         let calendar = Calendar.current
@@ -110,7 +112,7 @@ struct WeightEntryView: View {
     }
     
     var body: some View {
-        NavigationStack {
+       // NavigationStack {
             ZStack(alignment: .bottom) {
                 VStack(spacing: 0) {
                     // ZStack(alignment: .bottom) { // Use ZStack to layer content
@@ -123,10 +125,10 @@ struct WeightEntryView: View {
                     //DozeHeaderView(isShowingSheet: $isShowingSheet, currentDate: $currentDate)
                     // Weight input fields (from your previous code)
                     
-                    TabView(selection: $currentDate) {
-                        ForEach(dateRange, id: \.self) { date in
-                            WeightEntryPage(date: date, viewModel: viewModel)
-                                .tag(date)
+                    TabView(selection: $currentIndex) {
+                        ForEach(dateRange.indices, id: \.self) { index in
+                            WeightEntryPage(date: dateRange[index], viewModel: viewModel)
+                                .tag(index)
                         }
                     }
                     .tabViewStyle(.page(indexDisplayMode: .never))
@@ -187,12 +189,15 @@ struct WeightEntryView: View {
                         extendDateRangeIfNeeded(for: index)
                     }
                 }
+               // extendDateRangeIfNeeded(for: currentIndex)
+               // records = fetchSQLData()  duplicate data?
+                //records = fetchSQLData()
                 //print("WeightEntryView appeared with dateRange: \(dateRange.map { $0.datestampSid })")
             }
             .onDisappear {
                 Task { await viewModel.savePendingWeights() }
             }
-        }
+       // } //NavStack
         
         .task {
             do {

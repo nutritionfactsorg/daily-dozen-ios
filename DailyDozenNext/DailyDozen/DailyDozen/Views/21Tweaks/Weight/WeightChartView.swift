@@ -8,6 +8,22 @@
 import SwiftUI
 import Charts
 
+// Extension to compute day of year
+extension DateComponents {
+    var dayOfYear: Int? {
+        guard let year = year, let month = month, let day = day,
+              let date = Calendar(identifier: .gregorian).date(from: self) else {
+            return nil
+        }
+        var yearComponents = DateComponents()
+        yearComponents.year = year
+        guard let yearStart = Calendar(identifier: .gregorian).date(from: yearComponents) else {
+            return nil
+        }
+        return Calendar(identifier: .gregorian).dateComponents([.day], from: yearStart, to: date).day! + 1
+    }
+}
+
 // Enum for chart time periods
 enum ChartPeriod: String, CaseIterable, Identifiable {
     case day = "Day"
@@ -29,354 +45,221 @@ struct WeightChartView: View {
     @State private var selectedPeriod: ChartPeriod = .day
     @State private var selectedMonth: Date = Date().startOfMonth
     @State private var selectedYear: Int = Calendar.current.component(.year, from: Date())
-    //@State private var refreshID = UUID()
-    
-    private var monthsWithData: [Date] {
-            let validTrackers = mockDB.filter { $0.weightAM.dataweight_kg > 0 || $0.weightPM.dataweight_kg > 0 }
-            let months = Set(validTrackers.map { gregorianCalendar.startOfMonth(for: $0.date) })
-            return months.sorted()
-        }
-    
-    private var monthsInSelectedYear: [Date] {
-           return monthsWithData.filter { gregorianCalendar.component(.year, from: $0) == selectedYear }
-       }
+    @State private var refreshID = UUID()
     
     private var gregorianCalendar: Calendar {
-           var calendar = Calendar(identifier: .gregorian)
-           calendar.locale = Locale(identifier: "en")
-           return calendar
-       }
+        var calendar = Calendar(identifier: .gregorian)
+        calendar.locale = Locale(identifier: "en")
+        return calendar
+    }
+    
+    private var displayCalendar: Calendar {
+        var calendar = Calendar.current
+        calendar.locale = Locale.current
+        return calendar
+    }
+    
+    private var numberFormatter: NumberFormatter {
+        let formatter = NumberFormatter()
+        formatter.locale = Locale.current
+        return formatter
+    }
+    
+    private var monthsWithData: [Date] {
+        let validTrackers = mockDB.filter { $0.weightAM.dataweight_kg > 0 || $0.weightPM.dataweight_kg > 0 }
+        let months = Set(validTrackers.map { $0.date.startOfMonth })
+        return months.sorted()
+    }
+    
+    private var yearsWithData: [Int] {
+        let validTrackers = mockDB.filter { $0.weightAM.dataweight_kg > 0 || $0.weightPM.dataweight_kg > 0 }
+        let years = Set(validTrackers.map { $0.date.year })
+        return years.sorted()
+    }
+    
+    private var monthsInSelectedYear: [Date] {
+        monthsWithData.filter { $0.year == selectedYear }
+    }
     
     var body: some View {
-        NavigationStack {
-            VStack {
-                // Period toggle
-                Picker("Period", selection: $selectedPeriod) {
-                    ForEach(ChartPeriod.allCases) { period in
-                        Text(period.rawValue).tag(period)
-                    }
-                }
-                .pickerStyle(.segmented)
-                .padding()
-                .disabled(selectedPeriod != .day)
-                
-                // Chevron navigation for month
-                if selectedPeriod == .day {
-                    HStack {
-                        Button(action: {
-                            if let earliest = monthsInSelectedYear.first {
-                                selectedMonth = earliest
-                            }
-                        }, label: {
-                            Image(systemName: "chevron.left.2")
-                                .foregroundColor(monthsInSelectedYear.isEmpty ? .gray : .brandGreen)
-                        }
-                        )
-                        .disabled(monthsInSelectedYear.isEmpty)
-                        
-                        Button(
-                            action: {
-                                if let currentIndex = monthsInSelectedYear.firstIndex(of: selectedMonth),
-                                   currentIndex > 0 {
-                                    selectedMonth = monthsInSelectedYear[currentIndex - 1]
-                                } else if let previousYear = monthsWithData
-                                    .filter({ gregorianCalendar.component(.year, from: $0) < selectedYear })
-                                    .max() {
-                                    selectedYear = gregorianCalendar.component(.year, from: previousYear)
-                                    selectedMonth = monthsInSelectedYear.last ?? previousYear
-                                }
-                            },
-                            label: {
-                                Image(systemName: "chevron.left")
-                                    .foregroundColor(monthsWithData.isEmpty ? .gray : .brandGreen)
-                            }
-                        )
-                        .disabled(monthsWithData.isEmpty)
-                        
-//                        Text("\(selectedMonth, formatter: monthYearFormatter)")
-//                            .font(.headline)
-//                            .frame(maxWidth: .infinity)
-                        Text(monthYearText(for: selectedMonth))
-                               .font(.headline)
-                               .frame(maxWidth: .infinity)
-                        
-                        Button(
-                            action: {
-                                if let currentIndex = monthsInSelectedYear.firstIndex(of: selectedMonth),
-                                   currentIndex < monthsInSelectedYear.count - 1 {
-                                    selectedMonth = monthsInSelectedYear[currentIndex + 1]
-                                } else if let nextYear = monthsWithData
-                                    .filter({ gregorianCalendar.component(.year, from: $0) > selectedYear })
-                                    .min() {
-                                    selectedYear = gregorianCalendar.component(.year, from: nextYear)
-                                    selectedMonth = monthsInSelectedYear.first ?? nextYear
-                                }
-                            },
-                            label: {
-                                Image(systemName: "chevron.right")
-                                    .foregroundColor(selectedMonth >= Date().startOfMonth || monthsWithData.isEmpty ? .gray : .brandGreen)
-                            }
-                        )
-                        .disabled(selectedMonth >= Date().startOfMonth || monthsWithData.isEmpty)
-                        
-                        Button(action: {
-                            if let latest = monthsInSelectedYear.last {
-                                selectedMonth = latest
-                            }
-                        }, label: {
-                            Image(systemName: "chevron.right.2")
-                                .foregroundColor(monthsInSelectedYear.isEmpty || selectedMonth >= Date().startOfMonth ? .gray : .brandGreen)
-                        }
-                        )
-                        .disabled(monthsInSelectedYear.isEmpty || selectedMonth >= Date().startOfMonth)
-                    }
-                    .padding(.horizontal)
-                }
-                
-                // Chart
-                if selectedPeriod == .day {
-                    DayChartView(selectedMonth: selectedMonth)
-                } else {
-                    Text("Chart type not implemented yet")
-                        .foregroundColor(.gray)
-                }
-                
-                Spacer()
-                
-                // Edit Data button
-                NavigationLink(destination: WeightEntryView(initialDate: Date().startOfDay)) {
-                    Text("Edit Data")
-                        .font(.headline)
-                        .padding()
-                        .frame(maxWidth: .infinity)
-                        .background(Color.blue)
-                        .foregroundColor(.white)
-                        .cornerRadius(10)
-                        .padding(.horizontal)
+        VStack {
+            // Period toggle
+            Picker("Period", selection: $selectedPeriod) {
+                ForEach(ChartPeriod.allCases) { period in
+                    Text(period.rawValue).tag(period)
                 }
             }
-            .navigationTitle("Weight Charts")
+            .pickerStyle(.segmented)
+            .padding()
+            .frame(maxWidth: .infinity)
+            
+            // Navigation for Day view (month-based)
+            if selectedPeriod == .day {
+                HStack {
+                    Button(action: {
+                        if let earliest = monthsInSelectedYear.first {
+                            selectedMonth = earliest
+                        }
+                    }, label: {
+                        Image(systemName: "chevron.left.2")
+                            .foregroundColor(monthsInSelectedYear.isEmpty ? .gray : .brandGreen)
+                    })
+                    .disabled(monthsInSelectedYear.isEmpty)
+                    
+                    Button(action: {
+                        if let currentIndex = monthsInSelectedYear.firstIndex(of: selectedMonth),
+                           currentIndex > 0 {
+                            selectedMonth = monthsInSelectedYear[currentIndex - 1]
+                        } else if let previousYear = monthsWithData
+                            .filter({ $0.year < selectedYear })
+                            .max() {
+                            selectedYear = previousYear.year
+                            selectedMonth = monthsInSelectedYear.last ?? previousYear
+                        }
+                    }, label: {
+                        Image(systemName: "chevron.left")
+                            .foregroundColor(monthsWithData.isEmpty ? .gray : .brandGreen)
+                    })
+                    .disabled(monthsWithData.isEmpty)
+                    
+                    Text(monthYearText(for: selectedMonth))
+                        .font(.headline)
+                        .frame(maxWidth: .infinity)
+                    
+                    Button(action: {
+                        if let currentIndex = monthsInSelectedYear.firstIndex(of: selectedMonth),
+                           currentIndex < monthsInSelectedYear.count - 1 {
+                            selectedMonth = monthsInSelectedYear[currentIndex + 1]
+                        } else if let nextYear = monthsWithData
+                            .filter({ $0.year > selectedYear })
+                            .min() {
+                            selectedYear = nextYear.year
+                            selectedMonth = monthsInSelectedYear.first ?? nextYear
+                        }
+                    }, label: {
+                        Image(systemName: "chevron.right")
+                            .foregroundColor(selectedMonth >= Date().startOfMonth || monthsWithData.isEmpty ? .gray : .brandGreen)
+                    })
+                    .disabled(selectedMonth >= Date().startOfMonth || monthsWithData.isEmpty)
+                    
+                    Button(action: {
+                        if let latest = monthsInSelectedYear.last {
+                            selectedMonth = latest
+                        }
+                    }, label: {
+                        Image(systemName: "chevron.right.2")
+                            .foregroundColor(monthsInSelectedYear.isEmpty || selectedMonth >= Date().startOfMonth ? .gray : .brandGreen)
+                    })
+                    .disabled(monthsInSelectedYear.isEmpty || selectedMonth >= Date().startOfMonth)
+                }
+                .padding(.horizontal)
+            }
+            
+            // Navigation for Month view (year-based)
+            if selectedPeriod == .month {
+                HStack {
+                    Button(action: {
+                        if let earliest = yearsWithData.first {
+                            selectedYear = earliest
+                        }
+                    }, label: {
+                        Image(systemName: "chevron.left.2")
+                            .foregroundColor(yearsWithData.isEmpty ? .gray : .brandGreen)
+                    })
+                    .disabled(yearsWithData.isEmpty)
+                    
+                    Button(action: {
+                        if let currentIndex = yearsWithData.firstIndex(of: selectedYear),
+                           currentIndex > 0 {
+                            selectedYear = yearsWithData[currentIndex - 1]
+                        }
+                    }, label: {
+                        Image(systemName: "chevron.left")
+                            .foregroundColor(yearsWithData.isEmpty ? .gray : .brandGreen)
+                    })
+                    .disabled(yearsWithData.isEmpty)
+                    
+                    Text(numberFormatter.string(from: NSNumber(value: selectedYear)) ?? "\(selectedYear)")
+                        .font(.headline)
+                        .frame(maxWidth: .infinity)
+                    
+                    Button(action: {
+                        if let currentIndex = yearsWithData.firstIndex(of: selectedYear),
+                           currentIndex < yearsWithData.count - 1 {
+                            selectedYear = yearsWithData[currentIndex + 1]
+                        }
+                    }, label: {
+                        Image(systemName: "chevron.right")
+                            .foregroundColor(selectedYear >= Date().year || yearsWithData.isEmpty ? .gray : .brandGreen)
+                    })
+                    .disabled(selectedYear >= Date().year || yearsWithData.isEmpty)
+                    
+                    Button(action: {
+                        if let latest = yearsWithData.last {
+                            selectedYear = latest
+                        }
+                    }, label: {
+                        Image(systemName: "chevron.right.2")
+                            .foregroundColor(yearsWithData.isEmpty || selectedYear >= Date().year ? .gray : .brandGreen)
+                    })
+                    .disabled(yearsWithData.isEmpty || selectedYear >= Date().year)
+                }
+                .padding(.horizontal)
+            }
+            
+            // Chart
+            switch selectedPeriod {
+            case .day:
+                DayChartView(selectedMonth: selectedMonth)
+                    .frame(maxWidth: .infinity, minHeight: 340)
+                    .id(refreshID)
+            case .month:
+                MonthChartView(selectedYear: selectedYear)
+                    .frame(maxWidth: .infinity, minHeight: 340)
+                    .id(refreshID)
+            case .year:
+                YearChartView()
+                    .frame(maxWidth: .infinity, minHeight: 340)
+                    .id(refreshID)
+            }
+            
+            Spacer()
+            
+            NavigationLink(value: selectedPeriod == .day ? selectedMonth.startOfDay : Date().startOfDay) {
+                Text("Edit Data")
+                    .font(.headline)
+                    .padding()
+                    .frame(maxWidth: .infinity)
+                    .background(Color.blue)
+                    .foregroundColor(.white)
+                    .cornerRadius(10)
+                    .padding(.horizontal)
+            }
+            .onTapGesture {
+                print("🟢 •Nav• Edit Data tapped for \(selectedPeriod == .day ? selectedMonth.startOfDay.datestampSid : Date().startOfDay.datestampSid)")
+            }
         }
+        .navigationTitle("Weight Charts")
         .onAppear {
             if !monthsWithData.contains(selectedMonth), let latest = monthsWithData.last {
                 selectedMonth = latest
-                selectedYear = gregorianCalendar.component(.year, from: latest)
+                selectedYear = latest.year
             }
+            print("🟢 •Chart• WeightChartView appeared, refreshing chart for month: \(selectedMonth.datestampSid)")
+            refreshID = UUID()
+        }
+        .onReceive(WeightEntryViewModel.mockDBTrigger) { _ in
+            print("🟢 •Chart• mockDB updated via notification, refreshing chart")
+            refreshID = UUID()
         }
     }
-    //TBDz is below function used still?
-//    private var monthYearFormatter: DateFormatter {
-//        let formatter = DateFormatter()
-//        formatter.dateFormat = "MMMM yyyy"
-//        return formatter
-//    }
     
     private func monthYearText(for date: Date) -> String {
-            let formatter = DateFormatter()
-            formatter.calendar = Calendar.current // User’s calendar for display
-            formatter.locale = Locale.current // Localized month names
-            formatter.dateFormat = "MMM yyyy"
-            return formatter.string(from: date)
-        }
-}
-
-// Day Chart View
-struct DayChartView: View {
-    let selectedMonth: Date
-    
-    private var gregorianCalendar: Calendar {
-           var calendar = Calendar(identifier: .gregorian)
-           calendar.locale = Locale(identifier: "en")
-           return calendar
-       }
-    
-//    private var monthYearFormatter: DateFormatter {
-//        let formatter = DateFormatter()
-//        formatter.dateFormat = "MMM yyyy"
-//        return formatter
-//    }
-    
-    private var displayFormatter: DateFormatter {
-            let formatter = DateFormatter()
-            formatter.calendar = Calendar.current // User’s calendar for display
-            formatter.locale = Locale.current
-            formatter.dateFormat = "MMM yyyy"
-            return formatter
-        }
-    
-    //Brute force to test Persian
-//    private var displayFormatter: DateFormatter {
-//        let formatter = DateFormatter()
-//        formatter.calendar = Calendar(identifier: .persian) // Force Persian for testing
-//        formatter.locale = Locale(identifier: "fa")
-//        formatter.dateFormat = "MMMM yyyy"
-//        return formatter
-//    }
-    
-    private var numberFormatter: NumberFormatter {
-            let formatter = NumberFormatter()
-            formatter.locale = Locale.current // Localized numerals (e.g., ۱–۳۱ in Persian)
-            return formatter
-        }
-    
-    var body: some View {
-        let weightData = fetchWeightData(for: selectedMonth)
-        
-        // Debug data points
-        //let _ = print("Weight Data Points for \(monthYearFormatter.string(from: selectedMonth)): \(weightData.map { "\($0.date.datestampSid) \($0.type.rawValue) \($0.weight)" })")
-        //let amPoints = weightData.filter { $0.type == .am }
-       // let pmPoints = weightData.filter { $0.type == .pm }
-       // let _ = print("AM Points: \(amPoints.map { "\($0.date.datestampSid) \($0.weight)" })")
-       // let _ = print("PM Points: \(pmPoints.map { "\($0.date.datestampSid) \($0.weight)" })")
-        
-        if weightData.isEmpty {
-            Text("No weight data for this month")
-                .foregroundStyle(.gray)
-                .frame(height: 250)
-        } else {
-            VStack(spacing: 12) {
-                Chart(weightData) { dataPoint in
-                    LineMark(
-                        x: .value("Day", gregorianCalendar.component(.day, from: dataPoint.date)),
-                        y: .value("Weight", dataPoint.weight),
-                        series: .value("Series", dataPoint.type == .am ? "AM" : "PM")
-                    )
-                    .foregroundStyle(by: .value("Series", dataPoint.type == .am ? "AM" : "PM"))
-                    .symbol(by: .value("Series", dataPoint.type == .am ? "AM" : "PM"))
-                    .interpolationMethod(.catmullRom)
-                }
-                .chartForegroundStyleScale([
-                    "AM": Color("yellowSunglowColor"),
-                    "PM": Color("redFlamePeaColor")
-                ])
-                .chartSymbolScale([
-                    "AM": Circle().strokeBorder(lineWidth: 2),
-                    "PM": Circle().strokeBorder(lineWidth: 2)
-                ])
-                .chartXAxis {
-                    AxisMarks(values: dataDays(weightData)) { value in
-                        if let day = value.as(Int.self) {
-//                            AxisValueLabel {
-//                                Text("\(day)")
-//                            }
-                            AxisValueLabel {
-                                Text(numberFormatter.string(from: NSNumber(value: day)) ?? "\(day)")
-                            }
-                            AxisGridLine()
-                            AxisTick()
-                        }
-                    }
-                }
-                .chartXScale(domain: xAxisDomain(for: weightData))
-                .chartYAxis {
-                    AxisMarks(position: .leading) { value in
-                        if let weight = value.as(Double.self) {
-                            AxisValueLabel {
-                                Text("\(weight, specifier: "%.1f")")
-                            }
-                            AxisGridLine()
-                            AxisTick()
-                        }
-                    }
-                }
-                .chartYScale(domain: computeYDomain(for: weightData))
-                .chartLegend(.hidden)
-                .padding(.horizontal)
-                .padding(.top)
-                .frame(height: 250)
-                
-                // Legend
-                HStack {
-                    Circle()
-                        .fill(Color("yellowSunglowColor"))
-                        .frame(width: 12, height: 12)
-                    Text("AM")
-                        .font(.caption)
-                    Spacer()
-                    Circle()
-                        .fill(Color("redFlamePeaColor"))
-                        .frame(width: 12, height: 12)
-                    Text("PM")
-                        .font(.caption)
-                }
-                .padding(.horizontal)
-            }
-        }
-    }
-    
-    private func fetchWeightData(for month: Date) -> [WeightDataPoint] {
-        //let calendar = Calendar.current
-        let unitType = UnitType.fromUserDefaults()
-        
-        guard let monthStart = gregorianCalendar.date(from: gregorianCalendar.dateComponents([.year, .month], from: month))
-           
-        else {
-            print("Failed to compute month range or start for \(displayFormatter.string(from: month))")
-            return []
-        }
-        
-        let trackers = mockDB.filter { tracker in
-            gregorianCalendar.isDate(tracker.date, equalTo: monthStart, toGranularity: .month)
-        }
-        
-        print("Found \(trackers.count) trackers for \(displayFormatter.string(from: month))")
-        
-        var dataPoints: [WeightDataPoint] = []
-        
-        for tracker in trackers {
-            if tracker.weightAM.dataweight_kg > 0 {
-                let weight = unitType == .metric ? tracker.weightAM.dataweight_kg : tracker.weightAM.lbs
-                dataPoints.append(WeightDataPoint(
-                    date: tracker.date,
-                    weight: weight,
-                    type: .am
-                ))
-            }
-            
-            if tracker.weightPM.dataweight_kg > 0 {
-                let weight = unitType == .metric ? tracker.weightPM.dataweight_kg : tracker.weightPM.lbs
-                dataPoints.append(WeightDataPoint(
-                    date: tracker.date,
-                    weight: weight,
-                    type: .pm
-                ))
-            }
-        }
-        
-        return dataPoints.sorted { $0.date < $1.date }
-    }
-    
-    private func computeYDomain(for dataPoints: [WeightDataPoint]) -> ClosedRange<Double> {
-        guard !dataPoints.isEmpty else { return 0...100 }
-        
-        let weights = dataPoints.map { $0.weight }
-        let minWeight = weights.min() ?? 0
-        let maxWeight = weights.max() ?? 100
-        
-        let padding = (maxWeight - minWeight) * 0.1
-        let lowerBound = max(0, minWeight - padding)
-        let upperBound = maxWeight + padding
-        
-        return lowerBound...upperBound
-    }
-    
-    private func dataDays(_ dataPoints: [WeightDataPoint]) -> [Int] {
-        //let calendar = Calendar.current
-        let days = Set(dataPoints.map { gregorianCalendar.component(.day, from: $0.date) })
-        return Array(days).sorted()
-    }
-    
-    private func xAxisDomain(for dataPoints: [WeightDataPoint]) -> ClosedRange<Int> {
-        let days = dataDays(dataPoints)
-        let monthDayCount = gregorianCalendar.range(of: .day, in: .month, for: selectedMonth)?.count ?? 30
-
-        guard let minDay = days.min(), let maxDay = days.max() else {
-                   return 1...monthDayCount
-               }
-        // Add padding to the domain for better visualization
-        let lowerBound = max(1, minDay - 1)
-        let upperBound = min(monthDayCount, maxDay + 1)
-        return lowerBound...upperBound
+        let formatter = DateFormatter()
+        formatter.calendar = Calendar.current
+        formatter.locale = Locale.current
+        formatter.dateFormat = "MMM yyyy"
+        return formatter.string(from: date)
     }
 }
 
