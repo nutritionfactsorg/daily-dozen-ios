@@ -37,7 +37,7 @@ struct DailyDozenApp: App {
         }
     var body: some Scene {
         WindowGroup {
-            //ScratchView4(records: sampleSQLArray)
+            
             ContentView()
         }
     }

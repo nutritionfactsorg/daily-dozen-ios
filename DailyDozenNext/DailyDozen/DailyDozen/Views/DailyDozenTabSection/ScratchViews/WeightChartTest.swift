@@ -106,7 +106,6 @@ struct MultiLineChartView: View {
 
 // Custom square symbol for PM series
 
-
 #Preview {
     MultiLineChartView()
 }

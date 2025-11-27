@@ -16,7 +16,7 @@ import HealthKit
 /// HealthManager provides read, save, delete layer for HealthKit.
 ///
 /// //TBDz only transferred part of HealthManager
-class HealthManager {
+class HealthManagerWAS {
     
     public static let shared = HealthManager()
     

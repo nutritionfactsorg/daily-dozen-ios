@@ -44,8 +44,7 @@ struct DozeHeaderView: View {
     private var buttonTitle: String {
         let calendar = Calendar.current
         let today = calendar.startOfDay(for: Date())
-//        return calendar.isDate(currentDate, inSameDayAs: today) ? String(localized:"dateButtonTitle.today") : currentDate.formatted(date: .abbreviated, time: .omitted)  //TBDz format
-//
+
         if calendar.isDate(currentDate, inSameDayAs: today) {
                     return String(localized: "dateButtonTitle.today")
                 } else {
@@ -67,18 +66,32 @@ struct DozeHeaderView: View {
         .tint(.brandGreen)
         .padding(5)
 //        
-//           HStack {
-//            Text("doze_entry_header")
-//            Spacer()
-//           // Text("4/24") // TBDz, NYI
-//            Text("\(dozeDailyStateCount)/24")
-//            //Text("\(dozeDailyStateCount)/\(DozeEntryViewModel.rowTypeArray.reduce(0) { $0 + $1.goalServings })")
-//            Image("ic_stat")
-//        }
-//        .padding(10)
+
     }
 }
 
-//#Preview {
-//    DozeHeaderView(isShowingSheet: true, currentDate: Date())
-//}
+#Preview {
+    @Previewable @State var isShowing = true
+    DozeHeaderView(isShowingSheet: $isShowing, currentDate: Date())
+}
+
+//TBDZ:  Check this layout later:
+//Button(action: {
+//print("DozeHeaderView button tapped, isShowingSheet: \(isShowingSheet) -> \(!isShowingSheet)")
+//isShowingSheet.toggle()
+//}, label: {
+//Text(buttonTitle)
+//    .frame(maxWidth: .infinity)
+//    .padding()
+//    .background(Color.brandGreen.opacity(0.2))
+//    .foregroundColor(.brandGreen)
+//    .cornerRadius(8)
+//    .overlay(
+//        RoundedRectangle(cornerRadius: 8)
+//            .stroke(Color.brandGreen, lineWidth: 1)
+//    )
+//})
+//.buttonStyle(.plain) // Avoid default styling issues
+//.padding(.horizontal, 10)
+//.padding(.vertical, 5)
+//.background(Color.gray.opacity(0.1)) // Debug: Highlight view bounds

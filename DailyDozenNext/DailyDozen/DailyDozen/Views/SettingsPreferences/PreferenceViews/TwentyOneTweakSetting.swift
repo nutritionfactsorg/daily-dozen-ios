@@ -30,7 +30,7 @@ struct TwentyOneTweakSetting: View {
                         Text($0)
                     }
                 } .pickerStyle(.segmented)
-                    .onChange(of: selectedTweakVisibilityControl) { newValue in
+                    .onChange(of: selectedTweakVisibilityControl) { _, newValue in
                     if let index = tweakVisibilityControl.firstIndex(of: newValue) {
                       
                         saveTweakChangeState(index: index)

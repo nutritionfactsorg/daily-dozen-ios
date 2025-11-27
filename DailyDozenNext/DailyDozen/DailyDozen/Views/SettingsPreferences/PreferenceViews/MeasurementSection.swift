@@ -80,7 +80,7 @@ struct MeasurementSection: View {
                 }
             } .pickerStyle(.segmented)
               .padding(10)
-              .onChange(of: selectedMesurementUnits) { newValue in
+              .onChange(of: selectedMesurementUnits) { _, newValue in
                     if let index = unitsSegment.firstIndex(of: newValue) {
                 
                         saveUnitsTypePref(index: index)

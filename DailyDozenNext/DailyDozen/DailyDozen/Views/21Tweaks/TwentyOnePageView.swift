@@ -56,87 +56,87 @@ struct TwentyOnePageView: View {
     var body: some View {
         VStack {
             HStack {
-                    Text("tweak_entry_header")
-                    Spacer()
-                    if showStarImage {
-                        Image("ic_star")
-                        
-                    }
-                    // Text("4/24") // TBDz, NYI
-                    Text("\(tweakStateCount)/\(tweakStateCountMaximum)")
-                    //Text("\(dozeDailyStateCount)/\(DozeEntryViewModel.rowTypeArray.reduce(0) { $0 + $1.goalServings })")
-                    //                NavigationLink(destination:   TBDz"  NYI Need link info DozeServingsHistoryView(trackers: fetchSQLData())) {
-                    //                    Image("ic_stat")
-                    //                }
+                Text("tweak_entry_header")
+                Spacer()
+                if showStarImage {
+                    Image("ic_star")
                     
                 }
+                // Text("4/24") // TBDz, NYI
+                Text("\(tweakStateCount)/\(tweakStateCountMaximum)")
+                //Text("\(dozeDailyStateCount)/\(DozeEntryViewModel.rowTypeArray.reduce(0) { $0 + $1.goalServings })")
+                //                NavigationLink(destination:   TBDz"  NYI Need link info DozeServingsHistoryView(trackers: fetchSQLData())) {
+                //                    Image("ic_stat")
+                //                }
                 
-                .padding(10)
-                ScrollView {
-                    VStack {
-                        //  Text(date, style: .date)
-                        ForEach(regularItems, id: \.self) { item in
-                            TwentyOneTweaksEntryRowView(
-                                item: item,
-                                record: record,
-                                date: date,
-                                onCheck: { count in
-                                    var updatedRecord = record ?? SqlDailyTracker(date: date.startOfDay)
-                                    if item != .tweakWeightTwice {
-                                        var countRecord = updatedRecord.itemsDict[item] ?? SqlDataCountRecord(
-                                            date: date.startOfDay,
-                                            countType: item,
-                                            count: 0,
-                                            streak: updatedRecord.itemsDict[item]?.datacount_streak ?? 0
-                                        )
-                                        countRecord.datacount_count = count
-                                        updatedRecord.itemsDict[item] = countRecord
-                                        updateMockDB(with: updatedRecord)
-                                    }
-                                    //updateMockDB(with: updatedRecord)
-                                    if let index = records.firstIndex(where: { Calendar.current.isDate($0.date, inSameDayAs: date.startOfDay) }) {
-                                        records[index] = updatedRecord
-                                    } else {
-                                        records.append(updatedRecord)
-                                    }
-                                    record = updatedRecord
-                                   // mockDBUpdateTrigger += 1 // Trigger child views to sync
-                                    print("Updated record for \(date.datestampSid): \(item.headingDisplay) count \(count)")
+            }
+            
+            .padding(10)
+            ScrollView {
+                VStack {
+                    //  Text(date, style: .date)
+                    ForEach(regularItems, id: \.self) { item in
+                        TwentyOneTweaksEntryRowView(
+                            item: item,
+                            record: record,
+                            date: date,
+                            onCheck: { count in
+                                var updatedRecord = record ?? SqlDailyTracker(date: date.startOfDay)
+                                if item != .tweakWeightTwice {
+                                    var countRecord = updatedRecord.itemsDict[item] ?? SqlDataCountRecord(
+                                        date: date.startOfDay,
+                                        countType: item,
+                                        count: 0,
+                                        streak: updatedRecord.itemsDict[item]?.datacount_streak ?? 0
+                                    )
+                                    countRecord.datacount_count = count
+                                    updatedRecord.itemsDict[item] = countRecord
+                                    updateMockDB(with: updatedRecord)
                                 }
-                            )
-                        } //ForEach regular
-                        
-                    } //VStack
-                }
-                .onAppear {
-                    syncRecordWithMockDB()
-                    print("TwentyOnePageView appeared, date: \(date.datestampSid), record: \(record?.date.datestampSid ?? "nil")")
-                }
-//                .onChange(of: mockDBUpdateTrigger) { _, _ in
-//                                syncRecordWithMockDB()
-//                                print("Record updated due to mockDBUpdateTrigger for \(date.datestampSid)")
-//                 }
-//                            .onChange(of: navigateToWeightEntry) { _, isActive in
-//                                if !isActive {
-//                                    if let updatedTracker = mockDB.first(where: { Calendar.current.isDate($0.date, inSameDayAs: date.startOfDay) }) {
-//                                        if let index = records.firstIndex(where: { Calendar.current.isDate($0.date, inSameDayAs: date.startOfDay) }) {
-//                                            records[index] = updatedTracker
-//                                        } else {
-//                                            records.append(updatedTracker)
-//                                        }
-//                                        record = updatedTracker
-//                                        print("Updated record from mockDB after WeightEntryView for \(date.datestampSid)")
-//                                    }
-//                                }
-//                            }
-//                .onChange(of: records) { _, newRecords in
-//                                if let updatedRecord = newRecords.first(where: { Calendar.current.isDate($0.date, inSameDayAs: date.startOfDay) }) {
-//                                    record = updatedRecord
-//                                    print("Updated record for \(date.datestampSid) from records change")
-//                                }
-//                            }
-                        }
+                                //updateMockDB(with: updatedRecord)
+                                if let index = records.firstIndex(where: { Calendar.current.isDate($0.date, inSameDayAs: date.startOfDay) }) {
+                                    records[index] = updatedRecord
+                                } else {
+                                    records.append(updatedRecord)
+                                }
+                                record = updatedRecord
+                                // mockDBUpdateTrigger += 1 // Trigger child views to sync
+                                //  print("Updated record for \(date.datestampSid): \(item.headingDisplay) count \(count)")
+                            }
+                        )
+                    } //ForEach regular
+                    
+                } //VStack
+            }
+            .onAppear {
+                syncRecordWithMockDB()
+                //  print("TwentyOnePageView appeared, date: \(date.datestampSid), record: \(record?.date.datestampSid ?? "nil")")
+            }
+            //                .onChange(of: mockDBUpdateTrigger) { _, _ in
+            //                                syncRecordWithMockDB()
+            //                                print("Record updated due to mockDBUpdateTrigger for \(date.datestampSid)")
+            //                 }
+            //                            .onChange(of: navigateToWeightEntry) { _, isActive in
+            //                                if !isActive {
+            //                                    if let updatedTracker = mockDB.first(where: { Calendar.current.isDate($0.date, inSameDayAs: date.startOfDay) }) {
+            //                                        if let index = records.firstIndex(where: { Calendar.current.isDate($0.date, inSameDayAs: date.startOfDay) }) {
+            //                                            records[index] = updatedTracker
+            //                                        } else {
+            //                                            records.append(updatedTracker)
+            //                                        }
+            //                                        record = updatedTracker
+            //                                        print("Updated record from mockDB after WeightEntryView for \(date.datestampSid)")
+            //                                    }
+            //                                }
+            //                            }
+            //                .onChange(of: records) { _, newRecords in
+            //                                if let updatedRecord = newRecords.first(where: { Calendar.current.isDate($0.date, inSameDayAs: date.startOfDay) }) {
+            //                                    record = updatedRecord
+            //                                    print("Updated record for \(date.datestampSid) from records change")
+            //                                }
+            //                            }
         }
+    }
     
 }
 

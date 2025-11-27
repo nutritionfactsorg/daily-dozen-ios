@@ -9,6 +9,9 @@ import SwiftUI
 import HealthKit
 
 struct TwentyOneTweaksTabView: View {
+    @State private var showHealthKitError = false // Controls whether the alert is shown
+    @State private var healthKitErrorMessage = "" // Stores the error message for the alert
+
     var streakCount = 3000 // NYI Calulation on how to calculate streek -- just a placeholder for now
     @State private var records: [SqlDailyTracker] = fetchSQLData()
     // @State private var records: [SqlDailyTracker] = []
@@ -17,26 +20,31 @@ struct TwentyOneTweaksTabView: View {
     @State private var selectedDate = Date()
     @State private var currentIndex = 0
     @State private var dateRange: [Date] = []
-   // @State private var navigateToWeightEntry = false
-   // @State private var dozeDailyStateCount: Int = 0
-  //  @State private var mockDBUpdateTrigger: Int = 0 // Trigger for mockDB updates
+  
     let direction: Direction = .leftToRight
     
-    func checkHealthAvail() {  //TBDz: Is this really done elsewhere?
-        if HKHealthStore.isHealthDataAvailable() {
-            // add code to use HealthKit here...
-            logit.debug("Yes, HealthKit is Available")
-            let healthManager = HealthManager()
-            healthManager.requestPermissions()
-        } else {
-            logit.debug("There is a problem accessing HealthKit")
-        }
-        
-//        NotificationCenter.default.addObserver(
-//            self,
-//            selector: #selector(changedWeight(notification:)),
-//            name: Notification.Name(rawValue: "NoticeChangedWeight"),
-//            object: nil)
+    private func checkHealthAvail() {
+            if HKHealthStore.isHealthDataAvailable() {
+                logit.debug("Yes, HealthKit is Available")
+                Task {
+                    if await HealthManager.shared.isAuthorized() {
+                        logit.debug("•HK• Already authorized, skipping permission request")
+                        return
+                    }
+                    do {
+                        try await HealthManager.shared.requestPermissions()
+                        logit.debug("•HK• HealthKit permissions granted")
+                    } catch {
+                        logit.error("•HK• HealthKit permission error: \(error.localizedDescription)")
+                        showHealthKitError = true
+                        healthKitErrorMessage = error.localizedDescription
+                    }
+                }
+            } else {
+                logit.debug("There is a problem accessing HealthKit")
+                showHealthKitError = true
+                healthKitErrorMessage = "HealthKit is not available on this device"
+            }
     }
     
     private func recordForDate(_ date: Date) -> SqlDailyTracker? {
@@ -148,10 +156,10 @@ struct TwentyOneTweaksTabView: View {
                         Spacer()
                     }//VStack
                     
-                   DozeBackToTodayButtonView(isToday: isToday, action: goToToday)
+                    DozeBackToTodayButtonView(isToday: isToday, action: goToToday)
                         .padding(.bottom, 0) // Remove bottom padding
                         .background(
-                             Color.white
+                            Color.white
                                 .ignoresSafeArea(edges: .bottom)  )
                        // .safeAreaInset(edge: .bottom) { // Ensure button stays above tab bar
                           //  Color.clear // Placeholder to respect safe area
@@ -181,10 +189,15 @@ struct TwentyOneTweaksTabView: View {
                 .toolbarBackground(.brandGreen, for: .navigationBar)
             }
             
-            .onAppear {
-                checkHealthAvail()
-               // records = fetchSQLData() // Initial load
-            }
+        .task {
+                    checkHealthAvail()
+                }
+        //TBDZ not sure this is needed
+        .alert("HealthKit Error", isPresented: $showHealthKitError) {
+                    Button("OK") { }
+                } message: {
+                    Text(healthKitErrorMessage)
+                }
         }
     
 }

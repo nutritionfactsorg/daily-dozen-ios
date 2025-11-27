@@ -76,7 +76,7 @@ func createSqlTracker(date: Date) -> SqlDailyTracker {
         kg: 59,
         )
     
-    tracker.weightPM = SqlDataWeightRecord(date: date, weightType: DataWeightType.am, kg: 59, timeHHmm:  "18:30")
+    tracker.weightPM = SqlDataWeightRecord(date: date, weightType: DataWeightType.am, kg: 59, timeHHmm: "18:30")
     
     //weightAM: SqlDataWeightRecord(datestampSid: "2025-07-06", typeKey: "am", kilograms: "40.92", timeHHmm: "08:30"),
     
@@ -102,7 +102,7 @@ func fetchSQLData(date: Date = Date()) -> [SqlDailyTracker] {
 func appendToMockDB(_ tracker: SqlDailyTracker) {
     mockDB.append(tracker)
     //print("mockDB updated: \(mockDB)") // Debug to confirm
-    print("mockDB updated")
+   // print("mockDB updated")
 }
 
 func updateMockDB(with tracker: SqlDailyTracker) {
@@ -111,12 +111,12 @@ func updateMockDB(with tracker: SqlDailyTracker) {
         // Update existing record
         mockDB[index] = tracker
         // print("mockDB updated existing record for date \(tracker.date): \(mockDB[index])")
-        print("mockDB updated existing record for date \(tracker.date):")
+      //  print("mockDB updated existing record for date \(tracker.date):")
     } else {
         // Append new record
         mockDB.append(tracker)
         // print("mockDB appended new record: \(mockDB)")
-        print("mockDB appended new record")
+       // print("mockDB appended new record")
     }
     
 }
@@ -424,8 +424,8 @@ var mockDB: [SqlDailyTracker] =  [
             DataCountType.dozeBerries: SqlDataCountRecord(datacount_date_psid: "2025-06-25", datacount_kind_pfnid: 2, datacount_count: 1, datacount_streak: 1)!,
             DataCountType.dozeBeverages: SqlDataCountRecord(datacount_date_psid: "2025-06-25", datacount_kind_pfnid: 11, datacount_count: 2, datacount_streak: 1)!
         ],
-        weightAM: SqlDataWeightRecord(date: Date(), weightType: .am, kg: 50.82),
-        weightPM: SqlDataWeightRecord(date: Date(), weightType: .pm, kg: 49.0)
+        weightAM: SqlDataWeightRecord(date: Calendar.current.date(from: DateComponents(year: 2025, month: 6, day: 25))!, weightType: .am, kg: 74, timeHHmm: "03:30"),
+        weightPM: SqlDataWeightRecord(date: Calendar.current.date(from: DateComponents(year: 2025, month: 6, day: 25))!, weightType: .am, kg: 73, timeHHmm: "20:30")
     ),
     SqlDailyTracker(
         date: Calendar.current.date(from: DateComponents(year: 2025, month: 7, day: 1))!,
@@ -434,7 +434,7 @@ var mockDB: [SqlDailyTracker] =  [
             DataCountType.dozeBerries: SqlDataCountRecord(datacount_date_psid: "2025-07-01", datacount_kind_pfnid: 2, datacount_count: 1, datacount_streak: 1)!,
             DataCountType.dozeBeverages: SqlDataCountRecord(datacount_date_psid: "2025-07-01", datacount_kind_pfnid: 11, datacount_count: 2, datacount_streak: 1)!
         ],
-        weightAM: SqlDataWeightRecord(date: Calendar.current.date(from: DateComponents(year: 2025, month: 7, day: 1))! , weightType: .am, kg: 73, timeHHmm: "03:30"),
+        weightAM: SqlDataWeightRecord(date: Calendar.current.date(from: DateComponents(year: 2025, month: 7, day: 1))!, weightType: .am, kg: 73, timeHHmm: "03:30"),
         weightPM: SqlDataWeightRecord(date: Calendar.current.date(from: DateComponents(year: 2025, month: 7, day: 1))!, weightType: .am, kg: 72, timeHHmm: "20:30")
 //        weightAM: SqlDataWeightRecord(datestampSid: "2025-07-06", typeKey: "am", kilograms: "40.92", timeHHmm: "08:30"),
 //        weightPM: SqlDataWeightRecord(datestampSid: "2025-07-06", typeKey: "pm", kilograms: "41.20", timeHHmm: "20:35"),

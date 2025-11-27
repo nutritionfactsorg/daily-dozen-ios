@@ -7,7 +7,7 @@
 
 import Foundation
 
-public enum DataWeightType: String {
+public enum DataWeightType: String, Sendable {
     
     case am
     case pm
