@@ -80,5 +80,5 @@ struct DozeHeaderView: View {
 }
 
 //#Preview {
-//    DozeHeaderView(isShowingSheet: true)
+//    DozeHeaderView(isShowingSheet: true, currentDate: Date())
 //}

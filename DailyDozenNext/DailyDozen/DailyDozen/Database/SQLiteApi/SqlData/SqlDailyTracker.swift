@@ -16,30 +16,37 @@ struct SqlDailyTracker {
     var weightAM: SqlDataWeightRecord
     var weightPM: SqlDataWeightRecord
     
-    init(date: Date) {
+    init(date: Date, amTimeHHmm: String? = nil, pmTimeHHmm: String? = nil) {
         self.date = date
         
         itemsDict = [DataCountType: SqlDataCountRecord]()
         for dataCountType in DataCountType.allCases {
             itemsDict[dataCountType] = SqlDataCountRecord(date: date, countType: dataCountType)
         }
-        self.weightAM = SqlDataWeightRecord(date: date, weightType: .am, kg: 0.0)
-        self.weightPM = SqlDataWeightRecord(date: date, weightType: .pm, kg: 0.0)
+        self.weightAM = SqlDataWeightRecord(date: date, weightType: .am, kg: 0.0, timeHHmm: amTimeHHmm ?? Date().datestampHHmm)
+        self.weightPM = SqlDataWeightRecord(date: date, weightType: .pm, kg: 0.0, timeHHmm: pmTimeHHmm ?? Date().datestampHHmm)
+           
     }
-    
+    //Pre-Version 4 need to check if there's something lost in updated init
+//    init(date: Date, itemsDict: [DataCountType: SqlDataCountRecord], weightAM: SqlDataWeightRecord? = nil, weightPM: SqlDataWeightRecord? = nil) {
+//        var a = SqlDailyTracker(date: date)
+//        for (key, value) in itemsDict {
+//            a.itemsDict[key] = value
+//        }
+//        if let weightAM {
+//            a.weightAM = weightAM
+//        }
+//        if let weightPM {
+//            a.weightPM = weightPM
+//        }
+//        self = a
+//    }
     init(date: Date, itemsDict: [DataCountType: SqlDataCountRecord], weightAM: SqlDataWeightRecord? = nil, weightPM: SqlDataWeightRecord? = nil) {
-        var a = SqlDailyTracker(date: date)
-        for (key, value) in itemsDict {
-            a.itemsDict[key] = value
-        }
-        if let weightAM {
-            a.weightAM = weightAM
-        }
-        if let weightPM {
-            a.weightPM = weightPM
-        }
-        self = a
-    }
+           self.date = date
+           self.itemsDict = itemsDict
+           self.weightAM = weightAM ?? SqlDataWeightRecord(date: date, weightType: .am, kg: 0.0, timeHHmm: Date().datestampHHmm)
+           self.weightPM = weightPM ?? SqlDataWeightRecord(date: date, weightType: .pm, kg: 0.0, timeHHmm: Date().datestampHHmm)
+       }
     
     //init added for development early stages
 //    

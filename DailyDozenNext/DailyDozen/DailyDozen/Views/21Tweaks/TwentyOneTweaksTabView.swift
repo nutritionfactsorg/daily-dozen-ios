@@ -19,7 +19,7 @@ struct TwentyOneTweaksTabView: View {
     @State private var dateRange: [Date] = []
    // @State private var navigateToWeightEntry = false
    // @State private var dozeDailyStateCount: Int = 0
-    
+  //  @State private var mockDBUpdateTrigger: Int = 0 // Trigger for mockDB updates
     let direction: Direction = .leftToRight
     
     func checkHealthAvail() {  //TBDz: Is this really done elsewhere?
@@ -138,6 +138,11 @@ struct TwentyOneTweaksTabView: View {
                         .onChange(of: currentIndex) { _, newIndex in
                             selectedDate = dateRange[newIndex]
                             extendDateRangeIfNeeded(for: newIndex)
+                            // Refresh records from mockDB
+                            records = fetchSQLData()
+                          //  mockDBUpdateTrigger += 1 // Trigger child views to sync
+//                            print("Updated records for index \(newIndex), date: \(dateRange[newIndex].datestampSid), records count: \(records.count)")
+//                            print("mockDB contents: \(mockDB.map { ($0.date.datestampSid, $0.weightAM.dataweight_kg, $0.weightPM.dataweight_kg, $0.itemsDict.map { ($1.key.headingDisplay, $1.value.datacount_count) }) })")
                         } //onChange
                         //Spacer to push content up if needed
                         Spacer()
@@ -166,6 +171,8 @@ struct TwentyOneTweaksTabView: View {
                 .onAppear {
                     extendDateRangeIfNeeded(for: currentIndex)
                    // records = fetchSQLData()  duplicate data?
+                    records = fetchSQLData()
+                 //   print("TwentyOneTweaksTabView appeared, records count: \(records.count)")
                 }
                 .navigationTitle(Text("navtab.tweaks")) //!!Needs localization comment
                 .navigationBarTitleDisplayMode(.inline)
@@ -176,6 +183,7 @@ struct TwentyOneTweaksTabView: View {
             
             .onAppear {
                 checkHealthAvail()
+               // records = fetchSQLData() // Initial load
             }
         }
     

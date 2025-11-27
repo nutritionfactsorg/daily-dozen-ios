@@ -367,5 +367,18 @@ extension Date {
 //        }
 //        return matchingDates
 //    }
-    
+    // MARK: - Version 4.x Additions
+    init?(datestampHHmm: String, referenceDate: Date) {
+            let formatter = DateFormatter()
+            formatter.dateFormat = "HH:mm"
+            guard let timeComponents = formatter.date(from: datestampHHmm) else { return nil }
+            
+            let calendar = Calendar.current
+            let time = calendar.dateComponents([.hour, .minute], from: timeComponents)
+            var components = calendar.dateComponents([.year, .month, .day], from: referenceDate)
+            components.hour = time.hour
+            components.minute = time.minute
+            guard let date = calendar.date(from: components) else { return nil }
+            self = date
+        }
 }

@@ -15,39 +15,50 @@ struct PendingWeight {
 import SwiftUI
 //TBDz this page needs localization
 struct WeightEntryView: View {
-    @StateObject private var viewModel = WeightEntryViewModel()
-   // @State private var currentDate: Date = Date().startOfDay
-    
+    @StateObject private var viewModel: WeightEntryViewModel
     @State private var currentDate: Date
     @Environment(\.dismiss) private var dismiss
     @State private var pendingWeights: [String: PendingWeight] = [:]
-       
-    init(initialDate: Date, viewModel: WeightEntryViewModel = WeightEntryViewModel()) {
-            self._viewModel = StateObject(wrappedValue: viewModel)
-            self._currentDate = State(initialValue: initialDate.startOfDay)
-        }
     
+    init(initialDate: Date, viewModel: WeightEntryViewModel = WeightEntryViewModel()) {
+        self._viewModel = StateObject(wrappedValue: viewModel)
+        self._currentDate = State(initialValue: initialDate.startOfDay)
+    }
+    
+    //TBDz:  determine if saving only to one decimal?  I think not?
     private func savePendingWeights() {
-            for (dateSid, weights) in pendingWeights {
-                let amValue = Double(weights.amWeight)
-                let pmValue = Double(weights.pmWeight)
-                if amValue != nil || pmValue != nil {
-                    guard let date = Date(datestampSid: dateSid) else {
-                        print("Invalid dateSid: \(dateSid), skipping save")
-                        continue
-                    }
-                    viewModel.saveWeight(
-                        for: date,
-                        amWeight: amValue,
-                        pmWeight: pmValue,
-                        amTime: weights.amTime,
-                        pmTime: weights.pmTime
-                    )
-                    print("Saved pending weights for \(dateSid)")
+        print("savePendingWeights called with: \(pendingWeights.map { ($0.key, $0.value.amWeight, $0.value.pmWeight) })")
+        for (dateSid, weights) in pendingWeights {
+           // let amValue = Double(weights.amWeight.filter { !$0.isWhitespace })
+            //let pmValue = Double(weights.pmWeight.filter { !$0.isWhitespace })
+            let amValue = Double(weights.amWeight.filter { !$0.isWhitespace }).map { String(format: "%.1f", $0) }
+            let pmValue = Double(weights.pmWeight.filter { !$0.isWhitespace }).map { String(format: "%.1f", $0) }
+            print("Processing \(dateSid): AM \(String(describing: amValue)), PM \(String(describing: pmValue))")
+            if (amValue != nil && Double(amValue!)! >= 0) || (pmValue != nil && Double(pmValue!)! >= 0) {
+                guard let date = Date(datestampSid: dateSid) else {
+//            if (amValue != nil && amValue! >= 0) || (pmValue != nil && pmValue! >= 0) {
+//                guard let date = Date(datestampSid: dateSid) else {
+                    print("Invalid dateSid: \(dateSid), skipping save")
+                    continue
                 }
+                viewModel.saveWeight(
+                    for: date,
+                   // amWeight: amValue,
+                   // pmWeight: pmValue,
+                    amWeight: amValue.flatMap { Double($0) },
+                    pmWeight: pmValue.flatMap { Double($0) },
+                    amTime: weights.amTime,
+                    pmTime: weights.pmTime
+                )
+                print("Called saveWeight for \(dateSid)")
+            } else {
+                print("No valid weights for \(dateSid), skipping")
             }
         }
-
+        pendingWeights.removeAll() // Clear to prevent duplicate saves
+        print("Cleared pendingWeights after save")
+    }
+  
     var body: some View {
         NavigationStack {
             TabView(selection: $currentDate) {
@@ -59,27 +70,35 @@ struct WeightEntryView: View {
             }
             .tabViewStyle(.page(indexDisplayMode: .never))
             .onChange(of: currentDate) { _, newDate in
+                print("Date changed to: \(newDate.datestampSid)")
                 savePendingWeights()
                 if newDate > Date().startOfDay {
                     currentDate = Date().startOfDay
                 }
-                print("WeightEntryView changed to date: \(newDate.datestampSid)")
             }
             .navigationTitle("Weight")
+            .navigationBarBackButtonHidden(true) // Hide default back button
             .toolbar {
-                ToolbarItem(placement: .navigationBarLeading) {
-                      Button("Back") {
-                          savePendingWeights()
-                         dismiss()
-                                    }
-                                }
-                ToolbarItem(placement: .navigationBarTrailing) {
-                    Button(action: {
+                ToolbarItem(placement: .topBarLeading) {
+                    Button("Back") {
+                        print("Back button tapped")
                         savePendingWeights()
-                        currentDate = Date().startOfDay }) {
+                        dismiss()
+                    }
+                }
+                ToolbarItem(placement: .topBarTrailing) {
+                    Button(action: {
+                        print("Today button tapped")
+                        savePendingWeights()
+                        currentDate = Date().startOfDay
+                    }) {
                         Text("Today")
                     }
                 }
+            }
+            .onDisappear {
+                print("WeightEntryView dismissed")
+                savePendingWeights()
             }
         }
     }
@@ -98,43 +117,71 @@ struct WeightEntryPage: View {
     
     var body: some View {
         VStack(spacing: 0) {
-            // Banner-like date display
             Text("Date: \(date.datestampSid)")
                 .font(.headline)
                 .padding()
                 .frame(maxWidth: .infinity)
-                .background(.brandGreen) //TBDz need to make green
+                .background(Color.brandGreen) 
                 .border(Color.gray, width: 1)
-                .padding(.horizontal)
-            //TBDz this form and page needs localization
+                .frame(width: 300, height: 30, alignment: .center)
+                
             Form {
                 Section(header: Text("Morning Weight (AM)")) {
                     TextField("Weight (\(unitType == .metric ? "kg" : "lbs"))", text: $amWeight)
                         .keyboardType(.decimalPad)
                         .textFieldStyle(.roundedBorder)
-                    onSubmit {
-                        if let value = Double(amWeight), value >= 0 {
-                            amWeight = String(format: "%.1f", value)
-                         } else {
-                             amWeight = ""
-                                  }
+                        .padding(.horizontal)
+                        .onChange(of: amWeight) { _, newValue in
+                            // Validate and format input
+                            if let value = Double(newValue.filter { !$0.isWhitespace }), value >= 0 {
+                                amWeight = newValue
+                            } else if !newValue.isEmpty {
+                                amWeight = "" // Clear invalid input
                             }
+                            updatePendingWeights()
+                        }
+//                        .onSubmit {
+//                            if let value = Double(amWeight), value >= 0 {
+//                                amWeight = String(format: "%.1f", value)
+//                            } else {
+//                                amWeight = ""
+//                            }
+//                            updatePendingWeights()
+//                        }
                     DatePicker("Time", selection: $amTime, displayedComponents: .hourAndMinute)
-                        .onChange(of: amTime) { _ in saveWeights() }
+                        .padding(.horizontal)
+                        .onChange(of: amTime) { _, _ in
+                            updatePendingWeights()
+                                                }
                 }
                 Section(header: Text("Evening Weight (PM)")) {
                     TextField("Weight (\(unitType == .metric ? "kg" : "lbs"))", text: $pmWeight)
                         .keyboardType(.decimalPad)
                         .textFieldStyle(.roundedBorder)
-                        .onSubmit {
-                             if let value = Double(pmWeight), value >= 0 {
-                                      pmWeight = String(format: "%.1f", value)
-                              } else {
-                                      pmWeight = ""
-                                   }
-                          }
+                        .padding(.horizontal)
+//                        .onSubmit {
+//                            if let value = Double(pmWeight), value >= 0 {
+//                                pmWeight = String(format: "%.1f", value)
+//                            } else {
+//                                pmWeight = ""
+//                            }
+//                            updatePendingWeights()
+//                        }
+                        .onChange(of: pmWeight) { _, newValue in
+                            // Validate and format input
+                            if let value = Double(newValue.filter { !$0.isWhitespace }), value >= 0 {
+                                pmWeight = newValue
+                            } else if !newValue.isEmpty {
+                                pmWeight = "" // Clear invalid input
+                            }
+                            updatePendingWeights()
+                        }
                     DatePicker("Time", selection: $pmTime, displayedComponents: .hourAndMinute)
-                        .onChange(of: pmTime) { _ in saveWeights() }
+                        .padding(.horizontal)
+                        .onChange(of: pmTime) { _, _ in
+                               updatePendingWeights()
+                      }
+
                 }
             }
         }
@@ -142,47 +189,48 @@ struct WeightEntryPage: View {
             loadWeights()
             unitType = .fromUserDefaults()
             print("WeightEntryPage appeared for date: \(date.datestampSid), AM: \(amWeight), PM: \(pmWeight)")
-                   
         }
-        .onChange(of: amWeight) {
-                    updatePendingWeights()
-                }
-                .onChange(of: pmWeight) {
-                    updatePendingWeights()
-                }
-                .onChange(of: amTime) {
-                    updatePendingWeights()
-                }
-                .onChange(of: pmTime) {
-                    updatePendingWeights()
-                }
-                .onChange(of: unitType) {
-                    loadWeights()
-                }
-        
+        .onChange(of: unitType) { _ in
+            loadWeights()
+        }
     }
     
     private func loadWeights() {
-        let tracker = viewModel.tracker(for: date)
-        let unitType = UnitType.fromUserDefaults()
-        
-        amWeight = tracker.weightAM.dataweight_kg > 0 ? (unitType == .metric ? tracker.weightAM.kgStr : tracker.weightAM.lbsStr) : ""
-        pmWeight = tracker.weightPM.dataweight_kg > 0 ? (unitType == .metric ? tracker.weightPM.kgStr : tracker.weightPM.lbsStr) : ""
-        
-        amTime = tracker.weightAM.datetime ?? Date()
-        pmTime = tracker.weightPM.datetime ?? Date()
-    }
-    
-   // Converts user input (amWeight and pmWeight strings) to Double and calls viewModel.saveWeight to persist the data.
-    private func saveWeights() {
-        let amValue = Double(amWeight)
-        let pmValue = Double(pmWeight)
-        print("Saving AM: \(String(describing: amValue)), PM: \(String(describing: pmValue)), Unit: \(unitType.rawValue)")
-        viewModel.saveWeight(for: date, amWeight: amValue, pmWeight: pmValue, amTime: amTime, pmTime: pmTime)
-        print("Saved AM/PM")
-    }
+            let tracker = viewModel.tracker(for: date)
+            let unitType = UnitType.fromUserDefaults()
+            
+            amWeight = tracker.weightAM.dataweight_kg > 0 ? String(format: "%.1f", unitType == .metric ? tracker.weightAM.dataweight_kg : tracker.weightAM.dataweight_kg * 2.204623) : ""
+            pmWeight = tracker.weightPM.dataweight_kg > 0 ? String(format: "%.1f", unitType == .metric ? tracker.weightPM.dataweight_kg : tracker.weightPM.dataweight_kg * 2.204623) : ""
+            
+            // Parse time with reference date
+            let calendar = Calendar.current
+            var components = calendar.dateComponents([.year, .month, .day], from: date)
+            
+            if tracker.weightAM.dataweight_time.isEmpty {
+                amTime = Date()
+            } else if let timeDate = Date(datestampHHmm: tracker.weightAM.dataweight_time, referenceDate: date) {
+                amTime = timeDate
+            } else {
+                amTime = Date()
+                print("Failed to parse AM time: \(tracker.weightAM.dataweight_time)")
+            }
+            
+            if tracker.weightPM.dataweight_time.isEmpty {
+                pmTime = Date()
+            } else if let timeDate = Date(datestampHHmm: tracker.weightPM.dataweight_time, referenceDate: date) {
+                pmTime = timeDate
+            } else {
+                pmTime = Date()
+                print("Failed to parse PM time: \(tracker.weightPM.dataweight_time)")
+            }
+            
+            updatePendingWeights()
+            print("Loaded weights for \(date.datestampSid): AM \(amWeight), PM \(pmWeight), AM Time \(amTime.formatted(date: .omitted, time: .shortened)), PM Time \(pmTime.formatted(date: .omitted, time: .shortened))")
+        }
     
     private func updatePendingWeights() {
+        print("Entered updatePendingWeights")
+        if !amWeight.isEmpty || !pmWeight.isEmpty {
             pendingWeights[date.datestampSid] = PendingWeight(
                 amWeight: amWeight,
                 pmWeight: pmWeight,
@@ -190,7 +238,11 @@ struct WeightEntryPage: View {
                 pmTime: pmTime
             )
             print("Updated pending weights for \(date.datestampSid): AM \(amWeight), PM \(pmWeight)")
+        } else {
+            pendingWeights.removeValue(forKey: date.datestampSid)
+            print("Removed pending weights for \(date.datestampSid): no valid inputs")
         }
+    }
 }
 // Preview
 struct WeightEntryView_Previews: PreviewProvider {

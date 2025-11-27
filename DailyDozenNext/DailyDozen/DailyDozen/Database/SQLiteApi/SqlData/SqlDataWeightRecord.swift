@@ -171,5 +171,12 @@ public struct SqlDataWeightRecord: Codable {
     }
     
     // MARK: - Data Presentation Methods
+    // MARK: - Version 4.x Additions
     
+    public init(date: Date, weightType: DataWeightType, kg: Double, timeHHmm: String? = nil) {
+            self.dataweight_date_psid = date.datestampSid
+            self.dataweight_ampm_pnid = weightType.typeNid
+            self.dataweight_kg = kg
+            self.dataweight_time = timeHHmm ?? date.datestampHHmm
+        }
 }
