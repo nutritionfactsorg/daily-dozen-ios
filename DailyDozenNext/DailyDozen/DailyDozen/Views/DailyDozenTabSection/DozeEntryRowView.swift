@@ -77,9 +77,12 @@ struct DozeEntryRowView: View {
                                         localCount = newCount
                                         onCheck(newCount)
                                     } else {
+                                        
                                         onCheck(newCount)
                                     }
-                                }
+                                },
+                                isDisabled: false,
+                                onTap: nil
                             )
                             
                         }

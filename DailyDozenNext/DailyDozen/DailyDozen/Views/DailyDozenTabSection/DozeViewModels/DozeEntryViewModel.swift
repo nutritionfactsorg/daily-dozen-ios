@@ -105,10 +105,10 @@ class DozeEntryViewModel {
         return DozeEntryViewModel.rowTypeArray[rowIndex].typeKey
     }
 //    
-    func itemPid(rowIndex: Int) -> String {
-        let itemType = DozeEntryViewModel.rowTypeArray[rowIndex]
-        return tracker.getPid(typeKey: itemType)
-    }
+//    func itemPid(rowIndex: Int) -> String {
+//        let itemType = DozeEntryViewModel.rowTypeArray[rowIndex]
+//        return tracker.getPid(typeKey: itemType)
+//    }
 //    
 //    /// Returns an image name for the current index.
 //    ///

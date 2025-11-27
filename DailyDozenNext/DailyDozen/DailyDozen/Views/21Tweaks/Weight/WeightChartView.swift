@@ -29,18 +29,23 @@ struct WeightChartView: View {
     @State private var selectedPeriod: ChartPeriod = .day
     @State private var selectedMonth: Date = Date().startOfMonth
     @State private var selectedYear: Int = Calendar.current.component(.year, from: Date())
+    //@State private var refreshID = UUID()
     
     private var monthsWithData: [Date] {
-        let calendar = Calendar.current
-        let validTrackers = mockDB.filter { $0.weightAM.dataweight_kg > 0 || $0.weightPM.dataweight_kg > 0 }
-        let months = Set(validTrackers.map { calendar.startOfMonth(for: $0.date) })
-        return months.sorted()
-    }
+            let validTrackers = mockDB.filter { $0.weightAM.dataweight_kg > 0 || $0.weightPM.dataweight_kg > 0 }
+            let months = Set(validTrackers.map { gregorianCalendar.startOfMonth(for: $0.date) })
+            return months.sorted()
+        }
     
     private var monthsInSelectedYear: [Date] {
-        let calendar = Calendar.current
-        return monthsWithData.filter { calendar.component(.year, from: $0) == selectedYear }
-    }
+           return monthsWithData.filter { gregorianCalendar.component(.year, from: $0) == selectedYear }
+       }
+    
+    private var gregorianCalendar: Calendar {
+           var calendar = Calendar(identifier: .gregorian)
+           calendar.locale = Locale(identifier: "en")
+           return calendar
+       }
     
     var body: some View {
         NavigationStack {
@@ -75,9 +80,9 @@ struct WeightChartView: View {
                                    currentIndex > 0 {
                                     selectedMonth = monthsInSelectedYear[currentIndex - 1]
                                 } else if let previousYear = monthsWithData
-                                    .filter({ Calendar.current.component(.year, from: $0) < selectedYear })
+                                    .filter({ gregorianCalendar.component(.year, from: $0) < selectedYear })
                                     .max() {
-                                    selectedYear = Calendar.current.component(.year, from: previousYear)
+                                    selectedYear = gregorianCalendar.component(.year, from: previousYear)
                                     selectedMonth = monthsInSelectedYear.last ?? previousYear
                                 }
                             },
@@ -88,9 +93,12 @@ struct WeightChartView: View {
                         )
                         .disabled(monthsWithData.isEmpty)
                         
-                        Text("\(selectedMonth, formatter: monthYearFormatter)")
-                            .font(.headline)
-                            .frame(maxWidth: .infinity)
+//                        Text("\(selectedMonth, formatter: monthYearFormatter)")
+//                            .font(.headline)
+//                            .frame(maxWidth: .infinity)
+                        Text(monthYearText(for: selectedMonth))
+                               .font(.headline)
+                               .frame(maxWidth: .infinity)
                         
                         Button(
                             action: {
@@ -98,9 +106,9 @@ struct WeightChartView: View {
                                    currentIndex < monthsInSelectedYear.count - 1 {
                                     selectedMonth = monthsInSelectedYear[currentIndex + 1]
                                 } else if let nextYear = monthsWithData
-                                    .filter({ Calendar.current.component(.year, from: $0) > selectedYear })
+                                    .filter({ gregorianCalendar.component(.year, from: $0) > selectedYear })
                                     .min() {
-                                    selectedYear = Calendar.current.component(.year, from: nextYear)
+                                    selectedYear = gregorianCalendar.component(.year, from: nextYear)
                                     selectedMonth = monthsInSelectedYear.first ?? nextYear
                                 }
                             },
@@ -136,7 +144,7 @@ struct WeightChartView: View {
                 Spacer()
                 
                 // Edit Data button
-                NavigationLink(destination: WeightEntryView()) {
+                NavigationLink(destination: WeightEntryView(initialDate: Date().startOfDay)) {
                     Text("Edit Data")
                         .font(.headline)
                         .padding()
@@ -152,27 +160,64 @@ struct WeightChartView: View {
         .onAppear {
             if !monthsWithData.contains(selectedMonth), let latest = monthsWithData.last {
                 selectedMonth = latest
-                selectedYear = Calendar.current.component(.year, from: latest)
+                selectedYear = gregorianCalendar.component(.year, from: latest)
             }
         }
     }
+    //TBDz is below function used still?
+//    private var monthYearFormatter: DateFormatter {
+//        let formatter = DateFormatter()
+//        formatter.dateFormat = "MMMM yyyy"
+//        return formatter
+//    }
     
-    private var monthYearFormatter: DateFormatter {
-        let formatter = DateFormatter()
-        formatter.dateFormat = "MMMM yyyy"
-        return formatter
-    }
+    private func monthYearText(for date: Date) -> String {
+            let formatter = DateFormatter()
+            formatter.calendar = Calendar.current // User’s calendar for display
+            formatter.locale = Locale.current // Localized month names
+            formatter.dateFormat = "MMM yyyy"
+            return formatter.string(from: date)
+        }
 }
 
 // Day Chart View
 struct DayChartView: View {
     let selectedMonth: Date
     
-    private var monthYearFormatter: DateFormatter {
-        let formatter = DateFormatter()
-        formatter.dateFormat = "MMM yyyy"
-        return formatter
-    }
+    private var gregorianCalendar: Calendar {
+           var calendar = Calendar(identifier: .gregorian)
+           calendar.locale = Locale(identifier: "en")
+           return calendar
+       }
+    
+//    private var monthYearFormatter: DateFormatter {
+//        let formatter = DateFormatter()
+//        formatter.dateFormat = "MMM yyyy"
+//        return formatter
+//    }
+    
+    private var displayFormatter: DateFormatter {
+            let formatter = DateFormatter()
+            formatter.calendar = Calendar.current // User’s calendar for display
+            formatter.locale = Locale.current
+            formatter.dateFormat = "MMM yyyy"
+            return formatter
+        }
+    
+    //Brute force to test Persian
+//    private var displayFormatter: DateFormatter {
+//        let formatter = DateFormatter()
+//        formatter.calendar = Calendar(identifier: .persian) // Force Persian for testing
+//        formatter.locale = Locale(identifier: "fa")
+//        formatter.dateFormat = "MMMM yyyy"
+//        return formatter
+//    }
+    
+    private var numberFormatter: NumberFormatter {
+            let formatter = NumberFormatter()
+            formatter.locale = Locale.current // Localized numerals (e.g., ۱–۳۱ in Persian)
+            return formatter
+        }
     
     var body: some View {
         let weightData = fetchWeightData(for: selectedMonth)
@@ -192,7 +237,7 @@ struct DayChartView: View {
             VStack(spacing: 12) {
                 Chart(weightData) { dataPoint in
                     LineMark(
-                        x: .value("Day", Calendar.current.component(.day, from: dataPoint.date)),
+                        x: .value("Day", gregorianCalendar.component(.day, from: dataPoint.date)),
                         y: .value("Weight", dataPoint.weight),
                         series: .value("Series", dataPoint.type == .am ? "AM" : "PM")
                     )
@@ -211,8 +256,11 @@ struct DayChartView: View {
                 .chartXAxis {
                     AxisMarks(values: dataDays(weightData)) { value in
                         if let day = value.as(Int.self) {
+//                            AxisValueLabel {
+//                                Text("\(day)")
+//                            }
                             AxisValueLabel {
-                                Text("\(day)")
+                                Text(numberFormatter.string(from: NSNumber(value: day)) ?? "\(day)")
                             }
                             AxisGridLine()
                             AxisTick()
@@ -257,21 +305,21 @@ struct DayChartView: View {
     }
     
     private func fetchWeightData(for month: Date) -> [WeightDataPoint] {
-        let calendar = Calendar.current
+        //let calendar = Calendar.current
         let unitType = UnitType.fromUserDefaults()
         
-        guard let monthRange = calendar.range(of: .day, in: .month, for: month),
-              let monthStart = calendar.date(from: calendar.dateComponents([.year, .month], from: month))
+        guard let monthStart = gregorianCalendar.date(from: gregorianCalendar.dateComponents([.year, .month], from: month))
+           
         else {
-            print("Failed to compute month range or start for \(monthYearFormatter.string(from: month))")
+            print("Failed to compute month range or start for \(displayFormatter.string(from: month))")
             return []
         }
         
         let trackers = mockDB.filter { tracker in
-            calendar.isDate(tracker.date, equalTo: monthStart, toGranularity: .month)
+            gregorianCalendar.isDate(tracker.date, equalTo: monthStart, toGranularity: .month)
         }
         
-        print("Found \(trackers.count) trackers for \(monthYearFormatter.string(from: month))")
+        print("Found \(trackers.count) trackers for \(displayFormatter.string(from: month))")
         
         var dataPoints: [WeightDataPoint] = []
         
@@ -313,19 +361,21 @@ struct DayChartView: View {
     }
     
     private func dataDays(_ dataPoints: [WeightDataPoint]) -> [Int] {
-        let calendar = Calendar.current
-        let days = Set(dataPoints.map { calendar.component(.day, from: $0.date) })
+        //let calendar = Calendar.current
+        let days = Set(dataPoints.map { gregorianCalendar.component(.day, from: $0.date) })
         return Array(days).sorted()
     }
     
     private func xAxisDomain(for dataPoints: [WeightDataPoint]) -> ClosedRange<Int> {
         let days = dataDays(dataPoints)
+        let monthDayCount = gregorianCalendar.range(of: .day, in: .month, for: selectedMonth)?.count ?? 30
+
         guard let minDay = days.min(), let maxDay = days.max() else {
-            return 1...30
-        }
+                   return 1...monthDayCount
+               }
         // Add padding to the domain for better visualization
         let lowerBound = max(1, minDay - 1)
-        let upperBound = min(30, maxDay + 1)
+        let upperBound = min(monthDayCount, maxDay + 1)
         return lowerBound...upperBound
     }
 }

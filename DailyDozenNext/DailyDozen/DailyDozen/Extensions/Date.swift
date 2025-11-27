@@ -62,6 +62,7 @@ extension Date {
     var datestampHHmm: String {
         let dateFormatter = DateFormatter()
         dateFormatter.dateFormat = "HH:mm"
+        dateFormatter.locale = Locale(identifier: "en") //added
         return dateFormatter.string(from: self)
     }
     
@@ -165,6 +166,7 @@ extension Date {
     init?(datestampSid: String) {
         let dateFormatter = DateFormatter()
         dateFormatter.dateFormat = "yyyy-MM-dd"
+        dateFormatter.locale = Locale(identifier: "en")  //added
         if let date = dateFormatter.date(from: datestampSid) {
             self = date
             return
@@ -294,9 +296,17 @@ extension Date {
     ///   - component: A component type.
     ///   - value: The calendar component value.
     /// - Returns: A new date
+    ///
+    //TBDz:  Conform to Gregorian?
     func adding(_ component: Calendar.Component, value: Int) -> Date? {
         return Calendar.current.date(byAdding: component, value: value, to: self)
     }
+    
+    func adding(months: Int) -> Date {
+            var calendar = Calendar(identifier: .gregorian)
+            calendar.locale = Locale(identifier: "en")
+            return calendar.date(byAdding: .month, value: months, to: self)!
+        }
     
     /// Returns a new date by adding a number of days.
     ///
@@ -304,21 +314,29 @@ extension Date {
     ///   - value: The calendar component value.
     /// - Returns: A new date
     func adding(days: Int) -> Date {
-        // unwrap since Calendar.Component.day is a reliable constraint.
-        return Calendar.current.date(byAdding: .day, value: days, to: self)!
-    }
+            var calendar = Calendar(identifier: .gregorian)
+            calendar.locale = Locale(identifier: "en")
+            return calendar.date(byAdding: .day, value: days, to: self)!
+        }
     
     // :???: candidate code to be either improved or deleted
     //TBDz used it in charts
+//    var startOfDay: Date {
+//        return Calendar.current.startOfDay(for: self)
+//    }
+    
     var startOfDay: Date {
-        return Calendar.current.startOfDay(for: self)
-    }
+            var calendar = Calendar(identifier: .gregorian)
+            calendar.locale = Locale(identifier: "en")
+            return calendar.startOfDay(for: self)
+        }
     
     var startOfMonth: Date {
-           let calendar = Calendar.current
-           let components = calendar.dateComponents([.year, .month], from: self)
-           return calendar.date(from: components)!
-       }
+            var calendar = Calendar(identifier: .gregorian)
+            calendar.locale = Locale(identifier: "en")
+            let components = calendar.dateComponents([.year, .month], from: self)
+            return calendar.date(from: components)!
+        }
     
 //    /// duration
 //    /// selectedWeekdays = [2, 4, 6] // Example - Mon, Wed, Fri
