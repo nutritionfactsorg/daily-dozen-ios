@@ -13,20 +13,9 @@ struct SqlDailyTracker {
 
     var itemsDict: [DataCountType: SqlDataCountRecord]
     // Weight
-    var weightAM: SqlDataWeightRecord
-    var weightPM: SqlDataWeightRecord
+    var weightAM: SqlDataWeightRecord?
+    var weightPM: SqlDataWeightRecord?
     
-    init(date: Date, amTimeHHmm: String? = nil, pmTimeHHmm: String? = nil) {
-        self.date = date
-        
-        itemsDict = [DataCountType: SqlDataCountRecord]()
-        for dataCountType in DataCountType.allCases {
-            itemsDict[dataCountType] = SqlDataCountRecord(date: date, countType: dataCountType)
-        }
-        self.weightAM = SqlDataWeightRecord(date: date, weightType: .am, kg: 0.0, timeHHmm: amTimeHHmm ?? Date().datestampHHmm)
-        self.weightPM = SqlDataWeightRecord(date: date, weightType: .pm, kg: 0.0, timeHHmm: pmTimeHHmm ?? Date().datestampHHmm)
-           
-    }
     //Pre-Version 4 need to check if there's something lost in updated init
 //    init(date: Date, itemsDict: [DataCountType: SqlDataCountRecord], weightAM: SqlDataWeightRecord? = nil, weightPM: SqlDataWeightRecord? = nil) {
 //        var a = SqlDailyTracker(date: date)
@@ -41,12 +30,22 @@ struct SqlDailyTracker {
 //        }
 //        self = a
 //    }
-    init(date: Date, itemsDict: [DataCountType: SqlDataCountRecord], weightAM: SqlDataWeightRecord? = nil, weightPM: SqlDataWeightRecord? = nil) {
-           self.date = date
-           self.itemsDict = itemsDict
-           self.weightAM = weightAM ?? SqlDataWeightRecord(date: date, weightType: .am, kg: 0.0, timeHHmm: Date().datestampHHmm)
-           self.weightPM = weightPM ?? SqlDataWeightRecord(date: date, weightType: .pm, kg: 0.0, timeHHmm: Date().datestampHHmm)
-       }
+    init(date: Date, amTimeHHmm: String? = nil, pmTimeHHmm: String? = nil) {
+            self.date = date
+            self.itemsDict = [DataCountType: SqlDataCountRecord]()
+            for dataCountType in DataCountType.allCases {
+                itemsDict[dataCountType] = SqlDataCountRecord(date: date, countType: dataCountType)
+            }
+            self.weightAM = amTimeHHmm != nil ? SqlDataWeightRecord(date: date, weightType: .am, kg: 0.0, timeHHmm: amTimeHHmm!) : nil
+            self.weightPM = pmTimeHHmm != nil ? SqlDataWeightRecord(date: date, weightType: .pm, kg: 0.0, timeHHmm: pmTimeHHmm!) : nil
+        }
+        
+        init(date: Date, itemsDict: [DataCountType: SqlDataCountRecord], weightAM: SqlDataWeightRecord? = nil, weightPM: SqlDataWeightRecord? = nil) {
+            self.date = date
+            self.itemsDict = itemsDict
+            self.weightAM = weightAM
+            self.weightPM = weightPM
+        }
     
     //init added for development early stages
 //    
@@ -84,7 +83,7 @@ struct SqlDailyTracker {
     //    self.weightPM = SqlDataWeightRecord(date: date, weightType: .pm, kg: 0.0)
     //}
     
-    func setCount(typeKey: DataCountType, countText: String) {
+    mutating func setCount(typeKey: DataCountType, countText: String) {
         if let value = Int(countText) {
             setCount(typeKey: typeKey, count: value)
         } else {
@@ -92,13 +91,14 @@ struct SqlDailyTracker {
         }
     }
     
-    func setCount(typeKey: DataCountType, count: Int) {
-        if var sqlDataCountRecord = itemsDict[typeKey] {
-            sqlDataCountRecord.setCount(count)
-        } else {
-            logit.error("SqlDailyTracker setCount() type not found \(typeKey.typeKey)")
+    mutating func setCount(typeKey: DataCountType, count: Int) {
+            if var sqlDataCountRecord = itemsDict[typeKey] {
+                sqlDataCountRecord.setCount(count)
+                itemsDict[typeKey] = sqlDataCountRecord
+            } else {
+                logit.error("SqlDailyTracker setCount() type not found \(typeKey.typeKey)")
+            }
         }
-    }
     
     func getPid(typeKey: DataCountType) -> String {
         return "\(date.datestampKey).\(typeKey.typeKey)"

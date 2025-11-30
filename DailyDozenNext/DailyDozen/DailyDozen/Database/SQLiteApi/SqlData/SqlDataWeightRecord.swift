@@ -7,6 +7,13 @@
 
 import Foundation
 
+extension String {
+    func matches(_ pattern: String) -> Bool {
+        return range(of: pattern, options: .regularExpression) != nil
+    }
+}
+
+
 /// Object Relationship Mapping (ORM) for `dataweight_table`
 /// Handles mapping from relationship data and item record object
 public struct SqlDataWeightRecord: Codable {
@@ -136,32 +143,53 @@ public struct SqlDataWeightRecord: Codable {
     }
     
     public init(date: Date, weightType: DataWeightType, kg: Double) {
+        let typeKey = weightType.typeNid == 0 ? "AM" : "PM"
         self.dataweight_date_psid = date.datestampSid
         self.dataweight_ampm_pnid = weightType.typeNid
         self.dataweight_kg = kg
         self.dataweight_time = date.datestampHHmm
+        //self.lbs = UnitsUtility.getLbs(kg: kg)
+       // self.lbsStr = String(format: "%.1f", self.lbs)
     }
     
-    public init?( row: [Any?], api: SQLiteApi ) {
-        guard // required fields
-            let datePsid = row[Column.dataweightDatePsid.idx] as? String,
-            let kindPfnid = row[Column.dataweightAmpmFnid.idx] as? Int,
-            let kg = row[Column.dataweightKg.idx] as? Double,
-            let time = row[Column.dataweightTime.idx] as? String
-        else {
+//    public init?( row: [Any?], api: SQLiteApi ) {
+//        guard // required fields
+//            let datePsid = row[Column.dataweightDatePsid.idx] as? String,
+//            let kindPfnid = row[Column.dataweightAmpmFnid.idx] as? Int,
+//            let kg = row[Column.dataweightKg.idx] as? Double,
+//            let time = row[Column.dataweightTime.idx] as? String
+//        else {
+//            return nil
+//            //var s = ""
+//            //for a in row {
+//            //    s.append("\(a ?? "nil")")
+//            //}
+//            //
+//            //throw SQLiteApiError.rowConversionFailed(s)
+//        }
+//        
+//        self.dataweight_date_psid = datePsid
+//        self.dataweight_ampm_pnid = kindPfnid
+//        self.dataweight_kg = kg
+//        self.dataweight_time = time
+//    }
+    public init?(row: [Any?]) {
+        guard row.count >= 4,
+              let datePsid = row[0] as? String,
+              Date(datestampSid: datePsid) != nil,
+              let ampm = row[1] as? Int,
+              ampm == 0 || ampm == 1,
+              let kg = row[2] as? Double,
+              let time = row[3] as? String,
+              time.matches("^[0-2][0-9]:[0-5][0-9]$") else {
             return nil
-            //var s = ""
-            //for a in row {
-            //    s.append("\(a ?? "nil")")
-            //}
-            //
-            //throw SQLiteApiError.rowConversionFailed(s)
         }
-        
-        self.dataweight_date_psid = datePsid
-        self.dataweight_ampm_pnid = kindPfnid
+        self.dataweight_date_psid = "\(datePsid).\(ampm == 0 ? "AM" : "PM")"
+        self.dataweight_ampm_pnid = ampm
         self.dataweight_kg = kg
         self.dataweight_time = time
+       // self.lbs = UnitsUtility.getLbs(kg: kg)
+       // self.lbsStr = String(format: "%.1f", self.lbs)
     }
     
     // MARK: - Realm Meta Information

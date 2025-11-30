@@ -8,6 +8,8 @@
 import SwiftUI
 import Charts
 
+//TBDz 20250915 Temp ForceUnwrap
+
 // Extension to compute day of year
 extension DateComponents {
     var dayOfYear: Int? {
@@ -66,13 +68,13 @@ struct WeightChartView: View {
     }
     
     private var monthsWithData: [Date] {
-        let validTrackers = mockDB.filter { $0.weightAM.dataweight_kg > 0 || $0.weightPM.dataweight_kg > 0 }
+        let validTrackers = mockDB.filter { $0.weightAM!.dataweight_kg > 0 || $0.weightPM!.dataweight_kg > 0 }
         let months = Set(validTrackers.map { $0.date.startOfMonth })
         return months.sorted()
     }
     
     private var yearsWithData: [Int] {
-        let validTrackers = mockDB.filter { $0.weightAM.dataweight_kg > 0 || $0.weightPM.dataweight_kg > 0 }
+        let validTrackers = mockDB.filter { $0.weightAM!.dataweight_kg > 0 || $0.weightPM!.dataweight_kg > 0 }
         let years = Set(validTrackers.map { $0.date.year })
         return years.sorted()
     }

@@ -142,7 +142,8 @@ public struct SqlDataCountRecord: Codable {
         datacount_streak = streak
     }
     
-    public init?( row: [Any?], api: SQLiteApi ) {
+
+    public init?( row: [Any?] ) { // Removed api parameter as it's not used
         guard // required fields
             let datePsid = row[Column.datacountDatePsid.idx] as? String,
             let kindPfnid = row[Column.datacountKindPfnid.idx] as? Int,
@@ -150,12 +151,6 @@ public struct SqlDataCountRecord: Codable {
             let streak = row[Column.datacountStreak.idx] as? Int
         else {
             return nil
-            //var s = ""
-            //for a in row {
-            //    s.append("\(a ?? "nil")")
-            //}
-            //
-            //throw SQLiteApiError.rowConversionFailed(s)
         }
         
         self.datacount_date_psid = datePsid
@@ -163,6 +158,7 @@ public struct SqlDataCountRecord: Codable {
         self.datacount_count = count
         self.datacount_streak = streak
     }
+    
     
     // MARK: - Meta Information
     

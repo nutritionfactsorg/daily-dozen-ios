@@ -6,6 +6,8 @@
 import SwiftUI
 import Charts
 
+
+//TBDz 20250916 Temp Forceunwrap sqlDataWeightRecord
 // Day Chart View
 struct DayChartView: View {
     let selectedMonth: Date
@@ -178,8 +180,8 @@ struct DayChartView: View {
         var dataPoints: [WeightDataPoint] = []
         
         for tracker in trackers {
-            if tracker.weightAM.dataweight_kg > 0 {
-                let weight = unitType == .metric ? tracker.weightAM.dataweight_kg : tracker.weightAM.lbs
+            if tracker.weightAM!.dataweight_kg > 0 {
+                let weight = unitType == .metric ? tracker.weightAM!.dataweight_kg : tracker.weightAM!.lbs
                 dataPoints.append(WeightDataPoint(
                     date: tracker.date,
                     weight: weight,
@@ -187,8 +189,8 @@ struct DayChartView: View {
                 ))
             }
             
-            if tracker.weightPM.dataweight_kg > 0 {
-                let weight = unitType == .metric ? tracker.weightPM.dataweight_kg : tracker.weightPM.lbs
+            if tracker.weightPM!.dataweight_kg > 0 {
+                let weight = unitType == .metric ? tracker.weightPM!.dataweight_kg : tracker.weightPM!.lbs
                 dataPoints.append(WeightDataPoint(
                     date: tracker.date,
                     weight: weight,

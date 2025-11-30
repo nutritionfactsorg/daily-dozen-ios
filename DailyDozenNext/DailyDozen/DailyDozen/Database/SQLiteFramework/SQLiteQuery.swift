@@ -13,9 +13,9 @@ import SQLite3
 //#define SQLITE_STATIC      ((sqlite3_destructor_type)0)
 //#define SQLITE_TRANSIENT   ((sqlite3_destructor_type)-1)                 
 // SQLITE_STATIC static, unmanaged value. not freed by SQLite.
-private let SQLITE_STATIC = unsafeBitCast(0, to: sqlite3_destructor_type.self)
+private let SQLITE_STATIC = unsafeBitCast(0, to: sqlite3_destructor_type.self)    // TBDZ moved to Actor
 // SQLITE_TRANSIENT volatile value. SQLite makes private copy before returning.
-private let SQLITE_TRANSIENT = unsafeBitCast(-1, to: sqlite3_destructor_type.self)
+private let SQLITE_TRANSIENT = unsafeBitCast(-1, to: sqlite3_destructor_type.self)  // TBDz moved to actor
 
 /// SQLiteQuery class manipulates and executes SQL statements.
 /// 

@@ -23,15 +23,15 @@ struct SettingsManager {
         return false
     }
 //
-//    public static func unitsType() -> UnitsType {
-//        guard
-//            let unitsTypePrefStr = UserDefaults.standard.string(forKey: SettingsKeys.unitsTypePref),
-//            let currentUnitsType = UnitsType(rawValue: unitsTypePrefStr)
-//        else {
-//            return .imperial // default if not specified in preferences
-//        }
-//        return currentUnitsType
-//    }
+    public static func unitsType() -> UnitsType {
+        guard
+            let unitsTypePrefStr = UserDefaults.standard.string(forKey: SettingsKeys.unitsTypePref),
+            let currentUnitsType = UnitsType(rawValue: unitsTypePrefStr)
+        else {
+            return .imperial // default if not specified in preferences
+        }
+        return currentUnitsType
+    }
 //    
     /// Daily count for exercises (number of checkboxes)
     /// Exercise Display Gamut: 1 x 45 minutes, 3 x 15 minutes, 6 x 8 minutes

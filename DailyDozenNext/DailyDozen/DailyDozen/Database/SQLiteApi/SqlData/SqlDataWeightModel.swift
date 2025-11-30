@@ -74,7 +74,8 @@ public struct SqlDataWeightModel {
             }
             
             if let row = result.data.first {
-                let record = SqlDataWeightRecord(row: row, api: api)
+               // WAS  let record = SqlDataWeightRecord(row: row, api: api)
+                let record = SqlDataWeightRecord(row: row)
                 return record
             }
         }

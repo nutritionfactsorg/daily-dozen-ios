@@ -9,6 +9,8 @@ import SwiftUI
 
 @main
 struct DailyDozenApp: App {
+    
+    @StateObject var viewModel = SqlDailyTrackerViewModel()
     init() {
         UNUserNotificationCenter.current().setBadgeCount(0) //set badge count to 0, but don't know if it removes notifications. Done in previous versions
         //TBDz: Does this really need to be set here?  Doesn't work here
@@ -39,6 +41,7 @@ struct DailyDozenApp: App {
         WindowGroup {
             
             ContentView()
+                .environmentObject(viewModel)
         }
     }
 }

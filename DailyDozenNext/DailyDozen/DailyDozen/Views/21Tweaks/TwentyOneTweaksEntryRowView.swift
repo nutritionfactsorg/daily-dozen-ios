@@ -25,11 +25,12 @@ struct TwentyOneTweaksEntryRowView: View {
     @State private var mockDBTrigger = UUID() // Trigger refresh on mockDB changes
     //TBDz:  if updateCount isn't working correctly, try the below.
    
+    //20250915  Temp ForceUnwrap tracker.weightAM  TBDz
     private func updateCount() {
         if item == .tweakWeightTwice {
             if let tracker = mockDB.first(where: { Calendar.current.isDate($0.date, inSameDayAs: date.startOfDay) }) {
-                let amWeight = tracker.weightAM.dataweight_kg
-                let pmWeight = tracker.weightPM.dataweight_kg
+                let amWeight = tracker.weightAM!.dataweight_kg
+                let pmWeight = tracker.weightPM!.dataweight_kg
                 let newCount = (amWeight > 0 ? 1 : 0) + (pmWeight > 0 ? 1 : 0)
                // Compare with localCount instead of count
                 if newCount != localCount {

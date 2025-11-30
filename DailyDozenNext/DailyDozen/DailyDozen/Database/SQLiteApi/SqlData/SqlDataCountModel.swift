@@ -81,7 +81,8 @@ public struct SqlDataCountModel {
             }
             
             if let row = result.data.first {
-                let record = SqlDataCountRecord(row: row, api: api)
+                //WAS let record = SqlDataCountRecord(row: row, api: api)
+                let record = SqlDataCountRecord(row: row)
                 return record
             }
         }

@@ -43,9 +43,14 @@ class WeightEntryViewModel: ObservableObject {
        
     private var lastMockDBCount: Int = 0   //TBDz is this used?
     
+    //Temp TBDZ just temp force unwrapped SqlDateWeightRecord  20250915
+    
+    
     
     init() {
         loadTrackers()
+       
+    
     }
     
     func loadTrackers() {
@@ -74,51 +79,52 @@ class WeightEntryViewModel: ObservableObject {
         if let amWeight = amWeight, let amTime = amTime, amWeight >= 0 {
             let kg = unitType == .imperial ? amWeight / 2.204623 : amWeight
             tracker.weightAM = SqlDataWeightRecord(date: date, weightType: .am, kg: kg, timeHHmm: amTime.datestampHHmm)
-            print("Set AM weight: \(kg) kg at \(amTime.datestampHHmm) (datetime: \(tracker.weightAM.datetime?.formatted(date: .omitted, time: .shortened) ?? "nil"))")
+//            print("Set AM weight: \(kg) kg at \(amTime.datestampHHmm) (datetime: \(tracker.weightAM.datetime?.formatted(date: .omitted, time: .shortened) ?? "nil"))")
             hasChanges = true
         }
         if let pmWeight = pmWeight, let pmTime = pmTime, pmWeight >= 0 {
             let kg = unitType == .imperial ? pmWeight / 2.204623 : pmWeight
             tracker.weightPM = SqlDataWeightRecord(date: date, weightType: .pm, kg: kg, timeHHmm: pmTime.datestampHHmm)
-            print("Set PM weight: \(kg) kg at \(pmTime.datestampHHmm) (datetime: \(tracker.weightPM.datetime?.formatted(date: .omitted, time: .shortened) ?? "nil"))")
+//            print("Set PM weight: \(kg) kg at \(pmTime.datestampHHmm) (datetime: \(tracker.weightPM.datetime?.formatted(date: .omitted, time: .shortened) ?? "nil"))")
             hasChanges = true
         }
         
         if hasChanges || trackers[dateSid] != nil {
-            print("Tracker before update: AM \(tracker.weightAM.dataweight_kg), PM \(tracker.weightPM.dataweight_kg)")
+//            print("Tracker before update: AM \(tracker.weightAM.dataweight_kg), PM \(tracker.weightPM.dataweight_kg)")
             trackers[dateSid] = tracker
             print("Calling updateMockDB for \(dateSid)")
             updateMockDB(with: tracker)
                        Task {
-                        if tracker.weightAM.dataweight_kg > 0 {
-                            if let amTimeDate = Date(datestampHHmm: tracker.weightAM.dataweight_time, referenceDate: date) {
-                                print("•Sync• Triggering syncWeightPut for AM: \(tracker.weightAM.dataweight_kg) kg at \(amTimeDate.datestampyyyyMMddHHmmss)")
+                           if tracker.weightAM!.dataweight_kg > 0 {
+                               if let amTimeDate = Date(datestampHHmm: tracker.weightAM!.dataweight_time, referenceDate: date) {
+                                   print("•Sync• Triggering syncWeightPut for AM: \(tracker.weightAM!.dataweight_kg) kg at \(amTimeDate.datestampyyyyMMddHHmmss)")
                                 do {
-                                    try await HealthSynchronizer.shared.syncWeightPut(date: date, ampm: .am, kg: tracker.weightAM.dataweight_kg, time: amTimeDate, tracker: tracker)
+                                    try await HealthSynchronizer.shared.syncWeightPut(date: date, ampm: .am, kg: tracker.weightAM!.dataweight_kg, time: amTimeDate, tracker: tracker)
                                     print("•Sync• AM sync completed")
                                 } catch {
                                     print("•Sync• AM sync error: \(error.localizedDescription)")
                                 }
                             } else {
-                                print("•Date• AM time parsing failed: \(tracker.weightAM.dataweight_time)")
+                                print("•Date• AM time parsing failed: \(tracker.weightAM!.dataweight_time)")
                             }
                         } else {
-                            print("•Sync• Skipping AM sync: weight is \(tracker.weightAM.dataweight_kg)")
+                            print("•Sync• Skipping AM sync: weight is \(tracker.weightAM!.dataweight_kg)")
                         }
-                        if tracker.weightPM.dataweight_kg > 0 {
-                            if let pmTimeDate = Date(datestampHHmm: tracker.weightPM.dataweight_time, referenceDate: date) {
-                                print("•Sync• Triggering syncWeightPut for PM: \(tracker.weightPM.dataweight_kg) kg at \(pmTimeDate.datestampyyyyMMddHHmmss)")
+                           if tracker.weightPM!.dataweight_kg > 0 {
+                               if let pmTimeDate = Date(datestampHHmm: tracker.weightPM!.dataweight_time, referenceDate: date) {
+                                   print("•Sync• Triggering syncWeightPut for PM: \(tracker.weightPM!.dataweight_kg) kg at \(pmTimeDate.datestampyyyyMMddHHmmss)")
                                 do {
-                                    try await HealthSynchronizer.shared.syncWeightPut(date: date, ampm: .pm, kg: tracker.weightPM.dataweight_kg, time: pmTimeDate, tracker: tracker)
+                                    try await HealthSynchronizer.shared.syncWeightPut(date: date, ampm: .pm, kg: tracker.weightPM!.dataweight_kg, time: pmTimeDate, tracker: tracker)
                                     print("•Sync• PM sync completed")
                                 } catch {
                                     print("•Sync• PM sync error: \(error.localizedDescription)")
                                 }
                             } else {
-                                print("•Date• PM time parsing failed: \(tracker.weightPM.dataweight_time)")
+                                print("•Date• PM time parsing failed: \(tracker.weightPM!.dataweight_time)")
                             }
                         } else {
-                            print("•Sync• Skipping PM sync: weight is \(tracker.weightPM.dataweight_kg)")
+//                            print("•Sync• Skipping PM sync: weight is \(tracker.weightPM.dataweight_kg)")
+                            print("Temp")
                         }
                     }
                 } else {
@@ -161,7 +167,7 @@ class WeightEntryViewModel: ObservableObject {
         var tracker = tracker(for: date)
         var hasChanges = false
         
-        if tracker.weightAM.dataweight_kg == 0 {
+        if tracker.weightAM!.dataweight_kg == 0 {
             let (amTimeStr, amWeightStr) = await HealthSynchronizer.shared.syncWeightToShow(date: date, ampm: .am)
             if !amWeightStr.isEmpty, let kg = Double(amWeightStr) {
                 tracker.weightAM = SqlDataWeightRecord(
@@ -176,7 +182,7 @@ class WeightEntryViewModel: ObservableObject {
                 print("•Load• No AM weight data for \(key)")
             }
         }
-        if tracker.weightPM.dataweight_kg == 0 {
+        if tracker.weightPM!.dataweight_kg == 0 {
             let (pmTimeStr, pmWeightStr) = await HealthSynchronizer.shared.syncWeightToShow(date: date, ampm: .pm)
             if !pmWeightStr.isEmpty, let kg = Double(pmWeightStr) {
                 tracker.weightPM = SqlDataWeightRecord(
@@ -193,7 +199,7 @@ class WeightEntryViewModel: ObservableObject {
         }
         
         // Save to mockDB if there are changes and non-zero weights or itemsDict data
-        if hasChanges && (tracker.weightAM.dataweight_kg > 0 || tracker.weightPM.dataweight_kg > 0 || !tracker.itemsDict.isEmpty) {
+        if hasChanges && (tracker.weightAM!.dataweight_kg > 0 || tracker.weightPM!.dataweight_kg > 0 || !tracker.itemsDict.isEmpty) {
             trackers[key] = tracker
             updateMockDB(with: tracker) // Use existing global function
             print("•Load• Persisted tracker to mockDB for \(key)")
@@ -202,94 +208,28 @@ class WeightEntryViewModel: ObservableObject {
         let amRecord = tracker.weightAM
         let pmRecord = tracker.weightPM
         
-        let amWeight = amRecord.dataweight_kg > 0 ?
+        let amWeight = amRecord!.dataweight_kg > 0 ?
             UnitsUtility.regionalWeight(
-                fromKg: amRecord.dataweight_kg,
+                fromKg: amRecord!.dataweight_kg,
                 toUnits: UnitsType(rawValue: unitType.rawValue) ?? .metric,
                 toDecimalDigits: 1
             ) ?? "" : ""
-        let pmWeight = pmRecord.dataweight_kg > 0 ?
+        let pmWeight = pmRecord!.dataweight_kg > 0 ?
             UnitsUtility.regionalWeight(
-                fromKg: pmRecord.dataweight_kg,
+                fromKg: pmRecord!.dataweight_kg,
                 toUnits: UnitsType(rawValue: unitType.rawValue) ?? .metric,
                 toDecimalDigits: 1
             ) ?? "" : ""
         
-        let amTime = amRecord.dataweight_time.isEmpty ? Date() :
-            Date(datestampHHmm: amRecord.dataweight_time, referenceDate: date) ?? Date()
-        let pmTime = pmRecord.dataweight_time.isEmpty ? Date() :
-            Date(datestampHHmm: pmRecord.dataweight_time, referenceDate: date) ?? Date()
+        let amTime = amRecord!.dataweight_time.isEmpty ? Date() :
+        Date(datestampHHmm: amRecord!.dataweight_time, referenceDate: date) ?? Date()
+        let pmTime = pmRecord!.dataweight_time.isEmpty ? Date() :
+        Date(datestampHHmm: pmRecord!.dataweight_time, referenceDate: date) ?? Date()
         
         print("Loaded weights for \(date.datestampSid): AM \(amWeight), PM \(pmWeight), AM Time \(amTime.datestampHHmm), PM Time \(pmTime.datestampHHmm)")
         return WeightEntryData(amWeight: amWeight, pmWeight: pmWeight, amTime: amTime, pmTime: pmTime)
     }
-//    func loadWeights(for date: Date, unitType: UnitType) async -> WeightEntryData { // 🟢 Changed: Return WeightEntryData
-//        let tracker = tracker(for: date)
-//        let unitType = UnitType.fromUserDefaults()
-//
-//        let amWeight = tracker.weightAM.dataweight_kg > 0 ?
-//        UnitsUtility.regionalWeight(
-//            fromKg: tracker.weightAM.dataweight_kg,
-//            toUnits: UnitsType(rawValue: unitType.rawValue) ?? .metric,
-//            toDecimalDigits: 1
-//        ) ?? "" : ""
-//        let pmWeight = tracker.weightPM.dataweight_kg > 0 ?
-//        UnitsUtility.regionalWeight(
-//            fromKg: tracker.weightPM.dataweight_kg,
-//            toUnits: UnitsType(rawValue: unitType.rawValue) ?? .metric,
-//            toDecimalDigits: 1
-//        ) ?? "" : ""
-//        
-//        // Parse time with reference date
-//        let calendar = Calendar.current
-//        var components = calendar.dateComponents([.year, .month, .day], from: date)
-//        
-//        let amTime: Date
-//        if tracker.weightAM.dataweight_time.isEmpty {
-//            amTime = Date()
-//        } else if let timeDate = Date(datestampHHmm: tracker.weightAM.dataweight_time, referenceDate: date) {
-//            amTime = timeDate
-//        } else {
-//            amTime = Date()
-//            print("Failed to parse AM time: \(tracker.weightAM.dataweight_time)")
-//        }
-//        
-//        let pmTime: Date
-//        if tracker.weightPM.dataweight_time.isEmpty {
-//            pmTime = Date()
-//        } else if let timeDate = Date(datestampHHmm: tracker.weightPM.dataweight_time, referenceDate: date) {
-//            pmTime = timeDate
-//        } else {
-//            pmTime = Date()
-//            print("Failed to parse PM time: \(tracker.weightPM.dataweight_time)")
-//        }
-//        
-//        // 🟢 Changed: Load from HealthKit if mockDB is empty
-//        let finalAmWeight: String
-//        let finalAmTime: Date
-//        if amWeight.isEmpty {
-//            let (amTimeStr, amWeightStr) = await HealthSynchronizer.shared.syncWeightToShow(date: date, ampm: .am)
-//            finalAmWeight = amWeightStr
-//            finalAmTime = Date(datestampHHmm: amTimeStr, referenceDate: date) ?? amTime
-//        } else {
-//            finalAmWeight = amWeight
-//            finalAmTime = amTime
-//        }
-//        
-//        let finalPmWeight: String
-//        let finalPmTime: Date
-//        if pmWeight.isEmpty {
-//            let (pmTimeStr, pmWeightStr) = await HealthSynchronizer.shared.syncWeightToShow(date: date, ampm: .pm)
-//            finalPmWeight = pmWeightStr
-//            finalPmTime = Date(datestampHHmm: pmTimeStr, referenceDate: date) ?? pmTime
-//        } else {
-//            finalPmWeight = pmWeight
-//            finalPmTime = pmTime
-//        }
-//        
-//        print("Loaded weights for \(date.datestampSid): AM \(finalAmWeight), PM \(finalPmWeight), AM Time \(finalAmTime.formatted(date: .omitted, time: .shortened)), PM Time \(finalPmTime.formatted(date: .omitted, time: .shortened))")
-//        return WeightEntryData(amWeight: amWeight, pmWeight: pmWeight, amTime: amTime, pmTime: pmTime)
-//    }
+
     @MainActor
     func updatePendingWeights(for date: Date, amWeight: String, pmWeight: String, amTime: Date, pmTime: Date) async {
             

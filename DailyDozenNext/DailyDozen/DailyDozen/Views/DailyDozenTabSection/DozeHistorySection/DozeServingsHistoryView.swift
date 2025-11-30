@@ -18,12 +18,15 @@ extension Sequence where Element: Hashable {
 }
 
 struct DozeServingsHistoryView: View {
+    @EnvironmentObject var viewModel: SqlDailyTrackerViewModel
+   
+   // @State private var trackers: [SqlDailyTracker] = []   //TBDz Temporary for refactoring
     @State private var selectedTimeScale: TimeScale = .daily
     @State private var selectedDate: Date = Calendar.current.startOfDay(for: Date())
     @State private var dailyScrollPosition: Date = Calendar.current.startOfDay(for: Date())
     @State private var monthlyScrollPosition: Date = Calendar.current.startOfMonth(for: Date())
     @State private var yearlyScrollPosition: Date = Calendar.current.date(from: DateComponents(year: Calendar.current.component(.year, from: Date()))) ?? Date()
-    private let processor: ServingsDataProcessor
+    @State private var processor: ServingsDataProcessor
     private let calendar = Calendar.current
     private let today = Calendar.current.startOfDay(for: Date())
     
@@ -40,8 +43,11 @@ struct DozeServingsHistoryView: View {
         return formatter
     }()
     
-    init(trackers: [SqlDailyTracker]) {
-        self.processor = ServingsDataProcessor(trackers: trackers)
+    init() {
+       // self.processor = ServingsDataProcessor(trackers: []) //Initialize with empty array; updated in onAppear
+      
+                _processor = State(initialValue: ServingsDataProcessor(trackers: []))
+            
     }
     
     var body: some View {
@@ -122,7 +128,16 @@ struct DozeServingsHistoryView: View {
                 updateScrollPosition()
             }
             .onAppear {
-                updateScrollPosition()
+                Task { @MainActor in
+                   // trackers = await viewModel.fetchTrackers()
+                    // Fetch trackers for a broad date range (e.g., all years)
+                   // let earliestDate = Date.distantPast // TBDz this needs changing
+                   // trackers = await viewModel.fetchTrackers(forMonth: earliestDate)
+                    //processor.updateTrackers(trackers) // Update processor with fetched trackers
+                    await viewModel.fetchAllTrackers()
+                    processor.updateTrackers(viewModel.trackers)
+                    updateScrollPosition()
+                }
             }
             .navigationTitle("historyRecordDoze.heading")
             .navigationBarTitleDisplayMode(.inline)
@@ -559,27 +574,6 @@ struct DozeServingsHistoryView: View {
         }
     }
     
-//    func datesInMonth(year: Int, month: Int) -> [Date] {
-//        let calendar = Calendar.current
-//        let startOfMonth = calendar.date(from: DateComponents(year: year, month: month, day: 1))!
-//        
-//        // Get the range of days in the month
-//        let range = calendar.range(of: .day, in: .month, for: startOfMonth)!
-//        
-//        // Generate array of dates
-//        let arange = range.compactMap { day in
-//            calendar.date(from: DateComponents(year: year, month: month, day: day))
-//        }
-//        print(arange)
-//        return arange
-//    }
-    
-//    private var monthlyXDomain: ClosedRange<Date> {
-//           let start = calendar.date(from: DateComponents(year: calendar.component(.year, from: selectedDate), month: 1, day: 1)) ?? Date()
-//      
-//           let end = calendar.date(from: DateComponents(year: calendar.component(.year, from: selectedDate), month: 12, day: 31)) ?? Date()
-//           return start...end
-//       }
     private var monthlyXDomain: ClosedRange<Date> {
         let start = calendar.date(from: DateComponents(year: calendar.component(.year, from: selectedDate), month: 1, day: 1)) ?? Date()
         let end = calendar.date(from: DateComponents(year: calendar.component(.year, from: selectedDate), month: 12, day: 31)) ?? Date()
@@ -588,18 +582,7 @@ struct DozeServingsHistoryView: View {
         }
         return start...endWithBuffer
     }
-    
-//    private var dailyXDomain: ClosedRange<Date> {
-//        let start = calendar.startOfMonth(for: selectedDate)
-//        //let end = calendar.endOfMonth(for: selectedDate)
-//        guard let endOfMonth = calendar.date(byAdding: DateComponents(month: 1, day: 0 ), to: start) else {
-//            fatalError("Unable to get start date from date")
-//        }
-//        // let end = min(calendar.endOfMonth(for: selectedDate), today)
-//    
-//        return start...endOfMonth
-//        
-//    }
+
     private var dailyXDomain: ClosedRange<Date> {
         let start = calendar.startOfMonth(for: selectedDate)
         let end = calendar.endOfMonth(for: selectedDate)
@@ -621,147 +604,147 @@ struct DozeServingsHistoryView: View {
     }
 }
 
-#Preview {
-    let sampleTrackers = [
-        // Existing 2015 entry
-        SqlDailyTracker(
-            date: Calendar.current.date(from: DateComponents(year: 2015, month: 6, day: 1))!,
-            itemsDict: [
-                DataCountType.dozeBeans: SqlDataCountRecord(datacount_date_psid: "2015-06-01", datacount_kind_pfnid: 1, datacount_count: 2, datacount_streak: 1)!,
-                DataCountType.dozeBerries: SqlDataCountRecord(datacount_date_psid: "2015-06-01", datacount_kind_pfnid: 2, datacount_count: 1, datacount_streak: 1)!
-            ],
-            weightAM: nil,
-            weightPM: nil
-        ),
-        // Add 2016
-        SqlDailyTracker(
-            date: Calendar.current.date(from: DateComponents(year: 2016, month: 6, day: 1))!,
-            itemsDict: [
-                DataCountType.dozeBeans: SqlDataCountRecord(datacount_date_psid: "2016-06-01", datacount_kind_pfnid: 1, datacount_count: 2, datacount_streak: 1)!,
-                DataCountType.dozeBerries: SqlDataCountRecord(datacount_date_psid: "2016-06-01", datacount_kind_pfnid: 2, datacount_count: 1, datacount_streak: 1)!
-            ],
-            weightAM: nil,
-            weightPM: nil
-        ),
-        // Add 2017
-        SqlDailyTracker(
-            date: Calendar.current.date(from: DateComponents(year: 2017, month: 6, day: 1))!,
-            itemsDict: [
-                DataCountType.dozeBeans: SqlDataCountRecord(datacount_date_psid: "2017-06-01", datacount_kind_pfnid: 1, datacount_count: 2, datacount_streak: 1)!,
-                DataCountType.dozeBerries: SqlDataCountRecord(datacount_date_psid: "2017-06-01", datacount_kind_pfnid: 2, datacount_count: 1, datacount_streak: 1)!
-            ],
-            weightAM: nil,
-            weightPM: nil
-        ),
-        // Add 2018
-        SqlDailyTracker(
-            date: Calendar.current.date(from: DateComponents(year: 2018, month: 6, day: 1))!,
-            itemsDict: [
-                DataCountType.dozeBeans: SqlDataCountRecord(datacount_date_psid: "2018-06-01", datacount_kind_pfnid: 1, datacount_count: 2, datacount_streak: 1)!,
-                DataCountType.dozeBerries: SqlDataCountRecord(datacount_date_psid: "2018-06-01", datacount_kind_pfnid: 2, datacount_count: 1, datacount_streak: 1)!
-            ],
-            weightAM: nil,
-            weightPM: nil
-        ),
-        // Add 2019
-        SqlDailyTracker(
-            date: Calendar.current.date(from: DateComponents(year: 2019, month: 6, day: 1))!,
-            itemsDict: [
-                DataCountType.dozeBeans: SqlDataCountRecord(datacount_date_psid: "2019-06-01", datacount_kind_pfnid: 1, datacount_count: 2, datacount_streak: 1)!,
-                DataCountType.dozeBerries: SqlDataCountRecord(datacount_date_psid: "2019-06-01", datacount_kind_pfnid: 2, datacount_count: 1, datacount_streak: 1)!
-            ],
-            weightAM: nil,
-            weightPM: nil
-        ),
-        // Add 2020
-        SqlDailyTracker(
-            date: Calendar.current.date(from: DateComponents(year: 2020, month: 6, day: 1))!,
-            itemsDict: [
-                DataCountType.dozeBeans: SqlDataCountRecord(datacount_date_psid: "2020-06-01", datacount_kind_pfnid: 1, datacount_count: 2, datacount_streak: 1)!,
-                DataCountType.dozeBerries: SqlDataCountRecord(datacount_date_psid: "2020-06-01", datacount_kind_pfnid: 2, datacount_count: 1, datacount_streak: 1)!
-            ],
-            weightAM: nil,
-            weightPM: nil
-        ),
-        // Add 2021
-        SqlDailyTracker(
-            date: Calendar.current.date(from: DateComponents(year: 2021, month: 6, day: 1))!,
-            itemsDict: [
-                DataCountType.dozeBeans: SqlDataCountRecord(datacount_date_psid: "2021-06-01", datacount_kind_pfnid: 1, datacount_count: 2, datacount_streak: 1)!,
-                DataCountType.dozeBerries: SqlDataCountRecord(datacount_date_psid: "2021-06-01", datacount_kind_pfnid: 2, datacount_count: 1, datacount_streak: 1)!
-            ],
-            weightAM: nil,
-            weightPM: nil
-        ),
-        // Add 2022
-        SqlDailyTracker(
-            date: Calendar.current.date(from: DateComponents(year: 2022, month: 6, day: 1))!,
-            itemsDict: [
-                DataCountType.dozeBeans: SqlDataCountRecord(datacount_date_psid: "2022-06-01", datacount_kind_pfnid: 1, datacount_count: 2, datacount_streak: 1)!,
-                DataCountType.dozeBerries: SqlDataCountRecord(datacount_date_psid: "2022-06-01", datacount_kind_pfnid: 2, datacount_count: 1, datacount_streak: 1)!
-            ],
-            weightAM: nil,
-            weightPM: nil
-        ),
-        // Add 2023
-        SqlDailyTracker(
-            date: Calendar.current.date(from: DateComponents(year: 2023, month: 6, day: 1))!,
-            itemsDict: [
-                DataCountType.dozeBeans: SqlDataCountRecord(datacount_date_psid: "2023-06-01", datacount_kind_pfnid: 1, datacount_count: 2, datacount_streak: 1)!,
-                DataCountType.dozeBerries: SqlDataCountRecord(datacount_date_psid: "2023-06-01", datacount_kind_pfnid: 2, datacount_count: 1, datacount_streak: 1)!
-            ],
-            weightAM: nil,
-            weightPM: nil
-        ),
-        // Existing 2024 entry
-        SqlDailyTracker(
-            date: Calendar.current.date(from: DateComponents(year: 2024, month: 5, day: 19))!,
-            itemsDict: [
-                DataCountType.dozeBeans: SqlDataCountRecord(datacount_date_psid: "2024-05-18", datacount_kind_pfnid: 1, datacount_count: 2, datacount_streak: 1)!,
-                DataCountType.dozeBerries: SqlDataCountRecord(datacount_date_psid: "2024-05-18", datacount_kind_pfnid: 2, datacount_count: 1, datacount_streak: 1)!
-            ],
-            weightAM: nil,
-            weightPM: nil
-        ),
-        // Existing 2025 entries
-        SqlDailyTracker(
-            date: Calendar.current.date(from: DateComponents(year: 2025, month: 4, day: 14))!,
-            itemsDict: [
-                DataCountType.dozeBeans: SqlDataCountRecord(datacount_date_psid: "2025-04-14", datacount_kind_pfnid: 1, datacount_count: 2, datacount_streak: 1)!,
-                DataCountType.dozeBerries: SqlDataCountRecord(datacount_date_psid: "2025-04-14", datacount_kind_pfnid: 2, datacount_count: 1, datacount_streak: 1)!
-            ],
-            weightAM: nil,
-            weightPM: nil
-        ),
-        SqlDailyTracker(
-            date: Calendar.current.date(from: DateComponents(year: 2025, month: 5, day: 9))!,
-            itemsDict: [
-                DataCountType.dozeBeans: SqlDataCountRecord(datacount_date_psid: "2025-05-09", datacount_kind_pfnid: 1, datacount_count: 2, datacount_streak: 1)!,
-                DataCountType.dozeBerries: SqlDataCountRecord(datacount_date_psid: "2025-05-09", datacount_kind_pfnid: 2, datacount_count: 1, datacount_streak: 1)!
-            ],
-            weightAM: nil,
-            weightPM: nil
-        ),
-        SqlDailyTracker(
-            date: Calendar.current.date(from: DateComponents(year: 2025, month: 5, day: 12))!,
-            itemsDict: [
-                DataCountType.dozeBeans: SqlDataCountRecord(datacount_date_psid: "2025-05-12", datacount_kind_pfnid: 1, datacount_count: 2, datacount_streak: 1)!,
-                DataCountType.dozeBerries: SqlDataCountRecord(datacount_date_psid: "2025-05-12", datacount_kind_pfnid: 2, datacount_count: 1, datacount_streak: 1)!
-            ],
-            weightAM: nil,
-            weightPM: nil
-        ),
-        SqlDailyTracker(
-            date: Calendar.current.date(from: DateComponents(year: 2025, month: 5, day: 29))!,
-            itemsDict: [
-                DataCountType.dozeBeans: SqlDataCountRecord(datacount_date_psid: "2025-05-29", datacount_kind_pfnid: 1, datacount_count: 3, datacount_streak: 1)!,
-                DataCountType.dozeBerries: SqlDataCountRecord(datacount_date_psid: "2025-05-29", datacount_kind_pfnid: 2, datacount_count: 1, datacount_streak: 1)!,
-                DataCountType.dozeBeverages: SqlDataCountRecord(datacount_date_psid: "2025-05-29", datacount_kind_pfnid: 11, datacount_count: 2, datacount_streak: 1)!
-            ],
-            weightAM: nil,
-            weightPM: nil
-        )
-    ]
-    return DozeServingsHistoryView(trackers: sampleTrackers)
-     .environment(\.locale, .init(identifier: "de"))
-}
+//#Preview {
+//    let sampleTrackers = [
+//        // Existing 2015 entry
+//        SqlDailyTracker(
+//            date: Calendar.current.date(from: DateComponents(year: 2015, month: 6, day: 1))!,
+//            itemsDict: [
+//                DataCountType.dozeBeans: SqlDataCountRecord(datacount_date_psid: "2015-06-01", datacount_kind_pfnid: 1, datacount_count: 2, datacount_streak: 1)!,
+//                DataCountType.dozeBerries: SqlDataCountRecord(datacount_date_psid: "2015-06-01", datacount_kind_pfnid: 2, datacount_count: 1, datacount_streak: 1)!
+//            ],
+//            weightAM: nil,
+//            weightPM: nil
+//        ),
+//        // Add 2016
+//        SqlDailyTracker(
+//            date: Calendar.current.date(from: DateComponents(year: 2016, month: 6, day: 1))!,
+//            itemsDict: [
+//                DataCountType.dozeBeans: SqlDataCountRecord(datacount_date_psid: "2016-06-01", datacount_kind_pfnid: 1, datacount_count: 2, datacount_streak: 1)!,
+//                DataCountType.dozeBerries: SqlDataCountRecord(datacount_date_psid: "2016-06-01", datacount_kind_pfnid: 2, datacount_count: 1, datacount_streak: 1)!
+//            ],
+//            weightAM: nil,
+//            weightPM: nil
+//        ),
+//        // Add 2017
+//        SqlDailyTracker(
+//            date: Calendar.current.date(from: DateComponents(year: 2017, month: 6, day: 1))!,
+//            itemsDict: [
+//                DataCountType.dozeBeans: SqlDataCountRecord(datacount_date_psid: "2017-06-01", datacount_kind_pfnid: 1, datacount_count: 2, datacount_streak: 1)!,
+//                DataCountType.dozeBerries: SqlDataCountRecord(datacount_date_psid: "2017-06-01", datacount_kind_pfnid: 2, datacount_count: 1, datacount_streak: 1)!
+//            ],
+//            weightAM: nil,
+//            weightPM: nil
+//        ),
+//        // Add 2018
+//        SqlDailyTracker(
+//            date: Calendar.current.date(from: DateComponents(year: 2018, month: 6, day: 1))!,
+//            itemsDict: [
+//                DataCountType.dozeBeans: SqlDataCountRecord(datacount_date_psid: "2018-06-01", datacount_kind_pfnid: 1, datacount_count: 2, datacount_streak: 1)!,
+//                DataCountType.dozeBerries: SqlDataCountRecord(datacount_date_psid: "2018-06-01", datacount_kind_pfnid: 2, datacount_count: 1, datacount_streak: 1)!
+//            ],
+//            weightAM: nil,
+//            weightPM: nil
+//        ),
+//        // Add 2019
+//        SqlDailyTracker(
+//            date: Calendar.current.date(from: DateComponents(year: 2019, month: 6, day: 1))!,
+//            itemsDict: [
+//                DataCountType.dozeBeans: SqlDataCountRecord(datacount_date_psid: "2019-06-01", datacount_kind_pfnid: 1, datacount_count: 2, datacount_streak: 1)!,
+//                DataCountType.dozeBerries: SqlDataCountRecord(datacount_date_psid: "2019-06-01", datacount_kind_pfnid: 2, datacount_count: 1, datacount_streak: 1)!
+//            ],
+//            weightAM: nil,
+//            weightPM: nil
+//        ),
+//        // Add 2020
+//        SqlDailyTracker(
+//            date: Calendar.current.date(from: DateComponents(year: 2020, month: 6, day: 1))!,
+//            itemsDict: [
+//                DataCountType.dozeBeans: SqlDataCountRecord(datacount_date_psid: "2020-06-01", datacount_kind_pfnid: 1, datacount_count: 2, datacount_streak: 1)!,
+//                DataCountType.dozeBerries: SqlDataCountRecord(datacount_date_psid: "2020-06-01", datacount_kind_pfnid: 2, datacount_count: 1, datacount_streak: 1)!
+//            ],
+//            weightAM: nil,
+//            weightPM: nil
+//        ),
+//        // Add 2021
+//        SqlDailyTracker(
+//            date: Calendar.current.date(from: DateComponents(year: 2021, month: 6, day: 1))!,
+//            itemsDict: [
+//                DataCountType.dozeBeans: SqlDataCountRecord(datacount_date_psid: "2021-06-01", datacount_kind_pfnid: 1, datacount_count: 2, datacount_streak: 1)!,
+//                DataCountType.dozeBerries: SqlDataCountRecord(datacount_date_psid: "2021-06-01", datacount_kind_pfnid: 2, datacount_count: 1, datacount_streak: 1)!
+//            ],
+//            weightAM: nil,
+//            weightPM: nil
+//        ),
+//        // Add 2022
+//        SqlDailyTracker(
+//            date: Calendar.current.date(from: DateComponents(year: 2022, month: 6, day: 1))!,
+//            itemsDict: [
+//                DataCountType.dozeBeans: SqlDataCountRecord(datacount_date_psid: "2022-06-01", datacount_kind_pfnid: 1, datacount_count: 2, datacount_streak: 1)!,
+//                DataCountType.dozeBerries: SqlDataCountRecord(datacount_date_psid: "2022-06-01", datacount_kind_pfnid: 2, datacount_count: 1, datacount_streak: 1)!
+//            ],
+//            weightAM: nil,
+//            weightPM: nil
+//        ),
+//        // Add 2023
+//        SqlDailyTracker(
+//            date: Calendar.current.date(from: DateComponents(year: 2023, month: 6, day: 1))!,
+//            itemsDict: [
+//                DataCountType.dozeBeans: SqlDataCountRecord(datacount_date_psid: "2023-06-01", datacount_kind_pfnid: 1, datacount_count: 2, datacount_streak: 1)!,
+//                DataCountType.dozeBerries: SqlDataCountRecord(datacount_date_psid: "2023-06-01", datacount_kind_pfnid: 2, datacount_count: 1, datacount_streak: 1)!
+//            ],
+//            weightAM: nil,
+//            weightPM: nil
+//        ),
+//        // Existing 2024 entry
+//        SqlDailyTracker(
+//            date: Calendar.current.date(from: DateComponents(year: 2024, month: 5, day: 19))!,
+//            itemsDict: [
+//                DataCountType.dozeBeans: SqlDataCountRecord(datacount_date_psid: "2024-05-18", datacount_kind_pfnid: 1, datacount_count: 2, datacount_streak: 1)!,
+//                DataCountType.dozeBerries: SqlDataCountRecord(datacount_date_psid: "2024-05-18", datacount_kind_pfnid: 2, datacount_count: 1, datacount_streak: 1)!
+//            ],
+//            weightAM: nil,
+//            weightPM: nil
+//        ),
+//        // Existing 2025 entries
+//        SqlDailyTracker(
+//            date: Calendar.current.date(from: DateComponents(year: 2025, month: 4, day: 14))!,
+//            itemsDict: [
+//                DataCountType.dozeBeans: SqlDataCountRecord(datacount_date_psid: "2025-04-14", datacount_kind_pfnid: 1, datacount_count: 2, datacount_streak: 1)!,
+//                DataCountType.dozeBerries: SqlDataCountRecord(datacount_date_psid: "2025-04-14", datacount_kind_pfnid: 2, datacount_count: 1, datacount_streak: 1)!
+//            ],
+//            weightAM: nil,
+//            weightPM: nil
+//        ),
+//        SqlDailyTracker(
+//            date: Calendar.current.date(from: DateComponents(year: 2025, month: 5, day: 9))!,
+//            itemsDict: [
+//                DataCountType.dozeBeans: SqlDataCountRecord(datacount_date_psid: "2025-05-09", datacount_kind_pfnid: 1, datacount_count: 2, datacount_streak: 1)!,
+//                DataCountType.dozeBerries: SqlDataCountRecord(datacount_date_psid: "2025-05-09", datacount_kind_pfnid: 2, datacount_count: 1, datacount_streak: 1)!
+//            ],
+//            weightAM: nil,
+//            weightPM: nil
+//        ),
+//        SqlDailyTracker(
+//            date: Calendar.current.date(from: DateComponents(year: 2025, month: 5, day: 12))!,
+//            itemsDict: [
+//                DataCountType.dozeBeans: SqlDataCountRecord(datacount_date_psid: "2025-05-12", datacount_kind_pfnid: 1, datacount_count: 2, datacount_streak: 1)!,
+//                DataCountType.dozeBerries: SqlDataCountRecord(datacount_date_psid: "2025-05-12", datacount_kind_pfnid: 2, datacount_count: 1, datacount_streak: 1)!
+//            ],
+//            weightAM: nil,
+//            weightPM: nil
+//        ),
+//        SqlDailyTracker(
+//            date: Calendar.current.date(from: DateComponents(year: 2025, month: 5, day: 29))!,
+//            itemsDict: [
+//                DataCountType.dozeBeans: SqlDataCountRecord(datacount_date_psid: "2025-05-29", datacount_kind_pfnid: 1, datacount_count: 3, datacount_streak: 1)!,
+//                DataCountType.dozeBerries: SqlDataCountRecord(datacount_date_psid: "2025-05-29", datacount_kind_pfnid: 2, datacount_count: 1, datacount_streak: 1)!,
+//                DataCountType.dozeBeverages: SqlDataCountRecord(datacount_date_psid: "2025-05-29", datacount_kind_pfnid: 11, datacount_count: 2, datacount_streak: 1)!
+//            ],
+//            weightAM: nil,
+//            weightPM: nil
+//        )
+//    ]
+//    return DozeServingsHistoryView(trackers: sampleTrackers)
+//     .environment(\.locale, .init(identifier: "de"))
+//}

@@ -5,6 +5,7 @@
 // Month Chart View (shows all weights for a year)
 //The AM/PM tiebreaker logic is preserved by selecting the closest point based on weight when multiple points exist for the same day.   defaults to AM if multiple points exist
 
+//TBDz 20250915 Temp force uwrap
 import SwiftUI
 import Charts
 
@@ -184,8 +185,8 @@ struct MonthChartView: View {
         var dataPoints: [WeightDataPoint] = []
         
         for tracker in trackers {
-            if tracker.weightAM.dataweight_kg > 0 {
-                let weight = unitType == .metric ? tracker.weightAM.dataweight_kg : tracker.weightAM.lbs
+            if tracker.weightAM!.dataweight_kg > 0 {
+                let weight = unitType == .metric ? tracker.weightAM!.dataweight_kg : tracker.weightAM!.lbs
                 dataPoints.append(WeightDataPoint(
                     date: tracker.date,
                     weight: weight,
@@ -193,11 +194,11 @@ struct MonthChartView: View {
                 ))
             }
             
-            if tracker.weightPM.dataweight_kg > 0 {
-                let weight = unitType == .metric ? tracker.weightPM.dataweight_kg : tracker.weightPM.lbs
+            if tracker.weightPM!.dataweight_kg > 0 {
+                let weight = unitType == .metric ? tracker.weightPM?.dataweight_kg : tracker.weightPM!.lbs
                 dataPoints.append(WeightDataPoint(
                     date: tracker.date,
-                    weight: weight,
+                    weight: weight!,
                     type: .pm
                 ))
             }

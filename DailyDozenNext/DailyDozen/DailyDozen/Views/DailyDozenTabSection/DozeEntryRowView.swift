@@ -8,16 +8,19 @@
 import SwiftUI
 
 struct DozeEntryRowView: View {
-    var streakCount = 3000// NYI TBD
+    
+    @EnvironmentObject var viewModel: SqlDailyTrackerViewModel
+    //var streakCount = 3000// NYI TBD
     
     let item: DataCountType
-    let record: SqlDailyTracker?
-    let records: [SqlDailyTracker] = mockDB // needed?
+   // let record: SqlDailyTracker?
+   // let records: [SqlDailyTracker] = mockDB // needed?
     let date: Date
     let onCheck: (Int) -> Void // Callback for when checkbox changes
-    @State private var localCount: Int = 0
-    @State private var count: Int = 0 // Initialize with default
-    
+   // @State private var localCount: Int = 0
+    @State private var checkCount: Int = 0 // Initialize with default
+    @State private var isUpdating: Bool = false
+    @State private var streakCount: Int = 0 // Cache streak to avoid tracker updates
     private var regularItems: [DataCountType] {
             DozeEntryViewModel.rowTypeArray.filter { $0 != .otherVitaminB12 }
         }
@@ -62,23 +65,25 @@ struct DozeEntryRowView: View {
                                 .frame(width: 30, height: 30)
                         }
                         //StreakView(streak: streakCount)
-                        StreakView(streak: record?.itemsDict[item]?.datacount_streak ?? 0) // guess at what this might be when implemented
+                        StreakView(streak: viewModel.tracker?.itemsDict[item]?.datacount_streak ?? 0) // guess at what this might be when implemented
                         Spacer()
                         HStack {
                             // let itemData = record.itemsDict[item]
                            
-                            let boxes = item.goalServings
+                           // let boxes = item.goalServings
                             ContiguousCheckboxView(
-                                n: boxes,
-                                x: $count,
+                                n: item.goalServings,
+                                x: $checkCount,
                                 direction: .leftToRight,
                                 onChange: { newCount in
-                                    if record == nil {
-                                        localCount = newCount
+                                    guard !isUpdating else { return }
+                                    isUpdating = true
+                                    checkCount = newCount
+                                    Task { @MainActor in
+                                        await viewModel.setCount(for: item, count: newCount, date: date)
+                                        streakCount = viewModel.tracker?.itemsDict[item]?.datacount_streak ?? 0
                                         onCheck(newCount)
-                                    } else {
-                                        
-                                        onCheck(newCount)
+                                        isUpdating = false
                                     }
                                 },
                                 isDisabled: false,
@@ -92,14 +97,17 @@ struct DozeEntryRowView: View {
             .padding(10)
             .shadowboxed()
             .onAppear {
-                count = record?.itemsDict[item]?.datacount_count ?? localCount
-               // logit.debug("DozeEntryRowView: item = \(item), count = \(record?.itemsDict[item]?.datacount_count ?? localCount), localCount = \(localCount)")
+                Task { @MainActor in
+                    checkCount = viewModel.getCount(for: item)
+                    streakCount = viewModel.tracker?.itemsDict[item]?.datacount_streak ?? 0
+                     //  await viewModel.loadTracker(forDate: date)
+                       //checkCount = viewModel.tracker?.itemsDict[item]?.datacount_count ?? 0
+                      // checkCount = viewModel.getCount(for: item)
+                           }
                     }
-            .onChange(of: record?.itemsDict[item]?.datacount_count) { _, newCount in
-                    if let newCount = newCount {
-                            count = newCount
-                 }
-            }
+//            .onChange(of: viewModel.tracker?.itemsDict[item]?.datacount_count) { _, newCount in
+//                        checkCount = newCount ?? 0
+//                    }
         //else is for supplements
 //        else {
 //            HStack {
@@ -163,51 +171,21 @@ struct DozeEntryRowView: View {
     }
 }
 
-#Preview {
-    // Wrapper to provide mock data and handle onCheck
-    struct PreviewWrapper: View {
-        @State private var mockCount: Int = 0
-        
-        var body: some View {
-            DozeEntryRowView(
-                item: .dozeBeans, // Example item
-                record: nil, // Test no-record case; use mockRecord for record case
-                date: Date(),
-                onCheck: { newCount in
-                    // Mock callback: update local state and log for preview
-                    mockCount = newCount
-                    print("Preview: Checkbox changed to \(newCount)")
-                }
-            )
-        }
-    }
-    
-    return PreviewWrapper()
-}
-#Preview {
-    struct PreviewWrapper: View {
-        @State private var mockCount: Int = 0
-        
-        // Mock record for testing the "record exists" case
-        let mockRecord = SqlDailyTracker(
-            date: Date(),
-            itemsDict: [
-                DataCountType.dozeBeans: SqlDataCountRecord(datacount_date_psid: "2025-03-28", datacount_kind_pfnid: 1, datacount_count: 3, datacount_streak: 5)!
-            ]
-        )
-        
-        var body: some View {
-            DozeEntryRowView(
-                item: .dozeBeans,
-                record: mockRecord, // Test with record
-                date: Date(),
-                onCheck: { newCount in
-                    mockCount = newCount
-                    print("Preview: Checkbox changed to \(newCount)")
-                }
-            )
-        }
-    }
-    
-    return PreviewWrapper()
-}
+//#Preview {
+//    struct PreviewWrapper: View {
+//        @StateObject private var viewModel = SqlDailyTrackerViewModel()
+//        
+//        var body: some View {
+//            DozeEntryRowView(
+//                item: .dozeBeans,
+//                date: Date(),
+//                onCheck: { newCount in
+//                    Task { @MainActor in
+//                        await viewModel.setCount(for: .dozeBeans, count: newCount, date: Date())
+//                    }
+//                }
+//            )
+//            .environmentObject(viewModel)
+//        }
+//    }
+//    

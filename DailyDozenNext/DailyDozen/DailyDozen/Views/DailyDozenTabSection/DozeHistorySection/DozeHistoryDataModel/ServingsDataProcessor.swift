@@ -55,13 +55,15 @@ struct ChartData: Identifiable {
 }
 
 class ServingsDataProcessor {
-    private let trackers: [SqlDailyTracker]
+    private var trackers: [SqlDailyTracker]
     private let calendar = Calendar.current
     private let today: Date
     
     init(trackers: [SqlDailyTracker]) {
         self.trackers = trackers // Revert to using trackers parameter (was trackers)
         self.today = calendar.startOfDay(for: Date())
+        print("ServingsDataProcessor init: Tracker count: \(trackers.count), Dates: \(trackers.map { $0.date.datestampSid })")
+        
         // Debug returnSQLDataArray() to inspect mock data
        // let mockTrackers = returnSQLDataArray()  //TBDz may need to change
        // print("returnSQLDataArray: Tracker count: \(mockTrackers.count)")
@@ -70,17 +72,21 @@ class ServingsDataProcessor {
        // }
        // logit.debug("Tracker: \(trackers)")
        
-         for tracker in trackers {
-            // logit.debug("Tracker date: \(tracker.date), itemsDict: \(tracker.itemsDict.map { ($0.key, $0.value.datacount_count) })")
-         }
+//         for tracker in trackers {
+//            // logit.debug("Tracker date: \(tracker.date), itemsDict: \(tracker.itemsDict.map { ($0.key, $0.value.datacount_count) })")
+//         }
     }
+    func updateTrackers(_ newTrackers: [SqlDailyTracker]) {
+            self.trackers = newTrackers
+            print("ServingsDataProcessor updateTrackers: Tracker count: \(newTrackers.count), Dates: \(newTrackers.map { $0.date.datestampSid })")
+        }
     
     func dailyServings(forMonthOf date: Date) -> [ChartData] {
         let startOfMonth = calendar.startOfMonth(for: date)
         let endOfMonth = min(calendar.endOfMonth(for: date), today)
         var dailyTotals: [Date: Int] = [:]
         
-      //  print("DailyServings: Processing month: \(date), Start: \(startOfMonth), End: \(endOfMonth)")
+       print("DailyServings: Processing month: \(date), Start: \(startOfMonth), End: \(endOfMonth)")
         var currentDate = startOfMonth
         while currentDate <= endOfMonth {
             dailyTotals[currentDate] = 0

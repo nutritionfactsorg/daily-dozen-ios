@@ -145,7 +145,7 @@ struct WeightEntryPage: View {
                         await viewModel.updatePendingWeights(for: date, amWeight: amWeight, pmWeight: "", amTime: amTime, pmTime: amTime)
                     }
                 }
-            if !amWeight.isEmpty || viewModel.tracker(for: date).weightAM.dataweight_kg > 0 {
+                if !amWeight.isEmpty || viewModel.tracker(for: date).weightAM!.dataweight_kg > 0 {
                 Button("Clear AM Weight") {
                     showClearConfirmation = true
                 }
@@ -185,7 +185,7 @@ struct PMWeightSection: View {
                     Task { await viewModel.updatePendingWeights(for: date, amWeight: "", pmWeight: pmWeight, amTime: pmTime, pmTime: pmTime)
                     }
                 }
-            if !pmWeight.isEmpty || viewModel.tracker(for: date).weightPM.dataweight_kg > 0 { // 🟢 Changed: Fixed PM button condition
+            if !pmWeight.isEmpty || viewModel.tracker(for: date).weightPM!.dataweight_kg > 0 { // 🟢 Changed: Fixed PM button condition
                 Button("Clear PM Weight") {
                     showClearConfirmation = true
                 }
