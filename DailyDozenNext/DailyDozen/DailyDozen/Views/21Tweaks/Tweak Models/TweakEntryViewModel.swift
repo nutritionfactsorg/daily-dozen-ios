@@ -2,7 +2,7 @@
 //  TweakEntryViewModel.swift
 //  DailyDozen
 //
-//
+//  Copyright © 2025 Nutritionfacts.org. All rights reserved.
 //
 import Foundation
 

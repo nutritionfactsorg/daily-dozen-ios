@@ -28,6 +28,7 @@ struct ContentView: View {
             
            // SecondTabViewR()
             TwentyOneTweaksTabView()
+                .environmentObject(SqlDailyTrackerViewModel()) //TBDz is this needed here?
                 .tabItem {
                     Label {
                         Text("navtab.tweaks", comment: "21 Tweaks (proper noun) navigation tab")

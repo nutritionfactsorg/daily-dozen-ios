@@ -26,7 +26,7 @@ struct DozeServingsHistoryView: View {
     @State private var dailyScrollPosition: Date = Calendar.current.startOfDay(for: Date())
     @State private var monthlyScrollPosition: Date = Calendar.current.startOfMonth(for: Date())
     @State private var yearlyScrollPosition: Date = Calendar.current.date(from: DateComponents(year: Calendar.current.component(.year, from: Date()))) ?? Date()
-    @State private var processor: ServingsDataProcessor
+    @StateObject private var processor: ServingsDataProcessor
     private let calendar = Calendar.current
     private let today = Calendar.current.startOfDay(for: Date())
     
@@ -46,7 +46,8 @@ struct DozeServingsHistoryView: View {
     init() {
        // self.processor = ServingsDataProcessor(trackers: []) //Initialize with empty array; updated in onAppear
       
-                _processor = State(initialValue: ServingsDataProcessor(trackers: []))
+      //  _processor = State(initialValue: ServingsDataProcessor(trackers: []))
+        _processor = StateObject(wrappedValue: ServingsDataProcessor())
             
     }
     
@@ -134,11 +135,18 @@ struct DozeServingsHistoryView: View {
                    // let earliestDate = Date.distantPast // TBDz this needs changing
                    // trackers = await viewModel.fetchTrackers(forMonth: earliestDate)
                     //processor.updateTrackers(trackers) // Update processor with fetched trackers
+                    await processor.updateTrackers()
                     await viewModel.fetchAllTrackers()
-                    processor.updateTrackers(viewModel.trackers)
                     updateScrollPosition()
                 }
             }
+            .onReceive(NotificationCenter.default.publisher(for: .mockDBUpdated)) { _ in
+                        Task { @MainActor in
+                            await processor.updateTrackers()
+                            await viewModel.fetchAllTrackers()
+                            updateScrollPosition()
+                        }
+                    }
             .navigationTitle("historyRecordDoze.heading")
             .navigationBarTitleDisplayMode(.inline)
             .toolbarBackground(.visible, for: .navigationBar)

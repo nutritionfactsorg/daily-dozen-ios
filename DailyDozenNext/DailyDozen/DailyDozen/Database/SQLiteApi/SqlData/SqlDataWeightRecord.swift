@@ -13,7 +13,6 @@ extension String {
     }
 }
 
-
 /// Object Relationship Mapping (ORM) for `dataweight_table`
 /// Handles mapping from relationship data and item record object
 public struct SqlDataWeightRecord: Codable {
@@ -85,10 +84,15 @@ public struct SqlDataWeightRecord: Codable {
     }
     
     // :RENAME:???: pidKeys -> idKeys
-    public var pidKeys: (datestampSid: String, typeKey: String) {
+    public var pidKeysWAS: (datestampSid: String, typeKey: String) {
         let parts = self.dataweight_date_psid.components(separatedBy: ".")
         return (datestampSid: parts[0], typeKey: parts[1])
     }
+    
+    public var pidKeys: (datestampSid: String, typeKey: String) {
+            let typeKey = dataweight_ampm_pnid == 0 ? "am" : "pm" // Match DataWeightType rawValue
+            return (datestampSid: dataweight_date_psid, typeKey: typeKey)
+        }
     
     // :RENAME:???: pidParts -> idParts
     public var pidParts: (datestamp: Date, weightType: DataWeightType)? {
@@ -116,34 +120,51 @@ public struct SqlDataWeightRecord: Codable {
     
     static func pidKeys(pid: String) -> (datestampSid: String, typeKey: String) {
         let parts = pid.components(separatedBy: ".")
-        return (datestampSid: parts[0], typeKey: parts[1])
+       // return (datestampSid: parts[0], typeKey: parts[1])
+        return (datestampSid: parts[0], typeKey: parts.count > 1 ? parts[1] : "")
     }
     
     // MARK: - Init
     
-    /// CSV Initializer: SqlDataWeightRecord :GTD: implement typeKey and typeNid
     public init?(datestampSid: String, typeKey: String, kilograms: String, timeHHmm: String) {
-        guard DataWeightType(typeKey: typeKey) != nil,
-            Date(datestampSid: datestampSid) != nil,
-            let kg = Double(kilograms),
-            timeHHmm.contains(":"),
-            Int(timeHHmm.dropLast(3)) != nil,
-            Int(timeHHmm.dropFirst(3)) != nil
-            else {
+            guard let weightType = DataWeightType(typeKey: typeKey.lowercased()),
+                  Date(datestampSid: datestampSid) != nil,
+                  let kg = Double(kilograms.filter { !$0.isWhitespace }),
+                  kg >= 0,
+                  timeHHmm.matches("^[0-2][0-9]:[0-5][0-9]$") else {
+                print("•Init Error• SqlDataWeightRecord failed: datestampSid=\(datestampSid), typeKey=\(typeKey), kg=\(kilograms), time=\(timeHHmm)")
                 return nil
+            }
+            
+            self.dataweight_date_psid = datestampSid
+            self.dataweight_ampm_pnid = weightType.typeNid
+            self.dataweight_kg = kg
+            self.dataweight_time = timeHHmm
         }
-        
-        guard let typeNid = DataWeightType(typeKey: typeKey)?.typeNid
-        else { return nil }
-        
-        self.dataweight_date_psid = datestampSid
-        self.dataweight_ampm_pnid = typeNid
-        self.dataweight_kg = kg
-        self.dataweight_time = timeHHmm
-    }
+    
+    /// CSV Initializer: SqlDataWeightRecord :GTD: implement typeKey and typeNid
+//    public init?(datestampSid: String, typeKey: String, kilograms: String, timeHHmm: String) {
+//        guard DataWeightType(typeKey: typeKey) != nil,
+//            Date(datestampSid: datestampSid) != nil,
+//            let kg = Double(kilograms),
+//            timeHHmm.contains(":"),
+//            Int(timeHHmm.dropLast(3)) != nil,
+//            Int(timeHHmm.dropFirst(3)) != nil
+//            else {
+//                return nil
+//        }
+//        
+//        guard let typeNid = DataWeightType(typeKey: typeKey)?.typeNid
+//        else { return nil }
+//        
+//        self.dataweight_date_psid = datestampSid
+//        self.dataweight_ampm_pnid = typeNid
+//        self.dataweight_kg = kg
+//        self.dataweight_time = timeHHmm
+//    }
     
     public init(date: Date, weightType: DataWeightType, kg: Double) {
-        let typeKey = weightType.typeNid == 0 ? "AM" : "PM"
+        //let typeKey = weightType.typeNid == 0 ? "AM" : "PM"
         self.dataweight_date_psid = date.datestampSid
         self.dataweight_ampm_pnid = weightType.typeNid
         self.dataweight_kg = kg
@@ -184,8 +205,8 @@ public struct SqlDataWeightRecord: Codable {
               time.matches("^[0-2][0-9]:[0-5][0-9]$") else {
             return nil
         }
-        self.dataweight_date_psid = "\(datePsid).\(ampm == 0 ? "AM" : "PM")"
-        self.dataweight_ampm_pnid = ampm
+        self.dataweight_date_psid = datePsid // e.g., "2025-08-28"
+        self.dataweight_ampm_pnid = ampm // 0 or 1
         self.dataweight_kg = kg
         self.dataweight_time = time
        // self.lbs = UnitsUtility.getLbs(kg: kg)
@@ -207,4 +228,13 @@ public struct SqlDataWeightRecord: Codable {
             self.dataweight_kg = kg
             self.dataweight_time = timeHHmm ?? date.datestampHHmm
         }
+}
+
+extension SqlDataWeightRecord: Equatable {
+    public static func == (lhs: SqlDataWeightRecord, rhs: SqlDataWeightRecord) -> Bool {
+        lhs.dataweight_date_psid == rhs.dataweight_date_psid &&
+        lhs.dataweight_ampm_pnid == rhs.dataweight_ampm_pnid &&
+        lhs.dataweight_kg == rhs.dataweight_kg &&
+        lhs.dataweight_time == rhs.dataweight_time
+    }
 }

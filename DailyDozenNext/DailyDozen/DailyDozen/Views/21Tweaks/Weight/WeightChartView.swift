@@ -47,7 +47,14 @@ struct WeightChartView: View {
     @State private var selectedPeriod: ChartPeriod = .day
     @State private var selectedMonth: Date = Date().startOfMonth
     @State private var selectedYear: Int = Calendar.current.component(.year, from: Date())
+    @State private var monthsWithData: [Date] = []
+    @State private var yearsWithData: [Int] = []
     @State private var refreshID = UUID()
+    @State private var isLoading: Bool = false
+    @EnvironmentObject private var trackerViewModel: SqlDailyTrackerViewModel
+    @StateObject private var servingsProcessor: ServingsDataProcessor
+    @State private var navigationPath = NavigationPath()
+    @State private var isEditWeightViewActive = false
     
     private var gregorianCalendar: Calendar {
         var calendar = Calendar(identifier: .gregorian)
@@ -67,194 +74,29 @@ struct WeightChartView: View {
         return formatter
     }
     
-    private var monthsWithData: [Date] {
-        let validTrackers = mockDB.filter { $0.weightAM!.dataweight_kg > 0 || $0.weightPM!.dataweight_kg > 0 }
-        let months = Set(validTrackers.map { $0.date.startOfMonth })
-        return months.sorted()
-    }
-    
-    private var yearsWithData: [Int] {
-        let validTrackers = mockDB.filter { $0.weightAM!.dataweight_kg > 0 || $0.weightPM!.dataweight_kg > 0 }
-        let years = Set(validTrackers.map { $0.date.year })
-        return years.sorted()
-    }
-    
     private var monthsInSelectedYear: [Date] {
         monthsWithData.filter { $0.year == selectedYear }
     }
     
-    var body: some View {
-        VStack {
-            // Period toggle
-            Picker("Period", selection: $selectedPeriod) {
-                ForEach(ChartPeriod.allCases) { period in
-                    Text(period.rawValue).tag(period)
+    private func loadMonthsAndYears() async {
+            guard !isLoading else { return }
+            isLoading = true
+            let trackers = await trackerViewModel.fetchTrackers()
+            await servingsProcessor.updateTrackers()
+            let dates = trackers.map { $0.date.datestampSid }
+            await MainActor.run {
+                monthsWithData = Array(Set(dates.compactMap { Date(datestampSid: $0)?.startOfMonth }))
+                    .sorted()
+                yearsWithData = Array(Set(dates.compactMap { Date(datestampSid: $0)?.year }))
+                    .sorted()
+                if !monthsWithData.contains(selectedMonth), let latest = monthsWithData.last {
+                    selectedMonth = latest
+                    selectedYear = latest.year
                 }
-            }
-            .pickerStyle(.segmented)
-            .padding()
-            .frame(maxWidth: .infinity)
-            
-            // Navigation for Day view (month-based)
-            if selectedPeriod == .day {
-                HStack {
-                    Button(action: {
-                        if let earliest = monthsInSelectedYear.first {
-                            selectedMonth = earliest
-                        }
-                    }, label: {
-                        Image(systemName: "chevron.left.2")
-                            .foregroundColor(monthsInSelectedYear.isEmpty ? .gray : .brandGreen)
-                    })
-                    .disabled(monthsInSelectedYear.isEmpty)
-                    
-                    Button(action: {
-                        if let currentIndex = monthsInSelectedYear.firstIndex(of: selectedMonth),
-                           currentIndex > 0 {
-                            selectedMonth = monthsInSelectedYear[currentIndex - 1]
-                        } else if let previousYear = monthsWithData
-                            .filter({ $0.year < selectedYear })
-                            .max() {
-                            selectedYear = previousYear.year
-                            selectedMonth = monthsInSelectedYear.last ?? previousYear
-                        }
-                    }, label: {
-                        Image(systemName: "chevron.left")
-                            .foregroundColor(monthsWithData.isEmpty ? .gray : .brandGreen)
-                    })
-                    .disabled(monthsWithData.isEmpty)
-                    
-                    Text(monthYearText(for: selectedMonth))
-                        .font(.headline)
-                        .frame(maxWidth: .infinity)
-                    
-                    Button(action: {
-                        if let currentIndex = monthsInSelectedYear.firstIndex(of: selectedMonth),
-                           currentIndex < monthsInSelectedYear.count - 1 {
-                            selectedMonth = monthsInSelectedYear[currentIndex + 1]
-                        } else if let nextYear = monthsWithData
-                            .filter({ $0.year > selectedYear })
-                            .min() {
-                            selectedYear = nextYear.year
-                            selectedMonth = monthsInSelectedYear.first ?? nextYear
-                        }
-                    }, label: {
-                        Image(systemName: "chevron.right")
-                            .foregroundColor(selectedMonth >= Date().startOfMonth || monthsWithData.isEmpty ? .gray : .brandGreen)
-                    })
-                    .disabled(selectedMonth >= Date().startOfMonth || monthsWithData.isEmpty)
-                    
-                    Button(action: {
-                        if let latest = monthsInSelectedYear.last {
-                            selectedMonth = latest
-                        }
-                    }, label: {
-                        Image(systemName: "chevron.right.2")
-                            .foregroundColor(monthsInSelectedYear.isEmpty || selectedMonth >= Date().startOfMonth ? .gray : .brandGreen)
-                    })
-                    .disabled(monthsInSelectedYear.isEmpty || selectedMonth >= Date().startOfMonth)
-                }
-                .padding(.horizontal)
-            }
-            
-            // Navigation for Month view (year-based)
-            if selectedPeriod == .month {
-                HStack {
-                    Button(action: {
-                        if let earliest = yearsWithData.first {
-                            selectedYear = earliest
-                        }
-                    }, label: {
-                        Image(systemName: "chevron.left.2")
-                            .foregroundColor(yearsWithData.isEmpty ? .gray : .brandGreen)
-                    })
-                    .disabled(yearsWithData.isEmpty)
-                    
-                    Button(action: {
-                        if let currentIndex = yearsWithData.firstIndex(of: selectedYear),
-                           currentIndex > 0 {
-                            selectedYear = yearsWithData[currentIndex - 1]
-                        }
-                    }, label: {
-                        Image(systemName: "chevron.left")
-                            .foregroundColor(yearsWithData.isEmpty ? .gray : .brandGreen)
-                    })
-                    .disabled(yearsWithData.isEmpty)
-                    
-                    Text(numberFormatter.string(from: NSNumber(value: selectedYear)) ?? "\(selectedYear)")
-                        .font(.headline)
-                        .frame(maxWidth: .infinity)
-                    
-                    Button(action: {
-                        if let currentIndex = yearsWithData.firstIndex(of: selectedYear),
-                           currentIndex < yearsWithData.count - 1 {
-                            selectedYear = yearsWithData[currentIndex + 1]
-                        }
-                    }, label: {
-                        Image(systemName: "chevron.right")
-                            .foregroundColor(selectedYear >= Date().year || yearsWithData.isEmpty ? .gray : .brandGreen)
-                    })
-                    .disabled(selectedYear >= Date().year || yearsWithData.isEmpty)
-                    
-                    Button(action: {
-                        if let latest = yearsWithData.last {
-                            selectedYear = latest
-                        }
-                    }, label: {
-                        Image(systemName: "chevron.right.2")
-                            .foregroundColor(yearsWithData.isEmpty || selectedYear >= Date().year ? .gray : .brandGreen)
-                    })
-                    .disabled(yearsWithData.isEmpty || selectedYear >= Date().year)
-                }
-                .padding(.horizontal)
-            }
-            
-            // Chart
-            switch selectedPeriod {
-            case .day:
-                DayChartView(selectedMonth: selectedMonth)
-                    .frame(maxWidth: .infinity, minHeight: 340)
-                    .id(refreshID)
-            case .month:
-                MonthChartView(selectedYear: selectedYear)
-                    .frame(maxWidth: .infinity, minHeight: 340)
-                    .id(refreshID)
-            case .year:
-                YearChartView()
-                    .frame(maxWidth: .infinity, minHeight: 340)
-                    .id(refreshID)
-            }
-            
-            Spacer()
-            
-            NavigationLink(value: selectedPeriod == .day ? selectedMonth.startOfDay : Date().startOfDay) {
-                Text("Edit Data")
-                    .font(.headline)
-                    .padding()
-                    .frame(maxWidth: .infinity)
-                    .background(Color.blue)
-                    .foregroundColor(.white)
-                    .cornerRadius(10)
-                    .padding(.horizontal)
-            }
-            .onTapGesture {
-                print("🟢 •Nav• Edit Data tapped for \(selectedPeriod == .day ? selectedMonth.startOfDay.datestampSid : Date().startOfDay.datestampSid)")
+                isLoading = false
+                print("🟢 •Load• Fetched \(trackers.count) trackers, \(dates.count) distinct dates: \(dates), \(monthsWithData.count) months, \(yearsWithData.count) years, selectedMonth: \(selectedMonth.datestampSid)")
             }
         }
-        .navigationTitle("Weight Charts")
-        .onAppear {
-            if !monthsWithData.contains(selectedMonth), let latest = monthsWithData.last {
-                selectedMonth = latest
-                selectedYear = latest.year
-            }
-            print("🟢 •Chart• WeightChartView appeared, refreshing chart for month: \(selectedMonth.datestampSid)")
-            refreshID = UUID()
-        }
-        .onReceive(WeightEntryViewModel.mockDBTrigger) { _ in
-            print("🟢 •Chart• mockDB updated via notification, refreshing chart")
-            refreshID = UUID()
-        }
-    }
     
     private func monthYearText(for date: Date) -> String {
         let formatter = DateFormatter()
@@ -263,8 +105,196 @@ struct WeightChartView: View {
         formatter.dateFormat = "MMM yyyy"
         return formatter.string(from: date)
     }
-}
-
-#Preview {
-    WeightChartView()
+    
+    init() {
+            _servingsProcessor = StateObject(wrappedValue: ServingsDataProcessor())
+        }
+    
+    var body: some View {
+      //  NavigationStack(path: $navigationPath) {
+            VStack {
+                if isLoading {
+                    ProgressView()
+                        .frame(maxWidth: .infinity, minHeight: 340)
+                } else {
+                    Picker("Period", selection: $selectedPeriod) {
+                        ForEach(ChartPeriod.allCases) { period in
+                            Text(period.rawValue).tag(period)
+                        }
+                    }
+                    .pickerStyle(.segmented)
+                    .padding()
+                    .frame(maxWidth: .infinity)
+                    
+                    if selectedPeriod == .day {
+                        HStack {
+                            Button(action: {
+                                if let earliest = monthsInSelectedYear.first {
+                                    selectedMonth = earliest
+                                }
+                            }, label: {
+                                Image(systemName: "chevron.left.2")
+                                    .foregroundColor(monthsInSelectedYear.isEmpty ? .gray : .brandGreen)
+                            })
+                            .disabled(monthsInSelectedYear.isEmpty)
+                            
+                            Button(action: {
+                                if let currentIndex = monthsInSelectedYear.firstIndex(of: selectedMonth),
+                                   currentIndex > 0 {
+                                    selectedMonth = monthsInSelectedYear[currentIndex - 1]
+                                } else if let previousYear = monthsWithData
+                                    .filter({ $0.year < selectedYear })
+                                    .max() {
+                                    selectedYear = previousYear.year
+                                    selectedMonth = monthsInSelectedYear.last ?? previousYear
+                                }
+                            }, label: {
+                                Image(systemName: "chevron.left")
+                                    .foregroundColor(monthsWithData.isEmpty ? .gray : .brandGreen)
+                            })
+                            .disabled(monthsWithData.isEmpty)
+                            
+                            Text(monthYearText(for: selectedMonth))
+                                .font(.headline)
+                                .frame(maxWidth: .infinity)
+                            
+                            Button(action: {
+                                if let currentIndex = monthsInSelectedYear.firstIndex(of: selectedMonth),
+                                   currentIndex < monthsInSelectedYear.count - 1 {
+                                    selectedMonth = monthsInSelectedYear[currentIndex + 1]
+                                } else if let nextYear = monthsWithData
+                                    .filter({ $0.year > selectedYear })
+                                    .min() {
+                                    selectedYear = nextYear.year
+                                    selectedMonth = monthsInSelectedYear.first ?? nextYear
+                                }
+                            }, label: {
+                                Image(systemName: "chevron.right")
+                                    .foregroundColor(selectedMonth >= Date().startOfMonth || monthsWithData.isEmpty ? .gray : .brandGreen)
+                            })
+                            .disabled(selectedMonth >= Date().startOfMonth || monthsWithData.isEmpty)
+                            
+                            Button(action: {
+                                if let latest = monthsInSelectedYear.last {
+                                    selectedMonth = latest
+                                }
+                            }, label: {
+                                Image(systemName: "chevron.right.2")
+                                    .foregroundColor(monthsInSelectedYear.isEmpty || selectedMonth >= Date().startOfMonth ? .gray : .brandGreen)
+                            })
+                            .disabled(monthsInSelectedYear.isEmpty || selectedMonth >= Date().startOfDay)
+                        }
+                        .padding(.horizontal)
+                    }
+                    
+                    if selectedPeriod == .month {
+                        HStack {
+                            Button(action: {
+                                if let earliest = yearsWithData.first {
+                                    selectedYear = earliest
+                                }
+                            }, label: {
+                                Image(systemName: "chevron.left.2")
+                                    .foregroundColor(yearsWithData.isEmpty ? .gray : .brandGreen)
+                            })
+                            .disabled(yearsWithData.isEmpty)
+                            
+                            Button(action: {
+                                if let currentIndex = yearsWithData.firstIndex(of: selectedYear),
+                                   currentIndex > 0 {
+                                    selectedYear = yearsWithData[currentIndex - 1]
+                                }
+                            }, label: {
+                                Image(systemName: "chevron.left")
+                                    .foregroundColor(yearsWithData.isEmpty ? .gray : .brandGreen)
+                            })
+                            .disabled(yearsWithData.isEmpty)
+                            
+                            Text(numberFormatter.string(from: NSNumber(value: selectedYear)) ?? "\(selectedYear)")
+                                .font(.headline)
+                                .frame(maxWidth: .infinity)
+                            
+                            Button(action: {
+                                if let currentIndex = yearsWithData.firstIndex(of: selectedYear),
+                                   currentIndex < yearsWithData.count - 1 {
+                                    selectedYear = yearsWithData[currentIndex + 1]
+                                }
+                            }, label: {
+                                Image(systemName: "chevron.right")
+                                    .foregroundColor(selectedYear >= Date().year || yearsWithData.isEmpty ? .gray : .brandGreen)
+                            })
+                            .disabled(selectedYear >= Date().year || yearsWithData.isEmpty)
+                            
+                            Button(action: {
+                                if let latest = yearsWithData.last {
+                                    selectedYear = latest
+                                }
+                            }, label: {
+                                Image(systemName: "chevron.right.2")
+                                    .foregroundColor(yearsWithData.isEmpty || selectedYear >= Date().year ? .gray : .brandGreen)
+                            })
+                            .disabled(yearsWithData.isEmpty || selectedYear >= Date().year)
+                        }
+                        .padding(.horizontal)
+                    }
+                    
+                    switch selectedPeriod {
+                    case .day:
+                        DayChartView(selectedMonth: selectedMonth)
+                            .frame(maxWidth: .infinity, minHeight: 340)
+                            .id(refreshID)
+                    case .month:
+                        MonthChartView(selectedYear: selectedYear)
+                            .frame(maxWidth: .infinity, minHeight: 340)
+                            .id(refreshID)
+                    case .year:
+                        YearChartView()
+                            .frame(maxWidth: .infinity, minHeight: 340)
+                            .id(refreshID)
+                    }
+                    
+                    Spacer()
+                    
+                    NavigationLink(value: selectedPeriod == .day ? selectedMonth.startOfDay : Date().startOfDay) {
+                                    Text("Edit Data")
+                                        .font(.headline)
+                                        .padding()
+                                        .frame(maxWidth: .infinity)
+                                        .background(Color.blue)
+                                        .foregroundColor(.white)
+                                        .cornerRadius(10)
+                                        .padding(.horizontal)
+                                }
+                   
+//                    .navigationDestination(isPresented: $isEditWeightViewActive) {
+//                        WeightEntryView(initialDate: selectedPeriod == .day ? selectedMonth.startOfDay : Date().startOfDay)
+//                    }
+                    //                .onTapGesture {
+                    //                    print("🟢 •Nav• Edit Data tapped for \(selectedPeriod == .day ? selectedMonth.startOfDay.datestampSid : Date().startOfDay.datestampSid)")
+                    //                }
+                }
+            }
+            .onAppear {
+                Task {
+                    isLoading = true
+                    await loadMonthsAndYears()
+                    if !monthsWithData.contains(selectedMonth), let latest = monthsWithData.last {
+                        selectedMonth = latest
+                        selectedYear = latest.year
+                    }
+                    isLoading = false
+                    refreshID = UUID()
+                    print("🟢 •Chart• WeightChartView appeared, refreshing chart for month: \(selectedMonth.datestampSid)")
+                }
+            }
+            .onReceive(WeightEntryViewModel.mockDBTrigger) { _ in
+                Task {
+                    isLoading = true
+                    await loadMonthsAndYears()
+                    refreshID = UUID()
+                    print("🟢 •Chart• DB updated via notification, refreshing chart")
+                }
+            }
+       // } //Nav
+    } //Body
 }

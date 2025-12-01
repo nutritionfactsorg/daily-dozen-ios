@@ -13,8 +13,11 @@ public enum DataWeightType: String, Sendable {
     case pm
     
     init?(typeKey: String) {
-        self = DataWeightType(rawValue: String(typeKey))!
-    }
+            guard let value = DataWeightType(rawValue: typeKey.lowercased()) else {
+                return nil
+            }
+            self = value
+        }
     
     init?(typeNid: String) {
         switch typeNid {

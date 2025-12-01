@@ -12,7 +12,9 @@ import Charts
 struct MonthChartView: View {
     let selectedYear: Int
     @Environment(\.layoutDirection) private var layoutDirection
+    @EnvironmentObject private var viewModel: SqlDailyTrackerViewModel
     @State private var selectedDay: Int? // Tracks the selected day (x-value)
+    @State private var weightData: [WeightDataPoint] = []
 
     private var gregorianCalendar: Calendar {
         var calendar = Calendar(identifier: .gregorian)
@@ -36,7 +38,7 @@ struct MonthChartView: View {
 
     var body: some View {
         GeometryReader { geometry in
-            let weightData = fetchWeightData(for: selectedYear)
+           // let weightData = fetchWeightData()
 
             VStack(spacing: 12) {
                 if weightData.isEmpty {
@@ -52,8 +54,12 @@ struct MonthChartView: View {
                 }
             }
             .frame(maxWidth: .infinity, maxHeight: 340)
+            .onAppear {
+                        fetchWeightData()
+                    }
             .onChange(of: selectedYear) { _, _ in
                 selectedDay = nil // Clear selection when year changes
+                fetchWeightData()
             }
         }
     }
@@ -145,7 +151,7 @@ struct MonthChartView: View {
     }
         .padding(.horizontal, layoutDirection == .rightToLeft ? 20 : 10)
         .padding(.top) // Reverted to minimal top padding
-        .border(.red, width: 1) // Uncomment for debugging
+        .border(.red, width: 1) // Uncomment -- used for debugging
     }  //chartView
 
     private func valueSelectionPopover(for point: WeightDataPoint) -> some View {
@@ -175,38 +181,31 @@ struct MonthChartView: View {
         .padding(.horizontal)
     }
 
-    private func fetchWeightData(for year: Int) -> [WeightDataPoint] {
-        let unitType = UnitType.fromUserDefaults()
-        
-        let trackers = mockDB.filter { tracker in
-            tracker.date.year == year
-        }
-        
-        var dataPoints: [WeightDataPoint] = []
-        
-        for tracker in trackers {
-            if tracker.weightAM!.dataweight_kg > 0 {
-                let weight = unitType == .metric ? tracker.weightAM!.dataweight_kg : tracker.weightAM!.lbs
-                dataPoints.append(WeightDataPoint(
-                    date: tracker.date,
-                    weight: weight,
-                    type: .am
-                ))
-            }
-            
-            if tracker.weightPM!.dataweight_kg > 0 {
-                let weight = unitType == .metric ? tracker.weightPM?.dataweight_kg : tracker.weightPM!.lbs
-                dataPoints.append(WeightDataPoint(
-                    date: tracker.date,
-                    weight: weight!,
-                    type: .pm
-                ))
-            }
-        }
-        
-       // print("Fetched weightData for \(year): \(dataPoints.map { "\($0.date.dateStringLocalized(for: .short)), \($0.weight), \($0.type)" })")
-        return dataPoints.sorted { $0.date < $1.date }
-    }
+    private func fetchWeightData() {
+           Task { @MainActor in
+               let trackers = await viewModel.fetchAllTrackers()
+               let unitType = UnitType.fromUserDefaults()
+               var dataPoints: [WeightDataPoint] = []
+               
+               for tracker in trackers where tracker.date.year == selectedYear {
+                   if let amWeight = tracker.weightAM?.dataweight_kg, amWeight > 0 {
+                       let weight = unitType == .metric ? amWeight : tracker.weightAM!.lbs
+                       dataPoints.append(WeightDataPoint(date: tracker.date, weight: weight, type: .am))
+                       print("🟢 •Chart• Added AM weight for \(tracker.date.datestampSid): \(weight) \(unitType == .metric ? "kg" : "lbs")")
+                   }
+                   if let pmWeight = tracker.weightPM?.dataweight_kg, pmWeight > 0 {
+                       let weight = unitType == .metric ? pmWeight : tracker.weightPM!.lbs
+                       dataPoints.append(WeightDataPoint(date: tracker.date, weight: weight, type: .pm))
+                       print("🟢 •Chart• Added PM weight for \(tracker.date.datestampSid): \(weight) \(unitType == .metric ? "kg" : "lbs")")
+                   }
+               }
+               
+               DispatchQueue.main.async {
+                   weightData = dataPoints.sorted { $0.date < $1.date }
+                   print("🟢 •Chart• Created \(dataPoints.count) data points for \(selectedYear): \(dataPoints.map { "\($0.date.datestampSid), \($0.weight), \($0.type)" })")
+               }
+           }
+       }
 
     private func computeYDomain(for dataPoints: [WeightDataPoint]) -> ClosedRange<Double> {
         guard !dataPoints.isEmpty else { return 0...100 }
@@ -293,5 +292,3 @@ extension WeightDataPoint {
         }
     }
 }
-
-

@@ -6,12 +6,15 @@
 import SwiftUI
 import Charts
 
-
 //TBDz 20250916 Temp Forceunwrap sqlDataWeightRecord
 // Day Chart View
 struct DayChartView: View {
     let selectedMonth: Date
+  //  private let db = SqliteDatabaseActor() // Add as property
     @Environment(\.layoutDirection) private var layoutDirection // Detect RTL or LTR
+    @State private var weightData: [WeightDataPoint] = []
+    private var isLoading: Bool = false
+    @EnvironmentObject private var viewModel: SqlDailyTrackerViewModel
     
     private var gregorianCalendar: Calendar {
         var calendar = Calendar(identifier: .gregorian)
@@ -67,8 +70,21 @@ struct DayChartView: View {
     //        return formatter
     //    }
     
+    init(selectedMonth: Date) {
+            self.selectedMonth = selectedMonth
+        }
+    
+//    @MainActor
+//       private func loadWeightData(for month: Date) async {
+//           isLoading = true
+//           let newData = await fetchWeightData(for: month)
+//           weightData = newData
+//           isLoading = false
+//       }
+    
     var body: some View {
-        let weightData = fetchWeightData(for: selectedMonth)
+        VStack {
+        //let weightData = fetchWeightData(for: selectedMonth)
         //TBDz In case it isn't already there
         
         // Debug data points
@@ -78,129 +94,172 @@ struct DayChartView: View {
         // let _ = print("AM Points: \(amPoints.map { "\($0.date.datestampSid) \($0.weight)" })")
         // let _ = print("PM Points: \(pmPoints.map { "\($0.date.datestampSid) \($0.weight)" })")
         
-        if weightData.isEmpty {
-            Text("No weight data for this month")
-                .foregroundStyle(.gray)
-                .frame(maxWidth: .infinity, minHeight: 250)
-        } else {
-            VStack(spacing: 12) {
-                ScrollView(.horizontal, showsIndicators: false) {
-                    Chart(weightData) { dataPoint in
-                        LineMark(
-                            x: .value("Day", gregorianCalendar.component(.day, from: dataPoint.date)),
-                            y: .value("Weight", dataPoint.weight),
-                            series: .value("Series", dataPoint.type == .am ? "AM" : "PM")
-                        )
-                        .foregroundStyle(by: .value("Series", dataPoint.type == .am ? "AM" : "PM"))
-                        .symbol(by: .value("Series", dataPoint.type == .am ? "AM" : "PM"))
-                        .interpolationMethod(.catmullRom)
-                    }
-                    .chartForegroundStyleScale([
-                        "AM": Color("yellowSunglowColor"),
-                        "PM": Color("redFlamePeaColor")
-                    ])
-                    .chartSymbolScale([
-                        "AM": Circle().strokeBorder(lineWidth: 2),
-                        "PM": Circle().strokeBorder(lineWidth: 2)
-                    ])
-                    .chartXAxis {
-                        AxisMarks(values: dataDays(weightData)) { value in
-                            if let day = value.as(Int.self) {
-                                //                            AxisValueLabel {
-                                //                                Text("\(day)")
-                                //                            }
-                                AxisValueLabel {
-                                    Text(dayNumberFormatter.string(from: NSNumber(value: day)) ?? "\(day)")
-                                }
-                                AxisGridLine()
-                                AxisTick()
+                if isLoading {
+                    ProgressView()
+                        .frame(maxWidth: .infinity, minHeight: 250)
+                } else if weightData.isEmpty {
+                    Text("No weight data for this month")
+                        .foregroundStyle(.gray)
+                        .frame(maxWidth: .infinity, minHeight: 250)
+                } else {
+                    VStack(spacing: 12) {
+                        ScrollView(.horizontal, showsIndicators: false) {
+                            Chart(weightData) { dataPoint in
+                                LineMark(
+                                    x: .value("Day", gregorianCalendar.component(.day, from: dataPoint.date)),
+                                    y: .value("Weight", dataPoint.weight),
+                                    series: .value("Series", dataPoint.type == .am ? "AM" : "PM")
+                                )
+                                .foregroundStyle(by: .value("Series", dataPoint.type == .am ? "AM" : "PM"))
+                                .symbol(by: .value("Series", dataPoint.type == .am ? "AM" : "PM"))
+                                .interpolationMethod(.catmullRom)
                             }
-                        }
-                    }
-                    .chartXScale(domain: xAxisDomain(for: weightData))
-                    .chartYAxis {
-                        AxisMarks(position: .leading) { value in
-                            if let weight = value.as(Double.self) {
-                                AxisValueLabel {
-                                    Text(numberFormatter.string(from: NSNumber(value: weight)) ?? String(format: "%.1f", weight))
-                                        .font(layoutDirection == .rightToLeft ? .caption2 : .caption) // Smaller font for Persian
-                                        .padding(layoutDirection == .rightToLeft ? .trailing : .leading, 20) // Increased padding for RTL
-                                    
+                            .chartForegroundStyleScale([
+                                "AM": Color("yellowSunglowColor"),
+                                "PM": Color("redFlamePeaColor")
+                            ])
+                            .chartSymbolScale([
+                                "AM": Circle().strokeBorder(lineWidth: 2),
+                                "PM": Circle().strokeBorder(lineWidth: 2)
+                            ])
+                            .chartXAxis {
+                                AxisMarks(values: dataDays(weightData)) { value in
+                                    if let day = value.as(Int.self) {
+                                        //                            AxisValueLabel {
+                                        //                                Text("\(day)")
+                                        //                            }
+                                        AxisValueLabel {
+                                            Text(dayNumberFormatter.string(from: NSNumber(value: day)) ?? "\(day)")
+                                        }
+                                        AxisGridLine()
+                                        AxisTick()
+                                    }
                                 }
-                                AxisGridLine()
-                                AxisTick()
                             }
+                            .chartXScale(domain: xAxisDomain(for: weightData))
+                            .chartYAxis {
+                                AxisMarks(position: .leading) { value in
+                                    if let weight = value.as(Double.self) {
+                                        AxisValueLabel {
+                                            Text(numberFormatter.string(from: NSNumber(value: weight)) ?? String(format: "%.1f", weight))
+                                                .font(layoutDirection == .rightToLeft ? .caption2 : .caption) // Smaller font for Persian
+                                                .padding(layoutDirection == .rightToLeft ? .trailing : .leading, 20) // Increased padding for RTL
+                                            
+                                        }
+                                        AxisGridLine()
+                                        AxisTick()
+                                    }
+                                }
+                            }
+                            .chartYScale(domain: computeYDomain(for: weightData))
+                            .chartLegend(.hidden)
+                            .padding(.horizontal, layoutDirection == .rightToLeft ? 20 : 10) // Extra horizontal padding for RTL
+                            .padding(.top)
+                            //.frame(height: 250)
+                            .frame(minWidth: max(350, CGFloat(xAxisDomain(for: weightData).count) * 20), minHeight: 250)
                         }
+                        .frame(height: 250)
+                        // Legend
+                        HStack {
+                            Circle()
+                                .fill(Color("yellowSunglowColor"))
+                                .frame(width: 12, height: 12)
+                            Text("AM")
+                                .font(.caption)
+                            Spacer()
+                            Circle()
+                                .fill(Color("redFlamePeaColor"))
+                                .frame(width: 12, height: 12)
+                            Text("PM")
+                                .font(.caption)
+                        }
+                        .padding(.horizontal)
                     }
-                    .chartYScale(domain: computeYDomain(for: weightData))
-                    .chartLegend(.hidden)
-                    .padding(.horizontal, layoutDirection == .rightToLeft ? 20 : 10) // Extra horizontal padding for RTL
-                    .padding(.top)
-                    //.frame(height: 250)
-                    .frame(minWidth: max(350, CGFloat(xAxisDomain(for: weightData).count) * 20), minHeight: 250)
-                }
-                .frame(height: 250)
-                // Legend
-                HStack {
-                    Circle()
-                        .fill(Color("yellowSunglowColor"))
-                        .frame(width: 12, height: 12)
-                    Text("AM")
-                        .font(.caption)
-                    Spacer()
-                    Circle()
-                        .fill(Color("redFlamePeaColor"))
-                        .frame(width: 12, height: 12)
-                    Text("PM")
-                        .font(.caption)
-                }
-                .padding(.horizontal)
                 
+            }
+        }
+        .onAppear {
+            
+         // fetchWeightData(for: selectedMonth)
+            fetchWeightData()
+        }
+//        .onAppear {
+//            Task { @MainActor in
+//                isLoading = true
+//                weightData = await fetchWeightData(for: selectedMonth)
+//                isLoading = false
+//            }
+//        }
+//        .onChange(of: selectedMonth) { _ in
+//            Task { @MainActor in
+//                isLoading = true
+//                weightData = await fetchWeightData(for: selectedMonth)
+//                isLoading = false
+//                print("🟢 •Chart• Selected month changed to: \(selectedMonth.datestampSid)")
+//            }
+//        }
+//        .onReceive(WeightEntryViewModel.mockDBTrigger) { _ in
+//            Task { @MainActor in
+//                isLoading = true
+//                weightData = await fetchWeightData(for: selectedMonth)
+//                isLoading = false
+//                print("🟢 •Chart• DB updated via notification, refreshing DayChartView")
+//            }
+//        }
+    }
+    
+    private func fetchWeightData() {
+        Task { @MainActor in
+            let trackers = await viewModel.fetchTrackers(forMonth: selectedMonth)
+            var dataPoints: [WeightDataPoint] = []
+            for tracker in trackers {
+                if let amWeight = tracker.weightAM?.dataweight_kg, amWeight > 0 {
+                    dataPoints.append(WeightDataPoint(date: tracker.date, weight: amWeight, type: .am))
+                    print("🟢 •Chart• Added AM weight for \(tracker.date.datestampSid): \(amWeight) kg")
+                }
+                if let pmWeight = tracker.weightPM?.dataweight_kg, pmWeight > 0 {
+                    dataPoints.append(WeightDataPoint(date: tracker.date, weight: pmWeight, type: .pm))
+                    print("🟢 •Chart• Added PM weight for \(tracker.date.datestampSid): \(pmWeight) kg")
+                }
+            }
+            DispatchQueue.main.async {
+                weightData = dataPoints
+                print("🟢 •Chart• Created \(dataPoints.count)" )
             }
         }
     }
     
-    private func fetchWeightData(for month: Date) -> [WeightDataPoint] {
-        //let calendar = Calendar.current
-        let unitType = UnitType.fromUserDefaults()
-        
-        guard let monthStart = gregorianCalendar.date(from: gregorianCalendar.dateComponents([.year, .month], from: month))
-                
-        else {
-            print("Failed to compute month range or start for \(displayFormatter.string(from: month))")
-            return []
-        }
-        
-        let trackers = mockDB.filter { tracker in
-            gregorianCalendar.isDate(tracker.date, equalTo: monthStart, toGranularity: .month)
-        }
-        
-        print("Found \(trackers.count) trackers for \(displayFormatter.string(from: month))")
-        
-        var dataPoints: [WeightDataPoint] = []
-        
-        for tracker in trackers {
-            if tracker.weightAM!.dataweight_kg > 0 {
-                let weight = unitType == .metric ? tracker.weightAM!.dataweight_kg : tracker.weightAM!.lbs
-                dataPoints.append(WeightDataPoint(
-                    date: tracker.date,
-                    weight: weight,
-                    type: .am
-                ))
-            }
-            
-            if tracker.weightPM!.dataweight_kg > 0 {
-                let weight = unitType == .metric ? tracker.weightPM!.dataweight_kg : tracker.weightPM!.lbs
-                dataPoints.append(WeightDataPoint(
-                    date: tracker.date,
-                    weight: weight,
-                    type: .pm
-                ))
-            }
-        }
-        
-        return dataPoints.sorted { $0.date < $1.date }
-    }
+//    private func fetchWeightData(for month: Date) async -> [WeightDataPoint] {
+//        print("🟢 •Chart• Fetching weight data for month: \(month.datestampSid)")
+//        let unitType = UnitType.fromUserDefaults()
+//        let trackers = await trackerViewModel.fetchTrackers(forMonth: month)
+//        print("🟢 •Chart• Found \(trackers.count) trackers for \(displayFormatter.string(from: month)): \(trackers.map { "\($0.date.datestampSid): AM=\($0.weightAM?.dataweight_kg ?? 0) kg (\($0.weightAM != nil ? UnitsUtility.regionalWeight(fromKg: $0.weightAM!.dataweight_kg, toUnits: .imperial, toDecimalDigits: 1) ?? "0" : "0") lbs), PM=\($0.weightPM?.dataweight_kg ?? 0) kg (\($0.weightPM != nil ? UnitsUtility.regionalWeight(fromKg: $0.weightPM!.dataweight_kg, toUnits: .imperial, toDecimalDigits: 1) ?? "0" : "0") lbs)" })")
+//        
+//        var weightData: [WeightDataPoint] = []
+//        
+//        for tracker in trackers.sorted(by: { $0.date < $1.date }) {
+//            if let weightAM = tracker.weightAM, weightAM.dataweight_kg > 0 {
+//                let weight = unitType == .metric ? weightAM.dataweight_kg : UnitsUtility.regionalWeight(fromKg: weightAM.dataweight_kg, toUnits: .imperial, toDecimalDigits: 1).flatMap { Double($0) } ?? (weightAM.dataweight_kg * 2.20462)
+//                weightData.append(WeightDataPoint(
+//                    date: tracker.date,
+//                    weight: weight,
+//                    type: .am
+//                ))
+//            }
+//            
+//            if let weightPM = tracker.weightPM, weightPM.dataweight_kg > 0 {
+//                let weight = unitType == .metric ? weightPM.dataweight_kg : UnitsUtility.regionalWeight(fromKg: weightPM.dataweight_kg, toUnits: .imperial, toDecimalDigits: 1).flatMap { Double($0) } ?? (weightPM.dataweight_kg * 2.20462)
+//                weightData.append(WeightDataPoint(
+//                    date: tracker.date,
+//                    weight: weight,
+//                    type: .pm
+//                ))
+//            }
+//        }
+//        
+//        print("🟢 •Chart• Created \(weightData.count) data points: \(weightData.map { "\($0.date.datestampSid): \($0.weight) \(unitType == .metric ? "kg" : "lbs") (\($0.type.rawValue))" })")
+//        return weightData
+//    }
     
     private func computeYDomain(for dataPoints: [WeightDataPoint]) -> ClosedRange<Double> {
         guard !dataPoints.isEmpty else { return 0...100 }

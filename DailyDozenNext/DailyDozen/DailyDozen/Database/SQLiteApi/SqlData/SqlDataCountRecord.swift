@@ -203,3 +203,12 @@ public struct SqlDataCountRecord: Codable {
         }
     }
 }
+
+extension SqlDataCountRecord: Equatable {
+    public static func == (lhs: SqlDataCountRecord, rhs: SqlDataCountRecord) -> Bool {
+        lhs.datacount_date_psid == rhs.datacount_date_psid &&
+        lhs.datacount_kind_pfnid == rhs.datacount_kind_pfnid &&
+        lhs.datacount_count == rhs.datacount_count &&
+        lhs.datacount_streak == rhs.datacount_streak
+    }
+}

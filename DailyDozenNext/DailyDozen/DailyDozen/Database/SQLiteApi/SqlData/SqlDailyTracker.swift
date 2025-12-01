@@ -105,3 +105,35 @@ struct SqlDailyTracker {
     }
     
 }
+
+extension SqlDailyTracker: Equatable {
+    public static func == (lhs: SqlDailyTracker, rhs: SqlDailyTracker) -> Bool {
+        // Compare dates (same day)
+        guard Calendar.current.isDate(lhs.date, inSameDayAs: rhs.date) else { return false }
+
+        // Compare itemsDict
+        guard lhs.itemsDict.keys == rhs.itemsDict.keys else { return false }
+        for key in lhs.itemsDict.keys {
+            guard let lhsRecord = lhs.itemsDict[key], let rhsRecord = rhs.itemsDict[key],
+                  lhsRecord == rhsRecord else {
+                return false
+            }
+        }
+
+        // Compare weightAM
+        if let lhsAM = lhs.weightAM, let rhsAM = rhs.weightAM {
+            guard lhsAM == rhsAM else { return false }
+        } else if lhs.weightAM != nil || rhs.weightAM != nil {
+            return false
+        }
+
+        // Compare weightPM
+        if let lhsPM = lhs.weightPM, let rhsPM = rhs.weightPM {
+            guard lhsPM == rhsPM else { return false }
+        } else if lhs.weightPM != nil || rhs.weightPM != nil {
+            return false
+        }
+
+        return true
+    }
+}

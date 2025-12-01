@@ -8,7 +8,7 @@
 
 import Foundation
 
-public enum DataCountType: String, CaseIterable {
+public enum DataCountType: String, CaseIterable, Hashable {
     
     //case date
     //case streak
@@ -197,4 +197,10 @@ public enum DataCountType: String, CaseIterable {
         }
     }
     
+}
+
+extension DataCountType: Equatable {
+    public static func == (lhs: DataCountType, rhs: DataCountType) -> Bool {
+        lhs.nid == rhs.nid // Assuming nid uniquely identifies DataCountType
+    }
 }

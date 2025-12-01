@@ -9,6 +9,7 @@ import SwiftUI
 import HealthKit
 
 struct TwentyOneTweaksTabView: View {
+    @State private var navigationPath = NavigationPath()
     @State private var showHealthKitError = false // Controls whether the alert is shown
     @State private var healthKitErrorMessage = "" // Stores the error message for the alert
 
@@ -134,6 +135,7 @@ struct TwentyOneTweaksTabView: View {
                                     records: $records
                                     //navigateToWeightEntry: $navigateToWeightEntry
                                 )
+                               // .environmentObject(SqlDailyTrackerViewModel)
                                 .tag(index)
                             }  //ForEach
                             //  }
@@ -187,7 +189,7 @@ struct TwentyOneTweaksTabView: View {
                 //
                 .toolbarBackground(.visible, for: .navigationBar)
                 .toolbarBackground(.brandGreen, for: .navigationBar)
-            }
+          } //Nav
             
         .task {
                     checkHealthAvail()

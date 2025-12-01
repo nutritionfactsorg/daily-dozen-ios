@@ -17,6 +17,7 @@ import Foundation
 actor SqliteDatabaseActor {
     private var db: OpaquePointer?
     private let dbURL: URL?
+    private var isInitialized: Bool = false // Add to track setup
     
     init() {
         do {
@@ -32,9 +33,13 @@ actor SqliteDatabaseActor {
     
     // MARK: - Setup
     
-    private func setup() async {
+    func setup() async {
+        guard !isInitialized else {
+            print("🟢 •DB• SqliteDatabaseActor already initialized")
+            return
+        }
         guard let dbURL = dbURL else {
-            logit.error("Database URL is nil, cannot initialize database")
+            logit.error("🔴 •DB•  URL is nil, cannot initialize database")
             return
         }
         
@@ -78,14 +83,15 @@ actor SqliteDatabaseActor {
             logit.error("Failed to clean invalid records")
         }
         
-        print("Database initialized at \(dbURL.path)")
+        isInitialized = true
+        print("🟢 •DB• Database initialized at \(dbURL.path)")
         await dumpDatabase()
     }
     
     // MARK: - Weight Operations
     
-    func fetchWeightRecords(forDate date: String) -> [SqlDataWeightRecord] {
-        guard let db = db else {
+    func fetchWeightRecords(forDate date: String) async -> [SqlDataWeightRecord] { // Make async
+        guard isInitialized else {
             logit.error("Database not initialized")
             return []
         }
@@ -121,22 +127,22 @@ actor SqliteDatabaseActor {
             }
         }
         sqlite3_finalize(stmt)
+        print("🟢 •DB• Fetched \(records.count) weight records for \(date)")
         return records
     }
     
-    func saveWeight(record: SqlDataWeightRecord, oldDatePsid: String?, oldAmpm: Int?) -> Bool {
-        guard let db = db else {
+    func saveWeight(record: SqlDataWeightRecord, oldDatePsid: String?, oldAmpm: Int?) async -> Bool {
+        guard isInitialized else {
             logit.error("Database not initialized")
             return false
         }
-        guard let parts = record.dataweight_date_psid.components(separatedBy: ".").count == 2 ? record.dataweight_date_psid.components(separatedBy: ".") : nil,
-              Date(datestampSid: parts[0]) != nil,
-              parts[1] == "AM" || parts[1] == "PM",
+        guard Date(datestampSid: record.dataweight_date_psid) != nil,
+              [0, 1].contains(record.dataweight_ampm_pnid),
+              record.dataweight_kg >= 0,
               record.dataweight_time.matches("^[0-2][0-9]:[0-5][0-9]$") else {
             logit.error("Invalid record: \(record.idString), kg=\(record.dataweight_kg), time=\(record.dataweight_time)")
             return false
         }
-        let datePsid = parts[0]
         
         sqlite3_exec(db, "BEGIN TRANSACTION;", nil, nil, nil)
         
@@ -158,7 +164,7 @@ actor SqliteDatabaseActor {
         let insertQuery = "INSERT INTO dataweight_table (dataweight_date_psid, dataweight_ampm_pnid, dataweight_kg, dataweight_time) VALUES (?, ?, ?, ?);"
         var stmt: OpaquePointer?
         guard sqlite3_prepare_v2(db, insertQuery, -1, &stmt, nil) == SQLITE_OK,
-              sqlite3_bind_text(stmt, 1, datePsid.cString(using: .utf8), -1, SQLITE_TRANSIENT) == SQLITE_OK,
+              sqlite3_bind_text(stmt, 1, record.dataweight_date_psid.cString(using: .utf8), -1, SQLITE_TRANSIENT) == SQLITE_OK,
               sqlite3_bind_int(stmt, 2, Int32(record.dataweight_ampm_pnid)) == SQLITE_OK,
               sqlite3_bind_double(stmt, 3, record.dataweight_kg) == SQLITE_OK,
               sqlite3_bind_text(stmt, 4, record.dataweight_time.cString(using: .utf8), -1, SQLITE_TRANSIENT) == SQLITE_OK,
@@ -171,13 +177,14 @@ actor SqliteDatabaseActor {
         sqlite3_finalize(stmt)
         
         sqlite3_exec(db, "COMMIT;", nil, nil, nil)
+        print("🟢 •DB• Saved weight for \(record.idString): \(record.dataweight_kg) kg")
         return true
     }
     
     // MARK: - Count Operations
     
-    func fetchCountRecords(forDate date: String) -> [SqlDataCountRecord] {
-        guard let db = db else {
+    func fetchCountRecords(forDate date: String) async -> [SqlDataCountRecord] { // Make async
+        guard isInitialized else {
             logit.error("Database not initialized")
             return []
         }
@@ -213,11 +220,12 @@ actor SqliteDatabaseActor {
             }
         }
         sqlite3_finalize(stmt)
+        print("🟢 •DB• Fetched \(records.count) count records for \(date)")
         return records
     }
     
-    func saveCount(record: SqlDataCountRecord, oldDatePsid: String?, oldTypeNid: Int?) -> Bool {
-        guard let db = db else {
+    func saveCount(record: SqlDataCountRecord, oldDatePsid: String?, oldTypeNid: Int?) async -> Bool {
+        guard isInitialized else {
             logit.error("Database not initialized")
             return false
         }
@@ -261,13 +269,15 @@ actor SqliteDatabaseActor {
         sqlite3_finalize(stmt)
         
         sqlite3_exec(db, "COMMIT;", nil, nil, nil)
+        print("🟢 •DB• Saved count for \(record.datacount_date_psid), type=\(record.datacount_kind_pfnid)")
         return true
     }
     
     // MARK: - Date Navigation
     
-    func fetchDistinctDates() -> [String] {
-        guard let db = db else {
+    func fetchDistinctDates() async -> [String] {
+        await setup()
+        guard isInitialized else {
             logit.error("Database not initialized")
             return []
         }
@@ -294,13 +304,14 @@ actor SqliteDatabaseActor {
             }
         }
         sqlite3_finalize(stmt)
+        print("🟢 •DB• Fetched \(dates.count) distinct dates: \(dates)")
         return dates
     }
     
     // MARK: - Utilities
     
     private func execute(query: String) -> Bool {
-        guard let db = db else {
+        guard isInitialized else {
             logit.error("Database not initialized")
             return false
         }
@@ -317,8 +328,8 @@ actor SqliteDatabaseActor {
     
     func fetchDailyTracker(forDate date: Date) async -> SqlDailyTracker {
         let datestampSid = date.datestampSid
-        let weightRecords = fetchWeightRecords(forDate: datestampSid)
-        let countRecords = fetchCountRecords(forDate: datestampSid)
+        let weightRecords = await fetchWeightRecords(forDate: datestampSid)
+        let countRecords = await fetchCountRecords(forDate: datestampSid)
         
         var itemsDict: [DataCountType: SqlDataCountRecord] = [:]
         for dataCountType in DataCountType.allCases {
@@ -341,16 +352,18 @@ actor SqliteDatabaseActor {
             }
         }
         
-        return SqlDailyTracker(
+        let tracker = SqlDailyTracker(
             date: date,
             itemsDict: itemsDict,
             weightAM: weightAM,
             weightPM: weightPM
         )
+        print("🟢 •DB• Fetched tracker for \(datestampSid): AM=\(tracker.weightAM?.dataweight_kg ?? 0) kg, PM=\(tracker.weightPM?.dataweight_kg ?? 0) kg, counts=\(tracker.itemsDict.count)")
+        return tracker
     }
     
     func fetchTrackers() async -> [SqlDailyTracker] {
-        let dates = fetchDistinctDates()
+        let dates = await fetchDistinctDates() // Make async
         return await withTaskGroup(of: SqlDailyTracker.self) { group in
             for dateStr in dates {
                 if let date = Date(datestampSid: dateStr) {
@@ -365,29 +378,35 @@ actor SqliteDatabaseActor {
     }
     
     func fetchTrackers(forMonth date: Date) async -> [SqlDailyTracker] {
-        let calendar = Calendar.current
-        let startOfMonth = calendar.startOfMonth(for: date)
-        let endOfMonth = calendar.endOfMonth(for: date)
-        let dates = fetchDistinctDates().filter { dateStr in
-            guard let recordDate = Date(datestampSid: dateStr) else { return false }
-            return recordDate >= startOfMonth && recordDate <= endOfMonth
+        await setup()
+        guard isInitialized else {
+            logit.error("Database not initialized")
+            return []
+        }
+        let calendar = Calendar(identifier: .gregorian)
+        let monthStart = calendar.startOfMonth(for: date)
+        let nextMonth = calendar.date(byAdding: .month, value: 1, to: monthStart)!
+        
+        let distinctDates = await fetchDistinctDates()
+        let filteredDates = distinctDates
+            .compactMap { Date(datestampSid: $0) }
+            .filter { $0 >= monthStart && $0 < nextMonth }
+            .map { $0.startOfDay }
+        
+        var trackers: [SqlDailyTracker] = []
+        for date in filteredDates {
+            let tracker = await fetchDailyTracker(forDate: date)
+            if tracker.weightAM != nil || tracker.weightPM != nil || !tracker.itemsDict.isEmpty {
+                trackers.append(tracker)
+            }
         }
         
-        return await withTaskGroup(of: SqlDailyTracker.self) { group in
-            for dateStr in dates {
-                if let date = Date(datestampSid: dateStr) {
-                    group.addTask {
-                        await self.fetchDailyTracker(forDate: date)
-                    }
-                }
-            }
-            return await group.reduce(into: [SqlDailyTracker]()) { $0.append($1) }
-                .sorted { $0.date > $1.date }
-        }
+        print("🟢 •DB• Fetched \(trackers.count) trackers for month \(date.datestampSid): \(trackers.map { "\($0.date.datestampSid): AM=\($0.weightAM?.dataweight_kg ?? 0) kg, PM=\($0.weightPM?.dataweight_kg ?? 0) kg" })")
+        return trackers.sorted(by: { $0.date < $1.date })
     }
     
     func dumpDatabase() async {
-        guard let db = db else {
+        guard isInitialized else {
             logit.error("Database not initialized")
             return
         }
@@ -403,6 +422,8 @@ actor SqliteDatabaseActor {
                 print("Weight: date=\(date), ampm=\(ampm), kg=\(kg), time=\(time)")
             }
             sqlite3_finalize(stmt)
+        } else {
+            logit.error("Failed to dump dataweight_table: \(String(cString: sqlite3_errmsg(db)))")
         }
         
         print("Dumping datacount_table:")
@@ -416,6 +437,8 @@ actor SqliteDatabaseActor {
                 print("Count: date=\(date), type=\(typeNid), count=\(count), streak=\(streak)")
             }
             sqlite3_finalize(stmt)
+        } else {
+            logit.error("Failed to dump datacount_table: \(String(cString: sqlite3_errmsg(db)))")
         }
     }
     
@@ -427,37 +450,8 @@ actor SqliteDatabaseActor {
     
     // MARK: - Fetch All Trackers
     
-    // **Change**: Update fetchRows to return [[Any?]] matching fetchCountRecords
-    private func fetchRows(query: String) async -> [[Any?]] {
-        guard let db = db else {
-            logit.error("Database not initialized")
-            return []
-        }
-        
-        var rows: [[Any?]] = []
-        var stmt: OpaquePointer?
-        
-        if sqlite3_prepare_v2(db, query, -1, &stmt, nil) == SQLITE_OK {
-            while sqlite3_step(stmt) == SQLITE_ROW {
-                let row: [Any?] = [
-                    sqlite3_column_text(stmt, 0).map { String(cString: $0) }, // datacount_date_psid
-                    Int(sqlite3_column_int(stmt, 1)),                        // datacount_kind_pfnid
-                    Int(sqlite3_column_int(stmt, 2)),                        // datacount_count
-                    Int(sqlite3_column_int(stmt, 3))                         // datacount_streak
-                ]
-                rows.append(row)
-            }
-        } else {
-            logit.error("Query failed: \(String(cString: sqlite3_errmsg(db)))")
-        }
-        
-        sqlite3_finalize(stmt)
-        print("fetchRows: Fetched \(rows.count) rows for query: \(query)")
-        return rows
-    }
-    
     func fetchAllTrackers() async -> [SqlDailyTracker] {
-        // **Change**: Use fetchRows with [[Any?]]
+        await setup()
         let rows = await fetchRows(query: "SELECT datacount_date_psid, datacount_kind_pfnid, datacount_count, datacount_streak FROM datacount_table")
         var trackers: [String: [DataCountType: SqlDataCountRecord]] = [:]
         
@@ -476,12 +470,47 @@ actor SqliteDatabaseActor {
             trackers[dateKey]![countType] = record
         }
         
-        let result = trackers.map { dateKey, itemsDict in
-            // **Change**: Include weightAM, weightPM as nil since not fetched
-            SqlDailyTracker(date: Date(datestampSid: dateKey)!, itemsDict: itemsDict, weightAM: nil, weightPM: nil)
-        }.sorted { $0.date < $1.date }
+        let result = await withTaskGroup(of: SqlDailyTracker.self) { group in
+            for dateKey in trackers.keys {
+                if let date = Date(datestampSid: dateKey) {
+                    group.addTask {
+                        await self.fetchDailyTracker(forDate: date)
+                    }
+                }
+            }
+            return await group.reduce(into: [SqlDailyTracker]()) { $0.append($1) }
+                .sorted { $0.date < $1.date }
+        }
         
         print("fetchAllTrackers: Fetched \(result.count) trackers: \(result.map { "\($0.date.datestampSid): dozeBeans=\($0.itemsDict[.dozeBeans]?.datacount_count ?? 0), otherVitaminB12=\($0.itemsDict[.otherVitaminB12]?.datacount_count ?? 0)" })")
         return result
+    }
+    
+    private func fetchRows(query: String) async -> [[Any?]] {
+        guard isInitialized else {
+            logit.error("Database not initialized")
+            return []
+        }
+        
+        var rows: [[Any?]] = []
+        var stmt: OpaquePointer?
+        
+        if sqlite3_prepare_v2(db, query, -1, &stmt, nil) == SQLITE_OK {
+            while sqlite3_step(stmt) == SQLITE_ROW {
+                let row: [Any?] = [
+                    sqlite3_column_text(stmt, 0).map { String(cString: $0) },
+                    Int(sqlite3_column_int(stmt, 1)),
+                    Int(sqlite3_column_int(stmt, 2)),
+                    Int(sqlite3_column_int(stmt, 3))
+                ]
+                rows.append(row)
+            }
+        } else {
+            logit.error("Query failed: \(String(cString: sqlite3_errmsg(db)))")
+        }
+        
+        sqlite3_finalize(stmt)
+        print("fetchRows: Fetched \(rows.count) rows for query: \(query)")
+        return rows
     }
 }

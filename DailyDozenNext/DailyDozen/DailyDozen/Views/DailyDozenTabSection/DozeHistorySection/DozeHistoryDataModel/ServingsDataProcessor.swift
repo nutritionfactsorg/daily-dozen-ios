@@ -54,39 +54,42 @@ struct ChartData: Identifiable {
     }
 }
 
-class ServingsDataProcessor {
-    private var trackers: [SqlDailyTracker]
+class ServingsDataProcessor: ObservableObject {
+    @Published private var trackers: [SqlDailyTracker]
     private let calendar = Calendar.current
     private let today: Date
+    private let dbActor: SqliteDatabaseActor
     
-    init(trackers: [SqlDailyTracker]) {
-        self.trackers = trackers // Revert to using trackers parameter (was trackers)
+    init(dbActor: SqliteDatabaseActor = SqliteDatabaseActor()) {
+        self.dbActor = dbActor
+        self.trackers = []
         self.today = calendar.startOfDay(for: Date())
-        print("ServingsDataProcessor init: Tracker count: \(trackers.count), Dates: \(trackers.map { $0.date.datestampSid })")
-        
-        // Debug returnSQLDataArray() to inspect mock data
-       // let mockTrackers = returnSQLDataArray()  //TBDz may need to change
-       // print("returnSQLDataArray: Tracker count: \(mockTrackers.count)")
-       // for tracker in mockTrackers {
-        //    print("Tracker date: \(tracker.date), itemsDict: \(tracker.itemsDict.map { ($0.key, $0.value.datacount_count) })")
-       // }
-       // logit.debug("Tracker: \(trackers)")
-       
-//         for tracker in trackers {
-//            // logit.debug("Tracker date: \(tracker.date), itemsDict: \(tracker.itemsDict.map { ($0.key, $0.value.datacount_count) })")
-//         }
-    }
-    func updateTrackers(_ newTrackers: [SqlDailyTracker]) {
-            self.trackers = newTrackers
-            print("ServingsDataProcessor updateTrackers: Tracker count: \(newTrackers.count), Dates: \(newTrackers.map { $0.date.datestampSid })")
+        Task {
+            await dbActor.setup()
+            let fetchedTrackers = await dbActor.fetchTrackers()
+            await MainActor.run {
+                 self.trackers = fetchedTrackers
+                print("ServingsDataProcessor updateTrackers: Tracker count: \(fetchedTrackers.count), Dates: \(fetchedTrackers.map { $0.date.datestampSid })")
+                    
+                       }
+           // print("ServingsDataProcessor init: Tracker count: \(self.trackers.count), Dates: \(self.trackers.map { $0.date.datestampSid })")
         }
+    }
+    
+    func updateTrackers() async {
+        let fetchedTrackers = await dbActor.fetchTrackers()
+        await MainActor.run {
+             self.trackers = fetchedTrackers
+              print("ServingsDataProcessor updateTrackers: Tracker count: \(fetchedTrackers.count), Dates: \(fetchedTrackers.map { $0.date.datestampSid })")
+               }
+    }
     
     func dailyServings(forMonthOf date: Date) -> [ChartData] {
         let startOfMonth = calendar.startOfMonth(for: date)
         let endOfMonth = min(calendar.endOfMonth(for: date), today)
         var dailyTotals: [Date: Int] = [:]
         
-       print("DailyServings: Processing month: \(date), Start: \(startOfMonth), End: \(endOfMonth)")
+        print("DailyServings: Processing month: \(date.datestampSid), Start: \(startOfMonth.datestampSid), End: \(endOfMonth.datestampSid)")
         var currentDate = startOfMonth
         while currentDate <= endOfMonth {
             dailyTotals[currentDate] = 0
@@ -97,19 +100,19 @@ class ServingsDataProcessor {
             if calendar.isDate(tracker.date, inSameMonthAs: date) {
                 let total = tracker.itemsDict.values
                     .filter { $0.datacount_count > 0 }
-                    .reduce(0) { (sum, record) in
-                      //  print("Daily: Tracker date: \(tracker.date), Record: \(record.datacount_count)")
+                    .reduce(0) { sum, record in
+                        print("Daily: Tracker date: \(tracker.date.datestampSid), Record: \(record.datacount_count)")
                         return sum + record.datacount_count
                     }
                 let trackerDate = calendar.startOfDay(for: tracker.date)
                 dailyTotals[trackerDate] = total
-               // print("Daily: Tracker date: \(trackerDate), Total: \(total)")
+                print("Daily: Tracker date: \(trackerDate.datestampSid), Total: \(total)")
             }
         }
         
         let result = dailyTotals.map { ChartData(date: $0.key, totalServings: $0.value) }
             .sorted { $0.date! < $1.date! }
-       // print("DailyServings: Result count: \(result.count), Dates and Totals: \(result.map { ($0.date!, $0.totalServings) })")
+        print("DailyServings: Result count: \(result.count), Dates and Totals: \(result.map { ($0.date!.datestampSid, $0.totalServings) })")
         return result
     }
     
@@ -143,55 +146,25 @@ class ServingsDataProcessor {
         
         let theMappedMonthlyTotals = monthlyTotals.map { ChartData(date: $0.key, totalServings: $0.value) }
             .sorted { $0.date! < $1.date! }
-        logit.debug( "MappedMonthlytotals: \(theMappedMonthlyTotals)")
+        logit.debug("MappedMonthlyTotals: \(theMappedMonthlyTotals)")
         return theMappedMonthlyTotals
     }
-//    func monthlyServings(forYearOf date: Date) -> [ChartData] {
-//        let selectedYear = calendar.component(.year, from: date)
-//        let currentYear = calendar.component(.year, from: today)
-//        
-//        if selectedYear > currentYear {
-//            return []
-//        }
-//        
-//        var monthlyTotals: [Date: Int] = [:]
-//        for month in 1...12 {
-//            if let monthDate = calendar.date(from: DateComponents(year: selectedYear, month: month, day: 1)) {
-//                monthlyTotals[monthDate] = 0
-//            }
-//        }
-//        
-//        for tracker in trackers where tracker.date <= today {
-//            if calendar.isDate(tracker.date, inSameYearAs: date) {
-//                let monthStart = calendar.startOfMonth(for: tracker.date)
-//                let total = tracker.itemsDict.values
-//                    .filter { $0.datacount_count > 0 }
-//                    .reduce(0) { $0 + $1.datacount_count }
-//                monthlyTotals[monthStart, default: 0] += total
-//            }
-//        }
-//        
-//        let theMappedMonthlyTotals = monthlyTotals.map { ChartData(date: $0.key, totalServings: Double($0.value)) }
-//            .sorted { $0.date < $1.date }
-//        logit.debug("MappedMonthlytotals: \(theMappedMonthlyTotals)")
-//        return theMappedMonthlyTotals
-//    }
     
     func yearlyServings() -> [ChartData] {
-        print("YearlyServings: Today is \(today), Tracker count: \(trackers.count)")
-        print("YearlyServings: Tracker dates: \(trackers.map { $0.date })")
+        print("YearlyServings: Today is \(today.datestampSid), Tracker count: \(trackers.count)")
+        print("YearlyServings: Tracker dates: \(trackers.map { $0.date.datestampSid })")
         var yearlyTotals: [Int: Int] = [:]
         
         for tracker in trackers where tracker.date <= today {
             let year = calendar.component(.year, from: tracker.date)
             let total = tracker.itemsDict.values
                 .filter { $0.datacount_count > 0 }
-                .reduce(0) { (sum, record) in
-                    print("Yearly: Tracker date: \(tracker.date), Record: \(record.datacount_count)")
+                .reduce(0) { sum, record in
+                    print("Yearly: Tracker date: \(tracker.date.datestampSid), Record: \(record.datacount_count)")
                     return sum + record.datacount_count
                 }
             yearlyTotals[year, default: 0] += total
-            print("Yearly: Tracker date: \(tracker.date), Year: \(year), Total: \(total)")
+            print("Yearly: Tracker date: \(tracker.date.datestampSid), Year: \(year), Total: \(total)")
         }
         
         print("YearlyTotals: \(yearlyTotals)")
@@ -204,6 +177,7 @@ class ServingsDataProcessor {
     func earliestDate() -> Date? {
         trackers.map { $0.date }.min()
     }
+    
     func latestDate() -> Date? {
         trackers.map { $0.date }.max()
     }

@@ -46,11 +46,9 @@ class WeightEntryViewModel: ObservableObject {
     //Temp TBDZ just temp force unwrapped SqlDateWeightRecord  20250915
     
     
-    
     init() {
         loadTrackers()
        
-    
     }
     
     func loadTrackers() {
