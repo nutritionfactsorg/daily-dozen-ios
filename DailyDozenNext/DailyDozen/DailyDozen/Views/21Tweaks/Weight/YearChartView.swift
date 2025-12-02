@@ -2,6 +2,7 @@
 //  YearChartView.swift
 //  DailyDozen
 //
+//swiftlint:disable type_body_length
 
 import SwiftUI
 import Charts

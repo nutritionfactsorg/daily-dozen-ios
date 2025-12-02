@@ -9,7 +9,7 @@ import Foundation
 
 class DozeTextsProvider {
     
-    static let shared: DozeTextsProvider = {
+    @MainActor static let shared: DozeTextsProvider = {
         let decoder = JSONDecoder() 
         guard 
             let path = Bundle.main.path(forResource: "DozeDetailData", ofType: "json"),

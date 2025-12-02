@@ -16,6 +16,7 @@ import SwiftUI
 struct TwentyOnePageView: View {
     let date: Date
     @State var record: SqlDailyTracker?
+    @EnvironmentObject var viewModel: SqlDailyTrackerViewModel
     //@State private var navigationPath = NavigationPath()
 
     // @StateObject private var weightViewModel = WeightEntryViewModel()
@@ -28,13 +29,9 @@ struct TwentyOnePageView: View {
         guard let record = record else {
             return 0
         }
-        var total = 0
-        for (_, itemRecord) in record.itemsDict {
-            
-            total += itemRecord.datacount_count
-            
-        }
-        return total
+        return record.itemsDict
+            .filter { TweakEntryViewModel.rowTypeArray.contains($0.key) }
+            .reduce(0) { $0 + $1.value.datacount_count }
     }
     
     private let tweakStateCountMaximum = 37
@@ -44,7 +41,7 @@ struct TwentyOnePageView: View {
     }
     
     private func syncRecordWithDB() async {
-        let db = SqliteDatabaseActor()
+        let db = SqliteDatabaseActor.shared
         let tracker = await db.fetchDailyTracker(forDate: date.startOfDay)
         record = tracker
         if let index = records.firstIndex(where: { Calendar.current.isDate($0.date, inSameDayAs: date.startOfDay) }) {
@@ -84,27 +81,32 @@ struct TwentyOnePageView: View {
                                 record: record,
                                 date: date,
                                 onCheck: { count in
-                                    let existingCount = record?.itemsDict[item]?.datacount_count ?? 0
-                                    if count == 0 && existingCount == 0 && item != .tweakWeightTwice {
-                                        return
+                                    
+                                    Task {@MainActor in
+                                        let existingCount = record?.itemsDict[item]?.datacount_count ?? 0
+                                        if count == 0 && existingCount == 0 && item != .tweakWeightTwice {
+                                            return
+                                        }
+                                        //may need to insert await viewMode.getTrackerOrCreate(for)
+                                        var updatedRecord = record ?? SqlDailyTracker(date: date.startOfDay)
+                                        var countRecord = updatedRecord.itemsDict[item] ?? SqlDataCountRecord(
+                                            date: date.startOfDay,
+                                            countType: item,
+                                            count: 0,
+                                            streak: updatedRecord.itemsDict[item]?.datacount_streak ?? 0
+                                        )
+                                        countRecord.datacount_count = count
+                                        updatedRecord.itemsDict[item] = countRecord
+                                        if let index = records.firstIndex(where: { Calendar.current.isDate($0.date, inSameDayAs: date.startOfDay) }) {
+                                            records[index] = updatedRecord
+                                        } else {
+                                            records.append(updatedRecord)
+                                        }
+                                        record = updatedRecord
+                                        //print("🟢 •Update• Record created/updated for \(date.datestampSid): \(item.headingDisplay) count \(count)")
                                     }
-                                    var updatedRecord = record ?? SqlDailyTracker(date: date.startOfDay)
-                                    var countRecord = updatedRecord.itemsDict[item] ?? SqlDataCountRecord(
-                                        date: date.startOfDay,
-                                        countType: item,
-                                        count: 0,
-                                        streak: updatedRecord.itemsDict[item]?.datacount_streak ?? 0
-                                    )
-                                    countRecord.datacount_count = count
-                                    updatedRecord.itemsDict[item] = countRecord
-                                    if let index = records.firstIndex(where: { Calendar.current.isDate($0.date, inSameDayAs: date.startOfDay) }) {
-                                        records[index] = updatedRecord
-                                    } else {
-                                        records.append(updatedRecord)
-                                    }
-                                    record = updatedRecord
-                                    print("🟢 •Update• Record created/updated for \(date.datestampSid): \(item.headingDisplay) count \(count)")
                                 }
+                                
                             )
                             .id(item) // Ensure stable identity
                         } //ForEach regular
@@ -148,7 +150,6 @@ struct TwentyOnePageView: View {
             .onReceive(WeightEntryViewModel.mockDBTrigger) { _ in
                 Task { await syncRecordWithDB() }
                 dbTrigger = UUID()
-                print("🟢 •Refresh• mockDB updated via notification, refreshed record for \(date.datestampSid)")
             }
        // } //NavStack
     }

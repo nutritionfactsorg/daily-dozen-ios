@@ -4,6 +4,8 @@
 //
 // Month Chart View (shows all weights for a year)
 //The AM/PM tiebreaker logic is preserved by selecting the closest point based on weight when multiple points exist for the same day.   defaults to AM if multiple points exist
+//
+//// swiftlint:disable function_body_length
 
 //TBDz 20250915 Temp force uwrap
 import SwiftUI

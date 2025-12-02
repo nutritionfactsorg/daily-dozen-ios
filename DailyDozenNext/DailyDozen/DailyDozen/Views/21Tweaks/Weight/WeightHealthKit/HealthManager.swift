@@ -8,6 +8,7 @@
 import Foundation
 import HealthKit
 
+@MainActor
 class HealthManager {
     static let shared = HealthManager()
     let hkHealthStore = HKHealthStore()

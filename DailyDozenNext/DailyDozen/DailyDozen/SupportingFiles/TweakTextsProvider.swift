@@ -11,7 +11,7 @@ import Foundation
 
 class TweakTextsProvider {
     
-    static let shared: TweakTextsProvider = {
+    @MainActor static let shared: TweakTextsProvider = {
         let decoder = JSONDecoder() 
         guard 
             let path = Bundle.main.path(forResource: "TweakDetailData", ofType: "json"),

@@ -36,7 +36,7 @@ extension Date {
 //        }
 //        return .pm
 //    }
-    
+   
     /// Seconds since 1970.01.01 00:00:00 UTC
     var getCurrentBenchmarkSeconds: Double {
         return self.timeIntervalSince1970
@@ -81,24 +81,24 @@ extension Date {
     }
     
     /// filename compatible format `yyyyMMdd_HHmmss`
-    static func datestampNow() -> String {
-        let currentTime = DateManager.currentDatetime()
+    static func datestampNow() async -> String {
+        let currentTime = await DateManager.shared.currentDatetime()
         let dateFormatter = DateFormatter()
         dateFormatter.dateFormat = "yyyyMMdd_HHmmss"
         return dateFormatter.string(from: currentTime)
     }
     
     /// filename compatible format `yyyyMMdd-HHmmss`, hyphen for word break
-    static func datestampExport() -> String {
-        let currentTime = DateManager.currentDatetime()
+    static func datestampExport() async -> String {
+        let currentTime = await DateManager.shared.currentDatetime()
         let dateFormatter = DateFormatter()
         dateFormatter.dateFormat = "yyyyMMdd-HHmmss"
         return dateFormatter.string(from: currentTime)
     }
     
     /// email subject format `yyyy.MM.dd HH:mm:ss`
-    static func datestampExportSubject() -> String {
-        let currentTime = DateManager.currentDatetime()
+    static func datestampExportSubject() async -> String {
+        let currentTime = await DateManager.shared.currentDatetime()
         let dateFormatter = DateFormatter()
         dateFormatter.dateFormat = "yyyy.MM.dd HH:mm:ss"
         return dateFormatter.string(from: currentTime)
@@ -367,7 +367,7 @@ extension Date {
 //        }
 //        return matchingDates
 //    }
-   //  MARK: - Version 4.x Additions :v4.x:"
+//  MARK: - Version 4.x Additions :v4.x:"
     init?(datestampHHmm: String, referenceDate: Date) {
             let formatter = DateFormatter()
             formatter.dateFormat = "HH:mm"

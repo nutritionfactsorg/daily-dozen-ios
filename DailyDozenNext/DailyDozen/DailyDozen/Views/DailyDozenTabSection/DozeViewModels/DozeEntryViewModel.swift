@@ -7,6 +7,7 @@
 
 import Foundation
 
+@MainActor
 class DozeEntryViewModel {
     
     static let rowTypeArray: [DataCountType] = [
@@ -69,6 +70,7 @@ class DozeEntryViewModel {
     // Returns a url for the current item name.
     /// - Parameter itemName: The item name.
     /// - Returns: A NutritionFacts topic url.
+
     func topicURL(itemTypeKey: String) -> URL {
         let topic = DozeTextsProvider.shared.getTopic(itemTypeKey: itemTypeKey)
         return LinksService.shared.link(topic: topic)

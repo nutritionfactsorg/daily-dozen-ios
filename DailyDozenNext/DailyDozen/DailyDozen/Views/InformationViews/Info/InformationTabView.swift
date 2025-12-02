@@ -11,7 +11,7 @@ struct InformationTabView: View {
     @State private var path = NavigationPath()
     
     @State private var theMenuLink = MenuItem.URLLinks.self //needs definition
-    @State private var linkService = LinksService()
+    @State private var linkService = LinksService.shared
     func getLink(mlink: String) -> URL {
        // var urlSegment = String(localized: "urlSegmentInfoMenu.book")
        // var baseU = linkService.siteMain

@@ -54,25 +54,30 @@ struct ChartData: Identifiable {
     }
 }
 
+@MainActor
 class ServingsDataProcessor: ObservableObject {
     @Published private var trackers: [SqlDailyTracker]
     private let calendar = Calendar.current
     private let today: Date
-    private let dbActor: SqliteDatabaseActor
+    private let dbActor = SqliteDatabaseActor.shared
     
-    init(dbActor: SqliteDatabaseActor = SqliteDatabaseActor()) {
-        self.dbActor = dbActor
+    init() {
+       
         self.trackers = []
         self.today = calendar.startOfDay(for: Date())
         Task {
-            await dbActor.setup()
-            let fetchedTrackers = await dbActor.fetchTrackers()
-            await MainActor.run {
-                 self.trackers = fetchedTrackers
-                print("ServingsDataProcessor updateTrackers: Tracker count: \(fetchedTrackers.count), Dates: \(fetchedTrackers.map { $0.date.datestampSid })")
-                    
-                       }
-           // print("ServingsDataProcessor init: Tracker count: \(self.trackers.count), Dates: \(self.trackers.map { $0.date.datestampSid })")
+            do {
+                try await dbActor.setup()
+                let fetchedTrackers = await dbActor.fetchTrackers()
+               
+                    self.trackers = fetchedTrackers
+                    print("ServingsDataProcessor updateTrackers: Tracker count: \(fetchedTrackers.count), Dates: \(fetchedTrackers.map { $0.date.datestampSid })")
+                
+            } catch {
+                
+                    print("🔴 •ServingsDataProcessor• Failed to setup database: \(error)")
+                
+            }
         }
     }
     
@@ -146,7 +151,7 @@ class ServingsDataProcessor: ObservableObject {
         
         let theMappedMonthlyTotals = monthlyTotals.map { ChartData(date: $0.key, totalServings: $0.value) }
             .sorted { $0.date! < $1.date! }
-        logit.debug("MappedMonthlyTotals: \(theMappedMonthlyTotals)")
+        print("MappedMonthlyTotals: \(theMappedMonthlyTotals)")
         return theMappedMonthlyTotals
     }
     

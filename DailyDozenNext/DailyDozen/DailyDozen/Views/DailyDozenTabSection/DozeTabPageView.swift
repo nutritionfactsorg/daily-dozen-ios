@@ -55,10 +55,14 @@ struct DozeTabPageView: View {
                             date: date,
                             onCheck: { count in
                                 Task { @MainActor in
-                                    await viewModel.setCount(for: item, count: count, date: date)
-                                    dozeDailyStateCount = viewModel.tracker?.itemsDict.filter { !supplementItems.contains($0.key) }
+                                   // await viewModel.setCount(for: item, count: count, date: date)
+                                    await viewModel.setCountAndUpdateStreak(for: item, count: count, date: date)
+                                    dozeDailyStateCount = viewModel.tracker?.itemsDict
+                                        .filter { $0.key.isDailyDozen && DozeEntryViewModel.rowTypeArray.contains($0.key) }
                                         .reduce(0) { $0 + $1.value.datacount_count } ?? 0
                                     showStarImage = dozeDailyStateCount == dozeDailyStateCountMaximum
+                                    print("🟢 •DozeTabPageView• Updated \(item.typeKey) on \(date.datestampSid): count=\(count), streak=\(viewModel.tracker?.itemsDict[item]?.datacount_streak ?? 0)")
+                                            
                                 }
                             }
                         )
@@ -87,7 +91,8 @@ struct DozeTabPageView: View {
                                 onCheck: { count in
                                     Task { @MainActor in
                                         await viewModel.setCount(for: item, count: count, date: date)
-                                        dozeDailyStateCount = viewModel.tracker?.itemsDict.filter { !supplementItems.contains($0.key) }
+                                        dozeDailyStateCount = viewModel.tracker?.itemsDict
+                                            .filter { $0.key.isDailyDozen && DozeEntryViewModel.rowTypeArray.contains($0.key) }
                                             .reduce(0) { $0 + $1.value.datacount_count } ?? 0
                                         showStarImage = dozeDailyStateCount == dozeDailyStateCountMaximum
                                     }
@@ -101,7 +106,8 @@ struct DozeTabPageView: View {
         .onAppear {
             Task { @MainActor in
              //   await viewModel.loadTracker(forDate: date)
-                dozeDailyStateCount = viewModel.tracker?.itemsDict.filter { !supplementItems.contains($0.key) }
+                dozeDailyStateCount = viewModel.tracker?.itemsDict
+                    .filter { $0.key.isDailyDozen && DozeEntryViewModel.rowTypeArray.contains($0.key) }
                     .reduce(0) { $0 + $1.value.datacount_count } ?? 0
                 showStarImage = dozeDailyStateCount == dozeDailyStateCountMaximum
             }

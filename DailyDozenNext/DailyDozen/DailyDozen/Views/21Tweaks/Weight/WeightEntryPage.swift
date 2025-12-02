@@ -9,7 +9,7 @@ import SwiftUI
 
 struct WeightEntryPage: View {
     let date: Date
-    @ObservedObject var viewModel: SqlDailyTrackerViewModel
+    @EnvironmentObject var viewModel: SqlDailyTrackerViewModel
     @State private var amWeight: String = ""
     @State private var pmWeight: String = ""
     @State private var amTime: Date = Date()
@@ -17,6 +17,33 @@ struct WeightEntryPage: View {
     @State private var unitType: UnitType = .fromUserDefaults()
     @State private var showClearAMConfirmation: Bool = false
     @State private var showClearPMConfirmation: Bool = false
+    
+//    private func clearPMWeight() async {
+//        do {
+//            let tracker = viewModel.tracker ?? SqlDailyTracker(date: date.startOfDay)
+//            let record = SqlDataWeightRecord(date: date.startOfDay, weightType: .pm, kg: 0, timeHHmm: "")
+//            var updatedTracker = tracker
+//            updatedTracker.weightPM = record
+//            try await HealthSynchronizer.shared.syncWeightClear(date: date, ampm: .pm, tracker: updatedTracker)
+//            await viewModel.saveWeight(
+//                record: record,
+//                oldDatePsid: tracker.weightPM?.pidKeys.datestampSid,
+//                oldAmpm: 1
+//            )
+//            await MainActor.run {
+//                pmWeight = ""
+//                let data = await viewModel.loadWeights(for: date, unitType: unitType)
+//                amWeight = data.amWeight == 0 ? "" : "\(data.amWeight)"
+//                pmWeight = data.pmWeight == 0 ? "" : "\(data.pmWeight)"
+//                amTime = data.amTime
+//                pmTime = data.pmTime
+//            }
+//            print("•Clear• PM weight cleared for \(date.datestampSid)")
+//        } catch {
+//            print("•Clear• PM clear error: \(error.localizedDescription)")
+//        }
+//    }
+    
 
     var body: some View {
         Form {
@@ -41,7 +68,7 @@ struct WeightEntryPage: View {
             Button("Clear", role: .destructive) {
                 Task {
                     do {
-                        var tracker = viewModel.tracker ?? SqlDailyTracker(date: date)
+                        var tracker = await viewModel.getTrackerOrCreate(for: date.startOfDay)
                         let record = SqlDataWeightRecord(date: date, weightType: .am, kg: 0, timeHHmm: "")
                         tracker.weightAM = record
                         try await HealthSynchronizer.shared.syncWeightClear(date: date, ampm: .am, tracker: tracker)
@@ -72,7 +99,7 @@ struct WeightEntryPage: View {
             Button("Clear", role: .destructive) {
                 Task {
                     do {
-                        var tracker = viewModel.tracker ?? SqlDailyTracker(date: date)
+                        var tracker = await viewModel.getTrackerOrCreate(for: date.startOfDay)
                         let record = SqlDataWeightRecord(date: date, weightType: .pm, kg: 0, timeHHmm: "")
                         tracker.weightPM = record
                         try await HealthSynchronizer.shared.syncWeightClear(date: date, ampm: .pm, tracker: tracker)

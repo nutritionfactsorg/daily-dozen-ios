@@ -120,7 +120,7 @@ struct UICalendarViewRepresentable: UIViewRepresentable {
             }
         }
         
-        func calendarView(_ calendarView: UICalendarView, didChangeVisibleDateComponentsFrom oldComponents: DateComponents?) {
+        func calendarView(_ calendarView: UICalendarView, didChangeVisibleDateComponentsFrom oldComponents: DateComponents) {
             if let newMonth = calendarView.visibleDateComponents.date {
                 print("calendarView: month changed to \(newMonth.datestampSid)")
                 Task { @MainActor in

@@ -5,7 +5,7 @@
 //  Copyright © 2017 Nutritionfacts.org. All rights reserved.
 //
 
-// TBDz I think this can be deleted.
+// TBDz I think this can be deleted.  It's not called anywhere
 import UIKit
 
 enum DozeEntrySections: Int {
@@ -35,6 +35,8 @@ enum DozeEntrySections: Int {
 //        return 0.1
 //    }
 
+    //TBDz this looks like it needs updating with the NSLocalizedString
+    @MainActor
     var headerView: UIView? {
         switch self {
         case .main:

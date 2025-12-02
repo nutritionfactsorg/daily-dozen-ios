@@ -7,7 +7,7 @@
 
 import Foundation
 
-var logit = LogService.shared
+let logit = LogService.shared
 
 ///
 /// - Note: Be sure to set the "DEBUG" symbol in the compiler flags
@@ -45,7 +45,7 @@ public enum LogServiceLevel: Int, Comparable {
     
     // Set the "DEBUG" symbol in the compiler flags
     #if DEBUG
-    static public let defaultLevel = LogServiceLevel.all
+    static nonisolated(unsafe) public let defaultLevel = LogServiceLevel.all
     #else
     static public let defaultLevel = LogServiceLevel.warning
     #endif
@@ -59,9 +59,9 @@ public func == (lhs: LogServiceLevel, rhs: LogServiceLevel) -> Bool {
     return lhs.rawValue == rhs.rawValue
 }
 
-public class LogService {
+actor LogService {
     
-    static var shared = LogService()
+    static let shared = LogService()
     
     /// Current log level.
     public var logLevel = LogServiceLevel.defaultLevel
@@ -71,7 +71,7 @@ public class LogService {
     /// Log line numbers to watch: [Int]  
     public var watchpointList: [Int] = []
     ///
-    public var logfileUrl: URL?
+    //public var logfileUrl: URL?
     
     /// DateFromatter used internally.
     private let dateFormatter = DateFormatter()
@@ -128,52 +128,54 @@ public class LogService {
         }
         #endif
         
-        if let url = logfileUrl {
-            do {
-                let fileHandle = try FileHandle(forWritingTo: url)
-                fileHandle.seekToEndOfFile()
-                if let data = (logString + "\n").data(using: .utf8) {
-                    fileHandle.write( data )
-                }
-                fileHandle.closeFile()
-                #if DEBUG
-                    print(logString)
-                #endif
-            } catch {
-                #if DEBUG
-                    print("FAIL: could not append to \(url.absoluteString)")
-                    print(logString)
-                #endif
-            }
-        } else {
-            print(logString)
-        }
+        //if let url = logfileUrl {
+        //    do {
+        //        let fileHandle = try FileHandle(forWritingTo: url)
+        //        fileHandle.seekToEndOfFile()
+        //        if let data = (logString + "\n").data(using: .utf8) {
+        //            fileHandle.write( data )
+        //        }
+        //        fileHandle.closeFile()
+        //        #if DEBUG
+        //            print(logString)
+        //        #endif
+        //    } catch {
+        //        #if DEBUG
+        //            print("FAIL: could not append to \(url.absoluteString)")
+        //            print(logString)
+        //        #endif
+        //    }
+        //} else {
+        print(logString)
+        //}
     }
     
-    public func useLogFileDefault() {
-        useLogFile(nameToken: "shared")
+    public func useLogFileDefault() async {
+        await useLogFile(nameToken: "shared")
     }
     
     /// - parameter nameToken: string included in file name
-    public func useLogFile(nameToken: String) {
-        let currentTime = DateManager.currentDatetime()
+    public func useLogFile(nameToken: String) async {
+        let currentTime = await DateManager.shared.currentDatetime()
         let formatter = DateFormatter()
         formatter.dateFormat = "yyyyMMdd_HHmmss"
         // formatter.timeZone = NSTimeZone(abbreviation: "UTC")
         let dateTimestamp = formatter.string(from: currentTime)
         
         let logfileName = "\(dateTimestamp)_log_\(nameToken).txt"
-        logfileUrl = URL.inDocuments(filename: logfileName)
+        //logfileUrl = URL.inDocuments(filename: logfileName)
         
-        do {
-            if let url = logfileUrl {
-                try "FILE: \(logfileName)\n".write(to: url, atomically: true, encoding: String.Encoding.utf8)
-            } else {
-                print(":FAIL: LogService useLogFile() logfileUrl is nil")
-            }
-        } catch {
-            print(":FAIL: LogService useLogFile() could not write initial line to \(logfileName)")
-        }
+        //do {
+        //    if let url = logfileUrl {
+        //        try "FILE: \(logfileName)\n".write(to: url, atomically: true, encoding: String.Encoding.utf8)
+        //    } else {
+        //        error(":FAIL: LogService useLogFile() logfileUrl is nil")
+        //    }
+        //} catch {
+        //    print(":FAIL: LogService useLogFile() could not write initial line to \(logfileName)")
+        //}
+        print(":DEBUG: LogService useLogFile() is not currently available.")
+
     }
     
 }

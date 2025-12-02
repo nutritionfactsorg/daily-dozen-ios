@@ -4,6 +4,7 @@
 //
 //  Copyright © 2025 Nutritionfacts.org. All rights reserved.
 //
+// swiftlint:disable function_body_length
 
 import Foundation
 import SwiftUI
@@ -40,35 +41,63 @@ class WeightEntryViewModel: ObservableObject {
     @Published var trackers: [String: SqlDailyTracker] = [:]
     @Published var pendingWeights: [String: PendingWeight] = [:]
     static let mockDBTrigger = NotificationCenter.Publisher(center: .default, name: .mockDBUpdated, object: nil)
-       
+    private let dbActor = SqliteDatabaseActor.shared
     private var lastMockDBCount: Int = 0   //TBDz is this used?
+    
     
     //Temp TBDZ just temp force unwrapped SqlDateWeightRecord  20250915
     
-    
     init() {
-        loadTrackers()
-       
+        NotificationCenter.default.addObserver(self, selector: #selector(reloadTrackers), name: .mockDBUpdated, object: nil)
+                Task {
+                    await loadTrackers()
+                }
     }
     
-    func loadTrackers() {
-        guard mockDB.count != lastMockDBCount else {
-            return
+    private func getTrackerOrCreate(for date: Date, dateSid: String) async -> SqlDailyTracker {
+            if let existingTracker = trackers[dateSid] {
+                return existingTracker
+            }
+        return await SqlDailyTracker(date: date.startOfDay)  // Synchronous
         }
-      //  print("mockDB before loadTrackers: \(mockDB.map { ($0.date.datestampSid, $0.weightAM.dataweight_kg, $0.weightPM.dataweight_kg) })")
-        trackers = Dictionary(uniqueKeysWithValues: mockDB.map { ($0.date.datestampSid, $0) })
-        lastMockDBCount = mockDB.count
+    
+    @objc func reloadTrackers() {
+            Task {
+                await loadTrackers()
+            }
+        }
+    
+    func loadTrackers() async {
+        let allTrackers = await dbActor.fetchAllTrackers()
+                await MainActor.run {
+                    trackers = Dictionary(uniqueKeysWithValues: allTrackers.map { ($0.date.datestampSid, $0) })
+            }
     }
     
     func tracker(for date: Date) -> SqlDailyTracker {
-            let calendar = Calendar.current
-            return mockDB.first(where: { calendar.isDate($0.date, inSameDayAs: date.startOfDay) }) ?? SqlDailyTracker(date: date.startOfDay)
+//            let calendar = Calendar.current
+//            return mockDB.first(where: { calendar.isDate($0.date, inSameDayAs: date.startOfDay) }) ?? SqlDailyTracker(date: date.startOfDay)
+        let sid = date.startOfDay.datestampSid
+        return trackers[sid] ?? SqlDailyTracker(date: date.startOfDay)
+        }
+    
+    func updateDatabase(with tracker: SqlDailyTracker) async {
+            if let am = tracker.weightAM {
+                _ = await dbActor.saveWeight(record: am, oldDatePsid: am.dataweight_date_psid, oldAmpm: am.dataweight_ampm_pnid)
+            }
+            if let pm = tracker.weightPM {
+                _ = await dbActor.saveWeight(record: pm, oldDatePsid: pm.dataweight_date_psid, oldAmpm: pm.dataweight_ampm_pnid)
+            }
+            for (type, record) in tracker.itemsDict {
+                _ = await dbActor.saveCount(record: record, oldDatePsid: record.datacount_date_psid, oldTypeNid: type.nid)
+            }
         }
     
     @MainActor
-    func saveWeight(for date: Date, amWeight: Double?, pmWeight: Double?, amTime: Date?, pmTime: Date?) {
+    func saveWeight(for date: Date, amWeight: Double?, pmWeight: Double?, amTime: Date?, pmTime: Date?) async {
         let dateSid = date.datestampSid
-        var tracker = trackers[dateSid] ?? SqlDailyTracker(date: date)
+       // var tracker = trackers[dateSid] ?? SqlDailyTracker(date: date)
+        var tracker = await getTrackerOrCreate(for: date, dateSid: dateSid)
         let unitType = UnitType.fromUserDefaults()
         
         print("Saving AM: \(String(describing: amWeight)), PM: \(String(describing: pmWeight)), Unit: \(unitType.rawValue), AM Time: \(amTime?.formatted(date: .omitted, time: .shortened) ?? "nil"), PM Time: \(pmTime?.formatted(date: .omitted, time: .shortened) ?? "nil")")
@@ -90,9 +119,10 @@ class WeightEntryViewModel: ObservableObject {
         if hasChanges || trackers[dateSid] != nil {
 //            print("Tracker before update: AM \(tracker.weightAM.dataweight_kg), PM \(tracker.weightPM.dataweight_kg)")
             trackers[dateSid] = tracker
-            print("Calling updateMockDB for \(dateSid)")
-            updateMockDB(with: tracker)
-                       Task {
+            print("Calling updateDB for \(dateSid)")
+           // updateMockDB(with: tracker)
+            await updateDatabase(with: tracker)
+                     //  Task {
                            if tracker.weightAM!.dataweight_kg > 0 {
                                if let amTimeDate = Date(datestampHHmm: tracker.weightAM!.dataweight_time, referenceDate: date) {
                                    print("•Sync• Triggering syncWeightPut for AM: \(tracker.weightAM!.dataweight_kg) kg at \(amTimeDate.datestampyyyyMMddHHmmss)")
@@ -124,7 +154,7 @@ class WeightEntryViewModel: ObservableObject {
 //                            print("•Sync• Skipping PM sync: weight is \(tracker.weightPM.dataweight_kg)")
                             print("Temp")
                         }
-                    }
+                    
                 } else {
                     print("•Save• No changes to save for \(dateSid)")
                 }
@@ -143,7 +173,7 @@ class WeightEntryViewModel: ObservableObject {
                         print("Invalid dateSid: \(dateSid), skipping save")
                         continue
                     }
-                   saveWeight( // Changed: Added await for async call
+                   await saveWeight( // Changed: Added await for async call
                         for: date,
                         amWeight: amValue.flatMap { Double($0) },
                         pmWeight: pmValue.flatMap { Double($0) },
@@ -199,20 +229,20 @@ class WeightEntryViewModel: ObservableObject {
         // Save to mockDB if there are changes and non-zero weights or itemsDict data
         if hasChanges && (tracker.weightAM!.dataweight_kg > 0 || tracker.weightPM!.dataweight_kg > 0 || !tracker.itemsDict.isEmpty) {
             trackers[key] = tracker
-            updateMockDB(with: tracker) // Use existing global function
-            print("•Load• Persisted tracker to mockDB for \(key)")
+            await updateDatabase(with: tracker) // Use existing global function
+            print("•Load• Persisted tracker to db for \(key)")
         }
         
         let amRecord = tracker.weightAM
         let pmRecord = tracker.weightPM
         
-        let amWeight = amRecord!.dataweight_kg > 0 ?
+        let amWeight = await amRecord!.dataweight_kg > 0 ?
             UnitsUtility.regionalWeight(
                 fromKg: amRecord!.dataweight_kg,
                 toUnits: UnitsType(rawValue: unitType.rawValue) ?? .metric,
                 toDecimalDigits: 1
             ) ?? "" : ""
-        let pmWeight = pmRecord!.dataweight_kg > 0 ?
+        let pmWeight = await pmRecord!.dataweight_kg > 0 ?
             UnitsUtility.regionalWeight(
                 fromKg: pmRecord!.dataweight_kg,
                 toUnits: UnitsType(rawValue: unitType.rawValue) ?? .metric,

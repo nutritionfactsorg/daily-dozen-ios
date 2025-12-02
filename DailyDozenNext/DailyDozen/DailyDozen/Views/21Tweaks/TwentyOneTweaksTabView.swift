@@ -8,6 +8,8 @@
 import SwiftUI
 import HealthKit
 
+//20250925 TBDz!!!   fetchSQLData() is a mockDB call?  Verify usage
+
 struct TwentyOneTweaksTabView: View {
     @State private var navigationPath = NavigationPath()
     @State private var showHealthKitError = false // Controls whether the alert is shown
@@ -21,28 +23,29 @@ struct TwentyOneTweaksTabView: View {
     @State private var selectedDate = Date()
     @State private var currentIndex = 0
     @State private var dateRange: [Date] = []
+    @EnvironmentObject var viewModel: SqlDailyTrackerViewModel
   
     let direction: Direction = .leftToRight
     
-    private func checkHealthAvail() {
+    private func checkHealthAvail() async {
             if HKHealthStore.isHealthDataAvailable() {
-                logit.debug("Yes, HealthKit is Available")
+                await logit.debug("Yes, HealthKit is Available")
                 Task {
                     if await HealthManager.shared.isAuthorized() {
-                        logit.debug("•HK• Already authorized, skipping permission request")
+                        await logit.debug("•HK• Already authorized, skipping permission request")
                         return
                     }
                     do {
                         try await HealthManager.shared.requestPermissions()
-                        logit.debug("•HK• HealthKit permissions granted")
+                        await logit.debug("•HK• HealthKit permissions granted")
                     } catch {
-                        logit.error("•HK• HealthKit permission error: \(error.localizedDescription)")
+                        await logit.error("•HK• HealthKit permission error: \(error.localizedDescription)")
                         showHealthKitError = true
                         healthKitErrorMessage = error.localizedDescription
                     }
                 }
             } else {
-                logit.debug("There is a problem accessing HealthKit")
+                await logit.debug("There is a problem accessing HealthKit")
                 showHealthKitError = true
                 healthKitErrorMessage = "HealthKit is not available on this device"
             }
@@ -192,7 +195,7 @@ struct TwentyOneTweaksTabView: View {
           } //Nav
             
         .task {
-                    checkHealthAvail()
+            await checkHealthAvail()
                 }
         //TBDZ not sure this is needed
         .alert("HealthKit Error", isPresented: $showHealthKitError) {

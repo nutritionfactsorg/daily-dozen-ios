@@ -10,6 +10,7 @@ import SwiftUI
 struct DozeEntryRowView: View {
     
     @EnvironmentObject var viewModel: SqlDailyTrackerViewModel
+    @Environment(\.dataCountAttributes) var dataCountAttributes
     //var streakCount = 3000// NYI TBD
     
     let item: DataCountType
@@ -80,9 +81,16 @@ struct DozeEntryRowView: View {
                                     isUpdating = true
                                     checkCount = newCount
                                     Task { @MainActor in
-                                        await viewModel.setCount(for: item, count: newCount, date: date)
-                                        streakCount = viewModel.tracker?.itemsDict[item]?.datacount_streak ?? 0
+                                       // await viewModel.setCount(for: item, count: newCount, date: date)
+//                                        await viewModel.setCountAndUpdateStreak(for: item, count: newCount, date: date)
+//                                        print("🟢 •DozeEntryRowView• Updated \(item.typeKey) on \(date.datestampSid): count=\(newCount), streak=\(viewModel.tracker?.itemsDict[item]?.datacount_streak ?? 0)")
+//                                                                     
+//                                       // streakCount = viewModel.tracker?.itemsDict[item]?.datacount_streak ?? 0
+//                                        onCheck(newCount)
+//                                        isUpdating = false
                                         onCheck(newCount)
+                                        let streak = viewModel.tracker?.itemsDict[item]?.datacount_streak ?? 0
+                                        print("🟢 •DozeEntryRowView• Updated \(item.typeKey) on \(date.datestampSid): count=\(newCount), streak=\(streak)")
                                         isUpdating = false
                                     }
                                 },
@@ -98,6 +106,7 @@ struct DozeEntryRowView: View {
             .shadowboxed()
             .onAppear {
                 Task { @MainActor in
+                    //await viewModel.loadTracker(forDate: date)
                     checkCount = viewModel.getCount(for: item)
                     streakCount = viewModel.tracker?.itemsDict[item]?.datacount_streak ?? 0
                      //  await viewModel.loadTracker(forDate: date)

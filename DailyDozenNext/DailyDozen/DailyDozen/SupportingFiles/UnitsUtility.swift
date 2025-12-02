@@ -20,6 +20,7 @@ public enum UnitsWeightError: String, Error {
     case parsingError = "Parsing Error: string must contain only numerical digits, and locale-appropriate group or decimal separators"
 }
 
+@MainActor
 struct UnitsUtility {
 
     public static func convertKgToLbs(_ kg: Double) -> Double {
@@ -27,9 +28,9 @@ struct UnitsUtility {
         return lbs
     }
     
-    public static func convertKgToLbs(_ string: String, toDecimalDigits: Int = 1) -> String? {
+    public static func convertKgToLbs(_ string: String, toDecimalDigits: Int = 1) async -> String? {
         if let kg = normalizedKgWeight(from: string, fromUnits: .metric) {
-            return regionalLbsWeight(fromKg: kg, toDecimalDigits: toDecimalDigits)
+            return await regionalLbsWeight(fromKg: kg, toDecimalDigits: toDecimalDigits)
         } else {
             return nil
         }
@@ -40,9 +41,9 @@ struct UnitsUtility {
         return kg
     }
 
-    public static func convertLbsToKg(_ string: String, toDecimalDigits: Int = 1) -> String? {
+    public static func convertLbsToKg(_ string: String, toDecimalDigits: Int = 1) async -> String? {
         if let kg = normalizedKgWeight(from: string, fromUnits: .imperial) {
-            return regionalKgWeight(fromKg: kg, toDecimalDigits: toDecimalDigits)
+            return await regionalKgWeight(fromKg: kg, toDecimalDigits: toDecimalDigits)
         } else {
             return nil
         }
@@ -82,12 +83,12 @@ struct UnitsUtility {
         fromKg: Double,
         toUnits: UnitsType,
         toDecimalDigits: Int
-    ) -> String? {
+    ) async -> String? {
         switch toUnits {
         case .imperial:
-            return regionalLbsWeight(fromKg: fromKg, toDecimalDigits: toDecimalDigits)
+            return await regionalLbsWeight(fromKg: fromKg, toDecimalDigits: toDecimalDigits)
         case .metric:
-            return regionalKgWeight(fromKg: fromKg, toDecimalDigits: toDecimalDigits)
+            return await regionalKgWeight(fromKg: fromKg, toDecimalDigits: toDecimalDigits)
         }
     }
 
@@ -95,7 +96,7 @@ struct UnitsUtility {
     public static func regionalKgWeight(
         fromKg: Double,
         toDecimalDigits: Int
-    ) -> String? {
+    ) async ->  String? {
         let formatter = NumberFormatter()
         formatter.numberStyle = .decimal
         formatter.maximumFractionDigits = toDecimalDigits
@@ -108,7 +109,7 @@ struct UnitsUtility {
     public static func regionalLbsWeight(
         fromKg: Double,
         toDecimalDigits: Int
-    ) -> String? {
+    ) async -> String? {
         let formatter = NumberFormatter()
         formatter.numberStyle = .decimal
         formatter.maximumFractionDigits = toDecimalDigits

@@ -113,7 +113,7 @@ public class SQLiteQuery {
             if statementPrepare(sql) == QUERY_NO_ERROR {
                 statementExecute()
             } else {
-                logit.error("ERROR: query.statementPrepare sql==\(sql)")
+                print("ERROR: query.statementPrepare sql==\(sql)")
                 fatalError()
             }
         }
@@ -252,12 +252,12 @@ public class SQLiteQuery {
                             // logit.error("SQLITE_TEXT:    \(columnName)=\(s!)")
                         } else {
                             setStatusError(context: "statementExecute", message: "SQLITE_TEXT: not convertable")
-                            logit.error("ERROR: statementExecute() SQLITE_TEXT: not convertable")
+                            print("ERROR: statementExecute() SQLITE_TEXT: not convertable")
                             fatalError("ERROR: statementExecute() SQLITE_TEXT: not convertable") // :REMOVE:
                         }            
                     default:
                         setStatusError(context: "statementExecute", message: "sqlite3_column_type not found")
-                        logit.error("ERROR: statementExecute() sqlite3_column_type not found")
+                        print("ERROR: statementExecute() sqlite3_column_type not found")
                         fatalError("ERROR: statementExecute() sqlite3_column_type not found") // :REMOVE:
                     }
                 }          
@@ -314,12 +314,12 @@ public class SQLiteQuery {
             dbMessage: message
         )
         setStatus(err)
-        logit.error(err.toString())
+        print(err.toString())
     }
     
     // :WIP:ACCESS_LEVEL.FILEPRIVATE
     public func setStatusError(context: String, code: Int32) {
-        if let errmsg = String(validatingUTF8: sqlite3_errmsg(_db.dbPtr)) {
+        if let errmsg = String(validatingCString: sqlite3_errmsg(_db.dbPtr)) {
             let err = SQLiteStatus(
                 type: SQLiteStatusType.statementError, 
                 context: context, 
@@ -327,7 +327,7 @@ public class SQLiteQuery {
                 dbMessage: errmsg
             )
             setStatus(err)
-            logit.error(err.toString())
+            print(err.toString())
         } else {
             let err = SQLiteStatus(
                 type: SQLiteStatusType.statementError, 
@@ -336,7 +336,7 @@ public class SQLiteQuery {
                 dbMessage: "String.fromCString failed"
             )
             setStatus(err)
-            logit.error(err.toString())
+           print(err.toString())
         }
     }
     

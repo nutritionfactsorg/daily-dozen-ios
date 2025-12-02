@@ -10,6 +10,7 @@ import SwiftUI
 struct TwentyOneTweaksEntryRowView: View {
         var streakCount = 3000// NYI TBD
         @EnvironmentObject var viewModel: SqlDailyTrackerViewModel
+        @Environment(\.dataCountAttributes) var dataCountAttributes
         let item: DataCountType
         let record: SqlDailyTracker?
         let date: Date
@@ -18,6 +19,8 @@ struct TwentyOneTweaksEntryRowView: View {
         @State private var localCount: Int = 0
         @State private var count: Int = 0
         @State private var navigationPath = NavigationPath()
+        //added for concurrency
+        @State private var headingDisplay: String = "Loading..."
 
     private func updateCount() {
         Task { @MainActor in
@@ -59,7 +62,7 @@ struct TwentyOneTweaksEntryRowView: View {
                     localCount = newCount
                     await viewModel.setCount(for: item, count: newCount, date: date.startOfDay) // Ensure consistency
                     onCheck(newCount)
-                    print("🟢 •Update• Count set for \(date.startOfDay.datestampSid): \(item.headingDisplay) count \(newCount)")
+                    print("🟢 •Update• Count set for \(date.startOfDay.datestampSid): \( item.headingDisplay) count \(newCount)")
                 } else {
                     count = newCount
                     localCount = newCount
@@ -121,7 +124,7 @@ struct TwentyOneTweaksEntryRowView: View {
                                         await viewModel.setCount(for: item, count: newCount, date: date.startOfDay)
                                         localCount = newCount
                                         onCheck(newCount)
-                                        print("🟢 •Update• Checkbox changed for \(item.headingDisplay): \(newCount)")
+                                        print("🟢 •Update• Checkbox changed for \( item.headingDisplay): \(newCount)")
                                     }
                                 }
                             },
@@ -188,30 +191,30 @@ struct TwentyOneTweaksEntryRowView: View {
     }
     }
 
-struct TwentyOneTweaksEntryRowView_Previews: PreviewProvider {
-    static var previews: some View {
-        // Mock data for preview
-        let mockDate = Date().startOfDay
-        let mockTracker = SqlDailyTracker(date: mockDate)
-       // let mockDataCountType = DataCountType.tweakWeightTwice // Adjust based on your DataCountType
-        return NavigationStack {
-            VStack {
-                TwentyOneTweaksEntryRowView(
-                    item: DataCountType.dozeBeans,
-                    record: mockTracker,
-                    date: mockDate,
-                    onCheck: { _ in }
-                )
-                TwentyOneTweaksEntryRowView(
-                    item: .tweakWeightTwice,
-                    record: mockTracker,
-                    date: mockDate,
-                    onCheck: { newCount in
-                        print("Preview: Count updated for tweakWeightTwice: \(newCount)")
-                    }
-                )
-            }
-            .environmentObject(SqlDailyTrackerViewModel())
-        }
-    }
-}
+//struct TwentyOneTweaksEntryRowView_Previews: PreviewProvider {
+//    static var previews: some View {
+//        // Mock data for preview
+//        let mockDate = Date().startOfDay
+//        let mockTracker = SqlDailyTracker(date: mockDate)
+//       // let mockDataCountType = DataCountType.tweakWeightTwice // Adjust based on your DataCountType
+//        return NavigationStack {
+//            VStack {
+//                TwentyOneTweaksEntryRowView(
+//                    item: DataCountType.dozeBeans,
+//                    record: mockTracker,
+//                    date: mockDate,
+//                    onCheck: { _ in }
+//                )
+//                TwentyOneTweaksEntryRowView(
+//                    item: .tweakWeightTwice,
+//                    record: mockTracker,
+//                    date: mockDate,
+//                    onCheck: { newCount in
+//                        print("Preview: Count updated for tweakWeightTwice: \(newCount)")
+//                    }
+//                )
+//            }
+//            .environmentObject(SqlDailyTrackerViewModel())
+//        }
+//    }
+//}

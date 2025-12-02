@@ -16,6 +16,7 @@ struct DozeDetailViewModel {
     var unitsType: UnitsType
     
     /// Returns the main topic url.
+    @MainActor
     var topicURL: URL {
         return LinksService.shared.link(topic: info.topic)
     }
@@ -81,7 +82,7 @@ struct DozeDetailViewModel {
     ///
     /// - Parameter index: The current index.
     /// - Returns: The type toipic url.
-   
+   @MainActor
     func typeTopicURLWAS(index: Int) -> URL? {
         if info.varieties[index].topic.isEmpty { // :GTD:???: review logic
             return nil

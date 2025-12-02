@@ -6,8 +6,10 @@
 //
 
 import Foundation
+import SwiftUI
 
-struct SqlDailyTracker {
+//@Sendable
+struct SqlDailyTracker: Sendable {
     let date: Date
     // typealias id = Date // :MECz:???:
 
@@ -30,21 +32,43 @@ struct SqlDailyTracker {
 //        }
 //        self = a
 //    }
-    init(date: Date, amTimeHHmm: String? = nil, pmTimeHHmm: String? = nil) {
-            self.date = date
-            self.itemsDict = [DataCountType: SqlDataCountRecord]()
-            for dataCountType in DataCountType.allCases {
-                itemsDict[dataCountType] = SqlDataCountRecord(date: date, countType: dataCountType)
-            }
+    init(date: Date, amTimeHHmm: String? = nil, pmTimeHHmm: String? = nil) async {
+        self.date = date.startOfDay
+        self.itemsDict = await Self.createItemsDict(for: date.startOfDay)
+//            self.itemsDict = [DataCountType: SqlDataCountRecord]()
+//            for dataCountType in DataCountType.allCases {
+//                itemsDict[dataCountType] =  SqlDataCountRecord(date: date, countType: dataCountType)
+//            }
             self.weightAM = amTimeHHmm != nil ? SqlDataWeightRecord(date: date, weightType: .am, kg: 0.0, timeHHmm: amTimeHHmm!) : nil
             self.weightPM = pmTimeHHmm != nil ? SqlDataWeightRecord(date: date, weightType: .pm, kg: 0.0, timeHHmm: pmTimeHHmm!) : nil
         }
         
         init(date: Date, itemsDict: [DataCountType: SqlDataCountRecord], weightAM: SqlDataWeightRecord? = nil, weightPM: SqlDataWeightRecord? = nil) {
-            self.date = date
+            self.date = date.startOfDay
             self.itemsDict = itemsDict
             self.weightAM = weightAM
             self.weightPM = weightPM
+        }
+    
+//    init(date: Date) {
+//        self.date = date.startOfDay
+//        self.itemsDict = [:]
+//       
+//    }
+    
+    init(date: Date) {
+            self.date = date.startOfDay
+            self.itemsDict = [:]
+            self.weightAM = nil
+            self.weightPM = nil
+        }
+    
+    static func createItemsDict(for date: Date) async -> [DataCountType: SqlDataCountRecord] {
+            var dict: [DataCountType: SqlDataCountRecord] = [:]
+            for dataCountType in DataCountType.allCases {
+                dict[dataCountType] = SqlDataCountRecord(date: date, countType: dataCountType)
+            }
+            return dict
         }
     
     //init added for development early stages
@@ -83,20 +107,20 @@ struct SqlDailyTracker {
     //    self.weightPM = SqlDataWeightRecord(date: date, weightType: .pm, kg: 0.0)
     //}
     
-    mutating func setCount(typeKey: DataCountType, countText: String) {
+    mutating func setCount(typeKey: DataCountType, countText: String) async {
         if let value = Int(countText) {
-            setCount(typeKey: typeKey, count: value)
+            await setCount(typeKey: typeKey, count: value)
         } else {
-            logit.error("SqlDailyTracker setCount() countText \(countText) not convertable")
+            await logit.error("SqlDailyTracker setCount() countText \(countText) not convertable")
         }
     }
     
-    mutating func setCount(typeKey: DataCountType, count: Int) {
+    mutating func setCount(typeKey: DataCountType, count: Int) async {
             if var sqlDataCountRecord = itemsDict[typeKey] {
-                sqlDataCountRecord.setCount(count)
+                await sqlDataCountRecord.setCount(count)
                 itemsDict[typeKey] = sqlDataCountRecord
             } else {
-                logit.error("SqlDailyTracker setCount() type not found \(typeKey.typeKey)")
+                await logit.error("SqlDailyTracker setCount() type not found \(typeKey.typeKey)")
             }
         }
     

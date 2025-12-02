@@ -5,6 +5,12 @@
 //  Copyright © 2025 Nutritionfacts.org. All rights reserved.
 //
 //   TBDz is this used?
+
+// swiftlint:disable file_length
+// swiftlint:disable type_body_length
+// swiftlint:disable cyclomatic_complexity
+// swiftlint:disable function_body_length
+
 struct PendingWeight {
     var amWeight: String
     var pmWeight: String
@@ -22,39 +28,68 @@ class SqlDailyTrackerViewModel: ObservableObject {
     @Published var error: String?
     @Published var successMessage: String?
     @Published var pendingWeights: [String: PendingWeight] = [:] // *** Added: For pending weight storage ***
-    private let dbActor: SqliteDatabaseActor
+    private let dbActor = SqliteDatabaseActor.shared
     private var isSettingCount = false
     private var lastLoadedDate: Date?
     
     init() {
-            self.dbActor = SqliteDatabaseActor()
-            Task { @MainActor in
-                do {
-                    try await dbActor.setup()
-                    print("🟢 •VM• SqlDailyTrackerViewModel: Database initialized")
-                } catch {
-                    print("🔴 •VM• SqlDailyTrackerViewModel: Database initialization failed: \(error)")
+       print("🟢 •VM• Creating SqlDailyTrackerViewModel instance:")
+               
+            
+                Task {
+                    do {
+                        try await dbActor.setup()
+                        await MainActor.run {
+                            print("🟢 •VM• SqlDailyTrackerViewModel: Database initialized")
+                        }
+                    } catch {
+                        await MainActor.run {
+                            self.error = "Database initialization failed: \(error)"
+                            print("🔴 •VM• SqlDailyTrackerViewModel: Database initialization failed: \(error)")
+                        }
+                    }
                 }
-            }
         }
     
 //    init() {
 //            Task { await dbActor.setup() } // Add explicit setup
 //            Task { await loadTracker(forDate: Date().startOfDay) }
 //        }
+    
+   func getTrackerOrCreate(for date: Date) async -> SqlDailyTracker {
+            if let existingTracker = tracker {
+                return existingTracker
+            }
+       return await SqlDailyTracker(date: date)  // Synchronous
+        }
 
     // *** Added: From WeightEntryViewModel ***
     func loadWeights(for date: Date, unitType: UnitType) async -> WeightEntryData {
         let key = date.datestampSid
+        
         await loadTracker(forDate: date)
-        var tracker = tracker ?? SqlDailyTracker(date: date.startOfDay)
+        var updatedTracker = await getTrackerOrCreate(for: date.startOfDay)
+           // var tracker = self.tracker ?? SqlDailyTracker(date: date.startOfDay)
+        
+        //var tracker = self.tracker ?? SqlDailyTracker(date: date.startOfDay)
+        
+        //var tracker = self.tracker != nil ? self.tracker! : await SqlDailyTracker(date: date.startOfDay)
+        
+//        var tracker : SqlDailyTracker!
+//        if let t1 = self.tracker {
+//            tracker = t1
+//        } else {
+//            let t2 = await SqlDailyTracker(date: date.startOfDay)
+//            tracker = t2
+//        }
+        
         var hasChanges = false
 
         // Load AM weight from HealthKit if not set
-        if tracker.weightAM?.dataweight_kg ?? 0 == 0 { // *** Changed: Optional chaining ***
+        if updatedTracker.weightAM?.dataweight_kg ?? 0 == 0 { // *** Changed: Optional chaining ***
             let (amTimeStr, amWeightStr) = await HealthSynchronizer.shared.syncWeightToShow(date: date, ampm: .am)
             if !amWeightStr.isEmpty, let kg = Double(amWeightStr), kg > 0 {
-                tracker.weightAM = SqlDataWeightRecord(
+                updatedTracker.weightAM = SqlDataWeightRecord(
                     date: date,
                     weightType: .am,
                     kg: kg,
@@ -67,10 +102,10 @@ class SqlDailyTrackerViewModel: ObservableObject {
             }
         }
         // Load PM weight from HealthKit if not set
-        if tracker.weightPM?.dataweight_kg ?? 0 == 0 { // *** Changed: Optional chaining ***
+        if updatedTracker.weightPM?.dataweight_kg ?? 0 == 0 { // *** Changed: Optional chaining ***
             let (pmTimeStr, pmWeightStr) = await HealthSynchronizer.shared.syncWeightToShow(date: date, ampm: .pm)
             if !pmWeightStr.isEmpty, let kg = Double(pmWeightStr), kg > 0 {
-                tracker.weightPM = SqlDataWeightRecord(
+                updatedTracker.weightPM = SqlDataWeightRecord(
                     date: date,
                     weightType: .pm,
                     kg: kg,
@@ -84,28 +119,28 @@ class SqlDailyTrackerViewModel: ObservableObject {
         }
 
         // Save to database if changed
-        if hasChanges && (tracker.weightAM?.dataweight_kg ?? 0 > 0 || tracker.weightPM?.dataweight_kg ?? 0 > 0 || !tracker.itemsDict.isEmpty) {
+        if hasChanges && (updatedTracker.weightAM?.dataweight_kg ?? 0 > 0 || updatedTracker.weightPM?.dataweight_kg ?? 0 > 0 || !updatedTracker.itemsDict.isEmpty) {
             await saveWeight(
-                record: tracker.weightAM ?? SqlDataWeightRecord(date: date, weightType: .am, kg: 0, timeHHmm: ""),
-                oldDatePsid: tracker.weightAM?.dataweight_date_psid,
-                oldAmpm: tracker.weightAM?.dataweight_ampm_pnid
+                record: updatedTracker.weightAM ?? SqlDataWeightRecord(date: date, weightType: .am, kg: 0, timeHHmm: ""),
+                oldDatePsid: updatedTracker.weightAM?.dataweight_date_psid,
+                oldAmpm: updatedTracker.weightAM?.dataweight_ampm_pnid
             )
             await saveWeight(
-                record: tracker.weightPM ?? SqlDataWeightRecord(date: date, weightType: .pm, kg: 0, timeHHmm: ""),
-                oldDatePsid: tracker.weightPM?.dataweight_date_psid,
-                oldAmpm: tracker.weightPM?.dataweight_ampm_pnid
+                record: updatedTracker.weightPM ?? SqlDataWeightRecord(date: date, weightType: .pm, kg: 0, timeHHmm: ""),
+                oldDatePsid: updatedTracker.weightPM?.dataweight_date_psid,
+                oldAmpm: updatedTracker.weightPM?.dataweight_ampm_pnid
             )
-            self.tracker = tracker
-            trackers = trackers.filter { !Calendar.current.isDate($0.date, inSameDayAs: date) } + [tracker]
+            self.tracker = updatedTracker
+            trackers = trackers.filter { !Calendar.current.isDate($0.date, inSameDayAs: date) } + [updatedTracker]
             print("•Load• Persisted tracker to database for \(key)")
         }
 
-        let amRecord = tracker.weightAM
-        let pmRecord = tracker.weightPM
+        let amRecord = updatedTracker.weightAM
+        let pmRecord = updatedTracker.weightPM
 
-        let amWeight = amRecord?.dataweight_kg ?? 0 > 0 ?
+        let amWeight = await amRecord?.dataweight_kg ?? 0 > 0 ?
             UnitsUtility.regionalWeight(fromKg: amRecord!.dataweight_kg, toUnits: UnitsType(rawValue: unitType.rawValue) ?? .metric, toDecimalDigits: 1) ?? "" : ""
-        let pmWeight = pmRecord?.dataweight_kg ?? 0 > 0 ?
+        let pmWeight = await pmRecord?.dataweight_kg ?? 0 > 0 ?
             UnitsUtility.regionalWeight(fromKg: pmRecord!.dataweight_kg, toUnits: UnitsType(rawValue: unitType.rawValue) ?? .metric, toDecimalDigits: 1) ?? "" : ""
 
         let amTime = amRecord?.dataweight_time.isEmpty ?? true ? Date() :
@@ -120,7 +155,8 @@ class SqlDailyTrackerViewModel: ObservableObject {
     // *** Added: Save weight with HealthKit sync ***
     func saveWeight(for date: Date, amWeight: Double?, pmWeight: Double?, amTime: Date?, pmTime: Date?) async {
         let dateSid = date.datestampSid
-        var tracker = tracker ?? SqlDailyTracker(date: date)
+        var updatedTracker = await getTrackerOrCreate(for: date.startOfDay)
+       // var updatedTracker = self.tracker ?? SqlDailyTracker(date: date.startOfDay)
         let unitType = UnitType.fromUserDefaults()
 
         print("Saving AM: \(String(describing: amWeight)), PM: \(String(describing: pmWeight)), Unit: \(unitType.rawValue), AM Time: \(amTime?.formatted(date: .omitted, time: .shortened) ?? "nil"), PM Time: \(pmTime?.formatted(date: .omitted, time: .shortened) ?? "nil")")
@@ -129,11 +165,11 @@ class SqlDailyTrackerViewModel: ObservableObject {
         if let amWeight = amWeight, let amTime = amTime, amWeight >= 0 {
             let kg = unitType == .imperial ? amWeight / 2.204623 : amWeight
             let record = SqlDataWeightRecord(date: date, weightType: .am, kg: kg, timeHHmm: amTime.datestampHHmm)
-            tracker.weightAM = record
+            updatedTracker.weightAM = record
             await saveWeight(record: record, oldDatePsid: record.dataweight_date_psid, oldAmpm: 0)
             if kg > 0, let amTimeDate = Date(datestampHHmm: record.dataweight_time, referenceDate: date) {
                 do {
-                    try await HealthSynchronizer.shared.syncWeightPut(date: date, ampm: .am, kg: kg, time: amTimeDate, tracker: tracker)
+                    try await HealthSynchronizer.shared.syncWeightPut(date: date, ampm: .am, kg: kg, time: amTimeDate, tracker: updatedTracker)
                     print("•Sync• AM sync completed for \(date.datestampSid): \(kg) kg (\(kg * 2.204623) lbs)")
                 } catch {
                     print("•Sync• AM sync error for \(date.datestampSid): \(error.localizedDescription)")
@@ -144,11 +180,11 @@ class SqlDailyTrackerViewModel: ObservableObject {
         if let pmWeight = pmWeight, let pmTime = pmTime, pmWeight >= 0 {
             let kg = unitType == .imperial ? pmWeight / 2.204623 : pmWeight // Fixed: Use pmWeight
             let record = SqlDataWeightRecord(date: date, weightType: .pm, kg: kg, timeHHmm: pmTime.datestampHHmm)
-            tracker.weightPM = record
+            updatedTracker.weightPM = record
             await saveWeight(record: record, oldDatePsid: record.dataweight_date_psid, oldAmpm: 1)
             if kg > 0, let pmTimeDate = Date(datestampHHmm: record.dataweight_time, referenceDate: date) {
                 do {
-                    try await HealthSynchronizer.shared.syncWeightPut(date: date, ampm: .pm, kg: kg, time: pmTimeDate, tracker: tracker)
+                    try await HealthSynchronizer.shared.syncWeightPut(date: date, ampm: .pm, kg: kg, time: pmTimeDate, tracker: updatedTracker)
                     print("•Sync• PM sync completed for \(date.datestampSid): \(kg) kg (\(kg * 2.204623) lbs)")
                 } catch {
                     print("•Sync• PM sync error for \(date.datestampSid): \(error.localizedDescription)")
@@ -158,8 +194,8 @@ class SqlDailyTrackerViewModel: ObservableObject {
         }
 
         if hasChanges {
-            self.tracker = tracker
-            trackers = trackers.filter { !Calendar.current.isDate($0.date, inSameDayAs: date) } + [tracker]
+            self.tracker = updatedTracker
+            self.trackers = trackers.filter { !Calendar.current.isDate($0.date, inSameDayAs: date) } + [updatedTracker]
             NotificationCenter.default.post(name: .mockDBUpdated, object: nil) // Ensure notification  TBDz not sure if needed?
             print("•Save• Tracker updated for \(dateSid)")
         } else {
@@ -209,12 +245,13 @@ class SqlDailyTrackerViewModel: ObservableObject {
     }
 
     func loadTracker(forDate date: Date) async {
-        guard !isLoading, lastLoadedDate == nil || !Calendar.current.isDate(lastLoadedDate!, inSameDayAs: date) else {
+        let normalizedDate = date.startOfDay
+        guard !isLoading, lastLoadedDate == nil || !Calendar.current.isDate(lastLoadedDate!, inSameDayAs: normalizedDate) else {
             return
         }
         isLoading = true
         error = nil
-        tracker = await dbActor.fetchDailyTracker(forDate: date)
+        tracker = await dbActor.fetchDailyTracker(forDate: normalizedDate)
         lastLoadedDate = date
         isLoading = false
     }
@@ -247,33 +284,34 @@ class SqlDailyTrackerViewModel: ObservableObject {
     }
 
     func setCount(for type: DataCountType, count: Int, date: Date) async {
+            let normalizedDate = date.startOfDay
             guard !isSettingCount else {
-                print("🟢 •DB• Skipped setCount for \(type.headingDisplay) on \(date.datestampSid): already setting count")
+                print("🟢 •DB• Skipped setCount for \(type.headingDisplay) on \(normalizedDate.datestampSid): already setting count")
                 return
             }
             isSettingCount = true
             
-            if tracker == nil || !Calendar.current.isDate(tracker!.date, inSameDayAs: date) {
-                await loadTracker(forDate: date)
+            if tracker == nil || !Calendar.current.isDate(tracker!.date, inSameDayAs: normalizedDate) {
+                await loadTracker(forDate: normalizedDate)
             }
             
             guard let currentTracker = tracker else {
                 isSettingCount = false
-                error = "No tracker available for \(type.headingDisplay) on \(date.datestampSid)"
-                print("🔴 •DB• No tracker for \(type.headingDisplay) on \(date.datestampSid)")
+                error = "No tracker available for \(type.headingDisplay) on \(normalizedDate.datestampSid)"
+                print("🔴 •DB• No tracker for \(type.headingDisplay) on \(normalizedDate.datestampSid)")
                 return
             }
             
             if currentTracker.itemsDict[type]?.datacount_count == count {
                 isSettingCount = false
-                print("🟢 •DB• Skipped setCount for \(type.headingDisplay) on \(date.datestampSid): count unchanged (\(count))")
+                print("🟢 •DB• Skipped setCount for \(type.headingDisplay) on \(normalizedDate.datestampSid): count unchanged (\(count))")
                 return
             }
             
             var mutableTracker = currentTracker
-            mutableTracker.setCount(typeKey: type, count: count)
+            await mutableTracker.setCount(typeKey: type, count: count)
             if let updatedRecord = mutableTracker.itemsDict[type] {
-                print("🟢 •DB• Saving count for \(type.headingDisplay) on \(date.datestampSid): count=\(count), idKeys=\(updatedRecord.idKeys?.datestampSid ?? "nil"), typeNid=\(type.nid)")
+                print("🟢 •DB• Saving count for \(type.headingDisplay) on \(normalizedDate.datestampSid): count=\(count), idKeys=\(updatedRecord.idKeys?.datestampSid ?? "nil"), typeNid=\(type.nid)")
                 let success = await dbActor.saveCount(
                     record: updatedRecord,
                     oldDatePsid: updatedRecord.idKeys?.datestampSid,
@@ -282,14 +320,14 @@ class SqlDailyTrackerViewModel: ObservableObject {
                 if success {
                     tracker = mutableTracker
                     successMessage = "Count saved for \(type.nid)"
-                    print("🟢 •DB• Count saved for \(type.headingDisplay) on \(date.datestampSid): \(count)")
+                    print("🟢 •DB• Count saved for \(type.headingDisplay) on \(normalizedDate.datestampSid): \(count)")
                 } else {
                     error = "Failed to save count for \(type.nid)"
-                    print("🔴 •DB• Failed to save count for \(type.headingDisplay) on \(date.datestampSid)")
+                    print("🔴 •DB• Failed to save count for \(type.headingDisplay) on \(normalizedDate.datestampSid)")
                 }
             } else {
                 error = "No record created for \(type.nid)"
-                print("🔴 •DB• No record created for \(type.headingDisplay) on \(date.datestampSid)")
+                print("🔴 •DB• No record created for \(type.headingDisplay) on \(normalizedDate.datestampSid)")
             }
             isSettingCount = false
         }
@@ -329,6 +367,7 @@ class SqlDailyTrackerViewModel: ObservableObject {
         )
     }
 
+   
     func fetchTrackers(forMonth date: Date) async -> [SqlDailyTracker] {
         let trackers = await dbActor.fetchTrackers(forMonth: date)
         print("🟢 •VM• Fetched \(trackers.count) trackers for month \(date.datestampSid): \(trackers.map { "\($0.date.datestampSid): AM=\($0.weightAM?.dataweight_kg ?? 0) kg, PM=\($0.weightPM?.dataweight_kg ?? 0) kg" })")
@@ -341,10 +380,257 @@ class SqlDailyTrackerViewModel: ObservableObject {
         return trackers
     }
 
-    func fetchAllTrackers() async -> [SqlDailyTracker]{
+    func fetchAllTrackers() async -> [SqlDailyTracker] {
         let trackers = await dbActor.fetchAllTrackers()
         print("SqlDailyTrackerViewModel fetchAllTrackers: \(trackers.map { "\($0.date.datestampSid): dozeBeans=\($0.itemsDict[.dozeBeans]?.datacount_count ?? 0), otherVitaminB12=\($0.itemsDict[.otherVitaminB12]?.datacount_count ?? 0)" })")
         print("🟢 •VM• Fetched all \(trackers.count) trackers: \(trackers.map { "\($0.date.datestampSid): AM=\($0.weightAM?.dataweight_kg ?? 0) kg, PM=\($0.weightPM?.dataweight_kg ?? 0) kg" })")
                return trackers
     }
 }
+
+extension SqlDailyTrackerViewModel {
+    func setCountAndUpdateStreak(for item: DataCountType, count: Int, date: Date) async {
+        let normalizedDate = date.startOfDay
+        // Update the count
+        await setCount(for: item, count: count, date: normalizedDate)
+        
+        // Update streak
+        let db = SqliteDatabaseActor.shared
+        let isCompleted = count >= item.goalServings
+        print("🟢 •VM• setCountAndUpdateStreak for \(item.typeKey) on \(normalizedDate.datestampSid): count=\(count), goal=\(item.goalServings), isCompleted=\(isCompleted)")
+        if isCompleted {
+            await updateStreakCompleted(for: item, date: normalizedDate, db: db)
+        } else {
+            await updateStreakIncomplete(for: item, date: normalizedDate, db: db)
+        }
+        NotificationCenter.default.post(name: .mockDBUpdated, object: nil)
+    }
+    
+    private func updateStreakCompleted(for item: DataCountType, date: Date, db: SqliteDatabaseActor) async {
+        // Fetch current day's tracker
+        let normalizedDate = date.startOfDay
+        var thisTracker = await db.fetchDailyTracker(forDate: normalizedDate)
+        guard var thisRecord = thisTracker.itemsDict[item] else {
+            print("🔴 •VM• No record for \(item.typeKey) on \(normalizedDate.datestampSid)")
+            return
+        }
+        
+        // Ensure count doesn't exceed goalServings
+        if thisRecord.datacount_count > item.goalServings {
+            thisRecord.datacount_count = item.goalServings
+        }
+        
+        // Calculate streak based on previous day
+        var prevDay = normalizedDate.adding(days: -1)
+        let prevTracker = await db.fetchDailyTracker(forDate: prevDay.startOfDay)
+        if let prevRecord = prevTracker.itemsDict[item], prevRecord.datacount_count >= item.goalServings {
+            thisRecord.datacount_streak = prevRecord.datacount_streak + 1
+        } else {
+            thisRecord.datacount_streak = 1
+        }
+        
+        print("🟢 •VM• Calculated streak for \(item.typeKey) on \(normalizedDate.datestampSid): \(thisRecord.datacount_streak)")
+        
+        // Update current day's record
+        thisTracker.itemsDict[item] = thisRecord
+        let saveSuccess = await db.saveCount( // Explicitly call db.saveCount
+            record: thisRecord,
+            oldDatePsid: thisRecord.idKeys?.datestampSid,
+            oldTypeNid: item.nid
+        )
+        if !saveSuccess {
+            print("🔴 •VM• Failed to save streak for \(item.typeKey) on \(normalizedDate.datestampSid)")
+            return
+        }
+        if Calendar.current.isDate(thisTracker.date, inSameDayAs: normalizedDate) {
+            self.tracker = thisTracker
+            self.trackers = trackers.filter { !Calendar.current.isDate($0.date, inSameDayAs: normalizedDate) } + [thisTracker]
+        }
+        
+        // Update future days' streaks
+        var nextMaxValidStreak = thisRecord.datacount_streak + 1
+        var nextDay = normalizedDate.adding(days: 1)
+        while true {
+            let nextTracker = await db.fetchDailyTracker(forDate: nextDay.startOfDay)
+            guard let nextRecord = nextTracker.itemsDict[item] else {
+                break
+            }
+            if nextRecord.datacount_count < item.goalServings {
+                if nextRecord.datacount_streak != 0 {
+                    print("🔴 •VM• Fixing streak for \(item.typeKey) on \(nextDay.datestampSid): count=\(nextRecord.datacount_count) < \(item.goalServings), resetting streak")
+                    var updatedTracker = nextTracker
+                    updatedTracker.itemsDict[item]?.datacount_streak = 0
+                    let saveSuccess = await db.saveCount( // Explicitly call db.saveCount
+                        record: updatedTracker.itemsDict[item]!,
+                        oldDatePsid: nextRecord.idKeys?.datestampSid,
+                        oldTypeNid: item.nid
+                    )
+                    if !saveSuccess {
+                        print("🔴 •VM• Failed to save streak for \(item.typeKey) on \(nextDay.datestampSid)")
+                        break
+                    }
+                    if Calendar.current.isDate(updatedTracker.date, inSameDayAs: normalizedDate.startOfDay) {
+                        self.tracker = updatedTracker
+                    }
+                    self.trackers = trackers.filter { !Calendar.current.isDate($0.date, inSameDayAs: nextDay) } + [updatedTracker]
+                }
+                break
+            } else if nextRecord.datacount_count >= item.goalServings {
+                if nextRecord.datacount_streak != nextMaxValidStreak {
+                    print("🟢 •VM• Updating streak for \(item.typeKey) on \(nextDay.datestampSid): \(nextMaxValidStreak)")
+                    var updatedTracker = nextTracker
+                    updatedTracker.itemsDict[item]?.datacount_streak = nextMaxValidStreak
+                    if updatedTracker.itemsDict[item]?.datacount_count ?? 0 > item.goalServings {
+                        updatedTracker.itemsDict[item]?.datacount_count = item.goalServings
+                    }
+                    let saveSuccess = await db.saveCount( // Explicitly call db.saveCount
+                        record: updatedTracker.itemsDict[item]!,
+                        oldDatePsid: nextRecord.idKeys?.datestampSid,
+                        oldTypeNid: item.nid
+                    )
+                    if !saveSuccess {
+                        print("🔴 •VM• Failed to save streak for \(item.typeKey) on \(nextDay.datestampSid)")
+                        break
+                    }
+                    if Calendar.current.isDate(updatedTracker.date, inSameDayAs: normalizedDate) {
+                        self.tracker = updatedTracker
+                    }
+                    self.trackers = trackers.filter { !Calendar.current.isDate($0.date, inSameDayAs: nextDay) } + [updatedTracker]
+                } else {
+                    break
+                }
+                nextMaxValidStreak += 1
+            }
+            nextDay = nextDay.adding(days: 1)
+        }
+        
+        // Verify streak by counting backward (limited to 30 days)
+        var streakCount = 1
+        var daysChecked = 0
+        let maxDaysToCheck = 30
+        prevDay = normalizedDate.adding(days: -1)
+        while daysChecked < maxDaysToCheck {
+            let prevTracker = await db.fetchDailyTracker(forDate: prevDay.startOfDay)
+            guard let prevRecord = prevTracker.itemsDict[item], prevRecord.datacount_count >= item.goalServings else {
+                break
+            }
+            streakCount += 1
+            daysChecked += 1
+            prevDay = prevDay.adding(days: -1)
+        }
+        
+        if streakCount != thisRecord.datacount_streak {
+            print("🟢 •VM• Adjusting streak for \(item.typeKey) on \(normalizedDate.datestampSid): from \(thisRecord.datacount_streak) to \(streakCount)")
+            thisRecord.datacount_streak = streakCount
+            thisTracker.itemsDict[item] = thisRecord
+            let saveSuccess = await db.saveCount( // Explicitly call db.saveCount
+                record: thisRecord,
+                oldDatePsid: thisRecord.idKeys?.datestampSid,
+                oldTypeNid: item.nid
+            )
+            if !saveSuccess {
+                print("🔴 •VM• Failed to save streak for \(item.typeKey) on \(normalizedDate.datestampSid)")
+                return
+            }
+            if Calendar.current.isDate(thisTracker.date, inSameDayAs: normalizedDate) {
+                self.tracker = thisTracker
+            }
+            self.trackers = trackers.filter { !Calendar.current.isDate($0.date, inSameDayAs: normalizedDate) } + [thisTracker]
+        }
+    }
+    
+    private func updateStreakIncomplete(for item: DataCountType, date: Date, db: SqliteDatabaseActor) async {
+        // Fetch current day's tracker
+        let normalizedDate = date.startOfDay
+        var thisTracker = await db.fetchDailyTracker(forDate: normalizedDate)
+        guard var thisRecord = thisTracker.itemsDict[item] else {
+            print("🔴 •VM• No record for \(item.typeKey) on \(normalizedDate.datestampSid)")
+            return
+        }
+        
+        // Set current day's streak to 0
+        thisRecord.datacount_streak = 0
+        thisTracker.itemsDict[item] = thisRecord
+        let saveSuccess = await db.saveCount( // Explicitly call db.saveCount
+            record: thisRecord,
+            oldDatePsid: thisRecord.idKeys?.datestampSid,
+            oldTypeNid: item.nid
+        )
+        if !saveSuccess {
+            print("🔴 •VM• Failed to save streak for \(item.typeKey) on \(normalizedDate.datestampSid)")
+            return
+        }
+        print("🟢 •VM• Reset streak for \(item.typeKey) on \(normalizedDate.datestampSid): 0")
+        if Calendar.current.isDate(thisTracker.date, inSameDayAs: normalizedDate) {
+            self.tracker = thisTracker
+        }
+        self.trackers = trackers.filter { !Calendar.current.isDate($0.date, inSameDayAs: normalizedDate) } + [thisTracker]
+        
+        // Update future days' streaks
+        var nextMaxValidStreak = 1
+        var nextDay = normalizedDate.adding(days: 1)
+        while true {
+            let nextTracker = await db.fetchDailyTracker(forDate: nextDay.startOfDay)
+            guard let nextRecord = nextTracker.itemsDict[item] else {
+                break
+            }
+            if nextRecord.datacount_count < item.goalServings {
+                if nextRecord.datacount_streak != 0 {
+                    print("🔴 •VM• Fixing streak for \(item.typeKey) on \(nextDay.datestampSid): count=\(nextRecord.datacount_count) < \(item.goalServings), resetting streak")
+                    var updatedTracker = nextTracker
+                    updatedTracker.itemsDict[item]?.datacount_streak = 0
+                    let saveSuccess = await db.saveCount( // Explicitly call db.saveCount
+                        record: updatedTracker.itemsDict[item]!,
+                        oldDatePsid: nextRecord.idKeys?.datestampSid,
+                        oldTypeNid: item.nid
+                    )
+                    if !saveSuccess {
+                        print("🔴 •VM• Failed to save streak for \(item.typeKey) on \(nextDay.datestampSid)")
+                        break
+                    }
+                    if Calendar.current.isDate(updatedTracker.date, inSameDayAs: normalizedDate) {
+                        self.tracker = updatedTracker
+                    }
+                    self.trackers = trackers.filter { !Calendar.current.isDate($0.date, inSameDayAs: nextDay) } + [updatedTracker]
+                }
+                break
+            } else if nextRecord.datacount_count >= item.goalServings {
+                if nextRecord.datacount_streak != nextMaxValidStreak {
+                    print("🟢 •VM• Updating streak for \(item.typeKey) on \(nextDay.datestampSid): \(nextMaxValidStreak)")
+                    var updatedTracker = nextTracker
+                    updatedTracker.itemsDict[item]?.datacount_streak = nextMaxValidStreak
+                    if updatedTracker.itemsDict[item]?.datacount_count ?? 0 > item.goalServings {
+                        updatedTracker.itemsDict[item]?.datacount_count = item.goalServings
+                    }
+                    let saveSuccess = await db.saveCount( // Explicitly call db.saveCount
+                        record: updatedTracker.itemsDict[item]!,
+                        oldDatePsid: nextRecord.idKeys?.datestampSid,
+                        oldTypeNid: item.nid
+                    )
+                    if !saveSuccess {
+                        print("🔴 •VM• Failed to save streak for \(item.typeKey) on \(nextDay.datestampSid)")
+                        break
+                    }
+                    if Calendar.current.isDate(updatedTracker.date, inSameDayAs: normalizedDate) {
+                        self.tracker = updatedTracker
+                    }
+                    self.trackers = trackers.filter { !Calendar.current.isDate($0.date, inSameDayAs: nextDay) } + [updatedTracker]
+                } else {
+                    break
+                }
+                nextMaxValidStreak += 1
+            }
+            nextDay = nextDay.adding(days: 1)
+        }
+    }
+    
+}
+
+//for testing streaks
+//extension SqlDailyTrackerViewModel {
+//    func resetStreaks(for item: DataCountType, date: Date) async {
+//        let db = SqliteDatabaseActor()
+//        await db.resetStreaks(for: item, date: date)
+//        await loadTracker(forDate: date)
+//    }
+//}

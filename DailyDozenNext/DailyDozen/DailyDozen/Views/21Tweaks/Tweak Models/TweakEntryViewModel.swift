@@ -6,6 +6,7 @@
 //
 import Foundation
 
+@MainActor
 class TweakEntryViewModel {
     
     static let rowTypeArray: [DataCountType] = [
@@ -52,6 +53,7 @@ class TweakEntryViewModel {
         return TweakEntryViewModel.rowTypeArray[rowIndex]
     }
     
+    @MainActor
     func topicURL(itemTypeKey: String) -> URL {
         let topic = TweakTextsProvider.shared.getTopic(itemTypeKey: itemTypeKey)
         return LinksService.shared.link(topic: topic)

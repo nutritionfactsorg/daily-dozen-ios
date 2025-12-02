@@ -7,8 +7,10 @@
 import SwiftUI
 import HealthKit
 
+//TBDz20250925    syncWeightPut and syncWeightClear has MockDB
+
 struct HealthSynchronizer {
-    static var shared = HealthSynchronizer()
+    static let shared = HealthSynchronizer()
     
     func syncWeightToShow(date: Date, ampm: DataWeightType) async -> (time: String, weight: String) {
         print("•HK• syncWeightToShow for \(ampm.typeKey) on \(date.datestampSid)")
@@ -18,7 +20,7 @@ struct HealthSynchronizer {
             let record = HealthWeightRecord(ampm: ampm, hkWeightSamples: samples)
             let (time, kg) = record.getWeightToShow()
             if kg > 0 {
-                let weightStr = UnitsUtility.regionalWeight(
+                let weightStr = await UnitsUtility.regionalWeight(
                     fromKg: kg,
                     toUnits: UnitsType(rawValue: UnitType.fromUserDefaults().rawValue) ?? .metric,
                     toDecimalDigits: 1
@@ -58,7 +60,8 @@ struct HealthSynchronizer {
         do {
             try await HealthManager.shared.saveHKWeight(date: time, kg: kg)
             print("•HK• syncWeightPut saved successfully for \(ampm.typeKey)")
-            updateMockDB(with: tracker) // Use global function
+           print("!!!••••updateMockDB(with: tracker)•••• ")
+            //updateMockDB(with: tracker) // Use global function
             print("•HK• syncWeightPut updated mockDB for \(ampm.typeKey)")
             await MainActor.run {
                 NotificationCenter.default.post(name: .init("NoticeChangedWeight"), object: date)
@@ -73,7 +76,8 @@ struct HealthSynchronizer {
         print("•HK• syncWeightClear for \(ampm.typeKey) on \(date.datestampSid)")
         try await HealthManager.shared.deleteHKWeight(date: date, ampm: ampm)
         print("•HK• syncWeightClear deleted HealthKit weight for \(ampm.typeKey)")
-        updateMockDB(with: tracker) // Use global function
+        //updateMockDB(with: tracker) // Use global function
+        print ("•••••!!!!!HK• syncWeightClear updateMockDB!!!!!•••••")
         print("•HK• syncWeightClear updated mockDB for \(ampm.typeKey)")
         await MainActor.run {
             NotificationCenter.default.post(name: .init("NoticeChangedWeight"), object: date)

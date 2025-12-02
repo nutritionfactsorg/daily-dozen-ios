@@ -6,6 +6,7 @@
 // swiftlint:disable identifier_name 
 
 import Foundation
+import SwiftUI
 
 extension String {
     func matches(_ pattern: String) -> Bool {
@@ -15,7 +16,9 @@ extension String {
 
 /// Object Relationship Mapping (ORM) for `dataweight_table`
 /// Handles mapping from relationship data and item record object
-public struct SqlDataWeightRecord: Codable {
+
+
+public struct SqlDataWeightRecord: Codable, Sendable {
     
     // MARK: - fields
     
@@ -42,10 +45,13 @@ public struct SqlDataWeightRecord: Codable {
     public var time: String { dataweight_time }
     
     public var kgStr: String {
-        if let s = UnitsUtility.regionalKgWeight(fromKg: dataweight_kg, toDecimalDigits: 1) {
-            return s
-        } else {
-            return String(format: "%.1f", dataweight_kg) // fallback if region conversion is nil
+        
+        get async {
+            if let s = await UnitsUtility.regionalKgWeight(fromKg: dataweight_kg, toDecimalDigits: 1) {
+                return s
+            } else {
+                return String(format: "%.1f", dataweight_kg)
+            }
         }
     }
     
@@ -54,11 +60,13 @@ public struct SqlDataWeightRecord: Codable {
     }
     
     public var lbsStr: String {
-        if let s = UnitsUtility.regionalLbsWeight(fromKg: dataweight_kg, toDecimalDigits: 1) {
-            return s
-        } else {
-            let poundValue = dataweight_kg * 2.204623
-            return String(format: "%.1f", poundValue) // fallback if region conversion is nil
+        get async {
+            if let s = await UnitsUtility.regionalLbsWeight(fromKg: dataweight_kg, toDecimalDigits: 1) {
+                return s
+            } else {
+                let poundValue = dataweight_kg * 2.204623
+                return String(format: "%.1f", poundValue)
+            }
         }
     }
     
@@ -95,16 +103,18 @@ public struct SqlDataWeightRecord: Codable {
         }
     
     // :RENAME:???: pidParts -> idParts
-    public var pidParts: (datestamp: Date, weightType: DataWeightType)? {
-        guard let date = Date.init(datestampSid: pidKeys.datestampSid),
-            let weightType = DataWeightType(typeKey: pidKeys.typeKey) else {
-                logit.error(
-                    "SqlDataWeightRecord pidParts has invalid datestamp or weightType"
-                )
-                return nil
-        }
-        return (datestamp: date, weightType: weightType)
-    }
+//    public var pidParts: (datestamp: Date, weightType: DataWeightType)? {
+//        get async {
+//            guard let date = Date.init(datestampSid: pidKeys.datestampSid),
+//                  let weightType = DataWeightType(typeKey: pidKeys.typeKey) else {
+//                print(
+//                    "SqlDataWeightRecord pidParts has invalid datestamp or weightType"
+//                )
+//                return nil
+//            }
+//            return (datestamp: date, weightType: weightType)
+//        }
+//    }
     
     /// Description string for logging. e.g., "20190214•0•am"
     public var idString: String {
@@ -231,6 +241,7 @@ public struct SqlDataWeightRecord: Codable {
 }
 
 extension SqlDataWeightRecord: Equatable {
+    @Sendable
     public static func == (lhs: SqlDataWeightRecord, rhs: SqlDataWeightRecord) -> Bool {
         lhs.dataweight_date_psid == rhs.dataweight_date_psid &&
         lhs.dataweight_ampm_pnid == rhs.dataweight_ampm_pnid &&

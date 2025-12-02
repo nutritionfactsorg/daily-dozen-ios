@@ -136,14 +136,14 @@ struct DozeServingsHistoryView: View {
                    // trackers = await viewModel.fetchTrackers(forMonth: earliestDate)
                     //processor.updateTrackers(trackers) // Update processor with fetched trackers
                     await processor.updateTrackers()
-                    await viewModel.fetchAllTrackers()
+                    //await viewModel.fetchAllTrackers()
                     updateScrollPosition()
                 }
             }
             .onReceive(NotificationCenter.default.publisher(for: .mockDBUpdated)) { _ in
                         Task { @MainActor in
                             await processor.updateTrackers()
-                            await viewModel.fetchAllTrackers()
+                           // await viewModel.fetchAllTrackers()
                             updateScrollPosition()
                         }
                     }

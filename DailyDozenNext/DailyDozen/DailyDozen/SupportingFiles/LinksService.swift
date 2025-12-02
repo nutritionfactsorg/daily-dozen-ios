@@ -7,20 +7,21 @@
 
 import Foundation
 
+@MainActor
 class LinksService {
     
 //    private struct Strings {
 //        static let baseURL = URL(string: "https://nutritionfacts.org")
 //    }
-    let baseURL =  URL(string: "https://nutritionfacts.org")
+    let baseURL =  URL(string: "https://nutritionfacts.org")!
 
     var siteMain: URL {
-        return baseURL ?? URL(string: "https://nutritionfacts.org")! //!!!MEC::  Is this even needed?  If so, try catch
+        baseURL
     }
     
     //TBDz remove optionals
     func link(menu: String) -> URL {
-        return (baseURL?.appendingPathComponent(menu))!  
+        return (baseURL.appendingPathComponent(menu))
     }
     
     // Returns the shared LinksService object.
@@ -58,7 +59,7 @@ class LinksService {
     /// - Parameter topic: The current topic.
     /// - Returns: A url.
     func link(topic: String) -> URL {
-        return baseURL!.appendingPathComponent(topic)  //NYI guard to prevent optional
+        return baseURL.appendingPathComponent(topic)  //NYI guard to prevent optional
     }
     
     // Returns a url for the current menu item.

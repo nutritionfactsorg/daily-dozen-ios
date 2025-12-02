@@ -9,6 +9,7 @@ import SwiftUI
 
 @main
 struct DailyDozenApp: App {
+    @Environment(\.scenePhase) private var scenePhase
     
     @StateObject var viewModel = SqlDailyTrackerViewModel()
     init() {
@@ -42,6 +43,21 @@ struct DailyDozenApp: App {
             
             ContentView()
                 .environmentObject(viewModel)
+                .environment(\.dataCountAttributes, .shared)
         }
+        .onChange(of: scenePhase) { oldPhase, newPhase in
+                    Task {
+                        switch newPhase {
+                        case .background:
+                            await SqliteDatabaseActor.shared.close()
+                            print("🟢 •App• Database closed on entering background")
+                        case .active, .inactive:
+                            // Optionally reopen or reinitialize database if needed
+                            break
+                        @unknown default:
+                            break
+                        }
+                    }
+                }
     }
 }

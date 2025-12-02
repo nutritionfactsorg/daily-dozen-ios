@@ -101,7 +101,7 @@ struct WeightEntryView: View {
                     DozeHeaderView(isShowingSheet: $isShowingSheet, currentDate: dateRange.isEmpty ? Date() : dateRange[currentIndex])
                     TabView(selection: $currentIndex) {
                         ForEach(dateRange.indices, id: \.self) { index in
-                            WeightEntryPage(date: dateRange[index], viewModel: viewModel)
+                            WeightEntryPage(date: dateRange[index], viewModel: _viewModel)
                                 .tag(index)
                         }
                     }
@@ -153,7 +153,6 @@ struct WeightEntryView: View {
        // } //Nav
     }
 }
-
 
 struct WeightEntryView_Previews: PreviewProvider {
     static var previews: some View {

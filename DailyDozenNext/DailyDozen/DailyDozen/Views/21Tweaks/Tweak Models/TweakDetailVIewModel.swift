@@ -14,8 +14,10 @@ struct TweakDetailViewModel {
     private let detailItemTypeKey: String
     
     var unitsType: UnitsType
+   
     
     /// Returns the main topic url.
+    @MainActor
     var topicURL: URL {
         return LinksService.shared.link(topic: info.topic)
     }

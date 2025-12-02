@@ -56,9 +56,9 @@ class HealthManagerWAS {
             completion: { (success, error) in
                 if success {
                     print("•HK• HealthManager Authorization success")
-                    logit.debug("•HK• HealthManager Authorization success")
+                    print("•HK• HealthManager Authorization success")
                 } else {
-                     logit.error("•HK• HealthManager Authorization error: \(String(describing: error?.localizedDescription))")
+                     print("•HK• HealthManager Authorization error: \(String(describing: error?.localizedDescription))")
                    // print("HK error \(String(describing: error?.localizedDescription))")
                 }
             })

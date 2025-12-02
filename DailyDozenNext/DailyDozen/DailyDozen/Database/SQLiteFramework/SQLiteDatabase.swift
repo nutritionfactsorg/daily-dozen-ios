@@ -190,9 +190,9 @@ public class SQLiteDatabase {
         }
         
         if verbose {
-            logit.verbose("--- SQL from file: ---\n\(url.path)")
+           print("--- SQL from file: ---\n\(url.path)")
             for c in commands {
-                logit.verbose("---\n\(c)")
+               print("---\n\(c)")
             }
         }
         
@@ -364,12 +364,12 @@ public class SQLiteDatabase {
             dbMessage: "String.fromCString failed"
         )
         setStatus(err)
-        logit.error(err.toString())
+        print(err.toString())
     }
     
     // :WIP:ACCESS_LEVEL.FILEPRIVATE
     public func setStatusError(context: String, code: Int32) {
-        if let errmsg = String(validatingUTF8: sqlite3_errmsg(self.dbPtr)) {
+        if let errmsg = String(validatingCString: sqlite3_errmsg(self.dbPtr)) {
             let err = SQLiteStatus(
                 type: SQLiteStatusType.connectionError, 
                 context: context, 
@@ -377,7 +377,7 @@ public class SQLiteDatabase {
                 dbMessage: errmsg
             )
             setStatus(err)
-            logit.error(err.toString())
+            print(err.toString())
         } else {
             let err = SQLiteStatus(
                 type: SQLiteStatusType.connectionError, 
@@ -386,7 +386,7 @@ public class SQLiteDatabase {
                 dbMessage: "String.fromCString failed"
             )
             setStatus(err)
-            logit.error(err.toString())
+            print(err.toString())
         }
     }
     
