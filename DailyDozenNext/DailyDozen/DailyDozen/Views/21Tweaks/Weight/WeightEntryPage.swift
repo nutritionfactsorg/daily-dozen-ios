@@ -44,7 +44,6 @@ struct WeightEntryPage: View {
 //        }
 //    }
     
-
     var body: some View {
         Form {
             AMWeightSection(

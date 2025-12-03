@@ -15,7 +15,6 @@ struct TweakDetailViewModel {
     
     var unitsType: UnitsType
    
-    
     /// Returns the main topic url.
     @MainActor
     var topicURL: URL {

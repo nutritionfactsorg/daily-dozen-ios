@@ -298,8 +298,8 @@ struct DozeServingsHistoryView: View {
             legendView // Place legend below chart
         }
         .onAppear {
-            logit.debug("MonthlyChart Data: \(data.map { "Month: \(calendar.component(.month, from: $0.date!)), Servings: \($0.totalServings)" })")
-            logit.debug("Y-Axis Domain: 0...\(config.yAxisUpperBound)")
+            print("MonthlyChart Data: \(data.map { "Month: \(calendar.component(.month, from: $0.date!)), Servings: \($0.totalServings)" })")
+            print("Y-Axis Domain: 0...\(config.yAxisUpperBound)")
             let startDate = calendar.date(from: DateComponents(year: calendar.component(.year, from: selectedDate), month: 1, day: 1)) ?? selectedDate
             let endDate = calendar.date(from: DateComponents(year: calendar.component(.year, from: selectedDate), month: 12, day: 31)) ?? selectedDate
             var currentDate = startDate

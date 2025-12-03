@@ -33,6 +33,5 @@ struct DozeDetailInfo: Codable {
 //            self.Item = Item
 //        }
     
-    
     var itemsDict: [String: Item]
 }

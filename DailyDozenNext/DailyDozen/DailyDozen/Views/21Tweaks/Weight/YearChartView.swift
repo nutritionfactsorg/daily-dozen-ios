@@ -97,7 +97,7 @@ struct YearChartView: View {
                         trackers = await viewModel.fetchAllTrackers()
                     }
             }
-            .onReceive(WeightEntryViewModel.mockDBTrigger) { _ in
+            .onReceive(NotificationCenter.default.publisher(for: .mockDBUpdated)) { _ in
                         Task {
                             trackers = await viewModel.fetchAllTrackers()
                             print("🟢 •Chart• DB updated via notification, refreshed trackers")

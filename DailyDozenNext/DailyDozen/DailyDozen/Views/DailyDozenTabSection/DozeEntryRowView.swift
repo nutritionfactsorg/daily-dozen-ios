@@ -30,6 +30,7 @@ struct DozeEntryRowView: View {
             DozeEntryViewModel.rowTypeArray.filter { $0 == .otherVitaminB12 }
         }
     
+   
     var body: some View {
        
             HStack {
@@ -66,7 +67,7 @@ struct DozeEntryRowView: View {
                                 .frame(width: 30, height: 30)
                         }
                         //StreakView(streak: streakCount)
-                        StreakView(streak: viewModel.tracker?.itemsDict[item]?.datacount_streak ?? 0) // guess at what this might be when implemented
+                        StreakView(streak: streakCount)
                         Spacer()
                         HStack {
                             // let itemData = record.itemsDict[item]
@@ -80,7 +81,7 @@ struct DozeEntryRowView: View {
                                     guard !isUpdating else { return }
                                     isUpdating = true
                                     checkCount = newCount
-                                    Task { @MainActor in
+                                    Task {
                                        // await viewModel.setCount(for: item, count: newCount, date: date)
 //                                        await viewModel.setCountAndUpdateStreak(for: item, count: newCount, date: date)
 //                                        print("🟢 •DozeEntryRowView• Updated \(item.typeKey) on \(date.datestampSid): count=\(newCount), streak=\(viewModel.tracker?.itemsDict[item]?.datacount_streak ?? 0)")
@@ -88,9 +89,11 @@ struct DozeEntryRowView: View {
 //                                       // streakCount = viewModel.tracker?.itemsDict[item]?.datacount_streak ?? 0
 //                                        onCheck(newCount)
 //                                        isUpdating = false
+                                        await viewModel.setCountAndUpdateStreak(for: item, count: newCount, date: date)
                                         onCheck(newCount)
-                                        let streak = viewModel.tracker?.itemsDict[item]?.datacount_streak ?? 0
-                                        print("🟢 •DozeEntryRowView• Updated \(item.typeKey) on \(date.datestampSid): count=\(newCount), streak=\(streak)")
+                                       //let streak = viewModel.tracker?.itemsDict[item]?.datacount_streak ?? 0
+                                       // print("🟢 •DozeEntryRowView• Updated \(item.typeKey) on \(date.datestampSid): count=\(newCount), streak=\(streak)")
+                                        streakCount = viewModel.tracker(for: date).itemsDict[item]?.datacount_streak ?? 0
                                         isUpdating = false
                                     }
                                 },
@@ -106,9 +109,15 @@ struct DozeEntryRowView: View {
             .shadowboxed()
             .onAppear {
                 Task { @MainActor in
-                    //await viewModel.loadTracker(forDate: date)
-                    checkCount = viewModel.getCount(for: item)
-                    streakCount = viewModel.tracker?.itemsDict[item]?.datacount_streak ?? 0
+                    let localTracker = viewModel.tracker(for: date)
+                   
+                   // await viewModel.loadTracker(forDate: date.startOfDay)
+                    checkCount = viewModel.getCount(for: item, date: date.startOfDay)
+                    streakCount = localTracker.itemsDict[item]?.datacount_streak ?? 0
+                    onCheck(checkCount) 
+                    //streakCount = viewModel.tracker.
+                   // streakCount = localTracker.itemsDict[item]?.datacount_streak ?? 0
+                   // streakCount = viewModel.tracker?.itemsDict[item]?.datacount_streak ?? 0
                      //  await viewModel.loadTracker(forDate: date)
                        //checkCount = viewModel.tracker?.itemsDict[item]?.datacount_count ?? 0
                       // checkCount = viewModel.getCount(for: item)

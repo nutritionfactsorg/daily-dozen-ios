@@ -263,6 +263,4 @@ extension DataCountType {
     var headingCSV: String {
           DataCountTypeAttributes.headingCSV(for: self)
     }
-    
-    
 }

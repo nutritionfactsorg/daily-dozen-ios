@@ -17,7 +17,6 @@ extension String {
 /// Object Relationship Mapping (ORM) for `dataweight_table`
 /// Handles mapping from relationship data and item record object
 
-
 public struct SqlDataWeightRecord: Codable, Sendable {
     
     // MARK: - fields
@@ -152,7 +151,7 @@ public struct SqlDataWeightRecord: Codable, Sendable {
             self.dataweight_time = timeHHmm
         }
     
-    /// CSV Initializer: SqlDataWeightRecord :GTD: implement typeKey and typeNid
+    // CSV Initializer: SqlDataWeightRecord :GTD: implement typeKey and typeNid
 //    public init?(datestampSid: String, typeKey: String, kilograms: String, timeHHmm: String) {
 //        guard DataWeightType(typeKey: typeKey) != nil,
 //            Date(datestampSid: datestampSid) != nil,

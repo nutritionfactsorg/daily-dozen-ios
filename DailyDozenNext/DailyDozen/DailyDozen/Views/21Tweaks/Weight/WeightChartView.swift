@@ -287,7 +287,7 @@ struct WeightChartView: View {
                     print("🟢 •Chart• WeightChartView appeared, refreshing chart for month: \(selectedMonth.datestampSid)")
                 }
             }
-            .onReceive(WeightEntryViewModel.mockDBTrigger) { _ in
+            .onReceive(NotificationCenter.default.publisher(for: .mockDBUpdated)) { _ in
                 Task {
                     isLoading = true
                     await loadMonthsAndYears()

@@ -70,7 +70,7 @@ actor LogService {
     private var lineCount = 0
     /// Log line numbers to watch: [Int]  
     public var watchpointList: [Int] = []
-    ///
+    //
     //public var logfileUrl: URL?
     
     /// DateFromatter used internally.

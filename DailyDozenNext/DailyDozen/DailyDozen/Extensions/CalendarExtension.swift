@@ -43,6 +43,7 @@ extension Calendar {
         let components2 = dateComponents([.year], from: date2)
         return components1 == components2
     }
+    
 }
 
 // Helper to generate axis mark values

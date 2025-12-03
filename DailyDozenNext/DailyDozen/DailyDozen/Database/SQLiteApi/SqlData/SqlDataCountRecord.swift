@@ -109,7 +109,7 @@ public struct SqlDataCountRecord: Codable, Sendable {
         datacount_kind_pfnid typeKey: Int,
         datacount_count count: Int = 0,
         datacount_streak streak: Int = 0
-    )  {
+    ) {
         guard let dataCountType = DataCountType(nid: typeKey),
             Date(datestampSid: datestampSid) != nil else {
             return nil
@@ -128,7 +128,7 @@ public struct SqlDataCountRecord: Codable, Sendable {
         datacount_streak = streak
     }
     
-    public init(date: Date, countType: DataCountType, count: Int = 0, streak: Int = 0)  {
+    public init(date: Date, countType: DataCountType, count: Int = 0, streak: Int = 0) {
         //self.init()
         datacount_date_psid = date.datestampSid // YYYYMMDD
         datacount_kind_pfnid = countType.nid    // number index
@@ -137,7 +137,7 @@ public struct SqlDataCountRecord: Codable, Sendable {
         if datacount_count > countType.goalServings {
             datacount_count = countType.goalServings
             // :NYI:GOAL: capability to exceed servings goal
-            print (
+            print(
                 "SqlDataCountRecord init date:\(date.datestampSid) countType:\(countType.typeKey) count:\(count) exceeds max servings \(countType.goalServings)"
             )
         }

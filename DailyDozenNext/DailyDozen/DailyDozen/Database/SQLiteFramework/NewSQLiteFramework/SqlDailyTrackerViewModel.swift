@@ -31,17 +31,19 @@ class SqlDailyTrackerViewModel: ObservableObject {
     private let dbActor = SqliteDatabaseActor.shared
     private var isSettingCount = false
     private var lastLoadedDate: Date?
+    static let shared = SqlDailyTrackerViewModel()
     
     init() {
        print("🟢 •VM• Creating SqlDailyTrackerViewModel instance:")
-               
-            
+       print("🟢 •VM• Creating instance at: \(Thread.callStackSymbols[1])")  // Logs caller
                 Task {
                     do {
                         try await dbActor.setup()
                         await MainActor.run {
                             print("🟢 •VM• SqlDailyTrackerViewModel: Database initialized")
                         }
+                        // Optional: Uncomment to load current month's trackers on init
+                        // await loadTrackers(forMonth: Date())
                     } catch {
                         await MainActor.run {
                             self.error = "Database initialization failed: \(error)"
@@ -55,6 +57,64 @@ class SqlDailyTrackerViewModel: ObservableObject {
 //            Task { await dbActor.setup() } // Add explicit setup
 //            Task { await loadTracker(forDate: Date().startOfDay) }
 //        }
+    
+    // Added: Convenience lookup from array (replaces old mockDB.first(where:))
+    func tracker(for date: Date) -> SqlDailyTracker {
+        let calendar = DateUtilities.gregorianCalendar
+        let normalized = calendar.startOfDay(for: date)
+        if let existing = trackers.first(where: { calendar.isDate($0.date, inSameDayAs: normalized) }) {
+           // print("🟢 •Tracker• Returning for \(normalized.datestampSid): existing=true, countSum=\(existing.itemsDict.values.reduce(0) { $0 + ($1.datacount_count) })")
+            return existing
+        }
+       
+        let newTracker = SqlDailyTracker(date: normalized)
+        trackers.append(newTracker)  // Cache empty for now; load will replace if needed
+      //  print("🟢 •Tracker• Returning for \(normalized.datestampSid): existing=false, new countSum=\(newTracker.itemsDict.values.reduce(0) { $0 + ($1.datacount_count) })")
+        return newTracker
+    }
+    
+    // Added: Optional method to load trackers for a month into the array -- TBDz if needed
+        func loadTrackers(forMonth date: Date) async {
+            let calendar = DateUtilities.gregorianCalendar
+            let fetched = await dbActor.fetchTrackers(forMonth: date)
+            await MainActor.run {
+                // Merge without duplicates
+                for newTracker in fetched {
+                    trackers = trackers.filter { !calendar.isDate($0.date, inSameDayAs: newTracker.date) } + [newTracker]
+                }
+                print("🟢 •VM• Loaded \(fetched.count) trackers for month \(date.datestampSid)")
+            }
+        }
+    
+    // Helper to update/replace in array (used after mutations/saves)
+     private func updateTrackerInArray(_ updatedTracker: SqlDailyTracker) {
+            let calendar = DateUtilities.gregorianCalendar
+            if let index = trackers.firstIndex(where: { calendar.isDate($0.date, inSameDayAs: updatedTracker.date) }) {
+                trackers[index] = updatedTracker
+            } else {
+                trackers.append(updatedTracker)
+            }
+            NotificationCenter.default.post(name: .mockDBUpdated, object: nil)
+        }
+    
+    // Added: Replaces old updateMockDB; saves full tracker (weights + counts) to DB
+        func updateDatabase(with tracker: SqlDailyTracker) async {
+            if let am = tracker.weightAM {
+                _ = await dbActor.saveWeight(record: am, oldDatePsid: am.dataweight_date_psid, oldAmpm: am.dataweight_ampm_pnid)
+            }
+            if let pm = tracker.weightPM {
+                _ = await dbActor.saveWeight(record: pm, oldDatePsid: pm.dataweight_date_psid, oldAmpm: pm.dataweight_ampm_pnid)
+            }
+            for (type, record) in tracker.itemsDict {
+                _ = await dbActor.saveCount(record: record, oldDatePsid: record.datacount_date_psid, oldTypeNid: type.nid)
+            }
+            // Update local array
+            trackers = trackers.filter { !Calendar.current.isDate($0.date, inSameDayAs: tracker.date) } + [tracker]
+            if Calendar.current.isDate(self.tracker?.date ?? Date.distantPast, inSameDayAs: tracker.date) {
+                self.tracker = tracker
+            }
+            NotificationCenter.default.post(name: .mockDBUpdated, object: nil)
+        }
     
    func getTrackerOrCreate(for date: Date) async -> SqlDailyTracker {
             if let existingTracker = tracker {
@@ -72,8 +132,6 @@ class SqlDailyTrackerViewModel: ObservableObject {
            // var tracker = self.tracker ?? SqlDailyTracker(date: date.startOfDay)
         
         //var tracker = self.tracker ?? SqlDailyTracker(date: date.startOfDay)
-        
-        //var tracker = self.tracker != nil ? self.tracker! : await SqlDailyTracker(date: date.startOfDay)
         
 //        var tracker : SqlDailyTracker!
 //        if let t1 = self.tracker {
@@ -155,7 +213,10 @@ class SqlDailyTrackerViewModel: ObservableObject {
     // *** Added: Save weight with HealthKit sync ***
     func saveWeight(for date: Date, amWeight: Double?, pmWeight: Double?, amTime: Date?, pmTime: Date?) async {
         let dateSid = date.datestampSid
-        var updatedTracker = await getTrackerOrCreate(for: date.startOfDay)
+        
+        let normalized = Calendar.current.startOfDay(for: date)  //TBDz does this need to be Gregorian?
+       // var updatedTracker = await getTrackerOrCreate(for: date.startOfDay)
+        var updatedTracker = tracker(for: normalized)
        // var updatedTracker = self.tracker ?? SqlDailyTracker(date: date.startOfDay)
         let unitType = UnitType.fromUserDefaults()
 
@@ -193,14 +254,25 @@ class SqlDailyTrackerViewModel: ObservableObject {
             hasChanges = true
         }
 
+        
+        
+        
         if hasChanges {
-            self.tracker = updatedTracker
-            self.trackers = trackers.filter { !Calendar.current.isDate($0.date, inSameDayAs: date) } + [updatedTracker]
-            NotificationCenter.default.post(name: .mockDBUpdated, object: nil) // Ensure notification  TBDz not sure if needed?
-            print("•Save• Tracker updated for \(dateSid)")
-        } else {
-            print("•Save• No changes to save for \(dateSid)")
+            
+            
+            let derivedCount = ((updatedTracker.weightAM?.dataweight_kg ?? 0 > 0 ? 1 : 0) +
+                                (updatedTracker.weightPM?.dataweight_kg ?? 0 > 0 ? 1 : 0))
+            await setCountAndUpdateStreak(for: .tweakWeightTwice, count: derivedCount, date: normalized)
+            updateTrackerInArray(updatedTracker)  // Ensure cached
+            print("🟢 •Save• Derived and saved count/streak for tweakWeightTwice on \(normalized.datestampSid): \(derivedCount)")
+            
         }
+//            self.trackers = trackers.filter { !Calendar.current.isDate($0.date, inSameDayAs: date) } + [updatedTracker]
+//            NotificationCenter.default.post(name: .mockDBUpdated, object: nil) // Ensure notification  TBDz not sure if needed?
+//            print("•Save• Tracker updated for \(dateSid)")
+//        } else {
+//            print("•Save• No changes to save for \(dateSid)")
+//        }
     }
 
     // *** Added: Update pending weights ***
@@ -245,14 +317,23 @@ class SqlDailyTrackerViewModel: ObservableObject {
     }
 
     func loadTracker(forDate date: Date) async {
-        let normalizedDate = date.startOfDay
-        guard !isLoading, lastLoadedDate == nil || !Calendar.current.isDate(lastLoadedDate!, inSameDayAs: normalizedDate) else {
-            return
-        }
+        let calendar = DateUtilities.gregorianCalendar
+        let normalizedDate = calendar.startOfDay(for: date)
+//        guard !isLoading, lastLoadedDate == nil || !Calendar.current.isDate(lastLoadedDate!, inSameDayAs: normalizedDate) else {
+//            return
+//        }
+//        isLoading = true
+//        error = nil
+//        tracker = await dbActor.fetchDailyTracker(forDate: normalizedDate)
+//        lastLoadedDate = date
+//        isLoading = false
+        if trackers.contains(where: { calendar.isDate($0.date, inSameDayAs: normalizedDate) }) { return }  // Already cached
         isLoading = true
-        error = nil
-        tracker = await dbActor.fetchDailyTracker(forDate: normalizedDate)
-        lastLoadedDate = date
+        let fetched = await dbActor.fetchDailyTracker(forDate: normalizedDate)
+        //trackers.append(fetched)
+        updateTrackerInArray(fetched)  // Use replace helper instead of append
+            print("🟢 •Load• Updated trackers.count: \(trackers.count), sum for \(normalizedDate.datestampSid): \(tracker(for: normalizedDate).itemsDict.values.reduce(0) { $0 + $1.datacount_count })")
+        print("🟢 •Load• Cached trackers.count after append: \(trackers.count)")
         isLoading = false
     }
 
@@ -279,57 +360,31 @@ class SqlDailyTrackerViewModel: ObservableObject {
         }
     }
 
-    func getCount(for type: DataCountType) -> Int {
-        tracker?.itemsDict[type]?.datacount_count ?? 0
+//    func getCount(for item: DataCountType, date: Date = Date()) -> Int {
+//        tracker(for: date.startOfDay).itemsDict[type]?.datacount_count ?? 0
+//    }
+    
+    func getCount(for type: DataCountType, date: Date) -> Int {
+        tracker(for: date).itemsDict[type]?.datacount_count ?? 0
     }
 
     func setCount(for type: DataCountType, count: Int, date: Date) async {
-            let normalizedDate = date.startOfDay
-            guard !isSettingCount else {
-                print("🟢 •DB• Skipped setCount for \(type.headingDisplay) on \(normalizedDate.datestampSid): already setting count")
-                return
-            }
-            isSettingCount = true
-            
-            if tracker == nil || !Calendar.current.isDate(tracker!.date, inSameDayAs: normalizedDate) {
-                await loadTracker(forDate: normalizedDate)
-            }
-            
-            guard let currentTracker = tracker else {
-                isSettingCount = false
-                error = "No tracker available for \(type.headingDisplay) on \(normalizedDate.datestampSid)"
-                print("🔴 •DB• No tracker for \(type.headingDisplay) on \(normalizedDate.datestampSid)")
-                return
-            }
-            
-            if currentTracker.itemsDict[type]?.datacount_count == count {
-                isSettingCount = false
-                print("🟢 •DB• Skipped setCount for \(type.headingDisplay) on \(normalizedDate.datestampSid): count unchanged (\(count))")
-                return
-            }
-            
-            var mutableTracker = currentTracker
-            await mutableTracker.setCount(typeKey: type, count: count)
-            if let updatedRecord = mutableTracker.itemsDict[type] {
-                print("🟢 •DB• Saving count for \(type.headingDisplay) on \(normalizedDate.datestampSid): count=\(count), idKeys=\(updatedRecord.idKeys?.datestampSid ?? "nil"), typeNid=\(type.nid)")
-                let success = await dbActor.saveCount(
-                    record: updatedRecord,
-                    oldDatePsid: updatedRecord.idKeys?.datestampSid,
-                    oldTypeNid: type.nid
-                )
-                if success {
-                    tracker = mutableTracker
-                    successMessage = "Count saved for \(type.nid)"
-                    print("🟢 •DB• Count saved for \(type.headingDisplay) on \(normalizedDate.datestampSid): \(count)")
-                } else {
-                    error = "Failed to save count for \(type.nid)"
-                    print("🔴 •DB• Failed to save count for \(type.headingDisplay) on \(normalizedDate.datestampSid)")
+        let calendar = DateUtilities.gregorianCalendar
+        let normalized = calendar.startOfDay(for: date)
+        var mutableTracker = tracker(for: normalized)  // Gets or creates/caches
+                await mutableTracker.setCount(typeKey: type, count: count)
+                if let updatedRecord = mutableTracker.itemsDict[type] {
+                    let success = await dbActor.saveCount(
+                        record: updatedRecord,
+                        oldDatePsid: updatedRecord.datacount_date_psid,
+                        oldTypeNid: type.nid
+                    )
+                    if success {
+                        updateTrackerInArray(mutableTracker)
+                    } else {
+                        error = "Failed to save count"
+                    }
                 }
-            } else {
-                error = "No record created for \(type.nid)"
-                print("🔴 •DB• No record created for \(type.headingDisplay) on \(normalizedDate.datestampSid)")
-            }
-            isSettingCount = false
         }
 
     func getWeight(for weightType: DataWeightType) -> Double {
@@ -367,7 +422,6 @@ class SqlDailyTrackerViewModel: ObservableObject {
         )
     }
 
-   
     func fetchTrackers(forMonth date: Date) async -> [SqlDailyTracker] {
         let trackers = await dbActor.fetchTrackers(forMonth: date)
         print("🟢 •VM• Fetched \(trackers.count) trackers for month \(date.datestampSid): \(trackers.map { "\($0.date.datestampSid): AM=\($0.weightAM?.dataweight_kg ?? 0) kg, PM=\($0.weightPM?.dataweight_kg ?? 0) kg" })")
@@ -390,7 +444,8 @@ class SqlDailyTrackerViewModel: ObservableObject {
 
 extension SqlDailyTrackerViewModel {
     func setCountAndUpdateStreak(for item: DataCountType, count: Int, date: Date) async {
-        let normalizedDate = date.startOfDay
+        let calendar = DateUtilities.gregorianCalendar
+        let normalizedDate = calendar.startOfDay(for: date)
         // Update the count
         await setCount(for: item, count: count, date: normalizedDate)
         
@@ -403,7 +458,6 @@ extension SqlDailyTrackerViewModel {
         } else {
             await updateStreakIncomplete(for: item, date: normalizedDate, db: db)
         }
-        NotificationCenter.default.post(name: .mockDBUpdated, object: nil)
     }
     
     private func updateStreakCompleted(for item: DataCountType, date: Date, db: SqliteDatabaseActor) async {
@@ -624,6 +678,10 @@ extension SqlDailyTrackerViewModel {
         }
     }
     
+}
+
+extension SqlDailyTrackerViewModel {
+    static let mockDBTrigger = NotificationCenter.Publisher(center: .default, name: .mockDBUpdated, object: nil)
 }
 
 //for testing streaks

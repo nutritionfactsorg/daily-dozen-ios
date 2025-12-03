@@ -96,7 +96,7 @@ struct UnitsUtility {
     public static func regionalKgWeight(
         fromKg: Double,
         toDecimalDigits: Int
-    ) async ->  String? {
+    ) async -> String? {
         let formatter = NumberFormatter()
         formatter.numberStyle = .decimal
         formatter.maximumFractionDigits = toDecimalDigits

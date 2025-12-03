@@ -7,8 +7,6 @@
 import SwiftUI
 import HealthKit
 
-//TBDz20250925    syncWeightPut and syncWeightClear has MockDB
-
 struct HealthSynchronizer {
     static let shared = HealthSynchronizer()
     
@@ -61,7 +59,7 @@ struct HealthSynchronizer {
             try await HealthManager.shared.saveHKWeight(date: time, kg: kg)
             print("•HK• syncWeightPut saved successfully for \(ampm.typeKey)")
            print("!!!••••updateMockDB(with: tracker)•••• ")
-            //updateMockDB(with: tracker) // Use global function
+            await SqlDailyTrackerViewModel.shared.updateDatabase(with: tracker)
             print("•HK• syncWeightPut updated mockDB for \(ampm.typeKey)")
             await MainActor.run {
                 NotificationCenter.default.post(name: .init("NoticeChangedWeight"), object: date)
@@ -76,8 +74,8 @@ struct HealthSynchronizer {
         print("•HK• syncWeightClear for \(ampm.typeKey) on \(date.datestampSid)")
         try await HealthManager.shared.deleteHKWeight(date: date, ampm: ampm)
         print("•HK• syncWeightClear deleted HealthKit weight for \(ampm.typeKey)")
-        //updateMockDB(with: tracker) // Use global function
-        print ("•••••!!!!!HK• syncWeightClear updateMockDB!!!!!•••••")
+        await SqlDailyTrackerViewModel.shared.updateDatabase(with: tracker) // Use global function
+        print("•••••!!!!!HK• syncWeightClear updateMockDB!!!!!•••••")
         print("•HK• syncWeightClear updated mockDB for \(ampm.typeKey)")
         await MainActor.run {
             NotificationCenter.default.post(name: .init("NoticeChangedWeight"), object: date)

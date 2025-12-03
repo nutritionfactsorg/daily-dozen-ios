@@ -20,7 +20,7 @@ struct DozeCalendarView: View {
     
     var body: some View {
         VStack {
-            UICalendarViewRepresentable(item: item, viewModel: viewModel, currentMonth: $currentMonth)
+            UICalendarViewRepresentable(item: item, viewModel: _viewModel, currentMonth: $currentMonth)
               //  .frame(height: 400)
             
            // Push the footer to the bottom

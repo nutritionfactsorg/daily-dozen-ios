@@ -11,7 +11,7 @@ import SwiftUI
 struct DailyDozenApp: App {
     @Environment(\.scenePhase) private var scenePhase
     
-    @StateObject var viewModel = SqlDailyTrackerViewModel()
+   // @StateObject var viewModel = SqlDailyTrackerViewModel()
     init() {
         UNUserNotificationCenter.current().setBadgeCount(0) //set badge count to 0, but don't know if it removes notifications. Done in previous versions
         //TBDz: Does this really need to be set here?  Doesn't work here
@@ -42,10 +42,10 @@ struct DailyDozenApp: App {
         WindowGroup {
             
             ContentView()
-                .environmentObject(viewModel)
+                .environmentObject(SqlDailyTrackerViewModel.shared)
                 .environment(\.dataCountAttributes, .shared)
         }
-        .onChange(of: scenePhase) { oldPhase, newPhase in
+        .onChange(of: scenePhase) { _, newPhase in
                     Task {
                         switch newPhase {
                         case .background:

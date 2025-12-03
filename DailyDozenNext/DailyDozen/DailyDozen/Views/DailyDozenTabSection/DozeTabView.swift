@@ -97,15 +97,20 @@ struct DozeTabView: View {
                         .tabViewStyle(.page(indexDisplayMode: .never))
                         .frame(minHeight: 300, maxHeight: .infinity)
                         .onChange(of: currentIndex) { _, newIndex in
-                            guard !isLoadingDate else { return }
-                            isLoadingDate = true
-                            selectedDate = dateRange[newIndex]
-                            extendDateRangeIfNeeded(for: newIndex)
-                            Task { @MainActor in
-                                await viewModel.loadTracker(forDate: selectedDate)
-                                isLoadingDate = false
-                            }
-                        }
+//                            guard !isLoadingDate else { return }
+//                            isLoadingDate = true
+//                            selectedDate = dateRange[newIndex]
+//                            extendDateRangeIfNeeded(for: newIndex)
+                            
+                                Task {
+                                    await viewModel.loadTracker(forDate: selectedDate)
+                                        // Optional: Preload adjacent for smoother swipes
+                                        if newIndex > 0 { await viewModel.loadTracker(forDate: dateRange[newIndex - 1]) }
+                                        if newIndex < dateRange.count - 1 { await viewModel.loadTracker(forDate: dateRange[newIndex + 1]) }
+                                }
+                               // isLoadingDate = false
+                            
+                        } //onChange
                     }
                     Spacer()
                 }
@@ -121,8 +126,10 @@ struct DozeTabView: View {
             }
             .onAppear {
                 extendDateRangeIfNeeded(for: currentIndex)
-                Task { @MainActor in
-                    await viewModel.loadTracker(forDate: selectedDate)
+                Task {
+                    for index in max(0, currentIndex - 5)...min(dateRange.count - 1, currentIndex + 5) {
+                        await viewModel.loadTracker(forDate: dateRange[index])
+                    }
                 }
             }
             .navigationTitle(Text("navtab.doze"))

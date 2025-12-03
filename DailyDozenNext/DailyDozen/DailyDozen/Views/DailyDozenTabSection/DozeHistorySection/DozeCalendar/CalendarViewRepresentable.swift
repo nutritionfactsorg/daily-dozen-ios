@@ -10,7 +10,8 @@ import UIKit
 
 struct UICalendarViewRepresentable: UIViewRepresentable {
     let item: DataCountType
-    let viewModel: SqlDailyTrackerViewModel
+    //let viewModel: SqlDailyTrackerViewModel
+    @EnvironmentObject var viewModel: SqlDailyTrackerViewModel
     @Binding var currentMonth: Date
     
     private let calendar = Calendar.current
@@ -60,12 +61,12 @@ struct UICalendarViewRepresentable: UIViewRepresentable {
         
         func calendarView(_ calendarView: UICalendarView, decorationFor dateComponents: DateComponents) -> UICalendarView.Decoration? {
             guard let date = parent.calendar.date(from: dateComponents) else {
-                print("decorationFor: Invalid date components for \(dateComponents)")
+               // print("decorationFor: Invalid date components for \(dateComponents)")
                 return nil
             }
             
             if date > parent.today {
-                print("decorationFor: Skipping future date \(date.datestampSid)")
+              //  print("decorationFor: Skipping future date \(date.datestampSid)")
                 return nil
             }
             

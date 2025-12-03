@@ -26,6 +26,14 @@ struct DozeTabPageView: View {
         DozeEntryViewModel.rowTypeArray.filter { $0 == .otherVitaminB12 }
     }
     
+    private func syncRecordWithDB() async {
+        
+        let localTracker = viewModel.tracker(for: date)
+        dozeDailyStateCount = localTracker.itemsDict
+            .filter { DozeEntryViewModel.rowTypeArray.contains($0.key) }
+            .reduce(0) { $0 + $1.value.datacount_count } ?? 0
+    }
+    
     var body: some View {
         VStack {
             HStack {
@@ -53,16 +61,12 @@ struct DozeTabPageView: View {
                         DozeEntryRowView(
                             item: item,
                             date: date,
-                            onCheck: { count in
-                                Task { @MainActor in
+                            onCheck: { _ in
+                                Task {
+                                    await syncRecordWithDB()
+                                  //  @MainActor in
                                    // await viewModel.setCount(for: item, count: count, date: date)
-                                    await viewModel.setCountAndUpdateStreak(for: item, count: count, date: date)
-                                    dozeDailyStateCount = viewModel.tracker?.itemsDict
-                                        .filter { $0.key.isDailyDozen && DozeEntryViewModel.rowTypeArray.contains($0.key) }
-                                        .reduce(0) { $0 + $1.value.datacount_count } ?? 0
                                     showStarImage = dozeDailyStateCount == dozeDailyStateCountMaximum
-                                    print("🟢 •DozeTabPageView• Updated \(item.typeKey) on \(date.datestampSid): count=\(count), streak=\(viewModel.tracker?.itemsDict[item]?.datacount_streak ?? 0)")
-                                            
                                 }
                             }
                         )
@@ -88,13 +92,14 @@ struct DozeTabPageView: View {
                             DozeEntryRowView(
                                 item: item,
                                 date: date,
-                                onCheck: { count in
+                                onCheck: { _ in
                                     Task { @MainActor in
-                                        await viewModel.setCount(for: item, count: count, date: date)
-                                        dozeDailyStateCount = viewModel.tracker?.itemsDict
-                                            .filter { $0.key.isDailyDozen && DozeEntryViewModel.rowTypeArray.contains($0.key) }
-                                            .reduce(0) { $0 + $1.value.datacount_count } ?? 0
-                                        showStarImage = dozeDailyStateCount == dozeDailyStateCountMaximum
+                                        await syncRecordWithDB()
+//                                        await viewModel.setCount(for: item, count: count, date: date)
+//                                        dozeDailyStateCount = viewModel.tracker?.itemsDict
+//                                            .filter { $0.key.isDailyDozen && DozeEntryViewModel.rowTypeArray.contains($0.key) }
+//                                            .reduce(0) { $0 + $1.value.datacount_count } ?? 0
+//                                        showStarImage = dozeDailyStateCount == dozeDailyStateCountMaximum
                                     }
                                 }
                             )
@@ -104,16 +109,18 @@ struct DozeTabPageView: View {
             }
         }
         .onAppear {
-            Task { @MainActor in
-             //   await viewModel.loadTracker(forDate: date)
-                dozeDailyStateCount = viewModel.tracker?.itemsDict
-                    .filter { $0.key.isDailyDozen && DozeEntryViewModel.rowTypeArray.contains($0.key) }
-                    .reduce(0) { $0 + $1.value.datacount_count } ?? 0
-                showStarImage = dozeDailyStateCount == dozeDailyStateCountMaximum
+            
+            Task { await syncRecordWithDB()}
+//            Task { @MainActor in
+//             //   await viewModel.loadTracker(forDate: date)
+//                dozeDailyStateCount = viewModel.tracker?.itemsDict
+//                    .filter { $0.key.isDailyDozen && DozeEntryViewModel.rowTypeArray.contains($0.key) }
+//                    .reduce(0) { $0 + $1.value.datacount_count } ?? 0
+//                showStarImage = dozeDailyStateCount == dozeDailyStateCountMaximum
             }
         }
     }
-}
+
 
 #Preview {
     DozeTabPageView(date: Date())
