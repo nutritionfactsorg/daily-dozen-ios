@@ -34,13 +34,13 @@ class SqlDailyTrackerViewModel: ObservableObject {
     static let shared = SqlDailyTrackerViewModel()
     
     init() {
-       print("🟢 •VM• Creating SqlDailyTrackerViewModel instance:")
-       print("🟢 •VM• Creating instance at: \(Thread.callStackSymbols[1])")  // Logs caller
+     //  print("🟢 •VM• Creating SqlDailyTrackerViewModel instance:")
+      // print("🟢 •VM• Creating instance at: \(Thread.callStackSymbols[1])")  // Logs caller
                 Task {
                     do {
                         try await dbActor.setup()
                         await MainActor.run {
-                            print("🟢 •VM• SqlDailyTrackerViewModel: Database initialized")
+                          // print("🟢 •VM• SqlDailyTrackerViewModel: Database initialized")
                         }
                         // Optional: Uncomment to load current month's trackers on init
                         // await loadTrackers(forMonth: Date())
@@ -126,20 +126,10 @@ class SqlDailyTrackerViewModel: ObservableObject {
     // *** Added: From WeightEntryViewModel ***
     func loadWeights(for date: Date, unitType: UnitType) async -> WeightEntryData {
         let key = date.datestampSid
-        
-        await loadTracker(forDate: date)
-        var updatedTracker = await getTrackerOrCreate(for: date.startOfDay)
-           // var tracker = self.tracker ?? SqlDailyTracker(date: date.startOfDay)
-        
-        //var tracker = self.tracker ?? SqlDailyTracker(date: date.startOfDay)
-        
-//        var tracker : SqlDailyTracker!
-//        if let t1 = self.tracker {
-//            tracker = t1
-//        } else {
-//            let t2 = await SqlDailyTracker(date: date.startOfDay)
-//            tracker = t2
-//        }
+        let normalized = DateUtilities.gregorianCalendar.startOfDay(for: date)
+        await loadTracker(forDate: normalized)
+        var updatedTracker = tracker(for: normalized)
+         
         
         var hasChanges = false
 
@@ -148,7 +138,7 @@ class SqlDailyTrackerViewModel: ObservableObject {
             let (amTimeStr, amWeightStr) = await HealthSynchronizer.shared.syncWeightToShow(date: date, ampm: .am)
             if !amWeightStr.isEmpty, let kg = Double(amWeightStr), kg > 0 {
                 updatedTracker.weightAM = SqlDataWeightRecord(
-                    date: date,
+                    date: normalized,
                     weightType: .am,
                     kg: kg,
                     timeHHmm: amTimeStr
@@ -164,7 +154,7 @@ class SqlDailyTrackerViewModel: ObservableObject {
             let (pmTimeStr, pmWeightStr) = await HealthSynchronizer.shared.syncWeightToShow(date: date, ampm: .pm)
             if !pmWeightStr.isEmpty, let kg = Double(pmWeightStr), kg > 0 {
                 updatedTracker.weightPM = SqlDataWeightRecord(
-                    date: date,
+                    date: normalized,
                     weightType: .pm,
                     kg: kg,
                     timeHHmm: pmTimeStr
@@ -178,18 +168,15 @@ class SqlDailyTrackerViewModel: ObservableObject {
 
         // Save to database if changed
         if hasChanges && (updatedTracker.weightAM?.dataweight_kg ?? 0 > 0 || updatedTracker.weightPM?.dataweight_kg ?? 0 > 0 || !updatedTracker.itemsDict.isEmpty) {
-            await saveWeight(
-                record: updatedTracker.weightAM ?? SqlDataWeightRecord(date: date, weightType: .am, kg: 0, timeHHmm: ""),
-                oldDatePsid: updatedTracker.weightAM?.dataweight_date_psid,
-                oldAmpm: updatedTracker.weightAM?.dataweight_ampm_pnid
-            )
-            await saveWeight(
-                record: updatedTracker.weightPM ?? SqlDataWeightRecord(date: date, weightType: .pm, kg: 0, timeHHmm: ""),
-                oldDatePsid: updatedTracker.weightPM?.dataweight_date_psid,
-                oldAmpm: updatedTracker.weightPM?.dataweight_ampm_pnid
-            )
-            self.tracker = updatedTracker
-            trackers = trackers.filter { !Calendar.current.isDate($0.date, inSameDayAs: date) } + [updatedTracker]
+            if let amRecord = updatedTracker.weightAM {
+                _ = await dbActor.saveWeight(record: amRecord, oldDatePsid: amRecord.dataweight_date_psid, oldAmpm: 0)
+            }
+            if let pmRecord = updatedTracker.weightPM {
+             _ = await dbActor.saveWeight(record: pmRecord, oldDatePsid: pmRecord.dataweight_date_psid, oldAmpm: 1)
+                        }
+                    
+            updateTrackerInArray(updatedTracker)  // Update array cache, no self.tracker
+            
             print("•Load• Persisted tracker to database for \(key)")
         }
 
@@ -206,28 +193,30 @@ class SqlDailyTrackerViewModel: ObservableObject {
         let pmTime = pmRecord?.dataweight_time.isEmpty ?? true ? Date() :
             Date(datestampHHmm: pmRecord!.dataweight_time, referenceDate: date) ?? Date()
 
-        print("Loaded weights for \(date.datestampSid): AM \(amWeight), PM \(pmWeight), AM Time \(amTime.datestampHHmm), PM Time \(pmTime.datestampHHmm)")
+        print("Loaded weights for \(key): AM \(amWeight), PM \(pmWeight), AM Time \(amTime.datestampHHmm), PM Time \(pmTime.datestampHHmm)")
         return WeightEntryData(amWeight: amWeight, pmWeight: pmWeight, amTime: amTime, pmTime: pmTime)
     }
 
     // *** Added: Save weight with HealthKit sync ***
     func saveWeight(for date: Date, amWeight: Double?, pmWeight: Double?, amTime: Date?, pmTime: Date?) async {
-        let dateSid = date.datestampSid
+       // let dateSid = date.datestampSid
         
         let normalized = Calendar.current.startOfDay(for: date)  //TBDz does this need to be Gregorian?
        // var updatedTracker = await getTrackerOrCreate(for: date.startOfDay)
         var updatedTracker = tracker(for: normalized)
-       // var updatedTracker = self.tracker ?? SqlDailyTracker(date: date.startOfDay)
         let unitType = UnitType.fromUserDefaults()
 
         print("Saving AM: \(String(describing: amWeight)), PM: \(String(describing: pmWeight)), Unit: \(unitType.rawValue), AM Time: \(amTime?.formatted(date: .omitted, time: .shortened) ?? "nil"), PM Time: \(pmTime?.formatted(date: .omitted, time: .shortened) ?? "nil")")
 
         var hasChanges = false
         if let amWeight = amWeight, let amTime = amTime, amWeight >= 0 {
+            print("🟢 •Save• unitType=\(unitType.rawValue), input am=\(amWeight ?? 0), pm=\(pmWeight ?? 0)")
             let kg = unitType == .imperial ? amWeight / 2.204623 : amWeight
+            print("🟢 •Save• Calculated kgAM=\(kg)")
             let record = SqlDataWeightRecord(date: date, weightType: .am, kg: kg, timeHHmm: amTime.datestampHHmm)
             updatedTracker.weightAM = record
-            await saveWeight(record: record, oldDatePsid: record.dataweight_date_psid, oldAmpm: 0)
+           // await saveWeight(record: record, oldDatePsid: record.dataweight_date_psid, oldAmpm: 0)
+            _ = await dbActor.saveWeight(record: record, oldDatePsid: record.dataweight_date_psid, oldAmpm: 0)
             if kg > 0, let amTimeDate = Date(datestampHHmm: record.dataweight_time, referenceDate: date) {
                 do {
                     try await HealthSynchronizer.shared.syncWeightPut(date: date, ampm: .am, kg: kg, time: amTimeDate, tracker: updatedTracker)
@@ -239,10 +228,13 @@ class SqlDailyTrackerViewModel: ObservableObject {
             hasChanges = true
         }
         if let pmWeight = pmWeight, let pmTime = pmTime, pmWeight >= 0 {
+            print("🟢 •Save• unitType=\(unitType.rawValue), input am=\(amWeight ?? 0), pm=\(pmWeight ?? 0)")
             let kg = unitType == .imperial ? pmWeight / 2.204623 : pmWeight // Fixed: Use pmWeight
+            print("🟢 •Save• Calculated kgPM=\(kg)")
             let record = SqlDataWeightRecord(date: date, weightType: .pm, kg: kg, timeHHmm: pmTime.datestampHHmm)
             updatedTracker.weightPM = record
-            await saveWeight(record: record, oldDatePsid: record.dataweight_date_psid, oldAmpm: 1)
+           // await saveWeight(record: record, oldDatePsid: record.dataweight_date_psid, oldAmpm: 1)
+            _ = await dbActor.saveWeight(record: record, oldDatePsid: record.dataweight_date_psid, oldAmpm: 1)
             if kg > 0, let pmTimeDate = Date(datestampHHmm: record.dataweight_time, referenceDate: date) {
                 do {
                     try await HealthSynchronizer.shared.syncWeightPut(date: date, ampm: .pm, kg: kg, time: pmTimeDate, tracker: updatedTracker)
@@ -253,18 +245,15 @@ class SqlDailyTrackerViewModel: ObservableObject {
             }
             hasChanges = true
         }
-
-        
-        
         
         if hasChanges {
-            
-            
+            print(updatedTracker.itemsDict.values.reduce(0) { $0 + $1.datacount_count })
             let derivedCount = ((updatedTracker.weightAM?.dataweight_kg ?? 0 > 0 ? 1 : 0) +
                                 (updatedTracker.weightPM?.dataweight_kg ?? 0 > 0 ? 1 : 0))
             await setCountAndUpdateStreak(for: .tweakWeightTwice, count: derivedCount, date: normalized)
             updateTrackerInArray(updatedTracker)  // Ensure cached
             print("🟢 •Save• Derived and saved count/streak for tweakWeightTwice on \(normalized.datestampSid): \(derivedCount)")
+            print(updatedTracker.itemsDict.values.reduce(0) { $0 + $1.datacount_count })
             
         }
 //            self.trackers = trackers.filter { !Calendar.current.isDate($0.date, inSameDayAs: date) } + [updatedTracker]
@@ -277,13 +266,16 @@ class SqlDailyTrackerViewModel: ObservableObject {
 
     // *** Added: Update pending weights ***
     func updatePendingWeights(for date: Date, amWeight: String, pmWeight: String, amTime: Date, pmTime: Date) async {
-        if !amWeight.isEmpty || !pmWeight.isEmpty {
-            pendingWeights[date.datestampSid] = PendingWeight(
-                amWeight: amWeight,
-                pmWeight: pmWeight,
-                amTime: amTime,
-                pmTime: pmTime
-            )
+        
+        let key = date.datestampSid
+        let existing = pendingWeights[key] ?? PendingWeight(amWeight: "", pmWeight: "", amTime: Date(), pmTime: Date())
+        let newAMWeight = amWeight.isEmpty ? existing.amWeight : amWeight
+        let newPMWeight = pmWeight.isEmpty ? existing.pmWeight : pmWeight
+        let newAMTime = amWeight.isEmpty ? existing.amTime : amTime
+        let newPMTime = pmWeight.isEmpty ? existing.pmTime : pmTime
+        
+        if !newAMWeight.isEmpty || !newPMWeight.isEmpty {
+            pendingWeights[key] = PendingWeight(amWeight: newAMWeight, pmWeight: newPMWeight, amTime: newAMTime, pmTime: newPMTime)
         } else {
             pendingWeights.removeValue(forKey: date.datestampSid)
         }

@@ -9,6 +9,7 @@ enum NavigationDestination: Hashable {
    // case detail(DataCountType)
     case calendar(DataCountType)
     case chart(String)
+   // case weightEntry(Date)
 }
 
 import SwiftUI
@@ -58,6 +59,12 @@ struct TwentyOnePageView: View {
                     // Text("4/24") // TBDz, NYI
                     Text("\(localTweakStateCount)/\(tweakStateCountMaximum)")
                     
+                    NavigationLink {
+                        TweakServingsHistoryView()
+                            .environmentObject(SqlDailyTrackerViewModel())
+                    } label: {
+                        Image("ic_stat")
+                    }
                 }
                 
                 .padding(10)

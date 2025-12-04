@@ -3,6 +3,7 @@
 //  DailyDozen
 //
 //swiftlint:disable type_body_length
+// swiftlint:disable function_body_length
 
 import SwiftUI
 import Charts
@@ -60,12 +61,12 @@ struct YearChartView: View {
                    if let amWeight = tracker.weightAM?.dataweight_kg, amWeight > 0 {
                        let weight = unitType == .metric ? amWeight : tracker.weightAM!.lbs
                        points.append(WeightDataPoint(date: tracker.date, weight: weight, type: .am))
-                       print("🟢 •Chart• Added AM weight for \(tracker.date.datestampSid): \(weight) \(unitType == .metric ? "kg" : "lbs")")
+                       print("🟢 •Year Chart• Added AM weight for \(tracker.date.datestampSid): \(weight) \(unitType == .metric ? "kg" : "lbs")")
                    }
                    if let pmWeight = tracker.weightPM?.dataweight_kg, pmWeight > 0 {
                        let weight = unitType == .metric ? pmWeight : tracker.weightPM!.lbs
                        points.append(WeightDataPoint(date: tracker.date, weight: weight, type: .pm))
-                       print("🟢 •Chart• Added PM weight for \(tracker.date.datestampSid): \(weight) \(unitType == .metric ? "kg" : "lbs")")
+                       print("🟢 •Year Chart• Added PM weight for \(tracker.date.datestampSid): \(weight) \(unitType == .metric ? "kg" : "lbs")")
                    }
                    return points
                }
@@ -126,7 +127,13 @@ struct YearChartView: View {
                 .foregroundStyle(by: .value("Series", dataPoint.type == .am ? "AM" : "PM"))
                 .symbol(by: .value("Series", dataPoint.type == .am ? "AM" : "PM"))
                 .interpolationMethod(.catmullRom)
-                .symbolSize(20)
+                .symbolSize(100)
+                .symbol {
+                        Circle()
+                            .fill(dataPoint.type == .am ? Color("yellowSunglowColor") : Color("redFlamePeaColor"))
+                            .stroke(dataPoint.type == .am ? Color("yellowSunglowColor") : Color("redFlamePeaColor"), lineWidth: 2)
+                            .frame(width: 8, height: 8)  // Adjust size as needed for visibility
+                    }
             }
 
             if let selectedDay = selectedDay,
@@ -162,10 +169,10 @@ struct YearChartView: View {
             "AM": Color("yellowSunglowColor"),
             "PM": Color("redFlamePeaColor")
         ])
-        .chartSymbolScale([
-            "AM": Circle().strokeBorder(lineWidth: 2),
-            "PM": Circle().strokeBorder(lineWidth: 2)
-        ])
+//        .chartSymbolScale([
+//            "AM": Circle().strokeBorder(lineWidth: 2),
+//            "PM": Circle().strokeBorder(lineWidth: 2)
+//        ])
         .chartXAxis {
             let axisData = yearAndMonthMarks()
             AxisMarks(values: axisData.map { $0.day }) { value in  // Removed position: .bottom

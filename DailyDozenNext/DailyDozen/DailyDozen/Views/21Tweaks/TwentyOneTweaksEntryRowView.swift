@@ -84,7 +84,7 @@ struct TwentyOneTweaksEntryRowView: View {
                     }
                     HStack {
                         if item == .tweakWeightTwice {
-                            NavigationLink(value: "chart") {
+                            NavigationLink(destination: WeightChartView()) {
                            // NavigationLink(value: NavigationDestination.chart("chart")) {
                                 Image("ic_calendar")
                                     .resizable()
@@ -138,11 +138,11 @@ struct TwentyOneTweaksEntryRowView: View {
             .navigationDestination(for: DataCountType.self) { item in
                 TwentyOneDetailView(dataCountTypeItem: item)
             }
-            .navigationDestination(for: String.self) { value in
-                if value == "chart" {
-                    WeightChartView()
-                }
-            }
+//            .navigationDestination(for: String.self) { value in
+//                if value == "chart" {
+//                    WeightChartView()
+//                }
+//            }
             
             .navigationDestination(for: Date.self) { date in
                 WeightEntryView(initialDate: date)

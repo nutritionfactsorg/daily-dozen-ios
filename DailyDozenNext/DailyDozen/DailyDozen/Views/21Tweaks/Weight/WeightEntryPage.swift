@@ -219,7 +219,7 @@ struct PMWeightSection: View {
                     Task { await viewModel.updatePendingWeights(for: date, amWeight: "", pmWeight: pmWeight, amTime: pmTime, pmTime: pmTime)
                     }
                 }
-            if !pmWeight.isEmpty || (viewModel.tracker?.weightAM?.dataweight_kg ?? 0) > 0 { // 🟢 Changed: Fixed PM button condition
+            if !pmWeight.isEmpty || (viewModel.tracker?.weightPM?.dataweight_kg ?? 0) > 0 { // 🟢 Changed: Fixed PM button condition
                 Button("Clear PM Weight") {
                     showClearConfirmation = true
                 }

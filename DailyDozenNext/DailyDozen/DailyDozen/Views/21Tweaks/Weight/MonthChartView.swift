@@ -5,9 +5,8 @@
 // Month Chart View (shows all weights for a year)
 //The AM/PM tiebreaker logic is preserved by selecting the closest point based on weight when multiple points exist for the same day.   defaults to AM if multiple points exist
 //
-//// swiftlint:disable function_body_length
+// swiftlint:disable function_body_length
 
-//TBDz 20250915 Temp force uwrap
 import SwiftUI
 import Charts
 
@@ -75,6 +74,13 @@ struct MonthChartView: View {
                     series: .value("Series", dataPoint.type == .am ? "AM" : "PM")
                 )
                 .foregroundStyle(by: .value("Series", dataPoint.type == .am ? "AM" : "PM"))
+                .symbol {
+                        Circle()
+                            .fill(dataPoint.type == .am ? Color("yellowSunglowColor") : Color("redFlamePeaColor"))
+                            .stroke(dataPoint.type == .am ? Color("yellowSunglowColor") : Color("redFlamePeaColor"), lineWidth: 2)
+                            .frame(width: 8, height: 8)  // Adjust size as needed for visibility
+                    }
+                .symbolSize(100)
                 .symbol(by: .value("Series", dataPoint.type == .am ? "AM" : "PM"))
                 .interpolationMethod(.catmullRom)
             }
@@ -112,10 +118,10 @@ struct MonthChartView: View {
             "AM": Color("yellowSunglowColor"),
             "PM": Color("redFlamePeaColor")
         ])
-        .chartSymbolScale([
-            "AM": Circle().strokeBorder(lineWidth: 2),
-            "PM": Circle().strokeBorder(lineWidth: 2)
-        ])
+//        .chartSymbolScale([
+//            "AM": Circle().strokeBorder(lineWidth: 2),
+//            "PM": Circle().strokeBorder(lineWidth: 2)
+//        ])
         .chartXAxis {
             let monthData = monthStarts(weightData)
             let filteredMonthData = monthData.enumerated().filter { $0.offset % 2 == 0 }.map { $0.element }
@@ -191,21 +197,19 @@ struct MonthChartView: View {
                
                for tracker in trackers where tracker.date.year == selectedYear {
                    if let amWeight = tracker.weightAM?.dataweight_kg, amWeight > 0 {
-                       let weight = unitType == .metric ? amWeight : tracker.weightAM!.lbs
+                       let weight = unitType == .metric ? amWeight : tracker.weightAM?.lbs ?? amWeight
                        dataPoints.append(WeightDataPoint(date: tracker.date, weight: weight, type: .am))
-                       print("🟢 •Chart• Added AM weight for \(tracker.date.datestampSid): \(weight) \(unitType == .metric ? "kg" : "lbs")")
+                       print("🟢 •Month Chart• Added AM weight for \(tracker.date.datestampSid): \(weight) \(unitType == .metric ? "kg" : "lbs")")
                    }
                    if let pmWeight = tracker.weightPM?.dataweight_kg, pmWeight > 0 {
-                       let weight = unitType == .metric ? pmWeight : tracker.weightPM!.lbs
+                       let weight = unitType == .metric ? pmWeight : tracker.weightPM?.lbs ?? pmWeight
                        dataPoints.append(WeightDataPoint(date: tracker.date, weight: weight, type: .pm))
-                       print("🟢 •Chart• Added PM weight for \(tracker.date.datestampSid): \(weight) \(unitType == .metric ? "kg" : "lbs")")
+                       print("🟢 •Month Chart• Added PM weight for \(tracker.date.datestampSid): \(weight) \(unitType == .metric ? "kg" : "lbs")")
                    }
                }
                
-               DispatchQueue.main.async {
                    weightData = dataPoints.sorted { $0.date < $1.date }
                    print("🟢 •Chart• Created \(dataPoints.count) data points for \(selectedYear): \(dataPoints.map { "\($0.date.datestampSid), \($0.weight), \($0.type)" })")
-               }
            }
        }
 
@@ -250,7 +254,7 @@ struct MonthChartView: View {
         let yearStart = gregorianCalendar.date(from: DateComponents(year: selectedYear, month: 1, day: 1)) ?? Date()
         let yearEnd = gregorianCalendar.date(from: DateComponents(year: selectedYear + 1, month: 1, day: 1)) ?? yearStart.addingTimeInterval(365 * 24 * 60 * 60)
         let dayCount = gregorianCalendar.dateComponents([.day], from: yearStart, to: yearEnd).day ?? 365
-        print("X-domain for \(selectedYear): 1...\(dayCount)")
+        //print("X-domain for \(selectedYear): 1...\(dayCount)")
         return 1...dayCount
     }
 

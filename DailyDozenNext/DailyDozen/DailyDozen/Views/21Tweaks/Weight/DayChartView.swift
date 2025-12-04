@@ -112,16 +112,22 @@ struct DayChartView: View {
                                 )
                                 .foregroundStyle(by: .value("Series", dataPoint.type == .am ? "AM" : "PM"))
                                 .symbol(by: .value("Series", dataPoint.type == .am ? "AM" : "PM"))
+                               // .symbol(.circle)
+                                .symbolSize(100)
+                               // .lineStyle(StrokeStyle(lineWidth: 2))
+                                .symbol {
+                                        Circle()
+                                            .fill(dataPoint.type == .am ? Color("yellowSunglowColor") : Color("redFlamePeaColor"))
+                                            .stroke(dataPoint.type == .am ? Color("yellowSunglowColor") : Color("redFlamePeaColor"), lineWidth: 2)
+                                            .frame(width: 8, height: 8)  // Adjust size as needed for visibility
+                                    }
                                 .interpolationMethod(.catmullRom)
                             }
                             .chartForegroundStyleScale([
                                 "AM": Color("yellowSunglowColor"),
                                 "PM": Color("redFlamePeaColor")
                             ])
-                            .chartSymbolScale([
-                                "AM": Circle().strokeBorder(lineWidth: 2),
-                                "PM": Circle().strokeBorder(lineWidth: 2)
-                            ])
+                            
                             .chartXAxis {
                                 AxisMarks(values: dataDays(weightData)) { value in
                                     if let day = value.as(Int.self) {
@@ -179,9 +185,15 @@ struct DayChartView: View {
             }
         }
         .onAppear {
-            
-         // fetchWeightData(for: selectedMonth)
-            fetchWeightData()
+            Task {@MainActor in
+                await fetchWeightData(for: selectedMonth)
+                 //fetchWeightData()
+            }
+        }
+        .onChange(of: selectedMonth) { _, newMonth in
+            Task { @MainActor in
+                await fetchWeightData(for: newMonth)
+            }
         }
 //        .onAppear {
 //            Task { @MainActor in
@@ -208,25 +220,26 @@ struct DayChartView: View {
 //        }
     }
     
-    private func fetchWeightData() {
-        Task { @MainActor in
+    private func fetchWeightData(for month: Date) async {
+            print("🟢 •Chart• Fetching weight data for month: \(month.datestampSid)")
+            //let unitType = UnitType.fromUserDefaults()
             let trackers = await viewModel.fetchTrackers(forMonth: selectedMonth)
+                    .sorted { $0.date < $1.date }
+            print("🟢 •VM• Found \(trackers.count) trackers for \(month.datestampSid)")
             var dataPoints: [WeightDataPoint] = []
             for tracker in trackers {
                 if let amWeight = tracker.weightAM?.dataweight_kg, amWeight > 0 {
                     dataPoints.append(WeightDataPoint(date: tracker.date, weight: amWeight, type: .am))
-                    print("🟢 •Chart• Added AM weight for \(tracker.date.datestampSid): \(amWeight) kg")
+                   // print("🟢 •Chart• Added AM weight for \(tracker.date.datestampSid): \(amWeight) kg")
                 }
                 if let pmWeight = tracker.weightPM?.dataweight_kg, pmWeight > 0 {
                     dataPoints.append(WeightDataPoint(date: tracker.date, weight: pmWeight, type: .pm))
-                    print("🟢 •Chart• Added PM weight for \(tracker.date.datestampSid): \(pmWeight) kg")
+                   // print("🟢 •Chart• Added PM weight for \(tracker.date.datestampSid): \(pmWeight) kg")
                 }
             }
-            DispatchQueue.main.async {
-                weightData = dataPoints
-                print("🟢 •Chart• Created \(dataPoints.count)" )
-            }
-        }
+            await MainActor.run { weightData = dataPoints }  // 🟢 Swift 6 safe
+            print("🟢 •Chart• Created \(weightData.count) data points")
+                
     }
     
 //    private func fetchWeightData(for month: Date) async -> [WeightDataPoint] {
@@ -279,24 +292,28 @@ struct DayChartView: View {
         let monthDayCount = displayCalendar.range(of: .day, in: .month, for: selectedMonth)?.count ?? 30
         // Start at 5, increment by 5 (5, 10, 15, etc.)
         return stride(from: 5, through: monthDayCount, by: 5).map { $0 }
+          //  let actualDays = Set(dataPoints.map { gregorianCalendar.component(.day, from: $0.date) })
+          //  return Array(actualDays.sorted())
     }
     
     private func xAxisDomain(for dataPoints: [WeightDataPoint]) -> ClosedRange<Int> {
         // Use displayCalendar for month day count to support Persian calendar
         let monthDayCount = displayCalendar.range(of: .day, in: .month, for: selectedMonth)?.count ?? 30
         return 1...monthDayCount
+       //let actualDays = Set(dataPoints.map { gregorianCalendar.component(.day, from: $0.date) })
+      //  return (actualDays.min() ?? 1)...(actualDays.max() ?? 31)
     }
     
-    private func xAxisDomainWAS(for dataPoints: [WeightDataPoint]) -> ClosedRange<Int> {
-        let days = dataDays(dataPoints)
-        let monthDayCount = gregorianCalendar.range(of: .day, in: .month, for: selectedMonth)?.count ?? 30
-        
-        guard let minDay = days.min(), let maxDay = days.max() else {
-            return 1...monthDayCount
-        }
-        // Add padding to the domain for better visualization
-        let lowerBound = max(1, minDay - 1)
-        let upperBound = min(monthDayCount, maxDay + 1)
-        return lowerBound...upperBound
-    }
+//    private func xAxisDomainWAS(for dataPoints: [WeightDataPoint]) -> ClosedRange<Int> {
+//        let days = dataDays(dataPoints)
+//        let monthDayCount = gregorianCalendar.range(of: .day, in: .month, for: selectedMonth)?.count ?? 30
+//        
+//        guard let minDay = days.min(), let maxDay = days.max() else {
+//            return 1...monthDayCount
+//        }
+//        // Add padding to the domain for better visualization
+//        let lowerBound = max(1, minDay - 1)
+//        let upperBound = min(monthDayCount, maxDay + 1)
+//        return lowerBound...upperBound
+//    }
 }

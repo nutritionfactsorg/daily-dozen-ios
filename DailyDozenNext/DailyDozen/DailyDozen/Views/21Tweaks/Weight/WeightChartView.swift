@@ -75,18 +75,28 @@ struct WeightChartView: View {
     }
     
     private var monthsInSelectedYear: [Date] {
+        //monthsWithData.filter { $0.year == selectedYear }
+       // monthsWithData
+       // monthsWithData.filter { $0 <= Date().startOfMonth }
+       // let gregYear = DateUtilities.gregorianCalendar.component(.year, from: selectedMonth)
+       // return monthsWithData.filter { DateUtilities.gregorianCalendar.component(.year, from: $0) == gregYear }
+        
         monthsWithData.filter { $0.year == selectedYear }
+       
     }
     
     private func loadMonthsAndYears() async {
+        print("🟢🟢🟢🟢I got to here first")
             guard !isLoading else { return }
             isLoading = true
-            let trackers = await trackerViewModel.fetchTrackers()
+        print("🟢🟢🟢🟢🟢I got to here")
+            let trackers = await trackerViewModel.fetchAllTrackers()
             await servingsProcessor.updateTrackers()
             let dates = trackers.map { $0.date.datestampSid }
             await MainActor.run {
                 monthsWithData = Array(Set(dates.compactMap { Date(datestampSid: $0)?.startOfMonth }))
                     .sorted()
+                print("🟢 •Load• monthsWithData.count = \(monthsWithData.count), years=\(yearsWithData), contents=\(monthsWithData.map { $0.datestampSid })")
                 yearsWithData = Array(Set(dates.compactMap { Date(datestampSid: $0)?.year }))
                     .sorted()
                 if !monthsWithData.contains(selectedMonth), let latest = monthsWithData.last {
@@ -111,7 +121,7 @@ struct WeightChartView: View {
         }
     
     var body: some View {
-      //  NavigationStack(path: $navigationPath) {
+      // NavigationStack(path: $navigationPath) {
             VStack {
                 if isLoading {
                     ProgressView()
@@ -128,31 +138,43 @@ struct WeightChartView: View {
                     
                     if selectedPeriod == .day {
                         HStack {
+                            //let canJumpYear = monthsInSelectedYear.count > 1
+                            let canDoubleLeft = !monthsInSelectedYear.isEmpty &&
+                                                    selectedMonth != monthsInSelectedYear.first  // Assumes .first is earliest
+                            
                             Button(action: {
+                                print("🟢🟢🟢 LEFT Double CLICKED: monthsInSelectedYear=\(monthsInSelectedYear.map { $0.datestampSid })")
+                               
                                 if let earliest = monthsInSelectedYear.first {
                                     selectedMonth = earliest
                                 }
+                                print("🟢🟢🟢 selectedMonth: \(selectedMonth)")
                             }, label: {
                                 Image(systemName: "chevron.left.2")
-                                    .foregroundColor(monthsInSelectedYear.isEmpty ? .gray : .brandGreen)
+                                   // .foregroundColor(monthsInSelectedYear.isEmpty ? .gray : .brandGreen)
+                                   // .foregroundColor(monthsInSelectedYear.count <= 1 ? .gray : .brandGreen)
+                                    .foregroundColor(canDoubleLeft ? .brandGreen : .gray)
                             })
-                            .disabled(monthsInSelectedYear.isEmpty)
-                            
+                           // .disabled(monthsInSelectedYear.count <= 1)  // 🟢 CHANGE: was .isEmpty
+                           // .disabled(monthsInSelectedYear.isEmpty)
+                            .disabled(!canDoubleLeft)
+                            let canSingleLeft = !monthsWithData.isEmpty &&
+                                                    selectedMonth != monthsWithData.first  // Assumes .first is earliest ever
                             Button(action: {
                                 if let currentIndex = monthsInSelectedYear.firstIndex(of: selectedMonth),
                                    currentIndex > 0 {
                                     selectedMonth = monthsInSelectedYear[currentIndex - 1]
-                                } else if let previousYear = monthsWithData
+                                } else if let previousYearMonth = monthsWithData
                                     .filter({ $0.year < selectedYear })
                                     .max() {
-                                    selectedYear = previousYear.year
-                                    selectedMonth = monthsInSelectedYear.last ?? previousYear
+                                    selectedYear = previousYearMonth.year
+                                    selectedMonth = monthsInSelectedYear.last ?? previousYearMonth
                                 }
                             }, label: {
                                 Image(systemName: "chevron.left")
-                                    .foregroundColor(monthsWithData.isEmpty ? .gray : .brandGreen)
+                                    .foregroundColor(canSingleLeft ? .brandGreen : .gray)
                             })
-                            .disabled(monthsWithData.isEmpty)
+                            .disabled(!canSingleLeft)
                             
                             Text(monthYearText(for: selectedMonth))
                                 .font(.headline)
@@ -182,11 +204,12 @@ struct WeightChartView: View {
                                 Image(systemName: "chevron.right.2")
                                     .foregroundColor(monthsInSelectedYear.isEmpty || selectedMonth >= Date().startOfMonth ? .gray : .brandGreen)
                             })
-                            .disabled(monthsInSelectedYear.isEmpty || selectedMonth >= Date().startOfDay)
+                            .disabled(monthsInSelectedYear.count <= 1)  // 🟢 CHANGE: was .isEmpty || selectedMonth >= Date().startOfMonth)
                         }
                         .padding(.horizontal)
                     }
                     
+                    // Navigation for Month view (year-based)
                     if selectedPeriod == .month {
                         HStack {
                             Button(action: {
@@ -197,7 +220,8 @@ struct WeightChartView: View {
                                 Image(systemName: "chevron.left.2")
                                     .foregroundColor(yearsWithData.isEmpty ? .gray : .brandGreen)
                             })
-                            .disabled(yearsWithData.isEmpty)
+                            // .disabled(yearsWithData.isEmpty)
+                            .disabled(yearsWithData.count <= 1)
                             
                             Button(action: {
                                 if let currentIndex = yearsWithData.firstIndex(of: selectedYear),
@@ -233,7 +257,7 @@ struct WeightChartView: View {
                                 Image(systemName: "chevron.right.2")
                                     .foregroundColor(yearsWithData.isEmpty || selectedYear >= Date().year ? .gray : .brandGreen)
                             })
-                            .disabled(yearsWithData.isEmpty || selectedYear >= Date().year)
+                            .disabled(yearsWithData.count <= 1 || selectedYear >= Date().year)
                         }
                         .padding(.horizontal)
                     }
@@ -253,31 +277,40 @@ struct WeightChartView: View {
                             .id(refreshID)
                     }
                     
-                    Spacer()
-                    
-                    NavigationLink(value: selectedPeriod == .day ? selectedMonth.startOfDay : Date().startOfDay) {
-                                    Text("Edit Data")
-                                        .font(.headline)
-                                        .padding()
-                                        .frame(maxWidth: .infinity)
-                                        .background(Color.blue)
-                                        .foregroundColor(.white)
-                                        .cornerRadius(10)
-                                        .padding(.horizontal)
-                                }
-                   
-//                    .navigationDestination(isPresented: $isEditWeightViewActive) {
-//                        WeightEntryView(initialDate: selectedPeriod == .day ? selectedMonth.startOfDay : Date().startOfDay)
-//                    }
-                    //                .onTapGesture {
-                    //                    print("🟢 •Nav• Edit Data tapped for \(selectedPeriod == .day ? selectedMonth.startOfDay.datestampSid : Date().startOfDay.datestampSid)")
-                    //                }
+                Spacer()
+                NavigationLink(destination: WeightEntryView(initialDate: selectedPeriod == .day ? selectedMonth.startOfDay : Date().startOfDay)) {
+                    //NavigationLink(value: selectedPeriod == .day ? selectedMonth.startOfDay : Date().startOfDay) {
+                    Text("Edit Data")
+                        .font(.headline)
+                        .padding()
+                        .frame(maxWidth: .infinity)
+                        .background(Color.blue)
+                        .foregroundColor(.white)
+                        .cornerRadius(10)
+                        .padding(.horizontal)
                 }
-            }
+                    
+//                                        .navigationDestination(isPresented: $isEditWeightViewActive) {
+//                                            WeightEntryView(initialDate: selectedPeriod == .day ? selectedMonth.startOfDay : Date().startOfDay)
+//                                        }
+                                    .onTapGesture {
+                                        print("🟢 •Nav• Edit Data tapped for \(selectedPeriod == .day ? selectedMonth.startOfDay.datestampSid : Date().startOfDay.datestampSid)")
+                                    }
+                }
+            } //VStack
+      //  }
+//            .navigationDestination(for: Date.self) { date in  // ← ADD THIS LINE
+//                   // WeightEntryView(initialDate: date)
+//                WeightEntryView(initialDate: selectedPeriod == .day ? selectedMonth.startOfDay : Date().startOfDay)
+//                }
+//            .navigationDestination(isPresented: $isEditWeightViewActive) {
+//                                                     WeightEntryView(initialDate: selectedPeriod == .day ? selectedMonth.startOfDay : Date().startOfDay)
+//                                                  }
             .onAppear {
                 Task {
-                    isLoading = true
+                   // isLoading = true
                     await loadMonthsAndYears()
+                    
                     if !monthsWithData.contains(selectedMonth), let latest = monthsWithData.last {
                         selectedMonth = latest
                         selectedYear = latest.year
@@ -289,12 +322,12 @@ struct WeightChartView: View {
             }
             .onReceive(NotificationCenter.default.publisher(for: .mockDBUpdated)) { _ in
                 Task {
-                    isLoading = true
+                   // isLoading = true
                     await loadMonthsAndYears()
                     refreshID = UUID()
                     print("🟢 •Chart• DB updated via notification, refreshing chart")
                 }
-            }
-       // } //Nav
+            } //onReceive
+  //    } //Nav
     } //Body
 }
