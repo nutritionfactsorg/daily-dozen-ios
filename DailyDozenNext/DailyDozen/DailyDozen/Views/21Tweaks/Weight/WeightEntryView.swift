@@ -8,7 +8,8 @@
 import SwiftUI
 //TBDz this page needs localization
 struct WeightEntryView: View {
-    @EnvironmentObject var viewModel: SqlDailyTrackerViewModel
+   // @EnvironmentObject var viewModel: SqlDailyTrackerViewModel
+    private let viewModel = SqlDailyTrackerViewModel.shared
     @Environment(\.dismiss) private var dismiss
     @State private var currentDate: Date
     @State private var dateRange: [Date] = []
@@ -24,9 +25,9 @@ struct WeightEntryView: View {
         self._dateRange = State(initialValue: (-30...0).map { offset in
             calendar.date(byAdding: .day, value: offset, to: today)!
         })
-        if let todayIndex = self.dateRange.firstIndex(where: { calendar.isDate($0, inSameDayAs: today) }) {
-            self._currentIndex = State(initialValue: todayIndex)
-        }
+//        if let todayIndex = self.dateRange.firstIndex(where: { calendar.isDate($0, inSameDayAs: today) }) {
+//            self._currentIndex = State(initialValue: todayIndex)
+//        }
     }
 
     private var isToday: Bool {
@@ -101,7 +102,7 @@ struct WeightEntryView: View {
                     DozeHeaderView(isShowingSheet: $isShowingSheet, currentDate: dateRange.isEmpty ? Date() : dateRange[currentIndex])
                     TabView(selection: $currentIndex) {
                         ForEach(dateRange.indices, id: \.self) { index in
-                            WeightEntryPage(date: dateRange[index], viewModel: _viewModel)
+                            WeightEntryPage(date: dateRange[index])
                                 .tag(index)
                         }
                     }
@@ -131,17 +132,20 @@ struct WeightEntryView: View {
                     .onDisappear { print("DatePickerSheetView dismissed") }
             }
             .onAppear {
-                if !dateRange.contains(where: { Calendar.current.isDate($0, inSameDayAs: currentDate) }) {
-                    dateRange.append(currentDate)
+                let targetDate = currentDate
+                if let index = dateRange.firstIndex(where: { Calendar.current.isDate($0, inSameDayAs: targetDate) }) {
+                    currentIndex = index
+                } else {
+                    dateRange.append(targetDate)
                     dateRange.sort(by: { $0 < $1 })
-                    if let index = dateRange.firstIndex(of: currentDate) {
-                        currentIndex = index
-                        extendDateRangeIfNeeded(for: index)
-                    }
+                    currentIndex = dateRange.firstIndex(of: targetDate)!
+                    extendDateRangeIfNeeded(for: currentIndex)
                 }
+                print("🟢 WeightEntry landed on \(targetDate.datestampSid) at index \(currentIndex)")
             }
             .onDisappear {
                 Task { await viewModel.savePendingWeights() }
+                print("Disappearing")
             }
             .task {
                 do {

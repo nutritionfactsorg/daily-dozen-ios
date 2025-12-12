@@ -5,7 +5,7 @@
 //  Copyright © 2025 Nutritionfacts.org. All rights reserved.
 //
 
-// TBDz:  Not sure this is used anywhere besides initial mockdb
+// TBDz: This was only used in mockDb and can be deleted
 import Foundation
 
 struct SqlDailyTrackerId {

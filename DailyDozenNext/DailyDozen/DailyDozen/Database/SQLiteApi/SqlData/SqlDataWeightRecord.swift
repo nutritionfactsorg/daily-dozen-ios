@@ -150,28 +150,7 @@ public struct SqlDataWeightRecord: Codable, Sendable {
             self.dataweight_kg = kg
             self.dataweight_time = timeHHmm
         }
-    
-    // CSV Initializer: SqlDataWeightRecord :GTD: implement typeKey and typeNid
-//    public init?(datestampSid: String, typeKey: String, kilograms: String, timeHHmm: String) {
-//        guard DataWeightType(typeKey: typeKey) != nil,
-//            Date(datestampSid: datestampSid) != nil,
-//            let kg = Double(kilograms),
-//            timeHHmm.contains(":"),
-//            Int(timeHHmm.dropLast(3)) != nil,
-//            Int(timeHHmm.dropFirst(3)) != nil
-//            else {
-//                return nil
-//        }
-//        
-//        guard let typeNid = DataWeightType(typeKey: typeKey)?.typeNid
-//        else { return nil }
-//        
-//        self.dataweight_date_psid = datestampSid
-//        self.dataweight_ampm_pnid = typeNid
-//        self.dataweight_kg = kg
-//        self.dataweight_time = timeHHmm
-//    }
-    
+ 
     public init(date: Date, weightType: DataWeightType, kg: Double) {
         //let typeKey = weightType.typeNid == 0 ? "AM" : "PM"
         self.dataweight_date_psid = date.datestampSid
@@ -181,28 +160,7 @@ public struct SqlDataWeightRecord: Codable, Sendable {
         //self.lbs = UnitsUtility.getLbs(kg: kg)
        // self.lbsStr = String(format: "%.1f", self.lbs)
     }
-    
-//    public init?( row: [Any?], api: SQLiteApi ) {
-//        guard // required fields
-//            let datePsid = row[Column.dataweightDatePsid.idx] as? String,
-//            let kindPfnid = row[Column.dataweightAmpmFnid.idx] as? Int,
-//            let kg = row[Column.dataweightKg.idx] as? Double,
-//            let time = row[Column.dataweightTime.idx] as? String
-//        else {
-//            return nil
-//            //var s = ""
-//            //for a in row {
-//            //    s.append("\(a ?? "nil")")
-//            //}
-//            //
-//            //throw SQLiteApiError.rowConversionFailed(s)
-//        }
-//        
-//        self.dataweight_date_psid = datePsid
-//        self.dataweight_ampm_pnid = kindPfnid
-//        self.dataweight_kg = kg
-//        self.dataweight_time = time
-//    }
+
     public init?(row: [Any?]) {
         guard row.count >= 4,
               let datePsid = row[0] as? String,
@@ -237,6 +195,13 @@ public struct SqlDataWeightRecord: Codable, Sendable {
             self.dataweight_kg = kg
             self.dataweight_time = timeHHmm ?? date.datestampHHmm
         }
+    
+    public init(date: Date, weightType: DataWeightType, kg: Double, time: Date) {
+        self.dataweight_date_psid = date.datestampSid
+        self.dataweight_ampm_pnid = weightType.typeNid
+        self.dataweight_kg = kg
+        self.dataweight_time = time.datestampHHmm  // ← "12:16" String
+    }
 }
 
 extension SqlDataWeightRecord: Equatable {
@@ -246,5 +211,12 @@ extension SqlDataWeightRecord: Equatable {
         lhs.dataweight_ampm_pnid == rhs.dataweight_ampm_pnid &&
         lhs.dataweight_kg == rhs.dataweight_kg &&
         lhs.dataweight_time == rhs.dataweight_time
+    }
+}
+
+extension SqlDataWeightRecord {
+    init(date: Date, weightType: DataWeightType, kg: Double, configure: (inout SqlDataWeightRecord) -> Void) {
+        self.init(date: date, weightType: weightType, kg: kg)
+        configure(&self)
     }
 }

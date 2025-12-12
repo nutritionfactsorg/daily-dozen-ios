@@ -3,6 +3,8 @@
 //  SQLiteFramework
 //
 
+//TBDz not used in current version?  Kept for migration
+
 import Foundation
 
 public extension Bool {

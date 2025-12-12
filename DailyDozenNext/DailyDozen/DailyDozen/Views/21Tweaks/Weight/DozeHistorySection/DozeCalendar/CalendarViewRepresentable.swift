@@ -2,7 +2,7 @@
 //  CalendarViewRepresentable.swift
 //  DailyDozen
 //
-//  Copyright © 2025 Nutritionfacts.org. All rights reserved.
+//  Created by mc on 4/21/25.
 //
 
 import SwiftUI
@@ -11,7 +11,8 @@ import UIKit
 struct UICalendarViewRepresentable: UIViewRepresentable {
     let item: DataCountType
     //let viewModel: SqlDailyTrackerViewModel
-    @EnvironmentObject var viewModel: SqlDailyTrackerViewModel
+    //@EnvironmentObject var viewModel: SqlDailyTrackerViewModel
+    private let viewModel = SqlDailyTrackerViewModel.shared
     @Binding var currentMonth: Date
     
     private let calendar = Calendar.current
@@ -74,7 +75,7 @@ struct UICalendarViewRepresentable: UIViewRepresentable {
             let tracker = trackers.first { parent.calendar.isDate($0.date, inSameDayAs: date) }
             let count = tracker?.itemsDict[parent.item]?.datacount_count ?? 0
             
-            print("decorationFor: date=\(date.datestampSid), item=\(parent.item), count=\(count), trackersCount=\(trackers.count)")
+           // print("decorationFor: date=\(date.datestampSid), item=\(parent.item), count=\(count), trackersCount=\(trackers.count)")
             
             if count == 0 {
                 return nil

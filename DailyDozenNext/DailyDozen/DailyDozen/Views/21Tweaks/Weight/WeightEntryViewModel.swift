@@ -4,7 +4,6 @@
 //
 //  Copyright © 2025 Nutritionfacts.org. All rights reserved.
 //
-// swiftlint:disable function_body_length
 
 import Foundation
 import SwiftUI
@@ -17,12 +16,6 @@ struct WeightEntryData {
 }
 //TBDz:  think about this extension -- if needed?
 // Modified initializer for SqlDataWeightRecord to allow time override
-extension SqlDataWeightRecord {
-    init(date: Date, weightType: DataWeightType, kg: Double, configure: (inout SqlDataWeightRecord) -> Void) {
-        self.init(date: date, weightType: weightType, kg: kg)
-        configure(&self)
-    }
-}
 
 //extension WeightEntryViewModel {
 //    @MainActor
@@ -36,6 +29,16 @@ extension Notification.Name {
     static let mockDBUpdated = Notification.Name("mockDBUpdated")
 }
 
+//TBDZ:  this might be a duplicate someplace -- verify
+enum UnitType: String {
+  case metric
+  case imperial
+   
+   static func fromUserDefaults() -> UnitType {
+       let registeredUnitType = UserDefaults.standard.string(forKey: "unitsTypePref") ?? "metric"
+       return UnitType(rawValue: registeredUnitType) ?? .metric
+   }
+}
 //@MainActor
 //class WeightEntryViewModel: ObservableObject {
 //    @Published var trackers: [String: SqlDailyTracker] = [:]
@@ -273,14 +276,3 @@ extension Notification.Name {
 //            }
 //        }
 //    }
-
- //TBDZ:  this might be a duplicate someplace -- verify
-enum UnitType: String {
-   case metric
-   case imperial
-    
-    static func fromUserDefaults() -> UnitType {
-        let registeredUnitType = UserDefaults.standard.string(forKey: "unitsTypePref") ?? "metric"
-        return UnitType(rawValue: registeredUnitType) ?? .metric
-    }
-}

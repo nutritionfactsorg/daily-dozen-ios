@@ -15,10 +15,7 @@ struct DailyDozenDetailView: View {
     @State var measureToggle = true
     @State var unitsTypePref: UnitsType = .imperial
     @State var useImperial = true
-//    var unitsSegment: [String] = [
-//        String(localized: "setting_units_0_imperial", comment: "Imperial"),
-//        String(localized: "setting_units_1_metric", comment: "Metric")]
-//    
+    
     func setMeasureButton() {
         let shouldShowUnitsToggle = UserDefaults.standard.bool(forKey: SettingsKeys.unitsTypeToggleShowPref)
         measureToggle = shouldShowUnitsToggle
@@ -58,7 +55,7 @@ struct DailyDozenDetailView: View {
                     //    VStack(alignment: .leading) {
                     if useImperial {
                         ForEach(dataItemDetail.servings, id: \.imperial) { item in
-                           
+                            
                             HStack {
                                 Text(item.imperial)
                                 Spacer() }
@@ -70,8 +67,7 @@ struct DailyDozenDetailView: View {
                             .shadow(color: .nfGray50.opacity(1.0), radius: 5, x: 1, y: 1)
                             //.listRowSeparator(.hidden)
                         }
-                        // .listRowSpacing(0.0)
-                        // .listStyle(.plain)
+                        
                     }
                     if !useImperial {
                         ForEach(dataItemDetail.servings, id: \.metric) { item in
@@ -83,20 +79,15 @@ struct DailyDozenDetailView: View {
                             .cornerRadius(5)
                             //TBDz check color
                             .shadow(color: .nfGray50.opacity(1.0), radius: 5, x: 1, y: 1)
-                         //   .listRowSeparator(.hidden)
+                            //   .listRowSeparator(.hidden)
                         }
-                        //.listRowSpacing(0.0)
-                        //  .listStyle(.plain)
                     }
-                    
-                    //VStack
-                    //  } //VStack
                     
                 } //Section
                 header: {
                     VStack(alignment: .leading) {
                         Text("doze_detail_section_sizes")
-                           // .bold()
+                        // .bold()
                             .font(.title2)
                             .fontWeight(.bold)
                             .foregroundColor(.black)
@@ -124,7 +115,7 @@ struct DailyDozenDetailView: View {
                 Section {
                     
                     ForEach(dataItemDetail.varieties, id: \.text) { item in
-        
+                        
                         HStack {
                             Text(item.text)
                             Spacer()
@@ -182,7 +173,7 @@ struct DailyDozenDetailView: View {
 }
 
 #Preview {
-   
+    
     DailyDozenDetailView(dataCountTypeItem: .dozeBeans )
-      //  .environment(\.locale, .init(identifier: "de"))
+    //  .environment(\.locale, .init(identifier: "de"))
 }

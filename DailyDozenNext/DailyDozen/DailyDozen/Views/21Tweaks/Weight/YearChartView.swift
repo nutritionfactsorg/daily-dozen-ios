@@ -8,20 +8,14 @@
 import SwiftUI
 import Charts
 
-//Temp TBDz 20250915 Temp Force Unwrap
-//struct YearChartView: View {
-//    var body: some View {
-//        Text("Hello Year")
-//    }
-//}
 struct YearChartView: View {
     @Environment(\.layoutDirection) private var layoutDirection
-    @EnvironmentObject private var viewModel: SqlDailyTrackerViewModel
+    private let viewModel = SqlDailyTrackerViewModel.shared
     @State private var selectedDay: Int?
     @State private var scrollPosition: Double = 0
-   // @State private var weightData: [WeightDataPoint] = []
-    @State private var trackers: [SqlDailyTracker] = []
-
+    @State private var computedChartData: [WeightDataPoint] = []
+   // let selectedYear: Int // Passed from WeightChartView to filter data
+    
     private var gregorianCalendar: Calendar {
         var calendar = Calendar(identifier: .gregorian)
         calendar.locale = Locale(identifier: "en")
@@ -43,7 +37,7 @@ struct YearChartView: View {
     }
     
     private var uniqueDataDays: Set<Int> {
-        Set(chartData.map { daysSinceEarliestDate($0.date) })
+        Set(computedChartData.map { daysSinceEarliestDate($0.date) })
     }
     
     private func findClosestDay(to day: Int) -> Int {
@@ -52,33 +46,47 @@ struct YearChartView: View {
         // If multiple days are equidistant, this picks the lower one; adjust logic if needed (e.g., prefer higher).
     }
     
-    private var chartData: [WeightDataPoint] {
-           let unitType = UnitType.fromUserDefaults()
-           let dataPoints = trackers
-               .filter { ($0.weightAM?.dataweight_kg ?? 0) > 0 || ($0.weightPM?.dataweight_kg ?? 0) > 0 }
-               .flatMap { tracker -> [WeightDataPoint] in
-                   var points: [WeightDataPoint] = []
-                   if let amWeight = tracker.weightAM?.dataweight_kg, amWeight > 0 {
-                       let weight = unitType == .metric ? amWeight : tracker.weightAM!.lbs
-                       points.append(WeightDataPoint(date: tracker.date, weight: weight, type: .am))
-                       print("🟢 •Year Chart• Added AM weight for \(tracker.date.datestampSid): \(weight) \(unitType == .metric ? "kg" : "lbs")")
-                   }
-                   if let pmWeight = tracker.weightPM?.dataweight_kg, pmWeight > 0 {
-                       let weight = unitType == .metric ? pmWeight : tracker.weightPM!.lbs
-                       points.append(WeightDataPoint(date: tracker.date, weight: weight, type: .pm))
-                       print("🟢 •Year Chart• Added PM weight for \(tracker.date.datestampSid): \(weight) \(unitType == .metric ? "kg" : "lbs")")
-                   }
-                   return points
-               }
-               .sorted { $0.date < $1.date }
-           print("🟢 •Chart• Created \(dataPoints.count) data points: \(dataPoints.map { "\($0.date.datestampSid), \($0.weight), \($0.type)" })")
-           return dataPoints
-       }
+    private func computeChartData(from trackers: [SqlDailyTracker], scrollPosition: Double) -> [WeightDataPoint] {
+        let unitType = UnitType.fromUserDefaults()
+        guard !trackers.isEmpty else { return [] }
+        
+        // Calculate date range for visible window (±365 days around scrollPosition)
+        let earliestDate = trackers.map { $0.date }.min()!
+        //let latestDate = trackers.map { $0.date }.max()!
+        let scrollDay = Int(scrollPosition)
+        let windowDays = 365 // Visible window size
+        let startDay = max(1, scrollDay - windowDays)
+        let endDay = scrollDay + windowDays
+        
+        let startDate = gregorianCalendar.date(byAdding: .day, value: startDay - 1, to: earliestDate)!
+        let endDate = gregorianCalendar.date(byAdding: .day, value: endDay - 1, to: earliestDate)!
+        
+        let dataPoints = trackers
+            .filter { $0.date >= startDate && $0.date <= endDate } // Filter to visible window
+            .filter { ($0.weightAM?.dataweight_kg ?? 0) > 0 || ($0.weightPM?.dataweight_kg ?? 0) > 0 }
+            .flatMap { tracker -> [WeightDataPoint] in
+                var points: [WeightDataPoint] = []
+                if let amWeight = tracker.weightAM?.dataweight_kg, amWeight > 0 {
+                    let weight = unitType == .metric ? amWeight : tracker.weightAM!.lbs
+                    points.append(WeightDataPoint(date: tracker.date, weight: weight, type: .am))
+                    print("🟢 •Year Chart• Added AM weight for \(tracker.date.datestampSid): \(weight) \(unitType == .metric ? "kg" : "lbs")")
+                }
+                if let pmWeight = tracker.weightPM?.dataweight_kg, pmWeight > 0 {
+                    let weight = unitType == .metric ? pmWeight : tracker.weightPM!.lbs
+                    points.append(WeightDataPoint(date: tracker.date, weight: weight, type: .pm))
+                    print("🟢 •Year Chart• Added PM weight for \(tracker.date.datestampSid): \(weight) \(unitType == .metric ? "kg" : "lbs")")
+                }
+                return points
+            }
+            .sorted { $0.date < $1.date }
+        print("🟢 •Chart• Created data point count: \(dataPoints.count)")
+        return dataPoints
+    }
 
     var body: some View {
         GeometryReader { geometry in
             VStack(spacing: 10) {
-                if chartData.isEmpty {
+                if computedChartData.isEmpty {
                     Text("No weight data available")
                         .foregroundStyle(.gray)
                         .frame(maxWidth: .infinity, maxHeight: 250)
@@ -93,23 +101,36 @@ struct YearChartView: View {
                 
             }
             .frame(maxWidth: .infinity, maxHeight: 350) // Increased to match or exceed parent's minHeight: 420
+            
             .onAppear {
-                Task {
-                        trackers = await viewModel.fetchAllTrackers()
-                    }
+                computedChartData = computeChartData(from: viewModel.trackers, scrollPosition: scrollPosition)
+                if !computedChartData.isEmpty {
+                    scrollPosition = Double(xAxisDomain().upperBound) // Start at latest day
+                    print("🟢 •YearChartView• onAppear: Initialized scrollPosition to \(scrollPosition)")
+                }
+                print("🟢 •YearChartView• onAppear: Initialized computedChartData with \(viewModel.trackers.count) trackers")
             }
-            .onReceive(NotificationCenter.default.publisher(for: .mockDBUpdated)) { _ in
-                        Task {
-                            trackers = await viewModel.fetchAllTrackers()
-                            print("🟢 •Chart• DB updated via notification, refreshed trackers")
-                        }
-                    }
+            .onChange(of: viewModel.trackers) { _, newTrackers in
+                computedChartData = computeChartData(from: newTrackers, scrollPosition: scrollPosition)
+                if !computedChartData.isEmpty {
+                    scrollPosition = Double(xAxisDomain().upperBound) // Update to latest day
+                    print("🟢 •YearChartView• onChange: Updated scrollPosition to \(scrollPosition)")
+                }
+                print("🟢 •YearChartView• onChange: Updated computedChartData with \(newTrackers.count) trackers")
+            }
+            .onChange(of: scrollPosition) { _, newPosition in
+                computedChartData = computeChartData(from: viewModel.trackers, scrollPosition: newPosition)
+                print("🟢 •YearChartView• onChange: Updated computedChartData for scrollPosition \(newPosition)")
+            }
+
             .onChange(of: selectedDay) { _, newValue in
                 if let newDay = newValue {
                     let closestDay = findClosestDay(to: newDay)
-                    selectedDay = closestDay  // This snaps; if already on a data day, it stays the same.
-                    scrollPosition = Double(closestDay)
-                    print("YearChartView snapped selectedDay to: \(closestDay), scroll position set to: \(scrollPosition)")
+                    if closestDay != newDay {
+                        selectedDay = closestDay  // This snaps; if already on a data day, it stays the same.
+                        scrollPosition = Double(closestDay)
+                        print("YearChartView snapped selectedDay to: \(closestDay), scroll position set to: \(scrollPosition)")
+                    }
                 }
             }
              .border(.green, width: 1) // Uncomment for debugging
@@ -118,7 +139,7 @@ struct YearChartView: View {
 
     private func chartView(geometry: GeometryProxy) -> some View {
         Chart {
-            ForEach(chartData) { dataPoint in
+            ForEach(computedChartData) { dataPoint in
                 LineMark(
                     x: .value("Day", daysSinceEarliestDate(dataPoint.date)),
                     y: .value("Weight", dataPoint.weight),
@@ -237,13 +258,6 @@ struct YearChartView: View {
                     .fixedSize()
                     // .border(.green, width: 1) // Uncomment for debugging
             }
-            //.frame(minWidth: 50, minHeight: 15)
-            //.offset(x: 10, y: -10) // Reverted
-//            .onAppear {
-//                let position = geo.frame(in: .global).origin
-//                let isBottom = point.weight > (computeYDomain().upperBound * 0.8)
-//                print("YearChartView tooltip size: \(geo.size.width) x \(geo.size.height), position: (\(position.x), \(position.y)) for point: \(point.date.dateStringLocalized(for: .short)), weight: \(point.weight), position: \(isBottom ? "bottom" : "top")")
-//            }
         }
     }
 
@@ -279,15 +293,15 @@ struct YearChartView: View {
     }
     
     private func daysSinceEarliestDate(_ date: Date) -> Int {
-        guard let earliestDate = chartData.map({ $0.date }).min() else { return 0 }
+        guard let earliestDate = computedChartData.map({ $0.date }).min() else { return 0 }
         let dayCount = gregorianCalendar.dateComponents([.day], from: earliestDate, to: date).day! + 1
         return dayCount
     }
 
     private func yearAndMonthMarks() -> [(day: Int, label: String)] {
-        guard !chartData.isEmpty else { return [] }
-        guard let earliestDate = chartData.map({ $0.date }).min(),
-              let latestDate = chartData.map({ $0.date }).max() else { return [] }
+        guard !computedChartData.isEmpty else { return [] }
+        guard let earliestDate = computedChartData.map({ $0.date }).min(),
+              let latestDate = computedChartData.map({ $0.date }).max() else { return [] }
 
         let earliestYear = gregorianCalendar.component(.year, from: earliestDate)
         let latestYear = gregorianCalendar.component(.year, from: latestDate)
@@ -322,8 +336,9 @@ struct YearChartView: View {
     }
 
     private func xAxisDomain() -> ClosedRange<Int> {
-        guard let earliestDate = chartData.map({ $0.date }).min(),
-              let latestDate = chartData.map({ $0.date }).max() else {
+        guard !viewModel.trackers.isEmpty else { return 1...365 } // Use trackers for full range
+        guard let earliestDate = computedChartData.map({ $0.date }).min(),
+              let latestDate = computedChartData.map({ $0.date }).max() else {
             return 1...365
         }
         let dayCount = gregorianCalendar.dateComponents([.day], from: earliestDate, to: latestDate).day ?? 365
@@ -331,9 +346,9 @@ struct YearChartView: View {
     }
 
     private func computeYDomain() -> ClosedRange<Double> {
-        guard !chartData.isEmpty else { return 0...100 }
+        guard !computedChartData.isEmpty else { return 0...100 }
 
-        let weights = chartData.map { $0.weight }
+        let weights = computedChartData.map { $0.weight }
         let minWeight = weights.min() ?? 0
         let maxWeight = weights.max() ?? 100
 
@@ -345,7 +360,7 @@ struct YearChartView: View {
     }
 
     private func findClosestDataPoint(for selectedDay: Int) -> WeightDataPoint? {
-        let pointsOnDay = chartData.filter { daysSinceEarliestDate($0.date) == selectedDay }
+        let pointsOnDay = computedChartData.filter { daysSinceEarliestDate($0.date) == selectedDay }
 
         guard !pointsOnDay.isEmpty else {
             return nil

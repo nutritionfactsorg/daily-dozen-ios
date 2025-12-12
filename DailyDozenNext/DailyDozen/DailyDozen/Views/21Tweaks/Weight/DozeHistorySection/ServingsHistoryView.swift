@@ -17,10 +17,10 @@ extension Sequence where Element: Hashable {
     }
 }
 
-struct DozeServingsHistoryView: View {
-    @EnvironmentObject var viewModel: SqlDailyTrackerViewModel
-   
-   // @State private var trackers: [SqlDailyTracker] = []   //TBDz Temporary for refactoring
+struct ServingsHistoryView: View {
+    //@EnvironmentObject var viewModel: SqlDailyTrackerViewModel
+    private let viewModel = SqlDailyTrackerViewModel.shared
+    // @State private var trackers: [SqlDailyTracker] = []   //TBDz Temporary for refactoring
     @State private var selectedTimeScale: TimeScale = .daily
     @State private var selectedDate: Date = Calendar.current.startOfDay(for: Date())
     @State private var dailyScrollPosition: Date = Calendar.current.startOfDay(for: Date())
@@ -30,12 +30,12 @@ struct DozeServingsHistoryView: View {
     private let calendar = Calendar.current
     private let today = Calendar.current.startOfDay(for: Date())
     
-//    private var dateFormatter: DateFormatter {
-//        let formatter = DateFormatter()
-//        formatter.dateFormat = "MMM yyyy"
-//        return formatter
-//    }
-//    
+    //    private var dateFormatter: DateFormatter {
+    //        let formatter = DateFormatter()
+    //        formatter.dateFormat = "MMM yyyy"
+    //        return formatter
+    //    }
+    //
     private let dateFormatter: DateFormatter = {
         let formatter = DateFormatter()
         formatter.locale = Locale.current
@@ -43,20 +43,24 @@ struct DozeServingsHistoryView: View {
         return formatter
     }()
     
-    init() {
-       // self.processor = ServingsDataProcessor(trackers: []) //Initialize with empty array; updated in onAppear
-      
-      //  _processor = State(initialValue: ServingsDataProcessor(trackers: []))
-        _processor = StateObject(wrappedValue: ServingsDataProcessor())
-            
+    init(filterType: ChartFilterType) {  // NEW
+        self._processor = StateObject(wrappedValue: ServingsDataProcessor(filterType: filterType))
     }
+    
+    //    init() {
+    //       // self.processor = ServingsDataProcessor(trackers: []) //Initialize with empty array; updated in onAppear
+    //
+    //      //  _processor = State(initialValue: ServingsDataProcessor(trackers: []))
+    //        _processor = StateObject(wrappedValue: ServingsDataProcessor())
+    //
+    //    }
     
     var body: some View {
         NavigationStack {
             VStack {
                 HStack {
                     Text("history_scale_label")
-                    .padding()
+                        .padding()
                     Picker("history_scale_label", selection: $selectedTimeScale) {
                         ForEach(TimeScale.allCases) { scale in
                             Text(scale.localizedName).tag(scale)
@@ -88,7 +92,7 @@ struct DozeServingsHistoryView: View {
                         
                         // Single chevron forward
                         Button(action: navigateForward) {
-                           Image(systemName: "chevron.right")
+                            Image(systemName: "chevron.right")
                                 .foregroundStyle(canNavigateForward ? .brandGreen : .gray)
                         }
                         .disabled(!canNavigateForward)
@@ -125,15 +129,19 @@ struct DozeServingsHistoryView: View {
                     .frame(minHeight: 600)
                 }
             } //MainVStack
-            .onChange(of: selectedTimeScale) { _, _ in
+            .onChange(of: selectedTimeScale) { oldScale, newScale in
+                print("•DEBUG• TimeScale changed from \(oldScale) to \(newScale)")
+                if newScale == .monthly {
+                    selectedDate = calendar.date(from: DateComponents(year: calendar.component(.year, from: today), month: 1, day: 1)) ?? today
+                }
                 updateScrollPosition()
             }
             .onAppear {
                 Task { @MainActor in
-                   // trackers = await viewModel.fetchTrackers()
+                    // trackers = await viewModel.fetchTrackers()
                     // Fetch trackers for a broad date range (e.g., all years)
-                   // let earliestDate = Date.distantPast // TBDz this needs changing
-                   // trackers = await viewModel.fetchTrackers(forMonth: earliestDate)
+                    // let earliestDate = Date.distantPast // TBDz this needs changing
+                    // trackers = await viewModel.fetchTrackers(forMonth: earliestDate)
                     //processor.updateTrackers(trackers) // Update processor with fetched trackers
                     await processor.updateTrackers()
                     //await viewModel.fetchAllTrackers()
@@ -141,12 +149,12 @@ struct DozeServingsHistoryView: View {
                 }
             }
             .onReceive(NotificationCenter.default.publisher(for: .mockDBUpdated)) { _ in
-                        Task { @MainActor in
-                            await processor.updateTrackers()
-                           // await viewModel.fetchAllTrackers()
-                            updateScrollPosition()
-                        }
-                    }
+                Task { @MainActor in
+                    await processor.updateTrackers()
+                    // await viewModel.fetchAllTrackers()
+                    updateScrollPosition()
+                }
+            }
             .navigationTitle("historyRecordDoze.heading")
             .navigationBarTitleDisplayMode(.inline)
             .toolbarBackground(.visible, for: .navigationBar)
@@ -172,7 +180,7 @@ struct DozeServingsHistoryView: View {
     private var dailyChart: some View {
         let allData = processor.dailyServings(forMonthOf: selectedDate)
         let filteredData = allData.filter { $0.totalServings > 0 }
-
+        
         return VStack(alignment: .center, spacing: 0) {
             Chart(filteredData) { item in
                 let date = item.date!
@@ -215,10 +223,10 @@ struct DozeServingsHistoryView: View {
             }
             .chartPlotStyle { plotArea in
                 plotArea
-                 //   .background(.mint.opacity(0.03))
+                //   .background(.mint.opacity(0.03))
                     .border(.brandGreen) //TBDz pick color and add to other views
             }
-
+            
             legendView // Place legend below chart
         }
         .onAppear {
@@ -232,7 +240,7 @@ struct DozeServingsHistoryView: View {
             let endDate = calendar.endOfMonth(for: selectedDate)
             var currentDate = startDate
             while currentDate <= endDate {
-               // print("Expected Daily AxisMark: \(calendar.component(.day, from: currentDate))")
+                // print("Expected Daily AxisMark: \(calendar.component(.day, from: currentDate))")
                 currentDate = calendar.date(byAdding: .day, value: 1, to: currentDate)!
             }
         }
@@ -241,7 +249,7 @@ struct DozeServingsHistoryView: View {
     private var monthlyChart: some View {
         let data = processor.monthlyServings(forYearOf: selectedDate)
         let config = ChartConfig(data: data, isYearly: false)
-
+        
         return VStack(alignment: .center, spacing: 0) {
             Chart(data) { item in
                 LineMark(
@@ -294,40 +302,51 @@ struct DozeServingsHistoryView: View {
             .frame(minHeight: config.chartHeight + 30)
             .padding(.vertical, 40)
             .padding(.horizontal)
-
+            
             legendView // Place legend below chart
         }
+        
+        .onChange(of: selectedDate) { _, newDate in
+                print("•DEBUG• monthlyChart selectedDate changed to: \(calendar.component(.year, from: newDate))")
+                updateScrollPosition()
+            }
+        
         .onAppear {
-            print("MonthlyChart Data: \(data.map { "Month: \(calendar.component(.month, from: $0.date!)), Servings: \($0.totalServings)" })")
-            print("Y-Axis Domain: 0...\(config.yAxisUpperBound)")
-            let startDate = calendar.date(from: DateComponents(year: calendar.component(.year, from: selectedDate), month: 1, day: 1)) ?? selectedDate
-            let endDate = calendar.date(from: DateComponents(year: calendar.component(.year, from: selectedDate), month: 12, day: 31)) ?? selectedDate
-            var currentDate = startDate
-            while currentDate <= endDate {
-//                print("Expected Monthly AxisMark: \(calendar.component(.month, from: currentDate))")
-                currentDate = calendar.date(byAdding: .month, value: 1, to: currentDate)!
+              //  updateScrollPosition() // Ensure correct scroll position
+                print("MonthlyChart Data: \(data.map { "Month: \(calendar.component(.month, from: $0.date!)), Servings: \($0.totalServings)" })")
+                print("Y-Axis Domain: 0...\(config.yAxisUpperBound)")
+            }
+//        .onAppear {
+//            print("MonthlyChart Data: \(data.map { "Month: \(calendar.component(.month, from: $0.date!)), Servings: \($0.totalServings)" })")
+//            print("Y-Axis Domain: 0...\(config.yAxisUpperBound)")
+//            let startDate = calendar.date(from: DateComponents(year: calendar.component(.year, from: selectedDate), month: 1, day: 1)) ?? selectedDate
+//            let endDate = calendar.date(from: DateComponents(year: calendar.component(.year, from: selectedDate), month: 12, day: 31)) ?? selectedDate
+//            var currentDate = startDate
+//            while currentDate <= endDate {
+//                //                print("Expected Monthly AxisMark: \(calendar.component(.month, from: currentDate))")
+//                currentDate = calendar.date(byAdding: .month, value: 1, to: currentDate)!
+//            }
+//        }
+    }
+    
+    private var yearlyChart: some View {
+        let data = processor.yearlyServings()
+        return Group {
+            if data.isEmpty {
+                Text("No yearly data available")
+                    .foregroundColor(.gray)
+                    .frame(minWidth: 300, minHeight: 300)
+            } else {
+                yearlyChartContent(data: data)
             }
         }
     }
     
-    private var yearlyChart: some View {
-            let data = processor.yearlyServings()
-            return Group {
-                if data.isEmpty {
-                    Text("No yearly data available")
-                        .foregroundColor(.gray)
-                        .frame(minWidth: 300, minHeight: 300)
-                } else {
-                    yearlyChartContent(data: data)
-                }
-            }
-        }
-        
     private func yearlyChartContent(data: [ChartData]) -> some View {
         let config = ChartConfig(data: data, isYearly: true)
         let domain = yearlyXDomain(data: data)
         let years = data.compactMap { $0.year }.sorted().uniqued()
-
+        
         return VStack(alignment: .center, spacing: 0) {
             Chart {
                 ForEach(data) { item in
@@ -394,7 +413,7 @@ struct DozeServingsHistoryView: View {
             .frame(minHeight: config.chartHeight)
             .padding(.vertical, 30)
             .padding(.horizontal)
-
+            
             legendView // Place legend below chart
         }
         .task {
@@ -415,7 +434,7 @@ struct DozeServingsHistoryView: View {
         }
     }
     
-  private var legendView: some View {
+    private var legendView: some View {
         HStack(spacing: 8) {
             Rectangle()
                 .fill(.brandGreen)
@@ -428,33 +447,36 @@ struct DozeServingsHistoryView: View {
     }
     
     // MARK: - Scroll Position Logic
-       private func updateScrollPosition() {
-           switch selectedTimeScale {
-           case .daily:
-               let monthStart = calendar.startOfMonth(for: selectedDate)
-               let monthEnd = min(calendar.endOfMonth(for: selectedDate), today)
-               dailyScrollPosition = today >= monthStart && today <= monthEnd ? today : monthEnd
-           case .monthly:
-               let yearStart = calendar.date(from: DateComponents(year: calendar.component(.year, from: selectedDate), month: 1, day: 1))!
-               let yearEnd = calendar.date(from: DateComponents(year: calendar.component(.year, from: selectedDate), month: 12, day: 31))!
-               let currentMonthStart = calendar.startOfMonth(for: today)
-               monthlyScrollPosition = today >= yearStart && today <= yearEnd ? currentMonthStart : yearEnd
-           case .yearly:
-               let latestYear = processor.yearlyServings().compactMap { $0.year }.max() ?? calendar.component(.year, from: today)
-               yearlyScrollPosition = calendar.date(from: DateComponents(year: latestYear, month: 12, day: 31)) ?? today
-               print("YearlyChart: updateScrollPosition set to \(latestYear), Scroll Date: \(yearlyScrollPosition)")
-           }
-       }
-       
-       // MARK: - Annotation Helper
-       private func servingsAnnotation(servings: Int, year: Int? = nil) -> some View {
-           Text("\(servings)")
-               .font(.system(size: 10).bold())
-               .foregroundColor(.black)
-               .padding(3)
-               .background(servings > 0 ? Color.white.opacity(0.9) : Color.red.opacity(0.7))
-               .clipShape(RoundedRectangle(cornerRadius: 4))
-       }
+    private func updateScrollPosition() {
+        switch selectedTimeScale {
+        case .daily:
+            let monthStart = max(calendar.startOfMonth(for: selectedDate), calendar.startOfMonth(for: earliestDate))
+            let monthEnd = min(calendar.endOfMonth(for: selectedDate), today)
+            dailyScrollPosition = today >= monthStart && today <= monthEnd ? today : monthEnd
+            print("•DEBUG• Daily scroll set to: \(dailyScrollPosition)")
+        case .monthly:
+            let year = calendar.component(.year, from: selectedDate)
+            let earliestYear = calendar.component(.year, from: earliestDate)
+            let scrollMonth = year == earliestYear ? calendar.component(.month, from: earliestDate) : calendar.component(.month, from: today)
+            let scrollDate = calendar.date(from: DateComponents(year: year, month: scrollMonth, day: 1)) ?? today
+            monthlyScrollPosition = scrollDate
+            print("•DEBUG• Monthly scroll set to year: \(year), month: \(scrollMonth), scrollDate: \(monthlyScrollPosition)")
+        case .yearly:
+            let latestYear = processor.yearlyServings().compactMap { $0.year }.max() ?? calendar.component(.year, from: today)
+            yearlyScrollPosition = calendar.date(from: DateComponents(year: latestYear, month: 12, day: 31)) ?? today
+            print("YearlyChart: updateScrollPosition set to \(latestYear), Scroll Date: \(yearlyScrollPosition)")
+        }
+    }
+    
+    // MARK: - Annotation Helper
+    private func servingsAnnotation(servings: Int, year: Int? = nil) -> some View {
+        Text("\(servings)")
+            .font(.system(size: 10).bold())
+            .foregroundColor(.black)
+            .padding(3)
+            .background(servings > 0 ? Color.white.opacity(0.9) : Color.red.opacity(0.7))
+            .clipShape(RoundedRectangle(cornerRadius: 4))
+    }
     // MARK: - Navigation Logic
     
     private var earliestDate: Date {
@@ -471,9 +493,13 @@ struct DozeServingsHistoryView: View {
         case .daily:
             selectedDate = calendar.date(byAdding: .month, value: -1, to: selectedDate)!
             updateScrollPosition()
+            print("•DEBUG• Navigated backward to month: \(calendar.component(.month, from: selectedDate))-202\(calendar.component(.year, from: selectedDate))")
         case .monthly:
-            selectedDate = calendar.date(byAdding: .year, value: -1, to: selectedDate)!
-            updateScrollPosition()
+            let newYear = calendar.component(.year, from: selectedDate) - 1
+            selectedDate = calendar.date(from: DateComponents(year: newYear, month: 12, day: 1))!
+            let scrollMonth = newYear == calendar.component(.year, from: earliestDate) ? calendar.component(.month, from: earliestDate) : 12
+            monthlyScrollPosition = calendar.date(from: DateComponents(year: newYear, month: scrollMonth, day: 1))!
+            print("•DEBUG• Navigated backward to year: \(newYear), scrollDate: \(monthlyScrollPosition)")
         default:
             break
         }
@@ -494,8 +520,14 @@ struct DozeServingsHistoryView: View {
     
     private var canNavigateBackward: Bool {
         switch selectedTimeScale {
-        case .daily, .monthly:
-            return true
+        case .daily:
+            let prevMonth = calendar.date(byAdding: .month, value: -1, to: selectedDate)!
+            return calendar.startOfMonth(for: prevMonth) >= calendar.startOfMonth(for: earliestDate)
+        case .monthly:
+            let earliestYear = calendar.component(.year, from: earliestDate)
+            let currentYear = calendar.component(.year, from: selectedDate)
+            print("•DEBUG• canNavigateBackward: currentYear=\(currentYear), earliestYear=\(earliestYear)")
+            return currentYear > earliestYear
         default:
             return false
         }
@@ -514,19 +546,20 @@ struct DozeServingsHistoryView: View {
         }
     }
     
-    private func navigateToStart() {
+    private var canNavigateToStart: Bool {
         switch selectedTimeScale {
         case .daily:
-            selectedDate = earliestDate
-            updateScrollPosition()
+            return calendar.startOfMonth(for: selectedDate) > calendar.startOfMonth(for: earliestDate)
         case .monthly:
-            selectedDate = calendar.date(from: DateComponents(year: calendar.component(.year, from: earliestDate), month: 1, day: 1))!
-            updateScrollPosition()
+            let earliestYear = calendar.component(.year, from: earliestDate)
+            let currentYear = calendar.component(.year, from: selectedDate)
+            print("•DEBUG• canNavigateToStart: currentYear=\(currentYear), earliestYear=\(earliestYear)")
+            return currentYear > earliestYear
         default:
-            break
+            return false
         }
     }
-
+    
     private func navigateToEnd() {
         switch selectedTimeScale {
         case .daily:
@@ -540,17 +573,23 @@ struct DozeServingsHistoryView: View {
         }
     }
     
-    private var canNavigateToStart: Bool {
+    private func navigateToStart() {
         switch selectedTimeScale {
         case .daily:
-            return calendar.startOfMonth(for: selectedDate) > earliestDate
+            selectedDate = earliestDate
+            updateScrollPosition()
+            print("•DEBUG• Navigated to start month: \(calendar.component(.month, from: selectedDate))-202\(calendar.component(.year, from: selectedDate))")
         case .monthly:
-            return calendar.component(.year, from: selectedDate) > calendar.component(.year, from: earliestDate)
+            let earliestYear = calendar.component(.year, from: earliestDate)
+            let earliestMonth = calendar.component(.month, from: earliestDate)
+            selectedDate = calendar.date(from: DateComponents(year: earliestYear, month: earliestMonth, day: 1))!
+            monthlyScrollPosition = selectedDate
+            print("•DEBUG• Navigated to start year: \(earliestYear), scrollDate: \(monthlyScrollPosition)")
         default:
-            return false
+            break
         }
     }
-
+    
     private var canNavigateToEnd: Bool {
         switch selectedTimeScale {
         case .daily:
@@ -583,176 +622,36 @@ struct DozeServingsHistoryView: View {
     }
     
     private var monthlyXDomain: ClosedRange<Date> {
-        let start = calendar.date(from: DateComponents(year: calendar.component(.year, from: selectedDate), month: 1, day: 1)) ?? Date()
-        let end = calendar.date(from: DateComponents(year: calendar.component(.year, from: selectedDate), month: 12, day: 31)) ?? Date()
+        let year = calendar.component(.year, from: selectedDate)
+        let earliest = processor.earliestDate() ?? calendar.startOfDay(for: today)
+        let earliestYear = calendar.component(.year, from: earliest)
+        let startMonth = year == earliestYear ? calendar.component(.month, from: earliest) : 1
+        let start = calendar.date(from: DateComponents(year: year, month: startMonth, day: 1)) ?? today
+        let end = calendar.date(from: DateComponents(year: year, month: 12, day: 31)) ?? today
         guard let endWithBuffer = calendar.date(byAdding: .day, value: 1, to: end) else {
             fatalError("Unable to compute end date with buffer")
         }
+        print("•DEBUG• monthlyXDomain: start=\(start), end=\(endWithBuffer)")
         return start...endWithBuffer
     }
-
+    
     private var dailyXDomain: ClosedRange<Date> {
         let start = calendar.startOfMonth(for: selectedDate)
         let end = calendar.endOfMonth(for: selectedDate)
-       // let end = min(calendar.endOfMonth(for: selectedDate), today)
+        // let end = min(calendar.endOfMonth(for: selectedDate), today)
         guard let endWithBuffer = calendar.date(byAdding: .day, value: 1, to: end) else {
             fatalError("Unable to compute end date with buffer")
         }
         
         return start...endWithBuffer
-    }   //TBDz need to determine why a buffer is needed.  
+    }   //TBDz need to determine why a buffer is needed.
     
     private func yearlyXDomain(data: [ChartData]) -> ClosedRange<Date> {
         let startYear = data.compactMap { $0.year }.min() ?? calendar.component(.year, from: today)
         let endYear = (data.compactMap { $0.year }.max() ?? calendar.component(.year, from: today)) + 1 // Extend to next year
-       // print("YearlyXDomain: \(startYear) to \(endYear)")
+        // print("YearlyXDomain: \(startYear) to \(endYear)")
         let startDate = calendar.date(from: DateComponents(year: startYear, month: 1, day: 1, hour: 0, minute: 0, second: 0)) ?? today
         let endDate = calendar.date(from: DateComponents(year: endYear, month: 1, day: 1, hour: 0, minute: 0, second: 0)) ?? today
         return startDate...endDate
     }
 }
-
-//#Preview {
-//    let sampleTrackers = [
-//        // Existing 2015 entry
-//        SqlDailyTracker(
-//            date: Calendar.current.date(from: DateComponents(year: 2015, month: 6, day: 1))!,
-//            itemsDict: [
-//                DataCountType.dozeBeans: SqlDataCountRecord(datacount_date_psid: "2015-06-01", datacount_kind_pfnid: 1, datacount_count: 2, datacount_streak: 1)!,
-//                DataCountType.dozeBerries: SqlDataCountRecord(datacount_date_psid: "2015-06-01", datacount_kind_pfnid: 2, datacount_count: 1, datacount_streak: 1)!
-//            ],
-//            weightAM: nil,
-//            weightPM: nil
-//        ),
-//        // Add 2016
-//        SqlDailyTracker(
-//            date: Calendar.current.date(from: DateComponents(year: 2016, month: 6, day: 1))!,
-//            itemsDict: [
-//                DataCountType.dozeBeans: SqlDataCountRecord(datacount_date_psid: "2016-06-01", datacount_kind_pfnid: 1, datacount_count: 2, datacount_streak: 1)!,
-//                DataCountType.dozeBerries: SqlDataCountRecord(datacount_date_psid: "2016-06-01", datacount_kind_pfnid: 2, datacount_count: 1, datacount_streak: 1)!
-//            ],
-//            weightAM: nil,
-//            weightPM: nil
-//        ),
-//        // Add 2017
-//        SqlDailyTracker(
-//            date: Calendar.current.date(from: DateComponents(year: 2017, month: 6, day: 1))!,
-//            itemsDict: [
-//                DataCountType.dozeBeans: SqlDataCountRecord(datacount_date_psid: "2017-06-01", datacount_kind_pfnid: 1, datacount_count: 2, datacount_streak: 1)!,
-//                DataCountType.dozeBerries: SqlDataCountRecord(datacount_date_psid: "2017-06-01", datacount_kind_pfnid: 2, datacount_count: 1, datacount_streak: 1)!
-//            ],
-//            weightAM: nil,
-//            weightPM: nil
-//        ),
-//        // Add 2018
-//        SqlDailyTracker(
-//            date: Calendar.current.date(from: DateComponents(year: 2018, month: 6, day: 1))!,
-//            itemsDict: [
-//                DataCountType.dozeBeans: SqlDataCountRecord(datacount_date_psid: "2018-06-01", datacount_kind_pfnid: 1, datacount_count: 2, datacount_streak: 1)!,
-//                DataCountType.dozeBerries: SqlDataCountRecord(datacount_date_psid: "2018-06-01", datacount_kind_pfnid: 2, datacount_count: 1, datacount_streak: 1)!
-//            ],
-//            weightAM: nil,
-//            weightPM: nil
-//        ),
-//        // Add 2019
-//        SqlDailyTracker(
-//            date: Calendar.current.date(from: DateComponents(year: 2019, month: 6, day: 1))!,
-//            itemsDict: [
-//                DataCountType.dozeBeans: SqlDataCountRecord(datacount_date_psid: "2019-06-01", datacount_kind_pfnid: 1, datacount_count: 2, datacount_streak: 1)!,
-//                DataCountType.dozeBerries: SqlDataCountRecord(datacount_date_psid: "2019-06-01", datacount_kind_pfnid: 2, datacount_count: 1, datacount_streak: 1)!
-//            ],
-//            weightAM: nil,
-//            weightPM: nil
-//        ),
-//        // Add 2020
-//        SqlDailyTracker(
-//            date: Calendar.current.date(from: DateComponents(year: 2020, month: 6, day: 1))!,
-//            itemsDict: [
-//                DataCountType.dozeBeans: SqlDataCountRecord(datacount_date_psid: "2020-06-01", datacount_kind_pfnid: 1, datacount_count: 2, datacount_streak: 1)!,
-//                DataCountType.dozeBerries: SqlDataCountRecord(datacount_date_psid: "2020-06-01", datacount_kind_pfnid: 2, datacount_count: 1, datacount_streak: 1)!
-//            ],
-//            weightAM: nil,
-//            weightPM: nil
-//        ),
-//        // Add 2021
-//        SqlDailyTracker(
-//            date: Calendar.current.date(from: DateComponents(year: 2021, month: 6, day: 1))!,
-//            itemsDict: [
-//                DataCountType.dozeBeans: SqlDataCountRecord(datacount_date_psid: "2021-06-01", datacount_kind_pfnid: 1, datacount_count: 2, datacount_streak: 1)!,
-//                DataCountType.dozeBerries: SqlDataCountRecord(datacount_date_psid: "2021-06-01", datacount_kind_pfnid: 2, datacount_count: 1, datacount_streak: 1)!
-//            ],
-//            weightAM: nil,
-//            weightPM: nil
-//        ),
-//        // Add 2022
-//        SqlDailyTracker(
-//            date: Calendar.current.date(from: DateComponents(year: 2022, month: 6, day: 1))!,
-//            itemsDict: [
-//                DataCountType.dozeBeans: SqlDataCountRecord(datacount_date_psid: "2022-06-01", datacount_kind_pfnid: 1, datacount_count: 2, datacount_streak: 1)!,
-//                DataCountType.dozeBerries: SqlDataCountRecord(datacount_date_psid: "2022-06-01", datacount_kind_pfnid: 2, datacount_count: 1, datacount_streak: 1)!
-//            ],
-//            weightAM: nil,
-//            weightPM: nil
-//        ),
-//        // Add 2023
-//        SqlDailyTracker(
-//            date: Calendar.current.date(from: DateComponents(year: 2023, month: 6, day: 1))!,
-//            itemsDict: [
-//                DataCountType.dozeBeans: SqlDataCountRecord(datacount_date_psid: "2023-06-01", datacount_kind_pfnid: 1, datacount_count: 2, datacount_streak: 1)!,
-//                DataCountType.dozeBerries: SqlDataCountRecord(datacount_date_psid: "2023-06-01", datacount_kind_pfnid: 2, datacount_count: 1, datacount_streak: 1)!
-//            ],
-//            weightAM: nil,
-//            weightPM: nil
-//        ),
-//        // Existing 2024 entry
-//        SqlDailyTracker(
-//            date: Calendar.current.date(from: DateComponents(year: 2024, month: 5, day: 19))!,
-//            itemsDict: [
-//                DataCountType.dozeBeans: SqlDataCountRecord(datacount_date_psid: "2024-05-18", datacount_kind_pfnid: 1, datacount_count: 2, datacount_streak: 1)!,
-//                DataCountType.dozeBerries: SqlDataCountRecord(datacount_date_psid: "2024-05-18", datacount_kind_pfnid: 2, datacount_count: 1, datacount_streak: 1)!
-//            ],
-//            weightAM: nil,
-//            weightPM: nil
-//        ),
-//        // Existing 2025 entries
-//        SqlDailyTracker(
-//            date: Calendar.current.date(from: DateComponents(year: 2025, month: 4, day: 14))!,
-//            itemsDict: [
-//                DataCountType.dozeBeans: SqlDataCountRecord(datacount_date_psid: "2025-04-14", datacount_kind_pfnid: 1, datacount_count: 2, datacount_streak: 1)!,
-//                DataCountType.dozeBerries: SqlDataCountRecord(datacount_date_psid: "2025-04-14", datacount_kind_pfnid: 2, datacount_count: 1, datacount_streak: 1)!
-//            ],
-//            weightAM: nil,
-//            weightPM: nil
-//        ),
-//        SqlDailyTracker(
-//            date: Calendar.current.date(from: DateComponents(year: 2025, month: 5, day: 9))!,
-//            itemsDict: [
-//                DataCountType.dozeBeans: SqlDataCountRecord(datacount_date_psid: "2025-05-09", datacount_kind_pfnid: 1, datacount_count: 2, datacount_streak: 1)!,
-//                DataCountType.dozeBerries: SqlDataCountRecord(datacount_date_psid: "2025-05-09", datacount_kind_pfnid: 2, datacount_count: 1, datacount_streak: 1)!
-//            ],
-//            weightAM: nil,
-//            weightPM: nil
-//        ),
-//        SqlDailyTracker(
-//            date: Calendar.current.date(from: DateComponents(year: 2025, month: 5, day: 12))!,
-//            itemsDict: [
-//                DataCountType.dozeBeans: SqlDataCountRecord(datacount_date_psid: "2025-05-12", datacount_kind_pfnid: 1, datacount_count: 2, datacount_streak: 1)!,
-//                DataCountType.dozeBerries: SqlDataCountRecord(datacount_date_psid: "2025-05-12", datacount_kind_pfnid: 2, datacount_count: 1, datacount_streak: 1)!
-//            ],
-//            weightAM: nil,
-//            weightPM: nil
-//        ),
-//        SqlDailyTracker(
-//            date: Calendar.current.date(from: DateComponents(year: 2025, month: 5, day: 29))!,
-//            itemsDict: [
-//                DataCountType.dozeBeans: SqlDataCountRecord(datacount_date_psid: "2025-05-29", datacount_kind_pfnid: 1, datacount_count: 3, datacount_streak: 1)!,
-//                DataCountType.dozeBerries: SqlDataCountRecord(datacount_date_psid: "2025-05-29", datacount_kind_pfnid: 2, datacount_count: 1, datacount_streak: 1)!,
-//                DataCountType.dozeBeverages: SqlDataCountRecord(datacount_date_psid: "2025-05-29", datacount_kind_pfnid: 11, datacount_count: 2, datacount_streak: 1)!
-//            ],
-//            weightAM: nil,
-//            weightPM: nil
-//        )
-//    ]
-//    return DozeServingsHistoryView(trackers: sampleTrackers)
-//     .environment(\.locale, .init(identifier: "de"))
-//}

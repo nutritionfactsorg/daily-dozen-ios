@@ -2,7 +2,7 @@
 //  DozeCalendarView.swift
 //  DailyDozen
 //
-//  Copyright © 2025 Nutritionfacts.org. All rights reserved.
+//  Created by mc on 4/21/25.
 //
 
 import SwiftUI
@@ -11,8 +11,8 @@ import SwiftUI
 struct DozeCalendarView: View {
     let item: DataCountType
     //let records: [SqlDailyTracker] = fetchSQLData()
-    @EnvironmentObject var viewModel: SqlDailyTrackerViewModel
-    
+   // @EnvironmentObject var viewModel: SqlDailyTrackerViewModel
+    private let viewModel = SqlDailyTrackerViewModel.shared
     @State private var currentMonth: Date = Calendar.current.startOfMonth(for: Date())
     
     private let calendar = Calendar.current
@@ -20,7 +20,7 @@ struct DozeCalendarView: View {
     
     var body: some View {
         VStack {
-            UICalendarViewRepresentable(item: item, viewModel: _viewModel, currentMonth: $currentMonth)
+            UICalendarViewRepresentable(item: item, currentMonth: $currentMonth)
               //  .frame(height: 400)
             
            // Push the footer to the bottom

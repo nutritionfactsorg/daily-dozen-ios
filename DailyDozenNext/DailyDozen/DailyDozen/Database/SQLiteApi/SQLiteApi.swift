@@ -2,10 +2,8 @@
 // SQLiteApi.swift
 // SQLiteApi
 //
-// swiftlint:disable cyclomatic_complexity
-// swiftlint:disable function_body_length
 
-import Foundation
+//import Foundation
 
 //public enum SQLiteApiError: Error {
 //    case databaseOpenFailed(String)

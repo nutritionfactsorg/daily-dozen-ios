@@ -71,42 +71,6 @@ struct SqlDailyTracker: Sendable {
             return dict
         }
     
-    //init added for development early stages
-//    
-//    init(date: Date, itemsDict: [DataCountType: SqlDataCountRecord]) {
-//        self.date = date
-//        
-//        itemsDict = [DataCountType: SqlDataCountRecord]()
-//        for dataCountType in DataCountType.allCases {
-//            itemsDict[dataCountType] = SqlDataCountRecord(date: date, countType: dataCountType)
-//        }
-//        self.weightAM = SqlDataWeightRecord(date: date, weightType: .am, kg: 0.0)
-//        self.weightPM = SqlDataWeightRecord(date: date, weightType: .pm, kg: 0.0)
-//    }
-    
-    //init?(dateString: String) {
-    //    let formatter = DateFormatter()
-    //    formatter.dateFormat = "yyyy-MM-dd HH:mm:ss Z"
-    //    
-    //    guard let date = formatter.date(from: dateString) else { return nil }
-    //
-    //    self.date = date
-    //    
-    //    // // Convert string to Date
-    //    //if let date = formatter.date(from: dateString) {
-    //    //    print(date) // Will print something like: 2025-03-26 18:19:36 +0000
-    //    //} else {
-    //    //    print("Failed to convert date string")
-    //    //}
-    //    
-    //    itemsDict = [DataCountType: SqlDataCountRecord]()
-    //    for dataCountType in DataCountType.allCases {
-    //        itemsDict[dataCountType] = SqlDataCountRecord(date: date, countType: dataCountType)
-    //    }
-    //    self.weightAM = SqlDataWeightRecord(date: date, weightType: .am, kg: 0.0)
-    //    self.weightPM = SqlDataWeightRecord(date: date, weightType: .pm, kg: 0.0)
-    //}
-    
     mutating func setCount(typeKey: DataCountType, countText: String) async {
         if let value = Int(countText) {
             await setCount(typeKey: typeKey, count: value)

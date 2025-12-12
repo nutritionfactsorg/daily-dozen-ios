@@ -4,20 +4,20 @@
 //
 //  Copyright © 2025 Nutritionfacts.org. All rights reserved.
 //swiftlint:disable file_length
-import SwiftUI
+//import SwiftUI
 
-func dateBeforeDays(_ days: Int) -> Date {
-    let today = Date()
-    if let pastDate = Calendar.current.date(byAdding: .day, value: days, to: today) {
-        return pastDate
-    }
-    return today // Fallback to current date if calculation fails
-}
-
-enum MockDataScenario {
-    case simple
-    case complex
-}
+//func dateBeforeDays(_ days: Int) -> Date {
+//    let today = Date()
+//    if let pastDate = Calendar.current.date(byAdding: .day, value: days, to: today) {
+//        return pastDate
+//    }
+//    return today // Fallback to current date if calculation fails
+//}
+//
+//enum MockDataScenario {
+//    case simple
+//    case complex
+//}
 
 //func fetchMockData(daysBeforeToday: Int, scenario: MockDataScenario = .simple) async -> SqlDailyTracker {
 //    switch scenario {
@@ -94,10 +94,10 @@ enum MockDataScenario {
 //    print("the data is: \(data)")
 //}
 //
-@MainActor func fetchSQLData(date: Date = Date()) -> [SqlDailyTracker] {
-    // return returnSQLDataArray(date: date)
-    return []
-}
+//@MainActor func fetchSQLData(date: Date = Date()) -> [SqlDailyTracker] {
+//    // return returnSQLDataArray(date: date)
+//    return []
+//}
 //
 //@MainActor func appendToMockDB(_ tracker: SqlDailyTracker) {
 //    mockDB.append(tracker)
@@ -480,12 +480,3 @@ enum MockDataScenario {
 //    //    weightAM: SqlDataWeightRecord(dataweight_date_psid: "2025-03-26", dataweight_ampm_pnid: 0, dataweight_kg: 59.0, dataweight_time: "11:19"),
 //    //    weightPM: SqlDataWeightRecord(dataweight_date_psid: "2025-03-26", dataweight_ampm_pnid: 1, dataweight_kg: 0.0, dataweight_time: "11:19")
 //)
-
-//TBDZZ might be useful in testing
-extension DateFormatter {
-    static let sqliteDateFormat: DateFormatter = {
-        let formatter = DateFormatter()
-        formatter.dateFormat = "yyyy-MM-dd"
-        return formatter
-    }()
-}

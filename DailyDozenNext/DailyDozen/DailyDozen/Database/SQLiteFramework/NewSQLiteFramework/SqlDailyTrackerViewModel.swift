@@ -2,9 +2,6 @@
 //  Untitled.swift
 //  DailyDozen
 //
-//  Copyright © 2025 Nutritionfacts.org. All rights reserved.
-//
-//   TBDz is this used?
 
 // swiftlint:disable file_length
 // swiftlint:disable type_body_length
@@ -34,301 +31,359 @@ class SqlDailyTrackerViewModel: ObservableObject {
     static let shared = SqlDailyTrackerViewModel()
     
     init() {
-     //  print("🟢 •VM• Creating SqlDailyTrackerViewModel instance:")
-      // print("🟢 •VM• Creating instance at: \(Thread.callStackSymbols[1])")  // Logs caller
-                Task {
-                    do {
-                        try await dbActor.setup()
-                        await MainActor.run {
-                          // print("🟢 •VM• SqlDailyTrackerViewModel: Database initialized")
-                        }
-                        // Optional: Uncomment to load current month's trackers on init
-                        // await loadTrackers(forMonth: Date())
-                    } catch {
-                        await MainActor.run {
-                            self.error = "Database initialization failed: \(error)"
-                            print("🔴 •VM• SqlDailyTrackerViewModel: Database initialization failed: \(error)")
-                        }
-                    }
+        Task {
+            do {
+                try await dbActor.setup()
+                await MainActor.run {
+                    // print("🟢 •VM• SqlDailyTrackerViewModel: Database initialized")
                 }
+                // Optional: Uncomment to load current month's trackers on init
+                // await loadTrackers(forMonth: Date())
+                //for debug these two awaits
+                //                        await SqliteDatabaseActor.shared.printSchema()
+                //                        await SqliteDatabaseActor.shared.dumpAllRows()
+            } catch {
+                await MainActor.run {
+                    self.error = "Database initialization failed: \(error)"
+                    print("🔴 •VM• SqlDailyTrackerViewModel: Database initialization failed: \(error)")
+                }
+            }
         }
-    
-//    init() {
-//            Task { await dbActor.setup() } // Add explicit setup
-//            Task { await loadTracker(forDate: Date().startOfDay) }
-//        }
+    }
     
     // Added: Convenience lookup from array (replaces old mockDB.first(where:))
     func tracker(for date: Date) -> SqlDailyTracker {
         let calendar = DateUtilities.gregorianCalendar
         let normalized = calendar.startOfDay(for: date)
         if let existing = trackers.first(where: { calendar.isDate($0.date, inSameDayAs: normalized) }) {
-           // print("🟢 •Tracker• Returning for \(normalized.datestampSid): existing=true, countSum=\(existing.itemsDict.values.reduce(0) { $0 + ($1.datacount_count) })")
             return existing
         }
-       
-        let newTracker = SqlDailyTracker(date: normalized)
-        trackers.append(newTracker)  // Cache empty for now; load will replace if needed
-      //  print("🟢 •Tracker• Returning for \(normalized.datestampSid): existing=false, new countSum=\(newTracker.itemsDict.values.reduce(0) { $0 + ($1.datacount_count) })")
-        return newTracker
+        
+        // Create full default synchronously (createItemsDict is fast — just loop)
+        var defaultDict: [DataCountType: SqlDataCountRecord] = [:]
+        for type in DataCountType.allCases {
+            defaultDict[type] = SqlDataCountRecord(date: normalized, countType: type, count: 0, streak: 0)
+        }
+        
+        let temp = SqlDailyTracker(date: normalized, itemsDict: defaultDict)
+        //trackers.append(temp)
+        
+        Task { await loadTracker(forDate: normalized) }  // Async fill real data
+        return temp
+        
     }
     
-    // Added: Optional method to load trackers for a month into the array -- TBDz if needed
-        func loadTrackers(forMonth date: Date) async {
-            let calendar = DateUtilities.gregorianCalendar
-            let fetched = await dbActor.fetchTrackers(forMonth: date)
-            await MainActor.run {
-                // Merge without duplicates
-                for newTracker in fetched {
-                    trackers = trackers.filter { !calendar.isDate($0.date, inSameDayAs: newTracker.date) } + [newTracker]
-                }
-                print("🟢 •VM• Loaded \(fetched.count) trackers for month \(date.datestampSid)")
-            }
-        }
-    
     // Helper to update/replace in array (used after mutations/saves)
-     private func updateTrackerInArray(_ updatedTracker: SqlDailyTracker) {
-            let calendar = DateUtilities.gregorianCalendar
-            if let index = trackers.firstIndex(where: { calendar.isDate($0.date, inSameDayAs: updatedTracker.date) }) {
-                trackers[index] = updatedTracker
-            } else {
-                trackers.append(updatedTracker)
-            }
-            NotificationCenter.default.post(name: .mockDBUpdated, object: nil)
+    func updateTrackerInArray(_ updatedTracker: SqlDailyTracker) {
+        let calendar = DateUtilities.gregorianCalendar
+        if let index = trackers.firstIndex(where: { calendar.isDate($0.date, inSameDayAs: updatedTracker.date) }) {
+            trackers[index] = updatedTracker
+        } else {
+            trackers.append(updatedTracker)
         }
+        NotificationCenter.default.post(name: .mockDBUpdated, object: nil)
+    }
     
     // Added: Replaces old updateMockDB; saves full tracker (weights + counts) to DB
-        func updateDatabase(with tracker: SqlDailyTracker) async {
-            if let am = tracker.weightAM {
-                _ = await dbActor.saveWeight(record: am, oldDatePsid: am.dataweight_date_psid, oldAmpm: am.dataweight_ampm_pnid)
-            }
-            if let pm = tracker.weightPM {
-                _ = await dbActor.saveWeight(record: pm, oldDatePsid: pm.dataweight_date_psid, oldAmpm: pm.dataweight_ampm_pnid)
-            }
-            for (type, record) in tracker.itemsDict {
-                _ = await dbActor.saveCount(record: record, oldDatePsid: record.datacount_date_psid, oldTypeNid: type.nid)
-            }
-            // Update local array
-            trackers = trackers.filter { !Calendar.current.isDate($0.date, inSameDayAs: tracker.date) } + [tracker]
-            if Calendar.current.isDate(self.tracker?.date ?? Date.distantPast, inSameDayAs: tracker.date) {
-                self.tracker = tracker
-            }
-            NotificationCenter.default.post(name: .mockDBUpdated, object: nil)
+    func updateDatabase(with tracker: SqlDailyTracker) async {
+        if let am = tracker.weightAM {
+            _ = await dbActor.saveWeight(record: am, oldDatePsid: am.dataweight_date_psid, oldAmpm: am.dataweight_ampm_pnid)
         }
+        
+        if let pm = tracker.weightPM {
+            _ = await dbActor.saveWeight(record: pm, oldDatePsid: pm.dataweight_date_psid, oldAmpm: pm.dataweight_ampm_pnid)
+        }
+        for (type, record) in tracker.itemsDict {
+            _ = await dbActor.saveCount(record: record, oldDatePsid: record.datacount_date_psid, oldTypeNid: type.nid)
+        }
+        // Update local array
+        trackers = trackers.filter { !Calendar.current.isDate($0.date, inSameDayAs: tracker.date) } + [tracker]
+        if Calendar.current.isDate(self.tracker?.date ?? Date.distantPast, inSameDayAs: tracker.date) {
+            self.tracker = tracker
+        }
+        NotificationCenter.default.post(name: .mockDBUpdated, object: nil)
+    }
     
-   func getTrackerOrCreate(for date: Date) async -> SqlDailyTracker {
-            if let existingTracker = tracker {
-                return existingTracker
-            }
-       return await SqlDailyTracker(date: date)  // Synchronous
+    func getTrackerOrCreate(for date: Date) async -> SqlDailyTracker {
+        if let existingTracker = tracker {
+            return existingTracker
         }
-
+        return await SqlDailyTracker(date: date)  // Synchronous
+    }
+    
     // *** Added: From WeightEntryViewModel ***
     func loadWeights(for date: Date, unitType: UnitType) async -> WeightEntryData {
         let key = date.datestampSid
         let normalized = DateUtilities.gregorianCalendar.startOfDay(for: date)
         await loadTracker(forDate: normalized)
-        var updatedTracker = tracker(for: normalized)
-         
+        let updatedTracker = tracker(for: normalized)
+        let unitsType = UnitsType(rawValue: unitType.rawValue) ?? .metric
         
+        // Handle AM
+        var amWeightStr = ""
+        var amTime = Date()
+        print("•DEBUG• AM weightAM exists? \(updatedTracker.weightAM?.dataweight_kg ?? 0)")
+        if let amRecord = updatedTracker.weightAM, amRecord.dataweight_kg > 0 {
+            // DB exists: Use DB, sync to HK
+            amWeightStr = await UnitsUtility.regionalWeight(fromKg: amRecord.dataweight_kg, toUnits: unitsType, toDecimalDigits: 1) ?? ""
+            amTime = Date(datestampHHmm: amRecord.dataweight_time, referenceDate: date) ?? Date()
+            do {
+                try await HealthSynchronizer.shared.syncWeightPut(date: normalized, ampm: .am, kg: amRecord.dataweight_kg, time: amTime, tracker: updatedTracker)
+                print("•Load• Synced DB to HK for AM: \(amRecord.dataweight_kg) kg")
+            } catch {
+                print("•Load• AM sync put error: \(error.localizedDescription)")
+            }
+        } else {
+            // No DB: Pull from HK for display (user decision)
+            let (timeStr, weightStr) = await HealthSynchronizer.shared.syncWeightToShow(date: normalized, ampm: .am)
+            if !weightStr.isEmpty {
+                amWeightStr = weightStr
+                amTime = Date(datestampHHmm: timeStr, referenceDate: date) ?? Date()
+                print("•Load• Pulled HK for AM (no DB): \(weightStr) at \(timeStr)")
+            }
+        }
+        
+        // Handle PM (similar)
+        var pmWeightStr = ""
+        var pmTime = Date()
+        print("•DEBUG• PM weightAM exists? \(updatedTracker.weightPM?.dataweight_kg ?? 0)")
+        if let pmRecord = updatedTracker.weightPM, pmRecord.dataweight_kg > 0 {
+            pmWeightStr = await UnitsUtility.regionalWeight(fromKg: pmRecord.dataweight_kg, toUnits: unitsType, toDecimalDigits: 1) ?? ""
+            pmTime = Date(datestampHHmm: pmRecord.dataweight_time, referenceDate: date) ?? Date()
+            do {
+                try await HealthSynchronizer.shared.syncWeightPut(date: normalized, ampm: .pm, kg: pmRecord.dataweight_kg, time: pmTime, tracker: updatedTracker)
+                print("•Load• Synced DB to HK for PM: \(pmRecord.dataweight_kg) kg")
+            } catch {
+                print("•Load• PM sync put error: \(error.localizedDescription)")
+            }
+        } else {
+            let (timeStr, weightStr) = await HealthSynchronizer.shared.syncWeightToShow(date: normalized, ampm: .pm)
+            if !weightStr.isEmpty {
+                pmWeightStr = weightStr
+                pmTime = Date(datestampHHmm: timeStr, referenceDate: date) ?? Date()
+                print("•Load• Pulled HK for PM (no DB): \(weightStr) at \(timeStr)")
+            }
+        }
+        
+        print("Loaded weights for \(key): AM \(amWeightStr), PM \(pmWeightStr), AM Time \(amTime.datestampHHmm), PM Time \(pmTime.datestampHHmm)")
+        return WeightEntryData(amWeight: amWeightStr, pmWeight: pmWeightStr, amTime: amTime, pmTime: pmTime)
+    }
+    
+    // *** Added: Save weight with HealthKit sync ***
+    
+    func saveWeight(for date: Date, amWeight: Double?, pmWeight: Double?, amTime: Date?, pmTime: Date?) async {
+        let normalized = DateUtilities.gregorianCalendar.startOfDay(for: date)
+        var updatedTracker = tracker(for: normalized)
+        let unitType = UnitType.fromUserDefaults()
         var hasChanges = false
-
-        // Load AM weight from HealthKit if not set
-        if updatedTracker.weightAM?.dataweight_kg ?? 0 == 0 { // *** Changed: Optional chaining ***
-            let (amTimeStr, amWeightStr) = await HealthSynchronizer.shared.syncWeightToShow(date: date, ampm: .am)
-            if !amWeightStr.isEmpty, let kg = Double(amWeightStr), kg > 0 {
-                updatedTracker.weightAM = SqlDataWeightRecord(
+        
+        // AM
+        if let amWeight = amWeight, let amTime = amTime {
+            if amWeight > 0 {
+                let kg = unitType == .imperial ? amWeight / 2.204623 : amWeight
+                let timeHHmm = amTime.datestampHHmm  // ← Safe
+                
+                let record = SqlDataWeightRecord(
                     date: normalized,
                     weightType: .am,
                     kg: kg,
-                    timeHHmm: amTimeStr
+                    timeHHmm: timeHHmm
                 )
-                hasChanges = true
-                print("•Load• Updated AM weight from HealthKit: \(kg) kg for \(key)")
+                
+                updatedTracker.weightAM = record
+                // _ = await dbActor.saveWeight(record: record, oldDatePsid: record.dataweight_date_psid, oldAmpm: 0)
+                _ = await dbActor.saveWeight(record: record, oldDatePsid: record.dataweight_date_psid, oldAmpm: record.dataweight_ampm_pnid)
+                
+                do {
+                    try await HealthSynchronizer.shared.syncWeightPut(date: normalized, ampm: .am, kg: kg, time: amTime, tracker: updatedTracker)
+                    hasChanges = true
+                } catch {
+                    print("•Save• AM put error: \(error.localizedDescription)")
+                }
             } else {
-                print("•Load• No AM weight data for \(key)")
+                if updatedTracker.weightAM != nil {
+                    await deleteWeight(for: normalized, weightType: .am)
+                }
+                do {
+                    try await HealthSynchronizer.shared.syncWeightClear(date: normalized, ampm: .am)
+                    hasChanges = true
+                } catch {
+                    print("•Save• PM clear error: \(error.localizedDescription)")
+                }
             }
         }
-        // Load PM weight from HealthKit if not set
-        if updatedTracker.weightPM?.dataweight_kg ?? 0 == 0 { // *** Changed: Optional chaining ***
-            let (pmTimeStr, pmWeightStr) = await HealthSynchronizer.shared.syncWeightToShow(date: date, ampm: .pm)
-            if !pmWeightStr.isEmpty, let kg = Double(pmWeightStr), kg > 0 {
-                updatedTracker.weightPM = SqlDataWeightRecord(
+        
+        // PM
+        if let pmWeight = pmWeight, let pmTime = pmTime {
+            if pmWeight > 0 {
+                let kg = unitType == .imperial ? pmWeight / 2.204623 : pmWeight
+                let timeHHmm = pmTime.datestampHHmm  // ← Safe
+                
+                let record = SqlDataWeightRecord(
                     date: normalized,
                     weightType: .pm,
                     kg: kg,
-                    timeHHmm: pmTimeStr
+                    timeHHmm: timeHHmm
                 )
-                hasChanges = true
-                print("•Load• Updated PM weight from HealthKit: \(kg) kg for \(key)")
+                
+                updatedTracker.weightPM = record
+                //  _ = await dbActor.saveWeight(record: record, oldDatePsid: record.dataweight_date_psid, oldAmpm: 1)
+                _ = await dbActor.saveWeight(record: record, oldDatePsid: record.dataweight_date_psid, oldAmpm: record.dataweight_ampm_pnid)
+                
+                do {
+                    try await HealthSynchronizer.shared.syncWeightPut(date: normalized, ampm: .pm, kg: kg, time: pmTime, tracker: updatedTracker)
+                    hasChanges = true
+                } catch {
+                    print("•Save• PM put error: \(error.localizedDescription)")
+                }
             } else {
-                print("•Load• No PM weight data for \(key)")
-            }
-        }
-
-        // Save to database if changed
-        if hasChanges && (updatedTracker.weightAM?.dataweight_kg ?? 0 > 0 || updatedTracker.weightPM?.dataweight_kg ?? 0 > 0 || !updatedTracker.itemsDict.isEmpty) {
-            if let amRecord = updatedTracker.weightAM {
-                _ = await dbActor.saveWeight(record: amRecord, oldDatePsid: amRecord.dataweight_date_psid, oldAmpm: 0)
-            }
-            if let pmRecord = updatedTracker.weightPM {
-             _ = await dbActor.saveWeight(record: pmRecord, oldDatePsid: pmRecord.dataweight_date_psid, oldAmpm: 1)
-                        }
-                    
-            updateTrackerInArray(updatedTracker)  // Update array cache, no self.tracker
-            
-            print("•Load• Persisted tracker to database for \(key)")
-        }
-
-        let amRecord = updatedTracker.weightAM
-        let pmRecord = updatedTracker.weightPM
-
-        let amWeight = await amRecord?.dataweight_kg ?? 0 > 0 ?
-            UnitsUtility.regionalWeight(fromKg: amRecord!.dataweight_kg, toUnits: UnitsType(rawValue: unitType.rawValue) ?? .metric, toDecimalDigits: 1) ?? "" : ""
-        let pmWeight = await pmRecord?.dataweight_kg ?? 0 > 0 ?
-            UnitsUtility.regionalWeight(fromKg: pmRecord!.dataweight_kg, toUnits: UnitsType(rawValue: unitType.rawValue) ?? .metric, toDecimalDigits: 1) ?? "" : ""
-
-        let amTime = amRecord?.dataweight_time.isEmpty ?? true ? Date() :
-            Date(datestampHHmm: amRecord!.dataweight_time, referenceDate: date) ?? Date()
-        let pmTime = pmRecord?.dataweight_time.isEmpty ?? true ? Date() :
-            Date(datestampHHmm: pmRecord!.dataweight_time, referenceDate: date) ?? Date()
-
-        print("Loaded weights for \(key): AM \(amWeight), PM \(pmWeight), AM Time \(amTime.datestampHHmm), PM Time \(pmTime.datestampHHmm)")
-        return WeightEntryData(amWeight: amWeight, pmWeight: pmWeight, amTime: amTime, pmTime: pmTime)
-    }
-
-    // *** Added: Save weight with HealthKit sync ***
-    func saveWeight(for date: Date, amWeight: Double?, pmWeight: Double?, amTime: Date?, pmTime: Date?) async {
-       // let dateSid = date.datestampSid
-        
-        let normalized = Calendar.current.startOfDay(for: date)  //TBDz does this need to be Gregorian?
-       // var updatedTracker = await getTrackerOrCreate(for: date.startOfDay)
-        var updatedTracker = tracker(for: normalized)
-        let unitType = UnitType.fromUserDefaults()
-
-        print("Saving AM: \(String(describing: amWeight)), PM: \(String(describing: pmWeight)), Unit: \(unitType.rawValue), AM Time: \(amTime?.formatted(date: .omitted, time: .shortened) ?? "nil"), PM Time: \(pmTime?.formatted(date: .omitted, time: .shortened) ?? "nil")")
-
-        var hasChanges = false
-        if let amWeight = amWeight, let amTime = amTime, amWeight >= 0 {
-            print("🟢 •Save• unitType=\(unitType.rawValue), input am=\(amWeight ?? 0), pm=\(pmWeight ?? 0)")
-            let kg = unitType == .imperial ? amWeight / 2.204623 : amWeight
-            print("🟢 •Save• Calculated kgAM=\(kg)")
-            let record = SqlDataWeightRecord(date: date, weightType: .am, kg: kg, timeHHmm: amTime.datestampHHmm)
-            updatedTracker.weightAM = record
-           // await saveWeight(record: record, oldDatePsid: record.dataweight_date_psid, oldAmpm: 0)
-            _ = await dbActor.saveWeight(record: record, oldDatePsid: record.dataweight_date_psid, oldAmpm: 0)
-            if kg > 0, let amTimeDate = Date(datestampHHmm: record.dataweight_time, referenceDate: date) {
+                if updatedTracker.weightPM != nil {
+                    await deleteWeight(for: normalized, weightType: .pm)
+                }
                 do {
-                    try await HealthSynchronizer.shared.syncWeightPut(date: date, ampm: .am, kg: kg, time: amTimeDate, tracker: updatedTracker)
-                    print("•Sync• AM sync completed for \(date.datestampSid): \(kg) kg (\(kg * 2.204623) lbs)")
+                    try await HealthSynchronizer.shared.syncWeightClear(date: normalized, ampm: .pm)
+                    hasChanges = true
                 } catch {
-                    print("•Sync• AM sync error for \(date.datestampSid): \(error.localizedDescription)")
+                    print("•Save• PM clear error: \(error.localizedDescription)")
                 }
             }
-            hasChanges = true
-        }
-        if let pmWeight = pmWeight, let pmTime = pmTime, pmWeight >= 0 {
-            print("🟢 •Save• unitType=\(unitType.rawValue), input am=\(amWeight ?? 0), pm=\(pmWeight ?? 0)")
-            let kg = unitType == .imperial ? pmWeight / 2.204623 : pmWeight // Fixed: Use pmWeight
-            print("🟢 •Save• Calculated kgPM=\(kg)")
-            let record = SqlDataWeightRecord(date: date, weightType: .pm, kg: kg, timeHHmm: pmTime.datestampHHmm)
-            updatedTracker.weightPM = record
-           // await saveWeight(record: record, oldDatePsid: record.dataweight_date_psid, oldAmpm: 1)
-            _ = await dbActor.saveWeight(record: record, oldDatePsid: record.dataweight_date_psid, oldAmpm: 1)
-            if kg > 0, let pmTimeDate = Date(datestampHHmm: record.dataweight_time, referenceDate: date) {
-                do {
-                    try await HealthSynchronizer.shared.syncWeightPut(date: date, ampm: .pm, kg: kg, time: pmTimeDate, tracker: updatedTracker)
-                    print("•Sync• PM sync completed for \(date.datestampSid): \(kg) kg (\(kg * 2.204623) lbs)")
-                } catch {
-                    print("•Sync• PM sync error for \(date.datestampSid): \(error.localizedDescription)")
-                }
-            }
-            hasChanges = true
         }
         
         if hasChanges {
-            print(updatedTracker.itemsDict.values.reduce(0) { $0 + $1.datacount_count })
-            let derivedCount = ((updatedTracker.weightAM?.dataweight_kg ?? 0 > 0 ? 1 : 0) +
-                                (updatedTracker.weightPM?.dataweight_kg ?? 0 > 0 ? 1 : 0))
-            await setCountAndUpdateStreak(for: .tweakWeightTwice, count: derivedCount, date: normalized)
-            updateTrackerInArray(updatedTracker)  // Ensure cached
-            print("🟢 •Save• Derived and saved count/streak for tweakWeightTwice on \(normalized.datestampSid): \(derivedCount)")
-            print(updatedTracker.itemsDict.values.reduce(0) { $0 + $1.datacount_count })
+            // ONLY SAVE TO DB ONCE
+            updateTrackerInArray(updatedTracker)
             
+            // SYNC TO HK
+            if let am = updatedTracker.weightAM {
+                try? await HealthSynchronizer.shared.syncWeightPut(date: normalized, ampm: .am, kg: am.dataweight_kg, time: amTime ?? normalized, tracker: updatedTracker)
+            }
+            if let pm = updatedTracker.weightPM {
+                try? await HealthSynchronizer.shared.syncWeightPut(date: normalized, ampm: .pm, kg: pm.dataweight_kg, time: pmTime ?? normalized, tracker: updatedTracker)
+            }
+            
+            let derivedCount = (updatedTracker.weightAM != nil ? 1 : 0) + (updatedTracker.weightPM != nil ? 1 : 0)
+            await setCountAndUpdateStreak(for: .tweakWeightTwice, count: derivedCount, date: normalized)
         }
-//            self.trackers = trackers.filter { !Calendar.current.isDate($0.date, inSameDayAs: date) } + [updatedTracker]
-//            NotificationCenter.default.post(name: .mockDBUpdated, object: nil) // Ensure notification  TBDz not sure if needed?
-//            print("•Save• Tracker updated for \(dateSid)")
-//        } else {
-//            print("•Save• No changes to save for \(dateSid)")
-//        }
     }
-
-    // *** Added: Update pending weights ***
-    func updatePendingWeights(for date: Date, amWeight: String, pmWeight: String, amTime: Date, pmTime: Date) async {
-        
-        let key = date.datestampSid
-        let existing = pendingWeights[key] ?? PendingWeight(amWeight: "", pmWeight: "", amTime: Date(), pmTime: Date())
-        let newAMWeight = amWeight.isEmpty ? existing.amWeight : amWeight
-        let newPMWeight = pmWeight.isEmpty ? existing.pmWeight : pmWeight
-        let newAMTime = amWeight.isEmpty ? existing.amTime : amTime
-        let newPMTime = pmWeight.isEmpty ? existing.pmTime : pmTime
-        
-        if !newAMWeight.isEmpty || !newPMWeight.isEmpty {
-            pendingWeights[key] = PendingWeight(amWeight: newAMWeight, pmWeight: newPMWeight, amTime: newAMTime, pmTime: newPMTime)
+    
+    func deleteWeight(for date: Date, weightType: DataWeightType) async {
+        let normalized = DateUtilities.gregorianCalendar.startOfDay(for: date)  // ← CRITICAL
+        let dateStr: String = normalized.datestampSid  // Now guaranteed Gregorian
+        let ampmPnid = weightType == .am ? 0 : 1
+        //let prefix = "\(dateStr) \(ampmPnid)"
+        //  print("DELETE •VM• Prefix: '\(prefix)'")
+        print("🟢 deleteWeight  \(dateStr) , ampmPnid: \(ampmPnid)")
+        let success = await dbActor.deleteWeight(datePsid: dateStr, ampm: ampmPnid)
+        if success {
+            print("Deleted \(weightType.typeKey) weight from DB")
+            var tracker = self.tracker(for: normalized)
+            if weightType == .am { tracker.weightAM = nil } else {
+                tracker.weightPM = nil
+            }
+            updateTrackerInArray(tracker)
+            notifyDBUpdated(for: normalized)
+            
+            // Also clear HK
+            try? await HealthSynchronizer.shared.syncWeightClear(date: normalized, ampm: weightType)
         } else {
-            pendingWeights.removeValue(forKey: date.datestampSid)
+            print("Failed to delete - but pending cleared will not resave")
         }
     }
-
+    
+    // *** Added: Update pending weights ***
+    
+    func updatePendingWeights(for date: Date, amWeight: String, pmWeight: String, amTime: Date, pmTime: Date) async {
+        let key = date.datestampSid
+        
+        // Get current pending (if any)
+        let current = pendingWeights[key]
+        
+        // Merge: use new value if provided (non-empty for weights), otherwise keep existing
+        let mergedAMWeight = !amWeight.isEmpty ? amWeight : (current?.amWeight ?? "")
+        let mergedPMWeight = !pmWeight.isEmpty ? pmWeight : (current?.pmWeight ?? "")
+        let mergedAMTime = amWeight.isEmpty ? (current?.amTime ?? amTime) : amTime
+        let mergedPMTime = pmWeight.isEmpty ? (current?.pmTime ?? pmTime) : pmTime
+        
+        // Remove if both weights empty
+        if mergedAMWeight.isEmpty && mergedPMWeight.isEmpty {
+            pendingWeights.removeValue(forKey: key)
+            print("•Pending• Removed entry for \(key) (both empty after merge)")
+        } else {
+            pendingWeights[key] = PendingWeight(
+                amWeight: mergedAMWeight,
+                pmWeight: mergedPMWeight,
+                amTime: mergedAMTime,
+                pmTime: mergedPMTime
+            )
+            print("•Pending• Merged for \(key): AM='\(mergedAMWeight)', PM='\(mergedPMWeight)'")
+        }
+    }
+    
     // *** Added: Save pending weights ***
     func savePendingWeights() async {
-       // print("savePendingWeights called with: \(pendingWeights.map { ($0.key, $0.value.amWeight, $0.value.pmWeight) })")
         for (dateSid, weights) in pendingWeights {
-            let amValue = Double(weights.amWeight.filter { !$0.isWhitespace })
-            let pmValue = Double(weights.pmWeight.filter { !$0.isWhitespace })
-            print("Processing \(dateSid): AM \(String(describing: amValue)), PM \(String(describing: pmValue))")
-            if amValue != nil || pmValue != nil {
-                guard let date = Date(datestampSid: dateSid) else {
-                    print("Invalid dateSid: \(dateSid), skipping save")
-                    continue
-                }
-                await saveWeight(
-                    for: date,
-                    amWeight: amValue,
-                    pmWeight: pmValue,
-                    amTime: weights.amTime,
-                    pmTime: weights.pmTime
-                )
-                print("Called saveWeight for \(dateSid)")
-            } else {
-                print("No valid weights for \(dateSid), skipping")
+            let amValue = Double(weights.amWeight.filter { !$0.isWhitespace }) ?? 0
+            let pmValue = Double(weights.pmWeight.filter { !$0.isWhitespace }) ?? 0
+            guard let date = Date(datestampSid: dateSid) else { continue }
+            
+            // Skip if value <=0 or time is distantPast (cleared marker)
+            if amValue > 0 && weights.amTime > Date.distantPast {
+                await saveWeight(for: date, amWeight: amValue, pmWeight: nil, amTime: weights.amTime, pmTime: nil)
+            }
+            if pmValue > 0 && weights.pmTime > Date.distantPast {
+                await saveWeight(for: date, amWeight: nil, pmWeight: pmValue, amTime: nil, pmTime: weights.pmTime)
             }
         }
         pendingWeights.removeAll()
     }
-
-    func loadTracker(forDate date: Date) async {
+    
+    func loadTracker(forDate date: Date, isSilent: Bool = false) async {
+        // print("START LOAD: \(date.ISO8601Format().prefix(10))")
         let calendar = DateUtilities.gregorianCalendar
         let normalizedDate = calendar.startOfDay(for: date)
-//        guard !isLoading, lastLoadedDate == nil || !Calendar.current.isDate(lastLoadedDate!, inSameDayAs: normalizedDate) else {
-//            return
-//        }
-//        isLoading = true
-//        error = nil
-//        tracker = await dbActor.fetchDailyTracker(forDate: normalizedDate)
-//        lastLoadedDate = date
-//        isLoading = false
-        if trackers.contains(where: { calendar.isDate($0.date, inSameDayAs: normalizedDate) }) { return }  // Already cached
+        
+        // Early exit if already cached
+        if trackers.contains(where: { calendar.isDate($0.date, inSameDayAs: normalizedDate) }) {
+            return
+        }
+        
         isLoading = true
-        let fetched = await dbActor.fetchDailyTracker(forDate: normalizedDate)
-        //trackers.append(fetched)
-        updateTrackerInArray(fetched)  // Use replace helper instead of append
-            print("🟢 •Load• Updated trackers.count: \(trackers.count), sum for \(normalizedDate.datestampSid): \(tracker(for: normalizedDate).itemsDict.values.reduce(0) { $0 + $1.datacount_count })")
-        print("🟢 •Load• Cached trackers.count after append: \(trackers.count)")
+        
+        // 1. Start with FULL default dict (all types, count=0)
+        var fullItemsDict = await SqlDailyTracker.createItemsDict(for: normalizedDate)
+        
+        // 2. Fetch only the REAL records from DB
+        let fetchedTracker = await dbActor.fetchDailyTracker(forDate: normalizedDate)
+        
+        // 3. Overwrite defaults with real data
+        for (type, record) in fetchedTracker.itemsDict {
+            fullItemsDict[type] = record
+        }
+        
+        // 4. Build final tracker
+        let finalTracker = SqlDailyTracker(
+            date: normalizedDate,
+            itemsDict: fullItemsDict,
+            weightAM: fetchedTracker.weightAM,
+            weightPM: fetchedTracker.weightPM
+        )
+        
+        // 5. Cache and notify
+        updateTrackerInArray(finalTracker)
+        
+        //        if !isSilent {
+        //                print("•Load• Loaded tracker for \(normalizedDate.datestampSid): itemsDict.count = \(finalTracker.itemsDict.count), tweakSum = \(finalTracker.itemsDict.filter { TweakEntryViewModel.rowTypeArray.contains($0.key) }.values.reduce(0) { $0 + $1.datacount_count })")
+        //            }
+        
         isLoading = false
+        
+        if !isSilent {
+            await MainActor.run {
+                NotificationCenter.default.post(name: .mockDBUpdated, object: normalizedDate)
+            }
+        }
     }
-
+    
     func saveWeight(record: SqlDataWeightRecord, oldDatePsid: String?, oldAmpm: Int?) async {
         let success = await dbActor.saveWeight(record: record, oldDatePsid: oldDatePsid, oldAmpm: oldAmpm)
         if success {
@@ -342,7 +397,7 @@ class SqlDailyTrackerViewModel: ObservableObject {
             error = "Failed to save weight for \(record.idString)"
         }
     }
-
+    
     func saveCount(record: SqlDataCountRecord, oldDatePsid: String?, oldTypeNid: Int?) async {
         let success = await dbActor.saveCount(record: record, oldDatePsid: oldDatePsid, oldTypeNid: oldTypeNid)
         if success {
@@ -351,34 +406,34 @@ class SqlDailyTrackerViewModel: ObservableObject {
             error = "Failed to save count for \(record.idString)"
         }
     }
-
-//    func getCount(for item: DataCountType, date: Date = Date()) -> Int {
-//        tracker(for: date.startOfDay).itemsDict[type]?.datacount_count ?? 0
-//    }
+    
+    //    func getCount(for item: DataCountType, date: Date = Date()) -> Int {
+    //        tracker(for: date.startOfDay).itemsDict[type]?.datacount_count ?? 0
+    //    }
     
     func getCount(for type: DataCountType, date: Date) -> Int {
         tracker(for: date).itemsDict[type]?.datacount_count ?? 0
     }
-
+    
     func setCount(for type: DataCountType, count: Int, date: Date) async {
         let calendar = DateUtilities.gregorianCalendar
         let normalized = calendar.startOfDay(for: date)
         var mutableTracker = tracker(for: normalized)  // Gets or creates/caches
-                await mutableTracker.setCount(typeKey: type, count: count)
-                if let updatedRecord = mutableTracker.itemsDict[type] {
-                    let success = await dbActor.saveCount(
-                        record: updatedRecord,
-                        oldDatePsid: updatedRecord.datacount_date_psid,
-                        oldTypeNid: type.nid
-                    )
-                    if success {
-                        updateTrackerInArray(mutableTracker)
-                    } else {
-                        error = "Failed to save count"
-                    }
-                }
+        await mutableTracker.setCount(typeKey: type, count: count)
+        if let updatedRecord = mutableTracker.itemsDict[type] {
+            let success = await dbActor.saveCount(
+                record: updatedRecord,
+                oldDatePsid: updatedRecord.datacount_date_psid,
+                oldTypeNid: type.nid
+            )
+            if success {
+                updateTrackerInArray(mutableTracker)
+            } else {
+                error = "Failed to save count"
+            }
         }
-
+    }
+    
     func getWeight(for weightType: DataWeightType) -> Double {
         switch weightType {
         case .am:
@@ -387,7 +442,7 @@ class SqlDailyTrackerViewModel: ObservableObject {
             return tracker?.weightPM?.dataweight_kg ?? 0.0
         }
     }
-
+    
     func setWeight(for weightType: DataWeightType, kg: Double) async {
         guard kg > 0, kg < 500, let tracker = tracker else {
             error = "Please enter a valid weight (0 < weight < 500 kg)"
@@ -413,24 +468,27 @@ class SqlDailyTrackerViewModel: ObservableObject {
             oldAmpm: weightType == .am ? 0 : 1
         )
     }
-
+    
     func fetchTrackers(forMonth date: Date) async -> [SqlDailyTracker] {
         let trackers = await dbActor.fetchTrackers(forMonth: date)
         print("🟢 •VM• Fetched \(trackers.count) trackers for month \(date.datestampSid): \(trackers.map { "\($0.date.datestampSid): AM=\($0.weightAM?.dataweight_kg ?? 0) kg, PM=\($0.weightPM?.dataweight_kg ?? 0) kg" })")
         return trackers
     }
-
+    
     func fetchTrackers() async -> [SqlDailyTracker] {
         let trackers = await dbActor.fetchTrackers()
         print("🟢 •VM• Fetched \(trackers.count) trackers: \(trackers.map { "\($0.date.datestampSid): AM=\($0.weightAM?.dataweight_kg ?? 0) kg, PM=\($0.weightPM?.dataweight_kg ?? 0) kg" })")
         return trackers
     }
-
+    
     func fetchAllTrackers() async -> [SqlDailyTracker] {
-        let trackers = await dbActor.fetchAllTrackers()
-        print("SqlDailyTrackerViewModel fetchAllTrackers: \(trackers.map { "\($0.date.datestampSid): dozeBeans=\($0.itemsDict[.dozeBeans]?.datacount_count ?? 0), otherVitaminB12=\($0.itemsDict[.otherVitaminB12]?.datacount_count ?? 0)" })")
-        print("🟢 •VM• Fetched all \(trackers.count) trackers: \(trackers.map { "\($0.date.datestampSid): AM=\($0.weightAM?.dataweight_kg ?? 0) kg, PM=\($0.weightPM?.dataweight_kg ?? 0) kg" })")
-               return trackers
+        let fetchedTrackers = await dbActor.fetchAllTrackers()
+        //        await MainActor.run {
+        //                    self.trackers = fetchedTrackers // Update @Published property
+        //                }
+        //        print("SqlDailyTrackerViewModel fetchAllTrackers: \(trackers.map { "\($0.date.datestampSid): dozeBeans=\($0.itemsDict[.dozeBeans]?.datacount_count ?? 0), otherVitaminB12=\($0.itemsDict[.otherVitaminB12]?.datacount_count ?? 0)" })")
+        //        print("🟢 •VM• Fetched all \(trackers.count) trackers: \(trackers.map { "\($0.date.datestampSid): AM=\($0.weightAM?.dataweight_kg ?? 0) kg, PM=\($0.weightPM?.dataweight_kg ?? 0) kg" })")
+        return fetchedTrackers
     }
 }
 
@@ -450,6 +508,7 @@ extension SqlDailyTrackerViewModel {
         } else {
             await updateStreakIncomplete(for: item, date: normalizedDate, db: db)
         }
+        notifyDBUpdated(for: normalizedDate)
     }
     
     private func updateStreakCompleted(for item: DataCountType, date: Date, db: SqliteDatabaseActor) async {
@@ -676,11 +735,129 @@ extension SqlDailyTrackerViewModel {
     static let mockDBTrigger = NotificationCenter.Publisher(center: .default, name: .mockDBUpdated, object: nil)
 }
 
-//for testing streaks
-//extension SqlDailyTrackerViewModel {
-//    func resetStreaks(for item: DataCountType, date: Date) async {
-//        let db = SqliteDatabaseActor()
-//        await db.resetStreaks(for: item, date: date)
-//        await loadTracker(forDate: date)
-//    }
-//}
+// MARK: - Test Data Generation
+extension SqlDailyTrackerViewModel {
+    func generateHistoryTestData(days: Int) async throws {
+        print("    🟢 •GEN• baseWeight 65.0 kg, 143.0 lbs")
+        let calendar = Calendar.current
+        let today = Date()
+        
+        // Start from today at midnight
+        var dateComponents = DateComponents(
+            calendar: calendar,
+            year: today.year, month: today.month, day: today.day,
+            hour: 0, minute: 0, second: 0
+        )
+        var date = calendar.date(from: dateComponents)!
+        
+        // *** SMART: Check existing data ***
+        let existingDates = await dbActor.fetchDistinctDates()
+        let existingCount = existingDates.count
+        print("    🟢 •GEN• Found \(existingCount) existing days")
+        
+        let weightBase: Double = 65.0
+        let weightAmplitude: Double = 2.0
+        let weightCycleStep = (2 * Double.pi) / (30 * 2)
+        
+        let nToLog = 5
+        print("    🟢 •GEN• Will generate \(days) days (skipping \(existingCount) existing)")
+        
+        var generatedCount = 0
+        
+        for i in 0..<days {
+            let normalizedDate = calendar.startOfDay(for: date)
+            let dateSid = normalizedDate.datestampSid
+            
+            // *** SKIP if already exists ***
+            if existingDates.contains(dateSid) {
+                print("    🟢 •GEN• Skipping existing: \(dateSid)")
+                dateComponents = DateComponents(day: -1)
+                date = calendar.date(byAdding: dateComponents, to: date)!
+                continue
+            }
+            
+            // --- COUNT RECORDS ---
+            for countType in DataCountType.allCases {
+                let countRecord = SqlDataCountRecord(
+                    date: normalizedDate,
+                    countType: countType,
+                    count: 1,
+                    streak: 0
+                )
+                _ = await saveCount(
+                    record: countRecord,
+                    oldDatePsid: countRecord.datacount_date_psid,
+                    oldTypeNid: countType.nid
+                )
+            }
+            
+            // --- WEIGHT RECORDS ---
+            let stepByAM = DateComponents(
+                hour: Int.random(in: 7...8),
+                minute: Int.random(in: 1...59)
+            )
+            let dateAM = calendar.date(byAdding: stepByAM, to: date)!
+            
+            let stepByPM = DateComponents(
+                hour: Int.random(in: 21...23),
+                minute: Int.random(in: 1...59)
+            )
+            let datePM = calendar.date(byAdding: stepByPM, to: date)!
+            
+            let x = Double(i)
+            let weightAM = weightBase + weightAmplitude * sin(x * weightCycleStep)
+            let weightPM = weightBase - weightAmplitude * sin(x * weightCycleStep)
+            
+            let amRecord = SqlDataWeightRecord(
+                date: normalizedDate,
+                weightType: .am,
+                kg: weightAM,
+                timeHHmm: dateAM.datestampHHmm
+            )
+            let pmRecord = SqlDataWeightRecord(
+                date: normalizedDate,
+                weightType: .pm,
+                kg: weightPM,
+                timeHHmm: datePM.datestampHHmm
+            )
+            
+            _ = await saveWeight(record: amRecord, oldDatePsid: amRecord.dataweight_date_psid, oldAmpm: 0)
+            _ = await saveWeight(record: pmRecord, oldDatePsid: pmRecord.dataweight_date_psid, oldAmpm: 1)
+            
+            // Log first few NEW entries
+            if generatedCount < nToLog {
+                let weightAmStr = String(format: "%.2f", weightAM)
+                let weightPmStr = String(format: "%.2f", weightPM)
+                print("        \(dateSid) [am] \(dateAM.datestampHHmm) \(weightAmStr)kg [pm] \(datePM.datestampHHmm) \(weightPmStr)kg")
+            }
+            // generatedDates.append(normalizedDate)
+            generatedCount += 1
+            dateComponents = DateComponents(day: -1)
+            date = calendar.date(byAdding: dateComponents, to: date)!
+        }
+        
+        // Refresh local cache
+        await loadTrackersForTest(forMonth: Date())
+        //print("    🟢 •GEN• COMPLETED: \(generatedCount) NEW days + \(existingCount) existing = \(generatedCount + existingCount) total")
+        
+        print("    GEN• SWIPE NOW — DATA IS LIVE!")
+    }
+    
+    private func notifyDBUpdated(for date: Date) {
+        Task { @MainActor in
+            NotificationCenter.default.post(name: .mockDBUpdated, object: date)
+        }
+    }  //private fuc
+    
+    func loadTrackersForTest(forMonth date: Date) async {
+        let calendar = DateUtilities.gregorianCalendar
+        let fetched = await dbActor.fetchTrackers(forMonth: date)
+        await MainActor.run {
+            // Merge without duplicates
+            for newTracker in fetched {
+                trackers = trackers.filter { !calendar.isDate($0.date, inSameDayAs: newTracker.date) } + [newTracker]
+            }
+            print("🟢 •VM• Loaded \(fetched.count) trackers for month \(date.datestampSid)")
+        }
+    }
+}

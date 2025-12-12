@@ -4,6 +4,7 @@
 //
 //  Copyright © 2025 Nutritionfacts.org. All rights reserved.
 //
+// swiftlint:disable nesting
 
 import Foundation
 

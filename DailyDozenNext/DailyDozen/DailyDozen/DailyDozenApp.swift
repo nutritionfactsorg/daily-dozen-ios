@@ -42,7 +42,7 @@ struct DailyDozenApp: App {
         WindowGroup {
             
             ContentView()
-                .environmentObject(SqlDailyTrackerViewModel.shared)
+                //.environmentObject(SqlDailyTrackerViewModel.shared)
                 .environment(\.dataCountAttributes, .shared)
         }
         .onChange(of: scenePhase) { _, newPhase in

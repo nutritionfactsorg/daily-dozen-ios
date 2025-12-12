@@ -2,6 +2,7 @@
 //  SQLiteStatus.swift
 //  SQLiteFramework
 //
+////TBDz not used in current version?  Kept for migration
 
 import Foundation
 

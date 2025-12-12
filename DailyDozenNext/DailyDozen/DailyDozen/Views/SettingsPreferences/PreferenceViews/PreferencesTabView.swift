@@ -60,7 +60,12 @@ struct PreferencesTabView: View {
                     AnalyticsPreferenceView()
                     .padding(10)
                 } //End Enable Analytics Section
+                Divider()
                 
+                //Generate data for testing !!TBDz not for production
+                Section("🧪 Test Data") {
+                  GenerateHistoryTestDataView()
+                                }
                 Spacer()
                 }
                 .navigationTitle(Text("navtab.preferences")) //!!Needs localization comment
@@ -71,7 +76,7 @@ struct PreferencesTabView: View {
                 .onAppear {
                     canNotify = UserDefaults.standard.bool(forKey: SettingsKeys.reminderCanNotify)
         #if DEBUG
-                    print(UserDefaults.standard.dictionaryRepresentation())
+                  //  print(UserDefaults.standard.dictionaryRepresentation())
         #endif
                 }
             }

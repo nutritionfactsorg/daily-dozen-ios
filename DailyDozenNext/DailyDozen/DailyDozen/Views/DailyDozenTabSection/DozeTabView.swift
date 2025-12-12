@@ -8,13 +8,19 @@
 import SwiftUI
 
 struct DozeTabView: View {
-    @EnvironmentObject var viewModel: SqlDailyTrackerViewModel
+   // @EnvironmentObject var viewModel: SqlDailyTrackerViewModel
+    private let viewModel = SqlDailyTrackerViewModel.shared
     var streakCount = 3000 // Placeholder
     @State private var isShowingSheet = false
     @State private var selectedDate = Date()
     @State private var currentIndex = 0
     @State private var dateRange: [Date] = []
     @State private var isLoadingDate = false // Prevent rapid loadTracker calls
+    // @State private var sharedScrollOffset: CGFloat = 0
+    @State private var scrollCoordinator = ScrollPositionCoordinator()
+    
+    @State private var isDataReady = false  // 👈 NEW: Gatekeeper
+    @State private var preloadTask: Task<Void, Never>?  // 👈 NEW: Guard re-run
     
     let direction: Direction = .leftToRight
     
@@ -76,69 +82,124 @@ struct DozeTabView: View {
         }
     }
     
+    private func preloadAllData() async {
+        extendDateRangeIfNeeded(for: currentIndex)
+        
+        let calendar = Calendar.current
+        let today = calendar.startOfDay(for: Date())
+        let startIndex = dateRange.firstIndex(where: { calendar.isDate($0, inSameDayAs: today) }) ?? 0
+        let preloadStart = max(0, startIndex - 30)
+        let preloadEnd = min(dateRange.count - 1, startIndex + 30)
+        
+        // : Sequential = DB speed**
+        for index in preloadStart...preloadEnd {
+            await viewModel.loadTracker(forDate: dateRange[index], isSilent: true)
+        }
+        
+        print("🟢 •Doze• READY (\(preloadEnd - preloadStart + 1) days preloaded)")
+    }
+    
     var body: some View {
         NavigationStack {
-            ZStack(alignment: .bottom) {
-                VStack {
-                    DozeHeaderView(isShowingSheet: $isShowingSheet, currentDate: dateRange.isEmpty ? Date() : dateRange[currentIndex])
-                    if viewModel.isLoading {
+            Group {
+                if !isDataReady {
+                    ZStack {
+                        Color.black.ignoresSafeArea()
                         ProgressView()
-                    } else if let error = viewModel.error {
-                        Text(error)
-                            .foregroundColor(.red)
-                    } else {
-                        TabView(selection: $currentIndex) {
-                            ForEach(dateRange.indices, id: \.self) { index in
-                                DozeTabPageView(date: dateRange[index])
-                                    .tag(index)
-                                    .environmentObject(viewModel)
-                            }
-                        }
-                        .tabViewStyle(.page(indexDisplayMode: .never))
-                        .frame(minHeight: 300, maxHeight: .infinity)
-                        .onChange(of: currentIndex) { _, newIndex in
-//                            guard !isLoadingDate else { return }
-//                            isLoadingDate = true
-//                            selectedDate = dateRange[newIndex]
-//                            extendDateRangeIfNeeded(for: newIndex)
-                            
-                                Task {
-                                    await viewModel.loadTracker(forDate: selectedDate)
-                                        // Optional: Preload adjacent for smoother swipes
-                                        if newIndex > 0 { await viewModel.loadTracker(forDate: dateRange[newIndex - 1]) }
-                                        if newIndex < dateRange.count - 1 { await viewModel.loadTracker(forDate: dateRange[newIndex + 1]) }
+                            .progressViewStyle(CircularProgressViewStyle(tint: .brandGreen))
+                            .scaleEffect(1.5)
+                    } //ZStack
+                } else {
+                    ZStack {
+                        VStack {
+                            DozeHeaderView(isShowingSheet: $isShowingSheet, currentDate: dateRange.isEmpty ? Date() : dateRange[currentIndex])
+                            //                        if viewModel.isLoading {
+                            //                            ProgressView()
+                            //                        } else if let error = viewModel.error {
+                            //                            Text(error)
+                            //                                .foregroundColor(.red)
+                            //                        } else {
+                            TabView(selection: $currentIndex) {
+                                ForEach(dateRange.indices, id: \.self) { index in
+                                    DozeTabPageView(coordinator: scrollCoordinator, date: dateRange[index])  // ← Pass
+                                        .tag(index)
+                                        .environmentObject(viewModel)
                                 }
-                               // isLoadingDate = false
-                            
-                        } //onChange
-                    }
-                    Spacer()
+                            }
+                            .tabViewStyle(.page(indexDisplayMode: .never))
+                            .frame(minHeight: 300, maxHeight: .infinity)
+                            .onChange(of: currentIndex) { _, newIndex in
+                                let newDate = dateRange[newIndex]
+                                selectedDate = newDate
+                                extendDateRangeIfNeeded(for: newIndex)
+                                // print("Swiped to index \(newIndex), date \(selectedDate), current shared offset: \(sharedScrollOffset)")
+                                Task {
+                                    let preloadStart = max(0, currentIndex - 15)  // Wider backward preload
+                                    let preloadEnd = min(dateRange.count - 1, currentIndex + 5)
+                                    for index in preloadStart...preloadEnd {
+                                        await viewModel.loadTracker(forDate: dateRange[index])
+                                    }
+                                }
+                                // isLoadingDate = false
+                                
+                            } //onChange
+                            //  }  //Else
+                            Spacer()
+                        }
+                        .background(Color.white)
+                        .safeAreaInset(edge: .bottom, spacing: 0) {
+                            if !isToday {
+                                DozeBackToTodayButtonView(isToday: isToday, action: goToToday)
+                                    .background(Color.white)  // Match background to avoid transparency
+                            }
+                        }   //safeArea
+                        //                DozeBackToTodayButtonView(isToday: isToday, action: goToToday)
+                        //                    .padding(.bottom, 0)
+                        //                    .background(Color.white.ignoresSafeArea(edges: .bottom))
+                    } //ZStack
+                } //else
+            } //Group
+         //NavStack
+                
+                .background(Color.white)
+                .sheet(isPresented: $isShowingSheet) {
+                    DatePickerSheetView(selectedDate: $selectedDate, dateRange: $dateRange, currentIndex: $currentIndex)
+                        .presentationDetents([.medium])
                 }
                 
-                DozeBackToTodayButtonView(isToday: isToday, action: goToToday)
-                    .padding(.bottom, 0)
-                    .background(Color.white.ignoresSafeArea(edges: .bottom))
-            }
-            .background(Color.white)
-            .sheet(isPresented: $isShowingSheet) {
-                DatePickerSheetView(selectedDate: $selectedDate, dateRange: $dateRange, currentIndex: $currentIndex)
-                    .presentationDetents([.medium])
-            }
-            .onAppear {
-                extendDateRangeIfNeeded(for: currentIndex)
-                Task {
-                    for index in max(0, currentIndex - 5)...min(dateRange.count - 1, currentIndex + 5) {
-                        await viewModel.loadTracker(forDate: dateRange[index])
-                    }
-                }
-            }
-            .navigationTitle(Text("navtab.doze"))
-            .navigationBarTitleDisplayMode(.inline)
-            .toolbarBackground(.visible, for: .navigationBar)
-            .toolbarBackground(.brandGreen, for: .navigationBar)
+                //            .onAppear {
+                //                extendDateRangeIfNeeded(for: currentIndex)
+                //                Task {
+                //                    for index in max(0, currentIndex - 5)...min(dateRange.count - 1, currentIndex + 5) {
+                //                        await viewModel.loadTracker(forDate: dateRange[index])
+                //                    }
+                //                }
+                //            }
+                
+//                .onAppear {
+//                    print("🟢 •Doze• Launching...")
+//                    
+//                    guard preloadTask == nil else { return }  // No re-run**
+//                    
+//                    preloadTask = Task {
+//                        await preloadAllData()
+//                        await MainActor.run { isDataReady = true }
+//                        print("🟢 •Doze• **READY** (preloaded \(dateRange.count) days)")
+//                    }
+//                }
+                .navigationTitle(Text("navtab.doze"))
+                .navigationBarTitleDisplayMode(.inline)
+                .toolbarBackground(.visible, for: .navigationBar)
+                .toolbarBackground(.brandGreen, for: .navigationBar)
+                .task {
+                            print("🟢 •Doze• Launching...")
+                            await preloadAllData()
+                            isDataReady = true
+                            print("🟢 •Doze• **READY** (preloaded \(dateRange.count) days)")
+                        }
+           } //NavStack
         }
     }
-}
 
 #Preview {
     DozeTabView()

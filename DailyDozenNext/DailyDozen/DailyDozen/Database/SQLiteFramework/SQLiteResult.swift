@@ -3,6 +3,8 @@
 //  SQLiteFramework
 //
 
+//TBDz not used in current version?  Kept for migration
+
 import Foundation
 
 /// SQLiteResult class provides an abstract interface for accessing data

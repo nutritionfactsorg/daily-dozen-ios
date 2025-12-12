@@ -7,35 +7,6 @@
 
 import SwiftUI
 
-struct DozeHeaderViewWAS: View {
-   
-        @Binding var isShowingSheet: Bool
-        
-        var body: some View {
-            VStack {
-                Button(action: {
-                    isShowingSheet.toggle()
-                }, label: {
-                    Text("Select Date")
-                        .frame(width: 300, height: 30, alignment: .center)
-                })
-                .buttonStyle(.borderedProminent)
-                .tint(.brandGreen)
-                .padding(5)
-                
-                HStack {
-                    Text("doze_entry_header")
-                    Spacer()
-                    Text("4/24")
-                    // TBDz, NYI
-                   
-                    Image("ic_stat")
-                }
-                .padding(10)
-            }
-        }
-}
-
 struct DozeHeaderView: View {
     @Binding var isShowingSheet: Bool
     let currentDate: Date // Pass the current date from ContentView

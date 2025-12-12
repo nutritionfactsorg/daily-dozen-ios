@@ -46,27 +46,3 @@ extension View {
         modifier(ChartXScaleModifier(domain: domain))
     }
 }
-
-//Custom modifier for iOS 16/17 compatibility
-//struct OnChangeDateModifier: ViewModifier {
-//    let date: Date
-//    let action: (Date) -> Void
-//    
-//    @ViewBuilder
-//    func body(content: Content) -> some View {
-//        if #available(iOS 17.0, *) {
-//            content
-//                .onChange(of: date, initial: true) { _, newValue in
-//                    action(newValue)
-//                }
-//        } else {
-//            content
-//                .onChange(of: date) { newValue in
-//                    action(newValue)
-//                }
-//                .onAppear {
-//                    action(date)
-//                }
-//        }
-//    }
-//}

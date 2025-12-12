@@ -33,7 +33,7 @@ struct DatePickerSheetView: View {
                 dateRange.append(contentsOf: newDates)
             }
             if selectedDate > today {
-                 selectedDate = today
+                selectedDate = today
             }
         }
     }
@@ -61,22 +61,22 @@ struct DatePickerSheetView: View {
             }
         }
         // Update currentIndex to today’s position
-                if let todayIndex = dateRange.firstIndex(where: { calendar.isDate($0, inSameDayAs: today) }) {
-                    currentIndex = todayIndex
-                }
-            }
+        if let todayIndex = dateRange.firstIndex(where: { calendar.isDate($0, inSameDayAs: today) }) {
+            currentIndex = todayIndex
+        }
+    }
     
     var body: some View {
         VStack(spacing: 5) {
-         //   Spacer() //Pushes content to bottom
+            //   Spacer() //Pushes content to bottom
             VStack {
                 HStack {
                     Button("Cancel") {
-                        //  isShowingSheet = false
+                        
                         dismiss()
                     }
                     .foregroundColor(.blue)
-                  //  .padding(.horizontal)
+                    //  .padding(.horizontal)
                     Spacer()
                     Button("Today") {
                         // selectedDate = Date()
@@ -84,10 +84,10 @@ struct DatePickerSheetView: View {
                         dismiss()
                     }
                     .foregroundColor(.blue)
-                   // .padding(.horizontal)
-                     Spacer()
+                    // .padding(.horizontal)
+                    Spacer()
                     Button("Done") {
-                        // isShowingSheet = false
+                        
                         // TBDz  action you want with selectedDate here
                         print("Selected date: \(selectedDate)")
                         // Extend date range if needed and update currentIndex
@@ -109,7 +109,7 @@ struct DatePickerSheetView: View {
                     displayedComponents: [.date]
                 )
                 .datePickerStyle(.wheel)
-              //  .frame(maxHeight: UIScreen.main.bounds.height / 3)
+                //  .frame(maxHeight: UIScreen.main.bounds.height / 3)
                 .labelsHidden()  //needed to center
                 
             }

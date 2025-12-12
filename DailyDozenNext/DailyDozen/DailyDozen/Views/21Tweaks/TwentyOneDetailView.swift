@@ -36,21 +36,21 @@ struct TwentyOneDetailView: View {
                             Text(tweakDataItemDetail.activity.imperial)
                             Spacer()
                         }
-                                .padding(5)
-                                .background(.white)
-                                .cornerRadius(5)
-                            //TBDz check color
-                                .shadow(color: .nfGray50.opacity(1.0), radius: 5, x: 1, y: 1)
-                            //.listRowSeparator(.hidden)
-                            //                            }
-                            // .listRowSpacing(0.0)
-                            // .listStyle(.plain)
+                        .padding(5)
+                        .background(.white)
+                        .cornerRadius(5)
+                        //TBDz check color
+                        .shadow(color: .nfGray50.opacity(1.0), radius: 5, x: 1, y: 1)
+                        //.listRowSeparator(.hidden)
+                        //                            }
+                        // .listRowSpacing(0.0)
+                        // .listStyle(.plain)
                         
                     } //Section
                     header: {
                         VStack(alignment: .leading) {
                             Text("tweak_detail_section_activity")
-                               // .bold()
+                            // .bold()
                                 .font(.title2)
                                 .fontWeight(.bold)
                                 .foregroundColor(.black)
@@ -63,14 +63,14 @@ struct TwentyOneDetailView: View {
                             Text(tweakDataItemDetail.explanation)
                             Spacer()
                         }
-//
-                            .padding(5)
-                            .background(.white)
-                            .cornerRadius(5)
-                            //TBDz check color
-                            .shadow(color: .nfGray50.opacity(1.0), radius: 5, x: 1, y: 1)
-                            
-                    //    }
+                        //
+                        .padding(5)
+                        .background(.white)
+                        .cornerRadius(5)
+                        //TBDz check color
+                        .shadow(color: .nfGray50.opacity(1.0), radius: 5, x: 1, y: 1)
+                        
+                        //    }
                     }//Section
                     header: {
                         Text("tweak_detail_section_description")
@@ -84,13 +84,13 @@ struct TwentyOneDetailView: View {
                 .listStyle(.plain)
                 .navigationTitle(dataCountTypeItem.headingDisplay) //!!GTDz previous version did not have a title
                 .navigationBarTitleDisplayMode(.inline)
-//                .toolbar {
-//                    ToolbarItem(placement: .navigationBarTrailing) {
-//                        Link(destination: LinksService.shared.link(topic: tweakDataItemDetail.topic)) {
-//                            Text("videos.link.label", comment: "Latest Videos")
-//                        }
-//                    }
-//                }
+                //                .toolbar {
+                //                    ToolbarItem(placement: .navigationBarTrailing) {
+                //                        Link(destination: LinksService.shared.link(topic: tweakDataItemDetail.topic)) {
+                //                            Text("videos.link.label", comment: "Latest Videos")
+                //                        }
+                //                    }
+                //                }
                 .toolbarBackground(.visible, for: .navigationBar)
                 .toolbarBackground(.brandGreen, for: .navigationBar)
                 .toolbarColorScheme(.dark)

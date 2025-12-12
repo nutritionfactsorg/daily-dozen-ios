@@ -4,10 +4,10 @@
 //
 //  Copyright © 2023 NutritionFacts.org. All rights reserved.
 //
-////swiftlint:disable type_body_length
+//swiftlint:disable file_length
 //
 
-import Foundation
+//import Foundation
 
 //struct SQLiteConnector {
 //    static var shared = SQLiteConnector()

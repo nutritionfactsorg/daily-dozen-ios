@@ -156,13 +156,13 @@ actor LogService {
     
     /// - parameter nameToken: string included in file name
     public func useLogFile(nameToken: String) async {
-        let currentTime = await DateManager.shared.currentDatetime()
+        //let currentTime = await DateManager.shared.currentDatetime()
         let formatter = DateFormatter()
         formatter.dateFormat = "yyyyMMdd_HHmmss"
         // formatter.timeZone = NSTimeZone(abbreviation: "UTC")
-        let dateTimestamp = formatter.string(from: currentTime)
+        //let dateTimestamp = formatter.string(from: currentTime)
         
-        let logfileName = "\(dateTimestamp)_log_\(nameToken).txt"
+        //let logfileName = "\(dateTimestamp)_log_\(nameToken).txt"
         //logfileUrl = URL.inDocuments(filename: logfileName)
         
         //do {

@@ -8,9 +8,37 @@
 import SwiftUI
 import StoreKit
 
+@preconcurrency
+struct ScrollOffsetPreferenceKey: PreferenceKey {
+    static let defaultValue: CGFloat = 0
+    
+    static func reduce(value: inout CGFloat, nextValue: () -> CGFloat) {
+        value = nextValue()
+    }
+}
+
+//@preconcurrency
+//private struct ScrollOffsetPreferenceKey: PreferenceKey {
+//    static let defaultValue: CGFloat = 0
+//    static func reduce(value: inout CGFloat, nextValue: () -> CGFloat) {
+//        value = nextValue()
+//    }
+//}
+//
+//@preconcurrency
+//private struct ScrollAnchorKey: PreferenceKey {
+//    static let defaultValue: Anchor<CGPoint>? = nil
+//    static func reduce(value: inout Anchor<CGPoint>?, nextValue: () -> Anchor<CGPoint>?) {
+//        value = nextValue() ?? value
+//    }
+//}
+
 struct DozeTabPageView: View {
-    @EnvironmentObject var viewModel: SqlDailyTrackerViewModel
+    private let viewModel = SqlDailyTrackerViewModel.shared
+    //@EnvironmentObject var viewModel: SqlDailyTrackerViewModel
     @Environment(\.requestReview) var requestReview
+    let coordinator: ScrollPositionCoordinator 
+    
     let date: Date
     @State private var showingAlert = false
     @State private var showStarImage = false
@@ -27,11 +55,10 @@ struct DozeTabPageView: View {
     }
     
     private func syncRecordWithDB() async {
-        
         let localTracker = viewModel.tracker(for: date)
         dozeDailyStateCount = localTracker.itemsDict
             .filter { DozeEntryViewModel.rowTypeArray.contains($0.key) }
-            .reduce(0) { $0 + $1.value.datacount_count } ?? 0
+            .reduce(0) { $0 + $1.value.datacount_count }
     }
     
     var body: some View {
@@ -47,7 +74,7 @@ struct DozeTabPageView: View {
                 }
                 Text("\(dozeDailyStateCount)/\(dozeDailyStateCountMaximum)")
                 NavigationLink {
-                    DozeServingsHistoryView()
+                    ServingsHistoryView(filterType: .doze)
                         .environmentObject(SqlDailyTrackerViewModel())
                 } label: {
                     Image("ic_stat")
@@ -55,8 +82,9 @@ struct DozeTabPageView: View {
             }
             .padding(10)
             
-            ScrollView {
-                VStack {
+            // Use LazyVStack inside ScrollView for performance
+            SyncedScrollView(coordinator: coordinator, version: coordinator.version) {
+                LazyVStack(alignment: .leading, spacing: 0) {
                     ForEach(regularItems, id: \.self) { item in
                         DozeEntryRowView(
                             item: item,
@@ -64,29 +92,31 @@ struct DozeTabPageView: View {
                             onCheck: { _ in
                                 Task {
                                     await syncRecordWithDB()
-                                  //  @MainActor in
-                                   // await viewModel.setCount(for: item, count: count, date: date)
                                     showStarImage = dozeDailyStateCount == dozeDailyStateCountMaximum
                                 }
                             }
                         )
                     }
+                    
                     if !supplementItems.isEmpty {
-                        HStack {
-                            Text("dozeOtherInfo.section")
-                                .font(.headline)
-                                .padding(.top, 20)
-                                .padding(.horizontal, 10)
-                            Button {
-                                showingAlert.toggle()
-                            } label: {
-                                Image(systemName: "info.circle")
-                                    .foregroundColor(.nfDarkGray)
-                            }
-                            .alert(isPresented: $showingAlert) {
-                                Alert(title: Text("dozeOtherInfo.title"), message: Text("dozeOtherInfo.message"))
-                            }
-                        }
+                        VStack {
+                            HStack {
+                                Text("dozeOtherInfo.section")
+                                    .font(.headline)
+                                    .padding(.top, 20)
+                                    .padding(.horizontal, 8)
+                                Button {
+                                    showingAlert.toggle()
+                                } label: {
+                                    Image(systemName: "info.circle")
+                                        .foregroundColor(.nfDarkGray)
+                                }
+                                .buttonStyle(.plain)
+                            } //HStack
+                        } //VStack
+                                
+                        .frame(maxWidth: .infinity, alignment: .center)
+                        .padding(.bottom)
                         
                         ForEach(supplementItems, id: \.self) { item in
                             DozeEntryRowView(
@@ -95,34 +125,31 @@ struct DozeTabPageView: View {
                                 onCheck: { _ in
                                     Task { @MainActor in
                                         await syncRecordWithDB()
-//                                        await viewModel.setCount(for: item, count: count, date: date)
-//                                        dozeDailyStateCount = viewModel.tracker?.itemsDict
-//                                            .filter { $0.key.isDailyDozen && DozeEntryViewModel.rowTypeArray.contains($0.key) }
-//                                            .reduce(0) { $0 + $1.value.datacount_count } ?? 0
-//                                        showStarImage = dozeDailyStateCount == dozeDailyStateCountMaximum
                                     }
                                 }
                             )
                         }
                     }
                 }
+               // .padding(.horizontal)
+                // Capture scroll offset
             }
+        }
+        .alert(isPresented: $showingAlert) {
+            Alert(title: Text("dozeOtherInfo.title"), message: Text("dozeOtherInfo.message"))
         }
         .onAppear {
-            
-            Task { await syncRecordWithDB()}
-//            Task { @MainActor in
-//             //   await viewModel.loadTracker(forDate: date)
-//                dozeDailyStateCount = viewModel.tracker?.itemsDict
-//                    .filter { $0.key.isDailyDozen && DozeEntryViewModel.rowTypeArray.contains($0.key) }
-//                    .reduce(0) { $0 + $1.value.datacount_count } ?? 0
-//                showStarImage = dozeDailyStateCount == dozeDailyStateCountMaximum
-            }
+            Task { await syncRecordWithDB() }
+        }
+        .onReceive(NotificationCenter.default.publisher(for: .mockDBUpdated)) { notification in
+            guard let updatedDate = notification.object as? Date,
+                  Calendar.current.isDate(updatedDate, inSameDayAs: date) else { return }
+            Task { await viewModel.loadTracker(forDate: date) }
         }
     }
-
-
-#Preview {
-    DozeTabPageView(date: Date())
-        .environmentObject(SqlDailyTrackerViewModel())
 }
+
+//#Preview {
+//    DozeTabPageView(date: Date(), scrollOffset:)
+//        .environmentObject(SqlDailyTrackerViewModel())
+//}

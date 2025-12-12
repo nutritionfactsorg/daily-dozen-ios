@@ -5,7 +5,7 @@
 
 import Foundation
 
-/// Handles Create Read Update Delete (CRUD) for one or more SqlDataCountRecord.
+// Handles Create Read Update Delete (CRUD) for one or more SqlDataCountRecord.
 //@MainActor
 //public struct SqlDataCountModel {
 //    
