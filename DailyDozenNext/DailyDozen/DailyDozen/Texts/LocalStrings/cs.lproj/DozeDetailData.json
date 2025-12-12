@@ -5,23 +5,19 @@
       "servings" : [
         {
           "imperial" : "¼ šálku hummusu nebo fazolového dipu",
-          "metric" : "60 g šálku hummusu nebo fazolového dipu"
+          "metric" : "70 g hummusu nebo fazolového dipu"
         },
         {
           "imperial" : "½ šálku vařených fazolí, hrachu nebo čočky",
-          "metric" : "90 g vařených fazolí, hrachu nebo čočky"
+          "metric" : "100 g vařených fazolí, hrachu nebo čočky"
         },
         {
-          "imperial" : "½ šálku tofu nebo tempehu",
-          "metric" : "100 g tofu nebo tempehu"
+          "imperial" : "⅓ šálku tofu nebo tempehu",
+          "metric" : "80 g tofu nebo tempehu"
         },
         {
-          "imperial" : "1 šálek čerstvého nebo cukrového hrášku",
-          "metric" : "130 g čerstvého nebo cukrového hrášku"
-        },
-        {
-          "imperial" : "1 šálku čerstvých naklíčených fazolí (čočka, mungo)",
-          "metric" : "100 g čerstvých naklíčených fazolí (čočka, mungo)"
+          "imperial" : "1 šálek čerstvého hrášku nebo naklíčené čočky",
+          "metric" : "100 g čerstvého hrášku nebo naklíčené čočky"
         }
       ],
       "topic" : "topics/beans",
@@ -67,10 +63,6 @@
           "topic" : "topics/lentils"
         },
         {
-          "text" : "Miso pasta",
-          "topic" : "topics/miso"
-        },
-        {
           "text" : "Fazole Navy",
           "topic" : "topics/navy-beans"
         },
@@ -97,7 +89,7 @@
       "servings" : [
         {
           "imperial" : "½ šálku čerstvého nebo mraženého",
-          "metric" : "60 g čerstvé nebo mražené"
+          "metric" : "70 g čerstvé nebo mražené"
         },
         {
           "imperial" : "¼ šálku sušené",
@@ -193,10 +185,6 @@
         {
           "text" : "Ibiškový čaj",
           "topic" : "topics/hibiscus-tea"
-        },
-        {
-          "text" : "Horká čokoláda",
-          "topic" : ""
         },
         {
           "text" : "Jasmínový čaj",
@@ -493,7 +481,7 @@
         },
         {
           "imperial" : "1 šálek nakrájeného ovoce",
-          "metric" : "120 g nakrájeného ovoce"
+          "metric" : "150 g nakrájeného ovoce"
         },
         {
           "imperial" : "¼ šálku sušeného ovoce",
@@ -556,7 +544,7 @@
         },
         {
           "text" : "Liči",
-          "topic" : ""
+          "topic" : "topics/lychees"
         },
         {
           "text" : "Mango",
@@ -689,10 +677,6 @@
         {
           "text" : "Mandle",
           "topic" : "topics/almonds"
-        },
-        {
-          "text" : "Brazilské ořechy",
-          "topic" : "topics/brazil-nuts"
         },
         {
           "text" : "Kešu ořechy",
@@ -892,16 +876,20 @@
       "heading" : "Košťálová zelenina",
       "servings" : [
         {
-          "imperial" : "½ šálku nakrájené",
-          "metric" : "30–80 g nakrájené"
+          "imperial" : "½ šálku vařené listové zeleniny",
+          "metric" : "90 g vařené listové zeleniny"
         },
         {
-          "imperial" : "½ šálku růžičkové kapusty",
-          "metric" : "80 g růžičkové kapusty"
+          "imperial" : "½ šálku syrové nebo vařené nelistové zeleniny",
+          "metric" : "90 g syrové nebo vařené nelistové zeleniny"
+        },
+        {
+          "imperial" : "1 šálek syrové listové zeleniny",
+          "metric" : "60 g syrové listové zeleniny"
         },
         {
           "imperial" : "¼ šálku brokolicových klíčků",
-          "metric" : "15 g brokolicových klíčků"
+          "metric" : "20 g brokolicových klíčků"
         },
         {
           "imperial" : "1 lžíce křenu",
@@ -977,15 +965,15 @@
         },
         {
           "imperial" : "½ šálku syrové nebo vařené nelistové zeleniny",
-          "metric" : "50 g syrové nebo vařené nelistové zeleniny"
+          "metric" : "90 g syrové nebo vařené nelistové zeleniny"
         },
         {
           "imperial" : "½ šálku zeleninové šťávy",
-          "metric" : "125 ml zeleninové šťávy"
+          "metric" : "120 ml zeleninové šťávy"
         },
         {
           "imperial" : "¼ šálku sušených hub",
-          "metric" : "7 g sušených hub"
+          "metric" : "10 g sušených hub"
         }
       ],
       "topic" : "topics/vegetables",
@@ -1068,16 +1056,20 @@
       "heading" : "Celozrnné obilniny",
       "servings" : [
         {
-          "imperial" : "½ šálku obilné kaše nebo vařených zrn, těstovin nebo kukuřice",
-          "metric" : "100 g obilné kaše nebo vařených zrn, těstovin nebo kukuřice"
+          "imperial" : "½ šálku vařených obilných zrn, celozrnných pšeničných těstovin nebo kukuřice",
+          "metric" : "100 g vařených obilných zrn, celozrnných pšeničných těstovin nebo kukuřice"
         },
         {
-          "imperial" : "1 šálek studených cereálií",
-          "metric" : "50 g studených cereálií"
+          "imperial" : "1 šálek 100% celozrnných snídaňových cereálií",
+          "metric" : "50 g 100% celozrnných snídaňových cereálií"
         },
         {
-          "imperial" : "1 tortilla nebo krajíc chleba",
-          "metric" : "1 tortilla nebo krajíc chleba"
+          "imperial" : "1 100% celozrnná tortilla (nebo 2 menší kukuřičné tortilly)",
+          "metric" : "1 100% celozrnná tortilla (nebo 2 menší kukuřičné tortilly)"
+        },
+        {
+          "imperial" : "1 krajíc 100% celozrnného chleba",
+          "metric" : "1 krajíc 100% celozrnného chleba"
         },
         {
           "imperial" : "½ housky/bagelu nebo anglického muffinu",

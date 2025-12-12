@@ -2,13 +2,13 @@
 /* Copyright © 2021 Nutritionfacts.org. All rights reserved. */
 
 /* Date Button Title: ‘Back to today’ */
-"dateBackButtonTitle" = "Обратно к Сегодня";
+"dateBackButtonTitle" = "Назад к Сегодня";
 
 /* Date Button Title: ‘Today’ */
 "dateButtonTitle.today" = "Сегодня";
 
 /* Doze Detail View subheading: ‘Serving Sizes’ */
-"doze_detail_section_sizes" = "Размеры порций (рекомендуемые)";
+"doze_detail_section_sizes" = "Размер порции (рекомендуемый)";
 
 /* Doze Detail View subheading: ‘Types’ */
 "doze_detail_section_types" = "Виды";
@@ -26,25 +26,25 @@
 "dozeBeverages.heading" = "Напитки";
 
 /* heading for daily data entry item */
-"dozeExercise.heading" = "Физические Упражнения";
+"dozeExercise.heading" = "Физические упражнения";
 
 /* heading for daily data entry item */
 "dozeFlaxseeds.heading" = "Семена льна";
 
 /* heading for daily data entry item */
-"dozeFruitsOther.heading" = "Другие Фрукты";
+"dozeFruitsOther.heading" = "Другие фрукты";
 
 /* heading for daily data entry item */
-"dozeGreens.heading" = "Листовые Овощи";
+"dozeGreens.heading" = "Листовые овощи";
 
 /* heading for daily data entry item */
-"dozeNuts.heading" = "Орехи и Семена";
+"dozeNuts.heading" = "Орехи и семена";
 
 /* Daily Dozen supplement info alert: dismissal button text */
 "dozeOtherInfo.confirm" = "ОК";
 
 /* Daily Dozen supplement info alert: message */
-"dozeOtherInfo.message" = "Витамин B12 крайне важен для вашего здоровья, но он не считается с другими ежедневными порциями.\n\nВитамин B12 добавлен в это приложение, чтобы облегчить отслеживание приема добавки.";
+"dozeOtherInfo.message" = "Витамин B12 очень важен для вашего здоровья, но приложение не подсчитывает его количество, получаемое ежедневно с пищей.\n\nВитамин B12 добавлен в приложение, чтобы облегчить отслеживание приема добавок.";
 
 /* Daily Dozen daily entry section heading */
 "dozeOtherInfo.section" = "Пищевые добавки";
@@ -53,97 +53,97 @@
 "dozeOtherInfo.title" = "Пищевые добавки";
 
 /* heading for daily data entry item */
-"dozeSpices.heading" = "Травы и Специи";
+"dozeSpices.heading" = "Травы и специи";
 
 /* heading for daily data entry item */
-"dozeVegetablesCruciferous.heading" = "Крестоцветные Овощи";
+"dozeVegetablesCruciferous.heading" = "Крестоцветные овощи";
 
 /* heading for daily data entry item */
-"dozeVegetablesOther.heading" = "Прочие Овощи";
+"dozeVegetablesOther.heading" = "Другие овощи";
 
 /* heading for daily data entry item */
-"dozeWholeGrains.heading" = "Цельнозерновые Продукты";
+"dozeWholeGrains.heading" = "Цельные злаки";
 
 /*  */
-"faq_adapt_question" = "Daily Dozen для меня слишком много/слишком мало еды! Могу ли я адаптировать количество?";
+"faq_adapt_question" = "В списке Daily Dozen слишком большие (маленькие) порции! Могу ли я адаптировать список для себя?";
 
 /*  */
-"faq_adapt_response" = "Да, Daily Dozen задумно как справочник наиболее здоровых продуктов, которые мы рекомендовано включать в рацон каждый день. Это не план питания  и не предписание. Делайте все что можно, чтобы потреблять разнообразные цельные растительные продукты, и адаптируйте дневное меню к количествам, которые вам подходят.";
+"faq_adapt_response" = "Да, список Daily Dozen задуман как справочник по наиболее полезным продуктам, которые рекомендуется включать в ежедневный рацион. Это не план питания и не предписание. Старайтесь употреблять разнообразные натуральные растительные продукты и корректируйте порции с учетом своих потребностей.";
 
 /*  */
-"faq_age_question" = "Можно ли адаптировать это для детей и подростков?";
+"faq_age_question" = "Можно ли адаптировать список для детей и подростков?";
 
 /*  */
-"faq_age_response.0" = "Дети и подростки имеют разные потребности в калориях на протяжении жизни. Эти потребности меняются, чтобы поддерживать рост и развитие на каждом этапе.";
+"faq_age_response.0" = "Потребности в калориях у детей и подростков меняются по мере их роста и развития.";
 
 /*  */
-"faq_age_response.1" = "Daily Dozen было разработано как руководство, чтобы помочь людям включить некоторыенаиболее здоровые продукты в распорядок дня. Хотя одна и та же схема может использоваться для большинства людей на протяжении всей жизни, количество пищи, которое необходимо съесть, будет варьироваться в зависимости от ряда факторов, таких как возраст и уровень активности. Поскольку мы не можем предоставить конкретные рекомендации по питанию или медицинские рекомендации для вашего растущего ребенка, родители должны использовать это руководство в соответствии с потребностями своего ребенка и/или проконсультироваться с диетологом или другим работником здравоохоранения, чтобы помочь определить, что лучше всего подходит для индивидуальных потребностей их детей.";
+"faq_age_response.1" = "Список Daily Dozen разработан как руководство, призванное помочь включить наиболее полезные продукты в ежедневный рацион. Хотя список таких продуктов остается неизменным для большинства людей на протяжении всей жизни, количество необходимой пищи зависит от целого ряда факторов, включая возраст и уровень активности. Поскольку мы не можем предоставить конкретные советы по питанию или медицинские рекомендации для каждого ребенка, при использовании этого руководства родители должны учитывать индивидуальные потребности своего ребенка и (или) проконсультироваться с диетологом или другим врачом, чтобы определить, что именно необходимо их ребенку.";
 
 /*  */
-"faq_calories_question" = "Сколько калорий в Daily Dozen?";
+"faq_calories_question" = "Сколько калорий в списке Daily Dozen?";
 
 /*  */
-"faq_calories_response.0" = "Daily Dozen в среднем составляет около 1200 калорий, но, учитывая широкий выбор продуктов в каждой категории, меню может варьироваться от 800 до 1800. Рассмотрим категорию “Другие овощи”: чашка сладкого перца имеет гораздо более низкую калорийность, чем чашка вареного сладкого картофеля, поэтому диапазон калорийности будет зависеть от ваших конкретных предпочтений в еде. Самое замечательное в контрольном списке Daily Dozen — это не то, что это универсальный подход, а то, что его можно адаптировать к вашим потребностям.";
+"faq_calories_response.0" = "В списке Daily Dozen в среднем 1200 калорий, но в зависимости от выбора продуктов в каждой категории калорийность может варьироваться от 800 до 1800 калорий. Для примера рассмотрим категорию «Другие овощи». В чашке сладкого перца гораздо меньше калорий, чем в чашке вареного сладкого картофеля, поэтому итоговая калорийность зависит от ваших предпочтений в еде. Возможность адаптировать список с учетом своих потребностей — одно из преимуществ Daily Dozen.";
 
 /*  */
-"faq_calories_response.1" = "Если ваша цель — похудеть, вы можете найти дополнительную информацию в книге “Как не сидеть на диете” и приложении “Двадцать одна хитрость”. В книге “Как не сидеть на диете” я отмечал: “Систематический обзор успешных стратегий снижения веса показал, что, учитывая замедление метаболизма и повышенный аппетит, сопровождающие потерю веса, для достижения значительной потери веса может потребоваться снижение количества калорий до минимума, 1200 калорий в день для женщин и 1500 калорий в день - для мужчин”.";
+"faq_calories_response.1" = "Если ваша цель — похудеть, вы можете найти дополнительную информацию в книге «Не сдохни на диете» и разделе «21 секрет» в этом приложении. В книге «Не сдохни на диете» отмечается, что «судя по результатам систематического обзора успешных стратегий снижения веса, учитывая замедление обмена веществ и повышение аппетита, сопровождающие снижение веса, чтобы добиться существенного снижения веса, женщинам нужно употреблять по 1200, а мужчинам по 1500 калорий в день».";
 
 /*  */
-"faq_calories_response.2" = "С другой стороны, если вашей целью является увеличение веса, вы можете обратить большее внимание на включение более калорийных продуктов, таких, как сладкий картофель, авокадо, орехи, и продукты из сои.";
+"faq_calories_response.2" = "Но если вашей целью является набор веса, вы можете включать в рацион более калорийные продукты, такие как сладкий картофель, авокадо, орехи, и продукты из сои.";
 
 /*  */
-"faq_mother_question" = "Можно ли это делать во время беременности или кормления грудью?";
+"faq_mother_question" = "Можно ли пользоваться приложением во время беременности или кормления грудью?";
 
 /*  */
-"faq_mother_response" = "Беременные или кормящие грудью имеют другие потребности в калориях и питательных веществах, чем те, кто не являются таковыми. Напоминаем, что “Daily Dozen” не является планом питания и не должно регламентировать продукты, потребляемые в течение дня. Беременным или кормящим следует проконсультироваться со своим лечащим врачом или диетологом для получения помощи в удовлетворении их конкретных потребностей в калориях и пищевых потребностях.";
+"faq_mother_response" = "У беременных и кормящих другие потребности в калориях и питательных веществах. Список Daily Dozen не является планом питания, и ваш дневной рацион не должен ограничиваться продуктами из этого списка. Если вы беременны или кормите грудью, проконсультируйтесь с врачом или дипломированным диетологом, чтобы составить рацион в соответствии с вашими потребностями в калориях и питательных веществах.";
 
 /*  */
-"faq_scaling_question" = "Я не могу есть так много бобов/зерновых/и т.д.!";
+"faq_scaling_question" = "Я не могу есть так много бобов/зерновых/и т. д.!";
 
 /*  */
-"faq_scaling_response" = "Это нормально!  “Daily Dozen” — это руководство к действию. Сделайте все возможное, чтобы включить в свой рацион как можно больше этих полезных растительных продуктов. Если вы новичок в употреблении большого количества бобовых (или злаков, зелени и т. д.!), вам, возможно, придется начать с меньшего количества и постепенно увеличивать количество, чтобы дать вашему микробиому возможность приспособиться. Вы также можете проявить творческий подход: например, добавить немного фасоли в утреннюю овсянку. Если вы добавите ягоды, семена льна и орехи, вы даже не заметите бобов. Также можно размять фасоль в пасту для бутербродов или приготовить мою смесь из ячменя, ржи, овса и чечевицы (https://nutritionfacts.org/recipe/basic-brol-barley-rye-oats-and-lentils), которую я использую в качестве основы для многих блюд, и это простой способ получить разнообразные цельнозерновые продукты со встроенной порцией бобовых.";
+"faq_scaling_response" = "Это нормально! Список Daily Dozen призван мотивировать вас включить в свой рацион как можно больше полезных растительных продуктов. Если ранее вы не употребляли много бобовых (или злаков, зелени и т. д.), вам, возможно, придется начать с меньшего количества и постепенно увеличивать размер порций, чтобы позволить вашему микробиому приспособиться. Вы также можете проявить фантазию и, например, добавить немного фасоли к утренней овсянке. Если в каше будут ягоды, семена льна и орехи, вы даже не заметите фасоли. Также можно размять фасоль в пасту для бутербродов или приготовить мою смесь из ячменя, ржи, овса и чечевицы (https://nutritionfacts.org/recipe/basic-brol-barley-rye-oats-and-lentils), которую я использую как основу для многих блюд, поскольку это простой способ включить в рацион разнообразные цельные злаки вместе с порцией бобовых.";
 
 /*  */
-"faq_supplements_question" = "Я думал, что доктор Грегер рекомендует принимать добавки с витамином D и ДГК. Почему они не включены?";
+"faq_supplements_question" = "Мне казалось, что доктор Грегер рекомендует принимать добавки с витамином D и ДГК. Почему их нет в списке?";
 
 /*  */
-"faq_supplements_response" = "Мы обновили приложение Daily Dozen, чтобы отображать только необходимые добавки. Например, витамин D необходим только тем людям, которые проводят на солнце недостаточно времени. Наша цель — поделиться с вами научными данными, чтобы вы могли принимать собственные обоснованные решения. Вы можете увидеть все мои рекомендации на странице “Оптимальные питательные вещества” (https://nutritionfacts.org/optimum-nutrient-recommendations).";
+"faq_supplements_response" = "Мы обновили приложение Daily Dozen, чтобы отображать только необходимые добавки. Например, витамин D необходим только тем, кто проводит на солнце недостаточно времени. Наша цель — поделиться с вами научными данными, чтобы вы могли самостоятельно принимать обоснованные решения. Все мои рекомендации опубликованы на странице [Optimum Nutrient («Важные питательные вещества»)] (https://nutritionfacts.org/optimum-nutrient-recommendations).";
 
 /* Info Menu */
-"faq_title" = "FAQ";
+"faq_title" = "Частые вопросы";
 
 /* History Data Alert: Cancel button */
-"history_data_alert_cancel" = "Отмена";
+"history_data_alert_cancel" = "Отменить";
 
 /* History Data Alert: Clear button */
-"history_data_alert_clear" = "Очистка";
+"history_data_alert_clear" = "Очистить";
 
 /* History Data Alert: Import buttom */
-"history_data_alert_import" = "Импорт";
+"history_data_alert_import" = "Импортировать";
 
 /* History Data Alert: OK button */
 "history_data_alert_ok" = "ОК";
 
 /* History Data: export action button */
-"history_data_export_btn" = "Экспорт истории";
+"history_data_export_btn" = "Экспортировать данные";
 
 /* History Data: export description text */
-"history_data_export_text" = "Экспорт сохранён в:";
+"history_data_export_text" = "Экспорт сохранен в:";
 
 /* History Data: import action button */
-"history_data_import_btn" = "Импорт Истории";
+"history_data_import_btn" = "Импортировать данные";
 
 /* History Data: import caution text */
-"history_data_import_caution_text" = "Внимание: этот импорт перезапишет всю историю в приложении Daily Dozen. Хотите продолжить импорт?";
+"history_data_import_caution_text" = "Внимание! При импорте данных все существующие данные в приложении Daily Dozen будут перезаписаны. Хотите продолжить импорт?";
 
 /* History Data: import data error text */
-"history_data_import_error_text" = "Ошибка: Импорт не выполнен из-за ошибки данных. Существующие данные остались без изменений.";
+"history_data_import_error_text" = "Ошибка! Не удалось выполнить импорт из-за ошибки данных. Существующие данные остались без изменений.";
 
 /* History Data: import not found text */
-"history_data_import_notfound_text" = "Не удалось найти годны файл импорта в папке Daily Dozen Documents.";
+"history_data_import_notfound_text" = "Не удалось найти допустимый для импорта файл в папке Daily Dozen Documents.";
 
 /* History Data: preferences header & title */
-"history_data_title" = "История";
+"history_data_title" = "Данные";
 
 /* History View: calendar scale control */
 "history_scale_choice_day" = "День";
@@ -155,25 +155,25 @@
 "history_scale_choice_year" = "Год";
 
 /* History View: scale text */
-"history_scale_label" = "Шкала Времени";
+"history_scale_label" = "Период";
 
 /*  */
-"historyRecord.movingAverage" = "Средняя подвижность";
+"historyRecord.movingAverage" = "Средняя активность";
 
 /* History View */
-"historyRecordDoze.heading" = "Порции История";
+"historyRecordDoze.heading" = "Данные о порциях";
 
 /* History View */
 "historyRecordDoze.legend" = "Порции";
 
 /* History View */
-"historyRecordTweak.heading" = "Уловки История";
+"historyRecordTweak.heading" = "Данные о секретах";
 
 /* History View */
-"historyRecordTweak.legend" = "Уловки";
+"historyRecordTweak.legend" = "Секреты";
 
 /* History View */
-"historyRecordWeight.heading" = "Вес История";
+"historyRecordWeight.heading" = "Данные о весе";
 
 /* History View */
 "historyRecordWeight.legendEvening" = "Вечер";
@@ -191,64 +191,64 @@
 "info_app_about" = "О нас";
 
 /* Info About View: Application Name ‘Daily Dozen’ */
-"info_app_about_app_name" = "Не Сдохни!";
+"info_app_about_app_name" = "Daily Dozen";
 
 /* Info About View: Created By */
-"info_app_about_created_by" = "Это приложение было создано NutritionFacts.org, Кристи Ричардс, Константином Хохловым и Марком Кэмпбеллом.";
+"info_app_about_created_by" = "Это приложение создано командой NutritionFacts.org, Кристи Ричардс, Константином Хохловым и Марком Кэмпбеллом.";
 
 /* Info About View */
-"info_app_about_heading" = "Об этом приложении";
+"info_app_about_heading" = "О приложении";
 
 /* Info About View: Open Source Credits */
-"info_app_about_oss_credits" = "Приложение использует следующие библиотеки с открытым кодом: RealmSwift, Charts, FSCalendar, SimpleAnimation, ActiveLabel.";
+"info_app_about_oss_credits" = "Приложение использует следующие библиотеки с открытым кодом: RealmSwift, Charts, FSCalendar, SimpleAnimation.";
 
 /* Info About View: Overview Text */
-"info_app_about_overview" = "Используйте приложение каждый день, чтобы отслеживать продукты питания и следовать рекомендациям из книг Не Сдохни! Еда в борьбе за жизнь и Не сдохни на диете, быть здоровыми и жить дольше.";
+"info_app_about_overview" = "Используйте приложение каждый день, чтобы следить за своим рационом и следовать рекомендациям по поддержанию здоровья и долголетия из книг «Не Сдохни! Еда в борьбе за жизнь» и «Не сдохни на диете».";
 
 /* Info About View: Contributing Translators List (language code)  See https://en.wikipedia.org/wiki/List_of_ISO_639-1_codes */
-"info_app_about_translators" = "Особая благодарность нашим переводчикам-волонтерам: Petar Enchev (bg), Tsveti Enchev (bg), Ricard Soler Roger (ca), Luděk Bouška (cs,sk), Lenka Lukacová (cs), Anke Schliessmann (de), Ángela Graña (es), Saeed Salamian (fa), Audray Harkins (fr), Doron Barak (he), Ruth Levy (he), Annalisa Guerrini-Körner (it), Ilaria Zanini (it), Hanna Gurzeda (pl), Joanna Klopotek (pl), Tania Bassi (pt-BR), João Madureira (pt-PT), Cristina Lauby (ro), Evgeniya Lyakh (ru), Katarína Mocáková (sk), Sabina Aliieva (uk).";
+"info_app_about_translators" = "Особая благодарность нашим переводчикам-волонтерам: Adelina Chernaeva (bg), Petar Enchev (bg), Tsveti Enchev (bg), Ricard Soler Roger (ca), Luděk Bouška (cs,sk), Lucie Doleželová (cs), Lenka Lukacová (cs), Anke Schliessmann (de), Sofia Schuessler (de), Ángela Graña (es), Saeed Salamian (fa), Audray Harkins (fr), Doron Barak (he), Ruth Levy (he), dr. Stern Borbála (hu), Kertész Tibor (hu), Adriana Centrone (it), Annalisa Guerrini-Körner (it), Ilaria Zanini (it), Andrijeski (mk), Hangur (pl), Hanna Gurzeda (pl), Joanna Klopotek (pl), Tania Bassi (pt-BR), João Madureira (pt-PT), Cristina Lauby (ro), Evgeniya Lyakh (ru), Anna Miliutina (ru), Katarína Mocáková (sk), Sabina Aliieva (uk), Hailey Chang (zh).";
 
 /* Info About View: Application release version */
-"info_app_about_version" = "версия 3.5.1";
+"info_app_about_version" = "версия 3.5.3";
 
 /* Info About View: Welcome */
-"info_app_about_welcome" = "Добро пожаловать в Не сдохни!";
+"info_app_about_welcome" = "Добро пожаловать в Daily Dozen!";
 
 /* Info Menu: book title */
-"info_book_how_not_to_die" = "Книга: Не сдохни! Еда в борьбе за жизнь";
+"info_book_how_not_to_die" = "Книга «Не сдохни! Еда в борьбе за жизнь»";
 
 /* Info Menu: book title */
-"info_book_how_not_to_die_cookbook" = "Книга: Не сдохни! Кулинарная книга";
+"info_book_how_not_to_die_cookbook" = "Книга «Не сдохни! 100+ рецептов»";
 
 /* Info Menu: book title */
-"info_book_how_not_to_diet" = "Книга: Не сдохни на диете";
+"info_book_how_not_to_diet" = "Книга «Не сдохни на диете»";
 
 /* Info Menu */
-"info_webpage_daily_dozen_challenge" = "Вызов Не сдохни!";
+"info_webpage_daily_dozen_challenge" = "Вызов Daily Dozen";
 
 /* Info Menu */
-"info_webpage_donate" = "Сделайте пожертвование";
+"info_webpage_donate" = "Поддержать";
 
 /* Info Menu */
-"info_webpage_open_source" = "Открытое программное обеспечение";
+"info_webpage_open_source" = "Открытое ПО";
 
 /* Info Menu */
-"info_webpage_subscribe" = "Подпишитесь";
+"info_webpage_subscribe" = "Подписаться";
 
 /* Info Menu */
-"info_webpage_videos_latest" = "Последние видео";
+"info_webpage_videos_latest" = "Новые видео";
 
 /* Item History Legend: ‘All completed’ */
-"item_history_completed_all" = "Все порции";
+"item_history_completed_all" = "Полностью";
 
 /* Item History Legend: ‘Some completed’ */
-"item_history_completed_some" = "Некоторые порции";
+"item_history_completed_some" = "Частично";
 
 /* Item History Heading */
-"item_history_heading" = "История";
+"item_history_heading" = "Данные";
 
 /* Main Navigation Tab Control: ‘Daily Dozen’ (proper noun) */
-"navtab.doze" = "Не сдохни!";
+"navtab.doze" = "Daily Dozen";
 
 /* Main Navigation Tab Control: show more information */
 "navtab.info" = "Информация";
@@ -257,7 +257,7 @@
 "navtab.preferences" = "Настройки";
 
 /* Main Navigation Tab Control: ‘21 Tweaks’ (proper noun) */
-"navtab.tweaks" = "21 уловка";
+"navtab.tweaks" = "21 секрет";
 
 /* heading for daily data entry item */
 "otherVitaminB12.heading" = "Витамин B12";
@@ -266,31 +266,31 @@
 "reminder.alert.text" = "Обновите порции за сегодня";
 
 /* Daily Reminder (alert title, settings section heading) */
-"reminder.heading" = "Ежедневное напоминание";
+"reminder.heading" = "Ежедневные напоминания";
 
 /* Daily Reminder On/Off toggle switch label */
 "reminder.settings.enable" = "Включить напоминания";
 
 /* Daily Reminder sound control heading */
-"reminder.settings.sound" = "Проиграть Звук";
+"reminder.settings.sound" = "Звук";
 
 /* Daily Reminder time control heading */
-"reminder.settings.time" = "Напомнить мне в:";
+"reminder.settings.time" = "Напомнить в:";
 
 /* Android notification `vibrate` */
 "reminder.settings.vibrate" = "Вибрация";
 
 /* ‘Off’ as in ‘On (enabled) or Off (disabled)’, Daily Reminder is not enabled */
-"reminder.state.off" = "Отключить";
+"reminder.state.off" = "Отключено";
 
 /* ‘On’ as in ‘On (enabled) or Off (disable)’. Daily Reminder is enabled */
-"reminder.state.on" = "Включить";
+"reminder.state.on" = "Включено";
 
 /* Google Firebase Analytics */
-"setting_analytics_body" = "Включите анонимный сбор данных, чтобы помочь улучшить это приложение.";
+"setting_analytics_body" = "Помогите улучшить приложение, разрешив использование обезличенных данных.";
 
 /* Google Firebase Analytics */
-"setting_analytics_enable" = "Включить аналитику.";
+"setting_analytics_enable" = "Включить аналитику данных";
 
 /* Google Firebase Analytics */
 "setting_analytics_opt_in" = "Разрешить";
@@ -302,130 +302,130 @@
 "setting_analytics_title" = "Аналитика";
 
 /* First Launch Setting: button text */
-"setting_doze_only_btn" = "Только Не cдохни!";
+"setting_doze_only_btn" = "Только\nDaily Dozen";
 
 /* Preference Settings View: selection button text */
-"setting_doze_only_choice" = "Только Не cдохни!";
+"setting_doze_only_choice" = "Только Daily Dozen";
 
 /* First Launch Setting: button text */
-"setting_doze_tweak_btn" = "Не cдохни! + 21 уловка";
+"setting_doze_tweak_btn" = "Daily Dozen +\n21 секрет";
 
 /* Preference Settings View: selection button text */
-"setting_doze_tweak_choice" = "Не cдохни! + 21 уловка";
+"setting_doze_tweak_choice" = "Daily Dozen + 21 секрет";
 
 /* Preference Settings View: brief description text below Tweaks visibility control. */
-"setting_doze_tweak_footer" = "Только для здорового образа жизни используйте “Только Не cдохни!”, для здоровья и потери веса используйте “Не cдохни + 21 уловка”.";
+"setting_doze_tweak_footer" = "Для поддержания здоровья выбирайте «Только Daily Dozen», для поддержания здоровья и снижения веса — «Daily Dozen + 21 секрет».";
 
 /* First Launch Setting: brief description above ‘Daily Dozen Only’ button. */
-"setting_health_alone_txt" = "Только для здоровья";
+"setting_health_alone_txt" = "Только здоровье";
 
 /* First Launch Setting: brief description above ‘Daily Dozen + 21 Tweaks’ button. */
-"setting_health_weight_txt" = "Для здоровья и похудения";
+"setting_health_weight_txt" = "Здоровье и снижение веса";
 
 /* Preference Settings View: tweaks visibilty subsection heading */
-"setting_tweak_header" = "Видимость 21 уловки";
+"setting_tweak_header" = "21 секрет";
 
 /* Preference Settings View: Part of ‘Imperial/Metric/Toggle Units’ selector */
-"setting_units_0_imperial" = "Имперская";
+"setting_units_0_imperial" = "Имперские";
 
 /* Preference Settings View: Part of ‘Imperial/Metric/Toggle Units’ selector */
-"setting_units_1_metric" = "Метрическая";
+"setting_units_1_metric" = "Метрические";
 
 /* Preference Settings View: Part of ‘Imperial/Metric/Toggle Units’ selector */
-"setting_units_2_toggle" = "Тумблер";
+"setting_units_2_toggle" = "Переключать";
 
 /* Preference Settings View: brief description text below units control. */
-"setting_units_choice_footer" = "Установить только одну единицу измерения или включить кнопку переключения между единицами измерения.";
+"setting_units_choice_footer" = "Выбрать определенные единицы измерения или переключаться между единицами измерения.";
 
 /* Preference Settings View */
 "setting_units_header" = "Единицы измерения";
 
 /* Preference Settings View */
-"setting_util_advanced" = "Дополнительные инструменты";
+"setting_util_advanced" = "Дополнительно";
 
 /* ‘Streak’ count. Synonym: ‘Progress‘. Formatted number ‘%d’ for consecutive days completed. Place translated text for ‘days’ on the right or left of ‘%d’ based on language directionality. */
-"streakDaysFormat" = "%d дни";
+"streakDaysFormat" = "Дней: %d";
 
 /* Tweaks Detail view section heading */
-"tweak_detail_section_activity" = "Активность";
+"tweak_detail_section_activity" = "Секрет";
 
 /* Tweaks Detail view section heading */
 "tweak_detail_section_description" = "Описание";
 
 /* Tweaks daily entry header */
-"tweak_entry_header" = "21 Уловка";
+"tweak_entry_header" = "21 секрет";
 
 /* heading for daily data entry item */
-"tweakCompleteIntentions.heading" = "Воплощайте свои намерения";
+"tweakCompleteIntentions.heading" = "Формулировка реализационных намерений";
 
 /* heading for daily data entry item */
-"tweakDailyBlackCumin.heading" = "Черный тмин/кумин (¼ ч.л.)";
+"tweakDailyBlackCumin.heading" = "Черный тмин (¼ ч. л.)";
 
 /* heading for daily data entry item */
-"tweakDailyCumin.heading" = "Тмин (½ ч.л. с обедом и ужином)";
+"tweakDailyCumin.heading" = "Зира (½ ч. л. с обедом и ужином)";
 
 /* heading for daily data entry item */
-"tweakDailyDeflourDiet.heading" = "Уберите муку из диеты";
+"tweakDailyDeflourDiet.heading" = "Отказ от муки";
 
 /* heading for daily data entry item */
-"tweakDailyFrontLoad.heading" = "Фронтальная калорийная загрузка";
+"tweakDailyFrontLoad.heading" = "Основная часть калорий в первой половине дня";
 
 /* heading for daily data entry item */
-"tweakDailyGarlic.heading" = "Чесночный порошок (¼ ч.л.)";
+"tweakDailyGarlic.heading" = "Чесночный порошок (¼ ч. л.)";
 
 /* heading for daily data entry item */
-"tweakDailyGinger.heading" = "Молотый имбирь (1 ч.л. ложка) или кайенский перец (½ ч.л. ложки)";
+"tweakDailyGinger.heading" = "Молотый имбирь (1 ч. л. ложка) или кайенский перец (½ ч. л. ложки)";
 
 /* heading for daily data entry item */
 "tweakDailyGreenTea.heading" = "Зеленый чай (3 чашки)";
 
 /* heading for daily data entry item */
-"tweakDailyHydrate.heading" = "Избегайте обезвоживания";
+"tweakDailyHydrate.heading" = "Достаточно воды";
 
 /* heading for daily data entry item */
-"tweakDailyNutriYeast.heading" = "Пищевые дрожжи неактивные (2 ч.л.)";
+"tweakDailyNutriYeast.heading" = "Пищевые дрожжи (2 ч. л.)";
 
 /* heading for daily data entry item */
-"tweakDailyTimeRestrict.heading" = "Ограничивайте время приема пищи";
+"tweakDailyTimeRestrict.heading" = "Ограничение питания по времени";
 
 /* heading for daily data entry item */
-"tweakExerciseTiming.heading" = "Оптимизируйте график выполнения физических упражнений";
+"tweakExerciseTiming.heading" = "Выбор времени для физических нагрузок";
 
 /* heading for daily data entry item */
-"tweakMeal20Minutes.heading" = "Следуйте двадцатиминутному правилу";
+"tweakMeal20Minutes.heading" = "Правило 20 минут";
 
 /* heading for daily data entry item */
 "tweakMealNegCal.heading" = "Предварительная загрузка отрицательными калориями";
 
 /* heading for daily data entry item */
-"tweakMealUndistracted.heading" = "Не отвлекайтесь от еды";
+"tweakMealUndistracted.heading" = "Еда без отвлекающих факторов";
 
 /* heading for daily data entry item */
-"tweakMealVinegar.heading" = "Включите уксус (2 ч.л. с каждым приемом пищи)";
+"tweakMealVinegar.heading" = "Уксус (2 ч. л. с каждым приемом пищи)";
 
 /* heading for daily data entry item */
-"tweakMealWater.heading" = "Предварительная водная загрузка";
+"tweakMealWater.heading" = "Предварительная загрузка водой";
 
 /* heading for daily data entry item */
-"tweakNightlyFast.heading" = "Не ешьте после 7:00 вечера";
+"tweakNightlyFast.heading" = "Отказ от еды после 19:00";
 
 /* heading for daily data entry item */
-"tweakNightlySleep.heading" = "Высыпайтесь";
+"tweakNightlySleep.heading" = "Достаточное количество сна";
 
 /* heading for daily data entry item */
-"tweakNightlyTrendelenbrug.heading" = "Поэкспериментируйте с положением мягкого Тренделенбурга";
+"tweakNightlyTrendelenbrug.heading" = "Сон в умеренном положении Тренделенбурга";
 
 /* heading for daily data entry item */
-"tweakWeightTwice.heading" = "Взвешивайтесь дважды в день";
+"tweakWeightTwice.heading" = "Взвешивание дважды в день";
 
 /*  */
-"units_label" = "Единица Измерения:";
+"units_label" = "Меры";
 
 /* Units toggle button text: imperial measurement system */
-"unitToggle.imperial" = "имперская";
+"unitToggle.imperial" = "Имперские";
 
 /* Units toggle button text: metric measurement system */
-"unitToggle.metric" = "метрическая";
+"unitToggle.metric" = "Метрические";
 
 /* URL path */
 "urlSegment.base" = "https://nutritionfacts.org/";
@@ -467,10 +467,10 @@
 "weight_entry_clear" = "Очистить";
 
 /* Weight Daily Entry: label */
-"weight_entry_evening" = "Вечером (прямо перед сном)";
+"weight_entry_evening" = "Вечер (перед сном)";
 
 /* Weight Daily Entry: label */
-"weight_entry_morning" = "Утром (сразу как проснулся)";
+"weight_entry_morning" = "Утро (после пробуждения)";
 
 /* Weight Daily Entry: label */
 "weight_entry_time" = "Время";
@@ -482,7 +482,7 @@
 "weight_entry_units_lbs" = "фунты";
 
 /* Weight Daily Entry: edit button to change values */
-"weight_history_edit_data" = "Редактировать данные";
+"weight_history_edit_data" = "Редактировать";
 
 /* Weight Daily Entry: heading */
 "weightEntry.heading" = "Вес";

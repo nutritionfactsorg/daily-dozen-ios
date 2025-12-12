@@ -5,23 +5,19 @@
       "servings" : [
         {
           "imperial" : "¼ tassa d'hummus o salsa de fesols",
-          "metric" : "60 g d'hummus o salsa de mongetes"
+          "metric" : "70 g d'hummus o salsa de mongetes"
         },
         {
           "imperial" : "½ tassa de mongetes cuites, pèsols o llenties",
-          "metric" : "90 g de mongetes cuites, pèsols o llenties"
+          "metric" : "100 g de mongetes cuites, pèsols o llenties"
         },
         {
-          "imperial" : "½ tassa de tofu o tempeh",
-          "metric" : "100 g de tofu o tempeh"
+          "imperial" : "⅓ tassa de tofu o tempeh",
+          "metric" : "80 g de tofu o tempeh"
         },
         {
-          "imperial" : "1 tassa de pèsols frescos o pèsols de neu",
-          "metric" : "130 g de pèsols frescos o pèsols de neu"
-        },
-        {
-          "imperial" : "1 tassa de mongetes germinades fresques (llenties, mongetes mung)",
-          "metric" : "100 g de mongetes fresques germinades (llenties, mongetes mung)"
+          "imperial" : "1 tassa de pèsols frescos o brots de llegums germinats",
+          "metric" : "100 g de pèsols frescos o llegums germinats"
         }
       ],
       "topic" : "topics/beans",
@@ -67,10 +63,6 @@
           "topic" : "topics/lentils"
         },
         {
-          "text" : "Miso",
-          "topic" : "topics/miso"
-        },
-        {
           "text" : "Mongetes",
           "topic" : "topics/navy-beans"
         },
@@ -97,7 +89,7 @@
       "servings" : [
         {
           "imperial" : "½ tassa frescos o congelats",
-          "metric" : "60 g frescos o congelats"
+          "metric" : "70 g frescos o congelats"
         },
         {
           "imperial" : "¼ tassa dessecats",
@@ -193,10 +185,6 @@
         {
           "text" : "Infusió d'hibisc",
           "topic" : "topics/hibiscus-tea"
-        },
-        {
-          "text" : "Xocolata calenta (sense sucre)",
-          "topic" : ""
         },
         {
           "text" : "Te de gessamí",
@@ -493,7 +481,7 @@
         },
         {
           "imperial" : "1 tassa de fruita tallada",
-          "metric" : "120 g de fruita tallada"
+          "metric" : "150 g de fruita tallada"
         },
         {
           "imperial" : "¼ tassa de fruita dessecada",
@@ -556,7 +544,7 @@
         },
         {
           "text" : "Litxis",
-          "topic" : ""
+          "topic" : "topics/lychees"
         },
         {
           "text" : "Mangos",
@@ -689,10 +677,6 @@
         {
           "text" : "Ametlles",
           "topic" : "topics/almonds"
-        },
-        {
-          "text" : "Nous del Brasil",
-          "topic" : "topics/brazil-nuts"
         },
         {
           "text" : "Anacards",
@@ -892,16 +876,20 @@
       "heading" : "Crucíferes",
       "servings" : [
         {
-          "imperial" : "½ tassa tallat",
-          "metric" : "30-80 g tallat"
+          "imperial" : "½ tassa de verdures de fulla cuites",
+          "metric" : "90 g de verdures de fulla cuites"
         },
         {
-          "imperial" : "½ tassa de cols de Brussel·les",
-          "metric" : "80 g de cols de Brussel·les"
+          "imperial" : "½ tassa de verdures sense fulla cuites o crues",
+          "metric" : "90 g de verdures sense fulla cuites o crues"
         },
         {
-          "imperial" : "¼ tassa brots de bròquil",
-          "metric" : "15 g brots de bròquil"
+          "imperial" : "1 tassa de verdures de fulla crues",
+          "metric" : "60 g de verdures de fulla crues"
+        },
+        {
+          "imperial" : "¼ tassa de brots germinats de bròquil",
+          "metric" : "20 g de brots germinats de bròquil"
         },
         {
           "imperial" : "1 cullerada de rave picant",
@@ -977,15 +965,15 @@
         },
         {
           "imperial" : "½ tassa de verdures sense fulla crues o cuites",
-          "metric" : "50 g de verdures sense fulla crues o cuites"
+          "metric" : "90 g de verdures sense fulla cuites o crues "
         },
         {
           "imperial" : "½ tassa de suc de verdures",
-          "metric" : "125 ml de suc de verdures"
+          "metric" : "120 ml de suc de verdures"
         },
         {
           "imperial" : "¼ tassa de bolets dessecats",
-          "metric" : "7 g de bolets dessecats"
+          "metric" : "10 g de bolets dessecats"
         }
       ],
       "topic" : "topics/vegetables",
@@ -1068,16 +1056,20 @@
       "heading" : "Cereals integrals",
       "servings" : [
         {
-          "imperial" : "½ tassa de cereals cuits, pasta integral o grans de blat cuits",
-          "metric" : "100 g de cereals cuits, pasta integral o grans de blat cuits"
+          "imperial" : "½ tassa de cereals integrals, pasta integral o grans de blat cuits",
+          "metric" : "100 g de cereals integrals, pasta integral o grans de blat cuits"
         },
         {
-          "imperial" : "1 tassa de cereals freds",
-          "metric" : "50 g de cereals freds"
+          "imperial" : "1 tassa de cereals 100% integrals freds",
+          "metric" : "50 g de cereals 100% integrals freds"
         },
         {
-          "imperial" : "1 tortilla o llesca de pa",
-          "metric" : "1 tortilla o llesca de pa"
+          "imperial" : "1 tortilla 100% integral (o 2 tortilles més petites de blat de moro)",
+          "metric" : "1 tortilla 100% integral (o 2 tortilles més petites de blat de moro)"
+        },
+        {
+          "imperial" : "1 tortilla o llesca de pa 100% integral",
+          "metric" : "1 tortilla o llesca de pa 100% integral"
         },
         {
           "imperial" : "½ bagel o muffin anglès",

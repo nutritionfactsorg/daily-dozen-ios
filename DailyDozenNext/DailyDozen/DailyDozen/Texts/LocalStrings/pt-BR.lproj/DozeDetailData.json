@@ -5,23 +5,19 @@
       "servings" : [
         {
           "imperial" : "¼ xícara de homus ou patê de feijão",
-          "metric" : "60 g de homus ou patê de feijão"
+          "metric" : "70 g de homus ou patê de feijão"
         },
         {
           "imperial" : "½ xícara de feijão, ervilha ou lentilha cozidos",
-          "metric" : "90 g de feijão, ervilha ou lentilha cozidos"
+          "metric" : "100 g de feijão, ervilha ou lentilha cozidos"
         },
         {
-          "imperial" : "½ xícara de tofu ou tempê",
-          "metric" : "100 g de tofu ou tempê"
+          "imperial" : "⅓ xícara de tofu ou tempeh",
+          "metric" : "80 g de tofu ou tempê"
         },
         {
-          "imperial" : "1 xícara de ervilha fresca",
-          "metric" : "130 g de ervilha fresca"
-        },
-        {
-          "imperial" : "1 xícara de feijão fresco germinado (lentilha, feijão mungo)",
-          "metric" : "100 g de feijão fresco germinado (lentilha, feijão mungo)"
+          "imperial" : "1 xícara de ervilha fresca ou lentilha germinada",
+          "metric" : "100 g de ervilha fresca ou lentilha germinada"
         }
       ],
       "topic" : "topics/beans",
@@ -67,10 +63,6 @@
           "topic" : "topics/lentils"
         },
         {
-          "text" : "Missô",
-          "topic" : "topics/miso"
-        },
-        {
           "text" : "Feijão branco (navy)",
           "topic" : "topics/navy-beans"
         },
@@ -97,7 +89,7 @@
       "servings" : [
         {
           "imperial" : "½ xícara de frutas silvestres frescas ou congeladas",
-          "metric" : "60 g de frutas silvestres frescas ou congeladas"
+          "metric" : "70 g frescos ou congelados"
         },
         {
           "imperial" : "¼ xícara de frutas silvestres secas",
@@ -193,10 +185,6 @@
         {
           "text" : "Chá de hibisco",
           "topic" : "topics/hibiscus-tea"
-        },
-        {
-          "text" : "Chocolate quente",
-          "topic" : ""
         },
         {
           "text" : "Chá verde com aroma de jasmim",
@@ -493,7 +481,7 @@
         },
         {
           "imperial" : "1 xícara de frutas picadas",
-          "metric" : "120 g de frutas picadas"
+          "metric" : "150 g de frutas picadas"
         },
         {
           "imperial" : "¼ xícara de frutas secas",
@@ -556,7 +544,7 @@
         },
         {
           "text" : "Lichia",
-          "topic" : ""
+          "topic" : "topics/lychees"
         },
         {
           "text" : "Manga",
@@ -689,10 +677,6 @@
         {
           "text" : "Amêndoas",
           "topic" : "topics/almonds"
-        },
-        {
-          "text" : "Castanhas do Pará",
-          "topic" : "topics/brazil-nuts"
         },
         {
           "text" : "Castanhas de cajú",
@@ -892,16 +876,20 @@
       "heading" : "Vegetais Crucíferos",
       "servings" : [
         {
-          "imperial" : "½ xícara de crucíferos picados",
-          "metric" : "30–80 g de crucíferos picados"
+          "imperial" : "½ xícara de vegetais folhosos cozidos",
+          "metric" : "90 g de vegetais folhosos cozidos"
         },
         {
-          "imperial" : "½ copo de couve de Bruxelas",
-          "metric" : "80 g de couve de Bruxelas"
+          "imperial" : "½ xícara de vegetais não-folhosos crús ou cozidos",
+          "metric" : "90 g de vegetais não-folhosos crús ou cozidos"
         },
         {
-          "imperial" : "¼ copo de brotos de brócolis",
-          "metric" : "15 g brotos de brócolis"
+          "imperial" : "1 xícara de vegetais folhosos crús",
+          "metric" : "60 g de vegetais folhosos crús"
+        },
+        {
+          "imperial" : "¼ xícara de brotos de brócolis",
+          "metric" : "20 g brotos de brócolis"
         },
         {
           "imperial" : "1 colher de sopa de rábano-silvestre",
@@ -977,15 +965,15 @@
         },
         {
           "imperial" : "½ xícara de vegetais não-folhosos crus ou cozidos",
-          "metric" : "50 g de vegetais não-folhosos crus ou cozidos"
+          "metric" : "90 g de vegetais não-folhosos crús ou cozidos"
         },
         {
           "imperial" : "½ xícara de suco de vegetais",
-          "metric" : "125 ml de suco de vegetais"
+          "metric" : "120 ml de suco de vegetais"
         },
         {
           "imperial" : "¼ xícara de cogumelos secos",
-          "metric" : "7 g de cogumelos secos"
+          "metric" : "10 g de cogumelos secos"
         }
       ],
       "topic" : "topics/vegetables",
@@ -1068,16 +1056,20 @@
       "heading" : "Grãos Integrais",
       "servings" : [
         {
-          "imperial" : "½ xícara de cereais, grãos cozidos, massas ou grãos de milho",
-          "metric" : "100 g de cereais, grãos cozidos, massas ou grãos de milho"
+          "imperial" : "½ xícara de cereais integrais, macarrão integral ou grãos de milho cozidos",
+          "metric" : "100 g de cereais integrais, macarrão integral ou grãos de milho cozidos"
         },
         {
-          "imperial" : "1 xícara de cereais matinais",
-          "metric" : "50 g de cereais matinais"
+          "imperial" : "1 xícara de cereais matinais 100% integrais",
+          "metric" : "50 g de cereais matinais 100% integrais"
         },
         {
-          "imperial" : "1 tortilha ou fatia de pão",
-          "metric" : "1 tortilha ou fatia de pão"
+          "imperial" : "1 tortilha 100% integral (ou 2 tortilhas mais pequenas)",
+          "metric" : "1 tortilha 100% integral (ou 2 tortilhas mais pequenas)"
+        },
+        {
+          "imperial" : "1 fatia de pão 100% de grãos integrais",
+          "metric" : "1 fatia de pão 100% de grãos integrais"
         },
         {
           "imperial" : "½ bagel ou muffin inglês",
@@ -1123,7 +1115,7 @@
           "topic" : ""
         },
         {
-          "text" : "Massa integral",
+          "text" : "Macarrão integral",
           "topic" : "topics/pasta"
         }
       ]

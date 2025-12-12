@@ -83,10 +83,10 @@
 "faq_calories_question" = "Ile kalorii pokrywa Codzienny Tuzin?";
 
 /*  */
-"faq_calories_response.0" = "Codzienny Tuzin średnio pokrywa około 1200 kalorii, ale biorąc pod uwagę szeroki wybór żywności w każdej kategorii, ten zakres może wahać się od 800 do 1800 kalorii. Weź pod uwagę kategorię \"Inne Warzywa\": szklanka papryki ma znacznie niższą gęstość kaloryczną niż szklanka gotowanych słodkich ziemniaków, dlatego zakres kaloryczny będzie zależał od twoich konkretnych wyborów żywieniowych. To właśnie jest wspaniałe w Liście kontrolnej Codziennego Tuzina — można je dostosować do własnych potrzeb.";
+"faq_calories_response.0" = "Codzienny Tuzin średnio pokrywa około 1200 kalorii, ale biorąc pod uwagę szeroki wybór żywności w każdej kategorii, ten zakres może wahać się od 800 do 1800 kalorii. Weź pod uwagę kategorię “Inne Warzywa”: szklanka papryki ma znacznie niższą gęstość kaloryczną niż szklanka gotowanych słodkich ziemniaków, dlatego zakres kaloryczny będzie zależał od twoich konkretnych wyborów żywieniowych. To właśnie jest wspaniałe w Liście kontrolnej Codziennego Tuzina — można je dostosować do własnych potrzeb.";
 
 /*  */
-"faq_calories_response.1" = "Jeśli twoim celem jest utrata masy ciała, więcej informacji znajdziesz w linku do książki „How Not to Diet” i w zakładce \"21 Adaptacji\". W „How Not to Diet” wspomniałem: „Systematyczny przegląd skutecznych strategii odchudzania wykazał, że biorąc pod uwagę spowolnienie metabolizmu i zwiększony apetyt, który towarzyszy utracie wagi, aby osiągnąć znaczną utratę wagi, liczba kalorii może wymagać spadku nawet do 1200 kalorii dziennie dla kobiet i 1500 kalorii dziennie dla mężczyzn.\"";
+"faq_calories_response.1" = "Jeśli twoim celem jest utrata masy ciała, więcej informacji znajdziesz w linku do książki „How Not to Diet” i w zakładce “21 Adaptacji”. W „How Not to Diet” wspomniałem: „Systematyczny przegląd skutecznych strategii odchudzania wykazał, że biorąc pod uwagę spowolnienie metabolizmu i zwiększony apetyt, który towarzyszy utracie wagi, aby osiągnąć znaczną utratę wagi, liczba kalorii może wymagać spadku nawet do 1200 kalorii dziennie dla kobiet i 1500 kalorii dziennie dla mężczyzn.”";
 
 /*  */
 "faq_calories_response.2" = "Z kolei, jeśli twoim celem jest przybranie na wadze, możesz skupić się na dodawaniu pokarmów o większej zawartości kalorii, takich jak słodkie ziemniaki, awokado, orzechy i produkty sojowe.";
@@ -157,6 +157,9 @@
 /* History View: scale text */
 "history_scale_label" = "Okres czasu";
 
+/*  */
+"historyRecord.movingAverage" = "Średnia ruchoma";
+
 /* History View */
 "historyRecordDoze.heading" = "Historia porcji";
 
@@ -197,16 +200,16 @@
 "info_app_about_heading" = "O aplikacji";
 
 /* Info About View: Open Source Credits */
-"info_app_about_oss_credits" = "Używane są następujące biblioteki open source: RealmSwift, Charts, FSCalendar, SimpleAnimation i ActiveLabel.";
+"info_app_about_oss_credits" = "Używane są następujące biblioteki open source: RealmSwift, Charts, FSCalendar i SimpleAnimation.";
 
 /* Info About View: Overview Text */
 "info_app_about_overview" = "Korzystaj z tej aplikacji codziennie, aby śledzić żywność i porady, które polecam dla optymalnego zdrowia i długowieczności w moich książkach „Jak nie umrzeć przedwcześnie” i „How Not to Diet”.";
 
 /* Info About View: Contributing Translators List (language code)  See https://en.wikipedia.org/wiki/List_of_ISO_639-1_codes */
-"info_app_about_translators" = "Specjalne podziękowania dla naszych tłumaczy-wolontariuszy: Petar Enchev (bg), Tsveti Enchev (bg), Ricard Soler Roger (ca), Luděk Bouška (cs,sk), Lenka Lukacová (cs), Anke Schliessmann (de), Ángela Graña (es), Saeed Salamian (fa), Audray Harkins (fr), Doron Barak (he), Ruth Levy (he), Annalisa Guerrini-Körner (it), Ilaria Zanini (it), Hanna Gurzeda (pl), Joanna Klopotek (pl), Tania Bassi (pt-BR), João Madureira (pt-PT), Cristina Lauby (ro), Evgeniya Lyakh (ru), Katarína Mocáková (sk), Sabina Aliieva (uk).";
+"info_app_about_translators" = "Specjalne podziękowania dla naszych tłumaczy-wolontariuszy: Adelina Chernaeva (bg), Petar Enchev (bg), Tsveti Enchev (bg), Ricard Soler Roger (ca), Luděk Bouška (cs,sk), Lucie Doleželová (cs), Lenka Lukacová (cs), Anke Schliessmann (de), Sofia Schuessler (de), Ángela Graña (es), Saeed Salamian (fa), Audray Harkins (fr), Doron Barak (he), Ruth Levy (he), dr. Stern Borbála (hu), Kertész Tibor (hu), Adriana Centrone (it), Annalisa Guerrini-Körner (it), Ilaria Zanini (it), Andrijeski (mk), Hangur (pl), Hanna Gurzeda (pl), Joanna Klopotek (pl), Tania Bassi (pt-BR), João Madureira (pt-PT), Cristina Lauby (ro), Evgeniya Lyakh (ru), Anna Miliutina (ru), Katarína Mocáková (sk), Sabina Aliieva (uk), Hailey Chang (zh).";
 
 /* Info About View: Application release version */
-"info_app_about_version" = "wersja 3.5.1";
+"info_app_about_version" = "wersja 3.5.3";
 
 /* Info About View: Welcome */
 "info_app_about_welcome" = "Witaj w moim Codziennym Tuzinie!";

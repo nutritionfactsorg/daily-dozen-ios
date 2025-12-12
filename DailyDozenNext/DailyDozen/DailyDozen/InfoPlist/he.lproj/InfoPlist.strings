@@ -1,0 +1,16 @@
+/* DailyDozen InfoPlist.strings (he) */
+/* Copyright © 2021 Nutritionfacts.org. All rights reserved. */
+
+/* User-visible application name. Visible under icon. Used by Siri. */
+"CFBundleDisplayName" = "DailyDozen";
+
+/* User-visible application short name (15 Characters max) */
+"CFBundleName" = "DailyDozen";
+
+/* Privacy - Health Share Usage Description */
+"NSHealthShareUsageDescription" = "התכונה של ״21 הכיוונונים״ מקבלת נתונים מ- HealthKit כדי לעדכן את מדידות המשקל היומיות שלכם.";
+
+/* Privacy - Health Update Usage Description */
+"NSHealthUpdateUsageDescription" = "התכונה של ״21 הכיוונונים״ יכולה לשמור  נתוני משקל ב- HealthKit כדי לעזור לכם לעקוב אחרי ההתקדמות שלכם.";
+
+/* file end */

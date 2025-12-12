@@ -5,7 +5,7 @@
         "imperial" : "Completa le tue ambizioni di miglioramento",
         "metric" : "Completa le tue ambizioni di miglioramento"
       },
-      "explanation" : "Ogni due mesi, crea tre nuove ambizioni di miglioramento (\"se X, allora Y\" per adottare un certo comportamento in un contesto specifico) e spuntale giornalmente una volta completate.",
+      "explanation" : "Ogni due mesi, crea tre nuove ambizioni di miglioramento (“se X, allora Y” per adottare un certo comportamento in un contesto specifico) e spuntale giornalmente una volta completate.",
       "heading" : "Completa le tue ambizioni di miglioramento",
       "topic" : ""
     },
@@ -41,7 +41,7 @@
         "imperial" : "Più calorie a inizio giornata",
         "metric" : "Più calorie a inizio giornata"
       },
-      "explanation" : "Esistono benefici metabolici nel distribuire più calorie all'inizio della giornata, quindi fa sì che il pasto più importante della giornata sia la colazione (idealmente) o il pranzo, seguendo il detto \"Una colazione da re, un pranzo da principe, una cena da contadino\".",
+      "explanation" : "Esistono benefici metabolici nel distribuire più calorie all'inizio della giornata, quindi fa sì che il pasto più importante della giornata sia la colazione (idealmente) o il pranzo, seguendo il detto “Una colazione da re, un pranzo da principe, una cena da contadino”.",
       "heading" : "Più calorie a inizio giornata",
       "topic" : ""
     },
@@ -119,11 +119,11 @@
     },
     "tweakMealNegCal" : {
       "activity" : {
-        "imperial" : "Inizia i tuoi pasti con cibi \"a calorie negative\"",
-        "metric" : "Inizia i tuoi pasti con cibi \"a calorie negative\""
+        "imperial" : "Inizia i tuoi pasti con cibi “a calorie negative”",
+        "metric" : "Inizia i tuoi pasti con cibi “a calorie negative”"
       },
       "explanation" : "Come primo piatto, inizia ogni pasto con una mela, una zuppa leggera di verdure o un'insalata, che contengono meno di cento calorie per porzione.",
-      "heading" : "Inizia i tuoi pasti con cibi \"a calorie negative\"",
+      "heading" : "Inizia i tuoi pasti con cibi “a calorie negative”",
       "topic" : ""
     },
     "tweakMealUndistracted" : {

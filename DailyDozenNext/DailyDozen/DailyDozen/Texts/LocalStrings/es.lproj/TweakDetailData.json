@@ -11,20 +11,20 @@
     },
     "tweakDailyBlackCumin" : {
       "activity" : {
-        "imperial" : "Comino negro (Nigella sativa) (¼ ctda.)",
-        "metric" : "Comino negro (Nigella sativa) (¼ ctda.)"
+        "imperial" : "Comino negro (Nigella sativa) (¼ cdta.)",
+        "metric" : "Comino negro (Nigella sativa) (¼ cdta.)"
       },
-      "explanation" : "Como se indica en la sección del libro que habla de la supresión del apetito, una revisión sistemática y un metanálisis de ensayos aleatorizados con grupo de control sobre la pérdida de peso concluyó que aproximadamente un cuarto de cucharadita de comino negro en polvo al día parece reducir el índice de masa corporal en un lapso de un par de meses. No olvides que el comino negro es diferente al comino normal, cuya ingesta recomendada es diferente.",
-      "heading" : "Comino negro (¼ ctda.)",
+      "explanation" : "Como se indica en la sección de Comer para no engordar que habla de la supresión del apetito, una revisión sistemática y un metanálisis de ensayos aleatorizados con grupo de control sobre la pérdida de peso concluyó que aproximadamente un cuarto de cucharadita de comino negro en polvo al día parece reducir el índice de masa corporal en un lapso de un par de meses. No olvides que el comino negro es diferente al comino normal, cuya ingesta recomendada es diferente.",
+      "heading" : "Comino negro (¼ cdta.)",
       "topic" : ""
     },
     "tweakDailyCumin" : {
       "activity" : {
-        "imperial" : "Comino (Cuminum cyminum) (½ ctda. almuerzo y cena)",
-        "metric" : "Comino (Cuminum cyminum) (½ ctda. almuerzo y cena)"
+        "imperial" : "Comino (Cuminum cyminum) (½ cdta. almuerzo y cena)",
+        "metric" : "Comino (Cuminum cyminum) (½ cdta. almuerzo y cena)"
       },
-      "explanation" : "Las mujeres con sobrepeso aleatorizadas a echarle media cucharadita de comino a sus almuerzos y cenas superaron al grupo de control, ya que perdieron casi 2 kg más y 2.5 cm extra en la cintura. También existe evidencia para apoyar el uso del azafrán, pero una pizca al día costaría un dólar, mientras que una cucharadita de comino cuesta menos de diez centavos.",
-      "heading" : "Comino (½ ctda. almuerzo y cena)",
+      "explanation" : "Las mujeres con sobrepeso aleatorizadas a echarle media cucharadita de comino a sus almuerzos y cenas superaron al grupo de control, ya que perdieron casi 2 kg más y 2,5 cm extra en la cintura. También existe evidencia para apoyar el uso del azafrán, pero una pizca al día costaría un dólar, mientras que una cucharadita de comino cuesta menos de diez centavos.",
+      "heading" : "Comino (½ cdta. almuerzo y cena)",
       "topic" : ""
     },
     "tweakDailyDeflourDiet" : {
@@ -47,20 +47,20 @@
     },
     "tweakDailyGarlic" : {
       "activity" : {
-        "imperial" : "Ajo en polvo (¼ ctda.)",
-        "metric" : "Ajo en polvo (¼ ctda.)"
+        "imperial" : "Ajo en polvo (¼ cdta.)",
+        "metric" : "Ajo en polvo (¼ cdta.)"
       },
-      "explanation" : "Unos estudios aleatorizados, doble ciegos y controlados con placebo han encontrado que, con simplemente un cuarto de cucharadita diaria de ajo en polvo, se puede reducir la grasa corporal, a un costo de quizás dos centavos por día.",
-      "heading" : "Ajo en polvo (¼ ctda.)",
+      "explanation" : "Unos estudios aleatorizados, doble ciegos y controlados con placebo han descubierto que, con simplemente un cuarto de cucharadita diaria de ajo en polvo, se puede reducir la grasa corporal, a un costo de quizás dos centavos por día.",
+      "heading" : "Ajo en polvo (¼ cdta.)",
       "topic" : ""
     },
     "tweakDailyGinger" : {
       "activity" : {
-        "imperial" : "Jengibre (1 ctda.) o cayena (½ ctda.)",
-        "metric" : "Jengibre (1 ctda.) o cayena (½ ctda.)"
+        "imperial" : "Jengibre (1 cdta.) o cayena (½ cdta.)",
+        "metric" : "Jengibre (1 cdta.) o cayena (½ cdta.)"
       },
-      "explanation" : "Unos ensayos aleatorizados y con grupo de control han descubierto que el consumo de ¼ a 1½ cucharadita al día de jengibre en polvo disminuye significativamente el peso corporal por solo unos centavos al día. Puede ser tan fácil como echar el jengibre en una taza de agua caliente. Nota: el jengibre podría funcionar mejor por la mañana que por la tarde. El chai es una forma estupenda de combinar los trucos del té verde y el jengibre en una sola bebida. Además, para activar el tejido adiposo pardo, también puedes añadir un jalapeño crudo o media cucharadita de chile en polvo a tu dieta diaria. Para ayudarte con el picante, puedes cortar el jalapeño en rodajas muy finas o picarlo muy bien. El chile en polvo lo podrías echar en las sopas y guisos o en el batido de verduras que hice en uno de mis videos de cocina en NutritionFacts.org.",
-      "heading" : "Jengibre molido (1 ctda.) o cayena (½ ctda.)",
+      "explanation" : "Unos ensayos aleatorizados con grupo de control han descubierto que el consumo de ¼ a 1 y ½ cucharadita al día de jengibre en polvo disminuye significativamente el peso corporal por solo unos centavos al día. Puede ser tan fácil como echar el jengibre en una taza de agua caliente. Nota: el jengibre podría funcionar mejor por la mañana que por la tarde. El chai es una forma estupenda de combinar los trucos del té verde y el jengibre en una sola bebida. Además, para activar el tejido adiposo pardo, también puedes añadir un jalapeño crudo o media cucharadita de chile en polvo a tu dieta diaria. Para ayudarte con el picante, puedes cortar el jalapeño en rodajas muy finas o picarlo muy bien. El chile en polvo lo podrías echar en las sopas y guisos o en el batido de verduras que hice en uno de mis videos de cocina en NutritionFacts.org.",
+      "heading" : "Jengibre molido (1 cdta.) o cayena (½ cdta.)",
       "topic" : ""
     },
     "tweakDailyGreenTea" : {
@@ -68,7 +68,7 @@
         "imperial" : "Té verde (3 tazas)",
         "metric" : "Té verde (3 tazas)"
       },
-      "explanation" : "Bebe tres tazas al día entre comidas, esperando al menos una hora después de comer, para no interferir con la absorción de hierro. Durante las comidas, bebe agua, café solo o infusión de hibisco (mezclado 6:1 con hierba luisa), pero nunca excedas tres tazas de líquido por hora (tenlo en cuenta para mi sección sobra empezar con agua). Aprovecha los efectos de la cafeína y bebe el té verde mientras comes algo saludable que querrías que te gustase más, para crear una asociación positiva, pero ten ojo y no consumas mucha cafeína en las 6 horas antes de irte a dormir. Lo mejor es tomar el té sin ningún tipo de edulcorante, pero, si le sueles echar miel o azúcar, prueba el jarabe de yacón.",
+      "explanation" : "Bebe tres tazas al día entre comidas, esperando al menos una hora después de comer, para no interferir con la absorción del hierro. Durante las comidas, bebe agua, café solo o infusión de hibisco (mezclado 6:1 con hierba luisa), pero nunca excedas tres tazas de líquido por hora (tenlo en cuenta para mi sección sobre empezar con agua). Aprovecha los efectos de la cafeína y bebe el té verde mientras comes algo saludable que querrías que te gustase más, para crear una asociación positiva, pero ten ojo y no consumas mucha cafeína en las 6 horas antes de irte a dormir. Lo mejor es tomar el té sin ningún tipo de edulcorante, pero, si le sueles echar miel o azúcar, prueba el jarabe de yacón.",
       "heading" : "Té verde (3 tazas)",
       "topic" : ""
     },
@@ -77,17 +77,17 @@
         "imperial" : "Hidratación",
         "metric" : "Hidratación"
       },
-      "explanation" : "Puedes marcar esta casilla si tu orina nunca pasa del amarillo pálido.\n\nTen en cuenta que, si consumes alimentos fortificados con riboflavina (como la levadura nutricional), no deberías seguir esta premisa del color y debes centrarte en obtener nueve tazas de líquido sin edulcorar al día para las mujeres (que podrían cubrir el consumo de té verde y agua) o trece tazas al día para hombres.\n\nSi tienes problemas cardiacos o renales, no aumentes la ingesta de líquidos sin antes hablar con tu médico.\n\nNo olvides que, aunque los refrescos light no tengan calorías, no son inocuos, como explico en la sección del libro sobre los azúcares añadidos.",
+      "explanation" : "Puedes marcar esta casilla si tu orina nunca pasa del amarillo pálido.\n\nTen en cuenta que, si consumes alimentos fortificados con riboflavina (como la levadura nutricional), no deberías seguir esta premisa del color y debes centrarte en obtener nueve tazas de líquido sin edulcorar al día para las mujeres o trece tazas al día para hombres (esas 9 tazas podrían cubrirse con el consumo de té verde y agua).\n\nSi tienes problemas cardiacos o renales, no aumentes la ingesta de líquidos sin antes hablar con tu médico.\n\nNo olvides que, aunque los refrescos light no tengan calorías, no son inocuos, como explico en la sección del libro sobre los azúcares añadidos.",
       "heading" : "Hidratación",
       "topic" : ""
     },
     "tweakDailyNutriYeast" : {
       "activity" : {
-        "imperial" : "Levadura nutricional (2 ctda.)",
-        "metric" : "Levadura nutricional (2 ctda.)"
+        "imperial" : "Levadura nutricional (2 cdtas.)",
+        "metric" : "Levadura nutricional (2 cdtas.)"
       },
-      "explanation" : "Dos cucharaditas de levadura de panadería, de cerveza o nutricional contienen aproximadamente la cantidad de glucanos beta 1,3 / 1,6 correcta que, en ensayos clínicos aleatorizados, doble ciegos y con grupo de control, ha demostrado facilitar la pérdida de peso.",
-      "heading" : "Levadura nutricional (2 ctda.)",
+      "explanation" : "Dos cucharaditas de levadura de panadería, de cerveza o nutricional contienen aproximadamente la cantidad de glucanos beta 1,3/1,6 correcta que, en ensayos clínicos aleatorizados, doble ciegos y con grupo de control, ha demostrado facilitar la pérdida de peso.",
+      "heading" : "Levadura nutricional (2 cdtas.)",
       "topic" : ""
     },
     "tweakDailyTimeRestrict" : {
@@ -104,7 +104,7 @@
         "imperial" : "Ejercicio a buena hora",
         "metric" : "Ejercicio a buena hora"
       },
-      "explanation" : "La recomendación de la Docena Diaria para una mayor longevidad son 90 minutos de actividad física moderada, que también resulta ser la duración óptima para perder peso. Cualquier momento es bueno y, cuanto más, mejor, pero podría ser mejor hacer ejercicio en ayunas, al menos seis horas después de tu última comida. En general, esto se traduce en antes del desayuno, pero, si lo planeas bien, podrías hacer ejercicio al mediodía antes de un almuerzo tardío o, si comes temprano, pues antes de la cena. Esto sería para los no diabéticos. Los diabéticos y prediabéticos deberían empezar a hacer ejercicio treinta minutos después del comienzo de una comida e idealmente durante por lo menos una hora, para alcanzar el pico de azúcar en sangre. Si tuvieras que elegir una sola comida para hacer ejercicio después esta, lo mejor sería la cena, debido a que el ritmo circadiano del control del azúcar en sangre va disminuyendo durante el día. Sin embargo, como lo mejor es que el desayuno sea la comida más grande del día, deberías hacer ejercicio después de desayunar; o, mejor aún, después de cada comida.",
+      "explanation" : "La recomendación de la Docena Diaria para obtener una mayor longevidad son 90 minutos de actividad física moderada, que también resulta ser la duración óptima para perder peso. Cualquier momento es bueno y, cuanto más, mejor, pero podría ser mejor hacer ejercicio en ayunas, al menos seis horas después de tu última comida. En general, esto se traduce en antes del desayuno, pero, si lo planeas bien, podrías hacer ejercicio al mediodía antes de un almuerzo tardío o, si comes temprano, pues antes de la cena. Esto sería para los no diabéticos. Los diabéticos y prediabéticos deberían empezar a hacer ejercicio treinta minutos después del comienzo de una comida e idealmente durante por lo menos una hora, para alcanzar el pico de azúcar en sangre. Si tuvieras que elegir una sola comida para hacer ejercicio después esta, lo mejor sería la cena, debido a que el ritmo circadiano del control del azúcar en sangre va disminuyendo durante el día. Sin embargo, como lo mejor es que el desayuno sea la comida más grande del día, deberías hacer ejercicio después de desayunar; o, mejor aún, después de cada comida.",
       "heading" : "Ejercicio a buena hora",
       "topic" : ""
     },
@@ -131,17 +131,17 @@
         "imperial" : "Comidas sin distracciones",
         "metric" : "Comidas sin distracciones"
       },
-      "explanation" : "No comas mientras ves la televisión o juegas en tu smartphone. Puedes marcar una casilla por cada comida que pases sin distracciones.",
+      "explanation" : "No comas mientras ves la televisión o utilizas tu smartphone. Puedes marcar una casilla por cada comida que pases sin distracciones.",
       "heading" : "Comidas sin distracciones",
       "topic" : ""
     },
     "tweakMealVinegar" : {
       "activity" : {
-        "imperial" : "Vinagre (2 ctda. cada comida)",
-        "metric" : "Vinagre (2 ctda. cada comida)"
+        "imperial" : "Vinagre (2 cdtas. cada comida)",
+        "metric" : "Vinagre (2 cdtas. cada comida)"
       },
       "explanation" : "Nunca bebas vinagre solo. Puedes usarlo para condimentar las comidas o aderezar una ensalada. Puedes usar cualquier tipo de vinagre, dulce o salado. Si quieres beberlo, debes mezclarlo con un vaso de agua y enjuagarte la boca justo después para proteger el esmalte dental.",
-      "heading" : "Vinagre (2 ctda. cada comida)",
+      "heading" : "Vinagre (2 cdtas. cada comida)",
       "topic" : ""
     },
     "tweakMealWater" : {

@@ -74,7 +74,7 @@
 "faq_age_question" = "這是否適用於兒童和青少年？";
 
 /*  */
-"faq_age_response.0" = "兒童和青少年在整個生命週期中有不同的熱量需求。 這些需求在每個階段發生改變，是為了支持每個階段的增長和發展。";
+"faq_age_response.0" = "兒童和青少年在整個生命週期中有不同的熱量需求。這些需求在每個階段發生改變，是為了支持每個階段的增長和發展。";
 
 /*  */
 "faq_age_response.1" = "每日12清單旨在作為指南，幫助人們將一些最健康的食物納入日常生活。雖然同一框架可用於大多數人的整個生命週期，但一個人需要吃的食物量會因年齡和活動水平等多種因素而異。由於我們無法為您成長中的孩子提供具體的營養或醫療建議，因此父母應該根據他們認為最適合孩子需求的方式使用本指南和/或諮詢註冊營養師或其他醫療保健提供者，以幫助確定最適合他們個人的內容需要。";
@@ -95,7 +95,7 @@
 "faq_mother_question" = "我可以在懷孕或哺乳期間這樣做嗎？";
 
 /*  */
-"faq_mother_response" = "懷孕或哺乳的人與未懷孕或哺乳的人有不同的熱量和營養需求。 提醒一下，每日12清單不是膳食計劃，也不應該是一天內食用的唯一食物。 懷孕或哺乳的人應該諮詢她們的保健醫師或註冊營養師，以獲得滿足其特定熱量需求和營養需求的幫助。";
+"faq_mother_response" = "懷孕或哺乳的人與未懷孕或哺乳的人有不同的熱量和營養需求。提醒一下，每日12清單不是膳食計劃，也不應該是一天內食用的唯一食物。懷孕或哺乳的人應該諮詢她們的保健醫師或註冊營養師，以獲得滿足其特定熱量需求和營養需求的幫助。";
 
 /*  */
 "faq_scaling_question" = "我不可能吃那麼多豆子／穀物／其他食物！";
@@ -200,16 +200,16 @@
 "info_app_about_heading" = "關於本應用程序";
 
 /* Info About View: Open Source Credits */
-"info_app_about_oss_credits" = "使用了以下的開放資源：RealmSwift、Charts、FSCalendar、SimpleAnimation、ActiveLabel";
+"info_app_about_oss_credits" = "使用了以下的開放資源：RealmSwift、Charts、FSCalendar、SimpleAnimation";
 
 /* Info About View: Overview Text */
 "info_app_about_overview" = "我在《食療聖經》中推薦了能夠讓您健康長壽的食物，請每天使用這個應用程序來記錄與追蹤您對這些食物的攝取量。";
 
 /* Info About View: Contributing Translators List (language code)  See https://en.wikipedia.org/wiki/List_of_ISO_639-1_codes */
-"info_app_about_translators" = "特別鳴謝翻譯志願者：Petar Enchev（bg）、Tsveti Enchev（bg）、Ricard Soler Roger（ca）、Luděk Bouška（cs,sk）、Lenka Lukacová（cs）、Anke Schliessmann（de）、Ángela Graña(es)、Saeed Salamian (fa)、Audray Harkins（fr）、Doron Barak（he）、Ruth Levy（he）、Annalisa Guerrini-Körner（it）、Ilaria Zanini（it）、Hanna Gurzeda（pl）、Joanna Klopotek（pl）、Tania Bassi（pt-BR）、João Madureira（pt-PT）、Cristina Lauby（ro）、Evgeniya Lyakh（ru）、Katarína Mocáková（sk）、Sabina Aliieva（uk)。";
+"info_app_about_translators" = "特別鳴謝翻譯志願者：Adelina Chernaeva（bg）、Petar Enchev（bg）、Tsveti Enchev（bg）、Ricard Soler Roger（ca）、Luděk Bouška（cs、sk）、Lucie Doleželová（cs）、Lenka Lukacová（cs）、Anke Schliessmann（de）、Sofia Schuessler（de）、Ángela Graña(es）、Saeed Salamian（fa）、Audray Harkins（fr）、Doron Barak（he）、Ruth Levy（he）、dr. Stern Borbála（hu）、Kertész Tibor（hu）、Adriana Centrone（it）、Annalisa Guerrini-Körner（it）、Ilaria Zanini（it）、Andrijeski（mk）、Hangur（pl）、Hanna Gurzeda（pl）、Joanna Klopotek（pl）、Tania Bassi（pt-BR）、João Madureira（pt-PT）、Cristina Lauby（ro）、Evgeniya Lyakh（ru）、Anna Miliutina（ru）、Katarína Mocáková（sk）、Sabina Aliieva（uk）、Hailey Chang（zh）";
 
 /* Info About View: Application release version */
-"info_app_about_version" = "3.5.1版本";
+"info_app_about_version" = "3.5.3版本";
 
 /* Info About View: Welcome */
 "info_app_about_welcome" = "歡迎來到我的「每日12清單」！";
@@ -301,18 +301,6 @@
 /* Google Firebase Analytics */
 "setting_analytics_title" = "分析";
 
-/* Appearance Header */
-"setting_appearance_header" = "Appearance";
-
-/* Appearance Mode: Auto */
-"setting_appearance_mode_auto" = "Auto";
-
-/* Appearance Mode: Dark */
-"setting_appearance_mode_dark" = "Dark";
-
-/* Appearance Mode: Light */
-"setting_appearance_mode_light" = "Light";
-
 /* First Launch Setting: button text */
 "setting_doze_only_btn" = "僅限每日12清單\n";
 
@@ -347,7 +335,7 @@
 "setting_units_2_toggle" = "切換單位";
 
 /* Preference Settings View: brief description text below units control. */
-"setting_units_choice_footer" = "設置為始終為一種單位類型，或啟用「單位」切換按鈕。";
+"setting_units_choice_footer" = "設置為始終顯示一種單位類型，或啟用「單位」切換按鈕。";
 
 /* Preference Settings View */
 "setting_units_header" = "計量單位";

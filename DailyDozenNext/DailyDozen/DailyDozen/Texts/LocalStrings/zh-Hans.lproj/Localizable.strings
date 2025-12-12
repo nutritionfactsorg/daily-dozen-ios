@@ -74,7 +74,7 @@
 "faq_age_question" = "这是否适用于儿童和青少年？";
 
 /*  */
-"faq_age_response.0" = "儿童和青少年在整个生命周期中有不同的热量需求。 这些需求在每个阶段发生改变，是为了支持每个阶段的增长和发展。";
+"faq_age_response.0" = "儿童和青少年在整个生命周期中有不同的热量需求。这些需求在每个阶段发生改变，是为了支持每个阶段的增长和发展。";
 
 /*  */
 "faq_age_response.1" = "每日12清单旨在作为指南，帮助人们将一些最健康的食物纳入日常生活。虽然同一框架可用于大多数人的整个生命周期，但一个人需要吃的食物量会因年龄和活动水平等多种因素而异。由于我们无法为您成长中的孩子提供具体的营养或医疗建议，因此父母应该根据他们认为最适合孩子需求的方式使用本指南和/或咨询注册营养师或其他医疗保健提供者，以帮助确定最适合他们个人的内容需要。";
@@ -95,7 +95,7 @@
 "faq_mother_question" = "我可以在怀孕或哺乳期间这样做吗？";
 
 /*  */
-"faq_mother_response" = "怀孕或哺乳的人与未怀孕或哺乳的人有不同的热量和营养需求。 提醒一下，每日12清单不是膳食计划，也不应该是一天内食用的唯一食物。 怀孕或哺乳的人应该咨询她们的保健医生或注册营养师，以获得满足其特定热量需求和营养需求的帮助。";
+"faq_mother_response" = "怀孕或哺乳的人与未怀孕或哺乳的人有不同的热量和营养需求。提醒一下，每日12清单不是膳食计划，也不应该是一天内食用的唯一食物。怀孕或哺乳的人应该咨询她们的保健医生或注册营养师，以获得满足其特定热量需求和营养需求的帮助。";
 
 /*  */
 "faq_scaling_question" = "我不可能吃那么多豆子／谷物／其他食物！";
@@ -200,16 +200,16 @@
 "info_app_about_heading" = "关于本应用程序";
 
 /* Info About View: Open Source Credits */
-"info_app_about_oss_credits" = "使用了以下的开放资源：RealmSwift、Charts、FSCalendar、SimpleAnimation、ActiveLabel";
+"info_app_about_oss_credits" = "使用了以下的开放资源：RealmSwift、Charts、FSCalendar、SimpleAnimation";
 
 /* Info About View: Overview Text */
 "info_app_about_overview" = "我在《救命》中推荐了能够让您健康长寿的食物，请每天使用这个应用程序来记录与追踪您对这些食物的摄取量。";
 
 /* Info About View: Contributing Translators List (language code)  See https://en.wikipedia.org/wiki/List_of_ISO_639-1_codes */
-"info_app_about_translators" = "特别鸣谢翻译志愿者：Petar Enchev（bg）、Tsveti Enchev（bg）、Ricard Soler Roger（ca）、Luděk Bouška（cs,sk）、Lenka Lukacová（cs）、Anke Schliessmann（de）、Ángela Graña(es)、Saeed Salamian (fa)、Audray Harkins（fr）、Doron Barak（he）、Ruth Levy（he）、Annalisa Guerrini-Körner（it）、Ilaria Zanini（it）、Hanna Gurzeda（pl）、Joanna Klopotek（pl）、Tania Bassi（pt-BR）、João Madureira（pt-PT）、Cristina Lauby（ro）、Evgeniya Lyakh（ru）、Katarína Mocáková（sk）、Sabina Aliieva（uk)。";
+"info_app_about_translators" = "特别鸣谢翻译志愿者：Adelina Chernaeva（bg）、Petar Enchev（bg）、Tsveti Enchev（bg）、Ricard Soler Roger（ca）、Luděk Bouška（cs、sk）、Lucie Doleželová（cs）、Lenka Lukacová（cs）、Anke Schliessmann（de）、Sofia Schuessler（de）、Ángela Graña(es）、Saeed Salamian（fa）、Audray Harkins（fr）、Doron Barak（he）、Ruth Levy（he）、dr. Stern Borbála（hu）、Kertész Tibor（hu）、Adriana Centrone（it）、Annalisa Guerrini-Körner（it）、Ilaria Zanini（it）、Andrijeski（mk）、Hangur（pl）、Hanna Gurzeda（pl）、Joanna Klopotek（pl）、Tania Bassi（pt-BR）、João Madureira（pt-PT）、Cristina Lauby（ro）、Evgeniya Lyakh（ru）、Anna Miliutina（ru）、Katarína Mocáková（sk）、Sabina Aliieva（uk）、Hailey Chang（zh）";
 
 /* Info About View: Application release version */
-"info_app_about_version" = "3.5.1版本";
+"info_app_about_version" = "3.5.3版本";
 
 /* Info About View: Welcome */
 "info_app_about_welcome" = "欢迎来到我的“每日12清单”！";
@@ -335,7 +335,7 @@
 "setting_units_2_toggle" = "切换单位";
 
 /* Preference Settings View: brief description text below units control. */
-"setting_units_choice_footer" = "设置为始终为一种单位类型，或启用“单位”切换按钮。";
+"setting_units_choice_footer" = "设置为始终显示一种单位类型，或启用“单位”切换按钮。";
 
 /* Preference Settings View */
 "setting_units_header" = "计量单位";

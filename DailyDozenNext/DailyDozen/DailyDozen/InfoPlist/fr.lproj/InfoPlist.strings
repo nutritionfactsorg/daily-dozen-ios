@@ -1,0 +1,16 @@
+/* DailyDozen InfoPlist.strings (fr) */
+/* Copyright © 2021 Nutritionfacts.org. All rights reserved. */
+
+/* User-visible application name. Visible under icon. Used by Siri. */
+"CFBundleDisplayName" = "DailyDozen";
+
+/* User-visible application short name (15 Characters max) */
+"CFBundleName" = "DailyDozen";
+
+/* Privacy - Health Share Usage Description */
+"NSHealthShareUsageDescription" = "La fonction 21 Astuces utilise les données de votre App Santé pour mettre à jour votre poids.";
+
+/* Privacy - Health Update Usage Description */
+"NSHealthUpdateUsageDescription" = "La fonction 21 Astuces peut entrer votre poids dans l'App Santé pour faciliter votre suivi.";
+
+/* file end */

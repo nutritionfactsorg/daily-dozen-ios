@@ -5,23 +5,19 @@
       "servings" : [
         {
           "imperial" : "¼ szklanki hummusu lub dipu z fasoli",
-          "metric" : "60 g hummusu lub dipu z fasoli"
+          "metric" : "70 g hummusu lub dipu z fasoli"
         },
         {
           "imperial" : "½ szklanki ugotowanej fasoli, grochu łuskanego, lub soczewicy",
-          "metric" : "90 g ugotowanej fasoli, grochu łuskanego, lub soczewicy"
+          "metric" : "100 g ugotowanej fasoli, grochu łuskanego, lub soczewicy"
         },
         {
           "imperial" : "½ szklanki tofu lub tempehu",
-          "metric" : "100 g tofu lub tempehu"
+          "metric" : "80 g tofu lub tempehu"
         },
         {
-          "imperial" : "1 szklanka świeżego groszku lub groszku młodego cukrowego",
-          "metric" : "130 g świeżego groszku lub groszku młodego cukrowego"
-        },
-        {
-          "imperial" : "1 szklanka świeżych kiełków strączków (soczewica, fasola mung)",
-          "metric" : "100 g świeżych kiełków strączków (soczewica, fasola mung)"
+          "imperial" : "1 szklanka świeżego groszku lub kiełków soczewicy",
+          "metric" : "100 g świeżego groszku lub kiełków soczewicy"
         }
       ],
       "topic" : "topics/beans",
@@ -67,10 +63,6 @@
           "topic" : "topics/lentils"
         },
         {
-          "text" : "Miso",
-          "topic" : "topics/miso"
-        },
-        {
           "text" : "Fasola garbanzo",
           "topic" : "topics/navy-beans"
         },
@@ -97,7 +89,7 @@
       "servings" : [
         {
           "imperial" : "½ szklanki świeżych lub mrożonych",
-          "metric" : "60 g świeżych lub mrożonych"
+          "metric" : "70 g świeżych lub mrożonych"
         },
         {
           "imperial" : "¼ szklanki susznych",
@@ -193,10 +185,6 @@
         {
           "text" : "Herbata z hibiskusa",
           "topic" : "topics/hibiscus-tea"
-        },
-        {
-          "text" : "Gorąca czekolada",
-          "topic" : ""
         },
         {
           "text" : "Herbata jaśminowa",
@@ -493,7 +481,7 @@
         },
         {
           "imperial" : "1 szklanka pokrojonych owoców",
-          "metric" : "120 g pokrojonych owoców"
+          "metric" : "150 g pokrojonych owoców"
         },
         {
           "imperial" : "¼ szklanki suszonych owoców",
@@ -556,7 +544,7 @@
         },
         {
           "text" : "Liczi",
-          "topic" : ""
+          "topic" : "topics/lychees"
         },
         {
           "text" : "Mango",
@@ -689,10 +677,6 @@
         {
           "text" : "Migdały",
           "topic" : "topics/almonds"
-        },
-        {
-          "text" : "Orzechy brazylijskie",
-          "topic" : "topics/brazil-nuts"
         },
         {
           "text" : "Orzechy nerkowca",
@@ -892,16 +876,20 @@
       "heading" : "Warzywa kapustne",
       "servings" : [
         {
-          "imperial" : "½ szklanki posiekanych",
-          "metric" : "30–80 g posiekanych"
+          "imperial" : "½ szklanki ugotowanych warzyw liściastych",
+          "metric" : "90 g ugotowanych warzyw liściastych"
         },
         {
-          "imperial" : "½ szklanki brukselki",
-          "metric" : "80 g brukselki"
+          "imperial" : "½ szklanki surowych lub ugotowanych warzyw nieliściastych",
+          "metric" : "90 g surowych lub ugotowanych warzyw nieliściastych"
+        },
+        {
+          "imperial" : "1 szklanka surowych warzyw liściastych",
+          "metric" : "60 g surowych warzyw liściastych"
         },
         {
           "imperial" : "¼ szklanki kiełków brokułu",
-          "metric" : "15 g  kiełków brokułu"
+          "metric" : "20 g  kiełków brokułu"
         },
         {
           "imperial" : "1 łyżka chrzanu",
@@ -977,15 +965,15 @@
         },
         {
           "imperial" : "½ szklanki surowych lub gotowanych warzyw nieliściastych",
-          "metric" : "50 g surowych lub gotowanych warzyw nieliściastych"
+          "metric" : "90 g surowych lub ugotowanych warzyw nieliściastych"
         },
         {
           "imperial" : "½ szklanki soku warzywnego",
-          "metric" : "125 ml soku warzywnego"
+          "metric" : "120 ml soku warzywnego"
         },
         {
           "imperial" : "¼ szklanki suszonych grzybów",
-          "metric" : "7 g suszonych grzybów"
+          "metric" : "10 g suszonych grzybów"
         }
       ],
       "topic" : "topics/vegetables",
@@ -1068,16 +1056,20 @@
       "heading" : "Pełnoziarniste zboża",
       "servings" : [
         {
-          "imperial" : "½ szklanki gorących płatków zbożowych lub gotowanych ziaren zbóż, makaronu lub ziaren kukurydzy",
-          "metric" : "100 g gorących płatków zbożowych lub gotowanych ziaren zbóż, makaronu lub ziaren kukurydzy"
+          "imperial" : "½ szklanki ugotowanych ziaren zbóż, pszennego makaronu razowego lub ziaren kukurydzy",
+          "metric" : "100 g ugotowanych ziaren zbóż, pszennego makaronu razowego lub ziaren kukurydzy"
         },
         {
-          "imperial" : "1 szklanka płatków śniadaniowych na zimno",
-          "metric" : "50 g płatków śniadaniowych na zimno"
+          "imperial" : "1 szklanka pełnoziarnistych płatków śniadaniowych na zimno",
+          "metric" : "50 g pełnoziarnistych płatków śniadaniowych na zimno"
         },
         {
-          "imperial" : "1 tortilla lub kromka chleba",
-          "metric" : "1 tortilla lub kromka chleba"
+          "imperial" : "1 pełnoziarnista tortilla (lub 2 mniejsze tortille kukurydziane)",
+          "metric" : "1 pełnoziarnista tortilla (lub 2 mniejsze tortille kukurydziane)"
+        },
+        {
+          "imperial" : "1 kromka pełnoziarnistego chleba",
+          "metric" : "1 kromka pełnoziarnistego chleba"
         },
         {
           "imperial" : "½ bajgla lub angielskiego muffina",

@@ -8,7 +8,7 @@
 "dateButtonTitle.today" = "Сьогодні";
 
 /* Doze Detail View subheading: ‘Serving Sizes’ */
-"doze_detail_section_sizes" = "Розміри порцій (Пропоновані)";
+"doze_detail_section_sizes" = "Розміри порцій (Запропоновані)";
 
 /* Doze Detail View subheading: ‘Types’ */
 "doze_detail_section_types" = "Види";
@@ -68,13 +68,13 @@
 "faq_adapt_question" = "Дюжина доктора Грегера містить забагато/замало їжі для мене! Можна її адаптувати?";
 
 /*  */
-"faq_adapt_response" = "Так, Дюжина доктора Грегера це просто довідник найкорисніших продуктів, що ми намагаємося включити у свій щоденний раціон. Вона не є планом із харчування. Намагайся їсти різноманітну цільну рослинну їжу та адаптуй Дюжину доктора Грегера до кількості, яка підходить саме тобі. ";
+"faq_adapt_response" = "Так, Дюжина доктора Грегера це просто довідник найкорисніших продуктів, що ми намагаємося включити у свій щоденний раціон. Вона не є планом із харчування. Намагайся їсти різноманітну цільну рослинну їжу та адаптуй Дюжину доктора Грегера до кількості, яка підходить саме тобі.";
 
 /*  */
 "faq_age_question" = "Чи адаптована вона для дітей та підлітків?";
 
 /*  */
-"faq_age_response.0" = "Діти та підлітки мають різні потреби в калоріях протягом життєвого циклу. Ці потреби змінюються, щоб підтримувати ріст та розвиток на кожному етапі.  ";
+"faq_age_response.0" = "Діти та підлітки мають різні потреби в калоріях протягом життєвого циклу. Ці потреби змінюються, щоб підтримувати ріст та розвиток на кожному етапі.";
 
 /*  */
 "faq_age_response.1" = "Дюжина доктора Грегера була розроблена як посібник, що допоможе людям включати деякі з найкорисніших продуктів у свій щоденний раціон. Хоча одна і та ж структура може використовуватися для більшості людей протягом усього життєвого циклу, кількість їжі, яку потрібно з’їсти, змінюватиметься залежно від ряду факторів, таких як вік та рівень активності. Оскільки ми не можемо надати конкретні поради щодо харчування або медичні поради для вашої дитини, яка росте, батьки повинні використовувати цей посібник таким чином, як вони вважають найкращим для своєї дитини та/або проконсультуватися з ліцензованим дієтологом чи іншим медичним працівником, щоб допомогти визначити, що найкраще в їхній конкретній ситуації.";
@@ -143,7 +143,7 @@
 "history_data_import_notfound_text" = "Не знайдено дійсний файл імпорту в папці  Дюжина доктора Грегера Документи";
 
 /* History Data: preferences header & title */
-"history_data_title" = "Історія ";
+"history_data_title" = "Історія";
 
 /* History View: calendar scale control */
 "history_scale_choice_day" = "День";
@@ -200,16 +200,16 @@
 "info_app_about_heading" = "Про цей застосунок";
 
 /* Info About View: Open Source Credits */
-"info_app_about_oss_credits" = "Застосунок використовує наступні бібліотеки з відкритим кодом: RealmSwift, Charts, FSCalendar, SimpleAnimation, ActiveLabel.";
+"info_app_about_oss_credits" = "Застосунок використовує наступні бібліотеки з відкритим кодом: RealmSwift, Charts, FSCalendar, SimpleAnimation.";
 
 /* Info About View: Overview Text */
 "info_app_about_overview" = "Використовуй цей застосунок щодня, щоб відслідковувати продукти харчування та слідувати рекомендаціям для міцного здоров'я та довголіття із моїх книг “Як не померти передчасно” та “How Not to diet (Як не сидіти на дієті)”";
 
 /* Info About View: Contributing Translators List (language code)  See https://en.wikipedia.org/wiki/List_of_ISO_639-1_codes */
-"info_app_about_translators" = "Особлива подяка нашим перекладачам-волонтерам: Petar Enchev (bg), Tsveti Enchev (bg), Ricard Soler Roger (ca), Luděk Bouška (cs,sk), Lenka Lukacová (cs), Anke Schliessmann (de), Ángela Graña (es), Saeed Salamian (fa), Audray Harkins (fr), Doron Barak (he), Ruth Levy (he), Annalisa Guerrini-Körner (it), Ilaria Zanini (it), Hanna Gurzeda (pl), Joanna Klopotek (pl), Tania Bassi (pt-BR), João Madureira (pt-PT), Cristina Lauby (ro), Evgeniya Lyakh (ru), Katarína Mocáková (sk), Sabina Aliieva (uk).";
+"info_app_about_translators" = "Особлива подяка нашим перекладачам-волонтерам: Adelina Chernaeva (bg), Petar Enchev (bg), Tsveti Enchev (bg), Ricard Soler Roger (ca), Luděk Bouška (cs,sk), Lucie Doleželová (cs), Lenka Lukacová (cs), Anke Schliessmann (de), Sofia Schuessler (de), Ángela Graña (es), Saeed Salamian (fa), Audray Harkins (fr), Doron Barak (he), Ruth Levy (he), dr. Stern Borbála (hu), Kertész Tibor (hu), Adriana Centrone (it), Annalisa Guerrini-Körner (it), Ilaria Zanini (it), Andrijeski (mk), Hangur (pl), Hanna Gurzeda (pl), Joanna Klopotek (pl), Tania Bassi (pt-BR), João Madureira (pt-PT), Cristina Lauby (ro), Evgeniya Lyakh (ru), Anna Miliutina (ru), Katarína Mocáková (sk), Sabina Aliieva (uk), Hailey Chang (zh).";
 
 /* Info About View: Application release version */
-"info_app_about_version" = "версія 3.5.1";
+"info_app_about_version" = "версія 3.5.3";
 
 /* Info About View: Welcome */
 "info_app_about_welcome" = "Ласкаво просимо до “Дюжини доктора Грегера”";
@@ -300,18 +300,6 @@
 
 /* Google Firebase Analytics */
 "setting_analytics_title" = "Аналітика";
-
-/* Appearance Header */
-"setting_appearance_header" = "Appearance";
-
-/* Appearance Mode: Auto */
-"setting_appearance_mode_auto" = "Auto";
-
-/* Appearance Mode: Dark */
-"setting_appearance_mode_dark" = "Dark";
-
-/* Appearance Mode: Light */
-"setting_appearance_mode_light" = "Light";
 
 /* First Launch Setting: button text */
 "setting_doze_only_btn" = "Тільки Дюжина доктора Грегера";

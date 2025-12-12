@@ -5,23 +5,19 @@
       "servings" : [
         {
           "imperial" : "¼ Tasse Hummus oder Bohnendip",
-          "metric" : "60 Gramm Hummus oder Bohnendip"
+          "metric" : "70 g Hummus oder Bohnendip"
         },
         {
           "imperial" : "½ Tasse gekochte Bohnen, Erbsen oder Linsen",
-          "metric" : "90 Gramm gekochte Bohnen, Erbsen oder Linsen"
+          "metric" : "100 g gekochte Bohnen, Spalterbsen oder Linsen"
         },
         {
-          "imperial" : "½ Tasse Tofu oder Tempeh",
-          "metric" : "100 Gramm Tofu oder Tempeh"
+          "imperial" : "⅓ Tasse Tofu oder Tempeh",
+          "metric" : "80 g Tofu oder Tempeh"
         },
         {
-          "imperial" : "1 Tasse frische Erbsen oder Zuckererbsen",
-          "metric" : "130 Gramm frische Erbsen oder Zuckererbsen"
-        },
-        {
-          "imperial" : "1 Tasse frische Sojasprossen (Linsen, Mungbohnen)",
-          "metric" : "100 Gramm frische Sojasprossen (Linsen, Mungbohnen)"
+          "imperial" : "1 Tasse frische Erbsen oder gekeimte Linsen",
+          "metric" : "100 g frische Erbsen oder gekeimte Linsen"
         }
       ],
       "topic" : "topics/beans",
@@ -67,10 +63,6 @@
           "topic" : "topics/lentils"
         },
         {
-          "text" : "Miso",
-          "topic" : "topics/miso"
-        },
-        {
           "text" : "Marinebohnen (Michigan Erbse)",
           "topic" : "topics/navy-beans"
         },
@@ -97,7 +89,7 @@
       "servings" : [
         {
           "imperial" : "½ Tasse frisch oder gefroren",
-          "metric" : "60g frisch oder gefroren"
+          "metric" : "70 g frisch oder gefroren"
         },
         {
           "imperial" : "¼ Tasse getrocknet",
@@ -195,10 +187,6 @@
           "topic" : "topics/hibiscus-tea"
         },
         {
-          "text" : "Heiße Schokolade",
-          "topic" : ""
-        },
-        {
           "text" : "Jasmintee",
           "topic" : ""
         },
@@ -291,7 +279,7 @@
           "topic" : ""
         },
         {
-          "text" : "Jonglieren auf einem Trampolin",
+          "text" : "Trampolin springen",
           "topic" : ""
         },
         {
@@ -493,7 +481,7 @@
         },
         {
           "imperial" : "1 Tasse geschnittene Früchte",
-          "metric" : "120g geschnittene Früchte"
+          "metric" : "150 g geschnittenes Obst"
         },
         {
           "imperial" : "¼ Tasse getrocknete Früchte",
@@ -556,7 +544,7 @@
         },
         {
           "text" : "Lychees",
-          "topic" : ""
+          "topic" : "topics/lychees"
         },
         {
           "text" : "Mangos",
@@ -691,10 +679,6 @@
           "topic" : "topics/almonds"
         },
         {
-          "text" : "Paranüsse",
-          "topic" : "topics/brazil-nuts"
-        },
-        {
           "text" : "Cashew Nüsse",
           "topic" : "topics/cashews"
         },
@@ -748,8 +732,8 @@
       "heading" : "Gewürze",
       "servings" : [
         {
-          "imperial" : "¼ Teelöffel (1,2 ml) Kurkuma",
-          "metric" : "¼ Teelöffel (1,2 ml) Kurkuma"
+          "imperial" : "¼ Teelöffel (1-2 Gramm) Kurkuma",
+          "metric" : "¼ Teelöffel (1-2 Gramm) Kurkuma"
         },
         {
           "imperial" : "Alle anderen (salzfreien) Kräuter und Gewürze, die Sie mögen",
@@ -892,16 +876,20 @@
       "heading" : "Kreuzblütler-Gemüse",
       "servings" : [
         {
-          "imperial" : "½ Tasse gehackt",
-          "metric" : "30–80 g gehackt"
+          "imperial" : "½ Tasse gekochtes Blattgemüse",
+          "metric" : "90 g gekochtes Blattgemüse"
         },
         {
-          "imperial" : "½ Tasse Rosenkohl",
-          "metric" : "80 g Rosenkohl"
+          "imperial" : "½ Tasse rohes oder gekochtes Gemüse, ausgenommen Blattgemüse",
+          "metric" : "90 g rohes oder gekochtes Gemüse, ausgenommen Blattgemüse"
         },
         {
-          "imperial" : "¼ Tasse Broccolisprossen",
-          "metric" : "15 g Broccolisprossen"
+          "imperial" : "1 Tasse rohes Blattgemüse",
+          "metric" : "60 g rohes Blattgemüse"
+        },
+        {
+          "imperial" : "¼ Tasse Brokkolisprossen",
+          "metric" : "20 g Brokkolisprossen"
         },
         {
           "imperial" : "1 Eßlöffel Meerrettich",
@@ -977,15 +965,15 @@
         },
         {
           "imperial" : "½ Tasse rohes oder gekochtes nicht-blättriges Gemüse",
-          "metric" : "50 g rohes oder gekochtes nicht-blättriges Gemüse"
+          "metric" : "90 g rohes oder gekochtes Gemüse, ausgenommen Blattgemüse"
         },
         {
           "imperial" : "½ Tasse Gemüsesaft",
-          "metric" : "125 ml Gemüsesaft"
+          "metric" : "120 ml Gemüsesaft"
         },
         {
           "imperial" : "¼ Tasse getrocknete Pilze",
-          "metric" : "7 g getrocknete Pilze"
+          "metric" : "10 g getrocknete Pilze"
         }
       ],
       "topic" : "topics/vegetables",
@@ -1003,7 +991,7 @@
           "topic" : "topics/beets"
         },
         {
-          "text" : "Glockenpaprika",
+          "text" : "Paprika",
           "topic" : "topics/bell-peppers"
         },
         {
@@ -1019,7 +1007,7 @@
           "topic" : "topics/garlic"
         },
         {
-          "text" : "Pilze (Champignons, Austern, Portobello und Shiitake)",
+          "text" : "Pilze (Champignons, Austernpilze, Steinpilze, Portobello und Shiitake)",
           "topic" : "topics/mushrooms"
         },
         {
@@ -1068,16 +1056,20 @@
       "heading" : "Vollkorn",
       "servings" : [
         {
-          "imperial" : "½ Tasse Getreideflockenbrei oder gekochte Körner, Nudeln oder Maiskörner",
-          "metric" : "100 g Getreideflockenbrei oder gekochte Körner, Nudeln oder Maiskörner"
+          "imperial" : "½ Tasse gekochte Vollkornprodukte, Vollkornnudeln oder Maiskörner",
+          "metric" : "100 g gekochte Vollkornprodukte, Vollkornnudeln oder Maiskörner"
         },
         {
-          "imperial" : "1 Tasse Getreideflocken",
-          "metric" : "50 g Getreideflocken"
+          "imperial" : "1 Tasse Frühstücksflocken aus 100 % Vollkorn",
+          "metric" : "50 g Frühstücksflocken aus 100 % Vollkorn"
         },
         {
-          "imperial" : "1 Tortilla oder 1 Scheibe Brot",
-          "metric" : "1 Tortilla oder 1 Scheibe Brot"
+          "imperial" : "1 Tortilla aus 100 % Vollkorn (oder 2 kleinere Maistortillas)",
+          "metric" : "1 Tortilla aus 100 % Vollkorn (oder 2 kleinere Maistortillas)"
+        },
+        {
+          "imperial" : "1 Scheibe Brot aus 100 % Vollkorn",
+          "metric" : "1 Scheibe Brot aus 100 % Vollkorn"
         },
         {
           "imperial" : "½ Bagel oder ½ Englischer Muffin",

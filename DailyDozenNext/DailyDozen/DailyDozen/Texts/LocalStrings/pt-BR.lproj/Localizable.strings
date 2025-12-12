@@ -200,16 +200,16 @@
 "info_app_about_heading" = "Sobre este aplicativo";
 
 /* Info About View: Open Source Credits */
-"info_app_about_oss_credits" = "As seguintes bibliotecas de código aberto foram usadas: RealmSwift, Charts, FSCalendar, SimpleAnimation, ActiveLabel.";
+"info_app_about_oss_credits" = "As seguintes bibliotecas de código aberto foram usadas: RealmSwift, Charts, FSCalendar, SimpleAnimation.";
 
 /* Info About View: Overview Text */
-"info_app_about_overview" = "Use este aplicativo diariamente para controlar os seus alimentos e acompanhar os conselhos que eu recomendo para uma ótima saúde e longevidade nos meus livros Comer Para Não Morrer e Como Não Fazer Dieta.";
+"info_app_about_overview" = "Use este aplicativo diariamente para monitorizar os seus alimentos e acompanhar os conselhos que eu recomendo para uma ótima saúde e longevidade nos meus livros Comer Para Não Morrer e Como Não Fazer Dieta.";
 
 /* Info About View: Contributing Translators List (language code)  See https://en.wikipedia.org/wiki/List_of_ISO_639-1_codes */
-"info_app_about_translators" = "Agradecimentos especiais aos nossos tradutores voluntários: Petar Enchev (bg), Tsveti Enchev (bg), Ricard Soler Roger (ca), Luděk Bouška (cs,sk), Lenka Lukacová (cs), Anke Schliessmann (de), Ángela Graña (es), Saeed Salamian (fa), Audray Harkins (fr), Doron Barak (he), Ruth Levy (he), Annalisa Guerrini-Körner (it), Ilaria Zanini (it), Hanna Gurzeda (pl), Joanna Klopotek (pl), Tania Bassi (pt-BR), João Madureira (pt-PT), Cristina Lauby (ro), Evgeniya Lyakh (ru), Katarína Mocáková (sk), Sabina Aliieva (uk).";
+"info_app_about_translators" = "Agradecimentos especiais aos nossos tradutores voluntários: Adelina Chernaeva (bg), Petar Enchev (bg), Tsveti Enchev (bg), Ricard Soler Roger (ca), Luděk Bouška (cs,sk), Lucie Doleželová (cs), Lenka Lukacová (cs), Anke Schliessmann (de), Sofia Schuessler (de), Ángela Graña (es), Saeed Salamian (fa), Audray Harkins (fr), Doron Barak (he), Ruth Levy (he), dr. Stern Borbála (hu), Kertész Tibor (hu), Adriana Centrone (it), Annalisa Guerrini-Körner (it), Ilaria Zanini (it), Andrijeski (mk), Hangur (pl), Hanna Gurzeda (pl), Joanna Klopotek (pl), Tania Bassi (pt-BR), João Madureira (pt-PT), Cristina Lauby (ro), Evgeniya Lyakh (ru), Anna Miliutina (ru), Katarína Mocáková (sk), Sabina Aliieva (uk), Hailey Chang (zh).";
 
 /* Info About View: Application release version */
-"info_app_about_version" = "versão 3.5.1";
+"info_app_about_version" = "versão 3.5.3";
 
 /* Info About View: Welcome */
 "info_app_about_welcome" = "Bem-vindos à minha Dúzia Diária!";
@@ -314,7 +314,7 @@
 "setting_doze_tweak_choice" = "Dúzia Diária + 21 Ajustes";
 
 /* Preference Settings View: brief description text below Tweaks visibility control. */
-"setting_doze_tweak_footer" = "Se está interessado apenas em saúde, use “Apenas a Dúzia Diária”. Se está interessado em saúde e perda de peso use \"Dúzia Diária + 21 Ajustes\".";
+"setting_doze_tweak_footer" = "Se está interessado apenas em saúde, use “Apenas a Dúzia Diária”. Se está interessado em saúde e perda de peso use “Dúzia Diária + 21 Ajustes”.";
 
 /* First Launch Setting: brief description above ‘Daily Dozen Only’ button. */
 "setting_health_alone_txt" = "Para Saúde Apenas";

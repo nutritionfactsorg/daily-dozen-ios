@@ -5,7 +5,7 @@
         "imperial" : "Conclua as suas Intenções de Implementação",
         "metric" : "Conclua as suas Intenções de Implementação"
       },
-      "explanation" : "A cada dois meses, crie três novas intenções de implementação — planos \"se X, então Y\" para executar um comportamento específico num contexto específico — e marque cada uma delas conforme você as conclui, todos os dias.",
+      "explanation" : "A cada dois meses, crie três novas intenções de implementação — planos “se X, então Y” para executar um comportamento específico num contexto específico — e marque cada uma delas conforme você as conclui, todos os dias.",
       "heading" : "Conclua as suas Intenções de Implementação",
       "topic" : ""
     },
@@ -41,7 +41,7 @@
         "imperial" : "Consuma Mais Calorias de Manhã",
         "metric" : "Consuma Mais Calorias de Manhã"
       },
-      "explanation" : "Existem benefícios metabólicos no consumo de mais calorias no início do dia, portanto, faça da refeição matinal (idealmente) ou do almoço a sua maior refeição do dia, seguindo o estilo \"rei / príncipe / indigente\".",
+      "explanation" : "Existem benefícios metabólicos no consumo de mais calorias no início do dia, portanto, faça da refeição matinal (idealmente) ou do almoço a sua maior refeição do dia, seguindo o estilo “rei / príncipe / indigente”.",
       "heading" : "Consuma Mais Calorias de Manhã",
       "topic" : ""
     },
@@ -68,7 +68,7 @@
         "imperial" : "Chá Verde (3 xícaras)",
         "metric" : "Chá Verde (3 xícaras)"
       },
-      "explanation" : "Beba três xícaras por dia entre as refeições (aguarde pelo menos uma hora após a refeição para não interferir na absorção de ferro). Durante as refeições, beba água, café preto ou infusão de hibisco misturado 6:1 com lúcia-lima, mas nunca exceda três xícaras de líquido por hora (importante devido aos meus conselhos de fazer uma pré-refeição de água). Aproveite o efeito \"reforçador\" da cafeína bebendo o seu chá verde juntamente com algo saudável que você não gosta tanto, mas não consuma grandes quantidades de cafeína nas seis horas antes de dormir. Tomar chá sem adoçante é melhor, mas se você normalmente adoça o chá com mel ou açúcar, tente o xarope de yacon.",
+      "explanation" : "Beba três xícaras por dia entre as refeições (aguarde pelo menos uma hora após a refeição para não interferir na absorção de ferro). Durante as refeições, beba água, café preto ou infusão de hibisco misturado 6:1 com lúcia-lima, mas nunca exceda três xícaras de líquido por hora (importante devido aos meus conselhos de fazer uma pré-refeição de água). Aproveite o efeito “reforçador” da cafeína bebendo o seu chá verde juntamente com algo saudável que você não gosta tanto, mas não consuma grandes quantidades de cafeína nas seis horas antes de dormir. Tomar chá sem adoçante é melhor, mas se você normalmente adoça o chá com mel ou açúcar, tente o xarope de yacon.",
       "heading" : "Chá Verde (3 xícaras)",
       "topic" : ""
     },
@@ -77,7 +77,7 @@
         "imperial" : "Mantenha-se Hidratado",
         "metric" : "Mantenha-se Hidratado"
       },
-      "explanation" : "Assinale esta opção se a sua urina nunca parecer mais escura que amarelo-pálido. Note que, se você estiver ingerindo alimentos enriquecidos com riboflavina (como levedura nutricional), baseie-se apenas no critério de ingerir 9 copos de bebidas sem açúcar por dia para as mulheres (que seriam cumpridas pelas recomendações de pré-refeição de água e chá verde) ou 13 copos por dia para homens. Se você tiver problemas cardíacos ou renais, não aumente a ingestão de líquidos sem antes conversar com seu médico. Lembre-se de que os refrigerantes diet podem estar isentos de calorias, mas não estão isentos de consequências, como aprendemos na secção Baixo Teor de Açúcar Adicionado.",
+      "explanation" : "Assinale esta opção se a sua urina nunca parecer mais escura que amarelo-pálido. Note que, se você estiver ingerindo alimentos enriquecidos com riboflavina (como levedura nutricional), baseie-se apenas no critério de ingerir 9 copos de bebidas sem açúcar por dia para as mulheres (que seriam cumpridas pelas recomendações de pré-refeição de água e chá verde) ou 13 copos por dia para homens. Se você tiver problemas cardíacos ou renais, não aumente a ingestão de líquidos sem antes conversar com o seu médico. Lembre-se de que os refrigerantes diet podem estar isentos de calorias, mas não estão isentos de consequências, como aprendemos na secção Baixo Teor de Açúcar Adicionado.",
       "heading" : "Mantenha-se Hidratado",
       "topic" : ""
     },
@@ -86,7 +86,7 @@
         "imperial" : "Levedura Nutricional (2 colheres de chá)",
         "metric" : "Levedura Nutricional (2 colheres de chá)"
       },
-      "explanation" : "Duas colheres de chá de levedura de cerveja ou \"nutricional\" contêm aproximadamente a quantidade de beta 1,3/1,6 glucanos que facilita a perda de peso, conforme estudos clínicos randomizados, duplamente ocultados, e controlados por placebo.",
+      "explanation" : "Duas colheres de chá de levedura de cerveja ou “nutricional” contêm aproximadamente a quantidade de beta 1,3/1,6 glucanos que facilita a perda de peso, conforme estudos clínicos randomizados, duplamente ocultados, e controlados por placebo.",
       "heading" : "Levedura Nutricional (2 colheres de chá)",
       "topic" : ""
     },
@@ -95,7 +95,7 @@
         "imperial" : "Limite o Tempo de sua Alimentação",
         "metric" : "Limite o Tempo de sua Alimentação"
       },
-      "explanation" : "Limite a alimentação a um intervalo de tempo diário à sua escolha com menos de 12 horas de duração, que você possa manter consistentemente, sete dias por semana. Dados os benefícios circadianos de reduzir a ingestão noturna de alimentos, o intervalo deve terminar antes das 19:00h.",
+      "explanation" : "Limite a alimentação a um intervalo de tempo diário à sua escolha com menos de 12 horas de duração, que você possa manter consistentemente, sete dias por semana. Tendo em conta os benefícios circadianos de reduzir a ingestão noturna de alimentos, o intervalo deve terminar antes das 19:00h.",
       "heading" : "Limite o Tempo de sua Alimentação",
       "topic" : ""
     },
@@ -119,11 +119,11 @@
     },
     "tweakMealNegCal" : {
       "activity" : {
-        "imperial" : "Pré-refeição de Alimentos com \"Calorias Negativas\"",
-        "metric" : "Pré-refeição de Alimentos com \"Calorias Negativas\""
+        "imperial" : "Pré-refeição de Alimentos com “Calorias Negativas”",
+        "metric" : "Pré-refeição de Alimentos com “Calorias Negativas”"
       },
-      "explanation" : "Como primeiro prato, comece cada refeição com uma maçã, ou uma sopa ou uma salada considerada \"Luz Verde\" contendo menos de cem calorias por xícara.",
-      "heading" : "Pré-refeição de Alimentos com \"Calorias Negativas\"",
+      "explanation" : "Como primeiro prato, comece cada refeição com uma maçã, ou uma sopa ou uma salada considerada “Luz Verde” contendo menos de cem calorias por xícara.",
+      "heading" : "Pré-refeição de Alimentos com “Calorias Negativas”",
       "topic" : ""
     },
     "tweakMealUndistracted" : {
@@ -176,7 +176,7 @@
         "imperial" : "Experimente a inclinação leve de Trendelenburg",
         "metric" : "Experimente a inclinação leve de Trendelenburg"
       },
-      "explanation" : "Tente passar pelo menos 4 horas por noite deitado com o corpo inclinado a 6 graus com a cabeça para baixo, elevando os pés da cama em 20 cm (ou 23 cm se você tiver uma cama \"California King\"). Seja extremamente cuidadoso ao sair da cama, pois isso causa intolerância ortostática na maioria das pessoas, mesmo se você for jovem e saudável — ou seja, se você levantar rápido demais, pode sentir tontura, ter um desmaio, cair e magoar-se. Por isso, levante-se devagar. Beber dois copos de água fria trinta minutos antes de se levantar também pode ajudar a evitar esse efeito colateral potencialmente perigoso.\n\n*IMPORTANTE: Não tente fazer isso se você tiver problemas cardíacos ou pulmonares, refluxo ácido, problemas no cérebro (como traumatismo craniano) ou nos olhos (até um histórico familiar de glaucoma o desqualifica). Além disso, não tente fazer isso antes de perguntar ao/à médico/a se ele/a acha seguro dormir em Trendelenburg leve.*",
+      "explanation" : "Tente passar pelo menos 4 horas por noite deitado com o corpo inclinado a 6 graus com a cabeça para baixo, elevando os pés da cama em 20 cm (ou 23 cm se você tiver uma cama “California King”). Seja extremamente cuidadoso ao sair da cama, pois isso causa intolerância ortostática na maioria das pessoas, mesmo se você for jovem e saudável — ou seja, se você levantar rápido demais, pode sentir tontura, ter um desmaio, cair e magoar-se. Por isso, levante-se devagar. Beber dois copos de água fria trinta minutos antes de se levantar também pode ajudar a evitar esse efeito colateral potencialmente perigoso.\n\n*IMPORTANTE: Não tente fazer isso se você tiver problemas cardíacos ou pulmonares, refluxo ácido, problemas no cérebro (como traumatismo craniano) ou nos olhos (até um histórico familiar de glaucoma o desqualifica). Além disso, não tente fazer isso antes de perguntar ao/à médico/a se ele/a acha seguro dormir em Trendelenburg leve.*",
       "heading" : "Experimente a inclinação leve de Trendelenburg",
       "topic" : ""
     },

@@ -200,16 +200,16 @@
 "info_app_about_heading" = "About this app";
 
 /* Info About View: Open Source Credits */
-"info_app_about_oss_credits" = "The following open source libraries are used: RealmSwift, Charts, FSCalendar, SimpleAnimation, ActiveLabel.";
+"info_app_about_oss_credits" = "The following open source libraries are used: RealmSwift, Charts, FSCalendar, SimpleAnimation.";
 
 /* Info About View: Overview Text */
 "info_app_about_overview" = "Use this app on a daily basis to keep track of the foods and advice I recommend for optimal health and longevity in my books How Not to Die and How Not to Diet.";
 
 /* Info About View: Contributing Translators List (language code)  See https://en.wikipedia.org/wiki/List_of_ISO_639-1_codes */
-"info_app_about_translators" = "Special thanks to our volunteer translators: Petar Enchev (bg), Tsveti Enchev (bg), Ricard Soler Roger (ca), Luděk Bouška (cs,sk), Lenka Lukacová (cs), Anke Schliessmann (de), Ángela Graña (es), Saeed Salamian (fa), Audray Harkins (fr), Doron Barak (he), Ruth Levy (he), Annalisa Guerrini-Körner (it), Ilaria Zanini (it), Hanna Gurzeda (pl), Joanna Klopotek (pl), Tania Bassi (pt-BR), João Madureira (pt-PT), Cristina Lauby (ro), Evgeniya Lyakh (ru), Katarína Mocáková (sk), Sabina Aliieva (uk).";
+"info_app_about_translators" = "Special thanks to our volunteer translators: Adelina Chernaeva (bg), Petar Enchev (bg), Tsveti Enchev (bg), Ricard Soler Roger (ca), Luděk Bouška (cs,sk), Lucie Doleželová (cs), Lenka Lukacová (cs), Anke Schliessmann (de), Sofia Schuessler (de), Ángela Graña (es), Saeed Salamian (fa), Audray Harkins (fr), Doron Barak (he), Ruth Levy (he), dr. Stern Borbála (hu), Kertész Tibor (hu), Adriana Centrone (it), Annalisa Guerrini-Körner (it), Ilaria Zanini (it), Andrijeski (mk), Hangur (pl), Hanna Gurzeda (pl), Joanna Klopotek (pl), Tania Bassi (pt-BR), João Madureira (pt-PT), Cristina Lauby (ro), Evgeniya Lyakh (ru), Anna Miliutina (ru), Katarína Mocáková (sk), Sabina Aliieva (uk), Hailey Chang (zh).";
 
 /* Info About View: Application release version */
-"info_app_about_version" = "version 3.5.1";
+"info_app_about_version" = "version 3.5.3";
 
 /* Info About View: Welcome */
 "info_app_about_welcome" = "Welcome to my Daily Dozen!";
@@ -300,18 +300,6 @@
 
 /* Google Firebase Analytics */
 "setting_analytics_title" = "Analytics";
-
-/* Appearance Header */
-"setting_appearance_header" = "Appearance";
-
-/* Appearance Mode: Auto */
-"setting_appearance_mode_auto" = "Auto";
-
-/* Appearance Mode: Dark */
-"setting_appearance_mode_dark" = "Dark";
-
-/* Appearance Mode: Light */
-"setting_appearance_mode_light" = "Light";
 
 /* First Launch Setting: button text */
 "setting_doze_only_btn" = "Daily Dozen\nOnly";

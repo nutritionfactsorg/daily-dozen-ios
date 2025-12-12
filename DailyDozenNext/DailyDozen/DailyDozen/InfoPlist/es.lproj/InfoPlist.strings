@@ -1,0 +1,16 @@
+/* DailyDozen InfoPlist.strings (es) */
+/* Copyright © 2021 Nutritionfacts.org. All rights reserved. */
+
+/* User-visible application name. Visible under icon. Used by Siri. */
+"CFBundleDisplayName" = "DailyDozen";
+
+/* User-visible application short name (15 Characters max) */
+"CFBundleName" = "DailyDozen";
+
+/* Privacy - Health Share Usage Description */
+"NSHealthShareUsageDescription" = "La función 21 Potenciadores accede a tus datos de HealthKit para proporcionar actualizaciones a tus mediciones diarias de peso.";
+
+/* Privacy - Health Update Usage Description */
+"NSHealthUpdateUsageDescription" = "La función 21 Potenciadores puede añadir datos de peso en HealthKit para ayudarte a realizar un seguimiento de tu progreso.";
+
+/* file end */

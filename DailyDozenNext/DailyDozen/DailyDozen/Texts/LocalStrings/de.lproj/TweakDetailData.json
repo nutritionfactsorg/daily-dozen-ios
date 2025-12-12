@@ -29,11 +29,11 @@
     },
     "tweakDailyDeflourDiet" : {
       "activity" : {
-        "imperial" : "Mehl durch Vollkorn ersetzen",
-        "metric" : "Mehl durch Vollkorn ersetzen"
+        "imperial" : "Mehl durch ganzes Korn ersetzen",
+        "metric" : "Mehl durch ganzes Korn ersetzen"
       },
-      "explanation" : "Kreuzen Sie dieses Kästchen jeden Tag an, an dem Sie Vollkornprodukte in Form von unversehrten Körnern zu sich nehmen. Selbst bei 100-prozentigem Vollkorn wird unserem Mikrobiom durch die Pulverisierung die Stärke entzogen, die sonst in unversehrten Zellwänden in unseren Dickdarm transportiert würde.",
-      "heading" : "Mehl durch Vollkorn ersetzen",
+      "explanation" : "Kreuzen Sie dieses Kästchen an jedem Tag an, an dem Sie Ihre Vollkornportionen in Form von ganzen, unverarbeiteten Körnern zu sich nehmen. Das Mahlen selbst von 100 % Vollkorn entzieht unserem Mikrobiom die Stärke, die ansonsten in unversehrten Zellwänden eingeschlossen bis in den Dickdarm gelangen würde.",
+      "heading" : "Mehl durch ganzes Korn ersetzen",
       "topic" : ""
     },
     "tweakDailyFrontLoad" : {
@@ -41,7 +41,7 @@
         "imperial" : "Verzehren Sie die Kalorien früh am Tag",
         "metric" : "Verzehren Sie die Kalorien früh am Tag"
       },
-      "explanation" : "Es ist für den Stoffwechsel vorteilhaft, mehr Kalorien auf einen früheren Zeitpunkt am Tag zu verteilen. Machen Sie also das Frühstück (idealerweise) oder das Mittagessen zu Ihrer größten Mahlzeit des Tages, ganz im Stil von König/Prinz/Bettler.",
+      "explanation" : "Es gibt metabolische Vorteile, wenn mehr Kalorien früher am Tag aufgenommen werden. Gestalten Sie daher Ihr Frühstück (idealerweise) oder Ihr Mittagessen zur größten Mahlzeit des Tages – ganz im Sinne des Sprichworts „früh wie ein König, mittags wie ein Prinz, abends wie ein Bettler“.",
       "heading" : "Verzehren Sie die Kalorien früh am Tag",
       "topic" : ""
     },
@@ -59,7 +59,7 @@
         "imperial" : "Gemahlener Ingwer (1 TL) oder Cayenne-Pfeffer (½ TL)",
         "metric" : "Gemahlener Ingwer (1 TL) oder Cayenne-Pfeffer (½ TL)"
       },
-      "explanation" : "Randomisierte kontrollierte Studien haben gezeigt, dass ¼ Teelöffel bis 1½ Teelöffel gemahlener Ingwer das Gewicht für nur ein paar Cent pro Tag signifikant senken. Es reicht bereits, das gemahlene Gewürz in eine Tasse heißes Wasser zu rühren. Hinweis: Ingwer kann morgens besser wirken als abends. Chai-Tee ist eine leckere Möglichkeit, die Vorteile von grünem Tee und Ingwer in einem einzigen Getränk zu kombinieren. Alternativ können Sie zur Aktivierung des braunen Fettgewebes (BAT) einen rohen Jalapeño-Pfeffer oder ½ Teelöffel rotes Pfefferpulver (oder vermutlich auch zerkleinerte rote Pfefferflocken) zur täglichen Ernährung hinzufügen. Um die Schärfe in Schach zu halten, können Sie den Jalapeño sehr dünn in Scheiben schneiden oder fein hacken, um die Wirkung auf kleines Kribbeln zu reduzieren. Oder geben Sie den roten Pfeffer in eine Suppe oder in den Vollwertgemüse-Smoothie, den ich in einem meiner Kochvideos auf NutritionFacts.org vorgestellt habe.",
+      "explanation" : "Randomisierte kontrollierte Studien haben gezeigt, dass ¼ Teelöffel bis 1½ Teelöffel gemahlener Ingwer das Gewicht für nur ein paar Cent pro Tag signifikant senken. Es reicht bereits, das gemahlene Gewürz in eine Tasse heißes Wasser zu rühren. Hinweis: Ingwer kann morgens besser wirken als abends. Chai-Tee ist eine leckere Möglichkeit, die Vorteile von grünem Tee und Ingwer in einem einzigen Getränk zu kombinieren. Zur Aktivierung von braunem Fettgewebe (BAT) können Sie alternativ täglich eine rohe Jalapeño-Schote oder einen halben Teelöffel rotes Paprikapulver (gegebenenfalls auch Chiliflocken) in Ihre Ernährung integrieren. Um die Schärfe abzumildern, schneiden oder hacken Sie die Jalapeño sehr fein, sodass nur leichte Spitzen der Schärfe spürbar bleiben, oder geben Sie das Paprikapulver in eine Suppe oder den Vollwert-Gemüse-Smoothie, den ich in einem meiner Kochvideos auf NutritionFacts.org vorgestellt habe.",
       "heading" : "Gemahlener Ingwer (1 TL) oder Cayenne-Pfeffer (½ TL)",
       "topic" : ""
     },
@@ -68,7 +68,7 @@
         "imperial" : "Grüner Tee (3 Tassen)",
         "metric" : "Grüner Tee (3 Tassen)"
       },
-      "explanation" : "Trinken Sie täglich drei Tassen grüner Tee zwischen den Mahlzeiten (warten Sie  mindestens eine Stunde nach einer Mahlzeit, um die Eisenaufnahme nicht zu beeinträchtigen). Trinken Sie zu den Mahlzeiten Wasser, schwarzen Kaffee oder Hibiskus-Tee mit Zitronenverbene (im Verhältnis 6:1), aber überschreiten Sie niemals 750 ml Flüssigkeit pro Stunde (wichtig im Hinblick auf die zwei Gläser Wasser vor jeder Mahlzeit). Nutzen Sie die verstärkende Wirkung von Koffein, indem Sie Ihren grünen Tee zusammen mit etwas Gesundem trinkst, das Sie lieber mögen, aber trinken Sie keine großen Mengen an Koffein in den sechs Stunden vor dem Schlafengehen. Verwenden Sie keinen Süßstoff. Wenn Sie Ihren Tee normalerweise mit Honig oder Zucker süßen, versuchen Sie es stattdessen mit Yacon-Sirup.",
+      "explanation" : "Trinken Sie täglich drei Tassen grüner Tee zwischen den Mahlzeiten (warten Sie  mindestens eine Stunde nach einer Mahlzeit, um die Eisenaufnahme nicht zu beeinträchtigen). Trinken Sie zu den Mahlzeiten Wasser, schwarzen Kaffee oder Hibiskus-Tee mit Zitronenverbene (im Verhältnis 6:1), aber überschreiten Sie niemals 750 ml Flüssigkeit pro Stunde (wichtig im Hinblick auf die zwei Gläser Wasser vor jeder Mahlzeit). Nutzen Sie den verstärkenden Effekt von Koffein, indem Sie Ihren Grüntee zusammen mit etwas Gesundem trinken, das Sie eigentlich lieber mögen würden. Vermeiden Sie jedoch große Mengen Koffein innerhalb von sechs Stunden vor dem Schlafengehen. Am besten ist es, Ihren Tee ungesüßt zu trinken; wenn Sie ihn jedoch üblicherweise mit Honig oder Zucker süßen, probieren Sie stattdessen Yacon-Sirup.",
       "heading" : "Grüner Tee (3 Tassen)",
       "topic" : ""
     },
@@ -77,7 +77,7 @@
         "imperial" : "Genug trinken",
         "metric" : "Genug trinken"
       },
-      "explanation" : "Setzen Sie dieses Häkchen, wenn Ihr Urin nie dunkler als blassgelb ist. Bei Zufuhr von Lebensmitteln, die mit Riboflavin (Vitamin B2) angereichert sind (z.B. Hefeflocken), sollten sich Frauen an 9 Tassen ungesüßte Getränke pro Tag orientieren (was durch die zwei Gläser Wasser vor jeder Mahlzeit und die drei Tassen grünen Tee zwischen den Mahlzeiten bereits abgedeckt wird) und Männer an 13 Tassen pro Tag.\n\nWenn Sie Herz- oder Nierenprobleme haben, erhöhen Sie die Flüssigkeitsaufnahme nicht, ohne vorher mit dem Arzt zu sprechen.\n\nDenken Sie daran, dass Diät-Soda zwar kalorienfrei sein mag, aber trotzdem Konsequenzen hat, wie wir im Kapitel “Ohne Zuckerzusatz” (Low in Added Sugar) erfahren haben.",
+      "explanation" : "Kreuzen Sie dieses Kästchen an, wenn Ihr Urin niemals dunkler als hellgelb ist.\n\nWenn Sie riboflavinangereicherte Lebensmittel wie Hefeflocken verzehren, orientieren Sie sich stattdessen daran, täglich 9 Tassen ungesüßte Getränke bei Frauen (was durch die Empfehlungen zu Grüntee und Wasser-Vortrinken abgedeckt wäre) bzw. 13 Tassen bei Männern aufzunehmen.\n\nWenn Sie Herz- oder Nierenprobleme haben, erhöhen Sie die Flüssigkeitsaufnahme nicht, ohne vorher mit dem Arzt zu sprechen.\n\nLight-Getränke sind zwar kalorienfrei, aber nicht folgenfrei, wie im Abschnitt „Wenig zugesetzter Zucker“ (Low in Added Sugar) beschrieben.",
       "heading" : "Genug trinken",
       "topic" : ""
     },
@@ -101,11 +101,11 @@
     },
     "tweakExerciseTiming" : {
       "activity" : {
-        "imperial" : "Bewegung zeitlich abstimmen",
-        "metric" : "Bewegung zeitlich abstimmen"
+        "imperial" : "Optimierung des Trainingszeitpunkts",
+        "metric" : "Optimierung des Trainingszeitpunkts"
       },
       "explanation" : "Das tägliche Dutzend empfiehlt für ein langes Leben eine optimale Bewegungsdauer von 90 Minuten mäßig intensiver Aktivität pro Tag. Dies ist auch die optimale Bewegungsdauer für Gewichtsverlust. Bewegung ist immer gut – je mehr davon, desto besser. Es könnte jedoch vorteilhaft sein, die Aktivität in nüchternem Zustand durchzuführen, mit einem Abstand von sechs Stunden zur letzten Mahlzeit. Üblicherweise wäre dies vor dem Frühstück, aber wenn Sie es zeitlich abstimmen, können Sie Ihre Aktivität auch vor einem späten Mittagessen durchführen oder, bei einem frühen Mittagessen, vor dem Abendessen. Diese Zeiten richten sich wohlgemerkt an Nicht-Diabetiker. Diabetiker und Prädiabetiker sollten stattdessen 30 Minuten nach dem Beginn einer Mahlzeit mit einer idealerweise einstündigen Aktivität beginnen, um die Zeitspanne mit dem höchsten Blutzuckerspiegel vollständig abzudecken. Wenn Sie eine einzige Mahlzeit wählen müssten, nach der Sie aktiv werden, wäre es das Abendessen, da die Blutzuckerkontrolle durch den Biorhythmus im Laufe des Tages abnimmt. Im Idealfall wäre das Frühstück die größte Mahlzeit des Tages, und Sie würden Ihre Aktivität danach durchführen – oder, noch besser, nach jeder Mahlzeit.",
-      "heading" : "Bewegung zeitlich abstimmen",
+      "heading" : "Optimierung des Trainingszeitpunkts",
       "topic" : ""
     },
     "tweakMeal20Minutes" : {
@@ -113,7 +113,7 @@
         "imperial" : "20-Minuten-Regel befolgen",
         "metric" : "20-Minuten-Regel befolgen"
       },
-      "explanation" : "Dutzende Studien haben gezeigt, dass die Kalorienaufnahme verringert werden kann, wenn wir die Zeitspanne des Essens im Mund verlängern. Und zwar unabhängig davon, ob wir dies durch Essen mit zäherer Konsistenz, längeres Kauen, kleinere Portionen im Mund oder langsameres Essen erreichen. Verlängern Sie also die Dauer der Mahlzeit auf mindestens zwanzig Minuten, damit Ihre natürlichen Sättigungssignale ihre volle Wirkung entfalten können. Und wie? Indem Sie Lebensmittel auswählen, deren Verzehr länger dauert, und sie so essen, dass sie möglichst lange im Mund verbleiben. Denken Sie an sperrigere, härtere, kaubarere Lebensmittel in kleineren, gut durchgekauten Portionen.",
+      "explanation" : "Ob durch höhere Viskosität, mehr Kauvorgänge, kleinere Bissen oder ein langsameres Ess-Tempo – Dutzende Studien haben gezeigt, dass eine längere Verweildauer der Nahrung im Mund die Kalorienaufnahme senken kann. Verlängern Sie daher Ihre Mahlzeiten auf mindestens zwanzig Minuten, damit sich die natürlichen Sättigungssignale voll entfalten können. Wie? Indem Sie Lebensmittel wählen, die mehr Zeit beim Essen erfordern, und sie so verzehren, dass sie länger im Mund bleiben. Setzen Sie auf voluminösere, festere, kauintensivere Speisen in kleinen, gründlich gekauten Bissen.",
       "heading" : "20-Minuten-Regel befolgen",
       "topic" : ""
     },
@@ -122,7 +122,7 @@
         "imperial" : "Mahlzeit mit “Negativ-Kalorien” beginnen",
         "metric" : "Mahlzeit mit “Negativ-Kalorien” beginnen"
       },
-      "explanation" : "Beginnen Sie  jede Mahlzeit als ersten Gang mit einem Apfel, einer leichten Suppe oder einem Salat mit weniger als 100 Kalorien pro Tasse.",
+      "explanation" : "Beginnen Sie jede Mahlzeit als ersten Gang mit einem Apfel oder einer “grünen Ampel” Suppe oder Salat mit weniger als 100 Kalorien pro Tasse.",
       "heading" : "Mahlzeit mit “Negativ-Kalorien” beginnen",
       "topic" : ""
     },
@@ -131,7 +131,7 @@
         "imperial" : "Ungestört essen",
         "metric" : "Ungestört essen"
       },
-      "explanation" : "Sehen Sie nicht fern und spielen Sie nicht mit dem Handy, während Sie essen. Setzen Sie  ein Häkchen für jede Mahlzeit ohne Ablenkung.",
+      "explanation" : "Sehen Sie nicht fern und spielen Sie nicht mit dem Handy, während Sie essen. Geben Sie sich für jede Mahlzeit, die Sie ohne Ablenkung einnehmen, ein Häkchen.",
       "heading" : "Ungestört essen",
       "topic" : ""
     },
@@ -140,7 +140,7 @@
         "imperial" : "Essig hinzufügen (2 TL zu jeder Mahlzeit)",
         "metric" : "Essig hinzufügen (2 TL zu jeder Mahlzeit)"
       },
-      "explanation" : "Trinken Sie Essig niemals pur. Würzen Sie stattdessen Ihre Mahlzeiten oder gönnen Sie sich einen Beilagensalat mit einem beliebigen süßen und herzhaften Essig. Wenn Sie den Essig trinken möchten, mischen Sie ihn mit einem Glas Wasser und spülen Sie anschließend Ihren Mund mit Wasser, um Ihren Zahnschmelz zu schützen.",
+      "explanation" : "Trinken Sie niemals Essig pur. Verfeinern Sie stattdessen Mahlzeiten oder einen Beilagensalat mit einem der vielen süßen oder herzhaften Essige. Wenn Sie ihn trinken möchten, mischen Sie ihn unbedingt in ein Glas Wasser und spülen Sie anschließend den Mund mit Wasser aus, um den Zahnschmelz zu schützen.",
       "heading" : "Essig hinzufügen (2 TL zu jeder Mahlzeit)",
       "topic" : ""
     },
@@ -149,7 +149,7 @@
         "imperial" : "Mahlzeit mit kaltem Wasser beginnen",
         "metric" : "Mahlzeit mit kaltem Wasser beginnen"
       },
-      "explanation" : "Förderen Sie Ihren Stoffwechsel, indem Sie vor jeder Mahlzeit zwei Tassen kühles oder kaltes Wasser (ohne Geschmack) zu dir nehmen.",
+      "explanation" : "Förderen Sie Ihren Stoffwechsel, indem Sie vor jeder Mahlzeit zwei Tassen kühles oder kaltes Wasser (ohne Geschmack) zu sich nehmen.",
       "heading" : "Mahlzeit mit kaltem Wasser beginnen",
       "topic" : ""
     },

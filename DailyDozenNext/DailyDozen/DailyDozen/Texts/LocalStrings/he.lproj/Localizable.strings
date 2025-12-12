@@ -65,10 +65,10 @@
 "dozeWholeGrains.heading" = "דגנים מלאים";
 
 /*  */
-"faq_adapt_question" = "\"התריסר היומי\" זה יותר מדי אוכל בשבילי! האם אוכל להתאים את זה?";
+"faq_adapt_question" = "״התריסר היומי״ זה יותר מדי אוכל בשבילי! האם אוכל להתאים את זה?";
 
 /*  */
-"faq_adapt_response" = "כן, \"התריסר היומי\" אמור להיות רק מדריך למזונות הבריאים ביותר שאנו שואפים לכלול כל יום. הוא אינו תכנית ארוחות ולא אמור להיות הנחיות מדוייקות. השתדלו לאכול מגוון רחב של מזונות צמחיים שלמים והתאימו את \"התריסר היומי\" לכמויות שמתאימות לכם.";
+"faq_adapt_response" = "כן, ״התריסר היומי״ אמור להיות רק מדריך למזונות הבריאים ביותר שאנו שואפים לכלול כל יום. הוא אינו תכנית ארוחות ולא אמור להיות הנחיות מדוייקות. השתדלו לאכול מגוון רחב של מזונות צמחיים שלמים והתאימו את ״התריסר היומי״ לכמויות שמתאימות לכם.";
 
 /*  */
 "faq_age_question" = "האם זה ניתן להתאמה לילדים, מתבגרים, ובני עשרה?";
@@ -77,16 +77,16 @@
 "faq_age_response.0" = "לילדים, מתבגרים ובני עשרה יש דרישות קלוריות שונות בשלבים שונים של החיים. צרכים אלו משתנים כדי לתמוך בצמיחה והתפתחות בכל שלב.";
 
 /*  */
-"faq_age_response.1" = "\"התריסר היומי\" תוכנן להיות מדריך שעוזר לאנשים להכליל כמה מהמזונות הבריאים ביותר בתזונתם היומיומית. בעוד שניתן להשתמש באותה התבנית עבור רוב האנשים בכל שלבי החיים, כמות המזון הנדרשת לכם משתנה לפי מספר גורמים כמו גיל ורמת פעילות. מאחר ואיננו יכולים לתת ייעוץ תזונתי או רפואי עבור ילדכם הגדל, הורים צריכים להשתמש במדריך זה לפי מיטב הבנתם עבור הצרכים של הילד, ו/או להתייעץ עם דיאטנית מוסמכת או עם יועץ רפואי אחר שיעזרו לקבוע מה עדיף  לצרכים המסויימים שלהם.";
+"faq_age_response.1" = "״התריסר היומי״ תוכנן להיות מדריך שעוזר לאנשים להכליל כמה מהמזונות הבריאים ביותר בתזונתם היומיומית. בעוד שניתן להשתמש באותה התבנית עבור רוב האנשים בכל שלבי החיים, כמות המזון הנדרשת לכם משתנה לפי מספר גורמים כמו גיל ורמת פעילות. מאחר ואיננו יכולים לתת ייעוץ תזונתי או רפואי עבור ילדכם הגדל, הורים צריכים להשתמש במדריך זה לפי מיטב הבנתם עבור הצרכים של הילד, ו/או להתייעץ עם דיאטנית מוסמכת או עם יועץ רפואי אחר שיעזרו לקבוע מה עדיף  לצרכים המסויימים שלהם.";
 
 /*  */
-"faq_calories_question" = "כמה קלוריות יש ב-\"תריסר היומי\"?";
+"faq_calories_question" = "כמה קלוריות יש ב-״תריסר היומי״?";
 
 /*  */
-"faq_calories_response.0" = "ב-\"תריסר היומי\" יש בממוצע כ-1200 קלוריות, אבל בגלל המגוון הרחב של מזונות שונים בכל קטגוריה, זה יכול להשתנות בין 800 ל-1800 קלוריות. למשל, בקטגוריה \"ירקות אחרים\": בכוס של פלפלים ירוקים יש הרבה פחות קלוריות מאשר בכוס של בטטה מבושלת, לכן טווח הקלוריות תלוי בבחירות המסויימות שלכם. זה היתרון של הרשימות ב-\"תריסר היומי\"- אין זו גישה של דבר אחד לכולם, אלא ניתן להתאים זאת לצרכים שלכם.";
+"faq_calories_response.0" = "ב-״תריסר היומי״ יש בממוצע כ-1200 קלוריות, אבל בגלל המגוון הרחב של מזונות שונים בכל קטגוריה, זה יכול להשתנות בין 800 ל-1800 קלוריות. למשל, בקטגוריה ״ירקות אחרים״: בכוס של פלפלים ירוקים יש הרבה פחות קלוריות מאשר בכוס של בטטה מבושלת, לכן טווח הקלוריות תלוי בבחירות המסויימות שלכם. זה היתרון של הרשימות ב-״תריסר היומי״- אין זו גישה של דבר אחד לכולם, אלא ניתן להתאים זאת לצרכים שלכם.";
 
 /*  */
-"faq_calories_response.1" = "אם המטרה שלכם היא הפחתת משקל, תוכלו למצוא מידע נוסף בספר “How Not to Diet”, ובתוספת שלו \"Twenty-One Tweaks\". ב-“How Not to Diet\" ציינתי: \"סקירה שיטתית של אסטרטגיות מוצלחות להפחתת משקל הסיקה שבגלל ההאטה המטבולית והתאבון המוגבר שמלווים הפחתת משקל, כדי להשיג הפחתת משקל משמעותית, ייתכן שצריכת הקלוריות צריכה לרדת עד 1200 קלוריות ליום בנשים ו-1500 קלוריות ביום בגברים.";
+"faq_calories_response.1" = "אם המטרה שלכם היא הפחתת משקל, תוכלו למצוא מידע נוסף בספר “How Not to Diet”, ובתוספת שלו ״Twenty-One Tweaks״. ב-“How Not to Diet״ ציינתי: ״סקירה שיטתית של אסטרטגיות מוצלחות להפחתת משקל הסיקה שבגלל ההאטה המטבולית והתאבון המוגבר שמלווים הפחתת משקל, כדי להשיג הפחתת משקל משמעותית, ייתכן שצריכת הקלוריות צריכה לרדת עד 1200 קלוריות ליום בנשים ו-1500 קלוריות ביום בגברים.";
 
 /*  */
 "faq_calories_response.2" = "מצד שני, אם מטרתכם היא עלייה במשקל, אולי תרצו להתמקד בהוספת מזונות עתירי קלוריות כמו בטטה, אבוקדו, אגוזים ומוצרי סויה.";
@@ -95,7 +95,7 @@
 "faq_mother_question" = "אוכל לעשות זאת בזמן הריון או הנקה?";
 
 /*  */
-"faq_mother_response" = "לנשים בהריון או מניקות יש צרכים קלוריים ותזונתיים שונים מאנשים אחרים. נזכיר שה\"תריסר היומי\" אינו תכנית ארוחות ולא צריך להיות המזונות שרק אותם תצרכו במהלך היום. נשים בהריון או מניקות צריכות להתייעץ עם מומחי רפואה או דיאטניות מוסמכות לעזרה בהשגת הדרישות הקלוריות והתזונתיות שלהן. ";
+"faq_mother_response" = "לנשים בהריון או מניקות יש צרכים קלוריים ותזונתיים שונים מאנשים אחרים. נזכיר שה״תריסר היומי״ אינו תכנית ארוחות ולא צריך להיות המזונות שרק אותם תצרכו במהלך היום. נשים בהריון או מניקות צריכות להתייעץ עם מומחי רפואה או דיאטניות מוסמכות לעזרה בהשגת הדרישות הקלוריות והתזונתיות שלהן. ";
 
 /*  */
 "faq_scaling_question" = "אינני יכול בשום אופן לאכול כל כך הרבה קטניות/דגנים/וכו.!";
@@ -104,7 +104,7 @@
 "faq_scaling_response" = "זה בסדר. התריסר היומי מדריך לכוון לשאוף אליו. עשו כמיטב יכולתכם להכליל את מירב המזונות הצמחיים הבריאים הללו. אם זה חדש לכם לאכול הרבה קטניות (או דגנים, ירוקים, וכו.), ייתכן שתצטרכו להתחיל בכמויות קטנות יותר ולהגדילן בהדרגה, כדי לתת לחיידקי המעיים שלכם זמן להתאמה. תוכלו גם להיות יצירתיים. למשל, הוספת שעועית לשיבולת השועל שלכם בבוקר. אם תוסיפו להם הרבה פירות יער, פשתן, זרעים ואגוזים, לא תרגישו את השעועית כלל. תוכלו גם לרסק את השעועית לממרח סנדביץ, או להכין את המתכון שלי לשיפון, שיבולת שועל, שעורה ועדשים [BROL](https://nutritionfacts.org/recipe/basic-brol-barley-rye-oats-and-lentils) שמשמש לי כבסיס לארוחות רבות והוא דרך פשוטה לקבל מגוון דגנים מלאים ומכיל גם מנת קטניות. ";
 
 /*  */
-"faq_supplements_question" = "חשבתי שד\"ר גרגר ממליץ לקחת תוספי ויטמין די ו-DHA. מדוע הם אינם נכללים כאן?";
+"faq_supplements_question" = "חשבתי שד״ר גרגר ממליץ לקחת תוספי ויטמין די ו-DHA. מדוע הם אינם נכללים כאן?";
 
 /*  */
 "faq_supplements_response" = "עדכנו את התריסר היומי כך שיכיל רק תוספים נדרשים. לדוגמה, ויטמין די נדרש רק לאנשים שאינם נחשפים מספיק לשמש. מטרתנו לחלוק אתכם את המדע כדי שתוכלו לעשות החלטות מודעות בעצמכם. תוכלו למצוא את כל המלצותי בדף [Optimum Nutrient](https://nutritionfacts.org/optimum-nutrient-recommendations) ";
@@ -185,16 +185,13 @@
 "historyRecordWeight.titleImperial" = "משקל (פאונד)";
 
 /* History View */
-"historyRecordWeight.titleMetric" = "משקל (ק\"ג)";
+"historyRecordWeight.titleMetric" = "משקל (ק״ג)";
 
 /* Info About Menu Item */
 "info_app_about" = "לגבי";
 
-/* Info Menu About: line 2 */
-"info_app_about_app_name" = "\"התריסר היומי\"";
-
 /* Info About View: Application Name ‘Daily Dozen’ */
-"info_app_about_app_name" = "\"התריסר היומי\"";
+"info_app_about_app_name" = "״התריסר היומי״";
 
 /* Info About View: Created By */
 "info_app_about_created_by" = "אפליקציה זו נוצרה על ידי: NutritionFacts.org, כריסטי ריצ'רדס, קונסטנטין חוחלוב ומארק קמפבל";
@@ -203,37 +200,31 @@
 "info_app_about_heading" = "בקשר לאפליקציה זו";
 
 /* Info About View: Open Source Credits */
-"info_app_about_oss_credits" = "נעשה שימוש בספריות הקוד הפתוח הבאות: RealmSwift, Charts,, FSCalendar, SimpleAnimation, ActiveLabel.";
-
-/* Info Menu About: line 1 */
-"info_app_about_overview" = "השתמשו באפליקציה זו על בסיס יומי כדי לעקוב אחר המזונות והעצות שאני ממליץ עליהם לבריאות ואריכות ימים בצורה אופטימלית בספרים שלי \"איך לא למות\" ו\"איך לא לעשות דיאטה\".";
+"info_app_about_oss_credits" = "נעשה שימוש בספריות הקוד הפתוח הבאות: RealmSwift, Charts,, FSCalendar, SimpleAnimation.";
 
 /* Info About View: Overview Text */
-"info_app_about_overview" = "השתמשו באפליקציה זו על בסיס יומי כדי לעקוב אחר המזונות והעצות שאני ממליץ עליהם לבריאות ואריכות ימים בצורה אופטימלית בספרים שלי \"איך לא למות\" ו\"איך לא לעשות דיאטה\".";
+"info_app_about_overview" = "השתמשו באפליקציה זו על בסיס יומי כדי לעקוב אחר המזונות והעצות שאני ממליץ עליהם לבריאות ואריכות ימים בצורה אופטימלית בספרים שלי ״איך לא למות״ ו״איך לא לעשות דיאטה״.";
 
 /* Info About View: Contributing Translators List (language code)  See https://en.wikipedia.org/wiki/List_of_ISO_639-1_codes */
-"info_app_about_translators" = "תודה מיוחדת למתרגמים המתנדבים: Petar Enchev (bg), Tsveti Enchev (bg), Ricard Soler Roger (ca), Luděk Bouška (cs,sk), Lenka Lukacová (cs), Anke Schliessmann (de), Ángela Graña (es), Saeed Salamian (fa), Audray Harkins (fr), Doron Barak (he), Ruth Levy (he), Annalisa Guerrini-Körner (it), Ilaria Zanini (it), Hanna Gurzeda (pl), Joanna Klopotek (pl), Tania Bassi (pt-BR), João Madureira (pt-PT), Cristina Lauby (ro), Evgeniya Lyakh (ru), Katarína Mocáková (sk), Sabina Aliieva (uk).";
+"info_app_about_translators" = "תודה מיוחדת למתרגמים המתנדבים: Adelina Chernaeva (bg), Petar Enchev (bg), Tsveti Enchev (bg), Ricard Soler Roger (ca), Luděk Bouška (cs,sk), Lucie Doleželová (cs), Lenka Lukacová (cs), Anke Schliessmann (de), Sofia Schuessler (de), Ángela Graña (es), Saeed Salamian (fa), Audray Harkins (fr), Doron Barak (he), Ruth Levy (he), dr. Stern Borbála (hu), Kertész Tibor (hu), Adriana Centrone (it), Annalisa Guerrini-Körner (it), Ilaria Zanini (it), Andrijeski (mk), Hangur (pl), Hanna Gurzeda (pl), Joanna Klopotek (pl), Tania Bassi (pt-BR), João Madureira (pt-PT), Cristina Lauby (ro), Evgeniya Lyakh (ru), Anna Miliutina (ru), Katarína Mocáková (sk), Sabina Aliieva (uk), Hailey Chang (zh).";
 
 /* Info About View: Application release version */
-"info_app_about_version" = "גירסה 3.5.1";
-
-/* Info Menu About: line 0 */
-"info_app_about_welcome" = "ברוכים הבאים ל- \"התריסר השבועי\" שלי!";
+"info_app_about_version" = "גירסה 3.5.3";
 
 /* Info About View: Welcome */
-"info_app_about_welcome" = "ברוכים הבאים ל- \"התריסר השבועי\" שלי!";
+"info_app_about_welcome" = "ברוכים הבאים ל- ״התריסר השבועי״ שלי!";
 
 /* Info Menu: book title */
-"info_book_how_not_to_die" = "ספר: \"איך לא למות\"";
+"info_book_how_not_to_die" = "ספר: ״איך לא למות״";
 
 /* Info Menu: book title */
-"info_book_how_not_to_die_cookbook" = "ספר \"איך לא למות- ספר הבישול\"";
+"info_book_how_not_to_die_cookbook" = "ספר ״איך לא למות- ספר הבישול״";
 
 /* Info Menu: book title */
-"info_book_how_not_to_diet" = "ספר: \"איך לא למות\"";
+"info_book_how_not_to_diet" = "ספר: ״איך לא למות״";
 
 /* Info Menu */
-"info_webpage_daily_dozen_challenge" = "האתגר של \"התריסר היומי\"";
+"info_webpage_daily_dozen_challenge" = "האתגר של ״התריסר היומי״";
 
 /* Info Menu */
 "info_webpage_donate" = "תירמו";
@@ -257,7 +248,7 @@
 "item_history_heading" = "היסטוריה";
 
 /* Main Navigation Tab Control: ‘Daily Dozen’ (proper noun) */
-"navtab.doze" = "\"התריסר היומי\"";
+"navtab.doze" = "״התריסר היומי״";
 
 /* Main Navigation Tab Control: show more information */
 "navtab.info" = "מידע";
@@ -311,10 +302,10 @@
 "setting_analytics_title" = "Analytics";
 
 /* First Launch Setting: button text */
-"setting_doze_only_btn" = "\"התריסר היומי\" \nבלבד";
+"setting_doze_only_btn" = "״התריסר היומי״ \nבלבד";
 
 /* Preference Settings View: selection button text */
-"setting_doze_only_choice" = "\"התריסר היומי\" בלבד";
+"setting_doze_only_choice" = "״התריסר היומי״ בלבד";
 
 /* First Launch Setting: button text */
 "setting_doze_tweak_btn" = "התריסר היומי +\n עשרים ואחד כוונונים";
@@ -323,7 +314,7 @@
 "setting_doze_tweak_choice" = "התריסר היומי +  21 כיוונונים";
 
 /* Preference Settings View: brief description text below Tweaks visibility control. */
-"setting_doze_tweak_footer" = "לבריאות בלבד, השתמשו ב\"תריסר היומי\" בלבד \". לבריאות וירידה במשקל השתמשו ב- \"תריסר היומי + 21 כיוונונים\".";
+"setting_doze_tweak_footer" = "לבריאות בלבד, השתמשו ב״תריסר היומי״ בלבד ״. לבריאות וירידה במשקל השתמשו ב- ״תריסר היומי + 21 כיוונונים״.";
 
 /* First Launch Setting: brief description above ‘Daily Dozen Only’ button. */
 "setting_health_alone_txt" = "עבור בריאות בלבד";
@@ -404,7 +395,7 @@
 "tweakMeal20Minutes.heading" = "בצעו את חוק 20 הדקות";
 
 /* heading for daily data entry item */
-"tweakMealNegCal.heading" = "איכלו קודם מזונות עם \"קלוריות שליליות\"";
+"tweakMealNegCal.heading" = "איכלו קודם מזונות עם ״קלוריות שליליות״";
 
 /* heading for daily data entry item */
 "tweakMealUndistracted.heading" = "איכלו ארוחות ללא הפרעה";
@@ -485,7 +476,7 @@
 "weight_entry_time" = "זמן";
 
 /* Weight Daily Entry Units: label */
-"weight_entry_units_kg" = "ק\"ג";
+"weight_entry_units_kg" = "ק״ג";
 
 /* Weight Daily Entry Units: label */
 "weight_entry_units_lbs" = "פאונד";
