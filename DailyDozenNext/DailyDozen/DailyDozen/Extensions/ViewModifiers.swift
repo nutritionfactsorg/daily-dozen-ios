@@ -8,23 +8,22 @@
 import SwiftUI
 
 struct ShadowBox: ViewModifier {
-  
-  func body(content: Content) -> some View {
     
-content
+    func body(content: Content) -> some View {
+        
+        content
             .background(.white)
             .cornerRadius(5)
             .shadow(radius: 5)
-           // .background(Color(.systemBackground))
-            //TBDz check color
-            .shadow(color: .nfGray50.opacity(1.0), radius: 5, x: 1, y: 1)
+        // .background(Color(.systemBackground))
+            .shadow(color: .nfGray50.opacity(1.0), radius: 5, x: 1, y: 1) //TBDz check gray color
             .padding(5)
-  }
+    }
 }
 extension View {
-  func shadowboxed() -> some View {
-    modifier(ShadowBox())
-  }
+    func shadowboxed() -> some View {
+        modifier(ShadowBox())
+    }
 }
 
 // ViewModifier for chartXScale

@@ -82,12 +82,27 @@ struct YearChartView: View {
         print("🟢 •Chart• Created data point count: \(dataPoints.count)")
         return dataPoints
     }
+    
+    @MainActor
+    private func updateChartData() {
+        computedChartData = computeChartData(from: viewModel.trackers, scrollPosition: scrollPosition)
+    }
+
+    private func scrollToEnd() {
+        if !computedChartData.isEmpty {
+            let lastDay = xAxisDomain().upperBound
+            withAnimation(.easeInOut) {
+                scrollPosition = Double(lastDay)
+            }
+            print("YearChartView• Scrolled to latest day: \(lastDay)")
+        }
+    }
 
     var body: some View {
         GeometryReader { geometry in
             VStack(spacing: 10) {
                 if computedChartData.isEmpty {
-                    Text("No weight data available")
+                    Text("historyRecordWeight_NoWeightAvailable")
                         .foregroundStyle(.gray)
                         .frame(maxWidth: .infinity, maxHeight: 250)
                 } else {
@@ -103,38 +118,16 @@ struct YearChartView: View {
             .frame(maxWidth: .infinity, maxHeight: 350) // Increased to match or exceed parent's minHeight: 420
             
             .onAppear {
-                computedChartData = computeChartData(from: viewModel.trackers, scrollPosition: scrollPosition)
-                if !computedChartData.isEmpty {
-                    scrollPosition = Double(xAxisDomain().upperBound) // Start at latest day
-                    print("🟢 •YearChartView• onAppear: Initialized scrollPosition to \(scrollPosition)")
-                }
-                print("🟢 •YearChartView• onAppear: Initialized computedChartData with \(viewModel.trackers.count) trackers")
-            }
-            .onChange(of: viewModel.trackers) { _, newTrackers in
-                computedChartData = computeChartData(from: newTrackers, scrollPosition: scrollPosition)
-                if !computedChartData.isEmpty {
-                    scrollPosition = Double(xAxisDomain().upperBound) // Update to latest day
-                    print("🟢 •YearChartView• onChange: Updated scrollPosition to \(scrollPosition)")
-                }
-                print("🟢 •YearChartView• onChange: Updated computedChartData with \(newTrackers.count) trackers")
-            }
-            .onChange(of: scrollPosition) { _, newPosition in
-                computedChartData = computeChartData(from: viewModel.trackers, scrollPosition: newPosition)
-                print("🟢 •YearChartView• onChange: Updated computedChartData for scrollPosition \(newPosition)")
-            }
-
-            .onChange(of: selectedDay) { _, newValue in
-                if let newDay = newValue {
-                    let closestDay = findClosestDay(to: newDay)
-                    if closestDay != newDay {
-                        selectedDay = closestDay  // This snaps; if already on a data day, it stays the same.
-                        scrollPosition = Double(closestDay)
-                        print("YearChartView snapped selectedDay to: \(closestDay), scroll position set to: \(scrollPosition)")
-                    }
+                Task { @MainActor in
+                   //await ensureAllDataLoaded()
+                    updateChartData()
+                    scrollToEnd()
                 }
             }
+            
              .border(.green, width: 1) // Uncomment for debugging
         }
+//
     }
 
     private func chartView(geometry: GeometryProxy) -> some View {
@@ -151,8 +144,8 @@ struct YearChartView: View {
                 .symbolSize(100)
                 .symbol {
                         Circle()
-                            .fill(dataPoint.type == .am ? Color("yellowSunglowColor") : Color("redFlamePeaColor"))
-                            .stroke(dataPoint.type == .am ? Color("yellowSunglowColor") : Color("redFlamePeaColor"), lineWidth: 2)
+                            .fill(dataPoint.type == .am ? Color("nfYellowSunglow") : Color("nfRedFlamePea"))
+                            .stroke(dataPoint.type == .am ? Color("nfYellowSunglow") : Color("nfRedFlamePea"), lineWidth: 2)
                             .frame(width: 8, height: 8)  // Adjust size as needed for visibility
                     }
             }
@@ -171,7 +164,7 @@ struct YearChartView: View {
                     x: .value("Day", selectedDay),
                     y: .value("Weight", selectedPoint.weight)
                 )
-                .foregroundStyle(selectedPoint.type == .am ? Color("yellowSunglowColor") : Color("redFlamePeaColor"))
+                .foregroundStyle(selectedPoint.type == .am ? Color("nfYellowSunglow") : Color("nfRedFlamePea"))
                 .symbol(Circle().strokeBorder(lineWidth: 2))
                 .annotation(
                     position: selectedPoint.weight > (computeYDomain().upperBound * 0.8) ? .bottom : .top,
@@ -187,13 +180,10 @@ struct YearChartView: View {
             }
         }
         .chartForegroundStyleScale([
-            "AM": Color("yellowSunglowColor"),
-            "PM": Color("redFlamePeaColor")
+            "AM": Color("nfYellowSunglow"),
+            "PM": Color("nfRedFlamePea")
         ])
-//        .chartSymbolScale([
-//            "AM": Circle().strokeBorder(lineWidth: 2),
-//            "PM": Circle().strokeBorder(lineWidth: 2)
-//        ])
+
         .chartXAxis {
             let axisData = yearAndMonthMarks()
             AxisMarks(values: axisData.map { $0.day }) { value in  // Removed position: .bottom
@@ -242,10 +232,9 @@ struct YearChartView: View {
             }
         }
         .frame(height: 310) // Matched to MonthView
-        .border(.red, width: 1) // Keep for debugging
+      //  .border(.red, width: 1) // Keep for debugging
     }
  //ChartView
-
     private func valueSelectionPopover(for point: WeightDataPoint) -> some View {
         GeometryReader { _ in
             ZStack {
@@ -264,13 +253,13 @@ struct YearChartView: View {
     private var legendView: some View {
         HStack {
             Circle()
-                .fill(Color("yellowSunglowColor"))
+                .fill(Color("nfYellowSunglow"))
                 .frame(width: 12, height: 12)
             Text("AM")
                 .font(.caption)
             Spacer()
             Circle()
-                .fill(Color("redFlamePeaColor"))
+                .fill(Color("nfRedFlamePea"))
                 .frame(width: 12, height: 12)
             Text("PM")
                 .font(.caption)

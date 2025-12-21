@@ -2,7 +2,7 @@
 //  DozeDetailInfo.swift
 //  DailyDozen
 //
-//  Copyright © 2020 Nutritionfacts.org. All rights reserved.
+//  Copyright © 2020-2025 NutritionFacts.org. All rights reserved.
 //
 // swiftlint:disable nesting
 

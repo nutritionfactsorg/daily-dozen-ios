@@ -2,8 +2,11 @@
 <!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
 <plist version="1.0">
 <dict>
-	<key></key>
+	<key>CFBundleIdentifier</key>
 	<string></string>
+	<key>NSUserNotificationsUsageDescription</key>
+	<string></string>
+
 	<key>BuildMachineOSBuild</key>
 	<string>24G325</string>
 	<key>CFBundleDevelopmentRegion</key>
@@ -49,7 +52,7 @@
 	<key>LSRequiresIPhoneOS</key>
 	<true/>
 	<key>MinimumOSVersion</key>
-	<string>17.6</string>
+	<string>17.5</string>
 	<key>NSHealthShareUsageDescription</key>
 	<string>The 21 Tweaks feature accesses your HealthKit data to provide updates to your daily weight measurements.</string>
 	<key>NSHealthUpdateUsageDescription</key>

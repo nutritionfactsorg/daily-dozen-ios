@@ -1,5 +1,5 @@
 /* DailyDozen InfoPlist.strings (zh-Hans) */
-/* Copyright © 2021 Nutritionfacts.org. All rights reserved. */
+/* Copyright © 2021-2025 NutritionFacts.org. All rights reserved. */
 
 /* User-visible application name. Visible under icon. Used by Siri. */
 "CFBundleDisplayName" = "每日12清单";

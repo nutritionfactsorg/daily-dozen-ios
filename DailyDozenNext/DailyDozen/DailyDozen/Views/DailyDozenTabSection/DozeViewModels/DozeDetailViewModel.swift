@@ -2,7 +2,7 @@
 //  DozeDetailViewModel.swift
 //  DailyDozen
 //
-//  Copyright © 2020 Nutritionfacts.org. All rights reserved.
+//  Copyright © 2020-2025 NutritionFacts.org. All rights reserved.
 //
 
 import UIKit
@@ -76,20 +76,6 @@ struct DozeDetailViewModel {
         let name = info.varieties[index].text 
         let hasLink = info.varieties[index].topic == "" // :GTD:???: correct logic?
         return (name, hasLink)
-    }
-    
-    /// Returns the type topic for the current index.
-    ///
-    /// - Parameter index: The current index.
-    /// - Returns: The type toipic url.
-   @MainActor
-    func typeTopicURLWAS(index: Int) -> URL? {
-        if info.varieties[index].topic.isEmpty { // :GTD:???: review logic
-            return nil
-        }
-        let topic =  info.varieties[index].topic
-       // return LinksService.shared.link(topic: topic)
-        return LinksService.shared.link(topic: topic)
     }
     
 }

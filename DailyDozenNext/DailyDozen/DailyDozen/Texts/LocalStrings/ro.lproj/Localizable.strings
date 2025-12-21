@@ -1,5 +1,5 @@
 /* DailyDozen Localizable.strings (ro) */
-/* Copyright © 2021 Nutritionfacts.org. All rights reserved. */
+/* Copyright © 2021-2025 NutritionFacts.org. All rights reserved. */
 
 /* Date Button Title: ‘Back to today’ */
 "dateBackButtonTitle" = "Înapoi la ziua de azi";
@@ -486,5 +486,19 @@
 
 /* Weight Daily Entry: heading */
 "weightEntry.heading" = "Greutate";
+
+/* data details */
+
+/* Romanian (ro) 'Loading' */
+"loading_heading" = "Se încarcă";
+
+/* Romanian (ro) 'No weight data yet' */
+"historyRecordWeight_NoWeightYet" = "Încă nu există date despre greutate";
+
+/* Romanian (ro) 'No weight data for this year' */
+"historyRecordWeight_NoWeightYear" = "Nu există date despre greutate pentru acest an";
+
+/* Romanian (ro) 'No weight data available' */
+"historyRecordWeight_NoWeightAvailable" = "Nu există date despre greutate disponibile";
 
 /* file end */

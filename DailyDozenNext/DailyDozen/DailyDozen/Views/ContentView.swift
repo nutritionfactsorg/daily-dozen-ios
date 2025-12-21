@@ -2,12 +2,14 @@
 //  ContentView.swift
 //  DailyDozen
 //
-//  Copyright © 2024 Nutritionfacts.org. All rights reserved.
+//  Copyright © 2024-2025 NutritionFacts.org. All rights reserved.
 //
 
 import SwiftUI
 
 struct ContentView: View {
+    private let viewModel = SqlDailyTrackerViewModel.shared
+    @AppStorage(SettingsKeys.show21TweaksPref) private var show21Tweaks: Bool = true
 //    init() {
 //           UITabBar.appearance().isTranslucent = false
 //          // UITabBar.appearance().backgroundColor = .white  //Could be set to something else
@@ -27,15 +29,17 @@ struct ContentView: View {
                 }
             
            // SecondTabViewR()
-            TwentyOneTweaksTabView()
-              
-                .tabItem {
-                    Label {
-                        Text("navtab.tweaks", comment: "21 Tweaks (proper noun) navigation tab")
-                    } icon: {
-                        Image(systemName: "circle.fill")
+            if show21Tweaks {
+                TwentyOneTweaksTabView()
+                
+                    .tabItem {
+                        Label {
+                            Text("navtab.tweaks", comment: "21 Tweaks (proper noun) navigation tab")
+                        } icon: {
+                            Image(systemName: "circle.fill")
+                        }
                     }
-                }
+            }
             //!!NYI:  accessibilityIdentifier
             InformationTabView()
                 .tabItem {
@@ -50,14 +54,14 @@ struct ContentView: View {
                     } icon: {Image(systemName: "gearshape.fill")
                     }
                 }
-        }
+        } //TAB
         .tint(Color(.tabAccent))
         .toolbarBackground(
-
                // 1
                Color.white,
                // 2
                for: .tabBar)
+        .id(viewModel.refreshID)   
     }
 }
 

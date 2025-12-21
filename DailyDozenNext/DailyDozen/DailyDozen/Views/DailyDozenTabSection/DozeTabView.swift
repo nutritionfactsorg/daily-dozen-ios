@@ -2,13 +2,11 @@
 //  DozeTabView.swift
 //  DailyDozen
 //
-//  Copyright © 2025 Nutritionfacts.org. All rights reserved.
-//
 
 import SwiftUI
 
 struct DozeTabView: View {
-   // @EnvironmentObject var viewModel: SqlDailyTrackerViewModel
+    
     private let viewModel = SqlDailyTrackerViewModel.shared
     var streakCount = 3000 // Placeholder
     @State private var isShowingSheet = false
@@ -16,61 +14,84 @@ struct DozeTabView: View {
     @State private var currentIndex = 0
     @State private var dateRange: [Date] = []
     @State private var isLoadingDate = false // Prevent rapid loadTracker calls
-    // @State private var sharedScrollOffset: CGFloat = 0
     @State private var scrollCoordinator = ScrollPositionCoordinator()
-    
     @State private var isDataReady = false  // 👈 NEW: Gatekeeper
     @State private var preloadTask: Task<Void, Never>?  // 👈 NEW: Guard re-run
     
-    let direction: Direction = .leftToRight
-    
-    private func extendDateRangeIfNeeded(for index: Int) {
-        let calendar = Calendar.current
-        let bufferDays = 30
-        let today = calendar.startOfDay(for: Date())
-        
-        if dateRange.isEmpty {
-            dateRange = (-bufferDays...0).map { offset in
-                calendar.date(byAdding: .day, value: offset, to: today)!
-            }
-            if let todayIndex = dateRange.firstIndex(where: { calendar.isDate($0, inSameDayAs: today) }) {
-                currentIndex = todayIndex
-                selectedDate = dateRange[todayIndex]
-            }
-        }
-        
-        if index <= bufferDays {
-            let earliestDate = dateRange.first!
-            let newDates = (1...bufferDays).map { offset in
-                calendar.date(byAdding: .day, value: -offset, to: earliestDate)!
-            }.reversed()
-            dateRange.insert(contentsOf: newDates, at: 0)
-            currentIndex += bufferDays
-        }
-        
-        if index >= dateRange.count - bufferDays - 1 {
-            let latestDate = dateRange.last!
-            if latestDate < today {
-                let daysToToday = calendar.dateComponents([.day], from: latestDate, to: today).day!
-                let daysToAdd = min(bufferDays, max(daysToToday, 0))
-                let newDates = (1...daysToAdd).map { offset in
-                    calendar.date(byAdding: .day, value: offset, to: latestDate)!
-                }
-                dateRange.append(contentsOf: newDates)
-            }
-            if let todayIndex = dateRange.firstIndex(where: { calendar.isDate($0, inSameDayAs: today) }) {
-                currentIndex = min(currentIndex, todayIndex)
-            }
+    private var currentDisplayDate: Date {
+        // Safest possible date to show in header
+        if dateRange.indices.contains(currentIndex) {
+            return dateRange[currentIndex]
+        } else {
+            return Calendar.current.startOfDay(for: Date()) // fallback = today
         }
     }
     
-    private var isToday: Bool {
-        let calendar = Calendar.current
-        let today = calendar.startOfDay(for: Date())
-        guard !dateRange.isEmpty, currentIndex >= 0, currentIndex < dateRange.count else {
-            return false
+    let direction: Direction = .leftToRight
+    
+//    private func extendDateRangeIfNeeded(for index: Int) {
+//        let calendar = Calendar.current
+//        let bufferDays = 30
+//        let today = calendar.startOfDay(for: Date())
+//        
+//        if dateRange.isEmpty {
+//            dateRange = (-bufferDays...0).map { offset in
+//                calendar.date(byAdding: .day, value: offset, to: today)!
+//            }
+//            if let todayIndex = dateRange.firstIndex(where: { calendar.isDate($0, inSameDayAs: today) }) {
+//                currentIndex = todayIndex
+//                selectedDate = dateRange[todayIndex]
+//            }
+//        }
+//        
+//        if index <= bufferDays {
+//            let earliestDate = dateRange.first!
+//            let newDates = (1...bufferDays).map { offset in
+//                calendar.date(byAdding: .day, value: -offset, to: earliestDate)!
+//            }.reversed()
+//            dateRange.insert(contentsOf: newDates, at: 0)
+//            currentIndex += bufferDays
+//        }
+//        
+//        if index >= dateRange.count - bufferDays - 1 {
+//            let latestDate = dateRange.last!
+//            if latestDate < today {
+//                let daysToToday = calendar.dateComponents([.day], from: latestDate, to: today).day!
+//                let daysToAdd = min(bufferDays, max(daysToToday, 0))
+//                let newDates = (1...daysToAdd).map { offset in
+//                    calendar.date(byAdding: .day, value: offset, to: latestDate)!
+//                }
+//                dateRange.append(contentsOf: newDates)
+//            }
+//            if let todayIndex = dateRange.firstIndex(where: { calendar.isDate($0, inSameDayAs: today) }) {
+//                currentIndex = min(currentIndex, todayIndex)
+//            }
+//        }
+//    }
+    private func extendDateRangeIfNeeded(for index: Int) {
+        if dateRange.isEmpty {
+            viewModel.ensureDateIsInRange(Date(), dateRange: &dateRange, currentIndex: &currentIndex)
+            return
         }
-        return calendar.isDate(dateRange[currentIndex], inSameDayAs: today)
+        
+        let buffer = 30
+        if index <= buffer, let earliest = dateRange.first {
+            let newEarliest = Calendar.current.date(byAdding: .day, value: -buffer, to: earliest)!
+            viewModel.ensureDateIsInRange(newEarliest, dateRange: &dateRange, currentIndex: &currentIndex, thenSelectIt: false)
+        }
+    }
+    
+//    private var isToday: Bool {
+//        let calendar = Calendar.current
+//        let today = calendar.startOfDay(for: Date())
+//        guard !dateRange.isEmpty, currentIndex >= 0, currentIndex < dateRange.count else {
+//            return false
+//        }
+//        return calendar.isDate(dateRange[currentIndex], inSameDayAs: today)
+//    }
+    private var isToday: Bool {
+        dateRange.indices.contains(currentIndex) &&
+        Calendar.current.isDate(dateRange[currentIndex], inSameDayAs: Date())
     }
     
     private func goToToday() {
@@ -99,26 +120,39 @@ struct DozeTabView: View {
         print("🟢 •Doze• READY (\(preloadEnd - preloadStart + 1) days preloaded)")
     }
     
+    private func preloadSomeData() async {
+        let calendar = Calendar.current
+        let today = calendar.startOfDay(for: Date())
+        dateRange = (-10...0).map { calendar.date(byAdding: .day, value: $0, to: today)! }
+        if let todayIdx = dateRange.firstIndex(where: { calendar.isDate($0, inSameDayAs: today) }) {
+            currentIndex = todayIdx
+            selectedDate = dateRange[todayIdx]
+        }
+        
+        // Preload only visible + nearby pages, not everything
+        await viewModel.loadTracker(forDate: today, isSilent: true)
+        let nearby = dateRange.indices.filter { abs($0 - currentIndex) <= 3 }
+        for i in nearby {
+            await viewModel.loadTracker(forDate: dateRange[i], isSilent: true)
+        }
+    }
+    
     var body: some View {
         NavigationStack {
             Group {
                 if !isDataReady {
                     ZStack {
-                        Color.black.ignoresSafeArea()
-                        ProgressView()
-                            .progressViewStyle(CircularProgressViewStyle(tint: .brandGreen))
+                        Color.white.ignoresSafeArea()
+                        ProgressView("loading_heading")
+                            .progressViewStyle(CircularProgressViewStyle(tint: .nfGreenBrand))
                             .scaleEffect(1.5)
                     } //ZStack
                 } else {
                     ZStack {
                         VStack {
-                            DozeHeaderView(isShowingSheet: $isShowingSheet, currentDate: dateRange.isEmpty ? Date() : dateRange[currentIndex])
-                            //                        if viewModel.isLoading {
-                            //                            ProgressView()
-                            //                        } else if let error = viewModel.error {
-                            //                            Text(error)
-                            //                                .foregroundColor(.red)
-                            //                        } else {
+                            DozeHeaderView(isShowingSheet: $isShowingSheet,
+                                           currentDate: currentDisplayDate)
+                            
                             TabView(selection: $currentIndex) {
                                 ForEach(dateRange.indices, id: \.self) { index in
                                     DozeTabPageView(coordinator: scrollCoordinator, date: dateRange[index])  // ← Pass
@@ -128,20 +162,18 @@ struct DozeTabView: View {
                             }
                             .tabViewStyle(.page(indexDisplayMode: .never))
                             .frame(minHeight: 300, maxHeight: .infinity)
-                            .onChange(of: currentIndex) { _, newIndex in
-                                let newDate = dateRange[newIndex]
-                                selectedDate = newDate
-                                extendDateRangeIfNeeded(for: newIndex)
-                                // print("Swiped to index \(newIndex), date \(selectedDate), current shared offset: \(sharedScrollOffset)")
-                                Task {
-                                    let preloadStart = max(0, currentIndex - 15)  // Wider backward preload
-                                    let preloadEnd = min(dateRange.count - 1, currentIndex + 5)
-                                    for index in preloadStart...preloadEnd {
-                                        await viewModel.loadTracker(forDate: dateRange[index])
+                            .onChange(of: currentIndex) { oldValue, newValue in
+                                if newValue >= dateRange.count - 1 && newValue > oldValue {
+                                    // Trying to swipe right past today → snap back
+                                    withAnimation {
+                                        currentIndex = dateRange.count - 1
                                     }
+                                } else {
+                                    // normal swipe handling
+                                    selectedDate = dateRange[newValue]
+                                    extendDateRangeIfNeeded(for: newValue)
+                                    // ... preload task
                                 }
-                                // isLoadingDate = false
-                                
                             } //onChange
                             //  }  //Else
                             Spacer()
@@ -159,129 +191,30 @@ struct DozeTabView: View {
                     } //ZStack
                 } //else
             } //Group
-         //NavStack
-                
-                .background(Color.white)
-                .sheet(isPresented: $isShowingSheet) {
-                    DatePickerSheetView(selectedDate: $selectedDate, dateRange: $dateRange, currentIndex: $currentIndex)
-                        .presentationDetents([.medium])
+            //NavStack
+            
+            .background(Color.white)
+            .sheet(isPresented: $isShowingSheet) {
+                DatePickerSheetView(selectedDate: $selectedDate, dateRange: $dateRange, currentIndex: $currentIndex)
+                    .presentationDetents([.medium])
+            }
+            .whiteInlineGreenTitle(LocalizedStringKey("navtab.doze"))
+            //.whiteInlineGreenTitle(Text("navtab.doze"))
+            // .navigationTitle(Text("navtab.doze"))
+            
+            .task {
+                viewModel.ensureDateIsInRange(Date(), dateRange: &dateRange, currentIndex: &currentIndex)
+                // preload today + last 14 days
+                for date in dateRange.suffix(15) {
+                    await viewModel.loadTracker(forDate: date, isSilent: true)
                 }
-                
-                //            .onAppear {
-                //                extendDateRangeIfNeeded(for: currentIndex)
-                //                Task {
-                //                    for index in max(0, currentIndex - 5)...min(dateRange.count - 1, currentIndex + 5) {
-                //                        await viewModel.loadTracker(forDate: dateRange[index])
-                //                    }
-                //                }
-                //            }
-                
-//                .onAppear {
-//                    print("🟢 •Doze• Launching...")
-//                    
-//                    guard preloadTask == nil else { return }  // No re-run**
-//                    
-//                    preloadTask = Task {
-//                        await preloadAllData()
-//                        await MainActor.run { isDataReady = true }
-//                        print("🟢 •Doze• **READY** (preloaded \(dateRange.count) days)")
-//                    }
-//                }
-                .navigationTitle(Text("navtab.doze"))
-                .navigationBarTitleDisplayMode(.inline)
-                .toolbarBackground(.visible, for: .navigationBar)
-                .toolbarBackground(.brandGreen, for: .navigationBar)
-                .task {
-                            print("🟢 •Doze• Launching...")
-                            await preloadAllData()
-                            isDataReady = true
-                            print("🟢 •Doze• **READY** (preloaded \(dateRange.count) days)")
-                        }
-           } //NavStack
-        }
+                isDataReady = true
+            }
+        } //NavStack
     }
+}
 
 #Preview {
     DozeTabView()
         .environmentObject(SqlDailyTrackerViewModel())
 }
-
-// Wrapper to initialize state for preview
-//#Preview {
-//    struct PreviewWrapper: View {
-//        @State private var records: [SqlDailyTracker] = []
-//        @State private var dateRange: [Date] = (-30...0).map { offset in
-//            Calendar.current.date(byAdding: .day, value: offset, to: Date())!
-//        }
-//        @State private var currentIndex = 0 // Start 30 days ago to show button
-//        
-//        var body: some View {
-//            DozeTabView()
-//            // .environment(\.records, $records)
-//            // Inject initial state to avoid relying solely on onAppear
-//            // .environmentObject(DozeTabViewModel(dateRange: dateRange, currentIndex: currentIndex))
-//        }
-//    }
-//    
-//    return PreviewWrapper()
-//}
-
-//extension EnvironmentValues {
-//    var records: Binding<[SqlDailyTracker]> {
-//        get { self[RecordsEnvironmentKey.self] }
-//        set { self[RecordsEnvironmentKey.self] = newValue }
-//    }
-//}
-
-//#Preview {
-//    struct PreviewWrapper: View {
-//        @State private var records: [SqlDailyTracker] = []
-//        @State private var currentIndex = 0
-//        @State private var dateRange: [Date] = (-30...0).map { offset in
-//            Calendar.current.date(byAdding: .day, value: offset, to: Date())!
-//        }
-//
-//        var body: some View {
-//            DozeTabView()
-//              //  .environment(\.records, $records)
-//              //  .environment(\.currentIndex, $currentIndex) // If you add this as an environment value
-//             //   .environment(\.dateRange, $dateRange)
-//        }
-//    }
-//
-//    return PreviewWrapper()
-//}
-
-//    #Preview {
-//        DozeTabView(records: [
-//            SqlDailyTracker(date: Date(timeIntervalSinceReferenceDate: 732828019)),
-//            //SqlDailyTracker(date: Calendar.current.startOfDay(for: Date()),
-//            SqlDailyTracker(date: Calendar.current.date(byAdding: .day, value: -2, to: Date())!),
-//            SqlDailyTracker(date: Calendar.current.date(byAdding: .day, value: -5, to: Date())!)
-//        ])
-//    }
-
-//func updateCheckedCount(_ newCount: Int, totalCheckboxes: Int) {
-//var checkedCount = min(newCount, totalCheckboxes)  // Keep it within bounds
-//// You'd also save this to the database here
-//}
-//private func handleTap(index: Int, numBoxes: Int, numxCheckedBoxes: Int) {
-//let x = numxCheckedBoxes
-//// xCheckbox = numBoxes
-//let adjustedIndex = direction == .leftToRight ? index : (numBoxes - 1 - index)
-//
-//// If tapping an unchecked box
-//if adjustedIndex >= x {
-//    // x = adjustedIndex + 1
-//    updateCheckedCount(adjustedIndex + 1, totalCheckboxes: numBoxes)
-//}
-//// If tapping a checked box
-//else {
-//    // Uncheck this box and everything after it
-//    // x = adjustedIndex
-//    updateCheckedCount(adjustedIndex + 1, totalCheckboxes: numBoxes)
-//}
-//
-//print("Tap \(adjustedIndex)")
-////saveToDatabase here if want to save after each tap. might be overkill and may want to just save when View Disappears
-//}

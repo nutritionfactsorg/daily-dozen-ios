@@ -1,5 +1,5 @@
 /* DailyDozen Localizable.strings (zh-Hans) */
-/* Copyright © 2021 Nutritionfacts.org. All rights reserved. */
+/* Copyright © 2021-2025 NutritionFacts.org. All rights reserved. */
 
 /* Date Button Title: ‘Back to today’ */
 "dateBackButtonTitle" = "回到今天";
@@ -486,5 +486,19 @@
 
 /* Weight Daily Entry: heading */
 "weightEntry.heading" = "体重";
+
+/* data details */
+
+/* Chinese_Simplified (zh-Hans) 'Loading' */
+"loading_heading" = "正在加载";
+
+/* Chinese_Simplified (zh-Hans) 'No weight data yet' */
+"historyRecordWeight_NoWeightYet" = "暂无体重数据";
+
+/* Chinese_Simplified (zh-Hans) 'No weight data for this year' */
+"historyRecordWeight_NoWeightYear" = "今年尚无体重数据";
+
+/* Chinese_Simplified (zh-Hans) 'No weight data available' */
+"historyRecordWeight_NoWeightAvailable" = "无可用体重数据";
 
 /* file end */

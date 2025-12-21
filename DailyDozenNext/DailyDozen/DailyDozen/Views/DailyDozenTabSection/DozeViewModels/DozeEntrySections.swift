@@ -2,7 +2,7 @@
 //  DozeEntrySections.swift
 //  DailyDozen
 //
-//  Copyright © 2017 Nutritionfacts.org. All rights reserved.
+//  Copyright © 2017-2025 NutritionFacts.org. All rights reserved.
 //
 
 // TBDz I think this can be deleted.  It's not called anywhere

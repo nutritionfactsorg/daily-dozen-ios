@@ -6,11 +6,12 @@
 import SwiftUI
 import Charts
 
+//TBDz needs localization
+
 struct DayChartView: View {
     let selectedMonth: Date
     @Environment(\.layoutDirection) private var layoutDirection
     private let viewModel = SqlDailyTrackerViewModel.shared
-   // @EnvironmentObject private var viewModel: SqlDailyTrackerViewModel
     @State private var weightData: [WeightDataPoint] = []
     @State private var isLoading: Bool = false
     
@@ -80,15 +81,15 @@ struct DayChartView: View {
                             .symbol(by: .value("Series", dataPoint.type == .am ? "AM" : "PM"))
                             .symbol {
                                 Circle()
-                                    .fill(dataPoint.type == .am ? Color("yellowSunglowColor") : Color("redFlamePeaColor"))
-                                    .stroke(dataPoint.type == .am ? Color("yellowSunglowColor") : Color("redFlamePeaColor"), lineWidth: 2)
+                                    .fill(dataPoint.type == .am ? Color("nfYellowSunglow") : Color("nfRedFlamePea"))
+                                    .stroke(dataPoint.type == .am ? Color("nfYellowSunglow") : Color("nfRedFlamePea"), lineWidth: 2)
                                     .frame(width: 8, height: 8)
                             }
                             .interpolationMethod(.catmullRom)
                         }
                         .chartForegroundStyleScale([
-                            "AM": Color("yellowSunglowColor"),
-                            "PM": Color("redFlamePeaColor")
+                            "AM": Color("nfYellowSunglow"),
+                            "PM": Color("nfRedFlamePea")
                         ])
                         .chartXAxis {
                             AxisMarks(values: dataDays(weightData)) { value in
@@ -125,13 +126,13 @@ struct DayChartView: View {
                     // Legend
                     HStack {
                         Circle()
-                            .fill(Color("yellowSunglowColor"))
+                            .fill(Color("nfYellowSunglow"))
                             .frame(width: 12, height: 12)
                         Text("AM")
                             .font(.caption)
                         Spacer()
                         Circle()
-                            .fill(Color("redFlamePeaColor"))
+                            .fill(Color("nfRedFlamePea"))
                             .frame(width: 12, height: 12)
                         Text("PM")
                             .font(.caption)
@@ -140,38 +141,14 @@ struct DayChartView: View {
                 }
             }
         }
-        .onAppear {
-            Task { @MainActor in
-                isLoading = true
-                weightData = await computeWeightData()
-                isLoading = false
-                print("🟢 •DayChart• onAppear: Initialized weightData with \(weightData.count) points for \(selectedMonth.datestampSid)")
-            }
+        .task(id: selectedMonth) {
+           await loadWeightData()
         }
-        .onChange(of: selectedMonth) { _, _ in
-            Task { @MainActor in
-                isLoading = true
-                weightData = await computeWeightData()
-                isLoading = false
-                print("🟢 •DayChart• onChange: Updated weightData with \(weightData.count) points for \(selectedMonth.datestampSid)")
-            }
+        .task(id: viewModel.trackers.count) {  // Use .count to avoid type-checker issues
+            await loadWeightData()
+            print("DayChart• Refreshed from trackers update: \(weightData.count) points")
         }
-        .onChange(of: viewModel.trackers) { _, _ in
-            Task { @MainActor in
-                isLoading = true
-                weightData = await computeWeightData()
-                isLoading = false
-                print("🟢 •DayChart• onChange: Updated weightData with \(weightData.count) points for \(selectedMonth.datestampSid) after trackers update")
-            }
-        }
-        .onReceive(NotificationCenter.default.publisher(for: .mockDBUpdated)) { _ in
-            Task { @MainActor in
-                isLoading = true
-                weightData = await computeWeightData()
-                isLoading = false
-                print("🟢 •DayChart• onReceive: Refreshed weightData with \(weightData.count) points for \(selectedMonth.datestampSid) after DB update")
-            }
-        }
+
     }
     
     private func computeWeightData() async -> [WeightDataPoint] {
@@ -214,5 +191,14 @@ struct DayChartView: View {
     private func xAxisDomain(for dataPoints: [WeightDataPoint]) -> ClosedRange<Int> {
         let monthDayCount = displayCalendar.range(of: .day, in: .month, for: selectedMonth)?.count ?? 30
         return 1...monthDayCount
+    }
+    
+    @MainActor
+    private func loadWeightData() async {
+        isLoading = true
+        // Must be on MainActor
+        weightData = await computeWeightData()
+        isLoading = false     // Must be on MainActor
+        print("DayChart• Loaded \(weightData.count) points for \(selectedMonth.datestampSid)")
     }
 }

@@ -20,39 +20,55 @@ struct TwentyOneTweakSetting: View {
     }
     
     var body: some View {
-        VStack {
+        VStack(alignment: .leading, spacing: 10) {
             Text("setting_tweak_header")
                 .textCase(.uppercase)
-                .frame(maxWidth: .infinity, alignment: .leading)
-    
-                Picker(String(localized: "setting_units_header"), selection: $selectedTweakVisibilityControl) {
-                    ForEach(tweakVisibilityControl, id: \.self) {
-                        Text($0)
-                    }
-                } .pickerStyle(.segmented)
-                    .onChange(of: selectedTweakVisibilityControl) { _, newValue in
-                    if let index = tweakVisibilityControl.firstIndex(of: newValue) {
-                      
-                        saveTweakChangeState(index: index)
-                              
-                          } else {
-                              print("this case should not happen.")
-                          }
+                .font(.subheadline.bold())
+               // .font(.system(size: 16, weight: .medium))
+            // .frame(maxWidth: .infinity, alignment: .leading)
+                .foregroundStyle(.secondary)
+            Picker(String(localized: "setting_units_header"), selection: $selectedTweakVisibilityControl) {
+                ForEach(tweakVisibilityControl, id: \.self) { control in
+                    Text(control)
+                    .tag(control)
                 }
-                .padding(10)
-//           
-            Text("setting_doze_tweak_footer").font(.footnote)
+               
+            }
+                .pickerStyle(.segmented)
+                .labelsHidden()
+                .onAppear {
+                   
+                            UISegmentedControl.appearance().apportionsSegmentWidthsByContent = true
+                        }
+                        .onDisappear {
+                            UISegmentedControl.appearance().apportionsSegmentWidthsByContent = false  // clean reset
+                        }            //
+            Text("setting_doze_tweak_footer")
+                .font(.footnote)
+                .foregroundStyle(.secondary)
                 .multilineTextAlignment(.leading)
             //  .padding(10)
         } //VStack
+        .padding(.horizontal, 10)     // ← reduced from 10 → gives the picker ~8 extra points of width
+        .padding(.vertical, 10)
         .onAppear {
+           // UISegmentedControl.appearance().apportionsSegmentWidthsByContent = true
             let shouldShow21Tweaks = UserDefaults.standard.bool(forKey: SettingsKeys.show21TweaksPref)
             
             if  shouldShow21Tweaks == true {
                 selectedTweakVisibilityControl = tweakVisibilityControl[1]
             } else {
                 selectedTweakVisibilityControl = tweakVisibilityControl[0]
-            }            
+            }
+        }
+        .onChange(of: selectedTweakVisibilityControl) { _, newValue in
+            if let index = tweakVisibilityControl.firstIndex(of: newValue) {
+                
+                saveTweakChangeState(index: index)
+                
+            } else {
+                print("this case should not happen.")
+            }
         }
     }
 }
@@ -60,3 +76,14 @@ struct TwentyOneTweakSetting: View {
 #Preview {
     TwentyOneTweakSetting()
 }
+
+//if want to tweak segments more:
+
+//    let seg = UISegmentedControl.appearance()
+//    
+//    seg.apportionsSegmentWidthsByContent = true         
+//    seg.selectedSegmentTintColor = UIColor(Color.accentColor)  // proper tint
+//    // Reduce the huge default horizontal padding if you still want it tighter:
+//    seg.setContentPositionAdjustment(UIOffset(horizontal: -8, vertical: 0),
+//                                     forSegmentType: .any,
+//                                     barMetrics: .default)

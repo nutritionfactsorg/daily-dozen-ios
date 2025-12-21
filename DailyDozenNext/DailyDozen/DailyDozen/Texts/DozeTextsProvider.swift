@@ -2,22 +2,23 @@
 //  DozeTextsProvider.swift
 //  DailyDozen
 //
-//  Copyright © 2020 Nutritionfacts.org. All rights reserved.
+//  Copyright © 2020-2025 NutritionFacts.org. All rights reserved.
 //
 
 import Foundation
 
 class DozeTextsProvider {
     
-    @MainActor static let shared: DozeTextsProvider = {
-        let decoder = JSONDecoder() 
-        guard 
+    @MainActor
+    static let shared: DozeTextsProvider = {
+        let decoder = JSONDecoder()
+        guard
             let path = Bundle.main.path(forResource: "DozeDetailData", ofType: "json"),
             let jsonString = try? String(contentsOfFile: path),
             let jsonData = jsonString.data(using: .utf8),
             let info = try? decoder.decode(DozeDetailInfo.self, from: jsonData)
-            else { 
-                fatalError("FAIL DozeTextsProvider did not load 'DozeDetailData.json'") 
+        else {
+            fatalError("FAIL DozeTextsProvider did not load 'DozeDetailData.json'")
         }
         return  DozeTextsProvider(info: info)
     }()
@@ -32,17 +33,10 @@ class DozeTextsProvider {
     ///
     /// - Parameter itemName: The current item name.
     /// - Returns: A detail view model for static texts.
-    func getDetailsWAS(itemTypeKey: String) -> DozeDetailViewModel {
-        guard
-            let itemInfo = info.itemsDict[itemTypeKey] 
-            else { fatalError("DozeTextsProvider getDetails(\(itemTypeKey)) Item not found.") }
-        return DozeDetailViewModel(itemTypeKey: itemTypeKey, info: itemInfo)
-    }
-    
     func getDetails(itemTypeKey: String) -> DozeDetailInfo.Item {
         guard
             let itemInfo = info.itemsDict[itemTypeKey]
-            else { fatalError("DozeTextsProvider getDetails(\(itemTypeKey)) Item not found.") }
+        else { fatalError("DozeTextsProvider getDetails(\(itemTypeKey)) Item not found.") }
         return  itemInfo
     }
     
@@ -57,9 +51,9 @@ class DozeTextsProvider {
     /// - Parameter itemName: The current item name.
     /// - Returns: URL path TOPIC component.
     func getTopic(itemTypeKey: String) -> String {
-        guard 
-            let item = info.itemsDict[itemTypeKey] 
-            else { fatalError("DozeTextsProvider getTopic(\(itemTypeKey)) Item not found.") }
+        guard
+            let item = info.itemsDict[itemTypeKey]
+        else { fatalError("DozeTextsProvider getTopic(\(itemTypeKey)) Item not found.") }
         return item.topic
     }
     

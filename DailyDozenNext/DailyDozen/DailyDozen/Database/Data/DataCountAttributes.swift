@@ -1,13 +1,12 @@
 //
 //  DataCountAttributes.swift
-//  DatabaseMigration
+//  Database/Data
 //
-//  Copyright © 2019 NutritionFacts.org. All rights reserved.
+//  Copyright © 2019-2025 NutritionFacts.org. All rights reserved.
 //
 // swiftlint:disable function_body_length
 
 import Foundation
-//import UIKit // CGFloat
 import SwiftUI
 
 struct Attribute: Sendable {
@@ -27,13 +26,10 @@ extension EnvironmentValues {
     }
 }
 
-//struct DataCountAttributes : Sendable{
-//@MainActor
 struct DataCountAttributes: Sendable {
     
     static let shared = DataCountAttributes()
-   
-    //let dict: [DataCountType: Attribute]
+    
     let dict: [DataCountType: (headingDisplay: String, headingCSV: String, goalServings: Int)]
     
     private init () {
@@ -100,7 +96,7 @@ struct DataCountAttributes: Sendable {
                 // countType: .dozeExercise,
                 headingDisplay: String(localized: "dozeExercise.heading"),
                 headingCSV: "Exercise",
-                goalServings: 1),   //SettingsManager.exerciseGamutInt()), // :GTD:[UNITS]: exerciseGamut
+                goalServings: 1),   //SettingsManager.exerciseGamutInt()), // :GTD:[GOALS]: exerciseGamut
             .otherVitaminB12: (
                 // countType: .otherVitaminB12,
                 headingDisplay: String(localized: "otherVitaminB12.heading"),

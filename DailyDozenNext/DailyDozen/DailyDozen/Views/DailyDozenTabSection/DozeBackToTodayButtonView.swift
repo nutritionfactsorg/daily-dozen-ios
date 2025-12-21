@@ -18,10 +18,10 @@ struct DozeBackToTodayButtonView: View {
                     .frame(maxWidth: .infinity)
                     .padding(5)
                     .foregroundColor(.white)
-                    .background(Color.brandGreen)
+                    .background(Color.nfGreenBrand)
 //                    .background(
 //                        RoundedRectangle(cornerRadius: 8)
-//                            .fill(Color.brandGreen)
+//                            .fill(Color.nfGreenBrand)
 //                    )
                     //.cornerRadius(8)
                     .ignoresSafeArea(edges: .horizontal)

@@ -1,5 +1,5 @@
 /* DailyDozen Localizable.strings (hu) */
-/* Copyright © 2021 Nutritionfacts.org. All rights reserved. */
+/* Copyright © 2021-2025 NutritionFacts.org. All rights reserved. */
 
 /* Date Button Title: ‘Back to today’ */
 "dateBackButtonTitle" = "Vissza a mai naphoz";
@@ -486,5 +486,19 @@
 
 /* Weight Daily Entry: heading */
 "weightEntry.heading" = "Súly";
+
+/* data details */
+
+/* Hungarian (hu) 'Loading' */
+"loading_heading" = "Betöltés";
+
+/* Hungarian (hu) 'No weight data yet' */
+"historyRecordWeight_NoWeightYet" = "Még nincsenek súlyadatok";
+
+/* Hungarian (hu) 'No weight data for this year' */
+"historyRecordWeight_NoWeightYear" = "Ebben az évben még nincsenek súlyadatok";
+
+/* Hungarian (hu) 'No weight data available' */
+"historyRecordWeight_NoWeightAvailable" = "Nincsenek elérhető súlyadatok";
 
 /* file end */

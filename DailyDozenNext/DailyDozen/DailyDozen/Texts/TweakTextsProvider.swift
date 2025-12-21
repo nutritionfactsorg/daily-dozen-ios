@@ -2,7 +2,7 @@
 //  TweakTextsProvider.swift
 //  DailyDozen
 //
-//  Copyright © 2020 Nutritionfacts.org. All rights reserved.
+//  Copyright © 2020-2025 NutritionFacts.org. All rights reserved.
 //
 
 //commented out until working on that section
@@ -11,8 +11,9 @@ import Foundation
 
 class TweakTextsProvider {
     
-    @MainActor static let shared: TweakTextsProvider = {
-        let decoder = JSONDecoder() 
+    @MainActor
+    static let shared: TweakTextsProvider = {
+        let decoder = JSONDecoder()
         guard 
             let path = Bundle.main.path(forResource: "TweakDetailData", ofType: "json"),
             let jsonString = try? String(contentsOfFile: path),
@@ -34,13 +35,6 @@ class TweakTextsProvider {
     ///
     /// - Parameter itemName: The current item name.
     /// - Returns: A detail view model for static texts.
-    func getDetailsWAS(itemTypeKey: String) -> TweakDetailViewModel {
-        guard
-            let itemInfo = info.itemsDict[itemTypeKey] 
-            else { fatalError("Tweak getTopic(\(itemTypeKey)) Item not found.") }
-        return TweakDetailViewModel(itemTypeKey: itemTypeKey, info: itemInfo)
-    }
-    
     func getDetails(itemTypeKey: String) -> TweakDetailInfo.Item {
         guard
             let itemInfo = info.itemsDict[itemTypeKey]

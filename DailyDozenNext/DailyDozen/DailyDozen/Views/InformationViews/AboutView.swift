@@ -73,11 +73,8 @@ struct AboutView: View {
             }
             
             // Spacer()
-            .navigationTitle("info_app_about_heading") 
-            .navigationBarTitleDisplayMode(.inline)
-            .toolbarBackground(.visible, for: .navigationBar)
-            .toolbarBackground(.brandGreen, for: .navigationBar)
-            .toolbarColorScheme(.dark)
+            //.navigationTitle("info_app_about_heading")
+            .whiteInlineGreenTitle("info_app_about_heading")
         }
     }
 }

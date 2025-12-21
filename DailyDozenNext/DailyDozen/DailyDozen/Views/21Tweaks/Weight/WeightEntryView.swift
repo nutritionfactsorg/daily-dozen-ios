@@ -8,156 +8,132 @@
 import SwiftUI
 //TBDz this page needs localization
 struct WeightEntryView: View {
-   // @EnvironmentObject var viewModel: SqlDailyTrackerViewModel
     private let viewModel = SqlDailyTrackerViewModel.shared
     @Environment(\.dismiss) private var dismiss
+    
     @State private var currentDate: Date
-    @State private var dateRange: [Date] = []
-    @State private var currentIndex: Int = 0
-    @State private var isShowingSheet: Bool = false
     @State private var selectedDate: Date
-
-    init(initialDate: Date) {
-        self._currentDate = State(initialValue: initialDate.startOfDay)
-        self._selectedDate = State(initialValue: initialDate.startOfDay)
-        let calendar = Calendar.current
-        let today = calendar.startOfDay(for: Date())
-        self._dateRange = State(initialValue: (-30...0).map { offset in
-            calendar.date(byAdding: .day, value: offset, to: today)!
-        })
-//        if let todayIndex = self.dateRange.firstIndex(where: { calendar.isDate($0, inSameDayAs: today) }) {
-//            self._currentIndex = State(initialValue: todayIndex)
-//        }
+    @State private var dateRange: [Date] = []
+    @State private var currentIndex = 0
+    @State private var isShowingSheet = false
+    private var currentDisplayDate: Date {
+        dateRange.indices.contains(currentIndex) ? dateRange[currentIndex] : currentDate
     }
-
+    
+    init(initialDate: Date = Date()) {
+        let startOfDay = Calendar.current.startOfDay(for: initialDate)
+        _currentDate = State(initialValue: startOfDay)
+        _selectedDate = State(initialValue: startOfDay)
+    }
+    
     private var isToday: Bool {
-        guard !dateRange.isEmpty, currentIndex >= 0, currentIndex < dateRange.count else {
-            return false
-        }
-        return Calendar.current.isDate(dateRange[currentIndex], inSameDayAs: Date().startOfDay)
+        dateRange.indices.contains(currentIndex) &&
+        Calendar.current.isDate(dateRange[currentIndex], inSameDayAs: Date())
     }
-
+    
     private func goToToday() {
         Task {
             await viewModel.savePendingWeights()
-            let calendar = Calendar.current
-            let today = calendar.startOfDay(for: Date())
-            currentDate = today
-            if let todayIndex = dateRange.firstIndex(where: { calendar.isDate($0, inSameDayAs: today) }) {
-                currentIndex = todayIndex
-            } else {
-                dateRange.append(today)
-                dateRange.sort(by: { $0 < $1 })
-                currentIndex = dateRange.firstIndex(of: today)!
-            }
+            viewModel.ensureDateIsInRange(Date(), dateRange: &dateRange, currentIndex: &currentIndex)
+            currentDate = Calendar.current.startOfDay(for: Date())
         }
     }
-
+    
+    // Only extend backward when swiping into the past
     private func extendDateRangeIfNeeded(for index: Int) {
-        let calendar = Calendar.current
-        let bufferDays = 30
-        let today = calendar.startOfDay(for: Date())
-
-        if dateRange.isEmpty {
-            dateRange = (-bufferDays...0).map { offset in
-                calendar.date(byAdding: .day, value: offset, to: today)!
-            }
-            if let todayIndex = dateRange.firstIndex(where: { calendar.isDate($0, inSameDayAs: today) }) {
-                currentIndex = todayIndex
-                currentDate = dateRange[todayIndex]
-            }
-        }
-
-        if index <= bufferDays {
-            let earliestDate = dateRange.first!
-            let newDates = (1...bufferDays).map { offset in
-                calendar.date(byAdding: .day, value: -offset, to: earliestDate)!
-            }.reversed()
-            dateRange.insert(contentsOf: newDates, at: 0)
-            currentIndex += bufferDays
-            print("Extended dateRange backward: earliest now \(dateRange.first!.datestampSid)")
-        }
-
-        if index >= dateRange.count - bufferDays - 1 {
-            let latestDate = dateRange.last!
-            if latestDate < today {
-                let daysToToday = calendar.dateComponents([.day], from: latestDate, to: today).day!
-                let daysToAdd = min(bufferDays, max(daysToToday, 0))
-                let newDates = (1...daysToAdd).map { offset in
-                    calendar.date(byAdding: .day, value: offset, to: latestDate)!
-                }
-                dateRange.append(contentsOf: newDates)
-                print("Extended dateRange forward: latest now \(dateRange.last!.datestampSid)")
-            }
-            if let todayIndex = dateRange.firstIndex(where: { calendar.isDate($0, inSameDayAs: today) }) {
-                currentIndex = min(currentIndex, todayIndex)
-            }
+        guard !dateRange.isEmpty else { return }
+        let buffer = 30
+        if index <= buffer, let earliest = dateRange.first {
+            let newEarliest = Calendar.current.date(byAdding: .day, value: -buffer, to: earliest)!
+            viewModel.ensureDateIsInRange(newEarliest,
+                                         dateRange: &dateRange,
+                                         currentIndex: &currentIndex,
+                                         thenSelectIt: false)
         }
     }
-
+    
     var body: some View {
-      //  NavigationStack {
-            ZStack(alignment: .bottom) {
-                VStack(spacing: 0) {
-                    DozeHeaderView(isShowingSheet: $isShowingSheet, currentDate: dateRange.isEmpty ? Date() : dateRange[currentIndex])
-                    TabView(selection: $currentIndex) {
-                        ForEach(dateRange.indices, id: \.self) { index in
-                            WeightEntryPage(date: dateRange[index])
-                                .tag(index)
+        ZStack(alignment: .bottom) {
+            VStack(spacing: 0) {
+                DozeHeaderView(
+                    isShowingSheet: $isShowingSheet,
+                    currentDate: currentDisplayDate
+                )
+                
+                TabView(selection: $currentIndex) {
+                    ForEach(dateRange.indices, id: \.self) { index in
+                        WeightEntryPage(date: dateRange[index])
+                            .tag(index)
+                    }
+                }
+                .tabViewStyle(.page(indexDisplayMode: .never))
+                .onChange(of: currentIndex) { _, newIndex in
+                    currentDate = dateRange[newIndex]
+                    extendDateRangeIfNeeded(for: newIndex)
+                    
+                    // Optional: preload nearby pages
+                    Task {
+                        let start = max(0, newIndex - 5)
+                        let end = min(dateRange.count - 1, newIndex + 3)
+                        for i in start...end {
+                            await viewModel.loadTracker(forDate: dateRange[i], isSilent: true)
                         }
                     }
-                    .tabViewStyle(.page(indexDisplayMode: .never))
                 }
-                if !isToday {
-                    DozeBackToTodayButtonView(isToday: isToday) {
-                        goToToday()
-                    }
-                    .padding(.bottom, 0)
+            }
+            
+            if !isToday {
+                DozeBackToTodayButtonView(isToday: isToday, action: goToToday)
                     .background(Color.white)
-                }
             }
-            .navigationTitle("Weight")
-            .navigationBarBackButtonHidden(true)
-            .toolbar {
-                ToolbarItem(placement: .topBarLeading) {
-                    Button("Back") {
-                        Task { await viewModel.savePendingWeights(); dismiss() }
+        }
+        
+        .navigationBarBackButtonHidden(true)
+        .navigationTitle("weightEntry.heading")
+        .toolbarBackground(.nfGreenBrand, for: .navigationBar)
+        // Add this line to force the background to stay visible:
+        .toolbarBackground(.visible, for: .navigationBar)
+        .toolbar {
+            ToolbarItem(placement: .topBarLeading) {
+                Button {
+                    Task {
+                        await viewModel.savePendingWeights()
+                        dismiss()
                     }
+                } label: {
+                    Image(systemName: "chevron.backward")  // Just the system chevron, no text
+                        .font(.system(size: 17, weight: .semibold))  // Matches system style
                 }
+                .flipsForRightToLeftLayoutDirection(true)  // Auto-flips for RTL languages (e.g., Arabic)
             }
-            .sheet(isPresented: $isShowingSheet) {
-                DatePickerSheetView(selectedDate: $selectedDate, dateRange: $dateRange, currentIndex: $currentIndex)
-                    .presentationDetents([.medium])
-                    .onAppear { print("DatePickerSheetView presented") }
-                    .onDisappear { print("DatePickerSheetView dismissed") }
+        }
+        .sheet(isPresented: $isShowingSheet) {
+            DatePickerSheetView(selectedDate: $selectedDate,
+                                dateRange: $dateRange,
+                                currentIndex: $currentIndex)
+                .presentationDetents([.medium])
+        }
+        .task {
+            // This one line replaces all your old init + onAppear logic
+            viewModel.ensureDateIsInRange(currentDate,
+                                         dateRange: &dateRange,
+                                         currentIndex: &currentIndex)
+            
+            // Preload a few recent days for smooth swiping
+            let recent = dateRange.suffix(15) // today + last 14
+            for date in recent {
+                await viewModel.loadTracker(forDate: date, isSilent: true)
             }
-            .onAppear {
-                let targetDate = currentDate
-                if let index = dateRange.firstIndex(where: { Calendar.current.isDate($0, inSameDayAs: targetDate) }) {
-                    currentIndex = index
-                } else {
-                    dateRange.append(targetDate)
-                    dateRange.sort(by: { $0 < $1 })
-                    currentIndex = dateRange.firstIndex(of: targetDate)!
-                    extendDateRangeIfNeeded(for: currentIndex)
-                }
-                print("🟢 WeightEntry landed on \(targetDate.datestampSid) at index \(currentIndex)")
-            }
-            .onDisappear {
-                Task { await viewModel.savePendingWeights() }
-                print("Disappearing")
-            }
-            .task {
-                do {
-                    try await HealthManager.shared.requestPermissions()
-                } catch {
-                    print("HealthKit permission error: \(error)")
-                }
-            }
-       // } //Nav
+        }
+        .onDisappear {
+            Task { await viewModel.savePendingWeights() }
+        }
+        .task {
+            // Request HealthKit once (safe to call multiple times)
+            try? await HealthManager.shared.requestPermissions()
+        }
     }
 }
-
 struct WeightEntryView_Previews: PreviewProvider {
     static var previews: some View {
         NavigationStack {

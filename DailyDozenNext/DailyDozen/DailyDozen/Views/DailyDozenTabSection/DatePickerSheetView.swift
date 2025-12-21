@@ -12,31 +12,32 @@ struct DatePickerSheetView: View {
     @Binding var dateRange: [Date]
     @Binding var currentIndex: Int
     @Environment(\.dismiss) var dismiss
+    private let viewModel = SqlDailyTrackerViewModel.shared
     
-    private func extendDateRangeForSelectedDate() {
-        let calendar = Calendar.current
-        let today = calendar.startOfDay(for: Date())
-        // If selectedDate is outside current dateRange, extend it
-        if let earliestDate = dateRange.first, let latestDate = dateRange.last {
-            if selectedDate < earliestDate {
-                let daysToAdd = calendar.dateComponents([.day], from: selectedDate, to: earliestDate).day!
-                let newDates = (1...daysToAdd).map { offset in
-                    calendar.date(byAdding: .day, value: -offset, to: earliestDate)!
-                }.reversed()
-                dateRange.insert(contentsOf: newDates, at: 0)
-                currentIndex += daysToAdd // Adjust index after inserting
-            } else if selectedDate > latestDate && selectedDate <= today {
-                let daysToAdd = calendar.dateComponents([.day], from: latestDate, to: selectedDate).day!
-                let newDates = (1...daysToAdd).map { offset in
-                    calendar.date(byAdding: .day, value: offset, to: latestDate)!
-                }
-                dateRange.append(contentsOf: newDates)
-            }
-            if selectedDate > today {
-                selectedDate = today
-            }
-        }
-    }
+//    private func extendDateRangeForSelectedDate() {
+//        let calendar = Calendar.current
+//        let today = calendar.startOfDay(for: Date())
+//        // If selectedDate is outside current dateRange, extend it
+//        if let earliestDate = dateRange.first, let latestDate = dateRange.last {
+//            if selectedDate < earliestDate {
+//                let daysToAdd = calendar.dateComponents([.day], from: selectedDate, to: earliestDate).day!
+//                let newDates = (1...daysToAdd).map { offset in
+//                    calendar.date(byAdding: .day, value: -offset, to: earliestDate)!
+//                }.reversed()
+//                dateRange.insert(contentsOf: newDates, at: 0)
+//                currentIndex += daysToAdd // Adjust index after inserting
+//            } else if selectedDate > latestDate && selectedDate <= today {
+//                let daysToAdd = calendar.dateComponents([.day], from: latestDate, to: selectedDate).day!
+//                let newDates = (1...daysToAdd).map { offset in
+//                    calendar.date(byAdding: .day, value: offset, to: latestDate)!
+//                }
+//                dateRange.append(contentsOf: newDates)
+//            }
+//            if selectedDate > today {
+//                selectedDate = today
+//            }
+//        }
+//    }
     
     private func goToToday() {
         let calendar = Calendar.current
@@ -80,7 +81,7 @@ struct DatePickerSheetView: View {
                     Spacer()
                     Button("Today") {
                         // selectedDate = Date()
-                        goToToday()
+                        viewModel.ensureDateIsInRange(Date(), dateRange: &dateRange, currentIndex: &currentIndex)
                         dismiss()
                     }
                     .foregroundColor(.blue)
@@ -88,13 +89,14 @@ struct DatePickerSheetView: View {
                     Spacer()
                     Button("Done") {
                         
-                        // TBDz  action you want with selectedDate here
-                        print("Selected date: \(selectedDate)")
-                        // Extend date range if needed and update currentIndex
-                        extendDateRangeForSelectedDate()
-                        if let index = dateRange.firstIndex(where: { Calendar.current.isDate($0, inSameDayAs: selectedDate) }) {
-                            currentIndex = index
-                        }
+//                        print("Selected date: \(selectedDate)")
+//                        // Extend date range if needed and update currentIndex
+//                        extendDateRangeForSelectedDate()
+//                        if let index = dateRange.firstIndex(where: { Calendar.current.isDate($0, inSameDayAs: selectedDate) }) {
+//                            currentIndex = index
+//                        }
+//                        dismiss()
+                        viewModel.ensureDateIsInRange(selectedDate, dateRange: &dateRange, currentIndex: &currentIndex)  // ← ONE line does everything
                         dismiss()
                     }
                     .foregroundColor(.blue)

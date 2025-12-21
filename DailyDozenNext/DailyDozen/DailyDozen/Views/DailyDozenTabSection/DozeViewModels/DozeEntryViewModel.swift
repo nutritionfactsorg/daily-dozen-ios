@@ -2,7 +2,7 @@
 //  DozeEntryViewModel.swift
 //  DailyDozen
 //
-//  Copyright © 2019 Nutritionfacts.org. All rights reserved.
+//  Copyright © 2019-2025 NutritionFacts.org. All rights reserved.
 //
 
 import Foundation

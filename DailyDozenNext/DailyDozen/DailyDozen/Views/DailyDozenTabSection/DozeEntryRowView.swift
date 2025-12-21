@@ -42,17 +42,18 @@ struct DozeEntryRowView: View {
                 HStack {
                     
                     Text(item.headingDisplay)
+                        .font(.title3)
                         .padding(5)
                     Spacer()
                     if !supplementItems.contains(item) {
                         NavigationLink(destination: DailyDozenDetailView(dataCountTypeItem: item)) {
                             Image(systemName: "info.circle")
-                                .foregroundColor(.nfDarkGray)
+                                .foregroundColor(.nfGrayDark)
                         }
                     } else {
                         Link(  destination: URL(string: "https://nutritionfacts.org/topics/vitamin-b12/")!) {
                             Image(systemName: "info.circle")
-                                .foregroundColor(.nfDarkGray)
+                                .foregroundColor(.nfGrayDark)
                         }
                     }  //TBDz!!::  Needs URL cleanup
                 }
@@ -116,7 +117,7 @@ struct DozeEntryRowView: View {
                 
             }
         }
-        .onReceive(NotificationCenter.default.publisher(for: .mockDBUpdated)) { notification in
+        .onReceive(NotificationCenter.default.publisher(for: .sqlDBUpdated)) { notification in
             guard let updatedDate = notification.object as? Date,
                   Calendar.current.isDate(updatedDate, inSameDayAs: date) else { return }
             

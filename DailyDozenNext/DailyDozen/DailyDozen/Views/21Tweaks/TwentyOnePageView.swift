@@ -2,7 +2,7 @@
 //  TwentyOnePageView.swift
 //  DailyDozen
 //
-//  Copyright © 2025 Nutritionfacts.org. All rights reserved.
+//
 //
 
 enum NavigationDestination: Hashable {
@@ -17,7 +17,7 @@ import SwiftUI
 struct TwentyOnePageView: View {
     let date: Date
     let coordinator: ScrollPositionCoordinator
-    
+    @State private var scrollID = UUID()  // Unique per tab view
     //@EnvironmentObject var viewModel: SqlDailyTrackerViewModel
     private let viewModel = SqlDailyTrackerViewModel.shared
     @State private var showingAlert = false
@@ -35,8 +35,6 @@ struct TwentyOnePageView: View {
         localTweakStateCount = localTracker.itemsDict
             .filter { TweakEntryViewModel.rowTypeArray.contains($0.key) }
             .reduce(0) { $0 + $1.value.datacount_count }
-       // print("🟢 •Sync• Updated localTweakStateCount for \(date.datestampSid): \(localTweakStateCount)")
-       // print("🟢 SYNC CALLED for \(date.ISO8601Format().prefix(10)): itemsDict.count = \(localTracker.itemsDict.count)")
     }
     
     var body: some View {
@@ -58,7 +56,7 @@ struct TwentyOnePageView: View {
             }
             .padding(10)
             
-            SyncedScrollView(coordinator: coordinator, version: coordinator.version) {
+            SyncedScrollView(coordinator: coordinator, id: scrollID, version: coordinator.version) {
                         LazyVStack(alignment: .leading, spacing: 0) {
                             ForEach(regularItems, id: \.self) { item in
                                 TwentyOneTweaksEntryRowView(
@@ -83,7 +81,7 @@ struct TwentyOnePageView: View {
 //        .onReceive(NotificationCenter.default.publisher(for: .mockDBUpdated)) { _ in
 //            Task { await syncRecordWithDB() }
 //        }
-        .onReceive(NotificationCenter.default.publisher(for: .mockDBUpdated)) { notification in
+        .onReceive(NotificationCenter.default.publisher(for: .sqlDBUpdated)) { notification in
             guard let updatedDate = notification.object as? Date,
                   Calendar.current.isDate(updatedDate, inSameDayAs: date) else { return }
             Task { await syncRecordWithDB() }

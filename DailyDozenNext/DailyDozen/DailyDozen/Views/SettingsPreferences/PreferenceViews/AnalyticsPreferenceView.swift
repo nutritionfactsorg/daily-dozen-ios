@@ -20,29 +20,33 @@ struct AnalyticsPreferenceView: View {
         print(enableAnalytics)
     }
     var body: some View {
-        VStack {
+        VStack(alignment: .leading, spacing: 10) {
             Text("setting_analytics_title")
+                
                 .textCase(.uppercase)
-                .frame(maxWidth: .infinity, alignment: .leading)
+                .foregroundStyle(.secondary)
+                .font(.subheadline.bold())
+               // .frame(maxWidth: .infinity, alignment: .leading)
             
             HStack {
                 if #available(iOS 17.0, *) {
-                    Toggle(String(localized: "setting_analytics_enable"), isOn: $enableAnalytics) //NYIz put to user defaults and add popup alert
+                    Toggle(String(localized: "setting_analytics_enable"), isOn: $enableAnalytics) //NYIz   TBDz put to user defaults and add popup alert
                         .onChange(of: enableAnalytics) {
                             saveAnalyticsAllowed()
                         }
-                        .toggleStyle(SwitchToggleStyle(tint: .brandGreen))
+                        .toggleStyle(SwitchToggleStyle(tint: .nfGreenBrand))
                 } else {
                     // Fallback on earlier versions
                     Toggle(String(localized: "setting_analytics_enable"), isOn: $enableAnalytics) //NYIz put to user defaults and add popup alert
                         .onChange(of: enableAnalytics) { _ in
                             saveAnalyticsAllowed()
                         }
-                        .toggleStyle(SwitchToggleStyle(tint: .brandGreen))
+                        .toggleStyle(SwitchToggleStyle(tint: .nfGreenBrand))
                 }
             }
             
         }
+        .padding(10)
         .onAppear {
             loadAnalyticsAllowedIndicator()
         }

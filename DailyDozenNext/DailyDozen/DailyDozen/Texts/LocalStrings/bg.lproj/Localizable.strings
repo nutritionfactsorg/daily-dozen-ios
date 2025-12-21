@@ -1,5 +1,5 @@
 /* DailyDozen Localizable.strings (bg) */
-/* Copyright © 2021 Nutritionfacts.org. All rights reserved. */
+/* Copyright © 2021-2025 NutritionFacts.org. All rights reserved. */
 
 /* Date Button Title: ‘Back to today’ */
 "dateBackButtonTitle" = "Върнете се към днешната дата";
@@ -486,5 +486,19 @@
 
 /* Weight Daily Entry: heading */
 "weightEntry.heading" = "Тегло";
+
+/* data details */
+
+/* Bulgarian (bg) 'Loading' */
+"loading_heading" = "Зареждане";
+
+/* Bulgarian (bg) 'No weight data yet' */
+"historyRecordWeight_NoWeightYet" = "Все още няма данни за тегло";
+
+/* Bulgarian (bg) 'No weight data for this year' */
+"historyRecordWeight_NoWeightYear" = "Няма данни за тегло за тази година";
+
+/* Bulgarian (bg) 'No weight data available' */
+"historyRecordWeight_NoWeightAvailable" = "Няма налични данни за тегло";
 
 /* file end */

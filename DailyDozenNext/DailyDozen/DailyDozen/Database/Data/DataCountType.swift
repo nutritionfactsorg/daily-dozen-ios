@@ -1,8 +1,8 @@
 //
 //  DataCountType.swift
-//  DatabaseMigration
+//  Database/Data
 //
-//  Copyright © 2019 NutritionFacts.org. All rights reserved.
+//  Copyright © 2019-2025 NutritionFacts.org. All rights reserved.
 //
 // swiftlint:disable cyclomatic_complexity
 
@@ -10,36 +10,36 @@ import SwiftUI
 
 // New: Helper struct to handle attribute lookups, breaking circular dependency
 struct DataCountTypeAttributes: Sendable {
-  
+    
     static func headingDisplay(for type: DataCountType) -> String {
         DataCountAttributes.shared.dict[type]?.headingDisplay ?? "Unknown"
     }
-   
+    
     static func goalServings(for type: DataCountType) -> Int {
         DataCountAttributes.shared.dict[type]?.goalServings ?? 0
     }
-   
+    
     static func headingCSV(for type: DataCountType) -> String {
         DataCountAttributes.shared.dict[type]?.headingCSV ?? "Unknown"
     }
     
     static func type(forCSVHeading csvHeading: String) -> DataCountType? {
-            let csvHeadingIn = csvHeading
+        let csvHeadingIn = csvHeading
+            .replacingOccurrences(of: " ", with: "")
+            .replacingOccurrences(of: "-", with: "")
+            .lowercased()
+        for key in DataCountAttributes.shared.dict.keys {
+            let csvHeadingAttribute = DataCountAttributes.shared.dict[key]!
+                .headingCSV
                 .replacingOccurrences(of: " ", with: "")
                 .replacingOccurrences(of: "-", with: "")
                 .lowercased()
-            for key in DataCountAttributes.shared.dict.keys {
-                let csvHeadingAttribute = DataCountAttributes.shared.dict[key]!
-                    .headingCSV
-                    .replacingOccurrences(of: " ", with: "")
-                    .replacingOccurrences(of: "-", with: "")
-                    .lowercased()
-                if csvHeadingIn == csvHeadingAttribute {
-                    return key
-                }
+            if csvHeadingIn == csvHeadingAttribute {
+                return key
             }
-            return nil
         }
+        return nil
+    }
 }
 
 public enum DataCountType: String, CaseIterable, Hashable, Sendable {
@@ -86,54 +86,21 @@ public enum DataCountType: String, CaseIterable, Hashable, Sendable {
     case tweakNightlySleep
     case tweakNightlyTrendelenbrug
     
-//    init?(itemTypeKey: String) {
-//        self = DataCountType(rawValue: String(itemTypeKey))!
-//    }
     init?(itemTypeKey: String) {
-            self.init(rawValue: itemTypeKey)
-        }
+        self.init(rawValue: itemTypeKey)
+    }
     
     var typeKey: String {
         return self.rawValue
     }
     
-//    var headingDisplay: String {
-//        return DataCountAttributes.shared.dict[self]!.headingDisplay
-//    }
-//    
-//    var goalServings: Int {
-//        return DataCountAttributes.shared.dict[self]!.goalServings
-//    }
-    
     init?(csvHeading: String) async {
         if let type =  DataCountTypeAttributes.type(forCSVHeading: csvHeading) {
-                self = type
-            } else {
-                return nil
-            }
+            self = type
+        } else {
+            return nil
         }
-    
-//    init?(csvHeading: String) {
-//        let csvHeadingIn = csvHeading
-//            .replacingOccurrences(of: " ", with: "")
-//            .replacingOccurrences(of: "-", with: "")
-//            .lowercased()
-//        for key in DataCountAttributes.shared.dict.keys {
-//            let csvHeadingAttribute = DataCountAttributes.shared.dict[key]!
-//                .headingCSV
-//                .replacingOccurrences(of: " ", with: "")
-//                .replacingOccurrences(of: "-", with: "")
-//                .lowercased()
-//            if csvHeadingIn == csvHeadingAttribute {
-//                self = key
-//            }
-//        }
-//        return nil
-//    }
-    
-//    var headingCSV: String {
-//        return DataCountAttributes.shared.dict[self]!.headingCSV
-//    }
+    }
     
     var imageName: String {
         return "ic_\(self.typeKey)"
@@ -253,14 +220,14 @@ extension DataCountType: Equatable {
 
 extension DataCountType {
     var headingDisplay: String {
-          DataCountTypeAttributes.headingDisplay(for: self)
+        DataCountTypeAttributes.headingDisplay(for: self)
     }
     
     var goalServings: Int {
-          DataCountTypeAttributes.goalServings(for: self)
+        DataCountTypeAttributes.goalServings(for: self)
     }
     
     var headingCSV: String {
-          DataCountTypeAttributes.headingCSV(for: self)
+        DataCountTypeAttributes.headingCSV(for: self)
     }
 }

@@ -38,8 +38,6 @@ struct FaqModel: Identifiable {
 
 struct InfoFaqTableView: View {
     
-//    let faqsWAS: [FaqModel] = [FaqModel(title: "faq_adapt_question", details: "faq_adapt_response"),
-//                       FaqModel( title: "faq_age_question", details: "faq_age_response.0")]
     let faqsList: [FaqModel] = [FaqModel(title: String(localized: "faq_adapt_question"), details: String(localized: "faq_adapt_response")),
                                FaqModel( title: String(localized: "faq_age_question"), details: String(localized: "faq_age_response.0", comment: "")
                                          + "\n\n" + String(localized: "faq_age_response.1", comment: "")),
@@ -50,7 +48,6 @@ struct InfoFaqTableView: View {
                                FaqModel(title: String(localized: "faq_scaling_question", comment: ""), details: String(localized: "faq_scaling_response", comment: "")),
                                FaqModel(title: String(localized: "faq_supplements_question", comment: ""), details: String(localized: "faq_supplements_response", comment: ""))
     ]
-    // var faqList = FaqListBuild.self
     
     var body: some View {
         NavigationStack {
@@ -68,11 +65,8 @@ struct InfoFaqTableView: View {
                     }
                 }
             } //List
-            .disclosureGroupStyle(FaqCustomDisclosureGroupStyle(button: Image(systemName: "chevron.down.square.fill").foregroundColor(.brandGreen)))
-            .navigationTitle(Text("faq_title"))
-            .navigationBarTitleDisplayMode(.inline)
-            .toolbarBackground(.visible, for: .navigationBar)
-            .toolbarBackground(.brandGreen, for: .navigationBar)
+            .disclosureGroupStyle(FaqCustomDisclosureGroupStyle(button: Image(systemName: "chevron.down.square.fill").foregroundColor(.nfGreenBrand)))
+            .whiteInlineGreenTitle("faq_title")
         }
  
     }

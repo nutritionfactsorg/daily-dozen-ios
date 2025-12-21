@@ -2,7 +2,7 @@
 //  LogService.swift
 //  DailyDozen
 //
-//  Copyright © 2020 Nutritionfacts.org. All rights reserved.
+//  Copyright © 2020-2025 NutritionFacts.org. All rights reserved.
 //
 
 import Foundation
@@ -12,12 +12,12 @@ let logit = LogService.shared
 ///
 /// - Note: Be sure to set the "DEBUG" symbol in the compiler flags
 ///   for the development build.
-/// 
-/// `Build Settings` > `All, Levels` > `Swift Compiler` - `Custom Flags/Other Swift Flags` >  
+///
+/// `Build Settings` > `All, Levels` > `Swift Compiler` - `Custom Flags/Other Swift Flags` >
 /// `(+) -D DEBUG`
 public enum LogServiceLevel: Int, Comparable {
     case all        = 6 // highest verbosity
-    case verbose    = 5
+    case verbose    = 5 // e.g. trace
     case debug      = 4
     case info       = 3
     case warning    = 2
@@ -25,9 +25,9 @@ public enum LogServiceLevel: Int, Comparable {
     case off        = 0
     
     /// Get string description for log level.
-    /// 
+    ///
     /// - parameter logLevel: A LogLevel
-    /// 
+    ///
     /// - returns: A string.
     public static func description(logLevel: LogServiceLevel) -> String {
         switch logLevel {
@@ -38,17 +38,15 @@ public enum LogServiceLevel: Int, Comparable {
         case .warning: return "warning"
         case .error:   return "error"
         case .off:     return "off"
-        // default: assertionFailure("Invalid level")
-        // return "Null"
         }
     }
     
     // Set the "DEBUG" symbol in the compiler flags
-    #if DEBUG
+#if DEBUG
     static nonisolated(unsafe) public let defaultLevel = LogServiceLevel.all
-    #else
+#else
     static public let defaultLevel = LogServiceLevel.warning
-    #endif
+#endif
 }
 
 public func < (lhs: LogServiceLevel, rhs: LogServiceLevel) -> Bool {
@@ -60,7 +58,6 @@ public func == (lhs: LogServiceLevel, rhs: LogServiceLevel) -> Bool {
 }
 
 actor LogService {
-    
     static let shared = LogService()
     
     /// Current log level.
@@ -68,10 +65,8 @@ actor LogService {
     
     /// Log line counter
     private var lineCount = 0
-    /// Log line numbers to watch: [Int]  
+    /// Log line numbers to watch: [Int]
     public var watchpointList: [Int] = []
-    //
-    //public var logfileUrl: URL?
     
     /// DateFromatter used internally.
     private let dateFormatter = DateFormatter()
@@ -79,13 +74,6 @@ actor LogService {
     public init() {
         dateFormatter.locale = Locale(identifier: "en_US_POSIX") // 24H
         dateFormatter.dateFormat = "yyyyMMdd_HHmmss.SSS"
-        
-        /// LogFunction used, `print` for DEBUG, file for Production.
-        #if DEBUG
-            
-        #else
-            // :NYI: production would use the default file
-        #endif
     }
     
     // public func message
@@ -122,60 +110,12 @@ actor LogService {
     private func log(_ string: String) {
         lineCount += 1
         var logString = "[[\(lineCount)]] \(string)"
-        #if DEBUG
+#if DEBUG
         if watchpointList.contains(lineCount) {
             logString = ":::WATCHPOINT::: [[\(lineCount)]]\n" + logString
         }
-        #endif
-        
-        //if let url = logfileUrl {
-        //    do {
-        //        let fileHandle = try FileHandle(forWritingTo: url)
-        //        fileHandle.seekToEndOfFile()
-        //        if let data = (logString + "\n").data(using: .utf8) {
-        //            fileHandle.write( data )
-        //        }
-        //        fileHandle.closeFile()
-        //        #if DEBUG
-        //            print(logString)
-        //        #endif
-        //    } catch {
-        //        #if DEBUG
-        //            print("FAIL: could not append to \(url.absoluteString)")
-        //            print(logString)
-        //        #endif
-        //    }
-        //} else {
+#endif
         print(logString)
-        //}
-    }
-    
-    public func useLogFileDefault() async {
-        await useLogFile(nameToken: "shared")
-    }
-    
-    /// - parameter nameToken: string included in file name
-    public func useLogFile(nameToken: String) async {
-        //let currentTime = await DateManager.shared.currentDatetime()
-        let formatter = DateFormatter()
-        formatter.dateFormat = "yyyyMMdd_HHmmss"
-        // formatter.timeZone = NSTimeZone(abbreviation: "UTC")
-        //let dateTimestamp = formatter.string(from: currentTime)
-        
-        //let logfileName = "\(dateTimestamp)_log_\(nameToken).txt"
-        //logfileUrl = URL.inDocuments(filename: logfileName)
-        
-        //do {
-        //    if let url = logfileUrl {
-        //        try "FILE: \(logfileName)\n".write(to: url, atomically: true, encoding: String.Encoding.utf8)
-        //    } else {
-        //        error(":FAIL: LogService useLogFile() logfileUrl is nil")
-        //    }
-        //} catch {
-        //    print(":FAIL: LogService useLogFile() could not write initial line to \(logfileName)")
-        //}
-        print(":DEBUG: LogService useLogFile() is not currently available.")
-
     }
     
 }

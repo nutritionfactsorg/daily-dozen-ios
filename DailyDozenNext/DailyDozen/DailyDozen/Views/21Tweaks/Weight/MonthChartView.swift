@@ -37,6 +37,29 @@ struct MonthChartView: View {
         formatter.maximumFractionDigits = 1
         return formatter
     }
+    
+    @MainActor
+    private func loadYearData(for year: Int) async {
+        // ALL data is already preloaded by WeightChartView — just use it
+        weightData = computeWeightData()  // already filters by selectedYear
+        print("MonthChartView• Used preloaded data for \(year): \(weightData.count) points")
+    }
+//    private func loadYearData(for year: Int) async {
+//        // Only load if we don't already have data for this year
+//        let hasData = viewModel.trackers.contains { $0.date.year == year }
+//        if hasData {
+//            weightData = computeWeightData()
+//            print("MonthChartView• Reused existing data for \(year): \(weightData.count) points")
+//            return
+//        }
+//        
+//        // Otherwise load once, silently
+//        let yearDate = Calendar(identifier: .gregorian).date(from: DateComponents(year: year, month: 1))!
+//        await viewModel.loadTrackersForMonth(yearDate, silent: true)
+//        
+//        weightData = computeWeightData()
+//        print("MonthChartView• Loaded data for year \(year): \(weightData.count) points")
+//    }
 
     var body: some View {
         GeometryReader { geometry in
@@ -44,7 +67,7 @@ struct MonthChartView: View {
 
             VStack(spacing: 12) {
                 if weightData.isEmpty {
-                    Text("No weight data for this year")
+                    Text("historyRecordWeight_NoWeightYear")
                         .foregroundStyle(.gray)
                         .frame(maxWidth: .infinity, maxHeight: 250)
                 } else {
@@ -56,25 +79,23 @@ struct MonthChartView: View {
                 }
             }
             .frame(maxWidth: .infinity, maxHeight: 340)
-            .onAppear {
-               // weightData = computeWeightData(from: viewModel.trackers, for: selectedYear)
-                weightData = computeWeightData()
-                print("🟢 •MonthChartView• onAppear: Initialized weightData with \(weightData.count) points for \(selectedYear)")
+//            .onAppear {
+//                Task { @MainActor in
+//                        await loadYearData()
+//                    }
+//                print("🟢 •MonthChartView• onAppear: Initialized weightData with \(weightData.count) points for \(selectedYear)")
+//            }
+            
+//            .onChange(of: selectedYear) { _, newYear in
+//                Task { @MainActor in
+//                    await loadYearData(for: newYear)
+//                }
+//            }
+            .task(id: selectedYear) {
+                await loadYearData(for: selectedYear)
             }
-            .onChange(of: selectedYear) { _, newYear in
-                selectedDay = nil // Clear selection when year changes
-                //weightData = computeWeightData(from: viewModel.trackers, for: newYear)
-                weightData = computeWeightData()
-                print("🟢 •MonthChartView• onChange: Updated weightData with \(weightData.count) points for \(newYear)")
-            }
-            .onChange(of: viewModel.trackers) { _, _ in
-               //weightData = computeWeightData(from: newTrackers, for: selectedYear)
-                weightData = computeWeightData()
-                print("🟢 •MonthChartView• onChange: Updated weightData with \(weightData.count) points for \(selectedYear) after trackers update")
-            }
-            .onReceive(NotificationCenter.default.publisher(for: .mockDBUpdated)) { _ in
-                weightData = computeWeightData()
-                print("🟢 •MonthChartView• onReceive: Refreshed weightData with \(weightData.count) points for \(selectedYear) after DB update")
+            .task(id: viewModel.trackers.count) {
+                await loadYearData(for: selectedYear)
             }
         }
     }
@@ -90,8 +111,8 @@ struct MonthChartView: View {
                 .foregroundStyle(by: .value("Series", dataPoint.type == .am ? "AM" : "PM"))
                 .symbol {
                         Circle()
-                            .fill(dataPoint.type == .am ? Color("yellowSunglowColor") : Color("redFlamePeaColor"))
-                            .stroke(dataPoint.type == .am ? Color("yellowSunglowColor") : Color("redFlamePeaColor"), lineWidth: 2)
+                            .fill(dataPoint.type == .am ? Color("nfYellowSunglow") : Color("nfRedFlamePea"))
+                            .stroke(dataPoint.type == .am ? Color("nfYellowSunglow") : Color("nfRedFlamePea"), lineWidth: 2)
                             .frame(width: 8, height: 8)  // Adjust size as needed for visibility
                     }
                 .symbolSize(100)
@@ -113,7 +134,7 @@ struct MonthChartView: View {
                     x: .value("Day", selectedDay),
                     y: .value("Weight", selectedPoint.weight)
                 )
-                .foregroundStyle(selectedPoint.type == .am ? Color("yellowSunglowColor") : Color("redFlamePeaColor"))
+                .foregroundStyle(selectedPoint.type == .am ? Color("nfYellowSunglow") : Color("nfRedFlamePea"))
                 .symbol(Circle().strokeBorder(lineWidth: 2))
                 .annotation(
                     position: .top,
@@ -129,8 +150,8 @@ struct MonthChartView: View {
             }
         }
         .chartForegroundStyleScale([
-            "AM": Color("yellowSunglowColor"),
-            "PM": Color("redFlamePeaColor")
+            "AM": Color("nfYellowSunglow"),
+            "PM": Color("nfRedFlamePea")
         ])
 //        .chartSymbolScale([
 //            "AM": Circle().strokeBorder(lineWidth: 2),
@@ -169,11 +190,12 @@ struct MonthChartView: View {
         .chartScrollableAxes(.horizontal)
         .chartXSelection(value: $selectedDay)
         .chartPlotStyle { plot in
-        plot.padding(.top, 20) // Add top padding to plot area
+        plot
+            .padding(.top, 20) // Add top padding to plot area
     }
         .padding(.horizontal, layoutDirection == .rightToLeft ? 20 : 10)
         .padding(.top) // Reverted to minimal top padding
-        .border(.red, width: 1) // Uncomment -- used for debugging
+        //.border(.red, width: 1) // Uncomment -- used for debugging
     }  //chartView
 
     private func valueSelectionPopover(for point: WeightDataPoint) -> some View {
@@ -189,13 +211,13 @@ struct MonthChartView: View {
     private var legendView: some View {
         HStack {
             Circle()
-                .fill(Color("yellowSunglowColor"))
+                .fill(Color("nfYellowSunglow"))
                 .frame(width: 12, height: 12)
             Text("AM")
                 .font(.caption)
             Spacer()
             Circle()
-                .fill(Color("redFlamePeaColor"))
+                .fill(Color("nfRedFlamePea"))
                 .frame(width: 12, height: 12)
             Text("PM")
                 .font(.caption)
@@ -211,16 +233,16 @@ struct MonthChartView: View {
                 if let amWeight = tracker.weightAM?.dataweight_kg, amWeight > 0 {
                     let weight = unitType == .metric ? amWeight : tracker.weightAM?.lbs ?? amWeight
                     dataPoints.append(WeightDataPoint(date: tracker.date, weight: weight, type: .am))
-                    print("🟢 •Month Chart• Added AM weight for \(tracker.date.datestampSid): \(weight) \(unitType == .metric ? "kg" : "lbs")")
+                    //print("🟢 •Month Chart• Added AM weight for \(tracker.date.datestampSid): \(weight) \(unitType == .metric ? "kg" : "lbs")")
                 }
                 if let pmWeight = tracker.weightPM?.dataweight_kg, pmWeight > 0 {
                     let weight = unitType == .metric ? pmWeight : tracker.weightPM?.lbs ?? pmWeight
                     dataPoints.append(WeightDataPoint(date: tracker.date, weight: weight, type: .pm))
-                    print("🟢 •Month Chart• Added PM weight for \(tracker.date.datestampSid): \(weight) \(unitType == .metric ? "kg" : "lbs")")
+                    //print("🟢 •Month Chart• Added PM weight for \(tracker.date.datestampSid): \(weight) \(unitType == .metric ? "kg" : "lbs")")
                 }
             }
             
-            print("🟢 •Chart• Created \(dataPoints.count) data points for \(selectedYear): \(dataPoints.map { "\($0.date.datestampSid), \($0.weight), \($0.type)" })")
+            //print("🟢 •Chart• Created \(dataPoints.count) data points for \(selectedYear): \(dataPoints.map { "\($0.date.datestampSid), \($0.weight), \($0.type)" })")
             return dataPoints.sorted { $0.date < $1.date }
         }
 //    private func fetchWeightData() {

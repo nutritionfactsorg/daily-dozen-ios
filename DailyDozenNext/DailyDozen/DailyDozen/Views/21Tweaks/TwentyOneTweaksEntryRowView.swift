@@ -8,8 +8,7 @@
 import SwiftUI
 
 struct TwentyOneTweaksEntryRowView: View {
-    //var streakCount = 3000// NYI TBD
-   // @EnvironmentObject var viewModel: SqlDailyTrackerViewModel
+  
     private let viewModel = SqlDailyTrackerViewModel.shared
     @Environment(\.dataCountAttributes) var dataCountAttributes
     let item: DataCountType
@@ -34,12 +33,13 @@ struct TwentyOneTweaksEntryRowView: View {
                 VStack(alignment: .leading) {
                     HStack {
                         Text(item.headingDisplay)
+                            .font(.title3)
                             .padding(5)
                         Spacer()
                         NavigationLink(destination: TwentyOneDetailView(dataCountTypeItem: item)) {
                             // NavigationLink(destination: TwentyOneDetailView(dataCountTypeItem: item)) {
                             Image(systemName: "info.circle")
-                                .foregroundColor(.nfDarkGray)
+                                .foregroundColor(.nfGrayDark)
                         }
                     }
                     HStack {
@@ -98,11 +98,6 @@ struct TwentyOneTweaksEntryRowView: View {
             .navigationDestination(for: DataCountType.self) { item in
                 TwentyOneDetailView(dataCountTypeItem: item)
             }
-            //            .navigationDestination(for: String.self) { value in
-            //                if value == "chart" {
-            //                    WeightChartView()
-            //                }
-            //            }
             
             .navigationDestination(for: Date.self) { date in
                 WeightEntryView(initialDate: date)
@@ -141,7 +136,6 @@ struct TwentyOneTweaksEntryRowView: View {
                 if !isActive && item == .tweakWeightTwice {
                     Task {
                         // After returning from WeightEntryView (where weights were saved via savePendingWeights())
-                        //  await viewModel.loadTracker(forDate: date.startOfDay) // Reload fresh weights
                         let localTracker = viewModel.tracker(for: date)
                         let amWeight = localTracker.weightAM?.dataweight_kg ?? 0
                         let pmWeight = localTracker.weightPM?.dataweight_kg ?? 0
@@ -154,7 +148,7 @@ struct TwentyOneTweaksEntryRowView: View {
                     }
                 }
             }
-            .onReceive(NotificationCenter.default.publisher(for: .mockDBUpdated)) { notification in
+            .onReceive(NotificationCenter.default.publisher(for: .sqlDBUpdated)) { notification in
                 guard let updatedDate = notification.object as? Date,
                       Calendar.current.isDate(updatedDate, inSameDayAs: date) else { return }
                 
@@ -178,33 +172,6 @@ struct TwentyOneTweaksEntryRowView: View {
         }
     }
 }
-            
-//            .onReceive(NotificationCenter.default.publisher(for: .mockDBUpdated)) { _ in
-//                Task {
-//                    let localTracker = viewModel.tracker(for: date)
-//                    // On global DB update (e.g., from WeightEntryView savePendingWeights()), reload
-//                    // await viewModel.loadTracker(forDate: date.startOfDay)
-//                    if item == .tweakWeightTwice {
-//                        
-//                        let amWeight = localTracker.weightAM?.dataweight_kg ?? 0
-//                        let pmWeight = localTracker.weightPM?.dataweight_kg ?? 0
-//                        let newCount = (amWeight > 0 ? 1 : 0) + (pmWeight > 0 ? 1 : 0)
-//                        checkCount = newCount
-//                        
-//                        print("🟢 •Receive• Derived weight count for \(date.datestampSid): \(newCount)")
-//                    } else {
-//                        checkCount = viewModel.getCount(for: item, date: date)  // add date?
-//                    
-//                       // print("🟢🟢🟢 •Receive• Loaded count for \(date.datestampSid) \(item.headingDisplay): \(checkCount)")
-//                    }
-//                    streakCount = localTracker.itemsDict[item]?.datacount_streak ?? 0
-//                    onCheck(checkCount)
-//                }
-//            }
-            
-     //   }
-  //  }
-//}
 
 //struct TwentyOneTweaksEntryRowView_Previews: PreviewProvider {
 //    static var previews: some View {

@@ -1,8 +1,8 @@
 //
 //  DataWeightType.swift
-//  DatabaseMigration
+//  Database/Data
 //
-//  Copyright © 2019 NutritionFacts.org. All rights reserved.
+//  Copyright © 2019-2025 NutritionFacts.org. All rights reserved.
 //
 
 import Foundation
@@ -13,11 +13,11 @@ public enum DataWeightType: String, Sendable {
     case pm
     
     init?(typeKey: String) {
-            guard let value = DataWeightType(rawValue: typeKey.lowercased()) else {
-                return nil
-            }
-            self = value
+        guard let value = DataWeightType(rawValue: typeKey.lowercased()) else {
+            return nil
         }
+        self = value
+    }
     
     init?(typeNid: String) {
         switch typeNid {

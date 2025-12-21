@@ -39,8 +39,8 @@ struct MeasurementSection: View {
                 selectedMesurementUnits = unitsSegment[1]
             }
         }
-        print("**", unitTypePrefStr)
-        print(selectedMesurementUnits)
+        // print("**", unitTypePrefStr)
+        // print(selectedMesurementUnits)
     }
     
     func saveUnitsTypePref(index: Int) {
@@ -61,49 +61,44 @@ struct MeasurementSection: View {
         if index == 2 {
             let shouldShowUnitsToggle = true
             UserDefaults.standard.set(shouldShowUnitsToggle, forKey: SettingsKeys.unitsTypeToggleShowPref)
-            print(2)
+           // print(2)
         }
     }
     
     var body: some View {
-        VStack {
+        VStack(alignment: .leading, spacing: 10) {  //GTDz may need to try 10
             Text("setting_units_header")
-            
                 .textCase(.uppercase)
-                .frame(maxWidth: .infinity, alignment: .leading)
-              //  .padding(10)
-            //!!GTDz: What is default?  TBDz register defaults at the beginning of app
+                .font(.subheadline.bold())            // matches Settings style
+               .foregroundStyle(.secondary)
+
             Picker(String(localized: "setting_units_header"), selection: $selectedMesurementUnits) {
-                ForEach(unitsSegment, id: \.self) {
-                    
-                    Text($0)
+                ForEach(unitsSegment, id: \.self) { unit in
+                    Text(unit)
+                      //  .font(.system(size: 14, weight: .medium))  // ← fits "mmol/L" perfectly on SE
+                        .tag(unit)
                 }
-            } .pickerStyle(.segmented)
-              .padding(10)
-              .onChange(of: selectedMesurementUnits) { _, newValue in
-                    if let index = unitsSegment.firstIndex(of: newValue) {
-                
-                        saveUnitsTypePref(index: index)
-                        
-                    } else {
-                        print("this case should not happen.")
-                    }
-                }
-            Text("setting_units_choice_footer").font(.footnote)
-            
-                .multilineTextAlignment(.leading)
-                .fixedSize(horizontal: false, vertical: true)  //Don't know if this is needed with footnote font
-            //below didn't work
-            //   .frame(maxWidth: .infinity, alignment: .leading)
-            //  .lineLimit(nil)
-            //.frame(width: 300)  //might want to set this a different number.
-            // .frame(maxWidth: .infinity, alignment: .leading)
-            
-        }//.padding(10)
-            .onAppear {
-                setUnitsMeasureSegment()
-                
             }
+            .pickerStyle(.segmented)
+            .labelsHidden()               // removes the hidden label that was pushing things right
+
+            Text("setting_units_choice_footer")
+                .font(.footnote)
+                .foregroundStyle(.secondary)
+                .multilineTextAlignment(.leading)
+                .fixedSize(horizontal: false, vertical: true)
+        }
+        .padding(10)                      //padding, now on the whole VStack
+        .onAppear {
+            setUnitsMeasureSegment()
+        }
+        .onChange(of: selectedMesurementUnits) { _, newValue in
+            if let index = unitsSegment.firstIndex(of: newValue) {
+                saveUnitsTypePref(index: index)
+            } else {
+                print("this case should not happen.")
+            }
+        }
     }
 }
 

@@ -95,7 +95,7 @@ struct SettingsReminderView: View {
     }
     
     // Helper for formatting time in display
-    //TBDz:  May need to move to Date Extension
+    // :TBDz:  May need to move to Date Extension
     private var timeFormatter: DateFormatter {
         let formatter = DateFormatter()
         formatter.timeStyle = .short
@@ -115,7 +115,7 @@ struct SettingsReminderView: View {
                                 cancelAlarm()
                             }
                         }
-                        .toggleStyle(SwitchToggleStyle(tint: .brandGreen))
+                        .toggleStyle(SwitchToggleStyle(tint: .nfGreenBrand))
                         .padding(10)
                 } else {
                     // Fallback on earlier versions
@@ -127,7 +127,7 @@ struct SettingsReminderView: View {
                                 cancelAlarm()
                             }
                         }
-                        .toggleStyle(SwitchToggleStyle(tint: .brandGreen))
+                        .toggleStyle(SwitchToggleStyle(tint: .nfGreenBrand))
                         .padding(10)
                 }
                 if enableReminder {
@@ -163,7 +163,7 @@ struct SettingsReminderView: View {
                                 .onChange(of: playNotifySound) {
                                     saveSoundPref()
                                 }
-                                .toggleStyle(SwitchToggleStyle(tint: .brandGreen))
+                                .toggleStyle(SwitchToggleStyle(tint: .nfGreenBrand))
                                 .padding(10)
                         } else {
                             // Fallback on earlier versions
@@ -171,7 +171,7 @@ struct SettingsReminderView: View {
                                 .onChange(of: playNotifySound) { _ in
                                     saveSoundPref()
                                 }
-                                .toggleStyle(SwitchToggleStyle(tint: .brandGreen))
+                                .toggleStyle(SwitchToggleStyle(tint: .nfGreenBrand))
                                 .padding(10)
                         }
                     }
@@ -180,10 +180,12 @@ struct SettingsReminderView: View {
             }
             Spacer()
             //!Notez: Didn't previously have title
-                .navigationTitle(Text("reminder.settings.enable"))
-                .navigationBarTitleDisplayMode(.inline)
-                .toolbarBackground(.visible, for: .navigationBar)
-                .toolbarBackground(.brandGreen, for: .navigationBar)
+              //  .navigationTitle(Text("reminder.settings.enable"))
+                .whiteInlineGreenTitle("reminder.settings.enable")
+
+//                .navigationBarTitleDisplayMode(.inline)
+//                .toolbarBackground(.visible, for: .navigationBar)
+//                .toolbarBackground(.nfGreenBrand, for: .navigationBar)
                 .onAppear {
                     loadCanNotify()
                     loadTime()

@@ -7,7 +7,7 @@
 
 import SwiftUI
 
-//TBDz:  Are units supposed to toggle in metric/imperial?
+// :TBDz:  Are units supposed to toggle in metric/imperial?
 struct TwentyOneDetailView: View {
     let dataCountTypeItem: DataCountType
     @State var tweakDataItemDetail = TweakDetailInfo.Item.example //TBDz need to figure out what goes here besides example
@@ -18,7 +18,8 @@ struct TwentyOneDetailView: View {
     
     var body: some View {
         NavigationStack {
-            VStack {
+            VStack(spacing: 0) {
+                // MARK: - Hero Image + Title Overlay
                 ZStack(alignment: .bottomLeading) {
                     Image("detail_\(dataCountTypeItem)")
                         .resizable()
@@ -26,74 +27,78 @@ struct TwentyOneDetailView: View {
                     
                     Text(dataCountTypeItem.headingDisplay)
                         .foregroundColor(.white)
-                        .font(.system(size: 24)).shadow(color: .black.opacity(1.0), radius: 2, x: 1, y: 1)
+                        .font(.system(size: 24))
+                        .shadow(color: .black.opacity(1.0), radius: 2, x: 1, y: 1)
                         .padding()
-                } //ZStack
-                List {
-                    Section {
-                        //    VStack(alignment: .leading) {
-                        HStack {
-                            Text(tweakDataItemDetail.activity.imperial)
-                            Spacer()
-                        }
-                        .padding(5)
-                        .background(.white)
-                        .cornerRadius(5)
-                        //TBDz check color
-                        .shadow(color: .nfGray50.opacity(1.0), radius: 5, x: 1, y: 1)
-                        //.listRowSeparator(.hidden)
-                        //                            }
-                        // .listRowSpacing(0.0)
-                        // .listStyle(.plain)
+                }
+                
+                // MARK: - Scrollable Content with Pinned Section Headers
+                ScrollView {
+                    LazyVStack(spacing: 12, pinnedViews: [.sectionHeaders]) {
                         
-                    } //Section
-                    header: {
-                        VStack(alignment: .leading) {
+                        // MARK: Activity Section
+                        Section {
+                            HStack {
+                                Text(tweakDataItemDetail.activity.imperial)
+                                Spacer()
+                            }
+                            .padding(10)
+                            .shadowboxed()
+                            .padding(.horizontal, 8)
+                        } header: {
                             Text("tweak_detail_section_activity")
-                            // .bold()
                                 .font(.title2)
                                 .fontWeight(.bold)
                                 .foregroundColor(.black)
                                 .padding(10)
-                            
+                                .frame(maxWidth: .infinity, alignment: .leading)
+                                .background(.white)
                         }
-                    }
-                    Section {
-                        HStack {
-                            Text(tweakDataItemDetail.explanation)
-                            Spacer()
-                        }
-                        //
-                        .padding(5)
-                        .background(.white)
-                        .cornerRadius(5)
-                        //TBDz check color
-                        .shadow(color: .nfGray50.opacity(1.0), radius: 5, x: 1, y: 1)
                         
-                        //    }
-                    }//Section
-                    header: {
-                        Text("tweak_detail_section_description")
-                            .bold()
-                            .foregroundColor(.black)
-                            .font(.title2)
+                        // MARK: Description Section
+                        Section {
+                            HStack {
+                                Text(tweakDataItemDetail.explanation)
+                                    .multilineTextAlignment(.leading)
+                                Spacer()
+                            }
                             .padding(10)
+                            .shadowboxed()
+                            .padding(.horizontal, 8)
+                        } header: {
+                            Text("tweak_detail_section_description")
+                                .font(.title2)
+                                .fontWeight(.bold)
+                                .foregroundColor(.black)
+                                .padding(10)
+                                .frame(maxWidth: .infinity, alignment: .leading)
+                                .background(.white)
+                        }
+                        
                     }
-                    
-                } //List
-                .listStyle(.plain)
-                .navigationTitle(dataCountTypeItem.headingDisplay) //!!GTDz previous version did not have a title
-                .navigationBarTitleDisplayMode(.inline)
-                //                .toolbar {
-                //                    ToolbarItem(placement: .navigationBarTrailing) {
-                //                        Link(destination: LinksService.shared.link(topic: tweakDataItemDetail.topic)) {
-                //                            Text("videos.link.label", comment: "Latest Videos")
-                //                        }
-                //                    }
-                //                }
-                .toolbarBackground(.visible, for: .navigationBar)
-                .toolbarBackground(.brandGreen, for: .navigationBar)
-                .toolbarColorScheme(.dark)
+                    .padding(.top, 1)
+                }
+            }
+            // MARK: - Navigation Bar
+            .navigationTitle(dataCountTypeItem.headingDisplay)
+            .navigationBarTitleDisplayMode(.inline)
+            .toolbarBackground(.visible, for: .navigationBar)
+            .toolbarBackground(.nfGreenBrand, for: .navigationBar)
+            .toolbarColorScheme(.dark)
+            .toolbar {
+                // Uncomment when you want the video link back
+                // ToolbarItem(placement: .navigationBarTrailing) {
+                //     Link(destination: LinksService.shared.link(topic: tweakDataItemDetail.topic)) {
+                //         Text("videos.link.label")
+                //     }
+                // }
+                
+                ToolbarItem(placement: .principal) {
+                    Text(dataCountTypeItem.headingDisplay)
+                        .foregroundStyle(.white)
+                        .font(.system(size: 17, weight: .semibold, design: .rounded))
+                        .tracking(-0.4)
+                }
             }
         }
         .onAppear {

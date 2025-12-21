@@ -2,7 +2,7 @@
 //  UnitsUtility.swift
 //  DailyDozen
 //
-//  Copyright © 2021 Nutritionfacts.org. All rights reserved.
+//  Copyright © 2021-2025 NutritionFacts.org. All rights reserved.
 //
 
 import Foundation
@@ -22,7 +22,7 @@ public enum UnitsWeightError: String, Error {
 
 @MainActor
 struct UnitsUtility {
-
+    
     public static func convertKgToLbs(_ kg: Double) -> Double {
         let lbs = kg * 2.204623
         return lbs
@@ -40,7 +40,7 @@ struct UnitsUtility {
         let kg = lbs / 2.204623
         return kg
     }
-
+    
     public static func convertLbsToKg(_ string: String, toDecimalDigits: Int = 1) async -> String? {
         if let kg = normalizedKgWeight(from: string, fromUnits: .imperial) {
             return await regionalKgWeight(fromKg: kg, toDecimalDigits: toDecimalDigits)
@@ -70,14 +70,14 @@ struct UnitsUtility {
         case .metric:
             break // text in metric kg format. no conversion required.
         }
-
+        
         // range check
         if weight < 4.0 || weight > 400 {
             return nil
         }
         return weight
     }
-
+    
     /// returns regionalized weigh text from kg `Double`
     public static func regionalWeight(
         fromKg: Double,
@@ -91,7 +91,7 @@ struct UnitsUtility {
             return await regionalKgWeight(fromKg: fromKg, toDecimalDigits: toDecimalDigits)
         }
     }
-
+    
     /// returns regionalized weigh text in kg from kg `Double`
     public static func regionalKgWeight(
         fromKg: Double,
@@ -118,45 +118,27 @@ struct UnitsUtility {
         let nsNumber = NSNumber(value: poundValue)
         return formatter.string(from: nsNumber)
     }
-
+    
     /// both `"2.8"` and `"2,8"` strings return `2.8`of  type `Double`
     func csvImportToWeight(textValue: String) -> Double? {
         let textValue = textValue.trimmingCharacters(in: CharacterSet.whitespaces)
-
+        
         var decimalPointValue: String = ""
         for var c in textValue {
             if c == "," { c = "." }
             decimalPointValue.append(c)
         }
-
+        
         // note: numbers such as "1,234.56" which become "1.234.56" will return nil
         guard let value = Double(decimalPointValue)
         else { return nil }
-
+        
         // range check
         if value > 4 && value < 900 {
             return value
         }
-
+        
         return nil
     }
-
+    
 }
-
-//extension String {
-//    static let numberFormatter = NumberFormatter()
-//
-//    /// both `"2.8".doubleValue` and `"2,8".doubleValue` return `2.8` type `Double`
-//    var doubleValue: Double? {
-//        String.numberFormatter.decimalSeparator = "."
-//        if let result =  String.numberFormatter.number(from: self) {
-//            return result.doubleValue
-//        } else {
-//            String.numberFormatter.decimalSeparator = ","
-//            if let result = String.numberFormatter.number(from: self) {
-//                return result.doubleValue
-//            }
-//        }
-//        return nil
-//    }
-//}

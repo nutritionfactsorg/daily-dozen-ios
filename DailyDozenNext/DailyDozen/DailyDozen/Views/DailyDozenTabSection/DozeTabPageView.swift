@@ -17,22 +17,6 @@ struct ScrollOffsetPreferenceKey: PreferenceKey {
     }
 }
 
-//@preconcurrency
-//private struct ScrollOffsetPreferenceKey: PreferenceKey {
-//    static let defaultValue: CGFloat = 0
-//    static func reduce(value: inout CGFloat, nextValue: () -> CGFloat) {
-//        value = nextValue()
-//    }
-//}
-//
-//@preconcurrency
-//private struct ScrollAnchorKey: PreferenceKey {
-//    static let defaultValue: Anchor<CGPoint>? = nil
-//    static func reduce(value: inout Anchor<CGPoint>?, nextValue: () -> Anchor<CGPoint>?) {
-//        value = nextValue() ?? value
-//    }
-//}
-
 struct DozeTabPageView: View {
     private let viewModel = SqlDailyTrackerViewModel.shared
     //@EnvironmentObject var viewModel: SqlDailyTrackerViewModel
@@ -43,6 +27,7 @@ struct DozeTabPageView: View {
     @State private var showingAlert = false
     @State private var showStarImage = false
     @State private var dozeDailyStateCount: Int = 0
+    @State private var scrollID = UUID()  // Unique per tab view
     
     private let dozeDailyStateCountMaximum = 24
     
@@ -56,9 +41,12 @@ struct DozeTabPageView: View {
     
     private func syncRecordWithDB() async {
         let localTracker = viewModel.tracker(for: date)
-        dozeDailyStateCount = localTracker.itemsDict
-            .filter { DozeEntryViewModel.rowTypeArray.contains($0.key) }
-            .reduce(0) { $0 + $1.value.datacount_count }
+        
+        let count = regularItems.reduce(0) { total, type in
+            total + (localTracker.itemsDict[type]?.datacount_count ?? 0)
+        }
+        
+        dozeDailyStateCount = count
     }
     
     var body: some View {
@@ -83,7 +71,7 @@ struct DozeTabPageView: View {
             .padding(10)
             
             // Use LazyVStack inside ScrollView for performance
-            SyncedScrollView(coordinator: coordinator, version: coordinator.version) {
+            SyncedScrollView(coordinator: coordinator, id: scrollID, version: coordinator.version) {
                 LazyVStack(alignment: .leading, spacing: 0) {
                     ForEach(regularItems, id: \.self) { item in
                         DozeEntryRowView(
@@ -109,7 +97,7 @@ struct DozeTabPageView: View {
                                     showingAlert.toggle()
                                 } label: {
                                     Image(systemName: "info.circle")
-                                        .foregroundColor(.nfDarkGray)
+                                        .foregroundColor(.nfGrayDark)
                                 }
                                 .buttonStyle(.plain)
                             } //HStack
@@ -141,7 +129,7 @@ struct DozeTabPageView: View {
         .onAppear {
             Task { await syncRecordWithDB() }
         }
-        .onReceive(NotificationCenter.default.publisher(for: .mockDBUpdated)) { notification in
+        .onReceive(NotificationCenter.default.publisher(for: .sqlDBUpdated)) { notification in
             guard let updatedDate = notification.object as? Date,
                   Calendar.current.isDate(updatedDate, inSameDayAs: date) else { return }
             Task { await viewModel.loadTracker(forDate: date) }

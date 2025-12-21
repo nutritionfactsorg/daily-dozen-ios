@@ -23,7 +23,8 @@ struct SettingsKeys {
     /// Hide|Show 21 Tweaks
     static let show21TweaksPref = "show21TweaksPref"
     /// Used for first launch
-    static let hasSeenFirstLaunch = "hasSeenFirstLaunch_v3.1.0"
+    static let hasSeenLaunchV4 = "hasSeenLaunchV4"
+    static let hasMigratedToSQLitev4 = "hasMigratedToSQLitev4"
     
     /// Analytics is enabled when when true|"1"|"on"
     static let analyticsIsEnabledPref = "analyticsIsEnabledPref"
@@ -41,5 +42,52 @@ struct SettingsKeys {
     // MARK: - UNNotificationRequest identifiers
     
     /// Reminder UNNotificationRequest identifier
-    static let reminderRequestID = "reminderRequestID"
+   static let reminderRequestID = "reminderRequestID"
+    
+    // MARK: - Advanced Utilites helper
+    
+    static func allMyKeys() -> [String] {
+        let myKeys = [
+            reminderCanNotify,
+            reminderSoundPref,
+            unitsTypePref,
+            unitsTypeToggleShowPref,
+            show21TweaksPref,
+            analyticsIsEnabledPref,
+            appearanceModePref,
+            appearanceTypePref,
+            exerciseGamutPref,
+            exerciseGamutMaxUsed,
+            hasSeenLaunchV4,
+            hasMigratedToSQLitev4
+            // add any new ones here – the notification ID isn’t stored in defaults
+        ]
+        return myKeys
+    }
+    
+    static func debugPrintMySettings() {
+        let defaults = UserDefaults.standard
+        let allMyKeys = allMyKeys()
+        print("=== My App Settings Only ===")
+        for key in allMyKeys {
+            if let value = defaults.object(forKey: key) {
+                print("\(key): \(value)  (\(type(of: value)))")
+            } else {
+                print("\(key): <not set>")
+            }
+        }
+        print("==============================")
+    }
+    
+    static func resetAllMySettings() {
+        let defaults = UserDefaults.standard
+        let keys = allMyKeys()
+        
+        for key in keys {
+            defaults.removeObject(forKey: key)
+        }
+        
+        print("Reset all \(keys.count) of MY settings:")
+        keys.forEach { print("  - \($0)") }
+    }
 }

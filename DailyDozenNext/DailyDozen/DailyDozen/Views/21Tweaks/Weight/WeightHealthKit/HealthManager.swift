@@ -33,21 +33,22 @@ class HealthManager {
     }
 
     func buildPredicate(date: Date, ampm: DataWeightType) -> NSPredicate {
-        let calendar = Calendar.current
+        let calendar = Calendar(identifier: .gregorian)
+        //calendar.timeZone = TimeZone(identifier: "UTC")!  // Optional: UTC for max consistency
         let baseDate = calendar.startOfDay(for: date)
         let startHour = ampm == .am ? 0 : 12
         let endHour = ampm == .am ? 12 : 24
         let startDate = calendar.date(byAdding: .hour, value: startHour, to: baseDate)!
         let endDate = calendar.date(byAdding: .hour, value: endHour, to: baseDate)!
-        return HKQuery.predicateForSamples(withStart: startDate, end: endDate, options: [.strictStartDate])
+        print("•HK• Predicate range for \(ampm.typeKey): \(startDate.datestampyyyyMMddHHmmss) to \(endDate.datestampyyyyMMddHHmmss)")
+        return HKQuery.predicateForSamples(withStart: startDate, end: endDate, options: [.strictStartDate, .strictEndDate])
     }
 
     func readHKWeight(date: Date, ampm: DataWeightType) async throws -> [HKQuantitySample] {
         print("•HK• readHKWeight date: \(date.datestampyyyyMMddHHmmss) ampm: \(ampm.typeKey)")
         let predicate = buildPredicate(date: date, ampm: ampm)
-        let ascending = ampm == .am
         let bodyMassType = HKQuantityType(.bodyMass)
-        let sortDescriptor = NSSortDescriptor(key: HKSampleSortIdentifierStartDate, ascending: ascending)
+        let sortDescriptor = NSSortDescriptor(key: HKSampleSortIdentifierStartDate, ascending: false)
 
         return try await withCheckedThrowingContinuation { continuation in
             let query = HKSampleQuery(
@@ -61,27 +62,54 @@ class HealthManager {
                     continuation.resume(throwing: error)
                     return
                 }
-                continuation.resume(returning: (samples as? [HKQuantitySample]) ?? [])
+                let quantitySamples = (samples as? [HKQuantitySample]) ?? []
+                print("•HK• readHKWeight found \(quantitySamples.count) samples for \(ampm.typeKey)")
+                for sample in quantitySamples {
+                    let kg = sample.quantity.doubleValue(for: .gramUnit(with: .kilo))
+                    let start = sample.startDate.datestampyyyyMMddHHmmss
+                    let end = sample.endDate.datestampyyyyMMddHHmmss
+                    print("•HK• Sample: \(String(format: "%.2f", kg)) kg, start: \(start), end: \(end)")
+                }
+                continuation.resume(returning: quantitySamples)
             }
             hkHealthStore.execute(query)
         }
     }
-
-//    func saveHKWeight(date: Date, kg: Double) async throws {
-//        print("•HK• saveHKWeight \(String(format: "%.1f", kg)) kg at \(date.datestampyyyyMMddHHmmss)")
-//        let bodyMassType = HKQuantityType(.bodyMass)
-//        let quantity = HKQuantity(unit: .gramUnit(with: .kilo), doubleValue: kg)
-//        let sample = HKQuantitySample(
-//            type: bodyMassType,
-//            quantity: quantity,
-//            start: date,
-//            end: date,
-//            metadata: [HKMetadataKeyWasUserEntered: true, "AppSource": Bundle.main.bundleIdentifier ?? "DailyDozen"]
-//        )
-//        try await hkHealthStore.save(sample)
-//        print("•HK• saveHKWeight success")
-//    }
+    
     func saveHKWeight(date: Date, kg: Double) async throws {
+        print("•HK• Attempting to save \(String(format: "%.2f", kg)) kg at \(date.datestampyyyyMMddHHmmss)")
+        guard kg > 0 else {
+            print("•HK• Invalid weight: \(kg) kg, skipping save")
+            throw NSError(domain: "HealthKit", code: -2, userInfo: [NSLocalizedDescriptionKey: "Weight must be positive"])
+        }
+        
+        // Determine AMPM from time to avoid mismatch
+        let hour = Calendar(identifier: .gregorian).component(.hour, from: date)
+        let ampm: DataWeightType = hour < 12 ? .am : .pm
+        
+        // Delete any existing in this AMPM slot first
+        try await deleteHKWeight(date: date, ampm: ampm)
+        
+        let bodyMassType = HKQuantityType(.bodyMass)
+        let quantity = HKQuantity(unit: .gramUnit(with: .kilo), doubleValue: kg)
+        let sample = HKQuantitySample(
+            type: bodyMassType,
+            quantity: quantity,
+            start: date,
+            end: date,
+            metadata: [HKMetadataKeyWasUserEntered: true, "AppSource": Bundle.main.bundleIdentifier ?? "DailyDozen"]
+        )
+        
+        do {
+            try await hkHealthStore.save(sample)
+            print("•HK• saveHKWeight success for \(String(format: "%.2f", kg)) kg at \(date.datestampyyyyMMddHHmmss)")
+        } catch {
+            print("•HK• saveHKWeight failed: \(error.localizedDescription)")
+            throw error
+        }
+    }
+
+    func saveHKWeightWAS(date: Date, kg: Double) async throws {
         print("•HK• Attempting to save \(String(format: "%.2f", kg)) kg at \(date.datestampyyyyMMddHHmmss)")
         guard kg > 0 else {
             print("•HK• Invalid weight: \(kg) kg, skipping save")

@@ -1,5 +1,5 @@
 /* DailyDozen Localizable.strings (de) */
-/* Copyright © 2021 Nutritionfacts.org. All rights reserved. */
+/* Copyright © 2021-2025 NutritionFacts.org. All rights reserved. */
 
 /* Date Button Title: ‘Back to today’ */
 "dateBackButtonTitle" = "Zurück zu heute";
@@ -486,5 +486,19 @@
 
 /* Weight Daily Entry: heading */
 "weightEntry.heading" = "Gewicht";
+
+/* data details */
+
+/* German (de) 'Loading' */
+"loading_heading" = "Laden";
+
+/* German (de) 'No weight data yet' */
+"historyRecordWeight_NoWeightYet" = "Noch keine Gewichtsdaten";
+
+/* German (de) 'No weight data for this year' */
+"historyRecordWeight_NoWeightYear" = "Keine Gewichtsdaten für dieses Jahr";
+
+/* German (de) 'No weight data available' */
+"historyRecordWeight_NoWeightAvailable" = "Keine Gewichtsdaten verfügbar";
 
 /* file end */

@@ -7,36 +7,8 @@
 
 import Foundation
 
-// let dateFormatter = DateFormatter()
-// Template string is used only to specify which date format components should be included.
-// Ordering and other text will not be preserved.
-// dateFormatter.setLocalizedDateFormatFromTemplate("MMMM dd, yyyy")
-// let dateString = dateFormatter.string(from: datePickerView.date)
-
-//TBD review
-//extension Date: @retroactive RawRepresentable {
-//  private static let formatter = ISO8601DateFormatter()
-//  
-//  public var rawValue: String {
-//    Date.formatter.string(from: self)
-//  }
-//  
-//  public init?(rawValue: String) {
-//    self = Date.formatter.date(from: rawValue) ?? Date()
-//  }
-//}
-
 extension Date {
     
-    //NYIz
-//  ///Return DataWeightType `.am` or `.pm`
-//    var ampm: DataWeightType {
-//        if self.hour < 12 {
-//            return .am
-//        }
-//        return .pm
-//    }
-   
     /// Seconds since 1970.01.01 00:00:00 UTC
     var getCurrentBenchmarkSeconds: Double {
         return self.timeIntervalSince1970
@@ -290,23 +262,21 @@ extension Date {
         return Calendar.current.isDate(self, equalTo: date, toGranularity: .month)
     }
     
-    /// Returns a new date by adding the calendar component value.
-    ///
     /// - Parameters:
     ///   - component: A component type.
     ///   - value: The calendar component value.
     /// - Returns: A new date
     ///
-    //TBDz:  Conform to Gregorian?
+    /// :TBDz:  Conform to Gregorian?
     func adding(_ component: Calendar.Component, value: Int) -> Date? {
         return Calendar.current.date(byAdding: component, value: value, to: self)
     }
     
     func adding(months: Int) -> Date {
-            var calendar = Calendar(identifier: .gregorian)
-            calendar.locale = Locale(identifier: "en")
-            return calendar.date(byAdding: .month, value: months, to: self)!
-        }
+        var calendar = Calendar(identifier: .gregorian)
+        calendar.locale = Locale(identifier: "en")
+        return calendar.date(byAdding: .month, value: months, to: self)!
+    }
     
     /// Returns a new date by adding a number of days.
     ///
@@ -314,72 +284,57 @@ extension Date {
     ///   - value: The calendar component value.
     /// - Returns: A new date
     func adding(days: Int) -> Date {
-            var calendar = Calendar(identifier: .gregorian)
-            calendar.locale = Locale(identifier: "en")
-            return calendar.date(byAdding: .day, value: days, to: self)!
-        }
-    
-    // :???: candidate code to be either improved or deleted
-    //TBDz used it in charts
-//    var startOfDay: Date {
-//        return Calendar.current.startOfDay(for: self)
-//    }
+        var calendar = Calendar(identifier: .gregorian)
+        calendar.locale = Locale(identifier: "en")
+        return calendar.date(byAdding: .day, value: days, to: self)!
+    }
     
     var startOfDay: Date {
-            var calendar = Calendar(identifier: .gregorian)
-            calendar.locale = Locale(identifier: "en")
-            return calendar.startOfDay(for: self)
-        }
+        var calendar = Calendar(identifier: .gregorian)
+        calendar.locale = Locale(identifier: "en")
+        return calendar.startOfDay(for: self)
+    }
     
     var startOfMonth: Date {
-            var calendar = Calendar(identifier: .gregorian)
-            calendar.locale = Locale(identifier: "en")
-            let components = calendar.dateComponents([.year, .month], from: self)
-            return calendar.date(from: components)!
-        }
+        var calendar = Calendar(identifier: .gregorian)
+        calendar.locale = Locale(identifier: "en")
+        let components = calendar.dateComponents([.year, .month], from: self)
+        return calendar.date(from: components)!
+    }
     
-//    /// duration
-//    /// selectedWeekdays = [2, 4, 6] // Example - Mon, Wed, Fri
-//    func dateArray(
-//        duration: Int, /// number of days
-//        selectedWeekdays: [Int] = [1, 2, 3, 4, 5, 6, 7] /// week day 1=Sunday
-//    ) -> [Date] {
-//        let calendar = Calendar.current
-//        let today = Date()
-//        let dateEnding = calendar.date(byAdding: .day, value: duration, to: today)!
-//
-//        var matchingDates = [Date]()
-//        // Finding matching dates at midnight - adjust as needed
-//        let components = DateComponents(hour: 0, minute: 0, second: 0) // midnight
-//        calendar.enumerateDates(startingAfter: today, matching: components, matchingPolicy: .nextTime) {
-//            (date, _, stop) in // (date: Date, strict: Bool, stop: Bool)
-//            if let date = date {
-//                if date <= dateEnding {
-//                    let weekDay = calendar.component(.weekday, from: date)
-//                   // logit.debug("\(date), \(weekDay)")
-//                    if selectedWeekdays.contains(weekDay) {
-//                        matchingDates.append(date)
-//                    }
-//                } else {
-//                    stop = true
-//                }
-//            }
-//        }
-//        return matchingDates
-//    }
-    
-// MARK: - Version 4.x Additions :v4.x:
+    // MARK: - Version 4.x Additions :v4.x:
     init?(datestampHHmm: String, referenceDate: Date) {
-            let formatter = DateFormatter()
-            formatter.dateFormat = "HH:mm"
-            guard let timeComponents = formatter.date(from: datestampHHmm) else { return nil }
-            
-            let calendar = Calendar.current
-            let time = calendar.dateComponents([.hour, .minute], from: timeComponents)
-            var components = calendar.dateComponents([.year, .month, .day], from: referenceDate)
-            components.hour = time.hour
-            components.minute = time.minute
-            guard let date = calendar.date(from: components) else { return nil }
-            self = date
+        let formatter = DateFormatter()
+        formatter.dateFormat = "HH:mm"
+        guard let timeComponents = formatter.date(from: datestampHHmm) else { return nil }
+        
+        let calendar = Calendar.current
+        let time = calendar.dateComponents([.hour, .minute], from: timeComponents)
+        var components = calendar.dateComponents([.year, .month, .day], from: referenceDate)
+        components.hour = time.hour
+        components.minute = time.minute
+        guard let date = calendar.date(from: components) else { return nil }
+        self = date
+    }
+    
+    // For UI ranges — respect user's calendar and locale
+        private var userCalendar: Calendar {
+            Calendar.current
+        }
+        
+        var userDisplayStartOfDay: Date {
+            userCalendar.startOfDay(for: self)
+        }
+        
+        var userNoon: Date {
+            userCalendar.date(byAdding: .hour, value: 12, to: userDisplayStartOfDay)!
+        }
+        
+        var userEndOfAM: Date {
+            userCalendar.date(byAdding: .second, value: -1, to: userNoon)!
+        }
+        
+        var userEndOfDay: Date {
+            userCalendar.date(byAdding: .second, value: -1, to: userCalendar.date(byAdding: .day, value: 1, to: userDisplayStartOfDay)!)!
         }
 }
