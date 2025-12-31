@@ -45,7 +45,7 @@ struct TweakDetailViewModel {
             let unitsTypePref = UnitsType(rawValue: unitsTypePrefStr) {
             self.unitsType = unitsTypePref
         } else {
-            // :NYI:ToBeLocalized: set initial default based on device language
+            
             self.unitsType = UnitsType.imperial
             UserDefaults.standard.set(self.unitsType.rawValue, forKey: SettingsKeys.unitsTypePref)
         }

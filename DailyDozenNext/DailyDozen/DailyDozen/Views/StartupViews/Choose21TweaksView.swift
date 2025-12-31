@@ -18,7 +18,7 @@ struct WelcomeTweaksChoiceView: View {
             HStack {
                 Text("navtab.doze")
                     .font(.title2.bold())
-                    .foregroundColor(.white)
+                    .foregroundColor(.black) // :TBDz:color:
                 
                 Spacer()
             }

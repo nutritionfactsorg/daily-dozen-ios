@@ -285,6 +285,7 @@ class SqlDailyTrackerViewModel: ObservableObject {
         //  print("DELETE •VM• Prefix: '\(prefix)'")
         print("🟢 deleteWeight  \(dateStr) , ampmPnid: \(ampmPnid)")
         let success = await dbActor.deleteWeight(datePsid: dateStr, ampm: ampmPnid)
+        await clearPendingWeight(for: normalized, weightType: weightType)
         if success {
             print("Deleted \(weightType.typeKey) weight from DB")
             var tracker = self.tracker(for: normalized)
@@ -331,6 +332,30 @@ class SqlDailyTrackerViewModel: ObservableObject {
                 pmTime: mergedPMTime
             )
             print("•Pending• Merged for \(key): AM='\(mergedAMWeight)', PM='\(mergedPMWeight)'")
+        }
+    }
+    
+    func clearPendingWeight(for date: Date, weightType: DataWeightType) async {
+        let key = date.datestampSid
+        guard var pending = pendingWeights[key] else { return }
+        
+        if weightType == .am {
+            pending.amWeight = ""
+            pending.amTime = Date()
+        } else {
+            pending.pmWeight = ""
+            pending.pmTime = Date()
+        }
+        
+        // Remove if both empty now
+        if pending.amWeight.isEmpty && pending.pmWeight.isEmpty {
+            pendingWeights.removeValue(forKey: key)
+            print("•Pending• Cleared \(weightType.typeKey) and removed entry for \(key)")
+            print("•Pending• Removed entry for \(key) after clear \(weightType.typeKey)")
+        } else {
+            pendingWeights[key] = pending
+            print("•Pending• Cleared \(weightType.typeKey) for \(key): AM='\(pending.amWeight)', PM='\(pending.pmWeight)'")
+            print("•Pending• Updated for \(key) after clear \(weightType.typeKey): AM='\(pendingWeights[key]?.amWeight ?? "")', PM='\(pendingWeights[key]?.pmWeight ?? "")'")
         }
     }
     
@@ -1028,5 +1053,133 @@ extension SqlDailyTrackerViewModel {
         await MainActor.run {
             self.trackers = newTrackers
         }
+    }
+}
+// MARK: - GenerateStreak Test Data
+extension SqlDailyTrackerViewModel {
+    
+    /// Generate test data for streak visualization in SQLite database
+    ///
+    /// Creates the same streak patterns as the old Realm version:
+    /// - 14-day streaks @ full goal
+    /// - 7-day streaks
+    /// - 2-day streaks
+    /// - 100-day max streaks
+    /// - Special cases with zeros to force 2-day and 7-day streaks
+    func generateStreakTestData() async {
+        let today = Date()
+        let calendar = DateUtilities.gregorianCalendar
+        let maxStreakDays = 100
+        
+        // Helper to set count on a specific date (updates streak automatically)
+        func setCount(on date: Date, type: DataCountType, count: Int) async {
+            await setCountAndUpdateStreak(for: type, count: count, date: date)
+        }
+        
+        // ────────────────────────────────────────────────────────────────
+        // 2-day streak: Other Fruits @3
+        // ────────────────────────────────────────────────────────────────
+        for i in 0..<2 {
+            let date = calendar.startOfDay(for: today.adding(days: -i))
+            await setCount(on: date, type: .dozeFruitsOther, count: 3)
+        }
+        
+        // ────────────────────────────────────────────────────────────────
+        // 7-day streak: Berries @1
+        // ────────────────────────────────────────────────────────────────
+        for i in 0..<7 {
+            let date = calendar.startOfDay(for: today.adding(days: -i))
+            await setCount(on: date, type: .dozeBerries, count: 1)
+        }
+        
+        // ────────────────────────────────────────────────────────────────
+        // 14-day streak: Beans @3
+        // ────────────────────────────────────────────────────────────────
+        for i in 0..<14 {
+            let date = calendar.startOfDay(for: today.adding(days: -i))
+            await setCount(on: date, type: .dozeBeans, count: 3)
+        }
+        
+        // ────────────────────────────────────────────────────────────────
+        // 100-day streaks @ full goal
+        // ────────────────────────────────────────────────────────────────
+        // Herbs & Spices @1
+        for i in 0..<maxStreakDays {
+            let date = calendar.startOfDay(for: today.adding(days: -i))
+            await setCount(on: date, type: .dozeSpices, count: 1)
+        }
+        
+        // Whole Grains @3
+        for i in 0..<maxStreakDays {
+            let date = calendar.startOfDay(for: today.adding(days: -i))
+            await setCount(on: date, type: .dozeWholeGrains, count: 3)
+        }
+        
+        // Beverages @6 (assuming goal is 6)
+        for i in 0..<maxStreakDays {
+            let date = calendar.startOfDay(for: today.adding(days: -i))
+            await setCount(on: date, type: .dozeBeverages, count: 6)
+        }
+        
+        // ────────────────────────────────────────────────────────────────
+        // 14 days Water @3 (simple streak)
+        // ────────────────────────────────────────────────────────────────
+        for i in 0..<14 {
+            let date = calendar.startOfDay(for: today.adding(days: -i))
+            await setCount(on: date, type: .tweakMealWater, count: 3)
+        }
+        
+        // ────────────────────────────────────────────────────────────────
+        // Negative Calorie (tweakMealNegCal) → forced 7-day streak with zeros
+        // ────────────────────────────────────────────────────────────────
+        // First fill 15 days with 3, then zero every 4th day (i % 4 == 3)
+        for i in (0..<15).reversed() {
+            let date = calendar.startOfDay(for: today.adding(days: -i))
+            let count = (i % 4 == 3) ? 0 : 3
+            await setCount(on: date, type: .tweakMealNegCal, count: count)
+        }
+        // Then fix two days to complete a 7-day streak
+        for i in [3, 11] {
+            let date = calendar.startOfDay(for: today.adding(days: -i))
+            await setCount(on: date, type: .tweakMealNegCal, count: 3)
+        }
+        
+        // ────────────────────────────────────────────────────────────────
+        // Incorporate Vinegar (tweakMealVinegar) → forced 2-day streak with zeros
+        // ────────────────────────────────────────────────────────────────
+        // First fill 14 days with 3
+        for i in (0..<14).reversed() {
+            let date = calendar.startOfDay(for: today.adding(days: -i))
+            await setCount(on: date, type: .tweakMealVinegar, count: 3)
+        }
+        // Then zero every third day to break into 2-day streaks
+        for i in [2, 5, 8, 11, 14] {
+            let date = calendar.startOfDay(for: today.adding(days: -i))
+            await setCount(on: date, type: .tweakMealVinegar, count: 0)
+        }
+        
+        // ────────────────────────────────────────────────────────────────
+        // 100-day tweaks @ full goal
+        // ────────────────────────────────────────────────────────────────
+        // Nutritional Yeast @1
+        for i in 0..<maxStreakDays {
+            let date = calendar.startOfDay(for: today.adding(days: -i))
+            await setCount(on: date, type: .tweakDailyNutriYeast, count: 1)
+        }
+        
+        // Cumin @2
+        for i in 0..<maxStreakDays {
+            let date = calendar.startOfDay(for: today.adding(days: -i))
+            await setCount(on: date, type: .tweakDailyCumin, count: 2)
+        }
+        
+        // Green Tea @3
+        for i in 0..<maxStreakDays {
+            let date = calendar.startOfDay(for: today.adding(days: -i))
+            await setCount(on: date, type: .tweakDailyGreenTea, count: 3)
+        }
+        
+        // Optional: refresh UI / local cache if needed
+        await loadTrackersForTest(forMonth: today)
     }
 }

@@ -63,40 +63,63 @@ struct WeightEntryPage: View {
         .confirmationDialog("weight_entry_morning", isPresented: $showClearAMConfirmation, titleVisibility: .visible) {
             Button("weight_entry_clear", role: .destructive) {
                 saveTask?.cancel()
+               
                 Task {
+                    await viewModel.clearPendingWeight(for: date, weightType: .am)
                     await viewModel.deleteWeight(for: date, weightType: .am)
-                    let data = await viewModel.loadWeights(for: date, unitType: unitType)
+                    
+                  //  let data = await viewModel.loadWeights(for: date, unitType: unitType)
                     await MainActor.run {
-                        amWeight = data.amWeight
-                        pmWeight = data.pmWeight
-                        amTime = data.amTime
-                        pmTime = data.pmTime
+//                        amWeight = data.amWeight
+//                        pmWeight = data.pmWeight
+//                        amTime = data.amTime
+//                        pmTime = data.pmTime
+                        amWeight = ""
+                        
                     }
+                    await viewModel.updatePendingWeights(
+                        for: date,
+                        amWeight: "",    // "" now
+                        pmWeight: pmWeight,    // keeps existing PM value
+                        amTime: amTime,
+                        pmTime: pmTime
+                    )
                 }
             }
             Button("Cancel", role: .cancel) { }
         } message: {
-            Text("history_data_alert_clear \(date.formatted(date: .long, time: .omitted))?")
+            Text("weight_entry_clear \(date.formatted(date: .long, time: .omitted))?")
         }
         .confirmationDialog("weight_entry_evening", isPresented: $showClearPMConfirmation, titleVisibility: .visible) {
             Button("weight_entry_clear", role: .destructive) {
                 saveTask?.cancel()
                 Task {
+                    await viewModel.clearPendingWeight(for: date, weightType: .pm)
                     await viewModel.deleteWeight(for: date, weightType: .pm)
-                    let data = await viewModel.loadWeights(for: date, unitType: unitType)
+                   
+                   // let data = await viewModel.loadWeights(for: date, unitType: unitType)
                     await MainActor.run {
-                        amWeight = data.amWeight
-                        pmWeight = data.pmWeight
-                        amTime = data.amTime
-                        pmTime = data.pmTime
+                        
+                        pmWeight = ""
+                      
                     }
+                    
+                    await viewModel.updatePendingWeights(
+                        for: date,
+                        amWeight: amWeight,
+                        pmWeight: "",
+                        amTime: amTime,
+                        pmTime: pmTime
+                    )
                 }
             }
             Button("Cancel", role: .cancel) { }
         } message: {
-            Text("history_data_alert_clear \(date.formatted(date: .long, time: .omitted))?")
+            Text("weight_entry_clear \(date.formatted(date: .long, time: .omitted))?")
         }
         .task {
+            let normalized = DateUtilities.gregorianCalendar.startOfDay(for: date)
+            await viewModel.loadTracker(forDate: normalized)
             let data = await viewModel.loadWeights(for: date, unitType: unitType)
             await MainActor.run {
                 amWeight = data.amWeight
@@ -114,6 +137,19 @@ struct WeightEntryPage: View {
                     amTime = data.amTime
                     pmTime = data.pmTime
                 }
+            }
+        }
+        .onDisappear {
+            Task {
+                await viewModel.clearPendingWeight(for: date, weightType: .am)
+                await viewModel.clearPendingWeight(for: date, weightType: .pm)
+                await viewModel.updatePendingWeights(
+                    for: date,
+                    amWeight: amWeight,
+                    pmWeight: pmWeight,
+                    amTime: amTime,
+                    pmTime: pmTime
+                )
             }
         }
     }
@@ -156,10 +192,11 @@ struct AMWeightSection: View {
             if !amWeight.isEmpty || viewModel.tracker(for: date).weightAM != nil {
                 HStack {
                     Spacer()
-                    Button("Clear AM Weight") {  // or localized key if you add it
+                    Button("weight_entry_clear") {  // or localized key if you add it
                         showClearConfirmation = true
                     }
                     .buttonStyle(.borderless)
+                    .tint(.nfRedFlamePea)
                     Spacer()
                 }
             }
@@ -206,10 +243,11 @@ struct PMWeightSection: View {
             if !pmWeight.isEmpty || viewModel.tracker(for: date).weightPM != nil { // 🟢 Changed: Fixed PM button condition
                 HStack {
                     Spacer()
-                    Button("Clear PM Weight") {  // or localized key if you add it
+                    Button("weight_entry_clear") {  // or localized key if you add it
                         showClearConfirmation = true
                     }
                     .buttonStyle(.borderless)
+                    .tint(.nfRedFlamePea)
                     Spacer()
                 }
             }

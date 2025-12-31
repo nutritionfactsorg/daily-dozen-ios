@@ -14,7 +14,7 @@ struct ContentView2: View {
             UIApplication.shared.open(url)
         }
         .padding()
-        .background(Color.red)
-        .foregroundColor(.white)
+        .background(Color.nfRedFlamePea)
+        .foregroundColor(.white)  // :TBDz:color: color check
     }
 }

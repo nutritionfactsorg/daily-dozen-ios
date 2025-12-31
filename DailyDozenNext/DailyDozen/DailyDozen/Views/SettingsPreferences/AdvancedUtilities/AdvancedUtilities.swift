@@ -19,6 +19,16 @@ struct AdvancedUtilities: View {
             Section("Test Data") {
                 GenerateHistoryTestDataView()
             }
+            Section("Streak Test Data") {
+                Button("Clear DB and Generate Streak Data") {
+                    Task {
+                        await clearDB()
+                        await viewModel.generateStreakTestData()
+                    }
+                    
+                }
+                .buttonStyle(.borderedProminent)
+            }
             Section("SQLite Utilities") {
                 VStack(spacing: 20) {
                     Button("Clear Database") {
@@ -132,7 +142,7 @@ struct AdvancedUtilities: View {
                 Button("Delete All Body Mass Data in HK", role: .destructive) {
                     HealthManager.shared.debugDeleteAllBodyMassData()
                 }
-                .tint(.red)
+                .tint(.nfRedFlamePea)
                 .buttonStyle(.borderedProminent)
             }
             Section("Appearance") {
@@ -153,7 +163,7 @@ struct AdvancedUtilities: View {
                         SettingsKeys.resetAllMySettings()
                     }
                     .buttonStyle(.borderedProminent)
-                    .tint(.red)
+                    .tint(.nfRedFlamePea)
                     Button("Show Settings") {
                         printAppUserDefaults()
                     }
@@ -176,7 +186,7 @@ struct AdvancedUtilities: View {
                         showResetAll = true
                     }
                     .buttonStyle(.borderedProminent)
-                    .tint(.red)
+                    .tint(.nfRedFlamePea)
                     .reusableConfirmDialog(
                         isPresented: $showResetAll,
                         title: "Reset All?",
@@ -208,6 +218,7 @@ struct AdvancedUtilities: View {
     func clearDB() async {
         await viewModel.clearSQLFile()
     }
+    
 }
 
 #Preview {

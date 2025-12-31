@@ -70,6 +70,12 @@ class HealthManager {
                     let end = sample.endDate.datestampyyyyMMddHHmmss
                     print("•HK• Sample: \(String(format: "%.2f", kg)) kg, start: \(start), end: \(end)")
                 }
+                for sample in quantitySamples {
+                    let kg = sample.quantity.doubleValue(for: .gramUnit(with: .kilo))
+                    let start = sample.startDate.datestampyyyyMMddHHmmss
+                    let end = sample.endDate.datestampyyyyMMddHHmmss
+                    print("•HK• Sample: \(String(format: "%.2f", kg)) kg, start: \(start), end: \(end)")
+                }
                 continuation.resume(returning: quantitySamples)
             }
             hkHealthStore.execute(query)

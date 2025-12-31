@@ -69,7 +69,7 @@ struct GenerateHistoryTestDataView: View {
                     }
                     //.buttonStyle(BorderlessButtonStyle())
                     .frame(width: 60, height: 32)
-                    .background(isGenerating ? .gray : .red)
+                    .background(isGenerating ? .gray : .nfRedFlamePea)
                     .foregroundColor(.white)
                     .cornerRadius(8)
                 }
@@ -92,7 +92,7 @@ struct GenerateHistoryTestDataView: View {
             if !errorMessage.isEmpty {
                 Text(errorMessage)
                     .font(.caption)
-                    .foregroundColor(.red)
+                    .foregroundColor(.nfRedFlamePea)
             }
         }
         .padding(.vertical, 8)

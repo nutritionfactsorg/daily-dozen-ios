@@ -195,7 +195,7 @@ struct MonthChartView: View {
     }
         .padding(.horizontal, layoutDirection == .rightToLeft ? 20 : 10)
         .padding(.top) // Reverted to minimal top padding
-        //.border(.red, width: 1) // Uncomment -- used for debugging
+        //.border(.nfRedFlamePea, width: 1) // Uncomment -- used for debugging
     }  //chartView
 
     private func valueSelectionPopover(for point: WeightDataPoint) -> some View {

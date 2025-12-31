@@ -232,7 +232,7 @@ struct YearChartView: View {
             }
         }
         .frame(height: 310) // Matched to MonthView
-      //  .border(.red, width: 1) // Keep for debugging
+        //.border(.nfRedFlamePea, width: 1) // Keep for debugging
     }
  //ChartView
     private func valueSelectionPopover(for point: WeightDataPoint) -> some View {

@@ -451,9 +451,9 @@ struct ServingsHistoryView: View {
     private func servingsAnnotation(servings: Int, year: Int? = nil) -> some View {
         Text("\(servings)")
             .font(.system(size: 10).bold())
-            .foregroundColor(.black)
+            .foregroundColor(.black) // :TBDz:color: color check
             .padding(3)
-            .background(servings > 0 ? Color.white.opacity(0.9) : Color.red.opacity(0.7))
+            .background(servings > 0 ? Color.white.opacity(0.9) : Color.red.opacity(0.7)) // :TBDz:color: color check
             .clipShape(RoundedRectangle(cornerRadius: 4))
     }
     // MARK: - Navigation Logic
