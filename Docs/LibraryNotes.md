@@ -1,6 +1,6 @@
 # Library Notes
 
-**ActiveLabel**
+### ActiveLabel
 
 - <https://cocoapods.org/pods/ActiveLabel>
 - <https://github.com/optonaut/ActiveLabel.swift>
@@ -15,7 +15,7 @@ The `ActiveLabel` library, as used in the DailyDozen, can potentially be replace
 
 _The `ActiveLabel` library project has not been kept current with the progression of the Swift platform._
 
-**DGCharts**
+### DGCharts
 
 - DGCarts <https://cocoapods.org/pods/DGCharts>
 - **25 issues. deprecations since iOS 13.0**
@@ -29,11 +29,11 @@ _The `ActiveLabel` library project has not been kept current with the progressio
     - renamed DanielGindi `Charts` to `DGCharts` due to namespace conflict with SwiftUI `Charts`
     - `DGCharts` (5.1.0, 2024.02.15) has breaking changes when migrating from DanielGindi `Charts`
 
-**Swift Charts**
+### Swift Charts
 
 - [Swift Charts](https://developer.apple.com/documentation/charts)
 
-**FSCalendar**
+### FSCalendar
 
 - <https://cocoapods.org/pods/FSCalendar>
 - <https://github.com/WenchaoD/FSCalendar>
@@ -44,7 +44,7 @@ _The `ActiveLabel` library project has not been kept current with the progressio
     - 36 disallowed syntax issues "double-quoted include "*.h" in framework header, expected angle-bracketed instead"
     - settings "Quoted Include In Framework Header" CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER to No did not clear the errors.
 
-**RealmSwift**
+### RealmSwift
 
 - <https://cocoapods.org/pods/RealmSwift>
 - <https://github.com/realm/realm-cocoa> (don't use)
@@ -62,7 +62,7 @@ _The `ActiveLabel` library project has not been kept current with the progressio
 
 _DailyDozen iOS v4.x switches the database from the 3rd Party RealmDB to the SQLite which is inherently provided and support by Apple across all Apple's operating systems. RealmDB was aquired by aquired competitor MongoDB. MongoDB is transitioning RealmDB to be a feature-limited community-support project._
 
-**SimpleAnimation**
+### SimpleAnimation
 
 - <https://cocoapods.org/pods/SimpleAnimation>
 - <https://github.com/keithito/SimpleAnimation>
@@ -74,7 +74,7 @@ _DailyDozen iOS v4.x switches the database from the 3rd Party RealmDB to the SQL
 
 _The `SimpleAnimation` library project has not been kept current with the progression of the Swift platform._
 
-**CocoaPods**
+### CocoaPods
 
 - [2024.08.13 CocoaPods Blog "CocoaPods Support & Maintenance Plans"](https://blog.cocoapods.org/CocoaPods-Support-Plans/) … "TLDR: We're still keeping it ticking, but we're being more up-front that CocoaPods is in maintenance mode."
 
