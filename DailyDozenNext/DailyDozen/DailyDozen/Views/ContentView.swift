@@ -10,10 +10,10 @@ import SwiftUI
 struct ContentView: View {
     private let viewModel = SqlDailyTrackerViewModel.shared
     @AppStorage(SettingsKeys.show21TweaksPref) private var show21Tweaks: Bool = true
-//    init() {
-//           UITabBar.appearance().isTranslucent = false
-//          // UITabBar.appearance().backgroundColor = .white  //Could be set to something else
-//      }
+    //init() {
+    //       UITabBar.appearance().isTranslucent = false
+    //      // UITabBar.appearance().backgroundColor = .white  //Could be set to something else
+    //  }
     
     var body: some View {
         TabView {
@@ -28,7 +28,7 @@ struct ContentView: View {
                     }
                 }
             
-           // SecondTabViewR()
+            // SecondTabViewR()
             if show21Tweaks {
                 TwentyOneTweaksTabView()
                 
@@ -57,16 +57,16 @@ struct ContentView: View {
         } //TAB
         .tint(Color(.tabAccent))
         .toolbarBackground(
-               // 1
-               Color.white,
-               // 2
-               for: .tabBar)
-        .id(viewModel.refreshID)   
+            // 1
+            Color.white,
+            // 2
+            for: .tabBar)
+        .id(viewModel.refreshID)
     }
 }
 
 #Preview {
-   ContentView().preferredColorScheme(.dark)
-   
-   //  .environment(\.locale, .init(identifier: "de"))
+    ContentView().preferredColorScheme(.dark)
+    
+    //  .environment(\.locale, .init(identifier: "de"))
 }

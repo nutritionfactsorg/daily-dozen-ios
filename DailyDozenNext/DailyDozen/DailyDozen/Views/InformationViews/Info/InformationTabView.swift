@@ -57,12 +57,18 @@ struct InformationTabView: View {
                     Text("info_book_how_not_to_diet", comment: "How Not to Diet")
                 }
                 
-                NavigationLink {
-                    InfoFaqTableView()
-                } label: {
-                    Text("faq_title", comment: "FAQ")
-                }
+//                NavigationLink {
+//                    InfoFaqTableView()
+//                } label: {
+//                    Text("faq_title", comment: "FAQ")
+//                }
                 //.accentColor(.black)
+                //Used as hack to make consistent with ios 26 and remove disclsoure indicator
+                Text("faq_title", comment: "FAQ")
+                    .background(
+                        NavigationLink("", destination: InfoFaqTableView()
+                                      ) .opacity(0)
+                    )
                 
                 Link(destination: getLink(mlink: theMenuLink.challenge)) {
                     Text( "info_webpage_daily_dozen_challenge", comment: "Daily Dozen Challenge")
@@ -80,17 +86,22 @@ struct InformationTabView: View {
                     Text( "info_webpage_open_source", comment: "Open Source")
                 }
                 
-                NavigationLink {
-                    AboutView()
-                } label: {
-                    Text("info_app_about", comment: "About")
-                }
+//                NavigationLink {
+//                    AboutView()
+//                } label: {
+//                    Text("info_app_about", comment: "About")
+//                }
                 
 //                NavigationLink {
 //                    TestLinkView()
 //                } label: {
 //                    Text("TEST TEST", comment: "TEST")
 //                }
+                Text("info_app_about", comment: "About")
+                    .background(
+                        NavigationLink("", destination: AboutView()
+                                      ) .opacity(0)
+                    )
             }
             .whiteInlineGreenTitle("navtab.info")
             .navigationLinkIndicatorVisibility(.hidden)

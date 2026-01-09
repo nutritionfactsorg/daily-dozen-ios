@@ -114,7 +114,7 @@ struct WeightEntryView: View {
                 .presentationDetents([.medium])
         }
         .task {
-            // This one line replaces all your old init + onAppear logic
+           
             viewModel.ensureDateIsInRange(currentDate,
                                          dateRange: &dateRange,
                                          currentIndex: &currentIndex)
@@ -125,8 +125,10 @@ struct WeightEntryView: View {
                 await viewModel.loadTracker(forDate: date, isSilent: true)
             }
         }
+       
         .onDisappear {
             Task { await viewModel.savePendingWeights() }
+            print("🟡 WeightEntryView disappearing, currentDisplayDate: \(currentDisplayDate.datestampSid)")
         }
         .task {
             // Request HealthKit once (safe to call multiple times)

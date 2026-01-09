@@ -190,7 +190,8 @@ struct WeightChartView: View {
                 
                 Spacer()
                 
-                NavigationLink(destination: WeightEntryView(initialDate: selectedDate)) {
+                //NavigationLink(destination: WeightEntryView(initialDate: selectedDate)) {
+                NavigationLink(destination: WeightEntryView(initialDate: Date())) {
                     Text("weight_history_edit_data")
                         .font(.headline)
                         .frame(maxWidth: .infinity)

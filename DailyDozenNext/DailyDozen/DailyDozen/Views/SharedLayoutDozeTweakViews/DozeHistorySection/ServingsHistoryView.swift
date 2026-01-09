@@ -181,7 +181,7 @@ struct ServingsHistoryView: View {
                     y: .value("Servings", item.totalServings),
                     width: 10
                 )
-                .foregroundStyle(date == today ? .nfRedFlamePea : .nfGreenBrand)
+                .foregroundStyle(date == today ? .nfGreenBrand : .nfGreenBrand)
                 .annotation(position: .top, alignment: .center, spacing: 4) {
                     if item.totalServings > 0 {
                         servingsAnnotation(servings: item.totalServings)

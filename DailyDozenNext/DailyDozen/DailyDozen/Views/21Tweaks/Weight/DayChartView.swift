@@ -79,17 +79,15 @@ struct DayChartView: View {
                             )
                             .foregroundStyle(by: .value("Series", dataPoint.type == .am ? "AM" : "PM"))
                             .symbol(by: .value("Series", dataPoint.type == .am ? "AM" : "PM"))
-                            .symbol {
-                                Circle()
-                                    .fill(dataPoint.type == .am ? Color("nfYellowSunglow") : Color("nfRedFlamePea"))
-                                    .stroke(dataPoint.type == .am ? Color("nfYellowSunglow") : Color("nfRedFlamePea"), lineWidth: 2)
-                                    .frame(width: 8, height: 8)
-                            }
                             .interpolationMethod(.catmullRom)
                         }
                         .chartForegroundStyleScale([
                             "AM": Color("nfYellowSunglow"),
                             "PM": Color("nfRedFlamePea")
+                        ])
+                        .chartSymbolScale([
+                            "AM": .circle,
+                            "PM": .square
                         ])
                         .chartXAxis {
                             AxisMarks(values: dataDays(weightData)) { value in
@@ -126,17 +124,18 @@ struct DayChartView: View {
                     // Legend
                     HStack {
                         Circle()
-                            .fill(Color("nfYellowSunglow"))
+                            .stroke(Color("nfYellowSunglow"), lineWidth: 2)
                             .frame(width: 12, height: 12)
-                        Text("AM")
+                        Text("historyRecordWeight.legendMorning")
                             .font(.caption)
-                        Spacer()
-                        Circle()
-                            .fill(Color("nfRedFlamePea"))
+                           
+                        Rectangle()
+                            .stroke(Color("nfRedFlamePea"), lineWidth: 2)
                             .frame(width: 12, height: 12)
-                        Text("PM")
+                        Text("historyRecordWeight.legendEvening")
                             .font(.caption)
                     }
+                    .frame(maxWidth: .infinity, alignment: .center)
                     .padding(.horizontal)
                 }
             }

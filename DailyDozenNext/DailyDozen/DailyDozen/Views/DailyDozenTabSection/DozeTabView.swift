@@ -2,6 +2,8 @@
 //  DozeTabView.swift
 //  DailyDozen
 //
+//  Copyright © 2025 Nutritionfacts.org. All rights reserved.
+//
 
 import SwiftUI
 
@@ -15,11 +17,10 @@ struct DozeTabView: View {
     @State private var dateRange: [Date] = []
     @State private var isLoadingDate = false // Prevent rapid loadTracker calls
     @State private var scrollCoordinator = ScrollPositionCoordinator()
-    @State private var isDataReady = false  // 👈 NEW: Gatekeeper
-    @State private var preloadTask: Task<Void, Never>?  // 👈 NEW: Guard re-run
+    @State private var isDataReady = false  // Gatekeeper
+    @State private var preloadTask: Task<Void, Never>?  // Guard re-run
     
     private var currentDisplayDate: Date {
-        // Safest possible date to show in header
         if dateRange.indices.contains(currentIndex) {
             return dateRange[currentIndex]
         } else {
@@ -29,45 +30,6 @@ struct DozeTabView: View {
     
     let direction: Direction = .leftToRight
     
-//    private func extendDateRangeIfNeeded(for index: Int) {
-//        let calendar = Calendar.current
-//        let bufferDays = 30
-//        let today = calendar.startOfDay(for: Date())
-//        
-//        if dateRange.isEmpty {
-//            dateRange = (-bufferDays...0).map { offset in
-//                calendar.date(byAdding: .day, value: offset, to: today)!
-//            }
-//            if let todayIndex = dateRange.firstIndex(where: { calendar.isDate($0, inSameDayAs: today) }) {
-//                currentIndex = todayIndex
-//                selectedDate = dateRange[todayIndex]
-//            }
-//        }
-//        
-//        if index <= bufferDays {
-//            let earliestDate = dateRange.first!
-//            let newDates = (1...bufferDays).map { offset in
-//                calendar.date(byAdding: .day, value: -offset, to: earliestDate)!
-//            }.reversed()
-//            dateRange.insert(contentsOf: newDates, at: 0)
-//            currentIndex += bufferDays
-//        }
-//        
-//        if index >= dateRange.count - bufferDays - 1 {
-//            let latestDate = dateRange.last!
-//            if latestDate < today {
-//                let daysToToday = calendar.dateComponents([.day], from: latestDate, to: today).day!
-//                let daysToAdd = min(bufferDays, max(daysToToday, 0))
-//                let newDates = (1...daysToAdd).map { offset in
-//                    calendar.date(byAdding: .day, value: offset, to: latestDate)!
-//                }
-//                dateRange.append(contentsOf: newDates)
-//            }
-//            if let todayIndex = dateRange.firstIndex(where: { calendar.isDate($0, inSameDayAs: today) }) {
-//                currentIndex = min(currentIndex, todayIndex)
-//            }
-//        }
-//    }
     private func extendDateRangeIfNeeded(for index: Int) {
         if dateRange.isEmpty {
             viewModel.ensureDateIsInRange(Date(), dateRange: &dateRange, currentIndex: &currentIndex)
@@ -81,14 +43,6 @@ struct DozeTabView: View {
         }
     }
     
-//    private var isToday: Bool {
-//        let calendar = Calendar.current
-//        let today = calendar.startOfDay(for: Date())
-//        guard !dateRange.isEmpty, currentIndex >= 0, currentIndex < dateRange.count else {
-//            return false
-//        }
-//        return calendar.isDate(dateRange[currentIndex], inSameDayAs: today)
-//    }
     private var isToday: Bool {
         dateRange.indices.contains(currentIndex) &&
         Calendar.current.isDate(dateRange[currentIndex], inSameDayAs: Date())
@@ -162,18 +116,26 @@ struct DozeTabView: View {
                             }
                             .tabViewStyle(.page(indexDisplayMode: .never))
                             .frame(minHeight: 300, maxHeight: .infinity)
-                            .onChange(of: currentIndex) { oldValue, newValue in
-                                if newValue >= dateRange.count - 1 && newValue > oldValue {
-                                    // Trying to swipe right past today → snap back
+                            .onChange(of: currentIndex) { _, newValue in
+                               // let _ = Self._printChanges()  // Prints changed properties
+                                print("🟢 •DozeTab•  \(currentIndex)")
+                                let maxIndex = dateRange.count - 1
+                                // Only block if trying to go BEYOND today
+                                if newValue > maxIndex {
+                                    // This happens on attempted future swipe OR overshoot
                                     withAnimation {
-                                        currentIndex = dateRange.count - 1
+                                        currentIndex = maxIndex
                                     }
-                                } else {
-                                    // normal swipe handling
-                                    selectedDate = dateRange[newValue]
-                                    extendDateRangeIfNeeded(for: newValue)
-                                    // ... preload task
+                                    
+                                    print("🟢 •DozeTab• Blocked future access, snapped to \(maxIndex)")
+                                    return  // Critical: prevent rest of logic
                                 }
+                                selectedDate = dateRange[newValue]
+                                Task {@MainActor in
+                                    extendDateRangeIfNeeded(for: newValue)
+                                }
+                                
+                            print("🟢 •DozeTab• Updated to \(selectedDate.formatted()) at index \(newValue)")
                             } //onChange
                             //  }  //Else
                             Spacer()
@@ -209,6 +171,15 @@ struct DozeTabView: View {
                     await viewModel.loadTracker(forDate: date, isSilent: true)
                 }
                 isDataReady = true
+            }
+            .onChange(of: selectedDate) {_, newValue in
+                print("🔴 selectedDate changed → ensuring range")
+                viewModel.ensureDateIsInRange(
+                    newValue,
+                    dateRange: &dateRange,
+                    currentIndex: &currentIndex,
+                    thenSelectIt: true
+                )
             }
         } //NavStack
     }

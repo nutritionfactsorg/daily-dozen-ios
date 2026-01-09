@@ -7,6 +7,11 @@
 
 import SwiftUI
 
+enum RowNavigationDestination: Hashable {
+    case weightEntry(Date)
+    // Add other cases if needed, e.g., .detail(DataCountType)
+}
+
 struct TwentyOneTweaksEntryRowView: View {
   
     private let viewModel = SqlDailyTrackerViewModel.shared
@@ -14,12 +19,13 @@ struct TwentyOneTweaksEntryRowView: View {
     let item: DataCountType
     let date: Date
     let onCheck: (Int) -> Void // Callback for checkbox changes
-    @State private var navigateToWeightEntry: Bool = false
+   // @State private var navigateToWeightEntry: Bool = false
     // @State private var localCount: Int = 0
     @State private var checkCount: Int = 0
     @State private var navigationPath = NavigationPath()
     @State private var isUpdating: Bool = false
     @State private var streakCount: Int = 0
+    @State private var isNavigatingToWeight: Bool = false  // state to control navigation
     
     var body: some View {
         NavigationStack(path: $navigationPath) {
@@ -66,13 +72,14 @@ struct TwentyOneTweaksEntryRowView: View {
                         ContiguousCheckboxView(
                             n: item.goalServings,
                             x: $checkCount,
-                            direction: .leftToRight,
+                           // direction: .leftToRight,
                             onChange: { newCount in
                                 guard !isUpdating else { return}
                                 isUpdating = true
                                 checkCount = newCount
                                 if item == .tweakWeightTwice {
-                                    navigateToWeightEntry = true
+                                    isNavigatingToWeight = true
+                                    //navigationPath.append(date.startOfDay)
                                     //isUpdating = false
                                 } else {
                                     Task {
@@ -87,7 +94,10 @@ struct TwentyOneTweaksEntryRowView: View {
                                 isUpdating = false
                             },
                             isDisabled: item == .tweakWeightTwice,
-                            onTap: item == .tweakWeightTwice ? { navigateToWeightEntry = true } : nil
+                            onTap: item == .tweakWeightTwice ? {
+                                print("🟢 onTap called for weight on \(date.datestampSid)")
+                                // navigationPath.append(date.startOfDay) } : nil
+                                isNavigatingToWeight = true} : nil
                         )
                     }
                 }
@@ -100,10 +110,10 @@ struct TwentyOneTweaksEntryRowView: View {
             }
             
             .navigationDestination(for: Date.self) { date in
-                WeightEntryView(initialDate: date)
-            }
-            .navigationDestination(isPresented: $navigateToWeightEntry) {
                 WeightEntryView(initialDate: date.startOfDay)
+                    .onDisappear {  // Clear path when disappearing (back navigation)
+                                            navigationPath = NavigationPath()
+                                  }
             }
             
             //  }
@@ -132,22 +142,47 @@ struct TwentyOneTweaksEntryRowView: View {
                     onCheck(checkCount)  //Notify parent to refresh sum
                 }
             }
-            .onChange(of: navigateToWeightEntry) { _, isActive in
-                if !isActive && item == .tweakWeightTwice {
+//            .onChange(of: navigateToWeightEntry) { _, isActive in
+//                if !isActive && item == .tweakWeightTwice {
+//                    Task {
+//                        // After returning from WeightEntryView (where weights were saved via savePendingWeights())
+//                        let localTracker = viewModel.tracker(for: date)
+//                        let amWeight = localTracker.weightAM?.dataweight_kg ?? 0
+//                        let pmWeight = localTracker.weightPM?.dataweight_kg ?? 0
+//                        let newCount = (amWeight > 0 ? 1 : 0) + (pmWeight > 0 ? 1 : 0)
+//                        checkCount = newCount
+//                        // onCheck(newCount) // Notify parent to refresh sum
+//                        streakCount = localTracker.itemsDict[item]?.datacount_streak ?? 0
+//                        onCheck(checkCount)
+//                        print("🟢 •Refresh• Returned from WeightEntryView, derived count for \(date.datestampSid): \(newCount)")
+//                    }
+//                }
+//            }
+            
+            .onChange(of: isNavigatingToWeight) { _, newValue in
+                            if newValue && navigationPath.count == 0 {  // Only append if not already navigating
+                                navigationPath.append(date.startOfDay)
+                            } else if !newValue {
+                                // Optional: Force clear if needed, but back button should handle pop
+                            }
+                        }
+            
+            .onChange(of: navigationPath) { oldPath, newPath in  // New: Monitor path for return
+                if newPath.count == 0 && oldPath.count > 0 && item == .tweakWeightTwice {
+                    isNavigatingToWeight = false  // Reset the flag here on return
                     Task {
-                        // After returning from WeightEntryView (where weights were saved via savePendingWeights())
                         let localTracker = viewModel.tracker(for: date)
                         let amWeight = localTracker.weightAM?.dataweight_kg ?? 0
                         let pmWeight = localTracker.weightPM?.dataweight_kg ?? 0
                         let newCount = (amWeight > 0 ? 1 : 0) + (pmWeight > 0 ? 1 : 0)
                         checkCount = newCount
-                        // onCheck(newCount) // Notify parent to refresh sum
                         streakCount = localTracker.itemsDict[item]?.datacount_streak ?? 0
-                        onCheck(checkCount)
+                        onCheck(newCount)
                         print("🟢 •Refresh• Returned from WeightEntryView, derived count for \(date.datestampSid): \(newCount)")
                     }
                 }
             }
+            
             .onReceive(NotificationCenter.default.publisher(for: .sqlDBUpdated)) { notification in
                 guard let updatedDate = notification.object as? Date,
                       Calendar.current.isDate(updatedDate, inSameDayAs: date) else { return }

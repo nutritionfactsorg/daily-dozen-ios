@@ -39,10 +39,10 @@ struct ExportHistorySection: View {
             isExporting = true
             
             Task { 
-                let csvString = await SQLiteConnector.shared.generateCSVContent(marker: "DB03_Utility_Data")
+                let csvString = await SQLiteConnector.shared.generateCSVContent(marker: "ExportCSV")
                 let data = csvString.data(using: .utf8) ?? Data()
                 
-                let filename = "DB03_Utility_Data-\(Date().formatted(.iso8601.year().month().day()))-\(Int(Date().timeIntervalSince1970)).csv"
+                let filename = "ExportCSV-\(Date().formatted(.iso8601.year().month().day()))-\(Int(Date().timeIntervalSince1970)).csv"
                 let docsURL = FileManager.default.urls(for: .documentDirectory, in: .userDomainMask)[0]
                 let fileURL = docsURL.appendingPathComponent(filename)
                 

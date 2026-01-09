@@ -109,12 +109,6 @@ struct MonthChartView: View {
                     series: .value("Series", dataPoint.type == .am ? "AM" : "PM")
                 )
                 .foregroundStyle(by: .value("Series", dataPoint.type == .am ? "AM" : "PM"))
-                .symbol {
-                        Circle()
-                            .fill(dataPoint.type == .am ? Color("nfYellowSunglow") : Color("nfRedFlamePea"))
-                            .stroke(dataPoint.type == .am ? Color("nfYellowSunglow") : Color("nfRedFlamePea"), lineWidth: 2)
-                            .frame(width: 8, height: 8)  // Adjust size as needed for visibility
-                    }
                 .symbolSize(100)
                 .symbol(by: .value("Series", dataPoint.type == .am ? "AM" : "PM"))
                 .interpolationMethod(.catmullRom)
@@ -152,6 +146,11 @@ struct MonthChartView: View {
         .chartForegroundStyleScale([
             "AM": Color("nfYellowSunglow"),
             "PM": Color("nfRedFlamePea")
+        ])
+        
+        .chartSymbolScale([
+            "AM": .circle,
+            "PM": .square
         ])
 //        .chartSymbolScale([
 //            "AM": Circle().strokeBorder(lineWidth: 2),
@@ -211,15 +210,14 @@ struct MonthChartView: View {
     private var legendView: some View {
         HStack {
             Circle()
-                .fill(Color("nfYellowSunglow"))
+                .strokeBorder(Color("nfYellowSunglow"), lineWidth: 2)
                 .frame(width: 12, height: 12)
-            Text("AM")
+            Text("historyRecordWeight.legendMorning")
                 .font(.caption)
-            Spacer()
-            Circle()
-                .fill(Color("nfRedFlamePea"))
+            Rectangle()
+                .strokeBorder(Color("nfRedFlamePea"), lineWidth: 2)
                 .frame(width: 12, height: 12)
-            Text("PM")
+            Text("historyRecordWeight.legendEvening")
                 .font(.caption)
         }
         .padding(.horizontal)

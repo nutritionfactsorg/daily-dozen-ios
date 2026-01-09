@@ -8,7 +8,9 @@
 import SwiftUI
 
 struct WelcomeTweaksChoiceView: View {
-    @AppStorage(SettingsKeys.show21TweaksPref) private var show21Tweaks = true
+    @AppStorage(wrappedValue: false, SettingsKeys.show21TweaksPref)
+    private var show21Tweaks: Bool
+    
     @AppStorage(SettingsKeys.hasSeenLaunchV4) private var hasSeenTweaks = false
     @Environment(\.dismiss) private var dismiss
     

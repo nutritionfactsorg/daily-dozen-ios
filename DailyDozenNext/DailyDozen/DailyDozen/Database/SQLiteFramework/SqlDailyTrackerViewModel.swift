@@ -130,7 +130,7 @@ class SqlDailyTrackerViewModel: ObservableObject {
         // Handle AM
         var amWeightStr = ""
         var amTime = Date()
-       // print("•DEBUG• AM weightAM exists? \(updatedTracker.weightAM?.dataweight_kg ?? 0)")
+        // print("•DEBUG• AM weightAM exists? \(updatedTracker.weightAM?.dataweight_kg ?? 0)")
         if let amRecord = updatedTracker.weightAM, amRecord.dataweight_kg > 0 {
             // DB exists: Use DB, sync to HK
             amWeightStr = await UnitsUtility.regionalWeight(fromKg: amRecord.dataweight_kg, toUnits: unitsType, toDecimalDigits: 1) ?? ""
@@ -142,15 +142,15 @@ class SqlDailyTrackerViewModel: ObservableObject {
                 print("•Load• AM sync put error: \(error.localizedDescription)")
             }
         }
-//        else {
-//            // No DB: Pull from HK for display (user decision)
-//            let (timeStr, weightStr) = await HealthSynchronizer.shared.syncWeightToShow(date: normalized, ampm: .am)
-//            if !weightStr.isEmpty {
-//                amWeightStr = weightStr
-//                amTime = Date(datestampHHmm: timeStr, referenceDate: date) ?? Date()
-//                print("•Load• Pulled HK for AM (no DB): \(weightStr) at \(timeStr)")
-//            }
-//        }
+        //else {
+        //    // No DB: Pull from HK for display (user decision)
+        //    let (timeStr, weightStr) = await HealthSynchronizer.shared.syncWeightToShow(date: normalized, ampm: .am)
+        //    if !weightStr.isEmpty {
+        //        amWeightStr = weightStr
+        //        amTime = Date(datestampHHmm: timeStr, referenceDate: date) ?? Date()
+        //        print("•Load• Pulled HK for AM (no DB): \(weightStr) at \(timeStr)")
+        //    }
+        //}
         
         // Handle PM (similar)
         var pmWeightStr = ""
@@ -166,14 +166,14 @@ class SqlDailyTrackerViewModel: ObservableObject {
                 print("•Load• PM sync put error: \(error.localizedDescription)")
             }
         }
-//        else {
-//            let (timeStr, weightStr) = await HealthSynchronizer.shared.syncWeightToShow(date: normalized, ampm: .pm)
-//            if !weightStr.isEmpty {
-//                pmWeightStr = weightStr
-//                pmTime = Date(datestampHHmm: timeStr, referenceDate: date) ?? Date()
-//                print("•Load• Pulled HK for PM (no DB): \(weightStr) at \(timeStr)")
-//            }
-//        }
+        //else {
+        //    let (timeStr, weightStr) = await HealthSynchronizer.shared.syncWeightToShow(date: normalized, ampm: .pm)
+        //    if !weightStr.isEmpty {
+        //        pmWeightStr = weightStr
+        //        pmTime = Date(datestampHHmm: timeStr, referenceDate: date) ?? Date()
+        //        print("•Load• Pulled HK for PM (no DB): \(weightStr) at \(timeStr)")
+        //    }
+        //}
         
         print("Loaded weights for \(key): AM \(amWeightStr), PM \(pmWeightStr), AM Time \(amTime.datestampHHmm), PM Time \(pmTime.datestampHHmm)")
         return WeightEntryData(amWeight: amWeightStr, pmWeight: pmWeightStr, amTime: amTime, pmTime: pmTime)
@@ -262,12 +262,12 @@ class SqlDailyTrackerViewModel: ObservableObject {
             updateTrackerInArray(updatedTracker)
             
             // SYNC TO HK
-//            if let am = updatedTracker.weightAM {
-//                try? await HealthSynchronizer.shared.syncWeightPut(date: normalized, ampm: .am, kg: am.dataweight_kg, time: amTime ?? normalized, tracker: updatedTracker)
-//            }
-//            if let pm = updatedTracker.weightPM {
-//                try? await HealthSynchronizer.shared.syncWeightPut(date: normalized, ampm: .pm, kg: pm.dataweight_kg, time: pmTime ?? normalized, tracker: updatedTracker)
-//            }
+            //if let am = updatedTracker.weightAM {
+            //    try? await HealthSynchronizer.shared.syncWeightPut(date: normalized, ampm: .am, kg: am.dataweight_kg, time: amTime ?? normalized, tracker: updatedTracker)
+            //}
+            //if let pm = updatedTracker.weightPM {
+            //    try? await HealthSynchronizer.shared.syncWeightPut(date: normalized, ampm: .pm, kg: pm.dataweight_kg, time: pmTime ?? normalized, tracker: updatedTracker)
+            //}
             
             let derivedCount = (updatedTracker.weightAM != nil ? 1 : 0) + (updatedTracker.weightPM != nil ? 1 : 0)
             await setCountAndUpdateStreak(for: .tweakWeightTwice, count: derivedCount, date: normalized)
@@ -306,8 +306,8 @@ class SqlDailyTrackerViewModel: ObservableObject {
     
     func updatePendingWeights(for date: Date, amWeight: String, pmWeight: String, amTime: Date, pmTime: Date) async {
         
-//        let caller = Thread.callStackSymbols.prefix(10).joined(separator: "\n")
-//        print("updatePendingWeights() called from:\n\(caller)\n")
+        //let caller = Thread.callStackSymbols.prefix(10).joined(separator: "\n")
+        //print("updatePendingWeights() called from:\n\(caller)\n")
         
         let key = date.datestampSid
         
@@ -362,8 +362,10 @@ class SqlDailyTrackerViewModel: ObservableObject {
     // *** Added: Save pending weights ***
     func savePendingWeights() async {
         for (dateSid, weights) in pendingWeights {
-            let amValue = Double(weights.amWeight.filter { !$0.isWhitespace }) ?? 0
-            let pmValue = Double(weights.pmWeight.filter { !$0.isWhitespace }) ?? 0
+            //let amValue = Double(weights.amWeight.filter { !$0.isWhitespace }) ?? 0
+            //let pmValue = Double(weights.pmWeight.filter { !$0.isWhitespace }) ?? 0
+            let amValue = weights.amWeight.toWeightDouble() ?? 0
+            let pmValue = weights.pmWeight.toWeightDouble() ?? 0
             guard let date = Date(datestampSid: dateSid) else { continue }
             
             // Skip if value <=0 or time is distantPast (cleared marker)
@@ -814,6 +816,7 @@ extension SqlDailyTrackerViewModel {
         print("    🟢 •GEN• Will generate \(days) days (skipping \(existingCount) existing)")
         
         var generatedCount = 0
+        var generatedMonths: Set<Date> = []  // Collect unique start-of-month dates for generated days
         
         for i in 0..<days {
             let normalizedDate = calendar.startOfDay(for: date)
@@ -875,6 +878,11 @@ extension SqlDailyTrackerViewModel {
             _ = await saveWeight(record: amRecord, oldDatePsid: amRecord.dataweight_date_psid, oldAmpm: 0)
             _ = await saveWeight(record: pmRecord, oldDatePsid: pmRecord.dataweight_date_psid, oldAmpm: 1)
             
+            let monthComponents = DateComponents(year: normalizedDate.year, month: normalizedDate.month, day: 1)
+            if let monthStart = calendar.date(from: monthComponents) {
+                generatedMonths.insert(monthStart)
+            }
+            
             // Log first few NEW entries
             if generatedCount < nToLog {
                 let weightAmStr = String(format: "%.2f", weightAM)
@@ -887,11 +895,18 @@ extension SqlDailyTrackerViewModel {
             date = calendar.date(byAdding: dateComponents, to: date)!
         }
         
-        // Refresh local cache
-        await loadTrackersForTest(forMonth: Date())
-        //print("    🟢 •GEN• COMPLETED: \(generatedCount) NEW days + \(existingCount) existing = \(generatedCount + existingCount) total")
+        // Refresh local cache for all generated months
+        for month in generatedMonths.sorted() {
+            await loadTrackersForTest(forMonth: month)
+        }
         
-        print("    GEN• SWIPE NOW — DATA IS LIVE!")
+        // Also load current month if not already included
+        let currentMonthComponents = DateComponents(year: today.year, month: today.month, day: 1)
+        if let currentMonthStart = calendar.date(from: currentMonthComponents), !generatedMonths.contains(currentMonthStart) {
+            await loadTrackersForTest(forMonth: currentMonthStart)
+        }
+        
+        print("  🟢  GEN• SWIPE NOW — DATA IS LIVE!")
     }
     
     private func notifyDBUpdated(for date: Date) {
@@ -930,9 +945,26 @@ extension SqlDailyTrackerViewModel {
         
         // First-time initialization
         if dateRange.isEmpty {
-            dateRange = (-89...0).map { calendar.date(byAdding: .day, value: $0, to: today)! }
-            currentIndex = dateRange.count - 1
-            return
+            // Initialize with 90 days ending at min(today, finalDate + some buffer), but ensure finalDate is included
+            let initDaysBefore = 44  // Roughly half of 90, adjust as needed
+            let initDaysAfter = 45
+            var startDate = calendar.date(byAdding: .day, value: -initDaysBefore, to: finalDate)!
+            var endDate = calendar.date(byAdding: .day, value: initDaysAfter, to: finalDate)!
+            
+            // Cap end at today
+            if endDate > today {
+                endDate = today
+            }
+            // If start is after end (unlikely), adjust
+            if startDate > endDate {
+                startDate = endDate
+            }
+            
+            let components = calendar.dateComponents([.day], from: startDate, to: endDate)
+            let totalDays = (components.day ?? 0) + 1  // Inclusive
+            dateRange = (0..<totalDays).map { calendar.date(byAdding: .day, value: $0, to: startDate)! }
+            
+            // No early return — proceed to selection below
         }
         
         guard let earliest = dateRange.first, let latest = dateRange.last else { return }
@@ -953,7 +985,7 @@ extension SqlDailyTrackerViewModel {
                 calendar.date(byAdding: .day, value: -$0, to: earliest)!
             }
             dateRange.insert(contentsOf: newDates, at: 0)
-            currentIndex += daysToAdd
+            currentIndex += daysToAdd  // Adjust index since inserting at front
         }
         // Extend forward (toward today, never past)
         else if finalDate > latest && finalDate <= today {

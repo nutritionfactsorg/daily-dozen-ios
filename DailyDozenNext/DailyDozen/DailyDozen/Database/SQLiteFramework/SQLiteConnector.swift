@@ -372,7 +372,7 @@ extension SQLiteConnector {
     //
     func exportDataForUser() async -> String {
         print("SQLiteConnector Utility exportDataForUser()")
-        return await generateCSVContent(marker: "DB03_Utility_Data")  // Updated marker
+        return await generateCSVContent(marker: "ExportCSV")  // Updated marker
     }
     
     func generateCSVContent(marker: String) async -> String {
@@ -408,7 +408,7 @@ extension SQLiteConnector {
     /// Called when user picks a CSV file
     mutating func importCSVAndRebuildDatabase(from csvURL: URL) async throws {
         // 1. Run your existing CSV → in-memory model logic
-        await csvImport(url: csvURL)          // ← YOUR ORIGINAL CODE
+        await csvImport(url: csvURL) // ← ORIGINAL CODE
         
         // 2. Close current DB
         await sqliteDBActor.close()

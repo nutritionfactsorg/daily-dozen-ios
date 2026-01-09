@@ -75,7 +75,7 @@ struct DozeEntryRowView: View {
                         ContiguousCheckboxView(
                             n: item.goalServings,
                             x: $checkCount,
-                            direction: .leftToRight,
+                            // direction: .leftToRight, // :v4: Now determined by system locale
                             onChange: { newCount in
                                 guard !isUpdating else { return }
                                 isUpdating = true

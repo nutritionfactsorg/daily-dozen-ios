@@ -15,7 +15,7 @@ struct WeightEntryData {
     let pmTime: Date
 }
 
-// ViewModel to manage weight data and database operations   TBDz need to change name
+// ViewModel to manage weight data and database operations   
 extension Notification.Name {
     static let sqlDBUpdated = Notification.Name("sqlDBUpdated")
 }

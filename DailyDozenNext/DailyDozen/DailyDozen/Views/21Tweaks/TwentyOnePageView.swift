@@ -81,11 +81,12 @@ struct TwentyOnePageView: View {
 //        .onReceive(NotificationCenter.default.publisher(for: .mockDBUpdated)) { _ in
 //            Task { await syncRecordWithDB() }
 //        }
-        .onReceive(NotificationCenter.default.publisher(for: .sqlDBUpdated)) { notification in
-            guard let updatedDate = notification.object as? Date,
-                  Calendar.current.isDate(updatedDate, inSameDayAs: date) else { return }
-            Task { await syncRecordWithDB() }
-        }
+//        .onReceive(NotificationCenter.default.publisher(for: .sqlDBUpdated)) { notification in
+//            guard let updatedDate = notification.object as? Date,
+//                  Calendar.current.isDate(updatedDate, inSameDayAs: date) else { return }
+//            Task { await syncRecordWithDB() }
+//            print("🟡 PageView for \(date.datestampSid) received sqlDBUpdated")
+//        }
         
     }
 }

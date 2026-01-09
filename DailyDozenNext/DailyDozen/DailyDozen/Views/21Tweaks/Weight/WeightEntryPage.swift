@@ -88,7 +88,7 @@ struct WeightEntryPage: View {
             }
             Button("Cancel", role: .cancel) { }
         } message: {
-            Text("weight_entry_clear \(date.formatted(date: .long, time: .omitted))?")
+            Text(" \(date.formatted(date: .long, time: .omitted))?")
         }
         .confirmationDialog("weight_entry_evening", isPresented: $showClearPMConfirmation, titleVisibility: .visible) {
             Button("weight_entry_clear", role: .destructive) {
@@ -115,7 +115,8 @@ struct WeightEntryPage: View {
             }
             Button("Cancel", role: .cancel) { }
         } message: {
-            Text("weight_entry_clear \(date.formatted(date: .long, time: .omitted))?")
+            Text("\(date.formatted(date: .long, time: .omitted))?")
+           
         }
         .task {
             let normalized = DateUtilities.gregorianCalendar.startOfDay(for: date)
@@ -170,17 +171,25 @@ struct AMWeightSection: View {
     var body: some View {
         Section(header: Text("weight_entry_morning")) {
             WeightInputField( // 🟢 Changed: Extracted to subview
-                placeholder: "(\(unitType == .metric ? "kg" : "lbs"))",
+                placeholder: "(\(unitType == .metric ? Text("weight_entry_units_kg") : Text("weight_entry_units_lbs")))",
                 text: $amWeight,
                 onChange: { newValue in
-                    
-                    if let value = Double(newValue.filter { !$0.isWhitespace }), value >= 0 {
-                        amWeight = newValue
-                    } else if !newValue.isEmpty {
+                    // Empty is always allowed
+                    if newValue.isEmpty {
                         amWeight = ""
+                        onSave()
+                        return
                     }
                     
-                    onSave()
+                    // If it parses to a positive number (supports . or ,), accept it exactly as typed
+                    if newValue.toWeightDouble() != nil {
+                        amWeight = newValue
+                        onSave()
+                        return
+                    }
+                    
+                    // Otherwise: invalid → do NOT update the binding
+                   
                 }
             )
             DatePicker("weight_entry_time", selection: $amTime, in: date.userDisplayStartOfDay...date.userEndOfAM, displayedComponents: .hourAndMinute)
@@ -220,18 +229,27 @@ struct PMWeightSection: View {
         
         Section(header: Text("weight_entry_evening")) {
             WeightInputField(
-                placeholder: "(\(unitType == .metric ? "kg" : "lbs"))",
+                placeholder: "(\(unitType == .metric ? Text("weight_entry_units_kg") : Text("weight_entry_units_lbs")))",
                 // placeholder: keyString,
                 // placeholder: String(localized:key, comment: "Daily time scale"),
                 text: $pmWeight,
                 onChange: { newValue in
-                    if let value = Double(newValue.filter { !$0.isWhitespace }), value >= 0 {
-                        pmWeight = newValue
-                    } else if !newValue.isEmpty {
+                    // Empty is always allowed
+                    if newValue.isEmpty {
                         pmWeight = ""
+                        onSave()
+                        return
                     }
-                    onSave()
-                    //
+                    
+                    // If it parses to a positive number (supports . or ,), accept it exactly as typed
+                    if newValue.toWeightDouble() != nil {
+                        pmWeight = newValue
+                        onSave()
+                        return
+                    }
+                    
+                    // Otherwise: invalid → do NOT update the binding
+                    // TextField will revert visually on next render (standard SwiftUI filtering pattern)
                 }
             )
             DatePicker("weight_entry_time", selection: $pmTime, in: date.userNoon...date.userEndOfDay, displayedComponents: .hourAndMinute)

@@ -448,7 +448,8 @@ actor SqliteDatabaseActor {
             }
         }
         sqlite3_finalize(stmt)
-        print("🟢 •DB• Fetched \(dates.count) distinct dates: \(dates)")
+        // print("🟢 •DB• Fetched \(dates.count) distinct dates: \(dates)")
+        print("🟢 •DB• Fetched \(dates.count)")
         return dates
     }
     
