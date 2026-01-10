@@ -1,4 +1,6 @@
-# Library Notes
+# Library Notes: iOS DailyDozen v3
+
+This documents provides a versions overview on the libraries used in the iOS DailyDozen App v3.x.
 
 ### ActiveLabel
 
@@ -60,7 +62,7 @@ _The `ActiveLabel` library project has not been kept current with the progressio
     - `10.46.0`
     - `10.54.6` Used by DailyDozen 4.x for migration to SQLite via Swift Package Manager.
 
-_DailyDozen iOS v4.x switches the database from the 3rd Party RealmDB to the SQLite which is inherently provided and support by Apple across all Apple's operating systems. RealmDB was aquired by aquired competitor MongoDB. MongoDB is transitioning RealmDB to be a feature-limited community-support project._
+_DailyDozen iOS v4.x switches the database from the 3rd Party RealmDB to the SQLite which is provided and support by Apple across all Apple's operating systems. RealmDB was aquired by competitor MongoDB in Spring 2019. MongoDB is transitioning RealmDB to be a feature-limited community-supported project. MongoDB business focus is on it's [core database product which has tiered pricing](https://www.mongodb.com/pricing)._
 
 ### SimpleAnimation
 
