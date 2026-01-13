@@ -59,7 +59,10 @@ public struct RealmBuiltInTest {
     /// - ~10 months -> 300 days
     /// - ~2.7 years or ~33 months -> 1000 days (2000 weight entries)
     /// - 3 years (1095 days, 2190 weight entries) -> `3*365`
-    func doGenerateDBHistoryBIT(numberOfDays: Int, inLibDbDir: Bool) { // :DATA:GENERATE:
+    ///
+    /// •DB•DATA• :DATA:GENERATE: doGenerateDBHistoryBIT
+    func doGenerateDBHistoryBIT(numberOfDays: Int, inLibDbDir: Bool) {
+        let timeIn = Date().getCurrentBenchmarkSeconds
         logit.debug(
             "••BEGIN•• RealmBuiltInTest doGenerateDBHistoryBIT(\(numberOfDays))"
         )
@@ -85,29 +88,49 @@ public struct RealmBuiltInTest {
         let weightAmplitude = 2.0 // kg
         let weightCycleStep = (2 * Double.pi) / (30 * 2)
         for i in 0..<numberOfDays {
-            // Add Daily Dozen data counts
-            realmProvider.saveCount(3, date: date, countType: .dozeBeans) // 0-3
-            realmProvider.saveCount(Int.random(in: 0...3), date: date, countType: .dozeFruitsOther) // 0-3
+            var count: Int
+            // --- Daily Dozen Data Counts ---
+            realmProvider.saveCount(3, date: date, countType: .dozeBeans)   // 3/3
+            realmProvider.saveCount(1, date: date, countType: .dozeBerries) // 1/1
+            // .dozeFruitsOther 0-3
             
-            // :SQLite:TBD: test count variance
-            var count = Int.random(in: 0...DataCountType.dozeBerries.goalServings)
-            realmProvider.saveCount(count, date: date, countType: .dozeBerries) 
-
             count = Int.random(in: 0...DataCountType.dozeVegetablesCruciferous.goalServings)
             realmProvider.saveCount(count, date: date, countType: .dozeVegetablesCruciferous)
             
             count = Int.random(in: 0...DataCountType.dozeGreens.goalServings)
             realmProvider.saveCount(count, date: date, countType: .dozeGreens) 
             
-            realmProvider.saveCount(1, date: date, countType: .dozeVegetablesOther) 
-            realmProvider.saveCount(1, date: date, countType: .dozeFlaxseeds) 
-            realmProvider.saveCount(1, date: date, countType: .dozeNuts) 
-            realmProvider.saveCount(1, date: date, countType: .dozeSpices) 
-            realmProvider.saveCount(1, date: date, countType: .dozeWholeGrains) 
-            realmProvider.saveCount(1, date: date, countType: .dozeBeverages) 
-            realmProvider.saveCount(1, date: date, countType: .dozeExercise) 
-            realmProvider.saveCount(1, date: date, countType: .otherVitaminB12) 
+            count = Int.random(in: 0...DataCountType.dozeNuts.goalServings)
+            realmProvider.saveCount(count, date: date, countType: .dozeNuts)
+            count = Int.random(in: 0...DataCountType.dozeSpices.goalServings)
+            realmProvider.saveCount(count, date: date, countType: .dozeSpices)
             
+            // .dozeWholeGrains 0-3
+            realmProvider.saveCount(5, date: date, countType: .dozeBeverages)   // 5/5
+            realmProvider.saveCount(1, date: date, countType: .dozeExercise)    // 1/1
+            realmProvider.saveCount(1, date: date, countType: .otherVitaminB12) // 1/1
+            
+            // --- 21 Tweaks Data Counts ---
+            realmProvider.saveCount(3, date: date, countType: .tweakMealWater)   // 3/3
+            realmProvider.saveCount(3, date: date, countType: .tweakMealNegCal)  // 3/3
+            // .tweakMealVinegar 3/3
+
+            count = Int.random(in: 0...DataCountType.tweakMealUndistracted.goalServings)
+            realmProvider.saveCount(count, date: date, countType: .tweakMealUndistracted)
+            
+            count = Int.random(in: 0...DataCountType.tweakMeal20Minutes.goalServings)
+            realmProvider.saveCount(count, date: date, countType: .tweakMeal20Minutes)
+
+            realmProvider.saveCount(1, date: date, countType: .tweakDailyTimeRestrict) // 1/1
+            realmProvider.saveCount(1, date: date, countType: .tweakExerciseTiming)    // 1/1
+
+            count = Int.random(in: 0...DataCountType.tweakCompleteIntentions.goalServings)
+            realmProvider.saveCount(count, date: date, countType: .tweakCompleteIntentions)
+
+            // --- Weight AM|PM Data ---
+            // always provides both AM and PM weights
+            realmProvider.saveCount(2, date: date, countType: .tweakWeightTwice) // 2/2
+
             let stepByAm = DateComponents(hour: Int.random(in: 7...8), minute: Int.random(in: 1...59))
             let dateAm = calendar.date(byAdding: stepByAm, to: date)!
             
@@ -124,7 +147,7 @@ public struct RealmBuiltInTest {
             
             if i < 5 {
                 let weightAmStr = String(format: "%.2f", weightAm)
-                let weightPmStr = String(format: "%.2f", weightAm)
+                let weightPmStr = String(format: "%.2f", weightPm)
                 logit.debug(
                     "    \(date) [am] \(dateAm) \(weightAmStr) [pm] \(datePm) \(weightPmStr)"
                 )
@@ -133,8 +156,10 @@ public struct RealmBuiltInTest {
             let stepByDay = DateComponents(day: -1)
             date = calendar.date(byAdding: stepByDay, to: date)!
         }
+        let timeOut = Date().getCurrentBenchmarkSeconds
+        let lapsed = timeOut - timeIn
         logit.debug(
-            "•••END••• RealmBuiltInTest doGenerateDBHistoryBIT(…)"
+            "•••END••• RealmBuiltInTest doGenerateDBHistoryBIT(\(numberOfDays)) \(lapsed) sec"
         )
     }
     
@@ -170,7 +195,8 @@ public struct RealmBuiltInTest {
     /// 7-day    7  6  5  4  3  2  1  0  7  6  5  4  3  2  1  0
     /// 
     /// ```
-    /// :DATA:GENERATE:
+    ///
+    /// •DB•DATA• :DATA:GENERATE:
     func doGenerateDBStreaksBIT(activity: ActivityProgress? = nil) {
         
         activity?.setText("0/12")
