@@ -1,6 +1,6 @@
 # Library Notes: iOS DailyDozen v3
 
-This documents provides a versions overview on the libraries used in the iOS DailyDozen App v3.x.
+_This documents provides a versions overview on the libraries used in the iOS DailyDozen App v3.x._
 
 ### ActiveLabel
 
