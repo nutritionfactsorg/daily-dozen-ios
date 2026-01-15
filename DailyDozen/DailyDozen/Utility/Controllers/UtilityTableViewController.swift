@@ -122,18 +122,26 @@ class UtilityTableViewController: UITableViewController {
     /// then some value(s) may not be written.  
     /// Do not have the Realm browser open when writing data in simulator to
     /// avoid this is situation. The root cause of this issue is unknown.
-    @IBAction func doUtilityRealmGenerateHistoryBtn(_ sender: UIButton) { // :DATA:GENERATE:
-        //   15 days (half month)
+    ///
+    /// •DB•DATA• :DATA:GENERATE: doUtilityRealmGenerateHistoryBtn
+    @IBAction func doUtilityRealmGenerateHistoryBtn(_ sender: UIButton) {
+        //   16 days (half month)
+        //   93 days (3 months)
+        //  183 days (6 months)
         // 1095 days (3 years) ~ 3 minutes M2 simulator
+
+        //RealmBuiltInTest.shared.doGenerateDBHistoryBIT(numberOfDays: 16, inLibDbDir: true)
+        //RealmBuiltInTest.shared.doGenerateDBHistoryBIT(numberOfDays: 93, inLibDbDir: true)
+        //RealmBuiltInTest.shared.doGenerateDBHistoryBIT(numberOfDays: 183, inLibDbDir: true)
         RealmBuiltInTest.shared.doGenerateDBHistoryBIT(numberOfDays: 1095, inLibDbDir: true)
-        //RealmBuiltInTest.shared.doGenerateDBHistoryBIT(numberOfDays: 150, inLibDbDir: true)
-        //RealmBuiltInTest.shared.doGenerateDBHistoryBIT(numberOfDays: 15, inLibDbDir: true)
     }
     
-    /// doUtilityRealmGenerateStreaksBtn(…) "Simulate Progress"
-    /// 
-    /// Note: 
-    @IBAction func doUtilityRealmGenerateStreaksBtn(_ sender: UIButton) { /// :DATA:GENERATE:
+    /// doUtilityRealmGenerateStreaksBtn(…) "Simulate Streaks"
+    ///
+    /// Note: simulates streaks
+    ///
+    /// •DB•DATA• :DATA:GENERATE: doUtilityRealmGenerateStreaksBtn
+    @IBAction func doUtilityRealmGenerateStreaksBtn(_ sender: UIButton) {
         let alert = UIAlertController(title: "", message: Strings.utilityTestStreaksMsg, preferredStyle: .alert)
         let cancelAction = UIAlertAction(title: Strings.utilityConfirmCancel, style: .cancel, handler: nil)
         alert.addAction(cancelAction)
@@ -324,7 +332,7 @@ class UtilityTableViewController: UITableViewController {
         static let utilityDbExportMsg = "Exported file named "
         static let utilitySettingsClearMsg = "Clear (erase) all settings?\n\nThis cannot be undone."
         static let utilityTestHistoryClearMsg = "Export the history data to create an importable backup file before clearing the history data. The clear action cannot be undone.\n\nClear (erase) all history data from the database?"
-        static let utilityTestStreaksMsg = "The Simulate Progress action cannot be undone. If needed, export the history data to create an importable backup file.\n\nAdd the Simulated Progress data to the database?"
+        static let utilityTestStreaksMsg = "The Simulate Streaks action cannot be undone. If needed, export the history data to create an importable backup file.\n\nAdd the Simulated Progress data to the database?"
     }
     
     private func alertTwoButton() {
