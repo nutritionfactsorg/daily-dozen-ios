@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="32700.99.1234" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="CD1-9a-Pcp">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="24506" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="CD1-9a-Pcp">
     <device id="retina6_0" orientation="portrait" appearance="light"/>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="22684"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="24504"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -20,14 +20,14 @@
                             <tableViewSection headerTitle="SQLite Utilities" id="fXK-YN-EGm">
                                 <cells>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="none" indentationWidth="10" id="nbB-ER-Pei" userLabel="Cell Admin Backup">
-                                        <rect key="frame" x="0.0" y="55.333332061767578" width="390" height="43.666667938232422"/>
+                                        <rect key="frame" x="0.0" y="55.333332061767578" width="390" height="53"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="nbB-ER-Pei" id="D5f-Nb-GkR">
-                                            <rect key="frame" x="0.0" y="0.0" width="390" height="43.666667938232422"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="390" height="53"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="pO8-rF-0UH">
-                                                    <rect key="frame" x="145.66666666666666" y="7" width="99" height="30"/>
+                                                    <rect key="frame" x="145.66666666666666" y="11.666666666666664" width="99" height="30"/>
                                                     <state key="normal" title="Admin Backup"/>
                                                     <connections>
                                                         <action selector="doUtilitySQLiteAdminBackupBtn:" destination="CD1-9a-Pcp" eventType="touchUpInside" id="qwK-rB-quv"/>
@@ -41,14 +41,14 @@
                                         </tableViewCellContentView>
                                     </tableViewCell>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="none" indentationWidth="10" id="VEY-We-Vp4" userLabel="Cell Admin New">
-                                        <rect key="frame" x="0.0" y="99" width="390" height="43.666667938232422"/>
+                                        <rect key="frame" x="0.0" y="108.33333206176758" width="390" height="53"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="VEY-We-Vp4" id="mbK-nY-vA4">
-                                            <rect key="frame" x="0.0" y="0.0" width="390" height="43.666667938232422"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="390" height="53"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="MZe-q3-xPz">
-                                                    <rect key="frame" x="156" y="7" width="78" height="30"/>
+                                                    <rect key="frame" x="156" y="11.666666666666664" width="78" height="30"/>
                                                     <state key="normal" title="Admin New"/>
                                                     <connections>
                                                         <action selector="doUtilitySQLiteAdminNewBtn:" destination="CD1-9a-Pcp" eventType="touchUpInside" id="rxa-OV-v4d"/>
@@ -62,14 +62,14 @@
                                         </tableViewCellContentView>
                                     </tableViewCell>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="none" indentationWidth="10" id="ssZ-Y3-8nF" userLabel="Cell Admin Restore">
-                                        <rect key="frame" x="0.0" y="142.66666793823242" width="390" height="43.666667938232422"/>
+                                        <rect key="frame" x="0.0" y="161.33333206176758" width="390" height="53"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="ssZ-Y3-8nF" id="sOM-4v-Zie">
-                                            <rect key="frame" x="0.0" y="0.0" width="390" height="43.666667938232422"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="390" height="53"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="dDI-wg-I1r">
-                                                    <rect key="frame" x="145" y="7" width="100" height="30"/>
+                                                    <rect key="frame" x="145" y="11.666666666666664" width="100" height="30"/>
                                                     <state key="normal" title="Admin Restore"/>
                                                     <connections>
                                                         <action selector="doUtilitySQLiteAdminRestoreBtn:" destination="CD1-9a-Pcp" eventType="touchUpInside" id="nYQ-X9-oqo"/>
@@ -83,14 +83,14 @@
                                         </tableViewCellContentView>
                                     </tableViewCell>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="none" indentationWidth="10" id="ooJ-RH-bg1" userLabel="Cell Clear DB">
-                                        <rect key="frame" x="0.0" y="186.33333587646484" width="390" height="43.666667938232422"/>
+                                        <rect key="frame" x="0.0" y="214.33333206176758" width="390" height="53"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="ooJ-RH-bg1" id="vuc-rK-PmY">
-                                            <rect key="frame" x="0.0" y="0.0" width="390" height="43.666667938232422"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="390" height="53"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="vhd-JM-ncr">
-                                                    <rect key="frame" x="164.66666666666666" y="7" width="61" height="30"/>
+                                                    <rect key="frame" x="164.66666666666666" y="11.666666666666664" width="61" height="30"/>
                                                     <state key="normal" title="Clear DB"/>
                                                     <connections>
                                                         <action selector="doUtilitySQLiteClearDbBtn:" destination="CD1-9a-Pcp" eventType="touchUpInside" id="MUw-ZK-Yy6"/>
@@ -104,14 +104,14 @@
                                         </tableViewCellContentView>
                                     </tableViewCell>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="none" indentationWidth="10" id="Far-bm-sml" userLabel="Cell Create Data">
-                                        <rect key="frame" x="0.0" y="230.00000381469727" width="390" height="43.666667938232422"/>
+                                        <rect key="frame" x="0.0" y="267.33333206176758" width="390" height="53"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="Far-bm-sml" id="Ol8-eM-Yws">
-                                            <rect key="frame" x="0.0" y="0.0" width="390" height="43.666667938232422"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="390" height="53"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="CRQ-I3-vQL">
-                                                    <rect key="frame" x="154" y="7" width="82" height="30"/>
+                                                    <rect key="frame" x="154" y="11.666666666666664" width="82" height="30"/>
                                                     <state key="normal" title="Create Data"/>
                                                     <connections>
                                                         <action selector="doUtilitySQLiteCreateDataBtn:" destination="CD1-9a-Pcp" eventType="touchUpInside" id="LMs-kX-Lms"/>
@@ -125,14 +125,14 @@
                                         </tableViewCellContentView>
                                     </tableViewCell>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="none" indentationWidth="10" id="db1-pp-tAr" userLabel="Cell Export Data">
-                                        <rect key="frame" x="0.0" y="273.66667175292969" width="390" height="43.666667938232422"/>
+                                        <rect key="frame" x="0.0" y="320.33333206176758" width="390" height="53"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="db1-pp-tAr" id="oce-hY-VIg">
-                                            <rect key="frame" x="0.0" y="0.0" width="390" height="43.666667938232422"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="390" height="53"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="dP0-2U-mIk">
-                                                    <rect key="frame" x="154.66666666666666" y="7" width="81" height="30"/>
+                                                    <rect key="frame" x="154.66666666666666" y="11.666666666666664" width="81" height="30"/>
                                                     <state key="normal" title="Export Data"/>
                                                     <connections>
                                                         <action selector="doUtilitySQLiteExportDataBtn:" destination="CD1-9a-Pcp" eventType="touchUpInside" id="C0S-Yp-Foq"/>
@@ -146,14 +146,14 @@
                                         </tableViewCellContentView>
                                     </tableViewCell>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="none" indentationWidth="10" id="am6-79-vG2" userLabel="Cell Import Data">
-                                        <rect key="frame" x="0.0" y="317.33333969116211" width="390" height="43.666667938232422"/>
+                                        <rect key="frame" x="0.0" y="373.33333206176758" width="390" height="53"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="am6-79-vG2" id="Ss8-xa-840">
-                                            <rect key="frame" x="0.0" y="0.0" width="390" height="43.666667938232422"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="390" height="53"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="cxO-SU-Gab">
-                                                    <rect key="frame" x="154.66666666666666" y="7" width="81" height="30"/>
+                                                    <rect key="frame" x="154.66666666666666" y="11.666666666666664" width="81" height="30"/>
                                                     <state key="normal" title="Import Data"/>
                                                     <connections>
                                                         <action selector="doUtilitySQLiteImportDataBtn:" destination="CD1-9a-Pcp" eventType="touchUpInside" id="2W1-g7-gFw"/>
@@ -167,14 +167,14 @@
                                         </tableViewCellContentView>
                                     </tableViewCell>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="none" indentationWidth="10" id="leh-5P-Z7r" userLabel="Cell Timing Test">
-                                        <rect key="frame" x="0.0" y="361.00000762939453" width="390" height="43.666667938232422"/>
+                                        <rect key="frame" x="0.0" y="426.33333206176758" width="390" height="53"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="leh-5P-Z7r" id="pap-Bm-wRb">
-                                            <rect key="frame" x="0.0" y="0.0" width="390" height="43.666667938232422"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="390" height="53"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="UpX-P7-cnh">
-                                                    <rect key="frame" x="155" y="7" width="80" height="30"/>
+                                                    <rect key="frame" x="155" y="11.666666666666664" width="80" height="30"/>
                                                     <state key="normal" title="Timing Test"/>
                                                     <connections>
                                                         <action selector="doUtilitySQLiteTimingTextBtn:" destination="CD1-9a-Pcp" eventType="touchUpInside" id="Vqt-t4-oRd"/>
@@ -192,14 +192,14 @@
                             <tableViewSection headerTitle="Realm Utilities" id="2lg-0x-cs5">
                                 <cells>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="none" indentationWidth="10" id="c7x-Wp-lwG" userLabel="Cell Test Clear All Data">
-                                        <rect key="frame" x="0.0" y="460.66667366027832" width="390" height="43.666667938232422"/>
+                                        <rect key="frame" x="0.0" y="535.33333015441895" width="390" height="53"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="c7x-Wp-lwG" id="Y48-Pf-xjB">
-                                            <rect key="frame" x="0.0" y="0.0" width="390" height="43.666667938232422"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="390" height="53"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="u1x-kD-z9U">
-                                                    <rect key="frame" x="140" y="7" width="110" height="30"/>
+                                                    <rect key="frame" x="140" y="11.666666666666664" width="110" height="30"/>
                                                     <state key="normal" title="Clear All History"/>
                                                     <connections>
                                                         <action selector="doUtilityRealmClearHistoryBtn:" destination="CD1-9a-Pcp" eventType="touchUpInside" id="nPZ-nI-tbc"/>
@@ -213,14 +213,14 @@
                                         </tableViewCellContentView>
                                     </tableViewCell>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="none" indentationWidth="10" id="AtJ-yX-k75" userLabel="Cell Generate Test History">
-                                        <rect key="frame" x="0.0" y="504.33334159851074" width="390" height="43.666667938232422"/>
+                                        <rect key="frame" x="0.0" y="588.33333015441895" width="390" height="53"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="AtJ-yX-k75" id="amp-jn-Pgq">
-                                            <rect key="frame" x="0.0" y="0.0" width="390" height="43.666667938232422"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="390" height="53"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="u8x-U4-ghk">
-                                                    <rect key="frame" x="120" y="7" width="150" height="30"/>
+                                                    <rect key="frame" x="120" y="11.666666666666664" width="150" height="30"/>
                                                     <state key="normal" title="Generate Test History"/>
                                                     <connections>
                                                         <action selector="doUtilityRealmGenerateHistoryBtn:" destination="CD1-9a-Pcp" eventType="touchUpInside" id="byR-wc-HF1"/>
@@ -233,16 +233,16 @@
                                             </constraints>
                                         </tableViewCellContentView>
                                     </tableViewCell>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="none" indentationWidth="10" id="3SC-VP-1St" userLabel="Cell Simulate Progress">
-                                        <rect key="frame" x="0.0" y="548.00000953674316" width="390" height="43.666667938232422"/>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="none" indentationWidth="10" id="3SC-VP-1St" userLabel="Cell Simulate Streaks">
+                                        <rect key="frame" x="0.0" y="641.33333015441895" width="390" height="53"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="3SC-VP-1St" id="loi-cx-hcF">
-                                            <rect key="frame" x="0.0" y="0.0" width="390" height="43.666667938232422"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="390" height="53"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="AlB-LT-cca">
-                                                    <rect key="frame" x="133" y="7" width="124" height="30"/>
-                                                    <state key="normal" title="Simulate Progress"/>
+                                                    <rect key="frame" x="137.66666666666666" y="11.666666666666664" width="115" height="30"/>
+                                                    <state key="normal" title="Simulate Streaks"/>
                                                     <connections>
                                                         <action selector="doUtilityRealmGenerateStreaksBtn:" destination="CD1-9a-Pcp" eventType="touchUpInside" id="xmJ-jb-TYi"/>
                                                     </connections>
@@ -255,14 +255,14 @@
                                         </tableViewCellContentView>
                                     </tableViewCell>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="none" indentationWidth="10" id="hG4-mX-ruv" userLabel="Cell Export History Data">
-                                        <rect key="frame" x="0.0" y="591.66667747497559" width="390" height="43.666667938232422"/>
+                                        <rect key="frame" x="0.0" y="694.33333015441895" width="390" height="53"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="hG4-mX-ruv" id="1cD-HS-zjM">
-                                            <rect key="frame" x="0.0" y="0.0" width="390" height="43.666667938232422"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="390" height="53"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="eFl-tL-qa9">
-                                                    <rect key="frame" x="128" y="7" width="134" height="30"/>
+                                                    <rect key="frame" x="128" y="11.666666666666664" width="134" height="30"/>
                                                     <accessibility key="accessibilityConfiguration" identifier="util_db_btn_export_access"/>
                                                     <state key="normal" title="Export History Data"/>
                                                     <connections>
@@ -277,14 +277,14 @@
                                         </tableViewCellContentView>
                                     </tableViewCell>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="none" indentationWidth="10" id="GeT-AV-fii" userLabel="Cell Import History Data">
-                                        <rect key="frame" x="0.0" y="635.33334541320801" width="390" height="43.666667938232422"/>
+                                        <rect key="frame" x="0.0" y="747.33333015441895" width="390" height="53"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="GeT-AV-fii" id="AtT-ng-gve">
-                                            <rect key="frame" x="0.0" y="0.0" width="390" height="43.666667938232422"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="390" height="53"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="bhq-Sp-CXh">
-                                                    <rect key="frame" x="127.66666666666669" y="7" width="135" height="30"/>
+                                                    <rect key="frame" x="127.66666666666669" y="11.666666666666664" width="135" height="30"/>
                                                     <state key="normal" title="Import History Data"/>
                                                     <connections>
                                                         <action selector="doUtilityRealmDBImportBtn:" destination="CD1-9a-Pcp" eventType="touchUpInside" id="JvN-bf-9Iq"/>
@@ -302,13 +302,13 @@
                             <tableViewSection headerTitle="Date &amp; Time Test  Utilities" id="ImX-8b-ncH" userLabel="Date Time Test  Utilities">
                                 <cells>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="none" indentationWidth="10" id="Oid-2b-knT" userLabel="Add 1 Day">
-                                        <rect key="frame" x="0.0" y="735.00001335144043" width="390" height="43.666667938232422"/>
+                                        <rect key="frame" x="0.0" y="856.33333015441895" width="390" height="43.666667938232422"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="Oid-2b-knT" id="slK-sz-hx4">
                                             <rect key="frame" x="0.0" y="0.0" width="390" height="43.666667938232422"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="8CC-sS-K4Z">
+                                                <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="8CC-sS-K4Z">
                                                     <rect key="frame" x="150" y="7" width="90" height="30"/>
                                                     <state key="normal" title="Add One Day"/>
                                                     <connections>
@@ -327,13 +327,13 @@
                             <tableViewSection headerTitle="Appearance" id="hXa-yC-G2R">
                                 <cells>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="none" indentationWidth="10" id="H2a-r6-K4L" userLabel="Appearance Name Cell">
-                                        <rect key="frame" x="0.0" y="834.66668128967285" width="390" height="44"/>
+                                        <rect key="frame" x="0.0" y="955.99999809265137" width="390" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="H2a-r6-K4L" id="Fvh-AD-6Ne">
                                             <rect key="frame" x="0.0" y="0.0" width="390" height="44"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="pFT-xd-lsT">
+                                                <segmentedControl opaque="NO" contentMode="scaleToFill" ambiguous="YES" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="pFT-xd-lsT">
                                                     <rect key="frame" x="20" y="6.6666666666666679" width="350" height="32"/>
                                                     <segments>
                                                         <segment title="Standard"/>
@@ -357,7 +357,7 @@
                             <tableViewSection headerTitle="Settings" id="n78-aT-NfW">
                                 <cells>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="none" indentationWidth="10" id="Fuy-eB-CVN" userLabel="Cell Clear Settings">
-                                        <rect key="frame" x="0.0" y="934.66668128967285" width="390" height="44"/>
+                                        <rect key="frame" x="0.0" y="1055.9999980926514" width="390" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="Fuy-eB-CVN" id="7Xb-De-znD">
                                             <rect key="frame" x="0.0" y="0.0" width="390" height="44"/>
@@ -378,7 +378,7 @@
                                         </tableViewCellContentView>
                                     </tableViewCell>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="none" indentationWidth="10" id="KjC-8e-ySM" userLabel="Cell Show Settings">
-                                        <rect key="frame" x="0.0" y="978.66668128967285" width="390" height="44"/>
+                                        <rect key="frame" x="0.0" y="1099.9999980926514" width="390" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="KjC-8e-ySM" id="UP2-9H-XtR">
                                             <rect key="frame" x="0.0" y="0.0" width="390" height="44"/>
