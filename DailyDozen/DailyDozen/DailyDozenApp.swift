@@ -114,6 +114,21 @@ struct DailyDozenApp: App {
         ])
     }
     
+    func logMemoryUsage() {
+            var info = mach_task_basic_info()
+            var count = mach_msg_type_number_t(MemoryLayout<mach_task_basic_info>.size / 4)
+            let kerr: kern_return_t = withUnsafeMutablePointer(to: &info) {
+                $0.withMemoryRebound(to: integer_t.self, capacity: 1) {
+                    task_info(mach_task_self_, task_flavor_t(MACH_TASK_BASIC_INFO), $0, &count)
+                }
+            }
+            if kerr == KERN_SUCCESS {
+                print("•TRACE•APP• Memory used: \(info.resident_size / 1024 / 1024) MB")
+            } else {
+                print("•TRACE•APP• Error getting memory info: \(kerr)")
+            }
+        }
+    
     var body: some Scene {
         WindowGroup {
             Group {
@@ -148,6 +163,7 @@ struct DailyDozenApp: App {
                 case .background:
                     await SqliteDatabaseActor.shared.close()
                     print("•TRACE•APP• Database closed on entering background")
+                    //logMemoryUsage()
                 case .active, .inactive:
                     do {
                         try await SqliteDatabaseActor.shared.ensureInitialized()
@@ -155,6 +171,7 @@ struct DailyDozenApp: App {
                     } catch {
                         print("•ERROR•APP• Failed to reopen DB on foreground: \(error)")
                     }
+                    //logMemoryUsage()
                 @unknown default:
                     break
                 }
