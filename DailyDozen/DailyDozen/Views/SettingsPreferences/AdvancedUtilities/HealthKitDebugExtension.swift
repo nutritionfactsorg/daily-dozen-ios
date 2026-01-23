@@ -3,53 +3,53 @@
 //  DailyDozen
 //
 
-#if DEBUG
 import HealthKit
 
+#if DEBUG
 extension HealthManager {
     
-    //func debugPrintAuthorizationStatus() {
-    //    Task { @MainActor in
-    //        guard HKHealthStore.isHealthDataAvailable() else {
-    //            print("•HK• HealthKit not available")
-    //            return
-    //        }
-    //        
-    //        let bodyMass = HKQuantityType.quantityType(forIdentifier: .bodyMass)!
-    //        let readTypes: Set<HKObjectType> = [bodyMass]
-    //        let writeTypes: Set<HKSampleType> = Set(readTypes.compactMap { $0 as? HKSampleType })
-    //        
-    //        print("=== HealthKit Authorization Status ===")
-    //        print("Read  \(bodyMass.identifier): \(hkHealthStore.authorizationStatus(for: bodyMass).humanReadable)")
-    //        
-    //        // THIS IS THE ONE THAT ALWAYS WORKS — the callback version
-    //        hkHealthStore.getRequestStatusForAuthorization(toShare: writeTypes, read: readTypes) { status, error in
-    //            Task { @MainActor in
-    //                if let error = error {
-    //                    print("•HK• Error: \(error.localizedDescription)")
-    //                } else {
-    //                    print("Overall: \(status.humanReadable)")
-    //                }
-    //                print("========================================\n")
-    //            }
-    //        }
-    //    }
-    //}
+    func debugPrintAuthorizationStatus() {
+        Task { @MainActor in
+            guard HKHealthStore.isHealthDataAvailable() else {
+                print("•HK• HealthKit not available")
+                return
+            }
+            
+            let bodyMass = HKQuantityType.quantityType(forIdentifier: .bodyMass)!
+            let readTypes: Set<HKObjectType> = [bodyMass]
+            let writeTypes: Set<HKSampleType> = Set(readTypes.compactMap { $0 as? HKSampleType })
+            
+            print("=== HealthKit Authorization Status ===")
+            print("Read  \(bodyMass.identifier): \(hkHealthStore.authorizationStatus(for: bodyMass).humanReadable)")
+            
+            // THIS IS THE ONE THAT ALWAYS WORKS — the callback version
+            hkHealthStore.getRequestStatusForAuthorization(toShare: writeTypes, read: readTypes) { status, error in
+                Task { @MainActor in
+                    if let error = error {
+                        print("•HK• Error: \(error.localizedDescription)")
+                    } else {
+                        print("Overall: \(status.humanReadable)")
+                    }
+                    print("========================================\n")
+                }
+            }
+        }
+    }
     
-    //func debugForceHealthKitPermissionPrompt() {
-    //    Task { @MainActor in
-    //        let bodyMass = HKQuantityType.quantityType(forIdentifier: .bodyMass)!
-    //        let readTypes: Set<HKObjectType> = [bodyMass]
-    //        let writeTypes: Set<HKSampleType> = Set(readTypes.compactMap { $0 as? HKSampleType })
-    //
-    //        do {
-    //            try await hkHealthStore.requestAuthorization(toShare: writeTypes, read: readTypes)
-    //            print("•HK• Permission prompt shown (or skipped)")
-    //        } catch {
-    //            print("•HK• Request failed: \(error)")
-    //        }
-    //    }
-    //}
+    func debugForceHealthKitPermissionPrompt() {
+        Task { @MainActor in
+            let bodyMass = HKQuantityType.quantityType(forIdentifier: .bodyMass)!
+            let readTypes: Set<HKObjectType> = [bodyMass]
+            let writeTypes: Set<HKSampleType> = Set(readTypes.compactMap { $0 as? HKSampleType })
+    
+            do {
+                try await hkHealthStore.requestAuthorization(toShare: writeTypes, read: readTypes)
+                print("•HK• Permission prompt shown (or skipped)")
+            } catch {
+                print("•HK• Request failed: \(error)")
+            }
+        }
+    }
 }
 
 // Extensions (unchanged)

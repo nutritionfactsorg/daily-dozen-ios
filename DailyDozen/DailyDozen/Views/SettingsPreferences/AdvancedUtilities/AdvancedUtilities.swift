@@ -123,30 +123,33 @@ struct AdvancedUtilities: View {
                 }
                 .buttonStyle(.plain)
             }
+            
+#if DEBUG
             Section("HealthKit") {
-                //Button("Print HK Status") {
-                //    HealthManager.shared.debugPrintAuthorizationStatus()
-                //}
+                Button("Print HK Status") {
+                    HealthManager.shared.debugPrintAuthorizationStatus()
+                }
 
-                //Button("Force HK Permission Prompt (or Skipped)") {
-                //    HealthManager.shared.debugForceHealthKitPermissionPrompt()
-                //}
-                //.tint(.orange)
+                Button("Force HK Permission Prompt (or Skipped)") {
+                    HealthManager.shared.debugForceHealthKitPermissionPrompt()
+                }
+                .tint(.orange)
                 
-                //Button("Open Reset HK Permissions", role: .destructive) {
-                //    // Direct deep-link to YOUR app's Health permissions page
-                //    if let url = URL(string: "App-prefs:Privacy&path=HEALTH") {
-                //        UIApplication.shared.open(url)
-                //    }
-                //}
-                //.tint(.blue)
+                Button("Open Reset HK Permissions", role: .destructive) {
+                    // Direct deep-link to YOUR app's Health permissions page
+                    if let url = URL(string: "App-prefs:Privacy&path=HEALTH") {
+                        UIApplication.shared.open(url)
+                    }
+                }
+                .tint(.blue)
 
-                //Button("Delete All Body Mass Data in HK", role: .destructive) {
-                //    HealthManager.shared.debugDeleteAllBodyMassData()
-                //}
-                //.tint(.nfRedFlamePea)
-                //.buttonStyle(.borderedProminent)
+                Button("Delete All Body Mass Data in HK", role: .destructive) {
+                    HealthManager.shared.debugDeleteAllBodyMassData()
+                }
+                .tint(.nfRedFlamePea)
+                .buttonStyle(.borderedProminent)
             }
+#endif
 
             Section("Appearance") {
                 VStack {
