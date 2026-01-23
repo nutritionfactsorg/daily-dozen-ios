@@ -68,6 +68,7 @@ actor SqliteDatabaseActor {
             print("TABLE dataweight_table NOT FOUND")
         }
     }
+    
     //debug dataweight_table
     func dumpAllRows() {
         let sql = "SELECT * FROM dataweight_table;"
@@ -84,13 +85,14 @@ actor SqliteDatabaseActor {
             sqlite3_finalize(stmt)
         }
     }
+    
     // MARK: - Setup
     
     func setup() async throws {
         guard !isInitialized else { return }
         await close()
         guard let dbURL = dbURL else { throw DatabaseError.invalidURL }
-        print("•INFO•DB• SqliteDatabaseActor setup() opening DB at \(dbURL.path)")
+        print("•INFO•SQLDB• SqliteDatabaseActor setup() opening DB at \(dbURL.path)")
         guard sqlite3_open(dbURL.path, &db) == SQLITE_OK else {
             let error = String(cString: sqlite3_errmsg(db))
             throw DatabaseError.openFailed(error)
@@ -125,7 +127,7 @@ actor SqliteDatabaseActor {
         """
         
         if !execute(query: createWeightTable) || !execute(query: createCountTable) {
-            print("•ERROR• Failed to create tables")
+            print("•ERROR•SQLDB• Failed to create tables")
         }
         
         let cleanWeightQuery = """
@@ -140,11 +142,11 @@ actor SqliteDatabaseActor {
         """
         
         if !execute(query: cleanWeightQuery) || !execute(query: cleanCountQuery) {
-            print("•ERROR• Failed to clean invalid records")
+            print("•ERROR•SQLDB• Failed to clean invalid records")
         }
         
         isInitialized = true
-        print("•INFO•DB• SqliteDatabaseActor setup() DB initialized at \(dbURL.path)")
+        print("•INFO•SQLDB• SqliteDatabaseActor setup() DB initialized at \(dbURL.path)")
         // await dumpDatabase()   use for debugging only
         
         let schemaSql = "PRAGMA table_info(dataweight_table);"
@@ -170,11 +172,11 @@ actor SqliteDatabaseActor {
         do {
             try await ensureInitialized()
         } catch {
-            print("•ERROR•DB• fetchWeightRecords: Failed to setup database: \(error)")
+            print("•ERROR•SQLDB• fetchWeightRecords: Failed to setup database: \(error)")
             return []
         }
         guard !date.isEmpty, Date(datestampSid: date) != nil else {
-            print("•ERROR• Invalid date for fetchWeightRecords: \(date)")
+            print("•ERROR•SQLDB• Invalid date for fetchWeightRecords: \(date)")
             return []
         }
         
@@ -186,7 +188,7 @@ actor SqliteDatabaseActor {
         var stmt: OpaquePointer?
         guard sqlite3_prepare_v2(db, query, -1, &stmt, nil) == SQLITE_OK,
               sqlite3_bind_text(stmt, 1, date.cString(using: .utf8), -1, SQLITE_TRANSIENT) == SQLITE_OK else {
-            print("•ERROR• Prepare/bind failed for fetchWeightRecords: \(String(cString: sqlite3_errmsg(db)))")
+            print("•ERROR•SQLDB• Prepare/bind failed for fetchWeightRecords: \(String(cString: sqlite3_errmsg(db)))")
             sqlite3_finalize(stmt)
             return []
         }
@@ -201,11 +203,11 @@ actor SqliteDatabaseActor {
             if let record = SqlDataWeightRecord(row: row) {
                 records.append(record)
             } else {
-                print("•ERROR• Invalid weight record for date: \(date), row: \(row)")
+                print("•ERROR•SQLDB• Invalid weight record for date: \(date), row: \(row)")
             }
         }
         sqlite3_finalize(stmt)
-        // print("•INFO•DB• Fetched \(records.count) weight records for \(date)")
+        // print("•INFO•SQLDB• Fetched \(records.count) weight records for \(date)")
         return records
     }
     
@@ -214,7 +216,7 @@ actor SqliteDatabaseActor {
         do {
             try await ensureInitialized()
         } catch {
-            print("•ERROR• DB unavailable in saveWeight: \(error)")
+            print("•ERROR•SQLDB• DB unavailable in saveWeight: \(error)")
             return false
         }
         
@@ -222,7 +224,7 @@ actor SqliteDatabaseActor {
               [0, 1].contains(record.dataweight_ampm_pnid),
               record.dataweight_kg >= 0,
               record.dataweight_time.matches("^[0-2][0-9]:[0-5][0-9]$") else {
-            print("•ERROR• Invalid record: \(record.idString), kg=\(record.dataweight_kg), time=\(record.dataweight_time)")
+            print("•ERROR•SQLDB• Invalid record: \(record.idString), kg=\(record.dataweight_kg), time=\(record.dataweight_time)")
             return false
         }
         
@@ -232,7 +234,7 @@ actor SqliteDatabaseActor {
             let deleteQuery = "DELETE FROM dataweight_table WHERE dataweight_date_psid = ? AND dataweight_ampm_pnid = ?;"
             var stmt: OpaquePointer?
             guard sqlite3_prepare_v2(db, deleteQuery, -1, &stmt, nil) == SQLITE_OK else {
-                print("•ERROR• Delete prepare failed: \(String(cString: sqlite3_errmsg(db)))")
+                print("•ERROR•SQLDB• Delete prepare failed: \(String(cString: sqlite3_errmsg(db)))")
                 sqlite3_exec(db, "ROLLBACK;", nil, nil, nil)
                 return false
             }
@@ -242,7 +244,7 @@ actor SqliteDatabaseActor {
             sqlite3_bind_int(stmt, 2, Int32(oldAmpm))
             
             if sqlite3_step(stmt) != SQLITE_DONE {
-                print("•ERROR• Delete step failed: \(String(cString: sqlite3_errmsg(db)))")
+                print("•ERROR•SQLDB• Delete step failed: \(String(cString: sqlite3_errmsg(db)))")
                 sqlite3_exec(db, "ROLLBACK;", nil, nil, nil)
                 sqlite3_finalize(stmt)
                 return false
@@ -253,7 +255,7 @@ actor SqliteDatabaseActor {
         let insertQuery = "INSERT INTO dataweight_table (dataweight_date_psid, dataweight_ampm_pnid, dataweight_kg, dataweight_time) VALUES (?, ?, ?, ?);"
         var stmt: OpaquePointer?
         guard sqlite3_prepare_v2(db, insertQuery, -1, &stmt, nil) == SQLITE_OK else {
-            print("•ERROR• Insert prepare failed: \(String(cString: sqlite3_errmsg(db)))")
+            print("•ERROR•SQLDB• Insert prepare failed: \(String(cString: sqlite3_errmsg(db)))")
             sqlite3_exec(db, "ROLLBACK;", nil, nil, nil)
             return false
         }
@@ -265,7 +267,7 @@ actor SqliteDatabaseActor {
         _ = record.dataweight_time.withCString { sqlite3_bind_text(stmt, 4, $0, -1, SQLITE_TRANSIENT) }
         
         if sqlite3_step(stmt) != SQLITE_DONE {
-            print("•ERROR• Insert step failed: \(String(cString: sqlite3_errmsg(db)))")
+            print("•ERROR•SQLDB• Insert step failed: \(String(cString: sqlite3_errmsg(db)))")
             sqlite3_exec(db, "ROLLBACK;", nil, nil, nil)
             sqlite3_finalize(stmt)
             return false
@@ -273,7 +275,7 @@ actor SqliteDatabaseActor {
         sqlite3_finalize(stmt)
         
         sqlite3_exec(db, "COMMIT;", nil, nil, nil)
-        //print("•VERBOSE•DB• Saved weight for \(record.idString): \(record.dataweight_kg) kg")
+        //print("•VERBOSE•SQLDB• Saved weight for \(record.idString): \(record.dataweight_kg) kg")
         return true
     }
     
@@ -281,7 +283,7 @@ actor SqliteDatabaseActor {
     
     func deleteWeight(datePsid: String, ampm: Int) async -> Bool {
         guard let db = db else { return false }
-        print("•INFO•DB• Database at \(String(describing: dbURL?.path))")
+        print("•INFO•SQLDB• Database at \(String(describing: dbURL?.path))")
         
         // SELECT for debugging (optional — remove if not needed)
         let selectSql = "SELECT * FROM dataweight_table WHERE dataweight_date_psid = ? AND dataweight_ampm_pnid = ?;"
@@ -302,13 +304,13 @@ actor SqliteDatabaseActor {
             }
             sqlite3_finalize(selectStmt)
         } else {
-            print("•DB• Select prepare error: \(String(cString: sqlite3_errmsg(db)))")
+            print("•SQLDB• Select prepare error: \(String(cString: sqlite3_errmsg(db)))")
         }
         
         // DELETE
         var stmt: OpaquePointer?
         let sql = "DELETE FROM dataweight_table WHERE dataweight_date_psid = ? AND dataweight_ampm_pnid = ?;"
-        print("•DB• Deleting weight for datePsid=\(datePsid), ampm=\(ampm)")
+        print("•SQLDB• Deleting weight for datePsid=\(datePsid), ampm=\(ampm)")
         if sqlite3_prepare_v2(db, sql, -1, &stmt, nil) == SQLITE_OK {
             _ = datePsid.withCString { cString in
                 sqlite3_bind_text(stmt, 1, cString, -1, unsafeBitCast(OpaquePointer(bitPattern: -1), to: sqlite3_destructor_type.self))
@@ -316,29 +318,30 @@ actor SqliteDatabaseActor {
             sqlite3_bind_int(stmt, 2, Int32(ampm))
             if sqlite3_step(stmt) == SQLITE_DONE {
                 let changes = sqlite3_changes(db)
-                print("•DB• Rows deleted: \(changes)")
+                print("•SQLDB• Rows deleted: \(changes)")
                 sqlite3_finalize(stmt)
                 return changes > 0
             } else {
-                print("•DB• Step error: \(String(cString: sqlite3_errmsg(db)))")
+                print("•SQLDB• Step error: \(String(cString: sqlite3_errmsg(db)))")
             }
         } else {
-            print("•DB• Prepare error: \(String(cString: sqlite3_errmsg(db)))")
+            print("•SQLDB• Prepare error: \(String(cString: sqlite3_errmsg(db)))")
         }
         sqlite3_finalize(stmt)
         return false
     }
+    
     // MARK: - Count Operations
     
-    func fetchCountRecords(forDate date: String) async -> [SqlDataCountRecord] { // Make async
+    func fetchCountRecords(forDate: String) async -> [SqlDataCountRecord] { // Make async
         do {
             try await ensureInitialized()    // ← one line fixes everything
         } catch {
-            print("•ERROR• fetchCountRecords: DB not available: \(error)")
+            print("•ERROR•SQLDB• fetchCountRecords: DB not available: \(error)")
             return []
         }
-        guard !date.isEmpty, Date(datestampSid: date) != nil else {
-            print("•ERROR• Invalid date for fetchCountRecords: \(date)")
+        guard !forDate.isEmpty, Date(datestampSid: forDate) != nil else {
+            print("•ERROR•SQLDB• Invalid date for fetchCountRecords: \(forDate)")
             return []
         }
         
@@ -349,8 +352,8 @@ actor SqliteDatabaseActor {
         """
         var stmt: OpaquePointer?
         guard sqlite3_prepare_v2(db, query, -1, &stmt, nil) == SQLITE_OK,
-              sqlite3_bind_text(stmt, 1, date.cString(using: .utf8), -1, SQLITE_TRANSIENT) == SQLITE_OK else {
-            print("•ERROR• Prepare/bind failed for fetchCountRecords: \(String(cString: sqlite3_errmsg(db)))")
+              sqlite3_bind_text(stmt, 1, forDate.cString(using: .utf8), -1, SQLITE_TRANSIENT) == SQLITE_OK else {
+            print("•ERROR•SQLDB• Prepare/bind failed for fetchCountRecords: \(String(cString: sqlite3_errmsg(db)))")
             sqlite3_finalize(stmt)
             return []
         }
@@ -364,11 +367,11 @@ actor SqliteDatabaseActor {
             if let record = SqlDataCountRecord(row: row) {
                 records.append(record)
             } else {
-                print("•ERROR• Invalid count record for date: \(date), row: \(row)")
+                print("•ERROR•SQLDB• Invalid count record for date: \(forDate), row: \(row)")
             }
         }
         sqlite3_finalize(stmt)
-        // print("•INFO•DB• Fetched \(records.count) count records for \(date)")
+        // print("•INFO•SQLDB• Fetched \(records.count) count records for \(date)")
         return records
     }
     
@@ -376,12 +379,12 @@ actor SqliteDatabaseActor {
         do {
             try await ensureInitialized()    // ← one line fixes everything
         } catch {
-            print("•ERROR• saveCount: DB not available: \(error)")
+            print("•ERROR•SQLDB• saveCount: DB not available: \(error)")
             return false
         }
         guard Date(datestampSid: record.datacount_date_psid) != nil,
               record.datacount_count >= 0 else {
-            print("•ERROR• Invalid count record: date=\(record.datacount_date_psid), type=\(record.datacount_kind_pfnid), count=\(record.datacount_count)")
+            print("•ERROR•SQLDB• Invalid count record: date=\(record.datacount_date_psid), type=\(record.datacount_kind_pfnid), count=\(record.datacount_count)")
             return false
         }
         
@@ -394,7 +397,7 @@ actor SqliteDatabaseActor {
                   sqlite3_bind_text(stmt, 1, oldDatePsid.cString(using: .utf8), -1, SQLITE_TRANSIENT) == SQLITE_OK,
                   sqlite3_bind_int(stmt, 2, Int32(oldTypeNid)) == SQLITE_OK,
                   sqlite3_step(stmt) == SQLITE_DONE else {
-                print("•ERROR• Delete failed: \(String(cString: sqlite3_errmsg(db)))")
+                print("•ERROR•SQLDB• Delete failed: \(String(cString: sqlite3_errmsg(db)))")
                 sqlite3_exec(db, "ROLLBACK;", nil, nil, nil)
                 sqlite3_finalize(stmt)
                 return false
@@ -409,7 +412,7 @@ actor SqliteDatabaseActor {
               sqlite3_bind_int(stmt, 2, Int32(record.datacount_kind_pfnid)) == SQLITE_OK,
               sqlite3_bind_int(stmt, 3, Int32(record.datacount_count)) == SQLITE_OK,
               sqlite3_step(stmt) == SQLITE_DONE else {
-            print("•ERROR• Insert failed: \(String(cString: sqlite3_errmsg(db)))")
+            print("•ERROR•SQLDB• Insert failed: \(String(cString: sqlite3_errmsg(db)))")
             sqlite3_exec(db, "ROLLBACK;", nil, nil, nil)
             sqlite3_finalize(stmt)
             return false
@@ -417,7 +420,7 @@ actor SqliteDatabaseActor {
         sqlite3_finalize(stmt)
         
         sqlite3_exec(db, "COMMIT;", nil, nil, nil)
-        // print("•INFO•DB• Saved count for \(record.datacount_date_psid), type=\(record.datacount_kind_pfnid)")
+        // print("•INFO•SQLDB• Saved count for \(record.datacount_date_psid), type=\(record.datacount_kind_pfnid)")
         return true
     }
     
@@ -426,11 +429,11 @@ actor SqliteDatabaseActor {
     func fetchDistinctDates() async -> [String] {
         //Note: useful for reading thread info
         //let caller = Thread.callStackSymbols.prefix(10).joined(separator: "\n")
-        //print("🚨 fetchDistinctDates() called from:\n\(caller)\n")
+        //print("•TRACE•SQL• fetchDistinctDates() called from:\n\(caller)\n")
         do {
             try await ensureInitialized()
         } catch {
-            print("•ERROR•DB• fetchDistinctDates: \(error)")
+            print("•ERROR•SQLDB• fetchDistinctDates: \(error)")
             return []
         }
         let query = """
@@ -444,7 +447,7 @@ actor SqliteDatabaseActor {
         var dates: [String] = []
         var stmt: OpaquePointer?
         guard sqlite3_prepare_v2(db, query, -1, &stmt, nil) == SQLITE_OK else {
-            print("•ERROR• Prepare failed for fetchDistinctDates: \(String(cString: sqlite3_errmsg(db)))")
+            print("•ERROR•SQLDB• Prepare failed for fetchDistinctDates: \(String(cString: sqlite3_errmsg(db)))")
             sqlite3_finalize(stmt)
             return []
         }
@@ -456,7 +459,7 @@ actor SqliteDatabaseActor {
             }
         }
         sqlite3_finalize(stmt)
-        print("•INFO•DB• Fetched \(dates.count)") // distinct dates: \(dates)")
+        print("•INFO•SQLDB• Fetched \(dates.count)") // distinct dates: \(dates)")
         return dates
     }
     
@@ -507,7 +510,7 @@ actor SqliteDatabaseActor {
             weightAM: weightAM,
             weightPM: weightPM
         )
-        // print("•INFO•DB• Fetched tracker for \(datestampSid): AM=\(tracker.weightAM?.dataweight_kg ?? 0) kg, PM=\(tracker.weightPM?.dataweight_kg ?? 0) kg, counts=\(tracker.itemsDict.count)")
+        // print("•INFO•SQLDB• Fetched tracker for \(datestampSid): AM=\(tracker.weightAM?.dataweight_kg ?? 0) kg, PM=\(tracker.weightPM?.dataweight_kg ?? 0) kg, counts=\(tracker.itemsDict.count)")
         return tracker
     }
     
@@ -528,16 +531,76 @@ actor SqliteDatabaseActor {
         return trackers.sorted { $0.date > $1.date }
     }
     
-    /// •STREAK•V21•
-    func getCount(for type: DataCountType, on date: Date) async -> Int {
-        do {
-            try await ensureInitialized()
-        } catch {
-            print("•ERROR•DB• getCount: Failed to initialize: \(error)")
+    /// •STREAK•DIRECT•
+    func computeStreak(datacountType: DataCountType, fromDate: Date) -> Int {
+        guard isInitialized, let db else {
+            print("•ERROR•SQLDB• computeStreak: DB not initialized")
             return 0
         }
         
-        let datePsid = date.datestampSid
+        let goal = datacountType.goalServings
+        guard goal > 0 else { return 0 } // Avoid infinite loop if goal <= 0
+        
+        let calendar = Calendar.current
+        var currentDate = fromDate
+        var streak = 0
+        
+        let sql = """
+        SELECT datacount_count
+        FROM datacount_table
+        WHERE datacount_date_psid = ?
+          AND datacount_kind_pfnid = ?
+        """
+        
+        var stmt: OpaquePointer?
+        guard sqlite3_prepare_v2(db, sql, -1, &stmt, nil) == SQLITE_OK else {
+            print("•ERROR•SQLDB• computeStreak prepare failed: \(String(cString: sqlite3_errmsg(db)))")
+            return 0
+        }
+        defer { sqlite3_finalize(stmt) }
+        
+        let kindId = Int32(datacountType.nid)
+        
+        while true {
+            let datePsid = currentDate.datestampSid
+            let cDate = datePsid.cString(using: .utf8)!
+            
+            guard sqlite3_bind_text(stmt, 1, cDate, -1, SQLITE_TRANSIENT) == SQLITE_OK,
+                  sqlite3_bind_int(stmt, 2, kindId) == SQLITE_OK else {
+                print("•ERROR•SQLDB• computeStreak bind failed: \(String(cString: sqlite3_errmsg(db)))")
+                break
+            }
+            
+            let stepResult = sqlite3_step(stmt)
+            let count: Int32 = (stepResult == SQLITE_ROW) ? sqlite3_column_int(stmt, 0) : 0
+            
+            guard Int(count) >= goal else { break }
+            
+            streak += 1
+            
+            guard let prevDate = calendar.date(byAdding: .day, value: -1, to: currentDate) else {
+                break // Unlikely, but prevents theoretical infinite loop
+            }
+            currentDate = prevDate
+            
+            sqlite3_reset(stmt)
+            sqlite3_clear_bindings(stmt)
+        }
+        
+        print("•TRACE•SQLDB• computeStreak for `\(datacountType.typeKey)`: \(streak)")
+        return streak
+    }
+    
+    /// •STREAK•V21•
+    func getCount(datacountType: DataCountType, onDate: Date) async -> Int {
+        do {
+            try await ensureInitialized()
+        } catch {
+            print("•ERROR•SQLDB• getCount: Failed to initialize: \(error)")
+            return 0
+        }
+        
+        let datePsid = onDate.datestampSid
         let sql = """
         SELECT datacount_count 
         FROM datacount_table 
@@ -547,13 +610,13 @@ actor SqliteDatabaseActor {
         
         var stmt: OpaquePointer?
         guard sqlite3_prepare_v2(db, sql, -1, &stmt, nil) == SQLITE_OK else {
-            print("•ERROR•DB• getCount prepare failed: \(String(cString: sqlite3_errmsg(db ?? OpaquePointer(bitPattern: 0)!)))")
+            print("•ERROR•SQLDB• getCount prepare failed: \(String(cString: sqlite3_errmsg(db ?? OpaquePointer(bitPattern: 0)!)))")
             return 0
         }
         
         // Bind parameters
         sqlite3_bind_text(stmt, 1, datePsid.cString(using: .utf8), -1, SQLITE_TRANSIENT)
-        sqlite3_bind_int(stmt, 2, Int32(type.nid))
+        sqlite3_bind_int(stmt, 2, Int32(datacountType.nid))
         
         // Step once (expect at most one row)
         if sqlite3_step(stmt) == SQLITE_ROW {
@@ -567,20 +630,20 @@ actor SqliteDatabaseActor {
     }
     
     @MainActor
-    func fetchTrackers(forMonth date: Date) async -> [SqlDailyTracker] {
+    func fetchTrackers(forMonth: Date) async -> [SqlDailyTracker] {
         do {
             try await ensureInitialized()    // ← one line fixes everything
         } catch {
-            print("•ERROR•DB• fetchTrackers(forMonth): \(error)")
+            print("•ERROR•SQLDB• fetchTrackers(forMonth): \(error)")
             return []
         }
         
         //guard isInitialized else {
-        //    print("•ERROR• Database not initialized")
+        //    print("•ERROR•SQLDB• Database not initialized")
         //    return []
         //}
         let calendar = Calendar(identifier: .gregorian)
-        let monthStart = calendar.startOfMonth(for: date)
+        let monthStart = calendar.startOfMonth(for: forMonth)
         let nextMonth = calendar.date(byAdding: .month, value: 1, to: monthStart)!
         
         let distinctDates = await fetchDistinctDates()
@@ -597,7 +660,7 @@ actor SqliteDatabaseActor {
             }
         }
         
-        print("•INFO•DB• Fetched \(trackers.count) trackers for month \(date.datestampSid): \(trackers.map { "\($0.date.datestampSid): AM=\($0.weightAM?.dataweight_kg ?? 0) kg, PM=\($0.weightPM?.dataweight_kg ?? 0) kg" })")
+        print("•INFO•SQLDB• Fetched \(trackers.count) trackers for month \(forMonth.datestampSid): \(trackers.map { "\($0.date.datestampSid): AM=\($0.weightAM?.dataweight_kg ?? 0) kg, PM=\($0.weightPM?.dataweight_kg ?? 0) kg" })")
         return trackers.sorted(by: { $0.date < $1.date })
     }
     
@@ -606,7 +669,7 @@ actor SqliteDatabaseActor {
         do {
             try await ensureInitialized()    // ← one line fixes everything
         } catch {
-            print("•ERROR• DB not available: \(error)")
+            print("•ERROR•SQLDB• DB not available: \(error)")
         }
         // print("Dumping dataweight_table:")
         let weightQuery = "SELECT dataweight_date_psid, dataweight_ampm_pnid, dataweight_kg, dataweight_time FROM dataweight_table ORDER BY dataweight_date_psid, dataweight_ampm_pnid;"
@@ -621,7 +684,7 @@ actor SqliteDatabaseActor {
             }
             sqlite3_finalize(stmt)
         } else {
-            print("•ERROR• Failed to dump dataweight_table: \(String(cString: sqlite3_errmsg(db)))")
+            print("•ERROR•SQLDB• Failed to dump dataweight_table: \(String(cString: sqlite3_errmsg(db)))")
         }
         
         // print("Dumping datacount_table:")
@@ -635,7 +698,7 @@ actor SqliteDatabaseActor {
             }
             sqlite3_finalize(stmt)
         } else {
-            print("•ERROR• Failed to dump datacount_table: \(String(cString: sqlite3_errmsg(db)))")
+            print("•ERROR•SQLDB• Failed to dump datacount_table: \(String(cString: sqlite3_errmsg(db)))")
         }
 #endif
     }
@@ -649,7 +712,7 @@ actor SqliteDatabaseActor {
         } else {
             // Note: after a failed close, SQLite docs say you should call sqlite3_close again
             // but in practice this almost never happens unless you have unfinalized statements.
-            print("•ERROR• sqlite3_close returned \(result), msg: \(String(cString: sqlite3_errmsg(currentDb)))")
+            print("•ERROR•SQLDB• sqlite3_close returned \(result), msg: \(String(cString: sqlite3_errmsg(currentDb)))")
         }
         
         db = nil
@@ -668,7 +731,7 @@ actor SqliteDatabaseActor {
         do {
             try await ensureInitialized()
         } catch {
-            print("•ERROR•DB• fetchAllTrackers: Failed to setup database: \(error)")
+            print("•ERROR•SQLDB• fetchAllTrackers: Failed to setup database: \(error)")
             return []
         }
         let rows = await fetchRows(query: "SELECT datacount_date_psid, datacount_kind_pfnid, datacount_count FROM datacount_table")
@@ -706,7 +769,7 @@ actor SqliteDatabaseActor {
         do {
             try await ensureInitialized()    // ← one line fixes everything
         } catch {
-            print("•ERROR•DB• not available in fetchRows: \(error)")
+            print("•ERROR•SQLDB• not available in fetchRows: \(error)")
             return []
         }
         
@@ -724,7 +787,7 @@ actor SqliteDatabaseActor {
                 rows.append(row)
             }
         } else {
-            print("•ERROR• Query failed: \(String(cString: sqlite3_errmsg(db)))")
+            print("•ERROR•SQLDB• Query failed: \(String(cString: sqlite3_errmsg(db)))")
         }
         
         sqlite3_finalize(stmt)
@@ -741,9 +804,9 @@ actor SqliteDatabaseActor {
         // Delete the files, handling errors
         do {
             try fm.removeItem(at: dbURL)
-            print("•INFO•DB• SQLiteDatabaseActor resetDatabaseCompletely() deleted main DB file: \(dbURL.path)")
+            print("•INFO•SQLDB• SQLiteDatabaseActor resetDatabaseCompletely() deleted main DB file: \(dbURL.path)")
         } catch {
-            print("•ERROR•DB• SQLiteDatabaseActor resetDatabaseCompletely() failed to delete main DB: \(error.localizedDescription)")
+            print("•ERROR•SQLDB• SQLiteDatabaseActor resetDatabaseCompletely() failed to delete main DB: \(error.localizedDescription)")
             throw error // Propagate to caller for handling
         }
         
@@ -753,18 +816,18 @@ actor SqliteDatabaseActor {
         if fm.fileExists(atPath: shmURL.path) {
             do {
                 try fm.removeItem(at: shmURL)
-                print("•INFO•DB• SQLiteDatabaseActor resetDatabaseCompletely() deleted SHM file")
+                print("•INFO•SQLDB• SQLiteDatabaseActor resetDatabaseCompletely() deleted SHM file")
             } catch {
-                print("•ERROR•DB• SQLiteDatabaseActor resetDatabaseCompletely() failed to delete SHM: \(error.localizedDescription)")
+                print("•ERROR•SQLDB• SQLiteDatabaseActor resetDatabaseCompletely() failed to delete SHM: \(error.localizedDescription)")
             }
         }
         
         if fm.fileExists(atPath: walURL.path) {
             do {
                 try fm.removeItem(at: walURL)
-                print("•INFO•DB• SQLiteDatabaseActor resetDatabaseCompletely() deleted WAL file")
+                print("•INFO•SQLDB• SQLiteDatabaseActor resetDatabaseCompletely() deleted WAL file")
             } catch {
-                print("•ERROR•DB• SQLiteDatabaseActor resetDatabaseCompletely() failed to delete WAL: \(error.localizedDescription)")
+                print("•ERROR•SQLDB• SQLiteDatabaseActor resetDatabaseCompletely() failed to delete WAL: \(error.localizedDescription)")
             }
         }
         
@@ -813,7 +876,7 @@ actor SqliteDatabaseActor {
         do {
             try await ensureInitialized()
         } catch {
-            print("•ERROR•DB• bulkInsert: initialization failed: \(error)")
+            print("•ERROR•SQLDB• bulkInsert: initialization failed: \(error)")
             return
         }
         
@@ -854,7 +917,7 @@ actor SqliteDatabaseActor {
             sqlite3_prepare_v2(db, weightSQL, -1, &weightStmt, nil) == SQLITE_OK,
             sqlite3_prepare_v2(db, countSQL, -1, &countStmt, nil) == SQLITE_OK
         else {
-            print("•ERROR•DB• bulkInsert: prepare failed")
+            print("•ERROR•SQLDB• bulkInsert: prepare failed")
             sqlite3_exec(db, "ROLLBACK", nil, nil, nil)
             return
         }
@@ -899,7 +962,7 @@ actor SqliteDatabaseActor {
         ON datacount_table (datacount_kind_pfnid, datacount_date_psid);
         """)
         
-        print("•INFO•DB• bulkInsert completed: \(trackers.count) trackers")
+        print("•INFO•SQLDB• bulkInsert completed: \(trackers.count) trackers")
     } // bulkInsert
 
 }

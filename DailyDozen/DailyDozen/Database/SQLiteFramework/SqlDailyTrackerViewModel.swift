@@ -123,6 +123,7 @@ class SqlDailyTrackerViewModel: ObservableObject {
     
     // *** Added: From WeightEntryViewModel ***
     func loadWeights(for date: Date, unitType: UnitType) async -> WeightEntryData {
+        print("•TRACE• SqlDailyTrackerViewModel loadWeights()")
         let key = date.datestampSid
         let normalized = DateUtilities.gregorianCalendar.startOfDay(for: date)
         await loadTracker(forDate: normalized)
@@ -177,17 +178,18 @@ class SqlDailyTrackerViewModel: ObservableObject {
         //    }
         //}
         
-        print("Loaded weights for \(key): AM \(amWeightStr), PM \(pmWeightStr), AM Time \(amTime.datestampHHmm), PM Time \(pmTime.datestampHHmm)")
+        print("•TRACE• SqlDailyTrackerViewModel Loaded weights for \(key): AM \(amWeightStr), PM \(pmWeightStr), AM Time \(amTime.datestampHHmm), PM Time \(pmTime.datestampHHmm)")
         return WeightEntryData(amWeight: amWeightStr, pmWeight: pmWeightStr, amTime: amTime, pmTime: pmTime)
     }
     
     // *** Added: Save weight with HealthKit sync ***
     
     func saveWeight(for date: Date, amWeight: Double?, pmWeight: Double?, amTime: Date?, pmTime: Date?) async {
+        print("•TRACE•SAVE• SqlDailyTrackerViewModel saveWeight()")
         let normalized = DateUtilities.gregorianCalendar.startOfDay(for: date)
         var updatedTracker = tracker(for: normalized)
         let unitType = UnitType.fromUserDefaults()
-        var hasChanges = false
+        //var hasChanges = false  // •HACK•CHECK•
         
         // AM
         if let amWeight = amWeight, let amTime = amTime {
@@ -207,9 +209,9 @@ class SqlDailyTrackerViewModel: ObservableObject {
                 
                 do {
                     try await HealthSynchronizer.shared.syncWeightPut(date: normalized, ampm: .am, kg: kg, time: amTime, tracker: updatedTracker)
-                    hasChanges = true
+                    //hasChanges = true  // •HACK•CHECK•
                 } catch {
-                    print("•Save• AM put error: \(error.localizedDescription)")
+                    print("•WARN•AUTH•SAVE• SqlDailyTrackerViewModel AM put failed: \(error.localizedDescription)")
                 }
             } else {
                 if updatedTracker.weightAM != nil {
@@ -217,9 +219,9 @@ class SqlDailyTrackerViewModel: ObservableObject {
                 }
                 do {
                     try await HealthSynchronizer.shared.syncWeightClear(date: normalized, ampm: .am)
-                    hasChanges = true
+                    //hasChanges = true  // •HACK•CHECK•
                 } catch {
-                    print("•Save• PM clear error: \(error.localizedDescription)")
+                    print("•WARN•AUTH•SAVE• PM clear failed: \(error.localizedDescription)")
                 }
             }
         }
@@ -242,9 +244,9 @@ class SqlDailyTrackerViewModel: ObservableObject {
                 
                 do {
                     try await HealthSynchronizer.shared.syncWeightPut(date: normalized, ampm: .pm, kg: kg, time: pmTime, tracker: updatedTracker)
-                    hasChanges = true
+                    //hasChanges = true
                 } catch {
-                    print("•Save• PM put error: \(error.localizedDescription)")
+                    print("•WARN•AUTH•SAVE• PM put failed: \(error.localizedDescription)")
                 }
             } else {
                 if updatedTracker.weightPM != nil {
@@ -252,14 +254,14 @@ class SqlDailyTrackerViewModel: ObservableObject {
                 }
                 do {
                     try await HealthSynchronizer.shared.syncWeightClear(date: normalized, ampm: .pm)
-                    hasChanges = true
+                    //hasChanges = true
                 } catch {
-                    print("•Save• PM clear error: \(error.localizedDescription)")
+                    print("•WARN•AUTH•SAVE• PM clear failed: \(error.localizedDescription)")
                 }
             }
         }
         
-        if hasChanges {
+        //if hasChanges { •HACK•CHECK• what should actually set hasChanges without HK
             // ONLY SAVE TO DB ONCE
             updateTrackerInArray(updatedTracker)
             
@@ -277,7 +279,7 @@ class SqlDailyTrackerViewModel: ObservableObject {
             
             //added to prevent multiple calls/loading.  TBDz remove if doesn't work.
             await invalidateWeightDatesCache()
-        }
+        //}
     }
     
     func deleteWeight(for date: Date, weightType: DataWeightType) async {
@@ -597,7 +599,7 @@ extension SqlDailyTrackerViewModel {
         let goal = type.goalServings
         
         while true {
-            let count = await dbActor.getCount(for: type, on: checkDate)
+            let count = await dbActor.getCount(datacountType: type, onDate: checkDate)
             guard count >= goal else { break }
             streak += 1
             
@@ -679,7 +681,7 @@ extension SqlDailyTrackerViewModel {
                 break
             } else if nextRecord.datacount_count >= item.goalServings {
                 if nextRecord.datacountStreakCalc != nextMaxValidStreak {
-                    print("•INFO•VM• Updating streak for \(item.typeKey) on \(nextDay.datestampSid): \(nextMaxValidStreak)")
+                    print("•INFO•VM• Updating streak completed for `\(item.typeKey)` on \(nextDay.datestampSid): \(nextMaxValidStreak)")
                     var updatedTracker = nextTracker
                     updatedTracker.itemsDict[item]?.datacountStreakCalc = nextMaxValidStreak
                     if updatedTracker.itemsDict[item]?.datacount_count ?? 0 > item.goalServings {
@@ -798,7 +800,7 @@ extension SqlDailyTrackerViewModel {
                 break
             } else if nextRecord.datacount_count >= item.goalServings {
                 if nextRecord.datacountStreakCalc != nextMaxValidStreak {
-                    print("•INFO•VM• Updating streak for \(item.typeKey) on \(nextDay.datestampSid): \(nextMaxValidStreak)")
+                    print("•INFO•VM• Updating streak incomplete for `\(item.typeKey)` on \(nextDay.datestampSid): \(nextMaxValidStreak)")
                     var updatedTracker = nextTracker
                     updatedTracker.itemsDict[item]?.datacountStreakCalc = nextMaxValidStreak
                     if updatedTracker.itemsDict[item]?.datacount_count ?? 0 > item.goalServings {
@@ -826,10 +828,6 @@ extension SqlDailyTrackerViewModel {
         }
     }
     
-}
-
-extension SqlDailyTrackerViewModel {
-    static let mockDBTrigger = NotificationCenter.Publisher(center: .default, name: .sqlDBUpdated, object: nil)
 }
 
 // MARK: - Test Data Generation

@@ -66,7 +66,6 @@ final class MigrationManager {
                 try? fm.removeItem(at: realmURL)
                 
                 UserDefaults.standard.set(true, forKey: "hasMigratedToSQLitev4") // •NYI•
-                //NotificationCenter.default.post(name: .sqlDBUpdated, object: nil)
                 NotificationCenter.default.post(name: .sqlDBUpdated, object: Date()) // •WATCH•
                 print("•INFO•DB•WATCH• MigrationManager migration completed successfully")
             } catch {
@@ -85,7 +84,6 @@ final class MigrationManager {
                 }
             }
         } // Task
-        
     }
     
 }
