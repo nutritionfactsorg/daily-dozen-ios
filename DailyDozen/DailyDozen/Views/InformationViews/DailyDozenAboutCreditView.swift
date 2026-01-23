@@ -10,36 +10,42 @@ import SwiftUI
 struct DailyDozenAboutCreditView: View {
     var body: some View {
         
-        VStack {
-            VStack {
+        VStack(spacing: 20) {
+            VStack(spacing: 8) {
                 Text("info_app_about_app_name")
-                
                     .bold()
                     .font(.title2)
-                    .padding(10)
+                //.padding(.horizontal, 10)
                 
                 Text("info_app_about_version")
-                    .padding(10)
+                    .font(.body)
+                //.padding(.horizontal, 10)
             }
-            VStack(alignment: .leading, spacing: 10) {
+            VStack(alignment: .leading, spacing: 16) {
                 Text("info_app_about_created_by", comment: "")
+                    .font(.body)
                     .multilineTextAlignment(.leading)
-                    .padding(10)
+                //.padding(.horizontal, 10)
                 
                 //!!NOTEz: info_app_about_oss_credits will be reduced or go away
                 Text("info_app_about_oss_credits", comment: "")
+                    .font(.body)
                     .multilineTextAlignment(.leading)
-                    .padding(10)
+                //.padding(.horizontal, 10)
                 
                 Text("info_app_about_translators", comment: "")
+                    .font(.body)
                     .multilineTextAlignment(.leading)
-                    .padding(10)
+                //.padding(.horizontal, 10)
             }
         }
         .foregroundStyle(.nfText)
-        .background(.white)
-        .cornerRadius(5)
-        .padding(10)
+        //.background(.white)
+        //.cornerRadius(5)
+        //.padding(10)
+        .frame(maxWidth: .infinity, alignment: .leading)  // Full width + leading
+        .padding(.horizontal, 20)                         // Matches first card exactly
+        .padding(.vertical, 10)
     }
 }
 
