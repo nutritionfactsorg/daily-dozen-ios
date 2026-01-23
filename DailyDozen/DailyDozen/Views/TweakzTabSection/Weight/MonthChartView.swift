@@ -87,19 +87,27 @@ struct MonthChartView: View {
 
             VStack(spacing: 12) {
                 if weightData.isEmpty {
-                    Text("historyRecordWeight_NoWeightYear")
-                        .foregroundStyle(.gray)
-                        .frame(maxWidth: .infinity, maxHeight: 250)
+                    VStack {
+                        Text("historyRecordWeight_NoWeightYear")
+                            .foregroundStyle(.nfGray50)
+                            .multilineTextAlignment(.center)
+                    }
+                    .frame(maxWidth: .infinity, maxHeight: .infinity)
+                    .frame(height: 310)
                 } else {
-                    chartView(weightData: weightData, geometry: geometry)
-                        .frame(height: 310)
-
-                    legendView
-                        .frame(maxWidth: .infinity)
-                        .padding(.top, 20)
+                    VStack {
+                        chartView(weightData: weightData, geometry: geometry)
+                            .frame(height: 310)
+                            .frame(maxWidth: .infinity)
+                        
+                        legendView
+                            .frame(maxWidth: .infinity)
+                            .padding(.top, 20)
+                    }
+                    .padding(.horizontal)
                 }
             }
-            .frame(maxWidth: .infinity, maxHeight: 340)
+            //.frame(maxWidth: .infinity, maxHeight: 340)
 
             .task(id: selectedYear) {
                 await loadYearData(for: selectedYear)
@@ -363,32 +371,9 @@ struct MonthChartView: View {
 //        print("Days since year start for \(date.dateStringLocalized(for: .short)): \(dayCount)")
         return dayCount
     }
-
-//    private func findClosestDataPoint(for selectedDay: Int, in dataPoints: [WeightDataPoint]) -> WeightDataPoint? {
-//        // Filter points for the selected day
-//        let pointsOnDay = dataPoints.filter { daysSinceYearStart($0.date) == selectedDay }
-//        
-//        guard !pointsOnDay.isEmpty else {
-//           // print("No points found for day \(selectedDay)")
-//            return nil
-//        }
-//        
-//        // If multiple points (AM/PM), select one (e.g., AM by default or closest to average weight)
-//        let selectedPoint = pointsOnDay.count > 1 ? pointsOnDay.first { $0.type == .am } ?? pointsOnDay.first! : pointsOnDay.first!
-//        
-//        print("Selected point for day \(selectedDay): \(selectedPoint.date.dateStringLocalized(for: .short)), \(selectedPoint.weight), \(selectedPoint.type == .am ? "AM" : "PM")")
-//        return selectedPoint
-//    }
-}
-//TBDz not sure still used
-// Extension for flipping x in RTL if needed
-extension CGFloat {
-    func flipped(in width: CGFloat) -> CGFloat {
-        width - self
-    }
 }
 
-// TBDz not localized
+// TBDz may not be localized... is localized in the view
 extension WeightDataPoint {
     var timeOfDayString: String {
         switch type {

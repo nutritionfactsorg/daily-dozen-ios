@@ -78,16 +78,12 @@ struct TweakzPageView: View {
             Task { await syncRecordWithDB() }
             print("•INFO•Appear• TweakzPageView appeared for \(date.datestampSid)")
         }
-//        .onReceive(NotificationCenter.default.publisher(for: .mockDBUpdated)) { _ in
-//            Task { await syncRecordWithDB() }
-//        }
-//        .onReceive(NotificationCenter.default.publisher(for: .sqlDBUpdated)) { notification in
-//            guard let updatedDate = notification.object as? Date,
-//                  Calendar.current.isDate(updatedDate, inSameDayAs: date) else { return }
-//            Task { await syncRecordWithDB() }
-//            print("•INFO• PageView for \(date.datestampSid) received sqlDBUpdated")
-//        }
         
+        //.onReceive(NotificationCenter.default.publisher(for: .sqlDBUpdated)) { notification in
+        //    guard let updatedDate = notification.object as? Date,
+        //          Calendar.current.isDate(updatedDate, inSameDayAs: date) else { return }
+        //    Task { await viewModel.loadTracker(forDate: date) }
+        //} // •HACK•CHECK• may not be needed. verify if migration needs
     }
 }
 

@@ -63,21 +63,21 @@ struct DayChartView: View {
     private var unitString: String {
         UnitType.fromUserDefaults() == .metric ? "kg" : "lbs"
     }
-
+    
     private var uniqueDataDays: Set<Int> {
         Set(weightData.map { gregorianCalendar.component(.day, from: $0.date) })
     }
-
+    
     private func findClosestDay(to day: Int) -> Int {
         guard !uniqueDataDays.isEmpty else { return day }
         return uniqueDataDays.min(by: { abs($0 - day) < abs($1 - day) }) ?? day
     }
-
+    
     private func annotationPosition(for point: WeightDataPoint) -> AnnotationPosition {
         let domain = computeYDomain(for: weightData)
         return point.weight > domain.upperBound * 0.8 ? .top : .bottom
     }
-
+    
     private func annotationAlignment(for day: Int?) -> Alignment {
         guard let day = day else { return .center }
         let totalDays = displayCalendar.range(of: .day, in: .month, for: selectedMonth)?.count ?? 31
@@ -107,31 +107,31 @@ struct DayChartView: View {
                 .symbolSize(80)
                 .interpolationMethod(.catmullRom)
                 .lineStyle(StrokeStyle(lineWidth: 3, lineCap: .round))
-                 }
-                // Your selected RuleMark + PointMark block (unchanged)
-                if let day = selectedDay, let point = selectedPoint {
-                    RuleMark(x: .value("Day", day))
-                        .foregroundStyle(.gray.opacity(0.3))
-                        .lineStyle(StrokeStyle(lineWidth: 3, lineCap: .round))
-                        .offset(yStart: -20)
-                        .zIndex(-1)
-                    
-                    PointMark(
-                        x: .value("Day", day),
-                        y: .value("Weight", point.weight)
-                    )
-                    .foregroundStyle(point.type == .am ? Color("nfYellowSunglow") : Color("nfRedFlamePea"))
-                    .symbolSize(100)
-                    .symbol(by: .value("Series", point.type == .am ? "AM" : "PM"))
-                    .annotation(
-                        position: annotationPosition(for: point),
-                        alignment: annotationAlignment(for: day),
-                        spacing: 10,
-                        overflowResolution: .init(x: .fit(to: .chart), y: .fit(to: .chart))
-                    ) {
-                        valueSelectionPopover(for: point)
-                    }
-               
+            }
+            // Your selected RuleMark + PointMark block (unchanged)
+            if let day = selectedDay, let point = selectedPoint {
+                RuleMark(x: .value("Day", day))
+                    .foregroundStyle(.gray.opacity(0.3))
+                    .lineStyle(StrokeStyle(lineWidth: 3, lineCap: .round))
+                    .offset(yStart: -20)
+                    .zIndex(-1)
+                
+                PointMark(
+                    x: .value("Day", day),
+                    y: .value("Weight", point.weight)
+                )
+                .foregroundStyle(point.type == .am ? Color("nfYellowSunglow") : Color("nfRedFlamePea"))
+                .symbolSize(100)
+                .symbol(by: .value("Series", point.type == .am ? "AM" : "PM"))
+                .annotation(
+                    position: annotationPosition(for: point),
+                    alignment: annotationAlignment(for: day),
+                    spacing: 10,
+                    overflowResolution: .init(x: .fit(to: .chart), y: .fit(to: .chart))
+                ) {
+                    valueSelectionPopover(for: point)
+                }
+                
             }
         }
         .chartForegroundStyleScale([
@@ -143,10 +143,13 @@ struct DayChartView: View {
             "PM": .square
         ])
         .chartXAxis {
-            AxisMarks(values: dataDays(weightData)) { value in
+            // AxisMarks(values: dataDays(weightData)) { value in
+            // AxisMarks(values: .stride(by: .day, count: 1)) { value in
+            AxisMarks(values: .automatic) { value in
                 if let day = value.as(Int.self) {
                     AxisValueLabel {
                         Text(dayNumberFormatter.string(from: NSNumber(value: day)) ?? "\(day)")
+                            .font(.caption)  // Slightly smaller than default
                     }
                     AxisGridLine()
                     AxisTick()
@@ -172,10 +175,9 @@ struct DayChartView: View {
         .chartLegend(.hidden)
         .chartScrollableAxes(.horizontal)
         .chartPlotStyle { plot in
-            plot
-               // .padding(.leading, 40)
-               // .padding(.trailing, 40)
-                .padding(.top, 20)
+            plot.padding(.top, 20)
+            //  .padding(.leading, 40)
+            //  .padding(.trailing, 40)
         }
         .chartGesture { proxy in
             SpatialTapGesture()
@@ -184,10 +186,10 @@ struct DayChartView: View {
                     let location = value.location
                     
                     guard let tappedDayDouble: Double = proxy.value(atX: location.x) else {
-                                selectedDay = nil
-                                selectedPoint = nil
-                                return
-                            }
+                        selectedDay = nil
+                        selectedPoint = nil
+                        return
+                    }
                     
                     let tappedDay = Int(tappedDayDouble.rounded())
                     
@@ -235,30 +237,43 @@ struct DayChartView: View {
     var body: some View {
         VStack {
             if isLoading {
-                ProgressView()
-                    .frame(maxWidth: .infinity, minHeight: 310)
+                VStack {
+                    ProgressView()
+                }
+                .frame(maxWidth: .infinity, maxHeight: .infinity)  // Centers vertically/horizontally
+                .frame(height: 310)  // Matches chart height
             } else if weightData.isEmpty {
-                Text("historyRecordWeight_NoWeightYet")
-                    .foregroundStyle(.gray)
-                    .frame(maxWidth: .infinity, minHeight: 310)
+                VStack {
+                    Text("historyRecordWeight_NoWeightYet")
+                        .foregroundStyle(.nfGray50)
+                        .multilineTextAlignment(.center)
+                }
+                .frame(maxWidth: .infinity, maxHeight: .infinity)
+                .frame(height: 310)
+                
             } else {
                 VStack(spacing: 12) {
                     dayWeightChart
-                        .frame(maxWidth: .infinity, alignment: .center)
-                                .padding(.horizontal)
+                        .frame(height: 310)
+                        .frame(maxWidth: .infinity)
+                    
+                    legendView
+                        .frame(maxWidth: .infinity)
+                        .padding(.top, 20)
                 }
+                .padding(.horizontal)
             }
         }
-            .task(id: selectedMonth) {
-                await loadWeightData()
-            }
-       
-            .task(id: viewModel.trackers.count) {
-                await loadWeightData()
-                print("DayChart• Refreshed from trackers update: \(weightData.count) points")
+        .task(id: selectedMonth) {
+            await loadWeightData()
+        }
+        
+        .task(id: viewModel.trackers.count) {
+            await loadWeightData()
+            print("DayChart• Refreshed from trackers update: \(weightData.count) points")
             
         }
-    }
+    } //Body
     
     private func computeWeightData() async -> [WeightDataPoint] {
         let unitType = UnitType.fromUserDefaults()
@@ -316,7 +331,7 @@ struct DayChartView: View {
             Text(point.date.dateStringLocalized(for: .short))
                 .font(.subheadline.bold())
                 .multilineTextAlignment(.center)
-
+            
             HStack(spacing: 4) {
                 if point.type == .am {
                     Circle()
@@ -340,5 +355,27 @@ struct DayChartView: View {
         .shadow(radius: 5)
         .frame(maxWidth: 140)
         .fixedSize(horizontal: true, vertical: true)
+    }
+    
+    private var legendView: some View {
+        HStack(spacing: 24) {
+            HStack(spacing: 8) {
+                Circle()
+                    .stroke(Color("nfYellowSunglow"), lineWidth: 2)
+                    .frame(width: 12, height: 12)
+                
+                Text("historyRecordWeight.legendMorning")
+                    .font(.caption)
+            }
+            
+            HStack(spacing: 8) {
+                Rectangle()
+                    .stroke(Color("nfRedFlamePea"), lineWidth: 2)
+                    .frame(width: 12, height: 12)
+                
+                Text("historyRecordWeight.legendEvening")
+                    .font(.caption)
+            }
+        }
     }
 }

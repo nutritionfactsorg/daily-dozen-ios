@@ -53,37 +53,38 @@ struct WeightChartView: View {
     }
     
     var body: some View {
-        VStack(spacing: 20) {
-            Picker("Period", selection: $selectedPeriod) {
-                ForEach(ChartPeriod.allCases) { period in
-                    Text(period.localizedTitle).tag(period)
+        ScrollView {
+            VStack(spacing: 16) {
+                Picker("Period", selection: $selectedPeriod) {
+                    ForEach(ChartPeriod.allCases) { period in
+                        Text(period.localizedTitle).tag(period)
+                    }
                 }
-            }
-            .pickerStyle(.segmented)
-            .padding(.horizontal)
-            
-            if isLoadingMonths {
-                ProgressView("loading_heading")
-                    .padding()
-            } else if monthsWithData.isEmpty {
-                Text("historyRecordWeight_NoWeightYet")
-                    .foregroundColor(.secondary)
-                    .padding()
-            } else {
-                // MARK: - FINAL Navigation Header
-                if selectedPeriod == .day {
-                    // DAY MODE — navigate by month
-                    let sortedMonths = monthsWithData.sorted(by: >)
-                    let currentMonthStart = selectedDate.startOfMonth
-                    let currentIndex = sortedMonths.firstIndex(of: currentMonthStart) ?? 0
-
-                    HStack {
+                .pickerStyle(.segmented)
+                .padding(.horizontal)
+                
+                if isLoadingMonths {
+                    ProgressView("loading_heading")
+                        .padding()
+                } else if monthsWithData.isEmpty {
+                    Text("historyRecordWeight_NoWeightYet")
+                        .foregroundColor(.secondary)
+                        .padding()
+                } else {
+                    // MARK: - FINAL Navigation Header
+                    if selectedPeriod == .day {
+                        // DAY MODE — navigate by month
+                        let sortedMonths = monthsWithData.sorted(by: >)
+                        let currentMonthStart = selectedDate.startOfMonth
+                        let currentIndex = sortedMonths.firstIndex(of: currentMonthStart) ?? 0
+                        
+                        HStack {
                             // Jump to oldest
                             Button { selectedDate = sortedMonths.last!.startOfMonth } label: {
                                 Image(systemName: "chevron.left.2")
                                     .foregroundColor(currentIndex < sortedMonths.count - 1 ? Color("nfGreenBrand") : .gray)
                             }
-
+                            
                             // One month back
                             Button {
                                 if currentIndex < sortedMonths.count - 1 {
@@ -93,15 +94,15 @@ struct WeightChartView: View {
                                 Image(systemName: "chevron.left")
                                     .foregroundColor(currentIndex < sortedMonths.count - 1 ? Color("nfGreenBrand") : .gray)
                             }
-
+                            
                             Spacer()
-
+                            
                             Text(selectedDate, format: .dateTime.year().month(.wide))
-                                .font(.title2)
+                                .font(.title3)
                                 .fontWeight(.semibold)
-
+                            
                             Spacer()
-
+                            
                             // One month forward
                             Button {
                                 if currentIndex > 0 {
@@ -111,7 +112,7 @@ struct WeightChartView: View {
                                 Image(systemName: "chevron.right")
                                     .foregroundColor(currentIndex > 0 ? Color("nfGreenBrand") : .gray)
                             }
-
+                            
                             // Jump to newest
                             Button { selectedDate = sortedMonths.first!.startOfMonth } label: {
                                 Image(systemName: "chevron.right.2")
@@ -119,90 +120,95 @@ struct WeightChartView: View {
                             }
                         }
                         .padding(.horizontal)
-
-                } else if selectedPeriod == .month {
-                    // MONTH MODE — show one full year, chevrons jump by YEAR
-                    let years = yearsWithData.sorted(by: >)
-                    let currentIndex = years.firstIndex(of: selectedYear) ?? 0
-
-                    HStack {
-                        Button {
-                            let oldest = years.last!
-                            selectedDate = Calendar.current.date(from: DateComponents(year: oldest, month: 1, day: 1))!
-                        } label: {
-                            Image(systemName: "chevron.left.2")
-                                .foregroundColor(currentIndex < years.count - 1 ? Color("nfGreenBrand") : .gray)
-                        }
-
-                        Button {
-                            if currentIndex < years.count - 1 {
-                                let prev = years[currentIndex + 1]
-                                selectedDate = Calendar.current.date(from: DateComponents(year: prev, month: 1, day: 1))!
+                        
+                    } else if selectedPeriod == .month {
+                        // MONTH MODE — show one full year, chevrons jump by YEAR
+                        let years = yearsWithData.sorted(by: >)
+                        let currentIndex = years.firstIndex(of: selectedYear) ?? 0
+                        
+                        HStack {
+                            Button {
+                                let oldest = years.last!
+                                selectedDate = Calendar.current.date(from: DateComponents(year: oldest, month: 1, day: 1))!
+                            } label: {
+                                Image(systemName: "chevron.left.2")
+                                    .foregroundColor(currentIndex < years.count - 1 ? Color("nfGreenBrand") : .gray)
                             }
-                        } label: {
-                            Image(systemName: "chevron.left")
-                                .foregroundColor(currentIndex < years.count - 1 ? Color("nfGreenBrand") : .gray)
-                        }
-
-                        Spacer()
-
-                        Text(selectedYear, format: .number.grouping(.never))
-                            .font(.title2)
-                            .fontWeight(.semibold)
-                            .monospacedDigit()
-
-                        Spacer()
-
-                        Button {
-                            if currentIndex > 0 {
-                                let next = years[currentIndex - 1]
-                                selectedDate = Calendar.current.date(from: DateComponents(year: next, month: 1, day: 1))!
+                            
+                            Button {
+                                if currentIndex < years.count - 1 {
+                                    let prev = years[currentIndex + 1]
+                                    selectedDate = Calendar.current.date(from: DateComponents(year: prev, month: 1, day: 1))!
+                                }
+                            } label: {
+                                Image(systemName: "chevron.left")
+                                    .foregroundColor(currentIndex < years.count - 1 ? Color("nfGreenBrand") : .gray)
                             }
-                        } label: {
-                            Image(systemName: "chevron.right")
-                                .foregroundColor(currentIndex > 0 ? Color("nfGreenBrand") : .gray)
+                            
+                            Spacer()
+                            
+                            Text(selectedYear, format: .number.grouping(.never))
+                                .font(.title2)
+                                .fontWeight(.semibold)
+                                .monospacedDigit()
+                            
+                            Spacer()
+                            
+                            Button {
+                                if currentIndex > 0 {
+                                    let next = years[currentIndex - 1]
+                                    selectedDate = Calendar.current.date(from: DateComponents(year: next, month: 1, day: 1))!
+                                }
+                            } label: {
+                                Image(systemName: "chevron.right")
+                                    .foregroundColor(currentIndex > 0 ? Color("nfGreenBrand") : .gray)
+                            }
+                            
+                            Button {
+                                let newest = years.first!
+                                selectedDate = Calendar.current.date(from: DateComponents(year: newest, month: 1, day: 1))!
+                            } label: {
+                                Image(systemName: "chevron.right.2")
+                                    .foregroundColor(currentIndex > 0 ? Color("nfGreenBrand") : .gray)
+                            }
                         }
-
-                        Button {
-                            let newest = years.first!
-                            selectedDate = Calendar.current.date(from: DateComponents(year: newest, month: 1, day: 1))!
-                        } label: {
-                            Image(systemName: "chevron.right.2")
-                                .foregroundColor(currentIndex > 0 ? Color("nfGreenBrand") : .gray)
-                        }
-                    }
-                    .padding(.horizontal)
-
-                } else {
-                    // YEAR MODE — NO NAVIGATION BAR AT ALL
-                    EmptyView()
-                }
-                
-                // MARK: - Chart
-                Group {
-                    switch selectedPeriod {
-                    case .day:    DayChartView(selectedMonth: selectedMonth.startOfMonth)
-                    case .month:  MonthChartView(selectedYear: selectedYear)
-                    case .year:   YearChartView()
-                    }
-                }
-                .frame(minHeight: 340)
-                
-                Spacer()
-                
-                //NavigationLink(destination: WeightEntryView(initialDate: selectedDate)) {
-                NavigationLink(destination: WeightEntryView(initialDate: Date())) {
-                    Text("weight_history_edit_data")
-                        .font(.headline)
-                        .frame(maxWidth: .infinity)
-                        .padding()
-                        .background(Color.nfGreenBrand)
-                        .foregroundColor(.white)
-                        .cornerRadius(10)
                         .padding(.horizontal)
+                        
+                    } else {
+                        // YEAR MODE — NO NAVIGATION BAR AT ALL
+                        EmptyView()
+                    }
+                    
+                    // MARK: - Chart
+                    Group {
+                        switch selectedPeriod {
+                        case .day:    DayChartView(selectedMonth: selectedMonth.startOfMonth)
+                        case .month:  MonthChartView(selectedYear: selectedYear)
+                        case .year:   YearChartView()
+                        }
+                    }
+                   .frame(minHeight: 310)
+                    
+                   Spacer()
+                    
+                   .padding(30)
+                    
+                    //NavigationLink(destination: WeightEntryView(initialDate: selectedDate)) {
+                    NavigationLink(destination: WeightEntryView(initialDate: Date())) {
+                        Text("weight_history_edit_data")
+                            .font(.headline)
+                            .frame(maxWidth: .infinity)
+                            .padding()
+                            .background(Color.nfGreenBrand)
+                            .foregroundColor(.white)
+                            .cornerRadius(10)
+                            .padding(.horizontal)
+                            .padding(.bottom, 30)  // Extra space for tab bar
+                    }
                 }
+                // .padding(.top, 10) •MAYBE•
             }
-        }
+        } //Scroll
         .whiteInlineGreenTitle("historyRecordWeight.heading")
         .task {
             await SqlDailyTrackerViewModel.shared.preloadAllDataForYearChart()

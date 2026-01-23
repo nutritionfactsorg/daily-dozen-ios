@@ -6,7 +6,7 @@
 //
 
 import SwiftUI
-//TBDz this page needs localization
+ 
 struct WeightEntryView: View {
     private let viewModel = SqlDailyTrackerViewModel.shared
     @Environment(\.dismiss) private var dismiss
@@ -35,7 +35,7 @@ struct WeightEntryView: View {
         Task {
             await viewModel.savePendingWeights()
             viewModel.ensureDateIsInRange(Date(), dateRange: &dateRange, currentIndex: &currentIndex, thenSelectIt: true)
-            currentDate = Calendar.current.startOfDay(for: Date())
+            //currentDate = Calendar.current.startOfDay(for: Date())
         }
     }
     
@@ -53,7 +53,6 @@ struct WeightEntryView: View {
     }
     
     var body: some View {
-        ZStack(alignment: .bottom) {
             VStack(spacing: 0) {
                 DozeHeaderView(
                     isShowingSheet: $isShowingSheet,
@@ -69,12 +68,10 @@ struct WeightEntryView: View {
                 .tabViewStyle(.page(indexDisplayMode: .never))
                 .onChange(of: currentIndex) { _, newIndex in
                     Task {
-                        //print("•TRACE•WEIGHT• onChange(of: currentIndex) \(oldIndex) \(newIndex)")
                         currentDate = dateRange[newIndex]
                         extendDateRangeIfNeeded(for: newIndex)
                     }
-                  
-                    // Optional: preload nearby pages
+                    
                     Task {
                         let start = max(0, newIndex - 5)
                         let end = min(dateRange.count - 1, newIndex + 3)
@@ -84,73 +81,81 @@ struct WeightEntryView: View {
                     }
                 }
             }
-            
-            if !isToday {
-                DozeBackToTodayButtonView(isToday: isToday, action: goToToday)
-                    .background(Color.white)
-            }
-        }
-        
-        .navigationBarBackButtonHidden(true)
-        .navigationTitle("weightEntry.heading")
-        .toolbarColorScheme(.dark, for: .navigationBar) // makes text white
-        .toolbarBackground(.nfGreenBrand, for: .navigationBar)
-        // Add this line to force the background to stay visible:
-        .toolbarBackground(.visible, for: .navigationBar)
-        .toolbar {
-            ToolbarItem(placement: .topBarLeading) {
-                Button {
-                    Task {
-                        await viewModel.savePendingWeights()
-                        dismiss()
-                    }
-                } label: {
-                    Image(systemName: "chevron.backward")  // Just the system chevron, no text
-                        .font(.system(size: 17, weight: .semibold))  // Matches system style
+            .safeAreaInset(edge: .bottom, spacing: 0) {
+                if !isToday {
+                    DozeBackToTodayButtonView(isToday: isToday, action: goToToday)
+                        .background(Color.white)
+                        .transition(.move(edge: .bottom).combined(with: .opacity))
+                        //.padding(.vertical, 20)
                 }
-                .flipsForRightToLeftLayoutDirection(true)  // Auto-flips for RTL languages (e.g., Arabic)
+                //else {
+                //    Color.clear.frame(height: 0)  // Ensures no extra space when hidden
+                //}
+            }
+            .animation(.easeInOut(duration: 0.25), value: isToday)
+            .navigationBarBackButtonHidden(true)
+            .navigationTitle("weightEntry.heading")
+            .navigationBarTitleDisplayMode(.inline)
+            .toolbarColorScheme(.dark, for: .navigationBar)
+            .toolbarBackground(.nfGreenBrand, for: .navigationBar)
+            .toolbarBackground(.visible, for: .navigationBar)
+            .toolbar {
+                ToolbarItem(placement: .navigationBarLeading) {
+                    Button {
+                        Task {
+                            await viewModel.savePendingWeights()
+                            dismiss()
+                        }
+                    } label: {
+                        Image(systemName: "chevron.backward")
+                            .font(.system(size: 17, weight: .semibold))
+                    }
+                    .flipsForRightToLeftLayoutDirection(true)
+                }
+                
+                ToolbarItem(placement: .principal) {
+                    Text("weightEntry.heading")
+                        .foregroundStyle(.white)
+                        .font(.system(size: 17, weight: .semibold, design: .rounded))
+                        .tracking(-0.4)
+                }
+            }
+            .sheet(isPresented: $isShowingSheet) {
+                DatePickerSheetView(selectedDate: $selectedDate,
+                                    dateRange: $dateRange,
+                                    currentIndex: $currentIndex)
+                    .presentationDetents([.medium])
+            }
+            .onChange(of: selectedDate) { _, newValue in
+                viewModel.ensureDateIsInRange(
+                    newValue,
+                    dateRange: &dateRange,
+                    currentIndex: &currentIndex,
+                    thenSelectIt: true
+                )
+            }
+            .task {
+                viewModel.ensureDateIsInRange(
+                    currentDate,
+                    dateRange: &dateRange,
+                    currentIndex: &currentIndex,
+                    thenSelectIt: true
+                )
+                
+                let recent = dateRange.suffix(15)
+                for date in recent {
+                    await viewModel.loadTracker(forDate: date, isSilent: true)
+                }
+            }
+            .onDisappear {
+                Task { await viewModel.savePendingWeights() }
+            }
+            .task {
+                try? await HealthManager.shared.requestPermissions()
             }
         }
-        .sheet(isPresented: $isShowingSheet) {
-            DatePickerSheetView(selectedDate: $selectedDate,
-                                dateRange: $dateRange,
-                                currentIndex: $currentIndex)
-                .presentationDetents([.medium])
-        }
-        .onChange(of: selectedDate) { _, newValue in
-            viewModel.ensureDateIsInRange(
-                newValue,
-                dateRange: &dateRange,
-                currentIndex: &currentIndex,
-                thenSelectIt: true
-            )
-        }
-        .task {
-           
-            viewModel.ensureDateIsInRange(
-                currentDate,
-                dateRange: &dateRange,
-                currentIndex: &currentIndex,
-                thenSelectIt: true
-            )
-            
-            // Preload a few recent days for smooth swiping
-            let recent = dateRange.suffix(15) // today + last 14
-            for date in recent {
-                await viewModel.loadTracker(forDate: date, isSilent: true)
-            }
-        }
-       
-        .onDisappear {
-            Task { await viewModel.savePendingWeights() }
-            print("•WARNING• WeightEntryView disappearing, currentDisplayDate: \(currentDisplayDate.datestampSid)")
-        }
-        .task {
-            // Request HealthKit once (safe to call multiple times)
-            try? await HealthManager.shared.requestPermissions()
-        }
-    }
 }
+
 struct WeightEntryView_Previews: PreviewProvider {
     static var previews: some View {
         NavigationStack {

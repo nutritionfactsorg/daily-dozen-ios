@@ -106,10 +106,12 @@ struct DozeTabView: View {
                         VStack {
                             DozeHeaderView(isShowingSheet: $isShowingSheet,
                                            currentDate: currentDisplayDate)
+                                .frame(maxWidth: .infinity)  // Centers horizontally if in a VStack
+                                .padding(.horizontal)        // Optional safe margins
                             
                             TabView(selection: $currentIndex) {
                                 ForEach(dateRange.indices, id: \.self) { index in
-                                    DozeTabPageView(coordinator: scrollCoordinator, date: dateRange[index])  // ← Pass
+                                    DozePageView(coordinator: scrollCoordinator, date: dateRange[index])  // ← Pass
                                         .tag(index)
                                         .environmentObject(viewModel)
                                 }

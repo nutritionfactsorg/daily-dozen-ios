@@ -75,7 +75,7 @@ struct TweakzEntryRowView: View {
                             onChange: handleCountChange,
                             isDisabled: item == .tweakWeightTwice,
                             onTap: item == .tweakWeightTwice ? {
-                                print("onTap called for weight on \(date.datestampSid)")
+                                print("•TRACE•DB• onTap called for weight on \(date.datestampSid)")
                                 // navigationPath.append(date.startOfDay) } : nil
                                 isNavigatingToWeight = true} : nil
                         )
@@ -117,7 +117,9 @@ struct TweakzEntryRowView: View {
             //}
             
             .onChange(of: isNavigatingToWeight) { _, newValue in
+                print("•INFO•DB•WATCH• TweaksEntryRowView .onChange(of: isNavigatingToWeight)")
                 if newValue && navigationPath.count == 0 {  // Only append if not already navigating
+                    print("•INFO•DB•WATCH• TweaksEntryRowView .onChange(of: isNavigatingToWeight) append \(date.startOfDay)")
                     navigationPath.append(date.startOfDay)
                 } else if !newValue {
                     // Optional: Force clear if needed, but back button should handle pop
@@ -132,9 +134,11 @@ struct TweakzEntryRowView: View {
     /// •STREAK•V21•
     @MainActor
     private func handleLoadData() async {
+        //print("•INFO•DB•WATCH• TweaksEntryRowView handleLoadData() \(item)")
         let localTracker = viewModel.tracker(for: date)
         //
         if item == .tweakWeightTwice {
+            print("•INFO•DB•WATCH• TweaksEntryRowView handleLoadData() == .tweakWeightTwice")
             // await viewModel.loadTracker(forDate: date)
             // Derive count from saved weights (read-only, no save needed here)
             // let localTracker = viewModel.tracker! // Safe after load
@@ -180,6 +184,7 @@ struct TweakzEntryRowView: View {
     }
     
     private func handleNavChange(oldPath: NavigationPath, newPath: NavigationPath) {
+        print("•INFO•Refresh•WATCH• TweakzEntryRowView handleNavChange")
         if newPath.count == 0 && oldPath.count > 0 && item == .tweakWeightTwice {
             isNavigatingToWeight = false  // Reset the flag here on return
             Task {
@@ -198,17 +203,24 @@ struct TweakzEntryRowView: View {
     }
 
     private func handleDatabaseUpdate(_ notification: Notification) {
-        //if let notifyDate = notification.object as? Date {
-        //    print("•INFO•DB•WATCH• TweaksEntryRowView handleDatabaseUpdate().1 \(item) notification: \(notifyDate)")
-        //} else {
-        //    print("•INFO•DB•WATCH• TweaksEntryRowView handleDatabaseUpdate().1 \(item) notification: date unknown")
-        //}
+        let watchItemType = DataCountType.tweakWeightTwice
+        if item == watchItemType {
+            if let notifyDate = notification.object as? Date {
+                print("•INFO•DB•WATCH• TweaksEntryRowView handleDatabaseUpdate().1 \(item) notification: \(notifyDate)")
+            } else {
+                print("•INFO•DB•WATCH• TweaksEntryRowView handleDatabaseUpdate().2 \(item) notification: date unknown")
+            }
+        }
         
         guard let updatedDate = notification.object as? Date else { return }
         
-        //print("•INFO•DB•WATCH• TweaksEntryRowView handleDatabaseUpdate().2 \(item) A:\(updatedDate) B:\(date)")
+        if item == watchItemType {
+            print("•INFO•DB•WATCH• TweaksEntryRowView handleDatabaseUpdate().3 \(item) A:\(updatedDate) B:\(date)")
+        }
         guard Calendar.current.isDate(updatedDate, inSameDayAs: date) else {
-            //print("•INFO•DB•WATCH• TweaksEntryRowView handleDatabaseUpdate().3 \(item) inSameDayAs: A != B")
+            if item == watchItemType {
+                print("•INFO•DB•WATCH• TweaksEntryRowView handleDatabaseUpdate().4 \(item) inSameDayAs: A != B")
+            }
             return
         }
                 

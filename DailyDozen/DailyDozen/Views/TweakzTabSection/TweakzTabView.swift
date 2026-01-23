@@ -96,6 +96,8 @@ struct TweakzTabView: View {
                     VStack {
                         DozeHeaderView(isShowingSheet: $isShowingSheet,
                                        currentDate: currentDisplayDate)
+                            .frame(maxWidth: .infinity)  // Centers horizontally if in a VStack
+                            .padding(.horizontal)        // Optional safe margins
                         
                         TabView(selection: $currentIndex) {
                             ForEach(dateRange.indices, id: \.self) { index in
@@ -171,30 +173,12 @@ struct TweakzTabView: View {
                     isInitialized = true
                 }
             }
-            
-            //.task {
-            //    // Initial load — replaces old .onAppear
-            //    viewModel.ensureDateIsInRange(Date(),
-            //                                  dateRange: &dateRange,
-            //                                  currentIndex: &currentIndex)
-            //    selectedDate = Calendar.current.startOfDay(for: Date())
-            //
-            //    // Preload today + last 20 days for instant feel
-            //    let preloadCount = min(20, dateRange.count)
-            //    for date in dateRange.suffix(preloadCount) {
-            //        await viewModel.loadTracker(forDate: date, isSilent: true)
+                        
+            //.onReceive(NotificationCenter.default.publisher(for: .sqlDBUpdated)) { _ in
+            //    Task {
+            //        await viewModel.loadTracker(forDate: selectedDate)
             //    }
-            //
-            //    isDataReady = true
-            //    print("21Tweaks READY – \(dateRange.count) days loaded")
-            //}
-            
-            .onReceive(NotificationCenter.default.publisher(for: .sqlDBUpdated)) { _ in
-                
-                Task {
-                    await viewModel.loadTracker(forDate: selectedDate)
-                }
-            }
+            //} // •HACK•CHECK• may not be needed. verify if migration needs
         }
         .task {
             await checkHealthAvail()

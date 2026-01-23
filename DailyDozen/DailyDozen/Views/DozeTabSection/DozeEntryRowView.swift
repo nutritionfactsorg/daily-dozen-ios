@@ -122,19 +122,19 @@ struct DozeEntryRowView: View {
         //if let notifyDate = notification.object as? Date {
         //    print("•INFO•DB•WATCH• DozeEntryRowView handleDatabaseUpdate().1 \(item) notification: \(notifyDate)")
         //} else {
-        //    print("•INFO•DB•WATCH• DozeEntryRowView handleDatabaseUpdate().1 \(item) notification: date unknown")
+        //    print("•INFO•DB•WATCH• DozeEntryRowView handleDatabaseUpdate().2 \(item) notification: date unknown")
         //}
         
         guard let updatedDate = notification.object as? Date else { return }
         
-        //print("•INFO•DB•WATCH• DozeEntryRowView handleDatabaseUpdate().2 \(item) A:\(updatedDate) B:\(date)")
+        //print("•INFO•DB•WATCH• DozeEntryRowView handleDatabaseUpdate().3 \(item) A:\(updatedDate) B:\(date)")
         guard Calendar.current.isDate(updatedDate, inSameDayAs: date) else {
-            //print("•INFO•DB•WATCH• DozeEntryRowView handleDatabaseUpdate().3 \(item) inSameDayAs: A != B")
+            //print("•INFO•DB•WATCH• DozeEntryRowView handleDatabaseUpdate().4 \(item) inSameDayAs: A != B")
             return
         }
                 
         Task { @MainActor in
-            //print("•INFO•DB•WATCH• DozeEntryRowView handleDatabaseUpdate().4 \(item) Task{} begin")
+            //print("•INFO•DB•WATCH• DozeEntryRowView handleDatabaseUpdate().5 \(item) Task{} begin")
             checkCount = viewModel.getCount(for: item, date: date)
             await refreshStreak()
             await MainActor.run {

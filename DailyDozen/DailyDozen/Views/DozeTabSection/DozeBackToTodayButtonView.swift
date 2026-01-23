@@ -14,21 +14,22 @@ struct DozeBackToTodayButtonView: View {
     var body: some View {
         if !isToday {
             Button(action: action) {
+               
                 Text("dateBackButtonTitle")
-                    .frame(maxWidth: .infinity)
-                    .padding(5)
+                    .font(.headline)
                     .foregroundColor(.white)
+                    .frame(maxWidth: .infinity)
+                    .padding(.vertical, 10)  //internal spacing
+                    .padding(.horizontal, 16)
                     .background(Color.nfGreenBrand)
-//                    .background(
-//                        RoundedRectangle(cornerRadius: 8)
-//                            .fill(Color.nfGreenBrand)
-//                    )
                     //.cornerRadius(8)
-                    .ignoresSafeArea(edges: .horizontal)
+                    //.ignoresSafeArea(edges: .horizontal)
             }
-            //.padding(.horizontal)
+            .clipShape(RoundedRectangle(cornerRadius: 8))  // Clips the entire padded background
+            .ignoresSafeArea(edges: .horizontal)            // Full-bleed horizontally if desired
             .padding(.bottom, 10)
-            .frame(maxWidth: .infinity)
+            .shadow(color: .black.opacity(0.15), radius: 6, y: -3)  // Optional: subtle lift
+            .transition(.move(edge: .bottom).combined(with: .opacity))
         }
     }
 }

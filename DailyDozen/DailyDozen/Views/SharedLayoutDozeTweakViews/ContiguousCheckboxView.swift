@@ -7,18 +7,18 @@
 
 import SwiftUI
 
-    enum Direction {
-        case leftToRight
-        case rightToLeft
-        
-        init(layoutDirection: LayoutDirection) {
-            switch layoutDirection {
-            case .leftToRight: self = .leftToRight
-            case .rightToLeft: self = .rightToLeft
-            @unknown default:
-                self = .leftToRight
-            }
+enum Direction {
+    case leftToRight
+    case rightToLeft
+    
+    init(layoutDirection: LayoutDirection) {
+        switch layoutDirection {
+        case .leftToRight: self = .leftToRight
+        case .rightToLeft: self = .rightToLeft
+        @unknown default:
+            self = .leftToRight
         }
+    }
     
 }
 
@@ -66,58 +66,57 @@ struct ContiguousCheckboxView: View {
         }
     }
 }
-        
-        #Preview {
-            VStack(spacing: 40) {
-                // LTR preview
-                VStack(alignment: .leading) {
-                    Text("Left-to-Right (English)")
-                        .font(.headline)
-                    ContiguousCheckboxView(
-                        n: 7,
-                        x: .constant(4),
-                        onChange: { newValue in print("New value:", newValue) },
-                        isDisabled: false,
-                        onTap: nil
-                    )
-                    .environment(\.layoutDirection, .leftToRight)
-                }
-                .padding()
-                .background(Color.gray.opacity(0.1))
-                
-                // RTL preview
-                VStack(alignment: .trailing) {
-                    Text("Right-to-Left (Arabic / Hebrew)")
-                        .font(.headline)
-                    ContiguousCheckboxView(
-                        n: 7,
-                        x: .constant(4),
-                        onChange: { newValue in print("New value:", newValue) },
-                        isDisabled: false,
-                        onTap: nil
-                    )
-                    .environment(\.layoutDirection, .rightToLeft)
-                }
-                .padding()
-                .background(Color.gray.opacity(0.1))
-                
-                // Real-world simulation: force Arabic locale
-                VStack(alignment: .trailing) {
-                    Text("Arabic locale simulation")
-                        .font(.headline)
-                    ContiguousCheckboxView(
-                        n: 6,
-                        x: .constant(3),
-                        onChange: { _ in },
-                        isDisabled: false,
-                        onTap: nil
-                    )
-                    .environment(\.locale, .init(identifier: "ar"))
-                    // layoutDirection will automatically become .rightToLeft
-                }
-                .padding()
-                .background(Color.gray.opacity(0.1))
-            }
-            .padding()
+
+#Preview {
+    VStack(spacing: 40) {
+        // LTR preview
+        VStack(alignment: .leading) {
+            Text("Left-to-Right (English)")
+                .font(.headline)
+            ContiguousCheckboxView(
+                n: 7,
+                x: .constant(4),
+                onChange: { newValue in print("New value:", newValue) },
+                isDisabled: false,
+                onTap: nil
+            )
+            .environment(\.layoutDirection, .leftToRight)
         }
- 
+        .padding()
+        .background(Color.gray.opacity(0.1))
+        
+        // RTL preview
+        VStack(alignment: .trailing) {
+            Text("Right-to-Left (Arabic / Hebrew)")
+                .font(.headline)
+            ContiguousCheckboxView(
+                n: 7,
+                x: .constant(4),
+                onChange: { newValue in print("New value:", newValue) },
+                isDisabled: false,
+                onTap: nil
+            )
+            .environment(\.layoutDirection, .rightToLeft)
+        }
+        .padding()
+        .background(Color.gray.opacity(0.1))
+        
+        // Real-world simulation: force Arabic locale
+        VStack(alignment: .trailing) {
+            Text("Arabic locale simulation")
+                .font(.headline)
+            ContiguousCheckboxView(
+                n: 6,
+                x: .constant(3),
+                onChange: { _ in },
+                isDisabled: false,
+                onTap: nil
+            )
+            .environment(\.locale, .init(identifier: "ar"))
+            // layoutDirection will automatically become .rightToLeft
+        }
+        .padding()
+        .background(Color.gray.opacity(0.1))
+    }
+    .padding()
+}

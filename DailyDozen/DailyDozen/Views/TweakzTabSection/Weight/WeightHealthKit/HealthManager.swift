@@ -94,33 +94,14 @@ class HealthManager {
         let ampm: DataWeightType = hour < 12 ? .am : .pm
         
         // Delete any existing in this AMPM slot first
-        try await deleteHKWeight(date: date, ampm: ampm)
-        
-        let bodyMassType = HKQuantityType(.bodyMass)
-        let quantity = HKQuantity(unit: .gramUnit(with: .kilo), doubleValue: kg)
-        let sample = HKQuantitySample(
-            type: bodyMassType,
-            quantity: quantity,
-            start: date,
-            end: date,
-            metadata: [HKMetadataKeyWasUserEntered: true, "AppSource": Bundle.main.bundleIdentifier ?? "DailyDozen"]
-        )
-        
         do {
-            try await hkHealthStore.save(sample)
-            print("•HK• saveHKWeight success for \(String(format: "%.2f", kg)) kg at \(date.datestampyyyyMMddHHmmss)")
+            try await deleteHKWeight(date: date, ampm: ampm)
+            print("•HK• deleteHKWeight success")
         } catch {
-            print("•HK• saveHKWeight failed: \(error.localizedDescription)")
+            print("•HK• deleteHKWeight failed: \(error.localizedDescription)")
             throw error
         }
-    }
-
-    func saveHKWeightWAS(date: Date, kg: Double) async throws {
-        print("•HK• Attempting to save \(String(format: "%.2f", kg)) kg at \(date.datestampyyyyMMddHHmmss)")
-        guard kg > 0 else {
-            print("•HK• Invalid weight: \(kg) kg, skipping save")
-            throw NSError(domain: "HealthKit", code: -2, userInfo: [NSLocalizedDescriptionKey: "Weight must be positive"])
-        }
+        
         let bodyMassType = HKQuantityType(.bodyMass)
         let quantity = HKQuantity(unit: .gramUnit(with: .kilo), doubleValue: kg)
         let sample = HKQuantitySample(
@@ -130,6 +111,7 @@ class HealthManager {
             end: date,
             metadata: [HKMetadataKeyWasUserEntered: true, "AppSource": Bundle.main.bundleIdentifier ?? "DailyDozen"]
         )
+        
         do {
             try await hkHealthStore.save(sample)
             print("•HK• saveHKWeight success for \(String(format: "%.2f", kg)) kg at \(date.datestampyyyyMMddHHmmss)")

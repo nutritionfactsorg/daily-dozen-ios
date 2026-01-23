@@ -29,6 +29,14 @@ struct ServingsHistoryView: View {
     private let calendar = Calendar.current
     private let today = Calendar.current.startOfDay(for: Date())
     @State private var isLoading = true
+    private var servingsLegendText: String {
+        switch processor.filterType {
+        case .doze:
+            return String(localized: "historyRecordDoze.legend", comment: "Legend label for doze servings")
+        case .tweak:
+            return String(localized: "historyRecordTweak.legend", comment: "Legend label for tweak servings")
+        }
+    }
     
     private let dateFormatter: DateFormatter = {
         let formatter = DateFormatter()
@@ -37,7 +45,7 @@ struct ServingsHistoryView: View {
         return formatter
     }()
     
-    init(filterType: ChartFilterType) {  // NEW
+    init(filterType: ChartFilterType) {
         self._processor = StateObject(wrappedValue: ServingsDataProcessor(filterType: filterType))
     }
     
@@ -46,7 +54,10 @@ struct ServingsHistoryView: View {
             VStack(spacing: 16) {
                 HStack {
                     Text("history_scale_label")
-                        .padding()
+                        .font(.subheadline)
+                        .alignmentGuide(.firstTextBaseline) { d in d[.bottom] }
+                        .offset(y: 2)
+                        //.padding(.leading)
                     Picker("history_scale_label", selection: $selectedTimeScale) {
                         ForEach(TimeScale.allCases) { scale in
                             Text(scale.localizedName).tag(scale)
@@ -54,8 +65,11 @@ struct ServingsHistoryView: View {
                         }
                     }
                     .pickerStyle(.segmented)
+                    .alignmentGuide(.firstTextBaseline) { d in d[.bottom] - 2 }
                     .padding(.top, 8)
                 }
+                .padding(.horizontal, 20)
+                
                 if selectedTimeScale != .yearly {
                     HStack {
                         // Double chevron backward
@@ -191,7 +205,10 @@ struct ServingsHistoryView: View {
                     y: .value("Servings", item.totalServings),
                     width: 15
                 )
-                .foregroundStyle(date == today ? .nfGreenBrand : .nfGreenBrand)
+                .foregroundStyle(by: .value("Series", servingsLegendText))  // This creates the legend entry
+                .foregroundStyle(.nfGreenBrand)
+                
+                //.foregroundStyle(date == today ? .nfGreenBrand : .nfGreenBrand)
                 .annotation(position: .top, alignment: .center, spacing: 4) {
                     if item.totalServings > 0 {
                         servingsAnnotation(servings: item.totalServings)
@@ -206,13 +223,15 @@ struct ServingsHistoryView: View {
             .chartXVisibleDomain(length: Int(15 * 24 * 60 * 60))
             .chartYScale(domain: 0...maxY)
             .chartXAxis {
-                AxisMarks(preset: .aligned, values: .stride(by: .day, count: 1)) { value in
+                AxisMarks(values: .stride(by: .day, count: 1)) { value in
+                //AxisMarks(preset: .aligned, values: .stride(by: .day, count: 1)) { value in
                     AxisGridLine()
                     AxisTick()
                     AxisValueLabel(centered: true) {
                         if let date = value.as(Date.self) {
                             Text(date, format: .dateTime.day())
-                                .font(.caption2)
+                               //.font(.caption2)
+                               .dynamicTypeSize(.xSmall)
                         }
                     }
                 }
@@ -225,12 +244,27 @@ struct ServingsHistoryView: View {
                 }
             }
             .chartPlotStyle { plotArea in
-                plotArea
-
-                  //  .border(.nfGreenBrand)
+                plotArea.padding(.bottom, 70)
+                //.border(.nfGreenBrand)
+            }
+            .chartForegroundStyleScale([servingsLegendText: .nfGreenBrand])
+            .chartLegend(position: .bottom, alignment: .center, spacing: 20) {
+                HStack(spacing: 8) {
+                    Rectangle()
+                        .fill(.nfGreenBrand)
+                        .frame(width: 14, height: 14)  // Perfect square—tweak size if needed
+                        //.clipShape(RoundedRectangle(cornerRadius: 2))  // Optional: slight rounding for softer look
+                    
+                    Text(servingsLegendText)
+                        .font(.caption)
+                        .foregroundStyle(.primary)
+                }
+                .padding(.horizontal, 8)
+                .padding(.vertical, 4)
+                .background(Color(UIColor.systemBackground).opacity(0.9))  // Optional: subtle backdrop for contrast
+                .clipShape(RoundedRectangle(cornerRadius: 8))
             }
             
-            legendView // Place legend below chart
         }
     }
     
@@ -244,7 +278,8 @@ struct ServingsHistoryView: View {
                     x: .value("Month", item.date!, unit: .month),
                     y: .value("Servings", item.totalServings)
                 )
-                .foregroundStyle(.nfGreenBrand)
+                //.foregroundStyle(.nfGreenBrand)
+                .foregroundStyle(by: .value("Series", servingsLegendText))
                 .interpolationMethod(.catmullRom)
                 .lineStyle(.init(lineWidth: 3))
                 .symbol(.circle)
@@ -254,7 +289,7 @@ struct ServingsHistoryView: View {
                     x: .value("Month", item.date!, unit: .month),
                     y: .value("Servings", item.totalServings)
                 )
-                .foregroundStyle(.nfGreenBrand)
+                .foregroundStyle(by: .value("Series", servingsLegendText))
                 .opacity(0)
                 .annotation(position: .top, alignment: .center, spacing: 6) {
                     if item.totalServings > 0 {
@@ -264,7 +299,7 @@ struct ServingsHistoryView: View {
             }
             .chartScrollableAxes(.horizontal)
             .chartScrollTargetBehavior(.valueAligned(matching: .init()))
-            .chartScrollPosition(x: $monthlyScrollPosition)
+            //.chartScrollPosition(x: $monthlyScrollPosition)
             .chartScrollPosition(x: $monthlyScrollPosition)  // Keep if needed
             .chartScrollPosition(initialX: calendar.startOfMonth(for: selectedDate))
             .task(id: selectedTimeScale) {
@@ -288,13 +323,14 @@ struct ServingsHistoryView: View {
             .chartXVisibleDomain(length: Int(365 * 24 * 60 * 60))
             .chartYScale(domain: 0...config.yAxisUpperBound)
             .chartXAxis {
-                AxisMarks(preset: .aligned, values: .stride(by: .month, count: 1)) { value in
+                AxisMarks(values: .automatic(desiredCount: 6)) { value in
                     AxisGridLine()
                     AxisTick()
                     AxisValueLabel(centered: true) {
                         if let date = value.as(Date.self) {
                             Text(date, format: .dateTime.month(.abbreviated))
-                                .font(.caption2)
+                                //.font(.caption2)
+                                .dynamicTypeSize(.xSmall)
                         }
                     }
                 }
@@ -306,11 +342,28 @@ struct ServingsHistoryView: View {
                     AxisValueLabel()
                 }
             }
-            .frame(minHeight: config.chartHeight + 30)
-            .padding(.vertical, 40)
+            .chartPlotStyle { plotArea in
+                plotArea.padding(.bottom, 70)  // Generous—covers legend + axis labels on small screens; tweak 50–80
+            }
+            .chartForegroundStyleScale([servingsLegendText: .nfGreenBrand])
+            .chartLegend(position: .bottom, alignment: .center, spacing: 20) {
+                HStack(spacing: 8) {
+                    Circle()
+                        .fill(.nfGreenBrand)
+                        .frame(width: 14, height: 14)  // Circle swatch—matches your points
+                    
+                    Text(servingsLegendText)
+                        .font(.system(size: 12))  // Fixed size—see fix #2 below
+                        .foregroundStyle(.primary)
+                }
+                .padding(.horizontal, 8)
+                .padding(.vertical, 4)
+                .background(Color(UIColor.systemBackground).opacity(0.9))
+                .clipShape(RoundedRectangle(cornerRadius: 8))
+            }
+            //.frame(minHeight: config.chartHeight)
+            .padding(.vertical, 20)
             .padding(.horizontal)
-            
-            legendView // Place legend below chart
         }
     }
     
@@ -373,7 +426,7 @@ struct ServingsHistoryView: View {
             .chartXVisibleDomain(length: Int(8 * 365 * 24 * 60 * 60))
             .chartPlotStyle { plotArea in
                 plotArea
-                    .padding(.bottom, 40)
+                    .padding(.bottom, 70)
                     .padding(.trailing, 100)
             }
             .chartXAxis {
@@ -399,11 +452,25 @@ struct ServingsHistoryView: View {
                     AxisValueLabel()
                 }
             }
-            .frame(minHeight: config.chartHeight)
-            .padding(.vertical, 30)
+            //.frame(minHeight: config.chartHeight)
+            .chartForegroundStyleScale([servingsLegendText: .nfGreenBrand])
+            .chartLegend(position: .bottom, alignment: .center, spacing: 20) {
+                HStack(spacing: 8) {
+                    Circle()
+                        .fill(.nfGreenBrand)
+                        .frame(width: 14, height: 14)
+                    
+                    Text(servingsLegendText)
+                        .font(.system(size: 12))
+                        .foregroundStyle(.primary)
+                }
+                .padding(.horizontal, 8)
+                .padding(.vertical, 4)
+                .background(Color(UIColor.systemBackground).opacity(0.9))
+                .clipShape(RoundedRectangle(cornerRadius: 8))
+            }
+            .padding(.vertical, 20)
             .padding(.horizontal)
-            
-            legendView // Place legend below chart
         }
         .task {
             if let latestYear = years.max() {
@@ -422,19 +489,7 @@ struct ServingsHistoryView: View {
 //            }
 //        }
     }
-    
-    private var legendView: some View {
-        HStack(spacing: 8) {
-            Rectangle()
-                .fill(.nfGreenBrand)
-                .frame(width: 12, height: 12)
-            Text(String(localized: "historyRecordDoze.legend", comment: "Legend label for servings"))
-                .font(.caption)
-                .foregroundStyle(.primary)
-        }
-        .padding(.top, 8)
-    }
-    
+        
     // MARK: - Scroll Position Logic
     private func updateScrollPosition() {
         switch selectedTimeScale {

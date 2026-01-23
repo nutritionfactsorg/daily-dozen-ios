@@ -1,5 +1,5 @@
 //
-//  DozeTabPageView.swift
+//  DozePageView.swift
 //  DailyDozen
 //
 //  Copyright © 2025 Nutritionfacts.org. All rights reserved.
@@ -17,11 +17,11 @@ struct ScrollOffsetPreferenceKey: PreferenceKey {
     }
 }
 
-struct DozeTabPageView: View {
+struct DozePageView: View {
     private let viewModel = SqlDailyTrackerViewModel.shared
     //@EnvironmentObject var viewModel: SqlDailyTrackerViewModel
     @Environment(\.requestReview) var requestReview
-    let coordinator: ScrollPositionCoordinator 
+    let coordinator: ScrollPositionCoordinator
     
     let date: Date
     @State private var showingAlert = false
@@ -119,8 +119,9 @@ struct DozeTabPageView: View {
                         }
                     }
                 }
-               // .padding(.horizontal)
+                //.padding(.horizontal)
                 // Capture scroll offset
+                .padding(.top, 30)
             }
         }
         .alert(isPresented: $showingAlert) {
@@ -129,15 +130,15 @@ struct DozeTabPageView: View {
         .onAppear {
             Task { await syncRecordWithDB() }
         }
-        .onReceive(NotificationCenter.default.publisher(for: .sqlDBUpdated)) { notification in
-            guard let updatedDate = notification.object as? Date,
-                  Calendar.current.isDate(updatedDate, inSameDayAs: date) else { return }
-            Task { await viewModel.loadTracker(forDate: date) }
-        }
+        //.onReceive(NotificationCenter.default.publisher(for: .sqlDBUpdated)) { notification in
+        //    guard let updatedDate = notification.object as? Date,
+        //          Calendar.current.isDate(updatedDate, inSameDayAs: date) else { return }
+        //    Task { await viewModel.loadTracker(forDate: date) }
+        //} // •HACK•CHECK• checking if not needed. verify if migration needs
     }
 }
 
 //#Preview {
-//    DozeTabPageView(date: Date(), scrollOffset:)
+//    DozePageView(date: Date(), scrollOffset:)
 //        .environmentObject(SqlDailyTrackerViewModel())
 //}

@@ -9,8 +9,7 @@ import SwiftUI
 
 struct DozeHeaderView: View {
     @Binding var isShowingSheet: Bool
-    let currentDate: Date // Pass the current date from ContentView
-   // let dozeDailyStateCount: Int
+    let currentDate: Date
     
     private var buttonTitle: String {
         let calendar = Calendar.current
@@ -31,10 +30,17 @@ struct DozeHeaderView: View {
     var body: some View {
         Button(action: { isShowingSheet.toggle() }, label: {
             Text(buttonTitle)
-                .frame(width: 300, height: 30, alignment: .center)
+                //.frame(width: 300, height: 30, alignment: .center)
+                .font(.headline)                  // Dynamic, scales with Dynamic Type + Zoom
+                .lineLimit(1)                     // Prevent multiline wrapping
+                .truncationMode(.tail)            // Ellipsis if too long
+                .padding(.horizontal, 24)         // Generous horizontal padding for pill shape
+                .padding(.vertical, 5)
+                .frame(minWidth: 200)
         })
         .buttonStyle(.borderedProminent)
         .tint(.nfGreenBrand)
+        //.controlSize(.large)
         .padding(5)
 //        
 
