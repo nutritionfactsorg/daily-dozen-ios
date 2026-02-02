@@ -11,16 +11,16 @@ import SwiftUI
 // New: Helper struct to handle attribute lookups, breaking circular dependency
 struct DataCountTypeAttributes: Sendable {
     
-    static func headingDisplay(for type: DataCountType) -> String {
-        DataCountAttributes.shared.dict[type]?.headingDisplay ?? "Unknown"
+    static func headingDisplay(countType: DataCountType) -> String {
+        DataCountAttributes.shared.dict[countType]?.headingDisplay ?? "Unknown"
     }
     
-    static func goalServings(for type: DataCountType) -> Int {
-        DataCountAttributes.shared.dict[type]?.goalServings ?? 0
+    static func goalServings(countType: DataCountType) -> Int {
+        DataCountAttributes.shared.dict[countType]?.goalServings ?? 0
     }
     
-    static func headingCSV(for type: DataCountType) -> String {
-        DataCountAttributes.shared.dict[type]?.headingCSV ?? "Unknown"
+    static func headingCSV(countType: DataCountType) -> String {
+        DataCountAttributes.shared.dict[countType]?.headingCSV ?? "Unknown"
     }
     
     static func type(forCSVHeading csvHeading: String) -> DataCountType? {
@@ -220,14 +220,14 @@ extension DataCountType: Equatable {
 
 extension DataCountType {
     var headingDisplay: String {
-        DataCountTypeAttributes.headingDisplay(for: self)
+        DataCountTypeAttributes.headingDisplay(countType: self)
     }
     
     var goalServings: Int {
-        DataCountTypeAttributes.goalServings(for: self)
+        DataCountTypeAttributes.goalServings(countType: self)
     }
     
     var headingCSV: String {
-        DataCountTypeAttributes.headingCSV(for: self)
+        DataCountTypeAttributes.headingCSV(countType: self)
     }
 }

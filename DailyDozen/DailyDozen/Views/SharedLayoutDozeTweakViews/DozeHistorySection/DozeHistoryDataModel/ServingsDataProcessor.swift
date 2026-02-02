@@ -76,10 +76,12 @@ class ServingsDataProcessor: ObservableObject {
         _filteredTrackers = Published(wrappedValue: [])
         
         Task {
-            await SqlDailyTrackerViewModel.shared.preloadAllDataForServingsIfNeeded()
+            let viewModel = SqlDailyTrackerViewModel.shared
+            await viewModel.preloadAllDataForServingsIfNeeded()
             
             await MainActor.run {
-                self.trackers = SqlDailyTrackerViewModel.shared.trackers
+                let viewModel = SqlDailyTrackerViewModel.shared
+                self.trackers = viewModel.trackers
                 self.applyFilter()
             }
             

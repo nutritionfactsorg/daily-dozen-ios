@@ -85,7 +85,7 @@ struct DailyTrackerTests {
     func testSqlTracker() async throws {
         let date = Date()
         
-        var tracker = SqlDailyTracker(date: date)
+        var tracker = await SqlDailyTracker(date: date)
         
         // Add count 3 for beans
         let countBeans = SqlDataCountRecord(

@@ -62,11 +62,11 @@ struct YearChartView: View {
                 var points: [WeightDataPoint] = []
                 if let amWeight = tracker.weightAM?.dataweight_kg, amWeight > 0 {
                     let weight = unitType == .metric ? amWeight : tracker.weightAM!.lbs
-                    points.append(WeightDataPoint(date: tracker.date, weight: weight, type: .am))
+                    points.append(WeightDataPoint(date: tracker.date, weight: weight, weightType: .am))
                 }
                 if let pmWeight = tracker.weightPM?.dataweight_kg, pmWeight > 0 {
                     let weight = unitType == .metric ? pmWeight : tracker.weightPM!.lbs
-                    points.append(WeightDataPoint(date: tracker.date, weight: weight, type: .pm))
+                    points.append(WeightDataPoint(date: tracker.date, weight: weight, weightType: .pm))
                 }
                 return points
             }
@@ -98,6 +98,8 @@ struct YearChartView: View {
             VStack(spacing: 10) {
                 if !isChartReady {
                     ProgressView()
+                        .progressViewStyle(CircularProgressViewStyle(tint: .nfGreenBrand))
+                        .scaleEffect(1.5)
                         .frame(maxWidth: .infinity, maxHeight: 250)
                 } else if computedChartData.isEmpty {
                     Text("historyRecordWeight_NoWeightAvailable")
@@ -131,12 +133,21 @@ struct YearChartView: View {
                 LineMark(
                     x: .value("Day", daysSinceEarliestDate(dataPoint.date)),
                     y: .value("Weight", dataPoint.weight),
-                    series: .value("Series", dataPoint.type == .am ? "AM" : "PM")
+                    series: .value("Series", dataPoint.weightType == .am ? "AM" : "PM")
                 )
-                .foregroundStyle(by: .value("Series", dataPoint.type == .am ? "AM" : "PM"))
-                .symbol(by: .value("Series", dataPoint.type == .am ? "AM" : "PM"))
+                .foregroundStyle(by: .value("Series", dataPoint.weightType == .am ? "AM" : "PM"))
+                .symbol(by: .value("Series", dataPoint.weightType == .am ? "AM" : "PM"))
                 .interpolationMethod(.catmullRom)
                 .symbolSize(100)
+            }
+            
+            //Year boundary lines
+            let yearStarts = yearAndMonthMarks().filter { $0.isYear }.map { $0.day }
+            ForEach(yearStarts, id: \.self) { day in
+                RuleMark(x: .value("YearStart", day))
+                    .foregroundStyle(.gray.opacity(0.2))
+                    .lineStyle(StrokeStyle(lineWidth: 1, dash: [5, 5]))
+                    .zIndex(-2)
             }
             
             if let day = selectedDay,
@@ -151,9 +162,9 @@ struct YearChartView: View {
                     x: .value("Day", day),
                     y: .value("Weight", point.weight)
                 )
-                .foregroundStyle(point.type == .am ? Color("nfYellowSunglow") : Color("nfRedFlamePea"))
+                .foregroundStyle(point.weightType == .am ? Color("nfYellowSunglow") : Color("nfRedFlamePea"))
                 .symbolSize(100)
-                .symbol(by: .value("Series", point.type == .am ? "AM" : "PM")) 
+                .symbol(by: .value("Series", point.weightType == .am ? "AM" : "PM")) 
                 .annotation(
                     position: point.weight > computeYDomain().upperBound * 0.8 ? .top : .bottom,
                     alignment: alignmentForPosition(selectedDay: day),
@@ -179,6 +190,9 @@ struct YearChartView: View {
                    let mark = axisData.first(where: { $0.day == day }) {
                     AxisValueLabel {
                         Text(mark.label)
+                            .font(mark.isYear ? .caption.bold() : .caption2)  // Years bolder
+                            .monospacedDigit()
+                            .foregroundStyle(mark.isYear ? .primary : .secondary)
                     }
                     AxisGridLine()
                     AxisTick()
@@ -210,7 +224,7 @@ struct YearChartView: View {
                     AxisValueLabel {
                         Text(numberFormatter.string(from: NSNumber(value: weight)) ?? String(format: "%.1f", weight))
                             .font(layoutDirection == .rightToLeft ? .caption2 : .caption)
-                            .padding(layoutDirection == .rightToLeft ? .trailing : .leading, 20)
+                            .padding(layoutDirection == .rightToLeft ? .trailing : .leading, 8)
                     }
                     AxisGridLine()
                     AxisTick()
@@ -225,7 +239,8 @@ struct YearChartView: View {
                 //.padding(.horizontal, 30)  // Buffer for annotations (~half popover width + margin)
                 .padding(.top, 20)
         }
-        .padding(.horizontal, layoutDirection == .rightToLeft ? 30 : 20)
+        //.padding(.horizontal, layoutDirection == .rightToLeft ? 20 : 10)
+        .padding(.horizontal, 10)
         .padding(.top, 0)
         .chartGesture { proxy in
                     SpatialTapGesture()
@@ -262,7 +277,7 @@ struct YearChartView: View {
                                     abs($0.weight - tappedWeight) < abs($1.weight - tappedWeight)
                                 })
                             } else {
-                                selectedPoint = pointsOnDay.first(where: { $0.type == .am }) ?? pointsOnDay.first
+                                selectedPoint = pointsOnDay.first(where: { $0.weightType == .am }) ?? pointsOnDay.first
                             }
 
                             selectedDay = closestDay
@@ -279,7 +294,7 @@ struct YearChartView: View {
 
             HStack(spacing: 4) {
                 Group {
-                    if point.type == .am {
+                    if point.weightType == .am {
                         // Morning → Yellow circle, stroked
                         Circle()
                             .stroke(Color("nfYellowSunglow"), lineWidth: 2)
@@ -345,38 +360,39 @@ struct YearChartView: View {
         return gregorianCalendar.dateComponents([.day], from: earliestDate, to: date).day! + 1
     }
 
-    private func yearAndMonthMarks() -> [(day: Int, label: String)] {
+    private func yearAndMonthMarks() -> [(day: Int, label: String, isYear: Bool)] {
         guard !viewModel.trackers.isEmpty,
               let earliestDate = viewModel.trackers.map({ $0.date }).min(),
               let latestDate = viewModel.trackers.map({ $0.date }).max() else { return [] }
-
+        
         let earliestYear = gregorianCalendar.component(.year, from: earliestDate)
         let latestYear = gregorianCalendar.component(.year, from: latestDate)
-
-        var marks: [(day: Int, label: String)] = []
-        let yearFormatter = DateFormatter()
-        yearFormatter.dateFormat = "yyyy"
-        let monthFormatter = DateFormatter()
-        monthFormatter.dateFormat = "MMM"
-
+        
+        var marks: [(day: Int, label: String, isYear: Bool)] = []
+        
         for year in earliestYear...latestYear {
+            // Year label at Jan 1 (bold later)
             if let jan1 = gregorianCalendar.date(from: DateComponents(year: year, month: 1, day: 1)),
-               let day = gregorianCalendar.dateComponents([.day], from: earliestDate, to: jan1).day {
-                marks.append((day: day + 1, label: yearFormatter.string(from: jan1)))
+               jan1 <= latestDate {
+                let day = daysSinceEarliestDate(jan1)
+                marks.append((day: day, label: "\(year)", isYear: true))
             }
-
-            for month in 1...12 {
+            
+            // Quarterly months: Jan, Apr, Jul, Oct (lighter)
+            let quarters = [1, 4, 7, 10]
+            for month in quarters {
                 if let monthDate = gregorianCalendar.date(from: DateComponents(year: year, month: month, day: 1)),
-                   monthDate <= latestDate,
-                   let day = gregorianCalendar.dateComponents([.day], from: earliestDate, to: monthDate).day {
-                    marks.append((day: day + 1, label: monthFormatter.string(from: monthDate)))
+                   monthDate <= latestDate {
+                    let day = daysSinceEarliestDate(monthDate)
+                    let label = DateFormatter().shortMonthSymbols[month - 1]  // "Jan", "Apr", etc.
+                    marks.append((day: day, label: label, isYear: false))
                 }
             }
         }
-
+        
         return marks.sorted { $0.day < $1.day }
     }
-
+    
     private func xAxisDomain() -> ClosedRange<Int> {
         guard !viewModel.trackers.isEmpty,
               let earliestDate = viewModel.trackers.map({ $0.date }).min(),
@@ -384,25 +400,33 @@ struct YearChartView: View {
             return 1...365
         }
         let dayCount = gregorianCalendar.dateComponents([.day], from: earliestDate, to: latestDate).day ?? 365
-        return 1...(dayCount + 1)
+        return 1...(dayCount + 20)
     }
 
     private func computeYDomain() -> ClosedRange<Double> {
-        guard !computedChartData.isEmpty else { return 0...100 }
-
+        guard !computedChartData.isEmpty else { return 40...120 }  // Sane default
+        
         let weights = computedChartData.map { $0.weight }.sorted()
         let count = weights.count
-
-        let lowerIndex = Int(Double(count) * 0.01)
-        let upperIndex = Int(Double(count) * 0.99)
-
+        
+        guard count > 0 else { return 40...120 }
+        
+        // Use 1st and 99th percentile to ignore outliers
+        let lowerIndex = max(0, Int(Double(count) * 0.01))
+        let upperIndex = min(count - 1, Int(Double(count) * 0.99))
+        
         let minWeight = weights[lowerIndex]
         let maxWeight = weights[upperIndex]
-
-        let padding = (maxWeight - minWeight) * 0.1
+        
+        var range = maxWeight - minWeight
+        if range < 0.5 {  // Flat or near-flat: force minimum spread
+            range = max(5.0, minWeight * 0.1)
+        }
+        
+        let padding = range * 0.1
         let lowerBound = max(0, minWeight - padding)
         let upperBound = maxWeight + padding
-
+        
         return lowerBound...upperBound
     }
 }

@@ -11,6 +11,7 @@ import HealthKit
 //TBDz needs star calculation
 
 struct TweakzTabView: View {
+    @Environment(\.scenePhase) private var scenePhase
     @State private var navigationPath = NavigationPath()
     @State private var showHealthKitError = false // Controls whether the alert is shown
     @State private var healthKitErrorMessage = "" // Stores the error message for the alert
@@ -80,8 +81,32 @@ struct TweakzTabView: View {
     }
     
     private func goToToday() {
+        let calendar = Calendar.current
         viewModel.ensureDateIsInRange(Date(), dateRange: &dateRange, currentIndex: &currentIndex, thenSelectIt: true)
-        selectedDate = Calendar.current.startOfDay(for: Date())
+        selectedDate = calendar.startOfDay(for: Date())
+    }
+    
+    private func ensureCurrentTodayInRangeAndPreloadIfNew() {
+        let calendar = Calendar.current
+        let today = calendar.startOfDay(for: Date())
+        
+        // Check if today is already in the range
+        let alreadyPresent = dateRange.contains { calendar.isDate($0, inSameDayAs: today) }
+        
+        // Ensure it's in the range (your viewModel likely appends it if missing)
+        viewModel.ensureDateIsInRange(
+            today,
+            dateRange: &dateRange,
+            currentIndex: &currentIndex,
+            thenSelectIt: false  // Don't auto-jump yet
+        )
+        
+        // Only preload if it was newly added
+        if !alreadyPresent, let todayIndex = dateRange.firstIndex(where: { calendar.isDate($0, inSameDayAs: today) }) {
+            Task {
+                await viewModel.loadTracker(forDate: dateRange[todayIndex], isSilent: true)
+            }
+        }
     }
     
     // MARK: - Body
@@ -150,6 +175,23 @@ struct TweakzTabView: View {
                 )
             }
             .whiteInlineGreenTitle("navtab.tweaks")
+            
+            .onChange(of: scenePhase) { _, newPhase in
+                if newPhase == .active {
+                    ensureCurrentTodayInRangeAndPreloadIfNew()
+                    
+                    // Optional: auto-jump if user was on the old "today"
+                    let calendar = Calendar.current
+                    let yesterday = calendar.date(byAdding: .day, value: -1, to: Date())!
+                    if dateRange.indices.contains(currentIndex),
+                       calendar.isDate(dateRange[currentIndex], inSameDayAs: yesterday) {
+                        goToToday()
+                    }
+                }
+            }
+            .onReceive(NotificationCenter.default.publisher(for: UIApplication.significantTimeChangeNotification)) { _ in
+                ensureCurrentTodayInRangeAndPreloadIfNew()
+            }
             
             .onAppear {
                 if !isInitialized {

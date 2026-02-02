@@ -122,6 +122,7 @@ struct DozePageView: View {
                 //.padding(.horizontal)
                 // Capture scroll offset
                 .padding(.top, 30)
+                .padding(.bottom, 40)
             }
         }
         .alert(isPresented: $showingAlert) {

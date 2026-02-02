@@ -108,7 +108,8 @@ struct GenerateHistoryTestDataView: View {
         print("•INFO•DB•GEN• BEGIN GenerateHistoryView generateTestData(\(days)) \(Date().datestampyyyyMMddHHmmssSSS)")
         
         do {
-            try await SqlDailyTrackerViewModel.shared.generateHistoryTestData(days: days)
+            let viewModel = SqlDailyTrackerViewModel.shared
+            try await viewModel.generateHistoryTestData(days: days)
             await MainActor.run {
                 successMessage = "•INFO•DB•GEN• \(days) days generated!"
             }

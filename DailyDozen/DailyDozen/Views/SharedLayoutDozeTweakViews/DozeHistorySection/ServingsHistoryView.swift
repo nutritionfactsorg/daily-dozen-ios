@@ -38,6 +38,15 @@ struct ServingsHistoryView: View {
         }
     }
     
+    private var viewTitleText: String {
+        switch processor.filterType {
+        case .doze:
+            return String(localized: "historyRecordDoze.heading", comment: "Label for doze servings")
+        case .tweak:
+            return String(localized: "historyRecordTweak.heading", comment: "Label for tweak servings")
+        }
+    }
+    
     private let dateFormatter: DateFormatter = {
         let formatter = DateFormatter()
         formatter.locale = Locale.current
@@ -128,27 +137,30 @@ struct ServingsHistoryView: View {
                                         .frame(idealWidth: max(geometry.size.width, CGFloat(processor.yearlyServings().count) * 250 + 40))
                                 }
                             }
-
-                        }
                             
+                        }
+                        
                     }
                     .frame(maxWidth: .infinity, maxHeight: .infinity)
                     .padding(.horizontal, 10)
                     .padding(.vertical, 20)
                     
                 }
-               // .frame(maxWidth: .infinity, maxHeight: .infinity) // makes ProgressView centered
-                    .frame(maxHeight: .infinity)                .task {
-                    await SqlDailyTrackerViewModel.shared.preloadAllDataForServingsIfNeeded()
+                //.frame(maxWidth: .infinity, maxHeight: .infinity) // makes ProgressView centered
+                .frame(maxHeight: .infinity)
+                .task {
+                    let viewModel = SqlDailyTrackerViewModel.shared
+                    await viewModel.preloadAllDataForServingsIfNeeded()
                     // This method already checks if data is loaded — it won't double-fetch
                     await MainActor.run {
-                        processor.trackers = SqlDailyTrackerViewModel.shared.trackers
+                        let viewModel = SqlDailyTrackerViewModel.shared
+                        processor.trackers = viewModel.trackers
                         processor.applyFilter()
                         isLoading = false
                     }
                 }
             }
-           
+            
             .task(id: selectedDate) {
                 updateScrollPosition()
             }
@@ -156,9 +168,10 @@ struct ServingsHistoryView: View {
             .task(id: selectedTimeScale) {
                 updateScrollPosition()
             }
-
-            .whiteInlineGreenTitle("historyRecordDoze.heading")
-
+            
+           // .whiteInlineGreenTitle("historyRecordDoze.heading")
+            .whiteInlineGreenTitle(viewTitleText)
+            
             .safeAreaInset(edge: .bottom) {
                 Color.clear
                     .frame(height: 0) // base inset = tab bar height
@@ -179,12 +192,6 @@ struct ServingsHistoryView: View {
             self.maxServings = data.map { $0.totalServings }.max() ?? 0
             let padding = Int(Double(maxServings) * 0.3) + 1   //(1 is padding)
             let dailyMax = filterType == .doze ? 24 : 37
-//            if isYearly {
-//                cap = filterType == .doze ? 8760 : 13505  // Rough yearly max: 24*365 or 37*365
-//            } else {
-//                cap = filterType == .doze ? 744 : 1147  // Rough monthly max: 24*31 or 37*31
-//                // For daily, this won't apply directly
-//            }
             let cap = isYearly ? (dailyMax * 366) : (dailyMax * 31)
             self.yAxisUpperBound = min(cap, maxServings + padding)
             self.chartHeight = max(300, min(600, CGFloat(maxServings) / (isYearly ? 15 : 2)))
@@ -224,14 +231,14 @@ struct ServingsHistoryView: View {
             .chartYScale(domain: 0...maxY)
             .chartXAxis {
                 AxisMarks(values: .stride(by: .day, count: 1)) { value in
-                //AxisMarks(preset: .aligned, values: .stride(by: .day, count: 1)) { value in
+                    //AxisMarks(preset: .aligned, values: .stride(by: .day, count: 1)) { value in
                     AxisGridLine()
                     AxisTick()
                     AxisValueLabel(centered: true) {
                         if let date = value.as(Date.self) {
                             Text(date, format: .dateTime.day())
-                               //.font(.caption2)
-                               .dynamicTypeSize(.xSmall)
+                            //.font(.caption2)
+                            .dynamicTypeSize(.xSmall)
                         }
                     }
                 }
@@ -303,22 +310,22 @@ struct ServingsHistoryView: View {
             .chartScrollPosition(x: $monthlyScrollPosition)  // Keep if needed
             .chartScrollPosition(initialX: calendar.startOfMonth(for: selectedDate))
             .task(id: selectedTimeScale) {
-                    if selectedTimeScale == .monthly {
-                        let year = calendar.component(.year, from: today)
-                        if let januaryThisYear = calendar.date(from: DateComponents(year: year, month: 1, day: 1)) {
-                            if !calendar.isDate(selectedDate, equalTo: januaryThisYear, toGranularity: .month) {
-                                selectedDate = januaryThisYear
-                            }
+                if selectedTimeScale == .monthly {
+                    let year = calendar.component(.year, from: today)
+                    if let januaryThisYear = calendar.date(from: DateComponents(year: year, month: 1, day: 1)) {
+                        if !calendar.isDate(selectedDate, equalTo: januaryThisYear, toGranularity: .month) {
+                            selectedDate = januaryThisYear
                         }
                     }
                 }
-                .task(id: selectedDate) {
-                    let target = calendar.startOfMonth(for: selectedDate)
-                    if monthlyScrollPosition != target {
-                        monthlyScrollPosition = target
-                    }
+            }
+            .task(id: selectedDate) {
+                let target = calendar.startOfMonth(for: selectedDate)
+                if monthlyScrollPosition != target {
+                    monthlyScrollPosition = target
                 }
-
+            }
+            
             .chartXScale(domain: monthlyXDomain)
             .chartXVisibleDomain(length: Int(365 * 24 * 60 * 60))
             .chartYScale(domain: 0...config.yAxisUpperBound)
@@ -385,8 +392,8 @@ struct ServingsHistoryView: View {
         let domain = yearlyXDomain(data: data)
         let years = data.compactMap { $0.year }.sorted().uniqued()
         let initialTarget = years.max().flatMap { latestYear in
-                calendar.date(from: DateComponents(year: latestYear, month: 12, day: 31))
-            } ?? today
+            calendar.date(from: DateComponents(year: latestYear, month: 12, day: 31))
+        } ?? today
         
         return VStack(alignment: .center, spacing: 0) {
             Chart {
@@ -479,17 +486,8 @@ struct ServingsHistoryView: View {
                 print("YearlyChart: Task set scroll position to \(latestYear), Scroll Date: \(yearlyScrollPosition) at \(today)")
             }
         }
-//        .onAppear {
-//            if let latestYear = years.max() {
-//                let scrollDate = calendar.date(from: DateComponents(year: latestYear, month: 12, day: 31, hour: 23, minute: 59, second: 59)) ?? today
-//                yearlyScrollPosition = scrollDate
-//                DispatchQueue.main.asyncAfter(deadline: .now() + 0.1) {
-//                    yearlyScrollPosition = scrollDate
-//                }
-//            }
-//        }
     }
-        
+    
     // MARK: - Scroll Position Logic
     private func updateScrollPosition() {
         switch selectedTimeScale {
@@ -497,7 +495,7 @@ struct ServingsHistoryView: View {
             let monthStart = max(calendar.startOfMonth(for: selectedDate), calendar.startOfMonth(for: earliestDate))
             let monthEnd = min(calendar.endOfMonth(for: selectedDate), today)
             dailyScrollPosition = today >= monthStart && today <= monthEnd ? today : monthEnd
-           // print("•DEBUG• Daily scroll set to: \(dailyScrollPosition)")
+            // print("•DEBUG• Daily scroll set to: \(dailyScrollPosition)")
         case .monthly:
             let year = calendar.component(.year, from: selectedDate)
             let earliestYear = calendar.component(.year, from: earliestDate)

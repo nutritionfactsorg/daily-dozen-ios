@@ -10,7 +10,6 @@
 import Foundation
 
 class TweakTextsProvider {
-    
     @MainActor
     static let shared: TweakTextsProvider = {
         let decoder = JSONDecoder()

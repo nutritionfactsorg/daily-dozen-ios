@@ -19,38 +19,20 @@ struct DozeCalendarView: View {
     private let today = Calendar.current.startOfDay(for: Date())
     
     var body: some View {
-        ZStack(alignment: .bottom ) {
-                UICalendarViewRepresentable(item: item, currentMonth: $currentMonth)
-                //  .frame(height: 400)
-                .frame(maxWidth: .infinity, maxHeight: .infinity)
-               // Spacer()
-                
-                LegendView()
-                    .frame(maxWidth: .infinity)
-                    .padding(.bottom, 10)
-                   // .background(Color.white)
+            ScrollView {
+                VStack(spacing: 24) {
+                    UICalendarViewRepresentable(item: item, currentMonth: $currentMonth)
+                        .frame(maxWidth: .infinity)
+                   
+                    LegendView()
+                        .padding(.bottom, 20)
+                }
+                .frame(maxWidth: .infinity)
+                .padding(.bottom, 20)
             }
            
-                    // Explanation:
-                    // - geometry.safeAreaInsets.bottom is ~50pt on devices with tab bar
-                    // - We subtract 10 to avoid too much gap on larger screens
-                    // - But enforce minimum 20pt so on SE there's still breathing room and no overlap
-        
-        .whiteInlineGreenTitle(item.headingDisplay)
-        .safeAreaInset(edge: .bottom, spacing: 0) {
-                Color.clear.frame(height: 0) // Ensures room for tab bar
-            }
-    //    .safeAreaInset(edge: .bottom, spacing: 0) {
-                // This adds exactly the tab bar height as padding at the bottom
-                // So the LegendView sits fully above the tab bar
-           //     Color.clear
-               //     .frame(height: 0)
-                
-                // Uncomment below if you want a little extra breathing room:
-                // .frame(height: 10)
-           // }
- 
-    }
+            .whiteInlineGreenTitle(item.headingDisplay)
+        }
 }
     
     #Preview {

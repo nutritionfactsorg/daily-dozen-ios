@@ -3,6 +3,7 @@
 //  DailyDozen
 //
 // swiftlint:disable type_body_length
+// swiftlint:disable file_length
 
 import SwiftUI
 import Charts
@@ -100,10 +101,10 @@ struct DayChartView: View {
                 LineMark(
                     x: .value("Day", gregorianCalendar.component(.day, from: dataPoint.date)),
                     y: .value("Weight", dataPoint.weight),
-                    series: .value("Series", dataPoint.type == .am ? "AM" : "PM")
+                    series: .value("Series", dataPoint.weightType == .am ? "AM" : "PM")
                 )
-                .foregroundStyle(by: .value("Series", dataPoint.type == .am ? "AM" : "PM"))
-                .symbol(by: .value("Series", dataPoint.type == .am ? "AM" : "PM"))
+                .foregroundStyle(by: .value("Series", dataPoint.weightType == .am ? "AM" : "PM"))
+                .symbol(by: .value("Series", dataPoint.weightType == .am ? "AM" : "PM"))
                 .symbolSize(80)
                 .interpolationMethod(.catmullRom)
                 .lineStyle(StrokeStyle(lineWidth: 3, lineCap: .round))
@@ -120,9 +121,9 @@ struct DayChartView: View {
                     x: .value("Day", day),
                     y: .value("Weight", point.weight)
                 )
-                .foregroundStyle(point.type == .am ? Color("nfYellowSunglow") : Color("nfRedFlamePea"))
+                .foregroundStyle(point.weightType == .am ? Color("nfYellowSunglow") : Color("nfRedFlamePea"))
                 .symbolSize(100)
-                .symbol(by: .value("Series", point.type == .am ? "AM" : "PM"))
+                .symbol(by: .value("Series", point.weightType == .am ? "AM" : "PM"))
                 .annotation(
                     position: annotationPosition(for: point),
                     alignment: annotationAlignment(for: day),
@@ -143,9 +144,10 @@ struct DayChartView: View {
             "PM": .square
         ])
         .chartXAxis {
-            // AxisMarks(values: dataDays(weightData)) { value in
-            // AxisMarks(values: .stride(by: .day, count: 1)) { value in
-            AxisMarks(values: .automatic) { value in
+            //AxisMarks(values: dataDays(weightData)) { value in
+            //AxisMarks(values: .stride(by: .day, count: 5)) { value in
+            AxisMarks(preset: .aligned, values: xAxisLabelDays()) { value in
+            //AxisMarks(values: .automatic) { value in
                 if let day = value.as(Int.self) {
                     AxisValueLabel {
                         Text(dayNumberFormatter.string(from: NSNumber(value: day)) ?? "\(day)")
@@ -164,7 +166,7 @@ struct DayChartView: View {
                     AxisValueLabel {
                         Text(numberFormatter.string(from: NSNumber(value: weight)) ?? String(format: "%.1f", weight))
                             .font(layoutDirection == .rightToLeft ? .caption2 : .caption)
-                            .padding(layoutDirection == .rightToLeft ? .trailing : .leading, 20)
+                            .padding(layoutDirection == .rightToLeft ? .trailing : .leading, 8)
                     }
                     AxisGridLine()
                     AxisTick()
@@ -192,7 +194,6 @@ struct DayChartView: View {
                     }
                     
                     let tappedDay = Int(tappedDayDouble.rounded())
-                    
                     let closestDay = findClosestDay(to: tappedDay)
                     
                     print("•INFO•DayChart• Tapped at x=\(location.x), proxy returned domain value: \(tappedDayDouble)")
@@ -222,7 +223,7 @@ struct DayChartView: View {
                        let closestPoint = pointsOnDay.min(by: { abs($0.weight - tappedWeight) < abs($1.weight - tappedWeight) }) {
                         selectedPoint = closestPoint
                     } else {
-                        selectedPoint = pointsOnDay.first(where: { $0.type == .am }) ?? pointsOnDay.first
+                        selectedPoint = pointsOnDay.first(where: { $0.weightType == .am }) ?? pointsOnDay.first
                     }
                     
                     selectedDay = closestDay
@@ -231,7 +232,6 @@ struct DayChartView: View {
         .padding(.horizontal, layoutDirection == .rightToLeft ? 20 : 10)
         .padding(.top)
         //.frame(maxWidth: .infinity, height: 310)
-        //.background(Color.clear)
     }
     
     var body: some View {
@@ -239,6 +239,8 @@ struct DayChartView: View {
             if isLoading {
                 VStack {
                     ProgressView()
+                        .progressViewStyle(CircularProgressViewStyle(tint: .nfGreenBrand))
+                        .scaleEffect(1.5)
                 }
                 .frame(maxWidth: .infinity, maxHeight: .infinity)  // Centers vertically/horizontally
                 .frame(height: 310)  // Matches chart height
@@ -284,12 +286,12 @@ struct DayChartView: View {
         for tracker in viewModel.trackers where tracker.date >= monthStart && tracker.date < monthEnd {
             if let amWeight = tracker.weightAM?.dataweight_kg, amWeight > 0 {
                 let weight = unitType == .metric ? amWeight : await UnitsUtility.regionalWeight(fromKg: amWeight, toUnits: .imperial, toDecimalDigits: 1).flatMap { Double($0) } ?? (amWeight * 2.20462)
-                dataPoints.append(WeightDataPoint(date: tracker.date, weight: weight, type: .am))
+                dataPoints.append(WeightDataPoint(date: tracker.date, weight: weight, weightType: .am))
                 print("•INFO•DayChart• Added AM weight for \(tracker.date.datestampSid): \(weight) \(unitType == .metric ? "kg" : "lbs")")
             }
             if let pmWeight = tracker.weightPM?.dataweight_kg, pmWeight > 0 {
                 let weight = unitType == .metric ? pmWeight : await UnitsUtility.regionalWeight(fromKg: pmWeight, toUnits: .imperial, toDecimalDigits: 1).flatMap { Double($0) } ?? (pmWeight * 2.20462)
-                dataPoints.append(WeightDataPoint(date: tracker.date, weight: weight, type: .pm))
+                dataPoints.append(WeightDataPoint(date: tracker.date, weight: weight, weightType: .pm))
                 print("•INFO•DayChart• Added PM weight for \(tracker.date.datestampSid): \(weight) \(unitType == .metric ? "kg" : "lbs")")
             }
         }
@@ -297,24 +299,51 @@ struct DayChartView: View {
     }
     
     private func computeYDomain(for dataPoints: [WeightDataPoint]) -> ClosedRange<Double> {
-        guard !dataPoints.isEmpty else { return 0...100 }
+        guard !dataPoints.isEmpty else { return 40...100 }  // Reasonable default for empty (e.g., adult weight range)
+        
         let weights = dataPoints.map { $0.weight }
         let minWeight = weights.min() ?? 0
         let maxWeight = weights.max() ?? 100
-        let padding = (maxWeight - minWeight) * 0.1
+        
+        var range = maxWeight - minWeight
+        if range < 0.1 {  // Flat or single point: force minimum visible range
+            range = max(5.0, minWeight * 0.1)  // At least ~5 kg/lbs, or 10% of value
+        }
+        
+        let padding = range * 0.1
         let lowerBound = max(0, minWeight - padding)
         let upperBound = maxWeight + padding
+        
         return lowerBound...upperBound
     }
     
-    private func dataDays(_ dataPoints: [WeightDataPoint]) -> [Int] {
-        let monthDayCount = displayCalendar.range(of: .day, in: .month, for: selectedMonth)?.count ?? 30
-        return stride(from: 5, through: monthDayCount, by: 5).map { $0 }
+    private func xAxisLabelDays() -> [Int] {
+        let dayCount = displayCalendar.range(of: .day, in: .month, for: selectedMonth)?.count ?? 31
+        
+        // Base marks: day 1 + every 5 days
+        var days = Array(stride(from: 5, through: dayCount, by: 5))
+        days.insert(1, at: 0)
+        
+        // Always append the last day if not already present
+        if days.last != dayCount {
+            days.append(dayCount)
+        }
+        
+        // Clean up potential overlap: if last two labels ≤2 days apart, drop the second-last
+        if days.count >= 2 {
+            let penultimate = days[days.count - 2]
+            let last = days.last!
+            if last - penultimate <= 2 {
+                days.remove(at: days.count - 2)  // Drop the one before last
+            }
+        }
+        
+        return days
     }
     
     private func xAxisDomain(for dataPoints: [WeightDataPoint]) -> ClosedRange<Int> {
         let monthDayCount = displayCalendar.range(of: .day, in: .month, for: selectedMonth)?.count ?? 31
-        return 1...(monthDayCount + 2)
+        return 1...monthDayCount  // ← No +anything
     }
     
     @MainActor
@@ -333,7 +362,7 @@ struct DayChartView: View {
                 .multilineTextAlignment(.center)
             
             HStack(spacing: 4) {
-                if point.type == .am {
+                if point.weightType == .am {
                     Circle()
                         .stroke(Color("nfYellowSunglow"), lineWidth: 2)
                         .frame(width: 10, height: 10)

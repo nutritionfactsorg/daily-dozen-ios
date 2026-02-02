@@ -124,10 +124,10 @@ struct MonthChartView: View {
                 LineMark(
                     x: .value("Day", daysSinceYearStart(dataPoint.date)),
                     y: .value("Weight", dataPoint.weight),
-                    series: .value("Series", dataPoint.type == .am ? "AM" : "PM")
+                    series: .value("Series", dataPoint.weightType == .am ? "AM" : "PM")
                 )
-                .foregroundStyle(by: .value("Series", dataPoint.type == .am ? "AM" : "PM"))
-                .symbol(by: .value("Series", dataPoint.type == .am ? "AM" : "PM"))
+                .foregroundStyle(by: .value("Series", dataPoint.weightType == .am ? "AM" : "PM"))
+                .symbol(by: .value("Series", dataPoint.weightType == .am ? "AM" : "PM"))
                 .symbolSize(100)
                 .interpolationMethod(.catmullRom)
             }
@@ -143,9 +143,9 @@ struct MonthChartView: View {
                     x: .value("Day", day),
                     y: .value("Weight", point.weight)
                 )
-                .foregroundStyle(point.type == .am ? Color("nfYellowSunglow") : Color("nfRedFlamePea"))
+                .foregroundStyle(point.weightType == .am ? Color("nfYellowSunglow") : Color("nfRedFlamePea"))
                 .symbolSize(150) // Large highlight
-                .symbol(by: .value("Series", point.type == .am ? "AM" : "PM")) // Reuses the global symbol scale
+                .symbol(by: .value("Series", point.weightType == .am ? "AM" : "PM")) // Reuses the global symbol scale
                 .annotation(
                     position: annotationPosition(for: point),
                     alignment: annotationAlignment(for: day),
@@ -185,7 +185,7 @@ struct MonthChartView: View {
                     AxisValueLabel {
                         Text(numberFormatter.string(from: NSNumber(value: weight)) ?? String(format: "%.1f", weight))
                             .font(layoutDirection == .rightToLeft ? .caption2 : .caption)
-                            .padding(layoutDirection == .rightToLeft ? .trailing : .leading, 20)
+                            .padding(layoutDirection == .rightToLeft ? .trailing : .leading, 8)
                     }
                     AxisGridLine()
                     AxisTick()
@@ -232,7 +232,7 @@ struct MonthChartView: View {
                        let closestPoint = pointsOnDay.min(by: { abs($0.weight - tappedWeight) < abs($1.weight - tappedWeight) }) {
                         selectedPoint = closestPoint
                     } else {
-                        selectedPoint = pointsOnDay.first(where: { $0.type == .am }) ?? pointsOnDay.first
+                        selectedPoint = pointsOnDay.first(where: { $0.weightType == .am }) ?? pointsOnDay.first
                     }
                     
                     selectedDay = closestDay
@@ -250,7 +250,7 @@ struct MonthChartView: View {
 
             HStack(spacing: 4) {
                 Group {
-                    if point.type == .am {
+                    if point.weightType == .am {
                         // Morning → Yellow circle, stroked
                         Circle()
                             .stroke(Color("nfYellowSunglow"), lineWidth: 2)
@@ -306,12 +306,12 @@ struct MonthChartView: View {
             for tracker in viewModel.trackers where tracker.date.year == selectedYear {
                 if let amWeight = tracker.weightAM?.dataweight_kg, amWeight > 0 {
                     let weight = unitType == .metric ? amWeight : tracker.weightAM?.lbs ?? amWeight
-                    dataPoints.append(WeightDataPoint(date: tracker.date, weight: weight, type: .am))
+                    dataPoints.append(WeightDataPoint(date: tracker.date, weight: weight, weightType: .am))
                     //print("•INFO•Month Chart• Added AM weight for \(tracker.date.datestampSid): \(weight) \(unitType == .metric ? "kg" : "lbs")")
                 }
                 if let pmWeight = tracker.weightPM?.dataweight_kg, pmWeight > 0 {
                     let weight = unitType == .metric ? pmWeight : tracker.weightPM?.lbs ?? pmWeight
-                    dataPoints.append(WeightDataPoint(date: tracker.date, weight: weight, type: .pm))
+                    dataPoints.append(WeightDataPoint(date: tracker.date, weight: weight, weightType: .pm))
                     //print("•INFO•Month Chart• Added PM weight for \(tracker.date.datestampSid): \(weight) \(unitType == .metric ? "kg" : "lbs")")
                 }
             }
@@ -321,20 +321,24 @@ struct MonthChartView: View {
         }
 
     private func computeYDomain(for dataPoints: [WeightDataPoint]) -> ClosedRange<Double> {
-        guard !dataPoints.isEmpty else { return 0...100 }
+        guard !dataPoints.isEmpty else { return 40...120 }  // Sane default (adult weight range); chart shouldn't render empty anyway
         
         let weights = dataPoints.map { $0.weight }
-        let minWeight = weights.min() ?? 0
-        let maxWeight = weights.max() ?? 100
+        let minWeight = weights.min() ?? 40
+        let maxWeight = weights.max() ?? 120
         
-        let padding = (maxWeight - minWeight) * 0.1
+        var range = maxWeight - minWeight
+        if range < 0.5 {  // Flat or near-flat data: force minimum visible spread (~10 units total)
+            range = max(5.0, minWeight * 0.1)  // At least 5 kg/lbs, or 10% of value
+        }
+        
+        let padding = range * 0.1
         let lowerBound = max(0, minWeight - padding)
         let upperBound = maxWeight + padding
         
-       // print("Y-domain for \(selectedYear): \(lowerBound)...\(upperBound), weights: \(weights)")
         return lowerBound...upperBound
     }
-
+    
     private func monthStarts(_ dataPoints: [WeightDataPoint]) -> [(day: Int, label: String)] {
         var monthStartDays: [(day: Int, label: String)] = []
         let calendar = displayCalendar
@@ -376,7 +380,7 @@ struct MonthChartView: View {
 // TBDz may not be localized... is localized in the view
 extension WeightDataPoint {
     var timeOfDayString: String {
-        switch type {
+        switch weightType {
         case .am: return "AM"
         case .pm: return "PM"
         }

@@ -19,8 +19,8 @@ struct TweakzEntryRowView: View {
     let item: DataCountType
     let date: Date
     let onCheck: (Int) -> Void // Callback for checkbox changes
-    // @State private var navigateToWeightEntry: Bool = false
-    // @State private var localCount: Int = 0
+    //@State private var navigateToWeightEntry: Bool = false
+    //@State private var localCount: Int = 0
     @State private var checkCount: Int = 0
     @State private var navigationPath = NavigationPath()
     @State private var isUpdating: Bool = false
@@ -99,6 +99,7 @@ struct TweakzEntryRowView: View {
             //  }
             // End Nav
             .task(handleLoadData) // runs async before view appears
+            
             //.onChange(of: navigateToWeightEntry) { _, isActive in
             //    if !isActive && item == .tweakWeightTwice {
             //        Task {
@@ -149,7 +150,7 @@ struct TweakzEntryRowView: View {
             print("•INFO•Load• Derived weight count for \(date.datestampSid): \(checkCount) (AM: \(amWeight > 0), PM: \(pmWeight > 0))")
         } else {
             // For normal items, load existing count from DB (read-only)
-            checkCount = viewModel.getCount(for: item, date: date.startOfDay)
+            checkCount = viewModel.getCount(countType: item, date: date.startOfDay)
         }
         Task {
             await refreshStreak()
@@ -172,7 +173,7 @@ struct TweakzEntryRowView: View {
             //isUpdating = false
         } else {
             Task {
-                await viewModel.setCount(for: item, count: newCount, date: date)
+                await viewModel.setCount(countType: item, count: newCount, date: date)
                 await refreshStreak()
                 await MainActor.run {
                     onCheck(checkCount)
@@ -210,6 +211,7 @@ struct TweakzEntryRowView: View {
             } else {
                 print("•INFO•DB•WATCH• TweaksEntryRowView handleDatabaseUpdate().2 \(item) notification: date unknown")
             }
+           
         }
         
         guard let updatedDate = notification.object as? Date else { return }
@@ -231,9 +233,9 @@ struct TweakzEntryRowView: View {
                 let pmWeight = localTracker.weightPM?.dataweight_kg ?? 0
                 let newCount = (amWeight > 0 ? 1 : 0) + (pmWeight > 0 ? 1 : 0)
                 checkCount = newCount
-                print("•INFO•Receive• Derived weight count for \(date.datestampSid): \(newCount)")
+                print("•INFO•Receive• Derived weight count for newCount \(date.datestampSid): \(newCount)")
             } else {
-                checkCount = viewModel.getCount(for: item, date: date)
+                checkCount = viewModel.getCount(countType: item, date: date)
             }
             await refreshStreak()
             await MainActor.run {
@@ -244,7 +246,7 @@ struct TweakzEntryRowView: View {
     
     // •STREAK•V21•
     private func refreshStreak() async {
-        streakCount = await viewModel.currentStreak(for: item, on: date)
+        streakCount = await viewModel.currentStreak(countType: item, on: date)
     }
 }
 

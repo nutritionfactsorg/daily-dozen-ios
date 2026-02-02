@@ -8,7 +8,6 @@
 import Foundation
 
 class DozeTextsProvider {
-    
     @MainActor
     static let shared: DozeTextsProvider = {
         let decoder = JSONDecoder()

@@ -34,7 +34,7 @@ struct WeightDataPoint: Identifiable {
     let id = UUID()
     let date: Date
     let weight: Double
-    let type: DataWeightType // AM or PM
+    let weightType: DataWeightType // AM or PM
 }
 
 struct WeightChartView: View {
@@ -65,6 +65,8 @@ struct WeightChartView: View {
                 
                 if isLoadingMonths {
                     ProgressView("loading_heading")
+                        .progressViewStyle(CircularProgressViewStyle(tint: .nfGreenBrand))
+                        .scaleEffect(1.5)
                         .padding()
                 } else if monthsWithData.isEmpty {
                     Text("historyRecordWeight_NoWeightYet")
@@ -191,7 +193,7 @@ struct WeightChartView: View {
                     
                    Spacer()
                     
-                   .padding(30)
+                   .padding(20)
                     
                     //NavigationLink(destination: WeightEntryView(initialDate: selectedDate)) {
                     NavigationLink(destination: WeightEntryView(initialDate: Date())) {
@@ -211,7 +213,8 @@ struct WeightChartView: View {
         } //Scroll
         .whiteInlineGreenTitle("historyRecordWeight.heading")
         .task {
-            await SqlDailyTrackerViewModel.shared.preloadAllDataForYearChart()
+            let viewModel = SqlDailyTrackerViewModel.shared
+            await viewModel.preloadAllDataForYearChart()
             
             monthsWithData = viewModel.availableWeightMonths
             isLoadingMonths = false

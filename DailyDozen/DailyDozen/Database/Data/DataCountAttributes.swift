@@ -27,7 +27,6 @@ extension EnvironmentValues {
 }
 
 struct DataCountAttributes: Sendable {
-    
     static let shared = DataCountAttributes()
     
     let dict: [DataCountType: (headingDisplay: String, headingCSV: String, goalServings: Int)]

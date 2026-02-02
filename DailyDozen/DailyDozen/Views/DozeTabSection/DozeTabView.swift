@@ -8,9 +8,8 @@
 import SwiftUI
 
 struct DozeTabView: View {
-    
+    @Environment(\.scenePhase) private var scenePhase
     private let viewModel = SqlDailyTrackerViewModel.shared
-    var streakCount = 3000 // Placeholder
     @State private var isShowingSheet = false
     @State private var selectedDate = Date()
     @State private var currentIndex = 0
@@ -91,6 +90,29 @@ struct DozeTabView: View {
         }
     }
     
+    private func ensureCurrentTodayInRangeAndPreloadIfNew() {
+        let calendar = Calendar.current
+        let today = calendar.startOfDay(for: Date())
+        
+        // Check if today is already in the range
+        let alreadyPresent = dateRange.contains { calendar.isDate($0, inSameDayAs: today) }
+        
+        // Ensure it's in the range (your viewModel likely appends it if missing)
+        viewModel.ensureDateIsInRange(
+            today,
+            dateRange: &dateRange,
+            currentIndex: &currentIndex,
+            thenSelectIt: false  // Don't auto-jump yet
+        )
+        
+        // Only preload if it was newly added
+        if !alreadyPresent, let todayIndex = dateRange.firstIndex(where: { calendar.isDate($0, inSameDayAs: today) }) {
+            Task {
+                await viewModel.loadTracker(forDate: dateRange[todayIndex], isSilent: true)
+            }
+        }
+    }
+    
     var body: some View {
         NavigationStack {
             Group {
@@ -149,9 +171,9 @@ struct DozeTabView: View {
                                     .background(Color.white)  // Match background to avoid transparency
                             }
                         }   //safeArea
-                        //                DozeBackToTodayButtonView(isToday: isToday, action: goToToday)
-                        //                    .padding(.bottom, 0)
-                        //                    .background(Color.white.ignoresSafeArea(edges: .bottom))
+                        //DozeBackToTodayButtonView(isToday: isToday, action: goToToday) // •REVIEW•
+                        //    .padding(.bottom, 0)
+                        //    .background(Color.white.ignoresSafeArea(edges: .bottom))
                     } //ZStack
                 } //else
             } //Group
@@ -164,7 +186,24 @@ struct DozeTabView: View {
             }
             .whiteInlineGreenTitle(LocalizedStringKey("navtab.doze"))
             //.whiteInlineGreenTitle(Text("navtab.doze"))
-            // .navigationTitle(Text("navtab.doze"))
+            //.navigationTitle(Text("navtab.doze"))
+            
+            .onChange(of: scenePhase) { _, newPhase in
+                if newPhase == .active {
+                    ensureCurrentTodayInRangeAndPreloadIfNew()
+                    
+                    // Optional: auto-jump if user was on the old "today"
+                    let calendar = Calendar.current
+                    let yesterday = calendar.date(byAdding: .day, value: -1, to: Date())!
+                    if dateRange.indices.contains(currentIndex),
+                       calendar.isDate(dateRange[currentIndex], inSameDayAs: yesterday) {
+                        goToToday()
+                    }
+                }
+            }
+            .onReceive(NotificationCenter.default.publisher(for: UIApplication.significantTimeChangeNotification)) { _ in
+                ensureCurrentTodayInRangeAndPreloadIfNew()
+            }
             
             .task {
                 viewModel.ensureDateIsInRange(Date(), dateRange: &dateRange, currentIndex: &currentIndex, thenSelectIt: true)

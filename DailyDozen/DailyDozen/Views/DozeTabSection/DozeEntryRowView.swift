@@ -9,14 +9,10 @@ import SwiftUI
 
 struct DozeEntryRowView: View {
     
-    //@EnvironmentObject var viewModel: SqlDailyTrackerViewModel
     @Environment(\.dataCountAttributes) var dataCountAttributes
     private let viewModel = SqlDailyTrackerViewModel.shared
-    //var streakCount = 3000// NYI TBD
     
     let item: DataCountType
-    //let record: SqlDailyTracker?
-    //let records: [SqlDailyTracker] = mockDB // needed?
     let date: Date
     let onCheck: (Int) -> Void // Callback for when checkbox changes
     @State private var checkCount: Int = 0 // Initialize with default
@@ -91,7 +87,7 @@ struct DozeEntryRowView: View {
     @MainActor
     private func handleLoadData() async {
         print("•INFO•DB•WATCH• DozeEntryRowView handleLoadData() \(item)")
-        checkCount = viewModel.getCount(for: item, date: date.startOfDay)
+        checkCount = viewModel.getCount(countType: item, date: date.startOfDay)
         Task {
             await refreshStreak()
             await MainActor.run {
@@ -109,7 +105,7 @@ struct DozeEntryRowView: View {
 
         Task {
             // •STREAK•V21•
-            await viewModel.setCount(for: item, count: newCount, date: date)
+            await viewModel.setCount(countType: item, count: newCount, date: date)
             await refreshStreak()
             await MainActor.run {
                 onCheck(newCount)
@@ -135,7 +131,7 @@ struct DozeEntryRowView: View {
                 
         Task { @MainActor in
             //print("•INFO•DB•WATCH• DozeEntryRowView handleDatabaseUpdate().5 \(item) Task{} begin")
-            checkCount = viewModel.getCount(for: item, date: date)
+            checkCount = viewModel.getCount(countType: item, date: date)
             await refreshStreak()
             await MainActor.run {
                 onCheck(checkCount)
@@ -145,7 +141,7 @@ struct DozeEntryRowView: View {
     
     // •STREAK•V21•
     private func refreshStreak() async {
-        streakCount = await viewModel.currentStreak(for: item, on: date)
+        streakCount = await viewModel.currentStreak(countType: item, on: date)
     }
 }
 

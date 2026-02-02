@@ -46,20 +46,6 @@ struct HealthSynchronizer {
         try await HealthManager.shared.deleteHKWeight(date: date, ampm: ampm)
         print("•HK• syncWeightClear deleted HealthKit weight for \(ampm.typeKey)")
         
-        // •EDIT•BEGIN• REMOVED this block:
-        // // GET CURRENT TRACKER
-        // let currentTracker = await SqlDailyTrackerViewModel.shared.tracker(for: date)
-        //
-        // // CREATE COPY WITH WEIGHT CLEARED, COUNTS PRESERVED
-        // var clearedTracker = currentTracker
-        // if ampm == .am {
-        //     clearedTracker.weightAM = nil
-        // } else {
-        //     clearedTracker.weightPM = nil
-        // }
-        //
-        // await SqlDailyTrackerViewModel.shared.updateDatabase(with: clearedTracker)
-        // •EDIT•BEGIN•
     }
     
 }

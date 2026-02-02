@@ -29,6 +29,11 @@ struct UICalendarViewRepresentable: UIViewRepresentable {
             year: calendar.component(.year, from: currentMonth),
             month: calendar.component(.month, from: currentMonth)
         )
+        calendarView.setContentCompressionResistancePriority(.defaultLow, for: .horizontal)
+        calendarView.setContentCompressionResistancePriority(.defaultLow, for: .vertical)
+        // Optional: Higher hugging priority ensures it expands when space is available
+        calendarView.setContentHuggingPriority(.defaultHigh, for: .horizontal)
+        calendarView.setContentHuggingPriority(.defaultHigh, for: .vertical)
         return calendarView
     }
     

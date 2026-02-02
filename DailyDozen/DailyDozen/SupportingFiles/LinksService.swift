@@ -9,7 +9,8 @@ import Foundation
 
 @MainActor
 class LinksService {
-    
+    static let shared = LinksService()
+
     let baseURL =  URL(string: "https://nutritionfacts.org")!
     
     var siteMain: URL {
@@ -19,8 +20,6 @@ class LinksService {
     func link(menu: String) -> URL {
         return (baseURL.appendingPathComponent(menu))
     }
-    
-    static let shared = LinksService()
     
     // MARK: - Inits
 
