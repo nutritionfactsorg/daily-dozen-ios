@@ -9,6 +9,7 @@ import SwiftUI
 
 // •TBDz•  Are units supposed to toggle in metric/imperial?
 struct TweakzDetailView: View {
+    @Environment(\.dynamicTypeSize) private var dynamicTypeSize
     let dataCountTypeItem: DataCountType
     @State var tweakDataItemDetail = TweakDetailInfo.Item.example //TBDz need to figure out what goes here besides example
     
@@ -34,7 +35,7 @@ struct TweakzDetailView: View {
                 
                 // MARK: - Scrollable Content with Pinned Section Headers
                 ScrollView {
-                    LazyVStack(spacing: 12, pinnedViews: [.sectionHeaders]) {
+                    LazyVStack(spacing: 8, pinnedViews: dynamicTypeSize.isAccessibilitySize ? [] : [.sectionHeaders]) {
                         
                         // MARK: Activity Section
                         Section {

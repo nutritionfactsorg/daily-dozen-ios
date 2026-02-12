@@ -97,7 +97,7 @@ struct DozeTabView: View {
         // Check if today is already in the range
         let alreadyPresent = dateRange.contains { calendar.isDate($0, inSameDayAs: today) }
         
-        // Ensure it's in the range (your viewModel likely appends it if missing)
+        // Ensure it's in the range (viewModel likely appends it if missing)
         viewModel.ensureDateIsInRange(
             today,
             dateRange: &dateRange,
@@ -115,84 +115,71 @@ struct DozeTabView: View {
     
     var body: some View {
         NavigationStack {
-            Group {
+            ZStack {
                 if !isDataReady {
                     ZStack {
                         Color.white.ignoresSafeArea()
                         ProgressView("loading_heading")
                             .progressViewStyle(CircularProgressViewStyle(tint: .nfGreenBrand))
                             .scaleEffect(1.5)
-                    } //ZStack
+                    }
                 } else {
-                    ZStack {
-                        VStack {
-                            DozeHeaderView(isShowingSheet: $isShowingSheet,
-                                           currentDate: currentDisplayDate)
-                                .frame(maxWidth: .infinity)  // Centers horizontally if in a VStack
-                                .padding(.horizontal)        // Optional safe margins
-                            
-                            TabView(selection: $currentIndex) {
-                                ForEach(dateRange.indices, id: \.self) { index in
-                                    DozePageView(coordinator: scrollCoordinator, date: dateRange[index])  // ← Pass
-                                        .tag(index)
-                                        .environmentObject(viewModel)
-                                }
+                    VStack {
+                        DozeHeaderView(isShowingSheet: $isShowingSheet,
+                                       currentDate: currentDisplayDate)
+                            .frame(maxWidth: .infinity)
+                            .padding(.horizontal)
+                            .padding(.top, 12)
+                            //.padding(.bottom, 12)  // adds scalable-friendly space below the header
+                        
+                        TabView(selection: $currentIndex) {
+                            ForEach(dateRange.indices, id: \.self) { index in
+                                DozePageView(coordinator: scrollCoordinator, date: dateRange[index])
+                                    .tag(index)
+                                    .environmentObject(viewModel)
                             }
-                            .tabViewStyle(.page(indexDisplayMode: .never))
-                            .frame(minHeight: 300, maxHeight: .infinity)
-                            .onChange(of: currentIndex) { _, newValue in
-                               // let _ = Self._printChanges()  // Prints changed properties
-                                print("•INFO•DozeTab•  \(currentIndex)")
-                                let maxIndex = dateRange.count - 1
-                                // Only block if trying to go BEYOND today
-                                if newValue > maxIndex {
-                                    // This happens on attempted future swipe OR overshoot
-                                    withAnimation {
-                                        currentIndex = maxIndex
-                                    }
-                                    
-                                    print("•INFO•DozeTab• Blocked future access, snapped to \(maxIndex)")
-                                    return  // Critical: prevent rest of logic
-                                }
-                                selectedDate = dateRange[newValue]
-                                Task {@MainActor in
-                                    extendDateRangeIfNeeded(for: newValue)
-                                }
-                                
-                            print("•INFO•DozeTab• Updated to \(selectedDate.formatted()) at index \(newValue)")
-                            } //onChange
-                            //  }  //Else
-                            Spacer()
                         }
-                        .background(Color.white)
-                        .safeAreaInset(edge: .bottom, spacing: 0) {
-                            if !isToday {
-                                DozeBackToTodayButtonView(isToday: isToday, action: goToToday)
-                                    .background(Color.white)  // Match background to avoid transparency
+                        .tabViewStyle(.page(indexDisplayMode: .never))
+                        .frame(minHeight: 300, maxHeight: .infinity)
+                        .onChange(of: currentIndex) { _, newValue in
+                            print("•INFO•DozeTab•  \(currentIndex)")
+                            let maxIndex = dateRange.count - 1
+                            if newValue > maxIndex {
+                                withAnimation {
+                                    currentIndex = maxIndex
+                                }
+                                print("•INFO•DozeTab• Blocked future access, snapped to \(maxIndex)")
+                                return
                             }
-                        }   //safeArea
-                        //DozeBackToTodayButtonView(isToday: isToday, action: goToToday) // •REVIEW•
-                        //    .padding(.bottom, 0)
-                        //    .background(Color.white.ignoresSafeArea(edges: .bottom))
-                    } //ZStack
-                } //else
-            } //Group
-            //NavStack
-            
+                            selectedDate = dateRange[newValue]
+                            Task { @MainActor in
+                                extendDateRangeIfNeeded(for: newValue)
+                            }
+                            print("•INFO•DozeTab• Updated to \(selectedDate.formatted()) at index \(newValue)")
+                        }
+                        
+                        Spacer()
+                    }
+                    .safeAreaInset(edge: .bottom, spacing: 0) {
+                        if !isToday {
+                            DozeBackToTodayButtonView(isToday: isToday, action: goToToday)
+                                .background(Color.white)
+                        }
+                    }
+                }
+            }
             .background(Color.white)
             .sheet(isPresented: $isShowingSheet) {
                 DatePickerSheetView(selectedDate: $selectedDate, dateRange: $dateRange, currentIndex: $currentIndex)
                     .presentationDetents([.medium])
             }
             .whiteInlineGreenTitle(LocalizedStringKey("navtab.doze"))
-            //.whiteInlineGreenTitle(Text("navtab.doze"))
-            //.navigationTitle(Text("navtab.doze"))
             
             .onChange(of: scenePhase) { _, newPhase in
                 if newPhase == .active {
                     ensureCurrentTodayInRangeAndPreloadIfNew()
                     
-                    // Optional: auto-jump if user was on the old "today"
+                    // Auto-jump if user was on the old "today"
                     let calendar = Calendar.current
                     let yesterday = calendar.date(byAdding: .day, value: -1, to: Date())!
                     if dateRange.indices.contains(currentIndex),
@@ -222,7 +209,7 @@ struct DozeTabView: View {
                     thenSelectIt: true
                 )
             }
-        } //NavStack
+        }
     }
 }
 

@@ -32,8 +32,9 @@ struct DozeHeaderView: View {
             Text(buttonTitle)
                 //.frame(width: 300, height: 30, alignment: .center)
                 .font(.headline)                  // Dynamic, scales with Dynamic Type + Zoom
-                .lineLimit(1)                     // Prevent multiline wrapping
-                .truncationMode(.tail)            // Ellipsis if too long
+                //.lineLimit(1)                     // Prevent multiline wrapping
+                .multilineTextAlignment(.center)  // Centers wrapped lines
+                //.truncationMode(.tail)            // Ellipsis if too long
                 .padding(.horizontal, 24)         // Generous horizontal padding for pill shape
                 .padding(.vertical, 5)
                 .frame(minWidth: 200)

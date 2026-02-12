@@ -24,32 +24,32 @@ struct TweakzSetting: View {
             Text("setting_tweak_header")
                 .textCase(.uppercase)
                 .font(.subheadline.bold())
-               // .font(.system(size: 16, weight: .medium))
-            // .frame(maxWidth: .infinity, alignment: .leading)
                 .foregroundStyle(.secondary)
             Picker(String(localized: "setting_units_header"), selection: $selectedTweakVisibilityControl) {
                 ForEach(tweakVisibilityControl, id: \.self) { control in
                     Text(control)
-                    .tag(control)
+                        .font(.subheadline)      // Smaller base → less aggressive scaling
+                        .minimumScaleFactor(0.7) // Shrinks gracefully to fit in large text
+                        .lineLimit(1)
+                        .tag(control)
                 }
                
             }
                 .pickerStyle(.segmented)
                 .labelsHidden()
                 .onAppear {
-                   
-                            UISegmentedControl.appearance().apportionsSegmentWidthsByContent = true
-                        }
-                        .onDisappear {
-                            UISegmentedControl.appearance().apportionsSegmentWidthsByContent = false  // clean reset
-                        }            //
+                    UISegmentedControl.appearance().apportionsSegmentWidthsByContent = true
+                }
+                .onDisappear {
+                    UISegmentedControl.appearance().apportionsSegmentWidthsByContent = false  // clean reset
+                }            //
             Text("setting_doze_tweak_footer")
                 .font(.footnote)
                 .foregroundStyle(.secondary)
                 .multilineTextAlignment(.leading)
             //  .padding(10)
         } //VStack
-        .padding(.horizontal, 10)     // ← reduced from 10 → gives the picker ~8 extra points of width
+        .padding(.horizontal, 10)
         .padding(.vertical, 10)
         .onAppear {
            // UISegmentedControl.appearance().apportionsSegmentWidthsByContent = true
@@ -76,14 +76,3 @@ struct TweakzSetting: View {
 #Preview {
     TweakzSetting()
 }
-
-//if want to tweak segments more:
-
-//    let seg = UISegmentedControl.appearance()
-//    
-//    seg.apportionsSegmentWidthsByContent = true         
-//    seg.selectedSegmentTintColor = UIColor(Color.accentColor)  // proper tint
-//    // Reduce the huge default horizontal padding if you still want it tighter:
-//    seg.setContentPositionAdjustment(UIOffset(horizontal: -8, vertical: 0),
-//                                     forSegmentType: .any,
-//                                     barMetrics: .default)

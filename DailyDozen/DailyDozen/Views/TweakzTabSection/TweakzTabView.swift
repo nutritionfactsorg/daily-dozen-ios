@@ -93,7 +93,6 @@ struct TweakzTabView: View {
         // Check if today is already in the range
         let alreadyPresent = dateRange.contains { calendar.isDate($0, inSameDayAs: today) }
         
-        // Ensure it's in the range (your viewModel likely appends it if missing)
         viewModel.ensureDateIsInRange(
             today,
             dateRange: &dateRange,
@@ -123,6 +122,7 @@ struct TweakzTabView: View {
                                        currentDate: currentDisplayDate)
                             .frame(maxWidth: .infinity)  // Centers horizontally if in a VStack
                             .padding(.horizontal)        // Optional safe margins
+                            .padding(.top, 12)
                         
                         TabView(selection: $currentIndex) {
                             ForEach(dateRange.indices, id: \.self) { index in

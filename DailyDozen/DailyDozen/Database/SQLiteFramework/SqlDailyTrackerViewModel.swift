@@ -901,7 +901,7 @@ extension SqlDailyTrackerViewModel {
         guard !hasPreloadedServingsData else { return }
         hasPreloadedServingsData = true
         
-        await preloadAllDataForYearChart()  // ← reuses your existing perfect preload
+        await preloadAllDataForYearChart()  // ← reuses existing perfect preload
         print("ServingsHistory: All data preloaded from shared ViewModel")
     }
 }
@@ -916,7 +916,7 @@ extension SqlDailyTrackerViewModel {
         } catch {
             // Handle the error here
             print("An error occurred clearing db: \(error.localizedDescription)")
-            // You can update a @State property here to show a SwiftUI alert
+            // Update a @State property here to show a SwiftUI alert
         }
         
         await MainActor.run {

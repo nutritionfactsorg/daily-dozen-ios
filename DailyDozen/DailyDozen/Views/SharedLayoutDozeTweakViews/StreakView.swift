@@ -61,6 +61,7 @@ struct StreakView: View {
                         .fill(backgroundColor) // Using computed property for color
                 )
                 .foregroundStyle(textColor)
+                .dynamicTypeSize(.xSmall ... .accessibility2)
             
         } else {
             // streakViewHidden = true

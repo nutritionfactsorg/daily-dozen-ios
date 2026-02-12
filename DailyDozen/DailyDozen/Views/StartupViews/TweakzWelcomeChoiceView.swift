@@ -48,7 +48,7 @@ struct TweakzWelcomeChoiceView: View {
                             .padding(.vertical, 12)
                     }
                     .buttonStyle(.borderedProminent)
-                    .tint(.nfGreenBrand)  // Forces prominent style to use your green
+                    .tint(.nfGreenBrand)  // Forces prominent style to use NF green
                     
                     Text("setting_health_weight_txt")
                         .font(.subheadline)
@@ -71,10 +71,10 @@ struct TweakzWelcomeChoiceView: View {
                 .padding(.horizontal, 40)
                 
                 // Optional footer note (uncomment if desired)
-                // Text("You can always change this later in Preferences")
-                //     .font(.caption)
-                //     .foregroundColor(.secondary)
-                //     .padding(.top, 20)
+                //Text("You can always change this later in Preferences") // :NYI: needs localication
+                //    .font(.caption)
+                //    .foregroundColor(.secondary)
+                //    .padding(.top, 20)
             }
             .padding(.vertical, 32)
         }

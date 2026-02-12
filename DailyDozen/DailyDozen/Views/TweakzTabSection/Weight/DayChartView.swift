@@ -11,6 +11,7 @@ import Charts
 struct DayChartView: View {
     let selectedMonth: Date
     @Environment(\.layoutDirection) private var layoutDirection
+    @Environment(\.dynamicTypeSize) private var dynamicTypeSize
     private let viewModel = SqlDailyTrackerViewModel.shared
     @State private var weightData: [WeightDataPoint] = []
     @State private var isLoading: Bool = false
@@ -109,7 +110,6 @@ struct DayChartView: View {
                 .interpolationMethod(.catmullRom)
                 .lineStyle(StrokeStyle(lineWidth: 3, lineCap: .round))
             }
-            // Your selected RuleMark + PointMark block (unchanged)
             if let day = selectedDay, let point = selectedPoint {
                 RuleMark(x: .value("Day", day))
                     .foregroundStyle(.gray.opacity(0.3))
@@ -152,6 +152,8 @@ struct DayChartView: View {
                     AxisValueLabel {
                         Text(dayNumberFormatter.string(from: NSNumber(value: day)) ?? "\(day)")
                             .font(.caption)  // Slightly smaller than default
+                            .dynamicTypeSize(.small ... .xxxLarge)
+                            .fontWeight(.medium)
                     }
                     AxisGridLine()
                     AxisTick()
@@ -167,6 +169,8 @@ struct DayChartView: View {
                         Text(numberFormatter.string(from: NSNumber(value: weight)) ?? String(format: "%.1f", weight))
                             .font(layoutDirection == .rightToLeft ? .caption2 : .caption)
                             .padding(layoutDirection == .rightToLeft ? .trailing : .leading, 8)
+                            .dynamicTypeSize(.small ... .xxLarge)  // Caps scaling at XXLarge (still accessible, but prevents gigantic text)
+                            .fontWeight(.medium)                   // Optional: slightly bolder for readability
                     }
                     AxisGridLine()
                     AxisTick()
@@ -184,7 +188,6 @@ struct DayChartView: View {
         .chartGesture { proxy in
             SpatialTapGesture()
                 .onEnded { value in
-                    // Your full gesture code (unchanged)
                     let location = value.location
                     
                     guard let tappedDayDouble: Double = proxy.value(atX: location.x) else {
@@ -356,33 +359,43 @@ struct DayChartView: View {
     }
     
     private func valueSelectionPopover(for point: WeightDataPoint) -> some View {
-        VStack(spacing: 4) {
+        let isAccessibility = dynamicTypeSize.isAccessibilitySize
+        let symbolSize: CGFloat = isAccessibility ? 18 : 10      // Larger in Accessibility; tweak 16-20 if needed
+        let symbolLineWidth: CGFloat = isAccessibility ? 3 : 2   // Thicker stroke for visibility
+        
+        return VStack(spacing: 4) {
             Text(point.date.dateStringLocalized(for: .short))
                 .font(.subheadline.bold())
                 .multilineTextAlignment(.center)
+                .dynamicTypeSize(.xSmall ... .accessibility2)
             
-            HStack(spacing: 4) {
-                if point.weightType == .am {
-                    Circle()
-                        .stroke(Color("nfYellowSunglow"), lineWidth: 2)
-                        .frame(width: 10, height: 10)
-                } else {
-                    Rectangle()
-                        .stroke(Color("nfRedFlamePea"), lineWidth: 2)
-                        .frame(width: 10, height: 10)
+            HStack(spacing: 6) {  // Slightly more spacing for larger symbols
+                Group {
+                    if point.weightType == .am {
+                        // Morning → Yellow circle, stroked
+                        Circle()
+                            .stroke(Color("nfYellowSunglow"), lineWidth: symbolLineWidth)
+                            .frame(width: symbolSize, height: symbolSize)
+                    } else {
+                        // Evening → Red rectangle, stroked
+                        Rectangle()
+                            .stroke(Color("nfRedFlamePea"), lineWidth: symbolLineWidth)
+                            .frame(width: symbolSize, height: symbolSize)
+                    }
                 }
                 
                 Text("\(point.weight, specifier: "%.1f") \(unitString)")
                     .font(.headline)
+                    .dynamicTypeSize(.xSmall ... .accessibility2)
             }
         }
-        .padding(.horizontal, 12)
-        .padding(.vertical, 10)
+        .padding(.horizontal, isAccessibility ? 16 : 12)  // Optional: more padding in Accessibility
+        .padding(.vertical, isAccessibility ? 12 : 10)
         .background(Color.black.opacity(0.85))
         .foregroundColor(.white)
         .cornerRadius(10)
         .shadow(radius: 5)
-        .frame(maxWidth: 140)
+        .frame(maxWidth: 160)  // Slightly wider max to accommodate larger symbols
         .fixedSize(horizontal: true, vertical: true)
     }
     
@@ -394,7 +407,10 @@ struct DayChartView: View {
                     .frame(width: 12, height: 12)
                 
                 Text("historyRecordWeight.legendMorning")
-                    .font(.caption)
+                    .font(.subheadline)
+                    .fontWeight(.medium)
+                    .foregroundStyle(.primary)
+                    .dynamicTypeSize(.xSmall ... .accessibility2)
             }
             
             HStack(spacing: 8) {
@@ -403,7 +419,10 @@ struct DayChartView: View {
                     .frame(width: 12, height: 12)
                 
                 Text("historyRecordWeight.legendEvening")
-                    .font(.caption)
+                    .font(.subheadline)
+                    .fontWeight(.medium)
+                    .foregroundStyle(.primary)
+                    .dynamicTypeSize(.xSmall ... .accessibility2)
             }
         }
     }

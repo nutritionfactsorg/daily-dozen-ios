@@ -70,9 +70,8 @@ struct DozePageView: View {
             }
             .padding(10)
             
-            // Use LazyVStack inside ScrollView for performance
             SyncedScrollView(coordinator: coordinator, id: scrollID, version: coordinator.version) {
-                LazyVStack(alignment: .leading, spacing: 0) {
+                VStack(alignment: .leading, spacing: 0) {
                     ForEach(regularItems, id: \.self) { item in
                         DozeEntryRowView(
                             item: item,
@@ -87,25 +86,26 @@ struct DozePageView: View {
                     }
                     
                     if !supplementItems.isEmpty {
-                        VStack {
-                            HStack {
-                                Text("dozeOtherInfo.section")
+                        HStack {
+                            Text("dozeOtherInfo.section")
+                                .font(.headline)
+                                .foregroundColor(.primary)  // optional: ensure visibility
+                           // Spacer()
+                            Button {
+                                showingAlert.toggle()
+                            } label: {
+                                Image(systemName: "info.circle")
+                                    .foregroundColor(.nfGrayDark)
                                     .font(.headline)
-                                    .padding(.top, 20)
-                                    .padding(.horizontal, 8)
-                                Button {
-                                    showingAlert.toggle()
-                                } label: {
-                                    Image(systemName: "info.circle")
-                                        .foregroundColor(.nfGrayDark)
-                                }
-                                .buttonStyle(.plain)
-                            } //HStack
-                        } //VStack
-                                
+                            }
+                            .buttonStyle(.plain)
+                        }
+                        .padding(.horizontal, 16)  // match row horizontal padding; adjust as needed
+                        .padding(.top, 20)         // keeps separation from previous row
+                        .padding(.bottom, 15)
                         .frame(maxWidth: .infinity, alignment: .center)
-                        .padding(.bottom)
-                        
+                        .background(Color.clear)   // optional: ensures no layout surprises
+
                         ForEach(supplementItems, id: \.self) { item in
                             DozeEntryRowView(
                                 item: item,
@@ -121,8 +121,8 @@ struct DozePageView: View {
                 }
                 //.padding(.horizontal)
                 // Capture scroll offset
-                .padding(.top, 30)
-                .padding(.bottom, 40)
+                //.padding(.top, 30)
+                //.padding(.bottom, 40)
             }
         }
         .alert(isPresented: $showingAlert) {
@@ -131,11 +131,6 @@ struct DozePageView: View {
         .onAppear {
             Task { await syncRecordWithDB() }
         }
-        //.onReceive(NotificationCenter.default.publisher(for: .sqlDBUpdated)) { notification in
-        //    guard let updatedDate = notification.object as? Date,
-        //          Calendar.current.isDate(updatedDate, inSameDayAs: date) else { return }
-        //    Task { await viewModel.loadTracker(forDate: date) }
-        //} // •HACK•CHECK• checking if not needed. verify if migration needs
     }
 }
 

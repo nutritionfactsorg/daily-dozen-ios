@@ -79,7 +79,7 @@ extension HKAuthorizationRequestStatus {
 #if DEBUG
 extension HealthManager {
     
-    /// Deletes ALL bodyMass samples your app ever saved — instantly
+    /// Deletes ALL bodyMass samples YOUR app ever saved — instantly
     func debugDeleteAllBodyMassData() {
         Task { @MainActor in
             guard let bodyMassType = HKQuantityType.quantityType(forIdentifier: .bodyMass) else {

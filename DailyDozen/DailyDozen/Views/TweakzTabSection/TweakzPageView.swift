@@ -57,20 +57,21 @@ struct TweakzPageView: View {
             .padding(10)
             
             SyncedScrollView(coordinator: coordinator, id: scrollID, version: coordinator.version) {
-                        LazyVStack(alignment: .leading, spacing: 0) {
-                            ForEach(regularItems, id: \.self) { item in
-                                TweakzEntryRowView(
-                                    item: item,
-                                    date: date,
-                                    onCheck: { _ in
-                                        Task {
-                                            await syncRecordWithDB()
-//                                            print("•INFO•Parent• onCheck called for \(item.headingDisplay) on \(date.datestampSid) (no action needed)")
-                                        }
-                                    }
-                                )
-                                .id(item) // Ensure stable identity
-                      } //For Each
+                // LazyVStack(alignment: .leading, spacing: 0) {
+                VStack(alignment: .leading, spacing: 0) {
+                    ForEach(regularItems, id: \.self) { item in
+                        TweakzEntryRowView(
+                            item: item,
+                            date: date,
+                            onCheck: { _ in
+                                Task {
+                                    await syncRecordWithDB()
+                                    
+                                }
+                            }
+                        )
+                        .id(item) // Ensure stable identity
+                    } //For Each
                 } //VStack
             } //Sync
         } //VStack
@@ -79,11 +80,6 @@ struct TweakzPageView: View {
             print("•INFO•Appear• TweakzPageView appeared for \(date.datestampSid)")
         }
         
-        //.onReceive(NotificationCenter.default.publisher(for: .sqlDBUpdated)) { notification in
-        //    guard let updatedDate = notification.object as? Date,
-        //          Calendar.current.isDate(updatedDate, inSameDayAs: date) else { return }
-        //    Task { await viewModel.loadTracker(forDate: date) }
-        //} // •HACK•CHECK• may not be needed. verify if migration needs
     }
 }
 

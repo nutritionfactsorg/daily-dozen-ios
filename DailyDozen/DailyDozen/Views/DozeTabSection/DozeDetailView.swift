@@ -9,7 +9,7 @@
 import SwiftUI
 
 struct DozeDetailView: View {
-    
+    @Environment(\.dynamicTypeSize) private var dynamicTypeSize
     let dataCountTypeItem: DataCountType
     @State var dataItemDetail = DozeDetailInfo.Item.example
     @State var measurementUnits = "setting_units_0_imperial"
@@ -53,9 +53,8 @@ struct DozeDetailView: View {
                 } //ZStack
                 
                 ScrollView {
-                    LazyVStack(spacing: 8, pinnedViews: [.sectionHeaders]) {   // ← control spacing here
+                    LazyVStack(spacing: 8, pinnedViews: dynamicTypeSize.isAccessibilitySize ? [] : [.sectionHeaders]) {
                         Section {
-                            // exact same content you had inside the first Section { … }
                             if useImperial {
                                 ForEach(dataItemDetail.servings, id: \.imperial) { item in
                                     HStack {
@@ -64,7 +63,7 @@ struct DozeDetailView: View {
                                     }
                                     .padding(10)
                                     .shadowboxed()
-                                    .padding(.horizontal, 8)           // optional – your horizontal margins
+                                    .padding(.horizontal, 8)           // optionalhorizontal margins
                                 }
                             }
                             if !useImperial {
@@ -79,7 +78,6 @@ struct DozeDetailView: View {
                                 }
                             }
                         } header: {
-                            // exact same header you already have
                             VStack(alignment: .leading) {
                                 Text("doze_detail_section_sizes")
                                     .font(.title2)

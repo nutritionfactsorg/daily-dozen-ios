@@ -11,6 +11,7 @@ import Charts
 
 struct YearChartView: View {
     @Environment(\.layoutDirection) private var layoutDirection
+    @Environment(\.dynamicTypeSize) private var dynamicTypeSize
     private let viewModel = SqlDailyTrackerViewModel.shared
     @State private var selectedDay: Int?
     @State private var selectedPoint: WeightDataPoint?
@@ -193,6 +194,8 @@ struct YearChartView: View {
                             .font(mark.isYear ? .caption.bold() : .caption2)  // Years bolder
                             .monospacedDigit()
                             .foregroundStyle(mark.isYear ? .primary : .secondary)
+                            .dynamicTypeSize(.small ... .xxLarge)  // Caps scaling at XXLarge (still accessible, but prevents gigantic text)
+                            .fontWeight(.medium)
                     }
                     AxisGridLine()
                     AxisTick()
@@ -225,6 +228,8 @@ struct YearChartView: View {
                         Text(numberFormatter.string(from: NSNumber(value: weight)) ?? String(format: "%.1f", weight))
                             .font(layoutDirection == .rightToLeft ? .caption2 : .caption)
                             .padding(layoutDirection == .rightToLeft ? .trailing : .leading, 8)
+                            .dynamicTypeSize(.small ... .xxLarge)  // Caps scaling at XXLarge (still accessible, but prevents gigantic text)
+                            .fontWeight(.medium)
                     }
                     AxisGridLine()
                     AxisTick()
@@ -287,40 +292,46 @@ struct YearChartView: View {
         }
 
     private func valueSelectionPopover(for point: WeightDataPoint) -> some View {
-        VStack(spacing: 4) {
+        let isAccessibility = dynamicTypeSize.isAccessibilitySize
+        let symbolSize: CGFloat = isAccessibility ? 18 : 10      // Larger in Accessibility; tweak 16-20 if needed
+        let symbolLineWidth: CGFloat = isAccessibility ? 3 : 2   // Thicker stroke for visibility
+        
+        return VStack(spacing: 4) {
             Text(point.date.dateStringLocalized(for: .short))
                 .font(.subheadline.bold())
                 .multilineTextAlignment(.center)
-
-            HStack(spacing: 4) {
+                .dynamicTypeSize(.xSmall ... .accessibility2)
+            
+            HStack(spacing: 6) {  // Slightly more spacing for larger symbols
                 Group {
                     if point.weightType == .am {
                         // Morning → Yellow circle, stroked
                         Circle()
-                            .stroke(Color("nfYellowSunglow"), lineWidth: 2)
-                            .frame(width: 10, height: 10)
+                            .stroke(Color("nfYellowSunglow"), lineWidth: symbolLineWidth)
+                            .frame(width: symbolSize, height: symbolSize)
                     } else {
                         // Evening → Red rectangle, stroked
                         Rectangle()
-                            .stroke(Color("nfRedFlamePea"), lineWidth: 2)
-                            .frame(width: 10, height: 10)
+                            .stroke(Color("nfRedFlamePea"), lineWidth: symbolLineWidth)
+                            .frame(width: symbolSize, height: symbolSize)
                     }
                 }
                 
                 Text("\(point.weight, specifier: "%.1f") \(unitString)")
                     .font(.headline)
+                    .dynamicTypeSize(.xSmall ... .accessibility2)
             }
         }
-        .padding(.horizontal, 12)
-        .padding(.vertical, 10)
+        .padding(.horizontal, isAccessibility ? 16 : 12)  // Optional: more padding in Accessibility
+        .padding(.vertical, isAccessibility ? 12 : 10)
         .background(Color.black.opacity(0.85))
         .foregroundColor(.white)
         .cornerRadius(10)
         .shadow(radius: 5)
-        .frame(maxWidth: 140)
+        .frame(maxWidth: 160)  // Slightly wider max to accommodate larger symbols
         .fixedSize(horizontal: true, vertical: true)
     }
-
+    
     private var legendView: some View {
         HStack(spacing: 24) {
             HStack(spacing: 8) {
@@ -328,7 +339,10 @@ struct YearChartView: View {
                     .stroke(Color("nfYellowSunglow"), lineWidth: 2)
                     .frame(width: 12, height: 12)
                 Text("historyRecordWeight.legendMorning")
-                    .font(.caption)
+                    .font(.subheadline)
+                    .fontWeight(.medium)
+                    .foregroundStyle(.primary)
+                    .dynamicTypeSize(.xSmall ... .accessibility2)
             }
 
             HStack(spacing: 8) {
@@ -336,7 +350,10 @@ struct YearChartView: View {
                     .stroke(Color("nfRedFlamePea"), lineWidth: 2)
                     .frame(width: 12, height: 12)
                 Text("historyRecordWeight.legendEvening")
-                    .font(.caption)
+                    .font(.subheadline)
+                    .fontWeight(.medium)
+                    .foregroundStyle(.primary)
+                    .dynamicTypeSize(.xSmall ... .accessibility2)
             }
         }
     }

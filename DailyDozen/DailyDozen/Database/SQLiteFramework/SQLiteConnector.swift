@@ -373,7 +373,7 @@ struct SQLiteConnector {
             return false
         }
         
-        // Units are in columns 38 and 40 → may be "kg", "[kg]", "lbs", "[lbs]" → your init handles all!
+        // Units are in columns 38 and 40 → may be "kg", "[kg]", "lbs", "[lbs]" → init handles all!
         guard let unitsAM = UnitsType(mass: columns[38]),
               let unitsPM = UnitsType(mass: columns[40]),
               unitsAM == unitsPM else {
@@ -384,7 +384,6 @@ struct SQLiteConnector {
         csvExerciseGamut = gamut
         csvUnitsType = unitsAM
         
-        // Optional: keep your strict string match if you want, but it's redundant
         // Just validate structure — safer and simpler
         print("Goals row accepted → Gamut: \(gamut), Units: \(unitsAM)")
         return true

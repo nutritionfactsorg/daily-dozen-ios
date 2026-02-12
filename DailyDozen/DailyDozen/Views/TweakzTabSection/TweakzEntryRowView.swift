@@ -249,31 +249,3 @@ struct TweakzEntryRowView: View {
         streakCount = await viewModel.currentStreak(countType: item, on: date)
     }
 }
-
-//struct TweakzEntryRowView_Previews: PreviewProvider {
-//    static var previews: some View {
-//        // Mock data for preview
-//        let mockDate = Date().startOfDay
-//        let mockTracker = SqlDailyTracker(date: mockDate)
-//       // let mockDataCountType = DataCountType.tweakWeightTwice // Adjust based on your DataCountType
-//        return NavigationStack {
-//            VStack {
-//                TweakzEntryRowView(
-//                    item: DataCountType.dozeBeans,
-//                    record: mockTracker,
-//                    date: mockDate,
-//                    onCheck: { _ in }
-//                )
-//                TweakzEntryRowView(
-//                    item: .tweakWeightTwice,
-//                    record: mockTracker,
-//                    date: mockDate,
-//                    onCheck: { newCount in
-//                        print("Preview: Count updated for tweakWeightTwice: \(newCount)")
-//                    }
-//                )
-//            }
-//            .environmentObject(SqlDailyTrackerViewModel())
-//        }
-//    }
-//}

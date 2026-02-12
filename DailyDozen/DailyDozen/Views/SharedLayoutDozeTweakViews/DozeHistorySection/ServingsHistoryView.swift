@@ -19,6 +19,7 @@ extension Sequence where Element: Hashable {
 
 struct ServingsHistoryView: View {
     //@EnvironmentObject var viewModel: SqlDailyTrackerViewModel
+    @Environment(\.dynamicTypeSize) private var dynamicTypeSize
     private let viewModel = SqlDailyTrackerViewModel.shared
     @State private var selectedTimeScale: TimeScale = .daily
     @State private var selectedDate: Date = Calendar.current.startOfDay(for: Date())
@@ -60,17 +61,20 @@ struct ServingsHistoryView: View {
     
     var body: some View {
         NavigationStack {
-            VStack(spacing: 16) {
+            VStack(spacing: 8) {
                 HStack {
                     Text("history_scale_label")
-                        .font(.subheadline)
+                        .font(.title3)
+                        .fontWeight(.medium)
+                        .dynamicTypeSize(.large ... .xxLarge)  // Caps scaling in Accessibility
                         .alignmentGuide(.firstTextBaseline) { d in d[.bottom] }
                         .offset(y: 2)
                         //.padding(.leading)
                     Picker("history_scale_label", selection: $selectedTimeScale) {
                         ForEach(TimeScale.allCases) { scale in
                             Text(scale.localizedName).tag(scale)
-                            
+                                .font(.subheadline)
+                                .minimumScaleFactor(0.7)  // Allows shrink to fit segments
                         }
                     }
                     .pickerStyle(.segmented)
@@ -80,40 +84,103 @@ struct ServingsHistoryView: View {
                 .padding(.horizontal, 20)
                 
                 if selectedTimeScale != .yearly {
-                    HStack {
-                        // Double chevron backward
-                        Button(action: navigateToStart) {
-                            Image(systemName: "chevron.left.2")
-                                .foregroundStyle(canNavigateToStart ? .nfGreenBrand : .gray)
+                    if dynamicTypeSize.isAccessibilitySize {
+                        // Vertical layout for Accessibility sizes: full-width date, chevrons below
+                        VStack(spacing: 4) {
+                            Text(dateLabel)
+                                .font(.title2)
+                                .fontWeight(.semibold)
+                                .dynamicTypeSize(.large ... .xxLarge)
+                                .multilineTextAlignment(.center)
+                                .lineLimit(3)                 // Unlimited lines if extremely long locale
+                                .foregroundColor(.primary)
+                            
+                            HStack {
+                                // Left navigation buttons
+                                Button(action: navigateToStart) {
+                                    Image(systemName: "chevron.left.2")
+                                        .font(.headline)               // Slightly smaller for balance
+                                        .foregroundStyle(canNavigateToStart ? .nfGreenBrand : .gray)
+                                        .dynamicTypeSize(.xSmall ... .accessibility2)
+                                }
+                                .disabled(!canNavigateToStart)
+                                
+                                Button(action: navigateBackward) {
+                                    Image(systemName: "chevron.left")
+                                        .font(.headline)
+                                        .foregroundStyle(canNavigateBackward ? .nfGreenBrand : .gray)
+                                        .dynamicTypeSize(.xSmall ... .accessibility2)
+                                }
+                                .disabled(!canNavigateBackward)
+                                
+                                Spacer()
+                                
+                                // Right navigation buttons
+                                Button(action: navigateForward) {
+                                    Image(systemName: "chevron.right")
+                                        .font(.headline)
+                                        .foregroundStyle(canNavigateForward ? .nfGreenBrand : .gray)
+                                        .dynamicTypeSize(.xSmall ... .accessibility2)
+                                }
+                                .disabled(!canNavigateForward)
+                                
+                                Button(action: navigateToEnd) {
+                                    Image(systemName: "chevron.right.2")
+                                        .font(.headline)
+                                        .foregroundStyle(canNavigateToEnd ? .nfGreenBrand : .gray)
+                                        .dynamicTypeSize(.xSmall ... .accessibility2)
+                                }
+                                .disabled(!canNavigateToEnd)
+                            }
                         }
-                        .disabled(!canNavigateToStart)
-                        .padding()
-                        // Single chevron backward
-                        Button(action: navigateBackward) {
-                            Image(systemName: "chevron.left")
-                                .foregroundStyle(canNavigateBackward ? .nfGreenBrand : .gray)
+                        .padding(.horizontal)
+                        .padding(.vertical, 8)
+                    } else {
+                        // Original horizontal layout for normal sizes
+                        HStack {
+                            Button(action: navigateToStart) {
+                                Image(systemName: "chevron.left.2")
+                                    .font(.title2)
+                                    .foregroundStyle(canNavigateToStart ? .nfGreenBrand : .gray)
+                            }
+                            .disabled(!canNavigateToStart)
+                            
+                            Button(action: navigateBackward) {
+                                Image(systemName: "chevron.left")
+                                    .font(.title2)
+                                    .foregroundStyle(canNavigateBackward ? .nfGreenBrand : .gray)
+                            }
+                            .disabled(!canNavigateBackward)
+                            
+                            Spacer()
+                            
+                            Text(dateLabel)
+                                .font(.title2)
+                                .fontWeight(.semibold)
+                                .multilineTextAlignment(.center)
+                                .lineLimit(2)
+                                .fixedSize(horizontal: false, vertical: true)
+                                .foregroundColor(.primary)
+                            
+                            Spacer()
+                            
+                            Button(action: navigateForward) {
+                                Image(systemName: "chevron.right")
+                                    .font(.title2)
+                                    .foregroundStyle(canNavigateForward ? .nfGreenBrand : .gray)
+                            }
+                            .disabled(!canNavigateForward)
+                            
+                            Button(action: navigateToEnd) {
+                                Image(systemName: "chevron.right.2")
+                                    .font(.title2)
+                                    .foregroundStyle(canNavigateToEnd ? .nfGreenBrand : .gray)
+                            }
+                            .disabled(!canNavigateToEnd)
                         }
-                        .disabled(!canNavigateBackward)
-                        
-                        Spacer()
-                        Text(dateLabel)
-                        Spacer()
-                        
-                        // Single chevron forward
-                        Button(action: navigateForward) {
-                            Image(systemName: "chevron.right")
-                                .foregroundStyle(canNavigateForward ? .nfGreenBrand : .gray)
-                        }
-                        .disabled(!canNavigateForward)
-                        .padding()
-                        // Double chevron forward
-                        Button(action: navigateToEnd) {
-                            Image(systemName: "chevron.right.2")
-                                .foregroundStyle(canNavigateToEnd ? .nfGreenBrand : .gray)
-                        }
-                        .disabled(!canNavigateToEnd)
+                        .padding(.horizontal)
+                        .padding(.vertical, 8)
                     }
-                    .padding(.horizontal)
                 }
                 
                 GeometryReader { geometry in
@@ -128,12 +195,15 @@ struct ServingsHistoryView: View {
                                 switch selectedTimeScale {
                                 case .daily:
                                     dailyChart
+                                        .frame(maxHeight: .infinity)
                                         .frame(idealWidth: max(geometry.size.width, CGFloat(processor.dailyServings(forMonthOf: selectedDate).count) * 40 + 40))
                                 case .monthly:
                                     monthlyChart
+                                        .frame(maxHeight: .infinity)
                                         .frame(idealWidth: max(geometry.size.width, CGFloat(processor.monthlyServings(forYearOf: selectedDate).count) * 60 + 40))
                                 case .yearly:
                                     yearlyChart
+                                        .frame(maxHeight: .infinity)
                                         .frame(idealWidth: max(geometry.size.width, CGFloat(processor.yearlyServings().count) * 250 + 40))
                                 }
                             }
@@ -244,10 +314,16 @@ struct ServingsHistoryView: View {
                 }
             }
             .chartYAxis {
-                AxisMarks(values: .automatic) { _ in
+                AxisMarks(values: .automatic(desiredCount: 8)) { value in  // Fewer marks → more space per label
                     AxisGridLine()
                     AxisTick()
-                    AxisValueLabel()
+                    AxisValueLabel {
+                        if let intValue = value.as(Int.self) {
+                            Text("\(intValue)")
+                                .dynamicTypeSize(.small ... .xxLarge)  // Caps scaling at XXLarge (still accessible, but prevents gigantic text)
+                                .fontWeight(.medium)                   // Optional: slightly bolder for readability
+                        }
+                    }
                 }
             }
             .chartPlotStyle { plotArea in
@@ -263,8 +339,10 @@ struct ServingsHistoryView: View {
                         //.clipShape(RoundedRectangle(cornerRadius: 2))  // Optional: slight rounding for softer look
                     
                     Text(servingsLegendText)
-                        .font(.caption)
+                        .font(.subheadline)
+                        .fontWeight(.medium)
                         .foregroundStyle(.primary)
+                        .dynamicTypeSize(.xSmall ... .accessibility2)
                 }
                 .padding(.horizontal, 8)
                 .padding(.vertical, 4)
@@ -343,10 +421,16 @@ struct ServingsHistoryView: View {
                 }
             }
             .chartYAxis {
-                AxisMarks(values: .automatic) {
+                AxisMarks(values: .automatic(desiredCount: 8)) { value in  // Fewer marks → more space per label
                     AxisGridLine()
                     AxisTick()
-                    AxisValueLabel()
+                    AxisValueLabel {
+                        if let intValue = value.as(Int.self) {
+                            Text("\(intValue)")
+                                .dynamicTypeSize(.small ... .xxLarge)  // Caps scaling at XXLarge (still accessible, but prevents gigantic text)
+                                .fontWeight(.medium)                   // Optional: slightly bolder for readability
+                        }
+                    }
                 }
             }
             .chartPlotStyle { plotArea in
@@ -357,11 +441,13 @@ struct ServingsHistoryView: View {
                 HStack(spacing: 8) {
                     Circle()
                         .fill(.nfGreenBrand)
-                        .frame(width: 14, height: 14)  // Circle swatch—matches your points
+                        .frame(width: 14, height: 14)  // Circle swatch—matches the points
                     
                     Text(servingsLegendText)
-                        .font(.system(size: 12))  // Fixed size—see fix #2 below
+                        .font(.subheadline)
+                        .fontWeight(.medium)
                         .foregroundStyle(.primary)
+                        .dynamicTypeSize(.xSmall ... .accessibility2)
                 }
                 .padding(.horizontal, 8)
                 .padding(.vertical, 4)
@@ -453,10 +539,16 @@ struct ServingsHistoryView: View {
                 }
             }
             .chartYAxis {
-                AxisMarks(values: .automatic) {
+                AxisMarks(values: .automatic(desiredCount: 8)) { value in  // Fewer marks → more space per label
                     AxisGridLine()
                     AxisTick()
-                    AxisValueLabel()
+                    AxisValueLabel {
+                        if let intValue = value.as(Int.self) {
+                            Text("\(intValue)")
+                                .dynamicTypeSize(.small ... .xxLarge)  // Caps scaling at XXLarge (still accessible, but prevents gigantic text)
+                                .fontWeight(.medium)                   // Optional: slightly bolder for readability
+                        }
+                    }
                 }
             }
             //.frame(minHeight: config.chartHeight)
@@ -468,8 +560,10 @@ struct ServingsHistoryView: View {
                         .frame(width: 14, height: 14)
                     
                     Text(servingsLegendText)
-                        .font(.system(size: 12))
+                        .font(.subheadline)
+                        .fontWeight(.medium)
                         .foregroundStyle(.primary)
+                        .dynamicTypeSize(.xSmall ... .accessibility2)
                 }
                 .padding(.horizontal, 8)
                 .padding(.vertical, 4)
