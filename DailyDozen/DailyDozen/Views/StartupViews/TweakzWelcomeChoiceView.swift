@@ -13,30 +13,36 @@ struct TweakzWelcomeChoiceView: View {
     
     @AppStorage(SettingsKeys.hasSeenLaunchV4) private var hasSeenTweaks = false
     @Environment(\.dismiss) private var dismiss
+    @Environment(\.dynamicTypeSize) private var dynamicTypeSize
     
     var body: some View {
-        VStack(spacing: 0) {
+        VStack(spacing: dynamicTypeSize.isAccessibilitySize ? 8 : 0) {
             // Header
             HStack {
                 Text("navtab.doze")
-                    .font(.title2.bold())
+                    .font(dynamicTypeSize.isAccessibilitySize ? .headline.bold() : .title2.bold())
+                    .dynamicTypeSize(.small ... .accessibility2)  // Cap header
                     .foregroundColor(.black) // •TBDz•color•
                 
                 Spacer()
             }
-            .padding()
+            .padding(dynamicTypeSize.isAccessibilitySize ? 12 : 20)
+            .background(Color.nfGreenBrand.opacity(0.1))
             .clipShape(
-                UnevenRoundedCorners(radius: 20, corners: [.bottomLeft, .bottomRight])
+                dynamicTypeSize.isAccessibilitySize
+                ? UnevenRoundedCorners(radius: 8, corners: [.bottomLeft, .bottomRight])
+                : UnevenRoundedCorners(radius: 20, corners: [.bottomLeft, .bottomRight])
             )
             
             // Main content
-            VStack(spacing: 32) {
+            VStack(spacing: dynamicTypeSize.isAccessibilitySize ? 12 : 32) {
                 Text("setting_health_alone_txt")
                     .multilineTextAlignment(.center)
                     .foregroundColor(.secondary)
-                    .padding(.horizontal, 40)
+                    .dynamicTypeSize(.small ... .accessibility2)  // Cap header
+                    .fixedSize(horizontal: false, vertical: true)
+                    .padding(.horizontal, dynamicTypeSize.isAccessibilitySize ? 24 : 40)
                 
-                VStack(spacing: 16) {
                     Button {
                         show21Tweaks = false
                         hasSeenTweaks = true
@@ -44,16 +50,22 @@ struct TweakzWelcomeChoiceView: View {
                     } label: {
                         Text("setting_doze_only_btn")
                             .bold()
+                            .dynamicTypeSize(.small ... .accessibility2)
+                            .multilineTextAlignment(.center)
+                            .lineLimit(4)  // Increased — handles even very long locales
+                            .fixedSize(horizontal: false, vertical: true)
                             .frame(maxWidth: .infinity)
                             .padding(.vertical, 12)
                     }
                     .buttonStyle(.borderedProminent)
                     .tint(.nfGreenBrand)  // Forces prominent style to use NF green
+                    .controlSize(.large)
                     
                     Text("setting_health_weight_txt")
-                        .font(.subheadline)
+                        .dynamicTypeSize(.small ... .accessibility2)
                         .foregroundColor(.secondary)
                         .multilineTextAlignment(.center)
+                        .fixedSize(horizontal: false, vertical: true)  // Critical for no truncation
                     
                     Button {
                         show21Tweaks = true
@@ -61,27 +73,33 @@ struct TweakzWelcomeChoiceView: View {
                         dismiss()
                     } label: {
                         Text("setting_doze_tweak_btn")
+                            .bold()
+                            .dynamicTypeSize(.small ... .accessibility2)
+                            .multilineTextAlignment(.center)
+                            .lineLimit(4)
+                            .fixedSize(horizontal: false, vertical: true)
                             .frame(maxWidth: .infinity)
                             .padding(.vertical, 12)
                     }
                     .buttonStyle(.borderedProminent)   // Change from .bordered to .borderedProminent
                     .tint(.nfGreenBrand)
-                }
-                .controlSize(.large)
-                .padding(.horizontal, 40)
-                
+                    .controlSize(.large)
+                    
                 // Optional footer note (uncomment if desired)
-                //Text("You can always change this later in Preferences") // :NYI: needs localication
-                //    .font(.caption)
-                //    .foregroundColor(.secondary)
-                //    .padding(.top, 20)
+                // Text("You can always change this later in Preferences")
+                //     .font(.caption)
+                //     .foregroundColor(.secondary)
+                //     .padding(.top, 20)
             }
-            .padding(.vertical, 32)
+            .padding(.horizontal, dynamicTypeSize.isAccessibilitySize ? 24 : 40)
+            .padding(.vertical, dynamicTypeSize.isAccessibilitySize ? 16 : 32)
+             Spacer(minLength: 0)  // Pushes everything up if extra space
         }
         .background(Color.nfGreenBrand.opacity(0.1)) // Subtle background if needed
-        .cornerRadius(16)
+        .cornerRadius(dynamicTypeSize.isAccessibilitySize ? 12 : 16)
         .shadow(radius: 20)
-        .padding(40)
+        .padding(dynamicTypeSize.isAccessibilitySize ? 16 : 40)
+        .padding(.top, dynamicTypeSize.isAccessibilitySize ? 30 : 12)
         .background(Color.clear) // Ensures padding doesn't affect shadow
     }
 }
