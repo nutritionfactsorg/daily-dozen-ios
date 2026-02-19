@@ -18,6 +18,7 @@ struct DozeTabView: View {
     @State private var scrollCoordinator = ScrollPositionCoordinator()
     @State private var isDataReady = false  // Gatekeeper
     @State private var preloadTask: Task<Void, Never>?  // Guard re-run
+    @State private var isInitialized = false
     
     private var currentDisplayDate: Date {
         if dateRange.indices.contains(currentIndex) {
@@ -193,12 +194,16 @@ struct DozeTabView: View {
             }
             
             .task {
+                if isInitialized { return }
                 viewModel.ensureDateIsInRange(Date(), dateRange: &dateRange, currentIndex: &currentIndex, thenSelectIt: true)
                 // preload today + last 14 days
                 for date in dateRange.suffix(15) {
                     await viewModel.loadTracker(forDate: date, isSilent: true)
                 }
-                isDataReady = true
+                await MainActor.run {
+                    isDataReady = true
+                    isInitialized = true   // ← mark as done
+                }
             }
             .onChange(of: selectedDate) {_, newValue in
                 print("•INFO• selectedDate changed → ensuring range")
