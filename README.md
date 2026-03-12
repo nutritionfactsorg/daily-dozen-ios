@@ -8,6 +8,21 @@ In the years of research required to create the more than a thousand evidence-ba
 
 Dr. Greger’s Daily Dozen details the healthiest foods and how many servings of each we should try to check off every day. He explains his rationale in his book [How Not to Die][book]. All his proceeds from his books, DVDs, and speaking engagements is all donated to charity.
 
+## Getting Started (Development)
+
+1. Install the latest stable [Xcode](https://apps.apple.com/us/app/xcode/id497799835) on macOS.
+2. Clone this repository and open the project:
+   ```bash
+   git clone https://github.com/nutritionfactsorg/daily-dozen-ios.git
+   cd daily-dozen-ios
+   open DailyDozen/DailyDozen.xcodeproj
+   ```
+3. In Xcode, select the `DailyDozen` scheme and an iPhone Simulator target.
+4. Build and run with `Product > Run` (or `Cmd+R`).
+5. If dependencies are not resolved automatically, run `File > Packages > Resolve Package Versions` in Xcode.
+
+For additional build and debug details, see [Docs/DeveloperNotes.md](Docs/DeveloperNotes.md).
+
 ## Daily Dozen on the App Store
 
 <a href="https://apps.apple.com/us/app/dr-gregers-daily-dozen/id1060700802" alt="Download from the App Store" target="%5fblank"><img src="README_files/app-store.png" width="200"></a>

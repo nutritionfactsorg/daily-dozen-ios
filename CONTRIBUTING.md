@@ -67,6 +67,14 @@ If an Issue Ticket proceeds to a "go" plan, then you will be pointed to which br
 
 We want to foster a community of participation and learning, especially for people interested in committing to Open Source Software (OSS) projects. Kent C. Dodds provides a great set of tutorials covering [How to Contribute to an Open Source Project on GitHub][contribute-os] geared toward submitting your first Pull Request.
 
+**Local Development Quick Start**
+
+1. Install the latest stable [Xcode](https://apps.apple.com/us/app/xcode/id497799835) on macOS.
+2. Clone this repository and open `DailyDozen/DailyDozen.xcodeproj` in Xcode.
+3. Select the `DailyDozen` scheme and an iPhone Simulator.
+4. Run the app with `Product > Run` (`Cmd+R`).
+5. If package dependencies fail to resolve, run `File > Packages > Resolve Package Versions` in Xcode.
+
 Developer documentation for the DailyDozen iOS application is in located in the `Docs` directory.  The [Docs/DeveloperNotes.md](Docs/DeveloperNotes.md) file provides dev environment, build, and debug information particular to the DailyDozen iOS app development.
 
 **Before you submit your Pull Request consider the following guidelines:**
