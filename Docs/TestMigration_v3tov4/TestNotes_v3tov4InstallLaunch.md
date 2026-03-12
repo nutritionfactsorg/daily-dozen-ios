@@ -16,7 +16,7 @@ _This is a high-level, end-to-end overall check._
 
 ### Video Overview
 
-[![Watch the v3 to v4 Install Launch Video](TestNotes_v3tov4InstallLaunch_files/DailyDozenMigrationInstall.png)](TestNotes_v3tov4InstallLaunch_files/DailyDozenMigrationInstall.mp4)
+[![Watch the v3 to v4 Install Launch Video](TestNotes_v3tov4InstallLaunch_files/DailyDozenMigrationInstall.png)](https://github.com/nutritionfactsorg/daily-dozen-ios/issues/81)
 
 ### Steps
 
